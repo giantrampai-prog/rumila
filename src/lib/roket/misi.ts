@@ -218,20 +218,20 @@ export interface JelajahItem {
   kind: JelajahKind;
   /** satu kalimat singkat untuk kartu */
   desc: string;
-  /** untuk lapisan: persinggahan misi yang narasinya dipakai sebagai suara */
+  /** adegan misi yang potongan narasinya dipakai sebagai suara item ini */
   stop?: string;
   /** warna penanda */
   color: string;
 }
 
 export const JELAJAH: JelajahItem[] = [
-  { id: "roket", name: "Roket", kind: "part", color: "#ffffff", desc: "Kendaraan yang membawa astronaut dari darat ke luar angkasa." },
-  { id: "kapsul", name: "Kapsul", kind: "part", color: "#e8edf5", desc: "Ruang kecil di puncak roket tempat astronaut duduk." },
-  { id: "tahap-2", name: "Tahap kedua", kind: "part", color: "#dfe6f0", desc: "Bagian tengah roket yang menyala setelah tahap pertama lepas." },
-  { id: "tahap-1", name: "Tahap pertama", kind: "part", color: "#d5dde8", desc: "Bagian paling besar, berisi banyak bahan bakar untuk mengangkat roket." },
-  { id: "mesin", name: "Mesin roket", kind: "part", color: "#ff9a3c", desc: "Menyemburkan gas panas ke bawah sehingga roket terdorong ke atas." },
-  { id: "astronot", name: "Astronaut", kind: "part", color: "#ffd166", desc: "Penjelajah angkasa yang memakai baju khusus agar bisa bernapas dan tetap aman." },
-  { id: "menara", name: "Menara", kind: "part", color: "#ff6b6b", desc: "Menara peluncuran dengan jembatan untuk masuk ke kapsul." },
+  { id: "roket", name: "Roket", kind: "part", stop: "landasan", color: "#ffffff", desc: "Kendaraan yang membawa astronaut dari darat ke luar angkasa." },
+  { id: "kapsul", name: "Kapsul", kind: "part", stop: "dalam-kapsul", color: "#e8edf5", desc: "Ruang kecil di puncak roket tempat astronaut duduk." },
+  { id: "tahap-2", name: "Tahap kedua", kind: "part", stop: "pisah-tahap", color: "#dfe6f0", desc: "Bagian tengah roket yang menyala setelah tahap pertama lepas." },
+  { id: "tahap-1", name: "Tahap pertama", kind: "part", stop: "pisah-tahap", color: "#d5dde8", desc: "Bagian paling besar, berisi banyak bahan bakar untuk mengangkat roket." },
+  { id: "mesin", name: "Mesin roket", kind: "part", stop: "lepas-landas", color: "#ff9a3c", desc: "Menyemburkan gas panas ke bawah sehingga roket terdorong ke atas." },
+  { id: "astronot", name: "Astronaut", kind: "part", stop: "baju-antariksa", color: "#ffd166", desc: "Penjelajah angkasa yang memakai baju khusus agar bisa bernapas dan tetap aman." },
+  { id: "menara", name: "Menara", kind: "part", stop: "naik-kapsul", color: "#ff6b6b", desc: "Menara peluncuran dengan jembatan untuk masuk ke kapsul." },
   { id: "troposfer", name: "Troposfer", kind: "layer", stop: "troposfer", color: "#6fc3ff", desc: "Lapisan terbawah, tempat awan dan cuaca." },
   { id: "stratosfer", name: "Stratosfer", kind: "layer", stop: "stratosfer", color: "#6f8bff", desc: "Lapisan tempat ozon menahan sinar ultraviolet." },
   { id: "mesosfer", name: "Mesosfer", kind: "layer", stop: "mesosfer", color: "#9b7bff", desc: "Lapisan paling dingin, tempat meteor terbakar." },
@@ -249,10 +249,14 @@ export interface MisiAudioPart {
   cues: number[];
 }
 
-/** Narasi Misi Terbang. Kosong = belum ada rekaman (persinggahan memakai waktu baca, teks tampil kecil). */
+/**
+ * Narasi Misi Terbang: SATU file suara untuk semua adegan (jeda ±1 detik antaradegan).
+ * cues = detik mulai tiap adegan (urut sesuai MISI), dari timestamp rekaman.
+ * Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil).
+ */
 export const MISI_AUDIO: MisiAudioPart[] = [];
 
-/** Rekaman per item Jelajah (bagian roket). Lapisan memakai potongan narasi misi. */
+/** Rekaman khusus per item Jelajah (opsional). Tanpa ini, item memakai potongan narasi misi (`stop`). */
 export const JELAJAH_AUDIO: Record<string, string> = {};
 
 /** Lama persinggahan tanpa rekaman: perkiraan waktu baca (±14 karakter/detik) + jeda. */

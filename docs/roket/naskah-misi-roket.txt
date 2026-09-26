@@ -1,6 +1,7 @@
 NASKAH SUARA — ROKET & ASTRONOT 3D
 
-BAGIAN A — MISI TERBANG (±5 menit; rekam jadi SATU file, urut dari atas; beri jeda ±1 detik antarparagraf)
+Rekam jadi SATU file, urut dari atas. Beri jeda ±1 detik antaradegan. 20 adegan, ±5 menit.
+Setelah rekaman jadi, catat timestamp mulai tiap adegan (menit:detik), misalnya 1 = 0:00, 2 = 0:19, dst.
 
 [1. Pagi di landasan]
 Selamat pagi, astronaut cilik! Kita berada di landasan peluncuran di pinggir pantai, di Pulau Biak, Papua. Lihat roket putih raksasa itu. Tingginya seperti gedung dua puluh lantai! Di sebelahnya ada menara peluncuran, menara air, dan tangki-tangki bahan bakar. Hari ini kita ikut misi sungguhan: terbang dari darat sampai ke luar angkasa. Siap?
@@ -61,26 +62,3 @@ Lihat ke atas! Di sana ada eksosfer, lapisan udara paling luar, tempat udaranya 
 
 [20. Misi berhasil]
 Misi berhasil, astronaut hebat! Kita sudah melewati troposfer, stratosfer, mesosfer, termosfer, sampai melihat eksosfer. Kamu juga sudah tahu tentang gravitasi, orbit, dan rasanya melayang. Ceritakan petualangan ini ke Ayah dan Ibu, ya. Sampai jumpa di misi berikutnya!
-
-BAGIAN B — JELAJAH (rekam SATU file per bagian, nama file = kata dalam kurung)
-
-[roket] Roket
-Ini roket kita! Roket punya beberapa bagian bertumpuk. Paling atas kapsul, di tengah tahap kedua, dan paling bawah tahap pertama.
-
-[kapsul] Kapsul
-Ini kapsul, ruang kecil di puncak roket. Di sinilah astronaut duduk selama perjalanan. Kapsul punya pelindung panas agar aman saat pulang ke Bumi.
-
-[tahap-2] Tahap kedua
-Ini tahap kedua. Mesinnya menyala setelah tahap pertama lepas, untuk mendorong kapsul sampai ke orbit.
-
-[tahap-1] Tahap pertama
-Ini tahap pertama, bagian roket yang paling besar. Isinya bahan bakar yang sangat banyak untuk mengangkat roket dari landasan.
-
-[mesin] Mesin roket
-Ini mesin roket. Mesin menyemburkan gas yang sangat panas ke bawah. Semburan itu mendorong roket melesat ke atas.
-
-[astronot] Astronaut
-Ini astronaut! Baju antariksanya memberi udara untuk bernapas, menjaga tubuh tetap hangat, dan melindungi dari sinar Matahari yang kuat.
-
-[menara] Menara
-Ini menara peluncuran. Astronaut naik lift di menara, lalu menyeberangi jembatan untuk masuk ke kapsul.
