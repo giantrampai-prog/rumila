@@ -11,6 +11,7 @@ import { OBJ, PLANET_IDS } from "@/lib/angkasa/manifest";
 import { useAngkasa, type Mode } from "@/lib/angkasa/state";
 import { hasVoice, playVoice, stopVoice, usePlayingVoice } from "@/lib/angkasa/voice";
 import { markDone, useAngkasaSession } from "@/lib/angkasa/progress";
+import { installAudioUnlock } from "@/lib/audio-unlock";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
 import { useNarration } from "./panels/tour";
 import { TOUR } from "@/lib/angkasa/tour";
@@ -184,6 +185,7 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   useAngkasaSession(memberId);
 
   useEffect(() => {
+    installAudioUnlock();
     setFullRoot(appRef.current);
     useAngkasa.getState().set({ tourCinematic: true, fx: true });
     return () => {

@@ -4,6 +4,7 @@
 // Bila browser menolak (iframe, iOS Safari), modul tetap memenuhi jendela lewat mode imersif CSS.
 // Tur terbang dibuka langsung layar penuh karena dipicu klik pengguna (syarat browser).
 
+import { unlockAudio } from "@/lib/audio-unlock";
 import { useEffect, useState } from "react";
 import { useAngkasa } from "@/lib/angkasa/state";
 import { stopVoice } from "@/lib/angkasa/voice";
@@ -67,6 +68,7 @@ export function useIsFull() {
 
 /** Mulai tur terbang dalam layar penuh. */
 export function beginTour(from = 0) {
+  unlockAudio(); // dipanggil dari ketukan tombol: buka kunci audio iPad/iPhone
   stopVoice();
   useAngkasa.getState().startTour(from);
   void enterFull();

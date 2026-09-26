@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { RoundBtn } from "@/components/angkasa/kid-space";
 import { Icon } from "@/components/ui";
 import { COUNTDOWN, JELAJAH, JELAJAH_AUDIO, MISI, MISI_AUDIO } from "@/lib/roket/misi";
+import { installAudioUnlock, sharedAudio } from "@/lib/audio-unlock";
 import { RocketEngine, useRoket } from "./engine";
 
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
@@ -38,11 +39,14 @@ function playClip(id: string, onEnd: () => void) {
   const c = clipOf(id);
   if (!c) return;
   clipAudio?.pause();
-  const a = (clipAudio = new Audio(c.src));
-  a.onloadedmetadata = () => {
+  const a = (clipAudio = sharedAudio("roket-clip")); // elemen bersama (iPad/iPhone)
+  a.src = c.src;
+  const start = () => {
     a.currentTime = c.start;
     a.play().catch(onEnd);
   };
+  if (a.readyState >= 1) start();
+  else a.onloadedmetadata = start;
   a.ontimeupdate = () => {
     if (c.end != null && a.currentTime >= c.end) a.pause();
   };
@@ -177,6 +181,7 @@ export function RocketSpace() {
   const router = useRouter();
 
   useEffect(() => {
+    installAudioUnlock();
     useRoket.setState({ mode: "jelajah", focus: null, playing: false, finished: false, stop: 0, progress: 0 });
     const e = new RocketEngine(host.current!, (id) => e.focus(id));
     setEngine(e);

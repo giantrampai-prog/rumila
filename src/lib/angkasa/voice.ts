@@ -8,6 +8,7 @@
 import { useEffect, useState } from "react";
 import { TOUR } from "./tour";
 import { TOUR_AUDIO } from "./tourVoice";
+import { sharedAudio } from "@/lib/audio-unlock";
 
 /** id objek → berkas audio khusus di /public/angkasa/voice (cadangan bila tidak ada di narasi tur) */
 export const VOICE: Record<string, string> = {
@@ -47,8 +48,7 @@ export const hasVoice = (id: string | null | undefined) => !!id && !!clipFor(id)
 
 function getAudio() {
   if (!audio) {
-    audio = new Audio();
-    audio.preload = "auto";
+    audio = sharedAudio("voice"); // elemen bersama yang sudah dibuka kuncinya (iPad/iPhone)
     audio.onended = audio.onpause = () => {
       if (starting) return;
       current = null;

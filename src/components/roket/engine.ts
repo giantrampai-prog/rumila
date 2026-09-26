@@ -6,6 +6,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
+import { sharedAudio, unlockAudio } from "@/lib/audio-unlock";
 import { Cabin } from "./cabin";
 import { Cupola } from "./cupola";
 import { RocketScene, altToY, type RocketPose } from "./scene";
@@ -67,6 +68,7 @@ export class RocketEngine {
   private audio: HTMLAudioElement | null = null;
   private part: MisiAudioPart | null = null;
   private seekTo: number | null = null;
+  private playing = false;
   /* kamera */
   private camPos = new THREE.Vector3(14, 5, 14);
   private camLook = new THREE.Vector3(0, 3, 0);
@@ -158,6 +160,7 @@ export class RocketEngine {
   /* ---------------- mode ---------------- */
 
   setMode(m: RoketMode) {
+    unlockAudio(); // dipanggil dari ketukan tombol
     useRoket.setState({ mode: m, focus: null, finished: false });
     if (m === "terbang") {
       this.snap = true;
@@ -381,7 +384,7 @@ export class RocketEngine {
       this.part = null;
       return false;
     }
-    if (!this.audio) this.audio = new Audio();
+    if (!this.audio) this.audio = sharedAudio("roket");
     const a = this.audio;
     if (part !== this.part) {
       this.part = part;
@@ -392,7 +395,12 @@ export class RocketEngine {
       a.currentTime = this.seekTo;
       this.seekTo = null;
     }
-    if (a.paused && !a.ended) a.play().catch(() => {});
+    if (a.paused && !a.ended && !this.playing) {
+      this.playing = true;
+      a.play()
+        .catch(() => {})
+        .finally(() => (this.playing = false));
+    }
     if (a.readyState < 1) return true;
     const ct = a.currentTime;
     let k = 0;

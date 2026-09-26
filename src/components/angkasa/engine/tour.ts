@@ -13,6 +13,7 @@ import {
   stopAt,
   type TourAudioPart,
 } from "@/lib/angkasa/tourVoice";
+import { sharedAudio } from "@/lib/audio-unlock";
 import type { Body } from "./bodies";
 import type { EngineCtx } from "./core";
 
@@ -294,8 +295,7 @@ export class TourController {
 
   private getAudio() {
     if (!this.audio) {
-      this.audio = new Audio();
-      this.audio.preload = "auto";
+      this.audio = sharedAudio("tour"); // elemen bersama yang sudah dibuka kuncinya (iPad/iPhone)
       this.audio.onerror = () => this.dropPart();
     }
     return this.audio;
@@ -338,7 +338,11 @@ export class TourController {
     }
     if (a.paused && !a.ended && !this.playRequested) {
       this.playRequested = true;
-      a.play().catch(() => this.dropPart());
+      a.play().catch((e: DOMException) => {
+        // Diblokir browser (belum ada ketukan): coba lagi nanti, jangan tandai gagal selamanya.
+        if (e?.name === "NotAllowedError" || e?.name === "AbortError") this.playRequested = false;
+        else this.dropPart();
+      });
     }
     if (a.readyState < 1 || !Number.isFinite(a.duration)) {
       this.voiceWait += dt;
@@ -379,8 +383,7 @@ export class TourController {
   dispose() {
     if (this.audio) {
       this.audio.pause();
-      this.audio.removeAttribute("src");
-      this.audio.load();
+      this.audio.onerror = null;
       this.audio = null;
     }
     const el = this.ctx.renderer.domElement;
