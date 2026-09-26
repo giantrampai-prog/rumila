@@ -2,11 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { FModal } from "@/components/finance/ui";
 import { setPin, signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
 import { accessText } from "@/components/sheets";
-import { Avatar, Card, Icon, RoleBadge, Tile, listRow } from "@/components/ui";
+import { Avatar, Card, Icon, Modal, RoleBadge, Tile, listRow } from "@/components/ui";
 import type { ColorKey } from "@/lib/catalog";
 import { useMe, useRumila, useUI } from "@/lib/store";
 
@@ -157,7 +156,7 @@ function PinModal({ open, onClose, memberId, hasPin }: { open: boolean; onClose:
     }
   };
   return (
-    <FModal open={open} onClose={onClose} title={hasPin ? "Ganti PIN profil" : "Pasang PIN profil"} width={420}>
+    <Modal open={open} onClose={onClose} title={hasPin ? "Ganti PIN profil" : "Pasang PIN profil"} width={420}>
       <p className="text-sm text-ink-3">PIN 4 angka dipakai saat masuk ke profilmu, supaya anak-anak tidak membuka profil orang tua.</p>
       <input
         autoFocus
@@ -181,6 +180,6 @@ function PinModal({ open, onClose, memberId, hasPin }: { open: boolean; onClose:
           Hapus PIN
         </button>
       )}
-    </FModal>
+    </Modal>
   );
 }

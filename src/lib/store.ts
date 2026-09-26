@@ -42,8 +42,8 @@ const SEED_MEMBERS: Member[] = [
 
 // Pola pemakaian demo per anggota: toolId → jumlah buka minggu ini
 const SEED_USAGE: Record<string, Record<string, number>> = {
-  m1: { keuangan0: 14, ibadah0: 11, ibadah1: 10, keuangan3: 9, keluarga0: 8, game1: 6 },
-  m2: { keluarga3: 12, keuangan0: 10, doa7: 8, kesehatan0: 7, keluarga0: 5, keluarga2: 4 },
+  m1: { ibadah0: 11, ibadah1: 10, keluarga0: 8, game1: 6, angkasa6: 5 },
+  m2: { keluarga3: 12, doa7: 8, kesehatan0: 7, keluarga0: 5, keluarga2: 4 },
   m3: { coding0: 22, angkasa0: 14, ibadah1: 12, edukasi0: 9, coding1: 7, game1: 5 },
   m4: { game0: 12, edukasi3: 11, doa1: 10, game6: 8, doa9: 6, edukasi4: 5 },
   m5: { ibadah0: 13, doa0: 8, ibadah3: 6, kesehatan1: 5, keluarga2: 3 },
@@ -244,6 +244,10 @@ interface UIState {
   openSheet: (s: SheetState) => void;
   closeSheet: () => void;
   showToast: (t: string) => void;
+  /** Area orang tua terbuka sampai waktu ini (epoch ms); dikunci lagi otomatis. */
+  parentUntil: number;
+  unlockParent: () => void;
+  lockParent: () => void;
 }
 
 let toastTimer: ReturnType<typeof setTimeout> | undefined;
@@ -255,6 +259,9 @@ export const useUI = create<UIState>()((set) => ({
   setQuery: (query) => set({ query }),
   openSheet: (sheet) => set({ sheet }),
   closeSheet: () => set({ sheet: null }),
+  parentUntil: 0,
+  unlockParent: () => set({ parentUntil: Date.now() + 10 * 60000 }),
+  lockParent: () => set({ parentUntil: 0 }),
   showToast: (toast) => {
     clearTimeout(toastTimer);
     set({ toast });

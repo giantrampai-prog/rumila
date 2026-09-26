@@ -3,6 +3,7 @@
 import { createContext, useContext, type CSSProperties, type ReactNode } from "react";
 import { CAT, PLAY, type ColorKey } from "@/lib/catalog";
 import { initialOf } from "@/lib/format";
+import { useRumila } from "@/lib/store";
 
 export function Icon({
   name,
@@ -173,3 +174,55 @@ export function Segmented<T extends string>({ value, options, onChange }: { valu
 }
 
 export const listRow = "flex w-full items-center gap-3 border-b border-line-soft py-3 text-left last:border-b-0";
+
+/** Modal di tengah layar (desktop) / sheet bawah (mobile). */
+export function Modal({ open, onClose, title, children, width = 520 }: { open: boolean; onClose: () => void; title?: string; children: ReactNode; width?: number }) {
+  const play = useRumila((s) => s.theme) === "playful";
+  if (!open) return null;
+  const ink = play ? "#2b1d4e" : "#0b0b0c";
+  return (
+    <div
+      className="anim-fade fixed inset-0 z-[80] flex items-end justify-center desk:items-center desk:p-5"
+      style={{ background: play ? "rgba(43,29,78,.45)" : "rgba(16,24,40,.45)", backdropFilter: "blur(4px)" }}
+      onClick={onClose}
+      onKeyDown={(e) => e.key === "Escape" && onClose()}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={title}
+        onClick={(e) => e.stopPropagation()}
+        className="anim-sheet grid max-h-[94vh] w-full grid-cols-[minmax(0,1fr)] gap-4 overflow-y-auto rounded-t-[28px] bg-white p-5 desk:rounded-[28px] desk:p-6"
+        style={{
+          maxWidth: width,
+          fontFamily: play ? "var(--ff-nunito), system-ui, sans-serif" : "var(--font-inter), system-ui, sans-serif",
+          color: ink,
+          boxShadow: "0 30px 80px rgba(16,24,40,.35)",
+        }}
+      >
+        {title && (
+          <div className="flex items-center justify-between gap-3">
+            <h2
+              style={{
+                fontFamily: play ? "var(--ff-baloo), system-ui, sans-serif" : "var(--font-inter), system-ui, sans-serif",
+                fontSize: 22,
+                fontWeight: play ? 800 : 700,
+              }}
+            >
+              {title}
+            </h2>
+            <button
+              onClick={onClose}
+              aria-label="Tutup"
+              className="flex size-10 items-center justify-center rounded-xl"
+              style={{ background: play ? "#f5f0fa" : "#f1f2f4", color: ink }}
+            >
+              <Icon name="close" />
+            </button>
+          </div>
+        )}
+        {children}
+      </div>
+    </div>
+  );
+}
