@@ -185,10 +185,10 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
 
   useEffect(() => {
     setFullRoot(appRef.current);
-    useAngkasa.getState().set({ tourCinematic: true });
+    useAngkasa.getState().set({ tourCinematic: true, fx: true });
     return () => {
       setFullRoot(null);
-      useAngkasa.getState().set({ tourCinematic: false });
+      useAngkasa.getState().set({ tourCinematic: false, fx: false });
     };
   }, []);
 
@@ -221,7 +221,7 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   const planet = st.mode === "planet" && st.selectedId;
 
   return (
-    <div ref={appRef} className="ak-app theme-play fixed inset-0 overflow-hidden bg-[#05070f]">
+    <div ref={appRef} className="ak-app ak-kid theme-play fixed inset-0 overflow-hidden bg-[#05070f]">
       <section aria-label="Tampilan 3D" className="absolute inset-0">
         {st.engineStatus === "no-webgl" || st.engineStatus === "context-lost" ? (
           <div className="flex h-full items-center justify-center p-6 text-center text-white" style={{ fontFamily: BALOO, fontSize: 22 }}>

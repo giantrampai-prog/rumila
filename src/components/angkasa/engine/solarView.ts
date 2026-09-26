@@ -10,6 +10,7 @@ import { useAngkasa, type AngkasaState } from "@/lib/angkasa/state";
 import { disposeTree, type EngineCtx, type LabelSpec } from "./core";
 import type { ModeView } from "./views";
 import { TourController } from "./tour";
+import { SolarFx } from "./fx";
 
 const DEG = Math.PI / 180;
 const SYSTEM_IDS = [
@@ -51,6 +52,12 @@ export class SolarView implements ModeView {
   /** Tur terbang (mode "tur"): kamera dikendalikan controller, bukan fokus biasa. */
   tour: TourController | null = null;
   private tourApplied = -1;
+  /** Efek visual tampilan anak (dibuat saat state.fx aktif) */
+  private fx: SolarFx | null = null;
+  private touched = false;
+  private onTouch = () => {
+    this.touched = true;
+  };
 
   start(ctx: EngineCtx) {
     this.ctx = ctx;
@@ -135,6 +142,15 @@ export class SolarView implements ModeView {
 
   update(dt: number, ctx: EngineCtx) {
     this.poseAll();
+    if (useAngkasa.getState().fx && !this.fx) {
+      this.fx = new SolarFx(this.scene, this.bodies, ctx, this.orbits);
+      ctx.renderer.domElement.addEventListener("pointerdown", this.onTouch);
+      ctx.renderer.domElement.addEventListener("wheel", this.onTouch, { passive: true });
+    }
+    if (this.fx) {
+      this.fx.intro(dt, this.camera, this.touched || !!this.focusId || !!this.tour);
+      this.fx.update(dt, this.camera, ctx.clock.days);
+    }
     this.tour?.update(dt);
     for (const o of this.orbits) o.visible = this.showOrbits;
     // Kamera mengikuti objek terfokus yang sedang mengorbit (geser kamera & target sebesar perpindahannya).
@@ -350,6 +366,12 @@ export class SolarView implements ModeView {
   dispose() {
     this.tour?.dispose();
     this.tour = null;
+    if (this.fx) {
+      this.ctx.renderer.domElement.removeEventListener("pointerdown", this.onTouch);
+      this.ctx.renderer.domElement.removeEventListener("wheel", this.onTouch);
+      this.fx.dispose();
+      this.fx = null;
+    }
     for (const [, b] of this.bodies) b.dispose();
     disposeTree(this.scene);
     this.scene.clear();

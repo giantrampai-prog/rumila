@@ -39,7 +39,7 @@ export interface Body {
 
 /* ---------------- tekstur prosedural (deterministik) ---------------- */
 
-function rng(seed: number) {
+export function rng(seed: number) {
   let s = seed >>> 0;
   return () => {
     s = (s * 1664525 + 1013904223) >>> 0;
@@ -47,7 +47,7 @@ function rng(seed: number) {
   };
 }
 
-function canvasTex(
+export function canvasTex(
   w: number,
   h: number,
   draw: (g: CanvasRenderingContext2D, w: number, h: number) => void,
@@ -192,7 +192,7 @@ function patchNightLights(
 }
 
 /** Atmosfer: pendar tepi (fresnel) yang hanya kuat di sisi siang — batas bukan tepi fisik yang tajam. */
-function atmosphereMaterial(
+export function atmosphereMaterial(
   color: THREE.Color,
   sunWorld: { value: THREE.Vector3 },
   strength = 1,

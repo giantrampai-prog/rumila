@@ -308,3 +308,8 @@
   font-size: clamp(18px, 1.9vw, 27px);
   color: #3d2f5c;
 }
+
+/* Tampilan anak: label planet tidak muncul di bawah deretan planet (dock). */
+.ak-kid .ak-labels {
+  clip-path: inset(0 0 150px 0);
+}
