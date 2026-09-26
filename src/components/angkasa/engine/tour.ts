@@ -169,7 +169,7 @@ export class TourController {
     );
     this.travelDur = this.ctx.reducedMotion()
       ? 0
-      : Math.max(2.4, Math.min(7, span / 8));
+      : Math.max(2.4, Math.min(7, span / 8)) * (this.cinematic ? 1.5 : 1);
     this.travelT = 0;
     this.phase = this.travelDur > 0 && span > 0.05 ? "travel" : "dwell";
     this.lookFrom.copy(this.ctx.controls.target);
@@ -215,7 +215,7 @@ export class TourController {
     const stop = TOUR[this.index];
     const center = this.centerOf(stop.id, this.tmp);
     const wide = stop.id === "intro" || stop.id === "outro";
-    const speed = this.ctx.reducedMotion() ? 0 : wide ? 0.035 : 0.09; // rad/detik
+    const speed = this.ctx.reducedMotion() ? 0 : (wide ? 0.035 : 0.09) * (this.cinematic ? 0.5 : 1); // rad/detik
     this.orbitAngle += speed * dt;
     const cam = this.host.camera;
     let r = this.orbitRadius,
@@ -223,8 +223,8 @@ export class TourController {
     if (this.cinematic) {
       // Mendekat pelan selama singgah + melayang naik-turun halus.
       const p = smooth(Math.min(1, this.dwellT / Math.max(4, this.dwellDur)));
-      r *= wide ? 1.04 - 0.08 * p : 1.08 - 0.2 * p;
-      h += Math.sin(this.dwellT * 0.55) * this.orbitRadius * 0.045;
+      r *= wide ? 1.02 - 0.04 * p : 1.05 - 0.1 * p;
+      h += Math.sin(this.dwellT * 0.3) * this.orbitRadius * 0.015;
       this.settleCamera(Math.min(1, dt * 1.5));
     }
     cam.position.set(
@@ -261,10 +261,10 @@ export class TourController {
       if (this.cinematic) {
         // Warp: pandangan melebar saat melesat, kembali normal saat tiba.
         const pulse = Math.sin(Math.PI * k);
-        cam.fov = this.baseFov + 18 * pulse;
+        cam.fov = this.baseFov + 6 * pulse;
         cam.updateProjectionMatrix();
         // Miring ke arah belokan, seperti pesawat.
-        const roll = -this.turn * 0.22 * Math.sin(Math.PI * this.travelT);
+        const roll = -this.turn * 0.06 * Math.sin(Math.PI * this.travelT);
         const dir = look.clone().sub(cam.position).normalize();
         cam.up.set(0, 1, 0).applyAxisAngle(dir, roll).normalize();
       }

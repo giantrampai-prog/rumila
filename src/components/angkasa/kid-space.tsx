@@ -197,10 +197,16 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
     s.init(memberId);
     if (initial?.obj && OBJ.get(initial.obj)) s.select(initial.obj, { mode: "planet", push: false });
     else s.select(null, { mode: "tata-surya" });
-    // Planet langsung bergerak begitu halaman dibuka (orbit + rotasi).
-    s.set({ playing: true, speed: 30, orbitOn: true, spinOn: true });
+    // Planet langsung bergerak begitu halaman dibuka (orbit + rotasi), dengan tempo santai.
+    s.set({ playing: true, speed: 8, orbitOn: true, spinOn: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [memberId]);
+
+  // Tempo kalem: tampilan tata surya 8 hari/detik; saat satu objek dilihat hampir diam
+  // (kamera mengikuti objek, jadi orbit cepat membuat layar ikut berputar & memusingkan).
+  useEffect(() => {
+    useAngkasa.getState().set({ speed: st.mode === "planet" ? 0.5 : 8 });
+  }, [st.mode]);
 
   // Rekaman suara diputar otomatis saat objek dibuka.
   const voiceObj = st.mode === "planet" ? st.selectedId : null;

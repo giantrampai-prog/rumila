@@ -349,7 +349,7 @@ export class SolarFx {
   private time = 0;
   /* intro kamera */
   private introT = 0;
-  private introDur = 4.2;
+  private introDur = 5;
   introDone = false;
 
   constructor(
@@ -434,7 +434,7 @@ export class SolarFx {
     const start = new THREE.Vector3(0, 180, 420);
     const pos = start.lerp(end, k);
     // Sedikit memutar mengelilingi Matahari sambil turun.
-    pos.applyAxisAngle(new THREE.Vector3(0, 1, 0), (1 - k) * 1.3);
+    pos.applyAxisAngle(new THREE.Vector3(0, 1, 0), (1 - k) * 0.35);
     camera.position.copy(pos);
     this.ctx.controls.target.set(0, 0, 0);
     this.ctx.controls.enabled = false;
@@ -450,9 +450,9 @@ export class SolarFx {
     this.stars.mat.uniforms.uTime.value = this.time;
     this.shooting.update(dt, camera);
     if (this.corona) {
-      const p = 1 + Math.sin(this.time * 1.3) * 0.06;
+      const p = 1 + Math.sin(this.time * 0.6) * 0.04;
       this.corona.halo.scale.setScalar(this.bodies.get("sun")!.radius * 8 * p);
-      this.corona.rays.material.rotation = this.time * 0.03;
+      this.corona.rays.material.rotation = this.time * 0.01;
       this.corona.rays.material.opacity = 0.65 + Math.sin(this.time * 0.9) * 0.15;
     }
     // Sabuk asteroid mengorbit pelan (periode ±4,6 tahun, sama arahnya dengan planet).
