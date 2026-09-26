@@ -57,3 +57,6 @@ next-env.d.ts
 # hasil tangkapan layar & keluaran QA lokal (bukan sumber)
 /output/
 /supabase/.temp/
+
+# Isolated fruit module production check
+/.next-fruits-build/

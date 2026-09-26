@@ -21,7 +21,7 @@ const NAV: { href: string; icon: string; label: string; perm?: PermKey }[] = [
 
 /** Izin yang dibutuhkan sebuah route (guard sisi klien; fase Supabase ditambah RLS). */
 function requiredPerm(path: string): PermKey | null {
-  if (path.startsWith("/jelajah-tubuh")) return "edukasi";
+  if (path.startsWith("/jelajah-tubuh") || path.startsWith("/buah-buahan")) return "edukasi";
   if (path.startsWith("/jelajah-angkasa")) return "angkasa";
   if (path.startsWith("/laporan")) return "laporan";
   if (path.startsWith("/finance")) return "finance";
@@ -69,7 +69,7 @@ function Ready({ children }: { children: ReactNode }) {
   const page = allowed ? children : null;
 
   // Modul Finance punya kerangka sendiri (sidebar Keuangan), di desktop maupun mobile.
-  if (path.startsWith("/finance") || path.startsWith("/jelajah-tubuh") || path.startsWith("/jelajah-angkasa"))
+  if (path.startsWith("/buah-buahan") || path.startsWith("/finance") || path.startsWith("/jelajah-tubuh") || path.startsWith("/jelajah-angkasa"))
     return (
       <>
         {page}
@@ -198,6 +198,10 @@ export function useOpenTool() {
   const me = useMe();
   return (t: Tool) => {
     if (!can(me, t.folder)) return;
+    if (t.id === "edukasi-buah") {
+      router.push("/buah-buahan");
+      return;
+    }
     if (t.id === "edukasi6" || t.id === "edukasi2") {
       router.push("/jelajah-tubuh");
       return;

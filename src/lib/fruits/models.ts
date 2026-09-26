@@ -1,6 +1,7 @@
 import * as T from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import type { Fruit } from './catalog';
+import { applyFruitSkin } from './skin';
 
 // Original parametric educational models. Natural fruit colors are independent
 // of the interface theme. No remote model download or renderer per catalogue tile.
@@ -47,29 +48,29 @@ export function createFruitModel(f:Fruit):T.Group {
   const shape=f.shape;
   if(shape==='banana'){
     const curve=new T.CatmullRomCurve3([new T.Vector3(-.75,.85,0),new T.Vector3(-.83,.25,0),new T.Vector3(-.42,-.42,0),new T.Vector3(.35,-.68,0),new T.Vector3(.95,-.4,0)]);
-    const frames=curve.computeFrenetFrames(100,false),v:number[]=[],idx:number[]=[],cs:number[]=[];
+    const frames=curve.computeFrenetFrames(100,false),v:number[]=[],idx:number[]=[],cs:number[]=[],uvs:number[]=[];
     for(let i=0;i<=100;i++){const u=i/100,p=curve.getPointAt(u),r=.05+.24*Math.pow(Math.sin(Math.PI*u),.65);
       for(let j=0;j<=24;j++){const a=j/24*Math.PI*2,rr=r*(1+.025*Math.cos(5*a));const pos=p.clone().addScaledVector(frames.normals[i],Math.cos(a)*rr).addScaledVector(frames.binormals[i],Math.sin(a)*rr);v.push(pos.x,pos.y,pos.z);
-        const cc=color(u<.025||u>.97?'#655134':f.color).multiplyScalar(.9+.09*Math.cos(5*a)+hash(i*31+j)*.04);cs.push(cc.r,cc.g,cc.b);
+        const cc=color(u<.025||u>.97?'#655134':f.color).multiplyScalar(.9+.09*Math.cos(5*a)+hash(i*31+j)*.04);cs.push(cc.r,cc.g,cc.b);uvs.push(j/24,u);
         if(i<100&&j<24){const k=i*25+j;idx.push(k,k+1,k+25,k+1,k+26,k+25);}
       }
     }
-    const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setAttribute('color',new T.Float32BufferAttribute(cs,3));g.setIndex(idx);g.computeVertexNormals();mesh(g,new T.MeshStandardMaterial({vertexColors:true,roughness:.55}),root);
+    const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setAttribute('color',new T.Float32BufferAttribute(cs,3));g.setAttribute('uv',new T.Float32BufferAttribute(uvs,2));g.setIndex(idx);g.computeVertexNormals();const body=mesh(g,new T.MeshStandardMaterial({vertexColors:true,roughness:.55}),root);body.userData.fruitSurface=true;
     ellipsoid(root,new T.Vector3(.058,.058,.058),'#655134',curve.getPoint(0));ellipsoid(root,new T.Vector3(.058,.058,.058),'#655134',curve.getPoint(1));
     tube([curve.getPoint(0),new T.Vector3(-.73,1.03,0)],.046,material('#655134',.85),root);root.rotation.z=-.25;
-    return normalizeModel(root);
+    return normalizeModel(root,f);
   }
   if(shape==='grapes'){
-    for(let row=0;row<5;row++){const count=7-row,radius=.49-row*.07;for(let j=0;j<count;j++){const a=j/count*Math.PI*2+row*.6;const p=new T.Vector3(Math.cos(a)*radius,.65-row*.34,Math.sin(a)*radius);const o=ellipsoid(root,new T.Vector3(.265,.3,.26),f.color,p,.32,32);(o.material as T.MeshStandardMaterial).color.multiplyScalar(.8+hash(row*9+j)*.3);}}
+    for(let row=0;row<5;row++){const count=7-row,radius=.49-row*.07;for(let j=0;j<count;j++){const a=j/count*Math.PI*2+row*.6;const p=new T.Vector3(Math.cos(a)*radius,.65-row*.34,Math.sin(a)*radius);const o=ellipsoid(root,new T.Vector3(.265,.3,.26),f.color,p,.32,32);o.userData.fruitSurface=true;(o.material as T.MeshStandardMaterial).color.multiplyScalar(.8+hash(row*9+j)*.3);}}
     tube([new T.Vector3(0,.45,0),new T.Vector3(.04,1.03,0),new T.Vector3(.3,1.12,0)],.042,material('#6b7140',.8),root);
-    leaf(root,new T.Vector3(.02,.95,0),new T.Vector3(-1,.3,0),.65,.28);return normalizeModel(root);
+    leaf(root,new T.Vector3(.02,.95,0),new T.Vector3(-1,.3,0),.65,.28);return normalizeModel(root,f);
   }
   if(shape==='cherries'){
-    [[-.38,-.14,0],[.4,-.3,.1]].forEach(([x,y,z])=>{ellipsoid(root,new T.Vector3(.44,.42,.42),f.color,new T.Vector3(x,y,z),.24);tube([new T.Vector3(x,y+.35,z),new T.Vector3(x*.9,.95,z),new T.Vector3(.1,1.4,0)],.024,material('#657339'),root);});
-    leaf(root,new T.Vector3(.1,1.36,0),new T.Vector3(.7,.25,0),.5,.15);return normalizeModel(root);
+    [[-.38,-.14,0],[.4,-.3,.1]].forEach(([x,y,z])=>{const body=ellipsoid(root,new T.Vector3(.44,.42,.42),f.color,new T.Vector3(x,y,z),.24);body.userData.fruitSurface=true;tube([new T.Vector3(x,y+.35,z),new T.Vector3(x*.9,.95,z),new T.Vector3(.1,1.4,0)],.024,material('#657339'),root);});
+    leaf(root,new T.Vector3(.1,1.36,0),new T.Vector3(.7,.25,0),.5,.15);return normalizeModel(root,f);
   }
 
-  let s=new T.Vector3(1,1,1);
+  const s=new T.Vector3(1,1,1);
   if(['oval','kiwi','date'].includes(shape))s.set(.77,1.08,.76);
   if(shape==='mango')s.set(.86,1.08,.74);
   if(shape==='pear'||shape==='avocado')s.set(.85,1.12,.85);
@@ -92,11 +93,11 @@ export function createFruitModel(f:Fruit):T.Group {
   const colors:number[]=[],base=color(f.color),accent=color(f.accent);
   for(let i=0;i<p.count;i++){
     const x=p.getX(i),y=p.getY(i),z=p.getZ(i),u=uv.getX(i),v=uv.getY(i),a=Math.atan2(z,x);
-    let radial=1,yy=y,xx=x,zz=z,variation=.92+hash(i*.19)*.065,mix=0;
-    if(shape==='apple'){radial=1+.035*Math.cos(a*5)*(Math.abs(y)**3);yy=y*(.86-.15*Math.abs(y)**10);mix=Math.max(0,Math.sin(a*13+v*6))*.12;}
+    const zz=z;let radial=1,yy=y,xx=x,variation=.92+hash(i*.19)*.065,mix=0;
+    if(shape==='apple'){radial=1+.035*Math.cos(a*5)*(Math.abs(y)**3);yy=y*(.86-.15*Math.abs(y)**10);mix=Math.max(0,Math.sin(a*3+v*6))*.045;}
     if(shape==='mango'){radial=1-.16*y;xx=x+.20*(1-y*y)-.10*y;mix=Math.max(0,y)*.7;}
     if(shape==='pear'||shape==='avocado'){radial=.8-.32*y;yy=y*1.07;}
-    if(shape==='waxapple'){radial=.77-.36*y;yy=y*(1-.14*Math.abs(y)**8);}
+    if(shape==='waxapple'){radial=(f.id==='jambu-bol'?.94:.84)-.29*y;yy=y*(1-(y<0?.32:.12)*Math.abs(y)**6);radial*=1+.025*Math.cos(a*4)*(1-y);}
     if(shape==='salak'){radial=.90-.22*y;yy=y*1.08;const pattern=Math.sin(u*100*Math.PI+Math.floor(v*35)*Math.PI)*Math.sin(v*35*Math.PI);radial+=.013*pattern;mix=pattern>.35?.4:.0;}
     if(shape==='strawberry'){radial=.78+.26*y;yy=y;mix=hash(i*3)>.97?.16:0;}
     if(shape==='starfruit'){radial=.64+.36*Math.cos(a*5);yy=y*1.32;mix=Math.pow(Math.max(0,Math.cos(a*5)),8)*.55;}
@@ -109,7 +110,10 @@ export function createFruitModel(f:Fruit):T.Group {
     if(shape==='gooseberry'){radial=.92+.08*Math.cos(a*7);}
     if(shape==='papaya')mix=Math.max(0,Math.sin(a*5+v*3))*.42;
     if(shape==='date'){radial+=.015*Math.sin(a*38+Math.sin(y*12));variation-=.05*Math.sin(a*38);}
-    if(shape==='coconut')radial+=.022*Math.cos(a*3);
+    if(shape==='coconut')radial+=.045*Math.cos(a*3);
+    if(f.id==='lemon')yy+=Math.sign(y)*.11*Math.abs(y)**14;
+    if(shape==='soursop'){xx+=.13*(1-y*y);radial*=1+.025*Math.sin(a*3+y*4);}
+    if(shape==='guava'||shape==='mango'||shape==='round')radial*=1+.012*Math.sin(a*3+y*4)+.006*Math.cos(a*7-y*2);
     if(shape==='citrus'||shape==='avocado'||shape==='guava'){radial+=(hash(i)-.5)*.004;mix=hash(i*8)>.9?.13:0;}
     if(['oval','round','kiwi'].includes(shape))mix=hash(i*5)>.88?.22:0;
     p.setXYZ(i,xx*radial*s.x,yy*s.y,zz*radial*s.z);
@@ -117,7 +121,7 @@ export function createFruitModel(f:Fruit):T.Group {
   }
   geo.setAttribute('color',new T.Float32BufferAttribute(colors,3));geo.computeVertexNormals();
   const shiny=['apple','waxapple','mangosteen','round','pomegranate','persimmon'].includes(shape);
-  mesh(geo,new T.MeshStandardMaterial({vertexColors:true,roughness:shiny?.35:.64,metalness:0}),root);
+  const body=mesh(geo,new T.MeshStandardMaterial({vertexColors:true,roughness:shiny?.35:.64,metalness:0}),root);body.userData.fruitSurface=true;
 
   if(['durian','jackfruit','soursop','lychee','custard','pineapple'].includes(shape)){
     const count=shape==='durian'?620:shape==='jackfruit'?850:shape==='soursop'?120:shape==='pineapple'?180:shape==='custard'?110:420;
@@ -125,12 +129,22 @@ export function createFruitModel(f:Fruit):T.Group {
     const radius=shape==='durian'?.087:shape==='custard'?.14:shape==='pineapple'?.1:.045;
     const g=shape==='custard'?new T.SphereGeometry(radius,10,8):new T.ConeGeometry(radius,h,shape==='pineapple'?4:6);
     const instances=new T.InstancedMesh(g,material('#ffffff',.76),count),dummy=new T.Object3D();
-    pointsOnSurface(count,s,(pos,n,i)=>{dummy.position.copy(pos).addScaledVector(n,h*.32);dummy.quaternion.setFromUnitVectors(Y,n);dummy.scale.setScalar(.82+hash(i)*.35);dummy.updateMatrix();instances.setMatrixAt(i,dummy.matrix);instances.setColorAt(i,base.clone().lerp(accent,.25+hash(i)*.3));});
+    pointsOnSurface(count,s,(pos,n,i)=>{dummy.position.copy(pos).addScaledVector(n,h*.32);dummy.quaternion.setFromUnitVectors(Y,n);dummy.scale.setScalar(.72+hash(i)*.5);if(shape==='custard')dummy.scale.y*=.34;dummy.updateMatrix();instances.setMatrixAt(i,dummy.matrix);instances.setColorAt(i,base.clone().lerp(accent,.25+hash(i)*.3));});
     instances.castShadow=true;root.add(instances);
   }
   if(shape==='rambutan'){
     const gs:T.BufferGeometry[]=[];
-    pointsOnSurface(400,s,(pos,n,i)=>{const tangent=new T.Vector3(n.y,-n.x,.3).normalize();const curve=new T.CatmullRomCurve3([pos,pos.clone().addScaledVector(n,.13),pos.clone().addScaledVector(n,.24).addScaledVector(tangent,.06+hash(i)*.09)]);const g=new T.TubeGeometry(curve,7,.009,3,false),c:number[]=[];const gp=g.getAttribute('position');for(let k=0;k<gp.count;k++){const shade=base.clone().lerp(accent,k/gp.count);c.push(shade.r,shade.g,shade.b);}g.setAttribute('color',new T.Float32BufferAttribute(c,3));gs.push(g);});
+    pointsOnSurface(400,s,(pos,n,i)=>{
+      const tangent=new T.Vector3(n.y,-n.x,.3+hash(i)*.3).normalize(),length=.18+hash(i*1.7)*.18;
+      const curve=new T.CatmullRomCurve3([pos,pos.clone().addScaledVector(n,length*.55),pos.clone().addScaledVector(n,length).addScaledVector(tangent,.05+hash(i)*.13)]);
+      const g=new T.TubeGeometry(curve,10,.014,4,false),c:number[]=[],gp=g.getAttribute('position');
+      for(let k=0;k<gp.count;k++){
+        const t=Math.floor(k/5)/10,center=curve.getPointAt(t),point=new T.Vector3().fromBufferAttribute(gp,k);
+        point.sub(center).multiplyScalar(.12+.88*Math.pow(1-t,.8)).add(center);gp.setXYZ(k,point.x,point.y,point.z);
+        const shade=base.clone().lerp(accent,Math.pow(t,.65)).multiplyScalar(.88+hash(i)*.12);c.push(shade.r,shade.g,shade.b);
+      }
+      g.setAttribute('color',new T.Float32BufferAttribute(c,3));g.computeVertexNormals();gs.push(g);
+    });
     const joined=mergeGeometries(gs);gs.forEach(g=>g.dispose());mesh(joined,new T.MeshStandardMaterial({vertexColors:true,roughness:.65}),root);
   }
   if(shape==='strawberry'){
@@ -150,14 +164,15 @@ export function createFruitModel(f:Fruit):T.Group {
   }
   if(shape==='waxapple')calyx(root,-.98,4,.16,'#764043');
   if(shape==='coconut')calyx(root,.98,3,.22,'#8e723d');
-  return normalizeModel(root);
+  return normalizeModel(root,f);
 }
-function normalizeModel(root:T.Group) {
+function normalizeModel(root:T.Group,f:Fruit) {
+  applyFruitSkin(root,f);
   const box=new T.Box3().setFromObject(root),size=box.getSize(new T.Vector3()),center=box.getCenter(new T.Vector3());
   const holder=new T.Group();holder.name=root.name;root.position.sub(center);holder.add(root);holder.scale.setScalar(2.6/Math.max(size.x,size.y,size.z));return holder;
 }
 export function disposeFruit(root:T.Object3D) {
-  const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>();
+  const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>();
   root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
-  geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());
+  geometries.forEach(g=>g.dispose());materials.forEach(m=>{const material=m as T.MeshStandardMaterial;for(const t of [material.map,material.bumpMap,material.roughnessMap])if(t)textures.add(t);m.dispose();});textures.forEach(t=>t.dispose());
 }

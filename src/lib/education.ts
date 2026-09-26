@@ -16,7 +16,7 @@ export interface EducationCategory {
 export const EDUCATION_CATEGORIES: EducationCategory[] = [
   { id: 'edukasi-profesi', name: 'Profesi', icon: 'work', g: 'orange', desc: 'Kenali pekerjaan dan orang-orang yang membantu kita.', topics: ['Kesehatan', 'Pendidikan', 'Layanan masyarakat', 'Seni & olahraga', 'Teknologi', 'Pertanian & kelautan'], planned: true },
   { id: 'edukasi-kendaraan', name: 'Kendaraan', icon: 'directions_car', g: 'blue', desc: 'Jelajahi kendaraan darat, air, dan udara.', topics: ['Kendaraan darat', 'Kendaraan air', 'Kendaraan udara', 'Kendaraan khusus'], planned: true },
-  { id: 'edukasi-buah', name: 'Buah-buahan', icon: 'nutrition', g: 'red', desc: 'Kenali nama, bentuk, warna, dan rasa buah.', topics: ['Buah di sekitar kita', 'Buah Nusantara', 'Bentuk & warna', 'Rasa & bagian buah'], planned: true },
+  { id: 'edukasi-buah', name: 'Buah-buahan', icon: 'nutrition', g: 'red', desc: 'Kenali nama, bentuk, warna, dan rasa buah.', topics: ['Buah di sekitar kita', 'Buah Nusantara', 'Bentuk & warna', 'Rasa & bagian buah'], planned: false },
   { id: 'edukasi3', name: 'Hewan', icon: 'pets', g: 'green', desc: 'Temui hewan darat, udara, dan laut.', topics: ['Hewan darat', 'Hewan udara', 'Hewan laut'], keywords: ['Dunia Hewan'], planned: true },
   { id: 'edukasi-negara', name: 'Bendera & Negara', icon: 'flag', g: 'purple', desc: 'Keliling dunia lewat bendera, negara, dan benua.', topics: ['Bendera dunia', 'Negara & ibu kota', 'Benua', 'Tempat terkenal'], planned: true },
   { id: 'edukasi-provinsi', name: 'Provinsi Indonesia', icon: 'map', g: 'teal', desc: 'Jelajahi provinsi dan pulau-pulau di Indonesia.', topics: ['Peta Indonesia', 'Provinsi & ibu kota', 'Pulau-pulau', 'Ciri khas daerah'], planned: true },
