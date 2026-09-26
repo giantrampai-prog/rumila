@@ -8,6 +8,7 @@ import { can, useIsDesktop, useMe, useRumila, useUI, type Member } from "@/lib/s
 import { AppModal } from "./launcher";
 import { Avatar, Icon, RoleBadge, Switch, Tile } from "./ui";
 import { EducationTopics } from './education-topics';
+import { signOutAccount } from "@/lib/supabase/family";
 
 export const accessText = (m: Member) =>
   m.admin ? "Akses penuh" : `${PERMS.filter((p) => can(m, p.key)).length} dari ${PERMS.length} menu`;
@@ -67,6 +68,7 @@ function MembersSheet() {
   const meId = useRumila((s) => s.meId);
   const switchMember = useRumila((s) => s.switchMember);
   const close = useUI((s) => s.closeSheet);
+  const openSheet = useUI((s) => s.openSheet);
   const router = useRouter();
 
   return (
@@ -98,6 +100,21 @@ function MembersSheet() {
             </button>
           );
         })}
+      </div>
+      <div className="flex flex-col gap-1 border-t border-line pt-2">
+        <button onClick={() => openSheet({ kind: "add" })} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-[15px] font-bold">
+          <Icon name="person_add" /> Tambah anggota
+        </button>
+        <button
+          onClick={async () => {
+            close();
+            await signOutAccount();
+            router.replace("/masuk");
+          }}
+          className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-[15px] font-bold text-negative"
+        >
+          <Icon name="logout" /> Keluar akun
+        </button>
       </div>
     </>
   );

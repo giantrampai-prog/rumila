@@ -5,14 +5,13 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { getFolder, type PermKey, type Tool } from "@/lib/catalog";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { can, useHydrated, useMe, useRumila, useUI } from "@/lib/store";
-import { KidFrame, KidHeader, ParentBar, ParentGate, isParentPath } from "./kid";
+import { KidFrame, KidHeader } from "./kid";
 import { SheetHost } from "./sheets";
 
 /** Izin yang dibutuhkan sebuah route (guard sisi klien; fase Supabase ditambah RLS). */
 function requiredPerm(path: string): PermKey | null {
   if (path.startsWith("/jelajah-tubuh") || path.startsWith("/buah-buahan")) return "edukasi";
   if (path.startsWith("/jelajah-angkasa")) return "angkasa";
-  if (path.startsWith("/laporan")) return "laporan";
   const m = path.match(/^\/beranda\/([^/]+)/);
   if (m) return (getFolder(m[1])?.id as PermKey) ?? null;
   return null;
@@ -36,7 +35,6 @@ export function AppShell({ children }: { children: ReactNode }) {
 
 function Ready({ children }: { children: ReactNode }) {
   const me = useMe();
-  const parentOpen = useUI((s) => s.parentUntil) > Date.now();
   const path = usePathname();
   const router = useRouter();
   const showToast = useUI((s) => s.showToast);
@@ -64,21 +62,6 @@ function Ready({ children }: { children: ReactNode }) {
         <Toast />
         <SheetHost />
       </>
-    );
-
-  // Area orang tua (pengaturan & laporan) di balik gerbang hitungan.
-  if (isParentPath(path))
-    return (
-      <KidFrame overlay={<><Toast /><SheetHost /></>}>
-        {parentOpen ? (
-          <div className="mx-auto flex w-full max-w-[760px] flex-col gap-5">
-            <ParentBar />
-            {page}
-          </div>
-        ) : (
-          <ParentGate />
-        )}
-      </KidFrame>
     );
 
   // Tampilan anak: satu kerangka untuk HP, tablet, dan desktop.

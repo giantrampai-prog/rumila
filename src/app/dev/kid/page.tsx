@@ -1,19 +1,18 @@
 "use client";
 
 // Pratinjau KHUSUS DEVELOPMENT untuk tampilan anak tanpa akun (pakai data demo lokal).
-// ?p=beranda | gerbang | <id dunia>. Di produksi halaman ini 404.
+// ?p=beranda | <id dunia>. Di produksi halaman ini 404.
 
 import { notFound, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import Beranda from "@/app/(app)/beranda/page";
-import { KidFrame, KidHeader, ParentGate } from "@/components/kid";
+import { KidFrame, KidHeader } from "@/components/kid";
 import { SheetHost } from "@/components/sheets";
 import { WorldView } from "@/components/world";
 import { getFolder } from "@/lib/catalog";
 
 function Preview() {
   const p = useSearchParams().get("p") ?? "beranda";
-  if (p === "gerbang") return <KidFrame><ParentGate /></KidFrame>;
   return (
     <KidFrame overlay={<SheetHost />}>
       <KidHeader />

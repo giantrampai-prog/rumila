@@ -21,7 +21,7 @@ export const CAT: Record<ColorKey, [string, string, string]> = {
 
 export type FolderKey = "game" | "coding" | "doa" | "ibadah" | "angkasa" | "edukasi" | "keluarga" | "kesehatan";
 
-export type PermKey = FolderKey | "laporan";
+export type PermKey = FolderKey;
 
 export interface Tool {
   id: string;
@@ -207,7 +207,6 @@ export const ALL_TOOLS: Tool[] = FOLDERS.flatMap((f) => f.items);
 
 export const PERMS: { key: PermKey; name: string; icon: string; c: ColorKey }[] = [
   ...FOLDERS.map((f) => ({ key: f.id as PermKey, name: f.name, icon: f.icon, c: f.c })),
-  { key: "laporan", name: "Laporan", icon: "insights", c: "purple" },
 ];
 
 export const ALL_PERMS: PermKey[] = PERMS.map((p) => p.key);

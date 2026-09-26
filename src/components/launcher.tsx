@@ -148,8 +148,6 @@ export function MemberAvatar({ m, size, theme }: { m: Member; size: number; them
 /* ---------------- header ---------------- */
 
 const NAV_BTNS: { href: string; icon: string; label: string; perm?: PermKey }[] = [
-  { href: "/laporan", icon: "insights", label: "Laporan", perm: "laporan" },
-  { href: "/saya", icon: "manage_accounts", label: "Rumah & anggota" },
 ];
 
 export function LauncherHeader() {

@@ -244,10 +244,6 @@ interface UIState {
   openSheet: (s: SheetState) => void;
   closeSheet: () => void;
   showToast: (t: string) => void;
-  /** Area orang tua terbuka sampai waktu ini (epoch ms); dikunci lagi otomatis. */
-  parentUntil: number;
-  unlockParent: () => void;
-  lockParent: () => void;
 }
 
 let toastTimer: ReturnType<typeof setTimeout> | undefined;
@@ -259,9 +255,6 @@ export const useUI = create<UIState>()((set) => ({
   setQuery: (query) => set({ query }),
   openSheet: (sheet) => set({ sheet }),
   closeSheet: () => set({ sheet: null }),
-  parentUntil: 0,
-  unlockParent: () => set({ parentUntil: Date.now() + 10 * 60000 }),
-  lockParent: () => set({ parentUntil: 0 }),
   showToast: (toast) => {
     clearTimeout(toastTimer);
     set({ toast });
