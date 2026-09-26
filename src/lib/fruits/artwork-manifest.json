@@ -1,0 +1,434 @@
+{
+  "pisang": {
+    "src": "/fruits/artwork/gpt-v1/pisang.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/pisang.webp",
+    "alt": "Ilustrasi realistis buah pisang",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-pisang"
+  },
+  "mangga": {
+    "src": "/fruits/artwork/gpt-v1/mangga.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/mangga.webp",
+    "alt": "Ilustrasi realistis buah mangga",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-mangga"
+  },
+  "jeruk": {
+    "src": "/fruits/artwork/gpt-v1/jeruk.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jeruk.webp",
+    "alt": "Ilustrasi realistis buah jeruk",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jeruk"
+  },
+  "apel": {
+    "src": "/fruits/artwork/gpt-v1/apel.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/apel.webp",
+    "alt": "Ilustrasi realistis buah apel",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-apel"
+  },
+  "semangka": {
+    "src": "/fruits/artwork/gpt-v1/semangka.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/semangka.webp",
+    "alt": "Ilustrasi realistis buah semangka",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-semangka"
+  },
+  "melon": {
+    "src": "/fruits/artwork/gpt-v1/melon.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/melon.webp",
+    "alt": "Ilustrasi realistis buah melon",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-melon"
+  },
+  "pepaya": {
+    "src": "/fruits/artwork/gpt-v1/pepaya.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/pepaya.webp",
+    "alt": "Ilustrasi realistis buah pepaya",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-pepaya"
+  },
+  "nanas": {
+    "src": "/fruits/artwork/gpt-v1/nanas.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/nanas.webp",
+    "alt": "Ilustrasi realistis buah nanas",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-nanas"
+  },
+  "anggur": {
+    "src": "/fruits/artwork/gpt-v1/anggur.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/anggur.webp",
+    "alt": "Ilustrasi realistis buah anggur",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-anggur"
+  },
+  "stroberi": {
+    "src": "/fruits/artwork/gpt-v1/stroberi.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/stroberi.webp",
+    "alt": "Ilustrasi realistis buah stroberi",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-stroberi"
+  },
+  "alpukat": {
+    "src": "/fruits/artwork/gpt-v1/alpukat.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/alpukat.webp",
+    "alt": "Ilustrasi realistis buah alpukat",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-alpukat"
+  },
+  "kelapa": {
+    "src": "/fruits/artwork/gpt-v1/kelapa.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/kelapa.webp",
+    "alt": "Ilustrasi realistis buah kelapa",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-kelapa"
+  },
+  "durian": {
+    "src": "/fruits/artwork/gpt-v1/durian.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/durian.webp",
+    "alt": "Ilustrasi realistis buah durian",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-durian"
+  },
+  "rambutan": {
+    "src": "/fruits/artwork/gpt-v1/rambutan.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/rambutan.webp",
+    "alt": "Ilustrasi realistis buah rambutan",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-rambutan"
+  },
+  "manggis": {
+    "src": "/fruits/artwork/gpt-v1/manggis.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/manggis.webp",
+    "alt": "Ilustrasi realistis buah manggis",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-manggis"
+  },
+  "salak": {
+    "src": "/fruits/artwork/gpt-v1/salak.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/salak.webp",
+    "alt": "Ilustrasi realistis buah salak",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-salak"
+  },
+  "duku": {
+    "src": "/fruits/artwork/gpt-v1/duku.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/duku.webp",
+    "alt": "Ilustrasi realistis buah duku",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-duku"
+  },
+  "lengkeng": {
+    "src": "/fruits/artwork/gpt-v1/lengkeng.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/lengkeng.webp",
+    "alt": "Ilustrasi realistis buah lengkeng",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-lengkeng"
+  },
+  "jambu-biji": {
+    "src": "/fruits/artwork/gpt-v1/jambu-biji.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jambu-biji.webp",
+    "alt": "Ilustrasi realistis buah jambu biji",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jambu-biji"
+  },
+  "jambu-air": {
+    "src": "/fruits/artwork/gpt-v1/jambu-air.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jambu-air.webp",
+    "alt": "Ilustrasi realistis buah jambu air",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jambu-air"
+  },
+  "belimbing": {
+    "src": "/fruits/artwork/gpt-v1/belimbing.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/belimbing.webp",
+    "alt": "Ilustrasi realistis buah belimbing",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-belimbing"
+  },
+  "sawo": {
+    "src": "/fruits/artwork/gpt-v1/sawo.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/sawo.webp",
+    "alt": "Ilustrasi realistis buah sawo",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-sawo"
+  },
+  "sirsak": {
+    "src": "/fruits/artwork/gpt-v1/sirsak.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/sirsak.webp",
+    "alt": "Ilustrasi realistis buah sirsak",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-sirsak"
+  },
+  "nangka": {
+    "src": "/fruits/artwork/gpt-v1/nangka.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/nangka.webp",
+    "alt": "Ilustrasi realistis buah nangka",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-nangka"
+  },
+  "buah-naga": {
+    "src": "/fruits/artwork/gpt-v1/buah-naga.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/buah-naga.webp",
+    "alt": "Ilustrasi realistis buah buah naga",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-buah-naga"
+  },
+  "markisa": {
+    "src": "/fruits/artwork/gpt-v1/markisa.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/markisa.webp",
+    "alt": "Ilustrasi realistis buah markisa",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-markisa"
+  },
+  "srikaya": {
+    "src": "/fruits/artwork/gpt-v1/srikaya.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/srikaya.webp",
+    "alt": "Ilustrasi realistis buah srikaya",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-srikaya"
+  },
+  "kedondong": {
+    "src": "/fruits/artwork/gpt-v1/kedondong.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/kedondong.webp",
+    "alt": "Ilustrasi realistis buah kedondong",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-kedondong"
+  },
+  "jeruk-bali": {
+    "src": "/fruits/artwork/gpt-v1/jeruk-bali.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jeruk-bali.webp",
+    "alt": "Ilustrasi realistis buah jeruk bali",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jeruk-bali"
+  },
+  "jeruk-nipis": {
+    "src": "/fruits/artwork/gpt-v1/jeruk-nipis.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jeruk-nipis.webp",
+    "alt": "Ilustrasi realistis buah jeruk nipis",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jeruk-nipis"
+  },
+  "lemon": {
+    "src": "/fruits/artwork/gpt-v1/lemon.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/lemon.webp",
+    "alt": "Ilustrasi realistis buah lemon",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-lemon"
+  },
+  "pir": {
+    "src": "/fruits/artwork/gpt-v1/pir.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/pir.webp",
+    "alt": "Ilustrasi realistis buah pir",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-pir"
+  },
+  "kiwi": {
+    "src": "/fruits/artwork/gpt-v1/kiwi.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/kiwi.webp",
+    "alt": "Ilustrasi realistis buah kiwi",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-kiwi"
+  },
+  "kurma": {
+    "src": "/fruits/artwork/gpt-v1/kurma.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/kurma.webp",
+    "alt": "Ilustrasi realistis buah kurma",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-kurma"
+  },
+  "delima": {
+    "src": "/fruits/artwork/gpt-v1/delima.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/delima.webp",
+    "alt": "Ilustrasi realistis buah delima",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-delima"
+  },
+  "kesemek": {
+    "src": "/fruits/artwork/gpt-v1/kesemek.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/kesemek.webp",
+    "alt": "Ilustrasi realistis buah kesemek",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-kesemek"
+  },
+  "leci": {
+    "src": "/fruits/artwork/gpt-v1/leci.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/leci.webp",
+    "alt": "Ilustrasi realistis buah leci",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-leci"
+  },
+  "plum": {
+    "src": "/fruits/artwork/gpt-v1/plum.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/plum.webp",
+    "alt": "Ilustrasi realistis buah plum",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-plum"
+  },
+  "persik": {
+    "src": "/fruits/artwork/gpt-v1/persik.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/persik.webp",
+    "alt": "Ilustrasi realistis buah persik",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-persik"
+  },
+  "cempedak": {
+    "src": "/fruits/artwork/gpt-v1/cempedak.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/cempedak.webp",
+    "alt": "Ilustrasi realistis buah cempedak",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-cempedak"
+  },
+  "langsat": {
+    "src": "/fruits/artwork/gpt-v1/langsat.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/langsat.webp",
+    "alt": "Ilustrasi realistis buah langsat",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-langsat"
+  },
+  "matoa": {
+    "src": "/fruits/artwork/gpt-v1/matoa.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/matoa.webp",
+    "alt": "Ilustrasi realistis buah matoa",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-matoa"
+  },
+  "blewah": {
+    "src": "/fruits/artwork/gpt-v1/blewah.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/blewah.webp",
+    "alt": "Ilustrasi realistis buah blewah",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-blewah"
+  },
+  "terong-belanda": {
+    "src": "/fruits/artwork/gpt-v1/terong-belanda.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/terong-belanda.webp",
+    "alt": "Ilustrasi realistis buah terong belanda",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-terong-belanda"
+  },
+  "ceri": {
+    "src": "/fruits/artwork/gpt-v1/ceri.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/ceri.webp",
+    "alt": "Ilustrasi realistis buah ceri",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-ceri"
+  },
+  "cermai": {
+    "src": "/fruits/artwork/gpt-v1/cermai.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/cermai.webp",
+    "alt": "Ilustrasi realistis buah cermai",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-cermai"
+  },
+  "jamblang": {
+    "src": "/fruits/artwork/gpt-v1/jamblang.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jamblang.webp",
+    "alt": "Ilustrasi realistis buah jamblang",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jamblang"
+  },
+  "jambu-bol": {
+    "src": "/fruits/artwork/gpt-v1/jambu-bol.webp",
+    "thumb": "/fruits/artwork/gpt-v1/thumbs/jambu-bol.webp",
+    "alt": "Ilustrasi realistis buah jambu bol",
+    "origin": "gpt-image",
+    "width": 1254,
+    "height": 1254,
+    "referenceId": "rumila-fruit-v1-jambu-bol"
+  }
+}

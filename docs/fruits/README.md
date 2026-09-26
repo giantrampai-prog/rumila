@@ -26,14 +26,14 @@ Teks utama bersumber dari `src/lib/fruits/catalog.ts`; sapaan dan ajakan khusus 
 - Model adalah ilustrasi parametrik orisinal untuk pengenalan bentuk, bukan pemindaian fotorealistis. Warna buah alami, terpisah dari warna antarmuka.
 - Bentuk khas meliputi pisang melengkung, rambut rambutan, duri durian, rusuk belimbing, mahkota nanas, sisik buah naga, dan gerombol anggur.
 - Halaman awal katalog penuh: empat kartu per baris di desktop, dua di ponsel/tablet kecil. Pencarian dan filter dipertahankan ketika kembali dari detail.
-- Klik kartu membuka detail dengan tab Putar 3D dan Foto asli. URL `?buah=<id>` dapat dibagikan.
+- Klik kartu membuka detail dengan tab Putar 3D dan Gambar buah. URL `?buah=<id>` dapat dibagikan.
 - Satu renderer hanya pada detail 3D. DPR maksimal 2; geometri dan tekstur lama dilepas saat berganti. Permukaan memakai bump/roughness 1024 px untuk pori, sisik, serat, dan kerutan.
-- 48 foto asli tersimpan lokal; WebP 480 px untuk kartu dan hingga 1280 px untuk detail. Kredit, tautan sumber, dan lisensi per foto tersedia pada detail dan `PHOTO_CREDITS.md`. Thumbnail model PNG dipertahankan untuk fallback WebGL.
+- 48 gambar realistis dibuat khusus dengan GPT Image. Format persegi, latar krem, cahaya studio, buah utuh dan potongan. WebP 512 px untuk kartu dan 1254 px untuk detail, juga digunakan sebagai fallback WebGL. Aset dan prompt dijelaskan di `ARTWORK.md`.
 - Tidak ada putaran otomatis sebelum dipilih pengguna. Render berhenti saat tab tersembunyi. Pengguna masih dapat membaca teks saat WebGL tidak tersedia.
 - Klik kartu atau navigasi buah memulai rekaman otomatis jika tersedia. Membuka tautan langsung tidak memaksa autoplay. Jika browser memblokir autoplay, kontrol Putar tetap tersedia. Rekaman berhenti saat buah/profil/halaman berubah atau tab disembunyikan.
 - Pencarian nama Indonesia, Inggris, serta alias kelengkeng dan duwet. Detail: keterangan, warna kulit dan daging, rasa, biji, fakta, dan narasi.
 
-Regenerasi thumbnail: `node --import tsx scripts/fruits/export-models.ts`, lalu Blender background menjalankan `scripts/fruits/render-thumbnails.py`. GLB perantara masuk `output/fruits/models`, tidak dikirim ke klien. Geometri runtime dan thumbnail berasal dari sumber model yang sama.
+Regenerasi thumbnail: `node --import tsx scripts/fruits/export-models.ts`, lalu Blender background menjalankan `scripts/fruits/render-thumbnails.py`. GLB perantara masuk `output/fruits/models`, tidak dikirim ke klien. Ekspor ini untuk pratinjau geometri; shader kulit runtime belum disertakan pada eksportir GLB. Katalog dan fallback memakai gambar GPT Image, bukan thumbnail ekspor lama.
 
 ## Penyimpanan suara
 
@@ -57,9 +57,9 @@ Belum ada suara Google yang dipasang. Status di aplikasi harus tetap jujur ketik
 
 - `npx vitest run src/lib/fruits/__tests__`: semua model punya koordinat/normal finite, terpusat, ukuran konsisten, dan anggaran kurang dari 100.000 segitiga; validasi signature, ukuran, dan path unggahan.
 - `npx tsc --noEmit` serta ESLint file modul.
-- QA browser: grid empat kolom desktop, dua kolom ponsel, pencarian, pemilihan buah, tab foto asli, tampilan memenuhi viewport, detail cerita, dan unduhan naskah.
+- QA browser: grid empat kolom desktop, dua kolom ponsel, pencarian, pemilihan buah, tab gambar buah, tampilan memenuhi viewport, detail cerita, dan unduhan naskah.
 - Autoplay diverifikasi memakai fixture audio lokal sementara: pemutar berjalan setelah klik buah, lalu berhenti saat kembali ke katalog. Fixture dihapus setelah pemeriksaan.
-- 48 foto detail, 48 thumbnail foto, 48 naskah, dan 48 fallback model diperiksa tersedia dan dapat dibaca.
+- 48 gambar GPT Image, 48 thumbnail, dan 48 naskah diperiksa tersedia. Semua gambar katalog memakai aset lokal khusus Rumila.
 - Unggahan server menunggu penerapan migrasi dan verifikasi sesudah persetujuan.
 
 ## Rujukan isi

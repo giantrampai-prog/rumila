@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FRUITS, FRUIT_BY_ID, FRUIT_GROUPS, FRUIT_SOURCES, fruitMatches, type Fruit } from '@/lib/fruits/catalog';
-import { FRUIT_PHOTOS } from '@/lib/fruits/photos';
+import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { useFruitSession } from '@/lib/fruits/progress';
 import { Avatar, Icon } from '@/components/ui';
 import { useMe, useUI } from '@/lib/store';
@@ -42,37 +42,37 @@ export default function FruitExplorer() {
   </header>
   <div className="fruit-page">
    {fruit?<FruitDetail key={fruit.id} fruit={fruit} admin={me.admin} memberId={me.id} autoPlay={autoPlay} choose={choose}/>:<>
-    <div className="fruit-title-row"><div><div className="fruit-eyebrow"><Icon name="eco" size={18}/>KENALI DUNIA DI SEKITARMU</div><h1>Kebun Buah <span>3D</span></h1><p>Kenali buah aslinya. Putar modelnya. Dengarkan ceritanya!</p></div><div className="fruit-count"><Icon name="nutrition" size={28}/><strong>{FRUITS.length}<small>buah untuk dijelajahi</small></strong></div></div>
+    <div className="fruit-title-row"><div><div className="fruit-eyebrow"><Icon name="eco" size={18}/>KENALI DUNIA DI SEKITARMU</div><h1>Kebun Buah <span>3D</span></h1><p>Kenali buahnya. Putar modelnya. Dengarkan ceritanya!</p></div><div className="fruit-count"><Icon name="nutrition" size={28}/><strong>{FRUITS.length}<small>buah untuk dijelajahi</small></strong></div></div>
     <section aria-label="Katalog buah" className="fruit-catalog">
      <div className="fruit-catalog-toolbar"><div className="fruit-filters" aria-label="Kelompok buah">{FRUIT_GROUPS.map(g=><button key={g.id} aria-pressed={group===g.id} onClick={()=>setGroup(g.id)}>{g.name}</button>)}</div><label className="fruit-search"><Icon name="search" size={22}/><input type="search" aria-label="Cari buah" placeholder="Cari nama buah…" value={query} onChange={e=>setQuery(e.target.value)}/></label></div>
      <div className="fruit-catalog-caption"><h2>Pilih buah, mulai petualangan!</h2><span role="status">{list.length} buah ditemukan</span></div>
      <div className="fruit-catalog-grid">
       {list.map((f,i)=><button key={f.id} id={`fruit-card-${f.id}`} className="fruit-card" onClick={()=>choose(f.id)} aria-label={`Kenali ${f.name}`}>
-       <div className="fruit-card-picture"><Image src={FRUIT_PHOTOS[f.id]?.thumb??`/fruits/thumbs/${f.id}.png`} width={600} height={450} alt={`Buah ${f.name}`} unoptimized priority={i<4}/><span className="fruit-card-3d"><Icon name="view_in_ar" size={16}/>3D</span></div>
+       <div className="fruit-card-picture"><Image src={FRUIT_ARTWORK[f.id].thumb} width={512} height={512} alt={`Buah ${f.name}`} unoptimized priority={i<4}/><span className="fruit-card-3d"><Icon name="view_in_ar" size={16}/>3D</span></div>
        <div className="fruit-card-copy"><div><h3>{f.name}</h3><p>{f.english}</p></div><span className="fruit-card-arrow"><Icon name="arrow_forward" size={22}/></span></div>
       </button>)}
      </div>
      {!list.length&&<div className="fruit-no-results"><Icon name="search_off" size={40}/><h3>Buahnya belum ketemu.</h3><p>Coba nama yang lain atau lihat semua buah.</p><button className="fruit-button" onClick={()=>{setQuery('');setGroup('all');}}>Lihat semua buah</button></div>}
     </section>
    </>}
-   <footer className="fruit-footer"><details><summary>Sumber belajar</summary>{FRUIT_SOURCES.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.name}<Icon name="open_in_new" size={15}/></a>)}<p>Kredit foto tercantum pada detail masing-masing buah.</p></details>{me.admin&&<details className="fruit-recording-kit"><summary><Icon name="mic" size={18}/>Naskah & rekaman suara</summary><p>48 naskah buah, pembuka, dan penutup. Rekaman dapat ditambahkan satu per satu setelah dibuat.</p><div><a href="/fruits/narasi/paket-narasi-buah.zip" download>Unduh paket lengkap ZIP</a><a href="/fruits/narasi/narasi-buah.txt" download>Unduh semua naskah TXT</a><a href="/fruits/narasi/narasi-buah.csv" download>Unduh CSV</a><a href="/fruits/narasi/panduan-suara.txt" download>Panduan suara</a></div></details>}</footer>
+   <footer className="fruit-footer"><details><summary>Sumber belajar</summary>{FRUIT_SOURCES.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.name}<Icon name="open_in_new" size={15}/></a>)}<p>Gambar buah dibuat khusus untuk Rumila dengan GPT Image.</p></details>{me.admin&&<details className="fruit-recording-kit"><summary><Icon name="mic" size={18}/>Naskah & rekaman suara</summary><p>48 naskah buah, pembuka, dan penutup. Rekaman dapat ditambahkan satu per satu setelah dibuat.</p><div><a href="/fruits/narasi/paket-narasi-buah.zip" download>Unduh paket lengkap ZIP</a><a href="/fruits/narasi/narasi-buah.txt" download>Unduh semua naskah TXT</a><a href="/fruits/narasi/narasi-buah.csv" download>Unduh CSV</a><a href="/fruits/narasi/panduan-suara.txt" download>Panduan suara</a></div></details>}</footer>
   </div>
  </main>;
 }
 function FruitDetail({fruit,admin,memberId,autoPlay,choose}:{fruit:Fruit;admin:boolean;memberId:string;autoPlay:boolean;choose:(id:string)=>void}) {
  const [view,setView]=useState<'3d'|'photo'>('3d'),heading=useRef<HTMLHeadingElement>(null);
- const index=FRUITS.findIndex(f=>f.id===fruit.id),previous=FRUITS[(index-1+FRUITS.length)%FRUITS.length],next=FRUITS[(index+1)%FRUITS.length],photo=FRUIT_PHOTOS[fruit.id];
+ const index=FRUITS.findIndex(f=>f.id===fruit.id),previous=FRUITS[(index-1+FRUITS.length)%FRUITS.length],next=FRUITS[(index+1)%FRUITS.length],photo=FRUIT_ARTWORK[fruit.id];
  useEffect(()=>{heading.current?.focus({preventScroll:true});},[]);
  return <>
   <div className="fruit-detail-heading"><div><span className="fruit-eyebrow">BUAH {String(index+1).padStart(2,'0')} DARI {FRUITS.length}</span><h1 tabIndex={-1} ref={heading}>{fruit.name}</h1><p>{fruit.english}</p></div><button className="fruit-surprise" onClick={()=>{const others=FRUITS.filter(f=>f.id!==fruit.id);choose(others[Math.floor(Math.random()*others.length)].id);}}><Icon name="shuffle" size={21}/>Pilihkan aku</button></div>
   <div className="fruit-detail-layout">
    <section className="fruit-detail-media" aria-label={`Galeri ${fruit.name}`}>
-    <div className="fruit-media-tabs" role="tablist" aria-label="Pilih tampilan buah" onKeyDown={e=>{if(["ArrowLeft","ArrowRight","Home","End"].includes(e.key)){e.preventDefault();const next=e.key==="Home"?"3d":e.key==="End"?"photo":view==="3d"?"photo":"3d";setView(next);document.getElementById(`fruit-tab-${next}`)?.focus();}}}><button id="fruit-tab-3d" role="tab" tabIndex={view==='3d'?0:-1} aria-selected={view==='3d'} aria-controls="fruit-media-panel" onClick={()=>setView('3d')}><Icon name="view_in_ar" size={22}/>Putar 3D</button><button id="fruit-tab-photo" role="tab" tabIndex={view==='photo'?0:-1} aria-selected={view==='photo'} aria-controls="fruit-media-panel" onClick={()=>setView('photo')}><Icon name="photo_camera" size={22}/>Foto asli</button></div>
+    <div className="fruit-media-tabs" role="tablist" aria-label="Pilih tampilan buah" onKeyDown={e=>{if(["ArrowLeft","ArrowRight","Home","End"].includes(e.key)){e.preventDefault();const next=e.key==="Home"?"3d":e.key==="End"?"photo":view==="3d"?"photo":"3d";setView(next);document.getElementById(`fruit-tab-${next}`)?.focus();}}}><button id="fruit-tab-3d" role="tab" tabIndex={view==='3d'?0:-1} aria-selected={view==='3d'} aria-controls="fruit-media-panel" onClick={()=>setView('3d')}><Icon name="view_in_ar" size={22}/>Putar 3D</button><button id="fruit-tab-photo" role="tab" tabIndex={view==='photo'?0:-1} aria-selected={view==='photo'} aria-controls="fruit-media-panel" onClick={()=>setView('photo')}><Icon name="photo_camera" size={22}/>Gambar buah</button></div>
     <div id="fruit-media-panel" role="tabpanel" aria-labelledby={`fruit-tab-${view}`}>
-     {view==='3d'?<Viewer fruit={fruit}/>:<figure className="fruit-photo-stage">{photo?<Image src={photo.src} alt={photo.alt} width={1280} height={960} unoptimized priority/>:<p>Foto buah sedang disiapkan.</p>}</figure>}
+     {view==='3d'?<Viewer fruit={fruit}/>:<figure className="fruit-photo-stage">{photo?<Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} unoptimized priority/>:<p>Gambar buah sedang disiapkan.</p>}</figure>}
     </div>
-    <p className="fruit-model-note">{view==='3d'?'Model 3D untuk mengenali bentuk. Foto asli memperlihatkan buah di dunia nyata.':'Warna, ukuran, dan bentuk buah bisa berbeda menurut jenis serta kematangannya.'}</p>
-    {photo&&<details className="fruit-photo-credit"><summary>Kredit foto {fruit.name}</summary><p>Foto: {photo.author}. <a href={photo.licenseUrl} target="_blank" rel="noreferrer">{photo.license}</a>. <a href={photo.source} target="_blank" rel="noreferrer">Lihat foto sumber</a>. Ukuran dan format foto dioptimalkan untuk aplikasi.</p></details>}
+    <p className="fruit-model-note">{view==='3d'?'Putar dan amati buah utuhnya. Bentuk dan warnanya mengacu pada gambar buah Rumila.':'Gambar realistis khusus Rumila. Buah utuh dan potongannya membantu kita mengenal bagian dalamnya.'}</p>
+    {photo&&<details className="fruit-photo-credit"><summary>Tentang gambar {fruit.name}</summary><p>Ilustrasi realistis yang dibuat dengan GPT Image khusus untuk Rumila. Model 3D mengikuti jenis, bentuk, dan warna buah pada gambar. Bentuk serta warna buah di alam dapat bervariasi.</p></details>}
     <div className="fruit-pagination"><button className="fruit-button" onClick={()=>choose(previous.id)} aria-label={`Buah sebelumnya: ${previous.name}`}><Icon name="chevron_left"/>{previous.name}</button><span>Jelajahi buah lainnya</span><button className="fruit-button" onClick={()=>choose(next.id)} aria-label={`Buah berikutnya: ${next.name}`}>{next.name}<Icon name="chevron_right"/></button></div>
    </section>
    <aside className="fruit-info" aria-label={`Tentang ${fruit.name}`}>

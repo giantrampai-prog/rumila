@@ -2,6 +2,7 @@ import * as T from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import type { Fruit } from './catalog';
 import { applyFruitSkin } from './skin';
+import { fruitReferenceLook } from './reference-look';
 
 // Original parametric educational models. Natural fruit colors are independent
 // of the interface theme. No remote model download or renderer per catalogue tile.
@@ -44,6 +45,7 @@ function calyx(parent:T.Group,y:number,count=5,size=.36,hex='#50743b') {
 }
 
 export function createFruitModel(f:Fruit):T.Group {
+  f=fruitReferenceLook(f);
   const root=new T.Group();root.name=`fruit_${f.id}`;
   const shape=f.shape;
   if(shape==='banana'){
@@ -63,11 +65,11 @@ export function createFruitModel(f:Fruit):T.Group {
   if(shape==='grapes'){
     for(let row=0;row<5;row++){const count=7-row,radius=.49-row*.07;for(let j=0;j<count;j++){const a=j/count*Math.PI*2+row*.6;const p=new T.Vector3(Math.cos(a)*radius,.65-row*.34,Math.sin(a)*radius);const o=ellipsoid(root,new T.Vector3(.265,.3,.26),f.color,p,.32,32);o.userData.fruitSurface=true;(o.material as T.MeshStandardMaterial).color.multiplyScalar(.8+hash(row*9+j)*.3);}}
     tube([new T.Vector3(0,.45,0),new T.Vector3(.04,1.03,0),new T.Vector3(.3,1.12,0)],.042,material('#6b7140',.8),root);
-    leaf(root,new T.Vector3(.02,.95,0),new T.Vector3(-1,.3,0),.65,.28);return normalizeModel(root,f);
+    return normalizeModel(root,f);
   }
   if(shape==='cherries'){
     [[-.38,-.14,0],[.4,-.3,.1]].forEach(([x,y,z])=>{const body=ellipsoid(root,new T.Vector3(.44,.42,.42),f.color,new T.Vector3(x,y,z),.24);body.userData.fruitSurface=true;tube([new T.Vector3(x,y+.35,z),new T.Vector3(x*.9,.95,z),new T.Vector3(.1,1.4,0)],.024,material('#657339'),root);});
-    leaf(root,new T.Vector3(.1,1.36,0),new T.Vector3(.7,.25,0),.5,.15);return normalizeModel(root,f);
+    return normalizeModel(root,f);
   }
 
   const s=new T.Vector3(1,1,1);
@@ -83,11 +85,14 @@ export function createFruitModel(f:Fruit):T.Group {
   if(shape==='salak')s.set(.81,1.05,.8);
   if(shape==='strawberry')s.set(.8,.99,.8);
   if(shape==='waxapple')s.set(.89,1.02,.88);
+  if(shape==='coconut')s.set(.94,1.02,.9);
   if(shape==='dragonfruit')s.set(.85,1.0,.8);
   if(shape==='persimmon'||shape==='mangosteen')s.set(1,.83,1);
   if(shape==='gooseberry')s.set(1,.78,1);
   if(f.id==='cempedak')s.set(.72,1.4,.72);
   if(f.id==='jeruk-bali')s.set(1,1.05,1);
+  if(f.id==='plum')s.set(.94,1,.91);
+  if(f.id==='blewah')s.set(.87,1.15,.86);
   if(f.id==='jambu-bol')s.set(.93,1.0,.9);
   const geo=new T.SphereGeometry(1,128,96),p=geo.getAttribute('position'),uv=geo.getAttribute('uv');
   const colors:number[]=[],base=color(f.color),accent=color(f.accent);
@@ -97,6 +102,7 @@ export function createFruitModel(f:Fruit):T.Group {
     if(shape==='apple'){radial=1+.035*Math.cos(a*5)*(Math.abs(y)**3);yy=y*(.86-.15*Math.abs(y)**10);mix=Math.max(0,Math.sin(a*3+v*6))*.045;}
     if(shape==='mango'){radial=1-.16*y;xx=x+.20*(1-y*y)-.10*y;mix=Math.max(0,y)*.7;}
     if(shape==='pear'||shape==='avocado'){radial=.8-.32*y;yy=y*1.07;}
+    if(f.id==='jeruk-bali'){radial=1-.13*y;yy=y;}
     if(shape==='waxapple'){radial=(f.id==='jambu-bol'?.94:.84)-.29*y;yy=y*(1-(y<0?.32:.12)*Math.abs(y)**6);radial*=1+.025*Math.cos(a*4)*(1-y);}
     if(shape==='salak'){radial=.90-.22*y;yy=y*1.08;const pattern=Math.sin(u*100*Math.PI+Math.floor(v*35)*Math.PI)*Math.sin(v*35*Math.PI);radial+=.013*pattern;mix=pattern>.35?.4:.0;}
     if(shape==='strawberry'){radial=.78+.26*y;yy=y;mix=hash(i*3)>.97?.16:0;}
@@ -124,12 +130,15 @@ export function createFruitModel(f:Fruit):T.Group {
   const body=mesh(geo,new T.MeshStandardMaterial({vertexColors:true,roughness:shiny?.35:.64,metalness:0}),root);body.userData.fruitSurface=true;
 
   if(['durian','jackfruit','soursop','lychee','custard','pineapple'].includes(shape)){
-    const count=shape==='durian'?620:shape==='jackfruit'?850:shape==='soursop'?120:shape==='pineapple'?180:shape==='custard'?110:420;
-    const h=shape==='durian'?.17:shape==='soursop'?.11:shape==='custard'?.085:shape==='pineapple'?.04:.036;
-    const radius=shape==='durian'?.087:shape==='custard'?.14:shape==='pineapple'?.1:.045;
-    const g=shape==='custard'?new T.SphereGeometry(radius,10,8):new T.ConeGeometry(radius,h,shape==='pineapple'?4:6);
-    const instances=new T.InstancedMesh(g,material('#ffffff',.76),count),dummy=new T.Object3D();
-    pointsOnSurface(count,s,(pos,n,i)=>{dummy.position.copy(pos).addScaledVector(n,h*.32);dummy.quaternion.setFromUnitVectors(Y,n);dummy.scale.setScalar(.72+hash(i)*.5);if(shape==='custard')dummy.scale.y*=.34;dummy.updateMatrix();instances.setMatrixAt(i,dummy.matrix);instances.setColorAt(i,base.clone().lerp(accent,.25+hash(i)*.3));});
+    const count=shape==='durian'?620:shape==='jackfruit'?1350:shape==='soursop'?120:shape==='pineapple'?180:shape==='custard'?110:420;
+    const h=shape==='durian'?.15:shape==='jackfruit'?.06:shape==='soursop'?.11:shape==='custard'?.085:shape==='pineapple'?.04:.036;
+    const radius=shape==='durian'?.082:shape==='jackfruit'?.063:shape==='custard'?.14:shape==='pineapple'?.1:.045;
+    const g=shape==='custard'||shape==='lychee'?new T.SphereGeometry(radius,10,8):new T.ConeGeometry(radius,h,shape==='pineapple'?4:6,3);
+    const gp=g.getAttribute('position'),tints:number[]=[];
+    for(let i=0;i<gp.count;i++){const tip=T.MathUtils.clamp(gp.getY(i)/h+.5,0,1),shade=.82+.17*hash(i)+.04*(1-tip);tints.push(shade,shade,shade);if(shape==='durian'||shape==='soursop')gp.setX(i,gp.getX(i)+tip*tip*radius*.22);}
+    g.setAttribute('color',new T.Float32BufferAttribute(tints,3));g.computeVertexNormals();
+    const instances=new T.InstancedMesh(g,new T.MeshStandardMaterial({vertexColors:true,color:'#ffffff',roughness:.88}),count),dummy=new T.Object3D();
+    pointsOnSurface(count,s,(pos,n,i)=>{n.add(new T.Vector3(hash(i*3)-.5,hash(i*3+1)-.5,hash(i*3+2)-.5).multiplyScalar(.035)).normalize();pos.copy(n).multiply(s);if(shape==='soursop'){const a=Math.atan2(n.z,n.x),r=1+.025*Math.sin(a*3+n.y*4);pos.x=(n.x+.13*(1-n.y*n.y))*r*s.x;pos.z*=r;}dummy.position.copy(pos).addScaledVector(n,h*.32);dummy.quaternion.setFromUnitVectors(Y,n);dummy.scale.setScalar(.72+hash(i)*.5);if(shape==='durian'||shape==='soursop')dummy.scale.y*=.8+hash(i*7)*.45;if(shape==='custard')dummy.scale.y*=.34;dummy.updateMatrix();instances.setMatrixAt(i,dummy.matrix);instances.setColorAt(i,base.clone().lerp(accent,.10+hash(i)*.3));});
     instances.castShadow=true;root.add(instances);
   }
   if(shape==='rambutan'){
@@ -155,24 +164,41 @@ export function createFruitModel(f:Fruit):T.Group {
   } else if(shape==='dragonfruit'){
     for(let row=0;row<4;row++)for(let i=0;i<6;i++){const a=i/6*Math.PI*2+row*.6,y=-.65+row*.4,r=Math.sqrt(1-y*y);leaf(root,new T.Vector3(Math.cos(a)*s.x*r,y,Math.sin(a)*s.z*r),new T.Vector3(Math.cos(a)*.75,.9,Math.sin(a)*.75),.44,.105,'#92aa49',f.color);}
     calyx(root,.97,5,.37,'#8f9b45');
-  } else if(shape==='mangosteen') {calyx(root,.79,4,.48);stem(root,.84,.65);}
+  } else if(shape==='mangosteen') {
+    for(let i=0;i<4;i++){const a=i*Math.PI/2;const pad=ellipsoid(root,new T.Vector3(.24,.10,.34),'#657142',new T.Vector3(Math.cos(a)*.22,.80,Math.sin(a)*.22),.78,32);pad.rotation.y=Math.PI/2-a;}
+    stem(root,.84,.45);
+  }
   else if(shape==='pomegranate'){const crown=new T.CylinderGeometry(.14,.12,.21,7,1,true);const o=mesh(crown,material('#956339',.75),root);o.position.y=1.03;calyx(root,1.1,6,.16,'#a47947');}
   else if(shape==='persimmon')calyx(root,.80,4,.49,'#68733a');
   else if(!['salak','kiwi','date','coconut','waxapple'].includes(shape)){
-    stem(root,s.y*(shape==='apple'?.72:1),['durian','jackfruit'].includes(shape)?1.4:.75);
-    if(['apple','mango','pear','citrus','guava','peach'].includes(shape))leaf(root,new T.Vector3(.03,s.y*.99,0),new T.Vector3(.8,.18,.12),.52,.16);
+    stem(root,s.y*(shape==='apple'?.72:1),['durian','jackfruit'].includes(shape)?1.05:(shape==='citrus'||f.id==='jeruk-bali'||f.id==='lemon')?.18:['guava','mango','melon'].includes(shape)?.35:.65);
   }
   if(shape==='waxapple')calyx(root,-.98,4,.16,'#764043');
-  if(shape==='coconut')calyx(root,.98,3,.22,'#8e723d');
+  if(shape==='coconut'){
+    for(const [x,y] of [[-.15,.23],[.15,.23],[0,.01]]){const z=Math.sqrt(1-(x/s.x)**2-(y/s.y)**2)*s.z+.009;ellipsoid(root,new T.Vector3(.053,.068,.015),'#4b2c17',new T.Vector3(x,y,z),.95,24);}
+  }
+  if(shape==='kiwi'||shape==='coconut'){
+    // Actual short fibers catch the silhouette, while the skin map supplies fine grain.
+    const vertices:number[]=[],shades:number[]=[];
+    pointsOnSurface(shape==='kiwi'?4200:2200,s,(pos,n,i)=>{
+      if(shape==='coconut'){const a=Math.atan2(n.z,n.x),r=1+.045*Math.cos(a*3);pos.x*=r;pos.z*=r;}
+      const direction=n.clone().multiplyScalar(shape==='kiwi'?.018:.04).add(new T.Vector3(n.y,-n.x,n.z*.2).multiplyScalar(shape==='kiwi'?.006:.045));
+      const end=pos.clone().addScaledVector(direction,.4+hash(i)*.8);
+      vertices.push(pos.x,pos.y,pos.z,end.x,end.y,end.z);
+      const tint=base.clone().lerp(accent,.35+hash(i)*.5);shades.push(tint.r,tint.g,tint.b,tint.r,tint.g,tint.b);
+    });
+    const fibers=new T.BufferGeometry();fibers.setAttribute('position',new T.Float32BufferAttribute(vertices,3));fibers.setAttribute('color',new T.Float32BufferAttribute(shades,3));
+    root.add(new T.LineSegments(fibers,new T.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.58})));
+  }
   return normalizeModel(root,f);
 }
 function normalizeModel(root:T.Group,f:Fruit) {
   applyFruitSkin(root,f);
   const box=new T.Box3().setFromObject(root),size=box.getSize(new T.Vector3()),center=box.getCenter(new T.Vector3());
-  const holder=new T.Group();holder.name=root.name;root.position.sub(center);holder.add(root);holder.scale.setScalar(2.6/Math.max(size.x,size.y,size.z));return holder;
+  const holder=new T.Group();holder.name=root.name;holder.userData.referenceId=`rumila-fruit-v1-${f.id}`;holder.userData.representation='parametric-whole-fruit';root.position.sub(center);holder.add(root);holder.scale.setScalar(2.6/Math.max(size.x,size.y,size.z));return holder;
 }
 export function disposeFruit(root:T.Object3D) {
   const geometries=new Set<T.BufferGeometry>(),materials=new Set<T.Material>(),textures=new Set<T.Texture>();
-  root.traverse(o=>{if(o instanceof T.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
+  root.traverse(o=>{if(o instanceof T.Mesh||o instanceof T.LineSegments){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});
   geometries.forEach(g=>g.dispose());materials.forEach(m=>{const material=m as T.MeshStandardMaterial;for(const t of [material.map,material.bumpMap,material.roughnessMap])if(t)textures.add(t);m.dispose();});textures.forEach(t=>t.dispose());
 }
