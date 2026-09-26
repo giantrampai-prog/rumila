@@ -20,3 +20,8 @@
 .anatomy-organ-dock{max-height:calc(100% - 180px);overflow-y:auto;padding:4px 8px 8px 4px;scrollbar-width:thin;scrollbar-color:#CDBBE6 transparent}.anatomy-organ-dock button{min-height:44px;flex-shrink:0}.anatomy-organ-dock button:nth-child(n+9)>span{background:linear-gradient(150deg,#FFB347,#FF7A1A);box-shadow:0 4px 0 #D95A00}
 
 .anatomy-inset-note{position:absolute;left:50%;transform:translateX(-50%);bottom:102px;z-index:3;background:#fff8e7;border:1px solid #e9cc99;padding:6px 12px;border-radius:20px;font-size:10px;color:#705225;white-space:nowrap}
+
+/* Tampilan anak: 3D penuh layar, tanpa penanda arah */
+.anatomy-kid .anatomy-canvas,.anatomy-kid .anatomy-labels{inset:0}
+.anatomy-kid .anatomy-orientation{display:none}
+.anatomy-kid .anatomy-label{font-family:var(--ff-baloo),sans-serif;font-size:14px!important}

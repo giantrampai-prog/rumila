@@ -4,6 +4,7 @@
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Explorer } from "@/components/anatomy/explorer";
+import { KidBody } from "@/components/anatomy/kid-body";
 import { validateManifest } from "@/lib/anatomy/state";
 import type { Manifest } from "@/lib/anatomy/types";
 import "@/components/anatomy/anatomy.css";
@@ -19,5 +20,7 @@ export default function DevTubuh() {
   }, []);
   if (process.env.NODE_ENV !== "development") notFound();
   if (!manifest) return <p style={{ padding: 24 }}>Memuat katalog…</p>;
-  return <Explorer manifest={manifest} memberId="dev-preview" />;
+  // Default: tampilan anak (sama dengan aplikasi). ?lengkap=1 untuk Explorer lengkap.
+  if (new URLSearchParams(location.search).get("lengkap")) return <Explorer manifest={manifest} memberId="dev-preview" />;
+  return <KidBody manifest={manifest} memberId="dev-preview" />;
 }
