@@ -110,7 +110,13 @@ export function povBody() {
     cuff.rotation.x = Math.PI / 2;
     const palm = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.03, 0.1), grey);
     palm.position.z = 0.07;
-    hand.add(cuff, palm);
+    // lengan baju: menyambung dari sarung tangan ke bahu (keluar layar) — tangan tidak melayang terpisah
+    const sleeve = new THREE.Mesh(new THREE.CapsuleGeometry(0.058, 0.55, 6, 14), suit);
+    sleeve.rotation.x = Math.PI / 2;
+    sleeve.position.set(0, -0.02, -0.33);
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.012, 6, 18), grey);
+    ring.position.z = -0.06;
+    hand.add(cuff, palm, sleeve, ring);
     for (let k = 0; k < 4; k++) {
       const fg = new THREE.Mesh(new THREE.CapsuleGeometry(0.011, 0.04, 3, 6), grey);
       fg.rotation.x = Math.PI / 2;
@@ -136,7 +142,7 @@ export function povBody() {
       hands.forEach((hand, i) => {
         const sx = i ? 1 : -1;
         // duduk: tangan di atas lutut; melayang: tangan terangkat ke depan (seperti menyapa)
-        hand.position.set(sx * (0.2 + f * 0.05), -0.2 - sink + f * (0.2 + Math.sin(t * 0.7 + i) * 0.04), 0.18 + f * 0.08);
+        hand.position.set(sx * (0.34 - f * 0.1), -0.34 - sink + f * (0.32 + Math.sin(t * 0.7 + i) * 0.04), 0.14 + f * 0.1);
         hand.rotation.set(-0.2 - f * 0.9, 0, sx * f * Math.sin(t * 0.6) * 0.3);
       });
     },
@@ -218,18 +224,18 @@ export class Cabin {
       const post = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.96, 0.04), frameMat);
       const r = r0 + ((r1 - r0) * 2.5) / rows;
       post.position.set(Math.sin(a) * r, y0 + ((y1 - y0) * 2.5) / rows, Math.cos(a) * r);
-      post.rotation.set(0.35, a, 0);
+      post.rotation.set(-Math.atan((r0 - r1) / (y1 - y0)), a, 0); // ikut kemiringan dinding
       s.add(post);
     }
     // Konsol & layar di bawah jendela
     const consoleMat = new THREE.MeshStandardMaterial({ color: 0x3a4252, roughness: 0.6, metalness: 0.3 });
     const desk = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.06, 0.34), consoleMat);
-    desk.position.set(0, -0.2, 0.7);
+    desk.position.set(0, -0.44, 0.66);
     desk.rotation.set(-0.5, 0, 0);
     s.add(desk);
     for (let k = 0; k < 3; k++) {
       const sc = new Screen(0.3, 0.19);
-      sc.mesh.position.set(-0.3 + k * 0.3, -0.13, 0.66 - Math.abs(k - 1) * 0.05);
+      sc.mesh.position.set(-0.3 + k * 0.3, -0.36, 0.62 - Math.abs(k - 1) * 0.05);
       sc.mesh.lookAt(0, 0.14, -0.22); // menghadap mata astronaut
       s.add(sc.mesh);
       this.screens.push(sc);
@@ -240,7 +246,7 @@ export class Cabin {
     const colors = [0xff5a4e, 0xffbe0b, 0x3ddc84, 0x2f86ff];
     for (let k = 0; k < 16; k++) {
       const b = new THREE.Mesh(btnGeo, new THREE.MeshStandardMaterial({ color: colors[k % 4], emissive: colors[k % 4], emissiveIntensity: 0.4 }));
-      b.position.set(-0.42 + (k % 8) * 0.12, -0.26 - Math.floor(k / 8) * 0.04, 0.6 + Math.floor(k / 8) * 0.03);
+      b.position.set(-0.42 + (k % 8) * 0.12, -0.5 - Math.floor(k / 8) * 0.04, 0.56 + Math.floor(k / 8) * 0.03);
       s.add(b);
     }
     // Tiga kursi (astronaut di kursi tengah)
@@ -285,7 +291,7 @@ export class Cabin {
     s.add(lamp, new THREE.AmbientLight(0xb8c6de, 0.55), new THREE.HemisphereLight(0xdfe9ff, 0x3a3f4a, 0.35));
     // Kamera: di belakang-kanan kepala astronaut, menatap konsol & jendela
     this.camera.position.set(0, 0.14, -0.22);
-    this.camera.lookAt(0, 0.1, 0.9);
+    this.camera.lookAt(0, 0.02, 0.9);
   }
 
   resize(aspect: number) {

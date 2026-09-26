@@ -327,8 +327,9 @@ export class RocketEngine {
         return;
       case "eksosfer":
         // menatap ke atas dari dekat stasiun: satelit-satelit di eksosfer
-        out.pos.set(Math.cos(a) * 14, Y + 8, Math.sin(a) * 14);
-        out.look.set(0, Y + 55, 0);
+        // dari samping stasiun: stasiun & satelit dengan garis Bumi bercahaya di bawahnya
+        out.pos.set(Math.cos(a) * 24, Y + 1, Math.sin(a) * 24);
+        out.look.set(0, Y + 0.5, 0);
         return;
       case "penutup": {
         const back = ease(p);
@@ -463,6 +464,13 @@ export class RocketEngine {
         }
         cam.position.copy(this.camPos);
         this.controls.target.copy(this.camLook);
+        // Getaran halus saat mesin menyala (makin kecil di udara tipis) — terasa meluncur, tidak memusingkan
+        if (pose.burn) {
+          const now2 = now / 1000;
+          const amp = 0.035 * (1 - smooth(60, 110, pose.altKm)) + 0.006;
+          cam.position.x += (Math.sin(now2 * 37) + Math.sin(now2 * 53.3)) * amp * 0.5;
+          cam.position.y += (Math.sin(now2 * 41.7) + Math.sin(now2 * 29.1)) * amp * 0.5;
+        }
       } else {
         this.camPos.copy(cam.position);
         this.camLook.copy(this.controls.target);

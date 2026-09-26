@@ -506,6 +506,16 @@ export class RocketScene {
   /** col = alfa per partikel, size = ukuran dunia per partikel */
   private smoke: { pts: THREE.Points; pos: Float32Array; col: Float32Array; vel: Float32Array; age: Float32Array; life: Float32Array; size: Float32Array; big: Float32Array };
   private meteors: { line: THREE.Line; vel: THREE.Vector3; age: number; life: number }[] = [];
+  /* isyarat gerak */
+  private earthGroup!: THREE.Group;
+  private earthBase = new THREE.Quaternion();
+  private earthSpin = 0;
+  private streaks!: THREE.LineSegments;
+  private streakData: Float32Array = new Float32Array(0);
+  private trail!: { pts: THREE.Points; pos: Float32Array; alpha: Float32Array; size: Float32Array; age: Float32Array; head: number; acc: number };
+  private lastRocketY = 0;
+  /** laju naik roket (unit/detik, dihaluskan) */
+  climb = 0;
   private meteorWait = 0;
   private time = 0;
   private rand = rng(99);
@@ -560,6 +570,8 @@ export class RocketScene {
     earthGroup.quaternion.setFromUnitVectors(dir, new THREE.Vector3(0, 1, 0));
     earthGroup.position.copy(this.earthCenter);
     s.add(earthGroup);
+    this.earthGroup = earthGroup;
+    this.earthBase.copy(earthGroup.quaternion);
     // Pendar atmosfer dari luar angkasa
     this.glow = new THREE.Mesh(
       new THREE.SphereGeometry(EARTH_R + altToY(60), 96, 64),
@@ -597,8 +609,12 @@ export class RocketScene {
       const sat = buildSatellite(i + 1);
       const a = (i / 6) * TAU + 0.4;
       // ilustrasi: dirapatkan di atas stasiun agar terlihat saat kamera menatap ke atas
-      sat.position.set(Math.cos(a) * (9 + i * 3), altToY(400) + 30 + i * 11, Math.sin(a) * (9 + i * 3));
-      sat.scale.setScalar(2.6);
+      sat.position.set(Math.cos(a) * (13 + i * 3), altToY(400) + 8 + i * 4, Math.sin(a) * (13 + i * 3));
+      sat.scale.setScalar(1.6);
+      const blink = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshBasicMaterial({ color: i % 2 ? 0xff3b3b : 0x3dff8a }));
+      blink.position.set(0, 0.55, 0);
+      blink.name = "blink";
+      sat.add(blink);
       this.sats.add(sat);
     }
     s.add(this.sats);
@@ -633,7 +649,58 @@ export class RocketScene {
       sp.scale.setScalar(2.5 + cr() * 5);
       this.clouds.add(sp);
     }
+    // lapisan awan rapat di sekitar jalur roket (terasa "menembus awan")
+    for (let i = 0; i < (low ? 24 : 44); i++) {
+      const sp = new THREE.Sprite(cloudMat);
+      const a = cr() * TAU;
+      const d = 2.2 + cr() * 9;
+      sp.position.set(Math.cos(a) * d, altToY(4.5 + cr() * 3), Math.sin(a) * d);
+      sp.scale.setScalar(2 + cr() * 3.5);
+      this.clouds.add(sp);
+    }
     s.add(this.clouds);
+
+    // Garis kecepatan: melesat ke bawah di sekitar kamera saat roket melaju
+    const N = low ? 80 : 150;
+    this.streakData = new Float32Array(N * 3); // x, y, z relatif kamera
+    const sr = rng(55);
+    for (let i = 0; i < N; i++) {
+      const a = sr() * TAU,
+        d = 3 + sr() * 22;
+      this.streakData.set([Math.cos(a) * d, (sr() - 0.5) * 60, Math.sin(a) * d], i * 3);
+    }
+    const sg2 = new THREE.BufferGeometry();
+    sg2.setAttribute("position", new THREE.BufferAttribute(new Float32Array(N * 6), 3));
+    this.streaks = new THREE.LineSegments(
+      sg2,
+      new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending, fog: false }),
+    );
+    this.streaks.frustumCulled = false;
+    s.add(this.streaks);
+
+    // Jejak asap panjang yang tertinggal di belakang roket
+    const TN = low ? 160 : 320;
+    const tg = new THREE.BufferGeometry();
+    const tpos = new Float32Array(TN * 3).fill(-9999),
+      talpha = new Float32Array(TN),
+      tsize = new Float32Array(TN);
+    tg.setAttribute("position", new THREE.BufferAttribute(tpos, 3));
+    tg.setAttribute("aAlpha", new THREE.BufferAttribute(talpha, 1));
+    tg.setAttribute("aSize", new THREE.BufferAttribute(tsize, 1));
+    const tpts = new THREE.Points(
+      tg,
+      new THREE.ShaderMaterial({
+        uniforms: { uScale: { value: 300 } },
+        vertexShader: `attribute float aAlpha; attribute float aSize; uniform float uScale; varying float vA;
+          void main(){ vA = aAlpha; vec4 mv = modelViewMatrix * vec4(position, 1.0); gl_PointSize = aSize * uScale / -mv.z; gl_Position = projectionMatrix * mv; }`,
+        fragmentShader: `varying float vA; void main(){ float d = length(gl_PointCoord - 0.5); gl_FragColor = vec4(vec3(0.95), smoothstep(0.5, 0.05, d) * vA); }`,
+        transparent: true,
+        depthWrite: false,
+      }),
+    );
+    tpts.frustumCulled = false;
+    s.add(tpts);
+    this.trail = { pts: tpts, pos: tpos, alpha: talpha, size: tsize, age: new Float32Array(TN).fill(99), head: 0, acc: 0 };
 
     // Pesawat di troposfer
     this.planes = new THREE.Group();
@@ -877,6 +944,7 @@ export class RocketScene {
     this.r.f2.mat.uniforms.uTime.value = this.time;
     this.updateSmoke(dt);
     this.updateMeteors(dt, camAlt);
+    this.updateMotion(dt, camAlt);
   }
 
   private updateSmoke(dt: number) {
@@ -969,6 +1037,72 @@ export class RocketScene {
       p.needsUpdate = true;
       (m.line.material as THREE.LineBasicMaterial).opacity = Math.sin(Math.PI * k);
     }
+  }
+
+  /** Isyarat gerak: laju naik, garis kecepatan, jejak asap, Bumi berputar pelan saat di orbit, lampu kedip. */
+  private updateMotion(dt: number, camAlt: number) {
+    const inst = dt > 0 ? (this.rocketY - this.lastRocketY) / dt : 0;
+    this.lastRocketY = this.rocketY;
+    this.climb += (Math.max(0, Math.min(inst, 40)) - this.climb) * Math.min(1, dt * 3);
+    const alt = yToAlt(this.rocketY);
+    // garis kecepatan
+    const sp = Math.min(1, this.climb / 2.5);
+    const vis = sp * (1 - smooth(90, 160, camAlt)) * (this.burn ? 1 : 0.3);
+    const mat = this.streaks.material as THREE.LineBasicMaterial;
+    mat.opacity = 0.35 * vis;
+    this.streaks.visible = vis > 0.02;
+    if (this.streaks.visible) {
+      const d = this.streakData,
+        p = this.streaks.geometry.getAttribute("position") as THREE.BufferAttribute;
+      const cam = this.camera.position;
+      const v = 18 + this.climb * 14,
+        len = 1.5 + this.climb * 1.6;
+      for (let i = 0; i < d.length / 3; i++) {
+        d[i * 3 + 1] -= v * dt;
+        if (d[i * 3 + 1] < -30) d[i * 3 + 1] += 60;
+        const x = cam.x + d[i * 3],
+          y = cam.y + d[i * 3 + 1],
+          z = cam.z + d[i * 3 + 2];
+        p.setXYZ(i * 2, x, y, z);
+        p.setXYZ(i * 2 + 1, x, y + len, z);
+      }
+      p.needsUpdate = true;
+    }
+    // jejak asap: titik ditinggalkan di bawah nosel, memudar & mengembang pelan
+    const t = this.trail;
+    const n = t.age.length;
+    if (this.burn && alt < 140) {
+      t.acc += dt;
+      const nozzle = this.rocketY + (this.burn === 1 ? -0.2 : 3.2);
+      while (t.acc > 0.03) {
+        t.acc -= 0.03;
+        const i = t.head;
+        t.head = (t.head + 1) % n;
+        t.pos[i * 3] = (Math.random() - 0.5) * 0.15;
+        t.pos[i * 3 + 1] = nozzle;
+        t.pos[i * 3 + 2] = (Math.random() - 0.5) * 0.15;
+        t.age[i] = 0;
+      }
+    }
+    const thin = 1 - smooth(30, 120, alt);
+    for (let i = 0; i < n; i++) {
+      t.age[i] += dt;
+      const k = t.age[i] / 9;
+      t.alpha[i] = k < 1 ? (0.5 * thin + 0.12) * (1 - k) : 0;
+      t.size[i] = 0.5 + k * 3 * (0.4 + thin);
+    }
+    t.pts.geometry.getAttribute("position").needsUpdate = true;
+    t.pts.geometry.getAttribute("aAlpha").needsUpdate = true;
+    t.pts.geometry.getAttribute("aSize").needsUpdate = true;
+    // Bumi berputar pelan di bawah saat mengorbit (terasa bergerak mengelilingi Bumi)
+    if (alt > 120) this.earthSpin += dt * 0.012;
+    else if (alt < 20) this.earthSpin = 0;
+    this.earthGroup.quaternion.setFromAxisAngle(new THREE.Vector3(0, 0, 1), this.earthSpin).multiply(this.earthBase);
+    // lampu kedip satelit
+    const on = Math.sin(this.time * 4) > 0.3;
+    this.sats.traverse((o) => {
+      if (o.name === "blink") o.visible = on;
+    });
   }
 
   dispose() {
