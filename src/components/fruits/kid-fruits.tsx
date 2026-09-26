@@ -7,10 +7,11 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
-import { installAudioUnlock, sharedAudio } from '@/lib/audio-unlock';
+import { installAudioUnlock, sharedAudio, unlockAudio } from '@/lib/audio-unlock';
+import { TUR_BUAH, TUR_BUAH_AUDIO, buahDwell } from '@/lib/fruits/tur';
 import { FRUITS, FRUIT_BY_ID, FRUIT_GROUPS, type Fruit } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { readAudioManifest } from '@/lib/fruits/audio';
@@ -36,7 +37,7 @@ function useFruitAudio(id: string | null) {
   return id ? tracks[id] : undefined;
 }
 
-function Catalog({ onOpen }: { onOpen: (id: string) => void }) {
+function Catalog({ onOpen, onTour }: { onOpen: (id: string) => void; onTour: () => void }) {
   const router = useRouter();
   const [group, setGroup] = useState('all');
   const list = useMemo(() => FRUITS.filter((f) => group === 'all' || f.group === group), [group]);
@@ -46,7 +47,8 @@ function Catalog({ onOpen }: { onOpen: (id: string) => void }) {
         <header className="flex items-center gap-3">
           <RoundBtn icon="arrow_back" label="Kembali" onClick={() => router.push('/beranda/edukasi')} />
           <h1 style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK, lineHeight: 1 }}>Kebun Buah</h1>
-          <span className="ml-auto rounded-full bg-white px-3 py-1 text-[13px] font-extrabold text-[#8a7a9c] shadow-[0_3px_0_rgba(43,29,78,.06)]">{list.length} buah</span>
+          <span className="ml-auto" />
+          <RoundBtn icon="play_circle" label="Tur" tone="orange" onClick={onTour} />
         </header>
         {/* kelompok buah: geser bila tidak muat */}
         <div className="-mx-4 overflow-x-auto px-4 pb-1">
@@ -156,10 +158,134 @@ function Detail({ fruit, onBack, onOpen }: { fruit: Fruit; onBack: () => void; o
   );
 }
 
+/** Tur bernarasi: semua buah tampil satu per satu (berputar pelan) mengikuti narasi. */
+function Tour({ onClose }: { onClose: () => void }) {
+  const [ui, setUi] = useState({ i: 0, playing: true, finished: false, progress: 0 });
+  const r = useRef({ i: 0, t: 0, playing: true });
+  const part = (i: number) => TUR_BUAH_AUDIO.find((p) => i >= p.first && i < p.first + p.cues.length);
+
+  const go = (i: number) => {
+    r.current.i = i;
+    r.current.t = 0;
+    const p = part(i);
+    if (p) {
+      const a = sharedAudio('fruit-tur');
+      if (!a.src.endsWith(p.src)) a.src = p.src;
+      const seek = () => (a.currentTime = p.cues[i - p.first]);
+      if (a.readyState >= 1) seek();
+      else a.onloadedmetadata = seek;
+    }
+    setUi((x) => ({ ...x, i, finished: false, progress: 0 }));
+  };
+  const play = (on: boolean) => {
+    r.current.playing = on;
+    if (!on) sharedAudio('fruit-tur').pause();
+    setUi((x) => ({ ...x, playing: on }));
+  };
+
+  useEffect(() => {
+    go(0);
+    let raf = 0,
+      last = performance.now(),
+      lastUi = 0;
+    const tick = (now: number) => {
+      raf = requestAnimationFrame(tick);
+      const dt = Math.min(0.1, (now - last) / 1000);
+      last = now;
+      const s = r.current;
+      if (!s.playing) return;
+      const p = part(s.i);
+      let dur = buahDwell(TUR_BUAH[s.i]);
+      if (p) {
+        const a = sharedAudio('fruit-tur');
+        if (a.paused && !a.ended) a.play().catch(() => {});
+        const k = s.i - p.first;
+        const ct = a.currentTime;
+        const end = p.cues[k + 1] ?? a.duration;
+        dur = Math.max(1, (Number.isFinite(end) ? end : ct + 1) - p.cues[k]);
+        s.t = ct - p.cues[k];
+        if (p.cues[k + 1] !== undefined && ct >= p.cues[k + 1]) return go(s.i + 1);
+        if (a.ended) s.t = dur;
+      } else s.t += dt;
+      if (s.t >= dur) {
+        if (s.i < TUR_BUAH.length - 1) return go(s.i + 1);
+        s.playing = false;
+        sharedAudio('fruit-tur').pause();
+        setUi((x) => ({ ...x, playing: false, finished: true, progress: 1 }));
+        return;
+      }
+      if (now - lastUi > 250) {
+        lastUi = now;
+        setUi((x) => ({ ...x, progress: Math.min(1, s.t / dur) }));
+      }
+    };
+    raf = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(raf);
+      sharedAudio('fruit-tur').pause();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const stop = TUR_BUAH[ui.i];
+  const fruit = FRUIT_BY_ID.get(stop.fruit)!;
+  const caption = TUR_BUAH_AUDIO.length === 0 ? stop.lines[Math.min(stop.lines.length - 1, Math.floor(ui.progress * stop.lines.length))] : null;
+  return (
+    <div className="fruit-kid fixed inset-0 overflow-hidden" style={{ background: 'radial-gradient(ellipse at 50% 42%, #fffdf6 0%, #fdf0d8 55%, #f6d9b8 100%)' }}>
+      <Viewer fruit={fruit} spin />
+      <div className="absolute inset-0" onClick={() => !ui.finished && play(!ui.playing)}>
+        {/* progres: satu garis panjang (50 adegan terlalu banyak untuk segmen) */}
+        <div className="absolute inset-x-0 top-0 px-3" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }} aria-hidden>
+          <div className="h-1.5 overflow-hidden rounded-full bg-[rgba(43,29,78,.12)]">
+            <div className="h-full rounded-full bg-[#ff7a1a] transition-[width] duration-300" style={{ width: `${((ui.i + ui.progress) / TUR_BUAH.length) * 100}%` }} />
+          </div>
+        </div>
+        <div className="absolute left-3 flex items-center gap-2 sm:left-5" style={{ top: 'max(22px, calc(env(safe-area-inset-top) + 14px))' }}>
+          <span className="rounded-full bg-white/90 px-4 py-2 shadow-[0_3px_0_rgba(43,29,78,.08)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
+            {stop.title}
+          </span>
+          <span className="rounded-full bg-white/70 px-2.5 py-1 text-[12px] font-extrabold text-[#8a7a9c]">
+            {ui.i + 1}/{TUR_BUAH.length}
+          </span>
+        </div>
+        <div className="absolute right-3 sm:right-5" style={{ top: 'max(20px, calc(env(safe-area-inset-top) + 12px))' }} onClick={(e) => e.stopPropagation()}>
+          <RoundBtn icon="close" label="Keluar tur" onClick={onClose} />
+        </div>
+        {!ui.playing && (
+          <div className="absolute inset-0 flex items-center justify-center gap-6" onClick={(e) => e.stopPropagation()}>
+            {ui.finished ? (
+              <>
+                <RoundBtn
+                  icon="replay"
+                  label="Ulangi"
+                  tone="orange"
+                  onClick={() => {
+                    play(true);
+                    go(0);
+                  }}
+                />
+                <RoundBtn icon="check" label="Selesai" tone="purple" onClick={onClose} />
+              </>
+            ) : (
+              <RoundBtn icon="play_arrow" label="Lanjut" tone="orange" onClick={() => play(true)} />
+            )}
+          </div>
+        )}
+        {caption && ui.playing && (
+          <div className="absolute inset-x-0 bottom-0 flex justify-center px-4" style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom))' }}>
+            <p className="max-w-[640px] rounded-2xl bg-[rgba(43,29,78,.65)] px-4 py-2 text-center text-[15px] font-bold text-white sm:text-[17px]">{caption}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function KidFruits() {
   const me = useMe();
   useFruitSession(me.id);
   const [selected, setSelected] = useState<string | null>(null);
+  const [tour, setTour] = useState(false);
   const fruit = selected ? FRUIT_BY_ID.get(selected) : undefined;
 
   // ?buah=id di alamat: tombol kembali browser/HP menutup detail.
@@ -191,5 +317,16 @@ export default function KidFruits() {
     }
   };
 
-  return fruit ? <Detail fruit={fruit} onBack={back} onOpen={open} /> : <Catalog onOpen={open} />;
+  if (tour) return <Tour onClose={() => setTour(false)} />;
+  return fruit ? (
+    <Detail fruit={fruit} onBack={back} onOpen={open} />
+  ) : (
+    <Catalog
+      onOpen={open}
+      onTour={() => {
+        unlockAudio(); // dari ketukan tombol: buka kunci audio iPad/iPhone
+        setTour(true);
+      }}
+    />
+  );
 }

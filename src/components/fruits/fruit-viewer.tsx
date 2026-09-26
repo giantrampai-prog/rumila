@@ -10,7 +10,8 @@ import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { Icon } from '@/components/ui';
 
 interface SceneHandle { setFruit:(f:Fruit)=>void; zoom:(factor:number)=>void; reset:()=>void; rotate:(on:boolean)=>void; }
-export default function FruitViewer({fruit}:{fruit:Fruit}) {
+/** spin: putar pelan otomatis (dipakai mode Tur). */
+export default function FruitViewer({fruit,spin=false}:{fruit:Fruit;spin?:boolean}) {
  const stage=useRef<HTMLDivElement>(null),mount=useRef<HTMLDivElement>(null),handle=useRef<SceneHandle|null>(null),current=useRef(fruit);
  current.current=fruit;
  const [error,setError]=useState(false),[attempt,setAttempt]=useState(0),[spinning,setSpinning]=useState(false),[full,setFull]=useState(false);
@@ -45,6 +46,7 @@ export default function FruitViewer({fruit}:{fruit:Fruit}) {
   return()=>{handle.current=null;renderer.setAnimationLoop(null);observer.disconnect();canvas.removeEventListener('keydown',keyboard);canvas.removeEventListener('webglcontextlost',lost);reduced.removeEventListener('change',pause);controls.dispose();disposeFruit(model);floor.geometry.dispose();(floor.material as T.Material).dispose();env.dispose();renderer.dispose();canvas.remove();};
  },[attempt]);
  useEffect(()=>{handle.current?.setFruit(fruit);},[fruit]);
+ useEffect(()=>{if(spin)handle.current?.rotate(true);},[spin,fruit]);
  useEffect(()=>{
   if(!full)return;
   const overflow=document.body.style.overflow;document.body.style.overflow='hidden';

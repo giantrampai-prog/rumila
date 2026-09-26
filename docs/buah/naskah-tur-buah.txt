@@ -1,0 +1,154 @@
+NASKAH SUARA — TUR KEBUN BUAH 3D
+
+Rekam jadi SATU file, urut dari atas. Beri jeda ±1 detik antaradegan. 50 adegan (pembuka, semua buah, penutup).
+Setelah rekaman jadi, catat timestamp mulai tiap adegan (menit:detik), misalnya 1 = 0:00, 2 = 0:12, dst.
+
+[1. Kebun Buah]
+Halo, penjelajah cilik! Selamat datang di Kebun Buah Rumila. Hari ini kita akan berkenalan dengan buah-buahan dari dekat. Perhatikan warna, bentuk, dan kulitnya, ya!
+
+[2. Pisang]
+Ini pisang! Pisang tumbuh bergerombol dalam satu tandan. Sekelompok pisang yang berjajar disebut sisir. Saat matang, kulitnya berubah kuning dan mudah dikupas. Daging buahnya lembut dan manis.
+
+[3. Mangga]
+Ini mangga, buah yang harum saat matang. Di Indonesia ada banyak jenis mangga, misalnya arumanis dan gedong. Di tengahnya ada satu biji besar yang pipih.
+
+[4. Jeruk]
+Ini jeruk. Kulitnya berpori-pori kecil dan wangi. Kalau dikupas, isinya terbagi menjadi beberapa siung. Setiap siung berisi kantong-kantong kecil penuh sari buah.
+
+[5. Apel]
+Ini apel. Warnanya bisa merah, hijau, atau kuning. Daging buahnya renyah saat digigit. Coba belah apel, di bagian tengahnya ada biji-biji kecil berwarna cokelat.
+
+[6. Semangka]
+Wah, besar sekali! Ini semangka. Kulitnya hijau bergaris, daging buahnya merah dan segar. Sebagian besar isi semangka adalah air, karena itu rasanya menyegarkan saat cuaca panas.
+
+[7. Melon]
+Ini melon! Melon berbentuk bulat atau lonjong. Sebagian jenisnya memiliki pola seperti jaring pada kulit. Tahukah kamu? Tidak semua melon memiliki kulit berjaring.
+
+[8. Pepaya]
+Sekarang kita kenalan dengan pepaya. Pepaya memiliki bentuk lonjong. Saat dibelah, terlihat rongga dengan banyak biji kecil. Tahukah kamu? Biji pepaya menempel di dinding rongga bagian dalam.
+
+[9. Nanas]
+Ini nanas, lihat mahkota daunnya di atas! Kulitnya bersisik dan kasar. Tahukah kamu? Nanas sebenarnya gabungan dari banyak buah kecil yang tumbuh menyatu menjadi satu.
+
+[10. Anggur]
+Nah, ini dia anggur! Anggur tumbuh berkelompok dalam satu rangkaian. Buahnya kecil dan berkulit tipis. Tahukah kamu? Anggur yang dikeringkan disebut kismis.
+
+[11. Stroberi]
+Ini stroberi yang merah cerah. Lihat titik-titik kecil di kulitnya. Titik-titik itu adalah bijinya! Stroberi adalah buah yang bijinya ada di luar.
+
+[12. Alpukat]
+Ini alpukat. Kulitnya hijau tua, daging buahnya hijau kekuningan dan lembut seperti mentega. Di tengahnya ada satu biji besar yang bulat.
+
+[13. Kelapa]
+Ini kelapa, tumbuh di pohon yang tinggi di tepi pantai. Kulit luarnya berserabut, tempurungnya keras. Di dalamnya ada daging buah putih dan air kelapa yang segar.
+
+[14. Durian]
+Hati-hati, berduri! Ini durian, sering disebut raja buah. Aromanya sangat kuat, ada yang suka dan ada yang tidak. Daging buahnya kuning dan lembut.
+
+[15. Rambutan]
+Ini rambutan! Namanya berasal dari kata rambut, karena kulitnya dipenuhi rambut-rambut halus. Daging buahnya putih bening, manis, dan berair.
+
+[16. Manggis]
+Ini manggis, sering disebut ratu buah. Kulitnya ungu tua dan tebal, isinya putih. Ada rahasia seru: hitung kelopak kecil di bagian bawah manggis. Jumlahnya sama dengan jumlah potongan buah di dalamnya!
+
+[17. Salak]
+Ini salak. Kulitnya cokelat bersisik, mirip kulit ular. Rasanya manis dan sedikit sepat, dan daging buahnya renyah.
+
+[18. Duku]
+Sekarang kita kenalan dengan duku. Duku kecil dan membulat. Kulitnya dikupas untuk menemukan daging buah yang terbagi dalam beberapa bagian. Tahukah kamu? Duku dan langsat berkerabat dekat, tetapi penampilannya tidak persis sama.
+
+[19. Lengkeng]
+Lihat, ini lengkeng. Lengkeng berbentuk bulat kecil dengan kulit tipis yang agak kaku. Tahukah kamu? Lengkeng juga sering disebut kelengkeng.
+
+[20. Jambu Biji]
+Nah, ini dia jambu biji! Jambu biji berbentuk bulat atau agak lonjong. Daging buahnya bisa putih atau merah muda. Tahukah kamu? Ada jenis jambu biji dengan jumlah biji yang lebih sedikit.
+
+[21. Jambu Air]
+Yang berikutnya jambu air. Jambu air memiliki bentuk menyerupai lonceng. Daging buahnya renyah dan berair. Tahukah kamu? Bagian bawah jambu air lebih lebar daripada bagian tangkainya.
+
+[22. Belimbing]
+Ini belimbing! Belimbing memiliki rusuk memanjang yang membuat bentuknya khas. Tahukah kamu? Irisan melintang belimbing tampak seperti bintang.
+
+[23. Sawo]
+Sekarang kita kenalan dengan sawo. Sawo berkulit cokelat dengan daging buah yang lembut saat matang. Tahukah kamu? Sawo matang memiliki tekstur halus yang sedikit berbutir.
+
+[24. Sirsak]
+Lihat, ini sirsak. Sirsak berbentuk tidak selalu simetris. Kulitnya hijau dengan tonjolan seperti duri yang pendek. Tahukah kamu? Daging sirsak tersusun dalam serat-serat yang lembut.
+
+[25. Nangka]
+Nah, ini dia nangka! Nangka dapat tumbuh sangat besar. Di dalam kulitnya terdapat banyak bagian daging buah. Tahukah kamu? Buah nangka dapat tumbuh pada batang dan cabang yang besar.
+
+[26. Buah Naga]
+Ini buah naga, kulitnya merah muda dengan sisik hijau seperti api naga. Buah naga tumbuh dari tanaman sejenis kaktus. Daging buahnya putih atau merah dengan biji hitam kecil.
+
+[27. Markisa]
+Ini markisa! Markisa memiliki kulit yang cukup keras. Isinya berupa biji yang terbungkus sari buah. Tahukah kamu? Kulit beberapa jenis markisa menjadi berkerut saat matang.
+
+[28. Srikaya]
+Sekarang kita kenalan dengan srikaya. Srikaya memiliki kulit dengan bagian-bagian menonjol seperti sisik besar. Tahukah kamu? Bagian kulit srikaya tampak seperti tersusun dari banyak kepingan.
+
+[29. Kedondong]
+Lihat, ini kedondong. Kedondong berbentuk lonjong. Daging buahnya renyah dengan biji berserat di dalamnya. Tahukah kamu? Kedondong sering dijumpai sebagai salah satu buah dalam rujak.
+
+[30. Jeruk Bali]
+Nah, ini dia jeruk bali! Jeruk bali adalah jenis jeruk berukuran besar dengan kulit yang tebal. Tahukah kamu? Lapisan putih di bawah kulitnya jauh lebih tebal daripada jeruk kecil.
+
+[31. Jeruk Nipis]
+Yang berikutnya jeruk nipis. Jeruk nipis berbentuk kecil membulat. Kulit dan air buahnya memiliki aroma yang khas. Tahukah kamu? Jeruk nipis sering digunakan untuk memberi rasa pada makanan dan minuman.
+
+[32. Lemon]
+Ini lemon! Lemon memiliki bentuk lonjong dengan ujung sedikit menonjol. Tahukah kamu? Aroma lemon juga terdapat pada bagian kulitnya.
+
+[33. Pir]
+Sekarang kita kenalan dengan pir. Pir memiliki banyak bentuk, dari membulat sampai berleher ramping. Tahukah kamu? Sebagian pir renyah, sementara jenis lain lebih lembut saat matang.
+
+[34. Kiwi]
+Ini kiwi. Kulitnya cokelat dan berbulu halus. Kalau dibelah, daging buahnya hijau dengan biji-biji hitam kecil yang tersusun melingkar.
+
+[35. Kurma]
+Nah, ini dia kurma! Kurma memiliki bentuk lonjong. Kurma yang matang atau dikeringkan dapat terasa lembut dan lengket. Tahukah kamu? Kurma tumbuh pada pohon palem kurma.
+
+[36. Delima]
+Ini delima. Dari luar tampak biasa, tetapi di dalamnya ada ratusan biji kecil. Setiap biji dibungkus butiran merah yang bening dan berair, seperti permata!
+
+[37. Kesemek]
+Ini kesemek! Kesemek tampak membulat dan agak pipih. Kelopak besar tetap melekat di atasnya. Tahukah kamu? Lapisan putih pada sebagian kesemek di pasar berasal dari pengolahan, bukan warna kulit aslinya.
+
+[38. Leci]
+Sekarang kita kenalan dengan leci. Leci berukuran kecil dengan kulit kasar. Daging buahnya putih bening setelah kulit dikupas. Tahukah kamu? Leci, lengkeng, dan rambutan termasuk keluarga tumbuhan yang sama.
+
+[39. Plum]
+Lihat, ini plum. Plum memiliki kulit halus dan daging buah yang berair. Warnanya beragam. Tahukah kamu? Lapisan tipis seperti bedak pada kulit beberapa plum merupakan lapisan lilin alami.
+
+[40. Persik]
+Nah, ini dia persik! Persik berbentuk membulat dengan satu alur di permukaannya. Kulitnya memiliki rambut sangat halus. Tahukah kamu? Rambut halus membedakan kulit persik dari nektarin yang licin.
+
+[41. Cempedak]
+Yang berikutnya cempedak. Cempedak berkerabat dengan nangka. Bentuknya memanjang dan aromanya kuat saat matang. Tahukah kamu? Daging cempedak matang biasanya lebih lembut daripada daging nangka.
+
+[42. Langsat]
+Ini langsat! Langsat memiliki kulit tipis dan sering tumbuh dalam rangkaian yang rapat. Tahukah kamu? Langsat biasanya lebih lonjong daripada duku.
+
+[43. Matoa]
+Ini matoa, buah khas dari Papua! Kulitnya licin, isinya putih bening dan manis. Banyak orang bilang rasanya mirip campuran lengkeng dan rambutan.
+
+[44. Blewah]
+Lihat, ini blewah. Blewah berkerabat dengan melon. Kulitnya sering memiliki alur memanjang. Tahukah kamu? Daging blewah sering diserut untuk campuran minuman.
+
+[45. Terong Belanda]
+Nah, ini dia terong belanda! Terong belanda memiliki bentuk seperti telur. Daging dan bijinya berada di balik kulit yang halus. Tahukah kamu? Buah ini juga dikenal dengan nama tamarillo.
+
+[46. Ceri]
+Yang berikutnya ceri. Ceri berukuran kecil, membulat, dan sering memiliki tangkai yang panjang. Tahukah kamu? Tangkai ceri jauh lebih panjang daripada ukuran buahnya.
+
+[47. Cermai]
+Ini cermai! Cermai berbentuk kecil dan beralur. Buahnya sering tumbuh bergerombol di cabang. Tahukah kamu? Cermai sering diolah menjadi manisan.
+
+[48. Jamblang]
+Sekarang kita kenalan dengan jamblang. Jamblang berbentuk lonjong kecil dan berwarna gelap saat matang. Tahukah kamu? Jamblang juga dikenal dengan nama duwet.
+
+[49. Jambu Bol]
+Lihat, ini jambu bol. Jambu bol memiliki bentuk membulat sampai agak lonjong. Dagingnya lebih tebal daripada jambu air. Tahukah kamu? Jambu bol memiliki aroma yang khas ketika matang.
+
+[50. Sampai jumpa]
+Hebat, kamu sudah mengenal empat puluh delapan buah! Setiap buah punya warna, bentuk, dan rasa yang berbeda. Jangan lupa cuci buah sebelum dimakan, ya. Buah mana yang paling ingin kamu coba? Sampai jumpa di Kebun Buah!
