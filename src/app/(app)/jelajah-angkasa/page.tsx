@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense, useMemo } from "react";
-import { Explorer } from "@/components/angkasa/explorer";
+import { KidSpace } from "@/components/angkasa/kid-space";
 import { MANIFEST } from "@/lib/angkasa/manifest";
 import type { Mode } from "@/lib/angkasa/state";
 import { validateManifest } from "@/lib/angkasa/validate";
@@ -25,7 +25,7 @@ function Page() {
     );
   // key = anggota: berganti profil → state & progres terpisah
   return (
-    <Explorer
+    <KidSpace
       key={me.id}
       memberId={me.id}
       initial={{ obj: params.get("obj") ?? undefined, mode: (params.get("mode") as Mode) ?? undefined }}

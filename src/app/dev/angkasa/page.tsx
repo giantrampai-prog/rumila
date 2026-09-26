@@ -6,11 +6,14 @@
 import { notFound, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { Explorer } from "@/components/angkasa/explorer";
+import { KidSpace } from "@/components/angkasa/kid-space";
 import type { Mode } from "@/lib/angkasa/state";
 
 function Preview() {
   const p = useSearchParams();
-  return <Explorer memberId="dev-preview" initial={{ obj: p.get("obj") ?? undefined, mode: (p.get("mode") as Mode) ?? undefined }} />;
+  const initial = { obj: p.get("obj") ?? undefined, mode: (p.get("mode") as Mode) ?? undefined };
+  // Default: tampilan anak (sama dengan aplikasi). ?lengkap=1 untuk Explorer lengkap.
+  return p.get("lengkap") ? <Explorer memberId="dev-preview" initial={initial} /> : <KidSpace memberId="dev-preview" initial={initial} />;
 }
 
 export default function DevAngkasa() {
