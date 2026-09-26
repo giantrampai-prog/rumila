@@ -1,0 +1,11 @@
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { NARRATION_FILES, NARRATION_INTRO, NARRATION_OUTRO, VOICE_DIRECTION } from '../../src/lib/fruits/narration';
+const out = 'public/fruits/narasi';
+mkdirSync(`${out}/per-buah`, {recursive:true});
+const entries = [{id:'pembuka',name:'Pembuka',file:'pembuka.mp3',text:NARRATION_INTRO}, ...NARRATION_FILES, {id:'penutup',name:'Penutup',file:'penutup.mp3',text:NARRATION_OUTRO}];
+const csv = (v:string) => `"${v.replaceAll('"','""')}"`;
+writeFileSync(`${out}/narasi-buah.csv`, '\ufeff'+['id,nama,nama_berkas_audio,naskah',...entries.map(e=>[e.id,e.name,e.file,e.text].map(csv).join(','))].join('\r\n'));
+writeFileSync(`${out}/narasi-buah.txt`, `NARASI KEBUN BUAH RUMILA\n48 buah + pembuka + penutup\n\nPANDUAN SUARA (TIDAK DIBACAKAN)\n${VOICE_DIRECTION}\n\n${entries.map((e,i)=>`${String(i).padStart(2,'0')}. ${e.name.toUpperCase()} — ${e.file}\n\n${e.text}`).join('\n\n'+'='.repeat(64)+'\n\n')}\n`);
+for(const e of entries) writeFileSync(`${out}/per-buah/${e.id}.txt`,e.text+'\n');
+writeFileSync(`${out}/panduan-suara.txt`,VOICE_DIRECTION+'\n');
+console.log(`Exported ${entries.length} spoken scripts, TXT + CSV + individual files.`);

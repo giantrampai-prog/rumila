@@ -1,0 +1,5 @@
+{
+  "layers": {"skin":"C99378","bone":"DED4BA","muscle":"8E3B36","organ":"B57868","vessel":"A17C70","nerve":"D9C8A0"},
+  "heart":"873B36", "atrium":"965047", "valve":"DCCFB1", "artery":"B18074", "vein":"8D736A", "coronary":"C2A583",
+  "lung":"C6938D", "brain":"C8B6A3", "liver":"713B32", "kidney":"894839", "stomach":"C49B89", "intestine":"BDA087", "pancreas":"C3AA7D", "eye":"E7E3D7", "iris":"685037", "hair":"3C2B22", "retina":"B99379"
+}

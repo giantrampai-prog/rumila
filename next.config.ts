@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  outputFileTracingRoot: process.cwd(),
+  distDir: process.env.RUMILA_DIST_DIR || ".next",
 };
 
 export default nextConfig;

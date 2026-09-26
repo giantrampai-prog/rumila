@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Data mentah model 3D anatomi (ratusan MB), terlalu besar untuk git
+/sources/
+
+# Independent local anatomy QA build and generated browser evidence
+/.next-anatomy-qa/
+/.playwright-cli/
+/sources/anatomy/uncompressed/
+/sources/anatomy/*.blend1
+
+.next-anatomy-build/
+
+# build ukur lokal (RUMILA_DIST_DIR)
+/.next-prod/
+
+# hasil tangkapan layar & keluaran QA lokal (bukan sumber)
+/output/
+/supabase/.temp/

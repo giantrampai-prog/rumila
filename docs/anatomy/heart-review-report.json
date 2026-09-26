@@ -1,0 +1,43 @@
+{
+  "source": "sources/anatomy/generated-heart/heart-generated-raw.glb",
+  "sourceTriangles": 3270194,
+  "reviewStatus": "pending",
+  "bounds": [
+    [
+      -0.8064023852348328,
+      -0.9942975640296936,
+      -0.8595455288887024
+    ],
+    [
+      0.8203670978546143,
+      0.9987088441848755,
+      0.8517640829086304
+    ]
+  ],
+  "objects": [
+    {
+      "name": "geometry_0",
+      "vertices": 149946,
+      "triangles": 300000,
+      "uvLayers": 0,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "materials": []
+    }
+  ],
+  "bytes": 1776432,
+  "sha256": "cd20a12b63ba7734e99e4b79dc6473375c8234373153082280d3cf0352bf1127",
+  "status": "geometry-review-only",
+  "reference": "/anatomy/references/heart-gpt-reference.png",
+  "sourceModel": "Tencent Hunyuan3D 2.1",
+  "sourceTrianglesReportedByService": 3270224,
+  "textureStatus": "not-generated",
+  "anatomyReview": "pending",
+  "limitations": [
+    "Single merged exterior mesh; not a modular anatomy asset.",
+    "No reviewed chambers, septa or valves.",
+    "Vessel openings and posterior anatomy are reconstructed estimates.",
+    "No anatomical scale or laterality certification.",
+    "Neutral inspection material; natural PBR textures are not generated."
+  ]
+}

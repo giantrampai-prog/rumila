@@ -1,0 +1,44 @@
+async (page) => {
+ const result={};
+ await page.getByRole('button',{name:'Tutup informasi',exact:true}).click();
+ await page.getByRole('button',{name:'Lihat bagian dalam',exact:true}).click();
+ await page.waitForTimeout(700);
+ await page.screenshot({path:'output/playwright/playful-interior.png'});
+ await page.getByRole('tab',{name:'Fungsi',exact:true}).click();
+ await page.getByRole('button',{name:'Putar simulasi',exact:true}).click();
+ result.simulation=await page.getByRole('button',{name:'Jeda',exact:true}).isVisible();
+ await page.getByRole('button',{name:'Jeda',exact:true}).click();
+ await page.getByRole('button',{name:'Tandai sudah dipelajari',exact:true}).click();
+ result.completion=await page.getByRole('button',{name:'Sudah dipelajari',exact:true}).isDisabled();
+ await page.getByRole('button',{name:'Tutup panel informasi',exact:true}).click();
+ await page.getByRole('button',{name:'Reset',exact:true}).click();
+ await page.getByRole('button',{name:'Lapisan & pencarian',exact:true}).click();
+ await page.getByRole('searchbox',{name:'Cari bagian tubuh'}).fill('ginjal kiri');
+ await page.getByRole('button',{name:'Ginjal kiri',exact:true}).click();
+ result.search=await page.locator('.anatomy-detail h2').textContent();
+ await page.getByRole('button',{name:'Isolasi',exact:true}).click();
+ await page.waitForTimeout(700);
+ await page.getByRole('button',{name:'Tutup informasi',exact:true}).click();
+ await page.getByRole('button',{name:'Lepas / pasang',exact:true}).click();
+ await page.getByRole('button',{name:'Susun kembali',exact:true}).click();
+ await page.getByRole('button',{name:'Kembali ke tubuh',exact:true}).click();
+ await page.getByRole('button',{name:'Tutup panel informasi',exact:true}).click();
+
+ await page.getByRole('button',{name:'Reset',exact:true}).click();
+ await page.setViewportSize({width:390,height:844});
+ await page.waitForTimeout(500);
+ await page.screenshot({path:'output/playwright/playful-mobile.png'});
+ result.portrait=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,canvas:document.querySelector('canvas').getBoundingClientRect().toJSON()}));
+ await page.getByRole('button',{name:'Lapisan & pencarian',exact:true}).click();
+ await page.getByRole('searchbox',{name:'Cari bagian tubuh'}).fill('jantung');
+ await page.getByRole('button',{name:'Jantung',exact:true}).click();
+ await page.getByRole('button',{name:'Isolasi',exact:true}).click();
+ await page.waitForTimeout(700);
+ await page.screenshot({path:'output/playwright/playful-mobile-detail.png'});
+ await page.getByRole('button',{name:'Tutup panel informasi',exact:true}).click();
+ await page.setViewportSize({width:844,height:390});
+ await page.waitForTimeout(500);
+ await page.screenshot({path:'output/playwright/playful-landscape.png'});
+ result.landscape=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,canvas:document.querySelector('canvas').getBoundingClientRect().toJSON()}));
+ return result;
+}

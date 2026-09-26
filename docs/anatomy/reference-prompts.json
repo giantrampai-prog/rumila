@@ -1,0 +1,12 @@
+{
+  "generator": "image_gen.imagegen",
+  "date": "2026-09-26",
+  "references": [
+    {
+      "id": "eye",
+      "file": "public/anatomy/references/eye-gpt-reference.png",
+      "status": "visual-reference-unreviewed",
+      "prompt": "Create one highly detailed, realistic anatomical human eyeball reference for image-to-3D production in a children's science education application. One single complete eyeball, from slightly above and three-quarter front so both its round spherical volume and brown iris/pupil are clearly visible. A short natural optic nerve stump at the back, no eye socket, eyelids, eyebrow, face, surrounding muscles, labels, text, cuts or detached pieces. Natural creamy off-white sclera with extremely subtle sparse fine vessels; realistic radially detailed brown iris, sharply black round pupil, transparent cornea with restrained soft specular reflection. Anatomically plausible proportions: iris diameter less than half the eyeball diameter; no huge anime iris; round volume not a flat disk. Clean non-bloody educational anatomy, lifelike tissue microdetails, no gore, no diagram colors, no purple teal or neon palette. Soft neutral diffuse studio lighting, tack sharp all-over focus. Isolated on pure white seamless background, centered full silhouette with generous 10% margin, no shadow plane or props. Highest-quality photorealistic scientific asset reference."
+    }
+  ]
+}

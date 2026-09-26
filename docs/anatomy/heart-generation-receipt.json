@@ -1,0 +1,60 @@
+{
+  "provider": "Tencent official Hugging Face demo",
+  "endpoint": "https://tencent-hunyuan3d-2-1.hf.space/",
+  "reference": "public/anatomy/references/heart-gpt-reference.png",
+  "settings": {
+    "steps": 30,
+    "guidance_scale": 5.0,
+    "seed": 260926,
+    "octree_resolution": 512,
+    "check_box_rembg": true,
+    "num_chunks": 8000,
+    "randomize_seed": false
+  },
+  "api": "/shape_generation",
+  "status": "completed",
+  "reviewStatus": "pending",
+  "session": "f8109ac1-f3a2-4c8d-b598-3371bc1f5495",
+  "eventId": "5511801b927143ab8080979e34589f19",
+  "result": [
+    {
+      "value": {
+        "path": "/tmp/gradio/426b3725bcdfb1549266822e24734c3383048c6140d958045db88179b8a59bce/white_mesh.glb",
+        "url": "https://tencent-hunyuan3d-2-1.hf.space/file=/tmp/gradio/426b3725bcdfb1549266822e24734c3383048c6140d958045db88179b8a59bce/white_mesh.glb",
+        "size": 58864480,
+        "orig_name": "white_mesh.glb",
+        "mime_type": null,
+        "is_stream": false,
+        "meta": {
+          "_type": "gradio.FileData"
+        }
+      },
+      "__type__": "update"
+    },
+    "\n        <div style='height: 650; width: 100%;'>\n        <iframe src=\"/static/db438dce-8682-43dd-9200-a4c9cff02035/white_mesh.html\" height=\"650\" width=\"100%\" frameborder=\"0\"></iframe>\n        </div>\n    ",
+    {
+      "model": {
+        "shapegen": "tencent/Hunyuan3D-2.1/hunyuan3d-dit-v2-1",
+        "texgen": "tencent/Hunyuan3D-2.1"
+      },
+      "params": {
+        "caption": null,
+        "steps": 30,
+        "guidance_scale": 5.0,
+        "seed": 260926,
+        "octree_resolution": 512,
+        "check_box_rembg": true,
+        "num_chunks": 8000
+      },
+      "number_of_faces": 3270224,
+      "number_of_vertices": 1635043,
+      "time": {
+        "remove background": 1.0043230056762695,
+        "shape generation": 59.75502133369446,
+        "export to trimesh": 1.0368015766143799,
+        "total": 61.79888653755188
+      }
+    },
+    260926
+  ]
+}

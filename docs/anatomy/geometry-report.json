@@ -1,0 +1,8985 @@
+[
+  {
+    "id": "liver",
+    "sources": [
+      "Liver"
+    ],
+    "originalFaces": 6135,
+    "bounds": {
+      "min": [
+        -0.11472641676664352,
+        1.0913935899734497,
+        -0.05372604727745056
+      ],
+      "max": [
+        0.09196573495864868,
+        1.2576617002487183,
+        0.099432572722435
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "stomach",
+    "sources": [
+      "Stomach"
+    ],
+    "originalFaces": 4734,
+    "bounds": {
+      "min": [
+        -0.028751902282238007,
+        1.1036782264709473,
+        -0.01649501547217369
+      ],
+      "max": [
+        0.10542301833629608,
+        1.229142189025879,
+        0.08882427215576172
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pancreas",
+    "sources": [
+      "Pancreas"
+    ],
+    "originalFaces": 5056,
+    "bounds": {
+      "min": [
+        -0.04546678066253662,
+        1.0791330337524414,
+        -0.005127256736159325
+      ],
+      "max": [
+        0.07267440110445023,
+        1.1528730392456055,
+        0.048231665045022964
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "gallbladder",
+    "sources": [
+      "Gallbladder"
+    ],
+    "originalFaces": 368,
+    "bounds": {
+      "min": [
+        -0.06329294294118881,
+        1.115399956703186,
+        0.032125987112522125
+      ],
+      "max": [
+        -0.027045439928770065,
+        1.158869981765747,
+        0.08038338273763657
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "esophagus",
+    "sources": [
+      "Oesophagus"
+    ],
+    "originalFaces": 8160,
+    "bounds": {
+      "min": [
+        -0.009000562131404877,
+        1.1940613985061646,
+        -0.03372252359986305
+      ],
+      "max": [
+        0.018326211720705032,
+        1.4755380153656006,
+        0.018340740352869034
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tongue",
+    "sources": [
+      "Tongue"
+    ],
+    "originalFaces": 602,
+    "bounds": {
+      "min": [
+        -0.01683555170893669,
+        1.4969266653060913,
+        0.021877437829971313
+      ],
+      "max": [
+        0.016835670918226242,
+        1.5395739078521729,
+        0.07822264730930328
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "duodenum",
+    "sources": [
+      "Duodenum"
+    ],
+    "originalFaces": 1737,
+    "bounds": {
+      "min": [
+        -0.06562414020299911,
+        1.044877052307129,
+        0.005745807662606239
+      ],
+      "max": [
+        0.032329581677913666,
+        1.143259882926941,
+        0.057378992438316345
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "jejunum",
+    "sources": [
+      "Jejunum"
+    ],
+    "originalFaces": 13824,
+    "bounds": {
+      "min": [
+        -0.08260789513587952,
+        0.8810632228851318,
+        0.018891427665948868
+      ],
+      "max": [
+        0.10036512464284897,
+        1.0897735357284546,
+        0.08097544312477112
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "colon_ascending",
+    "sources": [
+      "Ascending colon"
+    ],
+    "originalFaces": 8756,
+    "bounds": {
+      "min": [
+        -0.1138250008225441,
+        0.9221086502075195,
+        -0.013121058233082294
+      ],
+      "max": [
+        -0.06233634054660797,
+        1.1144890785217285,
+        0.04297805204987526
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "colon_transverse",
+    "sources": [
+      "Transverse colon"
+    ],
+    "originalFaces": 8308,
+    "bounds": {
+      "min": [
+        -0.0872921273112297,
+        1.0667771100997925,
+        0.0059840381145477295
+      ],
+      "max": [
+        0.09914302825927734,
+        1.1351406574249268,
+        0.08129066973924637
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "colon_descending",
+    "sources": [
+      "Descending colon"
+    ],
+    "originalFaces": 12372,
+    "bounds": {
+      "min": [
+        -0.01824130117893219,
+        0.8712406754493713,
+        -0.05799064785242081
+      ],
+      "max": [
+        0.11427825689315796,
+        1.134468913078308,
+        0.03573514148592949
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "colon_sigmoid",
+    "sources": [
+      "Sigmoid colon"
+    ],
+    "originalFaces": 3377,
+    "bounds": {
+      "min": [
+        -0.026214739307761192,
+        0.8037492632865906,
+        -0.07176445424556732
+      ],
+      "max": [
+        0.035354599356651306,
+        0.9263792037963867,
+        -0.022356249392032623
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bladder",
+    "sources": [
+      "Urinary bladder"
+    ],
+    "originalFaces": 1518,
+    "bounds": {
+      "min": [
+        -0.036838408559560776,
+        0.8292609453201294,
+        -0.04149179905653
+      ],
+      "max": [
+        0.037615686655044556,
+        0.8805927634239197,
+        0.04176236689090729
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "spleen",
+    "sources": [
+      "Spleen"
+    ],
+    "originalFaces": 1330,
+    "bounds": {
+      "min": [
+        0.055634208023548126,
+        1.1263840198516846,
+        -0.05195113644003868
+      ],
+      "max": [
+        0.11386805772781372,
+        1.1966139078140259,
+        0.04311465844511986
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "thyroid",
+    "sources": [
+      "Thyroid gland"
+    ],
+    "originalFaces": 1300,
+    "bounds": {
+      "min": [
+        -0.02431430108845234,
+        1.4546587467193604,
+        -0.0045417421497404575
+      ],
+      "max": [
+        0.024314329028129578,
+        1.488776683807373,
+        0.03702874854207039
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pituitary",
+    "sources": [
+      "Adenohypophysis",
+      "Neurohypophysis"
+    ],
+    "originalFaces": 1270,
+    "bounds": {
+      "min": [
+        -0.005950067192316055,
+        1.5951787233352661,
+        0.01229863427579403
+      ],
+      "max": [
+        0.005950082093477249,
+        1.6077384948730469,
+        0.021455388516187668
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "prostate",
+    "sources": [
+      "Prostate"
+    ],
+    "originalFaces": 468,
+    "bounds": {
+      "min": [
+        -0.017921192571520805,
+        0.8090039491653442,
+        -0.031694214791059494
+      ],
+      "max": [
+        0.017794055864214897,
+        0.8324272036552429,
+        0.0010559149086475372
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "trachea",
+    "sources": [
+      "Trachea"
+    ],
+    "originalFaces": 4516,
+    "bounds": {
+      "min": [
+        -0.01382692065089941,
+        1.3551961183547974,
+        -0.021299146115779877
+      ],
+      "max": [
+        0.013329698704183102,
+        1.4605664014816284,
+        0.01765947975218296
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lung_l",
+    "sources": [
+      "Superior lobe of left lung",
+      "Inferior lobe of left lung"
+    ],
+    "originalFaces": 9274,
+    "bounds": {
+      "min": [
+        0.008857928216457367,
+        1.1669811010360718,
+        -0.08276504278182983
+      ],
+      "max": [
+        0.12984852492809296,
+        1.431017518043518,
+        0.10149375349283218
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "adrenal_l",
+    "sources": [
+      "Suprarenal gland.l"
+    ],
+    "originalFaces": 3996,
+    "bounds": {
+      "min": [
+        0.027315163984894753,
+        1.1381186246871948,
+        -0.03501230105757713
+      ],
+      "max": [
+        0.07549172639846802,
+        1.182998538017273,
+        -0.01486183237284422
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "thymus_l",
+    "sources": [
+      "Left lobe of thymus"
+    ],
+    "originalFaces": 9188,
+    "bounds": {
+      "min": [
+        0.004965508356690407,
+        1.316778540611267,
+        0.03409796953201294
+      ],
+      "max": [
+        0.04283526539802551,
+        1.3721421957015991,
+        0.06332048028707504
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "testis_l",
+    "sources": [
+      "Testis.l"
+    ],
+    "originalFaces": 678,
+    "bounds": {
+      "min": [
+        0.01015046052634716,
+        0.7266453504562378,
+        0.044786326587200165
+      ],
+      "max": [
+        0.031225554645061493,
+        0.756098210811615,
+        0.06752107292413712
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "seminal_l",
+    "sources": [
+      "Seminal gland.l"
+    ],
+    "originalFaces": 360,
+    "bounds": {
+      "min": [
+        0.0030691437423229218,
+        0.828262984752655,
+        -0.04452905431389809
+      ],
+      "max": [
+        0.03595483675599098,
+        0.8588366508483887,
+        -0.02355874702334404
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "eye_l",
+    "sources": [
+      "Sclera.l"
+    ],
+    "originalFaces": 2272,
+    "bounds": {
+      "min": [
+        0.017424654215574265,
+        1.5775812864303589,
+        0.050822723656892776
+      ],
+      "max": [
+        0.04367171227931976,
+        1.6038262844085693,
+        0.07578937709331512
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "brain_l",
+    "sources": [
+      " Posterior transverse collateral sulcus.l",
+      "Angular gyrus.l",
+      "Anterior occipital sulcus*.l",
+      "Calcarine sulcus.l",
+      "Central sulcus.l",
+      "Cingulate gyrus (Posteroventral part*).l",
+      "Cingulate gyrus and sulcus (Middle anterior part).l",
+      "Cingulate gyrus and sulcus (Middle posterior part).l",
+      "Cingulate gyrus and sulcus (Posterior dorsal part).l",
+      "Cingulate sulcus (Marginal part*).l",
+      "Circular sulcus of insula.l",
+      "Collateral sulcus.l",
+      "Cuneus.l",
+      "Inferior occipital gyrus and sulcus*.l",
+      "Inferior temporal gyrus.l",
+      "Insula (Subcentral gyrus and ant. and post. sulci*).l",
+      "Lat_Fis-ant-Horizont.l",
+      "Lat_Fis-ant-Vertical.l",
+      "Lat_Fis-post.l",
+      "Lateral occipital gyrus (Middle occipital gyrus*).l",
+      "Lateral occipitotemporal gyrus.l",
+      "Lingual gyrus.l",
+      "Lunate sulcus.l",
+      "Medial occipitotemporal gyrus (Parahippocampal*).l",
+      "Middle frontal gyrus.l",
+      "Middle temporal gyrus.l",
+      "Occipital pole.l",
+      "Occipitotemporal sulcus (Lateral part*).l",
+      "Orbital gyri (Frontomarginal gyrus and sulcus*).l",
+      "Orbital gyri.l",
+      "Orbital part of  inferior frontal gyrus.l",
+      "Orbital sulci (H-shaped orbital sulci*).l",
+      "Orbital sulci (Lateral Orbital sulcus*).l",
+      "Paracentral gyrus and sulcus*.l",
+      "Postcentral gyrus.l",
+      "Precentral gyrus.l",
+      "Precuneus.l",
+      "Inferior frontal sulcus.l",
+      "Inferior temporal sulcus.l",
+      "Intraparietal sulcus.l",
+      "Olfactory sulcus.l",
+      "Opercular part of inferior frontal gyrus.l",
+      "Paracentral sulcus.l",
+      "Parieto-occipital sulcus.l",
+      "Postcentral sulcus.l",
+      "Precentral sulcus (inferior part)*.l",
+      "Precentral sulcus (Superior part)*.l",
+      "Straight gyrus (Gyrus rectus).l",
+      "Subparietal sulcus.l",
+      "Sulcus interm_prim-Jensen.l",
+      "Superior frontal gyrus.l",
+      "Superior frontal sulcus.l",
+      "Superior occipital gyri.l",
+      "Superior parietal lobule.l",
+      "Superior temporal gyrus (Lateral part).l",
+      "Superior temporal sulcus.l",
+      "Supramarginal gyrus.l",
+      "Temporal plane.l",
+      "Temporal pole.l",
+      "Transverse frontopolar gyrus and sulcus*.l",
+      "Transverse occipital sulcus.l",
+      "Transverse temporal gyri.l",
+      "Triangular part of inferior frontal gyrus.l"
+    ],
+    "originalFaces": 50752,
+    "bounds": {
+      "min": [
+        5.579087883234024e-06,
+        1.5817887783050537,
+        -0.0991320013999939
+      ],
+      "max": [
+        0.06888678669929504,
+        1.6996346712112427,
+        0.08156732469797134
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sciatic_l",
+    "sources": [
+      "Sciatic nerve.l"
+    ],
+    "originalFaces": 2448,
+    "bounds": {
+      "min": [
+        0.016246501356363297,
+        0.5397514700889587,
+        -0.07181490212678909
+      ],
+      "max": [
+        0.0797785297036171,
+        0.9781444072723389,
+        -0.016236765310168266
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "optic_l",
+    "sources": [
+      "Optic nerve (II).l"
+    ],
+    "originalFaces": 884,
+    "bounds": {
+      "min": [
+        -4.131719470024109e-05,
+        1.5927956104278564,
+        0.01888582482933998
+      ],
+      "max": [
+        0.030493810772895813,
+        1.6095308065414429,
+        0.06139135733246803
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pectoralis_l",
+    "sources": [
+      "Clavicular head of pectoralis major muscle.l",
+      "Sternocostal head of pectoralis major muscle.l",
+      "(Abdominal part of pectoralis major muscle).l"
+    ],
+    "originalFaces": 5575,
+    "bounds": {
+      "min": [
+        0.0032744035124778748,
+        1.1718323230743408,
+        -0.01680450141429901
+      ],
+      "max": [
+        0.20014625787734985,
+        1.4094083309173584,
+        0.1263023167848587
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "deltoid_l",
+    "sources": [
+      "Acromial part of deltoid muscle.l",
+      "Clavicular part of deltoid muscle.l",
+      "Scapular spinal part of deltoid muscle.l"
+    ],
+    "originalFaces": 10244,
+    "bounds": {
+      "min": [
+        0.08446326851844788,
+        1.250761866569519,
+        -0.1030786857008934
+      ],
+      "max": [
+        0.23491400480270386,
+        1.423707365989685,
+        0.02037126198410988
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "biceps_l",
+    "sources": [
+      "Long head of biceps brachii.l",
+      "Short head of biceps brachii.l"
+    ],
+    "originalFaces": 5914,
+    "bounds": {
+      "min": [
+        0.13818995654582977,
+        1.0508121252059937,
+        -0.04129200056195259
+      ],
+      "max": [
+        0.23747877776622772,
+        1.4079303741455078,
+        0.008411535061895847
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "rectus_abdominis_l",
+    "sources": [
+      "Rectus abdominis muscle.l"
+    ],
+    "originalFaces": 20604,
+    "bounds": {
+      "min": [
+        0.0030123628675937653,
+        0.8497774600982666,
+        0.045041389763355255
+      ],
+      "max": [
+        0.0816785916686058,
+        1.2582528591156006,
+        0.11968515813350677
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "rectus_femoris_l",
+    "sources": [
+      "Rectus femoris muscle.l"
+    ],
+    "originalFaces": 8276,
+    "bounds": {
+      "min": [
+        0.06670673191547394,
+        0.3704788386821747,
+        -0.009070629253983498
+      ],
+      "max": [
+        0.1483188420534134,
+        0.9158068895339966,
+        0.060269758105278015
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "gastrocnemius_l",
+    "sources": [
+      "Lateral head of gastrocnemius.l",
+      "Medial head of gastrocnemius.l"
+    ],
+    "originalFaces": 11370,
+    "bounds": {
+      "min": [
+        0.034752778708934784,
+        0.20647607743740082,
+        -0.10642218589782715
+      ],
+      "max": [
+        0.13460764288902283,
+        0.5061280727386475,
+        -0.018083278089761734
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "gluteus_l",
+    "sources": [
+      "Gluteus maximus muscle.l"
+    ],
+    "originalFaces": 3326,
+    "bounds": {
+      "min": [
+        0.0013563111424446106,
+        0.7097153067588806,
+        -0.11192688345909119
+      ],
+      "max": [
+        0.1467619240283966,
+        0.9792015552520752,
+        -0.0148979052901268
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lung_r",
+    "sources": [
+      "Superior lobe of right lung",
+      "Middle lobe of right lung",
+      "Inferior lobe of right lung"
+    ],
+    "originalFaces": 11798,
+    "bounds": {
+      "min": [
+        -0.13113145530223846,
+        1.1699010133743286,
+        -0.08324302732944489
+      ],
+      "max": [
+        -0.002744423458352685,
+        1.4294832944869995,
+        0.10247430205345154
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "adrenal_r",
+    "sources": [
+      "Suprarenal gland.r"
+    ],
+    "originalFaces": 2294,
+    "bounds": {
+      "min": [
+        -0.06253448128700256,
+        1.1203031539916992,
+        -0.023041782900691032
+      ],
+      "max": [
+        -0.03063030168414116,
+        1.1625831127166748,
+        0.004194687120616436
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "thymus_r",
+    "sources": [
+      "Right lobe of thymus"
+    ],
+    "originalFaces": 6452,
+    "bounds": {
+      "min": [
+        -0.006992953829467297,
+        1.3105169534683228,
+        0.04344163462519646
+      ],
+      "max": [
+        0.01658748835325241,
+        1.3619964122772217,
+        0.06773725897073746
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "testis_r",
+    "sources": [
+      "Testis.r"
+    ],
+    "originalFaces": 678,
+    "bounds": {
+      "min": [
+        -0.0312255397439003,
+        0.7266453504562378,
+        0.044786326587200165
+      ],
+      "max": [
+        -0.010150445625185966,
+        0.756098210811615,
+        0.06752107292413712
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "seminal_r",
+    "sources": [
+      "Seminal gland.r"
+    ],
+    "originalFaces": 360,
+    "bounds": {
+      "min": [
+        -0.03595482185482979,
+        0.828262984752655,
+        -0.04452905431389809
+      ],
+      "max": [
+        -0.003069128841161728,
+        0.8588366508483887,
+        -0.02355874702334404
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "eye_r",
+    "sources": [
+      "Sclera.r"
+    ],
+    "originalFaces": 2272,
+    "bounds": {
+      "min": [
+        -0.04367171972990036,
+        1.5775812864303589,
+        0.050822723656892776
+      ],
+      "max": [
+        -0.01742466166615486,
+        1.6038262844085693,
+        0.07578937709331512
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "brain_r",
+    "sources": [
+      " Posterior transverse collateral sulcus.r",
+      "Angular gyrus.r",
+      "Anterior occipital sulcus*.r",
+      "Calcarine sulcus.r",
+      "Central sulcus.r",
+      "Cingulate gyrus (Posteroventral part*).r",
+      "Cingulate gyrus and sulcus (Middle anterior part).r",
+      "Cingulate gyrus and sulcus (Middle posterior part).r",
+      "Cingulate gyrus and sulcus (Posterior dorsal part).r",
+      "Cingulate sulcus (Marginal part*).r",
+      "Circular sulcus of insula.r",
+      "Collateral sulcus.r",
+      "Cuneus.r",
+      "Inferior occipital gyrus and sulcus*.r",
+      "Inferior temporal gyrus.r",
+      "Insula (Subcentral gyrus and ant. and post. sulci*).r",
+      "Lat_Fis-ant-Horizont.r",
+      "Lat_Fis-ant-Vertical.r",
+      "Lat_Fis-post.r",
+      "Lateral occipital gyrus (Middle occipital gyrus*).r",
+      "Lateral occipitotemporal gyrus.r",
+      "Lingual gyrus.r",
+      "Lunate sulcus.r",
+      "Medial occipitotemporal gyrus (Parahippocampal*).r",
+      "Middle frontal gyrus.r",
+      "Middle temporal gyrus.r",
+      "Occipital pole.r",
+      "Occipitotemporal sulcus (Lateral part*).r",
+      "Orbital gyri (Frontomarginal gyrus and sulcus*).r",
+      "Orbital gyri.r",
+      "Orbital part of  inferior frontal gyrus.r",
+      "Orbital sulci (H-shaped orbital sulci*).r",
+      "Orbital sulci (Lateral Orbital sulcus*).r",
+      "Paracentral gyrus and sulcus*.r",
+      "Postcentral gyrus.r",
+      "Precentral gyrus.r",
+      "Precuneus.r",
+      "Inferior frontal sulcus.r",
+      "Inferior temporal sulcus.r",
+      "Intraparietal sulcus.r",
+      "Olfactory sulcus.r",
+      "Opercular part of inferior frontal gyrus.r",
+      "Paracentral sulcus.r",
+      "Parieto-occipital sulcus.r",
+      "Postcentral sulcus.r",
+      "Precentral sulcus (inferior part)*.r",
+      "Precentral sulcus (Superior part)*.r",
+      "Straight gyrus (Gyrus rectus).r",
+      "Subparietal sulcus.r",
+      "Sulcus interm_prim-Jensen.r",
+      "Superior frontal gyrus.r",
+      "Superior frontal sulcus.r",
+      "Superior occipital gyri.r",
+      "Superior parietal lobule.r",
+      "Superior temporal gyrus (Lateral part).r",
+      "Superior temporal sulcus.r",
+      "Supramarginal gyrus.r",
+      "Temporal plane.r",
+      "Temporal pole.r",
+      "Transverse frontopolar gyrus and sulcus*.r",
+      "Transverse occipital sulcus.r",
+      "Transverse temporal gyri.r",
+      "Triangular part of inferior frontal gyrus.r"
+    ],
+    "originalFaces": 50752,
+    "bounds": {
+      "min": [
+        -0.06888675689697266,
+        1.5817887783050537,
+        -0.0991320013999939
+      ],
+      "max": [
+        -5.579087883234024e-06,
+        1.6996346712112427,
+        0.08156732469797134
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "sciatic_r",
+    "sources": [
+      "Sciatic nerve.r"
+    ],
+    "originalFaces": 2448,
+    "bounds": {
+      "min": [
+        -0.0797785297036171,
+        0.5397514700889587,
+        -0.07181496173143387
+      ],
+      "max": [
+        -0.016246501356363297,
+        0.9781444072723389,
+        -0.01623684912919998
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "optic_r",
+    "sources": [
+      "Optic nerve (II).r"
+    ],
+    "originalFaces": 884,
+    "bounds": {
+      "min": [
+        -0.030493810772895813,
+        1.5927956104278564,
+        0.01888582669198513
+      ],
+      "max": [
+        4.131719470024109e-05,
+        1.6095308065414429,
+        0.061391353607177734
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pectoralis_r",
+    "sources": [
+      "Clavicular head of pectoralis major muscle.r",
+      "Sternocostal head of pectoralis major muscle.r",
+      "(Abdominal part of pectoralis major muscle).r"
+    ],
+    "originalFaces": 5575,
+    "bounds": {
+      "min": [
+        -0.20014622807502747,
+        1.1718324422836304,
+        -0.016804374754428864
+      ],
+      "max": [
+        -0.003274388611316681,
+        1.4094083309173584,
+        0.12630236148834229
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "deltoid_r",
+    "sources": [
+      "Acromial part of deltoid muscle.r",
+      "Clavicular part of deltoid muscle.r",
+      "Scapular spinal part of deltoid muscle.r"
+    ],
+    "originalFaces": 10244,
+    "bounds": {
+      "min": [
+        -0.23491400480270386,
+        1.250761866569519,
+        -0.1030786782503128
+      ],
+      "max": [
+        -0.08446329087018967,
+        1.423707365989685,
+        0.020371250808238983
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "biceps_r",
+    "sources": [
+      "Long head of biceps brachii.r",
+      "Short head of biceps brachii.r"
+    ],
+    "originalFaces": 5914,
+    "bounds": {
+      "min": [
+        -0.23747877776622772,
+        1.0508124828338623,
+        -0.04129200056195259
+      ],
+      "max": [
+        -0.13818997144699097,
+        1.407930850982666,
+        0.008411533199250698
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "rectus_abdominis_r",
+    "sources": [
+      "Rectus abdominis muscle.r"
+    ],
+    "originalFaces": 20604,
+    "bounds": {
+      "min": [
+        -0.0816785916686058,
+        0.8497776389122009,
+        0.04504146799445152
+      ],
+      "max": [
+        -0.0030123628675937653,
+        1.2582528591156006,
+        0.11968522518873215
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "rectus_femoris_r",
+    "sources": [
+      "Rectus femoris muscle.r"
+    ],
+    "originalFaces": 8276,
+    "bounds": {
+      "min": [
+        -0.1483187973499298,
+        0.3704789876937866,
+        -0.009070612490177155
+      ],
+      "max": [
+        -0.06670670211315155,
+        0.9158067107200623,
+        0.06026973947882652
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "gastrocnemius_r",
+    "sources": [
+      "Lateral head of gastrocnemius.r",
+      "Medial head of gastrocnemius.r"
+    ],
+    "originalFaces": 11370,
+    "bounds": {
+      "min": [
+        -0.13460762798786163,
+        0.2064761519432068,
+        -0.10642215609550476
+      ],
+      "max": [
+        -0.034752748906612396,
+        0.5061279535293579,
+        -0.018083300441503525
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "gluteus_r",
+    "sources": [
+      "Gluteus maximus muscle.r"
+    ],
+    "originalFaces": 3326,
+    "bounds": {
+      "min": [
+        -0.146761953830719,
+        0.7097151875495911,
+        -0.11192686855792999
+      ],
+      "max": [
+        -0.0013563483953475952,
+        0.9792013764381409,
+        -0.014897916465997696
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "brainstem",
+    "sources": [
+      "Pons.l",
+      "Pons.r",
+      "Medulla oblongata.l",
+      "Medulla oblongata.r"
+    ],
+    "originalFaces": 32498,
+    "bounds": {
+      "min": [
+        -0.020514843985438347,
+        1.5388015508651733,
+        -0.03612752631306648
+      ],
+      "max": [
+        0.020514963194727898,
+        1.6030389070510864,
+        0.008278804831206799
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "heart",
+    "sources": [
+      "Right atrium",
+      "Left atrium",
+      "Right ventricle",
+      "Left ventricle"
+    ],
+    "originalFaces": 9835,
+    "bounds": {
+      "min": [
+        -0.027495617046952248,
+        1.2389954328536987,
+        0.050999999046325684
+      ],
+      "max": [
+        0.0811055526137352,
+        1.3311612606048584,
+        0.08120265603065491
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "atrium_r",
+    "sources": [
+      "Right atrium"
+    ],
+    "originalFaces": 10392,
+    "bounds": {
+      "min": [
+        -0.036787353456020355,
+        1.2461631298065186,
+        -0.007734294049441814
+      ],
+      "max": [
+        0.007875592447817326,
+        1.3447729349136353,
+        0.050999999046325684
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "atrium_l",
+    "sources": [
+      "Left atrium"
+    ],
+    "originalFaces": 2598,
+    "bounds": {
+      "min": [
+        -0.023833898827433586,
+        1.2629199028015137,
+        -0.03165838122367859
+      ],
+      "max": [
+        0.06556069850921631,
+        1.338149905204773,
+        0.050999999046325684
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ventricle_r",
+    "sources": [
+      "Right ventricle"
+    ],
+    "originalFaces": 4364,
+    "bounds": {
+      "min": [
+        -0.021543696522712708,
+        1.2389519214630127,
+        0.01418229378759861
+      ],
+      "max": [
+        0.05840121582150459,
+        1.3313692808151245,
+        0.050999999046325684
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ventricle_l",
+    "sources": [
+      "Left ventricle"
+    ],
+    "originalFaces": 9719,
+    "bounds": {
+      "min": [
+        0.002471956191584468,
+        1.2367327213287354,
+        -0.015569522976875305
+      ],
+      "max": [
+        0.08233093470335007,
+        1.3263452053070068,
+        0.050999999046325684
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "valve_tricuspid",
+    "sources": [
+      "FMA7234"
+    ],
+    "originalFaces": 47268,
+    "bounds": {
+      "min": [
+        -0.018167871981859207,
+        1.25241219997406,
+        0.016710683703422546
+      ],
+      "max": [
+        0.03032192960381508,
+        1.3002721071243286,
+        0.0484296977519989
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "valve_mitral",
+    "sources": [
+      "FMA7235"
+    ],
+    "originalFaces": 19102,
+    "bounds": {
+      "min": [
+        0.015387563034892082,
+        1.2635387182235718,
+        -0.012293823063373566
+      ],
+      "max": [
+        0.06475326418876648,
+        1.2956587076187134,
+        0.025621771812438965
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "valve_pulmonary",
+    "sources": [
+      "Anterior semilunar leaflet of pulmonary valve",
+      "Left semilunar leaflet of pulmonary valve",
+      "Right semilunar leaflet of pulmonary valve"
+    ],
+    "originalFaces": 7258,
+    "bounds": {
+      "min": [
+        0.009650835767388344,
+        1.3095871210098267,
+        0.030670858919620514
+      ],
+      "max": [
+        0.042954765260219574,
+        1.3307703733444214,
+        0.06377198547124863
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "valve_aortic",
+    "sources": [
+      "Left coronary leaflet",
+      "Right coronary leaflet",
+      "Non-coronary leaflet"
+    ],
+    "originalFaces": 2148,
+    "bounds": {
+      "min": [
+        0.001112939789891243,
+        1.3060466051101685,
+        0.010066825896501541
+      ],
+      "max": [
+        0.028065193444490433,
+        1.3245112895965576,
+        0.03827442601323128
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "aorta",
+    "sources": [
+      "Ascending aorta",
+      "Aortic arch"
+    ],
+    "originalFaces": 576,
+    "bounds": {
+      "min": [
+        -0.009629275649785995,
+        1.3080096244812012,
+        -0.043027207255363464
+      ],
+      "max": [
+        0.03196411579847336,
+        1.3968675136566162,
+        0.04422244057059288
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pulmonary_trunk",
+    "sources": [
+      "Pulmonary trunk",
+      "Bifurcation of pulmonary trunk"
+    ],
+    "originalFaces": 691,
+    "bounds": {
+      "min": [
+        0.0053663658909499645,
+        1.3241760730743408,
+        -0.008828721009194851
+      ],
+      "max": [
+        0.04538174718618393,
+        1.3600900173187256,
+        0.06318226456642151
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pulmonary_artery_r",
+    "sources": [
+      "Right pulmonary artery"
+    ],
+    "originalFaces": 288,
+    "bounds": {
+      "min": [
+        -0.03807569295167923,
+        1.3239353895187378,
+        -0.014609003439545631
+      ],
+      "max": [
+        0.014233151450753212,
+        1.3517470359802246,
+        0.011768655851483345
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pulmonary_artery_l",
+    "sources": [
+      "Left pulmonary artery"
+    ],
+    "originalFaces": 1008,
+    "bounds": {
+      "min": [
+        0.022455520927906036,
+        1.2669105529785156,
+        -0.03981703519821167
+      ],
+      "max": [
+        0.08986274152994156,
+        1.3588581085205078,
+        2.4456530809402466e-05
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pulmonary_vein_r",
+    "sources": [
+      "Right inferior pulmonary vein",
+      "Right superior pulmonary vein"
+    ],
+    "originalFaces": 1152,
+    "bounds": {
+      "min": [
+        -0.045137688517570496,
+        1.287060260772705,
+        -0.030182959511876106
+      ],
+      "max": [
+        -0.0016746371984481812,
+        1.3402202129364014,
+        0.004354414064437151
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "pulmonary_vein_l",
+    "sources": [
+      "Left inferior pulmonary vein",
+      "Left superior pulmonary vein"
+    ],
+    "originalFaces": 864,
+    "bounds": {
+      "min": [
+        0.036733824759721756,
+        1.2860543727874756,
+        -0.027275968343019485
+      ],
+      "max": [
+        0.05565847456455231,
+        1.3237700462341309,
+        -0.001660054549574852
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vena_cava_superior",
+    "sources": [
+      "Superior vena cava"
+    ],
+    "originalFaces": 144,
+    "bounds": {
+      "min": [
+        -0.02878890372812748,
+        1.3400102853775024,
+        0.005575966089963913
+      ],
+      "max": [
+        -0.0038720741868019104,
+        1.3776836395263672,
+        0.032607369124889374
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vena_cava_inferior",
+    "sources": [
+      "Inferior vena cava (thoracic part)"
+    ],
+    "originalFaces": 432,
+    "bounds": {
+      "min": [
+        -0.026499230414628983,
+        1.170478105545044,
+        -0.00013248249888420105
+      ],
+      "max": [
+        -0.0005580540746450424,
+        1.2632604837417603,
+        0.033720292150974274
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "coronary_r",
+    "sources": [
+      "Right coronary artery"
+    ],
+    "originalFaces": 13536,
+    "bounds": {
+      "min": [
+        -0.022575072944164276,
+        1.2404407262802124,
+        -0.0045049116015434265
+      ],
+      "max": [
+        0.0579838864505291,
+        1.3337516784667969,
+        0.08125563710927963
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "coronary_l",
+    "sources": [
+      "Left coronary artery"
+    ],
+    "originalFaces": 288,
+    "bounds": {
+      "min": [
+        0.020970720797777176,
+        1.321993112564087,
+        0.019190065562725067
+      ],
+      "max": [
+        0.03628972917795181,
+        1.3328299522399902,
+        0.026334282010793686
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "coronary_lad",
+    "sources": [
+      "Anterior interventricular artery"
+    ],
+    "originalFaces": 5760,
+    "bounds": {
+      "min": [
+        0.03507564216852188,
+        1.243416666984558,
+        0.02275947853922844
+      ],
+      "max": [
+        0.07428224384784698,
+        1.32538902759552,
+        0.07922186702489853
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "coronary_circumflex",
+    "sources": [
+      "Circumflex artery of heart"
+    ],
+    "originalFaces": 8208,
+    "bounds": {
+      "min": [
+        0.03507564961910248,
+        1.250509262084961,
+        -0.011260353028774261
+      ],
+      "max": [
+        0.08016058057546616,
+        1.3253889083862305,
+        0.046246591955423355
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "coronary_margin_r",
+    "sources": [
+      "Right inferolateral branch of right coronary artery"
+    ],
+    "originalFaces": 9216,
+    "bounds": {
+      "min": [
+        0.020960044115781784,
+        1.2379213571548462,
+        -0.009693892672657967
+      ],
+      "max": [
+        0.07679779827594757,
+        1.2581127882003784,
+        0.04257206246256828
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "cardiac_vein_great",
+    "sources": [
+      "Great cardiac vein"
+    ],
+    "originalFaces": 7344,
+    "bounds": {
+      "min": [
+        0.04005453735589981,
+        1.2424181699752808,
+        -0.016033902764320374
+      ],
+      "max": [
+        0.07760690152645111,
+        1.319075107574463,
+        0.07748261094093323
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "cardiac_vein_middle",
+    "sources": [
+      "Middle cardiac vein"
+    ],
+    "originalFaces": 15984,
+    "bounds": {
+      "min": [
+        0.002061653882265091,
+        1.2370163202285767,
+        0.010380931198596954
+      ],
+      "max": [
+        0.07349473983049393,
+        1.2699906826019287,
+        0.06051691621541977
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "coronary_sinus",
+    "sources": [
+      "Coronary sinus"
+    ],
+    "originalFaces": 720,
+    "bounds": {
+      "min": [
+        -0.004751766100525856,
+        1.2607007026672363,
+        -0.017812129110097885
+      ],
+      "max": [
+        0.04829270392656326,
+        1.2842376232147217,
+        0.01810317486524582
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "cardiac_vein_inferior",
+    "sources": [
+      "Inferior vein of left ventricle"
+    ],
+    "originalFaces": 5904,
+    "bounds": {
+      "min": [
+        0.04318612813949585,
+        1.2453088760375977,
+        -0.01519146841019392
+      ],
+      "max": [
+        0.08049140870571136,
+        1.2812081575393677,
+        0.04641174152493477
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_atlas_c1_",
+    "sources": [
+      "Atlas (C1)"
+    ],
+    "originalFaces": 2146,
+    "bounds": {
+      "min": [
+        -0.043027929961681366,
+        1.5331083536148071,
+        -0.04595327377319336
+      ],
+      "max": [
+        0.04303619638085365,
+        1.5527560710906982,
+        0.0031142346560955048
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_axis_c2_",
+    "sources": [
+      "Axis (C2)"
+    ],
+    "originalFaces": 2244,
+    "bounds": {
+      "min": [
+        -0.026784639805555344,
+        1.5085251331329346,
+        -0.05238238722085953
+      ],
+      "max": [
+        0.02681589685380459,
+        1.5514352321624756,
+        0.0003565475344657898
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_body_of_sternum",
+    "sources": [
+      "Body of sternum"
+    ],
+    "originalFaces": 4466,
+    "bounds": {
+      "min": [
+        -0.024674177169799805,
+        1.2395915985107422,
+        0.06913609802722931
+      ],
+      "max": [
+        0.024674180895090103,
+        1.3589444160461426,
+        0.13079418241977692
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_calcaneus_l",
+    "sources": [
+      "Calcaneus.l"
+    ],
+    "originalFaces": 1432,
+    "bounds": {
+      "min": [
+        0.0546853169798851,
+        0.011449387297034264,
+        -0.09155616164207458
+      ],
+      "max": [
+        0.10222742706537247,
+        0.06255675107240677,
+        -0.015868473798036575
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_calcaneus_r",
+    "sources": [
+      "Calcaneus.r"
+    ],
+    "originalFaces": 1432,
+    "bounds": {
+      "min": [
+        -0.10222742706537247,
+        0.011449387297034264,
+        -0.09155616164207458
+      ],
+      "max": [
+        -0.0546853169798851,
+        0.06255675107240677,
+        -0.015868473798036575
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_capitate_bone_l",
+    "sources": [
+      "Capitate bone.l"
+    ],
+    "originalFaces": 470,
+    "bounds": {
+      "min": [
+        0.25654876232147217,
+        0.8318798542022705,
+        0.008971390314400196
+      ],
+      "max": [
+        0.2731603980064392,
+        0.8552896976470947,
+        0.026944557204842567
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_capitate_bone_r",
+    "sources": [
+      "Capitate bone.r"
+    ],
+    "originalFaces": 470,
+    "bounds": {
+      "min": [
+        -0.2731603980064392,
+        0.8318798542022705,
+        0.008971390314400196
+      ],
+      "max": [
+        -0.25654876232147217,
+        0.8552896976470947,
+        0.026944557204842567
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_clavicle_l",
+    "sources": [
+      "Clavicle.l"
+    ],
+    "originalFaces": 1548,
+    "bounds": {
+      "min": [
+        0.01121450960636139,
+        1.389112114906311,
+        -0.05226176232099533
+      ],
+      "max": [
+        0.15433061122894287,
+        1.4252153635025024,
+        0.050509873777627945
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_clavicle_r",
+    "sources": [
+      "Clavicle.r"
+    ],
+    "originalFaces": 1548,
+    "bounds": {
+      "min": [
+        -0.15433064103126526,
+        1.389112114906311,
+        -0.05226176232099533
+      ],
+      "max": [
+        -0.011214524507522583,
+        1.4252153635025024,
+        0.050509873777627945
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_coccyx",
+    "sources": [
+      "Coccyx"
+    ],
+    "originalFaces": 1066,
+    "bounds": {
+      "min": [
+        -0.016741100698709488,
+        0.8302965760231018,
+        -0.08636881411075592
+      ],
+      "max": [
+        0.01676384173333645,
+        0.8611255884170532,
+        -0.06664403527975082
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_cuboid_bone_l",
+    "sources": [
+      "Cuboid bone.l"
+    ],
+    "originalFaces": 994,
+    "bounds": {
+      "min": [
+        0.07952053099870682,
+        0.0289042666554451,
+        -0.023472556844353676
+      ],
+      "max": [
+        0.11175450682640076,
+        0.05976192280650139,
+        0.010719502344727516
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_cuboid_bone_r",
+    "sources": [
+      "Cuboid bone.r"
+    ],
+    "originalFaces": 994,
+    "bounds": {
+      "min": [
+        -0.11175450682640076,
+        0.0289042666554451,
+        -0.023472556844353676
+      ],
+      "max": [
+        -0.07952053099870682,
+        0.05976192280650139,
+        0.010719502344727516
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fifth_finger_of_foot_l",
+    "sources": [
+      "Distal phalanx of fifth finger of foot.l"
+    ],
+    "originalFaces": 222,
+    "bounds": {
+      "min": [
+        0.13852769136428833,
+        0.009203300811350346,
+        0.0855850949883461
+      ],
+      "max": [
+        0.14641644060611725,
+        0.014837618917226791,
+        0.09651320427656174
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fifth_finger_of_foot_r",
+    "sources": [
+      "Distal phalanx of fifth finger of foot.r"
+    ],
+    "originalFaces": 222,
+    "bounds": {
+      "min": [
+        -0.14641644060611725,
+        0.009203300811350346,
+        0.0855850949883461
+      ],
+      "max": [
+        -0.13852769136428833,
+        0.014837618917226791,
+        0.09651320427656174
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fifth_finger_of_hand_l",
+    "sources": [
+      "Distal phalanx of fifth finger of hand.l"
+    ],
+    "originalFaces": 192,
+    "bounds": {
+      "min": [
+        0.22608551383018494,
+        0.7229509353637695,
+        0.06876537203788757
+      ],
+      "max": [
+        0.23466768860816956,
+        0.7360833883285522,
+        0.08356413245201111
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fifth_finger_of_hand_r",
+    "sources": [
+      "Distal phalanx of fifth finger of hand.r"
+    ],
+    "originalFaces": 192,
+    "bounds": {
+      "min": [
+        -0.23466765880584717,
+        0.7229509353637695,
+        0.06876537203788757
+      ],
+      "max": [
+        -0.22608548402786255,
+        0.7360833883285522,
+        0.08356413245201111
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_first_finger_of_foot_l",
+    "sources": [
+      "Distal phalanx of first finger of foot.l"
+    ],
+    "originalFaces": 466,
+    "bounds": {
+      "min": [
+        0.06975451856851578,
+        0.009948317892849445,
+        0.10771144181489944
+      ],
+      "max": [
+        0.09042906016111374,
+        0.02141735889017582,
+        0.13462211191654205
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_first_finger_of_foot_r",
+    "sources": [
+      "Distal phalanx of first finger of foot.r"
+    ],
+    "originalFaces": 466,
+    "bounds": {
+      "min": [
+        -0.09042906016111374,
+        0.009948317892849445,
+        0.10771144181489944
+      ],
+      "max": [
+        -0.06975451856851578,
+        0.02141735889017582,
+        0.13462211191654205
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_first_finger_of_hand_l",
+    "sources": [
+      "Distal phalanx of first finger of hand.l"
+    ],
+    "originalFaces": 222,
+    "bounds": {
+      "min": [
+        0.32061296701431274,
+        0.7668561339378357,
+        0.05737582594156265
+      ],
+      "max": [
+        0.33462458848953247,
+        0.7909849286079407,
+        0.07413418591022491
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_first_finger_of_hand_r",
+    "sources": [
+      "Distal phalanx of first finger of hand.r"
+    ],
+    "originalFaces": 222,
+    "bounds": {
+      "min": [
+        -0.33462458848953247,
+        0.7668561339378357,
+        0.05737582594156265
+      ],
+      "max": [
+        -0.32061296701431274,
+        0.7909849286079407,
+        0.07413418591022491
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fourth_finger_of_foot_l",
+    "sources": [
+      "Distal phalanx of fourth finger of foot.l"
+    ],
+    "originalFaces": 278,
+    "bounds": {
+      "min": [
+        0.12778301537036896,
+        0.00923933181911707,
+        0.10372728109359741
+      ],
+      "max": [
+        0.13657230138778687,
+        0.01657186634838581,
+        0.11540326476097107
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fourth_finger_of_foot_r",
+    "sources": [
+      "Distal phalanx of fourth finger of foot.r"
+    ],
+    "originalFaces": 278,
+    "bounds": {
+      "min": [
+        -0.13657233119010925,
+        0.00923933181911707,
+        0.10372728109359741
+      ],
+      "max": [
+        -0.12778304517269135,
+        0.01657186634838581,
+        0.11540326476097107
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fourth_finger_of_hand_l",
+    "sources": [
+      "Distal phalanx of fourth finger of hand.l"
+    ],
+    "originalFaces": 134,
+    "bounds": {
+      "min": [
+        0.2533382177352905,
+        0.710760235786438,
+        0.07966981828212738
+      ],
+      "max": [
+        0.2619461417198181,
+        0.7203671336174011,
+        0.09584969282150269
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_fourth_finger_of_hand_r",
+    "sources": [
+      "Distal phalanx of fourth finger of hand.r"
+    ],
+    "originalFaces": 134,
+    "bounds": {
+      "min": [
+        -0.2619461417198181,
+        0.710760235786438,
+        0.07966981828212738
+      ],
+      "max": [
+        -0.2533382177352905,
+        0.7203671336174011,
+        0.09584969282150269
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_second_finger_of_foot_l",
+    "sources": [
+      "Distal phalanx of second finger of foot.l"
+    ],
+    "originalFaces": 236,
+    "bounds": {
+      "min": [
+        0.09870919585227966,
+        0.009463061578571796,
+        0.12364142388105392
+      ],
+      "max": [
+        0.10889412462711334,
+        0.017046473920345306,
+        0.1373080015182495
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_second_finger_of_foot_r",
+    "sources": [
+      "Distal phalanx of second finger of foot.r"
+    ],
+    "originalFaces": 236,
+    "bounds": {
+      "min": [
+        -0.10889412462711334,
+        0.009463061578571796,
+        0.12364142388105392
+      ],
+      "max": [
+        -0.09870919585227966,
+        0.017046473920345306,
+        0.1373080015182495
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_second_finger_of_hand_l",
+    "sources": [
+      "Distal phalanx of second finger of hand.l"
+    ],
+    "originalFaces": 250,
+    "bounds": {
+      "min": [
+        0.31113776564598083,
+        0.7077908515930176,
+        0.07028477638959885
+      ],
+      "max": [
+        0.3215741813182831,
+        0.7220907211303711,
+        0.08793047815561295
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_second_finger_of_hand_r",
+    "sources": [
+      "Distal phalanx of second finger of hand.r"
+    ],
+    "originalFaces": 250,
+    "bounds": {
+      "min": [
+        -0.3215741813182831,
+        0.7077908515930176,
+        0.07028477638959885
+      ],
+      "max": [
+        -0.31113776564598083,
+        0.7220907211303711,
+        0.08793047815561295
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_third_finger_of_foot_l",
+    "sources": [
+      "Distal phalanx of third finger of foot.l"
+    ],
+    "originalFaces": 318,
+    "bounds": {
+      "min": [
+        0.11437457799911499,
+        0.009477684274315834,
+        0.11827965080738068
+      ],
+      "max": [
+        0.12322283536195755,
+        0.015641484409570694,
+        0.13027484714984894
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_third_finger_of_foot_r",
+    "sources": [
+      "Distal phalanx of third finger of foot.r"
+    ],
+    "originalFaces": 318,
+    "bounds": {
+      "min": [
+        -0.12322285026311874,
+        0.009477684274315834,
+        0.11827965080738068
+      ],
+      "max": [
+        -0.11437459290027618,
+        0.015641484409570694,
+        0.13027484714984894
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_third_finger_of_hand_l",
+    "sources": [
+      "Distal phalanx of third finger of hand.l"
+    ],
+    "originalFaces": 192,
+    "bounds": {
+      "min": [
+        0.2802492082118988,
+        0.6986861228942871,
+        0.07913007587194443
+      ],
+      "max": [
+        0.290111243724823,
+        0.7125944495201111,
+        0.09703092277050018
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_distal_phalanx_of_third_finger_of_hand_r",
+    "sources": [
+      "Distal phalanx of third finger of hand.r"
+    ],
+    "originalFaces": 192,
+    "bounds": {
+      "min": [
+        -0.290111243724823,
+        0.6986861228942871,
+        0.07913007587194443
+      ],
+      "max": [
+        -0.2802492082118988,
+        0.7125944495201111,
+        0.09703092277050018
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_eighth_rib_l",
+    "sources": [
+      "Eighth rib.l"
+    ],
+    "originalFaces": 8257,
+    "bounds": {
+      "min": [
+        0.01740984618663788,
+        1.1352980136871338,
+        -0.09638124704360962
+      ],
+      "max": [
+        0.1352900266647339,
+        1.286828875541687,
+        0.06704045832157135
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_eighth_rib_r",
+    "sources": [
+      "Eighth rib.r"
+    ],
+    "originalFaces": 8257,
+    "bounds": {
+      "min": [
+        -0.1352900266647339,
+        1.1352980136871338,
+        -0.09638124704360962
+      ],
+      "max": [
+        -0.01740984618663788,
+        1.286828875541687,
+        0.06704045832157135
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_eleventh_rib_l",
+    "sources": [
+      "Eleventh rib.l"
+    ],
+    "originalFaces": 5032,
+    "bounds": {
+      "min": [
+        0.019885830581188202,
+        1.0590535402297974,
+        -0.07825522124767303
+      ],
+      "max": [
+        0.11971871554851532,
+        1.1910812854766846,
+        0.0029321834444999695
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_eleventh_rib_r",
+    "sources": [
+      "Eleventh rib.r"
+    ],
+    "originalFaces": 5032,
+    "bounds": {
+      "min": [
+        -0.11971873044967651,
+        1.0590535402297974,
+        -0.07825522124767303
+      ],
+      "max": [
+        -0.019885845482349396,
+        1.1910812854766846,
+        0.0029321834444999695
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_ethmoid_bone",
+    "sources": [
+      "Ethmoid bone"
+    ],
+    "originalFaces": 6696,
+    "bounds": {
+      "min": [
+        -0.01874006725847721,
+        1.5658774375915527,
+        0.031408779323101044
+      ],
+      "max": [
+        0.018740063533186913,
+        1.6053110361099243,
+        0.07594645768404007
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_femur_l",
+    "sources": [
+      "Femur.l"
+    ],
+    "originalFaces": 3786,
+    "bounds": {
+      "min": [
+        0.031938303261995316,
+        0.42986607551574707,
+        -0.0593528188765049
+      ],
+      "max": [
+        0.14853090047836304,
+        0.8843052387237549,
+        0.018758106976747513
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_femur_r",
+    "sources": [
+      "Femur.r"
+    ],
+    "originalFaces": 3786,
+    "bounds": {
+      "min": [
+        -0.14853090047836304,
+        0.42986607551574707,
+        -0.0593528188765049
+      ],
+      "max": [
+        -0.031938303261995316,
+        0.8843052387237549,
+        0.018758106976747513
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fibula_l",
+    "sources": [
+      "Fibula.l"
+    ],
+    "originalFaces": 1264,
+    "bounds": {
+      "min": [
+        0.08862368762493134,
+        0.05521099269390106,
+        -0.05968654155731201
+      ],
+      "max": [
+        0.12484715133905411,
+        0.41770344972610474,
+        -0.026760388165712357
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fibula_r",
+    "sources": [
+      "Fibula.r"
+    ],
+    "originalFaces": 1264,
+    "bounds": {
+      "min": [
+        -0.12484713643789291,
+        0.05521099269390106,
+        -0.05968654155731201
+      ],
+      "max": [
+        -0.08862367272377014,
+        0.41770344972610474,
+        -0.026760388165712357
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fifth_metacarpal_bone_l",
+    "sources": [
+      "Fifth metacarpal bone.l"
+    ],
+    "originalFaces": 503,
+    "bounds": {
+      "min": [
+        0.2325180023908615,
+        0.7801267504692078,
+        0.018938424065709114
+      ],
+      "max": [
+        0.25343313813209534,
+        0.8370853066444397,
+        0.04444628953933716
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fifth_metacarpal_bone_r",
+    "sources": [
+      "Fifth metacarpal bone.r"
+    ],
+    "originalFaces": 503,
+    "bounds": {
+      "min": [
+        -0.25343310832977295,
+        0.7801267504692078,
+        0.018938424065709114
+      ],
+      "max": [
+        -0.23251797258853912,
+        0.8370853066444397,
+        0.04444628953933716
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fifth_metatarsal_bone_l",
+    "sources": [
+      "Fifth metatarsal bone.l"
+    ],
+    "originalFaces": 894,
+    "bounds": {
+      "min": [
+        0.10093510150909424,
+        0.009887400083243847,
+        -0.014038313180208206
+      ],
+      "max": [
+        0.1379590630531311,
+        0.04105851799249649,
+        0.059694577008485794
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fifth_metatarsal_bone_r",
+    "sources": [
+      "Fifth metatarsal bone.r"
+    ],
+    "originalFaces": 894,
+    "bounds": {
+      "min": [
+        -0.1379590779542923,
+        0.009887400083243847,
+        -0.014038313180208206
+      ],
+      "max": [
+        -0.10093511641025543,
+        0.04105851799249649,
+        0.059694577008485794
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fifth_rib_l",
+    "sources": [
+      "Fifth rib.l"
+    ],
+    "originalFaces": 9360,
+    "bounds": {
+      "min": [
+        0.015495769679546356,
+        1.2413113117218018,
+        -0.08722754567861557
+      ],
+      "max": [
+        0.1313079595565796,
+        1.3672959804534912,
+        0.10210645198822021
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fifth_rib_r",
+    "sources": [
+      "Fifth rib.r"
+    ],
+    "originalFaces": 9360,
+    "bounds": {
+      "min": [
+        -0.1313079595565796,
+        1.2413113117218018,
+        -0.08722754567861557
+      ],
+      "max": [
+        -0.015495769679546356,
+        1.3672959804534912,
+        0.10210645198822021
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_first_metacarpal_bone_l",
+    "sources": [
+      "First metacarpal bone.l"
+    ],
+    "originalFaces": 682,
+    "bounds": {
+      "min": [
+        0.2811800241470337,
+        0.8093667030334473,
+        0.0225606057792902
+      ],
+      "max": [
+        0.31984418630599976,
+        0.8477457165718079,
+        0.05404023453593254
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_first_metacarpal_bone_r",
+    "sources": [
+      "First metacarpal bone.r"
+    ],
+    "originalFaces": 682,
+    "bounds": {
+      "min": [
+        -0.31984418630599976,
+        0.8093667030334473,
+        0.0225606057792902
+      ],
+      "max": [
+        -0.2811800241470337,
+        0.8477457165718079,
+        0.05404023453593254
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_first_metatarsal_bone_l",
+    "sources": [
+      "First metatarsal bone.l"
+    ],
+    "originalFaces": 1087,
+    "bounds": {
+      "min": [
+        0.060315269976854324,
+        0.014639528468251228,
+        0.020834030583500862
+      ],
+      "max": [
+        0.08216327428817749,
+        0.05953400209546089,
+        0.08440998196601868
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_first_metatarsal_bone_r",
+    "sources": [
+      "First metatarsal bone.r"
+    ],
+    "originalFaces": 1087,
+    "bounds": {
+      "min": [
+        -0.08216328918933868,
+        0.014639528468251228,
+        0.020834030583500862
+      ],
+      "max": [
+        -0.06031528487801552,
+        0.05953400209546089,
+        0.08440998196601868
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_first_rib_l",
+    "sources": [
+      "First rib.l"
+    ],
+    "originalFaces": 3208,
+    "bounds": {
+      "min": [
+        0.016273507848381996,
+        1.3871432542800903,
+        -0.03353792428970337
+      ],
+      "max": [
+        0.0711754634976387,
+        1.4465407133102417,
+        0.03712939843535423
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_first_rib_r",
+    "sources": [
+      "First rib.r"
+    ],
+    "originalFaces": 3208,
+    "bounds": {
+      "min": [
+        -0.0711754709482193,
+        1.3871432542800903,
+        -0.03353792428970337
+      ],
+      "max": [
+        -0.016273513436317444,
+        1.4465407133102417,
+        0.03712939843535423
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fourth_metacarpal_bone_l",
+    "sources": [
+      "Fourth metacarpal bone.l"
+    ],
+    "originalFaces": 642,
+    "bounds": {
+      "min": [
+        0.24918271601200104,
+        0.7731236219406128,
+        0.014743084087967873
+      ],
+      "max": [
+        0.2622728943824768,
+        0.8351924419403076,
+        0.041885145008563995
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fourth_metacarpal_bone_r",
+    "sources": [
+      "Fourth metacarpal bone.r"
+    ],
+    "originalFaces": 642,
+    "bounds": {
+      "min": [
+        -0.2622728943824768,
+        0.7731236219406128,
+        0.014743084087967873
+      ],
+      "max": [
+        -0.24918271601200104,
+        0.8351924419403076,
+        0.041885145008563995
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fourth_metatarsal_bone_l",
+    "sources": [
+      "Fourth metatarsal bone.l"
+    ],
+    "originalFaces": 732,
+    "bounds": {
+      "min": [
+        0.09434925019741058,
+        0.01241118274629116,
+        0.003665836527943611
+      ],
+      "max": [
+        0.12422113120555878,
+        0.049382247030735016,
+        0.07218466699123383
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fourth_metatarsal_bone_r",
+    "sources": [
+      "Fourth metatarsal bone.r"
+    ],
+    "originalFaces": 732,
+    "bounds": {
+      "min": [
+        -0.12422113120555878,
+        0.01241118274629116,
+        0.003665836527943611
+      ],
+      "max": [
+        -0.09434925019741058,
+        0.049382247030735016,
+        0.07218466699123383
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fourth_rib_l",
+    "sources": [
+      "Fourth rib.l"
+    ],
+    "originalFaces": 8640,
+    "bounds": {
+      "min": [
+        0.015797894448041916,
+        1.277517557144165,
+        -0.07701116055250168
+      ],
+      "max": [
+        0.1253829151391983,
+        1.3946081399917603,
+        0.09279833734035492
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_fourth_rib_r",
+    "sources": [
+      "Fourth rib.r"
+    ],
+    "originalFaces": 8640,
+    "bounds": {
+      "min": [
+        -0.1253829151391983,
+        1.277517557144165,
+        -0.07701115310192108
+      ],
+      "max": [
+        -0.015797894448041916,
+        1.3946081399917603,
+        0.09279833734035492
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_frontal_bone",
+    "sources": [
+      "Frontal bone"
+    ],
+    "originalFaces": 7754,
+    "bounds": {
+      "min": [
+        -0.061189014464616776,
+        1.5926116704940796,
+        0.01801314577460289
+      ],
+      "max": [
+        0.06118898466229439,
+        1.6991924047470093,
+        0.08711200207471848
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_hamate_bone_l",
+    "sources": [
+      "Hamate bone.l"
+    ],
+    "originalFaces": 536,
+    "bounds": {
+      "min": [
+        0.24423450231552124,
+        0.8309404253959656,
+        0.010051164776086807
+      ],
+      "max": [
+        0.2603338062763214,
+        0.8511416912078857,
+        0.03346100449562073
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_hamate_bone_r",
+    "sources": [
+      "Hamate bone.r"
+    ],
+    "originalFaces": 536,
+    "bounds": {
+      "min": [
+        -0.2603338062763214,
+        0.8309404253959656,
+        0.010051164776086807
+      ],
+      "max": [
+        -0.24423450231552124,
+        0.8511416912078857,
+        0.03346100449562073
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_hip_bone_l",
+    "sources": [
+      "Hip bone.l"
+    ],
+    "originalFaces": 3608,
+    "bounds": {
+      "min": [
+        0.0029371455311775208,
+        0.7973397374153137,
+        -0.08678361028432846
+      ],
+      "max": [
+        0.13489440083503723,
+        1.0119402408599854,
+        0.05606868118047714
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_hip_bone_r",
+    "sources": [
+      "Hip bone.r"
+    ],
+    "originalFaces": 3608,
+    "bounds": {
+      "min": [
+        -0.13489440083503723,
+        0.7973397374153137,
+        -0.08678361028432846
+      ],
+      "max": [
+        -0.0029371455311775208,
+        1.0119402408599854,
+        0.05606868118047714
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_humerus_l",
+    "sources": [
+      "Humerus.l"
+    ],
+    "originalFaces": 4280,
+    "bounds": {
+      "min": [
+        0.1446065753698349,
+        1.0870224237442017,
+        -0.053626202046871185
+      ],
+      "max": [
+        0.2488328069448471,
+        1.4046043157577515,
+        -0.0012591537088155746
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_humerus_r",
+    "sources": [
+      "Humerus.r"
+    ],
+    "originalFaces": 4280,
+    "bounds": {
+      "min": [
+        -0.24883277714252472,
+        1.0870224237442017,
+        -0.053626202046871185
+      ],
+      "max": [
+        -0.1446065455675125,
+        1.4046043157577515,
+        -0.0012591537088155746
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_hyoid_bone",
+    "sources": [
+      "Hyoid bone"
+    ],
+    "originalFaces": 1310,
+    "bounds": {
+      "min": [
+        -0.02274441532790661,
+        1.4915179014205933,
+        0.003027481958270073
+      ],
+      "max": [
+        0.02274441532790661,
+        1.511031150817871,
+        0.038998279720544815
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_intermediate_cuneiform_bone_l",
+    "sources": [
+      "Intermediate cuneiform bone.l"
+    ],
+    "originalFaces": 444,
+    "bounds": {
+      "min": [
+        0.07385104894638062,
+        0.04667773097753525,
+        -0.0002193935215473175
+      ],
+      "max": [
+        0.09337491542100906,
+        0.07069876044988632,
+        0.02274273708462715
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_intermediate_cuneiform_bone_r",
+    "sources": [
+      "Intermediate cuneiform bone.r"
+    ],
+    "originalFaces": 444,
+    "bounds": {
+      "min": [
+        -0.09337491542100906,
+        0.04667773097753525,
+        -0.0002193935215473175
+      ],
+      "max": [
+        -0.07385104894638062,
+        0.07069876044988632,
+        0.02274273708462715
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_lacrimal_bone_l",
+    "sources": [
+      "Lacrimal bone.l"
+    ],
+    "originalFaces": 588,
+    "bounds": {
+      "min": [
+        0.006468209903687239,
+        1.5731173753738403,
+        0.06151899695396423
+      ],
+      "max": [
+        0.017119670286774635,
+        1.598219394683838,
+        0.07622788101434708
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_lacrimal_bone_r",
+    "sources": [
+      "Lacrimal bone.r"
+    ],
+    "originalFaces": 588,
+    "bounds": {
+      "min": [
+        -0.017119670286774635,
+        1.5731173753738403,
+        0.06151899695396423
+      ],
+      "max": [
+        -0.006468209903687239,
+        1.598219394683838,
+        0.07622788101434708
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_lateral_cuneiform_bone_l",
+    "sources": [
+      "Lateral cuneiform bone.l"
+    ],
+    "originalFaces": 632,
+    "bounds": {
+      "min": [
+        0.08131526410579681,
+        0.04022442176938057,
+        -0.00620107538998127
+      ],
+      "max": [
+        0.10554154217243195,
+        0.06708493083715439,
+        0.020269636064767838
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_lateral_cuneiform_bone_r",
+    "sources": [
+      "Lateral cuneiform bone.r"
+    ],
+    "originalFaces": 632,
+    "bounds": {
+      "min": [
+        -0.10554154217243195,
+        0.04022442176938057,
+        -0.00620107538998127
+      ],
+      "max": [
+        -0.08131526410579681,
+        0.06708493083715439,
+        0.020269636064767838
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_lunate_bone_l",
+    "sources": [
+      "Lunate bone.l"
+    ],
+    "originalFaces": 1044,
+    "bounds": {
+      "min": [
+        0.24395652115345,
+        0.8477818965911865,
+        0.0095093734562397
+      ],
+      "max": [
+        0.2610536217689514,
+        0.8605213165283203,
+        0.02611616440117359
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_lunate_bone_r",
+    "sources": [
+      "Lunate bone.r"
+    ],
+    "originalFaces": 1044,
+    "bounds": {
+      "min": [
+        -0.2610536217689514,
+        0.8477818965911865,
+        0.0095093734562397
+      ],
+      "max": [
+        -0.24395652115345,
+        0.8605213165283203,
+        0.02611616440117359
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_mandible",
+    "sources": [
+      "Mandible"
+    ],
+    "originalFaces": 18838,
+    "bounds": {
+      "min": [
+        -0.05166403576731682,
+        1.4962966442108154,
+        0.0017980188131332397
+      ],
+      "max": [
+        0.05166403576731682,
+        1.5786473751068115,
+        0.08370994031429291
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_manubrium_of_sternum",
+    "sources": [
+      "Manubrium of sternum"
+    ],
+    "originalFaces": 2662,
+    "bounds": {
+      "min": [
+        -0.028658593073487282,
+        1.3499360084533691,
+        0.03160177916288376
+      ],
+      "max": [
+        0.028399184346199036,
+        1.4039206504821777,
+        0.08383230119943619
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_maxilla_l",
+    "sources": [
+      "Maxilla.l"
+    ],
+    "originalFaces": 4798,
+    "bounds": {
+      "min": [
+        -0.00021110475063323975,
+        1.537443995475769,
+        0.040060482919216156
+      ],
+      "max": [
+        0.04603412002325058,
+        1.6052191257476807,
+        0.0938725546002388
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_maxilla_r",
+    "sources": [
+      "Maxilla.r"
+    ],
+    "originalFaces": 4798,
+    "bounds": {
+      "min": [
+        -0.04603412002325058,
+        1.537443995475769,
+        0.040060482919216156
+      ],
+      "max": [
+        0.00021110475063323975,
+        1.6052191257476807,
+        0.0938725546002388
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_medial_cuneiform_bone_l",
+    "sources": [
+      "Medial cuneiform bone.l"
+    ],
+    "originalFaces": 968,
+    "bounds": {
+      "min": [
+        0.0580701008439064,
+        0.035434506833553314,
+        -0.0009967498481273651
+      ],
+      "max": [
+        0.08315329253673553,
+        0.06773670017719269,
+        0.03196221962571144
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_medial_cuneiform_bone_r",
+    "sources": [
+      "Medial cuneiform bone.r"
+    ],
+    "originalFaces": 968,
+    "bounds": {
+      "min": [
+        -0.08315329253673553,
+        0.035434506833553314,
+        -0.0009967498481273651
+      ],
+      "max": [
+        -0.0580701008439064,
+        0.06773670017719269,
+        0.03196221962571144
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fifth_finger_of_foot_l",
+    "sources": [
+      "Middle phalanx of fifth finger of foot.l"
+    ],
+    "originalFaces": 216,
+    "bounds": {
+      "min": [
+        0.13682787120342255,
+        0.009575771167874336,
+        0.07977449893951416
+      ],
+      "max": [
+        0.14542387425899506,
+        0.016178354620933533,
+        0.08756434917449951
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fifth_finger_of_foot_r",
+    "sources": [
+      "Middle phalanx of fifth finger of foot.r"
+    ],
+    "originalFaces": 216,
+    "bounds": {
+      "min": [
+        -0.14542387425899506,
+        0.009575771167874336,
+        0.07977449893951416
+      ],
+      "max": [
+        -0.13682787120342255,
+        0.016178354620933533,
+        0.08756434917449951
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fifth_finger_of_hand_l",
+    "sources": [
+      "Middle phalanx of fifth finger of hand.l"
+    ],
+    "originalFaces": 292,
+    "bounds": {
+      "min": [
+        0.22607554495334625,
+        0.7341948747634888,
+        0.054928384721279144
+      ],
+      "max": [
+        0.23812755942344666,
+        0.7546471953392029,
+        0.07221357524394989
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fifth_finger_of_hand_r",
+    "sources": [
+      "Middle phalanx of fifth finger of hand.r"
+    ],
+    "originalFaces": 292,
+    "bounds": {
+      "min": [
+        -0.23812752962112427,
+        0.7341948747634888,
+        0.054928384721279144
+      ],
+      "max": [
+        -0.22607551515102386,
+        0.7546471953392029,
+        0.07221357524394989
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fourth_finger_of_foot_l",
+    "sources": [
+      "Middle phalanx of fourth finger of foot.l"
+    ],
+    "originalFaces": 404,
+    "bounds": {
+      "min": [
+        0.12432035803794861,
+        0.009819218888878822,
+        0.09228324890136719
+      ],
+      "max": [
+        0.13546094298362732,
+        0.018155645579099655,
+        0.10633720457553864
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fourth_finger_of_foot_r",
+    "sources": [
+      "Middle phalanx of fourth finger of foot.r"
+    ],
+    "originalFaces": 404,
+    "bounds": {
+      "min": [
+        -0.1354609727859497,
+        0.009819218888878822,
+        0.09228324890136719
+      ],
+      "max": [
+        -0.124320387840271,
+        0.018155645579099655,
+        0.10633720457553864
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fourth_finger_of_hand_l",
+    "sources": [
+      "Middle phalanx of fourth finger of hand.l"
+    ],
+    "originalFaces": 446,
+    "bounds": {
+      "min": [
+        0.2505098283290863,
+        0.715859055519104,
+        0.056637801229953766
+      ],
+      "max": [
+        0.2630731761455536,
+        0.7406996488571167,
+        0.08169011026620865
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_fourth_finger_of_hand_r",
+    "sources": [
+      "Middle phalanx of fourth finger of hand.r"
+    ],
+    "originalFaces": 446,
+    "bounds": {
+      "min": [
+        -0.2630731761455536,
+        0.715859055519104,
+        0.056637801229953766
+      ],
+      "max": [
+        -0.2505098283290863,
+        0.7406996488571167,
+        0.08169011026620865
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_second_finger_of_foot_l",
+    "sources": [
+      "Middle phalanx of second finger of foot.l"
+    ],
+    "originalFaces": 326,
+    "bounds": {
+      "min": [
+        0.0948350578546524,
+        0.011842462234199047,
+        0.10894273221492767
+      ],
+      "max": [
+        0.10716063529253006,
+        0.020926164463162422,
+        0.12656980752944946
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_second_finger_of_foot_r",
+    "sources": [
+      "Middle phalanx of second finger of foot.r"
+    ],
+    "originalFaces": 326,
+    "bounds": {
+      "min": [
+        -0.10716065019369125,
+        0.011842462234199047,
+        0.10894273221492767
+      ],
+      "max": [
+        -0.0948350727558136,
+        0.020926164463162422,
+        0.12656980752944946
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_second_finger_of_hand_l",
+    "sources": [
+      "Middle phalanx of second finger of hand.l"
+    ],
+    "originalFaces": 314,
+    "bounds": {
+      "min": [
+        0.30404597520828247,
+        0.7170670032501221,
+        0.05122669041156769
+      ],
+      "max": [
+        0.3191753029823303,
+        0.7383829355239868,
+        0.07284840941429138
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_second_finger_of_hand_r",
+    "sources": [
+      "Middle phalanx of second finger of hand.r"
+    ],
+    "originalFaces": 314,
+    "bounds": {
+      "min": [
+        -0.3191753029823303,
+        0.7170670032501221,
+        0.05122669041156769
+      ],
+      "max": [
+        -0.30404597520828247,
+        0.7383829355239868,
+        0.07284840941429138
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_third_finger_of_foot_l",
+    "sources": [
+      "Middle phalanx of third finger of foot.l"
+    ],
+    "originalFaces": 359,
+    "bounds": {
+      "min": [
+        0.11054730415344238,
+        0.010965511202812195,
+        0.10339878499507904
+      ],
+      "max": [
+        0.12165475636720657,
+        0.019265066832304,
+        0.12083685398101807
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_third_finger_of_foot_r",
+    "sources": [
+      "Middle phalanx of third finger of foot.r"
+    ],
+    "originalFaces": 359,
+    "bounds": {
+      "min": [
+        -0.12165475636720657,
+        0.010965511202812195,
+        0.10339878499507904
+      ],
+      "max": [
+        -0.11054730415344238,
+        0.019265066832304,
+        0.12083685398101807
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_third_finger_of_hand_l",
+    "sources": [
+      "Middle phalanx of third finger of hand.l"
+    ],
+    "originalFaces": 360,
+    "bounds": {
+      "min": [
+        0.2752591371536255,
+        0.7082517743110657,
+        0.0580194890499115
+      ],
+      "max": [
+        0.2894773483276367,
+        0.734510600566864,
+        0.08183427155017853
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_middle_phalanx_of_third_finger_of_hand_r",
+    "sources": [
+      "Middle phalanx of third finger of hand.r"
+    ],
+    "originalFaces": 360,
+    "bounds": {
+      "min": [
+        -0.2894773483276367,
+        0.7082517743110657,
+        0.0580194890499115
+      ],
+      "max": [
+        -0.2752591371536255,
+        0.734510600566864,
+        0.08183427155017853
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_nasal_bone_l",
+    "sources": [
+      "Nasal bone.l"
+    ],
+    "originalFaces": 292,
+    "bounds": {
+      "min": [
+        1.7462298274040222e-08,
+        1.5737073421478271,
+        0.07933586835861206
+      ],
+      "max": [
+        0.008399778045713902,
+        1.6050796508789062,
+        0.10027167201042175
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_nasal_bone_r",
+    "sources": [
+      "Nasal bone.r"
+    ],
+    "originalFaces": 292,
+    "bounds": {
+      "min": [
+        -0.008399778045713902,
+        1.5737073421478271,
+        0.07933586835861206
+      ],
+      "max": [
+        -1.7462298274040222e-08,
+        1.6050796508789062,
+        0.10027167201042175
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_navicular_bone_l",
+    "sources": [
+      "Navicular bone.l"
+    ],
+    "originalFaces": 731,
+    "bounds": {
+      "min": [
+        0.05268992483615875,
+        0.04845929890871048,
+        -0.015108274295926094
+      ],
+      "max": [
+        0.09337539225816727,
+        0.07597574591636658,
+        0.008928481489419937
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_navicular_bone_r",
+    "sources": [
+      "Navicular bone.r"
+    ],
+    "originalFaces": 731,
+    "bounds": {
+      "min": [
+        -0.09337539225816727,
+        0.04845929890871048,
+        -0.015108274295926094
+      ],
+      "max": [
+        -0.05268992483615875,
+        0.07597574591636658,
+        0.008928481489419937
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_ninth_rib_l",
+    "sources": [
+      "Ninth rib.l"
+    ],
+    "originalFaces": 7743,
+    "bounds": {
+      "min": [
+        0.018174856901168823,
+        1.1038496494293213,
+        -0.09331293404102325
+      ],
+      "max": [
+        0.1333899199962616,
+        1.2589752674102783,
+        0.039083026349544525
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_ninth_rib_r",
+    "sources": [
+      "Ninth rib.r"
+    ],
+    "originalFaces": 7743,
+    "bounds": {
+      "min": [
+        -0.1333899199962616,
+        1.1038496494293213,
+        -0.09331293404102325
+      ],
+      "max": [
+        -0.018174856901168823,
+        1.2589752674102783,
+        0.039083026349544525
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_occipital_bone",
+    "sources": [
+      "Occipital bone"
+    ],
+    "originalFaces": 7435,
+    "bounds": {
+      "min": [
+        -0.05963081866502762,
+        1.5507360696792603,
+        -0.10337518900632858
+      ],
+      "max": [
+        0.059630781412124634,
+        1.6551929712295532,
+        0.012472253292798996
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_palatine_bone_l",
+    "sources": [
+      "Palatine bone.l"
+    ],
+    "originalFaces": 1460,
+    "bounds": {
+      "min": [
+        0.0007838830351829529,
+        1.5439777374267578,
+        0.024777857586741447
+      ],
+      "max": [
+        0.02703838422894478,
+        1.5841305255889893,
+        0.05999695509672165
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_palatine_bone_r",
+    "sources": [
+      "Palatine bone.r"
+    ],
+    "originalFaces": 1460,
+    "bounds": {
+      "min": [
+        -0.02703838422894478,
+        1.5439777374267578,
+        0.024777857586741447
+      ],
+      "max": [
+        -0.0007838830351829529,
+        1.5841305255889893,
+        0.05999695509672165
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_parietal_bone_l",
+    "sources": [
+      "Parietal bone.l"
+    ],
+    "originalFaces": 6886,
+    "bounds": {
+      "min": [
+        -0.007425185292959213,
+        1.5896923542022705,
+        -0.10056015849113464
+      ],
+      "max": [
+        0.0742856115102768,
+        1.7053675651550293,
+        0.042743049561977386
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_parietal_bone_r",
+    "sources": [
+      "Parietal bone.r"
+    ],
+    "originalFaces": 6713,
+    "bounds": {
+      "min": [
+        -0.07439018785953522,
+        1.589820146560669,
+        -0.10030511766672134
+      ],
+      "max": [
+        0.0056159887462854385,
+        1.7054541110992432,
+        0.03906109184026718
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_patella_l",
+    "sources": [
+      "Patella.l"
+    ],
+    "originalFaces": 274,
+    "bounds": {
+      "min": [
+        0.06285180896520615,
+        0.42380577325820923,
+        -0.00408791983500123
+      ],
+      "max": [
+        0.10603746026754379,
+        0.4647279977798462,
+        0.01866433396935463
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_pisiform_bone_l",
+    "sources": [
+      "Pisiform bone.l"
+    ],
+    "originalFaces": 834,
+    "bounds": {
+      "min": [
+        0.23962296545505524,
+        0.8397769927978516,
+        0.026879344135522842
+      ],
+      "max": [
+        0.24808627367019653,
+        0.85186767578125,
+        0.037298671901226044
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_pisiform_bone_r",
+    "sources": [
+      "Pisiform bone.r"
+    ],
+    "originalFaces": 834,
+    "bounds": {
+      "min": [
+        -0.24808624386787415,
+        0.8397769927978516,
+        0.026879344135522842
+      ],
+      "max": [
+        -0.23962293565273285,
+        0.85186767578125,
+        0.037298671901226044
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fifth_finger_of_foot_l",
+    "sources": [
+      "Proximal phalanx of fifth finger of foot.l"
+    ],
+    "originalFaces": 516,
+    "bounds": {
+      "min": [
+        0.12629695236682892,
+        0.009700258262455463,
+        0.05501706898212433
+      ],
+      "max": [
+        0.1446382850408554,
+        0.020145636051893234,
+        0.08179861307144165
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_scaphoid_bone_r",
+    "sources": [
+      "Scaphoid bone.r"
+    ],
+    "originalFaces": 390,
+    "bounds": {
+      "min": [
+        -0.28208836913108826,
+        0.8464998602867126,
+        0.010125587694346905
+      ],
+      "max": [
+        -0.25752878189086914,
+        0.8627076148986816,
+        0.02601414918899536
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_second_metatarsal_bone_r",
+    "sources": [
+      "Second metatarsal bone.r"
+    ],
+    "originalFaces": 690,
+    "bounds": {
+      "min": [
+        -0.09813735634088516,
+        0.01352892629802227,
+        0.01469726487994194
+      ],
+      "max": [
+        -0.08074896782636642,
+        0.06343986093997955,
+        0.08515399694442749
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_second_rib_r",
+    "sources": [
+      "Second rib.r"
+    ],
+    "originalFaces": 5354,
+    "bounds": {
+      "min": [
+        -0.0994008481502533,
+        1.3450919389724731,
+        -0.045289330184459686
+      ],
+      "max": [
+        -0.017274372279644012,
+        1.4363986253738403,
+        0.06669198721647263
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_sphenoid_bone",
+    "sources": [
+      "Sphenoid bone"
+    ],
+    "originalFaces": 7304,
+    "bounds": {
+      "min": [
+        -0.05441933497786522,
+        1.5503122806549072,
+        0.002251541242003441
+      ],
+      "max": [
+        0.054419297724962234,
+        1.6202486753463745,
+        0.05545402318239212
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_patella_r",
+    "sources": [
+      "Patella.r"
+    ],
+    "originalFaces": 274,
+    "bounds": {
+      "min": [
+        -0.10603746026754379,
+        0.42380577325820923,
+        -0.00408791983500123
+      ],
+      "max": [
+        -0.06285180896520615,
+        0.4647279977798462,
+        0.01866433396935463
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fifth_finger_of_foot_r",
+    "sources": [
+      "Proximal phalanx of fifth finger of foot.r"
+    ],
+    "originalFaces": 516,
+    "bounds": {
+      "min": [
+        -0.1446382850408554,
+        0.009700258262455463,
+        0.05501706898212433
+      ],
+      "max": [
+        -0.12629695236682892,
+        0.020145636051893234,
+        0.08179861307144165
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fifth_finger_of_hand_l",
+    "sources": [
+      "Proximal phalanx of fifth finger of hand.l"
+    ],
+    "originalFaces": 560,
+    "bounds": {
+      "min": [
+        0.22937661409378052,
+        0.7505384087562561,
+        0.03821039944887161
+      ],
+      "max": [
+        0.24421462416648865,
+        0.7843443751335144,
+        0.05984656885266304
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fifth_finger_of_hand_r",
+    "sources": [
+      "Proximal phalanx of fifth finger of hand.r"
+    ],
+    "originalFaces": 560,
+    "bounds": {
+      "min": [
+        -0.24421459436416626,
+        0.7505384087562561,
+        0.03821039944887161
+      ],
+      "max": [
+        -0.22937658429145813,
+        0.7843443751335144,
+        0.05984656885266304
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_first_finger_of_foot_l",
+    "sources": [
+      "Proximal phalanx of first finger of foot.l"
+    ],
+    "originalFaces": 517,
+    "bounds": {
+      "min": [
+        0.06089169904589653,
+        0.011326523497700691,
+        0.07992057502269745
+      ],
+      "max": [
+        0.08703815191984177,
+        0.0290583036839962,
+        0.11444135755300522
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_first_finger_of_foot_r",
+    "sources": [
+      "Proximal phalanx of first finger of foot.r"
+    ],
+    "originalFaces": 517,
+    "bounds": {
+      "min": [
+        -0.08703815191984177,
+        0.011326523497700691,
+        0.07992057502269745
+      ],
+      "max": [
+        -0.06089169904589653,
+        0.0290583036839962,
+        0.11444135755300522
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_first_finger_of_hand_l",
+    "sources": [
+      "Proximal phalanx of first finger of hand.l"
+    ],
+    "originalFaces": 328,
+    "bounds": {
+      "min": [
+        0.30836087465286255,
+        0.7839407920837402,
+        0.042339760810136795
+      ],
+      "max": [
+        0.32928842306137085,
+        0.8164771795272827,
+        0.0653684213757515
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_first_finger_of_hand_r",
+    "sources": [
+      "Proximal phalanx of first finger of hand.r"
+    ],
+    "originalFaces": 328,
+    "bounds": {
+      "min": [
+        -0.32928842306137085,
+        0.7839407920837402,
+        0.042339760810136795
+      ],
+      "max": [
+        -0.30836087465286255,
+        0.8164771795272827,
+        0.0653684213757515
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fourth_finger_of_foot_l",
+    "sources": [
+      "Proximal phalanx of fourth finger of foot.l"
+    ],
+    "originalFaces": 460,
+    "bounds": {
+      "min": [
+        0.11410622298717499,
+        0.009965846315026283,
+        0.06846056878566742
+      ],
+      "max": [
+        0.13220921158790588,
+        0.023723261430859566,
+        0.09445495158433914
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fourth_finger_of_foot_r",
+    "sources": [
+      "Proximal phalanx of fourth finger of foot.r"
+    ],
+    "originalFaces": 460,
+    "bounds": {
+      "min": [
+        -0.13220921158790588,
+        0.009965846315026283,
+        0.06846056878566742
+      ],
+      "max": [
+        -0.11410622298717499,
+        0.023723261430859566,
+        0.09445495158433914
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fourth_finger_of_hand_l",
+    "sources": [
+      "Proximal phalanx of fourth finger of hand.l"
+    ],
+    "originalFaces": 368,
+    "bounds": {
+      "min": [
+        0.24822033941745758,
+        0.7366890907287598,
+        0.03510085493326187
+      ],
+      "max": [
+        0.2621699571609497,
+        0.7771217226982117,
+        0.062374114990234375
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_fourth_finger_of_hand_r",
+    "sources": [
+      "Proximal phalanx of fourth finger of hand.r"
+    ],
+    "originalFaces": 368,
+    "bounds": {
+      "min": [
+        -0.2621699571609497,
+        0.7366890907287598,
+        0.03510085493326187
+      ],
+      "max": [
+        -0.24822033941745758,
+        0.7771217226982117,
+        0.062374114990234375
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_second_finger_of_foot_l",
+    "sources": [
+      "Proximal phalanx of second finger of foot.l"
+    ],
+    "originalFaces": 424,
+    "bounds": {
+      "min": [
+        0.08660420775413513,
+        0.013031238690018654,
+        0.0824456587433815
+      ],
+      "max": [
+        0.10446777194738388,
+        0.025983773171901703,
+        0.11182725429534912
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_second_finger_of_foot_r",
+    "sources": [
+      "Proximal phalanx of second finger of foot.r"
+    ],
+    "originalFaces": 424,
+    "bounds": {
+      "min": [
+        -0.10446778684854507,
+        0.013031238690018654,
+        0.0824456587433815
+      ],
+      "max": [
+        -0.08660422265529633,
+        0.025983773171901703,
+        0.11182725429534912
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_second_finger_of_hand_l",
+    "sources": [
+      "Proximal phalanx of second finger of hand.l"
+    ],
+    "originalFaces": 414,
+    "bounds": {
+      "min": [
+        0.2899731993675232,
+        0.7323859333992004,
+        0.033465564250946045
+      ],
+      "max": [
+        0.3127208948135376,
+        0.7712959051132202,
+        0.057177044451236725
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_second_finger_of_hand_r",
+    "sources": [
+      "Proximal phalanx of second finger of hand.r"
+    ],
+    "originalFaces": 414,
+    "bounds": {
+      "min": [
+        -0.3127208948135376,
+        0.7323859333992004,
+        0.033465564250946045
+      ],
+      "max": [
+        -0.2899731993675232,
+        0.7712959051132202,
+        0.057177044451236725
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_third_finger_of_foot_l",
+    "sources": [
+      "Proximal phalanx of third finger of foot.l"
+    ],
+    "originalFaces": 458,
+    "bounds": {
+      "min": [
+        0.1024104580283165,
+        0.012157040648162365,
+        0.07608252763748169
+      ],
+      "max": [
+        0.1188027486205101,
+        0.02413405105471611,
+        0.10629673302173615
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_third_finger_of_foot_r",
+    "sources": [
+      "Proximal phalanx of third finger of foot.r"
+    ],
+    "originalFaces": 458,
+    "bounds": {
+      "min": [
+        -0.1188027486205101,
+        0.012157040648162365,
+        0.07608252763748169
+      ],
+      "max": [
+        -0.1024104580283165,
+        0.02413405105471611,
+        0.10629673302173615
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_third_finger_of_hand_l",
+    "sources": [
+      "Proximal phalanx of third finger of hand.l"
+    ],
+    "originalFaces": 439,
+    "bounds": {
+      "min": [
+        0.2676553428173065,
+        0.730848491191864,
+        0.03458346799015999
+      ],
+      "max": [
+        0.286610871553421,
+        0.7729969620704651,
+        0.06475221365690231
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_proximal_phalanx_of_third_finger_of_hand_r",
+    "sources": [
+      "Proximal phalanx of third finger of hand.r"
+    ],
+    "originalFaces": 439,
+    "bounds": {
+      "min": [
+        -0.286610871553421,
+        0.730848491191864,
+        0.03458346799015999
+      ],
+      "max": [
+        -0.2676553428173065,
+        0.7729969620704651,
+        0.06475221365690231
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_radius_l",
+    "sources": [
+      "Radius.l"
+    ],
+    "originalFaces": 719,
+    "bounds": {
+      "min": [
+        0.22687694430351257,
+        0.8563236594200134,
+        -0.04194077104330063
+      ],
+      "max": [
+        0.2886669337749481,
+        1.0933313369750977,
+        0.026730315759778023
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_radius_r",
+    "sources": [
+      "Radius.r"
+    ],
+    "originalFaces": 719,
+    "bounds": {
+      "min": [
+        -0.2886669337749481,
+        0.8563236594200134,
+        -0.04194077104330063
+      ],
+      "max": [
+        -0.22687694430351257,
+        1.0933313369750977,
+        0.026730315759778023
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_sacrum",
+    "sources": [
+      "Sacrum"
+    ],
+    "originalFaces": 8522,
+    "bounds": {
+      "min": [
+        -0.0615042969584465,
+        0.8657537698745728,
+        -0.09500256180763245
+      ],
+      "max": [
+        0.061426106840372086,
+        0.9808346033096313,
+        -0.003600485622882843
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_scaphoid_bone_l",
+    "sources": [
+      "Scaphoid bone.l"
+    ],
+    "originalFaces": 390,
+    "bounds": {
+      "min": [
+        0.25752878189086914,
+        0.8464998602867126,
+        0.010125587694346905
+      ],
+      "max": [
+        0.28208836913108826,
+        0.8627076148986816,
+        0.02601414918899536
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_scapula_l",
+    "sources": [
+      "Scapula.l"
+    ],
+    "originalFaces": 25249,
+    "bounds": {
+      "min": [
+        0.060611166059970856,
+        1.254274606704712,
+        -0.11280736327171326
+      ],
+      "max": [
+        0.17357538640499115,
+        1.417839765548706,
+        0.0012646988034248352
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_scapula_r",
+    "sources": [
+      "Scapula.r"
+    ],
+    "originalFaces": 25249,
+    "bounds": {
+      "min": [
+        -0.17357537150382996,
+        1.254274606704712,
+        -0.11280736327171326
+      ],
+      "max": [
+        -0.06061115115880966,
+        1.417839765548706,
+        0.0012646988034248352
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_second_metacarpal_bone_l",
+    "sources": [
+      "Second metacarpal bone.l"
+    ],
+    "originalFaces": 764,
+    "bounds": {
+      "min": [
+        0.2702603340148926,
+        0.7665467262268066,
+        0.015932492911815643
+      ],
+      "max": [
+        0.30235254764556885,
+        0.8370778560638428,
+        0.042632441967725754
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_second_metacarpal_bone_r",
+    "sources": [
+      "Second metacarpal bone.r"
+    ],
+    "originalFaces": 764,
+    "bounds": {
+      "min": [
+        -0.30235254764556885,
+        0.7665467262268066,
+        0.015932492911815643
+      ],
+      "max": [
+        -0.2702603340148926,
+        0.8370778560638428,
+        0.042632441967725754
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_second_metatarsal_bone_l",
+    "sources": [
+      "Second metatarsal bone.l"
+    ],
+    "originalFaces": 690,
+    "bounds": {
+      "min": [
+        0.08074896782636642,
+        0.01352892629802227,
+        0.01469726487994194
+      ],
+      "max": [
+        0.09813735634088516,
+        0.06343986093997955,
+        0.08515399694442749
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_second_rib_l",
+    "sources": [
+      "Second rib.l"
+    ],
+    "originalFaces": 5354,
+    "bounds": {
+      "min": [
+        0.01727437600493431,
+        1.3450919389724731,
+        -0.045289330184459686
+      ],
+      "max": [
+        0.0994008481502533,
+        1.4363986253738403,
+        0.06669198721647263
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_seventh_rib_l",
+    "sources": [
+      "Seventh rib.l"
+    ],
+    "originalFaces": 9741,
+    "bounds": {
+      "min": [
+        0.016455024480819702,
+        1.1714482307434082,
+        -0.09646570682525635
+      ],
+      "max": [
+        0.14164012670516968,
+        1.3157997131347656,
+        0.08515875041484833
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_seventh_rib_r",
+    "sources": [
+      "Seventh rib.r"
+    ],
+    "originalFaces": 9741,
+    "bounds": {
+      "min": [
+        -0.14164014160633087,
+        1.1714482307434082,
+        -0.09646570682525635
+      ],
+      "max": [
+        -0.016455024480819702,
+        1.3157997131347656,
+        0.08515875041484833
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_sixth_rib_l",
+    "sources": [
+      "Sixth rib.l"
+    ],
+    "originalFaces": 10092,
+    "bounds": {
+      "min": [
+        0.015731528401374817,
+        1.2058148384094238,
+        -0.09734214097261429
+      ],
+      "max": [
+        0.13881564140319824,
+        1.3444126844406128,
+        0.0988650918006897
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_sixth_rib_r",
+    "sources": [
+      "Sixth rib.r"
+    ],
+    "originalFaces": 10092,
+    "bounds": {
+      "min": [
+        -0.13881564140319824,
+        1.2058148384094238,
+        -0.09734213352203369
+      ],
+      "max": [
+        -0.015731528401374817,
+        1.3444126844406128,
+        0.0988650918006897
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_talus_l",
+    "sources": [
+      "Talus.l"
+    ],
+    "originalFaces": 1325,
+    "bounds": {
+      "min": [
+        0.053645744919776917,
+        0.04986270144581795,
+        -0.0661049485206604
+      ],
+      "max": [
+        0.09575540572404861,
+        0.08547556400299072,
+        -0.007040737196803093
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_talus_r",
+    "sources": [
+      "Talus.r"
+    ],
+    "originalFaces": 1325,
+    "bounds": {
+      "min": [
+        -0.09575540572404861,
+        0.04986270144581795,
+        -0.0661049485206604
+      ],
+      "max": [
+        -0.053645744919776917,
+        0.08547556400299072,
+        -0.007040737196803093
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_temporal_bone_l",
+    "sources": [
+      "Temporal bone.l"
+    ],
+    "originalFaces": 14094,
+    "bounds": {
+      "min": [
+        0.009648576378822327,
+        1.5487265586853027,
+        -0.05156397819519043
+      ],
+      "max": [
+        0.07242035865783691,
+        1.623145580291748,
+        0.0447830855846405
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_temporal_bone_r",
+    "sources": [
+      "Temporal bone.r"
+    ],
+    "originalFaces": 14094,
+    "bounds": {
+      "min": [
+        -0.07242035865783691,
+        1.5487265586853027,
+        -0.05156397819519043
+      ],
+      "max": [
+        -0.009648576378822327,
+        1.623145580291748,
+        0.0447830855846405
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_tenth_rib_l",
+    "sources": [
+      "Tenth rib.l"
+    ],
+    "originalFaces": 7002,
+    "bounds": {
+      "min": [
+        0.018531862646341324,
+        1.0724345445632935,
+        -0.085206538438797
+      ],
+      "max": [
+        0.13145633041858673,
+        1.229274868965149,
+        0.024182621389627457
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_tenth_rib_r",
+    "sources": [
+      "Tenth rib.r"
+    ],
+    "originalFaces": 7002,
+    "bounds": {
+      "min": [
+        -0.13145634531974792,
+        1.0724345445632935,
+        -0.085206538438797
+      ],
+      "max": [
+        -0.018531877547502518,
+        1.229274868965149,
+        0.024182621389627457
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_third_metacarpal_bone_l",
+    "sources": [
+      "Third metacarpal bone.l"
+    ],
+    "originalFaces": 708,
+    "bounds": {
+      "min": [
+        0.26062309741973877,
+        0.7685869932174683,
+        0.011006231419742107
+      ],
+      "max": [
+        0.2814122438430786,
+        0.8352752923965454,
+        0.042720355093479156
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_third_metacarpal_bone_r",
+    "sources": [
+      "Third metacarpal bone.r"
+    ],
+    "originalFaces": 708,
+    "bounds": {
+      "min": [
+        -0.2814122438430786,
+        0.7685869932174683,
+        0.011006231419742107
+      ],
+      "max": [
+        -0.26062309741973877,
+        0.8352752923965454,
+        0.042720355093479156
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_third_metatarsal_bone_l",
+    "sources": [
+      "Third metatarsal bone.l"
+    ],
+    "originalFaces": 804,
+    "bounds": {
+      "min": [
+        0.08914398401975632,
+        0.013419046998023987,
+        0.01355307549238205
+      ],
+      "max": [
+        0.11222227662801743,
+        0.057861119508743286,
+        0.08130751550197601
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_third_metatarsal_bone_r",
+    "sources": [
+      "Third metatarsal bone.r"
+    ],
+    "originalFaces": 804,
+    "bounds": {
+      "min": [
+        -0.11222227662801743,
+        0.013419046998023987,
+        0.01355307549238205
+      ],
+      "max": [
+        -0.08914398401975632,
+        0.057861119508743286,
+        0.08130751550197601
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_third_rib_l",
+    "sources": [
+      "Third rib.l"
+    ],
+    "originalFaces": 6957,
+    "bounds": {
+      "min": [
+        0.017041470855474472,
+        1.3107261657714844,
+        -0.06279156357049942
+      ],
+      "max": [
+        0.11254553496837616,
+        1.4165053367614746,
+        0.07643289864063263
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_third_rib_r",
+    "sources": [
+      "Third rib.r"
+    ],
+    "originalFaces": 6957,
+    "bounds": {
+      "min": [
+        -0.11254554241895676,
+        1.3107261657714844,
+        -0.06279156357049942
+      ],
+      "max": [
+        -0.01704147458076477,
+        1.4165053367614746,
+        0.07643289864063263
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_tibia_l",
+    "sources": [
+      "Tibia.l"
+    ],
+    "originalFaces": 1613,
+    "bounds": {
+      "min": [
+        0.03734216094017029,
+        0.07521826028823853,
+        -0.06295967102050781
+      ],
+      "max": [
+        0.11578907072544098,
+        0.43318143486976624,
+        0.005063466727733612
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_tibia_r",
+    "sources": [
+      "Tibia.r"
+    ],
+    "originalFaces": 1613,
+    "bounds": {
+      "min": [
+        -0.11578907072544098,
+        0.07521826028823853,
+        -0.06295967102050781
+      ],
+      "max": [
+        -0.03734216094017029,
+        0.43318143486976624,
+        0.005063466727733612
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_trapezium_bone_l",
+    "sources": [
+      "Trapezium bone.l"
+    ],
+    "originalFaces": 500,
+    "bounds": {
+      "min": [
+        0.2733875513076782,
+        0.8356791734695435,
+        0.016677716746926308
+      ],
+      "max": [
+        0.29105907678604126,
+        0.8564766049385071,
+        0.03420255333185196
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_trapezium_bone_r",
+    "sources": [
+      "Trapezium bone.r"
+    ],
+    "originalFaces": 500,
+    "bounds": {
+      "min": [
+        -0.29105907678604126,
+        0.8356791734695435,
+        0.016677716746926308
+      ],
+      "max": [
+        -0.2733875513076782,
+        0.8564766049385071,
+        0.03420255333185196
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_trapezoid_bone_l",
+    "sources": [
+      "Trapezoid bone.l"
+    ],
+    "originalFaces": 364,
+    "bounds": {
+      "min": [
+        0.270657479763031,
+        0.8325560688972473,
+        0.012277450412511826
+      ],
+      "max": [
+        0.2823716998100281,
+        0.8456916809082031,
+        0.027822034433484077
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_trapezoid_bone_r",
+    "sources": [
+      "Trapezoid bone.r"
+    ],
+    "originalFaces": 364,
+    "bounds": {
+      "min": [
+        -0.2823716998100281,
+        0.8325560688972473,
+        0.012277450412511826
+      ],
+      "max": [
+        -0.270657479763031,
+        0.8456916809082031,
+        0.027822034433484077
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_triquetrum_bone_l",
+    "sources": [
+      "Triquetrum bone.l"
+    ],
+    "originalFaces": 176,
+    "bounds": {
+      "min": [
+        0.2396918088197708,
+        0.8388751745223999,
+        0.01343268621712923
+      ],
+      "max": [
+        0.25079241394996643,
+        0.853152334690094,
+        0.029362577944993973
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_triquetrum_bone_r",
+    "sources": [
+      "Triquetrum bone.r"
+    ],
+    "originalFaces": 176,
+    "bounds": {
+      "min": [
+        -0.25079238414764404,
+        0.8388751745223999,
+        0.01343268621712923
+      ],
+      "max": [
+        -0.23969177901744843,
+        0.853152334690094,
+        0.029362577944993973
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_twelfth_rib_l",
+    "sources": [
+      "Twelfth rib.l"
+    ],
+    "originalFaces": 2995,
+    "bounds": {
+      "min": [
+        0.019427787512540817,
+        1.056445837020874,
+        -0.06811448931694031
+      ],
+      "max": [
+        0.08543668687343597,
+        1.1543327569961548,
+        -0.023724142462015152
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_twelfth_rib_r",
+    "sources": [
+      "Twelfth rib.r"
+    ],
+    "originalFaces": 2995,
+    "bounds": {
+      "min": [
+        -0.08543670177459717,
+        1.056445837020874,
+        -0.06811448931694031
+      ],
+      "max": [
+        -0.01942780241370201,
+        1.1543327569961548,
+        -0.023724142462015152
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_ulna_l",
+    "sources": [
+      "Ulna.l"
+    ],
+    "originalFaces": 875,
+    "bounds": {
+      "min": [
+        0.20323723554611206,
+        0.8555802702903748,
+        -0.06038803234696388
+      ],
+      "max": [
+        0.255630224943161,
+        1.1110197305679321,
+        0.022851459681987762
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_ulna_r",
+    "sources": [
+      "Ulna.r"
+    ],
+    "originalFaces": 875,
+    "bounds": {
+      "min": [
+        -0.2556301951408386,
+        0.8555802702903748,
+        -0.06038803234696388
+      ],
+      "max": [
+        -0.20323720574378967,
+        1.1110197305679321,
+        0.022851459681987762
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_c3",
+    "sources": [
+      "Vertebra C3"
+    ],
+    "originalFaces": 2374,
+    "bounds": {
+      "min": [
+        -0.02826078236103058,
+        1.493054747581482,
+        -0.0539805069565773
+      ],
+      "max": [
+        0.02826077863574028,
+        1.519705891609192,
+        0.00020100921392440796
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_c4",
+    "sources": [
+      "Vertebra C4"
+    ],
+    "originalFaces": 1938,
+    "bounds": {
+      "min": [
+        -0.028904492035508156,
+        1.4805545806884766,
+        -0.05264841392636299
+      ],
+      "max": [
+        0.029055321589112282,
+        1.5055946111679077,
+        -0.00029172003269195557
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_c5",
+    "sources": [
+      "Vertebra C5"
+    ],
+    "originalFaces": 2256,
+    "bounds": {
+      "min": [
+        -0.03071589022874832,
+        1.4688951969146729,
+        -0.05799682438373566
+      ],
+      "max": [
+        0.030715882778167725,
+        1.49139404296875,
+        -0.00155625119805336
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_c6",
+    "sources": [
+      "Vertebra C6"
+    ],
+    "originalFaces": 2224,
+    "bounds": {
+      "min": [
+        -0.03063075803220272,
+        1.4537261724472046,
+        -0.06676751375198364
+      ],
+      "max": [
+        0.03063075803220272,
+        1.4783262014389038,
+        -0.0031452272087335587
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_c7",
+    "sources": [
+      "Vertebra C7"
+    ],
+    "originalFaces": 2090,
+    "bounds": {
+      "min": [
+        -0.03561040759086609,
+        1.438514232635498,
+        -0.0772264376282692
+      ],
+      "max": [
+        0.03561040014028549,
+        1.4655271768569946,
+        -0.006920285522937775
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_l1",
+    "sources": [
+      "Vertebra L1"
+    ],
+    "originalFaces": 3056,
+    "bounds": {
+      "min": [
+        -0.037206150591373444,
+        1.0742783546447754,
+        -0.07077357172966003
+      ],
+      "max": [
+        0.037206150591373444,
+        1.1335514783859253,
+        0.012298732995986938
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_l2",
+    "sources": [
+      "Vertebra L2"
+    ],
+    "originalFaces": 2572,
+    "bounds": {
+      "min": [
+        -0.04190992936491966,
+        1.0500547885894775,
+        -0.06565511226654053
+      ],
+      "max": [
+        0.04190992936491966,
+        1.099782943725586,
+        0.017447981983423233
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_l3",
+    "sources": [
+      "Vertebra L3"
+    ],
+    "originalFaces": 3060,
+    "bounds": {
+      "min": [
+        -0.041715674102306366,
+        1.021012783050537,
+        -0.06564202159643173
+      ],
+      "max": [
+        0.04173629730939865,
+        1.065721035003662,
+        0.0193053986877203
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_l4",
+    "sources": [
+      "Vertebra L4"
+    ],
+    "originalFaces": 3692,
+    "bounds": {
+      "min": [
+        -0.04437034949660301,
+        0.9936060309410095,
+        -0.06621882319450378
+      ],
+      "max": [
+        0.044370364397764206,
+        1.0364899635314941,
+        0.01811198517680168
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_l5",
+    "sources": [
+      "Vertebra L5"
+    ],
+    "originalFaces": 3920,
+    "bounds": {
+      "min": [
+        -0.05292297527194023,
+        0.9575953483581543,
+        -0.07048425078392029
+      ],
+      "max": [
+        0.05292296037077904,
+        1.0080161094665527,
+        0.012233853340148926
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t1",
+    "sources": [
+      "Vertebra T1"
+    ],
+    "originalFaces": 1946,
+    "bounds": {
+      "min": [
+        -0.03884495049715042,
+        1.4226065874099731,
+        -0.08344422280788422
+      ],
+      "max": [
+        0.03884495049715042,
+        1.4533796310424805,
+        -0.011261824518442154
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t10",
+    "sources": [
+      "Vertebra T10"
+    ],
+    "originalFaces": 2953,
+    "bounds": {
+      "min": [
+        -0.037550248205661774,
+        1.1678462028503418,
+        -0.09202757477760315
+      ],
+      "max": [
+        0.037668898701667786,
+        1.2271714210510254,
+        -0.014319472014904022
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t11",
+    "sources": [
+      "Vertebra T11"
+    ],
+    "originalFaces": 1780,
+    "bounds": {
+      "min": [
+        -0.029034623876214027,
+        1.141815185546875,
+        -0.08440068364143372
+      ],
+      "max": [
+        0.029034623876214027,
+        1.196815848350525,
+        -0.0057549141347408295
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t12",
+    "sources": [
+      "Vertebra T12"
+    ],
+    "originalFaces": 2472,
+    "bounds": {
+      "min": [
+        -0.023341557011008263,
+        1.1120525598526,
+        -0.0770842656493187
+      ],
+      "max": [
+        0.023341549560427666,
+        1.1661007404327393,
+        0.0036214403808116913
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t2",
+    "sources": [
+      "Vertebra T2"
+    ],
+    "originalFaces": 2092,
+    "bounds": {
+      "min": [
+        -0.03755068778991699,
+        1.402553677558899,
+        -0.08924819529056549
+      ],
+      "max": [
+        0.03755069524049759,
+        1.4375724792480469,
+        -0.016283497214317322
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t3",
+    "sources": [
+      "Vertebra T3"
+    ],
+    "originalFaces": 2342,
+    "bounds": {
+      "min": [
+        -0.03442719578742981,
+        1.3781676292419434,
+        -0.10040143132209778
+      ],
+      "max": [
+        0.03442718833684921,
+        1.4194360971450806,
+        -0.022558148950338364
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t4",
+    "sources": [
+      "Vertebra T4"
+    ],
+    "originalFaces": 2214,
+    "bounds": {
+      "min": [
+        -0.035436008125543594,
+        1.3536843061447144,
+        -0.10092122852802277
+      ],
+      "max": [
+        0.035436008125543594,
+        1.3967604637145996,
+        -0.029590390622615814
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t5",
+    "sources": [
+      "Vertebra T5"
+    ],
+    "originalFaces": 2152,
+    "bounds": {
+      "min": [
+        -0.03770855441689491,
+        1.320578694343567,
+        -0.09934253245592117
+      ],
+      "max": [
+        0.03770865872502327,
+        1.3739285469055176,
+        -0.032791465520858765
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t6",
+    "sources": [
+      "Vertebra T6"
+    ],
+    "originalFaces": 1774,
+    "bounds": {
+      "min": [
+        -0.037972692400217056,
+        1.2831987142562866,
+        -0.10013468563556671
+      ],
+      "max": [
+        0.037972692400217056,
+        1.345281958580017,
+        -0.0333734005689621
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t7",
+    "sources": [
+      "Vertebra T7"
+    ],
+    "originalFaces": 2646,
+    "bounds": {
+      "min": [
+        -0.03829716518521309,
+        1.255128264427185,
+        -0.09825141727924347
+      ],
+      "max": [
+        0.03829716518521309,
+        1.316953182220459,
+        -0.031650129705667496
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t8",
+    "sources": [
+      "Vertebra T8"
+    ],
+    "originalFaces": 1622,
+    "bounds": {
+      "min": [
+        -0.03509736433625221,
+        1.2257131338119507,
+        -0.10026933252811432
+      ],
+      "max": [
+        0.03509736433625221,
+        1.2859474420547485,
+        -0.026566166430711746
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vertebra_t9",
+    "sources": [
+      "Vertebra T9"
+    ],
+    "originalFaces": 2968,
+    "bounds": {
+      "min": [
+        -0.036141056567430496,
+        1.2001609802246094,
+        -0.09643559902906418
+      ],
+      "max": [
+        0.03614106401801109,
+        1.2568004131317139,
+        -0.020759083330631256
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_vomer",
+    "sources": [
+      "Vomer"
+    ],
+    "originalFaces": 946,
+    "bounds": {
+      "min": [
+        -0.00511865084990859,
+        1.5574067831039429,
+        0.020958365872502327
+      ],
+      "max": [
+        0.005118680652230978,
+        1.5803581476211548,
+        0.08210162818431854
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_xiphoid_process",
+    "sources": [
+      "Xiphoid process"
+    ],
+    "originalFaces": 913,
+    "bounds": {
+      "min": [
+        -0.01085023395717144,
+        1.2209054231643677,
+        0.09588754177093506
+      ],
+      "max": [
+        0.010850232094526291,
+        1.2435901165008545,
+        0.11124718934297562
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_zygomatic_bone_l",
+    "sources": [
+      "Zygomatic bone.l"
+    ],
+    "originalFaces": 1328,
+    "bounds": {
+      "min": [
+        0.031617116183042526,
+        1.5537165403366089,
+        0.0327085480093956
+      ],
+      "max": [
+        0.06232469528913498,
+        1.608465552330017,
+        0.07167743891477585
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "bone_zygomatic_bone_r",
+    "sources": [
+      "Zygomatic bone.r"
+    ],
+    "originalFaces": 1328,
+    "bounds": {
+      "min": [
+        -0.06232469528913498,
+        1.5537165403366089,
+        0.0327085480093956
+      ],
+      "max": [
+        -0.031617116183042526,
+        1.608465552330017,
+        0.07167743891477585
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_head_l",
+    "sources": [
+      "Frontal region.l",
+      "Parietal region.l",
+      "Occipital region.l",
+      "Temporal region.l",
+      "Buccal region.l",
+      "Mental region.l",
+      "Orbital region.l",
+      "Zygomatic region.l",
+      "Parotideomasseteric region.l",
+      "Mastoid region.l"
+    ],
+    "originalFaces": 1793,
+    "bounds": {
+      "min": [
+        -0.0005189105868339539,
+        1.4877374172210693,
+        -0.1073872298002243
+      ],
+      "max": [
+        0.08187466114759445,
+        1.7091530561447144,
+        0.09449036419391632
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_neck_l",
+    "sources": [
+      "Posterior region of neck.l",
+      "Lateral region of neck.l",
+      "Muscular triangle.l",
+      "Sternocleidomastoid region.l",
+      "Submandibular triangle.l",
+      "Submental triangle.l",
+      "Carotid triangle.l"
+    ],
+    "originalFaces": 1167,
+    "bounds": {
+      "min": [
+        -6.410479545593262e-05,
+        1.4007794857025146,
+        -0.10326547175645828
+      ],
+      "max": [
+        0.1457439512014389,
+        1.564126968383789,
+        0.08023357391357422
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_thorax_l",
+    "sources": [
+      "Pectoral region.l",
+      "Mammary region.l",
+      "Presternal region.l",
+      "Inframammary region.l",
+      "Lateral region of thorax.l",
+      "Scapular region.l",
+      "Interscapular region.l",
+      "Infrascapular region.l",
+      "Infraclavicular fossa.l",
+      "Greater supraclavicular fossa.l",
+      "Deltopectoral triangle.l"
+    ],
+    "originalFaces": 1909,
+    "bounds": {
+      "min": [
+        -6.239861249923706e-08,
+        1.0702300071716309,
+        -0.13588425517082214
+      ],
+      "max": [
+        0.19328081607818604,
+        1.4747685194015503,
+        0.13127687573432922
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_abdomen_l",
+    "sources": [
+      "Epigastric region.l",
+      "Hypochondriac region.l",
+      "Umbilical region.l",
+      "Lateral region of abdomen.l",
+      "Hypogastric region.l",
+      "Lumbar region.l"
+    ],
+    "originalFaces": 836,
+    "bounds": {
+      "min": [
+        -1.5150755643844604e-05,
+        0.828673779964447,
+        -0.10478830337524414
+      ],
+      "max": [
+        0.153463214635849,
+        1.2246381044387817,
+        0.1323479562997818
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_pelvis_l",
+    "sources": [
+      "Gluteal region.l",
+      "Hip region.l",
+      "Sacral region.l",
+      "Inguinal region.l"
+    ],
+    "originalFaces": 695,
+    "bounds": {
+      "min": [
+        -4.842877388000488e-08,
+        0.7697703242301941,
+        -0.1483440399169922
+      ],
+      "max": [
+        0.18030795454978943,
+        1.0153272151947021,
+        0.10125722736120224
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_shoulder_l",
+    "sources": [
+      "Deltoid region.l"
+    ],
+    "originalFaces": 328,
+    "bounds": {
+      "min": [
+        0.13397428393363953,
+        1.2732242345809937,
+        -0.1020364984869957
+      ],
+      "max": [
+        0.24217621982097626,
+        1.4360300302505493,
+        0.031801410019397736
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_arm_l",
+    "sources": [
+      "Anterior region of arm.l",
+      "Posterior region of arm.l"
+    ],
+    "originalFaces": 986,
+    "bounds": {
+      "min": [
+        0.15858399868011475,
+        1.1294586658477783,
+        -0.1113068014383316
+      ],
+      "max": [
+        0.25693416595458984,
+        1.3564647436141968,
+        0.022831033915281296
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_elbow_l",
+    "sources": [
+      "Anterior region of elbow.l",
+      "Posterior region of elbow.l",
+      "Cubital fossa.l"
+    ],
+    "originalFaces": 531,
+    "bounds": {
+      "min": [
+        0.17763501405715942,
+        1.0748292207717896,
+        -0.08208909630775452
+      ],
+      "max": [
+        0.27446916699409485,
+        1.1420584917068481,
+        0.0035593779757618904
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_forearm_l",
+    "sources": [
+      "Anterior region of forearm.l",
+      "Posterior region of forearm.l"
+    ],
+    "originalFaces": 1276,
+    "bounds": {
+      "min": [
+        0.1803036481142044,
+        0.851584792137146,
+        -0.07473620772361755
+      ],
+      "max": [
+        0.2958509922027588,
+        1.088653326034546,
+        0.03866782784461975
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_wrist_l",
+    "sources": [
+      "Anterior region of wrist.l",
+      "Posterior region of wrist.l"
+    ],
+    "originalFaces": 222,
+    "bounds": {
+      "min": [
+        0.2291109263896942,
+        0.8275595903396606,
+        -0.0022981856018304825
+      ],
+      "max": [
+        0.3115033805370331,
+        0.862764835357666,
+        0.05331583321094513
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_hand_l",
+    "sources": [
+      "Dorsum of hand.l",
+      "Palm.l",
+      "Palmar surfaces of digits of hand.l",
+      "Dorsal surfaces of digits of hand.l"
+    ],
+    "originalFaces": 4713,
+    "bounds": {
+      "min": [
+        0.22361372411251068,
+        0.6984710693359375,
+        0.005044681951403618
+      ],
+      "max": [
+        0.33999302983283997,
+        0.8412468433380127,
+        0.10000484436750412
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_thigh_l",
+    "sources": [
+      "Anterior region of thigh.l",
+      "Posterior region of thigh.l",
+      "Femoral triangle.l"
+    ],
+    "originalFaces": 1610,
+    "bounds": {
+      "min": [
+        0.001501709222793579,
+        0.49973517656326294,
+        -0.11570791900157928
+      ],
+      "max": [
+        0.1818469762802124,
+        1.0153687000274658,
+        0.08077900111675262
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_knee_l",
+    "sources": [
+      "Anterior region of knee.l",
+      "Posterior region of knee.l",
+      "Popliteal fossa.l"
+    ],
+    "originalFaces": 752,
+    "bounds": {
+      "min": [
+        0.018969591706991196,
+        0.37983807921409607,
+        -0.10332328081130981
+      ],
+      "max": [
+        0.14333108067512512,
+        0.5077077150344849,
+        0.05391561985015869
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_leg_l",
+    "sources": [
+      "Anterior region of leg.l",
+      "Posterior region of leg.l"
+    ],
+    "originalFaces": 1224,
+    "bounds": {
+      "min": [
+        0.030405890196561813,
+        0.11748874187469482,
+        -0.11845956742763519
+      ],
+      "max": [
+        0.1492115557193756,
+        0.4068397581577301,
+        0.01974956877529621
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_ankle_l",
+    "sources": [
+      "Anterior region of ankle.l",
+      "Lateral malleolus.l",
+      "Medial malleolus.l"
+    ],
+    "originalFaces": 476,
+    "bounds": {
+      "min": [
+        0.042066507041454315,
+        0.04713548347353935,
+        -0.07961776107549667
+      ],
+      "max": [
+        0.11932379007339478,
+        0.12630242109298706,
+        0.0012645125389099121
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_foot_l",
+    "sources": [
+      "Dorsum of foot.l",
+      "Sole.l",
+      "Heel region.l",
+      "Dorsal surfaces of digits of foot.l",
+      "Plantar surfaces of digits of foot.l"
+    ],
+    "originalFaces": 2186,
+    "bounds": {
+      "min": [
+        0.04353450611233711,
+        -0.00038237866829149425,
+        -0.1088007241487503
+      ],
+      "max": [
+        0.14940610527992249,
+        0.09212896227836609,
+        0.14564737677574158
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_head_r",
+    "sources": [
+      "Frontal region.r",
+      "Parietal region.r",
+      "Occipital region.r",
+      "Temporal region.r",
+      "Buccal region.r",
+      "Mental region.r",
+      "Orbital region.r",
+      "Zygomatic region.r",
+      "Parotideomasseteric region.r",
+      "Mastoid region.r"
+    ],
+    "originalFaces": 1793,
+    "bounds": {
+      "min": [
+        -0.08187469094991684,
+        1.4877374172210693,
+        -0.1073872298002243
+      ],
+      "max": [
+        0.0005188807845115662,
+        1.7091530561447144,
+        0.09449036419391632
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_neck_r",
+    "sources": [
+      "Posterior region of neck.r",
+      "Lateral region of neck.r",
+      "Muscular triangle.r",
+      "Sternocleidomastoid region.r",
+      "Submandibular triangle.r",
+      "Submental triangle.r",
+      "Carotid triangle.r"
+    ],
+    "originalFaces": 1167,
+    "bounds": {
+      "min": [
+        -0.1457439512014389,
+        1.4007794857025146,
+        -0.10326547175645828
+      ],
+      "max": [
+        6.410479545593262e-05,
+        1.564126968383789,
+        0.08023357391357422
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_thorax_r",
+    "sources": [
+      "Pectoral region.r",
+      "Mammary region.r",
+      "Presternal region.r",
+      "Inframammary region.r",
+      "Lateral region of thorax.r",
+      "Scapular region.r",
+      "Interscapular region.r",
+      "Infrascapular region.r",
+      "Infraclavicular fossa.r",
+      "Greater supraclavicular fossa.r",
+      "Deltopectoral triangle.r"
+    ],
+    "originalFaces": 1909,
+    "bounds": {
+      "min": [
+        -0.19328081607818604,
+        1.0702300071716309,
+        -0.13588425517082214
+      ],
+      "max": [
+        6.239861249923706e-08,
+        1.4747685194015503,
+        0.13127687573432922
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_abdomen_r",
+    "sources": [
+      "Epigastric region.r",
+      "Hypochondriac region.r",
+      "Umbilical region.r",
+      "Lateral region of abdomen.r",
+      "Hypogastric region.r",
+      "Lumbar region.r"
+    ],
+    "originalFaces": 836,
+    "bounds": {
+      "min": [
+        -0.153463214635849,
+        0.828673779964447,
+        -0.10478830337524414
+      ],
+      "max": [
+        1.5150755643844604e-05,
+        1.2246381044387817,
+        0.1323479562997818
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_pelvis_r",
+    "sources": [
+      "Gluteal region.r",
+      "Hip region.r",
+      "Sacral region.r",
+      "Inguinal region.r"
+    ],
+    "originalFaces": 695,
+    "bounds": {
+      "min": [
+        -0.18030795454978943,
+        0.7697703242301941,
+        -0.1483440399169922
+      ],
+      "max": [
+        4.842877388000488e-08,
+        1.0153272151947021,
+        0.10125722736120224
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_shoulder_r",
+    "sources": [
+      "Deltoid region.r"
+    ],
+    "originalFaces": 328,
+    "bounds": {
+      "min": [
+        -0.24217627942562103,
+        1.2732242345809937,
+        -0.1020364984869957
+      ],
+      "max": [
+        -0.1339743435382843,
+        1.4360300302505493,
+        0.031801410019397736
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_arm_r",
+    "sources": [
+      "Anterior region of arm.r",
+      "Posterior region of arm.r"
+    ],
+    "originalFaces": 986,
+    "bounds": {
+      "min": [
+        -0.25693416595458984,
+        1.1294586658477783,
+        -0.1113068014383316
+      ],
+      "max": [
+        -0.15858399868011475,
+        1.3564647436141968,
+        0.022831033915281296
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_elbow_r",
+    "sources": [
+      "Anterior region of elbow.r",
+      "Posterior region of elbow.r",
+      "Cubital fossa.r"
+    ],
+    "originalFaces": 531,
+    "bounds": {
+      "min": [
+        -0.27446916699409485,
+        1.0748292207717896,
+        -0.08208909630775452
+      ],
+      "max": [
+        -0.17763501405715942,
+        1.1420584917068481,
+        0.0035593779757618904
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_forearm_r",
+    "sources": [
+      "Anterior region of forearm.r",
+      "Posterior region of forearm.r"
+    ],
+    "originalFaces": 1276,
+    "bounds": {
+      "min": [
+        -0.2958509922027588,
+        0.851584792137146,
+        -0.07473620772361755
+      ],
+      "max": [
+        -0.1803036481142044,
+        1.088653326034546,
+        0.03866782784461975
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_wrist_r",
+    "sources": [
+      "Anterior region of wrist.r",
+      "Posterior region of wrist.r"
+    ],
+    "originalFaces": 222,
+    "bounds": {
+      "min": [
+        -0.3115033805370331,
+        0.8275595903396606,
+        -0.0022981856018304825
+      ],
+      "max": [
+        -0.2291109263896942,
+        0.862764835357666,
+        0.05331583321094513
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_hand_r",
+    "sources": [
+      "Dorsum of hand.r",
+      "Palm.r",
+      "Palmar surfaces of digits of hand.r",
+      "Dorsal surfaces of digits of hand.r"
+    ],
+    "originalFaces": 4713,
+    "bounds": {
+      "min": [
+        -0.33999302983283997,
+        0.6984710693359375,
+        0.005044681951403618
+      ],
+      "max": [
+        -0.22361372411251068,
+        0.8412468433380127,
+        0.10000484436750412
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_thigh_r",
+    "sources": [
+      "Anterior region of thigh.r",
+      "Posterior region of thigh.r",
+      "Femoral triangle.r"
+    ],
+    "originalFaces": 1610,
+    "bounds": {
+      "min": [
+        -0.1818469762802124,
+        0.49973517656326294,
+        -0.11570791900157928
+      ],
+      "max": [
+        -0.001501709222793579,
+        1.0153687000274658,
+        0.08077900111675262
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_knee_r",
+    "sources": [
+      "Anterior region of knee.r",
+      "Posterior region of knee.r",
+      "Popliteal fossa.r"
+    ],
+    "originalFaces": 752,
+    "bounds": {
+      "min": [
+        -0.14333105087280273,
+        0.37983807921409607,
+        -0.10332328081130981
+      ],
+      "max": [
+        -0.018969576805830002,
+        0.5077077150344849,
+        0.05391561985015869
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_leg_r",
+    "sources": [
+      "Anterior region of leg.r",
+      "Posterior region of leg.r"
+    ],
+    "originalFaces": 1224,
+    "bounds": {
+      "min": [
+        -0.1492115557193756,
+        0.11748874187469482,
+        -0.11845956742763519
+      ],
+      "max": [
+        -0.030405890196561813,
+        0.4068397581577301,
+        0.01974956877529621
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_ankle_r",
+    "sources": [
+      "Anterior region of ankle.r",
+      "Lateral malleolus.r",
+      "Medial malleolus.r"
+    ],
+    "originalFaces": 476,
+    "bounds": {
+      "min": [
+        -0.11932379007339478,
+        0.04713548347353935,
+        -0.07961776107549667
+      ],
+      "max": [
+        -0.042066507041454315,
+        0.12630242109298706,
+        0.0012645125389099121
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "skin_foot_r",
+    "sources": [
+      "Dorsum of foot.r",
+      "Sole.r",
+      "Heel region.r",
+      "Dorsal surfaces of digits of foot.r",
+      "Plantar surfaces of digits of foot.r"
+    ],
+    "originalFaces": 2186,
+    "bounds": {
+      "min": [
+        -0.14940610527992249,
+        -0.00038237866829149425,
+        -0.1088007241487503
+      ],
+      "max": [
+        -0.043534476310014725,
+        0.09212896227836609,
+        0.14564737677574158
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "cornea_l",
+    "sources": [
+      "Cornea.l"
+    ],
+    "originalFaces": 1344,
+    "bounds": {
+      "min": [
+        0.02407730743288994,
+        1.5842969417572021,
+        0.07319430261850357
+      ],
+      "max": [
+        0.03827205300331116,
+        1.5984926223754883,
+        0.07815010845661163
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "iris_l",
+    "sources": [
+      "Iris.l"
+    ],
+    "originalFaces": 3248,
+    "bounds": {
+      "min": [
+        0.024735528975725174,
+        1.5847437381744385,
+        0.07167639583349228
+      ],
+      "max": [
+        0.03759022057056427,
+        1.5976142883300781,
+        0.07490116357803345
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lens_l",
+    "sources": [
+      "Lens.l"
+    ],
+    "originalFaces": 1598,
+    "bounds": {
+      "min": [
+        0.025882229208946228,
+        1.5860282182693481,
+        0.06891398876905441
+      ],
+      "max": [
+        0.03618542104959488,
+        1.5964405536651611,
+        0.07372792065143585
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "retina_l",
+    "sources": [
+      "Retina.l"
+    ],
+    "originalFaces": 3152,
+    "bounds": {
+      "min": [
+        0.019695382565259933,
+        1.5798518657684326,
+        0.05311350151896477
+      ],
+      "max": [
+        0.041400983929634094,
+        1.6015558242797852,
+        0.07046598941087723
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vitreous_l",
+    "sources": [
+      "Vitreous body.l"
+    ],
+    "originalFaces": 5436,
+    "bounds": {
+      "min": [
+        0.02035924233496189,
+        1.580558180809021,
+        0.05391716957092285
+      ],
+      "max": [
+        0.04073752462863922,
+        1.600862979888916,
+        0.07166066020727158
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ciliary_l",
+    "sources": [
+      "Ciliary body-curve.l"
+    ],
+    "originalFaces": 0,
+    "bounds": {
+      "min": [
+        -0.8899164199829102,
+        -1.0399158000946045,
+        -1.3123080730438232
+      ],
+      "max": [
+        1.0515022277832031,
+        0.9030445218086243,
+        -1.1603463888168335
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lacrimal_gland_l",
+    "sources": [
+      "Lacrimal gland.l"
+    ],
+    "originalFaces": 1810,
+    "bounds": {
+      "min": [
+        0.032523252069950104,
+        1.59337317943573,
+        0.0582265704870224
+      ],
+      "max": [
+        0.050505541265010834,
+        1.6117937564849854,
+        0.07332699000835419
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lacrimal_duct_l",
+    "sources": [
+      "Lacrimal canaliculus.l",
+      "Lacrimal sac.l",
+      "Nasolacrimal duct.l"
+    ],
+    "originalFaces": 1239,
+    "bounds": {
+      "min": [
+        0.007199514657258987,
+        1.5546720027923584,
+        0.058374278247356415
+      ],
+      "max": [
+        0.017254887148737907,
+        1.5922019481658936,
+        0.07346770912408829
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "auricle_l",
+    "sources": [
+      "Anterior notch of auricle.l",
+      "Antihelix.l",
+      "Antitragus.l",
+      "Apex of auricle.l",
+      "Auricular region.l",
+      "Auricular tubercle.l",
+      "Cavity of concha.l",
+      "Concha of auricle.l",
+      "Crura of antihelix.l",
+      "Cymba conchae.l",
+      "Eminentia conchae.l",
+      "Eminentia fossae triangularis.l",
+      "Eminentia scaphae.l",
+      "Fossa antihelica.l",
+      "Helix.l",
+      "Intertragic incisure.l",
+      "Lobule of auricle.l",
+      "Posterior auricular groove.l",
+      "Scapha.l",
+      "Tragus.l",
+      "Triangular fossa.l"
+    ],
+    "originalFaces": 2177,
+    "bounds": {
+      "min": [
+        0.05461341515183449,
+        1.547898292541504,
+        -0.02701643481850624
+      ],
+      "max": [
+        0.09336995333433151,
+        1.611572027206421,
+        0.01603175699710846
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "eardrum_l",
+    "sources": [
+      "Tympanic membrane.l"
+    ],
+    "originalFaces": 786,
+    "bounds": {
+      "min": [
+        0.045656826347112656,
+        1.5735313892364502,
+        -0.009652091190218925
+      ],
+      "max": [
+        0.050622422248125076,
+        1.5820339918136597,
+        0.0008367639966309071
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "malleus_l",
+    "sources": [
+      "Malleus.l"
+    ],
+    "originalFaces": 1998,
+    "bounds": {
+      "min": [
+        0.04637119546532631,
+        1.5780489444732666,
+        -0.005365878343582153
+      ],
+      "max": [
+        0.05000809207558632,
+        1.5862277746200562,
+        -0.0024904832243919373
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "incus_l",
+    "sources": [
+      "Incus.l"
+    ],
+    "originalFaces": 1277,
+    "bounds": {
+      "min": [
+        0.04497437924146652,
+        1.5795691013336182,
+        -0.009651119820773602
+      ],
+      "max": [
+        0.04919545724987984,
+        1.585801124572754,
+        -0.00475875660777092
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "stapes_l",
+    "sources": [
+      "Stapes.l"
+    ],
+    "originalFaces": 2180,
+    "bounds": {
+      "min": [
+        0.040953781455755234,
+        1.5798341035842896,
+        -0.005962501745671034
+      ],
+      "max": [
+        0.04500776529312134,
+        1.5822651386260986,
+        -0.002910811686888337
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_21",
+    "sources": [
+      "Upper medial incisor.l"
+    ],
+    "originalFaces": 1368,
+    "bounds": {
+      "min": [
+        6.178067997097969e-05,
+        1.5262928009033203,
+        0.08061191439628601
+      ],
+      "max": [
+        0.008846853859722614,
+        1.552045464515686,
+        0.09320314228534698
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_22",
+    "sources": [
+      "Upper lateral incisor.l"
+    ],
+    "originalFaces": 1412,
+    "bounds": {
+      "min": [
+        0.006503517739474773,
+        1.5255939960479736,
+        0.07910855114459991
+      ],
+      "max": [
+        0.01587347686290741,
+        1.5537948608398438,
+        0.09015235304832458
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_23",
+    "sources": [
+      "Upper canine.l"
+    ],
+    "originalFaces": 1434,
+    "bounds": {
+      "min": [
+        0.01254756934940815,
+        1.5271074771881104,
+        0.07686164975166321
+      ],
+      "max": [
+        0.0216037780046463,
+        1.5577152967453003,
+        0.0859634131193161
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_24",
+    "sources": [
+      "Upper first premolar.l"
+    ],
+    "originalFaces": 1651,
+    "bounds": {
+      "min": [
+        0.015402333810925484,
+        1.5287156105041504,
+        0.0699084997177124
+      ],
+      "max": [
+        0.02471141889691353,
+        1.556451678276062,
+        0.07777169346809387
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_25",
+    "sources": [
+      "Upper second premolar.l"
+    ],
+    "originalFaces": 1511,
+    "bounds": {
+      "min": [
+        0.018529731780290604,
+        1.529687523841858,
+        0.06413286924362183
+      ],
+      "max": [
+        0.027620336040854454,
+        1.554996132850647,
+        0.07156220823526382
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_26",
+    "sources": [
+      "Upper first molar tooth.l"
+    ],
+    "originalFaces": 2168,
+    "bounds": {
+      "min": [
+        0.01849355734884739,
+        1.5317078828811646,
+        0.05351351946592331
+      ],
+      "max": [
+        0.029819782823324203,
+        1.5556734800338745,
+        0.06477218866348267
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_27",
+    "sources": [
+      "Upper second molar tooth.l"
+    ],
+    "originalFaces": 1843,
+    "bounds": {
+      "min": [
+        0.01786145381629467,
+        1.5351909399032593,
+        0.04588128626346588
+      ],
+      "max": [
+        0.02950119413435459,
+        1.557317852973938,
+        0.055487148463726044
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_31",
+    "sources": [
+      "Lower medial incisor.l"
+    ],
+    "originalFaces": 984,
+    "bounds": {
+      "min": [
+        0.00015612668357789516,
+        1.5026938915252686,
+        0.07066065818071365
+      ],
+      "max": [
+        0.006279340013861656,
+        1.5274134874343872,
+        0.08856744319200516
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_32",
+    "sources": [
+      "Lower lateral incisor.l"
+    ],
+    "originalFaces": 1033,
+    "bounds": {
+      "min": [
+        0.004217204172164202,
+        1.5028984546661377,
+        0.07134458422660828
+      ],
+      "max": [
+        0.011909222230315208,
+        1.5274219512939453,
+        0.08779097348451614
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_33",
+    "sources": [
+      "Lower canine.l"
+    ],
+    "originalFaces": 1276,
+    "bounds": {
+      "min": [
+        0.008993148803710938,
+        1.5016523599624634,
+        0.06871157139539719
+      ],
+      "max": [
+        0.016699332743883133,
+        1.5278284549713135,
+        0.08391650766134262
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_34",
+    "sources": [
+      "Lower first premolar.l"
+    ],
+    "originalFaces": 1207,
+    "bounds": {
+      "min": [
+        0.01298273354768753,
+        1.5064913034439087,
+        0.06395165622234344
+      ],
+      "max": [
+        0.020762566477060318,
+        1.5284528732299805,
+        0.07777629792690277
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_35",
+    "sources": [
+      "Lower second premolar.l"
+    ],
+    "originalFaces": 1180,
+    "bounds": {
+      "min": [
+        0.015951769426465034,
+        1.5069974660873413,
+        0.05805829167366028
+      ],
+      "max": [
+        0.023905763402581215,
+        1.529806137084961,
+        0.07106789201498032
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_36",
+    "sources": [
+      "Lower first molar tooth.l"
+    ],
+    "originalFaces": 4475,
+    "bounds": {
+      "min": [
+        0.016771171241998672,
+        1.513427734375,
+        0.04991575703024864
+      ],
+      "max": [
+        0.028837645426392555,
+        1.53267240524292,
+        0.06466803699731827
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_37",
+    "sources": [
+      "Lower second molar tooth.l"
+    ],
+    "originalFaces": 1655,
+    "bounds": {
+      "min": [
+        0.020320983603596687,
+        1.5185959339141846,
+        0.03762785345315933
+      ],
+      "max": [
+        0.03213685005903244,
+        1.5368387699127197,
+        0.05376848205924034
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "alar_cartilage_l",
+    "sources": [
+      "Major alar cartilage.l"
+    ],
+    "originalFaces": 344,
+    "bounds": {
+      "min": [
+        6.979051977396011e-05,
+        1.5481327772140503,
+        0.0870371162891388
+      ],
+      "max": [
+        0.014849269762635231,
+        1.562315821647644,
+        0.11441265791654587
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nose_surface_l",
+    "sources": [
+      "Nasal region.l"
+    ],
+    "originalFaces": 306,
+    "bounds": {
+      "min": [
+        -0.0008302861824631691,
+        1.5472978353500366,
+        0.08229856193065643
+      ],
+      "max": [
+        0.01779939979314804,
+        1.6099853515625,
+        0.1167282909154892
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "oral_surface_l",
+    "sources": [
+      "Oral region.l"
+    ],
+    "originalFaces": 337,
+    "bounds": {
+      "min": [
+        -0.0005426239222288132,
+        1.5094900131225586,
+        0.07674681395292282
+      ],
+      "max": [
+        0.03390846401453018,
+        1.5512921810150146,
+        0.10076447576284409
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nails_hand_l",
+    "sources": [
+      "Nail plate.l"
+    ],
+    "originalFaces": 1380,
+    "bounds": {
+      "min": [
+        0.22497498989105225,
+        0.6985292434692383,
+        0.061455920338630676
+      ],
+      "max": [
+        0.34005922079086304,
+        0.7796769142150879,
+        0.09830691665410995
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nails_foot_l",
+    "sources": [
+      "Nail plate (foot).l"
+    ],
+    "originalFaces": 968,
+    "bounds": {
+      "min": [
+        0.08078368008136749,
+        0.015050869435071945,
+        0.08593787252902985
+      ],
+      "max": [
+        0.14857017993927002,
+        0.025749322026968002,
+        0.14413928985595703
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "achilles_l",
+    "sources": [
+      "Calcaneal tendon.l"
+    ],
+    "originalFaces": 4334,
+    "bounds": {
+      "min": [
+        0.052266769111156464,
+        0.025155961513519287,
+        -0.09218182414770126
+      ],
+      "max": [
+        0.11536845564842224,
+        0.24528208374977112,
+        -0.0649663433432579
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_fascia_l",
+    "sources": [
+      "Plantar aponeurosis.l"
+    ],
+    "originalFaces": 211,
+    "bounds": {
+      "min": [
+        0.06308511644601822,
+        0.006664924323558807,
+        -0.06934375315904617
+      ],
+      "max": [
+        0.1268075704574585,
+        0.025959612801671028,
+        0.07343851029872894
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_ligament_l",
+    "sources": [
+      "Long plantar ligament.l"
+    ],
+    "originalFaces": 3486,
+    "bounds": {
+      "min": [
+        0.06448595970869064,
+        0.01908610761165619,
+        -0.06719271838665009
+      ],
+      "max": [
+        0.1152970939874649,
+        0.044466231018304825,
+        0.032635439187288284
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "knee_acl_l",
+    "sources": [
+      "Anterior cruciate ligament.l"
+    ],
+    "originalFaces": 404,
+    "bounds": {
+      "min": [
+        0.06692405045032501,
+        0.42684829235076904,
+        -0.046284809708595276
+      ],
+      "max": [
+        0.08810308575630188,
+        0.4565577507019043,
+        -0.02168162912130356
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "knee_pcl_l",
+    "sources": [
+      "Posterior cruciate ligament.l"
+    ],
+    "originalFaces": 404,
+    "bounds": {
+      "min": [
+        0.061215296387672424,
+        0.4143088161945343,
+        -0.05490461364388466
+      ],
+      "max": [
+        0.08454244583845139,
+        0.45224836468696594,
+        -0.036279745399951935
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "meniscus_medial_l",
+    "sources": [
+      "Medial meniscus.l"
+    ],
+    "originalFaces": 142,
+    "bounds": {
+      "min": [
+        0.04155370593070984,
+        0.4192046523094177,
+        -0.061273522675037384
+      ],
+      "max": [
+        0.06736768037080765,
+        0.4341496527194977,
+        -0.01657787151634693
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "meniscus_lateral_l",
+    "sources": [
+      "Lateral meniscus.l"
+    ],
+    "originalFaces": 234,
+    "bounds": {
+      "min": [
+        0.07625485211610794,
+        0.42431244254112244,
+        -0.04871334508061409
+      ],
+      "max": [
+        0.11008554697036743,
+        0.43962782621383667,
+        -0.009988252073526382
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soleus_l",
+    "sources": [
+      "Soleus muscle.l"
+    ],
+    "originalFaces": 6774,
+    "bounds": {
+      "min": [
+        0.04368406534194946,
+        0.13375604152679443,
+        -0.07900319993495941
+      ],
+      "max": [
+        0.12881727516651154,
+        0.40950876474380493,
+        -0.023758571594953537
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tibialis_anterior_l",
+    "sources": [
+      "Tibialis anterior muscle.l"
+    ],
+    "originalFaces": 3526,
+    "bounds": {
+      "min": [
+        0.056674156337976456,
+        0.04225744307041168,
+        -0.03487882763147354
+      ],
+      "max": [
+        0.11748935282230377,
+        0.4111183285713196,
+        0.03879560902714729
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tibialis_posterior_l",
+    "sources": [
+      "Tibialis posterior muscle.l"
+    ],
+    "originalFaces": 5526,
+    "bounds": {
+      "min": [
+        0.04898097738623619,
+        0.03886627405881882,
+        -0.05797017365694046
+      ],
+      "max": [
+        0.10790205001831055,
+        0.3826516270637512,
+        0.02320648916065693
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "fibularis_longus_l",
+    "sources": [
+      "Fibularis longus muscle.l"
+    ],
+    "originalFaces": 5522,
+    "bounds": {
+      "min": [
+        0.07629363238811493,
+        0.028852254152297974,
+        -0.06375248730182648
+      ],
+      "max": [
+        0.13505098223686218,
+        0.40800726413726807,
+        0.025902900844812393
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "extensor_toes_l",
+    "sources": [
+      "Extensor digitorum longus.l"
+    ],
+    "originalFaces": 3176,
+    "bounds": {
+      "min": [
+        0.08720426261425018,
+        0.09074459969997406,
+        -0.045356385409832
+      ],
+      "max": [
+        0.11957532167434692,
+        0.4186822474002838,
+        -0.012271497398614883
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flexor_toes_l",
+    "sources": [
+      "Flexor digitorum longus.l"
+    ],
+    "originalFaces": 6836,
+    "bounds": {
+      "min": [
+        0.04875236749649048,
+        0.007785461843013763,
+        -0.06473422795534134
+      ],
+      "max": [
+        0.1432541459798813,
+        0.3514026403427124,
+        0.12841778993606567
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "extensor_hallucis_l",
+    "sources": [
+      "Extensor hallucis longus.l"
+    ],
+    "originalFaces": 2362,
+    "bounds": {
+      "min": [
+        0.06888297200202942,
+        0.023878946900367737,
+        -0.04152777045965195
+      ],
+      "max": [
+        0.1116039827466011,
+        0.3043830990791321,
+        0.10021145641803741
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flexor_hallucis_l",
+    "sources": [
+      "Flexor hallucis longus.l"
+    ],
+    "originalFaces": 5878,
+    "bounds": {
+      "min": [
+        0.05820909142494202,
+        0.008544623851776123,
+        -0.06724923849105835
+      ],
+      "max": [
+        0.11480683088302612,
+        0.3262084424495697,
+        0.11751125752925873
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "abductor_hallucis_l",
+    "sources": [
+      "Abductor hallucis.l"
+    ],
+    "originalFaces": 1688,
+    "bounds": {
+      "min": [
+        0.055125802755355835,
+        0.014434991404414177,
+        -0.06050378084182739
+      ],
+      "max": [
+        0.07554645091295242,
+        0.04136994108557701,
+        0.08471755683422089
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flexor_brevis_l",
+    "sources": [
+      "Flexor digitorum brevis.l"
+    ],
+    "originalFaces": 3224,
+    "bounds": {
+      "min": [
+        0.06512454897165298,
+        0.006932077929377556,
+        -0.06843127310276031
+      ],
+      "max": [
+        0.14360618591308594,
+        0.02694324590265751,
+        0.11955229938030243
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_nerve_medial_l",
+    "sources": [
+      "Medial plantar nerve.l"
+    ],
+    "originalFaces": 576,
+    "bounds": {
+      "min": [
+        0.05743313580751419,
+        0.02571803331375122,
+        -0.05531866475939751
+      ],
+      "max": [
+        0.07704441994428635,
+        0.05798918008804321,
+        0.02467997744679451
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_nerve_lateral_l",
+    "sources": [
+      "Lateral plantar nerve.l"
+    ],
+    "originalFaces": 576,
+    "bounds": {
+      "min": [
+        0.05743313580751419,
+        0.02201789617538452,
+        -0.05531866475939751
+      ],
+      "max": [
+        0.09579561650753021,
+        0.05798918008804321,
+        0.003657989203929901
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "cornea_r",
+    "sources": [
+      "Cornea.r"
+    ],
+    "originalFaces": 1344,
+    "bounds": {
+      "min": [
+        -0.038272060453891754,
+        1.5842969417572021,
+        0.07319430261850357
+      ],
+      "max": [
+        -0.024077314883470535,
+        1.5984926223754883,
+        0.07815010845661163
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "iris_r",
+    "sources": [
+      "Iris.r"
+    ],
+    "originalFaces": 3248,
+    "bounds": {
+      "min": [
+        -0.03759022802114487,
+        1.5847437381744385,
+        0.07167639583349228
+      ],
+      "max": [
+        -0.02473553642630577,
+        1.5976142883300781,
+        0.07490116357803345
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lens_r",
+    "sources": [
+      "Lens.r"
+    ],
+    "originalFaces": 1598,
+    "bounds": {
+      "min": [
+        -0.036185428500175476,
+        1.5860282182693481,
+        0.06891398876905441
+      ],
+      "max": [
+        -0.025882236659526825,
+        1.5964405536651611,
+        0.07372792065143585
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "retina_r",
+    "sources": [
+      "Retina.r"
+    ],
+    "originalFaces": 3152,
+    "bounds": {
+      "min": [
+        -0.042488086968660355,
+        1.578764796257019,
+        0.052016645669937134
+      ],
+      "max": [
+        -0.018608294427394867,
+        1.6026427745819092,
+        0.07110728323459625
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "vitreous_r",
+    "sources": [
+      "Vitreous body.r"
+    ],
+    "originalFaces": 5436,
+    "bounds": {
+      "min": [
+        -0.04073752462863922,
+        1.580558180809021,
+        0.05391716957092285
+      ],
+      "max": [
+        -0.02035924233496189,
+        1.600862979888916,
+        0.07166066020727158
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ciliary_r",
+    "sources": [
+      "Ciliary body-curve.r"
+    ],
+    "originalFaces": 0,
+    "bounds": {
+      "min": [
+        -0.03724449872970581,
+        1.5849525928497314,
+        0.07145319879055023
+      ],
+      "max": [
+        -0.024880923330783844,
+        1.5973260402679443,
+        0.07242093980312347
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lacrimal_gland_r",
+    "sources": [
+      "Lacrimal gland.r"
+    ],
+    "originalFaces": 1810,
+    "bounds": {
+      "min": [
+        -0.050505541265010834,
+        1.59337317943573,
+        0.0582265704870224
+      ],
+      "max": [
+        -0.032523252069950104,
+        1.6117937564849854,
+        0.07332699000835419
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "lacrimal_duct_r",
+    "sources": [
+      "Lacrimal canaliculus.r",
+      "Lacrimal sac.r",
+      "Nasolacrimal duct.r"
+    ],
+    "originalFaces": 1239,
+    "bounds": {
+      "min": [
+        -0.017254887148737907,
+        1.5546720027923584,
+        0.058374278247356415
+      ],
+      "max": [
+        -0.007199514657258987,
+        1.5922019481658936,
+        0.07346770912408829
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "auricle_r",
+    "sources": [
+      "Anterior notch of auricle.r",
+      "Antihelix.r",
+      "Antitragus.r",
+      "Apex of auricle.r",
+      "Auricular region.r",
+      "Auricular tubercle.r",
+      "Cavity of concha.r",
+      "Concha of auricle.r",
+      "Crura of antihelix.r",
+      "Cymba conchae.r",
+      "Eminentia conchae.r",
+      "Eminentia fossae triangularis.r",
+      "Eminentia scaphae.r",
+      "Fossa antihelica.r",
+      "Helix.r",
+      "Intertragic incisure.r",
+      "Lobule of auricle.r",
+      "Posterior auricular groove.r",
+      "Scapha.r",
+      "Tragus.r",
+      "Triangular fossa.r"
+    ],
+    "originalFaces": 2177,
+    "bounds": {
+      "min": [
+        -0.0933699831366539,
+        1.547898292541504,
+        -0.02701643481850624
+      ],
+      "max": [
+        -0.054613444954156876,
+        1.611572027206421,
+        0.01603175699710846
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "eardrum_r",
+    "sources": [
+      "Tympanic membrane.r"
+    ],
+    "originalFaces": 786,
+    "bounds": {
+      "min": [
+        -0.050622452050447464,
+        1.5735316276550293,
+        -0.009652058593928814
+      ],
+      "max": [
+        -0.04565685614943504,
+        1.5820342302322388,
+        0.0008367924019694328
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "malleus_r",
+    "sources": [
+      "Malleus.r"
+    ],
+    "originalFaces": 1998,
+    "bounds": {
+      "min": [
+        -0.05000809207558632,
+        1.5780489444732666,
+        -0.005365878343582153
+      ],
+      "max": [
+        -0.04637119546532631,
+        1.5862277746200562,
+        -0.0024904832243919373
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "incus_r",
+    "sources": [
+      "Incus.r"
+    ],
+    "originalFaces": 1277,
+    "bounds": {
+      "min": [
+        -0.04919545724987984,
+        1.5795691013336182,
+        -0.009651119820773602
+      ],
+      "max": [
+        -0.04497437924146652,
+        1.585801124572754,
+        -0.00475875660777092
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "stapes_r",
+    "sources": [
+      "Stapes.r"
+    ],
+    "originalFaces": 2180,
+    "bounds": {
+      "min": [
+        -0.04500776529312134,
+        1.5798341035842896,
+        -0.005962501745671034
+      ],
+      "max": [
+        -0.040953781455755234,
+        1.5822651386260986,
+        -0.002910811686888337
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_11",
+    "sources": [
+      "Upper medial incisor.r"
+    ],
+    "originalFaces": 1368,
+    "bounds": {
+      "min": [
+        -0.008846853859722614,
+        1.5262928009033203,
+        0.08061191439628601
+      ],
+      "max": [
+        -6.178067997097969e-05,
+        1.552045464515686,
+        0.09320314228534698
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_12",
+    "sources": [
+      "Upper lateral incisor.r"
+    ],
+    "originalFaces": 1412,
+    "bounds": {
+      "min": [
+        -0.01587347686290741,
+        1.5255939960479736,
+        0.07910855114459991
+      ],
+      "max": [
+        -0.006503517739474773,
+        1.5537948608398438,
+        0.09015235304832458
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_13",
+    "sources": [
+      "Upper canine.r"
+    ],
+    "originalFaces": 1434,
+    "bounds": {
+      "min": [
+        -0.0216037780046463,
+        1.5271074771881104,
+        0.07686164975166321
+      ],
+      "max": [
+        -0.01254756934940815,
+        1.5577152967453003,
+        0.0859634131193161
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_14",
+    "sources": [
+      "Upper first premolar.r"
+    ],
+    "originalFaces": 1651,
+    "bounds": {
+      "min": [
+        -0.02471141889691353,
+        1.5287156105041504,
+        0.0699084997177124
+      ],
+      "max": [
+        -0.015402333810925484,
+        1.556451678276062,
+        0.07777169346809387
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_15",
+    "sources": [
+      "Upper second premolar.r"
+    ],
+    "originalFaces": 1511,
+    "bounds": {
+      "min": [
+        -0.027620336040854454,
+        1.529687523841858,
+        0.06413286924362183
+      ],
+      "max": [
+        -0.018529731780290604,
+        1.554996132850647,
+        0.07156220823526382
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_16",
+    "sources": [
+      "Upper first molar tooth.r"
+    ],
+    "originalFaces": 2168,
+    "bounds": {
+      "min": [
+        -0.029819782823324203,
+        1.5317078828811646,
+        0.05351351946592331
+      ],
+      "max": [
+        -0.01849355734884739,
+        1.5556734800338745,
+        0.06477218866348267
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_17",
+    "sources": [
+      "Upper second molar tooth.r"
+    ],
+    "originalFaces": 1843,
+    "bounds": {
+      "min": [
+        -0.02950119413435459,
+        1.5351909399032593,
+        0.04588128626346588
+      ],
+      "max": [
+        -0.01786145381629467,
+        1.557317852973938,
+        0.055487148463726044
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_41",
+    "sources": [
+      "Lower medial incisor.r"
+    ],
+    "originalFaces": 984,
+    "bounds": {
+      "min": [
+        -0.006279340013861656,
+        1.5026938915252686,
+        0.07066065818071365
+      ],
+      "max": [
+        -0.00015612668357789516,
+        1.5274134874343872,
+        0.08856744319200516
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_42",
+    "sources": [
+      "Lower lateral incisor.r"
+    ],
+    "originalFaces": 1033,
+    "bounds": {
+      "min": [
+        -0.011909222230315208,
+        1.5028984546661377,
+        0.07134458422660828
+      ],
+      "max": [
+        -0.004217204172164202,
+        1.5274219512939453,
+        0.08779097348451614
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_43",
+    "sources": [
+      "Lower canine.r"
+    ],
+    "originalFaces": 1276,
+    "bounds": {
+      "min": [
+        -0.016699332743883133,
+        1.5016523599624634,
+        0.06871157139539719
+      ],
+      "max": [
+        -0.008993148803710938,
+        1.5278284549713135,
+        0.08391650766134262
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_44",
+    "sources": [
+      "Lower first premolar.r"
+    ],
+    "originalFaces": 1207,
+    "bounds": {
+      "min": [
+        -0.020762566477060318,
+        1.5064913034439087,
+        0.06395165622234344
+      ],
+      "max": [
+        -0.01298273354768753,
+        1.5284528732299805,
+        0.07777629792690277
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_45",
+    "sources": [
+      "Lower second premolar.r"
+    ],
+    "originalFaces": 1180,
+    "bounds": {
+      "min": [
+        -0.023905763402581215,
+        1.5069974660873413,
+        0.05805829167366028
+      ],
+      "max": [
+        -0.015951769426465034,
+        1.529806137084961,
+        0.07106789201498032
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_46",
+    "sources": [
+      "Lower first molar tooth.r"
+    ],
+    "originalFaces": 4475,
+    "bounds": {
+      "min": [
+        -0.028837645426392555,
+        1.513427734375,
+        0.04991575703024864
+      ],
+      "max": [
+        -0.016771171241998672,
+        1.53267240524292,
+        0.06466803699731827
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tooth_47",
+    "sources": [
+      "Lower second molar tooth.r"
+    ],
+    "originalFaces": 1655,
+    "bounds": {
+      "min": [
+        -0.03213685005903244,
+        1.5185959339141846,
+        0.03762785345315933
+      ],
+      "max": [
+        -0.020320983603596687,
+        1.5368387699127197,
+        0.05376848205924034
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "alar_cartilage_r",
+    "sources": [
+      "Major alar cartilage.r"
+    ],
+    "originalFaces": 344,
+    "bounds": {
+      "min": [
+        -0.014849269762635231,
+        1.5481327772140503,
+        0.0870371162891388
+      ],
+      "max": [
+        -6.979051977396011e-05,
+        1.562315821647644,
+        0.11441265791654587
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nose_surface_r",
+    "sources": [
+      "Nasal region.r"
+    ],
+    "originalFaces": 306,
+    "bounds": {
+      "min": [
+        -0.01779939979314804,
+        1.5472978353500366,
+        0.08229856193065643
+      ],
+      "max": [
+        0.0008302861824631691,
+        1.6099853515625,
+        0.1167282909154892
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "oral_surface_r",
+    "sources": [
+      "Oral region.r"
+    ],
+    "originalFaces": 337,
+    "bounds": {
+      "min": [
+        -0.03390846401453018,
+        1.5094900131225586,
+        0.07674681395292282
+      ],
+      "max": [
+        0.0005426239222288132,
+        1.5512921810150146,
+        0.10076447576284409
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nails_hand_r",
+    "sources": [
+      "Nail plate.r"
+    ],
+    "originalFaces": 1380,
+    "bounds": {
+      "min": [
+        -0.34005922079086304,
+        0.6985292434692383,
+        0.061455920338630676
+      ],
+      "max": [
+        -0.22497498989105225,
+        0.7796769142150879,
+        0.09830691665410995
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nails_foot_r",
+    "sources": [
+      "Nail plate (foot).r"
+    ],
+    "originalFaces": 968,
+    "bounds": {
+      "min": [
+        -0.14857017993927002,
+        0.015050867572426796,
+        0.08593785762786865
+      ],
+      "max": [
+        -0.08078368008136749,
+        0.025749320164322853,
+        0.14413926005363464
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "achilles_r",
+    "sources": [
+      "Calcaneal tendon.r"
+    ],
+    "originalFaces": 4334,
+    "bounds": {
+      "min": [
+        -0.11536843329668045,
+        0.025156155228614807,
+        -0.09218180179595947
+      ],
+      "max": [
+        -0.052266743034124374,
+        0.2452821284532547,
+        -0.06496633589267731
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_fascia_r",
+    "sources": [
+      "Plantar aponeurosis.r"
+    ],
+    "originalFaces": 211,
+    "bounds": {
+      "min": [
+        -0.12680760025978088,
+        0.006665041670203209,
+        -0.06934374570846558
+      ],
+      "max": [
+        -0.0630851462483406,
+        0.02595972642302513,
+        0.07343848794698715
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_ligament_r",
+    "sources": [
+      "Long plantar ligament.r"
+    ],
+    "originalFaces": 3486,
+    "bounds": {
+      "min": [
+        -0.11529712378978729,
+        0.01908610761165619,
+        -0.06719271838665009
+      ],
+      "max": [
+        -0.06448598951101303,
+        0.044466231018304825,
+        0.032635439187288284
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "knee_acl_r",
+    "sources": [
+      "Anterior cruciate ligament.r"
+    ],
+    "originalFaces": 404,
+    "bounds": {
+      "min": [
+        -0.08810308575630188,
+        0.42684829235076904,
+        -0.046284809708595276
+      ],
+      "max": [
+        -0.06692405045032501,
+        0.4565577507019043,
+        -0.02168162912130356
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "knee_pcl_r",
+    "sources": [
+      "Posterior cruciate ligament.r"
+    ],
+    "originalFaces": 404,
+    "bounds": {
+      "min": [
+        -0.08454244583845139,
+        0.4143088161945343,
+        -0.05490461364388466
+      ],
+      "max": [
+        -0.061215296387672424,
+        0.45224836468696594,
+        -0.036279745399951935
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "meniscus_medial_r",
+    "sources": [
+      "Medial meniscus.r"
+    ],
+    "originalFaces": 142,
+    "bounds": {
+      "min": [
+        -0.06736768037080765,
+        0.4192046523094177,
+        -0.061273522675037384
+      ],
+      "max": [
+        -0.04155370593070984,
+        0.4341496527194977,
+        -0.01657787151634693
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "meniscus_lateral_r",
+    "sources": [
+      "Lateral meniscus.r"
+    ],
+    "originalFaces": 234,
+    "bounds": {
+      "min": [
+        -0.11008554697036743,
+        0.42431244254112244,
+        -0.04871334508061409
+      ],
+      "max": [
+        -0.07625485211610794,
+        0.43962782621383667,
+        -0.009988252073526382
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soleus_r",
+    "sources": [
+      "Soleus muscle.r"
+    ],
+    "originalFaces": 6774,
+    "bounds": {
+      "min": [
+        -0.12881726026535034,
+        0.13375617563724518,
+        -0.07900318503379822
+      ],
+      "max": [
+        -0.043684039264917374,
+        0.40950870513916016,
+        -0.023758593946695328
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tibialis_anterior_r",
+    "sources": [
+      "Tibialis anterior muscle.r"
+    ],
+    "originalFaces": 3526,
+    "bounds": {
+      "min": [
+        -0.1174892857670784,
+        0.04225766658782959,
+        -0.034878820180892944
+      ],
+      "max": [
+        -0.05667409300804138,
+        0.4111183285713196,
+        0.038795579224824905
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "tibialis_posterior_r",
+    "sources": [
+      "Tibialis posterior muscle.r"
+    ],
+    "originalFaces": 5526,
+    "bounds": {
+      "min": [
+        -0.10790205746889114,
+        0.03886645287275314,
+        -0.05797016620635986
+      ],
+      "max": [
+        -0.04898098111152649,
+        0.38265156745910645,
+        0.02320644073188305
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "fibularis_longus_r",
+    "sources": [
+      "Fibularis longus muscle.r"
+    ],
+    "originalFaces": 5522,
+    "bounds": {
+      "min": [
+        -0.1350509077310562,
+        0.02885247766971588,
+        -0.06375247240066528
+      ],
+      "max": [
+        -0.07629357278347015,
+        0.40800729393959045,
+        0.02590286359190941
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "extensor_toes_r",
+    "sources": [
+      "Extensor digitorum longus.r"
+    ],
+    "originalFaces": 3176,
+    "bounds": {
+      "min": [
+        -0.11957525461912155,
+        0.09074477851390839,
+        -0.04535636678338051
+      ],
+      "max": [
+        -0.08720419555902481,
+        0.4186822772026062,
+        -0.012271499261260033
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flexor_toes_r",
+    "sources": [
+      "Flexor digitorum longus.r"
+    ],
+    "originalFaces": 6836,
+    "bounds": {
+      "min": [
+        -0.14325416088104248,
+        0.00778566300868988,
+        -0.06473421305418015
+      ],
+      "max": [
+        -0.04875237122178078,
+        0.35140261054039,
+        0.12841767072677612
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "extensor_hallucis_r",
+    "sources": [
+      "Extensor hallucis longus.r"
+    ],
+    "originalFaces": 2362,
+    "bounds": {
+      "min": [
+        -0.11160391569137573,
+        0.023879170417785645,
+        -0.04152775555849075
+      ],
+      "max": [
+        -0.06888291239738464,
+        0.30438315868377686,
+        0.10021139681339264
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flexor_hallucis_r",
+    "sources": [
+      "Flexor hallucis longus.r"
+    ],
+    "originalFaces": 5878,
+    "bounds": {
+      "min": [
+        -0.11480684578418732,
+        0.008544832468032837,
+        -0.06724922358989716
+      ],
+      "max": [
+        -0.058209098875522614,
+        0.3262084424495697,
+        0.11751115322113037
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "abductor_hallucis_r",
+    "sources": [
+      "Abductor hallucis.r"
+    ],
+    "originalFaces": 1688,
+    "bounds": {
+      "min": [
+        -0.07554643601179123,
+        0.014435111545026302,
+        -0.0605037584900856
+      ],
+      "max": [
+        -0.05512578785419464,
+        0.041370049118995667,
+        0.0847175195813179
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "flexor_brevis_r",
+    "sources": [
+      "Flexor digitorum brevis.r"
+    ],
+    "originalFaces": 3224,
+    "bounds": {
+      "min": [
+        -0.14360615611076355,
+        0.006932201329618692,
+        -0.06843124330043793
+      ],
+      "max": [
+        -0.06512453407049179,
+        0.026943359524011612,
+        0.11955223977565765
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_nerve_medial_r",
+    "sources": [
+      "Medial plantar nerve.r"
+    ],
+    "originalFaces": 576,
+    "bounds": {
+      "min": [
+        -0.07704443484544754,
+        0.02571803331375122,
+        -0.05531846731901169
+      ],
+      "max": [
+        -0.057433150708675385,
+        0.05798918008804321,
+        0.024680186063051224
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "plantar_nerve_lateral_r",
+    "sources": [
+      "Lateral plantar nerve.r"
+    ],
+    "originalFaces": 576,
+    "bounds": {
+      "min": [
+        -0.0957956314086914,
+        0.02201789617538452,
+        -0.05531846731901169
+      ],
+      "max": [
+        -0.057433150708675385,
+        0.05798918008804321,
+        0.0036582015454769135
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "gingiva",
+    "sources": [
+      "Gingiva"
+    ],
+    "originalFaces": 12298,
+    "bounds": {
+      "min": [
+        -0.03674229979515076,
+        1.5086013078689575,
+        0.03259186074137688
+      ],
+      "max": [
+        0.036742303520441055,
+        1.5529420375823975,
+        0.09146866202354431
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "soft_palate",
+    "sources": [
+      "Soft palate"
+    ],
+    "originalFaces": 1882,
+    "bounds": {
+      "min": [
+        -0.017646808177232742,
+        1.5446690320968628,
+        0.014986768364906311
+      ],
+      "max": [
+        0.017646808177232742,
+        1.5548828840255737,
+        0.0555884912610054
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "uvula",
+    "sources": [
+      "Uvula of palate"
+    ],
+    "originalFaces": 1502,
+    "bounds": {
+      "min": [
+        -0.0025259205140173435,
+        1.5408575534820557,
+        0.013374574482440948
+      ],
+      "max": [
+        0.0024725953117012978,
+        1.5501476526260376,
+        0.017888173460960388
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nasal_septum",
+    "sources": [
+      "Nasal septal cartilage"
+    ],
+    "originalFaces": 360,
+    "bounds": {
+      "min": [
+        -0.0025010944809764624,
+        1.551066517829895,
+        0.07350070029497147
+      ],
+      "max": [
+        0.002422896446660161,
+        1.5854545831680298,
+        0.11576693505048752
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nasal_mucosa",
+    "sources": [
+      "Mucosa of nasal cavity"
+    ],
+    "originalFaces": 4904,
+    "bounds": {
+      "min": [
+        -0.013657242991030216,
+        1.5496208667755127,
+        0.04216872155666351
+      ],
+      "max": [
+        0.013657242991030216,
+        1.5975695848464966,
+        0.10809941589832306
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "hair_scalp",
+    "sources": [
+      "Hairs of head"
+    ],
+    "originalFaces": 8599,
+    "bounds": {
+      "min": [
+        -0.10294698923826218,
+        1.523360013961792,
+        -0.1316187083721161
+      ],
+      "max": [
+        0.09290000796318054,
+        1.7433401346206665,
+        0.08845213800668716
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "urethra",
+    "sources": [
+      "Urethra"
+    ],
+    "originalFaces": 1440,
+    "bounds": {
+      "min": [
+        -0.0018000002019107342,
+        0.7449196577072144,
+        -0.017978213727474213
+      ],
+      "max": [
+        0.0018000002019107342,
+        0.8307577967643738,
+        0.0877605527639389
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kidney_r",
+    "sources": [
+      "FMA7204"
+    ],
+    "originalFaces": 12394,
+    "bounds": {
+      "min": [
+        -0.08903460949659348,
+        1.0426987409591675,
+        -0.036407724022865295
+      ],
+      "max": [
+        -0.028968513011932373,
+        1.1449227333068848,
+        0.016668178141117096
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ureter_r",
+    "sources": [
+      "Ureter.r"
+    ],
+    "originalFaces": 1584,
+    "bounds": {
+      "min": [
+        -0.04083021730184555,
+        0.8700525164604187,
+        -0.029823649674654007
+      ],
+      "max": [
+        -0.009969145059585571,
+        1.0923136472702026,
+        0.020478874444961548
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "kidney_l",
+    "sources": [
+      "FMA7205"
+    ],
+    "originalFaces": 15358,
+    "bounds": {
+      "min": [
+        0.0313265398144722,
+        1.0607634782791138,
+        -0.04030744731426239
+      ],
+      "max": [
+        0.09189653396606445,
+        1.1637234687805176,
+        0.003789357841014862
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ureter_l",
+    "sources": [
+      "Ureter.l"
+    ],
+    "originalFaces": 1440,
+    "bounds": {
+      "min": [
+        0.023275665938854218,
+        0.8731614351272583,
+        -0.03560778498649597
+      ],
+      "max": [
+        0.04556933790445328,
+        1.1105148792266846,
+        0.02144750766456127
+      ]
+    },
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ear_l",
+    "kind": "assembly",
+    "childIds": [
+      "auricle_l",
+      "eardrum_l",
+      "malleus_l",
+      "incus_l",
+      "stapes_l"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "foot_l",
+    "kind": "assembly",
+    "childIds": [
+      "bone_calcaneus_l",
+      "bone_cuboid_bone_l",
+      "bone_distal_phalanx_of_fifth_finger_of_foot_l",
+      "bone_distal_phalanx_of_first_finger_of_foot_l",
+      "bone_distal_phalanx_of_fourth_finger_of_foot_l",
+      "bone_distal_phalanx_of_second_finger_of_foot_l",
+      "bone_distal_phalanx_of_third_finger_of_foot_l",
+      "bone_fifth_metatarsal_bone_l",
+      "bone_first_metatarsal_bone_l",
+      "bone_fourth_metatarsal_bone_l",
+      "bone_intermediate_cuneiform_bone_l",
+      "bone_lateral_cuneiform_bone_l",
+      "bone_medial_cuneiform_bone_l",
+      "bone_middle_phalanx_of_fifth_finger_of_foot_l",
+      "bone_middle_phalanx_of_fourth_finger_of_foot_l",
+      "bone_middle_phalanx_of_second_finger_of_foot_l",
+      "bone_middle_phalanx_of_third_finger_of_foot_l",
+      "bone_navicular_bone_l",
+      "bone_proximal_phalanx_of_fifth_finger_of_foot_l",
+      "bone_proximal_phalanx_of_first_finger_of_foot_l",
+      "bone_proximal_phalanx_of_fourth_finger_of_foot_l",
+      "bone_proximal_phalanx_of_second_finger_of_foot_l",
+      "bone_proximal_phalanx_of_third_finger_of_foot_l",
+      "bone_second_metatarsal_bone_l",
+      "bone_talus_l",
+      "bone_third_metatarsal_bone_l",
+      "skin_ankle_l",
+      "skin_foot_l",
+      "nails_foot_l",
+      "achilles_l",
+      "plantar_fascia_l",
+      "plantar_ligament_l",
+      "abductor_hallucis_l",
+      "flexor_brevis_l",
+      "plantar_nerve_medial_l",
+      "plantar_nerve_lateral_l"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "hand_l",
+    "kind": "assembly",
+    "childIds": [
+      "bone_capitate_bone_l",
+      "bone_distal_phalanx_of_fifth_finger_of_hand_l",
+      "bone_distal_phalanx_of_first_finger_of_hand_l",
+      "bone_distal_phalanx_of_fourth_finger_of_hand_l",
+      "bone_distal_phalanx_of_second_finger_of_hand_l",
+      "bone_distal_phalanx_of_third_finger_of_hand_l",
+      "bone_fifth_metacarpal_bone_l",
+      "bone_first_metacarpal_bone_l",
+      "bone_fourth_metacarpal_bone_l",
+      "bone_hamate_bone_l",
+      "bone_lunate_bone_l",
+      "bone_middle_phalanx_of_fifth_finger_of_hand_l",
+      "bone_middle_phalanx_of_fourth_finger_of_hand_l",
+      "bone_middle_phalanx_of_second_finger_of_hand_l",
+      "bone_middle_phalanx_of_third_finger_of_hand_l",
+      "bone_pisiform_bone_l",
+      "bone_proximal_phalanx_of_fifth_finger_of_hand_l",
+      "bone_proximal_phalanx_of_first_finger_of_hand_l",
+      "bone_proximal_phalanx_of_fourth_finger_of_hand_l",
+      "bone_proximal_phalanx_of_second_finger_of_hand_l",
+      "bone_proximal_phalanx_of_third_finger_of_hand_l",
+      "bone_scaphoid_bone_l",
+      "bone_second_metacarpal_bone_l",
+      "bone_third_metacarpal_bone_l",
+      "bone_trapezium_bone_l",
+      "bone_triquetrum_bone_l",
+      "skin_wrist_l",
+      "skin_hand_l",
+      "nails_hand_l"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "ear_r",
+    "kind": "assembly",
+    "childIds": [
+      "auricle_r",
+      "eardrum_r",
+      "malleus_r",
+      "incus_r",
+      "stapes_r"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "foot_r",
+    "kind": "assembly",
+    "childIds": [
+      "bone_calcaneus_r",
+      "bone_cuboid_bone_r",
+      "bone_distal_phalanx_of_fifth_finger_of_foot_r",
+      "bone_distal_phalanx_of_first_finger_of_foot_r",
+      "bone_distal_phalanx_of_fourth_finger_of_foot_r",
+      "bone_distal_phalanx_of_second_finger_of_foot_r",
+      "bone_distal_phalanx_of_third_finger_of_foot_r",
+      "bone_fifth_metatarsal_bone_r",
+      "bone_first_metatarsal_bone_r",
+      "bone_fourth_metatarsal_bone_r",
+      "bone_intermediate_cuneiform_bone_r",
+      "bone_lateral_cuneiform_bone_r",
+      "bone_medial_cuneiform_bone_r",
+      "bone_middle_phalanx_of_fifth_finger_of_foot_r",
+      "bone_middle_phalanx_of_fourth_finger_of_foot_r",
+      "bone_middle_phalanx_of_second_finger_of_foot_r",
+      "bone_middle_phalanx_of_third_finger_of_foot_r",
+      "bone_navicular_bone_r",
+      "bone_second_metatarsal_bone_r",
+      "bone_proximal_phalanx_of_fifth_finger_of_foot_r",
+      "bone_proximal_phalanx_of_first_finger_of_foot_r",
+      "bone_proximal_phalanx_of_fourth_finger_of_foot_r",
+      "bone_proximal_phalanx_of_second_finger_of_foot_r",
+      "bone_proximal_phalanx_of_third_finger_of_foot_r",
+      "bone_talus_r",
+      "bone_third_metatarsal_bone_r",
+      "skin_ankle_r",
+      "skin_foot_r",
+      "nails_foot_r",
+      "achilles_r",
+      "plantar_fascia_r",
+      "plantar_ligament_r",
+      "abductor_hallucis_r",
+      "flexor_brevis_r",
+      "plantar_nerve_medial_r",
+      "plantar_nerve_lateral_r"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "hand_r",
+    "kind": "assembly",
+    "childIds": [
+      "bone_capitate_bone_r",
+      "bone_distal_phalanx_of_fifth_finger_of_hand_r",
+      "bone_distal_phalanx_of_first_finger_of_hand_r",
+      "bone_distal_phalanx_of_fourth_finger_of_hand_r",
+      "bone_distal_phalanx_of_second_finger_of_hand_r",
+      "bone_distal_phalanx_of_third_finger_of_hand_r",
+      "bone_fifth_metacarpal_bone_r",
+      "bone_first_metacarpal_bone_r",
+      "bone_fourth_metacarpal_bone_r",
+      "bone_hamate_bone_r",
+      "bone_lunate_bone_r",
+      "bone_middle_phalanx_of_fifth_finger_of_hand_r",
+      "bone_middle_phalanx_of_fourth_finger_of_hand_r",
+      "bone_middle_phalanx_of_second_finger_of_hand_r",
+      "bone_middle_phalanx_of_third_finger_of_hand_r",
+      "bone_pisiform_bone_r",
+      "bone_scaphoid_bone_r",
+      "bone_proximal_phalanx_of_fifth_finger_of_hand_r",
+      "bone_proximal_phalanx_of_first_finger_of_hand_r",
+      "bone_proximal_phalanx_of_fourth_finger_of_hand_r",
+      "bone_proximal_phalanx_of_second_finger_of_hand_r",
+      "bone_proximal_phalanx_of_third_finger_of_hand_r",
+      "bone_second_metacarpal_bone_r",
+      "bone_third_metacarpal_bone_r",
+      "bone_trapezium_bone_r",
+      "bone_triquetrum_bone_r",
+      "skin_wrist_r",
+      "skin_hand_r",
+      "nails_hand_r"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "mouth",
+    "kind": "assembly",
+    "childIds": [
+      "tongue",
+      "bone_mandible",
+      "bone_maxilla_l",
+      "bone_maxilla_r",
+      "tooth_21",
+      "tooth_22",
+      "tooth_23",
+      "tooth_24",
+      "tooth_25",
+      "tooth_26",
+      "tooth_27",
+      "tooth_31",
+      "tooth_32",
+      "tooth_33",
+      "tooth_34",
+      "tooth_35",
+      "tooth_36",
+      "tooth_37",
+      "oral_surface_l",
+      "tooth_11",
+      "tooth_12",
+      "tooth_13",
+      "tooth_14",
+      "tooth_15",
+      "tooth_16",
+      "tooth_17",
+      "tooth_41",
+      "tooth_42",
+      "tooth_43",
+      "tooth_44",
+      "tooth_45",
+      "tooth_46",
+      "tooth_47",
+      "oral_surface_r",
+      "gingiva",
+      "soft_palate",
+      "uvula"
+    ],
+    "reviewStatus": "pending"
+  },
+  {
+    "id": "nose",
+    "kind": "assembly",
+    "childIds": [
+      "bone_nasal_bone_l",
+      "bone_nasal_bone_r",
+      "alar_cartilage_l",
+      "nose_surface_l",
+      "alar_cartilage_r",
+      "nose_surface_r",
+      "nasal_septum",
+      "nasal_mucosa"
+    ],
+    "reviewStatus": "pending"
+  }
+]
