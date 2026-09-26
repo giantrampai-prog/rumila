@@ -66,7 +66,6 @@ function MembersSheet() {
   const members = useRumila((s) => s.members);
   const meId = useRumila((s) => s.meId);
   const switchMember = useRumila((s) => s.switchMember);
-  const signOut = useRumila((s) => s.signOut);
   const close = useUI((s) => s.closeSheet);
   const router = useRouter();
 
@@ -82,12 +81,6 @@ function MembersSheet() {
               onClick={() => {
                 close();
                 if (on) return;
-                // Profil ber-PIN harus lewat layar PIN dulu.
-                if (m.pin) {
-                  signOut();
-                  router.replace(`/masuk?id=${m.id}`);
-                  return;
-                }
                 switchMember(m.id);
                 router.push("/beranda");
               }}
@@ -98,7 +91,6 @@ function MembersSheet() {
               <span className="min-w-0 flex-1">
                 <span className="block text-[15px] font-bold">{m.name}</span>
                 <span className="flex items-center gap-1 text-xs text-ink-3">
-                  {m.pin && <Icon name="lock" size={13} />}
                   {m.admin ? "Admin" : "User"} · {accessText(m)}
                 </span>
               </span>

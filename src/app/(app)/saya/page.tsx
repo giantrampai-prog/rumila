@@ -1,11 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { setPin, signOutAccount, useCloud } from "@/lib/supabase/family";
+import { signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
 import { accessText } from "@/components/sheets";
-import { Avatar, Card, Icon, Modal, RoleBadge, Tile, listRow } from "@/components/ui";
+import { Avatar, Card, Icon, RoleBadge, Tile, listRow } from "@/components/ui";
 import type { ColorKey } from "@/lib/catalog";
 import { useMe, useRumila, useUI } from "@/lib/store";
 
@@ -14,31 +13,19 @@ export default function Saya() {
   const members = useRumila((s) => s.members);
   const familyName = useRumila((s) => s.familyName);
   const email = useCloud((s) => s.email);
-  const [pinOpen, setPinOpen] = useState(false);
-  const signOut = useRumila((s) => s.signOut);
   const router = useRouter();
   const { openSheet, showToast } = useUI();
   const sorted = [...members].sort((a, b) => Number(b.admin) - Number(a.admin));
 
   const settings: { icon: string; c: ColorKey; label: string; meta: string; tap?: () => void }[] = [
     { icon: "timer", c: "orange", label: "Batas waktu layar anak", meta: "2 jam per hari" },
-    {
-      icon: "lock",
-      c: "gold",
-      label: "PIN profil",
-      meta: me.pin ? "Aktif · ketuk untuk ganti" : "Belum dipasang",
-      tap: () => setPinOpen(true),
-    },
     { icon: "help", c: "sky", label: "Bantuan & cara install", meta: "Pasang di layar utama HP" },
     {
       icon: "logout",
       c: "red",
       label: "Ganti profil",
-      meta: "Kembali ke pilih profil",
-      tap: () => {
-        signOut();
-        router.replace("/masuk");
-      },
+      meta: "Pilih siapa yang sedang memakai",
+      tap: () => openSheet({ kind: "members" }),
     },
     {
       icon: "no_accounts",
@@ -119,54 +106,8 @@ export default function Saya() {
           </Card>
         </section>
       </div>
-      <PinModal open={pinOpen} onClose={() => setPinOpen(false)} memberId={me.id} hasPin={!!me.pin} />
     </>
   );
 }
 
 /** Pasang / ganti / hapus PIN profil sendiri (disimpan sebagai hash di server). */
-function PinModal({ open, onClose, memberId, hasPin }: { open: boolean; onClose: () => void; memberId: string; hasPin: boolean }) {
-  const showToast = useUI((s) => s.showToast);
-  const [pin, setPinVal] = useState("");
-  const [busy, setBusy] = useState(false);
-  const save = async (value: string | null) => {
-    setBusy(true);
-    try {
-      await setPin(memberId, value);
-      showToast(value ? "PIN tersimpan" : "PIN dihapus");
-      setPinVal("");
-      onClose();
-    } catch (e) {
-      showToast(e instanceof Error ? e.message : "Gagal menyimpan PIN");
-    } finally {
-      setBusy(false);
-    }
-  };
-  return (
-    <Modal open={open} onClose={onClose} title={hasPin ? "Ganti PIN profil" : "Pasang PIN profil"} width={420}>
-      <p className="text-sm text-ink-3">PIN 4 angka dipakai saat masuk ke profilmu, supaya anak-anak tidak membuka profil orang tua.</p>
-      <input
-        autoFocus
-        inputMode="numeric"
-        autoComplete="off"
-        aria-label="PIN baru"
-        value={pin}
-        onChange={(e) => setPinVal(e.target.value.replace(/\D/g, "").slice(0, 4))}
-        placeholder="4 angka"
-        className="h-14 rounded-2xl border border-line px-4 text-center text-2xl font-bold tracking-[.5em] outline-none focus:border-ink-3"
-      />
-      <button
-        disabled={pin.length !== 4 || busy}
-        onClick={() => save(pin)}
-        className="h-[52px] rounded-2xl bg-ink font-bold text-white disabled:opacity-40"
-      >
-        Simpan PIN
-      </button>
-      {hasPin && (
-        <button disabled={busy} onClick={() => save(null)} className="h-10 text-sm font-semibold text-negative">
-          Hapus PIN
-        </button>
-      )}
-    </Modal>
-  );
-}

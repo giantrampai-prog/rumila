@@ -123,7 +123,6 @@ export function useOpenTool() {
       angkasa6: "/jelajah-angkasa",
       angkasa0: "/jelajah-angkasa",
       angkasa1: "/jelajah-angkasa?obj=moon",
-      angkasa5: "/jelajah-angkasa?mode=latihan",
     };
     if (angkasa[t.id]) {
       router.push(angkasa[t.id]);

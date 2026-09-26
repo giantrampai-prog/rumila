@@ -11,27 +11,12 @@ import { BALOO, LauncherBackdrop, MemberAvatar, NUNITO } from "@/components/laun
 import { Icon, PlayCtx } from "@/components/ui";
 import { PLAY, canonicalToolId, getTool, type Folder, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
-import { can, useMe, useRumila, useUI, type Activity } from "@/lib/store";
+import { can, useMe, useRumila, useUI } from "@/lib/store";
 
 const INK = "#2b1d4e";
 
 /** Rute khusus orang tua (dibuka lewat gerbang hitungan). */
 export const isParentPath = (path: string) => path.startsWith("/saya") || path.startsWith("/laporan");
-
-/* ---------------- bintang ---------------- */
-
-/** Bintang = 1 per materi selesai, 3 per latihan selesai. */
-export const starsOf = (activity: Activity[], memberId: string) =>
-  activity.reduce(
-    (n, a) => n + (a.memberId !== memberId ? 0 : a.event === "material_complete" ? 1 : a.event === "exercise_complete" ? 3 : 0),
-    0,
-  );
-
-export function useMyStars() {
-  const me = useMe();
-  const activity = useRumila((s) => s.activity);
-  return useMemo(() => starsOf(activity, me.id), [activity, me.id]);
-}
 
 /** Alat yang terakhir dimainkan anggota aktif (yang masih boleh dibuka). */
 export function useLastTool(): Tool | null {
@@ -46,28 +31,6 @@ export function useLastTool(): Tool | null {
     }
     return null;
   }, [activity, me]);
-}
-
-export function StarPill() {
-  const stars = useMyStars();
-  return (
-    <span
-      className="inline-flex shrink-0 items-center gap-1 rounded-full"
-      style={{
-        background: "linear-gradient(155deg,#ffe46b,#ffbe0b)",
-        boxShadow: "0 3px 0 #d99400",
-        color: "#6b4300",
-        fontFamily: BALOO,
-        fontWeight: 800,
-        fontSize: 15,
-        padding: "3px 11px",
-      }}
-      aria-label={`${stars} bintang`}
-    >
-      <Icon name="star" size={17} />
-      {stars}
-    </span>
-  );
 }
 
 /* ---------------- kerangka ---------------- */
@@ -107,14 +70,12 @@ export function KidHeader() {
           </span>
         </span>
       </button>
-      <StarPill />
     </header>
   );
 }
 
 const KID_NAV = [
   { href: "/beranda", icon: "home", label: "Main", c: "orange" as const },
-  { href: "/koleksi", icon: "emoji_events", label: "Koleksi", c: "gold" as const },
   { href: "/saya", icon: "lock", label: "Orang Tua", c: "indigo" as const },
 ];
 
@@ -122,11 +83,11 @@ function KidNav() {
   const path = usePathname();
   return (
     <nav
-      className="fixed bottom-0 left-1/2 z-30 w-full max-w-[440px] -translate-x-1/2 px-3"
+      className="fixed bottom-0 left-1/2 z-30 w-full max-w-[320px] -translate-x-1/2 px-3"
       style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}
       aria-label="Menu utama"
     >
-      <div className="grid grid-cols-3 gap-1 rounded-[24px] bg-white p-1.5 shadow-[0_4px_0_rgba(43,29,78,.06),0_12px_28px_rgba(43,29,78,.12)]">
+      <div className="grid grid-cols-2 gap-1 rounded-[24px] bg-white p-1.5 shadow-[0_4px_0_rgba(43,29,78,.06),0_12px_28px_rgba(43,29,78,.12)]">
         {KID_NAV.map((n) => {
           const on = n.href === "/saya" ? isParentPath(path) : path === n.href || path.startsWith(n.href + "/");
           const [l, m, d] = PLAY[n.c];

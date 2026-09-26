@@ -177,13 +177,16 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
     },
   ];
 
+/** Alat yang disembunyikan sementara (id tetap dipakai agar progres lama tidak bergeser). */
+const HIDDEN = new Set(["angkasa5"]); // Kuis Angkasa — kuis belum dipakai
+
 export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items }) => ({
   id,
   name,
   c,
   icon,
   desc,
-  items: id === 'edukasi' ? EDUCATION_CATEGORIES.map(category => ({
+  items: (id === 'edukasi' ? EDUCATION_CATEGORIES.map(category => ({
     ...category,
     folder: id,
     folderName: name,
@@ -197,7 +200,7 @@ export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items 
     folderName: name,
     c,
     g: pal[i % pal.length],
-  })),
+  }))).filter((t) => !HIDDEN.has(t.id)),
 }));
 
 export const ALL_TOOLS: Tool[] = FOLDERS.flatMap((f) => f.items);

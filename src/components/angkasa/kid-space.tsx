@@ -6,14 +6,12 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { StarPill } from "@/components/kid";
 import { Icon } from "@/components/ui";
 import { OBJ, PLANET_IDS } from "@/lib/angkasa/manifest";
 import { useAngkasa, type Mode } from "@/lib/angkasa/state";
 import { hasVoice, playVoice, stopVoice, usePlayingVoice } from "@/lib/angkasa/voice";
 import { markDone, useAngkasaSession } from "@/lib/angkasa/progress";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
-import { QuizPanel } from "./panels/overview";
 import { useNarration } from "./panels/tour";
 import { TOUR } from "@/lib/angkasa/tour";
 import { Viewer } from "./viewer";
@@ -198,8 +196,9 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
     const s = useAngkasa.getState();
     s.init(memberId);
     if (initial?.obj && OBJ.get(initial.obj)) s.select(initial.obj, { mode: "planet", push: false });
-    else if (initial?.mode === "latihan") s.setMode("latihan");
     else s.select(null, { mode: "tata-surya" });
+    // Planet langsung bergerak begitu halaman dibuka (orbit + rotasi).
+    s.set({ playing: true, speed: 30, orbitOn: true, spinOn: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [memberId]);
 
@@ -219,7 +218,6 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   };
 
   const tour = st.mode === "tur";
-  const quiz = st.mode === "latihan";
   const planet = st.mode === "planet" && st.selectedId;
 
   return (
@@ -238,34 +236,16 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
         <KidTour />
       ) : (
         <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5" style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}>
-          {/* atas: kembali · bintang */}
+          {/* atas: kembali · terbang */}
           <div className="flex items-start justify-between gap-2">
             <RoundBtn icon={st.mode === "tata-surya" ? "home" : "arrow_back"} label={st.mode === "tata-surya" ? "Keluar" : "Kembali"} onClick={back} />
-            <span className="pointer-events-auto">
-              <StarPill />
-            </span>
+            <RoundBtn icon="rocket_launch" label="Terbang" tone="orange" onClick={() => beginTour(0)} />
           </div>
-
-          {/* kanan: Terbang & Kuis */}
-          {!quiz && (
-            <div className="absolute top-[92px] right-3 flex flex-col gap-3 sm:top-1/2 sm:right-5 sm:-translate-y-1/2 sm:gap-4">
-              <RoundBtn icon="rocket_launch" label="Terbang" tone="orange" onClick={() => beginTour(0)} />
-              <RoundBtn icon="quiz" label="Kuis" tone="purple" onClick={() => st.setMode("latihan")} />
-            </div>
-          )}
 
           {/* bawah */}
           <div className="flex flex-col gap-3">
-            {quiz ? (
-              <div className="ak-scroll pointer-events-auto mx-auto max-h-[62dvh] w-full max-w-[560px] overflow-y-auto rounded-[28px] bg-white p-4 text-[17px] shadow-[0_6px_0_rgba(0,0,0,.25)] sm:p-5">
-                <QuizPanel />
-              </div>
-            ) : (
-              <>
-                {planet && <ObjCard id={st.selectedId!} />}
-                <Dock />
-              </>
-            )}
+            {planet && <ObjCard id={st.selectedId!} />}
+            <Dock />
           </div>
         </div>
       )}
