@@ -3,9 +3,11 @@
 
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
 import { Cabin } from "./cabin";
+import { Cupola } from "./cupola";
 import { RocketScene, altToY, type RocketPose } from "./scene";
 
 export type RoketMode = "jelajah" | "terbang";
@@ -51,6 +53,9 @@ export class RocketEngine {
   private controls: OrbitControls;
   private world: RocketScene;
   private cabin = new Cabin();
+  private cupola = new Cupola();
+  private frame = new THREE.Object3D();
+  private env: THREE.Texture;
   private wasCabin = false;
   private raf = 0;
   private last = performance.now();
@@ -82,6 +87,16 @@ export class RocketEngine {
     host.appendChild(this.renderer.domElement);
     this.renderer.domElement.style.touchAction = "none";
     this.world = new RocketScene(low);
+    // Pantulan logam (kaca helm emas, panel, roket) dari lingkungan studio lembut.
+    const pmrem = new THREE.PMREMGenerator(this.renderer);
+    this.env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    pmrem.dispose();
+    this.world.scene.environment = this.env;
+    this.world.scene.environmentIntensity = 0.35;
+    this.cabin.scene.environment = this.env;
+    this.cabin.scene.environmentIntensity = 0.5;
+    this.cupola.scene.environment = this.env;
+    this.cupola.scene.environmentIntensity = 0.5;
     const cam = this.world.camera;
     cam.position.copy(this.camPos);
     this.controls = new OrbitControls(cam, this.renderer.domElement);
@@ -137,6 +152,7 @@ export class RocketEngine {
     this.world.camera.aspect = w / h;
     this.world.camera.updateProjectionMatrix();
     this.cabin.resize(w / h);
+    this.cupola.resize(w / h);
   }
 
   /* ---------------- mode ---------------- */
@@ -455,8 +471,33 @@ export class RocketEngine {
     }
 
     // POV kabin: dunia digambar dari dalam kapsul (orientasi kamera kabin), lalu kabin di atasnya.
-    const cabinView = ui.mode === "terbang" && MISI[this.idx].view === "kabin";
-    if (cabinView) {
+    const view = ui.mode === "terbang" ? MISI[this.idx].view : undefined;
+    if (view === "kupola") {
+      // Mata astronaut di kupola stasiun: dunia dilihat menghadap Bumi (miring agar cakrawala tampak)
+      this.cupola.update(this.since(0, this.idx, this.t));
+      const pose = this.pose(this.idx, this.t);
+      this.world.applyPose(pose);
+      const Y = altToY(pose.altKm);
+      cam.position.set(0, Y + 5.2, 1.6);
+      this.frame.position.set(0, 0, 0);
+      this.frame.lookAt(0, -0.8, 1); // +Z kupola → ke bawah-depan (Bumi & cakrawala)
+      cam.quaternion.copy(this.frame.quaternion).multiply(this.cupola.camera.quaternion);
+      cam.fov = this.cupola.camera.fov;
+      cam.updateProjectionMatrix();
+      this.controls.enabled = false;
+      this.world.r.cap.visible = false;
+      this.world.update(dt);
+      this.renderer.autoClear = true;
+      this.renderer.render(this.world.scene, cam);
+      this.renderer.autoClear = false;
+      this.renderer.clearDepth();
+      this.renderer.render(this.cupola.scene, this.cupola.camera);
+      this.renderer.autoClear = true;
+      this.world.r.cap.visible = true;
+      this.wasCabin = true;
+      return;
+    }
+    if (view === "kabin") {
       const pose = this.pose(this.idx, this.t);
       const Y = altToY(pose.altKm);
       this.cabin.update(this.cabinState(this.idx, this.t, pose));
@@ -500,6 +541,8 @@ export class RocketEngine {
     this.audio?.pause();
     this.controls.dispose();
     this.cabin.dispose();
+    this.cupola.dispose();
+    this.env.dispose();
     this.world.dispose();
     this.renderer.dispose();
     el.remove();

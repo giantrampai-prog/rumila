@@ -281,16 +281,17 @@ function stripesTex(label: string) {
     g.fillStyle = "#d6dae0";
     for (let x = 0; x < w; x += 32) g.fillRect(x, 0, 3, h);
     // bendera Merah Putih
+    // bendera Merah Putih raksasa di dinding gedung
     g.fillStyle = "#e0262b";
-    g.fillRect(40, 60, 170, 55);
+    g.fillRect(30, 30, 240, 80);
     g.fillStyle = "#ffffff";
-    g.fillRect(40, 115, 170, 55);
+    g.fillRect(30, 110, 240, 80);
     g.strokeStyle = "#b9bec6";
     g.lineWidth = 3;
-    g.strokeRect(40, 60, 170, 110);
+    g.strokeRect(30, 30, 240, 160);
     g.fillStyle = "#2b3a67";
     g.font = "bold 56px system-ui, sans-serif";
-    g.fillText(label, 40, 260);
+    g.fillText(label, 36, 262);
     // pintu raksasa
     g.fillStyle = "#b7bcc5";
     g.fillRect(300, 180, 160, 332);
@@ -318,25 +319,29 @@ function windowsTex() {
   });
 }
 
-function flag() {
-  const tex = canvasTex(64, 40, (g) => {
-    g.fillStyle = "#e0262b";
-    g.fillRect(0, 0, 64, 20);
-    g.fillStyle = "#ffffff";
-    g.fillRect(0, 20, 64, 20);
+/** Bendera Merah Putih berkibar (kain ber-shader) di tiang. */
+export function flag(w = 0.8, poleH = 2.4) {
+  const tex = canvasTex(64, 40, (c) => {
+    c.fillStyle = "#e0262b";
+    c.fillRect(0, 0, 64, 20);
+    c.fillStyle = "#ffffff";
+    c.fillRect(0, 20, 64, 20);
   });
-  const geo = new THREE.PlaneGeometry(0.8, 0.5, 8, 1);
+  const g = new THREE.Group();
+  const geo = new THREE.PlaneGeometry(w, w * 0.62, 12, 1);
   const mat = new THREE.ShaderMaterial({
     uniforms: { uTime: { value: 0 }, map: { value: tex } },
-    vertexShader: `uniform float uTime; varying vec2 vUv; void main(){ vUv = uv; vec3 p = position; float k = uv.x; p.z += sin(uTime * 3.0 + uv.x * 6.0) * 0.06 * k; gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0); }`,
+    vertexShader: `uniform float uTime; varying vec2 vUv; void main(){ vUv = uv; vec3 p = position; float k = uv.x; p.z += sin(uTime * 3.0 + uv.x * 6.0) * 0.075 * k * ${w.toFixed(2)}; gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0); }`,
     fragmentShader: `uniform sampler2D map; varying vec2 vUv; void main(){ gl_FragColor = texture2D(map, vUv); }`,
     side: THREE.DoubleSide,
   });
-  const g = new THREE.Group();
-  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.03, 2.4, 8), std(0xdfe3e8, 0.4, 0.6));
-  pole.position.y = 1.2;
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.025 * (poleH / 2.4), 0.03 * (poleH / 2.4), poleH, 8), std(0xdfe3e8, 0.4, 0.6));
+  pole.position.y = poleH / 2;
+  const top = new THREE.Mesh(new THREE.SphereGeometry(0.04 * (poleH / 2.4), 8, 6), std(0xd4af37, 0.3, 0.8));
+  top.position.y = poleH + 0.03;
   const cloth = new THREE.Mesh(geo, mat);
-  cloth.position.set(0.4, 2.1, 0);
+  cloth.position.set(w / 2, poleH - (w * 0.62) / 2 - 0.05, 0);
+  g.add(top);
   g.add(pole, cloth);
   return { group: g, mat };
 }
@@ -457,6 +462,16 @@ export function buildSite(low: boolean) {
     place(f.group, x, z, 0.5);
     flags.push(f.mat);
   }
+  // deretan bendera di sepanjang jalan masuk
+  for (let z = 11; z <= 27; z += 2.6) {
+    const f = flag(0.55, 1.8);
+    place(f.group, -8.9, z, Math.PI / 2);
+    flags.push(f.mat);
+  }
+  // tiang bendera tinggi di dekat landasan
+  const big = flag(2.2, 7);
+  place(big.group, -5.5, -4.5, 0.4);
+  flags.push(big.mat);
   return { group: g, flags };
 }
 
@@ -493,12 +508,19 @@ export function rocketBodyTex(stage: 1 | 2) {
       g.font = "bold 92px system-ui, sans-serif";
       g.fillText("RUMILA", 0, 0);
       g.restore();
-      g.fillStyle = "#e0262b";
-      g.fillRect(w * 0.62, h * 0.18, 90, 30);
-      g.fillStyle = "#ffffff";
-      g.fillRect(w * 0.62, h * 0.18 + 30, 90, 30);
-      g.strokeStyle = "#aab";
-      g.strokeRect(w * 0.62, h * 0.18, 90, 60);
+      // bendera Merah Putih besar di dua sisi roket
+      for (const fx of [w * 0.52, w * 0.02]) {
+        g.fillStyle = "#e0262b";
+        g.fillRect(fx, h * 0.34, 150, 50);
+        g.fillStyle = "#ffffff";
+        g.fillRect(fx, h * 0.34 + 50, 150, 50);
+        g.strokeStyle = "#aab";
+        g.lineWidth = 2;
+        g.strokeRect(fx, h * 0.34, 150, 100);
+      }
+      g.fillStyle = "#1f2a4a";
+      g.font = "bold 40px system-ui, sans-serif";
+      g.fillText("INDONESIA", w * 0.52, h * 0.34 + 140);
       // bunga es di bagian bawah (tangki oksigen cair sangat dingin)
       const frost = g.createLinearGradient(0, h * 0.55, 0, h);
       frost.addColorStop(0, "rgba(255,255,255,0)");
@@ -511,6 +533,12 @@ export function rocketBodyTex(stage: 1 | 2) {
       g.fillStyle = "#1f2a4a";
       g.font = "bold 60px system-ui, sans-serif";
       g.fillText("MISI 01", w * 0.1, h * 0.5);
+      g.fillStyle = "#e0262b";
+      g.fillRect(w * 0.6, h * 0.36, 120, 40);
+      g.fillStyle = "#ffffff";
+      g.fillRect(w * 0.6, h * 0.36 + 40, 120, 40);
+      g.strokeStyle = "#aab";
+      g.strokeRect(w * 0.6, h * 0.36, 120, 80);
     }
   });
 }

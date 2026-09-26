@@ -9,8 +9,8 @@ export interface MisiStop {
   lines: string[];
   /** ketinggian roket (km) di awal & akhir persinggahan */
   alt: [number, number];
-  /** "kabin" = POV di dalam kapsul; selain itu kamera di luar */
-  view?: "kabin";
+  /** "kabin" = POV di dalam kapsul, "kupola" = POV di jendela kupola stasiun; selain itu kamera di luar */
+  view?: "kabin" | "kupola";
 }
 
 export const MISI: MisiStop[] = [
@@ -19,7 +19,7 @@ export const MISI: MisiStop[] = [
     title: "Pagi di landasan",
     alt: [0, 0],
     lines: [
-      "Selamat pagi, astronaut cilik! Kita berada di landasan peluncuran di pinggir pantai, di Pulau Biak, Papua.",
+      "Selamat pagi, astronaut cilik! Kita berada di landasan peluncuran di pinggir pantai, di Pulau Biak, Papua. Lihat, bendera Merah Putih berkibar di mana-mana!",
       "Lihat roket putih raksasa itu. Tingginya seperti gedung dua puluh lantai! Di sebelahnya ada menara peluncuran, menara air, dan tangki-tangki bahan bakar.",
       "Hari ini kita ikut misi sungguhan: terbang dari darat sampai ke luar angkasa. Siap?",
     ],
@@ -173,6 +173,16 @@ export const MISI: MisiStop[] = [
     lines: [
       "Pelan-pelan, kapsul merapat ke Stasiun Luar Angkasa. Klik! Pintu tersambung dengan aman.",
       "Stasiun ini sebesar lapangan sepak bola dan mengelilingi Bumi sekitar sembilan puluh menit sekali. Jadi para astronaut bisa melihat matahari terbit sekitar enam belas kali sehari!",
+    ],
+  },
+  {
+    id: "kupola",
+    title: "Jendela kupola",
+    alt: [400, 400],
+    view: "kupola",
+    lines: [
+      "Astronaut masuk ke stasiun dan melayang ke kupola, ruang dengan jendela paling besar. Wah, lihat Bumi kita! Ada laut biru, awan putih, dan daratan.",
+      "Di stasiun, astronaut tidur di kantong tidur yang diikat ke dinding supaya tidak melayang ke mana-mana. Mereka minum dari kantong bersedotan, karena air di sini bisa melayang menjadi bola-bola kecil!",
     ],
   },
   {

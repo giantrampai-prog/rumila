@@ -5,7 +5,7 @@
 // melompat ke persinggahan mana pun tetap konsisten.
 
 import * as THREE from "three";
-import { buildBirds, buildMoon, buildSatellite, buildSite, buildStation, gridFin, landingLeg, nozzleMaterial, rocketBodyTex } from "./details";
+import { buildBirds, buildMoon, buildSatellite, buildSite, buildStation, flag, gridFin, landingLeg, nozzleMaterial, rocketBodyTex } from "./details";
 
 export const EARTH_R = 1000;
 /** ketinggian (km) → unit di atas permukaan */
@@ -299,40 +299,132 @@ function buildTower() {
   return { tower, lift, arm };
 }
 
+/** Tempelan kain bergambar (bendera, logo misi). */
+function patchTex(kind: "flag" | "mission") {
+  return canvasTex(128, kind === "flag" ? 84 : 128, (g, w, h) => {
+    if (kind === "flag") {
+      g.fillStyle = "#e0262b";
+      g.fillRect(0, 0, w, h / 2);
+      g.fillStyle = "#ffffff";
+      g.fillRect(0, h / 2, w, h / 2);
+      g.strokeStyle = "#c9ced8";
+      g.lineWidth = 4;
+      g.strokeRect(0, 0, w, h);
+      return;
+    }
+    // logo misi RUMILA: lingkaran biru, roket & orbit
+    g.fillStyle = "#1f3a8a";
+    g.beginPath();
+    g.arc(w / 2, h / 2, w / 2 - 2, 0, TAU);
+    g.fill();
+    g.strokeStyle = "#ffffff";
+    g.lineWidth = 5;
+    g.beginPath();
+    g.ellipse(w / 2, h / 2 + 6, 44, 18, -0.4, 0, TAU);
+    g.stroke();
+    g.fillStyle = "#ff7a1a";
+    g.beginPath();
+    g.moveTo(w / 2, 22);
+    g.lineTo(w / 2 + 12, 70);
+    g.lineTo(w / 2 - 12, 70);
+    g.fill();
+    g.fillStyle = "#ffffff";
+    g.font = "bold 22px system-ui, sans-serif";
+    g.textAlign = "center";
+    g.fillText("RUMILA", w / 2, h - 18);
+  });
+}
+
+/** Astronaut berbaju antariksa detail: helm berkaca emas & lampu, kotak kendali dada, ransel, selang,
+ *  sarung tangan & sepatu abu-abu, sambungan siku/lutut, bendera Merah Putih di bahu, logo misi RUMILA. */
 export function buildAstronaut() {
   const a = new THREE.Group();
-  const suit = new THREE.MeshStandardMaterial({ color: 0xf7f7f2, roughness: 0.7 });
-  const grey = new THREE.MeshStandardMaterial({ color: 0xb8bec8, roughness: 0.6 });
-  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.13, 0.18, 6, 16), suit);
+  const suit = new THREE.MeshStandardMaterial({ color: 0xf5f4ee, roughness: 0.75 });
+  const grey = new THREE.MeshStandardMaterial({ color: 0xa9b0bb, roughness: 0.6 });
+  const dark = new THREE.MeshStandardMaterial({ color: 0x5b6270, roughness: 0.5, metalness: 0.3 });
+  const glove = new THREE.MeshStandardMaterial({ color: 0x9aa0a8, roughness: 0.8 });
+  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.135, 0.18, 8, 20), suit);
   torso.position.y = 0.42;
-  const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.13, 24, 16), suit);
-  helmet.position.y = 0.68;
+  // helm: cangkang putih + kaca emas memantul + lampu & kamera di kiri-kanan
+  const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.135, 32, 20), suit);
+  helmet.position.y = 0.69;
   const visor = new THREE.Mesh(
-    new THREE.SphereGeometry(0.105, 24, 16, Math.PI * 0.15, Math.PI * 0.7, Math.PI * 0.25, Math.PI * 0.45),
-    new THREE.MeshStandardMaterial({ color: 0xffb72b, roughness: 0.15, metalness: 0.9 }),
+    new THREE.SphereGeometry(0.118, 32, 20, Math.PI * 0.12, Math.PI * 0.76, Math.PI * 0.2, Math.PI * 0.5),
+    new THREE.MeshPhysicalMaterial({ color: 0xe8a73a, roughness: 0.05, metalness: 1, clearcoat: 1, clearcoatRoughness: 0.05, emissive: 0x3a2508 }),
   );
-  visor.position.set(0, 0.68, 0.035);
-  const pack = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.26, 0.12), grey);
-  pack.position.set(0, 0.46, -0.16);
-  const patch = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.05, 0.01), new THREE.MeshStandardMaterial({ color: 0xff3b3b }));
-  patch.position.set(0.06, 0.5, 0.13);
-  const limb = (r: number, len: number) => new THREE.Mesh(new THREE.CapsuleGeometry(r, len, 4, 10), suit);
-  const armL = limb(0.045, 0.16);
-  const armR = limb(0.045, 0.16);
-  armL.geometry.translate(0, -0.1, 0);
-  armR.geometry.translate(0, -0.1, 0);
-  armL.position.set(-0.17, 0.52, 0);
-  armR.position.set(0.17, 0.52, 0);
-  const legL = limb(0.055, 0.14);
-  const legR = limb(0.055, 0.14);
-  legL.geometry.translate(0, -0.1, 0);
-  legR.geometry.translate(0, -0.1, 0);
+  visor.position.set(0, 0.69, 0.03);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.018, 8, 28), grey);
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = 0.575;
+  a.add(helmet, visor, ring);
+  for (const sx of [-1, 1]) {
+    const lampBox = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.045, 0.05), suit);
+    lampBox.position.set(sx * 0.13, 0.72, 0.04);
+    const lamp = new THREE.Mesh(new THREE.CircleGeometry(0.014, 12), new THREE.MeshBasicMaterial({ color: 0xfffbe6 }));
+    lamp.position.set(sx * 0.13, 0.72, 0.066);
+    a.add(lampBox, lamp);
+  }
+  // kotak kendali di dada + tombol + selang
+  const dcm = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.09, 0.06), suit);
+  dcm.position.set(0, 0.46, 0.15);
+  a.add(dcm);
+  for (let k = 0; k < 4; k++) {
+    const knob = new THREE.Mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.02, 8), dark);
+    knob.rotation.x = Math.PI / 2;
+    knob.position.set(-0.05 + k * 0.033, 0.47, 0.185);
+    a.add(knob);
+  }
+  for (const sx of [-1, 1]) {
+    const hose = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.009, 6, 16, Math.PI), dark);
+    hose.position.set(sx * 0.07, 0.4, 0.14);
+    hose.rotation.set(0, sx * 0.6, Math.PI / 2);
+    a.add(hose);
+  }
+  // ransel penunjang hidup (oksigen, pendingin) + antena
+  const pack = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.32, 0.13), suit);
+  pack.position.set(0, 0.47, -0.17);
+  const packLid = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.05, 0.1), grey);
+  packLid.position.set(0, 0.64, -0.17);
+  const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.004, 0.004, 0.12), dark);
+  antenna.position.set(0.1, 0.72, -0.2);
+  a.add(pack, packLid, antenna);
+  // bendera Merah Putih di bahu kiri & logo misi di dada kanan
+  const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.075, 0.05), new THREE.MeshStandardMaterial({ map: patchTex("flag"), roughness: 0.8 }));
+  flag.position.set(-0.155, 0.53, 0.035);
+  flag.rotation.y = -1.1;
+  const mission = new THREE.Mesh(new THREE.CircleGeometry(0.03, 20), new THREE.MeshStandardMaterial({ map: patchTex("mission"), roughness: 0.8 }));
+  mission.position.set(0.075, 0.535, 0.132);
+  a.add(flag, mission);
+  // anggota badan: grup berporos (sarung tangan & sepatu ikut bergerak)
+  const limb = (r: number, len: number, end: THREE.Mesh, jointY: number) => {
+    const g = new THREE.Group();
+    const m = new THREE.Mesh(new THREE.CapsuleGeometry(r, len, 4, 12), suit);
+    m.position.y = -0.1;
+    const joint = new THREE.Mesh(new THREE.TorusGeometry(r * 1.02, r * 0.18, 6, 16), grey);
+    joint.rotation.x = Math.PI / 2;
+    joint.position.y = jointY;
+    end.position.y = -0.1 - len / 2 - r * 0.9;
+    g.add(m, joint, end);
+    return g;
+  };
+  const gloveMesh = () => new THREE.Mesh(new THREE.SphereGeometry(0.045, 12, 10), glove);
+  const bootMesh = () => {
+    const b = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.06, 0.13), grey);
+    b.geometry.translate(0, 0, 0.02);
+    return b;
+  };
+  const armL = limb(0.045, 0.16, gloveMesh(), -0.1);
+  const armR = limb(0.045, 0.16, gloveMesh(), -0.1);
+  armL.position.set(-0.18, 0.53, 0);
+  armR.position.set(0.18, 0.53, 0);
+  const legL = limb(0.056, 0.14, bootMesh(), -0.1);
+  const legR = limb(0.056, 0.14, bootMesh(), -0.1);
   legL.position.set(-0.07, 0.27, 0);
   legR.position.set(0.07, 0.27, 0);
-  a.add(torso, helmet, visor, pack, patch, armL, armR, legL, legR);
+  a.add(torso, armL, armR, legL, legR);
   a.scale.setScalar(0.85);
   tag(a, "astronot");
-  return { astro: a, armL, armR, legL, legR };
+  return { astro: a, armL, armR, legL, legR, helmet, visor };
 }
 
 function aurora() {
@@ -514,6 +606,11 @@ export class RocketScene {
     s.add(this.moon);
     this.t = buildTower();
     s.add(this.t.tower);
+    // bendera Merah Putih berkibar di puncak menara
+    const towerFlag = flag(0.9, 1.3);
+    towerFlag.group.position.set(-0.3, 7.4, -0.3);
+    this.t.tower.add(towerFlag.group);
+    this.flags.push(towerFlag.mat);
     this.r = buildRocket();
     s.add(this.r.rocket);
     this.a = buildAstronaut();

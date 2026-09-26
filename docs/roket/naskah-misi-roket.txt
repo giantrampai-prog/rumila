@@ -1,10 +1,10 @@
 NASKAH SUARA — ROKET & ASTRONOT 3D
 
-Rekam jadi SATU file, urut dari atas. Beri jeda ±1 detik antaradegan. 20 adegan, ±5 menit.
+Rekam jadi SATU file, urut dari atas. Beri jeda ±1 detik antaradegan. 21 adegan, ±5 menit.
 Setelah rekaman jadi, catat timestamp mulai tiap adegan (menit:detik), misalnya 1 = 0:00, 2 = 0:19, dst.
 
 [1. Pagi di landasan]
-Selamat pagi, astronaut cilik! Kita berada di landasan peluncuran di pinggir pantai, di Pulau Biak, Papua. Lihat roket putih raksasa itu. Tingginya seperti gedung dua puluh lantai! Di sebelahnya ada menara peluncuran, menara air, dan tangki-tangki bahan bakar. Hari ini kita ikut misi sungguhan: terbang dari darat sampai ke luar angkasa. Siap?
+Selamat pagi, astronaut cilik! Kita berada di landasan peluncuran di pinggir pantai, di Pulau Biak, Papua. Lihat, bendera Merah Putih berkibar di mana-mana! Lihat roket putih raksasa itu. Tingginya seperti gedung dua puluh lantai! Di sebelahnya ada menara peluncuran, menara air, dan tangki-tangki bahan bakar. Hari ini kita ikut misi sungguhan: terbang dari darat sampai ke luar angkasa. Siap?
 
 [2. Kenapa ke luar angkasa?]
 Kenapa astronaut pergi ke luar angkasa? Banyak alasannya! Mereka bekerja di Stasiun Luar Angkasa Internasional untuk melakukan percobaan ilmiah, misalnya bagaimana tanaman tumbuh dan tubuh manusia berubah tanpa gravitasi. Mereka juga mengamati Bumi, merawat peralatan, dan belajar hidup lama di angkasa, sebagai latihan sebelum manusia pergi ke Bulan dan Mars.
@@ -54,11 +54,14 @@ Kita berada di termosfer. Udaranya sudah sangat tipis. Cahaya hijau yang menari 
 [17. Merapat ke stasiun]
 Pelan-pelan, kapsul merapat ke Stasiun Luar Angkasa. Klik! Pintu tersambung dengan aman. Stasiun ini sebesar lapangan sepak bola dan mengelilingi Bumi sekitar sembilan puluh menit sekali. Jadi para astronaut bisa melihat matahari terbit sekitar enam belas kali sehari!
 
-[18. Bertugas di luar]
+[18. Jendela kupola]
+Astronaut masuk ke stasiun dan melayang ke kupola, ruang dengan jendela paling besar. Wah, lihat Bumi kita! Ada laut biru, awan putih, dan daratan. Di stasiun, astronaut tidur di kantong tidur yang diikat ke dinding supaya tidak melayang ke mana-mana. Mereka minum dari kantong bersedotan, karena air di sini bisa melayang menjadi bola-bola kecil!
+
+[19. Bertugas di luar]
 Hari ini astronaut kita bertugas memeriksa panel surya, sayap raksasa yang mengubah cahaya Matahari menjadi listrik untuk stasiun. Ia keluar untuk berjalan di luar angkasa, dengan tali pengaman yang selalu terpasang. Di bawahnya, Bumi tampak bulat dan biru, diselimuti garis tipis atmosfer yang bercahaya.
 
-[19. Eksosfer & satelit]
+[20. Eksosfer & satelit]
 Lihat ke atas! Di sana ada eksosfer, lapisan udara paling luar, tempat udaranya hampir tidak ada. Banyak satelit berputar mengelilingi Bumi. Ada satelit cuaca, satelit penunjuk arah, dan satelit yang mengirim siaran televisi dan internet ke rumahmu.
 
-[20. Misi berhasil]
+[21. Misi berhasil]
 Misi berhasil, astronaut hebat! Kita sudah melewati troposfer, stratosfer, mesosfer, termosfer, sampai melihat eksosfer. Kamu juga sudah tahu tentang gravitasi, orbit, dan rasanya melayang. Ceritakan petualangan ini ke Ayah dan Ibu, ya. Sampai jumpa di misi berikutnya!

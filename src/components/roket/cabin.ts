@@ -5,7 +5,6 @@
 // lalu kabin digambar di atasnya (bagian jendela sengaja kosong).
 
 import * as THREE from "three";
-import { buildAstronaut } from "./scene";
 
 const TAU = Math.PI * 2;
 
@@ -83,13 +82,75 @@ class Screen {
   }
 }
 
+/** Paha, lutut, dan sarung tangan astronaut dari sudut pandang matanya sendiri. */
+export function povBody() {
+  const g = new THREE.Group();
+  const suit = new THREE.MeshStandardMaterial({ color: 0xf1f0ea, roughness: 0.8 });
+  const grey = new THREE.MeshStandardMaterial({ color: 0x9aa0a8, roughness: 0.8 });
+  const red = new THREE.MeshStandardMaterial({ color: 0xd9483b, roughness: 0.7 });
+  const legs: THREE.Group[] = [];
+  const hands: THREE.Group[] = [];
+  for (const sx of [-1, 1]) {
+    const leg = new THREE.Group();
+    const thigh = new THREE.Mesh(new THREE.CapsuleGeometry(0.075, 0.3, 6, 14), suit);
+    thigh.rotation.x = Math.PI / 2;
+    thigh.position.z = 0.2;
+    const knee = new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.014, 6, 18), grey);
+    knee.position.z = 0.36;
+    const stripe = new THREE.Mesh(new THREE.TorusGeometry(0.077, 0.008, 6, 18), red);
+    stripe.position.z = 0.1;
+    const shin = new THREE.Mesh(new THREE.CapsuleGeometry(0.065, 0.2, 6, 12), suit);
+    shin.position.set(0, -0.12, 0.42);
+    leg.add(thigh, knee, stripe, shin);
+    leg.position.set(sx * 0.1, -0.28, -0.1);
+    g.add(leg);
+    legs.push(leg);
+    const hand = new THREE.Group();
+    const cuff = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.055, 0.06, 14), grey);
+    cuff.rotation.x = Math.PI / 2;
+    const palm = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.03, 0.1), grey);
+    palm.position.z = 0.07;
+    hand.add(cuff, palm);
+    for (let k = 0; k < 4; k++) {
+      const fg = new THREE.Mesh(new THREE.CapsuleGeometry(0.011, 0.04, 3, 6), grey);
+      fg.rotation.x = Math.PI / 2;
+      fg.position.set(-0.03 + k * 0.02, 0, 0.14);
+      hand.add(fg);
+    }
+    const thumb = new THREE.Mesh(new THREE.CapsuleGeometry(0.012, 0.03, 3, 6), grey);
+    thumb.position.set(-sx * 0.05, 0, 0.07);
+    thumb.rotation.z = Math.PI / 2;
+    hand.add(thumb);
+    g.add(hand);
+    hands.push(hand);
+  }
+  return {
+    group: g,
+    update(f: number, gForce: number, t: number) {
+      const sink = f < 0.5 ? Math.min(0.02, (gForce - 1) * 0.008) : 0;
+      legs.forEach((leg, i) => {
+        const sx = i ? 1 : -1;
+        leg.position.set(sx * 0.1, -0.28 - sink + f * (0.04 + Math.sin(t * 0.5 + i) * 0.03), -0.1);
+        leg.rotation.set(f * Math.sin(t * 0.4 + i) * 0.15, sx * f * 0.1, 0);
+      });
+      hands.forEach((hand, i) => {
+        const sx = i ? 1 : -1;
+        // duduk: tangan di atas lutut; melayang: tangan terangkat ke depan (seperti menyapa)
+        hand.position.set(sx * (0.2 + f * 0.05), -0.2 - sink + f * (0.2 + Math.sin(t * 0.7 + i) * 0.04), 0.18 + f * 0.08);
+        hand.rotation.set(-0.2 - f * 0.9, 0, sx * f * Math.sin(t * 0.6) * 0.3);
+      });
+    },
+  };
+}
+
 export class Cabin {
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(72, 1, 0.01, 50);
-  private astro = buildAstronaut();
+  /** tubuh sendiri yang terlihat dari mata astronaut (POV): paha, lutut, sarung tangan */
+  private pov = povBody();
   private toy = new THREE.Group();
   private string: THREE.Line;
-  private anchor = new THREE.Vector3(0.05, 0.62, 0.2);
+  private anchor = new THREE.Vector3(0.28, 0.66, 0.5);
   private screens: Screen[] = [];
   private disposables: { dispose(): void }[] = [];
 
@@ -163,13 +224,13 @@ export class Cabin {
     // Konsol & layar di bawah jendela
     const consoleMat = new THREE.MeshStandardMaterial({ color: 0x3a4252, roughness: 0.6, metalness: 0.3 });
     const desk = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.06, 0.34), consoleMat);
-    desk.position.set(0, -0.02, 0.62);
+    desk.position.set(0, -0.2, 0.7);
     desk.rotation.set(-0.5, 0, 0);
     s.add(desk);
     for (let k = 0; k < 3; k++) {
       const sc = new Screen(0.3, 0.19);
-      sc.mesh.position.set(-0.33 + k * 0.33, 0.05, 0.6 - Math.abs(k - 1) * 0.05);
-      sc.mesh.lookAt(-0.22, 0.4, -0.62); // menghadap kamera
+      sc.mesh.position.set(-0.3 + k * 0.3, -0.13, 0.66 - Math.abs(k - 1) * 0.05);
+      sc.mesh.lookAt(0, 0.14, -0.22); // menghadap mata astronaut
       s.add(sc.mesh);
       this.screens.push(sc);
       this.disposables.push(sc.tex, sc.mesh.geometry, sc.mesh.material as THREE.Material);
@@ -179,7 +240,7 @@ export class Cabin {
     const colors = [0xff5a4e, 0xffbe0b, 0x3ddc84, 0x2f86ff];
     for (let k = 0; k < 16; k++) {
       const b = new THREE.Mesh(btnGeo, new THREE.MeshStandardMaterial({ color: colors[k % 4], emissive: colors[k % 4], emissiveIntensity: 0.4 }));
-      b.position.set(-0.42 + (k % 8) * 0.12, -0.1 - Math.floor(k / 8) * 0.05, 0.52 + Math.floor(k / 8) * 0.03);
+      b.position.set(-0.42 + (k % 8) * 0.12, -0.26 - Math.floor(k / 8) * 0.04, 0.6 + Math.floor(k / 8) * 0.03);
       s.add(b);
     }
     // Tiga kursi (astronaut di kursi tengah)
@@ -196,9 +257,8 @@ export class Cabin {
       seat.rotation.y = 0.18;
       s.add(seat);
     }
-    // Astronaut duduk di kursi tengah
-    this.astro.astro.scale.setScalar(0.62);
-    s.add(this.astro.astro);
+    // POV: kamera di mata astronaut; yang terlihat hanya kaki & tangannya sendiri
+    s.add(this.pov.group);
     // Boneka (bintang kecil berwajah) tergantung dari atap
     const body = new THREE.Mesh(new THREE.SphereGeometry(0.045, 16, 12), new THREE.MeshStandardMaterial({ color: 0xffbe0b, roughness: 0.8 }));
     for (let k = 0; k < 5; k++) {
@@ -224,8 +284,8 @@ export class Cabin {
     lamp.position.set(0, 0.8, -0.2);
     s.add(lamp, new THREE.AmbientLight(0xb8c6de, 0.55), new THREE.HemisphereLight(0xdfe9ff, 0x3a3f4a, 0.35));
     // Kamera: di belakang-kanan kepala astronaut, menatap konsol & jendela
-    this.camera.position.set(-0.18, 0.4, -0.66);
-    this.camera.lookAt(0.12, 0.3, 0.9);
+    this.camera.position.set(0, 0.14, -0.22);
+    this.camera.lookAt(0, 0.1, 0.9);
   }
 
   resize(aspect: number) {
@@ -235,17 +295,10 @@ export class Cabin {
 
   update(c: CabinState) {
     const f = c.float;
-    // Astronaut: duduk (gravitasi terasa, makin tertekan saat gaya G besar) → melayang pelan
-    const a = this.astro.astro;
-    const sink = f < 0.5 ? Math.min(0.03, (c.g - 1) * 0.012) : 0;
-    a.position.set(0, -0.36 - sink + f * (0.16 + Math.sin(c.t * 0.6) * 0.04), 0.02);
-    a.rotation.set(-0.45 * (1 - f) + f * Math.sin(c.t * 0.3) * 0.25, f * Math.sin(c.t * 0.2) * 0.3, f * Math.sin(c.t * 0.25) * 0.2);
-    this.astro.legL.rotation.x = -1.3 * (1 - f) + f * Math.sin(c.t * 0.5) * 0.3;
-    this.astro.legR.rotation.x = -1.3 * (1 - f) - f * Math.sin(c.t * 0.5) * 0.3;
-    this.astro.armL.rotation.z = f * (0.9 + Math.sin(c.t * 0.7) * 0.2);
-    this.astro.armR.rotation.z = -f * (0.9 + Math.sin(c.t * 0.6) * 0.2);
+    // Tubuh sendiri (POV): duduk tertekan saat gaya G besar; saat tanpa bobot kaki & tangan melayang pelan
+    this.pov.update(f, c.g, c.t);
     // Boneka: menjuntai lurus (bergoyang kecil) atau melayang bebas dengan tali kendur
-    const hang = new THREE.Vector3(this.anchor.x + Math.sin(c.t * 1.4) * 0.02 * (1 - f), this.anchor.y - 0.32, this.anchor.z + Math.cos(c.t * 1.1) * 0.015 * (1 - f));
+    const hang = new THREE.Vector3(this.anchor.x + Math.sin(c.t * 1.4) * 0.02 * (1 - f), this.anchor.y - 0.26, this.anchor.z + Math.cos(c.t * 1.1) * 0.015 * (1 - f));
     const fl = new THREE.Vector3(this.anchor.x + Math.sin(c.t * 0.35) * 0.18, this.anchor.y - 0.2 + Math.sin(c.t * 0.5) * 0.08, this.anchor.z + Math.cos(c.t * 0.28) * 0.14);
     const p = hang.lerp(fl, f);
     this.toy.position.copy(p);
