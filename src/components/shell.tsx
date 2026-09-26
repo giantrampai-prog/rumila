@@ -11,7 +11,7 @@ import { SheetHost } from "./sheets";
 /** Izin yang dibutuhkan sebuah route (guard sisi klien; fase Supabase ditambah RLS). */
 function requiredPerm(path: string): PermKey | null {
   if (path.startsWith("/jelajah-tubuh") || path.startsWith("/buah-buahan")) return "edukasi";
-  if (path.startsWith("/jelajah-angkasa")) return "angkasa";
+  if (path.startsWith("/jelajah-angkasa") || path.startsWith("/roket")) return "angkasa";
   const m = path.match(/^\/beranda\/([^/]+)/);
   if (m) return (getFolder(m[1])?.id as PermKey) ?? null;
   return null;
@@ -55,7 +55,7 @@ function Ready({ children }: { children: ReactNode }) {
   const page = allowed ? children : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
-  if (path.startsWith("/buah-buahan") || path.startsWith("/jelajah-tubuh") || path.startsWith("/jelajah-angkasa"))
+  if (path.startsWith("/buah-buahan") || path.startsWith("/jelajah-tubuh") || path.startsWith("/jelajah-angkasa") || path.startsWith("/roket"))
     return (
       <>
         {page}
@@ -106,6 +106,7 @@ export function useOpenTool() {
       angkasa6: "/jelajah-angkasa",
       angkasa0: "/jelajah-angkasa",
       angkasa1: "/jelajah-angkasa?obj=moon",
+      angkasa3: "/roket",
     };
     if (angkasa[t.id]) {
       router.push(angkasa[t.id]);

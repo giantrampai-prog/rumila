@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Pasang narasi Tur terbang dari SATU file audio.
 
-Pakai:  python3 scripts/angkasa-cue-tur.py <file audio> [--first N] [--stops M]
+Pakai:  python3 scripts/angkasa-cue-tur.py <file audio> [--first N] [--stops M] [--naskah JSON] [--out M4A]
+  Roket: python3 scripts/angkasa-cue-tur.py <audio> --naskah docs/roket/naskah-misi-roket.json --out public/roket/voice/misi-01.m4a
   --first N  nomor persinggahan pertama di audio (1 = Briefing misi, default 1)
   --stops M  jumlah persinggahan di audio (default: sampai akhir naskah)
 
@@ -19,11 +20,14 @@ ap = argparse.ArgumentParser()
 ap.add_argument("audio")
 ap.add_argument("--first", type=int, default=1)
 ap.add_argument("--stops", type=int, default=0)
+ap.add_argument("--naskah", default="docs/angkasa/naskah-tur-terbang.json", help="naskah JSON [{id, lines}]")
+ap.add_argument("--out", default="", help="berkas m4a keluaran (default public/angkasa/voice/tur-NN.m4a)")
 args = ap.parse_args()
 src = args.audio
 first = args.first - 1
 name = f"tur-{args.first:02d}.m4a"
-out_m4a = os.path.join(ROOT, "public/angkasa/voice", name)
+out_m4a = os.path.join(ROOT, args.out) if args.out else os.path.join(ROOT, "public/angkasa/voice", name)
+os.makedirs(os.path.dirname(out_m4a), exist_ok=True)
 subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "64000", src, out_m4a], check=True)
 
 with tempfile.TemporaryDirectory() as tmp:
@@ -51,7 +55,7 @@ for i, r in enumerate(rms + [thr * 10]):
 
 import re
 
-stops = json.load(open(os.path.join(ROOT, "docs/angkasa/naskah-tur-terbang.json")))
+stops = json.load(open(os.path.join(ROOT, args.naskah)))
 stops = stops[first : first + args.stops] if args.stops else stops[first:]
 # kalimat berurutan: (persinggahan, baris, panjang)
 sents = []
@@ -112,7 +116,7 @@ print(f"// durasi {dur:.1f} s · {len(sil)} jeda terdeteksi · ambang {thr:.0f}"
 ids = ", ".join(s["id"] for s in stops)
 print(f"// bagian untuk TOUR_AUDIO di src/lib/angkasa/tourVoice.ts — persinggahan: {ids}")
 print("{")
-print(f'  src: "/angkasa/voice/{name}",')
+print(f'  src: "/{os.path.relpath(out_m4a, os.path.join(ROOT, "public"))}",')
 print(f"  first: {first},")
 print(f"  cues: {json.dumps(cues)},")
 print(f"  lineCues: {json.dumps(line_cues)},")

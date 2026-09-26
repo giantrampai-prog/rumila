@@ -42,7 +42,7 @@ function Ball({ id, size }: { id: string; size: number }) {
 }
 
 /** Tombol bulat besar mengambang di atas 3D. */
-function RoundBtn({ icon, label, onClick, tone = "white" }: { icon: string; label: string; onClick: () => void; tone?: "white" | "orange" | "purple" }) {
+export function RoundBtn({ icon, label, onClick, tone = "white" }: { icon: string; label: string; onClick: () => void; tone?: "white" | "orange" | "purple" }) {
   const bg =
     tone === "orange"
       ? { background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 5px 0 #c85400", color: "#fff" }

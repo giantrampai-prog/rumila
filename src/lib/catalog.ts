@@ -133,7 +133,7 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
         ["Tata Surya", "public", "Jelajahi 8 planet dan matahari."],
         ["Bulan", "dark_mode", "Fase bulan dan fakta menarik."],
         ["Bintang & Rasi", "star", "Kenali rasi bintang di langit malam."],
-        ["Roket & Astronot", "rocket_launch", "Cerita perjalanan ke luar angkasa."],
+        ["Roket & Astronot", "rocket_launch", "Luncurkan roket 3D dari landasan sampai luar angkasa."],
         ["Satelit", "satellite_alt", "Bagaimana satelit bekerja."],
         ["Kuis Angkasa", "quiz", "Uji pengetahuan antariksa."],
         ["Jelajah Angkasa 3D", "travel_explore", "Dekati planet, putar, bandingkan, dan pelajari fenomena tata surya dalam 3D."],

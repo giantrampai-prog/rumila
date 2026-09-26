@@ -1,0 +1,65 @@
+NASKAH SUARA — ROKET & ASTRONOT 3D
+
+BAGIAN A — MISI TERBANG (rekam jadi SATU file, urut dari atas; beri jeda ±1 detik antarparagraf)
+
+[1. Pagi di landasan]
+Selamat pagi, astronaut cilik! Kita ada di landasan peluncuran. Lihat roket raksasa itu. Tingginya seperti gedung dua puluh lantai! Hari ini kita akan terbang dari darat sampai ke luar angkasa. Siap?
+
+[2. Naik ke kapsul]
+Itu astronaut kita! Ia memakai baju antariksa yang memberi udara untuk bernapas dan melindungi tubuhnya. Ia naik lift di menara, menyeberangi jembatan, lalu masuk ke kapsul di puncak roket. Sabuk pengaman dipasang. Pintu kapsul ditutup rapat.
+
+[3. Hitung mundur]
+Semua sistem siap. Ayo hitung mundur bersama! Sepuluh, sembilan, delapan, tujuh, enam, lima, empat, tiga, dua, satu...
+
+[4. Lepas landas!]
+Meluncur! Mesin roket menyemburkan gas yang sangat panas ke bawah dengan kuat. Semburan ke bawah itu mendorong roket naik ke atas. Wuuusss!
+
+[5. Troposfer]
+Kita masuk troposfer, lapisan udara paling bawah. Di sinilah awan, hujan, dan angin terjadi. Pesawat terbang juga melintas di lapisan ini. Semakin tinggi, udaranya semakin dingin.
+
+[6. Stratosfer]
+Sekarang stratosfer! Di sini ada lapisan ozon. Ozon seperti tabir surya raksasa untuk Bumi. Ia menahan sebagian besar sinar ultraviolet yang berbahaya dari Matahari. Lihat langitnya, warna birunya makin gelap.
+
+[7. Mesosfer]
+Selamat datang di mesosfer, lapisan udara paling dingin. Suhunya bisa sampai sekitar minus sembilan puluh derajat Celsius! Lihat kilatan cahaya itu! Itu meteor, batu angkasa kecil yang terbakar habis saat menabrak udara di lapisan ini.
+
+[8. Tahap pertama lepas]
+Bahan bakar tahap pertama sudah habis. Klik! Tahap pertama dilepas. Roket jadi lebih ringan, lalu mesin tahap kedua menyala untuk mendorong kita lebih tinggi.
+
+[9. Garis Kármán]
+Kita melewati ketinggian seratus kilometer, garis Kármán. Banyak ilmuwan memakai garis ini sebagai batas antara langit Bumi dan luar angkasa. Selamat, kamu sudah di luar angkasa!
+
+[10. Termosfer]
+Ini termosfer. Udaranya sudah sangat tipis. Cahaya hijau yang menari itu aurora, muncul saat partikel dari Matahari menabrak udara di lapisan ini. Stasiun Luar Angkasa Internasional juga mengorbit di sini, sekitar empat ratus kilometer di atas Bumi.
+
+[11. Eksosfer]
+Kita menuju eksosfer, lapisan paling luar. Udaranya hampir tidak ada. Lihat ke bawah! Bumi tampak bulat dan biru, diselimuti garis tipis atmosfer yang bercahaya.
+
+[12. Mengorbit & melayang]
+Mesin dimatikan. Sekarang kita mengorbit, terus mengelilingi Bumi dengan sangat cepat. Di sini semua benda melayang, termasuk astronaut kita! Ia keluar untuk berjalan di luar angkasa, dengan tali pengaman yang terpasang ke kapsul.
+
+[13. Misi berhasil]
+Misi berhasil, astronaut hebat! Kita sudah melewati troposfer, stratosfer, mesosfer, termosfer, sampai eksosfer. Ingat urutannya, dan ceritakan petualangan ini ke Ayah dan Ibu, ya. Sampai jumpa di misi berikutnya!
+
+BAGIAN B — JELAJAH (rekam SATU file per bagian, nama file = kata dalam kurung)
+
+[roket] Roket
+Ini roket kita! Roket punya beberapa bagian bertumpuk. Paling atas kapsul, di tengah tahap kedua, dan paling bawah tahap pertama.
+
+[kapsul] Kapsul
+Ini kapsul, ruang kecil di puncak roket. Di sinilah astronaut duduk selama perjalanan. Kapsul punya pelindung panas agar aman saat pulang ke Bumi.
+
+[tahap-2] Tahap kedua
+Ini tahap kedua. Mesinnya menyala setelah tahap pertama lepas, untuk mendorong kapsul sampai ke orbit.
+
+[tahap-1] Tahap pertama
+Ini tahap pertama, bagian roket yang paling besar. Isinya bahan bakar yang sangat banyak untuk mengangkat roket dari landasan.
+
+[mesin] Mesin roket
+Ini mesin roket. Mesin menyemburkan gas yang sangat panas ke bawah. Semburan itu mendorong roket melesat ke atas.
+
+[astronot] Astronaut
+Ini astronaut! Baju antariksanya memberi udara untuk bernapas, menjaga tubuh tetap hangat, dan melindungi dari sinar Matahari yang kuat.
+
+[menara] Menara
+Ini menara peluncuran. Astronaut naik lift di menara, lalu menyeberangi jembatan untuk masuk ke kapsul.
