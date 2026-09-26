@@ -10,6 +10,7 @@ import { BALOO, LauncherBackdrop, MemberAvatar, NUNITO } from "@/components/laun
 import { Icon, PlayCtx } from "@/components/ui";
 import { PLAY, canonicalToolId, getTool, type Folder, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
+import { PullToRefresh } from "@/components/pwa";
 import { can, useMe, useRumila, useUI } from "@/lib/store";
 
 const INK = "#2b1d4e";
@@ -43,6 +44,7 @@ export function KidFrame({ children, overlay }: { children: ReactNode; overlay?:
           {children}
         </div>
         {overlay}
+        <PullToRefresh />
       </div>
     </PlayCtx.Provider>
   );

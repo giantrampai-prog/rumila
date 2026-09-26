@@ -10,6 +10,7 @@ import { Avatar, Icon, RoleBadge, Switch, Tile } from "./ui";
 import { EducationTopics } from './education-topics';
 import { signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
+import { installApp, useCanInstall } from "./pwa";
 
 export const accessText = (m: Member) =>
   m.admin ? "Akses penuh" : `${PERMS.filter((p) => can(m, p.key)).length} dari ${PERMS.length} menu`;
@@ -71,6 +72,7 @@ function MembersSheet() {
   const close = useUI((s) => s.closeSheet);
   const openSheet = useUI((s) => s.openSheet);
   const email = useCloud((s) => s.email);
+  const canInstall = useCanInstall();
   const router = useRouter();
   const me = members.find((m) => m.id === meId);
   const others = members.filter((m) => m.id !== meId);
@@ -120,6 +122,17 @@ function MembersSheet() {
 
       <div className="flex flex-col gap-1 border-t border-line pt-2">
         <span className="px-1 text-xs font-bold text-ink-3">Pengaturan</span>
+        {canInstall && (
+          <button
+            onClick={() => {
+              close();
+              void installApp();
+            }}
+            className={row}
+          >
+            <Icon name="install_mobile" /> Pasang aplikasi di layar utama
+          </button>
+        )}
         <button onClick={() => openSheet({ kind: "add" })} className={row}>
           <Icon name="person_add" /> Tambah anggota
         </button>

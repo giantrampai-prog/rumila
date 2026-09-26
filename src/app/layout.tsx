@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Baloo_2, Inter, Nunito, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { PwaSetup } from "@/components/pwa";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -20,14 +21,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Rumila — Rumah digital keluarga",
   description: "Rumila — rumah digital untuk keluarga bertumbuh bersama.",
-  icons: { icon: "/brand/rumila-mark.png", apple: "/brand/rumila-mark.png" },
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  // iOS: buka layar penuh seperti aplikasi saat dipasang dari "Tambah ke Layar Utama"
   appleWebApp: { capable: true, title: "Rumila", statusBarStyle: "default" },
+  other: { "mobile-web-app-capable": "yes" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FAF8F4",
+  themeColor: "#FFF6E8",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -41,7 +51,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,1,0&display=block"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <PwaSetup />
+      </body>
     </html>
   );
 }

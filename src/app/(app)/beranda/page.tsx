@@ -2,6 +2,7 @@
 
 import { AppIcon, BALOO } from "@/components/launcher";
 import { WorldCard, useLastTool } from "@/components/kid";
+import { InstallBanner } from "@/components/pwa";
 import { useOpenTool } from "@/components/shell";
 import { Icon } from "@/components/ui";
 import { FOLDERS } from "@/lib/catalog";
@@ -17,6 +18,7 @@ export default function Beranda() {
 
   return (
     <>
+      <InstallBanner />
       {last && (
         <button
           onClick={() => openTool(last)}
