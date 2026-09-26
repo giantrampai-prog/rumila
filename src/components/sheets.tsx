@@ -8,7 +8,8 @@ import { can, useIsDesktop, useMe, useRumila, useUI, type Member } from "@/lib/s
 import { AppModal } from "./launcher";
 import { Avatar, Icon, RoleBadge, Switch, Tile } from "./ui";
 import { EducationTopics } from './education-topics';
-import { signOutAccount } from "@/lib/supabase/family";
+import { signOutAccount, useCloud } from "@/lib/supabase/family";
+import { displayLogin } from "@/app/masuk/account";
 
 export const accessText = (m: Member) =>
   m.admin ? "Akses penuh" : `${PERMS.filter((p) => can(m, p.key)).length} dari ${PERMS.length} menu`;
@@ -69,40 +70,57 @@ function MembersSheet() {
   const switchMember = useRumila((s) => s.switchMember);
   const close = useUI((s) => s.closeSheet);
   const openSheet = useUI((s) => s.openSheet);
+  const email = useCloud((s) => s.email);
   const router = useRouter();
+  const me = members.find((m) => m.id === meId);
+  const others = members.filter((m) => m.id !== meId);
+  const row = "flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-[15px] font-bold";
 
   return (
     <>
-      <SheetTitle>Siapa yang pakai?</SheetTitle>
-      <div className="flex flex-col gap-1.5">
-        {members.map((m) => {
-          const on = m.id === meId;
-          return (
-            <button
-              key={m.id}
-              onClick={() => {
-                close();
-                if (on) return;
-                switchMember(m.id);
-                router.push("/beranda");
-              }}
-              className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left"
-              style={{ background: on ? CAT[m.c][0] : "transparent" }}
-            >
-              <Avatar c={m.c} name={m.name} size={40} />
-              <span className="min-w-0 flex-1">
-                <span className="block text-[15px] font-bold">{m.name}</span>
-                <span className="flex items-center gap-1 text-xs text-ink-3">
-                  {m.admin ? "Admin" : "User"} · {accessText(m)}
-                </span>
-              </span>
-              <Icon name="check_circle" style={{ color: on ? CAT[m.c][2] : "transparent" }} />
-            </button>
-          );
-        })}
-      </div>
+      <SheetTitle>Profil & pengaturan</SheetTitle>
+      {me && (
+        <div className="flex items-center gap-3 rounded-2xl px-3 py-3" style={{ background: CAT[me.c][0] }}>
+          <Avatar c={me.c} name={me.name} size={48} />
+          <span className="min-w-0 flex-1">
+            <span className="block text-[17px] font-extrabold">{me.name}</span>
+            <span className="text-xs text-ink-3">
+              {me.admin ? "Admin" : "User"} · {accessText(me)}
+            </span>
+          </span>
+          <button onClick={() => openSheet({ kind: "edit", memberId: me.id })} className="rounded-xl bg-white px-3 py-2 text-[13px] font-bold">
+            Ubah
+          </button>
+        </div>
+      )}
+
+      {others.length > 0 && (
+        <div className="flex flex-col gap-1">
+          <span className="px-1 text-xs font-bold text-ink-3">Ganti pemain</span>
+          {others.map((m) => (
+            <div key={m.id} className="flex items-center gap-1">
+              <button
+                onClick={() => {
+                  close();
+                  switchMember(m.id);
+                  router.push("/beranda");
+                }}
+                className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl px-3 py-2 text-left"
+              >
+                <Avatar c={m.c} name={m.name} size={36} />
+                <span className="min-w-0 flex-1 truncate text-[15px] font-bold">{m.name}</span>
+              </button>
+              <button onClick={() => openSheet({ kind: "edit", memberId: m.id })} aria-label={`Atur ${m.name}`} className="flex size-10 items-center justify-center rounded-xl text-ink-3">
+                <Icon name="settings" size={20} />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="flex flex-col gap-1 border-t border-line pt-2">
-        <button onClick={() => openSheet({ kind: "add" })} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-[15px] font-bold">
+        <span className="px-1 text-xs font-bold text-ink-3">Pengaturan</span>
+        <button onClick={() => openSheet({ kind: "add" })} className={row}>
           <Icon name="person_add" /> Tambah anggota
         </button>
         <button
@@ -111,10 +129,11 @@ function MembersSheet() {
             await signOutAccount();
             router.replace("/masuk");
           }}
-          className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-[15px] font-bold text-negative"
+          className={`${row} text-negative`}
         >
           <Icon name="logout" /> Keluar akun
         </button>
+        {email && <span className="px-3 text-xs text-ink-4">Masuk sebagai {displayLogin(email)}</span>}
       </div>
     </>
   );

@@ -55,14 +55,18 @@ export function KidHeader() {
   useEffect(() => setHello(greeting()), []);
   return (
     <header className="flex items-center gap-3">
-      <button onClick={() => openSheet({ kind: "members" })} className="flex min-w-0 flex-1 items-center gap-3 text-left" aria-label="Ganti pemain">
-        <MemberAvatar m={me} size={44} theme="playful" />
-        <span className="min-w-0">
-          <span className="block text-[12px] font-extrabold text-ink-3">{hello},</span>
-          <span className="flex items-center gap-0.5 truncate" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK, lineHeight: 1.05 }}>
-            {me.name}
-            <Icon name="expand_more" className="text-ink-3" />
-          </span>
+      {/* salam (bukan tombol) */}
+      <div className="min-w-0 flex-1">
+        <span className="block text-[12px] font-extrabold text-ink-3">{hello},</span>
+        <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK, lineHeight: 1.05 }}>
+          {me.name}
+        </span>
+      </div>
+      {/* profil & pengaturan: kanan atas, terpisah dari konten */}
+      <button onClick={() => openSheet({ kind: "members" })} className="relative shrink-0 transition-transform active:scale-90" aria-label="Profil dan pengaturan">
+        <MemberAvatar m={me} size={46} theme="playful" />
+        <span className="absolute -right-1 -bottom-1 flex size-[22px] items-center justify-center rounded-full bg-white text-[#5b4bff] shadow-[0_2px_0_rgba(43,29,78,.15)]">
+          <Icon name="settings" size={15} />
         </span>
       </button>
     </header>
