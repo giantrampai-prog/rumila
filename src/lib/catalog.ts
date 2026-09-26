@@ -19,9 +19,9 @@ export const CAT: Record<ColorKey, [string, string, string]> = {
   space: ["#E4E7F0", "#3A4670", "#1F3044"],
 };
 
-export type FolderKey = "game" | "coding" | "doa" | "ibadah" | "angkasa" | "edukasi" | "keluarga" | "kesehatan" | "keuangan";
+export type FolderKey = "game" | "coding" | "doa" | "ibadah" | "angkasa" | "edukasi" | "keluarga" | "kesehatan";
 
-export type PermKey = FolderKey | "laporan" | "finance";
+export type PermKey = FolderKey | "laporan";
 
 export interface Tool {
   id: string;
@@ -123,21 +123,6 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
       ],
     },
     {
-      id: "keuangan",
-      name: "Keuangan",
-      c: "pink",
-      icon: "savings",
-      desc: "Kelola uang keluarga dan belajar menabung.",
-      pal: ["blue", "pink", "green", "gold", "purple"],
-      items: [
-        ["Anggaran Keluarga", "account_balance_wallet", "Catat pemasukan dan pengeluaran bulanan."],
-        ["Celengan Anak", "savings", "Target tabungan anak dengan progres seru."],
-        ["Uang Saku", "payments", "Atur uang saku mingguan anak."],
-        ["Zakat & Sedekah", "handshake", "Hitung zakat dan catat sedekah."],
-        ["Tagihan Bulanan", "receipt_long", "Pengingat listrik, air, internet, dan sekolah."],
-      ],
-    },
-    {
       id: "angkasa",
       name: "Jelajah Angkasa",
       c: "space",
@@ -220,7 +205,6 @@ export const ALL_TOOLS: Tool[] = FOLDERS.flatMap((f) => f.items);
 export const PERMS: { key: PermKey; name: string; icon: string; c: ColorKey }[] = [
   ...FOLDERS.map((f) => ({ key: f.id as PermKey, name: f.name, icon: f.icon, c: f.c })),
   { key: "laporan", name: "Laporan", icon: "insights", c: "purple" },
-  { key: "finance", name: "Finance", icon: "account_balance", c: "gold" },
 ];
 
 export const ALL_PERMS: PermKey[] = PERMS.map((p) => p.key);

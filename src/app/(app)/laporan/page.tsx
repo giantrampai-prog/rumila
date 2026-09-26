@@ -61,8 +61,8 @@ export default function Laporan() {
   const study = STUDY[range];
   const sMax = Math.max(...study.map((s) => s[1]));
 
-  // Anak = User tanpa akses Finance (preset anak).
-  const kids = members.filter((m) => !m.admin && !can(m, "finance"));
+  // Anak = User tanpa akses Laporan (preset anak).
+  const kids = members.filter((m) => !m.admin && !can(m, "laporan"));
 
   const top = useMemo(() => {
     const counts = new Map<string, number>();

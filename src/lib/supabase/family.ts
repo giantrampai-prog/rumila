@@ -10,7 +10,6 @@ import { create } from "zustand";
 import type { ColorKey, PermKey } from "@/lib/catalog";
 import { useRumila, useUI, type Activity, type Member } from "@/lib/store";
 import { friendlyError, supabase } from "./client";
-import { loadFinance, resetFinanceCloud, startFinanceSync } from "./finance";
 
 export type CloudStatus = "loading" | "noSession" | "noFamily" | "ready" | "error";
 
@@ -97,8 +96,6 @@ export async function loadFamily(): Promise<CloudStatus> {
     });
     paused = false;
     useCloud.setState({ status: "ready", familyId: fid, email: user.email ?? null, error: null });
-    startFinanceSync();
-    void loadFinance(fid);
     return "ready";
   } catch (e) {
     paused = false;
@@ -140,7 +137,6 @@ export async function setPin(memberId: string, pin: string | null) {
 
 export async function signOutAccount() {
   await supabase().auth.signOut();
-  resetFinanceCloud();
   paused = true;
   useRumila.setState({ members: [], activity: [], signedIn: false, meId: "" });
   paused = false;
