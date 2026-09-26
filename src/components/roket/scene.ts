@@ -5,6 +5,7 @@
 // melompat ke persinggahan mana pun tetap konsisten.
 
 import * as THREE from "three";
+import { buildBirds, buildMoon, buildSatellite, buildSite, buildStation, gridFin, landingLeg, nozzleMaterial, rocketBodyTex } from "./details";
 
 export const EARTH_R = 1000;
 /** ketinggian (km) → unit di atas permukaan */
@@ -139,7 +140,7 @@ function buildRocket() {
   const R = 0.32;
   // Tahap pertama (0.3 → 3.6)
   const s1 = new THREE.Group();
-  const body1 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 3.3, 32), white());
+  const body1 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 3.3, 48), new THREE.MeshStandardMaterial({ map: rocketBodyTex(1), roughness: 0.45, metalness: 0.1 }));
   body1.position.y = 1.95;
   const band = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.005, R * 1.005, 0.25, 32), dark());
   band.position.y = 3.35;
@@ -151,9 +152,20 @@ function buildRocket() {
     fin.rotation.y = -a;
     s1.add(fin);
   }
+  // sirip kisi di puncak tahap pertama & kaki pendarat terlipat di dasar
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * TAU;
+    const gf = gridFin();
+    gf.position.set(Math.cos(a) * (R + 0.02), 3.3, Math.sin(a) * (R + 0.02));
+    gf.rotation.y = -a + Math.PI / 2;
+    s1.add(gf);
+    const leg = landingLeg();
+    leg.position.set(Math.cos(a + Math.PI / 4) * (R + 0.03), 0, Math.sin(a + Math.PI / 4) * (R + 0.03));
+    s1.add(leg);
+  }
   const engines = new THREE.Group();
   for (let i = 0; i < 9; i++) {
-    const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.07, 0.18, 12, 1, true), dark());
+    const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.07, 0.18, 12, 1, true), nozzleMaterial());
     const a = (i / 8) * TAU;
     const rr = i === 8 ? 0 : 0.19;
     bell.position.set(Math.cos(a) * rr, 0.21, Math.sin(a) * rr);
@@ -167,11 +179,11 @@ function buildRocket() {
   tag(engines, "mesin");
   // Tahap kedua (3.6 → 5.0)
   const s2 = new THREE.Group();
-  const body2 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 1.4, 32), white());
+  const body2 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 1.4, 48), new THREE.MeshStandardMaterial({ map: rocketBodyTex(2), roughness: 0.45, metalness: 0.1 }));
   body2.position.y = 4.3;
   const logo = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.005, R * 1.005, 0.08, 32), new THREE.MeshStandardMaterial({ color: 0xff7a1a, roughness: 0.5 }));
   logo.position.y = 4.75;
-  const bell2 = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.16, 0.3, 16, 1, true), dark());
+  const bell2 = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.16, 0.3, 16, 1, true), nozzleMaterial());
   bell2.position.y = 3.5;
   s2.add(body2, logo, bell2);
   const f2 = flame(1.8, 0.2);
@@ -192,6 +204,7 @@ function buildRocket() {
   door.rotation.set(0, Math.PI / 2, 0.25);
   const escape = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.05, 0.6, 12), new THREE.MeshStandardMaterial({ color: 0xff5a4e, roughness: 0.5 }));
   escape.position.y = 6.2;
+  escape.name = "escape";
   cap.add(cone, shield, win, door, escape);
   tag(cap, "kapsul");
   rocket.add(s1, s2, cap);
@@ -227,6 +240,27 @@ function buildTower() {
     }
   }
   // lift (kotak abu) & lengan akses kru
+  // palang silang tiap tingkat + lampu merah di puncak
+  for (let y = 0.3; y < H; y += 0.6) {
+    for (const [x, z, ry] of [
+      [0, -W / 2, 0],
+      [0, W / 2, 0],
+      [-W / 2, 0, Math.PI / 2],
+      [W / 2, 0, Math.PI / 2],
+    ]) {
+      const d = new THREE.Mesh(new THREE.BoxGeometry(Math.hypot(W, 0.6), 0.03, 0.03), red);
+      d.position.set(x, y, z);
+      d.rotation.set(0, ry, Math.atan2(0.6, W));
+      tower.add(d);
+    }
+  }
+  const beacon = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 8), new THREE.MeshBasicMaterial({ color: 0xff2a2a }));
+  beacon.position.set(0, H + 0.15, 0);
+  beacon.name = "beacon";
+  tower.add(beacon);
+  const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 1.2), grey);
+  rod.position.set(0.3, H + 0.6, 0.3);
+  tower.add(rod);
   // lift terbuka (lantai + tiang tipis) agar astronaut di dalamnya tetap terlihat
   const lift = new THREE.Group();
   const floor = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.6), grey);
@@ -254,7 +288,9 @@ function buildTower() {
   rail.position.set(-0.75, 0.18, 0.2);
   const rail2 = rail.clone();
   rail2.position.z = -0.2;
-  arm.add(deck, rail, rail2);
+  const room = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.5, 0.5), new THREE.MeshStandardMaterial({ color: 0xf4f4f4, roughness: 0.6 }));
+  room.position.set(-1.35, 0.25, 0);
+  arm.add(deck, rail, rail2, room);
   arm.position.set(-W / 2, 5.25, 0);
   arm.name = "arm";
   tower.add(arm);
@@ -263,7 +299,7 @@ function buildTower() {
   return { tower, lift, arm };
 }
 
-function buildAstronaut() {
+export function buildAstronaut() {
   const a = new THREE.Group();
   const suit = new THREE.MeshStandardMaterial({ color: 0xf7f7f2, roughness: 0.7 });
   const grey = new THREE.MeshStandardMaterial({ color: 0xb8bec8, roughness: 0.6 });
@@ -297,80 +333,6 @@ function buildAstronaut() {
   a.scale.setScalar(0.85);
   tag(a, "astronot");
   return { astro: a, armL, armR, legL, legR };
-}
-
-function buildPad() {
-  const g = new THREE.Group();
-  const tex = canvasTex(1024, 1024, (c, w, h) => {
-    const r = rng(4);
-    c.fillStyle = "#6fae52";
-    c.fillRect(0, 0, w, h);
-    for (let i = 0; i < 4000; i++) {
-      c.fillStyle = `rgba(${40 + r() * 40},${110 + r() * 60},${40 + r() * 30},0.35)`;
-      c.fillRect(r() * w, r() * h, 3, 3);
-    }
-    // jalan
-    c.fillStyle = "#b9b3a6";
-    c.fillRect(w * 0.5 - 14, h * 0.5, 28, h * 0.5);
-    // landasan beton
-    c.beginPath();
-    c.arc(w / 2, h / 2, w * 0.12, 0, TAU);
-    c.fillStyle = "#c9c6bf";
-    c.fill();
-    c.fillStyle = "#3b3b3f";
-    c.fillRect(w * 0.5 - w * 0.1, h * 0.5 - 10, w * 0.2, 20); // parit api
-  });
-  // Piringan landasan dilengkungkan mengikuti bola Bumi agar tepinya tidak mengambang.
-  const dg = new THREE.RingGeometry(0.001, 30, 64, 24);
-  dg.rotateX(-Math.PI / 2);
-  const dp = dg.getAttribute("position") as THREE.BufferAttribute;
-  for (let i = 0; i < dp.count; i++) {
-    const x = dp.getX(i),
-      z = dp.getZ(i);
-    dp.setY(i, 0.02 - (x * x + z * z) / (2 * EARTH_R));
-  }
-  dg.computeVertexNormals();
-  const disc = new THREE.Mesh(dg, new THREE.MeshStandardMaterial({ map: tex, roughness: 0.95 }));
-  g.add(disc);
-  // pohon
-  const r = rng(8);
-  const trees = new THREE.InstancedMesh(new THREE.ConeGeometry(0.35, 1.1, 8), new THREE.MeshStandardMaterial({ color: 0x2f7d3a, roughness: 0.9 }), 90);
-  const m = new THREE.Matrix4();
-  for (let i = 0; i < 90; i++) {
-    const a = r() * TAU;
-    const d = 8 + r() * 20;
-    const s = 0.7 + r() * 0.8;
-    m.compose(new THREE.Vector3(Math.cos(a) * d, 0.55 * s - (d * d) / (2 * EARTH_R), Math.sin(a) * d), new THREE.Quaternion(), new THREE.Vector3(s, s, s));
-    trees.setMatrixAt(i, m);
-  }
-  g.add(trees);
-  // gedung kontrol kecil
-  const hall = new THREE.Mesh(new THREE.BoxGeometry(2.4, 1.2, 1.6), new THREE.MeshStandardMaterial({ color: 0xe8e4dc, roughness: 0.8 }));
-  hall.position.set(-6, 0.6, 7);
-  g.add(hall);
-  return g;
-}
-
-function buildIss() {
-  const g = new THREE.Group();
-  const metal = new THREE.MeshStandardMaterial({ color: 0xd9dde3, roughness: 0.4, metalness: 0.6 });
-  const panel = new THREE.MeshStandardMaterial({ color: 0x1b3f8f, roughness: 0.3, metalness: 0.7, emissive: 0x0a1a40 });
-  const truss = new THREE.Mesh(new THREE.BoxGeometry(6, 0.12, 0.12), metal);
-  g.add(truss);
-  for (const x of [-2.6, -1.8, 1.8, 2.6]) {
-    for (const s of [-1, 1]) {
-      const p = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.02, 1.6), panel);
-      p.position.set(x, 0, s * 0.95);
-      g.add(p);
-    }
-  }
-  for (let i = 0; i < 3; i++) {
-    const mod = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1, 16), metal);
-    mod.rotation.x = Math.PI / 2;
-    mod.position.set(-0.4 + i * 0.4, -0.12, 0);
-    g.add(mod);
-  }
-  return g;
 }
 
 function aurora() {
@@ -407,6 +369,11 @@ export interface RocketPose {
   sepT: number | null;
   /** ketinggian (km) saat tahap pertama lepas */
   sepAltKm: number;
+  /** tahap kedua lepas (kapsul sendiri): detik sejak lepas */
+  sep2T: number | null;
+  sep2AltKm: number;
+  /** Stasiun Luar Angkasa: jarak (unit) di atas kapsul; 0 = sudah merapat; null = belum tampak dekat */
+  issGap: number | null;
   /** 0 = mesin mati, 1 = tahap 1 menyala, 2 = tahap 2 menyala */
   burn: 0 | 1 | 2;
   /** kekuatan semburan asap/uap di landasan (0–1) */
@@ -429,6 +396,10 @@ export class RocketScene {
   private glow: THREE.Mesh;
   private ozone: THREE.Mesh;
   private pad: THREE.Group;
+  private flags: THREE.ShaderMaterial[] = [];
+  private birds: ReturnType<typeof buildBirds>;
+  private sats: THREE.Group;
+  private moon: THREE.Mesh;
   private sun = new THREE.DirectionalLight(0xfff1dc, 2.6);
   private hemi = new THREE.HemisphereLight(0xbfdcff, 0x3a5a2a, 0.9);
   private amb = new THREE.AmbientLight(0x8899bb, 0.15);
@@ -520,8 +491,27 @@ export class RocketScene {
     this.ozone.position.copy(this.earthCenter);
     s.add(this.ozone);
 
-    this.pad = buildPad();
+    const site = buildSite(low);
+    this.pad = site.group;
+    this.flags = site.flags;
     s.add(this.pad);
+    // Burung di troposfer bawah
+    this.birds = buildBirds(low ? 8 : 16);
+    this.birds.group.position.y = altToY(2.5);
+    s.add(this.birds.group);
+    // Satelit di eksosfer (di atas stasiun)
+    this.sats = new THREE.Group();
+    for (let i = 0; i < 6; i++) {
+      const sat = buildSatellite(i + 1);
+      const a = (i / 6) * TAU + 0.4;
+      // ilustrasi: dirapatkan di atas stasiun agar terlihat saat kamera menatap ke atas
+      sat.position.set(Math.cos(a) * (9 + i * 3), altToY(400) + 30 + i * 11, Math.sin(a) * (9 + i * 3));
+      sat.scale.setScalar(2.6);
+      this.sats.add(sat);
+    }
+    s.add(this.sats);
+    this.moon = buildMoon();
+    s.add(this.moon);
     this.t = buildTower();
     s.add(this.t.tower);
     this.r = buildRocket();
@@ -565,8 +555,8 @@ export class RocketScene {
     s.add(this.planes);
 
     // Stasiun luar angkasa ±400 km
-    this.iss = buildIss();
-    this.iss.position.set(-26, altToY(400), -14);
+    this.iss = buildStation();
+    this.iss.visible = false;
     s.add(this.iss);
 
     this.aur = aurora();
@@ -645,6 +635,30 @@ export class RocketScene {
       s1.rotation.set(0.12 * t, 0, -0.18 * t);
       s1.visible = t < 14;
     }
+    // Tahap kedua lepas: kapsul melanjutkan sendiri, tahap kedua menjauh pelan
+    const s2 = this.r.s2;
+    if (p.sep2T === null) {
+      if (s2.parent !== rocket) rocket.add(s2);
+      s2.position.set(0, 0, 0);
+      s2.rotation.set(0, 0, 0);
+      s2.visible = true;
+    } else {
+      const t = p.sep2T;
+      if (s2.parent !== this.scene) this.scene.add(s2);
+      s2.position.set(-0.25 * t, altToY(p.sep2AltKm) - 0.35 * t, -0.2 * t);
+      s2.rotation.set(0.05 * t, 0, 0.08 * t);
+      s2.visible = t < 25;
+    }
+    // Stasiun Luar Angkasa mendekat di atas kapsul, lalu merapat
+    const esc = this.r.cap.getObjectByName("escape");
+    if (esc) esc.visible = p.issGap === null && p.sep2T === null;
+    this.iss.visible = p.issGap !== null;
+    if (p.issGap !== null) {
+      const port = this.iss.userData.portOffset as THREE.Vector3;
+      this.iss.position.set(-port.x, y + 5.92 - port.y + p.issGap, -port.z);
+      this.iss.rotation.set(0, 0, 0);
+      this.iss.updateMatrixWorld(true);
+    }
     f1.group.visible = p.burn === 1;
     f2.group.visible = p.burn === 2;
     // Nyala makin panjang di udara tipis
@@ -687,16 +701,19 @@ export class RocketScene {
       }
     } else if (p.astro.state === "eva") {
       const t = p.astro.t;
-      const cap = this.tmp.set(0.4, y + 5.4, 0);
+      // Berjalan di luar angkasa dekat panel surya stasiun (atau dekat kapsul bila stasiun belum ada)
+      const target = p.issGap !== null ? this.iss.localToWorld((this.iss.userData.panelPoint as THREE.Vector3).clone()) : this.tmp.set(1.6, y + 5.6, 1.1);
       const out = Math.min(1, t / 6);
-      astro.position.set(cap.x + 0.6 + out * 1.2, cap.y + 0.2 + Math.sin(t * 0.5) * 0.15, 0.3 + out * 0.8);
+      const start = new THREE.Vector3(0.4, y + 5.6, 0.3);
+      astro.position.lerpVectors(start, target, out).add(new THREE.Vector3(0, Math.sin(t * 0.5) * 0.12, 0));
       astro.rotation.set(Math.sin(t * 0.3) * 0.3, -0.6 + t * 0.05, Math.sin(t * 0.25) * 0.25);
       this.a.armL.rotation.z = 0.9 + Math.sin(t * 0.7) * 0.2;
       this.a.armR.rotation.z = -0.9 - Math.sin(t * 0.6) * 0.2;
       this.a.legL.rotation.x = Math.sin(t * 0.4) * 0.3;
       this.a.legR.rotation.x = -Math.sin(t * 0.4) * 0.3;
       const tp = this.tether.geometry.getAttribute("position") as THREE.BufferAttribute;
-      tp.setXYZ(0, 0.3, y + 5.35, 0.15);
+      const hook = p.issGap !== null ? this.iss.localToWorld(new THREE.Vector3(1.2, 0, 0.2)) : new THREE.Vector3(0.3, y + 5.35, 0.15);
+      tp.setXYZ(0, hook.x, hook.y, hook.z);
       const back = astro.localToWorld(new THREE.Vector3(0, 0.46, -0.2));
       tp.setXYZ(1, back.x, back.y, back.z);
       tp.needsUpdate = true;
@@ -745,8 +762,15 @@ export class RocketScene {
     this.aur.mat.uniforms.uTime.value = this.time;
     this.aur.mat.uniforms.uAlpha.value = smooth(70, 130, camAlt) * (1 - smooth(500, 1200, camAlt));
     this.aur.group.visible = camAlt > 60;
-    this.iss.rotation.y = this.time * 0.05;
-    this.iss.visible = camAlt > 80;
+    for (const f of this.flags) f.uniforms.uTime.value = this.time;
+    const beacon = this.t.tower.getObjectByName("beacon") as THREE.Mesh | undefined;
+    if (beacon) beacon.visible = Math.sin(this.time * 3) > 0;
+    this.birds.update(this.time);
+    this.birds.group.visible = camAlt < 20;
+    this.sats.visible = camAlt > 150;
+    this.sats.children.forEach((c, i) => (c.rotation.y = this.time * (0.05 + i * 0.01)));
+    this.moon.visible = camAlt > 40;
+    this.moon.position.copy(cam.position).add(new THREE.Vector3(-2600, 1400, -3400));
     // Pesawat melintas pelan
     for (const p of this.planes.children) {
       const k = ((this.time * 0.02 + (p.userData.phase as number)) % 1) * 2 - 1;

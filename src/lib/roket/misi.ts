@@ -9,6 +9,8 @@ export interface MisiStop {
   lines: string[];
   /** ketinggian roket (km) di awal & akhir persinggahan */
   alt: [number, number];
+  /** "kabin" = POV di dalam kapsul; selain itu kamera di luar */
+  view?: "kabin";
 }
 
 export const MISI: MisiStop[] = [
@@ -17,9 +19,29 @@ export const MISI: MisiStop[] = [
     title: "Pagi di landasan",
     alt: [0, 0],
     lines: [
-      "Selamat pagi, astronaut cilik! Kita ada di landasan peluncuran.",
-      "Lihat roket raksasa itu. Tingginya seperti gedung dua puluh lantai!",
-      "Hari ini kita akan terbang dari darat sampai ke luar angkasa. Siap?",
+      "Selamat pagi, astronaut cilik! Kita berada di landasan peluncuran di pinggir pantai, di Pulau Biak, Papua.",
+      "Lihat roket putih raksasa itu. Tingginya seperti gedung dua puluh lantai! Di sebelahnya ada menara peluncuran, menara air, dan tangki-tangki bahan bakar.",
+      "Hari ini kita ikut misi sungguhan: terbang dari darat sampai ke luar angkasa. Siap?",
+    ],
+  },
+  {
+    id: "tujuan-misi",
+    title: "Kenapa ke luar angkasa?",
+    alt: [0, 0],
+    lines: [
+      "Kenapa astronaut pergi ke luar angkasa? Banyak alasannya!",
+      "Mereka bekerja di Stasiun Luar Angkasa Internasional untuk melakukan percobaan ilmiah, misalnya bagaimana tanaman tumbuh dan tubuh manusia berubah tanpa gravitasi.",
+      "Mereka juga mengamati Bumi, merawat peralatan, dan belajar hidup lama di angkasa, sebagai latihan sebelum manusia pergi ke Bulan dan Mars.",
+    ],
+  },
+  {
+    id: "baju-antariksa",
+    title: "Baju antariksa",
+    alt: [0, 0],
+    lines: [
+      "Itu astronaut kita! Ia sudah berlatih bertahun-tahun, termasuk berlatih di kolam renang raksasa untuk merasakan gerak seperti melayang.",
+      "Baju antariksanya sangat istimewa. Baju ini berisi udara untuk bernapas, menjaga tekanan tubuh, dan melindungi dari panas maupun dingin.",
+      "Kaca helmnya berwarna emas untuk melindungi mata dari sinar Matahari yang sangat terang.",
     ],
   },
   {
@@ -27,9 +49,19 @@ export const MISI: MisiStop[] = [
     title: "Naik ke kapsul",
     alt: [0, 0],
     lines: [
-      "Itu astronaut kita! Ia memakai baju antariksa yang memberi udara untuk bernapas dan melindungi tubuhnya.",
-      "Ia naik lift di menara, menyeberangi jembatan, lalu masuk ke kapsul di puncak roket.",
-      "Sabuk pengaman dipasang. Pintu kapsul ditutup rapat.",
+      "Astronaut naik lift di menara, menyeberangi jembatan, lalu masuk ke kapsul di puncak roket.",
+      "Kapsul adalah satu-satunya bagian roket yang ditempati manusia. Bagian roket lainnya kebanyakan berisi bahan bakar.",
+    ],
+  },
+  {
+    id: "dalam-kapsul",
+    title: "Di dalam kapsul",
+    alt: [0, 0],
+    view: "kabin",
+    lines: [
+      "Sekarang kita ikut masuk ke dalam kapsul. Lihat, ada kursi khusus, layar-layar kendali, dan jendela kecil untuk melihat langit.",
+      "Astronaut duduk dan memasang sabuk pengaman dengan erat. Kursinya dibentuk pas dengan tubuhnya agar nyaman saat roket melaju sangat kencang.",
+      "Lihat boneka kecil yang tergantung itu. Sekarang ia menjuntai ke bawah karena ditarik gravitasi Bumi. Perhatikan terus, ya. Nanti ada kejutan!",
     ],
   },
   {
@@ -37,7 +69,7 @@ export const MISI: MisiStop[] = [
     title: "Hitung mundur",
     alt: [0, 0],
     lines: [
-      "Semua sistem siap. Ayo hitung mundur bersama!",
+      "Semua sistem siap. Jembatan menara menjauh dari roket. Ayo hitung mundur bersama!",
       "Sepuluh, sembilan, delapan, tujuh, enam, lima, empat, tiga, dua, satu...",
     ],
   },
@@ -47,17 +79,26 @@ export const MISI: MisiStop[] = [
     alt: [0, 3],
     lines: [
       "Meluncur! Mesin roket menyemburkan gas yang sangat panas ke bawah dengan kuat.",
-      "Semburan ke bawah itu mendorong roket naik ke atas. Wuuusss!",
+      "Semburan ke bawah itu mendorong roket naik ke atas. Seperti balon yang melesat saat udaranya keluar. Wuuusss!",
+    ],
+  },
+  {
+    id: "gaya-g",
+    title: "Terasa berat!",
+    alt: [3, 8],
+    view: "kabin",
+    lines: [
+      "Di dalam kapsul, astronaut merasa tubuhnya tertekan ke kursi, sampai tiga kali lebih berat dari biasanya!",
+      "Ini karena roket terus bertambah cepat. Rasanya seperti saat mobil tiba-tiba ngebut dan punggungmu terdorong ke jok. Perhatikan layar gaya G naik.",
     ],
   },
   {
     id: "troposfer",
     title: "Troposfer",
-    alt: [3, 12],
+    alt: [8, 12],
     lines: [
-      "Kita masuk troposfer, lapisan udara paling bawah.",
-      "Di sinilah awan, hujan, dan angin terjadi. Pesawat terbang juga melintas di lapisan ini.",
-      "Semakin tinggi, udaranya semakin dingin.",
+      "Kita melewati troposfer, lapisan udara paling bawah. Di sinilah awan, hujan, dan angin terjadi. Burung dan pesawat terbang juga ada di lapisan ini.",
+      "Semakin tinggi, udaranya semakin dingin dan semakin tipis.",
     ],
   },
   {
@@ -65,9 +106,8 @@ export const MISI: MisiStop[] = [
     title: "Stratosfer",
     alt: [12, 50],
     lines: [
-      "Sekarang stratosfer! Di sini ada lapisan ozon.",
-      "Ozon seperti tabir surya raksasa untuk Bumi. Ia menahan sebagian besar sinar ultraviolet yang berbahaya dari Matahari.",
-      "Lihat langitnya, warna birunya makin gelap.",
+      "Sekarang stratosfer! Di sini ada lapisan ozon, seperti tabir surya raksasa untuk Bumi. Ozon menahan sebagian besar sinar ultraviolet yang berbahaya.",
+      "Lihat langitnya, warna birunya makin gelap karena udaranya makin tipis.",
     ],
   },
   {
@@ -76,7 +116,7 @@ export const MISI: MisiStop[] = [
     alt: [50, 80],
     lines: [
       "Selamat datang di mesosfer, lapisan udara paling dingin. Suhunya bisa sampai sekitar minus sembilan puluh derajat Celsius!",
-      "Lihat kilatan cahaya itu! Itu meteor, batu angkasa kecil yang terbakar habis saat menabrak udara di lapisan ini.",
+      "Lihat kilatan cahaya itu! Itu meteor, batu angkasa kecil yang terbakar habis saat menabrak udara. Mesosfer melindungi Bumi dari hujan batu angkasa.",
     ],
   },
   {
@@ -84,8 +124,8 @@ export const MISI: MisiStop[] = [
     title: "Tahap pertama lepas",
     alt: [80, 95],
     lines: [
-      "Bahan bakar tahap pertama sudah habis. Klik! Tahap pertama dilepas.",
-      "Roket jadi lebih ringan, lalu mesin tahap kedua menyala untuk mendorong kita lebih tinggi.",
+      "Bahan bakar tahap pertama sudah habis. Klik! Tahap pertama dilepas dan jatuh kembali.",
+      "Roket jadi jauh lebih ringan, lalu mesin tahap kedua menyala untuk mendorong kita lebih tinggi dan lebih cepat.",
     ],
   },
   {
@@ -93,45 +133,73 @@ export const MISI: MisiStop[] = [
     title: "Garis Kármán",
     alt: [95, 110],
     lines: [
-      "Kita melewati ketinggian seratus kilometer, garis Kármán.",
-      "Banyak ilmuwan memakai garis ini sebagai batas antara langit Bumi dan luar angkasa. Selamat, kamu sudah di luar angkasa!",
+      "Kita melewati ketinggian seratus kilometer, garis Kármán. Banyak ilmuwan memakai garis ini sebagai batas antara langit Bumi dan luar angkasa.",
+      "Lihat, langitnya sudah hitam dan bintang-bintang mulai tampak. Selamat, kamu sudah di luar angkasa!",
+    ],
+  },
+  {
+    id: "gravitasi",
+    title: "Gravitasi & orbit",
+    alt: [110, 250],
+    lines: [
+      "Tahukah kamu? Gravitasi adalah tarikan yang membuat semua benda jatuh ke Bumi. Gravitasi juga yang menahan kita tetap berdiri di tanah.",
+      "Supaya tidak jatuh kembali, kapsul harus melaju sangat cepat ke samping, sekitar dua puluh delapan ribu kilometer per jam!",
+      "Kapsul tetap jatuh, tetapi karena begitu cepat, ia jatuh mengelilingi Bumi dan tidak pernah menyentuh tanah. Itulah yang disebut mengorbit.",
+    ],
+  },
+  {
+    id: "tanpa-bobot",
+    title: "Melayang!",
+    alt: [250, 380],
+    view: "kabin",
+    lines: [
+      "Mesin dimatikan. Lihat bonekanya! Sekarang ia melayang ke mana-mana. Inilah kejutannya!",
+      "Astronaut juga ikut melayang. Karena kapsul dan semua isinya jatuh bersama-sama mengelilingi Bumi, tidak ada yang menekan kursi. Rasanya seperti tanpa bobot.",
     ],
   },
   {
     id: "termosfer",
-    title: "Termosfer",
-    alt: [110, 420],
+    title: "Termosfer & aurora",
+    alt: [380, 400],
     lines: [
-      "Ini termosfer. Udaranya sudah sangat tipis.",
-      "Cahaya hijau yang menari itu aurora, muncul saat partikel dari Matahari menabrak udara di lapisan ini.",
-      "Stasiun Luar Angkasa Internasional juga mengorbit di sini, sekitar empat ratus kilometer di atas Bumi.",
+      "Kita berada di termosfer. Udaranya sudah sangat tipis.",
+      "Cahaya hijau yang menari itu aurora, muncul saat partikel dari Matahari menabrak udara di lapisan ini. Dan lihat di depan, itu Stasiun Luar Angkasa Internasional!",
+    ],
+  },
+  {
+    id: "merapat",
+    title: "Merapat ke stasiun",
+    alt: [400, 400],
+    lines: [
+      "Pelan-pelan, kapsul merapat ke Stasiun Luar Angkasa. Klik! Pintu tersambung dengan aman.",
+      "Stasiun ini sebesar lapangan sepak bola dan mengelilingi Bumi sekitar sembilan puluh menit sekali. Jadi para astronaut bisa melihat matahari terbit sekitar enam belas kali sehari!",
+    ],
+  },
+  {
+    id: "bertugas",
+    title: "Bertugas di luar",
+    alt: [400, 400],
+    lines: [
+      "Hari ini astronaut kita bertugas memeriksa panel surya, sayap raksasa yang mengubah cahaya Matahari menjadi listrik untuk stasiun.",
+      "Ia keluar untuk berjalan di luar angkasa, dengan tali pengaman yang selalu terpasang. Di bawahnya, Bumi tampak bulat dan biru, diselimuti garis tipis atmosfer yang bercahaya.",
     ],
   },
   {
     id: "eksosfer",
-    title: "Eksosfer",
-    alt: [420, 900],
+    title: "Eksosfer & satelit",
+    alt: [400, 400],
     lines: [
-      "Kita menuju eksosfer, lapisan paling luar. Udaranya hampir tidak ada.",
-      "Lihat ke bawah! Bumi tampak bulat dan biru, diselimuti garis tipis atmosfer yang bercahaya.",
-    ],
-  },
-  {
-    id: "mengorbit",
-    title: "Mengorbit & melayang",
-    alt: [900, 900],
-    lines: [
-      "Mesin dimatikan. Sekarang kita mengorbit, terus mengelilingi Bumi dengan sangat cepat.",
-      "Di sini semua benda melayang, termasuk astronaut kita! Ia keluar untuk berjalan di luar angkasa, dengan tali pengaman yang terpasang ke kapsul.",
+      "Lihat ke atas! Di sana ada eksosfer, lapisan udara paling luar, tempat udaranya hampir tidak ada.",
+      "Banyak satelit berputar mengelilingi Bumi. Ada satelit cuaca, satelit penunjuk arah, dan satelit yang mengirim siaran televisi dan internet ke rumahmu.",
     ],
   },
   {
     id: "penutup",
     title: "Misi berhasil",
-    alt: [900, 900],
+    alt: [400, 400],
     lines: [
-      "Misi berhasil, astronaut hebat! Kita sudah melewati troposfer, stratosfer, mesosfer, termosfer, sampai eksosfer.",
-      "Ingat urutannya, dan ceritakan petualangan ini ke Ayah dan Ibu, ya. Sampai jumpa di misi berikutnya!",
+      "Misi berhasil, astronaut hebat! Kita sudah melewati troposfer, stratosfer, mesosfer, termosfer, sampai melihat eksosfer.",
+      "Kamu juga sudah tahu tentang gravitasi, orbit, dan rasanya melayang. Ceritakan petualangan ini ke Ayah dan Ibu, ya. Sampai jumpa di misi berikutnya!",
     ],
   },
 ];

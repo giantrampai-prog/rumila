@@ -5,6 +5,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
+import { Cabin } from "./cabin";
 import { RocketScene, altToY, type RocketPose } from "./scene";
 
 export type RoketMode = "jelajah" | "terbang";
@@ -28,8 +29,13 @@ export const useRoket = create<RoketUI>(() => ({
   focus: null,
 }));
 
-const SEP = MISI.findIndex((s) => s.id === "pisah-tahap");
-const ORBIT = MISI.findIndex((s) => s.id === "mengorbit");
+const at = (id: string) => MISI.findIndex((s) => s.id === id);
+const SEP = at("pisah-tahap");
+const ORBIT = at("tanpa-bobot"); // mesin mati, tahap kedua lepas
+const ISS_NEAR = at("termosfer");
+const DOCK = at("merapat");
+const EVA = at("bertugas");
+const WALK = at("naik-kapsul");
 const SEP_AT = 0.25; // bagian persinggahan "pisah tahap" saat tahap pertama lepas
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
@@ -44,6 +50,8 @@ export class RocketEngine {
   private renderer: THREE.WebGLRenderer;
   private controls: OrbitControls;
   private world: RocketScene;
+  private cabin = new Cabin();
+  private wasCabin = false;
   private raf = 0;
   private last = performance.now();
   private ro: ResizeObserver;
@@ -128,6 +136,7 @@ export class RocketEngine {
     this.renderer.domElement.style.height = "100%";
     this.world.camera.aspect = w / h;
     this.world.camera.updateProjectionMatrix();
+    this.cabin.resize(w / h);
   }
 
   /* ---------------- mode ---------------- */
@@ -200,6 +209,14 @@ export class RocketEngine {
 
   /* ---------------- timeline → pose ---------------- */
 
+  /** detik sejak awal persinggahan j sampai (i, t) */
+  private since(j: number, i: number, t: number) {
+    if (i < j) return -1;
+    let x = t;
+    for (let k = j; k < i; k++) x += this.durs[k];
+    return x;
+  }
+
   private pose(i: number, t: number): RocketPose {
     const s = MISI[i];
     const dur = this.durs[i];
@@ -207,21 +224,24 @@ export class RocketEngine {
     const k = i === LIFTOFF ? p * p : p;
     const altKm = s.alt[0] + (s.alt[1] - s.alt[0]) * k;
     const sepAltKm = MISI[SEP].alt[0] + (MISI[SEP].alt[1] - MISI[SEP].alt[0]) * SEP_AT;
-    let sepT: number | null = null;
-    if (i === SEP) sepT = t >= SEP_AT * dur ? t - SEP_AT * dur : null;
-    else if (i > SEP) {
-      sepT = (1 - SEP_AT) * this.durs[SEP] + t;
-      for (let j = SEP + 1; j < i; j++) sepT += this.durs[j];
-    }
+    const sepSince = this.since(SEP, i, t) - SEP_AT * this.durs[SEP];
+    const sepT = sepSince >= 0 ? sepSince : null;
+    const s2Since = this.since(ORBIT, i, t) - 1.5;
+    const sep2T = s2Since >= 0 ? s2Since : null;
+    const sep2AltKm = MISI[ORBIT].alt[0] + (MISI[ORBIT].alt[1] - MISI[ORBIT].alt[0]) * clamp01(1.5 / this.durs[ORBIT]);
     const burn: 0 | 1 | 2 = i < LIFTOFF || i >= ORBIT ? 0 : sepT === null ? 1 : sepT < 1.2 ? 0 : 2;
     const steam = i < COUNTDOWN ? 0.04 : i === COUNTDOWN ? 0.1 + p * 0.3 : 0;
     let astro: RocketPose["astro"] = { state: "inside", t: 0 };
-    if (i === 0) astro = { state: "pad", t: 0 };
-    else if (i === 1) astro = { state: "walk", t: p };
-    else if (i === ORBIT) astro = { state: "eva", t };
-    else if (i > ORBIT) astro = { state: "eva", t: this.durs[ORBIT] + t };
-    const armOpen = i < COUNTDOWN ? 0 : i === COUNTDOWN ? smooth(0.4, 0.9, p) : 1;
-    return { altKm, sepT, sepAltKm, burn, steam, astro, armOpen };
+    if (i < WALK) astro = { state: "pad", t: 0 };
+    else if (i === WALK) astro = { state: "walk", t: p };
+    else if (i >= EVA) astro = { state: "eva", t: this.since(EVA, i, t) };
+    const armOpen = i < COUNTDOWN ? 0 : i === COUNTDOWN ? smooth(0.2, 0.7, p) : 1;
+    // Stasiun: tampak mendekat sepanjang "termosfer", merapat pada "merapat", lalu tetap menempel
+    let issGap: number | null = null;
+    if (i === ISS_NEAR) issGap = 30 - 22 * smooth(0, 1, p);
+    else if (i === DOCK) issGap = 8 * (1 - smooth(0, 0.7, p));
+    else if (i > DOCK) issGap = 0;
+    return { altKm, sepT, sepAltKm, sep2T, sep2AltKm, issGap, burn, steam, astro, armOpen };
   }
 
   /** Kamera yang diinginkan untuk persinggahan (lembut; tanpa guncangan). */
@@ -231,34 +251,108 @@ export class RocketEngine {
     const p = clamp01(t / this.durs[i]);
     const flightT = this.durs.slice(0, i).reduce((a, b) => a + b, 0) + t;
     const a = 0.7 + flightT * 0.012;
-    if (id === "landasan") {
-      const ang = 0.6 + t * 0.03;
-      out.pos.set(Math.cos(ang) * 20, 5, Math.sin(ang) * 20);
-      out.look.set(0, 3, 0);
-    } else if (id === "naik-kapsul") {
-      const ap = this.world.a.astro.position;
-      out.look.set(ap.x, ap.y + 0.4, ap.z);
-      out.pos.set(ap.x + 3.2, ap.y + 1.3, ap.z + 3.6);
-    } else if (id === "hitung-mundur") {
-      const d = 10 - p * 2.5;
-      out.pos.set(d * 0.8, 1.2, d * 0.8);
-      out.look.set(0, 3.6, 0);
-    } else if (id === "lepas-landas") {
-      out.pos.set(9, Math.max(1.4, Y * 0.5 + 1.4), 9);
-      out.look.set(0, Y + 3, 0);
-    } else if (id === "mengorbit" || id === "penutup") {
-      // Dari atas kapsul memandang ke bawah: Bumi terlihat di belakang astronaut; penutup mundur perlahan.
-      const back = id === "penutup" ? ease(p) : 0;
-      out.look.set(0.9, Y + 5.2 - back * 50, 0.4);
-      out.pos.set(Math.cos(a) * (6 + back * 70), Y + 9 + back * 45, Math.sin(a) * (6 + back * 70));
-    } else {
-      // Kamera kejar: berputar pelan, makin jauh & makin di atas saat roket makin tinggi (Bumi terlihat).
-      const alt = pose.altKm;
-      const d = 12 + smooth(10, 110, alt) * 6 + smooth(110, 800, alt) * 10;
-      const h = -3 + smooth(5, 60, alt) * 3 + smooth(90, 800, alt) * 10 + (id === "pisah-tahap" ? -2 : 0);
-      out.pos.set(Math.cos(a) * d, Y + 3 + h, Math.sin(a) * d);
-      out.look.set(0, Y + 3, 0);
+    const ap = this.world.a.astro.position;
+    switch (id) {
+      case "landasan": {
+        const ang = 0.6 + t * 0.03;
+        out.pos.set(Math.cos(ang) * 20, 5, Math.sin(ang) * 20);
+        out.look.set(0, 3, 0);
+        return;
+      }
+      case "tujuan-misi": {
+        // terbang pelan di atas kompleks: gedung, pantai, menara air
+        const ang = 1.6 + t * 0.035;
+        out.pos.set(Math.cos(ang) * 22, 6.5, Math.sin(ang) * 22);
+        out.look.set(-3, 1, 2);
+        return;
+      }
+      case "baju-antariksa": {
+        // dari depan astronaut (kaca helm emas terlihat), berputar pelan
+        const ang = 2.0 + t * 0.04;
+        out.look.set(ap.x, ap.y + 0.45, ap.z);
+        out.pos.set(ap.x + Math.cos(ang) * 1.9, ap.y + 0.75, ap.z + Math.sin(ang) * 1.9);
+        return;
+      }
+      case "naik-kapsul":
+        out.look.set(ap.x, ap.y + 0.4, ap.z);
+        out.pos.set(ap.x + 3.2, ap.y + 1.3, ap.z + 3.6);
+        return;
+      case "hitung-mundur": {
+        const d = 10 - p * 2.5;
+        out.pos.set(d * 0.8, 1.2, d * 0.8);
+        out.look.set(0, 3.6, 0);
+        return;
+      }
+      case "lepas-landas":
+        out.pos.set(9, Math.max(1.4, Y * 0.5 + 1.4), 9);
+        out.look.set(0, Y + 3, 0);
+        return;
+      case "gravitasi": {
+        // jauh & tinggi: Bumi melengkung di bawah roket
+        out.pos.set(Math.cos(a) * 26, Y + 12, Math.sin(a) * 26);
+        out.look.set(0, Y + 1, 0);
+        return;
+      }
+      case "termosfer":
+        // dari bawah-samping menatap ke atas: kapsul & stasiun yang mendekat
+        out.pos.set(Math.cos(a) * 16, Y + 1, Math.sin(a) * 16);
+        out.look.set(0, Y + 5 + (pose.issGap ?? 0) * 0.5, 0);
+        return;
+      case "merapat":
+        out.pos.set(Math.cos(a) * 12, Y + 8, Math.sin(a) * 12);
+        out.look.set(0, Y + 6.5, 0);
+        return;
+      case "bertugas":
+        out.look.set(ap.x, ap.y + 0.3, ap.z);
+        out.pos.set(ap.x + Math.cos(a) * 4, ap.y + 2.5, ap.z + Math.sin(a) * 4);
+        return;
+      case "eksosfer":
+        // menatap ke atas dari dekat stasiun: satelit-satelit di eksosfer
+        out.pos.set(Math.cos(a) * 14, Y + 8, Math.sin(a) * 14);
+        out.look.set(0, Y + 55, 0);
+        return;
+      case "penutup": {
+        const back = ease(p);
+        out.look.set(0, Y + 6 - back * 50, 0);
+        out.pos.set(Math.cos(a) * (12 + back * 70), Y + 10 + back * 45, Math.sin(a) * (12 + back * 70));
+        return;
+      }
+      default: {
+        // Kamera kejar: berputar pelan, makin jauh & makin di atas saat roket makin tinggi.
+        const alt = pose.altKm;
+        const d = 12 + smooth(10, 110, alt) * 6 + smooth(110, 800, alt) * 10;
+        const h = -3 + smooth(5, 60, alt) * 3 + smooth(90, 800, alt) * 10 + (id === "pisah-tahap" ? -2 : 0);
+        out.pos.set(Math.cos(a) * d, Y + 3 + h, Math.sin(a) * d);
+        out.look.set(0, Y + 3, 0);
+      }
     }
+  }
+
+  /** Nilai layar kabin: kecepatan (perkiraan) & gaya G menurut adegan. */
+  private cabinState(i: number, t: number, pose: RocketPose) {
+    const km = pose.altKm;
+    const pts: [number, number][] = [
+      [0, 0],
+      [3, 1500],
+      [12, 3000],
+      [50, 6000],
+      [100, 10000],
+      [250, 21000],
+      [400, 27600],
+    ];
+    let speed = 0;
+    for (let k = 1; k < pts.length; k++)
+      if (km <= pts[k][0]) {
+        const [a0, v0] = pts[k - 1],
+          [a1, v1] = pts[k];
+        speed = v0 + ((v1 - v0) * (km - a0)) / (a1 - a0);
+        break;
+      } else speed = pts[k][1];
+    const id = MISI[i].id;
+    const p = clamp01(t / this.durs[i]);
+    const g = i < LIFTOFF ? 1 : id === "gaya-g" ? 1.6 + smooth(0, 0.6, p) * 1.4 : i < ORBIT ? 2.2 : 0;
+    const float = i >= ORBIT ? smooth(0, 0.25, this.since(ORBIT, i, t) / this.durs[ORBIT]) : 0;
+    return { altKm: km, speedKmh: i < LIFTOFF ? 0 : speed, g, float, t: this.since(0, i, t) };
   }
 
   /* ---------------- audio ---------------- */
@@ -360,6 +454,37 @@ export class RocketEngine {
       if (f.k >= 1) this.fly = null;
     }
 
+    // POV kabin: dunia digambar dari dalam kapsul (orientasi kamera kabin), lalu kabin di atasnya.
+    const cabinView = ui.mode === "terbang" && MISI[this.idx].view === "kabin";
+    if (cabinView) {
+      const pose = this.pose(this.idx, this.t);
+      const Y = altToY(pose.altKm);
+      this.cabin.update(this.cabinState(this.idx, this.t, pose));
+      cam.position.set(0, Y + 5.45, 0);
+      cam.quaternion.copy(this.cabin.camera.quaternion);
+      cam.fov = this.cabin.camera.fov;
+      cam.updateProjectionMatrix();
+      this.controls.enabled = false;
+      this.world.r.cap.visible = false; // dinding kapsul dari luar tidak ikut menghalangi jendela
+      this.world.update(dt);
+      this.renderer.autoClear = true;
+      this.renderer.render(this.world.scene, cam);
+      this.renderer.autoClear = false;
+      this.renderer.clearDepth();
+      this.renderer.render(this.cabin.scene, this.cabin.camera);
+      this.renderer.autoClear = true;
+      this.world.r.cap.visible = true;
+      this.wasCabin = true;
+      return;
+    }
+    if (this.wasCabin) {
+      // keluar dari kabin: kembalikan lensa & langsung ke bidikan luar
+      this.wasCabin = false;
+      cam.fov = 50;
+      cam.updateProjectionMatrix();
+      this.snap = true;
+      this.controls.enabled = !ui.playing;
+    }
     this.controls.update();
     this.world.update(dt);
     this.renderer.render(this.world.scene, cam);
@@ -374,6 +499,7 @@ export class RocketEngine {
     el.removeEventListener("wheel", this.onWheel);
     this.audio?.pause();
     this.controls.dispose();
+    this.cabin.dispose();
     this.world.dispose();
     this.renderer.dispose();
     el.remove();

@@ -16,7 +16,7 @@ const partsText: Record<string, string> = {
 const txt = [
   "NASKAH SUARA — ROKET & ASTRONOT 3D",
   "",
-  "BAGIAN A — MISI TERBANG (rekam jadi SATU file, urut dari atas; beri jeda ±1 detik antarparagraf)",
+  "BAGIAN A — MISI TERBANG (±5 menit; rekam jadi SATU file, urut dari atas; beri jeda ±1 detik antarparagraf)",
   "",
   ...MISI.map((s, i) => `[${i + 1}. ${s.title}]\n${s.lines.join(" ")}\n`),
   "BAGIAN B — JELAJAH (rekam SATU file per bagian, nama file = kata dalam kurung)",
