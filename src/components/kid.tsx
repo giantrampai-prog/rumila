@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { AppIcon, BALOO, LauncherBackdrop, MemberAvatar, NUNITO } from "@/components/launcher";
+import { BALOO, LauncherBackdrop, MemberAvatar, NUNITO } from "@/components/launcher";
 import { Icon, PlayCtx } from "@/components/ui";
 import { PLAY, canonicalToolId, getTool, type Folder, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
@@ -59,12 +59,12 @@ export function StarPill() {
         color: "#6b4300",
         fontFamily: BALOO,
         fontWeight: 800,
-        fontSize: 17,
-        padding: "4px 12px",
+        fontSize: 15,
+        padding: "3px 11px",
       }}
       aria-label={`${stars} bintang`}
     >
-      <Icon name="star" size={20} />
+      <Icon name="star" size={17} />
       {stars}
     </span>
   );
@@ -78,8 +78,8 @@ export function KidFrame({ children, overlay, nav = true }: { children: ReactNod
       <div className="theme-play bg-dots relative min-h-dvh" style={{ fontFamily: NUNITO }}>
         <LauncherBackdrop />
         <div
-          className="relative mx-auto flex max-w-[1180px] flex-col gap-5 px-4 pt-4 sm:px-6 sm:pt-6"
-          style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: nav ? 132 : 40 }}
+          className="relative mx-auto flex max-w-[1080px] flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5"
+          style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: nav ? 108 : 40 }}
         >
           {children}
         </div>
@@ -98,10 +98,10 @@ export function KidHeader() {
   return (
     <header className="flex items-center gap-3">
       <button onClick={() => openSheet({ kind: "members" })} className="flex min-w-0 flex-1 items-center gap-3 text-left" aria-label="Ganti pemain">
-        <MemberAvatar m={me} size={56} theme="playful" />
+        <MemberAvatar m={me} size={44} theme="playful" />
         <span className="min-w-0">
-          <span className="block text-[14px] font-extrabold text-ink-3">{hello},</span>
-          <span className="flex items-center gap-0.5 truncate" style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: INK, lineHeight: 1.05 }}>
+          <span className="block text-[12px] font-extrabold text-ink-3">{hello},</span>
+          <span className="flex items-center gap-0.5 truncate" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, color: INK, lineHeight: 1.05 }}>
             {me.name}
             <Icon name="expand_more" className="text-ink-3" />
           </span>
@@ -122,11 +122,11 @@ function KidNav() {
   const path = usePathname();
   return (
     <nav
-      className="fixed bottom-0 left-1/2 z-30 w-full max-w-[560px] -translate-x-1/2 px-3"
+      className="fixed bottom-0 left-1/2 z-30 w-full max-w-[440px] -translate-x-1/2 px-3"
       style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}
       aria-label="Menu utama"
     >
-      <div className="grid grid-cols-3 gap-1.5 rounded-[28px] bg-white p-2 shadow-[0_6px_0_rgba(43,29,78,.08),0_16px_36px_rgba(43,29,78,.14)]">
+      <div className="grid grid-cols-3 gap-1 rounded-[24px] bg-white p-1.5 shadow-[0_4px_0_rgba(43,29,78,.06),0_12px_28px_rgba(43,29,78,.12)]">
         {KID_NAV.map((n) => {
           const on = n.href === "/saya" ? isParentPath(path) : path === n.href || path.startsWith(n.href + "/");
           const [l, m, d] = PLAY[n.c];
@@ -135,15 +135,15 @@ function KidNav() {
               key={n.href}
               href={n.href}
               aria-current={on ? "page" : undefined}
-              className="flex h-16 flex-col items-center justify-center gap-0.5 rounded-[20px] transition-transform active:scale-95"
+              className="flex h-[52px] flex-col items-center justify-center gap-0.5 rounded-[18px] transition-transform active:scale-95"
               style={
                 on
-                  ? { background: `linear-gradient(155deg, ${l}, ${m} 70%)`, boxShadow: `0 4px 0 ${d}`, color: "#fff" }
+                  ? { background: `linear-gradient(155deg, ${l}, ${m} 70%)`, boxShadow: `0 3px 0 ${d}`, color: "#fff" }
                   : { color: "#8a7a9c" }
               }
             >
-              <Icon name={n.icon} size={30} />
-              <span style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, lineHeight: 1 }}>{n.label}</span>
+              <Icon name={n.icon} size={23} />
+              <span style={{ fontFamily: BALOO, fontSize: 12, fontWeight: 800, lineHeight: 1 }}>{n.label}</span>
             </Link>
           );
         })}
@@ -157,12 +157,12 @@ function KidNav() {
 export function MascotBubble({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-end gap-2">
-      <div className="flex size-[68px] shrink-0 items-center justify-center rounded-[22px] bg-white shadow-[0_4px_0_rgba(43,29,78,.08)]">
-        <Image src="/brand/rumila-mark.png" alt="" width={48} height={44} />
+      <div className="flex size-[52px] shrink-0 items-center justify-center rounded-[18px] bg-white shadow-[0_3px_0_rgba(43,29,78,.08)]">
+        <Image src="/brand/rumila-mark.png" alt="" width={36} height={33} />
       </div>
       <div
-        className="relative rounded-[22px] rounded-bl-md bg-white px-4 py-3 shadow-[0_4px_0_rgba(43,29,78,.08)]"
-        style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 700, color: INK, lineHeight: 1.2 }}
+        className="relative rounded-[18px] rounded-bl-md bg-white px-3.5 py-2.5 shadow-[0_3px_0_rgba(43,29,78,.08)]"
+        style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 700, color: INK, lineHeight: 1.2 }}
       >
         {children}
       </div>
@@ -172,42 +172,24 @@ export function MascotBubble({ children }: { children: ReactNode }) {
 
 /* ---------------- kartu dunia ---------------- */
 
-export function WorldCard({ f, big }: { f: Folder; big?: boolean }) {
+export function WorldCard({ f }: { f: Folder }) {
   const [l, m, d] = PLAY[f.c];
   const ready = f.items.filter((t) => !t.planned);
   return (
     <Link
       href={`/beranda/${f.id}`}
-      className={`relative flex flex-col justify-between overflow-hidden rounded-[30px] p-4 text-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] hover:-translate-y-1 active:scale-[.97] sm:p-5 ${
-        big ? "col-span-2 min-h-[200px] sm:min-h-[230px]" : "min-h-[160px] sm:min-h-[190px]"
-      }`}
-      style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 60%)`, boxShadow: `0 7px 0 ${d}, 0 18px 32px ${m}44` }}
+      className="relative flex min-h-[124px] flex-col justify-between overflow-hidden rounded-[22px] p-3.5 text-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.97] sm:min-h-[136px]"
+      style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)`, boxShadow: `0 5px 0 ${d}` }}
     >
-      <div aria-hidden className="absolute -right-12 -bottom-14 size-44 rounded-full bg-white/20" />
-      <div aria-hidden className="absolute -top-6 right-10 size-16 rounded-full bg-white/10" />
-      <div className="relative flex items-start justify-between gap-2">
-        <span
-          className="flex items-center justify-center rounded-[22px] bg-white"
-          style={{ width: big ? 76 : 64, height: big ? 76 : 64, boxShadow: `0 4px 0 ${d}55` }}
-        >
-          <span className="ms" style={{ fontSize: big ? 46 : 38, color: m }}>
-            {f.icon}
-          </span>
+      <div aria-hidden className="absolute -right-8 -bottom-10 size-28 rounded-full bg-white/18" />
+      <span className="relative flex size-11 items-center justify-center rounded-[14px] bg-white" style={{ boxShadow: `0 3px 0 ${d}44` }}>
+        <span className="ms" style={{ fontSize: 26, color: m }}>
+          {f.icon}
         </span>
-        {big && (
-          <span className="flex -space-x-3">
-            {ready.slice(0, 3).map((t) => (
-              <span key={t.id} className="rounded-[16px] ring-4 ring-white/30">
-                <AppIcon t={t} size={52} theme="playful" />
-              </span>
-            ))}
-          </span>
-        )}
-      </div>
+      </span>
       <div className="relative">
-        {big && <div className="mb-0.5 text-[13px] font-extrabold tracking-wide text-white/85 uppercase">Lanjut main</div>}
-        <div style={{ fontFamily: BALOO, fontSize: big ? 30 : 23, fontWeight: 800, lineHeight: 1.05, textShadow: "0 2px 0 rgba(0,0,0,.12)" }}>{f.name}</div>
-        <div className="mt-1 text-[14px] font-extrabold text-white/90">{ready.length} permainan</div>
+        <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{f.name}</div>
+        <div className="mt-0.5 text-[12px] font-extrabold text-white/85">{ready.length} permainan</div>
       </div>
     </Link>
   );

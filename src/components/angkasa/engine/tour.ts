@@ -56,6 +56,11 @@ export class TourController {
   private pendingSeek: number | null = null;
   /** true = perpindahan persinggahan berasal dari audio/lanjut-jeda (jangan lompatkan audio) */
   private followAudio = false;
+  /* Sinematik (tampilan anak): efek warp FOV, kemiringan saat berbelok, melayang & mendekat saat singgah */
+  private baseFov = 45;
+  /** arah belokan jalur terbang (-1 kiri … 1 kanan) untuk memiringkan kamera */
+  private turn = 0;
+  private upTmp = new THREE.Vector3();
 
   constructor(
     private host: Host,
@@ -66,6 +71,7 @@ export class TourController {
       max: ctx.controls.maxDistance,
       enabled: ctx.controls.enabled,
     };
+    this.baseFov = host.camera.fov;
     ctx.controls.minDistance = 0.02;
     ctx.controls.maxDistance = 400;
     ctx.renderer.domElement.addEventListener("pointerdown", this.onUserInput);
@@ -78,6 +84,20 @@ export class TourController {
   private onUserInput = () => {
     if (this.playing) useAngkasa.getState().set({ tourPlaying: false });
   };
+
+  private get cinematic() {
+    return useAngkasa.getState().tourCinematic && !this.ctx.reducedMotion();
+  }
+
+  /** Kembalikan FOV & arah atas kamera ke normal (atau mendekatinya perlahan bila k < 1). */
+  private settleCamera(k = 1) {
+    const cam = this.host.camera;
+    if (Math.abs(cam.fov - this.baseFov) > 0.01) {
+      cam.fov += (this.baseFov - cam.fov) * k;
+      cam.updateProjectionMatrix();
+    }
+    cam.up.lerp(this.upTmp.set(0, 1, 0), k).normalize();
+  }
 
   /** Posisi dunia pusat objek persinggahan. */
   private centerOf(id: string, out: THREE.Vector3) {
@@ -159,7 +179,12 @@ export class TourController {
     this.orbitRadius = Math.hypot(rel.x, rel.z);
     this.orbitHeight = rel.y;
     this.orbitAngle = Math.atan2(rel.z, rel.x);
-    this.lift = radius * (wide ? 0.16 : 0.2);
+    // Tanpa kartu teks (sinematik), objek dibingkai tepat di tengah layar.
+    this.lift = this.cinematic ? 0 : radius * (wide ? 0.16 : 0.2);
+    // Arah belokan: sisi mana tujuan berada relatif terhadap arah pandang sekarang.
+    const fwd = this.ctx.controls.target.clone().sub(start).setY(0).normalize();
+    const to = pos.clone().sub(start).setY(0).normalize();
+    this.turn = THREE.MathUtils.clamp(fwd.x * to.z - fwd.z * to.x, -1, 1);
     this.lastLine = -1;
     // Lompat ke persinggahan (tombol/rute): posisikan audio ke awal narasi persinggahan itu.
     if (!this.followAudio) this.forceSeek = true;
@@ -173,6 +198,7 @@ export class TourController {
     // Saat dijeda, kontrol kamera diserahkan ke pengguna; saat lanjut, terbang lagi dari posisi sekarang.
     this.ctx.controls.enabled = !p;
     if (!p) {
+      this.settleCamera();
       this.audio?.pause();
       this.playRequested = false;
     }
@@ -192,10 +218,19 @@ export class TourController {
     const speed = this.ctx.reducedMotion() ? 0 : wide ? 0.035 : 0.09; // rad/detik
     this.orbitAngle += speed * dt;
     const cam = this.host.camera;
+    let r = this.orbitRadius,
+      h = this.orbitHeight;
+    if (this.cinematic) {
+      // Mendekat pelan selama singgah + melayang naik-turun halus.
+      const p = smooth(Math.min(1, this.dwellT / Math.max(4, this.dwellDur)));
+      r *= wide ? 1.04 - 0.08 * p : 1.08 - 0.2 * p;
+      h += Math.sin(this.dwellT * 0.55) * this.orbitRadius * 0.045;
+      this.settleCamera(Math.min(1, dt * 1.5));
+    }
     cam.position.set(
-      center.x + Math.cos(this.orbitAngle) * this.orbitRadius,
-      center.y + this.orbitHeight,
-      center.z + Math.sin(this.orbitAngle) * this.orbitRadius,
+      center.x + Math.cos(this.orbitAngle) * r,
+      center.y + h,
+      center.z + Math.sin(this.orbitAngle) * r,
     );
     this.ctx.controls.target.copy(center).y -= this.lift;
   }
@@ -223,6 +258,16 @@ export class TourController {
       if (this.travelT < 0.15)
         look.lerp(this.lookFrom, 1 - this.travelT / 0.15);
       this.ctx.controls.target.copy(look);
+      if (this.cinematic) {
+        // Warp: pandangan melebar saat melesat, kembali normal saat tiba.
+        const pulse = Math.sin(Math.PI * k);
+        cam.fov = this.baseFov + 18 * pulse;
+        cam.updateProjectionMatrix();
+        // Miring ke arah belokan, seperti pesawat.
+        const roll = -this.turn * 0.22 * Math.sin(Math.PI * this.travelT);
+        const dir = look.clone().sub(cam.position).normalize();
+        cam.up.set(0, 1, 0).applyAxisAngle(dir, roll).normalize();
+      }
       if (this.travelT >= 1) this.phase = "dwell";
       return;
     }
@@ -341,6 +386,7 @@ export class TourController {
     const el = this.ctx.renderer.domElement;
     el.removeEventListener("pointerdown", this.onUserInput);
     el.removeEventListener("wheel", this.onUserInput);
+    this.settleCamera();
     this.ctx.controls.enabled = true;
     if (this.saved) {
       this.ctx.controls.minDistance = this.saved.min;

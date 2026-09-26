@@ -18,8 +18,9 @@ export const PJ = "var(--font-jakarta), system-ui, sans-serif";
 export const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 export const NUNITO = "var(--ff-nunito), system-ui, sans-serif";
 
+/** Rumila memakai satu tema saja (Playful, untuk anak). */
 export function useTheme(): Theme {
-  return useRumila((s) => s.theme);
+  return "playful";
 }
 
 /* ---------------- latar halaman ---------------- */

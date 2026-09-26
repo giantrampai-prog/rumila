@@ -3,7 +3,6 @@
 import { createContext, useContext, type CSSProperties, type ReactNode } from "react";
 import { CAT, PLAY, type ColorKey } from "@/lib/catalog";
 import { initialOf } from "@/lib/format";
-import { useRumila } from "@/lib/store";
 
 export function Icon({
   name,
@@ -177,7 +176,7 @@ export const listRow = "flex w-full items-center gap-3 border-b border-line-soft
 
 /** Modal di tengah layar (desktop) / sheet bawah (mobile). */
 export function Modal({ open, onClose, title, children, width = 520 }: { open: boolean; onClose: () => void; title?: string; children: ReactNode; width?: number }) {
-  const play = useRumila((s) => s.theme) === "playful";
+  const play = true;
   if (!open) return null;
   const ink = play ? "#2b1d4e" : "#0b0b0c";
   return (

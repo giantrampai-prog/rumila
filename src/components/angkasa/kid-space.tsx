@@ -14,8 +14,8 @@ import { hasVoice, playVoice, stopVoice, usePlayingVoice } from "@/lib/angkasa/v
 import { markDone, useAngkasaSession } from "@/lib/angkasa/progress";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
 import { QuizPanel } from "./panels/overview";
-import { TourOverlay } from "./panels/tour";
-import { useSpeak } from "./ui";
+import { useNarration } from "./panels/tour";
+import { TOUR } from "@/lib/angkasa/tour";
 import { Viewer } from "./viewer";
 import "./angkasa.css";
 
@@ -99,10 +99,9 @@ function Dock() {
 function ObjCard({ id }: { id: string }) {
   const st = useAngkasa();
   const o = OBJ.get(id)!;
-  const { speak, speaking, supported } = useSpeak();
+  // Hanya rekaman suara asli; tanpa suara sintesis (terdengar robot).
   const recorded = hasVoice(id);
   const playing = usePlayingVoice() === id;
-  const talking = recorded ? playing : speaking;
   const i = DOCK.indexOf(id);
   const go = (d: number) => st.select(DOCK[(i + d + DOCK.length) % DOCK.length], { mode: "planet" });
 
@@ -112,10 +111,7 @@ function ObjCard({ id }: { id: string }) {
     return () => clearTimeout(t);
   }, [id, st.memberId]);
 
-  const listen = () => {
-    if (recorded) return playing ? stopVoice() : void playVoice(id);
-    speak(`${o.nameId}. ${o.definitionSimple}`);
-  };
+  const listen = () => (playing ? stopVoice() : void playVoice(id));
 
   return (
     <div className="pointer-events-auto mx-auto flex w-full max-w-[620px] items-center gap-2 rounded-[28px] bg-white/95 p-3 shadow-[0_6px_0_rgba(0,0,0,.25)] sm:gap-3 sm:p-4">
@@ -126,19 +122,59 @@ function ObjCard({ id }: { id: string }) {
         <div style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 800, color: "#2b1d4e", lineHeight: 1 }}>{o.nameId}</div>
         <p className="mt-1 text-[16px] leading-snug font-extrabold text-[#6b5d80] sm:text-[18px]">{o.definitionSimple}</p>
       </div>
-      {(recorded || supported) && (
+      {recorded && (
         <button
           onClick={listen}
-          aria-label={talking ? "Berhenti" : "Dengarkan"}
+          aria-label={playing ? "Berhenti" : "Dengarkan"}
           className="flex size-[62px] shrink-0 items-center justify-center rounded-full text-white active:scale-90"
           style={{ background: "linear-gradient(155deg,#5ce8d6,#12b8a6 60%)", boxShadow: "0 4px 0 #0a8a7c" }}
         >
-          <Icon name={talking ? "stop" : "volume_up"} size={34} />
+          <Icon name={playing ? "stop" : "volume_up"} size={34} />
         </button>
       )}
       <button onClick={() => go(1)} aria-label="Berikutnya" className="hidden size-12 shrink-0 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90 sm:flex">
         <Icon name="chevron_right" size={32} />
       </button>
+    </div>
+  );
+}
+
+/** Tur terbang sinematik: 3D penuh, tanpa teks. Ketuk untuk jeda; narasi suara tetap jalan. */
+function KidTour() {
+  const st = useAngkasa();
+  useNarration();
+  const last = TOUR.length - 1;
+  const stop = TOUR[st.tourIndex];
+  const finished = st.tourIndex === last && !st.tourPlaying && st.tourLine >= stop.lines.length - 1;
+  useEffect(() => {
+    if (st.tourIndex === last) markDone(st.memberId, "tur:tata-surya");
+  }, [st.tourIndex, st.memberId, last]);
+
+  return (
+    <div className="pointer-events-none absolute inset-0" style={{ paddingTop: "max(12px, env(safe-area-inset-top))" }}>
+      {/* progres tipis */}
+      <div className="absolute inset-x-0 top-0 flex gap-1 px-3 pt-2" style={{ paddingTop: "max(8px, env(safe-area-inset-top))" }} aria-hidden>
+        {TOUR.map((t, i) => (
+          <span key={t.id} className="h-1 flex-1 rounded-full" style={{ background: i < st.tourIndex ? "rgba(255,255,255,.85)" : i === st.tourIndex ? "#ffbe0b" : "rgba(255,255,255,.2)" }} />
+        ))}
+      </div>
+      <div className="absolute top-5 right-3 sm:right-5" style={{ top: "max(20px, calc(env(safe-area-inset-top) + 12px))" }}>
+        <RoundBtn icon="close" label="Keluar tur" onClick={endTour} />
+      </div>
+
+      {/* dijeda / selesai: tombol besar di tengah */}
+      {!st.tourPlaying && (
+        <div className="absolute inset-0 flex items-center justify-center gap-6">
+          {finished ? (
+            <>
+              <RoundBtn icon="replay" label="Ulangi" tone="orange" onClick={() => st.set({ tourIndex: 0, tourLine: 0, tourPlaying: true })} />
+              <RoundBtn icon="check" label="Selesai" tone="purple" onClick={endTour} />
+            </>
+          ) : (
+            <RoundBtn icon="play_arrow" label="Lanjut" tone="orange" onClick={() => st.set({ tourPlaying: true })} />
+          )}
+        </div>
+      )}
     </div>
   );
 }
@@ -151,7 +187,11 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
 
   useEffect(() => {
     setFullRoot(appRef.current);
-    return () => setFullRoot(null);
+    useAngkasa.getState().set({ tourCinematic: true });
+    return () => {
+      setFullRoot(null);
+      useAngkasa.getState().set({ tourCinematic: false });
+    };
   }, []);
 
   useEffect(() => {
@@ -195,7 +235,7 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
       </section>
 
       {tour ? (
-        <TourOverlay />
+        <KidTour />
       ) : (
         <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5" style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}>
           {/* atas: kembali · bintang */}

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { BALOO, MemberAvatar, NUNITO, PJ, ThemeSwitch } from "@/components/launcher";
+import { BALOO, MemberAvatar, NUNITO, PJ } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { CAT, PLAY } from "@/lib/catalog";
 import { useHydrated, useRumila, type Member, type Theme } from "@/lib/store";
@@ -32,8 +32,8 @@ function Masuk() {
   const ready = hydrated && cloud.status !== "loading";
   const members = useRumila((s) => s.members);
   const signIn = useRumila((s) => s.signIn);
-  const theme = useRumila((s) => s.theme);
-  const setTheme = useRumila((s) => s.setTheme);
+  // Satu tema saja: tampilan anak (Playful).
+  const theme: Theme = "playful";
   const play = theme === "playful";
   const router = useRouter();
   const params = useSearchParams();
@@ -97,12 +97,6 @@ function Masuk() {
               <div className="absolute -top-[140px] right-[14%] size-[380px] rounded-full bg-[#7884D8] opacity-[.12] blur-[90px]" />
             </>
           )}
-        </div>
-      )}
-
-      {ready && stage !== "loading" && (
-        <div className="absolute top-5 right-5 z-[2]">
-          <ThemeSwitch theme={theme} onChange={setTheme} />
         </div>
       )}
 

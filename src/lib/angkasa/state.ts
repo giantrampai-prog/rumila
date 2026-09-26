@@ -104,6 +104,8 @@ export interface AngkasaState {
   tourPlaying: boolean;
   tourLine: number;
   tourNarration: boolean;
+  /** Tur sinematik (tampilan anak): tanpa teks & label, objek dibingkai di tengah layar */
+  tourCinematic: boolean;
   /** lebar (px) viewer yang tertutup panel mengambang kiri/kanan (layar penuh) */
   frameInset: [number, number];
   startTour: (from?: number) => void;
@@ -198,6 +200,7 @@ export const useAngkasa = create<AngkasaState>()((set, get) => ({
   tourPlaying: false,
   tourLine: 0,
   tourNarration: true,
+  tourCinematic: false,
   frameInset: [0, 0],
   startTour: (from = 0) => {
     const s = get();

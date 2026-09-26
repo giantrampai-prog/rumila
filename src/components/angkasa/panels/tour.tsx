@@ -14,7 +14,7 @@ import { Btn, Note, Pill } from "../ui";
 const LAST = TOUR.length - 1;
 
 /** Narasi suara (opt-in): bacakan kalimat yang sedang tampil. */
-function useNarration() {
+export function useNarration() {
   const { tourIndex, tourLine, tourNarration, tourPlaying } = useAngkasa();
   useEffect(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;

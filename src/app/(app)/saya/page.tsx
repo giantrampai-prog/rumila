@@ -15,25 +15,12 @@ export default function Saya() {
   const familyName = useRumila((s) => s.familyName);
   const email = useCloud((s) => s.email);
   const [pinOpen, setPinOpen] = useState(false);
-  const theme = useRumila((s) => s.theme);
-  const setTheme = useRumila((s) => s.setTheme);
   const signOut = useRumila((s) => s.signOut);
   const router = useRouter();
   const { openSheet, showToast } = useUI();
   const sorted = [...members].sort((a, b) => Number(b.admin) - Number(a.admin));
 
   const settings: { icon: string; c: ColorKey; label: string; meta: string; tap?: () => void }[] = [
-    {
-      icon: "palette",
-      c: "indigo",
-      label: "Tema tampilan",
-      meta: theme === "playful" ? "Playful · ketuk untuk ganti ke Modern" : "Modern · ketuk untuk ganti ke Playful",
-      tap: () => {
-        const next = theme === "playful" ? "modern" : "playful";
-        setTheme(next);
-        showToast(`Tema ${next === "playful" ? "Playful" : "Modern"} dipakai`);
-      },
-    },
     { icon: "timer", c: "orange", label: "Batas waktu layar anak", meta: "2 jam per hari" },
     {
       icon: "lock",

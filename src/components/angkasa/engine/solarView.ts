@@ -6,7 +6,7 @@ import { MANIFEST, getObj } from "@/lib/angkasa/manifest";
 import { LEARNING, orbitAngle, spinAngle } from "@/lib/angkasa/sim";
 import type { AngkasaObject } from "@/lib/angkasa/types";
 import { createBody, orbitLine, starfield, type Body } from "./bodies";
-import type { AngkasaState } from "@/lib/angkasa/state";
+import { useAngkasa, type AngkasaState } from "@/lib/angkasa/state";
 import { disposeTree, type EngineCtx, type LabelSpec } from "./core";
 import type { ModeView } from "./views";
 import { TourController } from "./tour";
@@ -288,6 +288,8 @@ export class SolarView implements ModeView {
     for (const [id, b] of this.bodies) {
       const o = b.obj;
       if (this.tour) {
+        // Tur sinematik (tampilan anak): layar bersih tanpa label.
+        if (useAngkasa.getState().tourCinematic) continue;
         // Tur: hanya objek yang disinggahi (dan satelitnya); bidikan lebar menampilkan semua objek utama.
         if (
           tourId
