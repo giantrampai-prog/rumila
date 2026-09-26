@@ -95,7 +95,9 @@ function ItemCard({ id }: { id: string }) {
 function Dock({ onPick }: { onPick: (id: string) => void }) {
   const focus = useRoket((s) => s.focus);
   return (
-    <div className="pointer-events-auto -mx-3 flex gap-2 overflow-x-auto px-3 pb-1 sm:justify-center">
+    <div className="pointer-events-auto -mx-3 overflow-x-auto px-3 pb-1">
+      {/* w-max + mx-auto: di tengah bila muat, bisa digeser penuh (termasuk ujung kiri) bila tidak */}
+      <div className="mx-auto flex w-max gap-2">
       {JELAJAH.map((it) => {
         const on = focus === it.id;
         return (
@@ -122,6 +124,7 @@ function Dock({ onPick }: { onPick: (id: string) => void }) {
           </button>
         );
       })}
+      </div>
     </div>
   );
 }

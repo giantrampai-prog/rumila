@@ -71,7 +71,9 @@ export function RoundBtn({ icon, label, onClick, tone = "white" }: { icon: strin
 function Dock() {
   const st = useAngkasa();
   return (
-    <div className="pointer-events-auto -mx-3 flex gap-2 overflow-x-auto px-3 pb-1 sm:justify-center">
+    <div className="pointer-events-auto -mx-3 overflow-x-auto px-3 pb-1">
+      {/* w-max + mx-auto: di tengah bila muat, bisa digeser penuh (termasuk ujung kiri) bila tidak */}
+      <div className="mx-auto flex w-max gap-2">
       {DOCK.map((id) => {
         const on = st.mode === "planet" && st.selectedId === id;
         return (
@@ -90,6 +92,7 @@ function Dock() {
           </button>
         );
       })}
+      </div>
     </div>
   );
 }

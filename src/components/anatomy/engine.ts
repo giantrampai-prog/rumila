@@ -38,7 +38,7 @@ export class AnatomyEngine {
     this.renderer.localClippingEnabled = true; this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(this.renderer);this.environment=pmrem.fromScene(room,.04);this.scene.environment=this.environment.texture;room.dispose();pmrem.dispose();
     this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
-    this.renderer.setClearColor(0xfaf8f4, 0); this.renderer.toneMapping = THREE.ACESFilmicToneMapping; this.renderer.toneMappingExposure = .95;
+    this.renderer.setClearColor(0xfaf8f4, 0); this.renderer.toneMapping = THREE.ACESFilmicToneMapping; this.renderer.toneMappingExposure = 1.12;
     this.renderer.domElement.setAttribute('aria-label', 'Model anatomi 3D. Gunakan daftar bagian dan tombol sudut pandang sebagai alternatif keyboard.');
     this.renderer.domElement.setAttribute('role', 'img');
     host.appendChild(this.renderer.domElement);
@@ -49,10 +49,12 @@ export class AnatomyEngine {
     this.controls.minDistance = .25; this.controls.maxDistance = 5; this.controls.maxPolarAngle = Math.PI * .93;
     this.controls.addEventListener('start', () => { this.cameraGoal = null; this.bodyFraming = false;this.focusedId=null; });
     this.controls.addEventListener('change', () => this.invalidate());
-    this.scene.add(this.model, this.capGroup, new THREE.HemisphereLight(0xffffff, 0x756D60, .45));
+    this.scene.add(this.model, this.capGroup, new THREE.HemisphereLight(0xffffff, 0x756D60, .75));
     const key = new THREE.DirectionalLight(0xffffff, 1.7); key.position.set(-2, 3, 4);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.bias=-.00015;key.shadow.normalBias=.0001;key.shadow.radius=4;this.studioKey=key;this.scene.add(key,key.target);
     this.pedestal=new THREE.Mesh(new THREE.CylinderGeometry(1,1.03,.045,96),new THREE.MeshStandardMaterial({color:0xe6dfd6,roughness:.9,envMapIntensity:.25}));this.pedestal.receiveShadow=true;this.pedestal.visible=false;this.scene.add(this.pedestal);
-    const fill = new THREE.DirectionalLight(0xffffff, .7); fill.position.set(3, 1.5, -2); this.scene.add(fill);
+    const fill = new THREE.DirectionalLight(0xffffff, .9); fill.position.set(3, 1.5, -2); this.scene.add(fill);
+    // cahaya tepi dari belakang: garis tubuh & organ lebih tegas di atas latar gelap
+    const rim = new THREE.DirectionalLight(0xcfe0ff, 1.1); rim.position.set(0, 2.5, -4); this.scene.add(rim);
     this.marker = new THREE.Mesh(new THREE.SphereGeometry(.003, 14, 10), new THREE.MeshBasicMaterial({ color: 0x318e80 }));
     this.flow = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: 0x318e80, transparent: true, opacity: .65 }));
     this.marker.visible = this.flow.visible = false; this.scene.add(this.marker, this.flow);
