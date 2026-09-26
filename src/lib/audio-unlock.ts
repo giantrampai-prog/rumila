@@ -47,7 +47,7 @@ export function sharedAudio(key: string) {
   return a;
 }
 
-const KEYS = ["voice", "tour", "roket", "roket-clip", "tubuh"];
+const KEYS = ["voice", "tour", "roket", "roket-clip", "tubuh", "fruit"];
 
 /** Buka kunci semua elemen audio bersama. Harus dipanggil di dalam penanganan ketukan pengguna. */
 export function unlockAudio() {

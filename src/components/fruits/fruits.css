@@ -14,3 +14,9 @@
 .fruit-detail-media .fruit-stage:fullscreen{width:100vw;height:100dvh;min-height:100dvh;border-radius:0}
 
 .fruit-detail-media .fruit-stage.is-expanded{position:fixed;inset:0;z-index:9999;width:100vw;height:100dvh;min-height:100dvh;border:0;border-radius:0}
+
+/* Tampilan anak: 3D penuh layar tanpa bingkai, judul, & toolbar bawaan viewer */
+.fruit-kid .fruit-stage{position:absolute;inset:84px 0 190px 0;min-height:0;height:100%;border:0;border-radius:0;background:transparent;box-shadow:none;padding:0}
+.fruit-kid .fruit-stage-heading,.fruit-kid .fruit-stage-bottom{display:none}
+.fruit-kid .fruit-canvas{position:absolute;inset:0;height:100%}
+.fruit-kid .fruit-canvas canvas{display:block;width:100%!important;height:100%!important;touch-action:none}
