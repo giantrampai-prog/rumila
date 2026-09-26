@@ -1,5 +1,7 @@
 {
-  "layers": {"skin":"C99378","bone":"DED4BA","muscle":"8E3B36","organ":"B57868","vessel":"A17C70","nerve":"D9C8A0"},
-  "heart":"873B36", "atrium":"965047", "valve":"DCCFB1", "artery":"B18074", "vein":"8D736A", "coronary":"C2A583",
-  "lung":"C6938D", "brain":"C8B6A3", "liver":"713B32", "kidney":"894839", "stomach":"C49B89", "intestine":"BDA087", "pancreas":"C3AA7D", "eye":"E7E3D7", "iris":"685037", "hair":"3C2B22", "retina":"B99379"
+  "layers": {"skin":"C98E72","bone":"E2D4B4","muscle":"8F2A26","organ":"A8584A","vessel":"A8302B","nerve":"E8D49C"},
+  "heart":"7E2622", "atrium":"8C3129", "valve":"E4D6BC", "artery":"AE2A25", "vein":"4A3A5E", "coronary":"B0302A", "fat":"E6C27A",
+  "lung":"D48A86", "brain":"D2ABA0", "liver":"5E1F1A", "kidney":"6E2620", "spleen":"5A2A3A", "stomach":"D39A86", "intestine":"D9A08A", "colon":"C8927A", "pancreas":"E2B889", "gallbladder":"3F6B3A", "bladder":"D7B4A0", "thyroid":"8E3A34", "gland":"C9A06A",
+  "eye":"F2EEE4", "cornea":"F4F8FA", "lens":"F2E6C4", "iris":"5B3A22", "retina":"C24E36", "hair":"2A1D16",
+  "tooth":"F1E9D6", "gum":"D0776E", "mucosa":"C8686A", "tongue":"C66B6B", "cartilage":"D9DEDA", "ligament":"E9E2CF", "tendon":"E4DCC9", "nail":"E6C7B6", "ossicle":"E8DCC0"
 }

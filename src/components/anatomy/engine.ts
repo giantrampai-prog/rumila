@@ -4,7 +4,9 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { belongsTo, poseAt, visiblePart, type CameraPose, type ExplorerState } from '@/lib/anatomy/state';
-import { tissueColor } from '@/lib/anatomy/materials';
+import { tissueLook } from '@/lib/anatomy/materials';
+import { createTissueMaterial, initTissueQuality, setTissueQuality, setTissueUnit } from './tissue-material';
+import { clusterSimplify, detectQuality, mergeWorldGeometry, pixelRatioFor, type Quality } from './perf';
 import type { Asset, Manifest, Part, Vec3 } from '@/lib/anatomy/types';
 export type LoadStatus = { state: 'loading' | 'ready' | 'error'; progress: number; message?: string };
 export interface EngineEvents { select: (id: string) => void; detach: (id: string, amount: number) => void; status: (id: string, status: LoadStatus) => void; lost: () => void; direction: (name: string) => void }
@@ -25,11 +27,14 @@ export class AnatomyEngine {
   private simTime = 0; private marker: THREE.Mesh; private flow: THREE.Line; private flowPoints: THREE.Vector3[] = [];
   private capGroup = new THREE.Group(); private capResources: THREE.Material[] = [];
   private sectionKey = ''; private directionName = ''; private slowFrames = 0; private dpr: number;
+  // Performa: gambar hanya bila ada perubahan; kualitas menyesuaikan perangkat; tulang digabung + versi jauh.
+  private needsFrames = 3; private quality: Quality = 2; private slowWindow: number[] = [];
+  private boneLod: THREE.LOD | null = null; private boneMat: THREE.MeshPhysicalMaterial | null = null; private boneBatchOn = false;
   readonly metrics = { frames: 0, elapsedMs: 0, drawCalls: 0, triangles: 0, packages: {} as Record<string, { bytes: number; loadMs: number }> };
   constructor(private host: HTMLElement, private labelHost: HTMLElement, private manifest: Manifest, initial: ExplorerState, private events: EngineEvents) {
     this.state = initial;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, stencil: true, powerPreference: 'high-performance' });
-    this.dpr = Math.min(Math.max(window.devicePixelRatio, 1.5), 2); this.renderer.setPixelRatio(this.dpr);
+    this.quality = detectQuality(); initTissueQuality(this.quality); this.dpr = pixelRatioFor(this.quality); this.renderer.setPixelRatio(this.dpr);
     this.renderer.localClippingEnabled = true; this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(this.renderer);this.environment=pmrem.fromScene(room,.04);this.scene.environment=this.environment.texture;room.dispose();pmrem.dispose();
     this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
@@ -37,11 +42,13 @@ export class AnatomyEngine {
     this.renderer.domElement.setAttribute('aria-label', 'Model anatomi 3D. Gunakan daftar bagian dan tombol sudut pandang sebagai alternatif keyboard.');
     this.renderer.domElement.setAttribute('role', 'img');
     host.appendChild(this.renderer.domElement);
+    this.ray.layers.enableAll();
     this.camera.position.set(0, .88, 3.05);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.target.set(0, .89, 0); this.controls.enableDamping = !initial.reducedMotion;
     this.controls.minDistance = .25; this.controls.maxDistance = 5; this.controls.maxPolarAngle = Math.PI * .93;
     this.controls.addEventListener('start', () => { this.cameraGoal = null; this.bodyFraming = false;this.focusedId=null; });
+    this.controls.addEventListener('change', () => this.invalidate());
     this.scene.add(this.model, this.capGroup, new THREE.HemisphereLight(0xffffff, 0x756D60, .45));
     const key = new THREE.DirectionalLight(0xffffff, 1.7); key.position.set(-2, 3, 4);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.bias=-.00015;key.shadow.normalBias=.0001;key.shadow.radius=4;this.studioKey=key;this.scene.add(key,key.target);
     this.pedestal=new THREE.Mesh(new THREE.CylinderGeometry(1,1.03,.045,96),new THREE.MeshStandardMaterial({color:0xe6dfd6,roughness:.9,envMapIntensity:.25}));this.pedestal.receiveShadow=true;this.pedestal.visible=false;this.scene.add(this.pedestal);
@@ -52,28 +59,32 @@ export class AnatomyEngine {
     this.resize = new ResizeObserver(() => {
       const { width, height } = host.getBoundingClientRect();
       if (!width || !height) return;
-      this.camera.aspect = width / height; this.camera.updateProjectionMatrix(); this.renderer.setSize(width, height); if(this.bodyFraming)this.fitBody();else if(this.focusedId)this.focus(this.focusedId);
+      this.camera.aspect = width / height; this.camera.updateProjectionMatrix(); this.renderer.setSize(width, height); if(this.bodyFraming)this.fitBody();else if(this.focusedId)this.focus(this.focusedId); this.invalidate(3);
     }); this.resize.observe(host);
     const el = this.renderer.domElement;
     // Capture ensures OrbitControls never starts during a directed disassembly gesture.
     el.addEventListener('pointerdown', this.down, true); el.addEventListener('pointermove', this.move, true);
     el.addEventListener('pointerup', this.up, true); el.addEventListener('pointercancel', this.cancel, true); el.addEventListener('lostpointercapture', this.cancel);
     el.addEventListener('webglcontextlost', this.contextLost);
+    document.addEventListener('visibilitychange', this.onVisible);
+    if (process.env.NODE_ENV === 'development') (window as unknown as { __anatomy?: AnatomyEngine }).__anatomy = this;
     this.sync(initial); this.raf = requestAnimationFrame(this.render);
   }
+  /** Tab kembali terlihat: isi kanvas bisa dibuang browser, gambar ulang. */
+  private onVisible = () => { if (!document.hidden) this.invalidate(3); };
   private contextLost = (event: Event) => { event.preventDefault(); cancelAnimationFrame(this.raf); this.events.lost(); };
   getCamera(): CameraPose { return { position: this.camera.position.toArray() as Vec3, target: this.controls.target.toArray() as Vec3, minDistance:this.controls.minDistance,maxDistance:this.controls.maxDistance }; }
   restoreCamera(pose: CameraPose) { this.bodyFraming=false;this.focusedId=null;this.setCamera(pose); }
   private setCamera(pose: CameraPose) {
     if(pose.minDistance!==undefined)this.controls.minDistance=pose.minDistance;if(pose.maxDistance!==undefined)this.controls.maxDistance=pose.maxDistance;
-    if (this.state.reducedMotion) { this.camera.position.fromArray(pose.position); this.controls.target.fromArray(pose.target); this.controls.update(); }
+    if (this.state.reducedMotion) { this.camera.position.fromArray(pose.position); this.controls.target.fromArray(pose.target); this.controls.update(); this.invalidate(); }
     else this.cameraGoal = pose;
   }
   private fitBody() {
     const box=new THREE.Box3();for(const p of this.manifest.parts)if(p.layer==='bone'){box.expandByPoint(new THREE.Vector3(...p.bounds.min));box.expandByPoint(new THREE.Vector3(...p.bounds.max));}
     const size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
     const distance=Math.max(size.y,size.x/this.camera.aspect)/2/Math.tan(THREE.MathUtils.degToRad(this.camera.fov)/2)*1.10;
-    this.cameraGoal=null;this.camera.position.set(center.x,center.y,distance);this.controls.target.copy(center);this.controls.update();
+    this.cameraGoal=null;this.camera.position.set(center.x,center.y,distance);this.controls.target.copy(center);this.controls.update();this.invalidate();
   }
   preset(view: 'front' | 'back' | 'left' | 'right') {
     const target = this.controls.target.clone(), distance = this.camera.position.distanceTo(target);
@@ -119,13 +130,19 @@ export class AnatomyEngine {
         for (const name of part.meshNodeNames) gltf.scene.getObjectByName(name)!.traverse(o => { if (o instanceof THREE.Mesh) meshes.push(o); });
         const mats: THREE.MeshStandardMaterial[] = [];
         for (const mesh of meshes) {
-          const mat = new THREE.MeshPhysicalMaterial({color:tissueColor(part),roughness:part.layer==='bone'?.72:part.assetId==='heart'?.63:.60,metalness:0,clearcoat:0,clearcoatRoughness:.55,envMapIntensity:.10,side:THREE.DoubleSide});
+          const mat = createTissueMaterial(tissueLook(part)); // warna & permukaan jaringan realistis
+          const ws = mesh.getWorldScale(new THREE.Vector3()); setTissueUnit(mat, (ws.x + ws.y + ws.z) / 3);
           mesh.castShadow=true;mesh.receiveShadow=true;
           mesh.material = mat; mesh.userData.partId = part.id; mats.push(mat);
         }
         this.nodes.set(part.id, { part, meshes, rests: meshes.map(m => m.position.clone()), materials: mats });
       }
-      this.roots.set(asset.id, gltf.scene); this.model.add(gltf.scene); this.metrics.packages[key] = { bytes: buffer.byteLength, loadMs: Math.round(performance.now() - started) };
+      // Siapkan shader sebelum tampil (tanpa patah-patah saat pertama diputar/dipilih).
+      // batas 4 dtk: beberapa browser menunda kompilasi paralel saat tab tidak aktif
+      try { await Promise.race([this.renderer.compileAsync(gltf.scene, this.camera, this.scene), new Promise(r => setTimeout(r, 4000))]); } catch { /* lanjut: dikompilasi saat render */ }
+      if (this.disposed) { this.disposeObject(gltf.scene); return; }
+      this.roots.set(asset.id, gltf.scene); this.model.add(gltf.scene);
+      if (asset.id === 'bone' && !detail) this.buildBoneBatch(); this.metrics.packages[key] = { bytes: buffer.byteLength, loadMs: Math.round(performance.now() - started) };
       this.events.status(key, { state: 'ready', progress: 100 }); this.sync(this.state);
       if (this.pendingFocus && this.nodes.has(this.pendingFocus)) { const id = this.pendingFocus; this.pendingFocus = null; this.focus(id); }
     } catch (e) {
@@ -138,6 +155,7 @@ export class AnatomyEngine {
     const needed = new Set(this.manifest.parts.filter(p => visiblePart(p, state, this.manifest.parts) && (!this.manifest.assets.find(a=>a.id===p.assetId)?.deferred || state.region===p.regionId || state.selectedId===p.id || !!state.isolation&&belongsTo(p,state.isolation,this.manifest.parts)) && (p.assetId !== 'reproductive' || state.selectedId === p.id || state.isolation === p.id)).map(p => p.assetId));
     if (state.selectedId) { const p = this.manifest.parts.find(p => p.id === state.selectedId); if (p) needed.add(p.assetId); }
     needed.forEach(id => this.load(this.manifest.assets.find(a => a.id === id)!));
+    let boneVis: boolean | null = null, boneUniform = true;
     for (const [id, node] of this.nodes) {
       const visible = visiblePart(node.part, state, this.manifest.parts);
       const inRegion = state.region !== 'all' && node.part.regionId === state.region;
@@ -151,6 +169,7 @@ export class AnatomyEngine {
         const highlighted = state.selectedId && belongsTo(node.part, state.selectedId, this.manifest.parts);
         mat.emissive.set(highlighted ? 0xffffff : 0x000000); mat.emissiveIntensity = highlighted ? .012 : 0;
         mat.clippingPlanes = state.section ? [this.plane] : []; mat.needsUpdate = true;
+        if (node.part.assetId === 'bone') { if (boneVis === null) boneVis = visible; else if (boneVis !== visible) boneUniform = false; if (amount > 0) boneUniform = false; } // sorotan emissive 1,2% tak kasatmata: tetap boleh digabung
       });
     }
     this.model.updateMatrixWorld(true);
@@ -160,10 +179,11 @@ export class AnatomyEngine {
       else { this.controls.minDistance = .25; this.controls.maxDistance = 5; this.fitBody(); }
     }
     this.updateStudio();this.updateSection(); this.updateLabels(); this.updateFlow();
+    this.updateBoneBatch(boneUniform && boneVis === true); this.invalidate(3);
   }
   private updateStudio() {
     this.pedestal.visible=!!this.state.isolation;
-    this.renderer.shadowMap.enabled=!!this.state.isolation;
+    this.renderer.shadowMap.enabled=!!this.state.isolation&&this.quality===2;
     if(!this.state.isolation)return;
     const box=new THREE.Box3();
     for(const n of this.nodes.values())if(belongsTo(n.part,this.state.isolation,this.manifest.parts))for(const mesh of n.meshes)if(mesh.visible)box.expandByObject(mesh);
@@ -253,23 +273,65 @@ export class AnatomyEngine {
     this.flowPoints=ids.flatMap(id=>{const p=this.manifest.parts.find(p=>p.id===id);return p?[new THREE.Vector3(...p.labelAnchor)]:[];});
     this.flow.geometry.dispose();this.flow.geometry=new THREE.BufferGeometry().setFromPoints(this.flowPoints);
   }
+  /** Minta beberapa frame digambar (kamera/state/aset berubah). */
+  invalidate(frames = 2) { this.needsFrames = Math.max(this.needsFrames, frames); }
   private render = (time: number) => {
     if(this.disposed)return;this.raf=requestAnimationFrame(this.render);
     if(document.hidden){this.last=time;return;}
     const actualDt=this.last?time-this.last:16;const dt=Math.min(100,actualDt);this.last=time;
+    const animating=!!this.cameraGoal||(this.state.playing&&!this.state.reducedMotion&&this.flowPoints.length>1)||!!this.drag;
     if(this.cameraGoal){const a=this.state.reducedMotion?1:Math.min(1,dt/110);this.camera.position.lerp(new THREE.Vector3(...this.cameraGoal.position),a);this.controls.target.lerp(new THREE.Vector3(...this.cameraGoal.target),a);if(this.camera.position.distanceTo(new THREE.Vector3(...this.cameraGoal.position))<.0001)this.cameraGoal=null;}
-    this.controls.update();
+    const moved=this.controls.update();
+    if(moved)this.invalidate(2);
+    // Diam: tidak menggambar apa pun (GPU & baterai istirahat).
+    if(!animating&&this.needsFrames<=0){this.slowWindow.length=0;return;}
+    if(this.needsFrames>0)this.needsFrames--;
     if(this.state.playing&&!this.state.reducedMotion&&this.flowPoints.length>1){this.simTime+=dt/1000*this.state.speed;const t=(this.simTime*.8)%(this.flowPoints.length-1),i=Math.floor(t);this.marker.position.copy(this.flowPoints[i]).lerp(this.flowPoints[i+1],t-i);}
     this.renderer.render(this.scene,this.camera);this.frame++;
-    if(this.frame%6===0)this.positionLabels();
+    if(this.frame%4===0||this.needsFrames===0)this.positionLabels();
     if(this.frame%30===0){const angle=this.controls.getAzimuthalAngle(),name=Math.abs(angle)<.7?'Depan':Math.abs(angle)>2.4?'Belakang':angle>0?'Sisi kiri tubuh':'Sisi kanan tubuh';if(name!==this.directionName){this.directionName=name;this.events.direction(name);}}
-    if(this.frame>30){this.metrics.frames++;this.metrics.elapsedMs+=actualDt;this.metrics.drawCalls=this.renderer.info.render.calls;this.metrics.triangles=this.renderer.info.render.triangles;if(dt>35)this.slowFrames++;else this.slowFrames=Math.max(0,this.slowFrames-1);if(this.slowFrames>180&&this.dpr>1.5){this.dpr=1.5;this.renderer.setPixelRatio(1.5);this.slowFrames=0;}}
+    if(this.frame>30){this.metrics.frames++;this.metrics.elapsedMs+=actualDt;this.metrics.drawCalls=this.renderer.info.render.calls;this.metrics.triangles=this.renderer.info.render.triangles;this.adapt(actualDt);}
     this.host.dataset.metrics=JSON.stringify({...this.metrics,pixelRatio:this.dpr});
   };
+  /** Turunkan kualitas otomatis bila rata-rata frame saat bergerak > 30 ms (di bawah ±33 fps). */
+  private adapt(frameMs: number) {
+    if (frameMs > 250) { this.slowWindow.length = 0; return; } // jeda (tab/idle), bukan beban render
+    this.slowWindow.push(frameMs); if (this.slowWindow.length < 90) return;
+    const avg = this.slowWindow.reduce((a, b) => a + b, 0) / this.slowWindow.length; this.slowWindow.length = 0;
+    if (avg > 30 && this.quality > 0) this.setQuality((this.quality - 1) as Quality);
+  }
+  private setQuality(q: Quality) {
+    this.quality = q; this.dpr = pixelRatioFor(q); this.renderer.setPixelRatio(this.dpr);
+    const all: THREE.Material[] = [...this.nodes.values()].flatMap(n => n.materials); if (this.boneMat) all.push(this.boneMat);
+    setTissueQuality(q, all); this.updateStudio(); this.invalidate(3);
+  }
+  /** Gabungkan 200 tulang jadi satu draw call (+ versi sederhana untuk tampilan jauh). */
+  private buildBoneBatch() {
+    const bones = [...this.nodes.values()].filter(n => n.part.assetId === 'bone');
+    if (!bones.length || this.boneLod) return;
+    const full = mergeWorldGeometry(bones.flatMap(n => n.meshes));
+    const far = clusterSimplify(full, .006);
+    const look = tissueLook(bones[0].part);
+    const mat = createTissueMaterial(look); setTissueUnit(mat, 1); this.boneMat = mat;
+    const near = new THREE.Mesh(full, mat), low = new THREE.Mesh(far, mat);
+    for (const m of [near, low]) { m.castShadow = true; m.receiveShadow = true; }
+    const lod = new THREE.LOD(); lod.addLevel(near, 0); lod.addLevel(low, 1.9); lod.visible = false;
+    this.boneLod = lod; this.model.add(lod);
+    void this.renderer.compileAsync(lod, this.camera, this.scene).catch(() => {});
+  }
+  /** Pakai tulang gabungan bila semua tulang tampil seragam (tidak dipilih/dibongkar/disembunyikan sebagian). */
+  private updateBoneBatch(uniform: boolean) {
+    if (!this.boneLod || !this.boneMat) return;
+    const on = uniform; this.boneBatchOn = on; this.boneLod.visible = on;
+    const layer = this.state.layers.bone, alpha = layer.opacity;
+    const m = this.boneMat; m.opacity = alpha; m.transparent = alpha < .99; m.depthWrite = alpha >= .45;
+    m.clippingPlanes = this.state.section ? [this.plane] : []; m.needsUpdate = true;
+    for (const n of this.nodes.values()) if (n.part.assetId === 'bone') for (const mesh of n.meshes) mesh.layers.set(on ? 1 : 0);
+  }
   private disposeObject(root: THREE.Object3D) {const geometry=new Set<THREE.BufferGeometry>(),materials=new Set<THREE.Material>();root.traverse(o=>{if(o instanceof THREE.Mesh){geometry.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});geometry.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}
   destroy() {
     this.disposed=true;cancelAnimationFrame(this.raf);this.loads.forEach(c=>c.abort());this.resize.disconnect();this.controls.dispose();
-    const el=this.renderer.domElement;el.removeEventListener('pointerdown',this.down,true);el.removeEventListener('pointermove',this.move,true);el.removeEventListener('pointerup',this.up,true);el.removeEventListener('pointercancel',this.cancel,true);el.removeEventListener('lostpointercapture',this.cancel);el.removeEventListener('webglcontextlost',this.contextLost);
+    const el=this.renderer.domElement;el.removeEventListener('pointerdown',this.down,true);el.removeEventListener('pointermove',this.move,true);el.removeEventListener('pointerup',this.up,true);el.removeEventListener('pointercancel',this.cancel,true);el.removeEventListener('lostpointercapture',this.cancel);el.removeEventListener('webglcontextlost',this.contextLost);document.removeEventListener('visibilitychange',this.onVisible);
     this.disposeObject(this.scene);this.flow.geometry.dispose();(this.flow.material as THREE.Material).dispose();this.environment.dispose();this.renderer.dispose();el.remove();this.labels.forEach(l=>l.remove());this.labels.clear();
   }
 }

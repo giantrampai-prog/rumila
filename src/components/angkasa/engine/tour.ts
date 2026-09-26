@@ -1,10 +1,18 @@
 // Pengendali "Tur terbang" (POV penjelajah) di scene tata surya.
 // Fase: terbang (kamera menghadap arah gerak, lalu berbelok ke tujuan) → singgah (melayang pelan mengitari objek
 // sambil teks edukatif berganti) → persinggahan berikutnya. Input pengguna menjeda tur dan mengembalikan kontrol kamera.
+// Bila ada narasi rekaman (satu file untuk seluruh tur), audio menjadi jam utama: pindah persinggahan & ganti kalimat
+// mengikuti posisi audio; tanpa rekaman, lama singgah mengikuti waktu baca teks.
 
 import * as THREE from "three";
 import { useAngkasa } from "@/lib/angkasa/state";
 import { TOUR, dwellSeconds, lineAt } from "@/lib/angkasa/tour";
+import {
+  lineAtTime,
+  partFor,
+  stopAt,
+  type TourAudioPart,
+} from "@/lib/angkasa/tourVoice";
 import type { Body } from "./bodies";
 import type { EngineCtx } from "./core";
 
@@ -37,6 +45,17 @@ export class TourController {
   private tmp = new THREE.Vector3();
   /** geser titik pandang ke bawah agar objek tampil di atas teks keterangan */
   private lift = 0;
+  /* Narasi rekaman (satu file) */
+  private part: TourAudioPart | null = null;
+  private failed = new Set<string>();
+  /** lompatan persinggahan dari pengguna: posisikan audio ke awal narasinya */
+  private forceSeek = false;
+  private audio: HTMLAudioElement | null = null;
+  private playRequested = false;
+  private voiceWait = 0;
+  private pendingSeek: number | null = null;
+  /** true = perpindahan persinggahan berasal dari audio/lanjut-jeda (jangan lompatkan audio) */
+  private followAudio = false;
 
   constructor(
     private host: Host,
@@ -142,6 +161,9 @@ export class TourController {
     this.orbitAngle = Math.atan2(rel.z, rel.x);
     this.lift = radius * (wide ? 0.16 : 0.2);
     this.lastLine = -1;
+    // Lompat ke persinggahan (tombol/rute): posisikan audio ke awal narasi persinggahan itu.
+    if (!this.followAudio) this.forceSeek = true;
+    this.followAudio = false;
     if (this.phase === "dwell") this.placeDwell(0);
   }
 
@@ -150,8 +172,13 @@ export class TourController {
     this.playing = p;
     // Saat dijeda, kontrol kamera diserahkan ke pengguna; saat lanjut, terbang lagi dari posisi sekarang.
     this.ctx.controls.enabled = !p;
+    if (!p) {
+      this.audio?.pause();
+      this.playRequested = false;
+    }
     if (p && !was && this.index >= 0) {
       const keepDwell = this.phase === "dwell" ? this.dwellT : 0;
+      this.followAudio = true; // lanjut dari jeda: audio meneruskan posisinya
       this.go(this.index);
       if (this.phase === "dwell") this.dwellT = keepDwell;
     }
@@ -175,6 +202,7 @@ export class TourController {
 
   update(dt: number) {
     if (this.index < 0 || !this.playing) return;
+    if (this.syncAudio(dt)) return; // audio memindahkan persinggahan (go() sudah dipanggil)
     const stop = TOUR[this.index];
     const cam = this.host.camera;
     if (this.phase === "travel" && this.curve) {
@@ -201,6 +229,7 @@ export class TourController {
     if (this.phase === "dwell") {
       this.dwellT += dt;
       this.placeDwell(dt);
+      if (partFor(this.index, this.failed)) return; // kalimat & perpindahan diatur audio
       const line = lineAt(stop, this.dwellT);
       if (line !== this.lastLine) {
         this.lastLine = line;
@@ -218,7 +247,97 @@ export class TourController {
     }
   }
 
+  private getAudio() {
+    if (!this.audio) {
+      this.audio = new Audio();
+      this.audio.preload = "auto";
+      this.audio.onerror = () => this.dropPart();
+    }
+    return this.audio;
+  }
+
+  /** Bagian rekaman gagal dimuat/diblokir: persinggahannya memakai waktu baca teks. */
+  private dropPart() {
+    if (this.part) this.failed.add(this.part.src);
+    this.part = null;
+    this.audio?.pause();
+    this.dwellT = 0;
+  }
+
+  /** Jalankan audio bagian yang mencakup persinggahan aktif & ikuti posisinya. true bila persinggahan berpindah. */
+  private syncAudio(dt: number) {
+    const part = partFor(this.index, this.failed);
+    const a = this.getAudio();
+    if (!part) {
+      if (!a.paused) a.pause();
+      this.part = null;
+      return false;
+    }
+    const k = this.index - part.first;
+    if (part !== this.part) {
+      // pindah bagian: muat file & mulai dari narasi persinggahan ini
+      this.part = part;
+      a.src = part.src;
+      this.pendingSeek = part.cues[k] ?? 0;
+      this.playRequested = false;
+      this.voiceWait = 0;
+      this.forceSeek = false;
+    } else if (this.forceSeek) {
+      this.pendingSeek = part.cues[k] ?? 0;
+      this.forceSeek = false;
+    }
+    a.muted = !useAngkasa.getState().tourNarration; // "Narasi" mati = bisu, waktunya tetap mengikuti rekaman
+    if (a.readyState >= 1 && this.pendingSeek !== null) {
+      a.currentTime = this.pendingSeek;
+      this.pendingSeek = null;
+    }
+    if (a.paused && !a.ended && !this.playRequested) {
+      this.playRequested = true;
+      a.play().catch(() => this.dropPart());
+    }
+    if (a.readyState < 1 || !Number.isFinite(a.duration)) {
+      this.voiceWait += dt;
+      if (this.voiceWait > 6) this.dropPart();
+      return false;
+    }
+    const st = useAngkasa.getState();
+    if (a.ended) {
+      // narasi bagian ini habis: lanjut ke persinggahan berikutnya (bagian lain atau waktu baca teks)
+      if (this.index < TOUR.length - 1) {
+        this.followAudio = true;
+        this.playRequested = false;
+        st.set({ tourIndex: this.index + 1, tourLine: 0 });
+        return true;
+      }
+      this.phase = "idle";
+      st.set({
+        tourPlaying: false,
+        tourLine: TOUR[this.index].lines.length - 1,
+      });
+      return false;
+    }
+    const t = a.currentTime;
+    const at = part.first + stopAt(part.cues, t);
+    if (at > this.index) {
+      this.followAudio = true;
+      st.set({ tourIndex: at, tourLine: 0 });
+      return true;
+    }
+    const line = lineAtTime(part, TOUR[this.index].lines, k, t, a.duration);
+    if (line !== this.lastLine) {
+      this.lastLine = line;
+      st.set({ tourLine: line });
+    }
+    return false;
+  }
+
   dispose() {
+    if (this.audio) {
+      this.audio.pause();
+      this.audio.removeAttribute("src");
+      this.audio.load();
+      this.audio = null;
+    }
     const el = this.ctx.renderer.domElement;
     el.removeEventListener("pointerdown", this.onUserInput);
     el.removeEventListener("wheel", this.onUserInput);

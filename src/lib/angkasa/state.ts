@@ -197,7 +197,7 @@ export const useAngkasa = create<AngkasaState>()((set, get) => ({
   tourIndex: 0,
   tourPlaying: false,
   tourLine: 0,
-  tourNarration: false,
+  tourNarration: true,
   frameInset: [0, 0],
   startTour: (from = 0) => {
     const s = get();

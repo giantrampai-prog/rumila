@@ -33,10 +33,11 @@
     "**/*.tsx",
     ".next-anatomy-build/types/**/*.ts",
     ".next-anatomy-qa/types/**/*.ts",
+    ".next-fruits-build/types/**/*.ts",
     ".next-prod/types/**/*.ts",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    ".next-fruits-build/types/**/*.ts"
+    ".next-3000/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

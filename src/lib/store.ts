@@ -3,6 +3,7 @@
 import { create } from "zustand";
 import { useEffect, useState } from "react";
 import { persist } from "zustand/middleware";
+import { uuid } from "./uuid";
 import { ALL_PERMS, ALL_TOOLS, KID_PRESET, type ColorKey, type PermKey } from "./catalog";
 
 // Data lokal (fase 1). Bentuknya mengikuti usulan tabel di README:
@@ -115,7 +116,7 @@ export const useRumila = create<State>()(
       signOut: () => set({ signedIn: false }),
       switchMember: (id) => set({ meId: id }),
       addMember: (name, c) => {
-        const id = crypto.randomUUID(); // UUID: sama dengan id baris di Supabase
+        const id = uuid(); // UUID: sama dengan id baris di Supabase
         set((s) => ({ members: [...s.members, { id, name, c, admin: false, perms: KID_PRESET }] }));
         return id;
       },
@@ -143,13 +144,13 @@ export const useRumila = create<State>()(
         }),
       logOpen: (toolId) => {
         if (!ALL_TOOLS.some((t) => t.id === toolId)) return;
-        const a: Activity = { id: crypto.randomUUID(), memberId: get().meId, toolId, at: Date.now(), durationSec: 0 };
+        const a: Activity = { id: uuid(), memberId: get().meId, toolId, at: Date.now(), durationSec: 0 };
         set((s) => ({ activity: [...s.activity, a] }));
       },
       beginAnatomySession: (memberId) => {
         const s = get(), member = s.members.find(m => m.id === memberId);
         if (!s.signedIn || s.meId !== memberId || !can(member, "edukasi")) return null;
-        const id = crypto.randomUUID();
+        const id = uuid();
         set(s => ({ activity: [...s.activity, { id, memberId, toolId: "edukasi6", at: Date.now(), durationSec: 0, event: "session" }] }));
         return id;
       },
@@ -163,13 +164,13 @@ export const useRumila = create<State>()(
         if (!s.signedIn || s.meId !== memberId || !can(member, "edukasi")) return;
         const event = exercise ? "exercise_complete" as const : "material_complete" as const;
         if (s.activity.some(a => a.memberId === memberId && a.toolId === "edukasi6" && a.event === event && a.partId === partId)) return;
-        set(s => ({ activity: [...s.activity, { id: crypto.randomUUID(), memberId, toolId: "edukasi6", at: Date.now(), durationSec: 0, event, partId }] }));
+        set(s => ({ activity: [...s.activity, { id: uuid(), memberId, toolId: "edukasi6", at: Date.now(), durationSec: 0, event, partId }] }));
       },
       beginToolSession: (memberId, toolId, perm) => {
         const s = get(),
           member = s.members.find((m) => m.id === memberId);
         if (!s.signedIn || s.meId !== memberId || !can(member, perm)) return null;
-        const id = crypto.randomUUID();
+        const id = uuid();
         set((st) => ({ activity: [...st.activity, { id, memberId, toolId, at: Date.now(), durationSec: 0, event: "session" }] }));
         return id;
       },
@@ -188,7 +189,7 @@ export const useRumila = create<State>()(
         const event = exercise ? ("exercise_complete" as const) : ("material_complete" as const);
         if (s.activity.some((a) => a.memberId === memberId && a.toolId === toolId && a.event === event && a.partId === itemId)) return;
         set((st) => ({
-          activity: [...st.activity, { id: crypto.randomUUID(), memberId, toolId, at: Date.now(), durationSec: 0, event, partId: itemId }],
+          activity: [...st.activity, { id: uuid(), memberId, toolId, at: Date.now(), durationSec: 0, event, partId: itemId }],
         }));
       },
       resetDemo: () => set({ ...initial(), signedIn: get().signedIn, theme: get().theme, meId: "m1" }),

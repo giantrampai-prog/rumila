@@ -60,3 +60,4 @@ next-env.d.ts
 
 # Isolated fruit module production check
 /.next-fruits-build/
+/.next-3000/

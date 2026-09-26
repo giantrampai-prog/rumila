@@ -7,6 +7,7 @@ import { Icon } from "@/components/ui";
 import { markDone } from "@/lib/angkasa/progress";
 import { useAngkasa } from "@/lib/angkasa/state";
 import { TOUR } from "@/lib/angkasa/tour";
+import { TOUR_AUDIO } from "@/lib/angkasa/tourVoice";
 import { endTour, toggleFull, useIsFull } from "../fullscreen";
 import { Btn, Note, Pill } from "../ui";
 
@@ -19,7 +20,9 @@ function useNarration() {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
     if (!tourNarration || !tourPlaying) return;
-    const text = TOUR[tourIndex]?.lines[tourLine];
+    const stop = TOUR[tourIndex];
+    if (!stop || TOUR_AUDIO.length) return; // ada rekaman: suara sintesis tidak dicampur dengan rekaman
+    const text = stop.lines[tourLine];
     if (!text) return;
     const u = new SpeechSynthesisUtterance(text);
     u.lang = "id-ID";

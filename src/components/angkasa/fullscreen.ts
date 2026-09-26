@@ -6,6 +6,7 @@
 
 import { useEffect, useState } from "react";
 import { useAngkasa } from "@/lib/angkasa/state";
+import { stopVoice } from "@/lib/angkasa/voice";
 
 let root: HTMLElement | null = null;
 let pseudo = false;
@@ -66,6 +67,7 @@ export function useIsFull() {
 
 /** Mulai tur terbang dalam layar penuh. */
 export function beginTour(from = 0) {
+  stopVoice();
   useAngkasa.getState().startTour(from);
   void enterFull();
 }
