@@ -448,7 +448,7 @@ export function LangkahGame() {
             </button>
           ))}
         </div>
-        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${level.blocks.length}, minmax(0, 1fr))` }}>
+        <div className="grid justify-center gap-2" style={{ gridTemplateColumns: `repeat(${level.blocks.length}, minmax(0, 150px))` }}>
           {level.blocks.map((c) => (
             <button
               key={c}
