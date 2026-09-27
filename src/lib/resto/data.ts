@@ -217,3 +217,21 @@ export const GRANT = 3000;
 export const INTERVAL_MIN = 30;
 export const INTERVALS = 12;
 export const REAL_SECONDS_PER_MIN = 1;
+
+/** Tahap pembangunan (dipakai papan jadwal di lokasi proyek & panel Gambar kerja). */
+export const BUILD_STAGES = ['Galian & pondasi', 'Dinding bata', 'Rangka atap & listrik', 'Finishing & cat'];
+export const BUILD_STAGE_NOTE = [
+  'Tanah digali, besi tulangan dipasang, lalu dicor beton supaya bangunan kuat.',
+  'Tukang menyusun bata baris demi baris sampai setinggi 3 meter.',
+  'Rangka atap kayu dipasang, kabel listrik & pipa air ditarik.',
+  'Dinding diplester & dicat, lantai kayu, noren, lampion & papan nama dipasang.',
+];
+export function stageAt(k: number) {
+  return Math.min(BUILD_STAGES.length - 1, Math.floor(k * BUILD_STAGES.length));
+}
+/** Tahap yang dikerjakan pada hari ke-j (1…days) dari kontrak. */
+export function stagesOnDay(j: number, days: number) {
+  const a = Math.floor(((j - 1) / days) * BUILD_STAGES.length);
+  const b = Math.max(a, Math.ceil((j / days) * BUILD_STAGES.length) - 1);
+  return BUILD_STAGES.slice(a, b + 1);
+}

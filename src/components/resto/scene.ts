@@ -6,6 +6,9 @@
 import * as T from 'three';
 import { MENUS } from '@/lib/resto/data';
 import type { DayRun, RestoState } from '@/lib/resto/sim';
+import { sfx } from '@/lib/sfx';
+import { City } from './city';
+import { buildSite, type Site } from './site';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
@@ -74,7 +77,7 @@ interface Actor {
 export class RestoScene {
   private renderer: T.WebGLRenderer;
   private scene = new T.Scene();
-  private camera = new T.PerspectiveCamera(40, 1, 0.1, 200);
+  private camera = new T.PerspectiveCamera(40, 1, 0.1, 260);
   private ro: ResizeObserver;
   private raf = 0;
   private last = performance.now();
@@ -96,6 +99,10 @@ export class RestoScene {
   private textures: T.Texture[] = [];
   private lanterns: T.Object3D[] = [];
   private greet: T.Texture;
+  private city: City | null = null;
+  private cityLoc = '';
+  private site: Site | null = null;
+  private lastK = -1;
 
   // tata letak lokal (meter game): lebar 10 (x −5…5), dalam 8 (z −4…4); pintu di depan (+z)
   private tablePos: T.Vector3[] = [];
@@ -119,15 +126,17 @@ export class RestoScene {
     this.renderer.domElement.style.touchAction = 'none';
     host.appendChild(this.renderer.domElement);
     this.scene.background = new T.Color('#bfe6ff');
-    this.scene.fog = new T.Fog('#cfeaff', 30, 70);
+    this.scene.fog = new T.Fog('#cfeaff', 45, 110);
     const hemi = new T.HemisphereLight('#fff6e8', '#7a9a6a', 1.1);
     const sun = new T.DirectionalLight('#fff1d8', 2.2);
     sun.position.set(8, 16, 10);
     sun.castShadow = true;
     sun.shadow.mapSize.set(1024, 1024);
     const sc = sun.shadow.camera as T.OrthographicCamera;
-    sc.left = sc.bottom = -14;
-    sc.right = sc.top = 14;
+    sc.left = sc.bottom = -24;
+    sc.right = sc.top = 24;
+    sc.far = 80;
+    sun.shadow.mapSize.set(2048, 2048);
     this.scene.add(hemi, sun, this.shell, this.dyn, this.people);
     this.greet = canvasTex(256, 96, (g) => {
       g.fillStyle = '#ffffff';
@@ -161,7 +170,7 @@ export class RestoScene {
         p.y = e.clientY;
         const [a, b] = [...this.pointers.values()];
         const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (this.pinch) this.dist = T.MathUtils.clamp(this.dist * (this.pinch / d), 8, 28);
+        if (this.pinch) this.dist = T.MathUtils.clamp(this.dist * (this.pinch / d), 8, 40);
         this.pinch = d;
         return;
       }
@@ -183,7 +192,7 @@ export class RestoScene {
       'wheel',
       (e) => {
         e.preventDefault();
-        this.dist = T.MathUtils.clamp(this.dist * Math.exp(e.deltaY * 0.001), 8, 28);
+        this.dist = T.MathUtils.clamp(this.dist * Math.exp(e.deltaY * 0.001), 8, 40);
       },
       { passive: false },
     );
@@ -193,55 +202,17 @@ export class RestoScene {
     this.raf = requestAnimationFrame(this.loop);
   }
 
-  /* ---------------- dunia luar: jalan, trotoar, pohon sakura ---------------- */
+  /* ---------------- dunia luar: kota padat di sekitar lahan (lihat city.ts) ---------------- */
 
-  private buildWorld() {
-    const ground = new T.Mesh(new T.PlaneGeometry(80, 80), std('#8fc46a', 1));
-    ground.rotation.x = -Math.PI / 2;
-    ground.receiveShadow = true;
-    this.scene.add(ground);
-    const road = new T.Mesh(new T.PlaneGeometry(80, 6), std('#5b5e66', 0.95));
-    road.rotation.x = -Math.PI / 2;
-    road.position.set(0, 0.01, 10);
-    this.scene.add(road);
-    for (let x = -38; x < 40; x += 4) {
-      const line = new T.Mesh(new T.PlaneGeometry(2, 0.15), std('#f5f1e6', 0.8));
-      line.rotation.x = -Math.PI / 2;
-      line.position.set(x, 0.02, 10);
-      this.scene.add(line);
+  private buildWorld(loc = 'kantor') {
+    if (this.city && this.cityLoc === loc) return;
+    if (this.city) {
+      this.scene.remove(this.city.group);
+      this.city.dispose();
     }
-    const walk = new T.Mesh(new T.BoxGeometry(80, 0.12, 2.4), std('#d8d0c2', 0.9));
-    walk.position.set(0, 0.06, 6);
-    walk.receiveShadow = true;
-    this.scene.add(walk);
-    // pohon sakura di trotoar
-    const trunkM = std('#6a4a3a', 0.9),
-      pink = std('#ffb7d0', 0.8),
-      pink2 = std('#ff9ec2', 0.8);
-    for (const x of [-12, -8, 8, 12, -16, 16]) {
-      const g = new T.Group();
-      const tr = new T.Mesh(new T.CylinderGeometry(0.15, 0.22, 2.2, 8), trunkM);
-      tr.position.y = 1.1;
-      g.add(tr);
-      for (let k = 0; k < 6; k++) {
-        const b = new T.Mesh(new T.IcosahedronGeometry(0.9 + Math.random() * 0.4, 1), k % 2 ? pink : pink2);
-        b.position.set((Math.random() - 0.5) * 1.6, 2.6 + Math.random() * 0.8, (Math.random() - 0.5) * 1.6);
-        b.castShadow = true;
-        g.add(b);
-      }
-      g.position.set(x, 0.12, 6.8);
-      this.scene.add(g);
-    }
-    // toko tetangga sederhana
-    for (const [x, c] of [
-      [-13, '#e8d6b8'],
-      [13, '#c8dce8'],
-    ] as const) {
-      const b = new T.Mesh(new T.BoxGeometry(6, 4.5, 7), std(c, 0.9));
-      b.position.set(x, 2.25, -1);
-      b.castShadow = b.receiveShadow = true;
-      this.scene.add(b);
-    }
+    this.city = new City(loc);
+    this.cityLoc = loc;
+    this.scene.add(this.city.group);
   }
 
   /* ---------------- restoran (dibangun ulang saat keadaan berubah) ---------------- */
@@ -255,6 +226,7 @@ export class RestoScene {
       g.clear();
     }
     this.lanterns = [];
+    this.site = null;
     if (!s.location) return;
     const W = 5,
       D = 4,
@@ -276,22 +248,25 @@ export class RestoScene {
     floorTex.wrapS = floorTex.wrapT = T.RepeatWrapping;
     floorTex.repeat.set(3, 3);
     this.textures.push(floorTex);
-    const floor = new T.Mesh(new T.BoxGeometry(W * 2, 0.06, D * 2), std('#ffffff', 0.8, { map: floorTex }));
+    // selama dibangun lantai masih cor beton; lantai kayu & ubin dapur dipasang saat finishing
+    const floor = new T.Mesh(new T.BoxGeometry(W * 2, 0.06, D * 2), s.handed ? std('#ffffff', 0.8, { map: floorTex }) : std('#a9a59c', 0.95));
     floor.position.y = 0.23;
     floor.receiveShadow = true;
     this.shell.add(floor);
     // dapur berlantai ubin
     const tile = new T.Mesh(new T.BoxGeometry(W * 2, 0.065, 2.4), std('#e8e4dc', 0.5));
     tile.position.set(0, 0.235, -D + 1.2);
-    this.shell.add(tile);
+    if (s.handed) this.shell.add(tile);
     // dinding (naik sesuai kemajuan pembangunan) — belakang & samping; depan setengah dengan pintu & jendela
-    const wallM = std('#f4ecdc', 0.9);
+    // selama dibangun dinding masih bata merah belum diplester; setelah serah terima diplester krem
+    const wallM = s.handed ? std('#f4ecdc', 0.9) : this.brickMat();
     const woodM = std('#5a3a24', 0.7);
     const wall = (w: number, d: number, x: number, z: number) => {
       const m = new T.Mesh(new T.BoxGeometry(w, H, d).translate(0, H / 2, 0), wallM);
       m.position.set(x, 0.2, z);
       m.castShadow = m.receiveShadow = true;
       m.userData.wall = 'grow';
+      m.scale.y = Math.max(0.02, this.buildK);
       this.shell.add(m);
     };
     wall(W * 2, 0.2, 0, -D);
@@ -301,6 +276,7 @@ export class RestoScene {
       const m = new T.Mesh(new T.BoxGeometry(w, 1.0, 0.2).translate(0, 0.5, 0), wallM);
       m.position.set(x, 0.2, D);
       m.userData.wall = 'grow';
+      m.scale.y = Math.max(0.02, this.buildK);
       this.shell.add(m);
     };
     front(3.6, -3.2);
@@ -312,6 +288,7 @@ export class RestoScene {
         p.position.set(x, 0.2, z);
         p.castShadow = true;
         p.userData.wall = 'grow';
+        p.scale.y = Math.max(0.02, this.buildK);
         this.shell.add(p);
       }
     const beam = new T.Mesh(new T.BoxGeometry(W * 2 + 0.4, 0.25, 0.25), woodM);
@@ -367,15 +344,10 @@ export class RestoScene {
       this.shell.add(l);
       this.lanterns.push(l);
     }
-    // perancah saat masih dibangun
+    // lokasi proyek: pagar seng, papan proyek, perancah, crane, molen, tumpukan bahan, tukang
     if (!s.handed) {
-      const pole = std('#c9a24a', 0.6, { metalness: 0.4 });
-      for (let x = -W; x <= W; x += 2.5)
-        for (const z of [-D - 0.6, D + 0.6]) {
-          const p = new T.Mesh(new T.CylinderGeometry(0.05, 0.05, H + 1, 6), pole);
-          p.position.set(x, (H + 1) / 2, z);
-          this.shell.add(p);
-        }
+      this.site = buildSite(s, this.textures);
+      this.shell.add(this.site.group);
       return;
     }
 
@@ -464,23 +436,52 @@ export class RestoScene {
     for (const x of [-4.2]) for (const z of [-0.6, 1.4, 3.2]) slots.push([x, z]);
     for (let i = 0; i < Math.min(s.tables, slots.length); i++) {
       const [x, z] = slots[i];
+      // meja kayu 4 kaki (tinggi 75 cm) dan 4 kursi berkaki dengan sandaran, semua napak di lantai
       const g = new T.Group();
-      const top = new T.Mesh(new T.BoxGeometry(1.2, 0.08, 0.9), std('#6a4428', 0.6));
-      top.position.y = 0.95;
-      const leg = new T.Mesh(new T.CylinderGeometry(0.06, 0.08, 0.7, 8), std('#3a2416', 0.6));
-      leg.position.y = 0.58;
-      g.add(top, leg);
+      const woodTop = std('#6a4428', 0.55),
+        woodLeg = std('#3a2416', 0.6),
+        seatM = std('#a86a3a', 0.65);
+      const top = new T.Mesh(new T.BoxGeometry(1.2, 0.05, 0.9), woodTop);
+      top.position.y = 0.745;
+      const apron = new T.Mesh(new T.BoxGeometry(1.08, 0.08, 0.78), woodLeg);
+      apron.position.y = 0.68;
+      g.add(top, apron);
+      for (const lx of [-0.53, 0.53])
+        for (const lz of [-0.38, 0.38]) {
+          const leg = new T.Mesh(new T.BoxGeometry(0.06, 0.72, 0.06), woodLeg);
+          leg.position.set(lx, 0.36, lz);
+          g.add(leg);
+        }
       for (const [cx, cz] of [
-        [-0.45, -0.7],
-        [0.45, -0.7],
-        [-0.45, 0.7],
-        [0.45, 0.7],
+        [-0.3, -0.72],
+        [0.3, -0.72],
+        [-0.3, 0.72],
+        [0.3, 0.72],
       ]) {
-        const seat = new T.Mesh(new T.BoxGeometry(0.4, 0.06, 0.4), std('#a86a3a', 0.7));
-        seat.position.set(cx, 0.65, cz);
-        g.add(seat);
+        const ch = new T.Group();
+        const seat = new T.Mesh(new T.BoxGeometry(0.4, 0.04, 0.4), seatM);
+        seat.position.y = 0.45;
+        ch.add(seat);
+        for (const sx of [-0.17, 0.17])
+          for (const sz of [-0.17, 0.17]) {
+            const leg = new T.Mesh(new T.BoxGeometry(0.035, 0.45, 0.035), woodLeg);
+            leg.position.set(sx, 0.225, sz);
+            ch.add(leg);
+          }
+        // sandaran di sisi yang menjauhi meja
+        for (const sx of [-0.17, 0.17]) {
+          const post = new T.Mesh(new T.BoxGeometry(0.035, 0.42, 0.035), woodLeg);
+          post.position.set(sx, 0.68, 0.18);
+          ch.add(post);
+        }
+        const back = new T.Mesh(new T.BoxGeometry(0.4, 0.16, 0.03), seatM);
+        back.position.set(0, 0.8, 0.18);
+        ch.add(back);
+        ch.position.set(cx, 0, cz);
+        ch.rotation.y = cz < 0 ? Math.PI : 0;
+        g.add(ch);
       }
-      g.position.set(x, 0.2, z);
+      g.position.set(x, 0.26, z);
       g.traverse((o) => ((o as T.Mesh).isMesh ? (o.castShadow = true) : null));
       this.dyn.add(g);
       this.tablePos.push(new T.Vector3(x, 0, z));
@@ -515,14 +516,38 @@ export class RestoScene {
     }
   }
 
+  private brickMat() {
+    const t = canvasTex(256, 256, (g) => {
+      g.fillStyle = '#9a8a7a';
+      g.fillRect(0, 0, 256, 256);
+      for (let r = 0; r < 16; r++)
+        for (let c = -1; c < 8; c++) {
+          const x = c * 34 + (r % 2 ? 17 : 0);
+          g.fillStyle = ['#b85a3a', '#a84e32', '#c46a44', '#b0563a'][(r * 7 + c * 3) & 3];
+          g.fillRect(x + 2, r * 16 + 2, 30, 12);
+        }
+    });
+    t.wrapS = t.wrapT = T.RepeatWrapping;
+    t.repeat.set(3, 1.5);
+    this.textures.push(t);
+    return new T.MeshStandardMaterial({ map: t, roughness: 0.95 });
+  }
+
   /** Samakan tampilan dengan keadaan game (dipanggil setiap render React). */
   sync(s: RestoState) {
-    const key = [s.location, s.contractor, s.handed, s.equipment.join(','), s.tables, s.decor, s.name].join('|');
+    const key = [s.location, s.contractor, s.handed, s.handed ? '' : s.buildLeft, s.equipment.join(','), s.tables, s.decor, s.name].join('|');
+    if (s.location) this.buildWorld(s.location);
     if (key !== this.key) {
       this.key = key;
       this.rebuild(s);
     }
     const c = s.contractor ? (s.handed ? 1 : 1 - s.buildLeft / Math.max(1, [4, 3, 2][['hemat', 'standar', 'cepat'].indexOf(s.contractor)])) : 0;
+    if (this.lastK >= 0 && c > this.lastK + 0.01 && !s.handed) {
+      // hari berganti: debu mengepul & bunyi pekerjaan
+      this.site?.burst();
+      sfx.thud();
+    }
+    this.lastK = c;
     this.buildK = c;
     // staf
     const want = new Set(s.handed ? s.staff.map((m) => m.id) : []);
@@ -590,7 +615,7 @@ export class RestoScene {
             const m = MENUS.find((x) => x.id === it.menu)!;
             const sp = new T.Sprite(new T.SpriteMaterial({ map: emojiTex(m.emoji), transparent: true }));
             sp.scale.setScalar(0.45);
-            sp.position.copy(this.tablePos[g.table]).add(new T.Vector3(-0.4 + (k % 4) * 0.27, 1.35, -0.15 + Math.floor(k / 4) * 0.25));
+            sp.position.copy(this.tablePos[g.table]).add(new T.Vector3(-0.4 + (k % 4) * 0.27, 1.2, -0.15 + Math.floor(k / 4) * 0.25));
             this.scene.add(sp);
             a!.food.push(sp);
           });
@@ -648,6 +673,8 @@ export class RestoScene {
     const d = this.dist;
     this.camera.position.set(Math.sin(this.yaw) * Math.cos(this.pitch) * d, Math.sin(this.pitch) * d, Math.cos(this.yaw) * Math.cos(this.pitch) * d);
     this.camera.lookAt(0, 0.8, 0.5);
+    this.city?.update(this.t, dt);
+    if (this.site && this.site.update(this.t, dt, this.buildK)) sfx.clink();
     // dinding naik sesuai pembangunan
     this.shell.traverse((o) => {
       if (o.userData.wall === 'grow') o.scale.y = T.MathUtils.damp(o.scale.y, Math.max(0.02, this.buildK), 3, dt);
@@ -689,6 +716,7 @@ export class RestoScene {
       else mt?.dispose();
     });
     this.textures.forEach((t) => t.dispose());
+    this.city?.dispose();
     this.renderer.dispose();
     this.renderer.domElement.remove();
   }

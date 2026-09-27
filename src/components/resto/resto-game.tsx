@@ -10,6 +10,8 @@ import { Icon } from '@/components/ui';
 import { useMe } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
 import {
+  BUILD_STAGES,
+  BUILD_STAGE_NOTE,
   CANDIDATES,
   CHANNELS,
   CONTRACTORS,
@@ -27,6 +29,8 @@ import {
   TRAIN_ATTR,
   VENDORS,
   recipeCost,
+  stageAt,
+  stagesOnDay,
   type Role,
   type Segment,
 } from '@/lib/resto/data';
@@ -40,7 +44,7 @@ const WOOD = 'linear-gradient(180deg,#b9824a,#8a5a2e)';
 const CREAM = '#fff6e4';
 const n = (x: number) => Math.round(x).toLocaleString('id-ID');
 
-type Panel = null | 'lokasi' | 'kontraktor' | 'bangun' | 'bahan' | 'menu' | 'tim' | 'promo' | 'uang' | 'buka' | 'laporan' | 'intro';
+type Panel = null | 'lokasi' | 'kontraktor' | 'bangun' | 'bahan' | 'menu' | 'tim' | 'promo' | 'uang' | 'buka' | 'laporan' | 'intro' | 'gambar';
 
 /* ---------------- tombol & panel bergaya kayu ---------------- */
 
@@ -421,8 +425,11 @@ export function RestoGame() {
         {g.phase === 'build' && (
           <div className="pointer-events-auto flex items-center gap-2 rounded-[20px] p-2" style={{ background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
             <span className="px-2 text-white" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
-              🏗️ Dibangun: {g.buildLeft} hari lagi
+              🏗️ {BUILD_STAGES[stageAt(1 - g.buildLeft / (CONTRACTORS.find((c) => c.id === g.contractor)?.days ?? 3))]} · {g.buildLeft} hari lagi
             </span>
+            <Btn tone="cream" onClick={() => (sfx.open(), setPanel('gambar'))}>
+              📐 Gambar kerja
+            </Btn>
             <Btn tone="green" onClick={() => act(() => S.advanceDay(g), () => sfx.whoosh())}>
               Lanjut hari ▶
             </Btn>
@@ -522,6 +529,8 @@ export function RestoGame() {
           </div>
         </Sheet>
       )}
+
+      {panel === 'gambar' && <GambarPanel g={g} onClose={() => setPanel(null)} />}
 
       {panel === 'kontraktor' && (
         <Sheet title="Pilih kontraktor" emoji="🏗️" onClose={() => setPanel(null)}>
@@ -937,6 +946,95 @@ function ReportPanel({ r, onClose, onNext }: { r: S.DayReport; onClose: () => vo
         <Btn big onClick={onNext}>
           Hari berikutnya ▶
         </Btn>
+      </div>
+    </Sheet>
+  );
+}
+
+/* ---------------- gambar kerja (denah) & jadwal pembangunan ---------------- */
+
+function GambarPanel({ g, onClose }: { g: S.RestoState; onClose: () => void }) {
+  const c = CONTRACTORS.find((x) => x.id === g.contractor);
+  const days = c?.days ?? 3;
+  const doneDays = g.handed ? days : days - g.buildLeft;
+  const k = doneDays / days;
+  const cur = g.handed ? BUILD_STAGES.length : stageAt(k);
+  return (
+    <Sheet title="Gambar kerja & jadwal" emoji="📐" onClose={onClose}>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div className="rounded-[18px] p-2" style={{ background: '#1f4f9a' }}>
+          <div className="px-1 pb-1 text-[13px] font-extrabold text-white">DENAH RESTORAN · 10 m × 8 m</div>
+          <svg viewBox="0 0 220 180" className="w-full" fill="none" stroke="#fff">
+            <defs>
+              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                <path d="M10 0H0V10" stroke="rgba(255,255,255,.12)" strokeWidth="1" />
+              </pattern>
+            </defs>
+            <rect width="220" height="180" fill="url(#grid)" stroke="none" />
+            <path d="M92 150H20V20H200V150H128" strokeWidth="4" />
+            <path d="M92 150A36 36 0 0 1 128 114" strokeWidth="1.5" strokeDasharray="3 3" />
+            <path d="M20 58H200" strokeWidth="1.5" strokeDasharray="5 4" />
+            {[34, 70, 106, 150].map((x) => (
+              <rect key={x} x={x} y="28" width="28" height="16" strokeWidth="1.5" />
+            ))}
+            <rect x="30" y="90" width="32" height="14" strokeWidth="1.5" />
+            {[
+              [110, 74],
+              [150, 74],
+              [110, 108],
+              [150, 108],
+              [35, 118],
+            ].map(([x, y]) => (
+              <rect key={`${x}-${y}`} x={x} y={y} width="26" height="18" strokeWidth="1.5" />
+            ))}
+            <g fill="#fff" stroke="none" fontSize="9" fontWeight="700" fontFamily="system-ui">
+              <text x="24" y="54">DAPUR</text>
+              <text x="30" y="86">KASIR</text>
+              <text x="118" y="70">RUANG MAKAN</text>
+              <text x="88" y="174">PINTU + NOREN</text>
+              <text x="100" y="14">10 m</text>
+              <text x="4" y="90" transform="rotate(-90 8 90)">8 m</text>
+            </g>
+          </svg>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="text-[14px] font-extrabold">
+            Kontraktor {c?.name ?? '-'} · {days} hari · progres {Math.round(k * 100)}%
+          </div>
+          <div className="h-3 overflow-hidden rounded-full bg-[#e3cfb2]">
+            <div className="h-full rounded-full bg-[#34a853] transition-all" style={{ width: `${Math.max(3, k * 100)}%` }} />
+          </div>
+          {Array.from({ length: days }, (_, i) => i + 1).map((j) => {
+            const done = j <= doneDays;
+            const now = j === doneDays + 1 && !g.handed;
+            return (
+              <div key={j} className="flex gap-2 rounded-[14px] bg-white p-2 shadow-[0_2px_0_#e3cfb2]">
+                <div
+                  className="flex size-9 shrink-0 items-center justify-center rounded-full text-[13px] font-extrabold text-white"
+                  style={{ background: done ? '#34a853' : now ? '#f2a21a' : '#bbb' }}
+                >
+                  {done ? '✓' : `H${j}`}
+                </div>
+                <div>
+                  <div className="text-[14px] font-extrabold">
+                    Hari {j}: {stagesOnDay(j, days).join(' + ')}
+                  </div>
+                  <div className="text-[12px] opacity-75">{done ? 'Selesai' : now ? 'Sedang dikerjakan' : 'Menunggu'}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="mt-3 grid gap-1">
+        {BUILD_STAGES.map((st, i) => (
+          <div key={st} className="text-[13px]">
+            <b style={{ color: i < cur ? '#2a8a3a' : i === cur ? '#c8741a' : INK }}>
+              {i < cur ? '✓' : i === cur ? '▶' : '•'} {st}:
+            </b>{' '}
+            {BUILD_STAGE_NOTE[i]}
+          </div>
+        ))}
       </div>
     </Sheet>
   );
