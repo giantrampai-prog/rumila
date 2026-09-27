@@ -3,7 +3,7 @@
 // (karang, lamun, batu, cerobong hidrotermal).
 
 import * as T from 'three';
-import { canvasTex, glowSprite } from './creatures';
+import { canvasTex, glow, glowSprite } from './creatures';
 
 const std = (color: T.ColorRepresentation, rough = 0.6, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color, roughness: rough, ...extra });
 
@@ -137,130 +137,225 @@ export function diver() {
   return g;
 }
 
-/* ---------------- kapal selam mini ---------------- */
+/* ---------------- kapal selam riset ---------------- */
 
+/**
+ * Kapal selam riset (mengikuti kapal selam eksplorasi sungguhan): lambung silinder panjang abu-grafit dengan
+ * ujung depan kaca bening (pilot cilik terlihat), ujung belakang berkubah tembaga, rangka pelindung kuning
+ * (rel memanjang + cincin), deretan lampu kerja di punggung, dua pod samping berlampu, palka atas dengan cincin
+ * kuning, sirip depan kecil, pendorong buritan bercahaya + baling-baling, lampu sorot depan, dan jejak
+ * gelembung yang naik dari buritan. Menghadap +x; panjang ±4,6 unit.
+ */
 export function submersible() {
-  const g = new T.Group(); // menghadap +x
-  const yellow = std('#f5b914', 0.35, { metalness: 0.2 }),
-    black = std('#15161a', 0.5),
-    grey = std('#8d949c', 0.4, { metalness: 0.6 });
-  const hull = new T.Mesh(new T.CapsuleGeometry(0.75, 1.4, 10, 24), yellow);
-  hull.rotation.z = Math.PI / 2;
-  hull.position.x = -0.4; // ujung depan terbuka untuk kubah kaca
-  g.add(hull);
-  const label = canvasTex(512, 128, (c, w, h) => {
-    c.fillStyle = '#f5b914';
+  const g = new T.Group();
+  const hullTex = canvasTex(512, 128, (c, w, h) => {
+    const grd = c.createLinearGradient(0, 0, 0, h);
+    grd.addColorStop(0, '#6b737e');
+    grd.addColorStop(0.5, '#4a5059');
+    grd.addColorStop(1, '#343941');
+    c.fillStyle = grd;
     c.fillRect(0, 0, w, h);
-    c.fillStyle = '#15161a';
-    c.font = '900 58px system-ui, sans-serif';
-    c.textAlign = 'center';
-    c.textBaseline = 'middle';
-    c.fillText('OCEAN EXPLORER', w / 2, h / 2);
+    c.strokeStyle = 'rgba(0,0,0,0.45)';
+    c.lineWidth = 3;
+    for (let x = 0; x <= w; x += 64) {
+      c.beginPath();
+      c.moveTo(x, 0);
+      c.lineTo(x, h);
+      c.stroke();
+    }
+    c.fillStyle = 'rgba(255,255,255,0.06)';
+    for (let i = 0; i < 90; i++) c.fillRect(Math.random() * w, Math.random() * h, 3, 3);
   });
-  for (const s of [-1, 1]) {
-    const pl = new T.Mesh(new T.PlaneGeometry(1.3, 0.32), std('#ffffff', 0.4, { map: label }));
-    pl.position.set(-0.2, 0.25, s * 0.755);
-    if (s < 0) pl.rotation.y = Math.PI;
-    g.add(pl);
-  }
-  // kubah kaca di depan (kepala penjelajah terlihat)
-  const dome = new T.Mesh(
-    new T.SphereGeometry(0.72, 32, 24, 0, Math.PI * 2, 0, Math.PI / 2),
-    new T.MeshStandardMaterial({ color: '#dff6ff', roughness: 0.05, metalness: 0.1, transparent: true, opacity: 0.18, depthWrite: false }),
-  );
-  dome.rotation.z = -Math.PI / 2;
-  dome.position.x = 1.05;
-  g.add(dome);
-  const ring = new T.Mesh(new T.TorusGeometry(0.73, 0.06, 10, 32), black);
-  ring.rotation.y = Math.PI / 2;
-  ring.position.x = 1.05;
-  g.add(ring);
-  // pilot cilik di dalam kubah
+  const hullM = std('#ffffff', 0.45, { map: hullTex, metalness: 0.35 });
+  const yellow = std('#f2b705', 0.35, { metalness: 0.3 });
+  const copper = std('#c8702a', 0.35, { metalness: 0.6 });
+  const white = std('#e9edf1', 0.4, { metalness: 0.2 });
+  const grey = std('#8d949c', 0.35, { metalness: 0.7 });
+  const black = std('#121418', 0.5);
+  const glass = new T.MeshPhysicalMaterial({ color: '#cdefff', roughness: 0.04, metalness: 0, transmission: 0.9, transparent: true, opacity: 0.28, depthWrite: false });
+  const lampM = new T.MeshBasicMaterial({ color: '#fff4c8' });
+
+  const R = 0.55,
+    L = 3.3; // lambung: x −1.65..1.65
+  const hull = new T.Mesh(new T.CylinderGeometry(R, R, L, 40, 1, true), hullM);
+  hull.rotation.z = Math.PI / 2;
+  g.add(hull);
+  // buritan berkubah tembaga
+  const stern = new T.Mesh(new T.SphereGeometry(R, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), copper);
+  stern.rotation.z = Math.PI / 2;
+  stern.scale.set(1, 0.75, 1);
+  stern.position.x = -L / 2;
+  g.add(stern);
+  // haluan: kubah kaca bening (jendela pandang) dengan bingkai
+  const bow = new T.Mesh(new T.SphereGeometry(R * 0.98, 32, 16, 0, Math.PI * 2, 0, Math.PI / 2), glass);
+  bow.rotation.z = -Math.PI / 2;
+  bow.position.x = L / 2;
+  g.add(bow);
+  const bowRing = new T.Mesh(new T.TorusGeometry(R, 0.05, 10, 40), yellow);
+  bowRing.rotation.y = Math.PI / 2;
+  bowRing.position.x = L / 2;
+  g.add(bowRing);
+
+  // pilot cilik di balik kaca haluan
   const pilot = new T.Group();
-  const head = new T.Mesh(new T.SphereGeometry(0.2, 20, 14), std('#e9b98a', 0.6));
-  const hair = new T.Mesh(new T.SphereGeometry(0.215, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.5), std('#4a2c18', 0.7));
+  const head = new T.Mesh(new T.SphereGeometry(0.17, 20, 14), std('#e9b98a', 0.6));
+  const hair = new T.Mesh(new T.SphereGeometry(0.182, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.5), std('#4a2c18', 0.7));
   hair.rotation.z = -0.4;
-  const body = new T.Mesh(new T.CapsuleGeometry(0.17, 0.2, 6, 12), std('#1d1f26', 0.5));
-  body.position.y = -0.35;
-  const stripe = new T.Mesh(new T.TorusGeometry(0.17, 0.025, 6, 20), std('#ff8a1f'));
+  const body = new T.Mesh(new T.CapsuleGeometry(0.15, 0.16, 6, 12), std('#1d1f26', 0.5));
+  body.position.y = -0.3;
+  const stripe = new T.Mesh(new T.TorusGeometry(0.15, 0.022, 6, 20), std('#ff8a1f'));
   stripe.rotation.x = Math.PI / 2;
-  stripe.position.y = -0.3;
+  stripe.position.y = -0.26;
   pilot.add(head, hair, body, stripe);
   for (const s of [-1, 1]) {
-    const e = new T.Mesh(new T.SphereGeometry(0.035, 10, 8), std('#111', 0.2));
-    e.position.set(0.17, 0.03, s * 0.07);
-    const w = new T.Mesh(new T.SphereGeometry(0.05, 10, 8), std('#fff', 0.2));
-    w.position.set(0.15, 0.03, s * 0.07);
+    const w = new T.Mesh(new T.SphereGeometry(0.043, 10, 8), std('#fff', 0.2));
+    w.position.set(0.13, 0.03, s * 0.06);
+    const e = new T.Mesh(new T.SphereGeometry(0.03, 10, 8), std('#111', 0.2));
+    e.position.set(0.15, 0.03, s * 0.06);
     pilot.add(w, e);
   }
-  pilot.position.set(1.25, 0.12, 0);
+  pilot.position.set(L / 2 + 0.05, 0.02, 0);
   g.add(pilot);
-  // pendorong & rangka
-  for (const s of [-1, 1]) {
-    const th = new T.Mesh(new T.CylinderGeometry(0.2, 0.2, 0.45, 18, 1, true), black);
-    th.rotation.z = Math.PI / 2;
-    th.position.set(-0.9, -0.45, s * 0.85);
-    const skid = new T.Mesh(new T.BoxGeometry(2.6, 0.08, 0.1), grey);
-    skid.position.set(0.1, -0.85, s * 0.5);
-    g.add(th, skid);
+
+  // rangka pelindung kuning: 4 rel memanjang + cincin
+  const RR = R + 0.12;
+  for (const a of [Math.PI / 4, (3 * Math.PI) / 4, (5 * Math.PI) / 4, (7 * Math.PI) / 4]) {
+    const rail = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, L + 0.3, 8), yellow);
+    rail.rotation.z = Math.PI / 2;
+    rail.position.set(-0.05, Math.sin(a) * RR, Math.cos(a) * RR);
+    g.add(rail);
   }
-  const tail = new T.Mesh(new T.CylinderGeometry(0.25, 0.25, 0.3, 18, 1, true), black);
-  tail.rotation.z = Math.PI / 2;
-  tail.position.x = -1.95;
-  g.add(tail);
+  for (const x of [-1.35, -0.55, 0.35, 1.25]) {
+    const ring = new T.Mesh(new T.TorusGeometry(RR, 0.028, 8, 40), yellow);
+    ring.rotation.y = Math.PI / 2;
+    ring.position.x = x;
+    g.add(ring);
+  }
+
+  // lampu kerja berpasangan di punggung (seperti deretan lampu di atas kapal)
+  const glows: T.Sprite[] = [];
+  const addLamp = (x: number, y: number, z: number, size = 0.5) => {
+    const base = new T.Mesh(new T.CylinderGeometry(0.05, 0.065, 0.08, 12), black);
+    base.position.set(x, y, z);
+    base.lookAt(x, y * 3, z * 3);
+    base.rotateX(Math.PI / 2);
+    const bulb = new T.Mesh(new T.SphereGeometry(0.045, 10, 8), lampM);
+    bulb.position.set(x, y + Math.sign(y || 1) * 0.04, z + Math.sign(z) * 0.02);
+    const gl = glowSprite('#ffe9a8', size, 0.9);
+    gl.position.copy(bulb.position);
+    g.add(base, bulb, gl);
+    glows.push(gl);
+  };
+  for (const x of [1.05, 0.7, -1.1]) for (const s of [-1, 1]) addLamp(x, R * 0.85, s * R * 0.5);
+
+  // pod samping (tabung putih) dengan lampu di kedua ujung + penyangga
+  for (const s of [-1, 1]) {
+    const pod = new T.Mesh(new T.CapsuleGeometry(0.17, 0.62, 8, 16), white);
+    pod.rotation.z = Math.PI / 2;
+    pod.position.set(-0.05, -0.05, s * (RR + 0.26));
+    const band = new T.Mesh(new T.CylinderGeometry(0.18, 0.18, 0.08, 16), grey);
+    band.rotation.z = Math.PI / 2;
+    band.position.copy(pod.position);
+    const strut = new T.Mesh(new T.BoxGeometry(0.5, 0.05, 0.3), yellow);
+    strut.position.set(-0.05, -0.05, s * (RR + 0.06));
+    g.add(pod, band, strut);
+    addLamp(0.42, -0.05, s * (RR + 0.44), 0.55);
+    addLamp(-0.52, -0.05, s * (RR + 0.44), 0.55);
+  }
+
+  // palka atas: kubah kecil + cincin kuning
+  const hatch = new T.Mesh(new T.SphereGeometry(0.2, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2), white);
+  hatch.position.set(-0.1, R - 0.02, 0);
+  const hatchRing = new T.Mesh(new T.TorusGeometry(0.22, 0.03, 8, 24), yellow);
+  hatchRing.rotation.x = Math.PI / 2;
+  hatchRing.position.set(-0.1, R, 0);
+  g.add(hatch, hatchRing);
+
+  // sirip depan kecil kuning
+  for (const s of [-1, 1]) {
+    const fin = new T.Mesh(new T.BoxGeometry(0.34, 0.03, 0.26), yellow);
+    fin.position.set(1.15, 0.05, s * (R + 0.18));
+    g.add(fin);
+  }
+
+  // pendorong buritan: selubung + baling-baling + cahaya
+  const shroud = new T.Mesh(new T.CylinderGeometry(0.26, 0.26, 0.26, 24, 1, true), black);
+  shroud.rotation.z = Math.PI / 2;
+  shroud.position.x = -L / 2 - 0.5;
+  const shaft = new T.Mesh(new T.CylinderGeometry(0.05, 0.05, 0.35, 8), grey);
+  shaft.rotation.z = Math.PI / 2;
+  shaft.position.x = -L / 2 - 0.3;
+  g.add(shroud, shaft);
   const prop = new T.Group();
-  for (let i = 0; i < 3; i++) {
-    const b = new T.Mesh(new T.BoxGeometry(0.03, 0.4, 0.08), grey);
-    b.rotation.x = (i * Math.PI * 2) / 3;
+  for (let i = 0; i < 4; i++) {
+    const b = new T.Mesh(new T.BoxGeometry(0.03, 0.4, 0.09), grey);
+    b.rotation.x = (i * Math.PI) / 2;
     prop.add(b);
   }
-  prop.position.x = -2.05;
+  prop.position.x = -L / 2 - 0.5;
   g.add(prop);
-  // lampu depan + berkas cahaya
+  const thrustGlow = glowSprite('#ffd27a', 1.4, 0.55);
+  thrustGlow.position.x = -L / 2 - 0.75;
+  g.add(thrustGlow);
+
+  // lampu sorot depan + berkas cahaya
   const lights: T.SpotLight[] = [];
   const beams: T.Mesh[] = [];
   for (const s of [-1, 1]) {
-    const lamp = new T.Mesh(new T.CylinderGeometry(0.12, 0.14, 0.18, 16), black);
+    const lamp = new T.Mesh(new T.CylinderGeometry(0.1, 0.12, 0.16, 16), black);
     lamp.rotation.z = Math.PI / 2;
-    lamp.position.set(0.95, -0.55, s * 0.6);
-    const lens = new T.Mesh(new T.CircleGeometry(0.1, 16), new T.MeshBasicMaterial({ color: '#fffbe8' }));
-    lens.position.set(1.05, -0.55, s * 0.6);
+    lamp.position.set(1.55, -0.5, s * 0.45);
+    const lens = new T.Mesh(new T.CircleGeometry(0.085, 16), lampM);
+    lens.position.set(1.64, -0.5, s * 0.45);
     lens.rotation.y = Math.PI / 2;
     const sp = new T.SpotLight('#eaf6ff', 60, 26, 0.45, 0.45, 1.3);
-    sp.position.set(1.1, -0.55, s * 0.6);
-    sp.target.position.set(8, -2, s * 0.8);
+    sp.position.set(1.7, -0.5, s * 0.45);
+    sp.target.position.set(9, -2, s * 0.8);
     const beam = new T.Mesh(
       new T.ConeGeometry(1.8, 8, 24, 1, true),
       new T.MeshBasicMaterial({ color: '#dff1ff', transparent: true, opacity: 0.08, blending: T.AdditiveBlending, depthWrite: false, side: T.DoubleSide }),
     );
     beam.rotation.z = Math.PI / 2 + 0.12;
-    beam.position.set(5.1, -1.05, s * 0.68);
-    const halo = glowSprite('#fff8e0', 0.9, 0.9);
+    beam.position.set(5.7, -1.0, s * 0.5);
+    const halo = glowSprite('#fff8e0', 0.8, 0.9);
     halo.position.copy(lens.position);
     g.add(lamp, lens, sp, sp.target, beam, halo);
     lights.push(sp);
     beams.push(beam);
   }
-  // lengan robot
-  const arm = new T.Group();
-  const a1 = new T.Mesh(new T.CylinderGeometry(0.05, 0.05, 0.6, 8), grey);
-  a1.rotation.z = Math.PI / 2 - 0.5;
-  a1.position.set(0.25, 0, 0);
-  const a2 = new T.Mesh(new T.CylinderGeometry(0.04, 0.04, 0.45, 8), grey);
-  a2.rotation.z = Math.PI / 2 + 0.4;
-  a2.position.set(0.6, -0.12, 0);
-  arm.add(a1, a2);
-  arm.position.set(0.8, -0.8, 0);
-  g.add(arm);
+
+  // jejak gelembung dari buritan (naik & melebar, lalu muncul lagi)
+  const NB = 60;
+  const bubPos = new Float32Array(NB * 3);
+  const bubSeed = Array.from({ length: NB }, (_, i) => ({ t: (i / NB) * 3, dz: (Math.random() - 0.5) * 0.3, dy: (Math.random() - 0.5) * 0.2 }));
+  const bubGeo = new T.BufferGeometry();
+  bubGeo.setAttribute('position', new T.BufferAttribute(bubPos, 3));
+  const bubbles = new T.Points(bubGeo, new T.PointsMaterial({ color: '#eaf8ff', size: 0.12, map: glow(), transparent: true, opacity: 0.8, depthWrite: false }));
+  bubbles.frustumCulled = false;
+  g.add(bubbles);
 
   g.userData.setLights = (k: number) => {
     lights.forEach((l) => (l.intensity = 60 * k));
     beams.forEach((b) => ((b.material as T.MeshBasicMaterial).opacity = 0.07 * k));
+    glows.forEach((s) => (s.material.opacity = 0.35 + 0.55 * k));
+    thrustGlow.material.opacity = 0.2 + 0.4 * k;
   };
+  let last = 0;
   g.userData.update = (t: number) => {
+    const dt = Math.min(0.1, Math.max(0, t - last));
+    last = t;
     prop.rotation.x = t * 12;
-    arm.rotation.z = Math.sin(t * 0.5) * 0.1;
     pilot.rotation.y = Math.sin(t * 0.4) * 0.3;
+    thrustGlow.scale.setScalar(1.3 + Math.sin(t * 9) * 0.1);
+    for (let i = 0; i < NB; i++) {
+      const b = bubSeed[i];
+      b.t = (b.t + dt) % 3;
+      const k = b.t / 3;
+      bubPos[i * 3] = -L / 2 - 0.7 - k * 2.6;
+      bubPos[i * 3 + 1] = b.dy + k * k * 1.6 + Math.sin(t * 3 + i) * 0.03;
+      bubPos[i * 3 + 2] = b.dz * (1 + k * 3);
+    }
+    bubGeo.attributes.position.needsUpdate = true;
   };
   return g;
 }
@@ -541,11 +636,17 @@ export function seabed(size: number, color: string, uTime: { value: number }, ca
       .replace(
         '#include <emissivemap_fragment>',
         `#include <emissivemap_fragment>
+        // kaustik: dua lapis pola cahaya bergerak (besar & halus), lembut, memudar di kejauhan
         vec2 cp = vWp.xz * 0.9;
         float c1 = sin(cp.x * 1.7 + uTime * 1.1 + sin(cp.y * 1.3 + uTime * 0.7));
         float c2 = sin(cp.y * 1.9 - uTime * 0.9 + sin(cp.x * 1.1 - uTime * 0.6));
-        float ca = pow(max(0.0, 1.0 - abs(c1 + c2) * 0.9), 4.0);
-        totalEmissiveRadiance += vec3(0.75, 0.95, 1.0) * ca * uCaustic;`,
+        float ca = pow(max(0.0, 1.0 - abs(c1 + c2) * 0.7), 3.0);
+        vec2 cq = vWp.xz * 2.3;
+        float c3 = sin(cq.x * 1.3 - uTime * 1.4 + sin(cq.y * 1.7 + uTime * 0.9));
+        float c4 = sin(cq.y * 1.1 + uTime * 1.2 + sin(cq.x * 1.5 - uTime * 0.8));
+        float cb = pow(max(0.0, 1.0 - abs(c3 + c4) * 0.8), 3.0);
+        float far = 1.0 - smoothstep(8.0, 40.0, distance(vWp, cameraPosition));
+        totalEmissiveRadiance += vec3(0.7, 0.93, 1.0) * (ca * 0.6 + cb * 0.35) * uCaustic * far;`,
       );
   };
   const mesh = new T.Mesh(geo, m);

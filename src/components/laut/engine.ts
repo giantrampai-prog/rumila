@@ -96,6 +96,8 @@ export class LautEngine {
   private sky: T.Mesh;
   private water: T.Mesh;
   private rays: T.Mesh[] = [];
+  /** latar bawah air: gradasi permukaan terang → horizon → dasar gelap + pendar matahari berkilau */
+  private deep!: T.Mesh;
   private snow: T.Points;
   private bubbles: T.Points;
   private bubbleT: Float32Array;
@@ -154,6 +156,7 @@ export class LautEngine {
     this.sky = this.buildSky();
     this.water = this.buildSurface();
     this.snow = this.buildSnow();
+    this.deep = this.buildDeepBackdrop();
     const b = this.buildBubbles();
     this.bubbles = b.points;
     this.bubbleT = b.t;
@@ -227,9 +230,17 @@ export class LautEngine {
             c += smoothstep(0.75, 1.0, r) * 0.25;
             gl_FragColor = vec4(c, 0.95);
           } else {
-            vec3 c = mix(vec3(0.35,0.78,0.95), vec3(0.85,0.98,1.0), smoothstep(0.2, 1.0, r));
+            // dilihat dari bawah: jendela cahaya terang tepat di atas (jendela Snell), di luarnya memantulkan
+            // air yang lebih gelap; jaring kilau bergerak seperti riak permukaan asli
+            vec3 v = normalize(vW - cameraPosition);
+            float win = smoothstep(0.55, 0.9, v.y);
+            vec2 q = p * 0.35;
+            float c1 = sin(q.x * 1.7 + uTime * 0.9 + sin(q.y * 1.3 + uTime * 0.6));
+            float c2 = sin(q.y * 1.9 - uTime * 0.8 + sin(q.x * 1.1 - uTime * 0.5));
+            float net = pow(max(0.0, 1.0 - abs(c1 + c2) * 0.6), 3.0);
+            vec3 c = mix(vec3(0.12, 0.47, 0.64), vec3(0.78, 0.94, 1.0), win) + net * 0.22 * (0.35 + win);
             float d = length(p - cameraPosition.xz);
-            gl_FragColor = vec4(c, clamp(1.2 - d/60.0, 0.0, 0.9));
+            gl_FragColor = vec4(c, clamp(1.1 - d / 70.0, 0.0, 0.9));
           }
         }`,
     });
@@ -237,6 +248,41 @@ export class LautEngine {
     water.rotation.x = -Math.PI / 2;
     this.scene.add(water);
     return water;
+  }
+
+  private buildDeepBackdrop() {
+    const m = new T.ShaderMaterial({
+      side: T.BackSide,
+      depthWrite: false,
+      fog: false,
+      uniforms: {
+        uTop: { value: new T.Color() },
+        uHor: { value: new T.Color() },
+        uBot: { value: new T.Color() },
+        uSun: { value: 1 },
+        uTime: this.uTime,
+      },
+      vertexShader: 'varying vec3 vDir; void main(){ vDir = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+      fragmentShader: `uniform vec3 uTop; uniform vec3 uHor; uniform vec3 uBot; uniform float uSun; uniform float uTime; varying vec3 vDir;
+        void main(){
+          vec3 d = normalize(vDir);
+          float up = smoothstep(-0.05, 0.95, d.y);
+          float down = smoothstep(0.0, -0.9, d.y);
+          vec3 c = mix(uHor, uTop, pow(up, 0.8));
+          c = mix(c, uBot, down);
+          // jendela cahaya permukaan (Snell) + kilau bergelombang
+          float sun = pow(max(d.y, 0.0), 6.0);
+          float ripple = 0.88 + 0.12 * sin((d.x + d.z * 0.7) * 9.0 + uTime * 0.9) * sin((d.z - d.x * 0.4) * 7.0 - uTime * 0.7);
+          c += vec3(0.75, 0.95, 1.0) * sun * ripple * 0.5 * uSun;
+          gl_FragColor = vec4(c, 1.0);
+          #include <colorspace_fragment>
+        }`,
+    });
+    const mesh = new T.Mesh(new T.SphereGeometry(140, 48, 24), m);
+    mesh.renderOrder = -10;
+    mesh.frustumCulled = false;
+    this.scene.add(mesh);
+    return mesh;
   }
 
   private buildSnow() {
@@ -979,9 +1025,16 @@ export class LautEngine {
       deep = new T.Color('#010810');
     const fc = deep.clone().lerp(mid, clamp01(Math.pow(L, 0.35) * 1.2)).lerp(shallow, Math.pow(L, 1.4));
     if (under) {
-      this.fog.color.copy(fc);
-      this.fog.density = 0.022 + (1 - L) * 0.012;
-      this.scene.background = fc;
+      // kabut = warna horizon, jadi benda jauh menyatu dengan air; dangkal sedikit kehijauan, makin dalam makin pekat
+      const hor = fc.clone().lerp(new T.Color('#1d8fa3'), 0.35 * Math.pow(L, 2));
+      this.fog.color.copy(hor);
+      this.fog.density = 0.03 + (1 - L) * 0.01;
+      this.scene.background = hor;
+      const dm = this.deep.material as T.ShaderMaterial;
+      dm.uniforms.uHor.value.copy(hor);
+      dm.uniforms.uTop.value.copy(hor).lerp(new T.Color('#9fe3f2'), 0.85 * Math.pow(L, 1.2));
+      dm.uniforms.uBot.value.copy(hor).multiplyScalar(0.6);
+      dm.uniforms.uSun.value = Math.pow(L, 1.5);
       this.camera.far = 160;
     } else {
       this.fog.color.set('#cfe6f3');
@@ -991,6 +1044,8 @@ export class LautEngine {
     }
     this.camera.updateProjectionMatrix();
     this.sky.visible = !under;
+    this.deep.visible = under;
+    this.deep.position.copy(this.camera.position);
     this.sun.intensity = under ? 2.4 * L : 2.6;
     this.hemi.intensity = under ? 0.15 + 1.1 * L : 1.1;
     this.hemi.color.set(under ? '#9fe0ff' : '#dff2ff');
