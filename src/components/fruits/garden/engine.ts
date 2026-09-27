@@ -1164,6 +1164,12 @@ export class GardenEngine {
       const ns = cur + (s - cur) * Math.min(1, dt * 8);
       m.sprite.scale.set(ns, ns * 1.17, 1);
       m.sprite.position.y = m.top + 0.9 + Math.sin(t * 2 + m.plot.x * 0.3) * 0.12;
+      // balon yang terlalu dekat kamera (mis. pohon tetangga saat kamera mendekat di tur) memudar & hilang,
+      // supaya tidak menutupi layar seperti gambar raksasa
+      const dc = m.sprite.position.distanceTo(this.camera.position);
+      const op = T.MathUtils.smoothstep(dc, 4.5, 8.5);
+      m.sprite.material.opacity = op;
+      m.sprite.visible = op > 0.02;
     }
 
     if (this.tapT < 1) {

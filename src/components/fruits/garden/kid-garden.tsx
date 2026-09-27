@@ -235,6 +235,7 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
         onArrive: (key) => (tourHandle.current ? tourHandle.current.arrived(key) : openRef.current(key)),
       });
       engine.current.setDiscovered(foundRef.current);
+      if (process.env.NODE_ENV === 'development') (window as unknown as { __garden?: GardenEngine }).__garden = engine.current;
       setReady(true);
     });
     return () => {
