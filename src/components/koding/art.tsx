@@ -57,6 +57,10 @@ export const COMMON_DEFS = (
       <stop offset="0.55" stopColor="#2ec4a6" />
       <stop offset="1" stopColor="#15907a" />
     </radialGradient>
+    <linearGradient id="ka-beam" gradientUnits="userSpaceOnUse" x1="0" y1="-32" x2="0" y2="-120">
+      <stop offset="0" stopColor="#fff3a0" stopOpacity="0.75" />
+      <stop offset="1" stopColor="#fff3a0" stopOpacity="0" />
+    </linearGradient>
     <radialGradient id="ka-leaf" cx="0.35" cy="0.3" r="0.8">
       <stop offset="0" stopColor="#8fd65f" />
       <stop offset="0.6" stopColor="#4c9e32" />

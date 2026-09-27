@@ -10,21 +10,49 @@ import { ART, COMMON_DEFS } from './art';
 export const WORLD = ART;
 export const THEMES: Theme[] = THEME_ORDER;
 
-/** Agam tampak atas: bodi bulat, visor bermata di sisi depan (atas), roda di kiri-kanan. */
+/**
+ * Agam tampak atas (depan = atas, ikut diputar sesuai arah hadap). Supaya anak langsung tahu Agam menghadap ke
+ * mana: sorot lampu kuning + panah putih di kotak depannya (ke sanalah "maju" berjalan), wajah bermata besar di
+ * sisi depan kepala, bemper & lampu depan, badan meruncing ke depan seperti mobil mainan, antena di belakang.
+ */
 function AgamTop({ bump }: { bump: boolean }) {
   return (
     <g className={bump ? 'robi-bump' : undefined}>
-      <ellipse cx="0" cy="6" rx="36" ry="34" fill="#000" opacity="0.18" />
-      <rect x="-44" y="-20" width="12" height="40" rx="5" fill="#3b4256" />
-      <rect x="32" y="-20" width="12" height="40" rx="5" fill="#3b4256" />
-      <circle r="34" fill="url(#ka-agam)" stroke="#178f78" strokeWidth="5" />
-      <ellipse cx="-12" cy="-4" rx="10" ry="16" fill="#fff" opacity="0.18" transform="rotate(30 -12 -4)" />
-      <path d="M-24 -14 Q0 -40 24 -14 L20 -8 Q0 -26 -20 -8 Z" fill="#1b2a4e" />
-      <circle cx="-9" cy="-19" r="4.5" fill="#7df9ff" className="robi-eye" />
-      <circle cx="9" cy="-19" r="4.5" fill="#7df9ff" className="robi-eye" />
-      <circle cx="0" cy="6" r="7" fill="#178f78" />
-      <circle cx="0" cy="6" r="3.5" fill="#ffd23f" />
-      <path d="M-10 26 L0 34 L10 26" fill="none" stroke="#178f78" strokeWidth="4" strokeLinecap="round" />
+      {/* sorot lampu ke kotak depan */}
+      <path d="M-17 -32 L-42 -120 L42 -120 L17 -32 Z" fill="url(#ka-beam)" />
+      {/* panah arah maju */}
+      <g className="agam-chev">
+        <path d="M-15 -60 L0 -77 L15 -60" fill="none" stroke="#1b2a4e" strokeOpacity="0.55" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M-15 -60 L0 -77 L15 -60" fill="none" stroke="#ffffff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+      <ellipse cx="0" cy="8" rx="40" ry="36" fill="#000" opacity="0.2" />
+      {/* roda rantai */}
+      {[-1, 1].map((s) => (
+        <g key={s}>
+          <rect x={s < 0 ? -45 : 31} y="-26" width="14" height="58" rx="7" fill="#2e3446" />
+          {[-18, -8, 2, 12, 22].map((y) => (
+            <rect key={y} x={s < 0 ? -43 : 33} y={y} width="10" height="3" rx="1.5" fill="#566079" />
+          ))}
+        </g>
+      ))}
+      {/* badan meruncing ke depan */}
+      <path d="M-30 30 Q-32 36 -25 37 L25 37 Q32 36 30 30 L27 -20 Q25 -35 12 -37 L-12 -37 Q-25 -35 -27 -20 Z" fill="url(#ka-agam)" stroke="#0f7a66" strokeWidth="4" strokeLinejoin="round" />
+      <path d="M-20 -28 Q-22 -6 -21 20" stroke="#fff" strokeOpacity="0.35" strokeWidth="5" strokeLinecap="round" fill="none" />
+      {/* bemper & lampu depan */}
+      <path d="M-17 -36 Q0 -41 17 -36" stroke="#ffd23f" strokeWidth="6" strokeLinecap="round" fill="none" />
+      <circle cx="-17" cy="-30" r="4.5" fill="#fff8c4" stroke="#e0a100" strokeWidth="1.5" />
+      <circle cx="17" cy="-30" r="4.5" fill="#fff8c4" stroke="#e0a100" strokeWidth="1.5" />
+      {/* kepala: wajah di sisi depan */}
+      <circle cx="0" cy="3" r="21" fill="#f2fbf9" stroke="#0f7a66" strokeWidth="3" />
+      <rect x="-16" y="-15" width="32" height="15" rx="7.5" fill="#1b2a4e" />
+      <circle cx="-7" cy="-7.5" r="4.6" fill="#7df9ff" className="robi-eye" />
+      <circle cx="7" cy="-7.5" r="4.6" fill="#7df9ff" className="robi-eye" />
+      <circle cx="-8.3" cy="-9" r="1.5" fill="#fff" />
+      <circle cx="5.7" cy="-9" r="1.5" fill="#fff" />
+      <path d="M-6 5 Q0 10 6 5" stroke="#0f7a66" strokeWidth="2.6" strokeLinecap="round" fill="none" />
+      {/* antena di belakang */}
+      <path d="M0 24 L0 31" stroke="#0f7a66" strokeWidth="3.5" strokeLinecap="round" />
+      <circle cx="0" cy="33" r="4.5" fill="#ff6b5b" className="robi-led" />
     </g>
   );
 }

@@ -28,6 +28,9 @@
 .koding-certcard { background: #fffaf0; box-shadow: 0 5px 0 #d8ccb4; }
 .koding-certcard-on { background: linear-gradient(135deg, #fff6d6, #ffe9a8); box-shadow: 0 5px 0 #e0b84a; }
 .koding-cert { box-shadow: 0 2px 4px rgba(20, 35, 63, 0.12), 0 18px 40px rgba(20, 35, 63, 0.18); }
+/* panah di depan Agam: mengangguk ke arah maju */
+@keyframes agam-chev { 0%, 100% { transform: translateY(0); opacity: 0.95; } 50% { transform: translateY(-6px); opacity: 0.6; } }
+.agam-chev { animation: agam-chev 1.2s ease-in-out infinite; }
 /* blok puzzle: tonjolan kecil di atas seperti kepingan */
 .koding-block { position: relative; border-radius: 14px; color: #fff; transition: transform 0.12s; }
 .koding-block::before {
@@ -60,7 +63,7 @@
 .koding-star { display: inline-block; animation: koding-star 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) both; }
 @media (prefers-reduced-motion: reduce) {
   .robi-move, .robi-turn { transition: none; }
-  .robi-bump, .robi-eye, .robi-wave, .robi-led, .koding-pulse, .koding-node-cur, .koding-bad, .goal-pulse, .koding-win, .koding-star { animation: none; }
+  .robi-bump, .robi-eye, .robi-wave, .robi-led, .agam-chev, .koding-pulse, .koding-node-cur, .koding-bad, .goal-pulse, .koding-win, .koding-star { animation: none; }
 }
 
 /* ---------- responsif ---------- */
