@@ -51,7 +51,7 @@ export interface Folder {
 
 // Katalog dari "Family Launcher v2" (acuan tampilan website). "Jadwal Sholat" sengaja tidak dimasukkan:
 // README handoff menghapus pengingat sholat agar sederhana.
-const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: string; pal: ColorKey[]; items: [string, string, string][] }[] =
+const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: string; pal: ColorKey[]; items: ([string, string, string] | [string, string, string, string])[] }[] =
   [
     {
       id: "game",
@@ -61,6 +61,7 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
       desc: "Permainan seru buat main sendiri atau bareng keluarga.",
       pal: ["orange", "purple", "red", "blue", "pink", "teal"],
       items: [
+        ["Rinoya Resto", "ramen_dining", "Bangun & kelola restoran Jepang: menu, tim, promosi, dan untung-rugi.", "game-resto"],
         ["Puzzle Gambar", "extension", "Susun kepingan gambar hewan dan tempat."],
         ["Catur", "chess", "Main catur bareng ayah atau lawan komputer."],
         ["Tebak Kata", "quiz", "Tebak kata Bahasa Indonesia dan Inggris."],
@@ -194,8 +195,9 @@ export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items 
     folder: id,
     folderName: name,
     c,
-  })) : id === 'angkasa' ? ADVENTURE_3D.map(t => ({ ...t, folder: id, folderName: name, c })) : items.map(([n, ic, d], i) => ({
-    id: id + i,
+  })) : id === 'angkasa' ? ADVENTURE_3D.map(t => ({ ...t, folder: id, folderName: name, c })) : items.map(([n, ic, d, fixed], i) => ({
+    // id tetap (bila ada) agar menambah item di depan tidak menggeser id & progres alat lama
+    id: fixed ?? id + (id === 'game' ? i - 1 : i),
     name: n,
     icon: ic,
     desc: d,

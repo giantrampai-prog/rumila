@@ -1,0 +1,5 @@
+@keyframes resto-pop{0%{transform:translateY(24px) scale(.92);opacity:0}70%{transform:translateY(-4px) scale(1.02);opacity:1}100%{transform:none}}
+@keyframes resto-bounce{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+.resto-pop{animation:resto-pop .35s cubic-bezier(.2,.9,.3,1.2) both}
+.resto-bounce{display:inline-block;animation:resto-bounce 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.resto-pop,.resto-bounce{animation:none}}
