@@ -17,6 +17,9 @@ import { PERM, TOOL_ID } from '@/lib/fruits/progress';
 import { useMe, useRumila } from '@/lib/store';
 import type { GardenEngine } from './engine';
 import { GardenTour, type TourHandle } from './tour';
+import { CutView } from './cut-view';
+import { Album, MissionSheet, NearAction, SeedPicker, Toast, bedAction, missionById, nextMission, useFarm } from './farm-ui';
+import { bedStatus, missionMatches, plantBed, waterBed, emptyBed } from '@/lib/fruits/farm';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const INK = '#2b1d4e';
@@ -112,7 +115,7 @@ function Joystick({ onMove }: { onMove: (x: number, y: number) => void }) {
   );
 }
 
-function FruitCard({ id, isNew, url, onClose, on3D }: { id: string; isNew: boolean; url?: string; onClose: () => void; on3D: () => void }) {
+function FruitCard({ id, isNew, url, onClose, on3D, onCut }: { id: string; isNew: boolean; url?: string; onClose: () => void; on3D: () => void; onCut: () => void }) {
   const f = FRUIT_BY_ID.get(id)!;
   const art = FRUIT_ARTWORK[id];
   const [playing, setPlaying] = useState(false);
@@ -188,6 +191,14 @@ function FruitCard({ id, isNew, url, onClose, on3D }: { id: string; isNew: boole
             </button>
           )}
           <button
+            onClick={onCut}
+            className="flex h-14 flex-1 items-center justify-center gap-2 rounded-[18px] text-white active:scale-95"
+            style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#ff7a1a 60%)', boxShadow: '0 4px 0 #c85400' }}
+          >
+            <Icon name="content_cut" size={26} />
+            Belah
+          </button>
+          <button
             onClick={on3D}
             className="flex h-14 flex-1 items-center justify-center gap-2 rounded-[18px] text-white active:scale-95"
             style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#c78bff,#8b45f5 60%)', boxShadow: '0 4px 0 #5a1fc0' }}
@@ -214,10 +225,37 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
   const tracks = useTracks();
   const foundRef = useRef(found);
   foundRef.current = found;
+  const [farm, setFarm] = useFarm(me.id);
+  const farmRef = useRef(farm);
+  farmRef.current = farm;
+  const [sheet, setSheet] = useState<null | { kind: 'seed'; bed: number } | { kind: 'mission' } | { kind: 'album' }>(null);
+  const [cut, setCut] = useState<{ id: string; harvested: boolean } | null>(null);
+  const [toast, setToast] = useState<{ text: string; good?: boolean } | null>(null);
+  const [now, setNow] = useState(() => Date.now());
+  const [offer, setOffer] = useState<string>(() => nextMission([]).id);
+  const say = (text: string, good?: boolean) => {
+    setToast({ text, good });
+    window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 3200);
+  };
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 500);
+    return () => window.clearInterval(id);
+  }, []);
 
   const openCard = (id: string) => {
     unlockAudio();
     const isNew = !foundRef.current.has(id);
+    // misi Pak Tani: buah yang dipetik cocok?
+    const m = missionById(farmRef.current.mission);
+    const fruit = FRUIT_BY_ID.get(id)!;
+    if (m) {
+      if (missionMatches(m, fruit)) {
+        setFarm((s) => ({ ...s, mission: null, done: s.done + 1, recent: [m.id, ...s.recent].slice(0, 4), stars: s.stars.includes(id) ? s.stars : [...s.stars, id] }));
+        setOffer(nextMission([m.id, ...farmRef.current.recent]).id);
+        sfx.celebrate(0.2);
+        say(`Hore! ${fruit.name} cocok. Misi Pak Tani selesai! 🤝`, true);
+      } else say(`Hmm, ${fruit.name} belum cocok. ${m.text}`);
+    }
     sfx.pick();
     if (isNew) {
       addFound(id);
@@ -232,6 +270,43 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
   const openRef = useRef(openCard);
   openRef.current = openCard;
 
+  /** Aksi bedengan: tanam / siram / panen (dari tombol atau saat tiba di bedengan). */
+  const bedAct = (i: number) => {
+    unlockAudio();
+    const b = farmRef.current.beds[i];
+    const st = bedStatus(b, Date.now());
+    if (st.empty) {
+      sfx.open();
+      setSheet({ kind: 'seed', bed: i });
+    } else if (st.thirsty) {
+      sfx.water();
+      engine.current?.waterFx(i);
+      setFarm((s) => ({ ...s, beds: s.beds.map((x, k) => (k === i ? waterBed(x, Date.now()) : x)) }));
+    } else if (st.ripe) {
+      const id = b.fruit!;
+      sfx.pick();
+      sfx.whoosh();
+      sfx.coin(0.75);
+      sfx.celebrate(0.95);
+      engine.current?.harvestFx(i, FRUIT_BY_ID.get(id)!.color);
+      if (!foundRef.current.has(id)) addFound(id);
+      setFarm((s) => ({ ...s, beds: s.beds.map((x, k) => (k === i ? emptyBed() : x)) }));
+      setCut({ id, harvested: true });
+    } else say('Tanamannya sedang tumbuh. Tunggu sebentar, ya!');
+  };
+  const arriveKey = (key: string) => {
+    if (key.startsWith('bed:')) bedAct(+key.slice(4));
+    else if (key === 'npc') openMission();
+    else openRef.current(key);
+  };
+  const arriveRef = useRef(arriveKey);
+  arriveRef.current = arriveKey;
+  const openMission = () => {
+    sfx.open();
+    if (farmRef.current.mission) say(`Misi: ${missionById(farmRef.current.mission)!.text}`);
+    else setSheet({ kind: 'mission' });
+  };
+
   useEffect(() => {
     let alive = true;
     import('./engine').then(({ GardenEngine }) => {
@@ -239,9 +314,9 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
       engine.current = new GardenEngine(host.current, {
         onNear: (id) => {
           setNear(id);
-          if (id && !foundRef.current.has(id) && !tourHandle.current) sfx.sparkle();
+          if (id && !id.includes(':') && id !== 'npc' && !foundRef.current.has(id) && !tourHandle.current) sfx.sparkle();
         },
-        onArrive: (key) => (tourHandle.current ? tourHandle.current.arrived(key) : openRef.current(key)),
+        onArrive: (key) => (tourHandle.current ? tourHandle.current.arrived(key) : arriveRef.current(key)),
       });
       engine.current.setDiscovered(foundRef.current);
       if (process.env.NODE_ENV === 'development') (window as unknown as { __garden?: GardenEngine }).__garden = engine.current;
@@ -255,7 +330,12 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
   }, []);
 
   useEffect(() => engine.current?.setDiscovered(found), [found, ready]);
-  useEffect(() => engine.current?.setActive(active && !card), [active, card, ready]);
+  useEffect(() => engine.current?.setActive(active && !card && !cut), [active, card, cut, ready]);
+  // bedengan & tanda misi di dunia 3D
+  useEffect(() => {
+    engine.current?.setBeds(farm.beds.map((b) => ({ fruit: b.fruit, stage: b.stage, ...bedStatus(b, now) })));
+  }, [farm.beds, now, ready]);
+  useEffect(() => engine.current?.setMissionAvailable(!farm.mission && !tour), [farm.mission, tour, ready]);
   // suasana kebun (kicau burung & angin) selama kebun tampil
   useEffect(() => {
     if (!active) return;
@@ -266,6 +346,8 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
   // ketuk layar (bukan geser) → jalan ke titik / tanaman
   const down = useRef<{ x: number; y: number; t: number } | null>(null);
   const nearFruit = near ? FRUIT_BY_ID.get(near) : undefined;
+  const nearBed = near?.startsWith('bed:') ? +near.slice(4) : null;
+  const activeMission = missionById(farm.mission);
   const nearFound = near ? found.has(near) : false;
 
   return (
@@ -301,14 +383,31 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
           </span>
         </div>
         <div className="flex gap-2 sm:gap-3">
-          <RoundBtn icon="grid_view" label="Semua buah" onClick={onCatalog} />
+          <RoundBtn icon="auto_stories" label="Album" onClick={() => setSheet({ kind: 'album' })} />
           <RoundBtn icon="play_circle" label="Tur" tone="orange" onClick={onTour} />
         </div>
       </div>
 
+      {activeMission && (
+        <div className="pointer-events-none absolute inset-x-0 top-[84px] flex justify-center px-3 sm:top-[96px]">
+          <span className="flex max-w-[560px] items-center gap-1.5 rounded-full bg-[#fff8dc]/95 px-3 py-1.5 text-[13px] font-extrabold text-[#5a4410] shadow-[0_3px_0_rgba(43,29,78,.1)] sm:text-[14px]">
+            <span>👨‍🌾</span>
+            {activeMission.text}
+          </span>
+        </div>
+      )}
+      {toast && <Toast text={toast.text} good={toast.good} />}
+
       {/* bawah: joystick · tombol lihat buah terdekat */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:p-6" style={{ paddingBottom: 'max(18px, env(safe-area-inset-bottom))' }}>
         <Joystick onMove={(x, y) => engine.current?.setStick(x, y)} />
+        {nearBed !== null && !card && !sheet && !cut && (() => {
+          const a = bedAction(farm.beds[nearBed], now);
+          return <NearAction {...a} onClick={() => bedAct(nearBed)} />;
+        })()}
+        {near === 'npc' && !card && !sheet && (
+          <NearAction icon="campaign" label={activeMission ? 'Lihat misi' : 'Misi baru!'} sub="Pak Tani" tone="linear-gradient(155deg,#ffe46b,#ffbe0b 60%)" onClick={openMission} />
+        )}
         {nearFruit && !card && (
           <button
             onClick={() => openCard(nearFruit.id)}
@@ -344,10 +443,78 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
           onClose={onTourEnd}
         />
       )}
-      {card && <FruitCard id={card.id} isNew={card.isNew} url={tracks[card.id]} onClose={() => {
+      {card && (
+        <FruitCard
+          id={card.id}
+          isNew={card.isNew}
+          url={tracks[card.id]}
+          onClose={() => {
             sfx.close();
             setCard(null);
-          }} on3D={() => onOpen3D(card.id)} />}
+          }}
+          on3D={() => onOpen3D(card.id)}
+          onCut={() => {
+            setCut({ id: card.id, harvested: false });
+            setCard(null);
+          }}
+        />
+      )}
+      {cut && (
+        <CutView
+          id={cut.id}
+          harvested={cut.harvested}
+          onClose={() => {
+            sfx.close();
+            setCut(null);
+          }}
+        />
+      )}
+      {cut?.harvested && <Confetti key={`h-${cut.id}`} />}
+      {sheet?.kind === 'seed' && (
+        <SeedPicker
+          found={found}
+          onClose={() => setSheet(null)}
+          onPick={(id) => {
+            const i = sheet.bed;
+            sfx.plant();
+            setFarm((s) => ({ ...s, beds: s.beds.map((x, k) => (k === i ? plantBed(id) : x)) }));
+            setSheet(null);
+            say(`Benih ${FRUIT_BY_ID.get(id)!.name} ditanam. Sekarang siram, ya! 💧`, true);
+          }}
+        />
+      )}
+      {sheet?.kind === 'mission' && (
+        <MissionSheet
+          mission={missionById(offer)!}
+          done={farm.done}
+          onClose={() => setSheet(null)}
+          onSwap={() => {
+            sfx.tap();
+            setOffer(nextMission([offer, ...farm.recent]).id);
+          }}
+          onAccept={() => {
+            sfx.celebrate();
+            setFarm((s) => ({ ...s, mission: offer }));
+            setSheet(null);
+          }}
+        />
+      )}
+      {sheet?.kind === 'album' && (
+        <Album
+          found={found}
+          stars={farm.stars}
+          onClose={() => setSheet(null)}
+          onCatalog={() => {
+            setSheet(null);
+            onCatalog();
+          }}
+          onOpen={(f) => {
+            setSheet(null);
+            sfx.open();
+            setCard({ id: f.id, isNew: false });
+          }}
+        />
+      )}
       {card?.isNew && <Confetti key={card.id} />}
     </div>
   );

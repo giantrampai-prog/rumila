@@ -93,6 +93,25 @@ export const sfx = {
     tone(260, 0.14, { type: 'sine', to: 620, vol: 0.35, attack: 0.004 });
     hiss(0.18, { freq: 2500, q: 0.8, vol: 0.08 });
   },
+  /** membelah buah: "cres!" */
+  chop() {
+    hiss(0.12, { freq: 3200, q: 0.9, vol: 0.28 });
+    tone(180, 0.12, { type: 'triangle', to: 90, vol: 0.3, attack: 0.003 });
+  },
+  /** menyiram tanaman */
+  water() {
+    hiss(1.1, { freq: 2200, to: 1400, q: 0.5, vol: 0.12 });
+    for (let i = 0; i < 5; i++) tone(900 + Math.random() * 700, 0.05, { vol: 0.04, at: 0.15 + i * 0.16 });
+  },
+  /** menanam biji */
+  plant() {
+    hiss(0.18, { freq: 700, q: 0.6, vol: 0.15, type: 'lowpass' });
+    tone(420, 0.12, { vol: 0.14, to: 560, at: 0.08 });
+  },
+  /** tanaman naik tahap */
+  grow() {
+    [392, 523, 659].forEach((f, i) => tone(f, 0.16, { vol: 0.08, type: 'triangle', at: i * 0.07 }));
+  },
   /** buah terbang ke keranjang */
   whoosh() {
     hiss(0.45, { freq: 500, to: 2600, q: 1.5, vol: 0.12 });

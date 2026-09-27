@@ -11,6 +11,7 @@ import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
 import * as TX from './textures';
+import { BED_POS, Farm, NPC_POS, type BedView } from './farm3d';
 import { sfx } from '@/lib/sfx';
 
 export interface GardenCallbacks {
@@ -59,6 +60,29 @@ function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => 
 }
 
 /** Balon tanda tanya untuk buah yang belum ditemukan. */
+/** Balon tanda seru (misi tersedia di Pak Tani). */
+const exclaimTex = () =>
+  canvasTex(128, 150, (g) => {
+    g.fillStyle = 'rgba(0,0,0,.18)';
+    g.beginPath();
+    g.arc(66, 66, 58, 0, 7);
+    g.fill();
+    g.fillStyle = '#ffbe0b';
+    g.beginPath();
+    g.arc(64, 62, 58, 0, 7);
+    g.fill();
+    g.beginPath();
+    g.moveTo(50, 112);
+    g.lineTo(64, 146);
+    g.lineTo(78, 112);
+    g.fill();
+    g.fillStyle = '#ffffff';
+    g.font = '900 82px system-ui, sans-serif';
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    g.fillText('!', 64, 68);
+  });
+
 const questionTex = () =>
   canvasTex(128, 150, (g) => {
     g.fillStyle = 'rgba(0,0,0,.18)';
@@ -138,6 +162,8 @@ export class GardenEngine {
   private qTex = questionTex();
   private thumbTex = new Map<string, T.Texture>();
   private hanger: FruitHanger;
+  private farm!: Farm;
+  private exTex = exclaimTex();
   private buildQueue: Marker[] = [];
 
   // pemain
@@ -196,6 +222,11 @@ export class GardenEngine {
     this.buildPlants();
     this.buildDecor();
     this.buildPlayer();
+    // permainan: bedengan Kebun Saya & Pak Tani
+    this.farm = new Farm(this.qTex);
+    this.scene.add(this.farm.group);
+    BED_POS.forEach(([x, z]) => this.obstacles.push({ x, z, r: 1.35 }));
+    this.obstacles.push({ x: NPC_POS[0], z: NPC_POS[1], r: 0.55 });
 
     this.tapRing = new T.Mesh(new T.RingGeometry(0.35, 0.55, 28), new T.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0, depthWrite: false }));
     this.tapRing.rotation.x = -Math.PI / 2;
@@ -341,7 +372,9 @@ export class GardenEngine {
 
     // rumpun rumput (kartu silang bertekstur) & bunga liar, menghindari jalan dan tanaman
     const rowLanes = Object.values(ZONE_DIR).flatMap(([sx, sz]) => [0, 1, 2, 3, 4].map((k) => ({ sx, z: sz * (GARDEN.first + k * GARDEN.step) + 2.6 })));
+    const inFarm = (x: number, z: number) => (x > 5.4 && x < 16.9 && z > 5.2 && z < 14.7) || Math.hypot(x - NPC_POS[0], z - NPC_POS[1]) < 1;
     const clear = (x: number, z: number) =>
+      !inFarm(x, z) &&
       Math.abs(x) > W + 0.4 &&
       Math.abs(z) > W + 0.4 &&
       Math.hypot(x, z) > GARDEN.plaza + 0.6 &&
@@ -868,6 +901,20 @@ export class GardenEngine {
       }
     }
     if (best) return this.walkToPlot(best);
+    // bedengan & Pak Tani
+    const extras: [string, number, number, number][] = [...BED_POS.map(([x, z], i) => [`bed:${i}`, x, z, 0.8] as [string, number, number, number]), ['npc', NPC_POS[0], NPC_POS[1], 1.6]];
+    let bestKey: string | null = null,
+      bk = 0.12 * (this.portrait ? 1.6 : 1);
+    for (const [key, x, z, h] of extras) {
+      v.set(x, h, z).project(this.camera);
+      if (v.z > 1) continue;
+      const d = Math.hypot((v.x - ndc.x) * this.camera.aspect, v.y - ndc.y);
+      if (d < bk) {
+        bk = d;
+        bestKey = key;
+      }
+    }
+    if (bestKey) return this.walkToKey(bestKey);
     const ray = new T.Raycaster();
     ray.setFromCamera(ndc, this.camera);
     const hit = new T.Vector3();
@@ -892,6 +939,38 @@ export class GardenEngine {
     this.arriveKey = p.fruit.id;
     this.faceTo = new T.Vector3(p.x, 0, p.z);
     if (Math.hypot(this.pos.x - p.x, this.pos.z - p.z) < p.reach + 0.6) this.arrive();
+  }
+
+  /** Jalan ke bedengan ("bed:i") atau Pak Tani ("npc"); berdiri di sisi depan (menghadap kamera). */
+  walkToKey(key: string) {
+    const [x, z] = key === 'npc' ? NPC_POS : BED_POS[+key.slice(4)];
+    const stand = new T.Vector3(x, 0, z + (key === 'npc' ? 1.8 : 2.1));
+    this.waypoints = [stand];
+    this.arriveKey = key;
+    this.faceTo = new T.Vector3(x, 0, z);
+    sfx.tap();
+    if (Math.hypot(this.pos.x - x, this.pos.z - z) < 2.6) this.arrive();
+  }
+
+  setBeds(views: BedView[]) {
+    this.farm.setBeds(views);
+  }
+
+  waterFx(i: number) {
+    this.farm.water(i);
+  }
+
+  /** Buah hasil panen terbang dari bedengan ke keranjang. */
+  harvestFx(i: number, color: string) {
+    const mesh = new T.Mesh(new T.SphereGeometry(0.2, 16, 12), new T.MeshStandardMaterial({ color, roughness: 0.4, emissive: color, emissiveIntensity: 0.2 }));
+    const from = this.farm.bedWorld(i);
+    mesh.position.copy(from);
+    this.scene.add(mesh);
+    this.fly.push({ mesh, from, t: 0 });
+  }
+
+  setMissionAvailable(on: boolean) {
+    this.farm.setNpcBubble(on ? this.exTex : null);
   }
 
   /** Mode tur: kontrol anak dinonaktifkan, anak berjalan sendiri. */
@@ -1157,7 +1236,18 @@ export class GardenEngine {
         near = m.plot;
       }
     }
-    const nearId = near?.fruit.id ?? null;
+    let nearId: string | null = near?.fruit.id ?? null;
+    if (!this.tour) {
+      BED_POS.forEach(([x, z], i) => {
+        const d = Math.hypot(x - this.pos.x, z - this.pos.z);
+        if (d < Math.min(nd, 2.8)) {
+          nd = d;
+          nearId = `bed:${i}`;
+        }
+      });
+      const dn = Math.hypot(NPC_POS[0] - this.pos.x, NPC_POS[1] - this.pos.z);
+      if (dn < Math.min(nd, 2.8)) nearId = 'npc';
+    }
     if (nearId !== this.near) {
       this.near = nearId;
       this.cb.onNear(nearId);
@@ -1203,6 +1293,7 @@ export class GardenEngine {
       return true;
     });
 
+    this.farm.update(t, dt);
     // dunia hidup
     this.windmill.rotation.z -= dt * 0.6;
     for (const c of this.clouds) {
