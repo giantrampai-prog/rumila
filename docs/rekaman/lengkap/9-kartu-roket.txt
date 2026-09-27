@@ -1,0 +1,23 @@
+Roket. Kendaraan yang membawa astronaut dari darat ke luar angkasa.
+
+Kapsul. Ruang kecil di puncak roket tempat astronaut duduk.
+
+Tahap kedua. Bagian tengah roket yang menyala setelah tahap pertama lepas.
+
+Tahap pertama. Bagian paling besar, berisi banyak bahan bakar untuk mengangkat roket.
+
+Mesin roket. Menyemburkan gas panas ke bawah sehingga roket terdorong ke atas.
+
+Agam. Agam, astronaut cilik kita! Baju antariksanya membuatnya bisa bernapas dan tetap aman.
+
+Menara. Menara peluncuran dengan jembatan untuk masuk ke kapsul.
+
+Troposfer. Lapisan terbawah, tempat awan dan cuaca.
+
+Stratosfer. Lapisan tempat ozon menahan sinar ultraviolet.
+
+Mesosfer. Lapisan paling dingin, tempat meteor terbakar.
+
+Termosfer. Lapisan aurora dan Stasiun Luar Angkasa.
+
+Eksosfer. Lapisan paling luar, udaranya hampir tidak ada.

@@ -1,0 +1,20 @@
+SEMUA NASKAH SUARA — RINOYA ACADEMY (lengkap, siap unggah)
+
+Cara rekam (sama untuk semua):
+- Satu file = satu rekaman. Paragraf = satu adegan; beri jeda ±1 detik antarparagraf.
+- Kirim WAV + file timestamp kata (seperti biasa) supaya tiap adegan dipasang pas.
+- Suara natural, ceria untuk anak (bukan robotik). Pastikan "Rinoya" terdengar jelas: ri-NO-ya.
+
+TUR (utama):
+1-tur-jelajah-angkasa.txt  15 adegan ±5 menit  (sudah ada rekaman lama "Rumila" → rekam ulang penuh)
+2-tur-roket-astronot.txt   21 adegan ±6 menit  (sudah ada, suara Leda — rekam ulang hanya jika ingin)
+3-tur-jelajah-tubuh.txt    19 adegan ±4 menit  (BELUM ADA SUARA)
+4-tur-kebun-buah.txt       53 adegan ±10 menit (sudah ada rekaman lama "Rumila" → rekam ulang penuh, suara Charon)
+5-tur-bawah-laut.txt       16 adegan ±6 menit  (sudah ada, suara Sulafat — rekam ulang hanya jika ingin)
+6-tur-dalam-bumi.txt       16 adegan ±5 menit  (sudah ada, suara Fenrir — rekam ulang hanya jika ingin)
+
+KARTU KARAKTER (opsional, dibacakan saat karakter diketuk di mode Jelajah):
+7-kartu-bawah-laut.txt   16 kartu
+8-kartu-dalam-bumi.txt   16 kartu
+9-kartu-roket.txt        12 kartu
+(satu file per paket; beri jeda ±1 detik antarkartu)

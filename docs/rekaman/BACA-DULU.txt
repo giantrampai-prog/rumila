@@ -1,0 +1,13 @@
+DAFTAR REKAMAN SUARA — RINOYA ACADEMY
+
+WAJIB (karena nama berubah dari Rumila ke Rinoya):
+1-kebun-buah-pembuka.txt   → suara CHARON (sama seperti tur Kebun Buah). Kirim WAV-nya saja.
+2-angkasa-pembuka.txt      → suara yang SAMA dengan tur Jelajah Angkasa sebelumnya. Kirim WAV-nya saja.
+3-angkasa-penutup.txt      → suara yang SAMA dengan tur Jelajah Angkasa sebelumnya. Kirim WAV-nya saja.
+(Rekaman ini disambung ke rekaman lama, jadi tidak perlu merekam ulang semuanya.)
+
+BELUM ADA SUARA:
+4-jelajah-tubuh-tur-lengkap.txt → 19 adegan, satu file. Bebas pilih suara.
+   Beri jeda ±1 detik antarparagraf. Kirim WAV + file timestamp kata (seperti sebelumnya).
+
+Tips: jangan pakai suara robotik; gaya ceria untuk anak; periksa nama "Rinoya" diucapkan jelas (ri-NO-ya).
