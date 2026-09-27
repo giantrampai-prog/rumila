@@ -65,14 +65,23 @@ async function upload(key: string) {
   if (error) console.error("[rumila] simpan progres gagal", key, error);
 }
 
+/*
+ * Beberapa game menyimpan hampir tiap detik (mis. kebun). Kiriman ke server dibatasi: simpanan pertama
+ * terkirim ±2 dtk kemudian, berikutnya paling sering tiap 20 dtk per game (selalu isi terbaru), dan
+ * semuanya langsung terkirim saat aplikasi ditutup / ke latar.
+ */
+const MIN_GAP = 20000;
+const lastSent = new Map<string, number>();
 function schedule(key: string) {
-  clearTimeout(timers.get(key));
+  if (timers.has(key)) return; // kiriman sudah dijadwalkan; saat itu isi terbaru yang dikirim
+  const wait = Math.max(2000, MIN_GAP - (Date.now() - (lastSent.get(key) ?? 0)));
   timers.set(
     key,
     setTimeout(() => {
       timers.delete(key);
+      lastSent.set(key, Date.now());
       void upload(key);
-    }, 1200),
+    }, wait),
   );
 }
 
@@ -90,14 +99,16 @@ export function installSaveSync() {
     if (familyId) schedule(k);
   };
   // kirim yang masih tertunda sebelum halaman ditutup / aplikasi ke latar
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState !== "hidden") return;
+  const flush = () => {
     for (const [k, t] of timers) {
       clearTimeout(t);
       timers.delete(k);
+      lastSent.set(k, Date.now());
       void upload(k);
     }
-  });
+  };
+  document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flush());
+  window.addEventListener("pagehide", flush);
 }
 
 /**

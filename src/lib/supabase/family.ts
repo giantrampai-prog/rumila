@@ -49,7 +49,7 @@ export async function loadFamily(): Promise<CloudStatus> {
     }
     const fid = fu.family_id;
     const since = new Date(Date.now() - 60 * 86400000).toISOString();
-    const [fam, mem, perm, act] = await Promise.all([
+    const [fam, mem, act] = await Promise.all([
       sb.from("family").select("name").eq("id", fid).single(),
       sb
         .from("member")
@@ -57,7 +57,6 @@ export async function loadFamily(): Promise<CloudStatus> {
         .eq("family_id", fid)
         .order("sort")
         .order("created_at"),
-      sb.from("member_permission").select("member_id, key"),
       sb
         .from("activity_log")
         .select("id, member_id, tool_id, started_at, duration_sec, event, part_id")
@@ -66,7 +65,11 @@ export async function loadFamily(): Promise<CloudStatus> {
         .order("started_at")
         .limit(5000),
     ]);
-    for (const r of [fam, mem, perm, act]) if (r.error) throw r.error;
+    for (const r of [fam, mem, act]) if (r.error) throw r.error;
+    // izin hanya untuk anggota rumah ini (pakai kunci utama member_id, tidak memindai rumah lain)
+    const ids = (mem.data ?? []).map((m) => m.id);
+    const perm = ids.length ? await sb.from("member_permission").select("member_id, key").in("member_id", ids) : { data: [], error: null };
+    if (perm.error) throw perm.error;
 
     const members: Member[] = (mem.data ?? []).map((m) => ({
       id: m.id,
@@ -231,18 +234,32 @@ function syncActivity(next: Activity[], prev: Activity[], fid: string) {
     });
   for (const a of next) {
     const old = byId.get(a.id);
-    if (old && old.durationSec !== a.durationSec && UUID.test(a.id)) {
-      enqueue(
-        async () =>
-          void must(
-            await sb
-              .from("activity_log")
-              .update({ duration_sec: Math.max(0, Math.round(a.durationSec)) })
-              .eq("id", a.id),
-          ),
-      );
-    }
+    if (old && old.durationSec !== a.durationSec && UUID.test(a.id)) pendingDur.set(a.id, a.durationSec);
   }
+  if (pendingDur.size && !durTimer) durTimer = setTimeout(flushDurations, DUR_EVERY);
+}
+
+/*
+ * Lama main bertambah tiap 5 detik di perangkat; menulisnya ke server setiap 5 detik untuk ribuan anak
+ * sekaligus terlalu berat. Nilai terakhir tiap sesi dikumpulkan lalu dikirim paling sering tiap 30 detik,
+ * dan langsung saat aplikasi ditutup / pindah ke latar (tidak ada waktu yang hilang).
+ */
+const DUR_EVERY = 30000;
+const pendingDur = new Map<string, number>();
+let durTimer: ReturnType<typeof setTimeout> | null = null;
+function flushDurations() {
+  if (durTimer) clearTimeout(durTimer);
+  durTimer = null;
+  if (!pendingDur.size) return;
+  const batch = [...pendingDur];
+  pendingDur.clear();
+  const sb = supabase();
+  for (const [id, sec] of batch)
+    enqueue(async () => void must(await sb.from("activity_log").update({ duration_sec: Math.max(0, Math.round(sec)) }).eq("id", id)));
+}
+if (typeof document !== "undefined") {
+  document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flushDurations());
+  window.addEventListener("pagehide", flushDurations);
 }
 
 let started = false;

@@ -59,7 +59,7 @@ describe('tarik & kirim progres', () => {
   beforeAll(() => {
     g.Storage = MemStorage;
     g.localStorage = new MemStorage();
-    g.window = Object.assign(globalThis, { dispatchEvent: () => true });
+    g.window = Object.assign(globalThis, { dispatchEvent: () => true, addEventListener: () => {} });
     g.document = { addEventListener: () => {}, visibilityState: 'visible' };
     g.CustomEvent = class {
       constructor(
@@ -79,12 +79,22 @@ describe('tarik & kirim progres', () => {
     expect(JSON.parse(localStorage.getItem(key)!)).toEqual({ stars: { k1: 3, k2: 2 } });
     // game menyimpan progres baru → terkirim setelah jeda singkat
     localStorage.setItem(key, JSON.stringify({ stars: { k1: 3, k2: 3, k3: 1 } }));
-    await vi.advanceTimersByTimeAsync(1500);
+    await vi.advanceTimersByTimeAsync(2500);
     expect(upserts.at(-1)).toMatchObject({ key, data: { stars: { k1: 3, k2: 3, k3: 1 } } });
+    // simpan terus-menerus (tiap detik): paling banyak 1 kiriman per 20 dtk, isinya selalu yang terbaru
+    const before = upserts.filter((u) => u.key === key).length;
+    for (let i = 0; i < 40; i++) {
+      localStorage.setItem(key, JSON.stringify({ stars: { k1: 3, k2: 3, k3: 1 }, tick: i }));
+      await vi.advanceTimersByTimeAsync(1000);
+    }
+    await vi.advanceTimersByTimeAsync(20000);
+    const sent = upserts.filter((u) => u.key === key).slice(before);
+    expect(sent.length).toBeLessThanOrEqual(3);
+    expect(sent.at(-1)!.data).toMatchObject({ tick: 39 });
     // preferensi perangkat tidak dikirim
     const n = upserts.length;
     localStorage.setItem('rumila-sfx-off', '1');
-    await vi.advanceTimersByTimeAsync(1500);
+    await vi.advanceTimersByTimeAsync(2500);
     expect(upserts.length).toBe(n);
     vi.useRealTimers();
   });
