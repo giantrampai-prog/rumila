@@ -8,7 +8,7 @@
 .koding-node { box-shadow: 0 5px 0 rgba(0, 0, 0, 0.12); transition: transform 0.12s; }
 .koding-node:not(:disabled):active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12); }
 .koding-say { background: #fffaf0; color: #23304a; box-shadow: 0 4px 0 #d8ccb4; position: relative; }
-.koding-diorama svg { filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.12)); }
+.koding-frame { box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12); }
 .koding-rail-dark { background: rgba(255, 255, 255, 0.1) !important; color: #e7e4ff; }
 .koding-rail { background: rgba(35, 48, 74, 0.08); box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.06); }
 .koding-node { position: relative; }

@@ -3,15 +3,15 @@
 // Panggung & maskot Coding Agam: robot Agam (tampak atas untuk panggung, tampak depan untuk sapaan) dan
 // diorama kotak-kotak per dunia — Kebun, Pantai, Salju, Gurun, Luar Angkasa — dengan rintangan khas tiap dunia.
 
-import type { ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { parse, type Level, type Theme } from '@/lib/koding/engine';
 
-export const WORLD: Record<Theme, { name: string; tile: [string, string]; bg: string; ink: string; frame: string }> = {
-  kebun: { name: 'Kebun', tile: ['#a5d86f', '#94cf5f'], bg: '#e9f5d8', ink: '#2f5a14', frame: '#fffaf0' },
-  pantai: { name: 'Pantai', tile: ['#f6e3ad', '#f0d993'], bg: '#fdf3dc', ink: '#7a5412', frame: '#fffaf0' },
-  salju: { name: 'Salju', tile: ['#fbfdff', '#e3edf7'], bg: '#e3eef8', ink: '#1f4a6e', frame: '#bcd3e6' },
-  gurun: { name: 'Gurun', tile: ['#f2cf94', '#ebc27f'], bg: '#fbead2', ink: '#7a4a12', frame: '#fffaf0' },
-  angkasa: { name: 'Luar Angkasa', tile: ['#34306b', '#2c2860'], bg: '#1c1a44', ink: '#e7e4ff', frame: '#141236' },
+export const WORLD: Record<Theme, { name: string; tile: [string, string]; bg: string; ink: string; frame: string; ground: string; dot: string }> = {
+  kebun: { name: 'Kebun', tile: ['#a5d86f', '#94cf5f'], bg: '#e9f5d8', ink: '#2f5a14', frame: '#fffaf0', ground: '#d6ecbd', dot: 'rgba(63,143,47,.16)' },
+  pantai: { name: 'Pantai', tile: ['#f6e3ad', '#f0d993'], bg: '#fdf3dc', ink: '#7a5412', frame: '#fffaf0', ground: '#f8e9c3', dot: 'rgba(176,125,40,.16)' },
+  salju: { name: 'Salju', tile: ['#fbfdff', '#e3edf7'], bg: '#e3eef8', ink: '#1f4a6e', frame: '#bcd3e6', ground: '#eef5fb', dot: 'rgba(120,160,200,.2)' },
+  gurun: { name: 'Gurun', tile: ['#f2cf94', '#ebc27f'], bg: '#fbead2', ink: '#7a4a12', frame: '#fffaf0', ground: '#f5dfb8', dot: 'rgba(160,100,30,.16)' },
+  angkasa: { name: 'Luar Angkasa', tile: ['#34306b', '#2c2860'], bg: '#1c1a44', ink: '#e7e4ff', frame: '#141236', ground: '#141236', dot: 'rgba(255,255,255,.35)' },
 };
 export const THEMES: Theme[] = ['kebun', 'pantai', 'salju', 'gurun', 'angkasa'];
 
@@ -155,7 +155,44 @@ function Decor({ theme, X, Y, x, y }: { theme: Theme; X: number; Y: number; x: n
   return <circle cx={px} cy={py} r="2.5" fill="#fff" opacity="0.7" />;
 }
 
-export function Stage({ level, pos, rot, bump, won }: { level: Level; pos: { x: number; y: number }; rot: number; bump: boolean; won: boolean }) {
+/**
+ * Bingkai papan selalu mengisi seluruh ruang panggung (tampilan sama di semua level), sedangkan ukuran kotak
+ * dibuat seragam: paling besar seperlima sisi terpendek bingkai. Peta kecil tidak digelembungkan, peta
+ * besar diperkecil seperlunya supaya muat.
+ */
+const MIN_CELLS = 5;
+const PAD = 22;
+
+export function Stage(props: { level: Level; pos: { x: number; y: number }; rot: number; bump: boolean; won: boolean }) {
+  const { level } = props;
+  const p = parse(level);
+  const W = WORLD[level.theme];
+  const box = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState({ w: 0, h: 0 });
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => setSize({ w: e.contentRect.width, h: e.contentRect.height }));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const aw = Math.max(0, size.w - PAD * 2),
+    ah = Math.max(0, size.h - PAD * 2);
+  const tile = Math.floor(Math.min(aw / p.w, ah / p.h, Math.min(aw, ah) / MIN_CELLS, 120));
+  return (
+    <div ref={box} className="koding-frame flex h-full w-full items-center justify-center overflow-hidden rounded-[22px]"
+      style={{ backgroundColor: W.ground, backgroundImage: `radial-gradient(${W.dot} 1.5px, transparent 2px)`, backgroundSize: '22px 22px', border: `6px solid ${W.frame}` }}
+    >
+      {tile > 0 && (
+        <div className="rounded-[16px]" style={{ width: tile * p.w + 8, height: tile * p.h + 8, padding: 4, background: W.frame, boxShadow: '0 5px 0 rgba(0,0,0,.12)' }}>
+          <Board {...props} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Board({ level, pos, rot, bump, won }: { level: Level; pos: { x: number; y: number }; rot: number; bump: boolean; won: boolean }) {
   const p = parse(level);
   const W = WORLD[level.theme];
   const cells: ReactNode[] = [];
@@ -170,8 +207,7 @@ export function Stage({ level, pos, rot, bump, won }: { level: Level; pos: { x: 
       else if (c === '.') cells.push(<Decor key={`d${x}-${y}`} theme={level.theme} X={X} Y={Y} x={x} y={y} />);
     }
   return (
-    <svg viewBox={`-6 -6 ${p.w * 100 + 12} ${p.h * 100 + 12}`} className="block h-full w-full" role="img" aria-label="Panggung Agam">
-      <rect x="-6" y="-6" width={p.w * 100 + 12} height={p.h * 100 + 12} rx="22" fill={W.frame} />
+    <svg viewBox={`0 0 ${p.w * 100} ${p.h * 100}`} className="block h-full w-full overflow-visible" role="img" aria-label="Panggung Agam">
       {cells}
       <circle cx={p.start.x * 100 + 50} cy={p.start.y * 100 + 50} r="30" fill="none" stroke={level.theme === 'salju' ? '#9bb8d0' : '#fff'} strokeOpacity="0.8" strokeWidth="5" strokeDasharray="8 8" />
       <g transform={`translate(${p.goal.x * 100 + 50} ${p.goal.y * 100 + 50})`}>
