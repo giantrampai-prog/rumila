@@ -10,7 +10,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
 import { sharedAudio, unlockAudio } from '@/lib/audio-unlock';
-import { sfx, startGardenAmbience, stopGardenAmbience } from '@/lib/sfx';
+import { preloadAnimalSounds, sfx, startGardenAmbience, stopGardenAmbience } from '@/lib/sfx';
 import { FRUITS, FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { PERM, TOOL_ID } from '@/lib/fruits/progress';
@@ -376,6 +376,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
   // suasana kebun (kicau burung & angin) selama kebun tampil
   useEffect(() => {
     if (!active) return;
+    preloadAnimalSounds();
     startGardenAmbience();
     return () => stopGardenAmbience();
   }, [active]);

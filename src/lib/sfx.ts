@@ -3,7 +3,36 @@
 // kilau saat mendekati buah, cipratan & gelembung laut, gemuruh roket, serta suasana kebun (burung, angin).
 // Semua lewat satu gain utama agar lembut dan tidak menutupi narasi.
 
-import { audioContext } from './segment-player';
+import { audioContext, loadBuffer } from './segment-player';
+
+/* ---------------- rekaman hewan asli (domain publik, lihat public/fruits/suara/SUMBER.txt) ---------------- */
+
+const GOAT = [1, 2, 3, 4, 5].map((i) => `/fruits/suara/kambing-${i}.m4a`);
+const HEN = [1, 2, 3].map((i) => `/fruits/suara/ayam-${i}.m4a`);
+const BIRDS = '/fruits/suara/burung.m4a';
+const pick = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
+const samples = new Map<string, AudioBuffer | null>();
+
+/** Muat semua rekaman hewan lebih dulu (dipanggil saat kebun dibuka). */
+export function preloadAnimalSounds() {
+  for (const src of [...GOAT, ...HEN, '/fruits/suara/jago.m4a', BIRDS]) if (!samples.has(src)) void loadBuffer(src).then((b) => samples.set(src, b));
+}
+
+function playSample(src: string, vol: number, rate = 1) {
+  const c = out();
+  const buf = samples.get(src);
+  if (!c || muted || !buf || vol <= 0.02) {
+    if (!samples.has(src)) void loadBuffer(src).then((b) => samples.set(src, b));
+    return;
+  }
+  const s = c.createBufferSource();
+  s.buffer = buf;
+  s.playbackRate.value = rate;
+  const g = c.createGain();
+  g.gain.value = vol;
+  s.connect(g).connect(master!);
+  s.start();
+}
 
 let master: GainNode | null = null;
 let noiseBuf: AudioBuffer | null = null;
@@ -216,63 +245,14 @@ export const sfx = {
   scan() {
     [660, 990, 1320].forEach((f, i) => tone(f, 0.12, { type: 'triangle', vol: 0.07, at: i * 0.05 }));
   },
-  /** kambing mengembik "mbeee…" (getaran suara khas kambing); vol 0–1 mengikuti jarak */
+  /** kambing mengembik — rekaman kambing asli (domain publik); vol 0–1 mengikuti jarak */
   goat(vol = 1) {
-    const c = out();
-    if (!c || muted || vol <= 0.02) return;
-    const t = c.currentTime;
-    const dur = 0.75 + Math.random() * 0.35;
-    const f0 = 330 + Math.random() * 90;
-    const o = c.createOscillator();
-    o.type = 'sawtooth';
-    o.frequency.setValueAtTime(f0 * 0.9, t);
-    o.frequency.linearRampToValueAtTime(f0, t + 0.08);
-    o.frequency.linearRampToValueAtTime(f0 * 0.86, t + dur);
-    // getaran "e-e-e-e" (modulasi amplitudo ±20 Hz)
-    const trem = c.createGain();
-    trem.gain.value = 0.55;
-    const lfo = c.createOscillator();
-    lfo.frequency.value = 18 + Math.random() * 6;
-    const lg = c.createGain();
-    lg.gain.value = 0.45;
-    lfo.connect(lg).connect(trem.gain);
-    // dua formant vokal "e"
-    const f1 = c.createBiquadFilter();
-    f1.type = 'bandpass';
-    f1.frequency.value = 650;
-    f1.Q.value = 3;
-    const f2 = c.createBiquadFilter();
-    f2.type = 'bandpass';
-    f2.frequency.value = 1900;
-    f2.Q.value = 5;
-    const g = c.createGain();
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(0.5 * vol, t + 0.05);
-    g.gain.setValueAtTime(0.5 * vol, t + dur * 0.7);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-    o.connect(trem);
-    trem.connect(f1).connect(g);
-    trem.connect(f2).connect(g);
-    g.connect(master!);
-    o.start(t);
-    lfo.start(t);
-    o.stop(t + dur + 0.05);
-    lfo.stop(t + dur + 0.05);
-    // hembusan "mb" di awal
-    hiss(0.08, { freq: 500, q: 1, vol: 0.05 * vol, type: 'lowpass' });
+    playSample(pick(GOAT), 0.9 * vol, 0.94 + Math.random() * 0.12);
   },
-  /** ayam berkotek "petok-petok-petooook" */
+  /** ayam berkotek — rekaman ayam asli; sesekali ayam jago berkokok */
   cluck(vol = 1) {
-    if (vol <= 0.02) return;
-    const n = 3 + Math.floor(Math.random() * 3);
-    for (let i = 0; i < n; i++) {
-      const f = 520 + Math.random() * 120;
-      tone(f, 0.07, { type: 'triangle', vol: 0.16 * vol, to: f * 0.7, at: i * 0.16, attack: 0.004 });
-      hiss(0.05, { freq: 1500, q: 2, vol: 0.04 * vol, at: i * 0.16 });
-    }
-    const e = n * 0.16 + 0.05;
-    tone(600, 0.32, { type: 'triangle', vol: 0.15 * vol, to: 900, at: e });
-    tone(880, 0.2, { type: 'triangle', vol: 0.1 * vol, to: 520, at: e + 0.3 });
+    if (Math.random() < 0.15) playSample('/fruits/suara/jago.m4a', 0.55 * vol);
+    else playSample(pick(HEN), 0.75 * vol, 0.95 + Math.random() * 0.1);
   },
   /** kicau burung: trill cepat & siulan meluncur */
   birdSong(vol = 1) {
@@ -303,6 +283,7 @@ export const sfx = {
 
 let ambientTimer = 0;
 let windNode: { stop: () => void } | null = null;
+let birdNode: { stop: () => void } | null = null;
 
 function chirp() {
   const base = 2200 + Math.random() * 1600;
@@ -339,11 +320,25 @@ export function startGardenAmbience() {
       g.disconnect();
     },
   };
+  // kicau burung asli sebagai latar (berulang pelan)
+  const startBirds = () => {
+    const buf = samples.get(BIRDS);
+    if (!buf || birdNode || muted) return;
+    const src = c.createBufferSource();
+    src.buffer = buf;
+    src.loop = true;
+    const bg = c.createGain();
+    bg.gain.value = 0.28;
+    src.connect(bg).connect(master!);
+    src.start();
+    birdNode = { stop: () => { try { src.stop(); } catch {} bg.disconnect(); } };
+  };
   const loop = () => {
-    if (!muted && Math.random() < 0.7) chirp();
+    if (!birdNode) startBirds();
+    else if (!muted && Math.random() < 0.25) chirp();
     ambientTimer = window.setTimeout(loop, 2500 + Math.random() * 5000);
   };
-  ambientTimer = window.setTimeout(loop, 1500);
+  ambientTimer = window.setTimeout(loop, 800);
 }
 
 export function stopGardenAmbience() {
@@ -351,6 +346,8 @@ export function stopGardenAmbience() {
   ambientTimer = 0;
   windNode?.stop();
   windNode = null;
+  birdNode?.stop();
+  birdNode = null;
 }
 
 /* ---------------- bunyi otomatis untuk semua tombol ---------------- */

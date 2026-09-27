@@ -210,7 +210,6 @@ export class GardenEngine {
   onTower = false;
   private nextGoat = 4;
   private nextCluck = 3;
-  private nextBird = 2;
   private skyGroup!: T.Group;
   private gapuras: T.Group[] = [];
 
@@ -1506,10 +1505,7 @@ export class GardenEngine {
       const d = Math.hypot(this.pos.x - 19.5, this.pos.z - 19);
       if (d < 22) sfx.cluck(Math.max(0, 1 - d / 22));
     }
-    if (t > this.nextBird) {
-      this.nextBird = t + 3 + Math.random() * 5;
-      sfx.birdSong(0.6 + Math.random() * 0.4);
-    }
+
     for (const gp of this.gapuras) gp.userData.update?.(t);
     // dunia hidup
     this.windmill.rotation.z -= dt * 0.6;
