@@ -1,10 +1,10 @@
-// Mesin Koding Robi (murni, bisa dites): peta kotak-kotak, Robi menghadap satu arah, program = daftar perintah.
+// Mesin Coding Agam (murni, bisa dites): peta kotak-kotak, Agam menghadap satu arah, program = daftar perintah.
 // Menjalankan program menghasilkan langkah-langkah untuk dianimasikan. Solusi terpendek dicari otomatis (BFS)
 // untuk menentukan bintang: blok sehemat solusi terpendek = 3 bintang.
 
 export type Dir = 0 | 1 | 2 | 3; // 0 atas, 1 kanan, 2 bawah, 3 kiri
 export type Cmd = 'maju' | 'kiri' | 'kanan';
-export type Theme = 'kebun' | 'pantai' | 'angkasa';
+export type Theme = 'kebun' | 'pantai' | 'salju' | 'gurun' | 'angkasa';
 
 export interface Level {
   id: string;
@@ -83,14 +83,17 @@ export function run(l: Level, prog: Cmd[]): RunResult {
   return { steps, result: 'short' };
 }
 
-/** Program terpendek (BFS atas posisi+arah). null bila tidak bisa diselesaikan. */
-export function solve(l: Level): Cmd[] | null {
+type State = { x: number; y: number; d: Dir };
+
+/** Program terpendek dari suatu keadaan (BFS atas posisi+arah). null bila tidak bisa diselesaikan. */
+function solveFrom(l: Level, from: State): Cmd[] | null {
   const p = parse(l);
+  if (from.x === p.goal.x && from.y === p.goal.y) return [];
   const key = (x: number, y: number, d: number) => `${x},${y},${d}`;
-  const q: { x: number; y: number; d: Dir; prog: Cmd[] }[] = [{ ...p.start, d: l.dir, prog: [] }];
-  const seen = new Set([key(p.start.x, p.start.y, l.dir)]);
-  while (q.length) {
-    const s = q.shift()!;
+  const q: (State & { prog: Cmd[] })[] = [{ ...from, prog: [] }];
+  const seen = new Set([key(from.x, from.y, from.d)]);
+  for (let h = 0; h < q.length; h++) {
+    const s = q[h];
     for (const c of l.blocks) {
       let { x, y } = s,
         d = s.d;
@@ -108,6 +111,28 @@ export function solve(l: Level): Cmd[] | null {
     }
   }
   return null;
+}
+
+/** Program terpendek dari posisi awal. */
+export function solve(l: Level): Cmd[] | null {
+  const p = parse(l);
+  return solveFrom(l, { ...p.start, d: l.dir });
+}
+
+/**
+ * Bantuan untuk anak yang macet: bila program sejauh ini sudah salah (menabrak / menjauh sehingga tak bisa
+ * sampai), tunjuk blok yang salah; bila masih benar, beri tahu blok berikutnya (dari jalan terpendek).
+ */
+export function nextHint(l: Level, prog: Cmd[]): { kind: 'next'; cmd: Cmd } | { kind: 'wrong'; i: number } | { kind: 'done' } {
+  const r = run(l, prog);
+  if (r.result === 'win') return { kind: 'done' };
+  if (r.result === 'bump') return { kind: 'wrong', i: r.steps[r.steps.length - 1].i };
+  const p = parse(l);
+  const last = r.steps[r.steps.length - 1];
+  const st: State = last ? { x: last.x, y: last.y, d: last.dir } : { ...p.start, d: l.dir };
+  const rest = solveFrom(l, st);
+  if (!rest || !rest.length) return { kind: 'wrong', i: Math.max(0, prog.length - 1) };
+  return { kind: 'next', cmd: rest[0] };
 }
 
 /** Bintang: sehemat solusi terpendek = 3, lebih 1–2 blok = 2, selebihnya 1. */

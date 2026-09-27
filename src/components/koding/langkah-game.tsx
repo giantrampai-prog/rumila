@@ -1,24 +1,29 @@
 'use client';
 
-// Koding Robi · Langkah — anak menyusun perintah (maju, belok kiri, belok kanan) supaya Robi sampai ke bintang.
-// Peta level (Kebun, Pantai, Luar Angkasa) → layar level: panggung diorama, strip program (ketuk blok untuk
-// menambah, ketuk blok di program untuk menghapus, seret untuk mengubah urutan), Jalankan → Robi bergerak
-// langkah demi langkah, blok yang sedang dijalankan menyala; menabrak → Robi terguncang + petunjuk; sampai →
-// bintang 1–3 (3 bila blok sehemat solusi terpendek). Progres tersimpan per anak & tercatat di Laporan.
+// Coding Agam · Langkah — anak menyusun perintah (maju, belok kiri, belok kanan) supaya robot Agam sampai ke
+// bintang. 100 level untuk usia 3–8 tahun di 5 dunia (Kebun, Pantai, Salju, Gurun, Luar Angkasa), makin tinggi
+// makin sulit; selesai 100 level → sertifikat. Layar level: panggung diorama, strip program (ketuk blok untuk
+// menambah, ketuk blok di program untuk menghapus, seret untuk mengubah urutan), Jalankan → Agam bergerak
+// langkah demi langkah dengan blok aktif menyala; menabrak → terguncang + nomor blok; tombol Bantuan menunjuk
+// blok berikutnya / blok yang salah. Bintang 1–3 (3 bila sehemat solusi terpendek). Progres per anak & Laporan.
 
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Icon } from '@/components/ui';
-import { DX, DY, parse, run, starsFor, type Cmd, type Dir, type Level, type Theme } from '@/lib/koding/engine';
+import { DX, DY, nextHint, parse, run, starsFor, type Cmd, type Dir, type Level } from '@/lib/koding/engine';
 import { LANGKAH } from '@/lib/koding/langkah';
 import { sfx } from '@/lib/sfx';
 import { useMe } from '@/lib/store';
 import { completeTool, useToolSession } from '@/lib/tool-session';
+import { Certificate } from './certificate';
+import { AgamFront, Stage, THEMES, WORLD } from './stage';
 import './koding.css';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const INK = '#23304a';
 const TOOL = 'koding-langkah';
+const PER_WORLD = 20;
+const TOTAL = LANGKAH.length;
 
 const BLOCK: Record<Cmd, { label: string; icon: string; c: string; d: string }> = {
   maju: { label: 'maju', icon: 'arrow_upward', c: '#3a86ff', d: '#2463c9' },
@@ -26,122 +31,49 @@ const BLOCK: Record<Cmd, { label: string; icon: string; c: string; d: string }> 
   kanan: { label: 'belok kanan', icon: 'turn_right', c: '#8b5cf6', d: '#6a3fd1' },
 };
 
-const WORLD: Record<Theme, { name: string; tile: [string, string]; bg: string; ink: string }> = {
-  kebun: { name: 'Kebun', tile: ['#a5d86f', '#94cf5f'], bg: '#e9f5d8', ink: '#2f5a14' },
-  pantai: { name: 'Pantai', tile: ['#f6e3ad', '#f0d993'], bg: '#fdf3dc', ink: '#7a5412' },
-  angkasa: { name: 'Luar Angkasa', tile: ['#34306b', '#2c2860'], bg: '#1c1a44', ink: '#e7e4ff' },
-};
-
-/* ---------------- panggung ---------------- */
-
-/** Robi tampak atas: bodi bulat, visor bermata di sisi depan (atas), antena, roda di kiri-kanan. */
-function Robi({ bump }: { bump: boolean }) {
-  return (
-    <g className={bump ? 'robi-bump' : undefined}>
-      <ellipse cx="0" cy="6" rx="36" ry="34" fill="#000" opacity="0.18" />
-      <rect x="-44" y="-20" width="12" height="40" rx="5" fill="#3b4256" />
-      <rect x="32" y="-20" width="12" height="40" rx="5" fill="#3b4256" />
-      <circle r="34" fill="#2ec4a6" stroke="#178f78" strokeWidth="5" />
-      <path d="M-24 -14 Q0 -40 24 -14 L20 -8 Q0 -26 -20 -8 Z" fill="#1b2a4e" />
-      <circle cx="-9" cy="-19" r="4.5" fill="#7df9ff" className="robi-eye" />
-      <circle cx="9" cy="-19" r="4.5" fill="#7df9ff" className="robi-eye" />
-      <circle cx="0" cy="6" r="7" fill="#178f78" />
-      <circle cx="0" cy="6" r="3.5" fill="#ffd23f" />
-      <path d="M-10 26 L0 34 L10 26" fill="none" stroke="#178f78" strokeWidth="4" strokeLinecap="round" />
-    </g>
-  );
-}
-
-/** Robi tampak depan untuk sampul peta level. */
-function RobiFront({ size = 84 }: { size?: number }) {
-  return (
-    <svg viewBox="0 0 120 130" width={size} height={size * 1.08} aria-hidden className="robi-wave">
-      <line x1="60" y1="22" x2="60" y2="8" stroke="#178f78" strokeWidth="5" strokeLinecap="round" />
-      <circle cx="60" cy="8" r="7" fill="#ff6b5b" className="robi-led" />
-      <rect x="18" y="20" width="84" height="66" rx="30" fill="#2ec4a6" stroke="#178f78" strokeWidth="5" />
-      <rect x="30" y="34" width="60" height="34" rx="17" fill="#1b2a4e" />
-      <circle cx="47" cy="51" r="7" fill="#7df9ff" className="robi-eye" />
-      <circle cx="73" cy="51" r="7" fill="#7df9ff" className="robi-eye" />
-      <path d="M50 76 Q60 82 70 76" fill="none" stroke="#178f78" strokeWidth="4" strokeLinecap="round" />
-      <rect x="36" y="88" width="48" height="30" rx="12" fill="#2ec4a6" stroke="#178f78" strokeWidth="5" />
-      <circle cx="60" cy="103" r="6" fill="#ffd23f" />
-      <rect x="8" y="90" width="24" height="12" rx="6" fill="#2ec4a6" stroke="#178f78" strokeWidth="4" transform="rotate(-35 20 96)" />
-      <rect x="88" y="90" width="24" height="12" rx="6" fill="#2ec4a6" stroke="#178f78" strokeWidth="4" />
-      <rect x="38" y="118" width="16" height="10" rx="4" fill="#3b4256" />
-      <rect x="66" y="118" width="16" height="10" rx="4" fill="#3b4256" />
-    </svg>
-  );
-}
-
-function Stage({ level, pos, rot, bump, won }: { level: Level; pos: { x: number; y: number }; rot: number; bump: boolean; won: boolean }) {
-  const p = parse(level);
-  const W = WORLD[level.theme];
-  const cells = [];
-  for (let y = 0; y < p.h; y++)
-    for (let x = 0; x < p.w; x++) {
-      const c = p.cell(x, y);
-      const X = x * 100,
-        Y = y * 100;
-      const base = <rect key={`t${x}-${y}`} x={X + 2} y={Y + 2} width="96" height="96" rx="14" fill={W.tile[(x + y) % 2]} />;
-      cells.push(base);
-      if (c === '~')
-        cells.push(
-          <g key={`w${x}-${y}`}>
-            <rect x={X + 2} y={Y + 2} width="96" height="96" rx="14" fill="#5bb8ea" />
-            <path d={`M${X + 16} ${Y + 40} q12 -9 24 0 t24 0 t24 0 M${X + 16} ${Y + 66} q12 -9 24 0 t24 0 t24 0`} fill="none" stroke="#d6f1ff" strokeWidth="5" strokeLinecap="round" />
-          </g>,
-        );
-      if (c === '#')
-        cells.push(
-          level.theme === 'angkasa' ? (
-            <g key={`a${x}-${y}`}>
-              <circle cx={X + 50} cy={Y + 52} r="36" fill="#8a7e74" />
-              <circle cx={X + 38} cy={Y + 42} r="9" fill="#6f655c" />
-              <circle cx={X + 62} cy={Y + 62} r="6" fill="#6f655c" />
-              <circle cx={X + 60} cy={Y + 38} r="4" fill="#6f655c" />
-            </g>
-          ) : (
-            <g key={`r${x}-${y}`}>
-              <ellipse cx={X + 50} cy={Y + 62} rx="38" ry="12" fill="#000" opacity="0.15" />
-              <path d={`M${X + 16} ${Y + 64} Q${X + 20} ${Y + 26} ${X + 50} ${Y + 22} Q${X + 82} ${Y + 26} ${X + 84} ${Y + 64} Z`} fill="#9aa1a8" />
-              <path d={`M${X + 30} ${Y + 40} Q${X + 44} ${Y + 30} ${X + 58} ${Y + 34}`} fill="none" stroke="#c9ced3" strokeWidth="6" strokeLinecap="round" />
-            </g>
-          ),
-        );
-      if (level.theme === 'angkasa' && c === '.' && (x * 7 + y * 3) % 4 === 0) cells.push(<circle key={`s${x}-${y}`} cx={X + 20 + ((x * 31) % 60)} cy={Y + 24 + ((y * 17) % 50)} r="2.5" fill="#fff" opacity="0.7" />);
-      if (level.theme === 'kebun' && c === '.' && (x * 73 + y * 37) % 7 < 2)
-        cells.push(<path key={`g${x}-${y}`} d={`M${X + 70} ${Y + 80} l4 -12 l4 12 l4 -9 l3 9`} fill="none" stroke="#6fae3a" strokeWidth="3" strokeLinecap="round" />);
-    }
-  return (
-    <svg viewBox={`-6 -6 ${p.w * 100 + 12} ${p.h * 100 + 12}`} className="block h-full w-full" role="img" aria-label="Panggung Robi">
-      <rect x="-6" y="-6" width={p.w * 100 + 12} height={p.h * 100 + 12} rx="22" fill={level.theme === 'angkasa' ? '#141236' : '#fffaf0'} />
-      {cells}
-      <circle cx={p.start.x * 100 + 50} cy={p.start.y * 100 + 50} r="30" fill="none" stroke="#fff" strokeOpacity="0.7" strokeWidth="5" strokeDasharray="8 8" />
-      <g transform={`translate(${p.goal.x * 100 + 50} ${p.goal.y * 100 + 50})`}>
-        <circle r="38" fill="#ffd23f" opacity="0.28" className="goal-pulse" />
-        <path d="M0 -30 L9 -9 L31 -8 L14 6 L20 28 L0 16 L-20 28 L-14 6 L-31 -8 L-9 -9 Z" fill={won ? '#ffb000' : '#ffd23f'} stroke="#e0a100" strokeWidth="4" strokeLinejoin="round" />
-      </g>
-      <g className="robi-move" style={{ transform: `translate(${pos.x * 100 + 50}px, ${pos.y * 100 + 50}px)` }}>
-        <g className="robi-turn" style={{ transform: `rotate(${rot}deg)` }}>
-          <Robi bump={bump} />
-        </g>
-      </g>
-    </svg>
-  );
-}
-
 /* ---------------- progres ---------------- */
 
-type Progress = { langkah: number[] };
+/** bintang per id level (bukan per urutan, supaya aman bila daftar level berubah) + tanggal sertifikat */
+type Progress = { stars: Record<string, number>; certAt?: string };
 const loadProg = (key: string): Progress => {
   try {
     const raw = localStorage.getItem(key);
-    if (raw) return JSON.parse(raw);
+    const p = raw ? JSON.parse(raw) : null;
+    if (p?.stars) return p;
   } catch {}
-  return { langkah: [] };
+  return { stars: {} };
 };
 
 const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+const fmtDate = (iso: string) => new Date(iso).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+
+/* ---------------- peta level: 5 dunia × 20 level, jalur berkelok ---------------- */
+
+const COLS = 5;
+/** posisi (kolom, baris) level ke-k dalam satu dunia; baris ganjil berjalan dari kanan ke kiri */
+const cellOf = (k: number) => {
+  const r = Math.floor(k / COLS),
+    c = k % COLS;
+  return { r, c: r % 2 ? COLS - 1 - c : c };
+};
+
+function Trail({ rows }: { rows: number }) {
+  // jalur putus-putus melewati tengah setiap node, berbelok setengah lingkaran di ujung baris
+  const W = COLS * 100,
+    H = rows * 100;
+  let d = 'M50 50';
+  for (let r = 0; r < rows; r++) {
+    const y = r * 100 + 50;
+    const endX = r % 2 ? 50 : W - 50;
+    d += ` L${endX} ${y}`;
+    if (r < rows - 1) d += ` A50 50 0 0 ${r % 2 ? 0 : 1} ${endX} ${y + 100}`;
+  }
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden>
+      <path d={d} fill="none" stroke="currentColor" strokeOpacity="0.28" strokeWidth="6" strokeDasharray="10 12" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+    </svg>
+  );
+}
 
 /* ---------------- permainan ---------------- */
 
@@ -151,7 +83,7 @@ export function LangkahGame() {
   useToolSession(memberId, TOOL, 'coding');
   const router = useRouter();
   const key = `rumila-koding-${memberId}`;
-  const [prog, setProg] = useState<Progress>({ langkah: [] });
+  const [prog, setProg] = useState<Progress>({ stars: {} });
   useEffect(() => setProg(loadProg(key)), [key]);
   const saveProg = (p: Progress) => {
     setProg(p);
@@ -170,9 +102,26 @@ export function LangkahGame() {
   const [running, setRunning] = useState(false);
   const [say, setSay] = useState('');
   const [win, setWin] = useState<number | null>(null);
+  const [cert, setCert] = useState(false);
+  /** bantuan: blok palet yang disarankan / nomor blok program yang salah */
+  const [tipCmd, setTipCmd] = useState<Cmd | null>(null);
+  const [tipBad, setTipBad] = useState<number | null>(null);
+  const [fails, setFails] = useState(0);
   const runId = useRef(0);
 
-  const resetRobi = useCallback((l: Level) => {
+  const doneCount = LANGKAH.filter((l) => (prog.stars[l.id] ?? 0) > 0).length;
+  const starTotal = LANGKAH.reduce((a, l) => a + (prog.stars[l.id] ?? 0), 0);
+  const allDone = doneCount === TOTAL;
+  const unlocked = (i: number) => i === 0 || (prog.stars[LANGKAH[i - 1].id] ?? 0) > 0;
+  const firstOpen = LANGKAH.findIndex((l) => !((prog.stars[l.id] ?? 0) > 0));
+  const current = firstOpen === -1 ? TOTAL - 1 : firstOpen;
+
+  const clearTip = () => {
+    setTipCmd(null);
+    setTipBad(null);
+  };
+
+  const resetAgam = useCallback((l: Level) => {
     const p = parse(l);
     setPos(p.start);
     setRot(l.dir * 90);
@@ -186,14 +135,31 @@ export function LangkahGame() {
     setLi(i);
     setCode([]);
     setWin(null);
+    setFails(0);
+    clearTip();
     setSay(l.hint);
-    resetRobi(l);
+    resetAgam(l);
   };
 
   const stop = () => {
     runId.current++;
     setRunning(false);
-    if (level) resetRobi(level);
+    if (level) resetAgam(level);
+  };
+
+  const help = () => {
+    if (!level || running) return;
+    const h = nextHint(level, code);
+    sfx.pick();
+    if (h.kind === 'next') {
+      setTipBad(null);
+      setTipCmd(h.cmd);
+      setSay(`Coba tambahkan blok "${BLOCK[h.cmd].label}" berikutnya.`);
+    } else if (h.kind === 'wrong') {
+      setTipCmd(null);
+      setTipBad(h.i);
+      setSay(`Blok nomor ${h.i + 1} sepertinya kurang tepat. Ketuk untuk menghapusnya.`);
+    } else setSay('Programnya sudah benar! Tekan Jalankan.');
   };
 
   const go = async () => {
@@ -204,8 +170,9 @@ export function LangkahGame() {
       return;
     }
     const id = ++runId.current;
+    clearTip();
     setRunning(true);
-    resetRobi(level);
+    resetAgam(level);
     sfx.open();
     await wait(250);
     const r = run(level, code);
@@ -215,7 +182,7 @@ export function LangkahGame() {
       if (runId.current !== id) return;
       setActive(s.i);
       if (s.kind === 'turn') {
-        turn += (((s.dir - lastDir + 4) % 4) === 1 ? 90 : -90);
+        turn += (s.dir - lastDir + 4) % 4 === 1 ? 90 : -90;
         lastDir = s.dir;
         setRot(turn);
         sfx.whoosh();
@@ -241,17 +208,23 @@ export function LangkahGame() {
       const st = starsFor(level, code.length);
       sfx.celebrate();
       setWin(st);
-      const next = [...prog.langkah];
-      if (!next[li!]) completeTool(memberId, TOOL, 'coding', `level:${level.id}`);
-      next[li!] = Math.max(next[li!] ?? 0, st);
-      saveProg({ ...prog, langkah: next });
-    } else if (r.result === 'bump') {
+      const had = prog.stars[level.id] ?? 0;
+      if (!had) completeTool(memberId, TOOL, 'coding', `level:${level.id}`);
+      const stars = { ...prog.stars, [level.id]: Math.max(had, st) };
+      const finished = LANGKAH.every((l) => (stars[l.id] ?? 0) > 0);
+      saveProg({ ...prog, stars, certAt: prog.certAt ?? (finished ? new Date().toISOString() : undefined) });
+      return;
+    }
+    const f = fails + 1;
+    setFails(f);
+    const nudge = f >= 2 ? ' Butuh bantuan? Ketuk lampu.' : '';
+    if (r.result === 'bump') {
       const n = r.steps[r.steps.length - 1].i + 1;
-      setSay(`Aduh, Robi menabrak! Cek blok nomor ${n}.`);
+      setSay(`Aduh, Agam menabrak! Cek blok nomor ${n}.${nudge}`);
     } else {
       setActive(-1);
       sfx.bounceBack();
-      setSay('Robi belum sampai di bintang. Tambah perintah lagi, ya.');
+      setSay(`Agam belum sampai di bintang. Tambah perintah lagi, ya.${nudge}`);
     }
   };
 
@@ -291,80 +264,131 @@ export function LangkahGame() {
         return n;
       });
     }
+    clearTip();
     setDragOver(null);
     setDragFrom(null);
-    if (level && !running) resetRobi(level);
+    if (level && !running) resetAgam(level);
   };
 
   const add = (c: Cmd) => {
     if (running || code.length >= 30) return;
     sfx.pick();
+    clearTip();
     setCode((x) => [...x, c]);
-    if (level) resetRobi(level);
+    if (level) resetAgam(level);
   };
 
   /* ---------- peta level ---------- */
+  const mapRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (li !== null || current < 5) return;
+    // gulir ke level yang sedang dikerjakan
+    const el = mapRef.current?.querySelector('[data-current="1"]');
+    el?.scrollIntoView({ block: 'center' });
+  }, [li, current]);
+
+  if (cert) return <Certificate name={me?.name ?? 'Programmer Cilik'} stars={starTotal} date={fmtDate(prog.certAt ?? new Date().toISOString())} onClose={() => setCert(false)} />;
+
   if (!level) {
-    const done = prog.langkah;
-    const unlocked = (i: number) => i === 0 || (done[i - 1] ?? 0) > 0;
-    const total = done.reduce((a, b) => a + (b ?? 0), 0);
     return (
-      <div className="koding-paper fixed inset-0 overflow-y-auto" style={{ color: INK }}>
+      <div ref={mapRef} className="koding-paper fixed inset-0 overflow-y-auto" style={{ color: INK }}>
         <div className="mx-auto w-full max-w-[640px] px-4 pb-10" style={{ paddingTop: 'max(14px, env(safe-area-inset-top))' }}>
           <div className="flex items-center gap-3">
             <button onClick={() => router.back()} aria-label="Kembali" className="koding-round flex size-12 items-center justify-center rounded-full active:translate-y-0.5">
               <Icon name="arrow_back" size={26} />
             </button>
             <div className="flex-1">
-              <div className="text-[13px] font-extrabold opacity-60">Koding Robi</div>
+              <div className="text-[13px] font-extrabold opacity-60">Coding Agam</div>
               <h1 style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 900, lineHeight: 1 }}>Langkah</h1>
             </div>
             <div className="koding-round flex items-center gap-1 rounded-full px-3 py-2 font-extrabold" style={{ fontFamily: BALOO }}>
-              <Icon name="star" size={20} className="text-[#f2b705]" /> {total}/45
+              <Icon name="star" size={20} className="text-[#f2b705]" /> {starTotal}
             </div>
           </div>
           <div className="mt-4 flex items-end gap-3">
-            <RobiFront />
+            <AgamFront />
             <div className="koding-say mb-3 flex-1 rounded-[18px] px-4 py-3 text-[15px] font-bold">
-              Halo, aku Robi! Aku cuma bisa bergerak kalau diberi perintah. Susun perintahnya supaya aku sampai di bintang. Makin sedikit blok, makin banyak bintang.
+              {doneCount === 0
+                ? 'Halo, aku Agam! Aku cuma bisa bergerak kalau diberi perintah. Susun perintahnya supaya aku sampai di bintang.'
+                : allDone
+                  ? 'Hebat! Kamu sudah menyelesaikan 100 level. Ini sertifikatmu!'
+                  : `Ayo lanjut ke level ${current + 1}! Selesaikan 100 level untuk dapat sertifikat.`}
             </div>
           </div>
-          {(['kebun', 'pantai', 'angkasa'] as Theme[]).map((t, w) => (
-            <section key={t} className="mt-6 rounded-[24px] p-4" style={{ background: WORLD[t].bg, color: WORLD[t].ink }}>
-              <div className="mb-3 flex items-baseline justify-between">
-                <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
-                  Dunia {w + 1}: {WORLD[t].name}
-                </h2>
-              </div>
-              <div className="relative grid grid-cols-5 gap-2">
-                <div className="koding-trail pointer-events-none absolute inset-x-[10%] top-1/2" />
-                {LANGKAH.map((l, i) =>
-                  l.theme !== t ? null : (
-                    <button
-                      key={l.id}
-                      disabled={!unlocked(i)}
-                      onClick={() => openLevel(i)}
-                      className="koding-node flex aspect-square flex-col items-center justify-center rounded-[18px] disabled:opacity-45"
-                      style={{ background: unlocked(i) ? '#fffaf0' : 'rgba(255,255,255,.35)', color: INK }}
-                    >
-                      {unlocked(i) ? (
-                        <>
-                          <span style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1 }}>{i + 1}</span>
-                          <span className="mt-1 flex">
-                            {[1, 2, 3].map((k) => (
-                              <Icon key={k} name="star" size={14} className={(done[i] ?? 0) >= k ? 'text-[#f2b705]' : 'text-[#d8d2c4]'} />
-                            ))}
-                          </span>
-                        </>
-                      ) : (
-                        <Icon name="lock" size={22} />
-                      )}
-                    </button>
-                  ),
-                )}
-              </div>
-            </section>
-          ))}
+
+          {/* kartu sertifikat & kemajuan */}
+          <button
+            onClick={() => allDone && (sfx.celebrate(), setCert(true))}
+            className={`koding-certcard mt-3 flex w-full items-center gap-3 rounded-[20px] p-3 text-left ${allDone ? 'koding-certcard-on' : ''}`}
+          >
+            <span className="flex size-12 shrink-0 items-center justify-center rounded-full" style={{ background: allDone ? '#f2b705' : '#e9dfcb' }}>
+              <Icon name={allDone ? 'workspace_premium' : 'lock'} size={28} className={allDone ? 'text-white' : 'text-[#9b8f78]'} />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-extrabold" style={{ fontFamily: BALOO, fontSize: 18 }}>
+                {allDone ? 'Lihat sertifikatmu' : 'Sertifikat Programmer Cilik'}
+              </span>
+              <span className="mt-1 block h-3 overflow-hidden rounded-full bg-[#e9dfcb]">
+                <span className="block h-full rounded-full bg-[#22b573] transition-[width] duration-700" style={{ width: `${(doneCount / TOTAL) * 100}%` }} />
+              </span>
+              <span className="mt-1 block text-[13px] font-bold opacity-70">
+                {doneCount} dari {TOTAL} level selesai
+              </span>
+            </span>
+          </button>
+
+          {THEMES.map((t, w) => {
+            const start = w * PER_WORLD;
+            const worldOpen = unlocked(start);
+            const W = WORLD[t];
+            return (
+              <section key={t} className="mt-6 rounded-[24px] p-4" style={{ background: W.bg, color: W.ink }}>
+                <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-2">
+                  <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
+                    Dunia {w + 1}: {W.name}
+                  </h2>
+                  <span className="text-[13px] font-extrabold opacity-70">
+                    {worldOpen ? `Level ${start + 1}–${start + PER_WORLD}` : `Buka setelah level ${start}`}
+                  </span>
+                </div>
+                <div className="relative grid gap-x-2 gap-y-3" style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}>
+                  <Trail rows={PER_WORLD / COLS} />
+                  {Array.from({ length: PER_WORLD }, (_, k) => {
+                    const i = start + k;
+                    const l = LANGKAH[i];
+                    const { r, c } = cellOf(k);
+                    const open = unlocked(i);
+                    const st = prog.stars[l.id] ?? 0;
+                    const isCur = i === current && !allDone;
+                    return (
+                      <button
+                        key={l.id}
+                        data-current={isCur ? '1' : undefined}
+                        disabled={!open}
+                        onClick={() => openLevel(i)}
+                        className={`koding-node flex aspect-square flex-col items-center justify-center rounded-[18px] ${isCur ? 'koding-node-cur' : ''}`}
+                        style={{ gridRow: r + 1, gridColumn: c + 1, background: open ? '#fffaf0' : t === 'angkasa' ? '#2b2862' : 'rgba(255,255,255,.55)', color: open ? INK : W.ink }}
+                        aria-label={open ? `Level ${i + 1}, ${st} bintang` : `Level ${i + 1} terkunci`}
+                      >
+                        {open ? (
+                          <>
+                            <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1 }}>{i + 1}</span>
+                            <span className="mt-1 flex">
+                              {[1, 2, 3].map((q) => (
+                                <Icon key={q} name="star" size={13} className={st >= q ? 'text-[#f2b705]' : 'text-[#d8d2c4]'} />
+                              ))}
+                            </span>
+                          </>
+                        ) : (
+                          <Icon name="lock" size={20} className="opacity-50" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
         </div>
       </div>
     );
@@ -373,6 +397,7 @@ export function LangkahGame() {
   /* ---------- layar level ---------- */
   const W = WORLD[level.theme];
   const dark = level.theme === 'angkasa';
+  const pulseFirst = li! < 3 && code.length === 0 && !running;
   return (
     <div className="fixed inset-0 flex flex-col overflow-hidden lg:flex-row" style={{ background: W.bg, color: INK, paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="flex min-h-0 flex-1 flex-col gap-2 p-3">
@@ -380,13 +405,16 @@ export function LangkahGame() {
           <button onClick={() => (stop(), setLi(null))} aria-label="Peta level" className="koding-round flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5">
             <Icon name="arrow_back" size={24} />
           </button>
-          <div className="koding-round rounded-full px-4 py-2 font-extrabold" style={{ fontFamily: BALOO, fontSize: 17 }}>
-            Langkah · level {li! + 1}
+          <div className="koding-round min-w-0 truncate rounded-full px-4 py-2 font-extrabold" style={{ fontFamily: BALOO, fontSize: 17 }}>
+            Level {li! + 1} · {W.name}
           </div>
+          <button onClick={help} disabled={running} aria-label="Bantuan" className={`koding-round ml-auto flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5 disabled:opacity-50 ${fails >= 2 && !tipCmd && tipBad === null ? 'koding-pulse' : ''}`}>
+            <Icon name="lightbulb" size={24} className="text-[#e0a100]" />
+          </button>
         </div>
-        {/* gelembung ucapan Robi */}
+        {/* gelembung ucapan Agam */}
         <div className="flex items-end gap-2">
-          <RobiFront size={44} />
+          <AgamFront size={44} />
           <div className="koding-say mb-1 rounded-[18px] px-4 py-2.5 text-[15px] font-bold" style={{ maxWidth: 560 }}>
             {say}
           </div>
@@ -399,16 +427,16 @@ export function LangkahGame() {
       </div>
       <div className="flex shrink-0 flex-col gap-2 p-3 pt-0 lg:w-[380px] lg:justify-center lg:pt-3">
         <div className="text-[13px] font-extrabold" style={{ color: dark ? '#e7e4ff' : INK, opacity: 0.75 }}>
-          Program Robi · {code.length} blok
+          Program Agam · {code.length} blok
         </div>
         <div className={`koding-rail ${dark ? 'koding-rail-dark' : ''} flex min-h-[64px] flex-wrap content-start gap-1.5 rounded-[18px] p-2`} onPointerMove={onBlockMove} onPointerUp={onBlockUp} onPointerCancel={onBlockUp}>
-          {code.length === 0 && <span className="self-center px-2 text-[14px] font-bold opacity-50">Ketuk blok di bawah untuk menyusun perintah</span>}
+          {code.length === 0 && <span className="self-center px-2 text-[14px] font-bold opacity-60">Ketuk blok di bawah untuk menyusun perintah</span>}
           {code.map((c, i) => (
             <button
               key={i}
               data-slot={i}
               onPointerDown={onBlockDown(i)}
-              className={`koding-block koding-block-sm touch-none select-none ${active === i ? 'koding-active' : ''} ${dragFrom === i ? 'opacity-40' : ''} ${dragOver === i && dragFrom !== i ? 'koding-drop' : ''}`}
+              className={`koding-block koding-block-sm touch-none select-none ${active === i ? 'koding-active' : ''} ${dragFrom === i ? 'opacity-40' : ''} ${dragOver === i && dragFrom !== i ? 'koding-drop' : ''} ${tipBad === i ? 'koding-bad' : ''}`}
               style={{ background: BLOCK[c].c, boxShadow: `0 3px 0 ${BLOCK[c].d}` }}
               aria-label={`Blok ${i + 1}: ${BLOCK[c].label}. Ketuk untuk menghapus`}
             >
@@ -417,9 +445,15 @@ export function LangkahGame() {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${level.blocks.length}, minmax(0, 1fr))` }}>
           {level.blocks.map((c) => (
-            <button key={c} onClick={() => add(c)} disabled={running} className="koding-block flex flex-col items-center gap-0.5 py-2 text-white disabled:opacity-50" style={{ background: BLOCK[c].c, boxShadow: `0 5px 0 ${BLOCK[c].d}` }}>
+            <button
+              key={c}
+              onClick={() => add(c)}
+              disabled={running}
+              className={`koding-block flex flex-col items-center gap-0.5 py-2 text-white disabled:opacity-50 ${tipCmd === c || (pulseFirst && c === 'maju') ? 'koding-pulse' : ''}`}
+              style={{ background: BLOCK[c].c, boxShadow: `0 5px 0 ${BLOCK[c].d}` }}
+            >
               <Icon name={BLOCK[c].icon} size={28} />
               <span style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}>{BLOCK[c].label}</span>
             </button>
@@ -435,7 +469,7 @@ export function LangkahGame() {
               ▶ Jalankan
             </button>
           )}
-          <button onClick={() => (sfx.close(), setCode([]), resetRobi(level))} disabled={running} aria-label="Hapus semua blok" className="koding-round flex w-14 items-center justify-center rounded-[18px] disabled:opacity-40">
+          <button onClick={() => (sfx.close(), setCode([]), clearTip(), resetAgam(level))} disabled={running} aria-label="Hapus semua blok" className="koding-round flex w-14 items-center justify-center rounded-[18px] disabled:opacity-40">
             <Icon name="delete" size={24} />
           </button>
         </div>
@@ -450,16 +484,20 @@ export function LangkahGame() {
               ))}
             </div>
             <div className="mt-1" style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 900 }}>
-              Robi sampai!
+              {allDone && li === TOTAL - 1 ? '100 level selesai!' : 'Agam sampai!'}
             </div>
             <p className="text-[15px] font-bold opacity-75">
               {win === 3 ? `Hebat! Cuma ${code.length} blok, paling hemat.` : `Pakai ${code.length} blok. Bisa lebih hemat untuk 3 bintang?`}
             </p>
             <div className="mt-4 flex gap-2">
-              <button onClick={() => (setWin(null), resetRobi(level))} className="flex-1 rounded-[16px] bg-[#efe7d6] py-3 font-extrabold active:translate-y-0.5">
+              <button onClick={() => (setWin(null), resetAgam(level))} className="flex-1 rounded-[16px] bg-[#efe7d6] py-3 font-extrabold active:translate-y-0.5">
                 Coba lagi
               </button>
-              {li! < LANGKAH.length - 1 ? (
+              {allDone && li === TOTAL - 1 ? (
+                <button onClick={() => (setWin(null), setLi(null), setCert(true))} className="flex-1 rounded-[16px] bg-[#f2b705] py-3 font-extrabold text-white shadow-[0_4px_0_#b88a00] active:translate-y-0.5">
+                  Ambil sertifikat
+                </button>
+              ) : li! < TOTAL - 1 ? (
                 <button onClick={() => openLevel(li! + 1)} className="flex-1 rounded-[16px] bg-[#22b573] py-3 font-extrabold text-white shadow-[0_4px_0_#16804f] active:translate-y-0.5">
                   Level berikutnya
                 </button>

@@ -1,4 +1,4 @@
-/* Koding Robi: kertas, blok puzzle, panggung, animasi Robi */
+/* Coding Agam: kertas, blok puzzle, panggung, animasi Agam (kelas robi-* = robot) */
 .koding-paper {
   background-color: #f4efe6;
   background-image: radial-gradient(rgba(35, 48, 74, 0.07) 1.2px, transparent 1.6px);
@@ -11,8 +11,6 @@
 .koding-diorama svg { filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.12)); }
 .koding-rail-dark { background: rgba(255, 255, 255, 0.1) !important; color: #e7e4ff; }
 .koding-rail { background: rgba(35, 48, 74, 0.08); box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.06); }
-/* jejak putus-putus yang menyambung level dalam satu dunia */
-.koding-trail { height: 0; border-top: 5px dashed currentColor; opacity: 0.25; }
 .koding-node { position: relative; }
 /* gelembung ucapan: ekor ke kiri */
 .koding-say::before { content: ''; position: absolute; left: -9px; bottom: 16px; border: 9px solid transparent; border-left: 0; border-right-color: #fffaf0; }
@@ -20,6 +18,16 @@
 .robi-wave { transform-origin: 50% 100%; animation: robi-wave 2.4s ease-in-out infinite; flex-shrink: 0; }
 @keyframes robi-led { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 .robi-led { animation: robi-led 1.2s steps(1) infinite; }
+/* level yang sedang dikerjakan: cincin berdenyut */
+@keyframes koding-ring { 0%, 100% { box-shadow: 0 5px 0 rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(34, 181, 115, 0.55); } 50% { box-shadow: 0 5px 0 rgba(0, 0, 0, 0.12), 0 0 0 8px rgba(34, 181, 115, 0); } }
+.koding-node-cur { outline: 3px solid #22b573; outline-offset: 2px; animation: koding-ring 1.6s ease-out infinite; }
+/* saran blok (bantuan / level awal): memantul pelan */
+@keyframes koding-pulse { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(1.06); } }
+.koding-pulse { animation: koding-pulse 0.9s ease-in-out infinite; outline: 4px solid #ffd23f; outline-offset: 2px; }
+.koding-bad { outline: 4px solid #e04f5f; outline-offset: 2px; animation: robi-bump 0.5s ease-in-out 2; }
+.koding-certcard { background: #fffaf0; box-shadow: 0 5px 0 #d8ccb4; }
+.koding-certcard-on { background: linear-gradient(135deg, #fff6d6, #ffe9a8); box-shadow: 0 5px 0 #e0b84a; }
+.koding-cert { box-shadow: 0 10px 0 #d8ccb4, 0 20px 40px rgba(0, 0, 0, 0.12); }
 /* blok puzzle: tonjolan kecil di atas seperti kepingan */
 .koding-block { position: relative; border-radius: 14px; color: #fff; transition: transform 0.12s; }
 .koding-block::before {
@@ -52,5 +60,5 @@
 .koding-star { display: inline-block; animation: koding-star 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) both; }
 @media (prefers-reduced-motion: reduce) {
   .robi-move, .robi-turn { transition: none; }
-  .robi-bump, .robi-eye, .robi-wave, .robi-led, .goal-pulse, .koding-win, .koding-star { animation: none; }
+  .robi-bump, .robi-eye, .robi-wave, .robi-led, .koding-pulse, .koding-node-cur, .koding-bad, .goal-pulse, .koding-win, .koding-star { animation: none; }
 }
