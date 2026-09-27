@@ -64,7 +64,7 @@
 }
 
 /* ---------- responsif ---------- */
-.koding-worlds { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); align-items: start; }
+.koding-worlds { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); align-items: stretch; }
 /* panel kontrol: selebar layar di HP tegak, dibatasi di tablet tegak, kolom samping saat mendatar */
 .koding-panel { max-width: 640px; }
 @media (orientation: landscape) {

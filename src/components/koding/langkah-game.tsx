@@ -58,7 +58,7 @@ const cellOf = (k: number) => {
 };
 
 function Trail({ rows }: { rows: number }) {
-  // jalur putus-putus melewati tengah setiap node, berbelok setengah lingkaran di ujung baris
+  // jalur putus-putus melewati tengah setiap node, turun tegak di kolom ujung (tidak keluar dari kartu)
   const W = COLS * 100,
     H = rows * 100;
   let d = 'M50 50';
@@ -66,7 +66,7 @@ function Trail({ rows }: { rows: number }) {
     const y = r * 100 + 50;
     const endX = r % 2 ? 50 : W - 50;
     d += ` L${endX} ${y}`;
-    if (r < rows - 1) d += ` A50 50 0 0 ${r % 2 ? 0 : 1} ${endX} ${y + 100}`;
+    if (r < rows - 1) d += ` L${endX} ${y + 100}`;
   }
   return (
     <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden>
@@ -293,7 +293,16 @@ export function LangkahGame() {
     el?.scrollIntoView({ block: 'center' });
   }, [li, current]);
 
-  if (cert) return <Certificate name={me?.name ?? 'Programmer Cilik'} stars={starTotal} date={fmtDate(prog.certAt ?? new Date().toISOString())} onClose={() => setCert(false)} />;
+  if (cert)
+    return (
+      <Certificate
+        name={me?.name ?? 'Programmer Cilik'}
+        stars={starTotal}
+        date={allDone ? fmtDate(prog.certAt ?? new Date().toISOString()) : 'Tanggal selesai'}
+        remaining={TOTAL - doneCount}
+        onClose={() => setCert(false)}
+      />
+    );
 
   if (!level) {
     return (
@@ -315,25 +324,26 @@ export function LangkahGame() {
             <AgamFront />
             <div className="koding-say mb-3 flex-1 rounded-[18px] px-4 py-3 text-[15px] font-bold">
               {doneCount === 0
-                ? 'Halo, aku Agam! Aku cuma bisa bergerak kalau diberi perintah. Susun perintahnya supaya aku sampai di bintang.'
+                ? 'Halo, aku Agam! Aku cuma bisa bergerak kalau diberi perintah. Susun perintahnya supaya aku sampai di bintang. Selesaikan 10 level (100 coding), kamu dapat Sertifikat Programmer Cilik!'
                 : allDone
                   ? 'Hebat! Kamu sudah menyelesaikan 10 level. Ini sertifikatmu!'
-                  : `Ayo lanjut ke Level ${Math.floor(current / PER_WORLD) + 1}, coding ${(current % PER_WORLD) + 1}! Selesaikan 10 level untuk dapat sertifikat.`}
+                  : `Ayo lanjut ke Level ${Math.floor(current / PER_WORLD) + 1}, coding ${(current % PER_WORLD) + 1}! Tinggal ${TOTAL - doneCount} coding lagi untuk mendapat Sertifikat Programmer Cilik.`}
             </div>
           </div>
 
           {/* kartu sertifikat & kemajuan */}
           <button
-            onClick={() => allDone && (sfx.celebrate(), setCert(true))}
+            onClick={() => (allDone ? sfx.celebrate() : sfx.open(), setCert(true))}
             className={`koding-certcard mt-3 flex w-full max-w-[760px] items-center gap-3 rounded-[20px] p-3 text-left ${allDone ? 'koding-certcard-on' : ''}`}
           >
             <span className="flex size-12 shrink-0 items-center justify-center rounded-full" style={{ background: allDone ? '#f2b705' : '#e9dfcb' }}>
-              <Icon name={allDone ? 'workspace_premium' : 'lock'} size={28} className={allDone ? 'text-white' : 'text-[#9b8f78]'} />
+              <Icon name="workspace_premium" size={28} className={allDone ? 'text-white' : 'text-[#9b8f78]'} />
             </span>
             <span className="min-w-0 flex-1">
               <span className="block font-extrabold" style={{ fontFamily: BALOO, fontSize: 18 }}>
                 {allDone ? 'Lihat sertifikatmu' : 'Sertifikat Programmer Cilik'}
               </span>
+              {!allDone && <span className="block text-[13px] font-bold opacity-70">Selesaikan 100 coding untuk mendapatkannya · ketuk untuk lihat contoh</span>}
               <span className="mt-1 block h-3 overflow-hidden rounded-full bg-[#e9dfcb]">
                 <span className="block h-full rounded-full bg-[#22b573] transition-[width] duration-700" style={{ width: `${(doneCount / TOTAL) * 100}%` }} />
               </span>
@@ -353,13 +363,23 @@ export function LangkahGame() {
                 <section key={t} className="overflow-hidden rounded-[24px]" style={{ background: W.bg, color: W.ink }}>
                   <ThemeVignette theme={t} />
                   <div className="p-4 pt-3">
-                    <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-2">
-                      <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
+                    {/* judul selalu dua baris dengan tinggi tetap, supaya kotak-kotak di semua kartu sejajar */}
+                    <div className="mb-3">
+                      <h2 className="truncate" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.2 }}>
                         Level {w + 1} · {W.name}
                       </h2>
-                      <span className="text-[13px] font-extrabold opacity-70">
-                        {worldOpen ? `${PER_WORLD} coding` : `Buka setelah Level ${w}`}
-                      </span>
+                      <div className="mt-0.5 flex items-center gap-1 text-[13px] font-extrabold opacity-75">
+                        {worldOpen ? (
+                          <>
+                            <Icon name="star" size={15} className="text-[#f2b705]" />
+                            {LANGKAH.slice(start, start + PER_WORLD).reduce((a, l) => a + (prog.stars[l.id] ?? 0), 0)}/{PER_WORLD * 3} · {PER_WORLD} coding
+                          </>
+                        ) : (
+                          <>
+                            <Icon name="lock" size={15} /> Buka setelah Level {w}
+                          </>
+                        )}
+                      </div>
                     </div>
                     <div className="relative grid gap-x-2 gap-y-3" style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}>
                       <Trail rows={PER_WORLD / COLS} />

@@ -1,6 +1,7 @@
 'use client';
 
-// Sertifikat Coding Agam · Langkah — muncul setelah 10 level (100 coding) selesai. Digambar sebagai SVG (huruf sistem saja,
+// Sertifikat Coding Agam · Langkah. Sebelum 100 coding selesai hanya bisa dilihat sebagai pratinjau bercap
+// "CONTOH" (tanpa tombol simpan); setelah selesai tampil bersih dan bisa disimpan. Digambar sebagai SVG (huruf sistem saja,
 // supaya hasil simpan gambar sama dengan yang tampil) dan bisa disimpan sebagai PNG atau dibagikan.
 
 import { useRef, useState } from 'react';
@@ -21,7 +22,7 @@ const star = (cx: number, cy: number, r: number) => {
   return pts.join(' ');
 };
 
-function CertSvg({ name, stars, date }: { name: string; stars: number; date: string }) {
+function CertSvg({ name, stars, date, locked }: { name: string; stars: number; date: string; locked?: boolean }) {
   const nameSize = name.length > 22 ? 52 : name.length > 14 ? 64 : 76;
   return (
     <svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg" className="block h-auto w-full">
@@ -112,11 +113,30 @@ function CertSvg({ name, stars, date }: { name: string; stars: number; date: str
       <text x="950" y="782" textAnchor="middle" fontFamily={SANS} fontSize="20" fill="#5a6478">
         Agam, Robot Guru Coding
       </text>
+      {locked && (
+        // cap pratinjau: tulisan miring berulang + pita
+        <g pointerEvents="none">
+          <g transform="rotate(-24 600 425)" fill="#d9534f" fillOpacity="0.16" fontFamily={SANS} fontWeight="900" fontSize="64" letterSpacing="8">
+            {[-2, -1, 0, 1, 2, 3].map((r) =>
+              [-1, 0, 1].map((c) => (
+                <text key={`${r}-${c}`} x={600 + c * 560 + (r % 2) * 280} y={425 + r * 190} textAnchor="middle">
+                  CONTOH
+                </text>
+              )),
+            )}
+          </g>
+          <rect x="-40" y="560" width="1280" height="76" fill="#d9534f" fillOpacity="0.88" transform="rotate(-5 600 598)" />
+          <text x="600" y="611" textAnchor="middle" fontFamily={SANS} fontSize="36" fontWeight="900" fill="#fff" letterSpacing="3" transform="rotate(-5 600 598)">
+            PRATINJAU · SELESAIKAN 100 CODING
+          </text>
+        </g>
+      )}
     </svg>
   );
 }
 
-export function Certificate({ name, stars, date, onClose }: { name: string; stars: number; date: string; onClose: () => void }) {
+export function Certificate({ name, stars, date, onClose, remaining = 0 }: { name: string; stars: number; date: string; onClose: () => void; remaining?: number }) {
+  const locked = remaining > 0;
   const box = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
 
@@ -158,15 +178,22 @@ export function Certificate({ name, stars, date, onClose }: { name: string; star
   return (
     <div className="koding-paper fixed inset-0 z-30 flex flex-col items-center justify-center gap-4 overflow-y-auto p-4">
       <div ref={box} className="koding-cert w-full max-w-[900px] overflow-hidden rounded-[18px]">
-        <CertSvg name={name} stars={stars} date={date} />
+        <CertSvg name={name} stars={stars} date={date} locked={locked} />
       </div>
+      {locked && (
+        <p className="koding-say max-w-[560px] rounded-[18px] px-4 py-3 text-center text-[15px] font-bold">
+          Ini contoh sertifikatmu. Tinggal <b>{remaining} coding</b> lagi, lalu sertifikat asli tanpa cap bisa disimpan!
+        </p>
+      )}
       <div className="flex w-full max-w-[520px] gap-2">
         <button onClick={onClose} className="koding-round flex-1 rounded-[18px] py-3.5 font-extrabold active:translate-y-0.5">
           Kembali
         </button>
+        {!locked && (
         <button onClick={save} disabled={busy} className="flex flex-[1.4] items-center justify-center gap-2 rounded-[18px] bg-[#22b573] py-3.5 font-extrabold text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60">
           <Icon name="download" size={22} /> Simpan sertifikat
         </button>
+        )}
       </div>
     </div>
   );
