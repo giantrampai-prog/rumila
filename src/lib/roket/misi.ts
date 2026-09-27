@@ -264,7 +264,14 @@ export interface MisiAudioPart {
  * cues = detik mulai tiap adegan (urut sesuai MISI), dari timestamp rekaman.
  * Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil).
  */
-export const MISI_AUDIO: MisiAudioPart[] = [];
+export const MISI_AUDIO: MisiAudioPart[] = [
+  {
+    // Suara "Leda" (SuaraKisah), 6:30. Waktu mulai tiap persinggahan dari timestamp per kata + jeda hening rekaman.
+    src: "/roket/voice/misi-01.m4a",
+    first: 0,
+    cues: [0, 25.37, 49, 74.67, 88.71, 114.55, 126.2, 138.79, 156.57, 171.69, 187.49, 202.61, 217, 233.85, 258.51, 274.59, 288.39, 306, 331.33, 352.57, 369.29],
+  },
+];
 
 /** Rekaman khusus per item Jelajah (opsional). Tanpa ini, item memakai potongan narasi misi (`stop`). */
 export const JELAJAH_AUDIO: Record<string, string> = {};

@@ -135,7 +135,9 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
   const { stop, progress, playing, finished } = useRoket();
   const s = MISI[stop];
   // Hitung mundur besar: 10 → 1 pada paruh akhir persinggahan "Hitung mundur".
-  const count = stop === COUNTDOWN && progress > 0.3 ? 10 - Math.min(9, Math.floor(((progress - 0.3) / 0.7) * 10)) : null;
+  // dengan rekaman: angka mengikuti suara "sepuluh… satu" (±5 detik terakhir persinggahan)
+  const from = MISI_AUDIO.length ? 0.55 : 0.3;
+  const count = stop === COUNTDOWN && progress > from ? 10 - Math.min(9, Math.floor(((progress - from) / (1 - from)) * 10)) : null;
   // Tanpa rekaman: tampilkan teks kecil sebagai pengganti suara (sementara).
   const caption = MISI_AUDIO.length === 0 ? s.lines[Math.min(s.lines.length - 1, Math.floor(progress * s.lines.length))] : null;
   return (
