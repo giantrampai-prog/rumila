@@ -1,15 +1,15 @@
 'use client';
 
 // Tur Kebun Buah: anak berjalan sendiri menyusuri kebun 3D. Di setiap tanaman ia berhenti, kamera mendekat,
-// dan kartu info buah muncul selama narasi (satu file suara + timestamp; tanpa rekaman memakai waktu baca
+// dan kartu info buah muncul selama narasi (satu file suara, diputar per adegan tepat sampel lewat Web Audio;
+// tanpa rekaman memakai waktu baca
 // dan teks tampil). Ketuk jeda untuk berhenti; buah yang dilewati otomatis masuk keranjang.
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
-import { audioUrl, preloadAudio } from '@/lib/audio-clock';
-import { sharedAudio } from '@/lib/audio-unlock';
+import { SegmentPlayer, audioContext, loadBuffer } from '@/lib/segment-player';
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { TUR_BUAH, TUR_BUAH_AUDIO, buahDwell } from '@/lib/fruits/tur';
@@ -26,21 +26,39 @@ export interface TourHandle {
 
 export function GardenTour({ engine, handle, onVisit, onClose }: { engine: GardenEngine; handle: { current: TourHandle | null }; onVisit: (id: string) => void; onClose: () => void }) {
   const [ui, setUi] = useState({ i: 0, talk: false, playing: true, finished: false, progress: 0 });
-  const r = useRef({ i: 0, talk: false, t: 0, playing: true, seekTo: null as number | null, timer: 0, done: false, ct: 0, ctAt: 0 });
+  const r = useRef({ i: 0, talk: false, t: 0, playing: true, done: false, pending: false });
+  const player = useRef(new SegmentPlayer()).current;
+  const buf = useRef<AudioBuffer | null>(null);
   const visitRef = useRef(onVisit);
   visitRef.current = onVisit;
 
-  const audio = () => sharedAudio('fruit-tur');
+  /** rentang suara adegan i: mulai sedikit sebelum ucapan, berhenti di dalam jeda sebelum adegan berikutnya */
+  const range = (i: number) => {
+    const p = part(i);
+    if (!p) return null;
+    const k = i - p.first;
+    const from = Math.max(0, p.cues[k] - 0.03);
+    const to = p.cues[k + 1] !== undefined ? p.cues[k + 1] - 0.1 : buf.current?.duration ?? from + 60;
+    return { from, to };
+  };
+
+  const startAudio = () => {
+    const s = r.current;
+    const rg = range(s.i);
+    if (!rg || !buf.current) return;
+    s.pending = false;
+    player.play(buf.current, rg.from, rg.to, () => (r.current.done = true));
+    if (!s.playing) player.pause();
+  };
 
   const go = (i: number) => {
     const s = r.current;
     s.i = i;
     s.talk = false;
     s.t = 0;
-    window.clearTimeout(s.timer);
-    s.timer = 0;
     s.done = false;
-    audio().pause();
+    s.pending = false;
+    player.stop();
     engine.tourTo(TUR_BUAH[i].at);
     setUi((x) => ({ ...x, i, talk: false, finished: false, progress: 0 }));
   };
@@ -50,23 +68,13 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
     const stop = TUR_BUAH[s.i];
     s.talk = true;
     s.t = 0;
+    s.done = false;
     engine.focus(stop.fruit ?? stop.at);
     if (stop.fruit) visitRef.current(stop.fruit);
-    const p = part(s.i);
-    if (p) {
-      const a = audio();
-      const url = audioUrl(p.src);
-      if (a.dataset.src !== url) {
-        a.src = url;
-        a.dataset.src = url;
-      }
-      s.seekTo = p.cues[s.i - p.first];
-      const seek = () => {
-        a.currentTime = p.cues[s.i - p.first];
-        if (r.current.playing) a.play().catch(() => {});
-      };
-      if (a.readyState >= 1) seek();
-      else a.onloadedmetadata = seek;
+    if (part(s.i)) {
+      // rekaman belum selesai dimuat → tunggu (anak tetap di depan tanaman), lalu putar
+      if (buf.current) startAudio();
+      else s.pending = true;
     }
     setUi((x) => ({ ...x, talk: true, progress: 0 }));
   };
@@ -80,13 +88,20 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
   const play = (on: boolean) => {
     r.current.playing = on;
     engine.setWalkPaused(!on);
-    if (!on) audio().pause();
-    else if (r.current.talk && part(r.current.i)) audio().play().catch(() => {});
+    if (!on) player.pause();
+    else if (r.current.talk) player.resume();
     setUi((x) => ({ ...x, playing: on }));
   };
 
   useEffect(() => {
-    TUR_BUAH_AUDIO.forEach((p) => void preloadAudio(p.src));
+    let alive = true;
+    TUR_BUAH_AUDIO.forEach((p) =>
+      void loadBuffer(p.src).then((b) => {
+        if (!alive) return;
+        buf.current = b;
+        if (b && r.current.pending) startAudio();
+      }),
+    );
     engine.setTour(true);
     go(0);
     let raf = 0,
@@ -98,39 +113,19 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
       last = now;
       const s = r.current;
       if (!s.playing || !s.talk) return;
-      const p = part(s.i);
+      const rg = range(s.i);
       let dur = buahDwell(TUR_BUAH[s.i]);
-      if (p) {
-        const a = audio();
-        const k = s.i - p.first;
-        const cue = p.cues[k];
-        // berhenti sedikit sebelum awal adegan berikutnya (masih di dalam jeda hening) — tidak kebablasan
-        const stopAt = p.cues[k + 1] !== undefined ? p.cues[k + 1] - 0.15 : Number.isFinite(a.duration) ? a.duration : cue + 60;
-        dur = Math.max(1, stopAt - cue);
-        // posisi suara ASLI (bukan jam halus); selama lompat-posisi belum selesai anggap di awal
-        if (s.seekTo !== null && Math.abs(a.currentTime - s.seekTo) < 0.6) s.seekTo = null;
-        // currentTime di HP bisa "macet" ±0,25 dtk di antara pembaruan → tambahkan waktu yang sudah berlalu
-        if (a.currentTime !== s.ct) {
-          s.ct = a.currentTime;
-          s.ctAt = now;
-        }
-        const est = a.paused ? a.currentTime : s.ct + Math.min(0.3, (now - s.ctAt) / 1000);
-        s.t = s.seekTo !== null ? 0 : est - cue;
-        if (a.ended) s.t = dur;
-        // di HP currentTime diperbarui tersendat → jadwalkan jeda tepat waktu saat sudah dekat akhir
-        const rem = dur - s.t;
-        if (!a.paused && rem < 0.35 && !s.timer)
-          s.timer = window.setTimeout(() => {
-            a.pause();
-            s.timer = 0;
-            s.done = true;
-          }, Math.max(0, rem * 1000));
-        if (s.done || (a.paused && s.seekTo === null && rem < 0.4)) s.t = dur;
+      if (rg) {
+        dur = Math.max(0.5, rg.to - rg.from);
+        // posisi tepat sampel dari Web Audio; selama rekaman belum dimuat tetap di awal
+        // bila suara diblokir peramban (konteks audio belum berjalan), tur tetap maju memakai waktu
+        const running = audioContext()?.state === 'running';
+        s.t = s.done ? dur : s.pending ? 0 : running ? player.position() - rg.from : s.t + dt;
       } else s.t += dt;
       if (s.t >= dur) {
         if (s.i < TUR_BUAH.length - 1) return go(s.i + 1);
         s.playing = false;
-        audio().pause();
+        player.stop();
         engine.focus(null);
         setUi((x) => ({ ...x, playing: false, finished: true, progress: 1 }));
         return;
@@ -142,8 +137,9 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
     };
     raf = requestAnimationFrame(tick);
     return () => {
+      alive = false;
       cancelAnimationFrame(raf);
-      audio().pause();
+      player.stop();
       engine.setTour(false);
       handle.current = null;
     };

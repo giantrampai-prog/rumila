@@ -10,6 +10,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
 import { installAudioUnlock, sharedAudio, unlockAudio } from '@/lib/audio-unlock';
+import { unlockAudioContext } from '@/lib/segment-player';
 import { FRUITS, FRUIT_BY_ID, FRUIT_GROUPS, type Fruit } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { readAudioManifest } from '@/lib/fruits/audio';
@@ -195,6 +196,7 @@ export default function KidFruits() {
 
   const startTour = () => {
     unlockAudio(); // dari ketukan tombol: buka kunci audio iPad/iPhone
+    unlockAudioContext(); // tur kebun memutar potongan narasi lewat Web Audio
     setCatalog(false);
     setTour(true);
   };
