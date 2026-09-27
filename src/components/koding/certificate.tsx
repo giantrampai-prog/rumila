@@ -1,6 +1,6 @@
 'use client';
 
-// Sertifikat Coding Agam · Langkah. Sebelum 100 coding selesai hanya bisa dilihat sebagai pratinjau bercap
+// Sertifikat Coding Agam (Langkah, Pola, …). Sebelum 100 coding selesai hanya bisa dilihat sebagai pratinjau bercap
 // "CONTOH" (tanpa tombol simpan); setelah selesai tampil bersih dan bisa disimpan. Gaya sertifikat resmi: kertas gading,
 // bingkai navy + pita guilloche emas, lambang laurel, segel emas bergerigi, nomor sertifikat. Digambar sebagai SVG dan bisa
 // disimpan sebagai PNG atau dibagikan.
@@ -48,12 +48,12 @@ const wave = (x1: number, y1: number, x2: number, y2: number, phase: number, amp
 };
 
 // nomor sertifikat stabil dari nama + tanggal
-const serialOf = (name: string, date: string) => {
+const serialOf = (game: string, name: string, date: string) => {
   let h = 2166136261;
-  for (const ch of name + '|' + date) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  for (const ch of game + '|' + name + '|' + date) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
   const n = (h >>> 0).toString(36).toUpperCase().padStart(6, '0').slice(-6);
   const year = date.match(/\d{4}/)?.[0] ?? new Date().getFullYear();
-  return `RA/CA-L/${year}/${n}`;
+  return `RA/CA-${game[0].toUpperCase()}/${year}/${n}`;
 };
 
 // hiasan sudut (digambar untuk kiri-atas, dicerminkan untuk sudut lain)
@@ -83,9 +83,9 @@ function Laurel({ side }: { side: 1 | -1 }) {
   return <g transform={`scale(${side} 1)`}>{leaves}</g>;
 }
 
-function CertSvg({ name, stars, date, locked }: { name: string; stars: number; date: string; locked?: boolean }) {
+function CertSvg({ game, name, stars, date, locked }: { game: string; name: string; stars: number; date: string; locked?: boolean }) {
   const nameSize = name.length > 24 ? 60 : name.length > 16 ? 74 : 92;
-  const serial = locked ? 'RA/CA-L/—/——————' : serialOf(name, date);
+  const serial = locked ? `RA/CA-${game[0].toUpperCase()}/—/——————` : serialOf(game, name, date);
   const band = [0, (Math.PI * 2) / 3, (Math.PI * 4) / 3];
   // tepi pita guilloche
   const B0 = 40;
@@ -203,7 +203,7 @@ function CertSvg({ name, stars, date, locked }: { name: string; stars: number; d
       </g>
 
       <text x="600" y="532" textAnchor="middle" fontFamily={SERIF} fontSize="21" fill={INK}>
-        atas keberhasilannya menyelesaikan seluruh program Langkah dari Coding Agam
+        atas keberhasilannya menyelesaikan seluruh program {game} dari Coding Agam
       </text>
       <text x="600" y="561" textAnchor="middle" fontFamily={SERIF} fontSize="21" fill={INK}>
         dengan ketekunan, ketelitian, dan cara berpikir seorang programmer.
@@ -250,7 +250,7 @@ function CertSvg({ name, stars, date, locked }: { name: string; stars: number; d
         <circle r="37" fill="url(#cg-gold)" stroke="#8a5d12" strokeWidth="1.5" />
         <text fontFamily={SANS} fontSize="9.5" fontWeight="700" fill="#6b470c" >
           <textPath href="#cg-ring" textLength="292" lengthAdjust="spacing">
-            RINOYA ACADEMY ★ CODING AGAM ★ LANGKAH ★
+            {`RINOYA ACADEMY ★ CODING AGAM ★ ${game.toUpperCase()} ★`}
           </textPath>
         </text>
         <text y="8" textAnchor="middle" fontFamily={DISPLAY} fontSize="30" fontWeight="700" fill="#5a3b08">
@@ -307,7 +307,7 @@ function CertSvg({ name, stars, date, locked }: { name: string; stars: number; d
   );
 }
 
-export function Certificate({ name, stars, date, onClose, remaining = 0 }: { name: string; stars: number; date: string; onClose: () => void; remaining?: number }) {
+export function Certificate({ game, name, stars, date, onClose, remaining = 0 }: { game: string; name: string; stars: number; date: string; onClose: () => void; remaining?: number }) {
   const locked = remaining > 0;
   const box = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
@@ -332,9 +332,9 @@ export function Certificate({ name, stars, date, onClose, remaining = 0 }: { nam
     try {
       const blob = await toPng();
       if (!blob) return;
-      const file = new File([blob], `Sertifikat-Coding-Agam-${name.replace(/\s+/g, '-')}.png`, { type: 'image/png' });
+      const file = new File([blob], `Sertifikat-Coding-Agam-${game}-${name.replace(/\s+/g, '-')}.png`, { type: 'image/png' });
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: 'Sertifikat Coding Agam' }).catch(() => {});
+        await navigator.share({ files: [file], title: `Sertifikat Coding Agam · ${game}` }).catch(() => {});
       } else {
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -350,7 +350,7 @@ export function Certificate({ name, stars, date, onClose, remaining = 0 }: { nam
   return (
     <div className="koding-paper fixed inset-0 z-30 flex flex-col items-center justify-center gap-4 overflow-y-auto p-4">
       <div ref={box} className="koding-cert w-full max-w-[1000px] overflow-hidden rounded-[6px]">
-        <CertSvg name={name} stars={stars} date={date} locked={locked} />
+        <CertSvg game={game} name={name} stars={stars} date={date} locked={locked} />
       </div>
       {locked && (
         <p className="koding-say max-w-[560px] rounded-[18px] px-4 py-3 text-center text-[15px] font-bold">

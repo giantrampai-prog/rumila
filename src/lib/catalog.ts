@@ -80,7 +80,7 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
       desc: "Belajar coding bersama robot Agam.",
       pal: ["indigo", "teal", "purple", "lime", "sky", "pink", "orange"],
       items: [
-        ["Pola", "pattern", "Lanjutkan pola warna, bentuk, dan bunyi.", "koding-pola"],
+        ["Pola", "pattern", "10 level × 10 coding: lengkapi pola warna, bentuk, dan bunyi bersama Agam.", "koding-pola"],
         ["Langkah", "footprint", "10 level × 10 coding: susun perintah supaya Agam sampai di bintang.", "koding-langkah"],
         ["Ulangi", "repeat", "Pakai blok ulangi supaya program lebih pendek.", "koding-ulangi"],
         ["Kalau…", "alt_route", "Agam memilih jalan: kalau ada batu, belok.", "koding-kalau"],

@@ -118,6 +118,7 @@ export function useOpenTool() {
       "game-resto": "/resto",
       "game-ular": "/ular-tangga",
       "koding-langkah": "/koding/langkah",
+      "koding-pola": "/koding/pola",
     };
     if (angkasa[t.id]) {
       router.push(angkasa[t.id]);

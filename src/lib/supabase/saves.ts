@@ -12,7 +12,7 @@ import { supabase } from "./client";
 
 const UUID = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
 const MEMBER_KEYS = [
-  new RegExp(`^rumila-(?:koding|ular|resto|kebun|kebun-main)-(${UUID})$`, "i"),
+  new RegExp(`^rumila-(?:koding|koding-pola|ular|resto|kebun|kebun-main)-(${UUID})$`, "i"),
   new RegExp(`^rumila-angkasa:(${UUID})$`, "i"),
 ];
 const FAMILY_KEYS = [/^rumila-bumi-fosil$/];

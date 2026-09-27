@@ -350,6 +350,44 @@ export const sfx = {
   rumble(strength = 1) {
     hiss(0.6, { freq: 120, q: 0.5, vol: 0.28 * strength, type: 'lowpass' });
   },
+  /* ----- alat musik Coding Agam · Pola ----- */
+  /** bilah marimba kayu: nada dasar + dentang bilah (harmonik ke-4) yang cepat hilang */
+  marimba(freq: number, at = 0) {
+    tone(freq, 0.55, { vol: 0.32, at, attack: 0.004 });
+    tone(freq * 4, 0.08, { vol: 0.07, at, attack: 0.002 });
+    tone(freq * 2, 0.2, { type: 'triangle', vol: 0.05, at });
+  },
+  /** lonceng tangan: parsial tak selaras khas logam, gaung panjang */
+  handbell(freq: number, at = 0) {
+    tone(freq, 1.5, { vol: 0.26, at, attack: 0.003 });
+    tone(freq * 2.01, 0.9, { vol: 0.09, at });
+    tone(freq * 3.02, 0.5, { vol: 0.05, at });
+    tone(freq * 4.24, 0.25, { vol: 0.03, at });
+  },
+  /** gendang: kulit dipukul — dentum yang turun + desis telapak tangan */
+  drum(at = 0) {
+    tone(150, 0.32, { vol: 0.5, to: 62, at, attack: 0.002 });
+    tone(230, 0.08, { type: 'triangle', vol: 0.12, to: 140, at });
+    hiss(0.07, { freq: 1800, q: 0.8, vol: 0.12, at });
+  },
+  /** lonceng sapi kecil */
+  cowbell(at = 0) {
+    tone(800, 0.5, { type: 'square', vol: 0.05, at, attack: 0.002 });
+    tone(540, 0.45, { type: 'square', vol: 0.05, at, attack: 0.002 });
+    tone(1600, 0.6, { vol: 0.08, at });
+  },
+  /** marakas: dua kocokan biji-bijian */
+  shaker(at = 0) {
+    hiss(0.09, { freq: 6500, q: 1.2, vol: 0.22, type: 'bandpass', at });
+    hiss(0.12, { freq: 5200, q: 1, vol: 0.18, type: 'bandpass', at: at + 0.13 });
+  },
+  /** gong: dengung rendah yang berdenyut dan lama */
+  gong(at = 0) {
+    tone(98, 2.2, { vol: 0.34, at, attack: 0.01 });
+    tone(98 * 1.52, 1.8, { vol: 0.12, at, attack: 0.03 });
+    tone(98 * 2.4, 1.2, { vol: 0.07, at, attack: 0.05 });
+    hiss(0.25, { freq: 400, q: 0.7, vol: 0.08, type: 'lowpass', at });
+  },
 };
 
 /* ---------------- suasana kebun: kicau burung & angin ---------------- */

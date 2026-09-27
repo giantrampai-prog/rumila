@@ -15,7 +15,7 @@ export const THEMES: Theme[] = THEME_ORDER;
  * mana: sorot lampu kuning + panah putih di kotak depannya (ke sanalah "maju" berjalan), wajah bermata besar di
  * sisi depan kepala, bemper & lampu depan, badan meruncing ke depan seperti mobil mainan, antena di belakang.
  */
-function AgamTop({ bump }: { bump: boolean }) {
+export function AgamTop({ bump }: { bump: boolean }) {
   return (
     <g className={bump ? 'robi-bump' : undefined}>
       {/* sorot lampu ke kotak depan */}
@@ -125,7 +125,7 @@ const outside = (theme: Theme, X: number, Y: number, x: number, y: number) => {
 const hash = (x: number, y: number) => (((x * 2654435761) ^ (y * 40503)) >>> 0) % 1000 / 1000;
 
 /** ubin: warna dasar + tekstur tema + kilap tepi atas */
-const tileAt = (theme: Theme, X: number, Y: number, k: number, key: string) => {
+export const tileAt = (theme: Theme, X: number, Y: number, k: number, key: string) => {
   const A = ART[theme];
   return (
     <g key={key}>
