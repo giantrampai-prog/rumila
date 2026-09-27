@@ -35,6 +35,8 @@ export const useRoket = create<RoketUI>(() => ({
   focus: null,
 }));
 
+/** titik pajang Stasiun di mode Jelajah (jauh dari landasan & satelit ilustrasi) */
+const ISS_SHOWCASE = new THREE.Vector3(-60, altToY(400), 40);
 const at = (id: string) => MISI.findIndex((s) => s.id === id);
 const SEP = at("pisah-tahap");
 const ORBIT = at("tanpa-bobot"); // mesin mati, tahap kedua lepas
@@ -193,6 +195,7 @@ export class RocketEngine {
   setMode(m: RoketMode) {
     unlockAudio(); // dipanggil dari ketukan tombol
     useRoket.setState({ mode: m, focus: null, finished: false });
+    this.world.issShowcase = null;
     if (m === "terbang") {
       this.snap = true;
       this.go(0);
@@ -231,6 +234,8 @@ export class RocketEngine {
   /** Jelajah: arahkan kamera ke bagian roket atau lapisan atmosfer. */
   focus(id: string | null) {
     useRoket.setState({ focus: id });
+    // Stasiun dipajang utuh di orbit ±400 km hanya saat itemnya dipilih
+    this.world.issShowcase = id === "stasiun" ? ISS_SHOWCASE.clone() : null;
     if (!id) return this.flyTo(new THREE.Vector3(14, 5, 14), new THREE.Vector3(0, 3, 0));
     const item = JELAJAH.find((x) => x.id === id);
     if (!item) return;
@@ -248,6 +253,8 @@ export class RocketEngine {
       mesin: [V(0, 0.35, 0), V(1.8, 0.1, 1.8)],
       astronot: [V(3.6, 0.35, 2.2), V(1.3, 0.35, 1.7)],
       menara: [V(2.2, 4, 0), V(7, 2, 7)],
+      // dari samping-atas: rangka & sayap utuh dengan Bumi berawan di bawahnya
+      stasiun: [ISS_SHOWCASE.clone(), V(1.5, 3.2, 9.5)],
     };
     const [look, off] = parts[id] ?? parts.roket;
     this.flyTo(look.clone().add(off), look);

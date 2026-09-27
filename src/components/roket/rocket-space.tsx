@@ -22,6 +22,7 @@ const ICON: Record<string, string> = {
   mesin: "local_fire_department",
   astronot: "person",
   menara: "cell_tower",
+  stasiun: "satellite_alt",
 };
 
 /* ---------------- suara item jelajah ---------------- */

@@ -5,7 +5,8 @@
 // melompat ke persinggahan mana pun tetap konsisten.
 
 import * as THREE from "three";
-import { buildBirds, buildMoon, buildSatellite, buildSite, buildStation, flag, gridFin, landingLeg, lattice, nozzleMaterial, rocketBodyTex } from "./details";
+import { buildStation } from "./station";
+import { buildBirds, buildMoon, buildSatellite, buildSite, flag, gridFin, landingLeg, lattice, nozzleMaterial, rocketBodyTex } from "./details";
 import { buildCumulus, buildFlora, buildSea, buildTerrain } from "./site";
 
 export const EARTH_R = 1000;
@@ -687,6 +688,7 @@ export class RocketScene {
   private starMat: THREE.PointsMaterial;
   private earth: THREE.Mesh;
   private earthClouds: THREE.Mesh;
+  private cloudMat: THREE.ShaderMaterial;
   private glow: THREE.Mesh;
   private ozone: THREE.Mesh;
   private pad: THREE.Group;
@@ -704,6 +706,8 @@ export class RocketScene {
   private clouds: THREE.Group;
   private planes: THREE.Group;
   private iss: THREE.Group;
+  /** mode Jelajah: tempat Stasiun dipajang utuh di orbit (null = tidak dipajang) */
+  issShowcase: THREE.Vector3 | null = null;
   private aur: ReturnType<typeof aurora>;
   /** col = alfa per partikel, size = ukuran dunia per partikel */
   private smoke: { pts: THREE.Points; pos: Float32Array; col: Float32Array; vel: Float32Array; age: Float32Array; life: Float32Array; size: Float32Array; big: Float32Array };
@@ -768,10 +772,36 @@ export class RocketScene {
     const earthGroup = new THREE.Group();
     this.earth = new THREE.Mesh(new THREE.SphereGeometry(EARTH_R, 128, 96), new THREE.MeshStandardMaterial({ map: day, roughness: 0.9 }));
     const cl = loader.load("/angkasa/tex/2k_earth_clouds.jpg");
-    this.earthClouds = new THREE.Mesh(
-      new THREE.SphereGeometry(EARTH_R + 1.2, 96, 64),
-      new THREE.MeshStandardMaterial({ alphaMap: cl, color: 0xffffff, transparent: true, opacity: 0.85, depthWrite: false }),
-    );
+    // Awan: peta awan Bumi (sebaran besar) + derau fraktal 3D (gumpalan & tepi berserabut halus) supaya tetap
+    // tajam dilihat dari orbit dekat (Stasiun, kupola); diterangi Matahari, sisi malam gelap.
+    cl.wrapS = THREE.RepeatWrapping;
+    this.cloudMat = new THREE.ShaderMaterial({
+      uniforms: { uMap: { value: cl }, uSun: { value: new THREE.Vector3(0.45, 0.75, 0.3).normalize() }, uOpacity: { value: 0.95 } },
+      vertexShader: `varying vec3 vP; varying vec3 vN; varying vec2 vUv;
+        void main(){ vP = normalize(position); vN = normalize(mat3(modelMatrix) * normal); vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+      fragmentShader: `uniform sampler2D uMap; uniform vec3 uSun; uniform float uOpacity; varying vec3 vP; varying vec3 vN; varying vec2 vUv;
+        float h3(vec3 p){ p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
+        float n3(vec3 x){ vec3 i = floor(x); vec3 f = fract(x); f = f * f * (3.0 - 2.0 * f);
+          return mix(mix(mix(h3(i), h3(i + vec3(1,0,0)), f.x), mix(h3(i + vec3(0,1,0)), h3(i + vec3(1,1,0)), f.x), f.y),
+                     mix(mix(h3(i + vec3(0,0,1)), h3(i + vec3(1,0,1)), f.x), mix(h3(i + vec3(0,1,1)), h3(i + vec3(1,1,1)), f.x), f.y), f.z); }
+        float fbm4(vec3 p){ float v = 0.0, a = 0.5; for (int i = 0; i < 4; i++){ v += a * n3(p); p *= 2.07; a *= 0.5; } return v * 1.07; }
+        float fbm2(vec3 p){ return (n3(p) * 0.5 + n3(p * 2.07) * 0.25) * 1.33; }
+        void main(){
+          float base = texture2D(uMap, vUv).r;
+          float big = fbm4(vP * 90.0);
+          float fine = fbm2(vP * 420.0 + big * 2.0);
+          // gumpalan kecil tersebar di mana-mana (seperti awan kumulus di atas laut), menebal di peta awan
+          float c = big * 0.72 + fine * 0.28 + base * 0.55;
+          float a = smoothstep(0.5, 0.72, c);
+          float sunDot = dot(normalize(vN), uSun);
+          float lit = clamp(sunDot * 1.1 + 0.25, 0.04, 1.0);
+          vec3 col = mix(vec3(0.7, 0.76, 0.86), vec3(1.0), smoothstep(0.55, 0.85, c)) * lit;
+          gl_FragColor = vec4(col, a * uOpacity);
+        }`,
+      transparent: true,
+      depthWrite: false,
+    });
+    this.earthClouds = new THREE.Mesh(new THREE.SphereGeometry(EARTH_R + 1.2, 160, 120), this.cloudMat);
     earthGroup.add(this.earth, this.earthClouds);
     const lon = 136,
       lat = -1;
@@ -1050,7 +1080,7 @@ export class RocketScene {
     // Stasiun Luar Angkasa mendekat di atas kapsul, lalu merapat
     const esc = this.r.cap.getObjectByName("escape");
     if (esc) esc.visible = p.issGap === null && p.sep2T === null;
-    this.iss.visible = p.issGap !== null;
+    this.iss.visible = p.issGap !== null || !!this.issShowcase;
     if (p.issGap !== null) {
       const port = this.iss.userData.portOffset as THREE.Vector3;
       this.iss.position.set(-port.x, y + 5.92 - port.y + p.issGap, -port.z);
@@ -1138,6 +1168,11 @@ export class RocketScene {
   /** Lingkungan menurut ketinggian KAMERA (langit, kabut, bintang, aurora, dll.) + partikel. */
   update(dt: number) {
     this.time += dt;
+    if (this.issShowcase) {
+      this.iss.visible = true;
+      this.iss.position.copy(this.issShowcase);
+      this.iss.rotation.set(0.08, 0.5, 0);
+    }
     const cam = this.camera;
     const camAlt = yToAlt(cam.position.y);
     this.sky.position.copy(cam.position);
@@ -1170,7 +1205,11 @@ export class RocketScene {
     this.clouds.visible = camAlt < 120;
     this.aur.mat.uniforms.uTime.value = this.time;
     this.aur.mat.uniforms.uAlpha.value = smooth(70, 130, camAlt) * (1 - smooth(500, 1200, camAlt));
-    this.aur.group.visible = camAlt > 60;
+    this.aur.group.visible = camAlt > 60 && !this.issShowcase;
+    this.cloudMat.uniforms.uSun.value.copy(this.sun.position).normalize();
+    // awan Bumi dari orbit: baru tampak saat kamera sudah tinggi (di bawah itu ada awan kumulus sendiri)
+    this.cloudMat.uniforms.uOpacity.value = 0.95 * smooth(30, 90, camAlt);
+    this.earthClouds.visible = camAlt > 30;
     for (const f of this.flags) f.uniforms.uTime.value = this.time;
     const beacon = this.t.tower.getObjectByName("beacon") as THREE.Mesh | undefined;
     if (beacon) beacon.visible = Math.sin(this.time * 3) > 0;

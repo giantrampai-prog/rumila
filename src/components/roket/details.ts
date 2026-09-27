@@ -1,6 +1,6 @@
 // Detail dunia modul Roket: kompleks peluncuran (pohon, kelapa, pantai & laut, bukit, gedung perakitan,
 // gedung kontrol, menara air, tangki, tiang petir, pagar, jalan, mobil, bendera), tekstur roket, burung,
-// satelit, Bulan, dan Stasiun Luar Angkasa yang lebih lengkap. Semua prosedural (tanpa berkas model).
+// satelit, dan Bulan (Stasiun Luar Angkasa ada di station.ts). Semua prosedural (tanpa berkas model).
 
 import * as THREE from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
@@ -613,59 +613,4 @@ export function buildMoon() {
   const moon = new THREE.Mesh(new THREE.SphereGeometry(120, 48, 32), new THREE.MeshStandardMaterial({ map: tex, roughness: 1, fog: false }));
   moon.position.set(-2600, 1400, -3400);
   return moon;
-}
-
-/** Stasiun Luar Angkasa: rangka, modul, radiator, 8 sayap panel surya, lubang merapat di bawah. */
-export function buildStation() {
-  const g = new THREE.Group();
-  const metal = std(0xdfe3e8, 0.4, 0.6);
-  const gold = new THREE.MeshStandardMaterial({ color: 0xc98a2e, roughness: 0.35, metalness: 0.8, emissive: 0x3a2308 });
-  const white = std(0xf2f2f2, 0.6);
-  const truss = new THREE.Mesh(new THREE.BoxGeometry(9, 0.22, 0.22), metal);
-  g.add(truss);
-  for (let x = -4.2; x <= 4.2; x += 0.6) {
-    const d = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.3, 0.3), metal);
-    d.position.x = x;
-    d.rotation.x = Math.PI / 4;
-    g.add(d);
-  }
-  // sayap surya: 4 di tiap ujung
-  for (const x of [-4, -3.1, 3.1, 4]) {
-    for (const s of [-1, 1]) {
-      const p = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.02, 3.2), gold);
-      p.position.set(x, 0, s * 1.75);
-      g.add(p);
-      const mast = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 3.3), metal);
-      mast.rotation.x = Math.PI / 2;
-      mast.position.set(x, 0.02, s * 1.75);
-      g.add(mast);
-    }
-  }
-  // radiator putih
-  for (const x of [-1.6, 1.6]) {
-    const rad = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.02, 1.4), white);
-    rad.position.set(x, -0.25, -0.9);
-    rad.rotation.x = 0.3;
-    g.add(rad);
-  }
-  // modul bertekanan (tabung) menyilang di tengah
-  for (let i = 0; i < 4; i++) {
-    const mod = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 1.1, 20), white);
-    mod.rotation.x = Math.PI / 2;
-    mod.position.set(0, -0.45, -1.2 + i * 1.05);
-    g.add(mod);
-  }
-  for (const x of [-0.9, 0.9]) {
-    const mod = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.24, 0.9, 20), white);
-    mod.rotation.z = Math.PI / 2;
-    mod.position.set(x, -0.45, 0.4);
-    g.add(mod);
-  }
-  // lubang merapat menghadap bawah (tempat kapsul menempel)
-  const port = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.24, 0.35, 20), metal);
-  port.position.set(0, -0.85, 0.4);
-  g.add(port);
-  g.userData.portOffset = new THREE.Vector3(0, -1.03, 0.4); // titik sambung relatif pusat stasiun
-  g.userData.panelPoint = new THREE.Vector3(3.1, 0.1, 1.2); // panel yang diperiksa saat berjalan di luar
-  return g;
 }

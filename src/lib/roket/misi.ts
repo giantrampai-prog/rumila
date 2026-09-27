@@ -243,6 +243,7 @@ export const JELAJAH: JelajahItem[] = [
   { id: "tahap-1", name: "Tahap pertama", kind: "part", stop: "pisah-tahap", color: "#d5dde8", desc: "Bagian paling besar, berisi banyak bahan bakar untuk mengangkat roket." },
   { id: "mesin", name: "Mesin roket", kind: "part", stop: "lepas-landas", color: "#ff9a3c", desc: "Menyemburkan gas panas ke bawah sehingga roket terdorong ke atas." },
   { id: "astronot", name: "Agam", kind: "part", stop: "baju-antariksa", color: "#ffd166", desc: "Agam, astronaut cilik kita! Baju antariksanya membuatnya bisa bernapas dan tetap aman." },
+  { id: "stasiun", name: "Stasiun Luar Angkasa", kind: "part", color: "#d9743a", desc: "Rumah para astronaut di orbit, sebesar lapangan sepak bola. Sayap tembaganya adalah panel surya penghasil listrik." },
   { id: "menara", name: "Menara", kind: "part", stop: "naik-kapsul", color: "#ff6b6b", desc: "Menara peluncuran dengan jembatan untuk masuk ke kapsul." },
   { id: "troposfer", name: "Troposfer", kind: "layer", stop: "troposfer", color: "#6fc3ff", desc: "Lapisan terbawah, tempat awan dan cuaca." },
   { id: "stratosfer", name: "Stratosfer", kind: "layer", stop: "stratosfer", color: "#6f8bff", desc: "Lapisan tempat ozon menahan sinar ultraviolet." },
