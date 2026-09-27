@@ -10,6 +10,7 @@ import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiA
 import { followAudio } from "@/lib/audio-clock";
 import { sfx } from "@/lib/sfx";
 import { sharedAudio, unlockAudio } from "@/lib/audio-unlock";
+import { LoopMusic } from "@/lib/bgm";
 import { Cabin } from "./cabin";
 import { Cupola } from "./cupola";
 import { RocketScene, altToY, type RocketPose } from "./scene";
@@ -78,6 +79,8 @@ export class RocketEngine {
   private renderer: THREE.WebGLRenderer;
   private controls: OrbitControls;
   private world: RocketScene;
+  /** musik latar misi terbang "Beyond Earth": pelan di bawah narasi, berulang tanpa putus sampai misi selesai */
+  private music = new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.13, loopStart: 3, loopEnd: 229, fade: 4 });
   private cabin = new Cabin();
   private cupola = new Cupola();
   private frame = new THREE.Object3D();
@@ -202,6 +205,7 @@ export class RocketEngine {
       this.setPlaying(true);
     } else {
       this.setPlaying(false);
+      this.music.stop(1.2);
       this.idx = 0;
       this.t = 0;
       this.world.applyPose(this.pose(0, 0));
@@ -222,7 +226,9 @@ export class RocketEngine {
     useRoket.setState({ playing: p });
     this.controls.enabled = !p || useRoket.getState().mode === "jelajah";
     if (!p) this.audio?.pause();
-    else {
+    if (p && useRoket.getState().mode === "terbang") this.music.play();
+    else this.music.pause();
+    if (p) {
       if (useRoket.getState().finished) {
         this.go(0);
       }
@@ -476,6 +482,7 @@ export class RocketEngine {
 
   private finish() {
     this.t = this.durs[this.idx];
+    this.music.stop(3); // misi selesai: musik mengecil pelan lalu berhenti
     useRoket.setState({ playing: false, finished: true, progress: 1 });
     this.controls.enabled = true;
   }
@@ -616,6 +623,7 @@ export class RocketEngine {
     el.removeEventListener("pointerup", this.onUp);
     el.removeEventListener("wheel", this.onWheel);
     this.audio?.pause();
+    this.music.stop(0.3);
     this.controls.dispose();
     this.cabin.dispose();
     this.cupola.dispose();
