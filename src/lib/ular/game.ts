@@ -47,6 +47,24 @@ export interface Board {
 
 const rowOf = (n: number) => Math.floor((n - 1) / 10);
 
+type P2 = [number, number];
+/** Jarak terdekat antara dua ruas garis (satuan petak); 0 bila bersilangan. */
+function segSeg(a: P2, b: P2, c: P2, d: P2) {
+  const cross = (o: P2, p: P2, q: P2) => (p[0] - o[0]) * (q[1] - o[1]) - (p[1] - o[1]) * (q[0] - o[0]);
+  const d1 = cross(c, d, a),
+    d2 = cross(c, d, b),
+    d3 = cross(a, b, c),
+    d4 = cross(a, b, d);
+  if (d1 * d2 < 0 && d3 * d4 < 0) return 0;
+  const ptSeg = (p: P2, s1: P2, s2: P2) => {
+    const vx = s2[0] - s1[0],
+      vy = s2[1] - s1[1];
+    const t = Math.max(0, Math.min(1, ((p[0] - s1[0]) * vx + (p[1] - s1[1]) * vy) / (vx * vx + vy * vy || 1)));
+    return Math.hypot(p[0] - (s1[0] + vx * t), p[1] - (s1[1] + vy * t));
+  };
+  return Math.min(ptSeg(a, c, d), ptSeg(b, c, d), ptSeg(c, a, b), ptSeg(d, a, b));
+}
+
 /** Susun papan acak yang adil. `r` bisa diganti (tes) — standar memakai acak kriptografis. */
 export function makeBoard(r: Rand = secureRandom): Board {
   for (let attempt = 0; attempt < 400; attempt++) {
@@ -58,35 +76,52 @@ export function makeBoard(r: Rand = secureRandom): Board {
         k = (n - 1) % 10;
       return row % 2 === 0 ? k : 9 - k;
     };
-    const mid = (a: number, b: number) => [(colOf(a) + colOf(b)) / 2, (rowOf(a) + rowOf(b)) / 2];
+    const pt = (n: number): [number, number] => [colOf(n), rowOf(n)];
+    const segDist = (a1: number, a2: number, b1: number, b2: number) => segSeg(pt(a1), pt(a2), pt(b1), pt(b2));
+    const parallel = (a: P2[], b: P2[]) => {
+      const ax = a[1][0] - a[0][0],
+        ay = a[1][1] - a[0][1],
+        bx = b[1][0] - b[0][0],
+        by = b[1][1] - b[0][1];
+      return Math.abs(ax * bx + ay * by) / (Math.hypot(ax, ay) * Math.hypot(bx, by)) > 0.8;
+    };
     const tryAdd = (kind: 'ladder' | 'snake', count: number) => {
       let tries = 0;
-      while (jumps.filter((j) => j.kind === kind).length < count && tries++ < 800) {
+      while (jumps.filter((j) => j.kind === kind).length < count && tries++ < 300) {
         let from: number, to: number;
         if (kind === 'ladder') {
           from = pick(2, 85);
           to = from + pick(10, 30);
           if (to > 98) continue;
         } else {
-          from = pick(20, 99);
+          // ular pertama selalu di baris teratas supaya akhir permainan tetap menegangkan
+          from = jumps.some((j) => j.kind === 'snake') ? pick(20, 99) : pick(91, 99);
           to = from - pick(10, 32);
           if (to < 2) continue;
         }
         if (rowOf(from) === rowOf(to)) continue; // harus pindah baris
         if (Math.abs(colOf(from) - colOf(to)) > 4) continue; // tidak terlalu miring (papan rapi)
         if (used.has(from) || used.has(to)) continue;
-        // beri jarak antar ular/tangga supaya tidak bertumpuk
-        const [mx, my] = mid(from, to);
-        if (jumps.some((j) => { const [x, y] = mid(j.from, j.to); return Math.hypot(x - mx, y - my) < 1.9; })) continue;
+        // beri jarak antar ular/tangga: tidak bersentuhan, tidak menyambung lurus, tidak bersilangan
+        const ends = [pt(from), pt(to)];
+        if (
+          jumps.some(
+            (j) =>
+              segDist(from, to, j.from, j.to) < 0.75 ||
+              // ujung berdekatan & searah → tampak menyambung jadi satu ular/tangga panjang
+              ([pt(j.from), pt(j.to)].some((q) => ends.some((e) => Math.hypot(e[0] - q[0], e[1] - q[1]) < 1.6)) && parallel(ends, [pt(j.from), pt(j.to)])),
+          )
+        )
+          continue;
         used.add(from);
         used.add(to);
         jumps.push({ from, to, kind });
       }
     };
-    const nL = 6 + Math.floor(r() * 3),
-      nS = 6 + Math.floor(r() * 3);
-    tryAdd('ladder', nL);
+    const nL = 6 + Math.floor(r() * 2),
+      nS = 6 + Math.floor(r() * 2);
     tryAdd('snake', nS);
+    tryAdd('ladder', nL);
     if (jumps.length < nL + nS) continue;
     // keseimbangan: total naik vs turun tidak timpang
     const up = jumps.filter((j) => j.kind === 'ladder').reduce((a, j) => a + j.to - j.from, 0);

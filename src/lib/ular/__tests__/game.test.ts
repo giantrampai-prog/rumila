@@ -27,6 +27,26 @@ describe('Ular Tangga', () => {
     }
   });
 
+  it('ular & tangga tidak bersilangan dan tidak tampak menyambung', () => {
+    const xy = (n: number) => {
+      const r = Math.floor((n - 1) / 10),
+        k = (n - 1) % 10;
+      return [r % 2 === 0 ? k : 9 - k, r];
+    };
+    for (let t = 0; t < 150; t++) {
+      const b = makeBoard();
+      for (let i = 0; i < b.jumps.length; i++)
+        for (let k = i + 1; k < b.jumps.length; k++) {
+          const [a1, a2] = [b.jumps[i].from, b.jumps[i].to].map(xy),
+            [c1, c2] = [b.jumps[k].from, b.jumps[k].to].map(xy);
+          const ax = a2[0] - a1[0], ay = a2[1] - a1[1], cx = c2[0] - c1[0], cy = c2[1] - c1[1];
+          const par = Math.abs(ax * cx + ay * cy) / (Math.hypot(ax, ay) * Math.hypot(cx, cy)) > 0.8;
+          const near = [a1, a2].some((p) => [c1, c2].some((q) => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1.6));
+          expect(par && near).toBe(false);
+        }
+    }
+  });
+
   it('papan berbeda-beda setiap permainan', () => {
     const keys = new Set(Array.from({ length: 30 }, () => JSON.stringify(makeBoard().jumps)));
     expect(keys.size).toBeGreaterThan(25);
