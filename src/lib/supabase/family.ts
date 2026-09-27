@@ -10,6 +10,7 @@ import { create } from "zustand";
 import type { ColorKey, PermKey } from "@/lib/catalog";
 import { useRumila, useUI, type Activity, type Member } from "@/lib/store";
 import { friendlyError, supabase } from "./client";
+import { pullSaves, stopSaveSync } from "./saves";
 
 export type CloudStatus = "loading" | "noSession" | "noFamily" | "ready" | "error";
 
@@ -36,6 +37,7 @@ export async function loadFamily(): Promise<CloudStatus> {
     const { data: sess } = await sb.auth.getSession();
     const user = sess.session?.user;
     if (!user) {
+      stopSaveSync();
       useCloud.setState({ status: "noSession", familyId: null, email: null, error: null });
       return "noSession";
     }
@@ -95,6 +97,12 @@ export async function loadFamily(): Promise<CloudStatus> {
       signedIn: meOk ? cur.signedIn : false,
     });
     paused = false;
+    // progres game dari server ditarik sebelum halaman game tampil (tidak tertimpa progres kosong perangkat baru)
+    try {
+      await pullSaves(fid, new Set(members.map((m) => m.id.toLowerCase())));
+    } catch (e) {
+      console.error("[rumila] tarik progres gagal", e);
+    }
     useCloud.setState({ status: "ready", familyId: fid, email: user.email ?? null, error: null });
     return "ready";
   } catch (e) {

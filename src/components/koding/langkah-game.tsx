@@ -84,7 +84,13 @@ export function LangkahGame() {
   const router = useRouter();
   const key = `rumila-koding-${memberId}`;
   const [prog, setProg] = useState<Progress>({ stars: {} });
-  useEffect(() => setProg(loadProg(key)), [key]);
+  useEffect(() => {
+    setProg(loadProg(key));
+    // progres dari perangkat lain baru tiba (sinkron akun) → muat ulang
+    const on = (e: Event) => (e as CustomEvent<string[]>).detail.includes(key) && setProg(loadProg(key));
+    window.addEventListener('rumila:saves', on);
+    return () => window.removeEventListener('rumila:saves', on);
+  }, [key]);
   const saveProg = (p: Progress) => {
     setProg(p);
     try {

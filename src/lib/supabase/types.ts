@@ -56,6 +56,12 @@ export type Database = {
         Update: { created_at?: string; family_id?: string; user_id?: string };
         Relationships: [];
       };
+      game_save: {
+        Row: { data: Json; family_id: string; key: string; member_id: string | null; updated_at: string };
+        Insert: { data: Json; family_id: string; key: string; member_id?: string | null; updated_at?: string };
+        Update: { data?: Json; family_id?: string; key?: string; member_id?: string | null; updated_at?: string };
+        Relationships: [];
+      };
       member: {
         Row: {
           color_key: string;
