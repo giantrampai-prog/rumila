@@ -43,6 +43,15 @@ const SEP = at("pisah-tahap");
 const ORBIT = at("tanpa-bobot"); // mesin mati, tahap kedua lepas
 const ISS_NEAR = at("termosfer");
 const DOCK = at("merapat");
+/**
+ * Saat kapsul menempel (0–1 dari adegan "merapat"): tepat ketika narasi mengucapkan "Klik!" — diperkirakan dari
+ * posisi kata itu di naskah adegan (narasi dibaca merata), sedikit lebih awal supaya "klik" terdengar saat menempel.
+ */
+const DOCK_AT = (() => {
+  const txt = MISI[DOCK].lines.join(" ");
+  const k = txt.toLowerCase().indexOf("klik");
+  return k > 0 ? Math.max(0.1, k / txt.length - 0.02) : 0.3;
+})();
 const EVA = at("bertugas");
 const WALK = at("naik-kapsul");
 const SEP_AT = 0.25; // bagian persinggahan "pisah tahap" saat tahap pertama lepas
@@ -79,6 +88,7 @@ export class RocketEngine {
   private renderer: THREE.WebGLRenderer;
   private controls: OrbitControls;
   private world: RocketScene;
+  private lastGap: number | null = null;
   /** musik latar misi terbang "Beyond Earth": pelan di bawah narasi, berulang tanpa putus sampai misi selesai */
   private music = new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.13, loopStart: 3, loopEnd: 229, fade: 4 });
   private cabin = new Cabin();
@@ -302,7 +312,7 @@ export class RocketEngine {
     // Stasiun: tampak mendekat sepanjang "termosfer", merapat pada "merapat", lalu tetap menempel
     let issGap: number | null = null;
     if (i === ISS_NEAR) issGap = 30 - 22 * smooth(0, 1, p);
-    else if (i === DOCK) issGap = 8 * (1 - smooth(0, 0.7, p));
+    else if (i === DOCK) issGap = 8 * (1 - smooth(0, DOCK_AT, p));
     else if (i > DOCK) issGap = 0;
     return { altKm, sepT, sepAltKm, sep2T, sep2AltKm, issGap, burn, steam, astro, armOpen };
   }
@@ -350,6 +360,12 @@ export class RocketEngine {
         out.pos.set(-11, Math.max(1.6, Y * 0.5 + 1.6), 5.5);
         out.look.set(0, Y + 3, 0);
         return;
+      case "troposfer": {
+        // dari atas-samping menatap ke bawah: roket di antara awan, landasan tampak kecil jauh di bawah
+        out.pos.set(Math.cos(a) * 15, Y + 9, Math.sin(a) * 15);
+        out.look.set(0, Y - 3, 0);
+        return;
+      }
       case "gravitasi": {
         // jauh & tinggi: Bumi melengkung di bawah roket
         out.pos.set(Math.cos(a) * 26, Y + 12, Math.sin(a) * 26);
@@ -506,6 +522,9 @@ export class RocketEngine {
       }
       const pose = this.pose(this.idx, this.t);
       this.world.applyPose(pose);
+      // bunyi "klik" tepat saat kapsul menempel ke stasiun
+      if (ui.playing && this.lastGap !== null && this.lastGap > 0 && pose.issGap === 0) sfx.clink();
+      this.lastGap = pose.issGap;
       // gemuruh mesin selama menyala; makin pelan di udara tipis (di luar angkasa hampir tak terdengar)
       if (pose.burn && ui.playing && now - this.lastRumble > 450) {
         this.lastRumble = now;
@@ -556,6 +575,9 @@ export class RocketEngine {
       this.cupola.update(this.since(0, this.idx, this.t));
       const pose = this.pose(this.idx, this.t);
       this.world.applyPose(pose);
+      // bunyi "klik" tepat saat kapsul menempel ke stasiun
+      if (ui.playing && this.lastGap !== null && this.lastGap > 0 && pose.issGap === 0) sfx.clink();
+      this.lastGap = pose.issGap;
       const Y = altToY(pose.altKm);
       cam.position.set(0, Y + 5.2, 1.6);
       this.frame.position.set(0, 0, 0);

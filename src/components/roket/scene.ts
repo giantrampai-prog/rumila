@@ -11,10 +11,15 @@ import { buildBirds, buildMoon, buildSatellite, buildSite, flag, gridFin, landin
 import { buildCumulus, buildFlora, buildSea, buildTerrain } from "./site";
 
 export const EARTH_R = 1000;
+/**
+ * Pangkat pemetaan ketinggian: bagian bawah (troposfer) direnggangkan supaya saat narasi membahas troposfer,
+ * roket sudah jelas jauh di atas landasan (12 km ≈ 26 unit ≈ 4× tinggi menara), sementara 400 km tetap ±200 unit.
+ */
+const ALT_POW = 0.58;
 /** ketinggian (km) → unit di atas permukaan */
-export const altToY = (km: number) => (km <= 0 ? 0 : EARTH_R * Math.pow(km / 6371, 0.72));
+export const altToY = (km: number) => (km <= 0 ? 0 : EARTH_R * Math.pow(km / 6371, ALT_POW));
 /** unit di atas permukaan → km */
-export const yToAlt = (y: number) => (y <= 0 ? 0 : 6371 * Math.pow(y / EARTH_R, 1 / 0.72));
+export const yToAlt = (y: number) => (y <= 0 ? 0 : 6371 * Math.pow(y / EARTH_R, 1 / ALT_POW));
 
 const TAU = Math.PI * 2;
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
