@@ -62,3 +62,20 @@
   .robi-move, .robi-turn { transition: none; }
   .robi-bump, .robi-eye, .robi-wave, .robi-led, .koding-pulse, .koding-node-cur, .koding-bad, .goal-pulse, .koding-win, .koding-star { animation: none; }
 }
+
+/* ---------- responsif ---------- */
+.koding-worlds { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); align-items: start; }
+/* panel kontrol: selebar layar di HP tegak, dibatasi di tablet tegak, kolom samping saat mendatar */
+.koding-panel { max-width: 640px; }
+@media (orientation: landscape) {
+  .koding-panel { width: clamp(300px, 36vw, 420px); max-width: none; overflow-y: auto; }
+}
+/* layar besar: blok program & palet sedikit lebih besar supaya mudah diketuk */
+@media (min-width: 768px) and (min-height: 700px) {
+  .koding-block-sm { width: 54px; height: 48px; }
+}
+/* HP miring (tinggi sempit): rapatkan */
+@media (orientation: landscape) and (max-height: 480px) {
+  .koding-panel { gap: 6px; padding-top: 8px; padding-bottom: 8px; }
+  .koding-block-sm { width: 40px; height: 36px; }
+}

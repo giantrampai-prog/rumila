@@ -292,7 +292,7 @@ export function LangkahGame() {
   if (!level) {
     return (
       <div ref={mapRef} className="koding-paper fixed inset-0 overflow-y-auto" style={{ color: INK }}>
-        <div className="mx-auto w-full max-w-[640px] px-4 pb-10" style={{ paddingTop: 'max(14px, env(safe-area-inset-top))' }}>
+        <div className="mx-auto w-full max-w-[1180px] px-4 pb-10 sm:px-6" style={{ paddingTop: 'max(14px, env(safe-area-inset-top))' }}>
           <div className="flex items-center gap-3">
             <button onClick={() => router.back()} aria-label="Kembali" className="koding-round flex size-12 items-center justify-center rounded-full active:translate-y-0.5">
               <Icon name="arrow_back" size={26} />
@@ -305,7 +305,7 @@ export function LangkahGame() {
               <Icon name="star" size={20} className="text-[#f2b705]" /> {starTotal}
             </div>
           </div>
-          <div className="mt-4 flex items-end gap-3">
+          <div className="mt-4 flex max-w-[760px] items-end gap-3">
             <AgamFront />
             <div className="koding-say mb-3 flex-1 rounded-[18px] px-4 py-3 text-[15px] font-bold">
               {doneCount === 0
@@ -319,7 +319,7 @@ export function LangkahGame() {
           {/* kartu sertifikat & kemajuan */}
           <button
             onClick={() => allDone && (sfx.celebrate(), setCert(true))}
-            className={`koding-certcard mt-3 flex w-full items-center gap-3 rounded-[20px] p-3 text-left ${allDone ? 'koding-certcard-on' : ''}`}
+            className={`koding-certcard mt-3 flex w-full max-w-[760px] items-center gap-3 rounded-[20px] p-3 text-left ${allDone ? 'koding-certcard-on' : ''}`}
           >
             <span className="flex size-12 shrink-0 items-center justify-center rounded-full" style={{ background: allDone ? '#f2b705' : '#e9dfcb' }}>
               <Icon name={allDone ? 'workspace_premium' : 'lock'} size={28} className={allDone ? 'text-white' : 'text-[#9b8f78]'} />
@@ -337,58 +337,61 @@ export function LangkahGame() {
             </span>
           </button>
 
-          {THEMES.map((t, w) => {
-            const start = w * PER_WORLD;
-            const worldOpen = unlocked(start);
-            const W = WORLD[t];
-            return (
-              <section key={t} className="mt-6 rounded-[24px] p-4" style={{ background: W.bg, color: W.ink }}>
-                <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-2">
-                  <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
-                    Dunia {w + 1}: {W.name}
-                  </h2>
-                  <span className="text-[13px] font-extrabold opacity-70">
-                    {worldOpen ? `Level ${start + 1}–${start + PER_WORLD}` : `Buka setelah level ${start}`}
-                  </span>
-                </div>
-                <div className="relative grid gap-x-2 gap-y-3" style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}>
-                  <Trail rows={PER_WORLD / COLS} />
-                  {Array.from({ length: PER_WORLD }, (_, k) => {
-                    const i = start + k;
-                    const l = LANGKAH[i];
-                    const { r, c } = cellOf(k);
-                    const open = unlocked(i);
-                    const st = prog.stars[l.id] ?? 0;
-                    const isCur = i === current && !allDone;
-                    return (
-                      <button
-                        key={l.id}
-                        data-current={isCur ? '1' : undefined}
-                        disabled={!open}
-                        onClick={() => openLevel(i)}
-                        className={`koding-node flex aspect-square flex-col items-center justify-center rounded-[18px] ${isCur ? 'koding-node-cur' : ''}`}
-                        style={{ gridRow: r + 1, gridColumn: c + 1, background: open ? '#fffaf0' : t === 'angkasa' ? '#2b2862' : 'rgba(255,255,255,.55)', color: open ? INK : W.ink }}
-                        aria-label={open ? `Level ${i + 1}, ${st} bintang` : `Level ${i + 1} terkunci`}
-                      >
-                        {open ? (
-                          <>
-                            <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1 }}>{i + 1}</span>
-                            <span className="mt-1 flex">
-                              {[1, 2, 3].map((q) => (
-                                <Icon key={q} name="star" size={13} className={st >= q ? 'text-[#f2b705]' : 'text-[#d8d2c4]'} />
-                              ))}
-                            </span>
-                          </>
-                        ) : (
-                          <Icon name="lock" size={20} className="opacity-50" />
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
-            );
-          })}
+          {/* dunia menyesuaikan lebar layar: 1 kolom di HP, 2 di tablet/Fold, 3 di layar lebar */}
+          <div className="koding-worlds mt-6">
+            {THEMES.map((t, w) => {
+              const start = w * PER_WORLD;
+              const worldOpen = unlocked(start);
+              const W = WORLD[t];
+              return (
+                <section key={t} className="rounded-[24px] p-4" style={{ background: W.bg, color: W.ink }}>
+                  <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-2">
+                    <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
+                      Dunia {w + 1}: {W.name}
+                    </h2>
+                    <span className="text-[13px] font-extrabold opacity-70">
+                      {worldOpen ? `Level ${start + 1}–${start + PER_WORLD}` : `Buka setelah level ${start}`}
+                    </span>
+                  </div>
+                  <div className="relative grid gap-x-2 gap-y-3" style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}>
+                    <Trail rows={PER_WORLD / COLS} />
+                    {Array.from({ length: PER_WORLD }, (_, k) => {
+                      const i = start + k;
+                      const l = LANGKAH[i];
+                      const { r, c } = cellOf(k);
+                      const open = unlocked(i);
+                      const st = prog.stars[l.id] ?? 0;
+                      const isCur = i === current && !allDone;
+                      return (
+                        <button
+                          key={l.id}
+                          data-current={isCur ? '1' : undefined}
+                          disabled={!open}
+                          onClick={() => openLevel(i)}
+                          className={`koding-node flex aspect-square flex-col items-center justify-center rounded-[18px] ${isCur ? 'koding-node-cur' : ''}`}
+                          style={{ gridRow: r + 1, gridColumn: c + 1, background: open ? '#fffaf0' : t === 'angkasa' ? '#2b2862' : 'rgba(255,255,255,.55)', color: open ? INK : W.ink }}
+                          aria-label={open ? `Level ${i + 1}, ${st} bintang` : `Level ${i + 1} terkunci`}
+                        >
+                          {open ? (
+                            <>
+                              <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1 }}>{i + 1}</span>
+                              <span className="mt-1 flex">
+                                {[1, 2, 3].map((q) => (
+                                  <Icon key={q} name="star" size={13} className={st >= q ? 'text-[#f2b705]' : 'text-[#d8d2c4]'} />
+                                ))}
+                              </span>
+                            </>
+                          ) : (
+                            <Icon name="lock" size={20} className="opacity-50" />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
@@ -399,7 +402,7 @@ export function LangkahGame() {
   const dark = level.theme === 'angkasa';
   const pulseFirst = li! < 3 && code.length === 0 && !running;
   return (
-    <div className="fixed inset-0 flex flex-col overflow-hidden lg:flex-row" style={{ background: W.bg, color: INK, paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+    <div className="fixed inset-0 flex flex-col overflow-hidden landscape:flex-row" style={{ background: W.bg, color: INK, paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="flex min-h-0 flex-1 flex-col gap-2 p-3">
         <div className="flex items-center gap-2">
           <button onClick={() => (stop(), setLi(null))} aria-label="Peta level" className="koding-round flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5">
@@ -425,7 +428,7 @@ export function LangkahGame() {
           </div>
         </div>
       </div>
-      <div className="flex shrink-0 flex-col gap-2 p-3 pt-0 lg:w-[380px] lg:justify-center lg:pt-3">
+      <div className="koding-panel flex w-full shrink-0 flex-col gap-2 self-center p-3 pt-0 landscape:justify-center landscape:self-stretch landscape:pt-3">
         <div className="text-[13px] font-extrabold" style={{ color: dark ? '#e7e4ff' : INK, opacity: 0.75 }}>
           Program Agam · {code.length} blok
         </div>
