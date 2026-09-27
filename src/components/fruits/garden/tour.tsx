@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
 import { SegmentPlayer, audioContext, loadBuffer } from '@/lib/segment-player';
+import { sfx } from '@/lib/sfx';
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { TUR_BUAH, TUR_BUAH_AUDIO, buahDwell } from '@/lib/fruits/tur';
@@ -70,6 +71,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
     s.t = 0;
     s.done = false;
     engine.focus(stop.fruit ?? stop.at);
+    sfx.arrive();
     if (stop.fruit) visitRef.current(stop.fruit);
     if (part(s.i)) {
       // rekaman belum selesai dimuat → tunggu (anak tetap di depan tanaman), lalu putar

@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
 import { sharedAudio, unlockAudio } from '@/lib/audio-unlock';
+import { sfx, startGardenAmbience, stopGardenAmbience } from '@/lib/sfx';
 import { FRUITS, FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { PERM, TOOL_ID } from '@/lib/fruits/progress';
@@ -217,10 +218,15 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
   const openCard = (id: string) => {
     unlockAudio();
     const isNew = !foundRef.current.has(id);
+    sfx.pick();
     if (isNew) {
       addFound(id);
       engine.current?.pick(id);
-    }
+      // buah terbang ke keranjang → berdenting → jingle temuan baru
+      sfx.whoosh();
+      sfx.coin(0.75);
+      sfx.celebrate(0.95);
+    } else sfx.open();
     setCard({ id, isNew });
   };
   const openRef = useRef(openCard);
@@ -231,7 +237,10 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
     import('./engine').then(({ GardenEngine }) => {
       if (!alive || !host.current) return;
       engine.current = new GardenEngine(host.current, {
-        onNear: (id) => setNear(id),
+        onNear: (id) => {
+          setNear(id);
+          if (id && !foundRef.current.has(id) && !tourHandle.current) sfx.sparkle();
+        },
         onArrive: (key) => (tourHandle.current ? tourHandle.current.arrived(key) : openRef.current(key)),
       });
       engine.current.setDiscovered(foundRef.current);
@@ -247,6 +256,12 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
 
   useEffect(() => engine.current?.setDiscovered(found), [found, ready]);
   useEffect(() => engine.current?.setActive(active && !card), [active, card, ready]);
+  // suasana kebun (kicau burung & angin) selama kebun tampil
+  useEffect(() => {
+    if (!active) return;
+    startGardenAmbience();
+    return () => stopGardenAmbience();
+  }, [active]);
 
   // ketuk layar (bukan geser) → jalan ke titik / tanaman
   const down = useRef<{ x: number; y: number; t: number } | null>(null);
@@ -322,12 +337,17 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
             if (!foundRef.current.has(id)) {
               addFound(id);
               engine.current?.pick(id);
+              sfx.whoosh();
+              sfx.coin(0.75);
             }
           }}
           onClose={onTourEnd}
         />
       )}
-      {card && <FruitCard id={card.id} isNew={card.isNew} url={tracks[card.id]} onClose={() => setCard(null)} on3D={() => onOpen3D(card.id)} />}
+      {card && <FruitCard id={card.id} isNew={card.isNew} url={tracks[card.id]} onClose={() => {
+            sfx.close();
+            setCard(null);
+          }} on3D={() => onOpen3D(card.id)} />}
       {card?.isNew && <Confetti key={card.id} />}
     </div>
   );

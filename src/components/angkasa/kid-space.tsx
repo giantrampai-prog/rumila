@@ -7,6 +7,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { Icon } from "@/components/ui";
+import { sfx } from "@/lib/sfx";
 import { OBJ, PLANET_IDS } from "@/lib/angkasa/manifest";
 import { useAngkasa, type Mode } from "@/lib/angkasa/state";
 import { hasVoice, playVoice, stopVoice, usePlayingVoice } from "@/lib/angkasa/voice";
@@ -52,7 +53,10 @@ export function RoundBtn({ icon, label, onClick, tone = "white" }: { icon: strin
         : { background: "#fff", boxShadow: "0 5px 0 rgba(0,0,0,.25)", color: "#2b1d4e" };
   return (
     <button
-      onClick={onClick}
+      onClick={() => {
+        sfx.tap();
+        onClick();
+      }}
       aria-label={label}
       className="pointer-events-auto flex flex-col items-center gap-1 transition-transform active:scale-90"
     >

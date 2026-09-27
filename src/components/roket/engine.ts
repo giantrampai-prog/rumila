@@ -7,6 +7,7 @@ import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
 import { followAudio } from "@/lib/audio-clock";
+import { sfx } from "@/lib/sfx";
 import { sharedAudio, unlockAudio } from "@/lib/audio-unlock";
 import { Cabin } from "./cabin";
 import { Cupola } from "./cupola";
@@ -412,6 +413,7 @@ export class RocketEngine {
 
   /** Ikuti rekaman bila ada: persinggahan & progres dari posisi audio. true = audio yang mengatur waktu. */
   private clock = 0;
+  private lastRumble = 0;
   private syncAudio(dt: number): boolean {
     const part = partFor(this.idx);
     if (!part) {
@@ -484,6 +486,11 @@ export class RocketEngine {
       }
       const pose = this.pose(this.idx, this.t);
       this.world.applyPose(pose);
+      // gemuruh mesin selama menyala; makin pelan di udara tipis (di luar angkasa hampir tak terdengar)
+      if (pose.burn && ui.playing && now - this.lastRumble > 450) {
+        this.lastRumble = now;
+        sfx.rumble(1 - smooth(15, 110, pose.altKm) * 0.85);
+      }
       const prog = clamp01(this.t / this.durs[this.idx]);
       if (Math.abs(prog - ui.progress) > 0.01) useRoket.setState({ progress: prog });
       if (ui.playing || this.snap) {

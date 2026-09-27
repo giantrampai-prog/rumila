@@ -4,6 +4,7 @@
 // pernah diputar langsung dari ketukan pengguna. Karena itu semua suara memakai elemen BERSAMA yang
 // "dibuka kuncinya" pada ketukan pertama (memutar klip hening sangat singkat), lalu boleh diputar kapan saja.
 
+import { unlockAudioContext } from "./segment-player";
 const pool = new Map<string, HTMLAudioElement>();
 let silent: string | null = null;
 let unlocked = false;
@@ -73,6 +74,9 @@ export function unlockAudio() {
 export function installAudioUnlock() {
   if (installed || typeof document === "undefined") return;
   installed = true;
-  const h = () => unlockAudio();
+  const h = () => {
+    unlockAudio();
+    unlockAudioContext(); // efek suara & narasi per adegan (Web Audio)
+  };
   for (const ev of ["touchend", "click", "keydown", "pointerup"]) document.addEventListener(ev, h, { capture: true, passive: true });
 }

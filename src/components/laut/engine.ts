@@ -7,6 +7,7 @@ import * as T from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { create } from 'zustand';
 import { followAudio } from '@/lib/audio-clock';
+import { sfx } from '@/lib/sfx';
 import { sharedAudio, unlockAudio } from '@/lib/audio-unlock';
 import { BIOTA, TUR_LAUT, TUR_LAUT_AUDIO, depthToY, lautDwell, yToDepth, type LautAudioPart, type LautSet } from '@/lib/laut/misi';
 import * as C from './creatures';
@@ -121,6 +122,7 @@ export class LautEngine {
   private player = new T.Vector3();
   private heading = 0;
   private dive = 0;
+  private nextBubble = 0;
   private camRate = 1.6;
 
   /* jelajah */
@@ -790,7 +792,10 @@ export class LautEngine {
       if (p < 0.32) {
         pos.set(2, 1.62 + Math.sin(jump * Math.PI) * 1.1 - jump * jump * 2.6, walk * 1.2 + jump * 2);
         standing = true;
-        if (jump > 0.95 && this.splashT < 0) this.splashT = 0;
+        if (jump > 0.95 && this.splashT < 0) {
+          this.splashT = 0;
+          sfx.splash();
+        }
       } else pos.set(2 - sink * 1.5, -1 + (depthToY(4) + 1) * sink, 3.2 + sink);
     } else if (s.set === 'ringkasan') {
       // naik kembali ke permukaan melewati semua zona
@@ -838,6 +843,11 @@ export class LautEngine {
 
     // gelembung dari penyelam
     this.updateBubbles(dt, this.diver.visible && pos.y < -0.5 ? this.diver.localToWorld(new T.Vector3(0.66, -0.05, 0)) : null);
+    // napas penyelam: rangkaian gelembung sesekali
+    if (this.playing && this.diver.visible && pos.y < -0.5 && t > this.nextBubble) {
+      this.nextBubble = t + 2.2 + Math.random() * 1.8;
+      for (let b = 0; b < 3; b++) setTimeout(() => sfx.bubble(), b * 90 + Math.random() * 60);
+    }
 
     // kamera
     const lookAt = pos.clone();

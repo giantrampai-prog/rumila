@@ -11,6 +11,7 @@ import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
 import * as TX from './textures';
+import { sfx } from '@/lib/sfx';
 
 export interface GardenCallbacks {
   /** tanaman terdekat dalam jangkauan (null = tidak ada) */
@@ -147,6 +148,7 @@ export class GardenEngine {
   private targetHeading: number | null = null;
   private speed = 0;
   private walkPh = 0;
+  private lastStep = 0;
   private stick = new T.Vector2();
   private keys = new Set<string>();
   private waypoints: T.Vector3[] = [];
@@ -876,6 +878,7 @@ export class GardenEngine {
       this.waypoints = [hit.clone()];
       this.arriveKey = null;
       this.faceTo = null;
+      sfx.tap();
       this.tapRing.position.set(hit.x, 0.06, hit.z);
       this.tapT = 0;
     }
@@ -1132,6 +1135,10 @@ export class GardenEngine {
     const P = this.parts;
     const k = this.speed / MAX;
     this.walkPh += dt * (4 + this.speed * 1.6);
+    // langkah kaki di rumput (dua langkah per ayunan)
+    const stepIdx = Math.floor(this.walkPh / Math.PI);
+    if (stepIdx !== this.lastStep && this.speed > 1.5) sfx.step();
+    this.lastStep = stepIdx;
     const sw = Math.sin(this.walkPh) * 0.75 * k;
     P.legL.rotation.x = sw;
     P.legR.rotation.x = -sw;

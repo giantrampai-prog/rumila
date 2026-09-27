@@ -25,8 +25,8 @@ export function audioContext(): Ctx | null {
 /** Panggil dari ketukan pengguna (iPhone/iPad/Chrome mewajibkannya sebelum suara boleh keluar). */
 export function unlockAudioContext() {
   const c = audioContext();
-  if (!c) return;
-  if (c.state !== 'running') void c.resume();
+  if (!c || c.state === 'running') return;
+  void c.resume();
   // bunyi hening 1 sampel "membangunkan" jalur audio di iOS
   const b = c.createBuffer(1, 1, c.sampleRate);
   const s = c.createBufferSource();
