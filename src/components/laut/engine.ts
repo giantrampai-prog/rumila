@@ -9,6 +9,7 @@ import { create } from 'zustand';
 import { followAudio } from '@/lib/audio-clock';
 import { sfx } from '@/lib/sfx';
 import { sharedAudio, unlockAudio } from '@/lib/audio-unlock';
+import { LoopMusic } from '@/lib/bgm';
 import { BIOTA, TUR_LAUT, TUR_LAUT_AUDIO, depthToY, lautDwell, yToDepth, type LautAudioPart, type LautSet } from '@/lib/laut/misi';
 import * as C from './creatures';
 import { blackSmoker, boat, coral, diver, rng, rock, seabed, seagrass, submersible } from './props';
@@ -113,6 +114,8 @@ export class LautEngine {
   private idx = 0;
   private t = 0;
   private playing = false;
+  /** musik latar tur "Deep Curiosity": pelan di bawah narasi, berulang tanpa putus sampai tur selesai */
+  private music = new LoopMusic('/laut/musik-laut.m4a', ['laut-bgm-a', 'laut-bgm-b'], { volume: 0.13, loopStart: 3, loopEnd: 213, fade: 4 });
   private durs = TUR_LAUT.map(lautDwell);
   private audio: HTMLAudioElement | null = null;
   private part: LautAudioPart | null = null;
@@ -586,6 +589,7 @@ export class LautEngine {
       this.setPlaying(true);
     } else {
       this.stopAudio();
+      this.music.stop(1.2);
       this.playing = false;
       this.controls.enabled = true;
       useLaut.setState({ playing: false, finished: false });
@@ -672,6 +676,8 @@ export class LautEngine {
     this.playing = on;
     if (!on) this.audio?.pause();
     else if (this.part) this.audio?.play().catch(() => {});
+    if (on) this.music.play();
+    else this.music.pause();
     useLaut.setState({ playing: on });
   }
 
@@ -766,6 +772,7 @@ export class LautEngine {
       if (this.t >= dur) {
         if (this.idx < TUR_LAUT.length - 1) this.go(this.idx + 1);
         else {
+          this.music.stop(3); // tur selesai: musik mengecil pelan lalu berhenti
           this.setPlaying(false);
           useLaut.setState({ finished: true, progress: 1 });
         }
@@ -960,6 +967,7 @@ export class LautEngine {
   dispose() {
     cancelAnimationFrame(this.raf);
     this.stopAudio();
+    this.music.stop(0.3);
     this.ro.disconnect();
     this.controls.dispose();
     this.scene.traverse((o) => {
