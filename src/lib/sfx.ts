@@ -149,6 +149,24 @@ export const sfx = {
     const f = 380 + Math.random() * 500;
     tone(f, 0.08, { vol: 0.07, to: f * 1.9 });
   },
+  /** tetes air di gua: "plink" bergema */
+  drip() {
+    const f = 1300 + Math.random() * 900;
+    tone(f, 0.14, { vol: 0.07, to: f * 0.55, attack: 0.002 });
+    tone(f * 0.55, 0.3, { vol: 0.025, at: 0.12 });
+  },
+  /** sikat menggosok tanah (game Gali Fosil) */
+  brush() {
+    hiss(0.12, { freq: 2600 + Math.random() * 1400, q: 0.6, vol: 0.06 });
+  },
+  /** ketukan batu / salah pilih yang lembut */
+  thud() {
+    tone(160, 0.16, { type: 'triangle', to: 110, vol: 0.22, attack: 0.003 });
+  },
+  /** kristal berdenting */
+  clink() {
+    [2093, 2637].forEach((f, i) => tone(f, 0.35, { vol: 0.05, at: i * 0.05 }));
+  },
   /** gemuruh mesin roket (panggil berkali-kali selama menyala) */
   rumble(strength = 1) {
     hiss(0.6, { freq: 120, q: 0.5, vol: 0.28 * strength, type: 'lowpass' });
