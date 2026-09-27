@@ -24,6 +24,8 @@ interface Joint {
   inv: THREE.Quaternion;
   /** +1 bila tulang di sisi +x model */
   side: number;
+  /** untuk lengan: sudut (radian) yang dibutuhkan agar lengan menggantung ±12° dari badan */
+  hang: number;
 }
 
 export interface AgamPose {
@@ -33,7 +35,7 @@ export interface AgamPose {
   /** ayunan lengan kiri/kanan */
   armL: number;
   armR: number;
-  /** turunkan lengan dari pose A (0 = tetap terbuka, ±0,75 = menggantung di sisi badan) */
+  /** turunkan lengan dari pose A: 0 = tetap terbuka, 1 = menggantung di sisi badan (sedikit renggang) */
   lower: number;
 }
 
@@ -74,8 +76,22 @@ export class AgamModel {
           const wq = b.getWorldQuaternion(new THREE.Quaternion()).premultiply(rootInv);
           const p = b.getWorldPosition(new THREE.Vector3());
           root.worldToLocal(p);
-          this.joints.set(b.name, { b, rest: b.quaternion.clone(), inv: wq.invert(), side: p.x >= 0 ? 1 : -1 });
+          this.joints.set(b.name, { b, rest: b.quaternion.clone(), inv: wq.invert(), side: p.x >= 0 ? 1 : -1, hang: 0 });
         });
+        // sudut menggantung tiap lengan dari arah lengan atas di pose istirahat (bahu → siku, ruang model)
+        for (const [arm, fore] of [
+          ["LeftArm", "LeftForeArm"],
+          ["RightArm", "RightForeArm"],
+        ]) {
+          const a = this.joints.get(arm),
+            f = this.joints.get(fore);
+          if (!a || !f) continue;
+          const pa = root.worldToLocal(a.b.getWorldPosition(new THREE.Vector3()));
+          const pf = root.worldToLocal(f.b.getWorldPosition(new THREE.Vector3()));
+          const dir = pf.sub(pa);
+          const fromDown = Math.atan2(Math.abs(dir.x), -dir.y); // 0 = lurus ke bawah, π/2 = mendatar
+          a.hang = Math.max(0, fromDown - 0.21);
+        }
         this.ready = true;
         this.pose(this.last); // pose terakhir yang diminta sebelum model siap
         onReady?.(root);
@@ -99,7 +115,7 @@ export class AgamModel {
     }
   }
 
-  private last: AgamPose = { legL: 0, legR: 0, armL: 0, armR: 0, lower: 0.75 };
+  private last: AgamPose = { legL: 0, legR: 0, armL: 0, armR: 0, lower: 1 };
 
   pose(p: AgamPose) {
     this.last = p;
@@ -113,9 +129,10 @@ export class AgamModel {
       ["LeftArm", p.armL],
       ["RightArm", p.armR],
     ] as const) {
-      const side = this.joints.get(name)?.side ?? 1;
+      const j = this.joints.get(name);
+      const side = j?.side ?? 1;
       this.bend(name, [
-        [Z, -side * p.lower],
+        [Z, -side * p.lower * (j?.hang ?? 0.75)],
         [X, swing],
       ]);
     }

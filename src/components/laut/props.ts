@@ -142,7 +142,7 @@ export function diver() {
       beam.visible = true;
     },
     {
-      url: '/laut/agam-penyelam.glb',
+      url: '/laut/agam-penyelam-v2.glb',
       fit: (root) => {
         const k = 2.0 / 1.2;
         root.scale.setScalar(k);
@@ -160,8 +160,8 @@ export function diver() {
     // model bertulang: berdiri tegak di kapal, atau berenang dengan kepakan fin bergantian & lengan rapat di badan
     const flutter = Math.sin(t * 5) * 0.32 * kick;
     const pose: AgamPose = standing
-      ? { legL: 0, legR: 0, armL: 0, armR: 0, lower: 0.75 }
-      : { legL: flutter, legR: -flutter, armL: 0.35 + Math.sin(t * 1.2) * 0.05, armR: 0.35 - Math.sin(t * 1.2) * 0.05, lower: 0.85 };
+      ? { legL: 0, legR: 0, armL: 0, armR: 0, lower: 1 }
+      : { legL: flutter, legR: -flutter, armL: 0.35 + Math.sin(t * 1.2) * 0.05, armR: 0.35 - Math.sin(t * 1.2) * 0.05, lower: 1 };
     rig.pose(pose);
   };
   g.scale.setScalar(1.1);

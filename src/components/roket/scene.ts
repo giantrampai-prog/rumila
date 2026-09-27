@@ -1143,7 +1143,7 @@ export class RocketScene {
       this.a.legL.rotation.x = Math.sin(t * 0.4) * 0.3;
       this.a.legR.rotation.x = -Math.sin(t * 0.4) * 0.3;
       // melayang: lengan setengah terbuka bergoyang pelan, kaki mengayun lambat
-      this.agam?.pose({ legL: Math.sin(t * 0.4) * 0.3, legR: -Math.sin(t * 0.4) * 0.3, armL: Math.sin(t * 0.7) * 0.25, armR: -Math.sin(t * 0.6) * 0.25, lower: 0.25 });
+      this.agam?.pose({ legL: Math.sin(t * 0.4) * 0.3, legR: -Math.sin(t * 0.4) * 0.3, armL: Math.sin(t * 0.7) * 0.25, armR: -Math.sin(t * 0.6) * 0.25, lower: 0.35 });
       const tp = this.tether.geometry.getAttribute("position") as THREE.BufferAttribute;
       const hook = p.issGap !== null ? this.iss.localToWorld(new THREE.Vector3(1.2, 0, 0.2)) : new THREE.Vector3(0.3, y + 5.35, 0.15);
       tp.setXYZ(0, hook.x, hook.y, hook.z);
@@ -1169,7 +1169,7 @@ export class RocketScene {
     this.a.armR.rotation.x = s * 0.7;
     this.a.armL.rotation.z = 0;
     this.a.armR.rotation.z = 0;
-    this.agam?.pose({ legL: s, legR: -s, armL: -s * 0.7, armR: s * 0.7, lower: 0.75 });
+    this.agam?.pose({ legL: s, legR: -s, armL: -s * 0.7, armR: s * 0.7, lower: 1 });
   }
 
   /** Lingkungan menurut ketinggian KAMERA (langit, kabut, bintang, aurora, dll.) + partikel. */
