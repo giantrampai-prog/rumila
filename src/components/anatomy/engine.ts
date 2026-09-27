@@ -107,9 +107,11 @@ export class AnatomyEngine {
     if (box.isEmpty()) return;
     const center = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3());
     const fov = THREE.MathUtils.degToRad(this.camera.fov), radius = Math.max(size.y, size.x / this.camera.aspect, size.z) / 2;
-    const distance = Math.max(.015, radius / Math.tan(fov / 2) * 1.28);
+    const distance = Math.max(.015, radius / Math.tan(fov / 2) * 1.95); // longgar: organ utuh terlihat di atas kartu & tombol
     this.controls.minDistance = Math.max(.003, size.length() * .6); this.controls.maxDistance = Math.max(2, distance * 3);
-    this.setCamera({ position: center.clone().add(new THREE.Vector3(.12, .04, 1).normalize().multiplyScalar(distance)).toArray() as Vec3, target: center.toArray() as Vec3 });
+    // sasaran sedikit di bawah organ → organ tampil di bagian atas layar, tidak tertutup kartu & deretan tombol
+    const aim = center.clone().add(new THREE.Vector3(0, -radius * 0.42, 0));
+    this.setCamera({ position: aim.clone().add(new THREE.Vector3(.12, .04, 1).normalize().multiplyScalar(distance)).toArray() as Vec3, target: aim.toArray() as Vec3 });
   }
   retry(id: string) { this.failed.delete(id);const detail=id.endsWith('-detail');const a=this.manifest.assets.find(a=>a.id===(detail?id.slice(0,-7):id));if(a)this.load(a,detail); }
   private async load(asset: Asset, detail=false) {
@@ -302,7 +304,7 @@ export class AnatomyEngine {
     for (const m of this.motionMeshes) {
       if (m.userData.p0) m.position.copy(m.userData.p0 as THREE.Vector3);
       if (m.userData.q0) m.quaternion.copy(m.userData.q0 as THREE.Quaternion);
-      m.scale.set(1, 1, 1);
+      if (m.userData.sBase) m.scale.copy(m.userData.sBase as THREE.Vector3);
       const mat = m.material as THREE.MeshStandardMaterial; if (mat?.emissive && m.userData.glow) { mat.emissive.set(0x000000); mat.emissiveIntensity = 0; m.userData.glow = false; }
       m.userData.p0 = undefined; m.userData.q0 = undefined; m.userData.c = undefined;
     }
@@ -339,12 +341,13 @@ export class AnatomyEngine {
     for (const m of this.motionMeshes) {
       if (!m.visible) continue;
       if (!m.userData.p0) {
-        if (!m.userData.qBase) m.userData.qBase = m.quaternion.clone();
+        // skala & putaran bawaan model dipertahankan (sebagian aset berskala bukan 1)
+        if (!m.userData.qBase) { m.userData.qBase = m.quaternion.clone(); m.userData.sBase = m.scale.clone(); }
         m.userData.p0 = m.position.clone(); m.userData.q0 = m.userData.qBase;
-        m.geometry.computeBoundingBox(); const c = m.geometry.boundingBox!.getCenter(new THREE.Vector3()); m.userData.c = c.applyQuaternion(m.userData.qBase as THREE.Quaternion).add(m.position);
+        m.geometry.computeBoundingBox(); const c = m.geometry.boundingBox!.getCenter(new THREE.Vector3()); m.userData.c = c.multiply(m.userData.sBase as THREE.Vector3).applyQuaternion(m.userData.qBase as THREE.Quaternion).add(m.position);
       }
       const p0 = m.userData.p0 as THREE.Vector3, c = m.userData.c as THREE.Vector3;
-      m.scale.copy(k);
+      m.scale.copy(m.userData.sBase as THREE.Vector3).multiply(k);
       m.quaternion.copy(R).multiply(m.userData.q0 as THREE.Quaternion);
       m.position.copy(p0).sub(c).multiply(k).applyQuaternion(R).add(c);
       if (glow > 0) { const mat = m.material as THREE.MeshStandardMaterial; if (mat?.emissive) { mat.emissive.set(0xff6a5a); mat.emissiveIntensity = glow; m.userData.glow = true; } }
