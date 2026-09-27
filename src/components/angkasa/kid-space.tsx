@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
+import { useSfxOnChange } from "@/lib/use-sfx";
 import { OBJ, PLANET_IDS } from "@/lib/angkasa/manifest";
 import { useAngkasa, type Mode } from "@/lib/angkasa/state";
 import { hasVoice, playVoice, stopVoice, usePlayingVoice } from "@/lib/angkasa/voice";
@@ -151,6 +152,7 @@ function KidTour() {
   useNarration();
   const last = TOUR.length - 1;
   const stop = TOUR[st.tourIndex];
+  useSfxOnChange(st.tourIndex, () => sfx.warp());
   const finished = st.tourIndex === last && !st.tourPlaying && st.tourLine >= stop.lines.length - 1;
   useEffect(() => {
     if (st.tourIndex === last) markDone(st.memberId, "tur:tata-surya");
@@ -219,6 +221,8 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
 
   // Rekaman suara diputar otomatis saat objek dibuka.
   const voiceObj = st.mode === "planet" ? st.selectedId : null;
+  // terbang ke planet / kembali ke tata surya
+  useSfxOnChange(voiceObj, (v) => (v ? sfx.warp() : sfx.whoosh()));
   useEffect(() => {
     if (voiceObj && st.prefs.autoVoice && hasVoice(voiceObj)) void playVoice(voiceObj);
     else stopVoice();

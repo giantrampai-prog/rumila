@@ -1340,6 +1340,7 @@ export class BumiEngine {
       return;
     }
     this.fadeDir = 1;
+    sfx.warp();
     this.onDark = () => {
       this.enter(l);
       then?.();

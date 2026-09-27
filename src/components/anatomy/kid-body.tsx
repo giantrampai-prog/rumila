@@ -15,7 +15,9 @@ import { TUR, TUR_AUDIO, turDwell } from '@/lib/anatomy/tur';
 import { installAudioUnlock, sharedAudio, unlockAudio } from '@/lib/audio-unlock';
 import { useAnatomySession } from '@/lib/anatomy/use-session';
 import { LAYERS, type LayerId, type Manifest, type Part } from '@/lib/anatomy/types';
+import { sfx } from '@/lib/sfx';
 import { useRumila } from '@/lib/store';
+import { useSfxOnChange } from '@/lib/use-sfx';
 import type { ViewerHandle } from './viewer';
 
 const Viewer = dynamic(() => import('./viewer').then((m) => m.Viewer), {
@@ -127,6 +129,8 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
   const viewer = useRef<ViewerHandle>(null);
   const organs = ORGANS.filter(([id]) => manifest.parts.some((p) => p.id === id));
   const selected = manifest.parts.find((p) => p.id === state.selectedId);
+  useSfxOnChange(state.selectedId, (v) => (v ? sfx.scan() : sfx.close()));
+  useSfxOnChange(state.isolation, (v) => v && sfx.whoosh());
   const cam = () => state.snapshot?.camera ?? viewer.current?.camera() ?? { position: [0, 0.9, 3.2] as [number, number, number], target: [0, 0.9, 0] as [number, number, number] };
 
   // Dianggap sudah dipelajari setelah dilihat ±8 detik.
@@ -162,6 +166,7 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
   /* ---------------- Tur bernarasi ---------------- */
   const [tur, setTur] = useState<{ i: number; playing: boolean; finished: boolean; progress: number } | null>(null);
   const turRef = useRef({ i: 0, t: 0, playing: false });
+  useSfxOnChange(tur?.i ?? -1, (i) => i > 0 && sfx.arrive());
   const openRef = useRef(open);
   openRef.current = open;
   useEffect(() => installAudioUnlock(), []);

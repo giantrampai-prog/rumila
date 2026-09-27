@@ -268,7 +268,10 @@ export interface BumiAudioPart {
 }
 
 /** Narasi tur: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
-export const TUR_BUMI_AUDIO: BumiAudioPart[] = [];
+export const TUR_BUMI_AUDIO: BumiAudioPart[] = [
+  // suara Fenrir; batas adegan diselaraskan ke jeda hening asli rekaman
+  { src: '/bumi/voice/tur-01.m4a', first: 0, cues: [0, 21.37, 32.55, 48.59, 72.15, 89.58, 110.08, 130.21, 159.09, 172.32, 186.72, 203.29, 215.83, 229.84, 244.76, 256.43] },
+];
 
 export const bumiDwell = (s: BumiStop) => Math.max(7, s.lines.join(' ').length / 14 + 2);
 

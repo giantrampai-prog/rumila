@@ -8,10 +8,13 @@ import { audioContext } from './segment-player';
 let master: GainNode | null = null;
 let noiseBuf: AudioBuffer | null = null;
 let muted = false;
+/** waktu bunyi terakhir: tombol yang sudah berbunyi khusus tidak ditambah bunyi 'tap' otomatis */
+let lastPlay = 0;
 
 function out() {
   const c = audioContext();
   if (!c) return null;
+  lastPlay = performance.now();
   if (c.state !== 'running') void c.resume();
   if (!master) {
     master = c.createGain();
@@ -167,6 +170,35 @@ export const sfx = {
   clink() {
     [2093, 2637].forEach((f, i) => tone(f, 0.35, { vol: 0.05, at: i * 0.05 }));
   },
+  /** bip hitung mundur (angka terakhir lebih tinggi) */
+  beep(high = false) {
+    tone(high ? 1320 : 880, 0.16, { type: 'square', vol: 0.07 });
+  },
+  /** roket lepas landas: deru naik + gemuruh */
+  liftoff() {
+    hiss(2.2, { freq: 200, to: 1400, q: 0.6, vol: 0.3, type: 'lowpass' });
+    hiss(1.4, { freq: 90, q: 0.5, vol: 0.35, type: 'lowpass', at: 0.1 });
+    tone(70, 1.6, { type: 'sawtooth', vol: 0.08, to: 140 });
+  },
+  /** logam terkunci: pisah tahap / merapat */
+  clunk() {
+    tone(140, 0.2, { type: 'square', vol: 0.12, to: 70, attack: 0.002 });
+    hiss(0.15, { freq: 2400, q: 1.2, vol: 0.12, at: 0.02 });
+    tone(620, 0.25, { vol: 0.05, at: 0.12 });
+  },
+  /** sonar kapal selam */
+  ping() {
+    tone(1480, 1.2, { vol: 0.08, to: 1380, attack: 0.003 });
+  },
+  /** pindah tempat jauh (layar meredup / terbang ke planet) */
+  warp() {
+    hiss(0.8, { freq: 300, to: 3200, q: 2, vol: 0.12 });
+    tone(220, 0.7, { vol: 0.06, to: 880 });
+  },
+  /** memilih objek untuk dilihat dari dekat (organ, biota, karakter) */
+  scan() {
+    [660, 990, 1320].forEach((f, i) => tone(f, 0.12, { type: 'triangle', vol: 0.07, at: i * 0.05 }));
+  },
   /** gemuruh mesin roket (panggil berkali-kali selama menyala) */
   rumble(strength = 1) {
     hiss(0.6, { freq: 120, q: 0.5, vol: 0.28 * strength, type: 'lowpass' });
@@ -224,4 +256,32 @@ export function stopGardenAmbience() {
   ambientTimer = 0;
   windNode?.stop();
   windNode = null;
+}
+
+/* ---------------- bunyi otomatis untuk semua tombol ---------------- */
+
+let uiInstalled = false;
+
+/**
+ * Pasang sekali di kerangka aplikasi: setiap ketukan tombol/tautan/kartu berbunyi "tap" lembut — termasuk di
+ * modul yang dibuat nanti. Tombol yang sudah memutar bunyi khususnya sendiri (mis. panen, buka kartu) tidak
+ * ditambah bunyi. Tandai elemen dengan data-sfx="off" bila memang harus sunyi.
+ */
+export function installUiSounds() {
+  if (uiInstalled || typeof document === 'undefined') return;
+  uiInstalled = true;
+  document.addEventListener(
+    'click',
+    (e) => {
+      const el = (e.target as Element | null)?.closest?.('button, a[href], [role="button"], [role="tab"], [data-sfx]') as HTMLElement | null;
+      if (!el || el.closest('[data-sfx="off"]') || (el as HTMLButtonElement).disabled) return;
+      const before = performance.now();
+      // tunggu penangan klik elemen itu selesai; bila ia sudah berbunyi sendiri, lewati
+      setTimeout(() => {
+        if (lastPlay >= before - 5) return;
+        sfx.tap();
+      }, 0);
+    },
+    true,
+  );
 }

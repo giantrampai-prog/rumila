@@ -9,6 +9,8 @@ import { RoundBtn } from "@/components/angkasa/kid-space";
 import { Icon } from "@/components/ui";
 import { COUNTDOWN, JELAJAH, JELAJAH_AUDIO, MISI, MISI_AUDIO } from "@/lib/roket/misi";
 import { installAudioUnlock, sharedAudio } from "@/lib/audio-unlock";
+import { sfx } from "@/lib/sfx";
+import { useSfxOnChange } from "@/lib/use-sfx";
 import { RocketEngine, useRoket } from "./engine";
 
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
@@ -139,6 +141,13 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
   const from = MISI_AUDIO.length ? 0.55 : 0.3;
   const count = stop === COUNTDOWN && progress > from ? 10 - Math.min(9, Math.floor(((progress - from) / (1 - from)) * 10)) : null;
   // Tanpa rekaman: tampilkan teks kecil sebagai pengganti suara (sementara).
+  useSfxOnChange(count !== null && playing ? count : null, (c) => c !== null && sfx.beep(c <= 3));
+  useSfxOnChange(stop, (i) => {
+    const id = MISI[i].id;
+    if (id === "lepas-landas") sfx.liftoff();
+    else if (id === "pisah-tahap" || id === "merapat") sfx.clunk();
+    else sfx.arrive();
+  });
   const caption = MISI_AUDIO.length === 0 ? s.lines[Math.min(s.lines.length - 1, Math.floor(progress * s.lines.length))] : null;
   return (
     <div className="pointer-events-none absolute inset-0">
@@ -183,6 +192,7 @@ export function RocketSpace() {
   const [engine, setEngine] = useState<RocketEngine | null>(null);
   const mode = useRoket((s) => s.mode);
   const focus = useRoket((s) => s.focus);
+  useSfxOnChange(focus, (f) => (f ? sfx.scan() : sfx.close()));
   const router = useRouter();
 
   useEffect(() => {

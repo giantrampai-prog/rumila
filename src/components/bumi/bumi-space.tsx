@@ -12,6 +12,7 @@ import { Icon } from '@/components/ui';
 import { installAudioUnlock } from '@/lib/audio-unlock';
 import { KARAKTER, LAPISAN, TUR_BUMI, TUR_BUMI_AUDIO, fmtDepth } from '@/lib/bumi/misi';
 import { sfx } from '@/lib/sfx';
+import { useSfxOnChange } from '@/lib/use-sfx';
 import { BumiEngine, ringkasanLayer, useBumi } from './engine';
 import { GaliFosil, SusunLapisan } from './games';
 import './bumi.css';
@@ -158,6 +159,7 @@ function GameMenu({ onPick, onClose }: { onPick: (g: Exclude<Game, null>) => voi
 function TourOverlay({ engine, onGames }: { engine: BumiEngine; onGames: () => void }) {
   const { stop, progress, playing, finished, loading } = useBumi();
   const s = TUR_BUMI[stop];
+  useSfxOnChange(stop, () => sfx.arrive());
   const caption = TUR_BUMI_AUDIO.length === 0 ? s.lines[Math.min(s.lines.length - 1, Math.floor(progress * s.lines.length))] : null;
   return (
     <div className="pointer-events-none absolute inset-0">
@@ -213,6 +215,7 @@ export function BumiSpace() {
   const [game, setGame] = useState<Game>(null);
   const mode = useBumi((s) => s.mode);
   const focus = useBumi((s) => s.focus);
+  useSfxOnChange(focus, (f) => (f ? sfx.scan() : sfx.close()));
   const router = useRouter();
 
   useEffect(() => {

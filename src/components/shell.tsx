@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, type ReactNode } from "react";
+import { installUiSounds } from "@/lib/sfx";
 import { getFolder, type PermKey, type Tool } from "@/lib/catalog";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { can, useHydrated, useMe, useRumila, useUI } from "@/lib/store";
@@ -23,6 +24,9 @@ export function AppShell({ children }: { children: ReactNode }) {
   const signedIn = useRumila((s) => s.signedIn);
   const router = useRouter();
   const ready = hydrated && cloud.status === "ready";
+
+  // semua tombol di aplikasi berbunyi "tap" (modul baru otomatis ikut)
+  useEffect(() => installUiSounds(), []);
 
   // Belum masuk akun / belum punya rumah / belum pilih profil → ke layar masuk.
   useEffect(() => {

@@ -11,6 +11,8 @@ import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
 import { installAudioUnlock } from '@/lib/audio-unlock';
 import { BIOTA, TUR_LAUT, TUR_LAUT_AUDIO, ZONA_LAUT } from '@/lib/laut/misi';
+import { sfx } from '@/lib/sfx';
+import { useSfxOnChange } from '@/lib/use-sfx';
 import { LautEngine, useLaut } from './engine';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
@@ -119,6 +121,12 @@ function Ringkasan() {
 function TourOverlay({ engine }: { engine: LautEngine }) {
   const { stop, progress, playing, finished } = useLaut();
   const s = TUR_LAUT[stop];
+  useSfxOnChange(stop, (i) => {
+    if (i < 2) return; // persiapan & masuk laut sudah berbunyi cebur
+    sfx.arrive();
+    // di laut dalam: bunyi sonar kapal selam
+    if (TUR_LAUT[i].ride === 'kapal-selam') setTimeout(() => sfx.ping(), 700);
+  });
   const caption = TUR_LAUT_AUDIO.length === 0 ? s.lines[Math.min(s.lines.length - 1, Math.floor(progress * s.lines.length))] : null;
   return (
     <div className="pointer-events-none absolute inset-0">
@@ -170,6 +178,7 @@ export function LautSpace() {
   const [engine, setEngine] = useState<LautEngine | null>(null);
   const mode = useLaut((s) => s.mode);
   const focus = useLaut((s) => s.focus);
+  useSfxOnChange(focus, (f) => (f ? sfx.scan() : sfx.close()));
   const router = useRouter();
 
   useEffect(() => {
