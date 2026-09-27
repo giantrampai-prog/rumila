@@ -11,6 +11,7 @@ import { disposeTree, type EngineCtx, type LabelSpec } from "./core";
 import type { ModeView } from "./views";
 import { TourController } from "./tour";
 import { SolarFx } from "./fx";
+import { ShipOverlay } from "./ship";
 
 const DEG = Math.PI / 180;
 const SYSTEM_IDS = [
@@ -141,6 +142,7 @@ export class SolarView implements ModeView {
   }
 
   private ultraId: string | null = null;
+  private ship: ShipOverlay | null = null;
 
   update(dt: number, ctx: EngineCtx) {
     this.poseAll();
@@ -154,6 +156,14 @@ export class SolarView implements ModeView {
       this.fx.update(dt, this.camera, ctx.clock.days);
     }
     this.tour?.update(dt);
+    // Pesawat Rinoya-1 (kamera belakang) selama tur tampilan anak
+    const st = useAngkasa.getState();
+    const wantShip = !!this.tour && st.tourCinematic && st.tourCam === "belakang";
+    if (wantShip && !this.ship) this.ship = new ShipOverlay(ctx.renderer);
+    if (this.ship) {
+      this.ship.visible = wantShip;
+      if (wantShip && this.tour) this.ship.update(dt, this.camera, this.sunPos, this.tour.thrust, this.tour.banking, this.tour.flying);
+    }
     // Peta 4K hanya untuk satu objek yang sedang dilihat dari dekat (hemat memori GPU di tablet/HP).
     const introEarth = this.fx && !this.fx.introDone && useAngkasa.getState().intro === "play" ? "earth" : null;
     const want = this.focusId ?? this.tour?.targetId ?? introEarth;
@@ -376,7 +386,13 @@ export class SolarView implements ModeView {
     return this.bodies.get(id)?.setVariant?.(v, this.ctx);
   }
 
+  afterRender(renderer: THREE.WebGLRenderer) {
+    this.ship?.render(renderer);
+  }
+
   dispose() {
+    this.ship?.dispose();
+    this.ship = null;
     this.tour?.dispose();
     this.tour = null;
     if (this.fx) {

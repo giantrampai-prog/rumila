@@ -140,6 +140,11 @@ export class TourController {
     const toSun = center.clone().negate().normalize();
     if (toSun.lengthSq() < 0.5) toSun.set(0, 0, 1);
     const side = new THREE.Vector3(0, 1, 0).cross(toSun).normalize();
+    // Bumi: datang dari sisi yang jauh dari Bulan agar Bulan tidak menutupi Bumi
+    if (id === "earth") {
+      const mp = this.host.bodies.get("moon")?.orbitAnchor.getWorldPosition(new THREE.Vector3());
+      if (mp && mp.sub(center).dot(side) > 0) side.negate();
+    }
     const dir = toSun
       .multiplyScalar(comet ? 0.35 : 0.8)
       .add(side.multiplyScalar(comet ? 1 : 0.55))
@@ -219,6 +224,18 @@ export class TourController {
 
   private setArrived(v: boolean) {
     if (useAngkasa.getState().tourArrived !== v) useAngkasa.getState().set({ tourArrived: v });
+  }
+
+  /** 0–1 kencang terbang (untuk api mesin pesawat) & arah belokan saat ini */
+  get thrust() {
+    if (!this.playing) return 0.1;
+    return this.phase === "travel" ? Math.sin(Math.PI * Math.min(1, this.travelT)) * 0.8 + 0.2 : 0.15;
+  }
+  get flying() {
+    return this.phase === "travel";
+  }
+  get banking() {
+    return this.phase === "travel" ? this.turn * Math.sin(Math.PI * this.travelT) : 0;
   }
 
   setPlaying(p: boolean) {

@@ -220,8 +220,21 @@ function KidTour() {
   }, [st.tourPlaying, finished]);
   useEffect(() => () => music().stop(1), []);
 
+  const pov = st.tourCam === "mata";
   return (
     <div className="pointer-events-none absolute inset-0" style={{ paddingTop: "max(12px, env(safe-area-inset-top))" }}>
+      {/* pandangan mata Agam: bingkai kokpit (jendela transparan) di atas angkasa 3D */}
+      {pov && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src="/angkasa/kapal/kokpit.webp"
+          alt=""
+          aria-hidden
+          draggable={false}
+          className="ak-cockpit absolute inset-0 h-full w-full select-none"
+          style={{ objectFit: "cover", objectPosition: "50% 100%", background: "transparent", border: 0, borderRadius: 0, boxShadow: "none" }}
+        />
+      )}
       {/* progres tipis */}
       <div className="absolute inset-x-0 top-0 flex gap-1 px-3 pt-2" style={{ paddingTop: "max(8px, env(safe-area-inset-top))" }} aria-hidden>
         {TOUR.map((t, i) => (
@@ -229,7 +242,15 @@ function KidTour() {
         ))}
       </div>
       <div className="absolute top-5 right-3 sm:right-5" style={{ top: "max(20px, calc(env(safe-area-inset-top) + 12px))" }}>
-        <RoundBtn icon="close" label="Keluar tur" onClick={endTour} />
+        <div className="flex items-start gap-3">
+          <RoundBtn
+            icon={pov ? "rocket" : "visibility"}
+            label={pov ? "Pesawat" : "Mata Agam"}
+            tone="purple"
+            onClick={() => st.set({ tourCam: pov ? "belakang" : "mata" })}
+          />
+          <RoundBtn icon="close" label="Keluar tur" onClick={endTour} />
+        </div>
       </div>
 
       <TourPops />

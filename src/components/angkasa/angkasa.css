@@ -356,3 +356,8 @@
 }
 .ak-popcard { animation: ak-popcard-in .5s cubic-bezier(.2,.9,.3,1.2) both; }
 @media (prefers-reduced-motion: reduce) { .ak-popcard { animation: none; } }
+/* kokpit POV: masuk lembut, sedikit bergoyang seperti pesawat melayang */
+@keyframes ak-cockpit-in { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+@keyframes ak-cockpit-sway { 0%,100% { transform: scale(1.02) translateY(0) rotate(0deg); } 50% { transform: scale(1.02) translateY(3px) rotate(.25deg); } }
+.ak-cockpit { animation: ak-cockpit-in .45s ease-out both, ak-cockpit-sway 6s ease-in-out .45s infinite; }
+@media (prefers-reduced-motion: reduce) { .ak-cockpit { animation: none; } }
