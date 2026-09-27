@@ -17,7 +17,7 @@ export interface TourAudioPart {
 export const TOUR_AUDIO: TourAudioPart[] = [
   // Narasi lengkap Rinoya (suara Fenrir, 5:12) — batas kalimat diselaraskan ke jeda hening asli rekaman
   {
-    src: "/angkasa/voice/tur-01.m4a",
+    src: "/angkasa/voice/tur-02.m4a",
     first: 0,
     cues: [0, 41.59, 64.37, 82.42, 106.69, 125.99, 148.87, 166.02, 186.06, 204.6, 220.54, 237.06, 250.55, 267.25, 286.76],
     lineCues: [

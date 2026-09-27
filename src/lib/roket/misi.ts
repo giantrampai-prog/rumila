@@ -266,10 +266,10 @@ export interface MisiAudioPart {
  */
 export const MISI_AUDIO: MisiAudioPart[] = [
   {
-    // Suara "Leda" (SuaraKisah), 6:30. Batas adegan = jeda hening asli rekaman, diselaraskan ke batas kalimat (timestamp SuaraKisah bisa meleset ±1,7 dtk).
-    src: "/roket/voice/misi-01.m4a",
+    // Suara "Sulafat" (SuaraKisah), 6:42, versi Rinoya. Batas adegan = jeda hening asli rekaman, diselaraskan ke batas kalimat.
+    src: "/roket/voice/misi-02.m4a",
     first: 0,
-    cues: [0, 25.44, 50.04, 74.79, 88.5, 116.34, 127.74, 140.03, 156.68, 171.74, 187.6, 206.07, 218.14, 233.96, 258.63, 274.7, 288.49, 307.46, 331.43, 352.61, 369.41],
+    cues: [0, 28.74, 54.36, 78.35, 92.87, 121.47, 132.9, 148.48, 164.19, 178.01, 192.4, 213.64, 226.65, 243.69, 270.01, 285.88, 300.04, 318.32, 342.54, 363.75, 380.88],
   },
 ];
 
