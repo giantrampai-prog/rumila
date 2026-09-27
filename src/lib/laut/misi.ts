@@ -278,7 +278,14 @@ export interface LautAudioPart {
 }
 
 /** Narasi tur: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
-export const TUR_LAUT_AUDIO: LautAudioPart[] = [];
+export const TUR_LAUT_AUDIO: LautAudioPart[] = [
+  {
+    // Suara "Sulafat" (SuaraKisah), 6:15. Waktu mulai tiap adegan dari timestamp per kata + jeda hening rekaman.
+    src: '/laut/voice/tur-01.m4a',
+    first: 0,
+    cues: [0, 27.95, 43.25, 75, 100.73, 122.23, 141, 160, 181.59, 207, 234, 266.37, 288, 313.27, 334.91, 346.55],
+  },
+];
 
 /** Lama adegan tanpa rekaman: waktu baca (±14 karakter/detik) + jeda. */
 export const lautDwell = (s: LautStop) => Math.max(7, s.lines.join(' ').length / 14 + 2);
