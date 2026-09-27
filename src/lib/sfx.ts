@@ -196,6 +196,39 @@ export const sfx = {
     hiss(0.9, { freq: 900, to: 300, q: 0.6, vol: 0.35, type: 'lowpass' });
     hiss(0.35, { freq: 3000, q: 0.8, vol: 0.12 });
   },
+  /** dadu dikocok & menggelinding: rentetan ketukan kayu yang makin jarang */
+  diceRoll() {
+    let at = 0;
+    for (let i = 0; i < 9; i++) {
+      hiss(0.035, { freq: 2200 + Math.random() * 1800, q: 4, vol: 0.16, at, type: 'bandpass' });
+      tone(700 + Math.random() * 500, 0.03, { type: 'triangle', vol: 0.05, at });
+      at += 0.045 + i * 0.012;
+    }
+  },
+  /** dadu berhenti di papan */
+  diceLand() {
+    tone(180, 0.12, { type: 'triangle', vol: 0.18, to: 120 });
+    hiss(0.08, { freq: 900, q: 1.2, vol: 0.12, type: 'lowpass' });
+  },
+  /** satu lompatan pion; nada naik sesuai urutan langkah */
+  hop(i = 0) {
+    const f = 440 * Math.pow(2, (i % 8) / 8);
+    tone(f, 0.09, { type: 'sine', vol: 0.14, to: f * 1.35 });
+  },
+  /** naik tangga: arpeggio naik ceria */
+  ladder() {
+    [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, 0.14, { type: 'triangle', vol: 0.16, at: i * 0.1 }));
+  },
+  /** meluncur di badan ular: siulan turun + desis */
+  snake() {
+    tone(900, 1.1, { type: 'sine', vol: 0.14, to: 140, attack: 0.02 });
+    hiss(0.35, { freq: 5000, to: 3000, q: 2, vol: 0.08 });
+    hiss(0.9, { freq: 1200, to: 300, q: 0.8, vol: 0.06, at: 0.2, type: 'lowpass' });
+  },
+  /** menabrak 100 lalu mundur */
+  bounceBack() {
+    tone(620, 0.18, { type: 'square', vol: 0.06, to: 300 });
+  },
   /** klakson: mobil "tin-tin" (dua nada), motor "tet-tet" lebih tinggi */
   horn(vol = 1, kind: 'car' | 'motor' = 'car') {
     const twice = Math.random() < 0.6;

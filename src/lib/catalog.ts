@@ -65,7 +65,7 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
         ["Puzzle Gambar", "extension", "Susun kepingan gambar hewan dan tempat."],
         ["Catur", "chess", "Main catur bareng ayah atau lawan komputer."],
         ["Tebak Kata", "quiz", "Tebak kata Bahasa Indonesia dan Inggris."],
-        ["Ular Tangga", "casino", "Ular tangga digital untuk 2–4 pemain."],
+        ["Ular Tangga", "casino", "Ular tangga untuk 2–6 pemain: dadu adil, papan acak, bisa lawan komputer.", "game-ular"],
         ["Kartu Memori", "style", "Cocokkan pasangan kartu bergambar."],
         ["Labirin", "route", "Cari jalan keluar dari labirin."],
         ["Warnai Gambar", "palette", "Mewarnai gambar dengan jari."],

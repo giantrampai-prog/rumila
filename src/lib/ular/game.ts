@@ -1,0 +1,179 @@
+// Logika Ular Tangga (murni, tanpa tampilan) — bisa dites.
+// • Dadu adil & tak bisa ditebak: crypto.getRandomValues + rejection sampling (tanpa bias modulo).
+// • Papan diacak setiap permainan (letak ular & tangga berbeda) dengan aturan keadilan:
+//   tidak ada ujung di petak 1 / 100, tidak ada dua ujung di petak yang sama, tidak ada rantai
+//   (ujung ular/tangga jatuh di awal ular/tangga lain), total naik & turun seimbang.
+// • Urutan giliran diacak di awal.
+// • Aturan pantul: harus pas di 100; kelebihan langkah berjalan mundur (99 + 5 → 100, 99, 98, 97, 96).
+
+export type Rand = () => number; // 0 ≤ x < 1
+
+/** Angka acak kriptografis 0…1 (cadangan Math.random bila crypto tidak ada, mis. saat tes lama). */
+export const secureRandom: Rand = () => {
+  const c = globalThis.crypto;
+  if (c?.getRandomValues) {
+    const a = new Uint32Array(1);
+    c.getRandomValues(a);
+    return a[0] / 4294967296;
+  }
+  return Math.random();
+};
+
+/** Dadu 1…6 seragam tanpa bias (rejection sampling di atas bilangan acak 32-bit). */
+export function rollDie(): number {
+  const c = globalThis.crypto;
+  if (c?.getRandomValues) {
+    const a = new Uint32Array(1);
+    const limit = Math.floor(4294967296 / 6) * 6; // buang sisa agar setiap sisi berpeluang sama
+    for (;;) {
+      c.getRandomValues(a);
+      if (a[0] < limit) return (a[0] % 6) + 1;
+    }
+  }
+  return 1 + Math.floor(Math.random() * 6);
+}
+
+export interface Jump {
+  from: number;
+  to: number;
+  kind: 'ladder' | 'snake';
+}
+
+export interface Board {
+  jumps: Jump[];
+  /** peta cepat petak → tujuan */
+  map: Record<number, number>;
+}
+
+const rowOf = (n: number) => Math.floor((n - 1) / 10);
+
+/** Susun papan acak yang adil. `r` bisa diganti (tes) — standar memakai acak kriptografis. */
+export function makeBoard(r: Rand = secureRandom): Board {
+  for (let attempt = 0; attempt < 400; attempt++) {
+    const used = new Set<number>([1, 100]);
+    const jumps: Jump[] = [];
+    const pick = (lo: number, hi: number) => lo + Math.floor(r() * (hi - lo + 1));
+    const colOf = (n: number) => {
+      const row = rowOf(n),
+        k = (n - 1) % 10;
+      return row % 2 === 0 ? k : 9 - k;
+    };
+    const mid = (a: number, b: number) => [(colOf(a) + colOf(b)) / 2, (rowOf(a) + rowOf(b)) / 2];
+    const tryAdd = (kind: 'ladder' | 'snake', count: number) => {
+      let tries = 0;
+      while (jumps.filter((j) => j.kind === kind).length < count && tries++ < 800) {
+        let from: number, to: number;
+        if (kind === 'ladder') {
+          from = pick(2, 85);
+          to = from + pick(10, 30);
+          if (to > 98) continue;
+        } else {
+          from = pick(20, 99);
+          to = from - pick(10, 32);
+          if (to < 2) continue;
+        }
+        if (rowOf(from) === rowOf(to)) continue; // harus pindah baris
+        if (Math.abs(colOf(from) - colOf(to)) > 4) continue; // tidak terlalu miring (papan rapi)
+        if (used.has(from) || used.has(to)) continue;
+        // beri jarak antar ular/tangga supaya tidak bertumpuk
+        const [mx, my] = mid(from, to);
+        if (jumps.some((j) => { const [x, y] = mid(j.from, j.to); return Math.hypot(x - mx, y - my) < 1.9; })) continue;
+        used.add(from);
+        used.add(to);
+        jumps.push({ from, to, kind });
+      }
+    };
+    const nL = 6 + Math.floor(r() * 3),
+      nS = 6 + Math.floor(r() * 3);
+    tryAdd('ladder', nL);
+    tryAdd('snake', nS);
+    if (jumps.length < nL + nS) continue;
+    // keseimbangan: total naik vs turun tidak timpang
+    const up = jumps.filter((j) => j.kind === 'ladder').reduce((a, j) => a + j.to - j.from, 0);
+    const down = jumps.filter((j) => j.kind === 'snake').reduce((a, j) => a + j.from - j.to, 0);
+    if (Math.abs(up - down) > 50) continue;
+    // setidaknya satu ular di baris teratas supaya akhir tetap menegangkan
+    if (!jumps.some((j) => j.kind === 'snake' && j.from > 90)) continue;
+    const map: Record<number, number> = {};
+    for (const j of jumps) map[j.from] = j.to;
+    return { jumps, map };
+  }
+  // cadangan: papan klasik
+  return classicBoard();
+}
+
+export function classicBoard(): Board {
+  const pairs: [number, number][] = [
+    [4, 14], [9, 31], [21, 42], [28, 84], [36, 44], [51, 67], [71, 91], [80, 99],
+    [16, 6], [47, 26], [49, 11], [56, 53], [62, 19], [64, 60], [87, 24], [93, 73], [95, 75], [98, 78],
+  ];
+  const jumps = pairs.map(([from, to]) => ({ from, to, kind: to > from ? ('ladder' as const) : ('snake' as const) }));
+  const map: Record<number, number> = {};
+  for (const j of jumps) map[j.from] = j.to;
+  return { jumps, map };
+}
+
+/**
+ * Petak-petak yang dilewati selangkah demi selangkah untuk lemparan `roll` dari `pos`.
+ * Harus pas di 100; kelebihannya berjalan mundur. Posisi 0 = belum masuk papan.
+ */
+export function stepPath(pos: number, roll: number): number[] {
+  const out: number[] = [];
+  let p = pos,
+    dir = 1;
+  for (let i = 0; i < roll; i++) {
+    if (p === 100) dir = -1;
+    p += dir;
+    out.push(p);
+  }
+  return out;
+}
+
+export interface Player {
+  id: string;
+  name: string;
+  color: string;
+  avatar: string;
+  cpu: boolean;
+  pos: number;
+}
+
+export interface TurnResult {
+  roll: number;
+  steps: number[];
+  landed: number;
+  jump: Jump | null;
+  final: number;
+  won: boolean;
+  bounced: boolean;
+  again: boolean;
+}
+
+/** Hitung satu giliran (tidak mengubah apa pun). */
+export function playTurn(board: Board, pos: number, roll: number, sixAgain = true): TurnResult {
+  const steps = stepPath(pos, roll);
+  const landed = steps[steps.length - 1];
+  const to = board.map[landed];
+  const jump = to ? board.jumps.find((j) => j.from === landed)! : null;
+  const final = to ?? landed;
+  const won = final === 100;
+  return { roll, steps, landed, jump, final, won, bounced: steps.includes(100) && landed !== 100, again: sixAgain && roll === 6 && !won };
+}
+
+/** Acak urutan pemain (Fisher–Yates dengan acak kriptografis). */
+export function shuffle<T>(a: T[], r: Rand = secureRandom): T[] {
+  const b = [...a];
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(r() * (i + 1));
+    [b[i], b[j]] = [b[j], b[i]];
+  }
+  return b;
+}
+
+/** Koordinat petak (baris 0 = bawah; zig-zag: baris genap kiri→kanan). */
+export function cellXY(n: number) {
+  const row = rowOf(n);
+  const k = (n - 1) % 10;
+  const col = row % 2 === 0 ? k : 9 - k;
+  return { col, row };
+}
