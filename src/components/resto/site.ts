@@ -7,12 +7,14 @@
 import * as T from 'three';
 import { BUILD_STAGES, CONTRACTORS, stageAt } from '@/lib/resto/data';
 import type { RestoState } from '@/lib/resto/sim';
+import { BLD, FLOOR_Y, LOT, PLAN_ROOMS, groundY, roofY } from './layout';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
-const W = 5,
-  D = 4,
-  H = 3;
+const H = 3.4; // tinggi dinding di atas lantai
+const YARD_Y_SITE = 0.15;
+const BW = BLD.x1 - BLD.x0,
+  BCX = (BLD.x0 + BLD.x1) / 2;
 
 function worker(vest: string) {
   const g = new T.Group();
@@ -80,11 +82,15 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
     b.rotation.y = ry;
     add(b);
   };
-  hoard(4, -4.3, 4.75, 0);
-  hoard(4, 4.3, 4.75, 0);
-  hoard(9.5, -6.3, 0, Math.PI / 2);
-  hoard(9.5, 6.3, 0, Math.PI / 2);
-  hoard(12.6, 0, -4.75 - 0.1, 0);
+  const LW = LOT.x1 - LOT.x0,
+    LD = LOT.z1 - LOT.z0;
+  const gate0 = -6.2,
+    gate1 = -1.8; // gerbang proyek di depan
+  hoard(gate0 - LOT.x0, (LOT.x0 + gate0) / 2, LOT.z1 - 0.1, 0);
+  hoard(LOT.x1 - gate1, (gate1 + LOT.x1) / 2, LOT.z1 - 0.1, 0);
+  hoard(LD, LOT.x0, (LOT.z0 + LOT.z1) / 2, Math.PI / 2);
+  hoard(LD, LOT.x1, (LOT.z0 + LOT.z1) / 2, Math.PI / 2);
+  hoard(LW, (LOT.x0 + LOT.x1) / 2, LOT.z0, 0);
   // papan proyek
   const board = document.createElement('canvas');
   board.width = 512;
@@ -119,21 +125,21 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   bt.colorSpace = T.SRGBColorSpace;
   keep.push(bt);
   const sign = add(new T.Mesh(new T.PlaneGeometry(2.4, 1.2), new T.MeshStandardMaterial({ map: bt, roughness: 0.6 })));
-  sign.position.set(-4.3, 1.25, 4.8);
+  sign.position.set(-13, 1.25, LOT.z1 - 0.05);
   // besi tulangan (terlihat di awal)
   const rebar = new T.Group();
   const rodM = std('#7a4a2a', 0.6, { metalness: 0.6 });
-  for (let x = -W; x <= W; x += 0.8)
-    for (const z of [-D, D]) {
-      if (z === D && Math.abs(x) < 1.4) continue;
+  for (let x = BLD.x0; x <= BLD.x1; x += 0.8)
+    for (const z of [BLD.z0, BLD.z1]) {
+      if (z === BLD.z1 && x > -5.4 && x < -2.6) continue;
       const r = new T.Mesh(new T.CylinderGeometry(0.025, 0.025, 1.6, 5), rodM);
-      r.position.set(x, 1.0, z);
+      r.position.set(x, FLOOR_Y + 0.8, z);
       rebar.add(r);
     }
-  for (let z = -D; z <= D; z += 0.8)
-    for (const x of [-W, W]) {
+  for (let z = BLD.z0; z <= BLD.z1; z += 0.8)
+    for (const x of [BLD.x0, BLD.x1]) {
       const r = new T.Mesh(new T.CylinderGeometry(0.025, 0.025, 1.6, 5), rodM);
-      r.position.set(x, 1.0, z);
+      r.position.set(x, FLOOR_Y + 0.8, z);
       rebar.add(r);
     }
   add(rebar);
@@ -143,46 +149,49 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   const pole = std('#c8b070', 0.75);
   const timber = () => std('#8a6a44', 0.85);
   const plankM = std('#a8804a', 0.85);
-  for (let x = -W; x <= W + 0.01; x += 2.5)
-    for (const z of [-D - 0.6, D + 0.6]) {
-      const p = new T.Mesh(new T.CylinderGeometry(0.06, 0.065, H + 1.2, 7), pole);
-      p.position.set(x, (H + 1.2) / 2, z);
+  const zs = [BLD.z0 - 0.6, BLD.z1 + 0.6];
+  for (let x = BLD.x0; x <= BLD.x1 + 0.01; x += 2.5)
+    for (const z of zs) {
+      const ph = roofY(x) + 0.8;
+      const p = new T.Mesh(new T.CylinderGeometry(0.06, 0.065, ph, 7), pole);
+      p.position.set(x, ph / 2, z);
       add(p);
     }
   const levels: T.Object3D[] = [];
-  for (const y of [1.1, 2.2, 3.3])
-    for (const z of [-D - 0.6, D + 0.6]) {
+  for (const y of [1.1, 2.2, 3.3, 4.4].map((v) => v + FLOOR_Y))
+    for (const z of zs) {
       const lv = new T.Group();
-      const pl = new T.Mesh(new T.BoxGeometry(W * 2 + 0.4, 0.06, 0.55), plankM);
-      const rail = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, W * 2 + 0.4, 5), pole);
+      const pl = new T.Mesh(new T.BoxGeometry(BW + 0.4, 0.06, 0.55), plankM);
+      const rail = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, BW + 0.4, 5), pole);
       rail.rotation.z = Math.PI / 2;
-      rail.position.set(0, 0.9, z < 0 ? -0.25 : 0.25);
+      rail.position.set(0, 0.9, z < BLD.z0 ? -0.25 : 0.25);
       lv.add(pl, rail);
-      lv.position.set(0, y, z);
+      lv.position.set(BCX, y, z);
       lv.userData.y = y;
       add(lv);
       levels.push(lv);
     }
-  // rangka atap kayu (tahap akhir)
+  // rangka atap kayu miring (tahap akhir): kasau melintang & gording memanjang
   const truss = new T.Group();
-  for (let x = -W; x <= W + 0.01; x += 1.25) {
-    for (const s2 of [-1, 1]) {
-      const r = new T.Mesh(new T.BoxGeometry(0.1, 0.1, D * 1.18), timber());
-      r.position.set(x, H + 0.2 + 0.9, s2 * D * 0.5);
-      r.rotation.x = s2 * 0.42;
-      truss.add(r);
-    }
+  const ang = Math.atan2(roofY(BLD.x1) - roofY(BLD.x0), BW);
+  for (let x = BLD.x0; x <= BLD.x1 + 0.01; x += 1.4) {
+    const r = new T.Mesh(new T.BoxGeometry(0.1, 0.14, BLD.z1 - BLD.z0 + 1.8), timber());
+    r.position.set(x, roofY(x), (BLD.z0 + BLD.z1) / 2 + 0.6);
+    truss.add(r);
   }
-  const ridge = new T.Mesh(new T.BoxGeometry(W * 2, 0.12, 0.12), timber());
-  ridge.position.y = H + 0.2 + 1.8;
-  truss.add(ridge);
+  for (let z = BLD.z0; z <= BLD.z1 + 1; z += 1.6) {
+    const pg = new T.Mesh(new T.BoxGeometry(BW + 1, 0.1, 0.1), timber());
+    pg.position.set(BCX, roofY(BCX) + 0.1, z);
+    pg.rotation.z = ang;
+    truss.add(pg);
+  }
   truss.traverse((o) => ((o as T.Mesh).isMesh ? (o.castShadow = true) : null));
   add(truss);
 
   // katrol tali di atas perancah depan: tukang di bawah menarik tali, ember adukan naik-turun (cara umum di proyek Indonesia)
   const gawang = new T.Group();
-  gawang.position.set(2.8, 0, D + 0.6);
-  const gH = H + 2.2;
+  gawang.position.set(-9.0, 0, BLD.z1 + 0.6);
+  const gH = roofY(-9) + 1.2;
   for (const x of [-0.5, 0.5]) {
     const p = new T.Mesh(new T.CylinderGeometry(0.06, 0.07, gH, 7), pole);
     p.position.set(x, gH / 2, 0);
@@ -202,7 +211,7 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
 
   // direksi keet (bedeng kantor proyek) dengan papan gambar kerja & jadwal di dindingnya
   const keet = new T.Group();
-  keet.position.set(-3.2, 0, -7.4);
+  keet.position.set(-18.6, 0.15, 0.6);
   const kw = new T.Mesh(new T.BoxGeometry(4, 2.4, 2.4), std('#c9b89a', 0.9));
   kw.position.y = 1.4;
   const kroof = new T.Mesh(new T.BoxGeometry(4.4, 0.08, 2.9), zinc);
@@ -237,7 +246,7 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
 
   // molen (mesin aduk semen) di pojok depan kanan
   const mixer = new T.Group();
-  mixer.position.set(4.7, 0, 5.8 - 1.8);
+  mixer.position.set(-10.6, 0.15, 1.2);
   const frame = new T.Mesh(new T.BoxGeometry(0.9, 0.5, 0.6), std('#c8342a', 0.6));
   frame.position.y = 0.45;
   const drum = new T.Group();
@@ -262,10 +271,10 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   const brickM = std('#b85a3a', 0.9);
   // tumpukan bahan: bata, papan kayu, karung semen, pasir (makin habis seiring kemajuan)
   const piles: T.Object3D[] = [];
-  const pileAt = new T.Vector3(-5.6, 0, 3.6);
+  const pileAt = new T.Vector3(-14.2, 0, 1.6);
   for (let i = 0; i < 24; i++) {
     const b = new T.Mesh(new T.BoxGeometry(0.42, 0.2, 0.42), brickM);
-    b.position.set(pileAt.x + (i % 3) * 0.44 - 0.1, 0.1 + Math.floor(i / 6) * 0.21, pileAt.z - (Math.floor(i / 3) % 2) * 0.44);
+    b.position.set(pileAt.x + (i % 3) * 0.44 - 0.1, 0.25 + Math.floor(i / 6) * 0.21, pileAt.z - (Math.floor(i / 3) % 2) * 0.44);
     b.castShadow = true;
     b.userData.need = i / 24;
     add(b);
@@ -273,8 +282,7 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   }
   for (let i = 0; i < 8; i++) {
     const p = new T.Mesh(new T.BoxGeometry(2.4, 0.08, 0.25), plankM);
-    p.position.set(5.4, 0.05 + i * 0.09, -2.6 + (i % 2) * 0.05);
-    p.rotation.y = Math.PI / 2;
+    p.position.set(-0.8, 0.2 + i * 0.09, 1.4 + (i % 2) * 0.05);
     p.castShadow = true;
     p.userData.need = i / 8;
     add(p);
@@ -283,22 +291,24 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   for (let i = 0; i < 6; i++) {
     const bag = new T.Mesh(new T.CapsuleGeometry(0.16, 0.35, 3, 8), std('#d8d0bc', 0.9));
     bag.rotation.z = Math.PI / 2;
-    bag.position.set(3.6 + (i % 3) * 0.36, 0.17 + Math.floor(i / 3) * 0.3, 4.1);
+    bag.position.set(2.4 + (i % 3) * 0.36, 0.32 + Math.floor(i / 3) * 0.3, 1.8);
     bag.userData.need = i / 6;
     add(bag);
     piles.push(bag);
   }
   const sand = add(new T.Mesh(new T.ConeGeometry(0.9, 0.7, 14), std('#d8b878', 1)));
-  sand.position.set(5.4, 0.35, 1.2);
+  sand.position.set(5.2, 0.5, 1.0);
 
   // tukang
   const jobs: Job[] = [];
   const hammerAt: [number, number, number, number][] = [
-    [-2.5, -D + 0.5, Math.PI, 0],
-    [W - 0.5, 1, Math.PI / 2, 0],
-    [-W + 0.5, -1.5, -Math.PI / 2, 0],
-    [2.2, -D - 0.6, 0, 1], // di atas perancah belakang
-    [-2.8, D + 0.6, Math.PI, 1], // di atas perancah depan
+    [-15, BLD.z1 - 0.7, Math.PI, 0],
+    [-2, BLD.z0 + 0.7, 0, 0],
+    [BLD.x0 + 0.7, -8, -Math.PI / 2, 0],
+    [BLD.x1 - 0.7, -9, Math.PI / 2, 0],
+    [-8, -10.9, 0, 0],
+    [-11, BLD.z1 + 0.6, Math.PI, 1], // di atas perancah depan
+    [-19, BLD.z0 - 0.6, 0, 1], // di atas perancah belakang
   ];
   hammerAt.forEach(([x, z, ry, lift], i) => {
     const w = worker(i % 2 ? '#ff7a1a' : '#f2d21a');
@@ -322,22 +332,22 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
       g: w.g,
       arm: w.arm,
       legs: w.legs,
-      a: new T.Vector3(-4.8, 0, 3.4 - i * 0.6),
-      b: new T.Vector3(i ? 2.5 : -1.5, 0, i ? -2.6 : 2.6),
+      a: new T.Vector3(-13.6 + i * 0.6, 0, 0.6),
+      b: new T.Vector3(i ? -4 : -13, 0, i ? -5.5 : -1.4),
       ph: i * 3,
       load: bricks,
     });
   }
   {
     const w = worker('#f2d21a');
-    w.g.position.set(4.0, 0, 4.1 - 1.8);
+    w.g.position.set(-11.6, 0, 1.2);
     w.g.rotation.y = Math.PI / 2;
     add(w.g);
     jobs.push({ kind: 'mix', g: w.g, arm: w.arm, ph: 0 });
   }
 
   const puller = worker('#f2d21a');
-  puller.g.position.set(2.8, 0, D + 0.95);
+  puller.g.position.set(-9.0, YARD_Y_SITE, BLD.z1 + 0.95);
   puller.g.rotation.y = Math.PI;
   add(puller.g);
 
@@ -357,11 +367,11 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   return {
     group,
     burst() {
-      for (let i = 0; i < 10; i++) puff((Math.random() - 0.5) * W * 2, 0.4, (Math.random() - 0.5) * D * 2, 3, 1);
+      for (let i = 0; i < 12; i++) puff(BLD.x0 + Math.random() * BW, FLOOR_Y + 0.4, BLD.z0 + Math.random() * (BLD.z1 - BLD.z0), 3, 1);
     },
     update(t, dt, k) {
       let sound = false;
-      const wallTop = 0.2 + H * k;
+      const wallTop = FLOOR_Y + H * k;
       rebar.visible = k < 0.55;
       for (const lv of levels) lv.visible = (lv.userData.y as number) < wallTop + 0.6;
       truss.visible = k > 0.6;
@@ -388,7 +398,10 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
             if (Math.random() < 0.4) puff(j.g.position.x, j.g.position.y + 0.4, j.g.position.z, 1, 0.2);
           }
           j.hit = hit;
-          if (j.lift) j.g.position.y = T.MathUtils.clamp(Math.floor((wallTop - 0.2) / 1.1) * 1.1, 0, 2.2) + 0.03 + (Math.floor((wallTop - 0.2) / 1.1) > 0 ? 0.06 : 0);
+          if (j.lift) {
+            const lv = T.MathUtils.clamp(Math.floor((wallTop - FLOOR_Y) / 1.1), 0, 3);
+            j.g.position.y = lv > 0 ? FLOOR_Y + lv * 1.1 + 0.03 : groundY(j.g.position.x, j.g.position.z);
+          } else j.g.position.y = groundY(j.g.position.x, j.g.position.z);
         } else if (j.kind === 'carry') {
           // bolak-balik: tumpukan → dinding (membawa bata) → kembali (kosong)
           const cycle = 10;
@@ -397,6 +410,7 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
           const f = go ? p * 2 : (1 - p) * 2;
           const e = f < 0.1 ? 0 : f > 0.9 ? 1 : (f - 0.1) / 0.8;
           j.g.position.lerpVectors(j.a, j.b, e);
+          j.g.position.y = groundY(j.g.position.x, j.g.position.z);
           const dir = j.b.clone().sub(j.a);
           j.g.rotation.y = Math.atan2(dir.x, dir.z) + (go ? 0 : Math.PI);
           j.load.visible = go;
@@ -427,7 +441,7 @@ export function buildSite(s: RestoState, keep: T.Texture[]): Site {
   };
 }
 
-/** Denah (gambar kerja) sederhana: dinding, pintu, dapur, kasir, meja, ukuran. */
+/** Denah (gambar kerja) mengikuti denah konsep: ruang-ruang, pintu masuk, parkir. */
 function drawBlueprint(g: CanvasRenderingContext2D, x0: number, y0: number, w: number, h: number) {
   g.fillStyle = '#1f4f9a';
   g.fillRect(x0, y0, w, h);
@@ -444,52 +458,22 @@ function drawBlueprint(g: CanvasRenderingContext2D, x0: number, y0: number, w: n
   }
   g.stroke();
   g.fillStyle = '#ffffff';
-  g.font = '800 16px system-ui';
+  g.font = '800 15px system-ui';
   g.textAlign = 'left';
-  g.fillText('GAMBAR KERJA — DENAH', x0 + 12, y0 + 22);
-  const L = x0 + 30,
-    Tp = y0 + 40,
-    R = x0 + w - 30,
-    B = y0 + h - 40;
+  g.fillText('GAMBAR KERJA — DENAH', x0 + 10, y0 + 20);
+  const k = (w - 20) / 31;
+  const X = (x: number) => x0 + 10 + (x + 23.8) * k,
+    Z = (z: number) => y0 + 34 + (z + 16.2) * k;
   g.strokeStyle = '#ffffff';
-  g.lineWidth = 4;
-  g.beginPath();
-  g.moveTo((L + R) / 2 - 22, B);
-  g.lineTo(L, B);
-  g.lineTo(L, Tp);
-  g.lineTo(R, Tp);
-  g.lineTo(R, B);
-  g.lineTo((L + R) / 2 + 22, B);
-  g.stroke();
   g.lineWidth = 1.5;
-  g.beginPath();
-  g.arc((L + R) / 2 - 22, B, 44, -Math.PI / 2, 0);
-  g.stroke();
-  g.setLineDash([5, 4]);
-  g.beginPath();
-  g.moveTo(L, Tp + 50);
-  g.lineTo(R, Tp + 50);
-  g.stroke();
-  g.setLineDash([]);
-  g.font = '700 12px system-ui';
-  g.fillText('DAPUR', L + 8, Tp + 30);
-  g.fillText('R. MAKAN', (L + R) / 2 + 10, Tp + 110);
-  g.strokeRect(L + 10, Tp + 78, 34, 16);
-  g.fillText('KASIR', L + 8, Tp + 110);
-  for (const [cx, cy] of [
-    [L + 120, Tp + 80],
-    [L + 180, Tp + 80],
-    [L + 120, Tp + 130],
-    [L + 180, Tp + 130],
-  ])
-    g.strokeRect(cx, cy, 30, 22);
   g.textAlign = 'center';
-  g.fillText('10 m', (L + R) / 2, B + 22);
-  g.save();
-  g.translate(L - 14, (Tp + B) / 2);
-  g.rotate(-Math.PI / 2);
-  g.fillText('8 m', 0, 0);
-  g.restore();
+  for (const [name, a0, a1, b0, b1] of PLAN_ROOMS) {
+    g.strokeRect(X(a0), Z(b0), (a1 - a0) * k, (b1 - b0) * k);
+    g.font = `700 ${name.length > 8 ? 7 : 8}px system-ui`;
+    g.fillText(name, X((a0 + a1) / 2), Z((b0 + b1) / 2) + 3);
+  }
+  g.font = '700 9px system-ui';
+  g.fillText('28 m', X(-8.4), Z(-14.4) - 4);
 }
 
 /** Jadwal (timeline) pembangunan: tahap per hari dengan tanda selesai. */

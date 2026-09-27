@@ -12,6 +12,7 @@ import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { Merge, backdropTree, buildPlant, swayMaterial, type Kit } from '@/components/fruits/garden/build';
 import * as TX from '@/components/fruits/garden/textures';
+import { LOT } from './layout';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
@@ -51,10 +52,10 @@ function merged(parts: T.BufferGeometry[], mat: T.Material) {
 
 /* ---------------- kendaraan ---------------- */
 
-type CarKind = 'sedan' | 'mpv' | 'suv' | 'taxi' | 'bus';
+export type CarKind = 'sedan' | 'mpv' | 'suv' | 'taxi' | 'bus';
 const CAR_COL = ['#f4f4f2', '#c9ccd1', '#1d1f24', '#8a8f96', '#7a1f24', '#27456e', '#e8e4da', '#5a6068', '#f4f4f2', '#1d1f24'];
 
-function carMesh(kind: CarKind, color: string, mat: T.Material) {
+export function carMesh(kind: CarKind, color: string, mat: T.Material) {
   const P: T.BufferGeometry[] = [];
   const glass = '#1b2733',
     dark = '#1a1a1a',
@@ -109,8 +110,8 @@ function carMesh(kind: CarKind, color: string, mat: T.Material) {
   return { mesh: merged(P, mat), len: L };
 }
 
-type Rider = 'gojek' | 'grab' | 'biasa';
-function motorMesh(rider: Rider, r: () => number, mat: T.Material) {
+type Rider = 'gojek' | 'grab' | 'biasa' | 'parkir';
+export function motorMesh(rider: Rider, r: () => number, mat: T.Material) {
   const pick = <V,>(a: V[]) => a[Math.floor(r() * a.length)];
   const P: T.BufferGeometry[] = [];
   const color = pick(['#1a1a1a', '#c8342a', '#f4f4f2', '#2a4a8a', '#8a8f96', '#1a1a1a']);
@@ -141,6 +142,11 @@ function motorMesh(rider: Rider, r: () => number, mat: T.Material) {
     P.push(part(new T.SphereGeometry(0.17, 12, 10), hm, x + 0.06, 1.72, 0));
     P.push(part(new T.BoxGeometry(0.08, 0.1, 0.22), '#1b2733', x + 0.22, 1.7, 0));
   };
+  if (rider === 'parkir') {
+    // motor diparkir: standar samping, helm di spion
+    P.push(part(new T.SphereGeometry(0.16, 10, 8), helm, 0.5, 1.2, 0.3));
+    return { mesh: merged(P, mat), len: 1.9 };
+  }
   riderAt(-0.2, jacket, helm);
   for (const z of [-0.2, 0.2]) P.push(part(new T.CapsuleGeometry(0.055, 0.42, 3, 6), jacket, 0.2, 1.27, z, 0, 0, -2.0));
   if (rider !== 'biasa' && r() < 0.55) {
@@ -675,8 +681,10 @@ export class City {
 
     // trotoar (4 kuadran perempatan)
     // halaman lahan resto (paving)
-    const lot = this.plane(14.8, 13, -0.2, -3.3, 0.03, std('#b9b3a6', 0.95));
+    const lot = new T.Mesh(new T.BoxGeometry(LOT.x1 - LOT.x0, 0.15, LOT.z1 - LOT.z0), std('#b9b3a6', 0.95));
+    lot.position.set((LOT.x0 + LOT.x1) / 2, 0.075, (LOT.z0 + LOT.z1) / 2);
     lot.receiveShadow = true;
+    this.add(lot);
     this.walk(-220, XW, 3.2, ZN);
     this.walk(XE, 220, 3.2, ZN);
     this.walk(-220, XW, E, E + 3);
@@ -891,7 +899,7 @@ export class City {
       } else {
         const w = Math.min(x1 - x, 12 + Math.floor(r() * 3) * 3);
         if (w < 8) break;
-        const d = 14 + Math.floor(r() * 3) * 2;
+        const d = 12 + Math.floor(r() * 2) * 2;
         const style = (['curtain', 'punched', 'ribbon', 'curtain'] as Style[])[Math.floor(r() * 4)];
         const floors = Math.max(3, Math.round(maxFloors * (0.55 + r() * 0.45)));
         this.building({ x: x + w / 2, z: zFront - (face * d) / 2, w, d, floors, style, ry, billboard: !second && r() < 0.35 ? bb++ : undefined, shadow: !second });
@@ -902,12 +910,11 @@ export class City {
 
   private buildBlocks() {
     const E = this.E,
-      loc = this.loc,
-      r = this.r;
+      loc = this.loc;
     const kantor = loc === 'kantor';
-    // sisi resto: tetangga kiri ruko rendah; seberang jalan simpang (timur)
-    this.row(-100, -7.6, 3.2, 1, 'ruko', 4);
-    this.row(19.8, 100, 3.2, 1, kantor ? 'mix' : 'ruko', kantor ? 7 : 4);
+    // sisi resto: tetangga kiri ruko rendah; seberang jalan simpang (timur) — semua bertingkat rendah-sedang
+    this.row(-117, LOT.x0 - 0.4, 3.2, 1, 'ruko', 4);
+    this.row(19.8, 101, 3.2, 1, kantor ? 'mix' : 'ruko', kantor ? 5 : 4);
     // seberang jalan utama: bangunan umum, tidak terlalu tinggi, agar seimbang dengan resto
     if (loc === 'sekolah') {
       this.building({ x: -6, z: E + 9.4, w: 26, d: 12, floors: 3, style: 'punched', wall: '#f0e8d8', glass: '#6a8aa0', ry: Math.PI, ground: 'lobby', name: 'SD RINOYA' });
@@ -926,42 +933,152 @@ export class City {
       white.position.set(-15.2, 6.05, E + 4.4);
       this.add(red);
       this.add(white);
-      this.row(-100, -21, E + 3.2, -1, 'ruko', 4);
-      this.row(19.8, 100, E + 3.2, -1, 'ruko', 4);
+      this.row(-117, -21, E + 3.2, -1, 'ruko', 4);
+      this.row(19.8, 101, E + 3.2, -1, 'ruko', 4);
     } else if (loc === 'perumahan') {
-      for (let x = -94; x < 96; x += 9) if (x < 2 || x > 24) this.house(x, E + 8);
+      for (let x = -112; x < 98; x += 9) if (x < 2 || x > 24) this.house(x, E + 8);
     } else {
-      this.row(-100, 7.0, E + 3.2, -1, 'mix', 8);
-      this.row(19.8, 100, E + 3.2, -1, 'mix', 9);
+      this.row(-117, 7.0, E + 3.2, -1, 'mix', 6);
+      this.row(19.8, 101, E + 3.2, -1, 'mix', 6);
     }
-    // baris kedua supaya kota terasa padat
-    const back = kantor ? 'kantor' : 'ruko';
-    this.row(-100, 7.0, -10.5, 1, back, kantor ? 11 : 4, true);
-    this.row(19.8, 100, -14, 1, back, kantor ? 12 : 4, true);
-    if (loc === 'perumahan') {
-      for (let x = -94; x < 96; x += 9) if (x < 2 || x > 24) this.house(x, E + 22);
-    } else {
-      this.row(-100, 7.0, E + 22, -1, back, kantor ? 12 : 4, true);
-      this.row(19.8, 100, E + 22, -1, back, kantor ? 12 : 4, true);
+    this.buildFiller();
+  }
+
+  /* ---------- blok kota di belakang (digabung per tekstur agar ringan) ---------- */
+
+  private fill = new Map<string, { geos: T.BufferGeometry[]; mat: T.Material }>();
+  private fillPlain: T.BufferGeometry[] = [];
+  parkTrees: [number, number][] = [];
+
+  private fillBox(x: number, z: number, w: number, d: number, floors: number, style: Style, wall: string, glass: string, flatRoof = true) {
+    const ruko = style === 'ruko';
+    const fh = ruko ? 3.2 : 3.4;
+    const h = floors * fh;
+    const tileW = ruko ? 4.5 : 12;
+    const key = `${style}|${wall}|${glass}`;
+    let f = this.fill.get(key);
+    if (!f) {
+      const t = this.tex(`fill|${key}`, () => facadeCanvas(style, wall, glass, key.length * 17));
+      f = { geos: [], mat: new T.MeshStandardMaterial({ map: t, roughness: style === 'curtain' ? 0.3 : 0.85, metalness: style === 'curtain' ? 0.3 : 0 }) };
+      this.fill.set(key, f);
     }
-    // gedung di kejauhan (latar kota): pencakar langit hanya di area perkantoran
-    for (let i = 0; i < (kantor ? 24 : 10); i++) {
-      const a = r() * Math.PI * 2;
-      const d = 110 + r() * 90;
-      const x = Math.cos(a) * d,
-        z = Math.sin(a) * d;
-      this.building({
-        x,
-        z,
-        w: 16 + Math.floor(r() * 3) * 4,
-        d: 16 + Math.floor(r() * 3) * 4,
-        floors: kantor ? 18 + Math.floor(r() * 26) : 5 + Math.floor(r() * 6),
-        style: kantor ? (['curtain', 'punched', 'ribbon', 'curtain'] as Style[])[Math.floor(r() * 4)] : 'punched',
-        ry: Math.atan2(-x, -z),
-        ground: 'none',
-        shadow: false,
-        props: false,
-      });
+    const sides: [number, number, number, number][] = [
+      [w, 0, d / 2, 0],
+      [w, 0, -d / 2, Math.PI],
+      [d, w / 2, 0, Math.PI / 2],
+      [d, -w / 2, 0, -Math.PI / 2],
+    ];
+    for (const [len, ox, oz, ry] of sides) {
+      const g = new T.PlaneGeometry(len, h);
+      const uv = g.getAttribute('uv');
+      for (let i = 0; i < uv.count; i++) uv.setXY(i, uv.getX(i) * (len / tileW), uv.getY(i) * (floors / 4));
+      g.rotateY(ry);
+      g.translate(x + ox, h / 2, z + oz);
+      f.geos.push(g);
+    }
+    const r = this.r;
+    if (!flatRoof) return;
+    this.fillPlain.push(part(new T.BoxGeometry(w + 0.2, 0.6, d + 0.2), ['#8a8a86', '#9a968e', '#7e7c78'][Math.floor(r() * 3)], x, h + 0.3, z));
+    if (!ruko || r() < 0.5) this.fillPlain.push(part(new T.CylinderGeometry(0.6, 0.6, 1.3, 10), '#e8e8e8', x + (r() - 0.5) * (w - 2), h + 1.2, z + (r() - 0.5) * (d - 2)));
+    if (!ruko) this.fillPlain.push(part(new T.BoxGeometry(Math.min(5, w * 0.35), 2.2, Math.min(4, d * 0.35)), wall, x + (r() - 0.5) * 2, h + 1.7, z));
+  }
+
+  private fillHouse(x: number, z: number, w: number, d: number) {
+    const r = this.r;
+    // rumah satu lantai beratap limas genteng
+    this.fillBox(x, z, w, d, 1, 'ruko', RUKO_WALL[Math.floor(r() * RUKO_WALL.length)], '#6a8aa0', false);
+    this.fillPlain.push(part(new T.ConeGeometry(Math.max(w, d) * 0.78, 2.4, 4), ['#a8442e', '#6a4a3a', '#3a5a6a', '#8a3a2a', '#b85a3a'][Math.floor(r() * 5)], x, 3.2 + 1.2, z, 0, Math.PI / 4, 0, w / Math.max(w, d), 1, d / Math.max(w, d)));
+  }
+
+  private buildFiller() {
+    const r = this.r,
+      E = this.E,
+      loc = this.loc;
+    const kantor = loc === 'kantor',
+      rumah = loc === 'perumahan';
+    const RC = new T.Vector2(-8, -8);
+    // pembagian blok: jalan lingkungan 8 m, blok ±36 m
+    const xs: [number, number][] = [];
+    for (let x = 21; x < 200; x += 44) xs.push([x, x + 36]);
+    for (let x = 7; x > -220; x -= 44) xs.push([x - 36, x]);
+    const zsBack: [number, number][] = [];
+    for (let z = -19.5; z > -200; z -= 44) zsBack.push([z - 36, z]);
+    const zsFront: [number, number][] = [];
+    for (let z = E + 21; z < E + 200; z += 44) zsFront.push([z, z + 36]);
+    const blocks: [number, number, number, number][] = [];
+    for (const [x0, x1] of xs) for (const [z0, z1] of [...zsBack, ...zsFront]) blocks.push([x0, x1, z0, z1]);
+    // pita sepanjang jalan utama di luar deret rinci (|x| > 101…117)
+    for (const [x0, x1] of xs)
+      if (x0 > 101 || x1 < -117) {
+        blocks.push([x0, x1, -19.5, 2.8]);
+        blocks.push([x0, x1, E + 3.4, E + 17]);
+      }
+    // jalan lingkungan
+    const road = std('#5e6167', 0.95);
+    const strip = (x0: number, x1: number, z0: number, z1: number) => this.plane(x1 - x0, z1 - z0, (x0 + x1) / 2, (z0 + z1) / 2, 0.012, road);
+    strip(-220, 220, -19.5, -16.2);
+    strip(-220, 220, E + 17.2, E + 21);
+    for (let z = -19.5 - 36; z > -210; z -= 44) strip(-220, 220, z - 8, z);
+    for (let z = E + 57; z < E + 210; z += 44) strip(-220, 220, z, z + 8);
+    for (let x = 57; x < 210; x += 44) strip(x, x + 8, -220, 220);
+    for (let x = -29; x > -220; x -= 44) strip(x - 8, x, -220, 220);
+    // isi blok
+    for (const [x0, x1, z0, z1] of blocks) {
+      const cxb = (x0 + x1) / 2,
+        czb = (z0 + z1) / 2;
+      const dist = RC.distanceTo(new T.Vector2(cxb, czb));
+      if (dist > 260) continue;
+      if (r() < 0.12) {
+        // taman kota
+        const g = this.plane(x1 - x0 - 2, z1 - z0 - 2, cxb, czb, 0.02, std('#7fae55', 1));
+        g.receiveShadow = true;
+        for (let i = 0; i < 5; i++) this.parkTrees.push([x0 + 3 + r() * (x1 - x0 - 6), z0 + 3 + r() * (z1 - z0 - 6)]);
+        continue;
+      }
+      if (rumah) {
+        for (let hx = x0 + 4.5; hx < x1 - 3; hx += 9) for (let hz = z0 + 4.5; hz < z1 - 3; hz += 9) if (r() < 0.9) this.fillHouse(hx, hz, 7, 7);
+        continue;
+      }
+      // gedung-gedung mengisi blok (2×2 atau 3×2), makin jauh makin tinggi di perkantoran
+      const nx = r() < 0.5 ? 2 : 3,
+        nz = 2;
+      const cw = (x1 - x0) / nx,
+        cd = (z1 - z0) / nz;
+      for (let i = 0; i < nx; i++)
+        for (let k = 0; k < nz; k++) {
+          const w = cw - 2 - r() * 3,
+            d = cd - 2 - r() * 3;
+          const bx = x0 + cw * (i + 0.5),
+            bz = z0 + cd * (k + 0.5);
+          const near = dist < 70;
+          let floors: number;
+          let style: Style;
+          if (kantor) {
+            style = (['curtain', 'punched', 'ribbon', 'punched', 'ruko'] as Style[])[Math.floor(r() * 5)];
+            floors = style === 'ruko' ? 2 + Math.floor(r() * 3) : near ? 3 + Math.floor(r() * 4) : dist > 130 ? 10 + Math.floor(r() * 18) : 5 + Math.floor(r() * 6);
+          } else {
+            style = r() < 0.7 ? 'ruko' : 'punched';
+            floors = style === 'ruko' ? 2 + Math.floor(r() * 3) : 3 + Math.floor(r() * 3);
+          }
+          if (style === 'ruko') {
+            // deret ruko menghadap jalan
+            for (let u = -w / 2 + 2.25; u < w / 2 - 2; u += 4.5) this.fillBox(bx + u, bz, 4.45, Math.min(12, d), floors, 'ruko', RUKO_WALL[Math.floor(r() * RUKO_WALL.length)], '#6a8aa0');
+          } else this.fillBox(bx, bz, w, d, floors, style, STONE[Math.floor(r() * STONE.length)], GLASS[Math.floor(r() * GLASS.length)]);
+        }
+    }
+    // satukan
+    for (const f of this.fill.values()) {
+      if (!f.geos.length) continue;
+      const g = mergeGeometries(f.geos)!;
+      f.geos.forEach((x) => x.dispose());
+      const m = new T.Mesh(g, f.mat);
+      m.receiveShadow = true;
+      this.add(m);
+    }
+    if (this.fillPlain.length) {
+      const pm = merged(this.fillPlain, new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.85 }));
+      pm.receiveShadow = true;
+      this.add(pm);
     }
   }
 
@@ -1019,6 +1136,7 @@ export class City {
       if (free(x) && Math.abs(x) > 8) tree(x + (r() - 0.5), ZN - 0.7);
       if (free(x + 3)) tree(x + 3 + (r() - 0.5), E + 0.8);
     }
+    for (const [x, z] of this.parkTrees) tree(x, z);
     for (let z = -90; z <= 90; z += 10) {
       if (z > -6 && z < E + 6) continue;
       tree(7.6, z);
@@ -1105,10 +1223,10 @@ export class City {
     this.add(shelter);
     // mesin minuman khas Jepang di sebelah resto
     const vend = new T.Mesh(new T.BoxGeometry(0.9, 1.9, 0.7), std('#e8322a', 0.4));
-    vend.position.set(-6.85, 1.1, 3.9);
+    vend.position.set(LOT.x0 + 0.5, 1.1, 3.75);
     vend.castShadow = true;
     const vwin = new T.Mesh(new T.PlaneGeometry(0.7, 0.9), std('#cfe6ff', 0.2, { emissive: '#a0c8ff', emissiveIntensity: 0.4 }));
-    vwin.position.set(-6.85, 1.4, 4.26);
+    vwin.position.set(LOT.x0 + 0.5, 1.4, 4.11);
     this.add(vend);
     this.add(vwin);
   }

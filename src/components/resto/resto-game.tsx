@@ -36,6 +36,7 @@ import {
 } from '@/lib/resto/data';
 import * as S from '@/lib/resto/sim';
 import type { RestoScene } from './scene';
+import { PLAN_ROOMS } from './layout';
 import './resto.css';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
@@ -226,6 +227,7 @@ export function RestoGame() {
   const scene = useRef<RestoScene | null>(null);
   const [panel, setPanel] = useState<Panel>(null);
   const [topView, setTopView] = useState(false);
+  const [roofOn, setRoofOn] = useState(true);
   const [toast, setToast] = useState<{ text: string; good: boolean } | null>(null);
   const [intro, setIntro] = useState(false);
   const run = useRef<S.DayRun | null>(null);
@@ -418,6 +420,7 @@ export function RestoGame() {
       <div className="pointer-events-auto absolute right-2 flex flex-col gap-2 sm:right-3" style={{ top: '38%' }}>
         {(
           [
+            [roofOn ? 'roofing' : 'house', roofOn ? 'Buka atap (lihat isi)' : 'Pasang atap', () => setRoofOn(!!scene.current?.toggleRoof())],
             ['add', 'Perbesar', () => scene.current?.zoomBy(0.75)],
             ['remove', 'Perkecil', () => scene.current?.zoomBy(1.33)],
             [topView ? 'view_in_ar' : 'satellite_alt', topView ? 'Pandangan miring' : 'Lihat dari atas', () => setTopView(!!scene.current?.toggleTop())],
@@ -1012,38 +1015,28 @@ function GambarPanel({ g, onClose }: { g: S.RestoState; onClose: () => void }) {
     <Sheet title="Gambar kerja & jadwal" emoji="📐" onClose={onClose}>
       <div className="grid gap-3 sm:grid-cols-2">
         <div className="rounded-[18px] p-2" style={{ background: '#1f4f9a' }}>
-          <div className="px-1 pb-1 text-[13px] font-extrabold text-white">DENAH RESTORAN · 10 m × 8 m</div>
-          <svg viewBox="0 0 220 180" className="w-full" fill="none" stroke="#fff">
-            <defs>
-              <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M10 0H0V10" stroke="rgba(255,255,255,.12)" strokeWidth="1" />
-              </pattern>
-            </defs>
-            <rect width="220" height="180" fill="url(#grid)" stroke="none" />
-            <path d="M92 150H20V20H200V150H128" strokeWidth="4" />
-            <path d="M92 150A36 36 0 0 1 128 114" strokeWidth="1.5" strokeDasharray="3 3" />
-            <path d="M20 58H200" strokeWidth="1.5" strokeDasharray="5 4" />
-            {[34, 70, 106, 150].map((x) => (
-              <rect key={x} x={x} y="28" width="28" height="16" strokeWidth="1.5" />
-            ))}
-            <rect x="30" y="90" width="32" height="14" strokeWidth="1.5" />
-            {[
-              [110, 74],
-              [150, 74],
-              [110, 108],
-              [150, 108],
-              [35, 118],
-            ].map(([x, y]) => (
-              <rect key={`${x}-${y}`} x={x} y={y} width="26" height="18" strokeWidth="1.5" />
-            ))}
-            <g fill="#fff" stroke="none" fontSize="9" fontWeight="700" fontFamily="system-ui">
-              <text x="24" y="54">DAPUR</text>
-              <text x="30" y="86">KASIR</text>
-              <text x="118" y="70">RUANG MAKAN</text>
-              <text x="88" y="174">PINTU + NOREN</text>
-              <text x="100" y="14">10 m</text>
-              <text x="4" y="90" transform="rotate(-90 8 90)">8 m</text>
-            </g>
+          <div className="px-1 pb-1 text-[13px] font-extrabold text-white">DENAH KONSEP · 28 m × 12 m (+ halaman parkir)</div>
+          <svg viewBox="0 0 290 200" className="w-full">
+            {PLAN_ROOMS.map(([name, x0, x1, z0, z1, c]) => {
+              const X = (x: number) => (x + 23.8) * 9,
+                Z = (z: number) => (z + 16.2) * 9;
+              return (
+                <g key={name}>
+                  <rect x={X(x0)} y={Z(z0)} width={(x1 - x0) * 9} height={(z1 - z0) * 9} fill={c} stroke="#fff" strokeWidth="1.2" opacity={0.92} />
+                  <text x={X((x0 + x1) / 2)} y={Z((z0 + z1) / 2) + 3} fill={name === 'TAMAN' ? '#fff' : '#1f2f5a'} fontSize={name.length > 8 ? 6 : 7.5} fontWeight="800" textAnchor="middle" fontFamily="system-ui">
+                    {name}
+                  </text>
+                </g>
+              );
+            })}
+            <rect x={(-5.2 + 23.8) * 9} y={(-2.6 + 16.2) * 9} width={2.4 * 9} height={4} fill="#1b2a4e" />
+            <text x={(-4 + 23.8) * 9} y={(-0.2 + 16.2) * 9} fill="#fff" fontSize="7" fontWeight="800" textAnchor="middle" fontFamily="system-ui">
+              ▲ PINTU MASUK
+            </text>
+            <rect x="0" y={(3.2 + 16.2) * 9} width="290" height="26" fill="#4a4d52" />
+            <text x="145" y={(3.2 + 16.2) * 9 + 12} fill="#fff" fontSize="9" fontWeight="900" letterSpacing="6" textAnchor="middle" fontFamily="system-ui">
+              JALAN
+            </text>
           </svg>
         </div>
         <div className="flex flex-col gap-2">
