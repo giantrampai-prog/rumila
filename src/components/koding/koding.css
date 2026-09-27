@@ -1,0 +1,56 @@
+/* Koding Robi: kertas, blok puzzle, panggung, animasi Robi */
+.koding-paper {
+  background-color: #f4efe6;
+  background-image: radial-gradient(rgba(35, 48, 74, 0.07) 1.2px, transparent 1.6px);
+  background-size: 18px 18px;
+}
+.koding-round { background: #fffaf0; color: #23304a; box-shadow: 0 4px 0 #d8ccb4; }
+.koding-node { box-shadow: 0 5px 0 rgba(0, 0, 0, 0.12); transition: transform 0.12s; }
+.koding-node:not(:disabled):active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12); }
+.koding-say { background: #fffaf0; color: #23304a; box-shadow: 0 4px 0 #d8ccb4; position: relative; }
+.koding-diorama svg { filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.12)); }
+.koding-rail-dark { background: rgba(255, 255, 255, 0.1) !important; color: #e7e4ff; }
+.koding-rail { background: rgba(35, 48, 74, 0.08); box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.06); }
+/* jejak putus-putus yang menyambung level dalam satu dunia */
+.koding-trail { height: 0; border-top: 5px dashed currentColor; opacity: 0.25; }
+.koding-node { position: relative; }
+/* gelembung ucapan: ekor ke kiri */
+.koding-say::before { content: ''; position: absolute; left: -9px; bottom: 16px; border: 9px solid transparent; border-left: 0; border-right-color: #fffaf0; }
+@keyframes robi-wave { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-4deg) translateY(-2px); } }
+.robi-wave { transform-origin: 50% 100%; animation: robi-wave 2.4s ease-in-out infinite; flex-shrink: 0; }
+@keyframes robi-led { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.robi-led { animation: robi-led 1.2s steps(1) infinite; }
+/* blok puzzle: tonjolan kecil di atas seperti kepingan */
+.koding-block { position: relative; border-radius: 14px; color: #fff; transition: transform 0.12s; }
+.koding-block::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 18px;
+  width: 16px;
+  height: 8px;
+  border-radius: 6px 6px 0 0;
+  background: inherit;
+}
+.koding-block:not(:disabled):active { transform: translateY(3px); }
+.koding-block-sm { width: 46px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 11px; }
+.koding-block-sm::before { left: 14px; width: 12px; height: 6px; top: -4px; }
+.koding-num { position: absolute; top: 1px; left: 4px; font-size: 10px; font-weight: 900; opacity: 0.8; }
+.koding-active { outline: 4px solid #ffd23f; outline-offset: 2px; transform: translateY(-3px) scale(1.08); }
+.koding-drop { outline: 3px dashed #23304a; outline-offset: 2px; }
+.robi-move { transition: transform 0.38s cubic-bezier(0.35, 0, 0.25, 1.2); }
+.robi-turn { transition: transform 0.32s ease-in-out; }
+@keyframes robi-bump { 0%, 100% { transform: translate(0, 0) rotate(0); } 20% { transform: translate(-6px, 2px) rotate(-8deg); } 40% { transform: translate(6px, -2px) rotate(8deg); } 60% { transform: translate(-4px, 1px) rotate(-5deg); } 80% { transform: translate(3px, 0) rotate(3deg); } }
+.robi-bump { animation: robi-bump 0.5s ease-in-out; }
+@keyframes robi-blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.15); } }
+.robi-eye { transform-box: fill-box; transform-origin: center; animation: robi-blink 3.4s infinite; }
+@keyframes goal-pulse { 0%, 100% { transform: scale(0.85); opacity: 0.25; } 50% { transform: scale(1.15); opacity: 0.45; } }
+.goal-pulse { transform-box: fill-box; transform-origin: center; animation: goal-pulse 1.6s ease-in-out infinite; }
+@keyframes koding-win { 0% { transform: scale(0.5); opacity: 0; } 60% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
+.koding-win { animation: koding-win 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) both; box-shadow: 0 10px 0 #d8ccb4; }
+@keyframes koding-star { 0% { transform: scale(0) rotate(-40deg); } 70% { transform: scale(1.25) rotate(8deg); } 100% { transform: scale(1) rotate(0); } }
+.koding-star { display: inline-block; animation: koding-star 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) both; }
+@media (prefers-reduced-motion: reduce) {
+  .robi-move, .robi-turn { transition: none; }
+  .robi-bump, .robi-eye, .robi-wave, .robi-led, .goal-pulse, .koding-win, .koding-star { animation: none; }
+}

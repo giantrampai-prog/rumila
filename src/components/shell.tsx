@@ -14,6 +14,7 @@ function requiredPerm(path: string): PermKey | null {
   // semua modul 3D ada di dunia Petualangan 3D (izin "angkasa")
   if (["/jelajah-tubuh", "/buah-buahan", "/jelajah-angkasa", "/roket", "/laut", "/bumi"].some((r) => path.startsWith(r))) return "angkasa";
   if (path.startsWith("/resto") || path.startsWith("/ular-tangga")) return "game";
+  if (path.startsWith("/koding")) return "coding";
   const m = path.match(/^\/beranda\/([^/]+)/);
   if (m) return (getFolder(m[1])?.id as PermKey) ?? null;
   return null;
@@ -60,7 +61,7 @@ function Ready({ children }: { children: ReactNode }) {
   const page = allowed ? children : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
-  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/resto", "/ular-tangga"].some((r) => path.startsWith(r)))
+  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/resto", "/ular-tangga", "/koding"].some((r) => path.startsWith(r)))
     return (
       <>
         {page}
@@ -116,6 +117,7 @@ export function useOpenTool() {
       "petualangan-bumi": "/bumi",
       "game-resto": "/resto",
       "game-ular": "/ular-tangga",
+      "koding-langkah": "/koding/langkah",
     };
     if (angkasa[t.id]) {
       router.push(angkasa[t.id]);
