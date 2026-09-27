@@ -44,19 +44,21 @@ export function SheetHost() {
   if (sheet.kind === "app") body = <AppSheet toolId={sheet.toolId} />;
 
   return (
-    <div className="anim-fade fixed inset-0 z-[60] bg-[rgba(31,48,68,.45)]">
+    // Ketuk di mana saja di luar lembar (atas, kiri, kanan — penting di tablet/Fold yang lebar) untuk menutup.
+    <div className="anim-fade fixed inset-0 z-[60] bg-[rgba(31,48,68,.45)]" onClick={close}>
       <div className="mx-auto flex h-full max-w-[440px] flex-col justify-end desk:max-w-[520px] desk:justify-center desk:px-5">
-        <div className="flex-1 desk:min-h-5" onClick={close} />
+        <div className="flex-1 desk:min-h-5" />
         <div
           role="dialog"
           aria-modal="true"
+          onClick={(e) => e.stopPropagation()}
           className="anim-sheet grid max-h-[90vh] grid-cols-[minmax(0,1fr)] gap-4 overflow-y-auto rounded-t-[28px] bg-white px-5 pt-3.5 desk:max-h-[94vh] desk:rounded-[28px] desk:px-6 desk:pt-6 desk:shadow-[0_30px_80px_rgba(31,48,68,.35)]"
           style={{ paddingBottom: "max(26px, env(safe-area-inset-bottom))" }}
         >
           <div className="mx-auto h-[5px] w-11 rounded-full bg-[#e6e3dd] desk:hidden" />
           {body}
         </div>
-        <div className="hidden flex-1 desk:block desk:min-h-5" onClick={close} />
+        <div className="hidden flex-1 desk:block desk:min-h-5" />
       </div>
     </div>
   );
