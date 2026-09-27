@@ -70,6 +70,8 @@ interface Goat {
   modeT: number;
   inside: boolean;
   ph: number;
+  stuck: number;
+  lastD: number;
 }
 
 function goatModel(coat: string, patch: string | null, horns: boolean) {
@@ -167,6 +169,9 @@ export class GoatPen {
   /** pintu tertutup = penghalang */
   gateBlock = { x: 0, z: 0, r: 0.9 };
   private onBleat: (vol: number) => void;
+  private obstacles: { x: number; z: number; r: number }[];
+  /** posisi anak (dunia) agar kambing tidak menembusnya */
+  player: T.Vector3 | null = null;
 
   // bingkai lokal: pintu di sisi −x, gubuk di sisi +x
   private readonly W = 10;
@@ -178,6 +183,7 @@ export class GoatPen {
     onBleat: (vol: number) => void,
   ) {
     this.onBleat = onBleat;
+    this.obstacles = obstacles;
     this.group.position.copy(at);
     const wt = woodTex(),
       wd = woodTex(true),
@@ -323,7 +329,7 @@ export class GoatPen {
       const pos = this.randomInside();
       m.g.position.copy(pos);
       this.group.add(m.g);
-      this.goats.push({ ...m, pos, heading: Math.random() * 6, path: [], wait: Math.random() * 3, mode: 'graze', modeT: 0, inside: true, ph: Math.random() * 6 });
+      this.goats.push({ ...m, pos, heading: Math.random() * 6, path: [], wait: Math.random() * 3, mode: 'graze', modeT: 0, inside: true, ph: Math.random() * 6, stuck: 0, lastD: Infinity });
     });
   }
 
@@ -331,7 +337,52 @@ export class GoatPen {
     return new T.Vector3(-this.W / 2 + 0.9 + Math.random() * 4.6, 0, -this.D / 2 + 1 + Math.random() * (this.D - 2));
   }
   private randomOutside() {
-    return new T.Vector3(-this.W / 2 - 3 - Math.random() * 5, 0, 1.5 + Math.random() * 7.5);
+    // titik merumput di luar kandang yang tidak berada di atas benda (pohon, bedengan, dll.)
+    for (let i = 0; i < 12; i++) {
+      const p = new T.Vector3(-this.W / 2 - 3 - Math.random() * 5, 0, 1.5 + Math.random() * 7.5);
+      const wx = this.at.x + p.x,
+        wz = this.at.z + p.z;
+      if (!this.obstacles.some((o) => Math.hypot(wx - o.x, wz - o.z) < o.r + 0.8)) return p;
+    }
+    return new T.Vector3(-this.W / 2 - 3, 0, 2);
+  }
+
+  /** Kambing sebagai penghalang bergerak (dunia) untuk anak. */
+  goatObstacles() {
+    return this.goats.map((g) => ({ x: this.at.x + g.pos.x, z: this.at.z + g.pos.z, r: 0.5 }));
+  }
+
+  /** Belok menghindari benda di depan (lokal kandang). */
+  private steer(g: Goat, dx: number, dz: number, d: number) {
+    const fx = dx / d,
+      fz = dz / d;
+    let sx = 0,
+      sz = 0;
+    const others = [
+      ...this.obstacles,
+      ...this.goats.filter((o) => o !== g).map((o) => ({ x: this.at.x + o.pos.x, z: this.at.z + o.pos.z, r: 0.45 })),
+      ...(this.player ? [{ x: this.player.x, z: this.player.z, r: 0.5 }] : []),
+    ];
+    const wx = this.at.x + g.pos.x,
+      wz = this.at.z + g.pos.z;
+    for (const o of others) {
+      if (o.r <= 0) continue;
+      const ox = o.x - wx,
+        oz = o.z - wz;
+      const ahead = ox * fx + oz * fz;
+      if (ahead <= 0 || ahead > Math.min(d, 2.2)) continue;
+      const lat = ox * -fz + oz * fx;
+      const clear = o.r + 0.45;
+      if (Math.abs(lat) >= clear) continue;
+      const k = ((clear - Math.abs(lat)) / clear) * (1.5 - ahead / 2.2);
+      const s = lat >= 0 ? -1 : 1;
+      sx += -fz * s * k;
+      sz += fx * s * k;
+    }
+    const nx = fx + sx,
+      nz = fz + sz;
+    const n = Math.hypot(nx, nz) || 1;
+    return [nx / n, nz / n, others] as const;
   }
   private get gateIn() {
     return new T.Vector3(-this.W / 2 + 1.2, 0, 0);
@@ -412,9 +463,30 @@ export class GoatPen {
         } else {
           g.mode = 'walk';
           const sp = 1.1;
-          g.pos.x += (dx / d) * sp * dt;
-          g.pos.z += (dz / d) * sp * dt;
-          const want = Math.atan2(dx, dz);
+          const [mx, mz, others] = this.steer(g, dx, dz, d);
+          g.pos.x += mx * sp * dt;
+          g.pos.z += mz * sp * dt;
+          // jangan menembus benda / kambing lain / anak
+          for (const o of others) {
+            if (o.r <= 0) continue;
+            const ox = this.at.x + g.pos.x - o.x,
+              oz = this.at.z + g.pos.z - o.z;
+            const dd = Math.hypot(ox, oz),
+              min = o.r + 0.35;
+            if (dd < min && dd > 1e-4) {
+              g.pos.x += (ox / dd) * (min - dd);
+              g.pos.z += (oz / dd) * (min - dd);
+            }
+          }
+          // macet (tujuan terhalang) → cari tempat lain
+          if (g.lastD - d < 0.15 * dt) g.stuck += dt;
+          else g.stuck = 0;
+          g.lastD = d;
+          if (g.stuck > 2 && g.path.length === 1) {
+            g.stuck = 0;
+            g.path = [g.pos.x > -this.W / 2 ? this.randomInside() : this.randomOutside()];
+          }
+          const want = Math.atan2(mx, mz);
           let dh = want - g.heading;
           dh = Math.atan2(Math.sin(dh), Math.cos(dh));
           g.heading += dh * Math.min(1, dt * 5);

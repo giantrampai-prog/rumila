@@ -210,6 +210,8 @@ export class GardenEngine {
   private pond!: FishPond;
   private feedAt = 0;
   private throwT = 0;
+  private stuckT = 0;
+  private lastD = Infinity;
   private house!: FarmHouse;
   /** sedang istirahat di tempat tidur (detik tersisa) */
   private restLeft = 0;
@@ -482,7 +484,7 @@ export class GardenEngine {
       sprite.renderOrder = 5;
       this.scene.add(sprite);
       this.markers.push({ plot: p, sprite, top, found: false, spots });
-      this.obstacles.push({ x: p.x, z: p.z, r: plotRadius(p) });
+      this.obstacles.push({ x: p.x, z: p.z, r: plotRadius(p) + (p.kind === 'tree' || p.kind === 'palm' ? 0.2 : 0) });
     });
     // pohon latar di luar pagar
     const r = rnd(77);
@@ -595,6 +597,13 @@ export class GardenEngine {
       wood.add(new T.BoxGeometry(1.8, 0.45, 0.06), mat(x + Math.cos(a) * 0.26, 0.78, z + Math.sin(a) * 0.26, 0, ry, 0), '#d9b58c', { uv: [2, 0.4] });
       for (const s of [-0.75, 0.75]) plain.add(new T.BoxGeometry(0.06, 0.48, 0.45), mat(x + Math.cos(ry) * s, 0.24, z - Math.sin(ry) * s, 0, ry, 0), '#3d3d3d');
     }
+    // bangku tidak bisa ditembus: dua lingkaran sepanjang dudukan
+    for (const a of [0.8, 2.35, 3.95, 5.5]) {
+      const x = Math.cos(a) * 5.4,
+        z = Math.sin(a) * 5.4,
+        ry = -a + Math.PI / 2;
+      for (const s of [-0.5, 0.5]) this.obstacles.push({ x: x + Math.cos(ry) * s, z: z - Math.sin(ry) * s, r: 0.55 });
+    }
 
     // rumah kebun yang bisa dimasuki (house.ts)
     const hx = 22,
@@ -677,7 +686,11 @@ export class GardenEngine {
     ];
     for (const [text, color, grp] of signs) {
       const { x, z } = zoneSign(grp);
-      for (const o of [-1.1, 1.1]) wood.add(new T.BoxGeometry(0.14, 2.2, 0.14), mat(x + o, 1.1, z), '#b99a7a', { uv: [0.2, 2] });
+      for (const o of [-1.1, 1.1]) {
+        wood.add(new T.BoxGeometry(0.14, 2.2, 0.14), mat(x + o, 1.1, z), '#b99a7a', { uv: [0.2, 2] });
+        this.obstacles.push({ x: x + o, z, r: 0.25 });
+      }
+      this.obstacles.push({ x, z, r: 0.75 }); // di bawah papan tidak bisa dilewati
       const tex = signTex(text, color);
       this.textures.push(tex);
       for (const back of [false, true]) {
@@ -697,6 +710,7 @@ export class GardenEngine {
       const gp = buildGapura(this.textures, this.keep(TX.roofTiles()));
       gp.position.set(0, 0, z);
       gp.rotation.y = ry;
+      for (const px of [-3.6, 3.6]) this.obstacles.push({ x: px, z: z - Math.sign(z) * 0.3, r: 1.0 });
       this.scene.add(gp);
       this.gapuras.push(gp);
     }
@@ -708,6 +722,7 @@ export class GardenEngine {
       const f = flag(1.3, h);
       f.group.position.set(x, 0, z);
       this.scene.add(f.group);
+      this.obstacles.push({ x, z, r: 0.3 });
       this.flags.push(f.mat);
     }
 
@@ -1400,6 +1415,17 @@ export class GardenEngine {
       } else {
         dir.divideScalar(d);
         want = this.waypoints.length > 1 ? 1 : Math.min(1, d / 1.2 + 0.35);
+        this.steer(dir, d);
+        // tujuan tertutup benda / tidak ada kemajuan → berhenti di dekatnya
+        if (this.lastD - d < 0.002 * 60 * dt) this.stuckT += dt;
+        else this.stuckT = 0;
+        this.lastD = d;
+        if (this.stuckT > 1.2) {
+          this.stuckT = 0;
+          this.waypoints = [];
+          this.arrive();
+          want = 0;
+        }
       }
     }
     const MAX = this.tour ? 7 : 6.2;
@@ -1518,6 +1544,7 @@ export class GardenEngine {
 
     this.farm.update(t, dt);
     this.life.update(t, dt, this.pos);
+    this.pen.player = this.pos;
     this.pen.update(t, dt);
     this.pond.update(t, dt);
     this.house.update(t, dt, this.pos, this.restLeft > 0, this.camera.position);
@@ -1607,12 +1634,37 @@ export class GardenEngine {
     this.farm.fadeNear(this.camera.position);
   }
 
+  /** Belok menghindari benda di depan (bangku, pohon, sumur, kambing…) saat berjalan menuju tujuan. */
+  private steer(dir: T.Vector3, dist: number) {
+    const me = 0.45;
+    const side = new T.Vector3();
+    for (const o of this.allObstacles()) {
+      const ox = o.x - this.pos.x,
+        oz = o.z - this.pos.z;
+      const ahead = ox * dir.x + oz * dir.z;
+      if (ahead <= 0 || ahead > Math.min(dist, 3.2)) continue;
+      const lat = ox * -dir.z + oz * dir.x; // jarak menyamping dari jalur
+      const clear = o.r + me + 0.25;
+      if (Math.abs(lat) >= clear) continue;
+      // dorong ke samping, menjauh dari benda (lebih kuat saat lebih dekat)
+      const k = ((clear - Math.abs(lat)) / clear) * (1.6 - ahead / 3.2);
+      const s = lat >= 0 ? -1 : 1;
+      side.x += -dir.z * s * k;
+      side.z += dir.x * s * k;
+    }
+    if (side.lengthSq() > 0) dir.add(side).normalize();
+  }
+
+  private allObstacles() {
+    return [...this.obstacles, ...this.pen.goatObstacles()];
+  }
+
   private collide() {
     const lim = GARDEN.half - 1;
     this.pos.x = T.MathUtils.clamp(this.pos.x, -lim, lim);
     this.pos.z = T.MathUtils.clamp(this.pos.z, -lim, lim);
     const me = 0.4;
-    for (const o of this.obstacles) {
+    for (const o of this.allObstacles()) {
       const dx = this.pos.x - o.x,
         dz = this.pos.z - o.z;
       const d = Math.hypot(dx, dz),
