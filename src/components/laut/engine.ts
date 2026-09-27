@@ -6,6 +6,7 @@
 import * as T from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { create } from 'zustand';
+import { followAudio } from '@/lib/audio-clock';
 import { sharedAudio, unlockAudio } from '@/lib/audio-unlock';
 import { BIOTA, TUR_LAUT, TUR_LAUT_AUDIO, depthToY, lautDwell, yToDepth, type LautAudioPart, type LautSet } from '@/lib/laut/misi';
 import * as C from './creatures';
@@ -119,6 +120,8 @@ export class LautEngine {
   private snap = true;
   private player = new T.Vector3();
   private heading = 0;
+  private dive = 0;
+  private camRate = 1.6;
 
   /* jelajah */
   private follow: T.Object3D | null = null;
@@ -755,7 +758,7 @@ export class LautEngine {
         const k = this.idx - this.part.first;
         const end = this.part.cues[k + 1] ?? this.audio.duration;
         dur = Math.max(1, (Number.isFinite(end) ? end : this.audio.currentTime + 1) - this.part.cues[k]);
-        this.t = this.audio.currentTime - this.part.cues[k];
+        this.t = followAudio(this.t, this.audio.currentTime - this.part.cues[k], dt, !this.audio.paused);
         if (this.audio.ended) this.t = dur;
       } else this.t += dt;
       if (this.t >= dur) {
@@ -807,7 +810,8 @@ export class LautEngine {
     }
     const vel = pos.clone().sub(this.player);
     this.player.copy(pos);
-    const moving = vel.length() > 0.002;
+    // kemiringan menukik saat turun, dihaluskan (tidak meloncat antara 0 dan penuh)
+    this.dive = T.MathUtils.damp(this.dive, clamp01(-vel.y / Math.max(dt, 1e-3) / 3), 3, dt);
     // arah hadap: ke arah panggung tujuan (bukan goyangan kecil), saat naik ke permukaan menghadap balik
     const dirV = s.set === 'ringkasan' ? new T.Vector3(-1, 0, 0) : cur.clone().sub(prev);
     const face = Math.hypot(dirV.x, dirV.z) > 0.5 ? Math.atan2(-dirV.z, dirV.x) : 0;
@@ -822,13 +826,13 @@ export class LautEngine {
     if (this.diver.visible) {
       this.diver.position.copy(pos);
       if (standing) this.diver.rotation.set(0, -Math.PI / 2, Math.PI / 2);
-      else this.diver.rotation.set(0, this.heading, Math.sin(t * 0.8) * 0.05 - (moving && vel.y < -0.01 ? 0.35 : 0));
+      else this.diver.rotation.set(0, this.heading, Math.sin(t * 0.8) * 0.05 - this.dive * 0.35);
       this.diver.userData.stand?.(standing);
       this.diver.userData.update?.(t, standing ? 0 : 1);
     }
     if (inSub) {
       this.sub.position.copy(pos).add(new T.Vector3(0, 0.4, 0));
-      this.sub.rotation.set(0, this.heading, Math.sin(t * 0.5) * 0.03 + (moving && vel.y < -0.05 ? -0.15 : 0));
+      this.sub.rotation.set(0, this.heading, Math.sin(t * 0.5) * 0.03 - this.dive * 0.15);
     } else this.placeSub(this.sub.position);
     this.sub.userData.setLights?.(inSub || s.id === 'batas-aman' ? 1 : 0);
 
@@ -865,8 +869,10 @@ export class LautEngine {
       this.camLook.copy(lookAt);
       this.snap = false;
     }
-    const fast = vel.length() / Math.max(dt, 1e-3) > 3;
-    const f = 1 - Math.exp(-dt * (s.set === 'ringkasan' || fast ? 4 : 1.6));
+    // kamera makin cepat mengikuti saat penjelajah bergerak cepat — berubah mulus, tidak meloncat
+    const speed = vel.length() / Math.max(dt, 1e-3);
+    this.camRate = T.MathUtils.damp(this.camRate, s.set === 'ringkasan' ? 4 : 1.6 + Math.min(1, speed / 6) * 2.4, 2, dt);
+    const f = 1 - Math.exp(-dt * this.camRate);
     this.camPos.lerp(want, f);
     this.camLook.lerp(lookAt, f);
     this.camera.position.copy(this.camPos);

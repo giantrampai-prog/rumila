@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
+import { followAudio } from '@/lib/audio-clock';
 import { sharedAudio } from '@/lib/audio-unlock';
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
@@ -95,7 +96,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
         const k = s.i - p.first;
         const end = p.cues[k + 1] ?? a.duration;
         dur = Math.max(1, (Number.isFinite(end) ? end : a.currentTime + 1) - p.cues[k]);
-        s.t = a.currentTime - p.cues[k];
+        s.t = followAudio(s.t, a.currentTime - p.cues[k], dt, !a.paused);
         if (a.ended) s.t = dur;
       } else s.t += dt;
       if (s.t >= dur) {

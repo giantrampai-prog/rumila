@@ -6,6 +6,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
+import { followAudio } from "@/lib/audio-clock";
 import { sharedAudio, unlockAudio } from "@/lib/audio-unlock";
 import { Cabin } from "./cabin";
 import { Cupola } from "./cupola";
@@ -410,7 +411,8 @@ export class RocketEngine {
   /* ---------------- audio ---------------- */
 
   /** Ikuti rekaman bila ada: persinggahan & progres dari posisi audio. true = audio yang mengatur waktu. */
-  private syncAudio(): boolean {
+  private clock = 0;
+  private syncAudio(dt: number): boolean {
     const part = partFor(this.idx);
     if (!part) {
       this.audio?.pause();
@@ -435,7 +437,9 @@ export class RocketEngine {
         .finally(() => (this.playing = false));
     }
     if (a.readyState < 1) return true;
-    const ct = a.currentTime;
+    // jam halus (currentTime di HP diperbarui tersendat → roket & kamera bergetar bila dibaca langsung)
+    this.clock = followAudio(this.clock, a.currentTime, dt, !a.paused);
+    const ct = this.clock;
     let k = 0;
     while (k + 1 < part.cues.length && ct >= part.cues[k + 1]) k++;
     const i = part.first + k;
@@ -471,7 +475,7 @@ export class RocketEngine {
     const cam = this.world.camera;
 
     if (ui.mode === "terbang") {
-      if (ui.playing && !this.syncAudio()) {
+      if (ui.playing && !this.syncAudio(dt)) {
         this.t += dt;
         if (this.t >= this.durs[this.idx]) {
           if (this.idx < MISI.length - 1) this.go(this.idx + 1);
