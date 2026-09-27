@@ -1,10 +1,56 @@
 /* Ular Tangga: latar, dadu 3D, giliran, pemenang */
+/* meja permainan: kain hijau bertekstur halus + bayangan tepi */
 .ular-bg {
-  background:
-    radial-gradient(circle at 20% 15%, #ffe29a 0, transparent 40%),
-    radial-gradient(circle at 85% 80%, #b8f2e6 0, transparent 45%),
-    linear-gradient(160deg, #ffd6e7 0%, #c9f2ff 55%, #d8ffcf 100%);
+  background-color: #1f5a47;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.6px),
+    radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1.6px);
+  background-size: 6px 6px, 9px 9px;
+  background-position: 0 0, 3px 4px;
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.45);
 }
+/* papan nama kayu */
+.ular-sign {
+  font-family: var(--ff-baloo), system-ui, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff4dc;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 0 #6b3d17;
+  border-radius: 12px;
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0 2px, transparent 2px 14px),
+    linear-gradient(180deg, #c98a4b, #a8692f);
+  box-shadow: 0 6px 0 #6b3d17, inset 0 2px 0 rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+.ular-sign::before,
+.ular-sign::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: #5a3312;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.ular-sign::before { left: 9px; }
+.ular-sign::after { right: 9px; }
+.ular-cream-btn { background: #fff8ec; color: #2b1d4e; box-shadow: 0 4px 0 #c9b28f; }
+.ular-card { background: #fff8ec; color: #2b1d4e; box-shadow: 0 6px 0 #c9b28f; }
+.ular-hero { background: #fff8ec; transform: rotate(-3deg); box-shadow: 0 10px 0 #c9b28f, 0 18px 30px rgba(0, 0, 0, 0.35); }
+.ular-resume {
+  font-family: var(--ff-baloo), system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #1b3b12;
+  background: #ffd23f;
+  box-shadow: 0 5px 0 #b8911a;
+}
+.ular-rules { color: #eaf6ef; background: rgba(0, 0, 0, 0.18); list-style: none; }
+.ular-rules b { color: #ffd23f; }
 .ular-dice-scene { perspective: 400px; }
 .ular-dice {
   position: relative;

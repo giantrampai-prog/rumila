@@ -152,7 +152,7 @@ function BoardSvg({ board, tokens, players, moving }: { board: Board; tokens: Re
             <path d={body} fill="none" stroke={c1} strokeWidth="24" strokeLinecap="round" strokeLinejoin="round" />
             <path d={tail} fill="none" stroke={c1} strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" />
             <path d={body} fill="none" stroke={c2} strokeWidth="9" strokeDasharray="10 16" strokeLinecap="round" strokeLinejoin="round" />
-            <g transform={`translate(${h.x} ${h.y}) rotate(${ang})`}>
+            <g transform={`translate(${h.x.toFixed(1)} ${h.y.toFixed(1)}) rotate(${ang.toFixed(1)})`}>
               <path d="M18 0 l14 -5 M18 0 l14 5" stroke="#e63946" strokeWidth="3" strokeLinecap="round" />
               <ellipse cx="0" cy="0" rx="24" ry="18" fill={c1} stroke="#1d3b1d" strokeOpacity="0.55" strokeWidth="3" />
               <circle cx="6" cy="-8" r="6" fill="#fff" />
@@ -183,6 +183,59 @@ function BoardSvg({ board, tokens, players, moving }: { board: Board; tokens: Re
           </g>
         );
       })}
+    </svg>
+  );
+}
+
+/* ---------------- sampul menu: papan contoh & bidak gambar ---------------- */
+
+const HERO_BOARD = makeBoard(
+  (() => {
+    let x = 20260927;
+    return () => ((x = (x * 1664525 + 1013904223) >>> 0) / 4294967296);
+  })(),
+);
+const HERO_PLAYERS: Player[] = [
+  { id: 'a', name: '', color: COLORS[0], avatar: '🦁', cpu: false, pos: 84 },
+  { id: 'b', name: '', color: COLORS[1], avatar: '🐼', cpu: false, pos: 44 },
+  { id: 'c', name: '', color: COLORS[2], avatar: '🐸', cpu: false, pos: 17 },
+];
+const HERO_TOKENS = Object.fromEntries(HERO_PLAYERS.map((p) => [p.id, { ...center(p.pos), lift: 0 }]));
+
+/** Bidak papan permainan (kepala bulat, badan mengerucut, alas). */
+function Pawn({ color, x = 0, s = 1, children }: { color: string; x?: number; s?: number; children?: React.ReactNode }) {
+  return (
+    <g transform={`translate(${x} 0) scale(${s})`}>
+      <ellipse cx="0" cy="86" rx="26" ry="7" fill="#000" opacity="0.18" />
+      <path d="M-24 82 Q-24 70 -12 68 L-9 40 Q0 36 9 40 L12 68 Q24 70 24 82 Z" fill={color} />
+      <path d="M-24 82 Q-24 70 -12 68 L-9 40 Q-4 38 0 38 L0 82 Z" fill="#fff" opacity="0.16" />
+      <circle cx="0" cy="26" r="17" fill={color} />
+      <circle cx="-6" cy="20" r="5" fill="#fff" opacity="0.35" />
+      {children}
+    </g>
+  );
+}
+
+function PawnCpu() {
+  return (
+    <svg viewBox="-60 -8 120 100" width="118" height="98" aria-hidden>
+      <line x1="0" y1="9" x2="0" y2="-2" stroke="#3a86ff" strokeWidth="3" />
+      <circle cx="0" cy="-4" r="4" fill="#ffbe0b" />
+      <Pawn color="#3a86ff">
+        <rect x="-11" y="19" width="22" height="13" rx="4" fill="#1b2a4e" />
+        <circle cx="-5" cy="25.5" r="2.6" fill="#7df9ff" />
+        <circle cx="5" cy="25.5" r="2.6" fill="#7df9ff" />
+      </Pawn>
+    </svg>
+  );
+}
+
+function PawnGroup() {
+  return (
+    <svg viewBox="-70 -8 140 100" width="138" height="98" aria-hidden>
+      <Pawn color={COLORS[2]} x={-34} s={0.82} />
+      <Pawn color={COLORS[3]} x={34} s={0.82} />
+      <Pawn color={COLORS[0]} x={0} />
     </svg>
   );
 }
@@ -506,60 +559,63 @@ export function UlarGame() {
       <div className="ular-bg fixed inset-0 overflow-y-auto" style={{ color: INK }}>
         <div className="mx-auto flex min-h-full w-full max-w-[620px] flex-col gap-4 p-4" style={{ paddingTop: 'max(16px, env(safe-area-inset-top))', paddingBottom: 'max(16px, env(safe-area-inset-bottom))' }}>
           <div className="flex items-center gap-3">
-            <button onClick={() => (mode ? (sfx.close(), setMode(null)) : router.back())} aria-label="Kembali" className="flex size-12 items-center justify-center rounded-full bg-white shadow-[0_4px_0_rgba(0,0,0,.12)] active:scale-90">
+            <button onClick={() => (mode ? (sfx.close(), setMode(null)) : router.back())} aria-label="Kembali" className="ular-cream-btn flex size-12 shrink-0 items-center justify-center rounded-full active:translate-y-0.5">
               <Icon name="arrow_back" size={26} />
             </button>
-            <h1 className="flex-1 text-center" style={{ fontFamily: BALOO, fontSize: 34, fontWeight: 900 }}>
-              🐍 Ular Tangga 🪜
-            </h1>
-            <span className="size-12" />
+            <div className="flex flex-1 justify-center">
+              <h1 className="ular-sign px-6 py-1.5">Ular Tangga</h1>
+            </div>
+            <span className="size-12 shrink-0" />
           </div>
           {!mode && (
             <>
-              {resume && (
-                <button onClick={() => (sfx.open(), start(resume))} className="rounded-[20px] bg-[#2ec27e] p-3 text-white shadow-[0_5px_0_#1e8a58] active:translate-y-1" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
-                  ▶ Lanjutkan permainan tadi
-                </button>
-              )}
-              <div className="text-center text-[20px] font-extrabold" style={{ fontFamily: BALOO }}>
-                Mau main dengan siapa?
+              <div className="relative mx-auto my-1 w-[min(78vw,340px)]">
+                <div className="ular-hero rounded-[16px] p-1.5">
+                  <BoardSvg board={HERO_BOARD} tokens={HERO_TOKENS} players={HERO_PLAYERS} moving={null} />
+                </div>
+                {resume && (
+                  <button onClick={() => (sfx.open(), start(resume))} className="ular-resume absolute -bottom-4 left-1/2 -translate-x-1/2 rounded-full px-5 py-2.5 whitespace-nowrap active:translate-y-0.5">
+                    Lanjutkan permainan tadi
+                  </button>
+                )}
               </div>
-              {(
-                [
-                  ['cpu', '🤖', 'Lawan Komputer', 'Main sendiri melawan 1–5 robot pintar', '#3a86ff', '#1f5fc2'],
-                  ['orang', '👨‍👩‍👧', 'Main bareng Orang', '2–6 pemain bergantian di satu layar', '#ff4d6d', '#c2334f'],
-                ] as const
-              ).map(([m, e, t, d, c, dc]) => (
-                <button
-                  key={m}
-                  onClick={() => (sfx.open(), setMode(m))}
-                  className="flex items-center gap-4 rounded-[26px] p-5 text-left text-white active:translate-y-1"
-                  style={{ background: `linear-gradient(150deg, ${c}, ${dc})`, boxShadow: `0 6px 0 ${dc}` }}
-                >
-                  <span className="text-[56px] leading-none">{e}</span>
-                  <span>
-                    <span className="block" style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900 }}>
-                      {t}
-                    </span>
-                    <span className="block text-[15px] font-bold opacity-90">{d}</span>
-                  </span>
-                </button>
-              ))}
-              <div className="rounded-[20px] bg-white/70 p-3 text-[14px] leading-snug font-bold opacity-90">
-                🎲 Dadu dilempar sendiri: tahan dadunya, lalu lepas! Hasilnya benar-benar acak & adil · 🗺️ letak ular & tangga diacak setiap permainan · 🎯 harus pas di 100 — kalau lebih, pion mundur (99 dapat 5 → 100, 99, 98, 97, 96).
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {(
+                  [
+                    ['cpu', 'Lawan Komputer', '1–5 robot', <PawnCpu key="c" />],
+                    ['orang', 'Main Bareng', '2–6 orang, satu layar', <PawnGroup key="o" />],
+                  ] as const
+                ).map(([m, t, d, art]) => (
+                  <button key={m} onClick={() => (sfx.open(), setMode(m))} className="ular-card flex flex-col items-center gap-1 rounded-[22px] px-3 pt-3 pb-4 text-center active:translate-y-1">
+                    <span className="flex h-[92px] items-end">{art}</span>
+                    <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.05 }}>{t}</span>
+                    <span className="text-[14px] font-bold opacity-60">{d}</span>
+                  </button>
+                ))}
               </div>
+              <ul className="ular-rules grid gap-1.5 rounded-[18px] px-4 py-3 text-[15px] font-bold">
+                <li>
+                  <b>Tahan dadu, lalu lepas.</b> Hasilnya acak dan adil.
+                </li>
+                <li>
+                  <b>Papan baru tiap main.</b> Ular & tangga pindah tempat.
+                </li>
+                <li>
+                  <b>Harus pas 100.</b> Lebih? Mundur: 99 + 5 → 96.
+                </li>
+              </ul>
             </>
           )}
           {mode === 'cpu' && (
             <>
-              <div className="rounded-[24px] bg-white/90 p-4 shadow-[0_6px_0_rgba(0,0,0,.08)]">
+              <div className="ular-card rounded-[22px] p-4">
                 <div className="mb-2 text-[16px] font-extrabold">Namamu</div>
                 <div className="flex items-center gap-2">
                   {avatarBtn(0)}
                   {nameInput(0, 'Tulis namamu')}
                 </div>
               </div>
-              <div className="rounded-[24px] bg-white/90 p-4 shadow-[0_6px_0_rgba(0,0,0,.08)]">
+              <div className="ular-card rounded-[22px] p-4">
                 <div className="mb-2 text-[16px] font-extrabold">Berapa lawan komputer?</div>
                 {countBtns([1, 2, 3, 4, 5], cpuCount, setCpuCount)}
               </div>
@@ -567,24 +623,24 @@ export function UlarGame() {
           )}
           {mode === 'orang' && (
             <>
-              <div className="rounded-[24px] bg-white/90 p-4 shadow-[0_6px_0_rgba(0,0,0,.08)]">
+              <div className="ular-card rounded-[22px] p-4">
                 <div className="mb-2 text-[16px] font-extrabold">Berapa pemain?</div>
                 {countBtns([2, 3, 4, 5, 6], count, setCount)}
               </div>
               <div className="flex flex-col gap-2">
                 {slots.slice(0, count).map((_, i) => (
-                  <div key={i} className="flex items-center gap-2 rounded-[20px] bg-white/90 p-2 shadow-[0_4px_0_rgba(0,0,0,.08)]" style={{ borderLeft: `8px solid ${COLORS[i]}` }}>
+                  <div key={i} className="ular-card flex items-center gap-2 rounded-[20px] p-2" style={{ borderLeft: `8px solid ${COLORS[i]}` }}>
                     {avatarBtn(i)}
                     {nameInput(i, `Nama pemain ${i + 1}`)}
                   </div>
                 ))}
               </div>
-              {!namesOk && <div className="text-center text-[14px] font-extrabold text-[#c2334f]">Tulis nama setiap pemain dulu ya ✏️</div>}
+              {!namesOk && <div className="text-center text-[15px] font-extrabold text-[#ffd6a5]">Tulis nama setiap pemain dulu, ya.</div>}
             </>
           )}
           {mode && (
             <>
-              <label className="flex items-center gap-3 rounded-[20px] bg-white/90 p-3 text-[16px] font-extrabold shadow-[0_4px_0_rgba(0,0,0,.08)]">
+              <label className="ular-card flex items-center gap-3 rounded-[20px] p-3 text-[16px] font-extrabold">
                 <input type="checkbox" checked={sixAgain} onChange={(e) => setSixAgain(e.target.checked)} className="size-6 accent-[#ff8c42]" />
                 Dapat angka 6 → lempar lagi
               </label>
@@ -594,7 +650,7 @@ export function UlarGame() {
                 className="mt-auto rounded-[24px] bg-[#ff8c42] py-4 text-white shadow-[0_6px_0_#c2621d] active:translate-y-1 disabled:opacity-40"
                 style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900 }}
               >
-                Mulai main! 🎲
+                Mulai main
               </button>
             </>
           )}
@@ -616,7 +672,7 @@ export function UlarGame() {
       {/* panel */}
       <div className="flex shrink-0 flex-col gap-1.5 px-2 pb-2 lg:w-[340px] lg:justify-center lg:py-2">
         <div className="flex items-center gap-2">
-          <button onClick={() => (sfx.close(), setGame(null))} aria-label="Menu" className="flex size-11 items-center justify-center rounded-full bg-white shadow-[0_3px_0_rgba(0,0,0,.12)] active:scale-90">
+          <button onClick={() => (sfx.close(), setGame(null))} aria-label="Menu" className="ular-cream-btn flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5">
             <Icon name="arrow_back" size={24} />
           </button>
           <div className="flex flex-1 gap-1.5 overflow-x-auto">
@@ -624,7 +680,7 @@ export function UlarGame() {
               <div
                 key={p.id}
                 className={`flex shrink-0 items-center gap-1 rounded-full py-1 pr-2.5 pl-1 ${i === game.turn && !game.winner ? 'ular-turn' : ''}`}
-                style={{ background: i === game.turn && !game.winner ? p.color : '#ffffffcc', color: i === game.turn && !game.winner ? '#fff' : INK }}
+                style={{ background: i === game.turn && !game.winner ? p.color : '#fff8ec', color: i === game.turn && !game.winner ? '#fff' : INK }}
               >
                 <span className="flex size-8 items-center justify-center rounded-full text-[20px]" style={{ background: '#ffffff55' }}>
                   {p.avatar}
@@ -636,7 +692,7 @@ export function UlarGame() {
             ))}
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-[22px] bg-white/90 p-2.5 shadow-[0_5px_0_rgba(0,0,0,.08)]">
+        <div className="ular-card flex items-center gap-3 rounded-[22px] p-2.5">
           <button {...throwHandlers} disabled={!canThrow && !shaking} aria-label="Tahan lalu lepas untuk melempar dadu" className="shrink-0 touch-none disabled:opacity-100">
             <Dice value={dice} rolling={rolling} shaking={shaking} size={76} />
           </button>
