@@ -12,6 +12,7 @@ import { Icon } from '@/components/ui';
 import { PLAY, type ColorKey } from '@/lib/catalog';
 import { initialState, reducer } from '@/lib/anatomy/state';
 import { TUR, TUR_AUDIO, turDwell } from '@/lib/anatomy/tur';
+import { ORGAN_MOTION, TUR_EXTRA, type TurPop } from '@/lib/anatomy/tur-pops';
 import { installAudioUnlock, sharedAudio, unlockAudio } from '@/lib/audio-unlock';
 import { useAnatomySession } from '@/lib/anatomy/use-session';
 import { LAYERS, type LayerId, type Manifest, type Part } from '@/lib/anatomy/types';
@@ -71,6 +72,57 @@ function OrganCard({ part, onClose }: { part: Part; onClose: () => void }) {
   );
 }
 
+const POP_COLORS = ['#ff6b8a', '#ffbe0b', '#3ec1ff', '#7bd66a', '#b18cff', '#ff9a3c'];
+
+/** Kartu info yang muncul memantul sesuai kalimat narasi; maks 3 terakhir tampil. */
+function TurPops({ stop, progress }: { stop: string; progress: number }) {
+  const pops = TUR_EXTRA[stop]?.pops ?? [];
+  const shown = pops.map((p, i) => [p, i] as [TurPop, number]).filter(([p]) => progress >= p.at).slice(-3);
+  const count = shown.length;
+  useSfxOnChange(`${stop}:${count}`, () => count > 0 && sfx.pick());
+  return (
+    <div className="pointer-events-none absolute left-3 flex max-w-[min(78vw,360px)] flex-col gap-2 sm:left-5" style={{ top: 'max(84px, calc(env(safe-area-inset-top) + 76px))' }}>
+      {shown.map(([p, i]) => {
+        const c = POP_COLORS[i % POP_COLORS.length];
+        return (
+          <div key={`${stop}-${i}`} className="tur-pop">
+            <div className="tur-pop-inner flex items-center gap-3 rounded-[22px] bg-white/95 py-2 pr-4 pl-2" style={{ boxShadow: `0 5px 0 ${c}55, 0 10px 24px rgba(0,0,0,.25)`, border: `3px solid ${c}` }}>
+              <span className="tur-pop-emoji flex size-14 shrink-0 items-center justify-center rounded-full text-[34px]" style={{ background: `${c}33` }}>
+                {p.emoji}
+              </span>
+              <span className="min-w-0 leading-tight" style={{ color: INK }}>
+                {p.big && (
+                  <span className="tur-pop-big block" style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 900, color: c, lineHeight: 1, textShadow: '0 2px 0 rgba(0,0,0,.08)' }}>
+                    {p.big}
+                  </span>
+                )}
+                <span className="block text-[16px] font-extrabold sm:text-[18px]" style={{ fontFamily: BALOO }}>
+                  {p.text}
+                </span>
+              </span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Emoji kecil yang melayang naik di latar sesuai topik (❤️ di jantung, 💨 di paru, …). */
+function TurFx({ stop }: { stop: string }) {
+  const fx = TUR_EXTRA[stop]?.fx;
+  if (!fx?.length) return null;
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      {Array.from({ length: 10 }, (_, i) => (
+        <span key={`${stop}-${i}`} className="tur-fx" style={{ left: `${6 + ((i * 37) % 88)}%`, fontSize: 22 + ((i * 13) % 18), animationDuration: `${6 + (i % 4) * 1.6}s`, animationDelay: `${(i * 0.9) % 6}s` }}>
+          {fx[i % fx.length]}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function TurOverlay({
   tur,
   onClose,
@@ -100,6 +152,8 @@ function TurOverlay({
           {s.title}
         </span>
       </div>
+      <TurFx stop={s.id} />
+      <TurPops stop={s.id} progress={tur.progress} />
       {!tur.playing && (
         <div className="absolute inset-0 flex items-center justify-center gap-6" onClick={(e) => e.stopPropagation()}>
           {tur.finished ? (
@@ -141,9 +195,11 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
   }, [selected, memberId, complete]);
 
   /** Ketuk organ di deretan: organ diperbesar sendirian (lapisan yang perlu dibuka otomatis). */
-  const open = (id: string) => {
+  const open = (id: string, alive = true) => {
     const p = manifest.parts.find((x) => x.id === id);
     if (!p) return;
+    // organ yang dibuka ikut "hidup": jantung berdegup, paru bernapas, dst.
+    if (alive) window.setTimeout(() => viewer.current?.motion(ORGAN_MOTION[id] ? { ...ORGAN_MOTION[id], sway: true } : { kind: 'none', sway: true }), 60);
     dispatch({ type: 'isolate', id: p.id, camera: cam() });
     dispatch({ type: 'select', part: p, reveal: true });
     if (p.kind === 'assembly' || p.id.startsWith('eye_')) for (const layer of ['bone', 'organ', 'muscle', 'nerve'] as const) dispatch({ type: 'layer', id: layer, visible: true, opacity: 1 });
@@ -155,9 +211,9 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
     const p = manifest.parts.find((x) => x.id === id);
     if (p) dispatch({ type: 'select', part: p });
   };
-  const whole = () => dispatch({ type: 'reset' });
+  const whole = () => (viewer.current?.motion(null), dispatch({ type: 'reset' }));
   const back = () => {
-    if (state.isolation) return dispatch({ type: 'back' });
+    if (state.isolation) return viewer.current?.motion(null), dispatch({ type: 'back' });
     if (selected) return dispatch({ type: 'patch', patch: { selectedId: null } });
     router.push('/beranda/angkasa');
   };
@@ -176,8 +232,10 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
     (i: number) => {
       const s = TUR[i];
       dispatch({ type: 'patch', patch: { playing: false } });
+      const mo = TUR_EXTRA[s.id]?.motion;
+      window.setTimeout(() => viewer.current?.motion(mo ? { ...mo, sway: true } : { kind: 'none', sway: true }), 60);
       if (s.focus) {
-        openRef.current(s.focus);
+        openRef.current(s.focus, false);
         if (s.focus === 'heart') dispatch({ type: 'patch', patch: { playing: true } }); // aliran darah bergerak
         return;
       }
@@ -219,6 +277,7 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
   const turStop = () => {
     sharedAudio('tubuh').pause();
     turRef.current.playing = false;
+    viewer.current?.motion(null);
     setTur(null);
     dispatch({ type: 'reset' });
     window.setTimeout(() => viewer.current?.preset('front'), 40);

@@ -10,6 +10,8 @@ import { clusterSimplify, detectQuality, mergeWorldGeometry, pixelRatioFor, type
 import type { Asset, Manifest, Part, Vec3 } from '@/lib/anatomy/types';
 export type LoadStatus = { state: 'loading' | 'ready' | 'error'; progress: number; message?: string };
 export interface EngineEvents { select: (id: string) => void; detach: (id: string, amount: number) => void; status: (id: string, status: LoadStatus) => void; lost: () => void; direction: (name: string) => void }
+export type MotionKind = 'beat' | 'breathe' | 'churn' | 'flex' | 'glow' | 'pulse' | 'look' | 'chew' | 'wiggle' | 'none';
+export interface MotionSpec { kind: MotionKind; ids?: string[]; layer?: string; sway?: boolean }
 type Node = { part: Part; meshes: THREE.Mesh[]; rests: THREE.Vector3[]; materials: THREE.MeshStandardMaterial[] };
 export class AnatomyEngine {
   renderer: THREE.WebGLRenderer;
@@ -28,6 +30,8 @@ export class AnatomyEngine {
   private capGroup = new THREE.Group(); private capResources: THREE.Material[] = [];
   private sectionKey = ''; private directionName = ''; private slowFrames = 0; private dpr: number;
   // Performa: gambar hanya bila ada perubahan; kualitas menyesuaikan perangkat; tulang digabung + versi jauh.
+  // Gerak hidup (tur & organ yang dibuka): kamera berayun pelan + organ bergerak sesuai fungsinya.
+  private motion: MotionSpec | null = null; private motionT = 0; private motionMeshes: THREE.Mesh[] = []; private swayBase: number | null = null;
   private needsFrames = 3; private quality: Quality = 2; private slowWindow: number[] = [];
   private boneLod: THREE.LOD | null = null; private boneMat: THREE.MeshPhysicalMaterial | null = null; private boneBatchOn = false;
   readonly metrics = { frames: 0, elapsedMs: 0, drawCalls: 0, triangles: 0, packages: {} as Record<string, { bytes: number; loadMs: number }> };
@@ -47,7 +51,7 @@ export class AnatomyEngine {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.target.set(0, .89, 0); this.controls.enableDamping = !initial.reducedMotion;
     this.controls.minDistance = .25; this.controls.maxDistance = 5; this.controls.maxPolarAngle = Math.PI * .93;
-    this.controls.addEventListener('start', () => { this.cameraGoal = null; this.bodyFraming = false;this.focusedId=null; });
+    this.controls.addEventListener('start', () => { if(this.motion)this.motion={...this.motion,sway:false}; this.cameraGoal = null; this.bodyFraming = false;this.focusedId=null; });
     this.controls.addEventListener('change', () => this.invalidate());
     this.scene.add(this.model, this.capGroup, new THREE.HemisphereLight(0xffffff, 0x756D60, .75));
     const key = new THREE.DirectionalLight(0xffffff, 1.7); key.position.set(-2, 3, 4);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.bias=-.00015;key.shadow.normalBias=.0001;key.shadow.radius=4;this.studioKey=key;this.scene.add(key,key.target);
@@ -164,7 +168,7 @@ export class AnatomyEngine {
       const inGroup = state.isolation ? belongsTo(node.part, state.isolation, this.manifest.parts) : inRegion;
       const amount = state.detached[id] ?? ((id === state.interior) ? Math.max(80, state.explode) : inGroup ? state.explode : 0);
       node.meshes.forEach((mesh, i) => {
-        mesh.visible = visible;
+        mesh.visible = visible; mesh.userData.p0 = undefined;
         const position = poseAt(node.rests[i].toArray() as Vec3, node.part.explodePath, amount); mesh.position.fromArray(position);
         const mat = node.materials[i], alpha = state.layers[node.part.layer].opacity*(node.part.materialOpacity??1);
         mat.opacity = alpha; mat.transparent = alpha < .99; mat.depthWrite = alpha >= .45;
@@ -275,13 +279,85 @@ export class AnatomyEngine {
     this.flowPoints=ids.flatMap(id=>{const p=this.manifest.parts.find(p=>p.id===id);return p?[new THREE.Vector3(...p.labelAnchor)]:[];});
     this.flow.geometry.dispose();this.flow.geometry=new THREE.BufferGeometry().setFromPoints(this.flowPoints);
   }
+  /** Atur gerak hidup; null = diam (semua kembali ke posisi semula). */
+  setMotion(spec: MotionSpec | null) {
+    this.restoreMotion();
+    this.motion = spec; this.motionT = 0; this.swayBase = null;
+    if (!spec) { this.invalidate(2); return; }
+    const parts = this.manifest.parts;
+    void parts;
+    this.gatherMotion();
+    this.invalidate(2);
+  }
+  private gatherMotion() {
+    const spec = this.motion; if (!spec) return;
+    const parts = this.manifest.parts;
+    this.motionMeshes = [];
+    for (const n of this.nodes.values()) {
+      const hit = (spec.ids ?? []).some((id) => belongsTo(n.part, id, parts)) || (!!spec.layer && n.part.layer === spec.layer);
+      if (hit) this.motionMeshes.push(...n.meshes);
+    }
+  }
+  private restoreMotion() {
+    for (const m of this.motionMeshes) {
+      if (m.userData.p0) m.position.copy(m.userData.p0 as THREE.Vector3);
+      if (m.userData.q0) m.quaternion.copy(m.userData.q0 as THREE.Quaternion);
+      m.scale.set(1, 1, 1);
+      const mat = m.material as THREE.MeshStandardMaterial; if (mat?.emissive && m.userData.glow) { mat.emissive.set(0x000000); mat.emissiveIntensity = 0; m.userData.glow = false; }
+      m.userData.p0 = undefined; m.userData.q0 = undefined; m.userData.c = undefined;
+    }
+    this.motionMeshes = [];
+  }
+  private stepMotion(dt: number) {
+    const M = this.motion!; this.motionT += dt; const t = this.motionT;
+    // kamera berayun kiri-kanan pelan mengelilingi sasaran (tidak saat terbang ke sasaran / disentuh)
+    if (M.sway && !this.cameraGoal && !this.drag) {
+      const off = this.camera.position.clone().sub(this.controls.target);
+      const az = Math.atan2(off.x, off.z);
+      if (this.swayBase === null) this.swayBase = az;
+      const want = this.swayBase + Math.sin(t * 0.45) * 0.38;
+      const r = Math.hypot(off.x, off.z);
+      this.camera.position.set(this.controls.target.x + Math.sin(want) * r, this.camera.position.y, this.controls.target.z + Math.cos(want) * r);
+    }
+    if (M.kind === 'none') return;
+    if (!this.motionMeshes.length) { if (this.frame % 20 === 0) this.gatherMotion(); if (!this.motionMeshes.length) return; }
+    // bentuk gerak (1 = ukuran asli)
+    const beat = (x: number) => { const p = x % 1; return Math.exp(-((p - 0.1) ** 2) / 0.003) + 0.6 * Math.exp(-((p - 0.32) ** 2) / 0.003); };
+    let sx = 1, sy = 1, sz = 1, rz = 0, ry = 0, glow = 0;
+    switch (M.kind) {
+      case 'beat': { const b = beat(t * 1.15); sx = sy = sz = 1 + 0.07 * b; glow = 0.08 * b; break; }
+      case 'breathe': { const b = (Math.sin(t * 1.4) + 1) / 2; sx = 1 + 0.07 * b; sz = 1 + 0.08 * b; sy = 1 + 0.04 * b; break; }
+      case 'churn': sx = 1 + 0.05 * Math.sin(t * 3); sz = 1 - 0.05 * Math.sin(t * 3); sy = 1 + 0.03 * Math.sin(t * 3 + 1.2); break;
+      case 'flex': { const b = (Math.sin(t * 2.2) + 1) / 2; sx = sz = 1 + 0.035 * b; sy = 1 - 0.015 * b; break; }
+      case 'pulse': { const b = (Math.sin(t * 2.4) + 1) / 2; sx = sy = sz = 1 + 0.04 * b; glow = 0.05 * b; break; }
+      case 'glow': glow = 0.12 * Math.pow((Math.sin(t * 3.1) + Math.sin(t * 5.3 + 1)) / 4 + 0.5, 2); sx = sy = sz = 1 + 0.015 * Math.sin(t * 2); break;
+      case 'look': ry = Math.sin(t * 1.3) * 0.35; rz = Math.sin(t * 0.9) * 0.12; break;
+      case 'chew': sy = 1 - 0.06 * Math.max(0, Math.sin(t * 5)); sx = 1 + 0.02 * Math.max(0, Math.sin(t * 5)); break;
+      case 'wiggle': rz = Math.sin(t * 2.6) * 0.12; ry = Math.sin(t * 1.7) * 0.1; break;
+    }
+    const k = new THREE.Vector3(sx, sy, sz), R = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, ry, rz));
+    for (const m of this.motionMeshes) {
+      if (!m.visible) continue;
+      if (!m.userData.p0) {
+        if (!m.userData.qBase) m.userData.qBase = m.quaternion.clone();
+        m.userData.p0 = m.position.clone(); m.userData.q0 = m.userData.qBase;
+        m.geometry.computeBoundingBox(); const c = m.geometry.boundingBox!.getCenter(new THREE.Vector3()); m.userData.c = c.applyQuaternion(m.userData.qBase as THREE.Quaternion).add(m.position);
+      }
+      const p0 = m.userData.p0 as THREE.Vector3, c = m.userData.c as THREE.Vector3;
+      m.scale.copy(k);
+      m.quaternion.copy(R).multiply(m.userData.q0 as THREE.Quaternion);
+      m.position.copy(p0).sub(c).multiply(k).applyQuaternion(R).add(c);
+      if (glow > 0) { const mat = m.material as THREE.MeshStandardMaterial; if (mat?.emissive) { mat.emissive.set(0xff6a5a); mat.emissiveIntensity = glow; m.userData.glow = true; } }
+    }
+  }
   /** Minta beberapa frame digambar (kamera/state/aset berubah). */
   invalidate(frames = 2) { this.needsFrames = Math.max(this.needsFrames, frames); }
   private render = (time: number) => {
     if(this.disposed)return;this.raf=requestAnimationFrame(this.render);
     if(document.hidden){this.last=time;return;}
     const actualDt=this.last?time-this.last:16;const dt=Math.min(100,actualDt);this.last=time;
-    const animating=!!this.cameraGoal||(this.state.playing&&!this.state.reducedMotion&&this.flowPoints.length>1)||!!this.drag;
+    const animating=!!this.cameraGoal||(this.state.playing&&!this.state.reducedMotion&&this.flowPoints.length>1)||!!this.drag||(!!this.motion&&!this.state.reducedMotion);
+    if(this.motion&&!this.state.reducedMotion)this.stepMotion(dt/1000);
     if(this.cameraGoal){const a=this.state.reducedMotion?1:Math.min(1,dt/110);this.camera.position.lerp(new THREE.Vector3(...this.cameraGoal.position),a);this.controls.target.lerp(new THREE.Vector3(...this.cameraGoal.target),a);if(this.camera.position.distanceTo(new THREE.Vector3(...this.cameraGoal.position))<.0001)this.cameraGoal=null;}
     const moved=this.controls.update();
     if(moved)this.invalidate(2);

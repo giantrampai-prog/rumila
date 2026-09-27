@@ -2,15 +2,15 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import type { Manifest } from '@/lib/anatomy/types';
 import type { CameraPose, ExplorerState } from '@/lib/anatomy/state';
-import { AnatomyEngine, type LoadStatus } from './engine';
-export interface ViewerHandle { focus: (id: string) => void; camera: () => CameraPose; preset: (view: 'front'|'back'|'left'|'right')=>void; zoom: (factor: number)=>void }
+import { AnatomyEngine, type LoadStatus, type MotionSpec } from './engine';
+export interface ViewerHandle { focus: (id: string) => void; camera: () => CameraPose; preset: (view: 'front'|'back'|'left'|'right')=>void; zoom: (factor: number)=>void; motion: (m: MotionSpec | null)=>void }
 interface Props { manifest: Manifest; state: ExplorerState; onSelect: (id: string)=>void; onDetach:(id:string,amount:number)=>void }
 export const Viewer = forwardRef<ViewerHandle, Props>(function Viewer({manifest,state,onSelect,onDetach},ref){
  const host=useRef<HTMLDivElement>(null),labels=useRef<HTMLDivElement>(null),engine=useRef<AnatomyEngine|null>(null);
  const recoveryCamera=useRef<CameraPose|null>(null);
  const latest=useRef({state,onSelect,onDetach});latest.current={state,onSelect,onDetach};
  const [statuses,setStatuses]=useState<Record<string,LoadStatus>>({}),[failure,setFailure]=useState(''),[attempt,setAttempt]=useState(0),[direction,setDirection]=useState('Depan');
- useImperativeHandle(ref,()=>({focus:id=>engine.current?.focus(id),camera:()=>engine.current?.getCamera()??{position:[.25,.93,3.2],target:[0,.89,0]},preset:view=>engine.current?.preset(view),zoom:factor=>engine.current?.zoom(factor)}),[]);
+ useImperativeHandle(ref,()=>({focus:id=>engine.current?.focus(id),camera:()=>engine.current?.getCamera()??{position:[.25,.93,3.2],target:[0,.89,0]},preset:view=>engine.current?.preset(view),zoom:factor=>engine.current?.zoom(factor),motion:m=>engine.current?.setMotion(m)}),[]);
  useEffect(()=>{
   if(!host.current||!labels.current)return;
   try{
