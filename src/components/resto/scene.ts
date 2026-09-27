@@ -9,6 +9,9 @@ import type { DayRun, RestoState } from '@/lib/resto/sim';
 import { sfx } from '@/lib/sfx';
 import { City } from './city';
 import { buildSite, type Site } from './site';
+import { buildRealSky } from '@/components/fruits/garden/sky';
+
+const _sunOff = new T.Vector3(24, 48, 30);
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
@@ -77,14 +80,20 @@ interface Actor {
 export class RestoScene {
   private renderer: T.WebGLRenderer;
   private scene = new T.Scene();
-  private camera = new T.PerspectiveCamera(40, 1, 0.1, 260);
+  private camera = new T.PerspectiveCamera(40, 1, 0.1, 900);
   private ro: ResizeObserver;
   private raf = 0;
   private last = performance.now();
   private t = 0;
-  private yaw = -0.95;
-  private pitch = 0.98;
-  private dist = 17;
+  private yaw = 0.7;
+  private pitch = 0.9;
+  private dist = 24;
+  private target = new T.Vector3(1.5, 0.8, 1.5);
+  private sun!: T.DirectionalLight;
+  private sky: T.Object3D | null = null;
+  private uTime = { value: 0 };
+  static readonly MIN_D = 7;
+  static readonly MAX_D = 160;
   private drag: { x: number; y: number } | null = null;
   private pinch = 0;
   private pointers = new Map<number, { x: number; y: number }>();
@@ -126,16 +135,19 @@ export class RestoScene {
     this.renderer.domElement.style.touchAction = 'none';
     host.appendChild(this.renderer.domElement);
     this.scene.background = new T.Color('#bfe6ff');
-    this.scene.fog = new T.Fog('#cfeaff', 45, 110);
+    this.scene.fog = new T.Fog('#d4e2ec', 140, 520);
     const hemi = new T.HemisphereLight('#fff6e8', '#7a9a6a', 1.1);
     const sun = new T.DirectionalLight('#fff1d8', 2.2);
-    sun.position.set(8, 16, 10);
+    sun.position.set(24, 48, 30);
+    this.sun = sun;
+    this.sky = buildRealSky(new T.Vector3(24, 48, 30).normalize(), this.uTime);
+    this.scene.add(this.sky, sun.target);
     sun.castShadow = true;
     sun.shadow.mapSize.set(1024, 1024);
     const sc = sun.shadow.camera as T.OrthographicCamera;
-    sc.left = sc.bottom = -24;
-    sc.right = sc.top = 24;
-    sc.far = 80;
+    sc.left = sc.bottom = -30;
+    sc.right = sc.top = 30;
+    sc.far = 160;
     sun.shadow.mapSize.set(2048, 2048);
     this.scene.add(hemi, sun, this.shell, this.dyn, this.people);
     this.greet = canvasTex(256, 96, (g) => {
@@ -170,7 +182,7 @@ export class RestoScene {
         p.y = e.clientY;
         const [a, b] = [...this.pointers.values()];
         const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (this.pinch) this.dist = T.MathUtils.clamp(this.dist * (this.pinch / d), 8, 40);
+        if (this.pinch) this.dist = T.MathUtils.clamp(this.dist * (this.pinch / d), RestoScene.MIN_D, RestoScene.MAX_D);
         this.pinch = d;
         return;
       }
@@ -178,8 +190,17 @@ export class RestoScene {
         dy = e.clientY - p.y;
       p.x = e.clientX;
       p.y = e.clientY;
+      if (this.pitch > 1.3) {
+        // tampilan dari atas: geser peta
+        const k = this.dist * 0.0016;
+        const cx = Math.cos(this.yaw),
+          sx = Math.sin(this.yaw);
+        this.target.x = T.MathUtils.clamp(this.target.x - (dx * cx + dy * sx) * k, -90, 90);
+        this.target.z = T.MathUtils.clamp(this.target.z - (-dx * sx + dy * cx) * k, -90, 90);
+        return;
+      }
       this.yaw -= dx * 0.006;
-      this.pitch = T.MathUtils.clamp(this.pitch + dy * 0.004, 0.35, 1.25);
+      this.pitch = T.MathUtils.clamp(this.pitch + dy * 0.004, 0.3, 1.25);
     });
     const up = (e: PointerEvent) => {
       this.pointers.delete(e.pointerId);
@@ -192,7 +213,7 @@ export class RestoScene {
       'wheel',
       (e) => {
         e.preventDefault();
-        this.dist = T.MathUtils.clamp(this.dist * Math.exp(e.deltaY * 0.001), 8, 40);
+        this.dist = T.MathUtils.clamp(this.dist * Math.exp(e.deltaY * 0.001), RestoScene.MIN_D, RestoScene.MAX_D);
       },
       { passive: false },
     );
@@ -516,6 +537,29 @@ export class RestoScene {
     }
   }
 
+  /* ---------- kontrol kamera (tombol di layar) ---------- */
+
+  zoomBy(f: number) {
+    this.dist = T.MathUtils.clamp(this.dist * f, RestoScene.MIN_D, RestoScene.MAX_D);
+  }
+
+  /** Beralih ke pandangan dari atas (peta, bisa digeser) atau kembali ke pandangan miring. */
+  toggleTop() {
+    if (this.pitch > 1.3) this.resetView();
+    else {
+      this.pitch = 1.52;
+      this.dist = Math.max(this.dist, 70);
+    }
+    return this.pitch > 1.3;
+  }
+
+  resetView() {
+    this.yaw = 0.7;
+    this.pitch = 0.9;
+    this.dist = 24;
+    this.target.set(1.5, 0.8, 1.5);
+  }
+
   private brickMat() {
     const t = canvasTex(256, 256, (g) => {
       g.fillStyle = '#9a8a7a';
@@ -671,9 +715,20 @@ export class RestoScene {
     this.t += dt;
     // kamera mengorbit restoran
     const d = this.dist;
-    this.camera.position.set(Math.sin(this.yaw) * Math.cos(this.pitch) * d, Math.sin(this.pitch) * d, Math.cos(this.yaw) * Math.cos(this.pitch) * d);
-    this.camera.lookAt(0, 0.8, 0.5);
-    this.city?.update(this.t, dt);
+    this.camera.position.set(Math.sin(this.yaw) * Math.cos(this.pitch) * d, Math.sin(this.pitch) * d, Math.cos(this.yaw) * Math.cos(this.pitch) * d).add(this.target);
+    this.camera.lookAt(this.target);
+    this.uTime.value = this.t;
+    // bayangan matahari mengikuti area yang dilihat
+    this.sun.target.position.copy(this.target).setY(0);
+    this.sun.position.copy(this.sun.target.position).add(_sunOff);
+    const sc = this.sun.shadow.camera as T.OrthographicCamera;
+    const half = T.MathUtils.clamp(d * 1.1, 24, 70);
+    if (sc.right !== half) {
+      sc.left = sc.bottom = -half;
+      sc.right = sc.top = half;
+      sc.updateProjectionMatrix();
+    }
+    this.city?.update(this.t, dt, this.camera, this.target);
     if (this.site && this.site.update(this.t, dt, this.buildK)) sfx.clink();
     // dinding naik sesuai pembangunan
     this.shell.traverse((o) => {

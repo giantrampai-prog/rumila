@@ -225,6 +225,7 @@ export function RestoGame() {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<RestoScene | null>(null);
   const [panel, setPanel] = useState<Panel>(null);
+  const [topView, setTopView] = useState(false);
   const [toast, setToast] = useState<{ text: string; good: boolean } | null>(null);
   const [intro, setIntro] = useState(false);
   const run = useRef<S.DayRun | null>(null);
@@ -412,6 +413,28 @@ export function RestoGame() {
           {run.current.events[run.current.events.length - 1].text}
         </div>
       )}
+
+      {/* kontrol kamera: perbesar, perkecil, pandangan dari atas, kembali */}
+      <div className="pointer-events-auto absolute right-2 flex flex-col gap-2 sm:right-3" style={{ top: '38%' }}>
+        {(
+          [
+            ['add', 'Perbesar', () => scene.current?.zoomBy(0.75)],
+            ['remove', 'Perkecil', () => scene.current?.zoomBy(1.33)],
+            [topView ? 'view_in_ar' : 'satellite_alt', topView ? 'Pandangan miring' : 'Lihat dari atas', () => setTopView(!!scene.current?.toggleTop())],
+            ['center_focus_strong', 'Kembali ke resto', () => (scene.current?.resetView(), setTopView(false))],
+          ] as const
+        ).map(([icon, label, fn]) => (
+          <button
+            key={label}
+            aria-label={label}
+            title={label}
+            onClick={() => (sfx.tap(), fn())}
+            className="flex size-11 items-center justify-center rounded-full bg-white/90 text-[#3a2416] shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90"
+          >
+            <Icon name={icon} size={24} />
+          </button>
+        ))}
+      </div>
 
       {/* dok bawah: aksi sesuai fase */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 p-2 sm:p-3" style={{ paddingBottom: 'max(10px, env(safe-area-inset-bottom))' }}>
@@ -752,6 +775,14 @@ export function RestoGame() {
               </button>
             ))}
           </div>
+          {g.phase === 'review' && (
+            <div className="mt-2 flex flex-wrap items-center gap-2 rounded-[14px] bg-[#fff0d8] p-2.5 text-[14px] font-bold">
+              <span className="flex-1">🌙 Hari ini restoran sudah buka. Resto bisa buka lagi besok — tekan “Lanjut hari”.</span>
+              <Btn tone="green" onClick={() => (act(() => S.advanceDay(g), () => sfx.whoosh()), setPanel(null))}>
+                Lanjut hari ▶
+              </Btn>
+            </div>
+          )}
         </Sheet>
       )}
 
@@ -765,7 +796,8 @@ export function RestoGame() {
 function BahanPanel({ g, act, onClose }: { g: S.RestoState; act: (fn: () => S.Result, s?: () => void) => boolean; onClose: () => void }) {
   const active = MENUS.filter((m) => g.menu[m.id].active);
   const last = g.reports[g.reports.length - 1];
-  const [vendor, setVendor] = useState('segar');
+  const short = S.shortMenus(g);
+  const [vendor, setVendor] = useState(short.length ? 'kilat' : 'segar');
   const [qty, setQty] = useState<Record<string, number>>(() => Object.fromEntries(MENUS.map((m) => [m.id, active.some((a) => a.id === m.id) ? Math.max(10, Math.round((last?.sold[m.id] ?? 20) * 1.2 / 5) * 5) : 0])));
   const v = VENDORS.find((x) => x.id === vendor)!;
   const units = MENUS.reduce((a, m) => a + recipeCost(m) * (qty[m.id] ?? 0), 0);
@@ -773,6 +805,23 @@ function BahanPanel({ g, act, onClose }: { g: S.RestoState; act: (fn: () => S.Re
   return (
     <Sheet title="Belanja bahan" emoji="🧺" onClose={onClose}>
       <p className="mb-2 text-[14px] font-bold opacity-80">Pesan secukupnya: kebanyakan → bahan kedaluwarsa & terbuang; kekurangan → pelanggan batal pesan.</p>
+      {short.length > 0 && (
+        <div className="mb-2 flex flex-wrap items-center gap-2 rounded-[14px] bg-[#ffe3d8] p-2.5 text-[13px] font-bold text-[#8a2a1a]">
+          <span className="flex-1">
+            ⚠️ Belum bisa buka: stok {short.map((m) => `${m.emoji} ${m.name} (${S.portionsAvailable(g, m)}/${S.MIN_OPEN_PORTIONS})`).join(', ')} kurang.
+            {S.hasPendingOrder(g) ? ' Pesanan sebelumnya baru datang besok.' : ''} Vendor <b>Kilat</b> datang hari ini.
+          </span>
+          <Btn
+            tone="orange"
+            onClick={() => {
+              setVendor('kilat');
+              setQty(Object.fromEntries(MENUS.map((m) => [m.id, short.some((x) => x.id === m.id) ? Math.max(10, Math.ceil((S.MIN_OPEN_PORTIONS * 2 - S.portionsAvailable(g, m)) / 5) * 5) : 0])));
+            }}
+          >
+            Isi kekurangan
+          </Btn>
+        </div>
+      )}
       <div className="grid gap-2 sm:grid-cols-3">
         {VENDORS.map((x) => (
           <button key={x.id} onClick={() => setVendor(x.id)} className="rounded-[16px] bg-white p-2.5 text-left shadow-[0_2px_0_#e3cfb2]" style={vendor === x.id ? { boxShadow: 'inset 0 0 0 3px #ff8a1a' } : undefined}>

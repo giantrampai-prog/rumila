@@ -446,6 +446,25 @@ export interface Check {
   go: string;
 }
 
+/** Minimal porsi per menu aktif agar boleh buka. */
+export const MIN_OPEN_PORTIONS = 5;
+
+/** Menu aktif yang stoknya belum cukup untuk buka hari ini. */
+export function shortMenus(s: RestoState) {
+  return MENUS.filter((m) => s.menu[m.id].active && portionsAvailable(s, m) < MIN_OPEN_PORTIONS);
+}
+
+/** Bahan yang sudah dipesan tapi baru datang besok. */
+export const hasPendingOrder = (s: RestoState) => s.pending.some((p) => p.arriveDay > s.day);
+
+function stockLabel(s: RestoState, active: Menu[]) {
+  const short = active.filter((m) => portionsAvailable(s, m) < MIN_OPEN_PORTIONS);
+  if (!short.length) return `Stok bahan cukup untuk menu aktif (min ${MIN_OPEN_PORTIONS} porsi)`;
+  const list = short.map((m) => `${m.name} ${portionsAvailable(s, m)}/${MIN_OPEN_PORTIONS}`).join(', ');
+  const why = hasPendingOrder(s) ? ' — pesananmu baru datang besok. Pakai vendor Kilat agar datang hari ini, atau matikan menu itu.' : ' — belanja di Bahan (vendor Kilat datang hari ini), atau matikan menu itu.';
+  return `Stok kurang: ${list}${why}`;
+}
+
 export function checklist(s: RestoState): Check[] {
   const active = MENUS.filter((m) => s.menu[m.id].active);
   const roles: Role[] = ['kasir', 'koki', 'pelayan', 'kebersihan'];
@@ -454,7 +473,7 @@ export function checklist(s: RestoState): Check[] {
     { id: 'kasir', label: 'Ada meja kasir & kulkas bahan', ok: s.equipment.includes('kasir') && s.equipment.includes('kulkas'), go: 'bangun' },
     { id: 'meja', label: 'Minimal 2 meja makan', ok: s.tables >= 2, go: 'bangun' },
     { id: 'menu', label: 'Minimal 2 menu aktif (1 makanan)', ok: active.length >= 2 && active.some((m) => m.id !== 'ocha'), go: 'menu' },
-    { id: 'stok', label: 'Stok bahan cukup untuk menu aktif', ok: active.length > 0 && active.every((m) => portionsAvailable(s, m) >= 5), go: 'bahan' },
+    { id: 'stok', label: stockLabel(s, active), ok: active.length > 0 && active.every((m) => portionsAvailable(s, m) >= MIN_OPEN_PORTIONS), go: 'bahan' },
     { id: 'tim', label: 'Keempat peran terisi', ok: roles.every((r) => s.staff.some((m) => m.role === r)), go: 'tim' },
     { id: 'kas', label: `Uang cadangan ≥ 2× biaya harian (${2 * fixedDaily(s)})`, ok: freeCash(s) >= 2 * fixedDaily(s), go: 'uang' },
   ];
