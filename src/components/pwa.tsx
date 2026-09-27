@@ -75,7 +75,7 @@ function IosHelp() {
     <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[rgba(43,29,78,.45)] p-4 sm:items-center" onClick={close}>
       <div className="w-full max-w-[420px] rounded-[28px] bg-white p-5" onClick={(e) => e.stopPropagation()} style={{ color: INK }}>
         <div className="flex items-center justify-between">
-          <h2 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>Pasang Rumila</h2>
+          <h2 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>Pasang Rinoya Academy</h2>
           <button onClick={close} aria-label="Tutup" className="flex size-10 items-center justify-center rounded-xl bg-[#f5f0fa]">
             <Icon name="close" />
           </button>
@@ -97,7 +97,7 @@ function IosHelp() {
             <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#fff2d9] text-[#ff7a1a]">
               <Icon name="rocket_launch" />
             </span>
-            Buka Rumila dari ikon di layar utama.
+            Buka Rinoya Academy dari ikon di layar utama.
           </li>
         </ol>
         <p className="mt-3 text-[13px] font-semibold text-[#8a7a9c]">Di Chrome iPad/iPhone, tombol Bagikan ada di kanan atas bilah alamat.</p>
@@ -123,7 +123,7 @@ export function InstallBanner() {
       <Image src="/icons/icon-192.png" alt="" width={48} height={48} className="size-12 rounded-[14px]" />
       <span className="min-w-0 flex-1">
         <span className="block" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK, lineHeight: 1.15 }}>
-          Pasang Rumila di layar utama
+          Pasang Rinoya Academy di layar utama
         </span>
         <span className="block text-[12px] font-bold text-[#8a7a9c]">Buka seperti aplikasi, layar penuh.</span>
       </span>

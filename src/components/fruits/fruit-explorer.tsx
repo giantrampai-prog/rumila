@@ -37,7 +37,7 @@ export default function FruitExplorer() {
  return <main className="fruit-app">
   <header className="fruit-header">
    {fruit?<button className="fruit-back" onClick={back}><Icon name="arrow_back" size={22}/><span>Katalog buah</span></button>:<Link href="/beranda/edukasi" className="fruit-back"><Icon name="arrow_back" size={22}/><span>Edukasi</span></Link>}
-   <Link href="/beranda" className="fruit-brand">RUMILA<span>●</span></Link>
+   <Link href="/beranda" className="fruit-brand">RINOYA<span>●</span></Link>
    <button className="fruit-profile" onClick={()=>openSheet({kind:'members'})} aria-label="Ganti profil"><Avatar name={me.name} c={me.c} size={32}/><span className="fruit-profile-name">{me.name}</span><Icon name="expand_more" size={20}/></button>
   </header>
   <div className="fruit-page">
@@ -55,7 +55,7 @@ export default function FruitExplorer() {
      {!list.length&&<div className="fruit-no-results"><Icon name="search_off" size={40}/><h3>Buahnya belum ketemu.</h3><p>Coba nama yang lain atau lihat semua buah.</p><button className="fruit-button" onClick={()=>{setQuery('');setGroup('all');}}>Lihat semua buah</button></div>}
     </section>
    </>}
-   <footer className="fruit-footer"><details><summary>Sumber belajar</summary>{FRUIT_SOURCES.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.name}<Icon name="open_in_new" size={15}/></a>)}<p>Gambar buah dibuat khusus untuk Rumila dengan GPT Image.</p></details>{me.admin&&<details className="fruit-recording-kit"><summary><Icon name="mic" size={18}/>Naskah & rekaman suara</summary><p>48 naskah buah, pembuka, dan penutup. Rekaman dapat ditambahkan satu per satu setelah dibuat.</p><div><a href="/fruits/narasi/paket-narasi-buah.zip" download>Unduh paket lengkap ZIP</a><a href="/fruits/narasi/narasi-buah.txt" download>Unduh semua naskah TXT</a><a href="/fruits/narasi/narasi-buah.csv" download>Unduh CSV</a><a href="/fruits/narasi/panduan-suara.txt" download>Panduan suara</a></div></details>}</footer>
+   <footer className="fruit-footer"><details><summary>Sumber belajar</summary>{FRUIT_SOURCES.map(s=><a key={s.url} href={s.url} target="_blank" rel="noreferrer">{s.name}<Icon name="open_in_new" size={15}/></a>)}<p>Gambar buah dibuat khusus untuk Rinoya Academy dengan GPT Image.</p></details>{me.admin&&<details className="fruit-recording-kit"><summary><Icon name="mic" size={18}/>Naskah & rekaman suara</summary><p>48 naskah buah, pembuka, dan penutup. Rekaman dapat ditambahkan satu per satu setelah dibuat.</p><div><a href="/fruits/narasi/paket-narasi-buah.zip" download>Unduh paket lengkap ZIP</a><a href="/fruits/narasi/narasi-buah.txt" download>Unduh semua naskah TXT</a><a href="/fruits/narasi/narasi-buah.csv" download>Unduh CSV</a><a href="/fruits/narasi/panduan-suara.txt" download>Panduan suara</a></div></details>}</footer>
   </div>
  </main>;
 }
@@ -71,8 +71,8 @@ function FruitDetail({fruit,admin,memberId,autoPlay,choose}:{fruit:Fruit;admin:b
     <div id="fruit-media-panel" role="tabpanel" aria-labelledby={`fruit-tab-${view}`}>
      {view==='3d'?<Viewer fruit={fruit}/>:<figure className="fruit-photo-stage">{photo?<Image src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} unoptimized priority/>:<p>Gambar buah sedang disiapkan.</p>}</figure>}
     </div>
-    <p className="fruit-model-note">{view==='3d'?'Putar dan amati buah utuhnya. Bentuk dan warnanya mengacu pada gambar buah Rumila.':'Gambar realistis khusus Rumila. Buah utuh dan potongannya membantu kita mengenal bagian dalamnya.'}</p>
-    {photo&&<details className="fruit-photo-credit"><summary>Tentang gambar {fruit.name}</summary><p>Ilustrasi realistis yang dibuat dengan GPT Image khusus untuk Rumila. Model 3D mengikuti jenis, bentuk, dan warna buah pada gambar. Bentuk serta warna buah di alam dapat bervariasi.</p></details>}
+    <p className="fruit-model-note">{view==='3d'?'Putar dan amati buah utuhnya. Bentuk dan warnanya mengacu pada gambar buah Rinoya Academy.':'Gambar realistis khusus Rinoya Academy. Buah utuh dan potongannya membantu kita mengenal bagian dalamnya.'}</p>
+    {photo&&<details className="fruit-photo-credit"><summary>Tentang gambar {fruit.name}</summary><p>Ilustrasi realistis yang dibuat dengan GPT Image khusus untuk Rinoya Academy. Model 3D mengikuti jenis, bentuk, dan warna buah pada gambar. Bentuk serta warna buah di alam dapat bervariasi.</p></details>}
     <div className="fruit-pagination"><button className="fruit-button" onClick={()=>choose(previous.id)} aria-label={`Buah sebelumnya: ${previous.name}`}><Icon name="chevron_left"/>{previous.name}</button><span>Jelajahi buah lainnya</span><button className="fruit-button" onClick={()=>choose(next.id)} aria-label={`Buah berikutnya: ${next.name}`}>{next.name}<Icon name="chevron_right"/></button></div>
    </section>
    <aside className="fruit-info" aria-label={`Tentang ${fruit.name}`}>

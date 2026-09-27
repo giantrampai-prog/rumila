@@ -24,7 +24,7 @@ const KHUSUS: BuahStop[] = [
     title: "Kebun Buah",
     at: "plaza",
     lines: [
-      "Halo, penjelajah cilik! Selamat datang di Kebun Buah Rumila.",
+      "Halo, penjelajah cilik! Selamat datang di Kebun Buah Rinoya.",
       "Hari ini kita akan berjalan-jalan keliling kebun dan berkenalan dengan buah-buahan dari dekat. Perhatikan warna, bentuk, dan kulitnya, ya!",
     ],
   },

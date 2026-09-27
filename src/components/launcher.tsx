@@ -206,7 +206,7 @@ export function LauncherHeader() {
           className="flex size-[60px] shrink-0 items-center justify-center rounded-[18px] bg-white"
           style={{ boxShadow: play ? "0 4px 0 rgba(43,29,78,.1)" : "0 1px 2px rgba(31,48,68,.04), 0 8px 20px rgba(31,48,68,.06)" }}
         >
-          <Image src="/brand/rumila-mark.png" alt="Rumila" width={46} height={42} priority />
+          <Image src="/brand/rinoya-mark.png" alt="Rinoya Academy" width={46} height={46} priority />
         </Link>
         <div className="flex flex-col">
           <h1

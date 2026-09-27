@@ -687,7 +687,7 @@ export class GardenEngine {
     const gz = -H;
     for (const s of [-1, 1]) wood.add(new T.BoxGeometry(0.45, 4.6, 0.45), mat(s * 3, 2.3, gz), '#b99a7a', { uv: [0.5, 3] });
     wood.add(new T.BoxGeometry(7.2, 0.4, 0.5), mat(0, 4.7, gz), '#b99a7a', { uv: [4, 0.3] });
-    const gateTex = signTex('Kebun Buah Rumila', '#e8701a');
+    const gateTex = signTex('Kebun Buah Rinoya', '#e8701a');
     this.textures.push(gateTex);
     const gate = new T.Mesh(new T.PlaneGeometry(5.4, 1.6), new T.MeshStandardMaterial({ map: gateTex, roughness: 0.9 }));
     gate.position.set(0, 3.9, gz + 0.3);

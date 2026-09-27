@@ -83,7 +83,7 @@ export function AnatomyAssetReview() {
   },[retry]);
   const view=(angle:number)=>{setRotate(false);controls.current?.view(angle);};
   return <main className="anatomy-review">
-    <header><Link href="/jelajah-tubuh" className="ar-brand">RUMILA<span>●</span></Link><span className="ar-status">Studio aset · pratinjau pengembangan</span><Link href="/jelajah-tubuh">Kembali ke Jelajah Tubuh →</Link></header>
+    <header><Link href="/jelajah-tubuh" className="ar-brand">RINOYA<span>●</span></Link><span className="ar-status">Studio aset · pratinjau pengembangan</span><Link href="/jelajah-tubuh">Kembali ke Jelajah Tubuh →</Link></header>
     <section className="ar-heading"><div><p>GAMBAR GPT → REKONSTRUKSI 3D</p><h1>Jantung, dari segala sisi.</h1></div><span>Putar, perbesar, dan periksa bentuknya.</span></section>
     <div className="ar-workspace">
       <aside><h2>01 · Referensi GPT</h2><Image priority src="/anatomy/references/heart-gpt-reference.png" alt="Referensi jantung dengan warna jaringan alami, dibuat dengan GPT" width={1254} height={1254}/><p>Acuan warna dan detail permukaan.</p><h2>02 · Geometri 3D</h2><p>Rekonstruksi Hunyuan3D 2.1 dari gambar di atas. Bentuk ini memiliki volume dan bisa diputar.</p><dl><div><dt>Model mentah</dt><dd>3.270.224 segitiga</dd></div><div><dt>Pratinjau</dt><dd>{triangles?triangles.toLocaleString('id-ID')+' segitiga':'Memuat…'}</dd></div></dl><p className="ar-note">Material netral untuk memeriksa bentuk. Tekstur alami dan bagian dalam belum selesai; model belum ditinjau secara anatomis.</p><a href="/anatomy/review/heart-shape.glb" download>Unduh model GLB ↓</a></aside>

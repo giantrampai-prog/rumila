@@ -81,7 +81,7 @@ export function MascotBubble({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-end gap-2">
       <div className="flex size-[52px] shrink-0 items-center justify-center rounded-[18px] bg-white shadow-[0_3px_0_rgba(43,29,78,.08)]">
-        <Image src="/brand/rumila-mark.png" alt="" width={36} height={33} />
+        <Image src="/brand/rinoya-mark.png" alt="" width={38} height={38} />
       </div>
       <div
         className="relative rounded-[18px] rounded-bl-md bg-white px-3.5 py-2.5 shadow-[0_3px_0_rgba(43,29,78,.08)]"

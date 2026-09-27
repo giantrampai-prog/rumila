@@ -6,7 +6,7 @@ Bacakan dalam bahasa Indonesia sebagai pemandu belajar anak usia 4–9 tahun. Su
 
 00. PEMBUKA — pembuka.mp3
 
-Halo, petualang kecil! Selamat datang di Kebun Buah Rumila. Di sini, kita akan berkenalan dengan buah-buahan yang beragam. Ada yang bulat, ada yang panjang, ada yang bermahkota, dan ada juga yang berambut! Pilih satu buah, lalu putar modelnya dengan jarimu. Perhatikan bentuk dan warnanya. Kamu juga bisa mendengarkan ceritanya. Siap memulai petualangan? Yuk, pilih buah pertamamu!
+Halo, petualang kecil! Selamat datang di Kebun Buah Rinoya. Di sini, kita akan berkenalan dengan buah-buahan yang beragam. Ada yang bulat, ada yang panjang, ada yang bermahkota, dan ada juga yang berambut! Pilih satu buah, lalu putar modelnya dengan jarimu. Perhatikan bentuk dan warnanya. Kamu juga bisa mendengarkan ceritanya. Siap memulai petualangan? Yuk, pilih buah pertamamu!
 
 ================================================================
 
@@ -300,4 +300,4 @@ Masih keluarga jambu, tetapi punya ciri sendiri. Ini jambu bol! Jambu bol memili
 
 49. PENUTUP — penutup.mp3
 
-Hore, hari ini kita sudah berkenalan dengan buah-buahan! Setiap buah punya bentuk, warna, dan ciri yang berbeda. Buah mana yang paling menarik perhatianmu? Ceritakan kepada orang di rumah, ya. Nanti kita bisa kembali untuk bertemu buah yang lain. Sampai jumpa di Kebun Buah Rumila!
+Hore, hari ini kita sudah berkenalan dengan buah-buahan! Setiap buah punya bentuk, warna, dan ciri yang berbeda. Buah mana yang paling menarik perhatianmu? Ceritakan kepada orang di rumah, ya. Nanti kita bisa kembali untuk bertemu buah yang lain. Sampai jumpa di Kebun Buah Rinoya!

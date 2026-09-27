@@ -19,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rumila — Rumah digital keluarga",
-  description: "Rumila — rumah digital untuk keluarga bertumbuh bersama.",
+  title: "Rinoya Academy — Jelajahi, belajar, bermain",
+  description: "Rinoya Academy — petualangan 3D, game, dan edukasi untuk anak.",
   icons: {
     icon: [
       { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
   },
   // iOS: buka layar penuh seperti aplikasi saat dipasang dari "Tambah ke Layar Utama"
-  appleWebApp: { capable: true, title: "Rumila", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "Rinoya", statusBarStyle: "default" },
   other: { "mobile-web-app-capable": "yes" },
 };
 

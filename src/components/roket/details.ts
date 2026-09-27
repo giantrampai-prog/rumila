@@ -364,7 +364,7 @@ export function buildSite(low: boolean) {
     std(0xeef0f2),
     std(0x9aa0aa),
     std(0xeef0f2),
-    new THREE.MeshStandardMaterial({ map: stripesTex("RUMILA"), roughness: 0.7 }),
+    new THREE.MeshStandardMaterial({ map: stripesTex("RINOYA"), roughness: 0.7 }),
     std(0xeef0f2),
   ]);
   vab.position.y = 2.5;
@@ -500,13 +500,13 @@ export function rocketBodyTex(stage: 1 | 2) {
     g.fillStyle = "rgba(120,130,150,0.4)";
     for (let y = 8; y < h; y += 96) for (let x = 4; x < w; x += 16) g.fillRect(x, y, 3, 3);
     if (stage === 1) {
-      // tulisan RUMILA vertikal + bendera
+      // tulisan RINOYA vertikal + bendera
       g.save();
       g.translate(w * 0.25, h * 0.2);
       g.rotate(Math.PI / 2);
       g.fillStyle = "#1f2a4a";
       g.font = "bold 92px system-ui, sans-serif";
-      g.fillText("RUMILA", 0, 0);
+      g.fillText("RINOYA", 0, 0);
       g.restore();
       // bendera Merah Putih besar di dua sisi roket
       for (const fx of [w * 0.52, w * 0.02]) {

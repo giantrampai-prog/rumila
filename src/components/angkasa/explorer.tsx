@@ -906,9 +906,9 @@ export function Explorer({
       <Link
         href="/beranda"
         className="ak-wordmark"
-        aria-label="Kembali ke Beranda Rumila"
+        aria-label="Kembali ke Beranda Rinoya Academy"
       >
-        RUMILA
+        RINOYA
       </Link>
       <nav
         aria-label="Navigasi modul"

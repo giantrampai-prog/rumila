@@ -348,7 +348,7 @@ function patchTex(kind: "flag" | "mission") {
       g.strokeRect(0, 0, w, h);
       return;
     }
-    // logo misi RUMILA: lingkaran biru, roket & orbit
+    // logo misi RINOYA: lingkaran biru, roket & orbit
     g.fillStyle = "#1f3a8a";
     g.beginPath();
     g.arc(w / 2, h / 2, w / 2 - 2, 0, TAU);
@@ -367,7 +367,7 @@ function patchTex(kind: "flag" | "mission") {
     g.fillStyle = "#ffffff";
     g.font = "bold 22px system-ui, sans-serif";
     g.textAlign = "center";
-    g.fillText("RUMILA", w / 2, h - 18);
+    g.fillText("RINOYA", w / 2, h - 18);
   });
 }
 
@@ -391,7 +391,7 @@ function nameTex(name: string) {
  * Agam, astronaut cilik Rumila (mengikuti gambar karakter): helm gelembung kaca bening memperlihatkan
  * wajah anak (mata cokelat besar, rambut cokelat), baju putih beraksen oranye & biru dongker, papan nama
  * "AGAM", kotak kendali dada berlampu biru, sabuk & pelindung lutut dongker, sepatu bot putih-oranye,
- * ransel penunjang hidup, bendera Merah Putih di bahu kiri dan logo misi RUMILA di bahu kanan.
+ * ransel penunjang hidup, bendera Merah Putih di bahu kiri dan logo misi RINOYA di bahu kanan.
  */
 export function buildAstronaut() {
   const a = new THREE.Group();
@@ -562,7 +562,7 @@ export function buildAstronaut() {
   antenna.position.set(0.1, 0.7, -0.2);
   a.add(packLid, antenna);
 
-  // bendera Merah Putih di bahu kiri & logo misi RUMILA di bahu kanan
+  // bendera Merah Putih di bahu kiri & logo misi RINOYA di bahu kanan
   const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.07, 0.046), new THREE.MeshStandardMaterial({ map: patchTex("flag"), roughness: 0.8 }));
   flag.position.set(-0.19, 0.47, 0.03);
   flag.rotation.y = -1.25;

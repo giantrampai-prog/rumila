@@ -25,7 +25,7 @@ export const TOUR: TourStop[] = [
     id: "intro",
     title: "Briefing misi",
     lines: [
-      "Selamat datang di pesawat antariksa Rumila, penjelajah cilik! Aku pemandumu dalam perjalanan kali ini.",
+      "Selamat datang di pesawat antariksa Rinoya, penjelajah cilik! Aku pemandumu dalam perjalanan kali ini.",
       "Hari ini kita dapat misi istimewa: mengunjungi keluarga besar Matahari, dari planet yang paling panas sampai yang paling jauh dan dingin.",
       "Di setiap persinggahan, perhatikan baik-baik, ya. Ada fakta seru yang bisa kamu ceritakan ke Ayah dan Ibu nanti!",
       "Satu rahasia sebelum berangkat: jarak antarplanet di tur ini kita rapatkan, dan pesawat kita super cepat. Aslinya, cahaya Matahari saja butuh sekitar 8 menit untuk sampai ke Bumi.",
@@ -155,7 +155,7 @@ export const TOUR: TourStop[] = [
     lines: [
       "Misi selesai, penjelajah hebat! Kamu sudah mengunjungi seluruh keluarga besar Matahari.",
       "Dari sini, lihat betapa luasnya tata surya kita. Padahal, ia hanyalah satu titik kecil di galaksi Bima Sakti.",
-      "Pesawat Rumila siap mengantarmu lagi kapan saja. Pilih planet favoritmu, atau jelajahi bintang dan galaksi. Sampai jumpa di petualangan berikutnya!",
+      "Pesawat Rinoya siap mengantarmu lagi kapan saja. Pilih planet favoritmu, atau jelajahi bintang dan galaksi. Sampai jumpa di petualangan berikutnya!",
     ],
   },
 ];
