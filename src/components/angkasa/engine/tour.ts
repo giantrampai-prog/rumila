@@ -62,6 +62,16 @@ export class TourController {
   /** arah belokan jalur terbang (-1 kiri … 1 kanan) untuk memiringkan kamera */
   private turn = 0;
   private upTmp = new THREE.Vector3();
+  /** pusat tujuan saat perjalanan dimulai (tujuan terus mengorbit; jalur ikut bergeser sebesar perpindahannya) */
+  private center0 = new THREE.Vector3();
+  /** arah & jarak pandang saat berangkat (pandangan berbelok mulus dari sini) */
+  private dir0 = new THREE.Vector3();
+  private look0 = 1;
+  /** titik pandang yang diperhalus (menghilangkan sentakan kecil arah kamera) */
+  private lookSmooth = new THREE.Vector3();
+  private v1 = new THREE.Vector3();
+  private qTmp = new THREE.Quaternion();
+  private qId = new THREE.Quaternion();
 
   constructor(
     private host: Host,
@@ -168,12 +178,18 @@ export class TourController {
       false,
       "centripetal",
     );
+    this.curve.arcLengthDivisions = 1500; // tabel panjang busur rapat: laju terbang rata, tanpa getaran kecil
     this.travelDur = this.ctx.reducedMotion()
       ? 0
-      : Math.max(2.4, Math.min(7, span / 8)) * (this.cinematic ? 1.5 : 1);
+      : Math.max(3, Math.min(8, 2 + span / 9)) * (this.cinematic ? 1.5 : 1);
     this.travelT = 0;
     this.phase = this.travelDur > 0 && span > 0.05 ? "travel" : "dwell";
     this.lookFrom.copy(this.ctx.controls.target);
+    this.lookSmooth.copy(this.ctx.controls.target);
+    this.center0.copy(center);
+    this.dir0.subVectors(this.lookFrom, start);
+    this.look0 = Math.max(0.5, this.dir0.length());
+    this.dir0.normalize();
     this.dwellT = 0;
     this.dwellDur = dwellSeconds(stop);
     const rel = pos.clone().sub(center);
@@ -216,7 +232,8 @@ export class TourController {
     const stop = TOUR[this.index];
     const center = this.centerOf(stop.id, this.tmp);
     const wide = stop.id === "intro" || stop.id === "outro";
-    const speed = this.ctx.reducedMotion() ? 0 : (wide ? 0.035 : 0.09) * (this.cinematic ? 0.5 : 1); // rad/detik
+    // rad/detik; dinaikkan perlahan setelah tiba agar tidak ada sentakan dari diam → mengitari
+    const speed = this.ctx.reducedMotion() ? 0 : (wide ? 0.035 : 0.09) * (this.cinematic ? 0.5 : 1) * smooth(Math.min(1, this.dwellT / 3));
     this.orbitAngle += speed * dt;
     const cam = this.host.camera;
     let r = this.orbitRadius,
@@ -224,7 +241,7 @@ export class TourController {
     if (this.cinematic) {
       // Mendekat pelan selama singgah + melayang naik-turun halus.
       const p = smooth(Math.min(1, this.dwellT / Math.max(4, this.dwellDur)));
-      r *= wide ? 1.02 - 0.04 * p : 1.05 - 0.1 * p;
+      r *= wide ? 1 - 0.04 * p : 1 - 0.1 * p;
       h += Math.sin(this.dwellT * 0.3) * this.orbitRadius * 0.015;
       this.settleCamera(Math.min(1, dt * 1.5));
     }
@@ -244,30 +261,35 @@ export class TourController {
     if (this.phase === "travel" && this.curve) {
       this.travelT = Math.min(1, this.travelT + dt / this.travelDur);
       const k = easeInOut(this.travelT);
-      const at = (u: number) =>
-        this.curve!.getPointAt(THREE.MathUtils.clamp(u, 0, 1));
-      cam.position.copy(at(k));
-      // POV: awalnya menghadap arah gerak, lalu pandangan berbelok ke tujuan.
-      const ahead = at(k + 0.04);
       const center = this.centerOf(stop.id, this.tmp);
-      center.y -= this.lift;
-      const w = smooth(Math.min(1, Math.max(0, (this.travelT - 0.2) / 0.5)));
-      const look = ahead
-        .clone()
-        .add(ahead.clone().sub(cam.position).setLength(4))
-        .lerp(center, w);
-      if (this.travelT < 0.15)
-        look.lerp(this.lookFrom, 1 - this.travelT / 0.15);
-      this.ctx.controls.target.copy(look);
+      // Tujuan bergerak di orbitnya selama perjalanan: jalur ikut bergeser bertahap → tiba tepat di titik singgah.
+      const drift = this.v1.subVectors(center, this.center0).multiplyScalar(k);
+      cam.position.copy(this.curve.getPointAt(k)).add(drift);
+      // Arah pandang: berputar mulus (slerp) dari arah semula ke objek tujuan. Tidak menghadap arah gerak lebih dulu:
+      // bila tujuan ada di belakang, itu memaksa putaran ±180° yang cepat dan memusingkan.
+      const b = smooth(Math.min(1, this.travelT / 0.7));
+      const toC = center.clone().setY(center.y - this.lift).sub(cam.position);
+      const dC = toC.length();
+      toC.divideScalar(Math.max(1e-4, dC));
+      if (this.dir0.dot(toC) < -0.999) this.dir0.applyAxisAngle(this.upTmp.set(0, 1, 0), 0.01); // hindari sumbu tak tentu
+      this.qTmp.setFromUnitVectors(this.dir0, toC);
+      const dir = this.dir0.clone().applyQuaternion(this.qId.slerp(this.qTmp, b));
+      this.qId.identity();
+      const dist = this.look0 + (dC - this.look0) * b;
+      const look = cam.position.clone().addScaledVector(dir, Math.max(0.3, dist));
+      // Peredam: titik pandang mengejar sasaran dengan pegas kritis (sisa sentakan hilang), menyatu di akhir.
+      const damp = 1 - Math.exp(-dt * (6 + 18 * b * b));
+      this.lookSmooth.lerp(look, this.travelT >= 1 ? 1 : damp);
+      this.ctx.controls.target.copy(this.lookSmooth);
       if (this.cinematic) {
         // Warp: pandangan melebar saat melesat, kembali normal saat tiba.
         const pulse = Math.sin(Math.PI * k);
-        cam.fov = this.baseFov + 6 * pulse;
+        cam.fov = this.baseFov + 5 * pulse * pulse;
         cam.updateProjectionMatrix();
         // Miring ke arah belokan, seperti pesawat.
-        const roll = -this.turn * 0.06 * Math.sin(Math.PI * this.travelT);
-        const dir = look.clone().sub(cam.position).normalize();
-        cam.up.set(0, 1, 0).applyAxisAngle(dir, roll).normalize();
+        const roll = -this.turn * 0.05 * Math.sin(Math.PI * this.travelT);
+        const fwd = this.lookSmooth.clone().sub(cam.position).normalize();
+        cam.up.set(0, 1, 0).applyAxisAngle(fwd, roll).normalize();
       }
       if (this.travelT >= 1) this.phase = "dwell";
       return;

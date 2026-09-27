@@ -28,6 +28,8 @@ export interface Body {
   atmosphere?: THREE.Mesh;
   rings?: THREE.Mesh;
   proxy: THREE.Mesh;
+  /** peta warna permukaan sudah tampil (bukan bola polos) */
+  mapReady?: boolean;
   /** perbarui arah/posisi Matahari (dunia) untuk shader */
   setSun(world: THREE.Vector3): void;
   /** muat tekstur detail 2K (lazy) */
@@ -202,6 +204,9 @@ function patchNightLights(
  * Permukaan Matahari hidup: peta citra dicampur dua kali dengan geseran berlawanan (plasma bergolak), bintik
  * granulasi halus berdenyut, dan tepi lebih gelap (limb darkening) seperti foto Matahari sungguhan.
  */
+/** benda berbatu yang diberi relief (kekuatan bump) */
+const BUMPY: Record<string, number> = { mercury: 2.2, moon: 2.2, mars: 1.4, pluto: 1 };
+
 function patchSunSurface(mat: THREE.MeshBasicMaterial, time: { value: number }) {
   mat.onBeforeCompile = (sh) => {
     sh.uniforms.uTime = time;
@@ -209,21 +214,36 @@ function patchSunSurface(mat: THREE.MeshBasicMaterial, time: { value: number }) 
       .replace("#include <common>", "#include <common>\nvarying float vLimb;")
       .replace("#include <begin_vertex>", "#include <begin_vertex>\nvLimb = abs(normalize(normalMatrix * normal).z);");
     sh.fragmentShader = sh.fragmentShader
-      .replace("#include <common>", "#include <common>\nuniform float uTime;\nvarying float vLimb;")
+      .replace(
+        "#include <common>",
+        `#include <common>
+         uniform float uTime;
+         varying float vLimb;
+         float sunHash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+         float sunNoise(vec2 p) {
+           vec2 i = floor(p), f = fract(p);
+           f = f * f * (3.0 - 2.0 * f);
+           return mix(mix(sunHash(i), sunHash(i + vec2(1.0, 0.0)), f.x), mix(sunHash(i + vec2(0.0, 1.0)), sunHash(i + vec2(1.0, 1.0)), f.x), f.y);
+         }`,
+      )
       .replace(
         "#include <map_fragment>",
         `#ifdef USE_MAP
-           vec2 uvA = vMapUv + vec2(uTime * 0.0021, sin(uTime * 0.05) * 0.002);
-           vec2 uvB = vMapUv * 1.7 + vec2(-uTime * 0.0016, uTime * 0.0011);
+           vec2 uvA = vec2(vMapUv.x + uTime * 0.0021, clamp(vMapUv.y + sin(uTime * 0.05) * 0.002, 0.001, 0.999));
+           // lapisan kedua: hanya arah bujur yang diskalakan (2×, bulat → tanpa sambungan; peta diulang di arah itu).
+           // Arah lintang tidak boleh keluar 0..1: di luar itu tepi peta "meleleh" menjadi garis-garis.
+           vec2 uvB = vec2(vMapUv.x * 2.0 - uTime * 0.0016, clamp(vMapUv.y + sin(uTime * 0.03) * 0.004, 0.001, 0.999));
            vec4 a = texture2D(map, uvA);
            vec4 b = texture2D(map, uvB);
            vec4 sampledDiffuseColor = mix(a, b, 0.4);
-           float gran = 0.5 + 0.5 * sin(vMapUv.x * 900.0 + uTime * 0.8 + sin(vMapUv.y * 700.0 - uTime * 0.6) * 2.0) * sin(vMapUv.y * 820.0 + uTime * 0.7);
-           sampledDiffuseColor.rgb *= 0.88 + 0.22 * gran;
+           // granulasi: sel-sel konveksi kecil (derau nilai 2 oktaf, berdenyut pelan), bukan pola garis
+           vec2 gp = vMapUv * vec2(520.0, 260.0);
+           float gran = mix(sunNoise(gp + uTime * 0.15), sunNoise(gp * 2.1 - uTime * 0.23), 0.4);
+           sampledDiffuseColor.rgb *= 0.86 + 0.26 * gran;
            diffuseColor *= sampledDiffuseColor;
          #endif
          // limb darkening: tepi piringan lebih gelap & lebih jingga
-         diffuseColor.rgb *= mix(vec3(0.62, 0.38, 0.16), vec3(1.08, 1.02, 0.95), pow(vLimb, 0.55));`,
+         diffuseColor.rgb *= mix(vec3(0.6, 0.36, 0.15), vec3(1.12, 1.05, 0.96), pow(vLimb, 0.5));`,
       );
   };
 }
@@ -242,7 +262,9 @@ export function atmosphereMaterial(
     },
     vertexShader: `varying vec3 vN; varying vec3 vW; void main(){ vN = normalize(mat3(modelMatrix)*normal); vec4 w = modelMatrix*vec4(position,1.0); vW = w.xyz; gl_Position = projectionMatrix*viewMatrix*w; }`,
     fragmentShader: `uniform vec3 uColor; uniform vec3 uSunWorld; uniform float uStrength; varying vec3 vN; varying vec3 vW;
-      void main(){ vec3 V = normalize(cameraPosition - vW); float fr = pow(1.0 - max(dot(normalize(vN), V), 0.0), 2.6);
+      void main(){ vec3 V = normalize(cameraPosition - vW); float d = max(dot(normalize(vN), V), 0.0);
+        // paling terang tepat di tepi planet, memudar lembut ke luar (tanpa garis tepi cangkang yang tajam)
+        float fr = pow(1.0 - d, 2.6) * smoothstep(0.0, 0.26, d);
         float day = smoothstep(-0.25, 0.4, dot(normalize(vN), normalize(uSunWorld - vW)));
         gl_FragColor = vec4(uColor, fr * day * 0.9 * uStrength); }`,
     transparent: true,
@@ -459,10 +481,22 @@ export function createBody(
   // Tekstur peta: lo dulu (ringan), hi saat didekati (lazy).
   const applyMap = async (url: string) => {
     const t = await ctx.loadTexture(url);
-    if (o.id === "sun") (mat as THREE.MeshBasicMaterial).map = t;
-    else std.map = t;
+    if (o.id === "sun") {
+      t.wrapS = THREE.RepeatWrapping; // permukaan bergeser memutar (lihat patchSunSurface)
+      t.needsUpdate = true;
+      (mat as THREE.MeshBasicMaterial).map = t;
+    }
+    else {
+      std.map = t;
+      // Relief permukaan berbatu (kawah, lembah) dari terang-gelap peta warna: terlihat di dekat terminator.
+      if (BUMPY[o.id]) {
+        std.bumpMap = t;
+        std.bumpScale = BUMPY[o.id];
+      }
+    }
     (mat as THREE.MeshStandardMaterial).color?.set(0xffffff);
     mat.needsUpdate = true;
+    body.mapReady = true;
   };
   const lo = opt.hi ? o.texture.hi : o.texture.lo;
   if (lo) applyMap(lo).catch(() => {});
@@ -544,15 +578,17 @@ export function createBody(
         depthWrite: false,
         roughness: 1,
       });
+      const clouds = new THREE.Mesh(cGeo, cMat);
+      clouds.visible = false; // tanpa peta awan, lapisan ini hanya bola putih: tampil setelah peta dimuat
       const cloudsUrl = o.texture.clouds;
       const setClouds = (url: string) =>
         ctx.loadTexture(url, { color: false }).then((t) => {
           cMat.alphaMap = t;
           cMat.needsUpdate = true;
+          clouds.visible = true;
         });
       setClouds(opt.hi ? cloudsUrl : loOf(cloudsUrl)).catch(() => {});
       if (!opt.hi) detailExtras.push(() => setClouds(cloudsUrl));
-      const clouds = new THREE.Mesh(cGeo, cMat);
       clouds.name = "earth.clouds";
       clouds.scale.setScalar(r);
       spin.add(clouds);
@@ -562,7 +598,7 @@ export function createBody(
     const aGeo = new THREE.SphereGeometry(1.045, segs, Math.round(segs * 0.66));
     const aUniform = { value: new THREE.Vector3() };
     sunUniformTargets.push(aUniform);
-    const aMat = atmosphereMaterial(new THREE.Color(0x5aa0ff), aUniform, 1);
+    const aMat = atmosphereMaterial(new THREE.Color(0x7db6ff), aUniform, 1.25);
     const atm = new THREE.Mesh(aGeo, aMat);
     atm.name = "earth.atmosphere";
     atm.scale.setScalar(r);

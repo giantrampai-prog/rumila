@@ -160,8 +160,11 @@ export class SolarView implements ModeView {
         const now = b.orbitAnchor.getWorldPosition(this.tmp);
         const delta = now.clone().sub(this.followPrev);
         if (delta.lengthSq() > 0 && delta.lengthSq() < 100) {
-          this.camera.position.add(delta);
-          ctx.controls.target.add(delta);
+          // Sedang terbang ke objek: geser tujuannya (kamera tetap mulus); sudah tiba: ikut bergeser.
+          if (!ctx.shiftFlight(delta)) {
+            this.camera.position.add(delta);
+            ctx.controls.target.add(delta);
+          }
         }
         this.followPrev.copy(now);
       }

@@ -42,6 +42,8 @@ export interface EngineCtx {
     target: THREE.Vector3,
     ms?: number,
   ) => Promise<boolean>;
+  /** geser tujuan penerbangan yang sedang berjalan (objek tujuan mengorbit); false bila tidak sedang terbang */
+  shiftFlight: (delta: THREE.Vector3) => boolean;
   /** setengah sudut pandang efektif (memperhitungkan panel yang menutupi viewer) */
   fitHalfFov: () => number;
   controls: OrbitControls;
@@ -181,6 +183,12 @@ export class AngkasaEngine {
       clock: this.clock,
       loadTexture: (url, opts) => this.loadTexture(url, opts),
       flyTo: (pos, target, ms) => this.flyTo(pos, target, ms),
+      shiftFlight: (d) => {
+        if (!this.flight) return false;
+        this.flight.to[0].add(d);
+        this.flight.to[1].add(d);
+        return true;
+      },
       fitHalfFov: () => this.fitHalfFov(),
       controls: this.controls,
       reducedMotion: () => this.reducedMotion,
@@ -397,6 +405,12 @@ export class AngkasaEngine {
       this.controls.update();
       return Promise.resolve(true);
     }
+    // Lompatan jarak besar (tata surya → satu planet) diberi waktu lebih agar tidak terasa menyentak.
+    const d0 = cam.position.distanceTo(this.controls.target);
+    const d1 = pos.distanceTo(target);
+    const zoom = Math.abs(Math.log(Math.max(1e-3, d1) / Math.max(1e-3, d0)));
+    const travel = this.controls.target.distanceTo(target) / Math.max(d0, d1, 1e-3);
+    ms = Math.min(2800, ms * (1 + 0.28 * zoom + 0.25 * Math.min(2, travel)));
     return new Promise((resolve) => {
       this.flight = {
         token,
@@ -427,18 +441,35 @@ export class AngkasaEngine {
     f.done(false);
   }
 
+  private flyDir = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()];
   private stepFlight(now: number) {
     const f = this.flight;
     if (!f || !this.view) return;
     const t = Math.min(1, (now - f.t0) / f.ms);
     const k = easeInOut(t);
-    this.view.camera.position.lerpVectors(f.from[0], f.to[0], k);
-    this.controls.target.lerpVectors(f.from[1], f.to[1], k);
+    // Titik pandang berpindah sedikit lebih dulu (objek tujuan cepat ke tengah layar), lalu kamera mendekat.
+    const kt = easeInOut(Math.min(1, t * 1.25));
+    const target = this.controls.target.lerpVectors(f.from[1], f.to[1], kt);
+    // Jarak ke titik pandang berubah secara logaritmik (kecepatan zoom terasa konstan), arah diputar halus.
+    const [a, b, dir] = this.flyDir;
+    a.subVectors(f.from[0], f.from[1]);
+    b.subVectors(f.to[0], f.to[1]);
+    const la = Math.max(1e-4, a.length()),
+      lb = Math.max(1e-4, b.length());
+    a.divideScalar(la);
+    b.divideScalar(lb);
+    const cam = this.view.camera;
+    if (a.dot(b) < -0.95) cam.position.lerpVectors(f.from[0], f.to[0], k);
+    else {
+      dir.copy(a).lerp(b, k).normalize();
+      cam.position.copy(target).addScaledVector(dir, Math.exp(Math.log(la) + (Math.log(lb) - Math.log(la)) * k));
+    }
     if (t >= 1) {
       this.flight = null;
       f.done(true);
     }
   }
+
 
   /* ---------------- picking: tap vs drag ---------------- */
 

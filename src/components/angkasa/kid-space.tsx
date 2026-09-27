@@ -18,6 +18,7 @@ import { Certificate, type CertSpec } from "@/components/koding/certificate";
 import { fmtDate } from "@/components/koding/shared";
 import "@/components/koding/koding.css";
 import { installAudioUnlock } from "@/lib/audio-unlock";
+import { LoopMusic } from "@/lib/bgm";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
 import { useNarration } from "./panels/tour";
 import { TOUR } from "@/lib/angkasa/tour";
@@ -150,6 +151,10 @@ function ObjCard({ id }: { id: string }) {
   );
 }
 
+// Musik latar tur = musik misi Roket, pelan di bawah narasi, berulang tanpa putus (satu instans: elemen audio bersama).
+let tourMusic: LoopMusic | null = null;
+const music = () => (tourMusic ??= new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.23, loopStart: 3, loopEnd: 229, fade: 4 }));
+
 /** Tur terbang sinematik: 3D penuh, tanpa teks. Ketuk untuk jeda; narasi suara tetap jalan. */
 function KidTour() {
   const st = useAngkasa();
@@ -161,6 +166,13 @@ function KidTour() {
   useEffect(() => {
     if (st.tourIndex === last) markDone(st.memberId, "tur:tata-surya");
   }, [st.tourIndex, st.memberId, last]);
+  // ikut jeda/lanjut; mengecil pelan saat tur selesai; berhenti saat keluar tur
+  useEffect(() => {
+    if (finished) music().stop(3);
+    else if (st.tourPlaying) music().play();
+    else music().pause();
+  }, [st.tourPlaying, finished]);
+  useEffect(() => () => music().stop(1), []);
 
   return (
     <div className="pointer-events-none absolute inset-0" style={{ paddingTop: "max(12px, env(safe-area-inset-top))" }}>
@@ -450,8 +462,10 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   // Tempo kalem: tampilan tata surya 8 hari/detik; saat satu objek dilihat hampir diam
   // (kamera mengikuti objek, jadi orbit cepat membuat layar ikut berputar & memusingkan).
   useEffect(() => {
-    useAngkasa.getState().set({ speed: st.mode === "planet" ? 0.5 : 8 });
-  }, [st.mode]);
+    // Tur: planet bergeser pelan (2 hari/detik) agar kamera yang terbang & mengitari tetap tenang.
+    // Pembuka dekat Bumi: hampir diam (Bulan mengorbit Bumi ±27 hari; pada 8 hari/detik ia melesat & menutupi Bumi).
+    useAngkasa.getState().set({ speed: st.intro === "play" ? 0.3 : st.mode === "planet" ? 0.5 : st.mode === "tur" ? 2 : 8 });
+  }, [st.mode, st.intro]);
 
   // Rekaman suara diputar otomatis saat objek dibuka.
   const voiceObj = st.mode === "planet" ? st.selectedId : null;

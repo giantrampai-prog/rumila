@@ -194,14 +194,15 @@ function sunCorona(sun: Body) {
         const rr = rng(9);
         g.translate(w / 2, h / 2);
         g.globalCompositeOperation = "lighter";
-        for (let i = 0; i < 48; i++) {
+        // pita korona lebar & samar (seperti foto gerhana), bukan kilau bintang yang tajam
+        for (let i = 0; i < 26; i++) {
           const a = rr() * TAU;
-          const len = w * (0.22 + rr() * 0.28);
-          const wd = 2 + rr() * 6;
+          const len = w * (0.2 + rr() * 0.22);
+          const wd = 8 + rr() * 14;
           g.save();
           g.rotate(a);
           const grad = g.createLinearGradient(0, 0, len, 0);
-          grad.addColorStop(0, "rgba(255,210,140,0.35)");
+          grad.addColorStop(0, "rgba(255,225,170,0.22)");
           grad.addColorStop(1, "rgba(255,160,60,0)");
           g.fillStyle = grad;
           g.beginPath();
@@ -229,7 +230,8 @@ function sunCorona(sun: Body) {
 function asteroidBelt(count: number) {
   const r = rng(13);
   const geo = lumpyGeometry(7, 0.45, 1);
-  const mat = new THREE.MeshStandardMaterial({ color: 0x8c8176, roughness: 1, metalness: 0, flatShading: true });
+  // sedikit pancaran sendiri: sisi yang membelakangi Matahari abu-abu gelap, bukan siluet hitam pekat
+  const mat = new THREE.MeshStandardMaterial({ color: 0x9a8f84, emissive: 0x2a2622, roughness: 1, metalness: 0, flatShading: true });
   const mesh = new THREE.InstancedMesh(geo, mat, count);
   const inner = LEARNING.distance(2.15);
   const outer = LEARNING.distance(3.3);
@@ -244,7 +246,7 @@ function asteroidBelt(count: number) {
     p.set(Math.cos(a) * d, (r() - 0.5) * 0.7, -Math.sin(a) * d);
     e.set(r() * TAU, r() * TAU, r() * TAU);
     q.setFromEuler(e);
-    const k = 0.012 + Math.pow(r(), 3) * 0.045;
+    const k = 0.009 + Math.pow(r(), 3) * 0.032;
     s.set(k, k * (0.6 + r() * 0.5), k);
     m.compose(p, q, s);
     mesh.setMatrixAt(i, m);
@@ -352,6 +354,8 @@ export class SolarFx {
   private time = 0;
   /* intro kamera */
   private introT = 0;
+  private introWait = 0;
+  private introSide = 0;
   introDone = false;
 
   constructor(
@@ -455,12 +459,22 @@ export class SolarFx {
       finish();
       return false;
     }
-    if (this.introT === 0) earth.loadDetail(this.ctx).catch(() => {});
-    this.introT = Math.min(1, this.introT + dt / EARTH_INTRO_SEC);
+    if (this.introT === 0 && this.introWait === 0) earth.loadDetail(this.ctx).catch(() => {});
+    // Tunggu peta Bumi tampil (maks. 5 detik) agar pembuka tidak dimulai dengan bola polos.
+    const moon = this.bodies.get("moon");
+    const ready = earth.mapReady && (!moon || moon.mapReady);
+    if (!ready && this.introWait < 5) this.introWait += dt;
+    else this.introT = Math.min(1, this.introT + dt / EARTH_INTRO_SEC);
     const ep = earth.orbitAnchor.getWorldPosition(new THREE.Vector3());
     // dekat Bumi: dari sisi siang (antara Matahari & Bumi, sedikit ke samping & atas)
     const toSun = ep.clone().multiplyScalar(-1).normalize();
     const side = new THREE.Vector3(0, 1, 0).cross(toSun).normalize();
+    // geser ke sisi yang jauh dari Bulan agar Bulan tidak menutupi Bumi (sekali saja, lalu tetap)
+    if (this.introSide === 0) {
+      const mp = this.bodies.get("moon")?.orbitAnchor.getWorldPosition(new THREE.Vector3());
+      this.introSide = mp && mp.sub(ep).dot(side) > 0 ? -1 : 1;
+    }
+    side.multiplyScalar(this.introSide);
     const near = ep
       .clone()
       .add(toSun.clone().multiplyScalar(earth.radius * 3.2))
@@ -487,13 +501,15 @@ export class SolarFx {
       const p = 1 + Math.sin(this.time * 0.6) * 0.04;
       this.corona.halo.scale.setScalar(this.bodies.get("sun")!.radius * 8 * p);
       this.corona.rays.material.rotation = this.time * 0.01;
-      this.corona.rays.material.opacity = 0.65 + Math.sin(this.time * 0.9) * 0.15;
+      this.corona.rays.material.opacity = 0.42 + Math.sin(this.time * 0.5) * 0.08;
     }
     // Sabuk asteroid mengorbit pelan (periode ±4,6 tahun, sama arahnya dengan planet).
     this.belt.rotation.y = (days / 1680) * TAU;
     // Pembuka dari dekat Bumi: batu sabuk (diperbesar agar terlihat dari jauh) akan tampak seperti bongkahan
     // raksasa di belakang Bumi — tidak akurat. Baru muncul setelah kamera cukup jauh.
-    this.belt.visible = this.introDone || this.introT === 0 || this.introT > 0.55;
+    // Hal yang sama saat melihat satu planet dari dekat: sabuk hanya tampil di tampilan lebar tata surya.
+    const wide = camera.position.distanceTo(this.ctx.controls.target) > 7;
+    this.belt.visible = wide && (this.introDone || this.introT === 0 || this.introT > 0.55);
     this.tail?.update(dt);
     for (const t of this.trails) t.mat.uniforms.uAngle.value = ((orbitAngle(t.body.obj, days) % TAU) + TAU) % TAU;
   }
