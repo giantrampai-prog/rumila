@@ -103,6 +103,8 @@ export interface AngkasaState {
   tourIndex: number;
   tourPlaying: boolean;
   tourLine: number;
+  /** kamera tur sudah tiba di persinggahan (bukan sedang terbang) — untuk pop-up info */
+  tourArrived: boolean;
   tourNarration: boolean;
   /** Tur sinematik (tampilan anak): tanpa teks & label, objek dibingkai di tengah layar */
   tourCinematic: boolean;
@@ -203,6 +205,7 @@ export const useAngkasa = create<AngkasaState>()((set, get) => ({
   tourIndex: 0,
   tourPlaying: false,
   tourLine: 0,
+  tourArrived: false,
   tourNarration: true,
   tourCinematic: false,
   fx: false,

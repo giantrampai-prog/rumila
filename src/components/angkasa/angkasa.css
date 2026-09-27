@@ -348,3 +348,11 @@
 }
 /* Tampilan anak: label contoh asteroid/komet disembunyikan agar tata surya tidak ramai */
 .ak-kid .ak-label[data-id*="-example"] { display: none; }
+/* kartu fakta tur: melompat masuk dari bawah */
+@keyframes ak-popcard-in {
+  0% { opacity: 0; transform: translateY(26px) scale(.8); }
+  60% { opacity: 1; transform: translateY(-4px) scale(1.04); }
+  100% { opacity: 1; transform: none; }
+}
+.ak-popcard { animation: ak-popcard-in .5s cubic-bezier(.2,.9,.3,1.2) both; }
+@media (prefers-reduced-motion: reduce) { .ak-popcard { animation: none; } }

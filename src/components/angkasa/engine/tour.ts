@@ -17,6 +17,11 @@ import { sharedAudio } from "@/lib/audio-unlock";
 import type { Body } from "./bodies";
 import type { EngineCtx } from "./core";
 
+/** detik hening setelah narasi satu persinggahan selesai, sebelum terbang */
+const LEAVE_QUIET = 1.6;
+/** detik hening setelah tiba, sebelum narasi persinggahan dimulai */
+const ARRIVE_QUIET = 1.2;
+
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const easeInOut = (t: number) =>
   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -62,6 +67,8 @@ export class TourController {
   /** arah belokan jalur terbang (-1 kiri … 1 kanan) untuk memiringkan kamera */
   private turn = 0;
   private upTmp = new THREE.Vector3();
+  /** ≥0: sedang diam setelah narasi persinggahan selesai (detik) */
+  private linger = -1;
   /** pusat tujuan saat perjalanan dimulai (tujuan terus mengorbit; jalur ikut bergeser sebesar perpindahannya) */
   private center0 = new THREE.Vector3();
   /** arah & jarak pandang saat berangkat (pandangan berbelok mulus dari sini) */
@@ -181,9 +188,10 @@ export class TourController {
     this.curve.arcLengthDivisions = 1500; // tabel panjang busur rapat: laju terbang rata, tanpa getaran kecil
     this.travelDur = this.ctx.reducedMotion()
       ? 0
-      : Math.max(3, Math.min(8, 2 + span / 9)) * (this.cinematic ? 1.5 : 1);
+      : Math.max(3, Math.min(8, 2 + span / 9)) * (this.cinematic ? 1.3 : 1);
     this.travelT = 0;
     this.phase = this.travelDur > 0 && span > 0.05 ? "travel" : "dwell";
+    this.setArrived(this.phase === "dwell");
     this.lookFrom.copy(this.ctx.controls.target);
     this.lookSmooth.copy(this.ctx.controls.target);
     this.center0.copy(center);
@@ -207,6 +215,10 @@ export class TourController {
     if (!this.followAudio) this.forceSeek = true;
     this.followAudio = false;
     if (this.phase === "dwell") this.placeDwell(0);
+  }
+
+  private setArrived(v: boolean) {
+    if (useAngkasa.getState().tourArrived !== v) useAngkasa.getState().set({ tourArrived: v });
   }
 
   setPlaying(p: boolean) {
@@ -291,7 +303,10 @@ export class TourController {
         const fwd = this.lookSmooth.clone().sub(cam.position).normalize();
         cam.up.set(0, 1, 0).applyAxisAngle(fwd, roll).normalize();
       }
-      if (this.travelT >= 1) this.phase = "dwell";
+      if (this.travelT >= 1) {
+        this.phase = "dwell";
+        this.setArrived(true);
+      }
       return;
     }
     if (this.phase === "dwell") {
@@ -358,7 +373,15 @@ export class TourController {
       a.currentTime = this.pendingSeek;
       this.pendingSeek = null;
     }
-    if (a.paused && !a.ended && !this.playRequested) {
+    // Jeda antarpersinggahan: narasi diam selama terbang dan sesaat setelah tiba (hanya musik), baru mulai bicara.
+    // Tanpa ini narasi planet berikutnya langsung menyambung saat kamera masih di planet sebelumnya.
+    const flying = this.phase === "travel" || (this.phase === "dwell" && this.dwellT < ARRIVE_QUIET);
+    if (flying && this.index > 0) {
+      if (!a.paused) a.pause();
+      this.playRequested = false;
+      return false;
+    }
+    if (a.paused && !a.ended && !this.playRequested && this.linger < 0) {
       this.playRequested = true;
       a.play().catch((e: DOMException) => {
         // Diblokir browser (belum ada ketukan): coba lagi nanti, jangan tandai gagal selamanya.
@@ -390,7 +413,16 @@ export class TourController {
     const t = a.currentTime;
     const at = part.first + stopAt(part.cues, t);
     if (at > this.index) {
+      // narasi persinggahan ini selesai: diam sejenak (anak sempat melihat), lalu terbang ke berikutnya
+      if (this.linger < 0) {
+        this.linger = 0;
+        a.pause();
+      }
+      this.linger += dt;
+      if (this.linger < LEAVE_QUIET) return false;
+      this.linger = -1;
       this.followAudio = true;
+      this.pendingSeek = part.cues[at - part.first];
       st.set({ tourIndex: at, tourLine: 0 });
       return true;
     }

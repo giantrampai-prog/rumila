@@ -350,8 +350,10 @@ function ringMaterial(
         if (c.a < 0.02) discard;
         vec3 L = normalize(uSunWorld - vW);
         // bayangan planet: sinar dari titik cincin ke Matahari memotong bola planet?
-        vec3 oc = vW - uCenter; float b = dot(oc, L); float cc = dot(oc,oc) - uPlanetR*uPlanetR; float disc = b*b - cc;
-        float shadow = (disc > 0.0 && -b - sqrt(disc) > 0.0) ? 0.12 : 1.0;
+        // jarak terdekat sinar ke pusat planet → tepi bayangan lembut (penumbra), bukan pita bersudut tajam
+        vec3 oc = vW - uCenter; float b = dot(oc, L);
+        float miss = sqrt(max(dot(oc, oc) - b * b, 0.0));
+        float shadow = b < 0.0 ? mix(0.1, 1.0, smoothstep(uPlanetR * 0.94, uPlanetR * 1.06, miss)) : 1.0;
         // sisi tak tersinari (dilihat dari bawah bidang yang tidak kena Matahari) lebih redup: cahaya tembus
         vec3 V = normalize(cameraPosition - vW);
         float sameSide = sign(dot(vN, L)) * sign(dot(vN, V));

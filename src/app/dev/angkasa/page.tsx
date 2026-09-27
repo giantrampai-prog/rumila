@@ -7,7 +7,10 @@ import { notFound, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { Explorer } from "@/components/angkasa/explorer";
 import { KidSpace } from "@/components/angkasa/kid-space";
-import type { Mode } from "@/lib/angkasa/state";
+import { useAngkasa, type Mode } from "@/lib/angkasa/state";
+
+// uji manual dari konsol (hanya halaman dev): window.__akStore.getState().set({...})
+if (typeof window !== "undefined") (window as unknown as { __akStore: typeof useAngkasa }).__akStore = useAngkasa;
 
 function Preview() {
   const p = useSearchParams();

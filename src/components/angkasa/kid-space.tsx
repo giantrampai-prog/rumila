@@ -22,6 +22,7 @@ import { LoopMusic } from "@/lib/bgm";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
 import { useNarration } from "./panels/tour";
 import { TOUR } from "@/lib/angkasa/tour";
+import { TOUR_POPS } from "@/lib/angkasa/tour-pops";
 import { Viewer } from "./viewer";
 import "./angkasa.css";
 
@@ -155,6 +156,51 @@ function ObjCard({ id }: { id: string }) {
 let tourMusic: LoopMusic | null = null;
 const music = () => (tourMusic ??= new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.23, loopStart: 3, loopEnd: 229, fade: 4 }));
 
+/** Nama persinggahan + kartu fakta yang muncul bergantian mengikuti narasi, berwarna sesuai objek. */
+function TourPops() {
+  const st = useAngkasa();
+  const stop = TOUR[st.tourIndex];
+  const look = TOUR_POPS[stop.id];
+  const shown = st.tourArrived && look ? look.pops.filter((p) => p.at <= st.tourLine) : [];
+  useSfxOnChange(shown.length, (n, prev) => {
+    if (n > prev) sfx.pick();
+  });
+  if (!look || !st.tourArrived) return null;
+  const [light, dark] = look.accent;
+  return (
+    <>
+      <div
+        key={`t${st.tourIndex}`}
+        className="ak-pop absolute left-3 flex items-center gap-2 rounded-full py-1.5 pr-4 pl-1.5 text-white sm:left-5"
+        style={{ top: "max(22px, calc(env(safe-area-inset-top) + 14px))", background: `linear-gradient(135deg, ${light}, ${dark})`, boxShadow: `0 4px 0 ${dark}66, 0 8px 24px rgba(0,0,0,.35)` }}
+      >
+        {stop.id in OBJ_IDS ? <Ball id={stop.id} size={34} /> : <span className="flex size-[34px] items-center justify-center rounded-full bg-white/25"><Icon name="rocket_launch" size={20} /></span>}
+        <span style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, textShadow: "0 1px 2px rgba(0,0,0,.35)" }}>{stop.title}</span>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-center gap-2.5 px-3 sm:gap-3" style={{ paddingBottom: "max(18px, env(safe-area-inset-bottom))" }}>
+        {shown.map((p) => (
+          <div
+            key={`${st.tourIndex}-${p.at}`}
+            className="ak-popcard flex w-[min(31vw,230px)] min-w-[150px] items-center gap-2.5 rounded-[22px] p-2.5 pr-3 text-white"
+            style={{ background: `linear-gradient(150deg, ${light}f2, ${dark}f2)`, boxShadow: `0 5px 0 ${dark}, 0 12px 28px rgba(0,0,0,.35)`, border: "2px solid rgba(255,255,255,.35)" }}
+          >
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/25">
+              <Icon name={p.icon} size={26} />
+            </span>
+            <span className="min-w-0">
+              <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.05, textShadow: "0 1px 2px rgba(0,0,0,.3)" }}>
+                {p.big}
+              </span>
+              <span className="block text-[13px] leading-tight font-extrabold opacity-95">{p.label}</span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+const OBJ_IDS = Object.fromEntries(DOCK.map((id) => [id, 1]));
+
 /** Tur terbang sinematik: 3D penuh, tanpa teks. Ketuk untuk jeda; narasi suara tetap jalan. */
 function KidTour() {
   const st = useAngkasa();
@@ -185,6 +231,8 @@ function KidTour() {
       <div className="absolute top-5 right-3 sm:right-5" style={{ top: "max(20px, calc(env(safe-area-inset-top) + 12px))" }}>
         <RoundBtn icon="close" label="Keluar tur" onClick={endTour} />
       </div>
+
+      <TourPops />
 
       {/* dijeda / selesai: tombol besar di tengah */}
       {!st.tourPlaying && (
