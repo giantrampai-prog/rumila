@@ -412,6 +412,11 @@ interface Vehicle {
   stop: number;
   lo: number;
   hi: number;
+  brake: T.Mesh;
+  acc: number;
+  wait: number;
+  ph: number;
+  passCd: number;
 }
 
 interface Walker {
@@ -470,6 +475,12 @@ export class City {
   private side: Light = 'r';
   private leftMain = 0;
   private leftSide = 0;
+
+  /** bunyi kendaraan: klakson / motor lewat (vol 0…1 menurut jarak ke kamera) */
+  onSound: ((kind: 'horn-car' | 'horn-motor' | 'motor-pass', vol: number) => void) | null = null;
+  private hornCd = 3;
+  private brakeOn = new T.MeshStandardMaterial({ color: '#ff2a1a', emissive: '#ff1a0a', emissiveIntensity: 2.2 });
+  private brakeOff = new T.MeshStandardMaterial({ color: '#7a1010', roughness: 0.4 });
 
   constructor(private loc: string) {
     this.r = rnd(loc.length * 977 + 13);
@@ -1260,6 +1271,8 @@ export class City {
         const moto = r() < L.moto;
         let built: { mesh: T.Mesh; len: number };
         let vmax: number;
+        let brakeY = 0.78,
+          brakeZ = 0.6;
         if (moto) {
           const k = r();
           built = motorMesh(k < 0.3 ? 'gojek' : k < 0.55 ? 'grab' : 'biasa', r, mat);
@@ -1269,9 +1282,17 @@ export class City {
           const kind: CarKind = city && k < 0.08 ? 'bus' : k < 0.25 ? 'taxi' : k < 0.5 ? 'mpv' : k < 0.75 ? 'suv' : 'sedan';
           built = carMesh(kind, kind === 'taxi' ? '#4aa3df' : kind === 'bus' ? '#1f6fd1' : CAR_COL[Math.floor(r() * CAR_COL.length)], mat);
           vmax = kind === 'bus' ? 7 : 8 + r() * 3;
+          brakeY = kind === 'bus' ? 0.9 : kind === 'suv' ? 0.94 : 0.78;
+          brakeZ = kind === 'bus' ? 0.85 : 0.6;
         }
         built.mesh.castShadow = true;
         this.add(built.mesh);
+        // lampu rem (menyala saat melambat / berhenti)
+        const bg = moto
+          ? new T.BoxGeometry(0.05, 0.09, 0.18).translate(-0.83, 0.72, 0)
+          : mergeGeometries([new T.BoxGeometry(0.05, 0.16, 0.34).translate(-built.len / 2 - 0.03, brakeY, -brakeZ), new T.BoxGeometry(0.05, 0.16, 0.34).translate(-built.len / 2 - 0.03, brakeY, brakeZ)])!;
+        const brake = new T.Mesh(bg, this.brakeOff);
+        built.mesh.add(brake);
         this.cars.push({
           mesh: built.mesh,
           axis: L.axis,
@@ -1286,6 +1307,11 @@ export class City {
           stop: L.stop,
           lo: L.lo,
           hi: L.hi,
+          brake,
+          acc: 0,
+          wait: 0,
+          ph: r() * 6,
+          passCd: r() * 6,
         });
       }
     }
@@ -1351,6 +1377,14 @@ export class City {
   update(t: number, dt: number, cam?: T.Camera, target?: T.Vector3) {
     this.uTime.value = t;
     this.updateSignals(t);
+    this.hornCd -= dt;
+    // klakson acak khas jalanan (jarang)
+    if (this.onSound && cam && this.hornCd <= 0 && Math.random() < dt * 0.05) {
+      const c = this.cars[Math.floor(Math.random() * this.cars.length)];
+      const vol = Math.pow(T.MathUtils.clamp(1 - c.mesh.position.distanceTo(cam.position) / 80, 0, 1), 1.4);
+      if (vol > 0.1) this.onSound(c.moto ? 'horn-motor' : 'horn-car', vol * 0.8);
+      this.hornCd = 4 + Math.random() * 6;
+    }
     // kendaraan: jaga jarak dengan yang di depan, berhenti di garis henti saat lampu tidak hijau
     for (const c of this.cars) {
       const light = c.axis === 'x' ? this.main : this.side;
@@ -1376,16 +1410,39 @@ export class City {
         const gap = best - (c.len + lead.len) / 2;
         want = Math.min(want, gap < 1.2 ? 0 : lead.v + (gap - 1.2) * 0.9);
       }
-      c.v = Math.max(0, c.v + T.MathUtils.clamp(want - c.v, -9 * dt, 3 * dt));
+      const dv = T.MathUtils.clamp(want - c.v, -9 * dt, 3 * dt);
+      c.v = Math.max(0, c.v + dv);
+      c.acc = T.MathUtils.damp(c.acc, dv / Math.max(dt, 1e-3), 6, dt);
       c.s += c.dir * c.v * dt;
       if (c.s > c.hi) c.s = c.lo;
       if (c.s < c.lo) c.s = c.hi;
+      // lampu rem, bodi menunduk saat mengerem, getar mesin saat diam, motor sedikit oleng
+      const braking = c.acc < -1.2 || c.v < 0.4;
+      c.brake.material = braking ? this.brakeOn : this.brakeOff;
+      const idle = c.v < 0.3 ? Math.sin(t * 38 + c.ph) * 0.006 : 0;
+      const pitch = T.MathUtils.clamp(c.acc * 0.004, -0.035, 0.02);
+      const roll = c.moto && c.v > 1 ? Math.sin(t * 1.4 + c.ph) * 0.035 : 0;
       if (c.axis === 'x') {
-        c.mesh.position.set(c.s, 0.02, c.lane + c.lat);
-        c.mesh.rotation.y = c.dir > 0 ? 0 : Math.PI;
+        c.mesh.position.set(c.s, 0.02 + idle, c.lane + c.lat);
+        c.mesh.rotation.set(roll, c.dir > 0 ? 0 : Math.PI, pitch);
       } else {
-        c.mesh.position.set(c.lane + c.lat, 0.02, c.s);
-        c.mesh.rotation.y = c.dir > 0 ? -Math.PI / 2 : Math.PI / 2;
+        c.mesh.position.set(c.lane + c.lat, 0.02 + idle, c.s);
+        c.mesh.rotation.set(roll, c.dir > 0 ? -Math.PI / 2 : Math.PI / 2, pitch);
+      }
+      // bunyi: klakson saat tertahan di belakang kendaraan yang lambat ketika lampu hijau; motor lewat dekat kamera
+      if (this.onSound && cam) {
+        const dCam = c.mesh.position.distanceTo(cam.position);
+        const vol = Math.pow(T.MathUtils.clamp(1 - dCam / 80, 0, 1), 1.4);
+        c.wait = c.v < 0.5 ? c.wait + dt : 0;
+        if (vol > 0.08 && light === 'g' && c.wait > 1.2 && this.hornCd <= 0 && Math.random() < dt * 0.6) {
+          this.onSound(c.moto ? 'horn-motor' : 'horn-car', vol);
+          this.hornCd = 2.5 + Math.random() * 4;
+        }
+        c.passCd -= dt;
+        if (c.moto && c.v > 7 && dCam < 35 && c.passCd <= 0 && Math.random() < dt * 0.5) {
+          this.onSound('motor-pass', vol);
+          c.passCd = 10 + Math.random() * 10;
+        }
       }
     }
     // pejalan kaki: menunggu di tepi zebra sampai kendaraan di jalan itu berhenti & waktunya cukup
@@ -1437,7 +1494,15 @@ export class City {
     }
   }
 
+  /** Keras-pelan latar lalu lintas menurut jarak kamera ke jalan utama. */
+  trafficLevel(cam: T.Camera) {
+    const dz = Math.abs(cam.position.z - (ZN + this.E) / 2);
+    return T.MathUtils.clamp(1 - (dz + cam.position.y * 0.6) / 140, 0.1, 1);
+  }
+
   dispose() {
+    this.brakeOn.dispose();
+    this.brakeOff.dispose();
     this.group.traverse((o) => {
       const m = o as T.Mesh;
       m.geometry?.dispose();

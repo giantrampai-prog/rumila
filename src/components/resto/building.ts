@@ -12,6 +12,8 @@
 import * as T from 'three';
 import type { RestoState } from '@/lib/resto/sim';
 import { carMesh, motorMesh } from './city';
+import { Merge, canopy, mat, swayMaterial, type Kit } from '@/components/fruits/garden/build';
+import * as GTX from '@/components/fruits/garden/textures';
 import { BLD, COUNTER, FLOOR_Y, FRIDGE, LOT, PASS_Z, PICKUP, RICE, ROOMS, STATIONS, STEPS, TABLE_SLOTS, TERRACE, YARD_Y, roofY } from './layout';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
@@ -272,6 +274,8 @@ const TX = {
 
 /* ---------------- pembangun ---------------- */
 
+const plantTex: { bark?: T.Texture; leaf?: T.Texture } = {};
+
 export interface BuiltResto {
   shell: T.Group;
   dyn: T.Group;
@@ -291,6 +295,8 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
   const roofMats: T.Material[] = [];
   const tablePos: T.Vector3[] = [];
   const r = rnd(77);
+  // tanaman realistis (kartu daun bertekstur seperti di Kebun Rinoya), digabung jadi 3 mesh
+  const kit: Kit = { bark: new Merge(), leaf: new Merge(), plain: new Merge() };
 
   /** kotak dengan alas di y (agar bisa "tumbuh" dari bawah). */
   const box = (parent: T.Object3D, w: number, h: number, d: number, mat: T.Material | T.Material[], x: number, y: number, z: number, tag?: Tag, shadow = true) => {
@@ -315,9 +321,6 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
   const stoneTop = std('#cfc8bc', 0.5);
   const cushion = std('#4a4f57', 0.9);
   const oak = std('#c89a64', 0.55);
-  const leaf = std('#4f8a3a', 0.8);
-  const leaf2 = std('#6aa84f', 0.8);
-  const bambooM = std('#8fae4a', 0.6);
   const W = BLD.x1 - BLD.x0,
     D = BLD.z1 - BLD.z0,
     cz = (BLD.z0 + BLD.z1) / 2;
@@ -431,13 +434,13 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
     gravel.rotation.x = -Math.PI / 2;
     gravel.position.set((G.x0 + G.x1) / 2, YARD_Y + 0.02, (G.z0 + G.z1) / 2 - 0.2);
     late(gravel);
-    late(bonsai((G.x0 + G.x1) / 2 + 0.3, G.z0 + 1.6, 1.2, r));
+    bonsai(kit, (G.x0 + G.x1) / 2 + 0.3, G.z0 + 1.6, 1.2, r);
     const rock = new T.Mesh(new T.DodecahedronGeometry(0.6, 1), std('#7a766c', 0.9, { flatShading: true }));
     rock.scale.set(1.3, 0.7, 1);
     rock.position.set((G.x0 + G.x1) / 2 - 1.2, YARD_Y + 0.3, G.z0 + 2.2);
     late(rock);
     late(stoneLantern(G.x1 - 1.0, G.z0 + 1.0));
-    for (let i = 0; i < 9; i++) late(bamboo(G.x0 + 0.4 + (i % 3) * 0.25, G.z0 + 0.4 + Math.floor(i / 3) * 0.3, 3.2 + r() * 1.5, bambooM, leaf2));
+    for (let i = 0; i < 9; i++) bamboo(kit, G.x0 + 0.4 + (i % 3) * 0.25, G.z0 + 0.4 + Math.floor(i / 3) * 0.3, 3.2 + r() * 1.5, r);
   }
 
   /* ---------- sekat dalam ---------- */
@@ -542,28 +545,21 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
     const bed = new T.Mesh(new T.BoxGeometry(4.2, 0.3, 2.6), [stoneTop, stoneTop, bedM, stoneTop, stoneTop, stoneTop]);
     bed.position.set(-8.6, YARD_Y + 0.15, -0.9);
     late(bed);
-    late(bonsai(-8.2, -1.1, 1.3, r, YARD_Y + 0.3));
+    bonsai(kit, -8.2, -1.1, 1.3, r, YARD_Y + 0.3);
     for (let i = 0; i < 3; i++) {
       const rk = new T.Mesh(new T.DodecahedronGeometry(0.35 + r() * 0.2, 1), std('#8a857a', 0.9, { flatShading: true }));
       rk.scale.y = 0.6;
       rk.position.set(-9.8 + i * 0.9, YARD_Y + 0.4, -0.3 - (i % 2) * 0.6);
       late(rk);
     }
-    for (let i = 0; i < 10; i++) {
-      const b = new T.Mesh(new T.IcosahedronGeometry(0.28 + r() * 0.18, 1), i % 2 ? leaf : leaf2);
-      b.position.set(-10.4 + r() * 3.6, YARD_Y + 0.45, -1.8 + r() * 1.6);
-      late(b);
-    }
+    for (let i = 0; i < 7; i++) shrub(kit, -10.3 + r() * 3.4, -1.9 + r() * 1.7, 0.32 + r() * 0.15, r, YARD_Y + 0.3);
     // pot tanaman di kanan tangga & sepanjang kaca area makan
     const planter = (x: number, z: number, w: number, d: number) => {
       const p = new T.Mesh(new T.BoxGeometry(w, 0.5, d), stoneTop);
       p.position.set(x, YARD_Y + 0.25, z);
       late(p);
-      for (let i = 0; i < Math.round(w * 2); i++) {
-        const b = new T.Mesh(new T.IcosahedronGeometry(0.25 + r() * 0.12, 1), i % 2 ? leaf : leaf2);
-        b.position.set(x - w / 2 + 0.25 + (i / Math.round(w * 2)) * (w - 0.3), YARD_Y + 0.7, z + (r() - 0.5) * (d - 0.2));
-        late(b);
-      }
+      const n = Math.max(1, Math.round(w * 1.4));
+      for (let i = 0; i < n; i++) shrub(kit, x - w / 2 + 0.3 + (i / n) * (w - 0.4), z + (r() - 0.5) * (d - 0.25), 0.3 + r() * 0.1, r, YARD_Y + 0.5);
     };
     planter(-1.3, -0.5, 1.6, 1.2);
     planter((BLD.x0 + -12) / 2, -2.0, 9.6, 0.5);
@@ -597,7 +593,8 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
       late(rail);
     }
     // bambu di tepi lahan
-    for (let i = 0; i < 12; i++) late(bamboo(LOT.x0 + 0.5 + (i % 2) * 0.3, -14 + i * 1.1, 4 + r() * 2, bambooM, leaf2));
+    // semak rendah di tepi lahan (di bawah atap — tidak menembus)
+    for (let z = -14.4; z < -1.6; z += 1.1) shrub(kit, LOT.x0 + 0.65, z, 0.5 + r() * 0.12, r, YARD_Y);
     // noren di pintu
     const noren = new T.Mesh(new T.PlaneGeometry(2.3, 1.7), new T.MeshStandardMaterial({ map: TX.noren(), side: T.DoubleSide, roughness: 0.9 }));
     noren.position.set(-4.0, FLOOR_Y + 2.55 - 0.85, BLD.z1 + 0.05);
@@ -724,7 +721,7 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
     screen.position.set(COUNTER.x + 0.5, FLOOR_Y + 1.35, COUNTER.z - 0.07);
     screen.rotation.x = -0.25;
     dyn.add(mon, screen);
-    dyn.add(bonsai(COUNTER.x - 0.9, COUNTER.z, 0.35, r, FLOOR_Y + 1.1));
+    bonsai(kit, COUNTER.x - 0.9, COUNTER.z, 0.35, r, FLOOR_Y + 1.1);
   }
   // rak ambil pesanan "PICK UP" dengan tas kertas
   {
@@ -741,7 +738,7 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
   }
   // rak pajang bonsai & keramik
   box(dyn, 0.7, 2.3, 4.0, woodM, -1.0, FLOOR_Y, -7.0);
-  for (let i = 0; i < 6; i++) dyn.add(bonsai(-0.62, -8.6 + (i % 3) * 1.5, 0.28, r, FLOOR_Y + 0.8 + Math.floor(i / 3) * 0.8));
+  for (let i = 0; i < 6; i++) bonsai(kit, -0.62, -8.6 + (i % 3) * 1.5, 0.28, r, FLOOR_Y + 0.8 + Math.floor(i / 3) * 0.8);
   // meja & kursi (kayu ek, bantal abu-abu)
   for (let i = 0; i < Math.min(s.tables, TABLE_SLOTS.length); i++) {
     const [x, z] = TABLE_SLOTS[i];
@@ -783,7 +780,7 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
     [-7.3, -3.0],
     [-7.3, -8.0],
   ])
-    for (let i = 0; i < 4; i++) dyn.add(bamboo(x + (i % 2) * 0.22, z + Math.floor(i / 2) * 0.22, 2.4 + r() * 0.6, bambooM, leaf2, FLOOR_Y));
+    for (let i = 0; i < 4; i++) bamboo(kit, x + (i % 2) * 0.22, z + Math.floor(i / 2) * 0.22, 2.4 + r() * 0.6, r, FLOOR_Y);
   // lampion kertas di atas meja
   for (const z of [-7.1, -4.9])
     for (const x of [-12.05, -15.35, -18.65]) {
@@ -842,6 +839,19 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
     }
   }
 
+  // satukan tanaman
+  const uT = { value: 0 };
+  for (const m of [
+    kit.bark.empty ? null : kit.bark.build(swayMaterial(uT, { map: (plantTex.bark ??= GTX.bark()), roughness: 0.95 })),
+    kit.leaf.empty ? null : kit.leaf.build(swayMaterial(uT, { map: (plantTex.leaf ??= GTX.foliageAtlas()), alphaTest: 0.5, side: T.DoubleSide, roughness: 0.8 }, true)),
+    kit.plain.empty ? null : kit.plain.build(swayMaterial(uT, { roughness: 0.6 })),
+  ])
+    if (m) {
+      m.castShadow = true;
+      m.receiveShadow = true;
+      late(m);
+    }
+
   return { shell, dyn, lanterns, roof, roofMats, tablePos };
 }
 
@@ -867,56 +877,35 @@ function paperLantern(x: number, y: number, z: number, rad: number, ceil: number
   return g;
 }
 
-function bonsai(x: number, z: number, s: number, r: () => number, y = 0.15) {
-  const g = new T.Group();
-  const bark = std('#5a4030', 0.9);
-  const needle = std('#3f6a32', 0.85);
-  const trunk = new T.Mesh(new T.CylinderGeometry(0.08 * s, 0.16 * s, 1.1 * s, 7), bark);
-  trunk.position.y = 0.5 * s;
-  trunk.rotation.z = 0.25;
-  g.add(trunk);
+/** Pinus bonsai: batang meliuk + bantalan daun berlapis (kartu daun bertekstur). */
+function bonsai(kit: Kit, x: number, z: number, s: number, r: () => number, y = 0.15) {
+  kit.bark.add(new T.CylinderGeometry(0.07 * s, 0.15 * s, 1.1 * s, 7), mat(x + 0.12 * s, y + 0.5 * s, z, 0, 0, 0.25), '#6a4a35');
   const pads: [number, number, number, number][] = [
     [0.35, 1.0, 0, 0.5],
-    [-0.4, 0.75, 0.1, 0.42],
+    [-0.42, 0.72, 0.1, 0.42],
     [0.05, 1.35, -0.05, 0.38],
-    [0.6, 0.7, -0.1, 0.34],
+    [0.62, 0.66, -0.1, 0.32],
   ];
   for (const [px, py, pz, pr] of pads) {
-    const p = new T.Mesh(new T.SphereGeometry(pr * s, 12, 8), needle);
-    p.scale.y = 0.42;
-    p.position.set(px * s + (r() - 0.5) * 0.05, py * s, pz * s);
-    p.castShadow = true;
-    g.add(p);
-    const br = new T.Mesh(new T.CylinderGeometry(0.03 * s, 0.05 * s, Math.hypot(px, py - 0.5) * s, 5), bark);
-    br.position.set((px * s) / 2, ((py + 0.5) * s) / 2, (pz * s) / 2);
-    br.rotation.z = -Math.atan2(px, py - 0.5);
-    g.add(br);
+    const bx = x + px * s,
+      by = y + py * s,
+      bz = z + pz * s;
+    const len = Math.hypot(px, py - 0.5) * s;
+    kit.bark.add(new T.CylinderGeometry(0.025 * s, 0.045 * s, len, 5), mat((x + bx) / 2, (y + 0.5 * s + by) / 2, (z + bz) / 2, 0, 0, -Math.atan2(px, py - 0.5)), '#5a4030');
+    canopy(kit, new T.Vector3(bx, by, bz), new T.Vector3(pr * s, pr * s * 0.36, pr * s), Math.max(6, Math.round(22 * s)), 0.32 * s, r, -0.04, 0.002);
   }
-  g.position.set(x, y, z);
-  return g;
 }
 
-function bamboo(x: number, z: number, h: number, stemM: T.Material, leafM: T.Material, y = 0.15) {
-  const g = new T.Group();
-  const stem = new T.Mesh(new T.CylinderGeometry(0.035, 0.045, h, 6), stemM);
-  stem.position.y = h / 2;
-  g.add(stem);
-  for (let k = 1; k < 5; k++) {
-    const node = new T.Mesh(new T.TorusGeometry(0.045, 0.012, 4, 8), stemM);
-    node.rotation.x = Math.PI / 2;
-    node.position.y = (h * k) / 5;
-    g.add(node);
-  }
-  for (let k = 0; k < 4; k++) {
-    const lf = new T.Mesh(new T.SphereGeometry(0.26, 8, 6), leafM);
-    lf.scale.set(1, 0.35, 0.6);
-    lf.position.set(Math.cos(k * 2.1) * 0.18, h * (0.62 + k * 0.1), Math.sin(k * 2.1) * 0.18);
-    lf.rotation.y = k * 1.3;
-    g.add(lf);
-  }
-  g.position.set(x, y, z);
-  g.traverse((o) => ((o as T.Mesh).isMesh ? (o.castShadow = true) : null));
-  return g;
+/** Rumpun bambu: batang beruas + dedaunan di atas. */
+function bamboo(kit: Kit, x: number, z: number, h: number, r: () => number, y = 0.15) {
+  kit.plain.add(new T.CylinderGeometry(0.03, 0.042, h, 6), mat(x, y + h / 2, z, (r() - 0.5) * 0.06, 0, (r() - 0.5) * 0.06), '#8fa84a', { sway: 0.012, baseY: y });
+  for (let k = 1; k < 5; k++) kit.plain.add(new T.CylinderGeometry(0.046, 0.046, 0.03, 6), mat(x, y + (h * k) / 5, z), '#6f8a36');
+  canopy(kit, new T.Vector3(x, y + h * 0.78, z), new T.Vector3(0.38, h * 0.22, 0.38), 12, 0.34, r, 0.03, 0.012);
+}
+
+/** Semak berdaun rimbun. */
+function shrub(kit: Kit, x: number, z: number, rad: number, r: () => number, y = 0.15) {
+  canopy(kit, new T.Vector3(x, y + rad * 0.75, z), new T.Vector3(rad, rad * 0.75, rad), Math.max(14, Math.round(rad * 70)), 0.46, r, 0.01, 0.004);
 }
 
 function stoneLantern(x: number, z: number) {

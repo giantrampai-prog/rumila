@@ -52,7 +52,10 @@ export function setSfxEnabled(on: boolean) {
   try {
     localStorage.setItem(OFF_KEY, on ? '0' : '1');
   } catch {}
-  if (!on) stopGardenAmbience();
+  if (!on) {
+    stopGardenAmbience();
+    stopTraffic();
+  }
 }
 /** waktu bunyi terakhir: tombol yang sudah berbunyi khusus tidak ditambah bunyi 'tap' otomatis */
 let lastPlay = 0;
@@ -192,6 +195,37 @@ export const sfx = {
   splash() {
     hiss(0.9, { freq: 900, to: 300, q: 0.6, vol: 0.35, type: 'lowpass' });
     hiss(0.35, { freq: 3000, q: 0.8, vol: 0.12 });
+  },
+  /** klakson: mobil "tin-tin" (dua nada), motor "tet-tet" lebih tinggi */
+  horn(vol = 1, kind: 'car' | 'motor' = 'car') {
+    const twice = Math.random() < 0.6;
+    if (kind === 'car') {
+      for (const at of twice ? [0, 0.3] : [0]) {
+        tone(415, 0.22, { type: 'square', vol: 0.05 * vol, at, attack: 0.01 });
+        tone(523, 0.22, { type: 'square', vol: 0.04 * vol, at, attack: 0.01 });
+      }
+    } else for (const at of twice ? [0, 0.2] : [0]) tone(760, 0.12, { type: 'square', vol: 0.035 * vol, at, attack: 0.005 });
+  },
+  /** motor lewat: "brrrm" naik lalu menjauh */
+  motorPass(vol = 1) {
+    const c = out();
+    if (!c || muted) return;
+    const t = c.currentTime;
+    const o = c.createOscillator();
+    o.type = 'sawtooth';
+    o.frequency.setValueAtTime(70, t);
+    o.frequency.linearRampToValueAtTime(125, t + 0.5);
+    o.frequency.linearRampToValueAtTime(90, t + 1.2);
+    const f = c.createBiquadFilter();
+    f.type = 'lowpass';
+    f.frequency.value = 420;
+    const g = c.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.05 * vol, t + 0.4);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.2);
+    o.connect(f).connect(g).connect(master!);
+    o.start(t);
+    o.stop(t + 1.25);
   },
   /** "plup" kecil: pelet jatuh ke air / ikan menyambar makanan */
   plop(vol = 1) {
@@ -382,4 +416,66 @@ export function installUiSounds() {
     },
     true,
   );
+}
+
+/* ---------------- latar lalu lintas kota (Rinoya Resto) ---------------- */
+
+let traffic: { g: GainNode; stop: () => void } | null = null;
+
+/** Gemuruh jalan + dengung mesin yang naik-turun; keras-pelannya diatur setTrafficLevel. */
+export function startTraffic() {
+  if (muted || traffic) return;
+  const c = out();
+  if (!c) return;
+  const g = c.createGain();
+  g.gain.value = 0;
+  g.connect(master!);
+  const n = noise(c);
+  n.loop = true;
+  const f = c.createBiquadFilter();
+  f.type = 'lowpass';
+  f.frequency.value = 260;
+  const ng = c.createGain();
+  ng.gain.value = 0.55;
+  n.connect(f).connect(ng).connect(g);
+  const o = c.createOscillator();
+  o.type = 'sawtooth';
+  o.frequency.value = 48;
+  const of = c.createBiquadFilter();
+  of.type = 'lowpass';
+  of.frequency.value = 150;
+  const og = c.createGain();
+  og.gain.value = 0.1;
+  o.connect(of).connect(og).connect(g);
+  const lfo = c.createOscillator();
+  lfo.frequency.value = 0.17;
+  const lg = c.createGain();
+  lg.gain.value = 9;
+  lfo.connect(lg).connect(o.frequency);
+  n.start();
+  o.start();
+  lfo.start();
+  traffic = {
+    g,
+    stop: () => {
+      try {
+        n.stop();
+        o.stop();
+        lfo.stop();
+      } catch {}
+      g.disconnect();
+    },
+  };
+}
+
+export function setTrafficLevel(v: number) {
+  if (!traffic) return;
+  const c = audioContext();
+  if (!c) return;
+  traffic.g.gain.setTargetAtTime(Math.max(0, Math.min(1, v)) * 0.12, c.currentTime, 0.4);
+}
+
+export function stopTraffic() {
+  traffic?.stop();
+  traffic = null;
 }

@@ -6,7 +6,7 @@
 import * as T from 'three';
 import { MENUS } from '@/lib/resto/data';
 import type { DayRun, RestoState } from '@/lib/resto/sim';
-import { sfx } from '@/lib/sfx';
+import { setTrafficLevel, sfx, startTraffic, stopTraffic } from '@/lib/sfx';
 import { City } from './city';
 import { buildSite, type Site } from './site';
 import { buildResto } from './building';
@@ -212,6 +212,7 @@ export class RestoScene {
       },
       { passive: false },
     );
+    document.addEventListener('visibilitychange', this.onVis);
     this.ro = new ResizeObserver(() => this.resize());
     this.ro.observe(host);
     this.resize();
@@ -227,7 +228,9 @@ export class RestoScene {
       this.city.dispose();
     }
     this.city = new City(loc);
+    this.city.onSound = (k, v) => (k === 'horn-car' ? sfx.horn(v, 'car') : k === 'horn-motor' ? sfx.horn(v, 'motor') : sfx.motorPass(v));
     this.cityLoc = loc;
+    startTraffic();
     this.scene.add(this.city.group);
   }
 
@@ -449,6 +452,10 @@ export class RestoScene {
       sc.updateProjectionMatrix();
     }
     this.city?.update(this.t, dt, this.camera, this.target);
+    if (this.city && Math.floor(this.t * 2) !== Math.floor((this.t - dt) * 2)) {
+      startTraffic(); // dimulai lagi bila efek suara baru dinyalakan
+      setTrafficLevel(this.city.trafficLevel(this.camera));
+    }
     if (this.site && this.site.update(this.t, dt, this.buildK)) sfx.clink();
     // dinding naik sesuai pembangunan
     this.shell.traverse((o) => {
@@ -482,7 +489,12 @@ export class RestoScene {
     this.renderer.render(this.scene, this.camera);
   };
 
+  private onVis = () => {
+    if (document.hidden) stopTraffic();
+  };
+
   dispose() {
+    document.removeEventListener('visibilitychange', this.onVis);
     cancelAnimationFrame(this.raf);
     this.ro.disconnect();
     this.scene.traverse((o) => {
@@ -494,6 +506,7 @@ export class RestoScene {
     });
     this.textures.forEach((t) => t.dispose());
     this.city?.dispose();
+    stopTraffic();
     this.renderer.dispose();
     this.renderer.domElement.remove();
   }

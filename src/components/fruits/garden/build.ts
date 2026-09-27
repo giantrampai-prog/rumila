@@ -129,7 +129,7 @@ export interface PlantResult {
 /* ---------------- primitif ---------------- */
 
 /** Kartu-kartu gerombol daun mengisi elipsoid; normal mengarah keluar dari pusat tajuk. */
-function canopy(kit: Kit, c: T.Vector3, rad: T.Vector3, n: number, size: number, r: () => number, hue = 0, sway = 0.006) {
+export function canopy(kit: Kit, c: T.Vector3, rad: T.Vector3, n: number, size: number, r: () => number, hue = 0, sway = 0.006) {
   const [u0, v0, u1, v1] = ATLAS.cluster;
   const pos: number[] = [],
     nor: number[] = [],
