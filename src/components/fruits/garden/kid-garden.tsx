@@ -115,7 +115,51 @@ function Joystick({ onMove }: { onMove: (x: number, y: number) => void }) {
   );
 }
 
-function FruitCard({ id, isNew, url, onClose, on3D, onCut }: { id: string; isNew: boolean; url?: string; onClose: () => void; on3D: () => void; onCut: () => void }) {
+/** Foto buah yang "hidup": nongol memantul, melayang pelan, berkilau; diketuk → melompat (boing!). */
+function AnimatedFruit({ src, alt }: { src: string; alt: string }) {
+  const [boing, setBoing] = useState(0);
+  useEffect(() => {
+    const t = window.setTimeout(() => sfx.sparkle(), 350);
+    return () => window.clearTimeout(t);
+  }, [src]);
+  const stars: [string, string, string, number][] = [
+    ['8%', '12%', '0s', 16],
+    ['80%', '6%', '.5s', 12],
+    ['88%', '62%', '1s', 18],
+    ['4%', '70%', '1.4s', 12],
+    ['46%', '-4%', '.9s', 10],
+  ];
+  return (
+    <button
+      type="button"
+      aria-label={`Ketuk ${alt}`}
+      onClick={() => {
+        setBoing((b) => b + 1);
+        sfx.pick();
+      }}
+      className="relative size-[132px] shrink-0 sm:size-[160px]"
+    >
+      <span className="fruit-glow absolute inset-2 rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,214,120,.75), rgba(255,214,120,0) 70%)' }} />
+      <span className="absolute inset-0 overflow-hidden rounded-[24px] bg-[#fff6e4]">
+        <span className="fruit-shine pointer-events-none absolute -inset-y-6 left-0 z-10 w-10" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent)' }} />
+      </span>
+      <span className="fruit-nongol absolute inset-0 block">
+        <span className="fruit-float absolute inset-0 block">
+          <span key={boing} className={`absolute inset-0 block ${boing ? 'fruit-boing' : ''}`}>
+            <Image src={src} alt={alt} fill sizes="160px" unoptimized className="object-contain p-1.5 drop-shadow-[0_8px_8px_rgba(80,40,0,.25)]" />
+          </span>
+        </span>
+      </span>
+      {stars.map(([l, t, d, sz], i) => (
+        <span key={i} className="fruit-twinkle pointer-events-none absolute z-20 text-[#ffbe0b]" style={{ left: l, top: t, animationDelay: d, fontSize: sz, lineHeight: 1 }}>
+          ✦
+        </span>
+      ))}
+    </button>
+  );
+}
+
+function FruitCard({ id, isNew, url, onClose, onCut }: { id: string; isNew: boolean; url?: string; onClose: () => void; onCut: () => void }) {
   const f = FRUIT_BY_ID.get(id)!;
   const art = FRUIT_ARTWORK[id];
   const [playing, setPlaying] = useState(false);
@@ -150,9 +194,7 @@ function FruitCard({ id, isNew, url, onClose, on3D, onCut }: { id: string; isNew
           <Icon name="close" size={26} />
         </button>
         <div className="flex items-center gap-3 sm:gap-4">
-          <div className="relative size-[132px] shrink-0 overflow-hidden rounded-[24px] bg-[#fff6e4] sm:size-[160px]">
-            {art && <Image src={art.src} alt={art.alt} fill sizes="160px" unoptimized className="object-contain p-1.5" />}
-          </div>
+          {art && <AnimatedFruit src={art.src} alt={art.alt} />}
           <div className="min-w-0 flex-1 pr-8">
             <div style={{ fontFamily: BALOO, fontSize: 32, fontWeight: 800, color: INK, lineHeight: 1 }}>{f.name}</div>
             <p className="mt-1.5 text-[15px] leading-snug font-extrabold text-[#6b5d80]">{f.description.split('. ')[0].replace(/\.$/, '')}.</p>
@@ -198,21 +240,13 @@ function FruitCard({ id, isNew, url, onClose, on3D, onCut }: { id: string; isNew
             <Icon name="content_cut" size={26} />
             Belah
           </button>
-          <button
-            onClick={on3D}
-            className="flex h-14 flex-1 items-center justify-center gap-2 rounded-[18px] text-white active:scale-95"
-            style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#c78bff,#8b45f5 60%)', boxShadow: '0 4px 0 #5a1fc0' }}
-          >
-            <Icon name="view_in_ar" size={28} />
-            Lihat 3D
-          </button>
         </div>
       </div>
     </div>
   );
 }
 
-export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, onTourEnd }: { active: boolean; tour: boolean; onOpen3D: (id: string) => void; onCatalog: () => void; onTour: () => void; onTourEnd: () => void }) {
+export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }: { active: boolean; tour: boolean; onCatalog: () => void; onTour: () => void; onTourEnd: () => void }) {
   const tourHandle = useRef<TourHandle | null>(null);
   const router = useRouter();
   const me = useMe();
@@ -469,7 +503,6 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
             sfx.close();
             setCard(null);
           }}
-          on3D={() => onOpen3D(card.id)}
           onCut={() => {
             setCut({ id: card.id, harvested: false });
             setCard(null);

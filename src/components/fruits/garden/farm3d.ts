@@ -441,6 +441,16 @@ export class Farm {
     return new T.Vector3(x, 1.2, z);
   }
 
+  /** Balon status yang terlalu dekat kamera memudar (tidak menutupi layar saat kamera rendah). */
+  fadeNear(cam: T.Vector3) {
+    for (const s of this.slots) {
+      const d = s.sprite.getWorldPosition(new T.Vector3()).distanceTo(cam);
+      const op = T.MathUtils.smoothstep(d, 3.5, 7);
+      s.sprite.material.opacity = op;
+      s.sprite.visible = op > 0.02;
+    }
+  }
+
   update(t: number, dt: number) {
     // seluruh tanaman di bedengan bergoyang pelan tertiup angin (daunnya juga bergoyang lewat material)
     this.slots.forEach((s, i) => {

@@ -205,7 +205,7 @@ export default function KidFruits() {
     <>
       {/* kebun tetap terpasang (posisi & dunia 3D tidak dibangun ulang), hanya disembunyikan */}
       <div className={view === 'kebun' ? undefined : 'hidden'}>
-        <Garden active={view === 'kebun'} tour={tour} onOpen3D={open} onCatalog={() => setCatalog(true)} onTour={startTour} onTourEnd={() => setTour(false)} />
+        <Garden active={view === 'kebun'} tour={tour} onCatalog={() => setCatalog(true)} onTour={startTour} onTourEnd={() => setTour(false)} />
       </div>
       {view === 'detail' && fruit && <Detail fruit={fruit} onBack={back} onOpen={open} />}
       {view === 'katalog' && <Catalog onOpen={open} onTour={startTour} onBack={() => setCatalog(false)} />}

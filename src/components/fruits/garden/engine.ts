@@ -8,7 +8,9 @@ import { flag } from '@/components/roket/details';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import type { FruitGroup } from '@/lib/fruits/catalog';
 import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '@/lib/fruits/garden';
+import { buildGapura } from './gapura';
 import { GardenLife } from './life';
+import { buildRealSky } from './sky';
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
 import * as TX from './textures';
@@ -201,6 +203,8 @@ export class GardenEngine {
   private pointers = new Map<number, { x: number; y: number; sx: number; sy: number }>();
   private pinch = 0;
   private life!: GardenLife;
+  private skyGroup!: T.Group;
+  private gapuras: T.Group[] = [];
 
   private windmill!: T.Object3D;
   private flags: T.ShaderMaterial[] = [];
@@ -292,9 +296,9 @@ export class GardenEngine {
   }
 
   private buildSky() {
-    const sky = new T.Mesh(new T.SphereGeometry(300, 32, 16), this.skyMaterial());
-    sky.frustumCulled = false;
-    this.scene.add(sky);
+    // langit atmosfer fisik + awan kumulus bergerak (mengikuti kamera)
+    this.skyGroup = buildRealSky(SUN_DIR, this.uTime);
+    this.scene.add(this.skyGroup);
     this.scene.fog = new T.Fog('#cfe3f0', 70, 210);
 
     // pantulan langit untuk kilau buah & benda
@@ -310,15 +314,6 @@ export class GardenEngine {
     this.scene.environmentIntensity = 0.55;
     pm.dispose();
 
-    for (let i = 0; i < 12; i++) {
-      const s = new T.Sprite(new T.SpriteMaterial({ map: this.keep(TX.cloud(i + 3)), transparent: true, depthWrite: false, fog: false, opacity: 0.95 }));
-      const r = rnd(i + 40);
-      const w = 40 + r() * 40;
-      s.scale.set(w, w / 2, 1);
-      s.position.set((r() - 0.5) * 260, 45 + r() * 25, -80 - r() * 120);
-      this.scene.add(s);
-      this.clouds.push(s);
-    }
   }
 
   private buildLights() {
@@ -702,18 +697,22 @@ export class GardenEngine {
         this.scene.add(board);
       }
     }
+    // gapura "Selamat Datang di Kebun Rinoya" di kedua gerbang
     const gz = -H;
-    for (const s of [-1, 1]) wood.add(new T.BoxGeometry(0.45, 4.6, 0.45), mat(s * 3, 2.3, gz), '#b99a7a', { uv: [0.5, 3] });
-    wood.add(new T.BoxGeometry(7.2, 0.4, 0.5), mat(0, 4.7, gz), '#b99a7a', { uv: [4, 0.3] });
-    const gateTex = signTex('Kebun Buah Rinoya', '#e8701a');
-    this.textures.push(gateTex);
-    const gate = new T.Mesh(new T.PlaneGeometry(5.4, 1.6), new T.MeshStandardMaterial({ map: gateTex, roughness: 0.9 }));
-    gate.position.set(0, 3.9, gz + 0.3);
-    this.scene.add(gate);
+    for (const [z, ry] of [
+      [-H, 0],
+      [H, Math.PI],
+    ] as const) {
+      const gp = buildGapura(this.textures, this.keep(TX.roofTiles()));
+      gp.position.set(0, 0, z);
+      gp.rotation.y = ry;
+      this.scene.add(gp);
+      this.gapuras.push(gp);
+    }
     for (const [x, z, h] of [
       [-5.8, -5.8, 5],
-      [3.6, gz, 6],
-      [-3.6, gz, 6],
+      [7.2, gz, 6],
+      [-7.2, gz, 6],
     ] as const) {
       const f = flag(1.3, h);
       f.group.position.set(x, 0, z);
@@ -1172,7 +1171,7 @@ export class GardenEngine {
     // satu jari: baru dianggap memutar setelah bergeser cukup jauh (ketukan biasa tetap untuk memilih)
     if (Math.hypot(e.clientX - p.sx, e.clientY - p.sy) < 12) return;
     this.camYaw -= dx * 0.0065;
-    this.camPitch = T.MathUtils.clamp(this.camPitch + dy * 0.004, -0.55, 0.45);
+    this.camPitch = T.MathUtils.clamp(this.camPitch + dy * 0.004, -0.8, 0.45);
     this.gestureAt = performance.now();
   };
 
@@ -1229,14 +1228,16 @@ export class GardenEngine {
   private camOffset() {
     const base = this.portrait ? new T.Vector3(0, 14, 11.5) : new T.Vector3(0, 10.5, 11);
     const dist = base.length() * this.camZoom;
-    const elev = T.MathUtils.clamp(Math.atan2(base.y, base.z) + this.camPitch, 0.18, 1.4);
+    const elev = T.MathUtils.clamp(Math.atan2(base.y, base.z) + this.camPitch, 0.07, 1.4);
     return new T.Vector3(Math.sin(this.camYaw) * Math.cos(elev) * dist, Math.sin(elev) * dist, Math.cos(this.camYaw) * Math.cos(elev) * dist);
   }
 
   /** Titik pandang sedikit di depan anak (searah kamera). */
   private lookAhead() {
     const k = 2 * Math.min(1, this.camZoom);
-    return new T.Vector3(-Math.sin(this.camYaw) * k, 0.8, -Math.cos(this.camYaw) * k);
+    // kamera rendah → pandangan sedikit mendongak ke pepohonan & langit
+    const up = Math.max(0, -this.camPitch - 0.3) * 6 * this.camZoom;
+    return new T.Vector3(-Math.sin(this.camYaw) * k, 0.8 + up, -Math.cos(this.camYaw) * k);
   }
 
   private snapCamera() {
@@ -1396,6 +1397,7 @@ export class GardenEngine {
 
     this.farm.update(t, dt);
     this.life.update(t, dt, this.pos);
+    for (const gp of this.gapuras) gp.userData.update?.(t);
     // dunia hidup
     this.windmill.rotation.z -= dt * 0.6;
     for (const c of this.clouds) {
@@ -1434,6 +1436,8 @@ export class GardenEngine {
     this.camLook.lerp(look, f);
     this.camera.position.copy(this.camPos);
     this.camera.lookAt(this.camLook);
+    this.skyGroup.position.copy(this.camera.position);
+    this.farm.fadeNear(this.camera.position);
   }
 
   private collide() {
