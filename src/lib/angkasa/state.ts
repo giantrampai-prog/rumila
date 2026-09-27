@@ -114,6 +114,8 @@ export interface AngkasaState {
   fx: boolean;
   /** Pembuka tampilan anak: "play" = kamera mundur dari Bumi, "choose" = pilih Tur/Bebas, "done" = selesai */
   intro: "play" | "choose" | "done";
+  /** kalimat sapaan Agam yang sedang tampil di pembuka (mengikuti kemajuan animasi) */
+  introLine: number;
   /** lebar (px) viewer yang tertutup panel mengambang kiri/kanan (layar penuh) */
   frameInset: [number, number];
   startTour: (from?: number) => void;
@@ -213,6 +215,7 @@ export const useAngkasa = create<AngkasaState>()((set, get) => ({
   tourCinematic: false,
   fx: false,
   intro: "done",
+  introLine: 0,
   frameInset: [0, 0],
   startTour: (from = 0) => {
     const s = get();

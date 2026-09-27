@@ -11,7 +11,7 @@ import { useAngkasa } from "@/lib/angkasa/state";
 
 const TAU = Math.PI * 2;
 /** lama pembuka dari Bumi ke tata surya (detik) */
-export const EARTH_INTRO_SEC = 9;
+export const EARTH_INTRO_SEC = 16;
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 /* ---------------- langit galaksi ---------------- */
@@ -354,7 +354,13 @@ export class SolarFx {
   private time = 0;
   /* intro kamera */
   private introT = 0;
+  /** kemajuan pembuka 0–1 selagi berjalan, null bila tidak/selesai */
+  get introProgress() {
+    return this.introDone || useAngkasa.getState().intro !== "play" ? null : this.introT;
+  }
   private introWait = 0;
+  /** syarat tambahan sebelum pembuka mulai (mis. model pesawat & Agam sudah dimuat) */
+  introHold: () => boolean = () => true;
   private introSide = 0;
   introDone = false;
 
@@ -460,10 +466,10 @@ export class SolarFx {
       return false;
     }
     if (this.introT === 0 && this.introWait === 0) earth.loadDetail(this.ctx).catch(() => {});
-    // Tunggu peta Bumi tampil (maks. 5 detik) agar pembuka tidak dimulai dengan bola polos.
+    // Tunggu peta Bumi, pesawat & Agam siap (maks. 10 detik) agar pembuka tidak dimulai dengan bola polos.
     const moon = this.bodies.get("moon");
-    const ready = earth.mapReady && (!moon || moon.mapReady);
-    if (!ready && this.introWait < 5) this.introWait += dt;
+    const ready = earth.mapReady && (!moon || moon.mapReady) && this.introHold();
+    if (!ready && this.introWait < 10) this.introWait += dt;
     else this.introT = Math.min(1, this.introT + dt / EARTH_INTRO_SEC);
     const ep = earth.orbitAnchor.getWorldPosition(new THREE.Vector3());
     // dekat Bumi: dari sisi siang (antara Matahari & Bumi, sedikit ke samping & atas)
@@ -481,8 +487,9 @@ export class SolarFx {
       .add(side.multiplyScalar(earth.radius * 1.4))
       .add(new THREE.Vector3(0, earth.radius * 0.9, 0));
     const end = new THREE.Vector3(0, 26, 46);
-    // 0–25%: menatap Bumi; 25–100%: mundur ke tata surya
-    const u = ease(Math.max(0, (this.introT - 0.25) / 0.75));
+    // 0–55%: adegan darat (lepas landas, ditutupi lapisan pesawat); 55–63%: tiba di angkasa menatap Bumi;
+    // 63–100%: mundur ke seluruh tata surya
+    const u = ease(Math.max(0, (this.introT - 0.63) / 0.37));
     const pos = near.clone().lerp(end, u);
     pos.y += Math.sin(u * Math.PI) * 18; // melengkung naik saat mundur
     camera.position.copy(pos);

@@ -157,18 +157,71 @@ let tourMusic: LoopMusic | null = null;
 const music = () => (tourMusic ??= new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.23, loopStart: 3, loopEnd: 229, fade: 4 }));
 
 /** Nama persinggahan + kartu fakta yang muncul bergantian mengikuti narasi, berwarna sesuai objek. */
-function TourPops() {
+// Layar dasbor pada gambar kokpit (piksel gambar 1672×941): tengah, kiri, kanan.
+const COCKPIT = { w: 1672, h: 941 };
+const SCREENS: [number, number, number, number][] = [
+  [747, 594, 924, 688],
+  [473, 682, 598, 765],
+  [1083, 681, 1207, 768],
+];
+
+/** Posisi layar dasbor di viewport (gambar kokpit: object-fit cover, rata bawah); null bila terpotong layar. */
+function useCockpitScreens(on: boolean) {
+  const [vp, setVp] = useState<[number, number] | null>(null);
+  useEffect(() => {
+    if (!on) return;
+    const f = () => setVp([window.innerWidth, window.innerHeight]);
+    f();
+    window.addEventListener("resize", f);
+    return () => window.removeEventListener("resize", f);
+  }, [on]);
+  if (!on || !vp) return null;
+  const [W, H] = vp;
+  const k = Math.max(W / COCKPIT.w, H / COCKPIT.h);
+  const ox = (W - COCKPIT.w * k) / 2,
+    oy = H - COCKPIT.h * k;
+  return SCREENS.map(([x0, y0, x1, y1]) => {
+    const r = { left: ox + x0 * k, top: oy + y0 * k, width: (x1 - x0) * k, height: (y1 - y0) * k };
+    return r.left >= 4 && r.left + r.width <= W - 4 ? r : null;
+  });
+}
+
+/** Nama persinggahan + kartu fakta yang muncul bergantian mengikuti narasi, berwarna sesuai objek.
+ *  Mode Mata Agam: fakta tampil di layar-layar dasbor kokpit (yang terpotong layar tetap jadi kartu). */
+function TourPops({ pov }: { pov: boolean }) {
   const st = useAngkasa();
   const stop = TOUR[st.tourIndex];
   const look = TOUR_POPS[stop.id];
+  const screens = useCockpitScreens(pov);
   const shown = st.tourArrived && look ? look.pops.filter((p) => p.at <= st.tourLine) : [];
   useSfxOnChange(shown.length, (n, prev) => {
     if (n > prev) sfx.pick();
   });
-  if (!look || !st.tourArrived) return null;
+  if (!look || !st.tourArrived) return <DashIdle screens={screens} />;
   const [light, dark] = look.accent;
+  const onDash = (i: number) => !!screens?.[i];
+  const floating = shown.filter((_, i) => !onDash(i));
   return (
     <>
+      {screens &&
+        shown.map((p, i) =>
+          screens[i] ? (
+            <div
+              key={`d${st.tourIndex}-${p.at}`}
+              className="ak-dash absolute flex flex-col items-center justify-center overflow-hidden text-center"
+              style={{ ...screens[i]!, color: "#ffd9a0", ["--ak-glow" as string]: light }}
+            >
+              <span className="flex items-center gap-1" style={{ fontSize: Math.max(12, screens[i]!.height * 0.3), lineHeight: 1 }}>
+                <Icon name={p.icon} size={Math.max(12, screens[i]!.height * 0.28)} />
+                <b style={{ fontFamily: BALOO, fontWeight: 800 }}>{p.big}</b>
+              </span>
+              <span className="mt-0.5 px-1 leading-tight font-extrabold opacity-90" style={{ fontSize: Math.max(9, screens[i]!.height * 0.15) }}>
+                {p.label}
+              </span>
+            </div>
+          ) : null,
+        )}
+      {screens && <DashIdle screens={screens} used={shown.length} />}
       <div
         key={`t${st.tourIndex}`}
         className="ak-pop absolute left-3 flex items-center gap-2 rounded-full py-1.5 pr-4 pl-1.5 text-white sm:left-5"
@@ -178,7 +231,7 @@ function TourPops() {
         <span style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, textShadow: "0 1px 2px rgba(0,0,0,.35)" }}>{stop.title}</span>
       </div>
       <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-center gap-2.5 px-3 sm:gap-3" style={{ paddingBottom: "max(18px, env(safe-area-inset-bottom))" }}>
-        {shown.map((p) => (
+        {floating.map((p) => (
           <div
             key={`${st.tourIndex}-${p.at}`}
             className="ak-popcard flex w-[min(31vw,230px)] min-w-[150px] items-center gap-2.5 rounded-[22px] p-2.5 pr-3 text-white"
@@ -200,6 +253,22 @@ function TourPops() {
   );
 }
 const OBJ_IDS = Object.fromEntries(DOCK.map((id) => [id, 1]));
+
+/** Layar dasbor yang belum berisi fakta: tampilan siaga (radar berputar / garis status). */
+function DashIdle({ screens, used = 0 }: { screens: ReturnType<typeof useCockpitScreens>; used?: number }) {
+  if (!screens) return null;
+  return (
+    <>
+      {screens.map((r, i) =>
+        r && i >= used ? (
+          <div key={`idle${i}`} className="ak-dash ak-dash-idle absolute flex items-center justify-center" style={r}>
+            <span style={{ fontSize: Math.max(9, r.height * 0.16), letterSpacing: ".12em" }}>{i === 0 ? "RINOYA-1 · SIAP" : i === 1 ? "NAVIGASI" : "MESIN OK"}</span>
+          </div>
+        ) : null,
+      )}
+    </>
+  );
+}
 
 /** Tur terbang sinematik: 3D penuh, tanpa teks. Ketuk untuk jeda; narasi suara tetap jalan. */
 function KidTour() {
@@ -253,7 +322,7 @@ function KidTour() {
         </div>
       </div>
 
-      <TourPops />
+      <TourPops pov={pov} />
 
       {/* dijeda / selesai: tombol besar di tengah */}
       {!st.tourPlaying && (
@@ -275,7 +344,12 @@ function KidTour() {
 const AGAM = "/angkasa/agam-astronot.png";
 
 /** Sapaan Agam selama kamera mundur dari Bumi ke tata surya. */
-const INTRO_LINES = ["Halo! Aku Agam. Ini Bumi, rumah kita.", "Bumi punya banyak tetangga. Yuk, kita lihat tata surya!"];
+const INTRO_LINES = [
+  "Halo! Aku Agam. Ayo naik pesawat Rinoya-1!",
+  "Mesin menyala… tiga, dua, satu… meluncur!",
+  "Wuuush! Kita menembus awan!",
+  "Itu Bumi, rumah kita. Yuk, jelajahi tata surya!",
+];
 
 function Bubble({ children, tail = "left" }: { children: React.ReactNode; tail?: "left" | "bottom" }) {
   return (
@@ -297,15 +371,8 @@ function AgamFig({ h }: { h: number }) {
 
 function IntroOverlay() {
   const st = useAngkasa();
-  const [line, setLine] = useState(0);
-  useEffect(() => {
-    sfx.sparkle();
-    const t = setTimeout(() => {
-      setLine(1);
-      sfx.whoosh();
-    }, 3600);
-    return () => clearTimeout(t);
-  }, []);
+  const line = Math.min(INTRO_LINES.length - 1, st.introLine);
+  useEffect(() => sfx.sparkle(), []);
   return (
     <div className="pointer-events-none absolute inset-0 flex flex-col justify-end p-3 sm:p-5" style={{ paddingBottom: "max(16px, env(safe-area-inset-bottom))" }}>
       <div className="absolute right-3 sm:right-5" style={{ top: "max(14px, calc(env(safe-area-inset-top) + 8px))" }}>
@@ -320,11 +387,12 @@ function IntroOverlay() {
           Lewati <Icon name="skip_next" size={24} />
         </button>
       </div>
-      <div className="flex items-end gap-2">
-        <AgamFig h={170} />
-        <div key={line} className="mb-16 max-w-[330px]">
-          <Bubble>{INTRO_LINES[line]}</Bubble>
-        </div>
+      {/* Agam tampil sebagai model 3D di samping pesawat; di sini hanya ucapannya */}
+      <div key={line} className="mx-auto mb-6 max-w-[420px]">
+        <Bubble tail="bottom">
+          <span className="mb-0.5 block text-[13px] tracking-wide text-[#8b45f5]">AGAM</span>
+          {INTRO_LINES[line]}
+        </Bubble>
       </div>
     </div>
   );
@@ -532,8 +600,8 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   // (kamera mengikuti objek, jadi orbit cepat membuat layar ikut berputar & memusingkan).
   useEffect(() => {
     // Tur: planet bergeser pelan (2 hari/detik) agar kamera yang terbang & mengitari tetap tenang.
-    // Pembuka dekat Bumi: hampir diam (Bulan mengorbit Bumi ±27 hari; pada 8 hari/detik ia melesat & menutupi Bumi).
-    useAngkasa.getState().set({ speed: st.intro === "play" ? 0.3 : st.mode === "planet" ? 0.5 : st.mode === "tur" ? 2 : 8 });
+    // Pembuka dekat Bumi: hampir diam (Bumi berputar pelan; Bulan mengorbit ±27 hari, pada 8 hari/detik ia melesat & menutupi Bumi).
+    useAngkasa.getState().set({ speed: st.intro === "play" ? 0.02 : st.mode === "planet" ? 0.5 : st.mode === "tur" ? 2 : 8 });
   }, [st.mode, st.intro]);
 
   // Rekaman suara diputar otomatis saat objek dibuka.

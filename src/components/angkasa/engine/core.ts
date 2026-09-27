@@ -48,6 +48,8 @@ export interface EngineCtx {
   ultra: boolean;
   /** geser tujuan penerbangan yang sedang berjalan (objek tujuan mengorbit); false bila tidak sedang terbang */
   shiftFlight: (delta: THREE.Vector3) => boolean;
+  /** 0 = tidak terbang, >0 = kemajuan penerbangan fly-to (0–1) */
+  flightProgress: () => number;
   /** setengah sudut pandang efektif (memperhitungkan panel yang menutupi viewer) */
   fitHalfFov: () => number;
   controls: OrbitControls;
@@ -199,6 +201,7 @@ export class AngkasaEngine {
           .catch(() => {});
       },
       ultra: this.renderer.capabilities.maxTextureSize >= 4096,
+      flightProgress: () => (this.flight ? Math.max(0.001, Math.min(1, (performance.now() - this.flight.t0) / this.flight.ms)) : 0),
       flyTo: (pos, target, ms) => this.flyTo(pos, target, ms),
       shiftFlight: (d) => {
         if (!this.flight) return false;

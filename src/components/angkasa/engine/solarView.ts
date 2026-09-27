@@ -12,6 +12,7 @@ import type { ModeView } from "./views";
 import { TourController } from "./tour";
 import { SolarFx } from "./fx";
 import { ShipOverlay } from "./ship";
+import { sfx } from "@/lib/sfx";
 
 const DEG = Math.PI / 180;
 const SYSTEM_IDS = [
@@ -143,11 +144,18 @@ export class SolarView implements ModeView {
 
   private ultraId: string | null = null;
   private ship: ShipOverlay | null = null;
+  private lastIntroU = 0;
 
   update(dt: number, ctx: EngineCtx) {
     this.poseAll();
     if (useAngkasa.getState().fx && !this.fx) {
       this.fx = new SolarFx(this.scene, this.bodies, ctx, this.orbits);
+      // tampilan anak: muat pesawat & Agam sejak awal; pembuka menunggu keduanya (maks. 5 detik, lihat fx.intro)
+      if (useAngkasa.getState().tourCinematic) {
+        this.ship ??= new ShipOverlay(ctx.renderer);
+        this.ship.setIntro(0);
+        this.fx.introHold = () => !!this.ship?.introReady;
+      }
       ctx.renderer.domElement.addEventListener("pointerdown", this.onTouch);
       ctx.renderer.domElement.addEventListener("wheel", this.onTouch, { passive: true });
     }
@@ -158,11 +166,31 @@ export class SolarView implements ModeView {
     this.tour?.update(dt);
     // Pesawat Rinoya-1 (kamera belakang) selama tur tampilan anak
     const st = useAngkasa.getState();
-    const wantShip = !!this.tour && st.tourCinematic && st.tourCam === "belakang";
-    if (wantShip && !this.ship) this.ship = new ShipOverlay(ctx.renderer);
-    if (this.ship) {
+    // … dan di Jelajah Bebas: mengetuk planet = pesawat terbang ke sana, lalu parkir di pojok selama planet dilihat
+    const fp = ctx.flightProgress();
+    const freeFly = st.tourCinematic && !this.tour && !!this.focusId && st.intro === "done";
+    const wantShip = st.tourCinematic && st.tourCam === "belakang" && (!!this.tour || freeFly);
+    const introU = this.fx?.introProgress ?? null;
+    if ((wantShip || (introU !== null && st.tourCinematic)) && !this.ship) this.ship = new ShipOverlay(ctx.renderer);
+    if (introU !== null) {
+      const line = introU < 0.2 ? 0 : introU < 0.33 ? 1 : introU < 0.55 ? 2 : 3;
+      if (st.introLine !== line) useAngkasa.getState().set({ introLine: line });
+    }
+    if (this.ship && introU !== null) {
+      const cross = (x: number) => this.lastIntroU < x && introU >= x;
+      if (cross(0.27)) sfx.liftoff(); // mesin utama menyala
+      if (cross(0.4)) sfx.whoosh(); // menembus awan
+      if (cross(0.55)) sfx.sparkle(); // keluar ke angkasa
+      this.lastIntroU = introU;
+    }
+    this.ship?.setIntro(st.tourCinematic ? introU : null);
+    if (this.ship?.introOn) {
+      this.ship.visible = true;
+      this.ship.update(dt, this.camera, this.sunPos, 0, 0, true);
+    } else if (this.ship) {
       this.ship.visible = wantShip;
       if (wantShip && this.tour) this.ship.update(dt, this.camera, this.sunPos, this.tour.thrust, this.tour.banking, this.tour.flying);
+      else if (wantShip) this.ship.update(dt, this.camera, this.sunPos, fp > 0 ? 0.2 + 0.8 * Math.sin(Math.PI * fp) : 0.15, 0, fp > 0 && fp < 0.85);
     }
     // Peta 4K hanya untuk satu objek yang sedang dilihat dari dekat (hemat memori GPU di tablet/HP).
     const introEarth = this.fx && !this.fx.introDone && useAngkasa.getState().intro === "play" ? "earth" : null;

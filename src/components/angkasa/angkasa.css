@@ -356,8 +356,18 @@
 }
 .ak-popcard { animation: ak-popcard-in .5s cubic-bezier(.2,.9,.3,1.2) both; }
 @media (prefers-reduced-motion: reduce) { .ak-popcard { animation: none; } }
-/* kokpit POV: masuk lembut, sedikit bergoyang seperti pesawat melayang */
+/* kokpit POV: masuk lembut (tanpa goyang, agar isi layar dasbor tetap tepat di tempatnya) */
 @keyframes ak-cockpit-in { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
-@keyframes ak-cockpit-sway { 0%,100% { transform: scale(1.02) translateY(0) rotate(0deg); } 50% { transform: scale(1.02) translateY(3px) rotate(.25deg); } }
-.ak-cockpit { animation: ak-cockpit-in .45s ease-out both, ak-cockpit-sway 6s ease-in-out .45s infinite; }
+.ak-cockpit { animation: ak-cockpit-in .45s ease-out both; }
 @media (prefers-reduced-motion: reduce) { .ak-cockpit { animation: none; } }
+/* layar dasbor kokpit: teks menyala seperti layar sungguhan */
+.ak-dash {
+  border-radius: 6px;
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,170,60,.16), rgba(10,14,24,.0) 70%);
+  text-shadow: 0 0 6px rgba(255,160,60,.85), 0 0 14px var(--ak-glow, rgba(255,160,60,.5));
+  animation: ak-dash-on .5s steps(4, end) both;
+  pointer-events: none;
+}
+.ak-dash-idle { color: rgba(255,190,110,.55); font-weight: 800; animation: ak-dash-blink 2.4s ease-in-out infinite; }
+@keyframes ak-dash-on { 0% { opacity: 0; } 50% { opacity: .4; } 75% { opacity: .15; } 100% { opacity: 1; } }
+@keyframes ak-dash-blink { 0%,100% { opacity: .55; } 50% { opacity: .9; } }

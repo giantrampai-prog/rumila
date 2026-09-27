@@ -6,6 +6,8 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { AgamModel } from "@/components/roket/agam-model";
+import { GroundLaunch, GROUND_END } from "./launch";
 
 const URL = "/angkasa/kapal/rinoya-1.glb";
 
@@ -29,9 +31,63 @@ export class ShipOverlay {
   private env: THREE.Texture | null = null;
   ready = false;
   visible = false;
+  /* Pembuka: Agam melambai di samping pesawat, masuk kokpit, pesawat berbalik & melesat. */
+  private introU: number | null = null;
+  private agamHost = new THREE.Group();
+  private agam: AgamModel | null = null;
+  private agamMats: THREE.Material[] = [];
+  private ground: GroundLaunch | null = null;
+  private groundMode = false;
+  private flash: THREE.Mesh;
+  private shipModel: THREE.Object3D | null = null;
+  private shipBack = 0.8;
+  /** pesawat & Agam siap tampil di pembuka */
+  get introReady() {
+    return this.ready && !!this.agam?.ready;
+  }
+  get introOn() {
+    return this.introU !== null;
+  }
+  /** u 0–1 sepanjang pembuka; null = selesai */
+  setIntro(u: number | null) {
+    this.introU = u;
+    if (u !== null && !this.ground) {
+      this.ground = new GroundLaunch(this.agamHost);
+      if (this.shipModel) this.ground.setShip(this.shipModel.clone(), this.shipBack);
+    }
+    if (u !== null && !this.agam) {
+      this.agam = new AgamModel(
+        this.agamHost,
+        (root) =>
+          root.traverse((o) => {
+            const m = o as THREE.Mesh;
+            if (!m.isMesh) return;
+            const mats = Array.isArray(m.material) ? m.material : [m.material];
+            for (const mt of mats) this.agamMats.push(mt);
+          }),
+        { url: "/roket/agam-astronot.glb", fit: (r) => r.scale.setScalar(0.62 / 1.2) },
+      );
+    }
+    if (u === null) {
+      this.groundMode = false;
+      if (this.ground) {
+        this.ground.dispose();
+        this.ground = null;
+      }
+    }
+  }
 
   constructor(renderer: THREE.WebGLRenderer) {
     this.scene.add(this.rig, this.sun, this.sun.target, this.fill);
+    // kilatan putih saat keluar atmosfer (peralihan adegan darat → angkasa)
+    this.flash = new THREE.Mesh(
+      new THREE.PlaneGeometry(40, 40),
+      new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, depthTest: false, depthWrite: false }),
+    );
+    this.flash.position.z = -1;
+    this.flash.renderOrder = 99;
+    this.camera.add(this.flash);
+    this.scene.add(this.camera);
     this.rig.add(this.body);
     // pantulan lembut untuk material logam/kaca (tanpa latar)
     const pm = new THREE.PMREMGenerator(renderer);
@@ -100,6 +156,9 @@ export class ShipOverlay {
         const back = (size.z * s) / 2;
         this.flame.position.set(0, 0.02, back * 0.9);
         this.glow.position.set(0, 0.02, back * 0.88);
+        this.shipModel = holder;
+        this.shipBack = back;
+        this.ground?.setShip(holder.clone(), back);
         this.ready = true;
       },
       undefined,
@@ -136,13 +195,8 @@ export class ShipOverlay {
     this.camera.aspect = main.aspect;
     this.camera.updateProjectionMatrix();
 
-    // di bawah-tengah layar, dilihat sedikit dari atas; melayang pelan
-    const portrait = main.aspect < 1;
-    const dist = (portrait ? 4.8 / Math.max(0.55, main.aspect) ** 0.5 : 4.6) + side * 1.6;
-    // lebar setengah layar pada jarak ini → geser ke kanan bawah saat singgah
-    const halfW = Math.tan((main.fov * Math.PI) / 360) * dist * main.aspect;
-    this.rig.position.set(side * halfW * 0.55, -0.8 - side * 0.35 - Math.sin(this.t * 0.9) * 0.04, -dist);
-    this.body.rotation.set(0.2 + Math.sin(this.t * 0.7) * 0.02, this.yaw - side * 0.5, this.roll + Math.sin(this.t * 0.5) * 0.02);
+    if (this.introU !== null) this.introPose(this.introU, main, dt);
+    else this.chasePose(side, main);
 
     // arah Matahari dilihat dari kamera utama → ruang kamera pesawat
     const d = sunWorld.clone().sub(main.position).normalize().applyQuaternion(main.quaternion.clone().invert());
@@ -150,7 +204,54 @@ export class ShipOverlay {
     this.sun.target.position.copy(this.rig.position);
   }
 
+  private chasePose(side: number, main: THREE.PerspectiveCamera) {
+    // di bawah-tengah layar, dilihat sedikit dari atas; melayang pelan
+    const portrait = main.aspect < 1;
+    const dist = (portrait ? 4.8 / Math.max(0.55, main.aspect) ** 0.5 : 4.6) + side * 1.6;
+    // lebar setengah layar pada jarak ini → geser ke kanan bawah saat singgah
+    const halfW = Math.tan((main.fov * Math.PI) / 360) * dist * main.aspect;
+    this.rig.position.set(side * halfW * 0.55, -0.8 - side * 0.35 - Math.sin(this.t * 0.9) * 0.04, -dist);
+    this.body.rotation.set(0.2 + Math.sin(this.t * 0.7) * 0.02, this.yaw - side * 0.5, this.roll + Math.sin(this.t * 0.5) * 0.02);
+  }
+
+  /**
+   * Pembuka (u 0–1). 0–GROUND_END: adegan darat (lihat launch.ts) — Agam naik, lepas landas, menembus awan.
+   * Sesudahnya di angkasa: kilatan memudar, pesawat naik ke posisi kamera belakang di depan Bumi, meliuk pelan
+   * saat kamera utama mundur ke tata surya, lalu melesat menjauh.
+   */
+  private introPose(u: number, main: THREE.PerspectiveCamera, dt: number) {
+    this.groundMode = u < GROUND_END;
+    if (this.groundMode) {
+      this.ground?.update(u, dt, main.aspect, (wave) => {
+        const w = Math.sin(this.t * 7) * 0.35;
+        const step = wave ? 0 : Math.sin(this.t * 7) * 0.45;
+        this.agam?.pose({ legL: step, legR: -step, armL: -step * 0.6, armR: wave ? -2.5 + w : step * 0.6, lower: 1 });
+      });
+      return;
+    }
+    const v = (u - GROUND_END) / (1 - GROUND_END);
+    const sm = (a: number, b: number) => {
+      const x = Math.min(1, Math.max(0, (v - a) / (b - a)));
+      return x * x * (3 - 2 * x);
+    };
+    (this.flash.material as THREE.MeshBasicMaterial).opacity = 1 - sm(0, 0.12);
+    const portrait = main.aspect < 1;
+    const base = portrait ? 5.4 / Math.max(0.55, main.aspect) ** 0.5 : 5;
+    const rise = sm(0, 0.18);
+    const away = sm(0.78, 1);
+    // meliuk pelan (kiri–kanan) selama kamera mundur
+    const weave = Math.sin(v * Math.PI * 2.5) * sm(0.2, 0.3) * (1 - away);
+    this.rig.position.set(weave * 0.9, -3 + 2.2 * rise + Math.sin(this.t * 0.9) * 0.04 + away * 0.9, -(base + away * 60));
+    this.body.rotation.set(0.2 - 0.25 * (1 - rise), -weave * 0.15, -weave * 0.45 + Math.sin(this.t * 0.5) * 0.02);
+    this.power = Math.max(this.power, 0.7 + 0.3 * away);
+  }
+
   render(renderer: THREE.WebGLRenderer) {
+    if (this.groundMode && this.ground) {
+      // adegan darat menutupi seluruh layar (tata surya di belakangnya belum terlihat)
+      this.ground.render(renderer);
+      return;
+    }
     if (!this.visible || !this.ready) return;
     const ac = renderer.autoClear;
     renderer.autoClear = false;
@@ -167,5 +268,6 @@ export class ShipOverlay {
       (Array.isArray(mat) ? mat : mat ? [mat] : []).forEach((x) => x.dispose());
     });
     this.env?.dispose();
+    this.ground?.dispose();
   }
 }
