@@ -15,6 +15,7 @@ import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { PERM, TOOL_ID } from '@/lib/fruits/progress';
 import { useMe, useRumila } from '@/lib/store';
 import type { GardenEngine } from './engine';
+import { GardenTour, type TourHandle } from './tour';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const INK = '#2b1d4e';
@@ -199,7 +200,8 @@ function FruitCard({ id, isNew, url, onClose, on3D }: { id: string; isNew: boole
   );
 }
 
-export default function KidGarden({ active, onOpen3D, onCatalog, onTour }: { active: boolean; onOpen3D: (id: string) => void; onCatalog: () => void; onTour: () => void }) {
+export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, onTourEnd }: { active: boolean; tour: boolean; onOpen3D: (id: string) => void; onCatalog: () => void; onTour: () => void; onTourEnd: () => void }) {
+  const tourHandle = useRef<TourHandle | null>(null);
   const router = useRouter();
   const me = useMe();
   const host = useRef<HTMLDivElement>(null);
@@ -230,7 +232,7 @@ export default function KidGarden({ active, onOpen3D, onCatalog, onTour }: { act
       if (!alive || !host.current) return;
       engine.current = new GardenEngine(host.current, {
         onNear: (id) => setNear(id),
-        onArrive: (id) => openRef.current(id),
+        onArrive: (key) => (tourHandle.current ? tourHandle.current.arrived(key) : openRef.current(key)),
       });
       engine.current.setDiscovered(foundRef.current);
       setReady(true);
@@ -270,6 +272,7 @@ export default function KidGarden({ active, onOpen3D, onCatalog, onTour }: { act
       )}
 
       {/* atas: kembali · keranjang · tur & katalog */}
+      <div className={`pointer-events-none absolute ${tour ? 'hidden' : ''}`} style={{ inset: 0 }}>
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3 sm:p-5" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))' }}>
         <RoundBtn icon="arrow_back" label="Kembali" onClick={() => router.push('/beranda/angkasa')} />
         <div className="mt-1 flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-4 pl-1.5 shadow-[0_4px_0_rgba(43,29,78,.12)]">
@@ -309,6 +312,20 @@ export default function KidGarden({ active, onOpen3D, onCatalog, onTour }: { act
         <span className="w-[1px]" />
       </div>
 
+      </div>
+      {tour && ready && engine.current && (
+        <GardenTour
+          engine={engine.current}
+          handle={tourHandle}
+          onVisit={(id) => {
+            if (!foundRef.current.has(id)) {
+              addFound(id);
+              engine.current?.pick(id);
+            }
+          }}
+          onClose={onTourEnd}
+        />
+      )}
       {card && <FruitCard id={card.id} isNew={card.isNew} url={tracks[card.id]} onClose={() => setCard(null)} on3D={() => onOpen3D(card.id)} />}
       {card?.isNew && <Confetti key={card.id} />}
     </div>

@@ -32,3 +32,14 @@ describe('tata letak Kebun Buah', () => {
     expect(kind('apel')).toBe('tree');
   });
 });
+
+describe('tur jalan-jalan di kebun', async () => {
+  const { TUR_BUAH } = await import('../tur');
+  it('mampir ke setiap buah tepat satu kali, diawali & diakhiri di alun-alun', () => {
+    const fruits = TUR_BUAH.filter((s) => s.fruit).map((s) => s.fruit!);
+    expect(fruits.sort()).toEqual(FRUITS.map((f) => f.id).sort());
+    expect(TUR_BUAH[0].at).toBe('plaza');
+    expect(TUR_BUAH.at(-1)!.at).toBe('plaza');
+    expect(TUR_BUAH.filter((s) => s.at.startsWith('zona:'))).toHaveLength(3);
+  });
+});

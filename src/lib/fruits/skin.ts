@@ -3,8 +3,8 @@ import type { Fruit } from './catalog';
 const random=(x:number,y:number)=>{const n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n);};
 function noise(x:number,y:number){const ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy,sx=fx*fx*(3-2*fx),sy=fy*fy*(3-2*fy);return T.MathUtils.lerp(T.MathUtils.lerp(random(ix,iy),random(ix+1,iy),sx),T.MathUtils.lerp(random(ix,iy+1),random(ix+1,iy+1),sx),sy);}
 /** Microgeometry in real material channels, independent of interface colors. */
-export function applyFruitSkin(root:T.Object3D,fruit:Fruit){
- const width=1024,height=512,bump=new Uint8Array(width*height*4),rough=new Uint8Array(width*height*4),albedo=new Uint8Array(width*height*4);
+export function applyFruitSkin(root:T.Object3D,fruit:Fruit,width=1024){
+ const height=width/2,bump=new Uint8Array(width*height*4),rough=new Uint8Array(width*height*4),albedo=new Uint8Array(width*height*4);
  const shape=fruit.shape,citrus=shape==='citrus'||fruit.id==='lemon'||fruit.id==='jeruk-bali';
  const base=new T.Color(fruit.color).convertLinearToSRGB(),accent=new T.Color(fruit.accent).convertLinearToSRGB();
  const sample=new T.Color();

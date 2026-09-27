@@ -5,9 +5,9 @@ import { TUR_BUAH } from "../src/lib/fruits/tur";
 
 mkdirSync("docs/buah", { recursive: true });
 const txt = [
-  "NASKAH SUARA — TUR KEBUN BUAH 3D",
+  "NASKAH SUARA — TUR KEBUN BUAH 3D (JALAN-JALAN DI KEBUN)",
   "",
-  `Rekam jadi SATU file, urut dari atas. Beri jeda ±1 detik antaradegan. ${TUR_BUAH.length} adegan (pembuka, semua buah, penutup).`,
+  `Rekam jadi SATU file, urut dari atas. Beri jeda ±1 detik antaradegan. ${TUR_BUAH.length} adegan (pembuka, papan tiap petak, semua buah sesuai urutan jalan di kebun, penutup).`,
   "Setelah rekaman jadi, catat timestamp mulai tiap adegan (menit:detik), misalnya 1 = 0:00, 2 = 0:12, dst.",
   "",
   ...TUR_BUAH.map((s, i) => `[${i + 1}. ${s.title}]\n${s.lines.join(" ")}\n`),

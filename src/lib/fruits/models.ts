@@ -44,7 +44,9 @@ function calyx(parent:T.Group,y:number,count=5,size=.36,hex='#50743b') {
   for(let i=0;i<count;i++){const a=i/count*Math.PI*2;leaf(parent,new T.Vector3(0,y,0),new T.Vector3(Math.cos(a),-.2,Math.sin(a)),size,size*.3,hex);}
 }
 
-export function createFruitModel(f:Fruit):T.Group {
+/** detail 'lite': versi ringan untuk banyak buah sekaligus (Kebun Buah) — segmen & tekstur kulit lebih kecil. */
+export function createFruitModel(f:Fruit,detail:'full'|'lite'='full'):T.Group {
+  const lite=detail==='lite';
   f=fruitReferenceLook(f);
   const root=new T.Group();root.name=`fruit_${f.id}`;
   const shape=f.shape;
@@ -60,16 +62,16 @@ export function createFruitModel(f:Fruit):T.Group {
     const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(v,3));g.setAttribute('color',new T.Float32BufferAttribute(cs,3));g.setAttribute('uv',new T.Float32BufferAttribute(uvs,2));g.setIndex(idx);g.computeVertexNormals();const body=mesh(g,new T.MeshStandardMaterial({vertexColors:true,roughness:.55}),root);body.userData.fruitSurface=true;
     ellipsoid(root,new T.Vector3(.058,.058,.058),'#655134',curve.getPoint(0));ellipsoid(root,new T.Vector3(.058,.058,.058),'#655134',curve.getPoint(1));
     tube([curve.getPoint(0),new T.Vector3(-.73,1.03,0)],.046,material('#655134',.85),root);root.rotation.z=-.25;
-    return normalizeModel(root,f);
+    return normalizeModel(root,f,detail);
   }
   if(shape==='grapes'){
     for(let row=0;row<5;row++){const count=7-row,radius=.49-row*.07;for(let j=0;j<count;j++){const a=j/count*Math.PI*2+row*.6;const p=new T.Vector3(Math.cos(a)*radius,.65-row*.34,Math.sin(a)*radius);const o=ellipsoid(root,new T.Vector3(.265,.3,.26),f.color,p,.32,32);o.userData.fruitSurface=true;(o.material as T.MeshStandardMaterial).color.multiplyScalar(.8+hash(row*9+j)*.3);}}
     tube([new T.Vector3(0,.45,0),new T.Vector3(.04,1.03,0),new T.Vector3(.3,1.12,0)],.042,material('#6b7140',.8),root);
-    return normalizeModel(root,f);
+    return normalizeModel(root,f,detail);
   }
   if(shape==='cherries'){
     [[-.38,-.14,0],[.4,-.3,.1]].forEach(([x,y,z])=>{const body=ellipsoid(root,new T.Vector3(.44,.42,.42),f.color,new T.Vector3(x,y,z),.24);body.userData.fruitSurface=true;tube([new T.Vector3(x,y+.35,z),new T.Vector3(x*.9,.95,z),new T.Vector3(.1,1.4,0)],.024,material('#657339'),root);});
-    return normalizeModel(root,f);
+    return normalizeModel(root,f,detail);
   }
 
   const s=new T.Vector3(1,1,1);
@@ -94,7 +96,7 @@ export function createFruitModel(f:Fruit):T.Group {
   if(f.id==='plum')s.set(.94,1,.91);
   if(f.id==='blewah')s.set(.87,1.15,.86);
   if(f.id==='jambu-bol')s.set(.93,1.0,.9);
-  const geo=new T.SphereGeometry(1,128,96),p=geo.getAttribute('position'),uv=geo.getAttribute('uv');
+  const geo=lite?new T.SphereGeometry(1,40,28):new T.SphereGeometry(1,128,96),p=geo.getAttribute('position'),uv=geo.getAttribute('uv');
   const colors:number[]=[],base=color(f.color),accent=color(f.accent);
   for(let i=0;i<p.count;i++){
     const x=p.getX(i),y=p.getY(i),z=p.getZ(i),u=uv.getX(i),v=uv.getY(i),a=Math.atan2(z,x);
@@ -130,7 +132,7 @@ export function createFruitModel(f:Fruit):T.Group {
   const body=mesh(geo,new T.MeshStandardMaterial({vertexColors:true,roughness:shiny?.35:.64,metalness:0}),root);body.userData.fruitSurface=true;
 
   if(['durian','jackfruit','soursop','lychee','custard','pineapple'].includes(shape)){
-    const count=shape==='durian'?620:shape==='jackfruit'?1350:shape==='soursop'?120:shape==='pineapple'?180:shape==='custard'?110:420;
+    const count=Math.round((lite?.3:1)*(shape==='durian'?620:shape==='jackfruit'?1350:shape==='soursop'?120:shape==='pineapple'?180:shape==='custard'?110:420));
     const h=shape==='durian'?.15:shape==='jackfruit'?.06:shape==='soursop'?.11:shape==='custard'?.085:shape==='pineapple'?.04:.036;
     const radius=shape==='durian'?.082:shape==='jackfruit'?.063:shape==='custard'?.14:shape==='pineapple'?.1:.045;
     const g=shape==='custard'||shape==='lychee'?new T.SphereGeometry(radius,10,8):new T.ConeGeometry(radius,h,shape==='pineapple'?4:6,3);
@@ -143,7 +145,7 @@ export function createFruitModel(f:Fruit):T.Group {
   }
   if(shape==='rambutan'){
     const gs:T.BufferGeometry[]=[];
-    pointsOnSurface(400,s,(pos,n,i)=>{
+    pointsOnSurface(lite?140:400,s,(pos,n,i)=>{
       const tangent=new T.Vector3(n.y,-n.x,.3+hash(i)*.3).normalize(),length=.18+hash(i*1.7)*.18;
       const curve=new T.CatmullRomCurve3([pos,pos.clone().addScaledVector(n,length*.55),pos.clone().addScaledVector(n,length).addScaledVector(tangent,.05+hash(i)*.13)]);
       const g=new T.TubeGeometry(curve,10,.014,4,false),c:number[]=[],gp=g.getAttribute('position');
@@ -177,7 +179,7 @@ export function createFruitModel(f:Fruit):T.Group {
   if(shape==='coconut'){
     for(const [x,y] of [[-.15,.23],[.15,.23],[0,.01]]){const z=Math.sqrt(1-(x/s.x)**2-(y/s.y)**2)*s.z+.009;ellipsoid(root,new T.Vector3(.053,.068,.015),'#4b2c17',new T.Vector3(x,y,z),.95,24);}
   }
-  if(shape==='kiwi'||shape==='coconut'){
+  if(!lite&&(shape==='kiwi'||shape==='coconut')){
     // Actual short fibers catch the silhouette, while the skin map supplies fine grain.
     const vertices:number[]=[],shades:number[]=[];
     pointsOnSurface(shape==='kiwi'?4200:2200,s,(pos,n,i)=>{
@@ -190,10 +192,10 @@ export function createFruitModel(f:Fruit):T.Group {
     const fibers=new T.BufferGeometry();fibers.setAttribute('position',new T.Float32BufferAttribute(vertices,3));fibers.setAttribute('color',new T.Float32BufferAttribute(shades,3));
     root.add(new T.LineSegments(fibers,new T.LineBasicMaterial({vertexColors:true,transparent:true,opacity:.58})));
   }
-  return normalizeModel(root,f);
+  return normalizeModel(root,f,detail);
 }
-function normalizeModel(root:T.Group,f:Fruit) {
-  applyFruitSkin(root,f);
+function normalizeModel(root:T.Group,f:Fruit,detail:'full'|'lite'='full') {
+  applyFruitSkin(root,f,detail==='lite'?256:1024);
   const box=new T.Box3().setFromObject(root),size=box.getSize(new T.Vector3()),center=box.getCenter(new T.Vector3());
   const holder=new T.Group();holder.name=root.name;holder.userData.referenceId=`rumila-fruit-v1-${f.id}`;holder.userData.representation='parametric-whole-fruit';root.position.sub(center);holder.add(root);holder.scale.setScalar(2.6/Math.max(size.x,size.y,size.z));return holder;
 }
