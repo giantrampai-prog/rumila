@@ -108,6 +108,8 @@ export interface AngkasaState {
   tourCinematic: boolean;
   /** Efek visual dekoratif tampilan anak (langit galaksi, asteroid, intro, dll.) */
   fx: boolean;
+  /** Pembuka tampilan anak: "play" = kamera mundur dari Bumi, "choose" = pilih Tur/Bebas, "done" = selesai */
+  intro: "play" | "choose" | "done";
   /** lebar (px) viewer yang tertutup panel mengambang kiri/kanan (layar penuh) */
   frameInset: [number, number];
   startTour: (from?: number) => void;
@@ -204,6 +206,7 @@ export const useAngkasa = create<AngkasaState>()((set, get) => ({
   tourNarration: true,
   tourCinematic: false,
   fx: false,
+  intro: "done",
   frameInset: [0, 0],
   startTour: (from = 0) => {
     const s = get();

@@ -83,9 +83,56 @@ function Laurel({ side }: { side: 1 | -1 }) {
   return <g transform={`scale(${side} 1)`}>{leaves}</g>;
 }
 
-function CertSvg({ game, name, stars, date, locked }: { game: string; name: string; stars: number; date: string; locked?: boolean }) {
+/** Isi sertifikat yang bisa diganti (bawaan: Coding Agam). */
+export interface CertSpec {
+  /** sub-judul di bawah SERTIFIKAT, mis. "PROGRAMMER CILIK" */
+  title: string;
+  /** teks lambang di tengah laurel */
+  emblem: string;
+  /** dua baris kalimat penghargaan */
+  lines: [string, string];
+  /** tiga capaian [nilai, label] */
+  stats: [string, string][];
+  /** angka & label di segel */
+  seal: [string, string];
+  /** teks melingkar segel */
+  ring: string;
+  /** jabatan penanda tangan */
+  signer: string;
+  /** kalimat cap pratinjau */
+  lockNote: string;
+  /** satuan sisa untuk pesan pratinjau, mis. "coding" */
+  unit: string;
+  /** nama berkas & judul berbagi */
+  file: string;
+  /** awalan nomor seri */
+  serial: string;
+  /** gambar robot Agam di tanda tangan (bawaan ya) */
+  robot?: boolean;
+}
+
+const codingSpec = (game: string, stars: number): CertSpec => ({
+  title: 'PROGRAMMER CILIK',
+  emblem: '</>',
+  lines: [`atas keberhasilannya menyelesaikan seluruh program ${game} dari Coding Agam`, 'dengan ketekunan, ketelitian, dan cara berpikir seorang programmer.'],
+  stats: [
+    ['10', 'LEVEL'],
+    ['100', 'CODING'],
+    [`${stars}/300`, 'BINTANG'],
+  ],
+  seal: ['100', 'CODING'],
+  ring: `RINOYA ACADEMY ★ CODING AGAM ★ ${game.toUpperCase()} ★`,
+  signer: 'ROBOT GURU CODING',
+  lockNote: 'PRATINJAU · SELESAIKAN 100 CODING',
+  unit: 'coding',
+  file: `Coding-Agam-${game}`,
+  serial: `CA-${game[0].toUpperCase()}`,
+});
+
+function CertSvg({ game, name, stars, date, locked, spec: sp }: { game: string; name: string; stars: number; date: string; locked?: boolean; spec?: CertSpec }) {
+  const spec = sp ?? codingSpec(game, stars);
   const nameSize = name.length > 24 ? 60 : name.length > 16 ? 74 : 92;
-  const serial = locked ? `RA/CA-${game[0].toUpperCase()}/—/——————` : serialOf(game, name, date);
+  const serial = locked ? `RA/${spec.serial}/—/——————` : serialOf(game, name, date);
   const band = [0, (Math.PI * 2) / 3, (Math.PI * 4) / 3];
   // tepi pita guilloche
   const B0 = 40;
@@ -169,7 +216,7 @@ function CertSvg({ game, name, stars, date, locked }: { game: string; name: stri
         <circle r="30" fill={NAVY} stroke="url(#cg-gold)" strokeWidth="3" />
         <circle r="24" fill="none" stroke="url(#cg-gold)" strokeWidth="0.8" />
         <text y="7" textAnchor="middle" fontFamily={SANS} fontSize="20" fontWeight="700" fill="url(#cg-gold)">
-          {'</>'}
+          {spec.emblem}
         </text>
       </g>
 
@@ -184,7 +231,7 @@ function CertSvg({ game, name, stars, date, locked }: { game: string; name: stri
         <line x1="330" y1="318" x2="428" y2="318" stroke="url(#cg-gold)" strokeWidth="1.5" />
         <polygon points="436,318 442,312 448,318 442,324" fill="url(#cg-gold)" />
         <text x="600" y="325" textAnchor="middle" fontFamily={SANS} fontSize="18" fontWeight="700" fill={GOLD} letterSpacing="7">
-          PROGRAMMER CILIK
+          {spec.title}
         </text>
         <polygon points="752,318 758,312 764,318 758,324" fill="url(#cg-gold)" />
         <line x1="772" y1="318" x2="870" y2="318" stroke="url(#cg-gold)" strokeWidth="1.5" />
@@ -203,19 +250,15 @@ function CertSvg({ game, name, stars, date, locked }: { game: string; name: stri
       </g>
 
       <text x="600" y="532" textAnchor="middle" fontFamily={SERIF} fontSize="21" fill={INK}>
-        atas keberhasilannya menyelesaikan seluruh program {game} dari Coding Agam
+        {spec.lines[0]}
       </text>
       <text x="600" y="561" textAnchor="middle" fontFamily={SERIF} fontSize="21" fill={INK}>
-        dengan ketekunan, ketelitian, dan cara berpikir seorang programmer.
+        {spec.lines[1]}
       </text>
 
       {/* capaian */}
       <g fontFamily={SANS} textAnchor="middle">
-        {[
-          [430, '10', 'LEVEL'],
-          [600, '100', 'CODING'],
-          [770, `${stars}/300`, 'BINTANG'],
-        ].map(([x, v, l]) => (
+        {spec.stats.map(([v, l], i) => [430 + i * 170, v, l] as const).map(([x, v, l]) => (
           <g key={l as string}>
             <text x={x as number} y="602" fontFamily={DISPLAY} fontSize="26" fontWeight="700" fill={NAVY}>
               {v}
@@ -250,28 +293,30 @@ function CertSvg({ game, name, stars, date, locked }: { game: string; name: stri
         <circle r="37" fill="url(#cg-gold)" stroke="#8a5d12" strokeWidth="1.5" />
         <text fontFamily={SANS} fontSize="9.5" fontWeight="700" fill="#6b470c" >
           <textPath href="#cg-ring" textLength="292" lengthAdjust="spacing">
-            {`RINOYA ACADEMY ★ CODING AGAM ★ ${game.toUpperCase()} ★`}
+            {spec.ring}
           </textPath>
         </text>
         <text y="8" textAnchor="middle" fontFamily={DISPLAY} fontSize="30" fontWeight="700" fill="#5a3b08">
-          100
+          {spec.seal[0]}
         </text>
         <text y="22" textAnchor="middle" fontFamily={SANS} fontSize="8" fontWeight="700" fill="#5a3b08" letterSpacing="2">
-          CODING
+          {spec.seal[1]}
         </text>
       </g>
 
       {/* tanda tangan Agam */}
       <g textAnchor="middle">
-        <g transform="translate(1000 648)">
-          <AgamFront size={58} wave={false} />
-        </g>
+        {spec.robot !== false && (
+          <g transform="translate(1000 648)">
+            <AgamFront size={58} wave={false} />
+          </g>
+        )}
         <text x="900" y="714" fontFamily={SCRIPT} fontSize="40" fill={NAVY}>
           Agam
         </text>
         <line x1="790" y1="726" x2="1010" y2="726" stroke={NAVY} strokeWidth="1.2" />
         <text x="900" y="748" fontFamily={SANS} fontSize="12" fontWeight="700" fill={MUTED} letterSpacing="3">
-          ROBOT GURU CODING
+          {spec.signer}
         </text>
       </g>
 
@@ -298,7 +343,7 @@ function CertSvg({ game, name, stars, date, locked }: { game: string; name: stri
               CONTOH
             </text>
             <text x="600" y="597" textAnchor="middle" fontFamily={SANS} fontSize="11.5" fontWeight="700" fill="#b3261e" letterSpacing="3">
-              PRATINJAU · SELESAIKAN 100 CODING
+              {spec.lockNote}
             </text>
           </g>
         </g>
@@ -307,8 +352,9 @@ function CertSvg({ game, name, stars, date, locked }: { game: string; name: stri
   );
 }
 
-export function Certificate({ game, name, stars, date, onClose, remaining = 0 }: { game: string; name: string; stars: number; date: string; onClose: () => void; remaining?: number }) {
+export function Certificate({ game, name, stars, date, onClose, remaining = 0, spec: sp }: { game: string; name: string; stars: number; date: string; onClose: () => void; remaining?: number; spec?: CertSpec }) {
   const locked = remaining > 0;
+  const spec = sp ?? codingSpec(game, stars);
   const box = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
 
@@ -332,9 +378,9 @@ export function Certificate({ game, name, stars, date, onClose, remaining = 0 }:
     try {
       const blob = await toPng();
       if (!blob) return;
-      const file = new File([blob], `Sertifikat-Coding-Agam-${game}-${name.replace(/\s+/g, '-')}.png`, { type: 'image/png' });
+      const file = new File([blob], `Sertifikat-${spec.file}-${name.replace(/\s+/g, '-')}.png`, { type: 'image/png' });
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], title: `Sertifikat Coding Agam · ${game}` }).catch(() => {});
+        await navigator.share({ files: [file], title: `Sertifikat ${spec.title}` }).catch(() => {});
       } else {
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
@@ -350,11 +396,11 @@ export function Certificate({ game, name, stars, date, onClose, remaining = 0 }:
   return (
     <div className="koding-paper fixed inset-0 z-30 flex flex-col items-center justify-center gap-4 overflow-y-auto p-4">
       <div ref={box} className="koding-cert w-full max-w-[1000px] overflow-hidden rounded-[6px]">
-        <CertSvg game={game} name={name} stars={stars} date={date} locked={locked} />
+        <CertSvg game={game} name={name} stars={stars} date={date} locked={locked} spec={spec} />
       </div>
       {locked && (
         <p className="koding-say max-w-[560px] rounded-[18px] px-4 py-3 text-center text-[15px] font-bold">
-          Ini contoh sertifikatmu. Tinggal <b>{remaining} coding</b> lagi, lalu sertifikat asli tanpa cap bisa disimpan!
+          Ini contoh sertifikatmu. Tinggal <b>{remaining} {spec.unit}</b> lagi, lalu sertifikat asli tanpa cap bisa disimpan!
         </p>
       )}
       <div className="flex w-full max-w-[520px] gap-2">

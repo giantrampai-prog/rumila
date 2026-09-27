@@ -183,10 +183,47 @@ function patchNightLights(
         "#include <common>\nuniform vec3 uSunWorld;\nvarying vec3 vWorldNormalN;\nvarying vec3 vWorldPosN;",
       )
       .replace(
+        "#include <roughnessmap_fragment>",
+        // Laut memantulkan Matahari (kilau), daratan & awan tetap kusam: laut dikenali dari warna peta (biru gelap).
+        `#include <roughnessmap_fragment>
+         float oceanMask = smoothstep(0.02, 0.10, diffuseColor.b - max(diffuseColor.r, diffuseColor.g * 0.9)) * (1.0 - smoothstep(0.35, 0.6, diffuseColor.g));
+         roughnessFactor = mix(roughnessFactor, 0.32, oceanMask);`,
+      )
+      .replace(
         "#include <emissivemap_fragment>",
         `#include <emissivemap_fragment>
          float lit = dot(normalize(vWorldNormalN), normalize(uSunWorld - vWorldPosN));
          totalEmissiveRadiance *= smoothstep(0.15, -0.2, lit);`,
+      );
+  };
+}
+
+/**
+ * Permukaan Matahari hidup: peta citra dicampur dua kali dengan geseran berlawanan (plasma bergolak), bintik
+ * granulasi halus berdenyut, dan tepi lebih gelap (limb darkening) seperti foto Matahari sungguhan.
+ */
+function patchSunSurface(mat: THREE.MeshBasicMaterial, time: { value: number }) {
+  mat.onBeforeCompile = (sh) => {
+    sh.uniforms.uTime = time;
+    sh.vertexShader = sh.vertexShader
+      .replace("#include <common>", "#include <common>\nvarying float vLimb;")
+      .replace("#include <begin_vertex>", "#include <begin_vertex>\nvLimb = abs(normalize(normalMatrix * normal).z);");
+    sh.fragmentShader = sh.fragmentShader
+      .replace("#include <common>", "#include <common>\nuniform float uTime;\nvarying float vLimb;")
+      .replace(
+        "#include <map_fragment>",
+        `#ifdef USE_MAP
+           vec2 uvA = vMapUv + vec2(uTime * 0.0021, sin(uTime * 0.05) * 0.002);
+           vec2 uvB = vMapUv * 1.7 + vec2(-uTime * 0.0016, uTime * 0.0011);
+           vec4 a = texture2D(map, uvA);
+           vec4 b = texture2D(map, uvB);
+           vec4 sampledDiffuseColor = mix(a, b, 0.4);
+           float gran = 0.5 + 0.5 * sin(vMapUv.x * 900.0 + uTime * 0.8 + sin(vMapUv.y * 700.0 - uTime * 0.6) * 2.0) * sin(vMapUv.y * 820.0 + uTime * 0.7);
+           sampledDiffuseColor.rgb *= 0.88 + 0.22 * gran;
+           diffuseColor *= sampledDiffuseColor;
+         #endif
+         // limb darkening: tepi piringan lebih gelap & lebih jingga
+         diffuseColor.rgb *= mix(vec3(0.62, 0.38, 0.16), vec3(1.08, 1.02, 0.95), pow(vLimb, 0.55));`,
       );
   };
 }
@@ -362,8 +399,12 @@ export function createBody(
   disposables.push(geo);
 
   let mat: THREE.Material;
+  let sunTimeRef: { value: number } | null = null;
   if (o.id === "sun") {
     mat = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const sunTime = { value: 0 };
+    patchSunSurface(mat as THREE.MeshBasicMaterial, sunTime);
+    sunTimeRef = sunTime;
   } else {
     mat = new THREE.MeshStandardMaterial({
       color: new THREE.Color(o.texture.base),
@@ -374,6 +415,10 @@ export function createBody(
   disposables.push(mat);
   const surface = new THREE.Mesh(geo, mat);
   surface.name = `${o.id}.surface`;
+  if (sunTimeRef) {
+    const t = sunTimeRef;
+    surface.onBeforeRender = () => (t.value = performance.now() / 1000);
+  }
   surface.userData.pickId = o.id;
   surface.scale.setScalar(r);
   if (o.flattening) surface.scale.y = r * (1 - o.flattening);

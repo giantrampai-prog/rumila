@@ -7,8 +7,11 @@ import * as THREE from "three";
 import { LEARNING, orbitAngle } from "@/lib/angkasa/sim";
 import { atmosphereMaterial, canvasTex, lumpyGeometry, rng, type Body } from "./bodies";
 import type { EngineCtx } from "./core";
+import { useAngkasa } from "@/lib/angkasa/state";
 
 const TAU = Math.PI * 2;
+/** lama pembuka dari Bumi ke tata surya (detik) */
+export const EARTH_INTRO_SEC = 9;
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 /* ---------------- langit galaksi ---------------- */
@@ -349,7 +352,6 @@ export class SolarFx {
   private time = 0;
   /* intro kamera */
   private introT = 0;
-  private introDur = 5;
   introDone = false;
 
   constructor(
@@ -421,27 +423,59 @@ export class SolarFx {
   }
 
   /** Intro: kamera meluncur dari jauh ke tampilan tata surya. true selama intro berjalan. */
+  /**
+   * Pembuka tampilan anak "dari rumah kita ke tata surya": kamera mulai dekat Bumi (sisi siang, Bulan terlihat),
+   * diam sejenak, lalu mundur pelan sambil memutar sampai seluruh tata surya tampak. Dikendalikan state `intro`:
+   * hanya berjalan saat "play"; selesai / disentuh / dilewati → "choose".
+   */
   intro(dt: number, camera: THREE.PerspectiveCamera, cancel: boolean) {
     if (this.introDone) return false;
-    if (cancel || this.ctx.reducedMotion()) {
+    const st = useAngkasa.getState();
+    const finish = () => {
+      this.introDone = true;
+      this.ctx.controls.enabled = true;
+      if (useAngkasa.getState().intro === "play") useAngkasa.getState().set({ intro: "choose" });
+    };
+    if (st.intro !== "play") {
+      // dilewati: bila kamera sempat bergerak, langsung ke tampilan seluruh tata surya
+      if (this.introT > 0) {
+        camera.position.set(0, 26, 46);
+        this.ctx.controls.target.set(0, 0, 0);
+      }
       this.introDone = true;
       this.ctx.controls.enabled = true;
       return false;
     }
-    this.introT = Math.min(1, this.introT + dt / this.introDur);
-    const k = ease(this.introT);
-    const end = new THREE.Vector3(0, 26, 46);
-    const start = new THREE.Vector3(0, 180, 420);
-    const pos = start.lerp(end, k);
-    // Sedikit memutar mengelilingi Matahari sambil turun.
-    pos.applyAxisAngle(new THREE.Vector3(0, 1, 0), (1 - k) * 0.35);
-    camera.position.copy(pos);
-    this.ctx.controls.target.set(0, 0, 0);
-    this.ctx.controls.enabled = false;
-    if (this.introT >= 1) {
-      this.introDone = true;
-      this.ctx.controls.enabled = true;
+    if (cancel || this.ctx.reducedMotion()) {
+      finish();
+      return false;
     }
+    const earth = this.bodies.get("earth");
+    if (!earth) {
+      finish();
+      return false;
+    }
+    if (this.introT === 0) earth.loadDetail(this.ctx).catch(() => {});
+    this.introT = Math.min(1, this.introT + dt / EARTH_INTRO_SEC);
+    const ep = earth.orbitAnchor.getWorldPosition(new THREE.Vector3());
+    // dekat Bumi: dari sisi siang (antara Matahari & Bumi, sedikit ke samping & atas)
+    const toSun = ep.clone().multiplyScalar(-1).normalize();
+    const side = new THREE.Vector3(0, 1, 0).cross(toSun).normalize();
+    const near = ep
+      .clone()
+      .add(toSun.clone().multiplyScalar(earth.radius * 3.2))
+      .add(side.multiplyScalar(earth.radius * 1.4))
+      .add(new THREE.Vector3(0, earth.radius * 0.9, 0));
+    const end = new THREE.Vector3(0, 26, 46);
+    // 0–25%: menatap Bumi; 25–100%: mundur ke tata surya
+    const u = ease(Math.max(0, (this.introT - 0.25) / 0.75));
+    const pos = near.clone().lerp(end, u);
+    pos.y += Math.sin(u * Math.PI) * 18; // melengkung naik saat mundur
+    camera.position.copy(pos);
+    this.ctx.controls.target.copy(ep.clone().lerp(new THREE.Vector3(0, 0, 0), u));
+    camera.lookAt(this.ctx.controls.target);
+    this.ctx.controls.enabled = false;
+    if (this.introT >= 1) finish();
     return !this.introDone;
   }
 
@@ -457,6 +491,9 @@ export class SolarFx {
     }
     // Sabuk asteroid mengorbit pelan (periode ±4,6 tahun, sama arahnya dengan planet).
     this.belt.rotation.y = (days / 1680) * TAU;
+    // Pembuka dari dekat Bumi: batu sabuk (diperbesar agar terlihat dari jauh) akan tampak seperti bongkahan
+    // raksasa di belakang Bumi — tidak akurat. Baru muncul setelah kamera cukup jauh.
+    this.belt.visible = this.introDone || this.introT === 0 || this.introT > 0.55;
     this.tail?.update(dt);
     for (const t of this.trails) t.mat.uniforms.uAngle.value = ((orbitAngle(t.body.obj, days) % TAU) + TAU) % TAU;
   }

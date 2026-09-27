@@ -313,3 +313,38 @@
 .ak-kid .ak-labels {
   clip-path: inset(0 0 150px 0);
 }
+
+/* Tampilan anak: sapaan Agam, pilihan jelajah, petunjuk, Paspor Antariksa */
+@keyframes ak-pop-in {
+  from { opacity: 0; transform: translateY(10px) scale(.94); }
+  to { opacity: 1; transform: none; }
+}
+.ak-pop { animation: ak-pop-in .35s cubic-bezier(.2,.9,.3,1.25) both; }
+@keyframes ak-float-y {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+.ak-float { animation: ak-float-y 3.2s ease-in-out infinite; }
+@keyframes ak-hint-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.ak-hint { animation: ak-pop-in .4s ease-out both, ak-hint-pulse 1.8s ease-in-out .4s infinite; }
+.ak-passport {
+  background:
+    repeating-linear-gradient(135deg, rgba(160,130,70,.05) 0 2px, transparent 2px 9px),
+    #fbf5e6;
+  box-shadow: 0 8px 0 #cdbd96, 0 20px 50px rgba(0,0,0,.45);
+}
+.ak-stamp {
+  display: flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  color: #c2185b; border: 2.5px solid currentColor;
+  box-shadow: inset 0 0 0 2px #fbf5e6, inset 0 0 0 3.5px currentColor;
+  opacity: .85; mix-blend-mode: multiply;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ak-pop, .ak-float, .ak-hint { animation: none; }
+}
+/* Tampilan anak: label contoh asteroid/komet disembunyikan agar tata surya tidak ramai */
+.ak-kid .ak-label[data-id*="-example"] { display: none; }

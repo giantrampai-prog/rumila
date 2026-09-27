@@ -5,14 +5,18 @@
 // Mesin 3D, tur, suara, dan progres sama dengan Explorer lengkap.
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
 import { useSfxOnChange } from "@/lib/use-sfx";
 import { OBJ, PLANET_IDS } from "@/lib/angkasa/manifest";
 import { useAngkasa, type Mode } from "@/lib/angkasa/state";
 import { hasVoice, playVoice, stopVoice, usePlayingVoice } from "@/lib/angkasa/voice";
-import { markDone, useAngkasaSession } from "@/lib/angkasa/progress";
+import { markDone, TOOL_ID, useAngkasaSession, useDoneItems } from "@/lib/angkasa/progress";
+import { useMe, useRumila } from "@/lib/store";
+import { Certificate, type CertSpec } from "@/components/koding/certificate";
+import { fmtDate } from "@/components/koding/shared";
+import "@/components/koding/koding.css";
 import { installAudioUnlock } from "@/lib/audio-unlock";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
 import { useNarration } from "./panels/tour";
@@ -187,20 +191,250 @@ function KidTour() {
   );
 }
 
+const AGAM = "/angkasa/agam-astronot.png";
+
+/** Sapaan Agam selama kamera mundur dari Bumi ke tata surya. */
+const INTRO_LINES = ["Halo! Aku Agam. Ini Bumi, rumah kita.", "Bumi punya banyak tetangga. Yuk, kita lihat tata surya!"];
+
+function Bubble({ children, tail = "left" }: { children: React.ReactNode; tail?: "left" | "bottom" }) {
+  return (
+    <div className="ak-pop relative rounded-[24px] bg-white px-4 py-3 text-[#2b1d4e] shadow-[0_5px_0_rgba(0,0,0,.22)]" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, lineHeight: 1.15 }}>
+      {children}
+      <span
+        aria-hidden
+        className="absolute size-4 rotate-45 bg-white"
+        style={tail === "left" ? { left: -7, bottom: 22 } : { left: 34, bottom: -7 }}
+      />
+    </div>
+  );
+}
+
+function AgamFig({ h }: { h: number }) {
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={AGAM} alt="Agam si astronaut" draggable={false} className="ak-float shrink-0 select-none" style={{ height: h, width: "auto", background: "transparent", border: 0, borderRadius: 0, boxShadow: "none", filter: "drop-shadow(0 8px 14px rgba(0,0,0,.5))" }} />;
+}
+
+function IntroOverlay() {
+  const st = useAngkasa();
+  const [line, setLine] = useState(0);
+  useEffect(() => {
+    sfx.sparkle();
+    const t = setTimeout(() => {
+      setLine(1);
+      sfx.whoosh();
+    }, 3600);
+    return () => clearTimeout(t);
+  }, []);
+  return (
+    <div className="pointer-events-none absolute inset-0 flex flex-col justify-end p-3 sm:p-5" style={{ paddingBottom: "max(16px, env(safe-area-inset-bottom))" }}>
+      <div className="absolute right-3 sm:right-5" style={{ top: "max(14px, calc(env(safe-area-inset-top) + 8px))" }}>
+        <button
+          onClick={() => {
+            sfx.tap();
+            st.set({ intro: "choose" });
+          }}
+          className="pointer-events-auto flex items-center gap-1 rounded-full bg-black/45 py-2 pr-3 pl-4 text-white backdrop-blur active:scale-95"
+          style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}
+        >
+          Lewati <Icon name="skip_next" size={24} />
+        </button>
+      </div>
+      <div className="flex items-end gap-2">
+        <AgamFig h={170} />
+        <div key={line} className="mb-16 max-w-[330px]">
+          <Bubble>{INTRO_LINES[line]}</Bubble>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ChooseOverlay({ stamped }: { stamped: number }) {
+  const st = useAngkasa();
+  useEffect(() => sfx.open(), []);
+  const tile = (icon: string, title: string, sub: string, grad: string, shade: string, onClick: () => void) => (
+    <button
+      onClick={onClick}
+      className="flex flex-1 flex-col items-center gap-1 rounded-[26px] px-3 pt-4 pb-3 text-white transition-transform active:scale-95"
+      style={{ background: grad, boxShadow: `0 6px 0 ${shade}` }}
+    >
+      <span className="flex size-16 items-center justify-center rounded-full bg-white/25">
+        <Icon name={icon} size={40} />
+      </span>
+      <span style={{ fontFamily: BALOO, fontSize: 23, fontWeight: 800, lineHeight: 1.05 }}>{title}</span>
+      <span className="text-[14px] leading-tight font-extrabold opacity-90">{sub}</span>
+    </button>
+  );
+  return (
+    <div className="absolute inset-0 flex items-center justify-center bg-[#05070f]/35 p-4">
+      <div className="ak-pop flex w-full max-w-[520px] flex-col items-stretch gap-3">
+        <div className="flex items-end gap-1">
+          <AgamFig h={120} />
+          <div className="mb-8 flex-1">
+            <Bubble>Mau menjelajah dengan cara apa?</Bubble>
+          </div>
+        </div>
+        <div className="flex gap-3">
+          {tile("rocket_launch", "Tur Tata Surya", "Terbang bersama Agam, dengar ceritanya", "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", "#c85400", () => {
+            st.set({ intro: "done" });
+            beginTour(0);
+          })}
+          {tile("travel_explore", "Jelajah Bebas", "Pilih sendiri planet yang mau dikunjungi", "linear-gradient(155deg,#6fb8ff,#2f6fe8 60%)", "#1d47a8", () => {
+            sfx.whoosh();
+            st.set({ intro: "done" });
+          })}
+        </div>
+        <div className="mx-auto flex items-center gap-2 rounded-full bg-black/45 px-4 py-1.5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}>
+          <Icon name="badge" size={20} /> Paspor Antariksa: {stamped}/{DOCK.length} cap
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const SPACE_CERT: CertSpec = {
+  title: "PENJELAJAH TATA SURYA",
+  emblem: "✦",
+  lines: ["atas keberhasilannya mengunjungi Matahari, delapan planet, Bulan, dan Pluto", "dalam Jelajah Angkasa, dengan rasa ingin tahu seorang penjelajah sejati."],
+  stats: [
+    [String(DOCK.length), "OBJEK"],
+    ["8", "PLANET"],
+    ["1", "BINTANG"],
+  ],
+  seal: [String(DOCK.length), "OBJEK"],
+  ring: "RINOYA ACADEMY ★ JELAJAH ANGKASA ★ TATA SURYA ★",
+  signer: "KAPTEN ANTARIKSA",
+  lockNote: `PRATINJAU · KUNJUNGI ${DOCK.length} OBJEK`,
+  unit: "objek",
+  file: "Penjelajah-Tata-Surya",
+  serial: "JA-TS",
+  robot: false,
+};
+
+/** Paspor Antariksa: cap untuk tiap objek yang sudah dikunjungi; lengkap → sertifikat. */
+function Passport({ done, onClose }: { done: Set<string>; onClose: () => void }) {
+  const st = useAngkasa();
+  const kid = useRumila((s) => s.members.find((m) => m.id === st.memberId));
+  const self = useMe();
+  const me = kid ?? self;
+  const [cert, setCert] = useState(false);
+  const count = DOCK.filter((id) => done.has(id)).length;
+  const all = count === DOCK.length;
+  const lastAt = useRumila((s) => {
+    let m = 0;
+    for (const a of s.activity) if (a.memberId === st.memberId && a.toolId === TOOL_ID && a.partId?.startsWith("obj:") && a.at > m) m = a.at;
+    return m;
+  });
+  if (cert)
+    return (
+      <Certificate
+        game="Jelajah Angkasa"
+        name={me?.name ?? "Penjelajah Cilik"}
+        stars={count}
+        date={all ? fmtDate(new Date(lastAt || Date.now()).toISOString()) : "Tanggal selesai"}
+        remaining={DOCK.length - count}
+        spec={SPACE_CERT}
+        onClose={() => setCert(false)}
+      />
+    );
+  return (
+    <div className="absolute inset-0 z-20 flex items-center justify-center bg-[#05070f]/60 p-3 backdrop-blur-sm" onClick={onClose}>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="ak-pop ak-passport relative flex max-h-full w-full max-w-[600px] flex-col overflow-y-auto rounded-[28px] p-4 sm:p-5"
+      >
+        <div className="flex items-center gap-3">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-[14px] bg-[#1d2f6f] text-[#f4d27a]">
+            <Icon name="public" size={30} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <div className="text-[12px] font-extrabold tracking-[.18em] text-[#8a7a5c]">PASPOR ANTARIKSA</div>
+            <div className="truncate" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: "#2b1d4e", lineHeight: 1.05 }}>
+              {me?.name ?? "Penjelajah Cilik"}
+            </div>
+          </div>
+          <button onClick={onClose} aria-label="Tutup" className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2b1d4e]/10 text-[#2b1d4e] active:scale-90">
+            <Icon name="close" size={26} />
+          </button>
+        </div>
+
+        <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#2b1d4e]/10">
+          <div className="h-full rounded-full bg-gradient-to-r from-[#ffbe0b] to-[#ff7a1a] transition-[width] duration-700" style={{ width: `${(count / DOCK.length) * 100}%` }} />
+        </div>
+        <div className="mt-1 text-[14px] font-extrabold text-[#6b5d80]">
+          {all ? "Semua cap terkumpul! Kamu Penjelajah Tata Surya." : `${count} dari ${DOCK.length} cap · ketuk objek untuk berkunjung`}
+        </div>
+
+        <div className="mt-3 grid grid-cols-3 gap-2 sm:grid-cols-4">
+          {DOCK.map((id, i) => {
+            const got = done.has(id);
+            return (
+              <button
+                key={id}
+                onClick={() => {
+                  onClose();
+                  st.select(id, { mode: "planet" });
+                }}
+                className="relative flex flex-col items-center gap-1.5 rounded-[18px] border-2 border-dashed border-[#c9b98f] py-3 active:scale-95"
+                style={{ background: got ? "rgba(255,255,255,.55)" : "transparent" }}
+              >
+                <span style={{ filter: got ? undefined : "grayscale(1) brightness(.8)", opacity: got ? 1 : 0.45 }}>
+                  <Ball id={id} size={46} />
+                </span>
+                <span className="text-[14px] font-extrabold" style={{ color: got ? "#2b1d4e" : "#9b8f7c" }}>
+                  {OBJ.get(id)!.nameId}
+                </span>
+                {got && (
+                  <span aria-label="sudah dikunjungi" className="ak-stamp absolute top-1 right-1" style={{ rotate: `${((i * 37) % 30) - 18}deg` }}>
+                    <Icon name="check" size={18} />
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        <button
+          onClick={() => {
+            if (all) sfx.celebrate();
+            else sfx.tap();
+            setCert(true);
+          }}
+          className="koding-certcard mt-4 flex items-center gap-3 rounded-[20px] p-3 text-left active:scale-[.98]"
+        >
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-full text-white" style={{ background: all ? "linear-gradient(155deg,#ffd54a,#e0a100)" : "#b9ad96" }}>
+            <Icon name={all ? "workspace_premium" : "lock"} size={28} />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: "#2b1d4e", lineHeight: 1.1 }}>
+              Sertifikat Penjelajah Tata Surya
+            </span>
+            <span className="block text-[13px] font-extrabold text-[#6b5d80]">{all ? "Lihat & simpan sertifikatmu" : `Kunjungi ${DOCK.length - count} objek lagi · lihat contohnya`}</span>
+          </span>
+          <Icon name="chevron_right" size={28} className="text-[#6b5d80]" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function KidSpace({ memberId, initial }: { memberId: string; initial?: { obj?: string; mode?: Mode } }) {
   const st = useAngkasa();
   const router = useRouter();
   const appRef = useRef<HTMLDivElement>(null);
   useAngkasaSession(memberId);
 
-  useEffect(() => {
+  // layout effect: `intro` sudah "play" sebelum bingkai 3D pertama (mesin berjalan lewat requestAnimationFrame)
+  useLayoutEffect(() => {
     installAudioUnlock();
     setFullRoot(appRef.current);
-    useAngkasa.getState().set({ tourCinematic: true, fx: true });
+    const deep = !!(initial?.obj && OBJ.get(initial.obj));
+    useAngkasa.getState().set({ tourCinematic: true, fx: true, intro: deep ? "done" : "play" });
     return () => {
       setFullRoot(null);
-      useAngkasa.getState().set({ tourCinematic: false, fx: false });
+      useAngkasa.getState().set({ tourCinematic: false, fx: false, intro: "done" });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -239,6 +473,20 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   const tour = st.mode === "tur";
   const planet = st.mode === "planet" && st.selectedId;
 
+  // Paspor: cap dari objek yang sudah dipelajari (dilihat ±8 detik)
+  const doneItems = useDoneItems(memberId);
+  const stamps = new Set(doneItems.filter((p) => p.startsWith("obj:")).map((p) => p.slice(4)));
+  const stampCount = DOCK.filter((id) => stamps.has(id)).length;
+  useSfxOnChange(stampCount, (n, prev) => {
+    if (n === prev + 1) sfx.coin();
+  });
+  const [passport, setPassport] = useState(false);
+  // petunjuk "ketuk planet" sampai anak membuka objek pertamanya di sesi ini
+  const [visited, setVisited] = useState(false);
+  useEffect(() => {
+    if (voiceObj) setVisited(true);
+  }, [voiceObj]);
+
   return (
     <div ref={appRef} className="ak-app ak-kid theme-play fixed inset-0 overflow-hidden bg-[#05070f]">
       <section aria-label="Tampilan 3D" className="absolute inset-0">
@@ -251,23 +499,38 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
         )}
       </section>
 
-      {tour ? (
+      {st.intro === "play" && !tour ? (
+        <IntroOverlay />
+      ) : st.intro === "choose" && !tour ? (
+        <ChooseOverlay stamped={stampCount} />
+      ) : tour ? (
         <KidTour />
       ) : (
         <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5" style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}>
           {/* atas: kembali · terbang */}
           <div className="flex items-start justify-between gap-2">
             <RoundBtn icon={st.mode === "tata-surya" ? "home" : "arrow_back"} label={st.mode === "tata-surya" ? "Keluar" : "Kembali"} onClick={back} />
-            <RoundBtn icon="rocket_launch" label="Terbang" tone="orange" onClick={() => beginTour(0)} />
+            <div className="flex items-start gap-3">
+              <RoundBtn icon="badge" label={`Paspor ${stampCount}/${DOCK.length}`} tone="purple" onClick={() => setPassport(true)} />
+              <RoundBtn icon="rocket_launch" label="Terbang" tone="orange" onClick={() => beginTour(0)} />
+            </div>
           </div>
 
           {/* bawah */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col items-center gap-3">
+            {!planet && !visited && (
+              <div className="ak-hint flex items-center gap-2 rounded-full bg-white/95 py-2 pr-4 pl-3 text-[#2b1d4e] shadow-[0_4px_0_rgba(0,0,0,.25)]" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+                <Icon name="touch_app" size={26} className="text-[#ff7a1a]" /> Ketuk planet untuk berkunjung!
+              </div>
+            )}
             {planet && <ObjCard id={st.selectedId!} />}
-            <Dock />
+            <div className="w-full">
+              <Dock />
+            </div>
           </div>
         </div>
       )}
+      {passport && <Passport done={stamps} onClose={() => setPassport(false)} />}
     </div>
   );
 }

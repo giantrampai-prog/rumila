@@ -521,6 +521,7 @@ export class AngkasaEngine {
         el.type = "button";
         el.className = "ak-label";
         el.dataset.kind = s.kind ?? "object";
+        el.dataset.id = s.id;
         el.tabIndex = -1; // navigasi keyboard lewat daftar, bukan label melayang
         el.addEventListener("click", (ev) => {
           ev.stopPropagation();
