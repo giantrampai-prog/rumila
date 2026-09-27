@@ -193,6 +193,12 @@ export const sfx = {
     hiss(0.9, { freq: 900, to: 300, q: 0.6, vol: 0.35, type: 'lowpass' });
     hiss(0.35, { freq: 3000, q: 0.8, vol: 0.12 });
   },
+  /** "plup" kecil: pelet jatuh ke air / ikan menyambar makanan */
+  plop(vol = 1) {
+    hiss(0.14, { freq: 1500, to: 380, q: 1.2, vol: 0.13 * vol, type: 'lowpass' });
+    const f = 520 + Math.random() * 260;
+    tone(f, 0.07, { vol: 0.06 * vol, to: f * 2.2 });
+  },
   /** gelembung naik */
   bubble() {
     const f = 380 + Math.random() * 500;

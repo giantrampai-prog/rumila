@@ -12,6 +12,7 @@ import { buildGapura } from './gapura';
 import { GoatPen } from './goats';
 import { FarmHouse } from './house';
 import { GardenLife } from './life';
+import { FishPond } from './pond';
 import { buildRealSky } from './sky';
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
@@ -206,6 +207,9 @@ export class GardenEngine {
   private pinch = 0;
   private life!: GardenLife;
   private pen!: GoatPen;
+  private pond!: FishPond;
+  private feedAt = 0;
+  private throwT = 0;
   private house!: FarmHouse;
   /** sedang istirahat di tempat tidur (detik tersisa) */
   private restLeft = 0;
@@ -403,7 +407,7 @@ export class GardenEngine {
     const rowLanes = Object.values(ZONE_DIR).flatMap(([sx, sz]) => [0, 1, 2, 3, 4].map((k) => ({ sx, z: sz * (GARDEN.first + k * GARDEN.step) + 2.6 })));
     // tanpa rumput di bedengan, di dekat Pak Tani, di dalam rumah kebun & kandang kambing
     const inFarm = (x: number, z: number) =>
-      (x > 5.4 && x < 16.9 && z > 5.2 && z < 14.7) || Math.hypot(x - NPC_POS[0], z - NPC_POS[1]) < 1 || (x > 18.2 && x < 25.8 && z > 10.8 && z < 17.2) || (x > 29.8 && x < 40.2 && z > 13.8 && z < 22.2);
+      (x > 5.4 && x < 16.9 && z > 5.2 && z < 14.7) || Math.hypot(x - NPC_POS[0], z - NPC_POS[1]) < 1 || (x > 18.2 && x < 25.8 && z > 10.8 && z < 17.2) || (x > 29.8 && x < 40.2 && z > 13.8 && z < 22.2) || ((x - 12) / 7.4) ** 2 + ((z - 30) / 6.0) ** 2 < 1;
     const clear = (x: number, z: number) =>
       !inFarm(x, z) &&
       Math.abs(x) > W + 0.4 &&
@@ -605,40 +609,16 @@ export class GardenEngine {
     }
     this.obstacles.push({ x: hx - 2.55, z: hz - 4.1, r: 1.6 });
 
-    // kolam dengan tepian batu
+    // kolam ikan (pond.ts): batu alam, air bening, ikan beragam yang bisa diberi makan
     const px = 12,
       pz = 30;
-    for (let i = 0; i < 30; i++) {
-      const a = (i / 30) * 6.28;
-      stone.add(new T.DodecahedronGeometry(0.5 + r() * 0.3, 1), mat(px + Math.cos(a) * 6.5, 0.1, pz + Math.sin(a) * 5.1, r(), r(), 0, 1, 0.55, 1), '#e8e2da', { uv: [0.5, 0.5] });
-    }
-    const water = new T.ShaderMaterial({
-      uniforms: { uTime: this.uTime, sun: { value: SUN_DIR } },
-      transparent: true,
-      vertexShader: 'varying vec3 vW; void main(){ vec4 w = modelMatrix * vec4(position,1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }',
-      fragmentShader: `uniform float uTime; uniform vec3 sun; varying vec3 vW;
-        void main(){
-          vec2 p = vW.xz;
-          vec3 n = normalize(vec3(sin(p.x*1.3+uTime*1.1)*0.08 + sin(p.y*2.1-uTime*0.8)*0.05, 1.0, cos(p.y*1.7+uTime*0.9)*0.08 + cos(p.x*2.6+uTime*1.3)*0.04));
-          vec3 v = normalize(cameraPosition - vW);
-          float fres = pow(1.0 - max(dot(n, v), 0.0), 3.0);
-          vec3 deep = vec3(0.10,0.30,0.32), sky = vec3(0.62,0.80,0.95);
-          vec3 c = mix(deep, sky, 0.25 + fres*0.7);
-          vec3 h = normalize(sun + v);
-          c += vec3(1.0,0.95,0.85) * pow(max(dot(n, h), 0.0), 180.0) * 1.5;
-          gl_FragColor = vec4(c, 0.92); }`,
-    });
-    const pond = new T.Mesh(new T.CircleGeometry(5.8, 40), water);
-    pond.rotation.x = -Math.PI / 2;
-    pond.scale.set(1.12, 0.88, 1);
-    pond.position.set(px, 0.05, pz);
-    this.scene.add(pond);
-    for (let i = 0; i < 7; i++) plain.add(new T.CircleGeometry(0.42, 14, 0.35, 5.8), mat(px - 3.5 + r() * 7, 0.08, pz - 2.5 + r() * 5, -Math.PI / 2, 0, r() * 6), '#4f8f37', { jitter: 0.1 });
+    this.pond = new FishPond(new T.Vector3(px, 0, pz), 5.9, 4.5, this.uTime, SUN_DIR, (k, v) => (k === 'plop' ? sfx.plop(v) : sfx.splash()));
+    this.scene.add(this.pond.group);
     for (let i = 0; i < 16; i++) {
       const a = r() * 6.28;
-      plain.add(new T.CylinderGeometry(0.015, 0.02, 1.2 + r() * 0.5, 4), mat(px + Math.cos(a) * 6.9, 0.6, pz + Math.sin(a) * 5.4, (r() - 0.5) * 0.2, 0, (r() - 0.5) * 0.2), '#6d8a3a', { sway: 0.05 });
+      plain.add(new T.CylinderGeometry(0.015, 0.02, 1.2 + r() * 0.5, 4), mat(px + Math.cos(a) * 7.6, 0.6, pz + Math.sin(a) * 6.2, (r() - 0.5) * 0.2, 0, (r() - 0.5) * 0.2), '#6d8a3a', { sway: 0.05 });
     }
-    this.obstacles.push({ x: px - 2.6, z: pz, r: 4.4 }, { x: px + 2.6, z: pz, r: 4.4 });
+    this.obstacles.push({ x: px - 3, z: pz, r: 4.2 }, { x: px + 3, z: pz, r: 4.2 }, { x: px, z: pz, r: 5.4 });
 
     // kincir angin
     const wx = 34,
@@ -941,6 +921,7 @@ export class GardenEngine {
       ['npc', NPC_POS[0], NPC_POS[1], 1.6],
       ['goats', this.pen.door.x + 1.6, this.pen.door.z, 0.8],
       ['tower', this.towerAt.x, this.towerAt.z, 4],
+      ['pond', this.pond.center.x, this.pond.center.z, 0.3],
     ];
     let bestKey: string | null = null,
       bk = 0.12 * (this.portrait ? 1.6 : 1);
@@ -989,6 +970,15 @@ export class GardenEngine {
       this.faceTo = this.towerAt.clone();
       sfx.tap();
       if (this.pos.distanceTo(d) < 2) this.arrive();
+      return;
+    }
+    if (key === 'pond') {
+      const st = this.pond.standPoint(this.pos);
+      this.waypoints = [st];
+      this.arriveKey = key;
+      this.faceTo = this.pond.center.clone();
+      sfx.tap();
+      if (this.pos.distanceTo(st) < 1.2) this.arrive();
       return;
     }
     if (key === 'goats') {
@@ -1066,6 +1056,29 @@ export class GardenEngine {
     const out = this.pen.toggle();
     window.setTimeout(() => sfx.goat(0.9), 600);
     return out;
+  }
+
+  /** Lempar pelet ke kolam; ikan berdatangan. Mengembalikan fakta ikan untuk ditampilkan. */
+  feedFish() {
+    const now = performance.now();
+    if (now - this.feedAt < 1200) return null;
+    this.feedAt = now;
+    const c = this.pond.center;
+    this.targetHeading = Math.atan2(c.x - this.pos.x, c.z - this.pos.z);
+    const hand = this.pos.clone().add(new T.Vector3(0, 1.3, 0)).add(new T.Vector3(c.x - this.pos.x, 0, c.z - this.pos.z).normalize().multiplyScalar(0.4));
+    this.pond.feed(hand, this.pond.aimFrom(this.pos));
+    this.throwT = 1;
+    sfx.whoosh();
+    const facts = [
+      'Ikan koi adalah ikan mas yang dibiakkan berwarna-warni di Jepang. 🎏',
+      'Ikan koi bisa hidup puluhan tahun! 🐟',
+      'Mas koki punya sirip ekor lebar yang melambai-lambai. 🐠',
+      'Ikan nila banyak dipelihara petani ikan di Indonesia. 🐟',
+      'Ikan bernapas dengan insang: mengambil oksigen dari air. 💧',
+      'Jangan kebanyakan memberi makan: sisa pelet membuat air kolam kotor. 🌿',
+      'Teratai tumbuh di kolam; daunnya mengapung di permukaan air. 🪷',
+    ];
+    return facts[Math.floor(Math.random() * facts.length)];
   }
 
   get goatsOut() {
@@ -1424,6 +1437,11 @@ export class GardenEngine {
     P.legR.rotation.x = -sw;
     P.armL.rotation.x = -sw * 0.9;
     P.armR.rotation.x = sw * 0.9;
+    if (this.throwT > 0) {
+      // ayunan lengan saat melempar pelet
+      this.throwT = Math.max(0, this.throwT - dt * 2.2);
+      P.armR.rotation.x = -Math.sin((1 - this.throwT) * Math.PI) * 2.3;
+    }
     this.player.position.y = Math.abs(Math.cos(this.walkPh)) * 0.07 * k + Math.sin(t * 2) * 0.012 * (1 - k);
     P.basket.rotation.z = Math.sin(this.walkPh) * 0.08 * k;
 
@@ -1449,6 +1467,7 @@ export class GardenEngine {
       const dn = Math.hypot(NPC_POS[0] - this.pos.x, NPC_POS[1] - this.pos.z);
       if (dn < Math.min(nd, 2.8)) nearId = 'npc';
       if (this.pos.distanceTo(this.pen.door) < 2.6) nearId = 'goats';
+      if (this.pond.inside(this.pos.x, this.pos.z, 2.2) < 1) nearId = 'pond';
       if (this.pos.distanceTo(this.towerDoor()) < 2.4) nearId = 'tower';
       if (this.house.inside && this.pos.distanceTo(this.house.bedSide) < 1.6) nearId = this.restLeft > 0 ? 'resting' : 'bed';
     }
@@ -1500,6 +1519,7 @@ export class GardenEngine {
     this.farm.update(t, dt);
     this.life.update(t, dt, this.pos);
     this.pen.update(t, dt);
+    this.pond.update(t, dt);
     this.house.update(t, dt, this.pos, this.restLeft > 0, this.camera.position);
     this.insideK = T.MathUtils.damp(this.insideK, this.house.inside ? 1 : 0, 3, dt);
     if (this.restLeft > 0) {

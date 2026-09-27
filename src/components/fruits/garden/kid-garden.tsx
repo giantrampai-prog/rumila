@@ -334,7 +334,10 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
     else if (key === 'npc') openMission();
     else if (key === 'goats') setGoatsOut(engine.current?.toggleGoats() ?? false);
     else if (key === 'tower') engine.current?.climbTower();
-    else openRef.current(key);
+    else if (key === 'pond') {
+      const fact = engine.current?.feedFish();
+      if (fact) say(fact, true);
+    } else openRef.current(key);
   };
   const arriveRef = useRef(arriveKey);
   arriveRef.current = arriveKey;
@@ -483,6 +486,18 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
             onClick={() => {
               engine.current?.leaveTower();
               setNear('tower');
+            }}
+          />
+        )}
+        {near === 'pond' && !card && !sheet && (
+          <NearAction
+            icon="set_meal"
+            label="Beri makan ikan"
+            sub="Kolam ikan"
+            tone="linear-gradient(155deg,#6fd3ff,#1f8fd8 60%)"
+            onClick={() => {
+              const fact = engine.current?.feedFish();
+              if (fact) say(fact, true);
             }}
           />
         )}
