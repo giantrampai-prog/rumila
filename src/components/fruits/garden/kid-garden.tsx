@@ -254,6 +254,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
   const engine = useRef<GardenEngine | null>(null);
   const [ready, setReady] = useState(false);
   const [near, setNear] = useState<string | null>(null);
+  const [goatsOut, setGoatsOut] = useState(false);
   const [card, setCard] = useState<{ id: string; isNew: boolean } | null>(null);
   const [found, addFound] = useDiscovered(me.id);
   const tracks = useTracks();
@@ -331,6 +332,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
   const arriveKey = (key: string) => {
     if (key.startsWith('bed:')) bedAct(+key.slice(4));
     else if (key === 'npc') openMission();
+    else if (key === 'goats') setGoatsOut(engine.current?.toggleGoats() ?? false);
     else openRef.current(key);
   };
   const arriveRef = useRef(arriveKey);
@@ -456,6 +458,15 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
           const a = bedAction(farm.beds[nearBed], now);
           return <NearAction {...a} onClick={() => bedAct(nearBed)} />;
         })()}
+        {near === 'goats' && !card && !sheet && (
+          <NearAction
+            icon={goatsOut ? 'home' : 'door_open'}
+            label={goatsOut ? 'Panggil pulang' : 'Buka kandang'}
+            sub="Kandang kambing"
+            tone={goatsOut ? 'linear-gradient(155deg,#7cc0ff,#2f86ff 60%)' : 'linear-gradient(155deg,#c08a4a,#8a5a2a 60%)'}
+            onClick={() => setGoatsOut(engine.current?.toggleGoats() ?? false)}
+          />
+        )}
         {near === 'npc' && !card && !sheet && (
           <NearAction icon="campaign" label={activeMission ? 'Lihat misi' : 'Misi baru!'} sub="Pak Tani" tone="linear-gradient(155deg,#ffe46b,#ffbe0b 60%)" onClick={openMission} />
         )}

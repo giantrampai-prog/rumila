@@ -9,6 +9,7 @@ import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import type { FruitGroup } from '@/lib/fruits/catalog';
 import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '@/lib/fruits/garden';
 import { buildGapura } from './gapura';
+import { GoatPen } from './goats';
 import { GardenLife } from './life';
 import { buildRealSky } from './sky';
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
@@ -203,6 +204,10 @@ export class GardenEngine {
   private pointers = new Map<number, { x: number; y: number; sx: number; sy: number }>();
   private pinch = 0;
   private life!: GardenLife;
+  private pen!: GoatPen;
+  private nextGoat = 4;
+  private nextCluck = 3;
+  private nextBird = 2;
   private skyGroup!: T.Group;
   private gapuras: T.Group[] = [];
 
@@ -244,6 +249,9 @@ export class GardenEngine {
     // burung, ayam, capung & daun berguguran
     this.life = new GardenLife(new T.Vector2(19.5, 19), new T.Vector3(0, 0, 0), (x, z) => this.obstacles.some((o) => Math.hypot(x - o.x, z - o.z) < o.r + 0.4));
     this.scene.add(this.life.group);
+    // kandang kambing di pojok kebun (pintu menghadap rumah kebun)
+    this.pen = new GoatPen(new T.Vector3(35, 0, 18), this.obstacles, (v) => sfx.goat(v));
+    this.scene.add(this.pen.group);
 
     this.tapRing = new T.Mesh(new T.RingGeometry(0.35, 0.55, 28), new T.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0, depthWrite: false }));
     this.tapRing.rotation.x = -Math.PI / 2;
@@ -669,8 +677,8 @@ export class GardenEngine {
     this.windmill = mill;
 
     // orang-orangan sawah
-    const sx = 30,
-      sz = 20;
+    const sx = 6,
+      sz = 19.5;
     wood.add(new T.BoxGeometry(0.12, 2.4, 0.12), mat(sx, 1.2, sz), '#c9a98a');
     wood.add(new T.BoxGeometry(1.8, 0.1, 0.1), mat(sx, 1.9, sz), '#c9a98a');
     plain.add(new T.BoxGeometry(0.8, 0.9, 0.35), mat(sx, 1.7, sz), '#3b6fb6', { jitter: 0.1 });
@@ -907,6 +915,8 @@ export class GardenEngine {
     if (this.tour || performance.now() - this.gestureAt < 350) return;
     const rect = this.renderer.domElement.getBoundingClientRect();
     const ndc = new T.Vector2(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
+    // kambing diketuk → mengembik
+    if (this.pen.goatAt(ndc, this.camera, this.camera.aspect)) return;
     let best: Plot | null = null,
       bestD = 0.13 * (this.portrait ? 1.6 : 1);
     const v = new T.Vector3();
@@ -923,7 +933,11 @@ export class GardenEngine {
     }
     if (best) return this.walkToPlot(best);
     // bedengan & Pak Tani
-    const extras: [string, number, number, number][] = [...BED_POS.map(([x, z], i) => [`bed:${i}`, x, z, 0.8] as [string, number, number, number]), ['npc', NPC_POS[0], NPC_POS[1], 1.6]];
+    const extras: [string, number, number, number][] = [
+      ...BED_POS.map(([x, z], i) => [`bed:${i}`, x, z, 0.8] as [string, number, number, number]),
+      ['npc', NPC_POS[0], NPC_POS[1], 1.6],
+      ['goats', this.pen.door.x + 1.6, this.pen.door.z, 0.8],
+    ];
     let bestKey: string | null = null,
       bk = 0.12 * (this.portrait ? 1.6 : 1);
     for (const [key, x, z, h] of extras) {
@@ -964,6 +978,14 @@ export class GardenEngine {
 
   /** Jalan ke bedengan ("bed:i") atau Pak Tani ("npc"); berdiri di sisi depan (menghadap kamera). */
   walkToKey(key: string) {
+    if (key === 'goats') {
+      this.waypoints = [this.pen.door.clone()];
+      this.arriveKey = key;
+      this.faceTo = this.pen.door.clone().add(new T.Vector3(3, 0, 0));
+      sfx.tap();
+      if (this.pos.distanceTo(this.pen.door) < 2.2) this.arrive();
+      return;
+    }
     const [x, z] = key === 'npc' ? NPC_POS : BED_POS[+key.slice(4)];
     const stand = new T.Vector3(x, 0, z + (key === 'npc' ? 1.8 : 2.1));
     this.waypoints = [stand];
@@ -971,6 +993,18 @@ export class GardenEngine {
     this.faceTo = new T.Vector3(x, 0, z);
     sfx.tap();
     if (Math.hypot(this.pos.x - x, this.pos.z - z) < 2.6) this.arrive();
+  }
+
+  /** Buka kandang (kambing keluar merumput) atau panggil pulang & tutup. */
+  toggleGoats() {
+    sfx.creak();
+    const out = this.pen.toggle();
+    window.setTimeout(() => sfx.goat(0.9), 600);
+    return out;
+  }
+
+  get goatsOut() {
+    return this.pen.out;
   }
 
   setBeds(views: BedView[]) {
@@ -1349,6 +1383,7 @@ export class GardenEngine {
       });
       const dn = Math.hypot(NPC_POS[0] - this.pos.x, NPC_POS[1] - this.pos.z);
       if (dn < Math.min(nd, 2.8)) nearId = 'npc';
+      if (this.pos.distanceTo(this.pen.door) < 2.6) nearId = 'goats';
     }
     if (nearId !== this.near) {
       this.near = nearId;
@@ -1397,6 +1432,25 @@ export class GardenEngine {
 
     this.farm.update(t, dt);
     this.life.update(t, dt, this.pos);
+    this.pen.update(t, dt);
+    // suara sekitar: kambing, ayam, burung (makin dekat makin keras)
+    if (t > this.nextGoat) {
+      this.nextGoat = t + 5 + Math.random() * 8;
+      const d = this.pos.distanceTo(this.pen.group.position);
+      if (d < 28) {
+        this.pen.bleatRandom();
+        sfx.goat(Math.max(0, 1 - d / 28) * 0.8);
+      }
+    }
+    if (t > this.nextCluck) {
+      this.nextCluck = t + 4 + Math.random() * 6;
+      const d = Math.hypot(this.pos.x - 19.5, this.pos.z - 19);
+      if (d < 22) sfx.cluck(Math.max(0, 1 - d / 22));
+    }
+    if (t > this.nextBird) {
+      this.nextBird = t + 3 + Math.random() * 5;
+      sfx.birdSong(0.6 + Math.random() * 0.4);
+    }
     for (const gp of this.gapuras) gp.userData.update?.(t);
     // dunia hidup
     this.windmill.rotation.z -= dt * 0.6;
@@ -1471,6 +1525,7 @@ export class GardenEngine {
     el.removeEventListener('pointercancel', this.onPointerUp);
     el.removeEventListener('wheel', this.onWheel);
     this.hanger.dispose();
+    this.pen.dispose();
     this.scene.traverse((o) => {
       const m = o as T.Mesh;
       if (m.geometry) m.geometry.dispose();

@@ -216,6 +216,83 @@ export const sfx = {
   scan() {
     [660, 990, 1320].forEach((f, i) => tone(f, 0.12, { type: 'triangle', vol: 0.07, at: i * 0.05 }));
   },
+  /** kambing mengembik "mbeee…" (getaran suara khas kambing); vol 0–1 mengikuti jarak */
+  goat(vol = 1) {
+    const c = out();
+    if (!c || muted || vol <= 0.02) return;
+    const t = c.currentTime;
+    const dur = 0.75 + Math.random() * 0.35;
+    const f0 = 330 + Math.random() * 90;
+    const o = c.createOscillator();
+    o.type = 'sawtooth';
+    o.frequency.setValueAtTime(f0 * 0.9, t);
+    o.frequency.linearRampToValueAtTime(f0, t + 0.08);
+    o.frequency.linearRampToValueAtTime(f0 * 0.86, t + dur);
+    // getaran "e-e-e-e" (modulasi amplitudo ±20 Hz)
+    const trem = c.createGain();
+    trem.gain.value = 0.55;
+    const lfo = c.createOscillator();
+    lfo.frequency.value = 18 + Math.random() * 6;
+    const lg = c.createGain();
+    lg.gain.value = 0.45;
+    lfo.connect(lg).connect(trem.gain);
+    // dua formant vokal "e"
+    const f1 = c.createBiquadFilter();
+    f1.type = 'bandpass';
+    f1.frequency.value = 650;
+    f1.Q.value = 3;
+    const f2 = c.createBiquadFilter();
+    f2.type = 'bandpass';
+    f2.frequency.value = 1900;
+    f2.Q.value = 5;
+    const g = c.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.5 * vol, t + 0.05);
+    g.gain.setValueAtTime(0.5 * vol, t + dur * 0.7);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(trem);
+    trem.connect(f1).connect(g);
+    trem.connect(f2).connect(g);
+    g.connect(master!);
+    o.start(t);
+    lfo.start(t);
+    o.stop(t + dur + 0.05);
+    lfo.stop(t + dur + 0.05);
+    // hembusan "mb" di awal
+    hiss(0.08, { freq: 500, q: 1, vol: 0.05 * vol, type: 'lowpass' });
+  },
+  /** ayam berkotek "petok-petok-petooook" */
+  cluck(vol = 1) {
+    if (vol <= 0.02) return;
+    const n = 3 + Math.floor(Math.random() * 3);
+    for (let i = 0; i < n; i++) {
+      const f = 520 + Math.random() * 120;
+      tone(f, 0.07, { type: 'triangle', vol: 0.16 * vol, to: f * 0.7, at: i * 0.16, attack: 0.004 });
+      hiss(0.05, { freq: 1500, q: 2, vol: 0.04 * vol, at: i * 0.16 });
+    }
+    const e = n * 0.16 + 0.05;
+    tone(600, 0.32, { type: 'triangle', vol: 0.15 * vol, to: 900, at: e });
+    tone(880, 0.2, { type: 'triangle', vol: 0.1 * vol, to: 520, at: e + 0.3 });
+  },
+  /** kicau burung: trill cepat & siulan meluncur */
+  birdSong(vol = 1) {
+    if (vol <= 0.02) return;
+    const base = 2600 + Math.random() * 1400;
+    const kind = Math.random();
+    if (kind < 0.4) {
+      for (let i = 0; i < 8; i++) tone(base * (i % 2 ? 1.18 : 1), 0.05, { vol: 0.04 * vol, at: i * 0.06 });
+    } else if (kind < 0.75) {
+      tone(base, 0.35, { vol: 0.045 * vol, to: base * 1.6 });
+      tone(base * 1.5, 0.3, { vol: 0.04 * vol, to: base * 0.9, at: 0.4 });
+    } else {
+      for (let i = 0; i < 3; i++) tone(base * (1 + i * 0.12), 0.12, { vol: 0.04 * vol, to: base * (1.3 + i * 0.1), at: i * 0.18 });
+    }
+  },
+  /** gerit engsel pintu kayu */
+  creak() {
+    tone(180, 0.45, { type: 'sawtooth', vol: 0.05, to: 260 });
+    hiss(0.4, { freq: 900, q: 6, vol: 0.05 });
+  },
   /** gemuruh mesin roket (panggil berkali-kali selama menyala) */
   rumble(strength = 1) {
     hiss(0.6, { freq: 120, q: 0.5, vol: 0.28 * strength, type: 'lowpass' });
