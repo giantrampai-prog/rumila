@@ -217,6 +217,8 @@ export const MISI: MisiStop[] = [
 /** Persinggahan pertama yang sudah di udara (setelah hitung mundur). */
 export const LIFTOFF = MISI.findIndex((s) => s.id === "lepas-landas");
 export const COUNTDOWN = MISI.findIndex((s) => s.id === "hitung-mundur");
+/** Detik (sejak awal adegan hitung mundur) saat tiap angka 10…1 mulai diucapkan — diukur dari gelombang suara rekaman. */
+export const COUNT_ONSETS = [5.83, 6.68, 7.53, 8.43, 9.23, 9.88, 10.68, 11.43, 12.13, 12.88];
 
 /* ---------------- Jelajah ---------------- */
 
@@ -269,7 +271,7 @@ export const MISI_AUDIO: MisiAudioPart[] = [
     // Suara "Sulafat" (SuaraKisah), 6:42, versi Rinoya. Batas adegan = jeda hening asli rekaman, diselaraskan ke batas kalimat.
     src: "/roket/voice/misi-02.m4a",
     first: 0,
-    cues: [0, 28.74, 54.36, 78.35, 92.87, 121.47, 132.9, 148.48, 164.19, 178.01, 192.4, 213.64, 226.65, 243.69, 270.01, 285.88, 300.04, 318.32, 342.54, 363.75, 380.88],
+    cues: [0, 28.74, 54.36, 78.35, 92.87, 121.47, 135.08, 148.48, 164.19, 178.01, 192.4, 213.64, 226.65, 243.69, 270.01, 285.88, 300.04, 318.32, 342.54, 363.75, 380.88],
   },
 ];
 

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { RoundBtn } from "@/components/angkasa/kid-space";
 import { Icon } from "@/components/ui";
-import { COUNTDOWN, JELAJAH, JELAJAH_AUDIO, MISI, MISI_AUDIO } from "@/lib/roket/misi";
+import { COUNT_ONSETS, COUNTDOWN, JELAJAH, JELAJAH_AUDIO, MISI, MISI_AUDIO } from "@/lib/roket/misi";
 import { installAudioUnlock, sharedAudio } from "@/lib/audio-unlock";
 import { sfx } from "@/lib/sfx";
 import { useSfxOnChange } from "@/lib/use-sfx";
@@ -138,8 +138,11 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
   const s = MISI[stop];
   // Hitung mundur besar: 10 → 1 pada paruh akhir persinggahan "Hitung mundur".
   // dengan rekaman: angka mengikuti suara "sepuluh… satu" (±5 detik terakhir persinggahan)
-  const from = MISI_AUDIO.length ? 0.55 : 0.3;
-  const count = stop === COUNTDOWN && progress > from ? 10 - Math.min(9, Math.floor(((progress - from) / (1 - from)) * 10)) : null;
+  // dengan rekaman: angka muncul tepat saat diucapkan (waktu tiap angka diukur dari rekaman)
+  const cd = MISI_AUDIO[0];
+  const cdDur = cd ? cd.cues[COUNTDOWN + 1] - cd.cues[COUNTDOWN] : 0;
+  const said = cd ? COUNT_ONSETS.filter((o) => o <= progress * cdDur).length : 0;
+  const count = stop !== COUNTDOWN ? null : cd ? (said > 0 ? 11 - said : null) : progress > 0.3 ? 10 - Math.min(9, Math.floor(((progress - 0.3) / 0.7) * 10)) : null;
   // Tanpa rekaman: tampilkan teks kecil sebagai pengganti suara (sementara).
   useSfxOnChange(count !== null && playing ? count : null, (c) => c !== null && sfx.beep(c <= 3));
   useSfxOnChange(stop, (i) => {
