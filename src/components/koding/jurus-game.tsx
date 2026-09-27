@@ -113,7 +113,7 @@ function useJurus(level: JurusLevel | null): Adapter {
       <div className="koding-frame relative flex h-full w-full flex-col overflow-hidden rounded-[22px]" style={{ background: T.bg }}>
         <Scroll target={level.target as Move[]} done={done} miss={miss} demo={demo} />
         <div className="min-h-0 flex-1">
-          <svg viewBox="0 60 1000 540" className="block h-full w-full" preserveAspectRatio="xMidYMax meet" role="img" aria-label={`Dojo ${T.name}`}>
+          <svg viewBox="80 150 840 360" className="block h-full w-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label={`Dojo ${T.name}`}>
             <defs>{T.defs}</defs>
             {T.stage()}
             {fig('sensei', sensei, 300, false)}

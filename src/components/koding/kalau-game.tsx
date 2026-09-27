@@ -39,7 +39,7 @@ function Scene({ T, cells, len, x, pose, jumpN, scan, crashAt }: { T: RunnerThem
   }
   pieces.push([from, total]);
   return (
-    <svg viewBox={`0 0 ${VIEW} ${H}`} className="block h-full w-full" preserveAspectRatio="xMidYMid slice" role="img" aria-label={`Lintasan ${T.name}`}>
+    <svg viewBox={`0 0 ${VIEW} ${H}`} className="block h-full w-full" preserveAspectRatio="xMidYMax slice" role="img" aria-label={`Lintasan ${T.name}`}>
       <defs>{T.defs}</defs>
       {T.sky(VIEW)}
       <g className="run-cam" style={{ transform: `translateX(${-cam * 0.25}px)` }}>
