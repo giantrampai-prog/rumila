@@ -90,7 +90,7 @@ export class RocketEngine {
   private world: RocketScene;
   private lastGap: number | null = null;
   /** musik latar misi terbang "Beyond Earth": pelan di bawah narasi, berulang tanpa putus sampai misi selesai */
-  private music = new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.13, loopStart: 3, loopEnd: 229, fade: 4 });
+  private music = new LoopMusic("/roket/musik-roket.m4a", ["roket-bgm-a", "roket-bgm-b"], { volume: 0.23, loopStart: 3, loopEnd: 229, fade: 4 });
   private cabin = new Cabin();
   private cupola = new Cupola();
   private frame = new THREE.Object3D();
