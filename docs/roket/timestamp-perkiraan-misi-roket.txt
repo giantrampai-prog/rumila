@@ -1,0 +1,26 @@
+PERKIRAAN TIMESTAMP — MISI ROKET (±130 kata/menit, jeda 1 detik)
+Angka pasti diambil dari file subtitle hasil SuaraKisah.
+
+ 1.  0:00  Pagi di landasan
+ 2.  0:28  Kenapa ke luar angkasa?
+ 3.  0:52  Baju antariksa
+ 4.  1:16  Naik ke kapsul
+ 5.  1:31  Di dalam kapsul
+ 6.  1:59  Hitung mundur
+ 7.  2:11  Lepas landas!
+ 8.  2:25  Terasa berat!
+ 9.  2:44  Troposfer
+10.  2:59  Stratosfer
+11.  3:14  Mesosfer
+12.  3:33  Tahap pertama lepas
+13.  3:48  Garis Kármán
+14.  4:05  Gravitasi & orbit
+15.  4:34  Melayang!
+16.  4:50  Termosfer & aurora
+17.  5:06  Merapat ke stasiun
+18.  5:25  Jendela kupola
+19.  5:51  Bertugas di luar
+20.  6:12  Eksosfer & satelit
+21.  6:30  Misi berhasil
+
+Total ± 6:48
