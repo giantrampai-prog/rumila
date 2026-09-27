@@ -313,7 +313,8 @@ export class GoatPen {
     ob(sx, 0, 1.9);
     this.gateBlock = { x: at.x - hw, z: at.z, r: 1.0 };
     obstacles.push(this.gateBlock);
-    this.door = new T.Vector3(at.x - hw - 1.6, 0, at.z);
+    // anak berdiri di samping pintu (bukan di depannya) supaya jalur kambing tidak terhalang
+    this.door = new T.Vector3(at.x - hw - 1.5, 0, at.z + 2.1);
 
     // kambing-kambing
     const coats: [string, string | null, boolean][] = [
@@ -358,10 +359,12 @@ export class GoatPen {
       fz = dz / d;
     let sx = 0,
       sz = 0;
+    // sedang lewat pintu kandang: abaikan kambing lain & anak (boleh berdesakan) agar tidak saling mengunci
+    const transit = g.path.length > 1 || g.stuck > 1.5;
     const others = [
       ...this.obstacles,
-      ...this.goats.filter((o) => o !== g).map((o) => ({ x: this.at.x + o.pos.x, z: this.at.z + o.pos.z, r: 0.45 })),
-      ...(this.player ? [{ x: this.player.x, z: this.player.z, r: 0.5 }] : []),
+      ...(transit ? [] : this.goats.filter((o) => o !== g).map((o) => ({ x: this.at.x + o.pos.x, z: this.at.z + o.pos.z, r: 0.45 }))),
+      ...(this.player && !transit ? [{ x: this.player.x, z: this.player.z, r: 0.5 }] : []),
     ];
     const wx = this.at.x + g.pos.x,
       wz = this.at.z + g.pos.z;
@@ -396,7 +399,7 @@ export class GoatPen {
     this.out = !this.out;
     this.wantOpen = true;
     this.goats.forEach((g, i) => {
-      g.wait = 0.4 + i * 0.7;
+      g.wait = 0.4 + i * 1.3; // satu per satu lewat pintu
       g.mode = 'walk';
       g.path = this.out ? [this.gateIn, this.gateOut, this.randomOutside()] : [this.gateOut, this.gateIn, this.randomInside()];
     });
