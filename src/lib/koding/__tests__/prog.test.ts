@@ -1,60 +1,95 @@
 import { describe, expect, it } from 'vitest';
-import { solve, THEME_ORDER } from '../engine';
 import { buildJurus, buildKalau, buildUlangi } from '../gen-prog';
 import { JURUS } from '../jurus';
 import { KALAU } from '../kalau';
-import { countBlocks, progStars, runProg, S, type Program } from '../prog';
+import { countBlocks, flatActs, progStars, runWorld, S, type Program } from '../prog';
 import { ULANGI } from '../ulangi';
+import { dojoWorld, layoutFor, paintWorld, runWorld2 } from '../worlds';
 
-const GAMES = { Ulangi: [ULANGI, buildUlangi], 'Kalau…': [KALAU, buildKalau], Jurus: [JURUS, buildJurus] } as const;
+const GAMES = [
+  ['Ulangi', ULANGI, buildUlangi],
+  ['Kalau…', KALAU, buildKalau],
+  ['Jurus', JURUS, buildJurus],
+] as const;
 
-for (const [name, [LEVELS, build]] of Object.entries(GAMES)) {
+for (const [name, LEVELS, build] of GAMES) {
   describe(`Coding Agam · ${name}`, () => {
-    it('100 soal, 10 Level × 10, satu tema per Level, peta & id unik', () => {
+    it('100 soal, 10 Level × 10, id unik, sama dengan hasil pembuat soal', () => {
       expect(LEVELS).toHaveLength(100);
       expect(new Set(LEVELS.map((l) => l.id)).size).toBe(100);
-      expect(new Set(LEVELS.map((l) => l.map.join('/'))).size).toBe(100);
-      for (let w = 0; w < 10; w++) expect(new Set(LEVELS.slice(w * 10, w * 10 + 10).map((l) => l.theme))).toEqual(new Set([THEME_ORDER[w]]));
-    });
-
-    it('data sama dengan hasil pembuat level (tidak diedit manual)', () => {
+      LEVELS.forEach((l, i) => expect(l.world).toBe(Math.floor(i / 10)));
       expect(JSON.parse(JSON.stringify(build()))).toEqual(JSON.parse(JSON.stringify(LEVELS)));
     });
-
-    it('solusi menang, sehemat "best", muat di jatah blok, dan program tanpa blok baru tidak muat', () => {
+    it('solusi sehemat "best" dan muat di jatah blok', () => {
       for (const l of LEVELS) {
-        expect(runProg(l, l.solution).result, l.id).toBe('win');
         expect(countBlocks(l.solution), l.id).toBe(l.best);
         expect(l.limit, l.id).toBeGreaterThanOrEqual(l.best);
-        // jalan terpendek dengan maju/belok saja lebih panjang dari jatah → blok baru memang dibutuhkan
-        expect(solve(l)!.length, l.id).toBeGreaterThan(l.limit);
       }
     });
   });
 }
 
+describe('Ulangi · kanvas', () => {
+  it('solusi menggambar pola dengan tepat; tanpa ulangi tidak muat di jatah', () => {
+    for (const l of ULANGI) {
+      expect(runWorld(l.solution, paintWorld(l)).result, l.id).toBe('win');
+      expect(flatActs(l.solution).length, l.id).toBeGreaterThan(l.limit);
+    }
+  });
+  it('menggores di luar pola = salah', () => {
+    const l = ULANGI[0];
+    const wrong: Program = { main: [S.a('kanan'), S.a('maju')], jurus: [] };
+    expect(runWorld(wrong, paintWorld(l)).result).toBe('bump');
+  });
+});
+
+describe('Kalau… · lari', () => {
+  it('solusi selalu sampai finis di 300 susunan acak; tanpa kalau/sampai tidak muat', () => {
+    for (const l of KALAU) {
+      for (let seed = 1; seed <= 300; seed++) expect(runWorld(l.solution, runWorld2(l, layoutFor(l, seed * 7919))).result, `${l.id} seed ${seed}`).toBe('win');
+      expect(l.len, l.id).toBeGreaterThan(l.limit);
+    }
+  });
+  it('susunan: jumlah & jarak rintangan sesuai soal, awal & finis kosong', () => {
+    for (const l of KALAU)
+      for (let seed = 1; seed <= 50; seed++) {
+        const c = layoutFor(l, seed);
+        const idx = c.map((v, i) => (v ? i : -1)).filter((i) => i >= 0);
+        expect(idx.length, l.id).toBeLessThanOrEqual(l.count[1]);
+        for (let i = 1; i < idx.length; i++) expect(idx[i] - idx[i - 1]).toBeGreaterThanOrEqual(3);
+        expect(c[0] ?? c[1] ?? c[2] ?? c[l.len]).toBeNull();
+        for (const v of c) if (v) expect(l.kinds).toContain(v);
+      }
+  });
+  it('program tetap (tanpa kalau) gagal di susunan lain', () => {
+    const l = KALAU[5];
+    const res = new Set<string>();
+    for (let seed = 1; seed <= 30; seed++) res.add(runWorld({ main: [S.until([S.a('lari')])], jurus: [] }, runWorld2(l, layoutFor(l, seed))).result);
+    expect(res.has('bump')).toBe(true);
+  });
+});
+
+describe('Jurus · dojo', () => {
+  it('solusi meniru Sensei dengan tepat; tanpa jurus tidak muat', () => {
+    for (const l of JURUS) {
+      expect(runWorld(l.solution, dojoWorld(l)).result, l.id).toBe('win');
+      expect(l.target.length, l.id).toBeGreaterThan(l.limit);
+      expect(l.solution.jurus.length, l.id).toBeGreaterThan(0);
+    }
+  });
+  it('gerakan salah berhenti di gerakan itu', () => {
+    const l = JURUS[0];
+    const wrongMove = l.palette.find((m) => m !== l.target[0] && m !== 'jurus')!;
+    const r = runWorld({ main: [S.a(wrongMove)], jurus: [] }, dojoWorld(l));
+    expect(r.result).toBe('bump');
+  });
+});
+
 describe('mesin program', () => {
-  const lv = ULANGI[0];
-  it('ulangi, kalau, sampai bintang, jurus', () => {
-    const n = solve(lv)!.length;
-    expect(runProg(lv, { main: [S.loop(n, [S.m()])], jurus: [] }).result).toBe('win');
-    expect(runProg(lv, { main: [S.loop(n - 1, [S.m()])], jurus: [] }).result).toBe('short');
-    expect(runProg(lv, { main: [S.until([S.m()])], jurus: [] }).result).toBe('win');
-    expect(runProg(lv, { main: [S.call(), S.call()], jurus: [S.loop(Math.ceil(n / 2), [S.m()])] }).result).toBe('win');
-    // ulangi sampai bintang yang tidak bergerak → berhenti (tidak macet selamanya)
-    expect(runProg(lv, { main: [S.until([S.if('depan', [S.m()])])], jurus: [] }).result).toBe('stuck');
-    expect(runProg(lv, { main: [S.until([])], jurus: [] }).result).toBe('stuck');
-  });
-  it('kalau memilih cabang sesuai sensor', () => {
-    const p: Program = { main: [S.if('depan', [S.c('kanan')], [S.m()])], jurus: [] };
-    const r = runProg(lv, p);
-    expect(r.steps[0].kind).toBe('check');
-    expect(r.steps[1].kind).toBe(r.steps[0].ok ? 'turn' : 'move');
-  });
-  it('bintang', () => {
-    expect(progStars(lv, lv.best, false)).toBe(3);
-    expect(progStars(lv, lv.best + 2, false)).toBe(2);
-    expect(progStars(lv, lv.best + 3, false)).toBe(1);
-    expect(progStars(lv, lv.best, true)).toBe(2);
+  it('ulangi sampai selesai yang tidak bergerak berhenti; bintang', () => {
+    const l = KALAU[0];
+    expect(runWorld({ main: [S.until([])], jurus: [] }, runWorld2(l, layoutFor(l, 1))).result).toBe('stuck');
+    expect(runWorld({ main: [S.until([S.if('fly', [S.a('lari')])])], jurus: [] }, runWorld2(l, layoutFor(l, 1))).result).toBe('stuck');
+    expect([progStars(4, 4, false), progStars(4, 6, false), progStars(4, 7, false), progStars(4, 4, true)]).toEqual([3, 2, 1, 2]);
   });
 });

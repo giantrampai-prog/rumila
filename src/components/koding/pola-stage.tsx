@@ -1,14 +1,16 @@
 'use client';
 
-// Panggung Coding Agam · Pola: deretan benda di atas papan (dasar bertema seperti Langkah). Agam berjalan di jalur
-// di bawah deretan dan menyorot tiap benda dengan lampunya; benda yang disorot melompat kecil sambil berbunyi.
+// Panggung Coding Agam · Pola (Pabrik Pola): benda-benda lewat di BAN BERJALAN di tengah lantai pabrik/toko bertema
+// (10 tema sendiri di skin-pola.tsx). Agam berapron berjalan di jalur pemeriksa di bawah ban dan menyorot tiap benda
+// dengan lampunya; benda yang disorot melompat kecil sambil berbunyi.
 // Deretan dibagi ke beberapa baris (dibaca kiri → kanan seperti tulisan) supaya benda tetap besar di layar mana pun.
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import type { Fill, PolaLevel } from '@/lib/koding/pola';
-import { COMMON_DEFS, h } from './art';
+import { COMMON_DEFS, h, type ThemeArt } from './art';
 import { TOKEN_DEFS, TokenArt } from './pola-art';
-import { AgamTop, tileAt, WORLD } from './stage';
+import { AgamWorkerTop } from './skin-pola';
+import { tileAt } from './stage';
 
 const PADX = 20;
 const PADT = 16;
@@ -17,6 +19,8 @@ const ROW = 164;
 
 export type PolaStageProps = {
   level: PolaLevel;
+  /** tema Level ini (skin Pola) */
+  art: ThemeArt;
   fill: Fill;
   sel: number | null;
   agam: number;
@@ -44,7 +48,7 @@ function layout(n: number, aw: number, ah: number) {
 }
 
 export function PolaStage(props: PolaStageProps) {
-  const W = WORLD[props.level.theme];
+  const W = props.art;
   const box = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   useEffect(() => {
@@ -61,8 +65,8 @@ export function PolaStage(props: PolaStageProps) {
   );
 }
 
-function Board({ level, fill, sel, agam, bump, pop, bad, glow, won, onSlot, aw, ah }: PolaStageProps & { aw: number; ah: number }) {
-  const A = WORLD[level.theme];
+function Board({ level, art, fill, sel, agam, bump, pop, bad, glow, won, onSlot, aw, ah }: PolaStageProps & { aw: number; ah: number }) {
+  const A = art;
   const n = level.seq.length;
   const { c: cols, r: rows, t } = layout(n, aw, ah);
   const VW = aw / t,
@@ -80,7 +84,7 @@ function Board({ level, fill, sel, agam, bump, pop, bad, glow, won, onSlot, aw, 
     y0 = (py % 100) - 100;
   for (let Y = y0, gy = 0; Y < VH; Y += 100, gy++)
     for (let X = x0, gx = 0; X < VW; X += 100, gx++) {
-      bg.push(tileAt(level.theme, X, Y, gx + gy, `t${gx}-${gy}`));
+      bg.push(tileAt(A, X, Y, gx + gy, `t${gx}-${gy}`));
       const inPanel = X + 100 > px - 4 && X < px + pw + 4 && Y + 100 > py - 4 && Y < py + ph + 12;
       if (inPanel) continue;
       const r = h(gx, gy, 5);
@@ -98,18 +102,51 @@ function Board({ level, fill, sel, agam, bump, pop, bad, glow, won, onSlot, aw, 
         {COMMON_DEFS}
         {A.defs}
         {TOKEN_DEFS}
+        <linearGradient id="pl-steel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#dfe4ea" />
+          <stop offset="0.5" stopColor="#c3cad3" />
+          <stop offset="1" stopColor="#a9b1bc" />
+        </linearGradient>
+        <radialGradient id="pl-roller" cx="0.35" cy="0.3" r="0.8">
+          <stop offset="0" stopColor="#e9edf1" />
+          <stop offset="0.6" stopColor="#8e98a4" />
+          <stop offset="1" stopColor="#4b535e" />
+        </radialGradient>
+        <pattern id="pl-grate" width="14" height="14" patternUnits="userSpaceOnUse">
+          <rect width="14" height="14" fill="#8a939e" />
+          <circle cx="7" cy="7" r="3.2" fill="#5d6570" />
+        </pattern>
+        <pattern id="pl-hazard" width="20" height="7" patternUnits="userSpaceOnUse">
+          <rect width="20" height="7" fill="#ffc21a" />
+          <path d="M0 7 L7 0 H12 L5 7 Z M10 7 L17 0 H20 V2 L15 7 Z" fill="#23262c" />
+        </pattern>
       </defs>
       {bg}
-      {/* panel deretan */}
-      <rect x={px} y={py + 8} width={pw} height={ph} rx="28" fill="#000" opacity="0.16" />
-      <rect x={px} y={py} width={pw} height={ph} rx="28" fill={A.frame} opacity="0.95" stroke={dark ? 'rgba(255,255,255,.12)' : 'rgba(35,48,74,.1)'} strokeWidth="2" />
+      {/* rangka ban berjalan: kaki besi, ban karet yang bergerak, rol di kedua ujung, jalur pemeriksa Agam */}
+      <rect x={px} y={py + 10} width={pw} height={ph} rx="24" fill="#000" opacity="0.18" />
+      <rect x={px} y={py} width={pw} height={ph} rx="24" fill="url(#pl-steel)" stroke="#5b6472" strokeWidth="3" />
+      <rect x={px + 6} y={py + 6} width={pw - 12} height={ph - 12} rx="19" fill="none" stroke="#fff" strokeOpacity="0.35" strokeWidth="2" />
       {Array.from({ length: rows }, (_, r) => {
         const cnt = Math.min(cols, n - r * cols);
-        const ly = py + PADT + r * ROW + 106;
+        const by = py + PADT + r * ROW;
+        const bx = px + PADX - 8;
+        const bw = cnt * 100 + 16;
+        const ly = by + 106;
         return (
           <g key={`lane${r}`}>
-            <rect x={px + PADX + 4} y={ly} width={cnt * 100 - 8} height="50" rx="25" fill={dark ? 'rgba(255,255,255,.09)' : 'rgba(35,48,74,.1)'} />
-            <line x1={px + PADX + 30} y1={ly + 25} x2={px + PADX + cnt * 100 - 30} y2={ly + 25} stroke={dark ? 'rgba(255,255,255,.35)' : '#fff'} strokeOpacity="0.8" strokeWidth="4" strokeDasharray="10 14" strokeLinecap="round" />
+            {/* ban karet */}
+            <rect x={bx} y={by + 10} width={bw} height="84" rx="42" fill="#2b2f36" />
+            <rect x={bx + 4} y={by + 14} width={bw - 8} height="76" rx="38" fill="#3a3f48" />
+            <line x1={bx + 40} y1={by + 52} x2={bx + bw - 40} y2={by + 52} stroke="#4c525c" strokeWidth="70" strokeDasharray="4 22" className="pola-belt" />
+            {[bx + 42, bx + bw - 42].map((cx) => (
+              <g key={cx}>
+                <circle cx={cx} cy={by + 52} r="30" fill="url(#pl-roller)" stroke="#23262c" strokeWidth="2" />
+                <circle cx={cx} cy={by + 52} r="7" fill="#9aa3ad" stroke="#5b6472" strokeWidth="2" />
+              </g>
+            ))}
+            {/* jalur pemeriksa: pelat berlubang + garis kuning-hitam */}
+            <rect x={px + PADX + 2} y={ly} width={cnt * 100 - 4} height="50" rx="10" fill="url(#pl-grate)" stroke="#6b7480" strokeWidth="2" />
+            <rect x={px + PADX + 2} y={ly} width={cnt * 100 - 4} height="7" fill="url(#pl-hazard)" />
           </g>
         );
       })}
@@ -155,7 +192,7 @@ function Board({ level, fill, sel, agam, bump, pop, bad, glow, won, onSlot, aw, 
       })}
       <g className="robi-move" style={{ transform: `translate(${ag.x + 50}px, ${ag.y + 131}px)` }} pointerEvents="none">
         <g transform="scale(0.6)">
-          <AgamTop bump={bump} />
+          <AgamWorkerTop bump={bump} />
         </g>
       </g>
     </svg>

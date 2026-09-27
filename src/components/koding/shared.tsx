@@ -5,9 +5,12 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Icon } from '@/components/ui';
-import type { Theme } from '@/lib/koding/engine';
 import { sfx } from '@/lib/sfx';
 import { AgamFront, ThemeVignette, THEMES, WORLD } from './stage';
+
+/** satu Level di peta: nama, warna kartu, potongan pemandangan */
+export type MapWorld = { name: string; bg: string; ink: string; dark?: boolean; vignette: ReactNode };
+const LANGKAH_WORLDS: MapWorld[] = THEMES.map((t) => ({ name: WORLD[t].name, bg: WORLD[t].bg, ink: WORLD[t].ink, dark: WORLD[t].dark, vignette: <ThemeVignette theme={t} /> }));
 
 export const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 export const INK = '#23304a';
@@ -45,7 +48,7 @@ export function useProgress(key: string) {
   return [prog, save] as const;
 }
 
-type Item = { id: string; theme: Theme };
+type Item = { id: string };
 
 export function summarize(list: Item[], prog: Progress) {
   const total = list.length;
@@ -104,9 +107,20 @@ export function LevelMap({
   onOpen,
   onCert,
   onBack,
+  worlds = LANGKAH_WORLDS,
+  mascot,
+  accent = '#22b573',
+  paper = 'koding-paper',
 }: {
   title: string;
-  list: Item[];
+  /** 10 dunia (Level) game ini; bawaan = dunia Langkah */
+  worlds?: MapWorld[];
+  mascot?: ReactNode;
+  /** warna ciri game (judul & bilah kemajuan) */
+  accent?: string;
+  /** kelas latar halaman peta */
+  paper?: string;
+  list: { id: string }[];
   prog: Progress;
   greeting: ReactNode;
   onOpen: (i: number) => void;
@@ -121,7 +135,7 @@ export function LevelMap({
     mapRef.current?.querySelector('[data-current="1"]')?.scrollIntoView({ block: 'center' });
   }, [current]);
   return (
-    <div ref={mapRef} className="koding-paper fixed inset-0 overflow-y-auto" style={{ color: INK }}>
+    <div ref={mapRef} className={`${paper} fixed inset-0 overflow-y-auto`} style={{ color: INK }}>
       <div className="mx-auto w-full max-w-[1180px] px-4 pb-10 sm:px-6" style={{ paddingTop: 'max(14px, env(safe-area-inset-top))' }}>
         <div className="flex items-center gap-3">
           <button onClick={onBack} aria-label="Kembali" className="koding-round flex size-12 items-center justify-center rounded-full active:translate-y-0.5">
@@ -129,14 +143,14 @@ export function LevelMap({
           </button>
           <div className="flex-1">
             <div className="text-[13px] font-extrabold opacity-60">Coding Agam</div>
-            <h1 style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 900, lineHeight: 1 }}>{title}</h1>
+            <h1 style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 900, lineHeight: 1, color: accent }}>{title}</h1>
           </div>
           <div className="koding-round flex items-center gap-1 rounded-full px-3 py-2 font-extrabold" style={{ fontFamily: BALOO }}>
             <Icon name="star" size={20} className="text-[#f2b705]" /> {starTotal}
           </div>
         </div>
         <div className="mt-4 flex max-w-[760px] items-end gap-3">
-          <AgamFront />
+          {mascot ?? <AgamFront />}
           <div className="koding-say mb-3 flex-1 rounded-[18px] px-4 py-3 text-[15px] font-bold">{greeting}</div>
         </div>
 
@@ -154,7 +168,7 @@ export function LevelMap({
             </span>
             {!allDone && <span className="block text-[13px] font-bold opacity-70">Selesaikan {total} coding untuk mendapatkannya · ketuk untuk lihat contoh</span>}
             <span className="mt-1 block h-3 overflow-hidden rounded-full bg-[#e9dfcb]">
-              <span className="block h-full rounded-full bg-[#22b573] transition-[width] duration-700" style={{ width: `${(doneCount / total) * 100}%` }} />
+              <span className="block h-full rounded-full transition-[width] duration-700" style={{ width: `${(doneCount / total) * 100}%`, background: accent }} />
             </span>
             <span className="mt-1 block text-[13px] font-bold opacity-70">
               {doneCount} dari {total} coding selesai
@@ -164,13 +178,12 @@ export function LevelMap({
 
         {/* dunia menyesuaikan lebar layar: 1 kolom di HP, 2 di tablet/Fold, 3 di layar lebar */}
         <div className="koding-worlds mt-6">
-          {THEMES.map((t, w) => {
+          {worlds.map((W, w) => {
             const start = w * PER_WORLD;
             const worldOpen = unlocked(start);
-            const W = WORLD[t];
             return (
-              <section key={t} className="overflow-hidden rounded-[24px]" style={{ background: W.bg, color: W.ink }}>
-                <ThemeVignette theme={t} />
+              <section key={W.name} className="overflow-hidden rounded-[24px]" style={{ background: W.bg, color: W.ink }}>
+                {W.vignette}
                 <div className="p-4 pt-3">
                   {/* judul selalu dua baris dengan tinggi tetap, supaya kotak-kotak di semua kartu sejajar */}
                   <div className="mb-3">

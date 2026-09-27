@@ -1,20 +1,15 @@
-// Pembuat level Ulangi, Kalau… dan Jurus (10 Level bertema × 10 coding). Dijalankan sekali lewat
-// `npx tsx scripts/gen-prog.ts`; hasilnya disimpan tetap di ulangi.ts / kalau.ts / jurus.ts (progres anak aman).
+// Pembuat soal Ulangi, Kalau… dan Jurus (10 Level × 10 coding). Dijalankan lewat `npx tsx scripts/gen-prog.ts`;
+// hasilnya disimpan tetap di ulangi.ts / kalau.ts / jurus.ts (progres anak aman).
 //
-// Ulangi & Jurus: jalur dibuat dari RESEP program (mis. "ulangi 3 kali [maju, belok kanan, maju, belok kiri]"),
-// rintangan diisi di luar jalur, lalu jalan pintas ditutup sampai jalan terpendek = jalur resep. Jatah blok dibuat
-// lebih kecil dari program tanpa ulangi/jurus, jadi anak memang harus memakai blok baru itu.
-// Kalau…: papan acak + ATURAN (mis. "ulangi sampai bintang [kalau ada rintangan di depan: belok kanan, kalau
-// tidak: maju]"). Aturan dijalankan di papan itu dan bintang ditaruh di ujung jalannya; jalan terpendeknya dibuat
-// jauh lebih panjang dari jatah blok, jadi hanya program yang "berpikir" yang muat.
+// Ulangi (Agam Pelukis): gambar dibuat dari RESEP program (mis. "ulangi 4 kali [maju 2×, belok kanan]" = persegi).
+//   Jatah blok lebih kecil dari program tanpa ulangi, jadi anak harus menemukan bagian yang berulang.
+// Kalau… (Agam Pelari): tiap soal menentukan panjang lintasan & jenis rintangan; susunannya diacak tiap main, jadi
+//   hanya program dengan "kalau" yang selalu berhasil. Tes menjalankan solusi di ratusan susunan acak.
+// Jurus (Dojo Ninja): rangkaian gerakan Sensei dibuat dari resep jurus (mis. jurus = pukul, pukul, tendang; dipakai
+//   3 kali dengan gerakan lain di antaranya). Jatah blok memaksa anak memakai jurus.
 
-import { run, solve, THEME_ORDER, type Cmd, type Dir, type Level, type Theme } from './engine';
-import { countBlocks, describe, renumber, runProg, S, type PBlock, type Program, type ProgLevel, type Stmt } from './prog';
-
-const DX = [0, 1, 0, -1],
-  DY = [-1, 0, 1, 0];
-const MAXW = 9,
-  MAXH = 7;
+import { countBlocks, flatActs, renumber, S, type PBlock, type Program, type Stmt } from './prog';
+import { MOVES, traceSegments, type JurusLevel, type KalauLevel, type MoveName, type Obst, type UlangiLevel } from './worlds';
 
 function mulberry(seed: number) {
   let a = seed >>> 0;
@@ -27,330 +22,299 @@ function mulberry(seed: number) {
   };
 }
 
-const WATER: Record<Theme, number> = { kebun: 0.2, pantai: 0.6, hutan: 0.3, sawah: 0.7, kota: 0.25, salju: 0.45, gurun: 0.2, laut: 0.35, gunung: 0.5, bulan: 0.3 };
-const ALL: Cmd[] = ['maju', 'kiri', 'kanan'];
-
-/** buka resep (hanya perintah, ulangi, jurus) jadi daftar perintah biasa */
-function flat(list: Stmt[], jurus: Stmt[]): Cmd[] {
-  const out: Cmd[] = [];
-  const walk = (l: Stmt[]) => {
-    for (const s of l) {
-      if (s.t === 'cmd') out.push(s.c);
-      else if (s.t === 'call') walk(jurus);
-      else if (s.t === 'loop') for (let k = 0; k < s.n; k++) walk(s.body);
-    }
-  };
-  walk(list);
-  // belokan di ujung program tidak ikut jalur
-  while (out.length && out[out.length - 1] !== 'maju') out.pop();
-  return out;
-}
-
-/** peta dari daftar perintah; null bila jalur menyilang / terlalu besar / tidak bisa dibuat tanpa jalan pintas */
-function mapFromCmds(id: string, theme: Theme, cmds: Cmd[], dir0: Dir, density: number, rnd: () => number): Level | null {
-  const cells = [{ x: 0, y: 0 }];
-  const seen = new Set(['0,0']);
-  let d = dir0,
-    x = 0,
-    y = 0;
-  for (const c of cmds) {
-    if (c !== 'maju') {
-      d = ((d + (c === 'kanan' ? 1 : 3)) % 4) as Dir;
-      continue;
-    }
-    x += DX[d];
-    y += DY[d];
-    const k = `${x},${y}`;
-    if (seen.has(k)) return null;
-    seen.add(k);
-    cells.push({ x, y });
-  }
-  if (/(kanan,kanan|kiri,kiri)/.test(cmds.join(','))) return null;
-  const xs = cells.map((c) => c.x),
-    ys = cells.map((c) => c.y);
-  const minX = Math.min(...xs),
-    minY = Math.min(...ys);
-  const bw = Math.max(...xs) - minX + 1,
-    bh = Math.max(...ys) - minY + 1;
-  if (bw > MAXW || bh > MAXH) return null;
-  const W = Math.min(MAXW, Math.max(4, bw + Math.floor(rnd() * 2))),
-    H = Math.min(MAXH, Math.max(3, bh + Math.floor(rnd() * 2)));
-  const ox = Math.floor(rnd() * (W - bw + 1)) - minX,
-    oy = Math.floor(rnd() * (H - bh + 1)) - minY;
-  const grid = Array.from({ length: H }, () => Array(W).fill('.'));
-  const onPath = new Set(cells.map((c) => `${c.x + ox},${c.y + oy}`));
-  const water = WATER[theme];
-  for (let gy = 0; gy < H; gy++) for (let gx = 0; gx < W; gx++) if (!onPath.has(`${gx},${gy}`) && rnd() < density) grid[gy][gx] = rnd() < water ? '~' : '#';
-  const s0 = cells[0],
-    g0 = cells[cells.length - 1];
-  grid[s0.y + oy][s0.x + ox] = 'S';
-  grid[g0.y + oy][g0.x + ox] = 'G';
-  const level: Level = { id, theme, dir: dir0, blocks: ALL, map: grid.map((r) => r.join('')), hint: '' };
-  // tutup jalan pintas sampai jalan terpendek = jalur resep
-  let sol = solve(level);
-  for (let fix = 0; fix < 90 && sol && sol.length < cmds.length; fix++) {
-    const sc = run(level, sol)
-      .steps.filter((st) => st.kind === 'move' && !onPath.has(`${st.x},${st.y}`))
-      .map((st) => ({ x: st.x, y: st.y }));
-    if (!sc.length) return null;
-    const c = sc[Math.floor(rnd() * sc.length)];
-    grid[c.y][c.x] = rnd() < water ? '~' : '#';
-    level.map = grid.map((r) => r.join(''));
-    sol = solve(level);
-  }
-  if (!sol || sol.length !== cmds.length) return null;
-  return level;
-}
-
-/* ================= resep Ulangi & Jurus ================= */
-
-type Recipe = (k: number, X: Cmd, Y: Cmd) => Program;
-const M = S.m;
-const Ms = (n: number) => Array.from({ length: n }, M);
+const A = S.a;
 const L = (n: number, body: Stmt[]) => S.loop(n, body);
-const T = (c: Cmd) => S.c(c);
+const rep = (n: number, f: () => Stmt) => Array.from({ length: n }, f);
 
-const ULANGI: { palette: PBlock[]; slack: number; hints: string[]; make: Recipe }[] = [
-  // 1 Kebun: garis lurus
-  { palette: ['maju', 'ulangi'], slack: 0, hints: ['Blok baru: ULANGI! Masukkan "maju" ke dalamnya, lalu ketuk angkanya untuk memilih berapa kali.', 'Hitung kotaknya. Ulangi maju sebanyak itu!'], make: (k) => ({ main: [L([3, 3, 4, 4, 5, 5, 6, 6, 7, 8][k], [M()])], jurus: [] }) },
-  // 2 Pantai: lurus, belok, lurus
+/* ================= Ulangi ================= */
+
+const MAXC = 9,
+  MAXR = 7;
+type Shape = (k: number, X: string, Y: string) => Stmt[];
+const M = () => A('maju');
+const Ms = (n: number) => rep(n, M);
+const T = (c: string) => A(c);
+
+const ULANGI: { name: string; palette: PBlock[]; hints: string[]; shape: Shape }[] = [
   {
+    name: 'garis',
+    palette: ['maju', 'ulangi'],
+    hints: ['Blok baru: ULANGI! Masukkan "maju" ke dalamnya, lalu ketuk angkanya untuk memilih berapa kali.', 'Hitung titiknya. Ulangi maju sebanyak itu!'],
+    shape: (k) => [L([3, 3, 4, 4, 5, 5, 6, 6, 7, 8][k], [M()])],
+  },
+  {
+    name: 'persegi',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Dua bagian lurus! Pakai dua blok ulangi dengan belokan di tengahnya.'],
-    make: (k, X, Y) => {
-      const ab = [[3, 3], [3, 4], [4, 3], [4, 4], [3, 5], [5, 3], [4, 5], [5, 4], [3, 3, 3], [3, 4, 3]][k];
-      const main: Stmt[] = [L(ab[0], [M()]), T(X), L(ab[1], [M()])];
-      if (ab.length > 2) main.push(T(Y), L(ab[2], [M()]));
-      return { main, jurus: [] };
+    hints: ['Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi punya 4 sisi yang sama. Satu sisi: maju, lalu belok. Ulangi 4 kali!', 'Persegi panjang: sisi panjang, belok, sisi pendek, belok — lalu ulangi 2 kali.'],
+    shape: (k, X) => {
+      if (k < 7) return [L(4, [...Ms([1, 1, 2, 2, 2, 3, 3][k]), T(X)])];
+      const [a, b] = [[2, 3], [3, 2], [4, 2]][k - 7];
+      return [L(2, [...Ms(a), T(X), ...Ms(b), T(X)])];
     },
   },
-  // 3 Hutan: tangga
   {
+    name: 'tangga',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Jalannya seperti tangga. Cari gerakan yang berulang: maju, belok, maju, belok…'],
-    make: (k, X, Y) => {
-      const n = [2, 3, 3, 3, 4, 4, 4, 3, 3, 3][k];
-      const body = k < 7 ? [M(), T(X), M(), T(Y)] : k < 9 ? [M(), M(), T(X), M(), T(Y)] : [M(), M(), T(X), M(), M(), T(Y)];
-      return { main: [L(n, body)], jurus: [] };
+    hints: ['Gambar tangga! Satu anak tangga: maju, belok, maju, belok ke arah sebaliknya.'],
+    shape: (k, X, Y) => (k < 6 ? [L([2, 3, 3, 4, 4, 5][k], [M(), T(X), M(), T(Y)])] : [L([2, 3, 3, 3][k - 6], k < 8 ? [M(), M(), T(X), M(), T(Y)] : [M(), T(X), M(), M(), T(Y)])]),
+  },
+  {
+    name: 'pagar',
+    palette: ['maju', 'kiri', 'kanan', 'ulangi'],
+    hints: ['Gambar pagar benteng: naik, maju, turun, maju — lalu ulangi.'],
+    shape: (k, X, Y) => (k < 6 ? [L([2, 2, 3, 3, 4, 4][k], [T(X), M(), T(Y), M(), T(Y), M(), T(X), M()])] : [L([2, 3, 3, 4][k - 6], [T(X), M(), M(), T(Y), M(), T(Y), M(), M(), T(X), M()])]),
+  },
+  {
+    name: 'ular',
+    palette: ['maju', 'kiri', 'kanan', 'ulangi'],
+    hints: ['Garisnya berkelok seperti ular: ke samping, turun, kembali, turun… Temukan bagian yang berulang.'],
+    shape: (k, X, Y) => {
+      const [n, a] = [[2, 2], [2, 3], [2, 3], [2, 4], [2, 5], [3, 2], [3, 3], [3, 4], [3, 5], [3, 6]][k];
+      return [L(n, [...Ms(a), T(X), M(), T(X), ...Ms(a), T(Y), M(), T(Y)])];
     },
   },
-  // 4 Sawah: bentuk U (belok ke arah yang sama)
   {
+    name: 'jendela',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Agam berkeliling pematang. Setiap sisi: maju beberapa kali, lalu belok ke arah yang sama.'],
-    make: (k, X) => {
-      const [r, a] = [[2, 2], [2, 3], [2, 4], [3, 2], [3, 2], [3, 3], [3, 3], [3, 4], [3, 4], [3, 5]][k];
-      return { main: [L(r, [...Ms(a), T(X)])], jurus: [] };
+    hints: ['Jendela punya 4 kotak kecil. Gambar satu kotak, lalu ulangi 4 kali — Agam berputar sendiri!'],
+    shape: (k, X) => {
+      const a = k < 5 ? 1 : 2;
+      return [L(4, [...Ms(a), T(X), ...Ms(a), T(X), ...Ms(a), T(X), ...Ms(a)])];
     },
   },
-  // 5 Kota: lurus + tangga
   {
+    name: 'plus',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Ada dua bagian: jalan lurus dan tangga. Satu ulangi untuk tiap bagian.'],
-    make: (k, X, Y) => {
-      const a = [2, 3, 3, 4, 4, 2, 3, 3, 4, 4][k],
-        n = [2, 2, 3, 2, 3, 2, 2, 3, 3, 3][k];
-      return k < 5 ? { main: [L(a, [M()]), L(n, [T(X), M(), T(Y), M()])], jurus: [] } : { main: [L(n, [M(), T(X), M(), T(Y)]), L(a, [M()])], jurus: [] };
+    hints: ['Gambar tanda tambah (+). Satu lengan: maju, belok, maju, belok, maju, lalu belok ke arah lain.'],
+    shape: (k, X, Y) => {
+      const a = k < 5 ? 1 : 2;
+      return [L(4, [...Ms(a), T(X), ...Ms(a), T(X), ...Ms(a), T(Y)])];
     },
   },
-  // 6 Salju: tangga besar, lalu jalan ular (banyak ulangi)
   {
+    name: 'kincir',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Anak tangganya besar! Hitung berapa maju ke depan dan berapa maju ke samping.', 'Jalannya berkelok seperti ular. Setiap bagian lurus pakai ulangi.'],
-    make: (k, X, Y) => {
-      if (k < 5) {
-        const [n, a, b] = [[2, 2, 1], [2, 1, 2], [2, 2, 2], [3, 2, 1], [3, 1, 2]][k];
-        return { main: [L(n, [...Ms(a), T(X), ...Ms(b), T(Y)])], jurus: [] };
-      }
-      const a = [3, 3, 4, 4, 5][k - 5];
-      return { main: [L(a, [M()]), T(X), L(2, [M()]), T(X), L(a, [M()]), T(Y), L(2, [M()]), T(Y), L(a, [M()])], jurus: [] };
+    hints: ['Kincir angin: gambar satu baling-baling, lalu ulangi 4 kali!'],
+    shape: (k, X, Y) => {
+      const a = k < 5 ? 2 : 3;
+      return [L(4, [...Ms(a), T(X), M(), T(X), ...Ms(a - 1), T(Y)])];
     },
   },
-  // 7 Gurun: lurus + belok + tangga panjang
   {
+    name: 'dua',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Pecah jalannya jadi bagian-bagian. Bagian yang berulang pakai ulangi.'],
-    make: (k, X, Y) => {
-      const a = [3, 3, 4, 4, 5, 3, 4, 4, 5, 4][k],
-        n = [2, 3, 2, 3, 3, 2, 3, 3, 3, 4][k];
-      return { main: [L(a, [M()]), T(X), L(n, [M(), T(Y), M(), T(X)])], jurus: [] };
+    hints: ['Gambarnya punya dua bagian. Pakai dua blok ulangi!'],
+    shape: (k, X, Y) => {
+      const a = [1, 2, 1, 2, 2, 1, 2, 2, 3, 2][k];
+      return k < 5 ? [L(4, [...Ms(a), T(X)]), T(Y), L(3, [M()]), L(4, [T(Y), ...Ms(a)])] : [L(3, [M(), T(X), M(), T(Y)]), L(4, [...Ms(a), T(X)])];
     },
   },
-  // 8 Laut: dua bentuk U berturutan
   {
+    name: 'karya',
     palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Dua kelompok gerakan berulang. Butuh dua blok ulangi.'],
-    make: (k, X, Y) => {
-      const a = [2, 2, 3, 3, 2, 3, 3, 4, 4, 4][k],
-        b = [2, 3, 2, 3, 4, 3, 4, 3, 4, 5][k];
-      return { main: [L(a, [M()]), T(X), L(2, [...Ms(2), T(Y)]), L(b, [M()])], jurus: [] };
-    },
-  },
-  // 9 Gunung: tangga dua tingkat
-  {
-    palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Tangganya bertingkat dua. Satu anak tangga = maju 2, belok, maju, belok.'],
-    make: (k, X, Y) => {
-      const n = [2, 2, 3, 3, 3, 3, 3, 3, 3, 3][k],
-        a = [1, 2, 1, 2, 2, 2, 1, 1, 1, 1][k];
-      return { main: [L(a, [M()]), L(n, [M(), M(), T(X), M(), T(Y)]), ...(k >= 6 ? [M(), T(X), L(k >= 8 ? 3 : 2, [M()])] : [])], jurus: [] };
-    },
-  },
-  // 10 Bulan: gabungan
-  {
-    palette: ['maju', 'kiri', 'kanan', 'ulangi'],
-    slack: 1,
-    hints: ['Soal terakhir Ulangi! Cari semua bagian yang berulang.'],
-    make: (k, X, Y) => {
-      const n = [2, 2, 3, 3, 3, 3, 3, 3, 3, 3][k],
-        a = [2, 3, 2, 3, 3, 4, 3, 4, 4, 4][k];
-      return { main: [L(a, [M()]), T(X), L(n, [M(), T(Y), M(), T(X)]), L(k >= 5 ? 3 : 2, [M()]), T(X), L(2, [M()])], jurus: [] };
+    hints: ['Karya terakhir! Cari semua bagian yang berulang.'],
+    shape: (k, X, Y) => {
+      const n = [2, 2, 3, 3, 3, 2, 3, 3, 4, 4][k];
+      return k < 5 ? [L(n, [T(X), M(), M(), T(Y), M(), T(Y), M(), M(), T(X), M()]), L(n < 3 ? 4 : 2, [M()])] : [L(n, [...Ms(2), T(X), M(), T(X), ...Ms(2), T(Y), M(), T(Y)]), L(2, [M()])];
     },
   },
 ];
 
-const J = (main: Stmt[], jurus: Stmt[]): Program => ({ main, jurus });
-const C = S.call;
-const JURUS: { palette: PBlock[]; slack: number; hints: string[]; make: Recipe }[] = [
-  // 1 Kebun: jurus = maju beberapa kali
-  { palette: ['maju', 'kiri', 'kanan', 'jurus'], slack: 1, hints: ['Blok baru: JURUS ⚡! Isi jurusnya di kotak Jurus, lalu panggil jurus di program utama.', 'Jurusnya dipakai lebih dari sekali. Susun sekali, pakai berkali-kali!'], make: (k, X) => { const a = [3, 3, 4, 4, 3, 4, 3, 3, 4, 4][k]; return k < 4 ? J([C(), T(X), C()], Ms(a)) : k < 7 ? J([C(), T(X), C(), T(X), C()], Ms(a - 1)) : J([C(), T(X), C(), M(), C()], Ms(a - 1)); } },
-  // 2 Pantai: jurus = lurus + belok
-  { palette: ['maju', 'kiri', 'kanan', 'jurus'], slack: 1, hints: ['Jurusnya bisa berisi belokan juga, lho.'], make: (k, X) => { const a = [2, 2, 3, 3, 2, 3, 2, 3, 3, 3][k]; return k < 5 ? J([C(), C(), C()], [...Ms(a), T(X)]) : J([C(), C(), C(), ...Ms(k < 8 ? 1 : 2)], [...Ms(k < 8 ? 3 : 4), T(X)]); } },
-  // 3 Hutan: jurus tangga
-  { palette: ['maju', 'kiri', 'kanan', 'jurus'], slack: 1, hints: ['Buat jurus satu anak tangga, lalu panggil beberapa kali.'], make: (k, X, Y) => (k < 5 ? J([C(), C(), C()], [M(), T(X), M(), T(Y)]) : J([M(), C(), C(), M(), C()], [M(), T(X), M(), T(Y)])) },
-  // 4 Sawah: jurus bentuk ⊓ (lompat pematang)
-  { palette: ['maju', 'kiri', 'kanan', 'jurus'], slack: 1, hints: ['Jurus lompat pematang: naik, maju, lalu turun lagi.'], make: (k, X, Y) => { const d = k < 5 ? 1 : 2;
-    const body = [T(X), ...Ms(d), T(Y), M(), M(), T(Y), ...Ms(d), T(X)]; return J([M(), C(), M(), M(), C()], body); } },
-  // 5 Kota: jurus + jalan di antaranya
-  { palette: ['maju', 'kiri', 'kanan', 'jurus'], slack: 1, hints: ['Di antara jurus ada jalan lurus. Jurusnya tetap sama!'], make: (k, X, Y) => (k < 5 ? J([C(), M(), C(), M(), C()], [M(), T(X), M(), T(Y), M()]) : J([C(), M(), C()], [M(), T(X), M(), T(Y), M(), T(X), M(), T(Y)])) },
-  // 6 Salju: jurus tangga besar
-  { palette: ['maju', 'kiri', 'kanan', 'jurus'], slack: 1, hints: ['Jurusnya panjang. Hemat sekali kalau dipakai tiga kali!'], make: (k, X, Y) => (k < 5 ? J([C(), C(), C()], [M(), T(X), M(), M(), T(Y), M()]) : J([C(), C(), C()], [M(), M(), T(X), M(), M(), T(Y)])) },
-  // 7 Gurun: ulangi boleh dipakai di dalam jurus
-  { palette: ['maju', 'kiri', 'kanan', 'ulangi', 'jurus'], slack: 1, hints: ['Sekarang ulangi boleh dipakai di dalam jurus!'], make: (k, X) => { const a = [3, 4, 3, 4, 5, 4, 5, 5, 6, 6][k]; return k < 5 ? J([C(), C(), C()], [L(a, [M()]), T(X)]) : J([C(), C(), M(), C()], [L(a - 1, [M()]), T(X)]); } },
-  // 8 Laut: ulangi memanggil jurus
-  { palette: ['maju', 'kiri', 'kanan', 'ulangi', 'jurus'], slack: 1, hints: ['Jurus juga bisa dipanggil di dalam ulangi!'], make: (k, X, Y) => { const n = [3, 3, 4, 4, 3, 3, 4, 4, 3, 4][k]; return J([L(n, [C()]), ...(k >= 4 ? [M(), T(X), M(), M()] : [])], [M(), T(X), M(), T(Y)]); } },
-  // 9 Gunung: jurus tangga ganda + jalan lurus di antaranya
-  { palette: ['maju', 'kiri', 'kanan', 'ulangi', 'jurus'], slack: 1, hints: ['Gabungkan jurus dan ulangi supaya programnya pendek.'], make: (k, X, Y) => { const g = [2, 3, 2, 3, 3, 2, 2, 2, 2, 2][k]; const body = [M(), T(X), M(), M(), T(Y), M()]; return k < 5 ? J([C(), L(g, [M()]), C()], body) : J([C(), C(), L(g, [M()]), C()], body); } },
-  // 10 Bulan: gabungan
-  { palette: ['maju', 'kiri', 'kanan', 'ulangi', 'jurus'], slack: 1, hints: ['Soal terakhir Jurus! Pakai jurus dan ulangi sehemat mungkin.'], make: (k, X, Y) => { const a = [1, 2, 1, 2, 2, 2, 1, 2, 2, 2][k]; return J([L(2, [C()]), L(a, [M()]), T(Y), L(2, [C()])], [M(), T(X), M(), T(Y), M()]); } },
-];
-
-function buildFromRecipes(prefix: string, R: typeof ULANGI, seed: number): ProgLevel[] {
-  const out: ProgLevel[] = [];
-  const maps = new Set<string>();
+export function buildUlangi(): UlangiLevel[] {
+  const out: UlangiLevel[] = [];
+  const seen = new Set<string>();
   for (let w = 0; w < 10; w++)
     for (let k = 0; k < 10; k++) {
       const n = w * 10 + k + 1;
-      const theme = THEME_ORDER[w];
-      const rnd = mulberry(seed * 7919 + n * 104729);
-      let got: ProgLevel | null = null;
-      for (let a = 0; a < 6000 && !got; a++) {
-        const X: Cmd = rnd() < 0.5 ? 'kanan' : 'kiri';
-        const Y: Cmd = X === 'kanan' ? 'kiri' : 'kanan';
-        const prog = R[w].make(k, X, Y);
-        const cmds = flat(prog.main, prog.jurus);
-        const dir = (n <= 3 ? 1 : Math.floor(rnd() * 4)) as Dir;
-        const lv = mapFromCmds(`${prefix}${n}`, theme, cmds, dir, w < 2 ? 0.18 : 0.26, rnd);
-        if (!lv || maps.has(lv.map.join('/'))) continue;
-        const sol = renumber(prog);
-        if (runProg(lv, sol).result !== 'win') continue;
-        const best = countBlocks(sol);
-        const raw = cmds.length;
-        if (best >= raw) continue;
-        const limit = Math.max(best, Math.min(best + R[w].slack, raw - 1));
-        const hint = R[w].hints[Math.min(k, R[w].hints.length - 1)];
-        got = { ...lv, palette: R[w].palette, best, limit, tip: describe(sol), solution: sol, hint };
+      const rnd = mulberry(11 * 7919 + n * 104729);
+      let got: UlangiLevel | null = null;
+      for (let a = 0; a < 400 && !got; a++) {
+        const X = rnd() < 0.5 ? 'kanan' : 'kiri';
+        const Y = X === 'kanan' ? 'kiri' : 'kanan';
+        const prog: Program = renumber({ main: ULANGI[w].shape(k, X, Y), jurus: [] });
+        const acts = flatActs(prog);
+        while (acts.length && acts[acts.length - 1] !== 'maju') acts.pop();
+        const dir = n === 1 ? 1 : Math.floor(rnd() * 4);
+        const { segs, pts } = traceSegments(acts, dir);
+        const xs = pts.map((p) => p.x),
+          ys = pts.map((p) => p.y);
+        const minX = Math.min(...xs),
+          minY = Math.min(...ys);
+        const cols = Math.max(...xs) - minX + 1,
+          rows = Math.max(...ys) - minY + 1;
+        if (cols > MAXC || rows > MAXR) continue;
+        // kanvas sedikit lebih besar dari gambar, gambar di tengah
+        const C = Math.min(MAXC, Math.max(4, cols + 2)),
+          R = Math.min(MAXR, Math.max(3, rows + 2));
+        const ox = Math.floor((C - cols) / 2) - minX,
+          oy = Math.floor((R - rows) / 2) - minY;
+        const target = segs
+          .map((s) => {
+            const [p, q] = s.split(':').map((t) => t.split(',').map(Number));
+            return `${p[0] + ox},${p[1] + oy}:${q[0] + ox},${q[1] + oy}`;
+          })
+          .sort();
+        const key = `${C}x${R}|${target.join(' ')}|${dir}|${X}`;
+        if (seen.has(key)) continue;
+        const best = countBlocks(prog);
+        const raw = acts.length;
+        const limit = Math.max(best, Math.min(best + (w < 1 ? 0 : 1), raw - 1));
+        seen.add(key);
+        got = {
+          id: `u${n}`,
+          world: w,
+          palette: ULANGI[w].palette,
+          best,
+          limit,
+          hint: ULANGI[w].hints[Math.min(k, ULANGI[w].hints.length - 1)],
+          solution: prog,
+          cols: C,
+          rows: R,
+          start: { x: ox, y: oy },
+          dir,
+          target,
+        };
       }
-      if (!got) throw new Error(`${prefix}${n} gagal dibuat`);
-      maps.add(got.map.join('/'));
+      if (!got) throw new Error(`u${n} gagal dibuat`);
       out.push(got);
     }
   return out;
 }
 
-export const buildUlangi = () => buildFromRecipes('u', ULANGI, 11);
-export const buildJurus = () => buildFromRecipes('j', JURUS, 23);
-
 /* ================= Kalau… ================= */
 
-type Rule = { name: string; make: (X: Cmd) => Program; turns: 'X' | 'kanan' | 'kiri' | 'mix' };
-const RULES: Record<string, Rule> = {
-  // ulangi sampai bintang [maju] — pengenalan "sampai bintang"
-  lurus: { name: 'lurus', turns: 'X', make: () => ({ main: [S.until([M()])], jurus: [] }) },
-  // kalau ada rintangan di depan: belok X, kalau tidak: maju
-  depan: { name: 'depan', turns: 'X', make: (X) => ({ main: [S.until([S.if('depan', [T(X)], [M()])])], jurus: [] }) },
-  // kalau jalan terbuka di kanan: belok kanan · lalu maju
-  kanan: { name: 'kanan', turns: 'kanan', make: () => ({ main: [S.until([S.if('kanan', [T('kanan')]), M()])], jurus: [] }) },
-  kiri: { name: 'kiri', turns: 'kiri', make: () => ({ main: [S.until([S.if('kiri', [T('kiri')]), M()])], jurus: [] }) },
-  // kalau rintangan di depan: (kalau kanan terbuka: kanan, kalau tidak: kiri), kalau tidak: maju
-  simpang: { name: 'simpang', turns: 'mix', make: () => ({ main: [S.until([S.if('depan', [S.if('kanan', [T('kanan')], [T('kiri')])], [M()])])], jurus: [] }) },
-  // pengikut dinding kiri: kalau kiri terbuka belok kiri; kalau rintangan di depan belok kanan, kalau tidak maju
-  dinding: { name: 'dinding', turns: 'mix', make: () => ({ main: [S.until([S.if('kiri', [T('kiri')]), S.if('depan', [T('kanan')], [M()])])], jurus: [] }) },
+const K = {
+  lari: () => A('lari'),
+  lompat: () => A('lompat'),
+  duck: () => A('merunduk'),
 };
+/** aturan: rintangan rendah & lubang → lompat, terbang → merunduk, kosong → lari */
+function rule(kinds: Obst[]): Program {
+  const jump = kinds.filter((k) => k !== 'fly');
+  let els: Stmt[] = [K.lari()];
+  if (kinds.includes('fly')) els = [S.if('fly', [K.duck()], els)];
+  for (const j of [...jump].reverse()) els = [S.if(j, [K.lompat()], els)];
+  return { main: [S.until(els)], jurus: [] };
+}
 
-/** resep per Level: [aturan, belokan minimal, langkah maju minimal, kepadatan rintangan] per coding */
-const KALAU: { palette: PBlock[]; hints: string[]; plan: (k: number) => [string, number, number, number] }[] = [
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Blok baru: ULANGI SAMPAI BINTANG! Agam terus mengulang isinya sampai tiba di bintang.', 'Jalannya panjang, bloknya sedikit. Pakai ulangi sampai bintang.', 'Jalannya panjang, bloknya sedikit. Pakai ulangi sampai bintang.', 'Blok baru: KALAU! Agam bisa melihat: kalau ada rintangan di depan, belok. Kalau tidak, maju.', 'Masukkan blok kalau ke dalam ulangi sampai bintang.'], plan: (k) => (k < 3 ? ['lurus', 0, [6, 7, 7][k], 0.25] : ['depan', k < 6 ? 1 : 2, 5 + k, 0.35]) },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Kalau ada rintangan di depan, belok. Kalau tidak, maju. Ulangi sampai bintang!'], plan: (k) => ['depan', k < 5 ? 2 : 3, 8 + k, 0.4] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Sensor baru: jalan terbuka di kanan. Kalau di kanan ada jalan, belok kanan. Lalu maju.'], plan: (k) => ['kanan', k < 5 ? 2 : 3, 8 + k, 0.6] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Sekarang cek sisi kiri: kalau di kiri ada jalan, belok kiri. Lalu maju.'], plan: (k) => [k % 2 ? 'kanan' : 'kiri', k < 5 ? 2 : 3, 9 + k, 0.62] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Belokannya bisa ke kanan atau ke kiri! Kalau di dalam kalau: kalau buntu, cek kanan dulu.'], plan: (k) => ['simpang', k < 5 ? 2 : 3, 8 + k, 0.75] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Kalau buntu: kalau kanan terbuka belok kanan, kalau tidak belok kiri.'], plan: (k) => ['simpang', k < 5 ? 3 : 4, 10 + k, 0.8] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Gurun luas! Pilih aturan yang tepat untuk jalannya.'], plan: (k) => [(['depan', 'kanan', 'kiri', 'simpang'] as const)[k % 4], 3, 10 + k, 0.55] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Jurus penjelajah: susuri dinding kiri. Kalau kiri terbuka belok kiri; kalau depan terhalang belok kanan, kalau tidak maju.'], plan: (k) => ['dinding', k < 5 ? 3 : 4, 10 + k, 0.8] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Jalan Gunung Berapi berliku. Pikirkan dulu: sensor mana yang dibutuhkan?'], plan: (k) => [(['simpang', 'dinding'] as const)[k % 2], 4, 12 + k, 0.75] },
-  { palette: ['maju', 'kiri', 'kanan', 'sampai', 'kalau'], hints: ['Soal terakhir Kalau…! Kamu sudah jadi programmer yang pintar memilih.'], plan: (k) => [(['depan', 'kanan', 'kiri', 'simpang', 'dinding'] as const)[k % 5], 4 + (k >> 2), 12 + k, 0.7] },
+const KALAU: { hints: string[]; plan: (k: number) => { kinds: Obst[]; len: number; count: [number, number] } }[] = [
+  {
+    hints: [
+      'Blok baru: ULANGI SAMPAI FINIS! Agam terus mengulang isinya sampai tiba di garis finis.',
+      'Lintasannya panjang, bloknya sedikit. Pakai ulangi sampai finis.',
+      'Lintasannya panjang, bloknya sedikit. Pakai ulangi sampai finis.',
+      'Blok baru: KALAU! Rintangannya berpindah tiap kali main. Kalau ada rintangan di depan, lompat. Kalau tidak, lari.',
+      'Masukkan blok kalau ke dalam ulangi sampai finis.',
+    ],
+    plan: (k) => (k < 3 ? { kinds: [], len: [8, 10, 12][k], count: [0, 0] } : { kinds: ['low'], len: 10 + k, count: [1, 2 + (k >> 2)] }),
+  },
+  { hints: ['Awas lubang! Kalau ada lubang di depan, lompat.'], plan: (k) => ({ kinds: ['gap'], len: 12 + k, count: [2, 3] }) },
+  { hints: ['Ada yang terbang setinggi kepala Agam! Kalau ada yang terbang di depan, merunduk.'], plan: (k) => ({ kinds: ['fly'], len: 12 + k, count: [2, 3] }) },
+  { hints: ['Dua jenis rintangan! Yang di tanah dilompati, yang terbang dirunduki. Pakai kalau … kalau tidak.'], plan: (k) => ({ kinds: ['low', 'fly'], len: 14 + k, count: [3, 4] }) },
+  { hints: ['Lubang dan yang terbang. Kalau lubang, lompat; kalau tidak, cek yang terbang.'], plan: (k) => ({ kinds: ['gap', 'fly'], len: 14 + k, count: [3, 4] }) },
+  { hints: ['Tiga jenis rintangan sekaligus! Susun kalau di dalam kalau.'], plan: (k) => ({ kinds: ['low', 'gap', 'fly'], len: 16 + k, count: [3, 5] }) },
+  { hints: ['Rintangannya makin banyak. Programmu tetap sama pendeknya, lho!'], plan: (k) => ({ kinds: ['low', 'gap', 'fly'], len: 18 + k, count: [4, 5] }) },
+  { hints: ['Pikirkan dulu: rintangan mana dilompati, mana dirunduki?'], plan: (k) => ({ kinds: ['gap', 'low', 'fly'], len: 20 + k, count: [5, 6] }) },
+  { hints: ['Lintasan panjang penuh rintangan. Satu program pintar untuk semuanya!'], plan: (k) => ({ kinds: ['fly', 'low', 'gap'], len: 22 + k, count: [5, 7] }) },
+  { hints: ['Balapan terakhir! Kamu sudah jadi programmer yang pintar memilih.'], plan: (k) => ({ kinds: ['low', 'fly', 'gap'], len: 24 + k, count: [6, 8] }) },
 ];
 
-export function buildKalau(): ProgLevel[] {
-  const out: ProgLevel[] = [];
-  const maps = new Set<string>();
+export function buildKalau(): KalauLevel[] {
+  const out: KalauLevel[] = [];
   for (let w = 0; w < 10; w++)
     for (let k = 0; k < 10; k++) {
       const n = w * 10 + k + 1;
-      const theme = THEME_ORDER[w];
-      const rnd = mulberry(37 * 7919 + n * 104729);
-      const [ruleName, minTurns, minMoves, dens] = KALAU[w].plan(k);
-      const rule = RULES[ruleName];
-      let got: ProgLevel | null = null;
-      for (let a = 0; a < 40000 && !got; a++) {
-        const X: Cmd = rnd() < 0.5 ? 'kanan' : 'kiri';
-        // lorong: belokan sesuai aturan, panjang & jumlah belokan sesuai tingkat
-        const turns = ruleName === 'lurus' ? 0 : minTurns + (rnd() < 0.4 ? 1 : 0);
-        const moves = minMoves + Math.floor(rnd() * 3);
-        const segs = turns + 1;
-        if (moves < segs) continue;
-        const seg = Array(segs).fill(1);
-        for (let q = segs; q < moves; q++) seg[Math.floor(rnd() * segs)]++;
-        const cmds: Cmd[] = [];
-        seg.forEach((len, si) => {
-          if (si > 0) cmds.push(rule.turns === 'X' ? X : rule.turns === 'mix' ? (rnd() < 0.5 ? 'kanan' : 'kiri') : rule.turns);
-          for (let q = 0; q < len; q++) cmds.push('maju');
-        });
-        const dir = Math.floor(rnd() * 4) as Dir;
-        const lv = mapFromCmds(`c${n}`, theme, cmds, dir, dens, rnd);
-        if (!lv || maps.has(lv.map.join('/'))) continue;
-        const prog = renumber(rule.make(X));
-        if (runProg(lv, prog).result !== 'win') continue;
+      const { kinds, len, count } = KALAU[w].plan(k);
+      const prog = renumber(kinds.length ? rule(kinds) : { main: [S.until([K.lari()])], jurus: [] });
+      const best = countBlocks(prog);
+      out.push({
+        id: `c${n}`,
+        world: w,
+        palette: kinds.length ? ['lari', 'lompat', 'merunduk', 'sampai', 'kalau'] : ['lari', 'lompat', 'sampai'],
+        best,
+        limit: best + (w < 3 ? 2 : 1),
+        hint: KALAU[w].hints[Math.min(k, KALAU[w].hints.length - 1)],
+        solution: prog,
+        kinds,
+        len,
+        count,
+      });
+    }
+  return out;
+}
+
+/* ================= Jurus ================= */
+
+type Combo = { jurus: string; main: string; moves: number };
+const combos = (moves: number, list: string[]): Combo[] => list.map((s) => ({ jurus: s.split('|')[0], main: s.split('|')[1], moves }));
+/** resep: jurus & program utama sebagai huruf (A–E = gerakan, J = panggil jurus, (n:…) = ulangi) */
+const JURUS: { hints: string[]; list: Combo[]; palette: PBlock[] }[] = [
+  { hints: ['Blok baru: JURUS ⚡! Susun gerakan di kotak Jurus, lalu panggil jurus di program utama.', 'Sensei mengulang gerakan yang sama. Jadikan jurus!'], palette: ['jurus'], list: combos(2, ['AAB|JJ', 'ABA|JJ', 'ABB|JJ', 'AAB|JJJ', 'ABA|JJJ', 'ABAB|JJ', 'AABB|JJ', 'ABB|JJJ', 'AABA|JJ', 'ABAA|JJJ']) },
+  { hints: ['Gerakan baru: tangkis! Perhatikan urutan Sensei.'], palette: ['jurus'], list: combos(3, ['ABC|JJ', 'ACB|JJ', 'ABC|JJJ', 'AABC|JJ', 'ABCA|JJ', 'ABC|JCJ', 'ACB|JAJ', 'ABCC|JJ', 'ABCB|JJJ', 'AABC|JBJ']) },
+  { hints: ['Gerakan baru: lompat! Ada gerakan lain di antara jurus.'], palette: ['jurus'], list: combos(4, ['ABD|JJ', 'ADB|JCJ', 'DAB|JJJ', 'ABCD|JJ', 'ABDD|JAJ', 'ADCB|JJ', 'ABCD|JDJ', 'DDAB|JJ', 'ABCD|JJJ', 'ADBC|JBJC']) },
+  { hints: ['Gerakan baru: putar! Lima gerakan ninja lengkap.'], palette: ['jurus'], list: combos(5, ['AEB|JJ', 'EAB|JJJ', 'ABE|JCJ', 'AEBD|JJ', 'EDAB|JJ', 'ABCE|JEJ', 'AEEB|JJ', 'ABCDE|JJ', 'EABD|JCJD', 'ABCDE|JAJ']) },
+  { hints: ['Jurusnya makin panjang. Susun sekali, pakai berkali-kali!'], palette: ['jurus'], list: combos(5, ['ABCDE|JJ', 'EDCBA|JJ', 'AABBC|JJ', 'ABCAB|JJ', 'ABCDE|JJJ', 'AEBDC|JAJ', 'ABCDE|JEJ', 'CABDE|JJB', 'ABACD|JJJ', 'ABCDE|JDJE']) },
+  { hints: ['Blok ulangi kembali! Ulangi bisa dipakai di dalam jurus.'], palette: ['ulangi', 'jurus'], list: combos(5, ['(3:A)B|JJ', '(3:A)BC|JJ', 'A(3:B)|JJ', '(2:AB)C|JJ', '(4:A)B|JJ', '(3:A)BC|JDJ', 'A(3:B)C|JJ', '(2:AB)CD|JJ', '(4:A)BC|JJ', '(3:AB)C|JJ']) },
+  { hints: ['Jurus juga bisa dipanggil di dalam ulangi!'], palette: ['ulangi', 'jurus'], list: combos(5, ['ABC|(3:J)', 'ABB|(3:J)', 'AAB|(4:J)', 'ABCD|(3:J)', 'ABC|(3:J)D', 'ABC|D(3:J)', 'ABCA|(3:J)', 'ABCD|(4:J)', 'ABC|(3:J)DD', 'ABCDE|(3:J)']) },
+  { hints: ['Gabungkan ulangi di luar dan di dalam jurus.'], palette: ['ulangi', 'jurus'], list: combos(5, ['(3:A)B|(2:J)', '(2:AB)C|(3:J)', 'A(3:B)|(3:J)', '(3:A)BC|(3:J)', '(2:AB)CD|(2:J)E', 'A(4:B)|(2:J)C', '(3:A)B|(3:J)C', '(2:AB)C|(3:J)D', 'A(3:B)C|(3:J)', '(3:A)BC|(3:J)E']) },
+  { hints: ['Rangkaian Sensei panjang sekali. Cari jurus yang paling hemat!'], palette: ['ulangi', 'jurus'], list: combos(5, ['ABCDE|(3:J)', 'AB(2:C)D|(3:J)', '(2:AB)CDE|(2:J)', 'ABCDE|J(2:A)J', 'A(3:B)CD|(3:J)', 'ABCDE|(2:J)CJ', '(2:ABC)D|(2:J)', 'A(2:BC)D|(3:J)', 'ABCDE|(4:J)', '(3:AB)CD|(2:J)E']) },
+  { hints: ['Ujian sabuk hitam! Tunjukkan semua jurusmu.'], palette: ['ulangi', 'jurus'], list: combos(5, ['(2:ABC)DE|(3:J)', 'A(3:B)CDE|(3:J)', '(3:AB)CDE|(2:J)', 'ABCDE|(3:J)(2:A)', '(2:AB)(2:CD)E|(2:J)', 'A(4:B)CD|(3:J)', '(3:A)BCDE|(3:J)', '(2:ABC)(2:DE)|(2:J)', 'ABCDE|(4:J)B', '(3:AB)(2:CD)E|(3:J)']) },
+];
+
+/** "AB(3:C)J" → pernyataan, huruf dipetakan ke gerakan */
+function parseSeq(src: string, map: Record<string, string>): Stmt[] {
+  const out: Stmt[] = [];
+  let i = 0;
+  while (i < src.length) {
+    const ch = src[i];
+    if (ch === '(') {
+      const colon = src.indexOf(':', i);
+      const close = src.indexOf(')', colon);
+      out.push(L(Number(src.slice(i + 1, colon)), parseSeq(src.slice(colon + 1, close), map)));
+      i = close + 1;
+    } else {
+      out.push(ch === 'J' ? S.call() : A(map[ch]));
+      i++;
+    }
+  }
+  return out;
+}
+
+export function buildJurus(): JurusLevel[] {
+  const out: JurusLevel[] = [];
+  const seen = new Set<string>();
+  for (let w = 0; w < 10; w++)
+    for (let k = 0; k < 10; k++) {
+      const n = w * 10 + k + 1;
+      const rnd = mulberry(23 * 7919 + n * 104729);
+      const c = JURUS[w].list[k];
+      let got: JurusLevel | null = null;
+      for (let a = 0; a < 200 && !got; a++) {
+        // gerakan yang sudah dikenal di Level ini, diacak urutannya
+        const pool: string[] = [...MOVES.slice(0, c.moves)];
+        for (let q = pool.length - 1; q > 0; q--) {
+          const j = Math.floor(rnd() * (q + 1));
+          [pool[q], pool[j]] = [pool[j], pool[q]];
+        }
+        const map: Record<string, string> = { A: pool[0], B: pool[1 % pool.length], C: pool[2 % pool.length], D: pool[3 % pool.length], E: pool[4 % pool.length] };
+        const prog = renumber({ main: parseSeq(c.main, map), jurus: parseSeq(c.jurus, map) });
+        const target = flatActs(prog) as MoveName[];
+        if (seen.has(target.join(','))) continue;
         const best = countBlocks(prog);
-        const limit = best + (w < 4 ? 2 : 1);
-        const shortest = solve(lv);
-        // program tanpa "kalau" tidak boleh muat di jatah blok
-        if (!shortest || shortest.length < limit + 3) continue;
-        if (ruleName !== 'lurus' && /^(maju,)*maju$/.test(shortest.join(','))) continue;
-        const hint = KALAU[w].hints[Math.min(k, KALAU[w].hints.length - 1)];
-        got = { ...lv, palette: KALAU[w].palette, best, limit, tip: describe(prog), solution: prog, hint };
+        if (best >= target.length) throw new Error(`j${n}: jurus tidak menghemat (${best} ≥ ${target.length})`);
+        seen.add(target.join(','));
+        got = {
+          id: `j${n}`,
+          world: w,
+          palette: [...MOVES.slice(0, Math.max(c.moves, 2)), ...JURUS[w].palette],
+          best,
+          limit: Math.max(best, Math.min(best + 1, target.length - 1)),
+          hint: JURUS[w].hints[Math.min(k, JURUS[w].hints.length - 1)],
+          solution: prog,
+          target,
+        };
       }
-      if (!got) throw new Error(`c${n} gagal dibuat`);
-      maps.add(got.map.join('/'));
+      if (!got) throw new Error(`j${n} gagal dibuat`);
       out.push(got);
     }
   return out;

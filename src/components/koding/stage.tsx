@@ -5,7 +5,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { parse, THEME_ORDER, type Level, type Theme } from '@/lib/koding/engine';
-import { ART, COMMON_DEFS } from './art';
+import { ART, COMMON_DEFS, type ThemeArt } from './art';
 
 export const WORLD = ART;
 export const THEMES: Theme[] = THEME_ORDER;
@@ -125,8 +125,8 @@ const outside = (theme: Theme, X: number, Y: number, x: number, y: number) => {
 const hash = (x: number, y: number) => (((x * 2654435761) ^ (y * 40503)) >>> 0) % 1000 / 1000;
 
 /** ubin: warna dasar + tekstur tema + kilap tepi atas */
-export const tileAt = (theme: Theme, X: number, Y: number, k: number, key: string) => {
-  const A = ART[theme];
+export const tileAt = (theme: Theme | ThemeArt, X: number, Y: number, k: number, key: string) => {
+  const A = typeof theme === 'string' ? ART[theme] : theme;
   return (
     <g key={key}>
       <rect x={X + 2} y={Y + 2} width="96" height="96" rx="14" fill={A.tile[k % 2]} />
@@ -179,8 +179,8 @@ function Board({ level, pos, rot, bump, won, cols, rows }: StageProps & { cols: 
 }
 
 /** potongan pemandangan tema untuk kartu Level di peta: 6 kotak berisi rintangan & hiasan khas */
-export function ThemeVignette({ theme }: { theme: Theme }) {
-  const A = ART[theme];
+export function ThemeVignette({ theme, art }: { theme?: Theme; art?: ThemeArt }) {
+  const A = art ?? ART[theme!];
   // digambar setelah terpasang di peramban: koordinat pecahan bisa beda format antara server & klien
   const [ready, setReady] = useState(false);
   useEffect(() => setReady(true), []);
@@ -188,7 +188,7 @@ export function ThemeVignette({ theme }: { theme: Theme }) {
   const cells: ReactNode[] = [];
   for (let x = 0; x < 6; x++) {
     const X = x * 100;
-    cells.push(tileAt(theme, X, 0, x, `t${x}`));
+    cells.push(tileAt(A, X, 0, x, `t${x}`));
     const art = x === 1 || x === 4 ? A.solid(X, 0, x + 3, 7) : x === 2 ? A.liquid(X, 0, x, 7) : A.decor(X, 0, x * 5, 3) ?? A.decor(X, 0, x + 11, 1);
     if (art) cells.push(<g key={`a${x}`}>{art}</g>);
   }

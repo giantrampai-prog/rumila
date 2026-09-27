@@ -18,7 +18,12 @@ import { Certificate } from './certificate';
 import { playToken, TokenIcon } from './pola-art';
 import { PolaStage } from './pola-stage';
 import { BALOO, fmtDate, INK, LevelMap, PER_WORLD, summarize, useProgress, wait, WinDialog, withStars } from './shared';
-import { AgamFront, WORLD } from './stage';
+import { AgamWorkerFront, POLA_THEMES } from './skin-pola';
+import { ThemeVignette } from './stage';
+
+/** Pabrik Pola punya 10 dunia sendiri (bukan dunia Langkah) */
+const POLA_ACCENT = '#e0457b';
+const POLA_WORLDS = POLA_THEMES.map((t) => ({ name: t.name, bg: t.bg, ink: t.ink, dark: t.dark, vignette: <ThemeVignette art={t} /> }));
 import './koding.css';
 
 const TOOL = 'koding-pola';
@@ -239,12 +244,16 @@ export function PolaGame() {
         title="Pola"
         list={POLA}
         prog={prog}
+        worlds={POLA_WORLDS}
+        mascot={<AgamWorkerFront />}
+        accent={POLA_ACCENT}
+        paper="koding-paper pola-paper"
         onBack={() => router.back()}
         onOpen={openLevel}
         onCert={() => setCert(true)}
         greeting={
           doneCount === 0
-            ? 'Halo, aku Agam! Komputer suka pola: sesuatu yang berulang terus. Bantu aku melengkapi pola warna, bentuk, dan bunyi. Selesaikan 10 level (100 coding), kamu dapat Sertifikat Programmer Cilik!'
+            ? 'Halo, aku Agam, petugas Pabrik Pola! Di ban berjalanku benda-benda lewat dengan pola: warna, bentuk, dan bunyi yang berulang. Bantu aku melengkapinya. Selesaikan 10 level (100 coding), kamu dapat Sertifikat Programmer Cilik!'
             : allDone
               ? 'Hebat! Kamu sudah menyelesaikan 10 level Pola. Ini sertifikatmu!'
               : `Ayo lanjut ke Level ${Math.floor(current / PER_WORLD) + 1}, coding ${(current % PER_WORLD) + 1}! Tinggal ${TOTAL - doneCount} coding lagi untuk mendapat Sertifikat Programmer Cilik.`
@@ -253,7 +262,7 @@ export function PolaGame() {
     );
 
   /* ---------- layar soal ---------- */
-  const W = WORLD[level.theme];
+  const W = POLA_THEMES[Math.floor(li! / PER_WORLD)];
   const dark = !!W.dark;
   const lvNo = Math.floor(li! / PER_WORLD) + 1,
     codeNo = (li! % PER_WORLD) + 1;
@@ -269,8 +278,8 @@ export function PolaGame() {
           <button onClick={() => (stop(), setLi(null))} aria-label="Peta level" className="koding-round flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5">
             <Icon name="arrow_back" size={24} />
           </button>
-          <div className="koding-round min-w-0 truncate rounded-full px-4 py-2 font-extrabold" style={{ fontFamily: BALOO, fontSize: 17 }}>
-            Level {lvNo} · {W.name} · coding {codeNo}
+          <div className="min-w-0 truncate rounded-full px-4 py-2 font-extrabold text-white" style={{ fontFamily: BALOO, fontSize: 17, background: POLA_ACCENT, boxShadow: '0 4px 0 rgba(0,0,0,.18)' }}>
+            Pola · Level {lvNo} · {W.name} · {codeNo}
           </div>
           <button onClick={listen} disabled={running} aria-label="Dengarkan polanya" className={`koding-round ml-auto flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5 disabled:opacity-50 ${(level.focus === 'bunyi' || level.focus === 'melodi') && !listening && !Object.values(fill).some(Boolean) ? 'koding-pulse' : ''}`}>
             <Icon name={listening ? 'graphic_eq' : 'volume_up'} size={24} className="text-[#3a86ff]" />
@@ -280,14 +289,14 @@ export function PolaGame() {
           </button>
         </div>
         <div className="flex items-end gap-2">
-          <AgamFront size={44} />
+          <AgamWorkerFront size={44} />
           <div className="koding-say mb-1 rounded-[18px] px-4 py-2.5 text-[15px] font-bold" style={{ maxWidth: 560 }}>
             {say}
           </div>
         </div>
         <div className="flex min-h-0 flex-1 items-center justify-center">
           <div className="koding-diorama h-full w-full">
-            <PolaStage level={level} fill={fill} sel={running ? null : sel} agam={agam} bump={bump} pop={pop} bad={bad} glow={glow} won={win !== null} onSlot={onSlot} />
+            <PolaStage level={level} art={W} fill={fill} sel={running ? null : sel} agam={agam} bump={bump} pop={pop} bad={bad} glow={glow} won={win !== null} onSlot={onSlot} />
           </div>
         </div>
       </div>
@@ -339,7 +348,7 @@ export function PolaGame() {
           stars={win}
           title={allDone && li === TOTAL - 1 ? '10 level selesai!' : worldEnd ? `Level ${lvNo} selesai!` : 'Polanya lengkap!'}
           message={win === 3 ? 'Sempurna! Semua kotak benar tanpa salah.' : helped && fails === 0 ? 'Benar, dengan sedikit bantuan. Coba lagi sendiri untuk 3 bintang?' : 'Polanya benar! Coba lagi tanpa salah untuk 3 bintang?'}
-          unlockNote={worldEnd && li! < TOTAL - 1 ? `Level ${lvNo + 1} · ${WORLD[POLA[li! + 1].theme].name} sekarang terbuka!` : undefined}
+          unlockNote={worldEnd && li! < TOTAL - 1 ? `Level ${lvNo + 1} · ${POLA_THEMES[lvNo].name} sekarang terbuka!` : undefined}
           onRetry={() => openLevel(li!)}
           next={
             allDone && li === TOTAL - 1
