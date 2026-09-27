@@ -11,6 +11,7 @@ import { EducationTopics } from './education-topics';
 import { signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
 import { installApp, useCanInstall } from "./pwa";
+import { setSfxEnabled, sfx, sfxEnabled } from "@/lib/sfx";
 
 export const accessText = (m: Member) =>
   m.admin ? "Akses penuh" : `${PERMS.filter((p) => can(m, p.key)).length} dari ${PERMS.length} menu`;
@@ -133,6 +134,7 @@ function MembersSheet() {
             <Icon name="install_mobile" /> Pasang aplikasi di layar utama
           </button>
         )}
+        <SoundToggle className={row} />
         <button onClick={() => openSheet({ kind: "add" })} className={row}>
           <Icon name="person_add" /> Tambah anggota
         </button>
@@ -149,6 +151,27 @@ function MembersSheet() {
         {email && <span className="px-3 text-xs text-ink-4">Masuk sebagai {displayLogin(email)}</span>}
       </div>
     </>
+  );
+}
+
+/** Efek suara game (tap, panen, roket, dll.) — narasi tetap terdengar. */
+function SoundToggle({ className }: { className: string }) {
+  const [on, setOn] = useState(sfxEnabled);
+  return (
+    <button
+      role="switch"
+      aria-checked={on}
+      onClick={() => {
+        setSfxEnabled(!on);
+        setOn(!on);
+        if (!on) sfx.tap();
+      }}
+      className={className}
+    >
+      <Icon name={on ? "volume_up" : "volume_off"} />
+      <span className="flex-1">Efek suara</span>
+      <Switch on={on} />
+    </button>
   );
 }
 

@@ -7,7 +7,24 @@ import { audioContext } from './segment-player';
 
 let master: GainNode | null = null;
 let noiseBuf: AudioBuffer | null = null;
-let muted = false;
+const OFF_KEY = 'rumila-sfx-off';
+let muted = (() => {
+  try {
+    return typeof localStorage !== 'undefined' && localStorage.getItem(OFF_KEY) === '1';
+  } catch {
+    return false;
+  }
+})();
+
+/** Efek suara nyala/mati (disimpan di perangkat ini). Narasi tidak terpengaruh. */
+export const sfxEnabled = () => !muted;
+export function setSfxEnabled(on: boolean) {
+  muted = !on;
+  try {
+    localStorage.setItem(OFF_KEY, on ? '0' : '1');
+  } catch {}
+  if (!on) stopGardenAmbience();
+}
 /** waktu bunyi terakhir: tombol yang sudah berbunyi khusus tidak ditambah bunyi 'tap' otomatis */
 let lastPlay = 0;
 
@@ -77,7 +94,7 @@ function hiss(dur: number, opts: { freq?: number; to?: number; q?: number; vol?:
 
 export const sfx = {
   setMuted(m: boolean) {
-    muted = m;
+    setSfxEnabled(!m);
   },
   /** ketuk tombol: "pop" kecil yang empuk */
   tap() {
@@ -217,6 +234,7 @@ function chirp() {
 }
 
 export function startGardenAmbience() {
+  if (muted) return;
   const c = out();
   if (!c || ambientTimer) return;
   // angin: desis sangat pelan yang naik-turun
