@@ -124,20 +124,12 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
     },
     {
       id: "angkasa",
-      name: "Jelajah Angkasa",
+      name: "Petualangan 3D",
       c: "space",
-      icon: "rocket_launch",
-      desc: "Terbang ke planet, bulan, dan bintang-bintang.",
+      icon: "view_in_ar",
+      desc: "Jelajahi angkasa, tubuh, buah, dan laut dalam 3D.",
       pal: ["space", "indigo", "sky", "purple", "orange", "pink"],
-      items: [
-        ["Tata Surya", "public", "Jelajahi 8 planet dan matahari."],
-        ["Bulan", "dark_mode", "Fase bulan dan fakta menarik."],
-        ["Bintang & Rasi", "star", "Kenali rasi bintang di langit malam."],
-        ["Roket & Astronot", "rocket_launch", "Luncurkan roket 3D dari landasan sampai luar angkasa."],
-        ["Satelit", "satellite_alt", "Bagaimana satelit bekerja."],
-        ["Kuis Angkasa", "quiz", "Uji pengetahuan antariksa."],
-        ["Jelajah Angkasa 3D", "travel_explore", "Dekati planet, putar, bandingkan, dan pelajari fenomena tata surya dalam 3D."],
-      ],
+      items: [], // Isi & id tetap ada di ADVENTURE_3D (id lama dipertahankan agar progres tidak bergeser).
     },
     {
       id: "edukasi",
@@ -177,8 +169,26 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
     },
   ];
 
-/** Alat yang disembunyikan sementara (id tetap dipakai agar progres lama tidak bergeser). */
-const HIDDEN = new Set(["angkasa5"]); // Kuis Angkasa — kuis belum dipakai
+/** Modul yang dipindah dari Edukasi ke Petualangan 3D (id & progres tetap). */
+const MOVED_TO_3D = new Set(["edukasi6", "edukasi-buah"]);
+const edu = (id: string) => EDUCATION_CATEGORIES.find((c) => c.id === id)!;
+
+/** Petualangan 3D: semua modul 3D di satu dunia. Id lama dipakai ulang supaya progres tersimpan tetap terbaca. */
+const ADVENTURE_3D: Omit<Tool, "folder" | "folderName" | "c">[] = [
+  { id: "angkasa6", name: "Jelajah Angkasa", icon: "public", g: "space", desc: "Terbang ke planet, bulan, dan bintang dalam 3D." },
+  { id: "angkasa3", name: "Roket & Astronot", icon: "rocket_launch", g: "purple", desc: "Luncurkan roket 3D dari landasan sampai luar angkasa." },
+  { ...edu("edukasi6"), name: "Jelajah Tubuh", g: "red", desc: "Lihat kulit, otot, tulang, dan organ tubuh dalam 3D." },
+  { ...edu("edukasi-buah"), name: "Kebun Buah", g: "orange", desc: "Putar dan kenali 48 buah dalam 3D." },
+  {
+    id: "petualangan-laut",
+    name: "Jelajah Laut",
+    icon: "scuba_diving",
+    g: "sky",
+    desc: "Menyelam ke dasar laut bertemu ikan, terumbu karang, dan paus.",
+    topics: ["Terumbu karang", "Ikan & hewan laut", "Laut dalam", "Menjaga laut"],
+    planned: true,
+  },
+];
 
 export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items }) => ({
   id,
@@ -186,12 +196,12 @@ export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items 
   c,
   icon,
   desc,
-  items: (id === 'edukasi' ? EDUCATION_CATEGORIES.map(category => ({
+  items: (id === 'edukasi' ? EDUCATION_CATEGORIES.filter(category => !MOVED_TO_3D.has(category.id)).map(category => ({
     ...category,
     folder: id,
     folderName: name,
     c,
-  })) : items.map(([n, ic, d], i) => ({
+  })) : id === 'angkasa' ? ADVENTURE_3D.map(t => ({ ...t, folder: id, folderName: name, c })) : items.map(([n, ic, d], i) => ({
     id: id + i,
     name: n,
     icon: ic,
@@ -200,7 +210,7 @@ export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items 
     folderName: name,
     c,
     g: pal[i % pal.length],
-  }))).filter((t) => !HIDDEN.has(t.id)),
+  }))),
 }));
 
 export const ALL_TOOLS: Tool[] = FOLDERS.flatMap((f) => f.items);
@@ -231,7 +241,7 @@ export const PLAY: Record<ColorKey, [string, string, string]> = {
 
 export const getFolder = (id: string) => FOLDERS.find((f) => f.id === id);
 /** Lab Sains now shares the single Tubuh Manusia entry, including saved activity. */
-export const canonicalToolId = (id: string) => id === 'edukasi2' ? 'edukasi6' : id;
+export const canonicalToolId = (id: string) => id === 'edukasi2' ? 'edukasi6' : id === 'angkasa0' || id === 'angkasa1' ? 'angkasa6' : id;
 export const getTool = (id: string) => ALL_TOOLS.find((t) => t.id === canonicalToolId(id));
 
 export const matchesTool = (tool: Tool, query: string) =>

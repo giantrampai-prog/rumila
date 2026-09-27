@@ -112,7 +112,7 @@ export function WorldCard({ f }: { f: Folder }) {
       </span>
       <div className="relative">
         <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{f.name}</div>
-        <div className="mt-0.5 text-[12px] font-extrabold text-white/85">{ready.length} permainan</div>
+        <div className="mt-0.5 text-[12px] font-extrabold text-white/85">{ready.length ? `${ready.length} permainan` : "Segera hadir"}</div>
       </div>
     </Link>
   );

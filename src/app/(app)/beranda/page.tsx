@@ -14,7 +14,8 @@ export default function Beranda() {
   const me = useMe();
   const openTool = useOpenTool();
   const last = useLastTool();
-  const allowed = FOLDERS.filter((f) => can(me, f.id));
+  // Petualangan 3D (dunia unggulan) tampil paling depan.
+  const allowed = FOLDERS.filter((f) => can(me, f.id)).sort((a, b) => Number(b.id === "angkasa") - Number(a.id === "angkasa"));
 
   return (
     <>
