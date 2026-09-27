@@ -198,7 +198,10 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
       if (part) {
         const a = sharedAudio('tubuh');
         if (!a.src.endsWith(part.src)) a.src = part.src;
-        const seek = () => (a.currentTime = part.cues[i - part.first]);
+        // lanjut alami ke adegan berikutnya → jangan lompat (lompatan kecil di iPad menelan suku kata awal)
+        const seek = () => {
+          if (Math.abs(a.currentTime - part.cues[i - part.first]) > 0.6) a.currentTime = part.cues[i - part.first];
+        };
         if (a.readyState >= 1) seek();
         else a.onloadedmetadata = seek;
       }

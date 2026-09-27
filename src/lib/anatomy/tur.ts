@@ -201,7 +201,10 @@ export interface TurAudioPart {
 }
 
 /** Narasi tur: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
-export const TUR_AUDIO: TurAudioPart[] = [];
+export const TUR_AUDIO: TurAudioPart[] = [
+  // suara Sulafat, 4:28 — batas adegan = jeda hening asli rekaman
+  { src: "/anatomy/voice/tur-01.m4a", first: 0, cues: [0, 18.7, 31.84, 49.08, 65.66, 83.15, 97.22, 113.73, 126.04, 142.37, 159.55, 175.45, 184.89, 197.13, 206.46, 218.58, 229.14, 239.02, 250.14] },
+];
 
 /** Lama adegan tanpa rekaman: perkiraan waktu baca (±14 karakter/detik) + jeda. */
 export const turDwell = (s: TurStop) => Math.max(6, s.lines.join(" ").length / 14 + 1.5);
