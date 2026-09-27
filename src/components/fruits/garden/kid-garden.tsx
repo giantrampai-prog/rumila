@@ -435,6 +435,14 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
         </div>
       )}
       {toast && <Toast text={toast.text} good={toast.good} />}
+      {/* istirahat: layar meredup seperti malam, lalu terang kembali */}
+      {near === 'resting' && (
+        <div className="garden-pop pointer-events-none absolute inset-0 z-10 flex items-center justify-center" style={{ background: 'radial-gradient(ellipse at center, rgba(20,24,70,.35), rgba(10,12,40,.7))' }}>
+          <span className="rounded-full bg-white/90 px-5 py-2" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>
+            Zzz… istirahat sebentar 😴
+          </span>
+        </div>
+      )}
 
       {/* kanan: zoom & kembalikan sudut kamera (bisa juga cubit dua jari / geser layar) */}
       {!tour && (
@@ -460,6 +468,9 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
           const a = bedAction(farm.beds[nearBed], now);
           return <NearAction {...a} onClick={() => bedAct(nearBed)} />;
         })()}
+        {near === 'bed' && !card && !sheet && (
+          <NearAction icon="bedtime" label="Istirahat" sub="Tempat tidur" tone="linear-gradient(155deg,#9a93ff,#5b4bff 60%)" onClick={() => engine.current?.rest()} />
+        )}
         {near === 'tower' && !card && !sheet && (
           <NearAction icon="stairs" label="Naik menara" sub="Kincir angin" tone="linear-gradient(155deg,#ffb347,#ff7a1a 60%)" onClick={() => engine.current?.climbTower()} />
         )}

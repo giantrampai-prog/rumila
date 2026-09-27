@@ -10,6 +10,7 @@ import type { FruitGroup } from '@/lib/fruits/catalog';
 import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '@/lib/fruits/garden';
 import { buildGapura } from './gapura';
 import { GoatPen } from './goats';
+import { FarmHouse } from './house';
 import { GardenLife } from './life';
 import { buildRealSky } from './sky';
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
@@ -205,6 +206,10 @@ export class GardenEngine {
   private pinch = 0;
   private life!: GardenLife;
   private pen!: GoatPen;
+  private house!: FarmHouse;
+  /** sedang istirahat di tempat tidur (detik tersisa) */
+  private restLeft = 0;
+  private insideK = 0;
   private towerAt = new T.Vector3();
   /** sedang di balkon menara kincir (melihat kebun dari atas) */
   onTower = false;
@@ -396,7 +401,9 @@ export class GardenEngine {
 
     // rumpun rumput (kartu silang bertekstur) & bunga liar, menghindari jalan dan tanaman
     const rowLanes = Object.values(ZONE_DIR).flatMap(([sx, sz]) => [0, 1, 2, 3, 4].map((k) => ({ sx, z: sz * (GARDEN.first + k * GARDEN.step) + 2.6 })));
-    const inFarm = (x: number, z: number) => (x > 5.4 && x < 16.9 && z > 5.2 && z < 14.7) || Math.hypot(x - NPC_POS[0], z - NPC_POS[1]) < 1;
+    // tanpa rumput di bedengan, di dekat Pak Tani, di dalam rumah kebun & kandang kambing
+    const inFarm = (x: number, z: number) =>
+      (x > 5.4 && x < 16.9 && z > 5.2 && z < 14.7) || Math.hypot(x - NPC_POS[0], z - NPC_POS[1]) < 1 || (x > 18.2 && x < 25.8 && z > 10.8 && z < 17.2) || (x > 29.8 && x < 40.2 && z > 13.8 && z < 22.2);
     const clear = (x: number, z: number) =>
       !inFarm(x, z) &&
       Math.abs(x) > W + 0.4 &&
@@ -585,33 +592,11 @@ export class GardenEngine {
       for (const s of [-0.75, 0.75]) plain.add(new T.BoxGeometry(0.06, 0.48, 0.45), mat(x + Math.cos(ry) * s, 0.24, z - Math.sin(ry) * s, 0, ry, 0), '#3d3d3d');
     }
 
-    // rumah kebun: dinding papan, atap genteng pelana, jendela, pot bunga
+    // rumah kebun yang bisa dimasuki (house.ts)
     const hx = 22,
       hz = 14;
-    wood.add(new T.BoxGeometry(7, 3.4, 5.4), mat(hx, 1.7, hz), '#f7efe3', { uv: [3, 1.5] });
-    plain.add(new T.BoxGeometry(7.3, 0.5, 5.7), mat(hx, 0.25, hz), '#9e958a', { jitter: 0.1 });
-    const gable = new T.Shape();
-    gable.moveTo(-2.7, 0);
-    gable.lineTo(2.7, 0);
-    gable.lineTo(0, 2.0);
-    gable.closePath();
-    const ends = new T.ExtrudeGeometry(gable, { depth: 7, bevelEnabled: false });
-    ends.translate(0, 0, -3.5);
-    wood.add(ends, mat(hx, 3.4, hz, 0, Math.PI / 2, 0), '#f7efe3', { uv: [0.5, 0.5] });
-    const slope = Math.atan2(2.0, 2.7);
-    const slab = Math.hypot(2.0, 2.7) + 0.35;
-    for (const s of [-1, 1]) roof.add(new T.BoxGeometry(7.8, 0.12, slab), mat(hx, 3.4 + 1.0, hz + s * 1.35, s * slope, 0, 0), '#ffffff', { uv: [4, 2] });
-    wood.add(new T.BoxGeometry(1.2, 2.1, 0.08), mat(hx, 1.55, hz - 2.72), '#8a5a3a', { uv: [0.5, 1] });
-    for (const s of [-1, 1]) {
-      plain.add(new T.BoxGeometry(1.1, 1, 0.06), mat(hx + s * 2.1, 2.1, hz - 2.72), '#9fd0ef');
-      wood.add(new T.BoxGeometry(1.3, 0.1, 0.12), mat(hx + s * 2.1, 1.55, hz - 2.76), '#ffffff', { uv: [0.5, 0.1] });
-      wood.add(new T.BoxGeometry(1.3, 0.1, 0.12), mat(hx + s * 2.1, 2.65, hz - 2.76), '#ffffff', { uv: [0.5, 0.1] });
-      wood.add(new T.BoxGeometry(0.08, 1.1, 0.1), mat(hx + s * 2.1, 2.1, hz - 2.75), '#ffffff', { uv: [0.1, 0.5] });
-      plain.add(new T.BoxGeometry(0.9, 0.3, 0.3), mat(hx + s * 2.1, 1.35, hz - 2.95), '#b5623a', { jitter: 0.1 });
-      for (let k = 0; k < 6; k++) plain.add(new T.SphereGeometry(0.1, 6, 4), mat(hx + s * 2.1 - 0.35 + k * 0.14, 1.55, hz - 2.95), k % 2 ? '#ff5d7a' : '#ffd23f');
-    }
-    stone.add(new T.BoxGeometry(0.7, 1.6, 0.7), mat(hx + 2.2, 5.3, hz + 1), '#ffffff', { uv: [1, 2] });
-    this.obstacles.push({ x: hx - 2.2, z: hz, r: 2.7 }, { x: hx + 2.2, z: hz, r: 2.7 });
+    this.house = new FarmHouse(new T.Vector3(hx, 0, hz), this.obstacles);
+    this.scene.add(this.house.group);
     // peti buah panen di depan rumah
     const crateC = ['#c8342a', '#f2a51c', '#6fae3a'];
     for (let i = 0; i < 3; i++) {
@@ -1023,6 +1008,29 @@ export class GardenEngine {
     if (Math.hypot(this.pos.x - x, this.pos.z - z) < 2.6) this.arrive();
   }
 
+  /** Berbaring di tempat tidur rumah kebun sebentar (Zzz…), lalu bangun segar. */
+  rest() {
+    if (this.restLeft > 0) return;
+    this.restLeft = 6;
+    this.clearRoute();
+    sfx.whoosh();
+    this.cb.onNear('resting');
+    this.near = 'resting';
+  }
+
+  private wakeUp() {
+    this.restLeft = 0;
+    this.player.rotation.set(0, this.heading, 0);
+    this.pos.copy(this.house.bedSide);
+    sfx.celebrate();
+    this.near = 'bed';
+    this.cb.onNear('bed');
+  }
+
+  get resting() {
+    return this.restLeft > 0;
+  }
+
   private towerDoor() {
     return new T.Vector3(this.towerAt.x + 2.9, 0, this.towerAt.z + 0.2);
   }
@@ -1318,7 +1326,7 @@ export class GardenEngine {
 
   private camOffset() {
     const base = this.portrait ? new T.Vector3(0, 14, 11.5) : new T.Vector3(0, 10.5, 11);
-    const dist = base.length() * this.camZoom;
+    const dist = base.length() * this.camZoom * (1 - 0.42 * this.insideK);
     const elev = T.MathUtils.clamp(Math.atan2(base.y, base.z) + this.camPitch, 0.07, 1.4);
     return new T.Vector3(Math.sin(this.camYaw) * Math.cos(elev) * dist, Math.sin(elev) * dist, Math.cos(this.camYaw) * Math.cos(elev) * dist);
   }
@@ -1362,7 +1370,7 @@ export class GardenEngine {
       if (this.keys.has('arrowup') || this.keys.has('w')) move.y += 1;
       if (this.keys.has('arrowdown') || this.keys.has('s')) move.y -= 1;
     }
-    if (this.tour || this.onTower) move.set(0, 0);
+    if (this.tour || this.onTower || this.restLeft > 0) move.set(0, 0);
     let want = 0;
     const dir = new T.Vector3();
     const target = this.onTower ? undefined : this.waypoints[0];
@@ -1442,6 +1450,7 @@ export class GardenEngine {
       if (dn < Math.min(nd, 2.8)) nearId = 'npc';
       if (this.pos.distanceTo(this.pen.door) < 2.6) nearId = 'goats';
       if (this.pos.distanceTo(this.towerDoor()) < 2.4) nearId = 'tower';
+      if (this.house.inside && this.pos.distanceTo(this.house.bedSide) < 1.6) nearId = this.restLeft > 0 ? 'resting' : 'bed';
     }
     if (!this.onTower && nearId !== this.near) {
       this.near = nearId;
@@ -1491,6 +1500,15 @@ export class GardenEngine {
     this.farm.update(t, dt);
     this.life.update(t, dt, this.pos);
     this.pen.update(t, dt);
+    this.house.update(t, dt, this.pos, this.restLeft > 0, this.camera.position);
+    this.insideK = T.MathUtils.damp(this.insideK, this.house.inside ? 1 : 0, 3, dt);
+    if (this.restLeft > 0) {
+      this.restLeft -= dt;
+      this.player.position.copy(this.house.bedLie);
+      this.player.rotation.set(-Math.PI / 2, 0, 0, 'YXZ');
+      this.player.rotation.y = Math.PI;
+      if (this.restLeft <= 0) this.wakeUp();
+    }
     // suara sekitar: kambing, ayam, burung (makin dekat makin keras)
     if (t > this.nextGoat) {
       this.nextGoat = t + 5 + Math.random() * 8;
@@ -1601,6 +1619,7 @@ export class GardenEngine {
     el.removeEventListener('wheel', this.onWheel);
     this.hanger.dispose();
     this.pen.dispose();
+    this.house.dispose();
     this.scene.traverse((o) => {
       const m = o as T.Mesh;
       if (m.geometry) m.geometry.dispose();
