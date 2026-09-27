@@ -5,7 +5,8 @@
 // melompat ke persinggahan mana pun tetap konsisten.
 
 import * as THREE from "three";
-import { buildBirds, buildMoon, buildSatellite, buildSite, buildStation, flag, gridFin, landingLeg, nozzleMaterial, rocketBodyTex } from "./details";
+import { buildBirds, buildMoon, buildSatellite, buildSite, buildStation, flag, gridFin, landingLeg, lattice, nozzleMaterial, rocketBodyTex } from "./details";
+import { buildCumulus, buildFlora, buildSea, buildTerrain } from "./site";
 
 export const EARTH_R = 1000;
 /** ketinggian (km) → unit di atas permukaan */
@@ -249,49 +250,37 @@ function buildRocket() {
 
 function buildTower() {
   const tower = new THREE.Group();
-  const red = new THREE.MeshStandardMaterial({ color: 0xd9483b, roughness: 0.6, metalness: 0.2 });
-  const grey = new THREE.MeshStandardMaterial({ color: 0x9aa3ae, roughness: 0.7 });
+  // baja galvanis abu-abu gelap seperti menara servis landasan sungguhan
+  const steel = new THREE.MeshStandardMaterial({ color: 0x5d636b, roughness: 0.45, metalness: 0.65 });
+  const grey = new THREE.MeshStandardMaterial({ color: 0x9aa3ae, roughness: 0.55, metalness: 0.5 });
   const H = 7.4,
     W = 1.1;
-  for (const [x, z] of [
-    [-W / 2, -W / 2],
-    [W / 2, -W / 2],
-    [-W / 2, W / 2],
-    [W / 2, W / 2],
-  ]) {
-    const post = new THREE.Mesh(new THREE.BoxGeometry(0.07, H, 0.07), red);
-    post.position.set(x, H / 2, z);
-    tower.add(post);
+  const frame = lattice(W, W, H, steel, 0.6);
+  tower.add(frame);
+  // lantai kerja berkisi tiap dua tingkat (di sisi luar, lift tetap terlihat)
+  const grate = new THREE.MeshStandardMaterial({ color: 0x42474e, roughness: 0.7, metalness: 0.5 });
+  for (let y = 1.2; y < H; y += 1.2) {
+    const deck = new THREE.Mesh(new THREE.BoxGeometry(W + 0.24, 0.035, 0.34), grate);
+    deck.position.set(0, y, W / 2 + 0.05);
+    const rail = new THREE.Mesh(new THREE.BoxGeometry(W + 0.24, 0.012, 0.012), grey);
+    rail.position.set(0, y + 0.12, W / 2 + 0.21);
+    tower.add(deck, rail);
   }
-  for (let y = 0.6; y < H; y += 0.6) {
-    for (const [w, d, x, z] of [
-      [W, 0.05, 0, -W / 2],
-      [W, 0.05, 0, W / 2],
-      [0.05, W, -W / 2, 0],
-      [0.05, W, W / 2, 0],
-    ]) {
-      const b = new THREE.Mesh(new THREE.BoxGeometry(w, 0.05, d), red);
-      b.position.set(x, y, z);
-      tower.add(b);
-    }
+  // pipa pengisian bahan bakar & kabel (umbilikal) menjulur di sisi yang menghadap roket
+  const pipeMat = new THREE.MeshStandardMaterial({ color: 0xd9dde2, roughness: 0.3, metalness: 0.8 });
+  for (let k = 0; k < 3; k++) {
+    const pipe = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, H - 0.4, 8), pipeMat);
+    pipe.position.set(-W / 2 - 0.05, (H - 0.4) / 2, -0.25 + k * 0.18);
+    tower.add(pipe);
   }
-  // lift (kotak abu) & lengan akses kru
-  // palang silang tiap tingkat + lampu merah di puncak
-  for (let y = 0.3; y < H; y += 0.6) {
-    for (const [x, z, ry] of [
-      [0, -W / 2, 0],
-      [0, W / 2, 0],
-      [-W / 2, 0, Math.PI / 2],
-      [W / 2, 0, Math.PI / 2],
-    ]) {
-      const d = new THREE.Mesh(new THREE.BoxGeometry(Math.hypot(W, 0.6), 0.03, 0.03), red);
-      d.position.set(x, y, z);
-      d.rotation.set(0, ry, Math.atan2(0.6, W));
-      tower.add(d);
-    }
-  }
+  // rumah mesin & derek di puncak
+  const hut = new THREE.Mesh(new THREE.BoxGeometry(W * 0.9, 0.35, W * 0.9), new THREE.MeshStandardMaterial({ color: 0xe8ebee, roughness: 0.6 }));
+  hut.position.y = H + 0.17;
+  const jib = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.08, 0.1), steel);
+  jib.position.set(-0.5, H + 0.4, 0);
+  tower.add(hut, jib);
   const beacon = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 8), new THREE.MeshBasicMaterial({ color: 0xff2a2a }));
-  beacon.position.set(0, H + 0.15, 0);
+  beacon.position.set(0, H + 0.42, 0);
   beacon.name = "beacon";
   tower.add(beacon);
   const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 1.2), grey);
@@ -734,6 +723,15 @@ export class RocketScene {
   private rand = rng(99);
   private dotTex = softDot();
   private tmp = new THREE.Vector3();
+  private uTime = { value: 0 };
+  shadowsLive = true;
+  private sea!: ReturnType<typeof buildSea>;
+  private land!: THREE.Group;
+  private cumulus!: THREE.Group;
+  private denseClouds: THREE.SpriteMaterial | null = null;
+  private textures: THREE.Texture[] = [];
+  /** ketinggian roket terakhir (km) */
+  private rocketKm = 0;
   /** posisi dunia pusat Bumi */
   readonly earthCenter = new THREE.Vector3(0, -EARTH_R, 0);
 
@@ -812,6 +810,15 @@ export class RocketScene {
     this.pad = site.group;
     this.flags = site.flags;
     s.add(this.pad);
+    // medan berbukit, laut, hutan tropis & pohon kelapa, awan kumulus di kejauhan
+    this.land = new THREE.Group();
+    this.land.add(buildTerrain(low));
+    this.sea = buildSea(new THREE.Vector3(300, 500, 200));
+    this.land.add(this.sea.mesh);
+    this.land.add(buildFlora(low, this.uTime, (t) => this.textures.push(t)));
+    s.add(this.land);
+    this.cumulus = buildCumulus(low, (t) => this.textures.push(t));
+    s.add(this.cumulus);
     // Burung di troposfer bawah
     this.birds = buildBirds(low ? 8 : 16);
     this.birds.group.position.y = altToY(2.5);
@@ -851,7 +858,9 @@ export class RocketScene {
 
     // Awan troposfer
     this.clouds = new THREE.Group();
-    const cloudMat = new THREE.SpriteMaterial({ map: this.dotTex, color: 0xffffff, transparent: true, opacity: 0.85, depthWrite: false });
+    // awan yang ditembus roket: baru tampak setelah roket lepas landas (di landasan langit tetap cerah)
+    const cloudMat = new THREE.SpriteMaterial({ map: this.dotTex, color: 0xffffff, transparent: true, opacity: 0, depthWrite: false });
+    this.denseClouds = cloudMat;
     const cr = rng(12);
     for (let i = 0; i < (low ? 50 : 90); i++) {
       const sp = new THREE.Sprite(cloudMat);
@@ -987,12 +996,24 @@ export class RocketScene {
     }
 
     this.sun.position.set(300, 500, 200);
-    s.add(this.sun, this.hemi, this.amb);
+    // bayangan Matahari di sekitar landasan
+    this.sun.castShadow = true;
+    const sc = this.sun.shadow.camera as THREE.OrthographicCamera;
+    sc.left = sc.bottom = -26;
+    sc.right = sc.top = 26;
+    sc.near = 300;
+    sc.far = 900;
+    this.sun.shadow.mapSize.set(low ? 1024 : 2048, low ? 1024 : 2048);
+    this.sun.shadow.bias = -0.0004;
+    this.sun.shadow.normalBias = 0.03;
+    s.add(this.sun, this.sun.target, this.hemi, this.amb);
+    for (const o of [this.r.rocket, this.t.tower, this.a.astro]) o.traverse((c) => ((c as THREE.Mesh).isMesh ? (c.castShadow = true) : null));
     this.scene.fog = new THREE.FogExp2(0xcfe7ff, 0.004);
   }
 
   /** Terapkan pose roket & astronaut (fungsi murni dari timeline). */
   applyPose(p: RocketPose) {
+    this.rocketKm = p.altKm;
     const y = altToY(p.altKm);
     const { rocket, s1, f1, f2 } = this.r;
     rocket.position.set(0, y, 0);
@@ -1130,11 +1151,22 @@ export class RocketScene {
     this.starMat.opacity = smooth(20, 90, camAlt);
     const fog = this.scene.fog as THREE.FogExp2;
     fog.color.copy(u.uHorizon.value);
-    fog.density = 0.012 * (1 - smooth(0, 25, camAlt));
+    fog.density = 0.0085 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
     this.hemi.intensity = 0.9 * (1 - smooth(20, 90, camAlt)) + 0.1;
     (this.glow.material as THREE.ShaderMaterial).uniforms.uAlpha.value = smooth(25, 120, camAlt);
     (this.ozone.material as THREE.MeshBasicMaterial).opacity = 0.06 * smooth(8, 20, camAlt) * (1 - smooth(60, 200, camAlt)) + 0.05 * smooth(200, 600, camAlt);
     this.pad.visible = camAlt < 80;
+    // dari ketinggian, daratan & laut rinci diganti bola Bumi bertekstur
+    this.land.visible = camAlt < 22;
+    this.uTime.value = this.time;
+    const su = this.sea.mat.uniforms;
+    su.uTime.value = this.time;
+    su.uSky.value.copy(u.uHorizon.value);
+    su.uZenith.value.copy(u.uZenith.value);
+    this.cumulus.visible = camAlt < 40;
+    if (this.denseClouds) this.denseClouds.opacity = 0.85 * smooth(0.15, 1.2, this.rocketKm);
+    /** bayangan hanya perlu dihitung ulang saat kamera dekat tanah */
+    this.shadowsLive = camAlt < 6;
     this.clouds.visible = camAlt < 120;
     this.aur.mat.uniforms.uTime.value = this.time;
     this.aur.mat.uniforms.uAlpha.value = smooth(70, 130, camAlt) * (1 - smooth(500, 1200, camAlt));
@@ -1331,5 +1363,6 @@ export class RocketScene {
       }
     });
     this.dotTex.dispose();
+    this.textures.forEach((t) => t.dispose());
   }
 }

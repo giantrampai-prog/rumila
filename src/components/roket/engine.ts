@@ -4,6 +4,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { skyEnvScene } from "./site";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
 import { followAudio } from "@/lib/audio-clock";
@@ -79,6 +80,7 @@ export class RocketEngine {
   private cupola = new Cupola();
   private frame = new THREE.Object3D();
   private env: THREE.Texture;
+  private skyEnv: THREE.Texture;
   private wasCabin = false;
   private raf = 0;
   private last = performance.now();
@@ -107,6 +109,8 @@ export class RocketEngine {
     this.renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true, powerPreference: "high-performance" });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, low ? 1.5 : 2));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     host.appendChild(this.renderer.domElement);
     this.renderer.domElement.style.touchAction = "none";
@@ -115,9 +119,11 @@ export class RocketEngine {
     // Pantulan logam (kaca helm emas, panel, roket) dari lingkungan studio lembut.
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     this.env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    // di luar ruangan: pantulan langit biru & tanah hijau (roket, menara baja, helm)
+    this.skyEnv = pmrem.fromScene(skyEnvScene(), 0.02).texture;
     pmrem.dispose();
-    this.world.scene.environment = this.env;
-    this.world.scene.environmentIntensity = 0.35;
+    this.world.scene.environment = this.skyEnv;
+    this.world.scene.environmentIntensity = 0.6;
     withLogDepth(this.cabin.scene);
     withLogDepth(this.cupola.scene);
     this.cabin.scene.environment = this.env;
@@ -547,7 +553,9 @@ export class RocketEngine {
       this.world.r.cap.visible = false;
       this.world.update(dt);
       this.renderer.autoClear = true;
-      this.renderer.render(this.world.scene, cam);
+      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
+      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
+    this.renderer.render(this.world.scene, cam);
       this.renderer.autoClear = false;
       this.renderer.clearDepth();
       this.renderer.render(this.cupola.scene, this.cupola.camera);
@@ -568,7 +576,9 @@ export class RocketEngine {
       this.world.r.cap.visible = false; // dinding kapsul dari luar tidak ikut menghalangi jendela
       this.world.update(dt);
       this.renderer.autoClear = true;
-      this.renderer.render(this.world.scene, cam);
+      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
+      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
+    this.renderer.render(this.world.scene, cam);
       this.renderer.autoClear = false;
       this.renderer.clearDepth();
       this.renderer.render(this.cabin.scene, this.cabin.camera);
@@ -587,6 +597,7 @@ export class RocketEngine {
     }
     this.controls.update();
     this.world.update(dt);
+    this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
     this.renderer.render(this.world.scene, cam);
   };
 
@@ -602,6 +613,7 @@ export class RocketEngine {
     this.cabin.dispose();
     this.cupola.dispose();
     this.env.dispose();
+    this.skyEnv.dispose();
     this.world.dispose();
     this.renderer.dispose();
     el.remove();

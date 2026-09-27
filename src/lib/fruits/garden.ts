@@ -54,6 +54,8 @@ export interface Plot {
   zone: FruitGroup;
   x: number;
   z: number;
+  /** ketinggian pangkal (opsional; kebun datar = 0) */
+  y?: number;
   /** jarak berhenti di depan tanaman saat berjalan ke sana */
   reach: number;
 }

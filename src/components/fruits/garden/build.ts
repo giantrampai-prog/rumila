@@ -294,11 +294,12 @@ function tree(kit: Kit, p: Plot, r: () => number, size: number, fruits = 8): Pla
 function palm(kit: Kit, p: Plot, r: () => number): PlantResult {
   const yaw = r() * 6.28;
   const h = 5.4 + r() * 0.8;
-  const top = trunk(kit, p.x, p.z, h, 0.24, 0.17, 0.7, yaw, '#9a8470');
+  const y0 = p.y ?? 0;
+  const top = trunk(kit, p.x, p.z, h, 0.24, 0.17, 0.7, yaw, '#9a8470', y0);
   // cincin bekas pelepah pada batang
   for (let i = 1; i < 12; i++) {
     const t = i / 12;
-    kit.plain.add(new T.TorusGeometry(0.21 - t * 0.04, 0.025, 5, 12), mat(p.x + Math.sin(yaw) * 0.7 * t * t, h * t, p.z + Math.cos(yaw) * 0.7 * t * t, Math.PI / 2), '#6d5a48');
+    kit.plain.add(new T.TorusGeometry(0.21 - t * 0.04, 0.025, 5, 12), mat(p.x + Math.sin(yaw) * 0.7 * t * t, y0 + h * t, p.z + Math.cos(yaw) * 0.7 * t * t, Math.PI / 2), '#6d5a48');
   }
   for (let i = 0; i < 14; i++) {
     const a = (i / 14) * 6.28 + r() * 0.2;
