@@ -10,7 +10,7 @@ import { setTrafficLevel, sfx, startTraffic, stopTraffic } from '@/lib/sfx';
 import { City } from './city';
 import { buildSite, type Site } from './site';
 import { buildResto } from './building';
-import { COUNTER, DOOR, PASS_Z, QUEUE_X, SIDEWALK_IN, STATIONS, groundY } from './layout';
+import { AISLE_Z, CHAIRS, COUNTER, PASS_Z, QUEUE_X, SIDEWALK_IN, STATIONS, groundY, route } from './layout';
 import { buildRealSky } from '@/components/fruits/garden/sky';
 
 const _sunOff = new T.Vector3(24, 48, 30);
@@ -71,10 +71,18 @@ function person(body: string, head = '#f0c8a0', hat?: string) {
 
 const SEG_COLOR = { pelajar: '#3f7ac8', pekerja: '#5a5a66', keluarga: '#e8804a' } as const;
 
-interface Actor {
+/** Satu orang yang berjalan mengikuti rute (lewat pintu, lorong) lalu berdiri/duduk. */
+interface Member {
   obj: T.Group;
-  pos: T.Vector3;
-  target: T.Vector3;
+  path: T.Vector3[];
+  delay: number;
+  /** titik yang dihadap saat duduk (tengah meja); null = berdiri */
+  face: T.Vector3 | null;
+}
+
+interface Actor {
+  members: Member[];
+  key: string;
   food: T.Sprite[];
   bubble: T.Sprite | null;
 }
@@ -119,6 +127,8 @@ export class RestoScene {
   private roofMats: T.Material[] = [];
   private roofK = 1;
   private showRoof = true;
+  /** pengali kecepatan jalan mengikuti kecepatan jam game (1×/2×) */
+  private walkK = 1;
 
   constructor(private host: HTMLElement) {
     this.renderer = new T.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
@@ -271,6 +281,10 @@ export class RestoScene {
 
   /* ---------- kontrol kamera (tombol di layar) ---------- */
 
+  setSpeed(k: number) {
+    this.walkK = Math.max(1, k);
+  }
+
   /** Buka/pasang atap untuk melihat isi restoran. */
   toggleRoof() {
     this.showRoof = !this.showRoof;
@@ -320,7 +334,7 @@ export class RestoScene {
     const want = new Set(s.handed ? s.staff.map((m) => m.id) : []);
     for (const [id, a] of this.staffActors)
       if (!want.has(id)) {
-        this.people.remove(a.obj);
+        for (const mm of a.members) this.people.remove(mm.obj);
         this.staffActors.delete(id);
       }
     for (const m of s.handed ? s.staff : []) {
@@ -330,15 +344,22 @@ export class RestoScene {
       const home = this.staffHome(m.role, [...this.staffActors.keys()].length);
       o.position.copy(home);
       this.people.add(o);
-      this.staffActors.set(m.id, { obj: o, pos: home.clone(), target: home.clone(), food: [], bubble: null });
+      this.staffActors.set(m.id, { members: [{ obj: o, path: [], delay: 0, face: null }], key: 'home', food: [], bubble: null });
     }
   }
 
   private staffHome(role: string, i: number) {
     if (role === 'kasir') return new T.Vector3(COUNTER.x, 0, COUNTER.z - 0.9);
     if (role === 'koki') return STATIONS[['goreng', 'kompor', 'sushi', 'minum'][i % 4]].clone().add(new T.Vector3(0, 0, 1.0));
-    if (role === 'pelayan') return new T.Vector3(-14 + i * 1.2, 0, PASS_Z + 0.7);
+    if (role === 'pelayan') return new T.Vector3(-14 + i * 1.2, 0, PASS_Z + 0.55);
     return new T.Vector3(-7.6, 0, -3.4);
+  }
+
+  /** Kirim satu orang ke tujuan lewat rute yang benar; `face` = duduk menghadap titik itu. */
+  private send(m: Member, dest: T.Vector3, face: T.Vector3 | null = null, delay = 0) {
+    m.path = route(m.obj.position, dest);
+    m.face = face;
+    m.delay = delay;
   }
 
   /** Posisi & gerak pelanggan/staf mengikuti simulasi yang sedang berjalan. */
@@ -350,31 +371,44 @@ export class RestoScene {
         seen.add(g.id);
         let a = this.actors.get(g.id);
         if (!a) {
-          const o = new T.Group();
+          const start = SIDEWALK_IN.clone().add(new T.Vector3((Math.random() - 0.5) * 4, 0, 0.6));
+          const members: Member[] = [];
           for (let k = 0; k < g.size; k++) {
             const p = person(SEG_COLOR[g.seg], ['#f0c8a0', '#d9a47a', '#e8b890'][k % 3]);
             if (g.seg === 'keluarga' && k >= 2) p.scale.setScalar(0.72);
-            p.position.set((k % 2) * 0.5 - 0.25, 0, Math.floor(k / 2) * 0.5);
-            o.add(p);
+            p.position.copy(start).add(new T.Vector3((k % 2) * 0.5 - 0.25, 0, Math.floor(k / 2) * 0.5));
+            this.people.add(p);
+            members.push({ obj: p, path: [], delay: 0, face: null });
           }
-          const start = SIDEWALK_IN.clone().add(new T.Vector3((Math.random() - 0.5) * 3, 0, 0));
-          o.position.copy(start);
-          this.people.add(o);
-          a = { obj: o, pos: start.clone(), target: start.clone(), food: [], bubble: null };
+          a = { members, key: '', food: [], bubble: null };
           this.actors.set(g.id, a);
           const b = new T.Sprite(new T.SpriteMaterial({ map: this.greet, transparent: true, depthWrite: false }));
           b.scale.set(1.6, 0.6, 1);
           b.position.set(0, 2.0, 0);
           b.userData.until = this.t + 2.5;
-          o.add(b);
+          members[0].obj.add(b);
           a.bubble = b;
         }
-        if (g.state === 'queue') {
-          a.target.set(QUEUE_X, 0, COUNTER.z + 1.8 + qi * 0.9);
-          qi++;
-        } else if (g.state === 'order') a.target.set(COUNTER.x + 0.4, 0, COUNTER.z + 0.9);
-        else if (g.state === 'leave') a.target.copy(DOOR).add(new T.Vector3(0, 0, 3));
-        else if (g.table >= 0 && this.tablePos[g.table]) a.target.copy(this.tablePos[g.table]).add(new T.Vector3(0, 0, 0.75));
+        // tujuan baru bila keadaan kelompok berubah (antre maju, pesan, duduk, pulang)
+        const seated = (g.state === 'seat' || g.state === 'wait' || g.state === 'eat') && g.table >= 0 && !!this.tablePos[g.table];
+        const key = g.state === 'queue' ? `q${qi}` : seated ? `t${g.table}` : g.state;
+        if (key !== a.key) {
+          a.key = key;
+          const lineAt = (bx: number, bz: number) =>
+            a!.members.forEach((m, k) => this.send(m, new T.Vector3(bx + (k % 2 ? 0.3 : -0.3), 0, bz + Math.floor(k / 2) * 0.45), null, k * 0.3));
+          if (g.state === 'queue') lineAt(QUEUE_X, COUNTER.z + 1.9 + qi * 1.0);
+          else if (g.state === 'order') lineAt(COUNTER.x + 0.4, COUNTER.z + 1.0);
+          else if (seated) {
+            const tp = this.tablePos[g.table];
+            // kursi yang paling dekat lorong diisi lebih dulu
+            const chairs = [...CHAIRS].sort((p, q) => Math.abs(tp.z + p[1] - AISLE_Z) - Math.abs(tp.z + q[1] - AISLE_Z));
+            a.members.forEach((m, k) => {
+              const [dx, dz] = chairs[k % chairs.length];
+              this.send(m, new T.Vector3(tp.x + dx, 0, tp.z + dz), new T.Vector3(tp.x + dx, 0, tp.z), k * 0.35);
+            });
+          } else if (g.state === 'leave') this.leave(a);
+        }
+        if (g.state === 'queue') qi++;
         // makanan di meja
         const showFood = g.state === 'eat';
         if (showFood && !a.food.length && this.tablePos[g.table]) {
@@ -393,24 +427,42 @@ export class RestoScene {
     for (const [id, a] of this.actors)
       if (!seen.has(id)) {
         this.clearFood(a);
-        a.target.copy(SIDEWALK_IN).add(new T.Vector3(0, 0, 1.5));
-        if (a.obj.position.distanceTo(a.target) < 0.5) {
-          this.people.remove(a.obj);
+        if (a.key !== 'leave') {
+          a.key = 'leave';
+          this.leave(a);
+        }
+        if (a.members.every((m) => !m.path.length && m.delay <= 0)) {
+          for (const m of a.members) this.people.remove(m.obj);
           this.actors.delete(id);
         }
       }
-    // staf bergerak: pelayan ke meja yang sedang dilayani, kebersihan ke meja kotor
+    // staf bergerak lewat lorong: pelayan ke meja yang dilayani, kebersihan ke meja kotor
     if (run) {
       const serving = run.groups.find((g) => g.state === 'wait' && g.items.every((i) => i.done));
       const dirty = run.tables.findIndex((tb) => tb.dirty);
       for (const m of s.staff) {
         const a = this.staffActors.get(m.id);
         if (!a) continue;
-        if (m.role === 'pelayan' && serving && this.tablePos[serving.table]) a.target.copy(this.tablePos[serving.table]).add(new T.Vector3(0.95, 0, 0));
-        else if (m.role === 'kebersihan' && dirty >= 0 && this.tablePos[dirty]) a.target.copy(this.tablePos[dirty]).add(new T.Vector3(-0.95, 0, 0));
-        else a.target.copy(this.staffHome(m.role, [...this.staffActors.keys()].indexOf(m.id)));
+        let key = 'home',
+          dest = this.staffHome(m.role, [...this.staffActors.keys()].indexOf(m.id));
+        if (m.role === 'pelayan' && serving && this.tablePos[serving.table]) {
+          key = `serve${serving.table}`;
+          dest = this.tablePos[serving.table].clone().add(new T.Vector3(1.0, 0, 0));
+        } else if (m.role === 'kebersihan' && dirty >= 0 && this.tablePos[dirty]) {
+          key = `clean${dirty}`;
+          dest = this.tablePos[dirty].clone().add(new T.Vector3(-1.0, 0, 0));
+        }
+        if (key !== a.key) {
+          a.key = key;
+          this.send(a.members[0], dest);
+        }
       }
     }
+  }
+
+  /** Rombongan pulang: satu per satu lewat pintu menuju trotoar. */
+  private leave(a: Actor) {
+    a.members.forEach((m, k) => this.send(m, SIDEWALK_IN.clone().add(new T.Vector3((Math.random() - 0.5) * 5, 0, 1.2)), null, k * 0.35));
   }
 
   private clearFood(a: Actor) {
@@ -471,20 +523,30 @@ export class RestoScene {
       m.depthWrite = this.roofK > 0.95;
       m.visible = this.roofK > 0.02;
     }
-    // tokoh berjalan menuju target
+    // orang berjalan mengikuti rute; sampai di kursi → duduk menghadap meja
     for (const a of [...this.actors.values(), ...this.staffActors.values()]) {
-      const to = a.target.clone().sub(a.obj.position);
-      to.y = 0;
-      const dd = to.length();
-      if (dd > 0.05) {
-        const step = Math.min(dd, dt * 2.6);
-        a.obj.position.addScaledVector(to.normalize(), step);
-        a.obj.rotation.y = Math.atan2(to.x, to.z);
-        a.obj.position.y = groundY(a.obj.position.x, a.obj.position.z) + Math.abs(Math.sin(this.t * 10)) * 0.05;
-      } else a.obj.position.y = groundY(a.obj.position.x, a.obj.position.z);
-      if (a.bubble) {
-        a.bubble.visible = this.t < (a.bubble.userData.until as number);
+      for (const m of a.members) {
+        const o = m.obj;
+        if (m.delay > 0) {
+          m.delay -= dt;
+          continue;
+        }
+        if (m.path.length) {
+          const to = m.path[0].clone().sub(o.position);
+          to.y = 0;
+          const dd = to.length();
+          if (dd < 0.06) m.path.shift();
+          else {
+            o.position.addScaledVector(to.normalize(), Math.min(dd, dt * 2.4 * this.walkK));
+            o.rotation.y = T.MathUtils.damp(o.rotation.y, o.rotation.y + Math.atan2(Math.sin(Math.atan2(to.x, to.z) - o.rotation.y), Math.cos(Math.atan2(to.x, to.z) - o.rotation.y)), 12, dt);
+            o.position.y = groundY(o.position.x, o.position.z) + Math.abs(Math.sin(this.t * 9 + o.id)) * 0.05;
+          }
+        } else if (m.face) {
+          o.rotation.y = Math.atan2(m.face.x - o.position.x, m.face.z - o.position.z);
+          o.position.y = groundY(o.position.x, o.position.z) - 0.16; // duduk
+        } else o.position.y = groundY(o.position.x, o.position.z);
       }
+      if (a.bubble) a.bubble.visible = this.t < (a.bubble.userData.until as number);
     }
     this.renderer.render(this.scene, this.camera);
   };

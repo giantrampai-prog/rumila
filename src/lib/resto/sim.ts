@@ -825,6 +825,16 @@ export function stepDay(s: RestoState, run: DayRun, dm: number) {
   }
 }
 
+/**
+ * Tutup lebih awal: tidak ada pelanggan baru, yang antre pulang, yang sudah memesan diselesaikan
+ * (dimasak & dimakan) atau di-refund, lalu hari siap ditutup dengan closeDay.
+ */
+export function finishDay(s: RestoState, run: DayRun) {
+  run.spawn = [];
+  if (run.clock < CLOSE) run.clock = CLOSE;
+  for (let i = 0; i < 400 && !run.done; i++) stepDay(s, run, 0.25);
+}
+
 /** Tutup hari: bayar biaya harian, susun laporan & temuan, buang bahan kedaluwarsa. */
 export function closeDay(s: RestoState, run: DayRun): DayReport {
   const st = run.stats;

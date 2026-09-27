@@ -14,7 +14,7 @@ import type { RestoState } from '@/lib/resto/sim';
 import { carMesh, motorMesh } from './city';
 import { Merge, canopy, mat, swayMaterial, type Kit } from '@/components/fruits/garden/build';
 import * as GTX from '@/components/fruits/garden/textures';
-import { BLD, COUNTER, FLOOR_Y, FRIDGE, LOT, PASS_Z, PICKUP, RICE, ROOMS, STATIONS, STEPS, TABLE_SLOTS, TERRACE, YARD_Y, roofY } from './layout';
+import { BLD, COUNTER, FLOOR_Y, FRIDGE, LOT, PASS_Z, PICKUP, RICE, ROOMS, STATIONS, STEPS, TABLE_COLS, TABLE_ROWS, TABLE_SLOTS, TERRACE, YARD_Y, roofY } from './layout';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
@@ -782,9 +782,9 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
   ])
     for (let i = 0; i < 4; i++) bamboo(kit, x + (i % 2) * 0.22, z + Math.floor(i / 2) * 0.22, 2.4 + r() * 0.6, r, FLOOR_Y);
   // lampion kertas di atas meja
-  for (const z of [-7.1, -4.9])
-    for (const x of [-12.05, -15.35, -18.65]) {
-      const l = paperLantern(x, FLOOR_Y + 2.7, z, 0.36, roofY(x) - 0.2);
+  for (const z of TABLE_ROWS)
+    for (const x of TABLE_COLS) {
+      const l = paperLantern(x, FLOOR_Y + 2.7, z, 0.34, roofY(x) - 0.2);
       dyn.add(l);
       lanterns.push(l);
     }

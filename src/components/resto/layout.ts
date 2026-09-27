@@ -49,9 +49,76 @@ export const STATIONS: Record<string, T.Vector3> = {
 export const RICE = new T.Vector3(-10.8, 0, -13.6);
 export const FRIDGE = new T.Vector3(-1.5, 0, -13.4);
 
-/** Posisi meja makan (maks 12): 4 kolom × 3 baris di area makan. */
+/** Posisi meja makan (maks 10 = 40 kursi): 5 kolom × 2 baris, lorong tengah lebar di z = AISLE_Z. */
+export const TABLE_COLS = [-8.9, -11.9, -14.9, -17.9, -20.6];
+export const TABLE_ROWS = [-8.4, -4.6];
+export const AISLE_Z = -6.5;
 export const TABLE_SLOTS: [number, number][] = [];
-for (const z of [-8.3, -6.0, -3.8]) for (const x of [-10.4, -13.7, -17.0, -20.3]) TABLE_SLOTS.push([x, z]);
+for (const x of TABLE_COLS) for (const z of TABLE_ROWS) TABLE_SLOTS.push([x, z]);
+/** Kursi relatif meja: [dx, dz]. */
+export const CHAIRS: [number, number][] = [
+  [-0.35, -0.75],
+  [0.35, -0.75],
+  [-0.35, 0.75],
+  [0.35, 0.75],
+];
+
+/** Titik-titik jalur: halaman depan tangga, teras, dalam pintu, celah masuk area makan. */
+const NAV = {
+  yard: new T.Vector3(-4.0, 0, 1.2),
+  terrace: new T.Vector3(-4.0, 0, -1.3),
+  inside: new T.Vector3(-4.0, 0, -3.3),
+  gate: new T.Vector3(-7.3, 0, AISLE_Z),
+};
+type Zone = 'out' | 'mid' | 'dine';
+function zoneOf(p: T.Vector3): Zone {
+  if (p.z > BLD.z1 - 0.05 || p.x > BLD.x1) return 'out';
+  return p.x < ROOMS.dining.x1 ? 'dine' : 'mid';
+}
+
+/**
+ * Rute berjalan (tanpa menembus dinding, meja, atau pot): lewat tangga & pintu, celah sekat area makan,
+ * lorong tengah, lalu sisi meja. Mengembalikan daftar titik yang dilalui (tanpa titik awal).
+ */
+export function route(from: T.Vector3, to: T.Vector3): T.Vector3[] {
+  const zf = zoneOf(from),
+    zt = zoneOf(to);
+  const pts: T.Vector3[] = [];
+  const v = (x: number, z: number) => new T.Vector3(x, 0, z);
+  // keluar dari sisi meja ke lorong
+  if (zf === 'dine') {
+    const far = Math.abs(from.z - AISLE_Z) > 1.3;
+    if (far) {
+      const side = nearestColGap(from.x);
+      pts.push(v(side, from.z), v(side, AISLE_Z));
+    } else pts.push(v(from.x, AISLE_Z));
+    if (zt !== 'dine') pts.push(NAV.gate.clone());
+  }
+  if (zf === 'out' && zt !== 'out') {
+    if (from.z > NAV.yard.z - 0.2 || Math.abs(from.x - NAV.yard.x) > 1.5) pts.push(NAV.yard.clone());
+    pts.push(NAV.terrace.clone(), NAV.inside.clone());
+  }
+  if (zf !== 'out' && zt === 'out') {
+    if (zf === 'mid' || zf === 'dine') pts.push(NAV.inside.clone(), NAV.terrace.clone(), NAV.yard.clone());
+  }
+  if (zt === 'dine') {
+    if (zf !== 'dine') pts.push(NAV.gate.clone());
+    const far = Math.abs(to.z - AISLE_Z) > 1.3;
+    if (far) {
+      const side = nearestColGap(to.x);
+      pts.push(v(side, AISLE_Z), v(side, to.z));
+    } else pts.push(v(to.x, AISLE_Z));
+  }
+  pts.push(to.clone());
+  // buang titik yang berurutan terlalu dekat
+  return pts.filter((p, i) => i === 0 || p.distanceTo(pts[i - 1]) > 0.15);
+}
+
+/** Lorong antarkolom meja terdekat (untuk mencapai kursi di sisi jauh meja). */
+function nearestColGap(x: number) {
+  const gaps = [-8.2, ...TABLE_COLS.slice(0, -1).map((c, i) => (c + TABLE_COLS[i + 1]) / 2)];
+  return gaps.reduce((a, b) => (Math.abs(b - x) < Math.abs(a - x) ? b : a));
+}
 
 /** Tinggi permukaan tempat berpijak (lantai dalam, teras, tangga, halaman). */
 export function groundY(x: number, z: number) {

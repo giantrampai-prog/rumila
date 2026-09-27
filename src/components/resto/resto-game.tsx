@@ -276,6 +276,34 @@ export function RestoGame() {
     return r.ok;
   };
 
+  /** Tutup hari: pelanggan yang tersisa diselesaikan, uang masuk kas, laporan disusun & disimpan. */
+  const finishDay = (show: boolean) => {
+    const r = run.current;
+    if (!r) return;
+    S.finishDay(g, r);
+    const rep = S.closeDay(g, r);
+    run.current = null;
+    scene.current?.syncRun(g, null);
+    save();
+    if (!show) return;
+    setReport(rep);
+    setPanel('laporan');
+    if (rep.result > 0) sfx.celebrate();
+    bump();
+  };
+  const finishRef = useRef(finishDay);
+  finishRef.current = finishDay;
+  const [confirmClose, setConfirmClose] = useState(false);
+  // keluar dari game saat resto masih buka → hari ditutup otomatis & tersimpan (uang tidak hilang)
+  useEffect(() => {
+    const onHide = () => finishRef.current(false);
+    window.addEventListener('pagehide', onHide);
+    return () => {
+      window.removeEventListener('pagehide', onHide);
+      finishRef.current(false);
+    };
+  }, []);
+
   // jam restoran berjalan saat buka
   useEffect(() => {
     if (g.phase !== 'open' || !run.current) return;
@@ -291,6 +319,7 @@ export function RestoGame() {
       if (!r || speed === 0) return;
       const mins = dt * speed; // 1 detik nyata = 1 menit virtual
       for (let k = 0; k < Math.ceil(mins / 0.2); k++) S.stepDay(g, r, mins / Math.ceil(mins / 0.2));
+      scene.current?.setSpeed(speed);
       scene.current?.syncRun(g, r);
       if (r.events.length !== seenEvents) {
         const e = r.events[r.events.length - 1];
@@ -300,14 +329,7 @@ export function RestoGame() {
         else if (e.kind === 'keliru') sfx.chop();
       }
       if (r.done) {
-        const rep = S.closeDay(g, r);
-        run.current = null;
-        scene.current?.syncRun(g, null);
-        save();
-        setReport(rep);
-        setPanel('laporan');
-        if (rep.result > 0) sfx.celebrate();
-        bump();
+        finishRef.current(true);
         return;
       }
       if (now - lastUi > 250) {
@@ -403,6 +425,24 @@ export function RestoGame() {
               </button>
             ))}
           </div>
+          <button
+            onClick={() => {
+              if (!confirmClose) {
+                sfx.tap();
+                setConfirmClose(true);
+                window.setTimeout(() => setConfirmClose(false), 3500);
+                return;
+              }
+              setConfirmClose(false);
+              sfx.creak();
+              finishDay(true);
+            }}
+            className="mt-2 flex w-full items-center justify-center gap-1.5 rounded-full py-1.5 text-[14px] font-extrabold active:scale-95"
+            style={{ background: confirmClose ? '#e0402a' : 'rgba(255,255,255,.9)', color: confirmClose ? '#fff' : INK, fontFamily: BALOO }}
+          >
+            <Icon name="door_front" size={18} />
+            {confirmClose ? 'Yakin tutup? Ketuk lagi' : 'Tutup resto & hitung kas'}
+          </button>
           <div className="mt-1 flex gap-3 text-[13px] font-bold">
             <span>😊 {run.current.stats.served} dilayani</span>
             <span>🚶 {run.current.stats.lostQueue + run.current.stats.lostSeat + run.current.stats.lostStock} pergi</span>
