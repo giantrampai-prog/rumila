@@ -82,9 +82,9 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
       items: [
         ["Pola", "pattern", "10 level × 10 coding: lengkapi pola warna, bentuk, dan bunyi bersama Agam.", "koding-pola"],
         ["Langkah", "footprint", "10 level × 10 coding: susun perintah supaya Agam sampai di bintang.", "koding-langkah"],
-        ["Ulangi", "repeat", "Pakai blok ulangi supaya program lebih pendek.", "koding-ulangi"],
-        ["Kalau…", "alt_route", "Agam memilih jalan: kalau ada batu, belok.", "koding-kalau"],
-        ["Jurus", "bolt", "Buat jurus sendiri dari kumpulan perintah.", "koding-jurus"],
+        ["Ulangi", "repeat", "10 level × 10 coding: pakai blok ulangi supaya program Agam lebih pendek.", "koding-ulangi"],
+        ["Kalau…", "alt_route", "10 level × 10 coding: ajari Agam memilih jalan — kalau ada rintangan, belok.", "koding-kalau"],
+        ["Jurus", "bolt", "10 level × 10 coding: buat jurus sendiri, lalu panggil berkali-kali.", "koding-jurus"],
         ["Detektif Bug", "bug_report", "Temukan dan perbaiki perintah yang salah.", "koding-bug"],
         ["Studio Animasi", "animation", "Buat animasi sendiri dengan blok kode.", "koding-studio"],
       ],

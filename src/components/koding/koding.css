@@ -143,3 +143,27 @@
 @media (prefers-reduced-motion: reduce) {
   .pola-pop, .pola-sel, .pola-glow, .pola-q, .pola-bad { animation: none; }
 }
+
+/* ---------- Ulangi, Kalau…, Jurus: program bertingkat ---------- */
+.prog-rail { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: flex-start; gap: 6px; padding: 8px; border-radius: 18px; min-height: 60px; max-height: 30vh; overflow-y: auto; overscroll-behavior: contain; background: rgba(35, 48, 74, 0.08); box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.06); }
+.prog-rail-jurus { background: rgba(14, 165, 233, 0.12); max-height: 22vh; }
+.prog-rail-tag { display: inline-flex; align-items: center; gap: 2px; height: 26px; padding: 0 8px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 900; align-self: center; }
+.prog-slot { display: inline-flex; align-items: center; justify-content: center; min-width: 42px; height: 42px; border-radius: 11px; border: 2.5px dashed rgba(35, 48, 74, 0.28); color: rgba(35, 48, 74, 0.45); background: transparent; }
+.koding-rail-dark .prog-slot { border-color: rgba(255, 255, 255, 0.35); color: rgba(255, 255, 255, 0.6); }
+.prog-slot-on { border: 3px solid #ffb000; color: #b07800; background: rgba(255, 210, 63, 0.22); animation: koding-pulse 1.1s ease-in-out infinite; }
+.prog-box { border: 2.5px solid; border-radius: 13px; max-width: 100%; transition: box-shadow 0.15s; }
+.prog-box-lit { box-shadow: 0 0 0 4px #ffd23f; }
+.prog-body { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; padding: 7px 6px 6px; border-radius: 10px; }
+.prog-branch-on { background: rgba(255, 210, 63, 0.35); }
+.prog-count { min-width: 34px; height: 24px; padding: 0 8px; border-radius: 999px; background: rgba(255, 255, 255, 0.92); color: #23304a; font-size: 13px; font-weight: 900; line-height: 24px; white-space: nowrap; }
+.prog-check { height: 22px; padding: 0 7px; border-radius: 999px; font-size: 12px; font-weight: 900; line-height: 22px; }
+@media (min-width: 768px) and (min-height: 700px) {
+  .prog-slot { min-width: 50px; height: 48px; }
+}
+@media (orientation: landscape) and (max-height: 480px) {
+  .prog-slot { min-width: 38px; height: 36px; }
+  .prog-rail { max-height: 34vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prog-slot-on { animation: none; }
+}
