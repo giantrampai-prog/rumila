@@ -5,6 +5,7 @@
 // melompat ke persinggahan mana pun tetap konsisten.
 
 import * as THREE from "three";
+import { AgamModel } from "./agam-model";
 import { buildStation } from "./station";
 import { buildBirds, buildMoon, buildSatellite, buildSite, flag, gridFin, landingLeg, lattice, nozzleMaterial, rocketBodyTex } from "./details";
 import { buildCumulus, buildFlora, buildSea, buildTerrain } from "./site";
@@ -880,6 +881,8 @@ export class RocketScene {
     this.r = buildRocket();
     s.add(this.r.rocket);
     this.a = buildAstronaut();
+    // model 3D Agam (Higgsfield) menggantikan astronaut prosedural begitu selesai dimuat
+    this.agam = new AgamModel(this.a.astro, (root) => tag(root, "astronot"));
     s.add(this.a.astro);
     this.tether = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]), new THREE.LineBasicMaterial({ color: 0xffffff }));
     this.tether.visible = false;
@@ -1139,6 +1142,8 @@ export class RocketScene {
       this.a.armR.rotation.z = -0.9 - Math.sin(t * 0.6) * 0.2;
       this.a.legL.rotation.x = Math.sin(t * 0.4) * 0.3;
       this.a.legR.rotation.x = -Math.sin(t * 0.4) * 0.3;
+      // melayang: lengan setengah terbuka bergoyang pelan, kaki mengayun lambat
+      this.agam?.pose({ legL: Math.sin(t * 0.4) * 0.3, legR: -Math.sin(t * 0.4) * 0.3, armL: Math.sin(t * 0.7) * 0.25, armR: -Math.sin(t * 0.6) * 0.25, lower: 0.25 });
       const tp = this.tether.geometry.getAttribute("position") as THREE.BufferAttribute;
       const hook = p.issGap !== null ? this.iss.localToWorld(new THREE.Vector3(1.2, 0, 0.2)) : new THREE.Vector3(0.3, y + 5.35, 0.15);
       tp.setXYZ(0, hook.x, hook.y, hook.z);
@@ -1154,6 +1159,7 @@ export class RocketScene {
   private steam = 0;
   private burn: 0 | 1 | 2 = 0;
   private rocketY = 0;
+  private agam: AgamModel;
 
   private walkPose(phase: number) {
     const s = Math.sin(phase * 1.6) * 0.5;
@@ -1163,6 +1169,7 @@ export class RocketScene {
     this.a.armR.rotation.x = s * 0.7;
     this.a.armL.rotation.z = 0;
     this.a.armR.rotation.z = 0;
+    this.agam?.pose({ legL: s, legR: -s, armL: -s * 0.7, armR: s * 0.7, lower: 0.75 });
   }
 
   /** Lingkungan menurut ketinggian KAMERA (langit, kabut, bintang, aurora, dll.) + partikel. */
