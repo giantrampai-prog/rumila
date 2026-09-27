@@ -109,28 +109,64 @@ function tag(o: THREE.Object3D, pick: string) {
   return o;
 }
 
+/** Semburan api mesin: inti putih-kuning di mulut nosel, memudar oranye-merah ke ujung.
+ *  Pakai campuran biasa (bukan aditif) supaya tetap terlihat jelas di langit siang yang terang. */
 function flame(len: number, radius: number) {
-  const mat = new THREE.ShaderMaterial({
-    uniforms: { uTime: { value: 0 }, uPower: { value: 1 } },
-    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
-    fragmentShader: `uniform float uTime; uniform float uPower; varying vec2 vUv;
-      void main(){ float y = vUv.y; float flick = 0.85 + 0.15 * sin(uTime * 40.0 + y * 20.0);
-        vec3 core = vec3(1.0, 0.97, 0.85); vec3 edge = vec3(1.0, 0.45, 0.1);
-        vec3 col = mix(edge, core, smoothstep(0.2, 1.0, y));
-        float a = smoothstep(0.0, 0.5, y) * flick * uPower; gl_FragColor = vec4(col * 1.4, a); }`,
-    transparent: true,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending,
-    side: THREE.DoubleSide,
-  });
+  const mk = (core: boolean) =>
+    new THREE.ShaderMaterial({
+      uniforms: { uTime: { value: 0 }, uPower: { value: 1 } },
+      vertexShader: `uniform float uTime; varying vec2 vUv; void main(){ vUv = uv; vec3 p = position;
+        float w = 1.0 + 0.08 * sin(uTime * 55.0 + uv.y * 18.0) + 0.05 * sin(uTime * 31.0 + uv.x * 40.0);
+        p.xz *= w; gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0); }`,
+      fragmentShader: `uniform float uTime; uniform float uPower; varying vec2 vUv;
+        void main(){ float y = vUv.y; // 0 = mulut nosel, 1 = ujung api
+          float flick = 0.88 + 0.12 * sin(uTime * 47.0 + y * 25.0);
+          vec3 hot = vec3(1.0, 0.98, 0.88), mid = vec3(1.0, 0.72, 0.18), tail = vec3(0.95, 0.3, 0.06);
+          vec3 col = ${core ? "mix(hot, vec3(1.0,0.9,0.55), y)" : "mix(mix(hot, mid, smoothstep(0.0, 0.35, y)), tail, smoothstep(0.35, 1.0, y))"};
+          float a = (1.0 - smoothstep(${core ? "0.3, 0.9" : "0.45, 1.0"}, y)) * smoothstep(0.0, 0.04, y) * flick * uPower;
+          gl_FragColor = vec4(col, a * ${core ? "1.0" : "0.85"}); }`,
+      transparent: true,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    });
+  const outerMat = mk(false),
+    coreMat = mk(true);
   const g = new THREE.Group();
-  const outer = new THREE.Mesh(new THREE.ConeGeometry(radius, len, 24, 1, true), mat);
+  const outer = new THREE.Mesh(new THREE.ConeGeometry(radius, len, 28, 1, true), outerMat);
   outer.rotation.x = Math.PI; // ujung runcing ke bawah
   outer.position.y = -len / 2;
-  const inner = new THREE.Mesh(new THREE.ConeGeometry(radius * 0.5, len * 0.6, 16, 1, true), mat);
+  const inner = new THREE.Mesh(new THREE.ConeGeometry(radius * 0.55, len * 0.55, 20, 1, true), coreMat);
   inner.rotation.x = Math.PI;
-  inner.position.y = -len * 0.3;
-  g.add(outer, inner);
+  inner.position.y = -len * 0.275;
+  inner.renderOrder = 2;
+  // cahaya menyilaukan di mulut nosel
+  const glowTex = (() => {
+    const c = document.createElement("canvas");
+    c.width = c.height = 128;
+    const x = c.getContext("2d")!;
+    const r = x.createRadialGradient(64, 64, 0, 64, 64, 64);
+    r.addColorStop(0, "rgba(255,250,225,1)");
+    r.addColorStop(0.35, "rgba(255,190,80,.75)");
+    r.addColorStop(1, "rgba(255,120,30,0)");
+    x.fillStyle = r;
+    x.fillRect(0, 0, 128, 128);
+    return new THREE.CanvasTexture(c);
+  })();
+  const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, transparent: true, depthWrite: false }));
+  glow.scale.setScalar(radius * 5);
+  glow.position.y = -radius * 0.6;
+  const light = new THREE.PointLight(0xffa040, 30, 12, 1.6);
+  light.position.y = -len * 0.4;
+  g.add(outer, inner, glow, light);
+  // satu objek "mat" mengendalikan kedua material (waktu & kekuatan)
+  const uTime = { value: 0 };
+  outerMat.uniforms.uTime = coreMat.uniforms.uTime = uTime;
+  const mat = { uniforms: { uTime, uPower: outerMat.uniforms.uPower } };
+  coreMat.uniforms.uPower = outerMat.uniforms.uPower;
+  glow.onBeforeRender = () => {
+    light.intensity = 26 + Math.sin(uTime.value * 40) * 6;
+    glow.scale.setScalar(radius * (5 + Math.sin(uTime.value * 33) * 0.4));
+  };
   return { group: g, mat };
 }
 
@@ -172,7 +208,7 @@ function buildRocket() {
     engines.add(bell);
   }
   s1.add(tag(engines, "mesin"));
-  const f1 = flame(2.4, 0.3);
+  const f1 = flame(3.8, 0.34);
   f1.group.position.y = 0.12;
   s1.add(f1.group);
   tag(s1, "tahap-1");
@@ -186,7 +222,7 @@ function buildRocket() {
   const bell2 = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.16, 0.3, 16, 1, true), nozzleMaterial());
   bell2.position.y = 3.5;
   s2.add(body2, logo, bell2);
-  const f2 = flame(1.8, 0.2);
+  const f2 = flame(2.6, 0.22);
   f2.group.position.y = 3.35;
   s2.add(f2.group);
   tag(s2, "tahap-2");

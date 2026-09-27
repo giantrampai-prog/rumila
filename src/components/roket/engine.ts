@@ -47,6 +47,26 @@ const smooth = (a: number, b: number, x: number) => {
   return t * t * (3 - 2 * t);
 };
 
+/**
+ * Renderer memakai logarithmic depth buffer (Bumi sampai orbit dalam satu adegan). ShaderMaterial buatan
+ * sendiri harus ikut menulis kedalaman logaritmik — tanpa ini api roket, jejak asap, dan garis kecepatan
+ * selalu kalah uji kedalaman sehingga tidak tampak. Disuntikkan sekali ke semua ShaderMaterial di adegan.
+ */
+function withLogDepth(scene: THREE.Object3D) {
+  const done = new Set<THREE.Material>();
+  scene.traverse((o) => {
+    const mats = (o as THREE.Mesh).material;
+    for (const m of Array.isArray(mats) ? mats : mats ? [mats] : []) {
+      if (!(m instanceof THREE.ShaderMaterial) || done.has(m) || m.vertexShader.includes("logdepthbuf")) continue;
+      done.add(m);
+      const vEnd = m.vertexShader.lastIndexOf("}");
+      m.vertexShader = "#include <common>\n#include <logdepthbuf_pars_vertex>\n" + m.vertexShader.slice(0, vEnd) + "\n#include <logdepthbuf_vertex>\n}" + m.vertexShader.slice(vEnd + 1);
+      m.fragmentShader = "#include <logdepthbuf_pars_fragment>\n" + m.fragmentShader.replace(/void\s+main\s*\(\s*\)\s*\{/, (x) => x + "\n#include <logdepthbuf_fragment>\n");
+      m.needsUpdate = true;
+    }
+  });
+}
+
 const partFor = (i: number) => MISI_AUDIO.find((p) => i >= p.first && i < p.first + p.cues.length) ?? null;
 
 export class RocketEngine {
@@ -89,12 +109,15 @@ export class RocketEngine {
     host.appendChild(this.renderer.domElement);
     this.renderer.domElement.style.touchAction = "none";
     this.world = new RocketScene(low);
+    withLogDepth(this.world.scene);
     // Pantulan logam (kaca helm emas, panel, roket) dari lingkungan studio lembut.
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     this.env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
     pmrem.dispose();
     this.world.scene.environment = this.env;
     this.world.scene.environmentIntensity = 0.35;
+    withLogDepth(this.cabin.scene);
+    withLogDepth(this.cupola.scene);
     this.cabin.scene.environment = this.env;
     this.cabin.scene.environmentIntensity = 0.5;
     this.cupola.scene.environment = this.env;
@@ -298,12 +321,12 @@ export class RocketEngine {
         return;
       case "hitung-mundur": {
         const d = 10 - p * 2.5;
-        out.pos.set(d * 0.8, 1.2, d * 0.8);
+        out.pos.set(-d * 1.0, 1.2, d * 0.5); // sisi yang tidak tertutup menara & tiang penangkal petir
         out.look.set(0, 3.6, 0);
         return;
       }
       case "lepas-landas":
-        out.pos.set(9, Math.max(1.4, Y * 0.5 + 1.4), 9);
+        out.pos.set(-11, Math.max(1.6, Y * 0.5 + 1.6), 5.5);
         out.look.set(0, Y + 3, 0);
         return;
       case "gravitasi": {
