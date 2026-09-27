@@ -265,6 +265,16 @@ export interface BuahAudioPart {
 }
 
 /** Narasi tur buah: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
-export const TUR_BUAH_AUDIO: BuahAudioPart[] = [];
+export const TUR_BUAH_AUDIO: BuahAudioPart[] = [
+  {
+    // Suara "Charon" (SuaraKisah), 9:53. Waktu mulai tiap adegan dari timestamp per kata + jeda hening rekaman.
+    src: "/fruits/narasi/tur-kebun-01.m4a",
+    first: 0,
+    cues: [
+      0, 12.55, 19.27, 31.13, 41, 53.29, 64.67, 77, 88, 98.79, 110.47, 123, 133.03, 141.63, 154.91, 167.59, 179.43, 192.91, 199.57, 209.33, 217.93, 231.95, 237.79, 249.99, 264, 275, 286.79,
+      298.87, 307.77, 320.59, 332.65, 344.57, 357.61, 368, 382, 393, 404, 415, 428.31, 435.07, 446.65, 457, 466.65, 475.87, 486.35, 494.31, 504.53, 513.01, 524.65, 538, 552, 566.49, 578.13,
+    ],
+  },
+];
 
 export const buahDwell = (s: BuahStop) => Math.max(6, s.lines.join(" ").length / 14 + 1.5);
