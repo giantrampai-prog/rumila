@@ -267,12 +267,12 @@ export interface BuahAudioPart {
 /** Narasi tur buah: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
 export const TUR_BUAH_AUDIO: BuahAudioPart[] = [
   {
-    // Suara "Charon" (SuaraKisah), 9:53. Waktu mulai tiap adegan dari timestamp per kata + jeda hening rekaman.
+    // Suara "Charon" (SuaraKisah), 9:53. Batas adegan = jeda hening asli rekaman, diselaraskan ke batas kalimat (timestamp SuaraKisah bisa meleset ±1,7 dtk).
     src: "/fruits/narasi/tur-kebun-01.m4a",
     first: 0,
     cues: [
-      0, 12.55, 19.27, 31.13, 41, 53.29, 64.67, 77, 88, 98.79, 110.47, 123, 133.03, 141.63, 154.91, 167.59, 179.43, 192.91, 199.57, 209.33, 217.93, 231.95, 237.79, 249.99, 264, 275, 286.79,
-      298.87, 307.77, 320.59, 332.65, 344.57, 357.61, 368, 382, 393, 404, 415, 428.31, 435.07, 446.65, 457, 466.65, 475.87, 486.35, 494.31, 504.53, 513.01, 524.65, 538, 552, 566.49, 578.13,
+      0, 12.66, 19.37, 31.24, 42.68, 53.4, 64.78, 78.59, 89.07, 98.91, 110.57, 124.75, 135.85, 144.56, 154.75, 167.66, 179.5, 193.02, 199.68, 209.45, 218.05, 232.06, 237.87, 252.63, 265.2, 276.72, 286.91,
+      298.8, 307.89, 320.48, 332.49, 344.67, 357.72, 369.11, 383.21, 395.15, 405.69, 416.4, 428.42, 437.61, 446.76, 458.31, 466.61, 475.96, 486.47, 494.42, 504.65, 514.51, 524.76, 539.43, 553.43, 566.48, 580.01,
     ],
   },
 ];

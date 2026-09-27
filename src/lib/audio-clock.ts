@@ -10,3 +10,28 @@ export function followAudio(clock: number, audioTime: number, dt: number, runnin
   if (Math.abs(err) > 0.4) return audioTime;
   return next + err * Math.min(1, dt * 3);
 }
+
+/**
+ * Unduh rekaman sekali ke memori (blob URL) supaya lompat-posisi (seek) instan di HP — tanpa jeda
+ * "memuat" ±1–2 detik setiap kali pindah adegan. Sebelum selesai, pakai URL aslinya.
+ */
+const blobs = new Map<string, string>();
+const loading = new Map<string, Promise<string>>();
+export function preloadAudio(src: string): Promise<string> {
+  const done = blobs.get(src);
+  if (done) return Promise.resolve(done);
+  let p = loading.get(src);
+  if (!p) {
+    p = fetch(src)
+      .then((r) => (r.ok ? r.blob() : Promise.reject(r.status)))
+      .then((b) => {
+        const url = URL.createObjectURL(b);
+        blobs.set(src, url);
+        return url;
+      })
+      .catch(() => src);
+    loading.set(src, p);
+  }
+  return p;
+}
+export const audioUrl = (src: string) => blobs.get(src) ?? src;

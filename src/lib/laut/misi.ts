@@ -280,10 +280,10 @@ export interface LautAudioPart {
 /** Narasi tur: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
 export const TUR_LAUT_AUDIO: LautAudioPart[] = [
   {
-    // Suara "Sulafat" (SuaraKisah), 6:15. Waktu mulai tiap adegan dari timestamp per kata + jeda hening rekaman.
+    // Suara "Sulafat" (SuaraKisah), 6:15. Batas adegan = jeda hening asli rekaman, diselaraskan ke batas kalimat (timestamp SuaraKisah bisa meleset ±1,7 dtk).
     src: '/laut/voice/tur-01.m4a',
     first: 0,
-    cues: [0, 27.95, 43.25, 75, 100.73, 122.23, 141, 160, 181.59, 207, 234, 266.37, 288, 313.27, 334.91, 346.55],
+    cues: [0, 28.06, 43.08, 76.78, 103.75, 123.48, 142.7, 161.82, 181.7, 208.61, 235.66, 266.39, 289.19, 313.14, 334.87, 346.64],
   },
 ];
 

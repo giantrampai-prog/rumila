@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
-import { followAudio } from '@/lib/audio-clock';
+import { audioUrl, followAudio, preloadAudio } from '@/lib/audio-clock';
 import { sharedAudio } from '@/lib/audio-unlock';
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
@@ -52,7 +52,11 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
     const p = part(s.i);
     if (p) {
       const a = audio();
-      if (!a.src.endsWith(p.src)) a.src = p.src;
+      const url = audioUrl(p.src);
+      if (a.dataset.src !== url) {
+        a.src = url;
+        a.dataset.src = url;
+      }
       const seek = () => {
         a.currentTime = p.cues[s.i - p.first];
         if (r.current.playing) a.play().catch(() => {});
@@ -78,6 +82,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
   };
 
   useEffect(() => {
+    TUR_BUAH_AUDIO.forEach((p) => void preloadAudio(p.src));
     engine.setTour(true);
     go(0);
     let raf = 0,
