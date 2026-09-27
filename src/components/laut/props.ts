@@ -445,21 +445,59 @@ export function coral(kind: number, color: string, r: () => number) {
   return g;
 }
 
-/** Hamparan lamun (satu InstancedMesh helai, bergoyang di shader). */
+/** jumlah "pendorong" lamun: biota/penyelam/kamera + jejak geraknya (lihat engine.pushSeagrass) */
+export const SEAGRASS_PUSHERS = 16;
+
+/**
+ * Hamparan lamun (satu InstancedMesh helai, bergoyang di shader). Helai merespon benda yang lewat: tiap
+ * pendorong (xyz dunia, w = jari-jari) menyibakkan helai menjauh & sedikit merunduk, makin kuat makin dekat;
+ * helai yang ujungnya tidak sampai ke ketinggian benda tidak ikut tersibak. Jejak posisi lama dengan jari-jari
+ * mengecil membuat helai tegak kembali perlahan setelah benda lewat.
+ */
 export function seagrass(count: number, radius: number, uTime: { value: number }, seed = 3) {
   const r = rng(seed);
   const blade = new T.PlaneGeometry(0.07, 1.4, 1, 6);
   blade.translate(0, 0.5, 0);
+  const push = Array.from({ length: SEAGRASS_PUSHERS }, () => new T.Vector4(0, -9999, 0, 0));
   const m = new T.MeshStandardMaterial({ color: '#4f9a3a', roughness: 0.6, side: T.DoubleSide });
   m.onBeforeCompile = (s) => {
     s.uniforms.uTime = uTime;
-    s.vertexShader = s.vertexShader.replace('#include <common>', '#include <common>\nuniform float uTime;').replace(
-      '#include <begin_vertex>',
-      `#include <begin_vertex>
+    s.uniforms.uPush = { value: push };
+    s.vertexShader = s.vertexShader
+      .replace('#include <common>', `#include <common>\nuniform float uTime;\nuniform vec4 uPush[${SEAGRASS_PUSHERS}];`)
+      .replace(
+        '#include <begin_vertex>',
+        `#include <begin_vertex>
       float ph = instanceMatrix[3].x * 0.9 + instanceMatrix[3].z * 0.7;
       transformed.x += sin(uTime * 1.3 + ph) * position.y * position.y * 0.25;
       transformed.z += cos(uTime * 1.0 + ph) * position.y * position.y * 0.12;`,
-    );
+      )
+      .replace(
+        '#include <project_vertex>',
+        `vec4 mvPosition = instanceMatrix * vec4(transformed, 1.0);
+      vec4 wpos = modelMatrix * mvPosition;
+      vec3 root = (modelMatrix * instanceMatrix * vec4(0.0, -0.2, 0.0, 1.0)).xyz;
+      float topY = (modelMatrix * instanceMatrix * vec4(0.0, 1.2, 0.0, 1.0)).y;
+      float bend = clamp((position.y + 0.2) / 1.4, 0.0, 1.0);
+      bend *= bend;
+      vec3 shove = vec3(0.0);
+      for (int i = 0; i < ${SEAGRASS_PUSHERS}; i++) {
+        vec4 P = uPush[i];
+        if (P.w <= 0.0) continue;
+        vec2 d = root.xz - P.xz;
+        float dist = length(d);
+        float k = 1.0 - smoothstep(P.w * 0.25, P.w * 1.15, dist);
+        k *= smoothstep(P.y - P.w - 0.25, P.y - P.w * 0.2, topY); // ujung helai mencapai benda?
+        vec2 dir = dist > 0.0001 ? d / dist : vec2(1.0, 0.0);
+        shove.xz += dir * k * P.w * 0.95;
+        shove.y -= k * P.w * 0.45;
+      }
+      float sl = length(shove.xz);
+      if (sl > 1.1) shove *= 1.1 / sl;
+      wpos.xyz += shove * bend;
+      mvPosition = viewMatrix * wpos;
+      gl_Position = projectionMatrix * mvPosition;`,
+      );
   };
   const im = new T.InstancedMesh(blade, m, count);
   const d = new T.Object3D();
@@ -474,6 +512,8 @@ export function seagrass(count: number, radius: number, uTime: { value: number }
     im.setMatrixAt(i, d.matrix);
     im.setColorAt(i, c.setHSL(0.26 + r() * 0.06, 0.5, 0.3 + r() * 0.15));
   }
+  im.userData.push = push;
+  im.frustumCulled = false; // helai yang tersibak bisa keluar dari kotak batas awal
   return im;
 }
 

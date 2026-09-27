@@ -12,7 +12,7 @@ import { sharedAudio, unlockAudio } from '@/lib/audio-unlock';
 import { LoopMusic } from '@/lib/bgm';
 import { BIOTA, TUR_LAUT, TUR_LAUT_AUDIO, depthToY, lautDwell, yToDepth, type LautAudioPart, type LautSet } from '@/lib/laut/misi';
 import * as C from './creatures';
-import { blackSmoker, boat, coral, diver, rng, rock, seabed, seagrass, submersible } from './props';
+import { blackSmoker, boat, coral, diver, rng, rock, seabed, seagrass, SEAGRASS_PUSHERS, submersible } from './props';
 
 export type LautMode = 'jelajah' | 'tur';
 
@@ -109,6 +109,8 @@ export class LautEngine {
   private movers: Mover[] = [];
   private schools: { s: C.School; c: T.Vector3; r: number; sp: number; y: number }[] = [];
   private biota = new Map<string, T.Object3D>();
+  /** lamun yang merespon: benda-benda yang menyibakkan helai + jejak posisinya (untuk tegak kembali pelan) */
+  private grass: { push: T.Vector4[]; items: { obj: () => T.Object3D | null; r: number; trail: T.Vector3[] }[]; acc: number } | null = null;
 
   /* tur */
   private idx = 0;
@@ -385,13 +387,27 @@ export class LautEngine {
       for (let i = 0; i < 8; i++) this.place(rock(0.5 + r(), '#8f8676', r), x0 + (r() - 0.5) * 26, fy, (r() - 0.5) * 26);
       const sh = C.seahorse();
       this.biota.set('kuda-laut', this.place(sh, x0 - 1.5, fy + 0.9, 1.5, 1.6, 0.4));
-      this.place(C.seahorse(), x0 + 2.5, fy + 0.7, -1.8, 1.3, -0.6);
+      const sh2 = this.place(C.seahorse(), x0 + 2.5, fy + 0.7, -1.8, 1.3, -0.6);
       this.biota.set('ikan-kakatua', this.addMover(C.buildFish(C.SPECIES['ikan-kakatua']), new T.Vector3(x0, fy + 1.8, 0), 3.5, 0.4));
       const lion = C.buildFish(C.SPECIES.lionfish);
       this.biota.set('lionfish', this.addMover(lion, new T.Vector3(x0 + 3, fy + 1.4, 2), 0.6, 0.25, { bob: 0.1 }));
       const pari = C.ray(false);
       pari.scale.setScalar(1.4);
       this.biota.set('pari', this.addMover(pari, new T.Vector3(x0 - 1, fy + 0.35, -2), 3, 0.2, { bob: 0.05 }));
+      const B = (id: string) => () => this.biota.get(id) ?? null;
+      this.grass = {
+        push: sg.userData.push as T.Vector4[],
+        acc: 0,
+        items: [
+          { obj: B('pari'), r: 1.6, trail: [] },
+          { obj: B('ikan-kakatua'), r: 0.75, trail: [] },
+          { obj: B('lionfish'), r: 0.65, trail: [] },
+          { obj: () => (this.diver.visible ? this.diver : null), r: 0.95, trail: [] },
+          { obj: () => this.camera, r: 0.8, trail: [] },
+          { obj: B('kuda-laut'), r: 0.4, trail: [] },
+          { obj: () => sh2, r: 0.35, trail: [] },
+        ],
+      };
     }
 
     // --- dinding karang (±34 m) ---
@@ -725,6 +741,7 @@ export class LautEngine {
       s.s.update(t, s.y + (s.sp > 0 ? Math.PI / 2 : -Math.PI / 2));
     }
     for (const o of this.animated) o.userData.update?.(t, o.id * 0.37);
+    this.pushSeagrass(dt);
 
     if (mode === 'tur') this.stepTour(dt);
     else this.stepJelajah(dt);
@@ -738,6 +755,33 @@ export class LautEngine {
       if (d !== useLaut.getState().depth) useLaut.setState({ depth: d });
     }
   };
+
+  /** isi pendorong lamun: posisi sekarang + posisi ±0,5 dtk lalu (jari-jari mengecil) supaya helai tegak pelan */
+  private pushSeagrass(dt: number) {
+    const g = this.grass;
+    if (!g) return;
+    g.acc += dt;
+    const sample = g.acc >= 0.1;
+    if (sample) g.acc = 0;
+    let k = 0;
+    const tmp = new T.Vector3();
+    for (const it of g.items) {
+      const o = it.obj();
+      if (!o) {
+        it.trail.length = 0;
+        continue;
+      }
+      o.getWorldPosition(tmp);
+      if (sample) {
+        it.trail.unshift(tmp.clone());
+        if (it.trail.length > 6) it.trail.pop();
+      }
+      if (k < SEAGRASS_PUSHERS) g.push[k++].set(tmp.x, tmp.y, tmp.z, it.r);
+      const old = it.trail[5] ?? it.trail[it.trail.length - 1];
+      if (old && old.distanceToSquared(tmp) > 0.04 && k < SEAGRASS_PUSHERS) g.push[k++].set(old.x, old.y, old.z, it.r * 0.6);
+    }
+    while (k < SEAGRASS_PUSHERS) g.push[k++].set(0, -9999, 0, 0);
+  }
 
   private stepJelajah(dt: number) {
     this.diver.visible = false;
