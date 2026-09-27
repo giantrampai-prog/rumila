@@ -4,7 +4,9 @@
 
 export type Dir = 0 | 1 | 2 | 3; // 0 atas, 1 kanan, 2 bawah, 3 kiri
 export type Cmd = 'maju' | 'kiri' | 'kanan';
-export type Theme = 'kebun' | 'pantai' | 'salju' | 'gurun' | 'angkasa';
+/** 10 tema, satu per Level (10 soal coding per Level), urut dari yang termudah */
+export type Theme = 'kebun' | 'pantai' | 'hutan' | 'sawah' | 'kota' | 'salju' | 'gurun' | 'laut' | 'gunung' | 'bulan';
+export const THEME_ORDER: Theme[] = ['kebun', 'pantai', 'hutan', 'sawah', 'kota', 'salju', 'gurun', 'laut', 'gunung', 'bulan'];
 
 export interface Level {
   id: string;

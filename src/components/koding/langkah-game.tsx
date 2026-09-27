@@ -1,8 +1,8 @@
 'use client';
 
 // Coding Agam · Langkah — anak menyusun perintah (maju, belok kiri, belok kanan) supaya robot Agam sampai ke
-// bintang. 100 level untuk usia 3–8 tahun di 5 dunia (Kebun, Pantai, Salju, Gurun, Luar Angkasa), makin tinggi
-// makin sulit; selesai 100 level → sertifikat. Layar level: panggung diorama, strip program (ketuk blok untuk
+// bintang. Usia 3–8 tahun: 10 Level bertema (Kebun … Bulan) × 10 soal coding, makin tinggi makin sulit
+// (soal 10 tiap Level paling sulit); selesai semua → sertifikat. Layar level: panggung diorama, strip program (ketuk blok untuk
 // menambah, ketuk blok di program untuk menghapus, seret untuk mengubah urutan), Jalankan → Agam bergerak
 // langkah demi langkah dengan blok aktif menyala; menabrak → terguncang + nomor blok; tombol Bantuan menunjuk
 // blok berikutnya / blok yang salah. Bintang 1–3 (3 bila sehemat solusi terpendek). Progres per anak & Laporan.
@@ -16,13 +16,13 @@ import { sfx } from '@/lib/sfx';
 import { useMe } from '@/lib/store';
 import { completeTool, useToolSession } from '@/lib/tool-session';
 import { Certificate } from './certificate';
-import { AgamFront, Stage, THEMES, WORLD } from './stage';
+import { AgamFront, Stage, ThemeVignette, THEMES, WORLD } from './stage';
 import './koding.css';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const INK = '#23304a';
 const TOOL = 'koding-langkah';
-const PER_WORLD = 20;
+const PER_WORLD = 10;
 const TOTAL = LANGKAH.length;
 
 const BLOCK: Record<Cmd, { label: string; icon: string; c: string; d: string }> = {
@@ -278,6 +278,12 @@ export function LangkahGame() {
     if (level) resetAgam(level);
   };
 
+  // blok yang sedang dijalankan selalu terlihat di strip program (strip bisa digulir)
+  useEffect(() => {
+    if (active < 0) return;
+    document.querySelector(`[data-slot="${active}"]`)?.scrollIntoView({ block: 'nearest' });
+  }, [active]);
+
   /* ---------- peta level ---------- */
   const mapRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -311,8 +317,8 @@ export function LangkahGame() {
               {doneCount === 0
                 ? 'Halo, aku Agam! Aku cuma bisa bergerak kalau diberi perintah. Susun perintahnya supaya aku sampai di bintang.'
                 : allDone
-                  ? 'Hebat! Kamu sudah menyelesaikan 100 level. Ini sertifikatmu!'
-                  : `Ayo lanjut ke level ${current + 1}! Selesaikan 100 level untuk dapat sertifikat.`}
+                  ? 'Hebat! Kamu sudah menyelesaikan 10 level. Ini sertifikatmu!'
+                  : `Ayo lanjut ke Level ${Math.floor(current / PER_WORLD) + 1}, coding ${(current % PER_WORLD) + 1}! Selesaikan 10 level untuk dapat sertifikat.`}
             </div>
           </div>
 
@@ -332,7 +338,7 @@ export function LangkahGame() {
                 <span className="block h-full rounded-full bg-[#22b573] transition-[width] duration-700" style={{ width: `${(doneCount / TOTAL) * 100}%` }} />
               </span>
               <span className="mt-1 block text-[13px] font-bold opacity-70">
-                {doneCount} dari {TOTAL} level selesai
+                {doneCount} dari {TOTAL} coding selesai
               </span>
             </span>
           </button>
@@ -344,49 +350,52 @@ export function LangkahGame() {
               const worldOpen = unlocked(start);
               const W = WORLD[t];
               return (
-                <section key={t} className="rounded-[24px] p-4" style={{ background: W.bg, color: W.ink }}>
-                  <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-2">
-                    <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
-                      Dunia {w + 1}: {W.name}
-                    </h2>
-                    <span className="text-[13px] font-extrabold opacity-70">
-                      {worldOpen ? `Level ${start + 1}–${start + PER_WORLD}` : `Buka setelah level ${start}`}
-                    </span>
-                  </div>
-                  <div className="relative grid gap-x-2 gap-y-3" style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}>
-                    <Trail rows={PER_WORLD / COLS} />
-                    {Array.from({ length: PER_WORLD }, (_, k) => {
-                      const i = start + k;
-                      const l = LANGKAH[i];
-                      const { r, c } = cellOf(k);
-                      const open = unlocked(i);
-                      const st = prog.stars[l.id] ?? 0;
-                      const isCur = i === current && !allDone;
-                      return (
-                        <button
-                          key={l.id}
-                          data-current={isCur ? '1' : undefined}
-                          disabled={!open}
-                          onClick={() => openLevel(i)}
-                          className={`koding-node flex aspect-square flex-col items-center justify-center rounded-[18px] ${isCur ? 'koding-node-cur' : ''}`}
-                          style={{ gridRow: r + 1, gridColumn: c + 1, background: open ? '#fffaf0' : t === 'angkasa' ? '#2b2862' : 'rgba(255,255,255,.55)', color: open ? INK : W.ink }}
-                          aria-label={open ? `Level ${i + 1}, ${st} bintang` : `Level ${i + 1} terkunci`}
-                        >
-                          {open ? (
-                            <>
-                              <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1 }}>{i + 1}</span>
-                              <span className="mt-1 flex">
-                                {[1, 2, 3].map((q) => (
-                                  <Icon key={q} name="star" size={13} className={st >= q ? 'text-[#f2b705]' : 'text-[#d8d2c4]'} />
-                                ))}
-                              </span>
-                            </>
-                          ) : (
-                            <Icon name="lock" size={20} className="opacity-50" />
-                          )}
-                        </button>
-                      );
-                    })}
+                <section key={t} className="overflow-hidden rounded-[24px]" style={{ background: W.bg, color: W.ink }}>
+                  <ThemeVignette theme={t} />
+                  <div className="p-4 pt-3">
+                    <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-2">
+                      <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}>
+                        Level {w + 1} · {W.name}
+                      </h2>
+                      <span className="text-[13px] font-extrabold opacity-70">
+                        {worldOpen ? `${PER_WORLD} coding` : `Buka setelah Level ${w}`}
+                      </span>
+                    </div>
+                    <div className="relative grid gap-x-2 gap-y-3" style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}>
+                      <Trail rows={PER_WORLD / COLS} />
+                      {Array.from({ length: PER_WORLD }, (_, k) => {
+                        const i = start + k;
+                        const l = LANGKAH[i];
+                        const { r, c } = cellOf(k);
+                        const open = unlocked(i);
+                        const st = prog.stars[l.id] ?? 0;
+                        const isCur = i === current && !allDone;
+                        return (
+                          <button
+                            key={l.id}
+                            data-current={isCur ? '1' : undefined}
+                            disabled={!open}
+                            onClick={() => openLevel(i)}
+                            className={`koding-node flex aspect-square flex-col items-center justify-center rounded-[18px] ${isCur ? 'koding-node-cur' : ''}`}
+                            style={{ gridRow: r + 1, gridColumn: c + 1, background: open ? '#fffaf0' : W.dark ? 'rgba(255,255,255,.1)' : 'rgba(255,255,255,.55)', color: open ? INK : W.ink }}
+                            aria-label={open ? `Level ${w + 1} coding ${k + 1}, ${st} bintang` : `Level ${w + 1} coding ${k + 1} terkunci`}
+                          >
+                            {open ? (
+                              <>
+                                <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1 }}>{k + 1}</span>
+                                <span className="mt-1 flex">
+                                  {[1, 2, 3].map((q) => (
+                                    <Icon key={q} name="star" size={13} className={st >= q ? 'text-[#f2b705]' : 'text-[#d8d2c4]'} />
+                                  ))}
+                                </span>
+                              </>
+                            ) : (
+                              <Icon name="lock" size={20} className="opacity-50" />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </section>
               );
@@ -399,7 +408,10 @@ export function LangkahGame() {
 
   /* ---------- layar level ---------- */
   const W = WORLD[level.theme];
-  const dark = level.theme === 'angkasa';
+  const dark = !!W.dark;
+  const lvNo = Math.floor(li! / PER_WORLD) + 1,
+    codeNo = (li! % PER_WORLD) + 1;
+  const worldEnd = codeNo === PER_WORLD;
   const pulseFirst = li! < 3 && code.length === 0 && !running;
   return (
     <div className="fixed inset-0 flex flex-col overflow-hidden landscape:flex-row" style={{ background: W.bg, color: INK, paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
@@ -409,7 +421,7 @@ export function LangkahGame() {
             <Icon name="arrow_back" size={24} />
           </button>
           <div className="koding-round min-w-0 truncate rounded-full px-4 py-2 font-extrabold" style={{ fontFamily: BALOO, fontSize: 17 }}>
-            Level {li! + 1} · {W.name}
+            Level {lvNo} · {W.name} · coding {codeNo}
           </div>
           <button onClick={help} disabled={running} aria-label="Bantuan" className={`koding-round ml-auto flex size-11 shrink-0 items-center justify-center rounded-full active:translate-y-0.5 disabled:opacity-50 ${fails >= 2 && !tipCmd && tipBad === null ? 'koding-pulse' : ''}`}>
             <Icon name="lightbulb" size={24} className="text-[#e0a100]" />
@@ -432,7 +444,7 @@ export function LangkahGame() {
         <div className="text-[13px] font-extrabold" style={{ color: dark ? '#e7e4ff' : INK, opacity: 0.75 }}>
           Program Agam · {code.length} blok
         </div>
-        <div className={`koding-rail ${dark ? 'koding-rail-dark' : ''} flex min-h-[64px] flex-wrap content-start gap-1.5 rounded-[18px] p-2`} onPointerMove={onBlockMove} onPointerUp={onBlockUp} onPointerCancel={onBlockUp}>
+        <div className={`koding-rail ${dark ? 'koding-rail-dark' : ''} flex flex-wrap content-start gap-1.5 rounded-[18px] p-2`} onPointerMove={onBlockMove} onPointerUp={onBlockUp} onPointerCancel={onBlockUp}>
           {code.length === 0 && <span className="self-center px-2 text-[14px] font-bold opacity-60">Ketuk blok di bawah untuk menyusun perintah</span>}
           {code.map((c, i) => (
             <button
@@ -480,18 +492,28 @@ export function LangkahGame() {
 
       {win !== null && (
         <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/40 p-4">
-          <div className="koding-win w-full max-w-[380px] rounded-[26px] bg-[#fffaf0] p-5 text-center" style={{ color: INK }}>
+          {win === 3 && (
+            <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+              {Array.from({ length: 28 }, (_, k) => (
+                <span key={k} className="koding-confetti" style={{ left: `${(k * 37) % 100}%`, background: ['#ffd23f', '#22b573', '#3a86ff', '#ff5a6e', '#8b5cf6'][k % 5], animationDelay: `${(k % 7) * 0.12}s`, animationDuration: `${1.6 + (k % 5) * 0.25}s` }} />
+              ))}
+            </div>
+          )}
+          <div className="koding-win relative w-full max-w-[380px] rounded-[26px] bg-[#fffaf0] p-5 text-center" style={{ color: INK }}>
             <div className="flex justify-center gap-1">
               {[1, 2, 3].map((k) => (
                 <Icon key={k} name="star" size={54} className={`${win >= k ? 'text-[#f2b705]' : 'text-[#e2dccd]'} koding-star`} style={{ animationDelay: `${k * 0.15}s` }} />
               ))}
             </div>
             <div className="mt-1" style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 900 }}>
-              {allDone && li === TOTAL - 1 ? '100 level selesai!' : 'Agam sampai!'}
+              {allDone && li === TOTAL - 1 ? '10 level selesai!' : worldEnd ? `Level ${lvNo} selesai!` : 'Agam sampai!'}
             </div>
             <p className="text-[15px] font-bold opacity-75">
               {win === 3 ? `Hebat! Cuma ${code.length} blok, paling hemat.` : `Pakai ${code.length} blok. Bisa lebih hemat untuk 3 bintang?`}
             </p>
+            {worldEnd && li! < TOTAL - 1 && (
+              <p className="mt-2 rounded-[14px] bg-[#e8f7ee] px-3 py-2 text-[14px] font-extrabold text-[#16804f]">Level {lvNo + 1} · {WORLD[LANGKAH[li! + 1].theme].name} sekarang terbuka!</p>
+            )}
             <div className="mt-4 flex gap-2">
               <button onClick={() => (setWin(null), resetAgam(level))} className="flex-1 rounded-[16px] bg-[#efe7d6] py-3 font-extrabold active:translate-y-0.5">
                 Coba lagi
@@ -502,7 +524,7 @@ export function LangkahGame() {
                 </button>
               ) : li! < TOTAL - 1 ? (
                 <button onClick={() => openLevel(li! + 1)} className="flex-1 rounded-[16px] bg-[#22b573] py-3 font-extrabold text-white shadow-[0_4px_0_#16804f] active:translate-y-0.5">
-                  Level berikutnya
+                  {worldEnd ? `Ke Level ${lvNo + 1}` : 'Coding berikutnya'}
                 </button>
               ) : (
                 <button onClick={() => (setWin(null), setLi(null))} className="flex-1 rounded-[16px] bg-[#22b573] py-3 font-extrabold text-white shadow-[0_4px_0_#16804f] active:translate-y-0.5">

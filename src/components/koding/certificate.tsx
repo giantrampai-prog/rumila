@@ -1,6 +1,6 @@
 'use client';
 
-// Sertifikat Coding Agam · Langkah — muncul setelah 100 level selesai. Digambar sebagai SVG (huruf sistem saja,
+// Sertifikat Coding Agam · Langkah — muncul setelah 10 level (100 coding) selesai. Digambar sebagai SVG (huruf sistem saja,
 // supaya hasil simpan gambar sama dengan yang tampil) dan bisa disimpan sebagai PNG atau dibagikan.
 
 import { useRef, useState } from 'react';
@@ -69,7 +69,7 @@ function CertSvg({ name, stars, date }: { name: string; stars: number; date: str
       </text>
       <line x1="300" y1={370 + nameSize} x2="900" y2={370 + nameSize} stroke="#e2a92b" strokeWidth="3" />
       <text x="600" y={425 + nameSize} textAnchor="middle" fontFamily={SANS} fontSize="27" fill="#3b4558">
-        karena telah menyelesaikan 100 level Langkah
+        karena telah menyelesaikan 10 level (100 coding) Langkah
       </text>
       <text x="600" y={463 + nameSize} textAnchor="middle" fontFamily={SANS} fontSize="27" fill="#3b4558">
         dan menyusun perintah seperti seorang programmer hebat.
@@ -94,8 +94,8 @@ function CertSvg({ name, stars, date }: { name: string; stars: number; date: str
         <path d="M-34 30 L-48 92 L-20 76 L-6 100 L4 40 Z M34 30 L48 92 L20 76 L6 100 L-4 40 Z" fill="#d9534f" />
         <circle r="62" fill="url(#cg-gold)" stroke="#b07d12" strokeWidth="4" />
         <circle r="50" fill="none" stroke="#fff6d6" strokeWidth="3" strokeDasharray="4 6" />
-        <text y="14" textAnchor="middle" fontFamily={SERIF} fontSize="44" fontWeight="700" fill="#7a5410">
-          100
+        <text y="16" textAnchor="middle" fontFamily={SERIF} fontSize="52" fontWeight="700" fill="#7a5410">
+          10
         </text>
         <text y="38" textAnchor="middle" fontFamily={SANS} fontSize="13" fontWeight="700" fill="#7a5410" letterSpacing="2">
           LEVEL
