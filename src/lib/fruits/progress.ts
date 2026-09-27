@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { useRumila } from "@/lib/store";
 
 export const TOOL_ID = "edukasi-buah";
-export const PERM = "edukasi" as const;
+export const PERM = "angkasa" as const; // Kebun Buah ada di dunia Petualangan 3D
 
 /** Waktu dihitung hanya saat tab terlihat, fokus, dan ada input dalam 60 detik terakhir. */
 export function useFruitSession(memberId: string) {

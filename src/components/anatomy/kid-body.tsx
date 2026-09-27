@@ -155,7 +155,7 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
   const back = () => {
     if (state.isolation) return dispatch({ type: 'back' });
     if (selected) return dispatch({ type: 'patch', patch: { selectedId: null } });
-    router.push('/beranda/edukasi');
+    router.push('/beranda/angkasa');
   };
   const busy = !!state.isolation || !!selected;
 

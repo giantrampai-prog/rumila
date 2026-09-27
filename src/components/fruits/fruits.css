@@ -21,3 +21,13 @@
 .fruit-kid .fruit-canvas{position:absolute;inset:0;height:100%}
 .fruit-kid .fruit-canvas canvas{display:block;width:100%!important;height:100%!important;touch-action:none}
 @media(max-width:699px){.fruit-kid .fruit-stage{bottom:240px}}
+
+/* Kebun Buah mode jelajah */
+@keyframes garden-pop{0%{transform:translateY(40px) scale(.9);opacity:0}100%{transform:none;opacity:1}}
+.garden-pop{animation:garden-pop .28s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes garden-new{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.garden-new{animation:garden-new 1.2s ease-in-out infinite}
+@keyframes garden-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.garden-bob{animation:garden-bob 1.4s ease-in-out infinite}
+@keyframes garden-confetti{0%{transform:translateY(-20px) rotate(0);opacity:1}100%{transform:translateY(100dvh) rotate(720deg);opacity:.2}}
+.garden-confetti{animation:garden-confetti 1.8s ease-in forwards}

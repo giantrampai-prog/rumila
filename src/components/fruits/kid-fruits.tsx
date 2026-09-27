@@ -1,12 +1,11 @@
 'use client';
 
-// Kebun Buah versi anak: katalog ringkas (tombol kelompok + kartu buah kecil) dan detail 3D penuh layar
+// Kebun Buah versi anak: kebun 3D untuk dijelajahi (garden/), katalog ringkas (tombol kelompok + kartu buah kecil) dan detail 3D penuh layar
 // dengan kartu singkat (nama, satu kalimat, ciri-ciri bergambar), panah ganti buah, dan tombol Dengar
 // bila rekaman buah tersedia. Data, model 3D, dan progres sama dengan tampilan lengkap.
 
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
@@ -20,6 +19,7 @@ import { useMe } from '@/lib/store';
 import './fruits.css';
 
 const Viewer = dynamic(() => import('./fruit-viewer'), { ssr: false, loading: () => <div className="absolute inset-0" /> });
+const Garden = dynamic(() => import('./garden/kid-garden'), { ssr: false, loading: () => <div className="fixed inset-0 bg-[#bfe6ff]" /> });
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const INK = '#2b1d4e';
@@ -37,15 +37,14 @@ function useFruitAudio(id: string | null) {
   return id ? tracks[id] : undefined;
 }
 
-function Catalog({ onOpen, onTour }: { onOpen: (id: string) => void; onTour: () => void }) {
-  const router = useRouter();
+function Catalog({ onOpen, onTour, onBack }: { onOpen: (id: string) => void; onTour: () => void; onBack: () => void }) {
   const [group, setGroup] = useState('all');
   const list = useMemo(() => FRUITS.filter((f) => group === 'all' || f.group === group), [group]);
   return (
     <div className="theme-play bg-dots min-h-dvh" style={{ fontFamily: 'var(--ff-nunito), system-ui, sans-serif' }}>
       <div className="mx-auto flex max-w-[1080px] flex-col gap-4 px-4 pb-10 sm:px-6" style={{ paddingTop: 'max(16px, env(safe-area-inset-top))' }}>
         <header className="flex items-center gap-3">
-          <RoundBtn icon="arrow_back" label="Kembali" onClick={() => router.push('/beranda/edukasi')} />
+          <RoundBtn icon="arrow_back" label="Kembali ke kebun" onClick={onBack} />
           <h1 style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK, lineHeight: 1 }}>Kebun Buah</h1>
           <span className="ml-auto" />
           <RoundBtn icon="play_circle" label="Tur" tone="orange" onClick={onTour} />
@@ -113,7 +112,7 @@ function Detail({ fruit, onBack, onOpen }: { fruit: Fruit; onBack: () => void; o
       <Viewer fruit={fruit} />
       <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-3 sm:p-5" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))', paddingBottom: 'max(12px, env(safe-area-inset-bottom))' }}>
         <div className="flex items-start justify-between gap-2">
-          <RoundBtn icon="grid_view" label="Semua buah" onClick={onBack} />
+          <RoundBtn icon="park" label="Kembali ke kebun" onClick={onBack} />
           <RoundBtn icon="shuffle" label="Pilihkan" tone="orange" onClick={() => go(1 + Math.floor(Math.random() * (FRUITS.length - 1)))} />
         </div>
         <div className="pointer-events-auto mx-auto flex w-full max-w-[640px] items-center gap-2 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(43,29,78,.12)] sm:gap-3 sm:p-4">
@@ -286,6 +285,7 @@ export default function KidFruits() {
   useFruitSession(me.id);
   const [selected, setSelected] = useState<string | null>(null);
   const [tour, setTour] = useState(false);
+  const [catalog, setCatalog] = useState(false);
   const fruit = selected ? FRUIT_BY_ID.get(selected) : undefined;
 
   // ?buah=id di alamat: tombol kembali browser/HP menutup detail.
@@ -317,16 +317,20 @@ export default function KidFruits() {
     }
   };
 
-  if (tour) return <Tour onClose={() => setTour(false)} />;
-  return fruit ? (
-    <Detail fruit={fruit} onBack={back} onOpen={open} />
-  ) : (
-    <Catalog
-      onOpen={open}
-      onTour={() => {
-        unlockAudio(); // dari ketukan tombol: buka kunci audio iPad/iPhone
-        setTour(true);
-      }}
-    />
+  const startTour = () => {
+    unlockAudio(); // dari ketukan tombol: buka kunci audio iPad/iPhone
+    setTour(true);
+  };
+  const view = tour ? 'tur' : fruit ? 'detail' : catalog ? 'katalog' : 'kebun';
+  return (
+    <>
+      {/* kebun tetap terpasang (posisi & dunia 3D tidak dibangun ulang), hanya disembunyikan */}
+      <div className={view === 'kebun' ? undefined : 'hidden'}>
+        <Garden active={view === 'kebun'} onOpen3D={open} onCatalog={() => setCatalog(true)} onTour={startTour} />
+      </div>
+      {view === 'tur' && <Tour onClose={() => setTour(false)} />}
+      {view === 'detail' && fruit && <Detail fruit={fruit} onBack={back} onOpen={open} />}
+      {view === 'katalog' && <Catalog onOpen={open} onTour={startTour} onBack={() => setCatalog(false)} />}
+    </>
   );
 }

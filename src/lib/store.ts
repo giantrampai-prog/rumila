@@ -149,7 +149,7 @@ export const useRumila = create<State>()(
       },
       beginAnatomySession: (memberId) => {
         const s = get(), member = s.members.find(m => m.id === memberId);
-        if (!s.signedIn || s.meId !== memberId || !can(member, "edukasi")) return null;
+        if (!s.signedIn || s.meId !== memberId || !can(member, "angkasa")) return null;
         const id = uuid();
         set(s => ({ activity: [...s.activity, { id, memberId, toolId: "edukasi6", at: Date.now(), durationSec: 0, event: "session" }] }));
         return id;
@@ -161,7 +161,7 @@ export const useRumila = create<State>()(
       },
       completeAnatomy: (memberId, partId, exercise = false) => {
         const s = get(), member = s.members.find(m => m.id === memberId);
-        if (!s.signedIn || s.meId !== memberId || !can(member, "edukasi")) return;
+        if (!s.signedIn || s.meId !== memberId || !can(member, "angkasa")) return;
         const event = exercise ? "exercise_complete" as const : "material_complete" as const;
         if (s.activity.some(a => a.memberId === memberId && a.toolId === "edukasi6" && a.event === event && a.partId === partId)) return;
         set(s => ({ activity: [...s.activity, { id: uuid(), memberId, toolId: "edukasi6", at: Date.now(), durationSec: 0, event, partId }] }));
