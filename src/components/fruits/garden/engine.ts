@@ -11,7 +11,7 @@ import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
 import * as TX from './textures';
-import { BED_POS, Farm, NPC_POS, type BedView } from './farm3d';
+import { BED_POS, Farm, NPC_POS, type BedView, type PlantMats } from './farm3d';
 import { sfx } from '@/lib/sfx';
 
 export interface GardenCallbacks {
@@ -163,6 +163,7 @@ export class GardenEngine {
   private thumbTex = new Map<string, T.Texture>();
   private hanger: FruitHanger;
   private farm!: Farm;
+  private plantMats!: PlantMats;
   private exTex = exclaimTex();
   private buildQueue: Marker[] = [];
 
@@ -223,7 +224,7 @@ export class GardenEngine {
     this.buildDecor();
     this.buildPlayer();
     // permainan: bedengan Kebun Saya & Pak Tani
-    this.farm = new Farm(this.qTex);
+    this.farm = new Farm(this.qTex, this.plantMats);
     this.scene.add(this.farm.group);
     BED_POS.forEach(([x, z]) => this.obstacles.push({ x, z, r: 1.35 }));
     this.obstacles.push({ x: NPC_POS[0], z: NPC_POS[1], r: 0.55 });
@@ -463,6 +464,8 @@ export class GardenEngine {
     const barkMesh = kit.bark.build(swayMaterial(this.uTime, { map: this.keep(TX.bark()), roughness: 0.95 }));
     const leafMesh = kit.leaf.build(swayMaterial(this.uTime, { map: this.keep(TX.foliageAtlas()), alphaTest: 0.5, side: T.DoubleSide, roughness: 0.8 }, true));
     const plainMesh = kit.plain.build(swayMaterial(this.uTime, { roughness: 0.75 }));
+    // material yang sama dipakai tanaman di bedengan Kebun Saya (ikut bergoyang tertiup angin)
+    this.plantMats = { bark: barkMesh.material as T.Material, leaf: leafMesh.material as T.Material, plain: plainMesh.material as T.Material };
     for (const m of [barkMesh, leafMesh, plainMesh]) {
       m.castShadow = m.receiveShadow = true;
       this.scene.add(m);

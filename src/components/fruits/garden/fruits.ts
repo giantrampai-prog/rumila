@@ -57,7 +57,7 @@ export function fruitSize(f: Fruit): number {
 }
 
 /** Cara buah menempel: menggantung (ujung atas di titik), tergeletak (dasar di titik), atau tepat di tengah. */
-const anchorFor = (kind: PlantKind, f: Fruit): 'hang' | 'ground' | 'center' =>
+export const anchorFor = (kind: PlantKind, f: Fruit): 'hang' | 'ground' | 'center' =>
   kind === 'vine' || kind === 'pineapple' || kind === 'spiky' ? 'ground' : kind === 'banana' || kind === 'trunk' || f.shape === 'coconut' ? 'center' : 'hang';
 
 export class FruitHanger {

@@ -5,8 +5,22 @@
 import * as T from 'three';
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { BED_COUNT } from '@/lib/fruits/farm';
+import { plantKind, type PlantKind } from '@/lib/fruits/garden';
 import { createFruitModel } from '@/lib/fruits/models';
-import { fruitSize } from './fruits';
+import { Merge, buildPlant, type Kit } from './build';
+import { anchorFor, fruitSize } from './fruits';
+
+export interface PlantMats {
+  bark: T.Material;
+  leaf: T.Material;
+  plain: T.Material;
+}
+
+const LOW = new Set<PlantKind>(['vine', 'pineapple', 'bush']);
+/** Skala tanaman asli (seperti di kebun) per tahap: 2 tanaman muda, 3 berbunga, 4 berbuah. */
+const SCALE_TALL = [0, 0, 0.3, 0.46, 0.58];
+const SCALE_LOW = [0, 0, 0.55, 0.8, 0.95];
+const seedOf = (id: string) => [...id].reduce((a, c) => a * 31 + c.charCodeAt(0), 7) % 9973;
 
 export const BED_POS: [number, number][] = Array.from({ length: BED_COUNT }, (_, i) => [7.5 + (i % 3) * 3.6, 8.6 + Math.floor(i / 3) * 3.8]);
 export const NPC_POS: [number, number] = [3.1, -3.0];
@@ -162,7 +176,7 @@ export class Farm {
   group = new T.Group();
   npc: T.Group;
   private npcBubble: T.Sprite;
-  private slots: { root: T.Group; plant: T.Group; status: { c: HTMLCanvasElement; g: CanvasRenderingContext2D; t: T.CanvasTexture }; sprite: T.Sprite; key: string; bees: T.Group[] }[] = [];
+  private slots: { root: T.Group; plant: T.Group; status: { c: HTMLCanvasElement; g: CanvasRenderingContext2D; t: T.CanvasTexture }; sprite: T.Sprite; key: string; bees: T.Group[]; top: number }[] = [];
   private fruitProto = new Map<string, T.Object3D>();
   private drops: { p: T.Points; t: number; x: number; z: number }[] = [];
   private beeMat = std('#ffcc1a', 0.5);
@@ -170,7 +184,10 @@ export class Farm {
   private leaf2 = std('#66b24a', 0.7);
   private stem = std('#5f8a3a', 0.7);
 
-  constructor(qTex: T.Texture) {
+  constructor(
+    qTex: T.Texture,
+    private mats: PlantMats,
+  ) {
     const wood = std('#8a5a34', 0.9),
       soil = std('#5c3a22', 1);
     BED_POS.forEach(([x, z]) => {
@@ -207,7 +224,7 @@ export class Farm {
       sprite.renderOrder = 5;
       root.add(sprite);
       this.group.add(root);
-      this.slots.push({ root, plant, status, sprite, key: '', bees: [] });
+      this.slots.push({ root, plant, status, sprite, key: '', bees: [], top: 1 });
       drawStatus(status.g, null);
       status.t.needsUpdate = true;
     });
@@ -281,14 +298,18 @@ export class Farm {
       const key = `${v.fruit}:${v.stage}`;
       if (key !== s.key) {
         s.key = key;
+        // geometri tanaman milik bedengan ini dibuang; model buah & material dipakai bersama
+        s.plant.traverse((o) => (o.userData.own ? (o as T.Mesh).geometry.dispose() : null));
         s.plant.clear();
+        s.plant.rotation.set(0, 0, 0);
+        s.plant.userData.bend = 0;
         s.bees.forEach((b) => s.root.remove(b));
         s.bees = [];
         if (v.fruit) this.buildStage(s.plant, v.fruit, v.stage, s);
       }
       drawStatus(s.status.g, v);
       s.status.t.needsUpdate = true;
-      s.sprite.position.y = v.fruit ? [1.1, 1.3, 1.9, 2.5, 2.8][v.stage] : 1.4;
+      s.sprite.position.y = v.fruit ? (v.stage < 2 ? [1.1, 1.3][v.stage] : s.top + 0.75) : 1.4;
     });
   }
 
@@ -306,31 +327,48 @@ export class Farm {
       seed.scale.set(1, 0.7, 1.3);
       return;
     }
-    const h = [0, 0.35, 0.7, 1.0, 1.1][stage];
-    const stem = add(new T.Mesh(new T.CylinderGeometry(0.03 + stage * 0.012, 0.05 + stage * 0.015, h, 8), this.stem));
-    stem.position.y = h / 2;
     if (stage === 1) {
+      const h = 0.35;
+      const stem = add(new T.Mesh(new T.CylinderGeometry(0.042, 0.065, h, 8), this.stem));
+      stem.position.y = h / 2;
       for (const s of [-1, 1]) {
         const l = add(new T.Mesh(new T.SphereGeometry(0.16, 12, 8), this.leaf2));
         l.scale.set(1, 0.18, 0.55);
         l.position.set(s * 0.14, h, 0);
         l.rotation.z = s * 0.4;
       }
+      g.userData.bend = 0.12;
       return;
     }
-    const R = [0, 0, 0.45, 0.7, 0.78][stage];
-    for (let k = 0; k < 5; k++) {
-      const a = (k / 5) * Math.PI * 2;
-      const b = add(new T.Mesh(new T.IcosahedronGeometry(R * (k === 0 ? 1 : 0.7), 2), k % 2 ? this.leaf : this.leaf2));
-      b.position.set(k === 0 ? 0 : Math.cos(a) * R * 0.7, h + R * 0.55 + (k === 0 ? 0.1 : 0), k === 0 ? 0 : Math.sin(a) * R * 0.7);
+    // tahap 2–4: tanaman ASLI sesuai jenis buah (sama seperti di kebun), makin besar tiap tahap
+    const f = FRUIT_BY_ID.get(fruitId)!;
+    const kind = plantKind(f);
+    const sc = (LOW.has(kind) ? SCALE_LOW : SCALE_TALL)[stage];
+    const kit: Kit = { bark: new Merge(), leaf: new Merge(), plain: new Merge() };
+    const res = buildPlant(kit, { fruit: f, kind, zone: f.group, x: 0, z: 0, reach: 1 }, seedOf(fruitId), false);
+    const plant = new T.Group();
+    plant.scale.setScalar(sc);
+    for (const [m, mt] of [
+      [kit.bark, this.mats.bark],
+      [kit.leaf, this.mats.leaf],
+      [kit.plain, this.mats.plain],
+    ] as const) {
+      if (m.empty) continue;
+      const mesh = m.build(mt);
+      mesh.castShadow = true;
+      mesh.userData.own = true;
+      plant.add(mesh);
     }
+    g.add(plant);
+    slot.top = res.top * sc;
+    g.userData.bend = LOW.has(kind) ? 0.05 : 0.035;
+    const spots = res.spots.slice(0, stage === 4 ? 7 : 9);
     if (stage === 3) {
-      // bunga putih-merah muda + lebah
+      // bunga di tempat buah nanti tumbuh + lebah
       const petal = std('#ffffff', 0.5),
         mid = std('#ffd23f', 0.5),
         pink = std('#ffb3cf', 0.5);
-      for (let k = 0; k < 9; k++) {
-        const a = k * 2.4;
+      spots.forEach((sp, k) => {
         const fl = new T.Group();
         for (let p = 0; p < 5; p++) {
           const pe = new T.Mesh(new T.SphereGeometry(0.06, 8, 6), k % 3 ? petal : pink);
@@ -339,10 +377,11 @@ export class Farm {
           fl.add(pe);
         }
         fl.add(new T.Mesh(new T.SphereGeometry(0.035, 8, 6), mid));
-        fl.position.set(Math.cos(a) * R * 0.95, h + R * (0.3 + (k % 3) * 0.3), Math.sin(a) * R * 0.95);
-        fl.lookAt(fl.position.clone().multiplyScalar(2).setY(fl.position.y + 1));
+        fl.position.copy(sp.p).multiplyScalar(sc);
+        fl.scale.setScalar(1.3);
         g.add(fl);
-      }
+      });
+      const R = Math.max(0.5, slot.top * 0.35);
       for (let k = 0; k < 2; k++) {
         const bee = new T.Group();
         const body = new T.Mesh(new T.SphereGeometry(0.06, 10, 8), this.beeMat);
@@ -358,27 +397,28 @@ export class Farm {
           wings.push(w);
         }
         bee.add(body, stripe);
-        bee.userData = { wings, ph: k * Math.PI, r: R + 0.25, h: h + R * 0.7 };
+        bee.userData = { wings, ph: k * Math.PI, r: R + 0.3, h: slot.top * 0.7 + 0.2 };
         slot.root.add(bee);
         slot.bees.push(bee);
       }
     }
     if (stage === 4) {
+      // buah asli menggantung/tergeletak di titik buah tanaman itu (dibesarkan sedikit agar jelas di bedengan)
       const p = this.proto(fruitId);
-      const k = p.userData.k as number;
       const box = new T.Box3().setFromObject(p);
-      const big = k * 2.6 >= 0.4; // buah besar (semangka, melon, pepaya, nangka…) tergeletak di tanah
-      const n = big ? 2 : 5;
-      for (let j = 0; j < n; j++) {
-        const a = (j / n) * Math.PI * 2 + 0.6;
+      const anchor = anchorFor(kind, f);
+      const shiftY = anchor === 'hang' ? -box.max.y : anchor === 'ground' ? -box.min.y : 0;
+      const k = (fruitSize(f) / 2.6) * 1.35;
+      for (const sp of spots) {
+        const pivot = new T.Group();
+        pivot.position.copy(sp.p);
+        pivot.quaternion.copy(sp.q);
+        pivot.scale.setScalar(k * (sp.s ?? 1));
         const c = p.clone();
-        c.scale.setScalar(k);
-        const rr = big ? R * 1.05 + 0.1 : R * 0.98;
-        const y = big ? -box.min.y * k : h + R * (0.25 + (j % 2) * 0.25) - box.max.y * k;
-        c.position.set(Math.cos(a) * rr, y, Math.sin(a) * rr);
-        c.rotation.y = a;
+        c.position.y = shiftY;
         c.traverse((o) => ((o as T.Mesh).isMesh ? (o.castShadow = true) : null));
-        g.add(c);
+        pivot.add(c);
+        plant.add(pivot);
       }
     }
   }
@@ -402,6 +442,12 @@ export class Farm {
   }
 
   update(t: number, dt: number) {
+    // seluruh tanaman di bedengan bergoyang pelan tertiup angin (daunnya juga bergoyang lewat material)
+    this.slots.forEach((s, i) => {
+      const b = (s.plant.userData.bend as number) ?? 0;
+      s.plant.rotation.z = Math.sin(t * 1.3 + i * 1.7) * b;
+      s.plant.rotation.x = Math.cos(t * 1.05 + i * 2.3) * b * 0.6;
+    });
     for (const s of this.slots)
       for (const b of s.bees) {
         const u = b.userData as { wings: T.Mesh[]; ph: number; r: number; h: number };

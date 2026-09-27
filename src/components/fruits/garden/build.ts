@@ -499,10 +499,10 @@ function trunkFruit(kit: Kit, p: Plot, r: () => number): PlantResult {
 }
 
 /** Bangun satu tanaman: bagian statis ke kit, kembalikan tinggi puncak & titik-titik buahnya. */
-export function buildPlant(kit: Kit, p: Plot, seed: number): PlantResult {
+export function buildPlant(kit: Kit, p: Plot, seed: number, ground = true): PlantResult {
   const r = rnd(seed * 9301 + 49297);
-  // tanah gembur di bawah tanaman
-  kit.plain.add(new T.CircleGeometry(p.kind === 'trellis' ? 2.1 : 1.7, 20), mat(p.x, 0.035, p.z, -Math.PI / 2), '#6b4a31', { jitter: 0.35 });
+  // tanah gembur di bawah tanaman (tidak perlu di bedengan yang sudah bertanah)
+  if (ground) kit.plain.add(new T.CircleGeometry(p.kind === 'trellis' ? 2.1 : 1.7, 20), mat(p.x, 0.035, p.z, -Math.PI / 2), '#6b4a31', { jitter: 0.35 });
   switch (p.kind) {
     case 'palm':
       return palm(kit, p, r);
