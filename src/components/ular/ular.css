@@ -29,6 +29,14 @@
   100% { transform: rotateX(720deg) rotateY(540deg) rotateZ(180deg) translateY(0); }
 }
 .ular-dice-rolling { animation: ular-roll 0.75s linear infinite; }
+@keyframes ular-shake {
+  0% { transform: rotateX(20deg) rotateY(-30deg) translate(0, 0); }
+  25% { transform: rotateX(110deg) rotateY(40deg) translate(-4px, 3px); }
+  50% { transform: rotateX(200deg) rotateY(-60deg) translate(4px, -3px); }
+  75% { transform: rotateX(290deg) rotateY(30deg) translate(-3px, -2px); }
+  100% { transform: rotateX(380deg) rotateY(-30deg) translate(0, 0); }
+}
+.ular-dice-shake { animation: ular-shake 0.32s linear infinite; }
 @keyframes ular-turn { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
 .ular-turn { animation: ular-turn 1.2s ease-in-out infinite; box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2); }
 .ular-token-moving circle { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)); }
