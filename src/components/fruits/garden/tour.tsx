@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
-import { audioUrl, followAudio, preloadAudio } from '@/lib/audio-clock';
+import { audioUrl, preloadAudio } from '@/lib/audio-clock';
 import { sharedAudio } from '@/lib/audio-unlock';
 import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
@@ -26,7 +26,7 @@ export interface TourHandle {
 
 export function GardenTour({ engine, handle, onVisit, onClose }: { engine: GardenEngine; handle: { current: TourHandle | null }; onVisit: (id: string) => void; onClose: () => void }) {
   const [ui, setUi] = useState({ i: 0, talk: false, playing: true, finished: false, progress: 0 });
-  const r = useRef({ i: 0, talk: false, t: 0, playing: true });
+  const r = useRef({ i: 0, talk: false, t: 0, playing: true, seekTo: null as number | null, timer: 0, done: false, ct: 0, ctAt: 0 });
   const visitRef = useRef(onVisit);
   visitRef.current = onVisit;
 
@@ -37,6 +37,9 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
     s.i = i;
     s.talk = false;
     s.t = 0;
+    window.clearTimeout(s.timer);
+    s.timer = 0;
+    s.done = false;
     audio().pause();
     engine.tourTo(TUR_BUAH[i].at);
     setUi((x) => ({ ...x, i, talk: false, finished: false, progress: 0 }));
@@ -57,6 +60,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
         a.src = url;
         a.dataset.src = url;
       }
+      s.seekTo = p.cues[s.i - p.first];
       const seek = () => {
         a.currentTime = p.cues[s.i - p.first];
         if (r.current.playing) a.play().catch(() => {});
@@ -99,10 +103,29 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
       if (p) {
         const a = audio();
         const k = s.i - p.first;
-        const end = p.cues[k + 1] ?? a.duration;
-        dur = Math.max(1, (Number.isFinite(end) ? end : a.currentTime + 1) - p.cues[k]);
-        s.t = followAudio(s.t, a.currentTime - p.cues[k], dt, !a.paused);
+        const cue = p.cues[k];
+        // berhenti sedikit sebelum awal adegan berikutnya (masih di dalam jeda hening) — tidak kebablasan
+        const stopAt = p.cues[k + 1] !== undefined ? p.cues[k + 1] - 0.15 : Number.isFinite(a.duration) ? a.duration : cue + 60;
+        dur = Math.max(1, stopAt - cue);
+        // posisi suara ASLI (bukan jam halus); selama lompat-posisi belum selesai anggap di awal
+        if (s.seekTo !== null && Math.abs(a.currentTime - s.seekTo) < 0.6) s.seekTo = null;
+        // currentTime di HP bisa "macet" ±0,25 dtk di antara pembaruan → tambahkan waktu yang sudah berlalu
+        if (a.currentTime !== s.ct) {
+          s.ct = a.currentTime;
+          s.ctAt = now;
+        }
+        const est = a.paused ? a.currentTime : s.ct + Math.min(0.3, (now - s.ctAt) / 1000);
+        s.t = s.seekTo !== null ? 0 : est - cue;
         if (a.ended) s.t = dur;
+        // di HP currentTime diperbarui tersendat → jadwalkan jeda tepat waktu saat sudah dekat akhir
+        const rem = dur - s.t;
+        if (!a.paused && rem < 0.35 && !s.timer)
+          s.timer = window.setTimeout(() => {
+            a.pause();
+            s.timer = 0;
+            s.done = true;
+          }, Math.max(0, rem * 1000));
+        if (s.done || (a.paused && s.seekTo === null && rem < 0.4)) s.t = dur;
       } else s.t += dt;
       if (s.t >= dur) {
         if (s.i < TUR_BUAH.length - 1) return go(s.i + 1);
