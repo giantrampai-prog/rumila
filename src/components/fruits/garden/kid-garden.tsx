@@ -398,6 +398,23 @@ export default function KidGarden({ active, tour, onOpen3D, onCatalog, onTour, o
       )}
       {toast && <Toast text={toast.text} good={toast.good} />}
 
+      {/* kanan: zoom & kembalikan sudut kamera (bisa juga cubit dua jari / geser layar) */}
+      {!tour && (
+        <div className="pointer-events-auto absolute right-3 flex flex-col gap-2 sm:right-5" style={{ top: '38%' }}>
+          {(
+            [
+              ['add', 'Perbesar', () => engine.current?.zoomStep(1)],
+              ['remove', 'Perkecil', () => engine.current?.zoomStep(-1)],
+              ['explore', 'Sudut awal', () => engine.current?.resetView()],
+            ] as const
+          ).map(([icon, label, fn]) => (
+            <button key={icon} aria-label={label} onClick={fn} className="flex size-12 items-center justify-center rounded-full bg-white/90 text-[#2b1d4e] shadow-[0_4px_0_rgba(0,0,0,.18)] active:scale-90">
+              <span className="ms text-[26px]">{icon}</span>
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* bawah: joystick · tombol lihat buah terdekat */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:p-6" style={{ paddingBottom: 'max(18px, env(safe-area-inset-bottom))' }}>
         <Joystick onMove={(x, y) => engine.current?.setStick(x, y)} />

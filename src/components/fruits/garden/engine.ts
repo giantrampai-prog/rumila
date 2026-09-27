@@ -8,6 +8,7 @@ import { flag } from '@/components/roket/details';
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import type { FruitGroup } from '@/lib/fruits/catalog';
 import { GARDEN, ZONE_DIR, ZONE_NAME, buildPlots, plotRadius, type Plot } from '@/lib/fruits/garden';
+import { GardenLife } from './life';
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
 import * as TX from './textures';
@@ -192,6 +193,14 @@ export class GardenEngine {
   private camPos = new T.Vector3();
   private camLook = new T.Vector3();
   private portrait = false;
+  /** kamera yang bisa diputar (geser layar) & diperbesar (cubit / gulir) */
+  private camYaw = 0;
+  private camPitch = 0;
+  private camZoom = 1;
+  private gestureAt = 0;
+  private pointers = new Map<number, { x: number; y: number; sx: number; sy: number }>();
+  private pinch = 0;
+  private life!: GardenLife;
 
   private windmill!: T.Object3D;
   private flags: T.ShaderMaterial[] = [];
@@ -228,6 +237,9 @@ export class GardenEngine {
     this.scene.add(this.farm.group);
     BED_POS.forEach(([x, z]) => this.obstacles.push({ x, z, r: 1.35 }));
     this.obstacles.push({ x: NPC_POS[0], z: NPC_POS[1], r: 0.55 });
+    // burung, ayam, capung & daun berguguran
+    this.life = new GardenLife(new T.Vector2(19.5, 19), new T.Vector3(0, 0, 0), (x, z) => this.obstacles.some((o) => Math.hypot(x - o.x, z - o.z) < o.r + 0.4));
+    this.scene.add(this.life.group);
 
     this.tapRing = new T.Mesh(new T.RingGeometry(0.35, 0.55, 28), new T.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0, depthWrite: false }));
     this.tapRing.rotation.x = -Math.PI / 2;
@@ -246,6 +258,12 @@ export class GardenEngine {
     this.snapCamera();
     window.addEventListener('keydown', this.onKey);
     window.addEventListener('keyup', this.onKey);
+    const el = this.renderer.domElement;
+    el.addEventListener('pointerdown', this.onPointerDown);
+    el.addEventListener('pointermove', this.onPointerMove);
+    el.addEventListener('pointerup', this.onPointerUp);
+    el.addEventListener('pointercancel', this.onPointerUp);
+    el.addEventListener('wheel', this.onWheel, { passive: false });
     this.loop();
   }
 
@@ -365,7 +383,7 @@ export class GardenEngine {
     for (let i = 0; i < 64; i++) {
       const a = (i / 64) * 6.28;
       if (Math.abs(Math.sin(a)) < 0.2 || Math.abs(Math.cos(a)) < 0.2) continue; // celah jalan
-      stones.add(new T.DodecahedronGeometry(0.28 + r() * 0.1, 0), mat(Math.cos(a) * GARDEN.plaza, 0.08, Math.sin(a) * GARDEN.plaza, r(), r(), 0, 1, 0.5, 1), '#a8a29a', { jitter: 0.2 });
+      stones.add(new T.IcosahedronGeometry(0.28 + r() * 0.1, 2), mat(Math.cos(a) * GARDEN.plaza, 0.08, Math.sin(a) * GARDEN.plaza, r(), r(), 0, 1, 0.5, 1), '#a8a29a', { jitter: 0.2 });
     }
     const sm = stones.build(new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.9 }));
     sm.castShadow = sm.receiveShadow = true;
@@ -886,7 +904,8 @@ export class GardenEngine {
 
   /** Ketuk layar: tanaman → jalan ke tanaman; tanah → jalan ke titik itu. */
   tap(clientX: number, clientY: number) {
-    if (this.tour) return;
+    // selesai memutar/zoom dengan dua jari: jangan dianggap ketukan
+    if (this.tour || performance.now() - this.gestureAt < 350) return;
     const rect = this.renderer.domElement.getBoundingClientRect();
     const ndc = new T.Vector2(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
     let best: Plot | null = null,
@@ -978,6 +997,7 @@ export class GardenEngine {
 
   /** Mode tur: kontrol anak dinonaktifkan, anak berjalan sendiri. */
   setTour(on: boolean) {
+    if (on) this.resetView();
     this.tour = on;
     this.walkPaused = false;
     this.focusAt = null;
@@ -1123,6 +1143,75 @@ export class GardenEngine {
     } else this.keys.delete(k);
   };
 
+  /* ---------------- kamera: geser untuk memutar, cubit/gulir untuk zoom ---------------- */
+
+  private onPointerDown = (e: PointerEvent) => {
+    this.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY });
+    if (this.pointers.size === 2) {
+      const [a, b] = [...this.pointers.values()];
+      this.pinch = Math.hypot(a.x - b.x, a.y - b.y);
+      this.gestureAt = performance.now();
+    }
+  };
+
+  private onPointerMove = (e: PointerEvent) => {
+    const p = this.pointers.get(e.pointerId);
+    if (!p) return;
+    const dx = e.clientX - p.x,
+      dy = e.clientY - p.y;
+    p.x = e.clientX;
+    p.y = e.clientY;
+    if (this.pointers.size >= 2) {
+      const [a, b] = [...this.pointers.values()];
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      if (this.pinch > 0 && d > 0) this.zoomBy(this.pinch / d);
+      this.pinch = d;
+      this.gestureAt = performance.now();
+      return;
+    }
+    // satu jari: baru dianggap memutar setelah bergeser cukup jauh (ketukan biasa tetap untuk memilih)
+    if (Math.hypot(e.clientX - p.sx, e.clientY - p.sy) < 12) return;
+    this.camYaw -= dx * 0.0065;
+    this.camPitch = T.MathUtils.clamp(this.camPitch + dy * 0.004, -0.55, 0.45);
+    this.gestureAt = performance.now();
+  };
+
+  private onPointerUp = (e: PointerEvent) => {
+    this.pointers.delete(e.pointerId);
+    if (this.pointers.size < 2) this.pinch = 0;
+  };
+
+  private onWheel = (e: WheelEvent) => {
+    e.preventDefault();
+    this.zoomBy(Math.exp(e.deltaY * 0.0012));
+    this.gestureAt = performance.now();
+  };
+
+  private zoomBy(k: number) {
+    this.camZoom = T.MathUtils.clamp(this.camZoom * k, 0.32, 2.1);
+  }
+
+  /** Zoom (1 = normal) untuk tombol +/−. */
+  zoomStep(dir: 1 | -1) {
+    this.zoomBy(dir > 0 ? 0.75 : 1.33);
+    this.gestureAt = performance.now();
+  }
+
+  /** Kembalikan sudut kamera semula (di belakang anak). */
+  resetView() {
+    this.camYaw = 0;
+    this.camPitch = 0;
+    this.camZoom = 1;
+    this.gestureAt = performance.now();
+  }
+
+  /** Arah dunia dari masukan layar (atas = menjauhi kamera), mengikuti putaran kamera. */
+  private fromScreen(x: number, z: number) {
+    const c = Math.cos(this.camYaw),
+      s = Math.sin(this.camYaw);
+    return new T.Vector3(x * c + z * s, 0, -x * s + z * c);
+  }
+
   private resize() {
     const w = this.host.clientWidth,
       h = this.host.clientHeight;
@@ -1138,12 +1227,21 @@ export class GardenEngine {
   }
 
   private camOffset() {
-    return this.portrait ? new T.Vector3(0, 14, 11.5) : new T.Vector3(0, 10.5, 11);
+    const base = this.portrait ? new T.Vector3(0, 14, 11.5) : new T.Vector3(0, 10.5, 11);
+    const dist = base.length() * this.camZoom;
+    const elev = T.MathUtils.clamp(Math.atan2(base.y, base.z) + this.camPitch, 0.18, 1.4);
+    return new T.Vector3(Math.sin(this.camYaw) * Math.cos(elev) * dist, Math.sin(elev) * dist, Math.cos(this.camYaw) * Math.cos(elev) * dist);
+  }
+
+  /** Titik pandang sedikit di depan anak (searah kamera). */
+  private lookAhead() {
+    const k = 2 * Math.min(1, this.camZoom);
+    return new T.Vector3(-Math.sin(this.camYaw) * k, 0.8, -Math.cos(this.camYaw) * k);
   }
 
   private snapCamera() {
     this.camPos.copy(this.pos).add(this.camOffset());
-    this.camLook.copy(this.pos).add(new T.Vector3(0, 0.8, -2));
+    this.camLook.copy(this.pos).add(this.lookAhead());
     this.camera.position.copy(this.camPos);
     this.camera.lookAt(this.camLook);
   }
@@ -1177,7 +1275,7 @@ export class GardenEngine {
     const dir = new T.Vector3();
     const target = this.waypoints[0];
     if (move.lengthSq() > 0.01) {
-      dir.set(move.x, 0, -move.y);
+      dir.copy(this.fromScreen(move.x, -move.y));
       want = Math.min(1, move.length());
       dir.normalize();
     } else if (target && !this.walkPaused) {
@@ -1297,6 +1395,7 @@ export class GardenEngine {
     });
 
     this.farm.update(t, dt);
+    this.life.update(t, dt, this.pos);
     // dunia hidup
     this.windmill.rotation.z -= dt * 0.6;
     for (const c of this.clouds) {
@@ -1321,7 +1420,7 @@ export class GardenEngine {
     this.focusK = T.MathUtils.damp(this.focusK, this.focusAt ? 1 : 0, 2, dt);
     const off = this.camOffset().multiplyScalar(1 - this.focusK * 0.38);
     const want2 = new T.Vector3().copy(this.pos).add(off);
-    const look = new T.Vector3().copy(this.pos).add(new T.Vector3(0, 0.8, -2));
+    const look = new T.Vector3().copy(this.pos).add(this.lookAhead());
     if (this.focusAt) {
       const fl = this.focusAt.clone();
       // di layar tegak kartu info menutup bagian bawah → pandang sedikit ke depan agar tanaman di atas kartu
@@ -1329,7 +1428,8 @@ export class GardenEngine {
       look.lerp(fl, this.focusK);
       want2.x = T.MathUtils.lerp(want2.x, fl.x, this.focusK * 0.5);
     }
-    const f = 1 - Math.exp(-dt * 2.5);
+    // saat anak memutar/zoom kamera, ikuti jarinya lebih cepat
+    const f = 1 - Math.exp(-dt * (performance.now() - this.gestureAt < 400 ? 9 : 2.5));
     this.camPos.lerp(want2, f);
     this.camLook.lerp(look, f);
     this.camera.position.copy(this.camPos);
@@ -1360,6 +1460,12 @@ export class GardenEngine {
     this.ro.disconnect();
     window.removeEventListener('keydown', this.onKey);
     window.removeEventListener('keyup', this.onKey);
+    const el = this.renderer.domElement;
+    el.removeEventListener('pointerdown', this.onPointerDown);
+    el.removeEventListener('pointermove', this.onPointerMove);
+    el.removeEventListener('pointerup', this.onPointerUp);
+    el.removeEventListener('pointercancel', this.onPointerUp);
+    el.removeEventListener('wheel', this.onWheel);
     this.hanger.dispose();
     this.scene.traverse((o) => {
       const m = o as T.Mesh;
