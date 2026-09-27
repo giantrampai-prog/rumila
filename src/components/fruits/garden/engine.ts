@@ -205,6 +205,9 @@ export class GardenEngine {
   private pinch = 0;
   private life!: GardenLife;
   private pen!: GoatPen;
+  private towerAt = new T.Vector3();
+  /** sedang di balkon menara kincir (melihat kebun dari atas) */
+  onTower = false;
   private nextGoat = 4;
   private nextCluck = 3;
   private nextBird = 2;
@@ -660,6 +663,22 @@ export class GardenEngine {
     roof.add(new T.ConeGeometry(1.5, 2, 10), mat(wx, 9, wz), '#ffffff', { uv: [3, 1] });
     wood.add(new T.BoxGeometry(1, 1.8, 0.1), mat(wx, 0.9, wz - 1.72), '#8a5a3a', { uv: [0.5, 1] });
     this.obstacles.push({ x: wx, z: wz, r: 2.2 });
+    // balkon pandang di sisi belakang menara (tidak tersentuh baling-baling di depan)
+    for (let k = 0; k <= 10; k++) {
+      const a = (k / 10) * Math.PI;
+      const cx = wx + Math.cos(a) * 2.15,
+        cz = wz + Math.sin(a) * 2.15;
+      wood.add(new T.BoxGeometry(0.08, 0.9, 0.08), mat(cx, 5.65, cz), '#8a5a3a', { uv: [0.2, 0.8] });
+      const a2 = ((k + 0.5) / 10) * Math.PI;
+      if (k < 10) {
+        wood.add(new T.BoxGeometry(0.72, 0.16, 1.05), mat(wx + Math.cos(a2) * 1.72, 5.18, wz + Math.sin(a2) * 1.72, 0, -a2, 0), '#a0703e', { uv: [0.8, 0.4] });
+        wood.add(new T.BoxGeometry(0.72, 0.07, 0.07), mat(wx + Math.cos(a2) * 2.15, 6.08, wz + Math.sin(a2) * 2.15, 0, -a2 + Math.PI / 2, 0), '#8a5a3a', { uv: [0.8, 0.1] });
+      }
+    }
+    // tangga kayu di sisi menara menuju balkon
+    for (let k = 0; k < 13; k++) wood.add(new T.BoxGeometry(0.7, 0.06, 0.12), mat(wx + 2.05, 0.35 + k * 0.38, wz + 0.2), '#8a5a3a', { uv: [0.5, 0.1] });
+    for (const dz of [-0.35, 0.35]) wood.add(new T.BoxGeometry(0.07, 5.2, 0.07), mat(wx + 2.05 + dz * 0, 2.6, wz + 0.2 + dz), '#6b4a31', { uv: [0.2, 3] });
+    this.towerAt = new T.Vector3(wx, 0, wz);
     const mill = new T.Group();
     const bladeMat = new T.MeshStandardMaterial({ map: this.keep(TX.planks()), color: '#f2e8da', roughness: 0.85 });
     for (let i = 0; i < 4; i++) {
@@ -912,7 +931,7 @@ export class GardenEngine {
   /** Ketuk layar: tanaman → jalan ke tanaman; tanah → jalan ke titik itu. */
   tap(clientX: number, clientY: number) {
     // selesai memutar/zoom dengan dua jari: jangan dianggap ketukan
-    if (this.tour || performance.now() - this.gestureAt < 350) return;
+    if (this.tour || this.onTower || performance.now() - this.gestureAt < 350) return;
     const rect = this.renderer.domElement.getBoundingClientRect();
     const ndc = new T.Vector2(((clientX - rect.left) / rect.width) * 2 - 1, -((clientY - rect.top) / rect.height) * 2 + 1);
     // kambing diketuk → mengembik
@@ -937,6 +956,7 @@ export class GardenEngine {
       ...BED_POS.map(([x, z], i) => [`bed:${i}`, x, z, 0.8] as [string, number, number, number]),
       ['npc', NPC_POS[0], NPC_POS[1], 1.6],
       ['goats', this.pen.door.x + 1.6, this.pen.door.z, 0.8],
+      ['tower', this.towerAt.x, this.towerAt.z, 4],
     ];
     let bestKey: string | null = null,
       bk = 0.12 * (this.portrait ? 1.6 : 1);
@@ -978,6 +998,15 @@ export class GardenEngine {
 
   /** Jalan ke bedengan ("bed:i") atau Pak Tani ("npc"); berdiri di sisi depan (menghadap kamera). */
   walkToKey(key: string) {
+    if (key === 'tower') {
+      const d = this.towerDoor();
+      this.waypoints = [d];
+      this.arriveKey = key;
+      this.faceTo = this.towerAt.clone();
+      sfx.tap();
+      if (this.pos.distanceTo(d) < 2) this.arrive();
+      return;
+    }
     if (key === 'goats') {
       this.waypoints = [this.pen.door.clone()];
       this.arriveKey = key;
@@ -993,6 +1022,35 @@ export class GardenEngine {
     this.faceTo = new T.Vector3(x, 0, z);
     sfx.tap();
     if (Math.hypot(this.pos.x - x, this.pos.z - z) < 2.6) this.arrive();
+  }
+
+  private towerDoor() {
+    return new T.Vector3(this.towerAt.x + 2.9, 0, this.towerAt.z + 0.2);
+  }
+
+  /** Naik ke balkon menara kincir: pandangan berputar 360° dari ketinggian. */
+  climbTower() {
+    this.onTower = true;
+    this.clearRoute();
+    this.camYaw = Math.atan2(-this.towerAt.x, -this.towerAt.z); // awalnya menghadap ke tengah kebun
+    this.camPitch = 0;
+    this.camZoom = 1;
+    this.gestureAt = performance.now();
+    this.player.visible = false;
+    for (let k = 0; k < 8; k++) window.setTimeout(() => sfx.step(), k * 140);
+    window.setTimeout(() => sfx.whoosh(), 1100);
+    this.cb.onNear('tower-top');
+    this.near = 'tower-top';
+  }
+
+  leaveTower() {
+    this.onTower = false;
+    this.player.visible = true;
+    this.pos.copy(this.towerDoor());
+    this.resetView();
+    this.resize();
+    for (let k = 0; k < 6; k++) window.setTimeout(() => sfx.step(), k * 140);
+    this.near = null;
   }
 
   /** Buka kandang (kambing keluar merumput) atau panggil pulang & tutup. */
@@ -1305,10 +1363,10 @@ export class GardenEngine {
       if (this.keys.has('arrowup') || this.keys.has('w')) move.y += 1;
       if (this.keys.has('arrowdown') || this.keys.has('s')) move.y -= 1;
     }
-    if (this.tour) move.set(0, 0);
+    if (this.tour || this.onTower) move.set(0, 0);
     let want = 0;
     const dir = new T.Vector3();
-    const target = this.waypoints[0];
+    const target = this.onTower ? undefined : this.waypoints[0];
     if (move.lengthSq() > 0.01) {
       dir.copy(this.fromScreen(move.x, -move.y));
       want = Math.min(1, move.length());
@@ -1384,8 +1442,9 @@ export class GardenEngine {
       const dn = Math.hypot(NPC_POS[0] - this.pos.x, NPC_POS[1] - this.pos.z);
       if (dn < Math.min(nd, 2.8)) nearId = 'npc';
       if (this.pos.distanceTo(this.pen.door) < 2.6) nearId = 'goats';
+      if (this.pos.distanceTo(this.towerDoor()) < 2.4) nearId = 'tower';
     }
-    if (nearId !== this.near) {
+    if (!this.onTower && nearId !== this.near) {
       this.near = nearId;
       this.cb.onNear(nearId);
     }
@@ -1472,6 +1531,26 @@ export class GardenEngine {
     this.sun.position.copy(this.pos).addScaledVector(SUN_DIR, 45);
     this.sun.target.position.copy(this.pos);
 
+    // di balkon menara: kamera setinggi mata di sisi menara yang menghadap arah pandang, berputar 360°
+    if (this.onTower) {
+      const dir = new T.Vector3(-Math.sin(this.camYaw), 0, -Math.cos(this.camYaw)).negate();
+      const eye = this.towerAt.clone().addScaledVector(dir, 3.3).setY(6.3);
+      const pitch = T.MathUtils.clamp(-0.3 + this.camPitch * 1.6, -1.25, 0.35);
+      const look = eye.clone().addScaledVector(dir, 10 * Math.cos(pitch)).setY(eye.y + 10 * Math.sin(pitch));
+      const ft = 1 - Math.exp(-dt * 3.5);
+      this.camPos.lerp(eye, ft);
+      this.camLook.lerp(look, ft);
+      this.camera.position.copy(this.camPos);
+      this.camera.lookAt(this.camLook);
+      const fov = (this.portrait ? 58 : 45) * T.MathUtils.clamp(this.camZoom, 0.4, 1.4);
+      if (Math.abs(this.camera.fov - fov) > 0.05) {
+        this.camera.fov = fov;
+        this.camera.updateProjectionMatrix();
+      }
+      this.skyGroup.position.copy(this.camera.position);
+      this.farm.fadeNear(this.camera.position);
+      return;
+    }
     // kamera: ikuti anak dengan halus; saat tur membahas buah, mendekat ke tanamannya
     this.focusK = T.MathUtils.damp(this.focusK, this.focusAt ? 1 : 0, 2, dt);
     const off = this.camOffset().multiplyScalar(1 - this.focusK * 0.38);

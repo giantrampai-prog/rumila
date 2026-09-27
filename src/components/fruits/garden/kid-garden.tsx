@@ -333,6 +333,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
     if (key.startsWith('bed:')) bedAct(+key.slice(4));
     else if (key === 'npc') openMission();
     else if (key === 'goats') setGoatsOut(engine.current?.toggleGoats() ?? false);
+    else if (key === 'tower') engine.current?.climbTower();
     else openRef.current(key);
   };
   const arriveRef = useRef(arriveKey);
@@ -453,11 +454,26 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
 
       {/* bawah: joystick · tombol lihat buah terdekat */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 sm:p-6" style={{ paddingBottom: 'max(18px, env(safe-area-inset-bottom))' }}>
-        <Joystick onMove={(x, y) => engine.current?.setStick(x, y)} />
+        {near === 'tower-top' ? <span /> : <Joystick onMove={(x, y) => engine.current?.setStick(x, y)} />}
         {nearBed !== null && !card && !sheet && !cut && (() => {
           const a = bedAction(farm.beds[nearBed], now);
           return <NearAction {...a} onClick={() => bedAct(nearBed)} />;
         })()}
+        {near === 'tower' && !card && !sheet && (
+          <NearAction icon="stairs" label="Naik menara" sub="Kincir angin" tone="linear-gradient(155deg,#ffb347,#ff7a1a 60%)" onClick={() => engine.current?.climbTower()} />
+        )}
+        {near === 'tower-top' && (
+          <NearAction
+            icon="south"
+            label="Turun"
+            sub="Geser layar untuk melihat sekeliling"
+            tone="linear-gradient(155deg,#7cc0ff,#2f86ff 60%)"
+            onClick={() => {
+              engine.current?.leaveTower();
+              setNear('tower');
+            }}
+          />
+        )}
         {near === 'goats' && !card && !sheet && (
           <NearAction
             icon={goatsOut ? 'home' : 'door_open'}
