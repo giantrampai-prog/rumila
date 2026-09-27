@@ -42,6 +42,10 @@ export interface EngineCtx {
     target: THREE.Vector3,
     ms?: number,
   ) => Promise<boolean>;
+  /** lepas tekstur dari cache & memori GPU (tekstur 4K yang tidak dipakai lagi) */
+  releaseTexture: (url: string, opts?: { color?: boolean }) => void;
+  /** GPU sanggup tekstur 4096 px */
+  ultra: boolean;
   /** geser tujuan penerbangan yang sedang berjalan (objek tujuan mengorbit); false bila tidak sedang terbang */
   shiftFlight: (delta: THREE.Vector3) => boolean;
   /** setengah sudut pandang efektif (memperhitungkan panel yang menutupi viewer) */
@@ -182,6 +186,19 @@ export class AngkasaEngine {
       renderer: this.renderer,
       clock: this.clock,
       loadTexture: (url, opts) => this.loadTexture(url, opts),
+      releaseTexture: (url, opts) => {
+        const key = url + (opts?.color === false ? "#linear" : "");
+        const p = this.textures.get(key);
+        if (!p) return;
+        this.textures.delete(key);
+        void p
+          .then((t) => {
+            this.ownedTextures.delete(t);
+            t.dispose();
+          })
+          .catch(() => {});
+      },
+      ultra: this.renderer.capabilities.maxTextureSize >= 4096,
       flyTo: (pos, target, ms) => this.flyTo(pos, target, ms),
       shiftFlight: (d) => {
         if (!this.flight) return false;

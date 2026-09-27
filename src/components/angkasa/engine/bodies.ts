@@ -36,6 +36,8 @@ export interface Body {
   loadDetail(ctx: EngineCtx): Promise<void>;
   /** ganti tampilan Venus: "awan" | "radar" */
   setVariant?(v: string, ctx: EngineCtx): Promise<void>;
+  /** peta 4K saat objek sedang dilihat dari dekat; dimatikan (dilepas dari memori GPU) saat pindah objek */
+  setUltra?(on: boolean): void;
   dispose(): void;
 }
 
@@ -376,6 +378,13 @@ function annulus(inner: number, outer: number, segs = 180) {
   return geo;
 }
 
+/** Peta yang punya versi 4K (public/angkasa/tex4k, diperkecil dari 8K Solar System Scope). */
+const ULTRA = new Set(["sun", "mercury", "venus_atmosphere", "venus_surface", "earth_daymap", "earth_clouds", "moon", "mars", "jupiter", "saturn"]);
+const ultraOf = (url?: string) => {
+  const m = url?.match(/\/angkasa\/tex\/2k_(.+)\.jpg$/);
+  return m && ULTRA.has(m[1]) ? `/angkasa/tex4k/4k_${m[1]}.jpg` : null;
+};
+
 /** "/angkasa/tex/2k_x.jpg" → "/angkasa/lo/lo_x.jpg" (versi 1K untuk paket pembuka). */
 const loOf = (url: string) =>
   url.replace("/angkasa/tex/2k_", "/angkasa/lo/lo_");
@@ -518,13 +527,52 @@ export function createBody(
   };
 
   // Venus: dua jenis citra (awan vs radar permukaan), dicatat sebagai varian.
+  let variant = "awan";
+  const baseMap = () => (variant === "radar" ? o.texture.alt! : (o.texture.hi ?? o.texture.lo!));
   if (o.texture.alt) {
     body.setVariant = async (v) => {
-      await applyMap(
-        v === "radar" ? o.texture.alt! : (o.texture.hi ?? o.texture.lo!),
-      );
+      variant = v;
+      await applyMap(baseMap());
     };
   }
+
+  // Peta 4K: hanya untuk objek yang sedang dilihat (±30–45 MB memori GPU per peta), dilepas saat pindah.
+  /** lapisan yang punya versi 4K: [peta dasar 2K sekarang, pemasang, opsi muat] */
+  const ultraLayers: { base: () => string | undefined; apply: (url: string) => Promise<void>; opts?: { color?: boolean } }[] = [
+    { base: baseMap, apply: applyMap },
+  ];
+  let ultraOn = false;
+  let ultraGen = 0;
+  const ultraLoaded: [string, { color?: boolean } | undefined][] = [];
+  body.setUltra = (on) => {
+    if (!ctx.ultra || on === ultraOn || !o.texture.hi) return;
+    ultraOn = on;
+    const gen = ++ultraGen;
+    if (on) {
+      for (const l of ultraLayers) {
+        const u = ultraOf(l.base());
+        if (!u) continue;
+        ctx
+          .loadTexture(u, l.opts)
+          .then(() => {
+            if (gen === ultraGen) {
+              ultraLoaded.push([u, l.opts]);
+              return l.apply(u);
+            }
+            if (!ultraOn) ctx.releaseTexture(u, l.opts); // sudah pindah objek sebelum selesai dimuat
+          })
+          .catch(() => {});
+      }
+      return;
+    }
+    // kembali ke 2K dulu, baru lepaskan 4K (tanpa kedip bola polos)
+    const drop = ultraLoaded.splice(0);
+    void Promise.all(ultraLayers.map((l) => (l.base() ? l.apply(l.base()!) : undefined)))
+      .catch(() => {})
+      .then(() => {
+        if (gen === ultraGen) for (const [u, op] of drop) ctx.releaseTexture(u, op);
+      });
+  };
 
   // Matahari: pendar terbatas (sprite aditif) — tidak menutupi orbit/label.
   if (o.id === "sun") {
@@ -588,6 +636,7 @@ export function createBody(
           clouds.visible = true;
         });
       setClouds(opt.hi ? cloudsUrl : loOf(cloudsUrl)).catch(() => {});
+      ultraLayers.push({ base: () => cloudsUrl, apply: setClouds, opts: { color: false } });
       if (!opt.hi) detailExtras.push(() => setClouds(cloudsUrl));
       clouds.name = "earth.clouds";
       clouds.scale.setScalar(r);

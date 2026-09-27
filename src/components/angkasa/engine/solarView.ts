@@ -140,6 +140,8 @@ export class SolarView implements ModeView {
     for (const [, b] of this.bodies) b.setSun(this.sunPos);
   }
 
+  private ultraId: string | null = null;
+
   update(dt: number, ctx: EngineCtx) {
     this.poseAll();
     if (useAngkasa.getState().fx && !this.fx) {
@@ -152,6 +154,14 @@ export class SolarView implements ModeView {
       this.fx.update(dt, this.camera, ctx.clock.days);
     }
     this.tour?.update(dt);
+    // Peta 4K hanya untuk satu objek yang sedang dilihat dari dekat (hemat memori GPU di tablet/HP).
+    const introEarth = this.fx && !this.fx.introDone && useAngkasa.getState().intro === "play" ? "earth" : null;
+    const want = this.focusId ?? this.tour?.targetId ?? introEarth;
+    if (want !== this.ultraId) {
+      if (this.ultraId) this.bodies.get(this.ultraId)?.setUltra?.(false);
+      if (want) this.bodies.get(want)?.setUltra?.(true);
+      this.ultraId = want;
+    }
     for (const o of this.orbits) o.visible = this.showOrbits;
     // Kamera mengikuti objek terfokus yang sedang mengorbit (geser kamera & target sebesar perpindahannya).
     if (this.focusId) {

@@ -23,6 +23,7 @@ Diperiksa: 26 September 2026.
 
 - **Sumber:** Solar System Scope — https://www.solarsystemscope.com/textures/ (berbasis data NASA).
 - **Lisensi:** Creative Commons Attribution 4.0 International (CC BY 4.0). Atribusi ditampilkan di panel setiap objek ("Tekstur: Solar System Scope (CC BY 4.0), berbasis data NASA").
+- Berkas `tex4k/4k_*.jpg` (4096×2048, JPEG q68–80, 0,8–3,3 MB) diperkecil dengan `sips` dari versi 8K Solar System Scope (Matahari, Jupiter, Saturnus: dari versi 4K sumber). Diunduh 28 September 2026. Hanya dimuat untuk satu objek yang sedang dilihat dari dekat, lalu dilepas dari memori GPU saat pindah objek. Uranus & Neptunus tidak tersedia di atas 2K.
 - Berkas `lo/` adalah turunan 1024×512 (diperkecil dengan `sips`) untuk paket pembuka tata surya; `tex/` dimuat saat objek didekati.
 - Color space: peta warna = sRGB; peta awan dipakai sebagai alpha (linear).
 
