@@ -86,8 +86,10 @@ class Screen {
 export function povBody() {
   const g = new THREE.Group();
   const suit = new THREE.MeshStandardMaterial({ color: 0xf1f0ea, roughness: 0.8 });
-  const grey = new THREE.MeshStandardMaterial({ color: 0x9aa0a8, roughness: 0.8 });
-  const red = new THREE.MeshStandardMaterial({ color: 0xd9483b, roughness: 0.7 });
+  // warna baju Agam: putih, aksen biru dongker (lutut, gelang) & oranye (garis), sarung tangan putih
+  const grey = new THREE.MeshStandardMaterial({ color: 0x1f2f7a, roughness: 0.6 });
+  const red = new THREE.MeshStandardMaterial({ color: 0xf07a1f, roughness: 0.6 });
+  const glove = new THREE.MeshStandardMaterial({ color: 0xf2f2f0, roughness: 0.75 });
   const legs: THREE.Group[] = [];
   const hands: THREE.Group[] = [];
   for (const sx of [-1, 1]) {
@@ -108,7 +110,7 @@ export function povBody() {
     const hand = new THREE.Group();
     const cuff = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.055, 0.06, 14), grey);
     cuff.rotation.x = Math.PI / 2;
-    const palm = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.03, 0.1), grey);
+    const palm = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.03, 0.1), glove);
     palm.position.z = 0.07;
     // lengan baju: menyambung dari sarung tangan ke bahu (keluar layar) — tangan tidak melayang terpisah
     const sleeve = new THREE.Mesh(new THREE.CapsuleGeometry(0.058, 0.55, 6, 14), suit);
@@ -118,12 +120,12 @@ export function povBody() {
     ring.position.z = -0.06;
     hand.add(cuff, palm, sleeve, ring);
     for (let k = 0; k < 4; k++) {
-      const fg = new THREE.Mesh(new THREE.CapsuleGeometry(0.011, 0.04, 3, 6), grey);
+      const fg = new THREE.Mesh(new THREE.CapsuleGeometry(0.011, 0.04, 3, 6), glove);
       fg.rotation.x = Math.PI / 2;
       fg.position.set(-0.03 + k * 0.02, 0, 0.14);
       hand.add(fg);
     }
-    const thumb = new THREE.Mesh(new THREE.CapsuleGeometry(0.012, 0.03, 3, 6), grey);
+    const thumb = new THREE.Mesh(new THREE.CapsuleGeometry(0.012, 0.03, 3, 6), glove);
     thumb.position.set(-sx * 0.05, 0, 0.07);
     thumb.rotation.z = Math.PI / 2;
     hand.add(thumb);

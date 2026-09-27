@@ -371,96 +371,273 @@ function patchTex(kind: "flag" | "mission") {
   });
 }
 
-/** Astronaut berbaju antariksa detail: helm berkaca emas & lampu, kotak kendali dada, ransel, selang,
- *  sarung tangan & sepatu abu-abu, sambungan siku/lutut, bendera Merah Putih di bahu, logo misi RUMILA. */
+/** Papan nama di dada (teks biru dongker di atas putih). */
+function nameTex(name: string) {
+  return canvasTex(256, 96, (g, w, h) => {
+    g.fillStyle = "#ffffff";
+    g.fillRect(0, 0, w, h);
+    g.strokeStyle = "#1f2f7a";
+    g.lineWidth = 8;
+    g.strokeRect(4, 4, w - 8, h - 8);
+    g.fillStyle = "#1f2f7a";
+    g.font = "900 58px system-ui, sans-serif";
+    g.textAlign = "center";
+    g.textBaseline = "middle";
+    g.fillText(name, w / 2, h / 2 + 3);
+  });
+}
+
+/**
+ * Agam, astronaut cilik Rumila (mengikuti gambar karakter): helm gelembung kaca bening memperlihatkan
+ * wajah anak (mata cokelat besar, rambut cokelat), baju putih beraksen oranye & biru dongker, papan nama
+ * "AGAM", kotak kendali dada berlampu biru, sabuk & pelindung lutut dongker, sepatu bot putih-oranye,
+ * ransel penunjang hidup, bendera Merah Putih di bahu kiri dan logo misi RUMILA di bahu kanan.
+ */
 export function buildAstronaut() {
   const a = new THREE.Group();
-  const suit = new THREE.MeshStandardMaterial({ color: 0xf5f4ee, roughness: 0.75 });
-  const grey = new THREE.MeshStandardMaterial({ color: 0xa9b0bb, roughness: 0.6 });
-  const dark = new THREE.MeshStandardMaterial({ color: 0x5b6270, roughness: 0.5, metalness: 0.3 });
-  const glove = new THREE.MeshStandardMaterial({ color: 0x9aa0a8, roughness: 0.8 });
-  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.135, 0.18, 8, 20), suit);
+  const suit = new THREE.MeshStandardMaterial({ color: 0xf7f6f2, roughness: 0.7 });
+  const orange = new THREE.MeshStandardMaterial({ color: 0xf07a1f, roughness: 0.55 });
+  const navy = new THREE.MeshStandardMaterial({ color: 0x1f2f7a, roughness: 0.55 });
+  const grey = new THREE.MeshStandardMaterial({ color: 0xb8bec8, roughness: 0.5, metalness: 0.3 });
+  const dark = new THREE.MeshStandardMaterial({ color: 0x2c2f38, roughness: 0.6 });
+  const skin = new THREE.MeshStandardMaterial({ color: 0xe8b48a, roughness: 0.55 });
+  const hair = new THREE.MeshStandardMaterial({ color: 0x3b2414, roughness: 0.6 });
+
+  // badan (sedikit gemuk seperti anak) + sabuk dongker
+  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.14, 0.17, 8, 24), suit);
   torso.position.y = 0.42;
-  // helm: cangkang putih + kaca emas memantul + lampu & kamera di kiri-kanan
-  const helmet = new THREE.Mesh(new THREE.SphereGeometry(0.135, 32, 20), suit);
-  helmet.position.y = 0.69;
-  const visor = new THREE.Mesh(
-    new THREE.SphereGeometry(0.118, 32, 20, Math.PI * 0.12, Math.PI * 0.76, Math.PI * 0.2, Math.PI * 0.5),
-    new THREE.MeshPhysicalMaterial({ color: 0xe8a73a, roughness: 0.05, metalness: 1, clearcoat: 1, clearcoatRoughness: 0.05, emissive: 0x3a2508 }),
+  const belt = new THREE.Mesh(new THREE.CylinderGeometry(0.146, 0.146, 0.035, 24), navy);
+  belt.position.y = 0.34;
+  const buckle = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.03, 0.02), grey);
+  buckle.position.set(0, 0.34, 0.146);
+  a.add(torso, belt, buckle);
+
+  // kepala anak di dalam helm: wajah, rambut, mata besar, alis, senyum, pipi, telinga
+  const headY = 0.71;
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.1, 28, 20), skin);
+  head.position.y = headY;
+  head.scale.set(1, 1.02, 0.95);
+  const hairCap = new THREE.Mesh(new THREE.SphereGeometry(0.104, 28, 16, 0, TAU, 0, Math.PI * 0.52), hair);
+  hairCap.position.set(0, headY + 0.008, -0.006);
+  hairCap.rotation.x = -0.35;
+  a.add(head, hairCap);
+  // poni bergelombang
+  for (let i = 0; i < 6; i++) {
+    const tuft = new THREE.Mesh(new THREE.SphereGeometry(0.032, 10, 8), hair);
+    tuft.position.set(-0.06 + i * 0.024, headY + 0.07 - Math.abs(i - 2.5) * 0.006, 0.065 - Math.abs(i - 2.5) * 0.008);
+    tuft.scale.set(1, 0.7, 0.8);
+    a.add(tuft);
+  }
+  const white = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2 });
+  const iris = new THREE.MeshStandardMaterial({ color: 0x6b3a1a, roughness: 0.25 });
+  const pupil = new THREE.MeshStandardMaterial({ color: 0x120a06, roughness: 0.2 });
+  const shine = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  for (const sx of [-1, 1]) {
+    const eye = new THREE.Group();
+    const w = new THREE.Mesh(new THREE.SphereGeometry(0.026, 16, 12), white);
+    w.scale.set(1, 1.15, 0.55);
+    const ir = new THREE.Mesh(new THREE.SphereGeometry(0.019, 16, 12), iris);
+    ir.position.z = 0.009;
+    ir.scale.set(1, 1.1, 0.5);
+    const pu = new THREE.Mesh(new THREE.SphereGeometry(0.01, 12, 8), pupil);
+    pu.position.z = 0.016;
+    pu.scale.set(1, 1.1, 0.5);
+    const hl = new THREE.Mesh(new THREE.SphereGeometry(0.005, 8, 6), shine);
+    hl.position.set(0.006, 0.009, 0.02);
+    eye.add(w, ir, pu, hl);
+    eye.position.set(sx * 0.037, headY + 0.008, 0.083);
+    a.add(eye);
+    const brow = new THREE.Mesh(new THREE.CapsuleGeometry(0.005, 0.026, 3, 6), hair);
+    brow.rotation.z = Math.PI / 2 + sx * 0.18;
+    brow.position.set(sx * 0.037, headY + 0.045, 0.088);
+    const cheek = new THREE.Mesh(new THREE.CircleGeometry(0.014, 12), new THREE.MeshBasicMaterial({ color: 0xf0907a, transparent: true, opacity: 0.55 }));
+    cheek.position.set(sx * 0.058, headY - 0.028, 0.083);
+    cheek.rotation.y = sx * 0.5;
+    const ear = new THREE.Mesh(new THREE.SphereGeometry(0.02, 10, 8), skin);
+    ear.position.set(sx * 0.098, headY, 0);
+    ear.scale.set(0.6, 1, 0.8);
+    a.add(brow, cheek, ear);
+  }
+  const nose = new THREE.Mesh(new THREE.SphereGeometry(0.011, 10, 8), skin);
+  nose.position.set(0, headY - 0.012, 0.096);
+  const smile = new THREE.Mesh(new THREE.TorusGeometry(0.022, 0.004, 6, 16, Math.PI), new THREE.MeshStandardMaterial({ color: 0x8a3a2a }));
+  smile.rotation.z = Math.PI;
+  smile.position.set(0, headY - 0.036, 0.088);
+  a.add(nose, smile);
+
+  // helm: gelembung kaca bening + bingkai putih di belakang + cincin leher & tepi oranye + "telinga" helm
+  const helmet = new THREE.Mesh(
+    new THREE.SphereGeometry(0.155, 36, 24),
+    new THREE.MeshPhysicalMaterial({ color: 0xdff4ff, roughness: 0.03, metalness: 0, transparent: true, opacity: 0.16, clearcoat: 1, clearcoatRoughness: 0.03, depthWrite: false }),
   );
-  visor.position.set(0, 0.69, 0.03);
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.018, 8, 28), grey);
-  ring.rotation.x = Math.PI / 2;
-  ring.position.y = 0.575;
-  a.add(helmet, visor, ring);
+  helmet.position.y = headY + 0.01;
+  helmet.renderOrder = 3;
+  // bingkai putih mengelilingi gelembung (terlihat dari depan) + tudung putih di belakang kepala
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(0.156, 0.013, 8, 48), suit);
+  rim.position.set(0, headY + 0.01, -0.02);
+  // separuh bola yang menghadap ke belakang (phi π..2π → z ≤ 0), agak dipipihkan
+  const shell = new THREE.Mesh(new THREE.SphereGeometry(0.157, 32, 16, Math.PI, Math.PI), suit);
+  shell.position.set(0, headY + 0.01, -0.025);
+  shell.scale.set(1, 1, 0.55);
+  const neck = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.022, 10, 32), grey);
+  neck.rotation.x = Math.PI / 2;
+  neck.position.y = 0.575;
+  const neckTrim = new THREE.Mesh(new THREE.TorusGeometry(0.1, 0.008, 6, 32), orange);
+  neckTrim.rotation.x = Math.PI / 2;
+  neckTrim.position.y = 0.595;
+  a.add(helmet, shell, rim, neck, neckTrim);
   for (const sx of [-1, 1]) {
-    const lampBox = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.045, 0.05), suit);
-    lampBox.position.set(sx * 0.13, 0.72, 0.04);
-    const lamp = new THREE.Mesh(new THREE.CircleGeometry(0.014, 12), new THREE.MeshBasicMaterial({ color: 0xfffbe6 }));
-    lamp.position.set(sx * 0.13, 0.72, 0.066);
-    a.add(lampBox, lamp);
+    const pod = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.03, 18), suit);
+    pod.rotation.z = Math.PI / 2;
+    pod.position.set(sx * 0.158, headY + 0.01, 0);
+    const podRing = new THREE.Mesh(new THREE.TorusGeometry(0.026, 0.006, 6, 18), orange);
+    podRing.rotation.y = Math.PI / 2;
+    podRing.position.set(sx * 0.175, headY + 0.01, 0);
+    a.add(pod, podRing);
   }
-  // kotak kendali di dada + tombol + selang
-  const dcm = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.09, 0.06), suit);
-  dcm.position.set(0, 0.46, 0.15);
-  a.add(dcm);
-  for (let k = 0; k < 4; k++) {
-    const knob = new THREE.Mesh(new THREE.CylinderGeometry(0.009, 0.009, 0.02, 8), dark);
-    knob.rotation.x = Math.PI / 2;
-    knob.position.set(-0.05 + k * 0.033, 0.47, 0.185);
-    a.add(knob);
-  }
+  // kaca pelindung emas (untuk sinar Matahari) dalam posisi terangkat di atas helm
+  const sunVisor = new THREE.Mesh(
+    new THREE.SphereGeometry(0.162, 32, 16, Math.PI * 0.18, Math.PI * 0.64, 0, Math.PI * 0.3),
+    new THREE.MeshPhysicalMaterial({ color: 0xe8a73a, roughness: 0.08, metalness: 1, clearcoat: 1, clearcoatRoughness: 0.05, emissive: 0x2a1a04 }),
+  );
+  sunVisor.position.y = headY + 0.01;
+  a.add(sunVisor);
+  // lampu kecil oranye di dahi helm
+  const lamp = new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.018, 0.02), orange);
+  lamp.position.set(0, headY - 0.14, 0.1);
+  a.add(lamp);
+
+  // pelindung bahu oranye + garis dongker di lengan
   for (const sx of [-1, 1]) {
-    const hose = new THREE.Mesh(new THREE.TorusGeometry(0.06, 0.009, 6, 16, Math.PI), dark);
-    hose.position.set(sx * 0.07, 0.4, 0.14);
-    hose.rotation.set(0, sx * 0.6, Math.PI / 2);
+    const pad = new THREE.Mesh(new THREE.SphereGeometry(0.06, 14, 10, 0, TAU, 0, Math.PI / 2), orange);
+    pad.position.set(sx * 0.16, 0.54, 0);
+    pad.scale.set(1, 0.6, 1.1);
+    a.add(pad);
+  }
+
+  // kotak kendali dada: bodi putih, lampu biru menyala, kenop & pengatur
+  const dcm = new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.085, 0.055), suit);
+  dcm.position.set(0, 0.43, 0.15);
+  const dcmFrame = new THREE.Mesh(new THREE.BoxGeometry(0.136, 0.091, 0.05), grey);
+  dcmFrame.position.set(0, 0.43, 0.145);
+  const lens = new THREE.Mesh(new THREE.CircleGeometry(0.02, 20), new THREE.MeshStandardMaterial({ color: 0x1f4bff, emissive: 0x1a44ff, emissiveIntensity: 0.9 }));
+  lens.position.set(0.028, 0.43, 0.179);
+  const lensRing = new THREE.Mesh(new THREE.TorusGeometry(0.022, 0.005, 6, 20), dark);
+  lensRing.position.set(0.028, 0.43, 0.179);
+  const dial = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.012, 16), dark);
+  dial.rotation.x = Math.PI / 2;
+  dial.position.set(-0.03, 0.43, 0.18);
+  a.add(dcmFrame, dcm, lens, lensRing, dial);
+  const blue = new THREE.PointLight(0x4a7bff, 0.25, 0.4);
+  blue.position.set(0.028, 0.43, 0.2);
+  a.add(blue);
+  // papan nama AGAM & tali pengikat dongker
+  const tag2 = new THREE.Mesh(new THREE.PlaneGeometry(0.1, 0.036), new THREE.MeshStandardMaterial({ map: nameTex("AGAM"), roughness: 0.6 }));
+  tag2.position.set(0, 0.505, 0.153);
+  tag2.rotation.x = -0.25;
+  a.add(tag2);
+  for (const sx of [-1, 1]) {
+    const strap = new THREE.Mesh(new THREE.BoxGeometry(0.022, 0.16, 0.01), grey);
+    strap.position.set(sx * 0.105, 0.45, 0.13);
+    strap.rotation.z = sx * -0.12;
+    a.add(strap);
+    const hose = new THREE.Mesh(new THREE.TorusGeometry(0.05, 0.008, 6, 16, Math.PI), grey);
+    hose.position.set(sx * 0.09, 0.38, 0.13);
+    hose.rotation.set(0, sx * 0.7, Math.PI / 2);
     a.add(hose);
   }
-  // ransel penunjang hidup (oksigen, pendingin) + antena
-  const pack = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.32, 0.13), suit);
-  pack.position.set(0, 0.47, -0.17);
-  const packLid = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.05, 0.1), grey);
-  packLid.position.set(0, 0.64, -0.17);
+
+  // ransel penunjang hidup: putih dengan panel oranye di sisi + antena
+  const pack = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.3, 0.12), suit);
+  pack.position.set(0, 0.46, -0.17);
+  a.add(pack);
+  for (const sx of [-1, 1]) {
+    const side = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.18, 0.08), orange);
+    side.position.set(sx * 0.128, 0.46, -0.17);
+    a.add(side);
+  }
+  const packLid = new THREE.Mesh(new THREE.BoxGeometry(0.21, 0.04, 0.1), grey);
+  packLid.position.set(0, 0.62, -0.17);
   const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.004, 0.004, 0.12), dark);
-  antenna.position.set(0.1, 0.72, -0.2);
-  a.add(pack, packLid, antenna);
-  // bendera Merah Putih di bahu kiri & logo misi di dada kanan
-  const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.075, 0.05), new THREE.MeshStandardMaterial({ map: patchTex("flag"), roughness: 0.8 }));
-  flag.position.set(-0.155, 0.53, 0.035);
-  flag.rotation.y = -1.1;
-  const mission = new THREE.Mesh(new THREE.CircleGeometry(0.03, 20), new THREE.MeshStandardMaterial({ map: patchTex("mission"), roughness: 0.8 }));
-  mission.position.set(0.075, 0.535, 0.132);
+  antenna.position.set(0.1, 0.7, -0.2);
+  a.add(packLid, antenna);
+
+  // bendera Merah Putih di bahu kiri & logo misi RUMILA di bahu kanan
+  const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.07, 0.046), new THREE.MeshStandardMaterial({ map: patchTex("flag"), roughness: 0.8 }));
+  flag.position.set(-0.19, 0.47, 0.03);
+  flag.rotation.y = -1.25;
+  const mission = new THREE.Mesh(new THREE.CircleGeometry(0.028, 20), new THREE.MeshStandardMaterial({ map: patchTex("mission"), roughness: 0.8 }));
+  mission.position.set(0.19, 0.47, 0.03);
+  mission.rotation.y = 1.25;
   a.add(flag, mission);
-  // anggota badan: grup berporos (sarung tangan & sepatu ikut bergerak)
-  const limb = (r: number, len: number, end: THREE.Mesh, jointY: number) => {
+
+  // anggota badan: grup berporos (sarung tangan & sepatu ikut bergerak), gelang dongker, lutut dongker
+  const limb = (r: number, len: number, end: THREE.Object3D, leg: boolean) => {
     const g = new THREE.Group();
-    const m = new THREE.Mesh(new THREE.CapsuleGeometry(r, len, 4, 12), suit);
+    const m = new THREE.Mesh(new THREE.CapsuleGeometry(r, len, 4, 14), suit);
     m.position.y = -0.1;
-    const joint = new THREE.Mesh(new THREE.TorusGeometry(r * 1.02, r * 0.18, 6, 16), grey);
-    joint.rotation.x = Math.PI / 2;
-    joint.position.y = jointY;
+    const band = new THREE.Mesh(new THREE.TorusGeometry(r * 1.03, r * 0.2, 6, 18), navy);
+    band.rotation.x = Math.PI / 2;
+    band.position.y = -0.1 - len / 2 + 0.01;
+    g.add(m, band);
+    if (leg) {
+      const knee = new THREE.Mesh(new THREE.SphereGeometry(r * 0.85, 14, 10), navy);
+      knee.scale.set(1, 1, 0.55);
+      knee.position.set(0, -0.1, r * 0.75);
+      const kneeCap = new THREE.Mesh(new THREE.SphereGeometry(r * 0.5, 12, 8), dark);
+      kneeCap.scale.set(1, 1, 0.5);
+      kneeCap.position.set(0, -0.1, r * 1.12);
+      const stripe = new THREE.Mesh(new THREE.BoxGeometry(r * 0.5, len * 0.9, 0.01), orange);
+      stripe.position.set(-r * 0.95, -0.1, 0);
+      stripe.rotation.y = Math.PI / 2;
+      g.add(knee, kneeCap, stripe);
+    } else {
+      const joint = new THREE.Mesh(new THREE.TorusGeometry(r * 1.02, r * 0.16, 6, 16), grey);
+      joint.rotation.x = Math.PI / 2;
+      joint.position.y = -0.1;
+      g.add(joint);
+    }
     end.position.y = -0.1 - len / 2 - r * 0.9;
-    g.add(m, joint, end);
+    g.add(end);
     return g;
   };
-  const gloveMesh = () => new THREE.Mesh(new THREE.SphereGeometry(0.045, 12, 10), glove);
+  const gloveMesh = () => {
+    const gl = new THREE.Group();
+    const palm = new THREE.Mesh(new THREE.SphereGeometry(0.043, 14, 10), suit);
+    palm.scale.set(1, 1.1, 0.8);
+    const cuff = new THREE.Mesh(new THREE.CylinderGeometry(0.044, 0.04, 0.03, 14), grey);
+    cuff.position.y = 0.04;
+    const thumb = new THREE.Mesh(new THREE.CapsuleGeometry(0.012, 0.03, 3, 8), dark);
+    thumb.position.set(0.035, 0.005, 0.02);
+    thumb.rotation.z = -0.6;
+    gl.add(palm, cuff, thumb);
+    return gl;
+  };
   const bootMesh = () => {
-    const b = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.06, 0.13), grey);
-    b.geometry.translate(0, 0, 0.02);
+    const b = new THREE.Group();
+    const upper = new THREE.Mesh(new THREE.BoxGeometry(0.095, 0.07, 0.14), suit);
+    upper.geometry.translate(0, 0, 0.022);
+    const sole = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.022, 0.15), navy);
+    sole.position.set(0, -0.042, 0.022);
+    const trim = new THREE.Mesh(new THREE.BoxGeometry(0.098, 0.012, 0.145), orange);
+    trim.position.set(0, -0.022, 0.022);
+    const strap = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.014, 0.05), grey);
+    strap.position.set(0, 0.02, 0.05);
+    b.add(upper, sole, trim, strap);
     return b;
   };
-  const armL = limb(0.045, 0.16, gloveMesh(), -0.1);
-  const armR = limb(0.045, 0.16, gloveMesh(), -0.1);
-  armL.position.set(-0.18, 0.53, 0);
-  armR.position.set(0.18, 0.53, 0);
-  const legL = limb(0.056, 0.14, bootMesh(), -0.1);
-  const legR = limb(0.056, 0.14, bootMesh(), -0.1);
-  legL.position.set(-0.07, 0.27, 0);
-  legR.position.set(0.07, 0.27, 0);
-  a.add(torso, armL, armR, legL, legR);
+  const armL = limb(0.046, 0.16, gloveMesh(), false);
+  const armR = limb(0.046, 0.16, gloveMesh(), false);
+  armL.position.set(-0.185, 0.53, 0);
+  armR.position.set(0.185, 0.53, 0);
+  const legL = limb(0.06, 0.13, bootMesh(), true);
+  const legR = limb(0.06, 0.13, bootMesh(), true);
+  legL.position.set(-0.072, 0.27, 0);
+  legR.position.set(0.072, 0.27, 0);
+  a.add(armL, armR, legL, legR);
   a.scale.setScalar(0.85);
   tag(a, "astronot");
-  return { astro: a, armL, armR, legL, legR, helmet, visor };
+  return { astro: a, armL, armR, legL, legR, helmet, visor: helmet };
 }
 
 function aurora() {
