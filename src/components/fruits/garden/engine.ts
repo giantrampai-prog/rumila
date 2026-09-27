@@ -957,7 +957,7 @@ export class GardenEngine {
       const lim = GARDEN.half - 1;
       hit.x = T.MathUtils.clamp(hit.x, -lim, lim);
       hit.z = T.MathUtils.clamp(hit.z, -lim, lim);
-      this.waypoints = [hit.clone()];
+      this.waypoints = this.findPath(this.pos, hit);
       this.arriveKey = null;
       this.faceTo = null;
       sfx.tap();
@@ -970,7 +970,7 @@ export class GardenEngine {
     const dir = new T.Vector3(this.pos.x - p.x, 0, this.pos.z - p.z);
     if (dir.lengthSq() < 0.01) dir.set(0, 0, 1);
     dir.normalize().multiplyScalar(p.reach);
-    this.waypoints = [new T.Vector3(p.x + dir.x, 0, p.z + dir.z)];
+    this.waypoints = this.findPath(this.pos, new T.Vector3(p.x + dir.x, 0, p.z + dir.z));
     this.arriveKey = p.fruit.id;
     this.faceTo = new T.Vector3(p.x, 0, p.z);
     if (Math.hypot(this.pos.x - p.x, this.pos.z - p.z) < p.reach + 0.6) this.arrive();
@@ -980,7 +980,7 @@ export class GardenEngine {
   walkToKey(key: string) {
     if (key === 'tower') {
       const d = this.towerDoor();
-      this.waypoints = [d];
+      this.waypoints = this.findPath(this.pos, d);
       this.arriveKey = key;
       this.faceTo = this.towerAt.clone();
       sfx.tap();
@@ -989,7 +989,7 @@ export class GardenEngine {
     }
     if (key === 'pond') {
       const st = this.pond.standPoint(this.pos);
-      this.waypoints = [st];
+      this.waypoints = this.findPath(this.pos, st);
       this.arriveKey = key;
       this.faceTo = this.pond.center.clone();
       sfx.tap();
@@ -997,7 +997,7 @@ export class GardenEngine {
       return;
     }
     if (key === 'goats') {
-      this.waypoints = [this.pen.door.clone()];
+      this.waypoints = this.findPath(this.pos, this.pen.door);
       this.arriveKey = key;
       this.faceTo = this.pen.door.clone().add(new T.Vector3(3, 0, 0));
       sfx.tap();
@@ -1006,7 +1006,7 @@ export class GardenEngine {
     }
     const [x, z] = key === 'npc' ? NPC_POS : BED_POS[+key.slice(4)];
     const stand = new T.Vector3(x, 0, z + (key === 'npc' ? 1.8 : 2.1));
-    this.waypoints = [stand];
+    this.waypoints = this.findPath(this.pos, stand);
     this.arriveKey = key;
     this.faceTo = new T.Vector3(x, 0, z);
     sfx.tap();
@@ -1069,6 +1069,7 @@ export class GardenEngine {
   toggleGoats() {
     sfx.creak();
     const out = this.pen.toggle();
+    this.grid = null; // pintu kandang berubah → peta jalan diperbarui
     window.setTimeout(() => sfx.goat(0.9), 600);
     return out;
   }
@@ -1175,11 +1176,177 @@ export class GardenEngine {
 
   /** Rute lewat lorong di antara kolom tanaman (tidak menembus pohon). */
   private route(from: T.Vector3, to: T.Vector3) {
-    if (Math.abs(from.z - to.z) < 0.6) return [to.clone()];
-    const corridors = [-1, 1].flatMap((s) => [0, 1, 2, 3, 4, 5].map((c) => s * (GARDEN.first / 2 + c * GARDEN.step)));
-    const mid = (from.x + to.x) / 2;
-    const xc = corridors.reduce((a, b) => (Math.abs(b - mid) < Math.abs(a - mid) ? b : a));
-    return [new T.Vector3(xc, 0, from.z), new T.Vector3(xc, 0, to.z), to.clone()];
+    return this.findPath(from, to);
+  }
+
+  /* ---------- pencari jalan (A*) di peta kebun: memutari bangku, pohon, sumur, Pak Tani, kolam, kandang ---------- */
+
+  private grid: Uint8Array | null = null;
+  private readonly CELL = 0.5;
+  private gridN = 0;
+
+  private buildGrid() {
+    const H = GARDEN.half,
+      C = this.CELL;
+    const n = (this.gridN = Math.ceil((2 * H) / C));
+    const g = new Uint8Array(n * n);
+    const me = 0.45;
+    for (const o of this.obstacles) {
+      if (o.r <= 0) continue;
+      const R = o.r + me;
+      const i0 = Math.max(0, Math.floor((o.x - R + H) / C)),
+        i1 = Math.min(n - 1, Math.floor((o.x + R + H) / C));
+      const k0 = Math.max(0, Math.floor((o.z - R + H) / C)),
+        k1 = Math.min(n - 1, Math.floor((o.z + R + H) / C));
+      for (let i = i0; i <= i1; i++)
+        for (let k = k0; k <= k1; k++) {
+          const cx = -H + (i + 0.5) * C,
+            cz = -H + (k + 0.5) * C;
+          if (Math.hypot(cx - o.x, cz - o.z) < R) g[k * n + i] = 1;
+        }
+    }
+    // tepi pagar kebun
+    for (let i = 0; i < n; i++) g[i] = g[(n - 1) * n + i] = g[i * n] = g[i * n + n - 1] = 1;
+    this.grid = g;
+  }
+
+  private cellFree(i: number, k: number) {
+    const n = this.gridN;
+    return i >= 0 && k >= 0 && i < n && k < n && !this.grid![k * n + i];
+  }
+
+  private lineFree(a: T.Vector3, b: T.Vector3) {
+    const H = GARDEN.half,
+      C = this.CELL;
+    const d = Math.hypot(b.x - a.x, b.z - a.z);
+    const steps = Math.max(1, Math.ceil(d / 0.2));
+    for (let s = 0; s <= steps; s++) {
+      const x = a.x + ((b.x - a.x) * s) / steps,
+        z = a.z + ((b.z - a.z) * s) / steps;
+      if (!this.cellFree(Math.floor((x + H) / C), Math.floor((z + H) / C))) return false;
+    }
+    return true;
+  }
+
+  /** Jalur bebas halangan dari `from` ke `to` (titik-titik belokan, tanpa titik awal). */
+  private findPath(from: T.Vector3, to: T.Vector3): T.Vector3[] {
+    if (!this.grid) this.buildGrid();
+    const H = GARDEN.half,
+      C = this.CELL,
+      n = this.gridN;
+    const toCell = (p: T.Vector3) => [T.MathUtils.clamp(Math.floor((p.x + H) / C), 0, n - 1), T.MathUtils.clamp(Math.floor((p.z + H) / C), 0, n - 1)];
+    const center = (i: number, k: number) => new T.Vector3(-H + (i + 0.5) * C, 0, -H + (k + 0.5) * C);
+    const nearestFree = (i: number, k: number) => {
+      if (this.cellFree(i, k)) return [i, k];
+      for (let r = 1; r < 24; r++)
+        for (let di = -r; di <= r; di++)
+          for (const dk of [-r, r]) {
+            if (this.cellFree(i + di, k + dk)) return [i + di, k + dk];
+            if (this.cellFree(i + dk, k + di)) return [i + dk, k + di];
+          }
+      return [i, k];
+    };
+    let [si, sk] = toCell(from);
+    [si, sk] = nearestFree(si, sk);
+    const [ti0, tk0] = toCell(to);
+    const [ti, tk] = nearestFree(ti0, tk0);
+    const goal = this.cellFree(ti0, tk0) ? to.clone() : center(ti, tk);
+    const start = new T.Vector3(from.x, 0, from.z);
+    if (this.lineFree(start, goal)) return [goal];
+    // A* 8 arah
+    const N = n * n;
+    const gScore = new Float32Array(N).fill(Infinity);
+    const came = new Int32Array(N).fill(-1);
+    const closed = new Uint8Array(N);
+    const heap: number[] = [],
+      fOf: number[] = [];
+    const push = (id: number, f: number) => {
+      heap.push(id);
+      fOf.push(f);
+      let c = heap.length - 1;
+      while (c > 0) {
+        const p = (c - 1) >> 1;
+        if (fOf[p] <= fOf[c]) break;
+        [heap[p], heap[c]] = [heap[c], heap[p]];
+        [fOf[p], fOf[c]] = [fOf[c], fOf[p]];
+        c = p;
+      }
+    };
+    const pop = () => {
+      const top = heap[0];
+      const lastId = heap.pop()!,
+        lastF = fOf.pop()!;
+      if (heap.length) {
+        heap[0] = lastId;
+        fOf[0] = lastF;
+        let c = 0;
+        for (;;) {
+          const l = c * 2 + 1,
+            r = l + 1;
+          let m = c;
+          if (l < heap.length && fOf[l] < fOf[m]) m = l;
+          if (r < heap.length && fOf[r] < fOf[m]) m = r;
+          if (m === c) break;
+          [heap[m], heap[c]] = [heap[c], heap[m]];
+          [fOf[m], fOf[c]] = [fOf[c], fOf[m]];
+          c = m;
+        }
+      }
+      return top;
+    };
+    const hEst = (i: number, k: number) => Math.hypot(i - ti, k - tk);
+    const sId = sk * n + si,
+      tId = tk * n + ti;
+    gScore[sId] = 0;
+    push(sId, hEst(si, sk));
+    let found = false;
+    while (heap.length) {
+      const id = pop();
+      if (closed[id]) continue;
+      closed[id] = 1;
+      if (id === tId) {
+        found = true;
+        break;
+      }
+      const i = id % n,
+        k = (id - i) / n;
+      for (let di = -1; di <= 1; di++)
+        for (let dk = -1; dk <= 1; dk++) {
+          if (!di && !dk) continue;
+          const ni = i + di,
+            nk = k + dk;
+          if (!this.cellFree(ni, nk)) continue;
+          if (di && dk && (!this.cellFree(i + di, k) || !this.cellFree(i, k + dk))) continue; // tidak memotong sudut
+          const nid = nk * n + ni;
+          const ng = gScore[id] + (di && dk ? 1.414 : 1);
+          if (ng < gScore[nid]) {
+            gScore[nid] = ng;
+            came[nid] = id;
+            push(nid, ng + hEst(ni, nk));
+          }
+        }
+    }
+    if (!found) return [goal];
+    const cells: T.Vector3[] = [];
+    for (let id = tId; id !== -1 && id !== sId; id = came[id]) cells.push(center(id % n, Math.floor(id / n)));
+    cells.reverse();
+    cells[cells.length - 1] = goal;
+    // rapikan: lompat ke titik terjauh yang masih terlihat lurus
+    const out: T.Vector3[] = [];
+    let cur = start,
+      idx = 0;
+    while (idx < cells.length) {
+      let far = idx;
+      for (let j = cells.length - 1; j > idx; j--)
+        if (this.lineFree(cur, cells[j])) {
+          far = j;
+          break;
+        }
+      out.push(cells[far]);
+      cur = cells[far];
+      idx = far + 1;
+    }
+    return out;
   }
 
   private clearRoute() {
