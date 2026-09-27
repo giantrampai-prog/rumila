@@ -197,38 +197,142 @@ export class LautEngine {
     });
     const sky = new T.Mesh(new T.SphereGeometry(900, 32, 16), m);
     this.scene.add(sky);
-    // pulau-pulau di cakrawala
+    // pulau-pulau tropis di cakrawala: bukit bergelombang (pantai pasir → tebing batu → hutan hijau),
+    // kanopi pohon bergerombol di puncak & pohon kelapa di pantai
     const r = rng(9);
+    const sand = new T.Color('#e6d3a3'),
+      rockC = new T.Color('#7d735f'),
+      green = new T.Color('#2f6b2b'),
+      green2 = new T.Color('#3f8a35');
+    const canopyM = new T.MeshStandardMaterial({ color: '#2d6a2a', roughness: 1, flatShading: true });
+    const trunkM = new T.MeshStandardMaterial({ color: '#7a5b3a', roughness: 1 });
+    const palmM = new T.MeshStandardMaterial({ color: '#3f8a35', roughness: 0.9, side: T.DoubleSide });
     for (let i = 0; i < 5; i++) {
-      const isl = new T.Mesh(new T.SphereGeometry(20 + r() * 25, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2), new T.MeshStandardMaterial({ color: '#3f7a3a', roughness: 1 }));
-      isl.scale.y = 0.35 + r() * 0.3;
+      const R = 20 + r() * 25;
+      const geo = new T.SphereGeometry(R, 48, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+      const pos = geo.attributes.position as T.BufferAttribute;
+      const col = new Float32Array(pos.count * 3);
+      const ph = [r() * 6, r() * 6, r() * 6];
+      const tmp = new T.Color();
+      for (let k = 0; k < pos.count; k++) {
+        const x = pos.getX(k), y = pos.getY(k), z = pos.getZ(k);
+        const a = Math.atan2(z, x);
+        const bump = 1 + Math.sin(a * 3 + ph[0]) * 0.12 + Math.sin(a * 7 + ph[1]) * 0.05 + Math.sin((x + z) * 0.3 + ph[2]) * 0.04;
+        pos.setXYZ(k, x * bump, y * (0.9 + 0.2 * Math.sin(a * 2 + ph[1])), z * bump);
+        const hN = y / R;
+        tmp.copy(hN < 0.04 ? sand : hN < 0.12 ? rockC : green).lerp(green2, hN > 0.12 ? Math.max(0, Math.sin(a * 5 + x * 0.2)) * 0.5 : 0);
+        col.set([tmp.r, tmp.g, tmp.b], k * 3);
+      }
+      geo.setAttribute('color', new T.BufferAttribute(col, 3));
+      geo.computeVertexNormals();
+      const isl = new T.Mesh(geo, new T.MeshStandardMaterial({ vertexColors: true, roughness: 1, flatShading: true }));
+      const sy = 0.35 + r() * 0.3;
+      isl.scale.y = sy;
       const a = -0.9 - r() * 1.6;
-      isl.position.set(Math.cos(a) * (220 + r() * 120), -2, Math.sin(a) * (220 + r() * 120));
+      isl.position.set(Math.cos(a) * (220 + r() * 120), -0.8, Math.sin(a) * (220 + r() * 120));
+      // kanopi hutan di lereng atas
+      const trees = new T.InstancedMesh(new T.IcosahedronGeometry(1, 0), canopyM, 70);
+      const d = new T.Object3D();
+      for (let k = 0; k < 70; k++) {
+        const ang = r() * Math.PI * 2, rr = Math.sqrt(r()) * R * 0.75;
+        const yy = Math.sqrt(Math.max(0, R * R - rr * rr)) * sy;
+        d.position.set(Math.cos(ang) * rr, yy + 1, Math.sin(ang) * rr);
+        d.scale.set(3 + r() * 3, 2.5 + r() * 2, 3 + r() * 3);
+        d.updateMatrix();
+        trees.setMatrixAt(k, d.matrix);
+      }
+      isl.add(trees);
+      trees.scale.y = 1 / sy; // batalkan pipih pulau untuk pohon
+      trees.position.y = 0;
+      // pohon kelapa di tepi pantai
+      for (let k = 0; k < 6; k++) {
+        const ang = r() * Math.PI * 2, rr = R * (0.97 + r() * 0.05);
+        const palm = new T.Group();
+        const trunk = new T.Mesh(new T.CylinderGeometry(0.35, 0.5, 9, 6), trunkM);
+        trunk.position.y = 4.5;
+        trunk.rotation.z = (r() - 0.5) * 0.4;
+        palm.add(trunk);
+        for (let f = 0; f < 6; f++) {
+          const leaf = new T.Mesh(new T.PlaneGeometry(1.4, 6), palmM);
+          leaf.position.set(0, 9, 0);
+          leaf.rotation.set(1.1, (f / 6) * Math.PI * 2, 0);
+          leaf.translateY(2.6);
+          palm.add(leaf);
+        }
+        palm.position.set(Math.cos(ang) * rr, 0, Math.sin(ang) * rr);
+        palm.scale.y = 1 / sy;
+        isl.add(palm);
+      }
       this.scene.add(isl);
     }
     return sky;
   }
 
+  /**
+   * Permukaan laut. Dari atas: ombak nyata dari 5 arah (gelombang panjang + riak pendek) dengan normal dihitung
+   * dari kemiringan ombak, pantulan langit menurut sudut pandang (Fresnel), warna air hijau-biru yang lebih
+   * gelap di lembah ombak, kilau matahari berkelip di jalur matahari, buih tipis di puncak ombak, dan memudar ke
+   * warna cakrawala di kejauhan. Dari bawah: jendela Snell + jaring riak cahaya.
+   */
   private buildSurface() {
+    const WAVES = `
+      const int NW = 5;
+      vec4 W[NW] = vec4[NW](
+        vec4(0.80, 0.60, 0.28, 22.0),
+        vec4(-0.45, 0.89, 0.18, 11.0),
+        vec4(0.97, -0.24, 0.10, 5.5),
+        vec4(-0.70, -0.71, 0.05, 2.8),
+        vec4(0.20, 0.98, 0.035, 1.6));
+      // tinggi & kemiringan ombak di titik xz (x = arah, z = amplitudo, w = panjang gelombang)
+      vec3 waves(vec2 p, float t){
+        float h = 0.0; vec2 g = vec2(0.0);
+        for (int i = 0; i < NW; i++){
+          vec2 d = normalize(W[i].xy); float k = 6.2832 / W[i].w; float w = sqrt(9.8 * k);
+          float ph = k * dot(d, p) - w * t * 0.6 + float(i) * 1.7;
+          h += W[i].z * sin(ph);
+          g += W[i].z * k * cos(ph) * d;
+        }
+        return vec3(h, g);
+      }`;
     const m = new T.ShaderMaterial({
       side: T.DoubleSide,
       transparent: true,
       depthWrite: false,
       uniforms: { uTime: this.uTime },
-      vertexShader: `uniform float uTime; varying vec3 vW; void main(){ vec3 p = position;
-        p.z += sin(p.x*0.35 + uTime*1.2)*0.12 + cos(p.y*0.29 + uTime*0.9)*0.12;
-        vec4 w = modelMatrix * vec4(p,1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
-      fragmentShader: `uniform float uTime; varying vec3 vW;
+      vertexShader: `uniform float uTime; varying vec3 vW; varying float vH; ${WAVES}
+        void main(){
+          vec4 w = modelMatrix * vec4(position, 1.0);
+          float fade = 1.0 - smoothstep(60.0, 260.0, length(w.xz - cameraPosition.xz));
+          vec3 wv = waves(w.xz, uTime);
+          w.y += wv.x * fade; vH = wv.x;
+          vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
+      fragmentShader: `uniform float uTime; varying vec3 vW; varying float vH; ${WAVES}
         void main(){
           vec2 p = vW.xz;
           float r = sin(p.x*0.9 + uTime*1.4 + sin(p.y*0.7))*sin(p.y*1.1 - uTime*1.1);
-          if (gl_FrontFacing == (cameraPosition.y > 0.0)) {}
           if (cameraPosition.y > 0.0) {
+            vec3 wv = waves(p, uTime);
+            // riak halus tambahan untuk kilau
+            vec2 fine = vec2(sin(p.x * 3.1 + uTime * 2.3 + sin(p.y * 2.7)), sin(p.y * 3.7 - uTime * 2.1 + sin(p.x * 2.2))) * 0.06;
+            vec3 n = normalize(vec3(-wv.y - fine.x, 1.0, -wv.z - fine.y));
             vec3 v = normalize(cameraPosition - vW);
-            float fres = pow(1.0 - max(v.y, 0.0), 3.0);
-            vec3 c = mix(vec3(0.04,0.3,0.5), vec3(0.62,0.8,0.95), fres*0.8);
-            c += smoothstep(0.75, 1.0, r) * 0.25;
-            gl_FragColor = vec4(c, 0.95);
+            float dist = length(cameraPosition - vW);
+            float fres = 0.03 + 0.97 * pow(1.0 - max(dot(n, v), 0.0), 5.0);
+            vec3 rf = reflect(-v, n);
+            vec3 sky = mix(vec3(1.0, 0.8, 0.6), vec3(0.45, 0.7, 0.93), smoothstep(0.0, 0.3, rf.y));
+            sky = mix(sky, vec3(0.22, 0.48, 0.84), smoothstep(0.3, 0.9, rf.y));
+            vec3 deep = vec3(0.02, 0.2, 0.3), shallow = vec3(0.05, 0.42, 0.5);
+            vec3 water = mix(deep, shallow, clamp(0.5 + vH * 1.4, 0.0, 1.0));
+            vec3 c = mix(water, sky, fres);
+            vec3 sun = normalize(vec3(-0.6, 0.18, -0.5));
+            float sd = max(dot(rf, sun), 0.0);
+            c += vec3(1.0, 0.86, 0.62) * (pow(sd, 400.0) * 6.0 + pow(sd, 45.0) * 0.35);
+            // buih tipis di puncak ombak
+            float foam = smoothstep(0.3, 0.45, vH + fine.x * 0.8) * (1.0 - smoothstep(40.0, 120.0, dist));
+            c = mix(c, vec3(0.93, 0.97, 1.0), foam * 0.55);
+            // kejauhan memudar ke warna cakrawala
+            c = mix(c, vec3(0.78, 0.8, 0.82), smoothstep(150.0, 700.0, dist) * 0.8);
+            gl_FragColor = vec4(c, 0.97);
           } else {
             // dilihat dari bawah: jendela cahaya terang tepat di atas (jendela Snell), di luarnya memantulkan
             // air yang lebih gelap; jaring kilau bergerak seperti riak permukaan asli
@@ -238,13 +342,13 @@ export class LautEngine {
             float c1 = sin(q.x * 1.7 + uTime * 0.9 + sin(q.y * 1.3 + uTime * 0.6));
             float c2 = sin(q.y * 1.9 - uTime * 0.8 + sin(q.x * 1.1 - uTime * 0.5));
             float net = pow(max(0.0, 1.0 - abs(c1 + c2) * 0.6), 3.0);
-            vec3 c = mix(vec3(0.12, 0.47, 0.64), vec3(0.78, 0.94, 1.0), win) + net * 0.22 * (0.35 + win);
+            vec3 c = mix(vec3(0.12, 0.47, 0.64), vec3(0.78, 0.94, 1.0), win) + net * 0.22 * (0.35 + win) + r * 0.0;
             float d = length(p - cameraPosition.xz);
             gl_FragColor = vec4(c, clamp(1.1 - d / 70.0, 0.0, 0.9));
           }
         }`,
     });
-    const water = new T.Mesh(new T.PlaneGeometry(1600, 1600, 120, 120), m);
+    const water = new T.Mesh(new T.PlaneGeometry(1600, 1600, 256, 256), m);
     water.rotation.x = -Math.PI / 2;
     this.scene.add(water);
     return water;

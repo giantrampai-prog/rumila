@@ -7,6 +7,13 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 const URL = "/roket/agam-astronot.glb";
+
+export interface AgamModelOpts {
+  /** berkas GLB bertulang (bawaan: astronaut Agam) */
+  url?: string;
+  /** atur skala/posisi/orientasi akar model sendiri; bila tidak ada, tinggi disamakan dengan isi `host` */
+  fit?: (root: THREE.Object3D) => void;
+}
 const X = new THREE.Vector3(1, 0, 0);
 const Z = new THREE.Vector3(0, 0, 1);
 
@@ -37,17 +44,18 @@ export class AgamModel {
   private v = new THREE.Vector3();
 
   /** muat model ke dalam `host`; `onReady` dipanggil dengan akar model (mis. untuk penanda ketuk & bayangan) */
-  constructor(host: THREE.Group, onReady?: (root: THREE.Object3D) => void) {
+  constructor(host: THREE.Group, onReady?: (root: THREE.Object3D) => void, opts: AgamModelOpts = {}) {
     // tinggi astronaut prosedural dalam satuan grup (dipanggil saat grup masih di titik asal tanpa rotasi)
     host.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(host);
     const height = Math.max(0.3, (box.max.y - box.min.y) / (host.scale.y || 1));
 
     new GLTFLoader().load(
-      URL,
+      opts.url ?? URL,
       (g) => {
         const root = g.scene;
-        root.scale.setScalar(height / 1.2);
+        if (opts.fit) opts.fit(root);
+        else root.scale.setScalar(height / 1.2);
         root.traverse((o) => {
           const m = o as THREE.SkinnedMesh;
           if (m.isMesh) {
@@ -58,6 +66,7 @@ export class AgamModel {
         host.children.forEach((c) => (c.visible = false)); // sembunyikan astronaut prosedural
         host.add(root);
         root.updateMatrixWorld(true);
+        // ruang model = ruang GLB sebelum rotasi `fit` (sumbu x samping, y atas, z depan tokoh)
         const rootInv = root.getWorldQuaternion(new THREE.Quaternion()).invert();
         root.traverse((o) => {
           const b = o as THREE.Bone;

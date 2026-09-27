@@ -1,6 +1,6 @@
 "use client";
 
-// Pratinjau KHUSUS DEVELOPMENT model 3D astronaut Agam (GLB dari Higgsfield). Di produksi halaman ini 404.
+// Pratinjau KHUSUS DEVELOPMENT model 3D (GLB dari Higgsfield; ?src=/path.glb, bawaan astronaut Agam). Di produksi 404.
 
 import { notFound } from "next/navigation";
 import { useEffect, useRef } from "react";
@@ -27,7 +27,8 @@ export default function DevAstronot() {
     const d = new THREE.DirectionalLight(0xffffff, 2.2);
     d.position.set(2, 3, 2);
     s.add(d);
-    new GLTFLoader().load("/roket/agam-astronot.glb", (g) => {
+    new GLTFLoader().load(new URLSearchParams(location.search).get("src") ?? "/roket/agam-astronot.glb", (g) => {
+      s.add(new THREE.AxesHelper(1.2));
       s.add(g.scene);
       (window as unknown as Record<string, unknown>).__astro = g.scene;
     });

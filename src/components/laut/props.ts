@@ -3,6 +3,8 @@
 // (karang, lamun, batu, cerobong hidrotermal).
 
 import * as T from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { AgamModel, type AgamPose } from '../roket/agam-model';
 import { canvasTex, glow, glowSprite } from './creatures';
 
 const std = (color: T.ColorRepresentation, rough = 0.6, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color, roughness: rough, ...extra });
@@ -121,17 +123,46 @@ export function diver() {
     (beam.material as T.MeshBasicMaterial).opacity = k * 0.12;
   };
   /** berdiri: kepala menoleh ke arah perut (depan tubuh saat tegak) */
+  let standing = false;
   g.userData.stand = (on: boolean) => {
+    standing = on;
     headG.rotation.z = on ? -Math.PI / 2 : 0;
     // lengan menggantung di sisi tubuh saat berdiri
     armL.rotation.z = armR.rotation.z = on ? Math.PI * 0.95 : 0;
   };
+
+  // Model 3D Agam penyelam (Higgsfield: baju selam, BCD, tabung, masker, fin; 24 tulang). GLB tegak (kepala +y,
+  // wajah +z) diputar ke rangka penyelam ini: kepala ke +x, punggung/tabung ke +y, perut ke −y; panjang ±2 unit.
+  const rig = new AgamModel(
+    g,
+    () => {
+      // senter tetap dipakai
+      torch.visible = true;
+      torch.target.visible = true;
+      beam.visible = true;
+    },
+    {
+      url: '/laut/agam-penyelam.glb',
+      fit: (root) => {
+        const k = 2.0 / 1.2;
+        root.scale.setScalar(k);
+        root.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(new T.Vector3(0, 0, -1), new T.Vector3(1, 0, 0), new T.Vector3(0, -1, 0)));
+        root.position.set(-1.25, 0, 0);
+      },
+    },
+  );
   g.userData.update = (t: number, kick = 1) => {
     const f = Math.sin(t * 5) * 0.45 * kick;
     legL.rotation.z = f;
     legR.rotation.z = -f;
     armL.rotation.y = 0.25 + Math.sin(t * 1.2) * 0.1;
     armR.rotation.y = -0.25 - Math.sin(t * 1.2) * 0.1;
+    // model bertulang: berdiri tegak di kapal, atau berenang dengan kepakan fin bergantian & lengan rapat di badan
+    const flutter = Math.sin(t * 5) * 0.32 * kick;
+    const pose: AgamPose = standing
+      ? { legL: 0, legR: 0, armL: 0, armR: 0, lower: 0.75 }
+      : { legL: flutter, legR: -flutter, armL: 0.35 + Math.sin(t * 1.2) * 0.05, armR: 0.35 - Math.sin(t * 1.2) * 0.05, lower: 0.85 };
+    rig.pose(pose);
   };
   g.scale.setScalar(1.1);
   return g;
@@ -438,6 +469,23 @@ export function boat() {
   const flag = new T.Mesh(new T.PlaneGeometry(0.9, 0.56, 10, 1), new T.MeshStandardMaterial({ map: flagTex, side: T.DoubleSide, roughness: 0.8 }));
   flag.position.set(-4.08, 3.1, 0);
   g.add(pole, flag);
+  // Model 3D kapal penyelam (Higgsfield image-to-3D): menggantikan kapal sederhana di atas begitu dimuat.
+  // Buritan (rak tabung, tangga, bendera) di +x seperti kapal lama; lantai dek belakang sejajar dek lama (y 0,72).
+  new GLTFLoader().load('/laut/kapal-penyelam.glb', (gl) => {
+    const m = gl.scene;
+    m.scale.setScalar(9 / 1.9);
+    m.position.set(0.2, 0.82, 0);
+    m.traverse((o) => {
+      const mesh = o as T.Mesh;
+      if (mesh.isMesh) {
+        mesh.castShadow = mesh.receiveShadow = true;
+        const mat = mesh.material as T.MeshStandardMaterial;
+        if (mat.roughness > 0.6) mat.roughness = 0.45; // cat kapal sedikit mengilap
+      }
+    });
+    g.children.forEach((c) => (c.visible = false));
+    g.add(m);
+  });
   g.userData.update = (t: number) => {
     const p = flag.geometry.attributes.position as T.BufferAttribute;
     for (let i = 0; i < p.count; i++) {
