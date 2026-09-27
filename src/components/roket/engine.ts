@@ -335,14 +335,23 @@ export class RocketEngine {
         out.look.set(0, Y + 1, 0);
         return;
       }
-      case "termosfer":
-        // dari bawah-samping menatap ke atas: kapsul & stasiun yang mendekat
-        out.pos.set(Math.cos(a) * 16, Y + 1, Math.sin(a) * 16);
-        out.look.set(0, Y + 5 + (pose.issGap ?? 0) * 0.5, 0);
+      case "termosfer": {
+        // Paruh pertama (narasi "cahaya hijau itu aurora"): kapsul di depan, tirai aurora di belakangnya.
+        // Menjelang "lihat di depan, itu Stasiun": kamera beralih menatap ke atas ke stasiun yang mendekat.
+        const b = Math.PI / 2 - 1.9; // arah tirai aurora (busur silinder aurora mencakup sudut ini)
+        const k = smooth(0.62, 0.9, p);
+        const auroraPos = new THREE.Vector3(-Math.cos(b) * 7, Y + 3.2, -Math.sin(b) * 7);
+        const auroraLook = new THREE.Vector3(Math.cos(b) * 280, altToY(240) + 30, Math.sin(b) * 280);
+        const issPos = new THREE.Vector3(-Math.cos(b) * 9, Y + 1.5, -Math.sin(b) * 9);
+        const issLook = new THREE.Vector3(0, Y + 5 + (pose.issGap ?? 0) * 0.5, 0);
+        out.pos.lerpVectors(auroraPos, issPos, k);
+        out.look.lerpVectors(auroraLook, issLook, k);
         return;
+      }
       case "merapat":
-        out.pos.set(Math.cos(a) * 12, Y + 8, Math.sin(a) * 12);
-        out.look.set(0, Y + 6.5, 0);
+        // dekat, supaya kapsul (tinggal bagian ini setelah tahap kedua lepas) tampak jelas saat merapat
+        out.pos.set(Math.cos(a) * 5.5, Y + 5.2, Math.sin(a) * 5.5);
+        out.look.set(0, Y + 6.2, 0);
         return;
       case "bertugas":
         out.look.set(ap.x, ap.y + 0.3, ap.z);

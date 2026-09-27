@@ -472,7 +472,7 @@ function aurora() {
         float bands = pow(0.5 + 0.5 * sin(x * 3.0 + wave * 4.0), 3.0);
         float v = vUv.y; float fade = smoothstep(0.0, 0.15, v) * (1.0 - smoothstep(0.35, 1.0, v));
         vec3 col = mix(vec3(0.2, 1.0, 0.55), vec3(0.65, 0.3, 1.0), smoothstep(0.3, 0.9, v));
-        gl_FragColor = vec4(col, bands * fade * uAlpha * 0.45); }`,
+        gl_FragColor = vec4(col, bands * fade * uAlpha * 0.75); }`,
     transparent: true,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
