@@ -179,15 +179,7 @@ const ADVENTURE_3D: Omit<Tool, "folder" | "folderName" | "c">[] = [
   { id: "angkasa3", name: "Roket & Astronot", icon: "rocket_launch", g: "purple", desc: "Luncurkan roket 3D dari landasan sampai luar angkasa." },
   { ...edu("edukasi6"), name: "Jelajah Tubuh", g: "red", desc: "Lihat kulit, otot, tulang, dan organ tubuh dalam 3D." },
   { ...edu("edukasi-buah"), name: "Kebun Buah", g: "orange", desc: "Putar dan kenali 48 buah dalam 3D." },
-  {
-    id: "petualangan-laut",
-    name: "Jelajah Laut",
-    icon: "scuba_diving",
-    g: "sky",
-    desc: "Menyelam ke dasar laut bertemu ikan, terumbu karang, dan paus.",
-    topics: ["Terumbu karang", "Ikan & hewan laut", "Laut dalam", "Menjaga laut"],
-    planned: true,
-  },
+  { id: "petualangan-laut", name: "Bawah Laut", icon: "scuba_diving", g: "sky", desc: "Menyelam dari terumbu karang sampai palung laut terdalam." },
 ];
 
 export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items }) => ({
