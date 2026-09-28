@@ -301,6 +301,20 @@ export class Cabin {
     this.camera.updateProjectionMatrix();
   }
 
+  private focusPoint = new THREE.Vector3(0, 0.02, 0.9);
+
+  focus(target: string, blend: number) {
+    const point = target === "boneka" ? this.toy.position.clone()
+      : target === "kursi" ? new THREE.Vector3(-0.3, -0.3, 0.3)
+      : target === "konsol" ? new THREE.Vector3(0.2, -0.36, 0.62)
+      : new THREE.Vector3(0, 0.02, 0.9);
+    this.focusPoint.lerp(point, blend);
+    this.camera.lookAt(this.focusPoint);
+    const fov = target === "boneka" ? 48 : target === "konsol" ? 58 : 72;
+    this.camera.fov += (fov - this.camera.fov) * blend;
+    this.camera.updateProjectionMatrix();
+  }
+
   update(c: CabinState) {
     const f = c.float;
     // Tubuh sendiri (POV): duduk tertekan saat gaya G besar; saat tanpa bobot kaki & tangan melayang pelan

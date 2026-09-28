@@ -1196,6 +1196,14 @@ export class RocketScene {
     this.agam?.pose({ legL: s, legR: -s, armL: -s * 0.7, armR: s * 0.7, lower: 1 });
   }
 
+  /** Follow the actual scene objects, rather than an approximate point above the rocket. */
+  missionAnchor(target: "stasiun" | "panel-surya" | "satelit") {
+    if (target === "satelit") return this.sats.children[0].getWorldPosition(new THREE.Vector3());
+    if (this.issShowcase) return this.issShowcase.clone();
+    if (target === "panel-surya") return this.iss.localToWorld((this.iss.userData.panelPoint as THREE.Vector3).clone());
+    return this.iss.getWorldPosition(new THREE.Vector3());
+  }
+
   /** Lingkungan menurut ketinggian KAMERA (langit, kabut, bintang, aurora, dll.) + partikel. */
   update(dt: number) {
     this.time += dt;

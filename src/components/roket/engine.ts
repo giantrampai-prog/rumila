@@ -6,7 +6,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { skyEnvScene, worldY } from "./site";
 import { create } from "zustand";
-import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
+import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, type MisiAudioPart } from "@/lib/roket/misi";
+import { missionCueAt, missionDurations } from "@/lib/roket/timeline";
 import { followAudio } from "@/lib/audio-clock";
 import { engineSound, sfx, stopEngineSound } from "@/lib/sfx";
 import { sharedAudio, unlockAudio } from "@/lib/audio-unlock";
@@ -22,6 +23,10 @@ interface RoketUI {
   stop: number;
   /** progres persinggahan aktif (0–1) */
   progress: number;
+  seconds: number;
+  duration: number;
+  cueKey: string;
+  audioError: boolean;
   playing: boolean;
   finished: boolean;
   focus: string | null;
@@ -31,6 +36,10 @@ export const useRoket = create<RoketUI>(() => ({
   mode: "jelajah",
   stop: 0,
   progress: 0,
+  seconds: 0,
+  duration: missionDurations()[0],
+  cueKey: "landasan:0",
+  audioError: false,
   playing: false,
   finished: false,
   focus: null,
@@ -106,7 +115,7 @@ export class RocketEngine {
   /* timeline */
   private idx = 0;
   private t = 0;
-  private durs: number[] = MISI.map(dwellSeconds);
+  private durs: number[] = missionDurations();
   private audio: HTMLAudioElement | null = null;
   private part: MisiAudioPart | null = null;
   private seekTo: number | null = null;
@@ -115,6 +124,8 @@ export class RocketEngine {
   private camPos = new THREE.Vector3(16, 7.4, 20);
   private camLook = new THREE.Vector3(0, 3, 0);
   private snap = true;
+  private cabinSnap = true;
+  private reduceMotion = typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
   private fly: { from: THREE.Vector3; fromT: THREE.Vector3; to: THREE.Vector3; toT: THREE.Vector3; k: number } | null = null;
   private down: { x: number; y: number } | null = null;
   private ray = new THREE.Raycaster();
@@ -205,6 +216,8 @@ export class RocketEngine {
     this.world.camera.updateProjectionMatrix();
     this.cabin.resize(w / h);
     this.cupola.resize(w / h);
+    this.snap = true;
+    this.cabinSnap = true;
   }
 
   /* ---------------- mode ---------------- */
@@ -213,6 +226,7 @@ export class RocketEngine {
     unlockAudio(); // dipanggil dari ketukan tombol
     useRoket.setState({ mode: m, focus: null, finished: false });
     this.world.issShowcase = null;
+    this.fly = null;
     if (m === "terbang") {
       this.snap = true;
       this.go(0);
@@ -230,10 +244,20 @@ export class RocketEngine {
 
   go(i: number) {
     this.idx = Math.max(0, Math.min(MISI.length - 1, i));
-    this.t = 0;
+    this.seek(0);
+  }
+
+  /** Seek within a chapter without changing its play/pause state. */
+  seek(seconds: number) {
+    this.t = Math.max(0, Math.min(this.durs[this.idx] - 0.01, seconds));
     const part = partFor(this.idx);
-    if (part) this.seekTo = part.cues[this.idx - part.first];
-    useRoket.setState({ stop: this.idx, progress: 0, finished: false });
+    if (part) this.seekTo = part.cues[this.idx - part.first] + this.t;
+    this.clock = this.seekTo ?? this.t;
+    this.snap = true;
+    this.cabinSnap = true;
+    this.fly = null;
+    const cue = missionCueAt(this.idx, this.t, this.durs[this.idx]);
+    useRoket.setState({ stop: this.idx, seconds: this.t, duration: this.durs[this.idx], progress: this.t / this.durs[this.idx], cueKey: cue.key, finished: false, audioError: false });
   }
 
   setPlaying(p: boolean) {
@@ -243,6 +267,8 @@ export class RocketEngine {
     if (p && useRoket.getState().mode === "terbang") this.music.play();
     else this.music.pause();
     if (p) {
+      useRoket.setState({ audioError: false });
+      if (this.audio?.error) this.audio.load();
       if (useRoket.getState().finished) {
         this.go(0);
       }
@@ -331,103 +357,58 @@ export class RocketEngine {
     return { altKm, sepT, sepAltKm, sep2T, sep2AltKm, issGap, burn, steam, astro, armOpen };
   }
 
-  /** Kamera yang diinginkan untuk persinggahan (lembut; tanpa guncangan). */
+  /** The camera and popup resolve the same cue from the narration clock. */
   private shot(i: number, t: number, pose: RocketPose, out: { pos: THREE.Vector3; look: THREE.Vector3 }) {
-    const id = MISI[i].id;
+    const target = missionCueAt(i, t, this.durs[i]).target;
     const Y = altToY(pose.altKm);
-    const p = clamp01(t / this.durs[i]);
-    const flightT = this.durs.slice(0, i).reduce((a, b) => a + b, 0) + t;
-    const a = 0.7 + flightT * 0.012;
+    const a = 0.65 + t * 0.008;
     const ap = this.world.a.astro.position;
-    switch (id) {
-      case "landasan": {
-        const ang = 0.6 + t * 0.03;
-        out.pos.set(Math.cos(ang) * 20, 5, Math.sin(ang) * 20);
-        out.look.set(0, 3, 0);
-        return;
+    const frame = (x: number, y: number, z: number, dx: number, dy: number, dz: number) => {
+      out.look.set(x, y, z);
+      const aspect = this.world.camera.aspect;
+      const fit = target === "stasiun" ? Math.max(1, 1.4 / aspect)
+        : target === "panel-surya" ? Math.max(1, 1 / aspect)
+        : target === "satelit" ? Math.max(1, 0.65 / aspect)
+        : aspect < 1 ? 1.22 : 1;
+      out.pos.set(x + dx * fit, y + dy * fit, z + dz * fit);
+      // Keep the subject above the bottom information card, including on phones.
+      out.look.y -= Math.hypot(dx, dy, dz) * fit * (this.world.camera.aspect < 1 ? 0.1 : 0.11);
+    };
+    switch (target) {
+      case "landasan": frame(0, 3, 0, -14, 5, 18); break;
+      case "menara": frame(2.2, 4, 0, 8, 3, 11); break;
+      case "astronaut":
+        frame(ap.x, ap.y + 0.48, ap.z, -1.35, 0.35, 1.7); break;
+      case "helm": frame(ap.x, ap.y + 0.75, ap.z, -0.68, 0.12, 0.85); break;
+      case "kapsul": frame(0, Y + 5.35, 0, -2.7, 0.6, 3.8); break;
+      case "mesin": frame(0, Y + 0.55, 0, -3.2, -0.15, 4.1); break;
+      case "tahap-1": {
+        const p = this.world.r.s1.getWorldPosition(new THREE.Vector3());
+        frame(p.x, p.y + 1.5, p.z, -5, 2.5, 6); break;
       }
-      case "tujuan-misi": {
-        // terbang pelan di atas kompleks: gedung, pantai, menara air
-        const ang = 1.6 + t * 0.035;
-        out.pos.set(Math.cos(ang) * 22, 6.5, Math.sin(ang) * 22);
-        out.look.set(-3, 1, 2);
-        return;
+      case "tahap-2": frame(0, Y + 3.8, 0, -3.8, -0.3, 4.8); break;
+      case "stasiun": case "panel-surya": case "satelit": {
+        const anchor = this.world.missionAnchor(target);
+        const d = target === "stasiun" ? 10 : target === "panel-surya" ? 5.6 : 9;
+        frame(anchor.x, anchor.y, anchor.z, d * 0.28, d * 0.4, d); break;
       }
-      case "baju-antariksa": {
-        // dari depan astronaut (kaca helm emas terlihat), berputar pelan
-        const ang = 2.0 + t * 0.04;
-        out.look.set(ap.x, ap.y + 0.45, ap.z);
-        out.pos.set(ap.x + Math.cos(ang) * 1.9, ap.y + 0.75, ap.z + Math.sin(ang) * 1.9);
-        return;
+      case "bumi": {
+        const y = Math.max(Y, altToY(400));
+        frame(0, y - 130, 0, -32, 146, 55); break;
       }
-      case "naik-kapsul":
-        out.look.set(ap.x, ap.y + 0.4, ap.z);
-        out.pos.set(ap.x + 3.2, ap.y + 1.3, ap.z + 3.6);
-        return;
-      case "hitung-mundur": {
-        const d = 10 - p * 2.5;
-        out.pos.set(-d * 1.0, 1.2, d * 0.5); // sisi yang tidak tertutup menara & tiang penangkal petir
-        out.look.set(0, 3.6, 0);
-        return;
+      case "aurora": {
+        const b = Math.PI / 2 - 1.9;
+        out.pos.set(-Math.cos(b) * 7, Y + 3.2, -Math.sin(b) * 7);
+        out.look.set(Math.cos(b) * 280, altToY(240) + 30, Math.sin(b) * 280);
+        break;
       }
-      case "lepas-landas":
-        out.pos.set(-11, Math.max(1.6, Y * 0.5 + 1.6), 5.5);
-        out.look.set(0, Y + 3, 0);
-        return;
-      case "troposfer": {
-        // dari atas-samping menatap ke bawah: roket di antara awan, landasan tampak kecil jauh di bawah
-        out.pos.set(Math.cos(a) * 15, Y + 9, Math.sin(a) * 15);
-        out.look.set(0, Y - 3, 0);
-        return;
-      }
-      case "gravitasi": {
-        // jauh & tinggi: Bumi melengkung di bawah roket
-        out.pos.set(Math.cos(a) * 26, Y + 12, Math.sin(a) * 26);
-        out.look.set(0, Y + 1, 0);
-        return;
-      }
-      case "termosfer": {
-        // Paruh pertama (narasi "cahaya hijau itu aurora"): kapsul di depan, tirai aurora di belakangnya.
-        // Menjelang "lihat di depan, itu Stasiun": kamera beralih menatap ke atas ke stasiun yang mendekat.
-        const b = Math.PI / 2 - 1.9; // arah tirai aurora (busur silinder aurora mencakup sudut ini)
-        const k = smooth(0.62, 0.9, p);
-        const auroraPos = new THREE.Vector3(-Math.cos(b) * 7, Y + 3.2, -Math.sin(b) * 7);
-        const auroraLook = new THREE.Vector3(Math.cos(b) * 280, altToY(240) + 30, Math.sin(b) * 280);
-        const issPos = new THREE.Vector3(-Math.cos(b) * 9, Y + 1.5, -Math.sin(b) * 9);
-        const issLook = new THREE.Vector3(0, Y + 5 + (pose.issGap ?? 0) * 0.5, 0);
-        out.pos.lerpVectors(auroraPos, issPos, k);
-        out.look.lerpVectors(auroraLook, issLook, k);
-        return;
-      }
-      case "merapat":
-        // dekat, supaya kapsul (tinggal bagian ini setelah tahap kedua lepas) tampak jelas saat merapat
-        out.pos.set(Math.cos(a) * 5.5, Y + 5.2, Math.sin(a) * 5.5);
-        out.look.set(0, Y + 6.2, 0);
-        return;
-      case "bertugas":
-        out.look.set(ap.x, ap.y + 0.3, ap.z);
-        out.pos.set(ap.x + Math.cos(a) * 4, ap.y + 2.5, ap.z + Math.sin(a) * 4);
-        return;
-      case "eksosfer":
-        // menatap ke atas dari dekat stasiun: satelit-satelit di eksosfer
-        // dari samping stasiun: stasiun & satelit dengan garis Bumi bercahaya di bawahnya
-        out.pos.set(Math.cos(a) * 24, Y + 1, Math.sin(a) * 24);
-        out.look.set(0, altToY(650) + 12, 0);
-        return;
-      case "penutup": {
-        const back = ease(p);
-        out.look.set(0, Y + 6 - back * 50, 0);
-        out.pos.set(Math.cos(a) * (12 + back * 70), Y + 10 + back * 45, Math.sin(a) * (12 + back * 70));
-        return;
-      }
-      default: {
-        // Kamera kejar: berputar pelan, makin jauh & makin di atas saat roket makin tinggi.
-        const alt = pose.altKm;
-        const d = 12 + smooth(10, 110, alt) * 6 + smooth(110, 800, alt) * 10;
-        const h = -3 + smooth(5, 60, alt) * 3 + smooth(90, 800, alt) * 10 + (id === "pisah-tahap" ? -2 : 0);
-        out.pos.set(Math.cos(a) * d, Y + 3 + h, Math.sin(a) * d);
-        out.look.set(0, Y + 3, 0);
-      }
+      case "meteor":
+        // Meteors spawn ahead and above the camera in the negative-Z direction.
+        out.pos.set(8, Y + 5, 12); out.look.set(0, Y + 27, -32); break;
+      case "awan": frame(0, Y + 2, 0, -11, 7, 14); break;
+      case "ozon": frame(0, Y + 3, 0, -13, 4, 17); break;
+      case "orbit": frame(0, Y + 3, 0, -22, 16, 28); break;
+      default: frame(0, Y + 3, 0, -Math.cos(a) * 12.5, 2.7, Math.sin(a) * 12.5); break;
     }
   }
 
@@ -479,34 +460,36 @@ export class RocketEngine {
     if (part !== this.part) {
       this.part = part;
       a.src = part.src;
+      a.onerror = () => { this.setPlaying(false); useRoket.setState({ audioError: true }); };
       if (this.seekTo === null) this.seekTo = part.cues[this.idx - part.first];
     }
     if (a.readyState >= 1 && this.seekTo !== null) {
       a.currentTime = this.seekTo;
+      this.clock = this.seekTo;
       this.seekTo = null;
     }
-    if (a.paused && !a.ended && !this.playing) {
+    if (useRoket.getState().playing && a.paused && !a.ended && !this.playing) {
       this.playing = true;
       a.play()
-        .catch(() => {})
+        .catch(() => { if (useRoket.getState().playing) { this.setPlaying(false); useRoket.setState({ audioError: true }); } })
         .finally(() => (this.playing = false));
     }
-    if (a.readyState < 1) return true;
+    if (a.readyState < 1 || this.seekTo !== null) return true;
     // jam halus (currentTime di HP diperbarui tersendat → roket & kamera bergetar bila dibaca langsung)
-    this.clock = followAudio(this.clock, a.currentTime, dt, !a.paused);
+    this.clock = followAudio(this.clock, a.currentTime, dt, !a.paused && !a.seeking && a.readyState >= 3);
     const ct = this.clock;
     let k = 0;
     while (k + 1 < part.cues.length && ct >= part.cues[k + 1]) k++;
     const i = part.first + k;
     const start = part.cues[k];
-    const end = part.cues[k + 1] ?? a.duration;
+    const end = part.cues[k + 1] ?? (Number.isFinite(a.duration) ? a.duration : start + this.durs[i]);
     this.durs[i] = Math.max(1, end - start);
     if (i !== this.idx) {
       this.idx = i;
       useRoket.setState({ stop: i });
     }
-    this.t = ct - start;
-    if (a.ended) {
+    this.t = Math.max(0, ct - start);
+    if (a.ended && useRoket.getState().playing) {
       // rekaman bagian ini habis: lanjut ke persinggahan berikutnya (bagian lain / waktu baca) atau selesai
       if (i < MISI.length - 1 && partFor(i + 1) !== part) this.go(i + 1);
       else this.finish();
@@ -540,7 +523,8 @@ export class RocketEngine {
     const cam = this.world.camera;
 
     if (ui.mode === "terbang") {
-      if (ui.playing && !this.syncAudio(dt)) {
+      const hasAudio = this.syncAudio(dt);
+      if (ui.playing && !hasAudio) {
         this.t += dt;
         if (this.t >= this.durs[this.idx]) {
           if (this.idx < MISI.length - 1) this.go(this.idx + 1);
@@ -548,6 +532,8 @@ export class RocketEngine {
         }
       }
       const pose = this.pose(this.idx, this.t);
+      const cue = missionCueAt(this.idx, this.t, this.durs[this.idx]);
+      this.world.issShowcase = MISI[this.idx].id === "tujuan-misi" && cue.target === "stasiun" ? ISS_SHOWCASE : null;
       this.world.applyPose(pose);
       // bunyi "klik" tepat saat kapsul menempel ke stasiun
       if (ui.playing && this.lastGap !== null && this.lastGap > 0 && pose.issGap === 0) sfx.clink();
@@ -566,23 +552,28 @@ export class RocketEngine {
       );
       this.engineLive = true;
       const prog = clamp01(this.t / this.durs[this.idx]);
-      if (Math.abs(prog - ui.progress) > 0.01) useRoket.setState({ progress: prog });
+      if (Math.abs(this.t - ui.seconds) > 0.1 || cue.key !== ui.cueKey) useRoket.setState({ progress: prog, seconds: this.t, duration: this.durs[this.idx], cueKey: cue.key });
+      if (process.env.NODE_ENV === "development") {
+        this.renderer.domElement.dataset.missionTarget = cue.target;
+        this.renderer.domElement.dataset.missionCue = cue.key;
+        this.renderer.domElement.dataset.missionSeconds = this.t.toFixed(2);
+      }
       if (ui.playing || this.snap) {
         const want = { pos: new THREE.Vector3(), look: new THREE.Vector3() };
         this.shot(this.idx, this.t, pose, want);
-        if (this.snap) {
+        if (this.snap || this.reduceMotion) {
           this.camPos.copy(want.pos);
           this.camLook.copy(want.look);
           this.snap = false;
         } else {
-          const k = 1 - Math.exp(-dt * 1.6);
+          const k = 1 - Math.exp(-dt * 2.4);
           this.camPos.lerp(want.pos, k);
           this.camLook.lerp(want.look, k);
         }
         cam.position.copy(this.camPos);
         this.controls.target.copy(this.camLook);
         // Getaran halus saat mesin menyala (makin kecil di udara tipis) — terasa meluncur, tidak memusingkan
-        if (pose.burn) {
+        if (pose.burn && !this.reduceMotion) {
           const now2 = now / 1000;
           const amp = 0.035 * (1 - smooth(60, 110, pose.altKm)) + 0.006;
           cam.position.x += (Math.sin(now2 * 37) + Math.sin(now2 * 53.3)) * amp * 0.5;
@@ -644,6 +635,8 @@ export class RocketEngine {
       const pose = this.pose(this.idx, this.t);
       const Y = altToY(pose.altKm);
       this.cabin.update(this.cabinState(this.idx, this.t, pose));
+      this.cabin.focus(missionCueAt(this.idx, this.t, this.durs[this.idx]).target, this.cabinSnap || this.reduceMotion ? 1 : 1 - Math.exp(-dt * 2.4));
+      this.cabinSnap = false;
       cam.position.set(0, Y + 5.45, 0);
       cam.quaternion.copy(this.cabin.camera.quaternion);
       cam.fov = this.cabin.camera.fov;
@@ -665,6 +658,7 @@ export class RocketEngine {
     if (this.wasCabin) {
       // keluar dari kabin: kembalikan lensa & langsung ke bidikan luar
       this.wasCabin = false;
+      this.cabinSnap = true;
       cam.fov = 50;
       cam.updateProjectionMatrix();
       this.snap = true;

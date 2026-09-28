@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { RoundBtn } from "@/components/angkasa/kid-space";
 import { Icon } from "@/components/ui";
 import { COUNT_ONSETS, COUNTDOWN, JELAJAH, JELAJAH_AUDIO, MISI, MISI_AUDIO } from "@/lib/roket/misi";
+import { missionCueAt } from "@/lib/roket/timeline";
 import { installAudioUnlock, sharedAudio } from "@/lib/audio-unlock";
 import { sfx } from "@/lib/sfx";
 import { useSfxOnChange } from "@/lib/use-sfx";
@@ -135,57 +136,60 @@ function Dock({ onPick }: { onPick: (id: string) => void }) {
 /* ---------------- Terbang ---------------- */
 
 function FlightOverlay({ engine }: { engine: RocketEngine }) {
-  const { stop, progress, playing, finished } = useRoket();
-  const s = MISI[stop];
-  // Hitung mundur besar: 10 → 1 pada paruh akhir persinggahan "Hitung mundur".
-  // dengan rekaman: angka mengikuti suara "sepuluh… satu" (±5 detik terakhir persinggahan)
-  // dengan rekaman: angka muncul tepat saat diucapkan (waktu tiap angka diukur dari rekaman)
-  const cd = MISI_AUDIO[0];
-  const cdDur = cd ? cd.cues[COUNTDOWN + 1] - cd.cues[COUNTDOWN] : 0;
-  const said = cd ? COUNT_ONSETS.filter((o) => o <= progress * cdDur).length : 0;
-  const count = stop !== COUNTDOWN ? null : cd ? (said > 0 ? 11 - said : null) : progress > 0.3 ? 10 - Math.min(9, Math.floor(((progress - 0.3) / 0.7) * 10)) : null;
-  // Tanpa rekaman: tampilkan teks kecil sebagai pengganti suara (sementara).
-  useSfxOnChange(count !== null && playing ? count : null, (c) => c !== null && sfx.beep(c <= 3));
-  useSfxOnChange(stop, (i) => {
-    const id = MISI[i].id;
-    if (id === "lepas-landas") sfx.liftoff();
-    else if (id === "pisah-tahap" || id === "merapat") sfx.clunk();
-    else sfx.arrive();
-  });
-  const caption = MISI_AUDIO.length === 0 ? s.lines[Math.min(s.lines.length - 1, Math.floor(progress * s.lines.length))] : null;
+  const { stop, seconds, duration, playing, finished, audioError } = useRoket();
+  const [showCaption, setShowCaption] = useState(false);
+  const cue = missionCueAt(stop, seconds, duration);
+  const said = COUNT_ONSETS.filter(o => o <= seconds).length;
+  const count = stop === COUNTDOWN && said > 0 ? 11 - said : null;
+  useSfxOnChange(count !== null && playing ? count : null, c => c !== null && sfx.beep(c <= 3));
+  const stamp = (value: number) => `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, "0")}`;
+  const control = "pointer-events-auto flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full px-3 text-sm font-extrabold text-white transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffbe0b] disabled:opacity-30";
   return (
-    <div className="pointer-events-none absolute inset-0">
+    <section className="pointer-events-none absolute inset-0" aria-label="Misi roket">
       <div className="absolute inset-x-0 top-0 flex gap-1 px-3" style={{ paddingTop: "max(8px, env(safe-area-inset-top))" }} aria-hidden>
-        {MISI.map((m, i) => (
-          <span key={m.id} className="h-1 flex-1 rounded-full" style={{ background: i < stop ? "rgba(255,255,255,.85)" : i === stop ? "#ffbe0b" : "rgba(255,255,255,.2)" }} />
-        ))}
+        {MISI.map((m, i) => <span key={m.id} className="h-1 flex-1 rounded-full" style={{ background: i < stop ? "rgba(255,255,255,.85)" : i === stop ? "#ffbe0b" : "rgba(255,255,255,.2)" }} />)}
       </div>
-      <div className="absolute right-3 sm:right-5" style={{ top: "max(20px, calc(env(safe-area-inset-top) + 12px))" }}>
-        <RoundBtn icon="close" label="Keluar" onClick={() => engine.setMode("jelajah")} />
+      <div className="absolute left-3 right-24 top-6 max-w-sm rounded-2xl bg-[#112b40]/85 p-3 text-white shadow-lg backdrop-blur-md sm:left-5">
+        <label htmlFor="rocket-chapter" className="block text-[10px] font-extrabold tracking-[.16em] text-[#9de4eb]">MISI ROKET · {String(stop + 1).padStart(2, "0")} / {MISI.length}</label>
+        <select id="rocket-chapter" aria-label="Pilih bagian misi" value={stop} onChange={e => engine.go(Number(e.target.value))} className="pointer-events-auto mt-1 min-h-8 w-full rounded-lg bg-transparent text-base font-extrabold focus-visible:outline-2 focus-visible:outline-[#ffbe0b] sm:text-lg" style={{ fontFamily: BALOO }}>
+          {MISI.map((m, i) => <option key={m.id} value={i} className="bg-[#112b40]">{i + 1}. {m.title}</option>)}
+        </select>
+      </div>
+      <div className="absolute right-3 top-6 sm:right-5">
+        <RoundBtn icon="close" label="Keluar dari misi" onClick={() => engine.setMode("jelajah")} />
       </div>
       {count !== null && playing && (
-        <div key={count} className="anim-fade absolute inset-0 flex items-center justify-center">
-          <span style={{ fontFamily: BALOO, fontSize: 160, fontWeight: 800, color: "#fff", textShadow: "0 6px 0 rgba(0,0,0,.25), 0 0 40px rgba(255,190,11,.6)" }}>{count}</span>
+        <div key={count} className="anim-fade absolute inset-x-0 top-[24%] text-center motion-reduce:animate-none">
+          <span style={{ fontFamily: BALOO, fontSize: 110, fontWeight: 800, color: "#fff", textShadow: "0 6px 0 rgba(0,0,0,.25), 0 0 40px rgba(255,190,11,.6)" }}>{count}</span>
         </div>
       )}
-      {!playing && (
-        <div className="absolute inset-0 flex items-center justify-center gap-6">
-          {finished ? (
-            <>
-              <RoundBtn icon="replay" label="Ulangi" tone="orange" onClick={() => (engine.go(0), engine.setPlaying(true))} />
-              <RoundBtn icon="check" label="Selesai" tone="purple" onClick={() => engine.setMode("jelajah")} />
-            </>
-          ) : (
-            <RoundBtn icon="play_arrow" label="Lanjut" tone="orange" onClick={() => engine.setPlaying(true)} />
-          )}
+      <div className="absolute inset-x-0 bottom-0 mx-auto flex max-w-[700px] flex-col gap-2 px-3 sm:px-5" style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}>
+        <div key={cue.key} role="status" aria-live="polite" aria-atomic="true" data-mission-cue={cue.key} className="anim-fade flex items-start gap-3 rounded-[24px] border-2 border-white bg-white/95 p-3 shadow-[0_5px_0_rgba(43,29,78,.25)] backdrop-blur-md motion-reduce:animate-none sm:p-4">
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#eee7ff] text-[#6c45e8] sm:size-12"><Icon name={cue.icon} size={27} /></span>
+          <div className="min-w-0">
+            <p className="text-[9px] font-extrabold tracking-[.14em] text-[#7b62b5] sm:text-[10px]">{finished ? "MISI SELESAI" : "YANG SEDANG KITA JELAJAHI"}</p>
+            <h2 className="mt-0.5 text-xl leading-tight font-extrabold text-[#2b1d4e] sm:text-2xl" style={{ fontFamily: BALOO }}>{cue.title}</h2>
+            <p className="mt-1 text-[13px] leading-snug font-bold text-[#675a7e] sm:text-[15px]">{cue.info}</p>
+          </div>
         </div>
-      )}
-      {caption && playing && (
-        <div className="absolute inset-x-0 bottom-0 flex justify-center px-4" style={{ paddingBottom: "max(16px, env(safe-area-inset-bottom))" }}>
-          <p className="max-w-[640px] rounded-2xl bg-black/45 px-4 py-2 text-center text-[15px] font-bold text-white sm:text-[17px]">{caption}</p>
+        {showCaption && <p className="pointer-events-auto max-h-[16vh] overflow-y-auto rounded-2xl bg-[#092537]/95 px-4 py-3 text-center text-xs leading-relaxed font-bold text-white sm:text-sm" aria-label="Teks narasi">{cue.caption}</p>}
+        {audioError && <p role="alert" className="rounded-xl bg-white px-3 py-2 text-center text-xs font-bold text-[#973b19]">Suara belum bisa diputar. Tekan Lanjut untuk mencoba lagi.</p>}
+        <div className="pointer-events-auto rounded-[24px] border border-white/20 bg-[#112b40]/95 px-3 pb-2 pt-2 text-white backdrop-blur-md">
+          <div className="flex items-center gap-2 px-2 text-[10px] font-bold tabular-nums text-[#b6e0e6]">
+            <span>{stamp(seconds)}</span>
+            <input type="range" aria-label="Posisi narasi bagian ini" aria-valuetext={`${stamp(seconds)} dari ${stamp(duration)}`} min={0} max={duration} step={0.1} value={Math.min(seconds, duration)} onChange={e => engine.seek(Number(e.target.value))} className="h-6 min-w-0 flex-1 cursor-pointer accent-[#ffbe0b]" />
+            <span>{stamp(duration)}</span>
+          </div>
+          <div className="flex items-center justify-center gap-1 sm:gap-2">
+            <button className={control} aria-label="Bagian sebelumnya" disabled={stop === 0} onClick={() => engine.go(stop - 1)}><Icon name="chevron_left" size={24} /></button>
+            <button className={`${control} min-w-28 bg-[#ff8616] hover:bg-[#f0780a]`} aria-label={finished ? "Ulangi misi" : playing ? "Jeda narasi" : "Lanjutkan narasi"} onClick={() => engine.setPlaying(!playing)}><Icon name={finished ? "replay" : playing ? "pause" : "play_arrow"} size={25} />{finished ? "Ulangi" : playing ? "Jeda" : "Lanjut"}</button>
+            <button className={control} aria-label="Bagian berikutnya" disabled={stop === MISI.length - 1} onClick={() => engine.go(stop + 1)}><Icon name="chevron_right" size={24} /></button>
+            <span className="mx-1 h-6 w-px bg-white/20" />
+            <button className={control} aria-label={showCaption ? "Sembunyikan teks narasi" : "Tampilkan teks narasi"} aria-pressed={showCaption} onClick={() => setShowCaption(!showCaption)}><Icon name="subtitles" size={24} /><span className="hidden sm:inline">Teks</span></button>
+          </div>
         </div>
-      )}
-    </div>
+      </div>
+    </section>
   );
 }
 
@@ -201,7 +205,7 @@ export function RocketSpace() {
 
   useEffect(() => {
     installAudioUnlock();
-    useRoket.setState({ mode: "jelajah", focus: null, playing: false, finished: false, stop: 0, progress: 0 });
+    useRoket.setState({ mode: "jelajah", focus: null, playing: false, finished: false, stop: 0, progress: 0, seconds: 0, duration: MISI_AUDIO[0]?.cues[1] ?? 28.74, cueKey: "landasan:0", audioError: false });
     const e = new RocketEngine(host.current!, (id) => e.focus(id));
     setEngine(e);
     // Pratinjau development: akses dari console untuk menguji persinggahan.
