@@ -223,9 +223,14 @@ export class ShipOverlay {
     this.groundMode = u < GROUND_END;
     if (this.groundMode) {
       this.ground?.update(u, dt, main.aspect, (wave) => {
-        const w = Math.sin(this.t * 7) * 0.35;
+        const w = Math.sin(this.t * 6);
         const step = wave ? 0 : Math.sin(this.t * 7) * 0.45;
-        this.agam?.pose({ legL: step, legR: -step, armL: -step * 0.6, armR: wave ? -2.5 + w : step * 0.6, lower: 1 });
+        // melambai: lengan kanan terangkat tinggi, lengan bawah bergoyang dari siku; berjalan: kaki & lengan berayun
+        this.agam?.pose(
+          wave
+            ? { legL: 0, legR: 0, armL: 0.05 * Math.sin(this.t * 2), armR: -0.2, lower: 1, raiseR: 1.3 + 0.08 * w, elbowR: 0.75 + 0.35 * w }
+            : { legL: step, legR: -step, armL: -step * 0.6, armR: step * 0.6, lower: 1, raiseR: 0, elbowR: 0 },
+        );
       });
       return;
     }
@@ -237,13 +242,20 @@ export class ShipOverlay {
     (this.flash.material as THREE.MeshBasicMaterial).opacity = 1 - sm(0, 0.12);
     const portrait = main.aspect < 1;
     const base = portrait ? 5.4 / Math.max(0.55, main.aspect) ** 0.5 : 5;
-    const rise = sm(0, 0.18);
-    const away = sm(0.78, 1);
-    // meliuk pelan (kiri–kanan) selama kamera mundur
-    const weave = Math.sin(v * Math.PI * 2.5) * sm(0.2, 0.3) * (1 - away);
-    this.rig.position.set(weave * 0.9, -3 + 2.2 * rise + Math.sin(this.t * 0.9) * 0.04 + away * 0.9, -(base + away * 60));
-    this.body.rotation.set(0.2 - 0.25 * (1 - rise), -weave * 0.15, -weave * 0.45 + Math.sin(this.t * 0.5) * 0.02);
-    this.power = Math.max(this.power, 0.7 + 0.3 * away);
+    // 1) baru keluar atmosfer: pesawat melaju MENJAUHI Bumi ke arah kamera (Bumi tampak di belakangnya)
+    const approach = sm(0, 0.35);
+    // 2) berbelok & berguling menghadap tata surya saat kamera mundur
+    const turn = sm(0.38, 0.62);
+    // 3) melesat menuju Matahari
+    const away = sm(0.8, 1);
+    const bankRoll = Math.sin(Math.PI * turn) * 0.9;
+    const x = (portrait ? 0.3 : 0.9) * Math.sin(Math.PI * turn) * (1 - away);
+    const y = -0.45 - 0.35 * turn + away * 0.9 + Math.sin(this.t * 0.9) * 0.04;
+    const z = -(base + 5 * (1 - approach) * (1 - turn) + away * 60);
+    this.rig.position.set(x, y, z);
+    const yaw = Math.PI * (1 - turn) + 0.25 * (1 - turn); // π = moncong menghadap kamera
+    this.body.rotation.set(0.12 + 0.1 * turn - 0.15 * (1 - approach), yaw, -bankRoll + Math.sin(this.t * 0.5) * 0.02);
+    this.power = Math.max(this.power, 0.6 + 0.4 * away);
   }
 
   render(renderer: THREE.WebGLRenderer) {

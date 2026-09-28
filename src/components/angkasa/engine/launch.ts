@@ -76,6 +76,9 @@ export class GroundLaunch {
   private t = 0;
   private lastSmoke = 0;
   private owned: { dispose(): void }[] = [];
+  private flag: THREE.Mesh | null = null;
+  private flagRest: Float32Array | null = null;
+  private birds: THREE.Sprite[] = [];
 
   constructor(private agamHost: THREE.Group) {
     this.scene.fog = this.fog;
@@ -240,9 +243,32 @@ export class GroundLaunch {
       g.fillStyle = "#ffffff";
       g.fillRect(0, 21, 64, 21);
     });
-    const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.6), new THREE.MeshStandardMaterial({ map: flagTex, side: THREE.DoubleSide, roughness: 0.8 }));
+    const flag = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.6, 14, 4), new THREE.MeshStandardMaterial({ map: flagTex, side: THREE.DoubleSide, roughness: 0.8 }));
     flag.position.set(-3.6 + 0.46, 2.9, -1.8);
+    this.flag = flag;
+    this.flagRest = Float32Array.from(flag.geometry.getAttribute("position").array as Float32Array);
     this.ground.add(pole, flag);
+
+    // burung: siluet kecil mengepakkan sayap, melintas pelan di langit
+    const birdTex = canvasTexture(64, 32, (g) => {
+      g.strokeStyle = "rgba(30,34,40,.85)";
+      g.lineWidth = 4;
+      g.lineCap = "round";
+      g.beginPath();
+      g.moveTo(4, 10);
+      g.quadraticCurveTo(18, 4, 32, 18);
+      g.quadraticCurveTo(46, 4, 60, 10);
+      g.stroke();
+    });
+    this.owned.push(birdTex);
+    for (let i = 0; i < 6; i++) {
+      const b = new THREE.Sprite(new THREE.SpriteMaterial({ map: birdTex, transparent: true, depthWrite: false }));
+      b.position.set(-30 + i * 4 + r() * 3, 12 + r() * 6, 28 + r() * 10);
+      b.scale.set(1.1, 0.55, 1);
+      this.birds.push(b);
+      this.owned.push(b.material);
+      this.scene.add(b);
+    }
 
     // pegunungan jauh: punggungan halus berlapis, makin jauh makin pudar kebiruan (perspektif udara)
     for (let layer = 0; layer < 3; layer++) {
@@ -299,6 +325,27 @@ export class GroundLaunch {
   /** u = kemajuan seluruh pembuka (0–GROUND_END untuk adegan ini) */
   update(u: number, dt: number, aspect: number, agamPose: (wave: boolean) => void) {
     this.t += dt;
+    // bendera berkibar (gelombang berjalan dari tiang ke ujung)
+    if (this.flag && this.flagRest) {
+      const pos = this.flag.geometry.getAttribute("position") as THREE.BufferAttribute;
+      for (let i = 0; i < pos.count; i++) {
+        const x = this.flagRest[i * 3] + 0.45; // 0 di tiang
+        const yv = this.flagRest[i * 3 + 1];
+        pos.setZ(i, Math.sin(x * 7 - this.t * 6 + yv * 2) * 0.07 * x);
+        pos.setY(i, yv - x * x * 0.05);
+      }
+      pos.needsUpdate = true;
+      this.flag.geometry.computeVertexNormals();
+    }
+    // burung melintas & mengepak
+    this.birds.forEach((b, i) => {
+      b.position.x += dt * (2.2 + i * 0.15);
+      if (b.position.x > 40) b.position.x = -40;
+      b.position.y += Math.sin(this.t * 1.3 + i) * dt * 0.3;
+      b.scale.y = 0.55 * (0.35 + 0.65 * Math.abs(Math.sin(this.t * 7 + i * 1.7)));
+    });
+    // awan rendah bergeser pelan tertiup angin
+    for (let i = 0; i < 25; i++) this.clouds[i].position.x += dt * 0.6;
     this.camera.aspect = aspect;
     this.camera.fov = aspect < 1 ? 62 : 50;
     this.camera.updateProjectionMatrix();
@@ -349,7 +396,8 @@ export class GroundLaunch {
     // Agam: berdiri di samping pesawat & melambai, lalu berjalan ke pintu kokpit dan masuk
     const board = sm(u, BOARD[0], BOARD[1]);
     this.agamHost.position.set(1.35 - 1.0 * board, 0.9 * sm(u, BOARD[0] + 0.05, BOARD[1]), -0.8 + 0.6 * board);
-    this.agamHost.rotation.set(0, Math.PI - 0.6 - 1.2 * board, 0);
+    // badan sedikit bergoyang (tidak kaku) saat berdiri melambai
+    this.agamHost.rotation.set(0, Math.PI - 0.6 - 1.2 * board + Math.sin(this.t * 1.4) * 0.06, Math.sin(this.t * 2.1) * 0.025);
     this.agamHost.scale.setScalar(1 - 0.5 * sm(u, BOARD[0] + 0.05, BOARD[1]));
     agamPose(u < BOARD[0] + 0.02);
     this.agamHost.visible = u < BOARD[1];
@@ -357,8 +405,15 @@ export class GroundLaunch {
     // kamera: di darat menatap landasan dari depan-samping → mengikuti ke atas → di bawah pesawat, menatap ke atas
     const c = this.camera;
     const follow = sm(u, 0.22, 0.34);
-    const groundPos = new THREE.Vector3(3.3, 1.2, -4.3); // depan-samping: moncong & kokpit menghadap kamera
-    const groundLook = new THREE.Vector3(-0.3, 0.8 + hover * 1.6, 0);
+    // depan-samping (moncong & kokpit menghadap kamera), maju pelan + goyang halus seperti kamera dipegang
+    // mulai dekat ke Agam yang melambai → mundur memperlihatkan pesawat saat Agam naik
+    const reveal = sm(u, 0.07, 0.2);
+    const groundPos = new THREE.Vector3(
+      2.7 + 1.0 * reveal + Math.sin(this.t * 0.6) * 0.05,
+      0.75 + 0.5 * reveal + Math.sin(this.t * 0.9) * 0.03,
+      -2.9 - 1.9 * reveal,
+    );
+    const groundLook = new THREE.Vector3(1.3 - 1.6 * reveal, 0.42 + 0.4 * reveal + hover * 1.6, -0.75 + 0.75 * reveal);
     // kamera mengejar dengan sedikit tertinggal di belokan (terasa ngebut & meliuk)
     const chasePos = new THREE.Vector3(wx * 0.7 + 1.3, y - 5.2, wz * 0.7 + 2.4);
     const chaseLook = new THREE.Vector3(wx, y + 6, wz - 0.3);

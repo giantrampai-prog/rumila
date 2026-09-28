@@ -37,6 +37,10 @@ export interface AgamPose {
   armR: number;
   /** turunkan lengan dari pose A: 0 = tetap terbuka, 1 = menggantung di sisi badan (sedikit renggang) */
   lower: number;
+  /** angkat lengan kanan ke atas samping (radian, dari pose A; ±1,3 = siku setinggi kepala, >2 tertutup helm) — untuk melambai */
+  raiseR?: number;
+  /** tekuk siku kanan (radian) — lambaian terlihat alami */
+  elbowR?: number;
 }
 
 export class AgamModel {
@@ -131,10 +135,12 @@ export class AgamModel {
     ] as const) {
       const j = this.joints.get(name);
       const side = j?.side ?? 1;
+      const raise = name === "RightArm" ? (p.raiseR ?? 0) : 0;
       this.bend(name, [
-        [Z, -side * p.lower * (j?.hang ?? 0.75)],
+        [Z, -side * (raise ? -raise : p.lower * (j?.hang ?? 0.75))],
         [X, swing],
       ]);
     }
+    if (p.elbowR !== undefined) this.bend("RightForeArm", [[Z, (this.joints.get("RightForeArm")?.side ?? 1) * p.elbowR]]);
   }
 }
