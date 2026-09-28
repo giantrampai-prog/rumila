@@ -8,7 +8,10 @@ import * as THREE from "three";
 import { AgamModel } from "./agam-model";
 import { buildStation } from "./station";
 import { buildBirds, buildMoon, buildSatellite, buildSite, flag, gridFin, landingLeg, lattice, nozzleMaterial, rocketBodyTex } from "./details";
-import { buildCumulus, buildFlora, buildSea, buildTerrain } from "./site";
+import { buildCoast, buildCumulus, buildFlora, buildSea, buildTerrain } from "./site";
+
+import { crewAccessDetails, rocketDetails } from "./facility";
+import { weathered } from "./surface-materials";
 
 export const EARTH_R = 1000;
 /** ketinggian (km) → unit di atas permukaan */
@@ -69,7 +72,10 @@ function skyMaterial() {
         vec3 col = mix(uZenith, uHorizon, k);
         float sun = pow(max(dot(d, uSunDir), 0.0), 900.0) * 3.0 + pow(max(dot(d, uSunDir), 0.0), 12.0) * 0.25 * (1.0 - uSpace);
         col += vec3(1.0, 0.92, 0.75) * sun;
-        gl_FragColor = vec4(col, 1.0); }`,
+        gl_FragColor = vec4(col, 1.0);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`,
     side: THREE.BackSide,
     depthWrite: false,
     depthTest: false,
@@ -77,14 +83,14 @@ function skyMaterial() {
 }
 
 const ZENITH: [number, string][] = [
-  [0, "#3d8ae6"],
+  [0, "#528bb1"],
   [12, "#2159c2"],
   [35, "#0f2f86"],
   [65, "#051448"],
   [100, "#010312"],
 ];
 const HORIZON: [number, string][] = [
-  [0, "#cfe7ff"],
+  [0, "#c1d2d8"],
   [12, "#9cc6f4"],
   [35, "#5a82d6"],
   [65, "#1f3c8a"],
@@ -179,11 +185,11 @@ function buildRocket() {
   const R = 0.32;
   // Tahap pertama (0.3 → 3.6)
   const s1 = new THREE.Group();
-  const body1 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 3.3, 48), new THREE.MeshStandardMaterial({ map: rocketBodyTex(1), roughness: 0.45, metalness: 0.1 }));
+  const body1 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 3.3, 96), new THREE.MeshStandardMaterial({ map: rocketBodyTex(1), roughness: 0.45, metalness: 0.1 }));
   body1.position.y = 1.95;
   const band = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.005, R * 1.005, 0.25, 32), dark());
   band.position.y = 3.35;
-  s1.add(body1, band);
+  s1.add(body1, band, rocketDetails(R, 0.3, 3.6));
   for (let i = 0; i < 4; i++) {
     const fin = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.55, 0.32), dark());
     const a = (i / 4) * TAU + Math.PI / 4;
@@ -218,24 +224,24 @@ function buildRocket() {
   tag(engines, "mesin");
   // Tahap kedua (3.6 → 5.0)
   const s2 = new THREE.Group();
-  const body2 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 1.4, 48), new THREE.MeshStandardMaterial({ map: rocketBodyTex(2), roughness: 0.45, metalness: 0.1 }));
+  const body2 = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 1.4, 96), new THREE.MeshStandardMaterial({ map: rocketBodyTex(2), roughness: 0.45, metalness: 0.1 }));
   body2.position.y = 4.3;
   const logo = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.005, R * 1.005, 0.08, 32), new THREE.MeshStandardMaterial({ color: 0xff7a1a, roughness: 0.5 }));
   logo.position.y = 4.75;
   const bell2 = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.16, 0.3, 16, 1, true), nozzleMaterial());
   bell2.position.y = 3.5;
-  s2.add(body2, logo, bell2);
+  s2.add(body2, logo, bell2, rocketDetails(R, 3.6, 5.0));
   const f2 = flame(2.6, 0.22);
   f2.group.position.y = 3.35;
   s2.add(f2.group);
   tag(s2, "tahap-2");
   // Kapsul (5.0 → 5.9) + menara penyelamat
   const cap = new THREE.Group();
-  const cone = new THREE.Mesh(new THREE.CylinderGeometry(0.12, R, 0.9, 32), white());
+  const cone = new THREE.Mesh(new THREE.CylinderGeometry(0.12, R, 0.9, 64), white());
   cone.position.y = 5.45;
-  const shield = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 0.06, 32), dark());
+  const shield = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 0.06, 64), dark());
   shield.position.y = 5.03;
-  const win = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.1, 0.02), new THREE.MeshStandardMaterial({ color: 0x2b6cff, emissive: 0x16357a, roughness: 0.2, metalness: 0.6 }));
+  const win = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.1, 0.02), new THREE.MeshStandardMaterial({ color: 0x34566b, roughness: 0.12, metalness: 0.65 }));
   win.position.set(0, 5.4, 0.27);
   win.rotation.x = -0.24;
   const door = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.22, 0.02), new THREE.MeshStandardMaterial({ color: 0xc9d2de, roughness: 0.5 }));
@@ -253,8 +259,8 @@ function buildRocket() {
 function buildTower() {
   const tower = new THREE.Group();
   // baja galvanis abu-abu gelap seperti menara servis landasan sungguhan
-  const steel = new THREE.MeshStandardMaterial({ color: 0x5d636b, roughness: 0.45, metalness: 0.65 });
-  const grey = new THREE.MeshStandardMaterial({ color: 0x9aa3ae, roughness: 0.55, metalness: 0.5 });
+  const steel = weathered(0x687276, "metal");
+  const grey = weathered(0xa1a9aa, "metal");
   const H = 7.4,
     W = 1.1;
   const frame = lattice(W, W, H, steel, 0.6);
@@ -311,13 +317,9 @@ function buildTower() {
   const arm = new THREE.Group();
   const deck = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.06, 0.4), grey);
   deck.position.x = -0.75;
-  const rail = new THREE.Mesh(new THREE.BoxGeometry(1.5, 0.3, 0.03), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.35 }));
-  rail.position.set(-0.75, 0.18, 0.2);
-  const rail2 = rail.clone();
-  rail2.position.z = -0.2;
   const room = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.5, 0.5), new THREE.MeshStandardMaterial({ color: 0xf4f4f4, roughness: 0.6 }));
   room.position.set(-1.35, 0.25, 0);
-  arm.add(deck, rail, rail2, room);
+  arm.add(deck, room, crewAccessDetails());
   arm.position.set(-W / 2, 5.25, 0);
   arm.name = "arm";
   tower.add(arm);
@@ -697,9 +699,9 @@ export class RocketScene {
   private birds: ReturnType<typeof buildBirds>;
   private sats: THREE.Group;
   private moon: THREE.Mesh;
-  private sun = new THREE.DirectionalLight(0xfff1dc, 2.6);
-  private hemi = new THREE.HemisphereLight(0xbfdcff, 0x3a5a2a, 0.9);
-  private amb = new THREE.AmbientLight(0x8899bb, 0.15);
+  private sun = new THREE.DirectionalLight(0xffefcf, 3.0);
+  private hemi = new THREE.HemisphereLight(0xc9e0ef, 0x48533b, 0.55);
+  private amb = new THREE.AmbientLight(0xadb9c7, 0.06);
   r: ReturnType<typeof buildRocket>;
   private t: ReturnType<typeof buildTower>;
   a: ReturnType<typeof buildAstronaut>;
@@ -843,9 +845,9 @@ export class RocketScene {
     s.add(this.pad);
     // medan berbukit, laut, hutan tropis & pohon kelapa, awan kumulus di kejauhan
     this.land = new THREE.Group();
-    this.land.add(buildTerrain(low));
-    this.sea = buildSea(new THREE.Vector3(300, 500, 200));
-    this.land.add(this.sea.mesh);
+    this.land.add(buildTerrain(low, (t) => this.textures.push(t)));
+    this.sea = buildSea(new THREE.Vector3(240, 380, 190), low);
+    this.land.add(this.sea.mesh, buildCoast(low));
     this.land.add(buildFlora(low, this.uTime, (t) => this.textures.push(t)));
     s.add(this.land);
     this.cumulus = buildCumulus(low, (t) => this.textures.push(t));
@@ -1028,17 +1030,18 @@ export class RocketScene {
       this.meteors.push({ line, vel: new THREE.Vector3(), age: 1, life: 1 });
     }
 
-    this.sun.position.set(300, 500, 200);
+    this.sun.position.set(240, 380, 190);
     // bayangan Matahari di sekitar landasan
     this.sun.castShadow = true;
     const sc = this.sun.shadow.camera as THREE.OrthographicCamera;
-    sc.left = sc.bottom = -26;
-    sc.right = sc.top = 26;
-    sc.near = 300;
-    sc.far = 900;
-    this.sun.shadow.mapSize.set(low ? 1024 : 2048, low ? 1024 : 2048);
-    this.sun.shadow.bias = -0.0004;
-    this.sun.shadow.normalBias = 0.03;
+    sc.left = sc.bottom = -58;
+    sc.right = sc.top = 58;
+    sc.near = 150;
+    sc.far = 780;
+    this.sun.shadow.mapSize.set(low ? 2048 : 4096, low ? 2048 : 4096);
+    this.sun.shadow.bias = -0.00008;
+    this.sun.shadow.normalBias = 0.012;
+    this.sun.shadow.radius = 2;
     s.add(this.sun, this.sun.target, this.hemi, this.amb);
     for (const o of [this.r.rocket, this.t.tower, this.a.astro]) o.traverse((c) => ((c as THREE.Mesh).isMesh ? (c.castShadow = true) : null));
     this.scene.fog = new THREE.FogExp2(0xcfe7ff, 0.004);
@@ -1187,19 +1190,21 @@ export class RocketScene {
     const up = this.tmp.copy(cam.position).sub(this.earthCenter).normalize();
     const u = this.skyMat.uniforms;
     u.uUp.value.copy(up);
-    ramp(ZENITH, camAlt, u.uZenith.value);
+    ramp(ZENITH, this.rocketKm < 0.1 && camAlt < 22 ? 0 : camAlt, u.uZenith.value);
     ramp(HORIZON, camAlt, u.uHorizon.value);
     u.uSpace.value = smooth(60, 120, camAlt);
     this.starMat.opacity = smooth(20, 90, camAlt);
     const fog = this.scene.fog as THREE.FogExp2;
     fog.color.copy(u.uHorizon.value);
-    fog.density = 0.0085 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
-    this.hemi.intensity = 0.9 * (1 - smooth(20, 90, camAlt)) + 0.1;
+    fog.density = 0.0034 * (1 - smooth(0, 12, camAlt)) + 0.0007 * (1 - smooth(12, 30, camAlt));
+    this.hemi.intensity = 0.48 * (1 - smooth(20, 90, camAlt)) + 0.1;
     (this.glow.material as THREE.ShaderMaterial).uniforms.uAlpha.value = smooth(25, 120, camAlt);
     (this.ozone.material as THREE.MeshBasicMaterial).opacity = 0.06 * smooth(8, 20, camAlt) * (1 - smooth(60, 200, camAlt)) + 0.05 * smooth(200, 600, camAlt);
-    this.pad.visible = camAlt < 80;
+    this.pad.visible = camAlt < 130;
     // dari ketinggian, daratan & laut rinci diganti bola Bumi bertekstur
-    this.land.visible = camAlt < 22;
+    this.land.visible = camAlt < 130;
+    // The coarse globe otherwise pokes through the curved coastal surface in angular blue patches.
+    this.earth.visible = !this.land.visible;
     this.uTime.value = this.time;
     const su = this.sea.mat.uniforms;
     su.uTime.value = this.time;
@@ -1208,7 +1213,7 @@ export class RocketScene {
     this.cumulus.visible = camAlt < 40;
     if (this.denseClouds) this.denseClouds.opacity = 0.85 * smooth(0.15, 1.2, this.rocketKm);
     /** bayangan hanya perlu dihitung ulang saat kamera dekat tanah */
-    this.shadowsLive = camAlt < 6;
+    this.shadowsLive = camAlt < 40;
     this.clouds.visible = camAlt < 120;
     this.aur.mat.uniforms.uTime.value = this.time;
     this.aur.mat.uniforms.uAlpha.value = smooth(70, 130, camAlt) * (1 - smooth(500, 1200, camAlt));
@@ -1397,18 +1402,21 @@ export class RocketScene {
   }
 
   dispose() {
+    const geometries = new Set<THREE.BufferGeometry>(), materials = new Set<THREE.Material>();
+    const textures = new Set<THREE.Texture>([this.dotTex, ...this.textures]);
     this.scene.traverse((o) => {
       const m = o as THREE.Mesh;
-      m.geometry?.dispose();
-      const mat = m.material as THREE.Material | THREE.Material[] | undefined;
-      if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
-      else if (mat) {
-        (mat as THREE.MeshStandardMaterial).map?.dispose();
-        (mat as THREE.MeshStandardMaterial).alphaMap?.dispose();
-        mat.dispose();
-      }
+      if (m.geometry) geometries.add(m.geometry);
+      for (const mat of Array.isArray(m.material) ? m.material : m.material ? [m.material] : []) materials.add(mat);
+      if (m.customDepthMaterial) materials.add(m.customDepthMaterial);
+      if (m instanceof THREE.InstancedMesh) m.dispose();
     });
-    this.dotTex.dispose();
-    this.textures.forEach((t) => t.dispose());
+    materials.forEach(m => {
+      for (const value of Object.values(m)) if (value instanceof THREE.Texture) textures.add(value);
+      if (m instanceof THREE.ShaderMaterial) for (const u of Object.values(m.uniforms)) if (u.value instanceof THREE.Texture) textures.add(u.value);
+      m.dispose();
+    });
+    geometries.forEach(g => g.dispose());
+    textures.forEach(t => t.dispose());
   }
 }

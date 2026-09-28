@@ -1,0 +1,35 @@
+{
+  "generated": "2026-09-28",
+  "assets": [
+    {
+      "file": "tropical-leaves.webp",
+      "tool": "built-in GPT Image",
+      "prompt": "Use case: photorealistic-natural. Asset type: physically rendered tropical foliage texture for Rumila interactive 3D rocket launch site. Generate a single square 2K botanical photograph cutout on genuinely transparent alpha background: one dense but airy, irregular broadleaf tropical tree branch spray with approximately 45-65 small narrow oval pointed leaves attached to a naturally branching thin woody twig network. Entire branch spray fully inside image with 6% clear transparent margin. Leaves forest green, olive green and muted fresh tips, varied orientations, clear leaf veins, realistic leathery surface. Overall spread roughly rounded but asymmetric, filled center with natural holes throughout. Fine real photographic botanical detail, not illustration, not plastic. Front view flat projected branch cluster, soft neutral overcast illumination without directional cast shadows, no background, no floor, no pot, no text, no border. This is a reusable leaf-card texture, NOT a whole tree or landscape. Alpha transparent holes between individual leaves.",
+      "source": "/Users/macbook/.codex/generated_images/01a0db6e-91c4-70f3-8cf8-0fc2e73e6a46/exec-8fb10de3-6168-4643-a450-0f5586054427.png"
+    },
+    {
+      "file": "grass-albedo.webp",
+      "tool": "built-in GPT Image",
+      "prompt": "Use case: photorealistic-natural. Asset type: seamless physically based albedo texture for tropical grass ground in the Rumila 3D rocket launch environment. Single square 2K texture, top-down orthographic photograph of 1.5 metre square patch of closely cut tropical grass, fine small blades, dense irregular interwoven muted olive and natural medium green blades with scattered dry straw fragments and tiny glimpses of brown soil. Absolutely uniform neutral diffuse illumination, no cast shadows, no vignette, no perspective or horizon, edge-to-edge material, not a landscape. Natural microscopic detail like a photogrammetry material sample. Tileable seamless edges left-right and top-bottom; avoid large recognizable patches or repeating bands. Muted natural greens, no bright lime/neon green. No flowers, no rocks larger than grains, no objects, no text. Intended for repeat mapping on true 3D geometry.",
+      "source": "/Users/macbook/.codex/generated_images/01a0db6e-91c4-70f3-8cf8-0fc2e73e6a46/exec-ccc3cd75-7c81-4e63-9047-2c7185bb38f4.png"
+    },
+    {
+      "file": "cumulus.webp",
+      "tool": "built-in GPT Image",
+      "prompt": "Use case: photorealistic-natural. Asset type: transparent cloud texture for a daylight 3D environment in Rumila. One realistic tropical fair-weather cumulus cloud, isolated on genuinely transparent background including soft semi-transparent edges. Landscape composition 3:2, entire cloud fits with margin. Broad flat smoky blue-grey underside, sunlit ivory-white cauliflower billowing top, intricate small wisps and multiple asymmetric cloud lobes, optical airy vapor, not cotton balls. Sun from upper left. Photographic detail like a high-resolution telephoto photograph against sky with the sky cleanly removed to alpha. No blue background, no landscape, no sun, no separate tiny clouds, no illustration, no text, no border.",
+      "source": "/Users/macbook/.codex/generated_images/01a0db6e-91c4-70f3-8cf8-0fc2e73e6a46/exec-7aa55d1b-a160-4dd3-8457-c6db100fae53.png"
+    },
+    {
+      "file": "coconut-frond.webp",
+      "tool": "built-in GPT Image",
+      "prompt": "Use case: photorealistic-natural. Asset type: transparent coconut palm frond albedo texture for a true 3D tree in Rumila. A single mature healthy coconut palm frond photographed from directly above, laid straight and flat for a botanical texture scan. Long vertical composition 2:3, stem base at bottom center and pointed distal tip at top center; frond fully inside frame with 5% transparent margin. Fine central rachis with 50-70 slender tapered leaflets along BOTH sides; leaflets sweep diagonally towards the top tip, naturally varied lengths and very slight uneven twisting, tapered silhouette widest at middle then narrower at both ends. Muted natural forest/olive green, tiny gold-brown dry tips on a few leaflets, detailed vein ribs and real fibrous surface. Neutral soft overcast light, no cast shadows, not bright lime green. Genuinely transparent background and transparent gaps between narrow individual leaflets. No whole tree, no pot, no floor, no other objects, no text, no watermark.",
+      "source": "/Users/macbook/.codex/generated_images/01a0db6e-91c4-70f3-8cf8-0fc2e73e6a46/exec-f2478c4f-bb6e-4883-95a7-a4b1c1a9910c.png"
+    },
+    {
+      "file": "bark-albedo.webp",
+      "tool": "built-in GPT Image",
+      "prompt": "Use case: photorealistic-natural. Asset type: seamless tree bark albedo texture for tropical trees in Rumila's realistic 3D environment. Single square edge-to-edge orthographic macro photograph of grey-brown tropical hardwood tree bark, fine weathered fibrous longitudinal fissures, tiny pale beige and grey lichen flecks, irregular vertical ridges with smaller branching cracks. Muted neutral taupe grey brown, not red wood, not pine flakes. Flat diffuse overcast illumination with no directional lighting or baked cast shadows, no shiny surface. Tile seamlessly in both directions, no perspective, no curvature, no edges of tree trunk, no leaves, no text, no border, no watermark. Photogrammetry material scan quality with detailed fine texture.",
+      "source": "/Users/macbook/.codex/generated_images/01a0db6e-91c4-70f3-8cf8-0fc2e73e6a46/exec-56ff299c-0c2a-4411-93d7-5fc874e39607.png"
+    }
+  ]
+}

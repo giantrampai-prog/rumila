@@ -1,11 +1,10 @@
-// Tulis ulang ulangi.ts, kalau.ts, jurus.ts dari pembuat soal. Jalankan: npx tsx scripts/gen-prog.ts
+// Tulis ulang ulangi.ts dan kalau.ts dari pembuat soal. Jalankan: npx tsx scripts/gen-prog.ts
 import { writeFileSync } from 'node:fs';
-import { buildJurus, buildKalau, buildUlangi } from '../src/lib/koding/gen-prog';
+import { buildKalau, buildUlangi } from '../src/lib/koding/gen-prog';
 
 const games: [string, string, string, string, () => { best: number; limit: number }[]][] = [
   ['ulangi', 'ULANGI', 'UlangiLevel', 'Ulangi · Agam Pelukis (konsep: perulangan)', buildUlangi],
   ['kalau', 'KALAU', 'KalauLevel', 'Kalau… · Agam Pelari (konsep: percabangan & ulangi sampai)', buildKalau],
-  ['jurus', 'JURUS', 'JurusLevel', 'Jurus · Dojo Ninja (konsep: fungsi)', buildJurus],
 ];
 for (const [file, name, type, title, build] of games) {
   const t0 = Date.now();

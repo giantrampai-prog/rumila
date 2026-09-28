@@ -1,15 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { buildJurus, buildKalau, buildUlangi } from '../gen-prog';
-import { JURUS } from '../jurus';
+import { buildKalau, buildUlangi } from '../gen-prog';
 import { KALAU } from '../kalau';
 import { countBlocks, flatActs, progStars, runWorld, S, type Program } from '../prog';
 import { ULANGI } from '../ulangi';
-import { dojoWorld, layoutFor, paintWorld, runWorld2 } from '../worlds';
+import { layoutFor, paintWorld, runWorld2 } from '../worlds';
 
 const GAMES = [
   ['Ulangi', ULANGI, buildUlangi],
   ['Kalau…', KALAU, buildKalau],
-  ['Jurus', JURUS, buildJurus],
 ] as const;
 
 for (const [name, LEVELS, build] of GAMES) {
@@ -66,22 +64,6 @@ describe('Kalau… · lari', () => {
     const res = new Set<string>();
     for (let seed = 1; seed <= 30; seed++) res.add(runWorld({ main: [S.until([S.a('lari')])], jurus: [] }, runWorld2(l, layoutFor(l, seed))).result);
     expect(res.has('bump')).toBe(true);
-  });
-});
-
-describe('Jurus · dojo', () => {
-  it('solusi meniru Sensei dengan tepat; tanpa jurus tidak muat', () => {
-    for (const l of JURUS) {
-      expect(runWorld(l.solution, dojoWorld(l)).result, l.id).toBe('win');
-      expect(l.target.length, l.id).toBeGreaterThan(l.limit);
-      expect(l.solution.jurus.length, l.id).toBeGreaterThan(0);
-    }
-  });
-  it('gerakan salah berhenti di gerakan itu', () => {
-    const l = JURUS[0];
-    const wrongMove = l.palette.find((m) => m !== l.target[0] && m !== 'jurus')!;
-    const r = runWorld({ main: [S.a(wrongMove)], jurus: [] }, dojoWorld(l));
-    expect(r.result).toBe('bump');
   });
 });
 

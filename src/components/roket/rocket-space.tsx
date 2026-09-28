@@ -229,6 +229,13 @@ export function RocketSpace() {
                 label={focus ? "Kembali" : "Keluar"}
                 onClick={() => (focus ? engine.focus(null) : router.push("/beranda/angkasa"))}
               />
+              <div className="pointer-events-auto flex flex-wrap justify-center gap-1 rounded-2xl bg-[#142825]/70 p-1.5 text-white shadow-lg backdrop-blur-md sm:gap-2" aria-label="Sudut pandang lingkungan">
+                {([['landasan', 'rocket_launch', 'Landasan'], ['pesisir', 'waves', 'Pesisir'], ['hutan', 'forest', 'Hutan']] as const).map(([id, icon, label]) => (
+                  <button key={id} onClick={() => engine.viewSite(id)} className="flex min-h-10 items-center gap-1.5 rounded-xl px-2 text-xs font-extrabold transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-white sm:px-3 sm:text-sm">
+                    <Icon name={icon} size={18} /><span>{label}</span>
+                  </button>
+                ))}
+              </div>
               <RoundBtn icon="rocket_launch" label="Luncurkan!" tone="orange" onClick={() => engine.setMode("terbang")} />
             </div>
             <div className="flex flex-col gap-3">

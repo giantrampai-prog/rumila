@@ -3,7 +3,6 @@
 //   tergambar; menggores di luar pola = salah (berhenti di situ).
 // - Kalau… · Agam Pelari: lintasan tampak samping dengan rintangan ACAK tiap main (rendah → lompat, terbang →
 //   merunduk, lubang → lompat). Menang bila sampai finis.
-// - Jurus · Dojo Ninja: Agam meniru rangkaian gerakan Sensei. Menang bila gerakannya sama persis.
 
 import type { ProgLevelBase, World } from './prog';
 
@@ -166,35 +165,7 @@ export function runWorld2(l: KalauLevel, cells: (Obst | null)[]): World<RunData>
   };
 }
 
-/* ================= Jurus · dojo ================= */
+/* ================= Jurus · gerakan dojo ================= */
 
 export const MOVES = ['pukul', 'tendang', 'tangkis', 'lompat', 'putar'] as const;
 export type MoveName = (typeof MOVES)[number];
-export interface JurusLevel extends ProgLevelBase {
-  /** rangkaian gerakan Sensei */
-  target: MoveName[];
-}
-
-export interface DojoData {
-  /** urutan gerakan ke- (0-based) */
-  i: number;
-  move: string;
-  ok: boolean;
-}
-
-export function dojoWorld(l: JurusLevel): World<DojoData> & { count: () => number } {
-  let i = 0;
-  return {
-    count: () => i,
-    act(a) {
-      const ok = l.target[i] === a;
-      const data = { i, move: a, ok };
-      if (!ok) return { data, out: 'bump', kind: 'miss' };
-      i++;
-      return { data, out: i === l.target.length ? 'win' : 'go', kind: 'move' };
-    },
-    sense: () => false,
-    done: () => i >= l.target.length,
-    end: () => (i === l.target.length ? 'win' : 'short'),
-  };
-}
