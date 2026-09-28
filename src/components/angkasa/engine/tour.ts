@@ -51,6 +51,27 @@ export class TourController {
   private tmp = new THREE.Vector3();
   /** geser titik pandang ke bawah agar objek tampil di atas teks keterangan */
   private lift = 0;
+  /** 0–1: mode Mata Agam (kokpit) — planet dibingkai di jendela di atas dasbor, tidak terpotong */
+  private povK = 0;
+  private vp = new THREE.Vector2();
+
+  /**
+   * Bingkai jendela kokpit: gambar kokpit (1672×941, object-fit cover, rata bawah) — dasbor mulai ±y 560.
+   * Kembalikan {lift, zoom}: geser titik pandang ke bawah agar planet naik ke tengah jendela, dan mundurkan
+   * kamera secukupnya agar planet muat utuh.
+   */
+  private povFrame(dist: number) {
+    if (this.povK < 0.001) return { lift: 0, zoom: 1 };
+    this.ctx.renderer.getSize(this.vp);
+    const W = this.vp.x,
+      H = this.vp.y;
+    if (!(W > 0 && H > 0)) return { lift: 0, zoom: 1 }; // kanvas belum berukuran (tab di latar)
+    const k = Math.max(W / 1672, H / 941);
+    const f = THREE.MathUtils.clamp((H - 941 * k + 560 * k) / H, 0.35, 0.95); // bagian layar di atas dasbor
+    const tanH = Math.tan((this.host.camera.fov * Math.PI) / 360);
+    const zoom = Math.max(1, 0.37 / (0.78 * f));
+    return { lift: dist * zoom * (1 - f) * tanH * this.povK, zoom: 1 + (zoom - 1) * this.povK };
+  }
   /* Narasi rekaman (satu file) */
   private part: TourAudioPart | null = null;
   private failed = new Set<string>();
@@ -235,7 +256,9 @@ export class TourController {
     return this.phase === "travel";
   }
   get banking() {
-    return this.phase === "travel" ? this.turn * Math.sin(Math.PI * this.travelT) : 0;
+    if (this.phase === "travel") return this.turn * Math.sin(Math.PI * this.travelT);
+    // singgah: pesawat miring ke dalam lingkaran, tanda sedang berkeliling
+    return this.phase === "dwell" ? 0.35 * smooth(Math.min(1, this.dwellT / 3)) : 0;
   }
 
   setPlaying(p: boolean) {
@@ -262,7 +285,8 @@ export class TourController {
     const center = this.centerOf(stop.id, this.tmp);
     const wide = stop.id === "intro" || stop.id === "outro";
     // rad/detik; dinaikkan perlahan setelah tiba agar tidak ada sentakan dari diam → mengitari
-    const speed = this.ctx.reducedMotion() ? 0 : (wide ? 0.035 : 0.09) * (this.cinematic ? 0.5 : 1) * smooth(Math.min(1, this.dwellT / 3));
+    // tampilan anak: mengitari cukup terasa (±7°/detik) — pesawat terlihat berkeliling, tidak diam
+    const speed = this.ctx.reducedMotion() ? 0 : (wide ? 0.035 : 0.09) * (this.cinematic ? 1.4 : 1) * smooth(Math.min(1, this.dwellT / 3));
     this.orbitAngle += speed * dt;
     const cam = this.host.camera;
     let r = this.orbitRadius,
@@ -271,19 +295,26 @@ export class TourController {
       // Mendekat pelan selama singgah + melayang naik-turun halus.
       const p = smooth(Math.min(1, this.dwellT / Math.max(4, this.dwellDur)));
       r *= wide ? 1 - 0.04 * p : 1 - 0.1 * p;
-      h += Math.sin(this.dwellT * 0.3) * this.orbitRadius * 0.015;
+      // naik-turun perlahan seperti pesawat yang berkeliling (bukan lintasan datar)
+      h += Math.sin(this.dwellT * 0.35) * this.orbitRadius * 0.07 * smooth(Math.min(1, this.dwellT / 3));
       this.settleCamera(Math.min(1, dt * 1.5));
     }
+    const pv = this.povFrame(r);
+    const zin = 1 + (pv.zoom - 1) * smooth(Math.min(1, this.dwellT / 2.5));
+    r *= zin;
+    h *= zin;
     cam.position.set(
       center.x + Math.cos(this.orbitAngle) * r,
       center.y + h,
       center.z + Math.sin(this.orbitAngle) * r,
     );
-    this.ctx.controls.target.copy(center).y -= this.lift;
+    this.ctx.controls.target.copy(center).y -= this.lift + pv.lift;
   }
 
   update(dt: number) {
     if (this.index < 0 || !this.playing) return;
+    const st = useAngkasa.getState();
+    this.povK += ((this.cinematic && st.tourCam === "mata" ? 1 : 0) - this.povK) * (1 - Math.exp(-dt * 2));
     if (this.syncAudio(dt)) return; // audio memindahkan persinggahan (go() sudah dipanggil)
     const stop = TOUR[this.index];
     const cam = this.host.camera;
@@ -297,7 +328,7 @@ export class TourController {
       // Arah pandang: berputar mulus (slerp) dari arah semula ke objek tujuan. Tidak menghadap arah gerak lebih dulu:
       // bila tujuan ada di belakang, itu memaksa putaran ±180° yang cepat dan memusingkan.
       const b = smooth(Math.min(1, this.travelT / 0.7));
-      const toC = center.clone().setY(center.y - this.lift).sub(cam.position);
+      const toC = center.clone().setY(center.y - this.lift - this.povFrame(cam.position.distanceTo(center)).lift / Math.max(1, this.povFrame(1).zoom)).sub(cam.position);
       const dC = toC.length();
       toC.divideScalar(Math.max(1e-4, dC));
       if (this.dir0.dot(toC) < -0.999) this.dir0.applyAxisAngle(this.upTmp.set(0, 1, 0), 0.01); // hindari sumbu tak tentu
