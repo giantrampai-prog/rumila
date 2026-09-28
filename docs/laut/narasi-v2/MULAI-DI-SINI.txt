@@ -5,7 +5,9 @@ Tempo 115–130 kata/menit. Tersenyum saat menyapa; tenang di laut dalam, bukan 
 Beri jeda 0,8–1,2 detik antarapagraf; beri ruang setelah pertanyaan.
 Jangan membaca nomor bab, judul, petunjuk visual, atau instruksi ini.
 
-Rekam SATU FILE PER BAB, sesuai id pada nama file teks. MP3, M4A, WAV, atau OGG.
+Rekaman aktif: Algenib, satu file lengkap untuk semua 17 bab (28 September 2026).
+Pemetaan timestamp ada di docs/laut/rekaman-algenib/. Nama file teks tetap menjadi id bab.
+Untuk rekaman pengganti, satu file lengkap maupun satu file per bab didukung. MP3, M4A, WAV, atau OGG.
 Setiap paragraf = satu cue teks. Setelah suara jadi, catat waktu awal setiap paragraf.
 Angka dibaca dalam bahasa Indonesia; kata asing: Challenger Deep = cel-en-jer dip,
 hadal = ha-dal, abisal = a-bi-sal, bioluminesensi = bi-o-lu-mi-ne-sen-si.
@@ -13,9 +15,10 @@ hadal = ha-dal, abisal = a-bi-sal, bioluminesensi = bi-o-lu-mi-ne-sen-si.
 Pemasangan:
 1. Taruh rekaman pada public/laut/voice/v2/<id>.mp3.
 2. Edit public/laut/voice/v2/manifest.json: version tetap 2; tracks berisi id, src dan cues.
+   Satu file lengkap: setiap bab memakai src sama serta start/end absolut. cues tetap relatif terhadap start.
 3. cues dimulai 0, urut naik, jumlah persis sama dengan paragraf bab.
 4. Sesuaikan cue dengan REKAMAN JADI, bukan durasi perkiraan.
-5. Build/deploy menyajikan rekaman dari server; tidak perlu ubah komponen aplikasi.
+5. Build/deploy ulang agar rekaman dan manifest baru tersedia bersama.
 
 Contoh satu entri:
 {"version":2,"tracks":{"persiapan":{"src":"/laut/voice/v2/persiapan.mp3","cues":[0,12.8,28.4]}}}

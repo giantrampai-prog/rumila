@@ -12,8 +12,10 @@ import { LoopMusic } from '@/lib/bgm';
 import { BIOTA, TUR_LAUT, depthToY, yToDepth, type LautSet } from '@/lib/laut/misi';
 import * as C from './creatures';
 import { SeaNarration, type NarrationSource } from '@/lib/laut/narration';
+import { chapterAtTime, diveAtTime, SEA_RECORDING, shotAtTime, subLightAtTime } from '@/lib/laut/timeline';
 import { tropicalIslands } from './islands';
 import { surfaceMaterial } from './realism';
+import { BOAT_DECK_Y, deckPose } from './grounding';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { blackSmoker, boat, coral, diver, rng, rock, seabed, seagrass, SEAGRASS_PUSHERS, submersible } from './props';
 
@@ -30,10 +32,12 @@ interface LautUI {
   line: number;
   source: NarrationSource;
   muted: boolean;
+  audioTime: number;
+  audioLoading: boolean;
   view: 'cinema' | 'jendela';
 }
 
-export const useLaut = create<LautUI>(() => ({ mode: 'jelajah', stop: 0, progress: 0, playing: false, finished: false, focus: null, depth: 0, line: 0, source: 'teks', muted: false, view: 'cinema' }));
+export const useLaut = create<LautUI>(() => ({ mode: 'jelajah', stop: 0, progress: 0, playing: false, finished: false, focus: null, depth: 0, line: 0, source: 'teks', muted: false, view: 'cinema', audioTime: 0, audioLoading: false }));
 
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
 const smooth = (x: number) => {
@@ -64,7 +68,7 @@ const SET_X: Record<LautSet, number> = {
 function anchor(i: number) {
   const s = TUR_LAUT[i];
   const d = s.depth[1];
-  if (s.id === 'persiapan') return new T.Vector3(2, 1.62, 0);
+  if (s.id === 'persiapan') return new T.Vector3(2, BOAT_DECK_Y + 1.375, 0);
   if (s.id === 'masuk-laut') return new T.Vector3(0.5, depthToY(d), 4.2);
   const x = SET_X[s.set];
   const floorLift = s.set === 'ventilasi' || s.set === 'abisal' || s.set === 'palung' || s.set === 'challenger' || s.set === 'selesai' ? 2.6 : 0;
@@ -98,7 +102,7 @@ export class LautEngine {
     if(useLaut.getState().mode !== 'jelajah' || this.pointerStart.distanceTo(new T.Vector2(e.clientX,e.clientY)) > 6)return;
     const rect=this.renderer.domElement.getBoundingClientRect();
     const ray=new T.Raycaster();ray.setFromCamera(new T.Vector2((e.clientX-rect.left)/rect.width*2-1,1-(e.clientY-rect.top)/rect.height*2),this.camera);
-    const hit=ray.intersectObjects([...this.biota.values()],true)[0];
+    const hit=ray.intersectObjects(BIOTA.map(b=>this.biota.get(b.id)!).filter(Boolean),true)[0];
     if(hit)for(const [id,root] of this.biota){let o:T.Object3D|null=hit.object;while(o){if(o===root){this.focus(id);return;}o=o.parent;}}
   };
   private last = performance.now();
@@ -147,6 +151,7 @@ export class LautEngine {
   private heading = 0;
   private dive = 0;
   private nextBubble = 0;
+  private lastNarrationSeconds = 0;
   private camRate = 1.6;
 
   /* jelajah */
@@ -562,13 +567,15 @@ export class LautEngine {
       const c = new T.Vector3(SET_X.biru, Y(70), 0);
       const manta = C.ray(true);
       manta.scale.setScalar(1.6);
-      this.addMover(manta, c.clone().add(new T.Vector3(0, 2, 0)), 9, 0.1, { bob: 1.2, tilt: 0.25 });
+      this.biota.set('manta', this.addMover(manta, c.clone().add(new T.Vector3(0, 2, 0)), 9, 0.1, { bob: 1.2, tilt: 0.25 }));
       const tuna = new C.School(C.SPECIES.tuna, 34, new T.Vector3(8, 3, 5), 5);
       this.scene.add(tuna.group);
+      this.biota.set('tuna', tuna.group);
       this.schools.push({ s: tuna, c: c.clone().add(new T.Vector3(0, -3, 0)), r: 12, sp: 0.22, y: 0 });
       for (let i = 0; i < 6; i++) {
         const j = C.jellyfish('#e8b5ff', false, 0.4);
-        this.addMover(j, c.clone().add(new T.Vector3((r() - 0.5) * 14, 2 + r() * 5, (r() - 0.5) * 10)), 0.4, 0.1, { bob: 0.8, face: false });
+        const jelly = this.addMover(j, c.clone().add(new T.Vector3((r() - 0.5) * 14, 2 + r() * 5, (r() - 0.5) * 10)), 0.4, 0.1, { bob: 0.8, face: false });
+        if (i === 0) this.biota.set('ubur-biru', jelly);
       }
     }
 
@@ -613,7 +620,10 @@ export class LautEngine {
       this.biota.set('ikan-pemancing', this.addMover(ang, c.clone().add(new T.Vector3(1, 0.5, 0)), 1.2, 0.15, { bob: 0.3 }));
       const gul = C.gulperEel();
       this.biota.set('belut-gulper', this.addMover(gul, c.clone().add(new T.Vector3(-2, 2.5, -3)), 5, 0.12, { bob: 0.8 }));
-      for (let i = 0; i < 4; i++) this.addMover(C.combJelly(), c.clone().add(new T.Vector3((r() - 0.5) * 12, (r() - 0.5) * 6, (r() - 0.5) * 8)), 0.5, 0.1, { bob: 0.6, face: false });
+      for (let i = 0; i < 4; i++) {
+        const comb = this.addMover(C.combJelly(), c.clone().add(new T.Vector3((r() - 0.5) * 12, (r() - 0.5) * 6, (r() - 0.5) * 8)), 0.5, 0.1, { bob: 0.6, face: false });
+        if (i === 0) this.biota.set('hewan-sisir', comb);
+      }
       for (let i = 0; i < 2; i++) this.addMover(C.siphonophore(), c.clone().add(new T.Vector3(-4 + i * 9, 5, -4 + i * 3)), 0.3, 0.05, { bob: 0.4, face: false });
       // plankton bercahaya
       const n = 500;
@@ -641,8 +651,8 @@ export class LautEngine {
       const bed = seabed(60, '#2b2926', U, 0, 0.5, 21);
       bed.position.set(x0, fy, 0);
       this.scene.add(bed);
-      for (let i = 0; i < 4; i++) this.place(blackSmoker(3 + r() * 3, U), x0 - 5 + i * 3.5, fy, -4 + (i % 2) * 2);
-      for (let i = 0; i < 5; i++) this.place(C.tubeWorms(18, i + 3), x0 - 4 + i * 2.2, fy + 0.1, 1 + (i % 2) * 1.5);
+      for (let i = 0; i < 4; i++) { const vent=this.place(blackSmoker(3 + r() * 3, U), x0 - 5 + i * 3.5, fy, -4 + (i % 2) * 2); if(i===1)this.biota.set('cerobong',vent); }
+      for (let i = 0; i < 5; i++) { const worms=this.place(C.tubeWorms(18, i + 3), x0 - 4 + i * 2.2, fy + 0.1, 1 + (i % 2) * 1.5); if(i===2)this.biota.set('cacing-tabung',worms); }
       for (let i = 0; i < 12; i++) this.place(rock(0.5 + r() * 1.2, '#35302b', r), x0 + (r() - 0.5) * 30, fy, (r() - 0.5) * 30);
       for (let i = 0; i < 6; i++) this.addMover(C.crab(), new T.Vector3(x0 - 3 + i * 1.3, fy + 0.25, 2.5), 0.6, 0.15, { bob: 0, tilt: 0 });
       for (let i = 0; i < 14; i++) this.addMover(C.shrimp('#f4ece4', 1.3), new T.Vector3(x0 - 4 + r() * 8, fy + 0.8 + r(), -1 + r() * 3), 0.5 + r(), 0.4, { bob: 0.2 });
@@ -656,8 +666,8 @@ export class LautEngine {
       bed.position.set(x0, fy, 0);
       this.scene.add(bed);
       for (let i = 0; i < 10; i++) this.place(rock(0.3 + r() * 0.6, '#57524b', r), x0 + (r() - 0.5) * 30, fy, (r() - 0.5) * 30);
-      for (let i = 0; i < 3; i++) this.place(C.tripodFish(), x0 - 3 + i * 3.5, fy, -2 + (i % 2) * 3, 1.3, r() * 6);
-      for (let i = 0; i < 4; i++) this.place(C.seaCucumber(), x0 - 2 + i * 2, fy + 0.1, 2 - (i % 2) * 3, 1.3, r() * 6);
+      for (let i = 0; i < 3; i++) { const fish=this.place(C.tripodFish(), x0 - 3 + i * 3.5, fy, -2 + (i % 2) * 3, 1.3, r() * 6); if(i===1)this.biota.set('ikan-tripod',fish); }
+      for (let i = 0; i < 4; i++) { const cucumber=this.place(C.seaCucumber(), x0 - 2 + i * 2, fy + 0.1, 2 - (i % 2) * 3, 1.3, r() * 6); if(i===1)this.biota.set('teripang',cucumber); }
       for (let i = 0; i < 5; i++) this.place(C.brittleStar(i % 2 ? '#e07a2a' : '#d9a05a'), x0 - 5 + i * 2.5, fy + 0.05, 0.5 + (i % 3), 1.2);
     }
 
@@ -684,7 +694,7 @@ export class LautEngine {
         const o = this.addMover(sn, new T.Vector3(x0 + 1, fy + 1 + i * 0.6, -1 + i), 2 + i, 0.12 + i * 0.03, { bob: 0.2 });
         if (i === 0) this.biota.set('ikan-siput-hadal', o);
       }
-      this.place(C.amphipods(26), x0 + 2.5, fy + 0.05, 1.5, 1.4);
+      this.biota.set('amfipoda', this.place(C.amphipods(26), x0 + 2.5, fy + 0.05, 1.5, 1.4));
       for (let i = 0; i < 2; i++) this.place(C.seaCucumber(), x0 - 1.5 + i * 3, fy + 0.1, -1.5 + i * 2.5, 1.2, r() * 6);
     }
 
@@ -777,15 +787,25 @@ export class LautEngine {
     const obj = this.biota.get(id);
     if (!obj) return;
     this.follow = obj;
-    const p = this.worldPos(obj);
+    const p = this.inspectionTarget(obj);
     const size: Record<string, number> = { 'hiu-karang': 2.4, barakuda: 2.6, 'penyu-hijau': 1.8, 'belut-gulper': 2, 'ikan-lentera': 2.2, 'ikan-badut': 0.55, 'kuda-laut': 0.7, 'ikan-kupu-kupu': 0.6, 'blue-tang': 0.65, lionfish: 0.75, pari: 1, 'cumi-cumi': 1.1, 'ikan-pemancing': 1.1 };
-    const k = size[id] ?? 0.9;
+    const k = id === 'ikan-pemancing' ? (this.camera.aspect < 1 ? 1.9 : 1.5) : size[id] ?? 0.9;
     // kamera di depan-samping biota (menghadap wajahnya), mengikuti arah hadapnya
     const q = new T.Quaternion();
     obj.getWorldQuaternion(q);
     const yaw = new T.Euler().setFromQuaternion(q, 'YXZ').y;
-    const off = new T.Vector3(2.0 * k, 0.7 * k + 0.2, 1.8 * k).applyAxisAngle(new T.Vector3(0, 1, 0), obj.parent === this.scene ? yaw : 0);
+    const off = (id === 'ikan-pemancing'
+      ? new T.Vector3(1.25 * k, 0.65 * k + 0.2, 2.5 * k)
+      : new T.Vector3(2.0 * k, 0.7 * k + 0.2, 1.8 * k))
+      .applyAxisAngle(new T.Vector3(0, 1, 0), obj.parent === this.scene ? yaw : 0);
     this.flyTo(p.clone().add(off), p);
+  }
+
+  private inspectionTarget(obj: T.Object3D) {
+    const target = this.worldPos(obj);
+    // Leave room below the complete lure and tail for the animal information card.
+    if (obj === this.biota.get('ikan-pemancing')) target.y -= 0.3;
+    return target;
   }
 
   private worldPos(o: T.Object3D) {
@@ -797,9 +817,20 @@ export class LautEngine {
   go(i: number, sequential = false) {
     this.idx = Math.max(0, Math.min(TUR_LAUT.length - 1, i));
     this.jumped = !sequential;
-    this.snap = !sequential || this.reducedMotion;
-    this.narration.load(TUR_LAUT[this.idx]);
-    useLaut.setState({ stop: this.idx, progress: 0, line: 0, source: this.narration.source, finished: false });
+    this.narration.load(TUR_LAUT[this.idx], sequential);
+    this.lastNarrationSeconds = 0;
+    this.snap = !sequential || this.reducedMotion || this.narration.source === 'rekaman';
+    useLaut.setState({ stop: this.idx, progress: 0, line: 0, source: this.narration.source, finished: false, audioTime: this.narration.tick(0).time });
+  }
+
+  seekNarration(seconds: number) {
+    if (!Number.isFinite(seconds)) return;
+    const time = Math.max(0, Math.min(SEA_RECORDING.duration - 0.01, seconds));
+    this.go(chapterAtTime(time));
+    this.narration.seek(time);
+    this.lastNarrationSeconds = this.narration.tick(0).seconds;
+    this.snap = true;
+    useLaut.setState({ audioTime: time });
   }
 
   setPlaying(on: boolean) {
@@ -849,7 +880,7 @@ export class LautEngine {
       }
     }
     for (const s of this.schools) {
-      s.y += dt * s.sp;
+      if (mode !== 'tur' || this.playing) s.y += dt * s.sp;
       s.s.group.position.set(s.c.x + Math.cos(s.y) * s.r, s.c.y, s.c.z + Math.sin(s.y) * s.r);
       s.s.update(t, s.y + (s.sp > 0 ? Math.PI / 2 : -Math.PI / 2));
     }
@@ -866,7 +897,8 @@ export class LautEngine {
       this.lastUi = now;
       const d = Math.round(mode === 'tur' ? this.tourDepth : yToDepth(this.camera.position.y));
       if (process.env.NODE_ENV === 'development') {
-        Object.assign(this.renderer.domElement.dataset,{drawCalls:String(this.renderer.info.render.calls),triangles:String(this.renderer.info.render.triangles),fps:String(Math.round(1/Math.max(dt,0.001)))});
+        const ui = useLaut.getState();
+        Object.assign(this.renderer.domElement.dataset,{drawCalls:String(this.renderer.info.render.calls),triangles:String(this.renderer.info.render.triangles),fps:String(Math.round(1/Math.max(dt,0.001))),chapter:TUR_LAUT[ui.stop].id,shot:shotAtTime(TUR_LAUT[ui.stop].id,ui.audioTime)?.target ?? '',audioTime:String(ui.audioTime)});
       }
       if (d !== useLaut.getState().depth) useLaut.setState({ depth: d });
     }
@@ -904,12 +936,12 @@ export class LautEngine {
     if (this.flyK < 1) {
       this.flyK = Math.min(1, this.flyK + dt / 2.2);
       const k = smooth(this.flyK);
-      const goalT = this.follow ? this.worldPos(this.follow) : this.flyGoal.t;
+      const goalT = this.follow ? this.inspectionTarget(this.follow) : this.flyGoal.t;
       const goalP = this.follow ? goalT.clone().add(this.flyGoal.p.clone().sub(this.flyGoal.t)) : this.flyGoal.p;
       this.camera.position.lerpVectors(this.flyFrom.p, goalP, k);
       this.controls.target.lerpVectors(this.flyFrom.t, goalT, k);
     } else if (this.follow) {
-      const tgt = this.worldPos(this.follow);
+      const tgt = this.inspectionTarget(this.follow);
       const d = tgt.sub(this.controls.target).multiplyScalar(Math.min(1, dt * 3));
       this.controls.target.add(d);
       this.camera.position.add(d);
@@ -922,35 +954,41 @@ export class LautEngine {
     const s = TUR_LAUT[this.idx];
     const clock = this.narration.tick(this.playing ? dt : 0);
     if (this.playing && clock.ended) {
-      if (this.idx < TUR_LAUT.length - 1) this.go(this.idx + 1, true);
-      else { this.setPlaying(false); this.music.stop(2); useLaut.setState({ finished: true, progress: 1 }); }
+      if (this.idx < TUR_LAUT.length - 1) this.go(clock.source === 'rekaman' ? Math.max(this.idx + 1, chapterAtTime(clock.time)) : this.idx + 1, true);
+      else { this.setPlaying(false); this.music.stop(2); useLaut.setState({ finished: true, progress: 1, audioTime: clock.time }); }
       return;
     }
     const p = clock.progress;
-    if (performance.now() - this.lastUi > 200) useLaut.setState({ progress: p, line: clock.line, source: clock.source });
+    const recorded = clock.source === 'rekaman';
+    if (performance.now() - this.lastUi > 200) useLaut.setState({ progress: p, line: clock.line, source: clock.source, audioTime: clock.time, audioLoading: clock.loading });
 
     const i = this.idx;
-    const prev = i > 0 && !this.jumped ? anchor(i - 1) : anchor(i);
+    const prev = i > 0 && !this.jumped && !recorded ? anchor(i - 1) : anchor(i);
     const cur = anchor(i);
     const pos = new T.Vector3();
     const t = this.uTime.value;
     let standing = false;
+    let deckRotation: T.Quaternion | null = null;
     if (s.id === 'persiapan') {
-      pos.set(2, 1.62, 0);
+      const onDeck = deckPose(this.boat, this.diver.userData.sole, this.diver.scale, new T.Vector3(2, BOAT_DECK_Y, 0));
+      pos.copy(onDeck.position);
+      deckRotation = onDeck.rotation;
       standing = true;
     } else if (s.id === 'masuk-laut') {
       // berjalan ke tepi kapal → melompat (langkah lebar) → turun perlahan
-      const walk = smooth(p / 0.18),
-        jump = clamp01((p - 0.18) / 0.14),
-        sink = smooth((p - 0.32) / 0.6);
-      if (p < 0.32) {
-        pos.set(2, 1.62 + Math.sin(jump * Math.PI) * 1.1 - jump * jump * 2.6, walk * 1.2 + jump * 2);
+      const timing = diveAtTime(recorded ? clock.seconds : p * 31);
+      const { walk, jump, sink, standing: onBoat } = timing;
+      if (onBoat) {
+        const onDeck = deckPose(this.boat, this.diver.userData.sole, this.diver.scale, new T.Vector3(2, BOAT_DECK_Y, walk * 1.2));
+        pos.copy(onDeck.position).lerp(new T.Vector3(2, -1, 3.2), jump * jump);
+        pos.y += Math.sin(jump * Math.PI) * 1.1;
+        deckRotation = onDeck.rotation;
         standing = true;
-        if (jump > 0.95 && this.splashT < 0) {
-          this.splashT = 0;
-          sfx.splash();
-        }
       } else pos.set(2 - sink * 1.5, -1 + (depthToY(4) + 1) * sink, 3.2 + sink);
+      const seconds = recorded ? clock.seconds : p * 31;
+      if (this.playing && seconds >= 5 && this.lastNarrationSeconds < 5) {
+        this.splashT = 0; sfx.splash();
+      }
     } else if (s.set === 'ringkasan') {
       // naik kembali ke permukaan melewati semua zona
       const k = smooth(p / 0.85);
@@ -961,13 +999,16 @@ export class LautEngine {
         b = Math.min(path.length - 1, a + 1);
       pos.lerpVectors(path[a], path[b], f - a);
     } else {
-      const k = this.jumped ? 1 : smooth(p / 0.28);
+      const k = recorded || this.jumped ? 1 : smooth(p / 0.28);
       pos.lerpVectors(prev, cur, k);
       // saat melayang, berenang pelan ke kiri-kanan
       pos.x += Math.sin(t * 0.3) * 0.35 * k;
       pos.y += Math.sin(t * 0.5) * 0.2;
     }
-    this.tourDepth = s.set === 'ringkasan' ? Math.max(0,s.depth[0]*(1-smooth(p/0.85))) : T.MathUtils.lerp(s.depth[0],s.depth[1],this.jumped ? 1 : smooth(p/0.28));
+    this.tourDepth = s.set === 'ringkasan' ? Math.max(0,s.depth[0]*(1-smooth(p/0.85)))
+      : s.id === 'masuk-laut' ? 4 * diveAtTime(recorded ? clock.seconds : p*31).sink
+      : T.MathUtils.lerp(s.depth[0],s.depth[1],recorded || this.jumped ? 1 : smooth(p/0.28));
+    this.lastNarrationSeconds = recorded ? clock.seconds : p*31;
     const vel = pos.clone().sub(this.player);
     this.player.copy(pos);
     // kemiringan menukik saat turun, dihaluskan (tidak meloncat antara 0 dan penuh)
@@ -986,7 +1027,7 @@ export class LautEngine {
     this.diver.userData.setTorch?.(s.id === 'makin-redup' || s.id === 'batas-aman' ? 1 : 0);
     if (this.diver.visible) {
       this.diver.position.copy(pos);
-      if (standing) this.diver.rotation.set(0, -Math.PI / 2, Math.PI / 2);
+      if (standing && deckRotation) this.diver.quaternion.copy(deckRotation);
       else this.diver.rotation.set(0, this.heading, Math.sin(t * 0.8) * 0.05 - this.dive * 0.35);
       this.diver.userData.stand?.(standing);
       this.diver.userData.update?.(t, standing ? 0 : 1);
@@ -995,7 +1036,7 @@ export class LautEngine {
       this.sub.position.copy(pos).add(new T.Vector3(0, 0.4, 0));
       this.sub.rotation.set(0, this.heading, Math.sin(t * 0.5) * 0.03 - this.dive * 0.15);
     } else this.placeSub(this.sub.position);
-    this.sub.userData.setLights?.(inSub || s.id === 'batas-aman' ? 1 : 0);
+    this.sub.userData.setLights?.(inSub ? subLightAtTime(s.id, clock.time) : 0);
 
     // gelembung dari penyelam
     this.updateBubbles(dt, this.diver.visible && pos.y < -0.5 ? this.diver.localToWorld(new T.Vector3(0.66, -0.05, 0)) : null);
@@ -1029,19 +1070,20 @@ export class LautEngine {
       }
       if (s.set === 'ringkasan') off.set(8, 3, 14);
     }
-    if (p > 0.40 && s.set !== 'ringkasan' && s.set !== 'selesai' && s.set !== 'kapal') {
-      const candidates = BIOTA.filter(b => b.stop === s.id);
-      const candidate = candidates[Math.min(candidates.length - 1, Math.max(0, clock.line - 1))];
-      const target = candidate && this.biota.get(candidate.id);
-      if (target) {
-        const q = smooth((p-0.4)/0.18)*0.8;
-        const targetPosition=this.worldPos(target);
-        lookAt.lerp(targetPosition,q);
-        // Small subjects need a closer lens, schools and large fish need context.
-        const distance=['barakuda','hiu-karang','ikan-lentera'].includes(candidate.id)?7:4.4;
-        const shot=targetPosition.clone().add(new T.Vector3(distance*0.7,0.8,distance));
-        off.lerp(shot.sub(pos),q);
-      }
+    const timedShot = shotAtTime(s.id, clock.time);
+    const subject = timedShot && this.biota.get(timedShot.target);
+    if (timedShot && subject) {
+      // In observation shots we look out from the expedition, with the animal unobstructed.
+      this.sub.visible = false;
+      this.diver.visible = false;
+      const targetPosition = this.worldPos(subject);
+      const distance = timedShot.distance * (this.camera.aspect < 1 ? 1.25 : 1);
+      lookAt.copy(targetPosition);
+      off.copy(targetPosition).add(new T.Vector3(distance*0.6,timedShot.elevation ?? distance*0.2,distance)).sub(pos);
+    }
+    if (s.id === 'masuk-laut' && clock.seconds >= 12 && clock.seconds < 21) {
+      lookAt.copy(pos).add(new T.Vector3(0, 14, -2));
+      off.set(2, 0.2, 5);
     }
     if (useLaut.getState().view === 'jendela' && inSub) {
       off.set(2.8,0.5,0.2); lookAt.copy(pos).add(new T.Vector3(9,-0.15,0));
@@ -1056,7 +1098,7 @@ export class LautEngine {
     // kamera makin cepat mengikuti saat penjelajah bergerak cepat — berubah mulus, tidak meloncat
     const speed = vel.length() / Math.max(dt, 1e-3);
     this.camRate = T.MathUtils.damp(this.camRate, s.set === 'ringkasan' ? 4 : 1.6 + Math.min(1, speed / 6) * 2.4, 2, dt);
-    const f = 1 - Math.exp(-dt * this.camRate);
+    const f = 1 - Math.exp(-dt * (timedShot ? 4.5 : this.camRate));
     this.camPos.lerp(want, f);
     this.camLook.lerp(lookAt, f);
     this.camera.position.copy(this.camPos);
@@ -1127,7 +1169,10 @@ export class LautEngine {
     this.hemi.intensity = under ? 0.15 + 1.1 * L : 1.1;
     this.hemi.color.set(under ? '#9fe0ff' : '#dff2ff');
     // cahaya lembut dari kamera supaya biota laut dalam tetap terlihat (tanpa menghapus suasana gelap)
-    this.camLight.intensity = under ? 7 + (1 - L) * 19 : 0;
+    const ui = useLaut.getState();
+    const lamp = ui.mode === 'tur' && TUR_LAUT[ui.stop].id === 'makin-redup'
+      ? 0.12 + 0.88 * subLightAtTime('makin-redup', ui.audioTime) : 1;
+    this.camLight.intensity = under ? (7 + (1 - L) * 19) * lamp : 0;
     this.scene.environmentIntensity = under ? 0.055 + L * 0.24 : 0.35;
     this.sun.castShadow = !under;
     if(!under) { this.sun.position.copy(this.camera.position).add(new T.Vector3(20,80,10));this.sun.target.position.copy(this.camera.position); }

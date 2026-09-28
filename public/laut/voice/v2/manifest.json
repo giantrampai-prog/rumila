@@ -1,4 +1,190 @@
 {
   "version": 2,
-  "tracks": {}
+  "recording": {
+    "src": "/laut/voice/v2/algenib-20260928.m4a",
+    "duration": 598.7753333333334,
+    "voice": "Algenib",
+    "words": 1274,
+    "timestampPrecisionSeconds": 1,
+    "timestampSha256": "a022c8a613ac56896274dae49c591b58dceb7a77734e8b8b5b5ae39cc655fdca"
+  },
+  "tracks": {
+    "persiapan": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 0,
+      "end": 39,
+      "cues": [
+        0,
+        10,
+        22
+      ]
+    },
+    "masuk-laut": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 39,
+      "end": 70,
+      "cues": [
+        0,
+        12,
+        21
+      ]
+    },
+    "terumbu-karang": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 70,
+      "end": 112,
+      "cues": [
+        0,
+        11,
+        21,
+        31
+      ]
+    },
+    "padang-lamun": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 112,
+      "end": 144,
+      "cues": [
+        0,
+        10,
+        21
+      ]
+    },
+    "batas-aman": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 144,
+      "end": 177,
+      "cues": [
+        0,
+        11,
+        23
+      ]
+    },
+    "dinding-karang": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 177,
+      "end": 207,
+      "cues": [
+        0,
+        9,
+        20
+      ]
+    },
+    "laut-biru": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 207,
+      "end": 238,
+      "cues": [
+        0,
+        8,
+        19
+      ]
+    },
+    "makin-redup": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 238,
+      "end": 269,
+      "cues": [
+        0,
+        11,
+        19
+      ]
+    },
+    "zona-senja": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 269,
+      "end": 305,
+      "cues": [
+        0,
+        8,
+        18,
+        26
+      ]
+    },
+    "bioluminesensi": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 305,
+      "end": 346,
+      "cues": [
+        0,
+        7,
+        19,
+        32
+      ]
+    },
+    "ventilasi": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 346,
+      "end": 384,
+      "cues": [
+        0,
+        10,
+        20,
+        29
+      ]
+    },
+    "dataran-abisal": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 384,
+      "end": 424,
+      "cues": [
+        0,
+        9,
+        20,
+        30
+      ]
+    },
+    "palung-laut": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 424,
+      "end": 457,
+      "cues": [
+        0,
+        9,
+        20
+      ]
+    },
+    "biota-palung": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 457,
+      "end": 492,
+      "cues": [
+        0,
+        13,
+        24
+      ]
+    },
+    "challenger-deep": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 492,
+      "end": 534,
+      "cues": [
+        0,
+        10,
+        19,
+        30
+      ]
+    },
+    "misi-selesai": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 534,
+      "end": 561,
+      "cues": [
+        0,
+        8,
+        17
+      ]
+    },
+    "ringkasan": {
+      "src": "/laut/voice/v2/algenib-20260928.m4a",
+      "start": 561,
+      "end": 598.7753333333334,
+      "cues": [
+        0,
+        10,
+        21,
+        31
+      ]
+    }
+  }
 }

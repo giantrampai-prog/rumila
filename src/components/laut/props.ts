@@ -7,6 +7,7 @@ import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { AgamModel, type AgamPose } from '../roket/agam-model';
 import { canvasTex, glow, glowSprite } from './creatures';
 import { surfaceMaterial, mergeSpecimen, reefGeometry } from './realism';
+import { modelSole } from './grounding';
 
 const std = (color: T.ColorRepresentation, rough = 0.6, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color, roughness: rough, ...extra });
 
@@ -137,6 +138,7 @@ export function diver() {
   };
   /** berdiri: kepala menoleh ke arah perut (depan tubuh saat tegak) */
   let standing = false;
+  g.userData.sole = new T.Vector3(-1.15, 0, 0);
   g.userData.stand = (on: boolean) => {
     standing = on;
     headG.rotation.z = on ? -Math.PI / 2 : 0;
@@ -161,6 +163,7 @@ export function diver() {
         root.scale.setScalar(k);
         root.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(new T.Vector3(0, 0, -1), new T.Vector3(1, 0, 0), new T.Vector3(0, -1, 0)));
         root.position.set(-1.25, 0, 0);
+        g.userData.sole.copy(modelSole(root));
       },
     },
   );
@@ -418,7 +421,7 @@ export function boat() {
   s.quadraticCurveTo(4.6, 0.6, 5, 1.6);
   s.lineTo(-4.2, 1.6);
   s.closePath();
-  const hull = new T.ExtrudeGeometry(s, { depth: 3, bevelEnabled: true, bevelSize: 0.2, bevelThickness: 0.2, bevelSegments: 3 });
+  const hull = new T.ExtrudeGeometry(s, { depth: 3, bevelEnabled: true, bevelSize: 0.055, bevelThickness: 0.2, bevelSegments: 3 });
   hull.translate(0, -0.9, -1.5);
   g.add(new T.Mesh(hull, white));
   const stripe = new T.Mesh(new T.BoxGeometry(8.6, 0.18, 3.45), blue);
@@ -468,7 +471,7 @@ export function boat() {
     g.add(tank);
   }
   const box = new T.Mesh(new T.BoxGeometry(0.7, 0.4, 0.5), std('#2a2c33', 0.6));
-  box.position.set(2, 0.96, 1);
+  box.position.set(3.4, 0.987, -0.65);
   g.add(box);
   // tiang & bendera Merah Putih
   const pole = new T.Mesh(new T.CylinderGeometry(0.03, 0.03, 2.6, 8), std('#dfe3e8', 0.3, { metalness: 0.6 }));

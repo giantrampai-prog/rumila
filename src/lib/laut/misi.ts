@@ -350,7 +350,7 @@ export const BIOTA: Biota[] = [
   { id: 'ikan-pemancing', name: 'Ikan Pemancing', stop: 'bioluminesensi', desc: 'Ikan laut dalam yang punya umpan bercahaya di kepalanya.', fact: 'Cahaya umpannya dibuat oleh bakteri yang hidup di dalamnya.' },
   { id: 'belut-gulper', name: 'Belut Gulper', stop: 'bioluminesensi', desc: 'Belut laut dalam bermulut sangat besar seperti kantong.', fact: 'Mulutnya bisa membuka lebar untuk menelan mangsa yang cukup besar.' },
   { id: 'ikan-siput-hadal', name: 'Ikan Siput Hadal', stop: 'biota-palung', desc: 'Ikan pucat bertubuh lunak yang hidup di palung laut.', fact: 'Ikan ini pernah terlihat hidup di kedalaman lebih dari delapan ribu meter.' },
-].map((b) => ({ ...b, img: `/laut/ikon/${b.id}.webp` }));
+].map((b) => ({ ...b, img: `/laut/ikon/realistic-v1/${b.id}.webp` }));
 
 
 export const ZONA_LAUT = [

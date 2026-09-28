@@ -3,6 +3,7 @@
 // (tubuh melengkung makin kuat ke arah ekor). Satu material per jenis → kawanan memakai InstancedMesh.
 
 import * as T from 'three';
+import { createAnglerfish } from './anglerfish';
 
 export const U = { time: { value: 0 } };
 
@@ -857,53 +858,9 @@ export function squid(glowing = false) {
   return g;
 }
 
-/** Ikan pemancing: kepala besar bergigi, umpan bercahaya pada tangkai. */
+/** Model edukasi natural: kulit berpori, mulut terbuka dan gigi ramping. */
 export function anglerfish() {
-  const g = new T.Group();
-  const skin = std('#3a2a26', 0.8);
-  const body = new T.Mesh(new T.SphereGeometry(0.4, 28, 20), skin);
-  body.scale.set(1.1, 0.95, 0.9);
-  const jaw = new T.Mesh(new T.SphereGeometry(0.34, 24, 12, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), std('#2a1c1a', 0.7));
-  jaw.position.set(0.18, -0.05, 0);
-  jaw.scale.set(1, 0.8, 1);
-  const mouth = new T.Mesh(new T.CircleGeometry(0.26, 24), std('#160b0b', 0.9, { side: T.DoubleSide }));
-  mouth.position.set(0.44, -0.06, 0);
-  mouth.rotation.y = Math.PI / 2;
-  mouth.scale.set(1, 0.55, 1);
-  g.add(body, jaw, mouth);
-  const tm = std('#efe6d2', 0.3);
-  for (let i = 0; i < 14; i++) {
-    const a = (i / 13 - 0.5) * 2.4;
-    for (const s of [1, -1]) {
-      const t = new T.Mesh(new T.ConeGeometry(0.018, 0.11 + (i % 3) * 0.04, 6), tm);
-      t.position.set(0.44, -0.06 + s * 0.12, Math.sin(a) * 0.24);
-      t.rotation.z = s > 0 ? Math.PI : 0;
-      g.add(t);
-    }
-  }
-  eyes(g, 0.28, 0.2, 0.22, 0.075);
-  const stalk = new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3([new T.Vector3(0.1, 0.35, 0), new T.Vector3(0.35, 0.75, 0), new T.Vector3(0.65, 0.6, 0)]), 16, 0.012, 6), skin);
-  const bulb = new T.Mesh(new T.SphereGeometry(0.05, 14, 10), new T.MeshStandardMaterial({ color: '#fff7c0', emissive: '#fff2a0', emissiveIntensity: 3 }));
-  bulb.position.set(0.66, 0.56, 0);
-  const light = new T.PointLight('#ffe9a0', 2.5, 3, 1.6);
-  light.position.copy(bulb.position);
-  const halo = glowSprite('#ffe7a0', 0.6);
-  halo.position.copy(bulb.position);
-  g.add(stalk, bulb, light, halo);
-  const tail = new T.Mesh(new T.ConeGeometry(0.18, 0.35, 12), skin);
-  tail.rotation.z = Math.PI / 2;
-  tail.position.set(-0.5, 0, 0);
-  const tf = new T.Mesh(new T.CircleGeometry(0.2, 12), std('#3a2a26', 0.8, { side: T.DoubleSide }));
-  tf.position.set(-0.72, 0, 0);
-  tf.rotation.y = Math.PI / 2;
-  g.add(tail, tf);
-  g.userData.update = (t: number) => {
-    const k = 1 + Math.sin(t * 3) * 0.15;
-    halo.scale.setScalar(0.6 * k);
-    light.intensity = 2.5 * k;
-    tf.rotation.x = Math.sin(t * 4) * 0.4;
-  };
-  return g;
+  return createAnglerfish(glow());
 }
 
 export function gulperEel() {

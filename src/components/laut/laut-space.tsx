@@ -7,10 +7,12 @@ import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
 import { installAudioUnlock } from '@/lib/audio-unlock';
 import { BIOTA, TUR_LAUT, ZONA_LAUT, zoneAtDepth } from '@/lib/laut/misi';
+import { SEA_RECORDING, SEA_TRACKS } from '@/lib/laut/narration';
 import { LautEngine, useLaut } from './engine';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
 const fmt = (n: number) => Math.round(n).toLocaleString('id-ID');
+const audioTimeLabel = (n: number) => `${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,'0')}`;
 
 function DepthMeter() {
   const depth = useLaut(s => s.depth);
@@ -43,7 +45,7 @@ function ChapterMap({ engine, close }: {engine: LautEngine; close: () => void}) 
     <div className="max-h-[62dvh] space-y-2 overflow-y-auto p-4">
       {TUR_LAUT.map((s,i)=><button key={s.id} aria-current={i===stop?'step':undefined} onClick={()=>{engine.go(i);dialog.current?.close();}} className={`flex w-full items-center gap-3 rounded-2xl border-2 p-3 text-left transition-colors hover:border-teal-300 ${i===stop?'border-teal-400 bg-teal-50':'border-transparent bg-white'}`}>
         <span className={`flex size-9 shrink-0 items-center justify-center rounded-full font-extrabold ${i===stop?'bg-teal-600 text-white':'bg-slate-100 text-slate-500'}`}>{i+1}</span>
-        <span className="flex-1"><span className="block font-extrabold">{s.title}</span><span className="block text-xs text-slate-500">{s.label}</span></span><Icon name="chevron_right" size={20}/>
+        <span className="flex-1"><span className="block font-extrabold">{s.title}</span><span className="block text-xs text-slate-500">{s.label}</span></span><span className="text-xs tabular-nums text-slate-500">{audioTimeLabel(SEA_TRACKS[s.id].start ?? 0)}</span><Icon name="chevron_right" size={20}/>
       </button>)}
     </div>
     <p className="border-t border-slate-100 px-5 py-3 text-xs leading-relaxed text-slate-500">Perjalanan virtual lintas habitat. Ukuran, jarak, dan waktu disederhanakan. <a href="/laut/narasi-v2.zip" className="font-bold text-teal-700 underline" download>Unduh naskah narasi</a></p>
@@ -51,7 +53,7 @@ function ChapterMap({ engine, close }: {engine: LautEngine; close: () => void}) 
 }
 
 function TourOverlay({engine}:{engine:LautEngine}) {
-  const {stop,progress,playing,finished,line,source,muted,view,depth}=useLaut();
+  const {stop,progress,playing,finished,line,source,muted,view,depth,audioTime,audioLoading}=useLaut();
   const [map,setMap]=useState(false);
   const [captions,setCaptions]=useState(true);
   const resume=useRef(false);
@@ -78,8 +80,13 @@ function TourOverlay({engine}:{engine:LautEngine}) {
     <div className="absolute bottom-0 inset-x-0 flex flex-col items-center gap-3 bg-gradient-to-t from-[#031627]/95 via-[#031627]/40 to-transparent px-3 pb-[max(12px,env(safe-area-inset-bottom))] pt-10 sm:gap-4">
       <div className="max-w-[760px] text-center">
         <p className="mb-2 text-xs font-bold text-[#ffe4a0] sm:text-sm"><Icon name="search" size={15} className="mr-1 inline"/>{s.prompt}</p>
-        {captions&&<div className="rounded-[20px] border border-white/15 bg-[#061d32]/80 px-4 py-3 shadow-lg backdrop-blur-md sm:px-6"><p className="mb-1 text-[10px] font-extrabold uppercase tracking-[.18em] text-cyan-200">Agam · {source==='rekaman'?'Narasi':source==='perangkat'?'Suara perangkat':'Baca bersama'}</p><p className="text-[14px] font-bold leading-relaxed sm:text-[17px]">{s.lines[line]??s.lines[0]}</p></div>}
+        {captions&&<div className="rounded-[20px] border border-white/15 bg-[#061d32]/95 px-4 py-3 shadow-lg sm:px-6"><p className="mb-1 text-[10px] font-extrabold uppercase tracking-[.18em] text-cyan-200">Agam · {source==='rekaman'?'Algenib':source==='perangkat'?'Suara perangkat':'Baca bersama'}</p><p className="text-[14px] font-bold leading-relaxed sm:text-[17px]">{s.lines[line]??s.lines[0]}</p></div>}
       </div>
+      {source==='rekaman'&&<div className="pointer-events-auto flex w-full max-w-[640px] items-center gap-3 px-2 text-[11px] font-bold tabular-nums text-cyan-50">
+        <span className="w-9 shrink-0">{audioTimeLabel(audioTime)}</span>
+        <input aria-label="Posisi narasi" aria-valuetext={`${audioTimeLabel(audioTime)} dari ${audioTimeLabel(Math.ceil(SEA_RECORDING.duration))}`} type="range" min={0} max={Math.floor(SEA_RECORDING.duration)} step={1} value={Math.floor(audioTime)} onChange={e=>engine.seekNarration(Number(e.target.value))} className="h-6 min-w-0 flex-1 cursor-pointer accent-[#ffb84d]"/>
+        <span className="shrink-0">{audioLoading?'Memuat suara…':audioTimeLabel(Math.ceil(SEA_RECORDING.duration))}</span>
+      </div>}
       <div className="pointer-events-auto flex max-w-full items-center gap-1 rounded-full border border-white/15 bg-[#071a2b]/95 p-1.5 shadow-xl backdrop-blur sm:gap-2">
         <button className={control} disabled={stop===0} aria-label="Bab sebelumnya" onClick={()=>engine.go(stop-1)}><Icon name="chevron_left" size={24}/></button>
         <button className={`${control} !bg-[#ff8718] !px-4 sm:!px-5`} aria-label={playing?'Jeda tur':'Lanjutkan tur'} onClick={()=>engine.setPlaying(!playing)}><Icon name={playing?'pause':'play_arrow'} size={25}/><span className="hidden sm:inline">{playing?'Jeda':'Lanjut'}</span></button>
@@ -100,8 +107,8 @@ function Dock({engine}:{engine:LautEngine}) {
   const focus=useLaut(s=>s.focus);
   const b=BIOTA.find(x=>x.id===focus);
   return <div className="flex flex-col items-center gap-3">
-    {b&&<section className="pointer-events-auto flex max-w-[620px] gap-3 rounded-[24px] border border-white/20 bg-[#061d32]/90 p-4 text-white backdrop-blur-md"><Image src={b.img} alt="" width={88} height={72} unoptimized className="h-[72px] w-[88px] rounded-2xl object-cover"/><div><h2 style={{fontFamily:BALOO}} className="text-xl font-extrabold">{b.name}</h2><p className="text-sm text-cyan-50">{b.desc}</p><p className="mt-1 text-xs text-[#ffe4a0]">{b.fact}</p></div></section>}
-    <div className="pointer-events-auto w-full overflow-x-auto rounded-[24px] border border-white/15 bg-[#061d32]/70 p-2 backdrop-blur-md"><div className="mx-auto flex w-max gap-1">{BIOTA.map(b=><button key={b.id} aria-pressed={focus===b.id} onClick={()=>engine.focus(b.id)} className={`flex w-[80px] shrink-0 flex-col items-center gap-1 rounded-2xl p-1.5 ${focus===b.id?'bg-white/20 ring-2 ring-[#ffd15c]':''}`}><Image src={b.img} alt="" width={66} height={46} unoptimized className="h-[46px] rounded-xl object-cover"/><span className="text-center text-[11px] font-extrabold leading-tight text-white">{b.name}</span></button>)}</div></div>
+    {b&&<section className="pointer-events-auto flex max-w-[620px] gap-3 rounded-[24px] border border-white/20 bg-[#061d32]/90 p-4 text-white backdrop-blur-md"><Image src={b.img} alt="" width={88} height={72} unoptimized className="h-[72px] w-[88px] rounded-2xl bg-[#042239] object-contain"/><div><h2 style={{fontFamily:BALOO}} className="text-xl font-extrabold">{b.name}</h2><p className="text-sm text-cyan-50">{b.desc}</p><p className="mt-1 text-xs text-[#ffe4a0]">{b.fact}</p></div></section>}
+    <div className="pointer-events-auto w-full overflow-x-auto rounded-[24px] border border-white/15 bg-[#061d32]/70 p-2 backdrop-blur-md"><div className="mx-auto flex w-max gap-1">{BIOTA.map(b=><button key={b.id} aria-pressed={focus===b.id} onClick={()=>engine.focus(b.id)} className={`flex w-[80px] shrink-0 flex-col items-center gap-1 rounded-2xl p-1.5 ${focus===b.id?'bg-white/20 ring-2 ring-[#ffd15c]':''}`}><Image src={b.img} alt="" width={66} height={46} unoptimized className="h-[46px] w-[66px] rounded-xl bg-[#042239] object-contain"/><span className="text-center text-[11px] font-extrabold leading-tight text-white">{b.name}</span></button>)}</div></div>
   </div>;
 }
 
@@ -113,7 +120,7 @@ export function LautSpace() {
   const router=useRouter();
   useEffect(()=>{
     installAudioUnlock();
-    useLaut.setState({mode:'jelajah',focus:null,playing:false,finished:false,stop:0,progress:0,depth:0,line:0,source:'teks',muted:false,view:'cinema'});
+    useLaut.setState({mode:'jelajah',focus:null,playing:false,finished:false,stop:0,progress:0,depth:0,line:0,source:'teks',muted:false,view:'cinema',audioTime:0,audioLoading:false});
     let e:LautEngine;
     try{e=new LautEngine(host.current!);setEngine(e);}catch{setError(true);return;}
     return()=>e.dispose();

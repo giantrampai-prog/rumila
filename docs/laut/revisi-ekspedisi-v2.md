@@ -33,7 +33,7 @@ Visualisasi edukasi bergaya natural, bukan pemindaian ilmiah atau simulasi kenda
 
 Paket `public/laut/narasi-v2.zip` berisi 17 file per bab, naskah gabungan, cue-sheet CSV dan petunjuk. Kata-kata aplikasi berasal dari `src/lib/laut/misi.ts`. Setelah mengubahnya, jalankan `node --import tsx scripts/export-sea-narration.ts`.
 
-Rekam satu file per bab, simpan di `public/laut/voice/v2/`, tambahkan src/cues ke `manifest.json` versi 2. Cue harus mengikuti rekaman final, dimulai 0, urut naik dan jumlahnya sama dengan paragraf. Path/cue invalid atau audio lebih pendek dari cue terakhir ditolak. Manifest tidak di-cache agar rekaman baru segera terbaca. Audio gagal beralih ke teks agar tur tetap berjalan.
+Rekaman Algenib lengkap telah dipasang sebagai satu berkas untuk 17 bab. `manifest.json` versi 2 menyimpan `src`, `start`/`end` absolut, serta `cues` paragraf relatif. Cue mengikuti timestamp rekaman final, dimulai 0, urut naik dan jumlahnya sama dengan paragraf. Path/cue invalid atau audio lebih pendek dari cue terakhir ditolak. Manifest dibundel saat build agar klik pertama langsung memakai rekaman. Audio gagal beralih ke teks agar tur tetap berjalan. Rincian: `docs/laut/rekaman-algenib/README.md`.
 
 Rekaman profesional v2 belum dibuat. Aplikasi membacakan naskah dengan suara Indonesia perangkat bila tersedia; kualitas bergantung perangkat. Tanpa itu, teks mengikuti waktu baca. Melanjutkan suara perangkat setelah jeda mengulang paragraf aktif. Audio v1 tetap tersimpan sebagai arsip.
 
