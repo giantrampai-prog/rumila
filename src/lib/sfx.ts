@@ -299,6 +299,17 @@ export const sfx = {
     hiss(1.4, { freq: 90, q: 0.5, vol: 0.35, type: 'lowpass', at: 0.1 });
     tone(70, 1.6, { type: 'sawtooth', vol: 0.08, to: 140 });
   },
+  /** langkah sepatu astronaut di beton landasan */
+  padStep() {
+    hiss(0.08, { freq: 700 + Math.random() * 300, q: 1.1, vol: 0.09, type: 'bandpass' });
+    tone(95 + Math.random() * 20, 0.07, { vol: 0.05, attack: 0.002 });
+  },
+  /** kokpit menutup: desis hidrolik lalu terkunci */
+  canopy() {
+    hiss(0.7, { freq: 2600, to: 900, q: 0.8, vol: 0.08 });
+    tone(150, 0.18, { type: 'square', vol: 0.1, to: 80, attack: 0.002, at: 0.65 });
+    tone(880, 0.12, { vol: 0.05, at: 0.8 });
+  },
   /** logam terkunci: pisah tahap / merapat */
   clunk() {
     tone(140, 0.2, { type: 'square', vol: 0.12, to: 70, attack: 0.002 });
@@ -549,4 +560,84 @@ export function setTrafficLevel(v: number) {
 export function stopTraffic() {
   traffic?.stop();
   traffic = null;
+}
+
+/* ---------------- mesin pesawat & angin (terus-menerus, dikendalikan tiap bingkai) ---------------- */
+
+let engine: {
+  set: (thrust: number, wind: number, spool: number) => void;
+  stop: (fade: number) => void;
+} | null = null;
+
+/**
+ * Suara mesin pesawat Rinoya-1 + deru angin, disintesis: gemuruh rendah, raungan semburan, dengung turbin,
+ * dan desis angin yang naik sesuai kecepatan. Panggil tiap bingkai; nilai 0–1 (thrust = kekuatan mesin,
+ * wind = kecepatan menembus udara, spool = turbin berputar).
+ */
+export function engineSound(thrust: number, wind: number, spool: number) {
+  if (muted) return stopEngineSound(0.2);
+  const c = out();
+  if (!c) return;
+  if (!engine) {
+    const mk = (type: BiquadFilterType, f: number, q = 0.7) => {
+      const n = noise(c);
+      n.loop = true;
+      const fl = c.createBiquadFilter();
+      fl.type = type;
+      fl.frequency.value = f;
+      fl.Q.value = q;
+      const g = c.createGain();
+      g.gain.value = 0;
+      n.connect(fl).connect(g).connect(master!);
+      n.start(0, Math.random());
+      return { n, fl, g };
+    };
+    const rumble = mk('lowpass', 150);
+    const roar = mk('bandpass', 1400, 0.6);
+    const wnd = mk('bandpass', 500, 0.5);
+    const hum = c.createOscillator();
+    hum.type = 'sawtooth';
+    hum.frequency.value = 46;
+    const humF = c.createBiquadFilter();
+    humF.type = 'lowpass';
+    humF.frequency.value = 220;
+    const humG = c.createGain();
+    humG.gain.value = 0;
+    hum.connect(humF).connect(humG).connect(master!);
+    hum.start();
+    const whine = c.createOscillator();
+    whine.type = 'sine';
+    whine.frequency.value = 500;
+    const whineG = c.createGain();
+    whineG.gain.value = 0;
+    whine.connect(whineG).connect(master!);
+    whine.start();
+    const k = 0.12; // konstanta waktu perubahan (detik) — halus, tanpa klik
+    engine = {
+      set(t, w, s) {
+        const now = c.currentTime;
+        rumble.g.gain.setTargetAtTime(0.42 * Math.pow(t, 1.1), now, k);
+        rumble.fl.frequency.setTargetAtTime(110 + t * 700, now, k);
+        roar.g.gain.setTargetAtTime(0.14 * t * t, now, k);
+        humG.gain.setTargetAtTime(0.05 * t + 0.015 * s, now, k);
+        hum.frequency.setTargetAtTime(42 + t * 30, now, k);
+        whineG.gain.setTargetAtTime(0.018 * s, now, 0.3);
+        whine.frequency.setTargetAtTime(420 + s * 520 + t * 380, now, 0.4);
+        wnd.g.gain.setTargetAtTime(0.32 * w, now, k);
+        wnd.fl.frequency.setTargetAtTime(380 + w * 1400, now, k);
+      },
+      stop(fade) {
+        const now = c.currentTime;
+        for (const g of [rumble.g, roar.g, wnd.g, humG, whineG]) g.gain.setTargetAtTime(0, now, Math.max(0.02, fade / 3));
+        const nodes = [rumble.n, roar.n, wnd.n, hum, whine];
+        window.setTimeout(() => nodes.forEach((n) => { try { n.stop(); } catch {} }), fade * 1000 + 200);
+      },
+    };
+  }
+  engine.set(Math.max(0, Math.min(1, thrust)), Math.max(0, Math.min(1, wind)), Math.max(0, Math.min(1, spool)));
+}
+
+export function stopEngineSound(fade = 1) {
+  engine?.stop(fade);
+  engine = null;
 }

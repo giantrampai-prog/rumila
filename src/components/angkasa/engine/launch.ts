@@ -49,6 +49,18 @@ function cloudTexture(seed: number) {
   });
 }
 
+/** Kekuatan suara mesin, angin & turbin sepanjang pembuka (sama dengan animasi) — untuk engineSound(). */
+export function launchAudio(u: number) {
+  const hover = sm(u, HOVER[0], HOVER[1]);
+  const main = sm(u, 0.27, 0.32);
+  const inSpace = sm(u, GROUND_END - 0.02, GROUND_END + 0.02);
+  const spool = sm(u, BOARD[1] - 0.01, HOVER[0] + 0.01) * (1 - 0.5 * inSpace);
+  const thrust = Math.max(hover * 0.32 * (1 - main), main) * (1 - 0.8 * inSpace);
+  // angin: makin kencang saat menanjak, paling keras menembus awan, hilang di udara tipis
+  const wind = (sm(u, 0.3, 0.37) * 0.75 + sm(u, 0.4, 0.44) * 0.25 * (1 - sm(u, 0.46, 0.5))) * (1 - sm(u, 0.49, GROUND_END));
+  return { thrust, wind, spool };
+}
+
 export class GroundLaunch {
   readonly scene = new THREE.Scene();
   readonly camera = new THREE.PerspectiveCamera(50, 1, 0.1, 2000);

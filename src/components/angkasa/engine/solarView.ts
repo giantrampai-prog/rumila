@@ -12,7 +12,8 @@ import type { ModeView } from "./views";
 import { TourController } from "./tour";
 import { SolarFx } from "./fx";
 import { ShipOverlay } from "./ship";
-import { sfx } from "@/lib/sfx";
+import { engineSound, sfx, startGardenAmbience, stopEngineSound, stopGardenAmbience } from "@/lib/sfx";
+import { launchAudio } from "./launch";
 
 const DEG = Math.PI / 180;
 const SYSTEM_IDS = [
@@ -145,6 +146,7 @@ export class SolarView implements ModeView {
   private ultraId: string | null = null;
   private ship: ShipOverlay | null = null;
   private lastIntroU = 0;
+  private padAmbience = false;
 
   update(dt: number, ctx: EngineCtx) {
     this.poseAll();
@@ -178,12 +180,39 @@ export class SolarView implements ModeView {
     }
     if (this.ship && introU !== null) {
       const cross = (x: number) => this.lastIntroU < x && introU >= x;
-      if (cross(0.27)) sfx.liftoff(); // mesin utama menyala
-      if (cross(0.4)) sfx.whoosh(); // menembus awan
+      // suasana landasan (angin + kicau burung asli) sampai pesawat menanjak
+      if (introU > 0 && introU < 0.3 && !this.padAmbience) {
+        startGardenAmbience();
+        this.padAmbience = true;
+      }
+      if (introU >= 0.3 && this.padAmbience) {
+        stopGardenAmbience();
+        this.padAmbience = false;
+      }
+      // langkah Agam ke pesawat, kokpit menutup, bip hitung mundur, lepas landas, menembus awan, angkasa
+      for (let s = 0.105; s < 0.175; s += 0.012) if (cross(s)) sfx.padStep();
+      if (cross(0.17)) sfx.canopy();
+      if (cross(0.215) || cross(0.235) || cross(0.255)) sfx.beep();
+      if (cross(0.27)) {
+        sfx.beep(true);
+        sfx.liftoff(); // mesin utama menyala
+      }
+      if (cross(0.36)) sfx.whoosh();
+      if (cross(0.4)) sfx.whoosh(); // masuk awan tebal
+      if (cross(0.405)) sfx.warp(); // berguling
       if (cross(0.55)) sfx.sparkle(); // keluar ke angkasa
+      const a = launchAudio(introU);
+      engineSound(a.thrust, a.wind, a.spool);
       this.lastIntroU = introU;
     }
     this.ship?.setIntro(st.tourCinematic ? introU : null);
+    // pembuka selesai / dilewati: suara mesin & suasana landasan berhenti pelan
+    if (introU === null && this.lastIntroU > 0) {
+      stopEngineSound(this.lastIntroU > 0.9 ? 2 : 0.6);
+      if (this.padAmbience) stopGardenAmbience();
+      this.padAmbience = false;
+      this.lastIntroU = 0;
+    }
     if (this.ship?.introOn) {
       this.ship.visible = true;
       this.ship.update(dt, this.camera, this.sunPos, 0, 0, true);
@@ -419,6 +448,8 @@ export class SolarView implements ModeView {
   }
 
   dispose() {
+    stopEngineSound(0.3);
+    if (this.padAmbience) stopGardenAmbience();
     this.ship?.dispose();
     this.ship = null;
     this.tour?.dispose();
