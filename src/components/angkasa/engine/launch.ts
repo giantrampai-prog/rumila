@@ -54,8 +54,9 @@ export class GroundLaunch {
   readonly camera = new THREE.PerspectiveCamera(50, 1, 0.1, 2000);
   private sky: THREE.Mesh;
   private skyU = {
-    uHorizon: { value: new THREE.Color("#bfe0ff") },
-    uZenith: { value: new THREE.Color("#3f8ee8") },
+    // warna diambil dari tepi atas foto panorama agar langit 3D menyambung mulus
+    uHorizon: { value: new THREE.Color("#529ee6") },
+    uZenith: { value: new THREE.Color("#3894df") },
     uSpace: { value: 0 },
   };
   private ship = new THREE.Group();
@@ -71,7 +72,7 @@ export class GroundLaunch {
   private smoke: { s: THREE.Sprite; born: number; v: THREE.Vector3 }[] = [];
   private smokeTex: THREE.Texture;
   private ground = new THREE.Group();
-  private fog = new THREE.Fog(0xbfe0ff, 25, 300);
+  private fog = new THREE.Fog(0xc4d5e2, 40, 650);
   private sun = new THREE.DirectionalLight(0xfff1dc, 2.6);
   private t = 0;
   private lastSmoke = 0;
@@ -164,18 +165,19 @@ export class GroundLaunch {
     });
     this.owned.push(this.smokeTex);
 
-    // awan: lapisan tipis di bawah, lapisan tebal di tengah (whiteout singkat), sisa-sisa di atas
+    // awan yang ditembus: lapisan tebal di tengah (whiteout singkat), sisa-sisa di atas
     const r = rng(7);
     const texes = [cloudTexture(3), cloudTexture(11), cloudTexture(29)];
     this.owned.push(...texes);
     for (let i = 0; i < 110; i++) {
-      const band = i < 25 ? [18, 45] : i < 95 ? [150, 205] : [260, 320];
+      // (awan rendah tidak perlu: foto panorama sudah punya awan) — lapisan tebal di tengah, sisa tipis di atas
+      const band = i < 95 ? [150, 205] : [260, 320];
       const s = new THREE.Sprite(
         new THREE.SpriteMaterial({ map: texes[i % 3], transparent: true, depthWrite: false, opacity: 0.95, fog: false }),
       );
       const y = band[0] + r() * (band[1] - band[0]);
       const ang = r() * Math.PI * 2;
-      const rad = i < 25 ? 25 + r() * 60 : 2 + r() * 34;
+      const rad = 2 + r() * 34;
       s.position.set(Math.cos(ang) * rad, y, Math.sin(ang) * rad - 4);
       const sc = 16 + r() * 26;
       s.scale.set(sc, sc * 0.6, 1);
@@ -188,20 +190,15 @@ export class GroundLaunch {
 
   private buildGround() {
     const r = rng(5);
-    const grass = canvasTexture(512, 512, (g) => {
-      g.fillStyle = "#4f7d35";
-      g.fillRect(0, 0, 512, 512);
-      for (let i = 0; i < 2600; i++) {
-        const v = r();
-        g.fillStyle = v < 0.5 ? "rgba(40,78,28,.35)" : v < 0.85 ? "rgba(112,150,62,.3)" : "rgba(150,140,80,.25)";
-        const s = 2 + r() * 9;
-        g.fillRect(r() * 512, r() * 512, s, s);
-      }
+    // rumput dari foto yang sama (diulang bercermin agar tidak terlihat sambungan)
+    const grass = new THREE.TextureLoader().load("/angkasa/kapal/rumput.jpg", (t) => {
+      t.colorSpace = THREE.SRGBColorSpace;
+      t.needsUpdate = true;
     });
-    grass.wrapS = grass.wrapT = THREE.RepeatWrapping;
-    grass.repeat.set(40, 40);
-    const gm = new THREE.MeshStandardMaterial({ map: grass, roughness: 1 });
-    const ground = new THREE.Mesh(new THREE.PlaneGeometry(1200, 1200), gm);
+    grass.wrapS = grass.wrapT = THREE.MirroredRepeatWrapping;
+    grass.repeat.set(70, 140);
+    const gm = new THREE.MeshStandardMaterial({ map: grass, roughness: 1, color: 0xf2f2f2 });
+    const ground = new THREE.Mesh(new THREE.CircleGeometry(195, 64), gm);
     ground.rotation.x = -Math.PI / 2;
     this.ground.add(ground);
 
@@ -270,32 +267,28 @@ export class GroundLaunch {
       this.scene.add(b);
     }
 
-    // pegunungan jauh: punggungan halus berlapis, makin jauh makin pudar kebiruan (perspektif udara)
-    for (let layer = 0; layer < 3; layer++) {
-      const d = 170 + layer * 90;
-      const col = new THREE.Color(0x3d6a45).lerp(new THREE.Color(0x9fc3dc), layer * 0.35);
-      const pts: number[] = [];
-      const seg = 160;
-      for (let i = 0; i <= seg; i++) {
-        const a = (i / seg) * Math.PI * 2;
-        const h =
-          12 + layer * 10 +
-          Math.sin(a * 3 + layer) * 8 + Math.sin(a * 7 + layer * 2) * 5 + Math.sin(a * 17) * 2 + (r() - 0.5) * 1.5 +
-          (layer === 1 && Math.cos(a - 2.2) > 0.97 ? (Math.cos(a - 2.2) - 0.97) * 1400 : 0); // satu gunung api menjulang
-        pts.push(Math.cos(a) * d, h, Math.sin(a) * d, Math.cos(a) * d, -2, Math.sin(a) * d);
-      }
-      const geo = new THREE.BufferGeometry();
-      geo.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
-      const idx: number[] = [];
-      for (let i = 0; i < seg; i++) {
-        const t0 = i * 2;
-        idx.push(t0, t0 + 1, t0 + 2, t0 + 1, t0 + 3, t0 + 2);
-      }
-      geo.setIndex(idx);
-      geo.computeVertexNormals();
-      const ridge = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: col, side: THREE.DoubleSide, fog: true }));
-      this.ground.add(ridge);
-    }
+    // latar foto panorama (gunung api, laut, pohon kelapa, hanggar) sebagai dinding melengkung di kejauhan,
+    // menghadap arah pandang kamera darat; horizon foto (±26% dari bawah) tepat setinggi mata
+    const R = 200,
+      arc = 2.62, // ±150°
+      H = (R * arc) / 3, // foto 3:1
+      eye = 1.0;
+    const pano = new THREE.TextureLoader().load("/angkasa/kapal/latar-landasan.webp", (t) => {
+      t.colorSpace = THREE.SRGBColorSpace;
+      t.wrapS = THREE.RepeatWrapping;
+      t.repeat.x = -1; // dilihat dari dalam silinder: balik agar tidak tercermin
+      t.offset.x = 1;
+      t.needsUpdate = true;
+    });
+    const center = -0.69; // arah pandang kamera darat (atan2 x, z)
+    const wall = new THREE.Mesh(
+      new THREE.CylinderGeometry(R, R, H, 96, 1, true, center - arc / 2, arc),
+      new THREE.MeshBasicMaterial({ map: pano, side: THREE.BackSide, fog: false, depthWrite: false }),
+    );
+    wall.position.y = eye - 0.258 * H + H / 2;
+    wall.renderOrder = -5;
+    this.ground.add(wall);
+    this.owned.push(pano);
     this.scene.add(this.ground);
     this.ground.traverse((o) => {
       const m = o as THREE.Mesh;
@@ -344,8 +337,6 @@ export class GroundLaunch {
       b.position.y += Math.sin(this.t * 1.3 + i) * dt * 0.3;
       b.scale.y = 0.55 * (0.35 + 0.65 * Math.abs(Math.sin(this.t * 7 + i * 1.7)));
     });
-    // awan rendah bergeser pelan tertiup angin
-    for (let i = 0; i < 25; i++) this.clouds[i].position.x += dt * 0.6;
     this.camera.aspect = aspect;
     this.camera.fov = aspect < 1 ? 62 : 50;
     this.camera.updateProjectionMatrix();
@@ -441,8 +432,8 @@ export class GroundLaunch {
     // langit menggelap sesuai ketinggian; kabut tipis mengikuti warna langit
     const space = sm(y, 230, 400);
     this.skyU.uSpace.value = space;
-    this.fog.color.copy(this.skyU.uHorizon.value).lerp(new THREE.Color(0x05070f), space);
-    this.fog.far = 260 + space * 2000;
+    this.fog.color.set(0xc4d5e2).lerp(new THREE.Color(0x05070f), space);
+    this.fog.far = 650 + space * 2000;
     this.sun.intensity = 2.6 + space * 0.8;
     this.ground.visible = y < 260;
   }
