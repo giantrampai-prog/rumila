@@ -1,0 +1,39 @@
+{
+  "generator": "GPT Image (built-in image_gen)",
+  "createdAt": "2026-09-28",
+  "purpose": "Rumila Kebun Buah 3D surface and foliage materials; original generated artwork, not sourced from the internet.",
+  "generation": [
+    {
+      "source": "exec-a6720c26-8f97-4361-9006-3e2c4920b46c.png",
+      "actualDimensions": [
+        1254,
+        1254
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: production texture atlas for a realistic interactive Indonesian fruit orchard in WebGL. Create one square 2048x2048 texture atlas divided into four exactly equal invisible quadrants with generous 10% padding within each cell. Top left: a small irregular spray of 12 fresh tropical fruit tree leaves with woody twigs, natural olive green, fine veins, slight blemishes, matte cuticles, front-facing. Top right: one long coconut frond, perfectly vertical with stem bottom and tip top, individual fine leaflets extending sideways. Bottom left: one banana leaf, perfectly vertical stem bottom tip top, realistic parallel veins, a few small natural splits, olive green. Bottom right: one natural deeply lobed papaya leaf seen from above, fine veins. Botanical photographic realism, flat soft neutral diffuse lighting without cast shadows. Background must be perfectly flat solid #ff00ff in all empty areas, no gradients, no text, no borders, no labels. Each plant completely contained within its own quadrant. Do not put magenta on plants. Not a drawing or cartoon. High detail, suitable for alpha cutout.",
+      "outputs": [
+        "foliage.webp"
+      ],
+      "processing": "Magenta chroma key removed with imagegen skill remove_chroma_key.py, soft matte and despill."
+    },
+    {
+      "source": "exec-0bde1a19-93b7-49ff-83a5-f652ea1dd0b7.png",
+      "actualDimensions": [
+        1254,
+        1254
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: PBR albedo texture atlas for an Indonesian orchard educational 3D application. One square 2048x2048 image divided into exactly four equal square quadrants, edge-to-edge materials, no margins no separator lines. Top left: compacted warm taupe tropical garden dirt path with sparse tiny fine gravel, faint irregular sandy grain, low contrast, no large stones. Top right: weathered natural teak wood, subtle golden grey brown grain flowing horizontally, knots, no painted colors, no large gaps. Bottom left: uneven worn grey river stone masonry with natural fine pores, narrow mortar joints, naturally rounded horizontally laid small stones. Bottom right: old reddish muted terracotta curved roof tiles in horizontal overlapping rows, fine surface mineral weathering, occasional darker moss flecks. Perfect orthographic views, neutral shadowless diffuse lighting for albedo texture maps, no perspective, no directional cast shadows, no labels, no text, no outlines, not cartoon. Microdetails and realistic subdued natural colors, no dramatic lighting.",
+      "outputs": [
+        "dirt.webp",
+        "wood.webp",
+        "stone.webp",
+        "roof.webp"
+      ],
+      "processing": "Four equal 627 x 627 crops, encoded as WebP quality 90."
+    }
+  ],
+  "reusedAppMaterials": [
+    "/roket/textures/grass-albedo.webp",
+    "/roket/textures/bark-albedo.webp"
+  ],
+  "rendering": "One fixed 1024 x 1024 canvas per material source with mipmaps and anisotropic filtering. Raster source resolution is listed above; no claim of 4K scans. Procedural geometry, surface relief, and color variation supply additional close-range detail."
+}

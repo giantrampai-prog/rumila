@@ -1,6 +1,4 @@
-// Tekstur prosedural Kebun Buah (dilukis di canvas, tanpa unduhan): atlas daun (gerombol daun, pelepah
-// palem, daun pisang, daun menjari), rumpun rumput, rumput tanah, tanah jalan, kulit kayu, papan, genteng,
-// batu, dan awan. Semua dibuat sekali per mesin.
+// Material GPT Image khusus Rumila; tekstur canvas menjadi fallback selama gambar dimuat.
 
 import * as T from 'three';
 
@@ -44,7 +42,7 @@ function leafShape(g: CanvasRenderingContext2D, x: number, y: number, len: numbe
 }
 
 /** Atlas daun 1024²: [0] gerombol daun (pohon) · [1] pelepah palem · [2] daun pisang · [3] daun menjari. */
-export function foliageAtlas() {
+function foliageFallback() {
   return tex(1024, 1024, (g, r) => {
     // [0] kiri atas: gerombol daun rimbun, menyebar dari tengah
     g.save();
@@ -182,7 +180,7 @@ export const grassTuft = () =>
   );
 
 /** Rumput tanah (diulang). */
-export const groundGrass = () =>
+const groundGrassFallback = () =>
   tex(
     512,
     512,
@@ -211,7 +209,7 @@ export const groundGrass = () =>
   );
 
 /** Tanah jalan setapak: tanah padat dengan kerikil. */
-export const dirt = () =>
+const dirtFallback = () =>
   tex(
     512,
     512,
@@ -241,7 +239,7 @@ export const dirt = () =>
   );
 
 /** Kulit kayu (serat vertikal, diulang). */
-export const bark = () =>
+const barkFallback = () =>
   tex(
     256,
     256,
@@ -267,7 +265,7 @@ export const bark = () =>
   );
 
 /** Papan kayu (dinding rumah, kincir, pagar). */
-export const planks = () =>
+const planksFallback = () =>
   tex(
     256,
     256,
@@ -292,7 +290,7 @@ export const planks = () =>
   );
 
 /** Genteng tanah liat merah bata. */
-export const roofTiles = () =>
+const roofTilesFallback = () =>
   tex(
     256,
     256,
@@ -318,7 +316,7 @@ export const roofTiles = () =>
   );
 
 /** Batu kali (sumur). */
-export const stones = () =>
+const stonesFallback = () =>
   tex(
     256,
     256,
@@ -362,3 +360,39 @@ export const cloud = (seed: number) =>
     false,
     seed,
   );
+
+
+/** Keep an immediate fallback and replace it with the app's GPT-generated material when decoded.
+ * Late responses never resurrect a texture after its scene has been disposed. */
+export function loadGardenMaterial(path: string, fallback: T.Texture) {
+  let released = false;
+  // WebGL2 texture storage is immutable after its first upload. Keep one canvas and
+  // fixed dimensions, including for texture clones sharing this source (house walls).
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = 1024;
+  const ctx = canvas.getContext('2d')!;
+  ctx.drawImage(fallback.image as HTMLCanvasElement, 0, 0, canvas.width, canvas.height);
+  fallback.image = canvas;
+  fallback.userData.assetPath = path;
+  fallback.userData.assetStatus = 'loading';
+  fallback.addEventListener('dispose', () => { released = true; });
+  new T.TextureLoader().load(path, loaded => {
+    if (!released) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(loaded.image as HTMLImageElement, 0, 0, canvas.width, canvas.height);
+      fallback.needsUpdate = true;
+      fallback.userData.assetStatus = 'ready';
+    }
+    loaded.dispose();
+  }, undefined, () => { fallback.userData.assetStatus = 'fallback'; });
+  return fallback;
+}
+const photo = (name: string, fallback: T.Texture) => loadGardenMaterial(`/fruits/garden/realism/${name}.webp`, fallback);
+export const foliageAtlas = () => photo('foliage', foliageFallback());
+export const groundGrass = () => loadGardenMaterial('/roket/textures/grass-albedo.webp', groundGrassFallback());
+export const bark = () => loadGardenMaterial('/roket/textures/bark-albedo.webp', barkFallback());
+export const dirt = () => photo('dirt', dirtFallback());
+export const planks = () => photo('wood', planksFallback());
+export const roofTiles = () => photo('roof', roofTilesFallback());
+export const stones = () => photo('stone', stonesFallback());
+export const feathers = () => photo('feathers', tex(128, 128, g => { g.fillStyle = '#eee9e0'; g.fillRect(0, 0, 128, 128); }, true));

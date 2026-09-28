@@ -5,6 +5,7 @@
 
 import * as T from 'three';
 import * as TX from './textures';
+import { detailed } from './materials';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
@@ -41,10 +42,10 @@ export class FarmHouse {
       roofT = TX.roofTiles();
     floorT.repeat.set(3, 3);
     this.textures.push(plankT, floorT, roofT);
-    const wall = new T.MeshStandardMaterial({ map: plankT, color: '#f7efe3', roughness: 0.85 });
-    const floorM = new T.MeshStandardMaterial({ map: floorT, color: '#b98a5a', roughness: 0.75 });
-    const woodD = std('#8a5a3a', 0.7),
-      woodL = std('#c79a66', 0.7);
+    const wall = new T.MeshStandardMaterial({ map: plankT, bumpMap: plankT, bumpScale: 0.009, color: '#f7efe3', roughness: 0.85 });
+    const floorM = new T.MeshStandardMaterial({ map: floorT, bumpMap: floorT, bumpScale: 0.006, color: '#d3c0a4', roughness: 0.8 });
+    const woodD = detailed(std('#9d8a72', 0.8, { map: plankT }), 'wood'),
+      woodL = detailed(std('#d6bea0', 0.8, { map: plankT }), 'wood');
     const add = (geo: T.BufferGeometry, m: T.Material, x: number, y: number, z: number, parent: T.Object3D = this.group, ry = 0) => {
       const mesh = new T.Mesh(geo, m);
       mesh.position.set(x, y, z);
@@ -132,7 +133,7 @@ export class FarmHouse {
 
     // ---------- atap (menghilang saat anak di dalam) ----------
     const roofM = new T.MeshStandardMaterial({ map: roofT, color: '#ffffff', roughness: 0.7, transparent: true });
-    const gableM = new T.MeshStandardMaterial({ map: plankT, color: '#f7efe3', roughness: 0.85, transparent: true });
+    const gableM = new T.MeshStandardMaterial({ map: plankT, bumpMap: plankT, bumpScale: 0.009, color: '#f7efe3', roughness: 0.85, transparent: true });
     const chimM = std('#b8b0a4', 0.9, { transparent: true });
     this.roofMats.push(roofM, gableM, chimM);
     const gable = new T.Shape();

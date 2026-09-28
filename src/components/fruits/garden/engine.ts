@@ -17,6 +17,8 @@ import { buildRealSky } from './sky';
 import { Merge, backdropTree, buildPlant, mat, rnd, swayMaterial, type Kit, type Spot } from './build';
 import { FruitHanger } from './fruits';
 import * as TX from './textures';
+import { detailed, groundMaterial, grassClump, riverRock } from './materials';
+import { buildGardenHub, dressGardener } from './garden-details';
 import { BED_POS, Farm, NPC_POS, type BedView, type PlantMats } from './farm3d';
 import { sfx } from '@/lib/sfx';
 
@@ -152,13 +154,17 @@ export class GardenEngine {
   private renderer: T.WebGLRenderer;
   private scene = new T.Scene();
   private camera = new T.PerspectiveCamera(45, 1, 0.3, 320);
-  private clock = new T.Clock();
+  private lastFrame = performance.now();
   private uTime = { value: 0 };
   private host: HTMLElement;
   private cb: GardenCallbacks;
   private raf = 0;
   private active = true;
   private disposed = false;
+  private low = (navigator.hardwareConcurrency ?? 8) <= 4 || window.matchMedia('(max-width: 700px)').matches;
+  private environmentTarget: T.WebGLRenderTarget | null = null;
+  private perfFrames = 0;
+  private perfStart = performance.now();
   private ro: ResizeObserver;
   private sun!: T.DirectionalLight;
   private textures: T.Texture[] = [];
@@ -238,12 +244,12 @@ export class GardenEngine {
     this.host = host;
     this.cb = cb;
     this.renderer = new T.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, this.low ? 1.5 : 2));
     this.renderer.outputColorSpace = T.SRGBColorSpace;
     this.renderer.toneMapping = T.ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.0;
+    this.renderer.toneMappingExposure = 0.95;
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = T.PCFSoftShadowMap;
+    this.renderer.shadowMap.type = T.PCFShadowMap;
     this.renderer.domElement.style.touchAction = 'none';
     host.appendChild(this.renderer.domElement);
     this.hanger = new FruitHanger(this.scene);
@@ -260,7 +266,7 @@ export class GardenEngine {
     BED_POS.forEach(([x, z]) => this.obstacles.push({ x, z, r: 1.35 }));
     this.obstacles.push({ x: NPC_POS[0], z: NPC_POS[1], r: 0.55 });
     // burung, ayam, capung & daun berguguran
-    this.life = new GardenLife(new T.Vector2(19.5, 19), new T.Vector3(0, 0, 0), (x, z) => this.obstacles.some((o) => Math.hypot(x - o.x, z - o.z) < o.r + 0.4));
+    this.life = new GardenLife(new T.Vector2(19.5, 19), new T.Vector3(0, 0, 0), (x, z) => this.obstacles.some((o) => Math.hypot(x - o.x, z - o.z) < o.r + 0.4), this.low);
     this.scene.add(this.life.group);
     // kandang kambing di pojok kebun (pintu menghadap rumah kebun)
     this.pen = new GoatPen(new T.Vector3(35, 0, 18), this.obstacles, (v) => sfx.goat(v));
@@ -331,24 +337,26 @@ export class GardenEngine {
     ground.position.y = -2;
     env.add(ground);
     const rt = pm.fromScene(env, 0.02);
+    this.environmentTarget = rt;
     this.scene.environment = rt.texture;
-    this.scene.environmentIntensity = 0.55;
+    this.scene.environmentIntensity = 0.42;
     pm.dispose();
+    env.traverse(o => { if (o instanceof T.Mesh) { o.geometry.dispose(); (o.material as T.Material).dispose(); } });
 
   }
 
   private buildLights() {
-    this.scene.add(new T.HemisphereLight('#cfe6ff', '#5b6b3a', 0.55));
-    const sun = new T.DirectionalLight('#fff0d8', 2.6);
+    this.scene.add(new T.HemisphereLight('#dbe8f4', '#807159', 0.72));
+    const sun = new T.DirectionalLight('#fff3e2', 2.35);
     sun.castShadow = true;
-    sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.mapSize.set(this.low ? 2048 : 4096, this.low ? 2048 : 4096);
     const c = sun.shadow.camera;
     c.left = c.bottom = -24;
     c.right = c.top = 24;
     c.near = 1;
     c.far = 90;
-    sun.shadow.bias = -0.0004;
-    sun.shadow.normalBias = 0.03;
+    sun.shadow.bias = -0.00012;
+    sun.shadow.normalBias = 0.025;
     this.scene.add(sun, sun.target);
     this.sun = sun;
   }
@@ -377,7 +385,7 @@ export class GardenEngine {
     }
     geo.setAttribute('color', new T.BufferAttribute(col, 3));
     geo.computeVertexNormals();
-    const ground = new T.Mesh(geo, new T.MeshStandardMaterial({ map: this.keep(TX.groundGrass()), vertexColors: true, roughness: 0.95 }));
+    const ground = new T.Mesh(geo, groundMaterial(this.keep(TX.groundGrass())));
     ground.receiveShadow = true;
     this.scene.add(ground);
 
@@ -389,7 +397,7 @@ export class GardenEngine {
     plane(H * 2 + 2, W * 2, 0, 0, 0.021);
     for (const [sx, sz] of Object.values(ZONE_DIR)) for (let r = 0; r < 5; r++) plane(36, 1.4, sx * 21, sz * (GARDEN.first + r * GARDEN.step) + 2.6, 0.018);
     path.add(new T.CircleGeometry(GARDEN.plaza, 48), mat(0, 0.025, 0, -Math.PI / 2), '#f2e6d4', { uv: [GARDEN.plaza / 2, GARDEN.plaza / 2] });
-    const pm = path.build(new T.MeshStandardMaterial({ map: this.keep(TX.dirt()), vertexColors: true, roughness: 1 }));
+    const pm = path.build(detailed(new T.MeshStandardMaterial({ map: this.keep(TX.dirt()), vertexColors: true, roughness: 1 }), 'earth'));
     pm.receiveShadow = true;
     this.scene.add(pm);
 
@@ -399,13 +407,13 @@ export class GardenEngine {
     for (let i = 0; i < 64; i++) {
       const a = (i / 64) * 6.28;
       if (Math.abs(Math.sin(a)) < 0.2 || Math.abs(Math.cos(a)) < 0.2) continue; // celah jalan
-      stones.add(new T.IcosahedronGeometry(0.28 + r() * 0.1, 2), mat(Math.cos(a) * GARDEN.plaza, 0.08, Math.sin(a) * GARDEN.plaza, r(), r(), 0, 1, 0.5, 1), '#a8a29a', { jitter: 0.2 });
+      stones.add(riverRock(0.28 + r() * 0.1, i), mat(Math.cos(a) * GARDEN.plaza, 0.08, Math.sin(a) * GARDEN.plaza, r(), r(), 0, 1, 0.5, 1), '#a8a29a', { jitter: 0.2 });
     }
-    const sm = stones.build(new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.9 }));
+    const sm = stones.build(detailed(new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.9 }), 'stone'));
     sm.castShadow = sm.receiveShadow = true;
     this.scene.add(sm);
 
-    // rumpun rumput (kartu silang bertekstur) & bunga liar, menghindari jalan dan tanaman
+    // Bilah rumput melengkung & bunga liar, menghindari jalan dan tanaman.
     const rowLanes = Object.values(ZONE_DIR).flatMap(([sx, sz]) => [0, 1, 2, 3, 4].map((k) => ({ sx, z: sz * (GARDEN.first + k * GARDEN.step) + 2.6 })));
     // tanpa rumput di bedengan, di dekat Pak Tani, di dalam rumah kebun & kandang kambing
     const inFarm = (x: number, z: number) =>
@@ -417,30 +425,15 @@ export class GardenEngine {
       Math.hypot(x, z) > GARDEN.plaza + 0.6 &&
       !this.plots.some((p) => Math.hypot(p.x - x, p.z - z) < 1.9) &&
       !rowLanes.some((l) => Math.abs(z - l.z) < 0.8 && x * l.sx > 2);
-    const tuftCard = () => {
-      const a = new T.PlaneGeometry(1, 1).toNonIndexed();
-      a.translate(0, 0.5, 0);
-      const b = a.clone().rotateY(Math.PI / 2);
-      const g = new T.BufferGeometry();
-      const pos2 = new Float32Array([...(a.attributes.position.array as Float32Array), ...(b.attributes.position.array as Float32Array)]);
-      const uv2 = new Float32Array([...(a.attributes.uv.array as Float32Array), ...(b.attributes.uv.array as Float32Array)]);
-      const nor = new Float32Array(pos2.length);
-      for (let k = 1; k < nor.length; k += 3) nor[k] = 1;
-      g.setAttribute('position', new T.BufferAttribute(pos2, 3));
-      g.setAttribute('uv', new T.BufferAttribute(uv2, 2));
-      g.setAttribute('normal', new T.BufferAttribute(nor, 3));
-      a.dispose();
-      b.dispose();
-      return g;
-    };
+    const tuftCard = () => grassClump(101 + placed);
     const tufts = new Merge();
     let placed = 0;
-    for (let i = 0; i < 12000 && placed < 3800; i++) {
+    for (let i = 0; i < 12000 && placed < (this.low ? 2400 : 4200); i++) {
       const x = (r() - 0.5) * 2 * (H - 0.8),
         z = (r() - 0.5) * 2 * (H - 0.8);
       if (!clear(x, z)) continue;
       placed++;
-      const s = 0.35 + r() * 0.45;
+      const s = 0.14 + r() * 0.26;
       const tint = new T.Color().setRGB(0.85 + r() * 0.3, 0.9 + r() * 0.2, 0.8 + r() * 0.2);
       tufts.add(tuftCard(), mat(x, 0, z, 0, r() * 3, 0, s * 1.2, s, s * 1.2), tint, { sway: 0.1, baseY: 0 });
     }
@@ -450,10 +443,10 @@ export class GardenEngine {
         side = r() > 0.5 ? 1 : -1;
       const [x, z] = r() > 0.5 ? [side * (W + 0.25 + r() * 0.3), along] : [along, side * (W + 0.25 + r() * 0.3)];
       if (Math.hypot(x, z) < GARDEN.plaza + 0.5) continue;
-      const s = 0.3 + r() * 0.3;
+      const s = 0.17 + r() * 0.22;
       tufts.add(tuftCard(), mat(x, 0, z, 0, r() * 3, 0, s * 1.3, s, s * 1.3), '#e6f0c8', { sway: 0.1, baseY: 0 });
     }
-    const tm = tufts.build(swayMaterial(this.uTime, { map: this.keep(TX.grassTuft()), alphaTest: 0.45, side: T.DoubleSide, roughness: 1 }, true));
+    const tm = tufts.build(swayMaterial(this.uTime, { side: T.DoubleSide, roughness: 0.96 }, true));
     tm.receiveShadow = true;
     this.scene.add(tm);
 
@@ -477,7 +470,7 @@ export class GardenEngine {
   private buildPlants() {
     const kit: Kit = { bark: new Merge(), leaf: new Merge(), plain: new Merge() };
     this.plots.forEach((p, i) => {
-      const { top, spots } = buildPlant(kit, p, i + 1);
+      const { top, spots } = buildPlant(kit, p, i + 1, false);
       const sprite = new T.Sprite(new T.SpriteMaterial({ map: this.qTex, depthWrite: false, fog: false }));
       sprite.scale.set(0.95, 1.11, 1);
       sprite.position.set(p.x, top + 0.9, p.z);
@@ -486,6 +479,21 @@ export class GardenEngine {
       this.markers.push({ plot: p, sprite, top, found: false, spots });
       this.obstacles.push({ x: p.x, z: p.z, r: plotRadius(p) + (p.kind === 'tree' || p.kind === 'palm' ? 0.2 : 0) });
     });
+    // Irregular planting mulch with soft edges, instead of faceted brown disks.
+    const soilMap = this.keep(TX.dirt());
+    const soilMat = detailed(new T.MeshStandardMaterial({ map: soilMap, color: '#746856', roughness: 1, transparent: true, depthWrite: false }), 'earth');
+    const soilHook = soilMat.onBeforeCompile;
+    soilMat.onBeforeCompile = (shader, renderer) => {
+      soilHook.call(soilMat, shader, renderer);
+      shader.fragmentShader = shader.fragmentShader.replace('#include <alphatest_fragment>', '#include <alphatest_fragment>\nfloat mulchR=length(vMapUv-0.5)*2.0; diffuseColor.a*=1.0-smoothstep(0.72,1.0,mulchR);');
+    };
+    soilMat.customProgramCacheKey = () => 'garden-mulch-v1';
+    for (const p of this.plots) {
+      const patch = new T.Mesh(new T.CircleGeometry(p.kind === 'trellis' ? 2.1 : 1.7, 48), soilMat);
+      patch.rotation.x = -Math.PI / 2; patch.rotation.z = p.x * 0.3;
+      patch.position.set(p.x, 0.035, p.z); patch.scale.y = 0.85; patch.receiveShadow = true;
+      this.scene.add(patch);
+    }
     // pohon latar di luar pagar
     const r = rnd(77);
     const H = GARDEN.half;
@@ -497,8 +505,8 @@ export class GardenEngine {
       const z = side === 0 ? -d : side === 1 ? d : t;
       backdropTree(kit, x, z, groundY(x, z) - 0.2, 1.3 + r() * 1.3, i + 500);
     }
-    const barkMesh = kit.bark.build(swayMaterial(this.uTime, { map: this.keep(TX.bark()), roughness: 0.95 }));
-    const leafMesh = kit.leaf.build(swayMaterial(this.uTime, { map: this.keep(TX.foliageAtlas()), alphaTest: 0.5, side: T.DoubleSide, roughness: 0.8 }, true));
+    const barkMesh = kit.bark.build(swayMaterial(this.uTime, { map: this.keep(TX.bark()), roughness: 0.92 }));
+    const leafMesh = kit.leaf.build(swayMaterial(this.uTime, { map: this.keep(TX.foliageAtlas()), alphaTest: 0.38, alphaToCoverage: true, side: T.DoubleSide, roughness: 0.77, emissive: '#7b8654', emissiveIntensity: 0.04 }, true));
     const plainMesh = kit.plain.build(swayMaterial(this.uTime, { roughness: 0.75 }));
     // material yang sama dipakai tanaman di bedengan Kebun Saya (ikut bergoyang tertiup angin)
     this.plantMats = { bark: barkMesh.material as T.Material, leaf: leafMesh.material as T.Material, plain: plainMesh.material as T.Material };
@@ -578,25 +586,9 @@ export class GardenEngine {
           wood.add(new T.BoxGeometry(0.06, 0.12, len), mat(s * H, y, half * (3.2 + len / 2)), '#f0e4d2', { uv: [len / 2, 0.2] });
         }
 
-    // sumur batu beratap di tengah alun-alun
-    stone.add(new T.CylinderGeometry(1.1, 1.2, 0.9, 20, 1, true), mat(0, 0.45, 0), '#ffffff', { uv: [4, 1] });
-    stone.add(new T.TorusGeometry(1.12, 0.14, 8, 24), mat(0, 0.92, 0, Math.PI / 2), '#d8d2c8');
-    plain.add(new T.CircleGeometry(1.05, 20), mat(0, 0.35, 0, -Math.PI / 2), '#2f5c78');
-    for (const s of [-1, 1]) wood.add(new T.BoxGeometry(0.14, 2.3, 0.14), mat(s * 1.05, 1.5, 0), '#c9a98a', { uv: [0.3, 2] });
-    roof.add(new T.ConeGeometry(1.75, 1, 4, 1), mat(0, 3.1, 0, 0, Math.PI / 4, 0, 1, 1, 0.75), '#ffffff', { uv: [3, 2] });
-    wood.add(new T.CylinderGeometry(0.06, 0.06, 2.1, 8), mat(0, 2.3, 0, 0, 0, Math.PI / 2), '#b99a7a');
-    wood.add(new T.CylinderGeometry(0.22, 0.18, 0.35, 10), mat(0, 1.75, 0), '#a88563', { uv: [1, 0.5] });
+    this.scene.add(buildGardenHub(t => this.keep(t), this.uTime));
     this.obstacles.push({ x: 0, z: 0, r: 1.5 });
 
-    // bangku taman
-    for (const a of [0.8, 2.35, 3.95, 5.5]) {
-      const x = Math.cos(a) * 5.4,
-        z = Math.sin(a) * 5.4,
-        ry = -a + Math.PI / 2;
-      wood.add(new T.BoxGeometry(1.8, 0.08, 0.5), mat(x, 0.48, z, 0, ry, 0), '#d9b58c', { uv: [2, 0.3] });
-      wood.add(new T.BoxGeometry(1.8, 0.45, 0.06), mat(x + Math.cos(a) * 0.26, 0.78, z + Math.sin(a) * 0.26, 0, ry, 0), '#d9b58c', { uv: [2, 0.4] });
-      for (const s of [-0.75, 0.75]) plain.add(new T.BoxGeometry(0.06, 0.48, 0.45), mat(x + Math.cos(ry) * s, 0.24, z - Math.sin(ry) * s, 0, ry, 0), '#3d3d3d');
-    }
     // bangku tidak bisa ditembus: dua lingkaran sepanjang dudukan
     for (const a of [0.8, 2.35, 3.95, 5.5]) {
       const x = Math.cos(a) * 5.4,
@@ -727,23 +719,37 @@ export class GardenEngine {
     }
 
     const add = (m: Merge, material: T.Material) => {
+      if (m.empty) { material.dispose(); return; }
       const mesh = m.build(material);
       mesh.castShadow = mesh.receiveShadow = true;
       this.scene.add(mesh);
     };
-    add(wood, swayMaterial(this.uTime, { map: this.keep(TX.planks()), roughness: 0.85 }));
+    add(wood, detailed(swayMaterial(this.uTime, { map: this.keep(TX.planks()), roughness: 0.85 }), 'wood'));
     add(plain, swayMaterial(this.uTime, { roughness: 0.7 }));
     add(stone, new T.MeshStandardMaterial({ map: this.keep(TX.stones()), vertexColors: true, roughness: 0.95 }));
     add(roof, new T.MeshStandardMaterial({ map: this.keep(TX.roofTiles()), vertexColors: true, roughness: 0.7 }));
 
     // kupu-kupu
-    const wingM = ['#ffb627', '#ff6b8b', '#8fd3ff', '#ffffff', '#b58cff'].map((c) => new T.MeshStandardMaterial({ color: c, side: T.DoubleSide, roughness: 0.6 }));
+    const wingM = ['#db9b34', '#d97850', '#739eac', '#e4dfc7', '#ac8c7d'].map((c) => detailed(new T.MeshStandardMaterial({ color: c, vertexColors: true, side: T.DoubleSide, roughness: 0.85 }), 'feather'));
+    const insectM = new T.MeshStandardMaterial({ color: '#473d2c', roughness: 0.72 });
     for (let i = 0; i < 10; i++) {
       const g = new T.Group();
       const wings: T.Object3D[] = [];
+      const body = new T.Mesh(new T.CapsuleGeometry(0.009, 0.09, 4, 8), insectM); g.add(body);
       for (const s of [-1, 1]) {
-        const w = new T.Mesh(new T.CircleGeometry(0.11, 8), wingM[i % 5]);
-        w.geometry.translate(0.1, 0, 0);
+        const shape = new T.Shape().moveTo(0, 0.04).bezierCurveTo(0.10, 0.20, 0.26, 0.13, 0.20, 0.015).bezierCurveTo(0.30, -0.13, 0.08, -0.14, 0, -0.025).lineTo(0, 0.04);
+        const geo = new T.ShapeGeometry(shape, 12), p = geo.attributes.position;
+        const colors = new Float32Array(p.count * 3);
+        for (let k = 0; k < p.count; k++) {
+          const x = p.getX(k), y = p.getY(k);
+          p.setZ(k, Math.sin(x * 12) * 0.015);
+          const edge = x > 0.18 || y > 0.13 || y < -0.105;
+          const spot = Math.hypot(x - 0.15, y - 0.07) < 0.028;
+          const tint = edge || spot ? 0.24 : 1;
+          colors.set([tint, tint, tint], k * 3);
+        }
+        geo.setAttribute('color', new T.BufferAttribute(colors, 3)); geo.computeVertexNormals();
+        const w = new T.Mesh(geo, wingM[i % 5]);
         w.scale.x = s;
         const piv = new T.Group();
         piv.add(w);
@@ -762,11 +768,11 @@ export class GardenEngine {
   private buildPlayer() {
     const std = (c: string, rough = 0.7) => new T.MeshStandardMaterial({ color: c, roughness: rough });
     const skin = std('#e9b98a', 0.6),
-      shirt = std('#ff7a1a'),
-      pants = std('#2f6fd6', 0.8),
+      shirt = detailed(std('#e78639', 0.88), 'cloth'),
+      pants = detailed(std('#42688a', 0.9), 'cloth'),
       shoe = std('#4a3222'),
       hair = std('#2b1a10', 0.5),
-      hat = std('#dcc07a', 0.9),
+      hat = detailed(std('#c4ae7d', 0.95), 'woven'),
       dark = std('#1d1d1d', 0.3);
     const P = this.player;
     const add = <G extends T.Object3D>(o: G, parent: T.Object3D = P) => (parent.add(o), o);
@@ -858,6 +864,7 @@ export class GardenEngine {
     P.traverse((o) => {
       if ((o as T.Mesh).isMesh) o.castShadow = true;
     });
+    dressGardener(P);
     P.scale.setScalar(1.15);
     this.scene.add(P);
     this.parts = { legL, legR, armL, armR, basket };
@@ -902,7 +909,7 @@ export class GardenEngine {
   setActive(on: boolean) {
     this.active = on;
     if (on) {
-      this.clock.getDelta();
+      this.lastFrame = performance.now();
       this.resize();
     }
   }
@@ -1544,15 +1551,29 @@ export class GardenEngine {
   private loop = () => {
     this.raf = requestAnimationFrame(this.loop);
     if (!this.active || document.hidden) {
-      this.clock.getDelta();
+      this.lastFrame = performance.now();
       return;
     }
-    const dt = Math.min(0.05, this.clock.getDelta());
+    const nowFrame = performance.now();
+    const dt = Math.min(0.05, (nowFrame - this.lastFrame) / 1000);
+    this.lastFrame = nowFrame;
     this.uTime.value += dt;
     this.step(dt);
     const next = this.buildQueue.shift();
     if (next) this.hanger.build(next.plot.fruit, next.plot.kind, next.spots);
     this.renderer.render(this.scene, this.camera);
+    if (process.env.NODE_ENV === 'development') {
+      this.perfFrames++;
+      const now = performance.now();
+      if (now - this.perfStart > 2000) {
+        const data = this.renderer.domElement.dataset;
+        data.materials = this.textures.filter(t => t.userData.assetPath).map(t => `${t.userData.assetPath}:${t.userData.assetStatus}`).join('|');
+        data.fps = (this.perfFrames * 1000 / (now - this.perfStart)).toFixed(1);
+        data.drawCalls = String(this.renderer.info.render.calls);
+        data.triangles = String(this.renderer.info.render.triangles);
+        this.perfStart = now; this.perfFrames = 0;
+      }
+    }
   };
 
   private step(dt: number) {
@@ -1859,17 +1880,24 @@ export class GardenEngine {
     this.hanger.dispose();
     this.pen.dispose();
     this.house.dispose();
+    this.pond.dispose();
+    const sceneTextures = new Set<T.Texture>();
     this.scene.traverse((o) => {
       const m = o as T.Mesh;
       if (m.geometry) m.geometry.dispose();
+      m.customDepthMaterial?.dispose();
       const mt = m.material as T.Material | T.Material[] | undefined;
+      for (const material of mt ? (Array.isArray(mt) ? mt : [mt]) : []) {
+        for (const value of Object.values(material)) if (value instanceof T.Texture) sceneTextures.add(value);
+      }
       if (Array.isArray(mt)) mt.forEach((x) => x.dispose());
       else if (mt) mt.dispose();
     });
+    sceneTextures.forEach(t => t.dispose());
     this.textures.forEach((t) => t.dispose());
     this.qTex.dispose();
     this.thumbTex.forEach((t) => t.dispose());
-    this.scene.environment?.dispose();
+    this.environmentTarget?.dispose();
     this.renderer.dispose();
     this.renderer.domElement.remove();
   }

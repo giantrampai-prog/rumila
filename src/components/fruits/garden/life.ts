@@ -2,12 +2,18 @@
 // sambil mematuk, capung di sekitar sumur, dan daun yang berguguran pelan di sekitar anak.
 
 import * as T from 'three';
-import { rnd } from './build';
+import { rnd, Merge, mat } from './build';
+import { buildGardenBird, birdFlightPose, featherGeometry } from './birds';
+import { detailed } from './materials';
+import * as TX from './textures';
 
 interface Bird {
   g: T.Group;
   wl: T.Object3D;
   wr: T.Object3D;
+  tipL: T.Object3D;
+  tipR: T.Object3D;
+  tail: T.Object3D;
   ph: number;
   r: number;
   h: number;
@@ -36,50 +42,19 @@ interface Fly {
 
 const std = (c: string, rough = 0.8) => new T.MeshStandardMaterial({ color: c, roughness: rough });
 
-function bird(dark: T.Material, light: T.Material) {
+function chicken(white: boolean, plumage: T.Texture) {
   const g = new T.Group();
-  const body = new T.Mesh(new T.SphereGeometry(0.12, 10, 8), dark);
-  body.scale.set(0.8, 0.7, 1.9);
-  const head = new T.Mesh(new T.SphereGeometry(0.075, 10, 8), dark);
-  head.position.set(0, 0.04, 0.22);
-  const beak = new T.Mesh(new T.ConeGeometry(0.025, 0.08, 6), light);
-  beak.rotation.x = Math.PI / 2;
-  beak.position.set(0, 0.03, 0.31);
-  const tail = new T.Mesh(new T.ConeGeometry(0.07, 0.2, 4), dark);
-  tail.rotation.x = -Math.PI / 2;
-  tail.scale.set(1, 1, 0.25);
-  tail.position.set(0, 0, -0.27);
-  g.add(body, head, beak, tail);
-  const wingShape = new T.Shape();
-  wingShape.moveTo(0, 0.07);
-  wingShape.quadraticCurveTo(0.25, 0.1, 0.46, -0.02);
-  wingShape.quadraticCurveTo(0.25, -0.06, 0, -0.08);
-  const wg = new T.ShapeGeometry(wingShape, 6);
-  wg.rotateX(-Math.PI / 2);
-  const mk = (s: number) => {
-    const piv = new T.Group();
-    const w = new T.Mesh(wg, new T.MeshStandardMaterial({ color: '#3a3430', roughness: 0.8, side: T.DoubleSide }));
-    w.scale.x = s;
-    piv.add(w);
-    piv.position.set(s * 0.05, 0.03, 0.02);
-    g.add(piv);
-    return piv;
-  };
-  return { g, wl: mk(-1), wr: mk(1) };
-}
-
-function chicken(white: boolean) {
-  const g = new T.Group();
-  const feather = std(white ? '#f4efe6' : '#b86a2c', 0.9);
+  const feather = detailed(new T.MeshStandardMaterial({ color: white ? '#fff9e9' : '#c09157', map: plumage, bumpMap: plumage, bumpScale: 0.002, side: T.DoubleSide, roughness: 0.9 }), 'feather');
   const red = std('#d7261e', 0.6);
   const yellow = std('#f0b020', 0.6);
-  const body = new T.Mesh(new T.SphereGeometry(0.2, 14, 10), feather);
+  const body = new T.Mesh(new T.SphereGeometry(0.2, 24, 16), feather);
   body.scale.set(0.85, 0.85, 1.15);
   body.position.y = 0.3;
-  const tail = new T.Mesh(new T.ConeGeometry(0.12, 0.22, 8), white ? feather : std('#2a2622', 0.8));
-  tail.position.set(0, 0.42, -0.2);
-  tail.rotation.x = -0.9;
-  g.add(body, tail);
+  g.add(body);
+  for (let i = -3; i <= 3; i++) {
+    const plume = new T.Mesh(featherGeometry(0.25 + (3 - Math.abs(i)) * 0.025, 0.07), feather);
+    plume.position.set(i * 0.018, 0.36, -0.15); plume.rotation.set(0.8, Math.PI + i * 0.12, 0); g.add(plume);
+  }
   for (const s of [-1, 1]) {
     const wing = new T.Mesh(new T.SphereGeometry(0.12, 10, 8), feather);
     wing.scale.set(0.35, 0.7, 1);
@@ -88,7 +63,7 @@ function chicken(white: boolean) {
   }
   const head = new T.Group();
   head.position.set(0, 0.46, 0.17);
-  const skull = new T.Mesh(new T.SphereGeometry(0.1, 12, 10), feather);
+  const skull = new T.Mesh(new T.SphereGeometry(0.1, 24, 16), feather);
   const comb = new T.Mesh(new T.SphereGeometry(0.05, 8, 6), red);
   comb.scale.set(0.5, 1, 1.4);
   comb.position.set(0, 0.1, 0.01);
@@ -109,9 +84,11 @@ function chicken(white: boolean) {
     const leg = new T.Group();
     const shin = new T.Mesh(new T.CylinderGeometry(0.012, 0.012, 0.14), yellow);
     shin.position.y = -0.07;
-    const foot = new T.Mesh(new T.BoxGeometry(0.06, 0.01, 0.07), yellow);
-    foot.position.set(0, -0.14, 0.02);
-    leg.add(shin, foot);
+    leg.add(shin);
+    for (const toe of [-1, 0, 1]) {
+      const foot = new T.Mesh(new T.CapsuleGeometry(0.005, 0.065, 3, 6), yellow);
+      foot.rotation.set(Math.PI / 2, toe * 0.5, 0); foot.position.set(toe * 0.015, -0.14, 0.025); leg.add(foot);
+    }
     leg.position.set(s * 0.07, 0.15, 0);
     g.add(leg);
     legs.push(leg);
@@ -123,20 +100,25 @@ function chicken(white: boolean) {
 
 function dragonfly() {
   const g = new T.Group();
-  const body = new T.Mesh(new T.CylinderGeometry(0.012, 0.006, 0.26, 6), std('#1f8aa8', 0.3));
-  body.rotation.x = Math.PI / 2;
-  const head = new T.Mesh(new T.SphereGeometry(0.025, 8, 6), std('#1b5f78', 0.3));
-  head.position.z = 0.14;
-  g.add(body, head);
-  const wm = new T.MeshStandardMaterial({ color: '#e8f6ff', transparent: true, opacity: 0.45, side: T.DoubleSide, roughness: 0.2 });
+  const parts = new Merge();
+  for (let i = 0; i < 10; i++) parts.add(new T.SphereGeometry(1, 10, 8), mat(0, 0, 0.08 - i * 0.025, 0, 0, 0, 0.016 - i * 0.0009, 0.012, 0.018), i % 2 ? '#265f59' : '#68a49b');
+  for (const s of [-1, 1]) {
+    parts.add(new T.SphereGeometry(0.019, 14, 10), mat(s * 0.014, 0.01, 0.12), '#486f60');
+    for (let i = 0; i < 3; i++) parts.add(new T.CapsuleGeometry(0.002, 0.055, 3, 5), mat(s * 0.022, -0.02, 0.085 - i * 0.018, 0.4, 0, s * 0.9), '#3c4636');
+  }
+  g.add(parts.build(new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.34, metalness: 0.15 })));
+  const wm = new T.MeshPhysicalMaterial({ color: '#dce8df', transparent: true, opacity: 0.28, side: T.DoubleSide, roughness: 0.18, metalness: 0.12, depthWrite: false });
+  const veinM = new T.MeshStandardMaterial({ color: '#727b68', transparent: true, opacity: 0.65, roughness: 0.8 });
   const wings: T.Object3D[] = [];
   for (const z of [0.05, 0.0])
     for (const s of [-1, 1]) {
       const piv = new T.Group();
-      const w = new T.Mesh(new T.PlaneGeometry(0.16, 0.035), wm);
-      w.position.x = s * 0.08;
-      w.rotation.x = -Math.PI / 2;
-      piv.add(w);
+      const w = new T.Mesh(featherGeometry(0.19, 0.043), wm);
+      w.rotation.y = s * Math.PI / 2;
+      const veins = new Merge();
+      veins.add(new T.CylinderGeometry(0.0013, 0.0013, 0.18, 4), mat(s * 0.09, 0.002, 0, 0, 0, Math.PI / 2), '#ffffff');
+      for (let i = 1; i < 7; i++) for (const a of [-1, 1]) veins.add(new T.CylinderGeometry(0.00065, 0.00065, 0.025, 3), mat(s * i * 0.024, 0.002, a * 0.009, Math.PI / 2, s * a * 0.6), '#ffffff');
+      piv.add(w, veins.build(veinM));
       piv.position.z = z;
       g.add(piv);
       wings.push(piv);
@@ -158,23 +140,23 @@ export class GardenLife {
     private coop: T.Vector2,
     well: T.Vector3,
     private blocked: (x: number, z: number) => boolean,
+    low = false,
   ) {
     const r = rnd(808);
+    const plumage = TX.feathers();
     // kawanan burung
-    const dark = std('#3b332d', 0.8),
-      light = std('#e0a640', 0.5);
     for (let f = 0; f < 3; f++) {
       const c = new T.Vector2((r() - 0.5) * 50, (r() - 0.5) * 50);
-      for (let i = 0; i < 6; i++) {
-        const b = bird(dark, light);
-        b.g.scale.setScalar(1.3);
+      for (let i = 0; i < (low ? 3 : 5); i++) {
+        const b = buildGardenBird(f, plumage);
+        b.g.scale.setScalar(0.9 + r() * 0.18);
         this.group.add(b.g);
-        this.birds.push({ ...b, ph: f * 2 + i * 0.16, r: 14 + f * 6 + (r() - 0.5) * 2, h: 11 + f * 3 + r() * 2, sp: (0.12 + f * 0.03) * (f % 2 ? -1 : 1), c });
+        this.birds.push({ ...b, ph: f * 2 + i * 0.23, r: 14 + f * 6 + (r() - 0.5) * 3, h: 7.5 + f * 2 + r() * 2, sp: (0.12 + f * 0.03) * (f % 2 ? -1 : 1), c });
       }
     }
     // ayam di dekat kandang
     for (let i = 0; i < 5; i++) {
-      const ck = chicken(i % 2 === 0);
+      const ck = chicken(i % 2 === 0, plumage);
       ck.g.position.set(coop.x + (r() - 0.5) * 3, 0, coop.y + (r() - 0.5) * 3);
       this.group.add(ck.g);
       this.chickens.push({ ...ck, target: new T.Vector2(ck.g.position.x, ck.g.position.z), wait: r() * 3, peck: 0 });
@@ -187,7 +169,7 @@ export class GardenLife {
       this.flies.push({ ...d, c, ph: r() * 6, hover: 0, pos: c.clone(), to: c.clone() });
     }
     // daun berguguran
-    const lg = new T.PlaneGeometry(0.16, 0.1);
+    const lg = featherGeometry(0.17, 0.08);
     lg.translate(0, 0, 0);
     this.leaves = new T.InstancedMesh(lg, new T.MeshStandardMaterial({ color: '#b0a040', side: T.DoubleSide, roughness: 0.8 }), 70);
     const col = new T.Color();
@@ -207,10 +189,11 @@ export class GardenLife {
         z = b.c.y + Math.sin(a) * b.r;
       b.g.position.set(x, b.h + Math.sin(t * 0.7 + b.ph) * 1.2, z);
       b.g.rotation.set(0, -a + (b.sp > 0 ? Math.PI : 0), (b.sp > 0 ? -1 : 1) * 0.25);
-      const glide = Math.sin(t * 0.4 + b.ph) > 0.3;
-      const f = glide ? 0.05 + Math.sin(t * 2 + b.ph) * 0.05 : Math.sin(t * 13 + b.ph * 5) * 0.7;
-      b.wl.rotation.z = f;
-      b.wr.rotation.z = -f;
+      const pose = birdFlightPose(t, b.ph);
+      b.wl.rotation.z = -pose.flap;
+      b.wr.rotation.z = pose.flap;
+      b.tipL.rotation.z = b.tipR.rotation.z = pose.flex;
+      b.tail.rotation.x = pose.tail;
     }
     // ayam: jalan ke titik acak di dekat kandang, berhenti & mematuk
     for (const c of this.chickens) {

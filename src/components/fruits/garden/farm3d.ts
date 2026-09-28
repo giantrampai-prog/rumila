@@ -9,6 +9,9 @@ import { plantKind, type PlantKind } from '@/lib/fruits/garden';
 import { createFruitModel } from '@/lib/fruits/models';
 import { Merge, buildPlant, type Kit } from './build';
 import { anchorFor, fruitSize } from './fruits';
+import { detailed } from './materials';
+import { dressGardener } from './garden-details';
+import * as TX from './textures';
 
 export interface PlantMats {
   bark: T.Material;
@@ -120,9 +123,9 @@ function drawStatus(g: CanvasRenderingContext2D, v: BedView | null) {
 function farmer() {
   const g = new T.Group();
   const skin = std('#d9a47a', 0.6),
-    shirt = std('#2f9e5a', 0.7),
-    pants = std('#5b4636', 0.8),
-    hat = std('#dcc07a', 0.9),
+    shirt = detailed(std('#57835d', 0.9), 'cloth'),
+    pants = detailed(std('#5b5144', 0.9), 'cloth'),
+    hat = detailed(std('#c4ae7d', 0.95), 'woven'),
     dark = std('#1d1d1d', 0.3);
   for (const x of [-0.14, 0.14]) {
     const l = new T.Mesh(new T.CapsuleGeometry(0.1, 0.42, 6, 12), pants);
@@ -167,6 +170,7 @@ function farmer() {
   hoe.rotation.z = 0.1;
   g.add(hoe);
   g.traverse((o) => ((o as T.Mesh).isMesh ? (o.castShadow = true) : null));
+  dressGardener(g, true);
   g.scale.setScalar(1.1);
   g.userData.arms = arms;
   return g;
@@ -188,8 +192,8 @@ export class Farm {
     qTex: T.Texture,
     private mats: PlantMats,
   ) {
-    const wood = std('#8a5a34', 0.9),
-      soil = std('#5c3a22', 1);
+    const wood = detailed(std('#bca68b', 0.9, { map: TX.planks() }), 'wood'),
+      soil = detailed(std('#6a5947', 1, { map: TX.dirt() }), 'earth');
     BED_POS.forEach(([x, z]) => {
       const root = new T.Group();
       root.position.set(x, 0, z);
@@ -210,8 +214,10 @@ export class Farm {
       }
       // alur tanah
       for (let k = -1; k <= 1; k++) {
-        const f = new T.Mesh(new T.BoxGeometry(2.1, 0.04, 0.14), std('#4a2e1a', 1));
-        f.position.set(0, 0.235, k * 0.6);
+        const f = new T.Mesh(new T.CapsuleGeometry(0.065, 1.98, 5, 10), soil);
+        f.rotation.z = Math.PI / 2;
+        f.scale.z = 1.6;
+        f.position.set(0, 0.2, k * 0.6);
         root.add(f);
       }
       const plant = new T.Group();

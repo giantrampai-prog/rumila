@@ -82,15 +82,21 @@ export class Merge {
     this.parts = [];
     geo.computeBoundingSphere();
     const mesh = new T.Mesh(geo, material);
+    const windTime = material.userData.windTime as { value: number } | undefined;
+    if (windTime) {
+      const standard = material as T.MeshStandardMaterial;
+      const depth = new T.MeshDepthMaterial({ depthPacking: T.RGBADepthPacking, map: standard.map, alphaTest: standard.alphaTest, side: T.DoubleSide });
+      depth.onBeforeCompile = (s) => applyWind(s, windTime);
+      depth.customProgramCacheKey = () => 'garden-wind-depth-v1';
+      mesh.customDepthMaterial = depth;
+    }
     mesh.matrixAutoUpdate = false;
     return mesh;
   }
 }
 
 /** Material berwarna simpul + goyang angin (uTime dibagi bersama). `foliage`: normal tidak dibalik di sisi belakang. */
-export function swayMaterial(uTime: { value: number }, opts: T.MeshStandardMaterialParameters, foliage = false) {
-  const m = new T.MeshStandardMaterial({ vertexColors: true, ...opts });
-  m.onBeforeCompile = (s) => {
+function applyWind(s: T.WebGLProgramParametersWithUniforms, uTime: { value: number }) {
     s.uniforms.uTime = uTime;
     s.vertexShader = s.vertexShader
       .replace('#include <common>', '#include <common>\nattribute float aSway;\nuniform float uTime;')
@@ -101,8 +107,16 @@ export function swayMaterial(uTime: { value: number }, opts: T.MeshStandardMater
         transformed.x += sin(uTime * 1.3 + ph) * aSway;
         transformed.z += cos(uTime * 1.1 + ph * 1.3) * aSway * 0.6;`,
       );
+}
+
+export function swayMaterial(uTime: { value: number }, opts: T.MeshStandardMaterialParameters, foliage = false) {
+  const m = new T.MeshStandardMaterial({ vertexColors: true, ...opts });
+  m.userData.windTime = uTime;
+  m.onBeforeCompile = (s) => {
+    applyWind(s, uTime);
     if (foliage) s.fragmentShader = s.fragmentShader.replace('normal *= faceDirection;', '').replace('normal = normal * faceDirection;', '');
   };
+  m.customProgramCacheKey = () => `garden-wind-${foliage}-v2`;
   return m;
 }
 
@@ -143,12 +157,18 @@ export function canopy(kit: Kit, c: T.Vector3, rad: T.Vector3, n: number, size: 
   const quad: [number, number, number, number][] = [
     [-0.5, -0.5, u0, v0],
     [0.5, -0.5, u1, v0],
+    [0, 0, (u0 + u1) / 2, (v0 + v1) / 2],
+    [0.5, -0.5, u1, v0],
     [0.5, 0.5, u1, v1],
-    [-0.5, -0.5, u0, v0],
+    [0, 0, (u0 + u1) / 2, (v0 + v1) / 2],
     [0.5, 0.5, u1, v1],
     [-0.5, 0.5, u0, v1],
+    [0, 0, (u0 + u1) / 2, (v0 + v1) / 2],
+    [-0.5, 0.5, u0, v1],
+    [-0.5, -0.5, u0, v0],
+    [0, 0, (u0 + u1) / 2, (v0 + v1) / 2],
   ];
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < Math.round(n * 1.4); i++) {
     dir.set(r() * 2 - 1, r() * 2 - 1, r() * 2 - 1);
     if (dir.lengthSq() < 0.01) dir.set(0, 1, 0);
     dir.normalize();
@@ -161,7 +181,7 @@ export function canopy(kit: Kit, c: T.Vector3, rad: T.Vector3, n: number, size: 
     tmpC.setRGB(1, 1, 1).offsetHSL(hue + (r() - 0.5) * 0.03, 0, 0).multiplyScalar(shade);
     const s = size * (0.75 + r() * 0.5);
     for (const [x, y, uu, vv] of quad) {
-      corner.set(x * s, y * s, 0).applyQuaternion(q).add(p);
+      corner.set(x * s, y * s, x === 0 && y === 0 ? s * 0.12 : 0).applyQuaternion(q).add(p);
       pos.push(corner.x, corner.y, corner.z);
       nor.push(nn.x, nn.y, nn.z);
       uv.push(uu, vv);
@@ -233,8 +253,8 @@ function ribbon(
 }
 
 /** Batang meruncing yang sedikit melengkung, akarnya melebar di pangkal. */
-function trunk(kit: Kit, x: number, z: number, h: number, r0: number, r1: number, bend: number, yaw: number, color = '#8d6e57', y0 = 0) {
-  const g = new T.CylinderGeometry(r1, r0, h, 10, 8);
+function trunk(kit: Kit, x: number, z: number, h: number, r0: number, r1: number, bend: number, yaw: number, color = '#d2c3ad', y0 = 0) {
+  const g = new T.CylinderGeometry(r1, r0, h, 18, 10);
   g.translate(0, h / 2, 0);
   const p = g.attributes.position;
   for (let i = 0; i < p.count; i++) {
@@ -248,9 +268,9 @@ function trunk(kit: Kit, x: number, z: number, h: number, r0: number, r1: number
   return new T.Vector3(x + Math.sin(yaw) * bend, y0 + h, z + Math.cos(yaw) * bend);
 }
 
-function branch(kit: Kit, a: T.Vector3, b: T.Vector3, r: number, color = '#8d6e57') {
+function branch(kit: Kit, a: T.Vector3, b: T.Vector3, r: number, color = '#c5b9a6') {
   const mid = a.clone().lerp(b, 0.5).add(new T.Vector3(0, 0.25, 0));
-  kit.bark.add(new T.TubeGeometry(new T.CatmullRomCurve3([a, mid, b]), 6, r, 6, false), I, color, { uv: [1, a.distanceTo(b) / 1.3], sway: 0.004, baseY: a.y });
+  kit.bark.add(new T.TubeGeometry(new T.CatmullRomCurve3([a, mid, b]), 10, r, 8, false), I, color, { uv: [1, a.distanceTo(b) / 1.3], sway: 0.004, baseY: a.y });
 }
 
 /** Titik buah bergantung di permukaan bawah tajuk. */

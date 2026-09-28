@@ -6,6 +6,8 @@
 // Ada daun & bunga teratai, pancuran bambu yang terus mengalirkan air, dan papan nama jenis ikan.
 
 import * as T from 'three';
+import { detailed, riverRock } from './materials';
+import * as TX from './textures';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
 const WL = 0.36; // tinggi permukaan air
@@ -273,8 +275,10 @@ export class FishPond {
         g.fill();
       }
     });
-    this.textures.push(bedTex);
-    const bed = new T.Mesh(new T.CircleGeometry(1, 48), new T.MeshStandardMaterial({ map: bedTex, roughness: 1 }));
+    const gravel = TX.dirt();
+    gravel.repeat.set(3, 3);
+    this.textures.push(bedTex, gravel);
+    const bed = new T.Mesh(new T.CircleGeometry(1, 48), detailed(new T.MeshStandardMaterial({ map: gravel, color: '#788370', roughness: 1 }), 'earth'));
     bed.rotation.x = -Math.PI / 2;
     bed.scale.set(rx + 0.15, rz + 0.15, 1);
     bed.position.set(cx, BED, cz);
@@ -310,7 +314,7 @@ export class FishPond {
         const R = 1 + grow;
         S.push(
           part(
-            new T.DodecahedronGeometry(1, 1),
+            riverRock(1, i + k * 100),
             stoneCol[Math.floor(r() * stoneCol.length)],
             0,
             cx + Math.cos(a) * (rx + 0.45) * R,
@@ -330,8 +334,9 @@ export class FishPond {
     ringAt(1, 30, 0.4, 0.55, 0.14, 0.01);
     const rim = mergeGeometries(S)!;
     S.forEach((g) => g.dispose());
-    rim.computeVertexNormals();
-    const rock = new T.Mesh(rim, new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.92, flatShading: true }));
+    // Preserve the smoothed source normals; recomputing after merging non-indexed
+    // triangles would turn every river stone back into a faceted low-poly shape.
+    const rock = new T.Mesh(rim, detailed(new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.92 }), 'stone'));
     rock.castShadow = rock.receiveShadow = true;
     this.group.add(rock);
 
@@ -378,6 +383,8 @@ export class FishPond {
           c += vec3(1.0, 0.96, 0.88) * pow(max(dot(n, h), 0.0), 240.0) * 2.2;
           float a = mix(0.26, 0.9, fres) + smoothstep(0.85, 1.0, e) * 0.15;
           gl_FragColor = vec4(c, clamp(a, 0.0, 0.96));
+          #include <tonemapping_fragment>
+          #include <colorspace_fragment>
         }`,
     });
     const surf = new T.Mesh(new T.CircleGeometry(1, 64), water);

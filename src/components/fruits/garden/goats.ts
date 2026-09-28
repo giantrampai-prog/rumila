@@ -3,34 +3,16 @@
 // air, serta kambing-kambing yang merumput, mengunyah, mengembik, dan bisa dikeluarkan ke padang lalu dipanggil pulang.
 
 import * as T from 'three';
+import * as TX from './textures';
+import { detailed } from './materials';
+import { Merge, mat } from './build';
 
 const std = (c: string, rough = 0.85, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
 function woodTex(dark = false) {
-  const c = document.createElement('canvas');
-  c.width = 128;
-  c.height = 256;
-  const g = c.getContext('2d')!;
-  g.fillStyle = dark ? '#6b4a2e' : '#9a7652';
-  g.fillRect(0, 0, 128, 256);
-  for (let i = 0; i < 70; i++) {
-    const x = Math.random() * 128;
-    g.strokeStyle = `rgba(${dark ? '40,24,12' : '70,45,25'},${0.15 + Math.random() * 0.25})`;
-    g.lineWidth = 1 + Math.random() * 2;
-    g.beginPath();
-    g.moveTo(x, 0);
-    for (let y = 0; y <= 256; y += 32) g.lineTo(x + Math.sin(y * 0.05 + i) * 3, y);
-    g.stroke();
-  }
-  for (let i = 0; i < 6; i++) {
-    g.fillStyle = 'rgba(40,20,10,.35)';
-    g.beginPath();
-    g.ellipse(Math.random() * 128, Math.random() * 256, 3, 6, 0, 0, 7);
-    g.fill();
-  }
-  const t = new T.CanvasTexture(c);
-  t.colorSpace = T.SRGBColorSpace;
-  t.wrapS = t.wrapT = T.RepeatWrapping;
+  const t = TX.planks();
+  t.rotation = Math.PI / 2;
+  t.repeat.set(dark ? 1.5 : 1, 2);
   return t;
 }
 
@@ -76,9 +58,9 @@ interface Goat {
 
 function goatModel(coat: string, patch: string | null, horns: boolean) {
   const g = new T.Group();
-  const fur = std(coat, 0.95);
+  const fur = detailed(std(coat, 0.94), 'fur');
   const dark = std('#2a2420', 0.6);
-  const body = new T.Mesh(new T.SphereGeometry(0.34, 18, 12), fur);
+  const body = new T.Mesh(new T.SphereGeometry(0.34, 28, 20), fur);
   body.scale.set(0.82, 0.78, 1.45);
   body.position.y = 0.72;
   g.add(body);
@@ -94,7 +76,7 @@ function goatModel(coat: string, patch: string | null, horns: boolean) {
   g.add(neck);
   const head = new T.Group();
   head.position.set(0, 1.06, 0.5);
-  const skull = new T.Mesh(new T.SphereGeometry(0.13, 14, 12), fur);
+  const skull = new T.Mesh(new T.SphereGeometry(0.13, 24, 16), fur);
   skull.scale.set(0.85, 0.9, 1.1);
   const muzzle = new T.Mesh(new T.SphereGeometry(0.09, 12, 10), fur);
   muzzle.scale.set(0.8, 0.75, 1.3);
@@ -112,6 +94,9 @@ function goatModel(coat: string, patch: string | null, horns: boolean) {
     ear.position.set(s * 0.15, 0.0, -0.02);
     ear.rotation.z = s * -0.5;
     head.add(eye, pupil, ear);
+    const innerEar = new T.Mesh(new T.SphereGeometry(1, 12, 8), std('#ab8c7b', 0.9));
+    innerEar.scale.set(0.073, 0.012, 0.028); innerEar.position.copy(ear.position); innerEar.position.y += 0.018; innerEar.rotation.copy(ear.rotation); head.add(innerEar);
+    const nostril = new T.Mesh(new T.SphereGeometry(0.008, 8, 6), dark); nostril.position.set(s * 0.018, -0.05, 0.277); head.add(nostril);
     if (horns) {
       const pts: T.Vector3[] = [];
       for (let k = 0; k <= 8; k++) {
@@ -140,9 +125,11 @@ function goatModel(coat: string, patch: string | null, horns: boolean) {
     upper.position.y = -0.17;
     const lower = new T.Mesh(new T.CylinderGeometry(0.032, 0.03, 0.26, 8), fur);
     lower.position.y = -0.45;
-    const hoof = new T.Mesh(new T.CylinderGeometry(0.035, 0.04, 0.05, 8), dark);
-    hoof.position.y = -0.6;
-    leg.add(upper, lower, hoof);
+    leg.add(upper, lower);
+    for (const toe of [-1, 1]) {
+      const hoof = new T.Mesh(new T.SphereGeometry(1, 12, 8), dark);
+      hoof.scale.set(0.017, 0.032, 0.038); hoof.position.set(toe * 0.019, -0.6, 0.016); leg.add(hoof);
+    }
     g.add(leg);
     legs.push(leg);
   }
@@ -202,17 +189,15 @@ export class GoatPen {
     const hw = this.W / 2,
       hd = this.D / 2;
     // tanah halaman: tanah bercampur jerami
-    const yard = new T.Mesh(new T.PlaneGeometry(this.W, this.D), std('#8a7248', 1));
+    const yardMap = TX.dirt(); yardMap.repeat.set(3, 3); this.textures.push(yardMap);
+    const yard = new T.Mesh(new T.PlaneGeometry(this.W, this.D), detailed(std('#b9ac88', 1, { map: yardMap }), 'earth'));
     yard.rotation.x = -Math.PI / 2;
     yard.position.y = 0.02;
     yard.receiveShadow = true;
     this.group.add(yard);
-    for (let i = 0; i < 120; i++) {
-      const straw = new T.Mesh(new T.BoxGeometry(0.28, 0.01, 0.02), std('#d8b85a', 0.9));
-      straw.position.set((Math.random() - 0.5) * this.W * 0.9, 0.03, (Math.random() - 0.5) * this.D * 0.9);
-      straw.rotation.y = Math.random() * 3;
-      this.group.add(straw);
-    }
+    const straw = new Merge();
+    for (let i = 0; i < 120; i++) straw.add(new T.CylinderGeometry(0.006, 0.008, 0.28, 4), mat((Math.random() - 0.5) * this.W * 0.9, 0.032, (Math.random() - 0.5) * this.D * 0.9, Math.PI / 2, Math.random() * 3), i % 3 ? '#b8a378' : '#d4c297');
+    this.group.add(straw.build(new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.94 })));
     // pagar halaman: tiang & tiga bilah, celah pintu di tengah sisi −x
     const fenceLine = (x0: number, z0: number, x1: number, z1: number) => {
       const len = Math.hypot(x1 - x0, z1 - z0);

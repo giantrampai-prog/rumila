@@ -1,0 +1,12 @@
+{
+  "source": "exec-ff9c1941-7a3a-47f8-a289-11bee001ddeb.png",
+  "actualDimensions": [
+    1254,
+    1254
+  ],
+  "prompt": "Use case: photorealistic-natural. Make a production albedo texture for the body plumage of a small Indonesian garden songbird, used on real interactive 3D geometry. Square texture, 2048x2048 requested. Macro photograph of dense overlapping TINY short body feathers, not big flight feathers. Neutral desaturated light grey-taupe feather vanes, fine individual barbs and soft down, directional overlapping growth from top toward bottom, natural irregular feather sizes. Edge to edge repeating dense plumage with no background, no bird face, no eye, no beak, no whole bird, no text or watermark. Flat diffuse neutral lighting, no dramatic shadows, no highlights painted in, no large stripes or wood grain. Real photographic organic texture, subtle soft variation; color will be applied by the 3D material. This is original artwork for Rumila's children's fruit garden, not a reference collage.",
+  "outputs": [
+    "feathers.webp"
+  ],
+  "processing": "Encoded as WebP quality 90; original neutral plumage albedo and subtle bump."
+}

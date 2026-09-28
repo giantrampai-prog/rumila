@@ -29,15 +29,13 @@
     }
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".next-anatomy-build/types/**/*.ts",
-    ".next-anatomy-qa/types/**/*.ts",
-    ".next-fruits-build/types/**/*.ts",
-    ".next-prod/types/**/*.ts",
+    "*.ts",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    ".next-3000/types/**/*.ts"
+    "scripts/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next-fruits-build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
