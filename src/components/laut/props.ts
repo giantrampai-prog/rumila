@@ -3,9 +3,10 @@
 // (karang, lamun, batu, cerobong hidrotermal).
 
 import * as T from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { AgamModel, type AgamPose } from '../roket/agam-model';
 import { canvasTex, glow, glowSprite } from './creatures';
+import { surfaceMaterial, mergeSpecimen, reefGeometry } from './realism';
 
 const std = (color: T.ColorRepresentation, rough = 0.6, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color, roughness: rough, ...extra });
 
@@ -13,6 +14,18 @@ export const rng = (seed: number) => {
   let s = seed >>> 0 || 1;
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 };
+
+/** Soft scattering, with both the edge and far end fading instead of visible solid cones. */
+function beamMaterial() {
+  const m=new T.MeshBasicMaterial({color:'#b4d8e1',transparent:true,opacity:0.055,blending:T.AdditiveBlending,depthWrite:false,side:T.FrontSide});
+  m.onBeforeCompile=s=>{
+    s.vertexShader=s.vertexShader.replace('#include <common>', '#include <common>\nvarying vec2 beamUV; varying vec3 beamNormal; varying vec3 beamView;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nbeamUV=uv;beamNormal=normalize(normalMatrix*normal);beamView=-(modelViewMatrix*vec4(position,1.0)).xyz;');
+    s.fragmentShader=s.fragmentShader.replace('#include <common>', '#include <common>\nvarying vec2 beamUV; varying vec3 beamNormal; varying vec3 beamView;')
+      .replace('#include <color_fragment>', '#include <color_fragment>\ndiffuseColor.a *= pow(sin(clamp(beamUV.y,0.0,1.0)*3.1415926),2.0)*pow(abs(dot(normalize(beamNormal),normalize(beamView))),1.5);');
+  };
+  m.customProgramCacheKey=()=> 'sea-soft-scatter-v2';return m;
+}
 
 /* ---------------- penyelam cilik ---------------- */
 
@@ -112,7 +125,7 @@ export function diver() {
   torch.target.position.set(4, -0.6, 0.3);
   const beam = new T.Mesh(
     new T.ConeGeometry(0.9, 4, 20, 1, true),
-    new T.MeshBasicMaterial({ color: '#fff4d0', transparent: true, opacity: 0, blending: T.AdditiveBlending, depthWrite: false, side: T.DoubleSide }),
+    beamMaterial(),
   );
   beam.rotation.z = Math.PI / 2;
   beam.position.set(2.8, -0.2, 0.25);
@@ -344,7 +357,7 @@ export function submersible() {
     sp.target.position.set(9, -2, s * 0.8);
     const beam = new T.Mesh(
       new T.ConeGeometry(1.8, 8, 24, 1, true),
-      new T.MeshBasicMaterial({ color: '#dff1ff', transparent: true, opacity: 0.08, blending: T.AdditiveBlending, depthWrite: false, side: T.DoubleSide }),
+      beamMaterial(),
     );
     beam.rotation.z = Math.PI / 2 + 0.12;
     beam.position.set(5.7, -1.0, s * 0.5);
@@ -367,7 +380,7 @@ export function submersible() {
 
   g.userData.setLights = (k: number) => {
     lights.forEach((l) => (l.intensity = 60 * k));
-    beams.forEach((b) => ((b.material as T.MeshBasicMaterial).opacity = 0.07 * k));
+    beams.forEach((b) => ((b.material as T.MeshBasicMaterial).opacity = 0.08 * k));
     glows.forEach((s) => (s.material.opacity = 0.35 + 0.55 * k));
     thrustGlow.material.opacity = 0.2 + 0.4 * k;
   };
@@ -469,23 +482,36 @@ export function boat() {
   const flag = new T.Mesh(new T.PlaneGeometry(0.9, 0.56, 10, 1), new T.MeshStandardMaterial({ map: flagTex, side: T.DoubleSide, roughness: 0.8 }));
   flag.position.set(-4.08, 3.1, 0);
   g.add(pole, flag);
-  // Model 3D kapal penyelam (Higgsfield image-to-3D): menggantikan kapal sederhana di atas begitu dimuat.
-  // Buritan (rak tabung, tangga, bendera) di +x seperti kapal lama; lantai dek belakang sejajar dek lama (y 0,72).
-  new GLTFLoader().load('/laut/kapal-penyelam.glb', (gl) => {
-    const m = gl.scene;
-    m.scale.setScalar(9 / 1.9);
-    m.position.set(0.2, 0.82, 0);
-    m.traverse((o) => {
-      const mesh = o as T.Mesh;
-      if (mesh.isMesh) {
-        mesh.castShadow = mesh.receiveShadow = true;
-        const mat = mesh.material as T.MeshStandardMaterial;
-        if (mat.roughness > 0.6) mat.roughness = 0.45; // cat kapal sedikit mengilap
-      }
-    });
-    g.children.forEach((c) => (c.visible = false));
-    g.add(m);
-  });
+  // Clean geometry replaces the baked reconstruction: deck boards, rails and pressure cylinders.
+  const steel = surfaceMaterial('#b8c7cc', 'metal');
+  const rubber = std('#25343a', 0.9);
+  const ropeM = std('#cbbda0', 0.9);
+  const bar = (a: T.Vector3, b: T.Vector3, radius: number, material: T.Material) => {
+    const d=b.clone().sub(a); const o=new T.Mesh(new T.CylinderGeometry(radius,radius,d.length(),12),material);
+    o.position.copy(a).lerp(b,0.5);o.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());g.add(o);
+  };
+  for(const side of [-1,1]) {
+    for(let x=-4;x<4.7;x+=0.85) bar(new T.Vector3(x,0.8,side*1.45),new T.Vector3(x,1.52,side*1.45),0.026,steel);
+    for(const y of [1.13,1.52]) bar(new T.Vector3(-4,y,side*1.45),new T.Vector3(4.5,y,side*1.45),0.024,steel);
+    for(let x=-3.8;x<4;x+=1.9) {
+      const f=new T.Mesh(new T.CapsuleGeometry(0.13,0.5,8,16),rubber);f.position.set(x,0.1,side*1.75);g.add(f);
+      bar(new T.Vector3(x,0.35,side*1.75),new T.Vector3(x,1.13,side*1.45),0.015,ropeM);
+    }
+    for(let x=-3.1;x<-1;x+=0.8) {
+      const frame=new T.Mesh(new T.BoxGeometry(0.69,0.68,0.065),steel);frame.position.set(x,1.65,side*1.24);g.add(frame);
+      const glass=new T.Mesh(new T.BoxGeometry(0.6,0.59,0.075),new T.MeshPhysicalMaterial({color:'#123d4f',roughness:0.12,metalness:0.15,clearcoat:1}));glass.position.copy(frame.position);glass.position.z+=side*0.025;g.add(glass);
+    }
+  }
+  for(let i=0;i<5;i++) {
+    const x=0.1+i*0.32;
+    const tank=new T.Mesh(new T.CapsuleGeometry(0.115,0.6,10,20),std('#dfc466',0.34,{metalness:0.4}));tank.position.set(x,1.12,-1.12);g.add(tank);
+    for(const y of [0.9,1.27]) {const strap=new T.Mesh(new T.TorusGeometry(0.118,0.015,6,20),rubber);strap.rotation.x=Math.PI/2;strap.position.set(x,y,-1.12);g.add(strap);}
+    bar(new T.Vector3(x,1.52,-1.12),new T.Vector3(x,1.65,-1.12),0.028,steel);
+  }
+  for(let i=0;i<8;i++){const coil=new T.Mesh(new T.TorusGeometry(0.15+i*0.018,0.018,8,40),ropeM);coil.rotation.x=Math.PI/2;coil.position.set(3.6,0.81,0.7);g.add(coil);}
+  const deckM=surfaceMaterial('#9d8260');
+  for(let z=-1.36;z<1.4;z+=0.16){const board=new T.Mesh(new T.BoxGeometry(8.2,0.022,0.146),deckM);board.position.set(0.2,0.776,z);g.add(board);}
+  g.traverse(o=>{if(o instanceof T.Mesh){o.castShadow=true;o.receiveShadow=true;}});
   g.userData.update = (t: number) => {
     const p = flag.geometry.attributes.position as T.BufferAttribute;
     for (let i = 0; i < p.count; i++) {
@@ -505,12 +531,12 @@ export function boat() {
 /** Karang warna-warni (bercabang, otak, meja, kipas, jari). */
 export function coral(kind: number, color: string, r: () => number) {
   const g = new T.Group();
-  const m = std(color, 0.75, { emissive: color, emissiveIntensity: 0.05 });
+  const m = surfaceMaterial(color, 'coral');
   if (kind === 0) {
     // bercabang
     const branch = (p: T.Vector3, dir: T.Vector3, len: number, depth: number) => {
       const end = p.clone().addScaledVector(dir, len);
-      const b = new T.Mesh(new T.CylinderGeometry(0.035 * (depth + 1) * 0.5, 0.05 * (depth + 1) * 0.5, len, 6), m);
+      const b = new T.Mesh(new T.CylinderGeometry(0.035 * (depth + 1) * 0.5, 0.05 * (depth + 1) * 0.5, len, 10), m);
       b.position.copy(p).lerp(end, 0.5);
       b.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), dir);
       g.add(b);
@@ -520,7 +546,7 @@ export function coral(kind: number, color: string, r: () => number) {
           branch(end, d, len * 0.75, depth - 1);
         }
       else {
-        const tip = new T.Mesh(new T.SphereGeometry(0.035, 6, 5), m);
+        const tip = new T.Mesh(new T.SphereGeometry(0.035, 10, 8), m);
         tip.position.copy(end);
         g.add(tip);
       }
@@ -528,22 +554,14 @@ export function coral(kind: number, color: string, r: () => number) {
     branch(new T.Vector3(), new T.Vector3(0, 1, 0), 0.35, 3);
   } else if (kind === 1) {
     // karang otak
-    const geo = new T.SphereGeometry(0.5, 40, 24, 0, Math.PI * 2, 0, Math.PI / 2);
-    const p = geo.attributes.position;
-    for (let i = 0; i < p.count; i++) {
-      const v = new T.Vector3().fromBufferAttribute(p, i);
-      const a = Math.atan2(v.z, v.x),
-        e = Math.acos(Math.min(1, v.y / 0.5));
-      v.multiplyScalar(1 + Math.sin(a * 14 + Math.sin(e * 9) * 2) * 0.04);
-      p.setXYZ(i, v.x, v.y, v.z);
-    }
-    geo.computeVertexNormals();
+    const geo = reefGeometry(0.5, 3);
+    m.vertexColors = true;
     g.add(new T.Mesh(geo, m));
   } else if (kind === 2) {
     // karang meja
     const stem = new T.Mesh(new T.CylinderGeometry(0.06, 0.1, 0.5, 8), m);
     stem.position.y = 0.25;
-    const top = new T.Mesh(new T.CylinderGeometry(0.7, 0.45, 0.07, 16), m);
+    const top = new T.Mesh(new T.CylinderGeometry(0.7, 0.45, 0.07, 48, 3), m);
     top.position.y = 0.52;
     g.add(stem, top);
   } else if (kind === 3) {
@@ -585,7 +603,7 @@ export function coral(kind: number, color: string, r: () => number) {
       g.add(f);
     }
   }
-  return g;
+  return mergeSpecimen(g);
 }
 
 /** jumlah "pendorong" lamun: biota/penyelam/kamera + jejak geraknya (lihat engine.pushSeagrass) */
@@ -674,7 +692,10 @@ export function seabed(size: number, color: string, uTime: { value: number }, ca
     p.setY(i, h * rough * 3);
   }
   geo.computeVertexNormals();
-  const m = new T.MeshStandardMaterial({ color, roughness: 0.95 });
+  const sand = new T.TextureLoader().load('/laut/realism/seabed-sand.webp');
+  sand.colorSpace = T.SRGBColorSpace; sand.wrapS = sand.wrapT = T.RepeatWrapping;
+  sand.repeat.set(size / 4.5, size / 4.5); sand.anisotropy = 8;
+  const m = new T.MeshStandardMaterial({ color, map: sand, bumpMap: sand, bumpScale: 0.028, roughness: 0.93 });
   m.onBeforeCompile = (s) => {
     s.uniforms.uTime = uTime;
     s.uniforms.uCaustic = { value: caustic };
@@ -703,15 +724,20 @@ export function seabed(size: number, color: string, uTime: { value: number }, ca
 
 /** Batu/bongkah laut. */
 export function rock(size: number, color: string, r: () => number) {
-  const geo = new T.DodecahedronGeometry(size, 2);
+  const geo = new T.IcosahedronGeometry(size, 3);
   const p = geo.attributes.position;
   for (let i = 0; i < p.count; i++) {
     const v = new T.Vector3().fromBufferAttribute(p, i);
     v.multiplyScalar(1 + (Math.sin(v.x * 5 + v.y * 3) * 0.08 + Math.sin(v.z * 7) * 0.06));
     p.setXYZ(i, v.x, v.y * 0.7, v.z);
   }
-  geo.computeVertexNormals();
-  const m = new T.Mesh(geo, std(color, 0.95));
+  // IcosahedronGeometry is non-indexed; weld shared positions before averaging normals.
+  geo.deleteAttribute('normal');
+  geo.deleteAttribute('uv');
+  const smoothGeo = mergeVertices(geo);
+  geo.dispose();
+  smoothGeo.computeVertexNormals();
+  const m = new T.Mesh(smoothGeo, surfaceMaterial(color, 'rock'));
   m.rotation.set(r(), r() * 6, r());
   return m;
 }

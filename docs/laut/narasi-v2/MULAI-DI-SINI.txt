@@ -1,0 +1,25 @@
+NARASI JELAJAH LAUT V2 — RINOYA
+
+Naskah orisinal untuk anak. Pemandu: Agam. Hangat, ingin tahu, bersahabat.
+Tempo 115–130 kata/menit. Tersenyum saat menyapa; tenang di laut dalam, bukan menakut-nakuti.
+Beri jeda 0,8–1,2 detik antarapagraf; beri ruang setelah pertanyaan.
+Jangan membaca nomor bab, judul, petunjuk visual, atau instruksi ini.
+
+Rekam SATU FILE PER BAB, sesuai id pada nama file teks. MP3, M4A, WAV, atau OGG.
+Setiap paragraf = satu cue teks. Setelah suara jadi, catat waktu awal setiap paragraf.
+Angka dibaca dalam bahasa Indonesia; kata asing: Challenger Deep = cel-en-jer dip,
+hadal = ha-dal, abisal = a-bi-sal, bioluminesensi = bi-o-lu-mi-ne-sen-si.
+
+Pemasangan:
+1. Taruh rekaman pada public/laut/voice/v2/<id>.mp3.
+2. Edit public/laut/voice/v2/manifest.json: version tetap 2; tracks berisi id, src dan cues.
+3. cues dimulai 0, urut naik, jumlah persis sama dengan paragraf bab.
+4. Sesuaikan cue dengan REKAMAN JADI, bukan durasi perkiraan.
+5. Build/deploy menyajikan rekaman dari server; tidak perlu ubah komponen aplikasi.
+
+Contoh satu entri:
+{"version":2,"tracks":{"persiapan":{"src":"/laut/voice/v2/persiapan.mp3","cues":[0,12.8,28.4]}}}
+Angka contoh di atas hanya contoh format; ganti dengan timestamp rekamanmu.
+
+Tanpa rekaman: narasi memakai suara Indonesia perangkat jika tersedia, atau waktu baca teks.
+Audio v1 tetap tersimpan sebagai arsip, tidak dipakai karena naskah dan urutan bab berbeda.

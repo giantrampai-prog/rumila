@@ -1,4 +1,4 @@
-// Biota laut 3D (prosedural, gaya lucu bermata besar mengikuti lembar ikon storyboard).
+// Biota laut 3D (prosedural, proporsi natural, sisik halus dan sirip yang lentur).
 // Ikan dibangun dari profil tubuh + tekstur corak (kanvas) + sirip; gerak berenang lewat shader lentur
 // (tubuh melengkung makin kuat ke arah ekor). Satu material per jenis → kawanan memakai InstancedMesh.
 
@@ -101,7 +101,7 @@ function finShape(pts: [number, number][]) {
 /** Geometri & material satu jenis ikan (dipakai bersama banyak salinan). */
 export function fishParts(spec: FishSpec) {
   const L = spec.len;
-  const body = new T.SphereGeometry(1, 36, 22);
+  const body = new T.SphereGeometry(1, 56, 32);
   body.rotateZ(-Math.PI / 2); // kutub → sumbu x (kepala +x)
   const p = body.attributes.position;
   const headFat = spec.head ?? 0.6;
@@ -113,7 +113,15 @@ export function fishParts(spec: FishSpec) {
     p.setXYZ(i, (x * L) / 2, p.getY(i) * prof * L * spec.h * 0.5, p.getZ(i) * prof * L * spec.w * 0.5);
   }
   body.computeVertexNormals();
-  const tex = canvasTex(256, 256, spec.paint);
+  const tex = canvasTex(512, 512, (g, w, h) => {
+    spec.paint(g,w,h);
+    // Subtle overlapping scales retain each species' original markings.
+    for(let row=0;row<72;row++) for(let col=0;col<56;col++){
+      const x=(col+(row%2)*0.5)*w/56,y=row*h/72;
+      g.strokeStyle="rgba(20,35,40,0.10)";g.lineWidth=0.7;g.beginPath();g.arc(x,y,4.1,0.2,Math.PI-0.2);g.stroke();
+      g.strokeStyle="rgba(255,255,255,0.09)";g.beginPath();g.arc(x,y-0.6,3.7,0.2,Math.PI-0.2);g.stroke();
+    }
+  });
   const emi = spec.emissive ? canvasTex(256, 256, spec.emissive) : null;
   const bend = { amp: (spec.amp ?? 0.1) * L, speed: spec.speed ?? 7, len: L };
   const bodyMat = bendMaterial(
@@ -121,7 +129,7 @@ export function fishParts(spec: FishSpec) {
       map: tex,
       roughness: spec.rough ?? 0.45,
       metalness: spec.metal ?? 0,
-      emissiveMap: emi ?? undefined,
+      emissiveMap: emi,
       emissive: emi ? '#ffffff' : '#000000',
       transparent: !!spec.translucent,
       opacity: spec.translucent ? 0.82 : 1,
@@ -224,7 +232,11 @@ export function fishParts(spec: FishSpec) {
     fins.push(an);
   }
   const finGeo = mergeFlat(fins);
-  const finMat = bendMaterial({ color: spec.fin, roughness: 0.5, side: T.DoubleSide, transparent: true, opacity: spec.finOpacity ?? 0.9 }, bend);
+  const rays = canvasTex(128,128,(c,w,h)=>{
+    c.fillStyle=spec.fin;c.fillRect(0,0,w,h);
+    for(let i=0;i<20;i++){c.strokeStyle=i%2?'rgba(255,255,255,.28)':'rgba(0,0,0,.15)';c.lineWidth=0.8;c.beginPath();c.moveTo(w/2,h);c.lineTo(i*w/20,0);c.stroke();}
+  });
+  const finMat = bendMaterial({ color: '#ffffff', map:rays, roughness: 0.42, side: T.DoubleSide, transparent: true, opacity: spec.finOpacity ?? 0.9 }, bend);
 
   // sirip dada (kiri-kanan), mengepak pelan
   const pec = finShape([
@@ -253,18 +265,19 @@ function mergeFlat(list: T.BufferGeometry[]) {
   return out;
 }
 
-const eyeWhite = new T.MeshStandardMaterial({ color: '#ffffff', roughness: 0.2 });
+const eyeWhite = new T.MeshStandardMaterial({ color: '#827957', roughness: 0.24 });
 const eyeBlack = new T.MeshStandardMaterial({ color: '#0d0d12', roughness: 0.1 });
 const shine = new T.MeshBasicMaterial({ color: '#ffffff' });
 
-/** Mata besar yang lucu (sklera putih, pupil hitam, kilau). */
+/** Iris natural, pupil and a restrained corneal highlight. */
 function eyes(parent: T.Object3D, x: number, y: number, z: number, r: number) {
+  r *= 0.6;
   for (const s of [-1, 1]) {
     const g = new T.Group();
     const w = new T.Mesh(new T.SphereGeometry(r, 16, 12), eyeWhite);
-    const b = new T.Mesh(new T.SphereGeometry(r * 0.62, 14, 10), eyeBlack);
+    const b = new T.Mesh(new T.SphereGeometry(r * 0.76, 18, 12), eyeBlack);
     b.position.set(r * 0.25, 0, r * 0.52);
-    const h = new T.Mesh(new T.SphereGeometry(r * 0.2, 8, 6), shine);
+    const h = new T.Mesh(new T.SphereGeometry(r * 0.12, 8, 6), shine);
     h.position.set(r * 0.4, r * 0.25, r * 0.95);
     g.add(w, b, h);
     g.position.set(x, y, s * z);
@@ -602,7 +615,8 @@ const std = (color: T.ColorRepresentation, rough = 0.6, extra: T.MeshStandardMat
 
 export function turtle() {
   const g = new T.Group();
-  const shellTex = canvasTex(256, 256, (c, w, h) => {
+  const shellTex = canvasTex(1024, 1024, (c, w, h) => {
+    c.scale(4,4); w/=4; h/=4;
     c.fillStyle = '#6b4f2a';
     c.fillRect(0, 0, w, h);
     for (let i = 0; i < 18; i++) {
@@ -617,11 +631,15 @@ export function turtle() {
       c.stroke();
     }
   });
-  const shell = new T.Mesh(new T.SphereGeometry(0.5, 28, 16, 0, Math.PI * 2, 0, Math.PI / 2), std('#ffffff', 0.5, { map: shellTex }));
+  const shell = new T.Mesh(new T.SphereGeometry(0.5, 28, 16, 0, Math.PI * 2, 0, Math.PI / 2), std('#ffffff', 0.4, { map: shellTex, bumpMap:shellTex, bumpScale:0.012 }));
   shell.scale.set(1.2, 0.45, 0.95);
   const belly = new T.Mesh(new T.SphereGeometry(0.5, 24, 10, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), std('#e8dcae', 0.7));
   belly.scale.set(1.15, 0.18, 0.9);
-  const skin = std('#8fae6b', 0.65);
+  const skinTex=canvasTex(512,512,(c,w,h)=>{
+    c.fillStyle='#687d53';c.fillRect(0,0,w,h);
+    for(let y=0;y<h;y+=18)for(let x=0;x<w;x+=23){c.fillStyle=['#909471','#777f59','#a19b78'][(x+y)%3];c.beginPath();c.ellipse(x+(y%36?11:0),y,10,7,0,0,Math.PI*2);c.fill();}
+  });
+  const skin = std('#ffffff',0.65,{map:skinTex,bumpMap:skinTex,bumpScale:0.003});
   const head = new T.Mesh(new T.SphereGeometry(0.16, 20, 14), skin);
   head.scale.set(1.3, 0.9, 0.95);
   head.position.set(0.72, 0.02, 0);

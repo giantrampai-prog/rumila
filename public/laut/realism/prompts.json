@@ -1,0 +1,15 @@
+{
+  "generator": "Built-in GPT image",
+  "date": "2026-09-28",
+  "assets": [
+    {
+      "file": "seabed-sand.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: a SINGLE seamless PBR albedo material texture for an interactive educational underwater 3D game, 2048 square. Subject: a close overhead orthographic scan of natural light beige tropical seabed, tiny irregular white shell fragments and mineral grains embedded in pale cream fine sand, subtle gently wavy sand ripples without directionally baked shadows. All across the square, uniform diffuse neutral illumination, natural subdued pale ivory beige with muted small gray and warm grains. Very detailed tactile natural macro texture, photogrammetry quality. No water, no blue cast, no caustic lighting, no objects, no animals, no plants, no lettering, no border, no shading gradients. Flat edge-to-edge tileable material surface, balanced scale with fine grains and delicate ripple detail. This will be repeated over actual 3D seabed geometry; no perspective or scene view."
+    },
+    {
+      "file": "coral-tissue.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: seamless neutral PBR base-color material map for actual 3D coral meshes in an underwater educational app. Macro orthographic surface scan of living hard coral, fine densely packed small irregular corallite cups and pores on a creamy muted beige calcium carbonate surface with tiny organic speckles. Subtle real living tissue surface. Natural microscopic structure with small radial ridges around each tiny cup. Even diffuse illumination with only very restrained ambient crevice shade. No dramatic shadows, no horizon, no perspective, no visible whole coral colony, no animals, no water, no blue tint, no text or border. Square edge-to-edge tileable texture 2048, precise naturally irregular porous surface, not honeycomb graphic or circles drawn on a flat surface."
+    }
+  ],
+  "processing": "Resize to 1024x1024, WebP quality 88. Sand reused as shallow bump. Coral is illustrative microtexture, not species-identification evidence."
+}

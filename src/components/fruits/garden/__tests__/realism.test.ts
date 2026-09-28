@@ -50,7 +50,7 @@ describe('pemuatan material tanpa mengubah alokasi GPU', () => {
     vi.stubGlobal('document', { createElement: () => canvas });
     let complete!: (t: T.Texture) => void, fail!: () => void;
     vi.spyOn(T.TextureLoader.prototype, 'load').mockImplementation((_path, onLoad, _progress, onError) => {
-      complete = onLoad!; fail = () => onError?.(new Error('offline')); return new T.Texture();
+      complete = t => onLoad?.(t as T.Texture<HTMLImageElement>); fail = () => onError?.(new Error('offline')); return new T.Texture();
     });
     const result = loadGardenMaterial('/fruits/garden/realism/foliage.webp', new T.Texture({ width: 512, height: 512 }));
     return { result, canvas, draw, clear, complete, fail };
