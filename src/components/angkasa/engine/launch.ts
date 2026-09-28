@@ -11,7 +11,20 @@ const sm = (u: number, a: number, b: number) => {
 
 /** bagian waktu pembuka (0–1 dari seluruh pembuka) */
 export const GROUND_END = 0.55;
-const BOARD = [0.1, 0.19]; // Agam berjalan & masuk kokpit
+const BOARD = [0.1, 0.188]; // Agam berjalan ke samping pesawat, melompat naik, lalu masuk kokpit
+/** tahapan naik: jalan → lompat ke atas pesawat → turun ke kursi kokpit */
+const WALK_END = 0.145,
+  JUMP_END = 0.172;
+// titik-titik di ruang adegan (pesawat di titik asal, moncong ke −z; kokpit di atas-depan)
+const AGAM_START = new THREE.Vector3(1.35, 0, -0.8);
+const AGAM_SIDE = new THREE.Vector3(0.95, 0, -0.5);
+const AGAM_TOP = new THREE.Vector3(0.1, 1.02, -0.45);
+const AGAM_SEAT = new THREE.Vector3(0.05, 0.42, -0.42);
+const lerpAngle = (a: number, b: number, t: number) => {
+  let d = ((b - a + Math.PI) % (Math.PI * 2)) - Math.PI;
+  if (d < -Math.PI) d += Math.PI * 2;
+  return a + d * t;
+};
 const HOVER = [0.2, 0.27]; // mesin samping: naik pelan
 const PITCH = [0.26, 0.31]; // moncong menegak, mesin utama menyala
 const CLIMB = [0.3, GROUND_END]; // melesat naik menembus awan
@@ -328,7 +341,7 @@ export class GroundLaunch {
   }
 
   /** u = kemajuan seluruh pembuka (0–GROUND_END untuk adegan ini) */
-  update(u: number, dt: number, aspect: number, agamPose: (wave: boolean) => void) {
+  update(u: number, dt: number, aspect: number, agamPose: (mode: "wave" | "walk" | "jump") => void) {
     this.t += dt;
     // bendera berkibar (gelombang berjalan dari tiang ke ujung)
     if (this.flag && this.flagRest) {
@@ -396,27 +409,48 @@ export class GroundLaunch {
       return true;
     });
 
-    // Agam: berdiri di samping pesawat & melambai, lalu berjalan ke pintu kokpit dan masuk
-    const board = sm(u, BOARD[0], BOARD[1]);
-    this.agamHost.position.set(1.35 - 1.0 * board, 0.9 * sm(u, BOARD[0] + 0.05, BOARD[1]), -0.8 + 0.6 * board);
-    // badan sedikit bergoyang (tidak kaku) saat berdiri melambai
-    this.agamHost.rotation.set(0, Math.PI - 0.6 - 1.2 * board + Math.sin(this.t * 1.4) * 0.06, Math.sin(this.t * 2.1) * 0.025);
-    this.agamHost.scale.setScalar(1 - 0.5 * sm(u, BOARD[0] + 0.05, BOARD[1]));
-    agamPose(u < BOARD[0] + 0.02);
-    this.agamHost.visible = u < BOARD[1];
+    // Agam: melambai → berjalan ke samping pesawat (menghadap arah jalan) → melompat naik ke atas kokpit →
+    // turun ke kursi (tertutup kaca kokpit yang gelap). Tidak mengecil: ukurannya tetap.
+    const walk = sm(u, BOARD[0], WALK_END);
+    const jump = Math.min(1, Math.max(0, (u - WALK_END) / (JUMP_END - WALK_END)));
+    const sink = sm(u, JUMP_END, BOARD[1]);
+    const ap = this.agamHost.position;
+    if (u < WALK_END) ap.lerpVectors(AGAM_START, AGAM_SIDE, walk);
+    else if (u < JUMP_END) {
+      const e = jump * jump * (3 - 2 * jump);
+      ap.lerpVectors(AGAM_SIDE, AGAM_TOP, e);
+      ap.y += Math.sin(Math.PI * jump) * 0.35; // lengkung lompatan
+    } else ap.lerpVectors(AGAM_TOP, AGAM_SEAT, sink);
+    const faceCam = 2.57,
+      faceWalk = Math.atan2(AGAM_SIDE.x - AGAM_START.x, AGAM_SIDE.z - AGAM_START.z),
+      faceShip = Math.atan2(AGAM_TOP.x - AGAM_SIDE.x, AGAM_TOP.z - AGAM_SIDE.z);
+    let yaw = lerpAngle(faceCam, faceWalk, sm(u, BOARD[0], BOARD[0] + 0.012));
+    if (u >= WALK_END - 0.008) yaw = lerpAngle(faceWalk, faceShip, sm(u, WALK_END - 0.008, WALK_END + 0.004));
+    if (u >= JUMP_END) yaw = lerpAngle(faceShip, Math.PI, sink); // duduk menghadap depan (moncong −z → Agam menghadap −z)
+    const sway = u < BOARD[0] ? Math.sin(this.t * 1.4) * 0.06 : 0;
+    this.agamHost.rotation.set(0, yaw + sway, u < BOARD[0] ? Math.sin(this.t * 2.1) * 0.025 : 0);
+    this.agamHost.scale.setScalar(1);
+    agamPose(u < BOARD[0] ? "wave" : u < WALK_END ? "walk" : "jump");
+    this.agamHost.visible = u < BOARD[1] + 0.002;
 
     // kamera: di darat menatap landasan dari depan-samping → mengikuti ke atas → di bawah pesawat, menatap ke atas
     const c = this.camera;
     const follow = sm(u, 0.22, 0.34);
     // depan-samping (moncong & kokpit menghadap kamera), maju pelan + goyang halus seperti kamera dipegang
     // mulai dekat ke Agam yang melambai → mundur memperlihatkan pesawat saat Agam naik
-    const reveal = sm(u, 0.07, 0.2);
+    // kamera tetap dekat & mengikuti Agam sampai ia masuk kokpit, baru mundur memperlihatkan pesawat
+    const reveal = sm(u, 0.185, 0.245);
+    const follow0 = sm(u, BOARD[0], BOARD[1]);
+    const ag = this.agamHost.position;
     const groundPos = new THREE.Vector3(
-      2.7 + 1.0 * reveal + Math.sin(this.t * 0.6) * 0.05,
-      0.75 + 0.5 * reveal + Math.sin(this.t * 0.9) * 0.03,
-      -2.9 - 1.9 * reveal,
+      2.55 - 0.6 * follow0 + 1.15 * reveal + Math.sin(this.t * 0.6) * 0.05,
+      0.8 + 0.35 * follow0 + 0.1 * reveal + Math.sin(this.t * 0.9) * 0.03,
+      -2.7 - 0.2 * follow0 - 1.9 * reveal,
     );
-    const groundLook = new THREE.Vector3(1.3 - 1.6 * reveal, 0.42 + 0.4 * reveal + hover * 1.6, -0.75 + 0.75 * reveal);
+    // kamera ikut naik separuh saja saat Agam melompat (tidak mendongak berlebihan)
+    const lookAgam = new THREE.Vector3(ag.x, ag.y * 0.45 + 0.45, ag.z);
+    const groundLook = lookAgam.lerp(new THREE.Vector3(-0.3, 0.8, 0), reveal);
+    groundLook.y += hover * 1.6;
     // kamera mengejar dengan sedikit tertinggal di belokan (terasa ngebut & meliuk)
     const chasePos = new THREE.Vector3(wx * 0.7 + 1.3, y - 5.2, wz * 0.7 + 2.4);
     const chaseLook = new THREE.Vector3(wx, y + 6, wz - 0.3);

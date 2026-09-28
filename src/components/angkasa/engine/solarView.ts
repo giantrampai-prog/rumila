@@ -190,8 +190,10 @@ export class SolarView implements ModeView {
         this.padAmbience = false;
       }
       // langkah Agam ke pesawat, kokpit menutup, bip hitung mundur, lepas landas, menembus awan, angkasa
-      for (let s = 0.105; s < 0.175; s += 0.012) if (cross(s)) sfx.padStep();
-      if (cross(0.17)) sfx.canopy();
+      for (let s = 0.104; s < 0.145; s += 0.008) if (cross(s)) sfx.padStep();
+      if (cross(0.146)) sfx.whoosh(); // melompat naik
+      if (cross(0.172)) sfx.padStep(); // mendarat di atas pesawat
+      if (cross(0.188)) sfx.canopy(); // kokpit menutup
       if (cross(0.215) || cross(0.235) || cross(0.255)) sfx.beep();
       if (cross(0.27)) {
         sfx.beep(true);

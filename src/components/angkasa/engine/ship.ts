@@ -65,7 +65,7 @@ export class ShipOverlay {
             const mats = Array.isArray(m.material) ? m.material : [m.material];
             for (const mt of mats) this.agamMats.push(mt);
           }),
-        { url: "/roket/agam-astronot.glb", fit: (r) => r.scale.setScalar(0.62 / 1.2) },
+        { url: "/roket/agam-astronot.glb", fit: (r) => r.scale.setScalar(0.8 / 1.2) },
       );
     }
     if (u === null) {
@@ -222,14 +222,17 @@ export class ShipOverlay {
   private introPose(u: number, main: THREE.PerspectiveCamera, dt: number) {
     this.groundMode = u < GROUND_END;
     if (this.groundMode) {
-      this.ground?.update(u, dt, main.aspect, (wave) => {
+      this.ground?.update(u, dt, main.aspect, (mode) => {
         const w = Math.sin(this.t * 6);
-        const step = wave ? 0 : Math.sin(this.t * 7) * 0.45;
-        // melambai: lengan kanan terangkat tinggi, lengan bawah bergoyang dari siku; berjalan: kaki & lengan berayun
+        const step = Math.sin(this.t * 8) * 0.5;
+        // melambai: lengan kanan terangkat, lengan bawah mengayun · berjalan: kaki & lengan berayun ·
+        // melompat: lutut ditekuk ke depan, kedua lengan terentang untuk keseimbangan
         this.agam?.pose(
-          wave
+          mode === "wave"
             ? { legL: 0, legR: 0, armL: 0.05 * Math.sin(this.t * 2), armR: -0.2, lower: 1, raiseR: 1.3 + 0.08 * w, elbowR: 0.75 + 0.35 * w }
-            : { legL: step, legR: -step, armL: -step * 0.6, armR: step * 0.6, lower: 1, raiseR: 0, elbowR: 0 },
+            : mode === "walk"
+              ? { legL: step, legR: -step, armL: -step * 0.7, armR: step * 0.7, lower: 1, raiseR: 0, elbowR: 0 }
+              : { legL: -0.7, legR: -0.5, armL: -0.3, armR: -0.3, lower: 0.35, raiseR: 0, elbowR: 0 },
         );
       });
       return;
