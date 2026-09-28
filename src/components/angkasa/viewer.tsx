@@ -106,7 +106,7 @@ export function Viewer() {
       c.orbitOn = tur || (inspect && !st.playing) ? false : st.orbitOn;
       c.spinOn = tur ? true : st.spinOn;
       const kind = VIEW_OF[st.mode];
-      engine.setFrameInset(st.frameInset[0], st.frameInset[1]);
+      engine.setFrameInset(st.frameInset[0], st.frameInset[1], st.frameVertical[0], st.frameVertical[1]);
       if (kind !== kindRef.current) {
         kindRef.current = kind;
         const v = makeView(kind);

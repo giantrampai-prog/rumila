@@ -118,6 +118,7 @@ export interface AngkasaState {
   introLine: number;
   /** lebar (px) viewer yang tertutup panel mengambang kiri/kanan (layar penuh) */
   frameInset: [number, number];
+  frameVertical: [number, number];
   startTour: (from?: number) => void;
 
   init: (memberId: string) => void;
@@ -217,6 +218,7 @@ export const useAngkasa = create<AngkasaState>()((set, get) => ({
   intro: "done",
   introLine: 0,
   frameInset: [0, 0],
+  frameVertical: [0, 0],
   startTour: (from = 0) => {
     const s = get();
     if (s.mode !== "tur")

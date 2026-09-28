@@ -573,6 +573,7 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   const st = useAngkasa();
   const router = useRouter();
   const appRef = useRef<HTMLDivElement>(null);
+  const hudRef = useRef<HTMLDivElement>(null);
   useAngkasaSession(memberId);
 
   // layout effect: `intro` sudah "play" sebelum bingkai 3D pertama (mesin berjalan lewat requestAnimationFrame)
@@ -626,6 +627,25 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
   const tour = st.mode === "tur";
   const planet = st.mode === "planet" && st.selectedId;
 
+  // Frame the globe above the real information card, including wrapped mobile copy.
+  useLayoutEffect(() => {
+    let width=0,height=0;
+    const measure=()=>{
+      const rect=appRef.current?.getBoundingClientRect();
+      const resized=rect && (rect.width!==width || rect.height!==height);
+      width=rect?.width ?? 0; height=rect?.height ?? 0;
+      const s=useAngkasa.getState();
+      const next:[number,number]=planet && !tour && st.intro==='done' ? [86,(hudRef.current?.getBoundingClientRect().height ?? 190)+28] : [0,0];
+      if(next[0]!==s.frameVertical[0] || next[1]!==s.frameVertical[1] || (planet && resized)) s.set({frameVertical:next,refocusNonce:s.refocusNonce+1});
+    };
+    measure();
+    const observer=new ResizeObserver(measure);
+    if(hudRef.current) observer.observe(hudRef.current);
+    if(appRef.current) observer.observe(appRef.current);
+    return()=>observer.disconnect();
+  },[planet,tour,st.intro]);
+  useEffect(()=>()=>useAngkasa.getState().set({frameVertical:[0,0]}),[]);
+
   // Paspor: cap dari objek yang sudah dipelajari (dilihat ±8 detik)
   const doneItems = useDoneItems(memberId);
   const stamps = new Set(doneItems.filter((p) => p.startsWith("obj:")).map((p) => p.slice(4)));
@@ -670,7 +690,7 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
           </div>
 
           {/* bawah */}
-          <div className="flex flex-col items-center gap-3">
+          <div ref={hudRef} className="flex flex-col items-center gap-3">
             {!planet && !visited && (
               <div className="ak-hint flex items-center gap-2 rounded-full bg-white/95 py-2 pr-4 pl-3 text-[#2b1d4e] shadow-[0_4px_0_rgba(0,0,0,.25)]" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
                 <Icon name="touch_app" size={26} className="text-[#ff7a1a]" /> Ketuk planet untuk berkunjung!

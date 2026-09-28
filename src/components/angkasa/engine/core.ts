@@ -4,6 +4,7 @@
 
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { cameraOffset, orbitDamping } from "@/lib/angkasa/camera-motion";
 import { SimClock } from "@/lib/angkasa/sim";
 
 export interface LabelSpec {
@@ -74,6 +75,7 @@ export interface View {
   labels(): LabelSpec[];
   onResize?(w: number, h: number): void;
   /** render tambahan (mis. inset) setelah render utama */
+  renderOverride?(renderer: THREE.WebGLRenderer): boolean;
   afterRender?(renderer: THREE.WebGLRenderer): void;
   dispose(): void;
 }
@@ -106,6 +108,7 @@ export class AngkasaEngine {
   controls!: OrbitControls;
   private view: View | null = null;
   private raf = 0;
+  private disposed = false;
   private last = 0;
   private width = 1;
   private height = 1;
@@ -115,7 +118,7 @@ export class AngkasaEngine {
     token: number;
     from: [THREE.Vector3, THREE.Vector3];
     to: [THREE.Vector3, THREE.Vector3];
-    t0: number;
+    elapsed: number;
     ms: number;
     done: (ok: boolean) => void;
   } | null = null;
@@ -160,6 +163,8 @@ export class AngkasaEngine {
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.setClearColor(0x05070f, 1);
     this.renderer.domElement.style.display = "block";
     this.renderer.domElement.style.touchAction = "none";
@@ -200,8 +205,8 @@ export class AngkasaEngine {
           })
           .catch(() => {});
       },
-      ultra: this.renderer.capabilities.maxTextureSize >= 4096,
-      flightProgress: () => (this.flight ? Math.max(0.001, Math.min(1, (performance.now() - this.flight.t0) / this.flight.ms)) : 0),
+      ultra: !lowPower && this.renderer.capabilities.maxTextureSize >= 4096,
+      flightProgress: () => (this.flight ? Math.max(0.001, Math.min(1, this.flight.elapsed / this.flight.ms)) : 0),
       flyTo: (pos, target, ms) => this.flyTo(pos, target, ms),
       shiftFlight: (d) => {
         if (!this.flight) return false;
@@ -268,12 +273,15 @@ export class AngkasaEngine {
     this.last = now;
     if (!this.view || this.paused) return;
     this.clock.tick(dt);
-    this.stepFlight(now);
+    this.stepFlight(dt);
     this.view.update(dt, this.ctx);
-    this.controls.update();
+    this.controls.dampingFactor = orbitDamping(dt);
+    this.controls.update(dt);
     this.renderer.setScissorTest(false);
     this.renderer.setViewport(0, 0, this.width, this.height);
-    this.renderer.render(this.view.scene, this.view.camera);
+    this.renderer.info.autoReset = false;
+    this.renderer.info.reset();
+    if (!this.view.renderOverride?.(this.renderer)) this.renderer.render(this.view.scene, this.view.camera);
     this.view.afterRender?.(this.renderer);
     this.updateLabels();
     this.adaptQuality(dt);
@@ -286,6 +294,12 @@ export class AngkasaEngine {
     const avg =
       this.frameTimes.reduce((a, b) => a + b, 0) / this.frameTimes.length;
     this.frameTimes = [];
+    if (process.env.NODE_ENV !== "production") {
+      const canvas=this.renderer.domElement;
+      canvas.dataset.fps=(1/avg).toFixed(1);
+      canvas.dataset.drawCalls=String(this.renderer.info.render.calls);
+      canvas.dataset.triangles=String(this.renderer.info.render.triangles);
+    }
     const pr = this.renderer.getPixelRatio();
     if (avg > 1 / 28 && pr > 1) {
       this.renderer.setPixelRatio(Math.max(1, pr - 0.25));
@@ -328,10 +342,10 @@ export class AngkasaEngine {
   }
 
   /** Lebar (px) viewer yang tertutup panel mengambang kiri/kanan: objek dipusatkan di area yang terlihat. */
-  private inset = { left: 0, right: 0 };
-  setFrameInset(left: number, right: number) {
-    if (left === this.inset.left && right === this.inset.right) return;
-    this.inset = { left, right };
+  private inset = { left: 0, right: 0, top: 0, bottom: 0 };
+  setFrameInset(left: number, right: number, top = 0, bottom = 0) {
+    if (left === this.inset.left && right === this.inset.right && top === this.inset.top && bottom === this.inset.bottom) return;
+    this.inset = { left, right, top, bottom };
     this.resizeCamera();
   }
 
@@ -345,7 +359,8 @@ export class AngkasaEngine {
       this.width - this.inset.left - this.inset.right,
     );
     const h = Math.atan(Math.tan(v) * (freeW / Math.max(1, this.height)));
-    return Math.min(v, h);
+    const freeH = Math.max(120, this.height-this.inset.top-this.inset.bottom);
+    return Math.min(Math.atan(Math.tan(v)*freeH/this.height), h);
   }
 
   private resizeCamera() {
@@ -355,12 +370,13 @@ export class AngkasaEngine {
     if (cam instanceof THREE.PerspectiveCamera) {
       cam.aspect = aspect;
       const shift = (this.inset.left - this.inset.right) / 2;
-      if (shift && this.width > 0)
+      const vertical = (this.inset.bottom-this.inset.top)/2;
+      if ((shift || vertical) && this.width > 0)
         cam.setViewOffset(
           this.width,
           this.height,
           -shift,
-          0,
+          vertical,
           this.width,
           this.height,
         );
@@ -391,6 +407,7 @@ export class AngkasaEngine {
       new THREE.TextureLoader().load(
         url,
         (t) => {
+          if (this.disposed) { t.dispose(); reject(new Error("Renderer disposed")); return; }
           t.colorSpace =
             opts.color === false ? THREE.NoColorSpace : THREE.SRGBColorSpace;
           t.anisotropy = Math.min(
@@ -436,7 +453,7 @@ export class AngkasaEngine {
         token,
         from: [cam.position.clone(), this.controls.target.clone()],
         to: [pos.clone(), target.clone()],
-        t0: performance.now(),
+        elapsed: 0,
         ms,
         done: resolve,
       };
@@ -462,10 +479,11 @@ export class AngkasaEngine {
   }
 
   private flyDir = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()];
-  private stepFlight(now: number) {
+  private stepFlight(dt: number) {
     const f = this.flight;
     if (!f || !this.view) return;
-    const t = Math.min(1, (now - f.t0) / f.ms);
+    f.elapsed += dt * 1000;
+    const t = Math.min(1, f.elapsed / f.ms);
     const k = easeInOut(t);
     // Titik pandang berpindah sedikit lebih dulu (objek tujuan cepat ke tengah layar), lalu kamera mendekat.
     const kt = easeInOut(Math.min(1, t * 1.25));
@@ -474,16 +492,8 @@ export class AngkasaEngine {
     const [a, b, dir] = this.flyDir;
     a.subVectors(f.from[0], f.from[1]);
     b.subVectors(f.to[0], f.to[1]);
-    const la = Math.max(1e-4, a.length()),
-      lb = Math.max(1e-4, b.length());
-    a.divideScalar(la);
-    b.divideScalar(lb);
-    const cam = this.view.camera;
-    if (a.dot(b) < -0.95) cam.position.lerpVectors(f.from[0], f.to[0], k);
-    else {
-      dir.copy(a).lerp(b, k).normalize();
-      cam.position.copy(target).addScaledVector(dir, Math.exp(Math.log(la) + (Math.log(lb) - Math.log(la)) * k));
-    }
+    cameraOffset(a, b, k, dir);
+    this.view.camera.position.copy(target).add(dir);
     if (t >= 1) {
       this.flight = null;
       f.done(true);
@@ -658,6 +668,7 @@ export class AngkasaEngine {
   };
 
   dispose() {
+    this.disposed = true;
     cancelAnimationFrame(this.raf);
     this.cancelFlight();
     this.resizeObs?.disconnect();

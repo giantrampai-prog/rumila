@@ -11,7 +11,7 @@ import { useAngkasa } from "@/lib/angkasa/state";
 
 const TAU = Math.PI * 2;
 /** lama pembuka dari Bumi ke tata surya (detik) */
-export const EARTH_INTRO_SEC = 16;
+export const EARTH_INTRO_SEC = 22;
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
 /* ---------------- langit galaksi ---------------- */
@@ -85,7 +85,7 @@ function twinkleStars(count: number) {
       void main(){ vC = color; float tw = 0.55 + 0.45 * sin(uTime * (1.2 + fract(aPhase) * 2.0) + aPhase * 7.0);
         vA = tw; gl_PointSize = aSize * uPR * (0.7 + 0.5 * tw); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
     fragmentShader: `varying vec3 vC; varying float vA; void main(){ vec2 p = gl_PointCoord - 0.5; float d = length(p);
-      float a = smoothstep(0.5, 0.0, d); gl_FragColor = vec4(vC, a * vA); }`,
+      float a = (1.0-smoothstep(0.0, 0.5, d)); gl_FragColor = vec4(vC, a * vA); }`,
     vertexColors: true,
     transparent: true,
     depthWrite: false,
@@ -259,11 +259,11 @@ function asteroidBelt(count: number) {
 /* ---------------- atmosfer bercahaya ---------------- */
 
 const GLOW: Record<string, [number, number]> = {
-  mars: [0xff9a6a, 0.55],
-  jupiter: [0xffd9a8, 0.5],
-  saturn: [0xf5e2b0, 0.45],
-  uranus: [0x9ff0ff, 0.7],
-  neptune: [0x5a8cff, 0.7],
+  mars: [0xe6b096, 0.18],
+  jupiter: [0xffe2c6, 0.24],
+  saturn: [0xf5e2b0, 0.22],
+  uranus: [0xa4dae1, 0.34],
+  neptune: [0x729ae0, 0.36],
 };
 
 /* ---------------- ekor komet ---------------- */
@@ -385,7 +385,7 @@ export class SolarFx {
     for (const [id, [color, strength]] of Object.entries(GLOW)) {
       const b = bodies.get(id);
       if (!b) continue;
-      const geo = new THREE.SphereGeometry(1.1, 48, 32);
+      const geo = new THREE.SphereGeometry(1.025, 64, 48);
       const mat = atmosphereMaterial(new THREE.Color(color), { value: new THREE.Vector3() }, strength);
       const atm = new THREE.Mesh(geo, mat);
       atm.scale.setScalar(b.radius);

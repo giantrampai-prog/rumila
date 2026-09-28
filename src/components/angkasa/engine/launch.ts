@@ -3,6 +3,7 @@
 // (Bumi dari luar, lalu tata surya). Dirender menutupi seluruh layar selama bagian darat berlangsung.
 
 import * as THREE from "three";
+import { LaunchEnvironment } from "./launch-environment";
 
 const sm = (u: number, a: number, b: number) => {
   const x = Math.min(1, Math.max(0, (u - a) / (b - a)));
@@ -44,24 +45,6 @@ function rng(seed: number) {
   return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 }
 
-/** awan: gumpalan lembut bertumpuk, bawah sedikit abu-abu */
-function cloudTexture(seed: number) {
-  const r = rng(seed);
-  return canvasTexture(256, 256, (g) => {
-    for (let i = 0; i < 26; i++) {
-      const x = 128 + (r() - 0.5) * 150,
-        y = 128 + (r() - 0.5) * 70,
-        rad = 30 + r() * 55;
-      const gr = g.createRadialGradient(x, y, 0, x, y, rad);
-      const shade = Math.round(235 - (y - 90) * 0.35);
-      gr.addColorStop(0, `rgba(${shade},${shade},${shade + 6},.55)`);
-      gr.addColorStop(1, "rgba(255,255,255,0)");
-      g.fillStyle = gr;
-      g.fillRect(0, 0, 256, 256);
-    }
-  });
-}
-
 /** Kekuatan suara mesin, angin & turbin sepanjang pembuka (sama dengan animasi) — untuk engineSound(). */
 export function launchAudio(u: number) {
   const hover = sm(u, HOVER[0], HOVER[1]);
@@ -95,8 +78,14 @@ export class GroundLaunch {
   private sideU = { uTime: { value: 0 }, uPower: { value: 0 } };
   private clouds: THREE.Sprite[] = [];
   private smoke: { s: THREE.Sprite; born: number; v: THREE.Vector3 }[] = [];
+  private smokeCursor = 0;
+  private shadowActorsReady = false;
+  private disposed = false;
+  private cloudReady = false;
+  get ready() { return this.landscape.ready && this.cloudReady; }
   private smokeTex: THREE.Texture;
   private ground = new THREE.Group();
+  private landscape: LaunchEnvironment;
   private fog = new THREE.Fog(0xc4d5e2, 40, 650);
   private sun = new THREE.DirectionalLight(0xfff1dc, 2.6);
   private t = 0;
@@ -106,10 +95,19 @@ export class GroundLaunch {
   private flagRest: Float32Array | null = null;
   private birds: THREE.Sprite[] = [];
 
-  constructor(private agamHost: THREE.Group) {
+  constructor(private agamHost: THREE.Group, low = false, environment?: THREE.Texture) {
+    this.landscape = new LaunchEnvironment(low);
+    this.scene.environment = environment ?? null;
+    this.scene.environmentIntensity = 0.22;
     this.scene.fog = this.fog;
     this.sun.position.set(-30, 40, 20);
-    this.scene.add(this.sun, new THREE.HemisphereLight(0xcfe6ff, 0x3a5a2a, 1.1));
+    this.sun.castShadow = true;
+    this.sun.shadow.mapSize.setScalar(low ? 1024 : 2048);
+    Object.assign(this.sun.shadow.camera, {left:-14,right:14,top:14,bottom:-14,near:1,far:100});
+    this.sun.shadow.bias = -.00015;
+    this.sun.shadow.normalBias = .016;
+    this.sun.shadow.camera.updateProjectionMatrix();
+    this.scene.add(this.sun, new THREE.HemisphereLight(0xcfe6ff, 0x3a5a2a, 0.65));
 
     // langit: gradien horizon → zenit, menggelap ke hitam saat keluar atmosfer; bintang muncul
     const skyMat = new THREE.ShaderMaterial({
@@ -162,8 +160,8 @@ export class GroundLaunch {
       });
     const cone = (r: number) => {
       const g = new THREE.ConeGeometry(r, 1, 20, 1, true);
-      g.translate(0, -0.5, 0);
-      g.rotateX(-Math.PI / 2); // ujung ke +z
+      g.rotateX(Math.PI / 2);
+      g.translate(0, 0, 0.5); // pangkal di nozel; ujung menyempit ke +z
       this.owned.push(g);
       return g;
     };
@@ -189,16 +187,25 @@ export class GroundLaunch {
       g.fillRect(0, 0, 64, 64);
     });
     this.owned.push(this.smokeTex);
+    for(let i=0;i<80;i++) {
+      const s=new THREE.Sprite(new THREE.SpriteMaterial({map:this.smokeTex,transparent:true,depthWrite:false,opacity:0}));
+      s.visible=false;this.scene.add(s);this.smoke.push({s,born:-100,v:new THREE.Vector3()});
+    }
 
     // awan yang ditembus: lapisan tebal di tengah (whiteout singkat), sisa-sisa di atas
     const r = rng(7);
-    const texes = [cloudTexture(3), cloudTexture(11), cloudTexture(29)];
+    const cloud = new THREE.TextureLoader().load('/angkasa/kapal/realism/cumulus.webp', t => {
+      if (this.disposed) t.dispose();
+      this.cloudReady = true;
+    }, undefined, () => { this.cloudReady = true; });
+    cloud.colorSpace = THREE.SRGBColorSpace;
+    const texes = [cloud];
     this.owned.push(...texes);
     for (let i = 0; i < 110; i++) {
       // (awan rendah tidak perlu: foto panorama sudah punya awan) — lapisan tebal di tengah, sisa tipis di atas
       const band = i < 95 ? [150, 205] : [260, 320];
       const s = new THREE.Sprite(
-        new THREE.SpriteMaterial({ map: texes[i % 3], transparent: true, depthWrite: false, opacity: 0.95, fog: false }),
+        new THREE.SpriteMaterial({ map: cloud, transparent: true, depthWrite: false, opacity: 0.95, fog: false }),
       );
       const y = band[0] + r() * (band[1] - band[0]);
       const ang = r() * Math.PI * 2;
@@ -206,7 +213,7 @@ export class GroundLaunch {
       s.position.set(Math.cos(ang) * rad, y, Math.sin(ang) * rad - 4);
       const sc = 16 + r() * 26;
       s.scale.set(sc, sc * 0.6, 1);
-      s.material.rotation = r() * Math.PI;
+      s.material.rotation = (r() - .5) * .16;
       this.clouds.push(s);
       this.scene.add(s);
       this.owned.push(s.material);
@@ -215,27 +222,21 @@ export class GroundLaunch {
 
   private buildGround() {
     const r = rng(5);
-    // rumput dari foto yang sama (diulang bercermin agar tidak terlihat sambungan)
-    const grass = new THREE.TextureLoader().load("/angkasa/kapal/rumput.jpg", (t) => {
-      t.colorSpace = THREE.SRGBColorSpace;
-      t.needsUpdate = true;
-    });
-    grass.wrapS = grass.wrapT = THREE.MirroredRepeatWrapping;
-    grass.repeat.set(70, 140);
-    const gm = new THREE.MeshStandardMaterial({ map: grass, roughness: 1, color: 0xf2f2f2 });
-    const ground = new THREE.Mesh(new THREE.CircleGeometry(195, 64), gm);
-    ground.rotation.x = -Math.PI / 2;
-    this.ground.add(ground);
+    this.ground.add(this.landscape.group);
 
     // landasan: beton bundar dengan cincin oranye & garis
-    const padTex = canvasTexture(512, 512, (g) => {
-      g.fillStyle = "#9a9a96";
+    const padTex = canvasTexture(2048, 2048, (g) => {
+      g.scale(4,4);
+      g.fillStyle = "#9c9e97";
       g.fillRect(0, 0, 512, 512);
-      for (let i = 0; i < 1800; i++) {
+      for (let i = 0; i < 26000; i++) {
         g.fillStyle = r() < 0.5 ? "rgba(60,60,60,.12)" : "rgba(255,255,255,.08)";
-        g.fillRect(r() * 512, r() * 512, 2 + r() * 4, 2 + r() * 4);
+        g.fillRect(r() * 512, r() * 512, 0.15 + r() * 0.55, 0.15 + r() * 0.55);
       }
-      g.strokeStyle = "#ff8a1f";
+      // Expansion joints and fine aggregate are sized for a six-meter pad.
+      g.strokeStyle = "rgba(52,59,56,.27)"; g.lineWidth = .55;
+      for(const t of [86,171,341,426]) {g.beginPath();g.moveTo(t,0);g.lineTo(t,512);g.moveTo(0,t);g.lineTo(512,t);g.stroke();}
+      g.strokeStyle = "#d49b46";
       g.lineWidth = 16;
       g.beginPath();
       g.arc(256, 256, 190, 0, Math.PI * 2);
@@ -251,9 +252,11 @@ export class GroundLaunch {
       g.textBaseline = "middle";
       g.fillText("R1", 256, 262);
     });
-    const pad = new THREE.Mesh(new THREE.CircleGeometry(3.2, 64), new THREE.MeshStandardMaterial({ map: padTex, roughness: 0.9 }));
+    const pad = new THREE.Mesh(new THREE.CircleGeometry(3.2, 128), new THREE.MeshStandardMaterial({ map: padTex, roughness: 0.9 }));
     pad.rotation.x = -Math.PI / 2;
     pad.position.y = 0.01;
+    pad.receiveShadow = true;
+    padTex.anisotropy = 8;
     this.ground.add(pad);
 
     // tiang bendera Merah Putih di tepi landasan
@@ -269,6 +272,7 @@ export class GroundLaunch {
     flag.position.set(-3.6 + 0.46, 2.9, -1.8);
     this.flag = flag;
     this.flagRest = Float32Array.from(flag.geometry.getAttribute("position").array as Float32Array);
+    pole.castShadow = flag.castShadow = true;
     this.ground.add(pole, flag);
 
     // burung: siluet kecil mengepakkan sayap, melintas pelan di langit
@@ -315,7 +319,8 @@ export class GroundLaunch {
     this.ground.add(wall);
     this.owned.push(pano);
     this.scene.add(this.ground);
-    this.ground.traverse((o) => {
+    // Landscape owns its own instanced geometry and shader resources.
+    for (const o of this.ground.children.filter(o => o !== this.landscape.group)) {
       const m = o as THREE.Mesh;
       if (m.isMesh) {
         this.owned.push(m.geometry);
@@ -323,7 +328,7 @@ export class GroundLaunch {
         this.owned.push(mt);
         if (mt.map) this.owned.push(mt.map);
       }
-    });
+    }
   }
 
   /** model pesawat (klon dari lapisan pesawat) — hidung ke −z, badan berpusat di titik asal */
@@ -333,16 +338,21 @@ export class GroundLaunch {
   }
 
   private puff(at: THREE.Vector3, spread: number) {
-    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: this.smokeTex, transparent: true, depthWrite: false, opacity: 0.8 }));
-    s.position.copy(at);
-    const a = Math.random() * Math.PI * 2;
-    this.smoke.push({ s, born: this.t, v: new THREE.Vector3(Math.cos(a) * spread, 0.3 + Math.random() * 0.4, Math.sin(a) * spread) });
-    this.scene.add(s);
+    const p=this.smoke[this.smokeCursor++ % this.smoke.length];
+    p.s.visible=true; p.s.position.copy(at); p.born=this.t;
+    const a=Math.random()*Math.PI*2;
+    p.v.set(Math.cos(a)*spread,.3+Math.random()*.4,Math.sin(a)*spread);
+
   }
 
   /** u = kemajuan seluruh pembuka (0–GROUND_END untuk adegan ini) */
   update(u: number, dt: number, aspect: number, agamPose: (mode: "wave" | "walk" | "jump") => void) {
     this.t += dt;
+    this.landscape.update(this.t);
+    if (!this.shadowActorsReady && this.agamHost.children.length) {
+      this.agamHost.traverse(o=>{if((o as THREE.Mesh).isMesh)o.castShadow=true;});
+      this.shadowActorsReady=true;
+    }
     // bendera berkibar (gelombang berjalan dari tiang ke ujung)
     if (this.flag && this.flagRest) {
       const pos = this.flag.geometry.getAttribute("position") as THREE.BufferAttribute;
@@ -373,10 +383,10 @@ export class GroundLaunch {
     const y = 0.56 + hover * 1.8 + 420 * Math.pow(climbK, 2.1);
     // Manuver ala wahana 4D selama menanjak: meliuk kiri-kanan (S), lalu satu guling penuh saat menembus awan tebal.
     const weaveK = sm(u, 0.33, 0.37) * (1 - sm(u, 0.5, GROUND_END));
-    const wx = Math.sin(climbK * Math.PI * 3) * 5 * weaveK;
-    const wz = Math.sin(climbK * Math.PI * 2 + 1) * 2.5 * weaveK;
-    const bank = -Math.cos(climbK * Math.PI * 3) * 0.55 * weaveK; // miring ke arah belokan
-    const barrel = sm(u, 0.405, 0.465) * Math.PI * 2;
+    const wx = Math.sin(climbK * Math.PI * 2) * 2.2 * weaveK;
+    const wz = Math.sin(climbK * Math.PI * 2 + 1) * 1.2 * weaveK;
+    const bank = -Math.cos(climbK * Math.PI * 2) * 0.22 * weaveK; // miring ke arah belokan
+    const barrel = 0; // Stabilized flight: no full-screen barrel roll.
     this.ship.position.set(wx, y, wz);
     this.shipBody.rotation.set(pitch * (Math.PI / 2) * 0.96, 0, 0);
     this.rollG.rotation.z = bank + barrel + Math.sin(this.t * 1.3) * 0.02 * hover;
@@ -395,18 +405,17 @@ export class GroundLaunch {
       this.lastSmoke = this.t;
       this.puff(new THREE.Vector3((Math.random() - 0.5) * 1.2, 0.2, (Math.random() - 0.5) * 1.2), 1.2 + main * 2);
     }
-    this.smoke = this.smoke.filter((p) => {
+    this.smoke.forEach((p) => {
+      if (!p.s.visible) return;
       const age = this.t - p.born;
       if (age > 3.5) {
-        this.scene.remove(p.s);
-        p.s.material.dispose();
-        return false;
+        p.s.visible=false;
+        return;
       }
       p.s.position.addScaledVector(p.v, dt);
       const sc = 0.8 + age * 1.6;
       p.s.scale.set(sc, sc, 1);
       p.s.material.opacity = 0.75 * (1 - age / 3.5);
-      return true;
     });
 
     // Agam: melambai → berjalan ke samping pesawat (menghadap arah jalan) → melompat naik ke atas kokpit →
@@ -451,6 +460,11 @@ export class GroundLaunch {
     const lookAgam = new THREE.Vector3(ag.x, ag.y * 0.45 + 0.45, ag.z);
     const groundLook = lookAgam.lerp(new THREE.Vector3(-0.3, 0.8, 0), reveal);
     groundLook.y += hover * 1.6;
+    if (aspect < 1) {
+      // Fit both Agam and the ship in portrait instead of cropping the cockpit at the right edge.
+      groundLook.x *= .55;
+      groundPos.sub(groundLook).multiplyScalar(Math.min(1.65,1/Math.sqrt(aspect))).add(groundLook);
+    }
     // kamera mengejar dengan sedikit tertinggal di belokan (terasa ngebut & meliuk)
     const chasePos = new THREE.Vector3(wx * 0.7 + 1.3, y - 5.2, wz * 0.7 + 2.4);
     const chaseLook = new THREE.Vector3(wx, y + 6, wz - 0.3);
@@ -458,20 +472,20 @@ export class GroundLaunch {
     if (follow > 0) c.position.y = THREE.MathUtils.lerp(groundPos.y + hover * 0.6, chasePos.y, follow);
     const look = groundLook.lerp(chaseLook, follow);
     // getaran kamera saat mesin utama menyala & menembus awan
-    const shake = (main * (1 - climbK) * 0.05 + sm(u, 0.4, 0.46) * (1 - sm(u, 0.47, 0.5)) * 0.08) * (aspect < 1 ? 1.3 : 1);
-    c.position.x += (Math.random() - 0.5) * shake;
-    c.position.y += (Math.random() - 0.5) * shake;
+    const shake = (main * (1 - climbK) * 0.05 + sm(u, 0.4, 0.46) * (1 - sm(u, 0.47, 0.5)) * 0.08) * (aspect < 1 ? .35 : .55);
+    c.position.x += Math.sin(this.t * 13.7) * .35 * shake;
+    c.position.y += Math.sin(this.t * 17.3 + .8) * .25 * shake;
     // arah "atas" layar: normal di darat; saat menatap ke atas pakai −z (agar orientasi stabil), ikut miring saat belok
     this.camUp.set(0, 1 - follow, -follow).normalize();
     c.up.copy(this.camUp);
     c.lookAt(look);
     if (follow > 0) {
       const fwd = look.clone().sub(c.position).normalize();
-      c.up.applyAxisAngle(fwd, bank * 0.45 * follow);
+      c.up.applyAxisAngle(fwd, bank * 0.2 * follow);
       c.lookAt(look);
     }
     // FOV melebar saat ngebut (kesan kecepatan)
-    c.fov += climbK * 14 * (1 - sm(u, 0.5, GROUND_END));
+    c.fov += climbK * 7 * (1 - sm(u, 0.5, GROUND_END));
     c.updateProjectionMatrix();
     this.sky.position.copy(c.position);
 
@@ -485,11 +499,17 @@ export class GroundLaunch {
   }
 
   render(renderer: THREE.WebGLRenderer) {
+    const exposure = renderer.toneMappingExposure;
+    renderer.toneMappingExposure = .92;
     renderer.render(this.scene, this.camera);
+    renderer.toneMappingExposure = exposure;
   }
 
   dispose() {
+    this.disposed = true;
     for (const p of this.smoke) p.s.material.dispose();
-    this.owned.forEach((o) => o.dispose());
+    this.landscape.dispose();
+    this.sun.shadow.dispose();
+    new Set(this.owned).forEach((o) => o.dispose());
   }
 }

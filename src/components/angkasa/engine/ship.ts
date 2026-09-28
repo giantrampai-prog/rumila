@@ -29,6 +29,8 @@ export class ShipOverlay {
   private roll = 0;
   private yaw = 0;
   private env: THREE.Texture | null = null;
+  private envTarget: THREE.WebGLRenderTarget | null = null;
+  private disposed = false;
   ready = false;
   visible = false;
   /* Pembuka: Agam melambai di samping pesawat, masuk kokpit, pesawat berbalik & melesat. */
@@ -43,7 +45,7 @@ export class ShipOverlay {
   private shipBack = 0.8;
   /** pesawat & Agam siap tampil di pembuka */
   get introReady() {
-    return this.ready && !!this.agam?.ready;
+    return this.ready && !!this.agam?.ready && !!this.ground?.ready;
   }
   get introOn() {
     return this.introU !== null;
@@ -52,19 +54,21 @@ export class ShipOverlay {
   setIntro(u: number | null) {
     this.introU = u;
     if (u !== null && !this.ground) {
-      this.ground = new GroundLaunch(this.agamHost);
+      this.ground = new GroundLaunch(this.agamHost, this.renderer.getPixelRatio() <= 1.5, this.env ?? undefined);
       if (this.shipModel) this.ground.setShip(this.shipModel.clone(), this.shipBack);
     }
     if (u !== null && !this.agam) {
       this.agam = new AgamModel(
         this.agamHost,
-        (root) =>
+        (root) => {
+          if (this.disposed) { disposeModel(root); root.removeFromParent(); return; }
           root.traverse((o) => {
             const m = o as THREE.Mesh;
             if (!m.isMesh) return;
             const mats = Array.isArray(m.material) ? m.material : [m.material];
             for (const mt of mats) this.agamMats.push(mt);
-          }),
+          });
+        },
         { url: "/roket/agam-astronot.glb", fit: (r) => r.scale.setScalar(0.8 / 1.2) },
       );
     }
@@ -77,7 +81,7 @@ export class ShipOverlay {
     }
   }
 
-  constructor(renderer: THREE.WebGLRenderer) {
+  constructor(private renderer: THREE.WebGLRenderer) {
     this.scene.add(this.rig, this.sun, this.sun.target, this.fill);
     // kilatan putih saat keluar atmosfer (peralihan adegan darat → angkasa)
     this.flash = new THREE.Mesh(
@@ -91,15 +95,18 @@ export class ShipOverlay {
     this.rig.add(this.body);
     // pantulan lembut untuk material logam/kaca (tanpa latar)
     const pm = new THREE.PMREMGenerator(renderer);
-    this.env = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+    const room = new RoomEnvironment();
+    this.envTarget = pm.fromScene(room, 0.04);
+    this.env = this.envTarget.texture;
+    room.dispose();
     pm.dispose();
     this.scene.environment = this.env;
     this.scene.environmentIntensity = 0.35;
 
     // api mesin: kerucut aditif dengan gradien (inti putih-biru → ujung jingga), berkedip halus
     const fg = new THREE.ConeGeometry(0.11, 1, 24, 1, true);
-    fg.translate(0, -0.5, 0);
-    fg.rotateX(-Math.PI / 2); // ujung kerucut ke +z (ke belakang pesawat)
+    fg.rotateX(Math.PI / 2);
+    fg.translate(0, 0, 0.5); // pangkal di nozel, ujung api meruncing ke belakang
     const fm = new THREE.ShaderMaterial({
       uniforms: this.flameU,
       vertexShader: `varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
@@ -137,6 +144,7 @@ export class ShipOverlay {
       URL,
       (g) => {
         const m = g.scene;
+        if (this.disposed) { disposeModel(m); return; }
         const holder = new THREE.Group();
         holder.rotation.y = FIT.yaw;
         holder.add(m);
@@ -149,7 +157,13 @@ export class ShipOverlay {
         holder.position.copy(box.getCenter(new THREE.Vector3()).multiplyScalar(-s));
         m.traverse((o) => {
           const mesh = o as THREE.Mesh;
-          if (mesh.isMesh) mesh.frustumCulled = false;
+          if (mesh.isMesh) {
+            mesh.castShadow = true; mesh.receiveShadow = true;
+            for(const material of Array.isArray(mesh.material)?mesh.material:[mesh.material]) {
+              const m=material as THREE.MeshStandardMaterial;
+              for(const map of [m.map,m.normalMap,m.roughnessMap,m.metalnessMap]) if(map) map.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
+            }
+          }
         });
         this.body.add(holder);
         // nozel utama di belakang (+z): api & pendar di sana
@@ -210,7 +224,8 @@ export class ShipOverlay {
     const dist = (portrait ? 4.8 / Math.max(0.55, main.aspect) ** 0.5 : 4.6) + side * 1.6;
     // lebar setengah layar pada jarak ini → geser ke kanan bawah saat singgah
     const halfW = Math.tan((main.fov * Math.PI) / 360) * dist * main.aspect;
-    this.rig.position.set(side * halfW * 0.55, -0.8 - side * 0.35 - Math.sin(this.t * 0.9) * 0.04, -dist);
+    this.rig.scale.setScalar(portrait ? 1 - side * .32 : 1);
+    this.rig.position.set(side * halfW * (portrait ? .35 : .55), (portrait ? -.65-side*.2 : -.8-side*.35) - Math.sin(this.t*.9)*.04, -dist);
     this.body.rotation.set(0.2 + Math.sin(this.t * 0.7) * 0.02, this.yaw - side * 0.5, this.roll + Math.sin(this.t * 0.5) * 0.02);
   }
 
@@ -220,6 +235,7 @@ export class ShipOverlay {
    * saat kamera utama mundur ke tata surya, lalu melesat menjauh.
    */
   private introPose(u: number, main: THREE.PerspectiveCamera, dt: number) {
+    this.rig.scale.setScalar(1);
     this.groundMode = u < GROUND_END;
     if (this.groundMode) {
       this.ground?.update(u, dt, main.aspect, (mode) => {
@@ -261,12 +277,17 @@ export class ShipOverlay {
     this.power = Math.max(this.power, 0.6 + 0.4 * away);
   }
 
-  render(renderer: THREE.WebGLRenderer) {
+  renderGround(renderer: THREE.WebGLRenderer) {
     if (this.groundMode && this.ground) {
       // adegan darat menutupi seluruh layar (tata surya di belakangnya belum terlihat)
       this.ground.render(renderer);
-      return;
+      return true;
     }
+    return false;
+  }
+
+  render(renderer: THREE.WebGLRenderer) {
+    if (this.groundMode) return;
     if (!this.visible || !this.ready) return;
     const ac = renderer.autoClear;
     renderer.autoClear = false;
@@ -276,13 +297,25 @@ export class ShipOverlay {
   }
 
   dispose() {
-    this.scene.traverse((o) => {
-      const m = o as THREE.Mesh;
-      m.geometry?.dispose();
-      const mat = m.material as THREE.Material | THREE.Material[] | undefined;
-      (Array.isArray(mat) ? mat : mat ? [mat] : []).forEach((x) => x.dispose());
-    });
-    this.env?.dispose();
+    this.disposed = true;
     this.ground?.dispose();
+    disposeModel(this.scene);
+    disposeModel(this.agamHost);
+    this.envTarget?.dispose();
   }
+}
+
+/** One owner for GLB resources shared with the ground-scene clone. */
+function disposeModel(root: THREE.Object3D) {
+  const resources=new Set<{dispose():void}>();
+  root.traverse(o=>{
+    const mesh=o as THREE.SkinnedMesh;
+    if(mesh.geometry) resources.add(mesh.geometry);
+    if(mesh.skeleton) resources.add(mesh.skeleton);
+    for(const material of Array.isArray(mesh.material)?mesh.material:mesh.material?[mesh.material]:[]) {
+      resources.add(material);
+      for(const value of Object.values(material))if(value instanceof THREE.Texture)resources.add(value);
+    }
+  });
+  resources.forEach(r=>r.dispose());root.clear();
 }

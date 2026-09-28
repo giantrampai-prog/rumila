@@ -169,9 +169,11 @@ export function lumpyGeometry(seed: number, amount = 0.35, detail = 3) {
 function patchNightLights(
   mat: THREE.MeshStandardMaterial,
   sunWorld: { value: THREE.Vector3 },
+  cloud: { uCloudMap: { value: THREE.Texture | null }; uCloudInverse: { value: THREE.Matrix4 }; uCloudVisible: { value: number } },
 ) {
   mat.onBeforeCompile = (sh) => {
     sh.uniforms.uSunWorld = sunWorld;
+    Object.assign(sh.uniforms, cloud);
     sh.vertexShader = sh.vertexShader
       .replace(
         "#include <common>",
@@ -184,7 +186,7 @@ function patchNightLights(
     sh.fragmentShader = sh.fragmentShader
       .replace(
         "#include <common>",
-        "#include <common>\nuniform vec3 uSunWorld;\nvarying vec3 vWorldNormalN;\nvarying vec3 vWorldPosN;",
+        "#include <common>\nuniform sampler2D uCloudMap; uniform mat4 uCloudInverse; uniform float uCloudVisible;\nuniform vec3 uSunWorld;\nvarying vec3 vWorldNormalN;\nvarying vec3 vWorldPosN;",
       )
       .replace(
         "#include <roughnessmap_fragment>",
@@ -197,8 +199,20 @@ function patchNightLights(
         "#include <emissivemap_fragment>",
         `#include <emissivemap_fragment>
          float lit = dot(normalize(vWorldNormalN), normalize(uSunWorld - vWorldPosN));
-         totalEmissiveRadiance *= smoothstep(0.15, -0.2, lit);`,
-      );
+         totalEmissiveRadiance *= 1.0 - smoothstep(-0.2, 0.15, lit);`,
+      )
+      .replace('#include <lights_fragment_end>', `#include <lights_fragment_end>
+        if(uCloudVisible > .5) {
+          vec3 p=(uCloudInverse*vec4(vWorldPosN,1.)).xyz;
+          vec3 l=normalize((uCloudInverse*vec4(normalize(uSunWorld-vWorldPosN),0.)).xyz);
+          float b=dot(p,l);
+          float t=-b+sqrt(max(0.,b*b+1.006*1.006-dot(p,p)));
+          vec3 h=normalize(p+l*t);
+          vec2 cloudUv=vec2(fract(atan(h.z,-h.x)/6.2831853),asin(clamp(h.y,-1.,1.))/3.14159265+.5);
+          float shade=texture2D(uCloudMap,cloudUv).g*.38;
+          reflectedLight.directDiffuse *= 1.-shade;
+          reflectedLight.directSpecular *= 1.-shade;
+        }`);
   };
 }
 
@@ -206,8 +220,8 @@ function patchNightLights(
  * Permukaan Matahari hidup: peta citra dicampur dua kali dengan geseran berlawanan (plasma bergolak), bintik
  * granulasi halus berdenyut, dan tepi lebih gelap (limb darkening) seperti foto Matahari sungguhan.
  */
-/** benda berbatu yang diberi relief (kekuatan bump) */
-const BUMPY: Record<string, number> = { mercury: 2.2, moon: 2.2, mars: 1.4, pluto: 1 };
+/** Subtle illustrative micro-relief, NOT elevation data. Relative to each globe radius. */
+const BUMPY: Record<string, number> = { mercury: .008, moon: .009, mars: .005, pluto: .004 };
 
 function patchSunSurface(mat: THREE.MeshBasicMaterial, time: { value: number }) {
   mat.onBeforeCompile = (sh) => {
@@ -308,8 +322,8 @@ function patchRingShadowOnPlanet(
         "#include <common>\nuniform vec3 uSunWorld; uniform vec3 uRingNormal; uniform vec3 uCenter; uniform float uInner; uniform float uOuter; uniform sampler2D uRingTex; varying vec3 vWorldPosR;",
       )
       .replace(
-        "#include <dithering_fragment>",
-        `#include <dithering_fragment>
+        "#include <lights_fragment_end>",
+        `#include <lights_fragment_end>
          vec3 L = normalize(uSunWorld - vWorldPosR);
          float denom = dot(L, uRingNormal);
          if (abs(denom) > 1e-4) {
@@ -319,7 +333,8 @@ function patchRingShadowOnPlanet(
              float r = length(hit - uCenter);
              if (r > uInner && r < uOuter) {
                float a = texture2D(uRingTex, vec2((r - uInner) / (uOuter - uInner), 0.5)).a;
-               gl_FragColor.rgb *= 1.0 - a * 0.75;
+               reflectedLight.directDiffuse *= 1.0 - a * 0.75;
+               reflectedLight.directSpecular *= 1.0 - a * 0.75;
              }
            }
          }`,
@@ -359,6 +374,7 @@ function ringMaterial(
         float sameSide = sign(dot(vN, L)) * sign(dot(vN, V));
         float lit = sameSide > 0.0 ? 1.0 : 0.45;
         gl_FragColor = vec4(c.rgb * shadow * lit, c.a * 0.95);
+        #include <tonemapping_fragment>
         #include <colorspace_fragment>
       }`,
     transparent: true,
@@ -420,9 +436,12 @@ export function createBody(
   axisFrame.add(spin);
 
   const r = opt.radius;
-  const segs = opt.segments ?? (ctx.lowPower ? 48 : 72);
+  const segs = opt.segments ?? (ctx.lowPower ? 64 : 96);
   const sunWorld = { value: new THREE.Vector3() };
   const disposables: { dispose(): void }[] = [];
+  let disposed = false;
+  let mapEpoch = 0;
+  let focusGeometry: THREE.BufferGeometry | null = null;
 
   let geo: THREE.BufferGeometry;
   if (o.texture.procedural === "asteroid")
@@ -484,6 +503,9 @@ export function createBody(
     },
     async loadDetail() {},
     dispose() {
+      disposed = true;
+      mapEpoch++;
+      focusGeometry?.dispose();
       disposables.forEach((d) => d.dispose());
     },
   };
@@ -491,7 +513,9 @@ export function createBody(
 
   // Tekstur peta: lo dulu (ringan), hi saat didekati (lazy).
   const applyMap = async (url: string) => {
+    const epoch = ++mapEpoch;
     const t = await ctx.loadTexture(url);
+    if (disposed || epoch !== mapEpoch) return;
     if (o.id === "sun") {
       t.wrapS = THREE.RepeatWrapping; // permukaan bergeser memutar (lihat patchSunSurface)
       t.needsUpdate = true;
@@ -502,7 +526,7 @@ export function createBody(
       // Relief permukaan berbatu (kawah, lembah) dari terang-gelap peta warna: terlihat di dekat terminator.
       if (BUMPY[o.id]) {
         std.bumpMap = t;
-        std.bumpScale = BUMPY[o.id];
+        std.bumpScale = BUMPY[o.id] * r;
       }
     }
     (mat as THREE.MeshStandardMaterial).color?.set(0xffffff);
@@ -533,8 +557,12 @@ export function createBody(
   const baseMap = () => (variant === "radar" ? o.texture.alt! : (o.texture.hi ?? o.texture.lo!));
   if (o.texture.alt) {
     body.setVariant = async (v) => {
+      if (v === variant) return;
+      const focused = ultraOn;
+      if (focused) body.setUltra?.(false);
       variant = v;
       await applyMap(baseMap());
+      if (focused && !disposed) body.setUltra?.(true);
     };
   }
 
@@ -547,6 +575,16 @@ export function createBody(
   let ultraGen = 0;
   const ultraLoaded: [string, { color?: boolean } | undefined][] = [];
   body.setUltra = (on) => {
+    if (disposed) return;
+    if (geo instanceof THREE.SphereGeometry) {
+      if (on && !focusGeometry) {
+        const n = ctx.lowPower ? 96 : 144;
+        focusGeometry = new THREE.SphereGeometry(1,n,Math.round(n*.66));
+        surface.geometry = focusGeometry;
+      } else if (!on && focusGeometry) {
+        surface.geometry = geo; focusGeometry.dispose(); focusGeometry=null;
+      }
+    }
     if (!ctx.ultra || on === ultraOn || !o.texture.hi) return;
     ultraOn = on;
     const gen = ++ultraGen;
@@ -557,11 +595,11 @@ export function createBody(
         ctx
           .loadTexture(u, l.opts)
           .then(() => {
-            if (gen === ultraGen) {
+            if (!disposed && gen === ultraGen) {
               ultraLoaded.push([u, l.opts]);
               return l.apply(u);
             }
-            if (!ultraOn) ctx.releaseTexture(u, l.opts); // sudah pindah objek sebelum selesai dimuat
+            if (disposed || !ultraOn) ctx.releaseTexture(u, l.opts); // sudah pindah objek sebelum selesai dimuat
           })
           .catch(() => {});
       }
@@ -602,10 +640,20 @@ export function createBody(
 
   // Bumi: awan, lampu malam, atmosfer — lapisan terpisah yang dapat dikendalikan.
   if (o.id === "earth" && opt.detailLayers !== false) {
+    const cloudShadow = {
+      uCloudMap: { value: null as THREE.Texture | null },
+      uCloudInverse: { value: new THREE.Matrix4() },
+      uCloudVisible: { value: 0 },
+    };
+    surface.onBeforeRender = () => {
+      cloudShadow.uCloudVisible.value = body.clouds?.visible && cloudShadow.uCloudMap.value ? 1 : 0;
+      if (body.clouds) cloudShadow.uCloudInverse.value.copy(body.clouds.matrixWorld).invert();
+    };
     if (o.texture.night) {
       const night = o.texture.night;
       const setNight = (url: string) =>
         ctx.loadTexture(url).then((t) => {
+          if (disposed) return;
           std.emissiveMap = t;
           std.emissive = new THREE.Color(0xffd9a0);
           std.emissiveIntensity = 1.1;
@@ -613,11 +661,11 @@ export function createBody(
         });
       setNight(opt.hi ? night : loOf(night)).catch(() => {});
       if (!opt.hi) detailExtras.push(() => setNight(night));
-      patchNightLights(std, sunWorld);
+      patchNightLights(std, sunWorld, cloudShadow);
     }
     if (o.texture.clouds) {
       const cGeo = new THREE.SphereGeometry(
-        1.012,
+        1.006,
         segs,
         Math.round(segs * 0.66),
       );
@@ -631,12 +679,16 @@ export function createBody(
       const clouds = new THREE.Mesh(cGeo, cMat);
       clouds.visible = false; // tanpa peta awan, lapisan ini hanya bola putih: tampil setelah peta dimuat
       const cloudsUrl = o.texture.clouds;
-      const setClouds = (url: string) =>
-        ctx.loadTexture(url, { color: false }).then((t) => {
+      let cloudEpoch = 0;
+      const setClouds = async (url: string) => {
+        const epoch = ++cloudEpoch;
+        const t = await ctx.loadTexture(url, { color: false });
+        if (disposed || epoch !== cloudEpoch) return;
           cMat.alphaMap = t;
+          cloudShadow.uCloudMap.value = t;
           cMat.needsUpdate = true;
           clouds.visible = true;
-        });
+      };
       setClouds(opt.hi ? cloudsUrl : loOf(cloudsUrl)).catch(() => {});
       ultraLayers.push({ base: () => cloudsUrl, apply: setClouds, opts: { color: false } });
       if (!opt.hi) detailExtras.push(() => setClouds(cloudsUrl));
@@ -646,10 +698,10 @@ export function createBody(
       body.clouds = clouds;
       disposables.push(cGeo, cMat);
     }
-    const aGeo = new THREE.SphereGeometry(1.045, segs, Math.round(segs * 0.66));
+    const aGeo = new THREE.SphereGeometry(1.025, segs, Math.round(segs * 0.66));
     const aUniform = { value: new THREE.Vector3() };
     sunUniformTargets.push(aUniform);
-    const aMat = atmosphereMaterial(new THREE.Color(0x7db6ff), aUniform, 1.25);
+    const aMat = atmosphereMaterial(new THREE.Color(0x7db6ff), aUniform, .85);
     const atm = new THREE.Mesh(aGeo, aMat);
     atm.name = "earth.atmosphere";
     atm.scale.setScalar(r);

@@ -283,9 +283,9 @@ export class SolarView implements ModeView {
     const target = b.orbitAnchor.getWorldPosition(new THREE.Vector3());
     this.followPrev.copy(target);
     // Cincin sudah melebarkan frameRadius; globe polos diberi ruang lebih agar tidak memenuhi layar.
-    // Objek mengisi ±30–40% area terlihat: lega untuk melihatnya berputar dan konteks di sekitarnya.
+    // Area terlihat sudah mengecualikan kartu informasi dan navigasi di tampilan anak.
     const dist =
-      (b.frameRadius / Math.sin(this.ctx.fitHalfFov())) * (b.rings ? 1.9 : 3);
+      (b.frameRadius / Math.sin(this.ctx.fitHalfFov())) * (b.rings ? 1.2 : 1.35);
     // Sudut pandang dari sisi yang tersinari & sedikit di atas bidang (cincin terbaca).
     const fromSun = target.clone().normalize();
     if (fromSun.lengthSq() < 0.5) fromSun.set(0, 0, 1);
@@ -443,6 +443,10 @@ export class SolarView implements ModeView {
 
   setVariant(id: string, v: string) {
     return this.bodies.get(id)?.setVariant?.(v, this.ctx);
+  }
+
+  renderOverride(renderer: THREE.WebGLRenderer) {
+    return this.ship?.renderGround(renderer) ?? false;
   }
 
   afterRender(renderer: THREE.WebGLRenderer) {
