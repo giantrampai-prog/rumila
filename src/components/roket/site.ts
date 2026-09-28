@@ -151,7 +151,52 @@ export function buildTerrain(low: boolean) {
   g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2));
   g.setIndex(idx);
   g.computeVertexNormals();
-  const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ vertexColors: true, map: detailTex(), roughness: 0.96 }));
+  const mat = new THREE.MeshStandardMaterial({ vertexColors: true, map: detailTex(), roughness: 0.96 });
+  // Hutan di bukit & pegunungan: tajuk pohon berbintik (terang di pucuk, gelap di celah), bercak hutan berskala
+  // besar, lembah lebih gelap & punggung bukit lebih terang — seperti foto udara hutan tropis. Hanya di luar area
+  // landasan; skala tajuk membesar di kejauhan agar tidak berkedip.
+  mat.onBeforeCompile = (sh) => {
+    sh.vertexShader = sh.vertexShader
+      .replace("#include <common>", "#include <common>\nvarying vec3 vTW;\nvarying vec3 vTN;")
+      .replace(
+        "#include <begin_vertex>",
+        "#include <begin_vertex>\nvTW = (modelMatrix * vec4(transformed, 1.0)).xyz;\nvTN = normalize(mat3(modelMatrix) * objectNormal);",
+      );
+    sh.fragmentShader = sh.fragmentShader
+      .replace(
+        "#include <common>",
+        `#include <common>
+        varying vec3 vTW; varying vec3 vTN;
+        float th(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+        float tn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+          return mix(mix(th(i), th(i + vec2(1.0, 0.0)), f.x), mix(th(i + vec2(0.0, 1.0)), th(i + vec2(1.0, 1.0)), f.x), f.y); }`,
+      )
+      .replace(
+        "#include <color_fragment>",
+        `#include <color_fragment>
+        {
+          vec3 c = diffuseColor.rgb;
+          float green = smoothstep(0.0, 0.06, c.g - max(c.r, c.b));      // hanya permukaan berhutan/berumput
+          float away = smoothstep(22.0, 40.0, length(vTW.xz));            // bukan area landasan
+          float dist = length(cameraPosition - vTW);
+          vec2 p = vTW.xz;
+          // tajuk pohon: dekat = rinci, jauh = gumpalan lebih besar (tidak berkedip)
+          float nearC = tn(p * 0.9) * 0.6 + tn(p * 2.3) * 0.4;
+          float farC = tn(p * 0.16) * 0.55 + tn(p * 0.45) * 0.45;
+          float crown = mix(nearC, farC, smoothstep(40.0, 140.0, dist));
+          float macro = tn(p * 0.025) * 0.6 + tn(p * 0.06) * 0.4;         // petak hutan tua/muda
+          float up = clamp(vTN.y, 0.0, 1.0);
+          float k = green * away;
+          float amp = mix(0.62, 0.9, smoothstep(60.0, 250.0, dist));        // jauh: kontras lebih kuat (kabut meredam)
+          c *= mix(1.0, 1.0 - amp * 0.62 + amp * 0.62 * 2.0 * (crown - 0.5) + amp * 0.3, k); // pucuk terang, celah gelap
+          c = mix(c, c * vec3(0.78, 1.04, 0.86), k * smoothstep(0.35, 0.75, macro)); // hijau tua kebiruan
+          c = mix(c, c * vec3(1.12, 1.08, 0.9), k * smoothstep(0.55, 0.25, macro) * 0.6); // hijau muda kekuningan
+          c *= mix(1.0, 0.8 + 0.25 * up, k);                                 // lereng curam lebih gelap
+          diffuseColor.rgb = c;
+        }`,
+      );
+  };
+  const m = new THREE.Mesh(g, mat);
   m.receiveShadow = true;
   m.name = "terrain";
   return m;

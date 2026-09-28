@@ -1244,7 +1244,7 @@ export class RocketScene {
     (this.pano.material as THREE.ShaderMaterial).uniforms.uOpacity.value = panoK;
     this.pano.visible = panoK > 0.001;
     // kabut tipis: pegunungan jauh tampak hijau-kebiruan berkabut (perspektif udara), bukan gumpalan putih
-    fog.density = 0.0036 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
+    fog.density = 0.0024 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
     this.hemi.intensity = 0.9 * (1 - smooth(20, 90, camAlt)) + 0.1;
     (this.glow.material as THREE.ShaderMaterial).uniforms.uAlpha.value = smooth(25, 120, camAlt);
     (this.ozone.material as THREE.MeshBasicMaterial).opacity = 0.06 * smooth(8, 20, camAlt) * (1 - smooth(60, 200, camAlt)) + 0.05 * smooth(200, 600, camAlt);
