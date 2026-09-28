@@ -565,7 +565,7 @@ export function stopTraffic() {
 /* ---------------- mesin pesawat & angin (terus-menerus, dikendalikan tiap bingkai) ---------------- */
 
 let engine: {
-  set: (thrust: number, wind: number, spool: number) => void;
+  set: (thrust: number, wind: number, spool: number, crackle: number) => void;
   stop: (fade: number) => void;
 } | null = null;
 
@@ -574,7 +574,7 @@ let engine: {
  * dan desis angin yang naik sesuai kecepatan. Panggil tiap bingkai; nilai 0–1 (thrust = kekuatan mesin,
  * wind = kecepatan menembus udara, spool = turbin berputar).
  */
-export function engineSound(thrust: number, wind: number, spool: number) {
+export function engineSound(thrust: number, wind: number, spool: number, crackle = 0) {
   if (muted) return stopEngineSound(0.2);
   const c = out();
   if (!c) return;
@@ -612,13 +612,31 @@ export function engineSound(thrust: number, wind: number, spool: number) {
     whineG.gain.value = 0;
     whine.connect(whineG).connect(master!);
     whine.start();
+    // letupan kasar khas mesin roket: desis tinggi yang "digetarkan" dua LFO (terdengar jelas di speaker HP)
+    const crack = mk('bandpass', 2400, 0.45);
+    const lfo1 = c.createOscillator();
+    lfo1.type = 'square';
+    lfo1.frequency.value = 19;
+    const lfo2 = c.createOscillator();
+    lfo2.type = 'sine';
+    lfo2.frequency.value = 7.3;
+    const depth = c.createGain();
+    depth.gain.value = 0;
+    lfo1.connect(depth);
+    lfo2.connect(depth);
+    depth.connect(crack.g.gain);
+    lfo1.start();
+    lfo2.start();
     const k = 0.12; // konstanta waktu perubahan (detik) — halus, tanpa klik
     engine = {
-      set(t, w, s) {
+      set(t, w, s, cr) {
         const now = c.currentTime;
+        crack.g.gain.setTargetAtTime(0.11 * cr, now, k);
+        depth.gain.setTargetAtTime(0.05 * cr, now, k);
+        crack.fl.frequency.setTargetAtTime(1800 + cr * 1400, now, k);
         rumble.g.gain.setTargetAtTime(0.42 * Math.pow(t, 1.1), now, k);
         rumble.fl.frequency.setTargetAtTime(110 + t * 700, now, k);
-        roar.g.gain.setTargetAtTime(0.14 * t * t, now, k);
+        roar.g.gain.setTargetAtTime(0.22 * t * t, now, k);
         humG.gain.setTargetAtTime(0.05 * t + 0.015 * s, now, k);
         hum.frequency.setTargetAtTime(42 + t * 30, now, k);
         whineG.gain.setTargetAtTime(0.018 * s, now, 0.3);
@@ -628,13 +646,14 @@ export function engineSound(thrust: number, wind: number, spool: number) {
       },
       stop(fade) {
         const now = c.currentTime;
-        for (const g of [rumble.g, roar.g, wnd.g, humG, whineG]) g.gain.setTargetAtTime(0, now, Math.max(0.02, fade / 3));
-        const nodes = [rumble.n, roar.n, wnd.n, hum, whine];
+        for (const g of [rumble.g, roar.g, wnd.g, humG, whineG, crack.g, depth]) g.gain.setTargetAtTime(0, now, Math.max(0.02, fade / 3));
+        const nodes = [rumble.n, roar.n, wnd.n, crack.n, hum, whine, lfo1, lfo2];
         window.setTimeout(() => nodes.forEach((n) => { try { n.stop(); } catch {} }), fade * 1000 + 200);
       },
     };
   }
-  engine.set(Math.max(0, Math.min(1, thrust)), Math.max(0, Math.min(1, wind)), Math.max(0, Math.min(1, spool)));
+  const cl = (x: number) => Math.max(0, Math.min(1, x));
+  engine.set(cl(thrust), cl(wind), cl(spool), cl(crackle));
 }
 
 export function stopEngineSound(fade = 1) {

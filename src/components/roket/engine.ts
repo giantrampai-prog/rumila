@@ -8,7 +8,7 @@ import { skyEnvScene } from "./site";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
 import { followAudio } from "@/lib/audio-clock";
-import { sfx } from "@/lib/sfx";
+import { engineSound, sfx, stopEngineSound } from "@/lib/sfx";
 import { sharedAudio, unlockAudio } from "@/lib/audio-unlock";
 import { LoopMusic } from "@/lib/bgm";
 import { Cabin } from "./cabin";
@@ -449,6 +449,10 @@ export class RocketEngine {
   /** Ikuti rekaman bila ada: persinggahan & progres dari posisi audio. true = audio yang mengatur waktu. */
   private clock = 0;
   private lastRumble = 0;
+  /** mesin sedang menyala (bingkai sebelumnya) — untuk bunyi penyalaan */
+  private wasBurning = false;
+  /** suara mesin kontinu sedang diputar (dihentikan saat keluar mode Terbang) */
+  private engineLive = false;
   private syncAudio(dt: number): boolean {
     const part = partFor(this.idx);
     if (!part) {
@@ -525,11 +529,19 @@ export class RocketEngine {
       // bunyi "klik" tepat saat kapsul menempel ke stasiun
       if (ui.playing && this.lastGap !== null && this.lastGap > 0 && pose.issGap === 0) sfx.clink();
       this.lastGap = pose.issGap;
-      // gemuruh mesin selama menyala; makin pelan di udara tipis (di luar angkasa hampir tak terdengar)
-      if (pose.burn && ui.playing && now - this.lastRumble > 450) {
-        this.lastRumble = now;
-        sfx.rumble(1 - smooth(15, 110, pose.altKm) * 0.85);
-      }
+      // Suara mesin roket kontinu: gemuruh + raungan semburan + letupan kasar selama menyala, angin menderu saat
+      // menembus atmosfer; makin pelan di udara tipis (di luar angkasa hampir tak terdengar). Ikut jeda.
+      const on = !!pose.burn && ui.playing;
+      const thin = smooth(15, 110, pose.altKm);
+      if (on && !this.wasBurning && pose.altKm < 1) sfx.liftoff(); // penyalaan di landasan
+      this.wasBurning = on;
+      engineSound(
+        on ? 1 - thin * 0.8 : 0,
+        ui.playing ? smooth(0.05, 2, pose.altKm) * (1 - smooth(15, 45, pose.altKm)) * (pose.burn ? 1 : 0.4) : 0,
+        on ? 0.35 : 0,
+        on ? 1 - thin : 0,
+      );
+      this.engineLive = true;
       const prog = clamp01(this.t / this.durs[this.idx]);
       if (Math.abs(prog - ui.progress) > 0.01) useRoket.setState({ progress: prog });
       if (ui.playing || this.snap) {
@@ -557,6 +569,12 @@ export class RocketEngine {
         this.camPos.copy(cam.position);
         this.camLook.copy(this.controls.target);
       }
+    }
+
+    if (ui.mode !== "terbang" && this.engineLive) {
+      stopEngineSound(0.8);
+      this.engineLive = false;
+      this.wasBurning = false;
     }
 
     if (this.fly) {
@@ -639,6 +657,7 @@ export class RocketEngine {
 
   dispose() {
     cancelAnimationFrame(this.raf);
+    stopEngineSound(0.2);
     this.ro.disconnect();
     const el = this.renderer.domElement;
     el.removeEventListener("pointerdown", this.onDown);
