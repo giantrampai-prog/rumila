@@ -263,6 +263,8 @@ export class RocketEngine {
     if (item.kind === "layer") {
       const mid: Record<string, number> = { troposfer: 6, stratosfer: 30, mesosfer: 68, termosfer: 300, eksosfer: 750 };
       const y = altToY(mid[id] ?? 10);
+      if (id === 'termosfer') return this.flyTo(V(-10, y + 8, -18), V(215, altToY(170), 130));
+      if (id === 'eksosfer') return this.flyTo(V(46, altToY(650) + 12, 58), V(0, altToY(650) + 16, 0));
       return this.flyTo(V(18, y, 18), V(-40, y * 0.62 - 2, -40));
     }
     const parts: Record<string, [THREE.Vector3, THREE.Vector3]> = {
@@ -410,7 +412,7 @@ export class RocketEngine {
         // menatap ke atas dari dekat stasiun: satelit-satelit di eksosfer
         // dari samping stasiun: stasiun & satelit dengan garis Bumi bercahaya di bawahnya
         out.pos.set(Math.cos(a) * 24, Y + 1, Math.sin(a) * 24);
-        out.look.set(0, Y + 0.5, 0);
+        out.look.set(0, altToY(650) + 12, 0);
         return;
       case "penutup": {
         const back = ease(p);

@@ -504,7 +504,7 @@ export class LautEngine {
       const bed = seabed(50, '#dccfae', U, 0.35, 0.08, 7);
       bed.position.set(x0, fy, 0);
       this.scene.add(bed);
-      const sg = seagrass(4200, 16, U, 3);
+      const sg = seagrass(7200, 16, U, 3);
       sg.position.set(x0, fy + 0.05, 0);
       this.scene.add(sg);
       for (let i = 0; i < 8; i++) this.place(rock(0.5 + r(), '#8f8676', r), x0 + (r() - 0.5) * 26, fy, (r() - 0.5) * 26);
@@ -512,7 +512,7 @@ export class LautEngine {
       this.biota.set('kuda-laut', this.place(sh, x0 - 1.5, fy + 0.9, 1.5, 1.6, 0.4));
       const sh2 = this.place(C.seahorse(), x0 + 2.5, fy + 0.7, -1.8, 1.3, -0.6);
       this.biota.set('ikan-kakatua', this.addMover(C.buildFish(C.SPECIES['ikan-kakatua']), new T.Vector3(x0, fy + 1.8, 0), 3.5, 0.4));
-      const lion = C.buildFish(C.SPECIES.lionfish);
+      const lion = C.lionfish();
       this.biota.set('lionfish', this.addMover(lion, new T.Vector3(x0 + 3, fy + 1.4, 2), 0.6, 0.25, { bob: 0.1 }));
       const pari = C.ray(false);
       pari.scale.setScalar(1.4);
@@ -788,7 +788,7 @@ export class LautEngine {
     if (!obj) return;
     this.follow = obj;
     const p = this.inspectionTarget(obj);
-    const size: Record<string, number> = { 'hiu-karang': 2.4, barakuda: 2.6, 'penyu-hijau': 1.8, 'belut-gulper': 2, 'ikan-lentera': 2.2, 'ikan-badut': 0.55, 'kuda-laut': 0.7, 'ikan-kupu-kupu': 0.6, 'blue-tang': 0.65, lionfish: 0.75, pari: 1, 'cumi-cumi': 1.1, 'ikan-pemancing': 1.1 };
+    const size: Record<string, number> = { 'hiu-karang': 2.4, barakuda: 2.6, 'penyu-hijau': 1.8, 'belut-gulper': 2, 'ikan-lentera': 2.2, 'ikan-badut': 0.55, 'kuda-laut': 1.15, 'ikan-kupu-kupu': 0.6, 'blue-tang': 0.65, lionfish: 0.9, pari: 1, 'cumi-cumi': 1.6, 'ikan-pemancing': 1.1 };
     const k = id === 'ikan-pemancing' ? (this.camera.aspect < 1 ? 1.9 : 1.5) : size[id] ?? 0.9;
     // kamera di depan-samping biota (menghadap wajahnya), mengikuti arah hadapnya
     const q = new T.Quaternion();
@@ -796,8 +796,12 @@ export class LautEngine {
     const yaw = new T.Euler().setFromQuaternion(q, 'YXZ').y;
     const off = (id === 'ikan-pemancing'
       ? new T.Vector3(1.25 * k, 0.65 * k + 0.2, 2.5 * k)
+      : id === 'cumi-cumi' ? new T.Vector3(.8 * k, .55 * k, 2.5 * k)
+      : id === 'kuda-laut' ? new T.Vector3(.3 * k, .35 * k, 2.65 * k)
       : new T.Vector3(2.0 * k, 0.7 * k + 0.2, 1.8 * k))
       .applyAxisAngle(new T.Vector3(0, 1, 0), obj.parent === this.scene ? yaw : 0);
+    // Long arms and wide fans must remain visible in a portrait viewport, including while turning.
+    if (['cumi-cumi', 'lionfish', 'kuda-laut'].includes(id)) off.multiplyScalar(Math.max(1, 1 / this.camera.aspect));
     this.flyTo(p.clone().add(off), p);
   }
 
@@ -871,6 +875,9 @@ export class LautEngine {
 
     // biota bergerak
     for (const m of this.movers) {
+      // Hold the inspected animal's swimming heading; fins and tentacles still move.
+      // Adjust its orbit phase so releasing focus resumes from the same place without a jump.
+      if (mode === 'jelajah' && this.follow === m.obj) m.ph -= dt * m.sp;
       const a = t * m.sp + m.ph;
       m.obj.position.set(m.c.x + Math.cos(a) * m.r, m.c.y + Math.sin(t * 0.7 + m.ph) * m.bob, m.c.z + Math.sin(a) * m.r);
       if (m.face && m.r > 0.05) {
@@ -1077,7 +1084,9 @@ export class LautEngine {
       this.sub.visible = false;
       this.diver.visible = false;
       const targetPosition = this.worldPos(subject);
-      const distance = timedShot.distance * (this.camera.aspect < 1 ? 1.25 : 1);
+      const portraitFit = this.camera.aspect < 1
+        ? (timedShot.target === 'cumi-cumi' ? Math.max(1.25, .85 / this.camera.aspect) : 1.25) : 1;
+      const distance = timedShot.distance * portraitFit;
       lookAt.copy(targetPosition);
       off.copy(targetPosition).add(new T.Vector3(distance*0.6,timedShot.elevation ?? distance*0.2,distance)).sub(pos);
     }

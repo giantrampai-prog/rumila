@@ -4,6 +4,7 @@
 
 import * as T from 'three';
 import { createAnglerfish } from './anglerfish';
+import { createSquid, createLionfish, createSeahorse } from './specimens';
 
 export const U = { time: { value: 0 } };
 
@@ -667,47 +668,8 @@ export function turtle() {
   return g;
 }
 
-export function seahorse() {
-  const g = new T.Group();
-  const m = std('#f2a531', 0.45);
-  const pts: T.Vector3[] = [];
-  for (let i = 0; i <= 20; i++) {
-    const t = i / 20;
-    // badan tegak lalu ekor melingkar di bawah
-    if (t < 0.55) pts.push(new T.Vector3(Math.sin(t * 3) * 0.04, 0.5 - t * 0.9, 0));
-    else {
-      const a = (t - 0.55) * 11;
-      pts.push(new T.Vector3(0.08 - Math.cos(a) * 0.08 * (1.2 - (t - 0.55)), 0.0 - Math.sin(a) * 0.08 * (1.2 - (t - 0.55)) - 0.02, 0));
-    }
-  }
-  const curve = new T.CatmullRomCurve3(pts);
-  const tube = new T.TubeGeometry(curve, 60, 0.06, 10, false);
-  const pos = tube.attributes.position;
-  for (let i = 0; i < pos.count; i++) {
-    const seg = Math.floor(i / 11) / 60;
-    const r = 0.35 + 0.9 * Math.sin(Math.min(1, seg * 1.6 + 0.15) * Math.PI) * (seg < 0.5 ? 1 : 0.5);
-    const c = curve.getPointAt(Math.min(1, seg));
-    const v = new T.Vector3().fromBufferAttribute(pos, i).sub(c).multiplyScalar(r).add(c);
-    pos.setXYZ(i, v.x, v.y, v.z);
-  }
-  tube.computeVertexNormals();
-  g.add(new T.Mesh(tube, m));
-  const head = new T.Mesh(new T.SphereGeometry(0.08, 16, 12), m);
-  head.position.set(0.02, 0.56, 0);
-  const snout = new T.Mesh(new T.CylinderGeometry(0.018, 0.028, 0.14, 10), m);
-  snout.rotation.z = Math.PI / 2;
-  snout.position.set(0.12, 0.54, 0);
-  const crest = new T.Mesh(new T.ConeGeometry(0.03, 0.08, 6), m);
-  crest.position.set(-0.01, 0.65, 0);
-  g.add(head, snout, crest);
-  eyes(g, 0.06, 0.58, 0.05, 0.03);
-  const fin = new T.Mesh(new T.CircleGeometry(0.06, 10), std('#ffe0a0', 0.5, { transparent: true, opacity: 0.7, side: T.DoubleSide }));
-  fin.position.set(-0.07, 0.3, 0);
-  fin.rotation.y = Math.PI / 2;
-  g.add(fin);
-  g.userData.update = (t: number) => (fin.rotation.x = Math.sin(t * 14) * 0.5);
-  return g;
-}
+export function seahorse() { return createSeahorse(U.time); }
+export function lionfish() { return createLionfish(U.time); }
 
 /** Pari (kecil, di pasir) atau pari manta (besar, terbang di air). */
 export function ray(manta: boolean) {
@@ -812,51 +774,7 @@ export function jellyfish(color: string, glowing = false, size = 0.35) {
   return g;
 }
 
-export function squid(glowing = false) {
-  const g = new T.Group();
-  const tex = canvasTex(128, 256, (c, w, h) => {
-    c.fillStyle = '#c8453a';
-    c.fillRect(0, 0, w, h);
-    for (let i = 0; i < 300; i++) {
-      c.fillStyle = `rgba(${120 + ((i * 7) % 80)},30,30,.5)`;
-      c.beginPath();
-      c.arc((i * 37) % w, (i * 59) % h, 2 + (i % 3), 0, 7);
-      c.fill();
-    }
-  });
-  const m = std('#ffffff', 0.4, { map: tex, emissive: glowing ? '#ff6a5a' : '#000', emissiveIntensity: glowing ? 0.3 : 0 });
-  const mantle = new T.Mesh(new T.CylinderGeometry(0.05, 0.13, 0.7, 20, 4), m);
-  mantle.rotation.z = -Math.PI / 2;
-  mantle.position.x = -0.25;
-  const finG = new T.Mesh(new T.CircleGeometry(0.16, 3), std('#d35a4a', 0.4, { side: T.DoubleSide }));
-  finG.rotation.x = -Math.PI / 2;
-  finG.position.x = -0.55;
-  const head = new T.Mesh(new T.SphereGeometry(0.12, 18, 12), m);
-  head.position.x = 0.15;
-  g.add(mantle, finG, head);
-  eyes(g, 0.18, 0.05, 0.1, 0.06);
-  const arms: T.Mesh[] = [];
-  for (let i = 0; i < 8; i++) {
-    const a = (i / 8) * 6.28;
-    const arm = new T.Mesh(new T.CylinderGeometry(0.008, 0.03, 0.45, 6), m);
-    arm.geometry.translate(0, -0.22, 0);
-    arm.rotation.z = Math.PI / 2;
-    const piv = new T.Group();
-    piv.position.set(0.25, Math.cos(a) * 0.06, Math.sin(a) * 0.06);
-    piv.add(arm);
-    g.add(piv);
-    arms.push(piv as unknown as T.Mesh);
-  }
-  g.userData.update = (t: number, ph = 0) => {
-    arms.forEach((a, i) => {
-      const k = (i / 8) * 6.28;
-      a.rotation.y = Math.sin(k) * 0.25 + Math.sin(t * 3 + i + ph) * 0.1;
-      a.rotation.z = Math.cos(k) * 0.25;
-    });
-    finG.scale.y = 1 + Math.sin(t * 6 + ph) * 0.2;
-  };
-  return g;
-}
+export function squid(glowing = false) { return createSquid(U.time, glowing); }
 
 /** Model edukasi natural: kulit berpori, mulut terbuka dan gigi ramping. */
 export function anglerfish() {

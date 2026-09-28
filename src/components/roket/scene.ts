@@ -12,6 +12,7 @@ import { buildCoast, buildCumulus, buildFlora, buildSea, buildTerrain } from "./
 
 import { crewAccessDetails, rocketDetails } from "./facility";
 import { weathered } from "./surface-materials";
+import { createAurora } from "./aurora";
 
 export const EARTH_R = 1000;
 /**
@@ -641,31 +642,6 @@ export function buildAstronaut() {
   return { astro: a, armL, armR, legL, legR, helmet, visor: helmet };
 }
 
-function aurora() {
-  const mat = new THREE.ShaderMaterial({
-    uniforms: { uTime: { value: 0 }, uAlpha: { value: 0 } },
-    vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
-    fragmentShader: `uniform float uTime; uniform float uAlpha; varying vec2 vUv;
-      void main(){ float x = vUv.x * 12.0; float wave = sin(x + uTime * 0.25) * 0.5 + sin(x * 2.3 - uTime * 0.18) * 0.3;
-        float bands = pow(0.5 + 0.5 * sin(x * 3.0 + wave * 4.0), 3.0);
-        float v = vUv.y; float fade = smoothstep(0.0, 0.15, v) * (1.0 - smoothstep(0.35, 1.0, v));
-        vec3 col = mix(vec3(0.2, 1.0, 0.55), vec3(0.65, 0.3, 1.0), smoothstep(0.3, 0.9, v));
-        gl_FragColor = vec4(col, bands * fade * uAlpha * 0.75); }`,
-    transparent: true,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending,
-    side: THREE.DoubleSide,
-  });
-  const g = new THREE.Group();
-  for (let i = 0; i < 3; i++) {
-    const geo = new THREE.CylinderGeometry(260 + i * 40, 260 + i * 40, 90, 64, 1, true, i * 1.5, 2.4);
-    const m = new THREE.Mesh(geo, mat);
-    m.position.y = altToY(240) + i * 12;
-    g.add(m);
-  }
-  return { group: g, mat };
-}
-
 /* ---------------- scene utama ---------------- */
 
 export interface RocketPose {
@@ -719,7 +695,7 @@ export class RocketScene {
   private iss: THREE.Group;
   /** mode Jelajah: tempat Stasiun dipajang utuh di orbit (null = tidak dipajang) */
   issShowcase: THREE.Vector3 | null = null;
-  private aur: ReturnType<typeof aurora>;
+  private aur: ReturnType<typeof createAurora>;
   /** col = alfa per partikel, size = ukuran dunia per partikel */
   private smoke: { pts: THREE.Points; pos: Float32Array; col: Float32Array; vel: Float32Array; age: Float32Array; life: Float32Array; size: Float32Array; big: Float32Array };
   private meteors: { line: THREE.Line; vel: THREE.Vector3; age: number; life: number }[] = [];
@@ -907,9 +883,9 @@ export class RocketScene {
       const sat = buildSatellite(i + 1);
       const a = (i / 6) * TAU + 0.4;
       // ilustrasi: dirapatkan di atas stasiun agar terlihat saat kamera menatap ke atas
-      sat.position.set(Math.cos(a) * (13 + i * 3), altToY(400) + 8 + i * 4, Math.sin(a) * (13 + i * 3));
+      sat.position.set(Math.cos(a) * (13 + i * 3), altToY(650) + 8 + i * 4, Math.sin(a) * (13 + i * 3));
       sat.scale.setScalar(1.6);
-      const blink = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 6), new THREE.MeshBasicMaterial({ color: i % 2 ? 0xff3b3b : 0x3dff8a }));
+      const blink = new THREE.Mesh(new THREE.SphereGeometry(0.025, 8, 6), new THREE.MeshBasicMaterial({ color: i % 2 ? 0xff3b3b : 0x3dff8a }));
       blink.position.set(0, 0.55, 0);
       blink.name = "blink";
       sat.add(blink);
@@ -1025,7 +1001,7 @@ export class RocketScene {
     this.iss.visible = false;
     s.add(this.iss);
 
-    this.aur = aurora();
+    this.aur = createAurora(altToY(100), altToY(420));
     s.add(this.aur.group);
 
     // Asap & uap

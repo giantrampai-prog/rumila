@@ -582,32 +582,7 @@ export function buildBirds(n: number) {
   };
 }
 
-export function buildSatellite(seed: number) {
-  const r = rng(seed);
-  const g = new THREE.Group();
-  const bodyColor = [0xd4af37, 0xc0c4cc, 0xe9e9e9][seed % 3];
-  const body = new THREE.Mesh(
-    new THREE.BoxGeometry(0.8, 0.8, 1.1),
-    new THREE.MeshStandardMaterial({ color: bodyColor, roughness: 0.4, metalness: 0.5, emissive: bodyColor, emissiveIntensity: 0.25 }),
-  );
-  g.add(body);
-  const panel = new THREE.MeshStandardMaterial({ color: 0x2456c8, roughness: 0.3, metalness: 0.5, emissive: 0x16357a, emissiveIntensity: 0.6 });
-  for (const s of [-1, 1]) {
-    const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.8), std(0xcccccc));
-    arm.rotation.z = Math.PI / 2;
-    arm.position.x = s * 0.8;
-    const p = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.03, 0.9), panel);
-    p.position.x = s * 2.2;
-    g.add(arm, p);
-  }
-  const dish = new THREE.Mesh(new THREE.SphereGeometry(0.4, 16, 8, 0, TAU, 0, Math.PI / 2.5), new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }));
-  dish.position.z = 0.7;
-  dish.rotation.x = -Math.PI / 2;
-  g.add(dish);
-  g.rotation.set(r() * TAU, r() * TAU, 0);
-  g.scale.setScalar(1.6);
-  return g;
-}
+export { createSatellite as buildSatellite } from './satellite';
 
 export function buildMoon() {
   const tex = new THREE.TextureLoader().load("/angkasa/tex/2k_moon.jpg");
