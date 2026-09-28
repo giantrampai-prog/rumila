@@ -207,3 +207,18 @@
 @keyframes dojo-spin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
 @media (prefers-reduced-motion: reduce) { .dojo-fig, .dojo-lompat, .dojo-putar { animation: none; } }
 @media (max-width: 480px) { .jurus-chip { width: 32px; height: 32px; } }
+/* Jurus (versi anak): tangan penunjuk, kurung bagian jurus di gulungan, kartu jurus */
+.tap-hint { position: relative; outline: 4px solid #ffd23f; outline-offset: 3px; animation: koding-pulse 1s ease-in-out infinite; z-index: 2; }
+.tap-hint::after { content: '👆'; position: absolute; left: 50%; bottom: -30px; font-size: 34px; line-height: 1; transform: translateX(-10%); animation: tap-hand 1s ease-in-out infinite; pointer-events: none; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3)); }
+@keyframes tap-hand { 0%, 100% { transform: translate(-10%, 0); } 50% { transform: translate(-10%, -8px); } }
+.jurus-slot { display: inline-flex; padding: 3px 2px 6px; border-bottom: 4px solid transparent; }
+.jurus-g-start, .jurus-g-mid, .jurus-g-end { border-bottom-color: var(--g); background: color-mix(in srgb, var(--g) 14%, transparent); }
+.jurus-g-start { border-radius: 10px 0 0 10px; margin-left: 4px; padding-left: 4px; border-left: 4px solid var(--g); }
+.jurus-g-end { border-radius: 0 10px 10px 0; margin-right: 4px; padding-right: 4px; border-right: 4px solid var(--g); }
+.jurus-g-start.jurus-g-end { border-radius: 10px; }
+.jurus-scroll { gap: 2px; }
+.jurus-card { transition: transform 0.12s; }
+.jurus-card:not(:disabled):active { transform: translateY(3px); }
+@media (prefers-reduced-motion: reduce) { .tap-hint, .tap-hint::after { animation: none; } }
+.jurus-card.tap-hint::after { left: auto; right: 14px; bottom: auto; top: 50%; transform: translateY(-40%); animation: tap-hand-side 1s ease-in-out infinite; }
+@keyframes tap-hand-side { 0%, 100% { transform: translateY(-40%); } 50% { transform: translateY(-65%); } }

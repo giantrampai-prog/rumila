@@ -99,6 +99,9 @@ export class RocketEngine {
   private wasCabin = false;
   private raf = 0;
   private last = performance.now();
+  private lastShadow = 0;
+  private perfStart = performance.now();
+  private perfFrames = 0;
   private ro: ResizeObserver;
   /* timeline */
   private idx = 0;
@@ -109,7 +112,7 @@ export class RocketEngine {
   private seekTo: number | null = null;
   private playing = false;
   /* kamera */
-  private camPos = new THREE.Vector3(14, 5, 14);
+  private camPos = new THREE.Vector3(16, 7.4, 20);
   private camLook = new THREE.Vector3(0, 3, 0);
   private snap = true;
   private fly: { from: THREE.Vector3; fromT: THREE.Vector3; to: THREE.Vector3; toT: THREE.Vector3; k: number } | null = null;
@@ -120,12 +123,13 @@ export class RocketEngine {
     private host: HTMLElement,
     private onPick: (id: string) => void,
   ) {
-    const low = (navigator.hardwareConcurrency ?? 8) <= 4;
+    const low = (navigator.hardwareConcurrency ?? 8) <= 4 || window.matchMedia("(max-width: 700px)").matches;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, logarithmicDepthBuffer: true, powerPreference: "high-performance" });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, low ? 1.5 : 2));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.toneMappingExposure = 0.92;
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     host.appendChild(this.renderer.domElement);
     this.renderer.domElement.style.touchAction = "none";
@@ -138,7 +142,7 @@ export class RocketEngine {
     this.skyEnv = pmrem.fromScene(skyEnvScene(), 0.02).texture;
     pmrem.dispose();
     this.world.scene.environment = this.skyEnv;
-    this.world.scene.environmentIntensity = 0.6;
+    this.world.scene.environmentIntensity = 0.38;
     withLogDepth(this.cabin.scene);
     withLogDepth(this.cupola.scene);
     this.cabin.scene.environment = this.env;
@@ -220,7 +224,7 @@ export class RocketEngine {
       this.t = 0;
       this.world.applyPose(this.pose(0, 0));
       this.controls.enabled = true;
-      this.flyTo(new THREE.Vector3(14, 5, 14), new THREE.Vector3(0, 3, 0));
+      this.flyTo(new THREE.Vector3(16, 7.4, 20), new THREE.Vector3(0, 3, 0));
     }
   }
 
@@ -252,7 +256,7 @@ export class RocketEngine {
     useRoket.setState({ focus: id });
     // Stasiun dipajang utuh di orbit ±400 km hanya saat itemnya dipilih
     this.world.issShowcase = id === "stasiun" ? ISS_SHOWCASE.clone() : null;
-    if (!id) return this.flyTo(new THREE.Vector3(14, 5, 14), new THREE.Vector3(0, 3, 0));
+    if (!id) return this.flyTo(new THREE.Vector3(16, 7.4, 20), new THREE.Vector3(0, 3, 0));
     const item = JELAJAH.find((x) => x.id === id);
     if (!item) return;
     const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
@@ -263,7 +267,7 @@ export class RocketEngine {
     }
     const parts: Record<string, [THREE.Vector3, THREE.Vector3]> = {
       roket: [V(0, 3.3, 0), V(9, 2, 9)],
-      kapsul: [V(0, 5.5, 0), V(2.2, 0.6, 2.2)],
+      kapsul: [V(0, 5.5, 0), V(-2.2, 0.6, 2.2)],
       "tahap-2": [V(0, 4.3, 0), V(2.8, 0.5, 2.8)],
       "tahap-1": [V(0, 2, 0), V(4.5, 1, 4.5)],
       mesin: [V(0, 0.35, 0), V(1.8, 0.1, 1.8)],
@@ -274,6 +278,14 @@ export class RocketEngine {
     };
     const [look, off] = parts[id] ?? parts.roket;
     this.flyTo(look.clone().add(off), look);
+  }
+
+  /** Low, close views make the coastline and tree detail explorable without losing the launch pad. */
+  viewSite(view: "landasan" | "pesisir" | "hutan") {
+    this.focus(null);
+    const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+    if (view === "pesisir") this.flyTo(V(22, 2.8, 30), V(14, 0.5, -8));
+    if (view === "hutan") this.flyTo(V(-10, 1.6, -12), V(-24, 2.6, -35));
   }
 
   private flyTo(to: THREE.Vector3, toT: THREE.Vector3) {
@@ -507,6 +519,15 @@ export class RocketEngine {
     this.controls.enabled = true;
   }
 
+  private refreshShadows(now: number) {
+    // Leaf motion is slow; reuse the shadow atlas between updates.
+    this.renderer.shadowMap.autoUpdate = false;
+    if (this.world.shadowsLive && now - this.lastShadow > 120) {
+      this.renderer.shadowMap.needsUpdate = true;
+      this.lastShadow = now;
+    }
+  }
+
   /* ---------------- loop ---------------- */
 
   private loop = (now: number) => {
@@ -607,9 +628,8 @@ export class RocketEngine {
       this.world.r.cap.visible = false;
       this.world.update(dt);
       this.renderer.autoClear = true;
-      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
-      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
-    this.renderer.render(this.world.scene, cam);
+      this.refreshShadows(now);
+      this.renderer.render(this.world.scene, cam);
       this.renderer.autoClear = false;
       this.renderer.clearDepth();
       this.renderer.render(this.cupola.scene, this.cupola.camera);
@@ -630,9 +650,8 @@ export class RocketEngine {
       this.world.r.cap.visible = false; // dinding kapsul dari luar tidak ikut menghalangi jendela
       this.world.update(dt);
       this.renderer.autoClear = true;
-      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
-      this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
-    this.renderer.render(this.world.scene, cam);
+      this.refreshShadows(now);
+      this.renderer.render(this.world.scene, cam);
       this.renderer.autoClear = false;
       this.renderer.clearDepth();
       this.renderer.render(this.cabin.scene, this.cabin.camera);
@@ -656,8 +675,18 @@ export class RocketEngine {
       if (cam.position.y < floor) cam.position.y = floor;
     }
     this.world.update(dt);
-    this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
+    this.refreshShadows(now);
     this.renderer.render(this.world.scene, cam);
+    if (process.env.NODE_ENV === "development") {
+      this.perfFrames++;
+      if (now - this.perfStart > 2000) {
+        this.renderer.domElement.dataset.frameMs = ((now - this.perfStart) / this.perfFrames).toFixed(1);
+        this.renderer.domElement.dataset.drawCalls = String(this.renderer.info.render.calls);
+        this.renderer.domElement.dataset.camera = cam.position.toArray().map(n => n.toFixed(2)).join(",");
+        this.renderer.domElement.dataset.triangles = String(this.renderer.info.render.triangles);
+        this.perfStart = now; this.perfFrames = 0;
+      }
+    }
   };
 
   dispose() {

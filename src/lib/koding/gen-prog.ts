@@ -1,15 +1,13 @@
-// Pembuat soal Ulangi, Kalau… dan Jurus (10 Level × 10 coding). Dijalankan lewat `npx tsx scripts/gen-prog.ts`;
-// hasilnya disimpan tetap di ulangi.ts / kalau.ts / jurus.ts (progres anak aman).
+// Pembuat soal Ulangi dan Kalau… (10 Level × 10 coding). Dijalankan lewat `npx tsx scripts/gen-prog.ts`;
+// hasilnya disimpan tetap di ulangi.ts / kalau.ts (Jurus: jurus-levels.ts) (progres anak aman).
 //
 // Ulangi (Agam Pelukis): gambar dibuat dari RESEP program (mis. "ulangi 4 kali [maju 2×, belok kanan]" = persegi).
 //   Jatah blok lebih kecil dari program tanpa ulangi, jadi anak harus menemukan bagian yang berulang.
 // Kalau… (Agam Pelari): tiap soal menentukan panjang lintasan & jenis rintangan; susunannya diacak tiap main, jadi
 //   hanya program dengan "kalau" yang selalu berhasil. Tes menjalankan solusi di ratusan susunan acak.
-// Jurus (Dojo Ninja): rangkaian gerakan Sensei dibuat dari resep jurus (mis. jurus = pukul, pukul, tendang; dipakai
-//   3 kali dengan gerakan lain di antaranya). Jatah blok memaksa anak memakai jurus.
 
 import { countBlocks, flatActs, renumber, S, type PBlock, type Program, type Stmt } from './prog';
-import { MOVES, traceSegments, type JurusLevel, type KalauLevel, type MoveName, type Obst, type UlangiLevel } from './worlds';
+import { traceSegments, type KalauLevel, type Obst, type UlangiLevel } from './worlds';
 
 function mulberry(seed: number) {
   let a = seed >>> 0;
@@ -239,83 +237,6 @@ export function buildKalau(): KalauLevel[] {
         len,
         count,
       });
-    }
-  return out;
-}
-
-/* ================= Jurus ================= */
-
-type Combo = { jurus: string; main: string; moves: number };
-const combos = (moves: number, list: string[]): Combo[] => list.map((s) => ({ jurus: s.split('|')[0], main: s.split('|')[1], moves }));
-/** resep: jurus & program utama sebagai huruf (A–E = gerakan, J = panggil jurus, (n:…) = ulangi) */
-const JURUS: { hints: string[]; list: Combo[]; palette: PBlock[] }[] = [
-  { hints: ['Blok baru: JURUS ⚡! Susun gerakan di kotak Jurus, lalu panggil jurus di program utama.', 'Sensei mengulang gerakan yang sama. Jadikan jurus!'], palette: ['jurus'], list: combos(2, ['AAB|JJ', 'ABA|JJ', 'ABB|JJ', 'AAB|JJJ', 'ABA|JJJ', 'ABAB|JJ', 'AABB|JJ', 'ABB|JJJ', 'AABA|JJ', 'ABAA|JJJ']) },
-  { hints: ['Gerakan baru: tangkis! Perhatikan urutan Sensei.'], palette: ['jurus'], list: combos(3, ['ABC|JJ', 'ACB|JJ', 'ABC|JJJ', 'AABC|JJ', 'ABCA|JJ', 'ABC|JCJ', 'ACB|JAJ', 'ABCC|JJ', 'ABCB|JJJ', 'AABC|JBJ']) },
-  { hints: ['Gerakan baru: lompat! Ada gerakan lain di antara jurus.'], palette: ['jurus'], list: combos(4, ['ABD|JJ', 'ADB|JCJ', 'DAB|JJJ', 'ABCD|JJ', 'ABDD|JAJ', 'ADCB|JJ', 'ABCD|JDJ', 'DDAB|JJ', 'ABCD|JJJ', 'ADBC|JBJC']) },
-  { hints: ['Gerakan baru: putar! Lima gerakan ninja lengkap.'], palette: ['jurus'], list: combos(5, ['AEB|JJ', 'EAB|JJJ', 'ABE|JCJ', 'AEBD|JJ', 'EDAB|JJ', 'ABCE|JEJ', 'AEEB|JJ', 'ABCDE|JJ', 'EABD|JCJD', 'ABCDE|JAJ']) },
-  { hints: ['Jurusnya makin panjang. Susun sekali, pakai berkali-kali!'], palette: ['jurus'], list: combos(5, ['ABCDE|JJ', 'EDCBA|JJ', 'AABBC|JJ', 'ABCAB|JJ', 'ABCDE|JJJ', 'AEBDC|JAJ', 'ABCDE|JEJ', 'CABDE|JJB', 'ABACD|JJJ', 'ABCDE|JDJE']) },
-  { hints: ['Blok ulangi kembali! Ulangi bisa dipakai di dalam jurus.'], palette: ['ulangi', 'jurus'], list: combos(5, ['(3:A)B|JJ', '(3:A)BC|JJ', 'A(3:B)|JJ', '(2:AB)C|JJ', '(4:A)B|JJ', '(3:A)BC|JDJ', 'A(3:B)C|JJ', '(2:AB)CD|JJ', '(4:A)BC|JJ', '(3:AB)C|JJ']) },
-  { hints: ['Jurus juga bisa dipanggil di dalam ulangi!'], palette: ['ulangi', 'jurus'], list: combos(5, ['ABC|(3:J)', 'ABB|(3:J)', 'AAB|(4:J)', 'ABCD|(3:J)', 'ABC|(3:J)D', 'ABC|D(3:J)', 'ABCA|(3:J)', 'ABCD|(4:J)', 'ABC|(3:J)DD', 'ABCDE|(3:J)']) },
-  { hints: ['Gabungkan ulangi di luar dan di dalam jurus.'], palette: ['ulangi', 'jurus'], list: combos(5, ['(3:A)B|(2:J)', '(2:AB)C|(3:J)', 'A(3:B)|(3:J)', '(3:A)BC|(3:J)', '(2:AB)CD|(2:J)E', 'A(4:B)|(2:J)C', '(3:A)B|(3:J)C', '(2:AB)C|(3:J)D', 'A(3:B)C|(3:J)', '(3:A)BC|(3:J)E']) },
-  { hints: ['Rangkaian Sensei panjang sekali. Cari jurus yang paling hemat!'], palette: ['ulangi', 'jurus'], list: combos(5, ['ABCDE|(3:J)', 'AB(2:C)D|(3:J)', '(2:AB)CDE|(2:J)', 'ABCDE|J(2:A)J', 'A(3:B)CD|(3:J)', 'ABCDE|(2:J)CJ', '(2:ABC)D|(2:J)', 'A(2:BC)D|(3:J)', 'ABCDE|(4:J)', '(3:AB)CD|(2:J)E']) },
-  { hints: ['Ujian sabuk hitam! Tunjukkan semua jurusmu.'], palette: ['ulangi', 'jurus'], list: combos(5, ['(2:ABC)DE|(3:J)', 'A(3:B)CDE|(3:J)', '(3:AB)CDE|(2:J)', 'ABCDE|(3:J)(2:A)', '(2:AB)(2:CD)E|(2:J)', 'A(4:B)CD|(3:J)', '(3:A)BCDE|(3:J)', '(2:ABC)(2:DE)|(2:J)', 'ABCDE|(4:J)B', '(3:AB)(2:CD)E|(3:J)']) },
-];
-
-/** "AB(3:C)J" → pernyataan, huruf dipetakan ke gerakan */
-function parseSeq(src: string, map: Record<string, string>): Stmt[] {
-  const out: Stmt[] = [];
-  let i = 0;
-  while (i < src.length) {
-    const ch = src[i];
-    if (ch === '(') {
-      const colon = src.indexOf(':', i);
-      const close = src.indexOf(')', colon);
-      out.push(L(Number(src.slice(i + 1, colon)), parseSeq(src.slice(colon + 1, close), map)));
-      i = close + 1;
-    } else {
-      out.push(ch === 'J' ? S.call() : A(map[ch]));
-      i++;
-    }
-  }
-  return out;
-}
-
-export function buildJurus(): JurusLevel[] {
-  const out: JurusLevel[] = [];
-  const seen = new Set<string>();
-  for (let w = 0; w < 10; w++)
-    for (let k = 0; k < 10; k++) {
-      const n = w * 10 + k + 1;
-      const rnd = mulberry(23 * 7919 + n * 104729);
-      const c = JURUS[w].list[k];
-      let got: JurusLevel | null = null;
-      for (let a = 0; a < 200 && !got; a++) {
-        // gerakan yang sudah dikenal di Level ini, diacak urutannya
-        const pool: string[] = [...MOVES.slice(0, c.moves)];
-        for (let q = pool.length - 1; q > 0; q--) {
-          const j = Math.floor(rnd() * (q + 1));
-          [pool[q], pool[j]] = [pool[j], pool[q]];
-        }
-        const map: Record<string, string> = { A: pool[0], B: pool[1 % pool.length], C: pool[2 % pool.length], D: pool[3 % pool.length], E: pool[4 % pool.length] };
-        const prog = renumber({ main: parseSeq(c.main, map), jurus: parseSeq(c.jurus, map) });
-        const target = flatActs(prog) as MoveName[];
-        if (seen.has(target.join(','))) continue;
-        const best = countBlocks(prog);
-        if (best >= target.length) throw new Error(`j${n}: jurus tidak menghemat (${best} ≥ ${target.length})`);
-        seen.add(target.join(','));
-        got = {
-          id: `j${n}`,
-          world: w,
-          palette: [...MOVES.slice(0, Math.max(c.moves, 2)), ...JURUS[w].palette],
-          best,
-          limit: Math.max(best, Math.min(best + 1, target.length - 1)),
-          hint: JURUS[w].hints[Math.min(k, JURUS[w].hints.length - 1)],
-          solution: prog,
-          target,
-        };
-      }
-      if (!got) throw new Error(`j${n} gagal dibuat`);
-      out.push(got);
     }
   return out;
 }

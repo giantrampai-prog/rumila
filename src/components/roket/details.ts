@@ -4,20 +4,11 @@
 
 import * as THREE from "three";
 import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
-import { worldY } from "./site";
-
+import { worldY, groundY, rng, EARTH_R } from "./terrain-math";
+import { weathered } from "./surface-materials";
+import { assemblyDetails, controlDetails, tankDetails } from "./facility";
+export { groundY, rng, EARTH_R };
 export const TAU = Math.PI * 2;
-export const EARTH_R = 1000;
-/** turunkan titik (x,z) mengikuti lengkung Bumi agar objek menempel di tanah */
-export const groundY = (x: number, z: number) => -(x * x + z * z) / (2 * EARTH_R);
-
-export function rng(seed: number) {
-  let s = seed >>> 0;
-  return () => {
-    s = (s * 1664525 + 1013904223) >>> 0;
-    return s / 4294967296;
-  };
-}
 
 export function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D, w: number, h: number) => void, srgb = true) {
   const c = document.createElement("canvas");
@@ -36,7 +27,7 @@ const std = (color: number, rough = 0.8, metal = 0) => new THREE.MeshStandardMat
 
 
 function groundTexture() {
-  return canvasTex(2048, 2048, (g, w, h) => {
+  return canvasTex(4096, 4096, (g, w, h) => {
     const r = rng(4);
     const S = w / 60; // piksel per unit (piringan radius 30)
     const X = (x: number) => w / 2 + x * S;
@@ -295,7 +286,7 @@ export function buildSite(low: boolean) {
   ]);
   vab.position.y = 2.5;
   const vabG = new THREE.Group();
-  vabG.add(vab);
+  vabG.add(vab, assemblyDetails());
   place(vabG, -18, 5, 0.3);
   // Gedung kontrol berjendela
   const ctrl = new THREE.Mesh(new THREE.BoxGeometry(3, 1.3, 1.8), new THREE.MeshStandardMaterial({ map: windowsTex(), roughness: 0.7 }));
@@ -308,13 +299,13 @@ export function buildSite(low: boolean) {
   const dishPole = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.55), std(0xcccccc));
   dishPole.position.set(0.9, 1.6, 0);
   const ctrlG = new THREE.Group();
-  ctrlG.add(ctrl, roof, dish, dishPole);
+  ctrlG.add(ctrl, roof, dish, dishPole, controlDetails());
   place(ctrlG, -7, 12, 0.1);
   // Menara air
   const wt = new THREE.Group();
   const tank = new THREE.Mesh(new THREE.SphereGeometry(0.7, 20, 14), std(0xe8eef4, 0.5, 0.2));
   tank.position.y = 3.6;
-  wt.add(tank);
+  wt.add(tank, tankDetails(0.7, 3.6, 4));
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * TAU;
     const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 3.3), std(0x9aa3ae));
@@ -330,7 +321,7 @@ export function buildSite(low: boolean) {
     const t = new THREE.Group();
     const ball = new THREE.Mesh(new THREE.SphereGeometry(0.9, 24, 16), std(0xf6f7f9, 0.45, 0.15));
     ball.position.y = 1.4;
-    t.add(ball);
+    t.add(ball, tankDetails(0.9, 1.4, 6));
     for (let i = 0; i < 6; i++) {
       const a = (i / 6) * TAU;
       const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1), std(0x9aa3ae));
@@ -345,7 +336,7 @@ export function buildSite(low: boolean) {
   pipe.position.set(2.2, 0.12, -6.5);
   g.add(pipe);
   // Tiga menara penangkal petir berkisi dengan kabel melengkung di antaranya (seperti landasan sungguhan)
-  const steel = std(0x8d949c, 0.5, 0.6);
+  const steel = weathered(0x8d949c, "metal");
   const tops: THREE.Vector3[] = [];
   for (let i = 0; i < 3; i++) {
     const a = (i / 3) * TAU + 0.5;
@@ -356,7 +347,9 @@ export function buildSite(low: boolean) {
     tip.position.y = 9.2;
     const light = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 6), new THREE.MeshBasicMaterial({ color: 0xff3b2f }));
     light.position.y = 8.6;
-    mast.add(tip, light);
+    const footing = new THREE.Mesh(new THREE.BoxGeometry(0.65, 0.14, 0.65), weathered("#a5a397"));
+    footing.position.y = 0.015;
+    mast.add(tip, light, footing);
     place(mast, mx, mz);
     tops.push(new THREE.Vector3(mx, worldY(mx, mz) + 9.9, mz));
   }
@@ -415,6 +408,14 @@ export function buildSite(low: boolean) {
     const cab = new THREE.Mesh(new THREE.BoxGeometry(0.28, 0.14, 0.24), std(0x9fd0f5, 0.2, 0.5));
     cab.position.set(-0.03, 0.29, 0);
     car.add(body, cab);
+    for (const x of [-0.16, 0.16]) for (const z of [-0.14, 0.14]) {
+      const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.065, 0.034, 12), std(0x222529));
+      wheel.rotation.x = Math.PI / 2; wheel.position.set(x, 0.09, z); car.add(wheel);
+    }
+    for (const z of [-0.085, 0.085]) {
+      const lamp = new THREE.Mesh(new THREE.BoxGeometry(0.009, 0.035, 0.045), std(0xe1dbb7, 0.2));
+      lamp.position.set(0.253, 0.16, z); car.add(lamp);
+    }
     place(car, -13.5 + i * 0.95 + r() * 0.1, 11.6, Math.PI / 2);
   }
   // Bendera Merah Putih di depan gedung kontrol & landasan
@@ -443,7 +444,7 @@ export function buildSite(low: boolean) {
 /* ---------------- roket: tekstur & perlengkapan ---------------- */
 
 export function rocketBodyTex(stage: 1 | 2) {
-  return canvasTex(512, 1024, (g, w, h) => {
+  return canvasTex(1024, 2048, (g, w, h) => {
     g.fillStyle = "#f4f6fa";
     g.fillRect(0, 0, w, h);
     // garis panel
@@ -557,8 +558,9 @@ export function buildBirds(n: number) {
   const birds: { l: THREE.Mesh; rr: THREE.Mesh; o: THREE.Group; ph: number }[] = [];
   for (let i = 0; i < n; i++) {
     const o = new THREE.Group();
-    const wing = new THREE.PlaneGeometry(0.28, 0.07);
-    wing.translate(0.14, 0, 0);
+    const wing = new THREE.BufferGeometry();
+    wing.setAttribute("position", new THREE.Float32BufferAttribute([0,0,0, 0.09,0.015,-0.025, 0.24,0,0.018, 0.08,-0.01,0.07], 3));
+    wing.setIndex([0,1,2,0,2,3]); wing.computeVertexNormals();
     const l = new THREE.Mesh(wing, mat);
     const rr = new THREE.Mesh(wing, mat);
     rr.rotation.y = Math.PI;
@@ -572,10 +574,10 @@ export function buildBirds(n: number) {
     update(t: number) {
       for (const b of birds) {
         const f = Math.sin(t * 8 + b.ph) * 0.6;
-        b.l.rotation.x = f;
-        b.rr.rotation.x = f;
+        b.l.rotation.z = f;
+        b.rr.rotation.z = -f;
       }
-      g.position.set(((t * 1.2) % 80) - 40, g.position.y, 10);
+      g.position.set(Math.sin(t * 0.025) * 48, g.position.y + Math.sin(t * .1) * .0005, -24 + Math.cos(t * .025) * 12);
     },
   };
 }
