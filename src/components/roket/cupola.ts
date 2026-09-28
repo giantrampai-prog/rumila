@@ -4,6 +4,7 @@
 
 import * as THREE from "three";
 import { povBody } from "./cabin";
+import { disposeCabin } from "./cabin-interior";
 
 const TAU = Math.PI * 2;
 
@@ -256,15 +257,6 @@ export class Cupola {
   }
 
   dispose() {
-    this.scene.traverse((o) => {
-      const m = o as THREE.Mesh;
-      m.geometry?.dispose();
-      const mat = m.material as THREE.Material | THREE.Material[] | undefined;
-      if (Array.isArray(mat)) mat.forEach((x) => x.dispose());
-      else if (mat) {
-        (mat as THREE.MeshStandardMaterial).map?.dispose();
-        mat.dispose();
-      }
-    });
+    disposeCabin(this.scene);
   }
 }

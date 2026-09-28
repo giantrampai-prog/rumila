@@ -109,6 +109,7 @@ export class RocketEngine {
   private raf = 0;
   private last = performance.now();
   private lastShadow = 0;
+  private lastCabinShadow = 0;
   private perfStart = performance.now();
   private perfFrames = 0;
   private ro: ResizeObserver;
@@ -629,6 +630,7 @@ export class RocketEngine {
       this.renderer.autoClear = true;
       this.world.r.cap.visible = true;
       this.wasCabin = true;
+      this.recordFrame(now);
       return;
     }
     if (view === "kabin") {
@@ -649,10 +651,16 @@ export class RocketEngine {
       this.renderer.render(this.world.scene, cam);
       this.renderer.autoClear = false;
       this.renderer.clearDepth();
+      // The exterior pass consumes shadowMap.needsUpdate; refresh the separate cabin pass too.
+      if (now - this.lastCabinShadow > 120) {
+        this.renderer.shadowMap.needsUpdate = true;
+        this.lastCabinShadow = now;
+      }
       this.renderer.render(this.cabin.scene, this.cabin.camera);
       this.renderer.autoClear = true;
       this.world.r.cap.visible = true;
       this.wasCabin = true;
+      this.recordFrame(now);
       return;
     }
     if (this.wasCabin) {
@@ -673,17 +681,21 @@ export class RocketEngine {
     this.world.update(dt);
     this.refreshShadows(now);
     this.renderer.render(this.world.scene, cam);
+    this.recordFrame(now);
+  };
+
+  private recordFrame(now: number) {
     if (process.env.NODE_ENV === "development") {
       this.perfFrames++;
       if (now - this.perfStart > 2000) {
         this.renderer.domElement.dataset.frameMs = ((now - this.perfStart) / this.perfFrames).toFixed(1);
         this.renderer.domElement.dataset.drawCalls = String(this.renderer.info.render.calls);
-        this.renderer.domElement.dataset.camera = cam.position.toArray().map(n => n.toFixed(2)).join(",");
+        this.renderer.domElement.dataset.camera = this.world.camera.position.toArray().map(n => n.toFixed(2)).join(",");
         this.renderer.domElement.dataset.triangles = String(this.renderer.info.render.triangles);
         this.perfStart = now; this.perfFrames = 0;
       }
     }
-  };
+  }
 
   dispose() {
     cancelAnimationFrame(this.raf);
