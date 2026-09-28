@@ -54,7 +54,7 @@ export function terrainH(x: number, z: number) {
   // bukit berhutan di pedalaman + barisan pegunungan di kejauhan (lengkung Bumi sebagian dikompensasi supaya tampak)
   const hills =
     sstep(24, 70, d) * (1.5 + 34 * Math.pow(fbm(x * 0.014 + 3.1, z * 0.014 - 1.7), 1.7)) +
-    // (pegunungan jauh kini dari foto panorama 360° — public/roket/latar-360.webp)
+    sstep(120, 320, d) * 110 * Math.pow(fbm(x * 0.005 + 7, z * 0.005 + 2, 4), 1.4) +
     sstep(50, 300, d) * ((d * d) / 2000) * 0.8;
   const bumps = sstep(18, 30, d) * (fbm(x * 0.15, z * 0.15, 3) - 0.5) * 0.5;
   // menuju pantai: medan melandai ke pasir lalu masuk air

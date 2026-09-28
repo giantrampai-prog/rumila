@@ -4,7 +4,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
-import { skyEnvScene } from "./site";
+import { skyEnvScene, worldY } from "./site";
 import { create } from "zustand";
 import { COUNTDOWN, JELAJAH, LIFTOFF, MISI, MISI_AUDIO, dwellSeconds, type MisiAudioPart } from "@/lib/roket/misi";
 import { followAudio } from "@/lib/audio-clock";
@@ -650,6 +650,11 @@ export class RocketEngine {
       this.controls.enabled = !ui.playing;
     }
     this.controls.update();
+    // Jelajah: kamera tidak boleh menembus tanah (dulu bisa diputar ke bawah medan → dunia terlihat terbalik)
+    if (ui.mode !== "terbang" && cam.position.y < 400) {
+      const floor = worldY(cam.position.x, cam.position.z) + 0.8;
+      if (cam.position.y < floor) cam.position.y = floor;
+    }
     this.world.update(dt);
     this.renderer.shadowMap.autoUpdate = this.world.shadowsLive;
     this.renderer.render(this.world.scene, cam);

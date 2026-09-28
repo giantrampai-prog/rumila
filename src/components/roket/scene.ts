@@ -81,8 +81,6 @@ function skyMaterial() {
   });
 }
 
-/** warna rata-rata pita horizon foto panorama (untuk kabut di darat) */
-const PANO_HORIZON = new THREE.Color("#7f9aa0");
 /** putaran foto panorama agar lautnya searah laut 3D (+x) */
 const PANO_YAW = Math.PI;
 
@@ -869,8 +867,9 @@ export class RocketScene {
         tx.needsUpdate = true;
       });
       this.textures.push(t);
-      // Hanya bagian foto di atas horizon (gunung, laut di cakrawala, hutan, langit) yang dipakai; rumput foto di
-      // bawahnya dibuang karena di sana sudah ada medan & laut 3D (laut 3D melengkung mengikuti Bumi).
+      // Hanya LANGIT & AWAN foto (±22° ke atas) yang dipakai: gunung & cakrawala tetap 3D supaya menyatu dengan
+      // medan dilihat dari ketinggian mana pun (foto hanya benar dilihat setinggi mata). Memudar lembut ke langit
+      // shader di bawahnya.
       this.pano = new THREE.Mesh(
         new THREE.SphereGeometry(3000, 64, 32),
         new THREE.ShaderMaterial({
@@ -881,7 +880,7 @@ export class RocketScene {
               // dilihat dari dalam bola: balik mendatar; horizon foto ±52% dari atas → digeser tepat setinggi mata
               vec2 uv = vec2(1.0 - vUv.x, vUv.y - 0.019);
               vec4 c = texture2D(uMap, uv);
-              float a = smoothstep(0.468, 0.476, uv.y) * uOpacity;
+              float a = smoothstep(0.62, 0.72, uv.y) * uOpacity;
               gl_FragColor = vec4(c.rgb, a);
               #include <colorspace_fragment>
             }`,
@@ -1238,14 +1237,14 @@ export class RocketScene {
     u.uSpace.value = smooth(60, 120, camAlt);
     this.starMat.opacity = smooth(20, 90, camAlt);
     const fog = this.scene.fog as THREE.FogExp2;
-    // di darat kabut menyatu dengan pita horizon foto panorama (hutan & gunung berkabut), lalu ke warna langit
-    // kamera di sekitar landasan ±0,5–2 km (skala ketinggian dirapatkan); foto memudar saat roket menanjak
+    // langit foto memudar saat roket menanjak (di atas awan langit menggelap ke hitam)
     const panoK = 1 - smooth(4, 9, camAlt);
-    fog.color.copy(u.uHorizon.value).lerp(PANO_HORIZON, panoK * 0.85);
+    fog.color.copy(u.uHorizon.value);
     this.pano.position.copy(cam.position);
     (this.pano.material as THREE.ShaderMaterial).uniforms.uOpacity.value = panoK;
     this.pano.visible = panoK > 0.001;
-    fog.density = 0.0085 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
+    // kabut tipis: pegunungan jauh tampak hijau-kebiruan berkabut (perspektif udara), bukan gumpalan putih
+    fog.density = 0.0036 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
     this.hemi.intensity = 0.9 * (1 - smooth(20, 90, camAlt)) + 0.1;
     (this.glow.material as THREE.ShaderMaterial).uniforms.uAlpha.value = smooth(25, 120, camAlt);
     (this.ozone.material as THREE.MeshBasicMaterial).opacity = 0.06 * smooth(8, 20, camAlt) * (1 - smooth(60, 200, camAlt)) + 0.05 * smooth(200, 600, camAlt);
@@ -1258,6 +1257,7 @@ export class RocketScene {
     su.uSky.value.copy(u.uHorizon.value);
     su.uZenith.value.copy(u.uZenith.value);
     // awan sprite rendah hanya di atas (di darat foto panorama sudah punya awan)
+    // awan sprite hanya saat menanjak (di darat langit foto sudah punya awan; sprite tampak buram & palsu)
     this.cumulus.visible = camAlt > 5 && camAlt < 40;
     if (this.denseClouds) this.denseClouds.opacity = 0.85 * smooth(0.15, 1.2, this.rocketKm);
     /** bayangan hanya perlu dihitung ulang saat kamera dekat tanah */
@@ -1270,6 +1270,9 @@ export class RocketScene {
     // awan Bumi dari orbit: baru tampak saat kamera sudah tinggi (di bawah itu ada awan kumulus sendiri)
     this.cloudMat.uniforms.uOpacity.value = 0.95 * smooth(30, 90, camAlt);
     this.earthClouds.visible = camAlt > 30;
+    // Bola Bumi (tampilan dari angkasa) permukaannya setinggi landasan: dari dekat ia tembus terlihat lewat laut
+    // transparan sebagai bercak biru gelap. Sembunyikan selama daratan rinci masih dipakai.
+    this.earthGroup.visible = camAlt > 8;
     for (const f of this.flags) f.uniforms.uTime.value = this.time;
     const beacon = this.t.tower.getObjectByName("beacon") as THREE.Mesh | undefined;
     if (beacon) beacon.visible = Math.sin(this.time * 3) > 0;
