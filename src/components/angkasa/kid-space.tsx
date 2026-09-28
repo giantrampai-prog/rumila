@@ -193,8 +193,10 @@ function TourPops({ pov }: { pov: boolean }) {
   const stop = TOUR[st.tourIndex];
   const look = TOUR_POPS[stop.id];
   const screens = useCockpitScreens(pov);
-  const shown = st.tourArrived && look ? look.pops.filter((p) => p.at <= st.tourLine) : [];
-  useSfxOnChange(shown.length, (n, prev) => {
+  // maksimal 3 kartu terbaru (Bumi punya banyak fakta; yang lama bergantian keluar)
+  const shown = st.tourArrived && look ? look.pops.filter((p) => p.at <= st.tourLine).slice(-3) : [];
+  const newest = shown.length ? shown[shown.length - 1].at : -1;
+  useSfxOnChange(newest, (n, prev) => {
     if (n > prev) sfx.pick();
   });
   if (!look || !st.tourArrived) return <DashIdle screens={screens} />;

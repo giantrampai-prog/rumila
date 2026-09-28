@@ -60,17 +60,23 @@ export const TOUR_POPS: Record<string, TourLook> = {
   earth: {
     accent: ["#4f9dff", "#16539e"],
     pops: [
-      { at: 0, icon: "eco", big: "Ada kehidupan", label: "satu-satunya yang kita tahu" },
-      { at: 1, icon: "water_drop", big: "71%", label: "permukaannya air" },
-      { at: 2, icon: "rotate_right", big: fact("earth", "Kemiringan sumbu"), label: "miring → ada musim" },
+      { at: 0, icon: "home", big: "Rumah kita", label: "planet ke-3" },
+      { at: 1, icon: "eco", big: "Ada kehidupan", label: "satu-satunya yang kita tahu" },
+      { at: 2, icon: "water_drop", big: "71%", label: "permukaannya air" },
+      { at: 4, icon: "shield", big: "Atmosfer", label: "selimut udara Bumi" },
+      { at: 5, icon: "thumb_up", big: "Pas!", label: "tidak terlalu panas & dingin" },
+      { at: 6, icon: "sync", big: "24 jam", label: "siang & malam" },
+      { at: 7, icon: "cake", big: "365 hari", label: "satu tahun" },
+      { at: 8, icon: "rotate_right", big: fact("earth", "Kemiringan sumbu"), label: "miring → ada musim" },
+      { at: 9, icon: "flag", big: "17.000+", label: "pulau di Indonesia" },
     ],
   },
   moon: {
     accent: ["#c9ccd1", "#5f646b"],
     pops: [
       { at: 0, icon: "straighten", big: fact("moon", "Jarak rata-rata ke Bumi"), label: "jarak ke Bumi" },
-      { at: 1, icon: "sync", big: fact("moon", "Satu putaran orbit"), label: "sekali mengelilingi Bumi" },
-      { at: 2, icon: "steps", big: "1969", label: "manusia pertama mendarat" },
+      { at: 2, icon: "sync", big: fact("moon", "Satu putaran orbit"), label: "sekali mengelilingi Bumi" },
+      { at: 3, icon: "steps", big: "1969", label: "manusia pertama mendarat" },
     ],
   },
   mars: {
@@ -78,7 +84,7 @@ export const TOUR_POPS: Record<string, TourLook> = {
     pops: [
       { at: 0, icon: "palette", big: "Merah", label: "debu karat besi" },
       { at: 1, icon: "landscape", big: "±22 km", label: "tinggi Olympus Mons" },
-      { at: 2, icon: "bedtime", big: "2 bulan", label: "Phobos & Deimos" },
+      { at: 3, icon: "bedtime", big: "2 bulan", label: "Phobos & Deimos" },
     ],
   },
   "asteroid-example": {
@@ -92,8 +98,8 @@ export const TOUR_POPS: Record<string, TourLook> = {
     accent: ["#e7b67e", "#94572a"],
     pops: [
       { at: 0, icon: "public", big: "11× Bumi", label: "lebar planet terbesar" },
-      { at: 1, icon: "schedule", big: fact("jupiter", "Satu hari (rotasi)"), label: "satu hari di Jupiter" },
-      { at: 2, icon: "cyclone", big: "Badai raksasa", label: "lebih besar dari Bumi" },
+      { at: 2, icon: "schedule", big: fact("jupiter", "Satu hari (rotasi)"), label: "satu hari di Jupiter" },
+      { at: 3, icon: "cyclone", big: "Badai raksasa", label: "lebih besar dari Bumi" },
     ],
   },
   saturn: {
@@ -101,7 +107,7 @@ export const TOUR_POPS: Record<string, TourLook> = {
     pops: [
       { at: 0, icon: "trip_origin", big: "Cincin", label: "paling indah" },
       { at: 1, icon: "ac_unit", big: "Es & batu", label: "isi cincinnya" },
-      { at: 2, icon: "bedtime", big: "Titan", label: "bulan terbesarnya" },
+      { at: 3, icon: "bedtime", big: "Titan", label: "bulan terbesarnya" },
     ],
   },
   uranus: {

@@ -5,60 +5,60 @@ Pergantian planet dan teks di layar akan mengikuti audionya. Kalau bisa, beri je
 
 ## 1. Briefing misi
 
-Selamat datang di pesawat antariksa Rumila, penjelajah cilik! Aku pemandumu dalam perjalanan kali ini. Hari ini kita dapat misi istimewa: mengunjungi keluarga besar Matahari, dari planet yang paling panas sampai yang paling jauh dan dingin. Di setiap persinggahan, perhatikan baik-baik, ya. Ada fakta seru yang bisa kamu ceritakan ke Ayah dan Ibu nanti! Satu rahasia sebelum berangkat: jarak antarplanet di tur ini kita rapatkan, dan pesawat kita super cepat. Aslinya, cahaya Matahari saja butuh sekitar 8 menit untuk sampai ke Bumi. Sabuk pengaman sudah terpasang? Mesin menyala. Tiga, dua, satu... meluncur!
+Halo, penjelajah cilik! Aku Agam, pemandumu hari ini di pesawat antariksa Rinoya. Misi kita istimewa: mengunjungi keluarga besar Matahari, yaitu delapan planet, Bulan, dan beberapa tetangga kecilnya. Di setiap persinggahan, perhatikan kartu-kartu yang muncul, ya. Isinya fakta seru yang bisa kamu ceritakan ke Ayah dan Ibu. Satu rahasia: di tur ini jarak antarplanet kita rapatkan. Aslinya jauuuh sekali. Cahaya Matahari saja butuh sekitar delapan menit untuk sampai ke Bumi! Sabuk pengaman sudah terpasang? Mesin menyala. Tiga… dua… satu… meluncur! Tujuan pertama kita: pusat tata surya.
 
 ## 2. Matahari
 
-Wah, silau! Ini Matahari, bintang raksasa di pusat tata surya kita. Matahari itu bintang, bukan planet. Cahaya dan hangatnya yang membuat planet-planet tampak terang. Radiusnya sekitar 695.700 km. Kalau Matahari itu kotak kosong, lebih dari satu juta Bumi bisa masuk ke dalamnya!
+Wah, silau sekali! Inilah Matahari. Matahari itu sebuah bintang, bola gas raksasa yang sangat panas. Permukaannya sekitar lima ribu lima ratus derajat Celsius. Matahari besar sekali. Lebih dari satu juta Bumi bisa masuk ke dalamnya! Tanpa cahaya dan hangat Matahari, tidak akan ada siang, tumbuhan tidak bisa tumbuh, dan Bumi akan membeku. Sekarang kita terbang ke planet yang paling dekat dengan Matahari. Pegangan, ya!
 
 ## 3. Merkurius
 
-Ini Merkurius, planet terkecil dan paling dekat dengan Matahari. Si kecil yang lincah! Merkurius mengelilingi Matahari cepat sekali. Satu tahun di sini cuma sekitar 88 hari Bumi. Karena hampir tidak punya selimut udara, siangnya panas membara dan malamnya dingin membeku. Brrr!
+Ini Merkurius, planet paling kecil dan paling dekat dengan Matahari. Merkurius berlari cepat mengelilingi Matahari. Satu tahun di sini cuma delapan puluh delapan hari! Merkurius hampir tidak punya udara. Siangnya panas membara, malamnya dingin membeku. Brrr! Permukaannya penuh kawah, bekas ditabrak batu-batu angkasa sejak dulu sekali. Ayo lanjut ke tetangga berikutnya, planet yang berselimut awan.
 
 ## 4. Venus
 
-Selanjutnya Venus, planet yang tertutup awan tebal berwarna kekuningan. Awan itu memerangkap panas, jadi suhunya sekitar 464 °C. Venus adalah planet terpanas, lebih panas dari Merkurius! Uniknya, Venus berputar ke arah terbalik, dan satu harinya lebih lama daripada satu tahunnya!
+Ini Venus, planet yang terbungkus awan tebal kekuningan. Awannya memerangkap panas seperti selimut. Suhunya sekitar empat ratus enam puluh empat derajat. Venus adalah planet paling panas, lebih panas dari Merkurius! Venus berputar sangat pelan dan ke arah terbalik. Satu harinya lebih lama daripada satu tahunnya! Dari Bumi, Venus sering terlihat sangat terang saat senja atau subuh. Orang menyebutnya bintang kejora. Sekarang… kita pulang sebentar. Tujuan berikutnya adalah planet yang paling spesial untuk kita.
 
 ## 5. Bumi
 
-Hore, ini rumah kita, Bumi! Satu-satunya planet yang kita tahu punya makhluk hidup. Lihat birunya? Sekitar tujuh puluh persen permukaan Bumi tertutup air. Sumbu Bumi miring 23,4 °. Kemiringan inilah yang membuat pergantian musim di banyak tempat.
+Hore, ini rumah kita, Bumi! Planet ketiga dari Matahari. Bumi adalah satu-satunya planet yang kita tahu punya makhluk hidup: manusia, hewan, dan tumbuhan. Lihat warna birunya? Itu lautan! Sekitar tujuh puluh satu persen permukaan Bumi tertutup air. Yang putih berputar-putar itu awan. Awan membawa hujan, supaya sungai dan danau terisi lagi. Bumi diselimuti udara yang disebut atmosfer. Udara ini kita hirup setiap hari, dan melindungi kita dari panas Matahari dan batu angkasa. Jarak Bumi dari Matahari pas sekali: tidak terlalu panas, tidak terlalu dingin. Karena itu air bisa tetap cair, dan makhluk hidup bisa tinggal di sini. Bumi berputar seperti gasing. Satu putaran butuh sekitar dua puluh empat jam, dan itulah yang membuat siang dan malam. Sambil berputar, Bumi juga mengelilingi Matahari. Satu putaran penuh butuh tiga ratus enam puluh lima hari, atau satu tahun. Setiap kali kamu berulang tahun, Bumi sudah sekali keliling Matahari! Sumbu Bumi agak miring. Kemiringan inilah yang membuat ada musim di banyak tempat. Coba cari Indonesia! Negara kita punya lebih dari tujuh belas ribu pulau, berjajar di sekitar garis khatulistiwa. Bumi punya teman setia yang selalu menemani. Yuk, kita sapa dia!
 
 ## 6. Bulan
 
-Hai, Bulan! Ia setia menemani Bumi dan memantulkan cahaya Matahari. Dari Bumi, kita selalu melihat sisi Bulan yang sama, karena Bulan berputar sekali setiap kali mengelilingi Bumi. Tahun 1969, astronaut pertama kali mendarat di sini. Jejak kakinya masih ada, karena di Bulan tidak ada angin!
+Hai, Bulan! Bulan adalah satelit alami Bumi. Jaraknya sekitar tiga ratus delapan puluh empat ribu kilometer. Bulan tidak bercahaya sendiri. Ia memantulkan cahaya Matahari, makanya bisa terlihat terang di malam hari. Bulan mengelilingi Bumi kira-kira sebulan sekali. Dari Bumi, kita selalu melihat sisi Bulan yang sama. Tahun seribu sembilan ratus enam puluh sembilan, manusia pertama kali mendarat di sini. Jejak kakinya masih ada, karena di Bulan tidak ada angin! Sekarang kita tinggalkan Bumi dan Bulan, menuju planet yang berwarna merah.
 
 ## 7. Mars
 
-Mars, si planet merah! Warnanya berasal dari debu yang mengandung karat besi. Di Mars ada Olympus Mons, gunung berapi terbesar yang diketahui di tata surya. Tingginya sekitar dua setengah kali Gunung Everest! Mars punya dua bulan kecil bernama Phobos dan Deimos.
+Inilah Mars, si planet merah! Warnanya dari debu yang mengandung karat besi. Di Mars ada Olympus Mons, gunung berapi terbesar di tata surya. Tingginya sekitar dua setengah kali Gunung Everest! Satu hari di Mars hampir sama dengan di Bumi, sekitar dua puluh empat setengah jam. Mars punya dua bulan kecil bernama Phobos dan Deimos. Robot-robot penjelajah juga sedang meneliti Mars sekarang! Setelah Mars, hati-hati… kita akan melewati daerah penuh batu angkasa.
 
 ## 8. Sabuk asteroid
 
-Awas, batu angkasa! Di antara Mars dan Jupiter ada sabuk asteroid, kumpulan batuan sisa pembentukan tata surya. Batu yang kamu lihat ini hanya model contoh, bukan asteroid tertentu. Tenang, di dunia nyata jarak antarasteroid sangat jauh, jadi pesawat bisa lewat tanpa tabrakan.
+Awas, batu angkasa! Di antara Mars dan Jupiter ada sabuk asteroid. Asteroid adalah batuan sisa sejak tata surya terbentuk. Batu yang kamu lihat ini hanya model contoh. Tenang saja, aslinya jarak antarasteroid sangat jauh, jadi pesawat bisa lewat tanpa tabrakan. Di depan sana sudah menunggu planet paling besar. Siap-siap terpukau!
 
 ## 9. Jupiter
 
-Wow, lihat raksasa ini! Jupiter adalah planet terbesar di tata surya. Walau besar, Jupiter berputar paling cepat. Satu harinya cuma sekitar 9,9 jam! Bintik Merah Raksasa itu badai yang lebih besar dari Bumi. Dan Jupiter tidak punya permukaan padat untuk didarati.
+Wow, lihat raksasa ini! Jupiter adalah planet terbesar. Lebarnya sekitar sebelas kali Bumi. Jupiter terbuat dari gas, jadi tidak punya tanah untuk didarati. Walau raksasa, Jupiter berputar paling cepat. Satu harinya cuma sekitar sepuluh jam! Lihat bintik kemerahan itu? Itu Bintik Merah Raksasa, badai yang lebih besar dari Bumi dan sudah diamati lebih dari seratus lima puluh tahun. Berikutnya, planet yang memakai cincin paling cantik!
 
 ## 10. Saturnus
 
-Tadaa! Saturnus dengan cincinnya yang cantik. Cincinnya bukan piringan padat, melainkan miliaran bongkah es dan batu yang ikut berputar. Yang jingga di dekatnya itu Titan, satelit terbesar Saturnus. Ia diselimuti atmosfer tebal.
+Tadaa! Inilah Saturnus dengan cincinnya yang indah. Cincinnya bukan piringan padat, tapi miliaran bongkah es dan batu yang ikut berputar. Saturnus sangat ringan untuk ukurannya. Kalau ada kolam air yang cukup besar, Saturnus bisa mengapung! Yang jingga di dekatnya itu Titan, bulan terbesar Saturnus. Titan diselimuti udara tebal berkabut. Kita terbang makin jauh dari Matahari. Makin jauh, makin dingin… brrr!
 
 ## 11. Uranus
 
-Halo, Uranus! Planet biru kehijauan yang dingin sekali. Sumbunya miring 97,77 °, jadi Uranus berputar sambil rebahan, seperti bola yang menggelinding! Warna birunya berasal dari gas metana di atmosfernya.
+Halo, Uranus! Planet biru kehijauan ini adalah planet terdingin. Sumbunya miring hampir tidur, jadi Uranus berputar sambil rebahan, seperti bola yang menggelinding! Warna birunya berasal dari gas metana di udaranya. Satu planet lagi, yang paling jauh. Ayo kita ke sana!
 
 ## 12. Neptunus
 
-Kita sudah sampai di Neptunus, planet terjauh dari Matahari. Neptunus punya angin tercepat yang diketahui di tata surya. Wuuush! Dari sini, cahaya Matahari butuh sekitar 4 jam untuk tiba.
+Kita sampai di Neptunus, planet terjauh dari Matahari. Di Neptunus bertiup angin tercepat di tata surya, lebih cepat dari pesawat jet. Wuuush! Dari sini, cahaya Matahari butuh sekitar empat jam untuk tiba. Tapi tunggu, masih ada si mungil yang tinggal lebih jauh lagi!
 
 ## 13. Pluto
 
-Nah, ini Pluto, si mungil dari kawasan jauh. Sejak tahun 2006, Pluto digolongkan sebagai planet katai, bukan planet kesembilan. Wahana New Horizons pernah memotret dataran es berbentuk hati di permukaannya. Manis, ya!
+Nah, ini Pluto, si mungil dari kawasan jauh. Pluto lebih kecil daripada Bulan kita! Sejak tahun dua ribu enam, Pluto disebut planet katai, bukan planet kesembilan. Wahana New Horizons pernah memotret dataran es berbentuk hati di permukaannya. Manis, ya! Sebelum pulang, lihat! Ada tamu berekor yang sedang lewat.
 
 ## 14. Komet
 
-Lihat ekornya! Komet itu seperti bola salju kotor dari es dan debu. Ini model contoh, bukan komet tertentu. Saat mendekati Matahari, esnya menguap dan membentuk kepala berkabut serta ekor panjang. Ekor komet selalu mengarah menjauhi Matahari, bukan sekadar tertinggal di belakangnya.
+Ini komet, seperti bola salju kotor dari es dan debu. Ini model contoh, ya. Saat mendekati Matahari, esnya menguap dan membentuk ekor panjang yang berkilau. Ekor komet selalu mengarah menjauhi Matahari. Sekarang kita naik tinggi-tinggi, untuk melihat seluruh tata surya sekaligus.
 
 ## 15. Misi selesai!
 
-Misi selesai, penjelajah hebat! Kamu sudah mengunjungi seluruh keluarga besar Matahari. Dari sini, lihat betapa luasnya tata surya kita. Padahal, ia hanyalah satu titik kecil di galaksi Bima Sakti. Pesawat Rumila siap mengantarmu lagi kapan saja. Pilih planet favoritmu, atau jelajahi bintang dan galaksi. Sampai jumpa di petualangan berikutnya!
+Misi selesai, penjelajah hebat! Kamu sudah mengunjungi seluruh keluarga besar Matahari. Lihat betapa luasnya tata surya kita. Padahal, ia hanyalah satu bagian kecil dari galaksi Bima Sakti. Planet mana yang paling kamu suka? Kamu bisa mengunjunginya lagi kapan saja. Sampai jumpa di petualangan berikutnya!
