@@ -81,6 +81,11 @@ function skyMaterial() {
   });
 }
 
+/** warna rata-rata pita horizon foto panorama (untuk kabut di darat) */
+const PANO_HORIZON = new THREE.Color("#7f9aa0");
+/** putaran foto panorama agar lautnya searah laut 3D (+x) */
+const PANO_YAW = Math.PI;
+
 const ZENITH: [number, string][] = [
   [0, "#3d8ae6"],
   [12, "#2159c2"],
@@ -738,6 +743,8 @@ export class RocketScene {
   private sea!: ReturnType<typeof buildSea>;
   private land!: THREE.Group;
   private cumulus!: THREE.Group;
+  /** foto panorama 360° di sekeliling landasan (gunung api, laut, hutan, desa) — memudar saat roket naik */
+  private pano!: THREE.Mesh;
   private denseClouds: THREE.SpriteMaterial | null = null;
   private textures: THREE.Texture[] = [];
   /** ketinggian roket terakhir (km) */
@@ -855,6 +862,40 @@ export class RocketScene {
     s.add(this.land);
     this.cumulus = buildCumulus(low, (t) => this.textures.push(t));
     s.add(this.cumulus);
+    {
+      const t = new THREE.TextureLoader().load("/roket/latar-360.webp", (tx) => {
+        tx.colorSpace = THREE.SRGBColorSpace;
+        tx.wrapS = THREE.RepeatWrapping;
+        tx.needsUpdate = true;
+      });
+      this.textures.push(t);
+      // Hanya bagian foto di atas horizon (gunung, laut di cakrawala, hutan, langit) yang dipakai; rumput foto di
+      // bawahnya dibuang karena di sana sudah ada medan & laut 3D (laut 3D melengkung mengikuti Bumi).
+      this.pano = new THREE.Mesh(
+        new THREE.SphereGeometry(3000, 64, 32),
+        new THREE.ShaderMaterial({
+          uniforms: { uMap: { value: t }, uOpacity: { value: 1 } },
+          vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+          fragmentShader: `uniform sampler2D uMap; uniform float uOpacity; varying vec2 vUv;
+            void main(){
+              // dilihat dari dalam bola: balik mendatar; horizon foto ±52% dari atas → digeser tepat setinggi mata
+              vec2 uv = vec2(1.0 - vUv.x, vUv.y - 0.019);
+              vec4 c = texture2D(uMap, uv);
+              float a = smoothstep(0.468, 0.476, uv.y) * uOpacity;
+              gl_FragColor = vec4(c.rgb, a);
+              #include <colorspace_fragment>
+            }`,
+          side: THREE.BackSide,
+          depthWrite: false,
+          transparent: true,
+        }),
+      );
+      this.pano.renderOrder = -9; // di atas langit, di bawah semua benda 3D
+      this.pano.frustumCulled = false;
+      // laut di foto (tepi kiri-kanan gambar) diarahkan ke laut 3D (sisi +x)
+      this.pano.rotation.y = PANO_YAW;
+      s.add(this.pano);
+    }
     // Burung di troposfer bawah
     this.birds = buildBirds(low ? 8 : 16);
     this.birds.group.position.y = altToY(2.5);
@@ -1197,7 +1238,13 @@ export class RocketScene {
     u.uSpace.value = smooth(60, 120, camAlt);
     this.starMat.opacity = smooth(20, 90, camAlt);
     const fog = this.scene.fog as THREE.FogExp2;
-    fog.color.copy(u.uHorizon.value);
+    // di darat kabut menyatu dengan pita horizon foto panorama (hutan & gunung berkabut), lalu ke warna langit
+    // kamera di sekitar landasan ±0,5–2 km (skala ketinggian dirapatkan); foto memudar saat roket menanjak
+    const panoK = 1 - smooth(4, 9, camAlt);
+    fog.color.copy(u.uHorizon.value).lerp(PANO_HORIZON, panoK * 0.85);
+    this.pano.position.copy(cam.position);
+    (this.pano.material as THREE.ShaderMaterial).uniforms.uOpacity.value = panoK;
+    this.pano.visible = panoK > 0.001;
     fog.density = 0.0085 * (1 - smooth(0, 12, camAlt)) + 0.0012 * (1 - smooth(12, 30, camAlt));
     this.hemi.intensity = 0.9 * (1 - smooth(20, 90, camAlt)) + 0.1;
     (this.glow.material as THREE.ShaderMaterial).uniforms.uAlpha.value = smooth(25, 120, camAlt);
@@ -1210,7 +1257,8 @@ export class RocketScene {
     su.uTime.value = this.time;
     su.uSky.value.copy(u.uHorizon.value);
     su.uZenith.value.copy(u.uZenith.value);
-    this.cumulus.visible = camAlt < 40;
+    // awan sprite rendah hanya di atas (di darat foto panorama sudah punya awan)
+    this.cumulus.visible = camAlt > 5 && camAlt < 40;
     if (this.denseClouds) this.denseClouds.opacity = 0.85 * smooth(0.15, 1.2, this.rocketKm);
     /** bayangan hanya perlu dihitung ulang saat kamera dekat tanah */
     this.shadowsLive = camAlt < 6;
