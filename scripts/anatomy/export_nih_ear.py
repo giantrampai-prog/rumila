@@ -1,7 +1,7 @@
 import bpy,bmesh,struct,json
 from mathutils import Vector
 from pathlib import Path
-ROOT=Path('/Users/macbook/RUMILA/rumila-app')
+ROOT=Path('/Users/macbook/Projects/rumila/rumila-app')
 s=(ROOT/'sources/anatomy/nih-cochlea.stl').read_bytes();n=struct.unpack_from('<I',s,80)[0];vs=[];faces=[]
 for i in range(n):
  v=struct.unpack_from('<12f',s,84+i*50);j=len(vs);vs.extend([v[k:k+3] for k in (3,6,9)]);faces.append((j,j+1,j+2))

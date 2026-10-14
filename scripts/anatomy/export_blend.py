@@ -1,6 +1,6 @@
 import bpy,bmesh,json,os,math,struct
 from mathutils import Matrix,Vector
-ROOT='/Users/macbook/RUMILA/rumila-app'
+ROOT='/Users/macbook/Projects/rumila/rumila-app'
 plan=json.load(open(ROOT+'/sources/anatomy/export-plan.json'))
 # Third-party kidney with non-commercial terms in Z-Anatomy is deliberately excluded.
 for suf,fma,ureter in [('r','FMA7204','FMA15571'),('l','FMA7205','FMA15572')]:
