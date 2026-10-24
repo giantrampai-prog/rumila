@@ -102,8 +102,9 @@ export const PaketUrutkanObj = z.object({
   ...Base,
   mechanic: z.literal("urutkan"),
   /** susun: langkah diacak, anak menyusun · perbaiki: satu pasang tertukar, anak menukar tepat satu kali ·
-   *  dulu: dua langkah, anak menyentuh yang terjadi lebih dulu */
-  mode: z.enum(["susun", "perbaiki", "dulu"]).default("susun"),
+   *  dulu: dua langkah, anak menyentuh yang terjadi lebih dulu ·
+   *  label: langkah sudah urut, anak menempel label pertama/lalu/terakhir di bawah tiap gambar lalu tokoh bercerita mengikuti label */
+  mode: z.enum(["susun", "perbaiki", "dulu", "label"]).default("susun"),
   sequences: z.array(z.object({
     id: Slug,
     titleKey: Key,
@@ -113,7 +114,7 @@ export const PaketUrutkanObj = z.object({
 export const PaketUrutkan = PaketUrutkanObj.superRefine(refineUrutkan);
 function refineUrutkan(p: z.infer<typeof PaketUrutkanObj>, ctx: z.RefinementCtx) {
   if (p.mode === "dulu" && p.sequences.some(s => s.steps.length !== 2)) ctx.addIssue({ code: "custom", path: ["sequences"], message: "mode dulu: tiap sequence tepat 2 langkah" });
-  if (p.mode !== "dulu" && p.sequences.some(s => s.steps.length < 3)) ctx.addIssue({ code: "custom", path: ["sequences"], message: "mode susun/perbaiki: minimal 3 langkah" });
+  if (p.mode !== "dulu" && p.sequences.some(s => s.steps.length < 3)) ctx.addIssue({ code: "custom", path: ["sequences"], message: "mode susun/perbaiki/label: minimal 3 langkah" });
 }
 export type PaketUrutkan = z.infer<typeof PaketUrutkan>;
 
@@ -277,15 +278,22 @@ export const SIMULASI_MODES = [
   "alat",
   /** bagi N benda ke dua piring sama banyak */
   "bagi",
+  /** menara: benda di lantai (value 1 = bisa ditumpuk, 0 = menggelinding, 2 = tabung: bisa bila tegak); anak menumpuk setinggi target */
+  "menara",
+  /** bantuan: satu alat "macet" tidak bereaksi; tombol tolong tampil tetap; anak minta tolong setelah ≤ target ketukan sia-sia */
+  "bantuan",
+  /** telusur: angka 1–5 sebagai jalur tebal (+ panah urutan goresan bila offset 1); anak menggores dengan jari */
+  "telusur",
 ] as const;
 export const SimulasiMode = z.enum(SIMULASI_MODES);
 export type SimulasiMode = z.infer<typeof SimulasiMode>;
 
 export const SimulasiItem = z.object({
   id: Slug, labelKey: Key, assetId: Slug.optional(), ...Visual,
-  /** peran dalam mode: benda (timbangan/jengkal/kubus/taksir/bagi), hewan (turus/alat), tombol & alat (tombol), kegiatan (jam-putar) */
+  /** peran dalam mode: benda (timbangan/jengkal/kubus/taksir/bagi/menara/telusur), hewan (turus/alat), tombol & alat (tombol/bantuan), kegiatan (jam-putar) */
   role: z.enum(["benda", "hewan", "tombol", "alat", "kegiatan"]).default("benda"),
-  /** nilai tersembunyi: berat relatif (timbangan), panjang dalam jengkal/kubus, jam kegiatan (1–12), besaran yang diminta (alat: 1 = panjang, 2 = berat) */
+  /** nilai tersembunyi: berat relatif (timbangan), panjang dalam jengkal/kubus, jam kegiatan (1–12), besaran yang diminta (alat: 1 = panjang, 2 = berat),
+   *  menara: 1 = bisa ditumpuk, 0 = menggelinding, 2 = tabung (bisa bila tegak) */
   value: z.number().optional(),
 });
 export const PaketSimulasi = z.object({

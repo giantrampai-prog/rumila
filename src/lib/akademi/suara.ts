@@ -121,13 +121,18 @@ export function angkaKata(n: number): string {
   return K[n - 1] ?? String(n);
 }
 
-/** Bacakan teks (membatalkan ucapan sebelumnya). Pakai MP3 bila ada di manifes, bila tidak speechSynthesis. */
+/** Rekaman manifes semuanya berbahasa Indonesia; hanya dipakai bila lang Indonesia. */
+function pakaiRekaman(lang: string) {
+  return lang.toLowerCase().split("-")[0] === "id";
+}
+
+/** Bacakan teks (membatalkan ucapan sebelumnya). Pakai MP3 bila ada di manifes (hanya lang id-ID), bila tidak speechSynthesis (voice sesuai lang, mis. en-US). */
 export function ucapkan(teks: string, lang = "id-ID") {
   const t = teks.trim();
   if (!t) return;
   diamkanAudio();
   diamkanSintesis();
-  const src = SUARA[t];
+  const src = pakaiRekaman(lang) ? SUARA[t] : undefined;
   if (src && audio()) {
     const token = urutanAktif;
     void putar(src).then((ok) => {
@@ -147,7 +152,7 @@ export function ucapkanBerurutan(potongan: string[], lang = "id-ID") {
   const daftar = potongan.map((p) => p.trim()).filter(Boolean);
   if (!daftar.length) return;
   const gabungan = daftar.join(" ");
-  if (!audio() || !daftar.every(adaSuara)) {
+  if (!pakaiRekaman(lang) || !audio() || !daftar.every(adaSuara)) {
     ucapkan(gabungan, lang);
     return;
   }

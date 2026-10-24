@@ -9,7 +9,7 @@ import type { ContentPack } from "@akademi/schema";
 import { buatRonde, knobDefaults, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
-import { kompetensiUntuk, paketById } from "@/lib/akademi/konten";
+import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { useMe } from "@/lib/store";
@@ -68,7 +68,9 @@ function Runner({ paket }: { paket: ContentPack }) {
   const learnerId = me?.id ?? "dev";
   const router = useRouter();
   useToolSession(learnerId, `akademi-${paket.mechanic}`, "edukasi");
-  const t = useCallback((k: string) => paket.locale.id[k] ?? paket.locale.en[k] ?? k, [paket]);
+  const bahasa = useBahasaAnak(learnerId);
+  const lang = bahasa === "en" ? "en-US" : "id-ID";
+  const t = useCallback((k: string) => paket.locale[bahasa][k] ?? paket.locale.id[k] ?? paket.locale.en[k] ?? k, [paket, bahasa]);
   const kompetensiIds = useMemo(() => kompetensiUntuk(paket.id).map((c) => c.id), [paket.id]);
 
   const sessionId = useRef(uuid());
@@ -84,7 +86,7 @@ function Runner({ paket }: { paket: ContentPack }) {
   const mulaiRonde = useRef(Date.now());
   const total = paket.rounds;
 
-  const ucap = useCallback(() => ucapkan(t(paket.instructionKey)), [paket.instructionKey, t]);
+  const ucap = useCallback(() => ucapkan(t(paket.instructionKey), lang), [paket.instructionKey, t, lang]);
 
   const sudahMulai = useRef(false);
   useEffect(() => {
@@ -146,11 +148,11 @@ function Runner({ paket }: { paket: ContentPack }) {
     }, JEDA_UMPAN_BALIK);
   };
 
-  if (selesai) return <LayarSelesai paket={paket} skor={skor} onLagi={() => router.replace(`/akademi/main/${paket.id}?u=${Date.now()}`)} onKembali={() => router.push("/akademi")} />;
+  if (selesai) return <LayarSelesai paket={paket} bahasa={bahasa} skor={skor} onLagi={() => router.replace(`/akademi/main/${paket.id}?u=${Date.now()}`)} onKembali={() => router.push("/akademi")} />;
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket)} ronde={idx + 1} total={total} instruksi={t(paket.instructionKey)} onUcap={ucap}>
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={t(paket.instructionKey)} onUcap={ucap}>
       <div key={idx} className="akademi-fade">
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
@@ -164,13 +166,14 @@ function Runner({ paket }: { paket: ContentPack }) {
   );
 }
 
-/** Judul aktivitas: locale.id.judul; cadangan dari id paket (slug → Kata Kapital) */
-export function judulPaket(p: ContentPack) {
-  if (p.locale.id.judul) return p.locale.id.judul;
+/** Judul aktivitas: locale[bahasa].judul (default id, cadangan id); cadangan terakhir dari id paket (slug → Kata Kapital) */
+export function judulPaket(p: ContentPack, bahasa: BahasaAnak = "id") {
+  const judul = p.locale[bahasa]?.judul ?? p.locale.id.judul;
+  if (judul) return judul;
   return p.id.split("-").map((s) => (/^\d/.test(s) ? s : s.charAt(0).toUpperCase() + s.slice(1))).join(" ");
 }
 
-function LayarSelesai({ paket, skor, onLagi, onKembali }: { paket: ContentPack; skor: { benar: number; salah: number; hint: number }; onLagi: () => void; onKembali: () => void }) {
+function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: ContentPack; bahasa: BahasaAnak; skor: { benar: number; salah: number; hint: number }; onLagi: () => void; onKembali: () => void }) {
   const total = skor.benar + skor.salah;
   const bintang = skor.benar >= total ? 3 : skor.benar >= Math.ceil(total * 0.6) ? 2 : skor.benar > 0 ? 1 : 0;
   useEffect(() => {
@@ -188,7 +191,7 @@ function LayarSelesai({ paket, skor, onLagi, onKembali }: { paket: ContentPack; 
         <div style={{ fontSize: 72, lineHeight: 1 }} className="my-2">{bintang >= 2 ? "🏅" : "🌱"}</div>
         <div style={{ fontSize: 26, fontWeight: 900 }}>{bintang >= 2 ? "Stiker baru!" : "Bagus, sudah mencoba"}</div>
         <p className="mt-1 text-[15px] font-bold opacity-75">
-          {skor.benar} dari {total} benar · {judulPaket(paket)}
+          {skor.benar} dari {total} benar · {judulPaket(paket, bahasa)}
         </p>
         <div className="mt-5 flex gap-2">
           <button onClick={onLagi} className="flex-1 rounded-[16px] bg-[#efe7d6] py-3 text-[16px] font-extrabold active:translate-y-0.5">Main lagi</button>

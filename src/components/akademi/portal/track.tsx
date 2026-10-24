@@ -10,7 +10,7 @@ import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, levelAnak, paketUntuk } from "@/lib/akademi/konten";
+import { KOMPETENSI, levelAnak, paketUntuk, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import { useMe } from "@/lib/store";
 import { IkonStatus, INK, KepalaWarna, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, TombolAktivitas, isTrackId, levelMeta, paketSelesai, trackMeta } from "./bersama";
@@ -23,11 +23,11 @@ export interface UnitGrup {
 }
 
 /** Kelompokkan kompetensi track×level per unit (urutan kemunculan); kompetensi urut id (.01, .02 …), paket unik per unit. */
-export function unitUntuk(track: TrackId, level: LevelId, kompetensi: Competency[] = KOMPETENSI): UnitGrup[] {
+export function unitUntuk(track: TrackId, level: LevelId, kompetensi: Competency[] = KOMPETENSI, bahasa: BahasaAnak = "id"): UnitGrup[] {
   const map = new Map<string, UnitGrup>();
   for (const c of kompetensi) {
     if (c.track !== track || c.level !== level) continue;
-    const g = map.get(c.unit.id) ?? map.set(c.unit.id, { id: c.unit.id, nama: c.unit.nama.id, kompetensi: [], paket: [] }).get(c.unit.id)!;
+    const g = map.get(c.unit.id) ?? map.set(c.unit.id, { id: c.unit.id, nama: c.unit.nama[bahasa] ?? c.unit.nama.id, kompetensi: [], paket: [] }).get(c.unit.id)!;
     g.kompetensi.push(c);
     for (const p of paketUntuk(c.id)) if (!g.paket.some((x) => x.id === p.id)) g.paket.push(p);
   }
@@ -36,11 +36,12 @@ export function unitUntuk(track: TrackId, level: LevelId, kompetensi: Competency
 }
 
 /** Aktivitas satu kompetensi, urut judul. */
-const paketKompetensi = (c: Competency) => [...paketUntuk(c.id)].sort((a, b) => judulPaket(a).localeCompare(judulPaket(b), "id"));
+const paketKompetensi = (c: Competency, bahasa: BahasaAnak) => [...paketUntuk(c.id)].sort((a, b) => judulPaket(a, bahasa).localeCompare(judulPaket(b, bahasa), bahasa));
 
 export function TrackView({ track }: { track: string }) {
   const me = useMe();
   const events = useEvents(me.id);
+  const bahasa = useBahasaAnak(me.id);
   const [level, setLevel] = useState<LevelId>("PAUD");
   useEffect(() => setLevel(levelAnak(me.id)), [me.id]);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
@@ -66,9 +67,9 @@ export function TrackView({ track }: { track: string }) {
 
   return (
     <div className="mx-auto flex w-full max-w-[720px] flex-col gap-5">
-      <KepalaWarna c={warna} icon={TRACK_IKON[track]} judul={t.nama.id} sub={sub} />
+      <KepalaWarna c={warna} icon={TRACK_IKON[track]} judul={t.nama[bahasa]} sub={sub} />
       {LEVEL_SLICE.map((lv) => (
-        <Jenjang key={lv} lv={lv} track={track} jenjangAnak={lv === level} tantangan={levelIndex(lv) > idxAnak} peng={peng} selesai={selesai} />
+        <Jenjang key={lv} lv={lv} track={track} jenjangAnak={lv === level} tantangan={levelIndex(lv) > idxAnak} peng={peng} selesai={selesai} bahasa={bahasa} />
       ))}
     </div>
   );
@@ -92,8 +93,8 @@ function JudulJenjang({ lv, jenjangAnak }: { lv: LevelId; jenjangAnak: boolean }
   );
 }
 
-function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai }: { lv: LevelId; track: TrackId; jenjangAnak: boolean; tantangan: boolean; peng: Record<string, Penguasaan>; selesai: Set<string> }) {
-  const unit = unitUntuk(track, lv);
+function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: { lv: LevelId; track: TrackId; jenjangAnak: boolean; tantangan: boolean; peng: Record<string, Penguasaan>; selesai: Set<string>; bahasa: BahasaAnak }) {
+  const unit = unitUntuk(track, lv, KOMPETENSI, bahasa);
   const [, m] = PLAY[TRACK_WARNA[track]];
 
   const isi =
@@ -102,7 +103,7 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai }: { lv: Lev
     ) : (
       <ol className="flex flex-col gap-4">
         {unit.map((u, i) => (
-          <KartuUnit key={u.id} u={u} nomor={i + 1} peng={peng} selesai={selesai} warna={m} />
+          <KartuUnit key={u.id} u={u} nomor={i + 1} peng={peng} selesai={selesai} warna={m} bahasa={bahasa} />
         ))}
       </ol>
     );
@@ -135,7 +136,7 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai }: { lv: Lev
 
 /* ---------------- unit ---------------- */
 
-function KartuUnit({ u, nomor, peng, selesai, warna }: { u: UnitGrup; nomor: number; peng: Record<string, Penguasaan>; selesai: Set<string>; warna: string }) {
+function KartuUnit({ u, nomor, peng, selesai, warna, bahasa }: { u: UnitGrup; nomor: number; peng: Record<string, Penguasaan>; selesai: Set<string>; warna: string; bahasa: BahasaAnak }) {
   return (
     <li className="flex flex-col gap-3 rounded-[24px] bg-white p-3.5 shadow-[0_4px_0_rgba(43,29,78,.08)] sm:p-4">
       <div className="flex items-center gap-3">
@@ -149,23 +150,23 @@ function KartuUnit({ u, nomor, peng, selesai, warna }: { u: UnitGrup; nomor: num
       </div>
       <ol className="flex flex-col gap-3">
         {u.kompetensi.map((c, i) => (
-          <BarisKompetensi key={c.id} c={c} peng={peng} selesai={selesai} terakhir={i === u.kompetensi.length - 1} />
+          <BarisKompetensi key={c.id} c={c} peng={peng} selesai={selesai} terakhir={i === u.kompetensi.length - 1} bahasa={bahasa} />
         ))}
       </ol>
     </li>
   );
 }
 
-function BarisKompetensi({ c, peng, selesai, terakhir }: { c: Competency; peng: Record<string, Penguasaan>; selesai: Set<string>; terakhir: boolean }) {
+function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency; peng: Record<string, Penguasaan>; selesai: Set<string>; terakhir: boolean; bahasa: BahasaAnak }) {
   const status = peng[c.id]?.status ?? "belum";
-  const paket = paketKompetensi(c);
+  const paket = paketKompetensi(c, bahasa);
   const prasyaratBelum = c.prereq.some((id) => (peng[id]?.status ?? "belum") === "belum");
   return (
     <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#f1edf6] pb-3"}`}>
       <div className="flex items-start gap-2.5">
         <IkonStatus status={status} />
         <p className="min-w-0 flex-1 pt-[3px] text-[15px] leading-snug font-bold" style={{ color: INK }}>
-          {c.statement.id}
+          {c.statement[bahasa] ?? c.statement.id}
           {c.core && <span className="ml-1.5 inline-block rounded-full bg-[#fff4d1] px-2 py-px align-middle text-[11px] font-black text-[#b07a00]">inti</span>}
           {prasyaratBelum && <span aria-label="Ada kompetensi sebelumnya yang belum berkembang" title="Ada kompetensi sebelumnya yang belum berkembang" className="ml-1.5 inline-block size-2 rounded-full bg-[#c9bfd8] align-middle" />}
         </p>

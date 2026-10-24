@@ -10,12 +10,14 @@ import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { useEvents } from "@/lib/akademi/jejak";
+import { useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { pilihMisi } from "@/lib/akademi/misi";
 import type { Member } from "@/lib/store";
 import { IkonMekanik, INK, hitungStreak, kalimatKompetensi, labelMekanik, levelMeta, stikerTerbaru } from "./bersama";
 
 export function HariIni({ me, level }: { me: Member; level: LevelId }) {
   const events = useEvents(me.id);
+  const bahasa = useBahasaAnak(me.id);
   const misi = useMemo(() => pilihMisi(me.id, events, level), [me.id, events, level]);
   const streak = useMemo(() => hitungStreak(events), [events]);
   const stiker = useMemo(() => stikerTerbaru(events), [events]);
@@ -39,7 +41,7 @@ export function HariIni({ me, level }: { me: Member; level: LevelId }) {
         ) : (
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             {misi.map((p) => (
-              <KartuMisi key={p.id} p={p} />
+              <KartuMisi key={p.id} p={p} bahasa={bahasa} />
             ))}
           </div>
         )}
@@ -56,7 +58,7 @@ export function HariIni({ me, level }: { me: Member; level: LevelId }) {
                 </span>
                 <span className="min-w-0">
                   <span className="block text-[14px] font-extrabold" style={{ color: INK }}>
-                    {judulPaket(p)}
+                    {judulPaket(p, bahasa)}
                   </span>
                   <span className="block text-[11px] font-extrabold text-ink-3">{labelMekanik(p.mechanic)}</span>
                 </span>
@@ -77,7 +79,7 @@ export function HariIni({ me, level }: { me: Member; level: LevelId }) {
   );
 }
 
-function KartuMisi({ p }: { p: ContentPack }) {
+function KartuMisi({ p, bahasa }: { p: ContentPack; bahasa: BahasaAnak }) {
   const lv = levelMeta(p.level);
   return (
     <article className="flex flex-col gap-3 rounded-[22px] bg-white p-3.5 shadow-[0_4px_0_rgba(43,29,78,.08)]">
@@ -85,7 +87,7 @@ function KartuMisi({ p }: { p: ContentPack }) {
         <IkonMekanik mekanik={p.mechanic} size={56} />
         <div className="min-w-0 flex-1">
           <h3 className="leading-tight" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>
-            {judulPaket(p)}
+            {judulPaket(p, bahasa)}
           </h3>
           <div className="mt-1 flex flex-wrap items-center gap-1.5">
             <span className="inline-block rounded-full bg-[#ecebff] px-2 py-0.5 text-[11px] font-black text-[#5b4bff]">{labelMekanik(p.mechanic)}</span>
@@ -95,7 +97,7 @@ function KartuMisi({ p }: { p: ContentPack }) {
           </div>
         </div>
       </div>
-      <p className="min-h-[2.6em] text-[14px] leading-snug font-bold text-ink-2">{kalimatKompetensi(p)}</p>
+      <p className="min-h-[2.6em] text-[14px] leading-snug font-bold text-ink-2">{kalimatKompetensi(p, bahasa)}</p>
       <Link
         href={`/akademi/main/${p.id}`}
         className="flex h-12 items-center justify-center gap-1.5 rounded-[16px] text-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.96]"

@@ -1,0 +1,64 @@
+{
+  "id": "menara-balok-bola",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.BENTUK-RUANG.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menara Balok dan Bola",
+      "instruksi": "Bangun menara empat tingkat, ketuk benda yang bisa ditumpuk.",
+      "kubus": "kubus",
+      "kotak": "kotak",
+      "buku": "buku",
+      "kaleng": "kaleng",
+      "bola-sepak": "bola sepak",
+      "bola-basket": "bola basket",
+      "bola-tenis": "bola tenis"
+    },
+    "en": {
+      "judul": "Block and Ball Tower",
+      "instruksi": "Build a four-level tower; tap the things that can be stacked.",
+      "kubus": "cube",
+      "kotak": "box",
+      "buku": "book",
+      "kaleng": "can",
+      "bola-sepak": "soccer ball",
+      "bola-basket": "basketball",
+      "bola-tenis": "tennis ball"
+    }
+  },
+  "knobs": {
+    "tinggi": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "tinggi menara yang harus berdiri (jumlah tingkat); bukti kompetensi = 4 tingkat"
+    },
+    "benda": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah benda di lantai per ronde; selalu ada cukup benda rata dan minimal satu bola"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "ruang-main",
+  "mode": "menara",
+  "items": [
+    { "id": "kubus", "labelKey": "kubus", "role": "benda", "value": 1, "emoji": "🧊" },
+    { "id": "kotak", "labelKey": "kotak", "role": "benda", "value": 1, "emoji": "📦" },
+    { "id": "buku", "labelKey": "buku", "role": "benda", "value": 1, "emoji": "📕" },
+    { "id": "kaleng", "labelKey": "kaleng", "role": "benda", "value": 2, "emoji": "🥫" },
+    { "id": "bola-sepak", "labelKey": "bola-sepak", "role": "benda", "value": 0, "emoji": "⚽" },
+    { "id": "bola-basket", "labelKey": "bola-basket", "role": "benda", "value": 0, "emoji": "🏀" },
+    { "id": "bola-tenis", "labelKey": "bola-tenis", "role": "benda", "value": 0, "emoji": "🎾" }
+  ]
+}

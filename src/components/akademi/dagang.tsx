@@ -7,10 +7,16 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, 
 import type { PaketDagang } from "@akademi/schema";
 import type { JawabanDagang, RondeDagang } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
+import { useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { angkaKata, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
+import { useMe } from "@/lib/store";
 
-/** Pesanan "Aku mau 3 jeruk dan 2 apel." → potongan pra-rekam ElevenLabs; selain pola itu dibacakan utuh. */
-function ucapPesanan(teks: string) {
+/**
+ * Bacakan pesanan pembeli. Bahasa Indonesia: pola "Aku mau 3 jeruk dan 2 apel." → potongan pra-rekam ElevenLabs,
+ * selain pola itu dibacakan utuh. Bahasa Inggris ("I want 3 oranges.") → speechSynthesis voice en-US.
+ */
+function ucapPesanan(teks: string, bahasa: BahasaAnak = "id") {
+  if (bahasa === "en") return ucapkan(teks, "en-US");
   const m = /^Aku mau (\d+) ([^.]+?)(?: dan (\d+) ([^.]+?))?\.$/.exec(teks);
   if (!m) return ucapkan(teks);
   const pot = ["Aku mau", angkaKata(Number(m[1])), m[2]];
@@ -78,9 +84,9 @@ function Lapak({ children, style }: { children: ReactNode; style?: CSSProperties
 
 /** Pembeli + balon ucapan (balon bisa diketuk untuk dibacakan ulang). */
 function Pembeli({
-  wajah, balon, teksUcap, hasil, jawabanBenar, kanan, kecil,
+  wajah, balon, teksUcap, hasil, jawabanBenar, kanan, kecil, bahasa,
 }: {
-  wajah: string; balon: ReactNode; teksUcap: string; hasil: Props["hasil"]; jawabanBenar?: ReactNode; kanan?: boolean; kecil?: boolean;
+  wajah: string; balon: ReactNode; teksUcap: string; hasil: Props["hasil"]; jawabanBenar?: ReactNode; kanan?: boolean; kecil?: boolean; bahasa?: BahasaAnak;
 }) {
   const muka = hasil ? (hasil.benar ? "😄" : "🤔") : wajah;
   return (
@@ -90,7 +96,7 @@ function Pembeli({
       </div>
       <button
         type="button"
-        onClick={() => { sfx.tap(); ucapPesanan(teksUcap); }}
+        onClick={() => { sfx.tap(); ucapPesanan(teksUcap, bahasa); }}
         aria-label={`Dengar pesanan: ${teksUcap}`}
         className="relative min-h-14 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
         style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)", color: INK }}
@@ -290,12 +296,14 @@ function useBantu(onHint?: () => void) {
 
 export function PresenterDagang(props: Props) {
   const { paket, ronde, t } = props;
+  const me = useMe();
+  const bahasa = useBahasaAnak(me?.id ?? "dev");
   const [pembeliIdx] = useState(() => urutanPembeli++);
   const wajah = PEMBELI[pembeliIdx % PEMBELI.length];
   const goodById = useCallback((id: string) => paket.goods.find((g) => g.id === id), [paket.goods]);
   const nama = useCallback((id: string) => { const g = goodById(id); return g ? t(g.labelKey) : id; }, [goodById, t]);
   const visual = useCallback((id: string) => visualGood(goodById(id), id), [goodById]);
-  const ctx: Ctx = { ...props, wajah, nama, visual, terkunci: !!props.hasil };
+  const ctx: Ctx = { ...props, wajah, nama, visual, bahasa, terkunci: !!props.hasil };
 
   switch (ronde.mode) {
     case "ambil": return <ModeAmbil {...ctx} />;
@@ -313,6 +321,8 @@ export function PresenterDagang(props: Props) {
 
 interface Ctx extends Props {
   wajah: string;
+  /** bahasa konten anak; menentukan kalimat pesanan ("Aku mau …" / "I want …") dan voice pembacaannya */
+  bahasa: BahasaAnak;
   nama: (goodId: string) => string;
   visual: (goodId: string) => VisualSpec;
   terkunci: boolean;
@@ -326,11 +336,14 @@ function Kunci({ terkunci, children }: { terkunci: boolean; children: ReactNode 
 /* ---------------- ambil ---------------- */
 
 function ModeAmbil(c: Ctx) {
-  const { ronde, onJawab, hasil, terkunci, nama, visual, wajah } = c;
+  const { ronde, onJawab, hasil, terkunci, nama, visual, wajah, bahasa } = c;
   const [keranjang, setKeranjang] = useState<Record<string, number>>({});
   const { hint, bantu } = useBantu(c.onHint);
   const goods = useMemo(() => Object.keys(ronde.tersedia), [ronde.tersedia]);
-  const teks = useMemo(() => "Aku mau " + ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(" dan ") + ".", [ronde.pesanan, nama]);
+  const teks = useMemo(
+    () => (bahasa === "en" ? "I want " : "Aku mau ") + ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(bahasa === "en" ? " and " : " dan ") + ".",
+    [ronde.pesanan, nama, bahasa],
+  );
   const kurang = (id: string) => (ronde.pesanan.find((p) => p.goodId === id)?.qty ?? 0) - (keranjang[id] ?? 0);
 
   const ambil = (id: string) => {
@@ -347,7 +360,7 @@ function ModeAmbil(c: Ctx) {
   return (
     <Kunci terkunci={terkunci}>
       <Pembeli
-        wajah={wajah} teksUcap={teks} hasil={hasil}
+        wajah={wajah} teksUcap={teks} hasil={hasil} bahasa={bahasa}
         balon={<div className="flex flex-col gap-1">{ronde.pesanan.map((p) => <BarisPesanan key={p.goodId} v={visual(p.goodId)} qty={p.qty} label={nama(p.goodId)} />)}</div>}
         jawabanBenar={ronde.pesanan.map((p) => `${p.qty} ${nama(p.goodId)}`).join(" + ")}
       />

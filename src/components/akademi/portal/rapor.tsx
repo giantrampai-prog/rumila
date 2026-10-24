@@ -11,7 +11,7 @@ import { Icon, Segmented } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, levelAnak, paketById, setLevelAnak } from "@/lib/akademi/konten";
+import { KOMPETENSI, levelAnak, paketById, setBahasaAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import { useMe, useRumila, type Member } from "@/lib/store";
 import { BadgeStatus, INK, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, namaFramework, tanggalJam, tanggalLokal, trackMeta } from "./bersama";
@@ -116,6 +116,7 @@ function TombolKembali({ ikon }: { ikon?: boolean }) {
 
 function RaporAnak({ anak }: { anak: Member }) {
   const events = useEvents(anak.id);
+  const bahasa = useBahasaAnak(anak.id);
   const [level, setLevel] = useState<LevelId>("PAUD");
   useEffect(() => setLevel(levelAnak(anak.id)), [anak.id]);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
@@ -151,6 +152,10 @@ function RaporAnak({ anak }: { anak: Member }) {
           <span className="text-[11px] font-extrabold text-ink-3 uppercase">Jenjang anak</span>
           <Segmented<LevelId> value={level} options={LEVEL_SLICE.map((l) => [l, levelMeta(l).nama] as [LevelId, string])} onChange={gantiLevel} />
         </div>
+        <div className="no-print flex flex-col gap-1">
+          <span className="text-[11px] font-extrabold text-ink-3 uppercase">Bahasa konten</span>
+          <Segmented<BahasaAnak> value={bahasa} options={[["id", "Indonesia"], ["en", "English"]]} onChange={(b) => setBahasaAnak(anak.id, b)} />
+        </div>
       </section>
 
       {/* ringkasan dua track */}
@@ -165,7 +170,7 @@ function RaporAnak({ anak }: { anak: Member }) {
                   <Icon name={TRACK_IKON[t]} size={22} />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>{trackMeta(t).nama.id}</h3>
+                  <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>{trackMeta(t).nama[bahasa]}</h3>
                   <p className="text-[12px] font-bold text-ink-3">
                     Inti dikuasai {r.coreDikuasai}/{r.coreTotal}
                   </p>
@@ -189,7 +194,7 @@ function RaporAnak({ anak }: { anak: Member }) {
 
       {/* daftar kompetensi per track × unit */}
       {TRACK_SLICE.map((t) => (
-        <DaftarTrack key={t} track={t} level={level} peng={peng} />
+        <DaftarTrack key={t} track={t} level={level} peng={peng} bahasa={bahasa} />
       ))}
 
       {/* bukti terakhir */}
@@ -205,7 +210,7 @@ function RaporAnak({ anak }: { anak: Member }) {
               return (
                 <li key={e.id} className="flex items-center gap-3 py-2 text-[13px]">
                   <span className="w-[120px] shrink-0 font-bold text-ink-3 tabular-nums">{tanggalJam(e.clientAt)}</span>
-                  <span className="min-w-0 flex-1 truncate font-extrabold">{p ? judulPaket(p) : e.activityId}</span>
+                  <span className="min-w-0 flex-1 truncate font-extrabold">{p ? judulPaket(p, bahasa) : e.activityId}</span>
                   <span className="shrink-0 rounded-full px-2 py-0.5 text-[12px] font-extrabold" style={{ background: benar ? "#e4f8ec" : "#ffe8e8", color: benar ? "#12904a" : "#c92a3a" }}>
                     {benar ? "Benar" : "Salah"}
                   </span>
@@ -234,14 +239,14 @@ function Angka({ label, n, c, bg }: { label: string; n: number; c: string; bg: s
   );
 }
 
-function DaftarTrack({ track, level, peng }: { track: TrackId; level: LevelId; peng: Record<string, Penguasaan> }) {
-  const unit = unitUntuk(track, level);
+function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: LevelId; peng: Record<string, Penguasaan>; bahasa: BahasaAnak }) {
+  const unit = unitUntuk(track, level, KOMPETENSI, bahasa);
   const [, m] = PLAY[TRACK_WARNA[track]];
   return (
     <section className="flex flex-col gap-3">
       <h3 className="flex items-center gap-2" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>
         <span className="inline-block size-3 rounded-full" style={{ background: m }} />
-        {trackMeta(track).nama.id} · {levelMeta(level).nama} ({levelMeta(level).lokal})
+        {trackMeta(track).nama[bahasa]} · {levelMeta(level).nama} ({levelMeta(level).lokal})
       </h3>
       {unit.length === 0 ? (
         <p className="rapor-card rounded-[20px] bg-white p-4 text-[14px] font-bold text-ink-3">Kurikulum jenjang ini belum tersedia.</p>
@@ -253,7 +258,7 @@ function DaftarTrack({ track, level, peng }: { track: TrackId; level: LevelId; p
             </h4>
             <ul className="mt-2 divide-y divide-[#f1edf6]">
               {u.kompetensi.map((c) => (
-                <BarisKompetensi key={c.id} c={c} p={peng[c.id]} />
+                <BarisKompetensi key={c.id} c={c} p={peng[c.id]} bahasa={bahasa} />
               ))}
             </ul>
           </div>
@@ -263,14 +268,14 @@ function DaftarTrack({ track, level, peng }: { track: TrackId; level: LevelId; p
   );
 }
 
-function BarisKompetensi({ c, p }: { c: Competency; p?: Penguasaan }) {
+function BarisKompetensi({ c, p, bahasa }: { c: Competency; p?: Penguasaan; bahasa: BahasaAnak }) {
   const status = p?.status ?? "belum";
   const refs = c.refs.map((r) => `${namaFramework(r.framework)} ${r.code}`).join(" · ");
   return (
     <li className="flex flex-col gap-1 py-2.5 sm:flex-row sm:items-start sm:gap-3">
       <div className="min-w-0 flex-1">
         <p className="text-[14px] leading-snug font-extrabold" style={{ color: INK }}>
-          {c.statement.id}
+          {c.statement[bahasa] ?? c.statement.id}
           {c.core && <span className="ml-1.5 rounded-full bg-[#f1edf6] px-1.5 py-0.5 align-middle text-[10px] font-black text-ink-3">INTI</span>}
         </p>
         {refs && <p className="mt-0.5 text-[12px] font-bold text-ink-3">{refs}</p>}

@@ -1,5 +1,5 @@
 // DIBUAT OTOMATIS oleh scripts/akademi-index.ts — jangan diedit.
-// Sumber: content/kurikulum/*.json (6 berkas) dan content/paket/**/*.json (122 berkas).
+// Sumber: content/kurikulum/*.json (6 berkas) dan content/paket/**/*.json (126 berkas).
 // Perbarui dengan: npm run -s akademi:index
 
 export const KURIKULUM_RAW = [
@@ -14861,6 +14861,66 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
+    "id": "keran-macet-minta-tolong",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "KODE.PAUD.SEBAB-AKIBAT.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Alat Macet, Minta Tolong",
+        "instruksi": "Robot mau pakai alat di rumah. Ketuk alatnya supaya bekerja.",
+        "keran": "keran",
+        "lampu": "lampu",
+        "pintu": "pintu"
+      },
+      "en": {
+        "judul": "It's Stuck, Ask for Help",
+        "instruksi": "The robot wants to use something at home. Tap it to make it work.",
+        "keran": "tap",
+        "lampu": "lamp",
+        "pintu": "door"
+      }
+    },
+    "knobs": {
+      "batas": {
+        "min": 3,
+        "max": 8,
+        "default": 5,
+        "step": 1,
+        "keterangan": "batas ketukan sia-sia sebelum minta tolong yang masih dihitung berhasil; lebih dari itu dicatat belum"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "rumah",
+    "mode": "bantuan",
+    "items": [
+      {
+        "id": "keran",
+        "labelKey": "keran",
+        "role": "alat",
+        "emoji": "🚰"
+      },
+      {
+        "id": "lampu",
+        "labelKey": "lampu",
+        "role": "alat",
+        "emoji": "💡"
+      },
+      {
+        "id": "pintu",
+        "labelKey": "pintu",
+        "role": "alat",
+        "emoji": "🚪"
+      }
+    ]
+  },
+  {
     "id": "klinik-hewan-alat-ukur",
     "version": "1.0.0",
     "level": "TKB",
@@ -14963,6 +15023,112 @@ export const PAKET_RAW: unknown[] = [
         "id": "timbangan",
         "role": "alat",
         "emoji": "⚖️"
+      }
+    ]
+  },
+  {
+    "id": "menara-balok-bola",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKA.BENTUK-RUANG.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Menara Balok dan Bola",
+        "instruksi": "Bangun menara empat tingkat, ketuk benda yang bisa ditumpuk.",
+        "kubus": "kubus",
+        "kotak": "kotak",
+        "buku": "buku",
+        "kaleng": "kaleng",
+        "bola-sepak": "bola sepak",
+        "bola-basket": "bola basket",
+        "bola-tenis": "bola tenis"
+      },
+      "en": {
+        "judul": "Block and Ball Tower",
+        "instruksi": "Build a four-level tower; tap the things that can be stacked.",
+        "kubus": "cube",
+        "kotak": "box",
+        "buku": "book",
+        "kaleng": "can",
+        "bola-sepak": "soccer ball",
+        "bola-basket": "basketball",
+        "bola-tenis": "tennis ball"
+      }
+    },
+    "knobs": {
+      "tinggi": {
+        "min": 3,
+        "max": 5,
+        "default": 4,
+        "step": 1,
+        "keterangan": "tinggi menara yang harus berdiri (jumlah tingkat); bukti kompetensi = 4 tingkat"
+      },
+      "benda": {
+        "min": 5,
+        "max": 6,
+        "default": 5,
+        "step": 1,
+        "keterangan": "jumlah benda di lantai per ronde; selalu ada cukup benda rata dan minimal satu bola"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "ruang-main",
+    "mode": "menara",
+    "items": [
+      {
+        "id": "kubus",
+        "labelKey": "kubus",
+        "role": "benda",
+        "value": 1,
+        "emoji": "🧊"
+      },
+      {
+        "id": "kotak",
+        "labelKey": "kotak",
+        "role": "benda",
+        "value": 1,
+        "emoji": "📦"
+      },
+      {
+        "id": "buku",
+        "labelKey": "buku",
+        "role": "benda",
+        "value": 1,
+        "emoji": "📕"
+      },
+      {
+        "id": "kaleng",
+        "labelKey": "kaleng",
+        "role": "benda",
+        "value": 2,
+        "emoji": "🥫"
+      },
+      {
+        "id": "bola-sepak",
+        "labelKey": "bola-sepak",
+        "role": "benda",
+        "value": 0,
+        "emoji": "⚽"
+      },
+      {
+        "id": "bola-basket",
+        "labelKey": "bola-basket",
+        "role": "benda",
+        "value": 0,
+        "emoji": "🏀"
+      },
+      {
+        "id": "bola-tenis",
+        "labelKey": "bola-tenis",
+        "role": "benda",
+        "value": 0,
+        "emoji": "🎾"
       }
     ]
   },
@@ -15220,6 +15386,57 @@ export const PAKET_RAW: unknown[] = [
         "id": "apel",
         "role": "benda",
         "emoji": "🍎"
+      }
+    ]
+  },
+  {
+    "id": "telusur-angka-peti-harta",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKA.BILANGAN-1-10.04"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Telusur Angka Peti Harta",
+        "instruksi": "Telusuri angka dengan jarimu mengikuti panah, itu mantra pembuka peti harta.",
+        "peti": "peti harta"
+      },
+      "en": {
+        "judul": "Trace the Treasure Number",
+        "instruksi": "Trace the number with your finger following the arrows; it is the spell that opens the treasure chest.",
+        "peti": "treasure chest"
+      }
+    },
+    "knobs": {
+      "max": {
+        "min": 1,
+        "max": 5,
+        "default": 5,
+        "step": 1,
+        "keterangan": "angka terbesar yang diacak (1 sampai max)"
+      },
+      "panah": {
+        "min": 0,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "1 = panah urutan goresan ditampilkan, 0 = disembunyikan (anak mengingat arah sendiri)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "pulau-harta",
+    "mode": "telusur",
+    "items": [
+      {
+        "id": "peti",
+        "labelKey": "peti",
+        "role": "benda",
+        "emoji": "🧰"
       }
     ]
   },
@@ -15657,6 +15874,114 @@ export const PAKET_RAW: unknown[] = [
             "id": "minum",
             "labelKey": "minum",
             "emoji": "🍵"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cerita-pertama-lalu-terakhir",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "KODE.TKA.URUTAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Cerita Pertama, Lalu, Terakhir",
+        "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar, lalu tekan Ceritakan supaya robot bercerita.",
+        "pagi": "Pagi hari",
+        "bangun": "bangun tidur",
+        "mandi": "mandi",
+        "sarapan": "sarapan",
+        "berangkat": "berangkat sekolah",
+        "tanam": "Menanam biji",
+        "gali": "gali tanah",
+        "biji": "taruh biji",
+        "siram": "siram air",
+        "tumbuh": "tunas tumbuh"
+      },
+      "en": {
+        "judul": "First, Then, Last Story",
+        "instruksi": "Put the first, then, and last labels under the pictures, then press Tell so the robot tells the story.",
+        "pagi": "Morning time",
+        "bangun": "wake up",
+        "mandi": "take a bath",
+        "sarapan": "eat breakfast",
+        "berangkat": "go to school",
+        "tanam": "Planting a seed",
+        "gali": "dig the soil",
+        "biji": "put in the seed",
+        "siram": "water it",
+        "tumbuh": "a sprout grows"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah gambar; 3 = pertama/lalu/terakhir, 4 = dua label lalu"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "rumah",
+    "mode": "label",
+    "sequences": [
+      {
+        "id": "pagi",
+        "titleKey": "pagi",
+        "steps": [
+          {
+            "id": "bangun",
+            "labelKey": "bangun",
+            "emoji": "🛏️"
+          },
+          {
+            "id": "mandi",
+            "labelKey": "mandi",
+            "emoji": "🚿"
+          },
+          {
+            "id": "sarapan",
+            "labelKey": "sarapan",
+            "emoji": "🍳"
+          },
+          {
+            "id": "berangkat",
+            "labelKey": "berangkat",
+            "emoji": "🎒"
+          }
+        ]
+      },
+      {
+        "id": "tanam",
+        "titleKey": "tanam",
+        "steps": [
+          {
+            "id": "gali",
+            "labelKey": "gali",
+            "emoji": "⛏️"
+          },
+          {
+            "id": "biji",
+            "labelKey": "biji",
+            "emoji": "🌰"
+          },
+          {
+            "id": "siram",
+            "labelKey": "siram",
+            "emoji": "🪣"
+          },
+          {
+            "id": "tumbuh",
+            "labelKey": "tumbuh",
+            "emoji": "🌱"
           }
         ]
       }

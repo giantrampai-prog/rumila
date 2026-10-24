@@ -1,16 +1,17 @@
 "use client";
 
-// Portal murid: tab Hari ini (misi adaptif) & Pelajaran (peta jenjang). Kerangka + header anak dari shell.
+// Portal murid: tab Hari ini (misi adaptif), Pelajaran (peta jenjang) & Koleksi (stiker, lencana, pangkat). Kerangka + header anak dari shell.
 
 import { useEffect, useState } from "react";
 import type { LevelId } from "@akademi/schema";
 import { HariIni } from "@/components/akademi/portal/hari-ini";
+import { Koleksi } from "@/components/akademi/portal/koleksi";
 import { PetaPelajaran } from "@/components/akademi/portal/pelajaran";
 import { TabBesar } from "@/components/akademi/portal/bersama";
 import { levelAnak } from "@/lib/akademi/konten";
 import { useMe } from "@/lib/store";
 
-type Tab = "hari-ini" | "pelajaran";
+type Tab = "hari-ini" | "pelajaran" | "koleksi";
 
 export default function AkademiPage() {
   const me = useMe();
@@ -26,9 +27,10 @@ export default function AkademiPage() {
         options={[
           ["hari-ini", "Hari ini", "today"],
           ["pelajaran", "Pelajaran", "map"],
+          ["koleksi", "Koleksi", "emoji_events"],
         ]}
       />
-      {tab === "hari-ini" ? <HariIni me={me} level={level} /> : <PetaPelajaran me={me} level={level} />}
+      {tab === "hari-ini" ? <HariIni me={me} level={level} /> : tab === "koleksi" ? <Koleksi me={me} level={level} /> : <PetaPelajaran me={me} level={level} />}
     </>
   );
 }

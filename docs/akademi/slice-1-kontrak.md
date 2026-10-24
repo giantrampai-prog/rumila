@@ -147,4 +147,29 @@ export function nilaiSimulasi(r: RondeSimulasi, j: JawabanSimulasi): Hasil;
 //   turus: turus[id] == jumlah id di urutan untuk tiap jenis · tombol: tebakan[t] == peta[t] untuk semua t di urutan · bagi: kiri == kanan && kiri + kanan == target
 ```
 
+### Mode pengaya (24 Okt 2026, tanpa mekanik baru)
+
+```ts
+// simulasi.ts — tiga mode tambahan di SIMULASI_MODES
+//   menara (MAT.TKA.BENTUK-RUANG.02): items role benda ber-value: 1 = bisa ditumpuk (🧊📦📕), 0 = menggelinding (⚽🏀🎾), 2 = tabung 🥫 (bisa bila tegak:
+//     penemuan, dihitung bisa). target = knob.tinggi (default 4); items = knob.benda (default 5–6 acak) dijamin ≥ target benda bisa & ≥ 1 bola.
+//     Jawaban { tumpukan: string[] } (id dari bawah). Benar bila tumpukan.length == target dan semua value ≠ 0 (tanpa benda ganda);
+//     detail { jatuhDi: indeks bola pertama | null, tinggi, target, tabung }.
+//   bantuan (KODE.PAUD.SEBAB-AKIBAT.02): items role alat (🚰💡🚪); satu dipilih acak sebagai "macet" → correctId; target = knob.batas (default 5).
+//     Jawaban { ketukanSiaSia: number; mintaTolong: boolean }; benar bila mintaTolong && ketukanSiaSia ≤ target; detail { ketukanSiaSia, mintaTolong, batas, macet }.
+//     Presenter: tombol "Tolong 🙋" tampil tetap, tidak berkedip, tidak dipandu (tanpa tombol bantu); >batas tetap bisa minta tolong (dicatat belum).
+//   telusur (MAT.TKA.BILANGAN-1-10.04): target = angka acak 1..knob.max (≤5); offset = knob.panah (default 1 = panah urutan goresan tampil); snap tak dipakai.
+//     Jawaban { angka; cakupan; keluar } dihitung presenter: cakupan = rasio titik sampel jalur (tiap ~6 satuan viewBox 100×140) yang tersentuh dalam
+//     toleransi ±25% tinggi angka; keluar = rasio sampel jari di luar toleransi. Benar bila angka == target && cakupan ≥ 0.85 && keluar ≤ 0.25
+//     (TELUSUR_CAKUPAN_MIN / TELUSUR_KELUAR_MAX); detail { angka, target, cakupan, keluar, panah }. Hasil benar → peti 🧰 terbuka ✨.
+
+// urutkan.ts — mode `label` (KODE.TKA.URUTAN.02)
+export function labelUrutan(n: number): LabelUrutan[];   // ["pertama", "lalu" × (n−2), "terakhir"]
+//   buatRondeUrutkan: shown = langkah urut benar (tidak diacak), knob steps 3 → 4 (4 = dua "lalu"); RondeUrutkan.labels = labelUrutan(n).
+//   Jawaban { labels: string[] } (ditambahkan ke union JawabanUrutkan). Benar bila sama persis dengan ronde.labels;
+//   detail { salah: indeks[], terputusDi: indeks "terakhir" yang dipasang sebelum gambar terakhir | null }.
+//   Presenter: palet label = ikon + suara (🥇 pertama, ➡️ lalu, 🏁 terakhir; "lalu" 2 keping bila 4 gambar); tombol "Ceritakan ▶" → narasi
+//   `ucapkan` mengikuti label yang dipasang; "terakhir" di gambar ke-2 menghentikan cerita dan gambar sisanya meredup; lalu onJawab({ labels }).
+```
+
 `index.ts`: tambah `{ mechanic: "pola"; ronde: RondePola }` dan `{ mechanic: "simulasi"; ronde: RondeSimulasi }` ke `Ronde`, jawaban ke `Jawaban`, cabang di `buatRonde`/`nilai`. Presenter: `src/components/akademi/pola.tsx` (`PresenterPola`) dan `simulasi.tsx` (`PresenterSimulasi`), dipasang runner.
