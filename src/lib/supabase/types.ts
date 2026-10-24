@@ -44,6 +44,39 @@ export type Database = {
         };
         Relationships: [];
       };
+      akademi_certificate: {
+        Row: {
+          code: string;
+          family_id: string;
+          id: string;
+          issued_at: string;
+          level: string;
+          member_id: string;
+          snapshot: Json;
+          track: string | null;
+        };
+        Insert: {
+          code: string;
+          family_id: string;
+          id?: string;
+          issued_at?: string;
+          level: string;
+          member_id: string;
+          snapshot: Json;
+          track?: string | null;
+        };
+        Update: {
+          code?: string;
+          family_id?: string;
+          id?: string;
+          issued_at?: string;
+          level?: string;
+          member_id?: string;
+          snapshot?: Json;
+          track?: string | null;
+        };
+        Relationships: [];
+      };
       family: {
         Row: { created_at: string; created_by: string; id: string; name: string };
         Insert: { created_at?: string; created_by?: string; id?: string; name: string };
@@ -154,6 +187,10 @@ export type Database = {
       make_admin: { Args: { p_member: string }; Returns: undefined };
       set_member_pin: { Args: { p_member: string; p_pin: string | null }; Returns: undefined };
       verify_member_pin: { Args: { p_member: string; p_pin: string }; Returns: boolean };
+      verify_certificate: {
+        Args: { p_code: string };
+        Returns: { first_name: string; level: string; track: string | null; issued_at: string; snapshot: Json }[];
+      };
     };
     Enums: { [_ in never]: never };
     CompositeTypes: { [_ in never]: never };

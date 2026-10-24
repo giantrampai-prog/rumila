@@ -55,6 +55,9 @@ export function RaporView() {
           <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Rapor</h1>
           <p className="text-[13px] font-bold text-ink-3">Portal wali · Rumila Kids Academy</p>
         </div>
+        <Link href="/akademi/telemetri" className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#e5e0ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+          <Icon name="monitoring" size={18} /> Telemetri
+        </Link>
         <button onClick={() => window.print()} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#e5e0ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="print" size={18} /> Cetak
         </button>

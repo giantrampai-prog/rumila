@@ -284,6 +284,11 @@ function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) 
             <span className="rounded-full bg-[#ecebff] px-2.5 py-0.5 text-[11px] font-black text-[#5b4bff]">Sedang dikejar</span>
           ) : null}
         </div>
+        {p.tercapai && (
+          <Link href={`/akademi/sertifikat/${p.level}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 3px 0 #c85400" }}>
+            Lihat sertifikat 🎓
+          </Link>
+        )}
       </div>
     </article>
   );

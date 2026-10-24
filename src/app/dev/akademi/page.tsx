@@ -10,6 +10,11 @@ import { ActivityRunner, judulPaket } from "@/components/akademi/runner";
 import { TrackView } from "@/components/akademi/portal/track";
 import { KidFrame } from "@/components/kid";
 import AkademiPortal from "@/app/(app)/akademi/page";
+import { TelemetriView } from "@/components/akademi/portal/telemetri";
+import { SertifikatKartu } from "@/components/akademi/sertifikat";
+import { snapshotSertifikat } from "@/lib/akademi/sertifikat";
+import { KOMPETENSI } from "@/lib/akademi/konten";
+import type { Penguasaan } from "@/lib/akademi/mastery";
 import { PAKET, kompetensiUntuk } from "@/lib/akademi/konten";
 
 function Daftar() {
@@ -49,6 +54,12 @@ function Preview() {
   if (paket) return <ActivityRunner paketId={paket} />;
   if (track) return <KidFrame><TrackView track={track} /></KidFrame>;
   if (q.get("portal")) return <KidFrame><AkademiPortal /></KidFrame>;
+  if (q.get("telemetri")) return <TelemetriView />;
+  if (q.get("kartu")) {
+    // contoh kartu sertifikat dengan semua kompetensi inti PAUD dianggap dikuasai
+    const peng: Record<string, Penguasaan> = Object.fromEntries(KOMPETENSI.map((c) => [c.id, { status: "dikuasai", success: 5, fail: 0, contexts: 2, days: 2, ratioLast10: 1, hintTail: 0 } as Penguasaan]));
+    return <div className="mx-auto max-w-[1000px] p-4"><SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" issuedAt={new Date().toISOString()} snapshot={snapshotSertifikat(peng, KOMPETENSI, "PAUD")} /></div>;
+  }
   return <Daftar />;
 }
 
