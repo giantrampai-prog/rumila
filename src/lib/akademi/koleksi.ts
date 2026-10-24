@@ -1,6 +1,6 @@
 // Koleksi murid: stiker (paket selesai), lencana (per unit), pangkat (per jenjang) — fungsi murni, tanpa React/DOM.
 
-import { LEVELS, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
+import { ACTIVE_LEVELS, LEVELS, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import type { Penguasaan, Status } from "./mastery";
 
 /** Ambang "selesai dengan baik" untuk stiker. */
@@ -91,7 +91,7 @@ export function lencana(peng: Record<string, Penguasaan>, kompetensi: Competency
 }
 
 /** Jenjang yang punya pangkat (PAUD/TKA/TKB). */
-export const LEVEL_PANGKAT: readonly LevelId[] = ["PAUD", "TKA", "TKB"];
+export const LEVEL_PANGKAT: readonly LevelId[] = ACTIVE_LEVELS;
 
 /**
  * Pangkat per jenjang: progres = kompetensi inti dikuasai / seluruh inti jenjang (semua track);

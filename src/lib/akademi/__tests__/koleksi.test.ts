@@ -75,7 +75,7 @@ describe("lencana", () => {
 });
 
 describe("pangkat", () => {
-  it("tiga jenjang dengan nama pangkat; progres = inti dikuasai / inti total lintas track", () => {
+  it("sembilan jenjang PAUD–SD 6 dengan nama pangkat; progres = inti dikuasai / inti total lintas track", () => {
     const k = [kompetensi(C1, { core: true }), kompetensi(K1, { core: true }), kompetensi(C2), kompetensi(T1, { core: true })];
     const peng = proyeksi(buktiKuat(C1), k);
     const p = pangkat(peng, k);
@@ -83,6 +83,12 @@ describe("pangkat", () => {
       ["PAUD", "Tunas"],
       ["TKA", "Kadet"],
       ["TKB", "Navigator"],
+      ["SD1", "Pilot"],
+      ["SD2", "Kapten"],
+      ["SD3", "Komandan"],
+      ["SD4", "Laksamana"],
+      ["SD5", "Penjelajah"],
+      ["SD6", "Legenda"],
     ]);
     expect(p[0]).toMatchObject({ progres: 0.5, tercapai: false });
     expect(p[1]).toMatchObject({ progres: 0, tercapai: false });

@@ -156,7 +156,9 @@ function RaporAnak({ anak }: { anak: Member }) {
         </div>
         <div className="no-print flex flex-col gap-1">
           <span className="text-[11px] font-extrabold text-ink-3 uppercase">Jenjang anak</span>
-          <Segmented<LevelId> value={level} options={LEVEL_SLICE.map((l) => [l, levelMeta(l).nama] as [LevelId, string])} onChange={gantiLevel} />
+          <div className="max-w-full overflow-x-auto [&>div]:w-max [&_button]:shrink-0 [&_button]:whitespace-nowrap">
+            <Segmented<LevelId> value={level} options={LEVEL_SLICE.map((l) => [l, levelMeta(l).lokal] as [LevelId, string])} onChange={gantiLevel} />
+          </div>
         </div>
         <div className="no-print flex flex-col gap-1">
           <span className="text-[11px] font-extrabold text-ink-3 uppercase">Bahasa konten</span>

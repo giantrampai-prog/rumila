@@ -12,7 +12,7 @@ import { signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
 import { installApp, useCanInstall } from "./pwa";
 import { setSfxEnabled, sfx, sfxEnabled } from "@/lib/sfx";
-import { LEVELS, type LevelId } from "@akademi/schema";
+import { ACTIVE_LEVELS, LEVELS, type LevelId } from "@akademi/schema";
 import { bahasaAnak, levelAnak, setBahasaAnak, setLevelAnak, setPeranAkademi, usePeranAkademi, useProfilAkademiVersi, type BahasaAnak } from "@/lib/akademi/konten";
 
 export const accessText = (m: Member) =>
@@ -255,7 +255,7 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
     setBahasa(bahasaAnak(memberId));
   }, [memberId, versi]);
   const anak = peran === "anak";
-  const jenjang = LEVELS.filter((l) => ["PAUD", "TKA", "TKB"].includes(l.id));
+  const jenjang = LEVELS.filter((l) => ACTIVE_LEVELS.includes(l.id));
   return (
     <div className="rounded-[18px] bg-page px-3.5 py-3">
       <button role="switch" aria-checked={anak} onClick={() => setPeranAkademi(memberId, anak ? "dewasa" : "anak")} className="flex w-full items-center gap-3 py-1 text-left">
