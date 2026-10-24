@@ -1,5 +1,5 @@
 {
-  "id": "agam-berangkat-sekolah",
+  "id": "berangkat-sekolah",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "urutkan",
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Susun gambar supaya Agam berangkat sekolah dengan urutan yang benar.",
-      "sekolah": "Agam ke sekolah",
+      "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
+      "sekolah": "Robot ke sekolah",
       "teh": "Membuat teh hangat",
       "seragam": "pakai seragam",
       "tas": "pakai tas",
@@ -21,8 +21,8 @@
       "minum": "minum teh"
     },
     "en": {
-      "instruksi": "Put the pictures in order so Agam gets to school the right way.",
-      "sekolah": "Agam goes to school",
+      "instruksi": "Put the pictures in order so getting to school the right way.",
+      "sekolah": "Robot goes to school",
       "teh": "Making warm tea",
       "seragam": "put on uniform",
       "tas": "put on backpack",

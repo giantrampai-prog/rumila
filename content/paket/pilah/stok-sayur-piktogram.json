@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Lihat piktogram stok sayur warung Agam, lalu sentuh rak yang diminta.",
+      "instruksi": "Lihat piktogram stok sayur warung, lalu sentuh rak yang diminta.",
       "pilihan": "pilihan",
       "wortel": "wortel",
       "jagung": "jagung",
@@ -19,7 +19,7 @@
       "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
     },
     "en": {
-      "instruksi": "Look at the vegetable stock chart in Agam's shop, then touch the shelf asked for.",
+      "instruksi": "Look at the vegetable stock chart in the shop, then touch the shelf asked for.",
       "pilihan": "choices",
       "wortel": "carrots",
       "jagung": "corn",

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketNavigasi } from "@akademi/schema";
 import { buatRonde, buatRondeNavigasi, hitungBlok, jalankan, knobDefaults, nilai, nilaiNavigasi, optimal, type NavBlock, type NavGrid } from "../src";
-import lurus from "../../../content/golden/paket-agam-ke-bintang-lurus.json";
+import lurus from "../../../content/golden/paket-robot-ke-bintang-lurus.json";
 
 const grid = (over: Partial<NavGrid> = {}): NavGrid => ({
   id: "g", w: 5, h: 3, start: { x: 0, y: 1, dir: "E" }, goal: { x: 3, y: 1 }, walls: [], rocks: [], optimal: 3, ...over,

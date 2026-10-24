@@ -4,12 +4,12 @@ Status: usulan, 24 Okt 2026. Acuan: `src/lib/catalog.ts`, `src/lib/education.ts`
 
 Tiga nasib: **ISI** (jadi aktivitas/konten akademi), **DUNIA** (jadi scene pack tempat quest berjalan), **KELUAR** (bukan bagian Kids Academy; hidup sebagai aplikasi terpisah atau dipensiunkan).
 
-## Coding Agam → ISI, pelajaran Coding (reuse tertinggi)
+## Coding robot → ISI, pelajaran Coding (reuse tertinggi)
 
 | Menu lama | Mekanik | Level | Catatan |
 |---|---|---|---|
 | Pola | Pola & ritme | PAUD–TK A | 10 level × 10 jadi knob kesulitan, bukan level manual |
-| Langkah | Navigasi | TK A | Agam ke bintang sudah persis mekanik Navigasi |
+| Langkah | Navigasi | TK A | Robot ke bintang sudah persis mekanik Navigasi |
 | Ulangi | Navigasi + Urutkan | TK B | perulangan |
 | Kalau… | Navigasi | TK B–SD 1 | kondisi |
 | Jurus | Navigasi + Bangun | SD 1 | fungsi |
@@ -49,7 +49,7 @@ Eksplorasi bebas yang sekarang ada tetap dipertahankan sebagai mekanik **Cari & 
 
 | Menu lama | Nasib | Mekanik / pelajaran |
 |---|---|---|
-| Doa Harian (10 doa) | ISI | Cerita bercabang "Hari Agam" + Ucap & dengar; KA PAUD–TK B. 10 doa yang ada = paket konten pertama |
+| Doa Harian (10 doa) | ISI | Cerita bercabang "Hari robot" + Ucap & dengar; KA PAUD–TK B. 10 doa yang ada = paket konten pertama |
 | Hafalan Surat | ISI | Ucap & dengar; KA TK B–SD 6 (Al-Fatihah sampai juz 30) |
 | Asmaul Husna | ISI | Pola & ritme / Cari & kumpulkan; KA SD 2–SD 4 |
 | Al-Qur'an, Arah Kiblat, Tasbih Digital | KELUAR | alat ibadah, bukan kurikulum akademi |
@@ -82,8 +82,8 @@ Kalender, tugas rumah, galeri, daftar belanja, tumbuh kembang, minum air, jam ti
 
 ## Urutan migrasi
 
-1. Coding Agam dipasang `catatBukti` → evidence pertama mengalir tanpa mengubah tampilan game.
+1. Coding robot dipasang `catatBukti` → evidence pertama mengalir tanpa mengubah tampilan game.
 2. Kebun Buah ditambah quest Pasar Buah (mekanik Dagang pertama).
-3. Doa Harian dibungkus jadi "Hari Agam".
+3. Doa Harian dibungkus jadi "Hari robot".
 4. Dunia 3D lain menyusul satu per satu, masing-masing satu quest dulu.
 5. Folder Edukasi diganti Peta Jenjang.

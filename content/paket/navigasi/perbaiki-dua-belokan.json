@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Ada dua blok yang salah di program Agam: temukan keduanya dan ganti, jangan lebih."
+      "instruksi": "Ada dua blok yang salah di program robot: temukan keduanya dan ganti, jangan lebih."
     },
     "en": {
-      "instruksi": "Two blocks in Agam's program are wrong: find both and change them, no more than two."
+      "instruksi": "Two blocks in the robot's program are wrong: find both and change them, no more than two."
     }
   },
   "knobs": {

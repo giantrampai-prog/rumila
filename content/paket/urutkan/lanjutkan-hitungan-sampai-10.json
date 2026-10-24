@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
+      "instruksi": "Robot berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
       "n3": "3",
       "n4": "4",
       "n5": "5",
@@ -24,7 +24,7 @@
       "dari7": "Lanjutkan dari 7"
     },
     "en": {
-      "instruksi": "Agam is standing on this number: lay out the next number cards, don't start from one.",
+      "instruksi": "Robot is standing on this number: lay out the next number cards, don't start from one.",
       "n3": "3",
       "n4": "4",
       "n5": "5",

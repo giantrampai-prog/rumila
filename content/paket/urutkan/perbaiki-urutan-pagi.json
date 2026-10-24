@@ -1,5 +1,5 @@
 {
-  "id": "perbaiki-urutan-pagi-agam",
+  "id": "perbaiki-urutan-pagi",
   "version": "1.0.0",
   "level": "TKA",
   "mechanic": "urutkan",
@@ -9,9 +9,9 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
-      "pagi": "Pagi hari Agam",
-      "mandi": "Agam mandi",
+      "instruksi": "Robot salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
+      "pagi": "Pagi hari",
+      "mandi": "Robot mandi",
       "bangun": "bangun tidur",
       "gosok": "gosok gigi",
       "sarapan": "sarapan",
@@ -22,9 +22,9 @@
       "bilas": "bilas sampai bersih"
     },
     "en": {
-      "instruksi": "Agam put one picture in the wrong place: swap two pictures to fix the order.",
-      "pagi": "Agam's morning",
-      "mandi": "Agam's bath",
+      "instruksi": "Robot put one picture in the wrong place: swap two pictures to fix the order.",
+      "pagi": "The morning",
+      "mandi": "The robot's bath",
       "bangun": "wake up",
       "gosok": "brush teeth",
       "sarapan": "breakfast",
@@ -47,7 +47,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 4,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "perbaiki",
   "sequences": [
     {

@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Bantu Agam merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
+      "instruksi": "Bantu robot merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
       "merah": "merah",
       "biru": "biru",
       "kuning": "kuning",
@@ -24,7 +24,7 @@
       "kura": "kura-kura"
     },
     "en": {
-      "instruksi": "Help Agam tidy up: put each toy into the box with the same colour.",
+      "instruksi": "Help robot tidy up: put each toy into the box with the same colour.",
       "merah": "red",
       "biru": "blue",
       "kuning": "yellow",

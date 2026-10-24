@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
+      "instruksi": "Robot jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
     },
     "en": {
-      "instruksi": "Agam walks up the garden: jump when a rock is right in front, step forward when it is clear."
+      "instruksi": "Robot walks up the garden: jump when a rock is right in front, step forward when it is clear."
     }
   },
   "knobs": {
@@ -21,7 +21,7 @@
       "max": 2,
       "default": 1,
       "step": 1,
-      "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan Agam saat Agam tiba"
+      "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan robot saat robot tiba"
     },
     "distance": {
       "min": 1,

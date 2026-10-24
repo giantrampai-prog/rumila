@@ -1,5 +1,5 @@
 {
-  "id": "bentuk-di-rumah-agam",
+  "id": "bentuk-di-rumah",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "pilah",
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah Agam yang bentuknya itu.",
+      "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah yang bentuknya itu.",
       "pilihan": "pilihan",
       "jam": "jam dinding",
       "bola": "bola",
@@ -25,7 +25,7 @@
       "tSegitiga": "Mana yang segitiga?"
     },
     "en": {
-      "instruksi": "Listen to the shape, then touch the thing in Agam's house with that shape.",
+      "instruksi": "Listen to the shape, then touch the thing in the house with that shape.",
       "pilihan": "choices",
       "jam": "wall clock",
       "bola": "ball",
@@ -53,7 +53,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 6,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "pilih",
   "bins": [
     {

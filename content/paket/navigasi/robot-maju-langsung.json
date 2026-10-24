@@ -1,5 +1,5 @@
 {
-  "id": "agam-maju-langsung",
+  "id": "robot-maju-langsung",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "navigasi",
@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Tekan 'maju' satu-satu sampai Agam berdiri di bintang."
+      "instruksi": "Tekan 'maju' satu-satu sampai robot berdiri di bintang."
     },
     "en": {
-      "instruksi": "Press 'forward' one at a time until Agam stands on the star."
+      "instruksi": "Press 'forward' one at a time until robot stands on the star."
     }
   },
   "knobs": {

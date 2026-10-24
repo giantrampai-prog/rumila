@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya Agam tepat di bintang."
+      "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya robot tepat di bintang."
     },
     "en": {
-      "instruksi": "Fill the repeat block with two commands, then choose how many times so Agam lands right on the star."
+      "instruksi": "Fill the repeat block with two commands, then choose how many times so robot lands right on the star."
     }
   },
   "knobs": {

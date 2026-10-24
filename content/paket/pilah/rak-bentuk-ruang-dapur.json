@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Bantu Agam menata dapur: taruh tiap benda di rak yang bentuknya sama.",
+      "instruksi": "Bantu robot menata dapur: taruh tiap benda di rak yang bentuknya sama.",
       "bola": "bola",
       "kubus": "kubus",
       "tabung": "tabung",
@@ -25,7 +25,7 @@
       "tisu": "gulungan tisu"
     },
     "en": {
-      "instruksi": "Help Agam tidy the kitchen: put each thing on the shelf with the same shape.",
+      "instruksi": "Help robot tidy the kitchen: put each thing on the shelf with the same shape.",
       "bola": "sphere",
       "kubus": "cube",
       "tabung": "cylinder",

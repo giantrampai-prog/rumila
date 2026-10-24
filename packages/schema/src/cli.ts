@@ -44,8 +44,12 @@ for (const target of targets) {
   if (!files.length) continue;
   console.log(`\n== ${target}`);
   for (const f of files) {
-    const raw = JSON.parse(readFileSync(f, "utf8"));
+    const teks = readFileSync(f, "utf8");
+    const raw = JSON.parse(teks);
     const rel = f.slice(root.length + 1);
+    // Kurikulum & paket harus umum: tanpa nama tokoh/maskot produk (keputusan PO 24 Okt 2026).
+    const tokoh = teks.match(/\b(Agam|Rinoya|Mecca)\b/g);
+    if (tokoh) { gagal++; console.error(`✗ ${rel}: menyebut nama tokoh (${[...new Set(tokoh)].join(", ")}); tulis umum, mis. "robot", "tokoh", "anak"`); }
     if (raw && Array.isArray(raw.kompetensi)) {
       const r = KurikulumFile.safeParse(raw);
       if (!r.success) { gagal++; console.error(`✗ ${rel}\n  ${r.error.issues.map(i => i.path.join(".") + ": " + i.message).join("\n  ")}`); continue; }

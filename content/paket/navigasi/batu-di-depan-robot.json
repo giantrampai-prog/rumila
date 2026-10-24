@@ -1,5 +1,5 @@
 {
-  "id": "batu-di-depan-agam",
+  "id": "batu-di-depan-robot",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "navigasi",
@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Kalau ada batu di depan Agam tekan 'lompat', kalau kosong tekan 'maju'."
+      "instruksi": "Kalau ada batu di depan robot tekan 'lompat', kalau kosong tekan 'maju'."
     },
     "en": {
-      "instruksi": "If there is a rock in front of Agam press 'jump', if it is empty press 'forward'."
+      "instruksi": "If there is a rock in front of robot press 'jump', if it is empty press 'forward'."
     }
   },
   "knobs": {
@@ -21,7 +21,7 @@
       "max": 2,
       "default": 1,
       "step": 1,
-      "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan Agam saat Agam tiba"
+      "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan robot saat robot tiba"
     },
     "distance": {
       "min": 1,

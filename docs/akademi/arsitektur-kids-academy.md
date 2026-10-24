@@ -21,7 +21,7 @@ Status: draf diskusi, 24 Okt 2026. Belum ada kode yang berubah.
 | L5 | Kapten | 7–8 | Cambridge Primary Stage 3 |
 | L6 | Komandan | 8–9 | Cambridge Primary Stage 4 |
 
-Catatan: untuk matematika bisa disilang dengan Common Core K–3; untuk Bahasa Inggris pakai Pre-A1 Starters / A1 Movers (Cambridge YLE) sebagai rujukan kosakata dan fungsi bahasa. Jalur Karakter & Agama tidak punya acuan internasional; rumuskan sendiri.
+Catatan: untuk matematika bisa disilang dengan Common Core K–3; untuk Bahasa Inggris pakai Pre-A1 Starters / A1 Movers (Cambridge YLE) sebagai rujukan kosakata dan fungsi bahasa. Jalur Karakter & robota tidak punya acuan internasional; rumuskan sendiri.
 
 ## 3. Jalur (Track)
 
@@ -30,7 +30,7 @@ Catatan: untuk matematika bisa disilang dengan Common Core K–3; untuk Bahasa I
 | SAINS | alam, tubuh, laut, bumi, angkasa, fisika sederhana | Jelajah Angkasa, Roket, Jelajah Tubuh, Bawah Laut, Dalam Bumi |
 | MATEMATIKA | bilangan, pola, ukur, uang, bentuk, data | Rinoya Resto, Kebun Buah, Ular Tangga |
 | LITERASI | huruf, membaca, menyimak, bercerita, Bahasa Inggris | — (kategori edukasi masih planned) |
-| KODING & LOGIKA | urutan, perulangan, kondisi, abstraksi, debugging | Coding Agam (5 modul × 10 level × 10) |
+| KODING & LOGIKA | urutan, perulangan, kondisi, abstraksi, debugging | Coding robot (5 modul × 10 level × 10) |
 | DUNIA & BUDAYA | provinsi, negara, budaya, profesi, kendaraan | — |
 | KARAKTER & AGAMA | doa, ibadah, emosi, kebiasaan baik | Doa Harian, Ibadah |
 
@@ -177,7 +177,7 @@ Prinsip desain: **mekanik game = kompetensi**. Kalau mekaniknya bisa diganti kui
 ### LITERASI
 - **Komik Bercabang**: cerita yang jalan ceritanya dipilih anak; pilihan yang masuk akal hanya bisa diambil kalau paham bacaan. Bukti: pemahaman bacaan, kosakata.
 - **Mantra Huruf**: tulis huruf dengan jari untuk "membuka" pintu/peti di dunia 3D. Bukti: bentuk huruf, motorik halus.
-- **Radio Agam** (menyimak): dengar petunjuk suara, lakukan di dunia. Bukti: menyimak, kosakata Inggris. Bisa pakai Web Speech API untuk anak *mengucapkan* kata agar pintu terbuka (pengenalan suara sederhana, toleransi tinggi).
+- **Radio robot** (menyimak): dengar petunjuk suara, lakukan di dunia. Bukti: menyimak, kosakata Inggris. Bisa pakai Web Speech API untuk anak *mengucapkan* kata agar pintu terbuka (pengenalan suara sederhana, toleransi tinggi).
 
 ### KODING & LOGIKA
 - Sudah kuat. Tambahkan **Detektif Bug** dan **Studio Animasi** yang sudah di katalog. Mapping ke kompetensi urutan/perulangan/kondisi/fungsi langsung dari `koding-*`.
@@ -187,7 +187,7 @@ Prinsip desain: **mekanik game = kompetensi**. Kalau mekaniknya bisa diganti kui
 - **Paspor Dunia**: stempel paspor dengan menebak bendera dari *petunjuk visual* di bandara (bukan pilihan ganda). 
 
 ### KARAKTER & AGAMA
-- **Hari Agam**: jalani satu hari — bangun, makan, keluar rumah, naik kendaraan, tidur. Di tiap momen anak memilih doa yang tepat dari rak, lalu *mengucapkan* bersama. Situasional, bukan kuis.
+- **Hari robot**: jalani satu hari — bangun, makan, keluar rumah, naik kendaraan, tidur. Di tiap momen anak memilih doa yang tepat dari rak, lalu *mengucapkan* bersama. Situasional, bukan kuis.
 - **Teman Perasaan**: karakter lain menunjukkan ekspresi/situasi, anak memilih respons; dunia bereaksi (teman tersenyum/menjauh). Bukti: mengenal emosi, empati.
 
 ### Mekanik lintas jalur yang layak dipakai ulang
@@ -198,7 +198,7 @@ simulasi/tycoon · eksplorasi + koleksi · membangun dengan batasan · peran/pro
 **Fase 1 — fondasi (tanpa game baru)**
 1. `src/lib/akademi/`: tipe, kurikulum L1–L3 untuk 3 jalur dulu (MATEMATIKA, KODING, SAINS), aturan mastery, helper `catatBukti`.
 2. Migrasi `akademi_evidence`, `akademi_mastery`, `akademi_certificate` + RLS mengikuti pola `game_save`.
-3. Pasang `catatBukti` di Coding Agam dan Kebun Buah (dua modul paling matang).
+3. Pasang `catatBukti` di Coding robot dan Kebun Buah (dua modul paling matang).
 4. Dasbor orang tua versi awal: radar + daftar kompetensi + rekomendasi.
 
 **Fase 2 — pangkat & sertifikat**
@@ -206,7 +206,7 @@ simulasi/tycoon · eksplorasi + koleksi · membangun dengan batasan · peran/pro
 6. Misi Puncak L1 (satu saja, lintas 3 jalur).
 
 **Fase 3 — game baru**
-7. Satu game per jalur yang belum punya: Komik Bercabang (LITERASI), Kapal Nusantara (DUNIA), Hari Agam (KARAKTER).
+7. Satu game per jalur yang belum punya: Komik Bercabang (LITERASI), Kapal Nusantara (DUNIA), Hari robot (KARAKTER).
 8. Lengkapi kurikulum L4–L6.
 
 ## 10. Risiko yang perlu disepakati

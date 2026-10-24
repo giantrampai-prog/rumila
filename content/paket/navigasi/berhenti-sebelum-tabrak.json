@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum Agam menabrak, lalu tunjuk blok penabraknya."
+      "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum robot menabrak, lalu tunjuk blok penabraknya."
     },
     "en": {
-      "instruksi": "Run the program one step at a time and stop right before Agam crashes, then point to the crashing block."
+      "instruksi": "Run the program one step at a time and stop right before robot crashes, then point to the crashing block."
     }
   },
   "knobs": {

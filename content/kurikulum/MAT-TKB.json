@@ -105,7 +105,7 @@
         "pola",
         "ucap"
       ],
-      "catatan": "Agam berdiri di petak 7; petak di depannya kosong tanpa angka. Anak menyusun kartu 8, 9, 10, … dari tumpukan acak (atau mengucapkannya bila ucap aktif). Bukti: tidak mulai dari 1 dan urutan benar. Jebakan: setelah 9 memilih 01. Knob: titik mulai 2 → 15, panjang 3 → 6."
+      "catatan": "Robot berdiri di petak 7; petak di depannya kosong tanpa angka. Anak menyusun kartu 8, 9, 10, … dari tumpukan acak (atau mengucapkannya bila ucap aktif). Bukti: tidak mulai dari 1 dan urutan benar. Jebakan: setelah 9 memilih 01. Knob: titik mulai 2 → 15, panjang 3 → 6."
     },
     {
       "id": "MAT.TKB.BILANGAN-20.04",
@@ -464,8 +464,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memutar jarum jam ke jam bulat yang diminta untuk kegiatan Agam",
-        "en": "I can turn the clock hands to the o'clock time asked for Agam's activity"
+        "id": "Aku bisa memutar jarum jam ke jam bulat yang diminta untuk kegiatan",
+        "en": "I can turn the clock hands to the o'clock time asked for the activity"
       },
       "depth": [
         "pakai"
@@ -488,7 +488,7 @@
       "mechanics": [
         "simulasi"
       ],
-      "catatan": "Kebalikan .01: dari kata ke jam. 'Agam sekolah pukul 7'; anak memutar jarum pendek. Pengaya."
+      "catatan": "Kebalikan .01: dari kata ke jam. 'sekolah pukul 7'; anak memutar jarum pendek. Pengaya."
     },
     {
       "id": "MAT.TKB.UKUR-NONSTANDAR.01",
@@ -502,8 +502,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa mengukur panjang benda dengan jengkal Agam tanpa celah dan tumpang tindih, sampai 10 jengkal",
-        "en": "I can measure how long something is in Agam's hand spans with no gaps or overlaps, up to 10 spans"
+        "id": "Aku bisa mengukur panjang benda dengan jengkal tangan tanpa celah dan tumpang tindih, sampai 10 jengkal",
+        "en": "I can measure how long something is in hand spans with no gaps or overlaps, up to 10 spans"
       },
       "depth": [
         "pakai"

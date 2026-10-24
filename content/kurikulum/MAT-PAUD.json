@@ -314,8 +314,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan benda berbentuk lingkaran, segitiga, atau kotak di sekitar Agam",
-        "en": "I can find things shaped like a circle, triangle, or square around Agam"
+        "id": "Aku bisa menemukan benda berbentuk lingkaran, segitiga, atau kotak di sekitar robot",
+        "en": "I can find things shaped like a circle, triangle, or square around robot"
       },
       "depth": [
         "pakai"

@@ -1,12 +1,12 @@
 {
   "versi": "0.1.0",
   "_harapan": { "KODE.PAUD.URUTAN.01": "REVISI" },
-  "_alasan": { "KODE.PAUD.URUTAN.01": "kriteria 2 Satu kemampuan: menyusun urutan DAN menyuruh Agam bergerak adalah dua kemampuan" },
+  "_alasan": { "KODE.PAUD.URUTAN.01": "kriteria 2 Satu kemampuan: menyusun urutan DAN menyuruh robot bergerak adalah dua kemampuan" },
   "kompetensi": [
     {
       "id": "KODE.PAUD.URUTAN.01", "track": "KODE", "level": "PAUD",
       "unit": { "id": "URUTAN", "nama": { "id": "Urutan", "en": "Sequencing" } },
-      "statement": { "id": "Aku bisa menyusun 3 gambar kegiatan dan menyuruh Agam maju sampai bintang", "en": "I can order 3 routine pictures and tell Agam to move to the star" },
+      "statement": { "id": "Aku bisa menyusun 3 gambar kegiatan dan menyuruh robot maju sampai bintang", "en": "I can order 3 routine pictures and tell robot to move to the star" },
       "depth": ["pakai"], "prereq": [], "refs": [], "core": true, "mechanics": ["urutkan", "navigasi"],
       "catatan": "Gabungan dua aktivitas."
     }

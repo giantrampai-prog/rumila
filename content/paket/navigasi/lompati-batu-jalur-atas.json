@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
+      "instruksi": "Robot mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
     },
     "en": {
-      "instruksi": "Agam climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
+      "instruksi": "Robot climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
     }
   },
   "knobs": {

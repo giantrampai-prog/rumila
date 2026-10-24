@@ -9,12 +9,12 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Teman Agam menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
+      "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
       "nasikuning": "nasi kuning",
       "eskrim": "es krim"
     },
     "en": {
-      "instruksi": "Agam's friend flashes their coins: add coins from the drawer to make exactly five.",
+      "instruksi": "The robot's friend flashes their coins: add coins from the drawer to make exactly five.",
       "nasikuning": "yellow rice",
       "eskrim": "ice cream"
     }

@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Lihat dua gambar di rumah Agam, lalu sentuh yang terjadi lebih dulu.",
+      "instruksi": "Lihat dua gambar di rumah, lalu sentuh yang terjadi lebih dulu.",
       "nasi": "Piring nasi",
       "es": "Es batu",
       "kue": "Kue ulang tahun",
@@ -27,7 +27,7 @@
       "sTiup": "balon besar"
     },
     "en": {
-      "instruksi": "Look at the two pictures from Agam's house, then touch the one that happens first.",
+      "instruksi": "Look at the two pictures from the house, then touch the one that happens first.",
       "nasi": "Plate of rice",
       "es": "Ice cube",
       "kue": "Birthday cake",
@@ -57,7 +57,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 5,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "dulu",
   "sequences": [
     {

@@ -48,8 +48,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menempel kata pertama, lalu, dan terakhir pada gambar supaya Agam menceritakan urutannya dengan benar",
-        "en": "I can put the words first, then, and last on the pictures so Agam tells the sequence correctly"
+        "id": "Aku bisa menempel kata pertama, lalu, dan terakhir pada gambar supaya tokoh menceritakan urutannya dengan benar",
+        "en": "I can put the words first, then, and last on the pictures so the character tells the sequence correctly"
       },
       "depth": [
         "pakai"
@@ -69,7 +69,7 @@
         "cerita",
         "urutkan"
       ],
-      "catatan": "Label = ikon + suara, bukan tulisan. Label menggerakkan narasi: Agam bercerita mengikuti label; 'terakhir' ditempel di gambar ke-2 membuat cerita terpotong dan gambar sisa meredup, jadi kesalahan terlihat di dalam game. Bukti: narasi utuh 3 adegan. Jebakan: 'lalu' bisa dipakai dua kali pada 4 gambar; di TK A pakai 3 gambar. Knob: 3 → 4 gambar (dua 'lalu'). Pengaya."
+      "catatan": "Label = ikon + suara, bukan tulisan. Label menggerakkan narasi: tokoh bercerita mengikuti label; 'terakhir' ditempel di gambar ke-2 membuat cerita terpotong dan gambar sisa meredup, jadi kesalahan terlihat di dalam game. Bukti: narasi utuh 3 adegan. Jebakan: 'lalu' bisa dipakai dua kali pada 4 gambar; di TK A pakai 3 gambar. Knob: 3 → 4 gambar (dua 'lalu'). Pengaya."
     },
     {
       "id": "KODE.TKA.NAVIGASI.01",
@@ -78,13 +78,13 @@
       "unit": {
         "id": "NAVIGASI",
         "nama": {
-          "id": "Agam ke bintang",
-          "en": "Agam to the star"
+          "id": "Robot ke bintang",
+          "en": "Robot to the star"
         }
       },
       "statement": {
-        "id": "Aku bisa menyusun 2 sampai 4 perintah maju lalu menjalankannya supaya Agam sampai di bintang",
-        "en": "I can build 2 to 4 forward commands and then run them so Agam reaches the star"
+        "id": "Aku bisa menyusun 2 sampai 4 perintah maju lalu menjalankannya supaya robot sampai di bintang",
+        "en": "I can build 2 to 4 forward commands and then run them so robot reaches the star"
       },
       "depth": [
         "pakai"
@@ -112,13 +112,13 @@
       "unit": {
         "id": "NAVIGASI",
         "nama": {
-          "id": "Agam ke bintang",
-          "en": "Agam to the star"
+          "id": "Robot ke bintang",
+          "en": "Robot to the star"
         }
       },
       "statement": {
-        "id": "Aku bisa memakai perintah belok kiri atau kanan supaya Agam menghadap ke bintang",
-        "en": "I can use the turn left or turn right command so Agam faces the star"
+        "id": "Aku bisa memakai perintah belok kiri atau kanan supaya robot menghadap ke bintang",
+        "en": "I can use the turn left or turn right command so robot faces the star"
       },
       "depth": [
         "pakai"
@@ -137,7 +137,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Kiri/kanan relatif terhadap Agam, bukan layar; Agam ditampilkan dari belakang supaya kiri anak = kiri Agam. Jebakan: Agam menghadap ke bawah layar; hindari di TK A. Knob: belok 1 → 2 kali."
+      "catatan": "Kiri/kanan relatif terhadap robot, bukan layar; robot ditampilkan dari belakang supaya kiri anak = kiri robot. Jebakan: robot menghadap ke bawah layar; hindari di TK A. Knob: belok 1 → 2 kali."
     },
     {
       "id": "KODE.TKA.NAVIGASI.03",
@@ -146,8 +146,8 @@
       "unit": {
         "id": "NAVIGASI",
         "nama": {
-          "id": "Agam ke bintang",
-          "en": "Agam to the star"
+          "id": "Robot ke bintang",
+          "en": "Robot to the star"
         }
       },
       "statement": {
@@ -306,7 +306,7 @@
         "urutkan",
         "cerita"
       ],
-      "catatan": "Dipindah dari PAUD sesuai tinjauan. Agam sudah menyusun 3–4 gambar, satu salah tempat; anak menukarnya. Bukti: urutan benar dengan tepat satu pertukaran; lebih dari satu pertukaran dicatat belum. Jebakan: menukar dua gambar yang sama-sama benar. Kamus belum punya kode computing terverifikasi untuk 'mengenali satu kesalahan dalam algoritma'; refs kosong. Knob: 3 → 4 gambar, posisi salah tengah → ujung."
+      "catatan": "Dipindah dari PAUD sesuai tinjauan. Robot sudah menyusun 3–4 gambar, satu salah tempat; anak menukarnya. Bukti: urutan benar dengan tepat satu pertukaran; lebih dari satu pertukaran dicatat belum. Jebakan: menukar dua gambar yang sama-sama benar. Kamus belum punya kode computing terverifikasi untuk 'mengenali satu kesalahan dalam algoritma'; refs kosong. Knob: 3 → 4 gambar, posisi salah tengah → ujung."
     },
     {
       "id": "KODE.TKA.DEBUG.02",
@@ -320,8 +320,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memperbaiki satu perintah yang salah supaya program Agam sampai di bintang",
-        "en": "I can fix the one wrong command so Agam's program reaches the star"
+        "id": "Aku bisa memperbaiki satu perintah yang salah supaya program robot sampai di bintang",
+        "en": "I can fix the one wrong command so the robot's program reaches the star"
       },
       "depth": [
         "pakai"
@@ -334,7 +334,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Program 3–5 perintah sudah tersusun, satu salah (belok kiri seharusnya kanan, atau maju kurang). Anak menjalankan, melihat Agam meleset, mengganti satu perintah. Bukti: sampai bintang dengan mengubah tepat satu perintah. Knob: posisi perintah salah awal → akhir. Refs kosong seperti .01: 2CT.06 bukan tentang debugging."
+      "catatan": "Program 3–5 perintah sudah tersusun, satu salah (belok kiri seharusnya kanan, atau maju kurang). Anak menjalankan, melihat robot meleset, mengganti satu perintah. Bukti: sampai bintang dengan mengubah tepat satu perintah. Knob: posisi perintah salah awal → akhir. Refs kosong seperti .01: 2CT.06 bukan tentang debugging."
     },
     {
       "id": "KODE.TKA.KALAU.01",
@@ -348,8 +348,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilih lompat untuk petak berbatu dan maju untuk petak kosong saat menyusun program Agam",
-        "en": "I can choose jump for rocky squares and forward for empty squares when building Agam's program"
+        "id": "Aku bisa memilih lompat untuk petak berbatu dan maju untuk petak kosong saat menyusun program robot",
+        "en": "I can choose jump for rocky squares and forward for empty squares when building the robot's program"
       },
       "depth": [
         "pakai"
@@ -363,7 +363,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Benih kondisi tanpa blok 'kalau': batu terlihat sebelum program disusun; anak menaruh lompat tepat di posisi batu. Semantik (lihat docs/akademi/mekanik-navigasi.md): lompat selalu berpindah 2 petak, jadi lompat di petak kosong membuat Agam melewati satu petak dan bisa meleset dari bintang; strategi 'lompat semua' gagal. Bukti: sampai bintang dan jumlah lompat = jumlah batu. Jebakan: menghitung petak awal sebagai langkah. Jalur lurus 4–5 petak. Knob: 1 → 2 batu, posisi batu awal → akhir."
+      "catatan": "Benih kondisi tanpa blok 'kalau': batu terlihat sebelum program disusun; anak menaruh lompat tepat di posisi batu. Semantik (lihat docs/akademi/mekanik-navigasi.md): lompat selalu berpindah 2 petak, jadi lompat di petak kosong membuat robot melewati satu petak dan bisa meleset dari bintang; strategi 'lompat semua' gagal. Bukti: sampai bintang dan jumlah lompat = jumlah batu. Jebakan: menghitung petak awal sebagai langkah. Jalur lurus 4–5 petak. Knob: 1 → 2 batu, posisi batu awal → akhir."
     }
   ]
 }

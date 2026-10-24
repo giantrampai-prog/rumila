@@ -1,13 +1,13 @@
 {
-  "id": "agam-ke-bintang-lurus",
+  "id": "robot-ke-bintang-lurus",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "navigasi",
   "competencyIds": ["KODE.PAUD.PERINTAH.01"],
   "instructionKey": "instruksi",
   "locale": {
-    "id": { "instruksi": "Tekan 'maju' sampai Agam sampai di bintang, lalu tekan jalan." },
-    "en": { "instruksi": "Press 'forward' until Agam reaches the star, then press go." }
+    "id": { "instruksi": "Tekan 'maju' sampai robot sampai di bintang, lalu tekan jalan." },
+    "en": { "instruksi": "Press 'forward' until robot reaches the star, then press go." }
   },
   "knobs": {
     "distance": { "min": 1, "max": 4, "default": 2, "step": 1, "keterangan": "jarak ke bintang; memilih grid dengan optimal = distance" }

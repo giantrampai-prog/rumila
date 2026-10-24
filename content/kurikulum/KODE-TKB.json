@@ -41,8 +41,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memilih berapa kali blok ulangi harus dijalankan supaya Agam sampai tepat di bintang",
-        "en": "I can choose how many times the repeat block should run so Agam lands exactly on the star"
+        "id": "Aku bisa memilih berapa kali blok ulangi harus dijalankan supaya robot sampai tepat di bintang",
+        "en": "I can choose how many times the repeat block should run so robot lands exactly on the star"
       },
       "depth": [
         "pakai"
@@ -70,8 +70,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa membuat program lebih pendek dengan blok ulangi tanpa mengubah jalan Agam",
-        "en": "I can make a program shorter with a repeat block without changing Agam's path"
+        "id": "Aku bisa membuat program lebih pendek dengan blok ulangi tanpa mengubah jalan robot",
+        "en": "I can make a program shorter with a repeat block without changing the robot's path"
       },
       "depth": [
         "cipta"
@@ -133,8 +133,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menunjuk petak tujuan Agam sebelum tiap perintah dijalankan satu per satu",
-        "en": "I can point to the square Agam will land on before each command is run one at a time"
+        "id": "Aku bisa menunjuk petak tujuan robot sebelum tiap perintah dijalankan satu per satu",
+        "en": "I can point to the square robot will land on before each command is run one at a time"
       },
       "depth": [
         "pakai"
@@ -161,8 +161,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memperbaiki dua perintah yang salah dalam program Agam supaya sampai di bintang",
-        "en": "I can fix the two wrong commands in Agam's program so it reaches the star"
+        "id": "Aku bisa memperbaiki dua perintah yang salah dalam program robot supaya sampai di bintang",
+        "en": "I can fix the two wrong commands in the robot's program so it reaches the star"
       },
       "depth": [
         "pakai"
@@ -190,8 +190,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menunjuk perintah yang akan membuat Agam menabrak dinding sebelum perintah itu dijalankan",
-        "en": "I can point to the command that will make Agam hit the wall before that command is run"
+        "id": "Aku bisa menunjuk perintah yang akan membuat robot menabrak dinding sebelum perintah itu dijalankan",
+        "en": "I can point to the command that will make robot hit the wall before that command is run"
       },
       "depth": [
         "pakai"
@@ -205,7 +205,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Anak menjalankan program langkah demi langkah dan harus berhenti tepat satu langkah sebelum tabrakan, lalu menunjuk perintah berikutnya tanpa menjalankannya. Perintah aktif tidak disorot. Bukti: tunjukan tepat sebelum tabrakan; membiarkan Agam menabrak dicatat belum. Jebakan: berhenti terlalu dini. Knob: posisi perintah penabrak awal → akhir. Pengaya."
+      "catatan": "Anak menjalankan program langkah demi langkah dan harus berhenti tepat satu langkah sebelum tabrakan, lalu menunjuk perintah berikutnya tanpa menjalankannya. Perintah aktif tidak disorot. Bukti: tunjukan tepat sebelum tabrakan; membiarkan robot menabrak dicatat belum. Jebakan: berhenti terlalu dini. Knob: posisi perintah penabrak awal → akhir. Pengaya."
     },
     {
       "id": "KODE.TKB.KONDISI.01",
@@ -233,7 +233,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Blok kondisi satu keping dengan dua cabang bawaan ('batu? lompat / kosong? maju'), selalu memajukan Agam. Rak tetap 4–6 slot, jalur 4–6 petak, dijalankan di 3 jalur dengan posisi batu berbeda; tanpa blok kalau, salah satu jalur gagal. Bukti: ketiga jalur berhasil dengan satu program. Kalau di dalam ulangi (bersarang) ditulis di SD 1. Kamus belum punya kode kondisi; refs kosong. Knob: 1 → 2 batu."
+      "catatan": "Blok kondisi satu keping dengan dua cabang bawaan ('batu? lompat / kosong? maju'), selalu memajukan robot. Rak tetap 4–6 slot, jalur 4–6 petak, dijalankan di 3 jalur dengan posisi batu berbeda; tanpa blok kalau, salah satu jalur gagal. Bukti: ketiga jalur berhasil dengan satu program. Kalau di dalam ulangi (bersarang) ditulis di SD 1. Kamus belum punya kode kondisi; refs kosong. Knob: 1 → 2 batu."
     },
     {
       "id": "KODE.TKB.DEKOMPOSISI.01",

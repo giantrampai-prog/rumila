@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Program Agam sudah ada tapi satu blok salah: jalankan, lihat melesetnya, lalu ganti satu blok."
+      "instruksi": "Program robot sudah ada tapi satu blok salah: jalankan, lihat melesetnya, lalu ganti satu blok."
     },
     "en": {
-      "instruksi": "Agam's program is ready but one block is wrong: run it, watch it miss, then change one block."
+      "instruksi": "The robot's program is ready but one block is wrong: run it, watch it miss, then change one block."
     }
   },
   "knobs": {

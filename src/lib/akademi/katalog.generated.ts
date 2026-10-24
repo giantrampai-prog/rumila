@@ -161,8 +161,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menyuruh Agam maju satu sampai tiga langkah untuk sampai ke bintang",
-          "en": "I can tell Agam to move forward one to three steps to reach the star"
+          "id": "Aku bisa menyuruh robot maju satu sampai tiga langkah untuk sampai ke bintang",
+          "en": "I can tell robot to move forward one to three steps to reach the star"
         },
         "depth": [
           "pakai"
@@ -181,7 +181,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: Agam bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, Agam berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
+        "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: robot bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, robot berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
       },
       {
         "id": "KODE.PAUD.PERINTAH.02",
@@ -195,8 +195,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menekan lompat, bukan maju, saat batu tepat di depan Agam",
-          "en": "I can press jump instead of forward when a rock is right in front of Agam"
+          "id": "Aku bisa menekan lompat, bukan maju, saat batu tepat di depan robot",
+          "en": "I can press jump instead of forward when a rock is right in front of robot"
         },
         "depth": [
           "pakai"
@@ -209,7 +209,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Eksekusi langsung: tiap tombol dijalankan seketika, tanpa menyusun program. Batu selalu tepat satu petak di depan Agam saat muncul, jadi yang diuji hanya memilih perintah yang tepat untuk keadaan. Versi 'susun 2–4 perintah dulu lalu jalankan' ditulis di TK A. Umpan balik: maju ke batu = tersandung dan tertawa, boleh coba lagi."
+        "catatan": "Eksekusi langsung: tiap tombol dijalankan seketika, tanpa menyusun program. Batu selalu tepat satu petak di depan robot saat muncul, jadi yang diuji hanya memilih perintah yang tepat untuk keadaan. Versi 'susun 2–4 perintah dulu lalu jalankan' ditulis di TK A. Umpan balik: maju ke batu = tersandung dan tertawa, boleh coba lagi."
       },
       {
         "id": "KODE.PAUD.SEBAB-AKIBAT.01",
@@ -249,8 +249,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa meminta tolong Agam lewat tombol bantuan saat alat di dunia tidak bekerja",
-          "en": "I can ask Agam for help with the help button when something in the world does not work"
+          "id": "Aku bisa meminta tolong tokoh lewat tombol bantuan saat alat di dunia tidak bekerja",
+          "en": "I can ask robot for help with the help button when something in the world does not work"
         },
         "depth": [
           "pakai"
@@ -322,8 +322,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menempel kata pertama, lalu, dan terakhir pada gambar supaya Agam menceritakan urutannya dengan benar",
-          "en": "I can put the words first, then, and last on the pictures so Agam tells the sequence correctly"
+          "id": "Aku bisa menempel kata pertama, lalu, dan terakhir pada gambar supaya tokoh menceritakan urutannya dengan benar",
+          "en": "I can put the words first, then, and last on the pictures so the character tells the sequence correctly"
         },
         "depth": [
           "pakai"
@@ -343,7 +343,7 @@ export const KURIKULUM_RAW = [
           "cerita",
           "urutkan"
         ],
-        "catatan": "Label = ikon + suara, bukan tulisan. Label menggerakkan narasi: Agam bercerita mengikuti label; 'terakhir' ditempel di gambar ke-2 membuat cerita terpotong dan gambar sisa meredup, jadi kesalahan terlihat di dalam game. Bukti: narasi utuh 3 adegan. Jebakan: 'lalu' bisa dipakai dua kali pada 4 gambar; di TK A pakai 3 gambar. Knob: 3 → 4 gambar (dua 'lalu'). Pengaya."
+        "catatan": "Label = ikon + suara, bukan tulisan. Label menggerakkan narasi: tokoh bercerita mengikuti label; 'terakhir' ditempel di gambar ke-2 membuat cerita terpotong dan gambar sisa meredup, jadi kesalahan terlihat di dalam game. Bukti: narasi utuh 3 adegan. Jebakan: 'lalu' bisa dipakai dua kali pada 4 gambar; di TK A pakai 3 gambar. Knob: 3 → 4 gambar (dua 'lalu'). Pengaya."
       },
       {
         "id": "KODE.TKA.NAVIGASI.01",
@@ -352,13 +352,13 @@ export const KURIKULUM_RAW = [
         "unit": {
           "id": "NAVIGASI",
           "nama": {
-            "id": "Agam ke bintang",
-            "en": "Agam to the star"
+            "id": "Robot ke bintang",
+            "en": "Robot to the star"
           }
         },
         "statement": {
-          "id": "Aku bisa menyusun 2 sampai 4 perintah maju lalu menjalankannya supaya Agam sampai di bintang",
-          "en": "I can build 2 to 4 forward commands and then run them so Agam reaches the star"
+          "id": "Aku bisa menyusun 2 sampai 4 perintah maju lalu menjalankannya supaya robot sampai di bintang",
+          "en": "I can build 2 to 4 forward commands and then run them so robot reaches the star"
         },
         "depth": [
           "pakai"
@@ -386,13 +386,13 @@ export const KURIKULUM_RAW = [
         "unit": {
           "id": "NAVIGASI",
           "nama": {
-            "id": "Agam ke bintang",
-            "en": "Agam to the star"
+            "id": "Robot ke bintang",
+            "en": "Robot to the star"
           }
         },
         "statement": {
-          "id": "Aku bisa memakai perintah belok kiri atau kanan supaya Agam menghadap ke bintang",
-          "en": "I can use the turn left or turn right command so Agam faces the star"
+          "id": "Aku bisa memakai perintah belok kiri atau kanan supaya robot menghadap ke bintang",
+          "en": "I can use the turn left or turn right command so robot faces the star"
         },
         "depth": [
           "pakai"
@@ -411,7 +411,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Kiri/kanan relatif terhadap Agam, bukan layar; Agam ditampilkan dari belakang supaya kiri anak = kiri Agam. Jebakan: Agam menghadap ke bawah layar; hindari di TK A. Knob: belok 1 → 2 kali."
+        "catatan": "Kiri/kanan relatif terhadap robot, bukan layar; robot ditampilkan dari belakang supaya kiri anak = kiri robot. Jebakan: robot menghadap ke bawah layar; hindari di TK A. Knob: belok 1 → 2 kali."
       },
       {
         "id": "KODE.TKA.NAVIGASI.03",
@@ -420,8 +420,8 @@ export const KURIKULUM_RAW = [
         "unit": {
           "id": "NAVIGASI",
           "nama": {
-            "id": "Agam ke bintang",
-            "en": "Agam to the star"
+            "id": "Robot ke bintang",
+            "en": "Robot to the star"
           }
         },
         "statement": {
@@ -580,7 +580,7 @@ export const KURIKULUM_RAW = [
           "urutkan",
           "cerita"
         ],
-        "catatan": "Dipindah dari PAUD sesuai tinjauan. Agam sudah menyusun 3–4 gambar, satu salah tempat; anak menukarnya. Bukti: urutan benar dengan tepat satu pertukaran; lebih dari satu pertukaran dicatat belum. Jebakan: menukar dua gambar yang sama-sama benar. Kamus belum punya kode computing terverifikasi untuk 'mengenali satu kesalahan dalam algoritma'; refs kosong. Knob: 3 → 4 gambar, posisi salah tengah → ujung."
+        "catatan": "Dipindah dari PAUD sesuai tinjauan. Robot sudah menyusun 3–4 gambar, satu salah tempat; anak menukarnya. Bukti: urutan benar dengan tepat satu pertukaran; lebih dari satu pertukaran dicatat belum. Jebakan: menukar dua gambar yang sama-sama benar. Kamus belum punya kode computing terverifikasi untuk 'mengenali satu kesalahan dalam algoritma'; refs kosong. Knob: 3 → 4 gambar, posisi salah tengah → ujung."
       },
       {
         "id": "KODE.TKA.DEBUG.02",
@@ -594,8 +594,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memperbaiki satu perintah yang salah supaya program Agam sampai di bintang",
-          "en": "I can fix the one wrong command so Agam's program reaches the star"
+          "id": "Aku bisa memperbaiki satu perintah yang salah supaya program robot sampai di bintang",
+          "en": "I can fix the one wrong command so the robot's program reaches the star"
         },
         "depth": [
           "pakai"
@@ -608,7 +608,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Program 3–5 perintah sudah tersusun, satu salah (belok kiri seharusnya kanan, atau maju kurang). Anak menjalankan, melihat Agam meleset, mengganti satu perintah. Bukti: sampai bintang dengan mengubah tepat satu perintah. Knob: posisi perintah salah awal → akhir. Refs kosong seperti .01: 2CT.06 bukan tentang debugging."
+        "catatan": "Program 3–5 perintah sudah tersusun, satu salah (belok kiri seharusnya kanan, atau maju kurang). Anak menjalankan, melihat robot meleset, mengganti satu perintah. Bukti: sampai bintang dengan mengubah tepat satu perintah. Knob: posisi perintah salah awal → akhir. Refs kosong seperti .01: 2CT.06 bukan tentang debugging."
       },
       {
         "id": "KODE.TKA.KALAU.01",
@@ -622,8 +622,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilih lompat untuk petak berbatu dan maju untuk petak kosong saat menyusun program Agam",
-          "en": "I can choose jump for rocky squares and forward for empty squares when building Agam's program"
+          "id": "Aku bisa memilih lompat untuk petak berbatu dan maju untuk petak kosong saat menyusun program robot",
+          "en": "I can choose jump for rocky squares and forward for empty squares when building the robot's program"
         },
         "depth": [
           "pakai"
@@ -637,7 +637,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Benih kondisi tanpa blok 'kalau': batu terlihat sebelum program disusun; anak menaruh lompat tepat di posisi batu. Semantik (lihat docs/akademi/mekanik-navigasi.md): lompat selalu berpindah 2 petak, jadi lompat di petak kosong membuat Agam melewati satu petak dan bisa meleset dari bintang; strategi 'lompat semua' gagal. Bukti: sampai bintang dan jumlah lompat = jumlah batu. Jebakan: menghitung petak awal sebagai langkah. Jalur lurus 4–5 petak. Knob: 1 → 2 batu, posisi batu awal → akhir."
+        "catatan": "Benih kondisi tanpa blok 'kalau': batu terlihat sebelum program disusun; anak menaruh lompat tepat di posisi batu. Semantik (lihat docs/akademi/mekanik-navigasi.md): lompat selalu berpindah 2 petak, jadi lompat di petak kosong membuat robot melewati satu petak dan bisa meleset dari bintang; strategi 'lompat semua' gagal. Bukti: sampai bintang dan jumlah lompat = jumlah batu. Jebakan: menghitung petak awal sebagai langkah. Jalur lurus 4–5 petak. Knob: 1 → 2 batu, posisi batu awal → akhir."
       }
     ]
   },
@@ -684,8 +684,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memilih berapa kali blok ulangi harus dijalankan supaya Agam sampai tepat di bintang",
-          "en": "I can choose how many times the repeat block should run so Agam lands exactly on the star"
+          "id": "Aku bisa memilih berapa kali blok ulangi harus dijalankan supaya robot sampai tepat di bintang",
+          "en": "I can choose how many times the repeat block should run so robot lands exactly on the star"
         },
         "depth": [
           "pakai"
@@ -713,8 +713,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa membuat program lebih pendek dengan blok ulangi tanpa mengubah jalan Agam",
-          "en": "I can make a program shorter with a repeat block without changing Agam's path"
+          "id": "Aku bisa membuat program lebih pendek dengan blok ulangi tanpa mengubah jalan robot",
+          "en": "I can make a program shorter with a repeat block without changing the robot's path"
         },
         "depth": [
           "cipta"
@@ -776,8 +776,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menunjuk petak tujuan Agam sebelum tiap perintah dijalankan satu per satu",
-          "en": "I can point to the square Agam will land on before each command is run one at a time"
+          "id": "Aku bisa menunjuk petak tujuan robot sebelum tiap perintah dijalankan satu per satu",
+          "en": "I can point to the square robot will land on before each command is run one at a time"
         },
         "depth": [
           "pakai"
@@ -804,8 +804,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memperbaiki dua perintah yang salah dalam program Agam supaya sampai di bintang",
-          "en": "I can fix the two wrong commands in Agam's program so it reaches the star"
+          "id": "Aku bisa memperbaiki dua perintah yang salah dalam program robot supaya sampai di bintang",
+          "en": "I can fix the two wrong commands in the robot's program so it reaches the star"
         },
         "depth": [
           "pakai"
@@ -833,8 +833,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menunjuk perintah yang akan membuat Agam menabrak dinding sebelum perintah itu dijalankan",
-          "en": "I can point to the command that will make Agam hit the wall before that command is run"
+          "id": "Aku bisa menunjuk perintah yang akan membuat robot menabrak dinding sebelum perintah itu dijalankan",
+          "en": "I can point to the command that will make robot hit the wall before that command is run"
         },
         "depth": [
           "pakai"
@@ -848,7 +848,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Anak menjalankan program langkah demi langkah dan harus berhenti tepat satu langkah sebelum tabrakan, lalu menunjuk perintah berikutnya tanpa menjalankannya. Perintah aktif tidak disorot. Bukti: tunjukan tepat sebelum tabrakan; membiarkan Agam menabrak dicatat belum. Jebakan: berhenti terlalu dini. Knob: posisi perintah penabrak awal → akhir. Pengaya."
+        "catatan": "Anak menjalankan program langkah demi langkah dan harus berhenti tepat satu langkah sebelum tabrakan, lalu menunjuk perintah berikutnya tanpa menjalankannya. Perintah aktif tidak disorot. Bukti: tunjukan tepat sebelum tabrakan; membiarkan robot menabrak dicatat belum. Jebakan: berhenti terlalu dini. Knob: posisi perintah penabrak awal → akhir. Pengaya."
       },
       {
         "id": "KODE.TKB.KONDISI.01",
@@ -876,7 +876,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "navigasi"
         ],
-        "catatan": "Blok kondisi satu keping dengan dua cabang bawaan ('batu? lompat / kosong? maju'), selalu memajukan Agam. Rak tetap 4–6 slot, jalur 4–6 petak, dijalankan di 3 jalur dengan posisi batu berbeda; tanpa blok kalau, salah satu jalur gagal. Bukti: ketiga jalur berhasil dengan satu program. Kalau di dalam ulangi (bersarang) ditulis di SD 1. Kamus belum punya kode kondisi; refs kosong. Knob: 1 → 2 batu."
+        "catatan": "Blok kondisi satu keping dengan dua cabang bawaan ('batu? lompat / kosong? maju'), selalu memajukan robot. Rak tetap 4–6 slot, jalur 4–6 petak, dijalankan di 3 jalur dengan posisi batu berbeda; tanpa blok kalau, salah satu jalur gagal. Bukti: ketiga jalur berhasil dengan satu program. Kalau di dalam ulangi (bersarang) ditulis di SD 1. Kamus belum punya kode kondisi; refs kosong. Knob: 1 → 2 batu."
       },
       {
         "id": "KODE.TKB.DEKOMPOSISI.01",
@@ -1254,8 +1254,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menemukan benda berbentuk lingkaran, segitiga, atau kotak di sekitar Agam",
-          "en": "I can find things shaped like a circle, triangle, or square around Agam"
+          "id": "Aku bisa menemukan benda berbentuk lingkaran, segitiga, atau kotak di sekitar robot",
+          "en": "I can find things shaped like a circle, triangle, or square around robot"
         },
         "depth": [
           "pakai"
@@ -1693,8 +1693,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa mengukur panjang benda dengan jengkal Agam, sampai 5 jengkal",
-          "en": "I can measure how long something is in Agam's hand spans, up to 5 spans"
+          "id": "Aku bisa mengukur panjang benda dengan jengkal tangan, sampai 5 jengkal",
+          "en": "I can measure how long something is in hand spans, up to 5 spans"
         },
         "depth": [
           "pakai"
@@ -1902,7 +1902,7 @@ export const KURIKULUM_RAW = [
           "pola",
           "ucap"
         ],
-        "catatan": "Agam berdiri di petak 7; petak di depannya kosong tanpa angka. Anak menyusun kartu 8, 9, 10, … dari tumpukan acak (atau mengucapkannya bila ucap aktif). Bukti: tidak mulai dari 1 dan urutan benar. Jebakan: setelah 9 memilih 01. Knob: titik mulai 2 → 15, panjang 3 → 6."
+        "catatan": "Robot berdiri di petak 7; petak di depannya kosong tanpa angka. Anak menyusun kartu 8, 9, 10, … dari tumpukan acak (atau mengucapkannya bila ucap aktif). Bukti: tidak mulai dari 1 dan urutan benar. Jebakan: setelah 9 memilih 01. Knob: titik mulai 2 → 15, panjang 3 → 6."
       },
       {
         "id": "MAT.TKB.BILANGAN-20.04",
@@ -2261,8 +2261,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa memutar jarum jam ke jam bulat yang diminta untuk kegiatan Agam",
-          "en": "I can turn the clock hands to the o'clock time asked for Agam's activity"
+          "id": "Aku bisa memutar jarum jam ke jam bulat yang diminta untuk kegiatan",
+          "en": "I can turn the clock hands to the o'clock time asked for the activity"
         },
         "depth": [
           "pakai"
@@ -2285,7 +2285,7 @@ export const KURIKULUM_RAW = [
         "mechanics": [
           "simulasi"
         ],
-        "catatan": "Kebalikan .01: dari kata ke jam. 'Agam sekolah pukul 7'; anak memutar jarum pendek. Pengaya."
+        "catatan": "Kebalikan .01: dari kata ke jam. 'sekolah pukul 7'; anak memutar jarum pendek. Pengaya."
       },
       {
         "id": "MAT.TKB.UKUR-NONSTANDAR.01",
@@ -2299,8 +2299,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa mengukur panjang benda dengan jengkal Agam tanpa celah dan tumpang tindih, sampai 10 jengkal",
-          "en": "I can measure how long something is in Agam's hand spans with no gaps or overlaps, up to 10 spans"
+          "id": "Aku bisa mengukur panjang benda dengan jengkal tangan tanpa celah dan tumpang tindih, sampai 10 jengkal",
+          "en": "I can measure how long something is in hand spans with no gaps or overlaps, up to 10 spans"
         },
         "depth": [
           "pakai"
@@ -2530,7 +2530,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam jajan di kantin: lihat harga koinnya, lalu bayar dengan koin seribu sebanyak itu.",
+        "instruksi": "Robot jajan di kantin: lihat harga koinnya, lalu bayar dengan koin seribu sebanyak itu.",
         "pisanggoreng": "pisang goreng",
         "tahu": "tahu goreng",
         "bakwan": "bakwan",
@@ -2538,7 +2538,7 @@ export const PAKET_RAW: unknown[] = [
         "nasikuning": "nasi kuning"
       },
       "en": {
-        "instruksi": "Agam buys a snack at the canteen: read the coin price, then pay with that many thousand coins.",
+        "instruksi": "Robot buys a snack at the canteen: read the coin price, then pay with that many thousand coins.",
         "pisanggoreng": "fried banana",
         "tahu": "fried tofu",
         "bakwan": "veggie fritter",
@@ -2702,7 +2702,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam beli alat tulis: lihat harganya, lalu bayar pas dengan uang di laci.",
+        "instruksi": "Robot beli alat tulis: lihat harganya, lalu bayar pas dengan uang di laci.",
         "pensil": "pensil",
         "penghapus": "penghapus",
         "buku": "buku tulis",
@@ -2710,7 +2710,7 @@ export const PAKET_RAW: unknown[] = [
         "tas": "tas pensil"
       },
       "en": {
-        "instruksi": "Agam buys school supplies: read the price, then pay exactly with the money in the drawer.",
+        "instruksi": "Robot buys school supplies: read the price, then pay exactly with the money in the drawer.",
         "pensil": "pencil",
         "penghapus": "eraser",
         "buku": "notebook",
@@ -3348,12 +3348,12 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Kelereng Agam tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+        "instruksi": "Kelereng robot tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "kelereng": "kelereng",
         "kancing": "kancing"
       },
       "en": {
-        "instruksi": "Agam's marbles spilled: touch each one as you count, then slide the marker to the number.",
+        "instruksi": "The robot's marbles spilled: touch each one as you count, then slide the marker to the number.",
         "kelereng": "marbles",
         "kancing": "buttons"
       }
@@ -3377,7 +3377,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 5,
-    "world": "rumah-agam",
+    "world": "rumah",
     "currency": "IDR",
     "denominations": [
       1000
@@ -3704,7 +3704,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam jadi kasir toko mainan: pembeli bayar sepuluh ribu, beri kembalian yang pas.",
+        "instruksi": "Robot jadi kasir toko mainan: pembeli bayar sepuluh ribu, beri kembalian yang pas.",
         "kelereng": "kelereng",
         "yoyo": "yoyo",
         "balon": "balon",
@@ -3712,7 +3712,7 @@ export const PAKET_RAW: unknown[] = [
         "boneka": "boneka"
       },
       "en": {
-        "instruksi": "Agam is the toy-shop cashier: the customer pays ten thousand, give the right change.",
+        "instruksi": "Robot is the toy-shop cashier: the customer pays ten thousand, give the right change.",
         "kelereng": "marbles",
         "yoyo": "yo-yo",
         "balon": "balloon",
@@ -3950,12 +3950,12 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Teman Agam menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
+        "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
         "nasikuning": "nasi kuning",
         "eskrim": "es krim"
       },
       "en": {
-        "instruksi": "Agam's friend flashes their coins: add coins from the drawer to make exactly five.",
+        "instruksi": "The robot's friend flashes their coins: add coins from the drawer to make exactly five.",
         "nasikuning": "yellow rice",
         "eskrim": "ice cream"
       }
@@ -4326,12 +4326,12 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
+        "instruksi": "Robot jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
         "duaribu": "uang dua ribu",
         "limaribu": "uang lima ribu"
       },
       "en": {
-        "instruksi": "Agam is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
+        "instruksi": "Robot is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
         "duaribu": "2,000 note",
         "limaribu": "5,000 note"
       }
@@ -4465,95 +4465,7 @@ export const PAKET_RAW: unknown[] = [
     }
   },
   {
-    "id": "agam-maju-langsung",
-    "version": "1.0.0",
-    "level": "PAUD",
-    "mechanic": "navigasi",
-    "competencyIds": [
-      "KODE.PAUD.PERINTAH.01"
-    ],
-    "instructionKey": "instruksi",
-    "locale": {
-      "id": {
-        "instruksi": "Tekan 'maju' satu-satu sampai Agam berdiri di bintang."
-      },
-      "en": {
-        "instruksi": "Press 'forward' one at a time until Agam stands on the star."
-      }
-    },
-    "knobs": {
-      "distance": {
-        "min": 1,
-        "max": 3,
-        "default": 1,
-        "step": 1,
-        "keterangan": "jarak ke bintang (1–3 langkah); memilih grid dengan optimal = distance"
-      }
-    },
-    "assets": [],
-    "generatif": false,
-    "rounds": 4,
-    "world": "kebun-pasar",
-    "execMode": "langsung",
-    "commands": [
-      "maju"
-    ],
-    "grids": [
-      {
-        "id": "lurus-1",
-        "w": 4,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 1,
-          "y": 0
-        },
-        "walls": [],
-        "rocks": [],
-        "optimal": 1
-      },
-      {
-        "id": "lurus-2",
-        "w": 4,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 2,
-          "y": 0
-        },
-        "walls": [],
-        "rocks": [],
-        "optimal": 2
-      },
-      {
-        "id": "lurus-3",
-        "w": 4,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 3,
-          "y": 0
-        },
-        "walls": [],
-        "rocks": [],
-        "optimal": 3
-      }
-    ]
-  },
-  {
-    "id": "batu-di-depan-agam",
+    "id": "batu-di-depan-robot",
     "version": "1.0.0",
     "level": "PAUD",
     "mechanic": "navigasi",
@@ -4563,10 +4475,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Kalau ada batu di depan Agam tekan 'lompat', kalau kosong tekan 'maju'."
+        "instruksi": "Kalau ada batu di depan robot tekan 'lompat', kalau kosong tekan 'maju'."
       },
       "en": {
-        "instruksi": "If there is a rock in front of Agam press 'jump', if it is empty press 'forward'."
+        "instruksi": "If there is a rock in front of robot press 'jump', if it is empty press 'forward'."
       }
     },
     "knobs": {
@@ -4575,7 +4487,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 2,
         "default": 1,
         "step": 1,
-        "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan Agam saat Agam tiba"
+        "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan robot saat robot tiba"
       },
       "distance": {
         "min": 1,
@@ -4722,10 +4634,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
+        "instruksi": "Robot jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
       },
       "en": {
-        "instruksi": "Agam walks up the garden: jump when a rock is right in front, step forward when it is clear."
+        "instruksi": "Robot walks up the garden: jump when a rock is right in front, step forward when it is clear."
       }
     },
     "knobs": {
@@ -4734,7 +4646,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 2,
         "default": 1,
         "step": 1,
-        "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan Agam saat Agam tiba"
+        "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan robot saat robot tiba"
       },
       "distance": {
         "min": 1,
@@ -4881,10 +4793,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Lihat ke mana Agam menghadap, lalu susun belok dan maju supaya sampai bintang."
+        "instruksi": "Lihat ke mana robot menghadap, lalu susun belok dan maju supaya sampai bintang."
       },
       "en": {
-        "instruksi": "Check which way Agam is facing, then arrange turn and forward blocks to reach the star."
+        "instruksi": "Check which way robot is facing, then arrange turn and forward blocks to reach the star."
       }
     },
     "knobs": {
@@ -5012,10 +4924,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
+        "instruksi": "Robot belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
       },
       "en": {
-        "instruksi": "Agam is not facing the star yet: use a left or right block, then forward."
+        "instruksi": "Robot is not facing the star yet: use a left or right block, then forward."
       }
     },
     "knobs": {
@@ -5255,10 +5167,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum Agam menabrak, lalu tunjuk blok penabraknya."
+        "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum robot menabrak, lalu tunjuk blok penabraknya."
       },
       "en": {
-        "instruksi": "Run the program one step at a time and stop right before Agam crashes, then point to the crashing block."
+        "instruksi": "Run the program one step at a time and stop right before robot crashes, then point to the crashing block."
       }
     },
     "knobs": {
@@ -5468,10 +5380,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Ada tembok di taman: susun program maju dan belok supaya Agam memutar sampai bintang."
+        "instruksi": "Ada tembok di taman: susun program maju dan belok supaya robot memutar sampai bintang."
       },
       "en": {
-        "instruksi": "There is a wall in the park: build a forward-and-turn program so Agam goes around to the star."
+        "instruksi": "There is a wall in the park: build a forward-and-turn program so robot goes around to the star."
       }
     },
     "knobs": {
@@ -5597,10 +5509,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Susun maju dan belok di rak supaya Agam sampai bintang, lalu tekan jalan."
+        "instruksi": "Susun maju dan belok di rak supaya robot sampai bintang, lalu tekan jalan."
       },
       "en": {
-        "instruksi": "Arrange forward and turn blocks on the rack so Agam reaches the star, then press go."
+        "instruksi": "Arrange forward and turn blocks on the rack so robot reaches the star, then press go."
       }
     },
     "knobs": {
@@ -5861,10 +5773,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Lihat tembok dan arah Agam, lalu susun program utuh sebelum dijalankan."
+        "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan."
       },
       "en": {
-        "instruksi": "Look at the walls and Agam's direction, then build the whole program before running it."
+        "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it."
       }
     },
     "knobs": {
@@ -6402,10 +6314,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
+        "instruksi": "Robot mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
       },
       "en": {
-        "instruksi": "Agam climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
+        "instruksi": "Robot climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
       }
     },
     "knobs": {
@@ -6728,10 +6640,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Ada dua blok yang salah di program Agam: temukan keduanya dan ganti, jangan lebih."
+        "instruksi": "Ada dua blok yang salah di program robot: temukan keduanya dan ganti, jangan lebih."
       },
       "en": {
-        "instruksi": "Two blocks in Agam's program are wrong: find both and change them, no more than two."
+        "instruksi": "Two blocks in the robot's program are wrong: find both and change them, no more than two."
       }
     },
     "knobs": {
@@ -7136,10 +7048,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Program Agam sudah ada tapi satu blok salah: jalankan, lihat melesetnya, lalu ganti satu blok."
+        "instruksi": "Program robot sudah ada tapi satu blok salah: jalankan, lihat melesetnya, lalu ganti satu blok."
       },
       "en": {
-        "instruksi": "Agam's program is ready but one block is wrong: run it, watch it miss, then change one block."
+        "instruksi": "The robot's program is ready but one block is wrong: run it, watch it miss, then change one block."
       }
     },
     "knobs": {
@@ -7317,10 +7229,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam meleset karena satu blok keliru: temukan dan ganti blok itu supaya sampai bintang."
+        "instruksi": "Robot meleset karena satu blok keliru: temukan dan ganti blok itu supaya sampai bintang."
       },
       "en": {
-        "instruksi": "Agam misses because one block is wrong: find it and change it so he reaches the star."
+        "instruksi": "Robot misses because one block is wrong: find it and change it so he reaches the star."
       }
     },
     "knobs": {
@@ -7492,10 +7404,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Program Agam ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
+        "instruksi": "Program robot ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
       },
       "en": {
-        "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and Agam walks the same path."
+        "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and robot walks the same path."
       }
     },
     "knobs": {
@@ -7697,10 +7609,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
+        "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
       },
       "en": {
-        "instruksi": "Agam wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
+        "instruksi": "Robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
       }
     },
     "knobs": {
@@ -7897,6 +7809,94 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
+    "id": "robot-maju-langsung",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "navigasi",
+    "competencyIds": [
+      "KODE.PAUD.PERINTAH.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "instruksi": "Tekan 'maju' satu-satu sampai robot berdiri di bintang."
+      },
+      "en": {
+        "instruksi": "Press 'forward' one at a time until robot stands on the star."
+      }
+    },
+    "knobs": {
+      "distance": {
+        "min": 1,
+        "max": 3,
+        "default": 1,
+        "step": 1,
+        "keterangan": "jarak ke bintang (1–3 langkah); memilih grid dengan optimal = distance"
+      }
+    },
+    "assets": [],
+    "generatif": false,
+    "rounds": 4,
+    "world": "kebun-pasar",
+    "execMode": "langsung",
+    "commands": [
+      "maju"
+    ],
+    "grids": [
+      {
+        "id": "lurus-1",
+        "w": 4,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-2",
+        "w": 4,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "lurus-3",
+        "w": 4,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      }
+    ]
+  },
+  {
     "id": "tebak-petak-berikutnya",
     "version": "1.0.0",
     "level": "TKB",
@@ -7907,10 +7907,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat Agam akan berdiri, lalu tekan langkah."
+        "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat robot akan berdiri, lalu tekan langkah."
       },
       "en": {
-        "instruksi": "Before each block runs, point to the square where Agam will stand, then press step."
+        "instruksi": "Before each block runs, point to the square where robot will stand, then press step."
       }
     },
     "knobs": {
@@ -8090,10 +8090,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Hitung petak sampai bintang, jangan hitung petak Agam, lalu pilih angka ulangi yang pas."
+        "instruksi": "Hitung petak sampai bintang, jangan hitung petak robot, lalu pilih angka ulangi yang pas."
       },
       "en": {
-        "instruksi": "Count the squares to the star, not Agam's own square, then pick the right repeat number."
+        "instruksi": "Count the squares to the star, not the robot's own square, then pick the right repeat number."
       }
     },
     "knobs": {
@@ -8218,10 +8218,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya Agam tepat di bintang."
+        "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya robot tepat di bintang."
       },
       "en": {
-        "instruksi": "Fill the repeat block with two commands, then choose how many times so Agam lands right on the star."
+        "instruksi": "Fill the repeat block with two commands, then choose how many times so robot lands right on the star."
       }
     },
     "knobs": {
@@ -8347,10 +8347,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
+        "instruksi": "Robot naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
       },
       "en": {
-        "instruksi": "Agam climbs three squares but the rack has two slots: use 'repeat 3' with forward."
+        "instruksi": "Robot climbs three squares but the rack has two slots: use 'repeat 3' with forward."
       }
     },
     "knobs": {
@@ -8439,10 +8439,10 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Rak cuma muat dua blok: pakai blok 'ulangi 3' berisi maju supaya Agam sampai bintang."
+        "instruksi": "Rak cuma muat dua blok: pakai blok 'ulangi 3' berisi maju supaya robot sampai bintang."
       },
       "en": {
-        "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so Agam reaches the star."
+        "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so robot reaches the star."
       }
     },
     "knobs": {
@@ -8694,7 +8694,7 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
-    "id": "bentuk-di-rumah-agam",
+    "id": "bentuk-di-rumah",
     "version": "1.0.0",
     "level": "PAUD",
     "mechanic": "pilah",
@@ -8704,7 +8704,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah Agam yang bentuknya itu.",
+        "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah yang bentuknya itu.",
         "pilihan": "pilihan",
         "jam": "jam dinding",
         "bola": "bola",
@@ -8720,7 +8720,7 @@ export const PAKET_RAW: unknown[] = [
         "tSegitiga": "Mana yang segitiga?"
       },
       "en": {
-        "instruksi": "Listen to the shape, then touch the thing in Agam's house with that shape.",
+        "instruksi": "Listen to the shape, then touch the thing in the house with that shape.",
         "pilihan": "choices",
         "jam": "wall clock",
         "bola": "ball",
@@ -8748,7 +8748,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 6,
-    "world": "rumah-agam",
+    "world": "rumah",
     "mode": "pilih",
     "bins": [
       {
@@ -8886,7 +8886,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
+        "instruksi": "Robot punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
         "koin500": "koin lima ratus",
         "koin1000": "koin seribu",
         "kertas2000": "uang dua ribu",
@@ -8894,7 +8894,7 @@ export const PAKET_RAW: unknown[] = [
         "kertas10000": "uang sepuluh ribu"
       },
       "en": {
-        "instruksi": "Agam has five piggy banks: drop each coin or note into the one with the same picture.",
+        "instruksi": "Robot has five piggy banks: drop each coin or note into the one with the same picture.",
         "koin500": "500 coin",
         "koin1000": "1,000 coin",
         "kertas2000": "2,000 note",
@@ -8921,7 +8921,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 5,
-    "world": "rumah-agam",
+    "world": "rumah",
     "mode": "kelompok",
     "pilihan": [],
     "bins": [
@@ -9752,13 +9752,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Kucing Agam lapar: sentuh kolam yang ikannya lebih banyak.",
+        "instruksi": "Kucing robot lapar: sentuh kolam yang ikannya lebih banyak.",
         "pilihan": "pilihan",
         "ikan": "ikan",
         "tBanyak": "Mana kolam yang ikannya lebih banyak?"
       },
       "en": {
-        "instruksi": "Agam's cat is hungry: touch the pond with more fish.",
+        "instruksi": "The robot's cat is hungry: touch the pond with more fish.",
         "pilihan": "choices",
         "ikan": "fish",
         "tBanyak": "Which pond has more fish?"
@@ -9880,7 +9880,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Bantu Agam merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
+        "instruksi": "Bantu robot merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
         "merah": "merah",
         "biru": "biru",
         "kuning": "kuning",
@@ -9895,7 +9895,7 @@ export const PAKET_RAW: unknown[] = [
         "kura": "kura-kura"
       },
       "en": {
-        "instruksi": "Help Agam tidy up: put each toy into the box with the same colour.",
+        "instruksi": "Help robot tidy up: put each toy into the box with the same colour.",
         "merah": "red",
         "biru": "blue",
         "kuning": "yellow",
@@ -10145,7 +10145,7 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
-    "id": "kue-bentuk-toko-agam",
+    "id": "kue-bentuk-toko",
     "version": "1.0.0",
     "level": "PAUD",
     "mechanic": "pilah",
@@ -10155,13 +10155,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko Agam rapi.",
+        "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko rapi.",
         "lingkaran": "lingkaran",
         "segitiga": "segitiga",
         "kotak": "kotak"
       },
       "en": {
-        "instruksi": "Put each cookie on the tray with the same shape so Agam's shop looks neat.",
+        "instruksi": "Put each cookie on the tray with the same shape so the shop looks neat.",
         "lingkaran": "circle",
         "segitiga": "triangle",
         "kotak": "square"
@@ -10286,7 +10286,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
+        "instruksi": "Robot mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
         "siapkan": "siapkan",
         "campur": "campur",
         "panggang": "panggang",
@@ -10298,7 +10298,7 @@ export const PAKET_RAW: unknown[] = [
         "jadi": "kue matang"
       },
       "en": {
-        "instruksi": "Agam is baking a cake: put each small step into its big stage.",
+        "instruksi": "Robot is baking a cake: put each small step into its big stage.",
         "siapkan": "get ready",
         "campur": "mix",
         "panggang": "bake",
@@ -10714,7 +10714,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam mau pakai topi pesta: sentuh topi yang warnanya disebut.",
+        "instruksi": "Robot mau pakai topi pesta: sentuh topi yang warnanya disebut.",
         "pilihan": "pilihan",
         "tMerah": "Mana yang merah?",
         "tBiru": "Mana yang biru?",
@@ -10723,7 +10723,7 @@ export const PAKET_RAW: unknown[] = [
         "topi": "topi pesta"
       },
       "en": {
-        "instruksi": "Agam wants a party hat: touch the hat of the colour you hear.",
+        "instruksi": "Robot wants a party hat: touch the hat of the colour you hear.",
         "pilihan": "choices",
         "tMerah": "Which one is red?",
         "tBiru": "Which one is blue?",
@@ -10840,7 +10840,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Di meja Agam ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
+        "instruksi": "Di meja robot ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
         "pilihan": "pilihan",
         "pensil": "pensil",
         "kereta": "kereta",
@@ -10851,7 +10851,7 @@ export const PAKET_RAW: unknown[] = [
         "tPendek": "Mana yang lebih pendek?"
       },
       "en": {
-        "instruksi": "On Agam's desk are two of the same thing: touch the longer or the shorter one.",
+        "instruksi": "On the robot's desk are two of the same thing: touch the longer or the shorter one.",
         "pilihan": "choices",
         "pensil": "pencil",
         "kereta": "train",
@@ -10874,7 +10874,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 5,
-    "world": "rumah-agam",
+    "world": "rumah",
     "mode": "pilih",
     "bins": [
       {
@@ -11181,14 +11181,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Panen Agam campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
+        "instruksi": "Panen robot campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
         "wortel": "wortel",
         "brokoli": "brokoli",
         "jagung": "jagung",
         "tomat": "tomat"
       },
       "en": {
-        "instruksi": "Agam's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
+        "instruksi": "The robot's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
         "wortel": "carrots",
         "brokoli": "broccoli",
         "jagung": "corn",
@@ -11349,13 +11349,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam lapar sekali: sentuh piring yang kuenya lebih banyak.",
+        "instruksi": "Robot lapar sekali: sentuh piring yang kuenya lebih banyak.",
         "pilihan": "pilihan",
         "kue": "kue",
         "tBanyak": "Mana piring yang kuenya lebih banyak?"
       },
       "en": {
-        "instruksi": "Agam is very hungry: touch the plate with more cookies.",
+        "instruksi": "Robot is very hungry: touch the plate with more cookies.",
         "pilihan": "choices",
         "kue": "cookies",
         "tBanyak": "Which plate has more cookies?"
@@ -12489,7 +12489,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Bantu Agam menata dapur: taruh tiap benda di rak yang bentuknya sama.",
+        "instruksi": "Bantu robot menata dapur: taruh tiap benda di rak yang bentuknya sama.",
         "bola": "bola",
         "kubus": "kubus",
         "tabung": "tabung",
@@ -12505,7 +12505,7 @@ export const PAKET_RAW: unknown[] = [
         "tisu": "gulungan tisu"
       },
       "en": {
-        "instruksi": "Help Agam tidy the kitchen: put each thing on the shelf with the same shape.",
+        "instruksi": "Help robot tidy the kitchen: put each thing on the shelf with the same shape.",
         "bola": "sphere",
         "kubus": "cube",
         "tabung": "cylinder",
@@ -13152,7 +13152,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Lihat piktogram stok sayur warung Agam, lalu sentuh rak yang diminta.",
+        "instruksi": "Lihat piktogram stok sayur warung, lalu sentuh rak yang diminta.",
         "pilihan": "pilihan",
         "wortel": "wortel",
         "jagung": "jagung",
@@ -13162,7 +13162,7 @@ export const PAKET_RAW: unknown[] = [
         "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
       },
       "en": {
-        "instruksi": "Look at the vegetable stock chart in Agam's shop, then touch the shelf asked for.",
+        "instruksi": "Look at the vegetable stock chart in the shop, then touch the shelf asked for.",
         "pilihan": "choices",
         "wortel": "carrots",
         "jagung": "corn",
@@ -13489,7 +13489,7 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
-    "id": "agam-berangkat-sekolah",
+    "id": "berangkat-sekolah",
     "version": "1.0.0",
     "level": "PAUD",
     "mechanic": "urutkan",
@@ -13499,8 +13499,8 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Susun gambar supaya Agam berangkat sekolah dengan urutan yang benar.",
-        "sekolah": "Agam ke sekolah",
+        "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
+        "sekolah": "Robot ke sekolah",
         "teh": "Membuat teh hangat",
         "seragam": "pakai seragam",
         "tas": "pakai tas",
@@ -13511,8 +13511,8 @@ export const PAKET_RAW: unknown[] = [
         "minum": "minum teh"
       },
       "en": {
-        "instruksi": "Put the pictures in order so Agam gets to school the right way.",
-        "sekolah": "Agam goes to school",
+        "instruksi": "Put the pictures in order so getting to school the right way.",
+        "sekolah": "Robot goes to school",
         "teh": "Making warm tea",
         "seragam": "put on uniform",
         "tas": "put on backpack",
@@ -13582,112 +13582,6 @@ export const PAKET_RAW: unknown[] = [
             "id": "minum",
             "labelKey": "minum",
             "emoji": "🍵"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "agam-siang-dan-malam",
-    "version": "1.0.0",
-    "level": "PAUD",
-    "mechanic": "urutkan",
-    "competencyIds": [
-      "KODE.PAUD.URUTAN.02"
-    ],
-    "instructionKey": "instruksi",
-    "locale": {
-      "id": {
-        "instruksi": "Susun gambar supaya kegiatan Agam urut dari awal sampai akhir.",
-        "makan": "Makan siang Agam",
-        "tidur": "Agam tidur malam",
-        "cuci": "cuci tangan",
-        "ambil": "ambil piring",
-        "santap": "makan",
-        "habis": "piring kosong",
-        "sikat": "sikat gigi",
-        "piyama": "pakai piyama",
-        "lampu": "matikan lampu",
-        "bobo": "tidur"
-      },
-      "en": {
-        "instruksi": "Put the pictures in order so Agam's activity goes from start to finish.",
-        "makan": "Agam's lunch",
-        "tidur": "Agam's bedtime",
-        "cuci": "wash hands",
-        "ambil": "get a plate",
-        "santap": "eat",
-        "habis": "empty plate",
-        "sikat": "brush teeth",
-        "piyama": "put on pyjamas",
-        "lampu": "turn off the light",
-        "bobo": "sleep"
-      }
-    },
-    "knobs": {
-      "steps": {
-        "min": 3,
-        "max": 4,
-        "default": 3,
-        "step": 1,
-        "keterangan": "jumlah langkah yang ditampilkan; mulai 3, naik ke 4"
-      }
-    },
-    "assets": [],
-    "generatif": true,
-    "rounds": 4,
-    "world": "rumah-agam",
-    "mode": "susun",
-    "sequences": [
-      {
-        "id": "makan",
-        "titleKey": "makan",
-        "steps": [
-          {
-            "id": "cuci",
-            "labelKey": "cuci",
-            "emoji": "🧼"
-          },
-          {
-            "id": "ambil",
-            "labelKey": "ambil",
-            "emoji": "🍽️"
-          },
-          {
-            "id": "santap",
-            "labelKey": "santap",
-            "emoji": "🍚"
-          },
-          {
-            "id": "habis",
-            "labelKey": "habis",
-            "emoji": "✨"
-          }
-        ]
-      },
-      {
-        "id": "tidur",
-        "titleKey": "tidur",
-        "steps": [
-          {
-            "id": "sikat",
-            "labelKey": "sikat",
-            "emoji": "🪥"
-          },
-          {
-            "id": "piyama",
-            "labelKey": "piyama",
-            "emoji": "👕"
-          },
-          {
-            "id": "lampu",
-            "labelKey": "lampu",
-            "emoji": "🌙"
-          },
-          {
-            "id": "bobo",
-            "labelKey": "bobo",
-            "emoji": "😴"
           }
         ]
       }
@@ -13819,7 +13713,7 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "instruksi": "Susun gambar supaya ceritanya urut dari awal sampai akhir.",
         "hujan": "Hujan lalu pelangi",
-        "pesta": "Pesta ulang tahun Agam",
+        "pesta": "Pesta ulang tahun",
         "awan": "awan datang",
         "turun": "hujan turun",
         "reda": "hujan reda",
@@ -13833,7 +13727,7 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "instruksi": "Put the pictures in order from the beginning to the end of the story.",
         "hujan": "Rain then rainbow",
-        "pesta": "Agam's birthday party",
+        "pesta": "The robot's birthday party",
         "awan": "clouds gather",
         "turun": "rain falls",
         "reda": "rain stops",
@@ -14060,7 +13954,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
+        "instruksi": "Robot berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
         "n3": "3",
         "n4": "4",
         "n5": "5",
@@ -14075,7 +13969,7 @@ export const PAKET_RAW: unknown[] = [
         "dari7": "Lanjutkan dari 7"
       },
       "en": {
-        "instruksi": "Agam is standing on this number: lay out the next number cards, don't start from one.",
+        "instruksi": "Robot is standing on this number: lay out the next number cards, don't start from one.",
         "n3": "3",
         "n4": "4",
         "n5": "5",
@@ -14194,7 +14088,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam sudah sampai angka ini: susun kartu berikutnya sampai dua puluh.",
+        "instruksi": "Robot sudah sampai angka ini: susun kartu berikutnya sampai dua puluh.",
         "n9": "9",
         "n10": "10",
         "n11": "11",
@@ -14213,7 +14107,7 @@ export const PAKET_RAW: unknown[] = [
         "dari15": "Lanjutkan dari 15"
       },
       "en": {
-        "instruksi": "Agam has reached this number: lay out the next cards, up to twenty.",
+        "instruksi": "Robot has reached this number: lay out the next cards, up to twenty.",
         "n9": "9",
         "n10": "10",
         "n11": "11",
@@ -14492,7 +14386,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Lihat dua gambar di rumah Agam, lalu sentuh yang terjadi lebih dulu.",
+        "instruksi": "Lihat dua gambar di rumah, lalu sentuh yang terjadi lebih dulu.",
         "nasi": "Piring nasi",
         "es": "Es batu",
         "kue": "Kue ulang tahun",
@@ -14510,7 +14404,7 @@ export const PAKET_RAW: unknown[] = [
         "sTiup": "balon besar"
       },
       "en": {
-        "instruksi": "Look at the two pictures from Agam's house, then touch the one that happens first.",
+        "instruksi": "Look at the two pictures from the house, then touch the one that happens first.",
         "nasi": "Plate of rice",
         "es": "Ice cube",
         "kue": "Birthday cake",
@@ -14540,7 +14434,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 5,
-    "world": "rumah-agam",
+    "world": "rumah",
     "mode": "dulu",
     "sequences": [
       {
@@ -14636,7 +14530,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Susun pensil Agam dari yang paling pendek ke yang paling panjang.",
+        "instruksi": "Susun pensil dari yang paling pendek ke yang paling panjang.",
         "pensil": "Pensil: pendek ke panjang",
         "kereta": "Kereta: pendek ke panjang",
         "pendek": "pendek",
@@ -14645,7 +14539,7 @@ export const PAKET_RAW: unknown[] = [
         "terpanjang": "paling panjang"
       },
       "en": {
-        "instruksi": "Line up Agam's pencils from the shortest to the longest.",
+        "instruksi": "Line up the pencils from the shortest to the longest.",
         "pensil": "Pencils: short to long",
         "kereta": "Trains: short to long",
         "pendek": "short",
@@ -14666,7 +14560,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 4,
-    "world": "rumah-agam",
+    "world": "rumah",
     "mode": "susun",
     "sequences": [
       {
@@ -14825,7 +14719,7 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
-    "id": "perbaiki-urutan-pagi-agam",
+    "id": "perbaiki-urutan-pagi",
     "version": "1.0.0",
     "level": "TKA",
     "mechanic": "urutkan",
@@ -14835,9 +14729,9 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "instruksi": "Agam salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
-        "pagi": "Pagi hari Agam",
-        "mandi": "Agam mandi",
+        "instruksi": "Robot salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
+        "pagi": "Pagi hari",
+        "mandi": "Robot mandi",
         "bangun": "bangun tidur",
         "gosok": "gosok gigi",
         "sarapan": "sarapan",
@@ -14848,9 +14742,9 @@ export const PAKET_RAW: unknown[] = [
         "bilas": "bilas sampai bersih"
       },
       "en": {
-        "instruksi": "Agam put one picture in the wrong place: swap two pictures to fix the order.",
-        "pagi": "Agam's morning",
-        "mandi": "Agam's bath",
+        "instruksi": "Robot put one picture in the wrong place: swap two pictures to fix the order.",
+        "pagi": "The morning",
+        "mandi": "The robot's bath",
         "bangun": "wake up",
         "gosok": "brush teeth",
         "sarapan": "breakfast",
@@ -14873,7 +14767,7 @@ export const PAKET_RAW: unknown[] = [
     "assets": [],
     "generatif": true,
     "rounds": 4,
-    "world": "rumah-agam",
+    "world": "rumah",
     "mode": "perbaiki",
     "sequences": [
       {
@@ -14925,6 +14819,112 @@ export const PAKET_RAW: unknown[] = [
             "id": "bilas",
             "labelKey": "bilas",
             "emoji": "✨"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "siang-dan-malam",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "KODE.PAUD.URUTAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "instruksi": "Susun gambar supaya kegiatan urut dari awal sampai akhir.",
+        "makan": "Makan siang robot",
+        "tidur": "Robot tidur malam",
+        "cuci": "cuci tangan",
+        "ambil": "ambil piring",
+        "santap": "makan",
+        "habis": "piring kosong",
+        "sikat": "sikat gigi",
+        "piyama": "pakai piyama",
+        "lampu": "matikan lampu",
+        "bobo": "tidur"
+      },
+      "en": {
+        "instruksi": "Put the pictures in order so the activity goes from start to finish.",
+        "makan": "The robot's lunch",
+        "tidur": "The robot's bedtime",
+        "cuci": "wash hands",
+        "ambil": "get a plate",
+        "santap": "eat",
+        "habis": "empty plate",
+        "sikat": "brush teeth",
+        "piyama": "put on pyjamas",
+        "lampu": "turn off the light",
+        "bobo": "sleep"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah langkah yang ditampilkan; mulai 3, naik ke 4"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "rumah",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "makan",
+        "titleKey": "makan",
+        "steps": [
+          {
+            "id": "cuci",
+            "labelKey": "cuci",
+            "emoji": "🧼"
+          },
+          {
+            "id": "ambil",
+            "labelKey": "ambil",
+            "emoji": "🍽️"
+          },
+          {
+            "id": "santap",
+            "labelKey": "santap",
+            "emoji": "🍚"
+          },
+          {
+            "id": "habis",
+            "labelKey": "habis",
+            "emoji": "✨"
+          }
+        ]
+      },
+      {
+        "id": "tidur",
+        "titleKey": "tidur",
+        "steps": [
+          {
+            "id": "sikat",
+            "labelKey": "sikat",
+            "emoji": "🪥"
+          },
+          {
+            "id": "piyama",
+            "labelKey": "piyama",
+            "emoji": "👕"
+          },
+          {
+            "id": "lampu",
+            "labelKey": "lampu",
+            "emoji": "🌙"
+          },
+          {
+            "id": "bobo",
+            "labelKey": "bobo",
+            "emoji": "😴"
           }
         ]
       }
@@ -15025,200 +15025,6 @@ export const PAKET_RAW: unknown[] = [
             "labelKey": "terpanjang",
             "emoji": "🪱",
             "width": 2.2
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "agam-ke-bintang-lurus",
-    "version": "1.0.0",
-    "level": "PAUD",
-    "mechanic": "navigasi",
-    "competencyIds": [
-      "KODE.PAUD.PERINTAH.01"
-    ],
-    "instructionKey": "instruksi",
-    "locale": {
-      "id": {
-        "instruksi": "Tekan 'maju' sampai Agam sampai di bintang, lalu tekan jalan."
-      },
-      "en": {
-        "instruksi": "Press 'forward' until Agam reaches the star, then press go."
-      }
-    },
-    "knobs": {
-      "distance": {
-        "min": 1,
-        "max": 4,
-        "default": 2,
-        "step": 1,
-        "keterangan": "jarak ke bintang; memilih grid dengan optimal = distance"
-      }
-    },
-    "assets": [],
-    "generatif": false,
-    "commands": [
-      "maju"
-    ],
-    "grids": [
-      {
-        "id": "lurus-1",
-        "w": 5,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 1,
-          "y": 0
-        },
-        "walls": [],
-        "optimal": 1
-      },
-      {
-        "id": "lurus-2",
-        "w": 5,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 2,
-          "y": 0
-        },
-        "walls": [],
-        "optimal": 2
-      },
-      {
-        "id": "lurus-3",
-        "w": 5,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 3,
-          "y": 0
-        },
-        "walls": [],
-        "optimal": 3
-      },
-      {
-        "id": "lurus-4",
-        "w": 5,
-        "h": 1,
-        "start": {
-          "x": 0,
-          "y": 0,
-          "dir": "E"
-        },
-        "goal": {
-          "x": 4,
-          "y": 0
-        },
-        "walls": [],
-        "optimal": 4
-      }
-    ]
-  },
-  {
-    "id": "agam-pagi-hari",
-    "version": "1.0.0",
-    "level": "PAUD",
-    "mechanic": "urutkan",
-    "competencyIds": [
-      "KODE.PAUD.URUTAN.02"
-    ],
-    "instructionKey": "instruksi",
-    "locale": {
-      "id": {
-        "instruksi": "Susun gambar supaya pagi Agam berurutan.",
-        "pagi": "Pagi hari Agam",
-        "bangun": "bangun tidur",
-        "gosok": "gosok gigi",
-        "sarapan": "sarapan",
-        "tanam": "Menanam biji",
-        "gali": "gali tanah",
-        "taruh": "taruh biji",
-        "siram": "siram air",
-        "tumbuh": "tunas tumbuh"
-      },
-      "en": {
-        "instruksi": "Put the pictures in order so Agam's morning makes sense.",
-        "pagi": "Agam's morning",
-        "bangun": "wake up",
-        "gosok": "brush teeth",
-        "sarapan": "breakfast",
-        "tanam": "Planting a seed",
-        "gali": "dig the soil",
-        "taruh": "put the seed",
-        "siram": "water it",
-        "tumbuh": "a sprout grows"
-      }
-    },
-    "knobs": {
-      "steps": {
-        "min": 3,
-        "max": 5,
-        "default": 3,
-        "step": 1,
-        "keterangan": "jumlah langkah yang ditampilkan; urutan lebih panjang diambil dari sequence yang punya langkah cukup"
-      }
-    },
-    "assets": [],
-    "generatif": true,
-    "sequences": [
-      {
-        "id": "pagi",
-        "titleKey": "pagi",
-        "steps": [
-          {
-            "id": "bangun",
-            "labelKey": "bangun",
-            "emoji": "🛏️"
-          },
-          {
-            "id": "gosok",
-            "labelKey": "gosok",
-            "emoji": "🪥"
-          },
-          {
-            "id": "sarapan",
-            "labelKey": "sarapan",
-            "emoji": "🍳"
-          }
-        ]
-      },
-      {
-        "id": "tanam",
-        "titleKey": "tanam",
-        "steps": [
-          {
-            "id": "gali",
-            "labelKey": "gali",
-            "emoji": "⛏️"
-          },
-          {
-            "id": "taruh",
-            "labelKey": "taruh",
-            "emoji": "🌰"
-          },
-          {
-            "id": "siram",
-            "labelKey": "siram",
-            "emoji": "🚿"
-          },
-          {
-            "id": "tumbuh",
-            "labelKey": "tumbuh",
-            "emoji": "🌱"
           }
         ]
       }
@@ -15576,5 +15382,199 @@ export const PAKET_RAW: unknown[] = [
       "payExact": true,
       "maxTotal": 5000
     }
+  },
+  {
+    "id": "robot-ke-bintang-lurus",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "navigasi",
+    "competencyIds": [
+      "KODE.PAUD.PERINTAH.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "instruksi": "Tekan 'maju' sampai robot sampai di bintang, lalu tekan jalan."
+      },
+      "en": {
+        "instruksi": "Press 'forward' until robot reaches the star, then press go."
+      }
+    },
+    "knobs": {
+      "distance": {
+        "min": 1,
+        "max": 4,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jarak ke bintang; memilih grid dengan optimal = distance"
+      }
+    },
+    "assets": [],
+    "generatif": false,
+    "commands": [
+      "maju"
+    ],
+    "grids": [
+      {
+        "id": "lurus-1",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-2",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "optimal": 2
+      },
+      {
+        "id": "lurus-3",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "optimal": 3
+      },
+      {
+        "id": "lurus-4",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "optimal": 4
+      }
+    ]
+  },
+  {
+    "id": "urutan-pagi-hari",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "KODE.PAUD.URUTAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "instruksi": "Susun gambar supaya pagi hari berurutan.",
+        "pagi": "Pagi hari",
+        "bangun": "bangun tidur",
+        "gosok": "gosok gigi",
+        "sarapan": "sarapan",
+        "tanam": "Menanam biji",
+        "gali": "gali tanah",
+        "taruh": "taruh biji",
+        "siram": "siram air",
+        "tumbuh": "tunas tumbuh"
+      },
+      "en": {
+        "instruksi": "Put the pictures in order so The morning makes sense.",
+        "pagi": "The morning",
+        "bangun": "wake up",
+        "gosok": "brush teeth",
+        "sarapan": "breakfast",
+        "tanam": "Planting a seed",
+        "gali": "dig the soil",
+        "taruh": "put the seed",
+        "siram": "water it",
+        "tumbuh": "a sprout grows"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 5,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah langkah yang ditampilkan; urutan lebih panjang diambil dari sequence yang punya langkah cukup"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "sequences": [
+      {
+        "id": "pagi",
+        "titleKey": "pagi",
+        "steps": [
+          {
+            "id": "bangun",
+            "labelKey": "bangun",
+            "emoji": "🛏️"
+          },
+          {
+            "id": "gosok",
+            "labelKey": "gosok",
+            "emoji": "🪥"
+          },
+          {
+            "id": "sarapan",
+            "labelKey": "sarapan",
+            "emoji": "🍳"
+          }
+        ]
+      },
+      {
+        "id": "tanam",
+        "titleKey": "tanam",
+        "steps": [
+          {
+            "id": "gali",
+            "labelKey": "gali",
+            "emoji": "⛏️"
+          },
+          {
+            "id": "taruh",
+            "labelKey": "taruh",
+            "emoji": "🌰"
+          },
+          {
+            "id": "siram",
+            "labelKey": "siram",
+            "emoji": "🚿"
+          },
+          {
+            "id": "tumbuh",
+            "labelKey": "tumbuh",
+            "emoji": "🌱"
+          }
+        ]
+      }
+    ]
   }
 ];

@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
+      "instruksi": "Robot punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
       "koin500": "koin lima ratus",
       "koin1000": "koin seribu",
       "kertas2000": "uang dua ribu",
@@ -17,7 +17,7 @@
       "kertas10000": "uang sepuluh ribu"
     },
     "en": {
-      "instruksi": "Agam has five piggy banks: drop each coin or note into the one with the same picture.",
+      "instruksi": "Robot has five piggy banks: drop each coin or note into the one with the same picture.",
       "koin500": "500 coin",
       "koin1000": "1,000 coin",
       "kertas2000": "2,000 note",
@@ -44,7 +44,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 5,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "kelompok",
   "pilihan": [],
   "bins": [

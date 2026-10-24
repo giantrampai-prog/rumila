@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Di meja Agam ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
+      "instruksi": "Di meja robot ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
       "pilihan": "pilihan",
       "pensil": "pensil",
       "kereta": "kereta",
@@ -20,7 +20,7 @@
       "tPendek": "Mana yang lebih pendek?"
     },
     "en": {
-      "instruksi": "On Agam's desk are two of the same thing: touch the longer or the shorter one.",
+      "instruksi": "On the robot's desk are two of the same thing: touch the longer or the shorter one.",
       "pilihan": "choices",
       "pensil": "pencil",
       "kereta": "train",
@@ -43,7 +43,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 5,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "pilih",
   "bins": [
     {

@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Ada tembok di taman: susun program maju dan belok supaya Agam memutar sampai bintang."
+      "instruksi": "Ada tembok di taman: susun program maju dan belok supaya robot memutar sampai bintang."
     },
     "en": {
-      "instruksi": "There is a wall in the park: build a forward-and-turn program so Agam goes around to the star."
+      "instruksi": "There is a wall in the park: build a forward-and-turn program so robot goes around to the star."
     }
   },
   "knobs": {

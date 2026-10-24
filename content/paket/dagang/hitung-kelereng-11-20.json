@@ -9,12 +9,12 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Kelereng Agam tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+      "instruksi": "Kelereng robot tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "kelereng": "kelereng",
       "kancing": "kancing"
     },
     "en": {
-      "instruksi": "Agam's marbles spilled: touch each one as you count, then slide the marker to the number.",
+      "instruksi": "The robot's marbles spilled: touch each one as you count, then slide the marker to the number.",
       "kelereng": "marbles",
       "kancing": "buttons"
     }
@@ -38,7 +38,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 5,
-  "world": "rumah-agam",
+  "world": "rumah",
   "currency": "IDR",
   "denominations": [
     1000
