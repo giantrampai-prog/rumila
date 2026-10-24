@@ -5714,11 +5714,11 @@ export const PAKET_RAW: unknown[] = [
     },
     "knobs": {
       "harga": {
-        "min": 2,
-        "max": 5,
-        "default": 2,
-        "step": 3,
-        "keterangan": "nilai lembar yang ditukar (ribuan): dua ribu dulu, lalu lima ribu"
+        "min": 5,
+        "max": 10,
+        "default": 5,
+        "step": 5,
+        "keterangan": "total uang yang ditukar (ribuan): sampai Rp5.000 dulu, lalu sampai Rp10.000; 1–3 lembar"
       }
     },
     "assets": [],
@@ -5727,7 +5727,10 @@ export const PAKET_RAW: unknown[] = [
     "world": "pasar",
     "currency": "IDR",
     "denominations": [
-      1000
+      1000,
+      2000,
+      5000,
+      10000
     ],
     "priceLabel": "rupiah",
     "mode": "tukar",
@@ -5749,9 +5752,9 @@ export const PAKET_RAW: unknown[] = [
     ],
     "customerRule": {
       "itemsMin": 1,
-      "itemsMax": 1,
+      "itemsMax": 3,
       "payExact": true,
-      "maxTotal": 5000,
+      "maxTotal": 10000,
       "kindsMax": 1
     }
   },
@@ -6049,11 +6052,11 @@ export const PAKET_RAW: unknown[] = [
     },
     "knobs": {
       "harga": {
-        "min": 2,
-        "max": 5,
-        "default": 2,
-        "step": 3,
-        "keterangan": "nilai lembar yang ditukar (ribuan): dua ribu dulu, lalu lima ribu"
+        "min": 5,
+        "max": 10,
+        "default": 5,
+        "step": 5,
+        "keterangan": "total uang yang ditukar (ribuan): sampai Rp5.000 dulu, lalu sampai Rp10.000; 1–3 lembar"
       }
     },
     "assets": [],
@@ -6062,7 +6065,10 @@ export const PAKET_RAW: unknown[] = [
     "world": "bank-mini",
     "currency": "IDR",
     "denominations": [
-      1000
+      1000,
+      2000,
+      5000,
+      10000
     ],
     "priceLabel": "rupiah",
     "mode": "tukar",
@@ -6084,9 +6090,9 @@ export const PAKET_RAW: unknown[] = [
     ],
     "customerRule": {
       "itemsMin": 1,
-      "itemsMax": 1,
+      "itemsMax": 3,
       "payExact": true,
-      "maxTotal": 5000,
+      "maxTotal": 10000,
       "kindsMax": 1
     }
   },
@@ -6335,6 +6341,256 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 3
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-00",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-3-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "batu-tengah-3-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "batu-tengah-4-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "dua-batu-5-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-00-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-3-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "batu-tengah-3-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "batu-tengah-4-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "dua-batu-5-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-10",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 1
       }
     ]
   },
@@ -6496,6 +6752,256 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 3
+      },
+      {
+        "id": "atas-batu-awal-2-cermin-datar",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-3-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "atas-batu-tengah-3-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "atas-batu-tengah-4-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "atas-dua-batu-5-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "atas-batu-awal-2-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-3-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "atas-batu-tengah-3-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "atas-batu-tengah-4-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "atas-dua-batu-5-papan-3x7-00",
+        "w": 3,
+        "h": 7,
+        "start": {
+          "x": 0,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "atas-batu-awal-2-cermin-datar-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 1
       }
     ]
   },
@@ -6619,6 +7125,193 @@ export const PAKET_RAW: unknown[] = [
         "h": 3,
         "start": {
           "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "putar-balik-jauh-cermin-tegak",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "putar-balik-jauh-putar-kanan",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kanan-maju-2-putar-kiri",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kiri-maju-2-putar-kiri",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "naik-lalu-kanan-putar-kiri",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "putar-balik-jauh-putar-kanan-cermin-datar",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-putar-kiri-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kanan-maju-2-papan-5x3-00",
+        "w": 5,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kiri-maju-2-papan-5x3-00",
+        "w": 5,
+        "h": 3,
+        "start": {
+          "x": 3,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "putar-balik-jauh-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
           "y": 2,
           "dir": "N"
         },
@@ -6762,6 +7455,193 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 4
+      },
+      {
+        "id": "kiri-lalu-maju-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "putar-balik-ke-timur-cermin-datar",
+        "w": 3,
+        "h": 2,
+        "start": {
+          "x": 2,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "naik-jauh-lalu-kanan-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kiri-lalu-maju-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "putar-balik-ke-timur-cermin-tegak",
+        "w": 3,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kiri-lalu-maju-cermin-tegak-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "putar-balik-ke-timur-cermin-tegak-cermin-datar",
+        "w": 3,
+        "h": 2,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "putar-balik-ke-timur-putar-kanan",
+        "w": 2,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "naik-jauh-lalu-kanan-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-jauh-lalu-kanan-cermin-datar-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "putar-balik-ke-timur-cermin-tegak-putar-kanan",
+        "w": 2,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
       }
     ]
   },
@@ -6862,6 +7742,222 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "tujuh-naik-kanan",
         "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-naik-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-kanan-naik-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "tujuh-naik-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 4
+      },
+      {
+        "id": "tujuh-kanan-naik-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-naik-kanan-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-kanan-naik-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-naik-kanan-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-kanan-naik-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-naik-kanan-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-kanan-naik-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "tujuh-kanan-naik-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 4
+      },
+      {
+        "id": "tujuh-naik-kanan-papan-5x4-00",
+        "w": 5,
         "h": 4,
         "start": {
           "x": 0,
@@ -7091,6 +8187,504 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           }
         ]
+      },
+      {
+        "id": "tabrak-dinding-awal-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-setelah-belok-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-dinding-tengah-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-tepi-akhir-cermin-tegak",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-dinding-awal-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-setelah-belok-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-dinding-awal-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-setelah-belok-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-dinding-tengah-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-tepi-akhir-putar-kiri",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-dinding-tengah-cermin-tegak-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tabrak-tepi-akhir-cermin-tegak-putar-kiri",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
       }
     ]
   },
@@ -7214,6 +8808,255 @@ export const PAKET_RAW: unknown[] = [
           "x": 0,
           "y": 2,
           "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-kanan-naik-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tanpa-tembok-satu-belok-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tembok-tengah-kiri-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tembok-tengah-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tembok-tengah-kanan-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-kanan-naik-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tembok-tengah-kanan-putar-kanan-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-kanan-naik-putar-kanan-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-kanan-naik-putar-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-kanan-naik-putar-kanan-putar-balik",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tanpa-tembok-satu-belok-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tanpa-tembok-satu-belok-cermin-datar-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
         },
         "goal": {
           "x": 2,
@@ -7355,6 +9198,193 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 4
+      },
+      {
+        "id": "pojok-ke-pojok-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "satu-naik-satu-kanan-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kanan-lalu-naik-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-lalu-kanan-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "satu-naik-satu-kanan-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "naik-lalu-kanan-putar-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "satu-naik-satu-kanan-putar-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "pojok-ke-pojok-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "naik-lalu-kanan-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kanan-lalu-naik-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "satu-naik-satu-kanan-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
       }
     ]
   },
@@ -7490,6 +9520,267 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 8
+      },
+      {
+        "id": "satu-dinding-5-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "dua-dinding-6-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "satu-dinding-8-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "tanpa-dinding-8-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "tanpa-dinding-8-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "satu-dinding-5-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 2,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "tanpa-dinding-8-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "satu-dinding-5-putar-kiri-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "dua-dinding-6-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "satu-dinding-8-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "dua-dinding-6-cermin-datar-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "satu-dinding-8-cermin-datar-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
       }
     ]
   },
@@ -7621,6 +9912,267 @@ export const PAKET_RAW: unknown[] = [
           {
             "x": 2,
             "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "dinding-kiri-6-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "memutar-dinding-8-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "balik-arah-6-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "jalan-panjang-8-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "dinding-kiri-6-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "memutar-dinding-8-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "dinding-kiri-6-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "memutar-dinding-8-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "balik-arah-6-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "jalan-panjang-8-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 8
+      },
+      {
+        "id": "balik-arah-6-cermin-tegak-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "jalan-panjang-8-cermin-tegak-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 1
           }
         ],
         "rocks": [],
@@ -7819,6 +10371,1014 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 3,
         "rackSlots": 5,
         "group": "lima"
+      },
+      {
+        "id": "empat-batu-1-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v1"
+      },
+      {
+        "id": "empat-batu-2-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v1"
+      },
+      {
+        "id": "empat-batu-3-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v1"
+      },
+      {
+        "id": "lima-batu-2-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2"
+      },
+      {
+        "id": "lima-batu-3-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2"
+      },
+      {
+        "id": "lima-batu-4-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2"
+      },
+      {
+        "id": "empat-batu-1-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v3"
+      },
+      {
+        "id": "empat-batu-2-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v3"
+      },
+      {
+        "id": "empat-batu-3-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v3"
+      },
+      {
+        "id": "lima-batu-2-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4"
+      },
+      {
+        "id": "lima-batu-3-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4"
+      },
+      {
+        "id": "lima-batu-4-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4"
+      },
+      {
+        "id": "empat-batu-1-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v5"
+      },
+      {
+        "id": "empat-batu-2-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v5"
+      },
+      {
+        "id": "empat-batu-3-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v5"
+      },
+      {
+        "id": "lima-batu-2-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6"
+      },
+      {
+        "id": "lima-batu-3-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6"
+      },
+      {
+        "id": "lima-batu-4-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6"
+      },
+      {
+        "id": "empat-batu-1-papan-6x2-01",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v7"
+      },
+      {
+        "id": "empat-batu-2-papan-6x2-01",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v7"
+      },
+      {
+        "id": "empat-batu-3-papan-6x2-01",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v7"
+      },
+      {
+        "id": "lima-batu-2-papan-7x2-01",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v8"
+      },
+      {
+        "id": "lima-batu-3-papan-7x2-01",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v8"
+      },
+      {
+        "id": "lima-batu-4-papan-7x2-01",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v8"
+      },
+      {
+        "id": "empat-batu-1-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v1-v1"
+      },
+      {
+        "id": "empat-batu-2-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v1-v1"
+      },
+      {
+        "id": "empat-batu-3-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v1-v1"
+      },
+      {
+        "id": "lima-batu-2-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2-v2"
+      },
+      {
+        "id": "lima-batu-3-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2-v2"
+      },
+      {
+        "id": "lima-batu-4-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2-v2"
+      },
+      {
+        "id": "empat-batu-1-papan-7x1-10-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v3-v3"
+      },
+      {
+        "id": "empat-batu-2-papan-7x1-10-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v3-v3"
+      },
+      {
+        "id": "empat-batu-3-papan-7x1-10-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v3-v3"
+      },
+      {
+        "id": "lima-batu-2-papan-8x1-10-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4-v4"
+      },
+      {
+        "id": "lima-batu-3-papan-8x1-10-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4-v4"
+      },
+      {
+        "id": "lima-batu-4-papan-8x1-10-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4-v4"
+      },
+      {
+        "id": "empat-batu-1-papan-6x2-00-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v5-v5"
+      },
+      {
+        "id": "empat-batu-2-papan-6x2-00-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 4,
+        "group": "empat-v5-v5"
+      },
+      {
+        "id": "empat-batu-3-papan-6x2-00-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 2,
+        "rackSlots": 4,
+        "group": "empat-v5-v5"
+      },
+      {
+        "id": "lima-batu-2-papan-7x2-00-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6"
+      },
+      {
+        "id": "lima-batu-3-papan-7x2-00-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6"
+      },
+      {
+        "id": "lima-batu-4-papan-7x2-00-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6"
       }
     ]
   },
@@ -8037,6 +11597,1182 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 4,
         "rackSlots": 6,
         "group": "naik"
+      },
+      {
+        "id": "naik-enam-batu-1-3-cermin-datar",
+        "w": 2,
+        "h": 8,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v1"
+      },
+      {
+        "id": "naik-enam-batu-2-4-cermin-datar",
+        "w": 2,
+        "h": 8,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v1"
+      },
+      {
+        "id": "naik-enam-batu-2-5-cermin-datar",
+        "w": 2,
+        "h": 8,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v1"
+      },
+      {
+        "id": "naik-enam-batu-1-3-putar-kanan",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v2"
+      },
+      {
+        "id": "naik-enam-batu-2-4-putar-kanan",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v2"
+      },
+      {
+        "id": "naik-enam-batu-2-5-putar-kanan",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v2"
+      },
+      {
+        "id": "enam-batu-1-3-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "enam-v3"
+      },
+      {
+        "id": "enam-batu-2-4-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v3"
+      },
+      {
+        "id": "enam-batu-1-4-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v3"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-3x8-00",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 0,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v4"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-3x8-00",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 0,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v4"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-3x8-00",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 0,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v4"
+      },
+      {
+        "id": "enam-batu-1-3-papan-9x1-10",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "enam-v5"
+      },
+      {
+        "id": "enam-batu-2-4-papan-9x1-10",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v5"
+      },
+      {
+        "id": "enam-batu-1-4-papan-9x1-10",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v5"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-3x8-10",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v6"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-3x8-10",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v6"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-3x8-10",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v6"
+      },
+      {
+        "id": "enam-batu-1-3-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "enam-v7"
+      },
+      {
+        "id": "enam-batu-2-4-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v7"
+      },
+      {
+        "id": "enam-batu-1-4-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v7"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-2x9-00",
+        "w": 2,
+        "h": 9,
+        "start": {
+          "x": 0,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v8"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-2x9-00",
+        "w": 2,
+        "h": 9,
+        "start": {
+          "x": 0,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v8"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-2x9-00",
+        "w": 2,
+        "h": 9,
+        "start": {
+          "x": 0,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v8"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-3x8-00-cermin-datar",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 2,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v4-v1"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-3x8-00-cermin-datar",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 2,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v4-v1"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-3x8-00-cermin-datar",
+        "w": 3,
+        "h": 8,
+        "start": {
+          "x": 2,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v4-v1"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-2x9-00-cermin-datar",
+        "w": 2,
+        "h": 9,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v8-v2"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-2x9-00-cermin-datar",
+        "w": 2,
+        "h": 9,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v8-v2"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-2x9-00-cermin-datar",
+        "w": 2,
+        "h": 9,
+        "start": {
+          "x": 1,
+          "y": 7,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v8-v2"
+      },
+      {
+        "id": "naik-enam-batu-1-3-putar-kanan-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v2-v3"
+      },
+      {
+        "id": "naik-enam-batu-2-4-putar-kanan-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v2-v3"
+      },
+      {
+        "id": "naik-enam-batu-2-5-putar-kanan-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v2-v3"
+      },
+      {
+        "id": "enam-batu-1-3-papan-8x2-00-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "enam-v7-v4"
+      },
+      {
+        "id": "enam-batu-2-4-papan-8x2-00-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v7-v4"
+      },
+      {
+        "id": "enam-batu-1-4-papan-8x2-00-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "enam-v7-v4"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-3x8-00-putar-kanan",
+        "w": 8,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v4-v5"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-3x8-00-putar-kanan",
+        "w": 8,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v4-v5"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-3x8-00-putar-kanan",
+        "w": 8,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v4-v5"
+      },
+      {
+        "id": "naik-enam-batu-1-3-papan-3x8-10-putar-kanan",
+        "w": 8,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 6,
+        "group": "naik-v6-v6"
+      },
+      {
+        "id": "naik-enam-batu-2-4-papan-3x8-10-putar-kanan",
+        "w": 8,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v6-v6"
+      },
+      {
+        "id": "naik-enam-batu-2-5-papan-3x8-10-putar-kanan",
+        "w": 8,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 6,
+        "group": "naik-v6-v6"
       }
     ]
   },
@@ -8202,6 +12938,264 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 4
+      },
+      {
+        "id": "naik-batu-1-jarak-3-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "naik-batu-2-jarak-4-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-3-jarak-5-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-dua-batu-jarak-5-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-dua-batu-jarak-6-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 4
+      },
+      {
+        "id": "naik-batu-1-jarak-3-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "naik-batu-2-jarak-4-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-3-jarak-5-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-dua-batu-jarak-5-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-dua-batu-jarak-6-papan-3x7-00",
+        "w": 3,
+        "h": 7,
+        "start": {
+          "x": 0,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 4
+      },
+      {
+        "id": "naik-batu-1-jarak-3-cermin-datar-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 2
       }
     ]
   },
@@ -8367,6 +13361,264 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 4
+      },
+      {
+        "id": "batu-1-jarak-3-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "batu-2-jarak-4-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-3-jarak-5-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "dua-batu-1-3-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "dua-batu-2-4-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4
+      },
+      {
+        "id": "batu-1-jarak-3-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 2
+      },
+      {
+        "id": "batu-2-jarak-4-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-3-jarak-5-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "dua-batu-1-3-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "dua-batu-2-4-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 4
+      },
+      {
+        "id": "batu-1-jarak-3-papan-6x1-10",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 2
       }
     ]
   },
@@ -8567,6 +13819,495 @@ export const PAKET_RAW: unknown[] = [
           },
           {
             "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-7-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-8-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6b-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-7-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-8-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-7-cermin-tegak-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-8-cermin-tegak-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-8-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6b-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6-cermin-datar-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
           }
         ],
         "fixes": 2
@@ -8779,6 +14520,507 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 2
+      },
+      {
+        "id": "maju-jadi-belok-6-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "belok-jadi-maju-8-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "campur-8-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "campur-7-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "belok-jadi-maju-8-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "campur-8-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "belok-jadi-maju-8-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "campur-8-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 8,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "campur-7-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "campur-7-cermin-tegak-putar-kanan",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "maju-jadi-belok-6-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "maju-jadi-belok-6-cermin-datar-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
       }
     ]
   },
@@ -8962,6 +15204,399 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-akhir-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-awal-cermin-tegak",
+        "w": 3,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "kiri-harusnya-kanan-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "kanan-harusnya-kiri-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-akhir-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-awal-putar-kiri",
+        "w": 2,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-awal-putar-kiri-cermin-datar",
+        "w": 2,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-akhir-putar-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "kiri-harusnya-kanan-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-awal-papan-4x2-00",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-akhir-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-akhir-cermin-datar-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 1
       }
     ]
   },
@@ -9108,6 +15743,396 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "belok-kepagian",
         "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-kepagian-cermin-datar",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-belok-nyasar-cermin-tegak",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-belok-di-akhir-cermin-tegak",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-kepagian-putar-kanan",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-putar-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-kepagian-putar-kanan-cermin-tegak",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-belok-nyasar-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-belok-di-akhir-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-kepagian-papan-4x3-00",
+        "w": 4,
         "h": 3,
         "start": {
           "x": 0,
@@ -9346,6 +16371,349 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           }
         ]
+      },
+      {
+        "id": "tiga-maju-naik-cermin-datar",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tiga-maju-naik-putar-kanan",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "maju-kanan-dua-kali-putar-kiri",
+        "w": 3,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "lima-maju-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tiga-maju-naik-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tiga-maju-naik-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "maju-kanan-dua-kali-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ]
+      },
+      {
+        "id": "enam-maju-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tiga-maju-naik-cermin-datar-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "tiga-maju-naik-putar-kanan-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
       }
     ]
   },
@@ -9453,6 +16821,210 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 2
+      },
+      {
+        "id": "atas-2-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-3-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "atas-4-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "atas-2b-cermin-datar",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-2-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-3-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "atas-2-papan-3x5-00-cermin-datar",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-3-papan-3x5-00-cermin-datar",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "atas-4-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "atas-2b-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-2-cermin-datar-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-3-cermin-datar-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
       }
     ]
   },
@@ -9560,6 +17132,210 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 3
+      },
+      {
+        "id": "kanan-2-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-3-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kanan-4-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kanan-3b-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kanan-2-papan-6x1-10",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-4-papan-6x1-10",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kanan-2-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-3-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kanan-4-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "kanan-3b-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "kanan-2-papan-6x1-10-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-4-papan-6x1-10-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
       }
     ]
   },
@@ -9650,6 +17426,227 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 3
+      },
+      {
+        "id": "lurus-1-papan-5x1-00",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-2-papan-5x1-00",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "lurus-3-papan-5x1-00",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "lurus-1-papan-5x1-10",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-2-papan-5x1-10",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "lurus-3-papan-5x1-10",
+        "w": 5,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "lurus-1-papan-4x2-00",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-1-papan-4x2-00-cermin-tegak",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-1-papan-5x1-00-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-2-papan-5x1-00-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "lurus-3-papan-5x1-00-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3
+      },
+      {
+        "id": "lurus-1-papan-5x1-10-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-2-papan-5x1-10-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
       }
     ]
   },
@@ -9835,6 +17832,414 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           }
         ]
+      },
+      {
+        "id": "naik-lima-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-belok-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "kanan-belok-kiri-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-lima-putar-kanan",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "lurus-lima-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-lima-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-lima-papan-3x6-00-cermin-datar",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 2,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-lima-putar-kanan-cermin-tegak",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-lima-papan-3x6-00-putar-kanan",
+        "w": 6,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-belok-kanan-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "kanan-belok-kiri-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "naik-lima-cermin-datar-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
       }
     ]
   },
@@ -9964,6 +18369,204 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 6,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-2-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-4-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-5-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-6-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-2-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-4-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-5-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-6-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-2-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2,
         "rackSlots": 2
       }
     ]
@@ -10096,6 +18699,204 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 3,
         "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-tengah-putar-kiri",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-maju-x2-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-maju-x3-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-pojok-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-tengah-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-pojok-papan-4x3-00-putar-kiri",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-tengah-papan-5x4-00-putar-kiri",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-naik-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-tengah-putar-kiri-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-maju-x2-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-maju-x3-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 3
       }
     ]
   },
@@ -10190,6 +18991,240 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 3,
         "rackSlots": 2
+      },
+      {
+        "id": "atas-3-pendek-cermin-datar",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-pendek-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-lebar-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-pendek-papan-3x4-10",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-lebar-papan-3x5-10",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-papan-2x6-00",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-pendek-papan-3x4-00-cermin-datar",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-papan-2x6-00-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-papan-3x5-00-papan-4x5-00",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-pendek-papan-3x4-00-papan-4x4-00",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-lebar-papan-3x5-00-papan-4x5-00",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "atas-3-pendek-papan-3x4-10-papan-4x4-00",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
       }
     ]
   },
@@ -10270,6 +19305,240 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "kanan-3-lebar",
         "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-lebar-cermin-tegak",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-geser-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-lebar-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-geser-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-lebar-papan-7x2-10",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-lebar-papan-7x2-00-cermin-tegak",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-lebar-papan-7x2-10-cermin-tegak",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-papan-5x2-00-cermin-tegak",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-geser-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "kanan-3-lebar-papan-7x2-00-papan-8x2-00",
+        "w": 8,
         "h": 2,
         "start": {
           "x": 0,

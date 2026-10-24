@@ -197,13 +197,26 @@ describe("dagang", () => {
     expect(nilaiDagang(r, { uang: [1000] }).benar).toBe(false);
     expect(buatRondeDagang(mode("kembalian", uangPecahan), { harga: 12 }, 1).dibayar).toBe(20000);
   });
-  it("tukar: satu lembar → koin seribu sejumlah nilainya", () => {
+  it("tukar: 1–3 lembar (total ≤ batas) → koin seribu sejumlah nilainya", () => {
     const r = buatRondeDagang(mode("tukar", uangPecahan), {}, 5);
-    expect([2000, 5000, 10000]).toContain(r.dibayar);
+    expect(r.lembar.length).toBeGreaterThanOrEqual(1);
+    expect(r.lembar.length).toBeLessThanOrEqual(3);
+    expect(r.lembar.every(v => [2000, 5000, 10000].includes(v))).toBe(true);
+    expect(r.dibayar).toBe(r.lembar.reduce((a, b) => a + b, 0));
+    expect(r.dibayar).toBeLessThanOrEqual(5000);
     expect(r.target).toBe(r.dibayar / 1000);
     expect(r.laci.every(x => x === 1000)).toBe(true);
     expect(nilaiDagang(r, { uang: new Array(r.target).fill(1000) }).benar).toBe(true);
     expect(nilaiDagang(r, { uang: new Array(r.target + 1).fill(1000) }).benar).toBe(false);
+  });
+  it("tukar: knob harga membatasi total; satu lembar bila itemsMax 1", () => {
+    for (let seed = 0; seed < 30; seed++) {
+      expect(buatRondeDagang(mode("tukar", uangPecahan), { harga: 10 }, seed).dibayar).toBeLessThanOrEqual(10000);
+      const satu = buatRondeDagang(mode("tukar", { ...uangPecahan, customerRule: { ...p.customerRule, itemsMax: 1 } }), { harga: 10 }, seed);
+      expect(satu.lembar).toHaveLength(1);
+    }
+    const ragam = new Set(Array.from({ length: 60 }, (_, s) => buatRondeDagang(mode("tukar", uangPecahan), { harga: 10 }, s).lembar.join("+")));
+    expect(ragam.size).toBeGreaterThanOrEqual(6);
   });
   it("lengkapi: koin yang ditambah == target − ditunjukkan", () => {
     const r = buatRondeDagang(mode("lengkapi"), {}, 8);

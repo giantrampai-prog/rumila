@@ -611,16 +611,20 @@ function ModeTukar(c: Ctx) {
   const slot = Math.max(1, Math.round(ronde.dibayar / KOIN));
   const { uang, ambil, kembalikan, total } = useNampan(ronde.laci.length);
   const { hint, bantu } = useBantu(c.onHint);
-  const vBayar = visualUang(ronde.dibayar);
-  const teks = `Tolong tukar uang ${formatRibuan(ronde.dibayar)} jadi koin seribuan.`;
+  const lembar = ronde.lembar.length ? ronde.lembar : [ronde.dibayar];
+  const teks = `Tolong tukar uang ${lembar.map(formatRibuan).join(" dan ")}${lembar.length > 1 ? `, semuanya ${formatRibuan(ronde.dibayar)},` : ""} jadi koin seribuan.`;
 
   return (
     <Kunci terkunci={terkunci}>
-      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex items-center gap-2"><Benda v={vBayar} size={40} /><span style={{ ...Tebal, fontSize: 20 }}>{rupiah(ronde.dibayar)}</span><span style={{ ...Tebal, fontSize: 20, opacity: 0.5 }}>→</span><span style={{ fontSize: 28 }}>🪙</span><span style={{ ...Tebal, fontSize: 22 }}>?</span></div>} jawabanBenar={`${slot} koin`} />
+      <Pembeli wajah={wajah} teksUcap={teks} hasil={hasil} balon={<div className="flex flex-wrap items-center gap-2">{lembar.map((v, i) => <Benda key={i} v={visualUang(v)} size={36} />)}<span style={{ ...Tebal, fontSize: 20 }}>{rupiah(ronde.dibayar)}</span><span style={{ ...Tebal, fontSize: 20, opacity: 0.5 }}>→</span><span style={{ fontSize: 28 }}>🪙</span><span style={{ ...Tebal, fontSize: 22 }}>?</span></div>} jawabanBenar={`${slot} koin`} />
       <Lapak>
         <div className="rounded-[18px] p-3" style={{ background: "linear-gradient(180deg,#eef2f7,#d7dee8)", boxShadow: "inset 0 3px 0 rgba(0,0,0,.08)" }}>
           <div className="mb-2 flex items-center justify-center gap-2" style={Tebal}><Icon name="currency_exchange" size={22} /> Mesin tukar</div>
-          <div className="mx-auto mb-3 flex w-fit items-center gap-2 rounded-[14px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}><Benda v={vBayar} size={48} /><span style={{ ...Tebal, fontSize: 20 }}>{vBayar.label}</span></div>
+          <div className="mx-auto mb-3 flex w-fit flex-wrap items-center justify-center gap-2" aria-label={`Uang yang ditukar: ${lembar.map(rupiah).join(" + ")}`}>
+            {lembar.map((v, i) => (
+              <div key={i} className="flex items-center gap-2 rounded-[14px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}><Benda v={visualUang(v)} size={44} /><span style={{ ...Tebal, fontSize: 18 }}>{formatRibuan(v)}</span></div>
+            ))}
+          </div>
           <div className="flex flex-wrap justify-center gap-1.5" aria-label="Cetakan koin">
             {Array.from({ length: Math.max(slot, uang.length) }, (_, k) => (
               <button key={k} type="button" onClick={() => { if (k < uang.length) kembalikan(k); }} disabled={k >= uang.length} aria-label={k < uang.length ? `Koin ke-${k + 1}, ketuk untuk ambil` : "Cetakan kosong"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ border: k < uang.length ? "none" : "3px dashed rgba(11,37,69,.3)", background: k < uang.length ? "#fff" : k >= slot ? "#ffe9ec" : "transparent", boxShadow: k < uang.length ? "0 3px 0 rgba(11,37,69,.15)" : "none", fontSize: 30, lineHeight: 1 }}>

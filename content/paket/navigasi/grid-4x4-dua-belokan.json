@@ -130,6 +130,267 @@
       "walls": [],
       "rocks": [],
       "optimal": 8
+    },
+    {
+      "id": "satu-dinding-5-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "dua-dinding-6-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "satu-dinding-8-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "tanpa-dinding-8-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "tanpa-dinding-8-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "satu-dinding-5-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "tanpa-dinding-8-putar-kanan-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "satu-dinding-5-putar-kiri-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "dua-dinding-6-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "satu-dinding-8-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "dua-dinding-6-cermin-datar-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "satu-dinding-8-cermin-datar-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
     }
   ]
 }

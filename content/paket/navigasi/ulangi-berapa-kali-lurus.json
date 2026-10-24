@@ -125,6 +125,204 @@
       "rocks": [],
       "optimal": 6,
       "rackSlots": 2
+    },
+    {
+      "id": "lurus-2-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-3-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-4-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-5-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-6-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-2-papan-8x1-00-papan-9x1-00",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-3-papan-8x1-00-papan-9x1-00",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-4-papan-8x1-00-papan-9x1-00",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-5-papan-8x1-00-papan-9x1-00",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-6-papan-8x1-00-papan-9x1-00",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-2-papan-8x1-10",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2,
+      "rackSlots": 2
     }
   ]
 }
