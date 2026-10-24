@@ -38,8 +38,8 @@
 }
 .ular-sign::before { left: 9px; }
 .ular-sign::after { right: 9px; }
-.ular-cream-btn { background: #fff8ec; color: #2b1d4e; box-shadow: 0 4px 0 #c9b28f; }
-.ular-card { background: #fff8ec; color: #2b1d4e; box-shadow: 0 6px 0 #c9b28f; }
+.ular-cream-btn { background: #fff8ec; color: #0b2545; box-shadow: 0 4px 0 #c9b28f; }
+.ular-card { background: #fff8ec; color: #0b2545; box-shadow: 0 6px 0 #c9b28f; }
 .ular-hero { background: #fff8ec; transform: rotate(-3deg); box-shadow: 0 10px 0 #c9b28f, 0 18px 30px rgba(0, 0, 0, 0.35); }
 .ular-resume {
   font-family: var(--ff-baloo), system-ui, sans-serif;

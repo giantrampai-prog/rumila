@@ -1,6 +1,6 @@
 "use client";
 
-// Portal wali: Rapor per anak — layar penuh, gaya tenang (putih, ink #2b1d4e), bisa dicetak.
+// Portal wali: Rapor per anak — layar penuh, gaya tenang (putih, ink #0b2545), bisa dicetak.
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -21,7 +21,7 @@ const PRINT_CSS = `
 @media print {
   .no-print { display: none !important; }
   .rapor-root { background: #fff !important; padding: 0 !important; }
-  .rapor-card { box-shadow: none !important; border: 1px solid #e5e0ee; break-inside: avoid; }
+  .rapor-card { box-shadow: none !important; border: 1px solid #f0e4d2; break-inside: avoid; }
   a { text-decoration: none; color: inherit; }
 }`;
 
@@ -39,8 +39,8 @@ export function RaporView() {
   if (!me.admin) {
     return (
       <Kerangka>
-        <div className="rapor-card mx-auto mt-10 flex max-w-[420px] flex-col items-center gap-4 rounded-[24px] bg-white p-8 text-center shadow-[0_4px_0_rgba(43,29,78,.06)]">
-          <Icon name="lock" size={44} style={{ color: "#8a7a9c" }} />
+        <div className="rapor-card mx-auto mt-10 flex max-w-[420px] flex-col items-center gap-4 rounded-[24px] bg-white p-8 text-center shadow-[0_4px_0_rgba(11,37,69,.06)]">
+          <Icon name="lock" size={44} style={{ color: "#5b6b85" }} />
           <p style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>Minta Ayah/Ibu membuka Rapor</p>
           <p className="text-[14px] font-bold text-ink-3">Halaman ini khusus untuk wali.</p>
           <TombolKembali />
@@ -57,10 +57,10 @@ export function RaporView() {
           <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Rapor</h1>
           <p className="text-[13px] font-bold text-ink-3">Portal wali · RINOYA Academy</p>
         </div>
-        <Link href="/akademi/telemetri" className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#e5e0ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+        <Link href="/akademi/telemetri" className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="monitoring" size={18} /> Telemetri
         </Link>
-        <button onClick={() => window.print()} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#e5e0ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+        <button onClick={() => window.print()} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
           <Icon name="print" size={18} /> Cetak
         </button>
       </header>
@@ -79,7 +79,7 @@ export function RaporView() {
                   aria-selected={on}
                   onClick={() => router.replace(`/akademi/rapor?anak=${m.id}`)}
                   className="flex items-center gap-2 rounded-full border py-1.5 pr-4 pl-1.5 text-[14px] font-extrabold transition-transform active:scale-95"
-                  style={{ borderColor: on ? INK : "#e5e0ee", background: on ? INK : "#fff", color: on ? "#fff" : INK }}
+                  style={{ borderColor: on ? INK : "#f0e4d2", background: on ? INK : "#fff", color: on ? "#fff" : INK }}
                 >
                   <MemberAvatar m={m} size={30} theme="playful" />
                   {m.name}
@@ -96,7 +96,7 @@ export function RaporView() {
 
 function Kerangka({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rapor-root min-h-dvh" style={{ background: "#faf8fc", fontFamily: NUNITO, color: INK }}>
+    <div className="rapor-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
       <style>{PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[960px] flex-col gap-5 px-4 py-4 sm:px-6 sm:py-6" style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: "max(32px, env(safe-area-inset-bottom))" }}>
         {children}
@@ -107,11 +107,11 @@ function Kerangka({ children }: { children: React.ReactNode }) {
 
 function TombolKembali({ ikon }: { ikon?: boolean }) {
   return ikon ? (
-    <Link href="/akademi" aria-label="Kembali" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#e5e0ee] bg-white transition-transform active:scale-95" style={{ color: INK }}>
+    <Link href="/akademi" aria-label="Kembali" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
       <Icon name="arrow_back" size={22} />
     </Link>
   ) : (
-    <Link href="/akademi" className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#9a93ff,#5b4bff 60%)", boxShadow: "0 3px 0 #3a2cd1" }}>
+    <Link href="/akademi" className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
       <Icon name="arrow_back" size={20} /> Kembali
     </Link>
   );
@@ -145,7 +145,7 @@ function RaporAnak({ anak }: { anak: Member }) {
   return (
     <>
       {/* identitas */}
-      <section className="rapor-card flex flex-wrap items-center gap-4 rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(43,29,78,.06)] sm:p-5">
+      <section className="rapor-card flex flex-wrap items-center gap-4 rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)] sm:p-5">
         <MemberAvatar m={anak} size={56} theme="playful" />
         <div className="min-w-0 flex-1">
           <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1.1 }}>{anak.name}</h2>
@@ -169,7 +169,7 @@ function RaporAnak({ anak }: { anak: Member }) {
           const r = ringkasTrack(peng, KOMPETENSI, t, level);
           const [, m] = PLAY[TRACK_WARNA[t]];
           return (
-            <div key={t} className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(43,29,78,.06)]">
+            <div key={t} className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)]">
               <div className="flex items-center gap-2.5">
                 <span className="flex size-10 items-center justify-center rounded-[13px] text-white" style={{ background: m }}>
                   <Icon name={TRACK_IKON[t]} size={22} />
@@ -184,10 +184,10 @@ function RaporAnak({ anak }: { anak: Member }) {
               <div className="mt-3 grid grid-cols-3 gap-2 text-center">
                 <Angka label="Dikuasai" n={r.dikuasai} c="#12904a" bg="#e4f8ec" />
                 <Angka label="Berkembang" n={r.berkembang} c="#b07a00" bg="#fff4d1" />
-                <Angka label="Belum" n={r.belum} c="#8a7a9c" bg="#f1edf6" />
+                <Angka label="Belum" n={r.belum} c="#5b6b85" bg="#fff0da" />
               </div>
               {r.total > 0 && (
-                <div className="mt-3 flex h-2 overflow-hidden rounded-full bg-[#f1edf6]">
+                <div className="mt-3 flex h-2 overflow-hidden rounded-full bg-[#fff0da]">
                   <div style={{ width: `${(r.dikuasai / r.total) * 100}%`, background: "#1fbf62" }} />
                   <div style={{ width: `${(r.berkembang / r.total) * 100}%`, background: "#ffbe0b" }} />
                 </div>
@@ -203,12 +203,12 @@ function RaporAnak({ anak }: { anak: Member }) {
       ))}
 
       {/* bukti terakhir */}
-      <section className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(43,29,78,.06)] sm:p-5">
+      <section className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)] sm:p-5">
         <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>Bukti terakhir</h3>
         {buktiTerakhir.length === 0 ? (
           <p className="mt-2 text-[14px] font-bold text-ink-3">Belum ada percobaan tercatat.</p>
         ) : (
-          <ul className="mt-2 divide-y divide-[#f1edf6]">
+          <ul className="mt-2 divide-y divide-[#fff0da]">
             {buktiTerakhir.map((e) => {
               const p = paketById(e.activityId);
               const benar = (e.payload as { correct?: unknown }).correct === true;
@@ -257,11 +257,11 @@ function DaftarTrack({ track, level, peng, bahasa }: { track: TrackId; level: Le
         <p className="rapor-card rounded-[20px] bg-white p-4 text-[14px] font-bold text-ink-3">Kurikulum jenjang ini belum tersedia.</p>
       ) : (
         unit.map((u) => (
-          <div key={u.id} className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(43,29,78,.06)] sm:p-5">
+          <div key={u.id} className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)] sm:p-5">
             <h4 className="text-[15px] font-black" style={{ color: INK }}>
               {u.nama}
             </h4>
-            <ul className="mt-2 divide-y divide-[#f1edf6]">
+            <ul className="mt-2 divide-y divide-[#fff0da]">
               {u.kompetensi.map((c) => (
                 <BarisKompetensi key={c.id} c={c} p={peng[c.id]} bahasa={bahasa} />
               ))}
@@ -281,7 +281,7 @@ function BarisKompetensi({ c, p, bahasa }: { c: Competency; p?: Penguasaan; baha
       <div className="min-w-0 flex-1">
         <p className="text-[14px] leading-snug font-extrabold" style={{ color: INK }}>
           {c.statement[bahasa] ?? c.statement.id}
-          {c.core && <span className="ml-1.5 rounded-full bg-[#f1edf6] px-1.5 py-0.5 align-middle text-[10px] font-black text-ink-3">INTI</span>}
+          {c.core && <span className="ml-1.5 rounded-full bg-[#fff0da] px-1.5 py-0.5 align-middle text-[10px] font-black text-ink-3">INTI</span>}
         </p>
         {refs && <p className="mt-0.5 text-[12px] font-bold text-ink-3">{refs}</p>}
         <p className="mt-0.5 text-[12px] font-bold text-ink-3">

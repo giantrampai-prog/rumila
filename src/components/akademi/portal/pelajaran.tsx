@@ -100,7 +100,7 @@ function KartuTrack({ id, level, peng, dikuasai, total, bahasa }: { id: TrackId;
       {pratinjau.length > 0 && (
         <ol className="flex flex-col px-3 py-1.5">
           {pratinjau.map((u, i) => (
-            <li key={u.id} className={`flex min-h-[52px] items-center gap-2.5 ${i < pratinjau.length - 1 ? "border-b border-[#f1edf6]" : ""}`}>
+            <li key={u.id} className={`flex min-h-[52px] items-center gap-2.5 ${i < pratinjau.length - 1 ? "border-b border-[#fff0da]" : ""}`}>
               <span className="flex size-8 shrink-0 items-center justify-center rounded-full text-white" style={{ background: m, fontFamily: BALOO, fontSize: 15, fontWeight: 800 }}>
                 {i + 1}
               </span>

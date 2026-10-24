@@ -16,7 +16,7 @@ type ItemPilah = PaketPilah["items"][number];
 type BinPilah = PaketPilah["bins"][number];
 
 const SOROT = "#ffd23f";
-const UNGU = "#5b4bff";
+const UNGU = "#0786eb";
 
 /** Visual dari field paket; label dipakai Benda hanya bila tidak ada emoji/bentuk (mis. kartu angka). */
 function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; shape?: VisualSpec["shape"]; width?: number; labelKey: string }, t: (k: string) => string): VisualSpec {
@@ -31,7 +31,7 @@ function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: bo
       onClick={onClick}
       disabled={disabled}
       aria-label="Bantu"
-      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#2b1d4e] shadow-[0_4px_0_rgba(43,29,78,.12)] active:translate-y-0.5 disabled:opacity-40"
+      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
       style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
     >
       <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
@@ -176,7 +176,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
       {/* item yang belum dipilah */}
-      <div className="relative rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(43,29,78,.08)]" style={{ minHeight: 120 }}>
+      <div className="relative rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]" style={{ minHeight: 120 }}>
         <div className="absolute top-2 right-2 z-10">
           <TombolBantu onClick={bantu} disabled={kunci} />
         </div>
@@ -197,7 +197,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
                   style={{
                     transform: dipilih ? "scale(1.12)" : undefined,
                     opacity: sedangDiseret ? 0.25 : 1,
-                    boxShadow: disorot ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 4px ${SOROT}` : undefined,
+                    boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                     zIndex: dipilih ? 2 : undefined,
                   }}
                 />
@@ -232,7 +232,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
               onClick={() => ketukBin(b.id)}
               onKeyDown={(e) => e.key === "Enter" && ketukBin(b.id)}
               className={`flex min-h-[112px] flex-col rounded-[22px] bg-white p-2 transition-transform ${hover ? "scale-[1.04]" : ""} ${disorot ? "akademi-bounce" : ""}`}
-              style={{ boxShadow: `0 5px 0 rgba(43,29,78,.12), 0 0 0 4px ${ring}`, background: hijau ? "#e6f8ef" : undefined }}
+              style={{ boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 4px ${ring}`, background: hijau ? "#e6f8ef" : undefined }}
             >
               <div className="flex items-center justify-center gap-2 px-1">
                 <Benda v={visual(b, t)} size={40} />
@@ -263,7 +263,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
       {/* bayangan item yang sedang diseret */}
       {itemSeret && seret && (
         <div className="pointer-events-none fixed z-50" style={{ left: seret.x, top: seret.y, transform: "translate(-50%,-60%) scale(1.15)" }}>
-          <span className="flex items-center justify-center rounded-[18px] bg-white p-2" style={{ boxShadow: `0 8px 0 rgba(43,29,78,.18), 0 0 0 3px ${UNGU}` }}>
+          <span className="flex items-center justify-center rounded-[18px] bg-white p-2" style={{ boxShadow: `0 8px 0 rgba(11,37,69,.18), 0 0 0 3px ${UNGU}` }}>
             <Benda v={visual(itemSeret, t)} size={64} />
           </span>
         </div>
@@ -305,7 +305,7 @@ function Pilih({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ro
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
       <div className="flex items-start gap-2">
-        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(43,29,78,.1)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1.15 }}>
+        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1.15 }}>
           {t(promptKey)}
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />

@@ -17,7 +17,7 @@ type Props = PresenterProps<RondePola, JawabanPola, PaketPola>;
 type ItemPola = PaketPola["items"][number];
 
 const SOROT = "#ffd23f";
-const UNGU = "#5b4bff";
+const UNGU = "#0786eb";
 const EMAS = "#f5b942";
 
 /* ---------------- nada (WebAudio sederhana) ---------------- */
@@ -91,7 +91,7 @@ function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: bo
       onClick={onClick}
       disabled={disabled}
       aria-label="Bantu"
-      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#2b1d4e] shadow-[0_4px_0_rgba(43,29,78,.12)] active:translate-y-0.5 disabled:opacity-40"
+      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
       style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
     >
       <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
@@ -110,7 +110,7 @@ function TombolBesar({ children, onClick, disabled, warna = UNGU, className = ""
       onClick={onClick}
       disabled={disabled}
       className={`flex h-14 min-w-[56px] items-center justify-center gap-2 rounded-full px-6 text-white transition-transform active:translate-y-0.5 disabled:opacity-40 ${className}`}
-      style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 900, background: warna, boxShadow: "0 5px 0 rgba(43,29,78,.18)" }}
+      style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 900, background: warna, boxShadow: "0 5px 0 rgba(11,37,69,.18)" }}
     >
       {children}
     </button>
@@ -297,7 +297,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     <div className="flex flex-col gap-3" style={{ color: INK }}>
       {/* judul + bantu */}
       <div className="flex items-start gap-2">
-        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(43,29,78,.1)]" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.15 }}>
+        <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.15 }}>
           {judul}
         </div>
         <TombolBantu onClick={bantu} disabled={kunci} />
@@ -308,11 +308,11 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
         className={`relative rounded-[26px] px-3 py-4 ${hiasan ? "akademi-pop" : ""}`}
         style={{
           background: hiasan ? "linear-gradient(180deg,#fff6d6,#ffe7a3)" : "rgba(255,255,255,.7)",
-          boxShadow: hiasan ? `0 6px 0 rgba(43,29,78,.12), 0 0 0 4px ${EMAS}` : "0 4px 0 rgba(43,29,78,.08)",
+          boxShadow: hiasan ? `0 6px 0 rgba(11,37,69,.12), 0 0 0 4px ${EMAS}` : "0 4px 0 rgba(11,37,69,.08)",
         }}
       >
         {/* tali kalung di belakang kotak */}
-        <div aria-hidden className="pointer-events-none absolute inset-x-6 top-1/2 h-1 -translate-y-1/2 rounded-full" style={{ background: hiasan ? EMAS : "rgba(43,29,78,.12)" }} />
+        <div aria-hidden className="pointer-events-none absolute inset-x-6 top-1/2 h-1 -translate-y-1/2 rounded-full" style={{ background: hiasan ? EMAS : "rgba(11,37,69,.12)" }} />
         <div className="relative flex flex-wrap items-center justify-center gap-2">
           {urutan.map((id, i) => {
             const item = id !== null ? palette.find((p) => p.id === id) : undefined;
@@ -336,8 +336,8 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                   height: slotPx,
                   borderRadius: 18,
                   background: kosong ? "rgba(255,255,255,.55)" : benar === true ? "#e6f8ef" : benar === false ? "#ffe9ec" : "#fff",
-                  border: kosong ? `3px dashed ${dipilih ? UNGU : disorot ? SOROT : "rgba(43,29,78,.3)"}` : "3px solid transparent",
-                  boxShadow: kosong ? (ring !== "transparent" && !dipilih && !disorot ? `0 0 0 3px ${ring}` : undefined) : `0 4px 0 rgba(43,29,78,.12), 0 0 0 3px ${ring}`,
+                  border: kosong ? `3px dashed ${dipilih ? UNGU : disorot ? SOROT : "rgba(11,37,69,.3)"}` : "3px solid transparent",
+                  boxShadow: kosong ? (ring !== "transparent" && !dipilih && !disorot ? `0 0 0 3px ${ring}` : undefined) : `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`,
                   transform: berbunyi ? "scale(1.14)" : dipilih ? "scale(1.08)" : undefined,
                   opacity: asli ? 0.92 : 1,
                   cursor: bisaKetuk ? "pointer" : "default",
@@ -348,7 +348,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 {item ? (
                   <Benda v={visual(item, t)} size={slotPx * 0.68} />
                 ) : (
-                  <span style={{ fontFamily: BALOO, fontSize: slotPx * 0.5, fontWeight: 900, color: dipilih ? UNGU : "rgba(43,29,78,.4)", lineHeight: 1 }}>?</span>
+                  <span style={{ fontFamily: BALOO, fontSize: slotPx * 0.5, fontWeight: 900, color: dipilih ? UNGU : "rgba(11,37,69,.4)", lineHeight: 1 }}>?</span>
                 )}
               </button>
             );
@@ -362,7 +362,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
       </div>
 
       {/* palette */}
-      <div className="rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(43,29,78,.08)]">
+      <div className="rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]">
         {mode === "cipta" && !fasePilih && !kunci && (
           <div className="mb-2 text-center" style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, opacity: 0.7 }}>
             Ketuk benda terpilih untuk mengisi · ketuk kotak untuk mengosongkan
@@ -384,9 +384,9 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                 className={`min-h-[72px] min-w-[72px] ${disorot ? "akademi-bounce" : ""}`}
                 style={{
                   boxShadow: disorot
-                    ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 4px ${SOROT}`
+                    ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}`
                     : terpilihCipta && !fasePilih
-                      ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 3px ${UNGU}`
+                      ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${UNGU}`
                       : undefined,
                   pointerEvents: kunci ? "none" : undefined,
                 }}
@@ -405,7 +405,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
                   type="button"
                   onClick={() => lepasBendaCipta(id)}
                   aria-label="Lepas benda"
-                  className="flex h-10 items-center gap-1 rounded-full bg-white px-2 shadow-[0_3px_0_rgba(43,29,78,.1)] active:translate-y-0.5"
+                  className="flex h-10 items-center gap-1 rounded-full bg-white px-2 shadow-[0_3px_0_rgba(11,37,69,.1)] active:translate-y-0.5"
                   style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800 }}
                 >
                   <Benda v={visual(item, t)} size={24} /> ✕
@@ -446,7 +446,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
             onClick={() => putar(urutan)}
             disabled={sedangMain}
             aria-label="Dengar pola"
-            className="flex h-14 items-center gap-2 rounded-full bg-white px-5 shadow-[0_4px_0_rgba(43,29,78,.12)] active:translate-y-0.5 disabled:opacity-40"
+            className="flex h-14 items-center gap-2 rounded-full bg-white px-5 shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
             style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}
           >
             Dengar ♪

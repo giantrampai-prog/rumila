@@ -75,12 +75,12 @@ function ItemCard({ id }: { id: string }) {
   }, [id, has]);
   return (
     <div className="pointer-events-auto mx-auto flex w-full max-w-[620px] items-center gap-3 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(0,0,0,.25)] sm:p-4">
-      <span className="flex size-12 shrink-0 items-center justify-center rounded-full text-white" style={{ background: item.kind === "layer" ? item.color : "#5b4bff" }}>
+      <span className="flex size-12 shrink-0 items-center justify-center rounded-full text-white" style={{ background: item.kind === "layer" ? item.color : "#0567c2" }}>
         <Icon name={item.kind === "layer" ? "layers" : ICON[id]} size={28} />
       </span>
       <div className="min-w-0 flex-1">
-        <div style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: "#2b1d4e", lineHeight: 1 }}>{item.name}</div>
-        <p className="mt-1 text-[15px] leading-snug font-extrabold text-[#6b5d80] sm:text-[17px]">{item.desc}</p>
+        <div style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: "#0b2545", lineHeight: 1 }}>{item.name}</div>
+        <p className="mt-1 text-[15px] leading-snug font-extrabold text-[#4a5a75] sm:text-[17px]">{item.desc}</p>
       </div>
       {has && (
         <button
@@ -164,11 +164,11 @@ function FlightOverlay({ engine }: { engine: RocketEngine }) {
         </div>
       )}
       <div className="absolute inset-x-0 bottom-0 mx-auto flex max-w-[700px] flex-col gap-2 px-3 sm:px-5" style={{ paddingBottom: "max(12px, env(safe-area-inset-bottom))" }}>
-        <div key={cue.key} role="status" aria-live="polite" aria-atomic="true" data-mission-cue={cue.key} className="anim-fade flex items-start gap-3 rounded-[24px] border-2 border-white bg-white/95 p-3 shadow-[0_5px_0_rgba(43,29,78,.25)] backdrop-blur-md motion-reduce:animate-none sm:p-4">
+        <div key={cue.key} role="status" aria-live="polite" aria-atomic="true" data-mission-cue={cue.key} className="anim-fade flex items-start gap-3 rounded-[24px] border-2 border-white bg-white/95 p-3 shadow-[0_5px_0_rgba(11,37,69,.25)] backdrop-blur-md motion-reduce:animate-none sm:p-4">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#eee7ff] text-[#6c45e8] sm:size-12"><Icon name={cue.icon} size={27} /></span>
           <div className="min-w-0">
             <p className="text-[9px] font-extrabold tracking-[.14em] text-[#7b62b5] sm:text-[10px]">{finished ? "MISI SELESAI" : "YANG SEDANG KITA JELAJAHI"}</p>
-            <h2 className="mt-0.5 text-xl leading-tight font-extrabold text-[#2b1d4e] sm:text-2xl" style={{ fontFamily: BALOO }}>{cue.title}</h2>
+            <h2 className="mt-0.5 text-xl leading-tight font-extrabold text-[#0b2545] sm:text-2xl" style={{ fontFamily: BALOO }}>{cue.title}</h2>
             <p className="mt-1 text-[13px] leading-snug font-bold text-[#675a7e] sm:text-[15px]">{cue.info}</p>
           </div>
         </div>

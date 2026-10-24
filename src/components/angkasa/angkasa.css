@@ -37,10 +37,10 @@
   background: #8b45f5;
 }
 .ak-label[data-kind="part"]::before {
-  background: #ff7a1a;
+  background: #fd861d;
 }
 .ak-label[data-kind="marker"]::before {
-  background: #ff7a1a;
+  background: #fd861d;
   box-shadow: 0 0 0 2px rgba(255, 122, 26, 0.35);
 }
 .ak-label[data-kind="note"] {
@@ -84,16 +84,16 @@
 
 /* ================= Design system Rumila · Playful (sama dengan Jelajah Tubuh) ================= */
 .ak-app {
-  --page: #fff6e8;
+  --page: #fff8ee;
   --surface: #fff;
   --line: #e7ddf7;
   --line-soft: #f0e9f8;
-  --fill: #f5f0fa;
-  --coral: #ff7a1a;
+  --fill: #fff0da;
+  --coral: #fd861d;
   --coral-deep: #d56618;
   --coral-tint: #fff0d5;
   --teal: #8b45f5;
-  --ak-purple: #5b4bff;
+  --ak-purple: #0786eb;
   font-family: var(--ff-nunito), system-ui, sans-serif;
   background: var(--page);
 }
@@ -159,7 +159,7 @@
   cursor: not-allowed;
 }
 .ak-btn.primary {
-  background: linear-gradient(155deg, #ffae43, #ff7a1a);
+  background: linear-gradient(155deg, #ffae43, #fd861d);
   border-color: #f48825;
   color: #442006;
   box-shadow: 0 4px 0 #d56618;
@@ -224,7 +224,7 @@
 }
 .ak-tool.is-go {
   color: #442006;
-  background: linear-gradient(155deg, #ffae43, #ff7a1a);
+  background: linear-gradient(155deg, #ffae43, #fd861d);
   box-shadow: 0 3px 0 #d56618;
 }
 .ak-tool:disabled {
@@ -300,7 +300,7 @@
   font-weight: 800;
   line-height: 1.02;
   font-size: clamp(30px, 4.2vw, 56px);
-  color: #2b1d4e;
+  color: #0b2545;
 }
 .ak-tour-text {
   font-weight: 700;

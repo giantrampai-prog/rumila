@@ -46,7 +46,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
           {v.emoji}
         </span>
       );
-    if (v.shape) return <Bentuk key={k} shape={v.shape} color={v.color ?? "#5b4bff"} size={n > 1 ? Math.max(14, s / Math.ceil(Math.sqrt(n))) : s} width={v.width} />;
+    if (v.shape) return <Bentuk key={k} shape={v.shape} color={v.color ?? "#0786eb"} size={n > 1 ? Math.max(14, s / Math.ceil(Math.sqrt(n))) : s} width={v.width} />;
     return (
       <span key={k} style={{ fontFamily: BALOO, fontSize: s * 0.6, fontWeight: 900, color: v.color ?? INK, lineHeight: 1 }}>
         {v.label ?? "?"}
@@ -74,7 +74,7 @@ export function KartuBenda({
   v: VisualSpec; size?: number; label?: string; selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
   onClick?: () => void; style?: CSSProperties; draggable?: boolean; onDragStart?: React.DragEventHandler; onPointerDown?: React.PointerEventHandler; className?: string;
 }) {
-  const ring = right ? "#22b573" : wrong ? "#ff5a6e" : selected ? "#5b4bff" : "transparent";
+  const ring = right ? "#22b573" : wrong ? "#ff5a6e" : selected ? "#0786eb" : "transparent";
   return (
     <button
       type="button"
@@ -83,7 +83,7 @@ export function KartuBenda({
       onDragStart={onDragStart}
       onPointerDown={onPointerDown}
       className={`flex flex-col items-center justify-center gap-1 rounded-[18px] bg-white p-2 transition-transform active:scale-95 ${dim ? "opacity-40" : ""} ${className}`}
-      style={{ boxShadow: `0 4px 0 rgba(43,29,78,.12), 0 0 0 3px ${ring}`, touchAction: "none", ...style }}
+      style={{ boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`, touchAction: "none", ...style }}
     >
       <Benda v={v} size={size} />
       {label && (

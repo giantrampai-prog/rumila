@@ -14,7 +14,7 @@ import { cellXY, makeBoard, playTurn, rollDie, shuffle, type Board, type Player 
 import './ular.css';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 const TOOL = 'game-ular';
 
 const AVATARS = ['🦁', '🐯', '🐼', '🐸', '🐰', '🐵', '🐶', '🐱', '🦊', '🐨', '🐷', '🐧'];

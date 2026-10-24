@@ -50,10 +50,10 @@ export function TrackView({ track }: { track: string }) {
 
   if (!isTrackId(track) || !TRACK_SLICE.includes(track)) {
     return (
-      <div className="mx-auto flex w-full max-w-[720px] flex-col items-center gap-3 rounded-[22px] bg-white p-6 text-center shadow-[0_4px_0_rgba(43,29,78,.08)]">
-        <Icon name="hourglass_top" size={40} style={{ color: "#8a7a9c" }} />
+      <div className="mx-auto flex w-full max-w-[720px] flex-col items-center gap-3 rounded-[22px] bg-white p-6 text-center shadow-[0_4px_0_rgba(11,37,69,.08)]">
+        <Icon name="hourglass_top" size={40} style={{ color: "#5b6b85" }} />
         <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Pelajaran ini segera hadir</p>
-        <Link href="/akademi" className="rounded-full px-5 py-2.5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#9a93ff,#5b4bff 60%)", boxShadow: "0 3px 0 #3a2cd1" }}>
+        <Link href="/akademi" className="rounded-full px-5 py-2.5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
           Kembali
         </Link>
       </div>
@@ -120,7 +120,7 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: {
 
   return (
     <details className="group">
-      <summary className="flex min-h-[64px] cursor-pointer list-none items-center gap-3 rounded-[22px] bg-white px-3.5 py-3 shadow-[0_4px_0_rgba(43,29,78,.08)] transition-transform active:scale-[.99] [&::-webkit-details-marker]:hidden">
+      <summary className="flex min-h-[64px] cursor-pointer list-none items-center gap-3 rounded-[22px] bg-white px-3.5 py-3 shadow-[0_4px_0_rgba(11,37,69,.08)] transition-transform active:scale-[.99] [&::-webkit-details-marker]:hidden">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#c78bff,#8b45f5 65%)", boxShadow: "0 2px 0 #6421c9" }}>
           <Icon name="bolt" size={24} />
         </span>
@@ -139,9 +139,9 @@ function Jenjang({ lv, track, jenjangAnak, tantangan, peng, selesai, bahasa }: {
 
 function KartuUnit({ u, nomor, peng, selesai, warna, bahasa }: { u: UnitGrup; nomor: number; peng: Record<string, Penguasaan>; selesai: Set<string>; warna: string; bahasa: BahasaAnak }) {
   return (
-    <li className="flex flex-col gap-3 rounded-[24px] bg-white p-3.5 shadow-[0_4px_0_rgba(43,29,78,.08)] sm:p-4">
+    <li className="flex flex-col gap-3 rounded-[24px] bg-white p-3.5 shadow-[0_4px_0_rgba(11,37,69,.08)] sm:p-4">
       <div className="flex items-center gap-3">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full text-white" style={{ background: warna, fontFamily: BALOO, fontSize: 22, fontWeight: 800, boxShadow: "0 3px 0 rgba(43,29,78,.15)" }}>
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-full text-white" style={{ background: warna, fontFamily: BALOO, fontSize: 22, fontWeight: 800, boxShadow: "0 3px 0 rgba(11,37,69,.15)" }}>
           {nomor}
         </span>
         <h3 className="min-w-0 flex-1 leading-tight" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>
@@ -164,7 +164,7 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency
   const quest = questUntuk(c.id);
   const prasyaratBelum = c.prereq.some((id) => (peng[id]?.status ?? "belum") === "belum");
   return (
-    <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#f1edf6] pb-3"}`}>
+    <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#fff0da] pb-3"}`}>
       <div className="flex items-start gap-2.5">
         <IkonStatus status={status} />
         <p className="min-w-0 flex-1 pt-[3px] text-[15px] leading-snug font-bold" style={{ color: INK }}>
@@ -184,7 +184,7 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency
             <Link
               key={q.toolId + q.competencyId}
               href={q.href}
-              className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white px-3 py-2 shadow-[0_4px_0_rgba(43,29,78,.08)] transition-transform active:scale-[.98]"
+              className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white px-3 py-2 shadow-[0_4px_0_rgba(11,37,69,.08)] transition-transform active:scale-[.98]"
             >
               <span className="flex size-11 shrink-0 items-center justify-center rounded-full" style={{ background: "#e4e7f0", color: "#3a4670" }}>
                 <Icon name="explore" size={24} />
@@ -193,7 +193,7 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency
                 <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, color: INK }}>{q.judul[bahasa] ?? q.judul.id}</span>
                 <span className="block text-[12px] font-extrabold text-ink-3">Quest · Dunia 3D</span>
               </span>
-              <Icon name="play_arrow" size={26} className="text-[#ff7a1a]" />
+              <Icon name="play_arrow" size={26} className="text-[#fd861d]" />
             </Link>
           ))}
         </div>
@@ -215,7 +215,7 @@ export function CincinProgres({ u, peng, warna, size = 52 }: { u: UnitGrup; peng
   const putar = (jumlah: number) => `rotate(${-90 + (jumlah / n) * 360} ${c} ${c})`;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden className="shrink-0">
-      <circle cx={c} cy={c} r={r} fill="none" stroke="#efeaf5" strokeWidth={tebal} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke="#fff0da" strokeWidth={tebal} />
       {ber > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke="#ffbe0b" strokeWidth={tebal} strokeDasharray={segmen(ber)} transform={putar(dik)} strokeLinecap="round" />}
       {dik > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke="#1fbf62" strokeWidth={tebal} strokeDasharray={segmen(dik)} transform={putar(0)} strokeLinecap="round" />}
       <text x={c} y={c} textAnchor="middle" dominantBaseline="central" fontSize={size * 0.32} fill={warna} fontFamily="Material Symbols Rounded">

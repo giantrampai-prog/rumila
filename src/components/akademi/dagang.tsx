@@ -91,7 +91,7 @@ function Pembeli({
   const muka = hasil ? (hasil.benar ? "😄" : "🤔") : wajah;
   return (
     <div className={`flex items-end gap-2 ${kanan ? "flex-row-reverse" : ""}`}>
-      <div className={`shrink-0 ${hasil?.benar ? "akademi-bounce" : ""}`} style={{ fontSize: kecil ? 48 : 64, lineHeight: 1, filter: "drop-shadow(0 4px 0 rgba(43,29,78,.15))" }} aria-hidden>
+      <div className={`shrink-0 ${hasil?.benar ? "akademi-bounce" : ""}`} style={{ fontSize: kecil ? 48 : 64, lineHeight: 1, filter: "drop-shadow(0 4px 0 rgba(11,37,69,.15))" }} aria-hidden>
         {muka}
       </div>
       <button
@@ -99,10 +99,10 @@ function Pembeli({
         onClick={() => { sfx.tap(); ucapPesanan(teksUcap, bahasa); }}
         aria-label={`Dengar pesanan: ${teksUcap}`}
         className="relative min-h-14 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
-        style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)", color: INK }}
+        style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", color: INK }}
       >
         <span aria-hidden className="absolute bottom-4" style={kanan ? { right: -9, borderTop: "9px solid transparent", borderBottom: "9px solid transparent", borderLeft: "9px solid #fff" } : { left: -9, borderTop: "9px solid transparent", borderBottom: "9px solid transparent", borderRight: "9px solid #fff" }} />
-        <span className="absolute top-1.5 right-2 text-[#5b4bff]"><Icon name="volume_up" size={18} /></span>
+        <span className="absolute top-1.5 right-2 text-[#0567c2]"><Icon name="volume_up" size={18} /></span>
         <div className="pr-6">{balon}</div>
         {hasil && jawabanBenar && (
           <div className="akademi-pop mt-1 flex items-center gap-1.5 rounded-[12px] px-2 py-1" style={{ background: hasil.benar ? "#e4f8ee" : "#ffe9ec", fontFamily: BALOO, fontWeight: 800, fontSize: 14, color: hasil.benar ? BENAR : SALAH }}>
@@ -148,7 +148,7 @@ function TombolBantu({ onClick, disabled, label = "Bantu" }: { onClick: () => vo
       disabled={disabled}
       aria-label={label}
       className="flex min-h-14 min-w-14 items-center justify-center gap-1 rounded-[20px] bg-white px-3 text-[#b8860b] active:scale-95 disabled:opacity-50"
-      style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}
+      style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}
     >
       <Icon name="lightbulb" size={26} />
       <span className="hidden sm:inline">{label}</span>
@@ -170,7 +170,7 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
             disabled={disabled}
             onClick={() => onPilih(n)}
             className={`flex size-16 items-center justify-center rounded-full transition-transform active:scale-90 disabled:opacity-60 ${sorot === n ? "akademi-bounce" : ""}`}
-            style={{ ...Tebal, fontSize: 28, background: aktif ? "#5b4bff" : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#3b2fc0" : "rgba(43,29,78,.15)"}${sorot === n ? ", 0 0 0 4px #ffd23f" : ""}` }}
+            style={{ ...Tebal, fontSize: 28, background: aktif ? "#0786eb" : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#3b2fc0" : "rgba(11,37,69,.15)"}${sorot === n ? ", 0 0 0 4px #ffd23f" : ""}` }}
             aria-label={`Angka ${n}`}
           >
             {n}
@@ -261,7 +261,7 @@ function Nampan({ uang, onAmbil, judul = "Nampan", sorot, kosong = "Ketuk uang d
 function Harga({ harga, priceLabel, barang }: { harga: number; priceLabel: RondeDagang["priceLabel"]; barang: VisualSpec[] }) {
   const koin = Math.max(0, Math.round(harga / KOIN));
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-[18px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)" }}>
+    <div className="flex flex-wrap items-center gap-2 rounded-[18px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}>
       {barang.slice(0, 3).map((v, k) => <Benda key={k} v={v} size={44} />)}
       <span aria-hidden style={{ ...Tebal, fontSize: 22 }}>=</span>
       {priceLabel === "koin" ? (
@@ -270,7 +270,7 @@ function Harga({ harga, priceLabel, barang }: { harga: number; priceLabel: Ronde
           <span className="ml-1 rounded-full px-2" style={{ ...Tebal, fontSize: 16, background: "#fff1c2" }}>{koin}</span>
         </span>
       ) : (
-        <span style={{ ...Tebal, fontSize: 32, color: "#5b4bff" }}>{rupiah(harga)}</span>
+        <span style={{ ...Tebal, fontSize: 32, color: "#0567c2" }}>{rupiah(harga)}</span>
       )}
     </div>
   );
@@ -438,7 +438,7 @@ function ModeSubitasi(c: Ctx) {
       </Lapak>
       <Keranjang isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))} onKembali={() => { sfx.plop(); setJumlah((n) => Math.max(0, n - 1)); }} />
       <div className="flex gap-2">
-        <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#5b4bff] active:scale-95 disabled:opacity-50" style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}>
+        <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:opacity-50" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}>
           <Icon name="visibility" size={24} /> Lihat lagi
         </button>
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [id]: jumlah }, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || jumlah === 0}>
@@ -497,10 +497,10 @@ function ModeHitung(c: Ctx) {
                 onClick={() => sentuh(i)}
                 aria-label={no ? `${nama(gid)} ke-${no}` : nama(gid)}
                 className={`absolute flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all active:scale-90 ${hint && !no ? "akademi-bounce" : ""}`}
-                style={{ ...pos[i], background: no ? "rgba(255,255,255,.35)" : "rgba(255,255,255,.85)", boxShadow: no ? "none" : "0 4px 0 rgba(43,29,78,.15)", opacity: no ? 0.55 : 1 }}
+                style={{ ...pos[i], background: no ? "rgba(255,255,255,.35)" : "rgba(255,255,255,.85)", boxShadow: no ? "none" : "0 4px 0 rgba(11,37,69,.15)", opacity: no ? 0.55 : 1 }}
               >
                 <Benda v={visual(gid)} size={44} />
-                {no && <span className="akademi-pop absolute -top-2 -right-1 flex size-8 items-center justify-center rounded-full bg-[#5b4bff] text-white" style={{ fontFamily: BALOO, fontWeight: 900, fontSize: 18 }}>{no}</span>}
+                {no && <span className="akademi-pop absolute -top-2 -right-1 flex size-8 items-center justify-center rounded-full bg-[#0786eb] text-white" style={{ fontFamily: BALOO, fontWeight: 900, fontSize: 18 }}>{no}</span>}
               </button>
             );
           })}
@@ -575,7 +575,7 @@ function ModeKembalian(c: Ctx) {
             <Benda v={vBayar} size={40} /><span style={{ ...Tebal, fontSize: 20 }}>{rupiah(ronde.dibayar)}</span>
             <span className="opacity-50" style={{ ...Tebal, fontSize: 20 }}>→</span>
             {ronde.pesanan.map((p) => <Benda key={p.goodId} v={{ ...visual(p.goodId), count: p.qty }} size={36} />)}
-            <span style={{ ...Tebal, fontSize: 18, color: "#5b4bff" }}>{rupiah(ronde.harga)}</span>
+            <span style={{ ...Tebal, fontSize: 18, color: "#0567c2" }}>{rupiah(ronde.harga)}</span>
           </div>
         }
         jawabanBenar={`Kembalian ${rupiah(kembalian)}`}
@@ -589,7 +589,7 @@ function ModeKembalian(c: Ctx) {
           <div className="akademi-pop mt-2 flex flex-wrap items-center justify-center gap-1 rounded-[16px] bg-white/90 p-2" aria-label="Hitung maju dari harga ke uang pembeli">
             {langkah.map((v, k) => (
               <span key={v} className="flex items-center gap-1">
-                <span className="rounded-full px-2 py-0.5" style={{ ...Tebal, fontSize: 14, background: k === 0 ? "#5b4bff" : k === langkah.length - 1 ? "#22b573" : "#fff1c2", color: k === 0 || k === langkah.length - 1 ? "#fff" : INK }}>{formatRibuan(v)}</span>
+                <span className="rounded-full px-2 py-0.5" style={{ ...Tebal, fontSize: 14, background: k === 0 ? "#0786eb" : k === langkah.length - 1 ? "#22b573" : "#fff1c2", color: k === 0 || k === langkah.length - 1 ? "#fff" : INK }}>{formatRibuan(v)}</span>
                 {k < langkah.length - 1 && <span style={{ fontSize: 16 }}>🪙</span>}
               </span>
             ))}
@@ -620,10 +620,10 @@ function ModeTukar(c: Ctx) {
       <Lapak>
         <div className="rounded-[18px] p-3" style={{ background: "linear-gradient(180deg,#eef2f7,#d7dee8)", boxShadow: "inset 0 3px 0 rgba(0,0,0,.08)" }}>
           <div className="mb-2 flex items-center justify-center gap-2" style={Tebal}><Icon name="currency_exchange" size={22} /> Mesin tukar</div>
-          <div className="mx-auto mb-3 flex w-fit items-center gap-2 rounded-[14px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)" }}><Benda v={vBayar} size={48} /><span style={{ ...Tebal, fontSize: 20 }}>{vBayar.label}</span></div>
+          <div className="mx-auto mb-3 flex w-fit items-center gap-2 rounded-[14px] bg-white px-3 py-2" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}><Benda v={vBayar} size={48} /><span style={{ ...Tebal, fontSize: 20 }}>{vBayar.label}</span></div>
           <div className="flex flex-wrap justify-center gap-1.5" aria-label="Cetakan koin">
             {Array.from({ length: Math.max(slot, uang.length) }, (_, k) => (
-              <button key={k} type="button" onClick={() => { if (k < uang.length) kembalikan(k); }} disabled={k >= uang.length} aria-label={k < uang.length ? `Koin ke-${k + 1}, ketuk untuk ambil` : "Cetakan kosong"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ border: k < uang.length ? "none" : "3px dashed rgba(43,29,78,.3)", background: k < uang.length ? "#fff" : k >= slot ? "#ffe9ec" : "transparent", boxShadow: k < uang.length ? "0 3px 0 rgba(43,29,78,.15)" : "none", fontSize: 30, lineHeight: 1 }}>
+              <button key={k} type="button" onClick={() => { if (k < uang.length) kembalikan(k); }} disabled={k >= uang.length} aria-label={k < uang.length ? `Koin ke-${k + 1}, ketuk untuk ambil` : "Cetakan kosong"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ border: k < uang.length ? "none" : "3px dashed rgba(11,37,69,.3)", background: k < uang.length ? "#fff" : k >= slot ? "#ffe9ec" : "transparent", boxShadow: k < uang.length ? "0 3px 0 rgba(11,37,69,.15)" : "none", fontSize: 30, lineHeight: 1 }}>
                 {k < uang.length ? <span className="akademi-pop">🪙</span> : hint && k === uang.length ? <span className="akademi-bounce opacity-50">🪙</span> : null}
               </button>
             ))}
@@ -687,7 +687,7 @@ function ModeLengkapi(c: Ctx) {
               const idx = k - ditunjukkan;
               const terisi = !milikPembeli && idx < uang.length;
               return (
-                <button key={k} type="button" disabled={!terisi} onClick={() => { if (terisi) kembalikan(idx); }} aria-label={milikPembeli ? (tampil ? "Koin pembeli" : "Koin pembeli (tersembunyi)") : terisi ? "Koin kamu, ketuk untuk ambil" : "Belum terisi"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ border: terisi || (milikPembeli && tampil) ? "none" : "3px dashed rgba(43,29,78,.3)", background: terisi ? "#fff" : milikPembeli ? "rgba(91,75,255,.08)" : "transparent", boxShadow: terisi ? "0 3px 0 rgba(43,29,78,.15)" : "none", fontSize: 30, lineHeight: 1 }}>
+                <button key={k} type="button" disabled={!terisi} onClick={() => { if (terisi) kembalikan(idx); }} aria-label={milikPembeli ? (tampil ? "Koin pembeli" : "Koin pembeli (tersembunyi)") : terisi ? "Koin kamu, ketuk untuk ambil" : "Belum terisi"} className="flex size-14 items-center justify-center rounded-full active:scale-90" style={{ border: terisi || (milikPembeli && tampil) ? "none" : "3px dashed rgba(11,37,69,.3)", background: terisi ? "#fff" : milikPembeli ? "rgba(91,75,255,.08)" : "transparent", boxShadow: terisi ? "0 3px 0 rgba(11,37,69,.15)" : "none", fontSize: 30, lineHeight: 1 }}>
                   {milikPembeli ? (tampil ? "🪙" : <span style={{ ...Tebal, fontSize: 18, opacity: 0.5 }}>?</span>) : terisi ? <span className="akademi-pop">🪙</span> : hint && idx === uang.length ? <span className="akademi-bounce opacity-50">🪙</span> : null}
                 </button>
               );

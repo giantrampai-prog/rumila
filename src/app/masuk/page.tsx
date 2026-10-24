@@ -11,7 +11,7 @@ import { AccountStage, SetupStage } from "./account";
 
 // Layar masuk: akun → langsung ke beranda (tanpa pilih profil & PIN).
 
-const PI = "#2b1d4e";
+const PI = "#0b2545";
 
 
 export default function MasukPage() {
@@ -110,7 +110,7 @@ function Loading({ member, theme }: { member: Member; theme: Theme }) {
         className="overflow-hidden rounded-full"
         style={
           play
-            ? { width: 260, height: 16, background: "#fff", boxShadow: "0 3px 0 rgba(43,29,78,.1)" }
+            ? { width: 260, height: 16, background: "#fff", boxShadow: "0 3px 0 rgba(11,37,69,.1)" }
             : { width: 240, height: 6, background: "#ECE9E3" }
         }
       >

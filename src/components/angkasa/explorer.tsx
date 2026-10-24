@@ -1053,7 +1053,7 @@ export function Explorer({
         {!immersive && (
           <section
             aria-label="Panel belajar"
-            className="absolute inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[26px] border-2 border-b-0 border-[#ede3fa] bg-white shadow-[0_-10px_30px_rgba(43,29,78,.14)] transition-[height] duration-200"
+            className="absolute inset-x-0 bottom-0 z-20 flex flex-col rounded-t-[26px] border-2 border-b-0 border-[#ede3fa] bg-white shadow-[0_-10px_30px_rgba(11,37,69,.14)] transition-[height] duration-200"
             style={{
               height: sheetH,
               paddingBottom: "env(safe-area-inset-bottom)",
@@ -1082,7 +1082,7 @@ export function Explorer({
       </div>
       {st.drawerOpen && (
         <div
-          className="fixed inset-0 z-[70] bg-[rgba(43,29,78,.45)]"
+          className="fixed inset-0 z-[70] bg-[rgba(11,37,69,.45)]"
           onClick={() => st.set({ drawerOpen: false })}
         >
           <div

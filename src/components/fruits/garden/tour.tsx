@@ -17,7 +17,7 @@ import { TUR_BUAH, TUR_BUAH_AUDIO, buahDwell } from '@/lib/fruits/tur';
 import type { GardenEngine } from './engine';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 
 const part = (i: number) => TUR_BUAH_AUDIO.find((p) => i >= p.first && i < p.first + p.cues.length);
 
@@ -159,14 +159,14 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
       {/* progres */}
       <div className="absolute inset-x-0 top-0 px-3" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }} aria-hidden>
         <div className="h-1.5 overflow-hidden rounded-full bg-white/50">
-          <div className="h-full rounded-full bg-[#ff7a1a] transition-[width] duration-300" style={{ width: `${((ui.i + (ui.talk ? ui.progress : 0)) / total) * 100}%` }} />
+          <div className="h-full rounded-full bg-[#fd861d] transition-[width] duration-300" style={{ width: `${((ui.i + (ui.talk ? ui.progress : 0)) / total) * 100}%` }} />
         </div>
       </div>
       <div className="absolute inset-x-0 flex items-start justify-between gap-2 px-3 sm:px-5" style={{ top: 'max(18px, calc(env(safe-area-inset-top) + 12px))' }}>
-        <span className="flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-4 pl-2 shadow-[0_4px_0_rgba(43,29,78,.12)]">
+        <span className="flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-4 pl-2 shadow-[0_4px_0_rgba(11,37,69,.12)]">
           <span className="ms text-[26px] text-[#1fbf62]">park</span>
           <span style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>Tur Kebun</span>
-          <span className="text-[12px] font-extrabold text-[#8a7a9c]">
+          <span className="text-[12px] font-extrabold text-[#5b6b85]">
             {ui.i + 1}/{total}
           </span>
         </span>
@@ -176,7 +176,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
       {/* bawah: jeda + kartu info */}
       <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 px-3 sm:px-5" style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom))' }}>
         {ui.talk ? (
-          <div className="garden-pop pointer-events-auto flex w-full max-w-[620px] items-center gap-3 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(43,29,78,.14)]">
+          <div className="garden-pop pointer-events-auto flex w-full max-w-[620px] items-center gap-3 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(11,37,69,.14)]">
             {fruit ? (
               <div className="relative size-[96px] shrink-0 overflow-hidden rounded-[20px] bg-[#fff6e4] sm:size-[112px]">
                 <Image src={FRUIT_ARTWORK[fruit.id].thumb} alt="" fill sizes="112px" unoptimized className="object-contain p-1" />
@@ -207,7 +207,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
           </div>
         ) : (
           !ui.finished && (
-            <span className="garden-bob rounded-full bg-white/90 px-4 py-2 shadow-[0_4px_0_rgba(43,29,78,.12)]" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
+            <span className="garden-bob rounded-full bg-white/90 px-4 py-2 shadow-[0_4px_0_rgba(11,37,69,.12)]" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
               {ui.playing ? 'Ayo jalan ke tanaman berikutnya…' : 'Tur berhenti sebentar'}
             </span>
           )
@@ -218,7 +218,7 @@ export function GardenTour({ engine, handle, onVisit, onClose }: { engine: Garde
       </div>
 
       {ui.finished && (
-        <div className="pointer-events-auto absolute inset-0 flex flex-col items-center justify-center gap-5 bg-[rgba(43,29,78,.3)]">
+        <div className="pointer-events-auto absolute inset-0 flex flex-col items-center justify-center gap-5 bg-[rgba(11,37,69,.3)]">
           <span className="rounded-full bg-white px-5 py-2" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
             Tur kebun selesai!
           </span>

@@ -1938,7 +1938,7 @@ const esKrim: RunnerTheme = {
       <linearGradient id="kr-ek-sky" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stopColor="#ffb8d4" />
         <stop offset="0.55" stopColor="#ffe0ea" />
-        <stop offset="1" stopColor="#fff6e8" />
+        <stop offset="1" stopColor="#fff8ee" />
       </linearGradient>
       <linearGradient id="kr-ek-waffle" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" stopColor="#ecb86e" />

@@ -1,28 +1,46 @@
 @import "tailwindcss";
 
-/* Token Rumila (Modern) — sumber: src/lib/tokens.json */
+/* Token RINOYA Academy — sumber: docs/brand/design-tokens.json (desain sistem RINOYA).
+   :root = tema "wali" (tenang); .theme-play = tema "anak". Nama variabel lama dipertahankan. */
 :root {
-  --page: #faf8f4;
-  --outside: #edeae4;
+  --page: #f4f7fb;
+  --outside: #e9eef5;
   --surface: #ffffff;
-  --line: #ece9e3;
-  --line-soft: #f3f1ed;
-  --fill: #f3f1ed;
-  --ink: #1f3044;
-  --ink-2: #4f5b6b;
-  --ink-3: #7a8494;
-  --ink-4: #9aa1ac;
-  --chev: #c9c4bb;
-  --coral: #ff7f67;
-  --coral-deep: #d4563e;
-  --coral-tint: #ffe6de;
-  --teal: #52b8a8;
-  --gold: #fdc23e;
-  --positive: #3b8b58;
-  --negative: #b5434a;
-  --fin-ink: #0b0b0c;
-  --fin-yellow: #ffc42e;
+  --line: #d8e3f0;
+  --line-soft: #eaf0f7;
+  --fill: #eaf0f7;
+  --ink: #0b2545;
+  --ink-2: #4a5a75;
+  --ink-3: #5b6b85;
+  --ink-4: #7d8da6;
+  --chev: #b7c3d3;
+  --coral: #fd861d;
+  --coral-deep: #a34a00;
+  --coral-tint: #ffead6;
+  --teal: #0a8a7c;
+  --gold: #fdb724;
+  --positive: #127a43;
+  --negative: #c0283a;
+  --fin-ink: #0b2545;
+  --fin-yellow: #fdb724;
   --spring: cubic-bezier(0.3, 1.4, 0.5, 1);
+
+  /* Warna brand RINOYA */
+  --brand-blue: #0786eb;
+  --brand-blue-deep: #0567c2;
+  --brand-blue-tint: #e3f1fd;
+  --brand-orange: #fd861d;
+  --brand-orange-deep: #a34a00;
+  --brand-orange-tint: #ffead6;
+  --star-gold: #fdb724;
+  --star-gold-tint: #fff3d1;
+  --academy-navy: #135385;
+  --pilar-mat: #5b4bff;
+  --pilar-sains: #0a8a7c;
+  --pilar-bahasa: #d12a7c;
+  --pilar-teknologi: #8b45f5;
+  --pilar-kreativitas: #d9480f;
+  --pilar-karakter: #12904a;
 }
 
 @theme inline {
@@ -46,6 +64,15 @@
   --color-negative: var(--negative);
   --color-fin-ink: var(--fin-ink);
   --color-fin-yellow: var(--fin-yellow);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-deep: var(--brand-blue-deep);
+  --color-brand-blue-tint: var(--brand-blue-tint);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-deep: var(--brand-orange-deep);
+  --color-brand-orange-tint: var(--brand-orange-tint);
+  --color-star-gold: var(--star-gold);
+  --color-star-gold-tint: var(--star-gold-tint);
+  --color-academy-navy: var(--academy-navy);
   --font-sans: var(--font-jakarta), system-ui, sans-serif;
   --font-num: var(--font-inter), system-ui, sans-serif;
   --font-baloo: var(--ff-baloo), system-ui, sans-serif;
@@ -168,15 +195,17 @@ body {
   animation: bar-grow-x 700ms var(--spring) both;
 }
 
-/* Website bertema Playful: warna teks & garis ikut palet Family Launcher v2 */
+/* Tema "anak" RINOYA: krem hangat, teks navy, huruf tebal */
 .theme-play {
-  --ink: #2b1d4e;
-  --ink-2: #6b5d80;
-  --ink-3: #8a7a9c;
-  --ink-4: #b3a48f;
-  --fill: #f5f0fa;
-  --line-soft: #f5f0fa;
-  --chev: #cbbfdc;
+  --page: #fff8ee;
+  --ink: #0b2545;
+  --ink-2: #4a5a75;
+  --ink-3: #5b6b85;
+  --ink-4: #7d8da6;
+  --fill: #fff0da;
+  --line: #f0e4d2;
+  --line-soft: #fff0da;
+  --chev: #d9c7ad;
   font-weight: 700;
 }
 .theme-play :where(h1, h2) {
@@ -184,12 +213,12 @@ body {
   letter-spacing: 0;
 }
 .theme-play [data-seg] button[aria-selected="true"] {
-  box-shadow: 0 2px 0 rgba(43, 29, 78, 0.1);
+  box-shadow: 0 2px 0 rgba(11,37,69, 0.1);
 }
 
-/* Latar titik-titik tema Playful */
+/* Latar titik-titik tema anak (biru RINOYA) */
 .bg-dots {
-  background-color: #fff6e8;
+  background-color: #fff8ee;
   background-image: radial-gradient(rgba(255, 140, 60, 0.18) 2px, transparent 2px);
   background-size: 26px 26px;
 }

@@ -219,12 +219,12 @@ export const ALL_PERMS: PermKey[] = PERMS.map((p) => p.key);
 export const KID_PRESET: PermKey[] = ["game", "coding", "doa", "ibadah", "angkasa", "edukasi", "kesehatan"];
 export const MEMBER_COLORS: ColorKey[] = ["indigo", "orange", "teal", "gold", "pink", "green"];
 
-/** Palet tema Playful: [light, main, deep] — dari Family Launcher v2 */
+/** Palet tema anak: [light, main, deep]. Biru & oranye = warna logo RINOYA; indigo = pilar Matematika. */
 export const PLAY: Record<ColorKey, [string, string, string]> = {
-  orange: ["#ffb347", "#ff7a1a", "#d95a00"],
+  orange: ["#ffb35c", "#fd861d", "#c96510"],
   purple: ["#c78bff", "#8b45f5", "#6421c9"],
   red: ["#ff8a8a", "#ff4757", "#c92a3a"],
-  blue: ["#7cc0ff", "#2f86ff", "#1a5fd1"],
+  blue: ["#5fb8ff", "#0786eb", "#0567c2"],
   green: ["#6fe39a", "#1fbf62", "#12904a"],
   teal: ["#5ce8d6", "#12b8a6", "#0a8a7c"],
   gold: ["#ffe46b", "#ffbe0b", "#d99400"],

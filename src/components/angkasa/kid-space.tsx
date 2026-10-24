@@ -22,6 +22,7 @@ import { LoopMusic } from "@/lib/bgm";
 import { beginTour, endTour, setFullRoot } from "./fullscreen";
 import { useNarration } from "./panels/tour";
 import { TOUR } from "@/lib/angkasa/tour";
+import { teksDiAtas } from "@/lib/brand";
 import { TOUR_POPS } from "@/lib/angkasa/tour-pops";
 import { Viewer } from "./viewer";
 import "./angkasa.css";
@@ -54,10 +55,10 @@ function Ball({ id, size }: { id: string; size: number }) {
 export function RoundBtn({ icon, label, onClick, tone = "white" }: { icon: string; label: string; onClick: () => void; tone?: "white" | "orange" | "purple" }) {
   const bg =
     tone === "orange"
-      ? { background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 5px 0 #c85400", color: "#fff" }
+      ? { background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 5px 0 #c85400", color: "#0b2545" }
       : tone === "purple"
         ? { background: "linear-gradient(155deg,#c78bff,#8b45f5 60%)", boxShadow: "0 5px 0 #5a1fc0", color: "#fff" }
-        : { background: "#fff", boxShadow: "0 5px 0 rgba(0,0,0,.25)", color: "#2b1d4e" };
+        : { background: "#fff", boxShadow: "0 5px 0 rgba(0,0,0,.25)", color: "#0b2545" };
   return (
     <button
       onClick={() => {
@@ -128,12 +129,12 @@ function ObjCard({ id }: { id: string }) {
 
   return (
     <div className="pointer-events-auto mx-auto flex w-full max-w-[620px] items-center gap-2 rounded-[28px] bg-white/95 p-3 shadow-[0_6px_0_rgba(0,0,0,.25)] sm:gap-3 sm:p-4">
-      <button onClick={() => go(-1)} aria-label="Sebelumnya" className="hidden size-12 shrink-0 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90 sm:flex">
+      <button onClick={() => go(-1)} aria-label="Sebelumnya" className="hidden size-12 shrink-0 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90 sm:flex">
         <Icon name="chevron_left" size={32} />
       </button>
       <div className="min-w-0 flex-1">
-        <div style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 800, color: "#2b1d4e", lineHeight: 1 }}>{o.nameId}</div>
-        <p className="mt-1 text-[16px] leading-snug font-extrabold text-[#6b5d80] sm:text-[18px]">{o.definitionSimple}</p>
+        <div style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 800, color: "#0b2545", lineHeight: 1 }}>{o.nameId}</div>
+        <p className="mt-1 text-[16px] leading-snug font-extrabold text-[#4a5a75] sm:text-[18px]">{o.definitionSimple}</p>
       </div>
       {recorded && (
         <button
@@ -145,7 +146,7 @@ function ObjCard({ id }: { id: string }) {
           <Icon name={playing ? "stop" : "volume_up"} size={34} />
         </button>
       )}
-      <button onClick={() => go(1)} aria-label="Berikutnya" className="hidden size-12 shrink-0 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90 sm:flex">
+      <button onClick={() => go(1)} aria-label="Berikutnya" className="hidden size-12 shrink-0 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90 sm:flex">
         <Icon name="chevron_right" size={32} />
       </button>
     </div>
@@ -355,7 +356,7 @@ const INTRO_LINES = [
 
 function Bubble({ children, tail = "left" }: { children: React.ReactNode; tail?: "left" | "bottom" }) {
   return (
-    <div className="ak-pop relative rounded-[24px] bg-white px-4 py-3 text-[#2b1d4e] shadow-[0_5px_0_rgba(0,0,0,.22)]" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, lineHeight: 1.15 }}>
+    <div className="ak-pop relative rounded-[24px] bg-white px-4 py-3 text-[#0b2545] shadow-[0_5px_0_rgba(0,0,0,.22)]" style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, lineHeight: 1.15 }}>
       {children}
       <span
         aria-hidden
@@ -406,8 +407,8 @@ function ChooseOverlay({ stamped }: { stamped: number }) {
   const tile = (icon: string, title: string, sub: string, grad: string, shade: string, onClick: () => void) => (
     <button
       onClick={onClick}
-      className="flex flex-1 flex-col items-center gap-1 rounded-[26px] px-3 pt-4 pb-3 text-white transition-transform active:scale-95"
-      style={{ background: grad, boxShadow: `0 6px 0 ${shade}` }}
+      className="flex flex-1 flex-col items-center gap-1 rounded-[26px] px-3 pt-4 pb-3 transition-transform active:scale-95"
+      style={{ background: grad, color: teksDiAtas(grad), boxShadow: `0 6px 0 ${shade}` }}
     >
       <span className="flex size-16 items-center justify-center rounded-full bg-white/25">
         <Icon name={icon} size={40} />
@@ -426,7 +427,7 @@ function ChooseOverlay({ stamped }: { stamped: number }) {
           </div>
         </div>
         <div className="flex gap-3">
-          {tile("rocket_launch", "Tur Tata Surya", "Terbang bersama Agam, dengar ceritanya", "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", "#c85400", () => {
+          {tile("rocket_launch", "Tur Tata Surya", "Terbang bersama Agam, dengar ceritanya", "linear-gradient(155deg,#ffb347,#fd861d 60%)", "#c85400", () => {
             st.set({ intro: "done" });
             beginTour(0);
           })}
@@ -500,19 +501,19 @@ function Passport({ done, onClose }: { done: Set<string>; onClose: () => void })
           </span>
           <div className="min-w-0 flex-1">
             <div className="text-[12px] font-extrabold tracking-[.18em] text-[#8a7a5c]">PASPOR ANTARIKSA</div>
-            <div className="truncate" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: "#2b1d4e", lineHeight: 1.05 }}>
+            <div className="truncate" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: "#0b2545", lineHeight: 1.05 }}>
               {me?.name ?? "Penjelajah Cilik"}
             </div>
           </div>
-          <button onClick={onClose} aria-label="Tutup" className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#2b1d4e]/10 text-[#2b1d4e] active:scale-90">
+          <button onClick={onClose} aria-label="Tutup" className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#0b2545]/10 text-[#0b2545] active:scale-90">
             <Icon name="close" size={26} />
           </button>
         </div>
 
-        <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#2b1d4e]/10">
-          <div className="h-full rounded-full bg-gradient-to-r from-[#ffbe0b] to-[#ff7a1a] transition-[width] duration-700" style={{ width: `${(count / DOCK.length) * 100}%` }} />
+        <div className="mt-3 h-3 overflow-hidden rounded-full bg-[#0b2545]/10">
+          <div className="h-full rounded-full bg-gradient-to-r from-[#ffbe0b] to-[#fd861d] transition-[width] duration-700" style={{ width: `${(count / DOCK.length) * 100}%` }} />
         </div>
-        <div className="mt-1 text-[14px] font-extrabold text-[#6b5d80]">
+        <div className="mt-1 text-[14px] font-extrabold text-[#4a5a75]">
           {all ? "Semua cap terkumpul! Kamu Penjelajah Tata Surya." : `${count} dari ${DOCK.length} cap · ketuk objek untuk berkunjung`}
         </div>
 
@@ -532,7 +533,7 @@ function Passport({ done, onClose }: { done: Set<string>; onClose: () => void })
                 <span style={{ filter: got ? undefined : "grayscale(1) brightness(.8)", opacity: got ? 1 : 0.45 }}>
                   <Ball id={id} size={46} />
                 </span>
-                <span className="text-[14px] font-extrabold" style={{ color: got ? "#2b1d4e" : "#9b8f7c" }}>
+                <span className="text-[14px] font-extrabold" style={{ color: got ? "#0b2545" : "#9b8f7c" }}>
                   {OBJ.get(id)!.nameId}
                 </span>
                 {got && (
@@ -557,12 +558,12 @@ function Passport({ done, onClose }: { done: Set<string>; onClose: () => void })
             <Icon name={all ? "workspace_premium" : "lock"} size={28} />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: "#2b1d4e", lineHeight: 1.1 }}>
+            <span className="block" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: "#0b2545", lineHeight: 1.1 }}>
               Sertifikat Penjelajah Tata Surya
             </span>
-            <span className="block text-[13px] font-extrabold text-[#6b5d80]">{all ? "Lihat & simpan sertifikatmu" : `Kunjungi ${DOCK.length - count} objek lagi · lihat contohnya`}</span>
+            <span className="block text-[13px] font-extrabold text-[#4a5a75]">{all ? "Lihat & simpan sertifikatmu" : `Kunjungi ${DOCK.length - count} objek lagi · lihat contohnya`}</span>
           </span>
-          <Icon name="chevron_right" size={28} className="text-[#6b5d80]" />
+          <Icon name="chevron_right" size={28} className="text-[#4a5a75]" />
         </button>
       </div>
     </div>
@@ -692,8 +693,8 @@ export function KidSpace({ memberId, initial }: { memberId: string; initial?: { 
           {/* bawah */}
           <div ref={hudRef} className="flex flex-col items-center gap-3">
             {!planet && !visited && (
-              <div className="ak-hint flex items-center gap-2 rounded-full bg-white/95 py-2 pr-4 pl-3 text-[#2b1d4e] shadow-[0_4px_0_rgba(0,0,0,.25)]" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
-                <Icon name="touch_app" size={26} className="text-[#ff7a1a]" /> Ketuk planet untuk berkunjung!
+              <div className="ak-hint flex items-center gap-2 rounded-full bg-white/95 py-2 pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(0,0,0,.25)]" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+                <Icon name="touch_app" size={26} className="text-[#fd861d]" /> Ketuk planet untuk berkunjung!
               </div>
             )}
             {planet && <ObjCard id={st.selectedId!} />}

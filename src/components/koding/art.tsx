@@ -450,7 +450,7 @@ const kota: ThemeArt = {
         <g>
           {shadow(X, Y, 24, 8, 80)}
           <rect x={X + 24} y={Y + 70} width="52" height="10" rx="3" fill="#d85a12" />
-          <path d={`M${X + 34} ${Y + 72} L${X + 46} ${Y + 18} h8 L${X + 66} ${Y + 72} Z`} fill="#ff7a1a" />
+          <path d={`M${X + 34} ${Y + 72} L${X + 46} ${Y + 18} h8 L${X + 66} ${Y + 72} Z`} fill="#fd861d" />
           <path d={`M${X + 39} ${Y + 52} h22 l2 8 h-26 z M${X + 43} ${Y + 34} h14 l1.5 7 h-17 z`} fill="#fff" />
           <path d={`M${X + 47} ${Y + 22} l-6 46`} stroke="#fff" strokeOpacity="0.35" strokeWidth="3" />
         </g>
@@ -539,7 +539,7 @@ const salju: ThemeArt = {
         <rect x={X + 36} y={Y + 12} width="28" height="4" rx="2" fill="#2b2b36" />
         <circle cx={X + 46} cy={Y + 19} r="1.6" fill="#222" />
         <circle cx={X + 54} cy={Y + 19} r="1.6" fill="#222" />
-        <path d={`M${X + 50} ${Y + 22} l10 3 l-10 1 z`} fill="#ff7a1a" />
+        <path d={`M${X + 50} ${Y + 22} l10 3 l-10 1 z`} fill="#fd861d" />
         <path d={`M${X + 38} ${Y + 31} Q${X + 50} ${Y + 36} ${X + 62} ${Y + 31}`} stroke="#d83a3a" strokeWidth="5" fill="none" strokeLinecap="round" />
         <circle cx={X + 50} cy={Y + 40} r="1.8" fill="#333" />
         <circle cx={X + 50} cy={Y + 47} r="1.8" fill="#333" />
@@ -774,7 +774,7 @@ const gunung: ThemeArt = {
     <g>
       {shadow(X, Y, 38, 11, 74, 0.35)}
       <path d={`M${X + 14} ${Y + 68} Q${X + 10} ${Y + 38} ${X + 34} ${Y + 24} Q${X + 54} ${Y + 12} ${X + 72} ${Y + 26} Q${X + 90} ${Y + 42} ${X + 86} ${Y + 68} Q${X + 50} ${Y + 78} ${X + 14} ${Y + 68} Z`} fill="url(#ka-basalt)" />
-      <path d={`M${X + 34} ${Y + 40} l10 8 l-4 12 M${X + 58} ${Y + 32} l6 14`} stroke="#ff7a1a" strokeWidth="2.5" strokeLinecap="round" fill="none" className="ka-glow" />
+      <path d={`M${X + 34} ${Y + 40} l10 8 l-4 12 M${X + 58} ${Y + 32} l6 14`} stroke="#fd861d" strokeWidth="2.5" strokeLinecap="round" fill="none" className="ka-glow" />
       <path d={`M${X + 30} ${Y + 32} Q${X + 44} ${Y + 22} ${X + 58} ${Y + 26}`} stroke="#fff" strokeOpacity="0.2" strokeWidth="4" strokeLinecap="round" fill="none" />
     </g>
   ),

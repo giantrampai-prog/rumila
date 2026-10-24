@@ -11,7 +11,7 @@ import { LAPISAN, TEMUAN } from '@/lib/bumi/misi';
 import { sfx } from '@/lib/sfx';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 type Kind = (typeof TEMUAN)[number]['kind'];
 
 /* ---------------- gambar fosil (kanvas 2D) ---------------- */
@@ -367,12 +367,12 @@ export function GaliFosil({ onClose }: { onClose: () => void }) {
           <div className="flex items-center gap-2" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
             <span>🎉</span> Kamu menemukan {cur.name}!
           </div>
-          <p className="mt-1 text-[15px] leading-snug font-bold text-[#6b5d80]">{cur.fact}</p>
+          <p className="mt-1 text-[15px] leading-snug font-bold text-[#4a5a75]">{cur.fact}</p>
           <p className="mt-1 text-[13px] leading-snug font-bold text-[#1d6fd6]">
             <Icon name="lightbulb" size={14} className="mr-0.5 align-[-2px]" />
             Ahli fosil menggali dengan sikat & kuas pelan-pelan supaya fosil tidak rusak.
           </p>
-          <button onClick={next} className="mt-3 w-full rounded-full py-3 text-white active:scale-95" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#ff7a1a 60%)', boxShadow: '0 5px 0 #c85400' }}>
+          <button onClick={next} className="mt-3 w-full rounded-full py-3 text-[#0b2545] active:scale-95" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#fd861d 60%)', boxShadow: '0 5px 0 #c85400' }}>
             Gali fosil lain
           </button>
         </div>
@@ -491,7 +491,7 @@ export function SusunLapisan({ onClose }: { onClose: () => void }) {
         ) : (
           <div className="bumi-pop rounded-[22px] bg-white p-4 text-left shadow-[0_6px_0_rgba(0,0,0,.3)]">
             <div style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>🎉 Hebat, lapisan Bumi tersusun!</div>
-            <p className="mt-1 text-[14px] font-bold text-[#6b5d80]">Dari luar ke dalam: kerak bumi, mantel atas, mantel bawah, inti luar yang cair, dan inti dalam yang padat.</p>
+            <p className="mt-1 text-[14px] font-bold text-[#4a5a75]">Dari luar ke dalam: kerak bumi, mantel atas, mantel bawah, inti luar yang cair, dan inti dalam yang padat.</p>
             <button
               onClick={() => {
                 sfx.tap();
@@ -512,9 +512,9 @@ export function SusunLapisan({ onClose }: { onClose: () => void }) {
           <span className="size-10 shrink-0 rounded-full" style={{ background: lastPlaced.color }} />
           <div>
             <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK, lineHeight: 1.1 }}>
-              {lastPlaced.name} <span className="text-[13px] text-[#8a7a9c]">· {lastPlaced.depth}</span>
+              {lastPlaced.name} <span className="text-[13px] text-[#5b6b85]">· {lastPlaced.depth}</span>
             </div>
-            <div className="text-[13px] leading-snug font-bold text-[#6b5d80]">{lastPlaced.fact}</div>
+            <div className="text-[13px] leading-snug font-bold text-[#4a5a75]">{lastPlaced.fact}</div>
           </div>
         </div>
       )}

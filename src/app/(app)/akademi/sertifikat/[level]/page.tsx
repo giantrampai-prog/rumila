@@ -19,8 +19,8 @@ import { ambilSertifikat, terbitkan, URL_VERIFIKASI, useSertifikat } from "@/lib
 import { useCloud } from "@/lib/supabase/family";
 import { useMe, useUI } from "@/lib/store";
 
-const INK = "#2b1d4e";
-const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(43,29,78,.08)]";
+const INK = "#0b2545";
+const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
 
 export default function SertifikatLevelPage() {
   const { level: raw } = useParams<{ level: string }>();
@@ -31,7 +31,7 @@ export default function SertifikatLevelPage() {
 
 function Kerangka({ children }: { children: React.ReactNode }) {
   return (
-    <div className="sertifikat-root min-h-dvh" style={{ background: "#faf8fc", fontFamily: NUNITO, color: INK }}>
+    <div className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
       <style>{SERTIFIKAT_PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[1040px] flex-col gap-5 px-4 py-4 sm:px-6 sm:py-6" style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: "max(32px, env(safe-area-inset-bottom))" }}>
         {children}
@@ -43,7 +43,7 @@ function Kerangka({ children }: { children: React.ReactNode }) {
 function Kepala({ judul, sub }: { judul: string; sub: string }) {
   return (
     <header className="no-print flex items-center gap-3">
-      <Link href="/akademi" aria-label="Kembali" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#e5e0ee] bg-white transition-transform active:scale-95" style={{ color: INK }}>
+      <Link href="/akademi" aria-label="Kembali" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
         <Icon name="arrow_back" size={22} />
       </Link>
       <div className="min-w-0 flex-1">
@@ -122,13 +122,13 @@ function IsiSertifikat({ level }: { level: LevelId }) {
           <SertifikatKartu nama={me.name} level={level} kode={sert.code} issuedAt={sert.issuedAt} snapshot={sert.snapshot} pending={sert.pending} />
         </div>
         <div className="no-print flex flex-wrap justify-center gap-2">
-          <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#9a93ff,#5b4bff 60%)", boxShadow: "0 3px 0 #3a2cd1" }}>
+          <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
             <Icon name="print" size={22} /> Cetak / PDF
           </button>
-          <button onClick={bagikan} className="inline-flex h-12 items-center gap-2 rounded-full border border-[#e5e0ee] bg-white px-6 transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
+          <button onClick={bagikan} className="inline-flex h-12 items-center gap-2 rounded-full border border-[#f0e4d2] bg-white px-6 transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
             <Icon name="share" size={22} /> Bagikan tautan
           </button>
-          <Link href={`/sertifikat/${sert.code}`} className="inline-flex h-12 items-center gap-2 rounded-full border border-[#e5e0ee] bg-white px-6 transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
+          <Link href={`/sertifikat/${sert.code}`} className="inline-flex h-12 items-center gap-2 rounded-full border border-[#f0e4d2] bg-white px-6 transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
             <Icon name="verified" size={22} /> Halaman verifikasi
           </Link>
         </div>
@@ -157,8 +157,8 @@ function IsiSertifikat({ level }: { level: LevelId }) {
           <button
             onClick={terbit}
             disabled={sibuk}
-            className="inline-flex h-14 items-center gap-2 rounded-[18px] px-8 text-white transition-transform active:scale-95 disabled:opacity-60"
-            style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 4px 0 #c85400" }}
+            className="inline-flex h-14 items-center gap-2 rounded-[18px] px-8 text-[#0b2545] transition-transform active:scale-95 disabled:opacity-60"
+            style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 4px 0 #c85400" }}
           >
             <Icon name="workspace_premium" size={26} /> {sibuk ? "Menerbitkan…" : "Terbitkan sertifikat"}
           </button>
@@ -176,10 +176,10 @@ function IsiSertifikat({ level }: { level: LevelId }) {
       <div className={`${KARTU} flex flex-col gap-3 p-5`}>
         <div className="flex items-center justify-between">
           <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Progres pangkat</p>
-          <span className="rounded-full bg-[#ecebff] px-3 py-1 text-[13px] font-black text-[#5b4bff]">{persen}%</span>
+          <span className="rounded-full bg-[#e3f1fd] px-3 py-1 text-[13px] font-black text-[#0567c2]">{persen}%</span>
         </div>
-        <div className="h-3 w-full overflow-hidden rounded-full bg-[#efeaf5]">
-          <div className="h-full rounded-full" style={{ width: `${persen}%`, background: "linear-gradient(90deg,#9a93ff,#5b4bff)" }} />
+        <div className="h-3 w-full overflow-hidden rounded-full bg-[#fff0da]">
+          <div className="h-full rounded-full" style={{ width: `${persen}%`, background: "linear-gradient(90deg,#4fb3ff,#0786eb)" }} />
         </div>
         <p className="text-[13px] font-bold text-ink-3">
           Sertifikat terbit otomatis bisa diminta setelah semua kompetensi inti jenjang ini dikuasai. Tinggal {belum.length} lagi.
@@ -190,12 +190,12 @@ function IsiSertifikat({ level }: { level: LevelId }) {
         {belum.length === 0 ? (
           <p className="text-[13px] font-bold text-ink-3">Jenjang ini belum punya kompetensi inti.</p>
         ) : (
-          <ul className="flex flex-col divide-y divide-[#f0ecf6]">
+          <ul className="flex flex-col divide-y divide-[#fff0da]">
             {belum.map((c) => {
               const st = peng[c.id]?.status ?? "belum";
               return (
                 <li key={c.id} className="flex items-center gap-3 py-2.5">
-                  <span className="size-3 shrink-0 rounded-full" style={{ background: st === "berkembang" ? "#ffbe0b" : "#ddd5e8" }} aria-label={st} />
+                  <span className="size-3 shrink-0 rounded-full" style={{ background: st === "berkembang" ? "#ffbe0b" : "#f0e4d2" }} aria-label={st} />
                   <div className="min-w-0 flex-1">
                     <p className="text-[14px] font-extrabold" style={{ color: INK }}>
                       {c.statement.id}
@@ -204,7 +204,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
                       {c.unit.nama.id} · {st === "berkembang" ? "Berkembang" : "Belum"}
                     </p>
                   </div>
-                  <Link href={`/akademi/pelajaran/${c.track}`} className="rounded-full border border-[#e5e0ee] bg-white px-3 py-1 text-[12px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
+                  <Link href={`/akademi/pelajaran/${c.track}`} className="rounded-full border border-[#f0e4d2] bg-white px-3 py-1 text-[12px] font-extrabold transition-transform active:scale-95" style={{ color: INK }}>
                     Latih
                   </Link>
                 </li>

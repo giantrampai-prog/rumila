@@ -11,13 +11,13 @@ import { friendlyError, supabase } from "@/lib/supabase/client";
 import { createFamily, signOutAccount } from "@/lib/supabase/family";
 import type { Theme } from "@/lib/store";
 
-const PI = "#2b1d4e";
+const PI = "#0b2545";
 const NV = "#1F3044";
 
 function useLook(theme: Theme) {
   const play = theme === "playful";
   const card: CSSProperties = play
-    ? { borderRadius: 40, boxShadow: "0 10px 0 rgba(43,29,78,.1), 0 40px 80px rgba(43,29,78,.15)" }
+    ? { borderRadius: 40, boxShadow: "0 10px 0 rgba(11,37,69,.1), 0 40px 80px rgba(11,37,69,.15)" }
     : { borderRadius: 32, border: "1px solid #ece9e3", boxShadow: "0 30px 80px rgba(31,48,68,.12)" };
   const title: CSSProperties = play
     ? { fontFamily: BALOO, fontSize: 30, fontWeight: 800, color: PI, lineHeight: 1.1 }
@@ -25,7 +25,7 @@ function useLook(theme: Theme) {
   const input: CSSProperties = {
     height: 50,
     borderRadius: 14,
-    border: `1.5px solid ${play ? "#e6def0" : "#dfe2e7"}`,
+    border: `1.5px solid ${play ? "#f0e4d2" : "#dfe2e7"}`,
     padding: "0 14px",
     fontSize: 15,
     fontWeight: play ? 700 : 500,
@@ -35,9 +35,9 @@ function useLook(theme: Theme) {
     width: "100%",
   };
   const primary: CSSProperties = play
-    ? { height: 54, borderRadius: 18, background: "#ff7a1a", color: "#fff", fontWeight: 900, fontSize: 17, boxShadow: "0 4px 0 #d95a00" }
+    ? { height: 54, borderRadius: 18, background: "#fd861d", color: "#0b2545", fontWeight: 900, fontSize: 17, boxShadow: "0 4px 0 #d95a00" }
     : { height: 52, borderRadius: 14, background: NV, color: "#fff", fontWeight: 700, fontSize: 15 };
-  const muted = play ? "#8a7a9c" : "#7A8494";
+  const muted = play ? "#5b6b85" : "#7A8494";
   return { play, card, title, input, primary, muted, ink: play ? PI : NV };
 }
 
@@ -114,7 +114,7 @@ export function AccountStage({ theme }: { theme: Theme }) {
       className="anim-fade relative flex w-full max-w-[420px] flex-col items-center gap-5 bg-white px-7 pt-8 pb-7 text-center"
       style={L.card}
     >
-      <Image src="/brand/rinoya-logo.png" alt="RINOYA Academy" width={240} height={78} priority className="h-auto w-[240px]" />
+      <Image src="/brand/rinoya-logo.png" alt="RINOYA Academy" width={1137} height={800} priority className="h-auto w-[180px]" />
       {sent ? (
         <>
           <Icon name={sent === "email" ? "mark_email_read" : "info"} size={48} style={{ color: L.play ? "#12b8a6" : "#52B8A8" }} />

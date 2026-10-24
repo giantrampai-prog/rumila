@@ -15,7 +15,7 @@ import { labelBendera, ringkasAnak, ringkasHarian, ringkasKompetensi, ringkasPak
 import { useMe, useRumila, type Member } from "@/lib/store";
 import { INK, labelMekanik, tanggalJam, tanggalLokal } from "./bersama";
 
-const KARTU = "rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(43,29,78,.06)] sm:p-5";
+const KARTU = "rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)] sm:p-5";
 const HARI_MS = 86400000;
 
 const WARNA_BENDERA: Record<Bendera, { bg: string; fg: string }> = {
@@ -137,8 +137,8 @@ export function TelemetriView() {
   if (!me.admin) {
     return (
       <Kerangka>
-        <div className="mx-auto mt-10 flex max-w-[420px] flex-col items-center gap-4 rounded-[24px] bg-white p-8 text-center shadow-[0_4px_0_rgba(43,29,78,.06)]">
-          <Icon name="lock" size={44} style={{ color: "#8a7a9c" }} />
+        <div className="mx-auto mt-10 flex max-w-[420px] flex-col items-center gap-4 rounded-[24px] bg-white p-8 text-center shadow-[0_4px_0_rgba(11,37,69,.06)]">
+          <Icon name="lock" size={44} style={{ color: "#5b6b85" }} />
           <p style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>Halaman ini khusus wali admin</p>
           <p className="text-[14px] font-bold text-ink-3">Telemetri hanya untuk tim dan orang tua yang mengelola Academy.</p>
           <TombolKembali />
@@ -155,7 +155,7 @@ export function TelemetriView() {
           <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Telemetri</h1>
           <p className="text-[13px] font-bold text-ink-3">Bukti belajar semua anak · RINOYA Academy</p>
         </div>
-        <button onClick={salin} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#e5e0ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: tersalin ? "#12904a" : INK }}>
+        <button onClick={salin} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#f0e4d2] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: tersalin ? "#12904a" : INK }}>
           <Icon name={tersalin ? "check" : "content_copy"} size={18} /> {tersalin ? "Tersalin" : "Salin ringkasan"}
         </button>
       </header>
@@ -179,7 +179,7 @@ export function TelemetriView() {
               <h2 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK }}>Percobaan 14 hari</h2>
               <span className="text-[11px] font-extrabold text-ink-3">
                 <span className="mr-1 inline-block size-2.5 rounded-sm align-middle" style={{ background: "#1fbf62" }} /> benar
-                <span className="mr-1 ml-3 inline-block size-2.5 rounded-sm align-middle" style={{ background: "#ddd5e8" }} /> salah
+                <span className="mr-1 ml-3 inline-block size-2.5 rounded-sm align-middle" style={{ background: "#f0e4d2" }} /> salah
               </span>
             </div>
             <GrafikHarian data={harian} />
@@ -227,7 +227,7 @@ export function TelemetriView() {
             </div>
             <div className="mt-2 flex flex-wrap gap-x-3 text-[11px] font-extrabold text-ink-3">
               <span>
-                <span className="mr-1 inline-block size-2.5 rounded-sm align-middle" style={{ background: "#ddd5e8" }} /> belum
+                <span className="mr-1 inline-block size-2.5 rounded-sm align-middle" style={{ background: "#f0e4d2" }} /> belum
               </span>
               <span>
                 <span className="mr-1 inline-block size-2.5 rounded-sm align-middle" style={{ background: "#ffbe0b" }} /> berkembang
@@ -239,7 +239,7 @@ export function TelemetriView() {
             {kompetensiR.length === 0 ? (
               <p className="mt-3 text-[14px] font-bold text-ink-3">Belum ada bukti kompetensi.</p>
             ) : (
-              <ul className="mt-2 divide-y divide-[#f1edf6]">
+              <ul className="mt-2 divide-y divide-[#fff0da]">
                 {kompetensiR.map((k) => {
                   const total = k.belum + k.berkembang + k.dikuasai || 1;
                   return (
@@ -254,12 +254,12 @@ export function TelemetriView() {
                         </p>
                       </div>
                       <div className="flex items-center gap-3 sm:w-[300px] sm:shrink-0">
-                        <div className="flex h-2.5 flex-1 overflow-hidden rounded-full bg-[#f1edf6]" aria-label={`belum ${k.belum}, berkembang ${k.berkembang}, dikuasai ${k.dikuasai}`}>
-                          <div style={{ width: `${(k.belum / total) * 100}%`, background: "#ddd5e8" }} />
+                        <div className="flex h-2.5 flex-1 overflow-hidden rounded-full bg-[#fff0da]" aria-label={`belum ${k.belum}, berkembang ${k.berkembang}, dikuasai ${k.dikuasai}`}>
+                          <div style={{ width: `${(k.belum / total) * 100}%`, background: "#f0e4d2" }} />
                           <div style={{ width: `${(k.berkembang / total) * 100}%`, background: "#ffbe0b" }} />
                           <div style={{ width: `${(k.dikuasai / total) * 100}%`, background: "#1fbf62" }} />
                         </div>
-                        <span className="w-[86px] shrink-0 text-right text-[12px] font-extrabold tabular-nums" style={{ color: "#8a7a9c" }}>
+                        <span className="w-[86px] shrink-0 text-right text-[12px] font-extrabold tabular-nums" style={{ color: "#5b6b85" }}>
                           {k.belum}·{k.berkembang}·{k.dikuasai}
                         </span>
                         <span className="w-[44px] shrink-0 text-right text-[13px] font-black tabular-nums" style={{ color: k.attempts ? (k.rasio < 0.4 ? "#c92a3a" : INK) : "#b9acc9" }}>
@@ -310,7 +310,7 @@ function GrafikHarian({ data }: { data: { tanggal: string; attempts: number; ben
             <div key={d.tanggal} className="flex min-w-0 flex-1 flex-col items-center gap-1" title={`${tanggalLokal(tgl.toISOString())}: ${d.attempts} percobaan, ${d.benar} benar, ${d.anakUnik} anak`}>
               <span className="text-[10px] font-extrabold tabular-nums text-ink-3">{d.attempts || ""}</span>
               <div className="flex w-full max-w-[28px] flex-1 items-end">
-                <div className="flex w-full flex-col justify-end overflow-hidden rounded-t-[6px] bg-[#ddd5e8]" style={{ height: `${Math.max(tinggi, d.attempts ? 6 : 2)}%`, background: d.attempts ? "#ddd5e8" : "#f1edf6" }}>
+                <div className="flex w-full flex-col justify-end overflow-hidden rounded-t-[6px] bg-[#f0e4d2]" style={{ height: `${Math.max(tinggi, d.attempts ? 6 : 2)}%`, background: d.attempts ? "#f0e4d2" : "#fff0da" }}>
                   <div style={{ height: `${benar}%`, background: "#1fbf62" }} />
                 </div>
               </div>
@@ -338,7 +338,7 @@ function TabelPaket({ rows, namaPaket }: { rows: RingkasanPaket[]; namaPaket: (i
   return (
     <div className="mt-3">
       {/* kepala kolom (≥ sm) */}
-      <div className="hidden grid-cols-[minmax(0,1fr)_72px_56px_56px_56px_56px_56px] gap-2 border-b border-[#f1edf6] pb-1.5 text-[11px] font-extrabold text-ink-3 uppercase sm:grid">
+      <div className="hidden grid-cols-[minmax(0,1fr)_72px_56px_56px_56px_56px_56px] gap-2 border-b border-[#fff0da] pb-1.5 text-[11px] font-extrabold text-ink-3 uppercase sm:grid">
         <span>Judul · mekanik · level</span>
         <span className="text-right">Coba</span>
         <span className="text-right">% benar</span>
@@ -347,7 +347,7 @@ function TabelPaket({ rows, namaPaket }: { rows: RingkasanPaket[]; namaPaket: (i
         <span className="text-right">Berhenti</span>
         <span className="text-right">Anak</span>
       </div>
-      <ul className="divide-y divide-[#f1edf6]">
+      <ul className="divide-y divide-[#fff0da]">
         {rows.map((p) => {
           const b0 = p.bendera[0];
           const aksen = b0 ? WARNA_BENDERA[b0].fg : "transparent";
@@ -355,7 +355,7 @@ function TabelPaket({ rows, namaPaket }: { rows: RingkasanPaket[]; namaPaket: (i
             <li key={p.paketId} className="py-2.5">
               <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-[minmax(0,1fr)_72px_56px_56px_56px_56px_56px] sm:items-center sm:gap-2">
                 <div className="flex min-w-0 items-start gap-2">
-                  <span className="mt-1 inline-block size-2.5 shrink-0 rounded-full" style={{ background: aksen, outline: b0 ? "none" : "1px solid #e5e0ee" }} />
+                  <span className="mt-1 inline-block size-2.5 shrink-0 rounded-full" style={{ background: aksen, outline: b0 ? "none" : "1px solid #f0e4d2" }} />
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-[13px] font-extrabold" title={p.paketId}>
                       {namaPaket(p.paketId)}
@@ -410,7 +410,7 @@ function Sel({ label, v, c }: { label: string; v: string; c?: string }) {
 
 function KartuAnak({ m, r }: { m: Member; r: RingkasanAnak }) {
   return (
-    <div className="rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(43,29,78,.06)]">
+    <div className="rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)]">
       <div className="flex items-center gap-3">
         <MemberAvatar m={m} size={44} theme="playful" />
         <div className="min-w-0 flex-1">
@@ -432,7 +432,7 @@ function KartuAnak({ m, r }: { m: Member; r: RingkasanAnak }) {
 
 function Mini({ label, n }: { label: string; n: string }) {
   return (
-    <div className="rounded-[12px] bg-[#f7f4fb] py-1.5">
+    <div className="rounded-[12px] bg-[#fff0da] py-1.5">
       <div className="tabular-nums" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: INK, lineHeight: 1 }}>
         {n}
       </div>
@@ -461,7 +461,7 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
       aria-selected={on}
       onClick={onClick}
       className="rounded-full border px-3 py-1 text-[12px] font-extrabold transition-transform active:scale-95"
-      style={{ borderColor: on ? INK : "#e5e0ee", background: on ? INK : "#fff", color: on ? "#fff" : INK }}
+      style={{ borderColor: on ? INK : "#f0e4d2", background: on ? INK : "#fff", color: on ? "#fff" : INK }}
     >
       {children}
     </button>
@@ -472,7 +472,7 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
 
 function Kerangka({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-dvh" style={{ background: "#faf8fc", fontFamily: NUNITO, color: INK }}>
+    <div className="min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
       <div className="mx-auto flex max-w-[1100px] flex-col gap-5 px-4 py-4 sm:px-6 sm:py-6" style={{ paddingTop: "max(16px, env(safe-area-inset-top))", paddingBottom: "max(32px, env(safe-area-inset-bottom))" }}>
         {children}
       </div>
@@ -482,7 +482,7 @@ function Kerangka({ children }: { children: React.ReactNode }) {
 
 function TombolKembali({ ikon }: { ikon?: boolean }) {
   return ikon ? (
-    <Link href="/akademi/rapor" aria-label="Kembali ke Rapor" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#e5e0ee] bg-white transition-transform active:scale-95" style={{ color: INK }}>
+    <Link href="/akademi/rapor" aria-label="Kembali ke Rapor" className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#f0e4d2] bg-white transition-transform active:scale-95" style={{ color: INK }}>
       <Icon name="arrow_back" size={22} />
     </Link>
   ) : (

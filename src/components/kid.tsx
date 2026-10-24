@@ -14,7 +14,7 @@ import { PullToRefresh } from "@/components/pwa";
 import { can, useMe, useRumila, useUI } from "@/lib/store";
 import { JUMLAH_PAKET } from "@/lib/akademi/jumlah.generated";
 
-const INK = "#2b1d4e";
+const INK = "#0b2545";
 
 /** Alat yang terakhir dimainkan anggota aktif (yang masih boleh dibuka). */
 export function useLastTool(): Tool | null {
@@ -68,7 +68,7 @@ export function KidHeader() {
       {/* profil & pengaturan: kanan atas, terpisah dari konten */}
       <button onClick={() => openSheet({ kind: "members" })} className="relative shrink-0 transition-transform active:scale-90" aria-label="Profil dan pengaturan">
         <MemberAvatar m={me} size={46} theme="playful" />
-        <span className="absolute -right-1 -bottom-1 flex size-[22px] items-center justify-center rounded-full bg-white text-[#5b4bff] shadow-[0_2px_0_rgba(43,29,78,.15)]">
+        <span className="absolute -right-1 -bottom-1 flex size-[22px] items-center justify-center rounded-full bg-white text-[#0567c2] shadow-[0_2px_0_rgba(11,37,69,.15)]">
           <Icon name="settings" size={15} />
         </span>
       </button>
@@ -81,11 +81,11 @@ export function KidHeader() {
 export function MascotBubble({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-end gap-2">
-      <div className="flex size-[52px] shrink-0 items-center justify-center rounded-[18px] bg-white shadow-[0_3px_0_rgba(43,29,78,.08)]">
+      <div className="flex size-[52px] shrink-0 items-center justify-center rounded-[18px] bg-white shadow-[0_3px_0_rgba(11,37,69,.08)]">
         <Image src="/brand/rinoya-mark.png" alt="" width={38} height={38} />
       </div>
       <div
-        className="relative rounded-[18px] rounded-bl-md bg-white px-3.5 py-2.5 shadow-[0_3px_0_rgba(43,29,78,.08)]"
+        className="relative rounded-[18px] rounded-bl-md bg-white px-3.5 py-2.5 shadow-[0_3px_0_rgba(11,37,69,.08)]"
         style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 700, color: INK, lineHeight: 1.2 }}
       >
         {children}

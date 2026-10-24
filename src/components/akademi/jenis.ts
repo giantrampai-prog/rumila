@@ -19,7 +19,7 @@ export interface PresenterProps<R, J, P extends ContentPack = ContentPack> {
 
 export const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 export const NUNITO = "var(--ff-nunito), system-ui, sans-serif";
-export const INK = "#2b1d4e";
+export const INK = "#0b2545";
 
 /** Warna umpan balik */
 export const BENAR = "#22b573";

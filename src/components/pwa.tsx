@@ -10,7 +10,7 @@ import { create } from "zustand";
 import { Icon } from "@/components/ui";
 
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
-const INK = "#2b1d4e";
+const INK = "#0b2545";
 
 interface InstallPrompt extends Event {
   prompt: () => Promise<void>;
@@ -72,11 +72,11 @@ export function PwaSetup() {
 function IosHelp() {
   const close = () => usePwa.setState({ iosHelp: false });
   return (
-    <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[rgba(43,29,78,.45)] p-4 sm:items-center" onClick={close}>
+    <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[rgba(11,37,69,.45)] p-4 sm:items-center" onClick={close}>
       <div className="w-full max-w-[420px] rounded-[28px] bg-white p-5" onClick={(e) => e.stopPropagation()} style={{ color: INK }}>
         <div className="flex items-center justify-between">
           <h2 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>Pasang RINOYA Academy</h2>
-          <button onClick={close} aria-label="Tutup" className="flex size-10 items-center justify-center rounded-xl bg-[#f5f0fa]">
+          <button onClick={close} aria-label="Tutup" className="flex size-10 items-center justify-center rounded-xl bg-[#fff0da]">
             <Icon name="close" />
           </button>
         </div>
@@ -94,13 +94,13 @@ function IosHelp() {
             Pilih &ldquo;Tambah ke Layar Utama&rdquo;, lalu &ldquo;Tambah&rdquo;.
           </li>
           <li className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#fff2d9] text-[#ff7a1a]">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#fff2d9] text-[#fd861d]">
               <Icon name="rocket_launch" />
             </span>
             Buka RINOYA Academy dari ikon di layar utama.
           </li>
         </ol>
-        <p className="mt-3 text-[13px] font-semibold text-[#8a7a9c]">Di Chrome iPad/iPhone, tombol Bagikan ada di kanan atas bilah alamat.</p>
+        <p className="mt-3 text-[13px] font-semibold text-[#5b6b85]">Di Chrome iPad/iPhone, tombol Bagikan ada di kanan atas bilah alamat.</p>
       </div>
     </div>
   );
@@ -119,15 +119,15 @@ export function InstallBanner() {
   }, []);
   if (!can || hidden) return null;
   return (
-    <div className="flex items-center gap-3 rounded-[22px] bg-white p-2.5 pr-3 shadow-[0_4px_0_rgba(43,29,78,.06)]">
+    <div className="flex items-center gap-3 rounded-[22px] bg-white p-2.5 pr-3 shadow-[0_4px_0_rgba(11,37,69,.06)]">
       <Image src="/icons/icon-192.png" alt="" width={48} height={48} className="size-12 rounded-[14px]" />
       <span className="min-w-0 flex-1">
         <span className="block" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK, lineHeight: 1.15 }}>
           Pasang RINOYA Academy di layar utama
         </span>
-        <span className="block text-[12px] font-bold text-[#8a7a9c]">Buka seperti aplikasi, layar penuh.</span>
+        <span className="block text-[12px] font-bold text-[#5b6b85]">Buka seperti aplikasi, layar penuh.</span>
       </span>
-      <button onClick={() => void installApp()} className="rounded-full px-4 py-2 text-[14px] font-extrabold text-white" style={{ background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 3px 0 #c85400" }}>
+      <button onClick={() => void installApp()} className="rounded-full px-4 py-2 text-[14px] font-extrabold text-[#0b2545]" style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
         Pasang
       </button>
       <button
@@ -138,7 +138,7 @@ export function InstallBanner() {
           } catch {}
         }}
         aria-label="Tutup"
-        className="flex size-9 items-center justify-center rounded-full text-[#8a7a9c]"
+        className="flex size-9 items-center justify-center rounded-full text-[#5b6b85]"
       >
         <Icon name="close" size={20} />
       </button>
@@ -199,7 +199,7 @@ export function PullToRefresh() {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-[80] flex justify-center" style={{ transform: `translateY(${Math.max(0, pull - 44)}px)`, paddingTop: "env(safe-area-inset-top)" }}>
       <span
-        className="mt-2 flex size-11 items-center justify-center rounded-full bg-white text-[#ff7a1a] shadow-[0_4px_14px_rgba(43,29,78,.2)]"
+        className="mt-2 flex size-11 items-center justify-center rounded-full bg-white text-[#fd861d] shadow-[0_4px_14px_rgba(11,37,69,.2)]"
         style={{ transform: `rotate(${loading ? 0 : pull * 3}deg)`, opacity: Math.min(1, pull / 40 + (loading ? 1 : 0)) }}
       >
         <Icon name={ready ? "refresh" : "arrow_downward"} size={26} className={loading ? "animate-spin" : ""} />

@@ -13,7 +13,7 @@ import { Icon, PlayCtx } from "./ui";
 import { EducationTopics } from './education-topics';
 
 const NV = "#1F3044"; // ink Modern
-const PI = "#2b1d4e"; // ink Playful
+const PI = "#0b2545"; // ink Playful
 export const PJ = "var(--font-jakarta), system-ui, sans-serif";
 export const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 export const NUNITO = "var(--ff-nunito), system-ui, sans-serif";
@@ -184,9 +184,9 @@ export function LauncherHeader() {
           width: 48,
           height: 48,
           borderRadius: 16,
-          background: on ? "#ff7a1a" : "#fff",
+          background: on ? "#fd861d" : "#fff",
           color: on ? "#fff" : PI,
-          boxShadow: on ? "0 4px 0 #d95a00" : "0 4px 0 rgba(43,29,78,.1)",
+          boxShadow: on ? "0 4px 0 #d95a00" : "0 4px 0 rgba(11,37,69,.1)",
         }
       : {
           width: 46,
@@ -204,7 +204,7 @@ export function LauncherHeader() {
           href="/beranda"
           aria-label="Beranda"
           className="flex size-[60px] shrink-0 items-center justify-center rounded-[18px] bg-white"
-          style={{ boxShadow: play ? "0 4px 0 rgba(43,29,78,.1)" : "0 1px 2px rgba(31,48,68,.04), 0 8px 20px rgba(31,48,68,.06)" }}
+          style={{ boxShadow: play ? "0 4px 0 rgba(11,37,69,.1)" : "0 1px 2px rgba(31,48,68,.04), 0 8px 20px rgba(31,48,68,.06)" }}
         >
           <Image src="/brand/rinoya-mark.png" alt="RINOYA Academy" width={46} height={46} priority />
         </Link>
@@ -223,7 +223,7 @@ export function LauncherHeader() {
             className="mt-1"
             style={
               play
-                ? { fontFamily: NUNITO, fontSize: 15, fontWeight: 700, color: "#8a7a9c" }
+                ? { fontFamily: NUNITO, fontSize: 15, fontWeight: 700, color: "#5b6b85" }
                 : { fontSize: 14, fontWeight: 500, color: "#7A8494" }
             }
           >
@@ -236,7 +236,7 @@ export function LauncherHeader() {
         {/* Pill anggota: aktif tampil nama, lainnya inisial */}
         <div
           className="flex items-center gap-2 rounded-full bg-white p-1.5"
-          style={{ boxShadow: play ? "0 4px 0 rgba(43,29,78,.1)" : "none", border: play ? 0 : "1px solid #ece9e3" }}
+          style={{ boxShadow: play ? "0 4px 0 rgba(11,37,69,.1)" : "none", border: play ? 0 : "1px solid #ece9e3" }}
           role="group"
           aria-label="Ganti profil"
         >
@@ -333,7 +333,7 @@ export function ThemeSwitch({ theme, onChange }: { theme: Theme; onChange: (t: T
       role="radiogroup"
       aria-label="Tema tampilan"
       className="flex gap-1 rounded-full bg-white p-1"
-      style={{ boxShadow: play ? "0 4px 0 rgba(43,29,78,.1)" : "none", border: play ? 0 : "1px solid #ece9e3" }}
+      style={{ boxShadow: play ? "0 4px 0 rgba(11,37,69,.1)" : "none", border: play ? 0 : "1px solid #ece9e3" }}
     >
       {opts.map(([id, label, icon, title]) => {
         const on = theme === id;
@@ -350,8 +350,8 @@ export function ThemeSwitch({ theme, onChange }: { theme: Theme; onChange: (t: T
                 ? {
                     padding: "9px 14px",
                     font: `800 14px ${NUNITO}`,
-                    background: on ? "#ff7a1a" : "transparent",
-                    color: on ? "#fff" : "#8a7a9c",
+                    background: on ? "#fd861d" : "transparent",
+                    color: on ? "#fff" : "#5b6b85",
                     boxShadow: on ? "0 3px 0 #d95a00" : "none",
                   }
                 : { padding: "8px 14px", font: `600 13px ${PJ}`, background: on ? NV : "transparent", color: on ? "#fff" : "#4F5B6B" }
@@ -385,7 +385,7 @@ export function LauncherNav({ active }: { active: string | null }) {
           font: `800 16px ${NUNITO}`,
           background: on ? PLAY[c][1] : "#fff",
           color: on ? "#fff" : PLAY[c][2],
-          boxShadow: `0 4px 0 ${on ? PLAY[c][2] : "rgba(43,29,78,.1)"}`,
+          boxShadow: `0 4px 0 ${on ? PLAY[c][2] : "rgba(11,37,69,.1)"}`,
         }
       : {
           borderRadius: 999,
@@ -406,7 +406,7 @@ export function LauncherNav({ active }: { active: string | null }) {
                 borderRadius: 24,
                 padding: "14px 16px 14px 22px",
                 border: "3px solid #fff",
-                boxShadow: "0 6px 0 rgba(43,29,78,.1), 0 20px 40px rgba(255,120,60,.12)",
+                boxShadow: "0 6px 0 rgba(11,37,69,.1), 0 20px 40px rgba(255,120,60,.12)",
               }
             : {
                 borderRadius: 20,
@@ -482,7 +482,7 @@ function ToolCard({ t, theme, onOpen, showTag }: { t: Tool; theme: Theme; onOpen
               padding: "24px 14px 20px",
               borderRadius: 28,
               background: "#fff",
-              boxShadow: `0 6px 0 ${PLAY[t.c][0]}88, 0 14px 30px rgba(43,29,78,.08)`,
+              boxShadow: `0 6px 0 ${PLAY[t.c][0]}88, 0 14px 30px rgba(11,37,69,.08)`,
             }
           : {
               gap: 14,
@@ -536,7 +536,7 @@ function SearchResults({ open }: { open: (t: Tool) => void }) {
       ) : (
         <p
           className="py-12 text-center"
-          style={play ? { fontFamily: NUNITO, fontSize: 18, fontWeight: 700, color: "#8a7a9c" } : { fontSize: 16, color: "#7A8494" }}
+          style={play ? { fontFamily: NUNITO, fontSize: 18, fontWeight: 700, color: "#5b6b85" } : { fontSize: 16, color: "#7A8494" }}
         >
           Yah, belum ada yang cocok dengan “{q}”.
         </p>
@@ -582,7 +582,7 @@ export function LauncherHome({ open }: { open: (t: Tool) => void }) {
               className="bg-white"
               style={
                 play
-                  ? { borderRadius: 28, padding: "20px 22px 12px", boxShadow: "0 6px 0 rgba(43,29,78,.08)" }
+                  ? { borderRadius: 28, padding: "20px 22px 12px", boxShadow: "0 6px 0 rgba(11,37,69,.08)" }
                   : {
                       borderRadius: 28,
                       padding: "20px 22px 12px",
@@ -632,7 +632,7 @@ export function LauncherHome({ open }: { open: (t: Tool) => void }) {
           {allowed.length < FOLDERS.length && (
             <p
               className="text-center text-sm"
-              style={{ color: play ? "#8a7a9c" : "#9AA1AC", fontFamily: play ? NUNITO : PJ, fontWeight: play ? 700 : 500 }}
+              style={{ color: play ? "#5b6b85" : "#9AA1AC", fontFamily: play ? NUNITO : PJ, fontWeight: play ? 700 : 500 }}
             >
               {FOLDERS.length - allowed.length} menu disembunyikan oleh Admin
             </p>
@@ -837,7 +837,7 @@ export function AppModal({ toolId, onClose }: { toolId: string; onClose: () => v
       onClick={onClose}
       className="anim-fade fixed inset-0 z-[60] flex items-center justify-center p-5"
       style={{
-        background: play ? "rgba(43,29,78,.45)" : "rgba(31,48,68,.45)",
+        background: play ? "rgba(11,37,69,.45)" : "rgba(31,48,68,.45)",
         backdropFilter: "blur(6px)",
         WebkitBackdropFilter: "blur(6px)",
       }}
@@ -850,7 +850,7 @@ export function AppModal({ toolId, onClose }: { toolId: string; onClose: () => v
         className="anim-sheet mt-[60px] flex w-full max-w-[420px] flex-col items-center gap-3 bg-white text-center"
         style={
           play
-            ? { borderRadius: 36, padding: "32px 32px 30px", boxShadow: `0 10px 0 ${fc[1]}, 0 40px 80px rgba(43,29,78,.35)` }
+            ? { borderRadius: 36, padding: "32px 32px 30px", boxShadow: `0 10px 0 ${fc[1]}, 0 40px 80px rgba(11,37,69,.35)` }
             : { borderRadius: 32, padding: "32px 32px 28px", boxShadow: "0 40px 80px rgba(31,48,68,.25)" }
         }
       >
@@ -877,7 +877,7 @@ export function AppModal({ toolId, onClose }: { toolId: string; onClose: () => v
           className="text-pretty"
           style={
             play
-              ? { fontFamily: NUNITO, fontSize: 17, fontWeight: 600, color: "#6b5d80", lineHeight: 1.5 }
+              ? { fontFamily: NUNITO, fontSize: 17, fontWeight: 600, color: "#4a5a75", lineHeight: 1.5 }
               : { fontSize: 15, color: "#4F5B6B", lineHeight: 1.55 }
           }
         >
@@ -894,9 +894,9 @@ export function AppModal({ toolId, onClose }: { toolId: string; onClose: () => v
                     borderRadius: 18,
                     padding: "14px 24px",
                     font: `800 17px ${NUNITO}`,
-                    background: "#f1ecf7",
+                    background: "#fff0da",
                     color: PI,
-                    boxShadow: "0 4px 0 #d9d0e6",
+                    boxShadow: "0 4px 0 #f0e4d2",
                   }
                 : {
                     borderRadius: 14,
