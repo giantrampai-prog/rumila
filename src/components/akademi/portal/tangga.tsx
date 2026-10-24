@@ -1,7 +1,7 @@
 "use client";
 
-// Tangga jenjang bergambar: jalur mendaki dari taman (Early Years) lewat langit & laut (Primary 1–3)
-// sampai angkasa (Primary 4–6). Tiap jenjang = medali berlambang pangkatnya; teks hanya label kecil.
+// Tangga jenjang bergambar: jalur mendaki dari taman (Early Years) lewat langit & laut (Primary Stage 1–3)
+// sampai angkasa (Primary Stage 4–6). Tiap jenjang = medali berlambang pangkatnya; teks hanya label kecil.
 
 import { useMemo } from "react";
 import { LEVELS, levelIndex, type LevelId } from "@akademi/schema";

@@ -12,7 +12,7 @@ Edisi 2 · Oktober 2026. Memperbarui edisi pertama: sasaran kini mencakup Early 
 | Tagline | Every Child. Every Discovery. Every Possibility. |
 | Janji | Helping Every Child Discover Their Potential. |
 | Kategori | Ekosistem belajar digital terpadu untuk anak |
-| Sasaran | Anak 3–12 tahun, Early Years 1 (PAUD) sampai Primary 6 (SD 6), beserta wali dan pendidiknya |
+| Sasaran | Anak 3–12 tahun, Early Years 1 (PAUD) sampai Primary Stage 6 (SD 6), beserta wali dan pendidiknya |
 
 ## Definisi
 
@@ -22,7 +22,7 @@ Edisi 2 · Oktober 2026. Memperbarui edisi pertama: sasaran kini mencakup Early 
 
 **Lengkap:**
 
-RINOYA Academy adalah ekosistem pembelajaran digital terpadu yang menemani anak dari langkah pertamanya di PAUD hingga akhir SD, dalam satu perjalanan belajar yang berkesinambungan. Kurikulumnya disusun dengan acuan kerangka Cambridge Early Years dan Cambridge Primary. Isinya dibagi ke dalam sembilan jenjang, dari Early Years 1 sampai Primary 6, dan mencakup Matematika, Sains, Bahasa Inggris, Komputasi, serta karakter.
+RINOYA Academy adalah ekosistem pembelajaran digital terpadu yang menemani anak dari langkah pertamanya di PAUD hingga akhir SD, dalam satu perjalanan belajar yang berkesinambungan. Kurikulumnya disusun dengan acuan kerangka Cambridge Early Years dan Cambridge Primary. Isinya dibagi ke dalam sembilan jenjang, dari Early Years 1 sampai Primary Stage 6, dan mencakup Matematika, Sains, Bahasa Inggris, Komputasi, serta karakter.
 
 Setiap jenjang dibangun dari kompetensi yang jelas. Setiap kompetensi dihidupkan lewat petualangan interaktif: dunia 3D, permainan, dan eksperimen. Setiap aktivitas meninggalkan bukti belajar yang bisa dilihat orang tua.
 
@@ -44,12 +44,12 @@ Anak tidak berpindah-pindah aplikasi saat tumbuh. RINOYA yang ikut tumbuh bersam
 | Early Years | Early Years 1 | PAUD | 3–4 | Tunas |
 | | Early Years 2 | TK A | 4–5 | Kadet |
 | | Early Years 3 | TK B | 5–6 | Navigator |
-| Primary bawah | Primary 1 | SD 1 | 6–7 | Pilot |
-| | Primary 2 | SD 2 | 7–8 | Kapten |
-| | Primary 3 | SD 3 | 8–9 | Komandan |
-| Primary atas | Primary 4 | SD 4 | 9–10 | Laksamana |
-| | Primary 5 | SD 5 | 10–11 | Penjelajah |
-| | Primary 6 | SD 6 | 11–12 | Legenda |
+| Primary bawah | Primary Stage 1 | SD 1 | 6–7 | Pilot |
+| | Primary Stage 2 | SD 2 | 7–8 | Kapten |
+| | Primary Stage 3 | SD 3 | 8–9 | Komandan |
+| Primary atas | Primary Stage 4 | SD 4 | 9–10 | Laksamana |
+| | Primary Stage 5 | SD 5 | 10–11 | Penjelajah |
+| | Primary Stage 6 | SD 6 | 11–12 | Legenda |
 
 Sertifikat jenjang terbit saat semua kompetensi inti satu jenjang dikuasai, dan bisa diverifikasi lewat kode.
 

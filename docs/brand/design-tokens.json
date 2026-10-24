@@ -54,7 +54,7 @@
           { "name": "display-xl", "fontSize": "56px", "lineHeight": 1, "fontWeight": 800, "letterSpacing": "-0.01em", "sample": "Ayo berpetualang!", "usage": "Satu judul besar per layar: pembuka dunia, layar naik pangkat." },
           { "name": "display", "fontSize": "40px", "lineHeight": 1.05, "fontWeight": 800, "sample": "Dunia Angkasa", "usage": "Judul halaman anak." },
           { "name": "title", "fontSize": "28px", "lineHeight": 1.15, "fontWeight": 800, "sample": "Misi 3: Hitung bintang", "usage": "Judul kartu petualangan dan bagian." },
-          { "name": "subtitle", "fontSize": "22px", "lineHeight": 1.2, "fontWeight": 700, "sample": "Primary 1 · Pilot", "usage": "Subjudul, nama jenjang, angka skor anak." }
+          { "name": "subtitle", "fontSize": "22px", "lineHeight": 1.2, "fontWeight": 700, "sample": "Primary Stage 1 · Pilot", "usage": "Subjudul, nama jenjang, angka skor anak." }
         ]
       },
       {
