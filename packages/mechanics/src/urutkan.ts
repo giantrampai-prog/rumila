@@ -57,7 +57,9 @@ export function buatRondeUrutkan(p: PaketUrutkan, knobs: Knobs, seed: number): R
     [shown[i], shown[i + jarak]] = [shown[i + jarak], shown[i]];
     return { ...dasar, shown, swapped: [i, i + jarak] };
   }
-  // susun / dulu: acak sampai bukan urutan benar
+  // dulu: posisi jawaban benar diacak lempar koin (kiri/kanan sama peluangnya); urutan benar boleh tampil apa adanya
+  if (p.mode === "dulu") return { ...dasar, shown: acak(steps, r) };
+  // susun: acak sampai bukan urutan benar
   let shown = acak(steps, r);
   for (let coba = 0; coba < 32 && samaUrutan(shown.map(s => s.id), correct); coba++) shown = acak(steps, r);
   if (samaUrutan(shown.map(s => s.id), correct)) shown = [...steps.slice(1), steps[0]];
