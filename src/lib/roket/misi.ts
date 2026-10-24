@@ -218,7 +218,7 @@ export const MISI: MisiStop[] = [
 export const LIFTOFF = MISI.findIndex((s) => s.id === "lepas-landas");
 export const COUNTDOWN = MISI.findIndex((s) => s.id === "hitung-mundur");
 /** Detik (sejak awal adegan hitung mundur) saat tiap angka 10…1 mulai diucapkan — diukur dari gelombang suara rekaman. */
-export const COUNT_ONSETS = [5.83, 6.68, 7.53, 8.43, 9.23, 9.88, 10.68, 11.43, 12.13, 12.88];
+export const COUNT_ONSETS = [6.35, 7.53, 8.67, 9.81, 10.83, 11.85, 12.81, 13.79, 14.79, 15.79];
 
 /* ---------------- Jelajah ---------------- */
 
@@ -269,10 +269,10 @@ export interface MisiAudioPart {
  */
 export const MISI_AUDIO: MisiAudioPart[] = [
   {
-    // Suara "Sulafat" (SuaraKisah), 6:42, versi Rinoya. Batas adegan = jeda hening asli rekaman, diselaraskan ke batas kalimat.
-    src: "/roket/voice/misi-02.m4a",
+    // Suara "Andi" (ElevenLabs), per bab disambung jeda 0,7 detik; awal bab & penanda dari timestamp per kata (Scribe).
+    src: "/roket/voice/misi-andi.m4a",
     first: 0,
-    cues: [0, 28.74, 54.36, 78.35, 92.87, 121.47, 135.08, 148.48, 164.19, 178.01, 192.4, 213.64, 226.65, 243.69, 270.01, 285.88, 300.04, 318.32, 342.54, 363.75, 380.88],
+    cues: [0, 27.25, 50.89, 74.71, 88.82, 115.95, 133.03, 146.92, 164.69, 180.24, 196.01, 214.45, 228.16, 244.95, 271.09, 288.46, 304.03, 322.02, 346.1, 366.79, 383.85],
   },
 ];
 

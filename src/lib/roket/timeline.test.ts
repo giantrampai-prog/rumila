@@ -20,9 +20,9 @@ describe("rocket narration choreography", () => {
   });
 
   it("moves to the rocket at its spoken introduction, then the tower", () => {
-    expect(missionCueAt(0, 11.81).target).toBe("landasan");
-    expect(missionCueAt(0, 11.82).title).toBe("Kenali roket kita");
-    expect(missionCueAt(0, 17.11).target).toBe("menara");
+    expect(missionCueAt(0, 10.42).target).toBe("landasan");
+    expect(missionCueAt(0, 10.43).title).toBe("Kenali roket kita");
+    expect(missionCueAt(0, 15.46).target).toBe("menara");
     expect(missionCueAt(0, 24).target).toBe("roket");
   });
 

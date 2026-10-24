@@ -12,7 +12,7 @@ import { LoopMusic } from '@/lib/bgm';
 import { BIOTA, TUR_LAUT, depthToY, yToDepth, type LautSet } from '@/lib/laut/misi';
 import * as C from './creatures';
 import { SeaNarration, type NarrationSource } from '@/lib/laut/narration';
-import { chapterAtTime, diveAtTime, SEA_RECORDING, shotAtTime, subLightAtTime } from '@/lib/laut/timeline';
+import { chapterAtTime, DIVE_AT, diveAtTime, LOOK_UP, SEA_RECORDING, shotAtTime, subLightAtTime } from '@/lib/laut/timeline';
 import { tropicalIslands } from './islands';
 import { surfaceMaterial } from './realism';
 import { BOAT_DECK_Y, deckPose } from './grounding';
@@ -993,7 +993,7 @@ export class LautEngine {
         standing = true;
       } else pos.set(2 - sink * 1.5, -1 + (depthToY(4) + 1) * sink, 3.2 + sink);
       const seconds = recorded ? clock.seconds : p * 31;
-      if (this.playing && seconds >= 5 && this.lastNarrationSeconds < 5) {
+      if (this.playing && seconds >= DIVE_AT && this.lastNarrationSeconds < DIVE_AT) {
         this.splashT = 0; sfx.splash();
       }
     } else if (s.set === 'ringkasan') {
@@ -1090,7 +1090,7 @@ export class LautEngine {
       lookAt.copy(targetPosition);
       off.copy(targetPosition).add(new T.Vector3(distance*0.6,timedShot.elevation ?? distance*0.2,distance)).sub(pos);
     }
-    if (s.id === 'masuk-laut' && clock.seconds >= 12 && clock.seconds < 21) {
+    if (s.id === 'masuk-laut' && clock.seconds >= LOOK_UP[0] && clock.seconds < LOOK_UP[1]) {
       lookAt.copy(pos).add(new T.Vector3(0, 14, -2));
       off.set(2, 0.2, 5);
     }

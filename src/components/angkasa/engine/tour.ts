@@ -17,10 +17,12 @@ import { sharedAudio } from "@/lib/audio-unlock";
 import type { Body } from "./bodies";
 import type { EngineCtx } from "./core";
 
-/** detik hening setelah narasi satu persinggahan selesai, sebelum terbang */
-const LEAVE_QUIET = 1.6;
+/** detik setelah narasi satu persinggahan selesai, sebelum terbang (pendek: aba-aba "meluncur!" langsung disusul pesawat) */
+const LEAVE_QUIET = 0.25;
 /** detik hening setelah tiba, sebelum narasi persinggahan dimulai */
 const ARRIVE_QUIET = 1.2;
+/** batas ayunan kamera saat singgah (rad, ±29°) */
+const SWING = 0.5;
 
 const smooth = (t: number) => t * t * (3 - 2 * t);
 const easeInOut = (t: number) =>
@@ -42,6 +44,9 @@ export class TourController {
   private dwellT = 0;
   private dwellDur = 10;
   private orbitAngle = 0;
+  /** ayunan kamera saat singgah (rad, dibatasi) & sudut tiba relatif arah Matahari */
+  private swing = 0;
+  private sunOffset = 0;
   private orbitRadius = 3;
   private orbitHeight = 0.5;
   private lookFrom = new THREE.Vector3();
@@ -230,6 +235,8 @@ export class TourController {
     this.orbitRadius = Math.hypot(rel.x, rel.z);
     this.orbitHeight = rel.y;
     this.orbitAngle = Math.atan2(rel.z, rel.x);
+    this.swing = 0;
+    this.sunOffset = this.orbitAngle - Math.atan2(-center.z, -center.x);
     // Tanpa kartu teks (sinematik), objek dibingkai tepat di tengah layar.
     this.lift = this.cinematic ? 0 : radius * (wide ? 0.16 : 0.2);
     // Arah belokan: sisi mana tujuan berada relatif terhadap arah pandang sekarang.
@@ -287,7 +294,12 @@ export class TourController {
     // rad/detik; dinaikkan perlahan setelah tiba agar tidak ada sentakan dari diam → mengitari
     // tampilan anak: mengitari cukup terasa (±7°/detik) — pesawat terlihat berkeliling, tidak diam
     const speed = this.ctx.reducedMotion() ? 0 : (wide ? 0.035 : 0.09) * (this.cinematic ? 1.4 : 1) * smooth(Math.min(1, this.dwellT / 3));
-    this.orbitAngle += speed * dt;
+    if (wide || stop.id === "sun") this.orbitAngle += speed * dt;
+    else {
+      // Planet: kamera mengayun bolak-balik di sisi yang tersinari Matahari (tidak berputar ke sisi malam).
+      this.swing += speed * dt;
+      this.orbitAngle = Math.atan2(-center.z, -center.x) + this.sunOffset + SWING * Math.sin(this.swing / SWING);
+    }
     const cam = this.host.camera;
     let r = this.orbitRadius,
       h = this.orbitHeight;

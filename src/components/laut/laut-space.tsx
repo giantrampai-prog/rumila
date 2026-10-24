@@ -123,6 +123,8 @@ export function LautSpace() {
     useLaut.setState({mode:'jelajah',focus:null,playing:false,finished:false,stop:0,progress:0,depth:0,line:0,source:'teks',muted:false,view:'cinema',audioTime:0,audioLoading:false});
     let e:LautEngine;
     try{e=new LautEngine(host.current!);setEngine(e);}catch{setError(true);return;}
+    // Pratinjau development: akses dari console untuk menguji bab & kamera.
+    if(process.env.NODE_ENV==='development')Object.assign(window,{__laut:e,__lautStore:useLaut});
     return()=>e.dispose();
   },[]);
   return <div className="theme-play fixed inset-0 overflow-hidden bg-[#062f45]" style={{fontFamily:'var(--ff-nunito), system-ui, sans-serif'}}>

@@ -267,10 +267,10 @@ export interface BuahAudioPart {
 /** Narasi tur buah: SATU file suara. Kosong = belum ada rekaman (adegan memakai waktu baca, teks tampil kecil). */
 export const TUR_BUAH_AUDIO: BuahAudioPart[] = [
   {
-    // suara Sulafat, 10:29, versi Rinoya. Batas adegan = jeda hening asli rekaman (bagian 39–41 dicek manual: derau latar lebih tinggi).
-    src: "/fruits/narasi/tur-kebun-02.m4a",
+    // suara Andi (ElevenLabs), naskah baru per buah; awal adegan dari timestamp per kata (Scribe), jeda 1 detik antaradegan.
+    src: "/fruits/narasi/buah-andi.m4a",
     first: 0,
-    cues: [0, 14.32, 21.61, 34.61, 47, 58.94, 70.83, 84.8, 94.56, 103.61, 113.86, 126.65, 137.49, 145.57, 156.47, 172.61, 185.01, 198.59, 205.91, 217.2, 226.72, 241.55, 249.65, 262.62, 274.88, 286.78, 297.28, 310.48, 320.35, 333.55, 346.15, 358.36, 371.35, 382.8, 396.95, 409.87, 422.17, 434.74, 448.62, 459.24, 469.38, 483.28, 493.66, 505.34, 518.2, 528.69, 540.04, 550.65, 561.8, 575.47, 588.86, 601.9, 615.78],
+    cues: [0, 17.87, 27.2, 41.09, 55.76, 68.49, 80.36, 92.85, 103.92, 116.47, 129.58, 140.61, 150.14, 162.69, 173.5, 183.05, 195.08, 205.57, 214.72, 227.67, 237.84, 249.03, 261.9, 271.95, 281.52, 289.83, 299.28, 309.83, 319.46, 329.19, 339.84, 351.11, 361.4, 371.43, 381.16, 391.19, 400.9, 410.67, 422.82, 432.37, 441.34, 451.71, 460.16, 470.13, 479.7, 491.49, 502.24, 512.21, 521.62, 531.91, 541.2, 551.85, 563.76],
   },
 ];
 
