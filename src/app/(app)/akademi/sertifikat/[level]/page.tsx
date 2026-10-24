@@ -57,7 +57,7 @@ function Kepala({ judul, sub }: { judul: string; sub: string }) {
 function TidakAda() {
   return (
     <>
-      <Kepala judul="Sertifikat" sub="Rumila Kids Academy" />
+      <Kepala judul="Sertifikat" sub="RINOYA Academy" />
       <p className={`${KARTU} p-5 text-[14px] font-bold text-ink-3`}>Jenjang ini belum punya sertifikat.</p>
     </>
   );

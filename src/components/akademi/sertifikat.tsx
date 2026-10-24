@@ -1,6 +1,6 @@
 "use client";
 
-// Kartu Sertifikat Jenjang Rumila Kids Academy — A4 landscape ramah cetak. Gaya mengikuti sertifikat Coding Agam:
+// Kartu Sertifikat Jenjang RINOYA Academy — A4 landscape ramah cetak. Gaya mengikuti sertifikat Coding Agam:
 // kertas gading, bingkai navy + garis emas, hiasan sudut, segel emas. Dirender HTML/CSS (bukan SVG) supaya daftar
 // unit yang dikuasai bisa mengalir. Dipakai di halaman murid (/akademi/sertifikat/<level>) dan halaman verifikasi
 // publik (/sertifikat/<kode>) — di halaman publik hanya nama depan yang ditampilkan (sudah disaring server).
@@ -100,7 +100,7 @@ function Segel({ pangkat }: { pangkat: string }) {
       <circle cx="70" cy="70" r="37" fill="url(#sj-gold2)" stroke="#8a5d12" strokeWidth="1.5" />
       <text fontFamily={SANS} fontSize="9.5" fontWeight="700" fill="#6b470c">
         <textPath href="#sj-ring" textLength="292" lengthAdjust="spacing">
-          RUMILA KIDS ACADEMY ★ SERTIFIKAT JENJANG ★
+          RINOYA ACADEMY ★ SERTIFIKAT JENJANG ★
         </textPath>
       </text>
       <text x="70" y="66" textAnchor="middle" fontFamily={SANS} fontSize="22" fill="#5a3b08">
@@ -189,7 +189,7 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, pending
       <div className="absolute flex flex-col items-center text-center" style={{ inset: "9.5% 11% 9% 11%" }}>
         <div className="flex items-center gap-[1.2cqw]">
           <Image src="/brand/rinoya-mark.png" alt="" width={64} height={64} priority style={{ width: "clamp(28px, 5cqw, 64px)", height: "auto" }} />
-          <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.45cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RUMILA KIDS ACADEMY</span>
+          <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.45cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RINOYA ACADEMY</span>
         </div>
 
         <h1 className="leading-none" style={{ marginTop: "1.6cqw", fontFamily: DISPLAY, fontSize: "clamp(28px, 6.2cqw, 76px)", fontWeight: 700, color: NAVY, letterSpacing: "0.18em" }}>

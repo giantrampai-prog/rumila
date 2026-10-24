@@ -340,7 +340,7 @@ function lobbyCanvas(name: string, stone: string, glass: string, seed: number) {
 function billboardCanvas(i: number) {
   const ads: [string, string, string, string][] = [
     ['Ayo Minum Air Putih!', '💧 8 gelas sehari', '#1f6fd1', '#ffffff'],
-    ['Rinoya Academy', 'Belajar itu seru!', '#f2a21a', '#1f2f5a'],
+    ['RINOYA Academy', 'Belajar itu seru!', '#f2a21a', '#1f2f5a'],
     ['Buang Sampah', 'pada tempatnya ♻️', '#2e9d4a', '#ffffff'],
     ['Makan Buah Tiap Hari', '🍌🍎🍊 Sehat & kuat', '#e8504a', '#ffffff'],
     ['Hati-hati di Jalan', 'Pakai helm & sabuk', '#1f2f5a', '#ffe08a'],

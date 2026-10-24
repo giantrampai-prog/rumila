@@ -4,8 +4,8 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "Rinoya Academy — Belajar & bermain",
-    short_name: "Rinoya",
+    name: "RINOYA Academy — Belajar & bermain",
+    short_name: "RINOYA",
     description: "Jelajah angkasa, tubuh manusia, dan roket 3D untuk anak.",
     start_url: "/beranda",
     scope: "/",

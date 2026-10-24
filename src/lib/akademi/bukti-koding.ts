@@ -1,4 +1,4 @@
-// Bukti kompetensi dari game Coding Agam (Langkah, Ulangi, Kalau…) ke Rumila Kids Academy.
+// Bukti kompetensi dari game Coding Agam (Langkah, Ulangi, Kalau…) ke RINOYA Academy.
 // - kompetensiLevel(): pemetaan posisi level → id kompetensi di content/kurikulum/KODE-*.json.
 // - catatMenangKoding()/catatGagalKoding(): satu event "attempt" tiap kali tombol Jalankan berakhir (menang / gagal).
 // - imporProgresKoding(): sekali per anak, bintang lama di localStorage (`rumila-koding-<id>`, `rumila-koding-ulangi-<id>`,

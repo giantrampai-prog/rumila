@@ -138,7 +138,7 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
       name: "Academy",
       c: "red",
       icon: "school",
-      desc: "Matematika & Coding bersama Agam: PAUD, TK A, TK B. Kurikulum Cambridge.",
+      desc: "Matematika & Coding bersama Agam: PAUD, TK A, TK B. Acuan: Cambridge Early Years & Primary.",
       pal: ["orange", "red", "teal", "green", "blue", "purple"],
       items: [], // Ordered categories and durable activity IDs live in education.ts.
     },
