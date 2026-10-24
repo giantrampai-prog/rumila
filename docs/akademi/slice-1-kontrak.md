@@ -113,3 +113,38 @@ interface PresenterProps<R, J> {
 Runner (`ActivityRunner`): muat paket by id → knobs default (naik 1 step tiap 2 ronde benar beruntun, turun 1 step setelah 2 salah) → seed = hash(learnerId, paketId, index) → `buatRonde` → presenter → `nilai` → `catatEvent(attempt)` → ulang `paket.rounds` kali → layar selesai (stiker, `activity_end`). Instruksi dibacakan via `speechSynthesis` id-ID (`ucapkan()` di `src/lib/akademi/suara.ts`), diputar ulang saat tombol speaker ditekan.
 
 Rute: `/akademi` (Hari ini + Pelajaran), `/akademi/pelajaran/[track]`, `/akademi/main/[paketId]`, `/akademi/rapor` (wali). Izin: folder `edukasi`.
+
+## 5. Tambahan 24 Okt 2026: mekanik `pola` dan `simulasi`
+
+Skema di `packages/schema/src/paket.ts` (`PaketPola`, `PaketSimulasi`), tipe ronde/jawaban di `packages/mechanics/src/types.ts` (`RondePola`, `JawabanPola`, `RondeSimulasi`, `JawabanSimulasi`).
+
+```ts
+// pola.ts
+export function buatRondePola(p: PaketPola, knobs: Knobs, seed: number): RondePola;
+//   knob: shown (ulangan penuh yang ditampilkan, default 3), blanks (slot kosong 1–3), distractor (0/1 pengecoh di palette), slots (cipta: 4–9)
+//   lanjut: correct = unit diulang `shown` kali + blanks slot; shown = correct dengan `blanks` terakhir = null; palette = unit + pengecoh (acak)
+//   perbaiki: correct 8 unsur; wrongIndex (knob posisi: tengah dulu) diganti benda lain; shown lengkap; palette = semua
+//   cipta: shown = null × slots; pilih = unitLen; palette = items (≥4)
+export function nilaiPola(r: RondePola, j: JawabanPola): Hasil;
+//   lanjut: j == correct (detail { salah: indeks[] }) · perbaiki: j == correct && tepat satu posisi berbeda dari shown (detail { diubah })
+//   cipta: panjang == shown.length, memakai tepat unitLen benda berbeda, dan j[i] == j[i % unitLen] untuk semua i (periodik), minimal 2 ulangan penuh
+
+// simulasi.ts
+export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number): RondeSimulasi;
+//   jam-baca: target = jam acak 1..knob.hourMax (default 6); options = 3–4 jam termasuk target
+//   jam-putar: ambil item role kegiatan acak → target = value, correctId = id
+//   timbangan: dua item role benda dengan value (berat) berbeda; correctId = yang lebih berat; knob tipuan=1 → pilih pasangan besar-ringan bila ada (scale besar, value kecil)
+//   jengkal: item benda dengan value panjang ≤ knob.maxSpans; target = value; snap = knob.snap==1
+//   kubus: target = value; offset = knob.offset (0/1)
+//   turus: urutan = knob.count hewan acak dari role hewan (knob.kinds jenis); flashMs = knob.gapMs
+//   taksir: target = acak 8..knob.max (≤20); flashMs = knob.flashMs; options = [0, 20]
+//   tombol: peta acak tombol→alat (knob.pairs 2–3); urutan = tombol yang diuji (semua, diacak)
+//   alat: satu hewan role hewan (value 1 = panjang, 2 = berat); correctId = alat ("penggaris-kubus" | "timbangan" dari items role alat)
+//   bagi: target = 2/4/6/8 (knob.max) benda
+export function nilaiSimulasi(r: RondeSimulasi, j: JawabanSimulasi): Hasil;
+//   jam-baca/jam-putar/kubus: angka == target · taksir: |angka − target| ≤ 3 (detail selisih) · timbangan/alat: pilih == correctId
+//   jengkal: angka == target dan posisi terurut, |posisi[i+1] − posisi[i] − 1| ≤ 0.2 (tanpa celah/tumpang tindih) dan posisi.length == target; detail { celah, tumpang }
+//   turus: turus[id] == jumlah id di urutan untuk tiap jenis · tombol: tebakan[t] == peta[t] untuk semua t di urutan · bagi: kiri == kanan && kiri + kanan == target
+```
+
+`index.ts`: tambah `{ mechanic: "pola"; ronde: RondePola }` dan `{ mechanic: "simulasi"; ronde: RondeSimulasi }` ke `Ronde`, jawaban ke `Jawaban`, cabang di `buatRonde`/`nilai`. Presenter: `src/components/akademi/pola.tsx` (`PresenterPola`) dan `simulasi.tsx` (`PresenterSimulasi`), dipasang runner.

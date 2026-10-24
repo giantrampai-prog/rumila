@@ -6,7 +6,8 @@
 // Sumber kalimat:
 //   - content/paket/**/*.json dan content/golden/paket-*.json (ContentPack dari @akademi/schema):
 //     locale.id[instructionKey], pilah mode pilih → pilihan[].promptKey, urutkan → sequences[].titleKey,
-//     dagang → nama tiap barang (goods[].labelKey) sebagai potongan frasa dinamis.
+//     dagang → nama tiap barang (goods[].labelKey) sebagai potongan frasa dinamis,
+//     pola/simulasi → nama tiap benda/hewan/alat (items[].labelKey).
 //   - Kalimat tetap runner (pujian, akhir aktivitas).
 //   - Potongan frasa dagang: angka "satu".."dua puluh" (angka-<n>.mp3), "Aku mau", "Harganya", "ribu", "koin", "dan".
 //
@@ -119,6 +120,7 @@ for (const f of berkasPaket) {
   if (p.mechanic === "pilah" && p.mode === "pilih") for (const r of p.pilihan) ambil(r.promptKey, "promptKey");
   if (p.mechanic === "urutkan") for (const s of p.sequences) ambil(s.titleKey, "titleKey");
   if (p.mechanic === "dagang") for (const g of p.goods) ambil(g.labelKey, "goods.labelKey");
+  if (p.mechanic === "pola" || p.mechanic === "simulasi") for (const i of p.items) ambil(i.labelKey, "items.labelKey");
 }
 
 for (const k of KALIMAT_RUNNER) tambah(k, "runner");

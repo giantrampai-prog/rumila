@@ -1,0 +1,90 @@
+{
+  "id": "ubin-tiga-bentuk",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.TKA.POLA-ABC.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ubin Tiga Bentuk",
+      "instruksi": "Lihat barisan ubin, lalu pasang ubin yang bentuknya tepat di lantai yang kosong.",
+      "ubin-lingkaran": "ubin lingkaran",
+      "ubin-kotak": "ubin kotak",
+      "ubin-segitiga": "ubin segitiga",
+      "ubin-bintang": "ubin bintang"
+    },
+    "en": {
+      "judul": "Three-Shape Tiles",
+      "instruksi": "Look at the row of tiles, then fit the right shapes into the empty floor spots.",
+      "ubin-lingkaran": "circle tile",
+      "ubin-kotak": "square tile",
+      "ubin-segitiga": "triangle tile",
+      "ubin-bintang": "star tile"
+    }
+  },
+  "knobs": {
+    "shown": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah ulangan penuh ABC yang ditampilkan"
+    },
+    "blanks": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah slot kosong di ujung pola"
+    },
+    "distractor": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "pengecoh bentuk keempat selalu ada di palet; semua ubin satu warna supaya yang dibaca bentuknya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "lanjut",
+  "unitLen": 3,
+  "items": [
+    {
+      "labelKey": "ubin-lingkaran",
+      "id": "ubin-lingkaran",
+      "shape": "circle",
+      "color": "#9e9e9e"
+    },
+    {
+      "labelKey": "ubin-kotak",
+      "id": "ubin-kotak",
+      "shape": "square",
+      "color": "#9e9e9e"
+    },
+    {
+      "labelKey": "ubin-segitiga",
+      "id": "ubin-segitiga",
+      "shape": "triangle",
+      "color": "#9e9e9e"
+    },
+    {
+      "labelKey": "ubin-bintang",
+      "id": "ubin-bintang",
+      "shape": "star",
+      "color": "#9e9e9e"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "ubin-lingkaran": "C4",
+    "ubin-kotak": "E4",
+    "ubin-segitiga": "G4",
+    "ubin-bintang": "A4"
+  }
+}

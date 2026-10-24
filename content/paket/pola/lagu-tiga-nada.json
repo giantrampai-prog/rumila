@@ -1,0 +1,80 @@
+{
+  "id": "lagu-tiga-nada",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.TKA.POLA-ABC.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lagu Tiga Nada",
+      "instruksi": "Pilih tiga alat musik, lalu susun berulang sampai barisnya penuh dan dengarkan lagumu.",
+      "drum": "drum",
+      "lonceng": "lonceng",
+      "terompet": "terompet",
+      "gitar": "gitar",
+      "marakas": "marakas"
+    },
+    "en": {
+      "judul": "Three-Note Song",
+      "instruksi": "Pick three instruments, then repeat them in order until the row is full and hear your song.",
+      "drum": "drum",
+      "lonceng": "bell",
+      "terompet": "trumpet",
+      "gitar": "guitar",
+      "marakas": "maracas"
+    }
+  },
+  "knobs": {
+    "slots": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah slot yang harus diisi; benar bila unit tiga berulang penuh minimal 2 kali"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "pesta",
+  "mode": "cipta",
+  "unitLen": 3,
+  "items": [
+    {
+      "labelKey": "drum",
+      "id": "drum",
+      "emoji": "🥁"
+    },
+    {
+      "labelKey": "lonceng",
+      "id": "lonceng",
+      "emoji": "🔔"
+    },
+    {
+      "labelKey": "terompet",
+      "id": "terompet",
+      "emoji": "🎺"
+    },
+    {
+      "labelKey": "gitar",
+      "id": "gitar",
+      "emoji": "🎸"
+    },
+    {
+      "labelKey": "marakas",
+      "id": "marakas",
+      "emoji": "🪇"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "drum": "C4",
+    "lonceng": "E4",
+    "terompet": "G4",
+    "gitar": "A4",
+    "marakas": "D4"
+  }
+}

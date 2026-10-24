@@ -1,0 +1,93 @@
+{
+  "id": "jengkal-sayur-kebun",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.UKUR-NONSTANDAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ukur dengan Jengkal",
+      "instruksi": "Tempelkan jengkal tanganmu dari ujung ke ujung, lalu sebutkan berapa jengkal panjangnya.",
+      "wortel": "wortel",
+      "timun": "timun",
+      "jagung": "jagung",
+      "terong": "terong",
+      "roti": "roti panjang"
+    },
+    "en": {
+      "judul": "Measure in Hand Spans",
+      "instruksi": "Lay your hand spans from one end to the other, then say how many spans long it is.",
+      "wortel": "carrot",
+      "timun": "cucumber",
+      "jagung": "corn",
+      "terong": "eggplant",
+      "roti": "long bread"
+    }
+  },
+  "knobs": {
+    "snap": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = jengkal menempel otomatis ke ujung jengkal sebelumnya"
+    },
+    "maxSpans": {
+      "min": 2,
+      "max": 5,
+      "default": 2,
+      "step": 1,
+      "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "mode": "jengkal",
+  "items": [
+    {
+      "labelKey": "wortel",
+      "id": "wortel",
+      "role": "benda",
+      "emoji": "🥕",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "labelKey": "timun",
+      "id": "timun",
+      "role": "benda",
+      "emoji": "🥒",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "labelKey": "jagung",
+      "id": "jagung",
+      "role": "benda",
+      "emoji": "🌽",
+      "value": 4,
+      "width": 2
+    },
+    {
+      "labelKey": "terong",
+      "id": "terong",
+      "role": "benda",
+      "emoji": "🍆",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "labelKey": "roti",
+      "id": "roti",
+      "role": "benda",
+      "emoji": "🥖",
+      "value": 5,
+      "width": 2.5
+    }
+  ]
+}

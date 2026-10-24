@@ -20,6 +20,8 @@ import { LayarAktivitas, UmpanBalik } from "./dunia";
 import { BALOO, INK } from "./jenis";
 import { PresenterNavigasi } from "./navigasi";
 import { PresenterPilah } from "./pilah";
+import { PresenterPola } from "./pola";
+import { PresenterSimulasi } from "./simulasi";
 import { PresenterUrutkan } from "./urutkan";
 import "./akademi.css";
 
@@ -154,6 +156,8 @@ function Runner({ paket }: { paket: ContentPack }) {
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "dagang" && ronde.mechanic === "dagang" && <PresenterDagang {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "navigasi" && ronde.mechanic === "navigasi" && <PresenterNavigasi {...props} paket={paket} ronde={ronde.ronde} />}
+        {paket.mechanic === "pola" && ronde.mechanic === "pola" && <PresenterPola {...props} paket={paket} ronde={ronde.ronde} />}
+        {paket.mechanic === "simulasi" && ronde.mechanic === "simulasi" && <PresenterSimulasi {...props} paket={paket} ronde={ronde.ronde} />}
       </div>
       {hasil && <UmpanBalik benar={hasil.benar} />}
     </LayarAktivitas>

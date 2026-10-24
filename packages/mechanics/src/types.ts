@@ -2,7 +2,7 @@
 // Alur satu ronde: buatRonde(paket, knobs, seed) → presenter menampilkan → anak menjawab → nilai(ronde, jawaban) → Hasil.
 // Presenter tidak boleh menilai sendiri; semua kebenaran dan bukti datang dari fungsi nilai*.
 
-import type { NavCommand, PaketDagang, PaketNavigasi, PaketPilah, PaketUrutkan } from "@akademi/schema";
+import type { NavCommand, PaketDagang, PaketNavigasi, PaketPilah, PaketPola, PaketSimulasi, PaketUrutkan } from "@akademi/schema";
 
 /** Nilai knob aktif (kunci = nama knob di paket). */
 export type Knobs = Record<string, number>;
@@ -142,3 +142,52 @@ export interface JawabanNavigasi {
   /** posisi bendera yang dipilih anak (dekomposisi) + dua bagian program */
   bendera?: { x: number; y: number; bagian: [NavBlock[], NavBlock[]] };
 }
+
+/* ---------------- pola ---------------- */
+
+export interface RondePola {
+  mode: PaketPola["mode"];
+  unitLen: number;
+  /** benda yang bisa dipilih untuk mengisi (sudah termasuk pengecoh, urutan acak) */
+  palette: PaketPola["items"];
+  /** urutan lengkap yang benar (id benda); untuk cipta kosong */
+  correct: string[];
+  /** yang ditampilkan: null = slot kosong (lanjut); perbaiki = satu unsur sudah diganti pengecoh; cipta = semua null */
+  shown: (string | null)[];
+  /** indeks unsur yang salah (perbaiki) */
+  wrongIndex?: number;
+  /** jumlah benda berbeda yang harus dipilih (cipta) */
+  pilih?: number;
+}
+/** urutan akhir lengkap (id benda per slot) */
+export type JawabanPola = string[];
+
+/* ---------------- simulasi ---------------- */
+
+export interface RondeSimulasi {
+  mode: PaketSimulasi["mode"];
+  /** benda/hewan/tombol/alat yang terlibat di ronde ini */
+  items: PaketSimulasi["items"];
+  /** jam-baca: jam yang ditampilkan · jam-putar: jam target · jengkal/kubus: panjang · taksir: jumlah · bagi: jumlah benda */
+  target: number;
+  /** jam-baca: pilihan kartu jam · taksir: rentang garis [0,20] dipakai presenter */
+  options: number[];
+  /** jam-putar: kunci kegiatan · timbangan: id benda yang lebih berat · alat: id alat yang benar */
+  correctId?: string;
+  /** turus: urutan hewan yang lewat (id) · tombol: urutan tombol yang diuji di putaran 2 */
+  urutan: string[];
+  /** tombol: peta tombol → alat (rahasia, dipakai presenter untuk menyalakan alat) */
+  peta: Record<string, string>;
+  /** jengkal: snap otomatis? · kubus: benda dimulai di kubus ke-`offset` (0 = pas) */
+  snap: boolean;
+  offset: number;
+  /** lama tampil (taksir) ms; jeda antar hewan (turus) ms */
+  flashMs: number;
+}
+export type JawabanSimulasi =
+  | { angka: number }                                   // jam-baca, jam-putar, kubus, taksir
+  | { pilih: string }                                   // timbangan, alat
+  | { posisi: number[]; angka: number }                 // jengkal: posisi awal tiap jengkal (satuan jengkal) + jumlah yang disebut
+  | { turus: Record<string, number> }                   // turus
+  | { tebakan: Record<string, string> }                 // tombol: tombol → alat yang ditunjuk sebelum ditekan
+  | { kiri: number; kanan: number };                    // bagi

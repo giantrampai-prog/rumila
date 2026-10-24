@@ -1,0 +1,90 @@
+{
+  "id": "bendera-tiga-warna",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.TKA.POLA-ABC.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bendera Tiga Warna",
+      "instruksi": "Lihat barisan bendera, lalu gantung bendera yang tepat di tali yang kosong.",
+      "bendera-merah": "bendera merah",
+      "bendera-biru": "bendera biru",
+      "bendera-kuning": "bendera kuning",
+      "bendera-hijau": "bendera hijau"
+    },
+    "en": {
+      "judul": "Three-Colour Flags",
+      "instruksi": "Look at the row of flags, then hang the right flags on the empty string.",
+      "bendera-merah": "red flag",
+      "bendera-biru": "blue flag",
+      "bendera-kuning": "yellow flag",
+      "bendera-hijau": "green flag"
+    }
+  },
+  "knobs": {
+    "shown": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah ulangan penuh ABC yang ditampilkan"
+    },
+    "blanks": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah slot kosong di ujung pola"
+    },
+    "distractor": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "pengecoh warna keempat selalu ada di palet supaya anak tidak melanjutkan AB"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "pesta",
+  "mode": "lanjut",
+  "unitLen": 3,
+  "items": [
+    {
+      "labelKey": "bendera-merah",
+      "id": "bendera-merah",
+      "shape": "triangle",
+      "color": "#e53935"
+    },
+    {
+      "labelKey": "bendera-biru",
+      "id": "bendera-biru",
+      "shape": "triangle",
+      "color": "#1e88e5"
+    },
+    {
+      "labelKey": "bendera-kuning",
+      "id": "bendera-kuning",
+      "shape": "triangle",
+      "color": "#fdd835"
+    },
+    {
+      "labelKey": "bendera-hijau",
+      "id": "bendera-hijau",
+      "shape": "triangle",
+      "color": "#43a047"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "bendera-merah": "C4",
+    "bendera-biru": "E4",
+    "bendera-kuning": "G4",
+    "bendera-hijau": "A4"
+  }
+}

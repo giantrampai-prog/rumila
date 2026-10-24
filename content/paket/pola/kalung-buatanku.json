@@ -1,0 +1,72 @@
+{
+  "id": "kalung-buatanku",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.PAUD.POLA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kalung Buatanku",
+      "instruksi": "Pilih dua benda kesukaanmu, lalu susun bergantian sampai kalungnya penuh.",
+      "kerang": "kerang",
+      "bunga": "bunga",
+      "bintang": "bintang",
+      "permata": "permata"
+    },
+    "en": {
+      "judul": "My Own Necklace",
+      "instruksi": "Pick two things you like, then place them one after the other until the necklace is full.",
+      "kerang": "shell",
+      "bunga": "flower",
+      "bintang": "star",
+      "permata": "gem"
+    }
+  },
+  "knobs": {
+    "slots": {
+      "min": 4,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah slot kalung yang harus diisi; benar bila ABAB… atau BABA… penuh"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "pantai",
+  "mode": "cipta",
+  "unitLen": 2,
+  "items": [
+    {
+      "labelKey": "kerang",
+      "id": "kerang",
+      "emoji": "🐚"
+    },
+    {
+      "labelKey": "bunga",
+      "id": "bunga",
+      "emoji": "🌸"
+    },
+    {
+      "labelKey": "bintang",
+      "id": "bintang",
+      "emoji": "⭐"
+    },
+    {
+      "labelKey": "permata",
+      "id": "permata",
+      "emoji": "💎"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "kerang": "C4",
+    "bunga": "E4",
+    "bintang": "G4",
+    "permata": "A4"
+  }
+}

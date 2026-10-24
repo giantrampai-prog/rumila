@@ -1,0 +1,82 @@
+{
+  "id": "turus-hewan-lewat-gerbang",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Catat Hewan Lewat",
+      "instruksi": "Tiap ada hewan lewat gerbang, sentuh baris hewan itu supaya satu turus tercatat.",
+      "kucing": "kucing",
+      "bebek": "bebek",
+      "kambing": "kambing",
+      "sapi": "sapi"
+    },
+    "en": {
+      "judul": "Tally the Animals",
+      "instruksi": "Each time an animal passes the gate, touch that animal's row so one tally mark is recorded.",
+      "kucing": "cat",
+      "bebek": "duck",
+      "kambing": "goat",
+      "sapi": "cow"
+    }
+  },
+  "knobs": {
+    "count": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan yang lewat dalam satu putaran"
+    },
+    "kinds": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah jenis hewan (baris turus) yang dipakai"
+    },
+    "gapMs": {
+      "min": 1200,
+      "max": 2000,
+      "default": 2000,
+      "step": 100,
+      "keterangan": "jeda antar hewan lewat (ms); makin pendek makin menuntut perhatian"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "peternakan",
+  "mode": "turus",
+  "items": [
+    {
+      "labelKey": "kucing",
+      "id": "kucing",
+      "role": "hewan",
+      "emoji": "🐱"
+    },
+    {
+      "labelKey": "bebek",
+      "id": "bebek",
+      "role": "hewan",
+      "emoji": "🦆"
+    },
+    {
+      "labelKey": "kambing",
+      "id": "kambing",
+      "role": "hewan",
+      "emoji": "🐐"
+    },
+    {
+      "labelKey": "sapi",
+      "id": "sapi",
+      "role": "hewan",
+      "emoji": "🐄"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "jam-dinding-dapur",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.JAM-BULAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jam di Dapur",
+      "instruksi": "Robot bertanya pukul berapa, lihat jam di dapur lalu sentuh kartu jam yang benar.",
+      "jam-dinding": "jam dinding"
+    },
+    "en": {
+      "judul": "Kitchen Clock",
+      "instruksi": "The robot asks what time it is; look at the kitchen clock, then touch the right time card.",
+      "jam-dinding": "wall clock"
+    }
+  },
+  "knobs": {
+    "hourMax": {
+      "min": 6,
+      "max": 12,
+      "default": 6,
+      "step": 1,
+      "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+    },
+    "bantuanWarna": {
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = jarum pendek diberi warna beda sebagai bantuan; 0 = kedua jarum sewarna"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "dapur",
+  "mode": "jam-baca",
+  "items": [
+    {
+      "labelKey": "jam-dinding",
+      "id": "jam-dinding",
+      "role": "benda",
+      "emoji": "🕒"
+    }
+  ]
+}
