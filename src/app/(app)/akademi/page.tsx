@@ -1,38 +1,37 @@
 "use client";
 
-// Portal murid: tab Hari ini (misi adaptif), Pelajaran (peta jenjang) & Koleksi (stiker, lencana, pangkat). Kerangka + header anak dari shell.
+// Portal murid: satu Peta Petualangan berjenjang (jenjang → pelajaran → unit → misi), plus layar Hadiah
+// (stiker, lencana, pangkat). Rapor untuk wali ditautkan dari peta. Kerangka + header anak dari shell.
 
 import { useEffect, useState } from "react";
 import type { LevelId } from "@akademi/schema";
-import { HariIni } from "@/components/akademi/portal/hari-ini";
+import { BALOO } from "@/components/launcher";
+import { Icon } from "@/components/ui";
 import { Koleksi } from "@/components/akademi/portal/koleksi";
-import { Dunia } from "@/components/akademi/portal/dunia";
-import { PetaPelajaran } from "@/components/akademi/portal/pelajaran";
-import { TabBesar } from "@/components/akademi/portal/bersama";
-import { levelAnak } from "@/lib/akademi/konten";
+import { PetaPetualangan } from "@/components/akademi/portal/peta";
+import { levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { useMe } from "@/lib/store";
-
-type Tab = "hari-ini" | "pelajaran" | "dunia" | "koleksi";
 
 export default function AkademiPage() {
   const me = useMe();
-  const [tab, setTab] = useState<Tab>("hari-ini");
+  const versi = useProfilAkademiVersi();
+  const [hadiah, setHadiah] = useState(false);
   const [level, setLevel] = useState<LevelId>("PAUD");
-  useEffect(() => setLevel(levelAnak(me.id)), [me.id]);
+  useEffect(() => setLevel(levelAnak(me.id)), [me.id, versi]);
 
-  return (
-    <>
-      <TabBesar<Tab>
-        value={tab}
-        onChange={setTab}
-        options={[
-          ["hari-ini", "Misi", "today"],
-          ["pelajaran", "Pelajaran", "map"],
-          ["dunia", "Dunia", "public"],
-          ["koleksi", "Koleksi", "emoji_events"],
-        ]}
-      />
-      {tab === "hari-ini" ? <HariIni me={me} level={level} /> : tab === "dunia" ? <Dunia me={me} /> : tab === "koleksi" ? <Koleksi me={me} level={level} /> : <PetaPelajaran me={me} level={level} />}
-    </>
-  );
+  if (hadiah)
+    return (
+      <>
+        <button
+          onClick={() => setHadiah(false)}
+          className="flex h-12 items-center gap-1.5 self-start rounded-full bg-white pr-4 pl-3 text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.1)] transition-transform active:scale-95"
+          style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800 }}
+        >
+          <Icon name="map" size={24} /> Kembali ke peta
+        </button>
+        <Koleksi me={me} level={level} onKeMisi={() => setHadiah(false)} />
+      </>
+    );
+
+  return <PetaPetualangan me={me} level={level} onHadiah={() => setHadiah(true)} />;
 }
