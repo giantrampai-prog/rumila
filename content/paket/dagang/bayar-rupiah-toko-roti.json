@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Bayar di Toko Roti",
       "instruksi": "Lihat harga rotinya, lalu bayar pas dengan gabungan uang seribu, dua ribu, dan lima ribu.",
       "donat": "donat",
       "roti": "roti tawar",
@@ -17,6 +18,7 @@
       "tart": "kue tart"
     },
     "en": {
+      "judul": "Paying at the Bakery",
       "instruksi": "Read the bread price, then pay exactly using thousand, two-thousand and five-thousand money.",
       "donat": "doughnut",
       "roti": "loaf",

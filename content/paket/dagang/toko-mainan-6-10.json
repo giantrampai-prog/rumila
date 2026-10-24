@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Toko Mainan",
       "instruksi": "Pembeli toko mainan menyebut jumlahnya: ambil mainan tepat sebanyak itu.",
       "bola": "bola",
       "boneka": "boneka beruang",
@@ -16,6 +17,7 @@
       "balon": "balon"
     },
     "en": {
+      "judul": "Toy Shop",
       "instruksi": "The toy-shop customer says a number: take exactly that many toys.",
       "bola": "balls",
       "boneka": "teddy bears",

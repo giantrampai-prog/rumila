@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kalau Ada Batu",
       "instruksi": "Satu program harus berhasil di tiga jalur yang batunya pindah-pindah: pakai blok 'kalau batu lompat, kalau tidak maju'."
     },
     "en": {
+      "judul": "If There's a Rock",
       "instruksi": "One program must work on three paths where the rock moves: use the 'if rock jump, else forward' block."
     }
   },

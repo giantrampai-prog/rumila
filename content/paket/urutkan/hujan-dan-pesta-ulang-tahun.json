@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Hujan dan Pesta",
       "instruksi": "Susun gambar supaya ceritanya urut dari awal sampai akhir.",
       "hujan": "Hujan lalu pelangi",
       "pesta": "Pesta ulang tahun",
@@ -23,6 +24,7 @@
       "makan": "makan kue"
     },
     "en": {
+      "judul": "Rain and the Party",
       "instruksi": "Put the pictures in order from the beginning to the end of the story.",
       "hujan": "Rain then rainbow",
       "pesta": "The robot's birthday party",

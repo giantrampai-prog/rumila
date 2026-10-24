@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Ular Pendek ke Panjang",
       "instruksi": "Susun ular dari yang paling pendek ke yang paling panjang.",
       "ular": "Ular: pendek ke panjang",
       "cacing": "Cacing: pendek ke panjang",
@@ -18,6 +19,7 @@
       "terpanjang": "paling panjang"
     },
     "en": {
+      "judul": "Snakes Short to Long",
       "instruksi": "Line up the snakes from the shortest to the longest.",
       "ular": "Snakes: short to long",
       "cacing": "Worms: short to long",

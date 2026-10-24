@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Lanjut Hitung Sampai 10",
       "instruksi": "Robot berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
       "n3": "3",
       "n4": "4",
@@ -24,6 +25,7 @@
       "dari7": "Lanjutkan dari 7"
     },
     "en": {
+      "judul": "Keep Counting to 10",
       "instruksi": "Robot is standing on this number: lay out the next number cards, don't start from one.",
       "n3": "3",
       "n4": "4",

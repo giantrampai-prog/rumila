@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Enam Langkah Membuat Kue",
       "instruksi": "Susun enam langkah membuat kue: dua langkah siapkan, dua campur, dua panggang.",
       "kue": "Membuat kue: siapkan, campur, panggang",
       "roti": "Membuat roti: siapkan, campur, panggang",
@@ -24,6 +25,7 @@
       "roti2": "roti matang"
     },
     "en": {
+      "judul": "Six Baking Steps",
       "instruksi": "Order the six cake steps: two to get ready, two to mix, two to bake.",
       "kue": "Baking: get ready, mix, bake",
       "roti": "Bread: get ready, mix, bake",

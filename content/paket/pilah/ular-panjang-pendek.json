@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Ular Berjemur",
       "instruksi": "Dua ular berjemur sejajar: sentuh yang lebih panjang atau lebih pendek sesuai permintaan.",
       "pilihan": "pilihan",
       "ular": "ular",
@@ -20,6 +21,7 @@
       "tPendek": "Mana yang lebih pendek?"
     },
     "en": {
+      "judul": "Sunbathing Snakes",
       "instruksi": "Two snakes are sunbathing side by side: touch the longer or shorter one as asked.",
       "pilihan": "choices",
       "ular": "snake",

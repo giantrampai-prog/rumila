@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Warung Sayur",
       "instruksi": "Pembeli datang ke warung sayur: dengarkan, lalu ambil sayur sebanyak yang diminta.",
       "wortel": "wortel",
       "jagung": "jagung",
@@ -16,6 +17,7 @@
       "timun": "timun"
     },
     "en": {
+      "judul": "Vegetable Stall",
       "instruksi": "A customer comes to the veggie stall: listen, then take as many as they ask for.",
       "wortel": "carrots",
       "jagung": "corn",

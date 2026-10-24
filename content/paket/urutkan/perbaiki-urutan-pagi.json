@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Urutan Pagi Tertukar",
       "instruksi": "Robot salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
       "pagi": "Pagi hari",
       "mandi": "Robot mandi",
@@ -22,6 +23,7 @@
       "bilas": "bilas sampai bersih"
     },
     "en": {
+      "judul": "Mixed-Up Morning Order",
       "instruksi": "Robot put one picture in the wrong place: swap two pictures to fix the order.",
       "pagi": "The morning",
       "mandi": "The robot's bath",

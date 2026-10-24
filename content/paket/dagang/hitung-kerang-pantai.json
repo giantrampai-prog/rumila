@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kerang di Pantai",
       "instruksi": "Sentuh kerang satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "kerang": "kerang",
       "kepiting": "kepiting",
       "bintang": "bintang laut"
     },
     "en": {
+      "judul": "Shells on the Beach",
       "instruksi": "Touch each shell one at a time as you count, then slide the marker to the number.",
       "kerang": "shells",
       "kepiting": "crabs",

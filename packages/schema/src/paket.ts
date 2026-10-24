@@ -246,7 +246,8 @@ export const PACK_MECHANICS: readonly MechanicId[] = ["pilah", "urutkan", "dagan
 
 /** Semua kunci locale yang dipakai sebuah paket (untuk validasi dwibahasa). */
 export function kunciLocale(d: ContentPack): Set<string> {
-  const k = new Set<string>([d.instructionKey]);
+  // "judul" wajib: nama aktivitas ramah anak yang tampil di peta pelajaran dan misi
+  const k = new Set<string>([d.instructionKey, "judul"]);
   if (d.mechanic === "pilah") { d.bins.forEach(b => k.add(b.labelKey)); d.items.forEach(i => k.add(i.labelKey)); d.pilihan.forEach(r => k.add(r.promptKey)); }
   if (d.mechanic === "urutkan") d.sequences.forEach(s => { k.add(s.titleKey); s.steps.forEach(x => k.add(x.labelKey)); });
   if (d.mechanic === "dagang") d.goods.forEach(g => k.add(g.labelKey));

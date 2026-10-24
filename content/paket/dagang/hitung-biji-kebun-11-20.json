@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Biji di Kebun",
       "instruksi": "Biji dan daun berserakan di kebun: sentuh satu per satu sambil menghitung, lalu geser penanda.",
       "biji": "biji",
       "daun": "daun"
     },
     "en": {
+      "judul": "Seeds in the Garden",
       "instruksi": "Seeds and leaves are scattered in the garden: touch each as you count, then slide the marker.",
       "biji": "seeds",
       "daun": "leaves"

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Program Delapan Blok",
       "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan."
     },
     "en": {
+      "judul": "Eight-Block Program",
       "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go."
     }
   },

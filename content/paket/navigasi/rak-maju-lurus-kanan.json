@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Rak Blok Maju",
       "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan."
     },
     "en": {
+      "judul": "Forward Block Rack",
       "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go."
     }
   },

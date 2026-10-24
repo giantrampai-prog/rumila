@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Program Jadi Pendek",
       "instruksi": "Program robot ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
     },
     "en": {
+      "judul": "Shorten the Program",
       "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and robot walks the same path."
     }
   },

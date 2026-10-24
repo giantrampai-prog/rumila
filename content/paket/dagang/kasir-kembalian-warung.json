@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kembalian di Warung",
       "instruksi": "Pembeli bayar sepuluh ribu: hitung maju dari harganya, lalu beri kembalian yang pas.",
       "sabun": "sabun",
       "susu": "susu",
@@ -17,6 +18,7 @@
       "minyak": "minyak goreng"
     },
     "en": {
+      "judul": "Change at the Shop",
       "instruksi": "The customer pays ten thousand: count on from the price, then give the right change.",
       "sabun": "soap",
       "susu": "milk",

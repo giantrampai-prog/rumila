@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kotak Mainan Warna",
       "instruksi": "Bantu robot merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
       "merah": "merah",
       "biru": "biru",
@@ -24,6 +25,7 @@
       "kura": "kura-kura"
     },
     "en": {
+      "judul": "Color Toy Boxes",
       "instruksi": "Help robot tidy up: put each toy into the box with the same colour.",
       "merah": "red",
       "biru": "blue",

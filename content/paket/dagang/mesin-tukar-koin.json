@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Mesin Tukar Koin",
       "instruksi": "Masukkan uang kertas ke mesin tukar, lalu susun koin seribu sebanyak nilainya.",
       "duaribu": "uang dua ribu",
       "limaribu": "uang lima ribu"
     },
     "en": {
+      "judul": "Coin Exchange Machine",
       "instruksi": "Put the note into the change machine, then lay out thousand coins worth the same.",
       "duaribu": "2,000 note",
       "limaribu": "5,000 note"

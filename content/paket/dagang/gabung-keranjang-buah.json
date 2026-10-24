@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Satu Keranjang Bersama",
       "instruksi": "Dua pembeli menaruh buah di satu keranjang: geser penanda ke jumlah semuanya.",
       "jeruk": "jeruk",
       "apel": "apel",
       "mangga": "mangga"
     },
     "en": {
+      "judul": "One Shared Basket",
       "instruksi": "Two customers put fruit into one basket: slide the marker to how many there are altogether.",
       "jeruk": "oranges",
       "apel": "apples",

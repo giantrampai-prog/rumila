@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Bentuk di Rumah",
       "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah yang bentuknya itu.",
       "pilihan": "pilihan",
       "jam": "jam dinding",
@@ -25,6 +26,7 @@
       "tSegitiga": "Mana yang segitiga?"
     },
     "en": {
+      "judul": "Shapes at Home",
       "instruksi": "Listen to the shape, then touch the thing in the house with that shape.",
       "pilihan": "choices",
       "jam": "wall clock",

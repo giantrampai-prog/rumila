@@ -5,8 +5,11 @@
 
 import Link from "next/link";
 import { notFound, useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ActivityRunner, judulPaket } from "@/components/akademi/runner";
+import { TrackView } from "@/components/akademi/portal/track";
+import { KidFrame } from "@/components/kid";
+import AkademiPortal from "@/app/(app)/akademi/page";
 import { PAKET, kompetensiUntuk } from "@/lib/akademi/konten";
 
 function Daftar() {
@@ -16,7 +19,7 @@ function Daftar() {
     <div className="mx-auto max-w-[900px] p-4 font-sans text-[#2b1d4e]">
       <h1 className="text-2xl font-black">Academy — {PAKET.length} paket</h1>
       <p className="mb-4 text-sm opacity-70">
-        Portal: <Link className="underline" href="/akademi">/akademi</Link> (butuh akun). Klik paket untuk memainkannya tanpa akun.
+        Pratinjau: <Link className="underline" href="/dev/akademi?portal=1">portal</Link> · <Link className="underline" href="/dev/akademi?track=MAT">peta MAT</Link> · <Link className="underline" href="/dev/akademi?track=KODE">peta KODE</Link>. Klik paket untuk memainkannya tanpa akun.
       </p>
       {[...byMek.entries()].map(([mek, list]) => (
         <section key={mek} className="mb-6">
@@ -37,8 +40,16 @@ function Daftar() {
 }
 
 function Preview() {
-  const paket = useSearchParams().get("paket");
-  return paket ? <ActivityRunner paketId={paket} /> : <Daftar />;
+  // Portal membaca bukti dari localStorage → render hanya di klien (di aplikasi asli AppShell sudah menjaganya).
+  const [siap, setSiap] = useState(false);
+  useEffect(() => setSiap(true), []);
+  const q = useSearchParams();
+  if (!siap) return null;
+  const paket = q.get("paket"), track = q.get("track");
+  if (paket) return <ActivityRunner paketId={paket} />;
+  if (track) return <KidFrame><TrackView track={track} /></KidFrame>;
+  if (q.get("portal")) return <KidFrame><AkademiPortal /></KidFrame>;
+  return <Daftar />;
 }
 
 export default function DevAkademi() {

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Berhenti Sebelum Tabrak",
       "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum robot menabrak, lalu tunjuk blok penabraknya."
     },
     "en": {
+      "judul": "Stop Before the Crash",
       "instruksi": "Run the program one step at a time and stop right before robot crashes, then point to the crashing block."
     }
   },

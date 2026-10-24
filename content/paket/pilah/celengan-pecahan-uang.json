@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Lima Celengan",
       "instruksi": "Robot punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
       "koin500": "koin lima ratus",
       "koin1000": "koin seribu",
@@ -17,6 +18,7 @@
       "kertas10000": "uang sepuluh ribu"
     },
     "en": {
+      "judul": "Five Piggy Banks",
       "instruksi": "Robot has five piggy banks: drop each coin or note into the one with the same picture.",
       "koin500": "500 coin",
       "koin1000": "1,000 coin",

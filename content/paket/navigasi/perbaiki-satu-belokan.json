@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Satu Belokan Keliru",
       "instruksi": "Program robot sudah ada tapi satu blok salah: jalankan, lihat melesetnya, lalu ganti satu blok."
     },
     "en": {
+      "judul": "One Wrong Turn",
       "instruksi": "The robot's program is ready but one block is wrong: run it, watch it miss, then change one block."
     }
   },

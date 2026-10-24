@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Bank Mini",
       "instruksi": "Robot jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
       "duaribu": "uang dua ribu",
       "limaribu": "uang lima ribu"
     },
     "en": {
+      "judul": "Mini Bank",
       "instruksi": "Robot is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
       "duaribu": "2,000 note",
       "limaribu": "5,000 note"

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Menghadap Bintang",
       "instruksi": "Robot belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
     },
     "en": {
+      "judul": "Face the Star",
       "instruksi": "Robot is not facing the star yet: use a left or right block, then forward."
     }
   },

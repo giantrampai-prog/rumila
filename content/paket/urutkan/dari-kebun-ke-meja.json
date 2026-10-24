@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Dari Kebun ke Meja",
       "instruksi": "Susun gambar supaya ceritanya urut dari menanam sampai memanen.",
       "tanam": "Menanam apel",
       "sayur": "Memasak sayur",
@@ -23,6 +24,7 @@
       "sajikan": "sajikan di piring"
     },
     "en": {
+      "judul": "From Garden to Table",
       "instruksi": "Put the pictures in order, from planting to harvest.",
       "tanam": "Growing an apple",
       "sayur": "Cooking vegetables",

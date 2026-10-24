@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Jajan di Kantin",
       "instruksi": "Robot jajan di kantin: lihat harga koinnya, lalu bayar dengan koin seribu sebanyak itu.",
       "pisanggoreng": "pisang goreng",
       "tahu": "tahu goreng",
@@ -17,6 +18,7 @@
       "nasikuning": "nasi kuning"
     },
     "en": {
+      "judul": "Canteen Snacks",
       "instruksi": "Robot buys a snack at the canteen: read the coin price, then pay with that many thousand coins.",
       "pisanggoreng": "fried banana",
       "tahu": "fried tofu",

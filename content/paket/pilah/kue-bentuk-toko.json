@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Nampan Kue Bentuk",
       "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko rapi.",
       "lingkaran": "lingkaran",
       "segitiga": "segitiga",
       "kotak": "kotak"
     },
     "en": {
+      "judul": "Shape Cake Trays",
       "instruksi": "Put each cookie on the tray with the same shape so the shop looks neat.",
       "lingkaran": "circle",
       "segitiga": "triangle",

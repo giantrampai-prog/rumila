@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Berapa Jari Pembeli?",
       "instruksi": "Lihat cepat jari pembeli, lalu ambil jeruk sebanyak jarinya.",
       "jeruk": "jeruk",
       "apel": "apel"
     },
     "en": {
+      "judul": "How Many Fingers?",
       "instruksi": "Look quickly at the customer's fingers, then take that many oranges.",
       "jeruk": "oranges",
       "apel": "apples"

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Belok Dua Kali",
       "instruksi": "Lihat ke mana robot menghadap, lalu susun belok dan maju supaya sampai bintang."
     },
     "en": {
+      "judul": "Turn Twice",
       "instruksi": "Check which way robot is facing, then arrange turn and forward blocks to reach the star."
     }
   },

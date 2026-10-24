@@ -40,9 +40,11 @@ export const TRACK_IKON: Record<TrackId, string> = {
 };
 
 const MEKANIK_IKON: Record<string, string> = { pilah: "category", urutkan: "low_priority", dagang: "storefront", navigasi: "smart_toy" };
-const MEKANIK_WARNA: Record<string, ColorKey> = { pilah: "pink", urutkan: "teal", dagang: "gold", navigasi: "indigo" };
+const MEKANIK_LABEL: Record<string, string> = { pilah: "Pilah", urutkan: "Urutkan", dagang: "Pasar", navigasi: "Robot" };
 export const ikonMekanik = (m: string) => MEKANIK_IKON[m] ?? "extension";
-export const warnaMekanik = (m: string): ColorKey => MEKANIK_WARNA[m] ?? "purple";
+export const labelMekanik = (m: string) => MEKANIK_LABEL[m] ?? "Main";
+/** Satu warna netral untuk semua ikon mekanik (indigo lembut) — mekanik bukan makna, jadi tidak diberi warna berbeda. */
+export const MEKANIK_NETRAL = { bg: "#ecebff", fg: "#5b4bff" };
 
 export const trackMeta = (id: TrackId) => TRACKS.find((t) => t.id === id)!;
 export const levelMeta = (id: LevelId) => LEVELS.find((l) => l.id === id)!;
@@ -103,15 +105,32 @@ export function stikerTerbaru(events: GameEvent[], n = 3): ContentPack[] {
   const lihat = new Set<string>();
   const urut = events.filter((e) => e.type === "activity_end").sort((a, b) => (a.clientAt < b.clientAt ? 1 : -1));
   for (const e of urut) {
-    const p = e.payload as { successCount?: unknown; failCount?: unknown };
-    const s = typeof p.successCount === "number" ? p.successCount : 0;
-    const f = typeof p.failCount === "number" ? p.failCount : 0;
-    if (s + f === 0 || s / (s + f) < 0.6 || lihat.has(e.activityId)) continue;
+    const r = rasioSukses(e);
+    if (r === null || r < 0.6 || lihat.has(e.activityId)) continue;
     const paket = paketById(e.activityId);
     if (!paket) continue;
     lihat.add(e.activityId);
     out.push(paket);
     if (out.length >= n) break;
+  }
+  return out;
+}
+
+/** Rasio sukses satu event activity_end; null bila tidak ada hitungan. */
+function rasioSukses(e: GameEvent): number | null {
+  const p = e.payload as { successCount?: unknown; failCount?: unknown };
+  const s = typeof p.successCount === "number" ? p.successCount : 0;
+  const f = typeof p.failCount === "number" ? p.failCount : 0;
+  return s + f === 0 ? null : s / (s + f);
+}
+
+/** Id paket yang pernah diselesaikan dengan sukses ≥ 60% (untuk tanda ⭐). */
+export function paketSelesai(events: GameEvent[]): Set<string> {
+  const out = new Set<string>();
+  for (const e of events) {
+    if (e.type !== "activity_end") continue;
+    const r = rasioSukses(e);
+    if (r !== null && r >= 0.6) out.add(e.activityId);
   }
   return out;
 }
@@ -170,20 +189,54 @@ export function BadgeStatus({ status }: { status: Status }) {
   );
 }
 
-/** Chip aktivitas: ikon mekanik + judul → /akademi/main/<id>. */
-export function ChipAktivitas({ p }: { p: ContentPack }) {
-  const [, m, d] = PLAY[warnaMekanik(p.mechanic)];
+/** Ikon status kompetensi: ○ belum (abu), ● berkembang (kuning), ✓ dikuasai (hijau). */
+export function IkonStatus({ status, size = 28 }: { status: Status; size?: number }) {
+  const bg = status === "dikuasai" ? "#1fbf62" : status === "berkembang" ? "#ffbe0b" : "#fff";
+  const border = status === "belum" ? "2.5px solid #d6cde4" : "none";
+  return (
+    <span
+      aria-label={STATUS_LABEL[status]}
+      className="flex shrink-0 items-center justify-center rounded-full text-white"
+      style={{ width: size, height: size, background: bg, border, fontFamily: BALOO, fontSize: size * 0.6, fontWeight: 800, lineHeight: 1 }}
+    >
+      {status === "dikuasai" ? <Icon name="check" size={size * 0.68} /> : status === "berkembang" ? <span aria-hidden className="block rounded-full bg-white" style={{ width: size * 0.32, height: size * 0.32 }} /> : null}
+    </span>
+  );
+}
+
+/** Lingkaran ikon mekanik, warna netral indigo lembut. */
+export function IkonMekanik({ mekanik, size = 44 }: { mekanik: string; size?: number }) {
+  return (
+    <span className="flex shrink-0 items-center justify-center rounded-full" style={{ width: size, height: size, background: MEKANIK_NETRAL.bg, color: MEKANIK_NETRAL.fg }}>
+      <Icon name={ikonMekanik(mekanik)} size={Math.round(size * 0.55)} />
+    </span>
+  );
+}
+
+/** Tombol aktivitas besar (≥56px): ikon mekanik netral, judul, label mekanik, ⭐ bila pernah selesai, ▶ di kanan. */
+export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesai?: boolean }) {
   return (
     <Link
       href={`/akademi/main/${p.id}`}
-      className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-white py-1.5 pr-3 pl-1.5 transition-transform active:scale-95"
-      style={{ boxShadow: `0 2px 0 ${d}33, inset 0 0 0 2px ${m}22` }}
+      className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white py-2 pr-2.5 pl-2.5 transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
+      style={{ boxShadow: "0 3px 0 rgba(43,29,78,.08), inset 0 0 0 1.5px #efeaf5" }}
     >
-      <span className="flex size-7 shrink-0 items-center justify-center rounded-full text-white" style={{ background: m }}>
-        <Icon name={ikonMekanik(p.mechanic)} size={16} />
+      <IkonMekanik mekanik={p.mechanic} />
+      <span className="min-w-0 flex-1">
+        <span className="flex items-center gap-1.5">
+          <span className="truncate leading-tight" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
+            {judulPaket(p)}
+          </span>
+          {selesai && (
+            <span aria-label="Pernah diselesaikan" className="shrink-0 text-[14px] leading-none">
+              ⭐
+            </span>
+          )}
+        </span>
+        <span className="mt-0.5 block text-[12px] font-extrabold text-ink-3">{labelMekanik(p.mechanic)}</span>
       </span>
-      <span className="truncate text-[13px] font-extrabold" style={{ color: INK }}>
-        {judulPaket(p)}
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#9a93ff,#5b4bff 60%)", boxShadow: "0 2px 0 #3a2cd1" }}>
+        <Icon name="play_arrow" size={24} />
       </span>
     </Link>
   );

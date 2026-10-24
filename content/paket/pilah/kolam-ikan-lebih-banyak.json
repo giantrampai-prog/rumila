@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kolam Ikan: Mana Lebih Banyak?",
       "instruksi": "Kucing robot lapar: sentuh kolam yang ikannya lebih banyak.",
       "pilihan": "pilihan",
       "ikan": "ikan",
       "tBanyak": "Mana kolam yang ikannya lebih banyak?"
     },
     "en": {
+      "judul": "Fish Pond: Which Has More?",
       "instruksi": "The robot's cat is hungry: touch the pond with more fish.",
       "pilihan": "choices",
       "ikan": "fish",

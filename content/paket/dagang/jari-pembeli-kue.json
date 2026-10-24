@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Jari Pembeli Kue",
       "instruksi": "Pembeli kue mengacungkan jari sebentar: ambil kue sebanyak jarinya.",
       "donat": "donat",
       "kuecangkir": "kue cangkir"
     },
     "en": {
+      "judul": "Cake Buyer's Fingers",
       "instruksi": "The cake customer holds up fingers for a moment: take that many cakes.",
       "donat": "doughnuts",
       "kuecangkir": "cupcakes"

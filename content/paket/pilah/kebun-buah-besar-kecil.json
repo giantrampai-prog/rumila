@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Buah Besar Kecil",
       "instruksi": "Di kebun ada dua buah yang sama: sentuh yang lebih besar atau lebih kecil sesuai permintaan.",
       "pilihan": "pilihan",
       "semangka": "semangka",
@@ -20,6 +21,7 @@
       "tKecil": "Mana yang lebih kecil?"
     },
     "en": {
+      "judul": "Big and Small Fruit",
       "instruksi": "Two of the same fruit grow in the garden: touch the bigger or smaller one as asked.",
       "pilihan": "choices",
       "semangka": "watermelon",

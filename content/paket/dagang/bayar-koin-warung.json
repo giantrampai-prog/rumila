@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Koin di Warung",
       "instruksi": "Lihat harga di label koin, lalu taruh koin seribu di nampan sebanyak itu.",
       "permen": "permen",
       "roti": "roti",
@@ -17,6 +18,7 @@
       "eskrim": "es krim"
     },
     "en": {
+      "judul": "Coins at the Shop",
       "instruksi": "Look at the coin price tag, then put that many thousand coins on the tray.",
       "permen": "candy",
       "roti": "bread",

@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Sarang Telur: Mana Lebih Banyak?",
       "instruksi": "Dua sarang ayam hampir sama: sentuh yang telurnya lebih banyak.",
       "pilihan": "pilihan",
       "telur": "telur",
       "tBanyak": "Sarang mana yang telurnya lebih banyak?"
     },
     "en": {
+      "judul": "Egg Nests: Which Has More?",
       "instruksi": "Two hen nests look alike: touch the one with more eggs.",
       "pilihan": "choices",
       "telur": "eggs",

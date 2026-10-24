@@ -2530,6 +2530,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Jajan di Kantin",
         "instruksi": "Robot jajan di kantin: lihat harga koinnya, lalu bayar dengan koin seribu sebanyak itu.",
         "pisanggoreng": "pisang goreng",
         "tahu": "tahu goreng",
@@ -2538,6 +2539,7 @@ export const PAKET_RAW: unknown[] = [
         "nasikuning": "nasi kuning"
       },
       "en": {
+        "judul": "Canteen Snacks",
         "instruksi": "Robot buys a snack at the canteen: read the coin price, then pay with that many thousand coins.",
         "pisanggoreng": "fried banana",
         "tahu": "fried tofu",
@@ -2616,6 +2618,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Koin di Warung",
         "instruksi": "Lihat harga di label koin, lalu taruh koin seribu di nampan sebanyak itu.",
         "permen": "permen",
         "roti": "roti",
@@ -2624,6 +2627,7 @@ export const PAKET_RAW: unknown[] = [
         "eskrim": "es krim"
       },
       "en": {
+        "judul": "Coins at the Shop",
         "instruksi": "Look at the coin price tag, then put that many thousand coins on the tray.",
         "permen": "candy",
         "roti": "bread",
@@ -2702,6 +2706,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Beli Alat Tulis",
         "instruksi": "Robot beli alat tulis: lihat harganya, lalu bayar pas dengan uang di laci.",
         "pensil": "pensil",
         "penghapus": "penghapus",
@@ -2710,6 +2715,7 @@ export const PAKET_RAW: unknown[] = [
         "tas": "tas pensil"
       },
       "en": {
+        "judul": "Buying Stationery",
         "instruksi": "Robot buys school supplies: read the price, then pay exactly with the money in the drawer.",
         "pensil": "pencil",
         "penghapus": "eraser",
@@ -2797,6 +2803,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Bayar di Toko Roti",
         "instruksi": "Lihat harga rotinya, lalu bayar pas dengan gabungan uang seribu, dua ribu, dan lima ribu.",
         "donat": "donat",
         "roti": "roti tawar",
@@ -2805,6 +2812,7 @@ export const PAKET_RAW: unknown[] = [
         "tart": "kue tart"
       },
       "en": {
+        "judul": "Paying at the Bakery",
         "instruksi": "Read the bread price, then pay exactly using thousand, two-thousand and five-thousand money.",
         "donat": "doughnut",
         "roti": "loaf",
@@ -2892,12 +2900,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Bebek Berkumpul",
         "instruksi": "Bebek dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua bebek.",
         "bebek": "bebek",
         "katak": "katak",
         "angsa": "angsa"
       },
       "en": {
+        "judul": "Ducks Gather",
         "instruksi": "Ducks from both sides gather in the pond: slide the marker to how many ducks there are in all.",
         "bebek": "ducks",
         "katak": "frogs",
@@ -2970,12 +2980,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Satu Keranjang Bersama",
         "instruksi": "Dua pembeli menaruh buah di satu keranjang: geser penanda ke jumlah semuanya.",
         "jeruk": "jeruk",
         "apel": "apel",
         "mangga": "mangga"
       },
       "en": {
+        "judul": "One Shared Basket",
         "instruksi": "Two customers put fruit into one basket: slide the marker to how many there are altogether.",
         "jeruk": "oranges",
         "apel": "apples",
@@ -3048,12 +3060,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Anak Ayam di Kandang",
         "instruksi": "Sentuh anak ayam satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "anakayam": "anak ayam",
         "bebek": "bebek",
         "kelinci": "kelinci"
       },
       "en": {
+        "judul": "Chicks in the Coop",
         "instruksi": "Touch each chick one at a time as you count, then slide the marker to the number.",
         "anakayam": "chicks",
         "bebek": "ducks",
@@ -3125,11 +3139,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Biji di Kebun",
         "instruksi": "Biji dan daun berserakan di kebun: sentuh satu per satu sambil menghitung, lalu geser penanda.",
         "biji": "biji",
         "daun": "daun"
       },
       "en": {
+        "judul": "Seeds in the Garden",
         "instruksi": "Seeds and leaves are scattered in the garden: touch each as you count, then slide the marker.",
         "biji": "seeds",
         "daun": "leaves"
@@ -3194,12 +3210,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Bunga di Taman",
         "instruksi": "Bunga di taman tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "tulip": "tulip",
         "matahari": "bunga matahari",
         "kupu": "kupu-kupu"
       },
       "en": {
+        "judul": "Flowers in the Park",
         "instruksi": "The garden flowers are scattered: touch each one as you count, then slide the marker to the number.",
         "tulip": "tulips",
         "matahari": "sunflowers",
@@ -3271,12 +3289,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ikan di Kolam",
         "instruksi": "Ikannya tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "ikan": "ikan",
         "katak": "katak",
         "bebek": "bebek"
       },
       "en": {
+        "judul": "Fish in the Pond",
         "instruksi": "The fish are scattered: touch each one as you count, then slide the marker to the number.",
         "ikan": "fish",
         "katak": "frogs",
@@ -3348,11 +3368,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kelereng Tumpah",
         "instruksi": "Kelereng robot tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "kelereng": "kelereng",
         "kancing": "kancing"
       },
       "en": {
+        "judul": "Spilled Marbles",
         "instruksi": "The robot's marbles spilled: touch each one as you count, then slide the marker to the number.",
         "kelereng": "marbles",
         "kancing": "buttons"
@@ -3417,12 +3439,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kerang di Pantai",
         "instruksi": "Sentuh kerang satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "kerang": "kerang",
         "kepiting": "kepiting",
         "bintang": "bintang laut"
       },
       "en": {
+        "judul": "Shells on the Beach",
         "instruksi": "Touch each shell one at a time as you count, then slide the marker to the number.",
         "kerang": "shells",
         "kepiting": "crabs",
@@ -3494,11 +3518,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ikan yang Tersisa",
         "instruksi": "Beberapa ikan ditangkap lalu kolam berkabut: taruh pelet sebanyak ikan yang tersisa.",
         "ikan": "ikan",
         "pelet": "pelet"
       },
       "en": {
+        "judul": "Fish Left Over",
         "instruksi": "Some fish were caught and the pond fogged up: put down one pellet for each fish left.",
         "ikan": "fish",
         "pelet": "pellets"
@@ -3564,11 +3590,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Berapa Jari Pembeli?",
         "instruksi": "Lihat cepat jari pembeli, lalu ambil jeruk sebanyak jarinya.",
         "jeruk": "jeruk",
         "apel": "apel"
       },
       "en": {
+        "judul": "How Many Fingers?",
         "instruksi": "Look quickly at the customer's fingers, then take that many oranges.",
         "jeruk": "oranges",
         "apel": "apples"
@@ -3634,11 +3662,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Jari Pembeli Kue",
         "instruksi": "Pembeli kue mengacungkan jari sebentar: ambil kue sebanyak jarinya.",
         "donat": "donat",
         "kuecangkir": "kue cangkir"
       },
       "en": {
+        "judul": "Cake Buyer's Fingers",
         "instruksi": "The cake customer holds up fingers for a moment: take that many cakes.",
         "donat": "doughnuts",
         "kuecangkir": "cupcakes"
@@ -3704,6 +3734,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kasir Toko Mainan",
         "instruksi": "Robot jadi kasir toko mainan: pembeli bayar sepuluh ribu, beri kembalian yang pas.",
         "kelereng": "kelereng",
         "yoyo": "yoyo",
@@ -3712,6 +3743,7 @@ export const PAKET_RAW: unknown[] = [
         "boneka": "boneka"
       },
       "en": {
+        "judul": "Toy Shop Cashier",
         "instruksi": "Robot is the toy-shop cashier: the customer pays ten thousand, give the right change.",
         "kelereng": "marbles",
         "yoyo": "yo-yo",
@@ -3792,6 +3824,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kembalian di Warung",
         "instruksi": "Pembeli bayar sepuluh ribu: hitung maju dari harganya, lalu beri kembalian yang pas.",
         "sabun": "sabun",
         "susu": "susu",
@@ -3800,6 +3833,7 @@ export const PAKET_RAW: unknown[] = [
         "minyak": "minyak goreng"
       },
       "en": {
+        "judul": "Change at the Shop",
         "instruksi": "The customer pays ten thousand: count on from the price, then give the right change.",
         "sabun": "soap",
         "susu": "milk",
@@ -3880,11 +3914,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kue yang Tersisa",
         "instruksi": "Beberapa kue dibeli lalu piring ditutup: taruh lilin sebanyak kue yang tersisa.",
         "kue": "kue",
         "lilin": "lilin"
       },
       "en": {
+        "judul": "Cakes Left Over",
         "instruksi": "Some cakes were bought and the plate was covered: put down one candle for each cake left.",
         "kue": "cakes",
         "lilin": "candles"
@@ -3950,11 +3986,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Genap Lima di Kantin",
         "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
         "nasikuning": "nasi kuning",
         "eskrim": "es krim"
       },
       "en": {
+        "judul": "Make Five at the Canteen",
         "instruksi": "The robot's friend flashes their coins: add coins from the drawer to make exactly five.",
         "nasikuning": "yellow rice",
         "eskrim": "ice cream"
@@ -4021,11 +4059,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Genap Lima di Pasar",
         "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: tambahkan koin supaya pas lima.",
         "mangga": "mangga",
         "nanas": "nanas"
       },
       "en": {
+        "judul": "Make Five at the Market",
         "instruksi": "The customer flashes their coins then hides them: add coins to make exactly five.",
         "mangga": "mango",
         "nanas": "pineapple"
@@ -4092,11 +4132,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Mesin Tukar Koin",
         "instruksi": "Masukkan uang kertas ke mesin tukar, lalu susun koin seribu sebanyak nilainya.",
         "duaribu": "uang dua ribu",
         "limaribu": "uang lima ribu"
       },
       "en": {
+        "judul": "Coin Exchange Machine",
         "instruksi": "Put the note into the change machine, then lay out thousand coins worth the same.",
         "duaribu": "2,000 note",
         "limaribu": "5,000 note"
@@ -4156,6 +4198,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Pasar Buah Ramai",
         "instruksi": "Pembeli minta banyak buah: dengarkan, lalu ambil tepat sebanyak itu.",
         "jeruk": "jeruk",
         "mangga": "mangga",
@@ -4163,6 +4206,7 @@ export const PAKET_RAW: unknown[] = [
         "apel": "apel"
       },
       "en": {
+        "judul": "Busy Fruit Market",
         "instruksi": "The customer wants lots of fruit: listen, then take exactly that many.",
         "jeruk": "oranges",
         "mangga": "mangoes",
@@ -4241,6 +4285,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Toko Mainan",
         "instruksi": "Pembeli toko mainan menyebut jumlahnya: ambil mainan tepat sebanyak itu.",
         "bola": "bola",
         "boneka": "boneka beruang",
@@ -4248,6 +4293,7 @@ export const PAKET_RAW: unknown[] = [
         "balon": "balon"
       },
       "en": {
+        "judul": "Toy Shop",
         "instruksi": "The toy-shop customer says a number: take exactly that many toys.",
         "bola": "balls",
         "boneka": "teddy bears",
@@ -4326,11 +4372,13 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Bank Mini",
         "instruksi": "Robot jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
         "duaribu": "uang dua ribu",
         "limaribu": "uang lima ribu"
       },
       "en": {
+        "judul": "Mini Bank",
         "instruksi": "Robot is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
         "duaribu": "2,000 note",
         "limaribu": "5,000 note"
@@ -4390,6 +4438,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Warung Sayur",
         "instruksi": "Pembeli datang ke warung sayur: dengarkan, lalu ambil sayur sebanyak yang diminta.",
         "wortel": "wortel",
         "jagung": "jagung",
@@ -4397,6 +4446,7 @@ export const PAKET_RAW: unknown[] = [
         "timun": "timun"
       },
       "en": {
+        "judul": "Vegetable Stall",
         "instruksi": "A customer comes to the veggie stall: listen, then take as many as they ask for.",
         "wortel": "carrots",
         "jagung": "corn",
@@ -4475,9 +4525,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Batu di Depan Robot",
         "instruksi": "Kalau ada batu di depan robot tekan 'lompat', kalau kosong tekan 'maju'."
       },
       "en": {
+        "judul": "Rock Ahead",
         "instruksi": "If there is a rock in front of robot press 'jump', if it is empty press 'forward'."
       }
     },
@@ -4634,9 +4686,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Batu di Jalan Kebun",
         "instruksi": "Robot jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
       },
       "en": {
+        "judul": "Rocks on the Garden Path",
         "instruksi": "Robot walks up the garden: jump when a rock is right in front, step forward when it is clear."
       }
     },
@@ -4793,9 +4847,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Belok Dua Kali",
         "instruksi": "Lihat ke mana robot menghadap, lalu susun belok dan maju supaya sampai bintang."
       },
       "en": {
+        "judul": "Turn Twice",
         "instruksi": "Check which way robot is facing, then arrange turn and forward blocks to reach the star."
       }
     },
@@ -4924,9 +4980,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Menghadap Bintang",
         "instruksi": "Robot belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
       },
       "en": {
+        "judul": "Face the Star",
         "instruksi": "Robot is not facing the star yet: use a left or right block, then forward."
       }
     },
@@ -5055,9 +5113,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Singgah di Bendera",
         "instruksi": "Rak cuma muat empat blok: taruh bendera di tengah jalan, lalu buat program ke bendera dan dari bendera ke bintang."
       },
       "en": {
+        "judul": "Stop at the Flag",
         "instruksi": "The rack holds only four blocks: plant a flag mid-way, then program to the flag and from the flag to the star."
       }
     },
@@ -5167,9 +5227,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Berhenti Sebelum Tabrak",
         "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum robot menabrak, lalu tunjuk blok penabraknya."
       },
       "en": {
+        "judul": "Stop Before the Crash",
         "instruksi": "Run the program one step at a time and stop right before robot crashes, then point to the crashing block."
       }
     },
@@ -5380,9 +5442,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Memutari Tembok Taman",
         "instruksi": "Ada tembok di taman: susun program maju dan belok supaya robot memutar sampai bintang."
       },
       "en": {
+        "judul": "Around the Garden Wall",
         "instruksi": "There is a wall in the park: build a forward-and-turn program so robot goes around to the star."
       }
     },
@@ -5509,9 +5573,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Maju Lalu Belok",
         "instruksi": "Susun maju dan belok di rak supaya robot sampai bintang, lalu tekan jalan."
       },
       "en": {
+        "judul": "Forward, Then Turn",
         "instruksi": "Arrange forward and turn blocks on the rack so robot reaches the star, then press go."
       }
     },
@@ -5640,9 +5706,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Program Delapan Blok",
         "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan."
       },
       "en": {
+        "judul": "Eight-Block Program",
         "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go."
       }
     },
@@ -5773,9 +5841,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Tembok di Taman Luas",
         "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan."
       },
       "en": {
+        "judul": "Wall in the Big Garden",
         "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it."
       }
     },
@@ -5906,9 +5976,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kalau Ada Batu",
         "instruksi": "Satu program harus berhasil di tiga jalur yang batunya pindah-pindah: pakai blok 'kalau batu lompat, kalau tidak maju'."
       },
       "en": {
+        "judul": "If There's a Rock",
         "instruksi": "One program must work on three paths where the rock moves: use the 'if rock jump, else forward' block."
       }
     },
@@ -6098,9 +6170,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Dua Batu Pindah-Pindah",
         "instruksi": "Dua batu di tiap jalur dan letaknya berbeda-beda: susun satu program dengan blok kalau yang lolos di ketiganya."
       },
       "en": {
+        "judul": "Two Moving Rocks",
         "instruksi": "Two rocks on each path in different places: build one program with the if-block that passes all three."
       }
     },
@@ -6314,9 +6388,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Mendaki Bukit Berbatu",
         "instruksi": "Robot mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
       },
       "en": {
+        "judul": "Climbing the Rocky Hill",
         "instruksi": "Robot climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
       }
     },
@@ -6477,9 +6553,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Lompat di Petak Batu",
         "instruksi": "Lihat di mana batunya: taruh 'lompat' tepat di situ dan 'maju' di petak kosong, lalu jalan."
       },
       "en": {
+        "judul": "Jump at the Rock",
         "instruksi": "See where the rock is: put 'jump' right there and 'forward' for the empty squares, then go."
       }
     },
@@ -6640,9 +6718,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Dua Belokan Keliru",
         "instruksi": "Ada dua blok yang salah di program robot: temukan keduanya dan ganti, jangan lebih."
       },
       "en": {
+        "judul": "Two Wrong Turns",
         "instruksi": "Two blocks in the robot's program are wrong: find both and change them, no more than two."
       }
     },
@@ -6841,9 +6921,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Meleset Dua Kali",
         "instruksi": "Program ini meleset dua kali: jalankan, perhatikan, lalu perbaiki tepat dua blok."
       },
       "en": {
+        "judul": "Missed Twice",
         "instruksi": "This program goes wrong twice: run it, watch closely, then fix exactly two blocks."
       }
     },
@@ -7048,9 +7130,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Satu Belokan Keliru",
         "instruksi": "Program robot sudah ada tapi satu blok salah: jalankan, lihat melesetnya, lalu ganti satu blok."
       },
       "en": {
+        "judul": "One Wrong Turn",
         "instruksi": "The robot's program is ready but one block is wrong: run it, watch it miss, then change one block."
       }
     },
@@ -7229,9 +7313,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Satu Blok Keliru",
         "instruksi": "Robot meleset karena satu blok keliru: temukan dan ganti blok itu supaya sampai bintang."
       },
       "en": {
+        "judul": "One Wrong Block",
         "instruksi": "Robot misses because one block is wrong: find it and change it so he reaches the star."
       }
     },
@@ -7404,9 +7490,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Program Jadi Pendek",
         "instruksi": "Program robot ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
       },
       "en": {
+        "judul": "Shorten the Program",
         "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and robot walks the same path."
       }
     },
@@ -7609,9 +7697,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Naik ke Bintang",
         "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
       },
       "en": {
+        "judul": "Up to the Star",
         "instruksi": "Robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
       }
     },
@@ -7714,9 +7804,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Blok Maju",
         "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan."
       },
       "en": {
+        "judul": "Forward Block Rack",
         "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go."
       }
     },
@@ -7819,9 +7911,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Robot Maju Satu-Satu",
         "instruksi": "Tekan 'maju' satu-satu sampai robot berdiri di bintang."
       },
       "en": {
+        "judul": "Robot Step by Step",
         "instruksi": "Press 'forward' one at a time until robot stands on the star."
       }
     },
@@ -7907,9 +8001,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Tebak Petak Berikutnya",
         "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat robot akan berdiri, lalu tekan langkah."
       },
       "en": {
+        "judul": "Guess the Next Square",
         "instruksi": "Before each block runs, point to the square where robot will stand, then press step."
       }
     },
@@ -8090,9 +8186,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ulangi Berapa Kali?",
         "instruksi": "Hitung petak sampai bintang, jangan hitung petak robot, lalu pilih angka ulangi yang pas."
       },
       "en": {
+        "judul": "Repeat How Many Times?",
         "instruksi": "Count the squares to the star, not the robot's own square, then pick the right repeat number."
       }
     },
@@ -8218,9 +8316,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ulangi Maju dan Belok",
         "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya robot tepat di bintang."
       },
       "en": {
+        "judul": "Repeat Forward and Turn",
         "instruksi": "Fill the repeat block with two commands, then choose how many times so robot lands right on the star."
       }
     },
@@ -8347,9 +8447,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ulangi Tiga ke Atas",
         "instruksi": "Robot naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
       },
       "en": {
+        "judul": "Repeat Three Upward",
         "instruksi": "Robot climbs three squares but the rack has two slots: use 'repeat 3' with forward."
       }
     },
@@ -8439,9 +8541,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ulangi Tiga Kali",
         "instruksi": "Rak cuma muat dua blok: pakai blok 'ulangi 3' berisi maju supaya robot sampai bintang."
       },
       "en": {
+        "judul": "Repeat Three Times",
         "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so robot reaches the star."
       }
     },
@@ -8531,6 +8635,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Baju Beruang",
         "instruksi": "Beruang besar dan beruang kecil mau berpakaian: sentuh yang diminta.",
         "pilihan": "pilihan",
         "baju": "baju",
@@ -8542,6 +8647,7 @@ export const PAKET_RAW: unknown[] = [
         "tKecil": "Mana yang lebih kecil?"
       },
       "en": {
+        "judul": "Bear Outfits",
         "instruksi": "Big bear and little bear are getting dressed: touch the one asked for.",
         "pilihan": "choices",
         "baju": "shirt",
@@ -8704,6 +8810,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Bentuk di Rumah",
         "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah yang bentuknya itu.",
         "pilihan": "pilihan",
         "jam": "jam dinding",
@@ -8720,6 +8827,7 @@ export const PAKET_RAW: unknown[] = [
         "tSegitiga": "Mana yang segitiga?"
       },
       "en": {
+        "judul": "Shapes at Home",
         "instruksi": "Listen to the shape, then touch the thing in the house with that shape.",
         "pilihan": "choices",
         "jam": "wall clock",
@@ -8886,6 +8994,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Lima Celengan",
         "instruksi": "Robot punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
         "koin500": "koin lima ratus",
         "koin1000": "koin seribu",
@@ -8894,6 +9003,7 @@ export const PAKET_RAW: unknown[] = [
         "kertas10000": "uang sepuluh ribu"
       },
       "en": {
+        "judul": "Five Piggy Banks",
         "instruksi": "Robot has five piggy banks: drop each coin or note into the one with the same picture.",
         "koin500": "500 coin",
         "koin1000": "1,000 coin",
@@ -9075,6 +9185,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kartu Titik",
         "instruksi": "Hitung bendanya, lalu taruh di kartu yang titiknya sama banyak.",
         "n1": "1",
         "n2": "2",
@@ -9085,6 +9196,7 @@ export const PAKET_RAW: unknown[] = [
         "ikan": "ikan"
       },
       "en": {
+        "judul": "Dot Cards",
         "instruksi": "Count the things, then put them on the card with the same number of dots.",
         "n1": "1",
         "n2": "2",
@@ -9228,6 +9340,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Buah Besar Kecil",
         "instruksi": "Di kebun ada dua buah yang sama: sentuh yang lebih besar atau lebih kecil sesuai permintaan.",
         "pilihan": "pilihan",
         "semangka": "semangka",
@@ -9239,6 +9352,7 @@ export const PAKET_RAW: unknown[] = [
         "tKecil": "Mana yang lebih kecil?"
       },
       "en": {
+        "judul": "Big and Small Fruit",
         "instruksi": "Two of the same fruit grow in the garden: touch the bigger or smaller one as asked.",
         "pilihan": "choices",
         "semangka": "watermelon",
@@ -9401,6 +9515,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kebun Bunga Warna",
         "instruksi": "Masukkan tiap bunga dan buah dari kebun ke keranjang yang warnanya sama.",
         "merah": "merah",
         "biru": "biru",
@@ -9416,6 +9531,7 @@ export const PAKET_RAW: unknown[] = [
         "timun": "timun"
       },
       "en": {
+        "judul": "Colorful Flower Garden",
         "instruksi": "Put each flower and fruit from the garden into the basket with the same colour.",
         "merah": "red",
         "biru": "blue",
@@ -9545,12 +9661,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Keranjang Jeruk: Mana Lebih Banyak?",
         "instruksi": "Dua keranjang jeruk hampir sama: sentuh yang jeruknya lebih banyak.",
         "pilihan": "pilihan",
         "jeruk": "jeruk",
         "tBanyak": "Keranjang mana yang jeruknya lebih banyak?"
       },
       "en": {
+        "judul": "Orange Baskets: Which Has More?",
         "instruksi": "Two baskets of oranges look alike: touch the one with more oranges.",
         "pilihan": "choices",
         "jeruk": "oranges",
@@ -9752,12 +9870,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kolam Ikan: Mana Lebih Banyak?",
         "instruksi": "Kucing robot lapar: sentuh kolam yang ikannya lebih banyak.",
         "pilihan": "pilihan",
         "ikan": "ikan",
         "tBanyak": "Mana kolam yang ikannya lebih banyak?"
       },
       "en": {
+        "judul": "Fish Pond: Which Has More?",
         "instruksi": "The robot's cat is hungry: touch the pond with more fish.",
         "pilihan": "choices",
         "ikan": "fish",
@@ -9880,6 +10000,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kotak Mainan Warna",
         "instruksi": "Bantu robot merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
         "merah": "merah",
         "biru": "biru",
@@ -9895,6 +10016,7 @@ export const PAKET_RAW: unknown[] = [
         "kura": "kura-kura"
       },
       "en": {
+        "judul": "Color Toy Boxes",
         "instruksi": "Help robot tidy up: put each toy into the box with the same colour.",
         "merah": "red",
         "biru": "blue",
@@ -10024,12 +10146,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kotak Pos Bentuk",
         "instruksi": "Masukkan tiap keping ke lubang kotak pos yang bentuknya sama.",
         "lingkaran": "lingkaran",
         "segitiga": "segitiga",
         "kotak": "kotak"
       },
       "en": {
+        "judul": "Shape Mailbox",
         "instruksi": "Post each piece through the hole with the same shape.",
         "lingkaran": "circle",
         "segitiga": "triangle",
@@ -10155,12 +10279,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Nampan Kue Bentuk",
         "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko rapi.",
         "lingkaran": "lingkaran",
         "segitiga": "segitiga",
         "kotak": "kotak"
       },
       "en": {
+        "judul": "Shape Cake Trays",
         "instruksi": "Put each cookie on the tray with the same shape so the shop looks neat.",
         "lingkaran": "circle",
         "segitiga": "triangle",
@@ -10286,6 +10412,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Tiga Tahap Membuat Kue",
         "instruksi": "Robot mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
         "siapkan": "siapkan",
         "campur": "campur",
@@ -10298,6 +10425,7 @@ export const PAKET_RAW: unknown[] = [
         "jadi": "kue matang"
       },
       "en": {
+        "judul": "Three Baking Stages",
         "instruksi": "Robot is baking a cake: put each small step into its big stage.",
         "siapkan": "get ready",
         "campur": "mix",
@@ -10399,6 +10527,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Laci Uang Warung",
         "instruksi": "Masukkan tiap uang ke laci warung yang gambarnya sama.",
         "koin500": "koin lima ratus",
         "koin1000": "koin seribu",
@@ -10407,6 +10536,7 @@ export const PAKET_RAW: unknown[] = [
         "kertas10000": "uang sepuluh ribu"
       },
       "en": {
+        "judul": "Shop Cash Drawer",
         "instruksi": "Put each coin or note into the shop drawer with the same picture.",
         "koin500": "500 coin",
         "koin1000": "1,000 coin",
@@ -10588,6 +10718,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Bola Warna Apa?",
         "instruksi": "Dengarkan warna yang disebut, lalu sentuh bola yang warnanya itu.",
         "pilihan": "pilihan",
         "tMerah": "Mana yang merah?",
@@ -10597,6 +10728,7 @@ export const PAKET_RAW: unknown[] = [
         "bola": "bola"
       },
       "en": {
+        "judul": "Which Color Ball?",
         "instruksi": "Listen to the colour, then touch the ball of that colour.",
         "pilihan": "choices",
         "tMerah": "Which one is red?",
@@ -10714,6 +10846,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Topi Pesta Robot",
         "instruksi": "Robot mau pakai topi pesta: sentuh topi yang warnanya disebut.",
         "pilihan": "pilihan",
         "tMerah": "Mana yang merah?",
@@ -10723,6 +10856,7 @@ export const PAKET_RAW: unknown[] = [
         "topi": "topi pesta"
       },
       "en": {
+        "judul": "Robot's Party Hat",
         "instruksi": "Robot wants a party hat: touch the hat of the colour you hear.",
         "pilihan": "choices",
         "tMerah": "Which one is red?",
@@ -10840,6 +10974,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Panjang Pendek di Meja",
         "instruksi": "Di meja robot ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
         "pilihan": "pilihan",
         "pensil": "pensil",
@@ -10851,6 +10986,7 @@ export const PAKET_RAW: unknown[] = [
         "tPendek": "Mana yang lebih pendek?"
       },
       "en": {
+        "judul": "Long and Short on the Desk",
         "instruksi": "On the robot's desk are two of the same thing: touch the longer or the shorter one.",
         "pilihan": "choices",
         "pensil": "pencil",
@@ -11013,6 +11149,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Piktogram Buah",
         "instruksi": "Keranjangnya campur: tumpuk tiap buah di kolomnya sendiri, mulai dari bawah.",
         "apel": "apel",
         "pisang": "pisang",
@@ -11020,6 +11157,7 @@ export const PAKET_RAW: unknown[] = [
         "anggur": "anggur"
       },
       "en": {
+        "judul": "Fruit Pictogram",
         "instruksi": "The basket is mixed: stack each fruit in its own column, starting from the bottom.",
         "apel": "apples",
         "pisang": "bananas",
@@ -11181,6 +11319,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Piktogram Panen Sayur",
         "instruksi": "Panen robot campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
         "wortel": "wortel",
         "brokoli": "brokoli",
@@ -11188,6 +11327,7 @@ export const PAKET_RAW: unknown[] = [
         "tomat": "tomat"
       },
       "en": {
+        "judul": "Vegetable Harvest Pictogram",
         "instruksi": "The robot's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
         "wortel": "carrots",
         "brokoli": "broccoli",
@@ -11349,12 +11489,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Piring Kue: Mana Lebih Banyak?",
         "instruksi": "Robot lapar sekali: sentuh piring yang kuenya lebih banyak.",
         "pilihan": "pilihan",
         "kue": "kue",
         "tBanyak": "Mana piring yang kuenya lebih banyak?"
       },
       "en": {
+        "judul": "Cake Plates: Which Has More?",
         "instruksi": "Robot is very hungry: touch the plate with more cookies.",
         "pilihan": "choices",
         "kue": "cookies",
@@ -11477,6 +11619,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Angka Buah",
         "instruksi": "Hitung buahnya, lalu taruh di rak yang angkanya pas.",
         "n1": "1",
         "n2": "2",
@@ -11492,6 +11635,7 @@ export const PAKET_RAW: unknown[] = [
         "anggur": "anggur"
       },
       "en": {
+        "judul": "Fruit Number Shelf",
         "instruksi": "Count the fruit, then put them on the shelf with the matching number.",
         "n1": "1",
         "n2": "2",
@@ -11725,6 +11869,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Angka Kandang",
         "instruksi": "Hitung hewan di kandang, lalu taruh di rak yang angkanya pas.",
         "n1": "1",
         "n2": "2",
@@ -11740,6 +11885,7 @@ export const PAKET_RAW: unknown[] = [
         "kelinci": "kelinci"
       },
       "en": {
+        "judul": "Barn Number Shelf",
         "instruksi": "Count the animals in the pen, then put them on the shelf with the matching number.",
         "n1": "1",
         "n2": "2",
@@ -11973,6 +12119,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Angka Kelereng",
         "instruksi": "Hitung kelerengnya, lalu taruh di rak yang angkanya pas.",
         "n11": "11",
         "n12": "12",
@@ -11988,6 +12135,7 @@ export const PAKET_RAW: unknown[] = [
         "kancing": "kancing"
       },
       "en": {
+        "judul": "Marble Number Shelf",
         "instruksi": "Count the marbles, then put them on the shelf with the matching number.",
         "n11": "11",
         "n12": "12",
@@ -12241,6 +12389,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Angka Telur",
         "instruksi": "Hitung telur di keranjang, lalu taruh di rak yang angkanya pas.",
         "n11": "11",
         "n12": "12",
@@ -12256,6 +12405,7 @@ export const PAKET_RAW: unknown[] = [
         "biji": "biji"
       },
       "en": {
+        "judul": "Egg Number Shelf",
         "instruksi": "Count the eggs in the basket, then put them on the shelf with the matching number.",
         "n11": "11",
         "n12": "12",
@@ -12489,6 +12639,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Bentuk Dapur",
         "instruksi": "Bantu robot menata dapur: taruh tiap benda di rak yang bentuknya sama.",
         "bola": "bola",
         "kubus": "kubus",
@@ -12505,6 +12656,7 @@ export const PAKET_RAW: unknown[] = [
         "tisu": "gulungan tisu"
       },
       "en": {
+        "judul": "Kitchen Shape Shelf",
         "instruksi": "Help robot tidy the kitchen: put each thing on the shelf with the same shape.",
         "bola": "sphere",
         "kubus": "cube",
@@ -12634,6 +12786,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Rak Bentuk Mainan",
         "instruksi": "Taruh tiap mainan di rak yang bentuknya sama: bola, kubus, atau tabung.",
         "bola": "bola",
         "kubus": "kubus",
@@ -12649,6 +12802,7 @@ export const PAKET_RAW: unknown[] = [
         "kayu": "gelondong kayu"
       },
       "en": {
+        "judul": "Toy Shape Shelf",
         "instruksi": "Put each toy on the shelf with the same shape: sphere, cube or cylinder.",
         "bola": "sphere",
         "kubus": "cube",
@@ -12771,12 +12925,14 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Sarang Telur: Mana Lebih Banyak?",
         "instruksi": "Dua sarang ayam hampir sama: sentuh yang telurnya lebih banyak.",
         "pilihan": "pilihan",
         "telur": "telur",
         "tBanyak": "Sarang mana yang telurnya lebih banyak?"
       },
       "en": {
+        "judul": "Egg Nests: Which Has More?",
         "instruksi": "Two hen nests look alike: touch the one with more eggs.",
         "pilihan": "choices",
         "telur": "eggs",
@@ -12978,6 +13134,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Stok Buah di Rak",
         "instruksi": "Lihat piktogram stok buah, lalu sentuh rak yang diminta pembeli.",
         "pilihan": "pilihan",
         "apel": "apel",
@@ -12988,6 +13145,7 @@ export const PAKET_RAW: unknown[] = [
         "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
       },
       "en": {
+        "judul": "Fruit Stock on the Shelf",
         "instruksi": "Look at the fruit stock chart, then touch the shelf the customer asks for.",
         "pilihan": "choices",
         "apel": "apples",
@@ -13152,6 +13310,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Stok Sayur Warung",
         "instruksi": "Lihat piktogram stok sayur warung, lalu sentuh rak yang diminta.",
         "pilihan": "pilihan",
         "wortel": "wortel",
@@ -13162,6 +13321,7 @@ export const PAKET_RAW: unknown[] = [
         "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
       },
       "en": {
+        "judul": "Shop Vegetable Stock",
         "instruksi": "Look at the vegetable stock chart in the shop, then touch the shelf asked for.",
         "pilihan": "choices",
         "wortel": "carrots",
@@ -13326,6 +13486,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ular Berjemur",
         "instruksi": "Dua ular berjemur sejajar: sentuh yang lebih panjang atau lebih pendek sesuai permintaan.",
         "pilihan": "pilihan",
         "ular": "ular",
@@ -13337,6 +13498,7 @@ export const PAKET_RAW: unknown[] = [
         "tPendek": "Mana yang lebih pendek?"
       },
       "en": {
+        "judul": "Sunbathing Snakes",
         "instruksi": "Two snakes are sunbathing side by side: touch the longer or shorter one as asked.",
         "pilihan": "choices",
         "ular": "snake",
@@ -13499,6 +13661,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Berangkat Sekolah",
         "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
         "sekolah": "Robot ke sekolah",
         "teh": "Membuat teh hangat",
@@ -13511,6 +13674,7 @@ export const PAKET_RAW: unknown[] = [
         "minum": "minum teh"
       },
       "en": {
+        "judul": "Off to School",
         "instruksi": "Put the pictures in order so getting to school the right way.",
         "sekolah": "Robot goes to school",
         "teh": "Making warm tea",
@@ -13598,6 +13762,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Dari Kebun ke Meja",
         "instruksi": "Susun gambar supaya ceritanya urut dari menanam sampai memanen.",
         "tanam": "Menanam apel",
         "sayur": "Memasak sayur",
@@ -13612,6 +13777,7 @@ export const PAKET_RAW: unknown[] = [
         "sajikan": "sajikan di piring"
       },
       "en": {
+        "judul": "From Garden to Table",
         "instruksi": "Put the pictures in order, from planting to harvest.",
         "tanam": "Growing an apple",
         "sayur": "Cooking vegetables",
@@ -13711,6 +13877,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Hujan dan Pesta",
         "instruksi": "Susun gambar supaya ceritanya urut dari awal sampai akhir.",
         "hujan": "Hujan lalu pelangi",
         "pesta": "Pesta ulang tahun",
@@ -13725,6 +13892,7 @@ export const PAKET_RAW: unknown[] = [
         "makan": "makan kue"
       },
       "en": {
+        "judul": "Rain and the Party",
         "instruksi": "Put the pictures in order from the beginning to the end of the story.",
         "hujan": "Rain then rainbow",
         "pesta": "The robot's birthday party",
@@ -13824,6 +13992,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Enam Langkah Membuat Kue",
         "instruksi": "Susun enam langkah membuat kue: dua langkah siapkan, dua campur, dua panggang.",
         "kue": "Membuat kue: siapkan, campur, panggang",
         "roti": "Membuat roti: siapkan, campur, panggang",
@@ -13839,6 +14008,7 @@ export const PAKET_RAW: unknown[] = [
         "roti2": "roti matang"
       },
       "en": {
+        "judul": "Six Baking Steps",
         "instruksi": "Order the six cake steps: two to get ready, two to mix, two to bake.",
         "kue": "Baking: get ready, mix, bake",
         "roti": "Bread: get ready, mix, bake",
@@ -13954,6 +14124,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Lanjut Hitung Sampai 10",
         "instruksi": "Robot berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
         "n3": "3",
         "n4": "4",
@@ -13969,6 +14140,7 @@ export const PAKET_RAW: unknown[] = [
         "dari7": "Lanjutkan dari 7"
       },
       "en": {
+        "judul": "Keep Counting to 10",
         "instruksi": "Robot is standing on this number: lay out the next number cards, don't start from one.",
         "n3": "3",
         "n4": "4",
@@ -14088,6 +14260,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Lanjut Hitung Sampai 20",
         "instruksi": "Robot sudah sampai angka ini: susun kartu berikutnya sampai dua puluh.",
         "n9": "9",
         "n10": "10",
@@ -14107,6 +14280,7 @@ export const PAKET_RAW: unknown[] = [
         "dari15": "Lanjutkan dari 15"
       },
       "en": {
+        "judul": "Keep Counting to 20",
         "instruksi": "Robot has reached this number: lay out the next cards, up to twenty.",
         "n9": "9",
         "n10": "10",
@@ -14242,6 +14416,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Mana Dulu di Alam?",
         "instruksi": "Lihat dua gambar, lalu sentuh yang terjadi lebih dulu.",
         "telur": "Telur dan anak ayam",
         "biji": "Biji dan pohon",
@@ -14260,6 +14435,7 @@ export const PAKET_RAW: unknown[] = [
         "sBuah": "apel matang"
       },
       "en": {
+        "judul": "Which Came First in Nature?",
         "instruksi": "Look at the two pictures, then touch the one that happens first.",
         "telur": "Egg and chick",
         "biji": "Seed and tree",
@@ -14386,6 +14562,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Mana Dulu di Rumah?",
         "instruksi": "Lihat dua gambar di rumah, lalu sentuh yang terjadi lebih dulu.",
         "nasi": "Piring nasi",
         "es": "Es batu",
@@ -14404,6 +14581,7 @@ export const PAKET_RAW: unknown[] = [
         "sTiup": "balon besar"
       },
       "en": {
+        "judul": "Which Came First at Home?",
         "instruksi": "Look at the two pictures from the house, then touch the one that happens first.",
         "nasi": "Plate of rice",
         "es": "Ice cube",
@@ -14530,6 +14708,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Pensil Pendek ke Panjang",
         "instruksi": "Susun pensil dari yang paling pendek ke yang paling panjang.",
         "pensil": "Pensil: pendek ke panjang",
         "kereta": "Kereta: pendek ke panjang",
@@ -14539,6 +14718,7 @@ export const PAKET_RAW: unknown[] = [
         "terpanjang": "paling panjang"
       },
       "en": {
+        "judul": "Pencils Short to Long",
         "instruksi": "Line up the pencils from the shortest to the longest.",
         "pensil": "Pencils: short to long",
         "kereta": "Trains: short to long",
@@ -14630,6 +14810,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Urutan Kebun Tertukar",
         "instruksi": "Satu gambar di kebun tertukar: tukar dua gambar supaya urutannya benar.",
         "tanam": "Menanam bunga",
         "layang": "Main layang-layang",
@@ -14642,6 +14823,7 @@ export const PAKET_RAW: unknown[] = [
         "terbang": "layang-layang terbang"
       },
       "en": {
+        "judul": "Mixed-Up Garden Order",
         "instruksi": "One garden picture is swapped: swap two pictures to fix the order.",
         "tanam": "Planting a flower",
         "layang": "Flying a kite",
@@ -14729,6 +14911,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Urutan Pagi Tertukar",
         "instruksi": "Robot salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
         "pagi": "Pagi hari",
         "mandi": "Robot mandi",
@@ -14742,6 +14925,7 @@ export const PAKET_RAW: unknown[] = [
         "bilas": "bilas sampai bersih"
       },
       "en": {
+        "judul": "Mixed-Up Morning Order",
         "instruksi": "Robot put one picture in the wrong place: swap two pictures to fix the order.",
         "pagi": "The morning",
         "mandi": "The robot's bath",
@@ -14835,6 +15019,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Siang dan Malam",
         "instruksi": "Susun gambar supaya kegiatan urut dari awal sampai akhir.",
         "makan": "Makan siang robot",
         "tidur": "Robot tidur malam",
@@ -14848,6 +15033,7 @@ export const PAKET_RAW: unknown[] = [
         "bobo": "tidur"
       },
       "en": {
+        "judul": "Day and Night",
         "instruksi": "Put the pictures in order so the activity goes from start to finish.",
         "makan": "The robot's lunch",
         "tidur": "The robot's bedtime",
@@ -14941,6 +15127,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Ular Pendek ke Panjang",
         "instruksi": "Susun ular dari yang paling pendek ke yang paling panjang.",
         "ular": "Ular: pendek ke panjang",
         "cacing": "Cacing: pendek ke panjang",
@@ -14950,6 +15137,7 @@ export const PAKET_RAW: unknown[] = [
         "terpanjang": "paling panjang"
       },
       "en": {
+        "judul": "Snakes Short to Long",
         "instruksi": "Line up the snakes from the shortest to the longest.",
         "ular": "Snakes: short to long",
         "cacing": "Worms: short to long",
@@ -15041,6 +15229,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Kotak Kelereng",
         "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.",
         "k1": "1",
         "k2": "2",
@@ -15050,6 +15239,7 @@ export const PAKET_RAW: unknown[] = [
         "kelereng": "kelereng"
       },
       "en": {
+        "judul": "Marble Boxes",
         "instruksi": "Touch each marble one by one, then put the group in the box with the right number.",
         "k1": "1",
         "k2": "2",
@@ -15153,6 +15343,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Keranjang Warna",
         "instruksi": "Masukkan setiap benda ke keranjang yang warnanya sama.",
         "merah": "merah",
         "biru": "biru",
@@ -15168,6 +15359,7 @@ export const PAKET_RAW: unknown[] = [
         "katak": "katak"
       },
       "en": {
+        "judul": "Color Baskets",
         "instruksi": "Put each object into the basket with the same colour.",
         "merah": "red",
         "biru": "blue",
@@ -15289,6 +15481,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Pasar Buah",
         "instruksi": "Pembeli datang. Dengarkan, lalu ambil buah sebanyak yang diminta.",
         "jeruk": "jeruk",
         "apel": "apel",
@@ -15296,6 +15489,7 @@ export const PAKET_RAW: unknown[] = [
         "mangga": "mangga"
       },
       "en": {
+        "judul": "Fruit Market",
         "instruksi": "A customer is here. Listen, then pick as many fruits as they ask for.",
         "jeruk": "orange",
         "apel": "apple",
@@ -15394,9 +15588,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Robot ke Bintang",
         "instruksi": "Tekan 'maju' sampai robot sampai di bintang, lalu tekan jalan."
       },
       "en": {
+        "judul": "Robot to the Star",
         "instruksi": "Press 'forward' until robot reaches the star, then press go."
       }
     },
@@ -15492,6 +15688,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
+        "judul": "Urutan Pagi Hari",
         "instruksi": "Susun gambar supaya pagi hari berurutan.",
         "pagi": "Pagi hari",
         "bangun": "bangun tidur",
@@ -15504,6 +15701,7 @@ export const PAKET_RAW: unknown[] = [
         "tumbuh": "tunas tumbuh"
       },
       "en": {
+        "judul": "Morning Routine",
         "instruksi": "Put the pictures in order so The morning makes sense.",
         "pagi": "The morning",
         "bangun": "wake up",

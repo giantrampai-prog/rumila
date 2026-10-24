@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Singgah di Bendera",
       "instruksi": "Rak cuma muat empat blok: taruh bendera di tengah jalan, lalu buat program ke bendera dan dari bendera ke bintang."
     },
     "en": {
+      "judul": "Stop at the Flag",
       "instruksi": "The rack holds only four blocks: plant a flag mid-way, then program to the flag and from the flag to the star."
     }
   },

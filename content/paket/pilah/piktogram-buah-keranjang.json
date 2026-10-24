@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Piktogram Buah",
       "instruksi": "Keranjangnya campur: tumpuk tiap buah di kolomnya sendiri, mulai dari bawah.",
       "apel": "apel",
       "pisang": "pisang",
@@ -16,6 +17,7 @@
       "anggur": "anggur"
     },
     "en": {
+      "judul": "Fruit Pictogram",
       "instruksi": "The basket is mixed: stack each fruit in its own column, starting from the bottom.",
       "apel": "apples",
       "pisang": "bananas",

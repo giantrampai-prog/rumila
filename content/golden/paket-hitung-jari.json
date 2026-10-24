@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kotak Kelereng",
       "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.",
       "k1": "1",
       "k2": "2",
@@ -18,6 +19,7 @@
       "kelereng": "kelereng"
     },
     "en": {
+      "judul": "Marble Boxes",
       "instruksi": "Touch each marble one by one, then put the group in the box with the right number.",
       "k1": "1",
       "k2": "2",

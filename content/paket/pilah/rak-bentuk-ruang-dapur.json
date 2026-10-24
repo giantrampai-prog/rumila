@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Rak Bentuk Dapur",
       "instruksi": "Bantu robot menata dapur: taruh tiap benda di rak yang bentuknya sama.",
       "bola": "bola",
       "kubus": "kubus",
@@ -25,6 +26,7 @@
       "tisu": "gulungan tisu"
     },
     "en": {
+      "judul": "Kitchen Shape Shelf",
       "instruksi": "Help robot tidy the kitchen: put each thing on the shelf with the same shape.",
       "bola": "sphere",
       "kubus": "cube",

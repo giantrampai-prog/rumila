@@ -144,7 +144,7 @@ function RaporAnak({ anak }: { anak: Member }) {
         <div className="min-w-0 flex-1">
           <h2 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1.1 }}>{anak.name}</h2>
           <p className="text-[13px] font-bold text-ink-3">
-            Jenjang {lv.nama} · pangkat {lv.pangkat} · {lv.acuan}
+            Jenjang {lv.nama} ({lv.lokal}) · pangkat {lv.pangkat} · {lv.acuan}
           </p>
         </div>
         <div className="no-print flex flex-col gap-1">
@@ -241,7 +241,7 @@ function DaftarTrack({ track, level, peng }: { track: TrackId; level: LevelId; p
     <section className="flex flex-col gap-3">
       <h3 className="flex items-center gap-2" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>
         <span className="inline-block size-3 rounded-full" style={{ background: m }} />
-        {trackMeta(track).nama.id} · {levelMeta(level).nama}
+        {trackMeta(track).nama.id} · {levelMeta(level).nama} ({levelMeta(level).lokal})
       </h3>
       {unit.length === 0 ? (
         <p className="rapor-card rounded-[20px] bg-white p-4 text-[14px] font-bold text-ink-3">Kurikulum jenjang ini belum tersedia.</p>

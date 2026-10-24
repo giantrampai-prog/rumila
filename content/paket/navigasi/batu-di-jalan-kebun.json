@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Batu di Jalan Kebun",
       "instruksi": "Robot jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
     },
     "en": {
+      "judul": "Rocks on the Garden Path",
       "instruksi": "Robot walks up the garden: jump when a rock is right in front, step forward when it is clear."
     }
   },

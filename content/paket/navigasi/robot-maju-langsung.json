@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Robot Maju Satu-Satu",
       "instruksi": "Tekan 'maju' satu-satu sampai robot berdiri di bintang."
     },
     "en": {
+      "judul": "Robot Step by Step",
       "instruksi": "Press 'forward' one at a time until robot stands on the star."
     }
   },

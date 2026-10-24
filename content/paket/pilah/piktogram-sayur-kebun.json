@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Piktogram Panen Sayur",
       "instruksi": "Panen robot campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
       "wortel": "wortel",
       "brokoli": "brokoli",
@@ -16,6 +17,7 @@
       "tomat": "tomat"
     },
     "en": {
+      "judul": "Vegetable Harvest Pictogram",
       "instruksi": "The robot's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
       "wortel": "carrots",
       "brokoli": "broccoli",

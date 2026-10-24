@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Batu di Depan Robot",
       "instruksi": "Kalau ada batu di depan robot tekan 'lompat', kalau kosong tekan 'maju'."
     },
     "en": {
+      "judul": "Rock Ahead",
       "instruksi": "If there is a rock in front of robot press 'jump', if it is empty press 'forward'."
     }
   },

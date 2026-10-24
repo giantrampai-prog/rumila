@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Genap Lima di Kantin",
       "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya genap lima.",
       "nasikuning": "nasi kuning",
       "eskrim": "es krim"
     },
     "en": {
+      "judul": "Make Five at the Canteen",
       "instruksi": "The robot's friend flashes their coins: add coins from the drawer to make exactly five.",
       "nasikuning": "yellow rice",
       "eskrim": "ice cream"

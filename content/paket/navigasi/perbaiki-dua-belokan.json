@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Dua Belokan Keliru",
       "instruksi": "Ada dua blok yang salah di program robot: temukan keduanya dan ganti, jangan lebih."
     },
     "en": {
+      "judul": "Two Wrong Turns",
       "instruksi": "Two blocks in the robot's program are wrong: find both and change them, no more than two."
     }
   },
