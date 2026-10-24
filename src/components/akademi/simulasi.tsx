@@ -105,8 +105,13 @@ function TombolBantu({ onClick, disabled, label = "Bantu" }: { onClick: () => vo
 }
 
 /** Strip angka: tombol bulat besar min..max. */
+/** Angka tertinggi minimal di strip jawaban. */
+const PILIHAN_MINIMAL = 10;
+
 function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: number; max: number; dipilih?: number | null; sorot?: number | null; onPilih: (n: number) => void; disabled?: boolean }) {
-  const angka = useMemo(() => Array.from({ length: Math.max(0, max - min + 1) }, (_, k) => min + k), [min, max]);
+  // Pilihan selalu sampai minimal 10 agar anak tidak bisa menebak dari sedikit tombol; soal tetap mengikuti jenjang.
+  const atas = Math.max(max, PILIHAN_MINIMAL);
+  const angka = useMemo(() => Array.from({ length: Math.max(0, atas - min + 1) }, (_, k) => min + k), [min, atas]);
   return (
     <div className="flex flex-wrap justify-center gap-2 rounded-[20px] bg-white/80 p-2" role="group" aria-label="Pilih angka">
       {angka.map((n) => {
@@ -118,7 +123,7 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
             disabled={disabled}
             onClick={() => onPilih(n)}
             className={`flex size-16 items-center justify-center rounded-full transition-transform active:scale-90 disabled:opacity-60 ${sorot === n ? "akademi-bounce" : ""}`}
-            style={{ ...Tebal, fontSize: 28, background: aktif ? UNGU : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#3b2fc0" : "rgba(11,37,69,.15)"}${sorot === n ? `, 0 0 0 4px ${KUNING}` : ""}` }}
+            style={{ ...Tebal, fontSize: 28, background: aktif ? UNGU : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#0567c2" : "rgba(11,37,69,.15)"}${sorot === n ? `, 0 0 0 4px ${KUNING}` : ""}` }}
             aria-label={`Angka ${n}`}
           >
             {n}
