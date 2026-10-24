@@ -148,7 +148,7 @@ function tulisManifest(semua: Item[]) {
     .map((i) => `  ${JSON.stringify(i.teks)}: ${JSON.stringify(URL_PREFIX + i.file)},\n`)
     .join("");
   const isi = `// DIBUAT OTOMATIS oleh scripts/akademi-suara.ts — jangan diedit.
-// Teks yang dibacakan → berkas MP3 di public/akademi/suara (ElevenLabs, suara ${VOICE_ID}, model ${MODEL_ID}).
+// Teks yang dibacakan → berkas MP3 di public/akademi/suara (rekaman narasi EduVoice yang dipotong per kalimat/kata, atau ElevenLabs bila dibuat lewat skrip ini).
 // Perbarui dengan: npm run -s akademi:suara
 // Hanya teks yang berkasnya sudah ada yang masuk; teks lain jatuh ke speechSynthesis.
 
