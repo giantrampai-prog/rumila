@@ -5,7 +5,7 @@
 import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { LEVELS, TRACKS, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
+import { ACTIVE_LEVELS, LEVELS, TRACKS, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
@@ -17,7 +17,7 @@ import { useMe } from "@/lib/store";
 export const INK = "#0b2545";
 
 /** Jenjang & pelajaran yang sudah punya konten di Slice 1. */
-export const LEVEL_SLICE: readonly LevelId[] = ["PAUD", "TKA", "TKB"];
+export const LEVEL_SLICE: readonly LevelId[] = ACTIVE_LEVELS;
 export const TRACK_SLICE: readonly TrackId[] = ["MAT", "KODE", "SAINS"];
 
 /** Warna pelajaran mengikuti pilar desain sistem RINOYA (pilar-mat indigo, pilar-teknologi ungu, pilar-sains teal, pilar-bahasa pink, pilar-kreativitas merah, pilar-karakter hijau). */
