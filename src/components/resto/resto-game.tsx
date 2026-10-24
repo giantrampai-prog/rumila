@@ -9,6 +9,8 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'r
 import { Icon } from '@/components/ui';
 import { useMe } from '@/lib/store';
 import { sfx } from '@/lib/sfx';
+import { installAudioUnlock } from '@/lib/audio-unlock';
+import { LoopMusic } from '@/lib/bgm';
 import {
   BUILD_STAGES,
   BUILD_STAGE_NOTE,
@@ -218,6 +220,11 @@ function useGame(memberId: string) {
 
 /* ---------------- permainan ---------------- */
 
+// Musik latar "Rinoya" (lagu masuk penuh sejak detik 0,6; mengecil mulai detik ~199 → putaran berikutnya
+// menyilang di detik 196). Satu pemutar bersama agar keluar-masuk halaman tidak menumpuk suara.
+let restoMusic: LoopMusic | null = null;
+const music = () => (restoMusic ??= new LoopMusic('/resto/musik-resto.m4a', ['resto-bgm-a', 'resto-bgm-b'], { volume: 0.16, loopStart: 0.6, loopEnd: 196, fade: 4 }));
+
 export function RestoGame() {
   const me = useMe();
   const memberId = me?.id ?? 'dev';
@@ -244,8 +251,19 @@ export function RestoGame() {
       scene.current = new RestoScene(host.current);
       scene.current.sync(g);
     });
+    // musik latar: coba langsung; bila peramban menolak autoplay, mulai pada ketukan pertama
+    installAudioUnlock();
+    const m = music();
+    m.play();
+    const onTap = () => m.retry();
+    for (const ev of ['pointerup', 'touchend', 'keydown']) document.addEventListener(ev, onTap, { capture: true, passive: true });
+    const onVis = () => (document.hidden ? m.pause() : m.play());
+    document.addEventListener('visibilitychange', onVis);
     return () => {
       alive = false;
+      for (const ev of ['pointerup', 'touchend', 'keydown']) document.removeEventListener(ev, onTap, { capture: true });
+      document.removeEventListener('visibilitychange', onVis);
+      m.stop(1.2);
       scene.current?.dispose();
       scene.current = null;
     };

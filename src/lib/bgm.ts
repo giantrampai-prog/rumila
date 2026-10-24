@@ -110,6 +110,19 @@ export class LoopMusic {
     this.timer ??= setInterval(() => this.tick(), 250);
   }
 
+  /** panggil dari ketukan pengguna: bila play() sebelumnya ditolak peramban (autoplay), coba lagi */
+  retry() {
+    if (!this.on) {
+      this.play();
+      return;
+    }
+    const a = this.els[this.cur];
+    if (!a.paused || this.crossing) return;
+    void context()?.resume();
+    a.play().catch(() => {});
+    this.ramp(a, this.o.volume, 1.2);
+  }
+
   /** jeda sebentar (lagu melanjutkan dari posisi yang sama) */
   pause() {
     if (!this.on) return;
