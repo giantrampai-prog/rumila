@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
 import type { Penguasaan, Status } from "../mastery";
-import { jenjangBerikut, paketMisi, petaJenjang } from "../peta";
+import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang } from "../peta";
 import { LEARNER, SESSION, idBaru, kompetensi, paket, waktuHari } from "./helper";
 
 const M1 = "MAT.PAUD.BILANGAN.01";
@@ -14,55 +14,61 @@ const T1 = "MAT.TKA.BILANGAN.01";
 const KOMP = [
   kompetensi(M1, { core: true }),
   kompetensi(M2, { core: true, prereq: [M1] }),
-  kompetensi(M3, { core: false, prereq: [M2] }),
+  kompetensi(M3, { core: false }),
   kompetensi(K1, { core: true }),
-  kompetensi(K2, { core: true, prereq: [K1, "LUAR.KATALOG.01"] }),
+  kompetensi(K2, { core: true }),
   kompetensi(T1, { core: true }),
 ];
+const TRACKS = ["MAT", "KODE"] as const;
 
-const p = (status: Status, hari = 0): Penguasaan => ({ status, success: 0, fail: 0, contexts: 0, days: 0, ratioLast10: 0, hintTail: 0, lastAt: waktuHari(hari) });
-const SEKARANG = new Date(waktuHari(10)).getTime();
+const p = (status: Status): Penguasaan => ({ status, success: 0, fail: 0, contexts: 0, days: 0, ratioLast10: 0, hintTail: 0, lastAt: waktuHari(0) });
+const ev = (type: GameEvent["type"], activityId: string, payload: Record<string, unknown> = {}): GameEvent =>
+  ({ id: idBaru(), learnerId: LEARNER, sessionId: SESSION, activityId, mechanic: "pilah", type, clientAt: waktuHari(0), payload }) as GameEvent;
+const tamat = (activityId: string, s: number, f: number) => ev("activity_end", activityId, { outcome: "selesai", successCount: s, failCount: f, hintCount: 0, durationMs: 1 });
 
 describe("petaJenjang", () => {
-  it("mengelompokkan per pelajaran dan unit sesuai urutan kurikulum", () => {
-    const peta = petaJenjang({}, KOMP, "PAUD", ["MAT", "KODE"], SEKARANG);
-    expect(peta.pelajaran.map((x) => x.track)).toEqual(["MAT", "KODE"]);
-    expect(peta.pelajaran[0].unit.map((u) => u.id)).toEqual(["BILANGAN", "BENTUK"]);
-    expect(peta.inti).toEqual({ dikuasai: 0, total: 4 });
+  it("satu jalur bernomor: unit diselang-seling antarpelajaran", () => {
+    const peta = petaJenjang({}, new Set(), KOMP, "PAUD", TRACKS);
+    expect(peta.unit.map((u) => `${u.track}:${u.id}:${u.ke}`)).toEqual(["MAT:BILANGAN:1", "KODE:URUTAN:1", "MAT:BENTUK:2"]);
+    expect(peta.unit.flatMap((u) => u.misi.map((m) => `${m.nomor}:${m.kompetensi.id}`))).toEqual([`1:${M1}`, `2:${M2}`, `3:${K1}`, `4:${K2}`, `5:${M3}`]);
+    expect(peta.total).toBe(5);
   });
 
-  it("prasyarat belum → terkunci; prasyarat di luar katalog dianggap lulus", () => {
-    const peta = petaJenjang({ [K1]: p("berkembang") }, KOMP, "PAUD", ["MAT", "KODE"], SEKARANG);
-    const mat = peta.pelajaran[0].unit[0].misi;
-    expect(mat.map((m) => m.terbuka)).toEqual([true, false]);
-    const kode = peta.pelajaran[1].unit[0].misi;
-    expect(kode.map((m) => m.terbuka)).toEqual([true, true]);
+  it("hanya satu misi 'sekarang'; semua sesudahnya terkunci", () => {
+    const peta = petaJenjang({}, new Set([M1]), KOMP, "PAUD", TRACKS);
+    const misi = peta.unit.flatMap((u) => u.misi);
+    expect(misi.map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "?")).join("")).toBe("SNKKK");
+    expect(peta.sekarang?.kompetensi.id).toBe(M2);
+    expect(peta.selesai).toBe(1);
   });
 
-  it("'sekarang' = misi terbuka pertama yang belum dikuasai", () => {
-    const peta = petaJenjang({ [M1]: p("dikuasai", 9) }, KOMP, "PAUD", ["MAT", "KODE"], SEKARANG);
-    const mat = peta.pelajaran[0];
-    expect(mat.sekarang?.kompetensi.id).toBe(M2);
-    expect(mat.unit[0].misi.filter((m) => m.sekarang)).toHaveLength(1);
+  it("dikuasai juga dihitung selesai", () => {
+    const peta = petaJenjang({ [M1]: p("dikuasai") }, new Set(), KOMP, "PAUD", TRACKS);
+    expect(peta.sekarang?.kompetensi.id).toBe(M2);
+    expect(peta.inti).toEqual({ dikuasai: 1, total: 4 });
   });
 
-  it("Lanjut memilih pelajaran yang progres intinya paling tertinggal", () => {
-    const peta = petaJenjang({ [M1]: p("dikuasai", 9) }, KOMP, "PAUD", ["MAT", "KODE"], SEKARANG);
-    expect(peta.lanjut?.track).toBe("KODE");
-    expect(peta.lanjut?.misi.kompetensi.id).toBe(K1);
+  it("semua misi selesai tapi inti belum dikuasai → pemantapan, belum tercapai", () => {
+    const peta = petaJenjang({ [M1]: p("dikuasai") }, new Set([M2, M3, K1, K2]), KOMP, "PAUD", TRACKS);
+    expect(peta.sekarang).toBeUndefined();
+    expect(peta.tercapai).toBe(false);
+    expect(peta.pemantapan?.kompetensi.id).toBe(M2);
   });
 
-  it("semua dikuasai → tercapai; Lanjut jatuh ke latihan ulang terlama", () => {
-    const peng = { [M1]: p("dikuasai", 1), [M2]: p("dikuasai", 2), [M3]: p("dikuasai", 9), [K1]: p("dikuasai", 9), [K2]: p("dikuasai", 9) };
-    const peta = petaJenjang(peng, KOMP, "PAUD", ["MAT", "KODE"], SEKARANG);
+  it("semua inti dikuasai → tercapai tanpa pemantapan", () => {
+    const peng = { [M1]: p("dikuasai"), [M2]: p("dikuasai"), [K1]: p("dikuasai"), [K2]: p("dikuasai") };
+    const peta = petaJenjang(peng, new Set([M3]), KOMP, "PAUD", TRACKS);
     expect(peta.tercapai).toBe(true);
-    expect(peta.pelajaran[0].unit[0].misi.map((m) => m.ulang)).toEqual([true, true]);
-    expect(peta.lanjut?.misi.kompetensi.id).toBe(M1);
+    expect(peta.pemantapan).toBeUndefined();
+    expect(peta.unit[0].lencana).toBe("emas");
   });
+});
 
-  it("lencana unit mengikuti status kompetensi inti", () => {
-    const peta = petaJenjang({ [M1]: p("dikuasai"), [M2]: p("dikuasai") }, KOMP, "PAUD", ["MAT"], SEKARANG);
-    expect(peta.pelajaran[0].unit.map((u) => u.lencana)).toEqual(["emas", "terkunci"]);
+describe("kompetensiSelesai", () => {
+  const PAKET = [paket("a", "PAUD", [M1, M2]), paket("b", "PAUD", [K1])];
+  it("paket tamat ≥ 60% menandai semua kompetensinya; di bawah ambang & paket asing diabaikan", () => {
+    const set = kompetensiSelesai([tamat("a", 3, 2), tamat("b", 2, 3), tamat("x", 5, 0), ev("activity_start", "b")], PAKET);
+    expect([...set].sort()).toEqual([M1, M2]);
   });
 });
 
@@ -74,13 +80,10 @@ describe("jenjangBerikut", () => {
 });
 
 describe("paketMisi", () => {
-  const mulai = (activityId: string): GameEvent => ({ id: idBaru(), learnerId: LEARNER, sessionId: SESSION, activityId, mechanic: "pilah", type: "activity_start", clientAt: waktuHari(0), payload: {} } as GameEvent);
-  const PAKET = [paket("b", "PAUD", [M1]), paket("a", "PAUD", [M1]), paket("c", "TKA", [M1]), paket("d", "PAUD", [M2])];
-
-  it("jenjang sama dulu, lalu yang paling jarang dimulai", () => {
-    expect(paketMisi(M1, PAKET, [], "PAUD")?.id).toBe("a");
-    expect(paketMisi(M1, PAKET, [mulai("a")], "PAUD")?.id).toBe("b");
-    expect(paketMisi(M2, PAKET, [], "PAUD")?.id).toBe("d");
+  const PAKET = [paket("b", "PAUD", [M1]), paket("a", "PAUD", [M2, M1]), paket("c", "TKA", [M1]), paket("d", "PAUD", [M1])];
+  it("jenjang sama, kompetensi utama, lalu yang paling jarang dimulai", () => {
+    expect(paketMisi(M1, PAKET, [], "PAUD")?.id).toBe("b");
+    expect(paketMisi(M1, PAKET, [ev("activity_start", "b")], "PAUD")?.id).toBe("d");
     expect(paketMisi("TIDAK.ADA", PAKET, [], "PAUD")).toBeUndefined();
   });
 });
