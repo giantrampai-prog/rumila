@@ -28,7 +28,7 @@
   },
   "assets": [],
   "generatif": false,
-  "rounds": 5,
+  "rounds": 10,
   "world": "menara",
   "execMode": "program",
   "commands": [

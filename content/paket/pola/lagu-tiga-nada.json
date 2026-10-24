@@ -38,7 +38,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 4,
+  "rounds": 10,
   "world": "pesta",
   "mode": "cipta",
   "unitLen": 3,

@@ -4127,7 +4127,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kantin",
     "currency": "IDR",
     "denominations": [
@@ -4215,7 +4215,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "warung",
     "currency": "IDR",
     "denominations": [
@@ -4310,7 +4310,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-alat-tulis",
     "currency": "IDR",
     "denominations": [
@@ -4407,7 +4407,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-roti",
     "currency": "IDR",
     "denominations": [
@@ -4500,7 +4500,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kolam",
     "currency": "IDR",
     "denominations": [
@@ -4580,7 +4580,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "currency": "IDR",
     "denominations": [
@@ -4660,7 +4660,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "peternakan",
     "currency": "IDR",
     "denominations": [
@@ -4737,7 +4737,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "currency": "IDR",
     "denominations": [
@@ -4810,7 +4810,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "currency": "IDR",
     "denominations": [
@@ -4889,7 +4889,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kolam",
     "currency": "IDR",
     "denominations": [
@@ -4966,7 +4966,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "currency": "IDR",
     "denominations": [
@@ -5039,7 +5039,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "pantai",
     "currency": "IDR",
     "denominations": [
@@ -5116,7 +5116,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kolam",
     "currency": "IDR",
     "denominations": [
@@ -5188,7 +5188,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "currency": "IDR",
     "denominations": [
@@ -5260,7 +5260,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-kue",
     "currency": "IDR",
     "denominations": [
@@ -5331,7 +5331,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-mainan",
     "currency": "IDR",
     "denominations": [
@@ -5421,7 +5421,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "warung",
     "currency": "IDR",
     "denominations": [
@@ -5512,7 +5512,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-kue",
     "currency": "IDR",
     "denominations": [
@@ -5584,7 +5584,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kantin",
     "currency": "IDR",
     "denominations": [
@@ -5657,7 +5657,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "currency": "IDR",
     "denominations": [
@@ -5723,7 +5723,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "pasar",
     "currency": "IDR",
     "denominations": [
@@ -5800,7 +5800,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "currency": "IDR",
     "denominations": [
@@ -5889,7 +5889,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "currency": "IDR",
     "denominations": [
@@ -5982,7 +5982,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-mainan",
     "currency": "IDR",
     "denominations": [
@@ -6058,7 +6058,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "bank-mini",
     "currency": "IDR",
     "denominations": [
@@ -6135,7 +6135,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "warung",
     "currency": "IDR",
     "denominations": [
@@ -6214,7 +6214,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "langsung",
     "commands": [
@@ -6375,7 +6375,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "execMode": "langsung",
     "commands": [
@@ -6536,7 +6536,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "taman",
     "execMode": "program",
     "commands": [
@@ -6669,7 +6669,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -6795,7 +6795,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -6916,7 +6916,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "langkah",
     "prediksi": true,
@@ -7131,7 +7131,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "taman",
     "execMode": "program",
     "commands": [
@@ -7262,7 +7262,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -7395,7 +7395,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -7530,7 +7530,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "taman",
     "execMode": "program",
     "commands": [
@@ -7665,7 +7665,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "semuaGrid": true,
@@ -7859,7 +7859,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "bukit",
     "execMode": "program",
     "semuaGrid": true,
@@ -8077,7 +8077,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "bukit",
     "execMode": "program",
     "commands": [
@@ -8242,7 +8242,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -8400,7 +8400,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "debug": true,
@@ -8603,7 +8603,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "taman",
     "execMode": "program",
     "debug": true,
@@ -8819,7 +8819,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "debug": true,
@@ -9002,7 +9002,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "taman",
     "execMode": "program",
     "debug": true,
@@ -9172,7 +9172,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -9379,7 +9379,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "menara",
     "execMode": "program",
     "commands": [
@@ -9486,7 +9486,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -9593,7 +9593,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "langsung",
     "commands": [
@@ -9690,7 +9690,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "langkah",
     "prediksi": true,
@@ -9868,7 +9868,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -9998,7 +9998,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 5,
+    "rounds": 10,
     "world": "taman",
     "execMode": "program",
     "commands": [
@@ -10129,7 +10129,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "menara",
     "execMode": "program",
     "commands": [
@@ -10223,7 +10223,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": false,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "execMode": "program",
     "commands": [
@@ -10333,7 +10333,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah-beruang",
     "mode": "pilih",
     "bins": [
@@ -10518,7 +10518,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -10693,7 +10693,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "pilihan": [],
@@ -10888,7 +10888,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -11038,7 +11038,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "mode": "pilih",
     "bins": [
@@ -11228,7 +11228,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -11349,7 +11349,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "pilih",
     "bins": [
@@ -11558,7 +11558,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kolam",
     "mode": "pilih",
     "bins": [
@@ -11713,7 +11713,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -11841,7 +11841,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -11974,7 +11974,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "toko-kue",
     "mode": "kelompok",
     "pilihan": [],
@@ -12119,7 +12119,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -12226,7 +12226,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -12412,7 +12412,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "pilih",
     "bins": [
@@ -12540,7 +12540,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "pesta",
     "mode": "pilih",
     "bins": [
@@ -12672,7 +12672,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -12846,7 +12846,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -13016,7 +13016,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "mode": "kelompok",
     "pilihan": [],
@@ -13177,7 +13177,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "pilih",
     "bins": [
@@ -13332,7 +13332,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -13582,7 +13582,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "peternakan",
     "mode": "kelompok",
     "pilihan": [],
@@ -13832,7 +13832,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -14102,7 +14102,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "peternakan",
     "mode": "kelompok",
     "pilihan": [],
@@ -14354,7 +14354,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "dapur",
     "mode": "kelompok",
     "pilihan": [],
@@ -14499,7 +14499,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "pilihan": [],
@@ -14638,7 +14638,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -14779,7 +14779,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "laut",
     "mode": "kelompok",
     "bins": [
@@ -14913,7 +14913,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -15041,7 +15041,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "pilih",
     "bins": [
@@ -15206,7 +15206,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "bins": [
@@ -15372,7 +15372,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "laut",
     "mode": "kelompok",
     "bins": [
@@ -15522,7 +15522,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -15664,7 +15664,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "laut",
     "mode": "kelompok",
     "bins": [
@@ -15806,7 +15806,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -15943,7 +15943,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -16076,7 +16076,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "laut",
     "mode": "kelompok",
     "bins": [
@@ -16228,7 +16228,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -16404,7 +16404,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -16539,7 +16539,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -16679,7 +16679,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "bins": [
@@ -16817,7 +16817,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -16944,7 +16944,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -17063,7 +17063,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "klinik",
     "mode": "kelompok",
     "bins": [
@@ -17184,7 +17184,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -17338,7 +17338,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "klinik",
     "mode": "pilih",
     "bins": [
@@ -17502,7 +17502,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "pilih",
     "bins": [
@@ -17637,7 +17637,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "angkasa",
     "mode": "pilih",
     "bins": [
@@ -17796,7 +17796,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "pilih",
     "bins": [
@@ -17968,7 +17968,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "laut",
     "mode": "pilih",
     "bins": [
@@ -18123,7 +18123,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "klinik",
     "mode": "pilih",
     "bins": [
@@ -18258,7 +18258,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -18414,7 +18414,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -18563,7 +18563,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -18693,7 +18693,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -18858,7 +18858,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -19015,7 +19015,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "bins": [
@@ -19139,7 +19139,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "pilih",
     "bins": [
@@ -19282,7 +19282,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -19425,7 +19425,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -19572,7 +19572,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "bins": [
@@ -19714,7 +19714,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "kelompok",
     "bins": [
@@ -19844,7 +19844,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "klinik",
     "mode": "kelompok",
     "bins": [
@@ -19977,7 +19977,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "pilih",
     "bins": [
@@ -20158,7 +20158,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "halaman",
     "mode": "kelompok",
     "bins": [
@@ -20296,7 +20296,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kelompok",
     "bins": [
@@ -20417,7 +20417,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "peternakan",
     "mode": "pilih",
     "bins": [
@@ -20634,7 +20634,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "pilih",
     "bins": [
@@ -20810,7 +20810,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "warung",
     "mode": "pilih",
     "bins": [
@@ -20988,7 +20988,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "sungai",
     "mode": "pilih",
     "bins": [
@@ -21167,7 +21167,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "dapur",
     "mode": "lanjut",
     "unitLen": 2,
@@ -21231,7 +21231,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "pantai",
     "mode": "perbaiki",
     "unitLen": 2,
@@ -21311,7 +21311,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "pesta",
     "mode": "lanjut",
     "unitLen": 3,
@@ -21387,7 +21387,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "pantai",
     "mode": "cipta",
     "unitLen": 2,
@@ -21461,7 +21461,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "pesta",
     "mode": "cipta",
     "unitLen": 3,
@@ -21551,7 +21551,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "lanjut",
     "unitLen": 2,
@@ -21620,7 +21620,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "taman",
     "mode": "perbaiki",
     "unitLen": 3,
@@ -21706,7 +21706,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "lanjut",
     "unitLen": 3,
@@ -21780,7 +21780,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "bagi",
     "items": [
@@ -21845,7 +21845,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "dapur",
     "mode": "jam-baca",
     "items": [
@@ -21896,7 +21896,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "jalan-ke-sekolah",
     "mode": "jam-baca",
     "items": [
@@ -21964,7 +21964,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "dapur",
     "mode": "jengkal",
     "items": [
@@ -22065,7 +22065,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "mode": "jengkal",
     "items": [
@@ -22167,7 +22167,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "mode": "jengkal",
     "items": [
@@ -22265,7 +22265,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "taman",
     "mode": "timbangan",
     "items": [
@@ -22363,7 +22363,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "bantuan",
     "items": [
@@ -22433,7 +22433,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "peternakan",
     "mode": "alat",
     "items": [
@@ -22544,7 +22544,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "ruang-main",
     "mode": "menara",
     "items": [
@@ -22645,7 +22645,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "kubus",
     "items": [
@@ -22757,7 +22757,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 6,
+    "rounds": 10,
     "world": "rumah",
     "mode": "jam-putar",
     "items": [
@@ -22844,7 +22844,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "pasar",
     "mode": "taksir",
     "items": [
@@ -22895,7 +22895,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "pulau-harta",
     "mode": "telusur",
     "items": [
@@ -22949,7 +22949,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "tombol",
     "items": [
@@ -23036,7 +23036,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "menara",
     "mode": "tombol",
     "items": [
@@ -23133,7 +23133,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "peternakan",
     "mode": "turus",
     "items": [
@@ -23215,7 +23215,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "peternakan",
     "mode": "turus",
     "items": [
@@ -23293,7 +23293,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "jalan-ke-sekolah",
     "mode": "susun",
     "sequences": [
@@ -23396,7 +23396,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "label",
     "sequences": [
@@ -23506,7 +23506,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun",
     "mode": "susun",
     "sequences": [
@@ -23621,7 +23621,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "pesta",
     "mode": "susun",
     "sequences": [
@@ -23738,7 +23738,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "dapur",
     "mode": "susun",
     "sequences": [
@@ -23870,7 +23870,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "jalan-angka",
     "mode": "susun",
     "sequences": [
@@ -24014,7 +24014,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "jalan-angka",
     "mode": "susun",
     "sequences": [
@@ -24168,7 +24168,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "kebun",
     "mode": "dulu",
     "sequences": [
@@ -24314,7 +24314,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 5,
+    "rounds": 10,
     "world": "rumah",
     "mode": "dulu",
     "sequences": [
@@ -24442,7 +24442,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "susun",
     "sequences": [
@@ -24550,7 +24550,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun",
     "mode": "perbaiki",
     "sequences": [
@@ -24653,7 +24653,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "perbaiki",
     "sequences": [
@@ -24761,7 +24761,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "susun",
     "sequences": [
@@ -24885,7 +24885,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "halaman",
     "mode": "susun",
     "sequences": [
@@ -25018,7 +25018,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "halaman",
     "mode": "susun",
     "sequences": [
@@ -25120,7 +25120,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "susun",
     "sequences": [
@@ -25203,7 +25203,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "kebun-pasar",
     "mode": "susun",
     "sequences": [
@@ -25304,7 +25304,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "angkasa",
     "mode": "susun",
     "sequences": [
@@ -25410,7 +25410,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "rumah",
     "mode": "susun",
     "sequences": [
@@ -25510,7 +25510,7 @@ export const PAKET_RAW: unknown[] = [
     },
     "assets": [],
     "generatif": true,
-    "rounds": 4,
+    "rounds": 10,
     "world": "sungai",
     "mode": "susun",
     "sequences": [

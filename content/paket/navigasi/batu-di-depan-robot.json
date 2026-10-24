@@ -35,7 +35,7 @@
   },
   "assets": [],
   "generatif": false,
-  "rounds": 5,
+  "rounds": 10,
   "world": "kebun-pasar",
   "execMode": "langsung",
   "commands": [

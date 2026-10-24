@@ -6,7 +6,7 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ContentPack } from "@akademi/schema";
-import { buatRonde, knobDefaults, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
+import { buatRonde, buatRondeBaru, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
 import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
@@ -77,6 +77,8 @@ function Runner({ paket }: { paket: ContentPack }) {
   const [knobs, setKnobs] = useState<Knobs>(() => knobDefaults(paket));
   const [idx, setIdx] = useState(0);
   const [ronde, setRonde] = useState<Ronde>(() => buatRonde(paket, knobDefaults(paket), hash(`${learnerId}|${paket.id}|0|${sessionId.current}`)));
+  /** kunci ronde yang sudah keluar di sesi ini, agar soal tidak berulang */
+  const riwayat = useRef<string[]>([]);
   const [hasil, setHasil] = useState<Hasil | null>(null);
   const [hint, setHint] = useState(false);
   const [skor, setSkor] = useState({ benar: 0, salah: 0, hint: 0 });
@@ -144,7 +146,8 @@ function Runner({ paket }: { paket: ContentPack }) {
       setHasil(null);
       setHint(false);
       mulaiRonde.current = Date.now();
-      setRonde(buatRonde(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`)));
+      riwayat.current.push(kunciRonde(ronde));
+      setRonde(buatRondeBaru(paket, k, hash(`${learnerId}|${paket.id}|${next}|${sessionId.current}`), riwayat.current));
     }, JEDA_UMPAN_BALIK);
   };
 

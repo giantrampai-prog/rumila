@@ -56,7 +56,7 @@ const Base = {
   /** seed acak dibolehkan? bila false, item dipakai apa adanya */
   generatif: z.boolean().default(true),
   /** jumlah ronde per aktivitas (default 5) */
-  rounds: z.number().int().min(1).max(12).default(5),
+  rounds: z.number().int().min(1).max(12).default(10),
   /** dunia tempat aktivitas digambar (latar) */
   world: Slug.default("kebun-pasar"),
 };
