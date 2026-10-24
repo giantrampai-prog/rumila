@@ -18,7 +18,7 @@ Anak naik level **per mata pelajaran** berdasar penguasaan. Usia hanya perkiraan
 | SD 5 | SD5 | 10–11 | Cambridge Primary Stage 5, A2 Flyers |
 | SD 6 | SD6 | 11–12 | Cambridge Primary Stage 6 / Checkpoint, A2+ |
 
-Mata pelajaran: **Coding · Matematika · Sains · Bahasa Indonesia · Bahasa Inggris · Dunia & Budaya · Seni & Musik · Karakter & robota**
+Mata pelajaran: **Coding · Matematika · Sains · Bahasa Indonesia · Bahasa Inggris · Dunia & Budaya · Seni & Musik · Karakter & agama**
 
 Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kapten, Komandan, Laksamana, Penjelajah, Legenda.
 
@@ -65,7 +65,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Tepuk irama: cepat / lambat, keras / pelan
 - Lagu anak sederhana
 
-**Karakter & robota**
+**Karakter & agama**
 - Doa sebelum dan sesudah makan, bangun dan tidur
 - Mengucap salam
 - Mengenal senang, sedih, marah
@@ -121,7 +121,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Alat musik pukul, tiup, petik
 - Pola irama 4 ketuk
 
-**Karakter & robota**
+**Karakter & agama**
 - Doa keluar / masuk rumah, naik kendaraan, sebelum belajar
 - Mengungkapkan perasaan dengan kata
 - Antre dan bergiliran
@@ -180,7 +180,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Lagu daerah
 - Karya dari bahan sekitar
 
-**Karakter & robota**
+**Karakter & agama**
 - Rukun Islam
 - Hafalan Al-Fatihah, Al-Ikhlas, An-Nas
 - Wudhu
@@ -242,7 +242,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Ansambel ritme
 - Gerak dasar tari daerah
 
-**Karakter & robota**
+**Karakter & agama**
 - Sholat 5 waktu dan gerakannya
 - Hafalan 5 surat pendek
 - Adab makan, bertamu, berbicara
@@ -301,7 +301,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Alat musik Nusantara
 - Membuat lagu pendek
 
-**Karakter & robota**
+**Karakter & agama**
 - Puasa dan zakat
 - Hafalan 10 surat pendek
 - Kisah nabi
@@ -358,7 +358,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Harmoni dasar
 - Pertunjukan kelas
 
-**Karakter & robota**
+**Karakter & agama**
 - Akhlak kepada sesama dan lingkungan
 - Hafalan sebagian juz 30
 - Literasi digital dan aman di internet
@@ -419,7 +419,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Akor dasar ukulele atau pianika
 - Aransemen lagu sederhana
 
-**Karakter & robota**
+**Karakter & agama**
 - Sholat berjamaah dan adab masjid
 - Hafalan 15 surat pendek
 - Puasa Ramadan penuh
@@ -480,7 +480,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Komposisi musik 8 birama
 - Tari kreasi
 
-**Karakter & robota**
+**Karakter & agama**
 - Fiqih harian
 - Hafalan 20 surat pendek
 - Kisah khulafaur rasyidin
@@ -540,7 +540,7 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 - Band atau ansambel
 - Pentas akhir
 
-**Karakter & robota**
+**Karakter & agama**
 - Akhlak dan adab lengkap
 - Hafalan juz 30 utuh
 - Zakat dan sedekah dalam praktik

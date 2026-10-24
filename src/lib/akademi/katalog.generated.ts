@@ -1,5 +1,5 @@
 // DIBUAT OTOMATIS oleh scripts/akademi-index.ts — jangan diedit.
-// Sumber: content/kurikulum/*.json (6 berkas) dan content/paket/**/*.json (126 berkas).
+// Sumber: content/kurikulum/*.json (9 berkas) dan content/paket/**/*.json (173 berkas).
 // Perbarui dengan: npm run -s akademi:index
 
 export const KURIKULUM_RAW = [
@@ -2515,6 +2515,1574 @@ export const KURIKULUM_RAW = [
         "catatan": "Bukan pertanyaan audio: situasi game yang menuntut membaca piktogram. Putaran bergantian: tukang antar minta rak paling sedikit diisi; pemborong minta kolom paling banyak. Bukti: rak yang dipilih benar. Jebakan: dua kolom hampir sama. Knob: 3 → 4 kolom, selisih 2 → 1."
       }
     ]
+  },
+  {
+    "versi": "0.1.0",
+    "kompetensi": [
+      {
+        "id": "SAINS.PAUD.TUBUH-PANCAINDRA.01",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "TUBUH-PANCAINDRA",
+          "nama": {
+            "id": "Anggota tubuh dan pancaindra",
+            "en": "Body parts and the five senses"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menunjuk mata, hidung, telinga, mulut, tangan, atau kaki pada tokoh saat namanya disebut",
+          "en": "I can point to the eyes, nose, ears, mouth, hands, or feet on a character when the name is said"
+        },
+        "depth": [
+          "kenal"
+        ],
+        "prereq": [],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "cari",
+          "ucap"
+        ],
+        "catatan": "Pengenalan nama bagian tubuh (reseptif). Dunia: Jelajah Tubuh, lapisan kulit; instruksi audio 'Mana hidungnya?', anak menyentuh bagian itu pada tubuh 3D (cari). Variasi ucap: tokoh menunjuk bagian, anak menyebut namanya. Jebakan: tangan vs jari, mulut vs gigi — mulai 6 bagian besar. Knob: jumlah bagian 4 → 8 (tambah perut, lutut). Kamus belum punya kode untuk bagian tubuh (EYFS tidak punya ELG khusus; Cambridge EY UWs belum ada di kamus), dibiarkan kosong."
+      },
+      {
+        "id": "SAINS.PAUD.TUBUH-PANCAINDRA.02",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "TUBUH-PANCAINDRA",
+          "nama": {
+            "id": "Anggota tubuh dan pancaindra",
+            "en": "Body parts and the five senses"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memasang kepala, badan, tangan, dan kaki ke tempatnya pada tubuh tokoh yang belum lengkap",
+          "en": "I can put the head, body, arms, and legs in the right place on a character that is not complete"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+        ],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "simulasi"
+        ],
+        "catatan": "Aksi teramati: anak menyeret potongan bagian tubuh ke siluet; benar bila posisinya sesuai (kepala di atas, kaki di bawah, tangan di sisi badan). Simulasi: setelah lengkap, tokoh bergerak; kalau kaki di kepala, tokoh jatuh lucu. Jebakan: tangan dan kaki tertukar karena bentuk mirip — beri tangan jari terbuka, kaki bersepatu. Knob: potongan 4 → 6 (tambah mata, mulut). Tanpa kode kerangka yang cocok."
+      },
+      {
+        "id": "SAINS.PAUD.TUBUH-PANCAINDRA.03",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "TUBUH-PANCAINDRA",
+          "nama": {
+            "id": "Anggota tubuh dan pancaindra",
+            "en": "Body parts and the five senses"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah benda ke indra yang memakainya: pelangi ke mata, lonceng ke telinga, bunga ke hidung",
+          "en": "I can sort things to the sense that uses them: a rainbow to the eyes, a bell to the ears, a flower to the nose"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+        ],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "cari"
+        ],
+        "catatan": "Pilah dengan 3 keranjang berlabel gambar indra (mata, telinga, hidung). Tiga indra ini yang bisa dialami langsung di game: benda bersinar/berwarna, benda berbunyi (diputar suaranya saat disentuh), benda berbau (tokoh mengendus). Item harus jelas satu indra dominan: pelangi, lampu kelap-kelip, kunang-kunang → mata; lonceng, genderang, bel sepeda → telinga; bunga, sabun, parfum → hidung. Umpan balik: keranjang yang benar 'memakai' bendanya (mata membesar melihat pelangi, telinga bergetar mendengar lonceng). Jebakan: benda yang bisa dilihat dan didengar sekaligus (burung) — hindari di ronde awal. Beda dengan .01: di sini anak menghubungkan indra dengan fungsinya, bukan sekadar menunjuk. Knob: 3 indra → 4 (tambah mulut/lidah: kue, permen) → 5 (kulit/tangan: es batu, bulu halus) hanya di ronde lanjut; 'lidah' dan 'kulit' sebagai nama indra ditegaskan di TK A. Tanpa kode kerangka yang cocok di kamus. [Tinjauan 24 Okt 2026: dipersempit dari 4 indra ke 3; 'kue ke lidah' dipindah ke knob.]"
+      },
+      {
+        "id": "SAINS.PAUD.HEWAN-SUARA.01",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "HEWAN-SUARA",
+          "nama": {
+            "id": "Hewan di sekitar dan suaranya",
+            "en": "Animals around us and their sounds"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menunjuk kucing, ayam, sapi, kambing, bebek, atau burung saat namanya disebut",
+          "en": "I can point to the cat, chicken, cow, goat, duck, or bird when its name is said"
+        },
+        "depth": [
+          "kenal"
+        ],
+        "prereq": [],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati hewan di sekitar; langkah pertama sebelum menggambar/menceritakan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "ucap"
+        ],
+        "catatan": "Pengenalan nama hewan halaman (reseptif). Mekanik pilah mode pilih: enam hewan di satu adegan kebun/halaman 2D, instruksi audio 'Mana sapinya?', anak menyentuh satu hewan. Variasi ucap: tokoh menyorot hewan, anak menyebut namanya. Jebakan: bebek vs ayam, kambing vs sapi kecil — beda ukuran dan warna harus jelas. Knob: jumlah hewan di adegan 3 → 6. Catatan aset: belum ada dunia 3D hewan halaman, jadi mekanik `cari` tidak dipakai di sini; bila dunia itu dibuat, tambahkan `cari` (hewan laut dari Bawah Laut bisa jadi varian). [Tinjauan 24 Okt 2026: `cari` diganti `pilah` karena tidak ada dunia 3D yang memuat hewan ini.]"
+      },
+      {
+        "id": "SAINS.PAUD.HEWAN-SUARA.02",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "HEWAN-SUARA",
+          "nama": {
+            "id": "Hewan di sekitar dan suaranya",
+            "en": "Animals around us and their sounds"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menemukan hewan yang bersuara dengan mendengar suaranya saja, misalnya meong untuk kucing",
+          "en": "I can find the animal that is making a sound just by listening to it, for example meow for the cat"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HEWAN-SUARA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati hewan lewat indra pendengaran"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah"
+        ],
+        "catatan": "Aksi teramati: suara hewan diputar tanpa petunjuk visual (semua hewan diam), anak menyentuh hewan yang bersuara. Bukti sah hanya bila hewan tidak beranimasi saat suaranya diputar. Jebakan: anak menyentuh hewan favorit, bukan yang bersuara — acak urutan. Varian pilah: kartu suara (ikon pengeras) diseret ke hewannya. Knob: 3 → 6 hewan, suara mirip (kambing vs sapi) di ronde lanjut. Mekanik pilah mode pilih pada adegan 2D; `cari` baru relevan bila dunia 3D hewan halaman ada. [Tinjauan 24 Okt 2026: `cari` dilepas.]"
+      },
+      {
+        "id": "SAINS.PAUD.HEWAN-SUARA.03",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "HEWAN-SUARA",
+          "nama": {
+            "id": "Hewan di sekitar dan suaranya",
+            "en": "Animals around us and their sounds"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah hewan menurut jumlah kakinya: dua kaki atau empat kaki",
+          "en": "I can sort animals by how many legs they have: two legs or four legs"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HEWAN-SUARA.01",
+          "MAT.PAUD.BILANGAN-1-5.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati ciri tubuh hewan"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "pilah"
+        ],
+        "catatan": "Pengamatan ciri tubuh, bukan hafalan nama. Dua keranjang berlabel gambar 2 kaki / 4 kaki. Item: ayam, bebek, burung (2); kucing, sapi, kambing, anjing (4). Anak boleh menghitung kaki dengan menunjuk (prasyarat BILANGAN-1-5.01). Jebakan: hewan digambar dari samping sehingga kaki tertutup — pakai pose yang memperlihatkan semua kaki. Pengaya. Knob: 4 → 8 hewan; ikan (0 kaki) sebagai pengecoh di ronde lanjut. [Tinjauan 24 Okt 2026: `cari` dilepas; tidak ada dunia 3D hewan halaman.]"
+      },
+      {
+        "id": "SAINS.PAUD.SIANG-MALAM-CUACA.01",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "SIANG-MALAM-CUACA",
+          "nama": {
+            "id": "Siang / malam, hujan / cerah",
+            "en": "Day / night, rain / sunshine"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah gambar kegiatan ke siang atau malam: bermain di luar ke siang, tidur ke malam",
+          "en": "I can sort pictures of activities into day or night: playing outside to day, sleeping to night"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "pendahulu: perubahan alam sehari-hari (siang–malam) sebelum musim"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "simulasi"
+        ],
+        "catatan": "Dua keranjang: langit siang (matahari) dan langit malam (bulan, bintang). Item harus punya petunjuk visual kuat: lampu menyala, piyama, matahari di jendela. Jebakan: makan bisa siang atau malam — hindari item ambigu. Varian simulasi: anak memasang matahari atau bulan di langit sesuai kegiatan yang sedang terjadi. Knob: 4 → 8 gambar."
+      },
+      {
+        "id": "SAINS.PAUD.SIANG-MALAM-CUACA.02",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "SIANG-MALAM-CUACA",
+          "nama": {
+            "id": "Siang / malam, hujan / cerah",
+            "en": "Day / night, rain / sunshine"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilih payung saat langit hujan dan topi saat langit cerah sebelum tokoh keluar rumah",
+          "en": "I can choose the umbrella when the sky is rainy and the hat when the sky is sunny before the character goes out"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "pendahulu: mengamati perubahan cuaca"
+          },
+          {
+            "framework": "EYFS",
+            "code": "ELG-PSED-MANAGING-SELF-03",
+            "note": "berpakaian sesuai kebutuhan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Simulasi tombol: langit di jendela berubah (hujan/cerah), anak menekan payung atau topi; tokoh keluar dan hasilnya terlihat (basah kuyup kalau salah, tidak dihukum). Satu kemampuan: membaca cuaca dari langit lalu memilih alat. Jebakan: anak selalu memilih payung — acak urutan dan beri ronde cerah lebih dulu. Knob: 2 cuaca → 3 (tambah berangin dengan layang-layang)."
+      },
+      {
+        "id": "SAINS.PAUD.SIANG-MALAM-CUACA.03",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "SIANG-MALAM-CUACA",
+          "nama": {
+            "id": "Siang / malam, hujan / cerah",
+            "en": "Day / night, rain / sunshine"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun 3 gambar langit menjadi urutan yang benar: cerah, mendung, lalu hujan",
+          "en": "I can put 3 pictures of the sky in the right order: sunny, cloudy, then rainy"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "KODE.PAUD.URUTAN.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses dan perubahan di alam sekitar"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "urutkan"
+        ],
+        "catatan": "Urutan perubahan alam, bukan urutan kegiatan: awan datang → langit gelap → hujan turun. Umpan balik: setelah disusun, langit beranimasi; kalau terbalik, hujan turun dari langit cerah terlihat aneh. Jebakan: anak menyusun mendung → cerah → hujan; beri petunjuk visual awan makin tebal. Pengaya. Knob: 3 → 4 gambar (tambah pelangi setelah hujan)."
+      },
+      {
+        "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.01",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "HIDUP-TAK-HIDUP",
+          "nama": {
+            "id": "Hidup / tak hidup",
+            "en": "Living / non-living"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah benda ke keranjang hidup atau tak hidup: kucing dan pohon hidup, batu dan bola tak hidup",
+          "en": "I can sort things into living or non-living baskets: a cat and a tree are living, a rock and a ball are non-living"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "MAT.PAUD.WARNA.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati makhluk hidup di sekitar; dasar sebelum membedakan lingkungan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "cari"
+        ],
+        "catatan": "Dua keranjang berlabel ikon (daun bertunas / batu). Item hidup: kucing, ayam, pohon, bunga, ikan; tak hidup: batu, bola, mobil mainan, cangkir. Jebakan utama: benda yang bergerak (mobil, robot) dianggap hidup, tumbuhan yang diam dianggap tak hidup — pastikan ada pohon/bunga di sisi hidup dan mobil di sisi tak hidup sejak awal. Knob: 4 → 8 item; boneka hewan sebagai pengecoh di ronde lanjut."
+      },
+      {
+        "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.02",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "HIDUP-TAK-HIDUP",
+          "nama": {
+            "id": "Hidup / tak hidup",
+            "en": "Living / non-living"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menemukan 3 makhluk hidup di dunia, bukan benda, misalnya ikan di Bawah Laut atau pohon di Kebun Buah",
+          "en": "I can find 3 living things in the world, not objects, for example a fish in the Undersea or a tree in the Fruit Garden"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "menjelajah alam sekitar dan mengamati hewan serta tumbuhan"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "cari"
+        ],
+        "catatan": "Mekanik cari di dunia 3D: Bawah Laut (ikan, penyu, karang hidup) atau Kebun Buah (pohon, buah di pohon). Dunia harus menyediakan benda tak hidup sebagai pengecoh yang bisa disentuh: jangkar, botol, batu, pagar. Bukti: 3 sentuhan pada makhluk hidup dengan paling banyak 1 kesalahan. Jebakan: karang dianggap batu — untuk PAUD jangan jadikan karang target. Pengaya. Knob: 3 → 5 target, jumlah pengecoh."
+      },
+      {
+        "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.03",
+        "track": "SAINS",
+        "level": "PAUD",
+        "unit": {
+          "id": "HIDUP-TAK-HIDUP",
+          "nama": {
+            "id": "Hidup / tak hidup",
+            "en": "Living / non-living"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memberi makan hanya pada makhluk hidup di kebun, bukan pada batu atau mainan",
+          "en": "I can feed only the living things in the garden, not the rocks or toys"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "ciri makhluk hidup: butuh makan dan minum"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "cari"
+        ],
+        "catatan": "Simulasi: anak memegang ember makanan/air dan menyentuh benda di kebun. Makhluk hidup bereaksi (ayam makan, bunga mekar); batu dan mobil mainan tidak bereaksi dan makanan terbuang. Bukti: ember diberikan ke semua yang hidup tanpa memberi ke yang tak hidup. Beda dengan .01: anak menerapkan ciri 'butuh makan/minum', bukan sekadar memilah kartu. Jebakan: boneka kelinci — tampilkan jahitan/kancing supaya jelas mainan. Knob: 3 → 6 sasaran."
+      }
+    ]
+  },
+  {
+    "versi": "0.1.0",
+    "kompetensi": [
+      {
+        "id": "SAINS.TKA.BAGIAN-TUMBUHAN.01",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "BAGIAN-TUMBUHAN",
+          "nama": {
+            "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+            "en": "Plant parts: roots, stem, leaves, flower"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menunjuk akar, batang, daun, atau bunga pada tumbuhan saat namanya disebut",
+          "en": "I can point to the roots, stem, leaves, or flower on a plant when the name is said"
+        },
+        "depth": [
+          "kenal"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati tumbuhan dan bagian-bagiannya"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "cari",
+          "ucap"
+        ],
+        "catatan": "Pengenalan nama bagian tumbuhan. Dunia: Kebun Buah — pohon 3D dengan akar terlihat (tanah transparan). Instruksi audio 'Mana akarnya?'; anak menyentuh bagian itu. Variasi ucap: tokoh menyorot bagian, anak menyebut namanya. Jebakan: batang vs dahan, bunga vs buah — di tahap ini bunga dan buah tidak muncul bersamaan. Knob: 4 bagian → 5 (tambah buah)."
+      },
+      {
+        "id": "SAINS.TKA.BAGIAN-TUMBUHAN.02",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "BAGIAN-TUMBUHAN",
+          "nama": {
+            "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+            "en": "Plant parts: roots, stem, leaves, flower"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun potongan akar, batang, daun, dan bunga menjadi satu tumbuhan utuh",
+          "en": "I can put the pieces of roots, stem, leaves, and flower together into one whole plant"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Aksi teramati: anak menyeret 4 potongan ke posisi yang benar relatif terhadap garis tanah: akar di bawah tanah, batang di atas tanah, daun di batang, bunga di pucuk. Umpan balik simulasi: tumbuhan yang benar berdiri dan bergoyang; akar di atas membuat tumbuhan roboh. Jebakan: akar ditaruh di atas tanah. Knob: tumbuhan berbeda (bunga matahari, pohon mangga); potongan 4 → 5."
+      },
+      {
+        "id": "SAINS.TKA.BAGIAN-TUMBUHAN.03",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "BAGIAN-TUMBUHAN",
+          "nama": {
+            "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+            "en": "Plant parts: roots, stem, leaves, flower"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah hasil panen ke rak bagian tumbuhan yang terlihat diambil saat dipanen: wortel ke akar, bayam ke daun, mangga ke buah",
+          "en": "I can sort harvested food onto the shelf of the plant part I saw being picked: carrot to roots, spinach to leaves, mango to fruit"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati tumbuhan yang dimakan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Bukti harus dari pengamatan, bukan hafalan: sebelum memilah, anak melihat (atau melakukan) panennya — wortel dicabut dari tanah dengan akar terlihat, bayam dipetik daunnya, mangga dipetik dari dahan di Kebun Buah (aset 48 buah 3D). Lalu hasil panen ditaruh ke 3 rak berlabel gambar bagian tumbuhan. Item ronde awal: wortel, singkong, lobak (akar); bayam, kangkung, selada (daun); mangga, jeruk, pisang (buah). Jebakan: kentang dan bawang (bagian yang membengkak) — jangan dipakai. Varian dagang: pembeli minta 'sayur dari daun'. Knob: 2 rak → 3; 4 → 8 item; rak batang (tebu) dan bunga (brokoli, kembang kol) hanya di ronde lanjut dan hanya bila animasi panen memperlihatkan bagian itu. Butuh mode simulasi baru (panen). [Tinjauan 24 Okt 2026: dipersempit dari akar/batang/daun/bunga (tebu, brokoli = fakta yang tak teramati anak 4–5 th) ke bagian yang terlihat saat panen; buah memakai aset Kebun Buah.]"
+      },
+      {
+        "id": "SAINS.TKA.BAGIAN-TUMBUHAN.04",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "BAGIAN-TUMBUHAN",
+          "nama": {
+            "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+            "en": "Plant parts: roots, stem, leaves, flower"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun 4 gambar pertumbuhan tanaman menjadi urutan yang benar: biji, tunas, berdaun, berbunga",
+          "en": "I can put 4 pictures of a growing plant in the right order: seed, sprout, leafy plant, flowering plant"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "KODE.PAUD.URUTAN.02",
+          "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses dan perubahan: pertumbuhan tumbuhan"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "urutkan"
+        ],
+        "catatan": "Jembatan ke siklus hidup: bagian tumbuhan muncul bertahap. Gambar harus punya petunjuk visual progresif (tinggi bertambah, daun bertambah). Umpan balik: setelah disusun, tanaman tumbuh dalam animasi cepat; urutan salah membuat tanaman mengecil lagi. Jebakan: tunas vs berdaun mirip — bedakan jumlah daun 2 vs banyak. Pengaya. Knob: 3 → 4 gambar."
+      },
+      {
+        "id": "SAINS.TKA.SIKLUS-HIDUP.01",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "SIKLUS-HIDUP",
+          "nama": {
+            "id": "Siklus hidup kupu-kupu dan ayam",
+            "en": "Life cycles of the butterfly and the chicken"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun 3 gambar siklus hidup ayam menjadi urutan yang benar: telur, anak ayam, ayam dewasa",
+          "en": "I can put 3 pictures of the chicken life cycle in the right order: egg, chick, grown chicken"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "KODE.PAUD.URUTAN.02",
+          "SAINS.PAUD.HEWAN-SUARA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses dan perubahan pada makhluk hidup"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "urutkan"
+        ],
+        "catatan": "Siklus paling sederhana (3 tahap, bentuk berubah sedikit). Urutkan mode siklus: setelah ayam dewasa, panah kembali ke telur supaya anak melihat lingkaran. Umpan balik: animasi menetas. Jebakan: anak ayam dan ayam dewasa tertukar bila ukurannya sama — jaga perbedaan ukuran dan warna kuning vs cokelat. Knob: 3 tahap → 4 (tambah telur retak)."
+      },
+      {
+        "id": "SAINS.TKA.SIKLUS-HIDUP.02",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "SIKLUS-HIDUP",
+          "nama": {
+            "id": "Siklus hidup kupu-kupu dan ayam",
+            "en": "Life cycles of the butterfly and the chicken"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun 4 gambar siklus hidup kupu-kupu menjadi urutan yang benar: telur, ulat, kepompong, kupu-kupu",
+          "en": "I can put 4 pictures of the butterfly life cycle in the right order: egg, caterpillar, chrysalis, butterfly"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.SIKLUS-HIDUP.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses dan perubahan pada makhluk hidup: metamorfosis"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "urutkan"
+        ],
+        "catatan": "Lebih sulit dari ayam: bentuk berubah total (metamorfosis), 4 tahap. Jebakan utama: ulat ditaruh setelah kupu-kupu karena anak mengira ulat anak kupu-kupu yang 'lahir' — tampilkan telur di daun dan kepompong menggantung. Mode siklus: panah kembali dari kupu-kupu ke telur. Knob: 4 tahap; versi 3 tahap (tanpa telur) sebagai bantuan."
+      },
+      {
+        "id": "SAINS.TKA.SIKLUS-HIDUP.03",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "SIKLUS-HIDUP",
+          "nama": {
+            "id": "Siklus hidup kupu-kupu dan ayam",
+            "en": "Life cycles of the butterfly and the chicken"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa mengantar anak hewan ke induknya: ulat ke kupu-kupu, anak ayam ke ayam, anak kucing ke kucing",
+          "en": "I can take each baby animal to its parent: caterpillar to butterfly, chick to chicken, kitten to cat"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.SIKLUS-HIDUP.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "perubahan makhluk hidup dari muda ke dewasa"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "pilah",
+          "navigasi"
+        ],
+        "catatan": "Pilah dengan akibat di dunia: tiap anak hewan diseret (atau diarahkan lewat petak, navigasi) ke induknya; induk yang benar menyambut (animasi mengeram/menjilat), induk yang salah mundur dan anak hewan kembali ke tempat semula. Campur pasangan yang mirip rupa (anak ayam–ayam, anak kucing–kucing, anak bebek–bebek) dengan yang berubah bentuk (ulat–kupu-kupu dari .02) supaya anak tidak hanya mencocokkan rupa. Bukti: semua pasangan diantar dengan paling banyak 1 percobaan salah per pasangan. Jebakan: ulat diantar ke ayam karena 'ayam makan ulat' — induk ayam tidak boleh bereaksi mematuk. Pengaya. Knob: 3 → 6 pasangan; kecebong–katak hanya setelah siklus katak diperlihatkan (ronde pengantar), karena belum ada kompetensi siklus katak. [Tinjauan 24 Okt 2026: kecebong–katak dilepas dari statement (tanpa prasyarat), `cari` diganti akibat di dunia.]"
+      },
+      {
+        "id": "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "HEWAN-DARAT-AIR-UDARA",
+          "nama": {
+            "id": "Hewan darat, air, udara",
+            "en": "Land, water, and air animals"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah hewan ke darat, air, atau udara: sapi ke darat, ikan ke air, burung ke udara",
+          "en": "I can sort animals into land, water, or air: cow to land, fish to water, bird to air"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HEWAN-SUARA.01",
+          "MAT.PAUD.WARNA.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-02",
+            "note": "persamaan dan perbedaan lingkungan tempat hewan hidup"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "cari"
+        ],
+        "catatan": "Tiga keranjang berlatar: padang rumput, laut, langit. Item tahap awal harus tegas: sapi, kambing, kucing (darat); ikan, gurita, penyu (air); burung, kupu-kupu, lebah (udara). Jebakan: bebek dan katak hidup di dua tempat — simpan untuk ronde lanjut sebagai 'boleh dua keranjang' atau hindari. Knob: 2 keranjang → 3; 4 → 9 hewan."
+      },
+      {
+        "id": "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "HEWAN-DARAT-AIR-UDARA",
+          "nama": {
+            "id": "Hewan darat, air, udara",
+            "en": "Land, water, and air animals"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menemukan 3 hewan air yang disebutkan di Bawah Laut, misalnya penyu, gurita, dan ikan badut",
+          "en": "I can find 3 named water animals in the Undersea world, for example a turtle, an octopus, and a clownfish"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "menjelajah dan mengamati hewan di lingkungan air"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "cari",
+          "ucap"
+        ],
+        "catatan": "Mekanik cari di dunia 3D Bawah Laut, lapisan terumbu (dangkal) untuk TK A. Instruksi audio menyebut satu hewan; anak berenang mendekat dan menyentuhnya. Bukti: 3 hewan ditemukan dalam batas waktu longgar, paling banyak 2 sentuhan salah. Variasi ucap: hewan disorot, anak menyebut namanya. Jebakan: ikan badut vs ikan lain berwarna oranye — pilih target yang bentuknya khas. Pengaya. Knob: 3 → 5 hewan, kedalaman lapisan."
+      },
+      {
+        "id": "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "HEWAN-DARAT-AIR-UDARA",
+          "nama": {
+            "id": "Hewan darat, air, udara",
+            "en": "Land, water, and air animals"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah hewan menurut alat geraknya: sirip, sayap, atau kaki",
+          "en": "I can sort animals by what they move with: fins, wings, or legs"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati ciri tubuh hewan (alat gerak)"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "cari"
+        ],
+        "catatan": "Beda dengan .01: anak mengamati tubuh hewan, bukan tempat tinggalnya. Tiga rak berlabel ikon sirip, sayap, kaki. Jebakan: burung punya sayap dan kaki — aturan: pilih alat gerak utama; mulai dengan hewan satu jawaban jelas (ikan, kupu-kupu, kucing), burung di ronde lanjut. Knob: 2 → 3 rak; 4 → 9 hewan. [Tinjauan 24 Okt 2026: prasyarat pada pengaya PAUD.HEWAN-SUARA.03 dilepas (kompetensi inti tidak boleh bergantung pada pengaya); ref NW-02 (lingkungan) diganti NW-01 (pengamatan ciri tubuh).]"
+      },
+      {
+        "id": "SAINS.TKA.CUACA-PAKAIAN.01",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "CUACA-PAKAIAN",
+          "nama": {
+            "id": "Cuaca dan pakaian yang sesuai",
+            "en": "Weather and suitable clothes"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memasang simbol cuaca yang cocok dengan langit di jendela: cerah, mendung, hujan, atau berangin",
+          "en": "I can place the weather symbol that matches the sky in the window: sunny, cloudy, rainy, or windy"
+        },
+        "depth": [
+          "kenal"
+        ],
+        "prereq": [
+          "SAINS.PAUD.SIANG-MALAM-CUACA.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "mengamati cuaca sebagai perubahan di alam sekitar"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Papan cuaca harian (simulasi): langit di jendela beranimasi, anak memilih simbol dan memasangnya di papan. Berangin ditandai pohon bergoyang dan daun beterbangan. Jebakan: mendung vs hujan — hujan harus terlihat tetesnya. Knob: 2 → 4 cuaca; tambah 'dingin/berkabut' sebagai pengaya."
+      },
+      {
+        "id": "SAINS.TKA.CUACA-PAKAIAN.02",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "CUACA-PAKAIAN",
+          "nama": {
+            "id": "Cuaca dan pakaian yang sesuai",
+            "en": "Weather and suitable clothes"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilih pakaian untuk tokoh sesuai cuaca: jas hujan saat hujan, topi saat cerah, jaket saat berangin dingin",
+          "en": "I can choose clothes for the character to match the weather: raincoat when rainy, hat when sunny, jacket when cold and windy"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.CUACA-PAKAIAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "cuaca dan akibatnya pada kegiatan sehari-hari"
+          },
+          {
+            "framework": "EYFS",
+            "code": "ELG-PSED-MANAGING-SELF-03",
+            "note": "berpakaian sesuai kebutuhan diri"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Simulasi lemari: cuaca ditampilkan, anak memasangkan 1–2 benda ke tokoh dari 4–6 pilihan. Tokoh keluar rumah dan bereaksi (menggigil, kepanasan, basah) tanpa kata 'salah'. Bukti: pilihan cocok dengan cuaca; sandal saat hujan dihitung keliru. Jebakan: anak memilih pakaian favorit — acak posisi. Knob: 1 → 2 benda per ronde; 3 → 4 cuaca. Cuaca yang dipakai = cuaca yang dikenal di .01 (cerah, mendung, hujan, berangin); 'dingin' muncul sebagai sifat angin, bukan cuaca tersendiri. [Tinjauan 24 Okt 2026: 'panas/dingin' diselaraskan dengan daftar cuaca .01.]"
+      },
+      {
+        "id": "SAINS.TKA.CUACA-PAKAIAN.03",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "CUACA-PAKAIAN",
+          "nama": {
+            "id": "Cuaca dan pakaian yang sesuai",
+            "en": "Weather and suitable clothes"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilih kegiatan yang cocok dengan cuaca: main layang-layang saat berangin, berteduh saat hujan",
+          "en": "I can choose the activity that fits the weather: flying a kite when windy, sheltering when rainy"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.CUACA-PAKAIAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "akibat cuaca pada kegiatan"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "pilah",
+          "simulasi"
+        ],
+        "catatan": "Pilah: kartu kegiatan diseret ke papan cuaca yang cocok (menjemur baju → cerah, main layang-layang → berangin, berteduh/pakai payung → hujan). Varian simulasi: anak memilih kegiatan, lalu adegan dimainkan (layang-layang tak terbang saat tak ada angin). Pengaya. Jebakan: bermain di dalam rumah cocok untuk semua cuaca — jangan jadikan item."
+      },
+      {
+        "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "APUNG-TENGGELAM-MAGNET",
+          "nama": {
+            "id": "Apung / tenggelam, magnet menarik / tidak",
+            "en": "Float / sink, magnetic / not magnetic"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah benda ke rak terapung atau tenggelam setelah mencobanya di bak air",
+          "en": "I can sort objects onto the floats or sinks shelf after trying them in the water tub"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "MAT.PAUD.WARNA.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "menjelajah benda di sekitar lewat percobaan dan pengamatan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Simulasi bak air: anak menjatuhkan benda satu per satu, melihat hasilnya, lalu menaruhnya di rak terapung/tenggelam. Bukti: rak sesuai hasil percobaan yang baru dilihat anak. Benda: bola plastik, daun, gabus, kayu (apung); batu, sendok logam, koin, kelereng (tenggelam). Jebakan: benda besar dianggap pasti tenggelam — sertakan kayu besar yang terapung. Knob: 4 → 8 benda."
+      },
+      {
+        "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "APUNG-TENGGELAM-MAGNET",
+          "nama": {
+            "id": "Apung / tenggelam, magnet menarik / tidak",
+            "en": "Float / sink, magnetic / not magnetic"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menebak benda mana yang akan terapung sebelum memasukkannya ke bak air",
+          "en": "I can predict which object will float before putting it into the water tub"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "membuat perkiraan lalu mengamati hasilnya"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Langkah ilmiah: menebak dulu, baru menguji. Anak menaruh benda di kolom tebakan (apung/tenggelam), menekan 'coba', lalu bak menguji semuanya. Bukti: tebakan benar untuk benda yang bahannya sudah pernah dicoba di .01 (generalisasi: kayu terapung, logam tenggelam) — benda baru tetapi bahan sama. Tebakan meleset tidak dihukum keras: skor dari rasio. Beda dengan .01: di sini anak memilah sebelum melihat hasil. Knob: 3 → 6 benda; porsi bahan baru."
+      },
+      {
+        "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03",
+        "track": "SAINS",
+        "level": "TKA",
+        "unit": {
+          "id": "APUNG-TENGGELAM-MAGNET",
+          "nama": {
+            "id": "Apung / tenggelam, magnet menarik / tidak",
+            "en": "Float / sink, magnetic / not magnetic"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah benda yang tertarik magnet dari yang tidak setelah mencobanya dengan magnet",
+          "en": "I can sort objects that a magnet pulls from those it does not, after testing them with the magnet"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "menjelajah benda lewat percobaan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Simulasi: anak menyeret magnet mendekati benda; benda logam besi melompat menempel, yang lain diam. Lalu benda ditaruh ke rak 'tertarik' / 'tidak'. Benda tertarik: paku, klip kertas, sendok besi, kaleng; tidak: pensil kayu, penghapus, koin tembaga/aluminium dihindari (membingungkan), gelas plastik. Jebakan: semua yang berkilau dianggap tertarik — sertakan kertas emas/koin aluminium hanya di ronde lanjut dengan catatan. Knob: 4 → 8 benda. Ide pengaya untuk PO: 'mengambil hanya benda logam dari tumpukan dengan magnet' (cari+simulasi)."
+      }
+    ]
+  },
+  {
+    "versi": "0.1.0",
+    "kompetensi": [
+      {
+        "id": "SAINS.TKB.TULANG-OTOT-ORGAN.01",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "TULANG-OTOT-ORGAN",
+          "nama": {
+            "id": "Tulang, otot, organ utama",
+            "en": "Bones, muscles, main organs"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menemukan jantung, paru-paru, perut, atau otak di dalam tubuh 3D saat namanya disebut",
+          "en": "I can find the heart, lungs, stomach, or brain inside the 3D body when the name is said"
+        },
+        "depth": [
+          "kenal"
+        ],
+        "prereq": [
+          "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+        ],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "cari",
+          "ucap"
+        ],
+        "catatan": "Dunia: Jelajah Tubuh, lapisan organ. Instruksi audio 'Mana paru-parunya?'; anak memutar tubuh 3D dan menyentuh organ itu. Variasi ucap: organ berdenyut/menyala, anak menyebut namanya. Jebakan: perut (lambung) vs usus, jantung di kiri vs tengah — mulai 4 organ besar. Knob: 4 → 6 organ (tambah usus, ginjal). Kamus belum punya kode untuk organ tubuh (Cambridge Primary Science 1 'parts of the human body' belum ada di kamus; EYFS tidak punya ELG khusus) — dibiarkan kosong."
+      },
+      {
+        "id": "SAINS.TKB.TULANG-OTOT-ORGAN.02",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "TULANG-OTOT-ORGAN",
+          "nama": {
+            "id": "Tulang, otot, organ utama",
+            "en": "Bones, muscles, main organs"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memasang tulang, otot, dan organ ke lapisan tubuh 3D yang tepat",
+          "en": "I can place bones, muscles, and organs on the correct layer of the 3D body"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.TULANG-OTOT-ORGAN.01",
+          "SAINS.PAUD.TUBUH-PANCAINDRA.02"
+        ],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "simulasi"
+        ],
+        "catatan": "Pilah tiga lapisan Jelajah Tubuh: potongan (tengkorak, tulang paha, otot lengan, otot betis, jantung, paru-paru) diseret ke lapisan tulang / otot / organ; bila lapisan benar, potongan 'menempel' di posisinya. Bukti: lapisan benar; posisi persis boleh dibantu magnet-snap. Jebakan: jantung dianggap otot (benar secara ilmiah tetapi di sini dihitung organ) — label lapisan organ memuat jantung sejak contoh. Knob: 3 → 6 potongan; mode tanpa bayangan posisi."
+      },
+      {
+        "id": "SAINS.TKB.TULANG-OTOT-ORGAN.03",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "TULANG-OTOT-ORGAN",
+          "nama": {
+            "id": "Tulang, otot, organ utama",
+            "en": "Bones, muscles, main organs"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyentuh bagian tubuh 3D yang akan bekerja sebelum tokoh bergerak: otot kaki sebelum lari, paru-paru sebelum menarik napas",
+          "en": "I can touch the 3D body part that is about to work before the character moves: leg muscles before running, lungs before breathing in"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.TULANG-OTOT-ORGAN.01"
+        ],
+        "refs": [],
+        "core": false,
+        "mechanics": [
+          "cari",
+          "simulasi"
+        ],
+        "catatan": "Ronde pengantar: tokoh melakukan kegiatan (lari, angkat tas, tarik napas, makan, membaca) dan bagian yang bekerja menyala di Jelajah Tubuh — ini pengajaran, belum bukti. Ronde bukti: kegiatan diumumkan ('Sekarang tokoh akan lari'), anak menyentuh bagian tubuh 3D (cari) SEBELUM animasi jalan; lalu kegiatan dimainkan dan bagian yang sebenarnya menyala, sehingga cocok/tidaknya terlihat sendiri. Bukti sah hanya bila sentuhan dibuat sebelum animasi. Jebakan: lari → jantung juga benar; terima satu dari dua jawaban yang ditandai sah. Pengaya. Knob: 3 → 5 kegiatan. Ide lain untuk PO: 'tulang melindungi organ' (tengkorak–otak, rusuk–jantung). Tanpa kode kerangka di kamus. [Tinjauan 24 Okt 2026: dari pilah kartu (mencocokkan fakta) menjadi tebak-lalu-lihat di tubuh 3D.]"
+      },
+      {
+        "id": "SAINS.TKB.MAKANAN-SEHAT.01",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "MAKANAN-SEHAT",
+          "nama": {
+            "id": "Makanan sehat dan tidak sehat",
+            "en": "Healthy and unhealthy food"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah makanan ke piring sehari-hari atau toples sesekali: buah dan sayur ke piring, permen dan soda ke toples",
+          "en": "I can sort food into the everyday plate or the sometimes jar: fruit and vegetables to the plate, sweets and soda to the jar"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.PAUD.HIDUP-TAK-HIDUP.03"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-PSED-MANAGING-SELF-03",
+            "note": "memahami pentingnya memilih makanan sehat"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "dagang"
+        ],
+        "catatan": "Bahasa 'sehari-hari' vs 'sesekali', bukan 'baik/buruk', supaya anak tidak merasa bersalah. Dua wadah berlabel gambar. Item sehari-hari: pisang, wortel, nasi, telur, ikan, susu, air putih; sesekali: permen, keripik, soda, kue krim. Jebakan: jus kemasan manis dikira buah — pakai buah utuh dari aset Kebun Buah (48 buah 3D). Knob: 4 → 10 item; 2 → 3 wadah (tambah 'kadang': roti manis)."
+      },
+      {
+        "id": "SAINS.TKB.MAKANAN-SEHAT.02",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "MAKANAN-SEHAT",
+          "nama": {
+            "id": "Makanan sehat dan tidak sehat",
+            "en": "Healthy and unhealthy food"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun piring makan dengan nasi, lauk, sayur, dan buah dari pilihan yang tersedia",
+          "en": "I can build a meal plate with rice, a protein, vegetables, and fruit from the choices available"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.MAKANAN-SEHAT.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-PSED-MANAGING-SELF-03",
+            "note": "memilih makanan sehat untuk diri sendiri"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "dagang"
+        ],
+        "catatan": "Simulasi piring 'Isi Piringku': empat bagian piring bergambar samar; anak menyeret satu item ke tiap bagian dari meja berisi 8–10 pilihan termasuk pengecoh (permen, soda). Bukti: tiap bagian terisi dengan kelompok yang tepat; pengecoh tidak di piring. Jebakan: buah ditaruh di bagian sayur — bagian berikon warna berbeda. Knob: 3 → 4 bagian; jumlah pengecoh."
+      },
+      {
+        "id": "SAINS.TKB.MAKANAN-SEHAT.03",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "MAKANAN-SEHAT",
+          "nama": {
+            "id": "Makanan sehat dan tidak sehat",
+            "en": "Healthy and unhealthy food"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilih bekal sehari-hari di pasar: buah atau sayur, bukan permen, walau permen paling murah",
+          "en": "I can choose an everyday snack at the market: fruit or vegetables, not sweets, even though sweets are the cheapest"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.MAKANAN-SEHAT.01",
+          "MAT.TKA.UANG-KENAL.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-PSED-MANAGING-SELF-03"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "dagang"
+        ],
+        "catatan": "Dagang lintas pelajaran: pedagang menjual buah dari Kebun Buah, sayur potong (wortel, timun), dan jajanan; anak punya 5 koin. Kemampuan yang dinilai di sini hanya SATU: isi keranjang termasuk kelompok sehari-hari. Membayar pas adalah konteks dari MAT.TKA.UANG-KENAL.02 dan dicatat terpisah sebagai bukti Matematika, bukan syarat lulus kompetensi ini. Jebakan: permen paling murah — godaan sengaja; jus kemasan manis dikira buah. Pengaya. Knob: uang 3 → 5 koin; jumlah jajanan pengecoh. [Tinjauan 24 Okt 2026: 'dengan uang terbatas' dilepas dari statement supaya satu kemampuan; bahasa 'sehat' diganti 'sehari-hari' konsisten dengan .01.]"
+      },
+      {
+        "id": "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "KEBUTUHAN-TUMBUHAN",
+          "nama": {
+            "id": "Apa yang tumbuhan butuhkan",
+            "en": "What plants need"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah apa yang dibutuhkan tumbuhan dari yang tidak: air, cahaya, tanah ke pot; mainan, permen ke luar",
+          "en": "I can sort what a plant needs from what it does not: water, light, soil go to the pot; toys, sweets go out"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01",
+            "note": "mengamati kebutuhan tumbuhan"
+          },
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses pertumbuhan"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "rawat"
+        ],
+        "catatan": "Pilah dengan akibat, bukan kartu diam: kartu (ember air, matahari, tanah/pot, udara/angin, mainan, permen, selimut, TV) diseret ke pot tanaman atau keranjang 'tidak perlu'. Pot bereaksi pada yang dibutuhkan (tanah basah, daun condong ke cahaya, tunas sedikit naik) dan menolak yang tidak (mainan menggelinding keluar, permen tak terserap). Ronde 1 eksplorasi bebas; bukti diambil dari ronde 2: semua kebutuhan masuk pot, pengecoh ke keranjang, paling banyak 1 salah. Udara boleh masuk kebutuhan sejak awal dengan ikon angin tipis. Jebakan: anak memberi 'susu' karena anak butuh susu — pengecoh yang baik untuk ronde lanjut. Knob: 4 → 8 kartu. Mekanik rawat = merawat makhluk hidup (sama dengan PAUD.HIDUP-TAK-HIDUP.03). [Tinjauan 24 Okt 2026: `cari` (tak ada dunia) diganti `rawat`; umpan balik pot ditambahkan supaya bukan kuis seret.]"
+      },
+      {
+        "id": "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "KEBUTUHAN-TUMBUHAN",
+          "nama": {
+            "id": "Apa yang tumbuhan butuhkan",
+            "en": "What plants need"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa membuat tanaman tumbuh berbunga dengan memberinya air dan cahaya yang cukup setiap hari",
+          "en": "I can make a plant grow and flower by giving it enough water and light every day"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses dan perubahan: pertumbuhan tumbuhan"
+          },
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-01"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi"
+        ],
+        "catatan": "Simulasi merawat 5–7 'hari' singkat: tiap hari anak memilih siram/tidak dan tirai buka/tutup; tanaman tumbuh bila keduanya terpenuhi, layu bila salah satu kurang dua hari berturut-turut. Satu kemampuan: memenuhi kebutuhan tumbuhan. Bukti: tanaman berbunga di akhir dengan paling banyak 1 hari lalai. Jebakan: menyiram berlebihan — pada knob lanjut, air berlebih membuat daun menguning. Knob: jumlah hari 5 → 7; tambah variabel air berlebih."
+      },
+      {
+        "id": "SAINS.TKB.KEBUTUHAN-TUMBUHAN.03",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "KEBUTUHAN-TUMBUHAN",
+          "nama": {
+            "id": "Apa yang tumbuhan butuhkan",
+            "en": "What plants need"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menunjuk tanaman yang akan layu sebelum hari berganti, misalnya yang disimpan di tempat gelap",
+          "en": "I can point to the plant that will wilt before the day changes, for example the one kept in the dark"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "memperkirakan perubahan berdasar kebutuhan"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Prediksi: tiga pot sama, satu kondisi berbeda (di lemari gelap / tidak disiram / tanpa tanah), anak menunjuk yang akan layu sebelum animasi hari berjalan. Bukti sah hanya bila tebakan dibuat sebelum perubahan terlihat. Jebakan: anak menunggu animasi — tombol 'tebak' mengunci dulu. Pengaya. Knob: 1 → 2 pot bermasalah; kondisi makin halus (sedikit cahaya vs gelap)."
+      },
+      {
+        "id": "SAINS.TKB.HEWAN-HABITAT.01",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "HEWAN-HABITAT",
+          "nama": {
+            "id": "Hewan dan habitatnya",
+            "en": "Animals and their habitats"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa mengantar tiap hewan ke habitatnya: unta ke gurun, beruang kutub ke es, monyet ke hutan, ikan badut ke terumbu",
+          "en": "I can take each animal to its habitat: camel to the desert, polar bear to the ice, monkey to the forest, clownfish to the reef"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-02",
+            "note": "persamaan dan perbedaan lingkungan yang kontras: gurun, kutub, hutan, laut"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "navigasi"
+        ],
+        "catatan": "Lebih halus dari darat/air/udara: empat habitat kontras dengan latar jelas. Pilah ke 4 panel habitat, atau navigasi: anak mengarahkan hewan melewati petak menuju habitatnya. Item: unta, kadal (gurun); beruang kutub, penguin (es); monyet, harimau (hutan); ikan badut, penyu (terumbu). Jebakan: penguin dikira hidup di hutan karena 'burung' — tampilkan es di kartu. Knob: 2 → 4 habitat; 4 → 8 hewan."
+      },
+      {
+        "id": "SAINS.TKB.HEWAN-HABITAT.02",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "HEWAN-HABITAT",
+          "nama": {
+            "id": "Hewan dan habitatnya",
+            "en": "Animals and their habitats"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menemukan hewan yang tinggal di lapisan laut yang diminta di Bawah Laut: terumbu, laut dalam, atau palung",
+          "en": "I can find an animal that lives in the asked ocean layer in the Undersea world: reef, deep sea, or trench"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.HEWAN-HABITAT.01",
+          "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-02",
+            "note": "lingkungan yang kontras di dalam satu dunia: dangkal–dalam"
+          }
+        ],
+        "core": false,
+        "mechanics": [
+          "cari",
+          "navigasi"
+        ],
+        "catatan": "Mekanik cari di dunia 3D Bawah Laut penuh (terumbu sampai palung). Instruksi: 'Cari hewan yang tinggal di laut dalam yang gelap'; anak menyelam ke lapisan itu dan menyentuh hewan yang memang berasal dari sana (ikan lentera, bukan ikan badut). Bukti: hewan yang disentuh termasuk daftar lapisan itu. Jebakan: hewan berenang melintas lapisan — kunci hewan pada lapisannya untuk aktivitas ini. Pengaya. Knob: 2 → 3 lapisan."
+      },
+      {
+        "id": "SAINS.TKB.HEWAN-HABITAT.03",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "HEWAN-HABITAT",
+          "nama": {
+            "id": "Hewan dan habitatnya",
+            "en": "Animals and their habitats"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memakaikan ciri tubuh yang cocok supaya hewan betah di tempat hidupnya: bulu tebal di es, sirip di air, warna hijau daun di hutan",
+          "en": "I can give an animal the body feature that fits where it lives: thick fur on the ice, fins in the water, leaf-green colour in the forest"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.HEWAN-HABITAT.01",
+          "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-02",
+            "note": "mengaitkan ciri makhluk hidup dengan lingkungannya"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Awal adaptasi lewat percobaan, bukan hafalan: hewan netral ditaruh di habitat, anak memilih satu ciri dari 3–4 kartu dan 'memakaikannya'; akibat terlihat — tanpa bulu tebal hewan menggigil di es, tanpa sirip hewan megap-megap di air, dengan warna hijau hewan tersembunyi dari burung pemangsa di hutan (tanpa warna hijau ia tertangkap). Bukti: ciri yang dipilih membuat hewan betah pada 3 habitat dengan paling banyak 1 percobaan salah per habitat. Ketiga ciri ini bisa dialami/diamati anak 5–6 th; punuk unta (menyimpan cadangan) hanya di ronde lanjut dengan VO singkat, karena tidak bisa diamati akibatnya. Jebakan: anak memakaikan semua ciri sekaligus — satu ciri per ronde. Knob: 3 → 5 pasangan (tambah kaki berselaput–rawa, punuk–gurun). Butuh mode simulasi baru (pakaikan ciri). [Tinjauan 24 Okt 2026: dari pilah kartu ciri→panel (fakta) menjadi percobaan dengan akibat; punuk dipindah ke knob.]"
+      },
+      {
+        "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.01",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "MATAHARI-BUMI-BULAN",
+          "nama": {
+            "id": "Matahari, Bumi, Bulan",
+            "en": "Sun, Earth, Moon"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menemukan Matahari, Bumi, atau Bulan di Jelajah Angkasa saat namanya disebut",
+          "en": "I can find the Sun, the Earth, or the Moon in the Space world when its name is said"
+        },
+        "depth": [
+          "kenal"
+        ],
+        "prereq": [],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "cari",
+          "ucap"
+        ],
+        "catatan": "Dunia: Jelajah Angkasa. Instruksi audio 'Mana Bumi?'; anak mengarahkan pandangan/terbang dan menyentuh benda langit itu. Pengecoh: Mars (merah), bintang lain. Variasi ucap: benda disorot, anak menyebut namanya. Jebakan: Bulan vs Bumi dari jauh sama-sama bulat — jaga skala dan warna (biru-hijau vs abu). Knob: 3 target → 5 (tambah Mars, bintang). Kamus belum punya kode untuk benda langit (EYFS ELG tidak spesifik; Cambridge Primary Science 'Earth in space' belum ada di kamus) — dibiarkan kosong."
+      },
+      {
+        "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.02",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "MATAHARI-BUMI-BULAN",
+          "nama": {
+            "id": "Matahari, Bumi, Bulan",
+            "en": "Sun, Earth, Moon"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa menyusun model tata surya kecil: Bulan mengitari Bumi, Bumi mengitari Matahari",
+          "en": "I can build a small model: the Moon goes around the Earth, and the Earth goes around the Sun"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.MATAHARI-BUMI-BULAN.01"
+        ],
+        "refs": [],
+        "core": false,
+        "mechanics": [
+          "simulasi",
+          "urutkan"
+        ],
+        "catatan": "Simulasi: Matahari diam di tengah; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: kedua benda pada lintasan yang benar (Bulan tidak langsung mengitari Matahari). Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Ide lain untuk PO: mengurutkan ukuran Matahari > Bumi > Bulan (urutkan). Tanpa kode kerangka di kamus."
+      },
+      {
+        "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.03",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "MATAHARI-BUMI-BULAN",
+          "nama": {
+            "id": "Matahari, Bumi, Bulan",
+            "en": "Sun, Earth, Moon"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memutar Bumi sampai kota yang diminta menjadi siang, yaitu menghadap Matahari",
+          "en": "I can turn the Earth until the asked city is in daytime, facing the Sun"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.MATAHARI-BUMI-BULAN.01",
+          "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+        ],
+        "refs": [
+          {
+            "framework": "EYFS",
+            "code": "ELG-UW-NATURAL-WORLD-03",
+            "note": "proses dan perubahan di alam: siang–malam sebagai akibat putaran Bumi"
+          }
+        ],
+        "core": true,
+        "mechanics": [
+          "simulasi"
+        ],
+        "catatan": "Simulasi: bola Bumi dengan penanda rumah/kota dan lampu Matahari tetap; anak memutar Bumi sampai penanda berada di sisi terang (siang) atau gelap (malam) sesuai permintaan. Bukti: penanda di belahan yang benar saat tombol 'pas' ditekan. Jebakan: anak memindahkan Matahari — Matahari dikunci. Knob: siang saja → siang/malam bergantian; 1 → 2 penanda ('rumah siang, rumah seberang malam')."
+      },
+      {
+        "id": "SAINS.TKB.BAHAN.01",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "BAHAN",
+          "nama": {
+            "id": "Bahan: kayu, logam, plastik, kaca",
+            "en": "Materials: wood, metal, plastic, glass"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah benda menurut bahannya: kayu, logam, plastik, atau kaca",
+          "en": "I can sort objects by their material: wood, metal, plastic, or glass"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03"
+        ],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "pilah",
+          "cari"
+        ],
+        "catatan": "Empat rak berlabel contoh bahan (balok kayu, paku, botol plastik, gelas kaca). Item: sendok kayu, kursi kayu, kaleng, kunci, ember plastik, mainan plastik, jendela, toples kaca. Jebakan: benda yang dicat (kayu dicat merah dianggap plastik) — tampilkan serat kayu; kaca vs plastik bening dibedakan pantulan dan 'denting' saat disentuh. Varian cari: temukan 3 benda logam di dapur. Knob: 2 → 4 rak; 4 → 8 benda. Kamus belum punya kode untuk bahan (Cambridge Primary Science 1 'Materials' belum ada di kamus; EYFS NW-03 hanya menyentuh perubahan wujud) — dibiarkan kosong."
+      },
+      {
+        "id": "SAINS.TKB.BAHAN.02",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "BAHAN",
+          "nama": {
+            "id": "Bahan: kayu, logam, plastik, kaca",
+            "en": "Materials: wood, metal, plastic, glass"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilah benda yang tembus pandang dari yang tidak setelah mencoba melihat lewat benda itu",
+          "en": "I can sort objects that I can see through from those I cannot, after trying to look through them"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.BAHAN.01"
+        ],
+        "refs": [],
+        "core": true,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Simulasi: benda diseret ke depan gambar tokoh; bila tembus pandang, tokoh masih terlihat. Lalu benda ditaruh ke rak tembus pandang / tidak. Bukti: rak sesuai hasil yang dilihat. Item tembus: gelas kaca, botol plastik bening, jendela; tidak: papan kayu, kaleng, ember plastik buram. Poin sains: plastik bisa dua-duanya, kaca hampir selalu tembus — kaitkan dengan .01. Jebakan: kaca berwarna. Knob: 4 → 8 benda. Tanpa kode kerangka di kamus."
+      },
+      {
+        "id": "SAINS.TKB.BAHAN.03",
+        "track": "SAINS",
+        "level": "TKB",
+        "unit": {
+          "id": "BAHAN",
+          "nama": {
+            "id": "Bahan: kayu, logam, plastik, kaca",
+            "en": "Materials: wood, metal, plastic, glass"
+          }
+        },
+        "statement": {
+          "id": "Aku bisa memilih bahan yang tepat untuk benda yang kubangun: kaca untuk jendela, kayu untuk kursi, logam untuk paku",
+          "en": "I can choose the right material for something I build: glass for the window, wood for the chair, metal for the nail"
+        },
+        "depth": [
+          "pakai"
+        ],
+        "prereq": [
+          "SAINS.TKB.BAHAN.01",
+          "SAINS.TKB.BAHAN.02"
+        ],
+        "refs": [],
+        "core": false,
+        "mechanics": [
+          "simulasi",
+          "pilah"
+        ],
+        "catatan": "Simulasi membangun rumah kecil: tiap bagian (jendela, kursi, paku, ember) minta bahan; anak memilih dari 4 bahan. Umpan balik: jendela kayu membuat ruangan gelap, kursi kaca pecah saat tokoh duduk, paku plastik bengkok — konsekuensi lucu, bukan 'salah'. Bukti: bahan sesuai sifat yang sudah dipelajari (.02 tembus pandang untuk jendela). Jebakan: ember boleh plastik atau logam — tandai dua jawaban sah. Pengaya. Knob: 3 → 5 bagian. Tanpa kode kerangka di kamus."
+      }
+    ]
   }
 ] as const;
 
@@ -4271,6 +5839,101 @@ export const PAKET_RAW: unknown[] = [
       "itemsMax": 10,
       "payExact": true,
       "maxTotal": 20000,
+      "kindsMax": 2
+    }
+  },
+  {
+    "id": "sains-bekal-sehat-pasar",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "dagang",
+    "competencyIds": [
+      "SAINS.TKB.MAKANAN-SEHAT.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Bekal Sehat dari Pasar",
+        "instruksi": "Robot menyiapkan bekal sehat: dengarkan pesanan, lalu masukkan buah atau sayur sebanyak itu ke keranjang.",
+        "pisang": "pisang",
+        "apel": "apel",
+        "wortel": "wortel",
+        "timun": "timun",
+        "jeruk": "jeruk"
+      },
+      "en": {
+        "judul": "Healthy Lunchbox from the Market",
+        "instruksi": "Robot packs a healthy lunch: listen to the order, then put that many fruits or vegetables in the basket.",
+        "pisang": "bananas",
+        "apel": "apples",
+        "wortel": "carrots",
+        "timun": "cucumbers",
+        "jeruk": "oranges"
+      }
+    },
+    "knobs": {
+      "itemsMax": {
+        "min": 1,
+        "max": 5,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah bekal yang diminta per pesanan, setara uang 3 → 5 koin"
+      },
+      "kinds": {
+        "min": 1,
+        "max": 2,
+        "default": 1,
+        "step": 1,
+        "keterangan": "jenis bekal dalam satu pesanan: 1 → 2"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun-pasar",
+    "currency": "IDR",
+    "denominations": [
+      1000
+    ],
+    "priceLabel": "koin",
+    "mode": "ambil",
+    "goods": [
+      {
+        "id": "pisang",
+        "labelKey": "pisang",
+        "price": 1000,
+        "emoji": "🍌"
+      },
+      {
+        "id": "apel",
+        "labelKey": "apel",
+        "price": 1000,
+        "emoji": "🍎"
+      },
+      {
+        "id": "wortel",
+        "labelKey": "wortel",
+        "price": 1000,
+        "emoji": "🥕"
+      },
+      {
+        "id": "timun",
+        "labelKey": "timun",
+        "price": 1000,
+        "emoji": "🥒"
+      },
+      {
+        "id": "jeruk",
+        "labelKey": "jeruk",
+        "price": 1000,
+        "emoji": "🍊"
+      }
+    ],
+    "customerRule": {
+      "itemsMin": 1,
+      "itemsMax": 5,
+      "payExact": true,
+      "maxTotal": 5000,
       "kindsMax": 2
     }
   },
@@ -12915,6 +14578,5810 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
+    "id": "sains-anak-dan-induk",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.SIKLUS-HIDUP.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Cari Induknya",
+        "instruksi": "Antar tiap anak hewan ke induknya. Hati-hati, ada yang berubah bentuk saat besar.",
+        "kupu": "kupu-kupu",
+        "ayam": "ayam",
+        "kucing": "kucing",
+        "anjing": "anjing",
+        "sapi": "sapi",
+        "katak": "katak",
+        "i-ulat": "ulat",
+        "i-anakayam": "anak ayam",
+        "i-anakkucing": "anak kucing",
+        "i-anakanjing": "anak anjing",
+        "i-anaksapi": "anak sapi",
+        "i-kecebong": "kecebong berekor"
+      },
+      "en": {
+        "judul": "Find the Parent",
+        "instruksi": "Take each baby animal to its parent. Careful, some change shape when they grow.",
+        "kupu": "butterfly",
+        "ayam": "hen",
+        "kucing": "cat",
+        "anjing": "dog",
+        "sapi": "cow",
+        "katak": "frog",
+        "i-ulat": "caterpillar",
+        "i-anakayam": "chick",
+        "i-anakkucing": "kitten",
+        "i-anakanjing": "puppy",
+        "i-anaksapi": "calf",
+        "i-kecebong": "tadpole with a tail"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah pasangan induk per putaran; selalu campur pasangan mirip dan pasangan berubah bentuk"
+      },
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah anak hewan yang diseret = jumlah induk aktif"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "kupu",
+        "labelKey": "kupu",
+        "emoji": "🦋"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "ayam",
+        "emoji": "🐔"
+      },
+      {
+        "id": "kucing",
+        "labelKey": "kucing",
+        "emoji": "🐈"
+      },
+      {
+        "id": "anjing",
+        "labelKey": "anjing",
+        "emoji": "🐕"
+      },
+      {
+        "id": "sapi",
+        "labelKey": "sapi",
+        "emoji": "🐄"
+      },
+      {
+        "id": "katak",
+        "labelKey": "katak",
+        "emoji": "🐸"
+      }
+    ],
+    "items": [
+      {
+        "id": "ulat",
+        "labelKey": "i-ulat",
+        "bin": "kupu",
+        "emoji": "🐛"
+      },
+      {
+        "id": "anakayam",
+        "labelKey": "i-anakayam",
+        "bin": "ayam",
+        "emoji": "🐥"
+      },
+      {
+        "id": "anakkucing",
+        "labelKey": "i-anakkucing",
+        "bin": "kucing",
+        "emoji": "🐱",
+        "scale": 0.7
+      },
+      {
+        "id": "anakanjing",
+        "labelKey": "i-anakanjing",
+        "bin": "anjing",
+        "emoji": "🐶",
+        "scale": 0.7
+      },
+      {
+        "id": "anaksapi",
+        "labelKey": "i-anaksapi",
+        "bin": "sapi",
+        "emoji": "🐄",
+        "scale": 0.6
+      },
+      {
+        "id": "kecebong",
+        "labelKey": "i-kecebong",
+        "bin": "katak",
+        "emoji": "🐟",
+        "scale": 0.6,
+        "color": "#263238"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-antar-ke-habitat",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.HEWAN-HABITAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Antar Pulang ke Habitat",
+        "instruksi": "Antar tiap hewan ke habitatnya: unta ke gurun, beruang kutub ke es, monyet ke hutan, ikan badut ke terumbu.",
+        "gurun": "gurun",
+        "es": "es",
+        "hutan": "hutan",
+        "terumbu": "terumbu karang",
+        "i-unta": "unta",
+        "i-kadal": "kadal gurun",
+        "i-beruangkutub": "beruang kutub",
+        "i-penguin": "penguin di es",
+        "i-monyet": "monyet",
+        "i-harimau": "harimau",
+        "i-ikanbadut": "ikan badut",
+        "i-penyu": "penyu"
+      },
+      "en": {
+        "judul": "Take Them Home",
+        "instruksi": "Take each animal home: camel to the desert, polar bear to the ice, monkey to the forest, clownfish to the reef.",
+        "gurun": "desert",
+        "es": "ice",
+        "hutan": "forest",
+        "terumbu": "coral reef",
+        "i-unta": "camel",
+        "i-kadal": "desert lizard",
+        "i-beruangkutub": "polar bear",
+        "i-penguin": "penguin on ice",
+        "i-monyet": "monkey",
+        "i-harimau": "tiger",
+        "i-ikanbadut": "clownfish",
+        "i-penyu": "sea turtle"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 4,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah habitat: 2 (gurun, es) → 4 (tambah hutan, terumbu)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 4,
+        "step": 2,
+        "keterangan": "jumlah hewan per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "laut",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "gurun",
+        "labelKey": "gurun",
+        "emoji": "🏜️",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "es",
+        "labelKey": "es",
+        "emoji": "🧊",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "hutan",
+        "labelKey": "hutan",
+        "emoji": "🌴",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "terumbu",
+        "labelKey": "terumbu",
+        "emoji": "🪸",
+        "color": "#b3e5fc"
+      }
+    ],
+    "items": [
+      {
+        "id": "unta",
+        "labelKey": "i-unta",
+        "bin": "gurun",
+        "emoji": "🐪"
+      },
+      {
+        "id": "kadal",
+        "labelKey": "i-kadal",
+        "bin": "gurun",
+        "emoji": "🦎"
+      },
+      {
+        "id": "beruangkutub",
+        "labelKey": "i-beruangkutub",
+        "bin": "es",
+        "emoji": "🐻‍❄️"
+      },
+      {
+        "id": "penguin",
+        "labelKey": "i-penguin",
+        "bin": "es",
+        "emoji": "🐧",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "monyet",
+        "labelKey": "i-monyet",
+        "bin": "hutan",
+        "emoji": "🐒"
+      },
+      {
+        "id": "harimau",
+        "labelKey": "i-harimau",
+        "bin": "hutan",
+        "emoji": "🐯"
+      },
+      {
+        "id": "ikanbadut",
+        "labelKey": "i-ikanbadut",
+        "bin": "terumbu",
+        "emoji": "🐠"
+      },
+      {
+        "id": "penyu",
+        "labelKey": "i-penyu",
+        "bin": "terumbu",
+        "emoji": "🐢"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-apa-yang-tanaman-perlu",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Apa yang Tanaman Perlu?",
+        "instruksi": "Taruh yang dibutuhkan tanaman ke pot, yang tidak perlu ke keranjang.",
+        "pot": "pot tanaman (perlu)",
+        "tidak": "tidak perlu",
+        "i-air": "air",
+        "i-cahaya": "cahaya matahari",
+        "i-tanah": "tanah",
+        "i-udara": "udara",
+        "i-mainan": "mainan",
+        "i-permen": "permen",
+        "i-selimut": "selimut",
+        "i-tv": "televisi",
+        "i-susu": "susu"
+      },
+      "en": {
+        "judul": "What Does a Plant Need?",
+        "instruksi": "Put what the plant needs into the pot and what it doesn't need into the basket.",
+        "pot": "plant pot (needed)",
+        "tidak": "not needed",
+        "i-air": "water",
+        "i-cahaya": "sunlight",
+        "i-tanah": "soil",
+        "i-udara": "air",
+        "i-mainan": "toy",
+        "i-permen": "candy",
+        "i-selimut": "blanket",
+        "i-tv": "TV",
+        "i-susu": "milk"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah kartu per putaran; susu sebagai pengecoh muncul di 8 kartu"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "pot",
+        "labelKey": "pot",
+        "emoji": "🪴",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "tidak",
+        "labelKey": "tidak",
+        "emoji": "🧺",
+        "color": "#eeeeee"
+      }
+    ],
+    "items": [
+      {
+        "id": "air",
+        "labelKey": "i-air",
+        "bin": "pot",
+        "emoji": "💧"
+      },
+      {
+        "id": "cahaya",
+        "labelKey": "i-cahaya",
+        "bin": "pot",
+        "emoji": "☀️"
+      },
+      {
+        "id": "tanah",
+        "labelKey": "i-tanah",
+        "bin": "pot",
+        "shape": "square",
+        "color": "#6d4c41"
+      },
+      {
+        "id": "udara",
+        "labelKey": "i-udara",
+        "bin": "pot",
+        "emoji": "🌬️"
+      },
+      {
+        "id": "mainan",
+        "labelKey": "i-mainan",
+        "bin": "tidak",
+        "emoji": "🧸"
+      },
+      {
+        "id": "permen",
+        "labelKey": "i-permen",
+        "bin": "tidak",
+        "emoji": "🍬"
+      },
+      {
+        "id": "selimut",
+        "labelKey": "i-selimut",
+        "bin": "tidak",
+        "emoji": "🛏️"
+      },
+      {
+        "id": "tv",
+        "labelKey": "i-tv",
+        "bin": "tidak",
+        "emoji": "📺"
+      },
+      {
+        "id": "susu",
+        "labelKey": "i-susu",
+        "bin": "tidak",
+        "emoji": "🥛"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-bekal-cuaca-piknik",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.CUACA-PAKAIAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Siap-siap Piknik",
+        "instruksi": "Robot mau piknik: dengarkan cuacanya, lalu sentuh benda yang harus dipakai.",
+        "pilihan": "pilihan",
+        "i-payung": "payung",
+        "i-kacamata": "kacamata hitam",
+        "i-sarungtangan": "sarung tangan",
+        "i-sepatubot": "sepatu bot",
+        "i-kaus": "kaus tipis",
+        "t-panas": "Langit cerah, silau sekali. Pakai apa?",
+        "t-hujan": "Hujan turun, jalan becek. Pakai apa di kaki?",
+        "t-dingin": "Dingin sekali, tangan kaku. Pakai apa?",
+        "t-hujan2": "Gerimis mulai turun. Bawa apa?",
+        "t-panas2": "Hari panas dan gerah. Pakai baju apa?"
+      },
+      "en": {
+        "judul": "Getting Ready for the Picnic",
+        "instruksi": "Robot is going on a picnic: listen to the weather, then touch what to wear.",
+        "pilihan": "choices",
+        "i-payung": "umbrella",
+        "i-kacamata": "sunglasses",
+        "i-sarungtangan": "gloves",
+        "i-sepatubot": "rain boots",
+        "i-kaus": "thin t-shirt",
+        "t-panas": "Clear sky, very bright. What do we wear?",
+        "t-hujan": "It's raining, the path is muddy. What goes on our feet?",
+        "t-dingin": "So cold, our hands are stiff. What do we wear?",
+        "t-hujan2": "A drizzle is starting. What do we take?",
+        "t-panas2": "A hot, sticky day. Which top do we wear?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 5,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah pilihan per cuaca; sandal saat hujan sengaja jadi pengecoh"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "payung",
+        "labelKey": "i-payung",
+        "bin": "pilihan",
+        "emoji": "☂️"
+      },
+      {
+        "id": "kacamata",
+        "labelKey": "i-kacamata",
+        "bin": "pilihan",
+        "emoji": "🕶️"
+      },
+      {
+        "id": "sarungtangan",
+        "labelKey": "i-sarungtangan",
+        "bin": "pilihan",
+        "emoji": "🧤"
+      },
+      {
+        "id": "sepatubot",
+        "labelKey": "i-sepatubot",
+        "bin": "pilihan",
+        "emoji": "🥾"
+      },
+      {
+        "id": "kaus",
+        "labelKey": "i-kaus",
+        "bin": "pilihan",
+        "emoji": "👕"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "panas",
+        "promptKey": "t-panas",
+        "choices": [
+          "kacamata",
+          "sarungtangan",
+          "sepatubot"
+        ],
+        "correct": "kacamata"
+      },
+      {
+        "id": "hujan",
+        "promptKey": "t-hujan",
+        "choices": [
+          "sepatubot",
+          "kaus",
+          "kacamata"
+        ],
+        "correct": "sepatubot"
+      },
+      {
+        "id": "dingin",
+        "promptKey": "t-dingin",
+        "choices": [
+          "sarungtangan",
+          "kacamata",
+          "payung"
+        ],
+        "correct": "sarungtangan"
+      },
+      {
+        "id": "hujan2",
+        "promptKey": "t-hujan2",
+        "choices": [
+          "payung",
+          "kaus",
+          "kacamata",
+          "sarungtangan"
+        ],
+        "correct": "payung"
+      },
+      {
+        "id": "panas2",
+        "promptKey": "t-panas2",
+        "choices": [
+          "kaus",
+          "sarungtangan",
+          "sepatubot",
+          "payung"
+        ],
+        "correct": "kaus"
+      }
+    ]
+  },
+  {
+    "id": "sains-bekal-sehari-hari-pasar",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.MAKANAN-SEHAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Belanja Piring Sehari-hari",
+        "instruksi": "Robot belanja di pasar: makanan sehari-hari ke piring, jajanan sesekali ke toples.",
+        "piring": "piring sehari-hari",
+        "toples": "toples sesekali",
+        "kadang": "kadang-kadang",
+        "i-apel": "apel",
+        "i-brokoli": "brokoli",
+        "i-jagung": "jagung",
+        "i-ayam": "ayam panggang",
+        "i-tempe": "tempe",
+        "i-semangka": "semangka",
+        "i-kacang": "kacang rebus",
+        "i-lolipop": "lolipop",
+        "i-donat": "donat",
+        "i-cokelat": "cokelat",
+        "i-cupcake": "kue mangkuk krim",
+        "i-pancake": "panekuk",
+        "i-biskuit": "biskuit"
+      },
+      "en": {
+        "judul": "Shopping for the Everyday Plate",
+        "instruksi": "Robot shops at the market: everyday food to the plate, once-in-a-while treats to the jar.",
+        "piring": "everyday plate",
+        "toples": "once-in-a-while jar",
+        "kadang": "sometimes",
+        "i-apel": "apple",
+        "i-brokoli": "broccoli",
+        "i-jagung": "corn",
+        "i-ayam": "roast chicken",
+        "i-tempe": "tempeh",
+        "i-semangka": "watermelon",
+        "i-kacang": "boiled peanuts",
+        "i-lolipop": "lollipop",
+        "i-donat": "doughnut",
+        "i-cokelat": "chocolate bar",
+        "i-cupcake": "cupcake",
+        "i-pancake": "pancake",
+        "i-biskuit": "biscuit"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah wadah: 2 → 3 (tambah 'kadang-kadang')"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 10,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah makanan per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun-pasar",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "piring",
+        "labelKey": "piring",
+        "emoji": "🍽️",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "toples",
+        "labelKey": "toples",
+        "emoji": "🫙",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "kadang",
+        "labelKey": "kadang",
+        "emoji": "🧺",
+        "color": "#fff9c4"
+      }
+    ],
+    "items": [
+      {
+        "id": "apel",
+        "labelKey": "i-apel",
+        "bin": "piring",
+        "emoji": "🍎"
+      },
+      {
+        "id": "brokoli",
+        "labelKey": "i-brokoli",
+        "bin": "piring",
+        "emoji": "🥦"
+      },
+      {
+        "id": "jagung",
+        "labelKey": "i-jagung",
+        "bin": "piring",
+        "emoji": "🌽"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "piring",
+        "emoji": "🍗"
+      },
+      {
+        "id": "tempe",
+        "labelKey": "i-tempe",
+        "bin": "piring",
+        "emoji": "🍢"
+      },
+      {
+        "id": "semangka",
+        "labelKey": "i-semangka",
+        "bin": "piring",
+        "emoji": "🍉"
+      },
+      {
+        "id": "kacang",
+        "labelKey": "i-kacang",
+        "bin": "piring",
+        "emoji": "🥜"
+      },
+      {
+        "id": "lolipop",
+        "labelKey": "i-lolipop",
+        "bin": "toples",
+        "emoji": "🍭"
+      },
+      {
+        "id": "donat",
+        "labelKey": "i-donat",
+        "bin": "toples",
+        "emoji": "🍩"
+      },
+      {
+        "id": "cokelat",
+        "labelKey": "i-cokelat",
+        "bin": "toples",
+        "emoji": "🍫"
+      },
+      {
+        "id": "cupcake",
+        "labelKey": "i-cupcake",
+        "bin": "toples",
+        "emoji": "🧁"
+      },
+      {
+        "id": "pancake",
+        "labelKey": "i-pancake",
+        "bin": "kadang",
+        "emoji": "🥞"
+      },
+      {
+        "id": "biskuit",
+        "labelKey": "i-biskuit",
+        "bin": "kadang",
+        "emoji": "🍪"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-ciri-tubuh-dan-habitat",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.HEWAN-HABITAT.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Ciri Tubuh Cocok di Mana?",
+        "instruksi": "Taruh kartu ciri tubuh ke tempat hidup yang cocok: bulu tebal ke es, sirip ke air, punuk ke gurun.",
+        "es": "es",
+        "air": "air",
+        "gurun": "gurun",
+        "hutan": "hutan",
+        "i-bulutebal": "bulu tebal hangat",
+        "i-lemaktebal": "lapisan lemak tebal",
+        "i-sirip": "sirip untuk berenang",
+        "i-insang": "insang untuk bernapas di air",
+        "i-punuk": "punuk penyimpan cadangan",
+        "i-kakilebar": "kaki lebar untuk pasir",
+        "i-warnahijau": "warna hijau daun untuk bersembunyi",
+        "i-ekorpanjang": "ekor panjang untuk bergelantung"
+      },
+      "en": {
+        "judul": "Which Home Fits This Body?",
+        "instruksi": "Put each body-feature card on the home it suits: thick fur to the ice, fins to the water, hump to the desert.",
+        "es": "ice",
+        "air": "water",
+        "gurun": "desert",
+        "hutan": "forest",
+        "i-bulutebal": "thick warm fur",
+        "i-lemaktebal": "thick fat layer",
+        "i-sirip": "fins for swimming",
+        "i-insang": "gills to breathe in water",
+        "i-punuk": "hump that stores reserves",
+        "i-kakilebar": "wide feet for sand",
+        "i-warnahijau": "leaf-green colour to hide",
+        "i-ekorpanjang": "long tail for hanging"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah habitat: 3 (es, air, gurun) → 4 (tambah hutan)"
+      },
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah kartu ciri per putaran: 3 → 5 pasangan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "laut",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "es",
+        "labelKey": "es",
+        "emoji": "🧊",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "air",
+        "labelKey": "air",
+        "emoji": "🌊",
+        "color": "#b3e5fc"
+      },
+      {
+        "id": "gurun",
+        "labelKey": "gurun",
+        "emoji": "🏜️",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "hutan",
+        "labelKey": "hutan",
+        "emoji": "🌴",
+        "color": "#c8e6c9"
+      }
+    ],
+    "items": [
+      {
+        "id": "bulutebal",
+        "labelKey": "i-bulutebal",
+        "bin": "es",
+        "emoji": "🧥",
+        "color": "#ffffff"
+      },
+      {
+        "id": "lemaktebal",
+        "labelKey": "i-lemaktebal",
+        "bin": "es",
+        "emoji": "🦭",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "sirip",
+        "labelKey": "i-sirip",
+        "bin": "air",
+        "shape": "triangle",
+        "color": "#0288d1"
+      },
+      {
+        "id": "insang",
+        "labelKey": "i-insang",
+        "bin": "air",
+        "emoji": "🫧"
+      },
+      {
+        "id": "punuk",
+        "labelKey": "i-punuk",
+        "bin": "gurun",
+        "emoji": "🐪",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "kakilebar",
+        "labelKey": "i-kakilebar",
+        "bin": "gurun",
+        "shape": "rect",
+        "color": "#d7ccc8",
+        "width": 1.8
+      },
+      {
+        "id": "warnahijau",
+        "labelKey": "i-warnahijau",
+        "bin": "hutan",
+        "shape": "circle",
+        "color": "#43a047"
+      },
+      {
+        "id": "ekorpanjang",
+        "labelKey": "i-ekorpanjang",
+        "bin": "hutan",
+        "emoji": "🐒",
+        "color": "#c8e6c9"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-darat-air-udara-kebun",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Darat, Air, atau Udara?",
+        "instruksi": "Antar tiap hewan ke tempat hidupnya: darat, air, atau udara.",
+        "darat": "darat",
+        "air": "air",
+        "udara": "udara",
+        "i-sapi": "sapi",
+        "i-kambing": "kambing",
+        "i-kucing": "kucing",
+        "i-ikan": "ikan",
+        "i-gurita": "gurita",
+        "i-penyu": "penyu",
+        "i-burung": "burung",
+        "i-kupu": "kupu-kupu",
+        "i-lebah": "lebah"
+      },
+      "en": {
+        "judul": "Land, Water, or Sky?",
+        "instruksi": "Take each animal to where it lives: land, water, or sky.",
+        "darat": "land",
+        "air": "water",
+        "udara": "sky",
+        "i-sapi": "cow",
+        "i-kambing": "goat",
+        "i-kucing": "cat",
+        "i-ikan": "fish",
+        "i-gurita": "octopus",
+        "i-penyu": "sea turtle",
+        "i-burung": "bird",
+        "i-kupu": "butterfly",
+        "i-lebah": "bee"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah tempat: 2 (darat, air) → 3 (tambah udara)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 9,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah hewan per putaran; bebek dan katak sengaja tidak dipakai"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "darat",
+        "labelKey": "darat",
+        "emoji": "🌾",
+        "color": "#c5e1a5"
+      },
+      {
+        "id": "air",
+        "labelKey": "air",
+        "emoji": "🌊",
+        "color": "#81d4fa"
+      },
+      {
+        "id": "udara",
+        "labelKey": "udara",
+        "emoji": "☁️",
+        "color": "#e3f2fd"
+      }
+    ],
+    "items": [
+      {
+        "id": "sapi",
+        "labelKey": "i-sapi",
+        "bin": "darat",
+        "emoji": "🐄"
+      },
+      {
+        "id": "kambing",
+        "labelKey": "i-kambing",
+        "bin": "darat",
+        "emoji": "🐐"
+      },
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "darat",
+        "emoji": "🐈"
+      },
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "air",
+        "emoji": "🐟"
+      },
+      {
+        "id": "gurita",
+        "labelKey": "i-gurita",
+        "bin": "air",
+        "emoji": "🐙"
+      },
+      {
+        "id": "penyu",
+        "labelKey": "i-penyu",
+        "bin": "air",
+        "emoji": "🐢"
+      },
+      {
+        "id": "burung",
+        "labelKey": "i-burung",
+        "bin": "udara",
+        "emoji": "🐦"
+      },
+      {
+        "id": "kupu",
+        "labelKey": "i-kupu",
+        "bin": "udara",
+        "emoji": "🦋"
+      },
+      {
+        "id": "lebah",
+        "labelKey": "i-lebah",
+        "bin": "udara",
+        "emoji": "🐝"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-darat-air-udara-safari",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hewan Besar, Tempat Mana?",
+        "instruksi": "Robot bertemu hewan dari jauh: antar ke darat, air, atau udara.",
+        "darat": "darat",
+        "air": "air",
+        "udara": "udara",
+        "i-gajah": "gajah",
+        "i-zebra": "zebra",
+        "i-kuda": "kuda",
+        "i-hiu": "hiu",
+        "i-lumba": "lumba-lumba",
+        "i-udang": "udang",
+        "i-elang": "elang",
+        "i-burunghantu": "burung hantu",
+        "i-capung": "capung"
+      },
+      "en": {
+        "judul": "Big Animals, Which Home?",
+        "instruksi": "Robot meets animals from far away: take each to land, water, or sky.",
+        "darat": "land",
+        "air": "water",
+        "udara": "sky",
+        "i-gajah": "elephant",
+        "i-zebra": "zebra",
+        "i-kuda": "horse",
+        "i-hiu": "shark",
+        "i-lumba": "dolphin",
+        "i-udang": "shrimp",
+        "i-elang": "eagle",
+        "i-burunghantu": "owl",
+        "i-capung": "dragonfly"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah tempat: 2 (darat, air) → 3 (tambah udara)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 9,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah hewan per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "laut",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "darat",
+        "labelKey": "darat",
+        "emoji": "🌾",
+        "color": "#c5e1a5"
+      },
+      {
+        "id": "air",
+        "labelKey": "air",
+        "emoji": "🌊",
+        "color": "#81d4fa"
+      },
+      {
+        "id": "udara",
+        "labelKey": "udara",
+        "emoji": "☁️",
+        "color": "#e3f2fd"
+      }
+    ],
+    "items": [
+      {
+        "id": "gajah",
+        "labelKey": "i-gajah",
+        "bin": "darat",
+        "emoji": "🐘"
+      },
+      {
+        "id": "zebra",
+        "labelKey": "i-zebra",
+        "bin": "darat",
+        "emoji": "🦓"
+      },
+      {
+        "id": "kuda",
+        "labelKey": "i-kuda",
+        "bin": "darat",
+        "emoji": "🐎"
+      },
+      {
+        "id": "hiu",
+        "labelKey": "i-hiu",
+        "bin": "air",
+        "emoji": "🦈"
+      },
+      {
+        "id": "lumba",
+        "labelKey": "i-lumba",
+        "bin": "air",
+        "emoji": "🐬"
+      },
+      {
+        "id": "udang",
+        "labelKey": "i-udang",
+        "bin": "air",
+        "emoji": "🦐"
+      },
+      {
+        "id": "elang",
+        "labelKey": "i-elang",
+        "bin": "udara",
+        "emoji": "🦅"
+      },
+      {
+        "id": "burunghantu",
+        "labelKey": "i-burunghantu",
+        "bin": "udara",
+        "emoji": "🦉"
+      },
+      {
+        "id": "capung",
+        "labelKey": "i-capung",
+        "bin": "udara",
+        "emoji": "🪰"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-habitat-hewan-lain",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.HEWAN-HABITAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Rumah Hewan di Seluruh Dunia",
+        "instruksi": "Robot keliling dunia: antar tiap hewan ke habitat tempat tinggalnya.",
+        "gurun": "gurun",
+        "es": "es",
+        "hutan": "hutan",
+        "terumbu": "terumbu karang",
+        "i-kalajengking": "kalajengking",
+        "i-ular": "ular pasir",
+        "i-anjinglaut": "anjing laut",
+        "i-rusakutub": "rusa kutub",
+        "i-burungbeo": "burung beo",
+        "i-gorila": "gorila",
+        "i-kepiting": "kepiting karang",
+        "i-cumi": "cumi-cumi"
+      },
+      "en": {
+        "judul": "Animal Homes Around the World",
+        "instruksi": "Robot travels the world: take each animal to the habitat where it lives.",
+        "gurun": "desert",
+        "es": "ice",
+        "hutan": "forest",
+        "terumbu": "coral reef",
+        "i-kalajengking": "scorpion",
+        "i-ular": "sand snake",
+        "i-anjinglaut": "seal",
+        "i-rusakutub": "reindeer",
+        "i-burungbeo": "parrot",
+        "i-gorila": "gorilla",
+        "i-kepiting": "reef crab",
+        "i-cumi": "squid"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 4,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah habitat: 2 → 4"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 4,
+        "step": 2,
+        "keterangan": "jumlah hewan per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "gurun",
+        "labelKey": "gurun",
+        "emoji": "🏜️",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "es",
+        "labelKey": "es",
+        "emoji": "🧊",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "hutan",
+        "labelKey": "hutan",
+        "emoji": "🌴",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "terumbu",
+        "labelKey": "terumbu",
+        "emoji": "🪸",
+        "color": "#b3e5fc"
+      }
+    ],
+    "items": [
+      {
+        "id": "kalajengking",
+        "labelKey": "i-kalajengking",
+        "bin": "gurun",
+        "emoji": "🦂"
+      },
+      {
+        "id": "ular",
+        "labelKey": "i-ular",
+        "bin": "gurun",
+        "emoji": "🐍",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "anjinglaut",
+        "labelKey": "i-anjinglaut",
+        "bin": "es",
+        "emoji": "🦭"
+      },
+      {
+        "id": "rusakutub",
+        "labelKey": "i-rusakutub",
+        "bin": "es",
+        "emoji": "🦌",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "burungbeo",
+        "labelKey": "i-burungbeo",
+        "bin": "hutan",
+        "emoji": "🦜"
+      },
+      {
+        "id": "gorila",
+        "labelKey": "i-gorila",
+        "bin": "hutan",
+        "emoji": "🦍"
+      },
+      {
+        "id": "kepiting",
+        "labelKey": "i-kepiting",
+        "bin": "terumbu",
+        "emoji": "🦀"
+      },
+      {
+        "id": "cumi",
+        "labelKey": "i-cumi",
+        "bin": "terumbu",
+        "emoji": "🦑"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-hidup-tak-hidup-halaman",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hidup atau Tak Hidup?",
+        "instruksi": "Taruh yang hidup ke keranjang daun, yang tak hidup ke keranjang batu.",
+        "hidup": "hidup",
+        "takhidup": "tak hidup",
+        "i-kucing": "kucing",
+        "i-ayam": "ayam",
+        "i-pohon": "pohon",
+        "i-bunga": "bunga",
+        "i-ikan": "ikan",
+        "i-batu": "batu",
+        "i-bola": "bola",
+        "i-mobil": "mobil mainan",
+        "i-cangkir": "cangkir",
+        "i-boneka": "boneka beruang"
+      },
+      "en": {
+        "judul": "Living or Not Living?",
+        "instruksi": "Put living things in the leaf basket and non-living things in the stone basket.",
+        "hidup": "living",
+        "takhidup": "not living",
+        "i-kucing": "cat",
+        "i-ayam": "chicken",
+        "i-pohon": "tree",
+        "i-bunga": "flower",
+        "i-ikan": "fish",
+        "i-batu": "stone",
+        "i-bola": "ball",
+        "i-mobil": "toy car",
+        "i-cangkir": "cup",
+        "i-boneka": "teddy bear"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah benda per putaran; pohon/bunga dan mobil selalu ikut sejak awal supaya jebakan bergerak/diam terlihat"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "hidup",
+        "labelKey": "hidup",
+        "emoji": "🌱"
+      },
+      {
+        "id": "takhidup",
+        "labelKey": "takhidup",
+        "emoji": "🪨"
+      }
+    ],
+    "items": [
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "hidup",
+        "emoji": "🐈"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "hidup",
+        "emoji": "🐔"
+      },
+      {
+        "id": "pohon",
+        "labelKey": "i-pohon",
+        "bin": "hidup",
+        "emoji": "🌳"
+      },
+      {
+        "id": "bunga",
+        "labelKey": "i-bunga",
+        "bin": "hidup",
+        "emoji": "🌼"
+      },
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "hidup",
+        "emoji": "🐟"
+      },
+      {
+        "id": "batu",
+        "labelKey": "i-batu",
+        "bin": "takhidup",
+        "emoji": "🪨"
+      },
+      {
+        "id": "bola",
+        "labelKey": "i-bola",
+        "bin": "takhidup",
+        "emoji": "⚽"
+      },
+      {
+        "id": "mobil",
+        "labelKey": "i-mobil",
+        "bin": "takhidup",
+        "emoji": "🚗"
+      },
+      {
+        "id": "cangkir",
+        "labelKey": "i-cangkir",
+        "bin": "takhidup",
+        "emoji": "☕"
+      },
+      {
+        "id": "boneka",
+        "labelKey": "i-boneka",
+        "bin": "takhidup",
+        "emoji": "🧸"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-hidup-tak-hidup-laut",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hidup di Bawah Laut",
+        "instruksi": "Robot menyelam: taruh makhluk hidup ke keranjang daun, benda tak hidup ke keranjang batu.",
+        "hidup": "hidup",
+        "takhidup": "tak hidup",
+        "i-ikan": "ikan",
+        "i-penyu": "penyu",
+        "i-gurita": "gurita",
+        "i-rumputlaut": "rumput laut",
+        "i-kepiting": "kepiting",
+        "i-jangkar": "jangkar",
+        "i-botol": "botol",
+        "i-batu": "batu",
+        "i-kapal": "kapal mainan",
+        "i-koin": "koin"
+      },
+      "en": {
+        "judul": "Living Things Under the Sea",
+        "instruksi": "Robot dives: put living things in the leaf basket and non-living things in the stone basket.",
+        "hidup": "living",
+        "takhidup": "not living",
+        "i-ikan": "fish",
+        "i-penyu": "turtle",
+        "i-gurita": "octopus",
+        "i-rumputlaut": "seaweed",
+        "i-kepiting": "crab",
+        "i-jangkar": "anchor",
+        "i-botol": "bottle",
+        "i-batu": "rock",
+        "i-kapal": "toy boat",
+        "i-koin": "coin"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah benda per putaran; rumput laut (hidup, diam) dan kapal (tak hidup, bergerak) ikut sejak awal"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "laut",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "hidup",
+        "labelKey": "hidup",
+        "emoji": "🌱"
+      },
+      {
+        "id": "takhidup",
+        "labelKey": "takhidup",
+        "emoji": "🪨"
+      }
+    ],
+    "items": [
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "hidup",
+        "emoji": "🐠"
+      },
+      {
+        "id": "penyu",
+        "labelKey": "i-penyu",
+        "bin": "hidup",
+        "emoji": "🐢"
+      },
+      {
+        "id": "gurita",
+        "labelKey": "i-gurita",
+        "bin": "hidup",
+        "emoji": "🐙"
+      },
+      {
+        "id": "rumputlaut",
+        "labelKey": "i-rumputlaut",
+        "bin": "hidup",
+        "emoji": "🌿"
+      },
+      {
+        "id": "kepiting",
+        "labelKey": "i-kepiting",
+        "bin": "hidup",
+        "emoji": "🦀"
+      },
+      {
+        "id": "jangkar",
+        "labelKey": "i-jangkar",
+        "bin": "takhidup",
+        "emoji": "⚓"
+      },
+      {
+        "id": "botol",
+        "labelKey": "i-botol",
+        "bin": "takhidup",
+        "emoji": "🍾"
+      },
+      {
+        "id": "batu",
+        "labelKey": "i-batu",
+        "bin": "takhidup",
+        "emoji": "🪨"
+      },
+      {
+        "id": "kapal",
+        "labelKey": "i-kapal",
+        "bin": "takhidup",
+        "emoji": "⛵"
+      },
+      {
+        "id": "koin",
+        "labelKey": "i-koin",
+        "bin": "takhidup",
+        "emoji": "🪙"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-isi-piringku",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.MAKANAN-SEHAT.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Isi Piringku",
+        "instruksi": "Isi tiap bagian piring: nasi, lauk, sayur, dan buah. Jajanan tidak masuk piring.",
+        "nasi": "nasi",
+        "lauk": "lauk",
+        "sayur": "sayur",
+        "buah": "buah",
+        "bukan": "bukan untuk piring",
+        "i-nasiputih": "nasi putih",
+        "i-kentang": "kentang rebus",
+        "i-ayam": "ayam",
+        "i-ikan": "ikan",
+        "i-telur": "telur",
+        "i-bayam": "bayam",
+        "i-wortel": "wortel",
+        "i-brokoli": "brokoli",
+        "i-pisang": "pisang",
+        "i-jeruk": "jeruk",
+        "i-anggur": "anggur",
+        "i-permen": "permen",
+        "i-soda": "soda"
+      },
+      "en": {
+        "judul": "Fill My Plate",
+        "instruksi": "Fill each part of the plate: rice, protein, veggies, and fruit. Treats stay off the plate.",
+        "nasi": "rice",
+        "lauk": "protein",
+        "sayur": "vegetables",
+        "buah": "fruit",
+        "bukan": "not for the plate",
+        "i-nasiputih": "white rice",
+        "i-kentang": "boiled potato",
+        "i-ayam": "chicken",
+        "i-ikan": "fish",
+        "i-telur": "egg",
+        "i-bayam": "spinach",
+        "i-wortel": "carrot",
+        "i-brokoli": "broccoli",
+        "i-pisang": "banana",
+        "i-jeruk": "orange",
+        "i-anggur": "grapes",
+        "i-permen": "candy",
+        "i-soda": "fizzy drink"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 4,
+        "max": 5,
+        "default": 5,
+        "step": 1,
+        "keterangan": "4 bagian piring (nasi, lauk, sayur, buah) + 1 keranjang 'bukan untuk piring'; 4 = tanpa pengecoh"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 10,
+        "default": 8,
+        "step": 2,
+        "keterangan": "jumlah pilihan di meja; makin banyak makin banyak pengecoh"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "nasi",
+        "labelKey": "nasi",
+        "emoji": "🍚",
+        "color": "#fff8e1"
+      },
+      {
+        "id": "lauk",
+        "labelKey": "lauk",
+        "emoji": "🍗",
+        "color": "#ffccbc"
+      },
+      {
+        "id": "sayur",
+        "labelKey": "sayur",
+        "emoji": "🥬",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "buah",
+        "labelKey": "buah",
+        "emoji": "🍎",
+        "color": "#f8bbd0"
+      },
+      {
+        "id": "bukan",
+        "labelKey": "bukan",
+        "emoji": "🚫",
+        "color": "#eeeeee"
+      }
+    ],
+    "items": [
+      {
+        "id": "nasiputih",
+        "labelKey": "i-nasiputih",
+        "bin": "nasi",
+        "emoji": "🍚"
+      },
+      {
+        "id": "kentang",
+        "labelKey": "i-kentang",
+        "bin": "nasi",
+        "emoji": "🥔"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "lauk",
+        "emoji": "🍗"
+      },
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "lauk",
+        "emoji": "🐟"
+      },
+      {
+        "id": "telur",
+        "labelKey": "i-telur",
+        "bin": "lauk",
+        "emoji": "🥚"
+      },
+      {
+        "id": "bayam",
+        "labelKey": "i-bayam",
+        "bin": "sayur",
+        "emoji": "🥬"
+      },
+      {
+        "id": "wortel",
+        "labelKey": "i-wortel",
+        "bin": "sayur",
+        "emoji": "🥕"
+      },
+      {
+        "id": "brokoli",
+        "labelKey": "i-brokoli",
+        "bin": "sayur",
+        "emoji": "🥦"
+      },
+      {
+        "id": "pisang",
+        "labelKey": "i-pisang",
+        "bin": "buah",
+        "emoji": "🍌"
+      },
+      {
+        "id": "jeruk",
+        "labelKey": "i-jeruk",
+        "bin": "buah",
+        "emoji": "🍊"
+      },
+      {
+        "id": "anggur",
+        "labelKey": "i-anggur",
+        "bin": "buah",
+        "emoji": "🍇"
+      },
+      {
+        "id": "permen",
+        "labelKey": "i-permen",
+        "bin": "bukan",
+        "emoji": "🍬"
+      },
+      {
+        "id": "soda",
+        "labelKey": "i-soda",
+        "bin": "bukan",
+        "emoji": "🥤"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-kandang-dua-empat-kaki",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HEWAN-SUARA.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Kandang Dua Kaki, Empat Kaki",
+        "instruksi": "Hitung kakinya, lalu taruh hewan ke kandang dua kaki atau empat kaki.",
+        "dua": "dua kaki",
+        "empat": "empat kaki",
+        "nol": "tanpa kaki",
+        "i-ayam": "ayam",
+        "i-bebek": "bebek",
+        "i-burung": "burung",
+        "i-kucing": "kucing",
+        "i-sapi": "sapi",
+        "i-kambing": "kambing",
+        "i-anjing": "anjing",
+        "i-ikan": "ikan"
+      },
+      "en": {
+        "judul": "Two-Leg, Four-Leg Pens",
+        "instruksi": "Count the legs, then put each animal in the two-leg or four-leg pen.",
+        "dua": "two legs",
+        "empat": "four legs",
+        "nol": "no legs",
+        "i-ayam": "chicken",
+        "i-bebek": "duck",
+        "i-burung": "bird",
+        "i-kucing": "cat",
+        "i-sapi": "cow",
+        "i-kambing": "goat",
+        "i-anjing": "dog",
+        "i-ikan": "fish"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "2 kandang (dua kaki, empat kaki); 3 menambah kandang tanpa kaki untuk ikan sebagai pengecoh"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah hewan per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "dua",
+        "labelKey": "dua",
+        "emoji": "🦶",
+        "count": 2
+      },
+      {
+        "id": "empat",
+        "labelKey": "empat",
+        "emoji": "🐾",
+        "count": 4
+      },
+      {
+        "id": "nol",
+        "labelKey": "nol",
+        "emoji": "🌊"
+      }
+    ],
+    "items": [
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "dua",
+        "emoji": "🐔"
+      },
+      {
+        "id": "bebek",
+        "labelKey": "i-bebek",
+        "bin": "dua",
+        "emoji": "🦆"
+      },
+      {
+        "id": "burung",
+        "labelKey": "i-burung",
+        "bin": "dua",
+        "emoji": "🐦"
+      },
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "empat",
+        "emoji": "🐈"
+      },
+      {
+        "id": "sapi",
+        "labelKey": "i-sapi",
+        "bin": "empat",
+        "emoji": "🐄"
+      },
+      {
+        "id": "kambing",
+        "labelKey": "i-kambing",
+        "bin": "empat",
+        "emoji": "🐐"
+      },
+      {
+        "id": "anjing",
+        "labelKey": "i-anjing",
+        "bin": "empat",
+        "emoji": "🐕"
+      },
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "nol",
+        "emoji": "🐟"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-kegiatan-sesuai-cuaca",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.CUACA-PAKAIAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Main Apa Hari Ini?",
+        "instruksi": "Taruh kartu kegiatan ke papan cuaca yang cocok: layang-layang ke berangin, payung ke hujan.",
+        "cerah": "cerah",
+        "hujan": "hujan",
+        "angin": "berangin",
+        "i-jemur": "menjemur baju",
+        "i-renang": "berenang di kolam",
+        "i-eskrim": "makan es krim di taman",
+        "i-payung": "pakai payung",
+        "i-berteduh": "berteduh di rumah",
+        "i-jashujan": "pakai jas hujan",
+        "i-layang": "main layang-layang",
+        "i-kincir": "main kincir angin",
+        "i-layar": "naik perahu layar"
+      },
+      "en": {
+        "judul": "What Shall We Do Today?",
+        "instruksi": "Put each activity card on the matching weather board: kite to windy, umbrella to rainy.",
+        "cerah": "sunny",
+        "hujan": "rainy",
+        "angin": "windy",
+        "i-jemur": "drying laundry",
+        "i-renang": "swimming in the pool",
+        "i-eskrim": "eating ice cream in the park",
+        "i-payung": "using an umbrella",
+        "i-berteduh": "sheltering indoors",
+        "i-jashujan": "wearing a raincoat",
+        "i-layang": "flying a kite",
+        "i-kincir": "playing with a pinwheel",
+        "i-layar": "sailing a boat"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah papan cuaca: 2 (cerah, hujan) → 3 (tambah berangin)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah kartu kegiatan per putaran; main di dalam rumah tidak dipakai"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "cerah",
+        "labelKey": "cerah",
+        "emoji": "☀️"
+      },
+      {
+        "id": "hujan",
+        "labelKey": "hujan",
+        "emoji": "🌧️"
+      },
+      {
+        "id": "angin",
+        "labelKey": "angin",
+        "emoji": "💨"
+      }
+    ],
+    "items": [
+      {
+        "id": "jemur",
+        "labelKey": "i-jemur",
+        "bin": "cerah",
+        "emoji": "🧺"
+      },
+      {
+        "id": "renang",
+        "labelKey": "i-renang",
+        "bin": "cerah",
+        "emoji": "🏊"
+      },
+      {
+        "id": "eskrim",
+        "labelKey": "i-eskrim",
+        "bin": "cerah",
+        "emoji": "🍦"
+      },
+      {
+        "id": "payung",
+        "labelKey": "i-payung",
+        "bin": "hujan",
+        "emoji": "☂️"
+      },
+      {
+        "id": "berteduh",
+        "labelKey": "i-berteduh",
+        "bin": "hujan",
+        "emoji": "🏠"
+      },
+      {
+        "id": "jashujan",
+        "labelKey": "i-jashujan",
+        "bin": "hujan",
+        "emoji": "🧥",
+        "color": "#ffee58"
+      },
+      {
+        "id": "layang",
+        "labelKey": "i-layang",
+        "bin": "angin",
+        "emoji": "🪁"
+      },
+      {
+        "id": "kincir",
+        "labelKey": "i-kincir",
+        "bin": "angin",
+        "emoji": "🎐"
+      },
+      {
+        "id": "layar",
+        "labelKey": "i-layar",
+        "bin": "angin",
+        "emoji": "⛵"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-keranjang-indra-pasar",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.TUBUH-PANCAINDRA.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Indra di Pasar",
+        "instruksi": "Robot jalan-jalan di pasar: taruh tiap benda ke indra yang dipakainya.",
+        "mata": "mata",
+        "telinga": "telinga",
+        "hidung": "hidung",
+        "lidah": "lidah",
+        "i-balon": "balon warna-warni",
+        "i-lukisan": "lukisan",
+        "i-terompet": "terompet",
+        "i-gitar": "gitar",
+        "i-mawar": "bunga mawar",
+        "i-parfum": "minyak wangi",
+        "i-eskrim": "es krim",
+        "i-madu": "madu manis"
+      },
+      "en": {
+        "judul": "Senses at the Market",
+        "instruksi": "Robot strolls the market: put each thing with the sense it uses.",
+        "mata": "eye",
+        "telinga": "ear",
+        "hidung": "nose",
+        "lidah": "tongue",
+        "i-balon": "colourful balloons",
+        "i-lukisan": "painting",
+        "i-terompet": "trumpet",
+        "i-gitar": "guitar",
+        "i-mawar": "rose",
+        "i-parfum": "perfume",
+        "i-eskrim": "ice cream",
+        "i-madu": "sweet honey"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah keranjang indra aktif: mata, telinga, hidung → tambah lidah"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun-pasar",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "mata",
+        "labelKey": "mata",
+        "emoji": "👁️"
+      },
+      {
+        "id": "telinga",
+        "labelKey": "telinga",
+        "emoji": "👂"
+      },
+      {
+        "id": "hidung",
+        "labelKey": "hidung",
+        "emoji": "👃"
+      },
+      {
+        "id": "lidah",
+        "labelKey": "lidah",
+        "emoji": "👅"
+      }
+    ],
+    "items": [
+      {
+        "id": "balon",
+        "labelKey": "i-balon",
+        "bin": "mata",
+        "emoji": "🎈"
+      },
+      {
+        "id": "lukisan",
+        "labelKey": "i-lukisan",
+        "bin": "mata",
+        "emoji": "🖼️"
+      },
+      {
+        "id": "terompet",
+        "labelKey": "i-terompet",
+        "bin": "telinga",
+        "emoji": "🎺"
+      },
+      {
+        "id": "gitar",
+        "labelKey": "i-gitar",
+        "bin": "telinga",
+        "emoji": "🎸"
+      },
+      {
+        "id": "mawar",
+        "labelKey": "i-mawar",
+        "bin": "hidung",
+        "emoji": "🌹"
+      },
+      {
+        "id": "parfum",
+        "labelKey": "i-parfum",
+        "bin": "hidung",
+        "emoji": "🧴"
+      },
+      {
+        "id": "eskrim",
+        "labelKey": "i-eskrim",
+        "bin": "lidah",
+        "emoji": "🍦"
+      },
+      {
+        "id": "madu",
+        "labelKey": "i-madu",
+        "bin": "lidah",
+        "emoji": "🍯"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-keranjang-indra-rumah",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.TUBUH-PANCAINDRA.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Keranjang Pancaindra",
+        "instruksi": "Taruh tiap benda ke indra yang memakainya: lampu ke mata, lonceng ke telinga.",
+        "mata": "mata",
+        "telinga": "telinga",
+        "hidung": "hidung",
+        "lidah": "lidah",
+        "i-lampu": "lampu menyala",
+        "i-pelangi": "pelangi",
+        "i-lonceng": "lonceng",
+        "i-genderang": "genderang",
+        "i-bunga": "bunga harum",
+        "i-sabun": "sabun wangi",
+        "i-kue": "kue manis",
+        "i-permen": "permen"
+      },
+      "en": {
+        "judul": "Five-Sense Baskets",
+        "instruksi": "Put each thing with the sense that uses it: the lamp with the eye, the bell with the ear.",
+        "mata": "eye",
+        "telinga": "ear",
+        "hidung": "nose",
+        "lidah": "tongue",
+        "i-lampu": "glowing lamp",
+        "i-pelangi": "rainbow",
+        "i-lonceng": "bell",
+        "i-genderang": "drum",
+        "i-bunga": "sweet-smelling flower",
+        "i-sabun": "scented soap",
+        "i-kue": "sweet cake",
+        "i-permen": "candy"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah keranjang indra aktif: mata, telinga, hidung → tambah lidah"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "mata",
+        "labelKey": "mata",
+        "emoji": "👁️"
+      },
+      {
+        "id": "telinga",
+        "labelKey": "telinga",
+        "emoji": "👂"
+      },
+      {
+        "id": "hidung",
+        "labelKey": "hidung",
+        "emoji": "👃"
+      },
+      {
+        "id": "lidah",
+        "labelKey": "lidah",
+        "emoji": "👅"
+      }
+    ],
+    "items": [
+      {
+        "id": "lampu",
+        "labelKey": "i-lampu",
+        "bin": "mata",
+        "emoji": "💡"
+      },
+      {
+        "id": "pelangi",
+        "labelKey": "i-pelangi",
+        "bin": "mata",
+        "emoji": "🌈"
+      },
+      {
+        "id": "lonceng",
+        "labelKey": "i-lonceng",
+        "bin": "telinga",
+        "emoji": "🔔"
+      },
+      {
+        "id": "genderang",
+        "labelKey": "i-genderang",
+        "bin": "telinga",
+        "emoji": "🥁"
+      },
+      {
+        "id": "bunga",
+        "labelKey": "i-bunga",
+        "bin": "hidung",
+        "emoji": "🌸"
+      },
+      {
+        "id": "sabun",
+        "labelKey": "i-sabun",
+        "bin": "hidung",
+        "emoji": "🧼"
+      },
+      {
+        "id": "kue",
+        "labelKey": "i-kue",
+        "bin": "lidah",
+        "emoji": "🍰"
+      },
+      {
+        "id": "permen",
+        "labelKey": "i-permen",
+        "bin": "lidah",
+        "emoji": "🍬"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-langit-siang-malam",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Siang atau Malam?",
+        "instruksi": "Taruh tiap gambar kegiatan ke langit siang atau langit malam.",
+        "siang": "siang",
+        "malam": "malam",
+        "i-bola": "main bola di lapangan",
+        "i-sepeda": "naik sepeda",
+        "i-sekolah": "berangkat sekolah",
+        "i-layang": "main layang-layang",
+        "i-tidur": "tidur di kasur",
+        "i-bintang": "melihat bintang",
+        "i-senter": "menyalakan senter",
+        "i-burunghantu": "burung hantu terbang"
+      },
+      "en": {
+        "judul": "Day or Night?",
+        "instruksi": "Put each activity picture under the day sky or the night sky.",
+        "siang": "day",
+        "malam": "night",
+        "i-bola": "playing ball outside",
+        "i-sepeda": "riding a bike",
+        "i-sekolah": "going to school",
+        "i-layang": "flying a kite",
+        "i-tidur": "sleeping in bed",
+        "i-bintang": "watching the stars",
+        "i-senter": "turning on a torch",
+        "i-burunghantu": "an owl flying"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah gambar per putaran; semua gambar punya petunjuk kuat (matahari, lampu, piyama)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "siang",
+        "labelKey": "siang",
+        "emoji": "☀️",
+        "color": "#bbdefb"
+      },
+      {
+        "id": "malam",
+        "labelKey": "malam",
+        "emoji": "🌙",
+        "color": "#1a237e"
+      }
+    ],
+    "items": [
+      {
+        "id": "bola",
+        "labelKey": "i-bola",
+        "bin": "siang",
+        "emoji": "⚽"
+      },
+      {
+        "id": "sepeda",
+        "labelKey": "i-sepeda",
+        "bin": "siang",
+        "emoji": "🚲"
+      },
+      {
+        "id": "sekolah",
+        "labelKey": "i-sekolah",
+        "bin": "siang",
+        "emoji": "🏫"
+      },
+      {
+        "id": "layang",
+        "labelKey": "i-layang",
+        "bin": "siang",
+        "emoji": "🪁"
+      },
+      {
+        "id": "tidur",
+        "labelKey": "i-tidur",
+        "bin": "malam",
+        "emoji": "🛌"
+      },
+      {
+        "id": "bintang",
+        "labelKey": "i-bintang",
+        "bin": "malam",
+        "emoji": "🌟"
+      },
+      {
+        "id": "senter",
+        "labelKey": "i-senter",
+        "bin": "malam",
+        "emoji": "🔦"
+      },
+      {
+        "id": "burunghantu",
+        "labelKey": "i-burunghantu",
+        "bin": "malam",
+        "emoji": "🦉"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-lapisan-tulang-otot-organ",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.TULANG-OTOT-ORGAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Lapisan Tubuh",
+        "instruksi": "Taruh tiap potongan ke lapisannya: tulang, otot, atau organ. Jantung masuk organ.",
+        "tulang": "lapisan tulang",
+        "otot": "lapisan otot",
+        "organ": "lapisan organ (jantung di sini)",
+        "i-tengkorak": "tengkorak",
+        "i-tulangpaha": "tulang paha",
+        "i-ototlengan": "otot lengan",
+        "i-ototbetis": "otot betis",
+        "i-jantung": "jantung",
+        "i-paru": "paru-paru",
+        "i-otak": "otak"
+      },
+      "en": {
+        "judul": "Layers of the Body",
+        "instruksi": "Put each piece in its layer: bones, muscles, or organs. The heart goes with organs.",
+        "tulang": "bone layer",
+        "otot": "muscle layer",
+        "organ": "organ layer (heart goes here)",
+        "i-tengkorak": "skull",
+        "i-tulangpaha": "thigh bone",
+        "i-ototlengan": "arm muscle",
+        "i-ototbetis": "calf muscle",
+        "i-jantung": "heart",
+        "i-paru": "lungs",
+        "i-otak": "brain"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah potongan per putaran: 3 → 6"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "klinik",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "tulang",
+        "labelKey": "tulang",
+        "emoji": "🦴",
+        "color": "#f5f5f5"
+      },
+      {
+        "id": "otot",
+        "labelKey": "otot",
+        "emoji": "💪",
+        "color": "#ef9a9a"
+      },
+      {
+        "id": "organ",
+        "labelKey": "organ",
+        "emoji": "🫀",
+        "color": "#ffe0b2"
+      }
+    ],
+    "items": [
+      {
+        "id": "tengkorak",
+        "labelKey": "i-tengkorak",
+        "bin": "tulang",
+        "emoji": "💀"
+      },
+      {
+        "id": "tulangpaha",
+        "labelKey": "i-tulangpaha",
+        "bin": "tulang",
+        "emoji": "🦴"
+      },
+      {
+        "id": "ototlengan",
+        "labelKey": "i-ototlengan",
+        "bin": "otot",
+        "emoji": "💪"
+      },
+      {
+        "id": "ototbetis",
+        "labelKey": "i-ototbetis",
+        "bin": "otot",
+        "emoji": "🦵"
+      },
+      {
+        "id": "jantung",
+        "labelKey": "i-jantung",
+        "bin": "organ",
+        "emoji": "🫀"
+      },
+      {
+        "id": "paru",
+        "labelKey": "i-paru",
+        "bin": "organ",
+        "emoji": "🫁"
+      },
+      {
+        "id": "otak",
+        "labelKey": "i-otak",
+        "bin": "organ",
+        "emoji": "🧠"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-lemari-cuaca",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.CUACA-PAKAIAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Lemari Cuaca",
+        "instruksi": "Dengarkan cuacanya, lalu sentuh pakaian yang cocok untuk robot.",
+        "pilihan": "pilihan",
+        "i-jashujan": "jas hujan",
+        "i-topi": "topi",
+        "i-jaket": "jaket tebal",
+        "i-syal": "syal",
+        "i-sandal": "sandal jepit",
+        "t-hujan": "Di luar hujan deras. Pakai apa?",
+        "t-panas": "Matahari terik, hari panas. Pakai apa?",
+        "t-dingin": "Udara dingin sekali, menggigil. Pakai apa?",
+        "t-hujan2": "Awan gelap, hujan turun lagi. Pakai apa?",
+        "t-dingin2": "Angin dingin bertiup di pagi hari. Pakai apa?"
+      },
+      "en": {
+        "judul": "The Weather Wardrobe",
+        "instruksi": "Listen to the weather, then touch the right clothes for robot.",
+        "pilihan": "choices",
+        "i-jashujan": "raincoat",
+        "i-topi": "sun hat",
+        "i-jaket": "warm jacket",
+        "i-syal": "scarf",
+        "i-sandal": "flip-flops",
+        "t-hujan": "It's raining hard outside. What do we wear?",
+        "t-panas": "The sun is strong, it's hot. What do we wear?",
+        "t-dingin": "It's very cold and chilly. What do we wear?",
+        "t-hujan2": "Dark clouds, it's raining again. What do we wear?",
+        "t-dingin2": "A cold wind blows this morning. What do we wear?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 5,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah pilihan pakaian per cuaca; posisi diacak supaya tidak memilih favorit"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "jashujan",
+        "labelKey": "i-jashujan",
+        "bin": "pilihan",
+        "emoji": "🧥",
+        "color": "#ffee58"
+      },
+      {
+        "id": "topi",
+        "labelKey": "i-topi",
+        "bin": "pilihan",
+        "emoji": "👒"
+      },
+      {
+        "id": "jaket",
+        "labelKey": "i-jaket",
+        "bin": "pilihan",
+        "emoji": "🧥",
+        "color": "#5c6bc0"
+      },
+      {
+        "id": "syal",
+        "labelKey": "i-syal",
+        "bin": "pilihan",
+        "emoji": "🧣"
+      },
+      {
+        "id": "sandal",
+        "labelKey": "i-sandal",
+        "bin": "pilihan",
+        "emoji": "🩴"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "hujan",
+        "promptKey": "t-hujan",
+        "choices": [
+          "jashujan",
+          "topi",
+          "sandal"
+        ],
+        "correct": "jashujan"
+      },
+      {
+        "id": "panas",
+        "promptKey": "t-panas",
+        "choices": [
+          "topi",
+          "jaket",
+          "jashujan"
+        ],
+        "correct": "topi"
+      },
+      {
+        "id": "dingin",
+        "promptKey": "t-dingin",
+        "choices": [
+          "jaket",
+          "sandal",
+          "topi"
+        ],
+        "correct": "jaket"
+      },
+      {
+        "id": "hujan2",
+        "promptKey": "t-hujan2",
+        "choices": [
+          "sandal",
+          "jashujan",
+          "syal",
+          "topi"
+        ],
+        "correct": "jashujan"
+      },
+      {
+        "id": "dingin2",
+        "promptKey": "t-dingin2",
+        "choices": [
+          "syal",
+          "sandal",
+          "topi",
+          "jashujan"
+        ],
+        "correct": "syal"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-bagian-tubuh",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Mana Bagian Tubuhnya?",
+        "instruksi": "Dengarkan nama bagian tubuh, lalu sentuh gambarnya.",
+        "pilihan": "pilihan",
+        "i-mata": "mata",
+        "i-hidung": "hidung",
+        "i-telinga": "telinga",
+        "i-mulut": "mulut",
+        "i-tangan": "tangan",
+        "i-kaki": "kaki",
+        "t-mata": "Mana matanya?",
+        "t-hidung": "Mana hidungnya?",
+        "t-telinga": "Mana telinganya?",
+        "t-mulut": "Mana mulutnya?",
+        "t-tangan": "Mana tangannya?",
+        "t-kaki": "Mana kakinya?"
+      },
+      "en": {
+        "judul": "Where Is That Body Part?",
+        "instruksi": "Listen to the body part, then touch its picture.",
+        "pilihan": "choices",
+        "i-mata": "eye",
+        "i-hidung": "nose",
+        "i-telinga": "ear",
+        "i-mulut": "mouth",
+        "i-tangan": "hand",
+        "i-kaki": "foot",
+        "t-mata": "Where is the eye?",
+        "t-hidung": "Where is the nose?",
+        "t-telinga": "Where is the ear?",
+        "t-mulut": "Where is the mouth?",
+        "t-tangan": "Where is the hand?",
+        "t-kaki": "Where is the foot?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah gambar bagian tubuh per pertanyaan; mulai 3–4 bagian besar, naik ke 6"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "klinik",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "mata",
+        "labelKey": "i-mata",
+        "bin": "pilihan",
+        "emoji": "👁️"
+      },
+      {
+        "id": "hidung",
+        "labelKey": "i-hidung",
+        "bin": "pilihan",
+        "emoji": "👃"
+      },
+      {
+        "id": "telinga",
+        "labelKey": "i-telinga",
+        "bin": "pilihan",
+        "emoji": "👂"
+      },
+      {
+        "id": "mulut",
+        "labelKey": "i-mulut",
+        "bin": "pilihan",
+        "emoji": "👄"
+      },
+      {
+        "id": "tangan",
+        "labelKey": "i-tangan",
+        "bin": "pilihan",
+        "emoji": "✋"
+      },
+      {
+        "id": "kaki",
+        "labelKey": "i-kaki",
+        "bin": "pilihan",
+        "emoji": "🦶"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "mata",
+        "promptKey": "t-mata",
+        "choices": [
+          "mata",
+          "hidung",
+          "telinga",
+          "mulut"
+        ],
+        "correct": "mata"
+      },
+      {
+        "id": "hidung",
+        "promptKey": "t-hidung",
+        "choices": [
+          "hidung",
+          "mulut",
+          "telinga",
+          "tangan"
+        ],
+        "correct": "hidung"
+      },
+      {
+        "id": "telinga",
+        "promptKey": "t-telinga",
+        "choices": [
+          "telinga",
+          "mata",
+          "kaki",
+          "hidung"
+        ],
+        "correct": "telinga"
+      },
+      {
+        "id": "mulut",
+        "promptKey": "t-mulut",
+        "choices": [
+          "mulut",
+          "mata",
+          "hidung",
+          "tangan"
+        ],
+        "correct": "mulut"
+      },
+      {
+        "id": "tangan",
+        "promptKey": "t-tangan",
+        "choices": [
+          "tangan",
+          "kaki",
+          "telinga",
+          "mata"
+        ],
+        "correct": "tangan"
+      },
+      {
+        "id": "kaki",
+        "promptKey": "t-kaki",
+        "choices": [
+          "kaki",
+          "tangan",
+          "mulut",
+          "hidung"
+        ],
+        "correct": "kaki"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-bagian-tumbuhan",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Mana Bagian Tumbuhannya?",
+        "instruksi": "Dengarkan nama bagian tumbuhan, lalu sentuh gambarnya.",
+        "pilihan": "pilihan",
+        "i-akar": "akar",
+        "i-batang": "batang",
+        "i-daun": "daun",
+        "i-bunga": "bunga",
+        "t-akar": "Mana akarnya? Akar ada di dalam tanah.",
+        "t-daun": "Mana daunnya?",
+        "t-bunga": "Mana bunganya?",
+        "t-batang": "Mana batangnya?"
+      },
+      "en": {
+        "judul": "Which Plant Part?",
+        "instruksi": "Listen to the plant part, then touch its picture.",
+        "pilihan": "choices",
+        "i-akar": "root",
+        "i-batang": "stem",
+        "i-daun": "leaf",
+        "i-bunga": "flower",
+        "t-akar": "Where is the root? Roots grow in the soil.",
+        "t-daun": "Where is the leaf?",
+        "t-bunga": "Where is the flower?",
+        "t-batang": "Where is the stem?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 4,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah pilihan per pertanyaan: akar, batang, daun, bunga (buah tidak dicampur di tahap ini)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "kebun-pasar",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "akar",
+        "labelKey": "i-akar",
+        "bin": "pilihan",
+        "emoji": "🫚",
+        "color": "#8d6e63"
+      },
+      {
+        "id": "batang",
+        "labelKey": "i-batang",
+        "bin": "pilihan",
+        "emoji": "🎋"
+      },
+      {
+        "id": "daun",
+        "labelKey": "i-daun",
+        "bin": "pilihan",
+        "emoji": "🍃"
+      },
+      {
+        "id": "bunga",
+        "labelKey": "i-bunga",
+        "bin": "pilihan",
+        "emoji": "🌸"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "akar",
+        "promptKey": "t-akar",
+        "choices": [
+          "akar",
+          "batang",
+          "daun",
+          "bunga"
+        ],
+        "correct": "akar"
+      },
+      {
+        "id": "daun",
+        "promptKey": "t-daun",
+        "choices": [
+          "daun",
+          "bunga",
+          "akar",
+          "batang"
+        ],
+        "correct": "daun"
+      },
+      {
+        "id": "bunga",
+        "promptKey": "t-bunga",
+        "choices": [
+          "bunga",
+          "daun",
+          "batang",
+          "akar"
+        ],
+        "correct": "bunga"
+      },
+      {
+        "id": "batang",
+        "promptKey": "t-batang",
+        "choices": [
+          "batang",
+          "akar",
+          "bunga",
+          "daun"
+        ],
+        "correct": "batang"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-benda-langit",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.MATAHARI-BUMI-BULAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Mana Bumi, Mana Bulan?",
+        "instruksi": "Robot terbang di angkasa: dengarkan nama benda langit, lalu sentuh gambarnya.",
+        "pilihan": "pilihan",
+        "i-matahari": "Matahari",
+        "i-bumi": "Bumi",
+        "i-bulan": "Bulan",
+        "i-mars": "Mars",
+        "i-bintang": "bintang",
+        "t-bumi": "Mana Bumi? Bumi biru dan hijau.",
+        "t-matahari": "Mana Matahari?",
+        "t-bulan": "Mana Bulan? Bulan kecil dan abu-abu.",
+        "t-bumi2": "Mana Bumi?",
+        "t-mars": "Mana Mars yang merah?"
+      },
+      "en": {
+        "judul": "Which Is Earth, Which Is Moon?",
+        "instruksi": "Robot flies through space: listen to the space object, then touch its picture.",
+        "pilihan": "choices",
+        "i-matahari": "the Sun",
+        "i-bumi": "Earth",
+        "i-bulan": "the Moon",
+        "i-mars": "Mars",
+        "i-bintang": "a star",
+        "t-bumi": "Where is Earth? Earth is blue and green.",
+        "t-matahari": "Where is the Sun?",
+        "t-bulan": "Where is the Moon? The Moon is small and grey.",
+        "t-bumi2": "Where is Earth?",
+        "t-mars": "Where is red Mars?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 5,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah benda langit per pertanyaan: 3 (Matahari, Bumi, Bulan) → 5 (tambah Mars merah dan bintang)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "angkasa",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "matahari",
+        "labelKey": "i-matahari",
+        "bin": "pilihan",
+        "emoji": "☀️",
+        "scale": 1.6
+      },
+      {
+        "id": "bumi",
+        "labelKey": "i-bumi",
+        "bin": "pilihan",
+        "emoji": "🌍"
+      },
+      {
+        "id": "bulan",
+        "labelKey": "i-bulan",
+        "bin": "pilihan",
+        "emoji": "🌕",
+        "scale": 0.6,
+        "color": "#263238"
+      },
+      {
+        "id": "mars",
+        "labelKey": "i-mars",
+        "bin": "pilihan",
+        "shape": "circle",
+        "color": "#d84315",
+        "scale": 0.8
+      },
+      {
+        "id": "bintang",
+        "labelKey": "i-bintang",
+        "bin": "pilihan",
+        "emoji": "⭐",
+        "scale": 0.6
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "bumi",
+        "promptKey": "t-bumi",
+        "choices": [
+          "bumi",
+          "bulan",
+          "matahari"
+        ],
+        "correct": "bumi"
+      },
+      {
+        "id": "matahari",
+        "promptKey": "t-matahari",
+        "choices": [
+          "matahari",
+          "bumi",
+          "bintang"
+        ],
+        "correct": "matahari"
+      },
+      {
+        "id": "bulan",
+        "promptKey": "t-bulan",
+        "choices": [
+          "bulan",
+          "bumi",
+          "mars"
+        ],
+        "correct": "bulan"
+      },
+      {
+        "id": "bumi2",
+        "promptKey": "t-bumi2",
+        "choices": [
+          "mars",
+          "bumi",
+          "bulan",
+          "bintang"
+        ],
+        "correct": "bumi"
+      },
+      {
+        "id": "mars",
+        "promptKey": "t-mars",
+        "choices": [
+          "bulan",
+          "mars",
+          "bumi",
+          "matahari",
+          "bintang"
+        ],
+        "correct": "mars"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-hewan-halaman",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HEWAN-SUARA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hewan di Halaman",
+        "instruksi": "Dengarkan nama hewannya, lalu sentuh hewan itu.",
+        "pilihan": "pilihan",
+        "i-kucing": "kucing",
+        "i-ayam": "ayam",
+        "i-sapi": "sapi",
+        "i-kambing": "kambing",
+        "i-bebek": "bebek",
+        "i-burung": "burung",
+        "t-sapi": "Mana sapinya?",
+        "t-kucing": "Mana kucingnya?",
+        "t-ayam": "Mana ayamnya?",
+        "t-bebek": "Mana bebeknya?",
+        "t-kambing": "Mana kambingnya?",
+        "t-burung": "Mana burungnya?"
+      },
+      "en": {
+        "judul": "Animals in the Yard",
+        "instruksi": "Listen to the animal's name, then touch that animal.",
+        "pilihan": "choices",
+        "i-kucing": "cat",
+        "i-ayam": "chicken",
+        "i-sapi": "cow",
+        "i-kambing": "goat",
+        "i-bebek": "duck",
+        "i-burung": "bird",
+        "t-sapi": "Where is the cow?",
+        "t-kucing": "Where is the cat?",
+        "t-ayam": "Where is the chicken?",
+        "t-bebek": "Where is the duck?",
+        "t-kambing": "Where is the goat?",
+        "t-burung": "Where is the bird?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah hewan di layar per pertanyaan: 3 → 6"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "pilihan",
+        "emoji": "🐱"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "pilihan",
+        "emoji": "🐔"
+      },
+      {
+        "id": "sapi",
+        "labelKey": "i-sapi",
+        "bin": "pilihan",
+        "emoji": "🐄",
+        "scale": 1.3
+      },
+      {
+        "id": "kambing",
+        "labelKey": "i-kambing",
+        "bin": "pilihan",
+        "emoji": "🐐"
+      },
+      {
+        "id": "bebek",
+        "labelKey": "i-bebek",
+        "bin": "pilihan",
+        "emoji": "🦆"
+      },
+      {
+        "id": "burung",
+        "labelKey": "i-burung",
+        "bin": "pilihan",
+        "emoji": "🐦",
+        "scale": 0.8
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "sapi",
+        "promptKey": "t-sapi",
+        "choices": [
+          "sapi",
+          "kambing",
+          "kucing",
+          "ayam"
+        ],
+        "correct": "sapi"
+      },
+      {
+        "id": "kucing",
+        "promptKey": "t-kucing",
+        "choices": [
+          "kucing",
+          "bebek",
+          "sapi",
+          "burung"
+        ],
+        "correct": "kucing"
+      },
+      {
+        "id": "ayam",
+        "promptKey": "t-ayam",
+        "choices": [
+          "ayam",
+          "bebek",
+          "kambing",
+          "kucing"
+        ],
+        "correct": "ayam"
+      },
+      {
+        "id": "bebek",
+        "promptKey": "t-bebek",
+        "choices": [
+          "bebek",
+          "ayam",
+          "burung",
+          "sapi"
+        ],
+        "correct": "bebek"
+      },
+      {
+        "id": "kambing",
+        "promptKey": "t-kambing",
+        "choices": [
+          "kambing",
+          "sapi",
+          "kucing",
+          "bebek"
+        ],
+        "correct": "kambing"
+      },
+      {
+        "id": "burung",
+        "promptKey": "t-burung",
+        "choices": [
+          "burung",
+          "ayam",
+          "bebek",
+          "kambing"
+        ],
+        "correct": "burung"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-hewan-laut",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HEWAN-SUARA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hewan di Bawah Laut",
+        "instruksi": "Robot menyelam: dengarkan nama hewan laut, lalu sentuh hewan itu.",
+        "pilihan": "pilihan",
+        "i-ikan": "ikan",
+        "i-penyu": "penyu",
+        "i-gurita": "gurita",
+        "i-kepiting": "kepiting",
+        "i-lumba": "lumba-lumba",
+        "i-udang": "udang",
+        "t-penyu": "Mana penyunya?",
+        "t-ikan": "Mana ikannya?",
+        "t-gurita": "Mana guritanya?",
+        "t-kepiting": "Mana kepitingnya?",
+        "t-lumba": "Mana lumba-lumbanya?"
+      },
+      "en": {
+        "judul": "Animals Under the Sea",
+        "instruksi": "Robot dives down: listen to the sea animal's name, then touch it.",
+        "pilihan": "choices",
+        "i-ikan": "fish",
+        "i-penyu": "turtle",
+        "i-gurita": "octopus",
+        "i-kepiting": "crab",
+        "i-lumba": "dolphin",
+        "i-udang": "shrimp",
+        "t-penyu": "Where is the turtle?",
+        "t-ikan": "Where is the fish?",
+        "t-gurita": "Where is the octopus?",
+        "t-kepiting": "Where is the crab?",
+        "t-lumba": "Where is the dolphin?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah hewan laut di layar per pertanyaan: 3 → 6"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "laut",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "pilihan",
+        "emoji": "🐟"
+      },
+      {
+        "id": "penyu",
+        "labelKey": "i-penyu",
+        "bin": "pilihan",
+        "emoji": "🐢"
+      },
+      {
+        "id": "gurita",
+        "labelKey": "i-gurita",
+        "bin": "pilihan",
+        "emoji": "🐙"
+      },
+      {
+        "id": "kepiting",
+        "labelKey": "i-kepiting",
+        "bin": "pilihan",
+        "emoji": "🦀"
+      },
+      {
+        "id": "lumba",
+        "labelKey": "i-lumba",
+        "bin": "pilihan",
+        "emoji": "🐬",
+        "scale": 1.3
+      },
+      {
+        "id": "udang",
+        "labelKey": "i-udang",
+        "bin": "pilihan",
+        "emoji": "🦐",
+        "scale": 0.8
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "penyu",
+        "promptKey": "t-penyu",
+        "choices": [
+          "penyu",
+          "ikan",
+          "gurita",
+          "kepiting"
+        ],
+        "correct": "penyu"
+      },
+      {
+        "id": "ikan",
+        "promptKey": "t-ikan",
+        "choices": [
+          "ikan",
+          "lumba",
+          "kepiting",
+          "udang"
+        ],
+        "correct": "ikan"
+      },
+      {
+        "id": "gurita",
+        "promptKey": "t-gurita",
+        "choices": [
+          "gurita",
+          "penyu",
+          "udang",
+          "ikan"
+        ],
+        "correct": "gurita"
+      },
+      {
+        "id": "kepiting",
+        "promptKey": "t-kepiting",
+        "choices": [
+          "kepiting",
+          "udang",
+          "ikan",
+          "lumba"
+        ],
+        "correct": "kepiting"
+      },
+      {
+        "id": "lumba",
+        "promptKey": "t-lumba",
+        "choices": [
+          "lumba",
+          "ikan",
+          "penyu",
+          "gurita"
+        ],
+        "correct": "lumba"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-organ-tubuh",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.TULANG-OTOT-ORGAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Mana Organnya?",
+        "instruksi": "Dengarkan nama organ di dalam tubuh, lalu sentuh gambarnya.",
+        "pilihan": "pilihan",
+        "i-jantung": "jantung",
+        "i-paru": "paru-paru",
+        "i-otak": "otak",
+        "i-tulang": "tulang",
+        "t-jantung": "Mana jantungnya? Jantung berdetak dug-dug.",
+        "t-paru": "Mana paru-parunya? Paru-paru untuk bernapas.",
+        "t-otak": "Mana otaknya? Otak untuk berpikir.",
+        "t-jantung2": "Mana jantungnya?"
+      },
+      "en": {
+        "judul": "Where Is That Organ?",
+        "instruksi": "Listen to the organ inside the body, then touch its picture.",
+        "pilihan": "choices",
+        "i-jantung": "heart",
+        "i-paru": "lungs",
+        "i-otak": "brain",
+        "i-tulang": "bone",
+        "t-jantung": "Where is the heart? It goes thump-thump.",
+        "t-paru": "Where are the lungs? Lungs are for breathing.",
+        "t-otak": "Where is the brain? The brain is for thinking.",
+        "t-jantung2": "Where is the heart?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah pilihan: 3 organ besar (jantung, paru-paru, otak) → 4 (tambah tulang sebagai pengecoh)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "klinik",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "jantung",
+        "labelKey": "i-jantung",
+        "bin": "pilihan",
+        "emoji": "🫀"
+      },
+      {
+        "id": "paru",
+        "labelKey": "i-paru",
+        "bin": "pilihan",
+        "emoji": "🫁"
+      },
+      {
+        "id": "otak",
+        "labelKey": "i-otak",
+        "bin": "pilihan",
+        "emoji": "🧠"
+      },
+      {
+        "id": "tulang",
+        "labelKey": "i-tulang",
+        "bin": "pilihan",
+        "emoji": "🦴"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "jantung",
+        "promptKey": "t-jantung",
+        "choices": [
+          "jantung",
+          "paru",
+          "otak"
+        ],
+        "correct": "jantung"
+      },
+      {
+        "id": "paru",
+        "promptKey": "t-paru",
+        "choices": [
+          "paru",
+          "otak",
+          "jantung",
+          "tulang"
+        ],
+        "correct": "paru"
+      },
+      {
+        "id": "otak",
+        "promptKey": "t-otak",
+        "choices": [
+          "otak",
+          "jantung",
+          "tulang",
+          "paru"
+        ],
+        "correct": "otak"
+      },
+      {
+        "id": "jantung2",
+        "promptKey": "t-jantung2",
+        "choices": [
+          "tulang",
+          "jantung",
+          "paru",
+          "otak"
+        ],
+        "correct": "jantung"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-yang-dari-kayu",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.BAHAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Terbuat dari Apa?",
+        "instruksi": "Dengarkan bahannya, lalu sentuh benda yang terbuat dari bahan itu.",
+        "pilihan": "pilihan",
+        "i-kursi": "kursi kayu",
+        "i-kaleng": "kaleng",
+        "i-ember": "ember plastik",
+        "i-gelas": "gelas kaca",
+        "i-paku": "paku",
+        "i-talenan": "talenan kayu",
+        "t-kayu": "Mana yang terbuat dari kayu?",
+        "t-logam": "Mana yang terbuat dari logam?",
+        "t-kaca": "Mana yang terbuat dari kaca?",
+        "t-plastik": "Mana yang terbuat dari plastik?",
+        "t-logam2": "Mana yang terbuat dari logam?"
+      },
+      "en": {
+        "judul": "What Is It Made Of?",
+        "instruksi": "Listen to the material, then touch the object made from it.",
+        "pilihan": "choices",
+        "i-kursi": "wooden chair",
+        "i-kaleng": "tin can",
+        "i-ember": "plastic bucket",
+        "i-gelas": "glass cup",
+        "i-paku": "nail",
+        "i-talenan": "wooden board",
+        "t-kayu": "Which one is made of wood?",
+        "t-logam": "Which one is made of metal?",
+        "t-kaca": "Which one is made of glass?",
+        "t-plastik": "Which one is made of plastic?",
+        "t-logam2": "Which one is made of metal?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah benda per pertanyaan: 2 → 4"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kursi",
+        "labelKey": "i-kursi",
+        "bin": "pilihan",
+        "emoji": "🪑"
+      },
+      {
+        "id": "kaleng",
+        "labelKey": "i-kaleng",
+        "bin": "pilihan",
+        "emoji": "🥫"
+      },
+      {
+        "id": "ember",
+        "labelKey": "i-ember",
+        "bin": "pilihan",
+        "emoji": "🪣"
+      },
+      {
+        "id": "gelas",
+        "labelKey": "i-gelas",
+        "bin": "pilihan",
+        "emoji": "🥛"
+      },
+      {
+        "id": "paku",
+        "labelKey": "i-paku",
+        "bin": "pilihan",
+        "emoji": "🔩"
+      },
+      {
+        "id": "talenan",
+        "labelKey": "i-talenan",
+        "bin": "pilihan",
+        "emoji": "🪵"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "kayu",
+        "promptKey": "t-kayu",
+        "choices": [
+          "kursi",
+          "kaleng",
+          "ember"
+        ],
+        "correct": "kursi"
+      },
+      {
+        "id": "logam",
+        "promptKey": "t-logam",
+        "choices": [
+          "gelas",
+          "kaleng",
+          "kursi"
+        ],
+        "correct": "kaleng"
+      },
+      {
+        "id": "kaca",
+        "promptKey": "t-kaca",
+        "choices": [
+          "ember",
+          "gelas",
+          "talenan"
+        ],
+        "correct": "gelas"
+      },
+      {
+        "id": "plastik",
+        "promptKey": "t-plastik",
+        "choices": [
+          "paku",
+          "ember",
+          "gelas",
+          "talenan"
+        ],
+        "correct": "ember"
+      },
+      {
+        "id": "logam2",
+        "promptKey": "t-logam2",
+        "choices": [
+          "talenan",
+          "ember",
+          "paku",
+          "gelas"
+        ],
+        "correct": "paku"
+      }
+    ]
+  },
+  {
+    "id": "sains-mana-yang-tenggelam",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Tebak Mana yang Tenggelam",
+        "instruksi": "Tebak dulu sebelum dicoba: sentuh benda yang akan tenggelam atau terapung sesuai pertanyaan.",
+        "pilihan": "pilihan",
+        "i-kayu": "balok kayu",
+        "i-batu": "batu",
+        "i-daun": "daun",
+        "i-paku": "paku logam",
+        "i-bola": "bola plastik",
+        "i-kunci": "kunci logam",
+        "t-t1": "Mana yang akan tenggelam?",
+        "t-a1": "Mana yang akan terapung?",
+        "t-t2": "Mana yang akan tenggelam?",
+        "t-a2": "Kayunya besar sekali. Mana yang akan terapung?",
+        "t-t3": "Mana yang akan tenggelam?"
+      },
+      "en": {
+        "judul": "Guess Which One Sinks",
+        "instruksi": "Guess before we test: touch the thing that will sink or float as asked.",
+        "pilihan": "choices",
+        "i-kayu": "wooden block",
+        "i-batu": "stone",
+        "i-daun": "leaf",
+        "i-paku": "metal nail",
+        "i-bola": "plastic ball",
+        "i-kunci": "metal key",
+        "t-t1": "Which one will sink?",
+        "t-a1": "Which one will float?",
+        "t-t2": "Which one will sink?",
+        "t-a2": "The wood is really big. Which one will float?",
+        "t-t3": "Which one will sink?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah pilihan per pertanyaan; bahan yang sama tampil pada benda baru"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kayu",
+        "labelKey": "i-kayu",
+        "bin": "pilihan",
+        "emoji": "🪵",
+        "scale": 1.3
+      },
+      {
+        "id": "batu",
+        "labelKey": "i-batu",
+        "bin": "pilihan",
+        "emoji": "🪨"
+      },
+      {
+        "id": "daun",
+        "labelKey": "i-daun",
+        "bin": "pilihan",
+        "emoji": "🍃"
+      },
+      {
+        "id": "paku",
+        "labelKey": "i-paku",
+        "bin": "pilihan",
+        "emoji": "🔩"
+      },
+      {
+        "id": "bola",
+        "labelKey": "i-bola",
+        "bin": "pilihan",
+        "emoji": "🏐"
+      },
+      {
+        "id": "kunci",
+        "labelKey": "i-kunci",
+        "bin": "pilihan",
+        "emoji": "🔑"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "t1",
+        "promptKey": "t-t1",
+        "choices": [
+          "batu",
+          "kayu",
+          "daun"
+        ],
+        "correct": "batu"
+      },
+      {
+        "id": "a1",
+        "promptKey": "t-a1",
+        "choices": [
+          "paku",
+          "daun",
+          "kunci"
+        ],
+        "correct": "daun"
+      },
+      {
+        "id": "t2",
+        "promptKey": "t-t2",
+        "choices": [
+          "bola",
+          "paku",
+          "kayu"
+        ],
+        "correct": "paku"
+      },
+      {
+        "id": "a2",
+        "promptKey": "t-a2",
+        "choices": [
+          "kunci",
+          "batu",
+          "kayu"
+        ],
+        "correct": "kayu"
+      },
+      {
+        "id": "t3",
+        "promptKey": "t-t3",
+        "choices": [
+          "daun",
+          "kunci",
+          "bola"
+        ],
+        "correct": "kunci"
+      }
+    ]
+  },
+  {
+    "id": "sains-payung-atau-topi",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.SIANG-MALAM-CUACA.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Payung atau Topi?",
+        "instruksi": "Lihat langitnya, lalu sentuh benda yang harus dibawa robot keluar rumah.",
+        "pilihan": "pilihan",
+        "i-payung": "payung",
+        "i-topi": "topi",
+        "i-layang": "layang-layang",
+        "t-cerah1": "Langit cerah, matahari terik. Mana yang dipakai?",
+        "t-hujan1": "Langit gelap, hujan turun. Mana yang dipakai?",
+        "t-cerah2": "Matahari bersinar terang. Mana yang dipakai?",
+        "t-hujan2": "Tetes hujan jatuh dari langit. Mana yang dipakai?",
+        "t-angin": "Angin bertiup kencang, daun beterbangan. Mana yang dimainkan?"
+      },
+      "en": {
+        "judul": "Umbrella or Hat?",
+        "instruksi": "Look at the sky, then touch what robot should take before going out.",
+        "pilihan": "choices",
+        "i-payung": "umbrella",
+        "i-topi": "sun hat",
+        "i-layang": "kite",
+        "t-cerah1": "Sunny sky, the sun is hot. Which one do we use?",
+        "t-hujan1": "Dark sky, the rain is falling. Which one do we use?",
+        "t-cerah2": "The sun is shining bright. Which one do we use?",
+        "t-hujan2": "Raindrops are falling from the sky. Which one do we use?",
+        "t-angin": "The wind is blowing hard, leaves are flying. Which one do we play with?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah pilihan: 2 (payung, topi) → 3 (tambah layang-layang untuk langit berangin)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "payung",
+        "labelKey": "i-payung",
+        "bin": "pilihan",
+        "emoji": "☂️"
+      },
+      {
+        "id": "topi",
+        "labelKey": "i-topi",
+        "bin": "pilihan",
+        "emoji": "👒"
+      },
+      {
+        "id": "layang",
+        "labelKey": "i-layang",
+        "bin": "pilihan",
+        "emoji": "🪁"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "cerah1",
+        "promptKey": "t-cerah1",
+        "choices": [
+          "topi",
+          "payung"
+        ],
+        "correct": "topi"
+      },
+      {
+        "id": "hujan1",
+        "promptKey": "t-hujan1",
+        "choices": [
+          "payung",
+          "topi"
+        ],
+        "correct": "payung"
+      },
+      {
+        "id": "cerah2",
+        "promptKey": "t-cerah2",
+        "choices": [
+          "payung",
+          "topi",
+          "layang"
+        ],
+        "correct": "topi"
+      },
+      {
+        "id": "hujan2",
+        "promptKey": "t-hujan2",
+        "choices": [
+          "topi",
+          "payung",
+          "layang"
+        ],
+        "correct": "payung"
+      },
+      {
+        "id": "angin",
+        "promptKey": "t-angin",
+        "choices": [
+          "layang",
+          "payung",
+          "topi"
+        ],
+        "correct": "layang"
+      }
+    ]
+  },
+  {
+    "id": "sains-pilih-bahan-bangun-rumah",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.BAHAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Pilih Bahan untuk Rumah Kecil",
+        "instruksi": "Robot membangun rumah kecil: dengarkan bendanya, lalu sentuh bahan yang paling cocok.",
+        "pilihan": "pilihan",
+        "i-kayu": "kayu",
+        "i-logam": "logam",
+        "i-plastik": "plastik",
+        "i-kaca": "kaca",
+        "t-jendela": "Jendela supaya cahaya masuk. Bahan apa?",
+        "t-kursi": "Kursi untuk duduk yang kuat dan nyaman. Bahan apa?",
+        "t-paku": "Paku supaya papan tidak lepas. Bahan apa?",
+        "t-botol": "Botol minum yang ringan dan tidak pecah. Bahan apa?",
+        "t-pintu": "Pintu rumah yang kokoh. Bahan apa?"
+      },
+      "en": {
+        "judul": "Pick Materials for the Little House",
+        "instruksi": "Robot builds a little house: listen to the object, then touch the best material for it.",
+        "pilihan": "choices",
+        "i-kayu": "wood",
+        "i-logam": "metal",
+        "i-plastik": "plastic",
+        "i-kaca": "glass",
+        "t-jendela": "A window to let light in. Which material?",
+        "t-kursi": "A strong, comfy chair to sit on. Which material?",
+        "t-paku": "A nail to hold the boards. Which material?",
+        "t-botol": "A light drinking bottle that won't break. Which material?",
+        "t-pintu": "A sturdy front door. Which material?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 4,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah bahan pilihan per pertanyaan: 3 → 4; benda dengan dua bahan sah (ember) tidak dipakai"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kayu",
+        "labelKey": "i-kayu",
+        "bin": "pilihan",
+        "emoji": "🪵",
+        "color": "#d7ccc8"
+      },
+      {
+        "id": "logam",
+        "labelKey": "i-logam",
+        "bin": "pilihan",
+        "emoji": "🔩",
+        "color": "#cfd8dc"
+      },
+      {
+        "id": "plastik",
+        "labelKey": "i-plastik",
+        "bin": "pilihan",
+        "emoji": "🧴",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "kaca",
+        "labelKey": "i-kaca",
+        "bin": "pilihan",
+        "emoji": "🥛",
+        "color": "#e1f5fe"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "jendela",
+        "promptKey": "t-jendela",
+        "choices": [
+          "kaca",
+          "kayu",
+          "logam",
+          "plastik"
+        ],
+        "correct": "kaca"
+      },
+      {
+        "id": "kursi",
+        "promptKey": "t-kursi",
+        "choices": [
+          "kayu",
+          "kaca",
+          "plastik",
+          "logam"
+        ],
+        "correct": "kayu"
+      },
+      {
+        "id": "paku",
+        "promptKey": "t-paku",
+        "choices": [
+          "logam",
+          "plastik",
+          "kayu",
+          "kaca"
+        ],
+        "correct": "logam"
+      },
+      {
+        "id": "botol",
+        "promptKey": "t-botol",
+        "choices": [
+          "plastik",
+          "kaca",
+          "logam",
+          "kayu"
+        ],
+        "correct": "plastik"
+      },
+      {
+        "id": "pintu",
+        "promptKey": "t-pintu",
+        "choices": [
+          "kayu",
+          "kaca",
+          "plastik"
+        ],
+        "correct": "kayu"
+      }
+    ]
+  },
+  {
+    "id": "sains-piring-sehari-hari",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.MAKANAN-SEHAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Piring Sehari-hari, Toples Sesekali",
+        "instruksi": "Taruh makanan sehari-hari ke piring, dan makanan sesekali ke toples.",
+        "piring": "piring sehari-hari",
+        "toples": "toples sesekali",
+        "kadang": "kadang-kadang",
+        "i-pisang": "pisang",
+        "i-wortel": "wortel",
+        "i-nasi": "nasi",
+        "i-telur": "telur",
+        "i-ikan": "ikan",
+        "i-susu": "susu",
+        "i-air": "air putih",
+        "i-permen": "permen",
+        "i-keripik": "keripik",
+        "i-soda": "soda",
+        "i-kuekrim": "kue krim",
+        "i-rotimanis": "roti manis",
+        "i-wafel": "wafel"
+      },
+      "en": {
+        "judul": "Everyday Plate, Sometimes Jar",
+        "instruksi": "Put everyday food on the plate and once-in-a-while treats in the jar.",
+        "piring": "everyday plate",
+        "toples": "once-in-a-while jar",
+        "kadang": "sometimes",
+        "i-pisang": "banana",
+        "i-wortel": "carrot",
+        "i-nasi": "rice",
+        "i-telur": "egg",
+        "i-ikan": "fish",
+        "i-susu": "milk",
+        "i-air": "water",
+        "i-permen": "candy",
+        "i-keripik": "crisps",
+        "i-soda": "fizzy drink",
+        "i-kuekrim": "cream cake",
+        "i-rotimanis": "sweet bun",
+        "i-wafel": "waffle"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah wadah: 2 → 3 (tambah 'kadang-kadang' untuk roti manis)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 10,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah makanan per putaran; buah selalu utuh, bukan jus kemasan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "piring",
+        "labelKey": "piring",
+        "emoji": "🍽️",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "toples",
+        "labelKey": "toples",
+        "emoji": "🫙",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "kadang",
+        "labelKey": "kadang",
+        "emoji": "🧺",
+        "color": "#fff9c4"
+      }
+    ],
+    "items": [
+      {
+        "id": "pisang",
+        "labelKey": "i-pisang",
+        "bin": "piring",
+        "emoji": "🍌"
+      },
+      {
+        "id": "wortel",
+        "labelKey": "i-wortel",
+        "bin": "piring",
+        "emoji": "🥕"
+      },
+      {
+        "id": "nasi",
+        "labelKey": "i-nasi",
+        "bin": "piring",
+        "emoji": "🍚"
+      },
+      {
+        "id": "telur",
+        "labelKey": "i-telur",
+        "bin": "piring",
+        "emoji": "🍳"
+      },
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "piring",
+        "emoji": "🐟"
+      },
+      {
+        "id": "susu",
+        "labelKey": "i-susu",
+        "bin": "piring",
+        "emoji": "🥛"
+      },
+      {
+        "id": "air",
+        "labelKey": "i-air",
+        "bin": "piring",
+        "emoji": "💧"
+      },
+      {
+        "id": "permen",
+        "labelKey": "i-permen",
+        "bin": "toples",
+        "emoji": "🍬"
+      },
+      {
+        "id": "keripik",
+        "labelKey": "i-keripik",
+        "bin": "toples",
+        "emoji": "🍟"
+      },
+      {
+        "id": "soda",
+        "labelKey": "i-soda",
+        "bin": "toples",
+        "emoji": "🥤"
+      },
+      {
+        "id": "kuekrim",
+        "labelKey": "i-kuekrim",
+        "bin": "toples",
+        "emoji": "🍰"
+      },
+      {
+        "id": "rotimanis",
+        "labelKey": "i-rotimanis",
+        "bin": "kadang",
+        "emoji": "🥐"
+      },
+      {
+        "id": "wafel",
+        "labelKey": "i-wafel",
+        "bin": "kadang",
+        "emoji": "🧇"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-pot-di-kebun",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Rawat Pot di Kebun",
+        "instruksi": "Robot merawat bibit: beri yang dibutuhkan ke pot, singkirkan yang tidak perlu.",
+        "pot": "pot tanaman (perlu)",
+        "tidak": "tidak perlu",
+        "i-siram": "air siraman",
+        "i-matahari": "sinar matahari",
+        "i-tanah": "tanah gembur",
+        "i-angin": "udara segar",
+        "i-bola": "bola",
+        "i-roti": "roti",
+        "i-sepatu": "sepatu",
+        "i-buku": "buku",
+        "i-eskrim": "es krim"
+      },
+      "en": {
+        "judul": "Caring for the Garden Pot",
+        "instruksi": "Robot cares for a seedling: give the pot what it needs, set aside what it doesn't.",
+        "pot": "plant pot (needed)",
+        "tidak": "not needed",
+        "i-siram": "watering can",
+        "i-matahari": "sunshine",
+        "i-tanah": "loose soil",
+        "i-angin": "fresh air",
+        "i-bola": "ball",
+        "i-roti": "bread",
+        "i-sepatu": "shoes",
+        "i-buku": "book",
+        "i-eskrim": "ice cream"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah kartu per putaran; roti dan sepatu pengecoh di 8 kartu"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun-pasar",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "pot",
+        "labelKey": "pot",
+        "emoji": "🪴",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "tidak",
+        "labelKey": "tidak",
+        "emoji": "🧺",
+        "color": "#eeeeee"
+      }
+    ],
+    "items": [
+      {
+        "id": "siram",
+        "labelKey": "i-siram",
+        "bin": "pot",
+        "emoji": "🚿"
+      },
+      {
+        "id": "matahari",
+        "labelKey": "i-matahari",
+        "bin": "pot",
+        "emoji": "🔆"
+      },
+      {
+        "id": "tanah",
+        "labelKey": "i-tanah",
+        "bin": "pot",
+        "shape": "square",
+        "color": "#5d4037"
+      },
+      {
+        "id": "angin",
+        "labelKey": "i-angin",
+        "bin": "pot",
+        "emoji": "💨"
+      },
+      {
+        "id": "bola",
+        "labelKey": "i-bola",
+        "bin": "tidak",
+        "emoji": "⚽"
+      },
+      {
+        "id": "roti",
+        "labelKey": "i-roti",
+        "bin": "tidak",
+        "emoji": "🍞"
+      },
+      {
+        "id": "sepatu",
+        "labelKey": "i-sepatu",
+        "bin": "tidak",
+        "emoji": "👟"
+      },
+      {
+        "id": "buku",
+        "labelKey": "i-buku",
+        "bin": "tidak",
+        "emoji": "📚"
+      },
+      {
+        "id": "eskrim",
+        "labelKey": "i-eskrim",
+        "bin": "tidak",
+        "emoji": "🍦"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-pot-mana-yang-layu",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.KEBUTUHAN-TUMBUHAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Pot Mana yang Akan Layu?",
+        "instruksi": "Dengarkan di mana tiap pot disimpan, lalu tebak pot yang akan layu sebelum hari berganti.",
+        "pilihan": "pilihan",
+        "i-jendela": "pot di jendela terang",
+        "i-teras": "pot di teras",
+        "i-lemari": "pot di lemari gelap",
+        "i-kotak": "pot di dalam kotak tertutup",
+        "t-r1": "Satu pot ditaruh di jendela, satu di lemari gelap. Pot mana yang akan layu?",
+        "t-r2": "Pot di jendela, pot di teras, dan pot di kotak tertutup. Mana yang akan layu?",
+        "t-r3": "Semua disiram, tapi satu tak kena cahaya. Mana yang akan layu?",
+        "t-r4": "Mana pot yang akan layu karena gelap?"
+      },
+      "en": {
+        "judul": "Which Pot Will Wilt?",
+        "instruksi": "Listen to where each pot is kept, then guess which one will wilt before tomorrow.",
+        "pilihan": "choices",
+        "i-jendela": "pot by the bright window",
+        "i-teras": "pot on the porch",
+        "i-lemari": "pot in the dark cupboard",
+        "i-kotak": "pot inside a closed box",
+        "t-r1": "One pot is by the window, one in a dark cupboard. Which will wilt?",
+        "t-r2": "A pot by the window, one on the porch, one in a closed box. Which will wilt?",
+        "t-r3": "All were watered, but one gets no light. Which will wilt?",
+        "t-r4": "Which pot will wilt because it is dark?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah pot per tebakan: 2 → 4; latar pot menunjukkan terang/gelap"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "jendela",
+        "labelKey": "i-jendela",
+        "bin": "pilihan",
+        "emoji": "🪴",
+        "color": "#fff59d"
+      },
+      {
+        "id": "teras",
+        "labelKey": "i-teras",
+        "bin": "pilihan",
+        "emoji": "🪴",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "lemari",
+        "labelKey": "i-lemari",
+        "bin": "pilihan",
+        "emoji": "🪴",
+        "color": "#263238"
+      },
+      {
+        "id": "kotak",
+        "labelKey": "i-kotak",
+        "bin": "pilihan",
+        "emoji": "📦",
+        "color": "#4e342e"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "r1",
+        "promptKey": "t-r1",
+        "choices": [
+          "jendela",
+          "lemari"
+        ],
+        "correct": "lemari"
+      },
+      {
+        "id": "r2",
+        "promptKey": "t-r2",
+        "choices": [
+          "jendela",
+          "kotak",
+          "teras"
+        ],
+        "correct": "kotak"
+      },
+      {
+        "id": "r3",
+        "promptKey": "t-r3",
+        "choices": [
+          "teras",
+          "lemari",
+          "jendela"
+        ],
+        "correct": "lemari"
+      },
+      {
+        "id": "r4",
+        "promptKey": "t-r4",
+        "choices": [
+          "kotak",
+          "teras",
+          "jendela",
+          "lemari"
+        ],
+        "correct": "kotak"
+      }
+    ]
+  },
+  {
+    "id": "sains-rak-bahan-dapur",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.BAHAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Rak Bahan di Dapur",
+        "instruksi": "Taruh tiap benda ke rak bahannya: kayu, logam, plastik, atau kaca.",
+        "kayu": "kayu",
+        "logam": "logam",
+        "plastik": "plastik",
+        "kaca": "kaca",
+        "i-sendokkayu": "sendok kayu",
+        "i-talenan": "talenan kayu",
+        "i-kaleng": "kaleng",
+        "i-panci": "panci",
+        "i-botolplastik": "botol plastik",
+        "i-sedotan": "sedotan plastik",
+        "i-gelaskaca": "gelas kaca",
+        "i-toples": "toples kaca"
+      },
+      "en": {
+        "judul": "Kitchen Material Shelves",
+        "instruksi": "Put each object on its material shelf: wood, metal, plastic, or glass.",
+        "kayu": "wood",
+        "logam": "metal",
+        "plastik": "plastic",
+        "kaca": "glass",
+        "i-sendokkayu": "wooden spoon",
+        "i-talenan": "wooden cutting board",
+        "i-kaleng": "tin can",
+        "i-panci": "metal pot",
+        "i-botolplastik": "plastic bottle",
+        "i-sedotan": "plastic straw",
+        "i-gelaskaca": "glass cup",
+        "i-toples": "glass jar"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 4,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah rak: 2 (kayu, logam) → 4 (tambah plastik, kaca)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 4,
+        "step": 2,
+        "keterangan": "jumlah benda per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "kayu",
+        "labelKey": "kayu",
+        "emoji": "🪵",
+        "color": "#d7ccc8"
+      },
+      {
+        "id": "logam",
+        "labelKey": "logam",
+        "emoji": "🔩",
+        "color": "#cfd8dc"
+      },
+      {
+        "id": "plastik",
+        "labelKey": "plastik",
+        "emoji": "🧴",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "kaca",
+        "labelKey": "kaca",
+        "emoji": "🥛",
+        "color": "#e1f5fe"
+      }
+    ],
+    "items": [
+      {
+        "id": "sendokkayu",
+        "labelKey": "i-sendokkayu",
+        "bin": "kayu",
+        "emoji": "🥄",
+        "color": "#d7ccc8"
+      },
+      {
+        "id": "talenan",
+        "labelKey": "i-talenan",
+        "bin": "kayu",
+        "emoji": "🪵"
+      },
+      {
+        "id": "kaleng",
+        "labelKey": "i-kaleng",
+        "bin": "logam",
+        "emoji": "🥫"
+      },
+      {
+        "id": "panci",
+        "labelKey": "i-panci",
+        "bin": "logam",
+        "emoji": "🍳"
+      },
+      {
+        "id": "botolplastik",
+        "labelKey": "i-botolplastik",
+        "bin": "plastik",
+        "emoji": "🧴"
+      },
+      {
+        "id": "sedotan",
+        "labelKey": "i-sedotan",
+        "bin": "plastik",
+        "emoji": "🥤"
+      },
+      {
+        "id": "gelaskaca",
+        "labelKey": "i-gelaskaca",
+        "bin": "kaca",
+        "emoji": "🥛"
+      },
+      {
+        "id": "toples",
+        "labelKey": "i-toples",
+        "bin": "kaca",
+        "emoji": "🫙"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-rak-bahan-halaman",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.BAHAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Bahan Benda di Halaman",
+        "instruksi": "Robot merapikan halaman: taruh tiap benda ke rak bahan kayu, logam, plastik, atau kaca.",
+        "kayu": "kayu",
+        "logam": "logam",
+        "plastik": "plastik",
+        "kaca": "kaca",
+        "i-kursi": "kursi kayu",
+        "i-pagar": "pagar kayu",
+        "i-kunci": "kunci",
+        "i-paku": "paku",
+        "i-ember": "ember plastik",
+        "i-mainan": "mainan plastik",
+        "i-jendela": "kaca jendela",
+        "i-botolkaca": "botol kaca"
+      },
+      "en": {
+        "judul": "Materials in the Yard",
+        "instruksi": "Robot tidies the yard: put each object on the wood, metal, plastic, or glass shelf.",
+        "kayu": "wood",
+        "logam": "metal",
+        "plastik": "plastic",
+        "kaca": "glass",
+        "i-kursi": "wooden chair",
+        "i-pagar": "wooden fence",
+        "i-kunci": "key",
+        "i-paku": "nail",
+        "i-ember": "plastic bucket",
+        "i-mainan": "plastic toy",
+        "i-jendela": "window glass",
+        "i-botolkaca": "glass bottle"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 4,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah rak: 2 → 4"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 4,
+        "step": 2,
+        "keterangan": "jumlah benda per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "kayu",
+        "labelKey": "kayu",
+        "emoji": "🪵",
+        "color": "#d7ccc8"
+      },
+      {
+        "id": "logam",
+        "labelKey": "logam",
+        "emoji": "🔩",
+        "color": "#cfd8dc"
+      },
+      {
+        "id": "plastik",
+        "labelKey": "plastik",
+        "emoji": "🧴",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "kaca",
+        "labelKey": "kaca",
+        "emoji": "🥛",
+        "color": "#e1f5fe"
+      }
+    ],
+    "items": [
+      {
+        "id": "kursi",
+        "labelKey": "i-kursi",
+        "bin": "kayu",
+        "emoji": "🪑"
+      },
+      {
+        "id": "pagar",
+        "labelKey": "i-pagar",
+        "bin": "kayu",
+        "emoji": "🪵",
+        "scale": 1.2
+      },
+      {
+        "id": "kunci",
+        "labelKey": "i-kunci",
+        "bin": "logam",
+        "emoji": "🔑"
+      },
+      {
+        "id": "paku",
+        "labelKey": "i-paku",
+        "bin": "logam",
+        "emoji": "🔩"
+      },
+      {
+        "id": "ember",
+        "labelKey": "i-ember",
+        "bin": "plastik",
+        "emoji": "🪣"
+      },
+      {
+        "id": "mainan",
+        "labelKey": "i-mainan",
+        "bin": "plastik",
+        "emoji": "🪀"
+      },
+      {
+        "id": "jendela",
+        "labelKey": "i-jendela",
+        "bin": "kaca",
+        "emoji": "🪟"
+      },
+      {
+        "id": "botolkaca",
+        "labelKey": "i-botolkaca",
+        "bin": "kaca",
+        "emoji": "🍾"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-rak-sayur-bagian-tumbuhan",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.BAGIAN-TUMBUHAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Sayur dari Bagian Mana?",
+        "instruksi": "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun.",
+        "akar": "akar",
+        "batang": "batang",
+        "daun": "daun",
+        "bunga": "bunga",
+        "i-wortel": "wortel",
+        "i-ubi": "ubi jalar",
+        "i-lobak": "lobak putih",
+        "i-tebu": "tebu",
+        "i-rebung": "rebung bambu",
+        "i-bayam": "bayam",
+        "i-selada": "selada",
+        "i-kangkung": "kangkung",
+        "i-brokoli": "brokoli",
+        "i-kembangkol": "kembang kol"
+      },
+      "en": {
+        "judul": "Which Part Is the Veggie?",
+        "instruksi": "Put each vegetable on the shelf of the plant part it comes from: carrot to root, spinach to leaf.",
+        "akar": "root",
+        "batang": "stem",
+        "daun": "leaf",
+        "bunga": "flower",
+        "i-wortel": "carrot",
+        "i-ubi": "sweet potato",
+        "i-lobak": "white radish",
+        "i-tebu": "sugar cane",
+        "i-rebung": "bamboo shoot",
+        "i-bayam": "spinach",
+        "i-selada": "lettuce",
+        "i-kangkung": "water spinach",
+        "i-brokoli": "broccoli",
+        "i-kembangkol": "cauliflower"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 4,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah rak: 2 (akar, daun) → 4 (tambah batang, bunga)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 4,
+        "step": 2,
+        "keterangan": "jumlah sayur per putaran; kentang dan bawang sengaja tidak dipakai"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun-pasar",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "akar",
+        "labelKey": "akar",
+        "emoji": "🫚",
+        "color": "#8d6e63"
+      },
+      {
+        "id": "batang",
+        "labelKey": "batang",
+        "emoji": "🎋"
+      },
+      {
+        "id": "daun",
+        "labelKey": "daun",
+        "emoji": "🍃"
+      },
+      {
+        "id": "bunga",
+        "labelKey": "bunga",
+        "emoji": "🌸"
+      }
+    ],
+    "items": [
+      {
+        "id": "wortel",
+        "labelKey": "i-wortel",
+        "bin": "akar",
+        "emoji": "🥕"
+      },
+      {
+        "id": "ubi",
+        "labelKey": "i-ubi",
+        "bin": "akar",
+        "emoji": "🍠"
+      },
+      {
+        "id": "lobak",
+        "labelKey": "i-lobak",
+        "bin": "akar",
+        "emoji": "🥕",
+        "color": "#f5f5f5"
+      },
+      {
+        "id": "tebu",
+        "labelKey": "i-tebu",
+        "bin": "batang",
+        "emoji": "🎋"
+      },
+      {
+        "id": "rebung",
+        "labelKey": "i-rebung",
+        "bin": "batang",
+        "emoji": "🎍"
+      },
+      {
+        "id": "bayam",
+        "labelKey": "i-bayam",
+        "bin": "daun",
+        "emoji": "🌿"
+      },
+      {
+        "id": "selada",
+        "labelKey": "i-selada",
+        "bin": "daun",
+        "emoji": "🥬"
+      },
+      {
+        "id": "kangkung",
+        "labelKey": "i-kangkung",
+        "bin": "daun",
+        "emoji": "☘️"
+      },
+      {
+        "id": "brokoli",
+        "labelKey": "i-brokoli",
+        "bin": "bunga",
+        "emoji": "🥦"
+      },
+      {
+        "id": "kembangkol",
+        "labelKey": "i-kembangkol",
+        "bin": "bunga",
+        "emoji": "🥦",
+        "color": "#fff8e1"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-siang-malam-di-kebun",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Kebun Siang dan Malam",
+        "instruksi": "Robot menata foto kebun: taruh yang terjadi siang ke matahari, yang malam ke bulan.",
+        "siang": "siang",
+        "malam": "malam",
+        "i-jemur": "menjemur baju",
+        "i-kupu": "kupu-kupu di bunga",
+        "i-siram": "menyiram tanaman pagi",
+        "i-kacamata": "pakai kacamata hitam",
+        "i-kunang": "kunang-kunang menyala",
+        "i-lampu": "lampu teras menyala",
+        "i-piyama": "pakai piyama",
+        "i-kelelawar": "kelelawar terbang"
+      },
+      "en": {
+        "judul": "The Garden by Day and Night",
+        "instruksi": "Robot sorts garden photos: day things go to the sun, night things to the moon.",
+        "siang": "day",
+        "malam": "night",
+        "i-jemur": "hanging laundry in the sun",
+        "i-kupu": "butterfly on a flower",
+        "i-siram": "watering plants in the morning",
+        "i-kacamata": "wearing sunglasses",
+        "i-kunang": "glowing fireflies",
+        "i-lampu": "porch lamp on",
+        "i-piyama": "putting on pyjamas",
+        "i-kelelawar": "bats flying"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah gambar per putaran; hindari kegiatan yang bisa siang atau malam"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun-pasar",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "siang",
+        "labelKey": "siang",
+        "emoji": "☀️",
+        "color": "#bbdefb"
+      },
+      {
+        "id": "malam",
+        "labelKey": "malam",
+        "emoji": "🌙",
+        "color": "#1a237e"
+      }
+    ],
+    "items": [
+      {
+        "id": "jemur",
+        "labelKey": "i-jemur",
+        "bin": "siang",
+        "emoji": "🧺"
+      },
+      {
+        "id": "kupu",
+        "labelKey": "i-kupu",
+        "bin": "siang",
+        "emoji": "🦋"
+      },
+      {
+        "id": "siram",
+        "labelKey": "i-siram",
+        "bin": "siang",
+        "emoji": "🚿"
+      },
+      {
+        "id": "kacamata",
+        "labelKey": "i-kacamata",
+        "bin": "siang",
+        "emoji": "🕶️"
+      },
+      {
+        "id": "kunang",
+        "labelKey": "i-kunang",
+        "bin": "malam",
+        "emoji": "✨"
+      },
+      {
+        "id": "lampu",
+        "labelKey": "i-lampu",
+        "bin": "malam",
+        "emoji": "🏮"
+      },
+      {
+        "id": "piyama",
+        "labelKey": "i-piyama",
+        "bin": "malam",
+        "emoji": "🥱"
+      },
+      {
+        "id": "kelelawar",
+        "labelKey": "i-kelelawar",
+        "bin": "malam",
+        "emoji": "🦇"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-siapa-yang-bekerja",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.TULANG-OTOT-ORGAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Siapa yang Bekerja?",
+        "instruksi": "Taruh kartu kegiatan ke bagian tubuh yang paling bekerja: lari ke otot kaki, bernapas ke paru-paru.",
+        "kaki": "otot kaki",
+        "paru": "paru-paru",
+        "lengan": "otot lengan",
+        "otak": "otak",
+        "i-lari": "lari",
+        "i-tendang": "menendang bola",
+        "i-napas": "tarik napas dalam",
+        "i-balon": "meniup balon",
+        "i-tas": "mengangkat tas",
+        "i-beban": "mengangkat beban",
+        "i-baca": "membaca buku",
+        "i-puzel": "memikirkan puzel"
+      },
+      "en": {
+        "judul": "Which Part Is Working?",
+        "instruksi": "Put each activity card on the body part doing the work: running to leg muscles, breathing to lungs.",
+        "kaki": "leg muscles",
+        "paru": "lungs",
+        "lengan": "arm muscles",
+        "otak": "brain",
+        "i-lari": "running",
+        "i-tendang": "kicking a ball",
+        "i-napas": "taking a deep breath",
+        "i-balon": "blowing up a balloon",
+        "i-tas": "lifting a bag",
+        "i-beban": "lifting weights",
+        "i-baca": "reading a book",
+        "i-puzel": "solving a puzzle"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah bagian tubuh: 2 (otot kaki, paru-paru) → 4 (tambah otot lengan, otak)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 8,
+        "default": 6,
+        "step": 2,
+        "keterangan": "jumlah kartu kegiatan per putaran"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "klinik",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "kaki",
+        "labelKey": "kaki",
+        "emoji": "🦵"
+      },
+      {
+        "id": "paru",
+        "labelKey": "paru",
+        "emoji": "🫁"
+      },
+      {
+        "id": "lengan",
+        "labelKey": "lengan",
+        "emoji": "💪"
+      },
+      {
+        "id": "otak",
+        "labelKey": "otak",
+        "emoji": "🧠"
+      }
+    ],
+    "items": [
+      {
+        "id": "lari",
+        "labelKey": "i-lari",
+        "bin": "kaki",
+        "emoji": "🏃"
+      },
+      {
+        "id": "tendang",
+        "labelKey": "i-tendang",
+        "bin": "kaki",
+        "emoji": "⚽"
+      },
+      {
+        "id": "napas",
+        "labelKey": "i-napas",
+        "bin": "paru",
+        "emoji": "🌬️"
+      },
+      {
+        "id": "balon",
+        "labelKey": "i-balon",
+        "bin": "paru",
+        "emoji": "🎈"
+      },
+      {
+        "id": "tas",
+        "labelKey": "i-tas",
+        "bin": "lengan",
+        "emoji": "🎒"
+      },
+      {
+        "id": "beban",
+        "labelKey": "i-beban",
+        "bin": "lengan",
+        "emoji": "🏋️"
+      },
+      {
+        "id": "baca",
+        "labelKey": "i-baca",
+        "bin": "otak",
+        "emoji": "📖"
+      },
+      {
+        "id": "puzel",
+        "labelKey": "i-puzel",
+        "bin": "otak",
+        "emoji": "🧩"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-siapa-yang-bersuara",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HEWAN-SUARA.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Siapa yang Bersuara?",
+        "instruksi": "Dengarkan suaranya, lalu sentuh hewan yang bersuara begitu.",
+        "pilihan": "pilihan",
+        "i-kucing": "kucing",
+        "i-ayam": "ayam jago",
+        "i-sapi": "sapi",
+        "i-kambing": "kambing",
+        "i-bebek": "bebek",
+        "i-burung": "burung",
+        "t-meong": "Siapa yang bilang meong?",
+        "t-kukuruyuk": "Siapa yang bilang kukuruyuk?",
+        "t-moo": "Siapa yang bilang mooo?",
+        "t-kwek": "Siapa yang bilang kwek kwek?",
+        "t-mbee": "Siapa yang bilang mbeee?",
+        "t-cicit": "Siapa yang bilang cit cit cuit?"
+      },
+      "en": {
+        "judul": "Who Made That Sound?",
+        "instruksi": "Listen to the sound, then touch the animal that makes it.",
+        "pilihan": "choices",
+        "i-kucing": "cat",
+        "i-ayam": "rooster",
+        "i-sapi": "cow",
+        "i-kambing": "goat",
+        "i-bebek": "duck",
+        "i-burung": "bird",
+        "t-meong": "Who says meow?",
+        "t-kukuruyuk": "Who says cock-a-doodle-doo?",
+        "t-moo": "Who says moo?",
+        "t-kwek": "Who says quack quack?",
+        "t-mbee": "Who says baa?",
+        "t-cicit": "Who says tweet tweet?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah hewan per pertanyaan; di 5–6 hewan suara mirip (kambing vs sapi) tampil bersama"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "pilihan",
+        "emoji": "🐱"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "pilihan",
+        "emoji": "🐓"
+      },
+      {
+        "id": "sapi",
+        "labelKey": "i-sapi",
+        "bin": "pilihan",
+        "emoji": "🐄",
+        "scale": 1.3
+      },
+      {
+        "id": "kambing",
+        "labelKey": "i-kambing",
+        "bin": "pilihan",
+        "emoji": "🐐"
+      },
+      {
+        "id": "bebek",
+        "labelKey": "i-bebek",
+        "bin": "pilihan",
+        "emoji": "🦆"
+      },
+      {
+        "id": "burung",
+        "labelKey": "i-burung",
+        "bin": "pilihan",
+        "emoji": "🐦",
+        "scale": 0.8
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "meong",
+        "promptKey": "t-meong",
+        "choices": [
+          "kucing",
+          "bebek",
+          "ayam",
+          "sapi"
+        ],
+        "correct": "kucing"
+      },
+      {
+        "id": "kukuruyuk",
+        "promptKey": "t-kukuruyuk",
+        "choices": [
+          "ayam",
+          "kucing",
+          "kambing",
+          "burung"
+        ],
+        "correct": "ayam"
+      },
+      {
+        "id": "moo",
+        "promptKey": "t-moo",
+        "choices": [
+          "sapi",
+          "bebek",
+          "kucing",
+          "burung"
+        ],
+        "correct": "sapi"
+      },
+      {
+        "id": "kwek",
+        "promptKey": "t-kwek",
+        "choices": [
+          "bebek",
+          "ayam",
+          "sapi",
+          "kucing"
+        ],
+        "correct": "bebek"
+      },
+      {
+        "id": "mbee",
+        "promptKey": "t-mbee",
+        "choices": [
+          "kambing",
+          "sapi",
+          "bebek",
+          "burung"
+        ],
+        "correct": "kambing"
+      },
+      {
+        "id": "cicit",
+        "promptKey": "t-cicit",
+        "choices": [
+          "burung",
+          "ayam",
+          "kucing",
+          "kambing"
+        ],
+        "correct": "burung"
+      }
+    ]
+  },
+  {
+    "id": "sains-sirip-sayap-kaki",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Sirip, Sayap, atau Kaki?",
+        "instruksi": "Lihat tubuh hewannya: taruh ke rak sirip, sayap, atau kaki sesuai cara geraknya.",
+        "sirip": "sirip",
+        "sayap": "sayap",
+        "kaki": "kaki",
+        "i-ikan": "ikan",
+        "i-hiu": "hiu",
+        "i-lumba": "lumba-lumba",
+        "i-kupu": "kupu-kupu",
+        "i-lebah": "lebah",
+        "i-kelelawar": "kelelawar",
+        "i-kucing": "kucing",
+        "i-sapi": "sapi",
+        "i-gajah": "gajah",
+        "i-burung": "burung terbang"
+      },
+      "en": {
+        "judul": "Fins, Wings, or Legs?",
+        "instruksi": "Look at the animal's body: put it on the fins, wings, or legs shelf by how it moves.",
+        "sirip": "fins",
+        "sayap": "wings",
+        "kaki": "legs",
+        "i-ikan": "fish",
+        "i-hiu": "shark",
+        "i-lumba": "dolphin",
+        "i-kupu": "butterfly",
+        "i-lebah": "bee",
+        "i-kelelawar": "bat",
+        "i-kucing": "cat",
+        "i-sapi": "cow",
+        "i-gajah": "elephant",
+        "i-burung": "flying bird"
+      }
+    },
+    "knobs": {
+      "binCount": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah rak: 2 (sirip, kaki) → 3 (tambah sayap)"
+      },
+      "itemCount": {
+        "min": 4,
+        "max": 9,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah hewan per putaran; burung (sayap dan kaki) baru muncul di 8–9 hewan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "halaman",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "sirip",
+        "labelKey": "sirip",
+        "emoji": "🐟"
+      },
+      {
+        "id": "sayap",
+        "labelKey": "sayap",
+        "emoji": "🪶"
+      },
+      {
+        "id": "kaki",
+        "labelKey": "kaki",
+        "emoji": "🐾"
+      }
+    ],
+    "items": [
+      {
+        "id": "ikan",
+        "labelKey": "i-ikan",
+        "bin": "sirip",
+        "emoji": "🐠"
+      },
+      {
+        "id": "hiu",
+        "labelKey": "i-hiu",
+        "bin": "sirip",
+        "emoji": "🦈"
+      },
+      {
+        "id": "lumba",
+        "labelKey": "i-lumba",
+        "bin": "sirip",
+        "emoji": "🐬"
+      },
+      {
+        "id": "kupu",
+        "labelKey": "i-kupu",
+        "bin": "sayap",
+        "emoji": "🦋"
+      },
+      {
+        "id": "lebah",
+        "labelKey": "i-lebah",
+        "bin": "sayap",
+        "emoji": "🐝"
+      },
+      {
+        "id": "kelelawar",
+        "labelKey": "i-kelelawar",
+        "bin": "sayap",
+        "emoji": "🦇"
+      },
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "kaki",
+        "emoji": "🐈"
+      },
+      {
+        "id": "sapi",
+        "labelKey": "i-sapi",
+        "bin": "kaki",
+        "emoji": "🐄"
+      },
+      {
+        "id": "gajah",
+        "labelKey": "i-gajah",
+        "bin": "kaki",
+        "emoji": "🐘"
+      },
+      {
+        "id": "burung",
+        "labelKey": "i-burung",
+        "bin": "sayap",
+        "emoji": "🐦"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-tebak-apung-tenggelam",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Tebak: Apung atau Tenggelam?",
+        "instruksi": "Sebelum dicoba di air, tebak dulu: taruh benda ke kolom apung atau tenggelam.",
+        "apung": "terapung",
+        "tenggelam": "tenggelam",
+        "i-bola": "bola plastik",
+        "i-daun": "daun",
+        "i-kayu": "balok kayu besar",
+        "i-bebekkaret": "bebek karet",
+        "i-gabus": "tutup gabus",
+        "i-batu": "batu",
+        "i-sendok": "sendok logam",
+        "i-koin": "koin",
+        "i-kelereng": "kelereng kecil",
+        "i-kunci": "kunci"
+      },
+      "en": {
+        "judul": "Guess: Float or Sink?",
+        "instruksi": "Before we try it in water, guess first: put each thing in the float or sink column.",
+        "apung": "floats",
+        "tenggelam": "sinks",
+        "i-bola": "plastic ball",
+        "i-daun": "leaf",
+        "i-kayu": "big wooden block",
+        "i-bebekkaret": "rubber duck",
+        "i-gabus": "cork",
+        "i-batu": "stone",
+        "i-sendok": "metal spoon",
+        "i-koin": "coin",
+        "i-kelereng": "little marble",
+        "i-kunci": "key"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah benda yang ditebak per putaran; kayu besar selalu ada supaya 'besar pasti tenggelam' teruji"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "apung",
+        "labelKey": "apung",
+        "emoji": "🛟",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "tenggelam",
+        "labelKey": "tenggelam",
+        "emoji": "⬇️",
+        "color": "#0d47a1"
+      }
+    ],
+    "items": [
+      {
+        "id": "bola",
+        "labelKey": "i-bola",
+        "bin": "apung",
+        "emoji": "🏐"
+      },
+      {
+        "id": "daun",
+        "labelKey": "i-daun",
+        "bin": "apung",
+        "emoji": "🍃"
+      },
+      {
+        "id": "kayu",
+        "labelKey": "i-kayu",
+        "bin": "apung",
+        "emoji": "🪵",
+        "scale": 1.5
+      },
+      {
+        "id": "bebekkaret",
+        "labelKey": "i-bebekkaret",
+        "bin": "apung",
+        "emoji": "🦆",
+        "color": "#fff176"
+      },
+      {
+        "id": "gabus",
+        "labelKey": "i-gabus",
+        "bin": "apung",
+        "emoji": "🍾",
+        "scale": 0.7
+      },
+      {
+        "id": "batu",
+        "labelKey": "i-batu",
+        "bin": "tenggelam",
+        "emoji": "🪨"
+      },
+      {
+        "id": "sendok",
+        "labelKey": "i-sendok",
+        "bin": "tenggelam",
+        "emoji": "🥄"
+      },
+      {
+        "id": "koin",
+        "labelKey": "i-koin",
+        "bin": "tenggelam",
+        "emoji": "🪙"
+      },
+      {
+        "id": "kelereng",
+        "labelKey": "i-kelereng",
+        "bin": "tenggelam",
+        "emoji": "🔮",
+        "scale": 0.6
+      },
+      {
+        "id": "kunci",
+        "labelKey": "i-kunci",
+        "bin": "tenggelam",
+        "emoji": "🔑"
+      }
+    ],
+    "pilihan": []
+  },
+  {
     "id": "sarang-telur-selisih-satu",
     "version": "1.0.0",
     "level": "TKA",
@@ -17239,6 +24706,655 @@ export const PAKET_RAW: unknown[] = [
             "id": "bilas",
             "labelKey": "bilas",
             "emoji": "✨"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sains-biji-sampai-berbunga",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "SAINS.TKA.BAGIAN-TUMBUHAN.04"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Dari Biji Sampai Berbunga",
+        "instruksi": "Susun gambar tanaman dari biji, tunas, berdaun, sampai berbunga.",
+        "s-bungamatahari": "Bunga matahari tumbuh",
+        "bungamatahari-biji": "biji di tanah",
+        "bungamatahari-tunas": "tunas dua daun",
+        "bungamatahari-daun": "berdaun banyak",
+        "bungamatahari-bunga": "berbunga",
+        "s-kacang": "Kacang tumbuh",
+        "kacang-biji": "biji kacang",
+        "kacang-tunas": "tunas kecil",
+        "kacang-daun": "berdaun lebat",
+        "kacang-bunga": "berbunga"
+      },
+      "en": {
+        "judul": "From Seed to Flower",
+        "instruksi": "Put the plant pictures in order: seed, sprout, leafy, then flowering.",
+        "s-bungamatahari": "A sunflower grows",
+        "bungamatahari-biji": "seed in the soil",
+        "bungamatahari-tunas": "sprout with two leaves",
+        "bungamatahari-daun": "many leaves",
+        "bungamatahari-bunga": "flowering",
+        "s-kacang": "A bean grows",
+        "kacang-biji": "bean seed",
+        "kacang-tunas": "little sprout",
+        "kacang-daun": "lots of leaves",
+        "kacang-bunga": "flowering"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah gambar: 3 (biji, tunas, berbunga) → 4 (tambah tahap berdaun banyak)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "kebun-pasar",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "bungamatahari",
+        "titleKey": "s-bungamatahari",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "bungamatahari-biji",
+            "emoji": "🌰",
+            "scale": 0.6
+          },
+          {
+            "id": "tunas",
+            "labelKey": "bungamatahari-tunas",
+            "emoji": "🌱",
+            "scale": 0.8
+          },
+          {
+            "id": "daun",
+            "labelKey": "bungamatahari-daun",
+            "emoji": "🌿",
+            "scale": 1.1
+          },
+          {
+            "id": "bunga",
+            "labelKey": "bungamatahari-bunga",
+            "emoji": "🌻",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "kacang",
+        "titleKey": "s-kacang",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "kacang-biji",
+            "emoji": "🫘",
+            "scale": 0.6
+          },
+          {
+            "id": "tunas",
+            "labelKey": "kacang-tunas",
+            "emoji": "🌱",
+            "scale": 0.8
+          },
+          {
+            "id": "daun",
+            "labelKey": "kacang-daun",
+            "emoji": "🪴",
+            "scale": 1.1
+          },
+          {
+            "id": "bunga",
+            "labelKey": "kacang-bunga",
+            "emoji": "🌼",
+            "scale": 1.3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sains-cerah-mendung-hujan",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "SAINS.PAUD.SIANG-MALAM-CUACA.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Awan Datang, Hujan Turun",
+        "instruksi": "Susun gambar langit dari cerah, lalu mendung, lalu hujan.",
+        "s-hujan": "Hujan datang",
+        "hujan-cerah": "langit cerah",
+        "hujan-mendung": "awan tebal, langit gelap",
+        "hujan-hujan": "hujan turun",
+        "s-pelangi": "Sampai pelangi",
+        "pelangi-cerah": "langit cerah",
+        "pelangi-mendung": "awan tebal",
+        "pelangi-hujan": "hujan turun",
+        "pelangi-pelangi": "pelangi muncul",
+        "s-awan": "Awan makin tebal",
+        "awan-cerah": "langit cerah",
+        "awan-tipis": "awan tipis datang",
+        "awan-tebal": "awan tebal, langit gelap",
+        "awan-hujan": "hujan turun"
+      },
+      "en": {
+        "judul": "Clouds Come, Rain Falls",
+        "instruksi": "Put the sky pictures in order: sunny, then cloudy, then rainy.",
+        "s-hujan": "The rain comes",
+        "hujan-cerah": "sunny sky",
+        "hujan-mendung": "thick cloud, dark sky",
+        "hujan-hujan": "rain falls",
+        "s-pelangi": "Until the rainbow",
+        "pelangi-cerah": "sunny sky",
+        "pelangi-mendung": "thick cloud",
+        "pelangi-hujan": "rain falls",
+        "pelangi-pelangi": "a rainbow appears",
+        "s-awan": "Clouds get thicker",
+        "awan-cerah": "sunny sky",
+        "awan-tipis": "a thin cloud comes",
+        "awan-tebal": "thick cloud, dark sky",
+        "awan-hujan": "rain falls"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah gambar: 3 (cerah, mendung, hujan) → 4 (tambah pelangi setelah hujan atau awan tipis sebelum tebal)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "halaman",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "hujan",
+        "titleKey": "s-hujan",
+        "steps": [
+          {
+            "id": "cerah",
+            "labelKey": "hujan-cerah",
+            "emoji": "☀️"
+          },
+          {
+            "id": "mendung",
+            "labelKey": "hujan-mendung",
+            "emoji": "☁️",
+            "color": "#90a4ae"
+          },
+          {
+            "id": "hujan",
+            "labelKey": "hujan-hujan",
+            "emoji": "🌧️",
+            "color": "#546e7a"
+          }
+        ]
+      },
+      {
+        "id": "pelangi",
+        "titleKey": "s-pelangi",
+        "steps": [
+          {
+            "id": "cerah",
+            "labelKey": "pelangi-cerah",
+            "emoji": "☀️"
+          },
+          {
+            "id": "mendung",
+            "labelKey": "pelangi-mendung",
+            "emoji": "☁️",
+            "color": "#90a4ae"
+          },
+          {
+            "id": "hujan",
+            "labelKey": "pelangi-hujan",
+            "emoji": "🌧️",
+            "color": "#546e7a"
+          },
+          {
+            "id": "pelangi",
+            "labelKey": "pelangi-pelangi",
+            "emoji": "🌈"
+          }
+        ]
+      },
+      {
+        "id": "awan",
+        "titleKey": "s-awan",
+        "steps": [
+          {
+            "id": "cerah",
+            "labelKey": "awan-cerah",
+            "emoji": "☀️"
+          },
+          {
+            "id": "tipis",
+            "labelKey": "awan-tipis",
+            "emoji": "⛅"
+          },
+          {
+            "id": "tebal",
+            "labelKey": "awan-tebal",
+            "emoji": "☁️",
+            "color": "#90a4ae"
+          },
+          {
+            "id": "hujan",
+            "labelKey": "awan-hujan",
+            "emoji": "🌧️",
+            "color": "#546e7a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sains-siklus-ayam",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "SAINS.TKA.SIKLUS-HIDUP.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Telur Jadi Ayam",
+        "instruksi": "Susun gambar dari telur, anak ayam, sampai ayam dewasa.",
+        "s-ayam": "Siklus hidup ayam",
+        "ayam-telur": "telur",
+        "ayam-retak": "telur retak, menetas",
+        "ayam-anak": "anak ayam kuning",
+        "ayam-dewasa": "ayam dewasa cokelat",
+        "s-bebek": "Siklus hidup bebek",
+        "bebek-telur": "telur bebek",
+        "bebek-anak": "anak bebek kecil",
+        "bebek-dewasa": "bebek dewasa"
+      },
+      "en": {
+        "judul": "Egg to Chicken",
+        "instruksi": "Put the pictures in order: egg, chick, then grown chicken.",
+        "s-ayam": "Chicken life cycle",
+        "ayam-telur": "egg",
+        "ayam-retak": "egg cracks and hatches",
+        "ayam-anak": "yellow chick",
+        "ayam-dewasa": "grown brown hen",
+        "s-bebek": "Duck life cycle",
+        "bebek-telur": "duck egg",
+        "bebek-anak": "little duckling",
+        "bebek-dewasa": "grown duck"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah tahap: 3 (telur, anak ayam, ayam) → 4 (tambah telur retak menetas)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "halaman",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "ayam",
+        "titleKey": "s-ayam",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "ayam-telur",
+            "emoji": "🥚",
+            "scale": 0.8
+          },
+          {
+            "id": "retak",
+            "labelKey": "ayam-retak",
+            "emoji": "🐣",
+            "scale": 0.9
+          },
+          {
+            "id": "anak",
+            "labelKey": "ayam-anak",
+            "emoji": "🐥",
+            "scale": 1
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "ayam-dewasa",
+            "emoji": "🐔",
+            "scale": 1.4,
+            "color": "#8d6e63"
+          }
+        ]
+      },
+      {
+        "id": "bebek",
+        "titleKey": "s-bebek",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "bebek-telur",
+            "emoji": "🥚",
+            "scale": 0.8,
+            "color": "#c8e6c9"
+          },
+          {
+            "id": "anak",
+            "labelKey": "bebek-anak",
+            "emoji": "🐤",
+            "scale": 1
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "bebek-dewasa",
+            "emoji": "🦆",
+            "scale": 1.4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sains-siklus-kupu-kupu",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "SAINS.TKA.SIKLUS-HIDUP.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Ulat Jadi Kupu-kupu",
+        "instruksi": "Susun gambar dari telur di daun, ulat, kepompong, sampai kupu-kupu.",
+        "s-kupu": "Siklus hidup kupu-kupu",
+        "kupu-telur": "telur kecil di daun",
+        "kupu-ulat": "ulat makan daun",
+        "kupu-kepompong": "kepompong menggantung",
+        "kupu-kupu": "kupu-kupu terbang"
+      },
+      "en": {
+        "judul": "Caterpillar to Butterfly",
+        "instruksi": "Put the pictures in order: egg on a leaf, caterpillar, chrysalis, then butterfly.",
+        "s-kupu": "Butterfly life cycle",
+        "kupu-telur": "tiny egg on a leaf",
+        "kupu-ulat": "caterpillar eating leaves",
+        "kupu-kepompong": "chrysalis hanging",
+        "kupu-kupu": "butterfly flies"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah tahap: 4 lengkap; 3 (tanpa telur) sebagai bantuan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "kebun-pasar",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "kupu",
+        "titleKey": "s-kupu",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "kupu-telur",
+            "emoji": "🍃",
+            "scale": 0.8
+          },
+          {
+            "id": "ulat",
+            "labelKey": "kupu-ulat",
+            "emoji": "🐛"
+          },
+          {
+            "id": "kepompong",
+            "labelKey": "kupu-kepompong",
+            "emoji": "🛡️",
+            "color": "#a1887f"
+          },
+          {
+            "id": "kupu",
+            "labelKey": "kupu-kupu",
+            "emoji": "🦋",
+            "scale": 1.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sains-susun-tumbuhan-utuh",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "SAINS.TKA.BAGIAN-TUMBUHAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Susun Tumbuhan Utuh",
+        "instruksi": "Susun potongan dari bawah tanah ke pucuk: akar, batang, daun, lalu bunga.",
+        "s-bungamatahari": "Bunga matahari dari bawah ke atas",
+        "bungamatahari-akar": "akar di dalam tanah",
+        "bungamatahari-batang": "batang di atas tanah",
+        "bungamatahari-daun": "daun di batang",
+        "bungamatahari-bunga": "bunga di pucuk",
+        "s-pohon": "Pohon kecil dari bawah ke atas",
+        "pohon-akar": "akar di dalam tanah",
+        "pohon-batang": "batang pohon",
+        "pohon-daun": "daun rimbun"
+      },
+      "en": {
+        "judul": "Build the Whole Plant",
+        "instruksi": "Stack the pieces from under the ground to the top: root, stem, leaf, then flower.",
+        "s-bungamatahari": "Sunflower from bottom to top",
+        "bungamatahari-akar": "root under the soil",
+        "bungamatahari-batang": "stem above the soil",
+        "bungamatahari-daun": "leaf on the stem",
+        "bungamatahari-bunga": "flower at the top",
+        "s-pohon": "Little tree from bottom to top",
+        "pohon-akar": "root under the soil",
+        "pohon-batang": "tree trunk",
+        "pohon-daun": "leafy top"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 4,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah potongan: 3 (akar, batang, bunga) → 4 (tambah daun di batang)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "kebun-pasar",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "bungamatahari",
+        "titleKey": "s-bungamatahari",
+        "steps": [
+          {
+            "id": "akar",
+            "labelKey": "bungamatahari-akar",
+            "emoji": "🫚",
+            "color": "#8d6e63"
+          },
+          {
+            "id": "batang",
+            "labelKey": "bungamatahari-batang",
+            "emoji": "🎋"
+          },
+          {
+            "id": "daun",
+            "labelKey": "bungamatahari-daun",
+            "emoji": "🍃"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "bungamatahari-bunga",
+            "emoji": "🌻"
+          }
+        ]
+      },
+      {
+        "id": "pohon",
+        "titleKey": "s-pohon",
+        "steps": [
+          {
+            "id": "akar",
+            "labelKey": "pohon-akar",
+            "emoji": "🫚",
+            "color": "#8d6e63"
+          },
+          {
+            "id": "batang",
+            "labelKey": "pohon-batang",
+            "emoji": "🪵"
+          },
+          {
+            "id": "daun",
+            "labelKey": "pohon-daun",
+            "emoji": "🌳"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sains-urutkan-matahari-bumi-bulan",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "urutkan",
+    "competencyIds": [
+      "SAINS.TKB.MATAHARI-BUMI-BULAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Paling Besar ke Paling Kecil di Langit",
+        "instruksi": "Susun benda langit dari yang paling besar ke paling kecil: Matahari, Bumi, lalu Bulan.",
+        "s-besar": "Dari paling besar",
+        "besar-matahari": "Matahari paling besar",
+        "besar-bumi": "Bumi",
+        "besar-bulan": "Bulan paling kecil",
+        "s-kecil": "Dari paling kecil",
+        "kecil-bulan": "Bulan paling kecil",
+        "kecil-bumi": "Bumi",
+        "kecil-matahari": "Matahari paling besar"
+      },
+      "en": {
+        "judul": "Biggest to Smallest in the Sky",
+        "instruksi": "Put the space objects in order from biggest to smallest: Sun, Earth, then Moon.",
+        "s-besar": "From the biggest",
+        "besar-matahari": "the Sun, the biggest",
+        "besar-bumi": "Earth",
+        "besar-bulan": "the Moon, the smallest",
+        "s-kecil": "From the smallest",
+        "kecil-bulan": "the Moon, the smallest",
+        "kecil-bumi": "Earth",
+        "kecil-matahari": "the Sun, the biggest"
+      }
+    },
+    "knobs": {
+      "steps": {
+        "min": 3,
+        "max": 3,
+        "default": 3,
+        "step": 1,
+        "keterangan": "selalu tiga benda: Matahari, Bumi, Bulan; urutan kedua membalik arah (kecil ke besar)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "angkasa",
+    "mode": "susun",
+    "sequences": [
+      {
+        "id": "besar",
+        "titleKey": "s-besar",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "besar-matahari",
+            "emoji": "☀️",
+            "scale": 2
+          },
+          {
+            "id": "bumi",
+            "labelKey": "besar-bumi",
+            "emoji": "🌍",
+            "scale": 1
+          },
+          {
+            "id": "bulan",
+            "labelKey": "besar-bulan",
+            "emoji": "🌕",
+            "scale": 0.5,
+            "color": "#263238"
+          }
+        ]
+      },
+      {
+        "id": "kecil",
+        "titleKey": "s-kecil",
+        "steps": [
+          {
+            "id": "bulan",
+            "labelKey": "kecil-bulan",
+            "emoji": "🌕",
+            "scale": 0.5,
+            "color": "#263238"
+          },
+          {
+            "id": "bumi",
+            "labelKey": "kecil-bumi",
+            "emoji": "🌍",
+            "scale": 1
+          },
+          {
+            "id": "matahari",
+            "labelKey": "kecil-matahari",
+            "emoji": "☀️",
+            "scale": 2
           }
         ]
       }

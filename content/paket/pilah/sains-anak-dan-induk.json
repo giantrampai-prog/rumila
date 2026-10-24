@@ -1,0 +1,141 @@
+{
+  "id": "sains-anak-dan-induk",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.SIKLUS-HIDUP.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Induknya",
+      "instruksi": "Antar tiap anak hewan ke induknya. Hati-hati, ada yang berubah bentuk saat besar.",
+      "kupu": "kupu-kupu",
+      "ayam": "ayam",
+      "kucing": "kucing",
+      "anjing": "anjing",
+      "sapi": "sapi",
+      "katak": "katak",
+      "i-ulat": "ulat",
+      "i-anakayam": "anak ayam",
+      "i-anakkucing": "anak kucing",
+      "i-anakanjing": "anak anjing",
+      "i-anaksapi": "anak sapi",
+      "i-kecebong": "kecebong berekor"
+    },
+    "en": {
+      "judul": "Find the Parent",
+      "instruksi": "Take each baby animal to its parent. Careful, some change shape when they grow.",
+      "kupu": "butterfly",
+      "ayam": "hen",
+      "kucing": "cat",
+      "anjing": "dog",
+      "sapi": "cow",
+      "katak": "frog",
+      "i-ulat": "caterpillar",
+      "i-anakayam": "chick",
+      "i-anakkucing": "kitten",
+      "i-anakanjing": "puppy",
+      "i-anaksapi": "calf",
+      "i-kecebong": "tadpole with a tail"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah pasangan induk per putaran; selalu campur pasangan mirip dan pasangan berubah bentuk"
+    },
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah anak hewan yang diseret = jumlah induk aktif"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kupu",
+      "labelKey": "kupu",
+      "emoji": "🦋"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "ayam",
+      "emoji": "🐔"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "kucing",
+      "emoji": "🐈"
+    },
+    {
+      "id": "anjing",
+      "labelKey": "anjing",
+      "emoji": "🐕"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "sapi",
+      "emoji": "🐄"
+    },
+    {
+      "id": "katak",
+      "labelKey": "katak",
+      "emoji": "🐸"
+    }
+  ],
+  "items": [
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "kupu",
+      "emoji": "🐛"
+    },
+    {
+      "id": "anakayam",
+      "labelKey": "i-anakayam",
+      "bin": "ayam",
+      "emoji": "🐥"
+    },
+    {
+      "id": "anakkucing",
+      "labelKey": "i-anakkucing",
+      "bin": "kucing",
+      "emoji": "🐱",
+      "scale": 0.7
+    },
+    {
+      "id": "anakanjing",
+      "labelKey": "i-anakanjing",
+      "bin": "anjing",
+      "emoji": "🐶",
+      "scale": 0.7
+    },
+    {
+      "id": "anaksapi",
+      "labelKey": "i-anaksapi",
+      "bin": "sapi",
+      "emoji": "🐄",
+      "scale": 0.6
+    },
+    {
+      "id": "kecebong",
+      "labelKey": "i-kecebong",
+      "bin": "katak",
+      "emoji": "🐟",
+      "scale": 0.6,
+      "color": "#263238"
+    }
+  ],
+  "pilihan": []
+}

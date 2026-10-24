@@ -1,0 +1,133 @@
+{
+  "id": "sains-hidup-tak-hidup-laut",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hidup di Bawah Laut",
+      "instruksi": "Robot menyelam: taruh makhluk hidup ke keranjang daun, benda tak hidup ke keranjang batu.",
+      "hidup": "hidup",
+      "takhidup": "tak hidup",
+      "i-ikan": "ikan",
+      "i-penyu": "penyu",
+      "i-gurita": "gurita",
+      "i-rumputlaut": "rumput laut",
+      "i-kepiting": "kepiting",
+      "i-jangkar": "jangkar",
+      "i-botol": "botol",
+      "i-batu": "batu",
+      "i-kapal": "kapal mainan",
+      "i-koin": "koin"
+    },
+    "en": {
+      "judul": "Living Things Under the Sea",
+      "instruksi": "Robot dives: put living things in the leaf basket and non-living things in the stone basket.",
+      "hidup": "living",
+      "takhidup": "not living",
+      "i-ikan": "fish",
+      "i-penyu": "turtle",
+      "i-gurita": "octopus",
+      "i-rumputlaut": "seaweed",
+      "i-kepiting": "crab",
+      "i-jangkar": "anchor",
+      "i-botol": "bottle",
+      "i-batu": "rock",
+      "i-kapal": "toy boat",
+      "i-koin": "coin"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran; rumput laut (hidup, diam) dan kapal (tak hidup, bergerak) ikut sejak awal"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "laut",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "hidup",
+      "labelKey": "hidup",
+      "emoji": "🌱"
+    },
+    {
+      "id": "takhidup",
+      "labelKey": "takhidup",
+      "emoji": "🪨"
+    }
+  ],
+  "items": [
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "hidup",
+      "emoji": "🐠"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "hidup",
+      "emoji": "🐢"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "hidup",
+      "emoji": "🐙"
+    },
+    {
+      "id": "rumputlaut",
+      "labelKey": "i-rumputlaut",
+      "bin": "hidup",
+      "emoji": "🌿"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "hidup",
+      "emoji": "🦀"
+    },
+    {
+      "id": "jangkar",
+      "labelKey": "i-jangkar",
+      "bin": "takhidup",
+      "emoji": "⚓"
+    },
+    {
+      "id": "botol",
+      "labelKey": "i-botol",
+      "bin": "takhidup",
+      "emoji": "🍾"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "takhidup",
+      "emoji": "🪨"
+    },
+    {
+      "id": "kapal",
+      "labelKey": "i-kapal",
+      "bin": "takhidup",
+      "emoji": "⛵"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "takhidup",
+      "emoji": "🪙"
+    }
+  ],
+  "pilihan": []
+}

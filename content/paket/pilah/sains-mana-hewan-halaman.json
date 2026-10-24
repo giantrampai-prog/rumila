@@ -1,0 +1,174 @@
+{
+  "id": "sains-mana-hewan-halaman",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HEWAN-SUARA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hewan di Halaman",
+      "instruksi": "Dengarkan nama hewannya, lalu sentuh hewan itu.",
+      "pilihan": "pilihan",
+      "i-kucing": "kucing",
+      "i-ayam": "ayam",
+      "i-sapi": "sapi",
+      "i-kambing": "kambing",
+      "i-bebek": "bebek",
+      "i-burung": "burung",
+      "t-sapi": "Mana sapinya?",
+      "t-kucing": "Mana kucingnya?",
+      "t-ayam": "Mana ayamnya?",
+      "t-bebek": "Mana bebeknya?",
+      "t-kambing": "Mana kambingnya?",
+      "t-burung": "Mana burungnya?"
+    },
+    "en": {
+      "judul": "Animals in the Yard",
+      "instruksi": "Listen to the animal's name, then touch that animal.",
+      "pilihan": "choices",
+      "i-kucing": "cat",
+      "i-ayam": "chicken",
+      "i-sapi": "cow",
+      "i-kambing": "goat",
+      "i-bebek": "duck",
+      "i-burung": "bird",
+      "t-sapi": "Where is the cow?",
+      "t-kucing": "Where is the cat?",
+      "t-ayam": "Where is the chicken?",
+      "t-bebek": "Where is the duck?",
+      "t-kambing": "Where is the goat?",
+      "t-burung": "Where is the bird?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah hewan di layar per pertanyaan: 3 → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "pilihan",
+      "emoji": "🐱"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "pilihan",
+      "emoji": "🐔"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "pilihan",
+      "emoji": "🐄",
+      "scale": 1.3
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "pilihan",
+      "emoji": "🐐"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "pilihan",
+      "emoji": "🦆"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "pilihan",
+      "emoji": "🐦",
+      "scale": 0.8
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "sapi",
+      "promptKey": "t-sapi",
+      "choices": [
+        "sapi",
+        "kambing",
+        "kucing",
+        "ayam"
+      ],
+      "correct": "sapi"
+    },
+    {
+      "id": "kucing",
+      "promptKey": "t-kucing",
+      "choices": [
+        "kucing",
+        "bebek",
+        "sapi",
+        "burung"
+      ],
+      "correct": "kucing"
+    },
+    {
+      "id": "ayam",
+      "promptKey": "t-ayam",
+      "choices": [
+        "ayam",
+        "bebek",
+        "kambing",
+        "kucing"
+      ],
+      "correct": "ayam"
+    },
+    {
+      "id": "bebek",
+      "promptKey": "t-bebek",
+      "choices": [
+        "bebek",
+        "ayam",
+        "burung",
+        "sapi"
+      ],
+      "correct": "bebek"
+    },
+    {
+      "id": "kambing",
+      "promptKey": "t-kambing",
+      "choices": [
+        "kambing",
+        "sapi",
+        "kucing",
+        "bebek"
+      ],
+      "correct": "kambing"
+    },
+    {
+      "id": "burung",
+      "promptKey": "t-burung",
+      "choices": [
+        "burung",
+        "ayam",
+        "bebek",
+        "kambing"
+      ],
+      "correct": "burung"
+    }
+  ]
+}

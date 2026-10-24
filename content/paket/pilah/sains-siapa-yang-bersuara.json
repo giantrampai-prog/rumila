@@ -1,0 +1,174 @@
+{
+  "id": "sains-siapa-yang-bersuara",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HEWAN-SUARA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa yang Bersuara?",
+      "instruksi": "Dengarkan suaranya, lalu sentuh hewan yang bersuara begitu.",
+      "pilihan": "pilihan",
+      "i-kucing": "kucing",
+      "i-ayam": "ayam jago",
+      "i-sapi": "sapi",
+      "i-kambing": "kambing",
+      "i-bebek": "bebek",
+      "i-burung": "burung",
+      "t-meong": "Siapa yang bilang meong?",
+      "t-kukuruyuk": "Siapa yang bilang kukuruyuk?",
+      "t-moo": "Siapa yang bilang mooo?",
+      "t-kwek": "Siapa yang bilang kwek kwek?",
+      "t-mbee": "Siapa yang bilang mbeee?",
+      "t-cicit": "Siapa yang bilang cit cit cuit?"
+    },
+    "en": {
+      "judul": "Who Made That Sound?",
+      "instruksi": "Listen to the sound, then touch the animal that makes it.",
+      "pilihan": "choices",
+      "i-kucing": "cat",
+      "i-ayam": "rooster",
+      "i-sapi": "cow",
+      "i-kambing": "goat",
+      "i-bebek": "duck",
+      "i-burung": "bird",
+      "t-meong": "Who says meow?",
+      "t-kukuruyuk": "Who says cock-a-doodle-doo?",
+      "t-moo": "Who says moo?",
+      "t-kwek": "Who says quack quack?",
+      "t-mbee": "Who says baa?",
+      "t-cicit": "Who says tweet tweet?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah hewan per pertanyaan; di 5–6 hewan suara mirip (kambing vs sapi) tampil bersama"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "pilihan",
+      "emoji": "🐱"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "pilihan",
+      "emoji": "🐓"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "pilihan",
+      "emoji": "🐄",
+      "scale": 1.3
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "pilihan",
+      "emoji": "🐐"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "pilihan",
+      "emoji": "🦆"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "pilihan",
+      "emoji": "🐦",
+      "scale": 0.8
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "meong",
+      "promptKey": "t-meong",
+      "choices": [
+        "kucing",
+        "bebek",
+        "ayam",
+        "sapi"
+      ],
+      "correct": "kucing"
+    },
+    {
+      "id": "kukuruyuk",
+      "promptKey": "t-kukuruyuk",
+      "choices": [
+        "ayam",
+        "kucing",
+        "kambing",
+        "burung"
+      ],
+      "correct": "ayam"
+    },
+    {
+      "id": "moo",
+      "promptKey": "t-moo",
+      "choices": [
+        "sapi",
+        "bebek",
+        "kucing",
+        "burung"
+      ],
+      "correct": "sapi"
+    },
+    {
+      "id": "kwek",
+      "promptKey": "t-kwek",
+      "choices": [
+        "bebek",
+        "ayam",
+        "sapi",
+        "kucing"
+      ],
+      "correct": "bebek"
+    },
+    {
+      "id": "mbee",
+      "promptKey": "t-mbee",
+      "choices": [
+        "kambing",
+        "sapi",
+        "bebek",
+        "burung"
+      ],
+      "correct": "kambing"
+    },
+    {
+      "id": "cicit",
+      "promptKey": "t-cicit",
+      "choices": [
+        "burung",
+        "ayam",
+        "kucing",
+        "kambing"
+      ],
+      "correct": "burung"
+    }
+  ]
+}

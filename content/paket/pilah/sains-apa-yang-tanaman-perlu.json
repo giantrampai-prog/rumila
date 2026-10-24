@@ -1,0 +1,128 @@
+{
+  "id": "sains-apa-yang-tanaman-perlu",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Apa yang Tanaman Perlu?",
+      "instruksi": "Taruh yang dibutuhkan tanaman ke pot, yang tidak perlu ke keranjang.",
+      "pot": "pot tanaman (perlu)",
+      "tidak": "tidak perlu",
+      "i-air": "air",
+      "i-cahaya": "cahaya matahari",
+      "i-tanah": "tanah",
+      "i-udara": "udara",
+      "i-mainan": "mainan",
+      "i-permen": "permen",
+      "i-selimut": "selimut",
+      "i-tv": "televisi",
+      "i-susu": "susu"
+    },
+    "en": {
+      "judul": "What Does a Plant Need?",
+      "instruksi": "Put what the plant needs into the pot and what it doesn't need into the basket.",
+      "pot": "plant pot (needed)",
+      "tidak": "not needed",
+      "i-air": "water",
+      "i-cahaya": "sunlight",
+      "i-tanah": "soil",
+      "i-udara": "air",
+      "i-mainan": "toy",
+      "i-permen": "candy",
+      "i-selimut": "blanket",
+      "i-tv": "TV",
+      "i-susu": "milk"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kartu per putaran; susu sebagai pengecoh muncul di 8 kartu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pot",
+      "labelKey": "pot",
+      "emoji": "🪴",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "tidak",
+      "emoji": "🧺",
+      "color": "#eeeeee"
+    }
+  ],
+  "items": [
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "pot",
+      "emoji": "💧"
+    },
+    {
+      "id": "cahaya",
+      "labelKey": "i-cahaya",
+      "bin": "pot",
+      "emoji": "☀️"
+    },
+    {
+      "id": "tanah",
+      "labelKey": "i-tanah",
+      "bin": "pot",
+      "shape": "square",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "udara",
+      "labelKey": "i-udara",
+      "bin": "pot",
+      "emoji": "🌬️"
+    },
+    {
+      "id": "mainan",
+      "labelKey": "i-mainan",
+      "bin": "tidak",
+      "emoji": "🧸"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "tidak",
+      "emoji": "🍬"
+    },
+    {
+      "id": "selimut",
+      "labelKey": "i-selimut",
+      "bin": "tidak",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "tv",
+      "labelKey": "i-tv",
+      "bin": "tidak",
+      "emoji": "📺"
+    },
+    {
+      "id": "susu",
+      "labelKey": "i-susu",
+      "bin": "tidak",
+      "emoji": "🥛"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,161 @@
+{
+  "id": "sains-mana-hewan-laut",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HEWAN-SUARA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hewan di Bawah Laut",
+      "instruksi": "Robot menyelam: dengarkan nama hewan laut, lalu sentuh hewan itu.",
+      "pilihan": "pilihan",
+      "i-ikan": "ikan",
+      "i-penyu": "penyu",
+      "i-gurita": "gurita",
+      "i-kepiting": "kepiting",
+      "i-lumba": "lumba-lumba",
+      "i-udang": "udang",
+      "t-penyu": "Mana penyunya?",
+      "t-ikan": "Mana ikannya?",
+      "t-gurita": "Mana guritanya?",
+      "t-kepiting": "Mana kepitingnya?",
+      "t-lumba": "Mana lumba-lumbanya?"
+    },
+    "en": {
+      "judul": "Animals Under the Sea",
+      "instruksi": "Robot dives down: listen to the sea animal's name, then touch it.",
+      "pilihan": "choices",
+      "i-ikan": "fish",
+      "i-penyu": "turtle",
+      "i-gurita": "octopus",
+      "i-kepiting": "crab",
+      "i-lumba": "dolphin",
+      "i-udang": "shrimp",
+      "t-penyu": "Where is the turtle?",
+      "t-ikan": "Where is the fish?",
+      "t-gurita": "Where is the octopus?",
+      "t-kepiting": "Where is the crab?",
+      "t-lumba": "Where is the dolphin?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah hewan laut di layar per pertanyaan: 3 → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "laut",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "pilihan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "pilihan",
+      "emoji": "🐢"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "pilihan",
+      "emoji": "🐙"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "pilihan",
+      "emoji": "🦀"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "pilihan",
+      "emoji": "🐬",
+      "scale": 1.3
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "scale": 0.8
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "penyu",
+      "promptKey": "t-penyu",
+      "choices": [
+        "penyu",
+        "ikan",
+        "gurita",
+        "kepiting"
+      ],
+      "correct": "penyu"
+    },
+    {
+      "id": "ikan",
+      "promptKey": "t-ikan",
+      "choices": [
+        "ikan",
+        "lumba",
+        "kepiting",
+        "udang"
+      ],
+      "correct": "ikan"
+    },
+    {
+      "id": "gurita",
+      "promptKey": "t-gurita",
+      "choices": [
+        "gurita",
+        "penyu",
+        "udang",
+        "ikan"
+      ],
+      "correct": "gurita"
+    },
+    {
+      "id": "kepiting",
+      "promptKey": "t-kepiting",
+      "choices": [
+        "kepiting",
+        "udang",
+        "ikan",
+        "lumba"
+      ],
+      "correct": "kepiting"
+    },
+    {
+      "id": "lumba",
+      "promptKey": "t-lumba",
+      "choices": [
+        "lumba",
+        "ikan",
+        "penyu",
+        "gurita"
+      ],
+      "correct": "lumba"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ Tanggal riset: 2026-10-24.
 | `cambridge-primary-maths.json` | `CAMBRIDGE_PRIMARY_MATHS` | 92 | 92 | Lengkap: TWM.01–08 + semua learning objective Stage 1 (39) dan Stage 2 (45) |
 | `cambridge-primary-computing.json` | `CAMBRIDGE_PRIMARY_COMPUTING` | 6 | 4 | Sebagian kecil saja (lihat catatan) |
 | `cambridge-early-years.json` | `CAMBRIDGE_EY` | 11 | 11 | Hanya contoh resmi: 6 butir Mathematics + 5 butir Understanding the World (Digital technology), EY1–EY3 |
-| `eyfs.json` | `EYFS` | 8 | 8 | Lengkap: ELG Number dan ELG Numerical Patterns (2 goal + 6 butir) |
+| `eyfs.json` | `EYFS` | 13 | 13 | ELG Number dan ELG Numerical Patterns (2 goal + 6 butir); ELG The Natural World (1 goal + 3 butir); ELG Managing Self butir 3 (lihat catatan 2026-10-24 di berkas) |
 
 ## 1. Cambridge Primary Mathematics (0096) — lengkap
 

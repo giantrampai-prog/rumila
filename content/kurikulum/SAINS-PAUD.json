@@ -1,0 +1,403 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.PAUD.TUBUH-PANCAINDRA.01",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "TUBUH-PANCAINDRA",
+        "nama": {
+          "id": "Anggota tubuh dan pancaindra",
+          "en": "Body parts and the five senses"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk mata, hidung, telinga, mulut, tangan, atau kaki pada tokoh saat namanya disebut",
+        "en": "I can point to the eyes, nose, ears, mouth, hands, or feet on a character when the name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Pengenalan nama bagian tubuh (reseptif). Dunia: Jelajah Tubuh, lapisan kulit; instruksi audio 'Mana hidungnya?', anak menyentuh bagian itu pada tubuh 3D (cari). Variasi ucap: tokoh menunjuk bagian, anak menyebut namanya. Jebakan: tangan vs jari, mulut vs gigi — mulai 6 bagian besar. Knob: jumlah bagian 4 → 8 (tambah perut, lutut). Kamus belum punya kode untuk bagian tubuh (EYFS tidak punya ELG khusus; Cambridge EY UWs belum ada di kamus), dibiarkan kosong."
+    },
+    {
+      "id": "SAINS.PAUD.TUBUH-PANCAINDRA.02",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "TUBUH-PANCAINDRA",
+        "nama": {
+          "id": "Anggota tubuh dan pancaindra",
+          "en": "Body parts and the five senses"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasang kepala, badan, tangan, dan kaki ke tempatnya pada tubuh tokoh yang belum lengkap",
+        "en": "I can put the head, body, arms, and legs in the right place on a character that is not complete"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "simulasi"
+      ],
+      "catatan": "Aksi teramati: anak menyeret potongan bagian tubuh ke siluet; benar bila posisinya sesuai (kepala di atas, kaki di bawah, tangan di sisi badan). Simulasi: setelah lengkap, tokoh bergerak; kalau kaki di kepala, tokoh jatuh lucu. Jebakan: tangan dan kaki tertukar karena bentuk mirip — beri tangan jari terbuka, kaki bersepatu. Knob: potongan 4 → 6 (tambah mata, mulut). Tanpa kode kerangka yang cocok."
+    },
+    {
+      "id": "SAINS.PAUD.TUBUH-PANCAINDRA.03",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "TUBUH-PANCAINDRA",
+        "nama": {
+          "id": "Anggota tubuh dan pancaindra",
+          "en": "Body parts and the five senses"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke indra yang memakainya: pelangi ke mata, lonceng ke telinga, bunga ke hidung",
+        "en": "I can sort things to the sense that uses them: a rainbow to the eyes, a bell to the ears, a flower to the nose"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Pilah dengan 3 keranjang berlabel gambar indra (mata, telinga, hidung). Tiga indra ini yang bisa dialami langsung di game: benda bersinar/berwarna, benda berbunyi (diputar suaranya saat disentuh), benda berbau (tokoh mengendus). Item harus jelas satu indra dominan: pelangi, lampu kelap-kelip, kunang-kunang → mata; lonceng, genderang, bel sepeda → telinga; bunga, sabun, parfum → hidung. Umpan balik: keranjang yang benar 'memakai' bendanya (mata membesar melihat pelangi, telinga bergetar mendengar lonceng). Jebakan: benda yang bisa dilihat dan didengar sekaligus (burung) — hindari di ronde awal. Beda dengan .01: di sini anak menghubungkan indra dengan fungsinya, bukan sekadar menunjuk. Knob: 3 indra → 4 (tambah mulut/lidah: kue, permen) → 5 (kulit/tangan: es batu, bulu halus) hanya di ronde lanjut; 'lidah' dan 'kulit' sebagai nama indra ditegaskan di TK A. Tanpa kode kerangka yang cocok di kamus. [Tinjauan 24 Okt 2026: dipersempit dari 4 indra ke 3; 'kue ke lidah' dipindah ke knob.]"
+    },
+    {
+      "id": "SAINS.PAUD.HEWAN-SUARA.01",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "HEWAN-SUARA",
+        "nama": {
+          "id": "Hewan di sekitar dan suaranya",
+          "en": "Animals around us and their sounds"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk kucing, ayam, sapi, kambing, bebek, atau burung saat namanya disebut",
+        "en": "I can point to the cat, chicken, cow, goat, duck, or bird when its name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati hewan di sekitar; langkah pertama sebelum menggambar/menceritakan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "ucap"
+      ],
+      "catatan": "Pengenalan nama hewan halaman (reseptif). Mekanik pilah mode pilih: enam hewan di satu adegan kebun/halaman 2D, instruksi audio 'Mana sapinya?', anak menyentuh satu hewan. Variasi ucap: tokoh menyorot hewan, anak menyebut namanya. Jebakan: bebek vs ayam, kambing vs sapi kecil — beda ukuran dan warna harus jelas. Knob: jumlah hewan di adegan 3 → 6. Catatan aset: belum ada dunia 3D hewan halaman, jadi mekanik `cari` tidak dipakai di sini; bila dunia itu dibuat, tambahkan `cari` (hewan laut dari Bawah Laut bisa jadi varian). [Tinjauan 24 Okt 2026: `cari` diganti `pilah` karena tidak ada dunia 3D yang memuat hewan ini.]"
+    },
+    {
+      "id": "SAINS.PAUD.HEWAN-SUARA.02",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "HEWAN-SUARA",
+        "nama": {
+          "id": "Hewan di sekitar dan suaranya",
+          "en": "Animals around us and their sounds"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan hewan yang bersuara dengan mendengar suaranya saja, misalnya meong untuk kucing",
+        "en": "I can find the animal that is making a sound just by listening to it, for example meow for the cat"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HEWAN-SUARA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati hewan lewat indra pendengaran"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi teramati: suara hewan diputar tanpa petunjuk visual (semua hewan diam), anak menyentuh hewan yang bersuara. Bukti sah hanya bila hewan tidak beranimasi saat suaranya diputar. Jebakan: anak menyentuh hewan favorit, bukan yang bersuara — acak urutan. Varian pilah: kartu suara (ikon pengeras) diseret ke hewannya. Knob: 3 → 6 hewan, suara mirip (kambing vs sapi) di ronde lanjut. Mekanik pilah mode pilih pada adegan 2D; `cari` baru relevan bila dunia 3D hewan halaman ada. [Tinjauan 24 Okt 2026: `cari` dilepas.]"
+    },
+    {
+      "id": "SAINS.PAUD.HEWAN-SUARA.03",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "HEWAN-SUARA",
+        "nama": {
+          "id": "Hewan di sekitar dan suaranya",
+          "en": "Animals around us and their sounds"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan menurut jumlah kakinya: dua kaki atau empat kaki",
+        "en": "I can sort animals by how many legs they have: two legs or four legs"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HEWAN-SUARA.01",
+        "MAT.PAUD.BILANGAN-1-5.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati ciri tubuh hewan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pengamatan ciri tubuh, bukan hafalan nama. Dua keranjang berlabel gambar 2 kaki / 4 kaki. Item: ayam, bebek, burung (2); kucing, sapi, kambing, anjing (4). Anak boleh menghitung kaki dengan menunjuk (prasyarat BILANGAN-1-5.01). Jebakan: hewan digambar dari samping sehingga kaki tertutup — pakai pose yang memperlihatkan semua kaki. Pengaya. Knob: 4 → 8 hewan; ikan (0 kaki) sebagai pengecoh di ronde lanjut. [Tinjauan 24 Okt 2026: `cari` dilepas; tidak ada dunia 3D hewan halaman.]"
+    },
+    {
+      "id": "SAINS.PAUD.SIANG-MALAM-CUACA.01",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "SIANG-MALAM-CUACA",
+        "nama": {
+          "id": "Siang / malam, hujan / cerah",
+          "en": "Day / night, rain / sunshine"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah gambar kegiatan ke siang atau malam: bermain di luar ke siang, tidur ke malam",
+        "en": "I can sort pictures of activities into day or night: playing outside to day, sleeping to night"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "pendahulu: perubahan alam sehari-hari (siang–malam) sebelum musim"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "simulasi"
+      ],
+      "catatan": "Dua keranjang: langit siang (matahari) dan langit malam (bulan, bintang). Item harus punya petunjuk visual kuat: lampu menyala, piyama, matahari di jendela. Jebakan: makan bisa siang atau malam — hindari item ambigu. Varian simulasi: anak memasang matahari atau bulan di langit sesuai kegiatan yang sedang terjadi. Knob: 4 → 8 gambar."
+    },
+    {
+      "id": "SAINS.PAUD.SIANG-MALAM-CUACA.02",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "SIANG-MALAM-CUACA",
+        "nama": {
+          "id": "Siang / malam, hujan / cerah",
+          "en": "Day / night, rain / sunshine"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih payung saat langit hujan dan topi saat langit cerah sebelum tokoh keluar rumah",
+        "en": "I can choose the umbrella when the sky is rainy and the hat when the sky is sunny before the character goes out"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "pendahulu: mengamati perubahan cuaca"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-PSED-MANAGING-SELF-03",
+          "note": "berpakaian sesuai kebutuhan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Simulasi tombol: langit di jendela berubah (hujan/cerah), anak menekan payung atau topi; tokoh keluar dan hasilnya terlihat (basah kuyup kalau salah, tidak dihukum). Satu kemampuan: membaca cuaca dari langit lalu memilih alat. Jebakan: anak selalu memilih payung — acak urutan dan beri ronde cerah lebih dulu. Knob: 2 cuaca → 3 (tambah berangin dengan layang-layang)."
+    },
+    {
+      "id": "SAINS.PAUD.SIANG-MALAM-CUACA.03",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "SIANG-MALAM-CUACA",
+        "nama": {
+          "id": "Siang / malam, hujan / cerah",
+          "en": "Day / night, rain / sunshine"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 3 gambar langit menjadi urutan yang benar: cerah, mendung, lalu hujan",
+        "en": "I can put 3 pictures of the sky in the right order: sunny, cloudy, then rainy"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses dan perubahan di alam sekitar"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutan perubahan alam, bukan urutan kegiatan: awan datang → langit gelap → hujan turun. Umpan balik: setelah disusun, langit beranimasi; kalau terbalik, hujan turun dari langit cerah terlihat aneh. Jebakan: anak menyusun mendung → cerah → hujan; beri petunjuk visual awan makin tebal. Pengaya. Knob: 3 → 4 gambar (tambah pelangi setelah hujan)."
+    },
+    {
+      "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.01",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "HIDUP-TAK-HIDUP",
+        "nama": {
+          "id": "Hidup / tak hidup",
+          "en": "Living / non-living"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke keranjang hidup atau tak hidup: kucing dan pohon hidup, batu dan bola tak hidup",
+        "en": "I can sort things into living or non-living baskets: a cat and a tree are living, a rock and a ball are non-living"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.WARNA.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati makhluk hidup di sekitar; dasar sebelum membedakan lingkungan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Dua keranjang berlabel ikon (daun bertunas / batu). Item hidup: kucing, ayam, pohon, bunga, ikan; tak hidup: batu, bola, mobil mainan, cangkir. Jebakan utama: benda yang bergerak (mobil, robot) dianggap hidup, tumbuhan yang diam dianggap tak hidup — pastikan ada pohon/bunga di sisi hidup dan mobil di sisi tak hidup sejak awal. Knob: 4 → 8 item; boneka hewan sebagai pengecoh di ronde lanjut."
+    },
+    {
+      "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.02",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "HIDUP-TAK-HIDUP",
+        "nama": {
+          "id": "Hidup / tak hidup",
+          "en": "Living / non-living"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan 3 makhluk hidup di dunia, bukan benda, misalnya ikan di Bawah Laut atau pohon di Kebun Buah",
+        "en": "I can find 3 living things in the world, not objects, for example a fish in the Undersea or a tree in the Fruit Garden"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "menjelajah alam sekitar dan mengamati hewan serta tumbuhan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "cari"
+      ],
+      "catatan": "Mekanik cari di dunia 3D: Bawah Laut (ikan, penyu, karang hidup) atau Kebun Buah (pohon, buah di pohon). Dunia harus menyediakan benda tak hidup sebagai pengecoh yang bisa disentuh: jangkar, botol, batu, pagar. Bukti: 3 sentuhan pada makhluk hidup dengan paling banyak 1 kesalahan. Jebakan: karang dianggap batu — untuk PAUD jangan jadikan karang target. Pengaya. Knob: 3 → 5 target, jumlah pengecoh."
+    },
+    {
+      "id": "SAINS.PAUD.HIDUP-TAK-HIDUP.03",
+      "track": "SAINS",
+      "level": "PAUD",
+      "unit": {
+        "id": "HIDUP-TAK-HIDUP",
+        "nama": {
+          "id": "Hidup / tak hidup",
+          "en": "Living / non-living"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memberi makan hanya pada makhluk hidup di kebun, bukan pada batu atau mainan",
+        "en": "I can feed only the living things in the garden, not the rocks or toys"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "ciri makhluk hidup: butuh makan dan minum"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "cari"
+      ],
+      "catatan": "Simulasi: anak memegang ember makanan/air dan menyentuh benda di kebun. Makhluk hidup bereaksi (ayam makan, bunga mekar); batu dan mobil mainan tidak bereaksi dan makanan terbuang. Bukti: ember diberikan ke semua yang hidup tanpa memberi ke yang tak hidup. Beda dengan .01: anak menerapkan ciri 'butuh makan/minum', bukan sekadar memilah kartu. Jebakan: boneka kelinci — tampilkan jahitan/kancing supaya jelas mainan. Knob: 3 → 6 sasaran."
+    }
+  ]
+}

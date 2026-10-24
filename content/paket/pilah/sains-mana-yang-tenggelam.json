@@ -1,0 +1,155 @@
+{
+  "id": "sains-mana-yang-tenggelam",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tebak Mana yang Tenggelam",
+      "instruksi": "Tebak dulu sebelum dicoba: sentuh benda yang akan tenggelam atau terapung sesuai pertanyaan.",
+      "pilihan": "pilihan",
+      "i-kayu": "balok kayu",
+      "i-batu": "batu",
+      "i-daun": "daun",
+      "i-paku": "paku logam",
+      "i-bola": "bola plastik",
+      "i-kunci": "kunci logam",
+      "t-t1": "Mana yang akan tenggelam?",
+      "t-a1": "Mana yang akan terapung?",
+      "t-t2": "Mana yang akan tenggelam?",
+      "t-a2": "Kayunya besar sekali. Mana yang akan terapung?",
+      "t-t3": "Mana yang akan tenggelam?"
+    },
+    "en": {
+      "judul": "Guess Which One Sinks",
+      "instruksi": "Guess before we test: touch the thing that will sink or float as asked.",
+      "pilihan": "choices",
+      "i-kayu": "wooden block",
+      "i-batu": "stone",
+      "i-daun": "leaf",
+      "i-paku": "metal nail",
+      "i-bola": "plastic ball",
+      "i-kunci": "metal key",
+      "t-t1": "Which one will sink?",
+      "t-a1": "Which one will float?",
+      "t-t2": "Which one will sink?",
+      "t-a2": "The wood is really big. Which one will float?",
+      "t-t3": "Which one will sink?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah pilihan per pertanyaan; bahan yang sama tampil pada benda baru"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "pilihan",
+      "emoji": "🪵",
+      "scale": 1.3
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "pilihan",
+      "emoji": "🪨"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "pilihan",
+      "emoji": "🍃"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "pilihan",
+      "emoji": "🔩"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "pilihan",
+      "emoji": "🏐"
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "pilihan",
+      "emoji": "🔑"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "t1",
+      "promptKey": "t-t1",
+      "choices": [
+        "batu",
+        "kayu",
+        "daun"
+      ],
+      "correct": "batu"
+    },
+    {
+      "id": "a1",
+      "promptKey": "t-a1",
+      "choices": [
+        "paku",
+        "daun",
+        "kunci"
+      ],
+      "correct": "daun"
+    },
+    {
+      "id": "t2",
+      "promptKey": "t-t2",
+      "choices": [
+        "bola",
+        "paku",
+        "kayu"
+      ],
+      "correct": "paku"
+    },
+    {
+      "id": "a2",
+      "promptKey": "t-a2",
+      "choices": [
+        "kunci",
+        "batu",
+        "kayu"
+      ],
+      "correct": "kayu"
+    },
+    {
+      "id": "t3",
+      "promptKey": "t-t3",
+      "choices": [
+        "daun",
+        "kunci",
+        "bola"
+      ],
+      "correct": "kunci"
+    }
+  ]
+}

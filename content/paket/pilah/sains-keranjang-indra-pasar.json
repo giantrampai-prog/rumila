@@ -1,0 +1,138 @@
+{
+  "id": "sains-keranjang-indra-pasar",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.TUBUH-PANCAINDRA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Indra di Pasar",
+      "instruksi": "Robot jalan-jalan di pasar: taruh tiap benda ke indra yang dipakainya.",
+      "mata": "mata",
+      "telinga": "telinga",
+      "hidung": "hidung",
+      "lidah": "lidah",
+      "i-balon": "balon warna-warni",
+      "i-lukisan": "lukisan",
+      "i-terompet": "terompet",
+      "i-gitar": "gitar",
+      "i-mawar": "bunga mawar",
+      "i-parfum": "minyak wangi",
+      "i-eskrim": "es krim",
+      "i-madu": "madu manis"
+    },
+    "en": {
+      "judul": "Senses at the Market",
+      "instruksi": "Robot strolls the market: put each thing with the sense it uses.",
+      "mata": "eye",
+      "telinga": "ear",
+      "hidung": "nose",
+      "lidah": "tongue",
+      "i-balon": "colourful balloons",
+      "i-lukisan": "painting",
+      "i-terompet": "trumpet",
+      "i-gitar": "guitar",
+      "i-mawar": "rose",
+      "i-parfum": "perfume",
+      "i-eskrim": "ice cream",
+      "i-madu": "sweet honey"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah keranjang indra aktif: mata, telinga, hidung → tambah lidah"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "mata",
+      "labelKey": "mata",
+      "emoji": "👁️"
+    },
+    {
+      "id": "telinga",
+      "labelKey": "telinga",
+      "emoji": "👂"
+    },
+    {
+      "id": "hidung",
+      "labelKey": "hidung",
+      "emoji": "👃"
+    },
+    {
+      "id": "lidah",
+      "labelKey": "lidah",
+      "emoji": "👅"
+    }
+  ],
+  "items": [
+    {
+      "id": "balon",
+      "labelKey": "i-balon",
+      "bin": "mata",
+      "emoji": "🎈"
+    },
+    {
+      "id": "lukisan",
+      "labelKey": "i-lukisan",
+      "bin": "mata",
+      "emoji": "🖼️"
+    },
+    {
+      "id": "terompet",
+      "labelKey": "i-terompet",
+      "bin": "telinga",
+      "emoji": "🎺"
+    },
+    {
+      "id": "gitar",
+      "labelKey": "i-gitar",
+      "bin": "telinga",
+      "emoji": "🎸"
+    },
+    {
+      "id": "mawar",
+      "labelKey": "i-mawar",
+      "bin": "hidung",
+      "emoji": "🌹"
+    },
+    {
+      "id": "parfum",
+      "labelKey": "i-parfum",
+      "bin": "hidung",
+      "emoji": "🧴"
+    },
+    {
+      "id": "eskrim",
+      "labelKey": "i-eskrim",
+      "bin": "lidah",
+      "emoji": "🍦"
+    },
+    {
+      "id": "madu",
+      "labelKey": "i-madu",
+      "bin": "lidah",
+      "emoji": "🍯"
+    }
+  ],
+  "pilihan": []
+}

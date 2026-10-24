@@ -1,0 +1,119 @@
+{
+  "id": "sains-siang-malam-di-kebun",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kebun Siang dan Malam",
+      "instruksi": "Robot menata foto kebun: taruh yang terjadi siang ke matahari, yang malam ke bulan.",
+      "siang": "siang",
+      "malam": "malam",
+      "i-jemur": "menjemur baju",
+      "i-kupu": "kupu-kupu di bunga",
+      "i-siram": "menyiram tanaman pagi",
+      "i-kacamata": "pakai kacamata hitam",
+      "i-kunang": "kunang-kunang menyala",
+      "i-lampu": "lampu teras menyala",
+      "i-piyama": "pakai piyama",
+      "i-kelelawar": "kelelawar terbang"
+    },
+    "en": {
+      "judul": "The Garden by Day and Night",
+      "instruksi": "Robot sorts garden photos: day things go to the sun, night things to the moon.",
+      "siang": "day",
+      "malam": "night",
+      "i-jemur": "hanging laundry in the sun",
+      "i-kupu": "butterfly on a flower",
+      "i-siram": "watering plants in the morning",
+      "i-kacamata": "wearing sunglasses",
+      "i-kunang": "glowing fireflies",
+      "i-lampu": "porch lamp on",
+      "i-piyama": "putting on pyjamas",
+      "i-kelelawar": "bats flying"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah gambar per putaran; hindari kegiatan yang bisa siang atau malam"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "siang",
+      "labelKey": "siang",
+      "emoji": "☀️",
+      "color": "#bbdefb"
+    },
+    {
+      "id": "malam",
+      "labelKey": "malam",
+      "emoji": "🌙",
+      "color": "#1a237e"
+    }
+  ],
+  "items": [
+    {
+      "id": "jemur",
+      "labelKey": "i-jemur",
+      "bin": "siang",
+      "emoji": "🧺"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "siang",
+      "emoji": "🦋"
+    },
+    {
+      "id": "siram",
+      "labelKey": "i-siram",
+      "bin": "siang",
+      "emoji": "🚿"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "bin": "siang",
+      "emoji": "🕶️"
+    },
+    {
+      "id": "kunang",
+      "labelKey": "i-kunang",
+      "bin": "malam",
+      "emoji": "✨"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "malam",
+      "emoji": "🏮"
+    },
+    {
+      "id": "piyama",
+      "labelKey": "i-piyama",
+      "bin": "malam",
+      "emoji": "🥱"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "malam",
+      "emoji": "🦇"
+    }
+  ],
+  "pilihan": []
+}

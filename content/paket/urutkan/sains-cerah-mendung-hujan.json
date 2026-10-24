@@ -1,0 +1,143 @@
+{
+  "id": "sains-cerah-mendung-hujan",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.PAUD.SIANG-MALAM-CUACA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Awan Datang, Hujan Turun",
+      "instruksi": "Susun gambar langit dari cerah, lalu mendung, lalu hujan.",
+      "s-hujan": "Hujan datang",
+      "hujan-cerah": "langit cerah",
+      "hujan-mendung": "awan tebal, langit gelap",
+      "hujan-hujan": "hujan turun",
+      "s-pelangi": "Sampai pelangi",
+      "pelangi-cerah": "langit cerah",
+      "pelangi-mendung": "awan tebal",
+      "pelangi-hujan": "hujan turun",
+      "pelangi-pelangi": "pelangi muncul",
+      "s-awan": "Awan makin tebal",
+      "awan-cerah": "langit cerah",
+      "awan-tipis": "awan tipis datang",
+      "awan-tebal": "awan tebal, langit gelap",
+      "awan-hujan": "hujan turun"
+    },
+    "en": {
+      "judul": "Clouds Come, Rain Falls",
+      "instruksi": "Put the sky pictures in order: sunny, then cloudy, then rainy.",
+      "s-hujan": "The rain comes",
+      "hujan-cerah": "sunny sky",
+      "hujan-mendung": "thick cloud, dark sky",
+      "hujan-hujan": "rain falls",
+      "s-pelangi": "Until the rainbow",
+      "pelangi-cerah": "sunny sky",
+      "pelangi-mendung": "thick cloud",
+      "pelangi-hujan": "rain falls",
+      "pelangi-pelangi": "a rainbow appears",
+      "s-awan": "Clouds get thicker",
+      "awan-cerah": "sunny sky",
+      "awan-tipis": "a thin cloud comes",
+      "awan-tebal": "thick cloud, dark sky",
+      "awan-hujan": "rain falls"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar: 3 (cerah, mendung, hujan) → 4 (tambah pelangi setelah hujan atau awan tipis sebelum tebal)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "halaman",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "hujan",
+      "titleKey": "s-hujan",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "hujan-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "hujan-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "hujan-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "pelangi",
+      "titleKey": "s-pelangi",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "pelangi-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "pelangi-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "pelangi-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        },
+        {
+          "id": "pelangi",
+          "labelKey": "pelangi-pelangi",
+          "emoji": "🌈"
+        }
+      ]
+    },
+    {
+      "id": "awan",
+      "titleKey": "s-awan",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "awan-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "tipis",
+          "labelKey": "awan-tipis",
+          "emoji": "⛅"
+        },
+        {
+          "id": "tebal",
+          "labelKey": "awan-tebal",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "awan-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    }
+  ]
+}

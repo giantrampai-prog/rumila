@@ -1,0 +1,156 @@
+{
+  "id": "sains-mana-yang-dari-kayu",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Terbuat dari Apa?",
+      "instruksi": "Dengarkan bahannya, lalu sentuh benda yang terbuat dari bahan itu.",
+      "pilihan": "pilihan",
+      "i-kursi": "kursi kayu",
+      "i-kaleng": "kaleng",
+      "i-ember": "ember plastik",
+      "i-gelas": "gelas kaca",
+      "i-paku": "paku",
+      "i-talenan": "talenan kayu",
+      "t-kayu": "Mana yang terbuat dari kayu?",
+      "t-logam": "Mana yang terbuat dari logam?",
+      "t-kaca": "Mana yang terbuat dari kaca?",
+      "t-plastik": "Mana yang terbuat dari plastik?",
+      "t-logam2": "Mana yang terbuat dari logam?"
+    },
+    "en": {
+      "judul": "What Is It Made Of?",
+      "instruksi": "Listen to the material, then touch the object made from it.",
+      "pilihan": "choices",
+      "i-kursi": "wooden chair",
+      "i-kaleng": "tin can",
+      "i-ember": "plastic bucket",
+      "i-gelas": "glass cup",
+      "i-paku": "nail",
+      "i-talenan": "wooden board",
+      "t-kayu": "Which one is made of wood?",
+      "t-logam": "Which one is made of metal?",
+      "t-kaca": "Which one is made of glass?",
+      "t-plastik": "Which one is made of plastic?",
+      "t-logam2": "Which one is made of metal?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah benda per pertanyaan: 2 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "pilihan",
+      "emoji": "🪑"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "pilihan",
+      "emoji": "🥫"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "pilihan",
+      "emoji": "🪣"
+    },
+    {
+      "id": "gelas",
+      "labelKey": "i-gelas",
+      "bin": "pilihan",
+      "emoji": "🥛"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "pilihan",
+      "emoji": "🔩"
+    },
+    {
+      "id": "talenan",
+      "labelKey": "i-talenan",
+      "bin": "pilihan",
+      "emoji": "🪵"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "kayu",
+      "promptKey": "t-kayu",
+      "choices": [
+        "kursi",
+        "kaleng",
+        "ember"
+      ],
+      "correct": "kursi"
+    },
+    {
+      "id": "logam",
+      "promptKey": "t-logam",
+      "choices": [
+        "gelas",
+        "kaleng",
+        "kursi"
+      ],
+      "correct": "kaleng"
+    },
+    {
+      "id": "kaca",
+      "promptKey": "t-kaca",
+      "choices": [
+        "ember",
+        "gelas",
+        "talenan"
+      ],
+      "correct": "gelas"
+    },
+    {
+      "id": "plastik",
+      "promptKey": "t-plastik",
+      "choices": [
+        "paku",
+        "ember",
+        "gelas",
+        "talenan"
+      ],
+      "correct": "ember"
+    },
+    {
+      "id": "logam2",
+      "promptKey": "t-logam2",
+      "choices": [
+        "talenan",
+        "ember",
+        "paku",
+        "gelas"
+      ],
+      "correct": "paku"
+    }
+  ]
+}

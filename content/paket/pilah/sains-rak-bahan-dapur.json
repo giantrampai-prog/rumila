@@ -1,0 +1,143 @@
+{
+  "id": "sains-rak-bahan-dapur",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Bahan di Dapur",
+      "instruksi": "Taruh tiap benda ke rak bahannya: kayu, logam, plastik, atau kaca.",
+      "kayu": "kayu",
+      "logam": "logam",
+      "plastik": "plastik",
+      "kaca": "kaca",
+      "i-sendokkayu": "sendok kayu",
+      "i-talenan": "talenan kayu",
+      "i-kaleng": "kaleng",
+      "i-panci": "panci",
+      "i-botolplastik": "botol plastik",
+      "i-sedotan": "sedotan plastik",
+      "i-gelaskaca": "gelas kaca",
+      "i-toples": "toples kaca"
+    },
+    "en": {
+      "judul": "Kitchen Material Shelves",
+      "instruksi": "Put each object on its material shelf: wood, metal, plastic, or glass.",
+      "kayu": "wood",
+      "logam": "metal",
+      "plastik": "plastic",
+      "kaca": "glass",
+      "i-sendokkayu": "wooden spoon",
+      "i-talenan": "wooden cutting board",
+      "i-kaleng": "tin can",
+      "i-panci": "metal pot",
+      "i-botolplastik": "plastic bottle",
+      "i-sedotan": "plastic straw",
+      "i-gelaskaca": "glass cup",
+      "i-toples": "glass jar"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (kayu, logam) → 4 (tambah plastik, kaca)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kayu",
+      "labelKey": "kayu",
+      "emoji": "🪵",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "logam",
+      "labelKey": "logam",
+      "emoji": "🔩",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "plastik",
+      "emoji": "🧴",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "kaca",
+      "emoji": "🥛",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "sendokkayu",
+      "labelKey": "i-sendokkayu",
+      "bin": "kayu",
+      "emoji": "🥄",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "talenan",
+      "labelKey": "i-talenan",
+      "bin": "kayu",
+      "emoji": "🪵"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "logam",
+      "emoji": "🥫"
+    },
+    {
+      "id": "panci",
+      "labelKey": "i-panci",
+      "bin": "logam",
+      "emoji": "🍳"
+    },
+    {
+      "id": "botolplastik",
+      "labelKey": "i-botolplastik",
+      "bin": "plastik",
+      "emoji": "🧴"
+    },
+    {
+      "id": "sedotan",
+      "labelKey": "i-sedotan",
+      "bin": "plastik",
+      "emoji": "🥤"
+    },
+    {
+      "id": "gelaskaca",
+      "labelKey": "i-gelaskaca",
+      "bin": "kaca",
+      "emoji": "🥛"
+    },
+    {
+      "id": "toples",
+      "labelKey": "i-toples",
+      "bin": "kaca",
+      "emoji": "🫙"
+    }
+  ],
+  "pilihan": []
+}

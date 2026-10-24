@@ -1,0 +1,569 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.TKA.BAGIAN-TUMBUHAN.01",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "BAGIAN-TUMBUHAN",
+        "nama": {
+          "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+          "en": "Plant parts: roots, stem, leaves, flower"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk akar, batang, daun, atau bunga pada tumbuhan saat namanya disebut",
+        "en": "I can point to the roots, stem, leaves, or flower on a plant when the name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati tumbuhan dan bagian-bagiannya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Pengenalan nama bagian tumbuhan. Dunia: Kebun Buah — pohon 3D dengan akar terlihat (tanah transparan). Instruksi audio 'Mana akarnya?'; anak menyentuh bagian itu. Variasi ucap: tokoh menyorot bagian, anak menyebut namanya. Jebakan: batang vs dahan, bunga vs buah — di tahap ini bunga dan buah tidak muncul bersamaan. Knob: 4 bagian → 5 (tambah buah)."
+    },
+    {
+      "id": "SAINS.TKA.BAGIAN-TUMBUHAN.02",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "BAGIAN-TUMBUHAN",
+        "nama": {
+          "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+          "en": "Plant parts: roots, stem, leaves, flower"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun potongan akar, batang, daun, dan bunga menjadi satu tumbuhan utuh",
+        "en": "I can put the pieces of roots, stem, leaves, and flower together into one whole plant"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Aksi teramati: anak menyeret 4 potongan ke posisi yang benar relatif terhadap garis tanah: akar di bawah tanah, batang di atas tanah, daun di batang, bunga di pucuk. Umpan balik simulasi: tumbuhan yang benar berdiri dan bergoyang; akar di atas membuat tumbuhan roboh. Jebakan: akar ditaruh di atas tanah. Knob: tumbuhan berbeda (bunga matahari, pohon mangga); potongan 4 → 5."
+    },
+    {
+      "id": "SAINS.TKA.BAGIAN-TUMBUHAN.03",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "BAGIAN-TUMBUHAN",
+        "nama": {
+          "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+          "en": "Plant parts: roots, stem, leaves, flower"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hasil panen ke rak bagian tumbuhan yang terlihat diambil saat dipanen: wortel ke akar, bayam ke daun, mangga ke buah",
+        "en": "I can sort harvested food onto the shelf of the plant part I saw being picked: carrot to roots, spinach to leaves, mango to fruit"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati tumbuhan yang dimakan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Bukti harus dari pengamatan, bukan hafalan: sebelum memilah, anak melihat (atau melakukan) panennya — wortel dicabut dari tanah dengan akar terlihat, bayam dipetik daunnya, mangga dipetik dari dahan di Kebun Buah (aset 48 buah 3D). Lalu hasil panen ditaruh ke 3 rak berlabel gambar bagian tumbuhan. Item ronde awal: wortel, singkong, lobak (akar); bayam, kangkung, selada (daun); mangga, jeruk, pisang (buah). Jebakan: kentang dan bawang (bagian yang membengkak) — jangan dipakai. Varian dagang: pembeli minta 'sayur dari daun'. Knob: 2 rak → 3; 4 → 8 item; rak batang (tebu) dan bunga (brokoli, kembang kol) hanya di ronde lanjut dan hanya bila animasi panen memperlihatkan bagian itu. Butuh mode simulasi baru (panen). [Tinjauan 24 Okt 2026: dipersempit dari akar/batang/daun/bunga (tebu, brokoli = fakta yang tak teramati anak 4–5 th) ke bagian yang terlihat saat panen; buah memakai aset Kebun Buah.]"
+    },
+    {
+      "id": "SAINS.TKA.BAGIAN-TUMBUHAN.04",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "BAGIAN-TUMBUHAN",
+        "nama": {
+          "id": "Bagian tumbuhan: akar, batang, daun, bunga",
+          "en": "Plant parts: roots, stem, leaves, flower"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 4 gambar pertumbuhan tanaman menjadi urutan yang benar: biji, tunas, berdaun, berbunga",
+        "en": "I can put 4 pictures of a growing plant in the right order: seed, sprout, leafy plant, flowering plant"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.02",
+        "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses dan perubahan: pertumbuhan tumbuhan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Jembatan ke siklus hidup: bagian tumbuhan muncul bertahap. Gambar harus punya petunjuk visual progresif (tinggi bertambah, daun bertambah). Umpan balik: setelah disusun, tanaman tumbuh dalam animasi cepat; urutan salah membuat tanaman mengecil lagi. Jebakan: tunas vs berdaun mirip — bedakan jumlah daun 2 vs banyak. Pengaya. Knob: 3 → 4 gambar."
+    },
+    {
+      "id": "SAINS.TKA.SIKLUS-HIDUP.01",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "SIKLUS-HIDUP",
+        "nama": {
+          "id": "Siklus hidup kupu-kupu dan ayam",
+          "en": "Life cycles of the butterfly and the chicken"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 3 gambar siklus hidup ayam menjadi urutan yang benar: telur, anak ayam, ayam dewasa",
+        "en": "I can put 3 pictures of the chicken life cycle in the right order: egg, chick, grown chicken"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.02",
+        "SAINS.PAUD.HEWAN-SUARA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses dan perubahan pada makhluk hidup"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Siklus paling sederhana (3 tahap, bentuk berubah sedikit). Urutkan mode siklus: setelah ayam dewasa, panah kembali ke telur supaya anak melihat lingkaran. Umpan balik: animasi menetas. Jebakan: anak ayam dan ayam dewasa tertukar bila ukurannya sama — jaga perbedaan ukuran dan warna kuning vs cokelat. Knob: 3 tahap → 4 (tambah telur retak)."
+    },
+    {
+      "id": "SAINS.TKA.SIKLUS-HIDUP.02",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "SIKLUS-HIDUP",
+        "nama": {
+          "id": "Siklus hidup kupu-kupu dan ayam",
+          "en": "Life cycles of the butterfly and the chicken"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 4 gambar siklus hidup kupu-kupu menjadi urutan yang benar: telur, ulat, kepompong, kupu-kupu",
+        "en": "I can put 4 pictures of the butterfly life cycle in the right order: egg, caterpillar, chrysalis, butterfly"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.SIKLUS-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses dan perubahan pada makhluk hidup: metamorfosis"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Lebih sulit dari ayam: bentuk berubah total (metamorfosis), 4 tahap. Jebakan utama: ulat ditaruh setelah kupu-kupu karena anak mengira ulat anak kupu-kupu yang 'lahir' — tampilkan telur di daun dan kepompong menggantung. Mode siklus: panah kembali dari kupu-kupu ke telur. Knob: 4 tahap; versi 3 tahap (tanpa telur) sebagai bantuan."
+    },
+    {
+      "id": "SAINS.TKA.SIKLUS-HIDUP.03",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "SIKLUS-HIDUP",
+        "nama": {
+          "id": "Siklus hidup kupu-kupu dan ayam",
+          "en": "Life cycles of the butterfly and the chicken"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengantar anak hewan ke induknya: ulat ke kupu-kupu, anak ayam ke ayam, anak kucing ke kucing",
+        "en": "I can take each baby animal to its parent: caterpillar to butterfly, chick to chicken, kitten to cat"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.SIKLUS-HIDUP.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "perubahan makhluk hidup dari muda ke dewasa"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah",
+        "navigasi"
+      ],
+      "catatan": "Pilah dengan akibat di dunia: tiap anak hewan diseret (atau diarahkan lewat petak, navigasi) ke induknya; induk yang benar menyambut (animasi mengeram/menjilat), induk yang salah mundur dan anak hewan kembali ke tempat semula. Campur pasangan yang mirip rupa (anak ayam–ayam, anak kucing–kucing, anak bebek–bebek) dengan yang berubah bentuk (ulat–kupu-kupu dari .02) supaya anak tidak hanya mencocokkan rupa. Bukti: semua pasangan diantar dengan paling banyak 1 percobaan salah per pasangan. Jebakan: ulat diantar ke ayam karena 'ayam makan ulat' — induk ayam tidak boleh bereaksi mematuk. Pengaya. Knob: 3 → 6 pasangan; kecebong–katak hanya setelah siklus katak diperlihatkan (ronde pengantar), karena belum ada kompetensi siklus katak. [Tinjauan 24 Okt 2026: kecebong–katak dilepas dari statement (tanpa prasyarat), `cari` diganti akibat di dunia.]"
+    },
+    {
+      "id": "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "HEWAN-DARAT-AIR-UDARA",
+        "nama": {
+          "id": "Hewan darat, air, udara",
+          "en": "Land, water, and air animals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan ke darat, air, atau udara: sapi ke darat, ikan ke air, burung ke udara",
+        "en": "I can sort animals into land, water, or air: cow to land, fish to water, bird to air"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HEWAN-SUARA.01",
+        "MAT.PAUD.WARNA.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-02",
+          "note": "persamaan dan perbedaan lingkungan tempat hewan hidup"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Tiga keranjang berlatar: padang rumput, laut, langit. Item tahap awal harus tegas: sapi, kambing, kucing (darat); ikan, gurita, penyu (air); burung, kupu-kupu, lebah (udara). Jebakan: bebek dan katak hidup di dua tempat — simpan untuk ronde lanjut sebagai 'boleh dua keranjang' atau hindari. Knob: 2 keranjang → 3; 4 → 9 hewan."
+    },
+    {
+      "id": "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "HEWAN-DARAT-AIR-UDARA",
+        "nama": {
+          "id": "Hewan darat, air, udara",
+          "en": "Land, water, and air animals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan 3 hewan air yang disebutkan di Bawah Laut, misalnya penyu, gurita, dan ikan badut",
+        "en": "I can find 3 named water animals in the Undersea world, for example a turtle, an octopus, and a clownfish"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "menjelajah dan mengamati hewan di lingkungan air"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Mekanik cari di dunia 3D Bawah Laut, lapisan terumbu (dangkal) untuk TK A. Instruksi audio menyebut satu hewan; anak berenang mendekat dan menyentuhnya. Bukti: 3 hewan ditemukan dalam batas waktu longgar, paling banyak 2 sentuhan salah. Variasi ucap: hewan disorot, anak menyebut namanya. Jebakan: ikan badut vs ikan lain berwarna oranye — pilih target yang bentuknya khas. Pengaya. Knob: 3 → 5 hewan, kedalaman lapisan."
+    },
+    {
+      "id": "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "HEWAN-DARAT-AIR-UDARA",
+        "nama": {
+          "id": "Hewan darat, air, udara",
+          "en": "Land, water, and air animals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan menurut alat geraknya: sirip, sayap, atau kaki",
+        "en": "I can sort animals by what they move with: fins, wings, or legs"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati ciri tubuh hewan (alat gerak)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Beda dengan .01: anak mengamati tubuh hewan, bukan tempat tinggalnya. Tiga rak berlabel ikon sirip, sayap, kaki. Jebakan: burung punya sayap dan kaki — aturan: pilih alat gerak utama; mulai dengan hewan satu jawaban jelas (ikan, kupu-kupu, kucing), burung di ronde lanjut. Knob: 2 → 3 rak; 4 → 9 hewan. [Tinjauan 24 Okt 2026: prasyarat pada pengaya PAUD.HEWAN-SUARA.03 dilepas (kompetensi inti tidak boleh bergantung pada pengaya); ref NW-02 (lingkungan) diganti NW-01 (pengamatan ciri tubuh).]"
+    },
+    {
+      "id": "SAINS.TKA.CUACA-PAKAIAN.01",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "CUACA-PAKAIAN",
+        "nama": {
+          "id": "Cuaca dan pakaian yang sesuai",
+          "en": "Weather and suitable clothes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasang simbol cuaca yang cocok dengan langit di jendela: cerah, mendung, hujan, atau berangin",
+        "en": "I can place the weather symbol that matches the sky in the window: sunny, cloudy, rainy, or windy"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [
+        "SAINS.PAUD.SIANG-MALAM-CUACA.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "mengamati cuaca sebagai perubahan di alam sekitar"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Papan cuaca harian (simulasi): langit di jendela beranimasi, anak memilih simbol dan memasangnya di papan. Berangin ditandai pohon bergoyang dan daun beterbangan. Jebakan: mendung vs hujan — hujan harus terlihat tetesnya. Knob: 2 → 4 cuaca; tambah 'dingin/berkabut' sebagai pengaya."
+    },
+    {
+      "id": "SAINS.TKA.CUACA-PAKAIAN.02",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "CUACA-PAKAIAN",
+        "nama": {
+          "id": "Cuaca dan pakaian yang sesuai",
+          "en": "Weather and suitable clothes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih pakaian untuk tokoh sesuai cuaca: jas hujan saat hujan, topi saat cerah, jaket saat berangin dingin",
+        "en": "I can choose clothes for the character to match the weather: raincoat when rainy, hat when sunny, jacket when cold and windy"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.CUACA-PAKAIAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "cuaca dan akibatnya pada kegiatan sehari-hari"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-PSED-MANAGING-SELF-03",
+          "note": "berpakaian sesuai kebutuhan diri"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Simulasi lemari: cuaca ditampilkan, anak memasangkan 1–2 benda ke tokoh dari 4–6 pilihan. Tokoh keluar rumah dan bereaksi (menggigil, kepanasan, basah) tanpa kata 'salah'. Bukti: pilihan cocok dengan cuaca; sandal saat hujan dihitung keliru. Jebakan: anak memilih pakaian favorit — acak posisi. Knob: 1 → 2 benda per ronde; 3 → 4 cuaca. Cuaca yang dipakai = cuaca yang dikenal di .01 (cerah, mendung, hujan, berangin); 'dingin' muncul sebagai sifat angin, bukan cuaca tersendiri. [Tinjauan 24 Okt 2026: 'panas/dingin' diselaraskan dengan daftar cuaca .01.]"
+    },
+    {
+      "id": "SAINS.TKA.CUACA-PAKAIAN.03",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "CUACA-PAKAIAN",
+        "nama": {
+          "id": "Cuaca dan pakaian yang sesuai",
+          "en": "Weather and suitable clothes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih kegiatan yang cocok dengan cuaca: main layang-layang saat berangin, berteduh saat hujan",
+        "en": "I can choose the activity that fits the weather: flying a kite when windy, sheltering when rainy"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.CUACA-PAKAIAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "akibat cuaca pada kegiatan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah",
+        "simulasi"
+      ],
+      "catatan": "Pilah: kartu kegiatan diseret ke papan cuaca yang cocok (menjemur baju → cerah, main layang-layang → berangin, berteduh/pakai payung → hujan). Varian simulasi: anak memilih kegiatan, lalu adegan dimainkan (layang-layang tak terbang saat tak ada angin). Pengaya. Jebakan: bermain di dalam rumah cocok untuk semua cuaca — jangan jadikan item."
+    },
+    {
+      "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "APUNG-TENGGELAM-MAGNET",
+        "nama": {
+          "id": "Apung / tenggelam, magnet menarik / tidak",
+          "en": "Float / sink, magnetic / not magnetic"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke rak terapung atau tenggelam setelah mencobanya di bak air",
+        "en": "I can sort objects onto the floats or sinks shelf after trying them in the water tub"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.WARNA.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "menjelajah benda di sekitar lewat percobaan dan pengamatan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Simulasi bak air: anak menjatuhkan benda satu per satu, melihat hasilnya, lalu menaruhnya di rak terapung/tenggelam. Bukti: rak sesuai hasil percobaan yang baru dilihat anak. Benda: bola plastik, daun, gabus, kayu (apung); batu, sendok logam, koin, kelereng (tenggelam). Jebakan: benda besar dianggap pasti tenggelam — sertakan kayu besar yang terapung. Knob: 4 → 8 benda."
+    },
+    {
+      "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "APUNG-TENGGELAM-MAGNET",
+        "nama": {
+          "id": "Apung / tenggelam, magnet menarik / tidak",
+          "en": "Float / sink, magnetic / not magnetic"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menebak benda mana yang akan terapung sebelum memasukkannya ke bak air",
+        "en": "I can predict which object will float before putting it into the water tub"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "membuat perkiraan lalu mengamati hasilnya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Langkah ilmiah: menebak dulu, baru menguji. Anak menaruh benda di kolom tebakan (apung/tenggelam), menekan 'coba', lalu bak menguji semuanya. Bukti: tebakan benar untuk benda yang bahannya sudah pernah dicoba di .01 (generalisasi: kayu terapung, logam tenggelam) — benda baru tetapi bahan sama. Tebakan meleset tidak dihukum keras: skor dari rasio. Beda dengan .01: di sini anak memilah sebelum melihat hasil. Knob: 3 → 6 benda; porsi bahan baru."
+    },
+    {
+      "id": "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03",
+      "track": "SAINS",
+      "level": "TKA",
+      "unit": {
+        "id": "APUNG-TENGGELAM-MAGNET",
+        "nama": {
+          "id": "Apung / tenggelam, magnet menarik / tidak",
+          "en": "Float / sink, magnetic / not magnetic"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda yang tertarik magnet dari yang tidak setelah mencobanya dengan magnet",
+        "en": "I can sort objects that a magnet pulls from those it does not, after testing them with the magnet"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "menjelajah benda lewat percobaan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Simulasi: anak menyeret magnet mendekati benda; benda logam besi melompat menempel, yang lain diam. Lalu benda ditaruh ke rak 'tertarik' / 'tidak'. Benda tertarik: paku, klip kertas, sendok besi, kaleng; tidak: pensil kayu, penghapus, koin tembaga/aluminium dihindari (membingungkan), gelas plastik. Jebakan: semua yang berkilau dianggap tertarik — sertakan kertas emas/koin aluminium hanya di ronde lanjut dengan catatan. Knob: 4 → 8 benda. Ide pengaya untuk PO: 'mengambil hanya benda logam dari tumpukan dengan magnet' (cari+simulasi)."
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "sains-kegiatan-sesuai-cuaca",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.CUACA-PAKAIAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Main Apa Hari Ini?",
+      "instruksi": "Taruh kartu kegiatan ke papan cuaca yang cocok: layang-layang ke berangin, payung ke hujan.",
+      "cerah": "cerah",
+      "hujan": "hujan",
+      "angin": "berangin",
+      "i-jemur": "menjemur baju",
+      "i-renang": "berenang di kolam",
+      "i-eskrim": "makan es krim di taman",
+      "i-payung": "pakai payung",
+      "i-berteduh": "berteduh di rumah",
+      "i-jashujan": "pakai jas hujan",
+      "i-layang": "main layang-layang",
+      "i-kincir": "main kincir angin",
+      "i-layar": "naik perahu layar"
+    },
+    "en": {
+      "judul": "What Shall We Do Today?",
+      "instruksi": "Put each activity card on the matching weather board: kite to windy, umbrella to rainy.",
+      "cerah": "sunny",
+      "hujan": "rainy",
+      "angin": "windy",
+      "i-jemur": "drying laundry",
+      "i-renang": "swimming in the pool",
+      "i-eskrim": "eating ice cream in the park",
+      "i-payung": "using an umbrella",
+      "i-berteduh": "sheltering indoors",
+      "i-jashujan": "wearing a raincoat",
+      "i-layang": "flying a kite",
+      "i-kincir": "playing with a pinwheel",
+      "i-layar": "sailing a boat"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah papan cuaca: 2 (cerah, hujan) → 3 (tambah berangin)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kartu kegiatan per putaran; main di dalam rumah tidak dipakai"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "cerah",
+      "labelKey": "cerah",
+      "emoji": "☀️"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "hujan",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "angin",
+      "labelKey": "angin",
+      "emoji": "💨"
+    }
+  ],
+  "items": [
+    {
+      "id": "jemur",
+      "labelKey": "i-jemur",
+      "bin": "cerah",
+      "emoji": "🧺"
+    },
+    {
+      "id": "renang",
+      "labelKey": "i-renang",
+      "bin": "cerah",
+      "emoji": "🏊"
+    },
+    {
+      "id": "eskrim",
+      "labelKey": "i-eskrim",
+      "bin": "cerah",
+      "emoji": "🍦"
+    },
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "hujan",
+      "emoji": "☂️"
+    },
+    {
+      "id": "berteduh",
+      "labelKey": "i-berteduh",
+      "bin": "hujan",
+      "emoji": "🏠"
+    },
+    {
+      "id": "jashujan",
+      "labelKey": "i-jashujan",
+      "bin": "hujan",
+      "emoji": "🧥",
+      "color": "#ffee58"
+    },
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "angin",
+      "emoji": "🪁"
+    },
+    {
+      "id": "kincir",
+      "labelKey": "i-kincir",
+      "bin": "angin",
+      "emoji": "🎐"
+    },
+    {
+      "id": "layar",
+      "labelKey": "i-layar",
+      "bin": "angin",
+      "emoji": "⛵"
+    }
+  ],
+  "pilihan": []
+}

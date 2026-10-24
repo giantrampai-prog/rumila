@@ -1,0 +1,103 @@
+{
+  "id": "sains-susun-tumbuhan-utuh",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Susun Tumbuhan Utuh",
+      "instruksi": "Susun potongan dari bawah tanah ke pucuk: akar, batang, daun, lalu bunga.",
+      "s-bungamatahari": "Bunga matahari dari bawah ke atas",
+      "bungamatahari-akar": "akar di dalam tanah",
+      "bungamatahari-batang": "batang di atas tanah",
+      "bungamatahari-daun": "daun di batang",
+      "bungamatahari-bunga": "bunga di pucuk",
+      "s-pohon": "Pohon kecil dari bawah ke atas",
+      "pohon-akar": "akar di dalam tanah",
+      "pohon-batang": "batang pohon",
+      "pohon-daun": "daun rimbun"
+    },
+    "en": {
+      "judul": "Build the Whole Plant",
+      "instruksi": "Stack the pieces from under the ground to the top: root, stem, leaf, then flower.",
+      "s-bungamatahari": "Sunflower from bottom to top",
+      "bungamatahari-akar": "root under the soil",
+      "bungamatahari-batang": "stem above the soil",
+      "bungamatahari-daun": "leaf on the stem",
+      "bungamatahari-bunga": "flower at the top",
+      "s-pohon": "Little tree from bottom to top",
+      "pohon-akar": "root under the soil",
+      "pohon-batang": "tree trunk",
+      "pohon-daun": "leafy top"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah potongan: 3 (akar, batang, bunga) → 4 (tambah daun di batang)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "bungamatahari",
+      "titleKey": "s-bungamatahari",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "bungamatahari-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "bungamatahari-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "bungamatahari-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "bungamatahari-bunga",
+          "emoji": "🌻"
+        }
+      ]
+    },
+    {
+      "id": "pohon",
+      "titleKey": "s-pohon",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "pohon-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "pohon-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "daun",
+          "labelKey": "pohon-daun",
+          "emoji": "🌳"
+        }
+      ]
+    }
+  ]
+}

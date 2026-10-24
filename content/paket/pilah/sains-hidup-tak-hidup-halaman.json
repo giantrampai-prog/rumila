@@ -1,0 +1,133 @@
+{
+  "id": "sains-hidup-tak-hidup-halaman",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hidup atau Tak Hidup?",
+      "instruksi": "Taruh yang hidup ke keranjang daun, yang tak hidup ke keranjang batu.",
+      "hidup": "hidup",
+      "takhidup": "tak hidup",
+      "i-kucing": "kucing",
+      "i-ayam": "ayam",
+      "i-pohon": "pohon",
+      "i-bunga": "bunga",
+      "i-ikan": "ikan",
+      "i-batu": "batu",
+      "i-bola": "bola",
+      "i-mobil": "mobil mainan",
+      "i-cangkir": "cangkir",
+      "i-boneka": "boneka beruang"
+    },
+    "en": {
+      "judul": "Living or Not Living?",
+      "instruksi": "Put living things in the leaf basket and non-living things in the stone basket.",
+      "hidup": "living",
+      "takhidup": "not living",
+      "i-kucing": "cat",
+      "i-ayam": "chicken",
+      "i-pohon": "tree",
+      "i-bunga": "flower",
+      "i-ikan": "fish",
+      "i-batu": "stone",
+      "i-bola": "ball",
+      "i-mobil": "toy car",
+      "i-cangkir": "cup",
+      "i-boneka": "teddy bear"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran; pohon/bunga dan mobil selalu ikut sejak awal supaya jebakan bergerak/diam terlihat"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "hidup",
+      "labelKey": "hidup",
+      "emoji": "🌱"
+    },
+    {
+      "id": "takhidup",
+      "labelKey": "takhidup",
+      "emoji": "🪨"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "hidup",
+      "emoji": "🐈"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "hidup",
+      "emoji": "🐔"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "i-pohon",
+      "bin": "hidup",
+      "emoji": "🌳"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "i-bunga",
+      "bin": "hidup",
+      "emoji": "🌼"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "hidup",
+      "emoji": "🐟"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "takhidup",
+      "emoji": "🪨"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "takhidup",
+      "emoji": "⚽"
+    },
+    {
+      "id": "mobil",
+      "labelKey": "i-mobil",
+      "bin": "takhidup",
+      "emoji": "🚗"
+    },
+    {
+      "id": "cangkir",
+      "labelKey": "i-cangkir",
+      "bin": "takhidup",
+      "emoji": "☕"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "i-boneka",
+      "bin": "takhidup",
+      "emoji": "🧸"
+    }
+  ],
+  "pilihan": []
+}

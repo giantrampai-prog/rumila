@@ -1,0 +1,143 @@
+{
+  "id": "sains-antar-ke-habitat",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.HEWAN-HABITAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Antar Pulang ke Habitat",
+      "instruksi": "Antar tiap hewan ke habitatnya: unta ke gurun, beruang kutub ke es, monyet ke hutan, ikan badut ke terumbu.",
+      "gurun": "gurun",
+      "es": "es",
+      "hutan": "hutan",
+      "terumbu": "terumbu karang",
+      "i-unta": "unta",
+      "i-kadal": "kadal gurun",
+      "i-beruangkutub": "beruang kutub",
+      "i-penguin": "penguin di es",
+      "i-monyet": "monyet",
+      "i-harimau": "harimau",
+      "i-ikanbadut": "ikan badut",
+      "i-penyu": "penyu"
+    },
+    "en": {
+      "judul": "Take Them Home",
+      "instruksi": "Take each animal home: camel to the desert, polar bear to the ice, monkey to the forest, clownfish to the reef.",
+      "gurun": "desert",
+      "es": "ice",
+      "hutan": "forest",
+      "terumbu": "coral reef",
+      "i-unta": "camel",
+      "i-kadal": "desert lizard",
+      "i-beruangkutub": "polar bear",
+      "i-penguin": "penguin on ice",
+      "i-monyet": "monkey",
+      "i-harimau": "tiger",
+      "i-ikanbadut": "clownfish",
+      "i-penyu": "sea turtle"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah habitat: 2 (gurun, es) → 4 (tambah hutan, terumbu)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "laut",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gurun",
+      "labelKey": "gurun",
+      "emoji": "🏜️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "es",
+      "labelKey": "es",
+      "emoji": "🧊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "hutan",
+      "labelKey": "hutan",
+      "emoji": "🌴",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "terumbu",
+      "labelKey": "terumbu",
+      "emoji": "🪸",
+      "color": "#b3e5fc"
+    }
+  ],
+  "items": [
+    {
+      "id": "unta",
+      "labelKey": "i-unta",
+      "bin": "gurun",
+      "emoji": "🐪"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "gurun",
+      "emoji": "🦎"
+    },
+    {
+      "id": "beruangkutub",
+      "labelKey": "i-beruangkutub",
+      "bin": "es",
+      "emoji": "🐻‍❄️"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "es",
+      "emoji": "🐧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "hutan",
+      "emoji": "🐒"
+    },
+    {
+      "id": "harimau",
+      "labelKey": "i-harimau",
+      "bin": "hutan",
+      "emoji": "🐯"
+    },
+    {
+      "id": "ikanbadut",
+      "labelKey": "i-ikanbadut",
+      "bin": "terumbu",
+      "emoji": "🐠"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "terumbu",
+      "emoji": "🐢"
+    }
+  ],
+  "pilihan": []
+}

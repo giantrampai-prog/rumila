@@ -1,0 +1,150 @@
+{
+  "id": "sains-lemari-cuaca",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.CUACA-PAKAIAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lemari Cuaca",
+      "instruksi": "Dengarkan cuacanya, lalu sentuh pakaian yang cocok untuk robot.",
+      "pilihan": "pilihan",
+      "i-jashujan": "jas hujan",
+      "i-topi": "topi",
+      "i-jaket": "jaket tebal",
+      "i-syal": "syal",
+      "i-sandal": "sandal jepit",
+      "t-hujan": "Di luar hujan deras. Pakai apa?",
+      "t-panas": "Matahari terik, hari panas. Pakai apa?",
+      "t-dingin": "Udara dingin sekali, menggigil. Pakai apa?",
+      "t-hujan2": "Awan gelap, hujan turun lagi. Pakai apa?",
+      "t-dingin2": "Angin dingin bertiup di pagi hari. Pakai apa?"
+    },
+    "en": {
+      "judul": "The Weather Wardrobe",
+      "instruksi": "Listen to the weather, then touch the right clothes for robot.",
+      "pilihan": "choices",
+      "i-jashujan": "raincoat",
+      "i-topi": "sun hat",
+      "i-jaket": "warm jacket",
+      "i-syal": "scarf",
+      "i-sandal": "flip-flops",
+      "t-hujan": "It's raining hard outside. What do we wear?",
+      "t-panas": "The sun is strong, it's hot. What do we wear?",
+      "t-dingin": "It's very cold and chilly. What do we wear?",
+      "t-hujan2": "Dark clouds, it's raining again. What do we wear?",
+      "t-dingin2": "A cold wind blows this morning. What do we wear?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah pilihan pakaian per cuaca; posisi diacak supaya tidak memilih favorit"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "jashujan",
+      "labelKey": "i-jashujan",
+      "bin": "pilihan",
+      "emoji": "🧥",
+      "color": "#ffee58"
+    },
+    {
+      "id": "topi",
+      "labelKey": "i-topi",
+      "bin": "pilihan",
+      "emoji": "👒"
+    },
+    {
+      "id": "jaket",
+      "labelKey": "i-jaket",
+      "bin": "pilihan",
+      "emoji": "🧥",
+      "color": "#5c6bc0"
+    },
+    {
+      "id": "syal",
+      "labelKey": "i-syal",
+      "bin": "pilihan",
+      "emoji": "🧣"
+    },
+    {
+      "id": "sandal",
+      "labelKey": "i-sandal",
+      "bin": "pilihan",
+      "emoji": "🩴"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "hujan",
+      "promptKey": "t-hujan",
+      "choices": [
+        "jashujan",
+        "topi",
+        "sandal"
+      ],
+      "correct": "jashujan"
+    },
+    {
+      "id": "panas",
+      "promptKey": "t-panas",
+      "choices": [
+        "topi",
+        "jaket",
+        "jashujan"
+      ],
+      "correct": "topi"
+    },
+    {
+      "id": "dingin",
+      "promptKey": "t-dingin",
+      "choices": [
+        "jaket",
+        "sandal",
+        "topi"
+      ],
+      "correct": "jaket"
+    },
+    {
+      "id": "hujan2",
+      "promptKey": "t-hujan2",
+      "choices": [
+        "sandal",
+        "jashujan",
+        "syal",
+        "topi"
+      ],
+      "correct": "jashujan"
+    },
+    {
+      "id": "dingin2",
+      "promptKey": "t-dingin2",
+      "choices": [
+        "syal",
+        "sandal",
+        "topi",
+        "jashujan"
+      ],
+      "correct": "syal"
+    }
+  ]
+}

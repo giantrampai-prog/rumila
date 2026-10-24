@@ -1,0 +1,155 @@
+{
+  "id": "sains-mana-benda-langit",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mana Bumi, Mana Bulan?",
+      "instruksi": "Robot terbang di angkasa: dengarkan nama benda langit, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-matahari": "Matahari",
+      "i-bumi": "Bumi",
+      "i-bulan": "Bulan",
+      "i-mars": "Mars",
+      "i-bintang": "bintang",
+      "t-bumi": "Mana Bumi? Bumi biru dan hijau.",
+      "t-matahari": "Mana Matahari?",
+      "t-bulan": "Mana Bulan? Bulan kecil dan abu-abu.",
+      "t-bumi2": "Mana Bumi?",
+      "t-mars": "Mana Mars yang merah?"
+    },
+    "en": {
+      "judul": "Which Is Earth, Which Is Moon?",
+      "instruksi": "Robot flies through space: listen to the space object, then touch its picture.",
+      "pilihan": "choices",
+      "i-matahari": "the Sun",
+      "i-bumi": "Earth",
+      "i-bulan": "the Moon",
+      "i-mars": "Mars",
+      "i-bintang": "a star",
+      "t-bumi": "Where is Earth? Earth is blue and green.",
+      "t-matahari": "Where is the Sun?",
+      "t-bulan": "Where is the Moon? The Moon is small and grey.",
+      "t-bumi2": "Where is Earth?",
+      "t-mars": "Where is red Mars?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah benda langit per pertanyaan: 3 (Matahari, Bumi, Bulan) → 5 (tambah Mars merah dan bintang)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "angkasa",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pilihan",
+      "emoji": "☀️",
+      "scale": 1.6
+    },
+    {
+      "id": "bumi",
+      "labelKey": "i-bumi",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "pilihan",
+      "emoji": "🌕",
+      "scale": 0.6,
+      "color": "#263238"
+    },
+    {
+      "id": "mars",
+      "labelKey": "i-mars",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#d84315",
+      "scale": 0.8
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "pilihan",
+      "emoji": "⭐",
+      "scale": 0.6
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "bumi",
+      "promptKey": "t-bumi",
+      "choices": [
+        "bumi",
+        "bulan",
+        "matahari"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "matahari",
+      "promptKey": "t-matahari",
+      "choices": [
+        "matahari",
+        "bumi",
+        "bintang"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "bulan",
+      "promptKey": "t-bulan",
+      "choices": [
+        "bulan",
+        "bumi",
+        "mars"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "bumi2",
+      "promptKey": "t-bumi2",
+      "choices": [
+        "mars",
+        "bumi",
+        "bulan",
+        "bintang"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "mars",
+      "promptKey": "t-mars",
+      "choices": [
+        "bulan",
+        "mars",
+        "bumi",
+        "matahari",
+        "bintang"
+      ],
+      "correct": "mars"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "sains-keranjang-indra-rumah",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.TUBUH-PANCAINDRA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Keranjang Pancaindra",
+      "instruksi": "Taruh tiap benda ke indra yang memakainya: lampu ke mata, lonceng ke telinga.",
+      "mata": "mata",
+      "telinga": "telinga",
+      "hidung": "hidung",
+      "lidah": "lidah",
+      "i-lampu": "lampu menyala",
+      "i-pelangi": "pelangi",
+      "i-lonceng": "lonceng",
+      "i-genderang": "genderang",
+      "i-bunga": "bunga harum",
+      "i-sabun": "sabun wangi",
+      "i-kue": "kue manis",
+      "i-permen": "permen"
+    },
+    "en": {
+      "judul": "Five-Sense Baskets",
+      "instruksi": "Put each thing with the sense that uses it: the lamp with the eye, the bell with the ear.",
+      "mata": "eye",
+      "telinga": "ear",
+      "hidung": "nose",
+      "lidah": "tongue",
+      "i-lampu": "glowing lamp",
+      "i-pelangi": "rainbow",
+      "i-lonceng": "bell",
+      "i-genderang": "drum",
+      "i-bunga": "sweet-smelling flower",
+      "i-sabun": "scented soap",
+      "i-kue": "sweet cake",
+      "i-permen": "candy"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah keranjang indra aktif: mata, telinga, hidung → tambah lidah"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "mata",
+      "labelKey": "mata",
+      "emoji": "👁️"
+    },
+    {
+      "id": "telinga",
+      "labelKey": "telinga",
+      "emoji": "👂"
+    },
+    {
+      "id": "hidung",
+      "labelKey": "hidung",
+      "emoji": "👃"
+    },
+    {
+      "id": "lidah",
+      "labelKey": "lidah",
+      "emoji": "👅"
+    }
+  ],
+  "items": [
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "mata",
+      "emoji": "💡"
+    },
+    {
+      "id": "pelangi",
+      "labelKey": "i-pelangi",
+      "bin": "mata",
+      "emoji": "🌈"
+    },
+    {
+      "id": "lonceng",
+      "labelKey": "i-lonceng",
+      "bin": "telinga",
+      "emoji": "🔔"
+    },
+    {
+      "id": "genderang",
+      "labelKey": "i-genderang",
+      "bin": "telinga",
+      "emoji": "🥁"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "i-bunga",
+      "bin": "hidung",
+      "emoji": "🌸"
+    },
+    {
+      "id": "sabun",
+      "labelKey": "i-sabun",
+      "bin": "hidung",
+      "emoji": "🧼"
+    },
+    {
+      "id": "kue",
+      "labelKey": "i-kue",
+      "bin": "lidah",
+      "emoji": "🍰"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "lidah",
+      "emoji": "🍬"
+    }
+  ],
+  "pilihan": []
+}

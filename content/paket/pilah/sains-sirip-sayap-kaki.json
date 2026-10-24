@@ -1,0 +1,147 @@
+{
+  "id": "sains-sirip-sayap-kaki",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sirip, Sayap, atau Kaki?",
+      "instruksi": "Lihat tubuh hewannya: taruh ke rak sirip, sayap, atau kaki sesuai cara geraknya.",
+      "sirip": "sirip",
+      "sayap": "sayap",
+      "kaki": "kaki",
+      "i-ikan": "ikan",
+      "i-hiu": "hiu",
+      "i-lumba": "lumba-lumba",
+      "i-kupu": "kupu-kupu",
+      "i-lebah": "lebah",
+      "i-kelelawar": "kelelawar",
+      "i-kucing": "kucing",
+      "i-sapi": "sapi",
+      "i-gajah": "gajah",
+      "i-burung": "burung terbang"
+    },
+    "en": {
+      "judul": "Fins, Wings, or Legs?",
+      "instruksi": "Look at the animal's body: put it on the fins, wings, or legs shelf by how it moves.",
+      "sirip": "fins",
+      "sayap": "wings",
+      "kaki": "legs",
+      "i-ikan": "fish",
+      "i-hiu": "shark",
+      "i-lumba": "dolphin",
+      "i-kupu": "butterfly",
+      "i-lebah": "bee",
+      "i-kelelawar": "bat",
+      "i-kucing": "cat",
+      "i-sapi": "cow",
+      "i-gajah": "elephant",
+      "i-burung": "flying bird"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (sirip, kaki) → 3 (tambah sayap)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran; burung (sayap dan kaki) baru muncul di 8–9 hewan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sirip",
+      "labelKey": "sirip",
+      "emoji": "🐟"
+    },
+    {
+      "id": "sayap",
+      "labelKey": "sayap",
+      "emoji": "🪶"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "kaki",
+      "emoji": "🐾"
+    }
+  ],
+  "items": [
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "sirip",
+      "emoji": "🐠"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "sirip",
+      "emoji": "🦈"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "sirip",
+      "emoji": "🐬"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "sayap",
+      "emoji": "🦋"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "sayap",
+      "emoji": "🐝"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "sayap",
+      "emoji": "🦇"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "kaki",
+      "emoji": "🐈"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "kaki",
+      "emoji": "🐄"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "kaki",
+      "emoji": "🐘"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "sayap",
+      "emoji": "🐦"
+    }
+  ],
+  "pilihan": []
+}
