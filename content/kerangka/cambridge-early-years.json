@@ -1,0 +1,129 @@
+{
+  "framework": "CAMBRIDGE_EY",
+  "title": "Cambridge Early Years Curriculum (EY1-EY3) - sample learning statements",
+  "version": "Cambridge Early Years Curriculum Samples, (c) Cambridge University Press & Assessment 2024",
+  "sources": [
+    "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf",
+    "https://web.archive.org/web/20251001055818/https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf",
+    "https://www.cambridgeinternational.org/earlyyears"
+  ],
+  "retrieved_at": "2026-10-24",
+  "stages": {
+    "EY1": "ages 3 to 4",
+    "EY2": "ages 4 to 5",
+    "EY3": "ages 5 to 6"
+  },
+  "areas": [
+    "Communication, language & literacy",
+    "Mathematics",
+    "Creative expression",
+    "Personal, social & emotional development",
+    "Physical development",
+    "Understanding the world"
+  ],
+  "mathematics_substrands": [
+    "developing a sense of number (Mn)",
+    "handling data (Md - kode diduga, belum terlihat)",
+    "shape, space and measure (Ms)"
+  ],
+  "understanding_the_world_substrands": [
+    "scientific thinking (UWs)",
+    "digital technology (UWd)",
+    "people, time and place (UWp)"
+  ],
+  "notes": [
+    "Sumber adalah dokumen resmi Cambridge 'Cambridge Early Years Curriculum Samples' (hanya contoh progresi), diambil lewat snapshot Wayback karena cambridgeinternational.org sedang maintenance.",
+    "Framework lengkap Cambridge Early Years hanya untuk sekolah terdaftar; tidak ditemukan salinan publik. Semua 11 butir di sini dibaca langsung dari dokumen resmi.",
+    "Pola kode: <stage><Area><sub-strand>.<nomor>, mis. 1Mn.04 = EY1, Mathematics, number, butir ke-4."
+  ],
+  "entries": [
+    {
+      "code": "1Mn.04",
+      "stage": "EY1",
+      "strand": "Mathematics: Developing a sense of number",
+      "text": "Begin to use ordinal numbers from 1st to at least 3rd in practical contexts, for example, toys or people in a line, running races.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "2Mn.04",
+      "stage": "EY2",
+      "strand": "Mathematics: Developing a sense of number",
+      "text": "Use ordinal numbers from 1st to 10th in practical contexts, for example, to talk about a sequence of events or activities.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "3Mn.03",
+      "stage": "EY3",
+      "strand": "Mathematics: Developing a sense of number",
+      "text": "Recognise and use ordinal numbers from 1st to 10th, for example, 'What is the tiger's position in the line? ... Which toy is in front of the tiger? ... What is its position in the line?'.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "1Ms.06",
+      "stage": "EY1",
+      "strand": "Mathematics: Shape, space and measure",
+      "text": "Recognise and talk about patterns in the environment.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "2Ms.09",
+      "stage": "EY2",
+      "strand": "Mathematics: Shape, space and measure",
+      "text": "Copy and create simple repeating patterns of repeating units (e.g. [red, blue]; [red, blue, yellow]; [red, blue, blue]; [red, blue, blue, yellow]) and say what would come next in the pattern.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "3Ms.09",
+      "stage": "EY3",
+      "strand": "Mathematics: Shape, space and measure",
+      "text": "Use familiar language to describe sequences of items, including identifying errors in patterns of colour, shape or size, for example, 'It goes square, circle, triangle, square, circle, circle ... the last one is wrong, it should be a triangle.'.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "1UWd.03",
+      "stage": "EY1",
+      "strand": "Understanding the world: Digital technology",
+      "text": "Ask for permission before using a digital device.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "1UWd.04",
+      "stage": "EY1",
+      "strand": "Understanding the world: Digital technology",
+      "text": "Ask for help when they encounter problems or unexpected behaviour when using a digital device.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "2UWd.04",
+      "stage": "EY2",
+      "strand": "Understanding the world: Digital technology",
+      "text": "Recognise that digital devices should be used only for short periods of time.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "2UWd.05",
+      "stage": "EY2",
+      "strand": "Understanding the world: Digital technology",
+      "text": "Handle digital devices with care and consideration for others.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    },
+    {
+      "code": "3UWd.05",
+      "stage": "EY3",
+      "strand": "Understanding the world: Digital technology",
+      "text": "Recognise that online content may be available to everyone connected to the internet, so they should tell an adult if any online content makes them feel unsafe or uncomfortable.",
+      "verified": true,
+      "source": "https://www.cambridgeinternational.org/Images/729772-cambridge-early-years-to-primary-transition-support-document.pdf"
+    }
+  ]
+}

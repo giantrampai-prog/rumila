@@ -1,0 +1,80 @@
+{
+  "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+  "title": "Cambridge Primary Computing Curriculum Framework (0059)",
+  "version": "Published September 2021 for first teaching September 2022 (Cambridge internal file ref tcm142-635600)",
+  "sources": [
+    "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/",
+    "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-primary/curriculum/computing/"
+  ],
+  "retrieved_at": "2026-10-24",
+  "strands": [
+    "Computational Thinking",
+    "Programming",
+    "Managing Data",
+    "Networks and Digital Communication",
+    "Computer Systems"
+  ],
+  "reporting_codes_seen": {
+    "CT": "Computational Thinking",
+    "P": "Programming",
+    "DC": "Networks and Digital Communication",
+    "CS": "Computer Systems"
+  },
+  "notes": [
+    "PDF framework lengkap hanya tersedia di Cambridge Primary support site (login). Salinan publik (pdfcoffee, studocu, scribd) tidak dapat diakses dari jaringan ini / dibatasi, dan cambridgeinternational.org sedang maintenance saat riset.",
+    "Hanya kode yang dikutip di halaman Cambridge Community (situs Cambridge International) yang ditandai verified: true.",
+    "Kode pelaporan untuk strand Managing Data belum terverifikasi (diduga MD) - jangan dipakai sebelum dikonfirmasi."
+  ],
+  "entries": [
+    {
+      "code": "1DC.03",
+      "stage": "1",
+      "strand": "Networks and Digital Communication",
+      "text": "Identify that some devices are connected by wires and that other devices are not.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "1CS.06",
+      "stage": "1",
+      "strand": "Computer Systems",
+      "text": "Identify what robots are and where they may be found in the real world.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "2CT.06",
+      "stage": "2",
+      "strand": "Computational Thinking",
+      "text": "Know how to develop precise sets of instructions to complete simple tasks, such as drawing a picture of a particular object or building a brick tower.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "2P.02",
+      "stage": "2",
+      "strand": "Programming",
+      "text": "Know how to recreate algorithms as programs.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "1CT.01",
+      "stage": "1",
+      "strand": "Computational Thinking",
+      "text": "Follow the steps in algorithms for everyday tasks.",
+      "verified": false,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/",
+      "note": "Teks dibaca di halaman Cambridge Community (tabel contoh Stage 1) tetapi tanpa kode; pemasangan kode 1CT.01 hanya dari cuplikan hasil pencarian atas salinan framework. Konfirmasi di PDF resmi sebelum dipakai."
+    },
+    {
+      "code": "1CT.02",
+      "stage": "1",
+      "strand": "Computational Thinking",
+      "text": "Identify single errors in algorithms that represent everyday events or tasks.",
+      "verified": false,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/",
+      "note": "Kode dan teks hanya dari cuplikan hasil pencarian atas salinan framework; belum dibaca langsung. Konfirmasi di PDF resmi sebelum dipakai."
+    }
+  ]
+}

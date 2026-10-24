@@ -1,0 +1,21 @@
+{
+  "versi": "0.1.0",
+  "_harapan": { "MAT.PAUD.BILANGAN-1-5.01": "LULUS", "KODE.PAUD.PERINTAH.01": "LULUS" },
+  "_alasan": { "MAT.PAUD.BILANGAN-1-5.01": "setara golden set", "KODE.PAUD.PERINTAH.01": "setara golden set; refs kosong dijelaskan di catatan" },
+  "kompetensi": [
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.01", "track": "MAT", "level": "PAUD",
+      "unit": { "id": "BILANGAN-1-5", "nama": { "id": "Bilangan 1–5", "en": "Numbers 1–5" } },
+      "statement": { "id": "Aku bisa menghitung 1 sampai 5 benda dengan menunjuk satu per satu", "en": "I can count 1 to 5 objects by pointing to each one" },
+      "depth": ["pakai"], "prereq": [], "refs": [{ "framework": "EYFS", "code": "ELG-MATH-NUMBER" }], "core": true, "mechanics": ["dagang", "pilah", "cari"],
+      "catatan": "Aksi teramati: anak menyentuh benda satu per satu sambil jumlahnya bertambah. Jebakan: menghitung dua kali benda yang sama; item harus menyebar."
+    },
+    {
+      "id": "KODE.PAUD.PERINTAH.01", "track": "KODE", "level": "PAUD",
+      "unit": { "id": "PERINTAH", "nama": { "id": "Memberi perintah", "en": "Giving commands" } },
+      "statement": { "id": "Aku bisa menyuruh Agam maju satu sampai tiga langkah untuk sampai ke bintang", "en": "I can tell Agam to move forward one to three steps to reach the star" },
+      "depth": ["pakai"], "prereq": [], "refs": [], "core": true, "mechanics": ["navigasi"],
+      "catatan": "Hanya 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Kamus kerangka belum punya kode computing untuk usia 3–4; acuan terdekat Cambridge Early Years Understanding the World bila tersedia."
+    }
+  ]
+}

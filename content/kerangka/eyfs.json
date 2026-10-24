@@ -1,0 +1,83 @@
+{
+  "framework": "EYFS",
+  "title": "Statutory framework for the early years foundation stage (England) - Early Learning Goals, Mathematics",
+  "version": "Edition effective 1 September 2026 (gov.uk); ELG text identical to editions effective 1 November 2024 (dated 11 October 2024) and 4 January 2024 (published 8 December 2023)",
+  "sources": [
+    "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2",
+    "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf",
+    "https://dera.ioe.ac.uk/id/eprint/40850/1/EYFS_statutory_framework_for_group_and_school_-_based_providers.pdf",
+    "https://www.fis.cityoflondon.gov.uk/asset-library/eyfs-statutory-framework-for-group-and-school-based-providers.pdf"
+  ],
+  "retrieved_at": "2026-10-24",
+  "notes": [
+    "Teks dibaca langsung dari PDF gov.uk (edisi berlaku 1 Sep 2026, Section 1 'Early learning goals', area Mathematics).",
+    "Dibandingkan baris per baris dengan salinan edisi Nov 2024 (DERA, arsip resmi UCL) dan edisi Jan 2024 (City of London FIS): kata-kata ELG Number dan Numerical Patterns sama persis.",
+    "ELG-MATH-NUMBER / ELG-MATH-PATTERNS = teks goal lengkap; sufiks -01..-03 = tiap butir, untuk rujukan yang lebih presisi."
+  ],
+  "entries": [
+    {
+      "code": "ELG-MATH-NUMBER",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Number",
+      "text": "Children at the expected level of development will: Have a deep understanding of numbers to 10, including the composition of each number. Subitise (recognise quantities without counting) up to 5. Automatically recall (without reference to rhymes, counting or other aids) number bonds up to 5 (including subtraction facts) and some number bonds to 10, including double facts.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-PATTERNS",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Numerical Patterns",
+      "text": "Children at the expected level of development will: Verbally count beyond 20, recognising the pattern of the counting system. Compare quantities up to 10 in different contexts, recognising when one quantity is greater than, less than or the same as the other quantity. Explore and represent patterns within numbers up to 10, including evens and odds, double facts and how quantities can be distributed equally.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-NUMBER-01",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Number",
+      "text": "Have a deep understanding of numbers to 10, including the composition of each number.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-NUMBER-02",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Number",
+      "text": "Subitise (recognise quantities without counting) up to 5.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-NUMBER-03",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Number",
+      "text": "Automatically recall (without reference to rhymes, counting or other aids) number bonds up to 5 (including subtraction facts) and some number bonds to 10, including double facts.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-PATTERNS-01",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Numerical Patterns",
+      "text": "Verbally count beyond 20, recognising the pattern of the counting system.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-PATTERNS-02",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Numerical Patterns",
+      "text": "Compare quantities up to 10 in different contexts, recognising when one quantity is greater than, less than or the same as the other quantity.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-MATH-PATTERNS-03",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Mathematics: ELG Numerical Patterns",
+      "text": "Explore and represent patterns within numbers up to 10, including evens and odds, double facts and how quantities can be distributed equally.",
+      "verified": true,
+      "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    }
+  ]
+}

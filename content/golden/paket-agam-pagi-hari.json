@@ -1,0 +1,23 @@
+{
+  "id": "agam-pagi-hari",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": ["KODE.PAUD.URUTAN.01"],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": { "instruksi": "Susun gambar supaya pagi Agam berurutan.", "pagi": "Pagi hari Agam", "bangun": "bangun tidur", "gosok": "gosok gigi", "sarapan": "sarapan",
+            "tanam": "Menanam biji", "gali": "gali tanah", "taruh": "taruh biji", "siram": "siram air", "tumbuh": "tunas tumbuh" },
+    "en": { "instruksi": "Put the pictures in order so Agam's morning makes sense.", "pagi": "Agam's morning", "bangun": "wake up", "gosok": "brush teeth", "sarapan": "breakfast",
+            "tanam": "Planting a seed", "gali": "dig the soil", "taruh": "put the seed", "siram": "water it", "tumbuh": "a sprout grows" }
+  },
+  "knobs": {
+    "steps": { "min": 3, "max": 5, "default": 3, "step": 1, "keterangan": "jumlah langkah yang ditampilkan; urutan lebih panjang diambil dari sequence yang punya langkah cukup" }
+  },
+  "assets": [],
+  "generatif": true,
+  "sequences": [
+    { "id": "pagi", "titleKey": "pagi", "steps": [ { "id": "bangun", "labelKey": "bangun" }, { "id": "gosok", "labelKey": "gosok" }, { "id": "sarapan", "labelKey": "sarapan" } ] },
+    { "id": "tanam", "titleKey": "tanam", "steps": [ { "id": "gali", "labelKey": "gali" }, { "id": "taruh", "labelKey": "taruh" }, { "id": "siram", "labelKey": "siram" }, { "id": "tumbuh", "labelKey": "tumbuh" } ] }
+  ]
+}

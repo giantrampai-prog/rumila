@@ -1,0 +1,14 @@
+{
+  "versi": "0.1.0",
+  "_harapan": { "MAT.PAUD.BILANGAN-1-5.01": "REVISI" },
+  "_alasan": { "MAT.PAUD.BILANGAN-1-5.01": "kriteria 1 Teramati: 'memahami' bukan aksi" },
+  "kompetensi": [
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.01", "track": "MAT", "level": "PAUD",
+      "unit": { "id": "BILANGAN-1-5", "nama": { "id": "Bilangan 1–5", "en": "Numbers 1–5" } },
+      "statement": { "id": "Aku bisa memahami bilangan 1 sampai 5", "en": "I can understand numbers 1 to 5" },
+      "depth": ["kenal"], "prereq": [], "refs": [], "core": true, "mechanics": ["pilah"],
+      "catatan": ""
+    }
+  ]
+}

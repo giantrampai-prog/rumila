@@ -1,0 +1,24 @@
+{
+  "id": "agam-ke-bintang-lurus",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "navigasi",
+  "competencyIds": ["KODE.PAUD.PERINTAH.01"],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": { "instruksi": "Tekan 'maju' sampai Agam sampai di bintang, lalu tekan jalan." },
+    "en": { "instruksi": "Press 'forward' until Agam reaches the star, then press go." }
+  },
+  "knobs": {
+    "distance": { "min": 1, "max": 4, "default": 2, "step": 1, "keterangan": "jarak ke bintang; memilih grid dengan optimal = distance" }
+  },
+  "assets": [],
+  "generatif": false,
+  "commands": ["maju"],
+  "grids": [
+    { "id": "lurus-1", "w": 5, "h": 1, "start": { "x": 0, "y": 0, "dir": "E" }, "goal": { "x": 1, "y": 0 }, "walls": [], "optimal": 1 },
+    { "id": "lurus-2", "w": 5, "h": 1, "start": { "x": 0, "y": 0, "dir": "E" }, "goal": { "x": 2, "y": 0 }, "walls": [], "optimal": 2 },
+    { "id": "lurus-3", "w": 5, "h": 1, "start": { "x": 0, "y": 0, "dir": "E" }, "goal": { "x": 3, "y": 0 }, "walls": [], "optimal": 3 },
+    { "id": "lurus-4", "w": 5, "h": 1, "start": { "x": 0, "y": 0, "dir": "E" }, "goal": { "x": 4, "y": 0 }, "walls": [], "optimal": 4 }
+  ]
+}
