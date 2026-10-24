@@ -6,13 +6,11 @@ import { z } from "zod";
 export const LEVEL_IDS = [
   "PAUD", "TKA", "TKB",
   "SD1", "SD2", "SD3", "SD4", "SD5", "SD6",
-  "SMP1", "SMP2", "SMP3",
-  "SMA1", "SMA2", "SMA3",
 ] as const;
 export const LevelId = z.enum(LEVEL_IDS);
 export type LevelId = z.infer<typeof LevelId>;
 
-/** Jenjang yang sudah masuk lingkup produk. Sisanya dicadangkan. */
+/** Jenjang yang masuk lingkup produk: PAUD sampai SD 6 (SMP–SMA dihapus, keputusan PO 25 Okt 2026). */
 export const ACTIVE_LEVELS: readonly LevelId[] = ["PAUD", "TKA", "TKB", "SD1", "SD2", "SD3", "SD4", "SD5", "SD6"];
 
 export interface LevelMeta { id: LevelId; /** nama Cambridge */ nama: string; /** padanan Indonesia */ lokal: string; usia: [number, number]; pangkat: string; acuan: string }
@@ -27,12 +25,6 @@ export const LEVELS: readonly LevelMeta[] = [
   { id: "SD4", nama: "Primary 4", lokal: "SD 4", usia: [9, 10], pangkat: "Laksamana", acuan: "Cambridge Primary Stage 4, A2 Flyers" },
   { id: "SD5", nama: "Primary 5", lokal: "SD 5", usia: [10, 11], pangkat: "Penjelajah", acuan: "Cambridge Primary Stage 5" },
   { id: "SD6", nama: "Primary 6", lokal: "SD 6", usia: [11, 12], pangkat: "Legenda", acuan: "Cambridge Primary Stage 6, Checkpoint" },
-  { id: "SMP1", nama: "Lower Secondary 7", lokal: "SMP 1", usia: [12, 13], pangkat: "", acuan: "dicadangkan" },
-  { id: "SMP2", nama: "Lower Secondary 8", lokal: "SMP 2", usia: [13, 14], pangkat: "", acuan: "dicadangkan" },
-  { id: "SMP3", nama: "Lower Secondary 9", lokal: "SMP 3", usia: [14, 15], pangkat: "", acuan: "dicadangkan" },
-  { id: "SMA1", nama: "Upper Secondary 10", lokal: "SMA 1", usia: [15, 16], pangkat: "", acuan: "dicadangkan" },
-  { id: "SMA2", nama: "Upper Secondary 11", lokal: "SMA 2", usia: [16, 17], pangkat: "", acuan: "dicadangkan" },
-  { id: "SMA3", nama: "Upper Secondary 12", lokal: "SMA 3", usia: [17, 18], pangkat: "", acuan: "dicadangkan" },
 ];
 export const levelMeta = (id: LevelId) => LEVELS.find((l) => l.id === id)!;
 /** Nama tampilan: "Early Years 1 (PAUD)" */

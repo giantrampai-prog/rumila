@@ -4,7 +4,7 @@ import { z } from "zod";
 import { Depth, Dwibahasa, FrameworkId, LevelId, MechanicId, TrackId } from "./jenjang";
 
 /** Format id: TRACK.LEVEL.UNIT.NN — contoh MAT.PAUD.BILANGAN-1-5.01 */
-export const COMPETENCY_ID_RE = /^(MAT|KODE|SAINS|BIND|BING|DUNIA|SENI|KARAKTER)\.(PAUD|TKA|TKB|SD[1-6]|SMP[1-3]|SMA[1-3])\.[A-Z0-9]+(?:-[A-Z0-9]+)*\.\d{2}$/;
+export const COMPETENCY_ID_RE = /^(MAT|KODE|SAINS|BIND|BING|DUNIA|SENI|KARAKTER)\.(PAUD|TKA|TKB|SD[1-6])\.[A-Z0-9]+(?:-[A-Z0-9]+)*\.\d{2}$/;
 export const CompetencyId = z.string().regex(COMPETENCY_ID_RE, "id kompetensi harus TRACK.LEVEL.UNIT.NN, huruf besar");
 
 export const StandardRef = z.object({
