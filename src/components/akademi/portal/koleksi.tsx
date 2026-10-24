@@ -45,7 +45,7 @@ function simpanJumlah(memberId: string, n: number) {
   } catch {}
 }
 
-export function Koleksi({ me, level }: { me: Member; level: LevelId }) {
+export function Koleksi({ me, level, onKeMisi }: { me: Member; level: LevelId; onKeMisi?: () => void }) {
   const events = useEvents(me.id);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
   const daftarStiker = useMemo(() => stiker(events, PAKET), [events]);
@@ -73,7 +73,7 @@ export function Koleksi({ me, level }: { me: Member; level: LevelId }) {
       <section className="flex flex-col gap-3">
         <Judul ikon="star" teks="Stiker" sub={daftarStiker.length ? "Setiap misi yang kamu selesaikan jadi stiker" : undefined} />
         {daftarStiker.length === 0 ? (
-          <AjakanStiker />
+          <AjakanStiker onKeMisi={onKeMisi} />
         ) : (
           <ul className="grid grid-cols-3 gap-2.5 sm:grid-cols-4">
             {daftarStiker.map((s, i) => (
@@ -155,7 +155,7 @@ function Konfeti() {
   );
 }
 
-function AjakanStiker() {
+function AjakanStiker({ onKeMisi }: { onKeMisi?: () => void }) {
   return (
     <div className={`${KARTU} flex flex-col items-center gap-3 p-5 text-center`}>
       <span className="flex size-20 items-center justify-center rounded-full" style={{ background: "#fff4d1", color: "#f2b705" }}>
@@ -166,10 +166,15 @@ function AjakanStiker() {
       </p>
       <Link
         href="/akademi"
+        onClick={(e) => {
+          if (!onKeMisi) return;
+          e.preventDefault();
+          onKeMisi();
+        }}
         className="flex h-14 min-w-[200px] items-center justify-center gap-1.5 rounded-[18px] px-6 text-[#0b2545] transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.96]"
         style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 4px 0 #c85400" }}
       >
-        <Icon name="play_arrow" size={26} /> Ke misi
+        <Icon name="play_arrow" size={26} /> Ke peta
       </Link>
     </div>
   );
