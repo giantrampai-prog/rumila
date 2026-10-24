@@ -42,6 +42,12 @@ describe("petaJenjang", () => {
     expect(peta.selesai).toBe(1);
   });
 
+  it("hitungan selesai mengikuti urutan: misi yang tamat di luar urutan tidak menambah", () => {
+    const peta = petaJenjang({}, new Set([M1, K1]), KOMP, "PAUD", TRACKS);
+    expect(peta.sekarang?.nomor).toBe(2);
+    expect(peta.selesai).toBe(1);
+  });
+
   it("dikuasai juga dihitung selesai", () => {
     const peta = petaJenjang({ [M1]: p("dikuasai") }, new Set(), KOMP, "PAUD", TRACKS);
     expect(peta.sekarang?.kompetensi.id).toBe(M2);
