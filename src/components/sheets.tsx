@@ -12,6 +12,8 @@ import { signOutAccount, useCloud } from "@/lib/supabase/family";
 import { displayLogin } from "@/app/masuk/account";
 import { installApp, useCanInstall } from "./pwa";
 import { setSfxEnabled, sfx, sfxEnabled } from "@/lib/sfx";
+import { LEVELS, type LevelId } from "@akademi/schema";
+import { bahasaAnak, levelAnak, setBahasaAnak, setLevelAnak, setPeranAkademi, usePeranAkademi, useProfilAkademiVersi, type BahasaAnak } from "@/lib/akademi/konten";
 
 export const accessText = (m: Member) =>
   m.admin ? "Akses penuh" : `${PERMS.filter((p) => can(m, p.key)).length} dari ${PERMS.length} menu`;
@@ -242,6 +244,53 @@ function AddSheet() {
   );
 }
 
+/** Pengaturan Academy per anggota: anak/dewasa, jenjang Cambridge, bahasa konten. Disimpan di kunci akademi yang disinkron antarperangkat. */
+function ProfilAkademi({ memberId }: { memberId: string }) {
+  const peran = usePeranAkademi(memberId);
+  const versi = useProfilAkademiVersi();
+  const [level, setLevel] = useState<LevelId>("PAUD");
+  const [bahasa, setBahasa] = useState<BahasaAnak>("id");
+  useEffect(() => {
+    setLevel(levelAnak(memberId));
+    setBahasa(bahasaAnak(memberId));
+  }, [memberId, versi]);
+  const anak = peran === "anak";
+  const jenjang = LEVELS.filter((l) => ["PAUD", "TKA", "TKB"].includes(l.id));
+  return (
+    <div className="rounded-[18px] bg-page px-3.5 py-3">
+      <button role="switch" aria-checked={anak} onClick={() => setPeranAkademi(memberId, anak ? "dewasa" : "anak")} className="flex w-full items-center gap-3 py-1 text-left">
+        <Tile c="red" icon="school" size={34} radius={0.32} />
+        <span className="flex-1">
+          <span className="block text-sm font-semibold">Profil anak Academy</span>
+          <span className="block text-xs text-ink-3">{anak ? "Masuk Rapor, Telemetri, dan sertifikat" : "Dewasa: tidak dihitung sebagai murid"}</span>
+        </span>
+        <Switch on={anak} />
+      </button>
+      {anak && (
+        <div className="mt-2 flex flex-col gap-2">
+          <div className="text-xs font-bold text-ink-3">Jenjang</div>
+          <div className="grid grid-cols-3 gap-1.5">
+            {jenjang.map((l) => (
+              <button key={l.id} onClick={() => { setLevel(l.id); setLevelAnak(memberId, l.id); }} className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${level === l.id ? "bg-ink text-white" : "bg-white text-ink"}`}>
+                {l.nama}
+                <span className="block text-[10px] font-semibold opacity-70">{l.lokal}</span>
+              </button>
+            ))}
+          </div>
+          <div className="text-xs font-bold text-ink-3">Bahasa konten</div>
+          <div className="grid grid-cols-2 gap-1.5">
+            {(["id", "en"] as const).map((b) => (
+              <button key={b} onClick={() => { setBahasa(b); setBahasaAnak(memberId, b); }} className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${bahasa === b ? "bg-ink text-white" : "bg-white text-ink"}`}>
+                {b === "id" ? "Indonesia" : "English"}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function EditSheet({ memberId }: { memberId: string }) {
   const m = useRumila((s) => s.members.find((x) => x.id === memberId));
   const { togglePerm, setPerms, makeAdmin, removeMember } = useRumila();
@@ -291,6 +340,7 @@ function EditSheet({ memberId }: { memberId: string }) {
               );
             })}
           </div>
+          <ProfilAkademi memberId={m.id} />
           <div className="grid grid-cols-2 gap-2.5">
             <button
               onClick={() => setPerms(m.id, KID_PRESET)}

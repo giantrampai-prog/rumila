@@ -10,7 +10,7 @@ import { BALOO, MemberAvatar, NUNITO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { EVENT_NAMA, eventsAnak } from "@/lib/akademi/jejak";
-import { KOMPETENSI, PAKET, paketById } from "@/lib/akademi/konten";
+import { KOMPETENSI, PAKET, paketById, anakRumah, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { labelBendera, ringkasAnak, ringkasHarian, ringkasKompetensi, ringkasPaket, teksRingkasan, type Bendera, type RingkasanAnak, type RingkasanPaket } from "@/lib/akademi/telemetri";
 import { useMe, useRumila, type Member } from "@/lib/store";
 import { INK, labelMekanik, tanggalJam, tanggalLokal } from "./bersama";
@@ -64,7 +64,9 @@ function useSemuaEvents(anak: Member[]): { perAnak: Record<string, GameEvent[]>;
 export function TelemetriView() {
   const me = useMe();
   const members = useRumila((s) => s.members);
-  const anak = useMemo(() => members.filter((m) => !m.admin), [members]);
+  const versiProfil = useProfilAkademiVersi();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const anak = useMemo(() => anakRumah(members), [members, versiProfil]);
   const { perAnak, semua, siap, now } = useSemuaEvents(anak);
   const [filter, setFilter] = useState<string>("semua");
   const [tersalin, setTersalin] = useState(false);
@@ -159,7 +161,7 @@ export function TelemetriView() {
       </header>
 
       {anak.length === 0 ? (
-        <p className={`${KARTU} text-[14px] font-bold text-ink-3`}>Belum ada profil anak. Tambahkan anggota non-admin dulu.</p>
+        <p className={`${KARTU} text-[14px] font-bold text-ink-3`}>Belum ada profil anak. Tambahkan anggota, lalu tandai sebagai anak di pengaturan profil.</p>
       ) : !siap ? (
         <p className={`${KARTU} text-[14px] font-bold text-ink-3`}>Membaca jejak belajar…</p>
       ) : (
