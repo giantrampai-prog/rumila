@@ -1,0 +1,197 @@
+/* Animasi pembuka RINOYA Academy. Warna & kurva pegas dari desain sistem RINOYA. */
+
+.intro-selesai .rn-intro {
+  display: none;
+}
+
+.rn-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: #fff8ee;
+  background-image: radial-gradient(rgba(7, 134, 235, 0.13) 2px, transparent 2px);
+  background-size: 26px 26px;
+  cursor: pointer;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+.rn-intro--keluar {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.rn-intro__isi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 0 24px;
+}
+
+.rn-intro__logo {
+  position: relative;
+  width: min(68vw, 320px);
+  aspect-ratio: 1144 / 806;
+}
+
+.rn-intro__lapis {
+  position: absolute;
+  height: auto;
+  max-width: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* cahaya lembut di belakang ikon R */
+.rn-intro__cahaya {
+  position: absolute;
+  left: 22%;
+  top: -14%;
+  width: 52%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(7, 134, 235, 0.2), rgba(7, 134, 235, 0) 68%);
+  animation: rn-cahaya 1.2s ease-out 0.1s both;
+}
+
+/* Rise: ikon R naik dari bawah dengan pegas */
+.rn-intro__mark {
+  transform-origin: 50% 100%;
+  animation: rn-naik 0.85s cubic-bezier(0.3, 1.4, 0.5, 1) 0.15s both;
+}
+
+/* bintang: muncul berputar, lalu berkelip pelan */
+.rn-intro__star {
+  animation:
+    rn-bintang 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) 0.7s both,
+    rn-kelip 1.3s ease-in-out 1.4s infinite;
+}
+.rn-intro__percik {
+  opacity: 0;
+  scale: 0.35;
+  animation: rn-percik 0.7s ease-out 0.85s both;
+}
+.rn-intro__percik--0 { --dx: 70%; --dy: -90%; }
+.rn-intro__percik--1 { --dx: 120%; --dy: 40%; }
+.rn-intro__percik--2 { --dx: -60%; --dy: -110%; animation-delay: 0.95s; }
+
+.rn-intro__rino {
+  animation: rn-masuk 0.55s cubic-bezier(0.3, 1.4, 0.5, 1) 0.9s both;
+}
+.rn-intro__ya {
+  transform-origin: 30% 100%;
+  animation: rn-pantul 0.65s cubic-bezier(0.3, 1.6, 0.5, 1) 1.05s both;
+}
+.rn-intro__academy {
+  animation: rn-buka 0.5s ease-out 1.3s both;
+}
+
+.rn-intro__tagline {
+  margin: 0;
+  font-family: var(--ff-baloo), "Baloo 2", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(15px, 4vw, 19px);
+  color: #4a5a75;
+  letter-spacing: 0.01em;
+  text-align: center;
+  animation: rn-masuk 0.5s ease-out 1.5s both;
+}
+
+.rn-intro__bilah {
+  width: 140px;
+  height: 8px;
+  border-radius: 999px;
+  background: #fff0da;
+  overflow: hidden;
+  animation: rn-pudar 0.3s ease-out 1.2s both;
+}
+.rn-intro__bilah > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #0786eb;
+  transform-origin: left;
+  animation: rn-isi 1.35s cubic-bezier(0.5, 0, 0.3, 1) 1.25s both;
+}
+
+.rn-intro__lewati {
+  position: absolute;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #4a5a75;
+  font: 700 13px var(--ff-nunito), system-ui, sans-serif;
+  box-shadow: 0 3px 0 rgba(11, 37, 69, 0.08);
+  animation: rn-pudar 0.3s ease-out 0.6s both;
+}
+.rn-intro__lewati:focus-visible {
+  outline: 3px solid #0b2545;
+  outline-offset: 2px;
+}
+
+@keyframes rn-cahaya {
+  from { opacity: 0; transform: scale(0.4); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes rn-naik {
+  0% { opacity: 0; transform: translateY(45%) scale(0.45); }
+  55% { opacity: 1; transform: translateY(-6%) scale(1.06); }
+  78% { transform: translateY(2%) scale(0.98); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes rn-bintang {
+  0% { opacity: 0; transform: scale(0) rotate(-140deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes rn-kelip {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.14) rotate(8deg); }
+}
+@keyframes rn-percik {
+  0% { opacity: 0; translate: 0 0; }
+  30% { opacity: 1; }
+  100% { opacity: 0; translate: var(--dx) var(--dy); }
+}
+@keyframes rn-masuk {
+  from { opacity: 0; transform: translateY(35%); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rn-pantul {
+  0% { opacity: 0; transform: translateY(40%) rotate(-10deg) scale(0.6); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes rn-buka {
+  from { opacity: 0; clip-path: inset(0 50% 0 50%); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+@keyframes rn-pudar {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes rn-isi {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rn-intro *,
+  .rn-intro *::before {
+    animation: none !important;
+  }
+  .rn-intro__percik {
+    display: none;
+  }
+  .rn-intro {
+    transition: opacity 0.3s ease;
+  }
+  .rn-intro--keluar {
+    transform: none;
+  }
+}
