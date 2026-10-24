@@ -151,3 +151,21 @@ describe("buatRondeNavigasi + nilaiNavigasi", () => {
     expect(salah.detail.batu).toBe(1);
   });
 });
+
+describe("nilaiNavigasi — bendera & prediksi", () => {
+  const panjang = grid({ w: 8, goal: { x: 6, y: 1 }, optimal: 6 });
+  it("bendera: batas rak berlaku per bagian, bukan total program", () => {
+    const r = { execMode: "program", commands: ["maju", "bendera"], grids: [panjang], program: [], rackSlots: 4 } as unknown as Parameters<typeof nilaiNavigasi>[0];
+    const bagian: [NavBlock[], NavBlock[]] = [[M, M, M], [M, M, M]];
+    const h = nilaiNavigasi(r, { program: [...bagian[0], { cmd: "bendera" }, ...bagian[1]], bendera: { x: 3, y: 1, bagian } });
+    expect(h.detail.benderaTepat).toBe(true);
+    expect(h.benar).toBe(true);
+    const kepanjangan: [NavBlock[], NavBlock[]] = [[M, M, M, M, M], [M]];
+    expect(nilaiNavigasi(r, { program: [...kepanjangan[0], { cmd: "bendera" }, ...kepanjangan[1]], bendera: { x: 5, y: 1, bagian: kepanjangan } }).benar).toBe(false);
+  });
+  it("prediksi: Agam sampai tetap salah bila tebakan anak kebanyakan meleset", () => {
+    const r = { execMode: "langkah", commands: ["maju"], grids: [grid()], program: [M, M, M], prediksi: true } as unknown as Parameters<typeof nilaiNavigasi>[0];
+    expect(nilaiNavigasi(r, { program: [M, M, M], prediksi: [true, true, false] }).benar).toBe(true);
+    expect(nilaiNavigasi(r, { program: [M, M, M], prediksi: [false, true, false] }).benar).toBe(false);
+  });
+});
