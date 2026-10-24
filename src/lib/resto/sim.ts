@@ -27,6 +27,7 @@ import {
   type Role,
   type Segment,
   type Station,
+  BUILD_DAY_SEC,
 } from './data';
 
 /* ---------------- RNG ber-seed ---------------- */
@@ -130,6 +131,8 @@ export interface RestoState {
   contractTotal: number;
   contractPaid: number;
   buildLeft: number;
+  /** kemajuan pekerjaan hari ini (0–1), berjalan mengikuti waktu nyata saat fase bangun */
+  buildWork: number;
   handed: boolean;
   equipment: string[];
   tables: number;
@@ -166,6 +169,7 @@ export function newGame(seed = 1): RestoState {
     contractTotal: 0,
     contractPaid: 0,
     buildLeft: 0,
+    buildWork: 0,
     handed: false,
     equipment: [],
     tables: 0,
@@ -239,8 +243,23 @@ export function signContract(s: RestoState, id: string): Result {
   pay(s, dp, 'kontrak', `DP 40% ${c.name}`);
   s.contractPaid = dp;
   s.buildLeft = c.days;
+  s.buildWork = 0;
   s.phase = 'build';
   return ok(`Kontrak ${c.name} disetujui. DP ${dp} dibayar; sisa ${c.cost - dp} menjadi komitmen.`);
+}
+
+/** Tukang bekerja `sec` detik nyata; pekerjaan hari ini selesai saat buildWork mencapai 1. */
+export function workBuild(s: RestoState, sec: number) {
+  if (s.phase !== 'build' || s.buildWork >= 1) return false;
+  s.buildWork = Math.min(1, s.buildWork + sec / BUILD_DAY_SEC);
+  return s.buildWork >= 1;
+}
+/** Kemajuan pembangunan keseluruhan 0–1 (hari selesai + pekerjaan hari ini). */
+export function buildProgress(s: RestoState) {
+  const c = CONTRACTORS.find((x) => x.id === s.contractor);
+  if (!c) return 0;
+  if (s.handed) return 1;
+  return Math.min(1, (c.days - s.buildLeft + Math.min(1, s.buildWork)) / c.days);
 }
 
 /** Maju satu hari persiapan: bayar sewa, terima bahan yang dipesan, pembangunan berlanjut. */
@@ -250,7 +269,16 @@ export function advanceDay(s: RestoState): Result {
   s.day += 1;
   if (l) pay(s, l.rent, 'sewa', `Sewa hari ke-${s.day}`);
   if (s.phase === 'build') {
+    if (s.buildWork < 1) {
+      s.day -= 1;
+      if (l) {
+        s.cash += l.rent;
+        s.ledger.pop();
+      }
+      return fail('Tukang masih bekerja. Tunggu pekerjaan hari ini selesai dulu.');
+    }
     s.buildLeft -= 1;
+    s.buildWork = 0;
     if (s.buildLeft <= 0) {
       const rest = s.contractTotal - s.contractPaid;
       pay(s, rest, 'kontrak', 'Pelunasan 60% saat serah terima');

@@ -12,6 +12,7 @@ import { sfx } from '@/lib/sfx';
 import { installAudioUnlock } from '@/lib/audio-unlock';
 import { LoopMusic } from '@/lib/bgm';
 import {
+  BUILD_DAY_SEC,
   BUILD_STAGES,
   BUILD_STAGE_NOTE,
   CANDIDATES,
@@ -208,6 +209,7 @@ function useGame(memberId: string) {
       if (raw) g = JSON.parse(raw);
     } catch {}
     ref.current = g && g.v === 1 ? g : S.newGame(Math.floor(Math.random() * 1e6));
+    ref.current.buildWork ??= 0; // simpanan lama sebelum progres pembangunan berjalan
     if (ref.current.phase === 'open') ref.current.phase = 'prep';
   }
   const save = useCallback(() => {
@@ -351,6 +353,41 @@ export function RestoGame() {
     };
   }, []);
 
+  // tukang bekerja mengikuti waktu nyata saat fase bangun (jeda saat tab disembunyikan karena rAF berhenti)
+  const buildBusy = g.phase === 'build' && g.buildWork < 1;
+  useEffect(() => {
+    if (!buildBusy) return;
+    let raf = 0,
+      last = performance.now(),
+      lastUi = 0,
+      lastSave = 0;
+    const tick = (now: number) => {
+      raf = requestAnimationFrame(tick);
+      const dt = Math.min(0.25, (now - last) / 1000);
+      last = now;
+      if (speed === 0) return;
+      const done = S.workBuild(g, dt * speed);
+      if (done) {
+        sfx.celebrate();
+        say('Pekerjaan hari ini selesai! Tekan “Lanjut hari”.');
+        save();
+        bump();
+        return;
+      }
+      if (now - lastSave > 3000) {
+        lastSave = now;
+        save();
+      }
+      if (now - lastUi > 200) {
+        lastUi = now;
+        bump();
+      }
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [buildBusy, speed]);
+
   // jam restoran berjalan saat buka
   useEffect(() => {
     if (g.phase !== 'open' || !run.current) return;
@@ -391,10 +428,12 @@ export function RestoGame() {
 
   const checks = S.checklist(g);
   const nextCheck = checks.find((c) => !c.ok);
+  const buildDone = g.buildWork >= 1;
   const mentor = useMemo(() => {
     if (g.phase === 'plan' && !g.location) return 'Pertama, pilih lokasi. Lihat siapa pelanggannya dan berapa sewanya, ya!';
     if (g.phase === 'plan') return 'Sekarang pilih kontraktor untuk membangun restoranmu. Bandingkan harga, lama, dan mutunya.';
-    if (g.phase === 'build') return `Restoran sedang dibangun (${g.buildLeft} hari lagi). Tekan “Lanjut hari”. Ingat, sewa tetap dibayar tiap hari.`;
+    if (g.phase === 'build' && buildDone) return `Pekerjaan hari ini selesai! Tekan “Lanjut hari” (${g.buildLeft > 1 ? `${g.buildLeft - 1} hari lagi` : 'besok serah terima'}). Ingat, sewa tetap dibayar tiap hari.`;
+    if (g.phase === 'build') return 'Tukang sedang bekerja. Lihat dindingnya naik sedikit demi sedikit; kamu bisa percepat 2× atau jeda.';
     if (g.phase === 'prep' && nextCheck) {
       const tips: Record<string, string> = {
         kasir: 'Beli meja kasir & kulkas bahan di Toko Alat dulu.',
@@ -409,7 +448,7 @@ export function RestoGame() {
     if (g.phase === 'prep') return 'Semua siap! Tekan “Buka Resto!” dan sambut pelanggan dengan Irasshaimase!';
     if (g.phase === 'open') return 'Restoran buka! Perhatikan antrean, meja, dan stok. Kamu bisa jeda kapan saja.';
     return 'Baca laporan hari ini, lalu pilih satu hal untuk diperbaiki besok.';
-  }, [g.phase, g.location, g.buildLeft, nextCheck]);
+  }, [g.phase, g.location, g.buildLeft, buildDone, nextCheck]);
 
   const clock = run.current ? run.current.clock : 0;
   const hh = 10 + Math.floor(Math.min(360, clock) / 60),
@@ -549,19 +588,48 @@ export function RestoGame() {
             </Btn>
           </div>
         )}
-        {g.phase === 'build' && (
-          <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-2 rounded-[20px] p-2" style={{ background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
-            <span className="px-2 text-center text-[15px] text-white sm:text-[18px]" style={{ fontFamily: BALOO, fontWeight: 800 }}>
-              🏗️ {BUILD_STAGES[stageAt(1 - g.buildLeft / (CONTRACTORS.find((c) => c.id === g.contractor)?.days ?? 3))]} · {g.buildLeft} hari lagi
-            </span>
-            <Btn tone="cream" onClick={() => (sfx.open(), setPanel('gambar'))}>
-              📐 Gambar kerja
-            </Btn>
-            <Btn tone="green" onClick={() => act(() => S.advanceDay(g), () => sfx.whoosh())}>
-              Lanjut hari ▶
-            </Btn>
-          </div>
-        )}
+        {g.phase === 'build' &&
+          (() => {
+            const days = CONTRACTORS.find((c) => c.id === g.contractor)?.days ?? 3;
+            const k = S.buildProgress(g);
+            const done = g.buildWork >= 1;
+            const left = Math.ceil(((1 - g.buildWork) * BUILD_DAY_SEC) / Math.max(1, speed));
+            const mmss = `${Math.floor(left / 60)}:${String(left % 60).padStart(2, '0')}`;
+            return (
+              <div className="pointer-events-auto flex w-full max-w-[560px] flex-col gap-1.5 rounded-[20px] p-2.5 text-white" style={{ background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="truncate" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800 }}>
+                    🏗️ {BUILD_STAGES[stageAt(k)]}
+                  </span>
+                  <span className="shrink-0 text-[13px] font-extrabold opacity-95">
+                    Hari {days - g.buildLeft + 1}/{days} · total {Math.round(k * 100)}%
+                  </span>
+                </div>
+                {/* progres pekerjaan hari ini */}
+                <div className="h-4 overflow-hidden rounded-full bg-black/25" role="progressbar" aria-valuenow={Math.round(g.buildWork * 100)} aria-valuemin={0} aria-valuemax={100}>
+                  <div className="h-full rounded-full transition-[width] duration-200" style={{ width: `${Math.max(2, g.buildWork * 100)}%`, background: done ? '#6fdc3a' : '#ffc050' }} />
+                </div>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5">
+                    {[0, 1, 2].map((sp) => (
+                      <button key={sp} onClick={() => (sfx.tap(), setSpeed(sp))} aria-label={sp === 0 ? 'Jeda' : `Kecepatan ${sp}×`} className="flex h-8 min-w-8 items-center justify-center rounded-full px-2 text-[14px] font-extrabold active:scale-90" style={{ background: speed === sp ? '#ffc050' : 'rgba(255,255,255,.25)', color: speed === sp ? INK : '#fff' }}>
+                        {sp === 0 ? <Icon name="pause" size={18} /> : `${sp}×`}
+                      </button>
+                    ))}
+                    <span className="text-[13px] font-bold">{done ? 'Hari ini selesai ✓' : speed === 0 ? 'Dijeda' : `${mmss} lagi`}</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <Btn tone="cream" onClick={() => (sfx.open(), setPanel('gambar'))}>
+                      📐 Gambar kerja
+                    </Btn>
+                    <Btn tone={done ? 'green' : 'cream'} disabled={!done} onClick={() => act(() => S.advanceDay(g), () => sfx.whoosh())}>
+                      Lanjut hari ▶
+                    </Btn>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         {(g.phase === 'prep' || g.phase === 'review') && (
           <>
             <div className="pointer-events-auto grid w-full max-w-[560px] grid-cols-6 gap-1 rounded-[20px] p-1.5 sm:flex sm:w-auto sm:max-w-none sm:flex-wrap sm:items-end sm:justify-center sm:gap-2 sm:rounded-[24px] sm:p-2" style={{ background: WOOD, boxShadow: '0 5px 0 #5a3418' }}>
@@ -1111,7 +1179,7 @@ function GambarPanel({ g, onClose }: { g: S.RestoState; onClose: () => void }) {
   const c = CONTRACTORS.find((x) => x.id === g.contractor);
   const days = c?.days ?? 3;
   const doneDays = g.handed ? days : days - g.buildLeft;
-  const k = doneDays / days;
+  const k = S.buildProgress(g);
   const cur = g.handed ? BUILD_STAGES.length : stageAt(k);
   return (
     <Sheet title="Gambar kerja & jadwal" emoji="📐" onClose={onClose}>

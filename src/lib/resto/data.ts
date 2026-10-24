@@ -219,6 +219,8 @@ export const INTERVALS = 12;
 export const REAL_SECONDS_PER_MIN = 1;
 
 /** Tahap pembangunan (dipakai papan jadwal di lokasi proyek & panel Gambar kerja). */
+/** lama pekerjaan satu hari pembangunan dalam detik nyata (progres terlihat berjalan di layar) */
+export const BUILD_DAY_SEC = 120;
 export const BUILD_STAGES = ['Galian & pondasi', 'Dinding bata', 'Rangka atap & listrik', 'Finishing & cat'];
 export const BUILD_STAGE_NOTE = [
   'Tanah digali, besi tulangan dipasang, lalu dicor beton supaya bangunan kuat.',

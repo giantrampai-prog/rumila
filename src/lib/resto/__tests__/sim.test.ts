@@ -6,7 +6,10 @@ function readyGame(seed = 7) {
   const s = S.newGame(seed);
   S.chooseLocation(s, 'sekolah');
   S.signContract(s, 'standar');
-  while (!s.handed) S.advanceDay(s);
+  while (!s.handed) {
+    S.workBuild(s, 1e9);
+    S.advanceDay(s);
+  }
   for (const e of ['ricecooker', 'goreng', 'minum', 'kasir', 'kulkas', 'sushi']) expect(S.buyEquipment(s, e).ok).toBe(true);
   expect(S.buyTables(s, 5).ok).toBe(true);
   for (const c of ['c1', 'c3', 'c5', 'c7']) S.hire(s, c);

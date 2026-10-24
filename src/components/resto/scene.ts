@@ -11,6 +11,8 @@ import { City } from './city';
 import { buildSite, type Site } from './site';
 import { buildResto } from './building';
 import { AISLE_Z, CHAIRS, COUNTER, PASS_Z, QUEUE_X, SIDEWALK_IN, STATIONS, groundY, route } from './layout';
+import { navFromScene, type NavGrid } from './nav';
+import { buildProgress } from '@/lib/resto/sim';
 import { buildRealSky } from '@/components/fruits/garden/sky';
 
 const _sunOff = new T.Vector3(24, 48, 30);
@@ -122,6 +124,9 @@ export class RestoScene {
   private cityLoc = '';
   private site: Site | null = null;
   private lastK = -1;
+  private lastLeft = -1;
+  /** kisi jalur (dibangun ulang bersama geometri) */
+  private nav: NavGrid | null = null;
 
   private tablePos: T.Vector3[] = [];
   private roofMats: T.Material[] = [];
@@ -277,6 +282,8 @@ export class RestoScene {
       this.site = buildSite(s, this.textures);
       this.shell.add(this.site.group);
     }
+    // kisi jalur dari geometri jadi: orang berjalan mengelilingi meja, kasir, rak, stasiun
+    this.nav = s.handed ? navFromScene([this.shell, this.dyn]) : null;
   }
 
   /* ---------- kontrol kamera (tombol di layar) ---------- */
@@ -316,18 +323,19 @@ export class RestoScene {
   sync(s: RestoState) {
     const key = [s.location, s.contractor, s.handed, s.handed ? '' : s.buildLeft, s.equipment.join(','), s.tables, s.decor, s.name].join('|');
     if (s.location) this.buildWorld(s.location);
-    const k0 = s.contractor ? (s.handed ? 1 : 1 - s.buildLeft / Math.max(1, [4, 3, 2][['hemat', 'standar', 'cepat'].indexOf(s.contractor)])) : 0;
+    const k0 = buildProgress(s); // berjalan halus mengikuti pekerjaan hari ini
     if (this.lastK < 0) this.buildK = k0; // pertama dibuka: langsung setinggi kemajuan
     if (key !== this.key) {
       this.key = key;
       this.rebuild(s);
     }
     const c = k0;
-    if (this.lastK >= 0 && c > this.lastK + 0.01 && !s.handed) {
+    if (this.lastLeft >= 0 && s.buildLeft < this.lastLeft && !s.handed) {
       // hari berganti: debu mengepul & bunyi pekerjaan
       this.site?.burst();
       sfx.thud();
     }
+    this.lastLeft = s.buildLeft;
     this.lastK = c;
     this.buildK = c;
     // staf
@@ -357,7 +365,15 @@ export class RestoScene {
 
   /** Kirim satu orang ke tujuan lewat rute yang benar; `face` = duduk menghadap titik itu. */
   private send(m: Member, dest: T.Vector3, face: T.Vector3 | null = null, delay = 0) {
-    m.path = route(m.obj.position, dest);
+    const nav = this.nav?.route(m.obj.position, dest) ?? null;
+    m.path = nav ?? route(m.obj.position, dest);
+    if (process.env.NODE_ENV === 'development') {
+      // penghitung untuk pemeriksaan: berapa rute dari kisi vs rute denah cadangan
+      const w = globalThis as unknown as { __restoNav?: { grid: number; fallback: number } };
+      w.__restoNav ??= { grid: 0, fallback: 0 };
+      if (nav) w.__restoNav.grid++;
+      else w.__restoNav.fallback++;
+    }
     m.face = face;
     m.delay = delay;
   }
