@@ -3,6 +3,7 @@
 // Tab "Koleksi": stiker (paket yang pernah selesai), lencana unit (perunggu/perak/emas), pangkat jenjang (Tunas/Kadet/Navigator).
 // Tanpa angka nilai/peringkat — anak 3–6 tahun. Konfeti ringan saat ada stiker baru sejak terakhir dibuka.
 
+import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { LevelId, TrackId } from "@akademi/schema";
@@ -185,7 +186,7 @@ function KartuStiker({ s, baru }: { s: Stiker; baru: boolean }) {
             <IkonMekanik mekanik={p.mechanic} size={56} />
           </span>
           {s.kali > 1 && (
-            <span aria-label={`${s.kali} kali`} className="absolute -right-1.5 -bottom-1 flex h-7 min-w-7 items-center justify-center rounded-full bg-[#0786eb] px-1.5 text-white" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 900, boxShadow: "0 2px 0 #0567c2" }}>
+            <span aria-label={`${s.kali} kali`} className="absolute -right-1.5 -bottom-1 flex h-7 min-w-7 items-center justify-center rounded-full bg-[#0567c2] px-1.5 text-white" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 900, boxShadow: "0 2px 0 #0567c2" }}>
               ×{s.kali}
             </span>
           )}
@@ -202,12 +203,13 @@ function KartuStiker({ s, baru }: { s: Stiker; baru: boolean }) {
 function LencanaTrack({ track, semua }: { track: TrackId; semua: Lencana[] }) {
   const t = trackMeta(track);
   const [l, m, d] = PLAY[TRACK_WARNA[track]];
+  const tinta = tintaPada(TRACK_WARNA[track]);
   const baris = LEVEL_SLICE.map((lv) => ({ lv, unit: unitUntuk(track, lv) })).filter((b) => b.unit.length > 0);
   const statusDari = (lv: LevelId, unitId: string) => semua.find((x) => x.track === track && x.level === lv && x.unitId === unitId)?.status ?? "terkunci";
   return (
     <div className={`${KARTU} flex flex-col gap-3 p-3.5`}>
       <div className="flex items-center gap-2.5">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-full text-white" style={{ background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 2px 0 ${d}` }}>
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-full" style={{ color: tinta, background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 2px 0 ${d}` }}>
           <Icon name={TRACK_IKON[track]} size={24} />
         </span>
         <h3 className="min-w-0 flex-1 leading-tight" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>

@@ -1,7 +1,7 @@
 // Service worker Rumila: membuat aplikasi bisa dipasang & tetap terbuka saat sinyal putus.
 // Strategi "jaringan dulu": selalu ambil versi terbaru; cadangan cache hanya bila offline.
-const CACHE = "rumila-v1";
-const SHELL = ["/beranda", "/icons/icon-192.png", "/icons/icon-512.png"];
+const CACHE = "rumila-v2";
+const SHELL = ["/beranda", "/icons/r-icon-192.png", "/icons/r-icon-512.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).catch(() => {}));

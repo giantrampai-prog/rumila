@@ -5,9 +5,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { BALOO, LauncherBackdrop, MemberAvatar, NUNITO } from "@/components/launcher";
 import { Icon, PlayCtx } from "@/components/ui";
+import { tintaPada } from "@/lib/brand";
 import { PLAY, canonicalToolId, getTool, type Folder, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
 import { PullToRefresh } from "@/components/pwa";
@@ -56,8 +58,21 @@ export function KidHeader() {
   const openSheet = useUI((s) => s.openSheet);
   const [hello, setHello] = useState("Halo");
   useEffect(() => setHello(greeting()), []);
+  const diBeranda = usePathname() === "/beranda";
   return (
     <header className="flex items-center gap-3">
+      {/* jalan pulang ke beranda dari halaman mana pun */}
+      {!diBeranda && (
+        <Link
+          href="/beranda"
+          aria-label="Kembali ke beranda"
+          className="flex h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.1)] transition-transform active:translate-y-0.5 active:scale-95"
+          style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800 }}
+        >
+          <Icon name="home" size={26} />
+          <span>Beranda</span>
+        </Link>
+      )}
       {/* salam (bukan tombol) */}
       <div className="min-w-0 flex-1">
         <span className="block text-[12px] font-extrabold text-ink-3">{hello},</span>
@@ -82,7 +97,7 @@ export function MascotBubble({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-end gap-2">
       <div className="flex size-[52px] shrink-0 items-center justify-center rounded-[18px] bg-white shadow-[0_3px_0_rgba(11,37,69,.08)]">
-        <Image src="/brand/rinoya-mark.png" alt="" width={38} height={38} />
+        <Image src="/brand/rinoya-mark-r.png" alt="" width={38} height={38} />
       </div>
       <div
         className="relative rounded-[18px] rounded-bl-md bg-white px-3.5 py-2.5 shadow-[0_3px_0_rgba(11,37,69,.08)]"
@@ -98,6 +113,7 @@ export function MascotBubble({ children }: { children: ReactNode }) {
 
 export function WorldCard({ f }: { f: Folder }) {
   const [l, m, d] = PLAY[f.c];
+  const tinta = tintaPada(f.c);
   const ready = f.items.filter((t) => !t.planned);
   // Academy punya portal sendiri (Hari ini, Pelajaran); folder Edukasi lama tidak dipakai lagi.
   const akademi = f.id === "edukasi";
@@ -105,18 +121,18 @@ export function WorldCard({ f }: { f: Folder }) {
   return (
     <Link
       href={akademi ? "/akademi" : `/beranda/${f.id}`}
-      className="relative flex min-h-[124px] flex-col justify-between overflow-hidden rounded-[22px] p-3.5 text-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.97] sm:min-h-[136px]"
-      style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)`, boxShadow: `0 5px 0 ${d}` }}
+      className="relative flex min-h-[124px] flex-col justify-between overflow-hidden rounded-[22px] p-3.5 transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.97] sm:min-h-[136px]"
+      style={{ color: tinta, background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)`, boxShadow: `0 5px 0 ${d}` }}
     >
       <div aria-hidden className="absolute -right-8 -bottom-10 size-28 rounded-full bg-white/18" />
       <span className="relative flex size-11 items-center justify-center rounded-[14px] bg-white" style={{ boxShadow: `0 3px 0 ${d}44` }}>
-        <span className="ms" style={{ fontSize: 26, color: m }}>
+        <span className="ms" style={{ fontSize: 26, color: d }}>
           {f.icon}
         </span>
       </span>
       <div className="relative">
-        <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{f.name}</div>
-        <div className="mt-0.5 text-[12px] font-extrabold text-white/85">{sub}</div>
+        <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1, textShadow: tinta === "#fff" ? "0 1px 0 rgba(0,0,0,.12)" : undefined }}>{f.name}</div>
+        <div className="mt-0.5 text-[12px] font-extrabold opacity-85">{sub}</div>
       </div>
     </Link>
   );

@@ -2,6 +2,7 @@
 
 // Halaman satu pelajaran: jalur belajar vertikal — jenjang → unit bernomor → kompetensi berurutan → tombol aktivitas.
 
+import { tintaKontras } from "@/lib/brand";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { levelIndex, type Competency, type ContentPack, type LevelId, type TrackId } from "@akademi/schema";
@@ -53,7 +54,7 @@ export function TrackView({ track }: { track: string }) {
       <div className="mx-auto flex w-full max-w-[720px] flex-col items-center gap-3 rounded-[22px] bg-white p-6 text-center shadow-[0_4px_0_rgba(11,37,69,.08)]">
         <Icon name="hourglass_top" size={40} style={{ color: "#5b6b85" }} />
         <p style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Pelajaran ini segera hadir</p>
-        <Link href="/akademi" className="rounded-full px-5 py-2.5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
+        <Link href="/akademi" className="rounded-full px-5 py-2.5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>
           Kembali
         </Link>
       </div>
@@ -141,7 +142,7 @@ function KartuUnit({ u, nomor, peng, selesai, warna, bahasa }: { u: UnitGrup; no
   return (
     <li className="flex flex-col gap-3 rounded-[24px] bg-white p-3.5 shadow-[0_4px_0_rgba(11,37,69,.08)] sm:p-4">
       <div className="flex items-center gap-3">
-        <span className="flex size-12 shrink-0 items-center justify-center rounded-full text-white" style={{ background: warna, fontFamily: BALOO, fontSize: 22, fontWeight: 800, boxShadow: "0 3px 0 rgba(11,37,69,.15)" }}>
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-full" style={{ color: tintaKontras(warna), background: warna, fontFamily: BALOO, fontSize: 22, fontWeight: 800, boxShadow: "0 3px 0 rgba(11,37,69,.15)" }}>
           {nomor}
         </span>
         <h3 className="min-w-0 flex-1 leading-tight" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>

@@ -120,7 +120,7 @@ export function InstallBanner() {
   if (!can || hidden) return null;
   return (
     <div className="flex items-center gap-3 rounded-[22px] bg-white p-2.5 pr-3 shadow-[0_4px_0_rgba(11,37,69,.06)]">
-      <Image src="/icons/icon-192.png" alt="" width={48} height={48} className="size-12 rounded-[14px]" />
+      <Image src="/icons/r-icon-192.png" alt="" width={48} height={48} className="size-12 rounded-[14px]" />
       <span className="min-w-0 flex-1">
         <span className="block" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK, lineHeight: 1.15 }}>
           Pasang RINOYA Academy di layar utama

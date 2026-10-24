@@ -122,7 +122,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
           <SertifikatKartu nama={me.name} level={level} kode={sert.code} issuedAt={sert.issuedAt} snapshot={sert.snapshot} pending={sert.pending} />
         </div>
         <div className="no-print flex flex-wrap justify-center gap-2">
-          <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
+          <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>
             <Icon name="print" size={22} /> Cetak / PDF
           </button>
           <button onClick={bagikan} className="inline-flex h-12 items-center gap-2 rounded-full border border-[#f0e4d2] bg-white px-6 transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>

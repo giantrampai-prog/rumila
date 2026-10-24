@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   description: "RINOYA Academy — Every Child. Every Discovery. Every Possibility. Petualangan belajar 3D, game, dan edukasi untuk anak.",
   icons: {
     icon: [
-      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/icons/r-icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/r-icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/icons/r-apple-touch-icon.png", sizes: "180x180" }],
   },
   // iOS: buka layar penuh seperti aplikasi saat dipasang dari "Tambah ke Layar Utama"
   appleWebApp: { capable: true, title: "RINOYA", statusBarStyle: "default" },

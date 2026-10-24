@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { tintaPada } from "@/lib/brand";
 import { ALL_TOOLS, CAT, FOLDERS, PLAY, canonicalToolId, getTool, matchesTool, type ColorKey, type Folder, type PermKey, type Tool } from "@/lib/catalog";
 import { greeting } from "@/lib/format";
 import { can, useMe, useRumila, useUI, type Member, type Theme } from "@/lib/store";
@@ -63,6 +64,7 @@ export function AppIcon({ t, size, theme }: { t: Tool; size: number; theme: Them
     );
   }
   const [l, m, d] = t.planned ? ['#c9c9d0', '#9999a3', '#73737e'] : PLAY[t.g];
+  const tinta = t.planned ? "#0b2545" : tintaPada(t.g);
   return (
     <div
       className="relative flex shrink-0 items-center justify-center overflow-hidden"
@@ -76,8 +78,12 @@ export function AppIcon({ t, size, theme }: { t: Tool; size: number; theme: Them
     >
       <div className="pointer-events-none absolute top-[5%] left-[8%] h-[45%] w-[84%] rounded-full bg-gradient-to-b from-white/55 to-white/0" />
       <span
-        className="ms relative text-white"
-        style={{ fontSize: Math.round(size * 0.56), filter: `drop-shadow(0 ${Math.max(2, Math.round(size * 0.03))}px 0 ${d})` }}
+        className="ms relative"
+        style={{
+          fontSize: Math.round(size * 0.56),
+          color: tinta,
+          filter: tinta === "#fff" ? `drop-shadow(0 ${Math.max(2, Math.round(size * 0.03))}px 0 ${d})` : undefined,
+        }}
       >
         {t.icon}
       </span>
@@ -128,10 +134,11 @@ export function MemberAvatar({ m, size, theme }: { m: Member; size: number; them
   return (
     <span
       aria-hidden
-      className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-full text-white"
+      className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
       style={{
         width: size,
         height: size,
+        color: tintaPada(m.c),
         background: `linear-gradient(155deg, ${l}, ${mm} 60%, ${d})`,
         fontFamily: BALOO,
         fontSize: Math.round(size * 0.46),
@@ -206,7 +213,7 @@ export function LauncherHeader() {
           className="flex size-[60px] shrink-0 items-center justify-center rounded-[18px] bg-white"
           style={{ boxShadow: play ? "0 4px 0 rgba(11,37,69,.1)" : "0 1px 2px rgba(31,48,68,.04), 0 8px 20px rgba(31,48,68,.06)" }}
         >
-          <Image src="/brand/rinoya-mark.png" alt="RINOYA Academy" width={46} height={46} priority />
+          <Image src="/brand/rinoya-mark-r.png" alt="RINOYA Academy" width={46} height={46} priority />
         </Link>
         <div className="flex flex-col">
           <h1
@@ -270,7 +277,7 @@ export function LauncherHeader() {
                           width: 40,
                           height: 40,
                           background: `linear-gradient(155deg, ${cp[0]}, ${cp[1]})`,
-                          color: "#fff",
+                          color: tintaPada(m.c),
                           fontFamily: BALOO,
                           fontSize: 20,
                           fontWeight: 800,
@@ -384,7 +391,7 @@ export function LauncherNav({ active }: { active: string | null }) {
           padding: "11px 18px",
           font: `800 16px ${NUNITO}`,
           background: on ? PLAY[c][1] : "#fff",
-          color: on ? "#fff" : PLAY[c][2],
+          color: on ? tintaPada(c) : PLAY[c][2],
           boxShadow: `0 4px 0 ${on ? PLAY[c][2] : "rgba(11,37,69,.1)"}`,
         }
       : {
@@ -691,7 +698,7 @@ function FolderCard({ f, theme }: { f: Folder; theme: Theme }) {
         <div
           style={
             play
-              ? { fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: "#fff", lineHeight: 1.05, textShadow: "0 2px 0 rgba(0,0,0,.12)" }
+              ? { fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: tintaPada(f.c), lineHeight: 1.05, textShadow: tintaPada(f.c) === "#fff" ? "0 2px 0 rgba(0,0,0,.12)" : undefined }
               : { fontSize: 18, fontWeight: 800, color: NV, lineHeight: 1.1, letterSpacing: "-.015em" }
           }
         >
@@ -776,9 +783,9 @@ export function LauncherFolder({ f, open }: { f: Folder; open: (t: Tool) => void
                         fontFamily: BALOO,
                         fontSize: 40,
                         fontWeight: 800,
-                        color: "#fff",
+                        color: tintaPada(f.c),
                         lineHeight: 1,
-                        textShadow: "0 3px 0 rgba(0,0,0,.12)",
+                        textShadow: tintaPada(f.c) === "#fff" ? "0 3px 0 rgba(0,0,0,.12)" : undefined,
                       }
                     : { fontSize: 32, fontWeight: 800, color: NV, lineHeight: 1.05, letterSpacing: "-.03em" }
                 }
@@ -787,7 +794,7 @@ export function LauncherFolder({ f, open }: { f: Folder; open: (t: Tool) => void
               </h2>
               <p
                 className="text-pretty"
-                style={play ? { fontFamily: NUNITO, fontSize: 17, fontWeight: 700, color: "#fff" } : { fontSize: 15, color: "#4F5B6B" }}
+                style={play ? { fontFamily: NUNITO, fontSize: 17, fontWeight: 700, color: tintaPada(f.c) } : { fontSize: 15, color: "#4F5B6B" }}
               >
                 {f.desc}
               </p>
@@ -920,7 +927,7 @@ export function AppModal({ toolId, onClose }: { toolId: string; onClose: () => v
                     padding: "14px 26px",
                     font: `900 17px ${NUNITO}`,
                     background: fc[1],
-                    color: "#fff",
+                    color: tintaPada(t.c),
                     boxShadow: `0 4px 0 ${fc[2]}`,
                   }
                 : { borderRadius: 14, padding: "13px 24px", font: `700 15px ${PJ}`, background: NV, color: "#fff" }

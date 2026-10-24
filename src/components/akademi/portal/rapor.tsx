@@ -2,6 +2,7 @@
 
 // Portal wali: Rapor per anak — layar penuh, gaya tenang (putih, ink #0b2545), bisa dicetak.
 
+import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -111,7 +112,7 @@ function TombolKembali({ ikon }: { ikon?: boolean }) {
       <Icon name="arrow_back" size={22} />
     </Link>
   ) : (
-    <Link href="/akademi" className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 3px 0 #0567c2" }}>
+    <Link href="/akademi" className="inline-flex h-11 items-center gap-1.5 rounded-full px-5 text-white" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>
       <Icon name="arrow_back" size={20} /> Kembali
     </Link>
   );
@@ -168,10 +169,11 @@ function RaporAnak({ anak }: { anak: Member }) {
         {TRACK_SLICE.map((t) => {
           const r = ringkasTrack(peng, KOMPETENSI, t, level);
           const [, m] = PLAY[TRACK_WARNA[t]];
+          const tinta = tintaPada(TRACK_WARNA[t]);
           return (
             <div key={t} className="rapor-card rounded-[24px] bg-white p-4 shadow-[0_4px_0_rgba(11,37,69,.06)]">
               <div className="flex items-center gap-2.5">
-                <span className="flex size-10 items-center justify-center rounded-[13px] text-white" style={{ background: m }}>
+                <span className="flex size-10 items-center justify-center rounded-[13px]" style={{ color: tinta, background: m }}>
                   <Icon name={TRACK_IKON[t]} size={22} />
                 </span>
                 <div className="min-w-0 flex-1">
