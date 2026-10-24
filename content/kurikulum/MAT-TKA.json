@@ -120,7 +120,7 @@
         "pilah",
         "dagang"
       ],
-      "catatan": "Lambang murni, kelanjutan kartu bertitik di PAUD. Kartu 6 dan 9 rawan tertukar; tampilkan garis bawah pada 6 dan 9. Knob: rentang 1–5 → 1–10, jumlah kartu pilihan 2 → 4."
+      "catatan": "Lambang murni, kelanjutan kartu bertitik di PAUD. Cara jawab: memilah kelompok benda ke rak berlabel angka 1–10 (bukan memilih dari 3–4 kartu). Kartu 6 dan 9 rawan tertukar; tampilkan garis bawah. Knob: rentang 1–5 → 1–10, rak 5 → 10."
     },
     {
       "id": "MAT.TKA.BILANGAN-1-10.04",
@@ -293,8 +293,8 @@
         },
         {
           "framework": "CAMBRIDGE_PRIMARY_MATHS",
-          "code": "1Gg.06",
-          "note": "pendahulu: bentuk 2D vs 3D"
+          "code": "2Gg.08",
+          "note": "pendahulu: mengenali bentuk 3D pada benda sehari-hari"
         }
       ],
       "core": true,
@@ -351,56 +351,22 @@
         }
       },
       "statement": {
-        "id": "Aku bisa mengukur panjang benda dengan jengkal Agam, sampai 10 jengkal",
-        "en": "I can measure how long something is in Agam's hand spans, up to 10 spans"
+        "id": "Aku bisa mengukur panjang benda dengan jengkal Agam, sampai 5 jengkal",
+        "en": "I can measure how long something is in Agam's hand spans, up to 5 spans"
       },
       "depth": [
         "pakai"
       ],
       "prereq": [
-        "MAT.TKA.BILANGAN-1-10.01"
+        "MAT.TKA.BILANGAN-1-10.01",
+        "MAT.PAUD.BANDING.03"
       ],
       "refs": [
         {
           "framework": "CAMBRIDGE_PRIMARY_MATHS",
-          "code": "1Gg.08",
-          "note": "pendahulu: alat ukur; di TK A satuan tak baku"
+          "code": "2Gg.03",
+          "note": "pendahulu (Stage 2): mengukur dengan satuan tak baku; di TK A ≤ 5 jengkal dengan bantuan"
         },
-        {
-          "framework": "CAMBRIDGE_PRIMARY_MATHS",
-          "code": "1Gg.02"
-        }
-      ],
-      "core": true,
-      "mechanics": [
-        "simulasi",
-        "bangun"
-      ],
-      "catatan": "Anak menaruh jengkal berturut-turut tanpa celah dan tanpa tumpang tindih, lalu menyebut jumlahnya. Celah/tumpang tindih terdeteksi sebagai salah ukur, bukan salah hitung. Knob: panjang benda 3 → 10 jengkal, bantuan garis bayang hilang."
-    },
-    {
-      "id": "MAT.TKA.UKUR-NONSTANDAR.02",
-      "track": "MAT",
-      "level": "TKA",
-      "unit": {
-        "id": "UKUR-NONSTANDAR",
-        "nama": {
-          "id": "Mengukur dengan jengkal dan langkah",
-          "en": "Measuring with hands and steps"
-        }
-      },
-      "statement": {
-        "id": "Aku bisa memilih benda yang lebih panjang dengan membandingkan jumlah jengkalnya",
-        "en": "I can choose the longer object by comparing how many hand spans each one is"
-      },
-      "depth": [
-        "pakai"
-      ],
-      "prereq": [
-        "MAT.TKA.UKUR-NONSTANDAR.01",
-        "MAT.TKA.BANDING.01"
-      ],
-      "refs": [
         {
           "framework": "CAMBRIDGE_PRIMARY_MATHS",
           "code": "1Gg.02"
@@ -409,9 +375,9 @@
       "core": false,
       "mechanics": [
         "simulasi",
-        "pilah"
+        "bangun"
       ],
-      "catatan": "Dua benda tidak sejajar (satu tegak, satu miring) sehingga tidak bisa dibandingkan langsung; jembatan ke pengukuran. Pengaya."
+      "catatan": "Pengaya TK A; versi 10 jengkal tanpa bantuan jadi inti di TK B. Jengkal menempel otomatis (snap) ke ujung jengkal sebelumnya, jadi anak hanya mengulang dan menghitung. Bukti: jumlah jengkal yang disebut sama dengan yang terpasang. Knob: panjang 2 → 5 jengkal; lanjutan 'pilih benda yang lebih panjang dari jumlah jengkalnya' hanya sebagai knob akhir, bukan kompetensi sendiri."
     },
     {
       "id": "MAT.TKA.UANG-KENAL.01",
@@ -459,7 +425,7 @@
       },
       "statement": {
         "id": "Aku bisa membayar barang dengan koin seribuan sebanyak harganya, sampai 5 koin",
-        "en": "I can pay for an item with one-thousand coins matching its price, up to 5 coins"
+        "en": "I can pay for an item with Rp1,000 coins matching its price, up to 5 coins"
       },
       "depth": [
         "pakai"
@@ -483,7 +449,7 @@
       "mechanics": [
         "dagang"
       ],
-      "catatan": "Harga tertulis sebagai '3 koin' dengan gambar, belum 'Rp3.000'. Bukti: jumlah koin di nampan sama dengan harga. Jebakan: anak menaruh semua koin. Knob: harga 1 → 5 koin, koin di laci lebih banyak dari harga."
+      "catatan": "Harga tertulis sebagai '3 koin' dengan gambar, belum 'Rp3.000'. Bukti: jumlah koin di nampan sama dengan harga. Jebakan: anak menaruh semua koin. Knob: harga 1 → 5 koin, koin di laci lebih banyak dari harga. Beda dengan BILANGAN-1-10.02: di sini jumlah yang diminta tidak disebut, tetapi dibaca dari label harga bergambar koin; jembatan dari jumlah ke nilai uang."
     }
   ]
 }

@@ -64,3 +64,11 @@ Kolom skor: total /16, lalu kriteria yang tidak mendapat 2 (K1 Teramati★, K2 S
 3. **Rp1.000 koin saja** (keputusan di UANG-KENAL.01) perlu ditetapkan proyek-wide; MAT-TKB.UANG-10RB.01 `en` menyebut "1,000 … notes".
 4. **Kamus**: untuk benda nyata berbentuk ruang, `2Gg.08` ("Identify 2D and 3D shapes in familiar objects", Stage 2) lebih cocok daripada `1Gg.06` di BENTUK-RUANG.01. Mohon ditegaskan bahwa kode Stage 2 boleh dipakai sebagai "pendahulu" dengan note (sudah lazim di berkas ini untuk Stage 1).
 5. **Mekanik `ucap` dan konvensi "bukan kuis"**: beberapa catatan di TK A/TK B menulis "memilih kartu" sebagai cara anak menjawab. Mohon ditetapkan di skill penulis kurikulum: jawaban berupa bilangan ditangkap lewat `ucap`, produksi jumlah (ambil N benda), atau pilah ke rak berlabel — bukan 3–4 kartu pilihan.
+
+## Tindak lanjut penulis — 24 Okt 2026
+
+Diterapkan:
+- UKUR-NONSTANDAR.01 → pengaya TK A ≤ 5 jengkal dengan snap; prereq + MAT.PAUD.BANDING.03; ref 2Gg.03 (pendahulu Stage 2). Versi 10 jengkal jadi inti TK B (MAT.TKB.UKUR-NONSTANDAR.01).
+- UKUR-NONSTANDAR.02 → dihapus; dilebur sebagai knob akhir .01.
+- UANG-KENAL.02 → `en` "Rp1,000 coins"; beda dengan BILANGAN-1-10.02 ditulis.
+- BILANGAN-1-10.03 → cara jawab: pilah ke rak berlabel. BENTUK-RUANG.01 → ref 1Gg.06 diganti 2Gg.08.

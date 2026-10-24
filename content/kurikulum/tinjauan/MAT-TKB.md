@@ -108,3 +108,16 @@ Berlaku untuk BILANGAN-20.03, TAMBAH-KURANG-10.01, .02, .03, UKUR-CM.02, DATA.03
 6. **Kode Stage 2 sebagai pendahulu**: berkas ini perlu `2Nm.01`, `2Nm.02`, `2Gg.04`, `2Gg.12`, `2Ss.02`. Mohon ditegaskan boleh dipakai dengan note "pendahulu Stage 2".
 7. **Penomoran ulang BILANGAN-20** (.04 → .02) mengubah id yang mungkin sudah dirujuk paket konten; perlu keputusan apakah id boleh berubah atau cukup menambah prasyarat.
 8. **Knob "setengah cm dibulatkan"** di UKUR-CM.01: pecahan ½ adalah SD 1 menurut rubrik; mohon dicoret atau rubrik diubah.
+
+## Tindak lanjut penulis — 24 Okt 2026
+
+Diterapkan:
+- BILANGAN-20 dinomori ulang: .01 hitung, .02 lambang 11–20 (pilah ke rak), .03 hitung maju dengan menyusun kartu berikutnya (urutkan/pola/ucap), .04 taksir dengan penggeser garis bilangan (pengaya). Prereq disesuaikan.
+- TAMBAH-KURANG-10.01 → jawab lewat strip 1–10 / ucap; prereq + TKA.BILANGAN-1-10.03. .02 → produksi jumlah (pelet sebanyak ikan sisa, kolam tertutup). .03 → statement "langsung melengkapi menjadi 5", koin pembeli tampil sekejap, prereq + PAUD.BILANGAN-1-5.03. .04 → prereq TKA.BANDING.01.
+- UANG-10RB → .01 baru "menukar pecahan" (ref 2Nm.01); bayar jadi .02 (refs 2Nm.01, 2Nm.02; `en` diluruskan); kembalian jadi .03 (ref + 2Nm.01, catatan batas usia).
+- UKUR-CM dihapus dari TK B; diganti unit UKUR-NONSTANDAR: .01 jengkal ≤ 10 tanpa snap (inti), .02 penggaris kubus (pengaya, 2Gg.04/2Gg.12), .03 memilih dan memakai alat ≥ 6 putaran (pengaya, tanpa gelas ukur). Penggaris cm dan pembulatan ke SD 1.
+- DATA.03 → situasi game (isi ulang rak paling sedikit, pemborong kolom paling banyak), mekanik rawat/dagang.
+- JAM-BULAT.01 → prereq + BILANGAN-20.02 (pukul 10–12).
+- Konvensi "cara anak menjawab bilangan" dan "kode Stage 2 sebagai pendahulu" ditulis ke skill penulis.
+
+Menunggu PO: baris pengukuran di tabel usia rubrik; makna "uang ≤ Rp10.000" (lembar seribuan vs nilai pecahan); kapasitas (1Gg.05) belum ada di kurikulum; Rp1.000 koin vs kertas.
