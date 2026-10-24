@@ -1,8 +1,12 @@
 # Kids Academy — Kurikulum per Jenjang
 
-Status: draf, 24 Okt 2026. Sembilan level mengikuti jenjang sekolah Indonesia, delapan mata pelajaran. Tiap butir adalah **topik** (unit) berisi 2–4 kompetensi "Aku bisa …" yang dibuktikan lewat game, bukan soal.
+Status: draf, 24 Okt 2026; Coding, Matematika, dan Sains SD 1–6 diselaraskan dengan urutan Cambridge Primary Stage 1–6 pada 25 Okt 2026. Sembilan level mengikuti jenjang sekolah Indonesia, delapan mata pelajaran. Tiap butir adalah **topik** (unit) berisi 2–4 kompetensi "Aku bisa …" yang dibuktikan lewat game, bukan soal.
 
-Fokus produk: **PAUD sampai SD 6**. SMP dan SMA dicadangkan sebagai jenjang lanjutan (ID level `SMP1..SMP3`, `SMA1..SMA3`) tetapi belum disusun.
+Lingkup produk: **PAUD sampai SD 6**. SMP dan SMA dihapus dari skema (keputusan PO 25 Okt 2026).
+
+Nama jenjang tampil memakai istilah resmi Cambridge: Early Years 1–3 dan Primary Stage 1–6. Cambridge menyatakan EY3 dan Primary Stage 1 setara (keduanya jalan menuju Stage 2); kita memetakan SD 1–6 = Stage 1–6 sehingga Checkpoint jatuh di akhir SD 6, dan SD 1 berperan sebagai pemantapan setelah TK B. Cambridge hanya disebut sebagai acuan (lihat `docs/brand/README.md`).
+
+Untuk Coding, Matematika, dan Sains SD, sumber kebenaran adalah berkas `content/kurikulum/*.json`; dokumen ini merangkumnya. Topik versi lama yang tidak ada di Stage Cambridge yang sama (misalnya siklus air & tata surya di SD 1, desimal & persen di SD 3, suhu-kalor, energi terbarukan, mesin sederhana, sel, galaksi) dipindah ke jenjang Cambridge-nya atau dikeluarkan.
 
 Anak naik level **per mata pelajaran** berdasar penguasaan. Usia hanya perkiraan.
 
@@ -11,7 +15,7 @@ Anak naik level **per mata pelajaran** berdasar penguasaan. Usia hanya perkiraan
 | PAUD | PAUD | 3–4 | Cambridge Early Years 1, EYFS |
 | TK A | TKA | 4–5 | Cambridge Early Years 2 |
 | TK B | TKB | 5–6 | Cambridge Early Years 3, Pre-A1 Starters |
-| SD 1 | SD1 | 6–7 | Cambridge Primary Stage 1, Pre-A1 Starters |
+| SD 1 | SD1 | 6–7 | Cambridge Primary Stage 1 (setara EY3), Pre-A1 Starters |
 | SD 2 | SD2 | 7–8 | Cambridge Primary Stage 2, A1 Movers |
 | SD 3 | SD3 | 8–9 | Cambridge Primary Stage 3, A1 Movers |
 | SD 4 | SD4 | 9–10 | Cambridge Primary Stage 4, A2 Flyers |
@@ -191,29 +195,40 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 
 ## SD 1 (6–7 tahun)
 
+Acuan: Cambridge Primary Stage 1. Daftar di bawah = unit yang sudah ada di `content/kurikulum/<TRACK>-SD1.json`.
+
 **Coding**
-- Fungsi / jurus: buat sekali, panggil berulang
-- Perulangan bersarang
-- Variabel sederhana: skor, nyawa
-- Event: ketika disentuh, ketika bertabrakan
-- Animasi sederhana dengan blok
+- Algoritma
+- Pola perintah
+- Perulangan
+- Kondisi
+- Menelusuri program
+- Debugging
+- Data
+- Perangkat komputer
+- _Belum tercakup:_ fungsi/jurus, variabel, event, animasi (butuh mekanik baru); perulangan bersarang (mesin siap, rak belum)
 
 **Matematika**
-- Bilangan sampai 100 dan nilai tempat
-- Tambah dan kurang sampai 100
-- Perkalian sebagai larik (baris × kolom)
-- Pecahan 1/2 dan 1/4
-- Jam setengah dan seperempat
-- Berat (kg) dan volume (liter)
-- Grafik batang
+- Bilangan sampai 100
+- Tambah dan kurang sampai 20
+- Setengah
+- Bangun datar dan ruang
+- Berat dan isi
+- Jam dan kalender
+- Diagram Carroll
+- Pola benda
+- _Belum tercakup:_ membagi bangun jadi dua bagian sama (1Nf.01)
 
 **Sains**
-- Siklus air
-- Rantai makanan
-- Planet-planet tata surya
-- Gaya dorong dan tarik
-- Suara dan cahaya
-- Pencernaan dan pernapasan
+- Makhluk hidup dan kebutuhannya
+- Bahan dan sifatnya
+- Gaya dan gerak
+- Bunyi
+- Benda yang memakai listrik
+- Bumi: air dan daratan
+- Matahari: panas dan cahaya
+- Mengamati dan mengukur
+- _Belum tercakup:_ manusia mirip dan berbeda (1Bp.04, keputusan PO); mendengar dari berbagai jarak masih lewat ingatan
 
 **Bahasa Indonesia**
 - Membaca lancar satu paragraf
@@ -254,28 +269,46 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 
 ## SD 2 (7–8 tahun)
 
+Acuan: Cambridge Primary Stage 2. Daftar di bawah = unit yang sudah ada di `content/kurikulum/<TRACK>-SD2.json`.
+
 **Coding**
-- Koordinat (x, y)
-- Pencarian dan pengurutan sederhana
-- Pseudocode: tulis langkah sebelum coding
-- Debugging banyak bug sekaligus
-- Proyek: game mini sendiri
+- Program tepat
+- Program efisien
+- Perulangan
+- Kondisi
+- Debugging
+- Algoritma
+- Pola perintah
+- Data
+- Perangkat komputer
+- Dekomposisi
+- _Belum tercakup:_ koordinat, pencarian/pengurutan, menulis pseudocode sendiri
 
 **Matematika**
-- Bilangan sampai 1.000
-- Perkalian dan pembagian 1–10
-- Pecahan setara
-- Keliling bangun datar
-- Sudut siku, lancip, tumpul
-- Jam sampai menit
-- Uang dan anggaran sederhana
+- Bilangan sampai 100
+- Tambah dan kurang sampai 100
+- Perkalian dan pembagian
+- Setengah dan seperempat
+- Uang sampai Rp100.000
+- Waktu
+- Bangun, simetri, dan putaran
+- Mengukur panjang
+- Diagram Carroll
+- _Belum tercakup:_ jam analog per 5 menit (baru lewat kartu), peluang (2Sp)
 
 **Sains**
-- Ekosistem dan adaptasi
-- Lapisan Bumi dan jenis batuan
-- Listrik sederhana: baterai, lampu, saklar
-- Padat, cair, gas
-- Peredaran darah
+- Ciri tubuh hewan
+- Hewan tumbuh besar
+- Habitat
+- Bahan: asal, kegunaan, perubahan
+- Gaya mengubah gerak dan bentuk
+- Sumber cahaya
+- Aman dengan listrik
+- Membandingkan batuan
+- Manusia dan lingkungan
+- Gerak semu Matahari
+- Mencatat dan mencari pola
+- _Belum tercakup:_ gigi, pola makan & kebersihan, sakit (2Bs.02, 2Bp.01–02, keputusan PO); rangkaian listrik (2Pe.02–03, butuh mekanik bangun); keturunan (2Bp.04)
 
 **Bahasa Indonesia**
 - Teks informasi: fakta vs pendapat
@@ -312,27 +345,46 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 
 ## SD 3 (8–9 tahun)
 
+Acuan: Cambridge Primary Stage 3. Daftar di bawah = unit yang sudah ada di `content/kurikulum/<TRACK>-SD3.json`.
+
 **Coding**
-- Kode teks pertama (Python atau JavaScript)
-- Fungsi dengan parameter
-- List dan perulangan atas list
-- Proyek: aplikasi sederhana
-- Berpikir komputasional: pola, abstraksi, algoritma
+- Algoritma
+- Kondisi
+- Debugging
+- Menelusuri program
+- Program efisien
+- Data
+- Jaringan & internet
+- Perangkat komputer
+- Pola perintah
+- _Belum tercakup:_ kode teks, fungsi berparameter, list, proyek aplikasi
 
 **Matematika**
-- Bilangan besar dan desimal
-- Perkalian multi-digit
-- Pecahan dan persen
-- Luas bangun datar
-- Rata-rata dan membaca diagram
-- Soal cerita multi-langkah
+- Bilangan sampai 1.000
+- Tambah dan kurang sampai 1.000
+- Perkalian dan pembagian
+- Pecahan
+- Uang dan kembalian
+- Jadwal
+- Bangun, sudut, dan simetri
+- Satuan ukur, luas, dan keliling
+- Diagram Carroll
+- _Belum tercakup:_ peluang (3Sp), selang waktu (3Gt.04), kapasitas dengan alat ukur (3Gg.11)
 
 **Sains**
-- Energi dan perubahannya
-- Cuaca dan iklim
-- Pewarisan sifat sederhana
-- Metode ilmiah: hipotesis, uji, simpulkan
-- Saraf dan otak
+- Tumbuhan: fungsi bagian dan kebutuhannya
+- Kelompok dan siklus hidup hewan
+- Hidup, pernah hidup, tidak pernah hidup
+- Rantai makanan
+- Padat, cair, gas
+- Campuran
+- Gaya gesek
+- Cahaya dan bayangan
+- Bahan magnetis
+- Bentuk Bulan berubah
+- Fosil
+- Penyelidikan ilmiah
+- _Belum tercakup:_ organ tubuh (3Bs.03, keputusan PO); kutub magnet (3Pe.01–02); gerak Bumi–Bulan (3ESs.02); senter & magnet masih lewat ingatan sampai ada mode simulasi
 
 **Bahasa Indonesia**
 - Esai pendek dan opini
@@ -369,29 +421,43 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 
 ## SD 4 (9–10 tahun)
 
+Acuan: Cambridge Primary Stage 4. Daftar di bawah = unit yang sudah ada di `content/kurikulum/<TRACK>-SD4.json`.
+
 **Coding**
-- Python dasar: variabel, input, output
-- Percabangan if / else dan perulangan for / while
-- Proyek: kuis dan kalkulator teks
-- Pencarian dan pengurutan dengan kode
-- Membaca pesan error dan memperbaikinya
+- Perulangan terhitung
+- Mencari dan memperbaiki bug
+- Variabel
+- Masukan, proses, keluaran
+- Perangkat komputer
+- Pencarian
+- Jaringan dan internet
+- Aman di dunia digital
+- _Belum tercakup:_ menulis Python (baru membaca & menelusuri), perulangan bersarang
 
 **Matematika**
-- Bilangan sampai 100.000 dan pembulatan
-- Pecahan campuran dan desimal satu angka
-- Perkalian dan pembagian dua digit
-- Luas persegi panjang dan segitiga
-- Mengukur sudut dengan busur derajat
-- Koordinat kuadran pertama
-- Diagram garis
+- Bilangan sampai 100.000
+- Bilangan negatif
+- Tambah dan kurang
+- Perkalian dan pembagian
+- Pola bilangan
+- Pecahan
+- Waktu
+- Geometri dan pengukuran
+- Posisi dan arah
+- Data
+- Peluang
+- _Belum tercakup:_ busur derajat, grafik, jaring-jaring (butuh mekanik gambar petak/grafik)
 
 **Sains**
-- Rangkaian listrik seri dan paralel
-- Suhu dan kalor
-- Bagian bunga dan penyerbukan
-- Kerangka dan sendi
-- Batuan, tanah, dan pelapukan
-- Planet dan gravitasi
+- Kerangka dan otot
+- Hewan bertulang belakang
+- Rantai makanan
+- Padat, cair, dan perubahan wujud
+- Rangkaian listrik
+- Cahaya dan cara kita melihat
+- Bumi dan tata surya
+- Penyelidikan ilmiah
+- _Belum tercakup:_ obat dan vaksin (4Bp.01–02, keputusan PO); energi; gunung api & gempa
 
 **Bahasa Indonesia**
 - Meringkas teks
@@ -430,29 +496,45 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 
 ## SD 5 (10–11 tahun)
 
+Acuan: Cambridge Primary Stage 5. Daftar di bawah = unit yang sudah ada di `content/kurikulum/<TRACK>-SD5.json`.
+
 **Coding**
-- Fungsi dan modul
-- List dan dictionary
-- Proyek: game teks atau pygame sederhana
-- Web dasar: HTML dan CSS
-- Data: membaca CSV dan membuat grafik
+- Percabangan (kalau)
+- Mencari dan memperbaiki bug
+- Kalau di dalam perulangan
+- Daftar (list)
+- Jenis data
+- Pengurutan
+- Internet dan perangkat terhubung
+- Aman di dunia digital
+- _Belum tercakup:_ dekomposisi dengan bendera (bisa ditambah setelah perbaikan mesin PR #32)
 
 **Matematika**
-- Operasi pecahan lengkap
-- Desimal dan persen
-- KPK dan FPB
-- Volume balok dan kubus
-- Skala peta
-- Rata-rata, median, modus
-- Kecepatan, jarak, waktu
+- Desimal
+- Uang
+- Bilangan bulat
+- Operasi hitung
+- Faktor dan kelipatan
+- Pecahan, desimal, persen
+- Waktu
+- Geometri dan pengukuran
+- Data
+- Peluang
+- _Belum tercakup:_ koordinat kuadran I, grafik garis, transformasi (butuh mekanik gambar)
 
 **Sains**
-- Pernapasan dan peredaran darah mendalam
-- Fotosintesis
-- Gaya gesek dan gravitasi
-- Cahaya: pemantulan dan pembiasan
-- Campuran dan larutan
-- Siklus batuan
+- Bagian bunga
+- Siklus hidup tumbuhan berbunga
+- Sistem pencernaan
+- Adaptasi makhluk hidup
+- Melarutkan dan memisahkan campuran
+- Siklus air
+- Macam-macam gaya
+- Bunyi: tinggi rendah dan keras pelan
+- Magnet dan bahan magnetik
+- Orbit Bumi dan satelit
+- Merancang uji adil
+- _Belum tercakup:_ polusi (calon kompetensi berikutnya); musim (kurang relevan untuk Indonesia); diagram gaya bergambar panah
 
 **Bahasa Indonesia**
 - Teks argumentasi
@@ -491,28 +573,51 @@ Pangkat (lapisan seru untuk anak, opsional): Tunas, Kadet, Navigator, Pilot, Kap
 
 ## SD 6 (11–12 tahun)
 
+Acuan: Cambridge Primary Stage 6. Daftar di bawah = unit yang sudah ada di `content/kurikulum/<TRACK>-SD6.json`.
+
 **Coding**
-- Proyek akhir: aplikasi atau game utuh
-- Memakai API sederhana
-- Dasar AI: data latih dan prediksi
-- Keamanan digital dan kata sandi
-- Kolaborasi kode dengan git sederhana
+- Fungsi dan prosedur
+- Diagram alir
+- Syarat gabungan
+- Mencari dan memperbaiki bug
+- Dasar kecerdasan buatan
+- Kata sandi
+- Robot di industri
+- Meminta data lewat API
+- Kolaborasi kode
+- Pencarian bagi dua
+- _Belum tercakup:_ menulis kode dan proyek akhir (belum ada mekanik ketik/blok prosedur)
 
 **Matematika**
-- Bilangan bulat negatif
-- Aljabar awal: variabel dan persamaan sederhana
-- Perbandingan dan rasio
-- Luas lingkaran dan volume tabung
-- Peluang sederhana
-- Soal cerita tingkat olimpiade dasar
+- Bilangan bulat
+- Desimal dan pembulatan
+- Operasi hitung
+- Faktor dan kelipatan
+- Pecahan, desimal, persen
+- Rasio dan proporsi
+- Aljabar awal
+- Pola dan barisan
+- Geometri dan pengukuran
+- Koordinat
+- Data
+- Peluang
+- _Belum tercakup:_ simetri putar, luas segitiga, jaring-jaring, transformasi; luas lingkaran, volume tabung, kecepatan di luar Stage 6
 
 **Sains**
-- Ekosistem dan perubahan iklim
-- Tata surya dan galaksi
-- Sel dan mikroskop
-- Energi terbarukan
-- Mesin sederhana: tuas, katrol, bidang miring
-- Pubertas dan perubahan tubuh (sesuai usia)
+- Sistem pernapasan
+- Sistem peredaran darah
+- Penyakit menular dan kebersihan
+- Jaring makanan dan aliran energi
+- Perubahan fisika dan reaksi kimia
+- Massa dan berat
+- Massa, bentuk, dan mengapung
+- Pemantulan dan pembiasan
+- Rangkaian seri dan paralel
+- Batuan, fosil, dan siklus batuan
+- Jenis tanah
+- Bulan dan tata surya
+- Menilai hasil penyelidikan
+- _Belum tercakup:_ sistem reproduksi & pubertas (6Bs.03, 6Bp.01, keputusan PO); pertahanan tubuh
 
 **Bahasa Indonesia**
 - Makalah kecil
