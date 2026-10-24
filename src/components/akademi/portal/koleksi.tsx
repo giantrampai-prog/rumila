@@ -19,10 +19,10 @@ import { IkonMekanik, INK, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, la
 import { unitUntuk } from "./track";
 
 const KUNCI_KOLEKSI = (memberId: string) => `rumila-akademi-koleksi-${memberId}`;
-const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(43,29,78,.08)]";
+const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
 
 const LENCANA_WARNA: Record<StatusLencana, { bg: string; tepi: string; fg: string; label: string }> = {
-  terkunci: { bg: "#efeaf5", tepi: "#ddd5e8", fg: "#b3a6c4", label: "Terkunci" },
+  terkunci: { bg: "#fff0da", tepi: "#f0e4d2", fg: "#b3a6c4", label: "Terkunci" },
   perunggu: { bg: "#cd7f32", tepi: "#a9652a", fg: "#fff", label: "Perunggu" },
   perak: { bg: "#b8c0cc", tepi: "#8f99a8", fg: "#fff", label: "Perak" },
   emas: { bg: "#f2b705", tepi: "#c99200", fg: "#fff", label: "Emas" },
@@ -106,7 +106,7 @@ export function Koleksi({ me, level }: { me: Member; level: LevelId }) {
 function Judul({ ikon, teks, sub }: { ikon: string; teks: string; sub?: string }) {
   return (
     <div className="flex items-center gap-2">
-      <Icon name={ikon} size={24} style={{ color: "#5b4bff" }} />
+      <Icon name={ikon} size={24} style={{ color: "#0567c2" }} />
       <h2 className="leading-none" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK }}>
         {teks}
       </h2>
@@ -122,7 +122,7 @@ function Konfeti() {
         left: `${4 + ((i * 53) % 92)}%`,
         top: `${6 + ((i * 29) % 40)}%`,
         delay: `${(i % 6) * 70}ms`,
-        warna: ["#ffbe0b", "#ff7a1a", "#1fbf62", "#5b4bff", "#ff5fa2", "#2bc4ff"][i % 6],
+        warna: ["#ffbe0b", "#fd861d", "#1fbf62", "#0786eb", "#ff5fa2", "#2bc4ff"][i % 6],
         putar: `${(i * 37) % 360}deg`,
         bulat: i % 3 === 0,
       })),
@@ -143,11 +143,11 @@ function Konfeti() {
             background: k.warna,
             transform: `rotate(${k.putar})`,
             animationDelay: k.delay,
-            boxShadow: "0 2px 0 rgba(43,29,78,.12)",
+            boxShadow: "0 2px 0 rgba(11,37,69,.12)",
           }}
         />
       ))}
-      <span className="akademi-pop absolute left-1/2 top-[18%] -translate-x-1/2 rounded-full bg-white px-5 py-2.5" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK, boxShadow: "0 4px 0 rgba(43,29,78,.12)" }}>
+      <span className="akademi-pop absolute left-1/2 top-[18%] -translate-x-1/2 rounded-full bg-white px-5 py-2.5" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK, boxShadow: "0 4px 0 rgba(11,37,69,.12)" }}>
         🎉 Stiker baru!
       </span>
     </div>
@@ -165,8 +165,8 @@ function AjakanStiker() {
       </p>
       <Link
         href="/akademi"
-        className="flex h-14 min-w-[200px] items-center justify-center gap-1.5 rounded-[18px] px-6 text-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.96]"
-        style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 4px 0 #c85400" }}
+        className="flex h-14 min-w-[200px] items-center justify-center gap-1.5 rounded-[18px] px-6 text-[#0b2545] transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.96]"
+        style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 4px 0 #c85400" }}
       >
         <Icon name="play_arrow" size={26} /> Ke misi
       </Link>
@@ -179,13 +179,13 @@ function KartuStiker({ s, baru }: { s: Stiker; baru: boolean }) {
   if (!p) return null;
   return (
     <li className={baru ? "akademi-pop" : ""}>
-      <Link href={`/akademi/main/${p.id}`} className={`${KARTU} flex min-h-[132px] flex-col items-center gap-1.5 px-2 pt-3 pb-2.5 transition-transform active:scale-95`} style={baru ? { boxShadow: "0 4px 0 rgba(43,29,78,.08), 0 0 0 3px #ffe46b" } : undefined}>
+      <Link href={`/akademi/main/${p.id}`} className={`${KARTU} flex min-h-[132px] flex-col items-center gap-1.5 px-2 pt-3 pb-2.5 transition-transform active:scale-95`} style={baru ? { boxShadow: "0 4px 0 rgba(11,37,69,.08), 0 0 0 3px #ffe46b" } : undefined}>
         <span className="relative">
           <span className="flex size-[72px] items-center justify-center rounded-full" style={{ background: "linear-gradient(155deg,#ffe46b,#ffbe0b 65%)", boxShadow: "0 3px 0 #d99400" }}>
             <IkonMekanik mekanik={p.mechanic} size={56} />
           </span>
           {s.kali > 1 && (
-            <span aria-label={`${s.kali} kali`} className="absolute -right-1.5 -bottom-1 flex h-7 min-w-7 items-center justify-center rounded-full bg-[#5b4bff] px-1.5 text-white" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 900, boxShadow: "0 2px 0 #3a2cd1" }}>
+            <span aria-label={`${s.kali} kali`} className="absolute -right-1.5 -bottom-1 flex h-7 min-w-7 items-center justify-center rounded-full bg-[#0786eb] px-1.5 text-white" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 900, boxShadow: "0 2px 0 #0567c2" }}>
               ×{s.kali}
             </span>
           )}
@@ -261,7 +261,7 @@ function KoinLencana({ track, nama, status }: { track: TrackId; nama: string; st
 
 function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) {
   const meta = levelMeta(p.level);
-  const [l, m, d] = PLAY[p.tercapai ? "gold" : "indigo"];
+  const [l, m, d] = PLAY[p.tercapai ? "gold" : "blue"];
   return (
     <article
       className={`${KARTU} relative flex items-center gap-3 overflow-hidden p-3.5 ${p.tercapai ? "akademi-pop" : ""}`}
@@ -281,11 +281,11 @@ function KartuPangkat({ p, jenjangAnak }: { p: Pangkat; jenjangAnak: boolean }) 
           {p.tercapai ? (
             <span className="rounded-full bg-[#fff4d1] px-2.5 py-0.5 text-[11px] font-black text-[#b07a00]">Tercapai</span>
           ) : p.progres > 0 ? (
-            <span className="rounded-full bg-[#ecebff] px-2.5 py-0.5 text-[11px] font-black text-[#5b4bff]">Sedang dikejar</span>
+            <span className="rounded-full bg-[#e3f1fd] px-2.5 py-0.5 text-[11px] font-black text-[#0567c2]">Sedang dikejar</span>
           ) : null}
         </div>
         {p.tercapai && (
-          <Link href={`/akademi/sertifikat/${p.level}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 3px 0 #c85400" }}>
+          <Link href={`/akademi/sertifikat/${p.level}`} className="mt-2 inline-flex h-9 items-center gap-1.5 rounded-full px-4 text-[#0b2545] transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800, background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
             Lihat sertifikat 🎓
           </Link>
         )}
@@ -304,7 +304,7 @@ function CincinPangkat({ progres, tercapai, warna, size = 64 }: { progres: numbe
   const isi = Math.max(0, Math.min(1, progres)) * keliling;
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden className="relative shrink-0">
-      <circle cx={c} cy={c} r={r} fill="none" stroke="#efeaf5" strokeWidth={tebal} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke="#fff0da" strokeWidth={tebal} />
       {isi > 0 && <circle cx={c} cy={c} r={r} fill="none" stroke={tercapai ? "#f2b705" : m} strokeWidth={tebal} strokeDasharray={`${isi} ${keliling}`} transform={`rotate(-90 ${c} ${c})`} strokeLinecap="round" />}
       <text x={c} y={c + 1} textAnchor="middle" dominantBaseline="central" fontSize={size * 0.42} fill={tercapai ? d : "#c9bfd8"} fontFamily="Material Symbols Rounded">
         {tercapai ? "star" : "military_tech"}

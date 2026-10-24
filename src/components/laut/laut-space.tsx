@@ -37,7 +37,7 @@ function ChapterMap({ engine, close }: {engine: LautEngine; close: () => void}) 
   const dialog = useRef<HTMLDialogElement>(null);
   const stop = useLaut(s=>s.stop);
   useEffect(()=>{ dialog.current?.showModal(); },[]);
-  return <dialog ref={dialog} onClose={close} className="pointer-events-auto m-auto max-h-[88dvh] w-[min(92vw,660px)] overflow-hidden rounded-[28px] bg-[#f9fcfd] p-0 text-[#2b1d4e] shadow-2xl backdrop:bg-[#031322]/80 backdrop:backdrop-blur-sm">
+  return <dialog ref={dialog} onClose={close} className="pointer-events-auto m-auto max-h-[88dvh] w-[min(92vw,660px)] overflow-hidden rounded-[28px] bg-[#f9fcfd] p-0 text-[#0b2545] shadow-2xl backdrop:bg-[#031322]/80 backdrop:backdrop-blur-sm">
     <div className="flex items-center justify-between border-b border-slate-100 p-5">
       <div><div className="text-xs font-extrabold uppercase tracking-widest text-teal-600">Peta ekspedisi</div><h2 className="text-2xl font-extrabold" style={{fontFamily:BALOO}}>Ke mana kita menjelajah?</h2></div>
       <button autoFocus onClick={()=>dialog.current?.close()} aria-label="Tutup peta" className="rounded-full bg-slate-100 p-3"><Icon name="close" size={22}/></button>
@@ -99,7 +99,7 @@ function TourOverlay({engine}:{engine:LautEngine}) {
       </div>
     </div>
     {map&&<ChapterMap engine={engine} close={()=>{setMap(false);if(resume.current)engine.setPlaying(true);}}/>}
-    {finished&&<div className="pointer-events-auto absolute inset-0 flex items-center justify-center bg-[#021626]/75 p-4 backdrop-blur-sm"><div className="max-w-md rounded-[30px] bg-white p-7 text-center text-[#2b1d4e] shadow-xl"><div className="text-5xl">🌊</div><h2 className="my-3 text-3xl font-extrabold" style={{fontFamily:BALOO}}>Penjelajah laut hebat!</h2><p className="mb-5 text-sm leading-relaxed text-slate-500">Dari karang hingga palung, setiap kedalaman punya cerita. Mana yang ingin kamu kunjungi lagi?</p><div className="flex justify-center gap-4"><RoundBtn icon="replay" label="Ulangi" tone="orange" onClick={()=>{engine.go(0);engine.setPlaying(true);}}/><RoundBtn icon="check" label="Jelajah bebas" tone="purple" onClick={()=>engine.setMode('jelajah')}/></div></div></div>}
+    {finished&&<div className="pointer-events-auto absolute inset-0 flex items-center justify-center bg-[#021626]/75 p-4 backdrop-blur-sm"><div className="max-w-md rounded-[30px] bg-white p-7 text-center text-[#0b2545] shadow-xl"><div className="text-5xl">🌊</div><h2 className="my-3 text-3xl font-extrabold" style={{fontFamily:BALOO}}>Penjelajah laut hebat!</h2><p className="mb-5 text-sm leading-relaxed text-slate-500">Dari karang hingga palung, setiap kedalaman punya cerita. Mana yang ingin kamu kunjungi lagi?</p><div className="flex justify-center gap-4"><RoundBtn icon="replay" label="Ulangi" tone="orange" onClick={()=>{engine.go(0);engine.setPlaying(true);}}/><RoundBtn icon="check" label="Jelajah bebas" tone="purple" onClick={()=>engine.setMode('jelajah')}/></div></div></div>}
   </div>;
 }
 
@@ -130,7 +130,7 @@ export function LautSpace() {
   return <div className="theme-play fixed inset-0 overflow-hidden bg-[#062f45]" style={{fontFamily:'var(--ff-nunito), system-ui, sans-serif'}}>
     <div ref={host} className="absolute inset-0" role="img" aria-label="Dunia bawah laut tiga dimensi. Pilih hewan atau mulai ekspedisi."/>
     {!engine&&!error&&<div className="absolute inset-0 flex items-center justify-center text-white"><p className="animate-pulse text-lg font-bold">Menyiapkan dunia bawah laut…</p></div>}
-    {error&&<div className="absolute inset-0 flex items-center justify-center p-6 text-center text-white"><div><h1 className="text-2xl font-bold">Tampilan 3D belum bisa dibuka</h1><p className="my-3">Coba muat ulang atau gunakan browser yang mendukung WebGL.</p><a href="/laut/narasi-v2.zip" download className="rounded-full bg-white px-5 py-3 font-bold text-[#2b1d4e]">Unduh cerita ekspedisi</a></div></div>}
+    {error&&<div className="absolute inset-0 flex items-center justify-center p-6 text-center text-white"><div><h1 className="text-2xl font-bold">Tampilan 3D belum bisa dibuka</h1><p className="my-3">Coba muat ulang atau gunakan browser yang mendukung WebGL.</p><a href="/laut/narasi-v2.zip" download className="rounded-full bg-white px-5 py-3 font-bold text-[#0b2545]">Unduh cerita ekspedisi</a></div></div>}
     {engine&&(mode==='tur'?<TourOverlay engine={engine}/>:<div className="pointer-events-none absolute inset-0 flex flex-col justify-between bg-gradient-to-b from-[#03223d]/50 via-transparent to-[#031627]/50 p-3 sm:p-5">
       <header className="flex items-start justify-between gap-4"><RoundBtn icon={focus?'arrow_back':'home'} label={focus?'Kembali':'Keluar'} onClick={()=>focus?engine.focus(null):router.push('/beranda/angkasa')}/><div className="text-center text-white"><p className="mt-2 text-[10px] font-extrabold uppercase tracking-[.22em] text-cyan-100">Rinoya · dunia pengetahuan</p><h1 className="mt-1 text-[28px] leading-tight sm:text-4xl" style={{fontFamily:BALOO,fontWeight:800}}>Jelajah Laut</h1><p className="mt-1 hidden text-sm font-bold text-cyan-100 sm:block">Dari taman karang hingga hampir 11 kilometer di bawah laut.</p></div><RoundBtn icon="scuba_diving" label="Mulai ekspedisi" tone="orange" onClick={()=>engine.setMode('tur')}/></header>
       <DepthMeter/>

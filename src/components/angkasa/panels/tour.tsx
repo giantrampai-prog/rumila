@@ -87,7 +87,7 @@ export function TourOverlay() {
                   aria-current={i === st.tourIndex ? "step" : undefined}
                   className={`block h-3 rounded-full transition-all ${
                     i === st.tourIndex
-                      ? "w-8 bg-[#FF7A1A]"
+                      ? "w-8 bg-[#fd861d]"
                       : i < st.tourIndex
                         ? "w-3 bg-[#8B45F5]"
                         : "w-3 bg-[#E7DDF7] hover:bg-[#cdb8f3]"

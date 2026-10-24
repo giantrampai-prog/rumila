@@ -13,21 +13,22 @@ import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/li
 import type { Status } from "@/lib/akademi/mastery";
 import { useMe } from "@/lib/store";
 
-export const INK = "#2b1d4e";
+export const INK = "#0b2545";
 
 /** Jenjang & pelajaran yang sudah punya konten di Slice 1. */
 export const LEVEL_SLICE: readonly LevelId[] = ["PAUD", "TKA", "TKB"];
 export const TRACK_SLICE: readonly TrackId[] = ["MAT", "KODE", "SAINS"];
 
+/** Warna pelajaran mengikuti pilar desain sistem RINOYA (pilar-mat indigo, pilar-teknologi ungu, pilar-sains teal, pilar-bahasa pink, pilar-kreativitas merah, pilar-karakter hijau). */
 export const TRACK_WARNA: Record<TrackId, ColorKey> = {
-  MAT: "orange",
-  KODE: "indigo",
+  MAT: "indigo",
+  KODE: "purple",
   SAINS: "teal",
-  BIND: "pink",
-  BING: "blue",
-  DUNIA: "green",
-  SENI: "purple",
-  KARAKTER: "gold",
+  BIND: "blue",
+  BING: "pink",
+  DUNIA: "sky",
+  SENI: "red",
+  KARAKTER: "green",
 };
 export const TRACK_IKON: Record<TrackId, string> = {
   MAT: "calculate",
@@ -45,13 +46,13 @@ const MEKANIK_LABEL: Record<string, string> = { pilah: "Pilah", urutkan: "Urutka
 export const ikonMekanik = (m: string) => MEKANIK_IKON[m] ?? "extension";
 export const labelMekanik = (m: string) => MEKANIK_LABEL[m] ?? "Main";
 /** Satu warna netral untuk semua ikon mekanik (indigo lembut) — mekanik bukan makna, jadi tidak diberi warna berbeda. */
-export const MEKANIK_NETRAL = { bg: "#ecebff", fg: "#5b4bff" };
+export const MEKANIK_NETRAL = { bg: "#e3f1fd", fg: "#0786eb" };
 
 export const trackMeta = (id: TrackId) => TRACKS.find((t) => t.id === id)!;
 export const levelMeta = (id: LevelId) => LEVELS.find((l) => l.id === id)!;
 export const isTrackId = (s: string): s is TrackId => TRACKS.some((t) => t.id === s);
 
-export const STATUS_WARNA: Record<Status, string> = { dikuasai: "#1fbf62", berkembang: "#ffbe0b", belum: "#ddd5e8" };
+export const STATUS_WARNA: Record<Status, string> = { dikuasai: "#1fbf62", berkembang: "#ffbe0b", belum: "#f0e4d2" };
 export const STATUS_LABEL: Record<Status, string> = { dikuasai: "Dikuasai", berkembang: "Berkembang", belum: "Belum" };
 export const STATUS_SIMBOL: Record<Status, string> = { dikuasai: "✓", berkembang: "●", belum: "○" };
 
@@ -145,10 +146,10 @@ export function kalimatKompetensi(p: ContentPack, bahasa: BahasaAnak = "id"): st
 /* ---------------- potongan UI ---------------- */
 
 /** Tab besar gaya Playful (pengganti Segmented kecil). */
-export function TabBesar<T extends string>({ value, options, onChange, c = "indigo" }: { value: T; options: [T, string, string?][]; onChange: (v: T) => void; c?: ColorKey }) {
+export function TabBesar<T extends string>({ value, options, onChange, c = "blue" }: { value: T; options: [T, string, string?][]; onChange: (v: T) => void; c?: ColorKey }) {
   const [l, m, d] = PLAY[c];
   return (
-    <div role="tablist" className="flex gap-1 rounded-[20px] bg-white p-1.5 shadow-[0_4px_0_rgba(43,29,78,.06)]">
+    <div role="tablist" className="flex gap-1 rounded-[20px] bg-white p-1.5 shadow-[0_4px_0_rgba(11,37,69,.06)]">
       {options.map(([id, label, icon]) => {
         const on = id === value;
         return (
@@ -181,8 +182,8 @@ export function TitikStatus({ status, size = 12 }: { status: Status; size?: numb
 }
 
 export function BadgeStatus({ status }: { status: Status }) {
-  const bg = status === "dikuasai" ? "#e4f8ec" : status === "berkembang" ? "#fff4d1" : "#f1edf6";
-  const fg = status === "dikuasai" ? "#12904a" : status === "berkembang" ? "#b07a00" : "#8a7a9c";
+  const bg = status === "dikuasai" ? "#e4f8ec" : status === "berkembang" ? "#fff4d1" : "#fff0da";
+  const fg = status === "dikuasai" ? "#12904a" : status === "berkembang" ? "#b07a00" : "#5b6b85";
   return (
     <span className="inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-0.5 text-[12px] font-extrabold" style={{ background: bg, color: fg }}>
       <span aria-hidden>{STATUS_SIMBOL[status]}</span>
@@ -223,7 +224,7 @@ export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesa
     <Link
       href={`/akademi/main/${p.id}`}
       className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white py-2 pr-2.5 pl-2.5 transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
-      style={{ boxShadow: "0 3px 0 rgba(43,29,78,.08), inset 0 0 0 1.5px #efeaf5" }}
+      style={{ boxShadow: "0 3px 0 rgba(11,37,69,.08), inset 0 0 0 1.5px #fff0da" }}
     >
       <IkonMekanik mekanik={p.mechanic} />
       <span className="min-w-0 flex-1">
@@ -239,7 +240,7 @@ export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesa
         </span>
         <span className="mt-0.5 block text-[12px] font-extrabold text-ink-3">{labelMekanik(p.mechanic)}</span>
       </span>
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#9a93ff,#5b4bff 60%)", boxShadow: "0 2px 0 #3a2cd1" }}>
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 2px 0 #0567c2" }}>
         <Icon name="play_arrow" size={24} />
       </span>
     </Link>

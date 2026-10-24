@@ -22,7 +22,7 @@ import { Album, MissionSheet, NearAction, SeedPicker, Toast, bedAction, missionB
 import { bedStatus, missionMatches, plantBed, waterBed, emptyBed } from '@/lib/fruits/farm';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 
 function useDiscovered(memberId: string) {
   const activity = useRumila((s) => s.activity);
@@ -95,7 +95,7 @@ function Joystick({ onMove }: { onMove: (x: number, y: number) => void }) {
     <div
       ref={base}
       className="pointer-events-auto relative size-[132px] touch-none rounded-full select-none"
-      style={{ background: 'radial-gradient(circle, rgba(255,255,255,.55), rgba(255,255,255,.25))', boxShadow: 'inset 0 0 0 3px rgba(255,255,255,.8), 0 4px 14px rgba(43,29,78,.15)' }}
+      style={{ background: 'radial-gradient(circle, rgba(255,255,255,.55), rgba(255,255,255,.25))', boxShadow: 'inset 0 0 0 3px rgba(255,255,255,.8), 0 4px 14px rgba(11,37,69,.15)' }}
       onPointerDown={(e) => {
         id.current = e.pointerId;
         e.currentTarget.setPointerCapture(e.pointerId);
@@ -109,7 +109,7 @@ function Joystick({ onMove }: { onMove: (x: number, y: number) => void }) {
     >
       <span
         className="absolute top-1/2 left-1/2 size-[62px] rounded-full"
-        style={{ transform: `translate(calc(-50% + ${knob.x}px), calc(-50% + ${knob.y}px))`, background: 'linear-gradient(155deg,#ffb347,#ff7a1a 60%)', boxShadow: '0 4px 0 #c85400' }}
+        style={{ transform: `translate(calc(-50% + ${knob.x}px), calc(-50% + ${knob.y}px))`, background: 'linear-gradient(155deg,#ffb347,#fd861d 60%)', boxShadow: '0 4px 0 #c85400' }}
       />
     </div>
   );
@@ -181,8 +181,8 @@ function FruitCard({ id, isNew, url, onClose, onCut }: { id: string; isNew: bool
     ['sentiment_satisfied', f.taste],
   ];
   return (
-    <div className="pointer-events-auto absolute inset-0 z-20 flex items-end justify-center bg-[rgba(43,29,78,.35)] p-3 sm:items-center" onClick={onClose}>
-      <div className="garden-pop relative w-full max-w-[560px] rounded-[30px] bg-white p-4 pt-3 shadow-[0_8px_0_rgba(43,29,78,.15)] sm:p-5" onClick={(e) => e.stopPropagation()} style={{ marginBottom: 'env(safe-area-inset-bottom)' }}>
+    <div className="pointer-events-auto absolute inset-0 z-20 flex items-end justify-center bg-[rgba(11,37,69,.35)] p-3 sm:items-center" onClick={onClose}>
+      <div className="garden-pop relative w-full max-w-[560px] rounded-[30px] bg-white p-4 pt-3 shadow-[0_8px_0_rgba(11,37,69,.15)] sm:p-5" onClick={(e) => e.stopPropagation()} style={{ marginBottom: 'env(safe-area-inset-bottom)' }}>
         {isNew && (
           <span className="absolute inset-x-0 -top-5 flex justify-center">
             <span className="garden-new rounded-full px-4 py-1.5 whitespace-nowrap text-white" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, background: 'linear-gradient(155deg,#6fe39a,#1fbf62 60%)', boxShadow: '0 3px 0 #12904a' }}>
@@ -190,14 +190,14 @@ function FruitCard({ id, isNew, url, onClose, onCut }: { id: string; isNew: bool
             </span>
           </span>
         )}
-        <button onClick={onClose} aria-label="Tutup" className="absolute top-3 right-3 flex size-11 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90">
+        <button onClick={onClose} aria-label="Tutup" className="absolute top-3 right-3 flex size-11 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90">
           <Icon name="close" size={26} />
         </button>
         <div className="flex items-center gap-3 sm:gap-4">
           {art && <AnimatedFruit src={art.src} alt={art.alt} />}
           <div className="min-w-0 flex-1 pr-8">
             <div style={{ fontFamily: BALOO, fontSize: 32, fontWeight: 800, color: INK, lineHeight: 1 }}>{f.name}</div>
-            <p className="mt-1.5 text-[15px] leading-snug font-extrabold text-[#6b5d80]">{f.description.split('. ')[0].replace(/\.$/, '')}.</p>
+            <p className="mt-1.5 text-[15px] leading-snug font-extrabold text-[#4a5a75]">{f.description.split('. ')[0].replace(/\.$/, '')}.</p>
           </div>
         </div>
         <div className="mt-3 flex flex-wrap gap-1.5">
@@ -234,8 +234,8 @@ function FruitCard({ id, isNew, url, onClose, onCut }: { id: string; isNew: bool
           )}
           <button
             onClick={onCut}
-            className="flex h-14 flex-1 items-center justify-center gap-2 rounded-[18px] text-white active:scale-95"
-            style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#ff7a1a 60%)', boxShadow: '0 4px 0 #c85400' }}
+            className="flex h-14 flex-1 items-center justify-center gap-2 rounded-[18px] text-[#0b2545] active:scale-95"
+            style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#fd861d 60%)', boxShadow: '0 4px 0 #c85400' }}
           >
             <Icon name="content_cut" size={26} />
             Belah
@@ -414,13 +414,13 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
       <div className={`pointer-events-none absolute ${tour ? 'hidden' : ''}`} style={{ inset: 0 }}>
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3 sm:p-5" style={{ paddingTop: 'max(12px, env(safe-area-inset-top))' }}>
         <RoundBtn icon="arrow_back" label="Kembali" onClick={() => router.push('/beranda/angkasa')} />
-        <div className="mt-1 flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-4 pl-1.5 shadow-[0_4px_0_rgba(43,29,78,.12)]">
+        <div className="mt-1 flex items-center gap-2 rounded-full bg-white/95 py-1.5 pr-4 pl-1.5 shadow-[0_4px_0_rgba(11,37,69,.12)]">
           <span className="flex size-10 items-center justify-center rounded-full" style={{ background: 'linear-gradient(155deg,#ffe46b,#ffbe0b 60%)' }}>
             <Icon name="shopping_basket" size={24} className="text-[#8a5a12]" />
           </span>
           <span style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1 }}>
             {found.size}
-            <span className="text-[16px] text-[#8a7a9c]">/{FRUITS.length}</span>
+            <span className="text-[16px] text-[#5b6b85]">/{FRUITS.length}</span>
           </span>
         </div>
         <div className="flex gap-2 sm:gap-3">
@@ -431,7 +431,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
 
       {activeMission && (
         <div className="pointer-events-none absolute inset-x-0 top-[84px] flex justify-center px-3 sm:top-[96px]">
-          <span className="flex max-w-[560px] items-center gap-1.5 rounded-full bg-[#fff8dc]/95 px-3 py-1.5 text-[13px] font-extrabold text-[#5a4410] shadow-[0_3px_0_rgba(43,29,78,.1)] sm:text-[14px]">
+          <span className="flex max-w-[560px] items-center gap-1.5 rounded-full bg-[#fff8dc]/95 px-3 py-1.5 text-[13px] font-extrabold text-[#5a4410] shadow-[0_3px_0_rgba(11,37,69,.1)] sm:text-[14px]">
             <span>👨‍🌾</span>
             {activeMission.text}
           </span>
@@ -457,7 +457,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
               ['explore', 'Sudut awal', () => engine.current?.resetView()],
             ] as const
           ).map(([icon, label, fn]) => (
-            <button key={icon} aria-label={label} onClick={fn} className="flex size-12 items-center justify-center rounded-full bg-white/90 text-[#2b1d4e] shadow-[0_4px_0_rgba(0,0,0,.18)] active:scale-90">
+            <button key={icon} aria-label={label} onClick={fn} className="flex size-12 items-center justify-center rounded-full bg-white/90 text-[#0b2545] shadow-[0_4px_0_rgba(0,0,0,.18)] active:scale-90">
               <span className="ms text-[26px]">{icon}</span>
             </button>
           ))}
@@ -472,10 +472,10 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
           return <NearAction {...a} onClick={() => bedAct(nearBed)} />;
         })()}
         {near === 'bed' && !card && !sheet && (
-          <NearAction icon="bedtime" label="Istirahat" sub="Tempat tidur" tone="linear-gradient(155deg,#9a93ff,#5b4bff 60%)" onClick={() => engine.current?.rest()} />
+          <NearAction icon="bedtime" label="Istirahat" sub="Tempat tidur" tone="linear-gradient(155deg,#4fb3ff,#0786eb 60%)" onClick={() => engine.current?.rest()} />
         )}
         {near === 'tower' && !card && !sheet && (
-          <NearAction icon="stairs" label="Naik menara" sub="Kincir angin" tone="linear-gradient(155deg,#ffb347,#ff7a1a 60%)" onClick={() => engine.current?.climbTower()} />
+          <NearAction icon="stairs" label="Naik menara" sub="Kincir angin" tone="linear-gradient(155deg,#ffb347,#fd861d 60%)" onClick={() => engine.current?.climbTower()} />
         )}
         {near === 'tower-top' && (
           <NearAction
@@ -516,13 +516,13 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
         {nearFruit && !card && (
           <button
             onClick={() => openCard(nearFruit.id)}
-            className="garden-bob pointer-events-auto flex items-center gap-2 rounded-full bg-white p-2 pr-5 shadow-[0_6px_0_rgba(43,29,78,.18)] active:scale-95"
+            className="garden-bob pointer-events-auto flex items-center gap-2 rounded-full bg-white p-2 pr-5 shadow-[0_6px_0_rgba(11,37,69,.18)] active:scale-95"
           >
-            <span className="relative flex size-[64px] items-center justify-center overflow-hidden rounded-full" style={{ background: nearFound ? '#fff6e4' : 'linear-gradient(155deg,#ffb347,#ff7a1a 60%)' }}>
+            <span className="relative flex size-[64px] items-center justify-center overflow-hidden rounded-full" style={{ background: nearFound ? '#fff6e4' : 'linear-gradient(155deg,#ffb347,#fd861d 60%)' }}>
               {nearFound ? <Image src={FRUIT_ARTWORK[nearFruit.id].thumb} alt="" width={64} height={64} unoptimized /> : <span className="text-[38px] font-black text-white">?</span>}
             </span>
             <span className="text-left">
-              <span className="block text-[13px] font-extrabold text-[#8a7a9c]">{nearFound ? nearFruit.name : 'Ada buah!'}</span>
+              <span className="block text-[13px] font-extrabold text-[#5b6b85]">{nearFound ? nearFruit.name : 'Ada buah!'}</span>
               <span className="block" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1 }}>
                 {nearFound ? 'Lihat lagi' : 'Petik!'}
               </span>
@@ -631,7 +631,7 @@ function Confetti() {
       Array.from({ length: 36 }, (_, i) => ({
         left: (i * 37) % 100,
         delay: (i % 9) * 0.06,
-        color: ['#ff7a1a', '#ffbe0b', '#1fbf62', '#2f86ff', '#ff4fa3', '#8b45f5'][i % 6],
+        color: ['#fd861d', '#ffbe0b', '#1fbf62', '#2f86ff', '#ff4fa3', '#8b45f5'][i % 6],
         rot: (i * 53) % 360,
       })),
     [],

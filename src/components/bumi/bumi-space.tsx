@@ -18,7 +18,7 @@ import { GaliFosil, SusunLapisan } from './games';
 import './bumi.css';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 
 /** Meteran kedalaman di sisi kanan (skala logaritmik: 1 m … 6.371 km). */
 function DepthMeter() {
@@ -46,7 +46,7 @@ function KarakterCard({ id }: { id: string }) {
       </div>
       <div className="min-w-0 flex-1">
         <div style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1 }}>{b.name}</div>
-        <p className="mt-1 text-[14px] leading-snug font-extrabold text-[#6b5d80] sm:text-[15px]">{b.desc}</p>
+        <p className="mt-1 text-[14px] leading-snug font-extrabold text-[#4a5a75] sm:text-[15px]">{b.desc}</p>
         <p className="mt-1 text-[13px] leading-snug font-bold text-[#c2410c]">
           <Icon name="lightbulb" size={14} className="mr-0.5 align-[-2px]" />
           {b.fact}

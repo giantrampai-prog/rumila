@@ -716,7 +716,7 @@ export function RestoGame() {
                   ))}
                 </div>
                 <div className="text-[13px] leading-snug">{x.note}</div>
-                <div className="rounded-[10px] bg-[#f5f0fa] p-2 text-[12px] italic leading-snug">{x.npc}</div>
+                <div className="rounded-[10px] bg-[#fff0da] p-2 text-[12px] italic leading-snug">{x.npc}</div>
                 <Btn tone="green" onClick={() => act(() => S.chooseLocation(g, x.id)) && setPanel('kontraktor')}>
                   Sewa di sini
                 </Btn>

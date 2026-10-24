@@ -31,7 +31,7 @@ const Viewer = dynamic(() => import('./viewer').then((m) => m.Viewer), {
 });
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 
 /** Organ pilihan untuk anak: [id, nama, ikon, warna] */
 const ORGANS: [string, string, string, ColorKey][] = [
@@ -60,12 +60,12 @@ const LAYER_BTNS: [LayerId, string, string, ColorKey][] = [
 
 function OrganCard({ part, onClose }: { part: Part; onClose: () => void }) {
   return (
-    <div className="pointer-events-auto mx-auto flex w-full max-w-[620px] items-center gap-3 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(43,29,78,.15)] sm:p-4">
+    <div className="pointer-events-auto mx-auto flex w-full max-w-[620px] items-center gap-3 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(11,37,69,.15)] sm:p-4">
       <div className="min-w-0 flex-1 pl-1">
         <div style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK, lineHeight: 1 }}>{part.nameId}</div>
-        <p className="mt-1 text-[15px] leading-snug font-extrabold text-[#6b5d80] sm:text-[17px]">{part.definitionSimple}</p>
+        <p className="mt-1 text-[15px] leading-snug font-extrabold text-[#4a5a75] sm:text-[17px]">{part.definitionSimple}</p>
       </div>
-      <button onClick={onClose} aria-label="Tutup" className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90">
+      <button onClick={onClose} aria-label="Tutup" className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90">
         <Icon name="close" size={28} />
       </button>
     </div>

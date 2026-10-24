@@ -21,7 +21,7 @@ function Daftar() {
   const byMek = new Map<string, typeof PAKET>();
   for (const p of PAKET) byMek.set(p.mechanic, [...(byMek.get(p.mechanic) ?? []), p]);
   return (
-    <div className="mx-auto max-w-[900px] p-4 font-sans text-[#2b1d4e]">
+    <div className="mx-auto max-w-[900px] p-4 font-sans text-[#0b2545]">
       <h1 className="text-2xl font-black">Academy — {PAKET.length} paket</h1>
       <p className="mb-4 text-sm opacity-70">
         Pratinjau: <Link className="underline" href="/dev/akademi?portal=1">portal</Link> · <Link className="underline" href="/dev/akademi?track=MAT">peta MAT</Link> · <Link className="underline" href="/dev/akademi?track=KODE">peta KODE</Link>. Klik paket untuk memainkannya tanpa akun.

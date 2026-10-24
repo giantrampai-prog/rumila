@@ -13,7 +13,7 @@ import { createFruitModel, disposeFruit } from '@/lib/fruits/models';
 import { sfx } from '@/lib/sfx';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 
 /** Lukis penampang buah (lingkaran 512²) menurut gaya isinya. */
 function sectionTexture(f: Fruit, s: Section) {
@@ -360,13 +360,13 @@ export function CutView({ id, harvested, onClose }: { id: string; harvested?: bo
   }, [f]);
 
   return (
-    <div className="pointer-events-auto absolute inset-0 z-30 flex items-end justify-center bg-[rgba(43,29,78,.45)] p-3 sm:items-center" onClick={onClose}>
-      <div className="garden-pop relative w-full max-w-[560px] rounded-[30px] bg-white p-4 shadow-[0_8px_0_rgba(43,29,78,.15)]" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} aria-label="Tutup" className="absolute top-3 right-3 z-10 flex size-11 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90">
+    <div className="pointer-events-auto absolute inset-0 z-30 flex items-end justify-center bg-[rgba(11,37,69,.45)] p-3 sm:items-center" onClick={onClose}>
+      <div className="garden-pop relative w-full max-w-[560px] rounded-[30px] bg-white p-4 shadow-[0_8px_0_rgba(11,37,69,.15)]" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} aria-label="Tutup" className="absolute top-3 right-3 z-10 flex size-11 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90">
           <Icon name="close" size={26} />
         </button>
         <div style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: INK, lineHeight: 1 }}>{harvested ? `Panen ${f.name}!` : f.name}</div>
-        <p className="mt-1 text-[14px] font-extrabold text-[#8a7a9c]">{cut ? 'Lihat isinya!' : 'Ayo kita belah buahnya.'}</p>
+        <p className="mt-1 text-[14px] font-extrabold text-[#5b6b85]">{cut ? 'Lihat isinya!' : 'Ayo kita belah buahnya.'}</p>
         <div ref={host} className="relative mx-auto mt-2 aspect-[4/3] w-full overflow-hidden rounded-[22px]" style={{ background: 'radial-gradient(circle at 50% 45%, #fffaf0, #f3e7d2)' }} />
         {cut ? (
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -389,8 +389,8 @@ export function CutView({ id, harvested, onClose }: { id: string; harvested?: bo
               cutRef.current();
               setCut(true);
             }}
-            className="mt-3 flex h-14 w-full items-center justify-center gap-2 rounded-[18px] text-white active:scale-95"
-            style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#ff7a1a 60%)', boxShadow: '0 4px 0 #c85400' }}
+            className="mt-3 flex h-14 w-full items-center justify-center gap-2 rounded-[18px] text-[#0b2545] active:scale-95"
+            style={{ fontFamily: BALOO, fontSize: 21, fontWeight: 800, background: 'linear-gradient(155deg,#ffb347,#fd861d 60%)', boxShadow: '0 4px 0 #c85400' }}
           >
             <Icon name="content_cut" size={28} />
             Belah!

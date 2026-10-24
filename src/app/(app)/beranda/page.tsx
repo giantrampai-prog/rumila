@@ -8,7 +8,7 @@ import { Icon } from "@/components/ui";
 import { FOLDERS } from "@/lib/catalog";
 import { can, useMe } from "@/lib/store";
 
-const INK = "#2b1d4e";
+const INK = "#0b2545";
 
 export default function Beranda() {
   const me = useMe();
@@ -23,7 +23,7 @@ export default function Beranda() {
       {last && (
         <button
           onClick={() => openTool(last)}
-          className="flex items-center gap-3 rounded-[22px] bg-white p-2.5 pr-3 text-left shadow-[0_4px_0_rgba(43,29,78,.06)] transition-transform active:scale-[.98]"
+          className="flex items-center gap-3 rounded-[22px] bg-white p-2.5 pr-3 text-left shadow-[0_4px_0_rgba(11,37,69,.06)] transition-transform active:scale-[.98]"
         >
           <AppIcon t={last} size={48} theme="playful" />
           <span className="min-w-0 flex-1">
@@ -32,7 +32,7 @@ export default function Beranda() {
               {last.name}
             </span>
           </span>
-          <span className="flex size-11 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 3px 0 #c85400" }}>
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-full text-[#0b2545]" style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
             <Icon name="play_arrow" size={28} />
           </span>
         </button>

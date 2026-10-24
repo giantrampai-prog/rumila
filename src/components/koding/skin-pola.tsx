@@ -1379,7 +1379,7 @@ const lukis: ThemeArt = {
             </g>
           ) : (
             <g>
-              <rect x={X + 24} y={Y + 20} width="52" height="38" fill="#fff6e8" />
+              <rect x={X + 24} y={Y + 20} width="52" height="38" fill="#fff8ee" />
               <circle cx={X + 38} cy={Y + 34} r="10" fill="#ff4f6d" opacity="0.85" />
               <rect x={X + 48} y={Y + 26} width="20" height="20" fill="#3fa9f5" opacity="0.85" transform={`rotate(12 ${X + 58} ${Y + 36})`} />
               <path d={`M${X + 30} ${Y + 54} L${X + 42} ${Y + 42} L${X + 54} ${Y + 54} Z`} fill="#ffc93c" />
@@ -1545,7 +1545,7 @@ const pesta: ThemeArt = {
       <radialGradient id="kp-flame" cx="0.5" cy="0.6" r="0.6">
         <stop offset="0" stopColor="#fffbe0" />
         <stop offset="0.5" stopColor="#ffd23f" />
-        <stop offset="1" stopColor="#ff7a1a" stopOpacity="0" />
+        <stop offset="1" stopColor="#fd861d" stopOpacity="0" />
       </radialGradient>
     </>
   ),

@@ -52,12 +52,12 @@ export function WorldView({ f }: { f: Folder }) {
                 <AppIcon t={t} size={70} theme="playful" />
               </span>
               {t.planned && (
-                <span className="absolute -top-2 -right-2 rounded-full bg-white px-2 py-0.5 text-[11px] font-black text-ink-3 shadow-[0_2px_0_rgba(43,29,78,.1)]">
+                <span className="absolute -top-2 -right-2 rounded-full bg-white px-2 py-0.5 text-[11px] font-black text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.1)]">
                   Segera
                 </span>
               )}
             </span>
-            <span className="text-center leading-tight" style={{ fontFamily: BALOO, fontSize: 13, fontWeight: 800, color: "#2b1d4e" }}>
+            <span className="text-center leading-tight" style={{ fontFamily: BALOO, fontSize: 13, fontWeight: 800, color: "#0b2545" }}>
               {t.name}
             </span>
           </button>

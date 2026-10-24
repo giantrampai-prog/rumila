@@ -30,7 +30,7 @@ function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: bo
       onClick={onClick}
       disabled={disabled}
       aria-label="Bantu"
-      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#2b1d4e] shadow-[0_4px_0_rgba(43,29,78,.12)] active:translate-y-0.5 disabled:opacity-40"
+      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
       style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
     >
       <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
@@ -45,7 +45,7 @@ function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: bo
 function Kepala({ judul, onBantu, kunci, tanpaBantu }: { judul: string; onBantu: () => void; kunci: boolean; tanpaBantu?: boolean }) {
   return (
     <div className="flex items-center gap-2">
-      <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(43,29,78,.1)]" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.15 }}>
+      <div className="flex-1 rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900, lineHeight: 1.15 }}>
         {judul}
       </div>
       {!tanpaBantu && <TombolBantu onClick={onBantu} disabled={kunci} />}
@@ -56,7 +56,7 @@ function Kepala({ judul, onBantu, kunci, tanpaBantu }: { judul: string; onBantu:
 /** Nomor slot bulat besar. */
 function Nomor({ n, warna }: { n: number; warna?: string }) {
   return (
-    <span className="flex size-9 items-center justify-center rounded-full text-white" style={{ background: warna ?? "#5b4bff", fontFamily: BALOO, fontSize: 20, fontWeight: 900, boxShadow: "0 3px 0 rgba(43,29,78,.18)" }}>
+    <span className="flex size-9 items-center justify-center rounded-full text-white" style={{ background: warna ?? "#0786eb", fontFamily: BALOO, fontSize: 20, fontWeight: 900, boxShadow: "0 3px 0 rgba(11,37,69,.18)" }}>
       {n}
     </span>
   );
@@ -142,13 +142,13 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
 
       {/* slot bernomor */}
-      <div className="flex flex-wrap justify-center gap-2 rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(43,29,78,.08)]">
+      <div className="flex flex-wrap justify-center gap-2 rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]">
         {slot.map((id, i) => {
           const benar = kunci && id === correct[i];
           const salah = kunci && id !== correct[i];
           const disorot = hint?.slot === i;
           const siap = !!terpilih && !id && !kunci;
-          const ring = benar ? BENAR : salah ? SALAH : disorot ? SOROT : siap ? "#5b4bff" : "rgba(43,29,78,.3)";
+          const ring = benar ? BENAR : salah ? SALAH : disorot ? SOROT : siap ? "#0786eb" : "rgba(11,37,69,.3)";
           return (
             <button
               key={i}
@@ -161,7 +161,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
                 maxWidth: 140,
                 border: `3px ${id ? "solid" : "dashed"} ${ring}`,
                 background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : id ? "#fff" : "rgba(255,255,255,.5)",
-                boxShadow: id ? "0 4px 0 rgba(43,29,78,.12)" : undefined,
+                boxShadow: id ? "0 4px 0 rgba(11,37,69,.12)" : undefined,
               }}
             >
               <span className="absolute -top-3 -left-1">
@@ -188,7 +188,7 @@ function Susun({ ronde, t, onJawab, onHint, hasil }: Props) {
               className={`min-h-[84px] min-w-[84px] ${disorot ? "akademi-bounce" : ""}`}
               style={{
                 transform: dipilih ? "scale(1.12)" : undefined,
-                boxShadow: disorot ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 4px ${SOROT}` : undefined,
+                boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                 pointerEvents: kunci ? "none" : undefined,
               }}
             />
@@ -262,7 +262,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
-      <div className="rounded-[24px] bg-white/70 p-3 text-center shadow-[0_4px_0_rgba(43,29,78,.08)]">
+      <div className="rounded-[24px] bg-white/70 p-3 text-center shadow-[0_4px_0_rgba(11,37,69,.08)]">
         <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, opacity: 0.8 }}>Ketuk dua kartu untuk menukar tempatnya</div>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           {urutan.map((id, i) => {
@@ -286,7 +286,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
                   style={{
                     transform: dipilih ? "scale(1.1)" : undefined,
                     background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined,
-                    boxShadow: disorot ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 4px ${SOROT}` : undefined,
+                    boxShadow: disorot ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined,
                     pointerEvents: kunci ? "none" : undefined,
                   }}
                 />
@@ -335,8 +335,8 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
       <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />
-      <div className="rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(43,29,78,.1)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1.15 }}>
-        Mana yang lebih dulu? <span style={{ color: "#5b4bff" }}>?</span>
+      <div className="rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1.15 }}>
+        Mana yang lebih dulu? <span style={{ color: "#0567c2" }}>?</span>
       </div>
       <div className="grid grid-cols-2 gap-3">
         {shown.map((s) => {
@@ -461,7 +461,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
       <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
 
       {/* gambar berjajar + slot label di bawah tiap gambar */}
-      <div className="flex flex-wrap justify-center gap-2 rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(43,29,78,.08)]">
+      <div className="flex flex-wrap justify-center gap-2 rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]">
         {shown.map((s, i) => {
           const l = slot[i];
           const aktif = cerita?.aktif === i;
@@ -470,7 +470,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
           const salahKah = !!hasil && l !== benar[i];
           const disorot = hint?.slot === i;
           const siap = !!terpilih && !l && !kunci;
-          const ring = benarKah ? BENAR : salahKah ? SALAH : disorot ? SOROT : siap ? "#5b4bff" : "rgba(43,29,78,.3)";
+          const ring = benarKah ? BENAR : salahKah ? SALAH : disorot ? SOROT : siap ? "#0786eb" : "rgba(11,37,69,.3)";
           return (
             <div key={s.id} className="flex flex-1 flex-col items-center gap-2 transition-opacity duration-700" style={{ minWidth: 92, maxWidth: 150, opacity: redup ? 0.3 : 1 }}>
               <KartuBenda
@@ -478,7 +478,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
                 size={ukuran}
                 label={t(s.labelKey)}
                 className={`w-full min-h-[108px] ${aktif ? "akademi-bounce" : ""}`}
-                style={{ boxShadow: aktif ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 4px ${SOROT}` : undefined, pointerEvents: "none" }}
+                style={{ boxShadow: aktif ? `0 4px 0 rgba(11,37,69,.12), 0 0 0 4px ${SOROT}` : undefined, pointerEvents: "none" }}
               />
               <button
                 type="button"
@@ -486,7 +486,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
                 disabled={kunci}
                 aria-label={`Label gambar ${i + 1}${l ? `: ${LABEL[l].kata}` : ", kosong"}`}
                 className={`flex min-h-16 w-full items-center justify-center gap-1 rounded-[18px] transition-transform active:scale-95 ${salahKah ? "akademi-shake" : ""} ${disorot ? "akademi-bounce" : ""}`}
-                style={{ border: `3px ${l ? "solid" : "dashed"} ${ring}`, background: benarKah ? "#e6f8ef" : salahKah ? "#ffe9ec" : l ? "#fff" : "rgba(255,255,255,.5)", boxShadow: l ? "0 4px 0 rgba(43,29,78,.12)" : undefined }}
+                style={{ border: `3px ${l ? "solid" : "dashed"} ${ring}`, background: benarKah ? "#e6f8ef" : salahKah ? "#ffe9ec" : l ? "#fff" : "rgba(255,255,255,.5)", boxShadow: l ? "0 4px 0 rgba(11,37,69,.12)" : undefined }}
               >
                 {l ? (
                   <>
@@ -516,11 +516,11 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
               disabled={kunci || tersisa <= 0}
               aria-label={`Label ${LABEL[l].kata}, sisa ${tersisa}`}
               className={`relative flex min-h-20 min-w-[92px] flex-col items-center justify-center gap-0.5 rounded-[18px] bg-white px-3 transition-transform active:scale-95 disabled:opacity-40 ${disorot ? "akademi-bounce" : ""}`}
-              style={{ boxShadow: `0 4px 0 rgba(43,29,78,.12), 0 0 0 3px ${dipilih ? "#5b4bff" : disorot ? SOROT : "transparent"}`, transform: dipilih ? "scale(1.08)" : undefined }}
+              style={{ boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${dipilih ? "#0786eb" : disorot ? SOROT : "transparent"}`, transform: dipilih ? "scale(1.08)" : undefined }}
             >
               <span style={{ fontSize: 34, lineHeight: 1 }} aria-hidden>{LABEL[l].ikon}</span>
               <span style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800 }}>{LABEL[l].kata}</span>
-              {jatah(l) > 1 && <span className="absolute -top-2 -right-2 flex size-7 items-center justify-center rounded-full text-white" style={{ background: "#5b4bff", fontFamily: BALOO, fontSize: 14, fontWeight: 900 }}>{tersisa}</span>}
+              {jatah(l) > 1 && <span className="absolute -top-2 -right-2 flex size-7 items-center justify-center rounded-full text-white" style={{ background: "#0786eb", fontFamily: BALOO, fontSize: 14, fontWeight: 900 }}>{tersisa}</span>}
             </button>
           );
         })}

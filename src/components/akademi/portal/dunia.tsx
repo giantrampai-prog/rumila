@@ -37,7 +37,7 @@ export function Dunia({ me }: { me: Member }) {
       </div>
 
       {!boleh && (
-        <p className="rounded-[18px] bg-white px-4 py-3 text-[14px] font-bold text-ink-3 shadow-[0_4px_0_rgba(43,29,78,.08)]">
+        <p className="rounded-[18px] bg-white px-4 py-3 text-[14px] font-bold text-ink-3 shadow-[0_4px_0_rgba(11,37,69,.08)]">
           Dunia 3D belum dibuka untukmu. Minta Ayah atau Ibu membukanya di pengaturan profil.
         </p>
       )}
@@ -48,7 +48,7 @@ export function Dunia({ me }: { me: Member }) {
             <button
               onClick={() => openTool(t)}
               disabled={!boleh}
-              className="flex w-full items-center gap-3 rounded-[22px] bg-white p-3 text-left shadow-[0_4px_0_rgba(43,29,78,.08)] transition-transform active:scale-[.98] disabled:opacity-50"
+              className="flex w-full items-center gap-3 rounded-[22px] bg-white p-3 text-left shadow-[0_4px_0_rgba(11,37,69,.08)] transition-transform active:scale-[.98] disabled:opacity-50"
             >
               <AppIcon t={t} size={60} theme="playful" />
               <span className="min-w-0 flex-1">
@@ -56,7 +56,7 @@ export function Dunia({ me }: { me: Member }) {
                 <span className="mt-0.5 block text-[12px] font-extrabold text-ink-3">{PELAJARAN[t.id] ?? "Sains"}</span>
                 <span className="mt-0.5 block text-[13px] font-bold text-ink-2 line-clamp-2">{t.desc}</span>
               </span>
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#ffb347,#ff7a1a 60%)", boxShadow: "0 3px 0 #c85400" }}>
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full text-[#0b2545]" style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 3px 0 #c85400" }}>
                 <Icon name="play_arrow" size={26} />
               </span>
             </button>

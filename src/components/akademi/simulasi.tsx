@@ -16,7 +16,7 @@ import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 type Props = PresenterProps<RondeSimulasi, JawabanSimulasi, PaketSimulasi>;
 type Item = PaketSimulasi["items"][number];
 
-const UNGU = "#5b4bff";
+const UNGU = "#0786eb";
 const KUNING = "#ffd23f";
 const MERAH_JARUM = "#ff5a6e";
 const BIRU_JARUM = "#3b82f6";
@@ -24,7 +24,7 @@ const BIRU_JARUM = "#3b82f6";
 /* ---------------- kerangka bersama ---------------- */
 
 const Tebal: CSSProperties = { fontFamily: BALOO, fontWeight: 900, color: INK };
-const BAYANG = "0 4px 0 rgba(43,29,78,.12)";
+const BAYANG = "0 4px 0 rgba(11,37,69,.12)";
 
 function visualItem(x: Item | undefined, label?: string): VisualSpec {
   if (!x) return { emoji: "❓", label };
@@ -36,7 +36,7 @@ function Instruksi({ teks, anak, hasil }: { teks: string; anak?: ReactNode; hasi
   const muka = hasil ? (hasil.benar ? "🤖✨" : "🤖💭") : "🤖";
   return (
     <div className="flex items-end gap-2">
-      <div className={`shrink-0 ${hasil?.benar ? "akademi-bounce" : ""}`} style={{ fontSize: 52, lineHeight: 1, filter: "drop-shadow(0 4px 0 rgba(43,29,78,.15))" }} aria-hidden>
+      <div className={`shrink-0 ${hasil?.benar ? "akademi-bounce" : ""}`} style={{ fontSize: 52, lineHeight: 1, filter: "drop-shadow(0 4px 0 rgba(11,37,69,.15))" }} aria-hidden>
         {muka}
       </div>
       <button
@@ -118,7 +118,7 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
             disabled={disabled}
             onClick={() => onPilih(n)}
             className={`flex size-16 items-center justify-center rounded-full transition-transform active:scale-90 disabled:opacity-60 ${sorot === n ? "akademi-bounce" : ""}`}
-            style={{ ...Tebal, fontSize: 28, background: aktif ? UNGU : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#3b2fc0" : "rgba(43,29,78,.15)"}${sorot === n ? `, 0 0 0 4px ${KUNING}` : ""}` }}
+            style={{ ...Tebal, fontSize: 28, background: aktif ? UNGU : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#3b2fc0" : "rgba(11,37,69,.15)"}${sorot === n ? `, 0 0 0 4px ${KUNING}` : ""}` }}
             aria-label={`Angka ${n}`}
           >
             {n}
@@ -227,7 +227,7 @@ function JamDinding({
       <div className="relative" style={{ width: ukuran, height: ukuran }}>
         <svg viewBox="0 0 200 200" width={ukuran} height={ukuran} aria-label={`Jam menunjukkan pukul ${jam}`} role="img">
           <circle cx="100" cy="100" r="96" fill="#fff" stroke="#c9b8ff" strokeWidth="6" />
-          <circle cx="100" cy="100" r="88" fill="none" stroke="#efeaff" strokeWidth="2" />
+          <circle cx="100" cy="100" r="88" fill="none" stroke="#e3f1fd" strokeWidth="2" />
           {Array.from({ length: 60 }, (_, i) => {
             const a = (i * 6 - 90) * Math.PI / 180;
             const besar = i % 5 === 0;
@@ -910,7 +910,7 @@ function ModeTombol(c: Ctx) {
         {/* tombol */}
         <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${Math.max(1, tombol.length)}, minmax(0,1fr))` }} role="group" aria-label="Tombol">
           {tombol.map((b) => {
-            const warna = b.color ?? "#5b4bff";
+            const warna = b.color ?? "#0786eb";
             const sudah = dicoba.has(b.id);
             const aktifTebak = sedang === b.id;
             const bisa = !terkunci && (fase === "coba" || (aktifTebak && langkah === "tekan"));
@@ -1388,7 +1388,7 @@ function ModeTelusur(c: Ctx) {
             onPointerCancel={lepas}
           >
             {/* jalur tebal (toleransi) */}
-            {jalur.map((g, i) => <polyline key={`t${i}`} points={g.map((p) => p.join(",")).join(" ")} fill="none" stroke={hasil ? (hasil.benar ? "#dff5e9" : "#ffe9ec") : "#e9e4ff"} strokeWidth={TOL * 2} strokeLinecap="round" strokeLinejoin="round" />)}
+            {jalur.map((g, i) => <polyline key={`t${i}`} points={g.map((p) => p.join(",")).join(" ")} fill="none" stroke={hasil ? (hasil.benar ? "#dff5e9" : "#ffe9ec") : "#e3f1fd"} strokeWidth={TOL * 2} strokeLinecap="round" strokeLinejoin="round" />)}
             {/* garis tengah */}
             {jalur.map((g, i) => <polyline key={`g${i}`} points={g.map((p) => p.join(",")).join(" ")} fill="none" stroke="#b9b1d6" strokeWidth="2.5" strokeDasharray="4 4" strokeLinecap="round" strokeLinejoin="round" />)}
             {/* goresan anak */}

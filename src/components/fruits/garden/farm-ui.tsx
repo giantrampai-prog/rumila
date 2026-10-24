@@ -10,9 +10,10 @@ import { FRUITS, FRUIT_BY_ID, FRUIT_GROUPS, type Fruit } from '@/lib/fruits/cata
 import { FRUIT_ARTWORK } from '@/lib/fruits/artwork';
 import { BED_COUNT, MISSIONS, advanceBed, bedStatus, emptyBed, nextMission, type Bed, type Mission } from '@/lib/fruits/farm';
 import { sfx } from '@/lib/sfx';
+import { teksDiAtas } from '@/lib/brand';
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 
 /* ---------------- penyimpanan per anggota ---------------- */
 
@@ -76,13 +77,13 @@ export function NearAction({ icon, label, sub, tone, disabled, onClick, thumb }:
     <button
       onClick={onClick}
       disabled={disabled}
-      className="garden-bob pointer-events-auto flex items-center gap-2 rounded-full bg-white p-2 pr-5 shadow-[0_6px_0_rgba(43,29,78,.18)] active:scale-95 disabled:opacity-90"
+      className="garden-bob pointer-events-auto flex items-center gap-2 rounded-full bg-white p-2 pr-5 shadow-[0_6px_0_rgba(11,37,69,.18)] active:scale-95 disabled:opacity-90"
     >
-      <span className="relative flex size-[64px] items-center justify-center overflow-hidden rounded-full text-white" style={{ background: tone }}>
+      <span className="relative flex size-[64px] items-center justify-center overflow-hidden rounded-full" style={{ background: tone, color: teksDiAtas(tone) }}>
         {thumb ? <Image src={thumb} alt="" width={64} height={64} unoptimized /> : <Icon name={icon} size={36} />}
       </span>
       <span className="text-left">
-        <span className="block text-[13px] font-extrabold text-[#8a7a9c]">{sub}</span>
+        <span className="block text-[13px] font-extrabold text-[#5b6b85]">{sub}</span>
         <span className="block" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, color: INK, lineHeight: 1 }}>
           {label}
         </span>
@@ -104,9 +105,9 @@ export function bedAction(b: Bed, now: number) {
 
 function Sheet({ title, onClose, children }: { title: string; onClose: () => void; children: React.ReactNode }) {
   return (
-    <div className="pointer-events-auto absolute inset-0 z-30 flex items-end justify-center bg-[rgba(43,29,78,.4)] p-3 sm:items-center" onClick={onClose}>
-      <div className="garden-pop relative max-h-[86dvh] w-full max-w-[600px] overflow-y-auto rounded-[30px] bg-white p-4 shadow-[0_8px_0_rgba(43,29,78,.15)]" onClick={(e) => e.stopPropagation()}>
-        <button onClick={onClose} aria-label="Tutup" className="absolute top-3 right-3 flex size-11 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90">
+    <div className="pointer-events-auto absolute inset-0 z-30 flex items-end justify-center bg-[rgba(11,37,69,.4)] p-3 sm:items-center" onClick={onClose}>
+      <div className="garden-pop relative max-h-[86dvh] w-full max-w-[600px] overflow-y-auto rounded-[30px] bg-white p-4 shadow-[0_8px_0_rgba(11,37,69,.15)]" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} aria-label="Tutup" className="absolute top-3 right-3 flex size-11 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90">
           <Icon name="close" size={26} />
         </button>
         <div className="pr-12" style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: INK, lineHeight: 1.1 }}>
@@ -124,12 +125,12 @@ export function SeedPicker({ found, onPick, onClose }: { found: Set<string>; onP
   const list = FRUITS.filter((f) => found.has(f.id) || starter.includes(f.id));
   return (
     <Sheet title="Pilih benih" onClose={onClose}>
-      <p className="mt-1 text-[14px] font-bold text-[#8a7a9c]">Benih baru didapat dari buah yang sudah kamu temukan di kebun.</p>
+      <p className="mt-1 text-[14px] font-bold text-[#5b6b85]">Benih baru didapat dari buah yang sudah kamu temukan di kebun.</p>
       <div className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6">
         {list.map((f) => (
           <button key={f.id} onClick={() => onPick(f.id)} className="flex flex-col items-center gap-1 rounded-[16px] bg-[#fff8ec] p-1.5 active:scale-95">
             <Image src={FRUIT_ARTWORK[f.id].thumb} alt="" width={72} height={72} unoptimized className="aspect-square w-full object-contain" />
-            <span className="text-center text-[12px] leading-tight font-extrabold text-[#2b1d4e]">{f.name}</span>
+            <span className="text-center text-[12px] leading-tight font-extrabold text-[#0b2545]">{f.name}</span>
           </button>
         ))}
       </div>
@@ -150,9 +151,9 @@ export function MissionSheet({ mission, done, onAccept, onSwap, onClose }: { mis
           </span>
         </div>
       </div>
-      {done > 0 && <p className="mt-2 text-[13px] font-bold text-[#8a7a9c]">Kamu sudah membantu Pak Tani {done} kali. Terima kasih!</p>}
+      {done > 0 && <p className="mt-2 text-[13px] font-bold text-[#5b6b85]">Kamu sudah membantu Pak Tani {done} kali. Terima kasih!</p>}
       <div className="mt-4 flex gap-2">
-        <button onClick={onSwap} className="flex h-14 flex-1 items-center justify-center gap-1.5 rounded-[18px] bg-[#f5f0fa] text-[#2b1d4e] active:scale-95" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+        <button onClick={onSwap} className="flex h-14 flex-1 items-center justify-center gap-1.5 rounded-[18px] bg-[#fff0da] text-[#0b2545] active:scale-95" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
           <Icon name="refresh" size={24} />
           Misi lain
         </button>
@@ -173,7 +174,7 @@ export function MissionSheet({ mission, done, onAccept, onSwap, onClose }: { mis
 export function Toast({ text, good }: { text: string; good?: boolean }) {
   return (
     <div className="garden-pop pointer-events-none absolute inset-x-0 top-[92px] z-20 flex justify-center px-4">
-      <span className="rounded-[20px] px-4 py-2.5 text-center text-[16px] font-extrabold text-white shadow-[0_4px_0_rgba(0,0,0,.15)]" style={{ background: good ? '#1fbf62' : '#6b5d80', maxWidth: 520 }}>
+      <span className="rounded-[20px] px-4 py-2.5 text-center text-[16px] font-extrabold text-white shadow-[0_4px_0_rgba(0,0,0,.15)]" style={{ background: good ? '#1fbf62' : '#4a5a75', maxWidth: 520 }}>
         {text}
       </span>
     </div>
@@ -186,14 +187,14 @@ export function Album({ found, stars, onOpen, onClose, onCatalog }: { found: Set
   const groups = FRUIT_GROUPS.filter((g) => g.id !== 'all');
   return (
     <Sheet title={`Album Buah · ${found.size}/${FRUITS.length}`} onClose={onClose}>
-      <p className="mt-1 text-[14px] font-bold text-[#8a7a9c]">Temukan buah di kebun untuk mengisi stikernya. Tanda 🤝 = buah yang membantu misi Pak Tani.</p>
-      <button onClick={onCatalog} className="mt-2 flex items-center gap-1.5 rounded-full bg-[#f5f0fa] px-3 py-1.5 text-[13px] font-extrabold text-[#5b4bff] active:scale-95">
+      <p className="mt-1 text-[14px] font-bold text-[#5b6b85]">Temukan buah di kebun untuk mengisi stikernya. Tanda 🤝 = buah yang membantu misi Pak Tani.</p>
+      <button onClick={onCatalog} className="mt-2 flex items-center gap-1.5 rounded-full bg-[#fff0da] px-3 py-1.5 text-[13px] font-extrabold text-[#0567c2] active:scale-95">
         <Icon name="grid_view" size={18} />
         Katalog semua buah
       </button>
       {groups.map((g) => (
         <div key={g.id} className="mt-4">
-          <div className="mb-2 text-[15px] font-extrabold text-[#6b5d80]">{g.name}</div>
+          <div className="mb-2 text-[15px] font-extrabold text-[#4a5a75]">{g.name}</div>
           <div className="grid grid-cols-4 gap-2.5 sm:grid-cols-6">
             {FRUITS.filter((f) => f.group === g.id).map((f, i) => {
               const got = found.has(f.id);
@@ -209,7 +210,7 @@ export function Album({ found, stars, onOpen, onClose, onCatalog }: { found: Set
                     }
                   }}
                   className={`relative flex flex-col items-center gap-1 rounded-[16px] p-1.5 active:scale-95 ${hint === f.id ? 'animate-bounce' : ''}`}
-                  style={{ background: got ? '#fff8ec' : '#f1eef6', transform: got ? `rotate(${((i % 5) - 2) * 1.5}deg)` : undefined, boxShadow: got ? '0 3px 0 rgba(43,29,78,.08)' : undefined }}
+                  style={{ background: got ? '#fff8ec' : '#f1eef6', transform: got ? `rotate(${((i % 5) - 2) * 1.5}deg)` : undefined, boxShadow: got ? '0 3px 0 rgba(11,37,69,.08)' : undefined }}
                 >
                   <Image
                     src={FRUIT_ARTWORK[f.id].thumb}

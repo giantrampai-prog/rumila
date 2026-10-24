@@ -1,7 +1,7 @@
 "use client";
 
 // Komponen dasar panel Jelajah Angkasa — design system Rumila Playful (sama dengan Jelajah Tubuh):
-// krem #FFF6E8, kartu putih ber-garis ungu muda, tombol "chunky", oranye = aksi utama, ungu = aktif. Target sentuh ≥44px.
+// krem #fff8ee, kartu putih ber-garis ungu muda, tombol "chunky", oranye = aksi utama, ungu = aktif. Target sentuh ≥44px.
 
 import { useEffect, useState, type ReactNode } from "react";
 import { Icon } from "@/components/ui";

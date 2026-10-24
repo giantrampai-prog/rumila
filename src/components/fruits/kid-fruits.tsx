@@ -22,7 +22,7 @@ const Viewer = dynamic(() => import('./fruit-viewer'), { ssr: false, loading: ()
 const Garden = dynamic(() => import('./garden/kid-garden'), { ssr: false, loading: () => <div className="fixed inset-0 bg-[#bfe6ff]" /> });
 
 const BALOO = 'var(--ff-baloo), system-ui, sans-serif';
-const INK = '#2b1d4e';
+const INK = '#0b2545';
 const GROUP_ICON: Record<string, string> = { all: 'apps', sehari: 'home', nusantara: 'forest', toko: 'storefront' };
 
 /** URL rekaman buah (dari manifest suara), bila ada. */
@@ -60,7 +60,7 @@ function Catalog({ onOpen, onTour, onBack }: { onOpen: (id: string) => void; onT
                   onClick={() => setGroup(g.id)}
                   aria-pressed={on}
                   className="flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-extrabold transition-transform active:scale-95"
-                  style={on ? { background: 'linear-gradient(155deg,#9a93ff,#5b4bff 60%)', color: '#fff', boxShadow: '0 3px 0 #3a2cd1' } : { background: '#fff', color: INK, boxShadow: '0 3px 0 rgba(43,29,78,.08)' }}
+                  style={on ? { background: 'linear-gradient(155deg,#4fb3ff,#0786eb 60%)', color: '#fff', boxShadow: '0 3px 0 #0567c2' } : { background: '#fff', color: INK, boxShadow: '0 3px 0 rgba(11,37,69,.08)' }}
                 >
                   <Icon name={GROUP_ICON[g.id] ?? 'nutrition'} size={18} />
                   {g.name}
@@ -71,7 +71,7 @@ function Catalog({ onOpen, onTour, onBack }: { onOpen: (id: string) => void; onT
         </div>
         <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
           {list.map((f, i) => (
-            <button key={f.id} onClick={() => onOpen(f.id)} className="flex flex-col items-center gap-1 rounded-[22px] bg-white p-2 pb-2.5 shadow-[0_4px_0_rgba(43,29,78,.07)] transition-transform active:scale-95">
+            <button key={f.id} onClick={() => onOpen(f.id)} className="flex flex-col items-center gap-1 rounded-[22px] bg-white p-2 pb-2.5 shadow-[0_4px_0_rgba(11,37,69,.07)] transition-transform active:scale-95">
               <Image src={FRUIT_ARTWORK[f.id].thumb} alt="" width={256} height={256} unoptimized priority={i < 8} className="aspect-square w-full rounded-[16px] bg-[#fff8ee] object-contain" />
               <span className="text-center" style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, color: INK, lineHeight: 1.1 }}>
                 {f.name}
@@ -115,13 +115,13 @@ function Detail({ fruit, onBack, onOpen }: { fruit: Fruit; onBack: () => void; o
           <RoundBtn icon="park" label="Kembali ke kebun" onClick={onBack} />
           <RoundBtn icon="shuffle" label="Pilihkan" tone="orange" onClick={() => go(1 + Math.floor(Math.random() * (FRUITS.length - 1)))} />
         </div>
-        <div className="pointer-events-auto mx-auto flex w-full max-w-[640px] items-center gap-2 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(43,29,78,.12)] sm:gap-3 sm:p-4">
-          <button onClick={() => go(-1)} aria-label="Buah sebelumnya" className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90">
+        <div className="pointer-events-auto mx-auto flex w-full max-w-[640px] items-center gap-2 rounded-[26px] bg-white/95 p-3 shadow-[0_6px_0_rgba(11,37,69,.12)] sm:gap-3 sm:p-4">
+          <button onClick={() => go(-1)} aria-label="Buah sebelumnya" className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90">
             <Icon name="chevron_left" size={30} />
           </button>
           <div className="min-w-0 flex-1">
             <div style={{ fontFamily: BALOO, fontSize: 30, fontWeight: 800, color: INK, lineHeight: 1 }}>{fruit.name}</div>
-            <p className="mt-1 text-[15px] leading-snug font-extrabold text-[#6b5d80] sm:text-[17px]">{fruit.description.split('. ')[0].replace(/\.$/, '')}.</p>
+            <p className="mt-1 text-[15px] leading-snug font-extrabold text-[#4a5a75] sm:text-[17px]">{fruit.description.split('. ')[0].replace(/\.$/, '')}.</p>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {chips.map(([icon, text]) => (
                 <span key={icon} className="flex items-center gap-1 rounded-full bg-[#fff4e0] px-2.5 py-1 text-[12px] font-extrabold text-[#8a5a12]">
@@ -148,7 +148,7 @@ function Detail({ fruit, onBack, onOpen }: { fruit: Fruit; onBack: () => void; o
               <Icon name={playing ? 'stop' : 'volume_up'} size={32} />
             </button>
           )}
-          <button onClick={() => go(1)} aria-label="Buah berikutnya" className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#f5f0fa] text-[#2b1d4e] active:scale-90">
+          <button onClick={() => go(1)} aria-label="Buah berikutnya" className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#fff0da] text-[#0b2545] active:scale-90">
             <Icon name="chevron_right" size={30} />
           </button>
         </div>

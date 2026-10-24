@@ -182,7 +182,7 @@ function LayarSelesai({ paket, bahasa, skor, onLagi, onKembali }: { paket: Conte
   }, [bintang]);
   return (
     <div className="flex min-h-dvh items-center justify-center p-5" style={{ background: "linear-gradient(180deg,#bfe9ff,#d8f3c4)", fontFamily: BALOO, color: INK }}>
-      <div className="akademi-pop w-full max-w-[380px] rounded-[28px] bg-white p-6 text-center shadow-[0_8px_0_rgba(43,29,78,.12)]">
+      <div className="akademi-pop w-full max-w-[380px] rounded-[28px] bg-white p-6 text-center shadow-[0_8px_0_rgba(11,37,69,.12)]">
         <div className="flex justify-center gap-1">
           {[1, 2, 3].map((k) => (
             <Icon key={k} name="star" size={54} className={bintang >= k ? "text-[#f2b705]" : "text-[#e2dccd]"} />

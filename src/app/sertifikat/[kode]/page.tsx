@@ -11,7 +11,7 @@ import { SERTIFIKAT_PRINT_CSS, SertifikatKartu } from "@/components/akademi/sert
 import { bacaSnapshot, rapikanKode, type SnapshotSertifikat } from "@/lib/akademi/sertifikat";
 import { supabase } from "@/lib/supabase/client";
 
-const INK = "#2b1d4e";
+const INK = "#0b2545";
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 const NUNITO = "var(--ff-nunito), system-ui, sans-serif";
 
@@ -59,7 +59,7 @@ export default function VerifikasiSertifikatPage() {
   const meta = hasil.status === "sah" ? LEVELS.find((l) => l.id === hasil.level) : undefined;
 
   return (
-    <main className="sertifikat-root min-h-dvh" style={{ background: "#faf8fc", fontFamily: NUNITO, color: INK }}>
+    <main className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
       <style>{SERTIFIKAT_PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[1040px] flex-col gap-5 px-4 py-6 sm:px-6 sm:py-8">
         <header className="no-print flex flex-col items-center gap-1 text-center">
@@ -102,7 +102,7 @@ export default function VerifikasiSertifikatPage() {
 
 function Kotak({ ikon, judul, isi }: { ikon: string; judul: string; isi?: string }) {
   return (
-    <div className="mx-auto flex w-full max-w-[460px] flex-col items-center gap-2 rounded-[24px] bg-white p-8 text-center shadow-[0_4px_0_rgba(43,29,78,.06)]">
+    <div className="mx-auto flex w-full max-w-[460px] flex-col items-center gap-2 rounded-[24px] bg-white p-8 text-center shadow-[0_4px_0_rgba(11,37,69,.06)]">
       <span style={{ fontSize: 40 }} aria-hidden>
         {ikon}
       </span>

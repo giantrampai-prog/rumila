@@ -35,7 +35,7 @@ const BLOK: Record<NavCommand, { label: string; ikon: ReactNode; c: string; d: s
   lompat: { label: "lompat", ikon: <span style={{ fontSize: 28, lineHeight: 1 }}>🦘</span>, c: "#22b573", d: "#16804f" },
   kiri: { label: "kiri", ikon: <Icon name="turn_left" size={30} />, c: "#8b5cf6", d: "#6a3fd1" },
   kanan: { label: "kanan", ikon: <Icon name="turn_right" size={30} />, c: "#8b5cf6", d: "#6a3fd1" },
-  ulangi: { label: "ulangi", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🔁</span>, c: "#ff7a1a", d: "#c25a0c" },
+  ulangi: { label: "ulangi", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🔁</span>, c: "#fd861d", d: "#c25a0c" },
   kalau: { label: "🪨? lompat : maju", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🤔</span>, c: "#0ea5a4", d: "#0b7f7e" },
   bendera: { label: "bendera", ikon: <span style={{ fontSize: 26, lineHeight: 1 }}>🚩</span>, c: "#e04f5f", d: "#a8323f" },
 };
@@ -457,7 +457,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   return (
     <div className="flex flex-col gap-3" style={{ fontFamily: BALOO, color: INK }} data-mode={ronde.execMode}>
       {/* panggung */}
-      <div className="relative rounded-[24px] bg-white/70 p-2 shadow-[0_4px_0_rgba(43,29,78,.1)]">
+      <div className="relative rounded-[24px] bg-white/70 p-2 shadow-[0_4px_0_rgba(11,37,69,.1)]">
         <Panggung
           grid={grid}
           agam={agam}
@@ -474,8 +474,8 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
               <button
                 key={g.id}
                 onClick={() => { if (!sibuk && !terkunci) { sfx.tap(); setAktif(i); setAgam(awalAgam(g)); } }}
-                className="relative rounded-[12px] bg-white p-1 shadow-[0_3px_0_rgba(43,29,78,.1)] active:translate-y-0.5"
-                style={{ outline: i === aktif ? "3px solid #ff7a1a" : "3px solid transparent", minWidth: 56, minHeight: 56 }}
+                className="relative rounded-[12px] bg-white p-1 shadow-[0_3px_0_rgba(11,37,69,.1)] active:translate-y-0.5"
+                style={{ outline: i === aktif ? "3px solid #fd861d" : "3px solid transparent", minWidth: 56, minHeight: 56 }}
                 aria-label={`Kebun ${i + 1}${statusGrid[i] ? `, ${statusGrid[i] === "✓" ? "berhasil" : "gagal"}` : ""}`}
               >
                 <Mini grid={g} />
@@ -508,7 +508,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
         <>
           <div className="flex items-center justify-center gap-2 text-[14px] font-bold opacity-70">
             <span>{efektif.length} langkah</span>
-            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(43,29,78,.12)] active:translate-y-0.5 disabled:opacity-40" style={{ minHeight: 36 }}>
+            <button onClick={ulangLangsung} disabled={sibuk || terkunci || !efektif.length} className="rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40" style={{ minHeight: 36 }}>
               ↺ Ulang dari awal
             </button>
           </div>
@@ -691,14 +691,14 @@ function Rak({ judul, blok, slot, aktif, sel, bacaSaja, onPilihRak, onKetuk, onN
   const terpakai = hitungBlok(blok);
   const kosong = Math.max(0, slot - terpakai);
   return (
-    <div onClick={onPilihRak} className="rounded-[20px] p-2" style={{ background: aktif ? "rgba(43,29,78,.08)" : "rgba(43,29,78,.04)", outline: aktif && onPilihRak ? "3px solid #ff7a1a" : "3px solid transparent", boxShadow: "inset 0 3px 0 rgba(0,0,0,.06)" }}>
+    <div onClick={onPilihRak} className="rounded-[20px] p-2" style={{ background: aktif ? "rgba(11,37,69,.08)" : "rgba(11,37,69,.04)", outline: aktif && onPilihRak ? "3px solid #fd861d" : "3px solid transparent", boxShadow: "inset 0 3px 0 rgba(0,0,0,.06)" }}>
       <div className="mb-1 px-1 text-[13px] font-extrabold opacity-70">{judul}</div>
       <div className="flex flex-wrap items-center gap-1.5">
         {blok.map((b, i) => (
           <Keping key={i} blok={b} nomor={i + 1} dipilih={sel === i} bacaSaja={bacaSaja} onKetuk={() => onKetuk?.(i)} onN={() => onN?.(i)} onHapusIsi={(j) => onHapusIsi?.(i, j)} />
         ))}
         {Array.from({ length: kosong }, (_, k) => (
-          <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56, height: 56, border: "3px dashed rgba(43,29,78,.25)" }} aria-hidden />
+          <span key={`k${k}`} className="rounded-[12px]" style={{ width: 56, height: 56, border: "3px dashed rgba(11,37,69,.25)" }} aria-hidden />
         ))}
         {blok.length === 0 && !bacaSaja && <span className="ml-1 self-center text-[14px] font-bold opacity-60">Ketuk blok di bawah</span>}
       </div>

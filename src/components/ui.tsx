@@ -135,7 +135,7 @@ export function Card({ children, className = "", radius = 22 }: { children: Reac
   return (
     <div
       className={`${play ? "" : "border border-line"} bg-surface ${className}`}
-      style={{ borderRadius: play ? radius + 4 : radius, boxShadow: play ? "0 5px 0 rgba(43,29,78,.07)" : undefined }}
+      style={{ borderRadius: play ? radius + 4 : radius, boxShadow: play ? "0 5px 0 rgba(11,37,69,.07)" : undefined }}
     >
       {children}
     </div>
@@ -178,11 +178,11 @@ export const listRow = "flex w-full items-center gap-3 border-b border-line-soft
 export function Modal({ open, onClose, title, children, width = 520 }: { open: boolean; onClose: () => void; title?: string; children: ReactNode; width?: number }) {
   const play = true;
   if (!open) return null;
-  const ink = play ? "#2b1d4e" : "#0b0b0c";
+  const ink = play ? "#0b2545" : "#0b0b0c";
   return (
     <div
       className="anim-fade fixed inset-0 z-[80] flex items-end justify-center desk:items-center desk:p-5"
-      style={{ background: play ? "rgba(43,29,78,.45)" : "rgba(16,24,40,.45)", backdropFilter: "blur(4px)" }}
+      style={{ background: play ? "rgba(11,37,69,.45)" : "rgba(16,24,40,.45)", backdropFilter: "blur(4px)" }}
       onClick={onClose}
       onKeyDown={(e) => e.key === "Escape" && onClose()}
     >
@@ -214,7 +214,7 @@ export function Modal({ open, onClose, title, children, width = 520 }: { open: b
               onClick={onClose}
               aria-label="Tutup"
               className="flex size-10 items-center justify-center rounded-xl"
-              style={{ background: play ? "#f5f0fa" : "#f1f2f4", color: ink }}
+              style={{ background: play ? "#fff0da" : "#f1f2f4", color: ink }}
             >
               <Icon name="close" />
             </button>
