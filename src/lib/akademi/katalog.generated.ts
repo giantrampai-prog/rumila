@@ -4469,14 +4469,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Bebek Berkumpul",
-        "instruksi": "Bebek dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua bebek.",
+        "instruksi": "{Barang} dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua {barang}.",
         "bebek": "bebek",
         "katak": "katak",
         "angsa": "angsa"
       },
       "en": {
         "judul": "Ducks Gather",
-        "instruksi": "Ducks from both sides gather in the pond: slide the marker to how many ducks there are in all.",
+        "instruksi": "{Barang} from both sides gather in the pond: slide the marker to how many {barang} there are in all.",
         "bebek": "ducks",
         "katak": "frogs",
         "angsa": "swans"
@@ -4629,14 +4629,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Anak Ayam di Kandang",
-        "instruksi": "Sentuh anak ayam satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+        "instruksi": "Sentuh {barang} satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "anakayam": "anak ayam",
         "bebek": "bebek",
         "kelinci": "kelinci"
       },
       "en": {
         "judul": "Chicks in the Coop",
-        "instruksi": "Touch each chick one at a time as you count, then slide the marker to the number.",
+        "instruksi": "Touch the {barang} one at a time as you count, then slide the marker to the number.",
         "anakayam": "chicks",
         "bebek": "ducks",
         "kelinci": "rabbits"
@@ -4858,14 +4858,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Ikan di Kolam",
-        "instruksi": "Ikannya tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+        "instruksi": "{Barang} tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "ikan": "ikan",
         "katak": "katak",
         "bebek": "bebek"
       },
       "en": {
         "judul": "Fish in the Pond",
-        "instruksi": "The fish are scattered: touch each one as you count, then slide the marker to the number.",
+        "instruksi": "The {barang} are scattered: touch each one as you count, then slide the marker to the number.",
         "ikan": "fish",
         "katak": "frogs",
         "bebek": "ducks"
@@ -4937,13 +4937,13 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kelereng Tumpah",
-        "instruksi": "Kelereng robot tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+        "instruksi": "{Barang} robot tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "kelereng": "kelereng",
         "kancing": "kancing"
       },
       "en": {
         "judul": "Spilled Marbles",
-        "instruksi": "The robot's marbles spilled: touch each one as you count, then slide the marker to the number.",
+        "instruksi": "The robot's {barang} spilled: touch each one as you count, then slide the marker to the number.",
         "kelereng": "marbles",
         "kancing": "buttons"
       }
@@ -5008,14 +5008,14 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Kerang di Pantai",
-        "instruksi": "Sentuh kerang satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+        "instruksi": "Sentuh {barang} satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
         "kerang": "kerang",
         "kepiting": "kepiting",
         "bintang": "bintang laut"
       },
       "en": {
         "judul": "Shells on the Beach",
-        "instruksi": "Touch each shell one at a time as you count, then slide the marker to the number.",
+        "instruksi": "Touch the {barang} one at a time as you count, then slide the marker to the number.",
         "kerang": "shells",
         "kepiting": "crabs",
         "bintang": "starfish"
@@ -5159,13 +5159,13 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Berapa Jari Pembeli?",
-        "instruksi": "Lihat cepat jari pembeli, lalu ambil jeruk sebanyak jarinya.",
+        "instruksi": "Lihat cepat jari pembeli, lalu ambil {barang} sebanyak jarinya.",
         "jeruk": "jeruk",
         "apel": "apel"
       },
       "en": {
         "judul": "How Many Fingers?",
-        "instruksi": "Look quickly at the customer's fingers, then take that many oranges.",
+        "instruksi": "Look quickly at the customer's fingers, then take that many {barang}.",
         "jeruk": "oranges",
         "apel": "apples"
       }
@@ -23052,7 +23052,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Rak Angka Kelereng",
-        "instruksi": "Hitung kelerengnya, lalu taruh di rak yang angkanya pas.",
+        "instruksi": "Hitung isi tiap kantong (kelereng atau kancing), lalu taruh di rak yang angkanya pas.",
         "n11": "11",
         "n12": "12",
         "n13": "13",
@@ -23068,7 +23068,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Marble Number Shelf",
-        "instruksi": "Count the marbles, then put them on the shelf with the matching number.",
+        "instruksi": "Count what is in each bag (marbles or buttons), then put it on the shelf with the matching number.",
         "n11": "11",
         "n12": "12",
         "n13": "13",
@@ -23322,7 +23322,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Rak Angka Telur",
-        "instruksi": "Hitung telur di keranjang, lalu taruh di rak yang angkanya pas.",
+        "instruksi": "Hitung isi tiap keranjang (telur atau biji), lalu taruh di rak yang angkanya pas.",
         "n11": "11",
         "n12": "12",
         "n13": "13",
@@ -23338,7 +23338,7 @@ export const PAKET_RAW: unknown[] = [
       },
       "en": {
         "judul": "Egg Number Shelf",
-        "instruksi": "Count the eggs in the basket, then put them on the shelf with the matching number.",
+        "instruksi": "Count what is in each basket (eggs or seeds), then put it on the shelf with the matching number.",
         "n11": "11",
         "n12": "12",
         "n13": "13",

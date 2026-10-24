@@ -336,3 +336,11 @@ export const Activity = z.object({
   minutes: z.number().int().min(1).max(20),
 });
 export type Activity = z.infer<typeof Activity>;
+
+/**
+ * Instruksi boleh memuat `{barang}` / `{Barang}` bila barang dipilih acak per ronde (dagang hitung/subitasi/gabung):
+ * diganti nama barang ronde itu, `{Barang}` dengan huruf awal kapital.
+ */
+export function isiBarang(teks: string, nama: string): string {
+  return teks.replaceAll("{barang}", nama).replaceAll("{Barang}", nama.charAt(0).toUpperCase() + nama.slice(1));
+}

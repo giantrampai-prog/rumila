@@ -10,14 +10,14 @@
   "locale": {
     "id": {
       "judul": "Bebek Berkumpul",
-      "instruksi": "Bebek dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua bebek.",
+      "instruksi": "{Barang} dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua {barang}.",
       "bebek": "bebek",
       "katak": "katak",
       "angsa": "angsa"
     },
     "en": {
       "judul": "Ducks Gather",
-      "instruksi": "Ducks from both sides gather in the pond: slide the marker to how many ducks there are in all.",
+      "instruksi": "{Barang} from both sides gather in the pond: slide the marker to how many {barang} there are in all.",
       "bebek": "ducks",
       "katak": "frogs",
       "angsa": "swans"

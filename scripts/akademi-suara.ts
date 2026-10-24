@@ -17,7 +17,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
-import { ContentPack } from "@akademi/schema";
+import { ContentPack, isiBarang } from "@akademi/schema";
 
 const root = resolve(process.cwd());
 const OUT_DIR = resolve(root, "public/akademi/suara");
@@ -116,7 +116,10 @@ for (const f of berkasPaket) {
     if (!t) console.warn(`! ${rel}: ${apa} ${key} tidak ada di locale.id`);
     else tambah(t, `${p.id}:${key}`, undefined, p.id);
   };
-  ambil(p.instructionKey, "instructionKey");
+  if (p.mechanic === "dagang" && id[p.instructionKey]?.includes("arang}")) {
+    // instruksi dengan {barang}: satu kalimat per barang yang mungkin muncul
+    for (const g of p.goods) if (id[g.labelKey]) tambah(isiBarang(id[p.instructionKey], id[g.labelKey]), `${p.id}:${p.instructionKey}:${g.id}`, undefined, p.id);
+  } else ambil(p.instructionKey, "instructionKey");
   if (p.mechanic === "pilah" && p.mode === "pilih") for (const r of p.pilihan) ambil(r.promptKey, "promptKey");
   if (p.mechanic === "urutkan") for (const s of p.sequences) ambil(s.titleKey, "titleKey");
   if (p.mechanic === "dagang") for (const g of p.goods) ambil(g.labelKey, "goods.labelKey");

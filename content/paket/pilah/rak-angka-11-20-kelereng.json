@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rak Angka Kelereng",
-      "instruksi": "Hitung kelerengnya, lalu taruh di rak yang angkanya pas.",
+      "instruksi": "Hitung isi tiap kantong (kelereng atau kancing), lalu taruh di rak yang angkanya pas.",
       "n11": "11",
       "n12": "12",
       "n13": "13",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Marble Number Shelf",
-      "instruksi": "Count the marbles, then put them on the shelf with the matching number.",
+      "instruksi": "Count what is in each bag (marbles or buttons), then put it on the shelf with the matching number.",
       "n11": "11",
       "n12": "12",
       "n13": "13",
