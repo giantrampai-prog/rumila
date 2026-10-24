@@ -30,7 +30,7 @@ export const TOUR: TourStop[] = [
       "Misi kita istimewa: mengunjungi keluarga besar Matahari, yaitu delapan planet, Bulan, dan beberapa tetangga kecilnya.",
       "Di setiap persinggahan, perhatikan kartu-kartu yang muncul, ya. Isinya fakta seru yang bisa kamu ceritakan ke Ayah dan Ibu.",
       "Satu rahasia: di tur ini jarak antarplanet kita rapatkan. Aslinya jauuuh sekali. Cahaya Matahari saja butuh sekitar delapan menit untuk sampai ke Bumi!",
-      "Sabuk pengaman sudah terpasang? Mesin menyala. Tiga… dua… satu… meluncur! Tujuan pertama kita: pusat tata surya.",
+      "Tujuan pertama kita: pusat tata surya. Sabuk pengaman sudah terpasang? Mesin menyala. Tiga… dua… satu… meluncur!",
     ],
   },
   {

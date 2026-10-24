@@ -1,189 +1,188 @@
 {
   "version": 2,
   "recording": {
-    "src": "/laut/voice/v2/algenib-20260928.m4a",
-    "duration": 598.7753333333334,
-    "voice": "Algenib",
-    "words": 1274,
-    "timestampPrecisionSeconds": 1,
-    "timestampSha256": "a022c8a613ac56896274dae49c591b58dceb7a77734e8b8b5b5ae39cc655fdca"
+    "src": "/laut/voice/v2/laut-andi.m4a",
+    "duration": 596.652,
+    "voice": "Andi (ElevenLabs)",
+    "words": 1270,
+    "timestampPrecisionSeconds": 0.01
   },
   "tracks": {
     "persiapan": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 0,
-      "end": 39,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 0.0,
+      "end": 35.9,
       "cues": [
         0,
-        10,
-        22
+        10.58,
+        20.44
       ]
     },
     "masuk-laut": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 39,
-      "end": 70,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 35.9,
+      "end": 66.45,
       "cues": [
         0,
-        12,
-        21
+        12.46,
+        21.12
       ]
     },
     "terumbu-karang": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 70,
-      "end": 112,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 66.45,
+      "end": 108.63,
       "cues": [
         0,
-        11,
-        21,
-        31
+        10.95,
+        21.93,
+        31.97
       ]
     },
     "padang-lamun": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 112,
-      "end": 144,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 108.63,
+      "end": 140.63,
       "cues": [
         0,
-        10,
-        21
+        9.61,
+        21.37
       ]
     },
     "batas-aman": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 144,
-      "end": 177,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 140.63,
+      "end": 174.06,
       "cues": [
         0,
-        11,
-        23
+        10.51,
+        22.23
       ]
     },
     "dinding-karang": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 177,
-      "end": 207,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 174.06,
+      "end": 204.8,
       "cues": [
         0,
-        9,
-        20
+        9.72,
+        21.28
       ]
     },
     "laut-biru": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 207,
-      "end": 238,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 204.8,
+      "end": 236.89,
       "cues": [
         0,
-        8,
-        19
+        10.5,
+        20.38
       ]
     },
     "makin-redup": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 238,
-      "end": 269,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 236.89,
+      "end": 266.23,
       "cues": [
         0,
-        11,
-        19
+        10.65,
+        18.73
       ]
     },
     "zona-senja": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 269,
-      "end": 305,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 266.23,
+      "end": 305.16,
       "cues": [
         0,
-        8,
-        18,
-        26
+        8.65,
+        19.87,
+        28.41
       ]
     },
     "bioluminesensi": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 305,
-      "end": 346,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 305.16,
+      "end": 349.48,
       "cues": [
         0,
-        7,
-        19,
-        32
+        8.46,
+        22.02,
+        35.12
       ]
     },
     "ventilasi": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 346,
-      "end": 384,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 349.48,
+      "end": 390.71,
       "cues": [
         0,
-        10,
-        20,
-        29
+        10.66,
+        20.8,
+        31.36
       ]
     },
     "dataran-abisal": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 384,
-      "end": 424,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 390.71,
+      "end": 430.62,
       "cues": [
         0,
-        9,
-        20,
-        30
+        9.75,
+        20.31,
+        28.97
       ]
     },
     "palung-laut": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 424,
-      "end": 457,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 430.62,
+      "end": 459.37,
       "cues": [
         0,
-        9,
-        20
+        8.42,
+        17.62
       ]
     },
     "biota-palung": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 457,
-      "end": 492,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 459.37,
+      "end": 494.36,
       "cues": [
         0,
-        13,
-        24
+        10.83,
+        22.27
       ]
     },
     "challenger-deep": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 492,
-      "end": 534,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 494.36,
+      "end": 537.78,
       "cues": [
         0,
-        10,
-        19,
-        30
+        10.86,
+        20.08,
+        29.76
       ]
     },
     "misi-selesai": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 534,
-      "end": 561,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 537.78,
+      "end": 562.35,
       "cues": [
         0,
-        8,
-        17
+        8.06,
+        16.98
       ]
     },
     "ringkasan": {
-      "src": "/laut/voice/v2/algenib-20260928.m4a",
-      "start": 561,
-      "end": 598.7753333333334,
+      "src": "/laut/voice/v2/laut-andi.m4a",
+      "start": 562.35,
+      "end": 596.65,
       "cues": [
         0,
-        10,
-        21,
-        31
+        9.65,
+        18.91,
+        27.53
       ]
     }
   }
