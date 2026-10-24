@@ -14,10 +14,10 @@ import { AISLE_Z, CHAIRS, COUNTER, PASS_Z, QUEUE_X, SIDEWALK_IN, STATIONS, groun
 import { navFromScene, type NavGrid } from './nav';
 import { buildProgress } from '@/lib/resto/sim';
 import { buildRealSky } from '@/components/fruits/garden/sky';
+import { disposePerson, lookFor, makePerson, posePerson } from './people';
 
 const _sunOff = new T.Vector3(24, 48, 30);
 
-const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
 function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => void) {
   const c = document.createElement('canvas');
@@ -45,34 +45,6 @@ function emojiTex(e: string) {
   return t;
 }
 
-/** Tokoh bulat sederhana (pelanggan / staf). */
-function person(body: string, head = '#f0c8a0', hat?: string) {
-  const g = new T.Group();
-  const b = new T.Mesh(new T.CapsuleGeometry(0.22, 0.36, 6, 14), std(body, 0.7));
-  b.position.y = 0.52;
-  const h = new T.Mesh(new T.SphereGeometry(0.2, 16, 12), std(head, 0.6));
-  h.position.y = 1.02;
-  g.add(b, h);
-  for (const s of [-1, 1]) {
-    const eye = new T.Mesh(new T.SphereGeometry(0.025, 8, 6), std('#222222', 0.3));
-    eye.position.set(s * 0.07, 1.05, 0.18);
-    g.add(eye);
-  }
-  const hair = new T.Mesh(new T.SphereGeometry(0.205, 16, 10, 0, Math.PI * 2, 0, Math.PI / 2.2), std('#3a2a1e', 0.7));
-  hair.position.y = 1.04;
-  hair.rotation.x = -0.25;
-  g.add(hair);
-  if (hat) {
-    const c = new T.Mesh(new T.CylinderGeometry(0.2, 0.22, 0.24, 14), std(hat, 0.6));
-    c.position.y = 1.26;
-    g.add(c);
-  }
-  g.traverse((o) => ((o as T.Mesh).isMesh ? (o.castShadow = true) : null));
-  return g;
-}
-
-const SEG_COLOR = { pelajar: '#3f7ac8', pekerja: '#5a5a66', keluarga: '#e8804a' } as const;
-
 /** Satu orang yang berjalan mengikuti rute (lewat pintu, lorong) lalu berdiri/duduk. */
 interface Member {
   obj: T.Group;
@@ -80,7 +52,14 @@ interface Member {
   delay: number;
   /** titik yang dihadap saat duduk (tengah meja); null = berdiri */
   face: T.Vector3 | null;
+  /** sedang makan (menyuap) */
+  eat?: boolean;
+  /** staf yang bekerja di tempatnya saat diam (koki memasak, kasir melayani) */
+  work?: boolean;
 }
+
+/** Tinggi dudukan kursi makan di atas lantai (building.ts: papan 0.42 + bantal). */
+const SEAT_H = 0.5;
 
 interface Actor {
   members: Member[];
@@ -113,6 +92,7 @@ export class RestoScene {
   private shell = new T.Group(); // dinding, lantai, atap: dibangun ulang saat keadaan berubah
   private dyn = new T.Group(); // alat, meja, dekorasi
   private people = new T.Group();
+  private personMat = new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.75 });
   private actors = new Map<number, Actor>();
   private staffActors = new Map<string, Actor>();
   private buildK = 0;
@@ -342,17 +322,17 @@ export class RestoScene {
     const want = new Set(s.handed ? s.staff.map((m) => m.id) : []);
     for (const [id, a] of this.staffActors)
       if (!want.has(id)) {
-        for (const mm of a.members) this.people.remove(mm.obj);
+        for (const mm of a.members) this.dropPerson(mm.obj);
         this.staffActors.delete(id);
       }
     for (const m of s.handed ? s.staff : []) {
       if (this.staffActors.has(m.id)) continue;
-      const colors = { kasir: '#c8342a', koki: '#ffffff', pelayan: '#1f2f5a', kebersihan: '#6aa84f' } as const;
-      const o = person(colors[m.role], '#f0c8a0', m.role === 'koki' ? '#ffffff' : m.role === 'pelayan' ? '#1f2f5a' : undefined);
+      const o = makePerson(lookFor(m.role), this.personMat);
       const home = this.staffHome(m.role, [...this.staffActors.keys()].length);
       o.position.copy(home);
       this.people.add(o);
-      this.staffActors.set(m.id, { members: [{ obj: o, path: [], delay: 0, face: null }], key: 'home', food: [], bubble: null });
+      const work = m.role === 'koki' || m.role === 'kasir';
+      this.staffActors.set(m.id, { members: [{ obj: o, path: [], delay: 0, face: null, work }], key: 'home', food: [], bubble: null });
     }
   }
 
@@ -390,8 +370,9 @@ export class RestoScene {
           const start = SIDEWALK_IN.clone().add(new T.Vector3((Math.random() - 0.5) * 4, 0, 0.6));
           const members: Member[] = [];
           for (let k = 0; k < g.size; k++) {
-            const p = person(SEG_COLOR[g.seg], ['#f0c8a0', '#d9a47a', '#e8b890'][k % 3]);
-            if (g.seg === 'keluarga' && k >= 2) p.scale.setScalar(0.72);
+            const kid = g.seg === 'keluarga' && k >= 2;
+            const p = makePerson(lookFor(kid ? 'anak' : g.seg), this.personMat);
+            if (kid) p.scale.setScalar(0.64);
             p.position.copy(start).add(new T.Vector3((k % 2) * 0.5 - 0.25, 0, Math.floor(k / 2) * 0.5));
             this.people.add(p);
             members.push({ obj: p, path: [], delay: 0, face: null });
@@ -400,7 +381,7 @@ export class RestoScene {
           this.actors.set(g.id, a);
           const b = new T.Sprite(new T.SpriteMaterial({ map: this.greet, transparent: true, depthWrite: false }));
           b.scale.set(1.6, 0.6, 1);
-          b.position.set(0, 2.0, 0);
+          b.position.set(0, 2.15, 0);
           b.userData.until = this.t + 2.5;
           members[0].obj.add(b);
           a.bubble = b;
@@ -424,6 +405,7 @@ export class RestoScene {
             });
           } else if (g.state === 'leave') this.leave(a);
         }
+        for (const m of a.members) m.eat = g.state === 'eat';
         if (g.state === 'queue') qi++;
         // makanan di meja
         const showFood = g.state === 'eat';
@@ -448,7 +430,7 @@ export class RestoScene {
           this.leave(a);
         }
         if (a.members.every((m) => !m.path.length && m.delay <= 0)) {
-          for (const m of a.members) this.people.remove(m.obj);
+          for (const m of a.members) this.dropPerson(m.obj);
           this.actors.delete(id);
         }
       }
@@ -479,6 +461,11 @@ export class RestoScene {
   /** Rombongan pulang: satu per satu lewat pintu menuju trotoar. */
   private leave(a: Actor) {
     a.members.forEach((m, k) => this.send(m, SIDEWALK_IN.clone().add(new T.Vector3((Math.random() - 0.5) * 5, 0, 1.2)), null, k * 0.35));
+  }
+
+  private dropPerson(o: T.Object3D) {
+    this.people.remove(o);
+    disposePerson(o);
   }
 
   private clearFood(a: Actor) {
@@ -543,24 +530,22 @@ export class RestoScene {
     for (const a of [...this.actors.values(), ...this.staffActors.values()]) {
       for (const m of a.members) {
         const o = m.obj;
-        if (m.delay > 0) {
-          m.delay -= dt;
-          continue;
-        }
-        if (m.path.length) {
+        let moved = 0;
+        if (m.delay > 0) m.delay -= dt;
+        else if (m.path.length) {
           const to = m.path[0].clone().sub(o.position);
           to.y = 0;
           const dd = to.length();
           if (dd < 0.06) m.path.shift();
           else {
-            o.position.addScaledVector(to.normalize(), Math.min(dd, dt * 2.4 * this.walkK));
+            moved = Math.min(dd, dt * 2.4 * this.walkK);
+            o.position.addScaledVector(to.normalize(), moved);
             o.rotation.y = T.MathUtils.damp(o.rotation.y, o.rotation.y + Math.atan2(Math.sin(Math.atan2(to.x, to.z) - o.rotation.y), Math.cos(Math.atan2(to.x, to.z) - o.rotation.y)), 12, dt);
-            o.position.y = groundY(o.position.x, o.position.z) + Math.abs(Math.sin(this.t * 9 + o.id)) * 0.05;
           }
-        } else if (m.face) {
-          o.rotation.y = Math.atan2(m.face.x - o.position.x, m.face.z - o.position.z);
-          o.position.y = groundY(o.position.x, o.position.z) - 0.16; // duduk
-        } else o.position.y = groundY(o.position.x, o.position.z);
+        } else if (m.face) o.rotation.y = Math.atan2(m.face.x - o.position.x, m.face.z - o.position.z);
+        o.position.y = groundY(o.position.x, o.position.z);
+        const seated = !!m.face && !m.path.length && m.delay <= 0;
+        posePerson(o, { t: this.t, dt, moved, seat: seated ? SEAT_H : null, eat: seated && m.eat, work: m.work && !m.path.length });
       }
       if (a.bubble) a.bubble.visible = this.t < (a.bubble.userData.until as number);
     }
