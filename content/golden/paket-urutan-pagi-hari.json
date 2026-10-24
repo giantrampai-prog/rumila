@@ -1,5 +1,5 @@
 {
-  "id": "agam-pagi-hari",
+  "id": "urutan-pagi-hari",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "urutkan",
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Susun gambar supaya pagi Agam berurutan.",
-      "pagi": "Pagi hari Agam",
+      "instruksi": "Susun gambar supaya pagi hari berurutan.",
+      "pagi": "Pagi hari",
       "bangun": "bangun tidur",
       "gosok": "gosok gigi",
       "sarapan": "sarapan",
@@ -21,8 +21,8 @@
       "tumbuh": "tunas tumbuh"
     },
     "en": {
-      "instruksi": "Put the pictures in order so Agam's morning makes sense.",
-      "pagi": "Agam's morning",
+      "instruksi": "Put the pictures in order so The morning makes sense.",
+      "pagi": "The morning",
       "bangun": "wake up",
       "gosok": "brush teeth",
       "sarapan": "breakfast",

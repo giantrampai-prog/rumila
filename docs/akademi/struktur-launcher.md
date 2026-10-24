@@ -58,7 +58,7 @@ Laporan mingguan otomatis ke WA/email wali: ringkasan rapor + pencapaian baru.
 
 ## Mata pelajaran dan Cambridge
 
-Enam pelajaran mengacu langsung ke kerangka Cambridge/CEFR: Matematika, Sains, Bahasa Inggris, Coding (Cambridge ICT Starters / Computing), Bahasa Indonesia (sebagai first language setara English, acuan Kurikulum Merdeka), Dunia & Budaya (Cambridge Global Perspectives untuk usia SD atas). Dua pelajaran adalah **pelajaran khas sekolah**, seperti sekolah Cambridge di Indonesia yang menambah Islamic Studies: **Seni & Musik** dan **Karakter & Agama**. Keduanya masuk rapor dan lencana, tetapi di sertifikat jenjang dicantumkan sebagai "pelajaran tambahan", bukan "mengacu Cambridge".
+Enam pelajaran mengacu langsung ke kerangka Cambridge/CEFR: Matematika, Sains, Bahasa Inggris, Coding (Cambridge ICT Starters / Computing), Bahasa Indonesia (sebagai first language setara English, acuan Kurikulum Merdeka), Dunia & Budaya (Cambridge Global Perspectives untuk usia SD atas). Dua pelajaran adalah **pelajaran khas sekolah**, seperti sekolah Cambridge di Indonesia yang menambah Islamic Studies: **Seni & Musik** dan **Karakter & robota**. Keduanya masuk rapor dan lencana, tetapi di sertifikat jenjang dicantumkan sebagai "pelajaran tambahan", bukan "mengacu Cambridge".
 
 ## Izin per anak
 
@@ -84,7 +84,7 @@ Izin per tab dan per dunia, diatur wali. Contoh: anak PAUD cukup Hari ini, Dunia
 ## Transisi dari rumila sekarang
 
 1. Layar masuk diganti: pilih peran murid / wali, bukan daftar anggota keluarga.
-2. Folder Game, Coding Agam, Petualangan 3D, Edukasi dilebur ke portal murid (lihat `migrasi-menu-lama.md`).
-3. Folder Doa Harian & Ibadah: Doa Harian, Hafalan Surat, Asmaul Husna jadi konten pelajaran Karakter & Agama; Al-Qur'an, Kiblat, Tasbih keluar dari produk.
+2. Folder Game, Coding robot, Petualangan 3D, Edukasi dilebur ke portal murid (lihat `migrasi-menu-lama.md`).
+3. Folder Doa Harian & Ibadah: Doa Harian, Hafalan Surat, Asmaul Husna jadi konten pelajaran Karakter & robota; Al-Qur'an, Kiblat, Tasbih keluar dari produk.
 4. Folder Keluarga, Kesehatan, dan tabel `fin_*` keluar dari produk ini.
 5. Portal wali dibangun baru; Admin akademi dibangun bersama Studio.

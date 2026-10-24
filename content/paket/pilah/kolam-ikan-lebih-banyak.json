@@ -9,13 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Kucing Agam lapar: sentuh kolam yang ikannya lebih banyak.",
+      "instruksi": "Kucing robot lapar: sentuh kolam yang ikannya lebih banyak.",
       "pilihan": "pilihan",
       "ikan": "ikan",
       "tBanyak": "Mana kolam yang ikannya lebih banyak?"
     },
     "en": {
-      "instruksi": "Agam's cat is hungry: touch the pond with more fish.",
+      "instruksi": "The robot's cat is hungry: touch the pond with more fish.",
       "pilihan": "choices",
       "ikan": "fish",
       "tBanyak": "Which pond has more fish?"

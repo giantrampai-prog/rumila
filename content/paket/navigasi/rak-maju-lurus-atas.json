@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
+      "instruksi": "Robot mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
     },
     "en": {
-      "instruksi": "Agam wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
+      "instruksi": "Robot wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
     }
   },
   "knobs": {

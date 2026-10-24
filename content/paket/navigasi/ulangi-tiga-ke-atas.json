@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
+      "instruksi": "Robot naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
     },
     "en": {
-      "instruksi": "Agam climbs three squares but the rack has two slots: use 'repeat 3' with forward."
+      "instruksi": "Robot climbs three squares but the rack has two slots: use 'repeat 3' with forward."
     }
   },
   "knobs": {

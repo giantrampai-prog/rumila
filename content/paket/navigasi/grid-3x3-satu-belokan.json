@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Susun maju dan belok di rak supaya Agam sampai bintang, lalu tekan jalan."
+      "instruksi": "Susun maju dan belok di rak supaya robot sampai bintang, lalu tekan jalan."
     },
     "en": {
-      "instruksi": "Arrange forward and turn blocks on the rack so Agam reaches the star, then press go."
+      "instruksi": "Arrange forward and turn blocks on the rack so robot reaches the star, then press go."
     }
   },
   "knobs": {

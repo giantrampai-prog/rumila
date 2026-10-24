@@ -13,7 +13,7 @@
     {
       "id": "KODE.PAUD.PERINTAH.01", "track": "KODE", "level": "PAUD",
       "unit": { "id": "PERINTAH", "nama": { "id": "Memberi perintah", "en": "Giving commands" } },
-      "statement": { "id": "Aku bisa menyuruh Agam maju satu sampai tiga langkah untuk sampai ke bintang", "en": "I can tell Agam to move forward one to three steps to reach the star" },
+      "statement": { "id": "Aku bisa menyuruh robot maju satu sampai tiga langkah untuk sampai ke bintang", "en": "I can tell robot to move forward one to three steps to reach the star" },
       "depth": ["pakai"], "prereq": [], "refs": [], "core": true, "mechanics": ["navigasi"],
       "catatan": "Hanya 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Kamus kerangka belum punya kode computing untuk usia 3–4; acuan terdekat Cambridge Early Years Understanding the World bila tersedia."
     }

@@ -132,7 +132,7 @@ interface ContentPack {
 ### 3.2 Narasi
 
 ```
-World (Laut, Angkasa, Bumi, Pasar, Rumah Agam…)
+World (Laut, Angkasa, Bumi, Pasar, Rumah robot…)
   └─ Quest (cerita 10–15 menit, 3–6 Activity, syarat band)
        └─ Activity
 Capstone = Quest khusus lintas track, syarat naik pangkat
@@ -237,7 +237,7 @@ Stack yang gue pilih kalau dari nol: TypeScript end-to-end, Next.js PWA, Three.j
 ## 7. Hubungan dengan rumila sekarang
 
 - Rumila dulu *family launcher* (doa, ibadah, keluarga, keuangan, kesehatan). Produk baru ini **Rumila Kids Academy**; modul non-akademi keluar dari produk (aplikasi terpisah atau dipensiunkan).
-- Yang dipindahkan ke akademi: aset 3D dan scene (Laut, Angkasa, Roket, Tubuh, Buah, Bumi) sebagai `content/worlds`, logika Coding Agam sebagai mekanik Navigasi/Urutkan/Pola, Resto sebagai mekanik Dagang/Simulasi.
+- Yang dipindahkan ke akademi: aset 3D dan scene (Laut, Angkasa, Roket, Tubuh, Buah, Bumi) sebagai `content/worlds`, logika Coding robot sebagai mekanik Navigasi/Urutkan/Pola, Resto sebagai mekanik Dagang/Simulasi.
 - Yang ditinggalkan: pola "satu tool = satu komponen bespoke dengan progres JSON sendiri".
 
 ## 8. Urutan bangun (vertical slice dulu)

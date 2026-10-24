@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Susun pensil Agam dari yang paling pendek ke yang paling panjang.",
+      "instruksi": "Susun pensil dari yang paling pendek ke yang paling panjang.",
       "pensil": "Pensil: pendek ke panjang",
       "kereta": "Kereta: pendek ke panjang",
       "pendek": "pendek",
@@ -18,7 +18,7 @@
       "terpanjang": "paling panjang"
     },
     "en": {
-      "instruksi": "Line up Agam's pencils from the shortest to the longest.",
+      "instruksi": "Line up the pencils from the shortest to the longest.",
       "pensil": "Pencils: short to long",
       "kereta": "Trains: short to long",
       "pendek": "short",
@@ -39,7 +39,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 4,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "susun",
   "sequences": [
     {

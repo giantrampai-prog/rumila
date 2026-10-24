@@ -1,5 +1,5 @@
 {
-  "id": "agam-siang-dan-malam",
+  "id": "siang-dan-malam",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "urutkan",
@@ -9,9 +9,9 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Susun gambar supaya kegiatan Agam urut dari awal sampai akhir.",
-      "makan": "Makan siang Agam",
-      "tidur": "Agam tidur malam",
+      "instruksi": "Susun gambar supaya kegiatan urut dari awal sampai akhir.",
+      "makan": "Makan siang robot",
+      "tidur": "Robot tidur malam",
       "cuci": "cuci tangan",
       "ambil": "ambil piring",
       "santap": "makan",
@@ -22,9 +22,9 @@
       "bobo": "tidur"
     },
     "en": {
-      "instruksi": "Put the pictures in order so Agam's activity goes from start to finish.",
-      "makan": "Agam's lunch",
-      "tidur": "Agam's bedtime",
+      "instruksi": "Put the pictures in order so the activity goes from start to finish.",
+      "makan": "The robot's lunch",
+      "tidur": "The robot's bedtime",
       "cuci": "wash hands",
       "ambil": "get a plate",
       "santap": "eat",
@@ -47,7 +47,7 @@
   "assets": [],
   "generatif": true,
   "rounds": 4,
-  "world": "rumah-agam",
+  "world": "rumah",
   "mode": "susun",
   "sequences": [
     {

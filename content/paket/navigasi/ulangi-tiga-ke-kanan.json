@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Rak cuma muat dua blok: pakai blok 'ulangi 3' berisi maju supaya Agam sampai bintang."
+      "instruksi": "Rak cuma muat dua blok: pakai blok 'ulangi 3' berisi maju supaya robot sampai bintang."
     },
     "en": {
-      "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so Agam reaches the star."
+      "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so robot reaches the star."
     }
   },
   "knobs": {

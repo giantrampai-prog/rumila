@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Lihat ke mana Agam menghadap, lalu susun belok dan maju supaya sampai bintang."
+      "instruksi": "Lihat ke mana robot menghadap, lalu susun belok dan maju supaya sampai bintang."
     },
     "en": {
-      "instruksi": "Check which way Agam is facing, then arrange turn and forward blocks to reach the star."
+      "instruksi": "Check which way robot is facing, then arrange turn and forward blocks to reach the star."
     }
   },
   "knobs": {

@@ -9,13 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam lapar sekali: sentuh piring yang kuenya lebih banyak.",
+      "instruksi": "Robot lapar sekali: sentuh piring yang kuenya lebih banyak.",
       "pilihan": "pilihan",
       "kue": "kue",
       "tBanyak": "Mana piring yang kuenya lebih banyak?"
     },
     "en": {
-      "instruksi": "Agam is very hungry: touch the plate with more cookies.",
+      "instruksi": "Robot is very hungry: touch the plate with more cookies.",
       "pilihan": "choices",
       "kue": "cookies",
       "tBanyak": "Which plate has more cookies?"

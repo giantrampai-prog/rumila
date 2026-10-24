@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Hitung petak sampai bintang, jangan hitung petak Agam, lalu pilih angka ulangi yang pas."
+      "instruksi": "Hitung petak sampai bintang, jangan hitung petak robot, lalu pilih angka ulangi yang pas."
     },
     "en": {
-      "instruksi": "Count the squares to the star, not Agam's own square, then pick the right repeat number."
+      "instruksi": "Count the squares to the star, not the robot's own square, then pick the right repeat number."
     }
   },
   "knobs": {

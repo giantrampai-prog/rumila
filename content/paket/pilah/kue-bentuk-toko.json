@@ -1,5 +1,5 @@
 {
-  "id": "kue-bentuk-toko-agam",
+  "id": "kue-bentuk-toko",
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "pilah",
@@ -9,13 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko Agam rapi.",
+      "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko rapi.",
       "lingkaran": "lingkaran",
       "segitiga": "segitiga",
       "kotak": "kotak"
     },
     "en": {
-      "instruksi": "Put each cookie on the tray with the same shape so Agam's shop looks neat.",
+      "instruksi": "Put each cookie on the tray with the same shape so the shop looks neat.",
       "lingkaran": "circle",
       "segitiga": "triangle",
       "kotak": "square"

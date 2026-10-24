@@ -156,8 +156,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menyuruh Agam maju satu sampai tiga langkah untuk sampai ke bintang",
-        "en": "I can tell Agam to move forward one to three steps to reach the star"
+        "id": "Aku bisa menyuruh robot maju satu sampai tiga langkah untuk sampai ke bintang",
+        "en": "I can tell robot to move forward one to three steps to reach the star"
       },
       "depth": [
         "pakai"
@@ -176,7 +176,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: Agam bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, Agam berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
+      "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: robot bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, robot berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
     },
     {
       "id": "KODE.PAUD.PERINTAH.02",
@@ -190,8 +190,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menekan lompat, bukan maju, saat batu tepat di depan Agam",
-        "en": "I can press jump instead of forward when a rock is right in front of Agam"
+        "id": "Aku bisa menekan lompat, bukan maju, saat batu tepat di depan robot",
+        "en": "I can press jump instead of forward when a rock is right in front of robot"
       },
       "depth": [
         "pakai"
@@ -204,7 +204,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Eksekusi langsung: tiap tombol dijalankan seketika, tanpa menyusun program. Batu selalu tepat satu petak di depan Agam saat muncul, jadi yang diuji hanya memilih perintah yang tepat untuk keadaan. Versi 'susun 2–4 perintah dulu lalu jalankan' ditulis di TK A. Umpan balik: maju ke batu = tersandung dan tertawa, boleh coba lagi."
+      "catatan": "Eksekusi langsung: tiap tombol dijalankan seketika, tanpa menyusun program. Batu selalu tepat satu petak di depan robot saat muncul, jadi yang diuji hanya memilih perintah yang tepat untuk keadaan. Versi 'susun 2–4 perintah dulu lalu jalankan' ditulis di TK A. Umpan balik: maju ke batu = tersandung dan tertawa, boleh coba lagi."
     },
     {
       "id": "KODE.PAUD.SEBAB-AKIBAT.01",
@@ -244,8 +244,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa meminta tolong Agam lewat tombol bantuan saat alat di dunia tidak bekerja",
-        "en": "I can ask Agam for help with the help button when something in the world does not work"
+        "id": "Aku bisa meminta tolong tokoh lewat tombol bantuan saat alat di dunia tidak bekerja",
+        "en": "I can ask robot for help with the help button when something in the world does not work"
       },
       "depth": [
         "pakai"

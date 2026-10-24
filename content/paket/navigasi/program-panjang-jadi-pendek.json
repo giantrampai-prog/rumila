@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Program Agam ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
+      "instruksi": "Program robot ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
     },
     "en": {
-      "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and Agam walks the same path."
+      "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and robot walks the same path."
     }
   },
   "knobs": {

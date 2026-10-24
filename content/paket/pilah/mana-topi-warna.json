@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam mau pakai topi pesta: sentuh topi yang warnanya disebut.",
+      "instruksi": "Robot mau pakai topi pesta: sentuh topi yang warnanya disebut.",
       "pilihan": "pilihan",
       "tMerah": "Mana yang merah?",
       "tBiru": "Mana yang biru?",
@@ -18,7 +18,7 @@
       "topi": "topi pesta"
     },
     "en": {
-      "instruksi": "Agam wants a party hat: touch the hat of the colour you hear.",
+      "instruksi": "Robot wants a party hat: touch the hat of the colour you hear.",
       "pilihan": "choices",
       "tMerah": "Which one is red?",
       "tBiru": "Which one is blue?",

@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Lihat tembok dan arah Agam, lalu susun program utuh sebelum dijalankan."
+      "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan."
     },
     "en": {
-      "instruksi": "Look at the walls and Agam's direction, then build the whole program before running it."
+      "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it."
     }
   },
   "knobs": {

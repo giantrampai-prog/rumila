@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat Agam akan berdiri, lalu tekan langkah."
+      "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat robot akan berdiri, lalu tekan langkah."
     },
     "en": {
-      "instruksi": "Before each block runs, point to the square where Agam will stand, then press step."
+      "instruksi": "Before each block runs, point to the square where robot will stand, then press step."
     }
   },
   "knobs": {

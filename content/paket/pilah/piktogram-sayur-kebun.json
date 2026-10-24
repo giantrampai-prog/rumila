@@ -9,14 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Panen Agam campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
+      "instruksi": "Panen robot campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
       "wortel": "wortel",
       "brokoli": "brokoli",
       "jagung": "jagung",
       "tomat": "tomat"
     },
     "en": {
-      "instruksi": "Agam's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
+      "instruksi": "The robot's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
       "wortel": "carrots",
       "brokoli": "broccoli",
       "jagung": "corn",

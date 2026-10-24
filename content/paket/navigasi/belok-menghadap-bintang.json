@@ -9,10 +9,10 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
+      "instruksi": "Robot belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
     },
     "en": {
-      "instruksi": "Agam is not facing the star yet: use a left or right block, then forward."
+      "instruksi": "Robot is not facing the star yet: use a left or right block, then forward."
     }
   },
   "knobs": {

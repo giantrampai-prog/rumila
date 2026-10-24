@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam jadi kasir toko mainan: pembeli bayar sepuluh ribu, beri kembalian yang pas.",
+      "instruksi": "Robot jadi kasir toko mainan: pembeli bayar sepuluh ribu, beri kembalian yang pas.",
       "kelereng": "kelereng",
       "yoyo": "yoyo",
       "balon": "balon",
@@ -17,7 +17,7 @@
       "boneka": "boneka"
     },
     "en": {
-      "instruksi": "Agam is the toy-shop cashier: the customer pays ten thousand, give the right change.",
+      "instruksi": "Robot is the toy-shop cashier: the customer pays ten thousand, give the right change.",
       "kelereng": "marbles",
       "yoyo": "yo-yo",
       "balon": "balloon",

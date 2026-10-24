@@ -6,7 +6,7 @@ import {
 } from "../src";
 import keranjang from "../../../content/golden/paket-keranjang-warna.json";
 import hitungJari from "../../../content/golden/paket-hitung-jari.json";
-import pagi from "../../../content/golden/paket-agam-pagi-hari.json";
+import pagi from "../../../content/golden/paket-urutan-pagi-hari.json";
 import pasar from "../../../content/golden/paket-pasar-buah-1-5.json";
 
 describe("rng", () => {

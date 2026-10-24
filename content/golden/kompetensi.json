@@ -222,8 +222,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menyuruh Agam maju satu sampai tiga langkah untuk sampai ke bintang",
-        "en": "I can tell Agam to move forward one to three steps to reach the star"
+        "id": "Aku bisa menyuruh robot maju satu sampai tiga langkah untuk sampai ke bintang",
+        "en": "I can tell robot to move forward one to three steps to reach the star"
       },
       "depth": [
         "pakai"
@@ -242,7 +242,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: Agam bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, Agam berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
+      "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: robot bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, robot berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
     }
   ]
 }

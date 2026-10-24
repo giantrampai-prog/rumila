@@ -25,6 +25,8 @@ Berkas `content/kurikulum/<TRACK>-<LEVEL>.json` (buat atau tambah), bentuk `Kuri
 
 Satu topik → **2 sampai 4 kompetensi**. Tidak lebih.
 
+- **Tanpa nama tokoh.** Kurikulum bersifat umum: jangan menulis Agam, Rinoya, atau maskot lain di statement/catatan/unit. Pakai "robot", "tokoh", "anak", "pembeli". Validator menolak nama tokoh.
+
 ## Langkah
 
 1. Baca golden set dan skema. Baca kamus kerangka yang relevan (MAT → `eyfs.json`, `cambridge-early-years.json`, `cambridge-primary-maths.json`; KODE → `cambridge-primary-computing.json`, `cambridge-early-years.json`).

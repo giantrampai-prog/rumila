@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "instruksi": "Agam mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
+      "instruksi": "Robot mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
       "siapkan": "siapkan",
       "campur": "campur",
       "panggang": "panggang",
@@ -21,7 +21,7 @@
       "jadi": "kue matang"
     },
     "en": {
-      "instruksi": "Agam is baking a cake: put each small step into its big stage.",
+      "instruksi": "Robot is baking a cake: put each small step into its big stage.",
       "siapkan": "get ready",
       "campur": "mix",
       "panggang": "bake",
