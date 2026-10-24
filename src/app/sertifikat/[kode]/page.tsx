@@ -63,7 +63,7 @@ export default function VerifikasiSertifikatPage() {
       <style>{SERTIFIKAT_PRINT_CSS}</style>
       <div className="mx-auto flex max-w-[1040px] flex-col gap-5 px-4 py-6 sm:px-6 sm:py-8">
         <header className="no-print flex flex-col items-center gap-1 text-center">
-          <p className="text-[12px] font-extrabold tracking-[0.2em] text-ink-3">RUMILA KIDS ACADEMY</p>
+          <p className="text-[12px] font-extrabold tracking-[0.2em] text-ink-3">RINOYA ACADEMY</p>
           <h1 style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Verifikasi sertifikat</h1>
           <p className="text-[13px] font-bold text-ink-3">
             Kode <span className="font-black tracking-[0.15em]" style={{ color: INK }}>{kode || "—"}</span>
@@ -92,7 +92,7 @@ export default function VerifikasiSertifikatPage() {
 
         <footer className="no-print flex justify-center">
           <Link href="/" className="text-[13px] font-extrabold text-ink-3 underline-offset-4 hover:underline">
-            Tentang Rumila Kids Academy
+            Tentang RINOYA Academy
           </Link>
         </footer>
       </div>

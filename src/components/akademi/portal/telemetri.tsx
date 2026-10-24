@@ -153,7 +153,7 @@ export function TelemetriView() {
         <TombolKembali ikon />
         <div className="min-w-0 flex-1">
           <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK, lineHeight: 1.05 }}>Telemetri</h1>
-          <p className="text-[13px] font-bold text-ink-3">Bukti belajar semua anak · Rumila Kids Academy</p>
+          <p className="text-[13px] font-bold text-ink-3">Bukti belajar semua anak · RINOYA Academy</p>
         </div>
         <button onClick={salin} className="inline-flex h-10 items-center gap-1.5 rounded-full border border-[#e5e0ee] bg-white px-4 text-[13px] font-extrabold transition-transform active:scale-95" style={{ color: tersalin ? "#12904a" : INK }}>
           <Icon name={tersalin ? "check" : "content_copy"} size={18} /> {tersalin ? "Tersalin" : "Salin ringkasan"}

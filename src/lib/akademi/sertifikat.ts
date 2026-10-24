@@ -1,6 +1,6 @@
 "use client";
 
-// Sertifikat jenjang Rumila Kids Academy: terbit saat pangkat jenjang tercapai (semua kompetensi inti dikuasai).
+// Sertifikat jenjang RINOYA Academy: terbit saat pangkat jenjang tercapai (semua kompetensi inti dikuasai).
 // - buatKode / snapshotSertifikat: fungsi murni (diuji vitest, tanpa DOM).
 // - terbitkan(): cek pangkat, bekukan snapshot, insert ke tabel akademi_certificate, simpan salinan lokal di
 //   localStorage["rumila-akademi-sertifikat-<memberId>"]. Gagal kirim (offline / belum ada rumah) → tetap tersimpan

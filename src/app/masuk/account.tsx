@@ -114,7 +114,7 @@ export function AccountStage({ theme }: { theme: Theme }) {
       className="anim-fade relative flex w-full max-w-[420px] flex-col items-center gap-5 bg-white px-7 pt-8 pb-7 text-center"
       style={L.card}
     >
-      <Image src="/brand/rinoya-logo.png" alt="Rinoya Academy" width={240} height={78} priority className="h-auto w-[240px]" />
+      <Image src="/brand/rinoya-logo.png" alt="RINOYA Academy" width={240} height={78} priority className="h-auto w-[240px]" />
       {sent ? (
         <>
           <Icon name={sent === "email" ? "mark_email_read" : "info"} size={48} style={{ color: L.play ? "#12b8a6" : "#52B8A8" }} />
