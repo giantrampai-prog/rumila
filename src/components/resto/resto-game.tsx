@@ -220,10 +220,14 @@ function useGame(memberId: string) {
 
 /* ---------------- permainan ---------------- */
 
-// Musik latar "Rinoya" (lagu masuk penuh sejak detik 0,6; mengecil mulai detik ~199 → putaran berikutnya
-// menyilang di detik 196). Satu pemutar bersama agar keluar-masuk halaman tidak menumpuk suara.
+// Musik latar "Rinoya" hanya berbunyi selama restoran buka (jingle mulai saat "Buka Resto!", mengecil saat
+// tutup). Lagu masuk penuh sejak detik 0,6 dan mengecil mulai detik ~199 → putaran berikutnya menyilang di
+// detik 196. Satu pemutar bersama agar keluar-masuk halaman tidak menumpuk suara.
 let restoMusic: LoopMusic | null = null;
 const music = () => (restoMusic ??= new LoopMusic('/resto/musik-resto.m4a', ['resto-bgm-a', 'resto-bgm-b'], { volume: 0.16, loopStart: 0.6, loopEnd: 196, fade: 4 }));
+const MUSIC_KEY = 'rumila-resto-musik';
+/** posisi elemen tepat di bawah HUD atas (tinggi HUD ≈ 52 px + jarak) */
+const HUD_BELOW = 'calc(max(8px, env(safe-area-inset-top)) + 58px)';
 
 export function RestoGame() {
   const me = useMe();
@@ -240,6 +244,21 @@ export function RestoGame() {
   const run = useRef<S.DayRun | null>(null);
   const [speed, setSpeed] = useState(1);
   const [report, setReport] = useState<S.DayReport | null>(null);
+  const [musicOn, setMusicOn] = useState(true);
+  useEffect(() => {
+    try {
+      if (localStorage.getItem(MUSIC_KEY) === '0') setMusicOn(false);
+    } catch {}
+  }, []);
+  const toggleMusic = () => {
+    const v = !musicOn;
+    setMusicOn(v);
+    try {
+      localStorage.setItem(MUSIC_KEY, v ? '1' : '0');
+    } catch {}
+    sfx.tap();
+    if (v && g.phase === 'open') music().play(); // dari ketukan: aman untuk iPad/iPhone
+  };
 
   useEffect(() => {
     try {
@@ -251,24 +270,34 @@ export function RestoGame() {
       scene.current = new RestoScene(host.current);
       scene.current.sync(g);
     });
-    // musik latar: coba langsung; bila peramban menolak autoplay, mulai pada ketukan pertama
     installAudioUnlock();
+    return () => {
+      alive = false;
+      music().stop(1.2);
+      scene.current?.dispose();
+      scene.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // musik latar hanya saat restoran buka & jingle menyala; bila peramban menolak autoplay, ketukan berikutnya mencoba lagi
+  const wantMusic = g.phase === 'open' && musicOn;
+  useEffect(() => {
     const m = music();
+    if (!wantMusic) {
+      m.stop(1.5);
+      return;
+    }
     m.play();
     const onTap = () => m.retry();
     for (const ev of ['pointerup', 'touchend', 'keydown']) document.addEventListener(ev, onTap, { capture: true, passive: true });
     const onVis = () => (document.hidden ? m.pause() : m.play());
     document.addEventListener('visibilitychange', onVis);
     return () => {
-      alive = false;
       for (const ev of ['pointerup', 'touchend', 'keydown']) document.removeEventListener(ev, onTap, { capture: true });
       document.removeEventListener('visibilitychange', onVis);
-      m.stop(1.2);
-      scene.current?.dispose();
-      scene.current = null;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [wantMusic]);
 
   useEffect(() => {
     scene.current?.sync(g);
@@ -393,27 +422,36 @@ export function RestoGame() {
 
       {/* HUD atas */}
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-2 sm:p-3" style={{ paddingTop: 'max(8px, env(safe-area-inset-top))' }}>
-        <div className="pointer-events-auto flex items-center gap-2">
-          <button aria-label="Keluar" onClick={() => router.push('/beranda/game')} className="flex size-12 items-center justify-center rounded-full bg-white shadow-[0_4px_0_rgba(0,0,0,.2)] active:scale-90">
+        <div className="pointer-events-auto flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
+          <button aria-label="Keluar" onClick={() => router.push('/beranda/game')} className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white shadow-[0_4px_0_rgba(0,0,0,.2)] active:scale-90 sm:size-12">
             <Icon name="arrow_back" size={26} />
           </button>
-          <div className="rounded-[16px] px-3 py-1.5 text-white" style={{ background: WOOD, boxShadow: '0 3px 0 #5a3418' }}>
-            <div style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, lineHeight: 1 }}>{g.name}</div>
-            <div className="text-[12px] font-bold opacity-90">
+          <div className="min-w-0 rounded-[14px] px-2.5 py-1 text-white sm:rounded-[16px] sm:px-3 sm:py-1.5" style={{ background: WOOD, boxShadow: '0 3px 0 #5a3418' }}>
+            <div className="truncate" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, lineHeight: 1.15 }}>
+              {g.name}
+            </div>
+            <div className="truncate text-[11px] font-bold opacity-90 sm:text-[12px]">
               Hari {g.day} · {l ? l.name : 'belum ada lokasi'}
             </div>
           </div>
         </div>
-        <div className="pointer-events-auto flex items-center gap-2">
-          <div className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(0,0,0,.18)]" title="Reputasi">
+        <div className="pointer-events-auto flex shrink-0 items-center gap-1.5 sm:gap-2">
+          {/* HP: reputasi & kas dalam satu pil; layar lebar: dua pil */}
+          <button onClick={() => setPanel('uang')} className="flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[14px] shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95 sm:hidden" title="Reputasi & kas">
+            <span>❤️</span>
+            <b style={{ fontFamily: BALOO }}>{g.reputation}</b>
+            <span className="ml-1">🪙</span>
+            <b style={{ fontFamily: BALOO, fontSize: 15 }}>{n(g.cash)}</b>
+          </button>
+          <div className="hidden items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(0,0,0,.18)] sm:flex" title="Reputasi">
             <span>❤️</span>
             <b style={{ fontFamily: BALOO }}>{g.reputation}</b>
           </div>
-          <button onClick={() => setPanel('uang')} className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95">
+          <button onClick={() => setPanel('uang')} className="hidden items-center gap-1.5 rounded-full bg-white px-3 py-1.5 shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-95 sm:flex">
             <span>🪙</span>
             <b style={{ fontFamily: BALOO, fontSize: 17 }}>{n(g.cash)}</b>
           </button>
-          <button aria-label="Petunjuk" onClick={() => setIntro(true)} className="flex size-11 items-center justify-center rounded-full bg-white shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-90">
+          <button aria-label="Petunjuk" onClick={() => setIntro(true)} className="flex size-10 items-center justify-center rounded-full bg-white shadow-[0_3px_0_rgba(0,0,0,.18)] active:scale-90 sm:size-11">
             <Icon name="help" size={24} />
           </button>
         </div>
@@ -421,19 +459,20 @@ export function RestoGame() {
 
       {/* Sensei Hana */}
       {g.phase !== 'open' && (
-        <div className="pointer-events-none absolute left-2 flex max-w-[min(92vw,460px)] items-end gap-2 sm:left-3" style={{ top: 78 }}>
-          <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-white text-[34px] shadow-[0_3px_0_rgba(0,0,0,.18)]">👩‍🍳</span>
-          <div className="resto-pop rounded-[18px] rounded-bl-md bg-white px-3.5 py-2 shadow-[0_3px_0_rgba(0,0,0,.12)]">
+        <div className="pointer-events-none absolute left-2 right-2 flex max-w-[460px] items-end gap-2 sm:left-3" style={{ top: HUD_BELOW }}>
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[28px] shadow-[0_3px_0_rgba(0,0,0,.18)] sm:size-14 sm:text-[34px]">👩‍🍳</span>
+          <div className="resto-pop min-w-0 rounded-[18px] rounded-bl-md bg-white px-3 py-2 shadow-[0_3px_0_rgba(0,0,0,.12)] sm:px-3.5">
             <div className="text-[12px] font-extrabold text-[#c8342a]">Sensei Hana</div>
-            <div className="text-[15px] leading-snug font-bold">{mentor}</div>
+            <div className="text-[14px] leading-snug font-bold sm:text-[15px]">{mentor}</div>
           </div>
         </div>
       )}
 
       {/* jam & kecepatan saat buka */}
       {g.phase === 'open' && run.current && (
-        <div className="pointer-events-auto absolute left-1/2 -translate-x-1/2 rounded-[18px] px-3 py-2 text-white" style={{ top: 70, background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
-          <div className="flex items-center gap-3">
+        <div className="pointer-events-none absolute inset-x-2 flex flex-col items-center gap-1.5" style={{ top: HUD_BELOW }}>
+        <div className="pointer-events-auto max-w-full rounded-[18px] px-3 py-2 text-white" style={{ background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
+          <div className="flex items-center gap-2 sm:gap-3">
             <span style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>
               {String(hh).padStart(2, '0')}.{String(mm).padStart(2, '0')}
             </span>
@@ -442,6 +481,9 @@ export function RestoGame() {
                 {sp === 0 ? <Icon name="pause" size={20} /> : `${sp}×`}
               </button>
             ))}
+            <button aria-label={musicOn ? 'Matikan jingle' : 'Nyalakan jingle'} title={musicOn ? 'Matikan jingle' : 'Nyalakan jingle'} onClick={toggleMusic} className="ml-auto flex size-9 items-center justify-center rounded-full active:scale-90" style={{ background: musicOn ? '#ffc050' : 'rgba(255,255,255,.25)', color: musicOn ? INK : '#fff' }}>
+              <Icon name={musicOn ? 'music_note' : 'music_off'} size={20} />
+            </button>
           </div>
           <button
             onClick={() => {
@@ -461,21 +503,22 @@ export function RestoGame() {
             <Icon name="door_front" size={18} />
             {confirmClose ? 'Yakin tutup? Ketuk lagi' : 'Tutup resto & hitung kas'}
           </button>
-          <div className="mt-1 flex gap-3 text-[13px] font-bold">
+          <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-[13px] font-bold">
             <span>😊 {run.current.stats.served} dilayani</span>
             <span>🚶 {run.current.stats.lostQueue + run.current.stats.lostSeat + run.current.stats.lostStock} pergi</span>
             <span>🪙 {n(run.current.stats.gross - run.current.stats.discount)}</span>
           </div>
         </div>
-      )}
-      {g.phase === 'open' && run.current && run.current.events.length > 0 && (
-        <div className="pointer-events-none absolute left-2 max-w-[70vw] rounded-full bg-black/55 px-3 py-1.5 text-[13px] font-bold text-white" style={{ top: 150 }}>
-          {run.current.events[run.current.events.length - 1].text}
+        {run.current.events.length > 0 && (
+          <div className="max-w-full truncate rounded-full bg-black/55 px-3 py-1.5 text-[13px] font-bold text-white">
+            {run.current.events[run.current.events.length - 1].text}
+          </div>
+        )}
         </div>
       )}
 
       {/* kontrol kamera: perbesar, perkecil, pandangan dari atas, kembali */}
-      <div className="pointer-events-auto absolute right-2 flex flex-col gap-2 sm:right-3" style={{ top: '38%' }}>
+      <div className="pointer-events-auto absolute right-2 flex flex-col gap-1.5 sm:right-3 sm:gap-2" style={{ top: '38%' }}>
         {(
           [
             [roofOn ? 'roofing' : 'house', roofOn ? 'Buka atap (lihat isi)' : 'Pasang atap', () => setRoofOn(!!scene.current?.toggleRoof())],
@@ -490,7 +533,7 @@ export function RestoGame() {
             aria-label={label}
             title={label}
             onClick={() => (sfx.tap(), fn())}
-            className="flex size-11 items-center justify-center rounded-full bg-white/90 text-[#3a2416] shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90"
+            className="flex size-10 items-center justify-center rounded-full bg-white/90 text-[#3a2416] shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90 sm:size-11"
           >
             <Icon name={icon} size={24} />
           </button>
@@ -507,8 +550,8 @@ export function RestoGame() {
           </div>
         )}
         {g.phase === 'build' && (
-          <div className="pointer-events-auto flex items-center gap-2 rounded-[20px] p-2" style={{ background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
-            <span className="px-2 text-white" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>
+          <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-2 rounded-[20px] p-2" style={{ background: WOOD, boxShadow: '0 4px 0 #5a3418' }}>
+            <span className="px-2 text-center text-[15px] text-white sm:text-[18px]" style={{ fontFamily: BALOO, fontWeight: 800 }}>
               🏗️ {BUILD_STAGES[stageAt(1 - g.buildLeft / (CONTRACTORS.find((c) => c.id === g.contractor)?.days ?? 3))]} · {g.buildLeft} hari lagi
             </span>
             <Btn tone="cream" onClick={() => (sfx.open(), setPanel('gambar'))}>
@@ -521,7 +564,7 @@ export function RestoGame() {
         )}
         {(g.phase === 'prep' || g.phase === 'review') && (
           <>
-            <div className="pointer-events-auto flex flex-wrap items-end justify-center gap-2 rounded-[24px] p-2" style={{ background: WOOD, boxShadow: '0 5px 0 #5a3418' }}>
+            <div className="pointer-events-auto grid w-full max-w-[560px] grid-cols-6 gap-1 rounded-[20px] p-1.5 sm:flex sm:w-auto sm:max-w-none sm:flex-wrap sm:items-end sm:justify-center sm:gap-2 sm:rounded-[24px] sm:p-2" style={{ background: WOOD, boxShadow: '0 5px 0 #5a3418' }}>
               {(
                 [
                   ['bangun', '🛠️', 'Toko Alat'],
@@ -535,11 +578,11 @@ export function RestoGame() {
                 <button
                   key={id}
                   onClick={() => (sfx.open(), setPanel(id))}
-                  className="flex w-[64px] flex-col items-center gap-0.5 rounded-[16px] py-1.5 active:scale-90 sm:w-[76px]"
+                  className="flex min-w-0 flex-col items-center gap-0.5 rounded-[14px] px-0.5 py-1 active:scale-90 sm:w-[76px] sm:rounded-[16px] sm:py-1.5"
                   style={{ background: CREAM, boxShadow: '0 3px 0 #c9a27a' }}
                 >
-                  <span className="text-[28px] leading-none">{e}</span>
-                  <span className="text-[12px] font-extrabold">{label}</span>
+                  <span className="text-[24px] leading-none sm:text-[28px]">{e}</span>
+                  <span className="max-w-full truncate text-[10px] font-extrabold sm:text-[12px]">{label}</span>
                 </button>
               ))}
             </div>
@@ -558,6 +601,7 @@ export function RestoGame() {
                   }
                   run.current = S.openDay(g);
                   sfx.celebrate();
+                  if (musicOn) music().play(); // jingle mulai dari ketukan ini
                   save();
                   bump();
                 }}
