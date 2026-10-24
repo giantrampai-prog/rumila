@@ -472,7 +472,7 @@ export default function KidGarden({ active, tour, onCatalog, onTour, onTourEnd }
           return <NearAction {...a} onClick={() => bedAct(nearBed)} />;
         })()}
         {near === 'bed' && !card && !sheet && (
-          <NearAction icon="bedtime" label="Istirahat" sub="Tempat tidur" tone="linear-gradient(155deg,#4fb3ff,#0786eb 60%)" onClick={() => engine.current?.rest()} />
+          <NearAction icon="bedtime" label="Istirahat" sub="Tempat tidur" tone="linear-gradient(155deg,#1f94f0,#0567c2 60%)" onClick={() => engine.current?.rest()} />
         )}
         {near === 'tower' && !card && !sheet && (
           <NearAction icon="stairs" label="Naik menara" sub="Kincir angin" tone="linear-gradient(155deg,#ffb347,#fd861d 60%)" onClick={() => engine.current?.climbTower()} />

@@ -2,6 +2,7 @@
 
 // Potongan bersama portal Akademi (murid & wali): warna track, ikon mekanik, label status, helper event.
 
+import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LEVELS, TRACKS, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
@@ -163,7 +164,7 @@ export function TabBesar<T extends string>({ value, options, onChange, c = "blue
               fontFamily: BALOO,
               fontSize: 17,
               fontWeight: 800,
-              color: on ? "#fff" : INK,
+              color: on ? tintaPada(c) : INK,
               background: on ? `linear-gradient(155deg, ${l}, ${m} 65%)` : "transparent",
               boxShadow: on ? `0 3px 0 ${d}` : "none",
             }}
@@ -194,7 +195,7 @@ export function BadgeStatus({ status }: { status: Status }) {
 
 /** Ikon status kompetensi: ○ belum (abu), ● berkembang (kuning), ✓ dikuasai (hijau). */
 export function IkonStatus({ status, size = 28 }: { status: Status; size?: number }) {
-  const bg = status === "dikuasai" ? "#1fbf62" : status === "berkembang" ? "#ffbe0b" : "#fff";
+  const bg = status === "dikuasai" ? "#127a43" : status === "berkembang" ? "#ffbe0b" : "#fff";
   const border = status === "belum" ? "2.5px solid #d6cde4" : "none";
   return (
     <span
@@ -240,7 +241,7 @@ export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesa
         </span>
         <span className="mt-0.5 block text-[12px] font-extrabold text-ink-3">{labelMekanik(p.mechanic)}</span>
       </span>
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#4fb3ff,#0786eb 60%)", boxShadow: "0 2px 0 #0567c2" }}>
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-full text-white" style={{ background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 2px 0 #0567c2" }}>
         <Icon name="play_arrow" size={24} />
       </span>
     </Link>
@@ -251,14 +252,14 @@ export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesa
 export function KepalaWarna({ c, icon, judul, sub, kembali = "/akademi", right }: { c: ColorKey; icon: string; judul: string; sub?: string; kembali?: string; right?: ReactNode }) {
   const [l, m, d] = PLAY[c];
   return (
-    <div className="relative flex items-center gap-3 overflow-hidden rounded-[24px] p-3.5 text-white sm:p-4" style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 60%)`, boxShadow: `0 5px 0 ${d}` }}>
+    <div className="relative flex items-center gap-3 overflow-hidden rounded-[24px] p-3.5 sm:p-4" style={{ color: tintaPada(c), background: `linear-gradient(155deg, ${l} 0%, ${m} 60%)`, boxShadow: `0 5px 0 ${d}` }}>
       <div aria-hidden className="absolute -right-12 -bottom-16 size-48 rounded-full bg-white/20" />
       <Link href={kembali} aria-label="Kembali" className="relative flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white transition-transform active:scale-95" style={{ color: d, boxShadow: `0 4px 0 ${d}55` }}>
         <Icon name="arrow_back" size={24} />
       </Link>
       <div className="relative min-w-0 flex-1">
-        <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, lineHeight: 1.05, color: "#fff", textShadow: "0 2px 0 rgba(0,0,0,.12)" }}>{judul}</h1>
-        {sub && <p className="mt-0.5 text-[13px] font-extrabold text-white/90">{sub}</p>}
+        <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, lineHeight: 1.05, textShadow: tintaPada(c) === "#fff" ? "0 2px 0 rgba(0,0,0,.12)" : undefined }}>{judul}</h1>
+        {sub && <p className="mt-0.5 text-[13px] font-extrabold opacity-90">{sub}</p>}
       </div>
       {right}
       <span className="relative hidden size-14 items-center justify-center rounded-[18px] bg-white sm:flex" style={{ boxShadow: `0 3px 0 ${d}55` }}>

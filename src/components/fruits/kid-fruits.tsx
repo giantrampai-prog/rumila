@@ -60,7 +60,7 @@ function Catalog({ onOpen, onTour, onBack }: { onOpen: (id: string) => void; onT
                   onClick={() => setGroup(g.id)}
                   aria-pressed={on}
                   className="flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-extrabold transition-transform active:scale-95"
-                  style={on ? { background: 'linear-gradient(155deg,#4fb3ff,#0786eb 60%)', color: '#fff', boxShadow: '0 3px 0 #0567c2' } : { background: '#fff', color: INK, boxShadow: '0 3px 0 rgba(11,37,69,.08)' }}
+                  style={on ? { background: 'linear-gradient(155deg,#1f94f0,#0567c2 60%)', color: '#fff', boxShadow: '0 3px 0 #0567c2' } : { background: '#fff', color: INK, boxShadow: '0 3px 0 rgba(11,37,69,.08)' }}
                 >
                   <Icon name={GROUP_ICON[g.id] ?? 'nutrition'} size={18} />
                   {g.name}

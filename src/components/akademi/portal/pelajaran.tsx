@@ -2,6 +2,7 @@
 
 // Tab "Pelajaran": peta jenjang — kartu Matematika & Coding + pratinjau 3 unit jenjang anak, pelajaran lain "Segera".
 
+import { tintaPada } from "@/lib/brand";
 import Link from "next/link";
 import { useMemo } from "react";
 import { TRACKS, type LevelId, type TrackId } from "@akademi/schema";
@@ -45,8 +46,9 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {lain.map((t) => {
             const [l, m] = PLAY[TRACK_WARNA[t.id]];
+            const tinta = tintaPada(TRACK_WARNA[t.id]);
             return (
-              <div key={t.id} aria-disabled className="relative flex min-h-[104px] flex-col justify-between overflow-hidden rounded-[22px] p-3 text-white opacity-55 saturate-50" style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)` }}>
+              <div key={t.id} aria-disabled className="relative flex min-h-[104px] flex-col justify-between overflow-hidden rounded-[22px] p-3 opacity-55 saturate-50" style={{ color: tinta, background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)` }}>
                 <span className="flex size-9 items-center justify-center rounded-[12px] bg-white">
                   <span className="ms" style={{ fontSize: 22, color: m }}>
                     {TRACK_IKON[t.id]}
@@ -54,7 +56,7 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
                 </span>
                 <div>
                   <div style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, lineHeight: 1.1 }}>{t.nama[bahasa]}</div>
-                  <div className="mt-0.5 text-[11px] font-extrabold text-white/90">Segera</div>
+                  <div className="mt-0.5 text-[11px] font-extrabold opacity-90">Segera</div>
                 </div>
               </div>
             );
@@ -68,6 +70,7 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
 function KartuTrack({ id, level, peng, dikuasai, total, bahasa }: { id: TrackId; level: LevelId; peng: Record<string, Penguasaan>; dikuasai: number; total: number; bahasa: BahasaAnak }) {
   const t = TRACKS.find((x) => x.id === id)!;
   const [l, m, d] = PLAY[TRACK_WARNA[id]];
+  const tinta = tintaPada(TRACK_WARNA[id]);
   const pct = total ? Math.round((dikuasai / total) * 100) : 0;
   const unit = unitUntuk(id, level, KOMPETENSI, bahasa);
   const pratinjau = unit.slice(0, 3);
@@ -78,7 +81,7 @@ function KartuTrack({ id, level, peng, dikuasai, total, bahasa }: { id: TrackId;
       className="flex flex-col overflow-hidden rounded-[24px] bg-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.97]"
       style={{ boxShadow: `0 5px 0 ${d}` }}
     >
-      <div className="relative flex min-h-[150px] flex-col justify-between overflow-hidden p-4 text-white" style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)` }}>
+      <div className="relative flex min-h-[150px] flex-col justify-between overflow-hidden p-4" style={{ color: tinta, background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)` }}>
         <div aria-hidden className="absolute -right-8 -bottom-12 size-36 rounded-full bg-white/18" />
         <div className="relative flex items-center justify-between">
           <span className="flex size-12 items-center justify-center rounded-[15px] bg-white" style={{ boxShadow: `0 3px 0 ${d}44` }}>
@@ -90,7 +93,7 @@ function KartuTrack({ id, level, peng, dikuasai, total, bahasa }: { id: TrackId;
         </div>
         <div className="relative">
           <div style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{t.nama[bahasa]}</div>
-          <div className="mt-1 text-[13px] font-extrabold text-white/90">{total ? `${dikuasai} dari ${total} kompetensi dikuasai` : "Konten segera"}</div>
+          <div className="mt-1 text-[13px] font-extrabold opacity-90">{total ? `${dikuasai} dari ${total} kompetensi dikuasai` : "Konten segera"}</div>
           <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-white/30">
             <div className="h-full rounded-full bg-white" style={{ width: `${pct}%` }} />
           </div>
@@ -101,7 +104,7 @@ function KartuTrack({ id, level, peng, dikuasai, total, bahasa }: { id: TrackId;
         <ol className="flex flex-col px-3 py-1.5">
           {pratinjau.map((u, i) => (
             <li key={u.id} className={`flex min-h-[52px] items-center gap-2.5 ${i < pratinjau.length - 1 ? "border-b border-[#fff0da]" : ""}`}>
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-full text-white" style={{ background: m, fontFamily: BALOO, fontSize: 15, fontWeight: 800 }}>
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-full" style={{ color: tinta, background: m, fontFamily: BALOO, fontSize: 15, fontWeight: 800 }}>
                 {i + 1}
               </span>
               <span className="min-w-0 flex-1 truncate text-[14px] font-extrabold" style={{ color: INK }}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, type CSSProperties, type ReactNode } from "react";
+import { tintaPada } from "@/lib/brand";
 import { CAT, PLAY, type ColorKey } from "@/lib/catalog";
 import { initialOf } from "@/lib/format";
 
@@ -34,8 +35,9 @@ export function Tile({ c, icon, size = 44, radius = 0.3 }: { c: ColorKey; icon: 
     return (
       <span
         aria-hidden
-        className="ms relative flex shrink-0 items-center justify-center overflow-hidden text-white"
+        className="ms relative flex shrink-0 items-center justify-center overflow-hidden"
         style={{
+          color: tintaPada(c),
           width: size,
           height: size,
           borderRadius: Math.round(size * 0.32),
@@ -75,8 +77,9 @@ export function Avatar({ c, name, size = 46, initial }: { c: ColorKey; name: str
     return (
       <span
         aria-hidden
-        className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-full text-white"
+        className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
         style={{
+          color: tintaPada(c),
           width: size,
           height: size,
           background: `linear-gradient(155deg, ${l}, ${m} 60%, ${d})`,

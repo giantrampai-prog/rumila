@@ -16,9 +16,9 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "id",
     categories: ["education", "kids"],
     icons: [
-      { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
-      { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
-      { src: "/icons/maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      { src: "/icons/r-icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icons/r-icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icons/r-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }

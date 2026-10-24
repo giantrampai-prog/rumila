@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { useOpenTool } from "@/components/shell";
 import { Icon } from "@/components/ui";
+import { tintaPada } from "@/lib/brand";
 import { PLAY, type Folder } from "@/lib/catalog";
 
 /** Halaman satu dunia: judul besar + petak permainan. */
@@ -14,8 +15,8 @@ export function WorldView({ f }: { f: Folder }) {
   return (
     <>
       <div
-        className="relative flex items-center gap-3 overflow-hidden rounded-[24px] p-3.5 text-white sm:p-4"
-        style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 60%)`, boxShadow: `0 5px 0 ${d}` }}
+        className="relative flex items-center gap-3 overflow-hidden rounded-[24px] p-3.5 sm:p-4"
+        style={{ color: tintaPada(f.c), background: `linear-gradient(155deg, ${l} 0%, ${m} 60%)`, boxShadow: `0 5px 0 ${d}` }}
       >
         <div aria-hidden className="absolute -right-12 -bottom-16 size-48 rounded-full bg-white/20" />
         <Link
@@ -27,8 +28,8 @@ export function WorldView({ f }: { f: Folder }) {
           <Icon name="arrow_back" size={24} />
         </Link>
         <div className="relative min-w-0 flex-1">
-          <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, lineHeight: 1.05, color: "#fff", textShadow: "0 2px 0 rgba(0,0,0,.12)" }}>{f.name}</h1>
-          <p className="mt-0.5 text-[13px] font-extrabold text-white/90">{f.desc}</p>
+          <h1 style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, lineHeight: 1.05, textShadow: tintaPada(f.c) === "#fff" ? "0 2px 0 rgba(0,0,0,.12)" : undefined }}>{f.name}</h1>
+          <p className="mt-0.5 text-[13px] font-extrabold opacity-90">{f.desc}</p>
         </div>
         <span className="relative hidden size-14 items-center justify-center rounded-[18px] bg-white sm:flex" style={{ boxShadow: `0 3px 0 ${d}55` }}>
           <span className="ms" style={{ fontSize: 34, color: m }}>

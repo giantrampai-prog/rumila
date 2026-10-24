@@ -188,7 +188,7 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, pending
       {/* isi */}
       <div className="absolute flex flex-col items-center text-center" style={{ inset: "9.5% 11% 9% 11%" }}>
         <div className="flex items-center gap-[1.2cqw]">
-          <Image src="/brand/rinoya-mark.png" alt="" width={64} height={64} priority style={{ width: "clamp(28px, 5cqw, 64px)", height: "auto" }} />
+          <Image src="/brand/rinoya-mark-r.png" alt="" width={64} height={64} priority style={{ width: "clamp(28px, 5cqw, 64px)", height: "auto" }} />
           <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.45cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RINOYA ACADEMY</span>
         </div>
 

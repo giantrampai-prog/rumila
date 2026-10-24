@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { RoundBtn } from '@/components/angkasa/kid-space';
 import { Icon } from '@/components/ui';
+import { tintaPada } from '@/lib/brand';
 import { PLAY, type ColorKey } from '@/lib/catalog';
 import { initialState, reducer } from '@/lib/anatomy/state';
 import { TUR, TUR_AUDIO, turDwell } from '@/lib/anatomy/tur';
@@ -369,8 +370,8 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
               return (
                 <button key={id} onClick={() => dispatch({ type: 'layer', id, visible: !on, opacity: 1 })} aria-pressed={on} className="flex flex-col items-center gap-1 active:scale-90">
                   <span
-                    className="flex size-[52px] items-center justify-center rounded-full text-white transition-opacity sm:size-[58px]"
-                    style={{ background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 4px 0 ${d}`, opacity: on ? 1 : 0.35 }}
+                    className="flex size-[52px] items-center justify-center rounded-full transition-opacity sm:size-[58px]"
+                    style={{ color: tintaPada(c), background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 4px 0 ${d}`, opacity: on ? 1 : 0.35 }}
                   >
                     <Icon name={icon} size={28} />
                   </span>
@@ -400,7 +401,7 @@ export function KidBody({ manifest, memberId }: { manifest: Manifest; memberId: 
                   className="flex w-[74px] shrink-0 flex-col items-center gap-1.5 rounded-[20px] py-2 transition-transform active:scale-90"
                   style={on ? { background: 'rgba(255,255,255,.18)', boxShadow: 'inset 0 0 0 3px #ffbe0b' } : undefined}
                 >
-                  <span className="flex size-12 items-center justify-center rounded-full text-white" style={{ background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 3px 0 ${d}` }}>
+                  <span className="flex size-12 items-center justify-center rounded-full" style={{ color: tintaPada(c), background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 3px 0 ${d}` }}>
                     <Icon name={icon} size={26} />
                   </span>
                   <span style={{ fontFamily: BALOO, fontSize: 13, fontWeight: 800, color: '#fff', lineHeight: 1, textShadow: '0 1px 3px rgba(0,0,0,.6)' }}>{name}</span>
