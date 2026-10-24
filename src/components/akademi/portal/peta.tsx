@@ -6,8 +6,9 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { LEVELS, levelIndex, type LevelId } from "@akademi/schema";
+import { type LevelId } from "@akademi/schema";
 import { MascotBubble } from "@/components/kid";
+import { TanggaJenjang } from "./tangga";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { tintaPada } from "@/lib/brand";
@@ -270,43 +271,6 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
           Sertifikat
         </Link>
       )}
-    </section>
-  );
-}
-
-/* ---------------- tangga jenjang ---------------- */
-
-function TanggaJenjang({ level }: { level: LevelId }) {
-  const ada = useMemo(() => new Set(KOMPETENSI.map((c) => c.level)), []);
-  const idx = levelIndex(level);
-  return (
-    <section className={`${KARTU} p-4`} aria-label="Tangga jenjang">
-      <h2 style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>Tangga jenjang</h2>
-      <ol className="mt-2.5 flex flex-col gap-1.5">
-        {LEVELS.map((lv) => {
-          const i = levelIndex(lv.id);
-          const lewat = i < idx;
-          const kini = lv.id === level;
-          const segera = !ada.has(lv.id);
-          return (
-            <li key={lv.id} className={`flex items-center gap-2.5 rounded-[14px] px-2.5 py-1.5 ${kini ? "bg-[#e3f1fd]" : ""}`}>
-              <span
-                className="flex size-8 shrink-0 items-center justify-center rounded-full"
-                style={lewat ? { background: "#fdb724", color: INK } : kini ? { background: "#0567c2", color: "#fff" } : { background: "#fff0da", color: "#5b6b85" }}
-              >
-                <Icon name={lewat ? "check" : kini ? "flag" : segera ? "hourglass_empty" : "lock"} size={18} />
-              </span>
-              <span className="min-w-0 flex-1 text-[14px] leading-tight font-extrabold" style={{ color: kini ? INK : "#4a5a75" }}>
-                {lv.nama} · {lv.lokal}
-                <span className="block text-[12px] font-bold text-ink-3">
-                  Pangkat {lv.pangkat}
-                  {kini ? " · kamu di sini" : segera ? " · segera hadir" : ""}
-                </span>
-              </span>
-            </li>
-          );
-        })}
-      </ol>
     </section>
   );
 }
