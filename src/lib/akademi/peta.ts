@@ -38,7 +38,7 @@ export interface Hitungan {
 export interface PetaJenjang {
   level: LevelId;
   unit: UnitPeta[];
-  /** jumlah misi selesai / total misi di jalur */
+  /** misi selesai berurutan dari Misi 1 (misi yang tamat di luar urutan tidak dihitung) / total misi */
   selesai: number;
   total: number;
   inti: Hitungan;
@@ -78,13 +78,11 @@ export function petaJenjang(peng: Record<string, Penguasaan>, selesaiSet: Set<st
   let nomor = 0;
   let sekarang: MisiPeta | undefined;
   const inti: Hitungan = { dikuasai: 0, total: 0 };
-  let jumlahSelesai = 0;
   const unit: UnitPeta[] = urutUnit.map(({ track, ke, isi }) => {
     const misi = isi.map((c) => {
       const dikuasai = peng[c.id]?.status === "dikuasai";
       const selesai = dikuasai || selesaiSet.has(c.id);
       const m: MisiPeta = { nomor: ++nomor, kompetensi: c, selesai, dikuasai, sekarang: false, terkunci: false };
-      if (selesai) jumlahSelesai++;
       if (!sekarang && !selesai) {
         m.sekarang = true;
         sekarang = m;
@@ -100,7 +98,7 @@ export function petaJenjang(peng: Record<string, Penguasaan>, selesaiSet: Set<st
 
   const tercapai = inti.total > 0 && inti.dikuasai === inti.total;
   const pemantapan = !sekarang && !tercapai ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
-  return { level, unit, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan };
+  return { level, unit, selesai: sekarang ? sekarang.nomor - 1 : nomor, total: nomor, inti, tercapai, sekarang, pemantapan };
 }
 
 /** Jenjang berikutnya yang sudah punya kurikulum; undefined bila tidak ada. */
