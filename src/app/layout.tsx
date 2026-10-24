@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Baloo_2, Inter, Nunito, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { PwaSetup } from "@/components/pwa";
+import { INTRO_SKRIP, IntroRinoya } from "@/components/intro";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -42,8 +43,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${jakarta.variable} ${inter.variable} ${baloo.variable} ${nunito.variable}`}>
+    <html lang="id" suppressHydrationWarning className={`${jakarta.variable} ${inter.variable} ${baloo.variable} ${nunito.variable}`}>
       <head>
+        {/* lewati animasi pembuka bila sesi ini sudah melihatnya (sebelum paint, tanpa kedip) */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_SKRIP }} />
         {/* display=block: cegah nama ikon tampil sebagai teks saat font belum siap */}
         {/* eslint-disable-next-line @next/next/no-page-custom-font, @next/next/google-font-display */}
         <link
@@ -52,6 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
+        <IntroRinoya />
         {children}
         <PwaSetup />
       </body>
