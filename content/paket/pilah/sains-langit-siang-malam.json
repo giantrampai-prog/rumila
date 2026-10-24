@@ -1,0 +1,119 @@
+{
+  "id": "sains-langit-siang-malam",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siang atau Malam?",
+      "instruksi": "Taruh tiap gambar kegiatan ke langit siang atau langit malam.",
+      "siang": "siang",
+      "malam": "malam",
+      "i-bola": "main bola di lapangan",
+      "i-sepeda": "naik sepeda",
+      "i-sekolah": "berangkat sekolah",
+      "i-layang": "main layang-layang",
+      "i-tidur": "tidur di kasur",
+      "i-bintang": "melihat bintang",
+      "i-senter": "menyalakan senter",
+      "i-burunghantu": "burung hantu terbang"
+    },
+    "en": {
+      "judul": "Day or Night?",
+      "instruksi": "Put each activity picture under the day sky or the night sky.",
+      "siang": "day",
+      "malam": "night",
+      "i-bola": "playing ball outside",
+      "i-sepeda": "riding a bike",
+      "i-sekolah": "going to school",
+      "i-layang": "flying a kite",
+      "i-tidur": "sleeping in bed",
+      "i-bintang": "watching the stars",
+      "i-senter": "turning on a torch",
+      "i-burunghantu": "an owl flying"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah gambar per putaran; semua gambar punya petunjuk kuat (matahari, lampu, piyama)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "siang",
+      "labelKey": "siang",
+      "emoji": "☀️",
+      "color": "#bbdefb"
+    },
+    {
+      "id": "malam",
+      "labelKey": "malam",
+      "emoji": "🌙",
+      "color": "#1a237e"
+    }
+  ],
+  "items": [
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "siang",
+      "emoji": "⚽"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "siang",
+      "emoji": "🚲"
+    },
+    {
+      "id": "sekolah",
+      "labelKey": "i-sekolah",
+      "bin": "siang",
+      "emoji": "🏫"
+    },
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "siang",
+      "emoji": "🪁"
+    },
+    {
+      "id": "tidur",
+      "labelKey": "i-tidur",
+      "bin": "malam",
+      "emoji": "🛌"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "malam",
+      "emoji": "🌟"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "malam",
+      "emoji": "🔦"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "malam",
+      "emoji": "🦉"
+    }
+  ],
+  "pilihan": []
+}

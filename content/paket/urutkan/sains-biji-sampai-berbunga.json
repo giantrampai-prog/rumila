@@ -1,0 +1,116 @@
+{
+  "id": "sains-biji-sampai-berbunga",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dari Biji Sampai Berbunga",
+      "instruksi": "Susun gambar tanaman dari biji, tunas, berdaun, sampai berbunga.",
+      "s-bungamatahari": "Bunga matahari tumbuh",
+      "bungamatahari-biji": "biji di tanah",
+      "bungamatahari-tunas": "tunas dua daun",
+      "bungamatahari-daun": "berdaun banyak",
+      "bungamatahari-bunga": "berbunga",
+      "s-kacang": "Kacang tumbuh",
+      "kacang-biji": "biji kacang",
+      "kacang-tunas": "tunas kecil",
+      "kacang-daun": "berdaun lebat",
+      "kacang-bunga": "berbunga"
+    },
+    "en": {
+      "judul": "From Seed to Flower",
+      "instruksi": "Put the plant pictures in order: seed, sprout, leafy, then flowering.",
+      "s-bungamatahari": "A sunflower grows",
+      "bungamatahari-biji": "seed in the soil",
+      "bungamatahari-tunas": "sprout with two leaves",
+      "bungamatahari-daun": "many leaves",
+      "bungamatahari-bunga": "flowering",
+      "s-kacang": "A bean grows",
+      "kacang-biji": "bean seed",
+      "kacang-tunas": "little sprout",
+      "kacang-daun": "lots of leaves",
+      "kacang-bunga": "flowering"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar: 3 (biji, tunas, berbunga) → 4 (tambah tahap berdaun banyak)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "bungamatahari",
+      "titleKey": "s-bungamatahari",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "bungamatahari-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "bungamatahari-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "daun",
+          "labelKey": "bungamatahari-daun",
+          "emoji": "🌿",
+          "scale": 1.1
+        },
+        {
+          "id": "bunga",
+          "labelKey": "bungamatahari-bunga",
+          "emoji": "🌻",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "kacang",
+      "titleKey": "s-kacang",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacang-biji",
+          "emoji": "🫘",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "kacang-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "daun",
+          "labelKey": "kacang-daun",
+          "emoji": "🪴",
+          "scale": 1.1
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacang-bunga",
+          "emoji": "🌼",
+          "scale": 1.3
+        }
+      ]
+    }
+  ]
+}

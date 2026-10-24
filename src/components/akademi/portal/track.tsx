@@ -13,6 +13,7 @@ import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, levelAnak, paketUntuk, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import { useMe } from "@/lib/store";
+import { questUntuk } from "@/lib/akademi/quest";
 import { IkonStatus, INK, KepalaWarna, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, TombolAktivitas, isTrackId, levelMeta, paketSelesai, trackMeta } from "./bersama";
 
 export interface UnitGrup {
@@ -160,6 +161,7 @@ function KartuUnit({ u, nomor, peng, selesai, warna, bahasa }: { u: UnitGrup; no
 function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency; peng: Record<string, Penguasaan>; selesai: Set<string>; terakhir: boolean; bahasa: BahasaAnak }) {
   const status = peng[c.id]?.status ?? "belum";
   const paket = paketKompetensi(c, bahasa);
+  const quest = questUntuk(c.id);
   const prasyaratBelum = c.prereq.some((id) => (peng[id]?.status ?? "belum") === "belum");
   return (
     <li className={`flex flex-col gap-2 ${terakhir ? "" : "border-b border-[#f1edf6] pb-3"}`}>
@@ -171,12 +173,28 @@ function BarisKompetensi({ c, peng, selesai, terakhir, bahasa }: { c: Competency
           {prasyaratBelum && <span aria-label="Ada kompetensi sebelumnya yang belum berkembang" title="Ada kompetensi sebelumnya yang belum berkembang" className="ml-1.5 inline-block size-2 rounded-full bg-[#c9bfd8] align-middle" />}
         </p>
       </div>
-      {paket.length === 0 ? (
+      {paket.length === 0 && quest.length === 0 ? (
         <span className="pl-[38px] text-[13px] font-extrabold text-[#b3a6c4]">Aktivitas segera</span>
       ) : (
         <div className="flex flex-col gap-2 sm:pl-[38px]">
           {paket.map((p) => (
             <TombolAktivitas key={p.id} p={p} selesai={selesai.has(p.id)} />
+          ))}
+          {quest.map((q) => (
+            <Link
+              key={q.toolId + q.competencyId}
+              href={q.href}
+              className="flex min-h-[60px] items-center gap-3 rounded-[18px] bg-white px-3 py-2 shadow-[0_4px_0_rgba(43,29,78,.08)] transition-transform active:scale-[.98]"
+            >
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full" style={{ background: "#e4e7f0", color: "#3a4670" }}>
+                <Icon name="explore" size={24} />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800, color: INK }}>{q.judul[bahasa] ?? q.judul.id}</span>
+                <span className="block text-[12px] font-extrabold text-ink-3">Quest · Dunia 3D</span>
+              </span>
+              <Icon name="play_arrow" size={26} className="text-[#ff7a1a]" />
+            </Link>
           ))}
         </div>
       )}

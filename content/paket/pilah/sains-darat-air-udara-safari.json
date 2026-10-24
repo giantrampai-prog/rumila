@@ -1,0 +1,142 @@
+{
+  "id": "sains-darat-air-udara-safari",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hewan Besar, Tempat Mana?",
+      "instruksi": "Robot bertemu hewan dari jauh: antar ke darat, air, atau udara.",
+      "darat": "darat",
+      "air": "air",
+      "udara": "udara",
+      "i-gajah": "gajah",
+      "i-zebra": "zebra",
+      "i-kuda": "kuda",
+      "i-hiu": "hiu",
+      "i-lumba": "lumba-lumba",
+      "i-udang": "udang",
+      "i-elang": "elang",
+      "i-burunghantu": "burung hantu",
+      "i-capung": "capung"
+    },
+    "en": {
+      "judul": "Big Animals, Which Home?",
+      "instruksi": "Robot meets animals from far away: take each to land, water, or sky.",
+      "darat": "land",
+      "air": "water",
+      "udara": "sky",
+      "i-gajah": "elephant",
+      "i-zebra": "zebra",
+      "i-kuda": "horse",
+      "i-hiu": "shark",
+      "i-lumba": "dolphin",
+      "i-udang": "shrimp",
+      "i-elang": "eagle",
+      "i-burunghantu": "owl",
+      "i-capung": "dragonfly"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah tempat: 2 (darat, air) → 3 (tambah udara)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "laut",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "darat",
+      "labelKey": "darat",
+      "emoji": "🌾",
+      "color": "#c5e1a5"
+    },
+    {
+      "id": "air",
+      "labelKey": "air",
+      "emoji": "🌊",
+      "color": "#81d4fa"
+    },
+    {
+      "id": "udara",
+      "labelKey": "udara",
+      "emoji": "☁️",
+      "color": "#e3f2fd"
+    }
+  ],
+  "items": [
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "darat",
+      "emoji": "🐘"
+    },
+    {
+      "id": "zebra",
+      "labelKey": "i-zebra",
+      "bin": "darat",
+      "emoji": "🦓"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "darat",
+      "emoji": "🐎"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "air",
+      "emoji": "🦈"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "air",
+      "emoji": "🐬"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "air",
+      "emoji": "🦐"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "udara",
+      "emoji": "🦅"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "udara",
+      "emoji": "🦉"
+    },
+    {
+      "id": "capung",
+      "labelKey": "i-capung",
+      "bin": "udara",
+      "emoji": "🪰"
+    }
+  ],
+  "pilihan": []
+}

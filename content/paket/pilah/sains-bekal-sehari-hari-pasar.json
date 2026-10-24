@@ -1,0 +1,174 @@
+{
+  "id": "sains-bekal-sehari-hari-pasar",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MAKANAN-SEHAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Belanja Piring Sehari-hari",
+      "instruksi": "Robot belanja di pasar: makanan sehari-hari ke piring, jajanan sesekali ke toples.",
+      "piring": "piring sehari-hari",
+      "toples": "toples sesekali",
+      "kadang": "kadang-kadang",
+      "i-apel": "apel",
+      "i-brokoli": "brokoli",
+      "i-jagung": "jagung",
+      "i-ayam": "ayam panggang",
+      "i-tempe": "tempe",
+      "i-semangka": "semangka",
+      "i-kacang": "kacang rebus",
+      "i-lolipop": "lolipop",
+      "i-donat": "donat",
+      "i-cokelat": "cokelat",
+      "i-cupcake": "kue mangkuk krim",
+      "i-pancake": "panekuk",
+      "i-biskuit": "biskuit"
+    },
+    "en": {
+      "judul": "Shopping for the Everyday Plate",
+      "instruksi": "Robot shops at the market: everyday food to the plate, once-in-a-while treats to the jar.",
+      "piring": "everyday plate",
+      "toples": "once-in-a-while jar",
+      "kadang": "sometimes",
+      "i-apel": "apple",
+      "i-brokoli": "broccoli",
+      "i-jagung": "corn",
+      "i-ayam": "roast chicken",
+      "i-tempe": "tempeh",
+      "i-semangka": "watermelon",
+      "i-kacang": "boiled peanuts",
+      "i-lolipop": "lollipop",
+      "i-donat": "doughnut",
+      "i-cokelat": "chocolate bar",
+      "i-cupcake": "cupcake",
+      "i-pancake": "pancake",
+      "i-biskuit": "biscuit"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah wadah: 2 → 3 (tambah 'kadang-kadang')"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah makanan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "piring",
+      "labelKey": "piring",
+      "emoji": "🍽️",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "toples",
+      "labelKey": "toples",
+      "emoji": "🫙",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kadang",
+      "labelKey": "kadang",
+      "emoji": "🧺",
+      "color": "#fff9c4"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "piring",
+      "emoji": "🍎"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "i-brokoli",
+      "bin": "piring",
+      "emoji": "🥦"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "piring",
+      "emoji": "🌽"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "piring",
+      "emoji": "🍗"
+    },
+    {
+      "id": "tempe",
+      "labelKey": "i-tempe",
+      "bin": "piring",
+      "emoji": "🍢"
+    },
+    {
+      "id": "semangka",
+      "labelKey": "i-semangka",
+      "bin": "piring",
+      "emoji": "🍉"
+    },
+    {
+      "id": "kacang",
+      "labelKey": "i-kacang",
+      "bin": "piring",
+      "emoji": "🥜"
+    },
+    {
+      "id": "lolipop",
+      "labelKey": "i-lolipop",
+      "bin": "toples",
+      "emoji": "🍭"
+    },
+    {
+      "id": "donat",
+      "labelKey": "i-donat",
+      "bin": "toples",
+      "emoji": "🍩"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "i-cokelat",
+      "bin": "toples",
+      "emoji": "🍫"
+    },
+    {
+      "id": "cupcake",
+      "labelKey": "i-cupcake",
+      "bin": "toples",
+      "emoji": "🧁"
+    },
+    {
+      "id": "pancake",
+      "labelKey": "i-pancake",
+      "bin": "kadang",
+      "emoji": "🥞"
+    },
+    {
+      "id": "biskuit",
+      "labelKey": "i-biskuit",
+      "bin": "kadang",
+      "emoji": "🍪"
+    }
+  ],
+  "pilihan": []
+}

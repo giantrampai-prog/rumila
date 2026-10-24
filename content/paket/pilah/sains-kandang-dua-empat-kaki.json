@@ -1,0 +1,133 @@
+{
+  "id": "sains-kandang-dua-empat-kaki",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HEWAN-SUARA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kandang Dua Kaki, Empat Kaki",
+      "instruksi": "Hitung kakinya, lalu taruh hewan ke kandang dua kaki atau empat kaki.",
+      "dua": "dua kaki",
+      "empat": "empat kaki",
+      "nol": "tanpa kaki",
+      "i-ayam": "ayam",
+      "i-bebek": "bebek",
+      "i-burung": "burung",
+      "i-kucing": "kucing",
+      "i-sapi": "sapi",
+      "i-kambing": "kambing",
+      "i-anjing": "anjing",
+      "i-ikan": "ikan"
+    },
+    "en": {
+      "judul": "Two-Leg, Four-Leg Pens",
+      "instruksi": "Count the legs, then put each animal in the two-leg or four-leg pen.",
+      "dua": "two legs",
+      "empat": "four legs",
+      "nol": "no legs",
+      "i-ayam": "chicken",
+      "i-bebek": "duck",
+      "i-burung": "bird",
+      "i-kucing": "cat",
+      "i-sapi": "cow",
+      "i-kambing": "goat",
+      "i-anjing": "dog",
+      "i-ikan": "fish"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "2 kandang (dua kaki, empat kaki); 3 menambah kandang tanpa kaki untuk ikan sebagai pengecoh"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "dua",
+      "labelKey": "dua",
+      "emoji": "🦶",
+      "count": 2
+    },
+    {
+      "id": "empat",
+      "labelKey": "empat",
+      "emoji": "🐾",
+      "count": 4
+    },
+    {
+      "id": "nol",
+      "labelKey": "nol",
+      "emoji": "🌊"
+    }
+  ],
+  "items": [
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "dua",
+      "emoji": "🐔"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "dua",
+      "emoji": "🦆"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "dua",
+      "emoji": "🐦"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "empat",
+      "emoji": "🐈"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "empat",
+      "emoji": "🐄"
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "empat",
+      "emoji": "🐐"
+    },
+    {
+      "id": "anjing",
+      "labelKey": "i-anjing",
+      "bin": "empat",
+      "emoji": "🐕"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "nol",
+      "emoji": "🐟"
+    }
+  ],
+  "pilihan": []
+}

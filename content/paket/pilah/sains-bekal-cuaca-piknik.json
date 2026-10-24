@@ -1,0 +1,148 @@
+{
+  "id": "sains-bekal-cuaca-piknik",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.CUACA-PAKAIAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siap-siap Piknik",
+      "instruksi": "Robot mau piknik: dengarkan cuacanya, lalu sentuh benda yang harus dipakai.",
+      "pilihan": "pilihan",
+      "i-payung": "payung",
+      "i-kacamata": "kacamata hitam",
+      "i-sarungtangan": "sarung tangan",
+      "i-sepatubot": "sepatu bot",
+      "i-kaus": "kaus tipis",
+      "t-panas": "Langit cerah, silau sekali. Pakai apa?",
+      "t-hujan": "Hujan turun, jalan becek. Pakai apa di kaki?",
+      "t-dingin": "Dingin sekali, tangan kaku. Pakai apa?",
+      "t-hujan2": "Gerimis mulai turun. Bawa apa?",
+      "t-panas2": "Hari panas dan gerah. Pakai baju apa?"
+    },
+    "en": {
+      "judul": "Getting Ready for the Picnic",
+      "instruksi": "Robot is going on a picnic: listen to the weather, then touch what to wear.",
+      "pilihan": "choices",
+      "i-payung": "umbrella",
+      "i-kacamata": "sunglasses",
+      "i-sarungtangan": "gloves",
+      "i-sepatubot": "rain boots",
+      "i-kaus": "thin t-shirt",
+      "t-panas": "Clear sky, very bright. What do we wear?",
+      "t-hujan": "It's raining, the path is muddy. What goes on our feet?",
+      "t-dingin": "So cold, our hands are stiff. What do we wear?",
+      "t-hujan2": "A drizzle is starting. What do we take?",
+      "t-panas2": "A hot, sticky day. Which top do we wear?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah pilihan per cuaca; sandal saat hujan sengaja jadi pengecoh"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "pilihan",
+      "emoji": "☂️"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "bin": "pilihan",
+      "emoji": "🕶️"
+    },
+    {
+      "id": "sarungtangan",
+      "labelKey": "i-sarungtangan",
+      "bin": "pilihan",
+      "emoji": "🧤"
+    },
+    {
+      "id": "sepatubot",
+      "labelKey": "i-sepatubot",
+      "bin": "pilihan",
+      "emoji": "🥾"
+    },
+    {
+      "id": "kaus",
+      "labelKey": "i-kaus",
+      "bin": "pilihan",
+      "emoji": "👕"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "panas",
+      "promptKey": "t-panas",
+      "choices": [
+        "kacamata",
+        "sarungtangan",
+        "sepatubot"
+      ],
+      "correct": "kacamata"
+    },
+    {
+      "id": "hujan",
+      "promptKey": "t-hujan",
+      "choices": [
+        "sepatubot",
+        "kaus",
+        "kacamata"
+      ],
+      "correct": "sepatubot"
+    },
+    {
+      "id": "dingin",
+      "promptKey": "t-dingin",
+      "choices": [
+        "sarungtangan",
+        "kacamata",
+        "payung"
+      ],
+      "correct": "sarungtangan"
+    },
+    {
+      "id": "hujan2",
+      "promptKey": "t-hujan2",
+      "choices": [
+        "payung",
+        "kaus",
+        "kacamata",
+        "sarungtangan"
+      ],
+      "correct": "payung"
+    },
+    {
+      "id": "panas2",
+      "promptKey": "t-panas2",
+      "choices": [
+        "kaus",
+        "sarungtangan",
+        "sepatubot",
+        "payung"
+      ],
+      "correct": "kaus"
+    }
+  ]
+}

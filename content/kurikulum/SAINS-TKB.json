@@ -1,0 +1,596 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.TKB.TULANG-OTOT-ORGAN.01",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "TULANG-OTOT-ORGAN",
+        "nama": {
+          "id": "Tulang, otot, organ utama",
+          "en": "Bones, muscles, main organs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan jantung, paru-paru, perut, atau otak di dalam tubuh 3D saat namanya disebut",
+        "en": "I can find the heart, lungs, stomach, or brain inside the 3D body when the name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [
+        "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Dunia: Jelajah Tubuh, lapisan organ. Instruksi audio 'Mana paru-parunya?'; anak memutar tubuh 3D dan menyentuh organ itu. Variasi ucap: organ berdenyut/menyala, anak menyebut namanya. Jebakan: perut (lambung) vs usus, jantung di kiri vs tengah — mulai 4 organ besar. Knob: 4 → 6 organ (tambah usus, ginjal). Kamus belum punya kode untuk organ tubuh (Cambridge Primary Science 1 'parts of the human body' belum ada di kamus; EYFS tidak punya ELG khusus) — dibiarkan kosong."
+    },
+    {
+      "id": "SAINS.TKB.TULANG-OTOT-ORGAN.02",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "TULANG-OTOT-ORGAN",
+        "nama": {
+          "id": "Tulang, otot, organ utama",
+          "en": "Bones, muscles, main organs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasang tulang, otot, dan organ ke lapisan tubuh 3D yang tepat",
+        "en": "I can place bones, muscles, and organs on the correct layer of the 3D body"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.TULANG-OTOT-ORGAN.01",
+        "SAINS.PAUD.TUBUH-PANCAINDRA.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "simulasi"
+      ],
+      "catatan": "Pilah tiga lapisan Jelajah Tubuh: potongan (tengkorak, tulang paha, otot lengan, otot betis, jantung, paru-paru) diseret ke lapisan tulang / otot / organ; bila lapisan benar, potongan 'menempel' di posisinya. Bukti: lapisan benar; posisi persis boleh dibantu magnet-snap. Jebakan: jantung dianggap otot (benar secara ilmiah tetapi di sini dihitung organ) — label lapisan organ memuat jantung sejak contoh. Knob: 3 → 6 potongan; mode tanpa bayangan posisi."
+    },
+    {
+      "id": "SAINS.TKB.TULANG-OTOT-ORGAN.03",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "TULANG-OTOT-ORGAN",
+        "nama": {
+          "id": "Tulang, otot, organ utama",
+          "en": "Bones, muscles, main organs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyentuh bagian tubuh 3D yang akan bekerja sebelum tokoh bergerak: otot kaki sebelum lari, paru-paru sebelum menarik napas",
+        "en": "I can touch the 3D body part that is about to work before the character moves: leg muscles before running, lungs before breathing in"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.TULANG-OTOT-ORGAN.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "cari",
+        "simulasi"
+      ],
+      "catatan": "Ronde pengantar: tokoh melakukan kegiatan (lari, angkat tas, tarik napas, makan, membaca) dan bagian yang bekerja menyala di Jelajah Tubuh — ini pengajaran, belum bukti. Ronde bukti: kegiatan diumumkan ('Sekarang tokoh akan lari'), anak menyentuh bagian tubuh 3D (cari) SEBELUM animasi jalan; lalu kegiatan dimainkan dan bagian yang sebenarnya menyala, sehingga cocok/tidaknya terlihat sendiri. Bukti sah hanya bila sentuhan dibuat sebelum animasi. Jebakan: lari → jantung juga benar; terima satu dari dua jawaban yang ditandai sah. Pengaya. Knob: 3 → 5 kegiatan. Ide lain untuk PO: 'tulang melindungi organ' (tengkorak–otak, rusuk–jantung). Tanpa kode kerangka di kamus. [Tinjauan 24 Okt 2026: dari pilah kartu (mencocokkan fakta) menjadi tebak-lalu-lihat di tubuh 3D.]"
+    },
+    {
+      "id": "SAINS.TKB.MAKANAN-SEHAT.01",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "MAKANAN-SEHAT",
+        "nama": {
+          "id": "Makanan sehat dan tidak sehat",
+          "en": "Healthy and unhealthy food"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah makanan ke piring sehari-hari atau toples sesekali: buah dan sayur ke piring, permen dan soda ke toples",
+        "en": "I can sort food into the everyday plate or the sometimes jar: fruit and vegetables to the plate, sweets and soda to the jar"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.PAUD.HIDUP-TAK-HIDUP.03"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-PSED-MANAGING-SELF-03",
+          "note": "memahami pentingnya memilih makanan sehat"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "dagang"
+      ],
+      "catatan": "Bahasa 'sehari-hari' vs 'sesekali', bukan 'baik/buruk', supaya anak tidak merasa bersalah. Dua wadah berlabel gambar. Item sehari-hari: pisang, wortel, nasi, telur, ikan, susu, air putih; sesekali: permen, keripik, soda, kue krim. Jebakan: jus kemasan manis dikira buah — pakai buah utuh dari aset Kebun Buah (48 buah 3D). Knob: 4 → 10 item; 2 → 3 wadah (tambah 'kadang': roti manis)."
+    },
+    {
+      "id": "SAINS.TKB.MAKANAN-SEHAT.02",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "MAKANAN-SEHAT",
+        "nama": {
+          "id": "Makanan sehat dan tidak sehat",
+          "en": "Healthy and unhealthy food"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun piring makan dengan nasi, lauk, sayur, dan buah dari pilihan yang tersedia",
+        "en": "I can build a meal plate with rice, a protein, vegetables, and fruit from the choices available"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.MAKANAN-SEHAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-PSED-MANAGING-SELF-03",
+          "note": "memilih makanan sehat untuk diri sendiri"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "dagang"
+      ],
+      "catatan": "Simulasi piring 'Isi Piringku': empat bagian piring bergambar samar; anak menyeret satu item ke tiap bagian dari meja berisi 8–10 pilihan termasuk pengecoh (permen, soda). Bukti: tiap bagian terisi dengan kelompok yang tepat; pengecoh tidak di piring. Jebakan: buah ditaruh di bagian sayur — bagian berikon warna berbeda. Knob: 3 → 4 bagian; jumlah pengecoh."
+    },
+    {
+      "id": "SAINS.TKB.MAKANAN-SEHAT.03",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "MAKANAN-SEHAT",
+        "nama": {
+          "id": "Makanan sehat dan tidak sehat",
+          "en": "Healthy and unhealthy food"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih bekal sehari-hari di pasar: buah atau sayur, bukan permen, walau permen paling murah",
+        "en": "I can choose an everyday snack at the market: fruit or vegetables, not sweets, even though sweets are the cheapest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.MAKANAN-SEHAT.01",
+        "MAT.TKA.UANG-KENAL.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-PSED-MANAGING-SELF-03"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Dagang lintas pelajaran: pedagang menjual buah dari Kebun Buah, sayur potong (wortel, timun), dan jajanan; anak punya 5 koin. Kemampuan yang dinilai di sini hanya SATU: isi keranjang termasuk kelompok sehari-hari. Membayar pas adalah konteks dari MAT.TKA.UANG-KENAL.02 dan dicatat terpisah sebagai bukti Matematika, bukan syarat lulus kompetensi ini. Jebakan: permen paling murah — godaan sengaja; jus kemasan manis dikira buah. Pengaya. Knob: uang 3 → 5 koin; jumlah jajanan pengecoh. [Tinjauan 24 Okt 2026: 'dengan uang terbatas' dilepas dari statement supaya satu kemampuan; bahasa 'sehat' diganti 'sehari-hari' konsisten dengan .01.]"
+    },
+    {
+      "id": "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "KEBUTUHAN-TUMBUHAN",
+        "nama": {
+          "id": "Apa yang tumbuhan butuhkan",
+          "en": "What plants need"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah apa yang dibutuhkan tumbuhan dari yang tidak: air, cahaya, tanah ke pot; mainan, permen ke luar",
+        "en": "I can sort what a plant needs from what it does not: water, light, soil go to the pot; toys, sweets go out"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01",
+          "note": "mengamati kebutuhan tumbuhan"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses pertumbuhan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "rawat"
+      ],
+      "catatan": "Pilah dengan akibat, bukan kartu diam: kartu (ember air, matahari, tanah/pot, udara/angin, mainan, permen, selimut, TV) diseret ke pot tanaman atau keranjang 'tidak perlu'. Pot bereaksi pada yang dibutuhkan (tanah basah, daun condong ke cahaya, tunas sedikit naik) dan menolak yang tidak (mainan menggelinding keluar, permen tak terserap). Ronde 1 eksplorasi bebas; bukti diambil dari ronde 2: semua kebutuhan masuk pot, pengecoh ke keranjang, paling banyak 1 salah. Udara boleh masuk kebutuhan sejak awal dengan ikon angin tipis. Jebakan: anak memberi 'susu' karena anak butuh susu — pengecoh yang baik untuk ronde lanjut. Knob: 4 → 8 kartu. Mekanik rawat = merawat makhluk hidup (sama dengan PAUD.HIDUP-TAK-HIDUP.03). [Tinjauan 24 Okt 2026: `cari` (tak ada dunia) diganti `rawat`; umpan balik pot ditambahkan supaya bukan kuis seret.]"
+    },
+    {
+      "id": "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "KEBUTUHAN-TUMBUHAN",
+        "nama": {
+          "id": "Apa yang tumbuhan butuhkan",
+          "en": "What plants need"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membuat tanaman tumbuh berbunga dengan memberinya air dan cahaya yang cukup setiap hari",
+        "en": "I can make a plant grow and flower by giving it enough water and light every day"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses dan perubahan: pertumbuhan tumbuhan"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Simulasi merawat 5–7 'hari' singkat: tiap hari anak memilih siram/tidak dan tirai buka/tutup; tanaman tumbuh bila keduanya terpenuhi, layu bila salah satu kurang dua hari berturut-turut. Satu kemampuan: memenuhi kebutuhan tumbuhan. Bukti: tanaman berbunga di akhir dengan paling banyak 1 hari lalai. Jebakan: menyiram berlebihan — pada knob lanjut, air berlebih membuat daun menguning. Knob: jumlah hari 5 → 7; tambah variabel air berlebih."
+    },
+    {
+      "id": "SAINS.TKB.KEBUTUHAN-TUMBUHAN.03",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "KEBUTUHAN-TUMBUHAN",
+        "nama": {
+          "id": "Apa yang tumbuhan butuhkan",
+          "en": "What plants need"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk tanaman yang akan layu sebelum hari berganti, misalnya yang disimpan di tempat gelap",
+        "en": "I can point to the plant that will wilt before the day changes, for example the one kept in the dark"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "memperkirakan perubahan berdasar kebutuhan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Prediksi: tiga pot sama, satu kondisi berbeda (di lemari gelap / tidak disiram / tanpa tanah), anak menunjuk yang akan layu sebelum animasi hari berjalan. Bukti sah hanya bila tebakan dibuat sebelum perubahan terlihat. Jebakan: anak menunggu animasi — tombol 'tebak' mengunci dulu. Pengaya. Knob: 1 → 2 pot bermasalah; kondisi makin halus (sedikit cahaya vs gelap)."
+    },
+    {
+      "id": "SAINS.TKB.HEWAN-HABITAT.01",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "HEWAN-HABITAT",
+        "nama": {
+          "id": "Hewan dan habitatnya",
+          "en": "Animals and their habitats"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengantar tiap hewan ke habitatnya: unta ke gurun, beruang kutub ke es, monyet ke hutan, ikan badut ke terumbu",
+        "en": "I can take each animal to its habitat: camel to the desert, polar bear to the ice, monkey to the forest, clownfish to the reef"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-02",
+          "note": "persamaan dan perbedaan lingkungan yang kontras: gurun, kutub, hutan, laut"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "navigasi"
+      ],
+      "catatan": "Lebih halus dari darat/air/udara: empat habitat kontras dengan latar jelas. Pilah ke 4 panel habitat, atau navigasi: anak mengarahkan hewan melewati petak menuju habitatnya. Item: unta, kadal (gurun); beruang kutub, penguin (es); monyet, harimau (hutan); ikan badut, penyu (terumbu). Jebakan: penguin dikira hidup di hutan karena 'burung' — tampilkan es di kartu. Knob: 2 → 4 habitat; 4 → 8 hewan."
+    },
+    {
+      "id": "SAINS.TKB.HEWAN-HABITAT.02",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "HEWAN-HABITAT",
+        "nama": {
+          "id": "Hewan dan habitatnya",
+          "en": "Animals and their habitats"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan hewan yang tinggal di lapisan laut yang diminta di Bawah Laut: terumbu, laut dalam, atau palung",
+        "en": "I can find an animal that lives in the asked ocean layer in the Undersea world: reef, deep sea, or trench"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.HEWAN-HABITAT.01",
+        "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-02",
+          "note": "lingkungan yang kontras di dalam satu dunia: dangkal–dalam"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "cari",
+        "navigasi"
+      ],
+      "catatan": "Mekanik cari di dunia 3D Bawah Laut penuh (terumbu sampai palung). Instruksi: 'Cari hewan yang tinggal di laut dalam yang gelap'; anak menyelam ke lapisan itu dan menyentuh hewan yang memang berasal dari sana (ikan lentera, bukan ikan badut). Bukti: hewan yang disentuh termasuk daftar lapisan itu. Jebakan: hewan berenang melintas lapisan — kunci hewan pada lapisannya untuk aktivitas ini. Pengaya. Knob: 2 → 3 lapisan."
+    },
+    {
+      "id": "SAINS.TKB.HEWAN-HABITAT.03",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "HEWAN-HABITAT",
+        "nama": {
+          "id": "Hewan dan habitatnya",
+          "en": "Animals and their habitats"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakaikan ciri tubuh yang cocok supaya hewan betah di tempat hidupnya: bulu tebal di es, sirip di air, warna hijau daun di hutan",
+        "en": "I can give an animal the body feature that fits where it lives: thick fur on the ice, fins in the water, leaf-green colour in the forest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.HEWAN-HABITAT.01",
+        "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-02",
+          "note": "mengaitkan ciri makhluk hidup dengan lingkungannya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Awal adaptasi lewat percobaan, bukan hafalan: hewan netral ditaruh di habitat, anak memilih satu ciri dari 3–4 kartu dan 'memakaikannya'; akibat terlihat — tanpa bulu tebal hewan menggigil di es, tanpa sirip hewan megap-megap di air, dengan warna hijau hewan tersembunyi dari burung pemangsa di hutan (tanpa warna hijau ia tertangkap). Bukti: ciri yang dipilih membuat hewan betah pada 3 habitat dengan paling banyak 1 percobaan salah per habitat. Ketiga ciri ini bisa dialami/diamati anak 5–6 th; punuk unta (menyimpan cadangan) hanya di ronde lanjut dengan VO singkat, karena tidak bisa diamati akibatnya. Jebakan: anak memakaikan semua ciri sekaligus — satu ciri per ronde. Knob: 3 → 5 pasangan (tambah kaki berselaput–rawa, punuk–gurun). Butuh mode simulasi baru (pakaikan ciri). [Tinjauan 24 Okt 2026: dari pilah kartu ciri→panel (fakta) menjadi percobaan dengan akibat; punuk dipindah ke knob.]"
+    },
+    {
+      "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.01",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "MATAHARI-BUMI-BULAN",
+        "nama": {
+          "id": "Matahari, Bumi, Bulan",
+          "en": "Sun, Earth, Moon"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan Matahari, Bumi, atau Bulan di Jelajah Angkasa saat namanya disebut",
+        "en": "I can find the Sun, the Earth, or the Moon in the Space world when its name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Dunia: Jelajah Angkasa. Instruksi audio 'Mana Bumi?'; anak mengarahkan pandangan/terbang dan menyentuh benda langit itu. Pengecoh: Mars (merah), bintang lain. Variasi ucap: benda disorot, anak menyebut namanya. Jebakan: Bulan vs Bumi dari jauh sama-sama bulat — jaga skala dan warna (biru-hijau vs abu). Knob: 3 target → 5 (tambah Mars, bintang). Kamus belum punya kode untuk benda langit (EYFS ELG tidak spesifik; Cambridge Primary Science 'Earth in space' belum ada di kamus) — dibiarkan kosong."
+    },
+    {
+      "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.02",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "MATAHARI-BUMI-BULAN",
+        "nama": {
+          "id": "Matahari, Bumi, Bulan",
+          "en": "Sun, Earth, Moon"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun model tata surya kecil: Bulan mengitari Bumi, Bumi mengitari Matahari",
+        "en": "I can build a small model: the Moon goes around the Earth, and the Earth goes around the Sun"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.MATAHARI-BUMI-BULAN.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "urutkan"
+      ],
+      "catatan": "Simulasi: Matahari diam di tengah; anak menaruh Bumi pada lintasan besar dan Bulan pada lintasan kecil di sekitar Bumi, lalu menekan jalan. Bukti: kedua benda pada lintasan yang benar (Bulan tidak langsung mengitari Matahari). Umpan balik: bila Bulan ditaruh di lintasan besar, Bulan 'tersesat' jauh dari Bumi. Satu kemampuan: menata susunan pusat–pengiring. Pengaya. Knob: lintasan berlabel bayangan → tanpa bayangan. Ide lain untuk PO: mengurutkan ukuran Matahari > Bumi > Bulan (urutkan). Tanpa kode kerangka di kamus."
+    },
+    {
+      "id": "SAINS.TKB.MATAHARI-BUMI-BULAN.03",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "MATAHARI-BUMI-BULAN",
+        "nama": {
+          "id": "Matahari, Bumi, Bulan",
+          "en": "Sun, Earth, Moon"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memutar Bumi sampai kota yang diminta menjadi siang, yaitu menghadap Matahari",
+        "en": "I can turn the Earth until the asked city is in daytime, facing the Sun"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.MATAHARI-BUMI-BULAN.01",
+        "SAINS.PAUD.SIANG-MALAM-CUACA.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-UW-NATURAL-WORLD-03",
+          "note": "proses dan perubahan di alam: siang–malam sebagai akibat putaran Bumi"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Simulasi: bola Bumi dengan penanda rumah/kota dan lampu Matahari tetap; anak memutar Bumi sampai penanda berada di sisi terang (siang) atau gelap (malam) sesuai permintaan. Bukti: penanda di belahan yang benar saat tombol 'pas' ditekan. Jebakan: anak memindahkan Matahari — Matahari dikunci. Knob: siang saja → siang/malam bergantian; 1 → 2 penanda ('rumah siang, rumah seberang malam')."
+    },
+    {
+      "id": "SAINS.TKB.BAHAN.01",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan: kayu, logam, plastik, kaca",
+          "en": "Materials: wood, metal, plastic, glass"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda menurut bahannya: kayu, logam, plastik, atau kaca",
+        "en": "I can sort objects by their material: wood, metal, plastic, or glass"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Empat rak berlabel contoh bahan (balok kayu, paku, botol plastik, gelas kaca). Item: sendok kayu, kursi kayu, kaleng, kunci, ember plastik, mainan plastik, jendela, toples kaca. Jebakan: benda yang dicat (kayu dicat merah dianggap plastik) — tampilkan serat kayu; kaca vs plastik bening dibedakan pantulan dan 'denting' saat disentuh. Varian cari: temukan 3 benda logam di dapur. Knob: 2 → 4 rak; 4 → 8 benda. Kamus belum punya kode untuk bahan (Cambridge Primary Science 1 'Materials' belum ada di kamus; EYFS NW-03 hanya menyentuh perubahan wujud) — dibiarkan kosong."
+    },
+    {
+      "id": "SAINS.TKB.BAHAN.02",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan: kayu, logam, plastik, kaca",
+          "en": "Materials: wood, metal, plastic, glass"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda yang tembus pandang dari yang tidak setelah mencoba melihat lewat benda itu",
+        "en": "I can sort objects that I can see through from those I cannot, after trying to look through them"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.BAHAN.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Simulasi: benda diseret ke depan gambar tokoh; bila tembus pandang, tokoh masih terlihat. Lalu benda ditaruh ke rak tembus pandang / tidak. Bukti: rak sesuai hasil yang dilihat. Item tembus: gelas kaca, botol plastik bening, jendela; tidak: papan kayu, kaleng, ember plastik buram. Poin sains: plastik bisa dua-duanya, kaca hampir selalu tembus — kaitkan dengan .01. Jebakan: kaca berwarna. Knob: 4 → 8 benda. Tanpa kode kerangka di kamus."
+    },
+    {
+      "id": "SAINS.TKB.BAHAN.03",
+      "track": "SAINS",
+      "level": "TKB",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan: kayu, logam, plastik, kaca",
+          "en": "Materials: wood, metal, plastic, glass"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih bahan yang tepat untuk benda yang kubangun: kaca untuk jendela, kayu untuk kursi, logam untuk paku",
+        "en": "I can choose the right material for something I build: glass for the window, wood for the chair, metal for the nail"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.BAHAN.01",
+        "SAINS.TKB.BAHAN.02"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Simulasi membangun rumah kecil: tiap bagian (jendela, kursi, paku, ember) minta bahan; anak memilih dari 4 bahan. Umpan balik: jendela kayu membuat ruangan gelap, kursi kaca pecah saat tokoh duduk, paku plastik bengkok — konsekuensi lucu, bukan 'salah'. Bukti: bahan sesuai sifat yang sudah dipelajari (.02 tembus pandang untuk jendela). Jebakan: ember boleh plastik atau logam — tandai dua jawaban sah. Pengaya. Knob: 3 → 5 bagian. Tanpa kode kerangka di kamus."
+    }
+  ]
+}

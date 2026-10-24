@@ -1,0 +1,157 @@
+{
+  "id": "sains-rak-sayur-bagian-tumbuhan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sayur dari Bagian Mana?",
+      "instruksi": "Taruh tiap sayur ke rak bagian tumbuhan asalnya: wortel ke akar, bayam ke daun.",
+      "akar": "akar",
+      "batang": "batang",
+      "daun": "daun",
+      "bunga": "bunga",
+      "i-wortel": "wortel",
+      "i-ubi": "ubi jalar",
+      "i-lobak": "lobak putih",
+      "i-tebu": "tebu",
+      "i-rebung": "rebung bambu",
+      "i-bayam": "bayam",
+      "i-selada": "selada",
+      "i-kangkung": "kangkung",
+      "i-brokoli": "brokoli",
+      "i-kembangkol": "kembang kol"
+    },
+    "en": {
+      "judul": "Which Part Is the Veggie?",
+      "instruksi": "Put each vegetable on the shelf of the plant part it comes from: carrot to root, spinach to leaf.",
+      "akar": "root",
+      "batang": "stem",
+      "daun": "leaf",
+      "bunga": "flower",
+      "i-wortel": "carrot",
+      "i-ubi": "sweet potato",
+      "i-lobak": "white radish",
+      "i-tebu": "sugar cane",
+      "i-rebung": "bamboo shoot",
+      "i-bayam": "spinach",
+      "i-selada": "lettuce",
+      "i-kangkung": "water spinach",
+      "i-brokoli": "broccoli",
+      "i-kembangkol": "cauliflower"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (akar, daun) → 4 (tambah batang, bunga)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah sayur per putaran; kentang dan bawang sengaja tidak dipakai"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "akar",
+      "labelKey": "akar",
+      "emoji": "🫚",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "batang",
+      "labelKey": "batang",
+      "emoji": "🎋"
+    },
+    {
+      "id": "daun",
+      "labelKey": "daun",
+      "emoji": "🍃"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "bunga",
+      "emoji": "🌸"
+    }
+  ],
+  "items": [
+    {
+      "id": "wortel",
+      "labelKey": "i-wortel",
+      "bin": "akar",
+      "emoji": "🥕"
+    },
+    {
+      "id": "ubi",
+      "labelKey": "i-ubi",
+      "bin": "akar",
+      "emoji": "🍠"
+    },
+    {
+      "id": "lobak",
+      "labelKey": "i-lobak",
+      "bin": "akar",
+      "emoji": "🥕",
+      "color": "#f5f5f5"
+    },
+    {
+      "id": "tebu",
+      "labelKey": "i-tebu",
+      "bin": "batang",
+      "emoji": "🎋"
+    },
+    {
+      "id": "rebung",
+      "labelKey": "i-rebung",
+      "bin": "batang",
+      "emoji": "🎍"
+    },
+    {
+      "id": "bayam",
+      "labelKey": "i-bayam",
+      "bin": "daun",
+      "emoji": "🌿"
+    },
+    {
+      "id": "selada",
+      "labelKey": "i-selada",
+      "bin": "daun",
+      "emoji": "🥬"
+    },
+    {
+      "id": "kangkung",
+      "labelKey": "i-kangkung",
+      "bin": "daun",
+      "emoji": "☘️"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "i-brokoli",
+      "bin": "bunga",
+      "emoji": "🥦"
+    },
+    {
+      "id": "kembangkol",
+      "labelKey": "i-kembangkol",
+      "bin": "bunga",
+      "emoji": "🥦",
+      "color": "#fff8e1"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,150 @@
+{
+  "id": "sains-ciri-tubuh-dan-habitat",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.HEWAN-HABITAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ciri Tubuh Cocok di Mana?",
+      "instruksi": "Taruh kartu ciri tubuh ke tempat hidup yang cocok: bulu tebal ke es, sirip ke air, punuk ke gurun.",
+      "es": "es",
+      "air": "air",
+      "gurun": "gurun",
+      "hutan": "hutan",
+      "i-bulutebal": "bulu tebal hangat",
+      "i-lemaktebal": "lapisan lemak tebal",
+      "i-sirip": "sirip untuk berenang",
+      "i-insang": "insang untuk bernapas di air",
+      "i-punuk": "punuk penyimpan cadangan",
+      "i-kakilebar": "kaki lebar untuk pasir",
+      "i-warnahijau": "warna hijau daun untuk bersembunyi",
+      "i-ekorpanjang": "ekor panjang untuk bergelantung"
+    },
+    "en": {
+      "judul": "Which Home Fits This Body?",
+      "instruksi": "Put each body-feature card on the home it suits: thick fur to the ice, fins to the water, hump to the desert.",
+      "es": "ice",
+      "air": "water",
+      "gurun": "desert",
+      "hutan": "forest",
+      "i-bulutebal": "thick warm fur",
+      "i-lemaktebal": "thick fat layer",
+      "i-sirip": "fins for swimming",
+      "i-insang": "gills to breathe in water",
+      "i-punuk": "hump that stores reserves",
+      "i-kakilebar": "wide feet for sand",
+      "i-warnahijau": "leaf-green colour to hide",
+      "i-ekorpanjang": "long tail for hanging"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah habitat: 3 (es, air, gurun) → 4 (tambah hutan)"
+    },
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kartu ciri per putaran: 3 → 5 pasangan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "laut",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "es",
+      "labelKey": "es",
+      "emoji": "🧊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "air",
+      "labelKey": "air",
+      "emoji": "🌊",
+      "color": "#b3e5fc"
+    },
+    {
+      "id": "gurun",
+      "labelKey": "gurun",
+      "emoji": "🏜️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "hutan",
+      "labelKey": "hutan",
+      "emoji": "🌴",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "bulutebal",
+      "labelKey": "i-bulutebal",
+      "bin": "es",
+      "emoji": "🧥",
+      "color": "#ffffff"
+    },
+    {
+      "id": "lemaktebal",
+      "labelKey": "i-lemaktebal",
+      "bin": "es",
+      "emoji": "🦭",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "sirip",
+      "labelKey": "i-sirip",
+      "bin": "air",
+      "shape": "triangle",
+      "color": "#0288d1"
+    },
+    {
+      "id": "insang",
+      "labelKey": "i-insang",
+      "bin": "air",
+      "emoji": "🫧"
+    },
+    {
+      "id": "punuk",
+      "labelKey": "i-punuk",
+      "bin": "gurun",
+      "emoji": "🐪",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kakilebar",
+      "labelKey": "i-kakilebar",
+      "bin": "gurun",
+      "shape": "rect",
+      "color": "#d7ccc8",
+      "width": 1.8
+    },
+    {
+      "id": "warnahijau",
+      "labelKey": "i-warnahijau",
+      "bin": "hutan",
+      "shape": "circle",
+      "color": "#43a047"
+    },
+    {
+      "id": "ekorpanjang",
+      "labelKey": "i-ekorpanjang",
+      "bin": "hutan",
+      "emoji": "🐒",
+      "color": "#c8e6c9"
+    }
+  ],
+  "pilihan": []
+}

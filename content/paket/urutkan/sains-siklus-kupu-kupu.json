@@ -1,0 +1,75 @@
+{
+  "id": "sains-siklus-kupu-kupu",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.SIKLUS-HIDUP.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ulat Jadi Kupu-kupu",
+      "instruksi": "Susun gambar dari telur di daun, ulat, kepompong, sampai kupu-kupu.",
+      "s-kupu": "Siklus hidup kupu-kupu",
+      "kupu-telur": "telur kecil di daun",
+      "kupu-ulat": "ulat makan daun",
+      "kupu-kepompong": "kepompong menggantung",
+      "kupu-kupu": "kupu-kupu terbang"
+    },
+    "en": {
+      "judul": "Caterpillar to Butterfly",
+      "instruksi": "Put the pictures in order: egg on a leaf, caterpillar, chrysalis, then butterfly.",
+      "s-kupu": "Butterfly life cycle",
+      "kupu-telur": "tiny egg on a leaf",
+      "kupu-ulat": "caterpillar eating leaves",
+      "kupu-kepompong": "chrysalis hanging",
+      "kupu-kupu": "butterfly flies"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tahap: 4 lengkap; 3 (tanpa telur) sebagai bantuan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "kupu",
+      "titleKey": "s-kupu",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kupu-telur",
+          "emoji": "🍃",
+          "scale": 0.8
+        },
+        {
+          "id": "ulat",
+          "labelKey": "kupu-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "kupu-kepompong",
+          "emoji": "🛡️",
+          "color": "#a1887f"
+        },
+        {
+          "id": "kupu",
+          "labelKey": "kupu-kupu",
+          "emoji": "🦋",
+          "scale": 1.2
+        }
+      ]
+    }
+  ]
+}

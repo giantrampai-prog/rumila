@@ -17,7 +17,7 @@ export const INK = "#2b1d4e";
 
 /** Jenjang & pelajaran yang sudah punya konten di Slice 1. */
 export const LEVEL_SLICE: readonly LevelId[] = ["PAUD", "TKA", "TKB"];
-export const TRACK_SLICE: readonly TrackId[] = ["MAT", "KODE"];
+export const TRACK_SLICE: readonly TrackId[] = ["MAT", "KODE", "SAINS"];
 
 export const TRACK_WARNA: Record<TrackId, ColorKey> = {
   MAT: "orange",

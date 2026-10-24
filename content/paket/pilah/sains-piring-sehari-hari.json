@@ -1,0 +1,174 @@
+{
+  "id": "sains-piring-sehari-hari",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MAKANAN-SEHAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Piring Sehari-hari, Toples Sesekali",
+      "instruksi": "Taruh makanan sehari-hari ke piring, dan makanan sesekali ke toples.",
+      "piring": "piring sehari-hari",
+      "toples": "toples sesekali",
+      "kadang": "kadang-kadang",
+      "i-pisang": "pisang",
+      "i-wortel": "wortel",
+      "i-nasi": "nasi",
+      "i-telur": "telur",
+      "i-ikan": "ikan",
+      "i-susu": "susu",
+      "i-air": "air putih",
+      "i-permen": "permen",
+      "i-keripik": "keripik",
+      "i-soda": "soda",
+      "i-kuekrim": "kue krim",
+      "i-rotimanis": "roti manis",
+      "i-wafel": "wafel"
+    },
+    "en": {
+      "judul": "Everyday Plate, Sometimes Jar",
+      "instruksi": "Put everyday food on the plate and once-in-a-while treats in the jar.",
+      "piring": "everyday plate",
+      "toples": "once-in-a-while jar",
+      "kadang": "sometimes",
+      "i-pisang": "banana",
+      "i-wortel": "carrot",
+      "i-nasi": "rice",
+      "i-telur": "egg",
+      "i-ikan": "fish",
+      "i-susu": "milk",
+      "i-air": "water",
+      "i-permen": "candy",
+      "i-keripik": "crisps",
+      "i-soda": "fizzy drink",
+      "i-kuekrim": "cream cake",
+      "i-rotimanis": "sweet bun",
+      "i-wafel": "waffle"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah wadah: 2 → 3 (tambah 'kadang-kadang' untuk roti manis)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah makanan per putaran; buah selalu utuh, bukan jus kemasan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "piring",
+      "labelKey": "piring",
+      "emoji": "🍽️",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "toples",
+      "labelKey": "toples",
+      "emoji": "🫙",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kadang",
+      "labelKey": "kadang",
+      "emoji": "🧺",
+      "color": "#fff9c4"
+    }
+  ],
+  "items": [
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "piring",
+      "emoji": "🍌"
+    },
+    {
+      "id": "wortel",
+      "labelKey": "i-wortel",
+      "bin": "piring",
+      "emoji": "🥕"
+    },
+    {
+      "id": "nasi",
+      "labelKey": "i-nasi",
+      "bin": "piring",
+      "emoji": "🍚"
+    },
+    {
+      "id": "telur",
+      "labelKey": "i-telur",
+      "bin": "piring",
+      "emoji": "🍳"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "piring",
+      "emoji": "🐟"
+    },
+    {
+      "id": "susu",
+      "labelKey": "i-susu",
+      "bin": "piring",
+      "emoji": "🥛"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "piring",
+      "emoji": "💧"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "toples",
+      "emoji": "🍬"
+    },
+    {
+      "id": "keripik",
+      "labelKey": "i-keripik",
+      "bin": "toples",
+      "emoji": "🍟"
+    },
+    {
+      "id": "soda",
+      "labelKey": "i-soda",
+      "bin": "toples",
+      "emoji": "🥤"
+    },
+    {
+      "id": "kuekrim",
+      "labelKey": "i-kuekrim",
+      "bin": "toples",
+      "emoji": "🍰"
+    },
+    {
+      "id": "rotimanis",
+      "labelKey": "i-rotimanis",
+      "bin": "kadang",
+      "emoji": "🥐"
+    },
+    {
+      "id": "wafel",
+      "labelKey": "i-wafel",
+      "bin": "kadang",
+      "emoji": "🧇"
+    }
+  ],
+  "pilihan": []
+}

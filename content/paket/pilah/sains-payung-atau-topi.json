@@ -1,0 +1,128 @@
+{
+  "id": "sains-payung-atau-topi",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.SIANG-MALAM-CUACA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Payung atau Topi?",
+      "instruksi": "Lihat langitnya, lalu sentuh benda yang harus dibawa robot keluar rumah.",
+      "pilihan": "pilihan",
+      "i-payung": "payung",
+      "i-topi": "topi",
+      "i-layang": "layang-layang",
+      "t-cerah1": "Langit cerah, matahari terik. Mana yang dipakai?",
+      "t-hujan1": "Langit gelap, hujan turun. Mana yang dipakai?",
+      "t-cerah2": "Matahari bersinar terang. Mana yang dipakai?",
+      "t-hujan2": "Tetes hujan jatuh dari langit. Mana yang dipakai?",
+      "t-angin": "Angin bertiup kencang, daun beterbangan. Mana yang dimainkan?"
+    },
+    "en": {
+      "judul": "Umbrella or Hat?",
+      "instruksi": "Look at the sky, then touch what robot should take before going out.",
+      "pilihan": "choices",
+      "i-payung": "umbrella",
+      "i-topi": "sun hat",
+      "i-layang": "kite",
+      "t-cerah1": "Sunny sky, the sun is hot. Which one do we use?",
+      "t-hujan1": "Dark sky, the rain is falling. Which one do we use?",
+      "t-cerah2": "The sun is shining bright. Which one do we use?",
+      "t-hujan2": "Raindrops are falling from the sky. Which one do we use?",
+      "t-angin": "The wind is blowing hard, leaves are flying. Which one do we play with?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah pilihan: 2 (payung, topi) → 3 (tambah layang-layang untuk langit berangin)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "pilihan",
+      "emoji": "☂️"
+    },
+    {
+      "id": "topi",
+      "labelKey": "i-topi",
+      "bin": "pilihan",
+      "emoji": "👒"
+    },
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "pilihan",
+      "emoji": "🪁"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "cerah1",
+      "promptKey": "t-cerah1",
+      "choices": [
+        "topi",
+        "payung"
+      ],
+      "correct": "topi"
+    },
+    {
+      "id": "hujan1",
+      "promptKey": "t-hujan1",
+      "choices": [
+        "payung",
+        "topi"
+      ],
+      "correct": "payung"
+    },
+    {
+      "id": "cerah2",
+      "promptKey": "t-cerah2",
+      "choices": [
+        "payung",
+        "topi",
+        "layang"
+      ],
+      "correct": "topi"
+    },
+    {
+      "id": "hujan2",
+      "promptKey": "t-hujan2",
+      "choices": [
+        "topi",
+        "payung",
+        "layang"
+      ],
+      "correct": "payung"
+    },
+    {
+      "id": "angin",
+      "promptKey": "t-angin",
+      "choices": [
+        "layang",
+        "payung",
+        "topi"
+      ],
+      "correct": "layang"
+    }
+  ]
+}

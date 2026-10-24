@@ -1,0 +1,130 @@
+{
+  "id": "sains-pot-mana-yang-layu",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.KEBUTUHAN-TUMBUHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pot Mana yang Akan Layu?",
+      "instruksi": "Dengarkan di mana tiap pot disimpan, lalu tebak pot yang akan layu sebelum hari berganti.",
+      "pilihan": "pilihan",
+      "i-jendela": "pot di jendela terang",
+      "i-teras": "pot di teras",
+      "i-lemari": "pot di lemari gelap",
+      "i-kotak": "pot di dalam kotak tertutup",
+      "t-r1": "Satu pot ditaruh di jendela, satu di lemari gelap. Pot mana yang akan layu?",
+      "t-r2": "Pot di jendela, pot di teras, dan pot di kotak tertutup. Mana yang akan layu?",
+      "t-r3": "Semua disiram, tapi satu tak kena cahaya. Mana yang akan layu?",
+      "t-r4": "Mana pot yang akan layu karena gelap?"
+    },
+    "en": {
+      "judul": "Which Pot Will Wilt?",
+      "instruksi": "Listen to where each pot is kept, then guess which one will wilt before tomorrow.",
+      "pilihan": "choices",
+      "i-jendela": "pot by the bright window",
+      "i-teras": "pot on the porch",
+      "i-lemari": "pot in the dark cupboard",
+      "i-kotak": "pot inside a closed box",
+      "t-r1": "One pot is by the window, one in a dark cupboard. Which will wilt?",
+      "t-r2": "A pot by the window, one on the porch, one in a closed box. Which will wilt?",
+      "t-r3": "All were watered, but one gets no light. Which will wilt?",
+      "t-r4": "Which pot will wilt because it is dark?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah pot per tebakan: 2 → 4; latar pot menunjukkan terang/gelap"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "pilihan",
+      "emoji": "🪴",
+      "color": "#fff59d"
+    },
+    {
+      "id": "teras",
+      "labelKey": "i-teras",
+      "bin": "pilihan",
+      "emoji": "🪴",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "lemari",
+      "labelKey": "i-lemari",
+      "bin": "pilihan",
+      "emoji": "🪴",
+      "color": "#263238"
+    },
+    {
+      "id": "kotak",
+      "labelKey": "i-kotak",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "color": "#4e342e"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "t-r1",
+      "choices": [
+        "jendela",
+        "lemari"
+      ],
+      "correct": "lemari"
+    },
+    {
+      "id": "r2",
+      "promptKey": "t-r2",
+      "choices": [
+        "jendela",
+        "kotak",
+        "teras"
+      ],
+      "correct": "kotak"
+    },
+    {
+      "id": "r3",
+      "promptKey": "t-r3",
+      "choices": [
+        "teras",
+        "lemari",
+        "jendela"
+      ],
+      "correct": "lemari"
+    },
+    {
+      "id": "r4",
+      "promptKey": "t-r4",
+      "choices": [
+        "kotak",
+        "teras",
+        "jendela",
+        "lemari"
+      ],
+      "correct": "kotak"
+    }
+  ]
+}

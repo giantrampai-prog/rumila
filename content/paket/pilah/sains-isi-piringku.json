@@ -1,0 +1,190 @@
+{
+  "id": "sains-isi-piringku",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MAKANAN-SEHAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Isi Piringku",
+      "instruksi": "Isi tiap bagian piring: nasi, lauk, sayur, dan buah. Jajanan tidak masuk piring.",
+      "nasi": "nasi",
+      "lauk": "lauk",
+      "sayur": "sayur",
+      "buah": "buah",
+      "bukan": "bukan untuk piring",
+      "i-nasiputih": "nasi putih",
+      "i-kentang": "kentang rebus",
+      "i-ayam": "ayam",
+      "i-ikan": "ikan",
+      "i-telur": "telur",
+      "i-bayam": "bayam",
+      "i-wortel": "wortel",
+      "i-brokoli": "brokoli",
+      "i-pisang": "pisang",
+      "i-jeruk": "jeruk",
+      "i-anggur": "anggur",
+      "i-permen": "permen",
+      "i-soda": "soda"
+    },
+    "en": {
+      "judul": "Fill My Plate",
+      "instruksi": "Fill each part of the plate: rice, protein, veggies, and fruit. Treats stay off the plate.",
+      "nasi": "rice",
+      "lauk": "protein",
+      "sayur": "vegetables",
+      "buah": "fruit",
+      "bukan": "not for the plate",
+      "i-nasiputih": "white rice",
+      "i-kentang": "boiled potato",
+      "i-ayam": "chicken",
+      "i-ikan": "fish",
+      "i-telur": "egg",
+      "i-bayam": "spinach",
+      "i-wortel": "carrot",
+      "i-brokoli": "broccoli",
+      "i-pisang": "banana",
+      "i-jeruk": "orange",
+      "i-anggur": "grapes",
+      "i-permen": "candy",
+      "i-soda": "fizzy drink"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 5,
+      "default": 5,
+      "step": 1,
+      "keterangan": "4 bagian piring (nasi, lauk, sayur, buah) + 1 keranjang 'bukan untuk piring'; 4 = tanpa pengecoh"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah pilihan di meja; makin banyak makin banyak pengecoh"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "nasi",
+      "labelKey": "nasi",
+      "emoji": "🍚",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "lauk",
+      "labelKey": "lauk",
+      "emoji": "🍗",
+      "color": "#ffccbc"
+    },
+    {
+      "id": "sayur",
+      "labelKey": "sayur",
+      "emoji": "🥬",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "buah",
+      "labelKey": "buah",
+      "emoji": "🍎",
+      "color": "#f8bbd0"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "bukan",
+      "emoji": "🚫",
+      "color": "#eeeeee"
+    }
+  ],
+  "items": [
+    {
+      "id": "nasiputih",
+      "labelKey": "i-nasiputih",
+      "bin": "nasi",
+      "emoji": "🍚"
+    },
+    {
+      "id": "kentang",
+      "labelKey": "i-kentang",
+      "bin": "nasi",
+      "emoji": "🥔"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "lauk",
+      "emoji": "🍗"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "lauk",
+      "emoji": "🐟"
+    },
+    {
+      "id": "telur",
+      "labelKey": "i-telur",
+      "bin": "lauk",
+      "emoji": "🥚"
+    },
+    {
+      "id": "bayam",
+      "labelKey": "i-bayam",
+      "bin": "sayur",
+      "emoji": "🥬"
+    },
+    {
+      "id": "wortel",
+      "labelKey": "i-wortel",
+      "bin": "sayur",
+      "emoji": "🥕"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "i-brokoli",
+      "bin": "sayur",
+      "emoji": "🥦"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "buah",
+      "emoji": "🍌"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "bin": "buah",
+      "emoji": "🍊"
+    },
+    {
+      "id": "anggur",
+      "labelKey": "i-anggur",
+      "bin": "buah",
+      "emoji": "🍇"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "bukan",
+      "emoji": "🍬"
+    },
+    {
+      "id": "soda",
+      "labelKey": "i-soda",
+      "bin": "bukan",
+      "emoji": "🥤"
+    }
+  ],
+  "pilihan": []
+}

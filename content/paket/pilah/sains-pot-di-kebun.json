@@ -1,0 +1,128 @@
+{
+  "id": "sains-pot-di-kebun",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.KEBUTUHAN-TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rawat Pot di Kebun",
+      "instruksi": "Robot merawat bibit: beri yang dibutuhkan ke pot, singkirkan yang tidak perlu.",
+      "pot": "pot tanaman (perlu)",
+      "tidak": "tidak perlu",
+      "i-siram": "air siraman",
+      "i-matahari": "sinar matahari",
+      "i-tanah": "tanah gembur",
+      "i-angin": "udara segar",
+      "i-bola": "bola",
+      "i-roti": "roti",
+      "i-sepatu": "sepatu",
+      "i-buku": "buku",
+      "i-eskrim": "es krim"
+    },
+    "en": {
+      "judul": "Caring for the Garden Pot",
+      "instruksi": "Robot cares for a seedling: give the pot what it needs, set aside what it doesn't.",
+      "pot": "plant pot (needed)",
+      "tidak": "not needed",
+      "i-siram": "watering can",
+      "i-matahari": "sunshine",
+      "i-tanah": "loose soil",
+      "i-angin": "fresh air",
+      "i-bola": "ball",
+      "i-roti": "bread",
+      "i-sepatu": "shoes",
+      "i-buku": "book",
+      "i-eskrim": "ice cream"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kartu per putaran; roti dan sepatu pengecoh di 8 kartu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pot",
+      "labelKey": "pot",
+      "emoji": "🪴",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "tidak",
+      "emoji": "🧺",
+      "color": "#eeeeee"
+    }
+  ],
+  "items": [
+    {
+      "id": "siram",
+      "labelKey": "i-siram",
+      "bin": "pot",
+      "emoji": "🚿"
+    },
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pot",
+      "emoji": "🔆"
+    },
+    {
+      "id": "tanah",
+      "labelKey": "i-tanah",
+      "bin": "pot",
+      "shape": "square",
+      "color": "#5d4037"
+    },
+    {
+      "id": "angin",
+      "labelKey": "i-angin",
+      "bin": "pot",
+      "emoji": "💨"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "tidak",
+      "emoji": "⚽"
+    },
+    {
+      "id": "roti",
+      "labelKey": "i-roti",
+      "bin": "tidak",
+      "emoji": "🍞"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "i-sepatu",
+      "bin": "tidak",
+      "emoji": "👟"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "tidak",
+      "emoji": "📚"
+    },
+    {
+      "id": "eskrim",
+      "labelKey": "i-eskrim",
+      "bin": "tidak",
+      "emoji": "🍦"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,6 +1,6 @@
 {
   "framework": "EYFS",
-  "title": "Statutory framework for the early years foundation stage (England) - Early Learning Goals, Mathematics",
+  "title": "Statutory framework for the early years foundation stage (England) - Early Learning Goals: Mathematics, Understanding the World (The Natural World), and PSED Managing Self (item 3)",
   "version": "Edition effective 1 September 2026 (gov.uk); ELG text identical to editions effective 1 November 2024 (dated 11 October 2024) and 4 January 2024 (published 8 December 2023)",
   "sources": [
     "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2",
@@ -12,7 +12,9 @@
   "notes": [
     "Teks dibaca langsung dari PDF gov.uk (edisi berlaku 1 Sep 2026, Section 1 'Early learning goals', area Mathematics).",
     "Dibandingkan baris per baris dengan salinan edisi Nov 2024 (DERA, arsip resmi UCL) dan edisi Jan 2024 (City of London FIS): kata-kata ELG Number dan Numerical Patterns sama persis.",
-    "ELG-MATH-NUMBER / ELG-MATH-PATTERNS = teks goal lengkap; sufiks -01..-03 = tiap butir, untuk rujukan yang lebih presisi."
+    "ELG-MATH-NUMBER / ELG-MATH-PATTERNS = teks goal lengkap; sufiks -01..-03 = tiap butir, untuk rujukan yang lebih presisi.",
+    "Tambahan 2026-10-24 (track SAINS): ELG The Natural World (area Understanding the World) dan butir ke-3 ELG Managing Self (area PSED). Teks diambil dari edisi EYFS statutory framework 2021 (berlaku 1 Sep 2021) yang kata-katanya sama pada edisi Jan 2024 dan Nov 2024; BELUM dibandingkan baris per baris dengan PDF edisi Sep 2026. Bila edisi 2026 mengubah kalimatnya, perbarui teks di sini.",
+    "ELG-UW-NATURAL-WORLD = teks goal lengkap; sufiks -01..-03 = tiap butir. ELG Past and Present serta People, Culture and Communities belum dimasukkan karena belum dibutuhkan kompetensi mana pun."
   ],
   "entries": [
     {
@@ -78,6 +80,46 @@
       "text": "Explore and represent patterns within numbers up to 10, including evens and odds, double facts and how quantities can be distributed equally.",
       "verified": true,
       "source": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    },
+    {
+      "code": "ELG-UW-NATURAL-WORLD",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Understanding the World: ELG The Natural World",
+      "text": "Children at the expected level of development will: Explore the natural world around them, making observations and drawing pictures of animals and plants. Know some similarities and differences between the natural world around them and contrasting environments, drawing on their experiences and what has been read in class. Understand some important processes and changes in the natural world around them, including the seasons and changing states of matter.",
+      "verified": true,
+      "source": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+    },
+    {
+      "code": "ELG-UW-NATURAL-WORLD-01",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Understanding the World: ELG The Natural World",
+      "text": "Explore the natural world around them, making observations and drawing pictures of animals and plants.",
+      "verified": true,
+      "source": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+    },
+    {
+      "code": "ELG-UW-NATURAL-WORLD-02",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Understanding the World: ELG The Natural World",
+      "text": "Know some similarities and differences between the natural world around them and contrasting environments, drawing on their experiences and what has been read in class.",
+      "verified": true,
+      "source": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+    },
+    {
+      "code": "ELG-UW-NATURAL-WORLD-03",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Understanding the World: ELG The Natural World",
+      "text": "Understand some important processes and changes in the natural world around them, including the seasons and changing states of matter.",
+      "verified": true,
+      "source": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
+    },
+    {
+      "code": "ELG-PSED-MANAGING-SELF-03",
+      "stage": "Reception (end of EYFS, age 5)",
+      "strand": "Personal, Social and Emotional Development: ELG Managing Self",
+      "text": "Manage their own basic hygiene and personal needs, including dressing, going to the toilet and understanding the importance of healthy food choices.",
+      "verified": true,
+      "source": "https://www.gov.uk/government/publications/early-years-foundation-stage-framework--2"
     }
   ]
 }

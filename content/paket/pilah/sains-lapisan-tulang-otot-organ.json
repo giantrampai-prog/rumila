@@ -1,0 +1,119 @@
+{
+  "id": "sains-lapisan-tulang-otot-organ",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.TULANG-OTOT-ORGAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lapisan Tubuh",
+      "instruksi": "Taruh tiap potongan ke lapisannya: tulang, otot, atau organ. Jantung masuk organ.",
+      "tulang": "lapisan tulang",
+      "otot": "lapisan otot",
+      "organ": "lapisan organ (jantung di sini)",
+      "i-tengkorak": "tengkorak",
+      "i-tulangpaha": "tulang paha",
+      "i-ototlengan": "otot lengan",
+      "i-ototbetis": "otot betis",
+      "i-jantung": "jantung",
+      "i-paru": "paru-paru",
+      "i-otak": "otak"
+    },
+    "en": {
+      "judul": "Layers of the Body",
+      "instruksi": "Put each piece in its layer: bones, muscles, or organs. The heart goes with organs.",
+      "tulang": "bone layer",
+      "otot": "muscle layer",
+      "organ": "organ layer (heart goes here)",
+      "i-tengkorak": "skull",
+      "i-tulangpaha": "thigh bone",
+      "i-ototlengan": "arm muscle",
+      "i-ototbetis": "calf muscle",
+      "i-jantung": "heart",
+      "i-paru": "lungs",
+      "i-otak": "brain"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah potongan per putaran: 3 → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "klinik",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "tulang",
+      "labelKey": "tulang",
+      "emoji": "🦴",
+      "color": "#f5f5f5"
+    },
+    {
+      "id": "otot",
+      "labelKey": "otot",
+      "emoji": "💪",
+      "color": "#ef9a9a"
+    },
+    {
+      "id": "organ",
+      "labelKey": "organ",
+      "emoji": "🫀",
+      "color": "#ffe0b2"
+    }
+  ],
+  "items": [
+    {
+      "id": "tengkorak",
+      "labelKey": "i-tengkorak",
+      "bin": "tulang",
+      "emoji": "💀"
+    },
+    {
+      "id": "tulangpaha",
+      "labelKey": "i-tulangpaha",
+      "bin": "tulang",
+      "emoji": "🦴"
+    },
+    {
+      "id": "ototlengan",
+      "labelKey": "i-ototlengan",
+      "bin": "otot",
+      "emoji": "💪"
+    },
+    {
+      "id": "ototbetis",
+      "labelKey": "i-ototbetis",
+      "bin": "otot",
+      "emoji": "🦵"
+    },
+    {
+      "id": "jantung",
+      "labelKey": "i-jantung",
+      "bin": "organ",
+      "emoji": "🫀"
+    },
+    {
+      "id": "paru",
+      "labelKey": "i-paru",
+      "bin": "organ",
+      "emoji": "🫁"
+    },
+    {
+      "id": "otak",
+      "labelKey": "i-otak",
+      "bin": "organ",
+      "emoji": "🧠"
+    }
+  ],
+  "pilihan": []
+}

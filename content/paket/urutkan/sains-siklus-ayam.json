@@ -1,0 +1,110 @@
+{
+  "id": "sains-siklus-ayam",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.SIKLUS-HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Telur Jadi Ayam",
+      "instruksi": "Susun gambar dari telur, anak ayam, sampai ayam dewasa.",
+      "s-ayam": "Siklus hidup ayam",
+      "ayam-telur": "telur",
+      "ayam-retak": "telur retak, menetas",
+      "ayam-anak": "anak ayam kuning",
+      "ayam-dewasa": "ayam dewasa cokelat",
+      "s-bebek": "Siklus hidup bebek",
+      "bebek-telur": "telur bebek",
+      "bebek-anak": "anak bebek kecil",
+      "bebek-dewasa": "bebek dewasa"
+    },
+    "en": {
+      "judul": "Egg to Chicken",
+      "instruksi": "Put the pictures in order: egg, chick, then grown chicken.",
+      "s-ayam": "Chicken life cycle",
+      "ayam-telur": "egg",
+      "ayam-retak": "egg cracks and hatches",
+      "ayam-anak": "yellow chick",
+      "ayam-dewasa": "grown brown hen",
+      "s-bebek": "Duck life cycle",
+      "bebek-telur": "duck egg",
+      "bebek-anak": "little duckling",
+      "bebek-dewasa": "grown duck"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah tahap: 3 (telur, anak ayam, ayam) → 4 (tambah telur retak menetas)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "halaman",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "ayam",
+      "titleKey": "s-ayam",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "ayam-telur",
+          "emoji": "🥚",
+          "scale": 0.8
+        },
+        {
+          "id": "retak",
+          "labelKey": "ayam-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "anak",
+          "labelKey": "ayam-anak",
+          "emoji": "🐥",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "ayam-dewasa",
+          "emoji": "🐔",
+          "scale": 1.4,
+          "color": "#8d6e63"
+        }
+      ]
+    },
+    {
+      "id": "bebek",
+      "titleKey": "s-bebek",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "bebek-telur",
+          "emoji": "🥚",
+          "scale": 0.8,
+          "color": "#c8e6c9"
+        },
+        {
+          "id": "anak",
+          "labelKey": "bebek-anak",
+          "emoji": "🐤",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "bebek-dewasa",
+          "emoji": "🦆",
+          "scale": 1.4
+        }
+      ]
+    }
+  ]
+}

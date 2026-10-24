@@ -1,0 +1,129 @@
+{
+  "id": "sains-mana-organ-tubuh",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.TULANG-OTOT-ORGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mana Organnya?",
+      "instruksi": "Dengarkan nama organ di dalam tubuh, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-jantung": "jantung",
+      "i-paru": "paru-paru",
+      "i-otak": "otak",
+      "i-tulang": "tulang",
+      "t-jantung": "Mana jantungnya? Jantung berdetak dug-dug.",
+      "t-paru": "Mana paru-parunya? Paru-paru untuk bernapas.",
+      "t-otak": "Mana otaknya? Otak untuk berpikir.",
+      "t-jantung2": "Mana jantungnya?"
+    },
+    "en": {
+      "judul": "Where Is That Organ?",
+      "instruksi": "Listen to the organ inside the body, then touch its picture.",
+      "pilihan": "choices",
+      "i-jantung": "heart",
+      "i-paru": "lungs",
+      "i-otak": "brain",
+      "i-tulang": "bone",
+      "t-jantung": "Where is the heart? It goes thump-thump.",
+      "t-paru": "Where are the lungs? Lungs are for breathing.",
+      "t-otak": "Where is the brain? The brain is for thinking.",
+      "t-jantung2": "Where is the heart?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah pilihan: 3 organ besar (jantung, paru-paru, otak) → 4 (tambah tulang sebagai pengecoh)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "klinik",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "jantung",
+      "labelKey": "i-jantung",
+      "bin": "pilihan",
+      "emoji": "🫀"
+    },
+    {
+      "id": "paru",
+      "labelKey": "i-paru",
+      "bin": "pilihan",
+      "emoji": "🫁"
+    },
+    {
+      "id": "otak",
+      "labelKey": "i-otak",
+      "bin": "pilihan",
+      "emoji": "🧠"
+    },
+    {
+      "id": "tulang",
+      "labelKey": "i-tulang",
+      "bin": "pilihan",
+      "emoji": "🦴"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "jantung",
+      "promptKey": "t-jantung",
+      "choices": [
+        "jantung",
+        "paru",
+        "otak"
+      ],
+      "correct": "jantung"
+    },
+    {
+      "id": "paru",
+      "promptKey": "t-paru",
+      "choices": [
+        "paru",
+        "otak",
+        "jantung",
+        "tulang"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "otak",
+      "promptKey": "t-otak",
+      "choices": [
+        "otak",
+        "jantung",
+        "tulang",
+        "paru"
+      ],
+      "correct": "otak"
+    },
+    {
+      "id": "jantung2",
+      "promptKey": "t-jantung2",
+      "choices": [
+        "tulang",
+        "jantung",
+        "paru",
+        "otak"
+      ],
+      "correct": "jantung"
+    }
+  ]
+}

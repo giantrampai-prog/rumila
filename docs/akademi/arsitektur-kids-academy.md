@@ -21,7 +21,7 @@ Status: draf diskusi, 24 Okt 2026. Belum ada kode yang berubah.
 | L5 | Kapten | 7–8 | Cambridge Primary Stage 3 |
 | L6 | Komandan | 8–9 | Cambridge Primary Stage 4 |
 
-Catatan: untuk matematika bisa disilang dengan Common Core K–3; untuk Bahasa Inggris pakai Pre-A1 Starters / A1 Movers (Cambridge YLE) sebagai rujukan kosakata dan fungsi bahasa. Jalur Karakter & robota tidak punya acuan internasional; rumuskan sendiri.
+Catatan: untuk matematika bisa disilang dengan Common Core K–3; untuk Bahasa Inggris pakai Pre-A1 Starters / A1 Movers (Cambridge YLE) sebagai rujukan kosakata dan fungsi bahasa. Jalur Karakter & agama tidak punya acuan internasional; rumuskan sendiri.
 
 ## 3. Jalur (Track)
 

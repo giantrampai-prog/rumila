@@ -1,0 +1,143 @@
+{
+  "id": "sains-rak-bahan-halaman",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bahan Benda di Halaman",
+      "instruksi": "Robot merapikan halaman: taruh tiap benda ke rak bahan kayu, logam, plastik, atau kaca.",
+      "kayu": "kayu",
+      "logam": "logam",
+      "plastik": "plastik",
+      "kaca": "kaca",
+      "i-kursi": "kursi kayu",
+      "i-pagar": "pagar kayu",
+      "i-kunci": "kunci",
+      "i-paku": "paku",
+      "i-ember": "ember plastik",
+      "i-mainan": "mainan plastik",
+      "i-jendela": "kaca jendela",
+      "i-botolkaca": "botol kaca"
+    },
+    "en": {
+      "judul": "Materials in the Yard",
+      "instruksi": "Robot tidies the yard: put each object on the wood, metal, plastic, or glass shelf.",
+      "kayu": "wood",
+      "logam": "metal",
+      "plastik": "plastic",
+      "kaca": "glass",
+      "i-kursi": "wooden chair",
+      "i-pagar": "wooden fence",
+      "i-kunci": "key",
+      "i-paku": "nail",
+      "i-ember": "plastic bucket",
+      "i-mainan": "plastic toy",
+      "i-jendela": "window glass",
+      "i-botolkaca": "glass bottle"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 → 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kayu",
+      "labelKey": "kayu",
+      "emoji": "🪵",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "logam",
+      "labelKey": "logam",
+      "emoji": "🔩",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "plastik",
+      "emoji": "🧴",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "kaca",
+      "emoji": "🥛",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "kayu",
+      "emoji": "🪑"
+    },
+    {
+      "id": "pagar",
+      "labelKey": "i-pagar",
+      "bin": "kayu",
+      "emoji": "🪵",
+      "scale": 1.2
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "logam",
+      "emoji": "🔑"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "logam",
+      "emoji": "🔩"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "plastik",
+      "emoji": "🪣"
+    },
+    {
+      "id": "mainan",
+      "labelKey": "i-mainan",
+      "bin": "plastik",
+      "emoji": "🪀"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "kaca",
+      "emoji": "🪟"
+    },
+    {
+      "id": "botolkaca",
+      "labelKey": "i-botolkaca",
+      "bin": "kaca",
+      "emoji": "🍾"
+    }
+  ],
+  "pilihan": []
+}

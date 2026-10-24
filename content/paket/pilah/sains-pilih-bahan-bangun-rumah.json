@@ -1,0 +1,146 @@
+{
+  "id": "sains-pilih-bahan-bangun-rumah",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pilih Bahan untuk Rumah Kecil",
+      "instruksi": "Robot membangun rumah kecil: dengarkan bendanya, lalu sentuh bahan yang paling cocok.",
+      "pilihan": "pilihan",
+      "i-kayu": "kayu",
+      "i-logam": "logam",
+      "i-plastik": "plastik",
+      "i-kaca": "kaca",
+      "t-jendela": "Jendela supaya cahaya masuk. Bahan apa?",
+      "t-kursi": "Kursi untuk duduk yang kuat dan nyaman. Bahan apa?",
+      "t-paku": "Paku supaya papan tidak lepas. Bahan apa?",
+      "t-botol": "Botol minum yang ringan dan tidak pecah. Bahan apa?",
+      "t-pintu": "Pintu rumah yang kokoh. Bahan apa?"
+    },
+    "en": {
+      "judul": "Pick Materials for the Little House",
+      "instruksi": "Robot builds a little house: listen to the object, then touch the best material for it.",
+      "pilihan": "choices",
+      "i-kayu": "wood",
+      "i-logam": "metal",
+      "i-plastik": "plastic",
+      "i-kaca": "glass",
+      "t-jendela": "A window to let light in. Which material?",
+      "t-kursi": "A strong, comfy chair to sit on. Which material?",
+      "t-paku": "A nail to hold the boards. Which material?",
+      "t-botol": "A light drinking bottle that won't break. Which material?",
+      "t-pintu": "A sturdy front door. Which material?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah bahan pilihan per pertanyaan: 3 → 4; benda dengan dua bahan sah (ember) tidak dipakai"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "pilihan",
+      "emoji": "🪵",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "logam",
+      "labelKey": "i-logam",
+      "bin": "pilihan",
+      "emoji": "🔩",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "pilihan",
+      "emoji": "🧴",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "pilihan",
+      "emoji": "🥛",
+      "color": "#e1f5fe"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "jendela",
+      "promptKey": "t-jendela",
+      "choices": [
+        "kaca",
+        "kayu",
+        "logam",
+        "plastik"
+      ],
+      "correct": "kaca"
+    },
+    {
+      "id": "kursi",
+      "promptKey": "t-kursi",
+      "choices": [
+        "kayu",
+        "kaca",
+        "plastik",
+        "logam"
+      ],
+      "correct": "kayu"
+    },
+    {
+      "id": "paku",
+      "promptKey": "t-paku",
+      "choices": [
+        "logam",
+        "plastik",
+        "kayu",
+        "kaca"
+      ],
+      "correct": "logam"
+    },
+    {
+      "id": "botol",
+      "promptKey": "t-botol",
+      "choices": [
+        "plastik",
+        "kaca",
+        "logam",
+        "kayu"
+      ],
+      "correct": "plastik"
+    },
+    {
+      "id": "pintu",
+      "promptKey": "t-pintu",
+      "choices": [
+        "kayu",
+        "kaca",
+        "plastik"
+      ],
+      "correct": "kayu"
+    }
+  ]
+}

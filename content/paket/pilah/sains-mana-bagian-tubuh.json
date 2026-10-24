@@ -1,0 +1,172 @@
+{
+  "id": "sains-mana-bagian-tubuh",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mana Bagian Tubuhnya?",
+      "instruksi": "Dengarkan nama bagian tubuh, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-mata": "mata",
+      "i-hidung": "hidung",
+      "i-telinga": "telinga",
+      "i-mulut": "mulut",
+      "i-tangan": "tangan",
+      "i-kaki": "kaki",
+      "t-mata": "Mana matanya?",
+      "t-hidung": "Mana hidungnya?",
+      "t-telinga": "Mana telinganya?",
+      "t-mulut": "Mana mulutnya?",
+      "t-tangan": "Mana tangannya?",
+      "t-kaki": "Mana kakinya?"
+    },
+    "en": {
+      "judul": "Where Is That Body Part?",
+      "instruksi": "Listen to the body part, then touch its picture.",
+      "pilihan": "choices",
+      "i-mata": "eye",
+      "i-hidung": "nose",
+      "i-telinga": "ear",
+      "i-mulut": "mouth",
+      "i-tangan": "hand",
+      "i-kaki": "foot",
+      "t-mata": "Where is the eye?",
+      "t-hidung": "Where is the nose?",
+      "t-telinga": "Where is the ear?",
+      "t-mulut": "Where is the mouth?",
+      "t-tangan": "Where is the hand?",
+      "t-kaki": "Where is the foot?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah gambar bagian tubuh per pertanyaan; mulai 3–4 bagian besar, naik ke 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "klinik",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "mata",
+      "labelKey": "i-mata",
+      "bin": "pilihan",
+      "emoji": "👁️"
+    },
+    {
+      "id": "hidung",
+      "labelKey": "i-hidung",
+      "bin": "pilihan",
+      "emoji": "👃"
+    },
+    {
+      "id": "telinga",
+      "labelKey": "i-telinga",
+      "bin": "pilihan",
+      "emoji": "👂"
+    },
+    {
+      "id": "mulut",
+      "labelKey": "i-mulut",
+      "bin": "pilihan",
+      "emoji": "👄"
+    },
+    {
+      "id": "tangan",
+      "labelKey": "i-tangan",
+      "bin": "pilihan",
+      "emoji": "✋"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "i-kaki",
+      "bin": "pilihan",
+      "emoji": "🦶"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "mata",
+      "promptKey": "t-mata",
+      "choices": [
+        "mata",
+        "hidung",
+        "telinga",
+        "mulut"
+      ],
+      "correct": "mata"
+    },
+    {
+      "id": "hidung",
+      "promptKey": "t-hidung",
+      "choices": [
+        "hidung",
+        "mulut",
+        "telinga",
+        "tangan"
+      ],
+      "correct": "hidung"
+    },
+    {
+      "id": "telinga",
+      "promptKey": "t-telinga",
+      "choices": [
+        "telinga",
+        "mata",
+        "kaki",
+        "hidung"
+      ],
+      "correct": "telinga"
+    },
+    {
+      "id": "mulut",
+      "promptKey": "t-mulut",
+      "choices": [
+        "mulut",
+        "mata",
+        "hidung",
+        "tangan"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "tangan",
+      "promptKey": "t-tangan",
+      "choices": [
+        "tangan",
+        "kaki",
+        "telinga",
+        "mata"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "kaki",
+      "promptKey": "t-kaki",
+      "choices": [
+        "kaki",
+        "tangan",
+        "mulut",
+        "hidung"
+      ],
+      "correct": "kaki"
+    }
+  ]
+}

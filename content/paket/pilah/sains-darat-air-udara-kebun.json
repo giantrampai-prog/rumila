@@ -1,0 +1,142 @@
+{
+  "id": "sains-darat-air-udara-kebun",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Darat, Air, atau Udara?",
+      "instruksi": "Antar tiap hewan ke tempat hidupnya: darat, air, atau udara.",
+      "darat": "darat",
+      "air": "air",
+      "udara": "udara",
+      "i-sapi": "sapi",
+      "i-kambing": "kambing",
+      "i-kucing": "kucing",
+      "i-ikan": "ikan",
+      "i-gurita": "gurita",
+      "i-penyu": "penyu",
+      "i-burung": "burung",
+      "i-kupu": "kupu-kupu",
+      "i-lebah": "lebah"
+    },
+    "en": {
+      "judul": "Land, Water, or Sky?",
+      "instruksi": "Take each animal to where it lives: land, water, or sky.",
+      "darat": "land",
+      "air": "water",
+      "udara": "sky",
+      "i-sapi": "cow",
+      "i-kambing": "goat",
+      "i-kucing": "cat",
+      "i-ikan": "fish",
+      "i-gurita": "octopus",
+      "i-penyu": "sea turtle",
+      "i-burung": "bird",
+      "i-kupu": "butterfly",
+      "i-lebah": "bee"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah tempat: 2 (darat, air) → 3 (tambah udara)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran; bebek dan katak sengaja tidak dipakai"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "darat",
+      "labelKey": "darat",
+      "emoji": "🌾",
+      "color": "#c5e1a5"
+    },
+    {
+      "id": "air",
+      "labelKey": "air",
+      "emoji": "🌊",
+      "color": "#81d4fa"
+    },
+    {
+      "id": "udara",
+      "labelKey": "udara",
+      "emoji": "☁️",
+      "color": "#e3f2fd"
+    }
+  ],
+  "items": [
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "darat",
+      "emoji": "🐄"
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "darat",
+      "emoji": "🐐"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "darat",
+      "emoji": "🐈"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "air",
+      "emoji": "🐟"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "air",
+      "emoji": "🐙"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "air",
+      "emoji": "🐢"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "udara",
+      "emoji": "🐦"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "udara",
+      "emoji": "🦋"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "udara",
+      "emoji": "🐝"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,139 @@
+{
+  "id": "sains-tebak-apung-tenggelam",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.APUNG-TENGGELAM-MAGNET.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tebak: Apung atau Tenggelam?",
+      "instruksi": "Sebelum dicoba di air, tebak dulu: taruh benda ke kolom apung atau tenggelam.",
+      "apung": "terapung",
+      "tenggelam": "tenggelam",
+      "i-bola": "bola plastik",
+      "i-daun": "daun",
+      "i-kayu": "balok kayu besar",
+      "i-bebekkaret": "bebek karet",
+      "i-gabus": "tutup gabus",
+      "i-batu": "batu",
+      "i-sendok": "sendok logam",
+      "i-koin": "koin",
+      "i-kelereng": "kelereng kecil",
+      "i-kunci": "kunci"
+    },
+    "en": {
+      "judul": "Guess: Float or Sink?",
+      "instruksi": "Before we try it in water, guess first: put each thing in the float or sink column.",
+      "apung": "floats",
+      "tenggelam": "sinks",
+      "i-bola": "plastic ball",
+      "i-daun": "leaf",
+      "i-kayu": "big wooden block",
+      "i-bebekkaret": "rubber duck",
+      "i-gabus": "cork",
+      "i-batu": "stone",
+      "i-sendok": "metal spoon",
+      "i-koin": "coin",
+      "i-kelereng": "little marble",
+      "i-kunci": "key"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda yang ditebak per putaran; kayu besar selalu ada supaya 'besar pasti tenggelam' teruji"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "apung",
+      "labelKey": "apung",
+      "emoji": "🛟",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tenggelam",
+      "labelKey": "tenggelam",
+      "emoji": "⬇️",
+      "color": "#0d47a1"
+    }
+  ],
+  "items": [
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "apung",
+      "emoji": "🏐"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "apung",
+      "emoji": "🍃"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "apung",
+      "emoji": "🪵",
+      "scale": 1.5
+    },
+    {
+      "id": "bebekkaret",
+      "labelKey": "i-bebekkaret",
+      "bin": "apung",
+      "emoji": "🦆",
+      "color": "#fff176"
+    },
+    {
+      "id": "gabus",
+      "labelKey": "i-gabus",
+      "bin": "apung",
+      "emoji": "🍾",
+      "scale": 0.7
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "tenggelam",
+      "emoji": "🪨"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "tenggelam",
+      "emoji": "🥄"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "tenggelam",
+      "emoji": "🪙"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "tenggelam",
+      "emoji": "🔮",
+      "scale": 0.6
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "tenggelam",
+      "emoji": "🔑"
+    }
+  ],
+  "pilihan": []
+}

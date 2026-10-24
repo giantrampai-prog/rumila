@@ -1,0 +1,131 @@
+{
+  "id": "sains-mana-bagian-tumbuhan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mana Bagian Tumbuhannya?",
+      "instruksi": "Dengarkan nama bagian tumbuhan, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-akar": "akar",
+      "i-batang": "batang",
+      "i-daun": "daun",
+      "i-bunga": "bunga",
+      "t-akar": "Mana akarnya? Akar ada di dalam tanah.",
+      "t-daun": "Mana daunnya?",
+      "t-bunga": "Mana bunganya?",
+      "t-batang": "Mana batangnya?"
+    },
+    "en": {
+      "judul": "Which Plant Part?",
+      "instruksi": "Listen to the plant part, then touch its picture.",
+      "pilihan": "choices",
+      "i-akar": "root",
+      "i-batang": "stem",
+      "i-daun": "leaf",
+      "i-bunga": "flower",
+      "t-akar": "Where is the root? Roots grow in the soil.",
+      "t-daun": "Where is the leaf?",
+      "t-bunga": "Where is the flower?",
+      "t-batang": "Where is the stem?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah pilihan per pertanyaan: akar, batang, daun, bunga (buah tidak dicampur di tahap ini)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "akar",
+      "labelKey": "i-akar",
+      "bin": "pilihan",
+      "emoji": "🫚",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "batang",
+      "labelKey": "i-batang",
+      "bin": "pilihan",
+      "emoji": "🎋"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "pilihan",
+      "emoji": "🍃"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "i-bunga",
+      "bin": "pilihan",
+      "emoji": "🌸"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "akar",
+      "promptKey": "t-akar",
+      "choices": [
+        "akar",
+        "batang",
+        "daun",
+        "bunga"
+      ],
+      "correct": "akar"
+    },
+    {
+      "id": "daun",
+      "promptKey": "t-daun",
+      "choices": [
+        "daun",
+        "bunga",
+        "akar",
+        "batang"
+      ],
+      "correct": "daun"
+    },
+    {
+      "id": "bunga",
+      "promptKey": "t-bunga",
+      "choices": [
+        "bunga",
+        "daun",
+        "batang",
+        "akar"
+      ],
+      "correct": "bunga"
+    },
+    {
+      "id": "batang",
+      "promptKey": "t-batang",
+      "choices": [
+        "batang",
+        "akar",
+        "bunga",
+        "daun"
+      ],
+      "correct": "batang"
+    }
+  ]
+}

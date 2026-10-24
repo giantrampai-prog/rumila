@@ -1,0 +1,102 @@
+{
+  "id": "sains-urutkan-matahari-bumi-bulan",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Paling Besar ke Paling Kecil di Langit",
+      "instruksi": "Susun benda langit dari yang paling besar ke paling kecil: Matahari, Bumi, lalu Bulan.",
+      "s-besar": "Dari paling besar",
+      "besar-matahari": "Matahari paling besar",
+      "besar-bumi": "Bumi",
+      "besar-bulan": "Bulan paling kecil",
+      "s-kecil": "Dari paling kecil",
+      "kecil-bulan": "Bulan paling kecil",
+      "kecil-bumi": "Bumi",
+      "kecil-matahari": "Matahari paling besar"
+    },
+    "en": {
+      "judul": "Biggest to Smallest in the Sky",
+      "instruksi": "Put the space objects in order from biggest to smallest: Sun, Earth, then Moon.",
+      "s-besar": "From the biggest",
+      "besar-matahari": "the Sun, the biggest",
+      "besar-bumi": "Earth",
+      "besar-bulan": "the Moon, the smallest",
+      "s-kecil": "From the smallest",
+      "kecil-bulan": "the Moon, the smallest",
+      "kecil-bumi": "Earth",
+      "kecil-matahari": "the Sun, the biggest"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "selalu tiga benda: Matahari, Bumi, Bulan; urutan kedua membalik arah (kecil ke besar)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "angkasa",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "besar",
+      "titleKey": "s-besar",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "besar-matahari",
+          "emoji": "☀️",
+          "scale": 2
+        },
+        {
+          "id": "bumi",
+          "labelKey": "besar-bumi",
+          "emoji": "🌍",
+          "scale": 1
+        },
+        {
+          "id": "bulan",
+          "labelKey": "besar-bulan",
+          "emoji": "🌕",
+          "scale": 0.5,
+          "color": "#263238"
+        }
+      ]
+    },
+    {
+      "id": "kecil",
+      "titleKey": "s-kecil",
+      "steps": [
+        {
+          "id": "bulan",
+          "labelKey": "kecil-bulan",
+          "emoji": "🌕",
+          "scale": 0.5,
+          "color": "#263238"
+        },
+        {
+          "id": "bumi",
+          "labelKey": "kecil-bumi",
+          "emoji": "🌍",
+          "scale": 1
+        },
+        {
+          "id": "matahari",
+          "labelKey": "kecil-matahari",
+          "emoji": "☀️",
+          "scale": 2
+        }
+      ]
+    }
+  ]
+}

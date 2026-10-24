@@ -1,0 +1,144 @@
+{
+  "id": "sains-habitat-hewan-lain",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.HEWAN-HABITAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rumah Hewan di Seluruh Dunia",
+      "instruksi": "Robot keliling dunia: antar tiap hewan ke habitat tempat tinggalnya.",
+      "gurun": "gurun",
+      "es": "es",
+      "hutan": "hutan",
+      "terumbu": "terumbu karang",
+      "i-kalajengking": "kalajengking",
+      "i-ular": "ular pasir",
+      "i-anjinglaut": "anjing laut",
+      "i-rusakutub": "rusa kutub",
+      "i-burungbeo": "burung beo",
+      "i-gorila": "gorila",
+      "i-kepiting": "kepiting karang",
+      "i-cumi": "cumi-cumi"
+    },
+    "en": {
+      "judul": "Animal Homes Around the World",
+      "instruksi": "Robot travels the world: take each animal to the habitat where it lives.",
+      "gurun": "desert",
+      "es": "ice",
+      "hutan": "forest",
+      "terumbu": "coral reef",
+      "i-kalajengking": "scorpion",
+      "i-ular": "sand snake",
+      "i-anjinglaut": "seal",
+      "i-rusakutub": "reindeer",
+      "i-burungbeo": "parrot",
+      "i-gorila": "gorilla",
+      "i-kepiting": "reef crab",
+      "i-cumi": "squid"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah habitat: 2 → 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gurun",
+      "labelKey": "gurun",
+      "emoji": "🏜️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "es",
+      "labelKey": "es",
+      "emoji": "🧊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "hutan",
+      "labelKey": "hutan",
+      "emoji": "🌴",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "terumbu",
+      "labelKey": "terumbu",
+      "emoji": "🪸",
+      "color": "#b3e5fc"
+    }
+  ],
+  "items": [
+    {
+      "id": "kalajengking",
+      "labelKey": "i-kalajengking",
+      "bin": "gurun",
+      "emoji": "🦂"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "gurun",
+      "emoji": "🐍",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "es",
+      "emoji": "🦭"
+    },
+    {
+      "id": "rusakutub",
+      "labelKey": "i-rusakutub",
+      "bin": "es",
+      "emoji": "🦌",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "burungbeo",
+      "labelKey": "i-burungbeo",
+      "bin": "hutan",
+      "emoji": "🦜"
+    },
+    {
+      "id": "gorila",
+      "labelKey": "i-gorila",
+      "bin": "hutan",
+      "emoji": "🦍"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "terumbu",
+      "emoji": "🦀"
+    },
+    {
+      "id": "cumi",
+      "labelKey": "i-cumi",
+      "bin": "terumbu",
+      "emoji": "🦑"
+    }
+  ],
+  "pilihan": []
+}

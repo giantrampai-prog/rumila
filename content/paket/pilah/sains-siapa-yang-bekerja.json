@@ -1,0 +1,138 @@
+{
+  "id": "sains-siapa-yang-bekerja",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.TULANG-OTOT-ORGAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa yang Bekerja?",
+      "instruksi": "Taruh kartu kegiatan ke bagian tubuh yang paling bekerja: lari ke otot kaki, bernapas ke paru-paru.",
+      "kaki": "otot kaki",
+      "paru": "paru-paru",
+      "lengan": "otot lengan",
+      "otak": "otak",
+      "i-lari": "lari",
+      "i-tendang": "menendang bola",
+      "i-napas": "tarik napas dalam",
+      "i-balon": "meniup balon",
+      "i-tas": "mengangkat tas",
+      "i-beban": "mengangkat beban",
+      "i-baca": "membaca buku",
+      "i-puzel": "memikirkan puzel"
+    },
+    "en": {
+      "judul": "Which Part Is Working?",
+      "instruksi": "Put each activity card on the body part doing the work: running to leg muscles, breathing to lungs.",
+      "kaki": "leg muscles",
+      "paru": "lungs",
+      "lengan": "arm muscles",
+      "otak": "brain",
+      "i-lari": "running",
+      "i-tendang": "kicking a ball",
+      "i-napas": "taking a deep breath",
+      "i-balon": "blowing up a balloon",
+      "i-tas": "lifting a bag",
+      "i-beban": "lifting weights",
+      "i-baca": "reading a book",
+      "i-puzel": "solving a puzzle"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah bagian tubuh: 2 (otot kaki, paru-paru) → 4 (tambah otot lengan, otak)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kartu kegiatan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "klinik",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kaki",
+      "labelKey": "kaki",
+      "emoji": "🦵"
+    },
+    {
+      "id": "paru",
+      "labelKey": "paru",
+      "emoji": "🫁"
+    },
+    {
+      "id": "lengan",
+      "labelKey": "lengan",
+      "emoji": "💪"
+    },
+    {
+      "id": "otak",
+      "labelKey": "otak",
+      "emoji": "🧠"
+    }
+  ],
+  "items": [
+    {
+      "id": "lari",
+      "labelKey": "i-lari",
+      "bin": "kaki",
+      "emoji": "🏃"
+    },
+    {
+      "id": "tendang",
+      "labelKey": "i-tendang",
+      "bin": "kaki",
+      "emoji": "⚽"
+    },
+    {
+      "id": "napas",
+      "labelKey": "i-napas",
+      "bin": "paru",
+      "emoji": "🌬️"
+    },
+    {
+      "id": "balon",
+      "labelKey": "i-balon",
+      "bin": "paru",
+      "emoji": "🎈"
+    },
+    {
+      "id": "tas",
+      "labelKey": "i-tas",
+      "bin": "lengan",
+      "emoji": "🎒"
+    },
+    {
+      "id": "beban",
+      "labelKey": "i-beban",
+      "bin": "lengan",
+      "emoji": "🏋️"
+    },
+    {
+      "id": "baca",
+      "labelKey": "i-baca",
+      "bin": "otak",
+      "emoji": "📖"
+    },
+    {
+      "id": "puzel",
+      "labelKey": "i-puzel",
+      "bin": "otak",
+      "emoji": "🧩"
+    }
+  ],
+  "pilihan": []
+}
