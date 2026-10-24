@@ -118,7 +118,7 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
     case "alat": {
       const h = pilihSatu(bernilai(p, "hewan"), r);
       const correctId = h.value === 2 ? ALAT_BERAT : ALAT_PANJANG;
-      return { ...dasar, items: [h, ...peran(p, "alat")], target: h.value ?? 1, correctId };
+      return { ...dasar, items: [h, ...acak(peran(p, "alat"), r)], target: h.value ?? 1, correctId };
     }
     case "bagi": {
       const max = jepit(knobs.max, 2, 8, 8);

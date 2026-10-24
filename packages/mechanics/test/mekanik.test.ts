@@ -125,6 +125,10 @@ describe("urutkan", () => {
     expect(r.correct).toEqual(["bangun", "gosok"]);
     expect(nilaiUrutkan(r, "bangun").benar).toBe(true);
     expect(nilaiUrutkan(r, "gosok").benar).toBe(false);
+    // jawaban benar tidak boleh selalu di posisi yang sama
+    const kiri = Array.from({ length: 200 }, (_, s) => buatRondeUrutkan(pd, {}, s).shown[0].id === "bangun").filter(Boolean).length;
+    expect(kiri).toBeGreaterThan(60);
+    expect(kiri).toBeLessThan(140);
   });
 });
 
