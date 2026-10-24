@@ -1,0 +1,189 @@
+{
+  "id": "laci-uang-warung",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.UANG-KENAL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Masukkan tiap uang ke laci warung yang gambarnya sama.",
+      "koin500": "koin lima ratus",
+      "koin1000": "koin seribu",
+      "kertas2000": "uang dua ribu",
+      "kertas5000": "uang lima ribu",
+      "kertas10000": "uang sepuluh ribu"
+    },
+    "en": {
+      "instruksi": "Put each coin or note into the shop drawer with the same picture.",
+      "koin500": "500 coin",
+      "koin1000": "1,000 coin",
+      "kertas2000": "2,000 note",
+      "kertas5000": "5,000 note",
+      "kertas10000": "10,000 note"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 5,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah laci aktif: koin 500 & 1.000 dulu, kertas menyusul"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah uang per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "koin500",
+      "labelKey": "koin500",
+      "emoji": "🪙",
+      "color": "#b0bec5"
+    },
+    {
+      "id": "koin1000",
+      "labelKey": "koin1000",
+      "emoji": "🪙",
+      "color": "#ffd54f"
+    },
+    {
+      "id": "kertas2000",
+      "labelKey": "kertas2000",
+      "emoji": "💵",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "kertas5000",
+      "labelKey": "kertas5000",
+      "emoji": "💵",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "kertas10000",
+      "labelKey": "kertas10000",
+      "emoji": "💵",
+      "color": "#8e24aa"
+    }
+  ],
+  "items": [
+    {
+      "id": "koin500-a",
+      "labelKey": "koin500",
+      "bin": "koin500",
+      "emoji": "🪙",
+      "color": "#b0bec5"
+    },
+    {
+      "id": "koin500-b",
+      "labelKey": "koin500",
+      "bin": "koin500",
+      "emoji": "🪙",
+      "color": "#b0bec5"
+    },
+    {
+      "id": "koin500-c",
+      "labelKey": "koin500",
+      "bin": "koin500",
+      "emoji": "🪙",
+      "color": "#b0bec5"
+    },
+    {
+      "id": "koin1000-a",
+      "labelKey": "koin1000",
+      "bin": "koin1000",
+      "emoji": "🪙",
+      "color": "#ffd54f"
+    },
+    {
+      "id": "koin1000-b",
+      "labelKey": "koin1000",
+      "bin": "koin1000",
+      "emoji": "🪙",
+      "color": "#ffd54f"
+    },
+    {
+      "id": "koin1000-c",
+      "labelKey": "koin1000",
+      "bin": "koin1000",
+      "emoji": "🪙",
+      "color": "#ffd54f"
+    },
+    {
+      "id": "kertas2000-a",
+      "labelKey": "kertas2000",
+      "bin": "kertas2000",
+      "emoji": "💵",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "kertas2000-b",
+      "labelKey": "kertas2000",
+      "bin": "kertas2000",
+      "emoji": "💵",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "kertas2000-c",
+      "labelKey": "kertas2000",
+      "bin": "kertas2000",
+      "emoji": "💵",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "kertas5000-a",
+      "labelKey": "kertas5000",
+      "bin": "kertas5000",
+      "emoji": "💵",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "kertas5000-b",
+      "labelKey": "kertas5000",
+      "bin": "kertas5000",
+      "emoji": "💵",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "kertas5000-c",
+      "labelKey": "kertas5000",
+      "bin": "kertas5000",
+      "emoji": "💵",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "kertas10000-a",
+      "labelKey": "kertas10000",
+      "bin": "kertas10000",
+      "emoji": "💵",
+      "color": "#8e24aa"
+    },
+    {
+      "id": "kertas10000-b",
+      "labelKey": "kertas10000",
+      "bin": "kertas10000",
+      "emoji": "💵",
+      "color": "#8e24aa"
+    },
+    {
+      "id": "kertas10000-c",
+      "labelKey": "kertas10000",
+      "bin": "kertas10000",
+      "emoji": "💵",
+      "color": "#8e24aa"
+    }
+  ]
+}

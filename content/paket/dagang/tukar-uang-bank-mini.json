@@ -1,0 +1,64 @@
+{
+  "id": "tukar-uang-bank-mini",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.UANG-10RB.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
+      "duaribu": "uang dua ribu",
+      "limaribu": "uang lima ribu"
+    },
+    "en": {
+      "instruksi": "Agam is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
+      "duaribu": "2,000 note",
+      "limaribu": "5,000 note"
+    }
+  },
+  "knobs": {
+    "harga": {
+      "min": 2,
+      "max": 5,
+      "default": 2,
+      "step": 3,
+      "keterangan": "nilai lembar yang ditukar (ribuan): dua ribu dulu, lalu lima ribu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "bank-mini",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "tukar",
+  "goods": [
+    {
+      "id": "lembar-2000",
+      "labelKey": "duaribu",
+      "price": 2000,
+      "emoji": "💵",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "lembar-5000",
+      "labelKey": "limaribu",
+      "price": 5000,
+      "emoji": "💵",
+      "color": "#6d4c41"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 5000,
+    "kindsMax": 1
+  }
+}

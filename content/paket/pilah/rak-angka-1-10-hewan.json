@@ -1,0 +1,248 @@
+{
+  "id": "rak-angka-1-10-hewan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Hitung hewan di kandang, lalu taruh di rak yang angkanya pas.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "n6": "6",
+      "n7": "7",
+      "n8": "8",
+      "n9": "9",
+      "n10": "10",
+      "bebek": "bebek",
+      "kelinci": "kelinci"
+    },
+    "en": {
+      "instruksi": "Count the animals in the pen, then put them on the shelf with the matching number.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "n6": "6",
+      "n7": "7",
+      "n8": "8",
+      "n9": "9",
+      "n10": "10",
+      "bebek": "ducks",
+      "kelinci": "rabbits"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 5,
+      "max": 10,
+      "default": 5,
+      "step": 1,
+      "keterangan": "angka terbesar yang aktif; rak di atas maxCount disembunyikan (6 dan 9 rawan tertukar)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah kelompok benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "r1",
+      "labelKey": "n1"
+    },
+    {
+      "id": "r2",
+      "labelKey": "n2"
+    },
+    {
+      "id": "r3",
+      "labelKey": "n3"
+    },
+    {
+      "id": "r4",
+      "labelKey": "n4"
+    },
+    {
+      "id": "r5",
+      "labelKey": "n5"
+    },
+    {
+      "id": "r6",
+      "labelKey": "n6"
+    },
+    {
+      "id": "r7",
+      "labelKey": "n7"
+    },
+    {
+      "id": "r8",
+      "labelKey": "n8"
+    },
+    {
+      "id": "r9",
+      "labelKey": "n9"
+    },
+    {
+      "id": "r10",
+      "labelKey": "n10"
+    }
+  ],
+  "items": [
+    {
+      "id": "bebek-1",
+      "labelKey": "bebek",
+      "bin": "r1",
+      "emoji": "🦆",
+      "count": 1
+    },
+    {
+      "id": "kelinci-1",
+      "labelKey": "kelinci",
+      "bin": "r1",
+      "emoji": "🐰",
+      "count": 1
+    },
+    {
+      "id": "bebek-2",
+      "labelKey": "bebek",
+      "bin": "r2",
+      "emoji": "🦆",
+      "count": 2
+    },
+    {
+      "id": "kelinci-2",
+      "labelKey": "kelinci",
+      "bin": "r2",
+      "emoji": "🐰",
+      "count": 2
+    },
+    {
+      "id": "bebek-3",
+      "labelKey": "bebek",
+      "bin": "r3",
+      "emoji": "🦆",
+      "count": 3
+    },
+    {
+      "id": "kelinci-3",
+      "labelKey": "kelinci",
+      "bin": "r3",
+      "emoji": "🐰",
+      "count": 3
+    },
+    {
+      "id": "bebek-4",
+      "labelKey": "bebek",
+      "bin": "r4",
+      "emoji": "🦆",
+      "count": 4
+    },
+    {
+      "id": "kelinci-4",
+      "labelKey": "kelinci",
+      "bin": "r4",
+      "emoji": "🐰",
+      "count": 4
+    },
+    {
+      "id": "bebek-5",
+      "labelKey": "bebek",
+      "bin": "r5",
+      "emoji": "🦆",
+      "count": 5
+    },
+    {
+      "id": "kelinci-5",
+      "labelKey": "kelinci",
+      "bin": "r5",
+      "emoji": "🐰",
+      "count": 5
+    },
+    {
+      "id": "bebek-6",
+      "labelKey": "bebek",
+      "bin": "r6",
+      "emoji": "🦆",
+      "count": 6
+    },
+    {
+      "id": "kelinci-6",
+      "labelKey": "kelinci",
+      "bin": "r6",
+      "emoji": "🐰",
+      "count": 6
+    },
+    {
+      "id": "bebek-7",
+      "labelKey": "bebek",
+      "bin": "r7",
+      "emoji": "🦆",
+      "count": 7
+    },
+    {
+      "id": "kelinci-7",
+      "labelKey": "kelinci",
+      "bin": "r7",
+      "emoji": "🐰",
+      "count": 7
+    },
+    {
+      "id": "bebek-8",
+      "labelKey": "bebek",
+      "bin": "r8",
+      "emoji": "🦆",
+      "count": 8
+    },
+    {
+      "id": "kelinci-8",
+      "labelKey": "kelinci",
+      "bin": "r8",
+      "emoji": "🐰",
+      "count": 8
+    },
+    {
+      "id": "bebek-9",
+      "labelKey": "bebek",
+      "bin": "r9",
+      "emoji": "🦆",
+      "count": 9
+    },
+    {
+      "id": "kelinci-9",
+      "labelKey": "kelinci",
+      "bin": "r9",
+      "emoji": "🐰",
+      "count": 9
+    },
+    {
+      "id": "bebek-10",
+      "labelKey": "bebek",
+      "bin": "r10",
+      "emoji": "🦆",
+      "count": 10
+    },
+    {
+      "id": "kelinci-10",
+      "labelKey": "kelinci",
+      "bin": "r10",
+      "emoji": "🐰",
+      "count": 10
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "agam-berangkat-sekolah",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.PAUD.URUTAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun gambar supaya Agam berangkat sekolah dengan urutan yang benar.",
+      "sekolah": "Agam ke sekolah",
+      "teh": "Membuat teh hangat",
+      "seragam": "pakai seragam",
+      "tas": "pakai tas",
+      "sepeda": "naik sepeda",
+      "tiba": "sampai sekolah",
+      "rebus": "rebus air",
+      "tuang": "tuang ke cangkir",
+      "minum": "minum teh"
+    },
+    "en": {
+      "instruksi": "Put the pictures in order so Agam gets to school the right way.",
+      "sekolah": "Agam goes to school",
+      "teh": "Making warm tea",
+      "seragam": "put on uniform",
+      "tas": "put on backpack",
+      "sepeda": "ride the bike",
+      "tiba": "arrive at school",
+      "rebus": "boil water",
+      "tuang": "pour into the cup",
+      "minum": "drink the tea"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah langkah yang ditampilkan; mulai 3, naik ke 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "jalan-ke-sekolah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "sekolah",
+      "titleKey": "sekolah",
+      "steps": [
+        {
+          "id": "seragam",
+          "labelKey": "seragam",
+          "emoji": "👕"
+        },
+        {
+          "id": "tas",
+          "labelKey": "tas",
+          "emoji": "🎒"
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "sepeda",
+          "emoji": "🚲"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "teh",
+      "titleKey": "teh",
+      "steps": [
+        {
+          "id": "rebus",
+          "labelKey": "rebus",
+          "emoji": "♨️"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "tuang",
+          "emoji": "🫖"
+        },
+        {
+          "id": "minum",
+          "labelKey": "minum",
+          "emoji": "🍵"
+        }
+      ]
+    }
+  ]
+}

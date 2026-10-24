@@ -1,0 +1,77 @@
+{
+  "id": "hitung-bunga-taman",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Bunga di taman tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+      "tulip": "tulip",
+      "matahari": "bunga matahari",
+      "kupu": "kupu-kupu"
+    },
+    "en": {
+      "instruksi": "The garden flowers are scattered: touch each one as you count, then slide the marker to the number.",
+      "tulip": "tulips",
+      "matahari": "sunflowers",
+      "kupu": "butterflies"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda yang dihitung; benda tersebar acak, yang sudah disentuh meredup"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu jenis benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "hitung",
+  "goods": [
+    {
+      "id": "tulip",
+      "labelKey": "tulip",
+      "price": 1000,
+      "emoji": "🌷"
+    },
+    {
+      "id": "matahari",
+      "labelKey": "matahari",
+      "price": 1000,
+      "emoji": "🌻"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "kupu",
+      "price": 1000,
+      "emoji": "🦋"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 6,
+    "itemsMax": 10,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1
+  }
+}

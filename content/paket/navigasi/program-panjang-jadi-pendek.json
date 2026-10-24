@@ -1,0 +1,205 @@
+{
+  "id": "program-panjang-jadi-pendek",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.ULANGI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Program Agam ini panjang: tulis ulang dengan blok ulangi supaya muat di rak dan jalannya tetap sama."
+    },
+    "en": {
+      "instruksi": "This program is long: rewrite it with a repeat block so it fits the rack and Agam walks the same path."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "panjang program asli yang harus dipadatkan"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kanan",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "empat-maju",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 2,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "lima-maju",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 2,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tiga-maju-naik",
+      "w": 2,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "maju-kanan-dua-kali",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 3,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ]
+    },
+    {
+      "id": "enam-maju",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 2,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    }
+  ]
+}

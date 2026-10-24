@@ -1,0 +1,144 @@
+{
+  "id": "kotak-mainan-warna",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.WARNA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Bantu Agam merapikan: masukkan tiap mainan ke kotak yang warnanya sama.",
+      "merah": "merah",
+      "biru": "biru",
+      "kuning": "kuning",
+      "hijau": "hijau",
+      "mobil": "mobil",
+      "balon": "balon",
+      "jip": "jip",
+      "topi": "topi",
+      "taksi": "taksi",
+      "lonceng": "lonceng",
+      "puzel": "kepingan puzel",
+      "kura": "kura-kura"
+    },
+    "en": {
+      "instruksi": "Help Agam tidy up: put each toy into the box with the same colour.",
+      "merah": "red",
+      "biru": "blue",
+      "kuning": "yellow",
+      "hijau": "green",
+      "mobil": "car",
+      "balon": "balloon",
+      "jip": "jeep",
+      "topi": "cap",
+      "taksi": "taxi",
+      "lonceng": "bell",
+      "puzel": "puzzle piece",
+      "kura": "turtle"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah keranjang/warna aktif; mulai 2 warna lalu naik ke 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "merah",
+      "labelKey": "merah",
+      "color": "#e53935"
+    },
+    {
+      "id": "biru",
+      "labelKey": "biru",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "kuning",
+      "labelKey": "kuning",
+      "color": "#fdd835"
+    },
+    {
+      "id": "hijau",
+      "labelKey": "hijau",
+      "color": "#43a047"
+    }
+  ],
+  "items": [
+    {
+      "id": "mobil",
+      "labelKey": "mobil",
+      "bin": "merah",
+      "emoji": "🚗",
+      "color": "#e53935"
+    },
+    {
+      "id": "balon",
+      "labelKey": "balon",
+      "bin": "merah",
+      "emoji": "🎈",
+      "color": "#e53935"
+    },
+    {
+      "id": "jip",
+      "labelKey": "jip",
+      "bin": "biru",
+      "emoji": "🚙",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "topi",
+      "labelKey": "topi",
+      "bin": "biru",
+      "emoji": "🧢",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "taksi",
+      "labelKey": "taksi",
+      "bin": "kuning",
+      "emoji": "🚕",
+      "color": "#fdd835"
+    },
+    {
+      "id": "lonceng",
+      "labelKey": "lonceng",
+      "bin": "kuning",
+      "emoji": "🔔",
+      "color": "#fdd835"
+    },
+    {
+      "id": "puzel",
+      "labelKey": "puzel",
+      "bin": "hijau",
+      "emoji": "🧩",
+      "color": "#43a047"
+    },
+    {
+      "id": "kura",
+      "labelKey": "kura",
+      "bin": "hijau",
+      "emoji": "🐢",
+      "color": "#43a047"
+    }
+  ]
+}

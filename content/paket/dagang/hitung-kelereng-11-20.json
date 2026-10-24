@@ -1,0 +1,69 @@
+{
+  "id": "hitung-kelereng-11-20",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.BILANGAN-20.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Kelereng Agam tumpah: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+      "kelereng": "kelereng",
+      "kancing": "kancing"
+    },
+    "en": {
+      "instruksi": "Agam's marbles spilled: touch each one as you count, then slide the marker to the number.",
+      "kelereng": "marbles",
+      "kancing": "buttons"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 11,
+      "max": 20,
+      "default": 12,
+      "step": 1,
+      "keterangan": "jumlah benda yang dihitung; boleh dikelompokkan dulu, yang sudah disentuh meredup"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu jenis benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah-agam",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "hitung",
+  "goods": [
+    {
+      "id": "kelereng",
+      "labelKey": "kelereng",
+      "price": 1000,
+      "emoji": "🔵"
+    },
+    {
+      "id": "kancing",
+      "labelKey": "kancing",
+      "price": 1000,
+      "emoji": "🟤"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 11,
+    "itemsMax": 20,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1
+  }
+}

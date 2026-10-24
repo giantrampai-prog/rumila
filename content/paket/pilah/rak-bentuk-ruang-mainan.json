@@ -1,0 +1,137 @@
+{
+  "id": "rak-bentuk-ruang-mainan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.BENTUK-RUANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Taruh tiap mainan di rak yang bentuknya sama: bola, kubus, atau tabung.",
+      "bola": "bola",
+      "kubus": "kubus",
+      "tabung": "tabung",
+      "sepak": "bola sepak",
+      "basket": "bola basket",
+      "tenis": "bola tenis",
+      "dadu": "dadu",
+      "kado": "kotak kado",
+      "kardus": "kardus",
+      "kaleng": "kaleng",
+      "baterai": "baterai",
+      "kayu": "gelondong kayu"
+    },
+    "en": {
+      "instruksi": "Put each toy on the shelf with the same shape: sphere, cube or cylinder.",
+      "bola": "sphere",
+      "kubus": "cube",
+      "tabung": "cylinder",
+      "sepak": "football",
+      "basket": "basketball",
+      "tenis": "tennis ball",
+      "dadu": "dice",
+      "kado": "gift box",
+      "kardus": "cardboard box",
+      "kaleng": "can",
+      "baterai": "battery",
+      "kayu": "log"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak aktif: bola & kubus dulu, tabung menyusul"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "emoji": "⚪"
+    },
+    {
+      "id": "kubus",
+      "labelKey": "kubus",
+      "emoji": "🎲"
+    },
+    {
+      "id": "tabung",
+      "labelKey": "tabung",
+      "emoji": "🥫"
+    }
+  ],
+  "items": [
+    {
+      "id": "sepak",
+      "labelKey": "sepak",
+      "bin": "bola",
+      "emoji": "⚽"
+    },
+    {
+      "id": "basket",
+      "labelKey": "basket",
+      "bin": "bola",
+      "emoji": "🏀"
+    },
+    {
+      "id": "tenis",
+      "labelKey": "tenis",
+      "bin": "bola",
+      "emoji": "🎾"
+    },
+    {
+      "id": "dadu",
+      "labelKey": "dadu",
+      "bin": "kubus",
+      "emoji": "🎲"
+    },
+    {
+      "id": "kado",
+      "labelKey": "kado",
+      "bin": "kubus",
+      "emoji": "🎁"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "kardus",
+      "bin": "kubus",
+      "emoji": "📦"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "kaleng",
+      "bin": "tabung",
+      "emoji": "🥫"
+    },
+    {
+      "id": "baterai",
+      "labelKey": "baterai",
+      "bin": "tabung",
+      "emoji": "🔋"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "kayu",
+      "bin": "tabung",
+      "emoji": "🪵"
+    }
+  ]
+}

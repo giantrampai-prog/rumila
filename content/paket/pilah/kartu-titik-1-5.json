@@ -1,0 +1,153 @@
+{
+  "id": "kartu-titik-1-5",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Hitung bendanya, lalu taruh di kartu yang titiknya sama banyak.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "apel": "apel",
+      "ikan": "ikan"
+    },
+    "en": {
+      "instruksi": "Count the things, then put them on the card with the same number of dots.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "apel": "apples",
+      "ikan": "fish"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah terbesar yang muncul; kartu di atas maxCount disembunyikan (4 dan 5 titik mirip, munculkan terakhir)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kelompok benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k1",
+      "labelKey": "n1",
+      "emoji": "⚀"
+    },
+    {
+      "id": "k2",
+      "labelKey": "n2",
+      "emoji": "⚁"
+    },
+    {
+      "id": "k3",
+      "labelKey": "n3",
+      "emoji": "⚂"
+    },
+    {
+      "id": "k4",
+      "labelKey": "n4",
+      "emoji": "⚃"
+    },
+    {
+      "id": "k5",
+      "labelKey": "n5",
+      "emoji": "⚄"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel-1",
+      "labelKey": "apel",
+      "bin": "k1",
+      "emoji": "🍎",
+      "count": 1
+    },
+    {
+      "id": "ikan-1",
+      "labelKey": "ikan",
+      "bin": "k1",
+      "emoji": "🐟",
+      "count": 1
+    },
+    {
+      "id": "apel-2",
+      "labelKey": "apel",
+      "bin": "k2",
+      "emoji": "🍎",
+      "count": 2
+    },
+    {
+      "id": "ikan-2",
+      "labelKey": "ikan",
+      "bin": "k2",
+      "emoji": "🐟",
+      "count": 2
+    },
+    {
+      "id": "apel-3",
+      "labelKey": "apel",
+      "bin": "k3",
+      "emoji": "🍎",
+      "count": 3
+    },
+    {
+      "id": "ikan-3",
+      "labelKey": "ikan",
+      "bin": "k3",
+      "emoji": "🐟",
+      "count": 3
+    },
+    {
+      "id": "apel-4",
+      "labelKey": "apel",
+      "bin": "k4",
+      "emoji": "🍎",
+      "count": 4
+    },
+    {
+      "id": "ikan-4",
+      "labelKey": "ikan",
+      "bin": "k4",
+      "emoji": "🐟",
+      "count": 4
+    },
+    {
+      "id": "apel-5",
+      "labelKey": "apel",
+      "bin": "k5",
+      "emoji": "🍎",
+      "count": 5
+    },
+    {
+      "id": "ikan-5",
+      "labelKey": "ikan",
+      "bin": "k5",
+      "emoji": "🐟",
+      "count": 5
+    }
+  ]
+}

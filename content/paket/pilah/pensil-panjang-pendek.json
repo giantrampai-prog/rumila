@@ -1,0 +1,173 @@
+{
+  "id": "pensil-panjang-pendek",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BANDING.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Di meja Agam ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
+      "pilihan": "pilihan",
+      "pensil": "pensil",
+      "kereta": "kereta",
+      "penggaris": "penggaris",
+      "sendok": "sendok",
+      "pita": "pita",
+      "tPanjang": "Mana yang lebih panjang?",
+      "tPendek": "Mana yang lebih pendek?"
+    },
+    "en": {
+      "instruksi": "On Agam's desk are two of the same thing: touch the longer or the shorter one.",
+      "pilihan": "choices",
+      "pensil": "pencil",
+      "kereta": "train",
+      "penggaris": "ruler",
+      "sendok": "spoon",
+      "pita": "ribbon",
+      "tPanjang": "Which one is longer?",
+      "tPendek": "Which one is shorter?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua benda sejenis sejajar di garis dasar yang sama; rasio panjang ≥ 1,5 lewat width"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah-agam",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "pensil-panjang",
+      "labelKey": "pensil",
+      "bin": "pilihan",
+      "emoji": "✏️",
+      "width": 1.8
+    },
+    {
+      "id": "pensil-pendek",
+      "labelKey": "pensil",
+      "bin": "pilihan",
+      "emoji": "✏️",
+      "width": 1
+    },
+    {
+      "id": "kereta-panjang",
+      "labelKey": "kereta",
+      "bin": "pilihan",
+      "emoji": "🚃",
+      "width": 2
+    },
+    {
+      "id": "kereta-pendek",
+      "labelKey": "kereta",
+      "bin": "pilihan",
+      "emoji": "🚃",
+      "width": 1
+    },
+    {
+      "id": "penggaris-panjang",
+      "labelKey": "penggaris",
+      "bin": "pilihan",
+      "emoji": "📏",
+      "width": 1.6
+    },
+    {
+      "id": "penggaris-pendek",
+      "labelKey": "penggaris",
+      "bin": "pilihan",
+      "emoji": "📏",
+      "width": 1
+    },
+    {
+      "id": "sendok-panjang",
+      "labelKey": "sendok",
+      "bin": "pilihan",
+      "emoji": "🥄",
+      "width": 1.7
+    },
+    {
+      "id": "sendok-pendek",
+      "labelKey": "sendok",
+      "bin": "pilihan",
+      "emoji": "🥄",
+      "width": 1
+    },
+    {
+      "id": "pita-panjang",
+      "labelKey": "pita",
+      "bin": "pilihan",
+      "emoji": "🎀",
+      "width": 1.8
+    },
+    {
+      "id": "pita-pendek",
+      "labelKey": "pita",
+      "bin": "pilihan",
+      "emoji": "🎀",
+      "width": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tPanjang",
+      "choices": [
+        "pensil-pendek",
+        "pensil-panjang"
+      ],
+      "correct": "pensil-panjang"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tPendek",
+      "choices": [
+        "kereta-panjang",
+        "kereta-pendek"
+      ],
+      "correct": "kereta-pendek"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tPanjang",
+      "choices": [
+        "penggaris-pendek",
+        "penggaris-panjang"
+      ],
+      "correct": "penggaris-panjang"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tPendek",
+      "choices": [
+        "sendok-panjang",
+        "sendok-pendek"
+      ],
+      "correct": "sendok-pendek"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tPanjang",
+      "choices": [
+        "pita-pendek",
+        "pita-panjang"
+      ],
+      "correct": "pita-panjang"
+    }
+  ]
+}

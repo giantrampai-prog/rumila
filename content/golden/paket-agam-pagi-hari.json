@@ -51,15 +51,18 @@
       "steps": [
         {
           "id": "bangun",
-          "labelKey": "bangun"
+          "labelKey": "bangun",
+          "emoji": "🛏️"
         },
         {
           "id": "gosok",
-          "labelKey": "gosok"
+          "labelKey": "gosok",
+          "emoji": "🪥"
         },
         {
           "id": "sarapan",
-          "labelKey": "sarapan"
+          "labelKey": "sarapan",
+          "emoji": "🍳"
         }
       ]
     },
@@ -69,19 +72,23 @@
       "steps": [
         {
           "id": "gali",
-          "labelKey": "gali"
+          "labelKey": "gali",
+          "emoji": "⛏️"
         },
         {
           "id": "taruh",
-          "labelKey": "taruh"
+          "labelKey": "taruh",
+          "emoji": "🌰"
         },
         {
           "id": "siram",
-          "labelKey": "siram"
+          "labelKey": "siram",
+          "emoji": "🚿"
         },
         {
           "id": "tumbuh",
-          "labelKey": "tumbuh"
+          "labelKey": "tumbuh",
+          "emoji": "🌱"
         }
       ]
     }

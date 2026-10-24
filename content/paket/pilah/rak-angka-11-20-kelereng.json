@@ -1,0 +1,268 @@
+{
+  "id": "rak-angka-11-20-kelereng",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKB.BILANGAN-20.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Hitung kelerengnya, lalu taruh di rak yang angkanya pas.",
+      "n11": "11",
+      "n12": "12",
+      "n13": "13",
+      "n14": "14",
+      "n15": "15",
+      "n16": "16",
+      "n17": "17",
+      "n18": "18",
+      "n19": "19",
+      "n20": "20",
+      "kelereng": "kelereng",
+      "kancing": "kancing"
+    },
+    "en": {
+      "instruksi": "Count the marbles, then put them on the shelf with the matching number.",
+      "n11": "11",
+      "n12": "12",
+      "n13": "13",
+      "n14": "14",
+      "n15": "15",
+      "n16": "16",
+      "n17": "17",
+      "n18": "18",
+      "n19": "19",
+      "n20": "20",
+      "kelereng": "marbles",
+      "kancing": "buttons"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 15,
+      "max": 20,
+      "default": 15,
+      "step": 1,
+      "keterangan": "angka terbesar yang aktif: 11–15 dulu, lalu sampai 20; rak berurutan supaya posisi membantu"
+    },
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kelompok per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "r11",
+      "labelKey": "n11"
+    },
+    {
+      "id": "r12",
+      "labelKey": "n12"
+    },
+    {
+      "id": "r13",
+      "labelKey": "n13"
+    },
+    {
+      "id": "r14",
+      "labelKey": "n14"
+    },
+    {
+      "id": "r15",
+      "labelKey": "n15"
+    },
+    {
+      "id": "r16",
+      "labelKey": "n16"
+    },
+    {
+      "id": "r17",
+      "labelKey": "n17"
+    },
+    {
+      "id": "r18",
+      "labelKey": "n18"
+    },
+    {
+      "id": "r19",
+      "labelKey": "n19"
+    },
+    {
+      "id": "r20",
+      "labelKey": "n20"
+    }
+  ],
+  "items": [
+    {
+      "id": "kelereng-11",
+      "labelKey": "kelereng",
+      "bin": "r11",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 11
+    },
+    {
+      "id": "kancing-11",
+      "labelKey": "kancing",
+      "bin": "r11",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 11
+    },
+    {
+      "id": "kelereng-12",
+      "labelKey": "kelereng",
+      "bin": "r12",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 12
+    },
+    {
+      "id": "kancing-12",
+      "labelKey": "kancing",
+      "bin": "r12",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 12
+    },
+    {
+      "id": "kelereng-13",
+      "labelKey": "kelereng",
+      "bin": "r13",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 13
+    },
+    {
+      "id": "kancing-13",
+      "labelKey": "kancing",
+      "bin": "r13",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 13
+    },
+    {
+      "id": "kelereng-14",
+      "labelKey": "kelereng",
+      "bin": "r14",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 14
+    },
+    {
+      "id": "kancing-14",
+      "labelKey": "kancing",
+      "bin": "r14",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 14
+    },
+    {
+      "id": "kelereng-15",
+      "labelKey": "kelereng",
+      "bin": "r15",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 15
+    },
+    {
+      "id": "kancing-15",
+      "labelKey": "kancing",
+      "bin": "r15",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 15
+    },
+    {
+      "id": "kelereng-16",
+      "labelKey": "kelereng",
+      "bin": "r16",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 16
+    },
+    {
+      "id": "kancing-16",
+      "labelKey": "kancing",
+      "bin": "r16",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 16
+    },
+    {
+      "id": "kelereng-17",
+      "labelKey": "kelereng",
+      "bin": "r17",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 17
+    },
+    {
+      "id": "kancing-17",
+      "labelKey": "kancing",
+      "bin": "r17",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 17
+    },
+    {
+      "id": "kelereng-18",
+      "labelKey": "kelereng",
+      "bin": "r18",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 18
+    },
+    {
+      "id": "kancing-18",
+      "labelKey": "kancing",
+      "bin": "r18",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 18
+    },
+    {
+      "id": "kelereng-19",
+      "labelKey": "kelereng",
+      "bin": "r19",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 19
+    },
+    {
+      "id": "kancing-19",
+      "labelKey": "kancing",
+      "bin": "r19",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 19
+    },
+    {
+      "id": "kelereng-20",
+      "labelKey": "kelereng",
+      "bin": "r20",
+      "shape": "circle",
+      "color": "#1e88e5",
+      "count": 20
+    },
+    {
+      "id": "kancing-20",
+      "labelKey": "kancing",
+      "bin": "r20",
+      "shape": "circle",
+      "color": "#e53935",
+      "count": 20
+    }
+  ]
+}

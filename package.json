@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
-    "akademi:validate": "tsx packages/schema/src/cli.ts"
+    "akademi:validate": "tsx packages/schema/src/cli.ts",
+    "akademi:index": "tsx scripts/akademi-index.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",

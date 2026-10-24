@@ -1,0 +1,134 @@
+{
+  "id": "lanjutkan-hitungan-sampai-10",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.TKB.BILANGAN-20.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam berdiri di angka ini: susun kartu angka berikutnya, jangan mulai dari satu.",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "n6": "6",
+      "n7": "7",
+      "n8": "8",
+      "n9": "9",
+      "n10": "10",
+      "dari2": "Lanjutkan dari 2",
+      "dari4": "Lanjutkan dari 4",
+      "dari5": "Lanjutkan dari 5",
+      "dari7": "Lanjutkan dari 7"
+    },
+    "en": {
+      "instruksi": "Agam is standing on this number: lay out the next number cards, don't start from one.",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "n6": "6",
+      "n7": "7",
+      "n8": "8",
+      "n9": "9",
+      "n10": "10",
+      "dari2": "Continue from 2",
+      "dari4": "Continue from 4",
+      "dari5": "Continue from 5",
+      "dari7": "Continue from 7"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "panjang lanjutan yang disusun: 3 → 4 kartu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "jalan-angka",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "dari-2",
+      "titleKey": "dari2",
+      "steps": [
+        {
+          "id": "k3",
+          "labelKey": "n3"
+        },
+        {
+          "id": "k4",
+          "labelKey": "n4"
+        },
+        {
+          "id": "k5",
+          "labelKey": "n5"
+        }
+      ]
+    },
+    {
+      "id": "dari-4",
+      "titleKey": "dari4",
+      "steps": [
+        {
+          "id": "k5",
+          "labelKey": "n5"
+        },
+        {
+          "id": "k6",
+          "labelKey": "n6"
+        },
+        {
+          "id": "k7",
+          "labelKey": "n7"
+        },
+        {
+          "id": "k8",
+          "labelKey": "n8"
+        }
+      ]
+    },
+    {
+      "id": "dari-5",
+      "titleKey": "dari5",
+      "steps": [
+        {
+          "id": "k6",
+          "labelKey": "n6"
+        },
+        {
+          "id": "k7",
+          "labelKey": "n7"
+        },
+        {
+          "id": "k8",
+          "labelKey": "n8"
+        }
+      ]
+    },
+    {
+      "id": "dari-7",
+      "titleKey": "dari7",
+      "steps": [
+        {
+          "id": "k8",
+          "labelKey": "n8"
+        },
+        {
+          "id": "k9",
+          "labelKey": "n9"
+        },
+        {
+          "id": "k10",
+          "labelKey": "n10"
+        }
+      ]
+    }
+  ]
+}

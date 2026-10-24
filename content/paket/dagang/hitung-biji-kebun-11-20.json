@@ -1,0 +1,69 @@
+{
+  "id": "hitung-biji-kebun-11-20",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.BILANGAN-20.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Biji dan daun berserakan di kebun: sentuh satu per satu sambil menghitung, lalu geser penanda.",
+      "biji": "biji",
+      "daun": "daun"
+    },
+    "en": {
+      "instruksi": "Seeds and leaves are scattered in the garden: touch each as you count, then slide the marker.",
+      "biji": "seeds",
+      "daun": "leaves"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 11,
+      "max": 20,
+      "default": 12,
+      "step": 1,
+      "keterangan": "jumlah benda yang dihitung; boleh dikelompokkan dulu, yang sudah disentuh meredup"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu jenis benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "hitung",
+  "goods": [
+    {
+      "id": "biji",
+      "labelKey": "biji",
+      "price": 1000,
+      "emoji": "🌰"
+    },
+    {
+      "id": "daun",
+      "labelKey": "daun",
+      "price": 1000,
+      "emoji": "🍃"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 11,
+    "itemsMax": 20,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1
+  }
+}

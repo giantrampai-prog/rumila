@@ -1,0 +1,168 @@
+{
+  "id": "piktogram-buah-keranjang",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKB.DATA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Keranjangnya campur: tumpuk tiap buah di kolomnya sendiri, mulai dari bawah.",
+      "apel": "apel",
+      "pisang": "pisang",
+      "jeruk": "jeruk",
+      "anggur": "anggur"
+    },
+    "en": {
+      "instruksi": "The basket is mixed: stack each fruit in its own column, starting from the bottom.",
+      "apel": "apples",
+      "pisang": "bananas",
+      "jeruk": "oranges",
+      "anggur": "grapes"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah kolom/jenis aktif"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 15,
+      "default": 6,
+      "step": 3,
+      "keterangan": "jumlah benda yang ditumpuk per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "id": "anggur",
+      "labelKey": "anggur",
+      "emoji": "🍇"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel-a",
+      "labelKey": "apel",
+      "bin": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "id": "apel-b",
+      "labelKey": "apel",
+      "bin": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "id": "apel-c",
+      "labelKey": "apel",
+      "bin": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "id": "apel-d",
+      "labelKey": "apel",
+      "bin": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "id": "pisang-a",
+      "labelKey": "pisang",
+      "bin": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "id": "pisang-b",
+      "labelKey": "pisang",
+      "bin": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "id": "pisang-c",
+      "labelKey": "pisang",
+      "bin": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "id": "pisang-d",
+      "labelKey": "pisang",
+      "bin": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "id": "jeruk-a",
+      "labelKey": "jeruk",
+      "bin": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "id": "jeruk-b",
+      "labelKey": "jeruk",
+      "bin": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "id": "jeruk-c",
+      "labelKey": "jeruk",
+      "bin": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "id": "jeruk-d",
+      "labelKey": "jeruk",
+      "bin": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "id": "anggur-a",
+      "labelKey": "anggur",
+      "bin": "anggur",
+      "emoji": "🍇"
+    },
+    {
+      "id": "anggur-b",
+      "labelKey": "anggur",
+      "bin": "anggur",
+      "emoji": "🍇"
+    },
+    {
+      "id": "anggur-c",
+      "labelKey": "anggur",
+      "bin": "anggur",
+      "emoji": "🍇"
+    },
+    {
+      "id": "anggur-d",
+      "labelKey": "anggur",
+      "bin": "anggur",
+      "emoji": "🍇"
+    }
+  ]
+}

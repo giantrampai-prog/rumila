@@ -1,0 +1,126 @@
+{
+  "id": "mana-bola-warna",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.WARNA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Dengarkan warna yang disebut, lalu sentuh bola yang warnanya itu.",
+      "pilihan": "pilihan",
+      "tMerah": "Mana yang merah?",
+      "tBiru": "Mana yang biru?",
+      "tKuning": "Mana yang kuning?",
+      "tHijau": "Mana yang hijau?",
+      "bola": "bola"
+    },
+    "en": {
+      "instruksi": "Listen to the colour, then touch the ball of that colour.",
+      "pilihan": "choices",
+      "tMerah": "Which one is red?",
+      "tBiru": "Which one is blue?",
+      "tKuning": "Which one is yellow?",
+      "tHijau": "Which one is green?",
+      "bola": "ball"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah bola yang ditampilkan per pertanyaan; 4 benda sejenis beda warna"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "bola-merah",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#e53935"
+    },
+    {
+      "id": "bola-biru",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "bola-kuning",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#fdd835"
+    },
+    {
+      "id": "bola-hijau",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#43a047"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "merah",
+      "promptKey": "tMerah",
+      "choices": [
+        "bola-merah",
+        "bola-biru",
+        "bola-kuning",
+        "bola-hijau"
+      ],
+      "correct": "bola-merah"
+    },
+    {
+      "id": "biru",
+      "promptKey": "tBiru",
+      "choices": [
+        "bola-merah",
+        "bola-biru",
+        "bola-kuning",
+        "bola-hijau"
+      ],
+      "correct": "bola-biru"
+    },
+    {
+      "id": "kuning",
+      "promptKey": "tKuning",
+      "choices": [
+        "bola-merah",
+        "bola-biru",
+        "bola-kuning",
+        "bola-hijau"
+      ],
+      "correct": "bola-kuning"
+    },
+    {
+      "id": "hijau",
+      "promptKey": "tHijau",
+      "choices": [
+        "bola-merah",
+        "bola-biru",
+        "bola-kuning",
+        "bola-hijau"
+      ],
+      "correct": "bola-hijau"
+    }
+  ]
+}

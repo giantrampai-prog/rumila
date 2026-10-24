@@ -1,0 +1,128 @@
+{
+  "id": "ulangi-berapa-kali-lurus",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.ULANGI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Hitung petak sampai bintang, jangan hitung petak Agam, lalu pilih angka ulangi yang pas."
+    },
+    "en": {
+      "instruksi": "Count the squares to the star, not Agam's own square, then pick the right repeat number."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 2,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "panjang jalur = angka ulangi (2–6); rak 2 slot"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "lurus-2",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-3",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-4",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-5",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 2
+    },
+    {
+      "id": "lurus-6",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 2
+    }
+  ]
+}

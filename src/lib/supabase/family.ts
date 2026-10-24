@@ -11,6 +11,7 @@ import type { ColorKey, PermKey } from "@/lib/catalog";
 import { useRumila, useUI, type Activity, type Member } from "@/lib/store";
 import { friendlyError, supabase } from "./client";
 import { pullSaves, stopSaveSync } from "./saves";
+import { tarikEvents } from "@/lib/akademi/jejak";
 
 export type CloudStatus = "loading" | "noSession" | "noFamily" | "ready" | "error";
 
@@ -105,6 +106,12 @@ export async function loadFamily(): Promise<CloudStatus> {
       await pullSaves(fid, new Set(members.map((m) => m.id.toLowerCase())));
     } catch (e) {
       console.error("[rumila] tarik progres gagal", e);
+    }
+    // rekam jejak akademi (event belajar) ditarik dengan cara yang sama; gagal tidak menghalangi rumah tampil
+    try {
+      await tarikEvents(fid, members.map((m) => m.id));
+    } catch (e) {
+      console.error("[rumila] tarik jejak akademi gagal", e);
     }
     useCloud.setState({ status: "ready", familyId: fid, email: user.email ?? null, error: null });
     return "ready";

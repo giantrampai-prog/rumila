@@ -1,0 +1,182 @@
+{
+  "id": "bentuk-di-rumah-agam",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BENTUK-DASAR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Dengarkan bentuk yang disebut, lalu sentuh benda di rumah Agam yang bentuknya itu.",
+      "pilihan": "pilihan",
+      "jam": "jam dinding",
+      "bola": "bola",
+      "piring": "piring",
+      "jendela": "jendela",
+      "kado": "kotak kado",
+      "bingkai": "bingkai foto",
+      "tenda": "tenda",
+      "pizza": "potongan pizza",
+      "gantungan": "gantungan baju",
+      "tBulat": "Mana yang bulat?",
+      "tKotak": "Mana yang kotak?",
+      "tSegitiga": "Mana yang segitiga?"
+    },
+    "en": {
+      "instruksi": "Listen to the shape, then touch the thing in Agam's house with that shape.",
+      "pilihan": "choices",
+      "jam": "wall clock",
+      "bola": "ball",
+      "piring": "plate",
+      "jendela": "window",
+      "kado": "gift box",
+      "bingkai": "picture frame",
+      "tenda": "tent",
+      "pizza": "pizza slice",
+      "gantungan": "coat hanger",
+      "tBulat": "Which one is round?",
+      "tKotak": "Which one is square?",
+      "tSegitiga": "Which one is a triangle?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga benda, satu per bentuk; benda dengan dua bentuk (rumah) sengaja dihindari"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 6,
+  "world": "rumah-agam",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "jam",
+      "labelKey": "jam",
+      "bin": "pilihan",
+      "emoji": "⏰"
+    },
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "emoji": "⚽"
+    },
+    {
+      "id": "piring",
+      "labelKey": "piring",
+      "bin": "pilihan",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "jendela",
+      "bin": "pilihan",
+      "emoji": "🪟"
+    },
+    {
+      "id": "kado",
+      "labelKey": "kado",
+      "bin": "pilihan",
+      "emoji": "🎁"
+    },
+    {
+      "id": "bingkai",
+      "labelKey": "bingkai",
+      "bin": "pilihan",
+      "emoji": "🖼️"
+    },
+    {
+      "id": "tenda",
+      "labelKey": "tenda",
+      "bin": "pilihan",
+      "emoji": "⛺"
+    },
+    {
+      "id": "pizza",
+      "labelKey": "pizza",
+      "bin": "pilihan",
+      "emoji": "🍕"
+    },
+    {
+      "id": "gantungan",
+      "labelKey": "gantungan",
+      "bin": "pilihan",
+      "emoji": "🪝"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBulat",
+      "choices": [
+        "jam",
+        "jendela",
+        "tenda"
+      ],
+      "correct": "jam"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tKotak",
+      "choices": [
+        "bola",
+        "kado",
+        "pizza"
+      ],
+      "correct": "kado"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "piring",
+        "bingkai",
+        "tenda"
+      ],
+      "correct": "tenda"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tBulat",
+      "choices": [
+        "pizza",
+        "bola",
+        "jendela"
+      ],
+      "correct": "bola"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tKotak",
+      "choices": [
+        "tenda",
+        "jam",
+        "jendela"
+      ],
+      "correct": "jendela"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "pizza",
+        "kado",
+        "piring"
+      ],
+      "correct": "pizza"
+    }
+  ]
+}

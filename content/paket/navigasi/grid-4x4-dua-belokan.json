@@ -1,0 +1,133 @@
+{
+  "id": "grid-4x4-dua-belokan",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.PROGRAM-5-8.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun seluruh program dulu, maju dan belok sampai delapan blok, baru tekan jalan."
+    },
+    "en": {
+      "instruksi": "Build the whole program first, forward and turns up to eight blocks, then press go."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "panjang program terpendek: 5 → 8"
+    },
+    "walls": {
+      "min": 0,
+      "max": 2,
+      "default": 0,
+      "step": 1,
+      "keterangan": "jumlah dinding: 0 → 2 (dinding mencegah jalan pintas)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "satu-dinding-5",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "dua-dinding-6",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "satu-dinding-8",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "tanpa-dinding-8",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8
+    }
+  ]
+}

@@ -15,7 +15,14 @@ export const AttemptPayload = z.object({
   /** knob yang aktif saat percobaan, untuk analisis kesulitan */
   knobs: z.record(z.string(), z.number()).optional(),
   seed: z.number().int().optional(),
+  /** kompetensi yang dibuktikan percobaan ini (dari paket aktivitas); kosong = tidak jadi bukti */
+  competencyIds: z.array(z.string()).optional(),
+  /** mode paket (mis. dagang:bayar) dan ringkasan bukti mesin (lompat vs batu, blok vs optimal) */
+  detail: z.record(z.string(), z.unknown()).optional(),
+  /** bukti diimpor dari progres lama (Coding Agam), bukan dimainkan di Academy */
+  imported: z.boolean().optional(),
 });
+export type AttemptPayload = z.infer<typeof AttemptPayload>;
 
 export const ActivityEndPayload = z.object({
   outcome: z.enum(["selesai", "berhenti", "habis_waktu"]),
@@ -24,6 +31,7 @@ export const ActivityEndPayload = z.object({
   hintCount: z.number().int().min(0),
   durationMs: z.number().int().min(0),
 });
+export type ActivityEndPayload = z.infer<typeof ActivityEndPayload>;
 
 export const GameEvent = z.object({
   id: Uuid,

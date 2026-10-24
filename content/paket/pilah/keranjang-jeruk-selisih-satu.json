@@ -1,0 +1,207 @@
+{
+  "id": "keranjang-jeruk-selisih-satu",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.BANDING.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Dua keranjang jeruk hampir sama: sentuh yang jeruknya lebih banyak.",
+      "pilihan": "pilihan",
+      "jeruk": "jeruk",
+      "tBanyak": "Keranjang mana yang jeruknya lebih banyak?"
+    },
+    "en": {
+      "instruksi": "Two baskets of oranges look alike: touch the one with more oranges.",
+      "pilihan": "choices",
+      "jeruk": "oranges",
+      "tBanyak": "Which basket has more oranges?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua kelompok; selisih 1 sehingga harus dihitung atau dipasangkan; kelompok lebih sedikit sengaja digambar lebih besar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 6,
+  "world": "kebun-pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "jeruk-4",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 4
+    },
+    {
+      "id": "jeruk-4-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 4,
+      "scale": 1.4
+    },
+    {
+      "id": "jeruk-5",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 5
+    },
+    {
+      "id": "jeruk-5-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 5,
+      "scale": 1.4
+    },
+    {
+      "id": "jeruk-6",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 6
+    },
+    {
+      "id": "jeruk-6-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 6,
+      "scale": 1.4
+    },
+    {
+      "id": "jeruk-7",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 7
+    },
+    {
+      "id": "jeruk-7-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 7,
+      "scale": 1.4
+    },
+    {
+      "id": "jeruk-8",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 8
+    },
+    {
+      "id": "jeruk-8-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 8,
+      "scale": 1.4
+    },
+    {
+      "id": "jeruk-9",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 9
+    },
+    {
+      "id": "jeruk-9-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 9,
+      "scale": 1.4
+    },
+    {
+      "id": "jeruk-10",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 10
+    },
+    {
+      "id": "jeruk-10-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 10,
+      "scale": 1.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-4-besar",
+        "jeruk-5"
+      ],
+      "correct": "jeruk-5"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-6",
+        "jeruk-5-besar"
+      ],
+      "correct": "jeruk-6"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-6-besar",
+        "jeruk-7"
+      ],
+      "correct": "jeruk-7"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-8",
+        "jeruk-7-besar"
+      ],
+      "correct": "jeruk-8"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-8-besar",
+        "jeruk-9"
+      ],
+      "correct": "jeruk-9"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-10",
+        "jeruk-9-besar"
+      ],
+      "correct": "jeruk-10"
+    }
+  ]
+}

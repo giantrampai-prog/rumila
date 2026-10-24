@@ -1,0 +1,100 @@
+{
+  "id": "pensil-pendek-ke-panjang",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.TKA.BANDING.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun pensil Agam dari yang paling pendek ke yang paling panjang.",
+      "pensil": "Pensil: pendek ke panjang",
+      "kereta": "Kereta: pendek ke panjang",
+      "pendek": "pendek",
+      "sedang": "sedang",
+      "panjang": "panjang",
+      "terpanjang": "paling panjang"
+    },
+    "en": {
+      "instruksi": "Line up Agam's pencils from the shortest to the longest.",
+      "pensil": "Pencils: short to long",
+      "kereta": "Trains: short to long",
+      "pendek": "short",
+      "sedang": "medium",
+      "panjang": "long",
+      "terpanjang": "longest"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah benda yang diurutkan: 3 → 4 (pengaya); beda panjang antar benda ≥ 20%"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah-agam",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "pensil",
+      "titleKey": "pensil",
+      "steps": [
+        {
+          "id": "pensil-1",
+          "labelKey": "pendek",
+          "emoji": "✏️",
+          "width": 1
+        },
+        {
+          "id": "pensil-2",
+          "labelKey": "sedang",
+          "emoji": "✏️",
+          "width": 1.4
+        },
+        {
+          "id": "pensil-3",
+          "labelKey": "panjang",
+          "emoji": "✏️",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "kereta",
+      "titleKey": "kereta",
+      "steps": [
+        {
+          "id": "kereta-1",
+          "labelKey": "pendek",
+          "emoji": "🚃",
+          "width": 1
+        },
+        {
+          "id": "kereta-2",
+          "labelKey": "sedang",
+          "emoji": "🚃",
+          "width": 1.3
+        },
+        {
+          "id": "kereta-3",
+          "labelKey": "panjang",
+          "emoji": "🚃",
+          "width": 1.7
+        },
+        {
+          "id": "kereta-4",
+          "labelKey": "terpanjang",
+          "emoji": "🚃",
+          "width": 2.2
+        }
+      ]
+    }
+  ]
+}

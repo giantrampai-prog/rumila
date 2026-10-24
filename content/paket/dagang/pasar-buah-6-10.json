@@ -1,0 +1,85 @@
+{
+  "id": "pasar-buah-6-10",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Pembeli minta banyak buah: dengarkan, lalu ambil tepat sebanyak itu.",
+      "jeruk": "jeruk",
+      "mangga": "mangga",
+      "pisang": "pisang",
+      "apel": "apel"
+    },
+    "en": {
+      "instruksi": "The customer wants lots of fruit: listen, then take exactly that many.",
+      "jeruk": "oranges",
+      "mangga": "mangoes",
+      "pisang": "bananas",
+      "apel": "apples"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 6,
+      "max": 10,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah yang diminta; tersedia 10–12"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jenis barang dalam satu pesanan: 1 → 2"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "ambil",
+  "goods": [
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "price": 1000,
+      "emoji": "🍊"
+    },
+    {
+      "id": "mangga",
+      "labelKey": "mangga",
+      "price": 1000,
+      "emoji": "🥭"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "price": 1000,
+      "emoji": "🍌"
+    },
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "price": 1000,
+      "emoji": "🍎"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 6,
+    "itemsMax": 10,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 2
+  }
+}

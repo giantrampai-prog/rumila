@@ -1,0 +1,92 @@
+{
+  "id": "ulangi-tiga-ke-atas",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.ULANGI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
+    },
+    "en": {
+      "instruksi": "Agam climbs three squares but the rack has two slots: use 'repeat 3' with forward."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jalur selalu 3 petak; rak hanya 2 slot sehingga 'ulangi 3 × maju' satu-satunya jalan"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "menara",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "atas-3",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "atas-3-pendek",
+      "w": 2,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "atas-3-lebar",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    }
+  ]
+}

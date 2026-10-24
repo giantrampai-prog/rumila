@@ -1,0 +1,183 @@
+{
+  "id": "tebak-petak-berikutnya",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.PROGRAM-5-8.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat Agam akan berdiri, lalu tekan langkah."
+    },
+    "en": {
+      "instruksi": "Before each block runs, point to the square where Agam will stand, then press step."
+    }
+  },
+  "knobs": {
+    "turns": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "jumlah belokan dalam program: 0 → 1 (setelah belok, maju mengarah ke arah baru)"
+    },
+    "distance": {
+      "min": 5,
+      "max": 5,
+      "default": 5,
+      "step": 1,
+      "keterangan": "program selalu 5 blok untuk 5 prediksi"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "execMode": "langkah",
+  "prediksi": true,
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "lurus-lima",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "naik-lima",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "naik-belok-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "kanan-belok-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    }
+  ]
+}

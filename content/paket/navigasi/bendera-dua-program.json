@@ -1,0 +1,112 @@
+{
+  "id": "bendera-dua-program",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.DEKOMPOSISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Rak cuma muat empat blok: taruh bendera di tengah jalan, lalu buat program ke bendera dan dari bendera ke bintang."
+    },
+    "en": {
+      "instruksi": "The rack holds only four blocks: plant a flag mid-way, then program to the flag and from the flag to the star."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 6,
+      "max": 7,
+      "default": 6,
+      "step": 1,
+      "keterangan": "panjang jalur: 6 → 7 perintah, tiap bagian harus ≤ 4 blok termasuk bendera"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan",
+    "bendera"
+  ],
+  "grids": [
+    {
+      "id": "enam-naik-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 4
+    },
+    {
+      "id": "enam-kanan-naik",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 4
+    },
+    {
+      "id": "tujuh-kanan-naik",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "tujuh-naik-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    }
+  ]
+}

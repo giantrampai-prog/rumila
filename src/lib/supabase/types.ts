@@ -62,6 +62,45 @@ export type Database = {
         Update: { data?: Json; family_id?: string; key?: string; member_id?: string | null; updated_at?: string };
         Relationships: [];
       };
+      learner_event: {
+        Row: {
+          activity_id: string;
+          client_at: string;
+          created_at: string;
+          family_id: string;
+          id: string;
+          mechanic: string;
+          member_id: string;
+          payload: Json;
+          session_id: string;
+          type: string;
+        };
+        Insert: {
+          activity_id: string;
+          client_at: string;
+          created_at?: string;
+          family_id: string;
+          id: string;
+          mechanic: string;
+          member_id: string;
+          payload?: Json;
+          session_id: string;
+          type: string;
+        };
+        Update: {
+          activity_id?: string;
+          client_at?: string;
+          created_at?: string;
+          family_id?: string;
+          id?: string;
+          mechanic?: string;
+          member_id?: string;
+          payload?: Json;
+          session_id?: string;
+          type?: string;
+        };
+        Relationships: [];
+      };
       member: {
         Row: {
           color_key: string;

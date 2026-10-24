@@ -1,0 +1,173 @@
+{
+  "id": "kebun-buah-besar-kecil",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BANDING.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Di kebun ada dua buah yang sama: sentuh yang lebih besar atau lebih kecil sesuai permintaan.",
+      "pilihan": "pilihan",
+      "semangka": "semangka",
+      "labu": "labu",
+      "mangga": "mangga",
+      "daun": "daun",
+      "jamur": "jamur",
+      "tBesar": "Mana yang lebih besar?",
+      "tKecil": "Mana yang lebih kecil?"
+    },
+    "en": {
+      "instruksi": "Two of the same fruit grow in the garden: touch the bigger or smaller one as asked.",
+      "pilihan": "choices",
+      "semangka": "watermelon",
+      "labu": "pumpkin",
+      "mangga": "mango",
+      "daun": "leaf",
+      "jamur": "mushroom",
+      "tBesar": "Which one is bigger?",
+      "tKecil": "Which one is smaller?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua benda sejenis; rasio ukuran 1,5–2 (knob rasio diatur lewat scale item)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "semangka-besar",
+      "labelKey": "semangka",
+      "bin": "pilihan",
+      "emoji": "🍉",
+      "scale": 1.8
+    },
+    {
+      "id": "semangka-kecil",
+      "labelKey": "semangka",
+      "bin": "pilihan",
+      "emoji": "🍉",
+      "scale": 1
+    },
+    {
+      "id": "labu-besar",
+      "labelKey": "labu",
+      "bin": "pilihan",
+      "emoji": "🎃",
+      "scale": 1.6
+    },
+    {
+      "id": "labu-kecil",
+      "labelKey": "labu",
+      "bin": "pilihan",
+      "emoji": "🎃",
+      "scale": 1
+    },
+    {
+      "id": "mangga-besar",
+      "labelKey": "mangga",
+      "bin": "pilihan",
+      "emoji": "🥭",
+      "scale": 1.7
+    },
+    {
+      "id": "mangga-kecil",
+      "labelKey": "mangga",
+      "bin": "pilihan",
+      "emoji": "🥭",
+      "scale": 1
+    },
+    {
+      "id": "daun-besar",
+      "labelKey": "daun",
+      "bin": "pilihan",
+      "emoji": "🍃",
+      "scale": 1.6
+    },
+    {
+      "id": "daun-kecil",
+      "labelKey": "daun",
+      "bin": "pilihan",
+      "emoji": "🍃",
+      "scale": 1
+    },
+    {
+      "id": "jamur-besar",
+      "labelKey": "jamur",
+      "bin": "pilihan",
+      "emoji": "🍄",
+      "scale": 1.8
+    },
+    {
+      "id": "jamur-kecil",
+      "labelKey": "jamur",
+      "bin": "pilihan",
+      "emoji": "🍄",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBesar",
+      "choices": [
+        "semangka-kecil",
+        "semangka-besar"
+      ],
+      "correct": "semangka-besar"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tKecil",
+      "choices": [
+        "labu-besar",
+        "labu-kecil"
+      ],
+      "correct": "labu-kecil"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tBesar",
+      "choices": [
+        "mangga-kecil",
+        "mangga-besar"
+      ],
+      "correct": "mangga-besar"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tKecil",
+      "choices": [
+        "daun-besar",
+        "daun-kecil"
+      ],
+      "correct": "daun-kecil"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tBesar",
+      "choices": [
+        "jamur-kecil",
+        "jamur-besar"
+      ],
+      "correct": "jamur-besar"
+    }
+  ]
+}

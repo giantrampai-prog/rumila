@@ -3,25 +3,110 @@
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "pilah",
-  "competencyIds": ["MAT.PAUD.BILANGAN-1-5.01"],
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.01"
+  ],
   "instructionKey": "instruksi",
   "locale": {
-    "id": { "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.", "k1": "1", "k2": "2", "k3": "3", "k4": "4", "k5": "5",
-            "kelereng": "kelereng" },
-    "en": { "instruksi": "Touch each marble one by one, then put the group in the box with the right number.", "k1": "1", "k2": "2", "k3": "3", "k4": "4", "k5": "5",
-            "kelereng": "marbles" }
+    "id": {
+      "instruksi": "Sentuh setiap kelereng satu per satu, lalu masukkan ke kotak yang angkanya pas.",
+      "k1": "1",
+      "k2": "2",
+      "k3": "3",
+      "k4": "4",
+      "k5": "5",
+      "kelereng": "kelereng"
+    },
+    "en": {
+      "instruksi": "Touch each marble one by one, then put the group in the box with the right number.",
+      "k1": "1",
+      "k2": "2",
+      "k3": "3",
+      "k4": "4",
+      "k5": "5",
+      "kelereng": "marbles"
+    }
   },
   "knobs": {
-    "maxCount": { "min": 2, "max": 5, "default": 3, "step": 1, "keterangan": "jumlah terbesar yang muncul; bin di atas maxCount disembunyikan" },
-    "itemCount": { "min": 4, "max": 8, "default": 4, "step": 1, "keterangan": "jumlah kelompok kelereng per putaran" }
+    "maxCount": {
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah terbesar yang muncul; bin di atas maxCount disembunyikan"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kelompok kelereng per putaran"
+    }
   },
   "assets": [],
   "generatif": true,
   "bins": [
-    { "id": "k1", "labelKey": "k1" }, { "id": "k2", "labelKey": "k2" }, { "id": "k3", "labelKey": "k3" }, { "id": "k4", "labelKey": "k4" }, { "id": "k5", "labelKey": "k5" }
+    {
+      "id": "k1",
+      "labelKey": "k1",
+      "emoji": "📦"
+    },
+    {
+      "id": "k2",
+      "labelKey": "k2",
+      "emoji": "📦"
+    },
+    {
+      "id": "k3",
+      "labelKey": "k3",
+      "emoji": "📦"
+    },
+    {
+      "id": "k4",
+      "labelKey": "k4",
+      "emoji": "📦"
+    },
+    {
+      "id": "k5",
+      "labelKey": "k5",
+      "emoji": "📦"
+    }
   ],
   "items": [
-    { "id": "g1", "labelKey": "kelereng", "bin": "k1" }, { "id": "g2", "labelKey": "kelereng", "bin": "k2" }, { "id": "g3", "labelKey": "kelereng", "bin": "k3" },
-    { "id": "g4", "labelKey": "kelereng", "bin": "k4" }, { "id": "g5", "labelKey": "kelereng", "bin": "k5" }
+    {
+      "id": "g1",
+      "labelKey": "kelereng",
+      "bin": "k1",
+      "emoji": "🔵",
+      "count": 1
+    },
+    {
+      "id": "g2",
+      "labelKey": "kelereng",
+      "bin": "k2",
+      "emoji": "🔵",
+      "count": 2
+    },
+    {
+      "id": "g3",
+      "labelKey": "kelereng",
+      "bin": "k3",
+      "emoji": "🔵",
+      "count": 3
+    },
+    {
+      "id": "g4",
+      "labelKey": "kelereng",
+      "bin": "k4",
+      "emoji": "🔵",
+      "count": 4
+    },
+    {
+      "id": "g5",
+      "labelKey": "kelereng",
+      "bin": "k5",
+      "emoji": "🔵",
+      "count": 5
+    }
   ]
 }

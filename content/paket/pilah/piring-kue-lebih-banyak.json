@@ -1,0 +1,128 @@
+{
+  "id": "piring-kue-lebih-banyak",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BANDING.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam lapar sekali: sentuh piring yang kuenya lebih banyak.",
+      "pilihan": "pilihan",
+      "kue": "kue",
+      "tBanyak": "Mana piring yang kuenya lebih banyak?"
+    },
+    "en": {
+      "instruksi": "Agam is very hungry: touch the plate with more cookies.",
+      "pilihan": "choices",
+      "kue": "cookies",
+      "tBanyak": "Which plate has more cookies?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua kelompok; selisih tetap ≥ 2 (knob mengatur susunan rapi → tersebar di presenter)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kue-1",
+      "labelKey": "kue",
+      "bin": "pilihan",
+      "emoji": "🍪",
+      "count": 1
+    },
+    {
+      "id": "kue-2",
+      "labelKey": "kue",
+      "bin": "pilihan",
+      "emoji": "🍪",
+      "count": 2
+    },
+    {
+      "id": "kue-3",
+      "labelKey": "kue",
+      "bin": "pilihan",
+      "emoji": "🍪",
+      "count": 3
+    },
+    {
+      "id": "kue-4",
+      "labelKey": "kue",
+      "bin": "pilihan",
+      "emoji": "🍪",
+      "count": 4
+    },
+    {
+      "id": "kue-5",
+      "labelKey": "kue",
+      "bin": "pilihan",
+      "emoji": "🍪",
+      "count": 5
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBanyak",
+      "choices": [
+        "kue-1",
+        "kue-3"
+      ],
+      "correct": "kue-3"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tBanyak",
+      "choices": [
+        "kue-4",
+        "kue-2"
+      ],
+      "correct": "kue-4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tBanyak",
+      "choices": [
+        "kue-3",
+        "kue-5"
+      ],
+      "correct": "kue-5"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tBanyak",
+      "choices": [
+        "kue-4",
+        "kue-1"
+      ],
+      "correct": "kue-4"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tBanyak",
+      "choices": [
+        "kue-2",
+        "kue-5"
+      ],
+      "correct": "kue-5"
+    }
+  ]
+}

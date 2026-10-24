@@ -1,0 +1,71 @@
+{
+  "id": "lengkapi-koin-lima-pasar",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.TAMBAH-KURANG-10.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: tambahkan koin supaya pas lima.",
+      "mangga": "mangga",
+      "nanas": "nanas"
+    },
+    "en": {
+      "instruksi": "The customer flashes their coins then hides them: add coins to make exactly five.",
+      "mangga": "mango",
+      "nanas": "pineapple"
+    }
+  },
+  "knobs": {
+    "flashMs": {
+      "min": 700,
+      "max": 1500,
+      "default": 1000,
+      "step": 100,
+      "keterangan": "lama koin pembeli terlihat sebelum digenggam (ms)"
+    },
+    "target": {
+      "min": 5,
+      "max": 10,
+      "default": 5,
+      "step": 5,
+      "keterangan": "harga target: pasangan 5 → pasangan 10 sebagai pengaya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "lengkapi",
+  "goods": [
+    {
+      "id": "mangga",
+      "labelKey": "mangga",
+      "price": 5000,
+      "emoji": "🥭"
+    },
+    {
+      "id": "nanas",
+      "labelKey": "nanas",
+      "price": 5000,
+      "emoji": "🍍"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 5000,
+    "kindsMax": 1,
+    "flashMs": 1000,
+    "target": 5
+  }
+}
