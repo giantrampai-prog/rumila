@@ -1,0 +1,151 @@
+{
+  "id": "sd4-sains-peta-tulang-tubuh",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.RANGKA-OTOT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Peta Tulang Tubuh",
+      "instruksi": "Taruh tiap tulang ke daerah tubuh tempat tulang itu berada.",
+      "b-kepala": "kepala",
+      "b-badan": "badan (dada sampai pinggang)",
+      "b-anggota": "lengan dan kaki",
+      "i-tengkorak": "tengkorak",
+      "i-rahang": "rahang bawah",
+      "i-rusuk": "tulang rusuk",
+      "i-belakang": "tulang belakang",
+      "i-panggul": "tulang panggul",
+      "i-lenganatas": "tulang lengan atas",
+      "i-lenganbawah": "tulang lengan bawah",
+      "i-jaritangan": "tulang jari tangan",
+      "i-paha": "tulang paha",
+      "i-kering": "tulang kering",
+      "i-lutut": "tempurung lutut"
+    },
+    "en": {
+      "judul": "Body Bone Map",
+      "instruksi": "Put each bone in the part of the body where it is found.",
+      "b-kepala": "head",
+      "b-badan": "trunk (chest to hips)",
+      "b-anggota": "arms and legs",
+      "i-tengkorak": "skull",
+      "i-rahang": "lower jaw",
+      "i-rusuk": "rib cage",
+      "i-belakang": "spine",
+      "i-panggul": "hip bone",
+      "i-lenganatas": "upper arm bone",
+      "i-lenganbawah": "forearm bones",
+      "i-jaritangan": "finger bones",
+      "i-paha": "thigh bone",
+      "i-kering": "shin bone",
+      "i-lutut": "kneecap"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 8; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kepala",
+      "labelKey": "b-kepala",
+      "emoji": "💀",
+      "color": "#eceff1"
+    },
+    {
+      "id": "badan",
+      "labelKey": "b-badan",
+      "emoji": "🫁",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "anggota",
+      "labelKey": "b-anggota",
+      "emoji": "🦵",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "tengkorak",
+      "labelKey": "i-tengkorak",
+      "bin": "kepala",
+      "emoji": "💀"
+    },
+    {
+      "id": "rahang",
+      "labelKey": "i-rahang",
+      "bin": "kepala",
+      "emoji": "😬"
+    },
+    {
+      "id": "rusuk",
+      "labelKey": "i-rusuk",
+      "bin": "badan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "belakang",
+      "labelKey": "i-belakang",
+      "bin": "badan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "panggul",
+      "labelKey": "i-panggul",
+      "bin": "badan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "lenganatas",
+      "labelKey": "i-lenganatas",
+      "bin": "anggota",
+      "emoji": "💪"
+    },
+    {
+      "id": "lenganbawah",
+      "labelKey": "i-lenganbawah",
+      "bin": "anggota",
+      "emoji": "💪"
+    },
+    {
+      "id": "jaritangan",
+      "labelKey": "i-jaritangan",
+      "bin": "anggota",
+      "emoji": "✋"
+    },
+    {
+      "id": "paha",
+      "labelKey": "i-paha",
+      "bin": "anggota",
+      "emoji": "🦵"
+    },
+    {
+      "id": "kering",
+      "labelKey": "i-kering",
+      "bin": "anggota",
+      "emoji": "🦵"
+    },
+    {
+      "id": "lutut",
+      "labelKey": "i-lutut",
+      "bin": "anggota",
+      "emoji": "🦵"
+    }
+  ],
+  "pilihan": []
+}

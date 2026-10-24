@@ -1,0 +1,98 @@
+{
+  "id": "sd3-kode-catat-data-turus",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "KODE.SD3.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Catat Data Kebun Binatang",
+      "instruksi": "Tiap hewan yang lewat, sentuh barisnya di tabel supaya tercatat. Jangan ada yang terlewat.",
+      "zebra": "zebra",
+      "gajah": "gajah",
+      "jerapah": "jerapah",
+      "unta": "unta",
+      "rusa": "rusa",
+      "kanguru": "kanguru"
+    },
+    "en": {
+      "judul": "Zoo Data Log",
+      "instruksi": "Each time an animal passes, touch its row in the table to record it. Don't miss any.",
+      "zebra": "zebra",
+      "gajah": "elephant",
+      "jerapah": "giraffe",
+      "unta": "camel",
+      "rusa": "deer",
+      "kanguru": "kangaroo"
+    }
+  },
+  "knobs": {
+    "count": {
+      "min": 12,
+      "max": 20,
+      "default": 12,
+      "step": 2,
+      "keterangan": "jumlah data yang lewat dalam satu putaran"
+    },
+    "kinds": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah jenis (baris tabel)"
+    },
+    "gapMs": {
+      "min": 700,
+      "max": 1000,
+      "default": 1000,
+      "step": 100,
+      "keterangan": "jeda antardata (ms): 1000 → 700 makin cepat"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "turus",
+  "items": [
+    {
+      "id": "zebra",
+      "labelKey": "zebra",
+      "role": "hewan",
+      "emoji": "🦓"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "gajah",
+      "role": "hewan",
+      "emoji": "🐘"
+    },
+    {
+      "id": "jerapah",
+      "labelKey": "jerapah",
+      "role": "hewan",
+      "emoji": "🦒"
+    },
+    {
+      "id": "unta",
+      "labelKey": "unta",
+      "role": "hewan",
+      "emoji": "🐫"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "rusa",
+      "role": "hewan",
+      "emoji": "🦌"
+    },
+    {
+      "id": "kanguru",
+      "labelKey": "kanguru",
+      "role": "hewan",
+      "emoji": "🦘"
+    }
+  ]
+}

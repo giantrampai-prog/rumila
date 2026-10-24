@@ -1,0 +1,172 @@
+{
+  "id": "sd1-sains-benda-atau-bahan-sekolah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Benda atau Bahan di Sekolah?",
+      "instruksi": "Taruh tiap kartu ke rak benda atau rak bahan.",
+      "b-benda": "benda",
+      "b-bahan": "bahan",
+      "i-meja": "meja",
+      "i-kayu": "kayu",
+      "i-tas": "tas",
+      "i-kain": "kain",
+      "i-jendela": "jendela",
+      "i-kaca": "kaca",
+      "i-paku": "paku",
+      "i-logam": "logam",
+      "i-bukutulis": "buku tulis",
+      "i-kertas": "kertas",
+      "i-ember": "ember",
+      "i-plastik": "plastik",
+      "i-cobek": "cobek",
+      "i-batu": "batu"
+    },
+    "en": {
+      "judul": "Object or Material at School?",
+      "instruksi": "Put each card on the object shelf or the material shelf.",
+      "b-benda": "object",
+      "b-bahan": "material",
+      "i-meja": "table",
+      "i-kayu": "wood",
+      "i-tas": "bag",
+      "i-kain": "fabric",
+      "i-jendela": "window",
+      "i-kaca": "glass",
+      "i-paku": "nail",
+      "i-logam": "metal",
+      "i-bukutulis": "exercise book",
+      "i-kertas": "paper",
+      "i-ember": "bucket",
+      "i-plastik": "plastic",
+      "i-cobek": "stone mortar",
+      "i-batu": "rock"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "benda",
+      "labelKey": "b-benda",
+      "emoji": "🎒",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "bahan",
+      "labelKey": "b-bahan",
+      "emoji": "🧱",
+      "color": "#e8eaf6"
+    }
+  ],
+  "items": [
+    {
+      "id": "meja",
+      "labelKey": "i-meja",
+      "bin": "benda",
+      "emoji": "🪑",
+      "color": "#a1887f"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "bahan",
+      "emoji": "🪵"
+    },
+    {
+      "id": "tas",
+      "labelKey": "i-tas",
+      "bin": "benda",
+      "emoji": "🎒"
+    },
+    {
+      "id": "kain",
+      "labelKey": "i-kain",
+      "bin": "bahan",
+      "emoji": "🧵"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "benda",
+      "emoji": "🪟"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "bahan",
+      "emoji": "🔷",
+      "color": "#b3e5fc"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "benda",
+      "emoji": "🔩"
+    },
+    {
+      "id": "logam",
+      "labelKey": "i-logam",
+      "bin": "bahan",
+      "emoji": "⚙️",
+      "color": "#90a4ae"
+    },
+    {
+      "id": "bukutulis",
+      "labelKey": "i-bukutulis",
+      "bin": "benda",
+      "emoji": "📒"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "bahan",
+      "emoji": "📄"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "benda",
+      "emoji": "🪣"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "bahan",
+      "emoji": "🟧",
+      "color": "#ffcc80"
+    },
+    {
+      "id": "cobek",
+      "labelKey": "i-cobek",
+      "bin": "benda",
+      "emoji": "🥣",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "bahan",
+      "emoji": "🪨"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,140 @@
+{
+  "id": "sd5-mat-pecahan-campuran",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Pecahan Campuran",
+      "instruksi": "Ubah tiap pecahan tidak wajar ke pecahan campuran, lalu taruh di rak yang sama nilainya.",
+      "b-satusetengah": "1½",
+      "b-duaseperempat": "2¼",
+      "b-satuduapertiga": "1⅔",
+      "b-tigasetengah": "3½",
+      "i1": "3/2",
+      "i2": "6/4",
+      "i3": "9/6",
+      "i4": "9/4",
+      "i5": "18/8",
+      "i6": "5/3",
+      "i7": "10/6",
+      "i8": "7/2",
+      "i9": "14/4",
+      "i10": "21/6"
+    },
+    "en": {
+      "judul": "Mixed Number Shelves",
+      "instruksi": "Change each improper fraction to a mixed number, then put it on the shelf with the same value.",
+      "b-satusetengah": "1½",
+      "b-duaseperempat": "2¼",
+      "b-satuduapertiga": "1⅔",
+      "b-tigasetengah": "3½",
+      "i1": "3/2",
+      "i2": "6/4",
+      "i3": "9/6",
+      "i4": "9/4",
+      "i5": "18/8",
+      "i6": "5/3",
+      "i7": "10/6",
+      "i8": "7/2",
+      "i9": "14/4",
+      "i10": "21/6"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "kartu per ronde: 6 → 9"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "satusetengah",
+      "labelKey": "b-satusetengah"
+    },
+    {
+      "id": "duaseperempat",
+      "labelKey": "b-duaseperempat"
+    },
+    {
+      "id": "satuduapertiga",
+      "labelKey": "b-satuduapertiga"
+    },
+    {
+      "id": "tigasetengah",
+      "labelKey": "b-tigasetengah"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "satusetengah"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "satusetengah"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "satusetengah"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "duaseperempat"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "duaseperempat"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "satuduapertiga"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "satuduapertiga"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tigasetengah"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tigasetengah"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tigasetengah"
+    }
+  ]
+}

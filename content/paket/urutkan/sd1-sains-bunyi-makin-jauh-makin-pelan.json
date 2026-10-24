@@ -1,0 +1,180 @@
+{
+  "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD1.BUNYI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Makin Jauh, Makin Pelan",
+      "instruksi": "Susun dari yang mendengar paling keras sampai paling pelan.",
+      "s-bel": "Bel sekolah berbunyi",
+      "bel-p1": "anak di samping bel",
+      "bel-p2": "anak di lapangan",
+      "bel-p3": "anak di gerbang sekolah",
+      "bel-p4": "anak di rumah seberang jalan",
+      "s-ayam": "Ayam berkokok pagi-pagi",
+      "ayam-p1": "anak di dekat kandang",
+      "ayam-p2": "anak di teras",
+      "ayam-p3": "anak di ujung kebun",
+      "ayam-p4": "anak di desa sebelah",
+      "s-eskrim": "Mobil es krim memutar lagu",
+      "eskrim-p1": "anak di samping mobil",
+      "eskrim-p2": "anak di depan rumah",
+      "eskrim-p3": "anak di ujung gang",
+      "eskrim-p4": "anak di taman jauh",
+      "s-drum": "Drum dipukul di panggung",
+      "drum-p1": "anak di depan panggung",
+      "drum-p2": "anak di tengah lapangan",
+      "drum-p3": "anak di parkiran",
+      "drum-p4": "anak di luar pagar"
+    },
+    "en": {
+      "judul": "Farther Away, Quieter",
+      "instruksi": "Put them in order from who hears it loudest to who hears it quietest.",
+      "s-bel": "The school bell rings",
+      "bel-p1": "child next to the bell",
+      "bel-p2": "child in the field",
+      "bel-p3": "child at the school gate",
+      "bel-p4": "child in a house across the road",
+      "s-ayam": "A rooster crows in the morning",
+      "ayam-p1": "child by the coop",
+      "ayam-p2": "child on the porch",
+      "ayam-p3": "child at the end of the garden",
+      "ayam-p4": "child in the next village",
+      "s-eskrim": "The ice cream van plays its tune",
+      "eskrim-p1": "child beside the van",
+      "eskrim-p2": "child in front of the house",
+      "eskrim-p3": "child at the end of the lane",
+      "eskrim-p4": "child in a far-off park",
+      "s-drum": "A drum is played on stage",
+      "drum-p1": "child in front of the stage",
+      "drum-p2": "child in the middle of the field",
+      "drum-p3": "child in the car park",
+      "drum-p4": "child outside the fence"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah posisi pendengar: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "bel",
+      "titleKey": "s-bel",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "bel-p1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p2",
+          "labelKey": "bel-p2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p3",
+          "labelKey": "bel-p3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p4",
+          "labelKey": "bel-p4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "ayam",
+      "titleKey": "s-ayam",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "ayam-p1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p2",
+          "labelKey": "ayam-p2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p3",
+          "labelKey": "ayam-p3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p4",
+          "labelKey": "ayam-p4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "eskrim",
+      "titleKey": "s-eskrim",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "eskrim-p1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p2",
+          "labelKey": "eskrim-p2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p3",
+          "labelKey": "eskrim-p3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p4",
+          "labelKey": "eskrim-p4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "drum",
+      "titleKey": "s-drum",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "drum-p1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p2",
+          "labelKey": "drum-p2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p3",
+          "labelKey": "drum-p3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "p4",
+          "labelKey": "drum-p4",
+          "emoji": "🧒"
+        }
+      ]
+    }
+  ]
+}

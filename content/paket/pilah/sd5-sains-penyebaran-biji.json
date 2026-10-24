@@ -1,0 +1,167 @@
+{
+  "id": "sd5-sains-penyebaran-biji",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-TUMBUHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Biji Bertualang",
+      "instruksi": "Lihat ciri biji atau buahnya, lalu taruh ke cara biji itu tersebar.",
+      "b-angin": "terbawa angin",
+      "b-hewan": "dibawa hewan",
+      "b-air": "terbawa air",
+      "b-letup": "meletup sendiri",
+      "i-dandelion": "dandelion: biji berparasut halus",
+      "i-mahoni": "biji mahoni bersayap tipis",
+      "i-kapuk": "biji kapuk berserabut ringan",
+      "i-jambu": "buah jambu manis dimakan kelelawar",
+      "i-rumputjarum": "biji rumput berduri pengait, menempel di kaus kaki",
+      "i-beri": "buah beri kecil dimakan burung",
+      "i-kelapa": "buah kelapa berserabut mengapung di laut",
+      "i-bakau": "buah bakau panjang mengapung di air pasang",
+      "i-nipah": "buah nipah mengapung terbawa arus sungai",
+      "i-polong": "polong kacang kering pecah dan melontarkan biji",
+      "i-karet": "buah karet meletup saat kering",
+      "i-pacarair": "buah pacar air terlontar saat disentuh"
+    },
+    "en": {
+      "judul": "Travelling Seeds",
+      "instruksi": "Look at the seed or fruit, then put it with the way it is spread.",
+      "b-angin": "carried by wind",
+      "b-hewan": "carried by animals",
+      "b-air": "carried by water",
+      "b-letup": "bursts open",
+      "i-dandelion": "dandelion: seeds with fluffy parachutes",
+      "i-mahoni": "mahogany seed with a thin wing",
+      "i-kapuk": "kapok seed with light fluff",
+      "i-jambu": "sweet guava eaten by bats",
+      "i-rumputjarum": "hooked grass seed that sticks to socks",
+      "i-beri": "small berries eaten by birds",
+      "i-kelapa": "fibrous coconut floating at sea",
+      "i-bakau": "long mangrove fruit floating on the tide",
+      "i-nipah": "nipa palm fruit floating down a river",
+      "i-polong": "dry bean pod splits and flings out seeds",
+      "i-karet": "rubber tree fruit bursts when dry",
+      "i-pacarair": "busy lizzie pod bursts when touched"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 8; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "angin",
+      "labelKey": "b-angin",
+      "emoji": "🌬️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "hewan",
+      "labelKey": "b-hewan",
+      "emoji": "🐒",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "air",
+      "labelKey": "b-air",
+      "emoji": "🌊",
+      "color": "#b2ebf2"
+    },
+    {
+      "id": "letup",
+      "labelKey": "b-letup",
+      "emoji": "💥",
+      "color": "#f8bbd0"
+    }
+  ],
+  "items": [
+    {
+      "id": "dandelion",
+      "labelKey": "i-dandelion",
+      "bin": "angin",
+      "emoji": "🌼"
+    },
+    {
+      "id": "mahoni",
+      "labelKey": "i-mahoni",
+      "bin": "angin",
+      "emoji": "🍂"
+    },
+    {
+      "id": "kapuk",
+      "labelKey": "i-kapuk",
+      "bin": "angin",
+      "emoji": "☁️"
+    },
+    {
+      "id": "jambu",
+      "labelKey": "i-jambu",
+      "bin": "hewan",
+      "emoji": "🦇"
+    },
+    {
+      "id": "rumputjarum",
+      "labelKey": "i-rumputjarum",
+      "bin": "hewan",
+      "emoji": "🧦"
+    },
+    {
+      "id": "beri",
+      "labelKey": "i-beri",
+      "bin": "hewan",
+      "emoji": "🫐"
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "i-kelapa",
+      "bin": "air",
+      "emoji": "🥥"
+    },
+    {
+      "id": "bakau",
+      "labelKey": "i-bakau",
+      "bin": "air",
+      "emoji": "🌊"
+    },
+    {
+      "id": "nipah",
+      "labelKey": "i-nipah",
+      "bin": "air",
+      "emoji": "🌴"
+    },
+    {
+      "id": "polong",
+      "labelKey": "i-polong",
+      "bin": "letup",
+      "emoji": "🫛"
+    },
+    {
+      "id": "karet",
+      "labelKey": "i-karet",
+      "bin": "letup",
+      "emoji": "💥"
+    },
+    {
+      "id": "pacarair",
+      "labelKey": "i-pacarair",
+      "bin": "letup",
+      "emoji": "🌸"
+    }
+  ],
+  "pilihan": []
+}

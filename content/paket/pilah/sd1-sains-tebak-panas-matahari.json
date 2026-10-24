@@ -1,0 +1,204 @@
+{
+  "id": "sd1-sains-tebak-panas-matahari",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.MATAHARI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tebak: Di Mana Paling Cepat?",
+      "instruksi": "Dengarkan, lalu sentuh tempat yang kamu tebak.",
+      "pilihan": "pilihan",
+      "i-matahari": "di bawah sinar Matahari",
+      "i-pohon": "di bawah pohon rindang",
+      "i-rumah": "di dalam rumah",
+      "i-kulkas": "di dalam kulkas",
+      "i-kotak": "di dalam kotak tertutup",
+      "t-es": "Es batu mana yang paling cepat mencair?",
+      "t-jemuran": "Baju basah mana yang paling cepat kering?",
+      "t-eskrim": "Supaya es krim tidak cepat meleleh, simpan di mana?",
+      "t-kucing": "Kucing mencari tempat paling hangat untuk tidur. Ke mana dia pergi?",
+      "t-cokelat": "Cokelat mana yang paling cepat lembek?",
+      "t-teduh": "Siang hari panas. Di mana tempat paling sejuk untuk bermain di luar?",
+      "t-genangan": "Genangan air hujan mana yang paling cepat hilang?",
+      "t-batu": "Batu mana yang paling hangat saat dipegang siang hari?",
+      "t-susu": "Supaya susu tetap dingin, simpan di mana?",
+      "t-kerupuk": "Kerupuk dijemur supaya kering. Taruh di mana?"
+    },
+    "en": {
+      "judul": "Guess: Where Is Fastest?",
+      "instruksi": "Listen, then touch the place you guess.",
+      "pilihan": "choices",
+      "i-matahari": "in the sunshine",
+      "i-pohon": "under a shady tree",
+      "i-rumah": "inside the house",
+      "i-kulkas": "in the fridge",
+      "i-kotak": "inside a closed box",
+      "t-es": "Which ice cube melts fastest?",
+      "t-jemuran": "Which wet shirt dries fastest?",
+      "t-eskrim": "Where should you keep ice cream so it doesn't melt quickly?",
+      "t-kucing": "A cat looks for the warmest place to nap. Where does it go?",
+      "t-cokelat": "Which chocolate goes soft fastest?",
+      "t-teduh": "It's a hot afternoon. Where is the coolest place to play outside?",
+      "t-genangan": "Which rain puddle disappears fastest?",
+      "t-batu": "Which stone feels warmest at midday?",
+      "t-susu": "Where should you keep milk to stay cold?",
+      "t-kerupuk": "Crackers are put out to dry. Where should they go?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "i-pohon",
+      "bin": "pilihan",
+      "emoji": "🌳"
+    },
+    {
+      "id": "rumah",
+      "labelKey": "i-rumah",
+      "bin": "pilihan",
+      "emoji": "🏠"
+    },
+    {
+      "id": "kulkas",
+      "labelKey": "i-kulkas",
+      "bin": "pilihan",
+      "emoji": "🧊"
+    },
+    {
+      "id": "kotak",
+      "labelKey": "i-kotak",
+      "bin": "pilihan",
+      "emoji": "📦"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "es",
+      "promptKey": "t-es",
+      "choices": [
+        "matahari",
+        "pohon",
+        "kulkas"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "jemuran",
+      "promptKey": "t-jemuran",
+      "choices": [
+        "matahari",
+        "rumah",
+        "pohon"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "eskrim",
+      "promptKey": "t-eskrim",
+      "choices": [
+        "kulkas",
+        "matahari",
+        "rumah"
+      ],
+      "correct": "kulkas"
+    },
+    {
+      "id": "kucing",
+      "promptKey": "t-kucing",
+      "choices": [
+        "matahari",
+        "kulkas",
+        "pohon"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "cokelat",
+      "promptKey": "t-cokelat",
+      "choices": [
+        "matahari",
+        "kotak",
+        "kulkas"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "teduh",
+      "promptKey": "t-teduh",
+      "choices": [
+        "pohon",
+        "matahari"
+      ],
+      "correct": "pohon"
+    },
+    {
+      "id": "genangan",
+      "promptKey": "t-genangan",
+      "choices": [
+        "matahari",
+        "pohon"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "batu",
+      "promptKey": "t-batu",
+      "choices": [
+        "matahari",
+        "pohon",
+        "rumah"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "susu",
+      "promptKey": "t-susu",
+      "choices": [
+        "kulkas",
+        "matahari",
+        "pohon"
+      ],
+      "correct": "kulkas"
+    },
+    {
+      "id": "kerupuk",
+      "promptKey": "t-kerupuk",
+      "choices": [
+        "matahari",
+        "kotak",
+        "rumah"
+      ],
+      "correct": "matahari"
+    }
+  ]
+}

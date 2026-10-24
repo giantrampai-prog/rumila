@@ -1,0 +1,558 @@
+{
+  "id": "sd4-mat-jam-24-stasiun",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jam Stasiun 24 Jam",
+      "instruksi": "Ubah waktunya ke format lain, lalu sentuh jawaban yang sama.",
+      "q1": "Pukul 3.15 sore dalam format 24 jam adalah …",
+      "c1": "15.15",
+      "c2": "03.15",
+      "c3": "13.15",
+      "c4": "17.15",
+      "q2": "Pukul 8.40 malam dalam format 24 jam adalah …",
+      "c5": "20.40",
+      "c6": "08.40",
+      "c7": "18.40",
+      "c8": "22.40",
+      "q3": "Pukul 10.25 pagi dalam format 24 jam adalah …",
+      "c9": "10.25",
+      "c10": "22.25",
+      "c11": "12.25",
+      "c12": "20.25",
+      "q4": "Pukul 12.30 siang dalam format 24 jam adalah …",
+      "c13": "12.30",
+      "c14": "00.30",
+      "c15": "24.30",
+      "c16": "02.30",
+      "q5": "Pukul 12.10 lewat tengah malam dalam format 24 jam adalah …",
+      "c17": "00.10",
+      "c18": "12.10",
+      "c19": "24.10",
+      "c20": "10.10",
+      "q6": "Pukul 4.45 sore dalam format 24 jam adalah …",
+      "c21": "16.45",
+      "c22": "14.45",
+      "c23": "04.45",
+      "c24": "18.45",
+      "q7": "Pukul 7.30 malam dalam format 24 jam adalah …",
+      "c25": "19.30",
+      "c26": "17.30",
+      "c27": "07.30",
+      "c28": "21.30",
+      "q8": "Pukul 17.50 sama dengan …",
+      "c29": "5.50 sore",
+      "c30": "7.50 malam",
+      "c31": "5.50 pagi",
+      "c32": "3.50 sore",
+      "q9": "Pukul 21.35 sama dengan …",
+      "c33": "9.35 malam",
+      "c34": "11.35 malam",
+      "c35": "9.35 pagi",
+      "c36": "7.35 malam",
+      "q10": "Pukul 06.05 sama dengan …",
+      "c37": "6.05 pagi",
+      "c38": "6.05 sore",
+      "c39": "6.50 pagi",
+      "c40": "8.05 pagi",
+      "q11": "Pukul 13.00 sama dengan …",
+      "c41": "1.00 siang",
+      "c42": "3.00 sore",
+      "c43": "1.00 pagi",
+      "c44": "11.00 siang",
+      "q12": "Pukul 23.20 sama dengan …",
+      "c45": "11.20 malam",
+      "c46": "3.20 sore",
+      "c47": "11.20 pagi",
+      "c48": "9.20 malam",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "24-Hour Station Clock",
+      "instruksi": "Change the time to the other format, then touch the matching answer.",
+      "q1": "3:15 p.m. in 24-hour time is …",
+      "c1": "15:15",
+      "c2": "03:15",
+      "c3": "13:15",
+      "c4": "17:15",
+      "q2": "8:40 p.m. in 24-hour time is …",
+      "c5": "20:40",
+      "c6": "08:40",
+      "c7": "18:40",
+      "c8": "22:40",
+      "q3": "10:25 a.m. in 24-hour time is …",
+      "c9": "10:25",
+      "c10": "22:25",
+      "c11": "12:25",
+      "c12": "20:25",
+      "q4": "12:30 in the afternoon in 24-hour time is …",
+      "c13": "12:30",
+      "c14": "00:30",
+      "c15": "24:30",
+      "c16": "02:30",
+      "q5": "12:10 just after midnight in 24-hour time is …",
+      "c17": "00:10",
+      "c18": "12:10",
+      "c19": "24:10",
+      "c20": "10:10",
+      "q6": "4:45 p.m. in 24-hour time is …",
+      "c21": "16:45",
+      "c22": "14:45",
+      "c23": "04:45",
+      "c24": "18:45",
+      "q7": "7:30 p.m. in 24-hour time is …",
+      "c25": "19:30",
+      "c26": "17:30",
+      "c27": "07:30",
+      "c28": "21:30",
+      "q8": "17:50 is the same as …",
+      "c29": "5:50 p.m.",
+      "c30": "7:50 p.m.",
+      "c31": "5:50 a.m.",
+      "c32": "3:50 p.m.",
+      "q9": "21:35 is the same as …",
+      "c33": "9:35 p.m.",
+      "c34": "11:35 p.m.",
+      "c35": "9:35 a.m.",
+      "c36": "7:35 p.m.",
+      "q10": "06:05 is the same as …",
+      "c37": "6:05 a.m.",
+      "c38": "6:05 p.m.",
+      "c39": "6:50 a.m.",
+      "c40": "8:05 a.m.",
+      "q11": "13:00 is the same as …",
+      "c41": "1:00 p.m.",
+      "c42": "3:00 p.m.",
+      "c43": "1:00 a.m.",
+      "c44": "11:00 a.m.",
+      "q12": "23:20 is the same as …",
+      "c45": "11:20 p.m.",
+      "c46": "3:20 p.m.",
+      "c47": "11:20 a.m.",
+      "c48": "9:20 p.m.",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c45",
+      "labelKey": "c45",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c46",
+      "labelKey": "c46",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c47",
+      "labelKey": "c47",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c48",
+      "labelKey": "c48",
+      "bin": "pilihan",
+      "scale": 0.55
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c33",
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c33"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c37",
+        "c38",
+        "c39",
+        "c40"
+      ],
+      "correct": "c37"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c41",
+        "c42",
+        "c43",
+        "c44"
+      ],
+      "correct": "c41"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c45",
+        "c46",
+        "c47",
+        "c48"
+      ],
+      "correct": "c45"
+    }
+  ]
+}

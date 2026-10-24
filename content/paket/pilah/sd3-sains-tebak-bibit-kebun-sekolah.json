@@ -1,0 +1,127 @@
+{
+  "id": "sd3-sains-tebak-bibit-kebun-sekolah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bibit di Kebun Sekolah",
+      "instruksi": "Tebak dulu: bibit mana yang tetap sehat dan mana yang akan layu?",
+      "b-sehat": "tetap sehat",
+      "b-layu": "akan layu",
+      "i-rumahkaca": "bibit di rumah kaca terang, disiram",
+      "i-bedeng": "bibit di bedeng terkena cahaya, tanah lembap",
+      "i-naungan": "bibit di bawah naungan tipis, disiram pagi",
+      "i-pot": "bibit di pot dekat jendela kelas",
+      "i-gudang": "bibit di gudang tanpa jendela",
+      "i-becek": "bibit di tanah tergenang air terus",
+      "i-tembok": "bibit menempel tembok panas terik tanpa disiram",
+      "i-es": "bibit di dalam kotak es",
+      "i-tertutup": "bibit tertutup ember terbalik seminggu"
+    },
+    "en": {
+      "judul": "Seedlings in the School Garden",
+      "instruksi": "Predict first: which seedlings stay healthy and which will wilt?",
+      "b-sehat": "stays healthy",
+      "b-layu": "will wilt",
+      "i-rumahkaca": "seedling in a bright greenhouse, watered",
+      "i-bedeng": "seedling in a sunny bed, moist soil",
+      "i-naungan": "seedling under light shade, watered each morning",
+      "i-pot": "seedling in a pot by the classroom window",
+      "i-gudang": "seedling in a shed with no window",
+      "i-becek": "seedling in waterlogged soil",
+      "i-tembok": "seedling against a scorching wall, never watered",
+      "i-es": "seedling inside an ice box",
+      "i-tertutup": "seedling under an upside-down bucket for a week"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sehat",
+      "labelKey": "b-sehat",
+      "emoji": "🌿",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "layu",
+      "labelKey": "b-layu",
+      "emoji": "🥀",
+      "color": "#efebe9"
+    }
+  ],
+  "items": [
+    {
+      "id": "rumahkaca",
+      "labelKey": "i-rumahkaca",
+      "bin": "sehat",
+      "emoji": "🏡"
+    },
+    {
+      "id": "bedeng",
+      "labelKey": "i-bedeng",
+      "bin": "sehat",
+      "emoji": "🌱"
+    },
+    {
+      "id": "naungan",
+      "labelKey": "i-naungan",
+      "bin": "sehat",
+      "emoji": "⛱️"
+    },
+    {
+      "id": "pot",
+      "labelKey": "i-pot",
+      "bin": "sehat",
+      "emoji": "🪴"
+    },
+    {
+      "id": "gudang",
+      "labelKey": "i-gudang",
+      "bin": "layu",
+      "emoji": "🏚️"
+    },
+    {
+      "id": "becek",
+      "labelKey": "i-becek",
+      "bin": "layu",
+      "emoji": "🌊"
+    },
+    {
+      "id": "tembok",
+      "labelKey": "i-tembok",
+      "bin": "layu",
+      "emoji": "🔥"
+    },
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "layu",
+      "emoji": "🧊"
+    },
+    {
+      "id": "tertutup",
+      "labelKey": "i-tertutup",
+      "bin": "layu",
+      "emoji": "🪣"
+    }
+  ],
+  "pilihan": []
+}

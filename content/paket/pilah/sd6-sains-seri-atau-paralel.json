@@ -1,0 +1,195 @@
+{
+  "id": "sd6-sains-seri-atau-paralel",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Seri atau Paralel?",
+      "instruksi": "Baca susunan rangkaiannya, lalu sentuh jawaban yang benar.",
+      "b-pilihan": "pilihan",
+      "i-seri": "rangkaian seri",
+      "i-paralel": "rangkaian paralel",
+      "i-lebihterang": "lebih terang",
+      "i-lebihredup": "lebih redup",
+      "i-samaterang": "sama terang",
+      "i-padamsemua": "ikut padam",
+      "i-tetapnyala": "tetap menyala",
+      "p-r1": "Dua lampu disusun berderet dalam satu jalur dengan satu baterai. Rangkaian ini…",
+      "p-r2": "Dua lampu masing-masing punya jalur sendiri ke baterai. Rangkaian ini…",
+      "p-r3": "Dibanding satu lampu sendirian, tiap lampu di rangkaian seri dua lampu menyala…",
+      "p-r4": "Dibanding dua lampu seri, dua lampu paralel dengan baterai yang sama menyala…",
+      "p-r5": "Rangkaian seri: satu lampu dilepas. Lampu yang lain…",
+      "p-r6": "Rangkaian paralel: satu lampu dilepas. Lampu yang lain…",
+      "p-r7": "Lampu di rumah bisa dimatikan satu per satu tanpa memadamkan yang lain. Rumah memakai rangkaian…",
+      "p-r8": "Untaian lampu hias: satu lampu putus, semuanya padam. Lampunya disusun…",
+      "p-r9": "Dua lampu harus sama-sama paling terang dengan satu baterai. Pilih rangkaian…"
+    },
+    "en": {
+      "judul": "Series or Parallel?",
+      "instruksi": "Read how the circuit is built, then touch the correct answer.",
+      "b-pilihan": "choices",
+      "i-seri": "series circuit",
+      "i-paralel": "parallel circuit",
+      "i-lebihterang": "brighter",
+      "i-lebihredup": "dimmer",
+      "i-samaterang": "just as bright",
+      "i-padamsemua": "goes out too",
+      "i-tetapnyala": "stays lit",
+      "p-r1": "Two lamps are joined one after another in a single loop with one cell. This circuit is…",
+      "p-r2": "Two lamps each have their own loop to the cell. This circuit is…",
+      "p-r3": "Compared with one lamp on its own, each lamp in a two-lamp series circuit is…",
+      "p-r4": "Compared with two lamps in series, two lamps in parallel with the same cell are…",
+      "p-r5": "Series circuit: one lamp is taken out. The other lamp…",
+      "p-r6": "Parallel circuit: one lamp is taken out. The other lamp…",
+      "p-r7": "Lights at home can be switched off one at a time without the others going out. Homes use a…",
+      "p-r8": "A string of fairy lights: one bulb fails and they all go out. The bulbs are wired in…",
+      "p-r9": "Two lamps must both be as bright as possible with one cell. Choose a…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "seri",
+      "labelKey": "i-seri",
+      "bin": "pilihan",
+      "emoji": "➰"
+    },
+    {
+      "id": "paralel",
+      "labelKey": "i-paralel",
+      "bin": "pilihan",
+      "emoji": "🔀"
+    },
+    {
+      "id": "lebihterang",
+      "labelKey": "i-lebihterang",
+      "bin": "pilihan",
+      "emoji": "🔆"
+    },
+    {
+      "id": "lebihredup",
+      "labelKey": "i-lebihredup",
+      "bin": "pilihan",
+      "emoji": "🔅"
+    },
+    {
+      "id": "samaterang",
+      "labelKey": "i-samaterang",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "padamsemua",
+      "labelKey": "i-padamsemua",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    },
+    {
+      "id": "tetapnyala",
+      "labelKey": "i-tetapnyala",
+      "bin": "pilihan",
+      "emoji": "💡"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "seri",
+        "paralel"
+      ],
+      "correct": "seri"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "lebihredup",
+        "lebihterang",
+        "samaterang"
+      ],
+      "correct": "lebihredup"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "lebihterang",
+        "lebihredup",
+        "samaterang"
+      ],
+      "correct": "lebihterang"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "padamsemua",
+        "tetapnyala"
+      ],
+      "correct": "padamsemua"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "tetapnyala",
+        "padamsemua"
+      ],
+      "correct": "tetapnyala"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "seri",
+        "paralel"
+      ],
+      "correct": "seri"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    }
+  ]
+}

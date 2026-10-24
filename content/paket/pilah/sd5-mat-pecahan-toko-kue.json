@@ -1,0 +1,433 @@
+{
+  "id": "sd5-mat-pecahan-toko-kue",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.PECAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Toko Kue Pecahan",
+      "instruksi": "Ubah ke penyebut yang lebih besar, lalu jumlahkan atau kurangkan pembilangnya.",
+      "q1": "3/4 − 1/8 = …",
+      "c1": "5/8",
+      "c2": "2/4",
+      "c3": "7/8",
+      "c4": "2/8",
+      "q2": "11/12 − 1/4 = …",
+      "c5": "8/12",
+      "c6": "10/8",
+      "c7": "3/12",
+      "c8": "10/12",
+      "q3": "5/6 − 1/2 = …",
+      "c9": "2/6",
+      "c10": "4/4",
+      "c11": "4/6",
+      "c12": "3/6",
+      "q4": "3/10 − 1/5 = …",
+      "c13": "1/10",
+      "c14": "2/5",
+      "c15": "5/10",
+      "c16": "2/10",
+      "q5": "1/3 + 1/6 = …",
+      "c17": "2/9",
+      "c18": "1/6",
+      "q6": "7/8 − 3/4 = …",
+      "c19": "1/8",
+      "c20": "4/8",
+      "q7": "1/12 + 1/4 = …",
+      "c21": "4/12",
+      "c22": "2/16",
+      "c23": "2/12",
+      "c24": "5/12",
+      "q8": "1/4 + 3/8 = …",
+      "q9": "1/6 + 1/2 = …",
+      "c25": "5/6",
+      "q10": "1/2 − 1/6 = …",
+      "c26": "0/4",
+      "c27": "0/6",
+      "q11": "5/9 + 1/3 = …",
+      "c28": "8/9",
+      "c29": "6/12",
+      "c30": "6/9",
+      "q12": "1/2 − 1/4 = …",
+      "c31": "1/4",
+      "c32": "0/2",
+      "c33": "3/4",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Fraction Bakery",
+      "instruksi": "Change to the larger denominator, then add or subtract the numerators.",
+      "q1": "3/4 − 1/8 = …",
+      "c1": "5/8",
+      "c2": "2/4",
+      "c3": "7/8",
+      "c4": "2/8",
+      "q2": "11/12 − 1/4 = …",
+      "c5": "8/12",
+      "c6": "10/8",
+      "c7": "3/12",
+      "c8": "10/12",
+      "q3": "5/6 − 1/2 = …",
+      "c9": "2/6",
+      "c10": "4/4",
+      "c11": "4/6",
+      "c12": "3/6",
+      "q4": "3/10 − 1/5 = …",
+      "c13": "1/10",
+      "c14": "2/5",
+      "c15": "5/10",
+      "c16": "2/10",
+      "q5": "1/3 + 1/6 = …",
+      "c17": "2/9",
+      "c18": "1/6",
+      "q6": "7/8 − 3/4 = …",
+      "c19": "1/8",
+      "c20": "4/8",
+      "q7": "1/12 + 1/4 = …",
+      "c21": "4/12",
+      "c22": "2/16",
+      "c23": "2/12",
+      "c24": "5/12",
+      "q8": "1/4 + 3/8 = …",
+      "q9": "1/6 + 1/2 = …",
+      "c25": "5/6",
+      "q10": "1/2 − 1/6 = …",
+      "c26": "0/4",
+      "c27": "0/6",
+      "q11": "5/9 + 1/3 = …",
+      "c28": "8/9",
+      "c29": "6/12",
+      "c30": "6/9",
+      "q12": "1/2 − 1/4 = …",
+      "c31": "1/4",
+      "c32": "0/2",
+      "c33": "3/4",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c12",
+        "c17",
+        "c18",
+        "c9"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c19",
+        "c10",
+        "c4",
+        "c20"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c1",
+        "c21",
+        "c19",
+        "c20"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c11",
+        "c4",
+        "c9",
+        "c25"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c9",
+        "c26",
+        "c11",
+        "c27"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c28",
+        "c29",
+        "c17",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c31",
+        "c32",
+        "c33",
+        "c26"
+      ],
+      "correct": "c31"
+    }
+  ]
+}

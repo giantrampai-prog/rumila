@@ -1,0 +1,74 @@
+{
+  "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+  "title": "Cambridge Primary Computing Curriculum Framework (0059) — butir Stage 4–6 yang dikutip publik",
+  "version": "Published September 2021 for first teaching September 2022 (Cambridge internal file ref tcm142-635600)",
+  "sources": [
+    "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+  ],
+  "retrieved_at": "2026-10-25",
+  "notes": [
+    "Pelengkap cambridge-primary-computing.json (Stage 1–2) untuk track KODE SD4–SD6. Berkas lama tidak diubah.",
+    "Hanya kode yang dikutip lengkap dengan kodenya di halaman Cambridge Community (situs Cambridge International) yang ditandai verified: true. Sumber dan cara baca sama dengan berkas Stage 1–2.",
+    "5CS.01: kode dan awal kalimat terbaca, tetapi teksnya terpotong di alat pembaca halaman; verified: false sampai teks lengkap dicek di PDF framework.",
+    "Halaman yang sama memuat contoh progresi strand Computational Thinking per stage TANPA kode, mis. Stage 4 'Follow, understand, edit and correct algorithms that use iteration, including count controlled loops', Stage 5 '... algorithms that contain selection', Stage 6 'Follow and understand algorithms that are presented as flowcharts'. Karena kodenya tidak tertulis, butir itu sengaja tidak dimasukkan; kompetensi yang bersandar padanya memakai refs kosong dengan catatan.",
+    "Tindak lanjut: unduh Curriculum Framework 0059 lengkap dari Cambridge Primary support site (butuh akun sekolah) lalu lengkapi Stage 3–6, termasuk strand Managing Data."
+  ],
+  "entries": [
+    {
+      "code": "4P.02",
+      "stage": "4",
+      "strand": "Programming",
+      "text": "Know how to develop programs with repetition.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "4P.03",
+      "stage": "4",
+      "strand": "Programming",
+      "text": "Know how to develop programs with iteration.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "5CS.01",
+      "stage": "5",
+      "strand": "Computer Systems",
+      "text": "Describe the scale of the computing devices and mechanisms that are connected to the internet, either for data input… (teks terpotong)",
+      "verified": false,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "5DC.07",
+      "stage": "5",
+      "strand": "Networks and Digital Communication",
+      "text": "Identify issues that may occur as a result of a failure of the internet.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "6CT.05",
+      "stage": "6",
+      "strand": "Computational Thinking",
+      "text": "Know that the same sub-routine can be used multiple times in an algorithm.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "6P.02",
+      "stage": "6",
+      "strand": "Programming",
+      "text": "Know how to develop block-based programs with a procedure (sub-routine) to define commonly used sections of code.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    },
+    {
+      "code": "6CS.08",
+      "stage": "6",
+      "strand": "Computer Systems",
+      "text": "Identify benefits of using robotics in industry, such as car manufacturing or food production.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    }
+  ]
+}

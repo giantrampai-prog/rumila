@@ -1,0 +1,151 @@
+{
+  "id": "sd4-sains-wujud-atau-zat-baru",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.WUJUD-ZAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Berubah Wujud atau Zat Baru?",
+      "instruksi": "Pilah tiap perubahan: hanya berubah wujud, atau menjadi zat baru.",
+      "b-fisika": "hanya berubah wujud (bisa kembali)",
+      "b-kimia": "jadi zat baru (reaksi kimia)",
+      "i-esleleh": "es batu mencair",
+      "i-airbeku": "air membeku di freezer",
+      "i-cokelatleleh": "cokelat meleleh di saku",
+      "i-menteganleleh": "mentega meleleh di wajan",
+      "i-lilinleleh": "lilin meleleh di dekat api",
+      "i-embun": "uap air jadi embun di cermin",
+      "i-kertasbakar": "kertas terbakar jadi abu",
+      "i-sumbubakar": "sumbu lilin terbakar",
+      "i-pakukarat": "paku besi berkarat",
+      "i-telurgoreng": "telur digoreng",
+      "i-kuepanggang": "adonan kue dipanggang",
+      "i-rotigosong": "roti dipanggang sampai gosong"
+    },
+    "en": {
+      "judul": "New State or New Substance?",
+      "instruksi": "Sort each change: only a change of state, or a new substance is made.",
+      "b-fisika": "only a change of state (can go back)",
+      "b-kimia": "a new substance (chemical reaction)",
+      "i-esleleh": "an ice cube melts",
+      "i-airbeku": "water freezes in the freezer",
+      "i-cokelatleleh": "chocolate melts in a pocket",
+      "i-menteganleleh": "butter melts in a pan",
+      "i-lilinleleh": "wax melts near a flame",
+      "i-embun": "water vapour turns to droplets on a mirror",
+      "i-kertasbakar": "paper burns to ash",
+      "i-sumbubakar": "a candle wick burns",
+      "i-pakukarat": "an iron nail rusts",
+      "i-telurgoreng": "an egg is fried",
+      "i-kuepanggang": "cake batter is baked",
+      "i-rotigosong": "bread is toasted until burnt"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "fisika",
+      "labelKey": "b-fisika",
+      "emoji": "↩️",
+      "color": "#bbdefb"
+    },
+    {
+      "id": "kimia",
+      "labelKey": "b-kimia",
+      "emoji": "⚗️",
+      "color": "#ffccbc"
+    }
+  ],
+  "items": [
+    {
+      "id": "esleleh",
+      "labelKey": "i-esleleh",
+      "bin": "fisika",
+      "emoji": "🧊"
+    },
+    {
+      "id": "airbeku",
+      "labelKey": "i-airbeku",
+      "bin": "fisika",
+      "emoji": "❄️"
+    },
+    {
+      "id": "cokelatleleh",
+      "labelKey": "i-cokelatleleh",
+      "bin": "fisika",
+      "emoji": "🍫"
+    },
+    {
+      "id": "menteganleleh",
+      "labelKey": "i-menteganleleh",
+      "bin": "fisika",
+      "emoji": "🧈"
+    },
+    {
+      "id": "lilinleleh",
+      "labelKey": "i-lilinleleh",
+      "bin": "fisika",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "embun",
+      "labelKey": "i-embun",
+      "bin": "fisika",
+      "emoji": "🪞"
+    },
+    {
+      "id": "kertasbakar",
+      "labelKey": "i-kertasbakar",
+      "bin": "kimia",
+      "emoji": "🔥"
+    },
+    {
+      "id": "sumbubakar",
+      "labelKey": "i-sumbubakar",
+      "bin": "kimia",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "pakukarat",
+      "labelKey": "i-pakukarat",
+      "bin": "kimia",
+      "emoji": "🔩"
+    },
+    {
+      "id": "telurgoreng",
+      "labelKey": "i-telurgoreng",
+      "bin": "kimia",
+      "emoji": "🍳"
+    },
+    {
+      "id": "kuepanggang",
+      "labelKey": "i-kuepanggang",
+      "bin": "kimia",
+      "emoji": "🎂"
+    },
+    {
+      "id": "rotigosong",
+      "labelKey": "i-rotigosong",
+      "bin": "kimia",
+      "emoji": "🍞"
+    }
+  ],
+  "pilihan": []
+}

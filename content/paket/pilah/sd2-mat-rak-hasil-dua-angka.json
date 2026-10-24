@@ -1,0 +1,346 @@
+{
+  "id": "sd2-mat-rak-hasil-dua-angka",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.TAMBAH-KURANG-100.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Hasil Dua Angka",
+      "instruksi": "Hitung puluhan dengan puluhan, satuan dengan satuan. Taruh tiap soal di rak hasilnya.",
+      "b-59": "59",
+      "b-68": "68",
+      "b-77": "77",
+      "b-86": "86",
+      "b-95": "95",
+      "b-48": "48",
+      "b-37": "37",
+      "b-69": "69",
+      "b-88": "88",
+      "b-57": "57",
+      "i-17p42": "17+42",
+      "i-35p24": "35+24",
+      "i-79m20": "79−20",
+      "i-21p47": "21+47",
+      "i-37p31": "37+31",
+      "i-79m11": "79−11",
+      "i-51p26": "51+26",
+      "i-53p24": "53+24",
+      "i-89m12": "89−12",
+      "i-23p63": "23+63",
+      "i-31p55": "31+55",
+      "i-97m11": "97−11",
+      "i-21p74": "21+74",
+      "i-81p14": "81+14",
+      "i-96m1": "96−1",
+      "i-10p38": "10+38",
+      "i-13p35": "13+35",
+      "i-68m20": "68−20",
+      "i-13p24": "13+24",
+      "i-25p12": "25+12",
+      "i-59m22": "59−22",
+      "i-26p43": "26+43",
+      "i-30p39": "30+39",
+      "i-89m20": "89−20",
+      "i-22p66": "22+66",
+      "i-31p57": "31+57",
+      "i-99m11": "99−11",
+      "i-14p43": "14+43",
+      "i-15p42": "15+42",
+      "i-88m31": "88−31"
+    },
+    "en": {
+      "judul": "2-Digit Answer Shelf",
+      "instruksi": "Work tens with tens and ones with ones. Put each sum on its answer shelf.",
+      "b-59": "59",
+      "b-68": "68",
+      "b-77": "77",
+      "b-86": "86",
+      "b-95": "95",
+      "b-48": "48",
+      "b-37": "37",
+      "b-69": "69",
+      "b-88": "88",
+      "b-57": "57",
+      "i-17p42": "17+42",
+      "i-35p24": "35+24",
+      "i-79m20": "79−20",
+      "i-21p47": "21+47",
+      "i-37p31": "37+31",
+      "i-79m11": "79−11",
+      "i-51p26": "51+26",
+      "i-53p24": "53+24",
+      "i-89m12": "89−12",
+      "i-23p63": "23+63",
+      "i-31p55": "31+55",
+      "i-97m11": "97−11",
+      "i-21p74": "21+74",
+      "i-81p14": "81+14",
+      "i-96m1": "96−1",
+      "i-10p38": "10+38",
+      "i-13p35": "13+35",
+      "i-68m20": "68−20",
+      "i-13p24": "13+24",
+      "i-25p12": "25+12",
+      "i-59m22": "59−22",
+      "i-26p43": "26+43",
+      "i-30p39": "30+39",
+      "i-89m20": "89−20",
+      "i-22p66": "22+66",
+      "i-31p57": "31+57",
+      "i-99m11": "99−11",
+      "i-14p43": "14+43",
+      "i-15p42": "15+42",
+      "i-88m31": "88−31"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak hasil aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "soal per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "h59",
+      "labelKey": "b-59"
+    },
+    {
+      "id": "h68",
+      "labelKey": "b-68"
+    },
+    {
+      "id": "h77",
+      "labelKey": "b-77"
+    },
+    {
+      "id": "h86",
+      "labelKey": "b-86"
+    },
+    {
+      "id": "h95",
+      "labelKey": "b-95"
+    },
+    {
+      "id": "h48",
+      "labelKey": "b-48"
+    },
+    {
+      "id": "h37",
+      "labelKey": "b-37"
+    },
+    {
+      "id": "h69",
+      "labelKey": "b-69"
+    },
+    {
+      "id": "h88",
+      "labelKey": "b-88"
+    },
+    {
+      "id": "h57",
+      "labelKey": "b-57"
+    }
+  ],
+  "items": [
+    {
+      "id": "s59-17p42",
+      "labelKey": "i-17p42",
+      "bin": "h59",
+      "scale": 0.6
+    },
+    {
+      "id": "s59-35p24",
+      "labelKey": "i-35p24",
+      "bin": "h59",
+      "scale": 0.6
+    },
+    {
+      "id": "s59-79m20",
+      "labelKey": "i-79m20",
+      "bin": "h59",
+      "scale": 0.6
+    },
+    {
+      "id": "s68-21p47",
+      "labelKey": "i-21p47",
+      "bin": "h68",
+      "scale": 0.6
+    },
+    {
+      "id": "s68-37p31",
+      "labelKey": "i-37p31",
+      "bin": "h68",
+      "scale": 0.6
+    },
+    {
+      "id": "s68-79m11",
+      "labelKey": "i-79m11",
+      "bin": "h68",
+      "scale": 0.6
+    },
+    {
+      "id": "s77-51p26",
+      "labelKey": "i-51p26",
+      "bin": "h77",
+      "scale": 0.6
+    },
+    {
+      "id": "s77-53p24",
+      "labelKey": "i-53p24",
+      "bin": "h77",
+      "scale": 0.6
+    },
+    {
+      "id": "s77-89m12",
+      "labelKey": "i-89m12",
+      "bin": "h77",
+      "scale": 0.6
+    },
+    {
+      "id": "s86-23p63",
+      "labelKey": "i-23p63",
+      "bin": "h86",
+      "scale": 0.6
+    },
+    {
+      "id": "s86-31p55",
+      "labelKey": "i-31p55",
+      "bin": "h86",
+      "scale": 0.6
+    },
+    {
+      "id": "s86-97m11",
+      "labelKey": "i-97m11",
+      "bin": "h86",
+      "scale": 0.6
+    },
+    {
+      "id": "s95-21p74",
+      "labelKey": "i-21p74",
+      "bin": "h95",
+      "scale": 0.6
+    },
+    {
+      "id": "s95-81p14",
+      "labelKey": "i-81p14",
+      "bin": "h95",
+      "scale": 0.6
+    },
+    {
+      "id": "s95-96m1",
+      "labelKey": "i-96m1",
+      "bin": "h95",
+      "scale": 0.7
+    },
+    {
+      "id": "s48-10p38",
+      "labelKey": "i-10p38",
+      "bin": "h48",
+      "scale": 0.6
+    },
+    {
+      "id": "s48-13p35",
+      "labelKey": "i-13p35",
+      "bin": "h48",
+      "scale": 0.6
+    },
+    {
+      "id": "s48-68m20",
+      "labelKey": "i-68m20",
+      "bin": "h48",
+      "scale": 0.6
+    },
+    {
+      "id": "s37-13p24",
+      "labelKey": "i-13p24",
+      "bin": "h37",
+      "scale": 0.6
+    },
+    {
+      "id": "s37-25p12",
+      "labelKey": "i-25p12",
+      "bin": "h37",
+      "scale": 0.6
+    },
+    {
+      "id": "s37-59m22",
+      "labelKey": "i-59m22",
+      "bin": "h37",
+      "scale": 0.6
+    },
+    {
+      "id": "s69-26p43",
+      "labelKey": "i-26p43",
+      "bin": "h69",
+      "scale": 0.6
+    },
+    {
+      "id": "s69-30p39",
+      "labelKey": "i-30p39",
+      "bin": "h69",
+      "scale": 0.6
+    },
+    {
+      "id": "s69-89m20",
+      "labelKey": "i-89m20",
+      "bin": "h69",
+      "scale": 0.6
+    },
+    {
+      "id": "s88-22p66",
+      "labelKey": "i-22p66",
+      "bin": "h88",
+      "scale": 0.6
+    },
+    {
+      "id": "s88-31p57",
+      "labelKey": "i-31p57",
+      "bin": "h88",
+      "scale": 0.6
+    },
+    {
+      "id": "s88-99m11",
+      "labelKey": "i-99m11",
+      "bin": "h88",
+      "scale": 0.6
+    },
+    {
+      "id": "s57-14p43",
+      "labelKey": "i-14p43",
+      "bin": "h57",
+      "scale": 0.6
+    },
+    {
+      "id": "s57-15p42",
+      "labelKey": "i-15p42",
+      "bin": "h57",
+      "scale": 0.6
+    },
+    {
+      "id": "s57-88m31",
+      "labelKey": "i-88m31",
+      "bin": "h57",
+      "scale": 0.6
+    }
+  ]
+}

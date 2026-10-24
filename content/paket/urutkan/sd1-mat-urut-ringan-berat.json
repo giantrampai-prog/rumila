@@ -1,0 +1,420 @@
+{
+  "id": "sd1-mat-urut-ringan-berat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.UKUR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dari Ringan ke Berat",
+      "instruksi": "Bayangkan mengangkat tiap benda. Susun dari yang paling ringan ke yang paling berat.",
+      "s-bulu": "bulu",
+      "s-pensil": "pensil",
+      "s-buku": "buku",
+      "s-kucing": "kucing",
+      "j-paling-ringan-ke-paling-berat": "Paling ringan ke paling berat",
+      "s-sepeda": "sepeda",
+      "s-gajah": "gajah",
+      "s-semangka": "semangka",
+      "s-daun": "daun",
+      "s-balon": "balon",
+      "s-motor": "motor",
+      "s-batu-besar": "batu besar"
+    },
+    "en": {
+      "judul": "From Light to Heavy",
+      "instruksi": "Imagine lifting each one. Put them in order from lightest to heaviest.",
+      "s-bulu": "feather",
+      "s-pensil": "pencil",
+      "s-buku": "book",
+      "s-kucing": "cat",
+      "j-paling-ringan-ke-paling-berat": "Lightest to heaviest",
+      "s-sepeda": "bicycle",
+      "s-gajah": "elephant",
+      "s-semangka": "watermelon",
+      "s-daun": "leaf",
+      "s-balon": "balloon",
+      "s-motor": "motorbike",
+      "s-batu-besar": "big rock"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah benda: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "berat-1",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "bulu",
+          "labelKey": "s-bulu",
+          "emoji": "🪶",
+          "scale": 1.4
+        },
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "buku",
+          "labelKey": "s-buku",
+          "emoji": "📘",
+          "scale": 1.0
+        },
+        {
+          "id": "kucing",
+          "labelKey": "s-kucing",
+          "emoji": "🐈",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-2",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "bulu",
+          "labelKey": "s-bulu",
+          "emoji": "🪶",
+          "scale": 1.4
+        },
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        },
+        {
+          "id": "gajah",
+          "labelKey": "s-gajah",
+          "emoji": "🐘",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "berat-3",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "bulu",
+          "labelKey": "s-bulu",
+          "emoji": "🪶",
+          "scale": 1.4
+        },
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "semangka",
+          "labelKey": "s-semangka",
+          "emoji": "🍉",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-4",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "bulu",
+          "labelKey": "s-bulu",
+          "emoji": "🪶",
+          "scale": 1.4
+        },
+        {
+          "id": "semangka",
+          "labelKey": "s-semangka",
+          "emoji": "🍉",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        },
+        {
+          "id": "gajah",
+          "labelKey": "s-gajah",
+          "emoji": "🐘",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "berat-5",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "daun",
+          "labelKey": "s-daun",
+          "emoji": "🍃",
+          "scale": 1.0
+        },
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "kucing",
+          "labelKey": "s-kucing",
+          "emoji": "🐈",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-6",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "balon",
+          "labelKey": "s-balon",
+          "emoji": "🎈",
+          "scale": 1.6
+        },
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        },
+        {
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-7",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "batu-besar",
+          "labelKey": "s-batu-besar",
+          "emoji": "🪨",
+          "scale": 0.7
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        },
+        {
+          "id": "gajah",
+          "labelKey": "s-gajah",
+          "emoji": "🐘",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "berat-8",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "buku",
+          "labelKey": "s-buku",
+          "emoji": "📘",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        },
+        {
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-9",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "bulu",
+          "labelKey": "s-bulu",
+          "emoji": "🪶",
+          "scale": 1.4
+        },
+        {
+          "id": "buku",
+          "labelKey": "s-buku",
+          "emoji": "📘",
+          "scale": 1.0
+        },
+        {
+          "id": "semangka",
+          "labelKey": "s-semangka",
+          "emoji": "🍉",
+          "scale": 1.0
+        },
+        {
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-10",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "daun",
+          "labelKey": "s-daun",
+          "emoji": "🍃",
+          "scale": 1.0
+        },
+        {
+          "id": "pensil",
+          "labelKey": "s-pensil",
+          "emoji": "✏️",
+          "scale": 1.0
+        },
+        {
+          "id": "kucing",
+          "labelKey": "s-kucing",
+          "emoji": "🐈",
+          "scale": 1.0
+        },
+        {
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "berat-11",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "buku",
+          "labelKey": "s-buku",
+          "emoji": "📘",
+          "scale": 1.0
+        },
+        {
+          "id": "semangka",
+          "labelKey": "s-semangka",
+          "emoji": "🍉",
+          "scale": 1.0
+        },
+        {
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
+          "scale": 1.0
+        },
+        {
+          "id": "gajah",
+          "labelKey": "s-gajah",
+          "emoji": "🐘",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "berat-12",
+      "titleKey": "j-paling-ringan-ke-paling-berat",
+      "steps": [
+        {
+          "id": "daun",
+          "labelKey": "s-daun",
+          "emoji": "🍃",
+          "scale": 1.0
+        },
+        {
+          "id": "kucing",
+          "labelKey": "s-kucing",
+          "emoji": "🐈",
+          "scale": 1.0
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "s-sepeda",
+          "emoji": "🚲",
+          "scale": 1.0
+        },
+        {
+          "id": "motor",
+          "labelKey": "s-motor",
+          "emoji": "🛵",
+          "scale": 1.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "id": "sd6-mat-jenis-segi-empat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Detektif Segi Empat",
+      "instruksi": "Baca petunjuk sifatnya, lalu sentuh segi empat yang cocok.",
+      "q1": "4 sisi sama panjang dan 4 sudut siku-siku.",
+      "c1": "persegi",
+      "c2": "belah ketupat",
+      "c3": "persegi panjang",
+      "c4": "layang-layang",
+      "q2": "4 sisi sama panjang, tetapi sudutnya tidak siku-siku.",
+      "c5": "jajargenjang",
+      "c6": "trapesium",
+      "q3": "4 sudut siku-siku, sisi berhadapan sama panjang, tetapi tidak semua sisi sama.",
+      "q4": "Hanya sepasang sisi yang sejajar.",
+      "q5": "Dua pasang sisi sejajar, tidak ada sudut siku-siku, dan sisi tidak semua sama.",
+      "q6": "Dua pasang sisi berdampingan sama panjang dan tidak ada sisi yang sejajar.",
+      "q7": "Diagonalnya sama panjang dan berpotongan tegak lurus di tengah.",
+      "q8": "Diagonalnya sama panjang tetapi tidak tegak lurus.",
+      "q9": "Memiliki 4 garis simetri.",
+      "q10": "Hanya 1 garis simetri dan diagonalnya tegak lurus.",
+      "q11": "Tidak punya garis simetri, tetapi punya dua pasang sisi sejajar.",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Quadrilateral Detective",
+      "instruksi": "Read the clues about its properties, then touch the matching quadrilateral.",
+      "q1": "4 equal sides and 4 right angles.",
+      "c1": "square",
+      "c2": "rhombus",
+      "c3": "rectangle",
+      "c4": "kite",
+      "q2": "4 equal sides, but no right angles.",
+      "c5": "parallelogram",
+      "c6": "trapezium",
+      "q3": "4 right angles, opposite sides equal, but not all sides equal.",
+      "q4": "Exactly one pair of parallel sides.",
+      "q5": "Two pairs of parallel sides, no right angles, and not all sides equal.",
+      "q6": "Two pairs of equal adjacent sides and no parallel sides.",
+      "q7": "Its diagonals are equal and cross at right angles in the middle.",
+      "q8": "Its diagonals are equal but not perpendicular.",
+      "q9": "It has 4 lines of symmetry.",
+      "q10": "Only 1 line of symmetry, and its diagonals are perpendicular.",
+      "q11": "No lines of symmetry, but two pairs of parallel sides.",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.55
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c1",
+        "c5",
+        "c6"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c1",
+        "c5",
+        "c2"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c5",
+        "c3",
+        "c4"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c5",
+        "c2",
+        "c3",
+        "c6"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c4",
+        "c2",
+        "c6",
+        "c5"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c1",
+        "c3",
+        "c2",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c3",
+        "c1",
+        "c2",
+        "c4"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c1",
+        "c3",
+        "c2",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c4",
+        "c2",
+        "c6",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c5",
+        "c3",
+        "c2",
+        "c6"
+      ],
+      "correct": "c5"
+    }
+  ]
+}

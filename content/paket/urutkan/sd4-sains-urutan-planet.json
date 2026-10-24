@@ -1,0 +1,114 @@
+{
+  "id": "sd4-sains-urutan-planet",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.BUMI-ANTARIKSA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Antre Planet",
+      "instruksi": "Susun planet dari yang paling dekat dengan Matahari sampai yang paling jauh.",
+      "s-planet": "Planet dari Matahari ke luar",
+      "planet-merkurius": "Merkurius",
+      "planet-venus": "Venus",
+      "planet-bumi": "Bumi",
+      "planet-mars": "Mars",
+      "planet-jupiter": "Jupiter",
+      "planet-saturnus": "Saturnus",
+      "planet-uranus": "Uranus",
+      "planet-neptunus": "Neptunus"
+    },
+    "en": {
+      "judul": "Planet Line-Up",
+      "instruksi": "Put the planets in order from closest to the Sun to farthest away.",
+      "s-planet": "Planets from the Sun outwards",
+      "planet-merkurius": "Mercury",
+      "planet-venus": "Venus",
+      "planet-bumi": "Earth",
+      "planet-mars": "Mars",
+      "planet-jupiter": "Jupiter",
+      "planet-saturnus": "Saturn",
+      "planet-uranus": "Uranus",
+      "planet-neptunus": "Neptune"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah planet dari Matahari: 4 (planet berbatu) → 8"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "planet",
+      "titleKey": "s-planet",
+      "steps": [
+        {
+          "id": "merkurius",
+          "labelKey": "planet-merkurius",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.5
+        },
+        {
+          "id": "venus",
+          "labelKey": "planet-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "bumi",
+          "labelKey": "planet-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "planet-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.6
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "planet-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2.0
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "planet-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "planet-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "planet-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    }
+  ]
+}

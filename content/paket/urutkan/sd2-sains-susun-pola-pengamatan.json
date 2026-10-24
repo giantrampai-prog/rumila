@@ -1,0 +1,227 @@
+{
+  "id": "sd2-sains-susun-pola-pengamatan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.PENGAMATAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pola Hasil Pengamatan",
+      "instruksi": "Susun dari pengamatan pertama sampai terakhir.",
+      "s-kecambah": "Kecambah tumbuh",
+      "kecambah-a": "biji baru retak",
+      "kecambah-b": "kecambah kecil muncul",
+      "kecambah-c": "kecambah berdaun dua",
+      "kecambah-d": "tanaman kecil berdaun banyak",
+      "s-es": "Es batu di atas piring",
+      "es-a": "es batu besar",
+      "es-b": "es mulai mencair",
+      "es-c": "es kecil di genangan air",
+      "es-d": "hanya air di piring",
+      "s-lilin": "Lilin menyala",
+      "lilin-a": "lilin baru, tinggi",
+      "lilin-b": "lilin lebih pendek",
+      "lilin-c": "lilin tinggal sedikit",
+      "s-genangan": "Genangan setelah hujan, hari cerah",
+      "genangan-a": "genangan lebar",
+      "genangan-b": "genangan mengecil",
+      "genangan-c": "tanah basah saja",
+      "genangan-d": "tanah kering",
+      "s-pisang": "Pisang di meja",
+      "pisang-a": "pisang hijau",
+      "pisang-b": "pisang kuning",
+      "pisang-c": "pisang berbintik cokelat",
+      "pisang-d": "pisang cokelat lembek"
+    },
+    "en": {
+      "judul": "Patterns in Observations",
+      "instruksi": "Put them in order from the first observation to the last.",
+      "s-kecambah": "A sprout grows",
+      "kecambah-a": "seed just cracking",
+      "kecambah-b": "tiny sprout appears",
+      "kecambah-c": "sprout with two leaves",
+      "kecambah-d": "small plant with many leaves",
+      "s-es": "An ice cube on a plate",
+      "es-a": "big ice cube",
+      "es-b": "ice starting to melt",
+      "es-c": "small ice in a puddle",
+      "es-d": "just water on the plate",
+      "s-lilin": "A burning candle",
+      "lilin-a": "new tall candle",
+      "lilin-b": "shorter candle",
+      "lilin-c": "candle almost gone",
+      "s-genangan": "A puddle after rain, sunny day",
+      "genangan-a": "wide puddle",
+      "genangan-b": "puddle shrinking",
+      "genangan-c": "just damp ground",
+      "genangan-d": "dry ground",
+      "s-pisang": "A banana on the table",
+      "pisang-a": "green banana",
+      "pisang-b": "yellow banana",
+      "pisang-c": "banana with brown spots",
+      "pisang-d": "soft brown banana"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah pengamatan: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "kecambah",
+      "titleKey": "s-kecambah",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "kecambah-a",
+          "emoji": "🫘",
+          "scale": 0.6
+        },
+        {
+          "id": "b",
+          "labelKey": "kecambah-b",
+          "emoji": "🌱",
+          "scale": 0.7
+        },
+        {
+          "id": "c",
+          "labelKey": "kecambah-c",
+          "emoji": "🌱",
+          "scale": 1.0
+        },
+        {
+          "id": "d",
+          "labelKey": "kecambah-d",
+          "emoji": "🪴",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "es",
+      "titleKey": "s-es",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "es-a",
+          "emoji": "🧊",
+          "scale": 1.4
+        },
+        {
+          "id": "b",
+          "labelKey": "es-b",
+          "emoji": "🧊",
+          "scale": 1.0
+        },
+        {
+          "id": "c",
+          "labelKey": "es-c",
+          "emoji": "🧊",
+          "scale": 0.6
+        },
+        {
+          "id": "d",
+          "labelKey": "es-d",
+          "emoji": "💧",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "lilin",
+      "titleKey": "s-lilin",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "lilin-a",
+          "emoji": "🕯️",
+          "scale": 1.4
+        },
+        {
+          "id": "b",
+          "labelKey": "lilin-b",
+          "emoji": "🕯️",
+          "scale": 1.0
+        },
+        {
+          "id": "c",
+          "labelKey": "lilin-c",
+          "emoji": "🕯️",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "genangan",
+      "titleKey": "s-genangan",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "genangan-a",
+          "emoji": "💧",
+          "scale": 1.5
+        },
+        {
+          "id": "b",
+          "labelKey": "genangan-b",
+          "emoji": "💧",
+          "scale": 1.0
+        },
+        {
+          "id": "c",
+          "labelKey": "genangan-c",
+          "emoji": "🟫",
+          "scale": 0.8
+        },
+        {
+          "id": "d",
+          "labelKey": "genangan-d",
+          "emoji": "🟤",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "pisang",
+      "titleKey": "s-pisang",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "pisang-a",
+          "emoji": "🍌",
+          "color": "#9ccc65"
+        },
+        {
+          "id": "b",
+          "labelKey": "pisang-b",
+          "emoji": "🍌"
+        },
+        {
+          "id": "c",
+          "labelKey": "pisang-c",
+          "emoji": "🍌",
+          "color": "#d4a017"
+        },
+        {
+          "id": "d",
+          "labelKey": "pisang-d",
+          "emoji": "🍌",
+          "color": "#6d4c41"
+        }
+      ]
+    }
+  ]
+}

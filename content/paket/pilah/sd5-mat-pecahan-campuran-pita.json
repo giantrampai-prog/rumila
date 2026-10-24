@@ -1,0 +1,146 @@
+{
+  "id": "sd5-mat-pecahan-campuran-pita",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gulungan Pita Campuran",
+      "instruksi": "Berapa utuh, sisa berapa bagian? Taruh tiap pecahan tidak wajar di rak pecahan campurannya.",
+      "b-duasetengah": "2½",
+      "b-satuseperempat": "1¼",
+      "b-duaduapertiga": "2⅔",
+      "b-satutigaperempat": "1¾",
+      "b-tigaseperlima": "3⅕",
+      "i1": "5/2",
+      "i2": "10/4",
+      "i3": "5/4",
+      "i4": "10/8",
+      "i5": "8/3",
+      "i6": "16/6",
+      "i7": "7/4",
+      "i8": "14/8",
+      "i9": "16/5",
+      "i10": "32/10"
+    },
+    "en": {
+      "judul": "Mixed Number Ribbons",
+      "instruksi": "How many wholes, and how many parts left? Put each improper fraction on its mixed number shelf.",
+      "b-duasetengah": "2½",
+      "b-satuseperempat": "1¼",
+      "b-duaduapertiga": "2⅔",
+      "b-satutigaperempat": "1¾",
+      "b-tigaseperlima": "3⅕",
+      "i1": "5/2",
+      "i2": "10/4",
+      "i3": "5/4",
+      "i4": "10/8",
+      "i5": "8/3",
+      "i6": "16/6",
+      "i7": "7/4",
+      "i8": "14/8",
+      "i9": "16/5",
+      "i10": "32/10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 5"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kain",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "duasetengah",
+      "labelKey": "b-duasetengah"
+    },
+    {
+      "id": "satuseperempat",
+      "labelKey": "b-satuseperempat"
+    },
+    {
+      "id": "duaduapertiga",
+      "labelKey": "b-duaduapertiga"
+    },
+    {
+      "id": "satutigaperempat",
+      "labelKey": "b-satutigaperempat"
+    },
+    {
+      "id": "tigaseperlima",
+      "labelKey": "b-tigaseperlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "duasetengah"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "duasetengah"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "satuseperempat"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "satuseperempat"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "duaduapertiga"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "duaduapertiga"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "satutigaperempat"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "satutigaperempat"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tigaseperlima"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tigaseperlima"
+    }
+  ]
+}

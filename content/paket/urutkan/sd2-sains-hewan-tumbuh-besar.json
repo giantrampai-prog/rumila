@@ -1,0 +1,276 @@
+{
+  "id": "sd2-sains-hewan-tumbuh-besar",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.TUMBUH-BESAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dari Bayi Jadi Dewasa",
+      "instruksi": "Susun hewan dari yang paling muda sampai dewasa.",
+      "s-kucing": "Kucing tumbuh besar",
+      "kucing-bayi": "anak kucing baru lahir, mata tertutup",
+      "kucing-kecil": "anak kucing mulai berlari",
+      "kucing-muda": "kucing muda, kaki panjang",
+      "kucing-dewasa": "kucing dewasa",
+      "s-ayam": "Ayam tumbuh besar",
+      "ayam-bayi": "anak ayam berbulu halus",
+      "ayam-kecil": "ayam kecil, bulu sayap tumbuh",
+      "ayam-muda": "ayam muda, jengger mulai tumbuh",
+      "ayam-dewasa": "ayam jantan berjengger besar",
+      "s-kambing": "Kambing tumbuh besar",
+      "kambing-bayi": "anak kambing menyusu",
+      "kambing-kecil": "anak kambing makan rumput",
+      "kambing-muda": "kambing muda, tanduk kecil",
+      "kambing-dewasa": "kambing dewasa, tanduk panjang",
+      "s-bebek": "Bebek tumbuh besar",
+      "bebek-bayi": "anak bebek kuning",
+      "bebek-kecil": "bebek kecil belajar berenang",
+      "bebek-muda": "bebek muda, bulu putih tumbuh",
+      "bebek-dewasa": "bebek dewasa",
+      "s-anjing": "Anjing tumbuh besar",
+      "anjing-bayi": "anak anjing baru lahir",
+      "anjing-kecil": "anak anjing bermain bola",
+      "anjing-muda": "anjing muda, telinga tegak",
+      "anjing-dewasa": "anjing dewasa menjaga rumah",
+      "s-sapi": "Sapi tumbuh besar",
+      "sapi-bayi": "anak sapi baru berdiri",
+      "sapi-kecil": "anak sapi menyusu",
+      "sapi-muda": "sapi muda makan rumput",
+      "sapi-dewasa": "sapi dewasa"
+    },
+    "en": {
+      "judul": "From Baby to Grown-Up",
+      "instruksi": "Put the animal in order from youngest to grown-up.",
+      "s-kucing": "A cat grows up",
+      "kucing-bayi": "newborn kitten, eyes closed",
+      "kucing-kecil": "kitten starting to run",
+      "kucing-muda": "young cat with long legs",
+      "kucing-dewasa": "grown-up cat",
+      "s-ayam": "A chicken grows up",
+      "ayam-bayi": "fluffy chick",
+      "ayam-kecil": "small chicken growing wing feathers",
+      "ayam-muda": "young chicken, comb starting to grow",
+      "ayam-dewasa": "rooster with a big comb",
+      "s-kambing": "A goat grows up",
+      "kambing-bayi": "baby goat drinking milk",
+      "kambing-kecil": "young kid eating grass",
+      "kambing-muda": "young goat with small horns",
+      "kambing-dewasa": "adult goat with long horns",
+      "s-bebek": "A duck grows up",
+      "bebek-bayi": "yellow duckling",
+      "bebek-kecil": "small duck learning to swim",
+      "bebek-muda": "young duck growing white feathers",
+      "bebek-dewasa": "adult duck",
+      "s-anjing": "A dog grows up",
+      "anjing-bayi": "newborn puppy",
+      "anjing-kecil": "puppy playing with a ball",
+      "anjing-muda": "young dog, ears standing up",
+      "anjing-dewasa": "adult dog guarding the house",
+      "s-sapi": "A cow grows up",
+      "sapi-bayi": "newborn calf just standing",
+      "sapi-kecil": "calf drinking milk",
+      "sapi-muda": "young cow eating grass",
+      "sapi-dewasa": "adult cow"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah tahap: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "kucing",
+      "titleKey": "s-kucing",
+      "steps": [
+        {
+          "id": "bayi",
+          "labelKey": "kucing-bayi",
+          "emoji": "🐱",
+          "scale": 0.6
+        },
+        {
+          "id": "kecil",
+          "labelKey": "kucing-kecil",
+          "emoji": "🐱",
+          "scale": 0.85
+        },
+        {
+          "id": "muda",
+          "labelKey": "kucing-muda",
+          "emoji": "🐈",
+          "scale": 1.05
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "kucing-dewasa",
+          "emoji": "🐈",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "ayam",
+      "titleKey": "s-ayam",
+      "steps": [
+        {
+          "id": "bayi",
+          "labelKey": "ayam-bayi",
+          "emoji": "🐥",
+          "scale": 0.6
+        },
+        {
+          "id": "kecil",
+          "labelKey": "ayam-kecil",
+          "emoji": "🐤",
+          "scale": 0.85
+        },
+        {
+          "id": "muda",
+          "labelKey": "ayam-muda",
+          "emoji": "🐔",
+          "scale": 1.0
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "ayam-dewasa",
+          "emoji": "🐓",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "kambing",
+      "titleKey": "s-kambing",
+      "steps": [
+        {
+          "id": "bayi",
+          "labelKey": "kambing-bayi",
+          "emoji": "🐐",
+          "scale": 0.6
+        },
+        {
+          "id": "kecil",
+          "labelKey": "kambing-kecil",
+          "emoji": "🐐",
+          "scale": 0.85
+        },
+        {
+          "id": "muda",
+          "labelKey": "kambing-muda",
+          "emoji": "🐐",
+          "scale": 1.05
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "kambing-dewasa",
+          "emoji": "🐐",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "bebek",
+      "titleKey": "s-bebek",
+      "steps": [
+        {
+          "id": "bayi",
+          "labelKey": "bebek-bayi",
+          "emoji": "🐤",
+          "scale": 0.6
+        },
+        {
+          "id": "kecil",
+          "labelKey": "bebek-kecil",
+          "emoji": "🦆",
+          "scale": 0.8
+        },
+        {
+          "id": "muda",
+          "labelKey": "bebek-muda",
+          "emoji": "🦆",
+          "scale": 1.0
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "bebek-dewasa",
+          "emoji": "🦆",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "anjing",
+      "titleKey": "s-anjing",
+      "steps": [
+        {
+          "id": "bayi",
+          "labelKey": "anjing-bayi",
+          "emoji": "🐶",
+          "scale": 0.6
+        },
+        {
+          "id": "kecil",
+          "labelKey": "anjing-kecil",
+          "emoji": "🐶",
+          "scale": 0.85
+        },
+        {
+          "id": "muda",
+          "labelKey": "anjing-muda",
+          "emoji": "🐕",
+          "scale": 1.05
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "anjing-dewasa",
+          "emoji": "🐕",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "sapi",
+      "titleKey": "s-sapi",
+      "steps": [
+        {
+          "id": "bayi",
+          "labelKey": "sapi-bayi",
+          "emoji": "🐮",
+          "scale": 0.6
+        },
+        {
+          "id": "kecil",
+          "labelKey": "sapi-kecil",
+          "emoji": "🐮",
+          "scale": 0.85
+        },
+        {
+          "id": "muda",
+          "labelKey": "sapi-muda",
+          "emoji": "🐄",
+          "scale": 1.05
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "sapi-dewasa",
+          "emoji": "🐄",
+          "scale": 1.3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "sd2-kode-tahap-game-mini",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD2.DEKOMPOSISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Empat Tahap Membuat Game",
+      "instruksi": "Membuat game mini itu tugas besar: taruh tiap langkah kecil ke tahapnya.",
+      "bin-rancang": "rancang",
+      "bin-buat": "buat",
+      "bin-uji": "uji",
+      "bin-perbaiki": "perbaiki",
+      "i-sketch-the-character-on-paper": "gambar sketsa tokoh di kertas",
+      "i-decide-the-goal-of-the-game": "tentukan tujuan game",
+      "i-write-the-rules": "tulis aturan main",
+      "i-snap-blocks-so-the-character-moves": "susun blok supaya tokoh bergerak",
+      "i-add-a-jump-sound": "tambahkan suara lompat",
+      "i-play-the-game-to-the-end": "mainkan game sampai selesai",
+      "i-ask-a-friend-to-try-it": "minta teman mencoba",
+      "i-change-the-wrong-block": "ganti blok yang salah",
+      "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat"
+    },
+    "en": {
+      "judul": "Four Stages of Making a Game",
+      "instruksi": "Making a mini game is a big job: put each small step into its stage.",
+      "bin-rancang": "plan",
+      "bin-buat": "build",
+      "bin-uji": "test",
+      "bin-perbaiki": "fix",
+      "i-sketch-the-character-on-paper": "sketch the character on paper",
+      "i-decide-the-goal-of-the-game": "decide the goal of the game",
+      "i-write-the-rules": "write the rules",
+      "i-snap-blocks-so-the-character-moves": "snap blocks so the character moves",
+      "i-add-a-jump-sound": "add a jump sound",
+      "i-play-the-game-to-the-end": "play the game to the end",
+      "i-ask-a-friend-to-try-it": "ask a friend to try it",
+      "i-change-the-wrong-block": "change the wrong block",
+      "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tahap aktif; 4 tahap adalah bentuk utuhnya"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah langkah kecil per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "rancang",
+      "labelKey": "bin-rancang",
+      "emoji": "✏️"
+    },
+    {
+      "id": "buat",
+      "labelKey": "bin-buat",
+      "emoji": "🧩"
+    },
+    {
+      "id": "uji",
+      "labelKey": "bin-uji",
+      "emoji": "🎮"
+    },
+    {
+      "id": "perbaiki",
+      "labelKey": "bin-perbaiki",
+      "emoji": "🔧"
+    }
+  ],
+  "items": [
+    {
+      "id": "sketch-the-character-on-paper",
+      "labelKey": "i-sketch-the-character-on-paper",
+      "bin": "rancang",
+      "emoji": "📝"
+    },
+    {
+      "id": "decide-the-goal-of-the-game",
+      "labelKey": "i-decide-the-goal-of-the-game",
+      "bin": "rancang",
+      "emoji": "🎯"
+    },
+    {
+      "id": "write-the-rules",
+      "labelKey": "i-write-the-rules",
+      "bin": "rancang",
+      "emoji": "📋"
+    },
+    {
+      "id": "snap-blocks-so-the-character-moves",
+      "labelKey": "i-snap-blocks-so-the-character-moves",
+      "bin": "buat",
+      "emoji": "🧱"
+    },
+    {
+      "id": "add-a-jump-sound",
+      "labelKey": "i-add-a-jump-sound",
+      "bin": "buat",
+      "emoji": "🔊"
+    },
+    {
+      "id": "play-the-game-to-the-end",
+      "labelKey": "i-play-the-game-to-the-end",
+      "bin": "uji",
+      "emoji": "▶️"
+    },
+    {
+      "id": "ask-a-friend-to-try-it",
+      "labelKey": "i-ask-a-friend-to-try-it",
+      "bin": "uji",
+      "emoji": "👫"
+    },
+    {
+      "id": "change-the-wrong-block",
+      "labelKey": "i-change-the-wrong-block",
+      "bin": "perbaiki",
+      "emoji": "🛠️"
+    },
+    {
+      "id": "slow-down-a-character-that-is-too-fast",
+      "labelKey": "i-slow-down-a-character-that-is-too-fast",
+      "bin": "perbaiki",
+      "emoji": "🐢"
+    }
+  ]
+}

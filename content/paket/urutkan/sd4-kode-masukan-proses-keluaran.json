@@ -1,0 +1,252 @@
+{
+  "id": "sd4-kode-masukan-proses-keluaran",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD4.IPO.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Masukan, Proses, Keluaran",
+      "instruksi": "Susun baris program supaya berjalan benar: minta masukan dulu, olah, lalu tampilkan hasilnya.",
+      "s1": "Kalkulator tambah",
+      "s1-1": "minta angka pertama",
+      "s1-2": "minta angka kedua",
+      "s1-3": "hasil = pertama + kedua",
+      "s1-4": "tampilkan hasil",
+      "s2": "Kuis satu soal",
+      "s2-1": "tampilkan soal 3 + 4 = ?",
+      "s2-2": "minta jawaban",
+      "s2-3": "kalau jawaban 7, skor = skor + 1",
+      "s2-4": "tampilkan skor",
+      "s3": "Pengubah suhu",
+      "s3-1": "c = suhu °C dari pengguna",
+      "s3-2": "f = c * 9 / 5",
+      "s3-3": "f = f + 32",
+      "s3-4": "tampilkan f dalam °F",
+      "s4": "Sapa pengguna",
+      "s4-1": "tampilkan 'Siapa namamu?'",
+      "s4-2": "nama = jawaban pengguna",
+      "s4-3": "sapa = 'Halo, ' + nama",
+      "s4-4": "tampilkan sapa",
+      "s5": "Luas persegi",
+      "s5-1": "tampilkan 'Panjang sisi?'",
+      "s5-2": "sisi = angka dari pengguna",
+      "s5-3": "luas = sisi * sisi",
+      "s5-4": "tampilkan luas",
+      "s6": "Rata-rata tiga nilai",
+      "s6-1": "minta nilai n1, n2, n3",
+      "s6-2": "jumlah = n1 + n2 + n3",
+      "s6-3": "rata = jumlah / 3",
+      "s6-4": "tampilkan rata"
+    },
+    "en": {
+      "judul": "Input, Process, Output",
+      "instruksi": "Put the program lines in an order that works: ask for input first, process it, then show the result.",
+      "s1": "Adding calculator",
+      "s1-1": "ask for the first number",
+      "s1-2": "ask for the second number",
+      "s1-3": "result = first + second",
+      "s1-4": "show result",
+      "s2": "One-question quiz",
+      "s2-1": "show the question 3 + 4 = ?",
+      "s2-2": "ask for the answer",
+      "s2-3": "if answer is 7, score = score + 1",
+      "s2-4": "show score",
+      "s3": "Temperature converter",
+      "s3-1": "c = temperature in °C from the user",
+      "s3-2": "f = c * 9 / 5",
+      "s3-3": "f = f + 32",
+      "s3-4": "show f in °F",
+      "s4": "Greet the user",
+      "s4-1": "show 'What is your name?'",
+      "s4-2": "name = the user's answer",
+      "s4-3": "greeting = 'Hello, ' + name",
+      "s4-4": "show greeting",
+      "s5": "Area of a square",
+      "s5-1": "show 'Side length?'",
+      "s5-2": "side = number from the user",
+      "s5-3": "area = side * side",
+      "s5-4": "show area",
+      "s6": "Mean of three marks",
+      "s6-1": "ask for marks m1, m2, m3",
+      "s6-2": "total = m1 + m2 + m3",
+      "s6-3": "mean = total / 3",
+      "s6-4": "show mean"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "selalu 4 baris supaya baris keluaran tidak terpotong; variasi dari 6 program × acakan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "s1",
+      "titleKey": "s1",
+      "steps": [
+        {
+          "id": "s1-1",
+          "labelKey": "s1-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-2",
+          "labelKey": "s1-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-3",
+          "labelKey": "s1-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-4",
+          "labelKey": "s1-4",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "titleKey": "s2",
+      "steps": [
+        {
+          "id": "s2-1",
+          "labelKey": "s2-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-2",
+          "labelKey": "s2-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-3",
+          "labelKey": "s2-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-4",
+          "labelKey": "s2-4",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "titleKey": "s3",
+      "steps": [
+        {
+          "id": "s3-1",
+          "labelKey": "s3-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-2",
+          "labelKey": "s3-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-3",
+          "labelKey": "s3-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-4",
+          "labelKey": "s3-4",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "titleKey": "s4",
+      "steps": [
+        {
+          "id": "s4-1",
+          "labelKey": "s4-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-2",
+          "labelKey": "s4-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-3",
+          "labelKey": "s4-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-4",
+          "labelKey": "s4-4",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "titleKey": "s5",
+      "steps": [
+        {
+          "id": "s5-1",
+          "labelKey": "s5-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-2",
+          "labelKey": "s5-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-3",
+          "labelKey": "s5-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-4",
+          "labelKey": "s5-4",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-1",
+          "labelKey": "s6-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-2",
+          "labelKey": "s6-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-3",
+          "labelKey": "s6-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-4",
+          "labelKey": "s6-4",
+          "scale": 0.4
+        }
+      ]
+    }
+  ]
+}

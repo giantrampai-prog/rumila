@@ -1,0 +1,151 @@
+{
+  "id": "sd6-sains-pantul-atau-bias",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Memantul atau Membelok?",
+      "instruksi": "Pilah tiap kejadian: cahaya memantul, atau cahaya membelok saat masuk benda bening.",
+      "b-pantul": "pemantulan: cahaya memantul balik",
+      "b-bias": "pembiasan: cahaya membelok di benda bening",
+      "i-cermin": "wajah terlihat di cermin",
+      "i-spion": "melihat jalan di belakang lewat spion motor",
+      "i-danau": "bayangan gunung di permukaan danau yang tenang",
+      "i-periskop": "mengintip lewat periskop dua cermin",
+      "i-sendok": "wajah tampak terbalik di sendok mengkilap",
+      "i-senter": "sinar senter diarahkan cermin ke dinding",
+      "i-pensil": "pensil tampak patah di gelas berisi air",
+      "i-kolam": "dasar kolam tampak lebih dangkal",
+      "i-lup": "kaca pembesar memperbesar huruf",
+      "i-kacamata": "kacamata membantu membaca",
+      "i-prisma": "prisma kaca memecah cahaya jadi pelangi",
+      "i-koin": "koin di dasar cangkir terlihat setelah cangkir diisi air"
+    },
+    "en": {
+      "judul": "Bounce or Bend?",
+      "instruksi": "Sort each sight: light bounces off, or light bends as it passes into something clear.",
+      "b-pantul": "reflection: light bounces back",
+      "b-bias": "refraction: light bends in something clear",
+      "i-cermin": "seeing your face in a mirror",
+      "i-spion": "seeing the road behind in a motorbike mirror",
+      "i-danau": "a mountain reflected on a still lake",
+      "i-periskop": "peeking through a two-mirror periscope",
+      "i-sendok": "your face upside down in a shiny spoon",
+      "i-senter": "a torch beam bounced onto the wall with a mirror",
+      "i-pensil": "a pencil looks bent in a glass of water",
+      "i-kolam": "the bottom of a pool looks shallower",
+      "i-lup": "a magnifying glass makes letters bigger",
+      "i-kacamata": "glasses help someone read",
+      "i-prisma": "a glass prism splits light into a rainbow",
+      "i-koin": "a coin in a cup comes into view when water is poured in"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kolam",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pantul",
+      "labelKey": "b-pantul",
+      "emoji": "🪞",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "bias",
+      "labelKey": "b-bias",
+      "emoji": "🔍",
+      "color": "#f3e5f5"
+    }
+  ],
+  "items": [
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "pantul",
+      "emoji": "🪞"
+    },
+    {
+      "id": "spion",
+      "labelKey": "i-spion",
+      "bin": "pantul",
+      "emoji": "🛵"
+    },
+    {
+      "id": "danau",
+      "labelKey": "i-danau",
+      "bin": "pantul",
+      "emoji": "🏞️"
+    },
+    {
+      "id": "periskop",
+      "labelKey": "i-periskop",
+      "bin": "pantul",
+      "emoji": "🔭"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "pantul",
+      "emoji": "🥄"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "pantul",
+      "emoji": "🔦"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "bias",
+      "emoji": "✏️"
+    },
+    {
+      "id": "kolam",
+      "labelKey": "i-kolam",
+      "bin": "bias",
+      "emoji": "🏊"
+    },
+    {
+      "id": "lup",
+      "labelKey": "i-lup",
+      "bin": "bias",
+      "emoji": "🔍"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "bin": "bias",
+      "emoji": "👓"
+    },
+    {
+      "id": "prisma",
+      "labelKey": "i-prisma",
+      "bin": "bias",
+      "emoji": "🌈"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "bias",
+      "emoji": "🪙"
+    }
+  ],
+  "pilihan": []
+}

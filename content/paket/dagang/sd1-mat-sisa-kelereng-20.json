@@ -1,0 +1,65 @@
+{
+  "id": "sd1-mat-sisa-kelereng-20",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kelereng yang Tersisa",
+      "instruksi": "Beberapa kelereng diambil lalu kotak ditutup. Taruh kelereng sebanyak yang masih tersisa.",
+      "g-kelereng": "kelereng",
+      "g-kancing": "kancing"
+    },
+    "en": {
+      "judul": "Marbles Left Over",
+      "instruksi": "Some marbles are taken and the box is closed. Put out as many marbles as are left.",
+      "g-kelereng": "marbles",
+      "g-kancing": "buttons"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 12,
+      "max": 20,
+      "default": 12,
+      "step": 2,
+      "keterangan": "jumlah awal paling banyak: 12 → 20"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "ruang-main",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "sisa",
+  "goods": [
+    {
+      "id": "kelereng",
+      "labelKey": "g-kelereng",
+      "price": 1000,
+      "emoji": "🔵"
+    },
+    {
+      "id": "kancing",
+      "labelKey": "g-kancing",
+      "price": 1000,
+      "emoji": "🟡"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 2,
+    "itemsMax": 20,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "target": 12
+  }
+}

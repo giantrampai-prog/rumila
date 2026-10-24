@@ -1,0 +1,208 @@
+{
+  "id": "sd4-mat-sudut-lancip-siku-tumpul",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Tiga Sudut",
+      "instruksi": "Pilah tiap sudut: lancip kurang dari 90°, siku-siku tepat 90°, tumpul lebih dari 90°. Pada jam, lihat sudut kecil antara dua jarum.",
+      "b-lancip": "lancip",
+      "b-siku": "siku-siku",
+      "b-tumpul": "tumpul",
+      "i1": "35°",
+      "i2": "60°",
+      "i3": "89°",
+      "i4": "15°",
+      "i5": "jam 1",
+      "i6": "jam 2",
+      "i7": "jam 10",
+      "i8": "jam 11",
+      "i9": "90°",
+      "i10": "jam 3",
+      "i11": "jam 9",
+      "i12": "¼ putar",
+      "i13": "91°",
+      "i14": "120°",
+      "i15": "150°",
+      "i16": "175°",
+      "i17": "jam 4",
+      "i18": "jam 5",
+      "i19": "jam 7",
+      "i20": "jam 8"
+    },
+    "en": {
+      "judul": "Three Angle Shelves",
+      "instruksi": "Sort each angle: acute is less than 90°, right is exactly 90°, obtuse is more than 90°. On a clock, look at the small angle between the hands.",
+      "b-lancip": "acute",
+      "b-siku": "right angle",
+      "b-tumpul": "obtuse",
+      "i1": "35°",
+      "i2": "60°",
+      "i3": "89°",
+      "i4": "15°",
+      "i5": "1 o'clock",
+      "i6": "2 o'clock",
+      "i7": "10 o'clock",
+      "i8": "11 o'clock",
+      "i9": "90°",
+      "i10": "3 o'clock",
+      "i11": "9 o'clock",
+      "i12": "¼ turn",
+      "i13": "91°",
+      "i14": "120°",
+      "i15": "150°",
+      "i16": "175°",
+      "i17": "4 o'clock",
+      "i18": "5 o'clock",
+      "i19": "7 o'clock",
+      "i20": "8 o'clock"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10; campuran derajat dan jam"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "lancip",
+      "labelKey": "b-lancip"
+    },
+    {
+      "id": "siku",
+      "labelKey": "b-siku"
+    },
+    {
+      "id": "tumpul",
+      "labelKey": "b-tumpul"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "lancip"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "lancip"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "lancip"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "lancip"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "lancip",
+      "emoji": "🕐"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "lancip",
+      "emoji": "🕑"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "lancip",
+      "emoji": "🕙"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "lancip",
+      "emoji": "🕚"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "siku"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "siku",
+      "emoji": "🕒"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "siku",
+      "emoji": "🕘"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "siku",
+      "scale": 0.7
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "tumpul",
+      "emoji": "🕓"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "tumpul",
+      "emoji": "🕔"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i19",
+      "bin": "tumpul",
+      "emoji": "🕖"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i20",
+      "bin": "tumpul",
+      "emoji": "🕗"
+    }
+  ]
+}

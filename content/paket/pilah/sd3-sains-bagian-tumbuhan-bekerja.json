@@ -1,0 +1,199 @@
+{
+  "id": "sd3-sains-bagian-tumbuhan-bekerja",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagian Mana yang Bekerja?",
+      "instruksi": "Baca kejadiannya, lalu sentuh bagian tumbuhan yang bekerja.",
+      "pilihan": "pilihan",
+      "i-akar": "akar",
+      "i-batang": "batang",
+      "i-daun": "daun",
+      "i-bunga": "bunga",
+      "t-serap": "Tanah di pot disiram. Bagian mana yang menyerap airnya?",
+      "t-angkut": "Air dari akar dibawa naik sampai ke daun. Lewat bagian mana?",
+      "t-makanan": "Tumbuhan membuat makanannya sendiri dengan cahaya Matahari. Di bagian mana?",
+      "t-lebah": "Lebah datang, lalu tumbuh buah dan biji. Bagian mana yang didatangi lebah?",
+      "t-angin": "Angin kencang bertiup, tetapi pohon tidak roboh. Bagian mana yang mencengkeram tanah?",
+      "t-seledri": "Seledri ditaruh di air berwarna merah. Besoknya daunnya kemerahan. Warnanya naik lewat mana?",
+      "t-gelap": "Tanaman disimpan di lemari gelap seminggu. Bagian mana yang menguning karena tidak bisa membuat makanan?",
+      "t-biji": "Bagian mana yang nanti berubah menjadi buah dan biji?",
+      "t-siramdaun": "Tanaman layu hanya disemprot daunnya, tanahnya tetap kering. Bagian mana yang sebenarnya butuh air?",
+      "t-tegak": "Bunga matahari tetap berdiri tegak menghadap cahaya. Bagian mana yang menopangnya?"
+    },
+    "en": {
+      "judul": "Which Part Is Working?",
+      "instruksi": "Read what happens, then touch the plant part that is doing the work.",
+      "pilihan": "choices",
+      "i-akar": "roots",
+      "i-batang": "stem",
+      "i-daun": "leaves",
+      "i-bunga": "flower",
+      "t-serap": "The soil in the pot is watered. Which part takes in the water?",
+      "t-angkut": "Water from the roots travels up to the leaves. Through which part?",
+      "t-makanan": "A plant makes its own food using sunlight. In which part?",
+      "t-lebah": "Bees visit, then fruit and seeds grow. Which part do the bees visit?",
+      "t-angin": "A strong wind blows, but the tree doesn't fall. Which part grips the soil?",
+      "t-seledri": "Celery stands in red water. Next day its leaves are reddish. Which part did the colour travel up?",
+      "t-gelap": "A plant is kept in a dark cupboard for a week. Which part turns yellow because it can't make food?",
+      "t-biji": "Which part later turns into fruit and seeds?",
+      "t-siramdaun": "A wilting plant only gets its leaves sprayed and the soil stays dry. Which part really needs the water?",
+      "t-tegak": "A sunflower stands tall facing the light. Which part holds it up?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "akar",
+      "labelKey": "i-akar",
+      "bin": "pilihan",
+      "emoji": "🫚"
+    },
+    {
+      "id": "batang",
+      "labelKey": "i-batang",
+      "bin": "pilihan",
+      "emoji": "🎋"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "pilihan",
+      "emoji": "🍃"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "i-bunga",
+      "bin": "pilihan",
+      "emoji": "🌸"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "serap",
+      "promptKey": "t-serap",
+      "choices": [
+        "akar",
+        "daun",
+        "bunga"
+      ],
+      "correct": "akar"
+    },
+    {
+      "id": "angkut",
+      "promptKey": "t-angkut",
+      "choices": [
+        "batang",
+        "bunga",
+        "akar"
+      ],
+      "correct": "batang"
+    },
+    {
+      "id": "makanan",
+      "promptKey": "t-makanan",
+      "choices": [
+        "daun",
+        "akar",
+        "batang"
+      ],
+      "correct": "daun"
+    },
+    {
+      "id": "lebah",
+      "promptKey": "t-lebah",
+      "choices": [
+        "bunga",
+        "daun",
+        "akar"
+      ],
+      "correct": "bunga"
+    },
+    {
+      "id": "angin",
+      "promptKey": "t-angin",
+      "choices": [
+        "akar",
+        "daun",
+        "bunga"
+      ],
+      "correct": "akar"
+    },
+    {
+      "id": "seledri",
+      "promptKey": "t-seledri",
+      "choices": [
+        "batang",
+        "bunga",
+        "akar",
+        "daun"
+      ],
+      "correct": "batang"
+    },
+    {
+      "id": "gelap",
+      "promptKey": "t-gelap",
+      "choices": [
+        "daun",
+        "akar",
+        "batang"
+      ],
+      "correct": "daun"
+    },
+    {
+      "id": "biji",
+      "promptKey": "t-biji",
+      "choices": [
+        "bunga",
+        "batang",
+        "akar"
+      ],
+      "correct": "bunga"
+    },
+    {
+      "id": "siramdaun",
+      "promptKey": "t-siramdaun",
+      "choices": [
+        "akar",
+        "daun",
+        "bunga"
+      ],
+      "correct": "akar"
+    },
+    {
+      "id": "tegak",
+      "promptKey": "t-tegak",
+      "choices": [
+        "batang",
+        "akar",
+        "bunga"
+      ],
+      "correct": "batang"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "id": "sd2-mat-tabel-dua-lima-kecil",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.KALI-BAGI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tabel 2 dan 5",
+      "instruksi": "Hitung loncat kalau perlu. Taruh tiap kartu perkalian di rak hasilnya.",
+      "b-4": "4",
+      "b-6": "6",
+      "b-8": "8",
+      "b-10": "10",
+      "b-12": "12",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-18": "18",
+      "b-20": "20",
+      "i-2x2": "2×2",
+      "i-2x3": "2×3",
+      "i-3x2": "3×2",
+      "i-2x4": "2×4",
+      "i-4x2": "4×2",
+      "i-2x5": "2×5",
+      "i-5x2": "5×2",
+      "i-2x6": "2×6",
+      "i-6x2": "6×2",
+      "i-2x7": "2×7",
+      "i-7x2": "7×2",
+      "i-3x5": "3×5",
+      "i-5x3": "5×3",
+      "i-2x8": "2×8",
+      "i-8x2": "8×2",
+      "i-2x9": "2×9",
+      "i-9x2": "9×2",
+      "i-10x2": "10×2",
+      "i-2x10": "2×10",
+      "i-4x5": "4×5",
+      "i-5x4": "5×4"
+    },
+    "en": {
+      "judul": "2 and 5 Times Tables",
+      "instruksi": "Skip count if you need to. Put each multiplication card on its answer shelf.",
+      "b-4": "4",
+      "b-6": "6",
+      "b-8": "8",
+      "b-10": "10",
+      "b-12": "12",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-18": "18",
+      "b-20": "20",
+      "i-2x2": "2×2",
+      "i-2x3": "2×3",
+      "i-3x2": "3×2",
+      "i-2x4": "2×4",
+      "i-4x2": "4×2",
+      "i-2x5": "2×5",
+      "i-5x2": "5×2",
+      "i-2x6": "2×6",
+      "i-6x2": "6×2",
+      "i-2x7": "2×7",
+      "i-7x2": "7×2",
+      "i-3x5": "3×5",
+      "i-5x3": "5×3",
+      "i-2x8": "2×8",
+      "i-8x2": "8×2",
+      "i-2x9": "2×9",
+      "i-9x2": "9×2",
+      "i-10x2": "10×2",
+      "i-2x10": "2×10",
+      "i-4x5": "4×5",
+      "i-5x4": "5×4"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak hasil aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "h4",
+      "labelKey": "b-4"
+    },
+    {
+      "id": "h6",
+      "labelKey": "b-6"
+    },
+    {
+      "id": "h8",
+      "labelKey": "b-8"
+    },
+    {
+      "id": "h10",
+      "labelKey": "b-10"
+    },
+    {
+      "id": "h12",
+      "labelKey": "b-12"
+    },
+    {
+      "id": "h14",
+      "labelKey": "b-14"
+    },
+    {
+      "id": "h15",
+      "labelKey": "b-15"
+    },
+    {
+      "id": "h16",
+      "labelKey": "b-16"
+    },
+    {
+      "id": "h18",
+      "labelKey": "b-18"
+    },
+    {
+      "id": "h20",
+      "labelKey": "b-20"
+    }
+  ],
+  "items": [
+    {
+      "id": "h4-2x2",
+      "labelKey": "i-2x2",
+      "bin": "h4",
+      "scale": 0.85
+    },
+    {
+      "id": "h6-2x3",
+      "labelKey": "i-2x3",
+      "bin": "h6",
+      "scale": 0.85
+    },
+    {
+      "id": "h6-3x2",
+      "labelKey": "i-3x2",
+      "bin": "h6",
+      "scale": 0.85
+    },
+    {
+      "id": "h8-2x4",
+      "labelKey": "i-2x4",
+      "bin": "h8",
+      "scale": 0.85
+    },
+    {
+      "id": "h8-4x2",
+      "labelKey": "i-4x2",
+      "bin": "h8",
+      "scale": 0.85
+    },
+    {
+      "id": "h10-2x5",
+      "labelKey": "i-2x5",
+      "bin": "h10",
+      "scale": 0.85
+    },
+    {
+      "id": "h10-5x2",
+      "labelKey": "i-5x2",
+      "bin": "h10",
+      "scale": 0.85
+    },
+    {
+      "id": "h12-2x6",
+      "labelKey": "i-2x6",
+      "bin": "h12",
+      "scale": 0.85
+    },
+    {
+      "id": "h12-6x2",
+      "labelKey": "i-6x2",
+      "bin": "h12",
+      "scale": 0.85
+    },
+    {
+      "id": "h14-2x7",
+      "labelKey": "i-2x7",
+      "bin": "h14",
+      "scale": 0.85
+    },
+    {
+      "id": "h14-7x2",
+      "labelKey": "i-7x2",
+      "bin": "h14",
+      "scale": 0.85
+    },
+    {
+      "id": "h15-3x5",
+      "labelKey": "i-3x5",
+      "bin": "h15",
+      "scale": 0.85
+    },
+    {
+      "id": "h15-5x3",
+      "labelKey": "i-5x3",
+      "bin": "h15",
+      "scale": 0.85
+    },
+    {
+      "id": "h16-2x8",
+      "labelKey": "i-2x8",
+      "bin": "h16",
+      "scale": 0.85
+    },
+    {
+      "id": "h16-8x2",
+      "labelKey": "i-8x2",
+      "bin": "h16",
+      "scale": 0.85
+    },
+    {
+      "id": "h18-2x9",
+      "labelKey": "i-2x9",
+      "bin": "h18",
+      "scale": 0.85
+    },
+    {
+      "id": "h18-9x2",
+      "labelKey": "i-9x2",
+      "bin": "h18",
+      "scale": 0.85
+    },
+    {
+      "id": "h20-10x2",
+      "labelKey": "i-10x2",
+      "bin": "h20",
+      "scale": 0.7
+    },
+    {
+      "id": "h20-2x10",
+      "labelKey": "i-2x10",
+      "bin": "h20",
+      "scale": 0.7
+    },
+    {
+      "id": "h20-4x5",
+      "labelKey": "i-4x5",
+      "bin": "h20",
+      "scale": 0.85
+    },
+    {
+      "id": "h20-5x4",
+      "labelKey": "i-5x4",
+      "bin": "h20",
+      "scale": 0.85
+    }
+  ]
+}

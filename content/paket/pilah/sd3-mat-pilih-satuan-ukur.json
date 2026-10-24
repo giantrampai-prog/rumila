@@ -1,0 +1,271 @@
+{
+  "id": "sd3-mat-pilih-satuan-ukur",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.UKUR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satuan yang Masuk Akal",
+      "instruksi": "Kira-kira seberapa besar? Taruh tiap benda di satuan yang paling cocok untuk mengukurnya.",
+      "b-cm": "cm",
+      "b-m": "m",
+      "b-km": "km",
+      "b-g": "g",
+      "b-kg": "kg",
+      "b-ml": "ml",
+      "b-l": "l",
+      "i-panjang-pensil": "panjang pensil",
+      "i-panjang-ulat": "panjang ulat",
+      "i-panjang-ponsel": "panjang ponsel",
+      "i-panjang-pisang": "panjang pisang",
+      "i-tinggi-jerapah": "tinggi jerapah",
+      "i-tinggi-pohon": "tinggi pohon",
+      "i-panjang-bus": "panjang bus",
+      "i-jarak-terbang-antarkota": "jarak terbang antarkota",
+      "i-perjalanan-kereta-antarkota": "perjalanan kereta antarkota",
+      "i-jalan-mendaki-gunung": "jalan mendaki gunung",
+      "i-berat-koin": "berat koin",
+      "i-berat-telur": "berat telur",
+      "i-berat-surat": "berat surat",
+      "i-berat-anjing": "berat anjing",
+      "i-berat-labu": "berat labu",
+      "i-berat-koper": "berat koper",
+      "i-isi-tabung-kecil": "isi tabung kecil",
+      "i-setetes-air": "setetes air",
+      "i-secangkir-kopi": "secangkir kopi",
+      "i-air-bak-mandi": "air bak mandi",
+      "i-air-galon": "air galon",
+      "i-air-akuarium": "air akuarium"
+    },
+    "en": {
+      "judul": "Sensible Units",
+      "instruksi": "About how big is it? Put each thing on the unit that suits measuring it best.",
+      "b-cm": "cm",
+      "b-m": "m",
+      "b-km": "km",
+      "b-g": "g",
+      "b-kg": "kg",
+      "b-ml": "ml",
+      "b-l": "l",
+      "i-panjang-pensil": "length of a pencil",
+      "i-panjang-ulat": "length of a caterpillar",
+      "i-panjang-ponsel": "length of a phone",
+      "i-panjang-pisang": "length of a banana",
+      "i-tinggi-jerapah": "height of a giraffe",
+      "i-tinggi-pohon": "height of a tree",
+      "i-panjang-bus": "length of a bus",
+      "i-jarak-terbang-antarkota": "flight between cities",
+      "i-perjalanan-kereta-antarkota": "train trip between cities",
+      "i-jalan-mendaki-gunung": "hike up a mountain",
+      "i-berat-koin": "mass of a coin",
+      "i-berat-telur": "mass of an egg",
+      "i-berat-surat": "mass of a letter",
+      "i-berat-anjing": "mass of a dog",
+      "i-berat-labu": "mass of a pumpkin",
+      "i-berat-koper": "mass of a suitcase",
+      "i-isi-tabung-kecil": "a small test tube",
+      "i-setetes-air": "a drop of water",
+      "i-secangkir-kopi": "a cup of coffee",
+      "i-air-bak-mandi": "water in a bathtub",
+      "i-air-galon": "water cooler bottle",
+      "i-air-akuarium": "water in a fish tank"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 7,
+      "default": 3,
+      "step": 2,
+      "keterangan": "panjang (cm, m, km) dulu, lalu berat, lalu isi"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "cm",
+      "labelKey": "b-cm",
+      "emoji": "📏"
+    },
+    {
+      "id": "m",
+      "labelKey": "b-m",
+      "emoji": "🚪"
+    },
+    {
+      "id": "km",
+      "labelKey": "b-km",
+      "emoji": "🛣️"
+    },
+    {
+      "id": "g",
+      "labelKey": "b-g",
+      "emoji": "🍬"
+    },
+    {
+      "id": "kg",
+      "labelKey": "b-kg",
+      "emoji": "🍉"
+    },
+    {
+      "id": "ml",
+      "labelKey": "b-ml",
+      "emoji": "🥄"
+    },
+    {
+      "id": "l",
+      "labelKey": "b-l",
+      "emoji": "🪣"
+    }
+  ],
+  "items": [
+    {
+      "id": "pensil",
+      "labelKey": "i-panjang-pensil",
+      "bin": "cm",
+      "emoji": "✏️"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-panjang-ulat",
+      "bin": "cm",
+      "emoji": "🐛"
+    },
+    {
+      "id": "ponsel",
+      "labelKey": "i-panjang-ponsel",
+      "bin": "cm",
+      "emoji": "📱"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-panjang-pisang",
+      "bin": "cm",
+      "emoji": "🍌"
+    },
+    {
+      "id": "jerapah",
+      "labelKey": "i-tinggi-jerapah",
+      "bin": "m",
+      "emoji": "🦒"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "i-tinggi-pohon",
+      "bin": "m",
+      "emoji": "🌳"
+    },
+    {
+      "id": "bus",
+      "labelKey": "i-panjang-bus",
+      "bin": "m",
+      "emoji": "🚌"
+    },
+    {
+      "id": "pesawat",
+      "labelKey": "i-jarak-terbang-antarkota",
+      "bin": "km",
+      "emoji": "✈️"
+    },
+    {
+      "id": "kereta",
+      "labelKey": "i-perjalanan-kereta-antarkota",
+      "bin": "km",
+      "emoji": "🚆"
+    },
+    {
+      "id": "gunung",
+      "labelKey": "i-jalan-mendaki-gunung",
+      "bin": "km",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-berat-koin",
+      "bin": "g",
+      "emoji": "🪙"
+    },
+    {
+      "id": "telur",
+      "labelKey": "i-berat-telur",
+      "bin": "g",
+      "emoji": "🥚"
+    },
+    {
+      "id": "surat",
+      "labelKey": "i-berat-surat",
+      "bin": "g",
+      "emoji": "✉️"
+    },
+    {
+      "id": "anjing",
+      "labelKey": "i-berat-anjing",
+      "bin": "kg",
+      "emoji": "🐕"
+    },
+    {
+      "id": "labu",
+      "labelKey": "i-berat-labu",
+      "bin": "kg",
+      "emoji": "🎃"
+    },
+    {
+      "id": "koper",
+      "labelKey": "i-berat-koper",
+      "bin": "kg",
+      "emoji": "🧳"
+    },
+    {
+      "id": "tabung",
+      "labelKey": "i-isi-tabung-kecil",
+      "bin": "ml",
+      "emoji": "🧪"
+    },
+    {
+      "id": "tetes",
+      "labelKey": "i-setetes-air",
+      "bin": "ml",
+      "emoji": "💧"
+    },
+    {
+      "id": "kopi",
+      "labelKey": "i-secangkir-kopi",
+      "bin": "ml",
+      "emoji": "☕"
+    },
+    {
+      "id": "bak",
+      "labelKey": "i-air-bak-mandi",
+      "bin": "l",
+      "emoji": "🛁"
+    },
+    {
+      "id": "galon",
+      "labelKey": "i-air-galon",
+      "bin": "l",
+      "emoji": "🫙"
+    },
+    {
+      "id": "akuarium",
+      "labelKey": "i-air-akuarium",
+      "bin": "l",
+      "emoji": "🐠"
+    }
+  ]
+}

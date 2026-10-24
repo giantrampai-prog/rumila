@@ -1,0 +1,151 @@
+{
+  "id": "sd2-sains-rawat-atau-rusak-kota",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.LINGKUNGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Merawat atau Merusak? (Kota)",
+      "instruksi": "Kegiatan ini merawat atau merusak lingkungan? Taruh ke raknya.",
+      "b-rawat": "merawat lingkungan",
+      "b-rusak": "merusak lingkungan",
+      "i-tanam": "menanam pohon",
+      "i-tempatsampah": "membuang sampah ke tempatnya",
+      "i-botol": "membawa botol minum sendiri",
+      "i-sepeda": "bersepeda ke sekolah",
+      "i-matikan": "mematikan lampu saat keluar kamar",
+      "i-pilah": "memilah sampah plastik dan sisa makanan",
+      "i-bakar": "membakar sampah plastik",
+      "i-petik": "memetik bunga di taman kota",
+      "i-buangjalan": "membuang bungkus jajan di jalan",
+      "i-keran": "membiarkan keran terus mengalir",
+      "i-tebang": "menebang pohon tanpa menanam lagi",
+      "i-asap": "mobil berasap hitam"
+    },
+    "en": {
+      "judul": "Caring or Harming? (Town)",
+      "instruksi": "Does this action care for or harm the environment? Put it on its shelf.",
+      "b-rawat": "caring for the environment",
+      "b-rusak": "harming the environment",
+      "i-tanam": "planting a tree",
+      "i-tempatsampah": "putting rubbish in the bin",
+      "i-botol": "bringing your own water bottle",
+      "i-sepeda": "cycling to school",
+      "i-matikan": "switching off lights when leaving",
+      "i-pilah": "sorting plastic and food waste",
+      "i-bakar": "burning plastic rubbish",
+      "i-petik": "picking flowers in the town park",
+      "i-buangjalan": "dropping snack wrappers in the street",
+      "i-keran": "leaving the tap running",
+      "i-tebang": "cutting trees without replanting",
+      "i-asap": "car puffing black smoke"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "rawat",
+      "labelKey": "b-rawat",
+      "emoji": "🌱",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "rusak",
+      "labelKey": "b-rusak",
+      "emoji": "🗑️",
+      "color": "#ffebee"
+    }
+  ],
+  "items": [
+    {
+      "id": "tanam",
+      "labelKey": "i-tanam",
+      "bin": "rawat",
+      "emoji": "🌳"
+    },
+    {
+      "id": "tempatsampah",
+      "labelKey": "i-tempatsampah",
+      "bin": "rawat",
+      "emoji": "🚮"
+    },
+    {
+      "id": "botol",
+      "labelKey": "i-botol",
+      "bin": "rawat",
+      "emoji": "🧴"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "rawat",
+      "emoji": "🚲"
+    },
+    {
+      "id": "matikan",
+      "labelKey": "i-matikan",
+      "bin": "rawat",
+      "emoji": "💡"
+    },
+    {
+      "id": "pilah",
+      "labelKey": "i-pilah",
+      "bin": "rawat",
+      "emoji": "♻️"
+    },
+    {
+      "id": "bakar",
+      "labelKey": "i-bakar",
+      "bin": "rusak",
+      "emoji": "🔥"
+    },
+    {
+      "id": "petik",
+      "labelKey": "i-petik",
+      "bin": "rusak",
+      "emoji": "🌷"
+    },
+    {
+      "id": "buangjalan",
+      "labelKey": "i-buangjalan",
+      "bin": "rusak",
+      "emoji": "🍬"
+    },
+    {
+      "id": "keran",
+      "labelKey": "i-keran",
+      "bin": "rusak",
+      "emoji": "🚰"
+    },
+    {
+      "id": "tebang",
+      "labelKey": "i-tebang",
+      "bin": "rusak",
+      "emoji": "🪓"
+    },
+    {
+      "id": "asap",
+      "labelKey": "i-asap",
+      "bin": "rusak",
+      "emoji": "🚗"
+    }
+  ],
+  "pilihan": []
+}

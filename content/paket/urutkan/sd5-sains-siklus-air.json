@@ -1,0 +1,158 @@
+{
+  "id": "sd5-sains-siklus-air",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-AIR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perjalanan Setetes Air",
+      "instruksi": "Baca judulnya, lalu susun perjalanan air dari awal sampai akhir.",
+      "s-laut": "Dari laut kembali ke laut",
+      "laut-panas": "Matahari memanaskan air laut",
+      "laut-uap": "air menguap jadi uap air",
+      "laut-awan": "uap naik, mendingin, mengembun jadi awan",
+      "laut-hujan": "titik air menyatu dan turun sebagai hujan",
+      "laut-sungai": "air hujan mengalir lewat sungai ke laut",
+      "s-genangan": "Genangan di halaman",
+      "genangan-genang": "genangan air setelah hujan",
+      "genangan-terik": "siang terik, genangan menguap",
+      "genangan-naik": "uap air naik dan mendingin di udara atas",
+      "genangan-awan": "uap mengembun jadi awan",
+      "genangan-hujan": "hujan turun lagi",
+      "s-gelas": "Gelas es teh di meja",
+      "gelas-es": "gelas berisi es teh di meja",
+      "gelas-udara": "udara hangat menyentuh gelas yang dingin",
+      "gelas-embun": "uap air di udara mengembun",
+      "gelas-titik": "titik-titik air muncul di luar gelas"
+    },
+    "en": {
+      "judul": "A Water Drop's Journey",
+      "instruksi": "Read the title, then put the water's journey in order.",
+      "s-laut": "From the sea back to the sea",
+      "laut-panas": "the Sun warms the seawater",
+      "laut-uap": "water evaporates into water vapour",
+      "laut-awan": "vapour rises, cools and condenses into clouds",
+      "laut-hujan": "droplets join and fall as rain",
+      "laut-sungai": "rainwater flows down rivers to the sea",
+      "s-genangan": "A puddle in the yard",
+      "genangan-genang": "a puddle after the rain",
+      "genangan-terik": "in the hot afternoon the puddle evaporates",
+      "genangan-naik": "the vapour rises and cools high up",
+      "genangan-awan": "the vapour condenses into clouds",
+      "genangan-hujan": "rain falls again",
+      "s-gelas": "A glass of iced tea on the table",
+      "gelas-es": "a glass of iced tea on the table",
+      "gelas-udara": "warm air touches the cold glass",
+      "gelas-embun": "water vapour in the air condenses",
+      "gelas-titik": "drops of water appear on the outside of the glass"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 5 (gelas es hanya 4 langkah)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "laut",
+      "titleKey": "s-laut",
+      "steps": [
+        {
+          "id": "panas",
+          "labelKey": "laut-panas",
+          "emoji": "☀️"
+        },
+        {
+          "id": "uap",
+          "labelKey": "laut-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "laut-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "laut-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "sungai",
+          "labelKey": "laut-sungai",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "genangan",
+      "titleKey": "s-genangan",
+      "steps": [
+        {
+          "id": "genang",
+          "labelKey": "genangan-genang",
+          "emoji": "💧"
+        },
+        {
+          "id": "terik",
+          "labelKey": "genangan-terik",
+          "emoji": "☀️"
+        },
+        {
+          "id": "naik",
+          "labelKey": "genangan-naik",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "genangan-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "genangan-hujan",
+          "emoji": "🌧️"
+        }
+      ]
+    },
+    {
+      "id": "gelas",
+      "titleKey": "s-gelas",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "gelas-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "udara",
+          "labelKey": "gelas-udara",
+          "emoji": "🌡️"
+        },
+        {
+          "id": "embun",
+          "labelKey": "gelas-embun",
+          "emoji": "💨"
+        },
+        {
+          "id": "titik",
+          "labelKey": "gelas-titik",
+          "emoji": "💧"
+        }
+      ]
+    }
+  ]
+}

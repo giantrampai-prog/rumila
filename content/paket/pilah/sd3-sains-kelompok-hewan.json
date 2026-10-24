@@ -1,0 +1,233 @@
+{
+  "id": "sd3-sains-kelompok-hewan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.HEWAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Enam Kelompok Hewan",
+      "instruksi": "Lihat cirinya, lalu taruh tiap hewan ke kelompoknya.",
+      "b-mamalia": "mamalia (berambut, menyusui)",
+      "b-burung": "burung (berbulu, bertelur)",
+      "b-ikan": "ikan (bersirip, insang)",
+      "b-reptil": "reptil (sisik kering)",
+      "b-amfibi": "amfibi (kulit lembap)",
+      "b-serangga": "serangga (6 kaki)",
+      "i-kucing": "kucing",
+      "i-sapi": "sapi",
+      "i-monyet": "monyet",
+      "i-ayam": "ayam",
+      "i-elang": "elang",
+      "i-burunghantu": "burung hantu",
+      "i-ikanmas": "ikan mas",
+      "i-ikanbadut": "ikan badut",
+      "i-lele": "ikan lele",
+      "i-ular": "ular",
+      "i-buaya": "buaya",
+      "i-kadal": "kadal",
+      "i-katak": "katak",
+      "i-salamander": "salamander",
+      "i-semut": "semut",
+      "i-lebah": "lebah",
+      "i-kupu": "kupu-kupu"
+    },
+    "en": {
+      "judul": "Six Animal Groups",
+      "instruksi": "Look at its features, then put each animal in its group.",
+      "b-mamalia": "mammals (hair, feed milk)",
+      "b-burung": "birds (feathers, lay eggs)",
+      "b-ikan": "fish (fins, gills)",
+      "b-reptil": "reptiles (dry scales)",
+      "b-amfibi": "amphibians (moist skin)",
+      "b-serangga": "insects (6 legs)",
+      "i-kucing": "cat",
+      "i-sapi": "cow",
+      "i-monyet": "monkey",
+      "i-ayam": "chicken",
+      "i-elang": "eagle",
+      "i-burunghantu": "owl",
+      "i-ikanmas": "goldfish",
+      "i-ikanbadut": "clownfish",
+      "i-lele": "catfish",
+      "i-ular": "snake",
+      "i-buaya": "crocodile",
+      "i-kadal": "lizard",
+      "i-katak": "frog",
+      "i-salamander": "salamander",
+      "i-semut": "ant",
+      "i-lebah": "bee",
+      "i-kupu": "butterfly"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kelompok: 3 (mamalia, burung, ikan) → 6"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "mamalia",
+      "labelKey": "b-mamalia",
+      "emoji": "🐄",
+      "color": "#efebe9"
+    },
+    {
+      "id": "burung",
+      "labelKey": "b-burung",
+      "emoji": "🪶",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "b-ikan",
+      "emoji": "🐟",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "reptil",
+      "labelKey": "b-reptil",
+      "emoji": "🦎",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "amfibi",
+      "labelKey": "b-amfibi",
+      "emoji": "🐸",
+      "color": "#e0f2f1"
+    },
+    {
+      "id": "serangga",
+      "labelKey": "b-serangga",
+      "emoji": "🐜",
+      "color": "#fffde7"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "mamalia",
+      "emoji": "🐈"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "mamalia",
+      "emoji": "🐄"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "mamalia",
+      "emoji": "🐒"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "burung",
+      "emoji": "🐔"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "burung",
+      "emoji": "🦅"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "burung",
+      "emoji": "🦉"
+    },
+    {
+      "id": "ikanmas",
+      "labelKey": "i-ikanmas",
+      "bin": "ikan",
+      "emoji": "🐟",
+      "color": "#ffb74d"
+    },
+    {
+      "id": "ikanbadut",
+      "labelKey": "i-ikanbadut",
+      "bin": "ikan",
+      "emoji": "🐠"
+    },
+    {
+      "id": "lele",
+      "labelKey": "i-lele",
+      "bin": "ikan",
+      "emoji": "🐟",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "reptil",
+      "emoji": "🐍"
+    },
+    {
+      "id": "buaya",
+      "labelKey": "i-buaya",
+      "bin": "reptil",
+      "emoji": "🐊"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "reptil",
+      "emoji": "🦎"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "amfibi",
+      "emoji": "🐸"
+    },
+    {
+      "id": "salamander",
+      "labelKey": "i-salamander",
+      "bin": "amfibi",
+      "emoji": "🦎",
+      "color": "#ff7043"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "serangga",
+      "emoji": "🐜"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "serangga",
+      "emoji": "🐝"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "serangga",
+      "emoji": "🦋"
+    }
+  ],
+  "pilihan": []
+}

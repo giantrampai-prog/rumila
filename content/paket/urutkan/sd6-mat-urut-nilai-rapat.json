@@ -1,0 +1,416 @@
+{
+  "id": "sd6-mat-urut-nilai-rapat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD6.DESIMAL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Nilai Saling Berdekatan",
+      "instruksi": "Ubah semua kartu ke desimal di kepalamu, lalu susun dari terkecil sampai terbesar.",
+      "s1": "Hasil lima percobaan",
+      "s1-1": "0,3",
+      "s1-2": "0,33",
+      "s1-3": "4/10",
+      "s1-4": "1/2",
+      "s1-5": "7/10",
+      "s2": "Bagian tugas selesai",
+      "s2-1": "12%",
+      "s2-2": "1/8",
+      "s2-3": "0,25",
+      "s2-4": "4/10",
+      "s2-5": "45%",
+      "s3": "Kadar gula lima minuman",
+      "s3-1": "5%",
+      "s3-2": "0,25",
+      "s3-3": "0,375",
+      "s3-4": "4/10",
+      "s3-5": "2/3",
+      "s4": "Peluang lima roda putar",
+      "s4-1": "0,15",
+      "s4-2": "35%",
+      "s4-3": "3/8",
+      "s4-4": "45%",
+      "s4-5": "3/5",
+      "s5": "Air yang menguap",
+      "s5-1": "0,04",
+      "s5-2": "0,12",
+      "s5-3": "3/8",
+      "s5-4": "0,4",
+      "s5-5": "0,66",
+      "s6": "Tinta lima printer",
+      "s6-1": "5%",
+      "s6-2": "0,25",
+      "s6-3": "3/8",
+      "s6-4": "45%",
+      "s6-5": "2/3",
+      "s7": "Bagian lahan hutan",
+      "s7-1": "0,3",
+      "s7-2": "0,4",
+      "s7-3": "45%",
+      "s7-4": "3/5",
+      "s7-5": "2/3",
+      "s8": "Kemiringan lima jalan",
+      "s8-1": "0,07",
+      "s8-2": "1/5",
+      "s8-3": "3/8",
+      "s8-4": "0,44",
+      "s8-5": "7/10",
+      "s9": "Diskon lima toko",
+      "s9-1": "0,05",
+      "s9-2": "1/8",
+      "s9-3": "0,21",
+      "s9-4": "0,33",
+      "s9-5": "2/5",
+      "s10": "Isi lima akuarium",
+      "s10-1": "1/20",
+      "s10-2": "12%",
+      "s10-3": "0,15",
+      "s10-4": "1/4",
+      "s10-5": "0,65"
+    },
+    "en": {
+      "judul": "Values Close Together",
+      "instruksi": "Change every card to a decimal in your head, then arrange from smallest to largest.",
+      "s1": "Results of five experiments",
+      "s1-1": "0.3",
+      "s1-2": "0.33",
+      "s1-3": "4/10",
+      "s1-4": "1/2",
+      "s1-5": "7/10",
+      "s2": "Parts of homework done",
+      "s2-1": "12%",
+      "s2-2": "1/8",
+      "s2-3": "0.25",
+      "s2-4": "4/10",
+      "s2-5": "45%",
+      "s3": "Sugar in five drinks",
+      "s3-1": "5%",
+      "s3-2": "0.25",
+      "s3-3": "0.375",
+      "s3-4": "4/10",
+      "s3-5": "2/3",
+      "s4": "Chances on five spinners",
+      "s4-1": "0.15",
+      "s4-2": "35%",
+      "s4-3": "3/8",
+      "s4-4": "45%",
+      "s4-5": "3/5",
+      "s5": "Water evaporated",
+      "s5-1": "0.04",
+      "s5-2": "0.12",
+      "s5-3": "3/8",
+      "s5-4": "0.4",
+      "s5-5": "0.66",
+      "s6": "Ink in five printers",
+      "s6-1": "5%",
+      "s6-2": "0.25",
+      "s6-3": "3/8",
+      "s6-4": "45%",
+      "s6-5": "2/3",
+      "s7": "Forest land shares",
+      "s7-1": "0.3",
+      "s7-2": "0.4",
+      "s7-3": "45%",
+      "s7-4": "3/5",
+      "s7-5": "2/3",
+      "s8": "Slopes of five roads",
+      "s8-1": "0.07",
+      "s8-2": "1/5",
+      "s8-3": "3/8",
+      "s8-4": "0.44",
+      "s8-5": "7/10",
+      "s9": "Five shop discounts",
+      "s9-1": "0.05",
+      "s9-2": "1/8",
+      "s9-3": "0.21",
+      "s9-4": "0.33",
+      "s9-5": "2/5",
+      "s10": "Five aquariums",
+      "s10-1": "1/20",
+      "s10-2": "12%",
+      "s10-3": "0.15",
+      "s10-4": "1/4",
+      "s10-5": "0.65"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "seq-1",
+      "titleKey": "s1",
+      "steps": [
+        {
+          "id": "s1-k1",
+          "labelKey": "s1-1"
+        },
+        {
+          "id": "s1-k2",
+          "labelKey": "s1-2"
+        },
+        {
+          "id": "s1-k3",
+          "labelKey": "s1-3"
+        },
+        {
+          "id": "s1-k4",
+          "labelKey": "s1-4"
+        },
+        {
+          "id": "s1-k5",
+          "labelKey": "s1-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-2",
+      "titleKey": "s2",
+      "steps": [
+        {
+          "id": "s2-k1",
+          "labelKey": "s2-1"
+        },
+        {
+          "id": "s2-k2",
+          "labelKey": "s2-2"
+        },
+        {
+          "id": "s2-k3",
+          "labelKey": "s2-3"
+        },
+        {
+          "id": "s2-k4",
+          "labelKey": "s2-4"
+        },
+        {
+          "id": "s2-k5",
+          "labelKey": "s2-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-3",
+      "titleKey": "s3",
+      "steps": [
+        {
+          "id": "s3-k1",
+          "labelKey": "s3-1"
+        },
+        {
+          "id": "s3-k2",
+          "labelKey": "s3-2"
+        },
+        {
+          "id": "s3-k3",
+          "labelKey": "s3-3"
+        },
+        {
+          "id": "s3-k4",
+          "labelKey": "s3-4"
+        },
+        {
+          "id": "s3-k5",
+          "labelKey": "s3-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-4",
+      "titleKey": "s4",
+      "steps": [
+        {
+          "id": "s4-k1",
+          "labelKey": "s4-1"
+        },
+        {
+          "id": "s4-k2",
+          "labelKey": "s4-2"
+        },
+        {
+          "id": "s4-k3",
+          "labelKey": "s4-3"
+        },
+        {
+          "id": "s4-k4",
+          "labelKey": "s4-4"
+        },
+        {
+          "id": "s4-k5",
+          "labelKey": "s4-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-5",
+      "titleKey": "s5",
+      "steps": [
+        {
+          "id": "s5-k1",
+          "labelKey": "s5-1"
+        },
+        {
+          "id": "s5-k2",
+          "labelKey": "s5-2"
+        },
+        {
+          "id": "s5-k3",
+          "labelKey": "s5-3"
+        },
+        {
+          "id": "s5-k4",
+          "labelKey": "s5-4"
+        },
+        {
+          "id": "s5-k5",
+          "labelKey": "s5-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-k1",
+          "labelKey": "s6-1"
+        },
+        {
+          "id": "s6-k2",
+          "labelKey": "s6-2"
+        },
+        {
+          "id": "s6-k3",
+          "labelKey": "s6-3"
+        },
+        {
+          "id": "s6-k4",
+          "labelKey": "s6-4"
+        },
+        {
+          "id": "s6-k5",
+          "labelKey": "s6-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-k1",
+          "labelKey": "s7-1"
+        },
+        {
+          "id": "s7-k2",
+          "labelKey": "s7-2"
+        },
+        {
+          "id": "s7-k3",
+          "labelKey": "s7-3"
+        },
+        {
+          "id": "s7-k4",
+          "labelKey": "s7-4"
+        },
+        {
+          "id": "s7-k5",
+          "labelKey": "s7-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-k1",
+          "labelKey": "s8-1"
+        },
+        {
+          "id": "s8-k2",
+          "labelKey": "s8-2"
+        },
+        {
+          "id": "s8-k3",
+          "labelKey": "s8-3"
+        },
+        {
+          "id": "s8-k4",
+          "labelKey": "s8-4"
+        },
+        {
+          "id": "s8-k5",
+          "labelKey": "s8-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-k1",
+          "labelKey": "s9-1"
+        },
+        {
+          "id": "s9-k2",
+          "labelKey": "s9-2"
+        },
+        {
+          "id": "s9-k3",
+          "labelKey": "s9-3"
+        },
+        {
+          "id": "s9-k4",
+          "labelKey": "s9-4"
+        },
+        {
+          "id": "s9-k5",
+          "labelKey": "s9-5"
+        }
+      ]
+    },
+    {
+      "id": "seq-10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-k1",
+          "labelKey": "s10-1"
+        },
+        {
+          "id": "s10-k2",
+          "labelKey": "s10-2"
+        },
+        {
+          "id": "s10-k3",
+          "labelKey": "s10-3"
+        },
+        {
+          "id": "s10-k4",
+          "labelKey": "s10-4"
+        },
+        {
+          "id": "s10-k5",
+          "labelKey": "s10-5"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "id": "sd6-mat-sudut-segitiga",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sudut Ketiga",
+      "instruksi": "Jumlah sudut segitiga selalu 180°. Cari sudut yang hilang, lalu sentuh jawabannya.",
+      "q1": "Segitiga punya sudut 50° dan 60°. Sudut ketiganya …",
+      "c1": "70°",
+      "c2": "250°",
+      "c3": "20°",
+      "c4": "80°",
+      "q2": "Segitiga siku-siku punya sudut 90° dan 35°. Sudut ketiganya …",
+      "c5": "55°",
+      "c6": "235°",
+      "c7": "35°",
+      "c8": "65°",
+      "q3": "Segitiga punya sudut 45° dan 45°. Sudut ketiganya …",
+      "c9": "90°",
+      "c10": "270°",
+      "c11": "45°",
+      "c12": "100°",
+      "q4": "Segitiga punya sudut 100° dan 30°. Sudut ketiganya …",
+      "c13": "50°",
+      "c14": "230°",
+      "c15": "40°",
+      "c16": "60°",
+      "q5": "Segitiga sama kaki punya sudut 72° dan 72°. Sudut ketiganya …",
+      "c17": "36°",
+      "c18": "216°",
+      "c19": "54°",
+      "c20": "46°",
+      "q6": "Segitiga punya sudut 120° dan 25°. Sudut ketiganya …",
+      "c21": "215°",
+      "q7": "Segitiga siku-siku punya sudut 90° dan 62°. Sudut ketiganya …",
+      "c22": "28°",
+      "c23": "208°",
+      "c24": "62°",
+      "c25": "38°",
+      "q8": "Segitiga punya sudut 38° dan 67°. Sudut ketiganya …",
+      "c26": "75°",
+      "c27": "255°",
+      "c28": "15°",
+      "c29": "85°",
+      "q9": "Segitiga sama kaki punya sudut 110° dan 35°. Sudut ketiganya …",
+      "q10": "Segitiga sama kaki punya sudut 25° dan 25°. Sudut ketiganya …",
+      "c30": "130°",
+      "c31": "310°",
+      "c32": "140°",
+      "q11": "Segitiga punya sudut 81° dan 49°. Sudut ketiganya …",
+      "q12": "Segitiga siku-siku punya sudut 90° dan 18°. Sudut ketiganya …",
+      "c33": "72°",
+      "c34": "252°",
+      "c35": "18°",
+      "c36": "82°",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "The Third Angle",
+      "instruksi": "The angles in a triangle always add up to 180°. Find the missing angle, then touch the answer.",
+      "q1": "A triangle has angles of 50° and 60°. The third angle is …",
+      "c1": "70°",
+      "c2": "250°",
+      "c3": "20°",
+      "c4": "80°",
+      "q2": "A right-angled triangle has angles of 90° and 35°. The third angle is …",
+      "c5": "55°",
+      "c6": "235°",
+      "c7": "35°",
+      "c8": "65°",
+      "q3": "A triangle has angles of 45° and 45°. The third angle is …",
+      "c9": "90°",
+      "c10": "270°",
+      "c11": "45°",
+      "c12": "100°",
+      "q4": "A triangle has angles of 100° and 30°. The third angle is …",
+      "c13": "50°",
+      "c14": "230°",
+      "c15": "40°",
+      "c16": "60°",
+      "q5": "A isosceles triangle has angles of 72° and 72°. The third angle is …",
+      "c17": "36°",
+      "c18": "216°",
+      "c19": "54°",
+      "c20": "46°",
+      "q6": "A triangle has angles of 120° and 25°. The third angle is …",
+      "c21": "215°",
+      "q7": "A right-angled triangle has angles of 90° and 62°. The third angle is …",
+      "c22": "28°",
+      "c23": "208°",
+      "c24": "62°",
+      "c25": "38°",
+      "q8": "A triangle has angles of 38° and 67°. The third angle is …",
+      "c26": "75°",
+      "c27": "255°",
+      "c28": "15°",
+      "c29": "85°",
+      "q9": "A isosceles triangle has angles of 110° and 35°. The third angle is …",
+      "q10": "A isosceles triangle has angles of 25° and 25°. The third angle is …",
+      "c30": "130°",
+      "c31": "310°",
+      "c32": "140°",
+      "q11": "A triangle has angles of 81° and 49°. The third angle is …",
+      "q12": "A right-angled triangle has angles of 90° and 18°. The third angle is …",
+      "c33": "72°",
+      "c34": "252°",
+      "c35": "18°",
+      "c36": "82°",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c7",
+        "c21",
+        "c5",
+        "c11"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c22",
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c7",
+        "c21",
+        "c5",
+        "c11"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c30",
+        "c31",
+        "c15",
+        "c32"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c33",
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c33"
+    }
+  ]
+}

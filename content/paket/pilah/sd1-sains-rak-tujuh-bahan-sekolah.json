@@ -1,0 +1,216 @@
+{
+  "id": "sd1-sains-rak-tujuh-bahan-sekolah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tujuh Rak Bahan di Sekolah",
+      "instruksi": "Taruh tiap benda di sekolah ke rak bahannya.",
+      "b-kertas": "kertas",
+      "b-kain": "kain",
+      "b-batu": "batu",
+      "b-kayu": "kayu",
+      "b-logam": "logam",
+      "b-plastik": "plastik",
+      "b-kaca": "kaca",
+      "i-bukutulis": "buku tulis",
+      "i-kertaslipat": "kertas lipat",
+      "i-taplak": "taplak meja",
+      "i-topi": "topi kain",
+      "i-batukali": "batu kali",
+      "i-patung": "patung batu",
+      "i-pensil": "pensil kayu",
+      "i-rak": "rak buku kayu",
+      "i-paku": "paku",
+      "i-bel": "bel sekolah",
+      "i-penggaris": "penggaris plastik",
+      "i-ember": "ember plastik",
+      "i-jendela": "kaca jendela",
+      "i-toples": "toples kaca"
+    },
+    "en": {
+      "judul": "Seven Material Shelves at School",
+      "instruksi": "Put each object from school on the shelf for its material.",
+      "b-kertas": "paper",
+      "b-kain": "fabric",
+      "b-batu": "rock",
+      "b-kayu": "wood",
+      "b-logam": "metal",
+      "b-plastik": "plastic",
+      "b-kaca": "glass",
+      "i-bukutulis": "notebook",
+      "i-kertaslipat": "origami paper",
+      "i-taplak": "tablecloth",
+      "i-topi": "cloth hat",
+      "i-batukali": "river stone",
+      "i-patung": "stone statue",
+      "i-pensil": "wooden pencil",
+      "i-rak": "wooden bookshelf",
+      "i-paku": "nail",
+      "i-bel": "school bell",
+      "i-penggaris": "plastic ruler",
+      "i-ember": "plastic bucket",
+      "i-jendela": "window glass",
+      "i-toples": "glass jar"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 7,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 3 (kertas, kain, batu) → 7 (tambah kayu, logam, plastik, kaca)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran; diambil acak dari rak aktif"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kertas",
+      "labelKey": "b-kertas",
+      "emoji": "📄",
+      "color": "#fffde7"
+    },
+    {
+      "id": "kain",
+      "labelKey": "b-kain",
+      "emoji": "🧵",
+      "color": "#fce4ec"
+    },
+    {
+      "id": "batu",
+      "labelKey": "b-batu",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "b-kayu",
+      "emoji": "🪵",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "logam",
+      "labelKey": "b-logam",
+      "emoji": "🔩",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "b-plastik",
+      "emoji": "🧴",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "b-kaca",
+      "emoji": "🥛",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "bukutulis",
+      "labelKey": "i-bukutulis",
+      "bin": "kertas",
+      "emoji": "📒"
+    },
+    {
+      "id": "kertaslipat",
+      "labelKey": "i-kertaslipat",
+      "bin": "kertas",
+      "emoji": "📄"
+    },
+    {
+      "id": "taplak",
+      "labelKey": "i-taplak",
+      "bin": "kain",
+      "emoji": "🟥",
+      "color": "#ef9a9a"
+    },
+    {
+      "id": "topi",
+      "labelKey": "i-topi",
+      "bin": "kain",
+      "emoji": "🧢"
+    },
+    {
+      "id": "batukali",
+      "labelKey": "i-batukali",
+      "bin": "batu",
+      "emoji": "🪨"
+    },
+    {
+      "id": "patung",
+      "labelKey": "i-patung",
+      "bin": "batu",
+      "emoji": "🗿"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "kayu",
+      "emoji": "✏️"
+    },
+    {
+      "id": "rak",
+      "labelKey": "i-rak",
+      "bin": "kayu",
+      "emoji": "🗄️",
+      "color": "#a1887f"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "logam",
+      "emoji": "🔩"
+    },
+    {
+      "id": "bel",
+      "labelKey": "i-bel",
+      "bin": "logam",
+      "emoji": "🔔"
+    },
+    {
+      "id": "penggaris",
+      "labelKey": "i-penggaris",
+      "bin": "plastik",
+      "emoji": "📏"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "plastik",
+      "emoji": "🪣"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "kaca",
+      "emoji": "🪟"
+    },
+    {
+      "id": "toples",
+      "labelKey": "i-toples",
+      "bin": "kaca",
+      "emoji": "🫙"
+    }
+  ],
+  "pilihan": []
+}

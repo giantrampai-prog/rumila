@@ -1,0 +1,503 @@
+{
+  "id": "sd5-mat-termometer-naik-turun",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.BULAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Termometer Naik Turun",
+      "instruksi": "Bayangkan termometer: naik ke atas, turun ke bawah, melewati nol. Sentuh hasilnya.",
+      "q1": "−13 + 15 = …",
+      "c1": "2",
+      "c2": "−2",
+      "c3": "−28",
+      "c4": "28",
+      "q2": "Suhu −8°C naik 10 derajat. Sekarang …",
+      "c5": "2°C",
+      "c6": "−2°C",
+      "c7": "−18°C",
+      "c8": "18°C",
+      "q3": "Suhu 0°C naik 14 derajat. Sekarang …",
+      "c9": "14°C",
+      "c10": "−14°C",
+      "c11": "15°C",
+      "c12": "13°C",
+      "q4": "Suhu −14°C naik 14 derajat. Sekarang …",
+      "c13": "0°C",
+      "c14": "−28°C",
+      "c15": "28°C",
+      "c16": "1°C",
+      "q5": "Suhu 8°C turun 12 derajat. Sekarang …",
+      "c17": "−4°C",
+      "c18": "4°C",
+      "c19": "20°C",
+      "c20": "−20°C",
+      "q6": "Suhu −11°C naik 12 derajat. Sekarang …",
+      "c21": "−1°C",
+      "c22": "−23°C",
+      "c23": "23°C",
+      "q7": "Suhu −2°C naik 4 derajat. Sekarang …",
+      "c24": "−6°C",
+      "c25": "6°C",
+      "q8": "Suhu 8°C turun 11 derajat. Sekarang …",
+      "c26": "−3°C",
+      "c27": "3°C",
+      "c28": "19°C",
+      "c29": "−19°C",
+      "q9": "−3 + 14 = …",
+      "c30": "11",
+      "c31": "−11",
+      "c32": "−17",
+      "c33": "17",
+      "q10": "Suhu 0°C turun 16 derajat. Sekarang …",
+      "c34": "−16°C",
+      "c35": "16°C",
+      "c36": "−15°C",
+      "c37": "−17°C",
+      "q11": "Suhu −1°C naik 7 derajat. Sekarang …",
+      "c38": "−8°C",
+      "c39": "8°C",
+      "q12": "−8 + 14 = …",
+      "c40": "6",
+      "c41": "−6",
+      "c42": "−22",
+      "c43": "22",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Thermometer Up and Down",
+      "instruksi": "Picture a thermometer: up is higher, down is lower, passing zero. Touch the answer.",
+      "q1": "−13 + 15 = …",
+      "c1": "2",
+      "c2": "−2",
+      "c3": "−28",
+      "c4": "28",
+      "q2": "The temperature is −8°C and rises by 10 degrees. Now it is …",
+      "c5": "2°C",
+      "c6": "−2°C",
+      "c7": "−18°C",
+      "c8": "18°C",
+      "q3": "The temperature is 0°C and rises by 14 degrees. Now it is …",
+      "c9": "14°C",
+      "c10": "−14°C",
+      "c11": "15°C",
+      "c12": "13°C",
+      "q4": "The temperature is −14°C and rises by 14 degrees. Now it is …",
+      "c13": "0°C",
+      "c14": "−28°C",
+      "c15": "28°C",
+      "c16": "1°C",
+      "q5": "The temperature is 8°C and falls by 12 degrees. Now it is …",
+      "c17": "−4°C",
+      "c18": "4°C",
+      "c19": "20°C",
+      "c20": "−20°C",
+      "q6": "The temperature is −11°C and rises by 12 degrees. Now it is …",
+      "c21": "−1°C",
+      "c22": "−23°C",
+      "c23": "23°C",
+      "q7": "The temperature is −2°C and rises by 4 degrees. Now it is …",
+      "c24": "−6°C",
+      "c25": "6°C",
+      "q8": "The temperature is 8°C and falls by 11 degrees. Now it is …",
+      "c26": "−3°C",
+      "c27": "3°C",
+      "c28": "19°C",
+      "c29": "−19°C",
+      "q9": "−3 + 14 = …",
+      "c30": "11",
+      "c31": "−11",
+      "c32": "−17",
+      "c33": "17",
+      "q10": "The temperature is 0°C and falls by 16 degrees. Now it is …",
+      "c34": "−16°C",
+      "c35": "16°C",
+      "c36": "−15°C",
+      "c37": "−17°C",
+      "q11": "The temperature is −1°C and rises by 7 degrees. Now it is …",
+      "c38": "−8°C",
+      "c39": "8°C",
+      "q12": "−8 + 14 = …",
+      "c40": "6",
+      "c41": "−6",
+      "c42": "−22",
+      "c43": "22",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kutub",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c21",
+        "c22",
+        "c23"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c5",
+        "c6",
+        "c24",
+        "c25"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c30",
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c35",
+        "c36",
+        "c37"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c25",
+        "c24",
+        "c38",
+        "c39"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c40",
+        "c41",
+        "c42",
+        "c43"
+      ],
+      "correct": "c40"
+    }
+  ]
+}

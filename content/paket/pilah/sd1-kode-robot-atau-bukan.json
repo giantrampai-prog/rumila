@@ -1,0 +1,149 @@
+{
+  "id": "sd1-kode-robot-atau-bukan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD1.PERANGKAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Robot atau Bukan?",
+      "instruksi": "Robot bisa bekerja sendiri mengikuti program. Taruh tiap benda di kotak robot atau bukan robot.",
+      "bin-robot": "robot",
+      "bin-bukan": "bukan robot",
+      "i-self-driving-vacuum-cleaner": "penyedot debu yang jalan sendiri",
+      "i-automatic-factory-arm": "lengan mesin otomatis di pabrik",
+      "i-parcel-delivery-drone": "drone pengantar paket",
+      "i-self-driving-lawn-mower": "pemotong rumput yang jalan sendiri",
+      "i-mars-rover": "kendaraan penjelajah planet Mars",
+      "i-automatic-restaurant-food-carrier": "pengantar makanan otomatis di restoran",
+      "i-teddy-bear": "boneka beruang",
+      "i-bicycle": "sepeda",
+      "i-umbrella": "payung",
+      "i-scissors": "gunting",
+      "i-cardboard-toy-robot": "robot-robotan dari kardus",
+      "i-ordinary-broom": "sapu biasa"
+    },
+    "en": {
+      "judul": "Robot or Not?",
+      "instruksi": "A robot can work by itself by following a program. Put each thing in the robot box or the not-a-robot box.",
+      "bin-robot": "robot",
+      "bin-bukan": "not a robot",
+      "i-self-driving-vacuum-cleaner": "self-driving vacuum cleaner",
+      "i-automatic-factory-arm": "automatic factory arm",
+      "i-parcel-delivery-drone": "parcel delivery drone",
+      "i-self-driving-lawn-mower": "self-driving lawn mower",
+      "i-mars-rover": "Mars rover",
+      "i-automatic-restaurant-food-carrier": "automatic restaurant food carrier",
+      "i-teddy-bear": "teddy bear",
+      "i-bicycle": "bicycle",
+      "i-umbrella": "umbrella",
+      "i-scissors": "scissors",
+      "i-cardboard-toy-robot": "cardboard toy robot",
+      "i-ordinary-broom": "ordinary broom"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "robot",
+      "labelKey": "bin-robot",
+      "emoji": "🤖"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "bin-bukan",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "self-driving-vacuum-cleaner",
+      "labelKey": "i-self-driving-vacuum-cleaner",
+      "bin": "robot",
+      "emoji": "⚙️"
+    },
+    {
+      "id": "automatic-factory-arm",
+      "labelKey": "i-automatic-factory-arm",
+      "bin": "robot",
+      "emoji": "🦾"
+    },
+    {
+      "id": "parcel-delivery-drone",
+      "labelKey": "i-parcel-delivery-drone",
+      "bin": "robot",
+      "emoji": "🚁"
+    },
+    {
+      "id": "self-driving-lawn-mower",
+      "labelKey": "i-self-driving-lawn-mower",
+      "bin": "robot",
+      "emoji": "🌿"
+    },
+    {
+      "id": "mars-rover",
+      "labelKey": "i-mars-rover",
+      "bin": "robot",
+      "emoji": "🛰️"
+    },
+    {
+      "id": "automatic-restaurant-food-carrier",
+      "labelKey": "i-automatic-restaurant-food-carrier",
+      "bin": "robot",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "teddy-bear",
+      "labelKey": "i-teddy-bear",
+      "bin": "bukan",
+      "emoji": "🧸"
+    },
+    {
+      "id": "bicycle",
+      "labelKey": "i-bicycle",
+      "bin": "bukan",
+      "emoji": "🚲"
+    },
+    {
+      "id": "umbrella",
+      "labelKey": "i-umbrella",
+      "bin": "bukan",
+      "emoji": "☂️"
+    },
+    {
+      "id": "scissors",
+      "labelKey": "i-scissors",
+      "bin": "bukan",
+      "emoji": "✂️"
+    },
+    {
+      "id": "cardboard-toy-robot",
+      "labelKey": "i-cardboard-toy-robot",
+      "bin": "bukan",
+      "emoji": "📦"
+    },
+    {
+      "id": "ordinary-broom",
+      "labelKey": "i-ordinary-broom",
+      "bin": "bukan",
+      "emoji": "🧹"
+    }
+  ]
+}

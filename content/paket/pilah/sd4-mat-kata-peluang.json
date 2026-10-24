@@ -1,0 +1,268 @@
+{
+  "id": "sd4-mat-kata-peluang",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.PELUANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Seberapa Mungkin?",
+      "instruksi": "Baca kejadiannya, lalu sentuh kata peluang yang paling tepat.",
+      "q1": "Dadu biasa dilempar. Muncul angka 7.",
+      "c1": "mustahil",
+      "c2": "pasti",
+      "c3": "kemungkinan besar",
+      "c4": "peluang sama",
+      "c5": "kemungkinan kecil",
+      "q2": "Dadu biasa dilempar. Muncul angka kurang dari 7.",
+      "q3": "Kantong berisi 9 kelereng merah dan 1 biru. Diambil satu: merah.",
+      "q4": "Kantong berisi 9 kelereng merah dan 1 biru. Diambil satu: biru.",
+      "q5": "Koin dilempar. Muncul sisi angka.",
+      "q6": "Kantong hanya berisi 5 kelereng hijau. Diambil satu: hijau.",
+      "q7": "Kantong hanya berisi 5 kelereng hijau. Diambil satu: kuning.",
+      "q8": "Dadu biasa dilempar. Muncul angka genap.",
+      "q9": "Dadu biasa dilempar. Muncul angka 6.",
+      "q10": "Dadu biasa dilempar. Muncul angka lebih dari 1.",
+      "q11": "Roda putar punya 4 bagian sama: 3 kuning, 1 biru. Berhenti di kuning.",
+      "q12": "Roda putar punya 4 bagian sama: 2 merah, 2 hijau. Berhenti di hijau.",
+      "q13": "Bulan Februari tahun depan punya 30 hari.",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "How Likely?",
+      "instruksi": "Read the event, then touch the best chance word.",
+      "q1": "A normal dice is rolled. It shows 7.",
+      "c1": "impossible",
+      "c2": "certain",
+      "c3": "likely",
+      "c4": "even chance",
+      "c5": "unlikely",
+      "q2": "A normal dice is rolled. It shows a number less than 7.",
+      "q3": "A bag has 9 red marbles and 1 blue. One is taken: red.",
+      "q4": "A bag has 9 red marbles and 1 blue. One is taken: blue.",
+      "q5": "A coin is tossed. It lands on heads.",
+      "q6": "A bag holds only 5 green marbles. One is taken: green.",
+      "q7": "A bag holds only 5 green marbles. One is taken: yellow.",
+      "q8": "A normal dice is rolled. It shows an even number.",
+      "q9": "A normal dice is rolled. It shows 6.",
+      "q10": "A normal dice is rolled. It shows more than 1.",
+      "q11": "A spinner has 4 equal parts: 3 yellow, 1 blue. It stops on yellow.",
+      "q12": "A spinner has 4 equal parts: 2 red, 2 green. It stops on green.",
+      "q13": "February next year has 30 days.",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.42
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c1"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c2",
+        "c4",
+        "c5",
+        "c1"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c5",
+        "c2",
+        "c3",
+        "c4",
+        "c1"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c4",
+        "c2",
+        "c3",
+        "c5",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c1"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c4",
+        "c2",
+        "c3",
+        "c5",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c5",
+        "c2",
+        "c3",
+        "c4",
+        "c1"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c3",
+        "c2",
+        "c4",
+        "c5",
+        "c1"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c3",
+        "c2",
+        "c4",
+        "c5",
+        "c1"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c4",
+        "c2",
+        "c3",
+        "c5",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r13",
+      "promptKey": "q13",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c1"
+    }
+  ]
+}

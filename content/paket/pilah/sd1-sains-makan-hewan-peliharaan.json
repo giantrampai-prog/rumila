@@ -1,0 +1,143 @@
+{
+  "id": "sd1-sains-makan-hewan-peliharaan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.MAKHLUK-HIDUP.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Makan Siang Hewan Peliharaan",
+      "instruksi": "Seret tiap makanan ke hewan yang suka memakannya.",
+      "b-kelinci": "kelinci",
+      "b-kucing": "kucing",
+      "b-burung": "burung",
+      "b-ikanhias": "ikan hias",
+      "i-wortel": "wortel",
+      "i-sawi": "daun sawi",
+      "i-ikan": "ikan goreng",
+      "i-daging": "daging",
+      "i-biji": "biji-bijian",
+      "i-pepaya": "potongan pepaya",
+      "i-pelet": "pelet ikan",
+      "i-jentik": "cacing kecil"
+    },
+    "en": {
+      "judul": "Pet Lunchtime",
+      "instruksi": "Drag each food to the animal that likes to eat it.",
+      "b-kelinci": "rabbit",
+      "b-kucing": "cat",
+      "b-burung": "bird",
+      "b-ikanhias": "pet fish",
+      "i-wortel": "carrot",
+      "i-sawi": "mustard greens",
+      "i-ikan": "fried fish",
+      "i-daging": "meat",
+      "i-biji": "birdseed",
+      "i-pepaya": "papaya pieces",
+      "i-pelet": "fish pellets",
+      "i-jentik": "tiny worms"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah hewan: 3 (kelinci, kucing, burung) → 4 (tambah ikan hias)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah makanan per putaran; 4 dari 6–8 makanan hewan aktif, diacak"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kelinci",
+      "labelKey": "b-kelinci",
+      "emoji": "🐇",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "b-kucing",
+      "emoji": "🐈",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "burung",
+      "labelKey": "b-burung",
+      "emoji": "🐦",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "ikanhias",
+      "labelKey": "b-ikanhias",
+      "emoji": "🐠",
+      "color": "#e0f7fa"
+    }
+  ],
+  "items": [
+    {
+      "id": "wortel",
+      "labelKey": "i-wortel",
+      "bin": "kelinci",
+      "emoji": "🥕"
+    },
+    {
+      "id": "sawi",
+      "labelKey": "i-sawi",
+      "bin": "kelinci",
+      "emoji": "🥬"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "kucing",
+      "emoji": "🐟"
+    },
+    {
+      "id": "daging",
+      "labelKey": "i-daging",
+      "bin": "kucing",
+      "emoji": "🍖"
+    },
+    {
+      "id": "biji",
+      "labelKey": "i-biji",
+      "bin": "burung",
+      "emoji": "🌾"
+    },
+    {
+      "id": "pepaya",
+      "labelKey": "i-pepaya",
+      "bin": "burung",
+      "emoji": "🍈",
+      "color": "#ffb74d"
+    },
+    {
+      "id": "pelet",
+      "labelKey": "i-pelet",
+      "bin": "ikanhias",
+      "emoji": "🟤"
+    },
+    {
+      "id": "jentik",
+      "labelKey": "i-jentik",
+      "bin": "ikanhias",
+      "emoji": "🪱"
+    }
+  ],
+  "pilihan": []
+}

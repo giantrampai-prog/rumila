@@ -1,0 +1,90 @@
+{
+  "id": "sd2-sains-turus-hewan-tepi-hutan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.SD2.PENGAMATAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Survei Hewan Tepi Hutan",
+      "instruksi": "Catat hewan yang lewat di tepi hutan: ketuk barisnya tiap ada yang lewat.",
+      "monyet": "monyet",
+      "tupai": "tupai",
+      "burung": "burung",
+      "rusa": "rusa",
+      "landak": "landak"
+    },
+    "en": {
+      "judul": "Forest Edge Animal Survey",
+      "instruksi": "Record the animals passing the forest edge: tap the row each time one goes by.",
+      "monyet": "monkey",
+      "tupai": "squirrel",
+      "burung": "bird",
+      "rusa": "deer",
+      "landak": "porcupine"
+    }
+  },
+  "knobs": {
+    "kinds": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah jenis (baris turus)"
+    },
+    "count": {
+      "min": 8,
+      "max": 12,
+      "default": 8,
+      "step": 1,
+      "keterangan": "jumlah hewan yang lewat"
+    },
+    "gapMs": {
+      "min": 1000,
+      "max": 1600,
+      "default": 1600,
+      "step": 200,
+      "keterangan": "jeda antarhewan (ms)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mode": "turus",
+  "items": [
+    {
+      "id": "monyet",
+      "labelKey": "monyet",
+      "role": "hewan",
+      "emoji": "🐒"
+    },
+    {
+      "id": "tupai",
+      "labelKey": "tupai",
+      "role": "hewan",
+      "emoji": "🐿️"
+    },
+    {
+      "id": "burung",
+      "labelKey": "burung",
+      "role": "hewan",
+      "emoji": "🐦"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "rusa",
+      "role": "hewan",
+      "emoji": "🦌"
+    },
+    {
+      "id": "landak",
+      "labelKey": "landak",
+      "role": "hewan",
+      "emoji": "🦔"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "id": "sd4-mat-cari-angka-di-tempatnya",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.NILAI-TEMPAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Angka di Tempatnya",
+      "instruksi": "Baca bilangannya, lalu sentuh angka yang berada di tempat yang ditanya.",
+      "q1": "Pada 79.826, angka di tempat puluh ribuan adalah …",
+      "c1": "7",
+      "c2": "9",
+      "c3": "8",
+      "c4": "2",
+      "q2": "Pada 82.743, angka di tempat puluhan adalah …",
+      "c5": "4",
+      "q3": "Pada 31.946, angka di tempat satuan adalah …",
+      "c6": "6",
+      "c7": "3",
+      "c8": "1",
+      "q4": "Pada 62.945, angka di tempat satuan adalah …",
+      "c9": "5",
+      "q5": "Pada 12.934, angka di tempat ribuan adalah …",
+      "q6": "Pada 48.173, angka di tempat puluhan adalah …",
+      "q7": "Pada 78.359, angka di tempat puluhan adalah …",
+      "q8": "Pada 38.461, angka di tempat ratusan adalah …",
+      "q9": "Pada 54.961, angka di tempat ratusan adalah …",
+      "q10": "Pada 36.759, angka di tempat ribuan adalah …",
+      "q11": "Pada 65.784, angka di tempat satuan adalah …",
+      "q12": "Pada 12.984, angka di tempat puluh ribuan adalah …",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Find the Digit in Its Place",
+      "instruksi": "Read the number, then touch the digit in the place asked for.",
+      "q1": "In 79,826, the digit in the ten thousands place is …",
+      "c1": "7",
+      "c2": "9",
+      "c3": "8",
+      "c4": "2",
+      "q2": "In 82,743, the digit in the tens place is …",
+      "c5": "4",
+      "q3": "In 31,946, the digit in the ones place is …",
+      "c6": "6",
+      "c7": "3",
+      "c8": "1",
+      "q4": "In 62,945, the digit in the ones place is …",
+      "c9": "5",
+      "q5": "In 12,934, the digit in the thousands place is …",
+      "q6": "In 48,173, the digit in the tens place is …",
+      "q7": "In 78,359, the digit in the tens place is …",
+      "q8": "In 38,461, the digit in the hundreds place is …",
+      "q9": "In 54,961, the digit in the hundreds place is …",
+      "q10": "In 36,759, the digit in the thousands place is …",
+      "q11": "In 65,784, the digit in the ones place is …",
+      "q12": "In 12,984, the digit in the ten thousands place is …",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c3",
+        "c4",
+        "c1"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c6",
+        "c7",
+        "c8",
+        "c2"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c9",
+        "c6",
+        "c4",
+        "c2"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c4",
+        "c8",
+        "c2",
+        "c7"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c1",
+        "c5",
+        "c3",
+        "c8"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c9",
+        "c1",
+        "c3",
+        "c7"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c5",
+        "c7",
+        "c3",
+        "c6"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c2",
+        "c9",
+        "c5",
+        "c6"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c6",
+        "c7",
+        "c1",
+        "c9"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c5",
+        "c6",
+        "c9",
+        "c1"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c8",
+        "c4",
+        "c2",
+        "c3"
+      ],
+      "correct": "c8"
+    }
+  ]
+}

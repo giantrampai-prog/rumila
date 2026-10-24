@@ -1,0 +1,700 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.SD6.BULAT.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "BULAT",
+        "nama": {
+          "id": "Bilangan bulat",
+          "en": "Integers"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjumlah dan mengurangi bilangan bulat, termasuk mengurangi bilangan negatif, misalnya 4 − (−6) = 10",
+        "en": "I can add and subtract integers, including subtracting a negative number, e.g. 4 − (−6) = 10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.BULAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Soal langsung dan konteks (suhu, selisih). Pengecoh: tanda hasil terbalik, mengurangi bilangan negatif dianggap mengurangi (4 − (−6) = −2)."
+    },
+    {
+      "id": "MAT.SD6.DESIMAL.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "DESIMAL",
+        "nama": {
+          "id": "Desimal dan pembulatan",
+          "en": "Decimals and rounding"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan desimal dua angka di belakang koma, pecahan berpenyebut beda, dan persen dari yang terkecil",
+        "en": "I can order two-place decimals, fractions with different denominators and percentages from smallest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.DESIMAL.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.08"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Np.01",
+          "note": "nilai persepuluhan dan perseratusan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Deret campuran yang rapat (0,3 · 1/3 · 35% · 0,38 · 2/5) dan desimal \"panjang lebih kecil\" (3,07 < 3,7). Termasuk satu deret desimal negatif. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD6.DESIMAL.02",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "DESIMAL",
+        "nama": {
+          "id": "Desimal dan pembulatan",
+          "en": "Decimals and rounding"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membulatkan desimal dua angka di belakang koma ke persepuluhan terdekat",
+        "en": "I can round numbers with two decimal places to the nearest tenth"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.DESIMAL.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Np.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak 2,3 · 2,4 · 2,5 · 2,6. Jebakan: 2,35 naik ke 2,4; 2,25 ke 2,3; membulatkan ke bilangan bulat. Knob: 2 → 4 rak."
+    },
+    {
+      "id": "MAT.SD6.OPERASI.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "OPERASI",
+        "nama": {
+          "id": "Operasi hitung",
+          "en": "Operations"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung soal dengan tanda kurung dan memakai urutan operasi yang benar",
+        "en": "I can work out calculations with brackets and use the correct order of operations"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.OPERASI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pengecoh = hasil bila kurung diabaikan, atau dihitung kiri ke kanan. Termasuk memilih letak kurung agar hasilnya tertentu."
+    },
+    {
+      "id": "MAT.SD6.OPERASI.02",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "OPERASI",
+        "nama": {
+          "id": "Operasi hitung",
+          "en": "Operations"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperkirakan lalu menghitung perkalian sampai 10.000 dengan bilangan 2 angka dan pembagian dengan bilangan 2 angka",
+        "en": "I can estimate and then calculate multiplications up to 10,000 by 2-digit numbers and divisions by 2-digit numbers"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.OPERASI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.04"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Separuh soal perkiraan (pilihan terpaut jauh supaya membulatkan cukup), separuh hitung tepat dan soal cerita dengan pembulatan ke atas (bus)."
+    },
+    {
+      "id": "MAT.SD6.FAKTOR.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "FAKTOR",
+        "nama": {
+          "id": "Faktor dan kelipatan",
+          "en": "Factors and multiples"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencari KPK dan FPB dua bilangan untuk menyelesaikan soal sehari-hari",
+        "en": "I can find the lowest common multiple and highest common factor of two numbers to solve everyday problems"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.FAKTOR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.06"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Soal lampu berkedip/bus berangkat bersama (KPK) dan membagi ke keranjang sama isi (FPB). Pengecoh: hasil kali dua bilangan, KPK untuk FPB."
+    },
+    {
+      "id": "MAT.SD6.FAKTOR.02",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "FAKTOR",
+        "nama": {
+          "id": "Faktor dan kelipatan",
+          "en": "Factors and multiples"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai jumlah angka-angkanya untuk menguji apakah bilangan habis dibagi 3 atau 9",
+        "en": "I can use the sum of the digits to test whether a number is divisible by 3 or 9"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.FAKTOR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.07",
+          "note": "uji 3 dan 9; uji 6 = genap dan habis dibagi 3 dibahas di catatan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Tiga rak saling lepas: habis dibagi 9 / habis dibagi 3 tetapi tidak 9 / tidak habis dibagi 3. Bilangan 3–4 angka supaya membagi langsung lambat."
+    },
+    {
+      "id": "MAT.SD6.FAKTOR.03",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "FAKTOR",
+        "nama": {
+          "id": "Faktor dan kelipatan",
+          "en": "Factors and multiples"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengenali bilangan kubik sampai 125 dan membedakannya dari bilangan kuadrat",
+        "en": "I can recognise cube numbers up to 125 and tell them apart from square numbers"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.FAKTOR.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ni.08"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "1 dan 64 (kuadrat sekaligus kubik) tidak dipakai. Jebakan: 9 (3 × 3, bukan kubik), 12 dan 18. Pengaya."
+    },
+    {
+      "id": "MAT.SD6.PECAHAN.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyederhanakan pecahan ke bentuk paling sederhana, misalnya 18/24 menjadi 3/4",
+        "en": "I can simplify fractions to their simplest form, e.g. 18/24 becomes 3/4"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.PECAHAN.01",
+        "MAT.SD6.FAKTOR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak bentuk paling sederhana; kartu yang perlu dibagi FPB, bukan sekadar dibagi 2. Jebakan: 9/12 → 3/4 (dibagi 3), 6/10 → 3/5."
+    },
+    {
+      "id": "MAT.SD6.PECAHAN.02",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjumlah dan mengurangi pecahan yang penyebutnya berbeda",
+        "en": "I can add and subtract fractions with different denominators"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.PECAHAN.03",
+        "MAT.SD6.FAKTOR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Jawaban dalam bentuk paling sederhana. Pengecoh: menjumlah pembilang dan penyebut, penyebut disamakan tetapi pembilang tidak diubah."
+    },
+    {
+      "id": "MAT.SD6.PECAHAN.03",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung persen atau pecahan dari suatu jumlah, misalnya diskon 25% dari Rp80.000",
+        "en": "I can work out a percentage or fraction of an amount, e.g. a 25% discount on Rp80,000"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.PECAHAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.07"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.02",
+          "note": "pecahan wajar dan tidak wajar sebagai operator"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Diskon dan \"berapa persen\". Pengecoh: besar diskon untuk harga bayar, 25% dibaca 1/25."
+    },
+    {
+      "id": "MAT.SD6.PECAHAN.04",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasangkan pecahan, desimal dua angka, dan persen yang nilainya sama, misalnya 1/4 = 0,25 = 25%",
+        "en": "I can match fractions, two-place decimals and percentages with the same value, e.g. 1/4 = 0.25 = 25%"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.PECAHAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak 1/2, 1/4, 3/4, 2/5, 1/20. Jebakan: 0,05 vs 0,5; 2/5 = 0,25. Knob: 3 → 5 rak."
+    },
+    {
+      "id": "MAT.SD6.RASIO.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "RASIO",
+        "nama": {
+          "id": "Rasio dan proporsi",
+          "en": "Ratio and proportion"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai perbandingan senilai untuk menghitung bahan resep, harga, atau jarak",
+        "en": "I can use equivalent ratios and direct proportion to work out recipe amounts, prices or distances"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD6.PECAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.12"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nf.13"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Resep, harga satuan, skala peta, rasio paling sederhana. Pengecoh: menambah selisih alih-alih mengalikan (2 : 3 → 10 : 11), rasio terbalik."
+    },
+    {
+      "id": "MAT.SD6.ALJABAR.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "ALJABAR",
+        "nama": {
+          "id": "Aljabar awal",
+          "en": "Early algebra"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencari nilai huruf dalam kalimat matematika, misalnya n + 15 = 42",
+        "en": "I can find the value of a letter in a number sentence, e.g. n + 15 = 42"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD6.BULAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nc.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Penjumlahan dan pengurangan saja (sesuai 6Nc.02), termasuk hasil negatif dan huruf yang dipakai dua kali (t + t = 18). Pengecoh: menjumlah semua angka yang tampak."
+    },
+    {
+      "id": "MAT.SD6.POLA.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "POLA",
+        "nama": {
+          "id": "Pola dan barisan",
+          "en": "Patterns and sequences"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai aturan posisi ke suku untuk mencari suku ke-n, misalnya suku ke-10 dari 4, 8, 12, … adalah 40",
+        "en": "I can use a position-to-term rule to find the nth term, e.g. the 10th term of 4, 8, 12, … is 40"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.FAKTOR.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nc.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Nc.04",
+          "note": "barisan dari bilangan kuadrat"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pengecoh: suku berikutnya saja, posisi × beda tanpa penyesuaian (2n + 3 → 2n), menambah beda sebanyak posisi."
+    },
+    {
+      "id": "MAT.SD6.GEOMETRI.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengenali jenis segi empat dari sifat sisi, sudut, simetri, dan diagonalnya",
+        "en": "I can identify types of quadrilateral from their sides, angles, symmetry and diagonals"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.GEOMETRI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Gg.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Petunjuk sifat → nama bangun. Petunjuk ditulis eksklusif (mis. \"sudutnya tidak siku-siku\") supaya hanya satu nama yang cocok; soal klasifikasi inklusif (persegi juga belah ketupat) sengaja tidak dipakai."
+    },
+    {
+      "id": "MAT.SD6.GEOMETRI.02",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencari sudut yang hilang pada segitiga karena jumlah sudutnya 180°",
+        "en": "I can find a missing angle in a triangle because its angles add up to 180°"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.GEOMETRI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Gg.10"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Termasuk segitiga siku-siku dan sama kaki (sudut kaki sama). Pengecoh: 360 − jumlah, 90 − jumlah, salah hitung 10."
+    },
+    {
+      "id": "MAT.SD6.KOORDINAT.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "KOORDINAT",
+        "nama": {
+          "id": "Koordinat",
+          "en": "Coordinates"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menentukan kuadran sebuah titik koordinat, termasuk koordinat negatif dan pecahan",
+        "en": "I can tell which quadrant a coordinate point is in, including negative and fractional coordinates"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD6.BULAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Gp.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak kuadran I–IV. Jebakan: (−3, 4) vs (4, −3) (x dulu baru y); titik di sumbu tidak dipakai. Knob: 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD6.DATA.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Data",
+          "en": "Data"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung rata-rata (mean) dan jangkauan sekumpulan data",
+        "en": "I can calculate the mean and the range of a set of data"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.DATA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Ss.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Data dipilih supaya mean bilangan bulat. Pengecoh: jumlah data, median, nilai terbesar (untuk jangkauan)."
+    },
+    {
+      "id": "MAT.SD6.PELUANG.01",
+      "track": "MAT",
+      "level": "SD6",
+      "unit": {
+        "id": "PELUANG",
+        "nama": {
+          "id": "Peluang",
+          "en": "Probability"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyatakan peluang sebagai pecahan dan mengenali dua kejadian yang saling lepas",
+        "en": "I can write a probability as a fraction and recognise mutually exclusive events"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.PELUANG.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Sp.01",
+          "note": "peluang sebagai proporsi"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "6Sp.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kantong, dadu, kartu bernomor, huruf kata. Pecahan tidak disederhanakan (3/6) supaya terlihat \"banyak hasil yang diinginkan / semua hasil\". Pengecoh: bagian : bagian (3/7) alih-alih bagian : semua (3/10)."
+    }
+  ]
+}

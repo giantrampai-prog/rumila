@@ -1,0 +1,356 @@
+{
+  "id": "sd4-mat-urut-pecahan-botol",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD4.PECAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Botol Pecahan",
+      "instruksi": "Susun pecahan dari yang terkecil sampai yang terbesar.",
+      "s1": "Air di botol",
+      "s1-1": "3/8",
+      "s1-2": "10/16",
+      "s1-3": "6/8",
+      "s1-4": "7/8",
+      "s2": "Cat di kaleng",
+      "s2-1": "1/8",
+      "s2-2": "2/4",
+      "s2-3": "3/4",
+      "s2-4": "14/16",
+      "s3": "Bagian jalan yang diaspal",
+      "s3-1": "2/11",
+      "s3-2": "5/11",
+      "s3-3": "7/11",
+      "s3-4": "8/11",
+      "s4": "Kue yang tersisa",
+      "s4-1": "1/4",
+      "s4-2": "3/8",
+      "s4-3": "2/4",
+      "s4-4": "10/16",
+      "s5": "Lintasan yang sudah dilari",
+      "s5-1": "2/12",
+      "s5-2": "2/9",
+      "s5-3": "2/5",
+      "s5-4": "2/3",
+      "s6": "Tangki bensin",
+      "s6-1": "1/9",
+      "s6-2": "1/6",
+      "s6-3": "1/3",
+      "s6-4": "1/2",
+      "s7": "Pita yang dipakai",
+      "s7-1": "2/12",
+      "s7-2": "2/8",
+      "s7-3": "2/5",
+      "s7-4": "2/3",
+      "s8": "Halaman yang dibaca",
+      "s8-1": "2/12",
+      "s8-2": "2/11",
+      "s8-3": "2/10",
+      "s8-4": "2/3",
+      "s9": "Kebun yang disiram",
+      "s9-1": "1/12",
+      "s9-2": "1/9",
+      "s9-3": "1/8",
+      "s9-4": "1/4",
+      "s10": "Pizza yang dimakan",
+      "s10-1": "2/11",
+      "s10-2": "3/11",
+      "s10-3": "5/11",
+      "s10-4": "10/11"
+    },
+    "en": {
+      "judul": "Fraction Bottles",
+      "instruksi": "Arrange the fractions from smallest to largest.",
+      "s1": "Water in bottles",
+      "s1-1": "3/8",
+      "s1-2": "10/16",
+      "s1-3": "6/8",
+      "s1-4": "7/8",
+      "s2": "Paint in tins",
+      "s2-1": "1/8",
+      "s2-2": "2/4",
+      "s2-3": "3/4",
+      "s2-4": "14/16",
+      "s3": "Parts of the road paved",
+      "s3-1": "2/11",
+      "s3-2": "5/11",
+      "s3-3": "7/11",
+      "s3-4": "8/11",
+      "s4": "Cake left over",
+      "s4-1": "1/4",
+      "s4-2": "3/8",
+      "s4-3": "2/4",
+      "s4-4": "10/16",
+      "s5": "Track already run",
+      "s5-1": "2/12",
+      "s5-2": "2/9",
+      "s5-3": "2/5",
+      "s5-4": "2/3",
+      "s6": "Fuel tanks",
+      "s6-1": "1/9",
+      "s6-2": "1/6",
+      "s6-3": "1/3",
+      "s6-4": "1/2",
+      "s7": "Ribbon used",
+      "s7-1": "2/12",
+      "s7-2": "2/8",
+      "s7-3": "2/5",
+      "s7-4": "2/3",
+      "s8": "Pages read",
+      "s8-1": "2/12",
+      "s8-2": "2/11",
+      "s8-3": "2/10",
+      "s8-4": "2/3",
+      "s9": "Garden watered",
+      "s9-1": "1/12",
+      "s9-2": "1/9",
+      "s9-3": "1/8",
+      "s9-4": "1/4",
+      "s10": "Pizza eaten",
+      "s10-1": "2/11",
+      "s10-2": "3/11",
+      "s10-3": "5/11",
+      "s10-4": "10/11"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "seq-1",
+      "titleKey": "s1",
+      "steps": [
+        {
+          "id": "s1-k1",
+          "labelKey": "s1-1"
+        },
+        {
+          "id": "s1-k2",
+          "labelKey": "s1-2"
+        },
+        {
+          "id": "s1-k3",
+          "labelKey": "s1-3"
+        },
+        {
+          "id": "s1-k4",
+          "labelKey": "s1-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-2",
+      "titleKey": "s2",
+      "steps": [
+        {
+          "id": "s2-k1",
+          "labelKey": "s2-1"
+        },
+        {
+          "id": "s2-k2",
+          "labelKey": "s2-2"
+        },
+        {
+          "id": "s2-k3",
+          "labelKey": "s2-3"
+        },
+        {
+          "id": "s2-k4",
+          "labelKey": "s2-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-3",
+      "titleKey": "s3",
+      "steps": [
+        {
+          "id": "s3-k1",
+          "labelKey": "s3-1"
+        },
+        {
+          "id": "s3-k2",
+          "labelKey": "s3-2"
+        },
+        {
+          "id": "s3-k3",
+          "labelKey": "s3-3"
+        },
+        {
+          "id": "s3-k4",
+          "labelKey": "s3-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-4",
+      "titleKey": "s4",
+      "steps": [
+        {
+          "id": "s4-k1",
+          "labelKey": "s4-1"
+        },
+        {
+          "id": "s4-k2",
+          "labelKey": "s4-2"
+        },
+        {
+          "id": "s4-k3",
+          "labelKey": "s4-3"
+        },
+        {
+          "id": "s4-k4",
+          "labelKey": "s4-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-5",
+      "titleKey": "s5",
+      "steps": [
+        {
+          "id": "s5-k1",
+          "labelKey": "s5-1"
+        },
+        {
+          "id": "s5-k2",
+          "labelKey": "s5-2"
+        },
+        {
+          "id": "s5-k3",
+          "labelKey": "s5-3"
+        },
+        {
+          "id": "s5-k4",
+          "labelKey": "s5-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-k1",
+          "labelKey": "s6-1"
+        },
+        {
+          "id": "s6-k2",
+          "labelKey": "s6-2"
+        },
+        {
+          "id": "s6-k3",
+          "labelKey": "s6-3"
+        },
+        {
+          "id": "s6-k4",
+          "labelKey": "s6-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-k1",
+          "labelKey": "s7-1"
+        },
+        {
+          "id": "s7-k2",
+          "labelKey": "s7-2"
+        },
+        {
+          "id": "s7-k3",
+          "labelKey": "s7-3"
+        },
+        {
+          "id": "s7-k4",
+          "labelKey": "s7-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-k1",
+          "labelKey": "s8-1"
+        },
+        {
+          "id": "s8-k2",
+          "labelKey": "s8-2"
+        },
+        {
+          "id": "s8-k3",
+          "labelKey": "s8-3"
+        },
+        {
+          "id": "s8-k4",
+          "labelKey": "s8-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-k1",
+          "labelKey": "s9-1"
+        },
+        {
+          "id": "s9-k2",
+          "labelKey": "s9-2"
+        },
+        {
+          "id": "s9-k3",
+          "labelKey": "s9-3"
+        },
+        {
+          "id": "s9-k4",
+          "labelKey": "s9-4"
+        }
+      ]
+    },
+    {
+      "id": "seq-10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-k1",
+          "labelKey": "s10-1"
+        },
+        {
+          "id": "s10-k2",
+          "labelKey": "s10-2"
+        },
+        {
+          "id": "s10-k3",
+          "labelKey": "s10-3"
+        },
+        {
+          "id": "s10-k4",
+          "labelKey": "s10-4"
+        }
+      ]
+    }
+  ]
+}

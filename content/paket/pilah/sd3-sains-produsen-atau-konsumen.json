@@ -1,0 +1,152 @@
+{
+  "id": "sd3-sains-produsen-atau-konsumen",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.RANTAI-MAKANAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Produsen atau Konsumen?",
+      "instruksi": "Membuat makanan sendiri atau makan makhluk lain? Taruh ke raknya.",
+      "b-produsen": "produsen (membuat makanan sendiri)",
+      "b-konsumen": "konsumen (makan makhluk lain)",
+      "i-rumput": "rumput",
+      "i-padi": "padi",
+      "i-pohon": "pohon mangga",
+      "i-ganggang": "ganggang laut",
+      "i-kangkung": "kangkung",
+      "i-kaktus": "kaktus",
+      "i-sapi": "sapi",
+      "i-singa": "singa",
+      "i-ulat": "ulat",
+      "i-burung": "burung",
+      "i-ikan": "ikan",
+      "i-katak": "katak"
+    },
+    "en": {
+      "judul": "Producer or Consumer?",
+      "instruksi": "Makes its own food or eats other living things? Put it on its shelf.",
+      "b-produsen": "producer (makes its own food)",
+      "b-konsumen": "consumer (eats other living things)",
+      "i-rumput": "grass",
+      "i-padi": "rice plant",
+      "i-pohon": "mango tree",
+      "i-ganggang": "seaweed",
+      "i-kangkung": "water spinach",
+      "i-kaktus": "cactus",
+      "i-sapi": "cow",
+      "i-singa": "lion",
+      "i-ulat": "caterpillar",
+      "i-burung": "bird",
+      "i-ikan": "fish",
+      "i-katak": "frog"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah makhluk per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "produsen",
+      "labelKey": "b-produsen",
+      "emoji": "🌞",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "konsumen",
+      "labelKey": "b-konsumen",
+      "emoji": "🍽️",
+      "color": "#fff3e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "rumput",
+      "labelKey": "i-rumput",
+      "bin": "produsen",
+      "emoji": "🌿"
+    },
+    {
+      "id": "padi",
+      "labelKey": "i-padi",
+      "bin": "produsen",
+      "emoji": "🌾"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "i-pohon",
+      "bin": "produsen",
+      "emoji": "🌳"
+    },
+    {
+      "id": "ganggang",
+      "labelKey": "i-ganggang",
+      "bin": "produsen",
+      "emoji": "🌿",
+      "color": "#26a69a"
+    },
+    {
+      "id": "kangkung",
+      "labelKey": "i-kangkung",
+      "bin": "produsen",
+      "emoji": "🥬"
+    },
+    {
+      "id": "kaktus",
+      "labelKey": "i-kaktus",
+      "bin": "produsen",
+      "emoji": "🌵"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "konsumen",
+      "emoji": "🐄"
+    },
+    {
+      "id": "singa",
+      "labelKey": "i-singa",
+      "bin": "konsumen",
+      "emoji": "🦁"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "konsumen",
+      "emoji": "🐛"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "konsumen",
+      "emoji": "🐦"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "konsumen",
+      "emoji": "🐟"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "konsumen",
+      "emoji": "🐸"
+    }
+  ],
+  "pilihan": []
+}

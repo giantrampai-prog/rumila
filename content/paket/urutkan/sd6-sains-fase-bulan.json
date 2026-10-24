@@ -1,0 +1,100 @@
+{
+  "id": "sd6-sains-fase-bulan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.TATA-SURYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Wajah Bulan Sebulan",
+      "instruksi": "Susun bentuk Bulan dari bulan baru, menurut urutan malam demi malam.",
+      "s-fase": "Bentuk Bulan selama sebulan",
+      "fase-baru": "bulan baru (hampir tak terlihat)",
+      "fase-sabitawal": "sabit awal",
+      "fase-separuhawal": "separuh awal (kuartal pertama)",
+      "fase-cembungawal": "cembung awal",
+      "fase-purnama": "purnama",
+      "fase-cembungakhir": "cembung akhir",
+      "fase-separuhakhir": "separuh akhir (kuartal ketiga)",
+      "fase-sabitakhir": "sabit akhir"
+    },
+    "en": {
+      "judul": "The Moon's Faces in a Month",
+      "instruksi": "Put the Moon's shapes in order, night after night, starting from the new moon.",
+      "s-fase": "The Moon's shape over a month",
+      "fase-baru": "new moon (almost invisible)",
+      "fase-sabitawal": "waxing crescent",
+      "fase-separuhawal": "first quarter",
+      "fase-cembungawal": "waxing gibbous",
+      "fase-purnama": "full moon",
+      "fase-cembungakhir": "waning gibbous",
+      "fase-separuhakhir": "last quarter",
+      "fase-sabitakhir": "waning crescent"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah fase dari bulan baru: 5 (sampai purnama) → 8"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "fase",
+      "titleKey": "s-fase",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    }
+  ]
+}

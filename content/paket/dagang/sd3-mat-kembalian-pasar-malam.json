@@ -1,0 +1,142 @@
+{
+  "id": "sd3-mat-kembalian-pasar-malam",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD3.UANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kasir Pasar Malam",
+      "instruksi": "Pembeli membayar dengan uang yang cukup. Lengkapi dulu ke puluhan ribu, lalu ke uangnya. Beri kembaliannya.",
+      "g-sepatu": "sepatu",
+      "g-tas": "tas",
+      "g-buku-cerita": "buku cerita",
+      "g-kaos": "kaos",
+      "g-bola": "bola",
+      "g-topi": "topi",
+      "g-payung": "payung",
+      "g-boneka": "boneka",
+      "g-puzzle": "puzzle",
+      "g-jam-weker": "jam weker",
+      "g-krayon": "krayon",
+      "g-helm-sepeda": "helm sepeda"
+    },
+    "en": {
+      "judul": "Night Market Till",
+      "instruksi": "The shopper pays with a big enough note. Complete to the next ten thousand first, then to the note. Give the change.",
+      "g-sepatu": "shoes",
+      "g-tas": "bag",
+      "g-buku-cerita": "storybook",
+      "g-kaos": "T-shirt",
+      "g-bola": "football",
+      "g-topi": "cap",
+      "g-payung": "umbrella",
+      "g-boneka": "teddy bear",
+      "g-puzzle": "jigsaw",
+      "g-jam-weker": "alarm clock",
+      "g-krayon": "crayons",
+      "g-helm-sepeda": "bike helmet"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "sepatu",
+      "labelKey": "g-sepatu",
+      "price": 63000,
+      "emoji": "👟"
+    },
+    {
+      "id": "tas",
+      "labelKey": "g-tas",
+      "price": 87000,
+      "emoji": "🎒"
+    },
+    {
+      "id": "buku",
+      "labelKey": "g-buku-cerita",
+      "price": 27000,
+      "emoji": "📚"
+    },
+    {
+      "id": "kaos",
+      "labelKey": "g-kaos",
+      "price": 34000,
+      "emoji": "👕"
+    },
+    {
+      "id": "bola",
+      "labelKey": "g-bola",
+      "price": 46000,
+      "emoji": "⚽"
+    },
+    {
+      "id": "topi",
+      "labelKey": "g-topi",
+      "price": 18000,
+      "emoji": "🧢"
+    },
+    {
+      "id": "payung",
+      "labelKey": "g-payung",
+      "price": 39000,
+      "emoji": "☂️"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "g-boneka",
+      "price": 72000,
+      "emoji": "🧸"
+    },
+    {
+      "id": "puzzle",
+      "labelKey": "g-puzzle",
+      "price": 14000,
+      "emoji": "🧩"
+    },
+    {
+      "id": "jam",
+      "labelKey": "g-jam-weker",
+      "price": 56000,
+      "emoji": "⏰"
+    },
+    {
+      "id": "krayon",
+      "labelKey": "g-krayon",
+      "price": 8000,
+      "emoji": "🖍️"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "g-helm-sepeda",
+      "price": 95000,
+      "emoji": "⛑️"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 100000,
+    "kindsMax": 1
+  }
+}

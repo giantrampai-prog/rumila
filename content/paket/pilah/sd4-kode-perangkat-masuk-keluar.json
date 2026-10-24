@@ -1,0 +1,195 @@
+{
+  "id": "sd4-kode-perangkat-masuk-keluar",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Masuk, Keluar, Simpan",
+      "instruksi": "Seret tiap perangkat ke kelompoknya: memasukkan data ke komputer, mengeluarkan hasil, atau menyimpan data.",
+      "bin-masukan": "masukan",
+      "bin-keluaran": "keluaran",
+      "bin-simpan": "penyimpanan",
+      "i1": "⌨️ papan ketik",
+      "i2": "🖱️ tetikus",
+      "i3": "🎤 mikrofon",
+      "i4": "📷 kamera web",
+      "i5": "🕹️ joystick",
+      "i6": "🌡️ sensor suhu",
+      "i7": "🔍 pemindai barcode",
+      "i8": "🖨️ printer",
+      "i9": "🔊 speaker",
+      "i10": "🖥️ monitor",
+      "i11": "🎧 headphone",
+      "i12": "📽️ proyektor",
+      "i13": "💡 lampu LED robot",
+      "i14": "💾 flashdisk",
+      "i15": "🗂️ kartu memori",
+      "i16": "🧱 hard disk"
+    },
+    "en": {
+      "judul": "In, Out, Store",
+      "instruksi": "Drag each device to its group: puts data into the computer, gives results out, or stores data.",
+      "bin-masukan": "input",
+      "bin-keluaran": "output",
+      "bin-simpan": "storage",
+      "i1": "⌨️ keyboard",
+      "i2": "🖱️ mouse",
+      "i3": "🎤 microphone",
+      "i4": "📷 webcam",
+      "i5": "🕹️ joystick",
+      "i6": "🌡️ temperature sensor",
+      "i7": "🔍 barcode scanner",
+      "i8": "🖨️ printer",
+      "i9": "🔊 speaker",
+      "i10": "🖥️ monitor",
+      "i11": "🎧 headphones",
+      "i12": "📽️ projector",
+      "i13": "💡 robot LED light",
+      "i14": "💾 USB flash drive",
+      "i15": "🗂️ memory card",
+      "i16": "🧱 hard disk"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "2 = masukan & keluaran; 3 = tambah penyimpanan"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah perangkat per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "masukan",
+      "labelKey": "bin-masukan",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "keluaran",
+      "labelKey": "bin-keluaran",
+      "emoji": "🔊"
+    },
+    {
+      "id": "simpan",
+      "labelKey": "bin-simpan",
+      "emoji": "💾"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "simpan",
+      "scale": 0.5
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "simpan",
+      "scale": 0.5
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "simpan",
+      "scale": 0.5
+    }
+  ]
+}

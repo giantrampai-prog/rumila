@@ -1,0 +1,244 @@
+{
+  "id": "sd3-mat-luas-petak",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.UKUR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Luas Lantai Berpetak",
+      "instruksi": "Luas = banyak petak di dalam. Hitung baris kali kolom, lalu taruh di rak luasnya.",
+      "b-4-petak": "4 petak",
+      "b-6-petak": "6 petak",
+      "b-9-petak": "9 petak",
+      "b-12-petak": "12 petak",
+      "b-16-petak": "16 petak",
+      "b-20-petak": "20 petak",
+      "i-petak-biru-2x2": "petak biru 2×2",
+      "i-petak-hijau-2x2": "petak hijau 2×2",
+      "i-petak-kuning-2x2": "petak kuning 2×2",
+      "i-petak-biru-2x3": "petak biru 2×3",
+      "i-petak-hijau-2x3": "petak hijau 2×3",
+      "i-petak-kuning-2x3": "petak kuning 2×3",
+      "i-petak-biru-3x3": "petak biru 3×3",
+      "i-petak-hijau-3x3": "petak hijau 3×3",
+      "i-petak-kuning-3x3": "petak kuning 3×3",
+      "i-petak-biru-3x4": "petak biru 3×4",
+      "i-petak-hijau-3x4": "petak hijau 3×4",
+      "i-petak-kuning-3x4": "petak kuning 3×4",
+      "i-petak-biru-4x4": "petak biru 4×4",
+      "i-petak-hijau-4x4": "petak hijau 4×4",
+      "i-petak-kuning-4x4": "petak kuning 4×4",
+      "i-petak-biru-4x5": "petak biru 4×5",
+      "i-petak-hijau-4x5": "petak hijau 4×5",
+      "i-petak-kuning-4x5": "petak kuning 4×5"
+    },
+    "en": {
+      "judul": "Tiled Floor Area",
+      "instruksi": "Area is the number of squares inside. Count rows times columns, then put it on its area shelf.",
+      "b-4-petak": "4 squares",
+      "b-6-petak": "6 squares",
+      "b-9-petak": "9 squares",
+      "b-12-petak": "12 squares",
+      "b-16-petak": "16 squares",
+      "b-20-petak": "20 squares",
+      "i-petak-biru-2x2": "blue 2×2 tiles",
+      "i-petak-hijau-2x2": "green 2×2 tiles",
+      "i-petak-kuning-2x2": "yellow 2×2 tiles",
+      "i-petak-biru-2x3": "blue 2×3 tiles",
+      "i-petak-hijau-2x3": "green 2×3 tiles",
+      "i-petak-kuning-2x3": "yellow 2×3 tiles",
+      "i-petak-biru-3x3": "blue 3×3 tiles",
+      "i-petak-hijau-3x3": "green 3×3 tiles",
+      "i-petak-kuning-3x3": "yellow 3×3 tiles",
+      "i-petak-biru-3x4": "blue 3×4 tiles",
+      "i-petak-hijau-3x4": "green 3×4 tiles",
+      "i-petak-kuning-3x4": "yellow 3×4 tiles",
+      "i-petak-biru-4x4": "blue 4×4 tiles",
+      "i-petak-hijau-4x4": "green 4×4 tiles",
+      "i-petak-kuning-4x4": "yellow 4×4 tiles",
+      "i-petak-biru-4x5": "blue 4×5 tiles",
+      "i-petak-hijau-4x5": "green 4×5 tiles",
+      "i-petak-kuning-4x5": "yellow 4×5 tiles"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak luas aktif: 3 → 6"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "lantai per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "l4",
+      "labelKey": "b-4-petak"
+    },
+    {
+      "id": "l6",
+      "labelKey": "b-6-petak"
+    },
+    {
+      "id": "l9",
+      "labelKey": "b-9-petak"
+    },
+    {
+      "id": "l12",
+      "labelKey": "b-12-petak"
+    },
+    {
+      "id": "l16",
+      "labelKey": "b-16-petak"
+    },
+    {
+      "id": "l20",
+      "labelKey": "b-20-petak"
+    }
+  ],
+  "items": [
+    {
+      "id": "l4-biru",
+      "labelKey": "i-petak-biru-2x2",
+      "bin": "l4",
+      "emoji": "🟦",
+      "count": 4
+    },
+    {
+      "id": "l4-hijau",
+      "labelKey": "i-petak-hijau-2x2",
+      "bin": "l4",
+      "emoji": "🟩",
+      "count": 4
+    },
+    {
+      "id": "l4-kuning",
+      "labelKey": "i-petak-kuning-2x2",
+      "bin": "l4",
+      "emoji": "🟨",
+      "count": 4
+    },
+    {
+      "id": "l6-biru",
+      "labelKey": "i-petak-biru-2x3",
+      "bin": "l6",
+      "emoji": "🟦",
+      "count": 6
+    },
+    {
+      "id": "l6-hijau",
+      "labelKey": "i-petak-hijau-2x3",
+      "bin": "l6",
+      "emoji": "🟩",
+      "count": 6
+    },
+    {
+      "id": "l6-kuning",
+      "labelKey": "i-petak-kuning-2x3",
+      "bin": "l6",
+      "emoji": "🟨",
+      "count": 6
+    },
+    {
+      "id": "l9-biru",
+      "labelKey": "i-petak-biru-3x3",
+      "bin": "l9",
+      "emoji": "🟦",
+      "count": 9
+    },
+    {
+      "id": "l9-hijau",
+      "labelKey": "i-petak-hijau-3x3",
+      "bin": "l9",
+      "emoji": "🟩",
+      "count": 9
+    },
+    {
+      "id": "l9-kuning",
+      "labelKey": "i-petak-kuning-3x3",
+      "bin": "l9",
+      "emoji": "🟨",
+      "count": 9
+    },
+    {
+      "id": "l12-biru",
+      "labelKey": "i-petak-biru-3x4",
+      "bin": "l12",
+      "emoji": "🟦",
+      "count": 12
+    },
+    {
+      "id": "l12-hijau",
+      "labelKey": "i-petak-hijau-3x4",
+      "bin": "l12",
+      "emoji": "🟩",
+      "count": 12
+    },
+    {
+      "id": "l12-kuning",
+      "labelKey": "i-petak-kuning-3x4",
+      "bin": "l12",
+      "emoji": "🟨",
+      "count": 12
+    },
+    {
+      "id": "l16-biru",
+      "labelKey": "i-petak-biru-4x4",
+      "bin": "l16",
+      "emoji": "🟦",
+      "count": 16
+    },
+    {
+      "id": "l16-hijau",
+      "labelKey": "i-petak-hijau-4x4",
+      "bin": "l16",
+      "emoji": "🟩",
+      "count": 16
+    },
+    {
+      "id": "l16-kuning",
+      "labelKey": "i-petak-kuning-4x4",
+      "bin": "l16",
+      "emoji": "🟨",
+      "count": 16
+    },
+    {
+      "id": "l20-biru",
+      "labelKey": "i-petak-biru-4x5",
+      "bin": "l20",
+      "emoji": "🟦",
+      "count": 20
+    },
+    {
+      "id": "l20-hijau",
+      "labelKey": "i-petak-hijau-4x5",
+      "bin": "l20",
+      "emoji": "🟩",
+      "count": 20
+    },
+    {
+      "id": "l20-kuning",
+      "labelKey": "i-petak-kuning-4x5",
+      "bin": "l20",
+      "emoji": "🟨",
+      "count": 20
+    }
+  ]
+}

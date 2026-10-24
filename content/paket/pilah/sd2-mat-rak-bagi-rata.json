@@ -1,0 +1,338 @@
+{
+  "id": "sd2-mat-rak-bagi-rata",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.KALI-BAGI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagi Rata",
+      "instruksi": "35 ÷ 5 artinya berapa kali lima menjadi 35. Taruh tiap kartu di rak hasilnya.",
+      "b-1": "1",
+      "b-2": "2",
+      "b-3": "3",
+      "b-4": "4",
+      "b-5": "5",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-10": "10",
+      "i-2bagi2": "2÷2",
+      "i-5bagi5": "5÷5",
+      "i-4bagi2": "4÷2",
+      "i-10bagi5": "10÷5",
+      "i-20bagi10": "20÷10",
+      "i-6bagi2": "6÷2",
+      "i-15bagi5": "15÷5",
+      "i-30bagi10": "30÷10",
+      "i-8bagi2": "8÷2",
+      "i-20bagi5": "20÷5",
+      "i-40bagi10": "40÷10",
+      "i-10bagi2": "10÷2",
+      "i-25bagi5": "25÷5",
+      "i-50bagi10": "50÷10",
+      "i-12bagi2": "12÷2",
+      "i-30bagi5": "30÷5",
+      "i-60bagi10": "60÷10",
+      "i-14bagi2": "14÷2",
+      "i-35bagi5": "35÷5",
+      "i-70bagi10": "70÷10",
+      "i-16bagi2": "16÷2",
+      "i-40bagi5": "40÷5",
+      "i-80bagi10": "80÷10",
+      "i-18bagi2": "18÷2",
+      "i-45bagi5": "45÷5",
+      "i-90bagi10": "90÷10",
+      "i-20bagi2": "20÷2",
+      "i-50bagi5": "50÷5",
+      "i-100bagi10": "100÷10"
+    },
+    "en": {
+      "judul": "Share It Out",
+      "instruksi": "35 ÷ 5 asks how many fives make 35. Put each card on its answer shelf.",
+      "b-1": "1",
+      "b-2": "2",
+      "b-3": "3",
+      "b-4": "4",
+      "b-5": "5",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-10": "10",
+      "i-2bagi2": "2÷2",
+      "i-5bagi5": "5÷5",
+      "i-4bagi2": "4÷2",
+      "i-10bagi5": "10÷5",
+      "i-20bagi10": "20÷10",
+      "i-6bagi2": "6÷2",
+      "i-15bagi5": "15÷5",
+      "i-30bagi10": "30÷10",
+      "i-8bagi2": "8÷2",
+      "i-20bagi5": "20÷5",
+      "i-40bagi10": "40÷10",
+      "i-10bagi2": "10÷2",
+      "i-25bagi5": "25÷5",
+      "i-50bagi10": "50÷10",
+      "i-12bagi2": "12÷2",
+      "i-30bagi5": "30÷5",
+      "i-60bagi10": "60÷10",
+      "i-14bagi2": "14÷2",
+      "i-35bagi5": "35÷5",
+      "i-70bagi10": "70÷10",
+      "i-16bagi2": "16÷2",
+      "i-40bagi5": "40÷5",
+      "i-80bagi10": "80÷10",
+      "i-18bagi2": "18÷2",
+      "i-45bagi5": "45÷5",
+      "i-90bagi10": "90÷10",
+      "i-20bagi2": "20÷2",
+      "i-50bagi5": "50÷5",
+      "i-100bagi10": "100÷10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak hasil aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "q1",
+      "labelKey": "b-1"
+    },
+    {
+      "id": "q2",
+      "labelKey": "b-2"
+    },
+    {
+      "id": "q3",
+      "labelKey": "b-3"
+    },
+    {
+      "id": "q4",
+      "labelKey": "b-4"
+    },
+    {
+      "id": "q5",
+      "labelKey": "b-5"
+    },
+    {
+      "id": "q6",
+      "labelKey": "b-6"
+    },
+    {
+      "id": "q7",
+      "labelKey": "b-7"
+    },
+    {
+      "id": "q8",
+      "labelKey": "b-8"
+    },
+    {
+      "id": "q9",
+      "labelKey": "b-9"
+    },
+    {
+      "id": "q10",
+      "labelKey": "b-10"
+    }
+  ],
+  "items": [
+    {
+      "id": "q1-2bagi2",
+      "labelKey": "i-2bagi2",
+      "bin": "q1",
+      "scale": 0.85
+    },
+    {
+      "id": "q1-5bagi5",
+      "labelKey": "i-5bagi5",
+      "bin": "q1",
+      "scale": 0.85
+    },
+    {
+      "id": "q2-4bagi2",
+      "labelKey": "i-4bagi2",
+      "bin": "q2",
+      "scale": 0.85
+    },
+    {
+      "id": "q2-10bagi5",
+      "labelKey": "i-10bagi5",
+      "bin": "q2",
+      "scale": 0.7
+    },
+    {
+      "id": "q2-20bagi10",
+      "labelKey": "i-20bagi10",
+      "bin": "q2",
+      "scale": 0.6
+    },
+    {
+      "id": "q3-6bagi2",
+      "labelKey": "i-6bagi2",
+      "bin": "q3",
+      "scale": 0.85
+    },
+    {
+      "id": "q3-15bagi5",
+      "labelKey": "i-15bagi5",
+      "bin": "q3",
+      "scale": 0.7
+    },
+    {
+      "id": "q3-30bagi10",
+      "labelKey": "i-30bagi10",
+      "bin": "q3",
+      "scale": 0.6
+    },
+    {
+      "id": "q4-8bagi2",
+      "labelKey": "i-8bagi2",
+      "bin": "q4",
+      "scale": 0.85
+    },
+    {
+      "id": "q4-20bagi5",
+      "labelKey": "i-20bagi5",
+      "bin": "q4",
+      "scale": 0.7
+    },
+    {
+      "id": "q4-40bagi10",
+      "labelKey": "i-40bagi10",
+      "bin": "q4",
+      "scale": 0.6
+    },
+    {
+      "id": "q5-10bagi2",
+      "labelKey": "i-10bagi2",
+      "bin": "q5",
+      "scale": 0.7
+    },
+    {
+      "id": "q5-25bagi5",
+      "labelKey": "i-25bagi5",
+      "bin": "q5",
+      "scale": 0.7
+    },
+    {
+      "id": "q5-50bagi10",
+      "labelKey": "i-50bagi10",
+      "bin": "q5",
+      "scale": 0.6
+    },
+    {
+      "id": "q6-12bagi2",
+      "labelKey": "i-12bagi2",
+      "bin": "q6",
+      "scale": 0.7
+    },
+    {
+      "id": "q6-30bagi5",
+      "labelKey": "i-30bagi5",
+      "bin": "q6",
+      "scale": 0.7
+    },
+    {
+      "id": "q6-60bagi10",
+      "labelKey": "i-60bagi10",
+      "bin": "q6",
+      "scale": 0.6
+    },
+    {
+      "id": "q7-14bagi2",
+      "labelKey": "i-14bagi2",
+      "bin": "q7",
+      "scale": 0.7
+    },
+    {
+      "id": "q7-35bagi5",
+      "labelKey": "i-35bagi5",
+      "bin": "q7",
+      "scale": 0.7
+    },
+    {
+      "id": "q7-70bagi10",
+      "labelKey": "i-70bagi10",
+      "bin": "q7",
+      "scale": 0.6
+    },
+    {
+      "id": "q8-16bagi2",
+      "labelKey": "i-16bagi2",
+      "bin": "q8",
+      "scale": 0.7
+    },
+    {
+      "id": "q8-40bagi5",
+      "labelKey": "i-40bagi5",
+      "bin": "q8",
+      "scale": 0.7
+    },
+    {
+      "id": "q8-80bagi10",
+      "labelKey": "i-80bagi10",
+      "bin": "q8",
+      "scale": 0.6
+    },
+    {
+      "id": "q9-18bagi2",
+      "labelKey": "i-18bagi2",
+      "bin": "q9",
+      "scale": 0.7
+    },
+    {
+      "id": "q9-45bagi5",
+      "labelKey": "i-45bagi5",
+      "bin": "q9",
+      "scale": 0.7
+    },
+    {
+      "id": "q9-90bagi10",
+      "labelKey": "i-90bagi10",
+      "bin": "q9",
+      "scale": 0.6
+    },
+    {
+      "id": "q10-20bagi2",
+      "labelKey": "i-20bagi2",
+      "bin": "q10",
+      "scale": 0.7
+    },
+    {
+      "id": "q10-50bagi5",
+      "labelKey": "i-50bagi5",
+      "bin": "q10",
+      "scale": 0.7
+    },
+    {
+      "id": "q10-100bagi10",
+      "labelKey": "i-100bagi10",
+      "bin": "q10",
+      "scale": 0.5
+    }
+  ]
+}

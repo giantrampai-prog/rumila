@@ -1,0 +1,201 @@
+{
+  "id": "sd5-mat-jenis-segitiga",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Jenis Segitiga",
+      "instruksi": "Lihat ukuran sisi atau sudutnya. Taruh tiap segitiga di rak sama sisi, sama kaki, atau sembarang.",
+      "b-samasisi": "sama sisi",
+      "b-samakaki": "sama kaki",
+      "b-sembarang": "sembarang",
+      "i1": "6, 6, 6 cm",
+      "i2": "3, 3, 3 cm",
+      "i3": "9, 9, 9 cm",
+      "i4": "4, 4, 7 cm",
+      "i5": "5, 8, 5 cm",
+      "i6": "10, 6, 10 cm",
+      "i7": "7, 7, 3 cm",
+      "i8": "3, 4, 5 cm",
+      "i9": "5, 6, 8 cm",
+      "i10": "7, 9, 4 cm",
+      "i11": "6, 8, 10 cm",
+      "i12": "8, 3, 8 cm",
+      "i13": "60°, 60°, 60°",
+      "i14": "40°, 40°, 100°",
+      "i15": "30°, 60°, 90°",
+      "i16": "70°, 70°, 40°",
+      "i17": "25°, 65°, 90°",
+      "i18": "50°, 60°, 70°"
+    },
+    "en": {
+      "judul": "Triangle Type Shelves",
+      "instruksi": "Look at the side lengths or angles. Put each triangle on the equilateral, isosceles or scalene shelf.",
+      "b-samasisi": "equilateral",
+      "b-samakaki": "isosceles",
+      "b-sembarang": "scalene",
+      "i1": "6, 6, 6 cm",
+      "i2": "3, 3, 3 cm",
+      "i3": "9, 9, 9 cm",
+      "i4": "4, 4, 7 cm",
+      "i5": "5, 8, 5 cm",
+      "i6": "10, 6, 10 cm",
+      "i7": "7, 7, 3 cm",
+      "i8": "3, 4, 5 cm",
+      "i9": "5, 6, 8 cm",
+      "i10": "7, 9, 4 cm",
+      "i11": "6, 8, 10 cm",
+      "i12": "8, 3, 8 cm",
+      "i13": "60°, 60°, 60°",
+      "i14": "40°, 40°, 100°",
+      "i15": "30°, 60°, 90°",
+      "i16": "70°, 70°, 40°",
+      "i17": "25°, 65°, 90°",
+      "i18": "50°, 60°, 70°"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10; campuran sisi dan sudut"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "samasisi",
+      "labelKey": "b-samasisi"
+    },
+    {
+      "id": "samakaki",
+      "labelKey": "b-samakaki"
+    },
+    {
+      "id": "sembarang",
+      "labelKey": "b-sembarang"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "samasisi",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "samasisi",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "samasisi",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "sembarang",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "sembarang",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "sembarang",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "sembarang",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "samasisi",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "sembarang",
+      "scale": 0.5
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "samakaki",
+      "scale": 0.5
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "sembarang",
+      "scale": 0.5
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "sembarang",
+      "scale": 0.5
+    }
+  ]
+}

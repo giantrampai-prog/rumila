@@ -1,0 +1,380 @@
+{
+  "id": "sd6-sains-hasil-janggal",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hasil yang Janggal",
+      "instruksi": "Baca hasil percobaannya, lalu sentuh hasil yang janggal atau tindakan yang tepat.",
+      "b-pilihan": "pilihan",
+      "i-r1-u1": "ulangan 1: 30 detik",
+      "i-r1-u2": "ulangan 2: 31 detik",
+      "i-r1-u3": "ulangan 3: 58 detik",
+      "i-r1-u4": "ulangan 4: 29 detik",
+      "i-r2-u1": "ulangan 1: 42 cm",
+      "i-r2-u2": "ulangan 2: 40 cm",
+      "i-r2-u3": "ulangan 3: 41 cm",
+      "i-r2-u4": "ulangan 4: 12 cm",
+      "i-r3-u1": "ulangan 1: 35 °C",
+      "i-r3-u2": "ulangan 2: 36 °C",
+      "i-r3-u3": "ulangan 3: 70 °C",
+      "i-r3-u4": "ulangan 4: 34 °C",
+      "i-r4-u1": "ulangan 1: 120 cm",
+      "i-r4-u2": "ulangan 2: 64 cm",
+      "i-r4-u3": "ulangan 3: 118 cm",
+      "i-r4-u4": "ulangan 4: 121 cm",
+      "i-r5-u1": "ulangan 1: 3 cm",
+      "i-r5-u2": "ulangan 2: 4 cm",
+      "i-r5-u3": "ulangan 3: 15 cm",
+      "i-r5-u4": "ulangan 4: 3 cm",
+      "i-r8-u1": "ulangan 1: 8 ayunan",
+      "i-r8-u2": "ulangan 2: 8 ayunan",
+      "i-r8-u3": "ulangan 3: 9 ayunan",
+      "i-r8-u4": "ulangan 4: 3 ayunan",
+      "i-ulangi": "ulangi pengukuran itu",
+      "i-buangsemua": "buang semua hasil",
+      "i-pakaisaja": "pakai saja sebagai jawaban akhir",
+      "i-andal": "supaya hasilnya lebih dapat dipercaya",
+      "i-lama": "supaya percobaan lebih lama",
+      "i-berbeda": "supaya hasilnya berbeda-beda",
+      "p-r1": "Lama gula larut di air hangat diukur 4 kali. Mana hasil yang janggal?",
+      "p-r2": "Tinggi pantulan bola diukur 4 kali. Mana hasil yang janggal?",
+      "p-r3": "Suhu air setelah 5 menit dijemur diukur 4 kali. Mana hasil yang janggal?",
+      "p-r4": "Jarak mobil meluncur dari papan yang sama diukur 4 kali. Mana hasil yang janggal?",
+      "p-r5": "Tinggi kecambah di hari ke-5 pada 4 cawan yang sama. Mana hasil yang janggal?",
+      "p-r8": "Jumlah ayunan bandul dalam 10 detik dihitung 4 kali. Mana hasil yang janggal?",
+      "p-r6": "Satu hasil sangat berbeda dari yang lain. Apa yang sebaiknya dilakukan?",
+      "p-r7": "Mengapa pengukuran dalam percobaan diulang beberapa kali?"
+    },
+    "en": {
+      "judul": "The Odd One Out",
+      "instruksi": "Read the results, then touch the anomalous result or the right thing to do.",
+      "b-pilihan": "choices",
+      "i-r1-u1": "trial 1: 30 seconds",
+      "i-r1-u2": "trial 2: 31 seconds",
+      "i-r1-u3": "trial 3: 58 seconds",
+      "i-r1-u4": "trial 4: 29 seconds",
+      "i-r2-u1": "trial 1: 42 cm",
+      "i-r2-u2": "trial 2: 40 cm",
+      "i-r2-u3": "trial 3: 41 cm",
+      "i-r2-u4": "trial 4: 12 cm",
+      "i-r3-u1": "trial 1: 35 °C",
+      "i-r3-u2": "trial 2: 36 °C",
+      "i-r3-u3": "trial 3: 70 °C",
+      "i-r3-u4": "trial 4: 34 °C",
+      "i-r4-u1": "trial 1: 120 cm",
+      "i-r4-u2": "trial 2: 64 cm",
+      "i-r4-u3": "trial 3: 118 cm",
+      "i-r4-u4": "trial 4: 121 cm",
+      "i-r5-u1": "trial 1: 3 cm",
+      "i-r5-u2": "trial 2: 4 cm",
+      "i-r5-u3": "trial 3: 15 cm",
+      "i-r5-u4": "trial 4: 3 cm",
+      "i-r8-u1": "trial 1: 8 swings",
+      "i-r8-u2": "trial 2: 8 swings",
+      "i-r8-u3": "trial 3: 9 swings",
+      "i-r8-u4": "trial 4: 3 swings",
+      "i-ulangi": "repeat that measurement",
+      "i-buangsemua": "throw away all the results",
+      "i-pakaisaja": "just use it as the final answer",
+      "i-andal": "so the results are more reliable",
+      "i-lama": "so the experiment takes longer",
+      "i-berbeda": "so the results come out different",
+      "p-r1": "The time for sugar to dissolve in warm water was measured 4 times. Which result is anomalous?",
+      "p-r2": "The height of a ball's bounce was measured 4 times. Which result is anomalous?",
+      "p-r3": "The temperature of water after 5 minutes in the sun was measured 4 times. Which result is anomalous?",
+      "p-r4": "How far a toy car rolled from the same ramp was measured 4 times. Which result is anomalous?",
+      "p-r5": "Sprout height on day 5 in 4 identical dishes. Which result is anomalous?",
+      "p-r8": "The number of pendulum swings in 10 seconds was counted 4 times. Which result is anomalous?",
+      "p-r6": "One result is very different from the others. What should you do?",
+      "p-r7": "Why are measurements in an experiment repeated several times?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "r1-u1",
+      "labelKey": "i-r1-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r1-u2",
+      "labelKey": "i-r1-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r1-u3",
+      "labelKey": "i-r1-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r1-u4",
+      "labelKey": "i-r1-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r2-u1",
+      "labelKey": "i-r2-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r2-u2",
+      "labelKey": "i-r2-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r2-u3",
+      "labelKey": "i-r2-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r2-u4",
+      "labelKey": "i-r2-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r3-u1",
+      "labelKey": "i-r3-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r3-u2",
+      "labelKey": "i-r3-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r3-u3",
+      "labelKey": "i-r3-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r3-u4",
+      "labelKey": "i-r3-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r4-u1",
+      "labelKey": "i-r4-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r4-u2",
+      "labelKey": "i-r4-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r4-u3",
+      "labelKey": "i-r4-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r4-u4",
+      "labelKey": "i-r4-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r5-u1",
+      "labelKey": "i-r5-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r5-u2",
+      "labelKey": "i-r5-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r5-u3",
+      "labelKey": "i-r5-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r5-u4",
+      "labelKey": "i-r5-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r8-u1",
+      "labelKey": "i-r8-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r8-u2",
+      "labelKey": "i-r8-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r8-u3",
+      "labelKey": "i-r8-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r8-u4",
+      "labelKey": "i-r8-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "ulangi",
+      "labelKey": "i-ulangi",
+      "bin": "pilihan",
+      "emoji": "🔁"
+    },
+    {
+      "id": "buangsemua",
+      "labelKey": "i-buangsemua",
+      "bin": "pilihan",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "pakaisaja",
+      "labelKey": "i-pakaisaja",
+      "bin": "pilihan",
+      "emoji": "✅"
+    },
+    {
+      "id": "andal",
+      "labelKey": "i-andal",
+      "bin": "pilihan",
+      "emoji": "🎯"
+    },
+    {
+      "id": "lama",
+      "labelKey": "i-lama",
+      "bin": "pilihan",
+      "emoji": "⏳"
+    },
+    {
+      "id": "berbeda",
+      "labelKey": "i-berbeda",
+      "bin": "pilihan",
+      "emoji": "🔀"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "r1-u1",
+        "r1-u2",
+        "r1-u3",
+        "r1-u4"
+      ],
+      "correct": "r1-u3"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "r2-u1",
+        "r2-u2",
+        "r2-u3",
+        "r2-u4"
+      ],
+      "correct": "r2-u4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "r3-u1",
+        "r3-u2",
+        "r3-u3",
+        "r3-u4"
+      ],
+      "correct": "r3-u3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "r4-u1",
+        "r4-u2",
+        "r4-u3",
+        "r4-u4"
+      ],
+      "correct": "r4-u2"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "r5-u1",
+        "r5-u2",
+        "r5-u3",
+        "r5-u4"
+      ],
+      "correct": "r5-u3"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "r8-u1",
+        "r8-u2",
+        "r8-u3",
+        "r8-u4"
+      ],
+      "correct": "r8-u4"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "ulangi",
+        "buangsemua",
+        "pakaisaja"
+      ],
+      "correct": "ulangi"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "andal",
+        "lama",
+        "berbeda"
+      ],
+      "correct": "andal"
+    }
+  ]
+}

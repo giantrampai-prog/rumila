@@ -1,0 +1,155 @@
+{
+  "id": "sd1-sains-berbunyi-atau-diam-jalan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BUNYI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bunyi di Jalan",
+      "instruksi": "Taruh yang sedang berbunyi ke rak berbunyi, yang diam ke rak diam.",
+      "b-bunyi": "sedang berbunyi",
+      "b-diam": "diam",
+      "i-klakson": "klakson dibunyikan",
+      "i-mobilparkir": "mobil diparkir, mesin mati",
+      "i-peluit": "peluit ditiup",
+      "i-peluitsaku": "peluit di dalam saku",
+      "i-sirene": "sirene ambulans menyala",
+      "i-bakso": "penjual bakso memukul mangkuk",
+      "i-kentongan": "kentongan dipukul",
+      "i-burungkicau": "burung berkicau",
+      "i-burungtidur": "burung tidur di dahan",
+      "i-tiang": "tiang lampu",
+      "i-pohon": "pohon saat tidak ada angin",
+      "i-sepeda": "sepeda bersandar"
+    },
+    "en": {
+      "judul": "Sounds in the Street",
+      "instruksi": "Put things making a sound on the sound shelf, and silent things on the quiet shelf.",
+      "b-bunyi": "making a sound",
+      "b-diam": "silent",
+      "i-klakson": "horn being honked",
+      "i-mobilparkir": "parked car, engine off",
+      "i-peluit": "whistle being blown",
+      "i-peluitsaku": "whistle in a pocket",
+      "i-sirene": "ambulance siren on",
+      "i-bakso": "meatball seller tapping a bowl",
+      "i-kentongan": "bamboo slit drum being hit",
+      "i-burungkicau": "bird singing",
+      "i-burungtidur": "bird asleep on a branch",
+      "i-tiang": "lamp post",
+      "i-pohon": "tree on a still day",
+      "i-sepeda": "bike leaning on a wall"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-ke-sekolah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "bunyi",
+      "labelKey": "b-bunyi",
+      "emoji": "🔊",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "diam",
+      "labelKey": "b-diam",
+      "emoji": "🔇",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "klakson",
+      "labelKey": "i-klakson",
+      "bin": "bunyi",
+      "emoji": "📯"
+    },
+    {
+      "id": "mobilparkir",
+      "labelKey": "i-mobilparkir",
+      "bin": "diam",
+      "emoji": "🚗",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "peluit",
+      "labelKey": "i-peluit",
+      "bin": "bunyi",
+      "emoji": "😗"
+    },
+    {
+      "id": "peluitsaku",
+      "labelKey": "i-peluitsaku",
+      "bin": "diam",
+      "emoji": "👖"
+    },
+    {
+      "id": "sirene",
+      "labelKey": "i-sirene",
+      "bin": "bunyi",
+      "emoji": "🚑"
+    },
+    {
+      "id": "bakso",
+      "labelKey": "i-bakso",
+      "bin": "bunyi",
+      "emoji": "🍜"
+    },
+    {
+      "id": "kentongan",
+      "labelKey": "i-kentongan",
+      "bin": "bunyi",
+      "emoji": "🎋"
+    },
+    {
+      "id": "burungkicau",
+      "labelKey": "i-burungkicau",
+      "bin": "bunyi",
+      "emoji": "🐦"
+    },
+    {
+      "id": "burungtidur",
+      "labelKey": "i-burungtidur",
+      "bin": "diam",
+      "emoji": "🐦",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "tiang",
+      "labelKey": "i-tiang",
+      "bin": "diam",
+      "emoji": "🏮",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "i-pohon",
+      "bin": "diam",
+      "emoji": "🌳"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "diam",
+      "emoji": "🚲",
+      "color": "#bdbdbd"
+    }
+  ],
+  "pilihan": []
+}

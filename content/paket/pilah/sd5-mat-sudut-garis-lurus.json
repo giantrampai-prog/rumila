@@ -1,0 +1,489 @@
+{
+  "id": "sd5-mat-sudut-garis-lurus",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sudut di Garis Lurus",
+      "instruksi": "Sudut-sudut pada garis lurus berjumlah 180°. Cari sudut x, lalu sentuh jawabannya.",
+      "q1": "Pada garis lurus ada sudut 65° dan sudut x. Berapa x?",
+      "c1": "115°",
+      "c2": "295°",
+      "c3": "25°",
+      "c4": "125°",
+      "q2": "Pada garis lurus ada sudut 130° dan sudut x. Berapa x?",
+      "c5": "50°",
+      "c6": "230°",
+      "c7": "40°",
+      "c8": "60°",
+      "q3": "Pada garis lurus ada sudut 38° dan sudut x. Berapa x?",
+      "c9": "142°",
+      "c10": "322°",
+      "c11": "52°",
+      "c12": "152°",
+      "q4": "Pada garis lurus ada sudut 145° dan sudut x. Berapa x?",
+      "c13": "35°",
+      "c14": "215°",
+      "c15": "55°",
+      "c16": "45°",
+      "q5": "Pada garis lurus ada sudut 20°, 75°, dan x. Berapa x?",
+      "c17": "85°",
+      "c18": "265°",
+      "c19": "5°",
+      "c20": "95°",
+      "q6": "Pada garis lurus ada sudut 40°, 60°, dan x. Berapa x?",
+      "c21": "80°",
+      "c22": "260°",
+      "c23": "10°",
+      "c24": "90°",
+      "q7": "Pada garis lurus ada sudut 27°, 33°, dan x. Berapa x?",
+      "c25": "120°",
+      "c26": "300°",
+      "c27": "30°",
+      "c28": "130°",
+      "q8": "Pada garis lurus ada sudut 112° dan sudut x. Berapa x?",
+      "c29": "68°",
+      "c30": "248°",
+      "c31": "22°",
+      "c32": "78°",
+      "q9": "Pada garis lurus ada sudut 155° dan sudut x. Berapa x?",
+      "c33": "205°",
+      "c34": "65°",
+      "q10": "Pada garis lurus ada sudut 48° dan sudut x. Berapa x?",
+      "c35": "132°",
+      "c36": "312°",
+      "c37": "42°",
+      "q11": "Pada garis lurus ada sudut 100°, 35°, dan x. Berapa x?",
+      "c38": "225°",
+      "q12": "Pada garis lurus ada sudut 90°, 15°, dan x. Berapa x?",
+      "c39": "75°",
+      "c40": "255°",
+      "c41": "15°",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Angles on a Straight Line",
+      "instruksi": "Angles on a straight line add up to 180°. Find angle x, then touch the answer.",
+      "q1": "On a straight line there is an angle of 65° and an angle x. What is x?",
+      "c1": "115°",
+      "c2": "295°",
+      "c3": "25°",
+      "c4": "125°",
+      "q2": "On a straight line there is an angle of 130° and an angle x. What is x?",
+      "c5": "50°",
+      "c6": "230°",
+      "c7": "40°",
+      "c8": "60°",
+      "q3": "On a straight line there is an angle of 38° and an angle x. What is x?",
+      "c9": "142°",
+      "c10": "322°",
+      "c11": "52°",
+      "c12": "152°",
+      "q4": "On a straight line there is an angle of 145° and an angle x. What is x?",
+      "c13": "35°",
+      "c14": "215°",
+      "c15": "55°",
+      "c16": "45°",
+      "q5": "On a straight line there are angles 20°, 75° and x. What is x?",
+      "c17": "85°",
+      "c18": "265°",
+      "c19": "5°",
+      "c20": "95°",
+      "q6": "On a straight line there are angles 40°, 60° and x. What is x?",
+      "c21": "80°",
+      "c22": "260°",
+      "c23": "10°",
+      "c24": "90°",
+      "q7": "On a straight line there are angles 27°, 33° and x. What is x?",
+      "c25": "120°",
+      "c26": "300°",
+      "c27": "30°",
+      "c28": "130°",
+      "q8": "On a straight line there is an angle of 112° and an angle x. What is x?",
+      "c29": "68°",
+      "c30": "248°",
+      "c31": "22°",
+      "c32": "78°",
+      "q9": "On a straight line there is an angle of 155° and an angle x. What is x?",
+      "c33": "205°",
+      "c34": "65°",
+      "q10": "On a straight line there is an angle of 48° and an angle x. What is x?",
+      "c35": "132°",
+      "c36": "312°",
+      "c37": "42°",
+      "q11": "On a straight line there are angles 100°, 35° and x. What is x?",
+      "c38": "225°",
+      "q12": "On a straight line there are angles 90°, 15° and x. What is x?",
+      "c39": "75°",
+      "c40": "255°",
+      "c41": "15°",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c3",
+        "c33",
+        "c34",
+        "c13"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c35",
+        "c36",
+        "c37",
+        "c9"
+      ],
+      "correct": "c35"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c16",
+        "c38",
+        "c15",
+        "c13"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c39",
+        "c40",
+        "c41",
+        "c17"
+      ],
+      "correct": "c39"
+    }
+  ]
+}

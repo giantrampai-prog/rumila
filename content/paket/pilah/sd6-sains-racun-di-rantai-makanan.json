@@ -1,0 +1,278 @@
+{
+  "id": "sd6-sains-racun-di-rantai-makanan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.JARING-MAKANAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jejak Racun",
+      "instruksi": "Baca rantai makanannya, lalu sentuh perkiraan yang paling masuk akal.",
+      "b-pilihan": "pilihan",
+      "i-padi": "padi",
+      "i-belalang": "belalang",
+      "i-elang": "elang",
+      "i-ganggang": "ganggang",
+      "i-ikankecil": "ikan kecil",
+      "i-bangau": "burung bangau",
+      "i-lumut": "lumut air",
+      "i-ikan": "ikan",
+      "i-berang": "berang-berang",
+      "i-makanbanyak": "ia memakan banyak mangsa yang masing-masing membawa racun",
+      "i-palingbesar": "tubuhnya paling besar",
+      "i-airsaja": "racun hanya ada di air minumnya",
+      "i-bertambah": "bertambah banyak",
+      "i-berkurang": "berkurang",
+      "i-tetap": "tetap sama",
+      "i-tanparacun": "tidak ada racun yang naik ke rantai makanan",
+      "i-tikushilang": "semua tikus hilang selamanya",
+      "i-elangkenyang": "elang tidak perlu makan lagi",
+      "p-r1": "Pestisida tersemprot di sawah: padi → belalang → katak → elang. Siapa yang tubuhnya menumpuk racun paling banyak?",
+      "p-r2": "Rantai yang sama: padi → belalang → katak → elang. Siapa yang pertama menyerap racun?",
+      "p-r3": "Limbah merkuri di danau: ganggang → ikan kecil → bangau. Siapa yang menumpuk merkuri paling banyak?",
+      "p-r4": "Mengapa pemakan puncak menumpuk racun paling banyak?",
+      "p-r5": "Di jaring sawah, katak memakan belalang. Bila katak mati karena racun, belalang kemungkinan…",
+      "p-r6": "Di kolam ini ular hanya memakan katak. Bila katak mati karena racun, ular kemungkinan…",
+      "p-r7": "Petani memelihara burung hantu untuk memangsa tikus, bukan memakai racun tikus. Mengapa lebih aman bagi elang?",
+      "p-r8": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling sedikit?"
+    },
+    "en": {
+      "judul": "Tracking the Poison",
+      "instruksi": "Read the food chain, then touch the most sensible prediction.",
+      "b-pilihan": "choices",
+      "i-padi": "rice plant",
+      "i-belalang": "grasshopper",
+      "i-elang": "eagle",
+      "i-ganggang": "algae",
+      "i-ikankecil": "small fish",
+      "i-bangau": "heron",
+      "i-lumut": "water weed",
+      "i-ikan": "fish",
+      "i-berang": "otter",
+      "i-makanbanyak": "it eats many prey that each carry some poison",
+      "i-palingbesar": "it has the biggest body",
+      "i-airsaja": "the poison is only in its drinking water",
+      "i-bertambah": "increases",
+      "i-berkurang": "decreases",
+      "i-tetap": "stays the same",
+      "i-tanparacun": "no poison moves up the food chain",
+      "i-tikushilang": "all the rats disappear forever",
+      "i-elangkenyang": "eagles no longer need to eat",
+      "p-r1": "Pesticide is sprayed on a rice field: rice → grasshopper → frog → eagle. Whose body builds up the most poison?",
+      "p-r2": "Same chain: rice → grasshopper → frog → eagle. Who takes in the poison first?",
+      "p-r3": "Mercury waste in a lake: algae → small fish → heron. Who builds up the most mercury?",
+      "p-r4": "Why does the top consumer build up the most poison?",
+      "p-r5": "In the rice-field web, frogs eat grasshoppers. If the frogs die from poison, the grasshoppers will probably…",
+      "p-r6": "In this pond the snakes eat only frogs. If the frogs die from poison, the snakes will probably…",
+      "p-r7": "Farmers keep barn owls to catch rats instead of using rat poison. Why is this safer for eagles?",
+      "p-r8": "Pesticide gets into a river: water weed → fish → otter. Who builds up the least poison?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "padi",
+      "labelKey": "i-padi",
+      "bin": "pilihan",
+      "emoji": "🌾"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "i-belalang",
+      "bin": "pilihan",
+      "emoji": "🦗"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "pilihan",
+      "emoji": "🦅"
+    },
+    {
+      "id": "ganggang",
+      "labelKey": "i-ganggang",
+      "bin": "pilihan",
+      "emoji": "🟩"
+    },
+    {
+      "id": "ikankecil",
+      "labelKey": "i-ikankecil",
+      "bin": "pilihan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "bangau",
+      "labelKey": "i-bangau",
+      "bin": "pilihan",
+      "emoji": "🐦"
+    },
+    {
+      "id": "lumut",
+      "labelKey": "i-lumut",
+      "bin": "pilihan",
+      "emoji": "🌿"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "pilihan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "berang",
+      "labelKey": "i-berang",
+      "bin": "pilihan",
+      "emoji": "🦦"
+    },
+    {
+      "id": "makanbanyak",
+      "labelKey": "i-makanbanyak",
+      "bin": "pilihan",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "palingbesar",
+      "labelKey": "i-palingbesar",
+      "bin": "pilihan",
+      "emoji": "🐘"
+    },
+    {
+      "id": "airsaja",
+      "labelKey": "i-airsaja",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "bertambah",
+      "labelKey": "i-bertambah",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "berkurang",
+      "labelKey": "i-berkurang",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "tetap",
+      "labelKey": "i-tetap",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "tanparacun",
+      "labelKey": "i-tanparacun",
+      "bin": "pilihan",
+      "emoji": "✅"
+    },
+    {
+      "id": "tikushilang",
+      "labelKey": "i-tikushilang",
+      "bin": "pilihan",
+      "emoji": "❌"
+    },
+    {
+      "id": "elangkenyang",
+      "labelKey": "i-elangkenyang",
+      "bin": "pilihan",
+      "emoji": "❓"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "elang",
+        "belalang",
+        "padi"
+      ],
+      "correct": "elang"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "padi",
+        "belalang",
+        "elang"
+      ],
+      "correct": "padi"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "bangau",
+        "ikankecil",
+        "ganggang"
+      ],
+      "correct": "bangau"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "makanbanyak",
+        "palingbesar",
+        "airsaja"
+      ],
+      "correct": "makanbanyak"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "berkurang",
+        "bertambah",
+        "tetap"
+      ],
+      "correct": "berkurang"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "tanparacun",
+        "tikushilang",
+        "elangkenyang"
+      ],
+      "correct": "tanparacun"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "lumut",
+        "ikan",
+        "berang"
+      ],
+      "correct": "lumut"
+    }
+  ]
+}

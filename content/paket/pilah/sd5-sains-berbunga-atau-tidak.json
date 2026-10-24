@@ -1,0 +1,151 @@
+{
+  "id": "sd5-sains-berbunga-atau-tidak",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUNGA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Berbunga atau Tidak?",
+      "instruksi": "Pilah tiap tumbuhan: menghasilkan bunga, atau tidak pernah berbunga.",
+      "b-berbunga": "tumbuhan berbunga",
+      "b-tidak": "tidak berbunga (spora atau runjung)",
+      "i-mangga": "pohon mangga",
+      "i-padi": "padi",
+      "i-mawar": "mawar",
+      "i-rumput": "rumput",
+      "i-jagung": "jagung",
+      "i-kelapa": "pohon kelapa",
+      "i-kaktus": "kaktus",
+      "i-bungamatahari": "bunga matahari",
+      "i-paku": "tumbuhan paku",
+      "i-suplir": "suplir",
+      "i-lumut": "lumut",
+      "i-pinus": "pohon pinus"
+    },
+    "en": {
+      "judul": "Flowers or No Flowers?",
+      "instruksi": "Sort each plant: it makes flowers, or it never flowers.",
+      "b-berbunga": "flowering plant",
+      "b-tidak": "non-flowering (spores or cones)",
+      "i-mangga": "mango tree",
+      "i-padi": "rice plant",
+      "i-mawar": "rose",
+      "i-rumput": "grass",
+      "i-jagung": "maize",
+      "i-kelapa": "coconut palm",
+      "i-kaktus": "cactus",
+      "i-bungamatahari": "sunflower",
+      "i-paku": "fern",
+      "i-suplir": "maidenhair fern",
+      "i-lumut": "moss",
+      "i-pinus": "pine tree"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "berbunga",
+      "labelKey": "b-berbunga",
+      "emoji": "🌺",
+      "color": "#f8bbd0"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🌿",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "mangga",
+      "labelKey": "i-mangga",
+      "bin": "berbunga",
+      "emoji": "🥭"
+    },
+    {
+      "id": "padi",
+      "labelKey": "i-padi",
+      "bin": "berbunga",
+      "emoji": "🌾"
+    },
+    {
+      "id": "mawar",
+      "labelKey": "i-mawar",
+      "bin": "berbunga",
+      "emoji": "🌹"
+    },
+    {
+      "id": "rumput",
+      "labelKey": "i-rumput",
+      "bin": "berbunga",
+      "emoji": "🌱"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "berbunga",
+      "emoji": "🌽"
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "i-kelapa",
+      "bin": "berbunga",
+      "emoji": "🥥"
+    },
+    {
+      "id": "kaktus",
+      "labelKey": "i-kaktus",
+      "bin": "berbunga",
+      "emoji": "🌵"
+    },
+    {
+      "id": "bungamatahari",
+      "labelKey": "i-bungamatahari",
+      "bin": "berbunga",
+      "emoji": "🌻"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "tidak",
+      "emoji": "🌿"
+    },
+    {
+      "id": "suplir",
+      "labelKey": "i-suplir",
+      "bin": "tidak",
+      "emoji": "🌿"
+    },
+    {
+      "id": "lumut",
+      "labelKey": "i-lumut",
+      "bin": "tidak",
+      "emoji": "🟩"
+    },
+    {
+      "id": "pinus",
+      "labelKey": "i-pinus",
+      "bin": "tidak",
+      "emoji": "🌲"
+    }
+  ],
+  "pilihan": []
+}

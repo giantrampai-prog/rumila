@@ -1,0 +1,669 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.SD6.PERNAPASAN.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "PERNAPASAN",
+        "nama": {
+          "id": "Sistem pernapasan",
+          "en": "The respiratory system"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun jalan udara dari hidung sampai oksigen masuk ke darah di paru-paru, dan jalan karbon dioksida keluar",
+        "en": "I can order the path of air from the nose until oxygen enters the blood in the lungs, and the way carbon dioxide leaves"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Bs.02",
+          "note": "oksigen dari udara masuk ke darah di paru-paru; banyak vertebrata punya sistem serupa"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun dua arah: udara masuk (6 langkah, sampai oksigen masuk darah) dan karbon dioksida keluar (4 langkah). Knob steps 4 → 6 dipotong dari depan. Jebakan: bronkus sebelum trakea; 'udara masuk ke jantung'. Istilah alveolus dipakai dengan padanan 'gelembung kecil paru-paru'."
+    },
+    {
+      "id": "SAINS.SD6.SIRKULASI.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "SIRKULASI",
+        "nama": {
+          "id": "Sistem peredaran darah",
+          "en": "The circulatory system"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun peredaran darah: jantung memompa ke arteri, kapiler menukar oksigen dan sisa, vena membawa darah kembali",
+        "en": "I can order blood circulation: the heart pumps into arteries, capillaries swap oxygen and waste, veins bring blood back"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD6.PERNAPASAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Bs.01",
+          "note": "jantung memompa darah lewat arteri, kapiler, vena; mengangkut oksigen, sari makanan, sisa"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Dua paket urutkan: susun (dua lingkaran: ke tubuh 5 langkah, ke paru-paru 4 langkah) dan perbaiki (satu pasang tertukar). Label memuat apa yang diangkut (oksigen, sari makanan, karbon dioksida) agar fungsi 6Bs.01 ikut teramati. Jebakan: vena sebelum arteri; kapiler dianggap 'pembuluh besar'. Knob steps 4 → 5."
+    },
+    {
+      "id": "SAINS.SD6.PENYAKIT.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "PENYAKIT",
+        "nama": {
+          "id": "Penyakit menular dan kebersihan",
+          "en": "Infectious diseases and hygiene"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kebiasaan yang mencegah penyebaran penyakit menular dari kebiasaan yang bisa menyebarkannya",
+        "en": "I can sort habits that stop infectious diseases spreading from habits that can spread them"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Bp.02",
+          "note": "penyakit disebabkan virus, bakteri, parasit, jamur dan dapat menular"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Bp.03",
+          "note": "kebersihan mencegah penyakit lewat air, makanan, cairan tubuh; menghindari gigitan serangga pembawa"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah dengan contoh Indonesia: merebus air, 3M demam berdarah (menguras, menutup, kaleng bekas), kelambu, menutup makanan dari lalat, etika batuk. Cairan tubuh hanya lewat contoh netral (berbagi sikat gigi, bersin ke tangan). Bahasa tanpa menyalahkan: wadah kedua 'bisa menyebarkan', bukan 'jorok'. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD6.JARING-MAKANAN.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "JARING-MAKANAN",
+        "nama": {
+          "id": "Jaring makanan dan aliran energi",
+          "en": "Food webs and energy flow"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menelusuri jalur energi di jaring makanan sawah, dari Matahari lewat produsen sampai pemakan puncak",
+        "en": "I can trace energy paths through a rice-field food web, from the Sun through the producer to the top consumer"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.RANTAI-MAKANAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Be.01",
+          "note": "membaca jaring makanan dan menemukan rantai di dalamnya"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Be.03",
+          "note": "sumber energi dan perpindahan energi di rantai/jaring"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun empat jalur dari SATU jaring sawah (padi–belalang–katak–ular–elang, padi–tikus–ular–elang, padi–pipit–elang) plus jalur kolam; tiap jalur dimulai Matahari sebagai sumber energi (naik dari SD4 yang mulai di produsen). Saran aset: tampilkan gambar jaring lengkap di latar sehingga anak membaca jalur dari jaring. Knob steps 4 → 6 (dipotong dari Matahari)."
+    },
+    {
+      "id": "SAINS.SD6.JARING-MAKANAN.02",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "JARING-MAKANAN",
+        "nama": {
+          "id": "Jaring makanan dan aliran energi",
+          "en": "Food webs and energy flow"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperkirakan makhluk yang paling banyak menumpuk racun di rantai makanan dan akibat hilangnya satu makhluk di jaring",
+        "en": "I can predict which living thing builds up the most poison in a food chain, and what happens when one is removed from a web"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD6.JARING-MAKANAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Be.02",
+          "note": "zat beracun merusak makhluk hidup dan berpindah lewat rantai/jaring makanan"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Be.01",
+          "note": "menafsirkan jaring makanan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde: penumpukan racun (pestisida sawah, merkuri danau), alasannya (pemakan puncak makan banyak mangsa beracun), akibat katak hilang terhadap belalang dan ular, dan pengendalian hayati (burung hantu) sebagai pilihan aman. Jebakan: 'paling besar tubuhnya' sebagai alasan. Rantai ditulis di soal sehingga bukti = penalaran, bukan hafalan. [Tinjauan 25 Okt 2026: r6 diberi syarat 'ular hanya memakan katak' — di jaring sawah ular juga makan tikus, sehingga 'tetap' bisa dibela.]"
+    },
+    {
+      "id": "SAINS.SD6.PERUBAHAN-ZAT.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "PERUBAHAN-ZAT",
+        "nama": {
+          "id": "Perubahan fisika dan reaksi kimia",
+          "en": "Physical changes and chemical reactions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah perubahan yang bisa dibalik, termasuk melarutkan dan mencampur, dari perubahan yang tidak bisa dibalik",
+        "en": "I can sort changes that can be reversed, including dissolving and mixing, from changes that cannot be reversed"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.WUJUD-ZAT.03",
+        "SAINS.SD5.LARUTAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Cc.01",
+          "note": "mengenali dan menjelaskan perubahan fisika yang dapat dibalik"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok. Naik dari SD4 WUJUD-ZAT.03: kumpulan memasukkan melarutkan (gula di teh, garam di air) dan mencampur (pasir dan kerikil) sebagai perubahan yang bisa dibalik — memakai cara pisah dari SD5 LARUTAN.02. Jebakan: semen mengeras (tidak bisa dibalik walau tampak 'mengering'); telur direbus. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD6.PERUBAHAN-ZAT.02",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "PERUBAHAN-ZAT",
+        "nama": {
+          "id": "Perubahan fisika dan reaksi kimia",
+          "en": "Physical changes and chemical reactions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengenali bukti reaksi kimia dalam suatu kejadian: gas muncul, warna berubah, atau suhu berubah",
+        "en": "I can recognise evidence of a chemical reaction in an event: a gas is given off, the colour changes, or the temperature changes"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD6.PERUBAHAN-ZAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Cc.05",
+          "note": "bukti reaksi kimia: gas, perubahan warna, perubahan suhu"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Cc.04",
+          "note": "reaktan berinteraksi membentuk produk"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga wadah bukti. Tiap kartu dipilih supaya buktinya tunggal dan jelas (cuka + soda kue berbuih; sendok perak menghitam; penghangat tangan memanas). Kompres dingin instan sengaja tidak dipakai (pendinginnya karena melarut, bukan reaksi). [Tinjauan 25 Okt 2026: korek api diganti gamping tohor disiram air — korek juga memperlihatkan cahaya dan gas, buktinya tidak tunggal.] Jebakan: adonan roti mengembang = gas dari ragi. Saran presenter: percobaan cuka–soda kue bisa dicoba di rumah dengan orang dewasa. Knob itemCount 4 → 9."
+    },
+    {
+      "id": "SAINS.SD6.PERUBAHAN-ZAT.03",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "PERUBAHAN-ZAT",
+        "nama": {
+          "id": "Perubahan fisika dan reaksi kimia",
+          "en": "Physical changes and chemical reactions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan mendidih dan menguap dari tempat dan suhu terjadinya",
+        "en": "I can tell boiling from evaporation by where and at what temperature each happens"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.SIKLUS-AIR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Cc.03",
+          "note": "perbedaan mendidih dan menguap"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Cp.01",
+          "note": "suhu perubahan wujud adalah sifat zat"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah dengan definisi singkat di label (mendidih: gelembung di seluruh cairan pada suhu didih; menguap: hanya di permukaan, pada suhu berapa pun). Contoh lokal: jemuran, tambak garam, ketel bersiul. 'Uap putih di atas teh' sengaja tidak dipakai (itu pengembunan). Jebakan: suhu air mendidih tidak naik lagi walau api dibesarkan (6Cp.01). Knob itemCount 4 → 9."
+    },
+    {
+      "id": "SAINS.SD6.MASSA-BERAT.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "MASSA-BERAT",
+        "nama": {
+          "id": "Massa dan berat",
+          "en": "Mass and weight"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan massa (kilogram) dan berat (newton), dan tahu berat berubah saat gravitasi berubah tetapi massa tetap",
+        "en": "I can tell mass (kilograms) from weight (newtons), and know weight changes when gravity changes but mass does not"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.GAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Pf.01",
+          "note": "beda massa (kg) dan berat (N)"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Pf.02",
+          "note": "bila gravitasi berubah, berat berubah tetapi massa tidak"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 9 ronde: istilah dan satuan, lalu skenario Bulan (gravitasi lebih kecil), Jupiter (lebih besar), dan angkasa (hampir tanpa gravitasi). Jebakan: bahasa sehari-hari 'berat badanku 30 kg' (sebenarnya massa) — catat di umpan balik, tidak dinilai sebagai salah. Ronde r8 memakai angka (2 kg tetap 2 kg) supaya bukan sekadar memilih kata 'tetap'."
+    },
+    {
+      "id": "SAINS.SD6.APUNG-TENGGELAM.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "APUNG-TENGGELAM",
+        "nama": {
+          "id": "Massa, bentuk, dan mengapung",
+          "en": "Mass, shape and floating"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memprediksi benda mengapung atau tenggelam dari massa dan bentuknya, misalnya plastisin bola dibanding plastisin perahu",
+        "en": "I can predict whether an object floats or sinks from its mass and shape, such as a ball of clay compared with a clay boat"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.GAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Pf.05",
+          "note": "massa dan bentuk benda memengaruhi mengapung atau tenggelam"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde berupa pasangan terkendali: bahan sama bentuk beda (plastisin bola vs perahu, foil, baja mangkuk vs sendok) atau bentuk sama massa beda (botol kosong vs berisi pasir, pingpong vs kelereng). Naik dari TKA (tebak apung-tenggelam per bahan): di sini satu variabel berubah per pasangan. Jebakan: 'kapal baja besar pasti tenggelam'. Dua pilihan per ronde; mastery tetap 0,7 atas 10 bukti."
+    },
+    {
+      "id": "SAINS.SD6.CAHAYA.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "CAHAYA",
+        "nama": {
+          "id": "Pemantulan dan pembiasan",
+          "en": "Reflection and refraction"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kejadian pemantulan cahaya dan pembiasan cahaya yang kulihat sehari-hari",
+        "en": "I can sort everyday sights into reflection of light and refraction of light"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.CAHAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Ps.01",
+          "note": "arah cahaya berubah saat dipantulkan cermin datar"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Ps.02",
+          "note": "cahaya berbelok saat melewati medium berbeda: pembiasan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah, kartu berupa pengamatan (pensil tampak patah di gelas air, kolam tampak dangkal, spion motor, periskop). Jebakan: bayangan wajah di danau tenang = pemantulan, bukan pembiasan, walau ada air; kaca pembesar = pembiasan. Arah sinar pada cermin (sudut datang = sudut pantul) belum dinilai — butuh mekanik gambar sinar. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD6.LISTRIK.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "LISTRIK",
+        "nama": {
+          "id": "Rangkaian seri dan paralel",
+          "en": "Series and parallel circuits"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan rangkaian seri dan paralel dan memprediksi terang lampu serta akibat satu lampu dilepas",
+        "en": "I can tell series from parallel circuits and predict lamp brightness and what happens when one lamp is removed"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.LISTRIK.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Pe.02",
+          "note": "membandingkan terang lampu di rangkaian seri dan paralel"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6Pe.01",
+          "note": "menggambar dan membandingkan rangkaian"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 9 ronde: mengenali susunan dari uraian, membandingkan terang (seri lebih redup dari satu lampu; paralel lebih terang dari seri dengan baterai sama), akibat satu lampu dilepas, dan konteks rumah/lampu hias. Simbol rangkaian (6Pe.01) baru disebut, belum dinilai: presenter perlu gambar diagram bersimbol per ronde (aset). Jebakan: anak mengira paralel menambah terang di atas satu lampu sendiri."
+    },
+    {
+      "id": "SAINS.SD6.BATUAN.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "BATUAN",
+        "nama": {
+          "id": "Batuan, fosil, dan siklus batuan",
+          "en": "Rocks, fossils and the rock cycle"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah batuan beku, sedimen, dan metamorf dari ciri yang terlihat seperti kristal, lapisan, atau pita",
+        "en": "I can sort igneous, sedimentary and metamorphic rocks by features I can see, such as crystals, layers or bands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.BUMI-ANTARIKSA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESp.01",
+          "note": "batuan metamorf, beku, sedimen dan ciri pengenalnya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga wadah; kartu menyebut nama batuan DAN ciri yang teramati (granit berbintik kristal, batu kapur berfosil kerang, batu sabak bisa dibelah tipis), sehingga kunci pengenal bekerja dari pengamatan. Jebakan: batu apung (beku walau ringan dan berpori), marmer (metamorf dari batu kapur). Contoh lokal: batu andesit candi bisa ditambahkan sebagai knob. Knob itemCount 4 → 9."
+    },
+    {
+      "id": "SAINS.SD6.BATUAN.02",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "BATUAN",
+        "nama": {
+          "id": "Batuan, fosil, dan siklus batuan",
+          "en": "Rocks, fossils and the rock cycle"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun langkah terbentuknya fosil di batuan sedimen, dari makhluk tertimbun sampai fosil tersingkap",
+        "en": "I can order how a fossil forms in sedimentary rock, from a living thing being buried to the fossil being uncovered"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD6.BATUAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESp.02",
+          "note": "cara fosil terbentuk di batuan sedimen"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun dua jenis fosil: cangkang (fosil tubuh, 6 langkah, penggantian oleh mineral) dan jejak kaki (fosil jejak, 5 langkah). Jebakan: 'membusuk' diletakkan sesudah 'menjadi batu'; erosi dikira awal. Knob steps 4 → 6. Waktu jutaan tahun disebut di umpan balik."
+    },
+    {
+      "id": "SAINS.SD6.BATUAN.03",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "BATUAN",
+        "nama": {
+          "id": "Batuan, fosil, dan siklus batuan",
+          "en": "Rocks, fossils and the rock cycle"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun siklus batuan: magma membeku, pelapukan dan erosi, pengendapan, penimbunan, metamorfisme, lalu meleleh lagi",
+        "en": "I can order the rock cycle: magma solidifies, weathering and erosion, sedimentation, burial, metamorphism, then melting again"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD6.BATUAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESc.01",
+          "note": "siklus batuan: pembekuan, erosi, sedimentasi, penimbunan, metamorfisme, peleburan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun tiga jalur: siklus lengkap 7 langkah, batu kapur menjadi marmer (4), dan granit gunung menjadi batu pasir pantai (5). Knob steps 4 → 7 dipotong dari depan. Jebakan: anak mengira siklus hanya satu arah; jalur pendek memperlihatkan jalan pintas siklus. Istilah acuan dipakai sebagai label (pembekuan, erosi, sedimentasi, penimbunan, metamorfisme, peleburan)."
+    },
+    {
+      "id": "SAINS.SD6.TANAH.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "TANAH",
+        "nama": {
+          "id": "Jenis tanah",
+          "en": "Types of soil"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah tanah liat, tanah berpasir, dan tanah humus dari hasil pengamatan seperti lengket, kasar, atau gelap berbau daun",
+        "en": "I can sort clay, sandy and humus-rich soil from observations such as sticky, gritty, or dark and leafy-smelling"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD6.BATUAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESp.03",
+          "note": "tanah diklasifikasikan menurut kandungan liat, pasir, dan bahan organik"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESp.04",
+          "note": "komposisi tanah dapat berubah dan memengaruhi tumbuhan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga wadah; kartu berupa hasil uji sederhana yang bisa dicoba (dikepal, disiram, diraba, dicium) — bukan nama tanah — sehingga buktinya klasifikasi dari pengamatan (6TWSc.01). Kaitan ke tumbuhan (6ESp.04) lewat kartu kompos dan genangan; prediksi pertumbuhan belum dinilai. Knob itemCount 4 → 9."
+    },
+    {
+      "id": "SAINS.SD6.TATA-SURYA.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "TATA-SURYA",
+        "nama": {
+          "id": "Bulan dan tata surya",
+          "en": "The Moon and the Solar System"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun perubahan bentuk Bulan selama sebulan, dari bulan baru sampai purnama dan kembali lagi",
+        "en": "I can order the changes in the Moon's appearance over a month, from new moon to full moon and back again"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.BUMI-ORBIT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESs.02",
+          "note": "mengamati dan menjelaskan perubahan tampak Bulan selama siklus bulanan"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6ESs.01",
+          "note": "posisi dan gerak relatif Bumi, Bulan, Matahari"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Dua paket urutkan: susun 8 fase (knob steps 5 → 8 dipotong dari bulan baru: 5 = sampai purnama) dan perbaiki (satu pasang tertukar di deret 8). Emoji fase memakai sudut pandang belahan bumi utara; dekat khatulistiwa (Indonesia) sabit tampak lebih 'tidur' — catat di umpan balik. Saran: anak mencatat bentuk Bulan seminggu sekali sebagai tugas luring (6ESs.02 'observe'). Penyebab fase (posisi Bulan terhadap Matahari) disebut di umpan balik, belum dinilai."
+    },
+    {
+      "id": "SAINS.SD6.PENYELIDIKAN.01",
+      "track": "SAINS",
+      "level": "SD6",
+      "unit": {
+        "id": "PENYELIDIKAN",
+        "nama": {
+          "id": "Menilai hasil penyelidikan",
+          "en": "Evaluating results"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan hasil janggal di data percobaan berulang dan tahu mengapa pengukuran perlu diulang",
+        "en": "I can spot an anomalous result in repeated measurements and know why measurements should be repeated"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.PENYELIDIKAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6TWSa.02",
+          "note": "menjelaskan pola hasil, termasuk mengenali hasil janggal"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "6TWSc.04",
+          "note": "memutuskan kapan pengukuran perlu diulang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde: enam tabel kecil (4 ulangan, satu janggal) dari percobaan yang dikenal anak di SD4–5 (gula larut, pantulan bola, mobil meluncur, kecambah, ayunan), lalu dua ronde tindakan (ulangi pengukuran itu; mengapa mengulang). Angka dibuat jauh berbeda agar janggal jelas tanpa hitungan rata-rata (rata-rata adalah materi MAT SD5). Jebakan: memilih nilai terbesar padahal yang janggal nilai terkecil (r2, r4, r8)."
+    }
+  ]
+}

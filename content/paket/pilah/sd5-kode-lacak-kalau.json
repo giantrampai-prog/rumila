@@ -1,0 +1,357 @@
+{
+  "id": "sd5-kode-lacak-kalau",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.KONDISI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ke Mana Program Bercabang?",
+      "instruksi": "Cek syaratnya: benar atau salah? Ikuti cabang yang sesuai, lalu pilih hasilnya.",
+      "pilihan": "pilihan",
+      "c1": "kipas nyala",
+      "c2": "kipas mati",
+      "q1": "suhu = 31. kalau suhu > 30: tampil 'kipas nyala', kalau tidak: tampil 'kipas mati'. Apa yang tampil?",
+      "q2": "suhu = 30. kalau suhu > 30: tampil 'kipas nyala', kalau tidak: tampil 'kipas mati'. Apa yang tampil?",
+      "c3": "Lulus",
+      "c4": "Coba lagi",
+      "q3": "nilai = 75. kalau nilai >= 75: tampil 'Lulus', kalau tidak: tampil 'Coba lagi'. Apa yang tampil?",
+      "c5": "2",
+      "c6": "13",
+      "c7": "4",
+      "q4": "x = 4. kalau x genap: x = x / 2, kalau tidak: x = x * 3 + 1. Berapa x sekarang?",
+      "c8": "16",
+      "c9": "5",
+      "q5": "x = 5. kalau x genap: x = x / 2, kalau tidak: x = x * 3 + 1. Berapa x sekarang?",
+      "c10": "belum boleh",
+      "c11": "boleh naik",
+      "q6": "umur = 9. kalau umur >= 10: tampil 'boleh naik', kalau tidak: tampil 'belum boleh'. Apa yang tampil?",
+      "c12": "bawa payung",
+      "c13": "pakai topi",
+      "q7": "hujan = Benar. kalau hujan: tampil 'bawa payung', kalau tidak: tampil 'pakai topi'. Apa yang tampil?",
+      "c14": "kurang koin",
+      "c15": "beli",
+      "q8": "koin = 3, harga = 5. kalau koin >= harga: tampil 'beli', kalau tidak: tampil 'kurang koin'. Apa yang tampil?",
+      "c16": "10",
+      "c17": "0",
+      "q9": "skor = 0. jawaban = 12. kalau jawaban == 12: skor = skor + 10, kalau tidak: skor = skor - 5. Berapa skor?",
+      "c18": "isi daya",
+      "c19": "aman",
+      "q10": "baterai = 15. kalau baterai < 20: tampil 'isi daya', kalau tidak: tampil 'aman'. Apa yang tampil?",
+      "c20": "besar",
+      "c21": "kecil",
+      "q11": "x = 8. kalau x > 10: x = 0, kalau tidak: x = x + 5. kalau x > 10: tampil 'besar', kalau tidak: tampil 'kecil'. Apa yang tampil?",
+      "c22": "berhenti",
+      "c23": "jalan",
+      "q12": "lampu = 'merah'. kalau lampu == 'hijau': tampil 'jalan', kalau tidak: tampil 'berhenti'. Apa yang tampil?"
+    },
+    "en": {
+      "judul": "Which Way Does It Branch?",
+      "instruksi": "Check the condition: true or false? Follow the matching branch, then choose the result.",
+      "pilihan": "choices",
+      "c1": "fan on",
+      "c2": "fan off",
+      "q1": "temp = 31. if temp > 30: show 'fan on', else: show 'fan off'. What is shown?",
+      "q2": "temp = 30. if temp > 30: show 'fan on', else: show 'fan off'. What is shown?",
+      "c3": "Pass",
+      "c4": "Try again",
+      "q3": "mark = 75. if mark >= 75: show 'Pass', else: show 'Try again'. What is shown?",
+      "c5": "2",
+      "c6": "13",
+      "c7": "4",
+      "q4": "x = 4. if x is even: x = x / 2, else: x = x * 3 + 1. What is x now?",
+      "c8": "16",
+      "c9": "5",
+      "q5": "x = 5. if x is even: x = x / 2, else: x = x * 3 + 1. What is x now?",
+      "c10": "not yet",
+      "c11": "may ride",
+      "q6": "age = 9. if age >= 10: show 'may ride', else: show 'not yet'. What is shown?",
+      "c12": "take an umbrella",
+      "c13": "wear a hat",
+      "q7": "raining = True. if raining: show 'take an umbrella', else: show 'wear a hat'. What is shown?",
+      "c14": "not enough coins",
+      "c15": "buy",
+      "q8": "coins = 3, price = 5. if coins >= price: show 'buy', else: show 'not enough coins'. What is shown?",
+      "c16": "10",
+      "c17": "0",
+      "q9": "score = 0. answer = 12. if answer == 12: score = score + 10, else: score = score - 5. What is score?",
+      "c18": "charge it",
+      "c19": "OK",
+      "q10": "battery = 15. if battery < 20: show 'charge it', else: show 'OK'. What is shown?",
+      "c20": "big",
+      "c21": "small",
+      "q11": "x = 8. if x > 10: x = 0, else: x = x + 5. if x > 10: show 'big', else: show 'small'. What is shown?",
+      "c22": "stop",
+      "c23": "go",
+      "q12": "light = 'red'. if light == 'green': show 'go', else: show 'stop'. What is shown?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c1"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c4"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c8",
+        "c5",
+        "c9"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c10",
+        "c11"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c12",
+        "c13"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c14",
+        "c15"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c16",
+        "c9",
+        "c17"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c18",
+        "c19"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c20",
+        "c21"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c22",
+        "c23"
+      ],
+      "correct": "c22"
+    }
+  ]
+}

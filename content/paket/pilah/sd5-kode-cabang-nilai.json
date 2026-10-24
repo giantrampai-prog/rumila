@@ -1,0 +1,179 @@
+{
+  "id": "sd5-kode-cabang-nilai",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.KONDISI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cabang Nilai A, B, C",
+      "instruksi": "Program mengecek dari atas: kalau nilai ≥ 90 → A, kalau tidak dan nilai ≥ 75 → B, selain itu → C. Seret tiap nilai ke cabangnya.",
+      "bin-a": "≥ 90 → A",
+      "bin-b": "≥ 75 → B",
+      "bin-c": "lainnya → C",
+      "i1": "nilai 95",
+      "i2": "nilai 90",
+      "i3": "nilai 100",
+      "i4": "nilai 92",
+      "i5": "nilai 89",
+      "i6": "nilai 75",
+      "i7": "nilai 80",
+      "i8": "nilai 76",
+      "i9": "nilai 84",
+      "i10": "nilai 74",
+      "i11": "nilai 60",
+      "i12": "nilai 50",
+      "i13": "nilai 73",
+      "i14": "nilai 40"
+    },
+    "en": {
+      "judul": "Grade Branches A, B, C",
+      "instruksi": "The program checks from the top: if mark ≥ 90 → A, else if mark ≥ 75 → B, otherwise → C. Drag each mark to its branch.",
+      "bin-a": "≥ 90 → A",
+      "bin-b": "≥ 75 → B",
+      "bin-c": "other → C",
+      "i1": "mark 95",
+      "i2": "mark 90",
+      "i3": "mark 100",
+      "i4": "mark 92",
+      "i5": "mark 89",
+      "i6": "mark 75",
+      "i7": "mark 80",
+      "i8": "mark 76",
+      "i9": "mark 84",
+      "i10": "mark 74",
+      "i11": "mark 60",
+      "i12": "mark 50",
+      "i13": "mark 73",
+      "i14": "mark 40"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 = hanya cabang A dan B (nilai ≥ 75); 3 = tiga cabang lengkap"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah nilai per ronde; batas 90, 89, 75, 74 sengaja ada"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "a",
+      "labelKey": "bin-a",
+      "emoji": "🅰️"
+    },
+    {
+      "id": "b",
+      "labelKey": "bin-b",
+      "emoji": "🅱️"
+    },
+    {
+      "id": "c",
+      "labelKey": "bin-c",
+      "emoji": "©️"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "a",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "a",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "a",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "a",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "b",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "b",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "b",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "b",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "b",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "c",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "c",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "c",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "c",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "c",
+      "scale": 0.5
+    }
+  ]
+}

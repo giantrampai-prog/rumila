@@ -1,0 +1,236 @@
+{
+  "id": "sd3-kode-perjalanan-pesan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD3.JARINGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perjalanan Sebuah Pesan",
+      "instruksi": "Susun perjalanan pesan dari perangkatmu sampai ke perangkat temanmu.",
+      "t-pesan": "Mengirim pesan",
+      "pesan-1": "ketik pesan",
+      "pesan-2": "tekan kirim",
+      "pesan-3": "pesan lewat wifi ke router",
+      "pesan-4": "pesan lewat internet ke server",
+      "pesan-5": "server meneruskan ke ponsel teman",
+      "pesan-6": "teman membaca pesan",
+      "t-foto": "Mengirim foto ke nenek",
+      "foto-1": "potret kucing",
+      "foto-2": "pilih foto",
+      "foto-3": "tekan kirim",
+      "foto-4": "foto lewat internet ke server",
+      "foto-5": "foto sampai di ponsel nenek",
+      "foto-6": "nenek melihat foto",
+      "t-video": "Menonton video",
+      "video-1": "ketik judul video",
+      "video-2": "tekan cari",
+      "video-3": "permintaan lewat internet ke server",
+      "video-4": "server mengirim video",
+      "video-5": "video sampai di tablet",
+      "video-6": "video diputar",
+      "t-panggilan": "Panggilan video",
+      "panggilan-1": "pilih nama teman",
+      "panggilan-2": "tekan tombol video",
+      "panggilan-3": "panggilan lewat internet",
+      "panggilan-4": "ponsel teman berdering",
+      "panggilan-5": "teman mengangkat",
+      "panggilan-6": "kalian saling melihat"
+    },
+    "en": {
+      "judul": "A Message's Journey",
+      "instruksi": "Put in order how the message travels from your device to your friend's device.",
+      "t-pesan": "Sending a message",
+      "pesan-1": "type the message",
+      "pesan-2": "press send",
+      "pesan-3": "it goes over wifi to the router",
+      "pesan-4": "it travels over the internet to a server",
+      "pesan-5": "the server passes it to your friend's phone",
+      "pesan-6": "your friend reads it",
+      "t-foto": "Sending a photo to grandma",
+      "foto-1": "take a photo of the cat",
+      "foto-2": "choose the photo",
+      "foto-3": "press send",
+      "foto-4": "it goes over the internet to a server",
+      "foto-5": "it arrives on grandma's phone",
+      "foto-6": "grandma looks at it",
+      "t-video": "Watching a video",
+      "video-1": "type the video name",
+      "video-2": "press search",
+      "video-3": "the request travels to the server",
+      "video-4": "the server sends the video",
+      "video-5": "the video reaches the tablet",
+      "video-6": "the video plays",
+      "t-panggilan": "A video call",
+      "panggilan-1": "pick your friend's name",
+      "panggilan-2": "press the video button",
+      "panggilan-3": "the call travels over the internet",
+      "panggilan-4": "your friend's phone rings",
+      "panggilan-5": "your friend answers",
+      "panggilan-6": "you see each other"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 5 → 6 (urutan dipotong dari depan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "pesan",
+      "titleKey": "t-pesan",
+      "steps": [
+        {
+          "id": "pesan-1",
+          "labelKey": "pesan-1",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "pesan-2",
+          "labelKey": "pesan-2",
+          "emoji": "📤"
+        },
+        {
+          "id": "pesan-3",
+          "labelKey": "pesan-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "pesan-4",
+          "labelKey": "pesan-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "pesan-5",
+          "labelKey": "pesan-5",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "pesan-6",
+          "labelKey": "pesan-6",
+          "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "foto",
+      "titleKey": "t-foto",
+      "steps": [
+        {
+          "id": "foto-1",
+          "labelKey": "foto-1",
+          "emoji": "📷"
+        },
+        {
+          "id": "foto-2",
+          "labelKey": "foto-2",
+          "emoji": "🖼️"
+        },
+        {
+          "id": "foto-3",
+          "labelKey": "foto-3",
+          "emoji": "📤"
+        },
+        {
+          "id": "foto-4",
+          "labelKey": "foto-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "foto-5",
+          "labelKey": "foto-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "foto-6",
+          "labelKey": "foto-6",
+          "emoji": "👵"
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "titleKey": "t-video",
+      "steps": [
+        {
+          "id": "video-1",
+          "labelKey": "video-1",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "video-2",
+          "labelKey": "video-2",
+          "emoji": "🔍"
+        },
+        {
+          "id": "video-3",
+          "labelKey": "video-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "video-4",
+          "labelKey": "video-4",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "video-5",
+          "labelKey": "video-5",
+          "emoji": "📲"
+        },
+        {
+          "id": "video-6",
+          "labelKey": "video-6",
+          "emoji": "▶️"
+        }
+      ]
+    },
+    {
+      "id": "panggilan",
+      "titleKey": "t-panggilan",
+      "steps": [
+        {
+          "id": "panggilan-1",
+          "labelKey": "panggilan-1",
+          "emoji": "👤"
+        },
+        {
+          "id": "panggilan-2",
+          "labelKey": "panggilan-2",
+          "emoji": "📹"
+        },
+        {
+          "id": "panggilan-3",
+          "labelKey": "panggilan-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "panggilan-4",
+          "labelKey": "panggilan-4",
+          "emoji": "🔔"
+        },
+        {
+          "id": "panggilan-5",
+          "labelKey": "panggilan-5",
+          "emoji": "🤙"
+        },
+        {
+          "id": "panggilan-6",
+          "labelKey": "panggilan-6",
+          "emoji": "😊"
+        }
+      ]
+    }
+  ]
+}

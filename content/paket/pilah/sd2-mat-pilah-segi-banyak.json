@@ -1,0 +1,176 @@
+{
+  "id": "sd2-mat-pilah-segi-banyak",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hitung Sisi Segi Banyak",
+      "instruksi": "Hitung sisi lurus tiap bangun, walau posisinya miring. Taruh di rak jumlah sisinya.",
+      "b-3-sisi": "3 sisi",
+      "b-4-sisi": "4 sisi",
+      "b-5-sisi": "5 sisi",
+      "b-6-sisi": "6 sisi",
+      "b-8-sisi": "8 sisi",
+      "i-segitiga": "segitiga",
+      "i-segitiga-terbalik": "segitiga terbalik",
+      "i-penggaris-segitiga": "penggaris segitiga",
+      "i-persegi": "persegi",
+      "i-persegi-panjang": "persegi panjang",
+      "i-belah-ketupat": "belah ketupat",
+      "i-segi-lima": "segi lima",
+      "i-segi-lima-bergaris": "segi lima bergaris",
+      "i-segi-enam": "segi enam",
+      "i-segi-enam-bergaris": "segi enam bergaris",
+      "i-segi-enam-mendatar": "segi enam mendatar",
+      "i-rambu-berhenti": "rambu berhenti"
+    },
+    "en": {
+      "judul": "Count the Polygon Sides",
+      "instruksi": "Count the straight sides of each shape, even if it is tilted. Put it on the shelf for its number of sides.",
+      "b-3-sisi": "3 sides",
+      "b-4-sisi": "4 sides",
+      "b-5-sisi": "5 sides",
+      "b-6-sisi": "6 sides",
+      "b-8-sisi": "8 sides",
+      "i-segitiga": "triangle",
+      "i-segitiga-terbalik": "upside-down triangle",
+      "i-penggaris-segitiga": "set square",
+      "i-persegi": "square",
+      "i-persegi-panjang": "rectangle",
+      "i-belah-ketupat": "rhombus",
+      "i-segi-lima": "pentagon",
+      "i-segi-lima-bergaris": "outlined pentagon",
+      "i-segi-enam": "hexagon",
+      "i-segi-enam-bergaris": "outlined hexagon",
+      "i-segi-enam-mendatar": "flat hexagon",
+      "i-rambu-berhenti": "stop sign"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak aktif: 3, 4, 5 sisi dulu, lalu 6 dan 8"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "bangun per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "s3",
+      "labelKey": "b-3-sisi"
+    },
+    {
+      "id": "s4",
+      "labelKey": "b-4-sisi"
+    },
+    {
+      "id": "s5",
+      "labelKey": "b-5-sisi"
+    },
+    {
+      "id": "s6",
+      "labelKey": "b-6-sisi"
+    },
+    {
+      "id": "s8",
+      "labelKey": "b-8-sisi"
+    }
+  ],
+  "items": [
+    {
+      "id": "segitiga",
+      "labelKey": "i-segitiga",
+      "bin": "s3",
+      "shape": "triangle",
+      "color": "#ff5a6e"
+    },
+    {
+      "id": "segitiga-terbalik",
+      "labelKey": "i-segitiga-terbalik",
+      "bin": "s3",
+      "emoji": "🔻"
+    },
+    {
+      "id": "penggaris-segitiga",
+      "labelKey": "i-penggaris-segitiga",
+      "bin": "s3",
+      "emoji": "📐"
+    },
+    {
+      "id": "persegi",
+      "labelKey": "i-persegi",
+      "bin": "s4",
+      "shape": "square",
+      "color": "#6ab0e8"
+    },
+    {
+      "id": "persegi-panjang",
+      "labelKey": "i-persegi-panjang",
+      "bin": "s4",
+      "shape": "rect",
+      "color": "#ffd23f",
+      "width": 2
+    },
+    {
+      "id": "ketupat",
+      "labelKey": "i-belah-ketupat",
+      "bin": "s4",
+      "emoji": "🔷"
+    },
+    {
+      "id": "segilima",
+      "labelKey": "i-segi-lima",
+      "bin": "s5",
+      "emoji": "⬟"
+    },
+    {
+      "id": "segilima-garis",
+      "labelKey": "i-segi-lima-bergaris",
+      "bin": "s5",
+      "emoji": "⬠"
+    },
+    {
+      "id": "segienam",
+      "labelKey": "i-segi-enam",
+      "bin": "s6",
+      "emoji": "⬢"
+    },
+    {
+      "id": "segienam-garis",
+      "labelKey": "i-segi-enam-bergaris",
+      "bin": "s6",
+      "emoji": "⬡"
+    },
+    {
+      "id": "segienam-datar",
+      "labelKey": "i-segi-enam-mendatar",
+      "bin": "s6",
+      "emoji": "⬣"
+    },
+    {
+      "id": "rambu-berhenti",
+      "labelKey": "i-rambu-berhenti",
+      "bin": "s8",
+      "emoji": "🛑"
+    }
+  ]
+}

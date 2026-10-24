@@ -1,0 +1,227 @@
+{
+  "id": "sd4-sains-otot-berpasangan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.RANGKA-OTOT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Otot Berpasangan",
+      "instruksi": "Bayangkan gerakannya, lalu sentuh jawaban tentang otot yang bekerja.",
+      "b-pilihan": "pilihan",
+      "i-biseps": "otot depan lengan atas (biseps)",
+      "i-trisep": "otot belakang lengan atas (trisep)",
+      "i-tulang": "tulang lengan",
+      "i-mengerut": "mengerut (memendek)",
+      "i-mengendur": "mengendur (memanjang)",
+      "i-depanpaha": "otot depan paha",
+      "i-belakangpaha": "otot belakang paha",
+      "i-ototmenarik": "otot mengerut dan menarik tulang",
+      "i-tulangsendiri": "tulang bergerak sendiri",
+      "i-kulitmenarik": "kulit menarik tulang",
+      "i-berpasangan": "berpasangan",
+      "i-sendirian": "sendirian",
+      "p-r1": "Lengan ditekuk untuk mengangkat tas. Otot mana yang mengerut?",
+      "p-r2": "Lengan diluruskan lagi. Otot mana yang mengerut sekarang?",
+      "p-r3": "Saat biseps mengerut, trisep…",
+      "p-r4": "Saat lengan diluruskan, biseps…",
+      "p-r5": "Kaki diluruskan untuk menendang bola. Otot mana yang mengerut?",
+      "p-r6": "Lutut ditekuk ke belakang saat berlari. Otot mana yang mengerut?",
+      "p-r7": "Apa yang membuat tulang bergerak?",
+      "p-r8": "Otot hanya bisa menarik, tidak bisa mendorong. Karena itu otot bekerja…"
+    },
+    "en": {
+      "judul": "Muscle Pairs",
+      "instruksi": "Picture the movement, then touch the answer about the working muscle.",
+      "b-pilihan": "choices",
+      "i-biseps": "front upper-arm muscle (biceps)",
+      "i-trisep": "back upper-arm muscle (triceps)",
+      "i-tulang": "the arm bone",
+      "i-mengerut": "contracts (gets shorter)",
+      "i-mengendur": "relaxes (gets longer)",
+      "i-depanpaha": "front thigh muscle",
+      "i-belakangpaha": "back thigh muscle",
+      "i-ototmenarik": "a muscle contracts and pulls the bone",
+      "i-tulangsendiri": "the bone moves by itself",
+      "i-kulitmenarik": "the skin pulls the bone",
+      "i-berpasangan": "in pairs",
+      "i-sendirian": "alone",
+      "p-r1": "The arm bends to lift a bag. Which muscle contracts?",
+      "p-r2": "The arm straightens again. Which muscle contracts now?",
+      "p-r3": "When the biceps contracts, the triceps…",
+      "p-r4": "When the arm straightens, the biceps…",
+      "p-r5": "The leg straightens to kick a ball. Which muscle contracts?",
+      "p-r6": "The knee bends backwards while running. Which muscle contracts?",
+      "p-r7": "What makes a bone move?",
+      "p-r8": "Muscles can only pull, not push. So muscles work…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "biseps",
+      "labelKey": "i-biseps",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "trisep",
+      "labelKey": "i-trisep",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "tulang",
+      "labelKey": "i-tulang",
+      "bin": "pilihan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "mengerut",
+      "labelKey": "i-mengerut",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "mengendur",
+      "labelKey": "i-mengendur",
+      "bin": "pilihan",
+      "emoji": "➕"
+    },
+    {
+      "id": "depanpaha",
+      "labelKey": "i-depanpaha",
+      "bin": "pilihan",
+      "emoji": "🦵"
+    },
+    {
+      "id": "belakangpaha",
+      "labelKey": "i-belakangpaha",
+      "bin": "pilihan",
+      "emoji": "🦵"
+    },
+    {
+      "id": "ototmenarik",
+      "labelKey": "i-ototmenarik",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "tulangsendiri",
+      "labelKey": "i-tulangsendiri",
+      "bin": "pilihan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "kulitmenarik",
+      "labelKey": "i-kulitmenarik",
+      "bin": "pilihan",
+      "emoji": "✋"
+    },
+    {
+      "id": "berpasangan",
+      "labelKey": "i-berpasangan",
+      "bin": "pilihan",
+      "emoji": "👯"
+    },
+    {
+      "id": "sendirian",
+      "labelKey": "i-sendirian",
+      "bin": "pilihan",
+      "emoji": "🧍"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "biseps",
+        "trisep",
+        "tulang"
+      ],
+      "correct": "biseps"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "biseps",
+        "trisep",
+        "tulang"
+      ],
+      "correct": "trisep"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "depanpaha",
+        "belakangpaha",
+        "tulang"
+      ],
+      "correct": "depanpaha"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "depanpaha",
+        "belakangpaha",
+        "tulang"
+      ],
+      "correct": "belakangpaha"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "ototmenarik",
+        "tulangsendiri",
+        "kulitmenarik"
+      ],
+      "correct": "ototmenarik"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "berpasangan",
+        "sendirian"
+      ],
+      "correct": "berpasangan"
+    }
+  ]
+}

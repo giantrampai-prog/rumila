@@ -1,0 +1,346 @@
+{
+  "id": "sd3-mat-kali-sepuluh",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.KALI-BAGI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Geser Satu Tempat",
+      "instruksi": "Dikali 10, tiap angka bergeser satu tempat ke kiri dan nol mengisi satuan. Taruh di rak hasilnya.",
+      "b-340": "340",
+      "b-430": "430",
+      "b-30": "30",
+      "b-300": "300",
+      "b-40": "40",
+      "b-400": "400",
+      "b-50": "50",
+      "b-500": "500",
+      "b-350": "350",
+      "b-530": "530",
+      "i-34x10": "34×10",
+      "i-10x34": "10×34",
+      "i-34-puluhan": "34 puluhan",
+      "i-43x10": "43×10",
+      "i-10x43": "10×43",
+      "i-43-puluhan": "43 puluhan",
+      "i-3x10": "3×10",
+      "i-10x3": "10×3",
+      "i-3-puluhan": "3 puluhan",
+      "i-30x10": "30×10",
+      "i-10x30": "10×30",
+      "i-30-puluhan": "30 puluhan",
+      "i-4x10": "4×10",
+      "i-10x4": "10×4",
+      "i-4-puluhan": "4 puluhan",
+      "i-40x10": "40×10",
+      "i-10x40": "10×40",
+      "i-40-puluhan": "40 puluhan",
+      "i-5x10": "5×10",
+      "i-10x5": "10×5",
+      "i-5-puluhan": "5 puluhan",
+      "i-50x10": "50×10",
+      "i-10x50": "10×50",
+      "i-50-puluhan": "50 puluhan",
+      "i-35x10": "35×10",
+      "i-10x35": "10×35",
+      "i-35-puluhan": "35 puluhan",
+      "i-53x10": "53×10",
+      "i-10x53": "10×53",
+      "i-53-puluhan": "53 puluhan"
+    },
+    "en": {
+      "judul": "Move One Place",
+      "instruksi": "Times 10, every digit moves one place to the left and a zero fills the ones. Put each card on its answer shelf.",
+      "b-340": "340",
+      "b-430": "430",
+      "b-30": "30",
+      "b-300": "300",
+      "b-40": "40",
+      "b-400": "400",
+      "b-50": "50",
+      "b-500": "500",
+      "b-350": "350",
+      "b-530": "530",
+      "i-34x10": "34×10",
+      "i-10x34": "10×34",
+      "i-34-puluhan": "34 tens",
+      "i-43x10": "43×10",
+      "i-10x43": "10×43",
+      "i-43-puluhan": "43 tens",
+      "i-3x10": "3×10",
+      "i-10x3": "10×3",
+      "i-3-puluhan": "3 tens",
+      "i-30x10": "30×10",
+      "i-10x30": "10×30",
+      "i-30-puluhan": "30 tens",
+      "i-4x10": "4×10",
+      "i-10x4": "10×4",
+      "i-4-puluhan": "4 tens",
+      "i-40x10": "40×10",
+      "i-10x40": "10×40",
+      "i-40-puluhan": "40 tens",
+      "i-5x10": "5×10",
+      "i-10x5": "10×5",
+      "i-5-puluhan": "5 tens",
+      "i-50x10": "50×10",
+      "i-10x50": "10×50",
+      "i-50-puluhan": "50 tens",
+      "i-35x10": "35×10",
+      "i-10x35": "10×35",
+      "i-35-puluhan": "35 tens",
+      "i-53x10": "53×10",
+      "i-10x53": "10×53",
+      "i-53-puluhan": "53 tens"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "h340",
+      "labelKey": "b-340"
+    },
+    {
+      "id": "h430",
+      "labelKey": "b-430"
+    },
+    {
+      "id": "h30",
+      "labelKey": "b-30"
+    },
+    {
+      "id": "h300",
+      "labelKey": "b-300"
+    },
+    {
+      "id": "h40",
+      "labelKey": "b-40"
+    },
+    {
+      "id": "h400",
+      "labelKey": "b-400"
+    },
+    {
+      "id": "h50",
+      "labelKey": "b-50"
+    },
+    {
+      "id": "h500",
+      "labelKey": "b-500"
+    },
+    {
+      "id": "h350",
+      "labelKey": "b-350"
+    },
+    {
+      "id": "h530",
+      "labelKey": "b-530"
+    }
+  ],
+  "items": [
+    {
+      "id": "h340-34x10",
+      "labelKey": "i-34x10",
+      "bin": "h340",
+      "scale": 0.6
+    },
+    {
+      "id": "h340-10x34",
+      "labelKey": "i-10x34",
+      "bin": "h340",
+      "scale": 0.6
+    },
+    {
+      "id": "h340-34-puluhan",
+      "labelKey": "i-34-puluhan",
+      "bin": "h340",
+      "scale": 0.42
+    },
+    {
+      "id": "h430-43x10",
+      "labelKey": "i-43x10",
+      "bin": "h430",
+      "scale": 0.6
+    },
+    {
+      "id": "h430-10x43",
+      "labelKey": "i-10x43",
+      "bin": "h430",
+      "scale": 0.6
+    },
+    {
+      "id": "h430-43-puluhan",
+      "labelKey": "i-43-puluhan",
+      "bin": "h430",
+      "scale": 0.42
+    },
+    {
+      "id": "h30-3x10",
+      "labelKey": "i-3x10",
+      "bin": "h30",
+      "scale": 0.7
+    },
+    {
+      "id": "h30-10x3",
+      "labelKey": "i-10x3",
+      "bin": "h30",
+      "scale": 0.7
+    },
+    {
+      "id": "h30-3-puluhan",
+      "labelKey": "i-3-puluhan",
+      "bin": "h30",
+      "scale": 0.42
+    },
+    {
+      "id": "h300-30x10",
+      "labelKey": "i-30x10",
+      "bin": "h300",
+      "scale": 0.6
+    },
+    {
+      "id": "h300-10x30",
+      "labelKey": "i-10x30",
+      "bin": "h300",
+      "scale": 0.6
+    },
+    {
+      "id": "h300-30-puluhan",
+      "labelKey": "i-30-puluhan",
+      "bin": "h300",
+      "scale": 0.42
+    },
+    {
+      "id": "h40-4x10",
+      "labelKey": "i-4x10",
+      "bin": "h40",
+      "scale": 0.7
+    },
+    {
+      "id": "h40-10x4",
+      "labelKey": "i-10x4",
+      "bin": "h40",
+      "scale": 0.7
+    },
+    {
+      "id": "h40-4-puluhan",
+      "labelKey": "i-4-puluhan",
+      "bin": "h40",
+      "scale": 0.42
+    },
+    {
+      "id": "h400-40x10",
+      "labelKey": "i-40x10",
+      "bin": "h400",
+      "scale": 0.6
+    },
+    {
+      "id": "h400-10x40",
+      "labelKey": "i-10x40",
+      "bin": "h400",
+      "scale": 0.6
+    },
+    {
+      "id": "h400-40-puluhan",
+      "labelKey": "i-40-puluhan",
+      "bin": "h400",
+      "scale": 0.42
+    },
+    {
+      "id": "h50-5x10",
+      "labelKey": "i-5x10",
+      "bin": "h50",
+      "scale": 0.7
+    },
+    {
+      "id": "h50-10x5",
+      "labelKey": "i-10x5",
+      "bin": "h50",
+      "scale": 0.7
+    },
+    {
+      "id": "h50-5-puluhan",
+      "labelKey": "i-5-puluhan",
+      "bin": "h50",
+      "scale": 0.42
+    },
+    {
+      "id": "h500-50x10",
+      "labelKey": "i-50x10",
+      "bin": "h500",
+      "scale": 0.6
+    },
+    {
+      "id": "h500-10x50",
+      "labelKey": "i-10x50",
+      "bin": "h500",
+      "scale": 0.6
+    },
+    {
+      "id": "h500-50-puluhan",
+      "labelKey": "i-50-puluhan",
+      "bin": "h500",
+      "scale": 0.42
+    },
+    {
+      "id": "h350-35x10",
+      "labelKey": "i-35x10",
+      "bin": "h350",
+      "scale": 0.6
+    },
+    {
+      "id": "h350-10x35",
+      "labelKey": "i-10x35",
+      "bin": "h350",
+      "scale": 0.6
+    },
+    {
+      "id": "h350-35-puluhan",
+      "labelKey": "i-35-puluhan",
+      "bin": "h350",
+      "scale": 0.42
+    },
+    {
+      "id": "h530-53x10",
+      "labelKey": "i-53x10",
+      "bin": "h530",
+      "scale": 0.6
+    },
+    {
+      "id": "h530-10x53",
+      "labelKey": "i-10x53",
+      "bin": "h530",
+      "scale": 0.6
+    },
+    {
+      "id": "h530-53-puluhan",
+      "labelKey": "i-53-puluhan",
+      "bin": "h530",
+      "scale": 0.42
+    }
+  ]
+}

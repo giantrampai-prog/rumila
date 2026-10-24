@@ -1,0 +1,175 @@
+{
+  "id": "sd4-sains-bertulang-belakang",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.VERTEBRATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ada Tulang Belakang?",
+      "instruksi": "Pilah tiap hewan: bertulang belakang, berangka luar keras, atau bertubuh lunak.",
+      "b-vertebrata": "bertulang belakang (vertebrata)",
+      "b-rangkaluar": "tanpa tulang belakang, rangka luar keras",
+      "b-lunak": "tanpa tulang belakang, tubuh lunak",
+      "i-ikan": "ikan",
+      "i-katak": "katak",
+      "i-ular": "ular",
+      "i-burung": "burung",
+      "i-kucing": "kucing",
+      "i-kurakura": "kura-kura",
+      "i-kepiting": "kepiting",
+      "i-semut": "semut",
+      "i-kumbang": "kumbang",
+      "i-udang": "udang",
+      "i-labalaba": "laba-laba",
+      "i-cacing": "cacing tanah",
+      "i-uburubur": "ubur-ubur",
+      "i-gurita": "gurita"
+    },
+    "en": {
+      "judul": "Is There a Backbone?",
+      "instruksi": "Sort each animal: has a backbone, has a hard exoskeleton, or has a soft body.",
+      "b-vertebrata": "has a backbone (vertebrate)",
+      "b-rangkaluar": "no backbone, hard exoskeleton",
+      "b-lunak": "no backbone, soft body",
+      "i-ikan": "fish",
+      "i-katak": "frog",
+      "i-ular": "snake",
+      "i-burung": "bird",
+      "i-kucing": "cat",
+      "i-kurakura": "tortoise",
+      "i-kepiting": "crab",
+      "i-semut": "ant",
+      "i-kumbang": "beetle",
+      "i-udang": "prawn",
+      "i-labalaba": "spider",
+      "i-cacing": "earthworm",
+      "i-uburubur": "jellyfish",
+      "i-gurita": "octopus"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 5,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 5 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "vertebrata",
+      "labelKey": "b-vertebrata",
+      "emoji": "🦴",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "rangkaluar",
+      "labelKey": "b-rangkaluar",
+      "emoji": "🦀",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "lunak",
+      "labelKey": "b-lunak",
+      "emoji": "🪱",
+      "color": "#f8bbd0"
+    }
+  ],
+  "items": [
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "vertebrata",
+      "emoji": "🐟"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "vertebrata",
+      "emoji": "🐸"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "vertebrata",
+      "emoji": "🐍"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "vertebrata",
+      "emoji": "🐦"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "vertebrata",
+      "emoji": "🐈"
+    },
+    {
+      "id": "kurakura",
+      "labelKey": "i-kurakura",
+      "bin": "vertebrata",
+      "emoji": "🐢"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "rangkaluar",
+      "emoji": "🦀"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "rangkaluar",
+      "emoji": "🐜"
+    },
+    {
+      "id": "kumbang",
+      "labelKey": "i-kumbang",
+      "bin": "rangkaluar",
+      "emoji": "🪲"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "rangkaluar",
+      "emoji": "🦐"
+    },
+    {
+      "id": "labalaba",
+      "labelKey": "i-labalaba",
+      "bin": "rangkaluar",
+      "emoji": "🕷️"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "lunak",
+      "emoji": "🪱"
+    },
+    {
+      "id": "uburubur",
+      "labelKey": "i-uburubur",
+      "bin": "lunak",
+      "emoji": "🪼"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "lunak",
+      "emoji": "🐙"
+    }
+  ],
+  "pilihan": []
+}

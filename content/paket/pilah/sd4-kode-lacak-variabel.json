@@ -1,0 +1,330 @@
+{
+  "id": "sd4-kode-lacak-variabel",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.VARIABEL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lacak Nilai Variabel",
+      "instruksi": "Baca kodenya baris demi baris dari kiri ke kanan (tanda * artinya dikali), lalu pilih nilai variabel di akhir.",
+      "pilihan": "pilihan",
+      "c1": "10",
+      "c2": "4",
+      "c3": "6",
+      "q1": "a = 4; a = a + 6.  Berapa nilai a?",
+      "c4": "16",
+      "c5": "11",
+      "c6": "8",
+      "q2": "skor = 5; skor = skor + 3; skor = skor * 2.  Berapa skor?",
+      "c7": "7",
+      "c8": "2",
+      "c9": "9",
+      "q3": "x = 7; y = x; x = 2.  Berapa nilai y?",
+      "c10": "1",
+      "c11": "3",
+      "q4": "nyawa = 3; nyawa = nyawa - 1; nyawa = nyawa - 1.  Berapa nyawa?",
+      "c12": "19",
+      "q5": "koin = 10; koin = koin - 4; koin = koin + 5.  Berapa koin?",
+      "c13": "5",
+      "q6": "a = 2; b = 3; a = b.  Berapa nilai a?",
+      "q7": "a = 2; b = 3; a = a + b; b = a + b.  Berapa nilai b?",
+      "c14": "26",
+      "c15": "25",
+      "c16": "21",
+      "q8": "suhu = 20; suhu = suhu + 5; print(suhu + 1).  Angka berapa yang tampil?",
+      "q9": "x = 1; x = x * 3; x = x * 3.  Berapa nilai x?",
+      "c17": "15",
+      "q10": "poin = 0; poin = poin + 10; poin = 5.  Berapa poin?",
+      "q11": "n = 6; n = n - 2; n = n * 2.  Berapa nilai n?",
+      "q12": "a = 9; b = a - 4; a = 1.  Berapa nilai b?",
+      "q13": "a = 1; b = 2; t = a; a = b; b = t.  Berapa nilai b?"
+    },
+    "en": {
+      "judul": "Trace the Variable",
+      "instruksi": "Read the code one line at a time from left to right (* means multiply), then choose the variable's final value.",
+      "pilihan": "choices",
+      "c1": "10",
+      "c2": "4",
+      "c3": "6",
+      "q1": "a = 4; a = a + 6.  What is a?",
+      "c4": "16",
+      "c5": "11",
+      "c6": "8",
+      "q2": "score = 5; score = score + 3; score = score * 2.  What is score?",
+      "c7": "7",
+      "c8": "2",
+      "c9": "9",
+      "q3": "x = 7; y = x; x = 2.  What is y?",
+      "c10": "1",
+      "c11": "3",
+      "q4": "lives = 3; lives = lives - 1; lives = lives - 1.  What is lives?",
+      "c12": "19",
+      "q5": "coins = 10; coins = coins - 4; coins = coins + 5.  What is coins?",
+      "c13": "5",
+      "q6": "a = 2; b = 3; a = b.  What is a?",
+      "q7": "a = 2; b = 3; a = a + b; b = a + b.  What is b?",
+      "c14": "26",
+      "c15": "25",
+      "c16": "21",
+      "q8": "temp = 20; temp = temp + 5; print(temp + 1).  Which number is shown?",
+      "q9": "x = 1; x = x * 3; x = x * 3.  What is x?",
+      "c17": "15",
+      "q10": "points = 0; points = points + 10; points = 5.  What is points?",
+      "q11": "n = 6; n = n - 2; n = n * 2.  What is n?",
+      "q12": "a = 9; b = a - 4; a = 1.  What is b?",
+      "q13": "a = 1; b = 2; t = a; a = b; b = t.  What is b?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c8",
+        "c11"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c5",
+        "c3",
+        "c12"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c11",
+        "c8",
+        "c13"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c6",
+        "c13",
+        "c3"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c9",
+        "c3",
+        "c11"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c13",
+        "c17",
+        "c1"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c6",
+        "c1",
+        "c2"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c13",
+        "c10",
+        "c9"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c10",
+        "c8",
+        "c11"
+      ],
+      "correct": "c10"
+    }
+  ]
+}

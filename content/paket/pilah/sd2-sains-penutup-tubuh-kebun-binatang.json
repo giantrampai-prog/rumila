@@ -1,0 +1,185 @@
+{
+  "id": "sd2-sains-penutup-tubuh-kebun-binatang",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.CIRI-HEWAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kulit Hewan di Kebun Binatang",
+      "instruksi": "Taruh tiap hewan kebun binatang ke rak penutup tubuhnya.",
+      "b-rambut": "berambut",
+      "b-bulu": "berbulu",
+      "b-sisik": "bersisik",
+      "b-lembap": "berkulit lembap",
+      "i-singa": "singa",
+      "i-zebra": "zebra",
+      "i-kelelawar": "kelelawar",
+      "i-monyet": "monyet",
+      "i-penguin": "penguin",
+      "i-flamingo": "flamingo",
+      "i-burunghantu": "burung hantu",
+      "i-merak": "merak",
+      "i-buaya": "buaya",
+      "i-ular": "ular piton",
+      "i-arwana": "ikan arwana",
+      "i-katakpohon": "katak pohon",
+      "i-salamander": "salamander"
+    },
+    "en": {
+      "judul": "Animal Coverings at the Zoo",
+      "instruksi": "Put each zoo animal on the shelf for its body covering.",
+      "b-rambut": "hair or fur",
+      "b-bulu": "feathers",
+      "b-sisik": "scales",
+      "b-lembap": "moist skin",
+      "i-singa": "lion",
+      "i-zebra": "zebra",
+      "i-kelelawar": "bat",
+      "i-monyet": "monkey",
+      "i-penguin": "penguin",
+      "i-flamingo": "flamingo",
+      "i-burunghantu": "owl",
+      "i-merak": "peacock",
+      "i-buaya": "crocodile",
+      "i-ular": "python",
+      "i-arwana": "arowana",
+      "i-katakpohon": "tree frog",
+      "i-salamander": "salamander"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 3 (rambut, bulu, sisik) → 4 (tambah kulit lembap)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "rambut",
+      "labelKey": "b-rambut",
+      "emoji": "🐑",
+      "color": "#efebe9"
+    },
+    {
+      "id": "bulu",
+      "labelKey": "b-bulu",
+      "emoji": "🪶",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "sisik",
+      "labelKey": "b-sisik",
+      "emoji": "🐟",
+      "color": "#e0f2f1"
+    },
+    {
+      "id": "lembap",
+      "labelKey": "b-lembap",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "singa",
+      "labelKey": "i-singa",
+      "bin": "rambut",
+      "emoji": "🦁"
+    },
+    {
+      "id": "zebra",
+      "labelKey": "i-zebra",
+      "bin": "rambut",
+      "emoji": "🦓"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "rambut",
+      "emoji": "🦇"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "rambut",
+      "emoji": "🐒"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "bulu",
+      "emoji": "🐧"
+    },
+    {
+      "id": "flamingo",
+      "labelKey": "i-flamingo",
+      "bin": "bulu",
+      "emoji": "🦩"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "bulu",
+      "emoji": "🦉"
+    },
+    {
+      "id": "merak",
+      "labelKey": "i-merak",
+      "bin": "bulu",
+      "emoji": "🦚"
+    },
+    {
+      "id": "buaya",
+      "labelKey": "i-buaya",
+      "bin": "sisik",
+      "emoji": "🐊"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "sisik",
+      "emoji": "🐍"
+    },
+    {
+      "id": "arwana",
+      "labelKey": "i-arwana",
+      "bin": "sisik",
+      "emoji": "🐟",
+      "color": "#ef9a9a"
+    },
+    {
+      "id": "katakpohon",
+      "labelKey": "i-katakpohon",
+      "bin": "lembap",
+      "emoji": "🐸",
+      "color": "#8bc34a"
+    },
+    {
+      "id": "salamander",
+      "labelKey": "i-salamander",
+      "bin": "lembap",
+      "emoji": "🦎",
+      "color": "#ff7043"
+    }
+  ],
+  "pilihan": []
+}

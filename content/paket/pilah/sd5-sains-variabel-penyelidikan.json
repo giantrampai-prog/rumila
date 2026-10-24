@@ -1,0 +1,218 @@
+{
+  "id": "sd5-sains-variabel-penyelidikan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Peran Tiap Variabel",
+      "instruksi": "Baca pertanyaan penyelidikannya, lalu sentuh variabel yang diminta.",
+      "b-pilihan": "pilihan",
+      "i-suhuair": "suhu air",
+      "i-lamalarut": "lama gula sampai larut",
+      "i-banyakgula": "banyak gula",
+      "i-tinggipapan": "tinggi papan luncur",
+      "i-jarakluncur": "jarak mobil meluncur",
+      "i-jenismobil": "mobil yang dipakai",
+      "i-banyakcahaya": "banyak cahaya",
+      "i-tinggitanaman": "tinggi tanaman",
+      "i-banyakair": "banyak air siraman",
+      "p-r1": "Apakah suhu air memengaruhi lama gula larut? Apa yang diubah?",
+      "p-r2": "Apakah suhu air memengaruhi lama gula larut? Apa yang diukur?",
+      "p-r3": "Apakah suhu air memengaruhi lama gula larut? Apa yang dijaga tetap?",
+      "p-r4": "Apakah tinggi papan memengaruhi jarak mobil meluncur? Apa yang diubah?",
+      "p-r5": "Apakah tinggi papan memengaruhi jarak mobil meluncur? Apa yang diukur?",
+      "p-r6": "Apakah tinggi papan memengaruhi jarak mobil meluncur? Apa yang dijaga tetap?",
+      "p-r7": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang diubah?",
+      "p-r8": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang diukur?",
+      "p-r9": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang dijaga tetap?"
+    },
+    "en": {
+      "judul": "Each Variable's Job",
+      "instruksi": "Read the investigation question, then touch the variable asked for.",
+      "b-pilihan": "choices",
+      "i-suhuair": "water temperature",
+      "i-lamalarut": "time for the sugar to dissolve",
+      "i-banyakgula": "amount of sugar",
+      "i-tinggipapan": "height of the ramp",
+      "i-jarakluncur": "distance the car rolls",
+      "i-jenismobil": "the car used",
+      "i-banyakcahaya": "amount of light",
+      "i-tinggitanaman": "height of the plant",
+      "i-banyakair": "amount of water given",
+      "p-r1": "Does water temperature affect how long sugar takes to dissolve? What do you change?",
+      "p-r2": "Does water temperature affect how long sugar takes to dissolve? What do you measure?",
+      "p-r3": "Does water temperature affect how long sugar takes to dissolve? What do you keep the same?",
+      "p-r4": "Does the height of a ramp affect how far a toy car rolls? What do you change?",
+      "p-r5": "Does the height of a ramp affect how far a toy car rolls? What do you measure?",
+      "p-r6": "Does the height of a ramp affect how far a toy car rolls? What do you keep the same?",
+      "p-r7": "Does the amount of light affect how tall a plant grows? What do you change?",
+      "p-r8": "Does the amount of light affect how tall a plant grows? What do you measure?",
+      "p-r9": "Does the amount of light affect how tall a plant grows? What do you keep the same?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "suhuair",
+      "labelKey": "i-suhuair",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "lamalarut",
+      "labelKey": "i-lamalarut",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "banyakgula",
+      "labelKey": "i-banyakgula",
+      "bin": "pilihan",
+      "emoji": "🍚"
+    },
+    {
+      "id": "tinggipapan",
+      "labelKey": "i-tinggipapan",
+      "bin": "pilihan",
+      "emoji": "📐"
+    },
+    {
+      "id": "jarakluncur",
+      "labelKey": "i-jarakluncur",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "jenismobil",
+      "labelKey": "i-jenismobil",
+      "bin": "pilihan",
+      "emoji": "🚗"
+    },
+    {
+      "id": "banyakcahaya",
+      "labelKey": "i-banyakcahaya",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "tinggitanaman",
+      "labelKey": "i-tinggitanaman",
+      "bin": "pilihan",
+      "emoji": "🌱"
+    },
+    {
+      "id": "banyakair",
+      "labelKey": "i-banyakair",
+      "bin": "pilihan",
+      "emoji": "💧"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "suhuair",
+        "lamalarut",
+        "banyakgula"
+      ],
+      "correct": "suhuair"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "lamalarut",
+        "suhuair",
+        "banyakgula"
+      ],
+      "correct": "lamalarut"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "banyakgula",
+        "suhuair",
+        "lamalarut"
+      ],
+      "correct": "banyakgula"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "tinggipapan",
+        "jarakluncur",
+        "jenismobil"
+      ],
+      "correct": "tinggipapan"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "jarakluncur",
+        "tinggipapan",
+        "jenismobil"
+      ],
+      "correct": "jarakluncur"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "jenismobil",
+        "tinggipapan",
+        "jarakluncur"
+      ],
+      "correct": "jenismobil"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "banyakcahaya",
+        "tinggitanaman",
+        "banyakair"
+      ],
+      "correct": "banyakcahaya"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "tinggitanaman",
+        "banyakcahaya",
+        "banyakair"
+      ],
+      "correct": "tinggitanaman"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "banyakair",
+        "banyakcahaya",
+        "tinggitanaman"
+      ],
+      "correct": "banyakair"
+    }
+  ]
+}

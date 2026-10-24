@@ -1,0 +1,129 @@
+{
+  "id": "sd6-sains-terbentuknya-fosil",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.BATUAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lahirnya Fosil",
+      "instruksi": "Baca judulnya, lalu susun langkah terbentuknya fosil.",
+      "s-cangkang": "Fosil kerang laut",
+      "cangkang-mati": "kerang mati dan tenggelam ke dasar laut",
+      "cangkang-timbun": "tertimbun lumpur dan pasir",
+      "cangkang-busuk": "bagian lunak membusuk, cangkang tertinggal",
+      "cangkang-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+      "cangkang-mineral": "mineral perlahan menggantikan cangkang",
+      "cangkang-tersingkap": "batuan terkikis, fosil tersingkap",
+      "s-jejak": "Fosil jejak kaki",
+      "jejak-injak": "hewan menginjak lumpur lunak",
+      "jejak-kering": "lumpur mengering dan mengeras",
+      "jejak-tutup": "pasir halus menutupi jejak",
+      "jejak-batu": "lapisan memadat menjadi batu",
+      "jejak-tampak": "batuan terkikis, jejak terlihat lagi"
+    },
+    "en": {
+      "judul": "How a Fossil Forms",
+      "instruksi": "Read the title, then put the steps of fossil formation in order.",
+      "s-cangkang": "A seashell fossil",
+      "cangkang-mati": "a shellfish dies and sinks to the seabed",
+      "cangkang-timbun": "it is buried by mud and sand",
+      "cangkang-busuk": "the soft parts rot, the shell is left",
+      "cangkang-tekan": "layers pile up and press into sedimentary rock",
+      "cangkang-mineral": "minerals slowly replace the shell",
+      "cangkang-tersingkap": "the rock wears away and the fossil is uncovered",
+      "s-jejak": "A footprint fossil",
+      "jejak-injak": "an animal steps in soft mud",
+      "jejak-kering": "the mud dries and hardens",
+      "jejak-tutup": "fine sand covers the print",
+      "jejak-batu": "the layers harden into rock",
+      "jejak-tampak": "the rock wears away and the print shows again"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 6 (jejak kaki 5 langkah)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "cangkang",
+      "titleKey": "s-cangkang",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "cangkang-mati",
+          "emoji": "🐚"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "cangkang-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "cangkang-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "cangkang-tekan",
+          "emoji": "📚"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "cangkang-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "tersingkap",
+          "labelKey": "cangkang-tersingkap",
+          "emoji": "⛏️"
+        }
+      ]
+    },
+    {
+      "id": "jejak",
+      "titleKey": "s-jejak",
+      "steps": [
+        {
+          "id": "injak",
+          "labelKey": "jejak-injak",
+          "emoji": "🐾"
+        },
+        {
+          "id": "kering",
+          "labelKey": "jejak-kering",
+          "emoji": "☀️"
+        },
+        {
+          "id": "tutup",
+          "labelKey": "jejak-tutup",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "batu",
+          "labelKey": "jejak-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "tampak",
+          "labelKey": "jejak-tampak",
+          "emoji": "👀"
+        }
+      ]
+    }
+  ]
+}

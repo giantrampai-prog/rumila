@@ -1,0 +1,310 @@
+{
+  "id": "sd6-kode-panggil-fungsi",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.SUBRUTIN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satu Fungsi, Banyak Panggilan",
+      "instruksi": "Fungsi ditulis sekali lalu dipanggil berkali-kali: jalankan tiap panggilan di kepalamu, lalu pilih hasilnya.",
+      "pilihan": "pilihan",
+      "c1": "8",
+      "c2": "4",
+      "c3": "9",
+      "q1": "def persegi(): ulangi 4 kali: maju 2, belok kanan. Program: persegi(); maju 5; persegi(). Berapa kali robot belok kanan?",
+      "c4": "6",
+      "c5": "3",
+      "c6": "5",
+      "q2": "def lompat_tiga(): ulangi 3 kali: lompat. Program: lompat_tiga(); lompat_tiga(). Berapa kali robot melompat?",
+      "c7": "2",
+      "q3": "def salam(): tampil 'Halo'; tampil 'Apa kabar?'. Program: salam(); salam(); salam(). Berapa baris yang tampil?",
+      "c8": "7",
+      "q4": "def tambah2(x): return x + 2. Berapa hasil tambah2(tambah2(3))?",
+      "c9": "15",
+      "c10": "12",
+      "c11": "13",
+      "q5": "def kali3(n): return n * 3. Berapa kali3(4) + kali3(1)?",
+      "c12": "24",
+      "q6": "def segitiga(): ulangi 3 kali: maju 4, belok kiri. Program: ulangi 2 kali: segitiga(). Berapa perintah maju yang dijalankan?",
+      "q7": "Fungsi tari() berisi 3 gerakan. Program memanggil tari() 5 kali. Berapa gerakan dijalankan?",
+      "c13": "1",
+      "q8": "def bintang(): tampil '*'. Program: ulangi 4 kali: bintang(). Berapa bintang yang tampil?",
+      "c14": "20",
+      "c15": "10",
+      "c16": "0",
+      "q9": "skor = 0. Fungsi naik() menambah 10 ke skor. Program: naik(); naik(). Berapa skor?",
+      "q10": "def pagar(): maju 1; tanam bunga. Program memanggil pagar() 6 kali. Berapa bunga tertanam?",
+      "q11": "def ganda(x): return x + x. Berapa ganda(5) - ganda(2)?",
+      "q12": "Fungsi buat_kue() dipanggil di 4 tempat dalam program. Ternyata ada satu kesalahan di dalam fungsinya. Di berapa tempat kamu harus memperbaiki?"
+    },
+    "en": {
+      "judul": "One Function, Many Calls",
+      "instruksi": "A function is written once and called many times: run each call in your head, then choose the result.",
+      "pilihan": "choices",
+      "c1": "8",
+      "c2": "4",
+      "c3": "9",
+      "q1": "def square(): repeat 4 times: forward 2, turn right. Program: square(); forward 5; square(). How many times does the robot turn right?",
+      "c4": "6",
+      "c5": "3",
+      "c6": "5",
+      "q2": "def jump_three(): repeat 3 times: jump. Program: jump_three(); jump_three(). How many times does the robot jump?",
+      "c7": "2",
+      "q3": "def greet(): show 'Hello'; show 'How are you?'. Program: greet(); greet(); greet(). How many lines are shown?",
+      "c8": "7",
+      "q4": "def add2(x): return x + 2. What is add2(add2(3))?",
+      "c9": "15",
+      "c10": "12",
+      "c11": "13",
+      "q5": "def times3(n): return n * 3. What is times3(4) + times3(1)?",
+      "c12": "24",
+      "q6": "def triangle(): repeat 3 times: forward 4, turn left. Program: repeat 2 times: triangle(). How many forward commands run?",
+      "q7": "The function dance() has 3 moves. The program calls dance() 5 times. How many moves run?",
+      "c13": "1",
+      "q8": "def star(): show '*'. Program: repeat 4 times: star(). How many stars are shown?",
+      "c14": "20",
+      "c15": "10",
+      "c16": "0",
+      "q9": "score = 0. The function level_up() adds 10 to score. Program: level_up(); level_up(). What is score?",
+      "q10": "def fence(): forward 1; plant a flower. The program calls fence() 6 times. How many flowers are planted?",
+      "q11": "def double(x): return x + x. What is double(5) - double(2)?",
+      "q12": "The function make_cake() is called in 4 places in a program. There is one mistake inside the function. In how many places must you fix it?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c4",
+        "c5",
+        "c7"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c8",
+        "c6",
+        "c3"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c9",
+        "c10",
+        "c11"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c4",
+        "c5",
+        "c12"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c9",
+        "c1",
+        "c6"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c2",
+        "c13",
+        "c1"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c4",
+        "c13",
+        "c10"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c4",
+        "c5",
+        "c15"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c13",
+        "c2",
+        "c6"
+      ],
+      "correct": "c13"
+    }
+  ]
+}

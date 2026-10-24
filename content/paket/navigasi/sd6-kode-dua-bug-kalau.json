@@ -1,0 +1,3262 @@
+{
+  "id": "sd6-kode-dua-bug-kalau",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD6.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dua Bug di Tiga Jalur",
+      "instruksi": "Program tiga bagian ini punya dua kesalahan: uji di ketiga jalur, cari penyebabnya, lalu perbaiki tepat dua bagian."
+    },
+    "en": {
+      "judul": "Two Bugs, Three Paths",
+      "instruksi": "This three-part program has two mistakes: test it on all three paths, find the causes, then fix exactly two parts."
+    }
+  },
+  "knobs": {
+    "rocks": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah batu di jalur pertama kelompok (pemilih soal); jenis bug bergiliran: lupa kalau, salah hitung ulangan, belok terbalik, lompat terus"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "debug": true,
+  "semuaGrid": true,
+  "commands": [
+    "maju",
+    "lompat",
+    "kiri",
+    "kanan",
+    "kalau",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "sd6-bug-6-1",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-6",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-6-2",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-6",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-6-3",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd6-bug-6",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-7-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-7",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-7-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-7",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-7-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-7",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-10-1",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-10",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-10-2",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-10",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-10-3",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd6-bug-10",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-11-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-11",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-11-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-11",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-11-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-11",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-18-1",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-18",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-18-2",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-18",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-18-3",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd6-bug-18",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-19-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-19",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-19-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-19",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-19-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-19",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-22-1",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-22",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-22-2",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-22",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-22-3",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd6-bug-22",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-23-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-23",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-23-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-23",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-23-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-23",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-30-1",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-30",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-30-2",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-30",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-30-3",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd6-bug-30",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-31-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-31",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-31-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-31",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-31-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-31",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-34-1",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-34",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-34-2",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-34",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-34-3",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd6-bug-34",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-35-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-35",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-35-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-35",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-35-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-35",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-42-1",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-42",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-42-2",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd6-bug-42",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-42-3",
+      "w": 9,
+      "h": 5,
+      "start": {
+        "x": 8,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd6-bug-42",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-43-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-43",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-43-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-43",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-43-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "group": "sd6-bug-43",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-46-1",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-46",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-46-2",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "group": "sd6-bug-46",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-46-3",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd6-bug-46",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-47-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-47",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-47-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-47",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "sd6-bug-47-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 3,
+      "group": "sd6-bug-47",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2
+    }
+  ]
+}

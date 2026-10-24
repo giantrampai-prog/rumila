@@ -1,0 +1,222 @@
+{
+  "id": "sd6-sains-massa-dan-berat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.MASSA-BERAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Massa atau Berat?",
+      "instruksi": "Baca pertanyaannya, lalu sentuh jawaban tentang massa dan berat.",
+      "b-pilihan": "pilihan",
+      "i-massa": "massa",
+      "i-berat": "berat",
+      "i-kg": "kilogram (kg)",
+      "i-n": "newton (N)",
+      "i-tetap": "tetap sama",
+      "i-berkurang": "berkurang",
+      "i-bertambah": "bertambah",
+      "i-duakg": "2 kg",
+      "i-kurangkg": "kurang dari 2 kg",
+      "i-nolkg": "0 kg",
+      "p-r1": "Banyaknya materi di dalam sebuah benda disebut…",
+      "p-r2": "Tarikan gravitasi pada sebuah benda disebut…",
+      "p-r3": "Satuan massa adalah…",
+      "p-r4": "Satuan berat adalah…",
+      "p-r5": "Astronaut pergi ke Bulan yang gravitasinya lebih kecil. Massanya…",
+      "p-r6": "Di Bulan, berat astronaut itu…",
+      "p-r7": "Di Jupiter yang gravitasinya lebih besar, berat sebuah apel…",
+      "p-r8": "Tas bermassa 2 kg dibawa dari Bumi ke Bulan. Massanya di Bulan…",
+      "p-r9": "Di stasiun angkasa, astronaut melayang. Massanya…"
+    },
+    "en": {
+      "judul": "Mass or Weight?",
+      "instruksi": "Read the question, then touch the answer about mass and weight.",
+      "b-pilihan": "choices",
+      "i-massa": "mass",
+      "i-berat": "weight",
+      "i-kg": "kilogram (kg)",
+      "i-n": "newton (N)",
+      "i-tetap": "stays the same",
+      "i-berkurang": "gets smaller",
+      "i-bertambah": "gets bigger",
+      "i-duakg": "2 kg",
+      "i-kurangkg": "less than 2 kg",
+      "i-nolkg": "0 kg",
+      "p-r1": "The amount of matter in an object is called its…",
+      "p-r2": "The pull of gravity on an object is called its…",
+      "p-r3": "Mass is measured in…",
+      "p-r4": "Weight is measured in…",
+      "p-r5": "An astronaut goes to the Moon, where gravity is weaker. Their mass…",
+      "p-r6": "On the Moon, the astronaut's weight…",
+      "p-r7": "On Jupiter, where gravity is stronger, an apple's weight…",
+      "p-r8": "A bag with a mass of 2 kg is taken from the Earth to the Moon. Its mass on the Moon is…",
+      "p-r9": "On a space station, astronauts float. Their mass…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "massa",
+      "labelKey": "i-massa",
+      "bin": "pilihan",
+      "emoji": "🧱"
+    },
+    {
+      "id": "berat",
+      "labelKey": "i-berat",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "kg",
+      "labelKey": "i-kg",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "n",
+      "labelKey": "i-n",
+      "bin": "pilihan",
+      "emoji": "🍎"
+    },
+    {
+      "id": "tetap",
+      "labelKey": "i-tetap",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "berkurang",
+      "labelKey": "i-berkurang",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "bertambah",
+      "labelKey": "i-bertambah",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "duakg",
+      "labelKey": "i-duakg",
+      "bin": "pilihan",
+      "emoji": "🎒"
+    },
+    {
+      "id": "kurangkg",
+      "labelKey": "i-kurangkg",
+      "bin": "pilihan",
+      "emoji": "🎒"
+    },
+    {
+      "id": "nolkg",
+      "labelKey": "i-nolkg",
+      "bin": "pilihan",
+      "emoji": "⭕"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "massa",
+        "berat"
+      ],
+      "correct": "massa"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "berat",
+        "massa"
+      ],
+      "correct": "berat"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "kg",
+        "n"
+      ],
+      "correct": "kg"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "n",
+        "kg"
+      ],
+      "correct": "n"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "tetap",
+        "berkurang",
+        "bertambah"
+      ],
+      "correct": "tetap"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "berkurang",
+        "tetap",
+        "bertambah"
+      ],
+      "correct": "berkurang"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "bertambah",
+        "tetap",
+        "berkurang"
+      ],
+      "correct": "bertambah"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "duakg",
+        "kurangkg",
+        "nolkg"
+      ],
+      "correct": "duakg"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "tetap",
+        "berkurang",
+        "bertambah"
+      ],
+      "correct": "tetap"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "sd3-kode-cipta-pola-perintah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.SD3.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pola Perintahku",
+      "instruksi": "Pilih tiga keping perintah, lalu isi semua slot jadi pola yang berulang.",
+      "p-maju": "maju",
+      "p-kiri": "belok kiri",
+      "p-kanan": "belok kanan",
+      "p-lompat": "lompat"
+    },
+    "en": {
+      "judul": "My Command Pattern",
+      "instruksi": "Choose three command pieces, then fill every slot with a repeating pattern.",
+      "p-maju": "forward",
+      "p-kiri": "turn left",
+      "p-kanan": "turn right",
+      "p-lompat": "jump"
+    }
+  },
+  "knobs": {
+    "slots": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 3,
+      "keterangan": "jumlah slot: 6 → 9 (tetap kelipatan 3 supaya ulangan penuh)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "cipta",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "maju",
+      "labelKey": "p-maju",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "kiri",
+      "labelKey": "p-kiri",
+      "emoji": "↩️"
+    },
+    {
+      "id": "kanan",
+      "labelKey": "p-kanan",
+      "emoji": "↪️"
+    },
+    {
+      "id": "lompat",
+      "labelKey": "p-lompat",
+      "emoji": "🦘"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "maju": "C4",
+    "kiri": "E4",
+    "kanan": "G4",
+    "lompat": "A4"
+  }
+}

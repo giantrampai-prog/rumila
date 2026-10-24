@@ -1,0 +1,200 @@
+{
+  "id": "sd5-sains-siklus-tumbuhan-berbunga",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dari Biji ke Biji",
+      "instruksi": "Susun tahap hidup tumbuhan ini dari biji sampai biji baru.",
+      "s-kacang": "Siklus hidup kacang tanah",
+      "kacang-biji": "biji kacang ditanam",
+      "kacang-kecambah": "biji berkecambah",
+      "kacang-tumbuh": "tanaman tumbuh berdaun",
+      "kacang-bunga": "bunga kuning mekar",
+      "kacang-serbuk": "serbuk sari sampai di kepala putik",
+      "kacang-polong": "polong berisi biji baru terbentuk",
+      "s-mangga": "Siklus hidup pohon mangga",
+      "mangga-biji": "biji mangga di tanah",
+      "mangga-kecambah": "biji berkecambah",
+      "mangga-muda": "pohon muda tumbuh",
+      "mangga-bunga": "pohon dewasa berbunga",
+      "mangga-lebah": "lebah membawa serbuk sari",
+      "mangga-buah": "bakal buah jadi mangga",
+      "mangga-jatuh": "biji di dalam buah jatuh ke tanah",
+      "s-matahari": "Siklus hidup bunga matahari",
+      "matahari-biji": "biji bunga matahari ditanam",
+      "matahari-kecambah": "biji berkecambah",
+      "matahari-batang": "batang tumbuh tinggi",
+      "matahari-mekar": "bunga besar mekar",
+      "matahari-serbuk": "serangga membawa serbuk sari antarbunga",
+      "matahari-matang": "biji baru matang di kepala bunga",
+      "matahari-burung": "burung mematuk dan menyebarkan biji"
+    },
+    "en": {
+      "judul": "From Seed to Seed",
+      "instruksi": "Put this plant's life stages in order from seed to new seed.",
+      "s-kacang": "Peanut plant life cycle",
+      "kacang-biji": "a peanut seed is planted",
+      "kacang-kecambah": "the seed germinates",
+      "kacang-tumbuh": "the plant grows leaves",
+      "kacang-bunga": "yellow flowers open",
+      "kacang-serbuk": "pollen reaches the stigma",
+      "kacang-polong": "pods with new seeds form",
+      "s-mangga": "Mango tree life cycle",
+      "mangga-biji": "a mango seed in the soil",
+      "mangga-kecambah": "the seed germinates",
+      "mangga-muda": "a young tree grows",
+      "mangga-bunga": "the grown tree flowers",
+      "mangga-lebah": "bees carry pollen",
+      "mangga-buah": "the ovary becomes a mango",
+      "mangga-jatuh": "the seed inside the fruit falls to the ground",
+      "s-matahari": "Sunflower life cycle",
+      "matahari-biji": "a sunflower seed is planted",
+      "matahari-kecambah": "the seed germinates",
+      "matahari-batang": "the stem grows tall",
+      "matahari-mekar": "the big flower opens",
+      "matahari-serbuk": "insects carry pollen between flowers",
+      "matahari-matang": "new seeds ripen in the flower head",
+      "matahari-burung": "birds peck and scatter the seeds"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 7,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah tahap: 4 (biji sampai berbunga) → 7"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "kacang",
+      "titleKey": "s-kacang",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacang-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "kacang-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "kacang-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacang-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "kacang-serbuk",
+          "emoji": "✨"
+        },
+        {
+          "id": "polong",
+          "labelKey": "kacang-polong",
+          "emoji": "🥜"
+        }
+      ]
+    },
+    {
+      "id": "mangga",
+      "titleKey": "s-mangga",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "mangga-biji",
+          "emoji": "🟤"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "mangga-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "muda",
+          "labelKey": "mangga-muda",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "mangga-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "lebah",
+          "labelKey": "mangga-lebah",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "mangga-buah",
+          "emoji": "🥭"
+        },
+        {
+          "id": "jatuh",
+          "labelKey": "mangga-jatuh",
+          "emoji": "⬇️"
+        }
+      ]
+    },
+    {
+      "id": "matahari",
+      "titleKey": "s-matahari",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "matahari-biji",
+          "emoji": "🌰"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "matahari-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "batang",
+          "labelKey": "matahari-batang",
+          "emoji": "🌿"
+        },
+        {
+          "id": "mekar",
+          "labelKey": "matahari-mekar",
+          "emoji": "🌻"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "matahari-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "matang",
+          "labelKey": "matahari-matang",
+          "emoji": "🟫"
+        },
+        {
+          "id": "burung",
+          "labelKey": "matahari-burung",
+          "emoji": "🐦"
+        }
+      ]
+    }
+  ]
+}

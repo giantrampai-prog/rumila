@@ -1,0 +1,260 @@
+{
+  "id": "sd5-sains-biji-mana-berkecambah",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tebak Kecambah",
+      "instruksi": "Baca keadaan bijinya, lalu tebak apa yang terjadi setelah beberapa hari.",
+      "b-pilihan": "pilihan",
+      "i-basahhangat": "kapas basah, di kelas yang hangat",
+      "i-keringhangat": "kapas kering, di kelas yang hangat",
+      "i-basahbeku": "kapas basah, di dalam freezer",
+      "i-basahgelap": "kapas basah, di lemari gelap yang hangat",
+      "i-tetap": "tetap berkecambah",
+      "i-tidak": "tidak berkecambah",
+      "i-airkulkas": "terendam air dingin di kulkas",
+      "i-basahruang": "kapas basah, suhu ruang",
+      "i-airsuhu": "air dan suhu yang cocok",
+      "i-cahayapupuk": "cahaya dan pupuk",
+      "i-tanahcahaya": "tanah dan cahaya",
+      "i-tambahair": "air",
+      "i-tambahcahaya": "cahaya",
+      "i-tambahpupuk": "pupuk",
+      "i-hangat": "suhu yang lebih hangat",
+      "i-tetapgelap": "tetap di tempat gelap",
+      "p-r1": "Mana biji kacang hijau yang akan berkecambah?",
+      "p-r2": "Mana biji yang tidak akan berkecambah?",
+      "p-r3": "Biji di lemari gelap, tetapi kapasnya basah dan hangat. Apa yang terjadi?",
+      "p-r4": "Mana yang lebih dulu berkecambah?",
+      "p-r5": "Dua hal yang dibutuhkan hampir semua biji untuk berkecambah adalah…",
+      "p-r6": "Biji ditanam di pasir kering di halaman yang panas. Apa yang paling perlu ditambahkan?",
+      "p-r7": "Biji di kapas basah dalam freezer tidak berkecambah. Apa yang kurang?",
+      "p-r8": "Kecambah sudah keluar di lemari gelap. Agar tumbuh menjadi tanaman hijau, sekarang ia butuh…"
+    },
+    "en": {
+      "judul": "Sprout Prediction",
+      "instruksi": "Read how the seeds are kept, then predict what happens after a few days.",
+      "b-pilihan": "choices",
+      "i-basahhangat": "wet cotton wool, in a warm classroom",
+      "i-keringhangat": "dry cotton wool, in a warm classroom",
+      "i-basahbeku": "wet cotton wool, in the freezer",
+      "i-basahgelap": "wet cotton wool, in a warm dark cupboard",
+      "i-tetap": "it still germinates",
+      "i-tidak": "it does not germinate",
+      "i-airkulkas": "soaked in cold water in the fridge",
+      "i-basahruang": "wet cotton wool, room temperature",
+      "i-airsuhu": "water and the right temperature",
+      "i-cahayapupuk": "light and fertiliser",
+      "i-tanahcahaya": "soil and light",
+      "i-tambahair": "water",
+      "i-tambahcahaya": "light",
+      "i-tambahpupuk": "fertiliser",
+      "i-hangat": "a warmer temperature",
+      "i-tetapgelap": "staying in the dark",
+      "p-r1": "Which mung bean seed will germinate?",
+      "p-r2": "Which seed will not germinate?",
+      "p-r3": "Seeds in a dark cupboard, but the cotton wool is wet and warm. What happens?",
+      "p-r4": "Which one germinates first?",
+      "p-r5": "The two things almost all seeds need to germinate are…",
+      "p-r6": "Seeds are planted in dry sand in a hot yard. What do they most need?",
+      "p-r7": "Seeds on wet cotton wool in the freezer do not germinate. What is missing?",
+      "p-r8": "Sprouts have come up in the dark cupboard. To grow into green plants, they now need…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "basahhangat",
+      "labelKey": "i-basahhangat",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "keringhangat",
+      "labelKey": "i-keringhangat",
+      "bin": "pilihan",
+      "emoji": "🌵"
+    },
+    {
+      "id": "basahbeku",
+      "labelKey": "i-basahbeku",
+      "bin": "pilihan",
+      "emoji": "❄️"
+    },
+    {
+      "id": "basahgelap",
+      "labelKey": "i-basahgelap",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    },
+    {
+      "id": "tetap",
+      "labelKey": "i-tetap",
+      "bin": "pilihan",
+      "emoji": "🌱"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "i-tidak",
+      "bin": "pilihan",
+      "emoji": "🚫"
+    },
+    {
+      "id": "airkulkas",
+      "labelKey": "i-airkulkas",
+      "bin": "pilihan",
+      "emoji": "🧊"
+    },
+    {
+      "id": "basahruang",
+      "labelKey": "i-basahruang",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "airsuhu",
+      "labelKey": "i-airsuhu",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "cahayapupuk",
+      "labelKey": "i-cahayapupuk",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "tanahcahaya",
+      "labelKey": "i-tanahcahaya",
+      "bin": "pilihan",
+      "emoji": "🟫"
+    },
+    {
+      "id": "tambahair",
+      "labelKey": "i-tambahair",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "tambahcahaya",
+      "labelKey": "i-tambahcahaya",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "tambahpupuk",
+      "labelKey": "i-tambahpupuk",
+      "bin": "pilihan",
+      "emoji": "🧪"
+    },
+    {
+      "id": "hangat",
+      "labelKey": "i-hangat",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "tetapgelap",
+      "labelKey": "i-tetapgelap",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "basahhangat",
+        "keringhangat",
+        "basahbeku"
+      ],
+      "correct": "basahhangat"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "keringhangat",
+        "basahhangat",
+        "basahgelap"
+      ],
+      "correct": "keringhangat"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "tetap",
+        "tidak"
+      ],
+      "correct": "tetap"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "basahruang",
+        "airkulkas"
+      ],
+      "correct": "basahruang"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "airsuhu",
+        "cahayapupuk",
+        "tanahcahaya"
+      ],
+      "correct": "airsuhu"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "tambahair",
+        "tambahcahaya",
+        "tambahpupuk"
+      ],
+      "correct": "tambahair"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "hangat",
+        "tambahair",
+        "tambahcahaya"
+      ],
+      "correct": "hangat"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "tambahcahaya",
+        "tetapgelap",
+        "tambahpupuk"
+      ],
+      "correct": "tambahcahaya"
+    }
+  ]
+}

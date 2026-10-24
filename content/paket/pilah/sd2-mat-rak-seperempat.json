@@ -1,0 +1,211 @@
+{
+  "id": "sd2-mat-rak-seperempat",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.PECAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Seperempat untuk Tiap Anak",
+      "instruksi": "Isi piring dibagi untuk empat anak sama banyak. Taruh di rak angka bagian satu anak.",
+      "b-1": "1",
+      "b-2": "2",
+      "b-3": "3",
+      "b-4": "4",
+      "b-5": "5",
+      "i-4-kue": "4 kue",
+      "i-4-permen": "4 permen",
+      "i-4-telur": "4 telur",
+      "i-8-kue": "8 kue",
+      "i-8-permen": "8 permen",
+      "i-8-telur": "8 telur",
+      "i-12-kue": "12 kue",
+      "i-12-permen": "12 permen",
+      "i-12-telur": "12 telur",
+      "i-16-kue": "16 kue",
+      "i-16-permen": "16 permen",
+      "i-16-telur": "16 telur",
+      "i-20-kue": "20 kue",
+      "i-20-permen": "20 permen",
+      "i-20-telur": "20 telur"
+    },
+    "en": {
+      "judul": "A Quarter Each",
+      "instruksi": "Each plate is shared equally between four children. Put it on the shelf for one child's share.",
+      "b-1": "1",
+      "b-2": "2",
+      "b-3": "3",
+      "b-4": "4",
+      "b-5": "5",
+      "i-4-kue": "4 cookies",
+      "i-4-permen": "4 sweets",
+      "i-4-telur": "4 eggs",
+      "i-8-kue": "8 cookies",
+      "i-8-permen": "8 sweets",
+      "i-8-telur": "8 eggs",
+      "i-12-kue": "12 cookies",
+      "i-12-permen": "12 sweets",
+      "i-12-telur": "12 eggs",
+      "i-16-kue": "16 cookies",
+      "i-16-permen": "16 sweets",
+      "i-16-telur": "16 eggs",
+      "i-20-kue": "20 cookies",
+      "i-20-permen": "20 sweets",
+      "i-20-telur": "20 eggs"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak aktif: 3 → 5"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "piring per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "s1",
+      "labelKey": "b-1"
+    },
+    {
+      "id": "s2",
+      "labelKey": "b-2"
+    },
+    {
+      "id": "s3",
+      "labelKey": "b-3"
+    },
+    {
+      "id": "s4",
+      "labelKey": "b-4"
+    },
+    {
+      "id": "s5",
+      "labelKey": "b-5"
+    }
+  ],
+  "items": [
+    {
+      "id": "kue-4",
+      "labelKey": "i-4-kue",
+      "bin": "s1",
+      "emoji": "🍪",
+      "count": 4
+    },
+    {
+      "id": "permen-4",
+      "labelKey": "i-4-permen",
+      "bin": "s1",
+      "emoji": "🍬",
+      "count": 4
+    },
+    {
+      "id": "telur-4",
+      "labelKey": "i-4-telur",
+      "bin": "s1",
+      "emoji": "🥚",
+      "count": 4
+    },
+    {
+      "id": "kue-8",
+      "labelKey": "i-8-kue",
+      "bin": "s2",
+      "emoji": "🍪",
+      "count": 8
+    },
+    {
+      "id": "permen-8",
+      "labelKey": "i-8-permen",
+      "bin": "s2",
+      "emoji": "🍬",
+      "count": 8
+    },
+    {
+      "id": "telur-8",
+      "labelKey": "i-8-telur",
+      "bin": "s2",
+      "emoji": "🥚",
+      "count": 8
+    },
+    {
+      "id": "kue-12",
+      "labelKey": "i-12-kue",
+      "bin": "s3",
+      "emoji": "🍪",
+      "count": 12
+    },
+    {
+      "id": "permen-12",
+      "labelKey": "i-12-permen",
+      "bin": "s3",
+      "emoji": "🍬",
+      "count": 12
+    },
+    {
+      "id": "telur-12",
+      "labelKey": "i-12-telur",
+      "bin": "s3",
+      "emoji": "🥚",
+      "count": 12
+    },
+    {
+      "id": "kue-16",
+      "labelKey": "i-16-kue",
+      "bin": "s4",
+      "emoji": "🍪",
+      "count": 16
+    },
+    {
+      "id": "permen-16",
+      "labelKey": "i-16-permen",
+      "bin": "s4",
+      "emoji": "🍬",
+      "count": 16
+    },
+    {
+      "id": "telur-16",
+      "labelKey": "i-16-telur",
+      "bin": "s4",
+      "emoji": "🥚",
+      "count": 16
+    },
+    {
+      "id": "kue-20",
+      "labelKey": "i-20-kue",
+      "bin": "s5",
+      "emoji": "🍪",
+      "count": 20
+    },
+    {
+      "id": "permen-20",
+      "labelKey": "i-20-permen",
+      "bin": "s5",
+      "emoji": "🍬",
+      "count": 20
+    },
+    {
+      "id": "telur-20",
+      "labelKey": "i-20-telur",
+      "bin": "s5",
+      "emoji": "🥚",
+      "count": 20
+    }
+  ]
+}

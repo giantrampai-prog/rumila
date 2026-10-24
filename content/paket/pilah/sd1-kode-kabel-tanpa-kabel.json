@@ -1,0 +1,149 @@
+{
+  "id": "sd1-kode-kabel-tanpa-kabel",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD1.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pakai Kabel atau Tanpa Kabel?",
+      "instruksi": "Lihat cara perangkat tersambung: taruh di kotak pakai kabel atau kotak tanpa kabel.",
+      "bin-kabel": "pakai kabel",
+      "bin-nirkabel": "tanpa kabel",
+      "i-corded-home-phone": "telepon rumah berkabel",
+      "i-wired-mouse": "mouse berkabel",
+      "i-wired-desktop-computer": "komputer meja berkabel",
+      "i-wired-keyboard": "keyboard berkabel",
+      "i-wired-headphones": "headphone berkabel",
+      "i-wired-printer": "printer berkabel",
+      "i-mobile-phone": "ponsel",
+      "i-smartwatch": "jam pintar",
+      "i-tv-remote": "remote TV",
+      "i-wireless-game-controller": "stik game tanpa kabel",
+      "i-bluetooth-speaker": "speaker bluetooth",
+      "i-tablet": "tablet"
+    },
+    "en": {
+      "judul": "Wired or Wireless?",
+      "instruksi": "Look at how each device connects: put it in the wired box or the wireless box.",
+      "bin-kabel": "with a wire",
+      "bin-nirkabel": "without a wire",
+      "i-corded-home-phone": "corded home phone",
+      "i-wired-mouse": "wired mouse",
+      "i-wired-desktop-computer": "wired desktop computer",
+      "i-wired-keyboard": "wired keyboard",
+      "i-wired-headphones": "wired headphones",
+      "i-wired-printer": "wired printer",
+      "i-mobile-phone": "mobile phone",
+      "i-smartwatch": "smartwatch",
+      "i-tv-remote": "TV remote",
+      "i-wireless-game-controller": "wireless game controller",
+      "i-bluetooth-speaker": "bluetooth speaker",
+      "i-tablet": "tablet"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah perangkat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kabel",
+      "labelKey": "bin-kabel",
+      "emoji": "🔌"
+    },
+    {
+      "id": "nirkabel",
+      "labelKey": "bin-nirkabel",
+      "emoji": "📶"
+    }
+  ],
+  "items": [
+    {
+      "id": "corded-home-phone",
+      "labelKey": "i-corded-home-phone",
+      "bin": "kabel",
+      "emoji": "☎️"
+    },
+    {
+      "id": "wired-mouse",
+      "labelKey": "i-wired-mouse",
+      "bin": "kabel",
+      "emoji": "🖱️"
+    },
+    {
+      "id": "wired-desktop-computer",
+      "labelKey": "i-wired-desktop-computer",
+      "bin": "kabel",
+      "emoji": "🖥️"
+    },
+    {
+      "id": "wired-keyboard",
+      "labelKey": "i-wired-keyboard",
+      "bin": "kabel",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "wired-headphones",
+      "labelKey": "i-wired-headphones",
+      "bin": "kabel",
+      "emoji": "🎧"
+    },
+    {
+      "id": "wired-printer",
+      "labelKey": "i-wired-printer",
+      "bin": "kabel",
+      "emoji": "🖨️"
+    },
+    {
+      "id": "mobile-phone",
+      "labelKey": "i-mobile-phone",
+      "bin": "nirkabel",
+      "emoji": "📱"
+    },
+    {
+      "id": "smartwatch",
+      "labelKey": "i-smartwatch",
+      "bin": "nirkabel",
+      "emoji": "⌚"
+    },
+    {
+      "id": "tv-remote",
+      "labelKey": "i-tv-remote",
+      "bin": "nirkabel",
+      "emoji": "📡"
+    },
+    {
+      "id": "wireless-game-controller",
+      "labelKey": "i-wireless-game-controller",
+      "bin": "nirkabel",
+      "emoji": "🎮"
+    },
+    {
+      "id": "bluetooth-speaker",
+      "labelKey": "i-bluetooth-speaker",
+      "bin": "nirkabel",
+      "emoji": "🔊"
+    },
+    {
+      "id": "tablet",
+      "labelKey": "i-tablet",
+      "bin": "nirkabel",
+      "emoji": "📲"
+    }
+  ]
+}

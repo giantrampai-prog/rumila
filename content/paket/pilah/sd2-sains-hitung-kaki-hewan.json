@@ -1,0 +1,230 @@
+{
+  "id": "sd2-sains-hitung-kaki-hewan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.CIRI-HEWAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Berapa Kakinya?",
+      "instruksi": "Hitung kaki tiap hewan, lalu taruh ke rak yang angkanya sama.",
+      "b-k2": "2 kaki",
+      "b-k4": "4 kaki",
+      "b-k6": "6 kaki",
+      "b-k8": "8 kaki",
+      "b-k0": "tanpa kaki",
+      "i-ayam": "ayam",
+      "i-bebek": "bebek",
+      "i-penguin": "penguin",
+      "i-kucing": "kucing",
+      "i-katak": "katak",
+      "i-kadal": "kadal",
+      "i-sapi": "sapi",
+      "i-semut": "semut",
+      "i-kumbang": "kumbang",
+      "i-lebah": "lebah",
+      "i-kupu": "kupu-kupu",
+      "i-belalang": "belalang",
+      "i-labalaba": "laba-laba",
+      "i-kalajengking": "kalajengking",
+      "i-ular": "ular",
+      "i-cacing": "cacing",
+      "i-ikan": "ikan",
+      "i-siput": "siput"
+    },
+    "en": {
+      "judul": "How Many Legs?",
+      "instruksi": "Count each animal's legs, then put it on the shelf with the same number.",
+      "b-k2": "2 legs",
+      "b-k4": "4 legs",
+      "b-k6": "6 legs",
+      "b-k8": "8 legs",
+      "b-k0": "no legs",
+      "i-ayam": "chicken",
+      "i-bebek": "duck",
+      "i-penguin": "penguin",
+      "i-kucing": "cat",
+      "i-katak": "frog",
+      "i-kadal": "lizard",
+      "i-sapi": "cow",
+      "i-semut": "ant",
+      "i-kumbang": "beetle",
+      "i-lebah": "bee",
+      "i-kupu": "butterfly",
+      "i-belalang": "grasshopper",
+      "i-labalaba": "spider",
+      "i-kalajengking": "scorpion",
+      "i-ular": "snake",
+      "i-cacing": "worm",
+      "i-ikan": "fish",
+      "i-siput": "snail"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 3 (2, 4, 6 kaki) → 5 (tambah 8 kaki dan tanpa kaki)"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "k2",
+      "labelKey": "b-k2",
+      "emoji": "✌️",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "k4",
+      "labelKey": "b-k4",
+      "emoji": "🐾",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "k6",
+      "labelKey": "b-k6",
+      "emoji": "🐜",
+      "color": "#fffde7"
+    },
+    {
+      "id": "k8",
+      "labelKey": "b-k8",
+      "emoji": "🕸️",
+      "color": "#ede7f6"
+    },
+    {
+      "id": "k0",
+      "labelKey": "b-k0",
+      "emoji": "🚫",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "k2",
+      "emoji": "🐔"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "k2",
+      "emoji": "🦆"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "k2",
+      "emoji": "🐧"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "k4",
+      "emoji": "🐈"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "k4",
+      "emoji": "🐸"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "k4",
+      "emoji": "🦎"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "k4",
+      "emoji": "🐄"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "k6",
+      "emoji": "🐜"
+    },
+    {
+      "id": "kumbang",
+      "labelKey": "i-kumbang",
+      "bin": "k6",
+      "emoji": "🪲"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "k6",
+      "emoji": "🐝"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "k6",
+      "emoji": "🦋"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "i-belalang",
+      "bin": "k6",
+      "emoji": "🦗"
+    },
+    {
+      "id": "labalaba",
+      "labelKey": "i-labalaba",
+      "bin": "k8",
+      "emoji": "🕷️"
+    },
+    {
+      "id": "kalajengking",
+      "labelKey": "i-kalajengking",
+      "bin": "k8",
+      "emoji": "🦂"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "k0",
+      "emoji": "🐍"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "k0",
+      "emoji": "🪱"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "k0",
+      "emoji": "🐟"
+    },
+    {
+      "id": "siput",
+      "labelKey": "i-siput",
+      "bin": "k0",
+      "emoji": "🐌"
+    }
+  ],
+  "pilihan": []
+}

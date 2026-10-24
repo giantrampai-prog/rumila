@@ -1,0 +1,249 @@
+{
+  "id": "sd3-mat-simetri-dua-arah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lipat Tegak, Lipat Mendatar",
+      "instruksi": "Bayangkan melipat huruf dari atas ke bawah, lalu dari kiri ke kanan. Di mana kedua bagiannya pas?",
+      "b-garis-tegak": "garis tegak",
+      "b-garis-mendatar": "garis mendatar",
+      "b-keduanya": "keduanya",
+      "b-tidak-ada": "tidak ada",
+      "i-a": "A",
+      "i-m": "M",
+      "i-t": "T",
+      "i-u": "U",
+      "i-v": "V",
+      "i-w": "W",
+      "i-y": "Y",
+      "i-b": "B",
+      "i-c": "C",
+      "i-d": "D",
+      "i-e": "E",
+      "i-k": "K",
+      "i-h": "H",
+      "i-i": "I",
+      "i-o": "O",
+      "i-x": "X",
+      "i-f": "F",
+      "i-g": "G",
+      "i-j": "J",
+      "i-l": "L",
+      "i-n": "N",
+      "i-p": "P",
+      "i-r": "R",
+      "i-s": "S",
+      "i-z": "Z"
+    },
+    "en": {
+      "judul": "Fold Up, Fold Across",
+      "instruksi": "Imagine folding each letter top to bottom, then side to side. Where do both halves match?",
+      "b-garis-tegak": "vertical line",
+      "b-garis-mendatar": "horizontal line",
+      "b-keduanya": "both",
+      "b-tidak-ada": "none",
+      "i-a": "A",
+      "i-m": "M",
+      "i-t": "T",
+      "i-u": "U",
+      "i-v": "V",
+      "i-w": "W",
+      "i-y": "Y",
+      "i-b": "B",
+      "i-c": "C",
+      "i-d": "D",
+      "i-e": "E",
+      "i-k": "K",
+      "i-h": "H",
+      "i-i": "I",
+      "i-o": "O",
+      "i-x": "X",
+      "i-f": "F",
+      "i-g": "G",
+      "i-j": "J",
+      "i-l": "L",
+      "i-n": "N",
+      "i-p": "P",
+      "i-r": "R",
+      "i-s": "S",
+      "i-z": "Z"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak tegak & mendatar dulu, lalu keduanya dan tidak ada"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "huruf per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "tegak",
+      "labelKey": "b-garis-tegak",
+      "emoji": "↕️"
+    },
+    {
+      "id": "mendatar",
+      "labelKey": "b-garis-mendatar",
+      "emoji": "↔️"
+    },
+    {
+      "id": "keduanya",
+      "labelKey": "b-keduanya",
+      "emoji": "➕"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak-ada",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "huruf-a",
+      "labelKey": "i-a",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-m",
+      "labelKey": "i-m",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-t",
+      "labelKey": "i-t",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-u",
+      "labelKey": "i-u",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-v",
+      "labelKey": "i-v",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-w",
+      "labelKey": "i-w",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-y",
+      "labelKey": "i-y",
+      "bin": "tegak"
+    },
+    {
+      "id": "huruf-b",
+      "labelKey": "i-b",
+      "bin": "mendatar"
+    },
+    {
+      "id": "huruf-c",
+      "labelKey": "i-c",
+      "bin": "mendatar"
+    },
+    {
+      "id": "huruf-d",
+      "labelKey": "i-d",
+      "bin": "mendatar"
+    },
+    {
+      "id": "huruf-e",
+      "labelKey": "i-e",
+      "bin": "mendatar"
+    },
+    {
+      "id": "huruf-k",
+      "labelKey": "i-k",
+      "bin": "mendatar"
+    },
+    {
+      "id": "huruf-h",
+      "labelKey": "i-h",
+      "bin": "keduanya"
+    },
+    {
+      "id": "huruf-i",
+      "labelKey": "i-i",
+      "bin": "keduanya"
+    },
+    {
+      "id": "huruf-o",
+      "labelKey": "i-o",
+      "bin": "keduanya"
+    },
+    {
+      "id": "huruf-x",
+      "labelKey": "i-x",
+      "bin": "keduanya"
+    },
+    {
+      "id": "huruf-f",
+      "labelKey": "i-f",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-g",
+      "labelKey": "i-g",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-j",
+      "labelKey": "i-j",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-l",
+      "labelKey": "i-l",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-n",
+      "labelKey": "i-n",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-p",
+      "labelKey": "i-p",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-r",
+      "labelKey": "i-r",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-s",
+      "labelKey": "i-s",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-z",
+      "labelKey": "i-z",
+      "bin": "tidak"
+    }
+  ]
+}

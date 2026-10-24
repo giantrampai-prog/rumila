@@ -1,0 +1,517 @@
+{
+  "id": "sd4-mat-soal-cerita-kali-bagi",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.KALI-BAGI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gudang Kali dan Bagi",
+      "instruksi": "Baca soal ceritanya, hitung, lalu sentuh jawaban yang benar.",
+      "q1": "Satu kardus berisi 125 pensil. Berapa pensil dalam 6 kardus?",
+      "c1": "750",
+      "c2": "131",
+      "c3": "720",
+      "c4": "7.500",
+      "q2": "Ada 8 rak, tiap rak memuat 215 buku. Berapa buku semuanya?",
+      "c5": "1.720",
+      "c6": "1.620",
+      "c7": "223",
+      "c8": "1.702",
+      "q3": "96 kelereng dibagi rata kepada 4 anak. Tiap anak mendapat …",
+      "c9": "24",
+      "c10": "23",
+      "c11": "92",
+      "c12": "26",
+      "q4": "84 kursi disusun dalam 7 baris sama panjang. Tiap baris ada …",
+      "c13": "12",
+      "c14": "11",
+      "c15": "14",
+      "c16": "77",
+      "q5": "Satu bus mengangkut 48 penumpang. Berapa penumpang dalam 9 bus?",
+      "c17": "432",
+      "c18": "422",
+      "c19": "57",
+      "c20": "342",
+      "q6": "75 kue dimasukkan ke kotak isi 6. Berapa kotak penuh, dan sisa berapa kue?",
+      "c21": "12 sisa 3",
+      "c22": "13 sisa 0",
+      "c23": "12 sisa 0",
+      "c24": "11 sisa 9",
+      "q7": "Satu hari ada 24 jam. Berapa jam dalam 7 hari?",
+      "c25": "168",
+      "c26": "148",
+      "c27": "31",
+      "c28": "164",
+      "q8": "Toko menjual 365 gelas tiap bulan. Perkiraan terdekat untuk 3 bulan?",
+      "c29": "1.100",
+      "c30": "900",
+      "c31": "1.500",
+      "c32": "400",
+      "q9": "Perkiraan terdekat untuk 297 × 5?",
+      "c33": "1.000",
+      "c34": "2.000",
+      "c35": "300",
+      "q10": "58 anak naik perahu. Satu perahu muat 5 anak. Paling sedikit berapa perahu?",
+      "c36": "13",
+      "c37": "53",
+      "q11": "100 stiker dibagi rata ke 8 album. Tiap album dapat berapa, dan sisa berapa?",
+      "c38": "12 sisa 4",
+      "c39": "13 sisa 4",
+      "c40": "11 sisa 12",
+      "q12": "Kebun punya 9 baris, tiap baris 108 pohon. Berapa pohon semuanya?",
+      "c41": "972",
+      "c42": "962",
+      "c43": "117",
+      "c44": "872",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Multiply and Divide Warehouse",
+      "instruksi": "Read the word problem, work it out, then touch the right answer.",
+      "q1": "One box holds 125 pencils. How many pencils are in 6 boxes?",
+      "c1": "750",
+      "c2": "131",
+      "c3": "720",
+      "c4": "7,500",
+      "q2": "There are 8 shelves, each holding 215 books. How many books altogether?",
+      "c5": "1,720",
+      "c6": "1,620",
+      "c7": "223",
+      "c8": "1,702",
+      "q3": "96 marbles are shared equally among 4 children. Each child gets …",
+      "c9": "24",
+      "c10": "23",
+      "c11": "92",
+      "c12": "26",
+      "q4": "84 chairs are set out in 7 equal rows. Each row has …",
+      "c13": "12",
+      "c14": "11",
+      "c15": "14",
+      "c16": "77",
+      "q5": "One bus carries 48 passengers. How many passengers in 9 buses?",
+      "c17": "432",
+      "c18": "422",
+      "c19": "57",
+      "c20": "342",
+      "q6": "75 cakes go into boxes of 6. How many full boxes, and how many cakes are left?",
+      "c21": "12 r 3",
+      "c22": "13 r 0",
+      "c23": "12 r 0",
+      "c24": "11 r 9",
+      "q7": "A day has 24 hours. How many hours are in 7 days?",
+      "c25": "168",
+      "c26": "148",
+      "c27": "31",
+      "c28": "164",
+      "q8": "A shop sells 365 cups each month. Best estimate for 3 months?",
+      "c29": "1,100",
+      "c30": "900",
+      "c31": "1,500",
+      "c32": "400",
+      "q9": "Best estimate for 297 × 5?",
+      "c33": "1,000",
+      "c34": "2,000",
+      "c35": "300",
+      "q10": "58 children ride boats. Each boat takes 5. What is the fewest boats needed?",
+      "c36": "13",
+      "c37": "53",
+      "q11": "100 stickers are shared equally between 8 albums. How many each, and how many left?",
+      "c38": "12 r 4",
+      "c39": "13 r 4",
+      "c40": "11 r 12",
+      "q12": "An orchard has 9 rows of 108 trees. How many trees altogether?",
+      "c41": "972",
+      "c42": "962",
+      "c43": "117",
+      "c44": "872",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c31",
+        "c33",
+        "c34",
+        "c35"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c13",
+        "c14",
+        "c36",
+        "c37"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c38",
+        "c23",
+        "c39",
+        "c40"
+      ],
+      "correct": "c38"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c41",
+        "c42",
+        "c43",
+        "c44"
+      ],
+      "correct": "c41"
+    }
+  ]
+}

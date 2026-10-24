@@ -1,0 +1,744 @@
+{
+  "id": "sd2-kode-ulangi-maju-lompat",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD2.ULANGI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Maju, Lompat, Ulangi",
+      "instruksi": "Batu muncul tiap tiga petak: masukkan dua perintah yang berulang ke satu blok ulangi."
+    },
+    "en": {
+      "judul": "Forward, Jump, Repeat",
+      "instruksi": "A rock comes every three squares: put the two repeating commands into one repeat block."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 4,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek; rak 3 memaksa ulangi berisi dua perintah"
+    },
+    "rocks": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah batu berjarak sama di jalur"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "bukit",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "lompat",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "maju-lompat-6-n",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-6-e",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-6-s",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-6-w",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-7-n",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-7-e",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-7-s",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 7
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-7-w",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-9-n",
+      "w": 2,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-9-e",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 9,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 8,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-9-s",
+      "w": 2,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 9
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 8
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-lompat-9-w",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 9,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-6-n",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-6-e",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-6-s",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-6-w",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-8-n",
+      "w": 2,
+      "h": 9,
+      "start": {
+        "x": 0,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 7
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-8-e",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-8-s",
+      "w": 2,
+      "h": 9,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 8
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 7
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-8-w",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 8,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 7,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-9-n",
+      "w": 2,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 9,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 8
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-9-e",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 9,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 7,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-9-s",
+      "w": 2,
+      "h": 10,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 9
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 7
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "lompat-maju-9-w",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 9,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 8,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 3
+    }
+  ]
+}

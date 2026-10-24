@@ -1,0 +1,161 @@
+{
+  "id": "sd6-mat-sederhanakan-pecahan-resep",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Resep yang Disederhanakan",
+      "instruksi": "Bagi pembilang dan penyebut dengan FPB-nya sampai tidak bisa dibagi lagi. Taruh di rak bentuk paling sederhana.",
+      "b-duapertiga": "2/3",
+      "b-empatperlima": "4/5",
+      "b-tigaperdelapan": "3/8",
+      "b-limapertujuh": "5/7",
+      "i1": "12/18",
+      "i2": "16/24",
+      "i3": "20/30",
+      "i4": "8/10",
+      "i5": "12/15",
+      "i6": "16/20",
+      "i7": "24/30",
+      "i8": "6/16",
+      "i9": "9/24",
+      "i10": "15/40",
+      "i11": "10/14",
+      "i12": "15/21",
+      "i13": "25/35"
+    },
+    "en": {
+      "judul": "Simplified Recipes",
+      "instruksi": "Divide top and bottom by their HCF until you cannot divide any more. Put it on the simplest-form shelf.",
+      "b-duapertiga": "2/3",
+      "b-empatperlima": "4/5",
+      "b-tigaperdelapan": "3/8",
+      "b-limapertujuh": "5/7",
+      "i1": "12/18",
+      "i2": "16/24",
+      "i3": "20/30",
+      "i4": "8/10",
+      "i5": "12/15",
+      "i6": "16/20",
+      "i7": "24/30",
+      "i8": "6/16",
+      "i9": "9/24",
+      "i10": "15/40",
+      "i11": "10/14",
+      "i12": "15/21",
+      "i13": "25/35"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "duapertiga",
+      "labelKey": "b-duapertiga"
+    },
+    {
+      "id": "empatperlima",
+      "labelKey": "b-empatperlima"
+    },
+    {
+      "id": "tigaperdelapan",
+      "labelKey": "b-tigaperdelapan"
+    },
+    {
+      "id": "limapertujuh",
+      "labelKey": "b-limapertujuh"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "empatperlima"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "empatperlima"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "empatperlima"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "empatperlima"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tigaperdelapan"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tigaperdelapan"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tigaperdelapan"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "limapertujuh"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "limapertujuh"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "limapertujuh"
+    }
+  ]
+}

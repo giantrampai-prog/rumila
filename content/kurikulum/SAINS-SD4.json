@@ -1,0 +1,613 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.SD4.RANGKA-OTOT.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "RANGKA-OTOT",
+        "nama": {
+          "id": "Kerangka dan otot",
+          "en": "Skeleton and muscles"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menaruh tulang penting tubuh ke tempatnya: tengkorak dan rahang di kepala, rusuk dan panggul di badan, tulang paha di kaki",
+        "en": "I can place the body's main bones where they belong: skull and jaw in the head, ribs and hip in the trunk, thigh bone in the leg"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Bs.01",
+          "note": "tulang penting: tengkorak, rahang, rusuk, panggul, tulang belakang, tulang lengan dan kaki"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga daerah tubuh (kepala / badan / lengan dan kaki). Kartu memakai nama tulang yang dibatasi acuan 4Bs.01, ditambah tulang kering dan tempurung lutut sebagai pengayaan nama. Jebakan: panggul dikira bagian kaki, tulang belakang dikira bagian leher saja; keduanya masuk 'badan'. Bukti: satu putaran tanpa salah. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD4.RANGKA-OTOT.02",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "RANGKA-OTOT",
+        "nama": {
+          "id": "Kerangka dan otot",
+          "en": "Skeleton and muscles"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih tugas rangka yang terlihat dalam suatu keadaan: melindungi organ, menopang tubuh, membantu gerak, atau memberi bentuk",
+        "en": "I can choose which job the skeleton is doing in a situation: protecting organs, supporting the body, helping movement, or giving shape"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.RANGKA-OTOT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Bs.03",
+          "note": "fungsi rangka: melindungi dan menopang organ, memungkinkan gerak, memberi bentuk"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 7 ronde: tiap ronde satu keadaan nyata (tengkorak menutup otak, tulang kaki menahan berat saat berdiri, sendi lutut saat naik tangga), empat pilihan tugas selalu tampil supaya tidak bisa ditebak dengan menyingkirkan. Jebakan: 'menopang' vs 'memberi bentuk' — ronde bentuk memakai contoh tanpa beban (kerangka dinosaurus di museum). [Tinjauan 25 Okt 2026: ronde ubur-ubur dibuang karena 'menopang' juga sah.] Bukti: ≥ 6 dari 7 ronde benar."
+    },
+    {
+      "id": "SAINS.SD4.RANGKA-OTOT.03",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "RANGKA-OTOT",
+        "nama": {
+          "id": "Kerangka dan otot",
+          "en": "Skeleton and muscles"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk otot yang mengerut dan yang mengendur saat lengan atau kaki ditekuk dan diluruskan",
+        "en": "I can point to the muscle that contracts and the one that relaxes when an arm or leg bends and straightens"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.RANGKA-OTOT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Bs.02",
+          "note": "otot berpasangan mengerut dan mengendur untuk menggerakkan tulang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde: lengan ditekuk/diluruskan (biseps–trisep), kaki menendang/menekuk (otot depan–belakang paha), dan dua ronde konsep (otot hanya menarik → bekerja berpasangan). Saran presenter: tampilkan animasi lengan sesudah jawaban. Jebakan: anak mengira otot 'mendorong' tulang; ronde r7 menguji itu. Bukti: ≥ 7/8."
+    },
+    {
+      "id": "SAINS.SD4.VERTEBRATA.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "VERTEBRATA",
+        "nama": {
+          "id": "Hewan bertulang belakang",
+          "en": "Animals with and without a backbone"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan bertulang belakang, hewan berangka luar, dan hewan bertubuh lunak tanpa tulang belakang",
+        "en": "I can sort animals into those with a backbone, those with an exoskeleton, and soft-bodied animals without a backbone"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Bs.05",
+          "note": "vertebrata = bertulang belakang, invertebrata = tanpa tulang belakang"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Bs.04",
+          "note": "sebagian hewan punya rangka luar"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga wadah. Jebakan utama: kura-kura bercangkang tetapi bertulang belakang; ular tanpa kaki tetapi bertulang belakang; laba-laba bukan serangga tetapi tetap berangka luar. Siput sengaja tidak dipakai (cangkang moluska bukan rangka luar dalam arti acuan). Bukti: satu putaran 6 kartu tanpa salah, dua kali. Knob itemCount 5 → 9."
+    },
+    {
+      "id": "SAINS.SD4.RANTAI-MAKANAN.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "RANTAI-MAKANAN",
+        "nama": {
+          "id": "Rantai makanan",
+          "en": "Food chains"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun rantai makanan dari produsen sampai pemakan puncak dan memperbaiki rantai yang tertukar",
+        "en": "I can put a food chain in order from producer to top consumer and fix a chain that is mixed up"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Be.03",
+          "note": "rantai makanan dari produsen dan konsumen"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Bp.03",
+          "note": "tumbuhan mendapat energi dari cahaya, hewan dari makan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Dua paket: urutkan susun (5 rantai: sawah, kebun sayur, laut, padang rumput, kolam) dan urutkan perbaiki (satu pasang tertukar, tukar tepat sekali). Label tiap kartu menyebut perannya hanya untuk produsen, supaya anak menalar sisanya dari 'siapa makan siapa'. Jebakan: anak mengurutkan menurut ukuran tubuh (laut: udang kecil di bawah ikan) — kebetulan cocok; rantai kebun (ulat → burung pipit → kucing) memutus kebiasaan itu sebagian. Knob steps 3 → 4. Bukti: 3 susun benar + 2 perbaiki benar dengan satu tukaran."
+    },
+    {
+      "id": "SAINS.SD4.RANTAI-MAKANAN.02",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "RANTAI-MAKANAN",
+        "nama": {
+          "id": "Rantai makanan",
+          "en": "Food chains"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah konsumen menjadi pemakan tumbuhan, pemakan daging, dan pemakan keduanya",
+        "en": "I can sort consumers into plant eaters, meat eaters, and animals that eat both"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.RANTAI-MAKANAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Be.03",
+          "note": "mengelompokkan konsumen: herbivora, karnivora, omnivora"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga wadah berlabel istilah + artinya (herbivora: pemakan tumbuhan). Jebakan: ayam dan tikus dikira pemakan biji saja (keduanya juga makan serangga), laba-laba tidak dianggap pemakan daging, beruang dikira pemakan daging saja. Babi sengaja tidak dipakai (kepekaan konteks Indonesia). Knob itemCount 5 → 9."
+    },
+    {
+      "id": "SAINS.SD4.WUJUD-ZAT.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "WUJUD-ZAT",
+        "nama": {
+          "id": "Padat, cair, dan perubahan wujud",
+          "en": "Solids, liquids and changes of state"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda padat dan cair dari sifatnya, termasuk bubuk seperti pasir yang bisa dituang tetapi tetap padat",
+        "en": "I can sort solids and liquids by their properties, including powders like sand that can be poured but are still solid"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Cp.01",
+          "note": "sifat padat dan cair dijelaskan dengan model partikel"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Cp.02",
+          "note": "padatan seperti bubuk dapat berperilaku seperti cairan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah dengan sifat tertulis di labelnya (padat: bentuk sendiri tetap; cair: mengalir dan mengikuti wadah). Jebakan: pasir, gula pasir, dan tepung bisa dituang tetapi tiap butirnya padat; madu kental tetapi cair. Catatan untuk presenter: saat dijawab, tampilkan sebutir pasir diperbesar (bentuk tetap). Model partikel (4Cm.01) dikenalkan di keterangan umpan balik, belum dinilai. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD4.WUJUD-ZAT.02",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "WUJUD-ZAT",
+        "nama": {
+          "id": "Padat, cair, dan perubahan wujud",
+          "en": "Solids, liquids and changes of state"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan langkah es mencair dan air membeku, dan tahu zatnya tetap sama sesudah berubah wujud",
+        "en": "I can order the steps of ice melting and water freezing, and know it is still the same substance after changing state"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.WUJUD-ZAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Cc.01",
+          "note": "membeku dan mencair dijelaskan dengan model partikel"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Cc.02",
+          "note": "perubahan wujud adalah proses fisika"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun empat proses: es mencair, air membeku, cokelat meleleh lalu mengeras, lilin dicetak ulang. Langkah tengah menyebut perilaku partikel (bergetar makin kuat / melambat lalu hanya bergetar di tempat) sehingga urutan tidak bisa ditebak dari gambar awal-akhir saja. Judul urutan dibaca dulu karena arah prosesnya berbeda. Knob steps 3 → 4. Gagasan 'zat tetap sama' muncul di langkah terakhir dan dinilai penuh di .03. [Tinjauan 25 Okt 2026: 'partikel merapat' saat air membeku diganti — es justru lebih renggang daripada air.]"
+    },
+    {
+      "id": "SAINS.SD4.WUJUD-ZAT.03",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "WUJUD-ZAT",
+        "nama": {
+          "id": "Padat, cair, dan perubahan wujud",
+          "en": "Solids, liquids and changes of state"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah perubahan yang hanya mengubah wujud dari perubahan yang membuat zat baru (reaksi kimia)",
+        "en": "I can sort changes that only change the state from changes that make a new substance (a chemical reaction)"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.WUJUD-ZAT.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Cc.02",
+          "note": "perubahan wujud adalah proses fisika"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Cc.03",
+          "note": "reaksi kimia menghasilkan zat baru"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok: 'berubah wujud, bisa kembali' vs 'jadi zat baru'. Pasangan jebakan sengaja ada dalam satu kumpulan: lilin meleleh (fisika) vs sumbu lilin terbakar (kimia); air membeku vs telur digoreng; mentega meleleh vs roti gosong. Petunjuk untuk anak di umpan balik: 'bisakah dikembalikan seperti semula?'. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD4.LISTRIK.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "LISTRIK",
+        "nama": {
+          "id": "Rangkaian listrik",
+          "en": "Electric circuits"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperkirakan lampu menyala atau tidak dari keadaan rangkaiannya: utuh, putus, atau sakelar terbuka",
+        "en": "I can predict whether a lamp lights from the state of its circuit: complete, broken, or switch open"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Pe.01",
+          "note": "alat listrik tidak bekerja bila rangkaian putus"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Pe.02",
+          "note": "sakelar membuka dan menutup rangkaian"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok 'menyala' vs 'tidak menyala'; tiap kartu menggambarkan satu keadaan rangkaian sederhana (baterai, kabel, lampu, sakelar). Jebakan: kedua kabel di kutub baterai yang sama (rangkaian tidak lewat baterai), lampu yang filamennya putus walau kabel lengkap. Saran presenter: sesudah dijawab, rangkaian digambar dan lampu menyala/padam supaya sebab-akibatnya teramati. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD4.LISTRIK.02",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "LISTRIK",
+        "nama": {
+          "id": "Rangkaian listrik",
+          "en": "Electric circuits"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda yang menyalakan lampu saat dijepit di celah rangkaian (konduktor) dan yang tidak (isolator)",
+        "en": "I can sort objects that make the lamp light when placed in a gap in the circuit (conductors) and those that do not (insulators)"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.LISTRIK.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Pe.04",
+          "note": "logam umumnya konduktor listrik yang baik; ada bahan isolator"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dengan bingkai percobaan: benda dijepit di celah rangkaian yang terbuka. Wadah berlabel akibatnya (lampu menyala / padam) sekaligus istilahnya. Jebakan: aluminium foil tipis tetap konduktor; uang logam; pensil kayu sengaja tidak dipakai (grafit di dalamnya menghantar). Pengaya untuk presenter: ronde 1 boleh mencoba dulu dengan lampu menyala, bukti dari ronde 2. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD4.LISTRIK.03",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "LISTRIK",
+        "nama": {
+          "id": "Rangkaian listrik",
+          "en": "Electric circuits"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memprediksi lampu jadi lebih terang, lebih redup, atau padam saat baterai atau lampu di rangkaian seri ditambah atau dikurangi",
+        "en": "I can predict whether a lamp gets brighter, dimmer, or goes out when cells or lamps in a series circuit are added or removed"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.LISTRIK.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Pe.03",
+          "note": "jumlah/jenis komponen di rangkaian seri mengubah terang lampu"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4TWSp.03",
+          "note": "membuat prediksi hasil"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde, tiga pilihan tetap (lebih terang / lebih redup / padam) supaya tiap ronde menuntut prediksi, bukan menyingkirkan. Bukti prediksi sah bila presenter menyembunyikan lampu sampai anak memilih, lalu menampilkan hasilnya. Jebakan: menambah lampu dikira menambah terang. Ronde 'satu lampu putus di rangkaian seri' menghubungkan ke .01. Rangkaian paralel tidak dipakai (SD 6)."
+    },
+    {
+      "id": "SAINS.SD4.CAHAYA.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "CAHAYA",
+        "nama": {
+          "id": "Cahaya dan cara kita melihat",
+          "en": "Light and how we see"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah sumber cahaya dari benda yang terlihat karena memantulkan cahaya, termasuk Bulan dan cermin",
+        "en": "I can sort light sources from objects we see because they reflect light, including the Moon and mirrors"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Ps.03",
+          "note": "benda bukan sumber cahaya terlihat karena memantulkan cahaya"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4Ps.02",
+          "note": "cahaya dapat memantul dari permukaan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah. Jebakan sengaja: Bulan (tampak bersinar tetapi memantulkan cahaya Matahari), cermin dan pemantul sepeda (berkilau tetapi tidak membuat cahaya), layar HP menyala (sumber). Umpan balik presenter: garis cahaya dari sumber → benda → mata. Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD4.BUMI-ANTARIKSA.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "BUMI-ANTARIKSA",
+        "nama": {
+          "id": "Bumi dan tata surya",
+          "en": "Earth and the Solar System"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun lapisan Bumi dari kerak di permukaan sampai inti, dan dari inti kembali ke kerak",
+        "en": "I can order the Earth's layers from the crust at the surface to the core, and from the core back to the crust"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4ESp.01",
+          "note": "model struktur Bumi: kerak, mantel, inti"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun dua arah (luar → dalam, dalam → luar) sehingga anak harus membaca judul, bukan menghafal satu urutan. Inti dipecah menjadi inti luar (cair) dan inti dalam (padat) — melebihi acuan 4ESp.01 yang hanya menyebut 'inti'; knob steps 3 menyembunyikan pemisahan itu. Model: catat di umpan balik bahwa ini model, ketebalan lapisan tidak sebenarnya (4TWSm.01). Gunung api dan gempa (4ESp.02–03) belum dibuatkan kompetensi."
+    },
+    {
+      "id": "SAINS.SD4.BUMI-ANTARIKSA.02",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "BUMI-ANTARIKSA",
+        "nama": {
+          "id": "Bumi dan tata surya",
+          "en": "Earth and the Solar System"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun delapan planet dari yang paling dekat dengan Matahari di pusat tata surya sampai yang paling jauh",
+        "en": "I can order the eight planets from the closest to the Sun at the centre of the Solar System to the farthest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4ESs.02",
+          "note": "nama planet di tata surya"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4ESs.03",
+          "note": "Matahari di pusat tata surya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun satu deret 8 planet; knob steps memotong dari depan: 4 planet berbatu → 6 → 8. Visual: lingkaran berwarna dengan skala relatif kasar (Jupiter terbesar) — bukan skala sebenarnya; catat di umpan balik. Jebakan: anak mengurutkan menurut ukuran (Jupiter di ujung); Bumi bukan pertama; Pluto tidak termasuk planet. Hafalan diterima sebagai 'pakai' karena acuan 4ESs.02 memang meminta menamai."
+    },
+    {
+      "id": "SAINS.SD4.BUMI-ANTARIKSA.03",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "BUMI-ANTARIKSA",
+        "nama": {
+          "id": "Bumi dan tata surya",
+          "en": "Earth and the Solar System"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjelaskan siang, malam, dan arah bayangan dengan Bumi yang berputar, bukan Matahari yang bergerak",
+        "en": "I can explain day, night and the direction of shadows by the Earth spinning, not by the Sun moving"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4ESs.01",
+          "note": "perputaran Bumi menyebabkan gerak semu Matahari, siang-malam, dan perubahan bayangan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde: penyebab siang-malam (pengecoh miskonsepsi 'Matahari mengitari Bumi tiap hari'), arah dan panjang bayangan pagi/siang/sore, dan sisi Bumi yang membelakangi Matahari. Jebakan: bayangan jatuh berlawanan arah Matahari (pagi Matahari di timur → bayangan ke barat). Catatan Indonesia dekat khatulistiwa: tengah hari bayangan sangat pendek, cocok untuk ronde r5."
+    },
+    {
+      "id": "SAINS.SD4.PENYELIDIKAN.01",
+      "track": "SAINS",
+      "level": "SD4",
+      "unit": {
+        "id": "PENYELIDIKAN",
+        "nama": {
+          "id": "Penyelidikan ilmiah",
+          "en": "Scientific enquiry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih satu hal yang sengaja diubah dan hal yang harus dibuat sama agar sebuah uji itu adil",
+        "en": "I can choose the one thing to change on purpose and the things to keep the same so that a test is fair"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4TWSp.04",
+          "note": "mengenali variabel yang perlu diperhatikan dalam uji adil"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "4TWSp.01",
+          "note": "pertanyaan ilmiah yang dapat diselidiki"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde berpasangan: tiap pertanyaan penyelidikan muncul dua kali (apa yang diubah, lalu apa yang dibuat sama). Pilihan selalu berisi satu hal yang diukur sebagai pengecoh untuk 'dibuat sama', sehingga hanya satu jawaban sah. Ronde r8 memperlihatkan uji tidak adil (dua hal berubah). Istilah variabel bebas/terikat/kontrol belum dipakai (SD 5)."
+    }
+  ]
+}

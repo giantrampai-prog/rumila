@@ -1,0 +1,136 @@
+{
+  "id": "sd2-mat-penggaris-geser",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.SD2.UKUR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Penggaris yang Bergeser",
+      "instruksi": "Bendanya tidak mulai di angka satu. Hitung kubus yang ada tepat di bawah benda.",
+      "i-krayon": "krayon",
+      "i-kunci": "kunci",
+      "i-sendok": "sendok",
+      "i-sikat-gigi": "sikat gigi",
+      "i-pensil": "pensil",
+      "i-wortel": "wortel",
+      "i-sumpit": "sumpit",
+      "i-pisang": "pisang",
+      "i-seruling": "seruling",
+      "i-tongkat": "tongkat"
+    },
+    "en": {
+      "judul": "The Shifted Ruler",
+      "instruksi": "The object does not start at number one. Count the cubes right underneath it.",
+      "i-krayon": "crayon",
+      "i-kunci": "key",
+      "i-sendok": "spoon",
+      "i-sikat-gigi": "toothbrush",
+      "i-pensil": "pencil",
+      "i-wortel": "carrot",
+      "i-sumpit": "chopsticks",
+      "i-pisang": "banana",
+      "i-seruling": "flute",
+      "i-tongkat": "stick"
+    }
+  },
+  "knobs": {
+    "offset": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "benda selalu mulai di kubus ke-2: angka ujung ≠ panjang"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kubus",
+  "items": [
+    {
+      "id": "krayon",
+      "labelKey": "i-krayon",
+      "role": "benda",
+      "emoji": "🖍️",
+      "width": 0.8,
+      "value": 2
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "role": "benda",
+      "emoji": "🔑",
+      "width": 1.2,
+      "value": 3
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "role": "benda",
+      "emoji": "🥄",
+      "width": 1.6,
+      "value": 4
+    },
+    {
+      "id": "sikat",
+      "labelKey": "i-sikat-gigi",
+      "role": "benda",
+      "emoji": "🪥",
+      "width": 2.0,
+      "value": 5
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "role": "benda",
+      "emoji": "✏️",
+      "width": 2.4,
+      "value": 6
+    },
+    {
+      "id": "wortel",
+      "labelKey": "i-wortel",
+      "role": "benda",
+      "emoji": "🥕",
+      "width": 2.8,
+      "value": 7
+    },
+    {
+      "id": "sumpit",
+      "labelKey": "i-sumpit",
+      "role": "benda",
+      "emoji": "🥢",
+      "width": 3.2,
+      "value": 8
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "role": "benda",
+      "emoji": "🍌",
+      "width": 3.6,
+      "value": 9
+    },
+    {
+      "id": "seruling",
+      "labelKey": "i-seruling",
+      "role": "benda",
+      "emoji": "🪈",
+      "width": 4,
+      "value": 10
+    },
+    {
+      "id": "tongkat",
+      "labelKey": "i-tongkat",
+      "role": "benda",
+      "emoji": "🦯",
+      "width": 4,
+      "value": 11
+    }
+  ]
+}

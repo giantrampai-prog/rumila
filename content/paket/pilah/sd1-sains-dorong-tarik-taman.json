@@ -1,0 +1,136 @@
+{
+  "id": "sd1-sains-dorong-tarik-taman",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dorong atau Tarik di Taman",
+      "instruksi": "Lihat gerakan anak di taman. Itu dorong atau tarik?",
+      "b-dorong": "dorong",
+      "b-tarik": "tarik",
+      "i-tendang": "menendang bola",
+      "i-ayunan": "mendorong ayunan",
+      "i-gerobak": "mendorong gerobak pasir",
+      "i-kereta": "mendorong kereta bayi",
+      "i-lempar": "melempar bola",
+      "i-layang": "menarik tali layang-layang",
+      "i-tambang": "lomba tarik tambang",
+      "i-mainan": "menarik mobil mainan bertali",
+      "i-rumput": "mencabut rumput liar",
+      "i-timba": "menimba air dari sumur"
+    },
+    "en": {
+      "judul": "Push or Pull in the Park",
+      "instruksi": "Look at what the children do in the park. Is it a push or a pull?",
+      "b-dorong": "push",
+      "b-tarik": "pull",
+      "i-tendang": "kicking a ball",
+      "i-ayunan": "pushing a swing",
+      "i-gerobak": "pushing a sand cart",
+      "i-kereta": "pushing a pram",
+      "i-lempar": "throwing a ball",
+      "i-layang": "pulling a kite string",
+      "i-tambang": "tug of war",
+      "i-mainan": "pulling a toy car on a string",
+      "i-rumput": "pulling up a weed",
+      "i-timba": "pulling a bucket up the well"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "dorong",
+      "labelKey": "b-dorong",
+      "emoji": "👐",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "tarik",
+      "labelKey": "b-tarik",
+      "emoji": "🫴",
+      "color": "#fff3e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "tendang",
+      "labelKey": "i-tendang",
+      "bin": "dorong",
+      "emoji": "⚽"
+    },
+    {
+      "id": "ayunan",
+      "labelKey": "i-ayunan",
+      "bin": "dorong",
+      "emoji": "🎠"
+    },
+    {
+      "id": "gerobak",
+      "labelKey": "i-gerobak",
+      "bin": "dorong",
+      "emoji": "🛒",
+      "color": "#bcaaa4"
+    },
+    {
+      "id": "kereta",
+      "labelKey": "i-kereta",
+      "bin": "dorong",
+      "emoji": "👶"
+    },
+    {
+      "id": "lempar",
+      "labelKey": "i-lempar",
+      "bin": "dorong",
+      "emoji": "🏀"
+    },
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "tarik",
+      "emoji": "🪁"
+    },
+    {
+      "id": "tambang",
+      "labelKey": "i-tambang",
+      "bin": "tarik",
+      "emoji": "🪢"
+    },
+    {
+      "id": "mainan",
+      "labelKey": "i-mainan",
+      "bin": "tarik",
+      "emoji": "🚙"
+    },
+    {
+      "id": "rumput",
+      "labelKey": "i-rumput",
+      "bin": "tarik",
+      "emoji": "🌱"
+    },
+    {
+      "id": "timba",
+      "labelKey": "i-timba",
+      "bin": "tarik",
+      "emoji": "🪣"
+    }
+  ],
+  "pilihan": []
+}

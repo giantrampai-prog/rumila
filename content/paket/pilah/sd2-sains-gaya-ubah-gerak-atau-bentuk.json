@@ -1,0 +1,152 @@
+{
+  "id": "sd2-sains-gaya-ubah-gerak-atau-bentuk",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gerak Berubah atau Bentuk Berubah?",
+      "instruksi": "Gaya bisa mengubah gerak atau bentuk. Taruh tiap kejadian ke raknya.",
+      "b-gerak": "gerak berubah",
+      "b-bentuk": "bentuk berubah",
+      "i-tendang": "menendang bola yang diam",
+      "i-tangkap": "menangkap bola",
+      "i-rem": "mengerem sepeda",
+      "i-kok": "memukul kok bulu tangkis",
+      "i-perahu": "meniup perahu kertas di air",
+      "i-troli": "mendorong troli yang diam",
+      "i-remas": "meremas kertas",
+      "i-plastisin": "menekan plastisin",
+      "i-kaleng": "menginjak kaleng",
+      "i-adonan": "menggiling adonan",
+      "i-balon": "menekan balon",
+      "i-spons": "memeras spons"
+    },
+    "en": {
+      "judul": "Movement Changes or Shape Changes?",
+      "instruksi": "A force can change how something moves or its shape. Put each event on its shelf.",
+      "b-gerak": "movement changes",
+      "b-bentuk": "shape changes",
+      "i-tendang": "kicking a ball that was still",
+      "i-tangkap": "catching a ball",
+      "i-rem": "braking a bike",
+      "i-kok": "hitting a shuttlecock",
+      "i-perahu": "blowing a paper boat on water",
+      "i-troli": "pushing a still cart",
+      "i-remas": "scrunching paper",
+      "i-plastisin": "pressing clay",
+      "i-kaleng": "stepping on a can",
+      "i-adonan": "rolling dough flat",
+      "i-balon": "squeezing a balloon",
+      "i-spons": "squeezing a sponge"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gerak",
+      "labelKey": "b-gerak",
+      "emoji": "➡️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "bentuk",
+      "labelKey": "b-bentuk",
+      "emoji": "🫳",
+      "color": "#fce4ec"
+    }
+  ],
+  "items": [
+    {
+      "id": "tendang",
+      "labelKey": "i-tendang",
+      "bin": "gerak",
+      "emoji": "⚽"
+    },
+    {
+      "id": "tangkap",
+      "labelKey": "i-tangkap",
+      "bin": "gerak",
+      "emoji": "🧤"
+    },
+    {
+      "id": "rem",
+      "labelKey": "i-rem",
+      "bin": "gerak",
+      "emoji": "🚲"
+    },
+    {
+      "id": "kok",
+      "labelKey": "i-kok",
+      "bin": "gerak",
+      "emoji": "🏸"
+    },
+    {
+      "id": "perahu",
+      "labelKey": "i-perahu",
+      "bin": "gerak",
+      "emoji": "⛵"
+    },
+    {
+      "id": "troli",
+      "labelKey": "i-troli",
+      "bin": "gerak",
+      "emoji": "🛒"
+    },
+    {
+      "id": "remas",
+      "labelKey": "i-remas",
+      "bin": "bentuk",
+      "emoji": "📄"
+    },
+    {
+      "id": "plastisin",
+      "labelKey": "i-plastisin",
+      "bin": "bentuk",
+      "emoji": "🟣",
+      "color": "#ba68c8"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "bentuk",
+      "emoji": "🥫"
+    },
+    {
+      "id": "adonan",
+      "labelKey": "i-adonan",
+      "bin": "bentuk",
+      "emoji": "🫓"
+    },
+    {
+      "id": "balon",
+      "labelKey": "i-balon",
+      "bin": "bentuk",
+      "emoji": "🎈"
+    },
+    {
+      "id": "spons",
+      "labelKey": "i-spons",
+      "bin": "bentuk",
+      "emoji": "🧽"
+    }
+  ],
+  "pilihan": []
+}

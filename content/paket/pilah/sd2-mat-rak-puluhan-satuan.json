@@ -1,0 +1,338 @@
+{
+  "id": "sd2-mat-rak-puluhan-satuan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Puluhan dan Satuan",
+      "instruksi": "Gabungkan puluhan dan satuannya. Taruh tiap kartu di rak bilangannya.",
+      "b-47": "47",
+      "b-74": "74",
+      "b-38": "38",
+      "b-83": "83",
+      "b-56": "56",
+      "b-65": "65",
+      "b-29": "29",
+      "b-92": "92",
+      "b-61": "61",
+      "b-16": "16",
+      "i-40p7": "40+7",
+      "i-7p40": "7+40",
+      "i-30p17": "30+17",
+      "i-70p4": "70+4",
+      "i-4p70": "4+70",
+      "i-60p14": "60+14",
+      "i-30p8": "30+8",
+      "i-8p30": "8+30",
+      "i-20p18": "20+18",
+      "i-80p3": "80+3",
+      "i-3p80": "3+80",
+      "i-70p13": "70+13",
+      "i-50p6": "50+6",
+      "i-6p50": "6+50",
+      "i-40p16": "40+16",
+      "i-60p5": "60+5",
+      "i-5p60": "5+60",
+      "i-50p15": "50+15",
+      "i-20p9": "20+9",
+      "i-9p20": "9+20",
+      "i-10p19": "10+19",
+      "i-90p2": "90+2",
+      "i-2p90": "2+90",
+      "i-80p12": "80+12",
+      "i-60p1": "60+1",
+      "i-1p60": "1+60",
+      "i-50p11": "50+11",
+      "i-10p6": "10+6",
+      "i-6p10": "6+10"
+    },
+    "en": {
+      "judul": "Tens and Ones Shelf",
+      "instruksi": "Put the tens and ones together. Place each card on the shelf for its number.",
+      "b-47": "47",
+      "b-74": "74",
+      "b-38": "38",
+      "b-83": "83",
+      "b-56": "56",
+      "b-65": "65",
+      "b-29": "29",
+      "b-92": "92",
+      "b-61": "61",
+      "b-16": "16",
+      "i-40p7": "40+7",
+      "i-7p40": "7+40",
+      "i-30p17": "30+17",
+      "i-70p4": "70+4",
+      "i-4p70": "4+70",
+      "i-60p14": "60+14",
+      "i-30p8": "30+8",
+      "i-8p30": "8+30",
+      "i-20p18": "20+18",
+      "i-80p3": "80+3",
+      "i-3p80": "3+80",
+      "i-70p13": "70+13",
+      "i-50p6": "50+6",
+      "i-6p50": "6+50",
+      "i-40p16": "40+16",
+      "i-60p5": "60+5",
+      "i-5p60": "5+60",
+      "i-50p15": "50+15",
+      "i-20p9": "20+9",
+      "i-9p20": "9+20",
+      "i-10p19": "10+19",
+      "i-90p2": "90+2",
+      "i-2p90": "2+90",
+      "i-80p12": "80+12",
+      "i-60p1": "60+1",
+      "i-1p60": "1+60",
+      "i-50p11": "50+11",
+      "i-10p6": "10+6",
+      "i-6p10": "6+10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak aktif berpasangan (47 & 74): 4 → 10"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "r47",
+      "labelKey": "b-47"
+    },
+    {
+      "id": "r74",
+      "labelKey": "b-74"
+    },
+    {
+      "id": "r38",
+      "labelKey": "b-38"
+    },
+    {
+      "id": "r83",
+      "labelKey": "b-83"
+    },
+    {
+      "id": "r56",
+      "labelKey": "b-56"
+    },
+    {
+      "id": "r65",
+      "labelKey": "b-65"
+    },
+    {
+      "id": "r29",
+      "labelKey": "b-29"
+    },
+    {
+      "id": "r92",
+      "labelKey": "b-92"
+    },
+    {
+      "id": "r61",
+      "labelKey": "b-61"
+    },
+    {
+      "id": "r16",
+      "labelKey": "b-16"
+    }
+  ],
+  "items": [
+    {
+      "id": "k47-40p7",
+      "labelKey": "i-40p7",
+      "bin": "r47",
+      "scale": 0.7
+    },
+    {
+      "id": "k47-7p40",
+      "labelKey": "i-7p40",
+      "bin": "r47",
+      "scale": 0.7
+    },
+    {
+      "id": "k47-30p17",
+      "labelKey": "i-30p17",
+      "bin": "r47",
+      "scale": 0.6
+    },
+    {
+      "id": "k74-70p4",
+      "labelKey": "i-70p4",
+      "bin": "r74",
+      "scale": 0.7
+    },
+    {
+      "id": "k74-4p70",
+      "labelKey": "i-4p70",
+      "bin": "r74",
+      "scale": 0.7
+    },
+    {
+      "id": "k74-60p14",
+      "labelKey": "i-60p14",
+      "bin": "r74",
+      "scale": 0.6
+    },
+    {
+      "id": "k38-30p8",
+      "labelKey": "i-30p8",
+      "bin": "r38",
+      "scale": 0.7
+    },
+    {
+      "id": "k38-8p30",
+      "labelKey": "i-8p30",
+      "bin": "r38",
+      "scale": 0.7
+    },
+    {
+      "id": "k38-20p18",
+      "labelKey": "i-20p18",
+      "bin": "r38",
+      "scale": 0.6
+    },
+    {
+      "id": "k83-80p3",
+      "labelKey": "i-80p3",
+      "bin": "r83",
+      "scale": 0.7
+    },
+    {
+      "id": "k83-3p80",
+      "labelKey": "i-3p80",
+      "bin": "r83",
+      "scale": 0.7
+    },
+    {
+      "id": "k83-70p13",
+      "labelKey": "i-70p13",
+      "bin": "r83",
+      "scale": 0.6
+    },
+    {
+      "id": "k56-50p6",
+      "labelKey": "i-50p6",
+      "bin": "r56",
+      "scale": 0.7
+    },
+    {
+      "id": "k56-6p50",
+      "labelKey": "i-6p50",
+      "bin": "r56",
+      "scale": 0.7
+    },
+    {
+      "id": "k56-40p16",
+      "labelKey": "i-40p16",
+      "bin": "r56",
+      "scale": 0.6
+    },
+    {
+      "id": "k65-60p5",
+      "labelKey": "i-60p5",
+      "bin": "r65",
+      "scale": 0.7
+    },
+    {
+      "id": "k65-5p60",
+      "labelKey": "i-5p60",
+      "bin": "r65",
+      "scale": 0.7
+    },
+    {
+      "id": "k65-50p15",
+      "labelKey": "i-50p15",
+      "bin": "r65",
+      "scale": 0.6
+    },
+    {
+      "id": "k29-20p9",
+      "labelKey": "i-20p9",
+      "bin": "r29",
+      "scale": 0.7
+    },
+    {
+      "id": "k29-9p20",
+      "labelKey": "i-9p20",
+      "bin": "r29",
+      "scale": 0.7
+    },
+    {
+      "id": "k29-10p19",
+      "labelKey": "i-10p19",
+      "bin": "r29",
+      "scale": 0.6
+    },
+    {
+      "id": "k92-90p2",
+      "labelKey": "i-90p2",
+      "bin": "r92",
+      "scale": 0.7
+    },
+    {
+      "id": "k92-2p90",
+      "labelKey": "i-2p90",
+      "bin": "r92",
+      "scale": 0.7
+    },
+    {
+      "id": "k92-80p12",
+      "labelKey": "i-80p12",
+      "bin": "r92",
+      "scale": 0.6
+    },
+    {
+      "id": "k61-60p1",
+      "labelKey": "i-60p1",
+      "bin": "r61",
+      "scale": 0.7
+    },
+    {
+      "id": "k61-1p60",
+      "labelKey": "i-1p60",
+      "bin": "r61",
+      "scale": 0.7
+    },
+    {
+      "id": "k61-50p11",
+      "labelKey": "i-50p11",
+      "bin": "r61",
+      "scale": 0.6
+    },
+    {
+      "id": "k16-10p6",
+      "labelKey": "i-10p6",
+      "bin": "r16",
+      "scale": 0.7
+    },
+    {
+      "id": "k16-6p10",
+      "labelKey": "i-6p10",
+      "bin": "r16",
+      "scale": 0.7
+    }
+  ]
+}

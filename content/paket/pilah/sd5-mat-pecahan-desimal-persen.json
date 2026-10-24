@@ -1,0 +1,156 @@
+{
+  "id": "sd5-mat-pecahan-desimal-persen",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.PECAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tiga Wajah Satu Nilai",
+      "instruksi": "Pecahan, desimal, dan persen bisa bernilai sama. Taruh tiap kartu di rak pecahan yang nilainya sama.",
+      "b-setengah": "1/2",
+      "b-sepersepuluh": "1/10",
+      "b-tigapersepuluh": "3/10",
+      "b-empatperlima": "4/5",
+      "i1": "0,5",
+      "i2": "50%",
+      "i3": "5/10",
+      "i4": "0,1",
+      "i5": "10%",
+      "i6": "10/100",
+      "i7": "0,3",
+      "i8": "30%",
+      "i9": "30/100",
+      "i10": "0,8",
+      "i11": "80%",
+      "i12": "8/10"
+    },
+    "en": {
+      "judul": "Three Faces of One Value",
+      "instruksi": "Fractions, decimals and percentages can have the same value. Put each card on the fraction shelf with the same value.",
+      "b-setengah": "1/2",
+      "b-sepersepuluh": "1/10",
+      "b-tigapersepuluh": "3/10",
+      "b-empatperlima": "4/5",
+      "i1": "0.5",
+      "i2": "50%",
+      "i3": "5/10",
+      "i4": "0.1",
+      "i5": "10%",
+      "i6": "10/100",
+      "i7": "0.3",
+      "i8": "30%",
+      "i9": "30/100",
+      "i10": "0.8",
+      "i11": "80%",
+      "i12": "8/10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "setengah",
+      "labelKey": "b-setengah"
+    },
+    {
+      "id": "sepersepuluh",
+      "labelKey": "b-sepersepuluh"
+    },
+    {
+      "id": "tigapersepuluh",
+      "labelKey": "b-tigapersepuluh"
+    },
+    {
+      "id": "empatperlima",
+      "labelKey": "b-empatperlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "setengah"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "setengah"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "setengah"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "sepersepuluh"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "sepersepuluh"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "sepersepuluh",
+      "scale": 0.7
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "tigapersepuluh"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tigapersepuluh"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tigapersepuluh",
+      "scale": 0.7
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "empatperlima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "empatperlima"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "empatperlima"
+    }
+  ]
+}

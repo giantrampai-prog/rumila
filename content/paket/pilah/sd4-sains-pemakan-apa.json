@@ -1,0 +1,175 @@
+{
+  "id": "sd4-sains-pemakan-apa",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.RANTAI-MAKANAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pemakan Apa?",
+      "instruksi": "Pilah tiap hewan menurut makanannya: tumbuhan, daging, atau keduanya.",
+      "b-herbivora": "herbivora: pemakan tumbuhan",
+      "b-karnivora": "karnivora: pemakan daging",
+      "b-omnivora": "omnivora: pemakan keduanya",
+      "i-sapi": "sapi",
+      "i-kambing": "kambing",
+      "i-kelinci": "kelinci",
+      "i-ulat": "ulat",
+      "i-rusa": "rusa",
+      "i-harimau": "harimau",
+      "i-elang": "elang",
+      "i-buaya": "buaya",
+      "i-hiu": "hiu",
+      "i-labalaba": "laba-laba",
+      "i-ayam": "ayam",
+      "i-tikus": "tikus",
+      "i-beruang": "beruang",
+      "i-monyet": "monyet"
+    },
+    "en": {
+      "judul": "What Does It Eat?",
+      "instruksi": "Sort each animal by what it eats: plants, meat, or both.",
+      "b-herbivora": "herbivore: eats plants",
+      "b-karnivora": "carnivore: eats meat",
+      "b-omnivora": "omnivore: eats both",
+      "i-sapi": "cow",
+      "i-kambing": "goat",
+      "i-kelinci": "rabbit",
+      "i-ulat": "caterpillar",
+      "i-rusa": "deer",
+      "i-harimau": "tiger",
+      "i-elang": "eagle",
+      "i-buaya": "crocodile",
+      "i-hiu": "shark",
+      "i-labalaba": "spider",
+      "i-ayam": "chicken",
+      "i-tikus": "rat",
+      "i-beruang": "bear",
+      "i-monyet": "monkey"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 5,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 5 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "herbivora",
+      "labelKey": "b-herbivora",
+      "emoji": "🌿",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "karnivora",
+      "labelKey": "b-karnivora",
+      "emoji": "🥩",
+      "color": "#ffcdd2"
+    },
+    {
+      "id": "omnivora",
+      "labelKey": "b-omnivora",
+      "emoji": "🍽️",
+      "color": "#fff9c4"
+    }
+  ],
+  "items": [
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "herbivora",
+      "emoji": "🐄"
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "herbivora",
+      "emoji": "🐐"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "herbivora",
+      "emoji": "🐇"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "herbivora",
+      "emoji": "🐛"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "i-rusa",
+      "bin": "herbivora",
+      "emoji": "🦌"
+    },
+    {
+      "id": "harimau",
+      "labelKey": "i-harimau",
+      "bin": "karnivora",
+      "emoji": "🐅"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "karnivora",
+      "emoji": "🦅"
+    },
+    {
+      "id": "buaya",
+      "labelKey": "i-buaya",
+      "bin": "karnivora",
+      "emoji": "🐊"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "karnivora",
+      "emoji": "🦈"
+    },
+    {
+      "id": "labalaba",
+      "labelKey": "i-labalaba",
+      "bin": "karnivora",
+      "emoji": "🕷️"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "omnivora",
+      "emoji": "🐔"
+    },
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "omnivora",
+      "emoji": "🐀"
+    },
+    {
+      "id": "beruang",
+      "labelKey": "i-beruang",
+      "bin": "omnivora",
+      "emoji": "🐻"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "omnivora",
+      "emoji": "🐒"
+    }
+  ],
+  "pilihan": []
+}

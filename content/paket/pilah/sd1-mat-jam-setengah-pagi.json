@@ -1,0 +1,266 @@
+{
+  "id": "sd1-mat-jam-setengah-pagi",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jam Setengah: Pagi",
+      "instruksi": "Setengah 4 artinya setengah jalan menuju pukul 4, yaitu 3.30. Taruh tiap jam di raknya.",
+      "b-pukul-6": "pukul 6",
+      "b-setengah-7": "setengah 7",
+      "b-pukul-7": "pukul 7",
+      "b-setengah-8": "setengah 8",
+      "b-pukul-8": "pukul 8",
+      "b-setengah-9": "setengah 9",
+      "b-pukul-9": "pukul 9",
+      "b-setengah-10": "setengah 10",
+      "b-pukul-10": "pukul 10",
+      "b-setengah-11": "setengah 11",
+      "i-jam-pukul-6": "jam pukul 6",
+      "i-06t00": "06.00",
+      "i-jam-6t30": "jam 6.30",
+      "i-06t30": "06.30",
+      "i-jam-pukul-7": "jam pukul 7",
+      "i-07t00": "07.00",
+      "i-jam-7t30": "jam 7.30",
+      "i-07t30": "07.30",
+      "i-jam-pukul-8": "jam pukul 8",
+      "i-08t00": "08.00",
+      "i-jam-8t30": "jam 8.30",
+      "i-08t30": "08.30",
+      "i-jam-pukul-9": "jam pukul 9",
+      "i-09t00": "09.00",
+      "i-jam-9t30": "jam 9.30",
+      "i-09t30": "09.30",
+      "i-jam-pukul-10": "jam pukul 10",
+      "i-10t00": "10.00",
+      "i-jam-10t30": "jam 10.30",
+      "i-10t30": "10.30"
+    },
+    "en": {
+      "judul": "Half Past: Morning",
+      "instruksi": "Look at both hands. Half past 3 is 3:30. Put each clock on its shelf.",
+      "b-pukul-6": "6 o'clock",
+      "b-setengah-7": "half past 6",
+      "b-pukul-7": "7 o'clock",
+      "b-setengah-8": "half past 7",
+      "b-pukul-8": "8 o'clock",
+      "b-setengah-9": "half past 8",
+      "b-pukul-9": "9 o'clock",
+      "b-setengah-10": "half past 9",
+      "b-pukul-10": "10 o'clock",
+      "b-setengah-11": "half past 10",
+      "i-jam-pukul-6": "clock at 6 o'clock",
+      "i-06t00": "06:00",
+      "i-jam-6t30": "clock at 6:30",
+      "i-06t30": "06:30",
+      "i-jam-pukul-7": "clock at 7 o'clock",
+      "i-07t00": "07:00",
+      "i-jam-7t30": "clock at 7:30",
+      "i-07t30": "07:30",
+      "i-jam-pukul-8": "clock at 8 o'clock",
+      "i-08t00": "08:00",
+      "i-jam-8t30": "clock at 8:30",
+      "i-08t30": "08:30",
+      "i-jam-pukul-9": "clock at 9 o'clock",
+      "i-09t00": "09:00",
+      "i-jam-9t30": "clock at 9:30",
+      "i-09t30": "09:30",
+      "i-jam-pukul-10": "clock at 10 o'clock",
+      "i-10t00": "10:00",
+      "i-jam-10t30": "clock at 10:30",
+      "i-10t30": "10:30"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jam per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "pukul-6",
+      "labelKey": "b-pukul-6"
+    },
+    {
+      "id": "setengah-7",
+      "labelKey": "b-setengah-7"
+    },
+    {
+      "id": "pukul-7",
+      "labelKey": "b-pukul-7"
+    },
+    {
+      "id": "setengah-8",
+      "labelKey": "b-setengah-8"
+    },
+    {
+      "id": "pukul-8",
+      "labelKey": "b-pukul-8"
+    },
+    {
+      "id": "setengah-9",
+      "labelKey": "b-setengah-9"
+    },
+    {
+      "id": "pukul-9",
+      "labelKey": "b-pukul-9"
+    },
+    {
+      "id": "setengah-10",
+      "labelKey": "b-setengah-10"
+    },
+    {
+      "id": "pukul-10",
+      "labelKey": "b-pukul-10"
+    },
+    {
+      "id": "setengah-11",
+      "labelKey": "b-setengah-11"
+    }
+  ],
+  "items": [
+    {
+      "id": "jam-6",
+      "labelKey": "i-jam-pukul-6",
+      "bin": "pukul-6",
+      "emoji": "🕕"
+    },
+    {
+      "id": "digital-6",
+      "labelKey": "i-06t00",
+      "bin": "pukul-6",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-6-30",
+      "labelKey": "i-jam-6t30",
+      "bin": "setengah-7",
+      "emoji": "🕡"
+    },
+    {
+      "id": "digital-6-30",
+      "labelKey": "i-06t30",
+      "bin": "setengah-7",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-7",
+      "labelKey": "i-jam-pukul-7",
+      "bin": "pukul-7",
+      "emoji": "🕖"
+    },
+    {
+      "id": "digital-7",
+      "labelKey": "i-07t00",
+      "bin": "pukul-7",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-7-30",
+      "labelKey": "i-jam-7t30",
+      "bin": "setengah-8",
+      "emoji": "🕢"
+    },
+    {
+      "id": "digital-7-30",
+      "labelKey": "i-07t30",
+      "bin": "setengah-8",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-8",
+      "labelKey": "i-jam-pukul-8",
+      "bin": "pukul-8",
+      "emoji": "🕗"
+    },
+    {
+      "id": "digital-8",
+      "labelKey": "i-08t00",
+      "bin": "pukul-8",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-8-30",
+      "labelKey": "i-jam-8t30",
+      "bin": "setengah-9",
+      "emoji": "🕣"
+    },
+    {
+      "id": "digital-8-30",
+      "labelKey": "i-08t30",
+      "bin": "setengah-9",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-9",
+      "labelKey": "i-jam-pukul-9",
+      "bin": "pukul-9",
+      "emoji": "🕘"
+    },
+    {
+      "id": "digital-9",
+      "labelKey": "i-09t00",
+      "bin": "pukul-9",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-9-30",
+      "labelKey": "i-jam-9t30",
+      "bin": "setengah-10",
+      "emoji": "🕤"
+    },
+    {
+      "id": "digital-9-30",
+      "labelKey": "i-09t30",
+      "bin": "setengah-10",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-10",
+      "labelKey": "i-jam-pukul-10",
+      "bin": "pukul-10",
+      "emoji": "🕙"
+    },
+    {
+      "id": "digital-10",
+      "labelKey": "i-10t00",
+      "bin": "pukul-10",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-10-30",
+      "labelKey": "i-jam-10t30",
+      "bin": "setengah-11",
+      "emoji": "🕥"
+    },
+    {
+      "id": "digital-10-30",
+      "labelKey": "i-10t30",
+      "bin": "setengah-11",
+      "scale": 0.6
+    }
+  ]
+}

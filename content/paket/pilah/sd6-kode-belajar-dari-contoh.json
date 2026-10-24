@@ -1,0 +1,165 @@
+{
+  "id": "sd6-kode-belajar-dari-contoh",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.AI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Belajar dari Contoh atau Aturan Tetap?",
+      "instruksi": "Seret tiap tugas: dikerjakan program yang belajar dari banyak contoh (AI), atau program yang mengikuti aturan tetap?",
+      "bin-ai": "belajar dari contoh",
+      "bin-aturan": "aturan tetap",
+      "i1": "mengenali wajah di foto",
+      "i2": "menyarankan video yang mungkin kamu suka",
+      "i3": "mengubah ucapan menjadi tulisan",
+      "i4": "menerjemahkan kalimat",
+      "i5": "membaca tulisan tangan",
+      "i6": "menebak jenis bunga dari fotonya",
+      "i7": "mengenali lagu dari potongan suaranya",
+      "i8": "kalkulator menghitung 2 + 3",
+      "i9": "lampu lalu lintas berganti tiap 60 detik",
+      "i10": "alarm berbunyi jam 6 pagi",
+      "i11": "menjumlah total belanja",
+      "i12": "mengurutkan nama dari A sampai Z",
+      "i13": "mesin cuci berhenti setelah 30 menit",
+      "i14": "menolak kata sandi kurang dari 8 huruf"
+    },
+    "en": {
+      "judul": "Learns From Examples or Fixed Rules?",
+      "instruksi": "Drag each task: done by a program that learns from many examples (AI), or by a program that follows fixed rules?",
+      "bin-ai": "learns from examples",
+      "bin-aturan": "fixed rules",
+      "i1": "recognising faces in photos",
+      "i2": "suggesting videos you might like",
+      "i3": "turning speech into text",
+      "i4": "translating sentences",
+      "i5": "reading handwriting",
+      "i6": "guessing a flower's type from its photo",
+      "i7": "recognising a song from a short clip",
+      "i8": "a calculator working out 2 + 3",
+      "i9": "traffic lights changing every 60 seconds",
+      "i10": "an alarm ringing at 6 am",
+      "i11": "adding up a shopping bill",
+      "i12": "sorting names from A to Z",
+      "i13": "a washing machine stopping after 30 minutes",
+      "i14": "rejecting passwords shorter than 8 characters"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah tugas per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "ai",
+      "labelKey": "bin-ai",
+      "emoji": "🤖"
+    },
+    {
+      "id": "aturan",
+      "labelKey": "bin-aturan",
+      "emoji": "⚙️"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "ai",
+      "scale": 0.45
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "aturan",
+      "scale": 0.45
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "aturan",
+      "scale": 0.45
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "aturan",
+      "scale": 0.45
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "aturan",
+      "scale": 0.45
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "aturan",
+      "scale": 0.45
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "aturan",
+      "scale": 0.45
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "aturan",
+      "scale": 0.45
+    }
+  ]
+}

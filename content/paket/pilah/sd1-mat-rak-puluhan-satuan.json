@@ -1,0 +1,264 @@
+{
+  "id": "sd1-mat-rak-puluhan-satuan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BILANGAN-100.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Sepuluh dan Satuan",
+      "instruksi": "Satu puluhan ditambah satuan: taruh tiap kartu di rak bilangannya.",
+      "b-11": "11",
+      "b-12": "12",
+      "b-13": "13",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-17": "17",
+      "b-18": "18",
+      "b-19": "19",
+      "b-20": "20",
+      "i-10p1": "10+1",
+      "i-1p10": "1+10",
+      "i-10p2": "10+2",
+      "i-2p10": "2+10",
+      "i-10p3": "10+3",
+      "i-3p10": "3+10",
+      "i-10p4": "10+4",
+      "i-4p10": "4+10",
+      "i-10p5": "10+5",
+      "i-5p10": "5+10",
+      "i-10p6": "10+6",
+      "i-6p10": "6+10",
+      "i-10p7": "10+7",
+      "i-7p10": "7+10",
+      "i-10p8": "10+8",
+      "i-8p10": "8+10",
+      "i-10p9": "10+9",
+      "i-9p10": "9+10",
+      "i-10p10": "10+10"
+    },
+    "en": {
+      "judul": "Tens and Ones Shelf",
+      "instruksi": "One ten plus some ones: put each card on the shelf with its number.",
+      "b-11": "11",
+      "b-12": "12",
+      "b-13": "13",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-17": "17",
+      "b-18": "18",
+      "b-19": "19",
+      "b-20": "20",
+      "i-10p1": "10+1",
+      "i-1p10": "1+10",
+      "i-10p2": "10+2",
+      "i-2p10": "2+10",
+      "i-10p3": "10+3",
+      "i-3p10": "3+10",
+      "i-10p4": "10+4",
+      "i-4p10": "4+10",
+      "i-10p5": "10+5",
+      "i-5p10": "5+10",
+      "i-10p6": "10+6",
+      "i-6p10": "6+10",
+      "i-10p7": "10+7",
+      "i-7p10": "7+10",
+      "i-10p8": "10+8",
+      "i-8p10": "8+10",
+      "i-10p9": "10+9",
+      "i-9p10": "9+10",
+      "i-10p10": "10+10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak 11–14 dulu, lalu sampai 20"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "r11",
+      "labelKey": "b-11"
+    },
+    {
+      "id": "r12",
+      "labelKey": "b-12"
+    },
+    {
+      "id": "r13",
+      "labelKey": "b-13"
+    },
+    {
+      "id": "r14",
+      "labelKey": "b-14"
+    },
+    {
+      "id": "r15",
+      "labelKey": "b-15"
+    },
+    {
+      "id": "r16",
+      "labelKey": "b-16"
+    },
+    {
+      "id": "r17",
+      "labelKey": "b-17"
+    },
+    {
+      "id": "r18",
+      "labelKey": "b-18"
+    },
+    {
+      "id": "r19",
+      "labelKey": "b-19"
+    },
+    {
+      "id": "r20",
+      "labelKey": "b-20"
+    }
+  ],
+  "items": [
+    {
+      "id": "a11",
+      "labelKey": "i-10p1",
+      "bin": "r11",
+      "scale": 0.7
+    },
+    {
+      "id": "b11",
+      "labelKey": "i-1p10",
+      "bin": "r11",
+      "scale": 0.7
+    },
+    {
+      "id": "a12",
+      "labelKey": "i-10p2",
+      "bin": "r12",
+      "scale": 0.7
+    },
+    {
+      "id": "b12",
+      "labelKey": "i-2p10",
+      "bin": "r12",
+      "scale": 0.7
+    },
+    {
+      "id": "a13",
+      "labelKey": "i-10p3",
+      "bin": "r13",
+      "scale": 0.7
+    },
+    {
+      "id": "b13",
+      "labelKey": "i-3p10",
+      "bin": "r13",
+      "scale": 0.7
+    },
+    {
+      "id": "a14",
+      "labelKey": "i-10p4",
+      "bin": "r14",
+      "scale": 0.7
+    },
+    {
+      "id": "b14",
+      "labelKey": "i-4p10",
+      "bin": "r14",
+      "scale": 0.7
+    },
+    {
+      "id": "a15",
+      "labelKey": "i-10p5",
+      "bin": "r15",
+      "scale": 0.7
+    },
+    {
+      "id": "b15",
+      "labelKey": "i-5p10",
+      "bin": "r15",
+      "scale": 0.7
+    },
+    {
+      "id": "a16",
+      "labelKey": "i-10p6",
+      "bin": "r16",
+      "scale": 0.7
+    },
+    {
+      "id": "b16",
+      "labelKey": "i-6p10",
+      "bin": "r16",
+      "scale": 0.7
+    },
+    {
+      "id": "a17",
+      "labelKey": "i-10p7",
+      "bin": "r17",
+      "scale": 0.7
+    },
+    {
+      "id": "b17",
+      "labelKey": "i-7p10",
+      "bin": "r17",
+      "scale": 0.7
+    },
+    {
+      "id": "a18",
+      "labelKey": "i-10p8",
+      "bin": "r18",
+      "scale": 0.7
+    },
+    {
+      "id": "b18",
+      "labelKey": "i-8p10",
+      "bin": "r18",
+      "scale": 0.7
+    },
+    {
+      "id": "a19",
+      "labelKey": "i-10p9",
+      "bin": "r19",
+      "scale": 0.7
+    },
+    {
+      "id": "b19",
+      "labelKey": "i-9p10",
+      "bin": "r19",
+      "scale": 0.7
+    },
+    {
+      "id": "a20",
+      "labelKey": "i-10p10",
+      "bin": "r20",
+      "scale": 0.6
+    },
+    {
+      "id": "b20",
+      "labelKey": "i-10p10",
+      "bin": "r20",
+      "scale": 0.6
+    }
+  ]
+}

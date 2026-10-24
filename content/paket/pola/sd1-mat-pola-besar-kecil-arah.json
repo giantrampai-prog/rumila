@@ -1,0 +1,178 @@
+{
+  "id": "sd1-mat-pola-besar-kecil-arah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pola",
+  "competencyIds": [
+    "MAT.SD1.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pola Besar, Kecil, dan Arah",
+      "instruksi": "Lihat ukuran dan arahnya. Apa yang berulang? Isi kotak kosong di ujung.",
+      "i-lingkaran-besar": "lingkaran besar",
+      "i-lingkaran-kecil": "lingkaran kecil",
+      "i-panah-ke-atas": "panah ke atas",
+      "i-panah-ke-kanan": "panah ke kanan",
+      "i-panah-ke-bawah": "panah ke bawah",
+      "i-ikan-besar": "ikan besar",
+      "i-ikan-kecil": "ikan kecil"
+    },
+    "en": {
+      "judul": "Big, Small and Direction Patterns",
+      "instruksi": "Look at the size and the direction. What repeats? Fill the empty boxes at the end.",
+      "i-lingkaran-besar": "big circle",
+      "i-lingkaran-kecil": "small circle",
+      "i-panah-ke-atas": "up arrow",
+      "i-panah-ke-kanan": "right arrow",
+      "i-panah-ke-bawah": "down arrow",
+      "i-ikan-besar": "big fish",
+      "i-ikan-kecil": "small fish"
+    }
+  },
+  "knobs": {
+    "blanks": {
+      "min": 1,
+      "max": 3,
+      "default": 1,
+      "step": 1,
+      "keterangan": "slot kosong: 1 → 3"
+    },
+    "distractor": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "pengecoh di palet: 0 → 1"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "lanjut",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "lingkaran-besar",
+      "labelKey": "i-lingkaran-besar",
+      "shape": "circle",
+      "color": "#0786eb",
+      "scale": 1.3
+    },
+    {
+      "id": "lingkaran-kecil",
+      "labelKey": "i-lingkaran-kecil",
+      "shape": "circle",
+      "color": "#0786eb",
+      "scale": 0.6
+    },
+    {
+      "id": "panah-atas",
+      "labelKey": "i-panah-ke-atas",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "panah-kanan",
+      "labelKey": "i-panah-ke-kanan",
+      "emoji": "➡️"
+    },
+    {
+      "id": "panah-bawah",
+      "labelKey": "i-panah-ke-bawah",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "ikan-besar",
+      "labelKey": "i-ikan-besar",
+      "emoji": "🐟",
+      "scale": 1.3
+    },
+    {
+      "id": "ikan-kecil",
+      "labelKey": "i-ikan-kecil",
+      "emoji": "🐟",
+      "scale": 0.6
+    }
+  ],
+  "patterns": [
+    {
+      "id": "p1",
+      "unit": [
+        "lingkaran-besar",
+        "lingkaran-kecil"
+      ]
+    },
+    {
+      "id": "p2",
+      "unit": [
+        "ikan-kecil",
+        "ikan-besar"
+      ]
+    },
+    {
+      "id": "p3",
+      "unit": [
+        "panah-atas",
+        "panah-kanan",
+        "panah-bawah"
+      ]
+    },
+    {
+      "id": "p4",
+      "unit": [
+        "panah-atas",
+        "panah-bawah"
+      ]
+    },
+    {
+      "id": "p5",
+      "unit": [
+        "ikan-besar",
+        "ikan-kecil",
+        "panah-kanan"
+      ]
+    },
+    {
+      "id": "p6",
+      "unit": [
+        "lingkaran-kecil",
+        "lingkaran-besar",
+        "panah-atas"
+      ]
+    },
+    {
+      "id": "p7",
+      "unit": [
+        "panah-kanan",
+        "panah-bawah",
+        "panah-atas"
+      ]
+    },
+    {
+      "id": "p8",
+      "unit": [
+        "panah-bawah",
+        "panah-atas",
+        "panah-kanan"
+      ]
+    },
+    {
+      "id": "p9",
+      "unit": [
+        "lingkaran-besar",
+        "ikan-besar",
+        "ikan-kecil"
+      ]
+    },
+    {
+      "id": "p10",
+      "unit": [
+        "panah-kanan",
+        "panah-atas"
+      ]
+    }
+  ],
+  "nada": {}
+}

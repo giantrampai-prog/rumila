@@ -1,0 +1,136 @@
+{
+  "id": "sd2-sains-sumber-cahaya-rumah",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sumber Cahaya di Rumah",
+      "instruksi": "Benda ini membuat cahaya sendiri? Taruh ke raknya.",
+      "b-sumber": "sumber cahaya",
+      "b-bukan": "bukan sumber cahaya",
+      "i-lampu": "lampu menyala",
+      "i-lilin": "lilin menyala",
+      "i-senter": "senter menyala",
+      "i-tv": "layar TV menyala",
+      "i-kompor": "api kompor",
+      "i-lampumati": "lampu mati",
+      "i-cermin": "cermin",
+      "i-sendok": "sendok mengilap",
+      "i-piring": "piring putih",
+      "i-kaca": "kaca jendela"
+    },
+    "en": {
+      "judul": "Light Sources at Home",
+      "instruksi": "Does this thing make its own light? Put it on its shelf.",
+      "b-sumber": "light source",
+      "b-bukan": "not a light source",
+      "i-lampu": "lamp switched on",
+      "i-lilin": "lit candle",
+      "i-senter": "torch switched on",
+      "i-tv": "TV screen switched on",
+      "i-kompor": "stove flame",
+      "i-lampumati": "lamp switched off",
+      "i-cermin": "mirror",
+      "i-sendok": "shiny spoon",
+      "i-piring": "white plate",
+      "i-kaca": "window glass"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sumber",
+      "labelKey": "b-sumber",
+      "emoji": "💡",
+      "color": "#fff9c4"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-bukan",
+      "emoji": "🌑",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "sumber",
+      "emoji": "💡"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "sumber",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "sumber",
+      "emoji": "🔦"
+    },
+    {
+      "id": "tv",
+      "labelKey": "i-tv",
+      "bin": "sumber",
+      "emoji": "📺"
+    },
+    {
+      "id": "kompor",
+      "labelKey": "i-kompor",
+      "bin": "sumber",
+      "emoji": "🔥"
+    },
+    {
+      "id": "lampumati",
+      "labelKey": "i-lampumati",
+      "bin": "bukan",
+      "emoji": "💡",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "bukan",
+      "emoji": "🪞"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "bukan",
+      "emoji": "🥄"
+    },
+    {
+      "id": "piring",
+      "labelKey": "i-piring",
+      "bin": "bukan",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "bukan",
+      "emoji": "🪟"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,176 @@
+{
+  "id": "sd5-mat-kuadrat-segitiga-besar",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.FAKTOR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pola Titik Besar",
+      "instruksi": "Kuadrat: 1, 4, 9, 16, …  Segitiga: 1, 3, 6, 10, … Lanjutkan polanya untuk memilah kartu.",
+      "b-kuadrat": "kuadrat",
+      "b-segitiga": "segitiga",
+      "b-bukan": "bukan keduanya",
+      "i1": "49",
+      "i2": "64",
+      "i3": "81",
+      "i4": "100",
+      "i5": "25",
+      "i6": "66",
+      "i7": "78",
+      "i8": "91",
+      "i9": "55",
+      "i10": "45",
+      "i11": "60",
+      "i12": "70",
+      "i13": "90",
+      "i14": "32",
+      "i15": "48",
+      "i16": "80",
+      "i17": "99"
+    },
+    "en": {
+      "judul": "Big Dot Patterns",
+      "instruksi": "Squares: 1, 4, 9, 16, …  Triangles: 1, 3, 6, 10, … Continue the patterns to sort the cards.",
+      "b-kuadrat": "square",
+      "b-segitiga": "triangular",
+      "b-bukan": "neither",
+      "i1": "49",
+      "i2": "64",
+      "i3": "81",
+      "i4": "100",
+      "i5": "25",
+      "i6": "66",
+      "i7": "78",
+      "i8": "91",
+      "i9": "55",
+      "i10": "45",
+      "i11": "60",
+      "i12": "70",
+      "i13": "90",
+      "i14": "32",
+      "i15": "48",
+      "i16": "80",
+      "i17": "99"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kuadrat",
+      "labelKey": "b-kuadrat"
+    },
+    {
+      "id": "segitiga",
+      "labelKey": "b-segitiga"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-bukan"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "segitiga"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "segitiga"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "segitiga"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "segitiga"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "segitiga"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "bukan"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "bukan"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "bukan"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "bukan"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "bukan"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "bukan"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "bukan"
+    }
+  ]
+}

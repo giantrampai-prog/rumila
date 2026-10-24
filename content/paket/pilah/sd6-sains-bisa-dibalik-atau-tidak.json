@@ -1,0 +1,167 @@
+{
+  "id": "sd6-sains-bisa-dibalik-atau-tidak",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERUBAHAN-ZAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bisa Dibalik?",
+      "instruksi": "Pilah tiap perubahan: bisa dikembalikan seperti semula, atau tidak bisa.",
+      "b-balik": "bisa dibalik",
+      "b-tidak": "tidak bisa dibalik",
+      "i-es": "es batu mencair",
+      "i-uap": "air mendidih jadi uap",
+      "i-garam": "garam larut di air",
+      "i-gula": "gula larut di teh",
+      "i-campur": "pasir dicampur kerikil",
+      "i-lilin": "lilin meleleh",
+      "i-embun": "embun muncul di kaca dingin",
+      "i-telur": "telur direbus sampai keras",
+      "i-kertas": "kertas dibakar",
+      "i-arang": "kayu menjadi arang",
+      "i-kue": "kue dipanggang",
+      "i-karat": "besi berkarat",
+      "i-semen": "semen basah mengeras",
+      "i-apel": "potongan apel berubah cokelat"
+    },
+    "en": {
+      "judul": "Can It Be Reversed?",
+      "instruksi": "Sort each change: it can be turned back to how it was, or it cannot.",
+      "b-balik": "reversible",
+      "b-tidak": "not reversible",
+      "i-es": "an ice cube melts",
+      "i-uap": "water boils into steam",
+      "i-garam": "salt dissolves in water",
+      "i-gula": "sugar dissolves in tea",
+      "i-campur": "sand mixed with gravel",
+      "i-lilin": "wax melts",
+      "i-embun": "droplets form on cold glass",
+      "i-telur": "an egg is boiled hard",
+      "i-kertas": "paper is burnt",
+      "i-arang": "wood turns to charcoal",
+      "i-kue": "a cake is baked",
+      "i-karat": "iron rusts",
+      "i-semen": "wet cement sets hard",
+      "i-apel": "a cut apple turns brown"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "balik",
+      "labelKey": "b-balik",
+      "emoji": "↩️",
+      "color": "#bbdefb"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "⛔",
+      "color": "#ffccbc"
+    }
+  ],
+  "items": [
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "balik",
+      "emoji": "🧊"
+    },
+    {
+      "id": "uap",
+      "labelKey": "i-uap",
+      "bin": "balik",
+      "emoji": "♨️"
+    },
+    {
+      "id": "garam",
+      "labelKey": "i-garam",
+      "bin": "balik",
+      "emoji": "🧂"
+    },
+    {
+      "id": "gula",
+      "labelKey": "i-gula",
+      "bin": "balik",
+      "emoji": "🍵"
+    },
+    {
+      "id": "campur",
+      "labelKey": "i-campur",
+      "bin": "balik",
+      "emoji": "🪨"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "balik",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "embun",
+      "labelKey": "i-embun",
+      "bin": "balik",
+      "emoji": "💧"
+    },
+    {
+      "id": "telur",
+      "labelKey": "i-telur",
+      "bin": "tidak",
+      "emoji": "🥚"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "tidak",
+      "emoji": "🔥"
+    },
+    {
+      "id": "arang",
+      "labelKey": "i-arang",
+      "bin": "tidak",
+      "emoji": "🪵"
+    },
+    {
+      "id": "kue",
+      "labelKey": "i-kue",
+      "bin": "tidak",
+      "emoji": "🎂"
+    },
+    {
+      "id": "karat",
+      "labelKey": "i-karat",
+      "bin": "tidak",
+      "emoji": "🔩"
+    },
+    {
+      "id": "semen",
+      "labelKey": "i-semen",
+      "bin": "tidak",
+      "emoji": "🧱"
+    },
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "tidak",
+      "emoji": "🍎"
+    }
+  ],
+  "pilihan": []
+}

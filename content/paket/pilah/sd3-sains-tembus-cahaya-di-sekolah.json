@@ -1,0 +1,169 @@
+{
+  "id": "sd3-sains-tembus-cahaya-di-sekolah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tembus Cahaya di Sekolah",
+      "instruksi": "Bayangkan menyinari tiap benda dengan senter. Taruh ke raknya.",
+      "b-pandang": "tembus pandang (terlihat jelas)",
+      "b-tidak": "tidak tembus cahaya (gelap)",
+      "b-cahaya": "tembus cahaya (buram)",
+      "i-penggaris": "penggaris plastik bening",
+      "i-etalase": "kaca etalase kantin",
+      "i-kotakpensil": "kotak pensil plastik bening",
+      "i-airbotol": "air jernih di botol",
+      "i-papantulis": "papan tulis",
+      "i-ransel": "tas ransel",
+      "i-pintukayu": "pintu kayu",
+      "i-kotaklogam": "kotak pensil logam",
+      "i-kalkir": "kertas kalkir",
+      "i-map": "map plastik buram",
+      "i-lampion": "lampion kertas",
+      "i-tirai": "tirai jendela tipis"
+    },
+    "en": {
+      "judul": "Light Through Things at School",
+      "instruksi": "Imagine shining a torch through each thing. Put it on its shelf.",
+      "b-pandang": "transparent (see clearly)",
+      "b-tidak": "opaque (dark)",
+      "b-cahaya": "translucent (blurry)",
+      "i-penggaris": "clear plastic ruler",
+      "i-etalase": "canteen display glass",
+      "i-kotakpensil": "clear pencil case",
+      "i-airbotol": "clear water in a bottle",
+      "i-papantulis": "whiteboard",
+      "i-ransel": "backpack",
+      "i-pintukayu": "wooden door",
+      "i-kotaklogam": "metal pencil tin",
+      "i-kalkir": "tracing paper",
+      "i-map": "frosted plastic folder",
+      "i-lampion": "paper lantern",
+      "i-tirai": "thin window blind"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 → 3"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pandang",
+      "labelKey": "b-pandang",
+      "emoji": "🔍",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "⬛",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "cahaya",
+      "labelKey": "b-cahaya",
+      "emoji": "🌫️",
+      "color": "#f3e5f5"
+    }
+  ],
+  "items": [
+    {
+      "id": "penggaris",
+      "labelKey": "i-penggaris",
+      "bin": "pandang",
+      "emoji": "📏",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "etalase",
+      "labelKey": "i-etalase",
+      "bin": "pandang",
+      "emoji": "🪟"
+    },
+    {
+      "id": "kotakpensil",
+      "labelKey": "i-kotakpensil",
+      "bin": "pandang",
+      "emoji": "🧴",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "airbotol",
+      "labelKey": "i-airbotol",
+      "bin": "pandang",
+      "emoji": "💧"
+    },
+    {
+      "id": "papantulis",
+      "labelKey": "i-papantulis",
+      "bin": "tidak",
+      "emoji": "⬜"
+    },
+    {
+      "id": "ransel",
+      "labelKey": "i-ransel",
+      "bin": "tidak",
+      "emoji": "🎒"
+    },
+    {
+      "id": "pintukayu",
+      "labelKey": "i-pintukayu",
+      "bin": "tidak",
+      "emoji": "🚪"
+    },
+    {
+      "id": "kotaklogam",
+      "labelKey": "i-kotaklogam",
+      "bin": "tidak",
+      "emoji": "🥫"
+    },
+    {
+      "id": "kalkir",
+      "labelKey": "i-kalkir",
+      "bin": "cahaya",
+      "emoji": "📃"
+    },
+    {
+      "id": "map",
+      "labelKey": "i-map",
+      "bin": "cahaya",
+      "emoji": "📁"
+    },
+    {
+      "id": "lampion",
+      "labelKey": "i-lampion",
+      "bin": "cahaya",
+      "emoji": "🏮"
+    },
+    {
+      "id": "tirai",
+      "labelKey": "i-tirai",
+      "bin": "cahaya",
+      "emoji": "🪟",
+      "color": "#f8bbd0"
+    }
+  ],
+  "pilihan": []
+}

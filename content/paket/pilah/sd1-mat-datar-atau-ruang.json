@@ -1,0 +1,163 @@
+{
+  "id": "sd1-mat-datar-atau-ruang",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BANGUN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Datar atau Ruang?",
+      "instruksi": "Bangun datar tipis seperti gambar. Bangun ruang bisa dipegang dan punya isi. Pilah semuanya.",
+      "b-bangun-datar": "bangun datar",
+      "b-bangun-ruang": "bangun ruang",
+      "i-segitiga": "segitiga",
+      "i-persegi": "persegi",
+      "i-lingkaran": "lingkaran",
+      "i-bintang": "bintang",
+      "i-persegi-panjang": "persegi panjang",
+      "i-belah-ketupat": "belah ketupat",
+      "i-bola": "bola",
+      "i-dadu": "dadu",
+      "i-kaleng": "kaleng",
+      "i-kardus": "kardus",
+      "i-cone-es-krim": "cone es krim",
+      "i-kado": "kado",
+      "i-bola-basket": "bola basket"
+    },
+    "en": {
+      "judul": "Flat or Solid?",
+      "instruksi": "2D shapes are flat like a drawing. 3D shapes can be held and take up space. Sort them all.",
+      "b-bangun-datar": "2D shape",
+      "b-bangun-ruang": "3D shape",
+      "i-segitiga": "triangle",
+      "i-persegi": "square",
+      "i-lingkaran": "circle",
+      "i-bintang": "star",
+      "i-persegi-panjang": "rectangle",
+      "i-belah-ketupat": "rhombus",
+      "i-bola": "ball",
+      "i-dadu": "dice",
+      "i-kaleng": "tin can",
+      "i-kardus": "box",
+      "i-cone-es-krim": "ice cream cone",
+      "i-kado": "gift",
+      "i-bola-basket": "basketball"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "datar",
+      "labelKey": "b-bangun-datar",
+      "emoji": "🟧"
+    },
+    {
+      "id": "ruang",
+      "labelKey": "b-bangun-ruang",
+      "emoji": "🧊"
+    }
+  ],
+  "items": [
+    {
+      "id": "segitiga",
+      "labelKey": "i-segitiga",
+      "bin": "datar",
+      "shape": "triangle",
+      "color": "#ff5a6e"
+    },
+    {
+      "id": "persegi",
+      "labelKey": "i-persegi",
+      "bin": "datar",
+      "shape": "square",
+      "color": "#6ab0e8"
+    },
+    {
+      "id": "lingkaran",
+      "labelKey": "i-lingkaran",
+      "bin": "datar",
+      "shape": "circle",
+      "color": "#ffd23f"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "datar",
+      "shape": "star",
+      "color": "#c59be8"
+    },
+    {
+      "id": "persegi-panjang",
+      "labelKey": "i-persegi-panjang",
+      "bin": "datar",
+      "shape": "rect",
+      "color": "#7ec8a0",
+      "width": 2
+    },
+    {
+      "id": "ketupat",
+      "labelKey": "i-belah-ketupat",
+      "bin": "datar",
+      "emoji": "🔶"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "ruang",
+      "emoji": "⚽"
+    },
+    {
+      "id": "dadu",
+      "labelKey": "i-dadu",
+      "bin": "ruang",
+      "emoji": "🎲"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "ruang",
+      "emoji": "🥫"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "ruang",
+      "emoji": "📦"
+    },
+    {
+      "id": "es-krim",
+      "labelKey": "i-cone-es-krim",
+      "bin": "ruang",
+      "emoji": "🍦"
+    },
+    {
+      "id": "kado",
+      "labelKey": "i-kado",
+      "bin": "ruang",
+      "emoji": "🎁"
+    },
+    {
+      "id": "basket",
+      "labelKey": "i-bola-basket",
+      "bin": "ruang",
+      "emoji": "🏀"
+    }
+  ]
+}

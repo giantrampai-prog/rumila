@@ -1,0 +1,81 @@
+{
+  "id": "sd1-mat-gabung-keranjang-20",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dua Keranjang Jadi Satu",
+      "instruksi": "Dua keranjang digabung. Hitung maju dari yang lebih banyak, lalu geser penanda ke jumlahnya.",
+      "g-jeruk": "jeruk",
+      "g-apel": "apel",
+      "g-telur": "telur",
+      "g-tomat": "tomat"
+    },
+    "en": {
+      "judul": "Two Baskets Into One",
+      "instruksi": "Two baskets are put together. Count on from the bigger one, then slide the marker to the total.",
+      "g-jeruk": "oranges",
+      "g-apel": "apples",
+      "g-telur": "eggs",
+      "g-tomat": "tomatoes"
+    }
+  },
+  "knobs": {
+    "target": {
+      "min": 12,
+      "max": 20,
+      "default": 12,
+      "step": 2,
+      "keterangan": "batas jumlah gabungan: 12 → 20"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "gabung",
+  "goods": [
+    {
+      "id": "jeruk",
+      "labelKey": "g-jeruk",
+      "price": 1000,
+      "emoji": "🍊"
+    },
+    {
+      "id": "apel",
+      "labelKey": "g-apel",
+      "price": 1000,
+      "emoji": "🍎"
+    },
+    {
+      "id": "telur",
+      "labelKey": "g-telur",
+      "price": 1000,
+      "emoji": "🥚"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "g-tomat",
+      "price": 1000,
+      "emoji": "🍅"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 10,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "target": 12
+  }
+}

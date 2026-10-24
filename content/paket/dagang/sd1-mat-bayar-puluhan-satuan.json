@@ -1,0 +1,121 @@
+{
+  "id": "sd1-mat-bayar-puluhan-satuan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD1.BILANGAN-100.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bayar Belasan Ribu",
+      "instruksi": "Harganya belasan ribu. Pakai satu uang sepuluh ribu, lalu tambah koin seribu secukupnya.",
+      "g-buku-cerita": "buku cerita",
+      "g-bola": "bola",
+      "g-topi": "topi",
+      "g-kaos": "kaos",
+      "g-payung": "payung",
+      "g-tas": "tas",
+      "g-sandal": "sandal",
+      "g-boneka": "boneka",
+      "g-layangmlayang": "layang-layang",
+      "g-puzzle": "puzzle"
+    },
+    "en": {
+      "judul": "Paying in Tens and Ones",
+      "instruksi": "The price is in the teens of thousands. Use one ten-thousand note, then add enough thousand coins.",
+      "g-buku-cerita": "storybook",
+      "g-bola": "ball",
+      "g-topi": "hat",
+      "g-kaos": "T-shirt",
+      "g-payung": "umbrella",
+      "g-tas": "bag",
+      "g-sandal": "sandals",
+      "g-boneka": "doll",
+      "g-layangmlayang": "kite",
+      "g-puzzle": "puzzle"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-mainan",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    10000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "buku",
+      "labelKey": "g-buku-cerita",
+      "price": 11000,
+      "emoji": "📘"
+    },
+    {
+      "id": "bola",
+      "labelKey": "g-bola",
+      "price": 12000,
+      "emoji": "⚽"
+    },
+    {
+      "id": "topi",
+      "labelKey": "g-topi",
+      "price": 13000,
+      "emoji": "🧢"
+    },
+    {
+      "id": "kaos",
+      "labelKey": "g-kaos",
+      "price": 14000,
+      "emoji": "👕"
+    },
+    {
+      "id": "payung",
+      "labelKey": "g-payung",
+      "price": 15000,
+      "emoji": "☂️"
+    },
+    {
+      "id": "tas",
+      "labelKey": "g-tas",
+      "price": 16000,
+      "emoji": "👜"
+    },
+    {
+      "id": "sandal",
+      "labelKey": "g-sandal",
+      "price": 17000,
+      "emoji": "🩴"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "g-boneka",
+      "price": 18000,
+      "emoji": "🧸"
+    },
+    {
+      "id": "layang",
+      "labelKey": "g-layangmlayang",
+      "price": 19000,
+      "emoji": "🪁"
+    },
+    {
+      "id": "puzzle",
+      "labelKey": "g-puzzle",
+      "price": 16000,
+      "emoji": "🧩"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1
+  }
+}

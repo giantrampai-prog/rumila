@@ -1,0 +1,25 @@
+{
+  "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+  "title": "Cambridge Primary Computing Curriculum Framework (0059) — tambahan untuk KODE SD1–SD3",
+  "version": "Published September 2021 for first teaching September 2022",
+  "sources": [
+    "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+  ],
+  "retrieved_at": "2026-10-25",
+  "notes": [
+    "Melengkapi cambridge-primary-computing.json tanpa mengubahnya. Hanya kode yang dikutip langsung (dengan kode) di halaman Cambridge Community yang ditandai verified: true.",
+    "3MD.03 sekaligus memastikan kode strand Managing Data adalah MD (diduga di berkas utama).",
+    "Halaman yang sama mengutip baris Progression Grid strand Computational Thinking tanpa kode (Stage 1: 'Follow the steps in algorithms for everyday tasks.'; Stage 2: 'Follow and understand linear algorithms.'; Stage 3: 'Follow, understand, edit and correct linear algorithms.'). Karena kodenya tidak tampil, baris itu tidak dimasukkan sebagai entri; kompetensi yang sejalan mencatatnya di 'catatan'.",
+    "Kode Stage 1–3 lain (CT, P, MD, DC, CS) belum bisa dibaca: framework dan Progression Grid lengkap hanya di Cambridge Primary support site (login sekolah)."
+  ],
+  "entries": [
+    {
+      "code": "3MD.03",
+      "stage": "3",
+      "strand": "Managing Data",
+      "text": "Know how to record discrete and categorical data, using computing devices.",
+      "verified": true,
+      "source": "https://cambridge-community.org.uk/guide-to/cambridge-primary/computing/"
+    }
+  ]
+}

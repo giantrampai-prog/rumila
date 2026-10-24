@@ -1,0 +1,410 @@
+{
+  "id": "sd1-mat-urut-isi-wadah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.UKUR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Wadah Mana yang Muat Banyak?",
+      "instruksi": "Bayangkan diisi air sampai penuh. Susun dari yang isinya paling sedikit ke paling banyak.",
+      "s-gelas": "gelas",
+      "s-ember": "ember",
+      "s-bak-mandi": "bak mandi",
+      "s-kolam-renang": "kolam renang",
+      "j-isi-paling-sedikit-ke-paling-banyak": "Isi paling sedikit ke paling banyak",
+      "s-sendok": "sendok",
+      "s-teko": "teko"
+    },
+    "en": {
+      "judul": "Which Holds the Most?",
+      "instruksi": "Imagine filling each with water. Put them in order from holds least to holds most.",
+      "s-gelas": "glass",
+      "s-ember": "bucket",
+      "s-bak-mandi": "bathtub",
+      "s-kolam-renang": "swimming pool",
+      "j-isi-paling-sedikit-ke-paling-banyak": "Holds least to holds most",
+      "s-sendok": "spoon",
+      "s-teko": "teapot"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah wadah: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "isi-1",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-2",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-3",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "isi-4",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-5",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        }
+      ]
+    },
+    {
+      "id": "isi-6",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-7",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "isi-8",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "isi-9",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-10",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "gelas",
+          "labelKey": "s-gelas",
+          "emoji": "🥛",
+          "scale": 1.2
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-11",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.6
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "isi-12",
+      "titleKey": "j-isi-paling-sedikit-ke-paling-banyak",
+      "steps": [
+        {
+          "id": "teko",
+          "labelKey": "s-teko",
+          "emoji": "🫖",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "bak-mandi",
+          "labelKey": "s-bak-mandi",
+          "emoji": "🛁",
+          "scale": 0.8
+        },
+        {
+          "id": "kolam-renang",
+          "labelKey": "s-kolam-renang",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    }
+  ]
+}

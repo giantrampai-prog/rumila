@@ -1,0 +1,197 @@
+{
+  "id": "sd6-mat-kubik-atau-kuadrat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.FAKTOR.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kubus atau Persegi?",
+      "instruksi": "Bilangan kubik = bilangan dikali dirinya tiga kali (2 × 2 × 2 = 8). Taruh tiap bilangan di raknya.",
+      "b-kuadrat": "kuadrat",
+      "b-kubik": "kubik",
+      "b-bukan": "bukan keduanya",
+      "i1": "4",
+      "i2": "9",
+      "i3": "16",
+      "i4": "25",
+      "i5": "36",
+      "i6": "49",
+      "i7": "81",
+      "i8": "100",
+      "i9": "121",
+      "i10": "8",
+      "i11": "27",
+      "i12": "125",
+      "i13": "12",
+      "i14": "18",
+      "i15": "32",
+      "i16": "50",
+      "i17": "72",
+      "i18": "99",
+      "i19": "45",
+      "i20": "6"
+    },
+    "en": {
+      "judul": "Cube or Square?",
+      "instruksi": "A cube number is a number multiplied by itself three times (2 × 2 × 2 = 8). Put each number on its shelf.",
+      "b-kuadrat": "square",
+      "b-kubik": "cube",
+      "b-bukan": "neither",
+      "i1": "4",
+      "i2": "9",
+      "i3": "16",
+      "i4": "25",
+      "i5": "36",
+      "i6": "49",
+      "i7": "81",
+      "i8": "100",
+      "i9": "121",
+      "i10": "8",
+      "i11": "27",
+      "i12": "125",
+      "i13": "12",
+      "i14": "18",
+      "i15": "32",
+      "i16": "50",
+      "i17": "72",
+      "i18": "99",
+      "i19": "45",
+      "i20": "6"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10; 1 dan 64 tidak dipakai"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kuadrat",
+      "labelKey": "b-kuadrat"
+    },
+    {
+      "id": "kubik",
+      "labelKey": "b-kubik"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-bukan"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "kuadrat"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "kubik"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "kubik"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "kubik"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "bukan"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "bukan"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "bukan"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "bukan"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "bukan"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "bukan"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i19",
+      "bin": "bukan"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i20",
+      "bin": "bukan"
+    }
+  ]
+}

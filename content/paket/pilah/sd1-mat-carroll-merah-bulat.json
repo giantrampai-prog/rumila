@@ -1,0 +1,176 @@
+{
+  "id": "sd1-mat-carroll-merah-bulat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Diagram Empat Kotak",
+      "instruksi": "Lihat dua hal: merah atau warna lain, bulat atau bersudut. Taruh tiap benda di kotak yang cocok dua-duanya.",
+      "b-merah-bulat": "merah · bulat",
+      "b-merah-bersudut": "merah · bersudut",
+      "b-lain-bulat": "lain · bulat",
+      "b-lain-bersudut": "lain · bersudut",
+      "i-apel": "apel",
+      "i-tomat": "tomat",
+      "i-lingkaran-merah": "lingkaran merah",
+      "i-buku-merah": "buku merah",
+      "i-segitiga-merah": "segitiga merah",
+      "i-persegi-merah": "persegi merah",
+      "i-jeruk": "jeruk",
+      "i-bola": "bola",
+      "i-lingkaran-biru": "lingkaran biru",
+      "i-buku-hijau": "buku hijau",
+      "i-segitiga-kuning": "segitiga kuning",
+      "i-persegi-biru": "persegi biru"
+    },
+    "en": {
+      "judul": "Four-Box Diagram",
+      "instruksi": "Check two things: red or another colour, round or with corners. Put each object in the box that fits both.",
+      "b-merah-bulat": "red · round",
+      "b-merah-bersudut": "red · corners",
+      "b-lain-bulat": "other · round",
+      "b-lain-bersudut": "other · corners",
+      "i-apel": "apple",
+      "i-tomat": "tomato",
+      "i-lingkaran-merah": "red circle",
+      "i-buku-merah": "red book",
+      "i-segitiga-merah": "red triangle",
+      "i-persegi-merah": "red square",
+      "i-jeruk": "orange",
+      "i-bola": "ball",
+      "i-lingkaran-biru": "blue circle",
+      "i-buku-hijau": "green book",
+      "i-segitiga-kuning": "yellow triangle",
+      "i-persegi-biru": "blue square"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 2,
+      "keterangan": "2 kotak merah dulu, lalu 4 kotak"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "ruang-main",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "merah-bulat",
+      "labelKey": "b-merah-bulat",
+      "emoji": "🔴"
+    },
+    {
+      "id": "merah-sudut",
+      "labelKey": "b-merah-bersudut",
+      "emoji": "🟥"
+    },
+    {
+      "id": "lain-bulat",
+      "labelKey": "b-lain-bulat",
+      "emoji": "⚪"
+    },
+    {
+      "id": "lain-sudut",
+      "labelKey": "b-lain-bersudut",
+      "emoji": "⬜"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "merah-bulat",
+      "emoji": "🍎"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "i-tomat",
+      "bin": "merah-bulat",
+      "emoji": "🍅"
+    },
+    {
+      "id": "lingkaran-merah",
+      "labelKey": "i-lingkaran-merah",
+      "bin": "merah-bulat",
+      "shape": "circle",
+      "color": "#e53935"
+    },
+    {
+      "id": "buku-merah",
+      "labelKey": "i-buku-merah",
+      "bin": "merah-sudut",
+      "emoji": "📕"
+    },
+    {
+      "id": "segitiga-merah",
+      "labelKey": "i-segitiga-merah",
+      "bin": "merah-sudut",
+      "shape": "triangle",
+      "color": "#e53935"
+    },
+    {
+      "id": "persegi-merah",
+      "labelKey": "i-persegi-merah",
+      "bin": "merah-sudut",
+      "shape": "square",
+      "color": "#e53935"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "bin": "lain-bulat",
+      "emoji": "🍊"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "lain-bulat",
+      "emoji": "⚽"
+    },
+    {
+      "id": "lingkaran-biru",
+      "labelKey": "i-lingkaran-biru",
+      "bin": "lain-bulat",
+      "shape": "circle",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "buku-hijau",
+      "labelKey": "i-buku-hijau",
+      "bin": "lain-sudut",
+      "emoji": "📗"
+    },
+    {
+      "id": "segitiga-kuning",
+      "labelKey": "i-segitiga-kuning",
+      "bin": "lain-sudut",
+      "shape": "triangle",
+      "color": "#fdd835"
+    },
+    {
+      "id": "persegi-biru",
+      "labelKey": "i-persegi-biru",
+      "bin": "lain-sudut",
+      "shape": "square",
+      "color": "#1e88e5"
+    }
+  ]
+}

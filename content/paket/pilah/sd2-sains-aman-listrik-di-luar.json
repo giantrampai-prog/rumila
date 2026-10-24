@@ -1,0 +1,135 @@
+{
+  "id": "sd2-sains-aman-listrik-di-luar",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Aman dengan Listrik di Luar Rumah",
+      "instruksi": "Taruh tiap kebiasaan ke rak aman atau berbahaya.",
+      "b-aman": "aman",
+      "b-bahaya": "berbahaya",
+      "i-gedung": "berteduh di dalam gedung saat petir",
+      "i-jauhgardu": "bermain jauh dari gardu listrik",
+      "i-steker": "mencabut steker dengan memegang kepalanya",
+      "i-jauhgenangan": "menjauhi genangan dekat kabel putus",
+      "i-minta": "minta tolong orang dewasa saat layang-layang tersangkut",
+      "i-pohonpetir": "berteduh di bawah pohon tinggi saat petir",
+      "i-gardu": "masuk ke pagar gardu listrik",
+      "i-kabeljalan": "menyentuh kabel yang jatuh di jalan",
+      "i-ambillayang": "mengambil layang-layang di kabel listrik",
+      "i-airstop": "bermain air dekat stopkontak"
+    },
+    "en": {
+      "judul": "Safe with Electricity Outdoors",
+      "instruksi": "Put each habit on the safe shelf or the dangerous shelf.",
+      "b-aman": "safe",
+      "b-bahaya": "dangerous",
+      "i-gedung": "sheltering indoors in a thunderstorm",
+      "i-jauhgardu": "playing far from an electricity substation",
+      "i-steker": "unplugging by holding the plug",
+      "i-jauhgenangan": "keeping away from puddles near a fallen wire",
+      "i-minta": "asking a grown-up when a kite gets stuck",
+      "i-pohonpetir": "sheltering under a tall tree in a storm",
+      "i-gardu": "going inside a substation fence",
+      "i-kabeljalan": "touching a wire fallen on the road",
+      "i-ambillayang": "pulling a kite off a power line",
+      "i-airstop": "splashing water near a socket"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "aman",
+      "labelKey": "b-aman",
+      "emoji": "✅",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "bahaya",
+      "labelKey": "b-bahaya",
+      "emoji": "⚠️",
+      "color": "#ffebee"
+    }
+  ],
+  "items": [
+    {
+      "id": "gedung",
+      "labelKey": "i-gedung",
+      "bin": "aman",
+      "emoji": "🏫"
+    },
+    {
+      "id": "jauhgardu",
+      "labelKey": "i-jauhgardu",
+      "bin": "aman",
+      "emoji": "🏃"
+    },
+    {
+      "id": "steker",
+      "labelKey": "i-steker",
+      "bin": "aman",
+      "emoji": "🔌"
+    },
+    {
+      "id": "jauhgenangan",
+      "labelKey": "i-jauhgenangan",
+      "bin": "aman",
+      "emoji": "↩️"
+    },
+    {
+      "id": "minta",
+      "labelKey": "i-minta",
+      "bin": "aman",
+      "emoji": "🧑"
+    },
+    {
+      "id": "pohonpetir",
+      "labelKey": "i-pohonpetir",
+      "bin": "bahaya",
+      "emoji": "🌩️"
+    },
+    {
+      "id": "gardu",
+      "labelKey": "i-gardu",
+      "bin": "bahaya",
+      "emoji": "🚧"
+    },
+    {
+      "id": "kabeljalan",
+      "labelKey": "i-kabeljalan",
+      "bin": "bahaya",
+      "emoji": "⚡"
+    },
+    {
+      "id": "ambillayang",
+      "labelKey": "i-ambillayang",
+      "bin": "bahaya",
+      "emoji": "🪁"
+    },
+    {
+      "id": "airstop",
+      "labelKey": "i-airstop",
+      "bin": "bahaya",
+      "emoji": "💦"
+    }
+  ],
+  "pilihan": []
+}

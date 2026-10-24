@@ -1,0 +1,470 @@
+{
+  "id": "sd6-kode-robot-industri",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.ROBOT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Robot di Pabrik",
+      "instruksi": "Pikirkan apa yang dikerjakan robot dengan baik di industri, lalu pilih jawaban yang paling tepat.",
+      "pilihan": "pilihan",
+      "c1": "mengulang gerakan sama persis tanpa lelah",
+      "c2": "robot lebih pintar dari semua manusia",
+      "c3": "robot tidak butuh listrik",
+      "q1": "Mengapa pabrik mobil memakai robot untuk mengelas?",
+      "c4": "mengecat ribuan pintu mobil dengan rapi",
+      "c5": "menghibur teman yang sedih",
+      "c6": "memilih menu baru restoran",
+      "q2": "Tugas mana yang paling cocok untuk robot pabrik?",
+      "c7": "bahan tidak banyak disentuh tangan",
+      "c8": "robot suka makan",
+      "c9": "robot tidak perlu dibersihkan",
+      "q3": "Di pabrik makanan, robot membantu menjaga kebersihan karena…",
+      "c10": "supaya pekerja tidak berada di tempat berbahaya",
+      "c11": "robot tidak bisa rusak",
+      "c12": "supaya lebih lambat",
+      "q4": "Mengapa robot dipakai untuk memeriksa pipa di tempat yang sangat panas?",
+      "c13": "pekerja tidak cedera karena mengangkat berat",
+      "c14": "kotaknya jadi lebih ringan",
+      "c15": "gudang tidak butuh listrik",
+      "q5": "Robot di gudang memindahkan kotak berat sepanjang hari. Manfaat utamanya adalah…",
+      "c16": "lebih banyak barang dibuat dalam sehari",
+      "c17": "barang jadi gratis",
+      "c18": "tidak ada yang perlu dirawat",
+      "q6": "Pabrik memakai robot yang bekerja siang dan malam. Akibatnya…",
+      "c19": "sangat tepat (presisi)",
+      "c20": "bisa merasa bosan",
+      "c21": "tidak butuh program",
+      "q7": "Robot memasang baut pada ponsel sampai ukuran sepersekian milimeter. Ini menunjukkan robot…",
+      "c22": "memprogram, memeriksa, dan merawat robot",
+      "c23": "tidak ada sama sekali",
+      "c24": "menjadi robot",
+      "q8": "Apa yang tetap perlu dikerjakan manusia di pabrik yang memakai robot?",
+      "c25": "alat masukan (sensor)",
+      "c26": "alat keluaran",
+      "c27": "tempat menyimpan buah",
+      "q9": "Robot pemetik buah memakai kamera untuk mencari buah matang. Kamera itu adalah…",
+      "c28": "mutunya rata dan bisa diandalkan",
+      "c29": "semua mobil berwarna sama",
+      "c30": "mobil tidak perlu bensin",
+      "q10": "Mobil yang dirakit robot hampir semuanya sama persis. Manfaatnya adalah…",
+      "c31": "kotak berisi kurang atau lebih",
+      "c32": "kue jadi kurang manis",
+      "c33": "toko tutup lebih awal",
+      "q11": "Robot mengemas kue ke kotak dengan jumlah tepat 12 tiap kotak. Kekeliruan apa yang berkurang?",
+      "c34": "melindungi pekerja dari bahan berbahaya",
+      "c35": "bahan kimia jadi aman dimakan",
+      "c36": "robot menyukai bahan kimia",
+      "q12": "Mengapa robot dipakai di pabrik baterai yang memakai bahan kimia berbahaya?"
+    },
+    "en": {
+      "judul": "Robots in Factories",
+      "instruksi": "Think about what robots do well in industry, then choose the best answer.",
+      "pilihan": "choices",
+      "c1": "they repeat exactly the same move without tiring",
+      "c2": "robots are cleverer than all people",
+      "c3": "robots need no electricity",
+      "q1": "Why do car factories use robots for welding?",
+      "c4": "neatly painting thousands of car doors",
+      "c5": "cheering up a sad friend",
+      "c6": "choosing a restaurant's new menu",
+      "q2": "Which task suits a factory robot best?",
+      "c7": "the food is touched less by hands",
+      "c8": "robots like eating",
+      "c9": "robots never need cleaning",
+      "q3": "In a food factory, robots help keep things clean because…",
+      "c10": "so workers stay out of danger",
+      "c11": "robots cannot break",
+      "c12": "to make it slower",
+      "q4": "Why are robots used to check pipes in very hot places?",
+      "c13": "workers avoid injury from heavy lifting",
+      "c14": "the boxes get lighter",
+      "c15": "the warehouse needs no power",
+      "q5": "Warehouse robots move heavy boxes all day. The main benefit is…",
+      "c16": "more goods are made in a day",
+      "c17": "goods become free",
+      "c18": "nothing needs maintenance",
+      "q6": "A factory uses robots that work day and night. As a result…",
+      "c19": "very precise",
+      "c20": "able to feel bored",
+      "c21": "in no need of a program",
+      "q7": "Robots fit screws in phones to a fraction of a millimetre. This shows robots are…",
+      "c22": "program, check and maintain the robots",
+      "c23": "nothing at all",
+      "c24": "become robots",
+      "q8": "What do people still need to do in a factory that uses robots?",
+      "c25": "an input device (sensor)",
+      "c26": "an output device",
+      "c27": "a place to store fruit",
+      "q9": "A fruit-picking robot uses a camera to find ripe fruit. The camera is…",
+      "c28": "quality is even and reliable",
+      "c29": "every car is the same colour",
+      "c30": "cars need no fuel",
+      "q10": "Cars built by robots come out almost exactly the same. The benefit is…",
+      "c31": "boxes with too few or too many",
+      "c32": "cakes being less sweet",
+      "c33": "shops closing early",
+      "q11": "A robot packs exactly 12 cakes into each box. What mistake becomes rarer?",
+      "c34": "to protect workers from harmful chemicals",
+      "c35": "so the chemicals become safe to eat",
+      "c36": "robots like chemicals",
+      "q12": "Why are robots used in battery factories with dangerous chemicals?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.34
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c34"
+    }
+  ]
+}

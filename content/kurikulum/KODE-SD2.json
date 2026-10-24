@@ -1,0 +1,298 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.SD2.PROGRAM.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "PROGRAM",
+        "nama": {
+          "id": "Program tepat",
+          "en": "Precise programs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun program 9 sampai 12 perintah yang tepat supaya robot sampai bintang di grid 5×5 berdinding",
+        "en": "I can build a precise program of 9 to 12 commands so robot reaches the star on a 5×5 grid with walls"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.PREDIKSI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "2CT.06",
+          "note": "cocok: instruksi tepat untuk tugas sederhana"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Program disusun penuh sebelum jalan; dinding membuat jalan pintas tertutup sehingga perlu 2–3 belokan. Rak muat persis panjang jalur terpendek + 0–2 (tidak memaksa ulangi). Bukti: sampai bintang. Jebakan: menghitung petak termasuk petak awal; belok di petak yang salah. Knob: distance 9 → 12, walls 2 → 5."
+    },
+    {
+      "id": "KODE.SD2.EFISIEN.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "EFISIEN",
+        "nama": {
+          "id": "Program efisien",
+          "en": "Efficient programs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih jalan terpendek di antara dua jalan supaya program robot muat di rak",
+        "en": "I can choose the shorter of two paths so robot's program fits in the rack"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD2.PROGRAM.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Dinding membuka dua jalan ke bintang; rak muat persis panjang program terpendek, jadi jalan memutar selalu 'rak tidak muat'. Beda dengan PROGRAM.01: di sana rak longgar. Jebakan: anak memilih jalan yang terlihat lurus padahal butuh lebih banyak belokan (belok juga makan satu blok). Knob: distance 6 → 9."
+    },
+    {
+      "id": "KODE.SD2.ULANGI.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan",
+          "en": "Repeat loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan dua perintah yang berulang lalu memasukkannya ke satu blok ulangi supaya robot melewati batu-batu",
+        "en": "I can spot two commands that repeat and put them in one repeat block so robot gets past the rocks"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.ULANGI.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Batu berjarak sama (tiap 3 petak), sehingga jalannya 'maju, lompat' atau 'lompat, maju' berulang. Rak 3 blok: ulangi N [dua perintah] adalah satu-satunya yang muat. Isi ulangi dua blok (batas presenter). Jebakan: urutan isi terbalik (lompat dulu saat batu belum di depan → mendarat di batu); N dihitung dari jumlah batu, bukan jumlah pasangan. Knob: distance 4 → 10."
+    },
+    {
+      "id": "KODE.SD2.KONDISI.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "KONDISI",
+        "nama": {
+          "id": "Kondisi",
+          "en": "Conditions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun satu program dengan kalau, ulangi, dan belok yang berhasil di tiga jalur berbelok yang batunya berpindah",
+        "en": "I can build one program with if, repeat and turn that works on three turning paths where the rocks move"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.KONDISI.01",
+        "KODE.SD1.ULANGI.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Jalur L dengan batu berpindah di tiga peta satu kelompok. Rak 5 blok: ulangi A [kalau], belok, ulangi B [kalau]. Gabungan SD1 ULANGI.01 (dua bagian) dan SD1 KONDISI.01 (kalau di dalam ulangi). Bukti: ketiga peta sampai bintang. Jebakan: kalau dipakai hanya di bagian yang berbatu pada peta pertama; belok dimasukkan ke dalam ulangi. Knob: rocks 1 → 2."
+    },
+    {
+      "id": "KODE.SD2.DEBUG.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Debugging",
+          "en": "Debugging"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan dan memperbaiki tiga blok yang salah di program robot 7 sampai 9 blok",
+        "en": "I can find and fix the three wrong blocks in a 7 to 9 block robot program"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.DEBUG.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Mode debug, fixes 3 ('debugging banyak bug sekaligus'). Kesalahan tersebar di awal, tengah, akhir; campuran belok tertukar dan maju yang seharusnya belok. Anak mengubah tepat tiga keping. Jebakan: setelah memperbaiki bug pertama anak langsung menjalankan dan mengira selesai; bug yang tertutup bug lain (robot menabrak sebelum sampai bug ketiga). Knob: distance 7 → 9."
+    },
+    {
+      "id": "KODE.SD2.ALGORITMA.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "ALGORITMA",
+        "nama": {
+          "id": "Algoritma",
+          "en": "Algorithms"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 6 sampai 7 kartu langkah bertulisan menjadi algoritma yang tepat untuk sebuah tugas",
+        "en": "I can put 6 to 7 written step cards in order to make a precise algorithm for a task"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.ALGORITMA.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "2CT.06",
+          "note": "cocok: langkah tepat untuk tugas sederhana seperti menggambar"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Kartu bertulisan pendek (≤ 5 kata) + ikon, dibacakan bila disentuh: langkah ditulis sebelum diprogram (pseudocode lisan). Tugas: menggambar rumah, menyiram tanaman, mengirim surat, membuat jus. Langkah dipilih sehingga hanya satu urutan masuk akal. Beda dengan SD1 ALGORITMA.01: lebih panjang dan bertulisan. Acuan: Progression Grid Stage 2 'Follow and understand linear algorithms'. Jebakan: dua kartu bertukar karena anak hanya melihat ikon. Knob: steps 6 → 7."
+    },
+    {
+      "id": "KODE.SD2.POLA.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "POLA",
+        "nama": {
+          "id": "Pola perintah",
+          "en": "Command patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki satu perintah yang merusak pola dalam barisan perintah robot",
+        "en": "I can fix the one command that breaks the pattern in a row of robot commands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.POLA.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "pola"
+      ],
+      "catatan": "Mode perbaiki, satuan 3 perintah, barisan 8 keping; tepat satu diganti. Melatih membaca program sebagai pola — dasar menemukan isi ulangi dan bug. Jebakan: unsur yang salah di ujung barisan (knob posisi 1); anak mengganti dua keping. Knob: posisi 0 → 1."
+    },
+    {
+      "id": "KODE.SD2.DATA.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Data",
+          "en": "Data"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke empat kotak menurut dua pertanyaan ya atau tidak sekaligus",
+        "en": "I can sort objects into four boxes using two yes-or-no questions at once"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.DATA.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Bentuk diagram Carroll 2×2: tiap kotak berlabel dua jawaban (mis. 'pakai listrik · ada layar'). Benda dipilih supaya tiap kotak berisi ≥ 2 benda. Jebakan: anak hanya memakai pertanyaan pertama; benda di kotak 'tidak · tidak' paling sering salah. Kode Managing Data Stage 2 belum ada di kamus; refs kosong. Knob: itemCount 8 → 12."
+    },
+    {
+      "id": "KODE.SD2.PERANGKAT.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "PERANGKAT",
+        "nama": {
+          "id": "Perangkat komputer",
+          "en": "Computer devices"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah perangkat untuk memasukkan perintah ke komputer dan perangkat untuk menampilkan hasil",
+        "en": "I can sort devices that put information into a computer from devices that show the results"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.PERANGKAT.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Masukan: keyboard, mouse, mikrofon, kamera, layar sentuh dipilih hati-hati (dihindari karena dua-duanya). Keluaran: monitor, speaker, printer, headphone, proyektor. Jebakan: webcam di atas monitor; headphone dengan mikrofon (dihindari). Kode Computer Systems Stage 2 belum ada di kamus; refs kosong. Knob: itemCount 6 → 10."
+    },
+    {
+      "id": "KODE.SD2.DEKOMPOSISI.01",
+      "track": "KODE",
+      "level": "SD2",
+      "unit": {
+        "id": "DEKOMPOSISI",
+        "nama": {
+          "id": "Dekomposisi",
+          "en": "Decomposition"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah langkah-langkah kecil membuat game mini ke empat tahap: rancang, buat, uji, perbaiki",
+        "en": "I can sort the small steps of making a mini game into four stages: plan, build, test, fix"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.ALGORITMA.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Lanjutan TK B DEKOMPOSISI.02 (3 tahap kue) ke proyek coding. Kotak bergambar + tulisan. Contoh: gambar sketsa tokoh → rancang; susun blok gerak → buat; mainkan sekali → uji; ganti blok yang salah → perbaiki. Jebakan: 'mainkan' dan 'perbaiki' tertukar; langkah ambigu ('pilih warna latar') dihindari. Knob: binCount 3 → 4, itemCount 4 → 8."
+    }
+  ]
+}

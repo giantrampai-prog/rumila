@@ -1,0 +1,140 @@
+{
+  "id": "sd1-sains-cepat-atau-lambat-hangat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.MATAHARI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cepat atau Lambat Berubah?",
+      "instruksi": "Tebak dulu: taruh ke rak cepat hangat-kering-meleleh, atau ke rak lambat.",
+      "b-cepat": "cepat hangat, kering, atau meleleh",
+      "b-lambat": "lambat berubah",
+      "i-esmatahari": "es batu di bawah terik Matahari",
+      "i-eskulkas": "es batu di dalam kulkas",
+      "i-bajujemur": "baju basah dijemur di tempat terik",
+      "i-bajukamar": "baju basah di kamar tertutup",
+      "i-cokelatmobil": "cokelat di dasbor mobil yang dijemur",
+      "i-cokelatlemari": "cokelat di lemari sejuk",
+      "i-genangan": "genangan di jalan terkena Matahari",
+      "i-genanganteduh": "genangan di bawah pohon rindang",
+      "i-batusiang": "batu di lapangan saat siang",
+      "i-batugua": "batu di dalam gua"
+    },
+    "en": {
+      "judul": "Changes Fast or Slow?",
+      "instruksi": "Predict first: put each on the warms-dries-melts-fast shelf or the slow shelf.",
+      "b-cepat": "warms, dries, or melts fast",
+      "b-lambat": "changes slowly",
+      "i-esmatahari": "ice cube in strong sunshine",
+      "i-eskulkas": "ice cube in the fridge",
+      "i-bajujemur": "wet shirt hung in the sun",
+      "i-bajukamar": "wet shirt in a closed room",
+      "i-cokelatmobil": "chocolate on a car dashboard in the sun",
+      "i-cokelatlemari": "chocolate in a cool cupboard",
+      "i-genangan": "sunny puddle on the road",
+      "i-genanganteduh": "puddle under a shady tree",
+      "i-batusiang": "stone in the field at midday",
+      "i-batugua": "stone inside a cave"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "cepat",
+      "labelKey": "b-cepat",
+      "emoji": "☀️",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "lambat",
+      "labelKey": "b-lambat",
+      "emoji": "🌳",
+      "color": "#e8f5e9"
+    }
+  ],
+  "items": [
+    {
+      "id": "esmatahari",
+      "labelKey": "i-esmatahari",
+      "bin": "cepat",
+      "emoji": "🧊"
+    },
+    {
+      "id": "eskulkas",
+      "labelKey": "i-eskulkas",
+      "bin": "lambat",
+      "emoji": "🧊",
+      "color": "#b3e5fc"
+    },
+    {
+      "id": "bajujemur",
+      "labelKey": "i-bajujemur",
+      "bin": "cepat",
+      "emoji": "👕"
+    },
+    {
+      "id": "bajukamar",
+      "labelKey": "i-bajukamar",
+      "bin": "lambat",
+      "emoji": "👕",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "cokelatmobil",
+      "labelKey": "i-cokelatmobil",
+      "bin": "cepat",
+      "emoji": "🍫"
+    },
+    {
+      "id": "cokelatlemari",
+      "labelKey": "i-cokelatlemari",
+      "bin": "lambat",
+      "emoji": "🍫",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "genangan",
+      "labelKey": "i-genangan",
+      "bin": "cepat",
+      "emoji": "💧"
+    },
+    {
+      "id": "genanganteduh",
+      "labelKey": "i-genanganteduh",
+      "bin": "lambat",
+      "emoji": "💧",
+      "color": "#80cbc4"
+    },
+    {
+      "id": "batusiang",
+      "labelKey": "i-batusiang",
+      "bin": "cepat",
+      "emoji": "🪨"
+    },
+    {
+      "id": "batugua",
+      "labelKey": "i-batugua",
+      "bin": "lambat",
+      "emoji": "🪨",
+      "color": "#9e9e9e"
+    }
+  ],
+  "pilihan": []
+}

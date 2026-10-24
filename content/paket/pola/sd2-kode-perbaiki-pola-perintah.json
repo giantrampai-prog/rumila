@@ -1,0 +1,137 @@
+{
+  "id": "sd2-kode-perbaiki-pola-perintah",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.SD2.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satu Perintah Merusak Pola",
+      "instruksi": "Satu keping perintah merusak pola: sentuh keping itu lalu ganti dengan yang benar.",
+      "p-maju": "maju",
+      "p-kiri": "belok kiri",
+      "p-kanan": "belok kanan",
+      "p-lompat": "lompat"
+    },
+    "en": {
+      "judul": "One Command Breaks the Pattern",
+      "instruksi": "One command piece breaks the pattern: touch it, then swap in the right one.",
+      "p-maju": "forward",
+      "p-kiri": "turn left",
+      "p-kanan": "turn right",
+      "p-lompat": "jump"
+    }
+  },
+  "knobs": {
+    "posisi": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = keping salah di tengah barisan; 1 = boleh di ujung (lebih sulit)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "perbaiki",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "maju",
+      "labelKey": "p-maju",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "kiri",
+      "labelKey": "p-kiri",
+      "emoji": "↩️"
+    },
+    {
+      "id": "kanan",
+      "labelKey": "p-kanan",
+      "emoji": "↪️"
+    },
+    {
+      "id": "lompat",
+      "labelKey": "p-lompat",
+      "emoji": "🦘"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "maju-kanan-lompat",
+      "unit": [
+        "maju",
+        "kanan",
+        "lompat"
+      ]
+    },
+    {
+      "id": "maju-kiri-lompat",
+      "unit": [
+        "maju",
+        "kiri",
+        "lompat"
+      ]
+    },
+    {
+      "id": "lompat-maju-kanan",
+      "unit": [
+        "lompat",
+        "maju",
+        "kanan"
+      ]
+    },
+    {
+      "id": "lompat-maju-kiri",
+      "unit": [
+        "lompat",
+        "maju",
+        "kiri"
+      ]
+    },
+    {
+      "id": "maju-lompat-kanan",
+      "unit": [
+        "maju",
+        "lompat",
+        "kanan"
+      ]
+    },
+    {
+      "id": "maju-lompat-kiri",
+      "unit": [
+        "maju",
+        "lompat",
+        "kiri"
+      ]
+    },
+    {
+      "id": "kanan-maju-lompat",
+      "unit": [
+        "kanan",
+        "maju",
+        "lompat"
+      ]
+    },
+    {
+      "id": "kiri-maju-lompat",
+      "unit": [
+        "kiri",
+        "maju",
+        "lompat"
+      ]
+    }
+  ],
+  "nada": {
+    "maju": "C4",
+    "kiri": "E4",
+    "kanan": "G4",
+    "lompat": "A4"
+  }
+}

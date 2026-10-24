@@ -1,0 +1,167 @@
+{
+  "id": "sd5-sains-tertarik-magnet",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.MAGNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tertarik Magnet?",
+      "instruksi": "Dekatkan magnet ke tiap benda dalam pikiranmu, lalu pilah: tertarik atau tidak.",
+      "b-tertarik": "tertarik magnet",
+      "b-tidak": "tidak tertarik",
+      "i-paku": "paku besi",
+      "i-klip": "klip kertas baja",
+      "i-peniti": "peniti",
+      "i-jarum": "jarum jahit",
+      "i-sekrup": "sekrup besi",
+      "i-kalengbaja": "kaleng sarden dari baja",
+      "i-kalengalu": "kaleng minuman aluminium",
+      "i-foil": "aluminium foil",
+      "i-tembaga": "kawat tembaga",
+      "i-kuningan": "kunci kuningan",
+      "i-emas": "gelang emas",
+      "i-plastik": "sendok plastik",
+      "i-kayu": "balok kayu",
+      "i-kertas": "selembar kertas"
+    },
+    "en": {
+      "judul": "Pulled by a Magnet?",
+      "instruksi": "Imagine holding a magnet near each object, then sort: attracted or not.",
+      "b-tertarik": "attracted to a magnet",
+      "b-tidak": "not attracted",
+      "i-paku": "iron nail",
+      "i-klip": "steel paper clip",
+      "i-peniti": "safety pin",
+      "i-jarum": "sewing needle",
+      "i-sekrup": "iron screw",
+      "i-kalengbaja": "steel sardine can",
+      "i-kalengalu": "aluminium drink can",
+      "i-foil": "aluminium foil",
+      "i-tembaga": "copper wire",
+      "i-kuningan": "brass key",
+      "i-emas": "gold bracelet",
+      "i-plastik": "plastic spoon",
+      "i-kayu": "wooden block",
+      "i-kertas": "a sheet of paper"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "tertarik",
+      "labelKey": "b-tertarik",
+      "emoji": "🧲",
+      "color": "#ffcdd2"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🚫",
+      "color": "#cfd8dc"
+    }
+  ],
+  "items": [
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "tertarik",
+      "emoji": "🔩"
+    },
+    {
+      "id": "klip",
+      "labelKey": "i-klip",
+      "bin": "tertarik",
+      "emoji": "📎"
+    },
+    {
+      "id": "peniti",
+      "labelKey": "i-peniti",
+      "bin": "tertarik",
+      "emoji": "🧷"
+    },
+    {
+      "id": "jarum",
+      "labelKey": "i-jarum",
+      "bin": "tertarik",
+      "emoji": "🪡"
+    },
+    {
+      "id": "sekrup",
+      "labelKey": "i-sekrup",
+      "bin": "tertarik",
+      "emoji": "🔩"
+    },
+    {
+      "id": "kalengbaja",
+      "labelKey": "i-kalengbaja",
+      "bin": "tertarik",
+      "emoji": "🥫"
+    },
+    {
+      "id": "kalengalu",
+      "labelKey": "i-kalengalu",
+      "bin": "tidak",
+      "emoji": "🥤"
+    },
+    {
+      "id": "foil",
+      "labelKey": "i-foil",
+      "bin": "tidak",
+      "emoji": "🥈"
+    },
+    {
+      "id": "tembaga",
+      "labelKey": "i-tembaga",
+      "bin": "tidak",
+      "emoji": "🧵"
+    },
+    {
+      "id": "kuningan",
+      "labelKey": "i-kuningan",
+      "bin": "tidak",
+      "emoji": "🔑"
+    },
+    {
+      "id": "emas",
+      "labelKey": "i-emas",
+      "bin": "tidak",
+      "emoji": "💛"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "tidak",
+      "emoji": "🥄"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "tidak",
+      "emoji": "🪵"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "tidak",
+      "emoji": "📄"
+    }
+  ],
+  "pilihan": []
+}

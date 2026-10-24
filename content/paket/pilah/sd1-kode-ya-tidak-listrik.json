@@ -1,0 +1,165 @@
+{
+  "id": "sd1-kode-ya-tidak-listrik",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD1.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pakai Listrik atau Tidak?",
+      "instruksi": "Pertanyaannya: memakai listrik? Taruh tiap benda di kotak ya atau kotak tidak.",
+      "bin-ya": "ya",
+      "bin-tidak": "tidak",
+      "i-lamp": "lampu",
+      "i-television": "televisi",
+      "i-laptop": "laptop",
+      "i-phone": "ponsel",
+      "i-radio": "radio",
+      "i-printer": "printer",
+      "i-electric-fan": "kipas angin listrik",
+      "i-book": "buku",
+      "i-bicycle": "sepeda",
+      "i-umbrella": "payung",
+      "i-scissors": "gunting",
+      "i-pencil": "pensil",
+      "i-ball": "bola",
+      "i-kite": "layang-layang"
+    },
+    "en": {
+      "judul": "Electric or Not?",
+      "instruksi": "The question is: does it use electricity? Put each thing in the yes box or the no box.",
+      "bin-ya": "yes",
+      "bin-tidak": "no",
+      "i-lamp": "lamp",
+      "i-television": "television",
+      "i-laptop": "laptop",
+      "i-phone": "phone",
+      "i-radio": "radio",
+      "i-printer": "printer",
+      "i-electric-fan": "electric fan",
+      "i-book": "book",
+      "i-bicycle": "bicycle",
+      "i-umbrella": "umbrella",
+      "i-scissors": "scissors",
+      "i-pencil": "pencil",
+      "i-ball": "ball",
+      "i-kite": "kite"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran; tiap kotak dijamin kebagian"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "ya",
+      "labelKey": "bin-ya",
+      "emoji": "✅"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "bin-tidak",
+      "emoji": "❌"
+    }
+  ],
+  "items": [
+    {
+      "id": "lamp",
+      "labelKey": "i-lamp",
+      "bin": "ya",
+      "emoji": "💡"
+    },
+    {
+      "id": "television",
+      "labelKey": "i-television",
+      "bin": "ya",
+      "emoji": "📺"
+    },
+    {
+      "id": "laptop",
+      "labelKey": "i-laptop",
+      "bin": "ya",
+      "emoji": "💻"
+    },
+    {
+      "id": "phone",
+      "labelKey": "i-phone",
+      "bin": "ya",
+      "emoji": "📱"
+    },
+    {
+      "id": "radio",
+      "labelKey": "i-radio",
+      "bin": "ya",
+      "emoji": "📻"
+    },
+    {
+      "id": "printer",
+      "labelKey": "i-printer",
+      "bin": "ya",
+      "emoji": "🖨️"
+    },
+    {
+      "id": "electric-fan",
+      "labelKey": "i-electric-fan",
+      "bin": "ya",
+      "emoji": "🌀"
+    },
+    {
+      "id": "book",
+      "labelKey": "i-book",
+      "bin": "tidak",
+      "emoji": "📚"
+    },
+    {
+      "id": "bicycle",
+      "labelKey": "i-bicycle",
+      "bin": "tidak",
+      "emoji": "🚲"
+    },
+    {
+      "id": "umbrella",
+      "labelKey": "i-umbrella",
+      "bin": "tidak",
+      "emoji": "☂️"
+    },
+    {
+      "id": "scissors",
+      "labelKey": "i-scissors",
+      "bin": "tidak",
+      "emoji": "✂️"
+    },
+    {
+      "id": "pencil",
+      "labelKey": "i-pencil",
+      "bin": "tidak",
+      "emoji": "✏️"
+    },
+    {
+      "id": "ball",
+      "labelKey": "i-ball",
+      "bin": "tidak",
+      "emoji": "⚽"
+    },
+    {
+      "id": "kite",
+      "labelKey": "i-kite",
+      "bin": "tidak",
+      "emoji": "🪁"
+    }
+  ]
+}

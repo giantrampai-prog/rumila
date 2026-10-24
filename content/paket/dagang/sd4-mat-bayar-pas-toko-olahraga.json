@@ -1,0 +1,133 @@
+{
+  "id": "sd4-mat-bayar-pas-toko-olahraga",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD4.NILAI-TEMPAT.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uang Pas di Toko Olahraga",
+      "instruksi": "Lihat total harganya, lalu bayar dengan uang pas dari laci.",
+      "tali": "tali skipping",
+      "kok": "kok bulu tangkis",
+      "bola": "bola sepak",
+      "basket": "bola basket",
+      "topi": "topi",
+      "kauskaki": "kaus kaki",
+      "botol": "botol minum",
+      "stopwatch": "stopwatch",
+      "medali": "medali",
+      "sarungtangan": "sarung tangan"
+    },
+    "en": {
+      "judul": "Exact Money at the Sports Shop",
+      "instruksi": "Look at the total price, then pay the exact amount from the drawer.",
+      "tali": "skipping rope",
+      "kok": "shuttlecock",
+      "bola": "football",
+      "basket": "basketball",
+      "topi": "cap",
+      "kauskaki": "socks",
+      "botol": "water bottle",
+      "stopwatch": "stopwatch",
+      "medali": "medal",
+      "sarungtangan": "gloves"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "barang per pembeli: 1 → 2 (total sampai Rp100.000)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-olahraga",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    50000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "tali",
+      "labelKey": "tali",
+      "price": 17000,
+      "emoji": "🪢"
+    },
+    {
+      "id": "kok",
+      "labelKey": "kok",
+      "price": 23000,
+      "emoji": "🏸"
+    },
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "price": 48000,
+      "emoji": "⚽"
+    },
+    {
+      "id": "basket",
+      "labelKey": "basket",
+      "price": 39000,
+      "emoji": "🏀"
+    },
+    {
+      "id": "topi",
+      "labelKey": "topi",
+      "price": 26000,
+      "emoji": "🧢"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "kauskaki",
+      "price": 14000,
+      "emoji": "🧦"
+    },
+    {
+      "id": "botol",
+      "labelKey": "botol",
+      "price": 12000,
+      "emoji": "🥤"
+    },
+    {
+      "id": "stopwatch",
+      "labelKey": "stopwatch",
+      "price": 35000,
+      "emoji": "⏱️"
+    },
+    {
+      "id": "medali",
+      "labelKey": "medali",
+      "price": 8000,
+      "emoji": "🏅"
+    },
+    {
+      "id": "sarungtangan",
+      "labelKey": "sarungtangan",
+      "price": 29000,
+      "emoji": "🧤"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 2,
+    "payExact": true,
+    "maxTotal": 100000,
+    "kindsMax": 2
+  }
+}

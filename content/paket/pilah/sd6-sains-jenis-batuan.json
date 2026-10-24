@@ -1,0 +1,159 @@
+{
+  "id": "sd6-sains-jenis-batuan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.BATUAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Detektif Batuan",
+      "instruksi": "Baca ciri tiap batuan, lalu taruh ke jenisnya: beku, sedimen, atau metamorf.",
+      "b-beku": "batuan beku: dari magma atau lava yang mendingin",
+      "b-sedimen": "batuan sedimen: endapan yang berlapis",
+      "b-metamorf": "batuan metamorf: berubah oleh panas dan tekanan",
+      "i-granit": "granit: kristal besar berbintik",
+      "i-basalt": "basalt: gelap, dari lava yang cepat dingin",
+      "i-apung": "batu apung: ringan dan penuh lubang udara",
+      "i-obsidian": "obsidian: hitam mengkilap seperti kaca",
+      "i-pasir": "batu pasir: butir pasir terasa kasar",
+      "i-kapur": "batu kapur: sering berisi fosil kerang",
+      "i-serpih": "batu serpih: lapisan lumpur tipis",
+      "i-konglomerat": "konglomerat: kerikil bulat terekat",
+      "i-marmer": "marmer: dari batu kapur, berurat halus",
+      "i-sabak": "batu sabak: dari serpih, bisa dibelah tipis",
+      "i-kuarsit": "kuarsit: dari batu pasir, sangat keras",
+      "i-gneis": "gneis: bergaris pita terang-gelap"
+    },
+    "en": {
+      "judul": "Rock Detective",
+      "instruksi": "Read each rock's features, then put it with its type: igneous, sedimentary or metamorphic.",
+      "b-beku": "igneous: from cooled magma or lava",
+      "b-sedimen": "sedimentary: layers of settled bits",
+      "b-metamorf": "metamorphic: changed by heat and pressure",
+      "i-granit": "granite: big speckled crystals",
+      "i-basalt": "basalt: dark, from fast-cooling lava",
+      "i-apung": "pumice: light and full of air holes",
+      "i-obsidian": "obsidian: shiny black like glass",
+      "i-pasir": "sandstone: you can feel the sand grains",
+      "i-kapur": "limestone: often holds shell fossils",
+      "i-serpih": "shale: thin layers of mud",
+      "i-konglomerat": "conglomerate: round pebbles cemented together",
+      "i-marmer": "marble: made from limestone, finely veined",
+      "i-sabak": "slate: made from shale, splits into thin sheets",
+      "i-kuarsit": "quartzite: made from sandstone, very hard",
+      "i-gneis": "gneiss: striped with light and dark bands"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "beku",
+      "labelKey": "b-beku",
+      "emoji": "🌋",
+      "color": "#ffccbc"
+    },
+    {
+      "id": "sedimen",
+      "labelKey": "b-sedimen",
+      "emoji": "🏖️",
+      "color": "#fff9c4"
+    },
+    {
+      "id": "metamorf",
+      "labelKey": "b-metamorf",
+      "emoji": "💎",
+      "color": "#e1bee7"
+    }
+  ],
+  "items": [
+    {
+      "id": "granit",
+      "labelKey": "i-granit",
+      "bin": "beku",
+      "emoji": "⚪"
+    },
+    {
+      "id": "basalt",
+      "labelKey": "i-basalt",
+      "bin": "beku",
+      "emoji": "⚫"
+    },
+    {
+      "id": "apung",
+      "labelKey": "i-apung",
+      "bin": "beku",
+      "emoji": "🫧"
+    },
+    {
+      "id": "obsidian",
+      "labelKey": "i-obsidian",
+      "bin": "beku",
+      "emoji": "🖤"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "sedimen",
+      "emoji": "🟫"
+    },
+    {
+      "id": "kapur",
+      "labelKey": "i-kapur",
+      "bin": "sedimen",
+      "emoji": "🐚"
+    },
+    {
+      "id": "serpih",
+      "labelKey": "i-serpih",
+      "bin": "sedimen",
+      "emoji": "📚"
+    },
+    {
+      "id": "konglomerat",
+      "labelKey": "i-konglomerat",
+      "bin": "sedimen",
+      "emoji": "🪨"
+    },
+    {
+      "id": "marmer",
+      "labelKey": "i-marmer",
+      "bin": "metamorf",
+      "emoji": "🏛️"
+    },
+    {
+      "id": "sabak",
+      "labelKey": "i-sabak",
+      "bin": "metamorf",
+      "emoji": "🔲"
+    },
+    {
+      "id": "kuarsit",
+      "labelKey": "i-kuarsit",
+      "bin": "metamorf",
+      "emoji": "💠"
+    },
+    {
+      "id": "gneis",
+      "labelKey": "i-gneis",
+      "bin": "metamorf",
+      "emoji": "🦓"
+    }
+  ],
+  "pilihan": []
+}

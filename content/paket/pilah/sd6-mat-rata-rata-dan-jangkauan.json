@@ -1,0 +1,426 @@
+{
+  "id": "sd6-mat-rata-rata-dan-jangkauan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rata-rata dan Jangkauan",
+      "instruksi": "Rata-rata = jumlah semua data dibagi banyak data. Jangkauan = terbesar dikurangi terkecil.",
+      "q1": "Nilai kuis: 6, 8, 9, 5, 7. Rata-ratanya …",
+      "c1": "7",
+      "c2": "35",
+      "c3": "9",
+      "c4": "4",
+      "q2": "Nilai kuis: 6, 8, 9, 5, 7. Jangkauannya …",
+      "q3": "Tinggi lima anak (cm): 140, 152, 138, 146, 149. Rata-ratanya …",
+      "c5": "145",
+      "c6": "725",
+      "c7": "146",
+      "c8": "152",
+      "q4": "Tinggi lima anak (cm): 140, 152, 138, 146, 149. Jangkauannya …",
+      "c9": "14",
+      "q5": "Buku dibaca per bulan: 3, 7, 2, 4, 9, 5. Rata-ratanya …",
+      "c10": "5",
+      "c11": "30",
+      "q6": "Suhu seminggu (°C): 24, 27, 31, 22, 29, 30, 26. Jangkauannya …",
+      "c12": "189",
+      "c13": "27",
+      "c14": "31",
+      "q7": "Suhu seminggu (°C): 24, 27, 31, 22, 29, 30, 26. Rata-ratanya …",
+      "q8": "Gol tiap pertandingan: 2, 0, 3, 1, 4. Rata-ratanya …",
+      "c15": "2",
+      "c16": "10",
+      "c17": "0",
+      "q9": "Berat paket (kg): 12, 5, 18, 9, 11. Jangkauannya …",
+      "c18": "13",
+      "c19": "55",
+      "c20": "11",
+      "c21": "18",
+      "q10": "Pengunjung perpustakaan: 45, 60, 38, 52, 55. Rata-ratanya …",
+      "c22": "50",
+      "c23": "250",
+      "c24": "52",
+      "c25": "60",
+      "q11": "Waktu lari (detik): 58, 64, 71, 55, 62. Jangkauannya …",
+      "c26": "16",
+      "c27": "310",
+      "c28": "62",
+      "c29": "71",
+      "q12": "Uang saku harian (ribu): 10, 15, 12, 8, 15, 12. Rata-ratanya …",
+      "c30": "12",
+      "c31": "72",
+      "c32": "15",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Mean and Range",
+      "instruksi": "Mean = total of all values divided by how many. Range = largest minus smallest.",
+      "q1": "Quiz scores: 6, 8, 9, 5, 7. The mean is …",
+      "c1": "7",
+      "c2": "35",
+      "c3": "9",
+      "c4": "4",
+      "q2": "Quiz scores: 6, 8, 9, 5, 7. The range is …",
+      "q3": "Heights of five children (cm): 140, 152, 138, 146, 149. The mean is …",
+      "c5": "145",
+      "c6": "725",
+      "c7": "146",
+      "c8": "152",
+      "q4": "Heights of five children (cm): 140, 152, 138, 146, 149. The range is …",
+      "c9": "14",
+      "q5": "Books read per month: 3, 7, 2, 4, 9, 5. The mean is …",
+      "c10": "5",
+      "c11": "30",
+      "q6": "Temperatures for a week (°C): 24, 27, 31, 22, 29, 30, 26. The range is …",
+      "c12": "189",
+      "c13": "27",
+      "c14": "31",
+      "q7": "Temperatures for a week (°C): 24, 27, 31, 22, 29, 30, 26. The mean is …",
+      "q8": "Goals per match: 2, 0, 3, 1, 4. The mean is …",
+      "c15": "2",
+      "c16": "10",
+      "c17": "0",
+      "q9": "Parcel masses (kg): 12, 5, 18, 9, 11. The range is …",
+      "c18": "13",
+      "c19": "55",
+      "c20": "11",
+      "c21": "18",
+      "q10": "Library visitors: 45, 60, 38, 52, 55. The mean is …",
+      "c22": "50",
+      "c23": "250",
+      "c24": "52",
+      "c25": "60",
+      "q11": "Running times (s): 58, 64, 71, 55, 62. The range is …",
+      "c26": "16",
+      "c27": "310",
+      "c28": "62",
+      "c29": "71",
+      "q12": "Daily pocket money (thousands): 10, 15, 12, 8, 15, 12. The mean is …",
+      "c30": "12",
+      "c31": "72",
+      "c32": "15",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c2",
+        "c1",
+        "c3"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c9",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c10",
+        "c11",
+        "c3",
+        "c1"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c3",
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c13",
+        "c12",
+        "c14",
+        "c3"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c15",
+        "c16",
+        "c4",
+        "c17"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c18",
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c22",
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c30",
+        "c31",
+        "c32",
+        "c1"
+      ],
+      "correct": "c30"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "id": "sd3-sains-tembus-pandang-cahaya-tidak",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tembus Pandang, Tembus Cahaya, atau Tidak?",
+      "instruksi": "Bayangkan menyinari tiap benda dengan senter. Taruh ke raknya.",
+      "b-pandang": "tembus pandang (terlihat jelas)",
+      "b-tidak": "tidak tembus cahaya (gelap)",
+      "b-cahaya": "tembus cahaya (buram)",
+      "i-kaca": "kaca jendela",
+      "i-plastik": "plastik bening",
+      "i-air": "air jernih di gelas",
+      "i-kacamata": "lensa kacamata",
+      "i-kardus": "kardus",
+      "i-kayu": "papan kayu",
+      "i-buku": "buku tebal",
+      "i-sendok": "sendok logam",
+      "i-selimut": "selimut tebal",
+      "i-kertasminyak": "kertas minyak",
+      "i-kacaburam": "kaca buram kamar mandi",
+      "i-gorden": "gorden tipis",
+      "i-botolsusu": "botol plastik putih susu",
+      "i-es": "es batu keruh"
+    },
+    "en": {
+      "judul": "Transparent, Translucent, or Opaque?",
+      "instruksi": "Imagine shining a torch through each thing. Put it on its shelf.",
+      "b-pandang": "transparent (see clearly)",
+      "b-tidak": "opaque (dark)",
+      "b-cahaya": "translucent (blurry)",
+      "i-kaca": "window glass",
+      "i-plastik": "clear plastic",
+      "i-air": "clear water in a glass",
+      "i-kacamata": "glasses lens",
+      "i-kardus": "cardboard",
+      "i-kayu": "wooden board",
+      "i-buku": "thick book",
+      "i-sendok": "metal spoon",
+      "i-selimut": "thick blanket",
+      "i-kertasminyak": "greaseproof paper",
+      "i-kacaburam": "frosted bathroom glass",
+      "i-gorden": "thin curtain",
+      "i-botolsusu": "milky white plastic bottle",
+      "i-es": "cloudy ice cube"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (tembus pandang, tidak tembus) → 3 (tambah tembus cahaya)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pandang",
+      "labelKey": "b-pandang",
+      "emoji": "🔍",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "⬛",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "cahaya",
+      "labelKey": "b-cahaya",
+      "emoji": "🌫️",
+      "color": "#f3e5f5"
+    }
+  ],
+  "items": [
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "pandang",
+      "emoji": "🪟"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "pandang",
+      "emoji": "🧴",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "pandang",
+      "emoji": "🥛"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "bin": "pandang",
+      "emoji": "👓"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "tidak",
+      "emoji": "📦"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "tidak",
+      "emoji": "🪵"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "tidak",
+      "emoji": "📕"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "tidak",
+      "emoji": "🥄"
+    },
+    {
+      "id": "selimut",
+      "labelKey": "i-selimut",
+      "bin": "tidak",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "kertasminyak",
+      "labelKey": "i-kertasminyak",
+      "bin": "cahaya",
+      "emoji": "📃"
+    },
+    {
+      "id": "kacaburam",
+      "labelKey": "i-kacaburam",
+      "bin": "cahaya",
+      "emoji": "🚿"
+    },
+    {
+      "id": "gorden",
+      "labelKey": "i-gorden",
+      "bin": "cahaya",
+      "emoji": "🪟",
+      "color": "#f8bbd0"
+    },
+    {
+      "id": "botolsusu",
+      "labelKey": "i-botolsusu",
+      "bin": "cahaya",
+      "emoji": "🍼"
+    },
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "cahaya",
+      "emoji": "🧊"
+    }
+  ],
+  "pilihan": []
+}

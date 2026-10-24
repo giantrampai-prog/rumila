@@ -1,0 +1,607 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.SD1.BILANGAN-100.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "BILANGAN-100",
+        "nama": {
+          "id": "Bilangan sampai 100",
+          "en": "Numbers to 100"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung loncat sepuluh maju dan mundur dari angka mana pun, misalnya 4, 14, 24, 34",
+        "en": "I can count on and back in tens from any number, for example 4, 14, 24, 34"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.BILANGAN-20.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.04",
+          "note": "count on/back in tens; diperluas sampai 100 sesuai daftar topik SD 1"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "pilah"
+      ],
+      "catatan": "Dua bukti: (1) menyusun kartu loncatan berikutnya dari judul 'loncat 10 dari 3' atau 'mundur 10 dari 95' — arah ditentukan judul, jadi menyusun naik saja tidak cukup; (2) memilah angka ke 'ada di jalan loncatan' vs 'tidak'. Jebakan: 34 vs 43, 40 vs 41 di jalan loncat dari 4. Knob: panjang 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD1.BILANGAN-100.02",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "BILANGAN-100",
+        "nama": {
+          "id": "Bilangan sampai 100",
+          "en": "Numbers to 100"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun bilangan 11 sampai 20 dari satu puluhan dan beberapa satuan, misalnya 10 dan 7 menjadi 17",
+        "en": "I can make numbers 11 to 20 from one ten and some ones, for example 10 and 7 make 17"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.BILANGAN-20.02",
+        "MAT.TKB.UANG-10RB.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Np.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Np.02",
+          "note": "pendahulu Stage 2: puluhan dan satuan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah"
+      ],
+      "catatan": "Laci hanya berisi 10 koin seribu dan beberapa lembar sepuluh ribu, jadi harga belasan ribu memaksa memakai satu lembar sepuluh ribu (satu puluhan) + koin satuan. Pilah: kartu '10+7' dan '7+10' ke rak 17. Jebakan: 10+7 ditaruh di 107 atau 71 (tidak ada di rak). Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD1.BILANGAN-100.03",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "BILANGAN-100",
+        "nama": {
+          "id": "Bilangan sampai 100",
+          "en": "Numbers to 100"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan bilangan 0 sampai 20 dari yang terkecil ke yang terbesar",
+        "en": "I can order numbers from 0 to 20 from smallest to largest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.BILANGAN-20.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Np.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Kartu tidak berurutan (3, 8, 12, 17, 20) sehingga anak harus membandingkan, bukan menyalin garis bilangan. Termasuk 0 ('tidak ada'). Jebakan: 9 sesudah 11, 12 vs 21 tidak dipakai karena > 20. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD1.BILANGAN-100.04",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "BILANGAN-100",
+        "nama": {
+          "id": "Bilangan sampai 100",
+          "en": "Numbers to 100"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bilangan sampai 20 menjadi genap dan ganjil",
+        "en": "I can sort numbers up to 20 into even and odd"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD1.BILANGAN-100.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu angka dan kumpulan benda (pasangkan dua-dua; ada yang sendirian = ganjil). 0 termasuk genap. Jebakan: 10, 12, 14 dianggap ganjil karena angka 1 di depan; 0. Knob: kartu 6 → 10."
+    },
+    {
+      "id": "MAT.SD1.TAMBAH-KURANG-20.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "TAMBAH-KURANG-20",
+        "nama": {
+          "id": "Tambah dan kurang sampai 20",
+          "en": "Adding and subtracting to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa langsung melengkapi menjadi 10: kalau sudah ada 7, aku menambah 3",
+        "en": "I can complete to 10 right away: if there are 7, I add 3"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah"
+      ],
+      "catatan": "Dagang lengkapi: koin pembeli tampil sekejap lalu digenggam, harga 10 koin; anak menambah koin pelengkap. Pilah: kumpulan titik 1–9 ke rak 'kurang berapa supaya 10'. Bukti: benar dan latency turun. Jebakan: memberi 7 lagi (mengulang angka yang terlihat)."
+    },
+    {
+      "id": "MAT.SD1.TAMBAH-KURANG-20.02",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "TAMBAH-KURANG-20",
+        "nama": {
+          "id": "Tambah dan kurang sampai 20",
+          "en": "Adding and subtracting to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menggabungkan dua kelompok dan menemukan jumlahnya sampai 20 dengan menghitung maju dari kelompok yang lebih besar",
+        "en": "I can join two groups and find the total up to 20 by counting on from the larger group"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.01",
+        "MAT.SD1.TAMBAH-KURANG-20.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Dua kelompok digabung ke satu keranjang; anak menggeser penanda strip 0–20. Bukti: angka benar. Jebakan: menghitung ulang dari 1 (lambat, terlihat dari latency), salah satu kelompok terhitung dua kali. Knob: batas jumlah 12 → 20."
+    },
+    {
+      "id": "MAT.SD1.TAMBAH-KURANG-20.03",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "TAMBAH-KURANG-20",
+        "nama": {
+          "id": "Tambah dan kurang sampai 20",
+          "en": "Adding and subtracting to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjukkan sisa setelah beberapa benda diambil, dengan bilangan sampai 20",
+        "en": "I can show how many are left after some are taken away, with numbers up to 20"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Dari N benda diambil K, kolam tertutup; anak menaruh benda sebanyak sisanya (produksi jumlah, bukan kartu). Jebakan: menaruh sebanyak yang diambil. Knob: jumlah awal 12 → 20."
+    },
+    {
+      "id": "MAT.SD1.TAMBAH-KURANG-20.04",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "TAMBAH-KURANG-20",
+        "nama": {
+          "id": "Tambah dan kurang sampai 20",
+          "en": "Adding and subtracting to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai dobel sampai dobel 10 untuk menjumlah, misalnya 7 + 8 adalah dobel 7 tambah 1",
+        "en": "I can use doubles up to double 10 to add, for example 7 + 8 is double 7 plus 1"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD1.TAMBAH-KURANG-20.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.06"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.05"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu dobel (6+6) dan hampir dobel (6+7, 7+6) dipilah ke rak hasil 10–19. Kartu tertukar (7+6 dan 6+7) masuk rak yang sama: pendahuluan sifat tukar. Jebakan: 7+8 ke 14. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD1.PECAHAN.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Setengah",
+          "en": "Halves"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan setengah dari sekelompok benda sampai 20 dengan membaginya menjadi dua sama banyak",
+        "en": "I can find half of a group of up to 20 objects by sharing it into two equal parts"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.04",
+        "MAT.SD1.TAMBAH-KURANG-20.04"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nf.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nf.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Piring berisi 2–20 benda (genap) dipilah ke rak angka setengahnya. Anak boleh membagi dua-dua dalam kepala atau memakai dobel (dobel 6 = 12, jadi setengah 12 = 6). Jebakan: menaruh 12 di rak 12 (menghitung semua). Knob: rak 5 → 10."
+    },
+    {
+      "id": "MAT.SD1.BANGUN.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "BANGUN",
+        "nama": {
+          "id": "Bangun datar dan ruang",
+          "en": "2D and 3D shapes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bangun datar menurut sisinya: tiga sisi lurus, empat sisi lurus, atau ada sisi lengkung",
+        "en": "I can sort 2D shapes by their sides: three straight sides, four straight sides, or a curved side"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BENTUK-DASAR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "TWM.06"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Segitiga terbalik, belah ketupat, dan persegi panjang ramping sengaja ada supaya anak menghitung sisi, bukan mengenali gambar baku. Irisan pizza = ada sisi lengkung. Knob: kartu 6 → 9."
+    },
+    {
+      "id": "MAT.SD1.BANGUN.02",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "BANGUN",
+        "nama": {
+          "id": "Bangun datar dan ruang",
+          "en": "2D and 3D shapes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan bangun datar dan bangun ruang di sekitarku",
+        "en": "I can tell 2D shapes from 3D shapes around me"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BENTUK-RUANG.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.06"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Bangun datar (gambar tipis: segitiga, bintang, ketupat) vs benda ruang (bola, dadu, kaleng, kotak, es krim). Jebakan: persegi vs dadu, lingkaran vs bola. Knob: kartu 6 → 10."
+    },
+    {
+      "id": "MAT.SD1.UKUR.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "UKUR",
+        "nama": {
+          "id": "Berat dan isi",
+          "en": "Mass and capacity"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan tiga atau empat benda dari yang paling ringan ke yang paling berat",
+        "en": "I can order three or four objects from lightest to heaviest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BANDING.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Benda sehari-hari yang beratnya jelas berbeda; benda yang beratnya bisa mirip (semangka, batu, kucing) tidak pernah muncul bersama. Jebakan: balon digambar besar padahal paling ringan; batu digambar kecil padahal berat. Knob: 3 → 4 benda."
+    },
+    {
+      "id": "MAT.SD1.UKUR.02",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "UKUR",
+        "nama": {
+          "id": "Berat dan isi",
+          "en": "Mass and capacity"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan wadah dari yang isinya paling sedikit ke yang paling banyak",
+        "en": "I can order containers from the one that holds the least to the one that holds the most"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD1.UKUR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Kapasitas belum ada di jenjang mana pun (catatan tinjauan TK B); di sini dimulai dengan wadah yang jelas berbeda: sendok, gelas, teko, ember, bak mandi, kolam. Jebakan: gambar sendok dibuat besar. Knob: 3 → 4 wadah."
+    },
+    {
+      "id": "MAT.SD1.WAKTU.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "WAKTU",
+        "nama": {
+          "id": "Jam dan kalender",
+          "en": "Clocks and calendars"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membaca jam tepat dan jam setengah, misalnya setengah 4 adalah pukul 3.30",
+        "en": "I can read o'clock and half past times, for example half past 3 is 3:30"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.JAM-BULAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gt.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Gambar jam dan kartu digital (03.30) dipilah ke rak 'pukul 3', 'setengah 4', dst. Jebakan bahasa Indonesia: 'setengah 4' = 3.30, bukan 4.30. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD1.WAKTU.02",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "WAKTU",
+        "nama": {
+          "id": "Jam dan kalender",
+          "en": "Clocks and calendars"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan nama hari dan nama bulan, mulai dari hari atau bulan mana pun",
+        "en": "I can put the days of the week and the months of the year in order, starting from any day or month"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gt.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Judul memberi titik mulai ('mulai Jumat'); urutan melewati akhir pekan atau akhir tahun (Sabtu, Minggu, Senin; November, Desember, Januari). Jebakan: Minggu ditaruh di depan; Januari sesudah Desember. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD1.DATA.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Diagram Carroll",
+          "en": "Carroll diagrams"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke diagram Carroll dengan dua ciri, misalnya merah atau bukan dan bulat atau bersudut",
+        "en": "I can sort objects into a Carroll diagram using two features, such as red or not red and round or with corners"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.DATA.02",
+        "MAT.SD1.BANGUN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "TWM.06"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Empat kotak: merah & bulat, merah & bersudut, bukan merah & bulat, bukan merah & bersudut. Bukti: semua benda di kotak yang memenuhi dua ciri sekaligus. Knob: kotak 2 → 4 (ciri kedua menyusul)."
+    },
+    {
+      "id": "MAT.SD1.POLA.01",
+      "track": "MAT",
+      "level": "SD1",
+      "unit": {
+        "id": "POLA",
+        "nama": {
+          "id": "Pola benda",
+          "en": "Patterns of objects"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa melanjutkan pola berulang yang berubah ukuran atau arah, misalnya atas, kanan, bawah, atas, kanan, bawah",
+        "en": "I can continue a repeating pattern that changes size or direction, for example up, right, down, up, right, down"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.06"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "TWM.02"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pola"
+      ],
+      "catatan": "Satuan pola AB dan ABC dari benda yang sama tapi berbeda ukuran atau arah panah (unsur dalam satu satuan selalu berbeda karena palet mesin pola memakai id unik), sehingga anak memperhatikan ciri, bukan jenis benda. Knob: slot kosong 1 → 3, pengecoh 0 → 1."
+    }
+  ]
+}

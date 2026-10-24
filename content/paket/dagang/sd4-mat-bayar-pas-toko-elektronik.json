@@ -1,0 +1,133 @@
+{
+  "id": "sd4-mat-bayar-pas-toko-elektronik",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD4.NILAI-TEMPAT.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uang Pas di Toko Elektronik",
+      "instruksi": "Bayar harga barang dengan uang pas. Coba pakai lembar besar dulu.",
+      "radio": "radio",
+      "kipas": "kipas angin kecil",
+      "senter": "senter",
+      "lampu": "lampu meja",
+      "earphone": "earphone",
+      "baterai": "baterai",
+      "jam": "jam weker",
+      "kabel": "kabel",
+      "kalkulator": "kalkulator",
+      "mouse": "mouse"
+    },
+    "en": {
+      "judul": "Exact Money at the Electronics Shop",
+      "instruksi": "Pay the price exactly. Try using the big notes first.",
+      "radio": "radio",
+      "kipas": "small fan",
+      "senter": "torch",
+      "lampu": "desk lamp",
+      "earphone": "earphones",
+      "baterai": "batteries",
+      "jam": "alarm clock",
+      "kabel": "cable",
+      "kalkulator": "calculator",
+      "mouse": "mouse"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu barang per pembeli, harga sampai Rp92.000"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-elektronik",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    50000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "radio",
+      "labelKey": "radio",
+      "price": 87000,
+      "emoji": "📻"
+    },
+    {
+      "id": "kipas",
+      "labelKey": "kipas",
+      "price": 64000,
+      "emoji": "🪭"
+    },
+    {
+      "id": "senter",
+      "labelKey": "senter",
+      "price": 23000,
+      "emoji": "🔦"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "lampu",
+      "price": 79000,
+      "emoji": "💡"
+    },
+    {
+      "id": "earphone",
+      "labelKey": "earphone",
+      "price": 58000,
+      "emoji": "🎧"
+    },
+    {
+      "id": "baterai",
+      "labelKey": "baterai",
+      "price": 16000,
+      "emoji": "🔋"
+    },
+    {
+      "id": "jam",
+      "labelKey": "jam",
+      "price": 46000,
+      "emoji": "⏰"
+    },
+    {
+      "id": "kabel",
+      "labelKey": "kabel",
+      "price": 31000,
+      "emoji": "🔌"
+    },
+    {
+      "id": "kalkulator",
+      "labelKey": "kalkulator",
+      "price": 92000,
+      "emoji": "🧮"
+    },
+    {
+      "id": "mouse",
+      "labelKey": "mouse",
+      "price": 74000,
+      "emoji": "🖱️"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 100000,
+    "kindsMax": 1
+  }
+}

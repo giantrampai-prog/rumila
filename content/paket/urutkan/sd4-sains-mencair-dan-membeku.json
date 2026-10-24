@@ -1,0 +1,180 @@
+{
+  "id": "sd4-sains-mencair-dan-membeku",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.WUJUD-ZAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mencair dan Membeku",
+      "instruksi": "Baca judulnya, lalu susun langkah perubahan wujud dari awal sampai akhir.",
+      "s-mencair": "Es batu mencair",
+      "mencair-es": "es batu padat dari kulkas",
+      "mencair-hangat": "kena udara hangat: partikel bergetar makin kuat",
+      "mencair-lumer": "es mulai lumer di tepinya",
+      "mencair-air": "tinggal air cair di gelas, zatnya tetap air",
+      "s-membeku": "Air membeku",
+      "membeku-air": "air cair dituang ke cetakan",
+      "membeku-dingin": "masuk freezer: partikel melambat",
+      "membeku-kunci": "partikel berhenti berpindah, hanya bergetar di tempat",
+      "membeku-es": "jadi es batu padat",
+      "s-cokelat": "Cokelat meleleh lalu mengeras",
+      "cokelat-batang": "cokelat batang padat",
+      "cokelat-jemur": "tertinggal di bawah terik matahari",
+      "cokelat-leleh": "cokelat meleleh jadi cair",
+      "cokelat-keras": "didinginkan, cokelat mengeras lagi",
+      "s-lilin": "Lilin dicetak ulang",
+      "lilin-padat": "potongan lilin padat",
+      "lilin-panci": "dipanaskan sampai meleleh",
+      "lilin-tuang": "lilin cair dituang ke cetakan",
+      "lilin-beku": "mendingin dan membeku jadi lilin baru"
+    },
+    "en": {
+      "judul": "Melting and Freezing",
+      "instruksi": "Read the title, then put the steps of the change of state in order.",
+      "s-mencair": "An ice cube melts",
+      "mencair-es": "solid ice cube from the freezer",
+      "mencair-hangat": "warm air: the particles vibrate harder",
+      "mencair-lumer": "the ice starts to melt at the edges",
+      "mencair-air": "only liquid water is left, still the same substance",
+      "s-membeku": "Water freezes",
+      "membeku-air": "liquid water poured into a mould",
+      "membeku-dingin": "into the freezer: the particles slow down",
+      "membeku-kunci": "the particles stop moving around and just vibrate in place",
+      "membeku-es": "it becomes a solid ice cube",
+      "s-cokelat": "Chocolate melts, then sets",
+      "cokelat-batang": "a solid chocolate bar",
+      "cokelat-jemur": "left in hot sunshine",
+      "cokelat-leleh": "the chocolate melts into a liquid",
+      "cokelat-keras": "cooled down, the chocolate sets again",
+      "s-lilin": "Remaking a candle",
+      "lilin-padat": "pieces of solid wax",
+      "lilin-panci": "heated until it melts",
+      "lilin-tuang": "liquid wax poured into a mould",
+      "lilin-beku": "it cools and freezes into a new candle"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah langkah: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "mencair",
+      "titleKey": "s-mencair",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "mencair-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "hangat",
+          "labelKey": "mencair-hangat",
+          "emoji": "🌡️"
+        },
+        {
+          "id": "lumer",
+          "labelKey": "mencair-lumer",
+          "emoji": "💧"
+        },
+        {
+          "id": "air",
+          "labelKey": "mencair-air",
+          "emoji": "🥛"
+        }
+      ]
+    },
+    {
+      "id": "membeku",
+      "titleKey": "s-membeku",
+      "steps": [
+        {
+          "id": "air",
+          "labelKey": "membeku-air",
+          "emoji": "💧"
+        },
+        {
+          "id": "dingin",
+          "labelKey": "membeku-dingin",
+          "emoji": "❄️"
+        },
+        {
+          "id": "kunci",
+          "labelKey": "membeku-kunci",
+          "emoji": "🔲"
+        },
+        {
+          "id": "es",
+          "labelKey": "membeku-es",
+          "emoji": "🧊"
+        }
+      ]
+    },
+    {
+      "id": "cokelat",
+      "titleKey": "s-cokelat",
+      "steps": [
+        {
+          "id": "batang",
+          "labelKey": "cokelat-batang",
+          "emoji": "🍫"
+        },
+        {
+          "id": "jemur",
+          "labelKey": "cokelat-jemur",
+          "emoji": "☀️"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "cokelat-leleh",
+          "emoji": "🫗"
+        },
+        {
+          "id": "keras",
+          "labelKey": "cokelat-keras",
+          "emoji": "🍫"
+        }
+      ]
+    },
+    {
+      "id": "lilin",
+      "titleKey": "s-lilin",
+      "steps": [
+        {
+          "id": "padat",
+          "labelKey": "lilin-padat",
+          "emoji": "🕯️"
+        },
+        {
+          "id": "panci",
+          "labelKey": "lilin-panci",
+          "emoji": "🔥"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "lilin-tuang",
+          "emoji": "🫗"
+        },
+        {
+          "id": "beku",
+          "labelKey": "lilin-beku",
+          "emoji": "🕯️"
+        }
+      ]
+    }
+  ]
+}

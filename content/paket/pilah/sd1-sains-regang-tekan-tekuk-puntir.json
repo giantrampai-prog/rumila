@@ -1,0 +1,177 @@
+{
+  "id": "sd1-sains-regang-tekan-tekuk-puntir",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Regang, Tekan, Tekuk, Puntir",
+      "instruksi": "Lihat bagaimana bentuk tiap benda berubah, lalu taruh ke rak caranya.",
+      "b-regang": "diregangkan",
+      "b-tekan": "ditekan",
+      "b-tekuk": "ditekuk",
+      "b-puntir": "dipuntir",
+      "i-karet": "karet gelang ditarik jadi panjang",
+      "i-pegas": "pegas mainan ditarik memanjang",
+      "i-adonan": "adonan mi ditarik memanjang",
+      "i-spons": "spons diinjak jadi gepeng",
+      "i-kaleng": "kaleng diinjak jadi penyok",
+      "i-plastisin": "plastisin ditekan jadi pipih",
+      "i-sedotan": "sedotan dibengkokkan",
+      "i-kawat": "kawat dibengkokkan jadi kait",
+      "i-kertas": "kertas dilipat dua",
+      "i-handuk": "handuk basah diperas memutar",
+      "i-tali": "tali dipilin",
+      "i-kain": "kain dipelintir"
+    },
+    "en": {
+      "judul": "Stretch, Squash, Bend, Twist",
+      "instruksi": "See how each object changes shape, then put it on the shelf for how it happened.",
+      "b-regang": "stretched",
+      "b-tekan": "squashed",
+      "b-tekuk": "bent",
+      "b-puntir": "twisted",
+      "i-karet": "rubber band pulled long",
+      "i-pegas": "toy spring pulled longer",
+      "i-adonan": "noodle dough pulled long",
+      "i-spons": "sponge stepped on goes flat",
+      "i-kaleng": "can stepped on gets dented",
+      "i-plastisin": "clay pressed flat",
+      "i-sedotan": "straw bent over",
+      "i-kawat": "wire bent into a hook",
+      "i-kertas": "paper folded in half",
+      "i-handuk": "wet towel wrung out",
+      "i-tali": "rope twisted",
+      "i-kain": "cloth twisted round"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak cara: 2 (regang, tekan) → 4 (tambah tekuk, puntir)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "regang",
+      "labelKey": "b-regang",
+      "emoji": "↔️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "tekan",
+      "labelKey": "b-tekan",
+      "emoji": "⬇️",
+      "color": "#fce4ec"
+    },
+    {
+      "id": "tekuk",
+      "labelKey": "b-tekuk",
+      "emoji": "↪️",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "puntir",
+      "labelKey": "b-puntir",
+      "emoji": "🔄",
+      "color": "#fff8e1"
+    }
+  ],
+  "items": [
+    {
+      "id": "karet",
+      "labelKey": "i-karet",
+      "bin": "regang",
+      "emoji": "⭕",
+      "color": "#ff8a65"
+    },
+    {
+      "id": "pegas",
+      "labelKey": "i-pegas",
+      "bin": "regang",
+      "emoji": "🌀"
+    },
+    {
+      "id": "adonan",
+      "labelKey": "i-adonan",
+      "bin": "regang",
+      "emoji": "🍜"
+    },
+    {
+      "id": "spons",
+      "labelKey": "i-spons",
+      "bin": "tekan",
+      "emoji": "🧽"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "tekan",
+      "emoji": "🥫"
+    },
+    {
+      "id": "plastisin",
+      "labelKey": "i-plastisin",
+      "bin": "tekan",
+      "emoji": "🟣",
+      "color": "#ba68c8"
+    },
+    {
+      "id": "sedotan",
+      "labelKey": "i-sedotan",
+      "bin": "tekuk",
+      "emoji": "🥤"
+    },
+    {
+      "id": "kawat",
+      "labelKey": "i-kawat",
+      "bin": "tekuk",
+      "emoji": "🪝"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "tekuk",
+      "emoji": "📄"
+    },
+    {
+      "id": "handuk",
+      "labelKey": "i-handuk",
+      "bin": "puntir",
+      "emoji": "🟦",
+      "color": "#81d4fa"
+    },
+    {
+      "id": "tali",
+      "labelKey": "i-tali",
+      "bin": "puntir",
+      "emoji": "🪢"
+    },
+    {
+      "id": "kain",
+      "labelKey": "i-kain",
+      "bin": "puntir",
+      "emoji": "🧣"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,238 @@
+{
+  "id": "sd5-sains-bumi-bulan-orbit",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUMI-ORBIT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Berputar dan Beredar",
+      "instruksi": "Baca pertanyaannya, lalu sentuh jawaban tentang gerak Bumi dan Bulan.",
+      "b-pilihan": "pilihan",
+      "i-setahun": "sekitar 365 hari (1 tahun)",
+      "i-sehari": "24 jam (1 hari)",
+      "i-sebulan": "sekitar 1 bulan",
+      "i-bulan": "Bulan",
+      "i-matahari": "Matahari",
+      "i-buatan": "satelit buatan manusia",
+      "i-bumi": "Bumi",
+      "i-elips": "lonjong sedikit (elips)",
+      "i-kotak": "persegi",
+      "i-lurus": "garis lurus",
+      "i-mengorbit": "mengitari benda yang lebih besar",
+      "i-bercahaya": "memancarkan cahaya sendiri",
+      "i-diam": "diam di satu tempat di langit",
+      "p-r1": "Berapa lama Bumi mengelilingi Matahari satu kali?",
+      "p-r2": "Berapa lama Bumi berputar pada porosnya satu kali?",
+      "p-r3": "Berapa lama Bulan mengelilingi Bumi satu kali?",
+      "p-r4": "Satelit alami yang mengitari Bumi adalah…",
+      "p-r5": "Benda buatan yang mengitari Bumi untuk siaran TV dan ramalan cuaca disebut…",
+      "p-r6": "Bentuk lintasan Bumi mengelilingi Matahari adalah…",
+      "p-r7": "Benda di pusat tata surya yang dikelilingi Bumi adalah…",
+      "p-r8": "Satelit adalah benda yang…"
+    },
+    "en": {
+      "judul": "Spinning and Orbiting",
+      "instruksi": "Read the question, then touch the answer about how the Earth and Moon move.",
+      "b-pilihan": "choices",
+      "i-setahun": "about 365 days (1 year)",
+      "i-sehari": "24 hours (1 day)",
+      "i-sebulan": "about 1 month",
+      "i-bulan": "the Moon",
+      "i-matahari": "the Sun",
+      "i-buatan": "an artificial satellite",
+      "i-bumi": "the Earth",
+      "i-elips": "a slightly squashed circle (ellipse)",
+      "i-kotak": "a square",
+      "i-lurus": "a straight line",
+      "i-mengorbit": "goes round a larger object",
+      "i-bercahaya": "gives off its own light",
+      "i-diam": "stays still in one place in the sky",
+      "p-r1": "How long does the Earth take to go round the Sun once?",
+      "p-r2": "How long does the Earth take to spin once on its axis?",
+      "p-r3": "How long does the Moon take to go round the Earth once?",
+      "p-r4": "The natural satellite that goes round the Earth is…",
+      "p-r5": "A human-made object that orbits the Earth for TV and weather forecasts is…",
+      "p-r6": "The shape of the Earth's path around the Sun is…",
+      "p-r7": "The object at the centre of the Solar System that the Earth goes round is…",
+      "p-r8": "A satellite is an object that…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "setahun",
+      "labelKey": "i-setahun",
+      "bin": "pilihan",
+      "emoji": "📅"
+    },
+    {
+      "id": "sehari",
+      "labelKey": "i-sehari",
+      "bin": "pilihan",
+      "emoji": "🕛"
+    },
+    {
+      "id": "sebulan",
+      "labelKey": "i-sebulan",
+      "bin": "pilihan",
+      "emoji": "🗓️"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "pilihan",
+      "emoji": "🌕"
+    },
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "buatan",
+      "labelKey": "i-buatan",
+      "bin": "pilihan",
+      "emoji": "🛰️"
+    },
+    {
+      "id": "bumi",
+      "labelKey": "i-bumi",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "elips",
+      "labelKey": "i-elips",
+      "bin": "pilihan",
+      "emoji": "⬭"
+    },
+    {
+      "id": "kotak",
+      "labelKey": "i-kotak",
+      "bin": "pilihan",
+      "emoji": "⬛"
+    },
+    {
+      "id": "lurus",
+      "labelKey": "i-lurus",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "mengorbit",
+      "labelKey": "i-mengorbit",
+      "bin": "pilihan",
+      "emoji": "🔄"
+    },
+    {
+      "id": "bercahaya",
+      "labelKey": "i-bercahaya",
+      "bin": "pilihan",
+      "emoji": "✨"
+    },
+    {
+      "id": "diam",
+      "labelKey": "i-diam",
+      "bin": "pilihan",
+      "emoji": "📍"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "setahun",
+        "sehari",
+        "sebulan"
+      ],
+      "correct": "setahun"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "sehari",
+        "setahun",
+        "sebulan"
+      ],
+      "correct": "sehari"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "sebulan",
+        "sehari",
+        "setahun"
+      ],
+      "correct": "sebulan"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "bulan",
+        "matahari",
+        "buatan"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "buatan",
+        "bulan",
+        "matahari"
+      ],
+      "correct": "buatan"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "elips",
+        "kotak",
+        "lurus"
+      ],
+      "correct": "elips"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "matahari",
+        "bulan",
+        "bumi"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "mengorbit",
+        "bercahaya",
+        "diam"
+      ],
+      "correct": "mengorbit"
+    }
+  ]
+}

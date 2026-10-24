@@ -1,0 +1,469 @@
+{
+  "id": "sd6-mat-peluang-pecahan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.PELUANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Peluang dalam Pecahan",
+      "instruksi": "Peluang = banyak hasil yang diinginkan dibagi banyak semua hasil. Sentuh jawabannya.",
+      "q1": "Kantong: 3 biru dan 7 merah. Peluang terambil biru …",
+      "c1": "3/10",
+      "c2": "3/7",
+      "c3": "7/10",
+      "c4": "1/3",
+      "q2": "Dadu dilempar. Peluang muncul angka genap …",
+      "c5": "3/6",
+      "c6": "2/6",
+      "c7": "1/6",
+      "c8": "3/3",
+      "q3": "Dadu dilempar. Peluang muncul angka 5 …",
+      "c9": "5/6",
+      "c10": "1/5",
+      "c11": "5/1",
+      "q4": "Dadu dilempar. Peluang muncul angka lebih dari 4 …",
+      "c12": "4/6",
+      "q5": "Kantong: 2 merah, 3 biru, 5 hijau. Peluang terambil bukan hijau …",
+      "c13": "5/10",
+      "c14": "2/10",
+      "c15": "5/5",
+      "q6": "Kartu bernomor 1 sampai 20. Peluang terambil kelipatan 5 …",
+      "c16": "4/20",
+      "c17": "5/20",
+      "c18": "1/20",
+      "c19": "15/20",
+      "q7": "Roda putar 8 bagian sama, 3 bagian kuning. Peluang berhenti di kuning …",
+      "c20": "3/8",
+      "c21": "5/8",
+      "c22": "3/5",
+      "c23": "1/8",
+      "q8": "Satu huruf diambil dari kata MATEMATIKA. Peluang terambil huruf A …",
+      "c24": "1/10",
+      "q9": "Dadu biasa dilempar. Peluang muncul angka 7 …",
+      "c25": "0",
+      "c26": "1/7",
+      "c27": "7/6",
+      "q10": "Dadu biasa dilempar. Peluang muncul angka 1 sampai 6 …",
+      "c28": "1",
+      "c29": "6",
+      "q11": "Satu kali lempar dadu. Dua kejadian mana yang saling lepas (tidak bisa terjadi bersamaan)?",
+      "c30": "genap & ganjil",
+      "c31": "genap & lebih dari 3",
+      "c32": "angka 2 & genap",
+      "c33": "kurang dari 4 & ganjil",
+      "q12": "Kartu bernomor 1 sampai 10. Dua kejadian mana yang saling lepas?",
+      "c34": "prima & kelipatan 4",
+      "c35": "prima & ganjil",
+      "c36": "genap & kelipatan 4",
+      "c37": "ganjil & lebih dari 5",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Probability as a Fraction",
+      "instruksi": "Probability = number of wanted outcomes divided by all possible outcomes. Touch the answer.",
+      "q1": "Bag: 3 blue and 7 red. The probability of blue is …",
+      "c1": "3/10",
+      "c2": "3/7",
+      "c3": "7/10",
+      "c4": "1/3",
+      "q2": "A dice is rolled. The probability of an even number is …",
+      "c5": "3/6",
+      "c6": "2/6",
+      "c7": "1/6",
+      "c8": "3/3",
+      "q3": "A dice is rolled. The probability of a 5 is …",
+      "c9": "5/6",
+      "c10": "1/5",
+      "c11": "5/1",
+      "q4": "A dice is rolled. The probability of more than 4 is …",
+      "c12": "4/6",
+      "q5": "Bag: 2 red, 3 blue, 5 green. The probability of not green is …",
+      "c13": "5/10",
+      "c14": "2/10",
+      "c15": "5/5",
+      "q6": "Cards numbered 1 to 20. The probability of a multiple of 5 is …",
+      "c16": "4/20",
+      "c17": "5/20",
+      "c18": "1/20",
+      "c19": "15/20",
+      "q7": "A spinner has 8 equal parts, 3 yellow. The probability of yellow is …",
+      "c20": "3/8",
+      "c21": "5/8",
+      "c22": "3/5",
+      "c23": "1/8",
+      "q8": "One letter is picked from the word MATEMATIKA. The probability of A is …",
+      "c24": "1/10",
+      "q9": "A normal dice is rolled. The probability of a 7 is …",
+      "c25": "0",
+      "c26": "1/7",
+      "c27": "7/6",
+      "q10": "A normal dice is rolled. The probability of a number from 1 to 6 is …",
+      "c28": "1",
+      "c29": "6",
+      "q11": "One roll of a dice. Which two events are mutually exclusive (cannot happen together)?",
+      "c30": "even & odd",
+      "c31": "even & more than 3",
+      "c32": "a 2 & even",
+      "c33": "less than 4 & odd",
+      "q12": "Cards numbered 1 to 10. Which two events are mutually exclusive?",
+      "c34": "prime & multiple of 4",
+      "c35": "prime & odd",
+      "c36": "even & multiple of 4",
+      "c37": "odd & more than 5",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan",
+      "scale": 0.42
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c9",
+        "c10",
+        "c11"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c12",
+        "c7",
+        "c5"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c1",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18",
+        "c19"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c20",
+        "c21",
+        "c22",
+        "c23"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c1",
+        "c24",
+        "c2",
+        "c14"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c7"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c28",
+        "c25",
+        "c7",
+        "c29"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c30",
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c34",
+        "c35",
+        "c36",
+        "c37"
+      ],
+      "correct": "c34"
+    }
+  ]
+}

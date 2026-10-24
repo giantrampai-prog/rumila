@@ -1,0 +1,113 @@
+{
+  "id": "sd1-sains-ukur-jengkal-temuan-kebun",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.SD1.PENGAMATAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ukur Batang dan Daun dengan Jengkal",
+      "instruksi": "Taruh jengkal rapat dari ujung ke ujung, lalu hitung jengkalnya.",
+      "daunpisang": "daun pisang",
+      "batangtebu": "batang tebu",
+      "bambu": "batang bambu",
+      "rantingbesar": "ranting besar",
+      "akar": "akar pohon yang menjalar",
+      "batangpisang": "batang pisang rebah",
+      "labu": "labu panjang"
+    },
+    "en": {
+      "judul": "Measure Stems and Leaves in Spans",
+      "instruksi": "Put hand spans end to end with no gaps, then count the spans.",
+      "daunpisang": "banana leaf",
+      "batangtebu": "sugar cane stalk",
+      "bambu": "bamboo pole",
+      "rantingbesar": "big branch",
+      "akar": "long tree root",
+      "batangpisang": "fallen banana trunk",
+      "labu": "long gourd"
+    }
+  },
+  "knobs": {
+    "maxSpans": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "panjang maksimum (jengkal) temuan yang muncul"
+    },
+    "snap": {
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = jengkal menempel rapat otomatis; 0 = bebas (bisa bercelah/tumpang tindih)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "jengkal",
+  "items": [
+    {
+      "id": "daunpisang",
+      "labelKey": "daunpisang",
+      "role": "benda",
+      "emoji": "🍃",
+      "value": 3,
+      "width": 1.8
+    },
+    {
+      "id": "batangtebu",
+      "labelKey": "batangtebu",
+      "role": "benda",
+      "emoji": "🎋",
+      "value": 4,
+      "width": 2.4
+    },
+    {
+      "id": "bambu",
+      "labelKey": "bambu",
+      "role": "benda",
+      "emoji": "🎍",
+      "value": 5,
+      "width": 3.0
+    },
+    {
+      "id": "rantingbesar",
+      "labelKey": "rantingbesar",
+      "role": "benda",
+      "emoji": "🌿",
+      "value": 6,
+      "width": 3.4
+    },
+    {
+      "id": "akar",
+      "labelKey": "akar",
+      "role": "benda",
+      "emoji": "🪵",
+      "value": 7,
+      "width": 3.7
+    },
+    {
+      "id": "batangpisang",
+      "labelKey": "batangpisang",
+      "role": "benda",
+      "emoji": "🌴",
+      "value": 8,
+      "width": 4.0
+    },
+    {
+      "id": "labu",
+      "labelKey": "labu",
+      "role": "benda",
+      "emoji": "🥒",
+      "value": 2,
+      "width": 1.2
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "id": "sd3-sains-fosil-atau-bukan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.FOSIL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Fosil atau Bukan?",
+      "instruksi": "Fosil adalah jejak makhluk zaman dulu di batu. Taruh tiap temuan ke raknya.",
+      "b-fosil": "fosil",
+      "b-bukan": "bukan fosil",
+      "i-cetakandaun": "cetakan daun di batu",
+      "i-jejakdino": "jejak kaki dinosaurus di batu",
+      "i-amonit": "cangkang laut kuno yang membatu",
+      "i-tulangdino": "tulang dinosaurus di tebing",
+      "i-ikanbatu": "cetakan ikan di batu",
+      "i-damar": "serangga di dalam damar membatu",
+      "i-mainan": "mainan dinosaurus plastik",
+      "i-tulangayam": "tulang ayam sisa makan",
+      "i-kerangsegar": "kerang segar di pantai",
+      "i-batukali": "batu kali polos",
+      "i-daunkering": "daun kering di halaman",
+      "i-gambardino": "gambar dinosaurus di buku"
+    },
+    "en": {
+      "judul": "Fossil or Not?",
+      "instruksi": "A fossil is a trace of an ancient living thing in rock. Put each find on its shelf.",
+      "b-fosil": "fossil",
+      "b-bukan": "not a fossil",
+      "i-cetakandaun": "leaf print in rock",
+      "i-jejakdino": "dinosaur footprint in rock",
+      "i-amonit": "ancient shell turned to stone",
+      "i-tulangdino": "dinosaur bone in a cliff",
+      "i-ikanbatu": "fish print in rock",
+      "i-damar": "insect trapped in ancient amber",
+      "i-mainan": "plastic toy dinosaur",
+      "i-tulangayam": "leftover chicken bone",
+      "i-kerangsegar": "fresh shell on the beach",
+      "i-batukali": "plain river stone",
+      "i-daunkering": "dry leaf in the yard",
+      "i-gambardino": "dinosaur picture in a book"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "fosil",
+      "labelKey": "b-fosil",
+      "emoji": "🦴",
+      "color": "#efebe9"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-bukan",
+      "emoji": "❌",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "cetakandaun",
+      "labelKey": "i-cetakandaun",
+      "bin": "fosil",
+      "emoji": "🍃",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "jejakdino",
+      "labelKey": "i-jejakdino",
+      "bin": "fosil",
+      "emoji": "🦶",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "amonit",
+      "labelKey": "i-amonit",
+      "bin": "fosil",
+      "emoji": "🐚",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "tulangdino",
+      "labelKey": "i-tulangdino",
+      "bin": "fosil",
+      "emoji": "🦴",
+      "color": "#a1887f"
+    },
+    {
+      "id": "ikanbatu",
+      "labelKey": "i-ikanbatu",
+      "bin": "fosil",
+      "emoji": "🐟",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "damar",
+      "labelKey": "i-damar",
+      "bin": "fosil",
+      "emoji": "🟠"
+    },
+    {
+      "id": "mainan",
+      "labelKey": "i-mainan",
+      "bin": "bukan",
+      "emoji": "🦖"
+    },
+    {
+      "id": "tulangayam",
+      "labelKey": "i-tulangayam",
+      "bin": "bukan",
+      "emoji": "🍗"
+    },
+    {
+      "id": "kerangsegar",
+      "labelKey": "i-kerangsegar",
+      "bin": "bukan",
+      "emoji": "🐚"
+    },
+    {
+      "id": "batukali",
+      "labelKey": "i-batukali",
+      "bin": "bukan",
+      "emoji": "🪨"
+    },
+    {
+      "id": "daunkering",
+      "labelKey": "i-daunkering",
+      "bin": "bukan",
+      "emoji": "🍂"
+    },
+    {
+      "id": "gambardino",
+      "labelKey": "i-gambardino",
+      "bin": "bukan",
+      "emoji": "📖"
+    }
+  ],
+  "pilihan": []
+}

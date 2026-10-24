@@ -1,0 +1,159 @@
+{
+  "id": "sd6-sains-cegah-penyakit-menular",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PENYAKIT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Putus Rantai Kuman",
+      "instruksi": "Pilah tiap kebiasaan: mencegah penyakit menyebar, atau bisa menyebarkannya.",
+      "b-cegah": "mencegah penyebaran",
+      "b-sebar": "bisa menyebarkan penyakit",
+      "i-cucitangan": "cuci tangan dengan sabun sebelum makan",
+      "i-rebus": "merebus air minum sampai mendidih",
+      "i-tudung": "menutup makanan dari lalat",
+      "i-kuras": "menguras dan menutup bak air",
+      "i-kelambu": "tidur memakai kelambu",
+      "i-siku": "batuk ke lipatan siku",
+      "i-matang": "memasak daging sampai matang",
+      "i-airsungai": "minum air sungai tanpa dimasak",
+      "i-sikatgigi": "berbagi sikat gigi",
+      "i-kaleng": "membiarkan kaleng bekas berisi air hujan",
+      "i-tanpacuci": "makan buah tanpa dicuci",
+      "i-bersintangan": "bersin ke tangan lalu memegang gagang pintu",
+      "i-sampah": "membiarkan sampah terbuka dikerubungi lalat"
+    },
+    "en": {
+      "judul": "Break the Germ Chain",
+      "instruksi": "Sort each habit: it stops disease spreading, or it can spread it.",
+      "b-cegah": "stops the spread",
+      "b-sebar": "can spread disease",
+      "i-cucitangan": "washing hands with soap before eating",
+      "i-rebus": "boiling drinking water",
+      "i-tudung": "covering food from flies",
+      "i-kuras": "emptying and covering water tubs",
+      "i-kelambu": "sleeping under a mosquito net",
+      "i-siku": "coughing into your elbow",
+      "i-matang": "cooking meat all the way through",
+      "i-airsungai": "drinking river water without boiling it",
+      "i-sikatgigi": "sharing a toothbrush",
+      "i-kaleng": "leaving old cans full of rainwater",
+      "i-tanpacuci": "eating fruit without washing it",
+      "i-bersintangan": "sneezing into your hand, then touching a door handle",
+      "i-sampah": "leaving rubbish open for flies"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "cegah",
+      "labelKey": "b-cegah",
+      "emoji": "🛡️",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "sebar",
+      "labelKey": "b-sebar",
+      "emoji": "⚠️",
+      "color": "#ffcdd2"
+    }
+  ],
+  "items": [
+    {
+      "id": "cucitangan",
+      "labelKey": "i-cucitangan",
+      "bin": "cegah",
+      "emoji": "🧼"
+    },
+    {
+      "id": "rebus",
+      "labelKey": "i-rebus",
+      "bin": "cegah",
+      "emoji": "♨️"
+    },
+    {
+      "id": "tudung",
+      "labelKey": "i-tudung",
+      "bin": "cegah",
+      "emoji": "🍲"
+    },
+    {
+      "id": "kuras",
+      "labelKey": "i-kuras",
+      "bin": "cegah",
+      "emoji": "🪣"
+    },
+    {
+      "id": "kelambu",
+      "labelKey": "i-kelambu",
+      "bin": "cegah",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "siku",
+      "labelKey": "i-siku",
+      "bin": "cegah",
+      "emoji": "💪"
+    },
+    {
+      "id": "matang",
+      "labelKey": "i-matang",
+      "bin": "cegah",
+      "emoji": "🍗"
+    },
+    {
+      "id": "airsungai",
+      "labelKey": "i-airsungai",
+      "bin": "sebar",
+      "emoji": "🏞️"
+    },
+    {
+      "id": "sikatgigi",
+      "labelKey": "i-sikatgigi",
+      "bin": "sebar",
+      "emoji": "🪥"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "sebar",
+      "emoji": "🥫"
+    },
+    {
+      "id": "tanpacuci",
+      "labelKey": "i-tanpacuci",
+      "bin": "sebar",
+      "emoji": "🍎"
+    },
+    {
+      "id": "bersintangan",
+      "labelKey": "i-bersintangan",
+      "bin": "sebar",
+      "emoji": "🤧"
+    },
+    {
+      "id": "sampah",
+      "labelKey": "i-sampah",
+      "bin": "sebar",
+      "emoji": "🗑️"
+    }
+  ],
+  "pilihan": []
+}

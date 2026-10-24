@@ -1,0 +1,143 @@
+{
+  "id": "sd3-sains-produsen-konsumen-sawah-laut",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.RANTAI-MAKANAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Produsen atau Konsumen di Sawah dan Laut",
+      "instruksi": "Membuat makanan sendiri atau makan makhluk lain? Taruh ke raknya.",
+      "b-produsen": "produsen (membuat makanan sendiri)",
+      "b-konsumen": "konsumen (makan makhluk lain)",
+      "i-padi": "padi",
+      "i-jagung": "tanaman jagung",
+      "i-eceng": "eceng gondok",
+      "i-lamun": "lamun di dasar laut",
+      "i-kelapa": "pohon kelapa",
+      "i-tikus": "tikus sawah",
+      "i-belalang": "belalang",
+      "i-elang": "elang",
+      "i-udang": "udang",
+      "i-hiu": "hiu",
+      "i-kerbau": "kerbau"
+    },
+    "en": {
+      "judul": "Producer or Consumer in Rice Field and Sea",
+      "instruksi": "Makes its own food or eats other living things? Put it on its shelf.",
+      "b-produsen": "producer (makes its own food)",
+      "b-konsumen": "consumer (eats other living things)",
+      "i-padi": "rice plant",
+      "i-jagung": "corn plant",
+      "i-eceng": "water hyacinth",
+      "i-lamun": "seagrass",
+      "i-kelapa": "coconut tree",
+      "i-tikus": "rice-field rat",
+      "i-belalang": "grasshopper",
+      "i-elang": "eagle",
+      "i-udang": "shrimp",
+      "i-hiu": "shark",
+      "i-kerbau": "water buffalo"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah makhluk per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "produsen",
+      "labelKey": "b-produsen",
+      "emoji": "🌞",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "konsumen",
+      "labelKey": "b-konsumen",
+      "emoji": "🍽️",
+      "color": "#fff3e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "padi",
+      "labelKey": "i-padi",
+      "bin": "produsen",
+      "emoji": "🌾"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "produsen",
+      "emoji": "🌽"
+    },
+    {
+      "id": "eceng",
+      "labelKey": "i-eceng",
+      "bin": "produsen",
+      "emoji": "🪷"
+    },
+    {
+      "id": "lamun",
+      "labelKey": "i-lamun",
+      "bin": "produsen",
+      "emoji": "🌱"
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "i-kelapa",
+      "bin": "produsen",
+      "emoji": "🌴"
+    },
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "konsumen",
+      "emoji": "🐀"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "i-belalang",
+      "bin": "konsumen",
+      "emoji": "🦗"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "konsumen",
+      "emoji": "🦅"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "konsumen",
+      "emoji": "🦐"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "konsumen",
+      "emoji": "🦈"
+    },
+    {
+      "id": "kerbau",
+      "labelKey": "i-kerbau",
+      "bin": "konsumen",
+      "emoji": "🐃"
+    }
+  ],
+  "pilihan": []
+}

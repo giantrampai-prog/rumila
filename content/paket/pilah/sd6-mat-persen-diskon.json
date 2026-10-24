@@ -1,0 +1,501 @@
+{
+  "id": "sd6-mat-persen-diskon",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.PECAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pasar Diskon",
+      "instruksi": "Hitung persen atau pecahan dari jumlahnya. Baca baik-baik: besar diskon atau harga yang dibayar?",
+      "q1": "25% dari Rp80.000 adalah …",
+      "c1": "Rp20.000",
+      "c2": "Rp60.000",
+      "c3": "Rp3.200",
+      "c4": "Rp25.000",
+      "q2": "10% dari 450 adalah …",
+      "c5": "45",
+      "c6": "4,5",
+      "c7": "440",
+      "c8": "10",
+      "q3": "50% dari 36 adalah …",
+      "c9": "18",
+      "c10": "72",
+      "c11": "50",
+      "c12": "14",
+      "q4": "5% dari 200 adalah …",
+      "c13": "40",
+      "c14": "5",
+      "c15": "100",
+      "q5": "75% dari 40 adalah …",
+      "c16": "30",
+      "c17": "35",
+      "c18": "75",
+      "q6": "1% dari 900 adalah …",
+      "c19": "9",
+      "c20": "90",
+      "c21": "1",
+      "c22": "0,9",
+      "q7": "Harga Rp120.000 didiskon 25%. Yang dibayar …",
+      "c23": "Rp90.000",
+      "c24": "Rp30.000",
+      "c25": "Rp95.000",
+      "c26": "Rp100.000",
+      "q8": "30 dari 50 siswa suka sepak bola. Itu … persen",
+      "c27": "60%",
+      "c28": "30%",
+      "c29": "20%",
+      "c30": "50%",
+      "q9": "3/4 dari 48 adalah …",
+      "c31": "36",
+      "c32": "12",
+      "c33": "64",
+      "q10": "5/4 dari 20 adalah …",
+      "c34": "25",
+      "c35": "16",
+      "q11": "15% dari 60 adalah …",
+      "c36": "6",
+      "c37": "15",
+      "q12": "Diskon 20% dari Rp35.000 adalah …",
+      "c38": "Rp7.000",
+      "c39": "Rp28.000",
+      "c40": "Rp15.000",
+      "c41": "Rp3.500",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Discount Market",
+      "instruksi": "Work out the percentage or fraction of the amount. Read carefully: the discount or the price you pay?",
+      "q1": "25% of Rp80,000 is …",
+      "c1": "Rp20,000",
+      "c2": "Rp60,000",
+      "c3": "Rp3,200",
+      "c4": "Rp25,000",
+      "q2": "10% of 450 is …",
+      "c5": "45",
+      "c6": "4.5",
+      "c7": "440",
+      "c8": "10",
+      "q3": "50% of 36 is …",
+      "c9": "18",
+      "c10": "72",
+      "c11": "50",
+      "c12": "14",
+      "q4": "5% of 200 is …",
+      "c13": "40",
+      "c14": "5",
+      "c15": "100",
+      "q5": "75% of 40 is …",
+      "c16": "30",
+      "c17": "35",
+      "c18": "75",
+      "q6": "1% of 900 is …",
+      "c19": "9",
+      "c20": "90",
+      "c21": "1",
+      "c22": "0.9",
+      "q7": "A price of Rp120,000 has 25% off. You pay …",
+      "c23": "Rp90,000",
+      "c24": "Rp30,000",
+      "c25": "Rp95,000",
+      "c26": "Rp100,000",
+      "q8": "30 of 50 pupils like football. That is … percent",
+      "c27": "60%",
+      "c28": "30%",
+      "c29": "20%",
+      "c30": "50%",
+      "q9": "3/4 of 48 is …",
+      "c31": "36",
+      "c32": "12",
+      "c33": "64",
+      "q10": "5/4 of 20 is …",
+      "c34": "25",
+      "c35": "16",
+      "q11": "15% of 60 is …",
+      "c36": "6",
+      "c37": "15",
+      "q12": "A 20% discount on Rp35,000 is …",
+      "c38": "Rp7,000",
+      "c39": "Rp28,000",
+      "c40": "Rp15,000",
+      "c41": "Rp3,500",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan",
+      "scale": 0.75
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c8",
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c16",
+        "c8",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c19",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c23",
+        "c24",
+        "c25",
+        "c26"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c27",
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c31",
+        "c32",
+        "c33",
+        "c5"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c35",
+        "c14",
+        "c15"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c19",
+        "c36",
+        "c37",
+        "c5"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c38",
+        "c39",
+        "c40",
+        "c41"
+      ],
+      "correct": "c38"
+    }
+  ]
+}

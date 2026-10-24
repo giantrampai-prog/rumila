@@ -1,0 +1,486 @@
+{
+  "id": "sd6-mat-nilai-huruf",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.ALJABAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Huruf Rahasia",
+      "instruksi": "Huruf mewakili sebuah bilangan. Cari bilangannya supaya kalimat matematikanya benar.",
+      "q1": "n + 15 = 42. Nilai n …",
+      "c1": "27",
+      "c2": "57",
+      "c3": "37",
+      "c4": "42",
+      "q2": "50 − a = 18. Nilai a …",
+      "c5": "32",
+      "c6": "68",
+      "c7": "18",
+      "q3": "p − 9 = 26. Nilai p …",
+      "c8": "35",
+      "c9": "17",
+      "c10": "25",
+      "c11": "−35",
+      "q4": "7 + k = 3. Nilai k …",
+      "c12": "−4",
+      "c13": "4",
+      "c14": "10",
+      "c15": "−10",
+      "q5": "Jika x = 6, maka x + x + 5 = …",
+      "c16": "11",
+      "c17": "65",
+      "c18": "41",
+      "q6": "Umur kakak = umur adik + 4. Adik berumur 9 tahun. Kakak berumur …",
+      "c19": "13",
+      "c20": "5",
+      "c21": "36",
+      "c22": "94",
+      "q7": "a + b = 20 dan a = 13. Nilai b …",
+      "c23": "7",
+      "c24": "33",
+      "c25": "20",
+      "q8": "y − 12 = −5. Nilai y …",
+      "c26": "−17",
+      "c27": "−7",
+      "q9": "Harga buku b ditambah pena Rp8.000 sama dengan Rp23.000. Nilai b …",
+      "c28": "Rp15.000",
+      "c29": "Rp31.000",
+      "c30": "Rp8.000",
+      "c31": "Rp25.000",
+      "q10": "Jika m = 4, maka 30 − m − m = …",
+      "c32": "22",
+      "c33": "26",
+      "c34": "30",
+      "c35": "38",
+      "q11": "t + t = 18. Nilai t …",
+      "c36": "9",
+      "c37": "16",
+      "q12": "100 − n = 64. Nilai n …",
+      "c38": "164",
+      "c39": "64",
+      "c40": "46",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Secret Letters",
+      "instruksi": "The letter stands for a number. Find the number that makes the sentence true.",
+      "q1": "n + 15 = 42. What is n?",
+      "c1": "27",
+      "c2": "57",
+      "c3": "37",
+      "c4": "42",
+      "q2": "50 − a = 18. What is a?",
+      "c5": "32",
+      "c6": "68",
+      "c7": "18",
+      "q3": "p − 9 = 26. What is p?",
+      "c8": "35",
+      "c9": "17",
+      "c10": "25",
+      "c11": "−35",
+      "q4": "7 + k = 3. What is k?",
+      "c12": "−4",
+      "c13": "4",
+      "c14": "10",
+      "c15": "−10",
+      "q5": "If x = 6, then x + x + 5 = …",
+      "c16": "11",
+      "c17": "65",
+      "c18": "41",
+      "q6": "Older sibling's age = younger's age + 4. The younger is 9. The older is …",
+      "c19": "13",
+      "c20": "5",
+      "c21": "36",
+      "c22": "94",
+      "q7": "a + b = 20 and a = 13. What is b?",
+      "c23": "7",
+      "c24": "33",
+      "c25": "20",
+      "q8": "y − 12 = −5. What is y?",
+      "c26": "−17",
+      "c27": "−7",
+      "q9": "A book costing b plus a Rp8,000 pen is Rp23,000. What is b?",
+      "c28": "Rp15,000",
+      "c29": "Rp31,000",
+      "c30": "Rp8,000",
+      "c31": "Rp25,000",
+      "q10": "If m = 4, then 30 − m − m = …",
+      "c32": "22",
+      "c33": "26",
+      "c34": "30",
+      "c35": "38",
+      "q11": "t + t = 18. What is t?",
+      "c36": "9",
+      "c37": "16",
+      "q12": "100 − n = 64. What is n?",
+      "c38": "164",
+      "c39": "64",
+      "c40": "46",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c4"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c8",
+        "c9",
+        "c10",
+        "c11"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c12",
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c9",
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c19",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c23",
+        "c24",
+        "c19",
+        "c25"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c23",
+        "c26",
+        "c9",
+        "c27"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c28",
+        "c29",
+        "c30",
+        "c31"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c32",
+        "c33",
+        "c34",
+        "c35"
+      ],
+      "correct": "c32"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c36",
+        "c7",
+        "c37",
+        "c21"
+      ],
+      "correct": "c36"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c21",
+        "c38",
+        "c39",
+        "c40"
+      ],
+      "correct": "c21"
+    }
+  ]
+}

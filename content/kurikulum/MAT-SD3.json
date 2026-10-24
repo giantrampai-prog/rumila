@@ -1,0 +1,721 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.SD3.BILANGAN-1000.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "BILANGAN-1000",
+        "nama": {
+          "id": "Bilangan sampai 1.000",
+          "en": "Numbers to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun bilangan tiga angka dari ratusan, puluhan, dan satuan, termasuk angka nol, misalnya 300 + 5 = 305",
+        "en": "I can make 3-digit numbers from hundreds, tens and ones, including zeros, for example 300 + 5 = 305"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.BILANGAN-100.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Np.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Np.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu '300+45', '340+5', '200+145' dipilah ke rak 345; rak 354, 305, 350 berdekatan sebagai jebakan nilai tempat dan nol. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.BILANGAN-1000.02",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "BILANGAN-1000",
+        "nama": {
+          "id": "Bilangan sampai 1.000",
+          "en": "Numbers to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan bilangan tiga angka, termasuk yang angkanya sama tetapi letaknya berbeda",
+        "en": "I can order 3-digit numbers, including ones with the same digits in different places"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD3.BILANGAN-1000.01",
+        "MAT.SD2.BILANGAN-100.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Np.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Tiap urutan memuat bilangan dengan angka sama (409, 490, 904, 940) sehingga anak membandingkan ratusan, lalu puluhan. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD3.BILANGAN-1000.03",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "BILANGAN-1000",
+        "nama": {
+          "id": "Bilangan sampai 1.000",
+          "en": "Numbers to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa melanjutkan barisan loncat tetap maju atau mundur, misalnya 3, 30, atau 100, sampai 1.000",
+        "en": "I can continue a sequence with a constant step forwards or backwards, such as 3, 30 or 100, up to 1,000"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.BILANGAN-100.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nc.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nc.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "pilah"
+      ],
+      "catatan": "Judul memberi aturan suku-ke-suku ('loncat 4 dari 27', 'mundur 100 dari 940'). Jebakan: melewati ratusan (980, 990, 1.000). Pilah: potongan barisan ('27,31,35') ke rak aturannya (+4, +30, −100) — anak menyebut aturan suku-ke-suku. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD3.BILANGAN-1000.04",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "BILANGAN-1000",
+        "nama": {
+          "id": "Bilangan sampai 1.000",
+          "en": "Numbers to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membulatkan bilangan tiga angka ke puluhan atau ratusan terdekat",
+        "en": "I can round 3-digit numbers to the nearest ten or hundred"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.BILANGAN-100.04",
+        "MAT.SD3.BILANGAN-1000.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Np.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Dua paket: ke ratusan terdekat (rak 100–900) dan ke puluhan terdekat (rak 340–430). Jebakan: 349 ke 400 karena melihat puluhan 4 lalu membulatkan dua kali; 450 ke 400. Knob: rak 3 → 9."
+    },
+    {
+      "id": "MAT.SD3.TAMBAH-KURANG-1000.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "TAMBAH-KURANG-1000",
+        "nama": {
+          "id": "Tambah dan kurang sampai 1.000",
+          "en": "Adding and subtracting to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan pasangan yang melengkapi ke 100 dan ke ratusan berikutnya, misalnya 65 dan 35, 650 dan 350",
+        "en": "I can find the number that completes to 100 or to the next hundreds, for example 65 and 35, 650 and 350"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.TAMBAH-KURANG-100.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu '65→100', '365→400', '965→1000' semuanya masuk rak 35: pola yang sama di ratusan berbeda. Rak 35 dan 350 berdekatan sebagai jebakan. Jebakan umum: 65 + 45 (puluhan dilengkapi ke 10, satuan juga ke 10). Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.TAMBAH-KURANG-1000.02",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "TAMBAH-KURANG-1000",
+        "nama": {
+          "id": "Tambah dan kurang sampai 1.000",
+          "en": "Adding and subtracting to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjumlah dan mengurangi bilangan sampai tiga angka dengan menyimpan atau meminjam satu kali",
+        "en": "I can add and subtract numbers with up to three digits, regrouping once"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.TAMBAH-KURANG-100.02",
+        "MAT.SD3.BILANGAN-1000.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu soal dipilah ke rak hasil; tiap soal tepat satu kali menyimpan/meminjam (di satuan atau puluhan), dicek otomatis. Jebakan: lupa menyimpan sehingga hasil kurang 10. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.TAMBAH-KURANG-1000.03",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "TAMBAH-KURANG-1000",
+        "nama": {
+          "id": "Tambah dan kurang sampai 1.000",
+          "en": "Adding and subtracting to 1,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan bilangan yang disembunyikan kotak dalam kalimat tambah atau kurang, misalnya □ + 7 = 15",
+        "en": "I can find the number hidden by a box in an addition or subtraction sentence, for example □ + 7 = 15"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.TAMBAH-KURANG-100.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nc.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu kalimat dengan kotak di depan, tengah, atau belakang dipilah ke rak nilai kotak. Strategi: keluarga fakta (SD 2). Jebakan: □ − 4 = 9 dijawab 5. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.KALI-BAGI.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "KALI-BAGI",
+        "nama": {
+          "id": "Perkalian dan pembagian",
+          "en": "Multiplication and division"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai tabel perkalian 3, 4, 6, 8, dan 9",
+        "en": "I can use the 3, 4, 6, 8 and 9 times tables"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.KALI-BAGI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.07"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.06",
+          "note": "sifat tukar: 6 × 4 dan 4 × 6 satu rak"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Satu rak hasil menampung beberapa kartu (3 × 8, 8 × 3, 4 × 6, 6 × 4 semuanya 24): sifat tukar dan hubungan antartabel. Dua paket: tabel 3 & 4, tabel 6, 8, 9. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.KALI-BAGI.02",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "KALI-BAGI",
+        "nama": {
+          "id": "Perkalian dan pembagian",
+          "en": "Multiplication and division"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengalikan bilangan dengan 10 dan tahu angkanya bergeser satu tempat, misalnya 34 × 10 = 340",
+        "en": "I can multiply a number by 10 and know its digits move one place, for example 34 × 10 = 340"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD3.BILANGAN-1000.01",
+        "MAT.SD3.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Np.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu '34×10', '10×34', '34 puluhan' ke rak 340; rak 30/300, 40/400, 50/500 berdekatan sebagai jebakan jumlah nol. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.KALI-BAGI.03",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "KALI-BAGI",
+        "nama": {
+          "id": "Perkalian dan pembagian",
+          "en": "Multiplication and division"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membagi bilangan sampai 100 dengan 2, 3, 4, atau 5, misalnya 75 ÷ 3 = 25",
+        "en": "I can divide numbers up to 100 by 2, 3, 4 or 5, for example 75 ÷ 3 = 25"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD3.KALI-BAGI.01",
+        "MAT.SD2.KALI-BAGI.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.09"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu pembagian tanpa sisa dipilah ke rak hasil; satu rak berisi pembagian dengan pembagi berbeda (50 ÷ 2, 75 ÷ 3, 100 ÷ 4 = 25). Instruksi mengaitkan dengan perkalian. Knob: rak 4 → 10."
+    },
+    {
+      "id": "MAT.SD3.PECAHAN.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan",
+          "en": "Fractions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengelompokkan pecahan yang senilai, misalnya 1/2, 2/4, dan 5/10",
+        "en": "I can group equivalent fractions, for example 1/2, 2/4 and 5/10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.PECAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nf.06"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak = nilai pecahan (1/2, 1/5, 2/5, 3/5, 4/5, 1); kartu dalam perdua, perempat, perlima, persepuluh. Jebakan: 2/10 ke rak 1/2 (angka 2). Knob: rak 3 → 6."
+    },
+    {
+      "id": "MAT.SD3.PECAHAN.02",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan",
+          "en": "Fractions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan pecahan satuan dan pecahan berpenyebut sama, dan tahu 1/10 lebih kecil dari 1/2",
+        "en": "I can order unit fractions and fractions with the same denominator, knowing 1/10 is smaller than 1/2"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD3.PECAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nf.08"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Dua jenis urutan: pecahan satuan (penyebut makin besar → bagian makin kecil) dan berpenyebut sama (pembilang makin besar → makin besar). Jebakan: 1/10 dianggap terbesar karena angka 10. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD3.UANG.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "UANG",
+        "nama": {
+          "id": "Uang dan kembalian",
+          "en": "Money and change"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memberi kembalian dari Rp10.000, Rp20.000, Rp50.000, atau Rp100.000 untuk harga ribuan",
+        "en": "I can give change from Rp10,000, Rp20,000, Rp50,000 or Rp100,000 for prices in thousands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.UANG.02",
+        "MAT.SD3.TAMBAH-KURANG-1000.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nm.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Harga ribuan tidak bulat (63.000, 27.000); pembeli membayar dengan uang terkecil yang cukup. Anak menyusun kembalian dari laci. Strategi: lengkapi ke puluhan ribu, lalu ke uang yang dibayar. Jebakan: kembalian kurang Rp10.000 karena salah meminjam."
+    },
+    {
+      "id": "MAT.SD3.WAKTU.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "WAKTU",
+        "nama": {
+          "id": "Jadwal",
+          "en": "Timetables"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan kegiatan dalam jadwal menurut jam digitalnya",
+        "en": "I can put the activities in a timetable in order by their digital times"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.WAKTU.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gt.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gt.03"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Kartu jam digital (06.45, 07.10, 09.30) disusun dari paling awal. Jebakan: 09.05 sesudah 09.30; jadwal siang memakai jam 12-an lalu 01-an (12 jam): 12.15 lebih awal dari 01.20. Pagi dan siang tidak dicampur dalam satu urutan. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD3.GEOMETRI.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Bangun, sudut, dan simetri",
+          "en": "Shapes, angles and symmetry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan segi banyak beraturan dan tidak beraturan",
+        "en": "I can tell regular polygons from irregular polygons"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.GEOMETRI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "TWM.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Beraturan = semua sisi sama panjang dan semua sudut sama besar. Jebakan utama: belah ketupat (sisi sama, sudut tidak) dan persegi panjang (sudut sama, sisi tidak). Knob: bangun 6 → 9."
+    },
+    {
+      "id": "MAT.SD3.GEOMETRI.02",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Bangun, sudut, dan simetri",
+          "en": "Shapes, angles and symmetry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membandingkan sudut dengan sudut siku: lebih kecil, sama, lebih besar, atau garis lurus",
+        "en": "I can compare angles with a right angle: smaller, equal, larger, or a straight line"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD3.GEOMETRI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.10"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Sudut antara dua jarum jam tepat: pukul 3 dan 9 siku, pukul 6 garis lurus (dua siku), pukul 1, 2, 10, 11 lebih kecil, pukul 4, 5, 7, 8 lebih besar. Jebakan: pukul 9 dianggap bukan siku karena arahnya ke kiri. Knob: jam 5 → 8."
+    },
+    {
+      "id": "MAT.SD3.GEOMETRI.03",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Bangun, sudut, dan simetri",
+          "en": "Shapes, angles and symmetry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan garis simetri tegak, mendatar, keduanya, atau tidak ada pada huruf",
+        "en": "I can find vertical, horizontal, both or no lines of symmetry in letters"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.GEOMETRI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.09"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Empat rak: tegak (A, M, T), mendatar (B, C, D), keduanya (H, I, O, X), tidak ada (F, N, S, Z). Jebakan: N, S, Z; huruf K mendatar. Knob: rak 2 → 4."
+    },
+    {
+      "id": "MAT.SD3.UKUR.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "UKUR",
+        "nama": {
+          "id": "Satuan ukur, luas, dan keliling",
+          "en": "Units, area and perimeter"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih satuan yang cocok untuk mengukur: cm, m, km, g, kg, ml, atau l",
+        "en": "I can choose a suitable unit to measure with: cm, m, km, g, kg, ml or l"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.UKUR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.06"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.07"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Benda dan jarak sehari-hari dipilah ke satuan yang masuk akal (pensil → cm, pintu → m, jalan antarkota → km). Rak panjang dulu, lalu berat, lalu isi. Jebakan: jerapah ke km. Knob: rak 3 → 7."
+    },
+    {
+      "id": "MAT.SD3.UKUR.02",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "UKUR",
+        "nama": {
+          "id": "Satuan ukur, luas, dan keliling",
+          "en": "Units, area and perimeter"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung luas persegi panjang dengan petak dan kelilingnya dengan menjumlah sisi petak di tepi",
+        "en": "I can find the area of a rectangle by counting squares and its perimeter by adding the edges around it"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Gg.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Dua paket: luas (rak 4–20 petak; larik baris × kolom) dan keliling (rak 8–18). Persegi panjang yang sama muncul di kedua paket supaya anak melihat luas dan keliling berbeda. Jebakan: keliling dihitung petak tepi (4 sudut terhitung sekali). Knob: rak 3 → 6."
+    },
+    {
+      "id": "MAT.SD3.DATA.01",
+      "track": "MAT",
+      "level": "SD3",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Diagram Carroll",
+          "en": "Carroll diagrams"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bilangan ke diagram Carroll: kelipatan 5 atau bukan, dan genap atau ganjil",
+        "en": "I can sort numbers into a Carroll diagram: multiple of 5 or not, and even or odd"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD2.DATA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ss.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Ni.10"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "3Nc.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Bilangan sampai 1.000. Kelipatan 5 berakhiran 0 atau 5; genap berakhiran 0, 2, 4, 6, 8, sehingga kelipatan 10 ada di 'kelipatan 5, genap'. Jebakan: 105 ke genap. Knob: kotak 2 → 4."
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.SD5.KONDISI.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "KONDISI",
+        "nama": {
+          "id": "Percabangan (kalau)",
+          "en": "Selection (if)"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menaruh blok kalau di dalam ulangi dan menghitung ulangan sebelum belok, supaya satu program lolos di tiga jalur",
+        "en": "I can put the if block inside repeats and count repeats before a turn so one program passes three different paths"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.ULANGI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Jalur L, tiga varian per soal: jumlah batu di segmen pertama sama (1–2) tetapi letaknya berbeda, segmen kedua 0–2 batu. Rak 5 keping: ulangi (a − batu) [kalau], belok, ulangi b [kalau]. Diverifikasi solver: tanpa blok kalau tidak ada program ≤ 5 keping yang lolos di ketiganya. Jebakan: ulangan segmen pertama = jumlah petak (lupa lompat memakan 2 petak), sehingga robot melewati sudut. Stage 5 (tanpa kode): 'algorithms that contain selection'. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: rocks. Paket: sd5-kode-kalau-belok-tiga-jalur."
+    },
+    {
+      "id": "KODE.SD5.KONDISI.02",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "KONDISI",
+        "nama": {
+          "id": "Percabangan (kalau)",
+          "en": "Selection (if)"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menentukan cabang mana yang dijalankan program kalau / kalau tidak dari nilai yang diberikan",
+        "en": "I can work out which branch an if / else program runs from the value it is given"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.VARIABEL.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "12 soal teks; batas sengaja diuji (suhu = 30 dengan '> 30', nilai = 75 dengan '>= 75'), boolean langsung, dan dua kalau berurutan. Pengecoh utama: cabang lawannya. Karena dua pilihan berpeluang tebak 50%, ambang penguasaan dinaikkan. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-lacak-kalau.",
+      "mastery": {
+        "minSuccess": 5,
+        "minRatioLast10": 0.8
+      }
+    },
+    {
+      "id": "KODE.SD5.KONDISI.03",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "KONDISI",
+        "nama": {
+          "id": "Percabangan (kalau)",
+          "en": "Selection (if)"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah data ke cabang A, B, atau C dengan mengikuti kalau / kalau tidak, kalau yang dicek dari atas",
+        "en": "I can sort data into branch A, B or C by following if / else if checks from the top"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.KONDISI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aturan nilai: ≥ 90 → A, kalau tidak ≥ 75 → B, lainnya → C. Item batas: 90, 89, 75, 74. Bukti: semua nilai satu ronde benar. Jebakan: nilai 95 dimasukkan ke B karena '95 ≥ 75' juga benar (lupa cabang pertama yang benar menang). Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: binCount 2 → 3, itemCount 6 → 10. Paket: sd5-kode-cabang-nilai."
+    },
+    {
+      "id": "KODE.SD5.DEBUG.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Mencari dan memperbaiki bug",
+          "en": "Debugging"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki satu bagian program berkondisi yang lolos di satu jalur tetapi gagal di jalur lain",
+        "en": "I can fix one part of a program with conditions that passes on one path but fails on another"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.KONDISI.01",
+        "KODE.SD4.DEBUG.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Tiga jalur per soal, program awal dengan satu bug: isi ulangi 'maju' padahal perlu 'kalau' (lolos di jalur tanpa batu, gagal di lainnya), ulangan salah hitung, belok terbalik, atau 'lompat terus'. Diverifikasi: program awal gagal, perbaikan satu blok ada. Bukti: edits == 1 dan lolos di ketiga jalur. Jebakan: puas karena jalur pertama sudah lolos. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-perbaiki-kalau."
+    },
+    {
+      "id": "KODE.SD5.ULANGI-KONDISI.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "ULANGI-KONDISI",
+        "nama": {
+          "id": "Kalau di dalam perulangan",
+          "en": "Selection inside loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menelusuri perulangan yang memuat kalau dan menyebut hasil akhirnya",
+        "en": "I can trace a loop that contains an if and say the final result"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.KONDISI.02",
+        "KODE.SD4.VARIABEL.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Jumlah bilangan genap/ganjil, penghitung, saklar nyala-mati, mencari terbesar, kalau-kalau tidak di tiap putaran. Pengecoh: menjumlah semua angka (lupa syarat), atau satu putaran saja. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-ulangi-dan-kalau."
+    },
+    {
+      "id": "KODE.SD5.LIST.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "LIST",
+        "nama": {
+          "id": "Daftar (list)",
+          "en": "Lists"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyebut isi daftar pada indeks tertentu, dengan indeks mulai dari 0",
+        "en": "I can say what is in a list at a given index, with indexes starting at 0"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.CARI.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Gaya Python: buah[1], len(), append, mengganti isi, indeks terakhir len − 1, dan indeks di luar daftar (error). Jebakan utama: menghitung dari 1. Pilihan 'error (tidak ada)' muncul juga di soal yang jawabannya ada, supaya tidak menjadi petunjuk. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-indeks-daftar."
+    },
+    {
+      "id": "KODE.SD5.TIPE-DATA.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "TIPE-DATA",
+        "nama": {
+          "id": "Jenis data",
+          "en": "Data types"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah nilai menjadi angka, teks, atau benar/salah dengan melihat tanda kutip dan bentuknya",
+        "en": "I can sort values into numbers, text or true/false by looking at quote marks and their form"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.VARIABEL.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Nilai bergaya Python: 12, 3.5, -4, 'Bandung', '12', 'True', True, 5 > 3. Jebakan: '12' dan 'True' bertanda kutip adalah teks; '5 > 3' bernilai benar/salah. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: binCount 2 → 3. Paket: sd5-kode-jenis-data. Pengaya."
+    },
+    {
+      "id": "KODE.SD5.URUT.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "URUT",
+        "nama": {
+          "id": "Pengurutan",
+          "en": "Sorting"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjalankan satu putaran tukar-tetangga pada deret angka dan menunjuk hasilnya",
+        "en": "I can carry out one pass of neighbour swaps on a row of numbers and point to the result"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.LIST.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Bubble sort satu putaran (bandingkan kiri-kanan, tukar bila kiri lebih besar) dan 'berapa putaran sampai urut'. Jawaban dihitung kode, bukan ditulis tangan. Pengecoh: hasil sudah urut penuh, hanya tukar pertama, deret dibalik. Jebakan: berhenti setelah tukar pertama. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd5-kode-tukar-tetangga."
+    },
+    {
+      "id": "KODE.SD5.INTERNET.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "INTERNET",
+        "nama": {
+          "id": "Internet dan perangkat terhubung",
+          "en": "The internet and connected devices"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kegiatan yang tetap bisa dan yang tidak bisa dilakukan ketika internet putus",
+        "en": "I can sort activities into those that still work and those that stop when the internet goes down"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.JARINGAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "5DC.07",
+          "note": "mengenali masalah yang muncul bila internet gagal"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Tetap bisa: kamera, kalkulator, galeri, catatan, lagu yang sudah diunduh, game luring, cetak lewat kabel. Tidak bisa: panggilan video, email, streaming, mesin pencari, peta daring, dompet digital, unggah tugas. Jebakan: 'lagu yang sudah diunduh' vs streaming. Knob: itemCount 6 → 10. Paket: sd5-kode-internet-putus."
+    },
+    {
+      "id": "KODE.SD5.INTERNET.02",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "INTERNET",
+        "nama": {
+          "id": "Internet dan perangkat terhubung",
+          "en": "The internet and connected devices"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda yang mengirim data lewat internet dari benda yang bekerja sendiri tanpa internet",
+        "en": "I can sort things that send data over the internet from things that work on their own without it"
+      },
+      "depth": [
+        "kenal",
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.PERANGKAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "5CS.01",
+          "note": "skala perangkat yang terhubung ke internet untuk masukan data; teks kamus masih terpotong (verified: false)"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Terhubung: sensor cuaca daring, kamera keamanan, lampu pintar, ATM, speaker pintar, meteran listrik pintar, mobil yang mengirim lokasi. Sendiri: kalkulator saku, senter, weker, kipas, timbangan, mobil mainan inframerah, mesin jahit. Jebakan: 'listrik' ≠ 'internet'. Knob: itemCount. Paket: sd5-kode-perangkat-terhubung. Pengaya."
+    },
+    {
+      "id": "KODE.SD5.AMAN.01",
+      "track": "KODE",
+      "level": "SD5",
+      "unit": {
+        "id": "AMAN",
+        "nama": {
+          "id": "Aman di dunia digital",
+          "en": "Staying safe online"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengenali pesan mencurigakan, seperti hadiah palsu atau permintaan kata sandi, dan membedakannya dari pesan aman",
+        "en": "I can recognise suspicious messages, like fake prizes or requests for passwords, and tell them apart from safe ones"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.AMAN.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Ciri mencurigakan: hadiah, ancaman/terburu-buru, minta kata sandi/OTP/alamat/foto, minta bayar lewat tautan, minta merahasiakan dari orang tua. Pesan aman dari keluarga, guru, pelatih yang isinya biasa. Instruksi menutup dengan tindakan: jangan balas, tunjukkan ke orang dewasa. Kamus belum punya kode Stage 5 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: itemCount. Paket: sd5-kode-pesan-mencurigakan."
+    }
+  ]
+}

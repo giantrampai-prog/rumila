@@ -1,0 +1,1134 @@
+{
+  "id": "sd1-kode-tebak-petak-ulangi",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD1.PREDIKSI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tebak Petak Saat Ulangi",
+      "instruksi": "Sebelum tiap langkah, tunjuk petak tujuan robot. Ingat, isi ulangi dijalankan berkali-kali."
+    },
+    "en": {
+      "judul": "Guess the Square in a Loop",
+      "instruksi": "Before each step, point to where robot will land. Remember, the repeat runs its blocks many times."
+    }
+  },
+  "knobs": {
+    "turns": {
+      "min": 0,
+      "max": 2,
+      "default": 0,
+      "step": 1,
+      "keterangan": "jumlah belokan dalam program (dokumentasi): 0 → 2"
+    },
+    "panjang": {
+      "min": 2,
+      "max": 7,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek ke bintang (dokumentasi; soal dipilih acak dari semua peta)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "taman",
+  "execMode": "langkah",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan",
+    "ulangi"
+  ],
+  "prediksi": true,
+  "grids": [
+    {
+      "id": "tebak-1-n",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-1-e",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-2-e",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-2-s",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-3-s",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-3-w",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-4-w",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-4-n",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-5-n",
+      "w": 3,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-5-e",
+      "w": 4,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-6-e",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-6-s",
+      "w": 3,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-7-s",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-7-w",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-8-w",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-8-n",
+      "w": 5,
+      "h": 2,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-9-n",
+      "w": 3,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-9-e",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-10-e",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-10-s",
+      "w": 3,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-11-s",
+      "w": 4,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-11-w",
+      "w": 3,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-12-w",
+      "w": 2,
+      "h": 2,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-12-n",
+      "w": 2,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-13-n",
+      "w": 2,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-13-e",
+      "w": 4,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tebak-14-e",
+      "w": 5,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tebak-14-s",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    }
+  ]
+}

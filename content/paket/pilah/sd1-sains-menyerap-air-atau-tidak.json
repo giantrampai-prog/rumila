@@ -1,0 +1,153 @@
+{
+  "id": "sd1-sains-menyerap-air-atau-tidak",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menyerap Air atau Tidak?",
+      "instruksi": "Air tumpah! Taruh benda yang menyerap air dan yang tidak ke raknya.",
+      "b-serap": "menyerap air",
+      "b-kedap": "tidak menyerap air",
+      "i-spons": "spons",
+      "i-handuk": "handuk",
+      "i-tisu": "tisu",
+      "i-kauskaki": "kaus kaki",
+      "i-koran": "koran",
+      "i-kapas": "kapas",
+      "i-jashujan": "jas hujan plastik",
+      "i-payung": "payung",
+      "i-sendok": "sendok logam",
+      "i-botol": "botol plastik",
+      "i-gelas": "gelas kaca",
+      "i-sepatubot": "sepatu bot karet"
+    },
+    "en": {
+      "judul": "Soaks Up Water or Not?",
+      "instruksi": "Water spilled! Put the things that soak up water and the things that don't on their shelves.",
+      "b-serap": "soaks up water",
+      "b-kedap": "does not soak up water",
+      "i-spons": "sponge",
+      "i-handuk": "towel",
+      "i-tisu": "tissue",
+      "i-kauskaki": "sock",
+      "i-koran": "newspaper",
+      "i-kapas": "cotton ball",
+      "i-jashujan": "plastic raincoat",
+      "i-payung": "umbrella",
+      "i-sendok": "metal spoon",
+      "i-botol": "plastic bottle",
+      "i-gelas": "glass cup",
+      "i-sepatubot": "rubber boot"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "serap",
+      "labelKey": "b-serap",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "kedap",
+      "labelKey": "b-kedap",
+      "emoji": "☂️",
+      "color": "#ede7f6"
+    }
+  ],
+  "items": [
+    {
+      "id": "spons",
+      "labelKey": "i-spons",
+      "bin": "serap",
+      "emoji": "🧽"
+    },
+    {
+      "id": "handuk",
+      "labelKey": "i-handuk",
+      "bin": "serap",
+      "emoji": "🟦",
+      "color": "#81d4fa"
+    },
+    {
+      "id": "tisu",
+      "labelKey": "i-tisu",
+      "bin": "serap",
+      "emoji": "🧻"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "serap",
+      "emoji": "🧦"
+    },
+    {
+      "id": "koran",
+      "labelKey": "i-koran",
+      "bin": "serap",
+      "emoji": "📰"
+    },
+    {
+      "id": "kapas",
+      "labelKey": "i-kapas",
+      "bin": "serap",
+      "emoji": "☁️"
+    },
+    {
+      "id": "jashujan",
+      "labelKey": "i-jashujan",
+      "bin": "kedap",
+      "emoji": "🧥",
+      "color": "#fff176"
+    },
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "kedap",
+      "emoji": "☂️"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "kedap",
+      "emoji": "🥄"
+    },
+    {
+      "id": "botol",
+      "labelKey": "i-botol",
+      "bin": "kedap",
+      "emoji": "🧴"
+    },
+    {
+      "id": "gelas",
+      "labelKey": "i-gelas",
+      "bin": "kedap",
+      "emoji": "🥛"
+    },
+    {
+      "id": "sepatubot",
+      "labelKey": "i-sepatubot",
+      "bin": "kedap",
+      "emoji": "🥾"
+    }
+  ],
+  "pilihan": []
+}

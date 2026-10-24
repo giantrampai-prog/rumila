@@ -1,0 +1,156 @@
+{
+  "id": "sd5-mat-setara-persen-lapangan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.PECAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Persen di Lapangan",
+      "instruksi": "Taruh tiap desimal, persen, atau pecahan di rak pecahan yang nilainya sama.",
+      "b-seperlima": "1/5",
+      "b-tujuhpersepuluh": "7/10",
+      "b-sembilanpersepuluh": "9/10",
+      "b-tigaperlima": "3/5",
+      "i1": "0,2",
+      "i2": "20%",
+      "i3": "2/10",
+      "i4": "0,7",
+      "i5": "70%",
+      "i6": "70/100",
+      "i7": "0,9",
+      "i8": "90%",
+      "i9": "90/100",
+      "i10": "0,6",
+      "i11": "60%",
+      "i12": "6/10"
+    },
+    "en": {
+      "judul": "Percentages on the Field",
+      "instruksi": "Put each decimal, percentage or fraction on the fraction shelf with the same value.",
+      "b-seperlima": "1/5",
+      "b-tujuhpersepuluh": "7/10",
+      "b-sembilanpersepuluh": "9/10",
+      "b-tigaperlima": "3/5",
+      "i1": "0.2",
+      "i2": "20%",
+      "i3": "2/10",
+      "i4": "0.7",
+      "i5": "70%",
+      "i6": "70/100",
+      "i7": "0.9",
+      "i8": "90%",
+      "i9": "90/100",
+      "i10": "0.6",
+      "i11": "60%",
+      "i12": "6/10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "seperlima",
+      "labelKey": "b-seperlima"
+    },
+    {
+      "id": "tujuhpersepuluh",
+      "labelKey": "b-tujuhpersepuluh"
+    },
+    {
+      "id": "sembilanpersepuluh",
+      "labelKey": "b-sembilanpersepuluh"
+    },
+    {
+      "id": "tigaperlima",
+      "labelKey": "b-tigaperlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "tujuhpersepuluh"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "tujuhpersepuluh"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "tujuhpersepuluh",
+      "scale": 0.7
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "sembilanpersepuluh"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "sembilanpersepuluh"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "sembilanpersepuluh",
+      "scale": 0.7
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "tigaperlima"
+    }
+  ]
+}

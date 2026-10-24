@@ -1,0 +1,244 @@
+{
+  "id": "sd5-sains-tinggi-nyaring-bunyi",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUNYI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Nada dan Volume",
+      "instruksi": "Bayangkan bunyinya, lalu sentuh perubahan yang akan terdengar.",
+      "b-pilihan": "pilihan",
+      "i-tinggi": "nada lebih tinggi",
+      "i-rendah": "nada lebih rendah",
+      "i-nyaring": "lebih nyaring",
+      "i-pelan": "lebih pelan",
+      "i-getar": "benda yang bergetar",
+      "i-panas": "udara yang panas",
+      "i-cahaya": "cahaya yang memantul",
+      "i-getarberhenti": "getarannya berhenti",
+      "i-masuktangan": "bunyinya masuk ke tangan",
+      "i-getarbesar": "makin besar",
+      "i-getarkecil": "makin kecil",
+      "p-r1": "Senar gitar dikencangkan, lalu dipetik lagi. Bunyinya jadi…",
+      "p-r2": "Gendang dipukul lebih keras. Bunyinya jadi…",
+      "p-r3": "Karet gelang dipendekkan lalu dipetik. Bunyinya jadi…",
+      "p-r4": "Senar yang lebih tebal dan lebih panjang dipetik. Bunyinya jadi…",
+      "p-r5": "Bel sekolah dipukul pelan sekali. Bunyinya jadi…",
+      "p-r6": "Ujung penggaris di tepi meja dibuat lebih panjang lalu dijentik. Bunyinya jadi…",
+      "p-r7": "Semua bunyi dibuat oleh…",
+      "p-r8": "Bel dipegang erat dan bunyinya langsung berhenti, karena…",
+      "p-r9": "Dua gelas dipukul sendok: satu berisi sedikit air, satu penuh. Gelas yang penuh bunyinya…",
+      "p-r10": "Volume pengeras suara dinaikkan. Getaran di dalamnya jadi…"
+    },
+    "en": {
+      "judul": "Pitch and Volume",
+      "instruksi": "Imagine the sound, then touch the change you would hear.",
+      "b-pilihan": "choices",
+      "i-tinggi": "higher pitch",
+      "i-rendah": "lower pitch",
+      "i-nyaring": "louder",
+      "i-pelan": "quieter",
+      "i-getar": "something vibrating",
+      "i-panas": "hot air",
+      "i-cahaya": "reflected light",
+      "i-getarberhenti": "the vibration stops",
+      "i-masuktangan": "the sound goes into the hand",
+      "i-getarbesar": "bigger",
+      "i-getarkecil": "smaller",
+      "p-r1": "A guitar string is tightened, then plucked again. The sound becomes…",
+      "p-r2": "A drum is hit harder. The sound becomes…",
+      "p-r3": "A rubber band is made shorter, then plucked. The sound becomes…",
+      "p-r4": "A thicker, longer string is plucked. The sound becomes…",
+      "p-r5": "The school bell is tapped very gently. The sound becomes…",
+      "p-r6": "More of a ruler hangs over the desk edge, then it is twanged. The sound becomes…",
+      "p-r7": "Every sound is made by…",
+      "p-r8": "A bell is gripped tightly and the sound stops at once, because…",
+      "p-r9": "Two glasses are tapped with a spoon: one has a little water, one is full. The full glass sounds…",
+      "p-r10": "A speaker is turned up. The vibration inside it becomes…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "tinggi",
+      "labelKey": "i-tinggi",
+      "bin": "pilihan",
+      "emoji": "🎵"
+    },
+    {
+      "id": "rendah",
+      "labelKey": "i-rendah",
+      "bin": "pilihan",
+      "emoji": "🎶"
+    },
+    {
+      "id": "nyaring",
+      "labelKey": "i-nyaring",
+      "bin": "pilihan",
+      "emoji": "🔊"
+    },
+    {
+      "id": "pelan",
+      "labelKey": "i-pelan",
+      "bin": "pilihan",
+      "emoji": "🔈"
+    },
+    {
+      "id": "getar",
+      "labelKey": "i-getar",
+      "bin": "pilihan",
+      "emoji": "〰️"
+    },
+    {
+      "id": "panas",
+      "labelKey": "i-panas",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "cahaya",
+      "labelKey": "i-cahaya",
+      "bin": "pilihan",
+      "emoji": "💡"
+    },
+    {
+      "id": "getarberhenti",
+      "labelKey": "i-getarberhenti",
+      "bin": "pilihan",
+      "emoji": "✋"
+    },
+    {
+      "id": "masuktangan",
+      "labelKey": "i-masuktangan",
+      "bin": "pilihan",
+      "emoji": "🖐️"
+    },
+    {
+      "id": "getarbesar",
+      "labelKey": "i-getarbesar",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "getarkecil",
+      "labelKey": "i-getarkecil",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "tinggi",
+        "rendah",
+        "nyaring"
+      ],
+      "correct": "tinggi"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "nyaring",
+        "pelan",
+        "tinggi"
+      ],
+      "correct": "nyaring"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "tinggi",
+        "rendah",
+        "pelan"
+      ],
+      "correct": "tinggi"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "nyaring"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "pelan",
+        "nyaring",
+        "rendah"
+      ],
+      "correct": "pelan"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "nyaring"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "getar",
+        "panas",
+        "cahaya"
+      ],
+      "correct": "getar"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "getarberhenti",
+        "masuktangan"
+      ],
+      "correct": "getarberhenti"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "nyaring"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "getarbesar",
+        "getarkecil"
+      ],
+      "correct": "getarbesar"
+    }
+  ]
+}

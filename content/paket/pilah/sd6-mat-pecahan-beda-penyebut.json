@@ -1,0 +1,508 @@
+{
+  "id": "sd6-mat-pecahan-beda-penyebut",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.PECAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Samakan Penyebut",
+      "instruksi": "Cari penyebut bersama, jumlahkan atau kurangkan, lalu sederhanakan. Sentuh hasilnya.",
+      "q1": "1/2 + 1/3 = …",
+      "c1": "5/6",
+      "c2": "2/5",
+      "c3": "2/6",
+      "c4": "5/12",
+      "q2": "2/3 − 1/4 = …",
+      "c5": "1/1",
+      "c6": "1/12",
+      "c7": "7/12",
+      "q3": "3/5 + 1/4 = …",
+      "c8": "17/20",
+      "c9": "4/9",
+      "c10": "4/20",
+      "c11": "7/20",
+      "q4": "5/6 − 3/4 = …",
+      "c12": "2/2",
+      "c13": "2/12",
+      "c14": "1/6",
+      "q5": "1/3 + 2/5 = …",
+      "c15": "11/15",
+      "c16": "3/8",
+      "c17": "3/15",
+      "c18": "7/15",
+      "q6": "7/8 − 2/3 = …",
+      "c19": "5/24",
+      "c20": "5/5",
+      "c21": "5/8",
+      "c22": "1/24",
+      "q7": "3/4 + 2/3 = …",
+      "c23": "1 5/12",
+      "c24": "5/7",
+      "c25": "1 1/12",
+      "c26": "1 7/12",
+      "q8": "1/4 + 2/5 = …",
+      "c27": "13/20",
+      "c28": "3/9",
+      "c29": "3/20",
+      "c30": "9/20",
+      "q9": "4/5 − 1/2 = …",
+      "c31": "3/10",
+      "c32": "3/3",
+      "c33": "3/5",
+      "c34": "1/10",
+      "q10": "1/6 + 3/4 = …",
+      "c35": "11/12",
+      "c36": "4/10",
+      "c37": "4/24",
+      "q11": "Pita 3/4 m dipotong 1/6 m. Sisanya …",
+      "c38": "7/12 m",
+      "c39": "2/2 m",
+      "c40": "2/10 m",
+      "c41": "1/2 m",
+      "q12": "2 1/2 − 1 2/3 = …",
+      "c42": "1 1/6",
+      "c43": "1 1/2",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Common Denominators",
+      "instruksi": "Find a common denominator, add or subtract, then simplify. Touch the answer.",
+      "q1": "1/2 + 1/3 = …",
+      "c1": "5/6",
+      "c2": "2/5",
+      "c3": "2/6",
+      "c4": "5/12",
+      "q2": "2/3 − 1/4 = …",
+      "c5": "1/1",
+      "c6": "1/12",
+      "c7": "7/12",
+      "q3": "3/5 + 1/4 = …",
+      "c8": "17/20",
+      "c9": "4/9",
+      "c10": "4/20",
+      "c11": "7/20",
+      "q4": "5/6 − 3/4 = …",
+      "c12": "2/2",
+      "c13": "2/12",
+      "c14": "1/6",
+      "q5": "1/3 + 2/5 = …",
+      "c15": "11/15",
+      "c16": "3/8",
+      "c17": "3/15",
+      "c18": "7/15",
+      "q6": "7/8 − 2/3 = …",
+      "c19": "5/24",
+      "c20": "5/5",
+      "c21": "5/8",
+      "c22": "1/24",
+      "q7": "3/4 + 2/3 = …",
+      "c23": "1 5/12",
+      "c24": "5/7",
+      "c25": "1 1/12",
+      "c26": "1 7/12",
+      "q8": "1/4 + 2/5 = …",
+      "c27": "13/20",
+      "c28": "3/9",
+      "c29": "3/20",
+      "c30": "9/20",
+      "q9": "4/5 − 1/2 = …",
+      "c31": "3/10",
+      "c32": "3/3",
+      "c33": "3/5",
+      "c34": "1/10",
+      "q10": "1/6 + 3/4 = …",
+      "c35": "11/12",
+      "c36": "4/10",
+      "c37": "4/24",
+      "q11": "A 3/4 m ribbon has 1/6 m cut off. What is left?",
+      "c38": "7/12 m",
+      "c39": "2/2 m",
+      "c40": "2/10 m",
+      "c41": "1/2 m",
+      "q12": "2 1/2 − 1 2/3 = …",
+      "c42": "1 1/6",
+      "c43": "1 1/2",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c8",
+        "c9",
+        "c10",
+        "c11"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c15",
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c19",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c23",
+        "c24",
+        "c25",
+        "c26"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c27",
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c31",
+        "c32",
+        "c33",
+        "c34"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c35",
+        "c36",
+        "c37",
+        "c4"
+      ],
+      "correct": "c35"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c38",
+        "c39",
+        "c40",
+        "c41"
+      ],
+      "correct": "c38"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c1",
+        "c42",
+        "c43",
+        "c14"
+      ],
+      "correct": "c1"
+    }
+  ]
+}

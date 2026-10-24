@@ -1,0 +1,286 @@
+{
+  "id": "sd1-mat-rak-setengah-piring",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Setengah untuk Temanku",
+      "instruksi": "Isi piring dibagi dua sama banyak. Taruh tiap piring di rak angka setengahnya.",
+      "b-1": "1",
+      "b-2": "2",
+      "b-3": "3",
+      "b-4": "4",
+      "b-5": "5",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-10": "10",
+      "i-2-kue": "2 kue",
+      "i-2-stroberi": "2 stroberi",
+      "i-4-kue": "4 kue",
+      "i-4-stroberi": "4 stroberi",
+      "i-6-kue": "6 kue",
+      "i-6-stroberi": "6 stroberi",
+      "i-8-kue": "8 kue",
+      "i-8-stroberi": "8 stroberi",
+      "i-10-kue": "10 kue",
+      "i-10-stroberi": "10 stroberi",
+      "i-12-kue": "12 kue",
+      "i-12-stroberi": "12 stroberi",
+      "i-14-kue": "14 kue",
+      "i-14-stroberi": "14 stroberi",
+      "i-16-kue": "16 kue",
+      "i-16-stroberi": "16 stroberi",
+      "i-18-kue": "18 kue",
+      "i-18-stroberi": "18 stroberi",
+      "i-20-kue": "20 kue",
+      "i-20-stroberi": "20 stroberi"
+    },
+    "en": {
+      "judul": "Half for My Friend",
+      "instruksi": "Each plate is shared into two equal halves. Put each plate on the shelf for half of it.",
+      "b-1": "1",
+      "b-2": "2",
+      "b-3": "3",
+      "b-4": "4",
+      "b-5": "5",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-10": "10",
+      "i-2-kue": "2 cookies",
+      "i-2-stroberi": "2 strawberries",
+      "i-4-kue": "4 cookies",
+      "i-4-stroberi": "4 strawberries",
+      "i-6-kue": "6 cookies",
+      "i-6-stroberi": "6 strawberries",
+      "i-8-kue": "8 cookies",
+      "i-8-stroberi": "8 strawberries",
+      "i-10-kue": "10 cookies",
+      "i-10-stroberi": "10 strawberries",
+      "i-12-kue": "12 cookies",
+      "i-12-stroberi": "12 strawberries",
+      "i-14-kue": "14 cookies",
+      "i-14-stroberi": "14 strawberries",
+      "i-16-kue": "16 cookies",
+      "i-16-stroberi": "16 strawberries",
+      "i-18-kue": "18 cookies",
+      "i-18-stroberi": "18 strawberries",
+      "i-20-kue": "20 cookies",
+      "i-20-stroberi": "20 strawberries"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 5,
+      "max": 10,
+      "default": 5,
+      "step": 1,
+      "keterangan": "setengah 1–5 dulu, lalu sampai 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "piring per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "s1",
+      "labelKey": "b-1"
+    },
+    {
+      "id": "s2",
+      "labelKey": "b-2"
+    },
+    {
+      "id": "s3",
+      "labelKey": "b-3"
+    },
+    {
+      "id": "s4",
+      "labelKey": "b-4"
+    },
+    {
+      "id": "s5",
+      "labelKey": "b-5"
+    },
+    {
+      "id": "s6",
+      "labelKey": "b-6"
+    },
+    {
+      "id": "s7",
+      "labelKey": "b-7"
+    },
+    {
+      "id": "s8",
+      "labelKey": "b-8"
+    },
+    {
+      "id": "s9",
+      "labelKey": "b-9"
+    },
+    {
+      "id": "s10",
+      "labelKey": "b-10"
+    }
+  ],
+  "items": [
+    {
+      "id": "kue-2",
+      "labelKey": "i-2-kue",
+      "bin": "s1",
+      "emoji": "🍪",
+      "count": 2
+    },
+    {
+      "id": "stroberi-2",
+      "labelKey": "i-2-stroberi",
+      "bin": "s1",
+      "emoji": "🍓",
+      "count": 2
+    },
+    {
+      "id": "kue-4",
+      "labelKey": "i-4-kue",
+      "bin": "s2",
+      "emoji": "🍪",
+      "count": 4
+    },
+    {
+      "id": "stroberi-4",
+      "labelKey": "i-4-stroberi",
+      "bin": "s2",
+      "emoji": "🍓",
+      "count": 4
+    },
+    {
+      "id": "kue-6",
+      "labelKey": "i-6-kue",
+      "bin": "s3",
+      "emoji": "🍪",
+      "count": 6
+    },
+    {
+      "id": "stroberi-6",
+      "labelKey": "i-6-stroberi",
+      "bin": "s3",
+      "emoji": "🍓",
+      "count": 6
+    },
+    {
+      "id": "kue-8",
+      "labelKey": "i-8-kue",
+      "bin": "s4",
+      "emoji": "🍪",
+      "count": 8
+    },
+    {
+      "id": "stroberi-8",
+      "labelKey": "i-8-stroberi",
+      "bin": "s4",
+      "emoji": "🍓",
+      "count": 8
+    },
+    {
+      "id": "kue-10",
+      "labelKey": "i-10-kue",
+      "bin": "s5",
+      "emoji": "🍪",
+      "count": 10
+    },
+    {
+      "id": "stroberi-10",
+      "labelKey": "i-10-stroberi",
+      "bin": "s5",
+      "emoji": "🍓",
+      "count": 10
+    },
+    {
+      "id": "kue-12",
+      "labelKey": "i-12-kue",
+      "bin": "s6",
+      "emoji": "🍪",
+      "count": 12
+    },
+    {
+      "id": "stroberi-12",
+      "labelKey": "i-12-stroberi",
+      "bin": "s6",
+      "emoji": "🍓",
+      "count": 12
+    },
+    {
+      "id": "kue-14",
+      "labelKey": "i-14-kue",
+      "bin": "s7",
+      "emoji": "🍪",
+      "count": 14
+    },
+    {
+      "id": "stroberi-14",
+      "labelKey": "i-14-stroberi",
+      "bin": "s7",
+      "emoji": "🍓",
+      "count": 14
+    },
+    {
+      "id": "kue-16",
+      "labelKey": "i-16-kue",
+      "bin": "s8",
+      "emoji": "🍪",
+      "count": 16
+    },
+    {
+      "id": "stroberi-16",
+      "labelKey": "i-16-stroberi",
+      "bin": "s8",
+      "emoji": "🍓",
+      "count": 16
+    },
+    {
+      "id": "kue-18",
+      "labelKey": "i-18-kue",
+      "bin": "s9",
+      "emoji": "🍪",
+      "count": 18
+    },
+    {
+      "id": "stroberi-18",
+      "labelKey": "i-18-stroberi",
+      "bin": "s9",
+      "emoji": "🍓",
+      "count": 18
+    },
+    {
+      "id": "kue-20",
+      "labelKey": "i-20-kue",
+      "bin": "s10",
+      "emoji": "🍪",
+      "count": 20
+    },
+    {
+      "id": "stroberi-20",
+      "labelKey": "i-20-stroberi",
+      "bin": "s10",
+      "emoji": "🍓",
+      "count": 20
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "id": "sd1-sains-berbunyi-atau-diam",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BUNYI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa yang Berbunyi?",
+      "instruksi": "Taruh benda yang sedang berbunyi ke rak berbunyi, yang diam ke rak diam.",
+      "b-bunyi": "sedang berbunyi",
+      "b-diam": "diam",
+      "i-radionyala": "radio menyala",
+      "i-radiomati": "radio mati",
+      "i-anjinggonggong": "anjing menggonggong",
+      "i-anjingtidur": "anjing tidur",
+      "i-bel": "bel sepeda dibunyikan",
+      "i-drum": "drum dipukul",
+      "i-ayam": "ayam berkokok",
+      "i-hujan": "hujan di atap",
+      "i-buku": "buku di rak",
+      "i-bantal": "bantal di kasur",
+      "i-batu": "batu di taman",
+      "i-gitar": "gitar bersandar"
+    },
+    "en": {
+      "judul": "Who Is Making a Sound?",
+      "instruksi": "Put things that are making a sound on the sound shelf, and silent things on the quiet shelf.",
+      "b-bunyi": "making a sound",
+      "b-diam": "silent",
+      "i-radionyala": "radio switched on",
+      "i-radiomati": "radio switched off",
+      "i-anjinggonggong": "dog barking",
+      "i-anjingtidur": "dog asleep",
+      "i-bel": "bike bell ringing",
+      "i-drum": "drum being hit",
+      "i-ayam": "rooster crowing",
+      "i-hujan": "rain on the roof",
+      "i-buku": "book on a shelf",
+      "i-bantal": "pillow on the bed",
+      "i-batu": "stone in the garden",
+      "i-gitar": "guitar leaning on the wall"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "bunyi",
+      "labelKey": "b-bunyi",
+      "emoji": "🔊",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "diam",
+      "labelKey": "b-diam",
+      "emoji": "🔇",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "radionyala",
+      "labelKey": "i-radionyala",
+      "bin": "bunyi",
+      "emoji": "📻"
+    },
+    {
+      "id": "radiomati",
+      "labelKey": "i-radiomati",
+      "bin": "diam",
+      "emoji": "📻",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "anjinggonggong",
+      "labelKey": "i-anjinggonggong",
+      "bin": "bunyi",
+      "emoji": "🐕"
+    },
+    {
+      "id": "anjingtidur",
+      "labelKey": "i-anjingtidur",
+      "bin": "diam",
+      "emoji": "🐕",
+      "color": "#bdbdbd"
+    },
+    {
+      "id": "bel",
+      "labelKey": "i-bel",
+      "bin": "bunyi",
+      "emoji": "🔔"
+    },
+    {
+      "id": "drum",
+      "labelKey": "i-drum",
+      "bin": "bunyi",
+      "emoji": "🥁"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "bunyi",
+      "emoji": "🐓"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "bunyi",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "diam",
+      "emoji": "📕"
+    },
+    {
+      "id": "bantal",
+      "labelKey": "i-bantal",
+      "bin": "diam",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "diam",
+      "emoji": "🪨"
+    },
+    {
+      "id": "gitar",
+      "labelKey": "i-gitar",
+      "bin": "diam",
+      "emoji": "🎸",
+      "color": "#bdbdbd"
+    }
+  ],
+  "pilihan": []
+}

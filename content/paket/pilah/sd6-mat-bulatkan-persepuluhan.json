@@ -1,0 +1,182 @@
+{
+  "id": "sd6-mat-bulatkan-persepuluhan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.DESIMAL.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Persepuluhan Terdekat",
+      "instruksi": "Bulatkan tiap desimal ke persepuluhan terdekat (satu angka di belakang koma), lalu taruh di raknya.",
+      "b-p23": "2,3",
+      "b-p24": "2,4",
+      "b-p25": "2,5",
+      "b-p26": "2,6",
+      "i1": "2,34",
+      "i2": "2,35",
+      "i3": "2,29",
+      "i4": "2,41",
+      "i5": "2,44",
+      "i6": "2,45",
+      "i7": "2,46",
+      "i8": "2,54",
+      "i9": "2,55",
+      "i10": "2,61",
+      "i11": "2,64",
+      "i12": "2,25",
+      "i13": "2,32",
+      "i14": "2,51",
+      "i15": "2,38",
+      "i16": "2,58"
+    },
+    "en": {
+      "judul": "Nearest Tenth Shelves",
+      "instruksi": "Round each decimal to the nearest tenth (one decimal place), then shelve it.",
+      "b-p23": "2.3",
+      "b-p24": "2.4",
+      "b-p25": "2.5",
+      "b-p26": "2.6",
+      "i1": "2.34",
+      "i2": "2.35",
+      "i3": "2.29",
+      "i4": "2.41",
+      "i5": "2.44",
+      "i6": "2.45",
+      "i7": "2.46",
+      "i8": "2.54",
+      "i9": "2.55",
+      "i10": "2.61",
+      "i11": "2.64",
+      "i12": "2.25",
+      "i13": "2.32",
+      "i14": "2.51",
+      "i15": "2.38",
+      "i16": "2.58"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "p23",
+      "labelKey": "b-p23"
+    },
+    {
+      "id": "p24",
+      "labelKey": "b-p24"
+    },
+    {
+      "id": "p25",
+      "labelKey": "b-p25"
+    },
+    {
+      "id": "p26",
+      "labelKey": "b-p26"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "p23"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "p24"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "p23"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "p24"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "p24"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "p25"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "p25"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "p25"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "p26"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "p26"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "p26"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "p23"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "p23"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "p25"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "p24"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "p26"
+    }
+  ]
+}

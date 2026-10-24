@@ -1,0 +1,278 @@
+{
+  "id": "sd2-sains-mana-dulu-bahan-baru",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.BAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sebelum Jadi Bahan Baru",
+      "instruksi": "Sesuatu berubah jadi bahan baru. Sentuh gambar yang lebih dulu.",
+      "s-telur": "Mana yang lebih dulu?",
+      "telur-awal": "telur mentah",
+      "telur-akhir": "telur goreng",
+      "s-roti": "Mana yang lebih dulu?",
+      "roti-awal": "adonan tepung",
+      "roti-akhir": "roti matang",
+      "s-kayu": "Mana yang lebih dulu?",
+      "kayu-awal": "kayu bakar",
+      "kayu-akhir": "abu",
+      "s-beras": "Mana yang lebih dulu?",
+      "beras-awal": "beras",
+      "beras-akhir": "nasi",
+      "s-paku": "Mana yang lebih dulu?",
+      "paku-awal": "paku baru mengilap",
+      "paku-akhir": "paku berkarat",
+      "s-jagung": "Mana yang lebih dulu?",
+      "jagung-awal": "biji jagung",
+      "jagung-akhir": "berondong jagung",
+      "s-kertas": "Mana yang lebih dulu?",
+      "kertas-awal": "kertas",
+      "kertas-akhir": "kertas terbakar jadi abu",
+      "s-susu": "Mana yang lebih dulu?",
+      "susu-awal": "susu",
+      "susu-akhir": "yoghurt",
+      "s-kue": "Mana yang lebih dulu?",
+      "kue-awal": "adonan kue",
+      "kue-akhir": "kue matang",
+      "s-kedelai": "Mana yang lebih dulu?",
+      "kedelai-awal": "kedelai",
+      "kedelai-akhir": "tempe",
+      "s-sate": "Mana yang lebih dulu?",
+      "sate-awal": "daging mentah",
+      "sate-akhir": "sate matang"
+    },
+    "en": {
+      "judul": "Before the New Material",
+      "instruksi": "Something changed into a new material. Touch the picture that came first.",
+      "s-telur": "Which came first?",
+      "telur-awal": "raw egg",
+      "telur-akhir": "fried egg",
+      "s-roti": "Which came first?",
+      "roti-awal": "bread dough",
+      "roti-akhir": "baked bread",
+      "s-kayu": "Which came first?",
+      "kayu-awal": "firewood",
+      "kayu-akhir": "ash",
+      "s-beras": "Which came first?",
+      "beras-awal": "uncooked rice",
+      "beras-akhir": "cooked rice",
+      "s-paku": "Which came first?",
+      "paku-awal": "shiny new nail",
+      "paku-akhir": "rusty nail",
+      "s-jagung": "Which came first?",
+      "jagung-awal": "corn kernels",
+      "jagung-akhir": "popcorn",
+      "s-kertas": "Which came first?",
+      "kertas-awal": "paper",
+      "kertas-akhir": "burnt paper ash",
+      "s-susu": "Which came first?",
+      "susu-awal": "milk",
+      "susu-akhir": "yoghurt",
+      "s-kue": "Which came first?",
+      "kue-awal": "cake batter",
+      "kue-akhir": "baked cake",
+      "s-kedelai": "Which came first?",
+      "kedelai-awal": "soybeans",
+      "kedelai-akhir": "tempeh",
+      "s-sate": "Which came first?",
+      "sate-awal": "raw meat",
+      "sate-akhir": "cooked satay"
+    }
+  },
+  "knobs": {
+    "pasangan": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "dokumentasi: mode dulu selalu 2 gambar; variasi dari 11 pasangan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "dulu",
+  "sequences": [
+    {
+      "id": "telur",
+      "titleKey": "s-telur",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "telur-awal",
+          "emoji": "🥚"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "telur-akhir",
+          "emoji": "🍳"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "s-roti",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "roti-awal",
+          "emoji": "🫓"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "roti-akhir",
+          "emoji": "🍞"
+        }
+      ]
+    },
+    {
+      "id": "kayu",
+      "titleKey": "s-kayu",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kayu-awal",
+          "emoji": "🪵"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kayu-akhir",
+          "emoji": "🌫️"
+        }
+      ]
+    },
+    {
+      "id": "beras",
+      "titleKey": "s-beras",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "beras-awal",
+          "emoji": "🌾"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "beras-akhir",
+          "emoji": "🍚"
+        }
+      ]
+    },
+    {
+      "id": "paku",
+      "titleKey": "s-paku",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "paku-awal",
+          "emoji": "🔩"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "paku-akhir",
+          "emoji": "🟤"
+        }
+      ]
+    },
+    {
+      "id": "jagung",
+      "titleKey": "s-jagung",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "jagung-awal",
+          "emoji": "🌽"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "jagung-akhir",
+          "emoji": "🍿"
+        }
+      ]
+    },
+    {
+      "id": "kertas",
+      "titleKey": "s-kertas",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kertas-awal",
+          "emoji": "📄"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kertas-akhir",
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": "susu",
+      "titleKey": "s-susu",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "susu-awal",
+          "emoji": "🥛"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "susu-akhir",
+          "emoji": "🍶"
+        }
+      ]
+    },
+    {
+      "id": "kue",
+      "titleKey": "s-kue",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kue-awal",
+          "emoji": "🥣"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kue-akhir",
+          "emoji": "🎂"
+        }
+      ]
+    },
+    {
+      "id": "kedelai",
+      "titleKey": "s-kedelai",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kedelai-awal",
+          "emoji": "🫘"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kedelai-akhir",
+          "emoji": "🟫"
+        }
+      ]
+    },
+    {
+      "id": "sate",
+      "titleKey": "s-sate",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "sate-awal",
+          "emoji": "🥩"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "sate-akhir",
+          "emoji": "🍢"
+        }
+      ]
+    }
+  ]
+}

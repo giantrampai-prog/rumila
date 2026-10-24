@@ -1,0 +1,168 @@
+{
+  "id": "sd4-mat-pecahan-senilai-rak",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Pecahan Senilai",
+      "instruksi": "Taruh tiap pecahan di rak pecahan yang nilainya sama.",
+      "b-setengah": "1/2",
+      "b-sepertiga": "1/3",
+      "b-tigaperempat": "3/4",
+      "b-seperlima": "1/5",
+      "i1": "2/4",
+      "i2": "3/6",
+      "i3": "4/8",
+      "i4": "5/10",
+      "i5": "6/12",
+      "i6": "2/6",
+      "i7": "3/9",
+      "i8": "4/12",
+      "i9": "6/8",
+      "i10": "9/12",
+      "i11": "12/16",
+      "i12": "2/10",
+      "i13": "3/15",
+      "i14": "4/20"
+    },
+    "en": {
+      "judul": "Equivalent Fraction Shelves",
+      "instruksi": "Put each fraction on the shelf with the same value.",
+      "b-setengah": "1/2",
+      "b-sepertiga": "1/3",
+      "b-tigaperempat": "3/4",
+      "b-seperlima": "1/5",
+      "i1": "2/4",
+      "i2": "3/6",
+      "i3": "4/8",
+      "i4": "5/10",
+      "i5": "6/12",
+      "i6": "2/6",
+      "i7": "3/9",
+      "i8": "4/12",
+      "i9": "6/8",
+      "i10": "9/12",
+      "i11": "12/16",
+      "i12": "2/10",
+      "i13": "3/15",
+      "i14": "4/20"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 1/2 dan 1/3 dulu, lalu 3/4 dan 1/5"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "setengah",
+      "labelKey": "b-setengah"
+    },
+    {
+      "id": "sepertiga",
+      "labelKey": "b-sepertiga"
+    },
+    {
+      "id": "tigaperempat",
+      "labelKey": "b-tigaperempat"
+    },
+    {
+      "id": "seperlima",
+      "labelKey": "b-seperlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "setengah"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "setengah"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "setengah"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "setengah"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "setengah"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "sepertiga"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "sepertiga"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "sepertiga"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tigaperempat"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tigaperempat"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tigaperempat"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "seperlima"
+    }
+  ]
+}

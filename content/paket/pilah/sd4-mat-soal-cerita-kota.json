@@ -1,0 +1,510 @@
+{
+  "id": "sd4-mat-soal-cerita-kota",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.KALI-BAGI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Soal Cerita di Kota",
+      "instruksi": "Baca soalnya: kali atau bagi? Hitung, lalu sentuh jawabannya.",
+      "q1": "Satu kardus berisi 222 botol. Berapa botol dalam 8 kardus?",
+      "c1": "1.776",
+      "c2": "230",
+      "c3": "1.554",
+      "c4": "1.564",
+      "q2": "Satu kardus berisi 118 botol. Berapa botol dalam 5 kardus?",
+      "c5": "590",
+      "c6": "123",
+      "c7": "472",
+      "c8": "482",
+      "q3": "Satu gulung kabel panjangnya 222 m. Berapa meter 9 gulung?",
+      "c9": "1.998",
+      "c10": "231",
+      "c11": "1.989",
+      "c12": "2.220",
+      "q4": "60 buku dibagi rata ke 5 rak. Tiap rak berisi …",
+      "c13": "12",
+      "c14": "13",
+      "c15": "11",
+      "c16": "55",
+      "q5": "91 siswa dibagi ke kelompok berisi 5. Paling sedikit berapa kelompok supaya semua dapat?",
+      "c17": "19",
+      "c18": "18",
+      "c19": "20",
+      "c20": "86",
+      "q6": "71 siswa dibagi ke kelompok berisi 6. Paling sedikit berapa kelompok supaya semua dapat?",
+      "c21": "65",
+      "q7": "Satu kardus berisi 117 botol. Berapa botol dalam 4 kardus?",
+      "c22": "468",
+      "c23": "121",
+      "c24": "351",
+      "c25": "361",
+      "q8": "Sebuah gedung punya 3 lantai, tiap lantai 143 jendela. Berapa jendela semuanya?",
+      "c26": "429",
+      "c27": "146",
+      "c28": "439",
+      "c29": "419",
+      "q9": "Sebuah gedung punya 6 lantai, tiap lantai 196 jendela. Berapa jendela semuanya?",
+      "c30": "1.176",
+      "c31": "202",
+      "c32": "1.186",
+      "c33": "1.166",
+      "q10": "Satu kardus berisi 164 botol. Berapa botol dalam 4 kardus?",
+      "c34": "656",
+      "c35": "168",
+      "c36": "492",
+      "c37": "502",
+      "q11": "Satu gulung kabel panjangnya 224 m. Berapa meter 6 gulung?",
+      "c38": "1.344",
+      "c39": "1.338",
+      "c40": "1.568",
+      "q12": "74 siswa dibagi ke kelompok berisi 5. Paling sedikit berapa kelompok supaya semua dapat?",
+      "c41": "15",
+      "c42": "14",
+      "c43": "16",
+      "c44": "69",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "City Word Problems",
+      "instruksi": "Read the problem: multiply or divide? Work it out, then touch the answer.",
+      "q1": "A crate holds 222 bottles. How many bottles in 8 crates?",
+      "c1": "1,776",
+      "c2": "230",
+      "c3": "1,554",
+      "c4": "1,564",
+      "q2": "A crate holds 118 bottles. How many bottles in 5 crates?",
+      "c5": "590",
+      "c6": "123",
+      "c7": "472",
+      "c8": "482",
+      "q3": "One roll of cable is 222 m long. How many metres in 9 rolls?",
+      "c9": "1,998",
+      "c10": "231",
+      "c11": "1,989",
+      "c12": "2,220",
+      "q4": "60 books are shared equally between 5 shelves. Each shelf has …",
+      "c13": "12",
+      "c14": "13",
+      "c15": "11",
+      "c16": "55",
+      "q5": "91 pupils are put in groups of 5. What is the fewest groups so everyone is in one?",
+      "c17": "19",
+      "c18": "18",
+      "c19": "20",
+      "c20": "86",
+      "q6": "71 pupils are put in groups of 6. What is the fewest groups so everyone is in one?",
+      "c21": "65",
+      "q7": "A crate holds 117 bottles. How many bottles in 4 crates?",
+      "c22": "468",
+      "c23": "121",
+      "c24": "351",
+      "c25": "361",
+      "q8": "A building has 3 floors with 143 windows each. How many windows?",
+      "c26": "429",
+      "c27": "146",
+      "c28": "439",
+      "c29": "419",
+      "q9": "A building has 6 floors with 196 windows each. How many windows?",
+      "c30": "1,176",
+      "c31": "202",
+      "c32": "1,186",
+      "c33": "1,166",
+      "q10": "A crate holds 164 bottles. How many bottles in 4 crates?",
+      "c34": "656",
+      "c35": "168",
+      "c36": "492",
+      "c37": "502",
+      "q11": "One roll of cable is 224 m long. How many metres in 6 rolls?",
+      "c38": "1,344",
+      "c39": "1,338",
+      "c40": "1,568",
+      "q12": "74 pupils are put in groups of 5. What is the fewest groups so everyone is in one?",
+      "c41": "15",
+      "c42": "14",
+      "c43": "16",
+      "c44": "69",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c13",
+        "c15",
+        "c14",
+        "c21"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c22",
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c30",
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c35",
+        "c36",
+        "c37"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c38",
+        "c2",
+        "c39",
+        "c40"
+      ],
+      "correct": "c38"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c41",
+        "c42",
+        "c43",
+        "c44"
+      ],
+      "correct": "c41"
+    }
+  ]
+}

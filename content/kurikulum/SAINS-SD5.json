@@ -1,0 +1,629 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.SD5.BUNGA.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "BUNGA",
+        "nama": {
+          "id": "Bagian bunga",
+          "en": "Parts of a flower"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk bagian bunga dari tugasnya: mahkota menarik serangga, kepala sari membuat serbuk, kepala putik menangkap serbuk",
+        "en": "I can identify flower parts by their jobs: petals attract insects, anthers make pollen, the stigma catches pollen"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bs.02",
+          "note": "bagian bunga: mahkota, kelopak, kepala sari, tangkai sari, benang sari, kepala putik, tangkai putik, putik, bakal buah"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bs.03",
+          "note": "fungsi mahkota, kepala sari, kepala putik, bakal buah"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 10 ronde: tugas diucapkan, nama bagian dipilih (3 pilihan, pengecoh bagian yang bertetangga: kepala sari vs kepala putik, tangkai sari vs tangkai putik). Dua ronde akhir menggabung bagian (benang sari, putik). Saran aset: diagram bunga sayatan dengan bagian menyala setelah dijawab. Jebakan utama: kepala sari dan kepala putik tertukar. [Tinjauan 25 Okt 2026: soal r2 dan r3 tidak lagi memuat kata 'sari'/'putik' yang membocorkan jawaban; r6–r7 sengaja tetap menyebut bagian tetangga karena yang diuji hubungan strukturnya.]"
+    },
+    {
+      "id": "SAINS.SD5.BUNGA.02",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "BUNGA",
+        "nama": {
+          "id": "Bagian bunga",
+          "en": "Parts of a flower"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah tumbuhan berbunga dan tumbuhan yang tidak pernah berbunga, seperti paku, lumut, dan pinus",
+        "en": "I can sort flowering plants from plants that never flower, such as ferns, mosses and pines"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.BUNGA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bs.01",
+          "note": "tidak semua tumbuhan menghasilkan bunga"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah; wadah 'tidak berbunga' menyebut cara berkembang biaknya (spora atau runjung) sebagai petunjuk. Jebakan: rumput, padi, dan jagung berbunga kecil yang jarang diperhatikan; kaktus berbunga. Jamur sengaja tidak dipakai (bukan tumbuhan). Cemara laut juga tidak (berbunga, mudah tertukar dengan pinus). Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD5.SIKLUS-TUMBUHAN.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "SIKLUS-TUMBUHAN",
+        "nama": {
+          "id": "Siklus hidup tumbuhan berbunga",
+          "en": "Life cycle of flowering plants"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun siklus hidup tumbuhan berbunga: biji, berkecambah, tumbuh, berbunga, penyerbukan, buah dan biji baru",
+        "en": "I can order the life cycle of a flowering plant: seed, germination, growth, flowering, pollination, fruit and new seeds"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.BUNGA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bp.02",
+          "note": "tahap siklus hidup tumbuhan berbunga"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bp.03",
+          "note": "penyerbukan, pembentukan buah dan biji, penyebaran biji"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun tiga tumbuhan (kacang tanah, mangga, bunga matahari) dengan 6–7 tahap; knob steps 4 → 7 memotong dari depan (4 = biji sampai berbunga). Jebakan: penyerbukan diletakkan sesudah buah; 'berkecambah' sebelum 'biji'. Siklus ditutup biji baru supaya anak melihat lingkaran, bukan garis."
+    },
+    {
+      "id": "SAINS.SD5.SIKLUS-TUMBUHAN.02",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "SIKLUS-TUMBUHAN",
+        "nama": {
+          "id": "Siklus hidup tumbuhan berbunga",
+          "en": "Life cycle of flowering plants"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memprediksi biji mana yang akan berkecambah dari air dan suhunya, dan tahu cahaya belum diperlukan saat berkecambah",
+        "en": "I can predict which seeds will germinate from their water and temperature, and know light is not yet needed to germinate"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.SIKLUS-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bp.04",
+          "note": "biji umumnya butuh air dan suhu yang sesuai untuk berkecambah"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5TWSp.03",
+          "note": "prediksi berdasar pengetahuan ilmiah"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde prediksi: kapas basah/kering × hangat/freezer × terang/gelap. Jebakan yang dinilai: biji di lemari gelap tetapi basah dan hangat tetap berkecambah; sesudah berkecambah tanaman butuh cahaya (r8) — membedakan berkecambah dan tumbuh. Saran presenter: setelah memilih, tampilkan cawan pada 'hari ke-4'."
+    },
+    {
+      "id": "SAINS.SD5.SIKLUS-TUMBUHAN.03",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "SIKLUS-TUMBUHAN",
+        "nama": {
+          "id": "Siklus hidup tumbuhan berbunga",
+          "en": "Life cycle of flowering plants"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah cara biji tersebar dari bentuk buah atau bijinya: terbawa angin, dibawa hewan, terbawa air, atau meletup",
+        "en": "I can sort how seeds are spread from the shape of the fruit or seed: by wind, by animals, by water, or by bursting"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.SIKLUS-TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Be.02",
+          "note": "adaptasi tumbuhan untuk penyebaran biji"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bp.03",
+          "note": "penyebaran biji"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok empat wadah; tiap kartu menyebut ciri yang teramati (biji berparasut, bersayap, buah manis, berduri pengait, mengapung, polong mengering). Contoh lokal: mahoni, kapuk, kelapa, bakau, nipah, pacar air. Jebakan: kelapa besar dikira jatuh saja; buah jambu dikira hanya jatuh (dimakan kelelawar). Knob itemCount 4 → 8; empat wadah sejak awal. [Tinjauan 25 Okt 2026: polong teratai diganti buah nipah — penyebaran teratai oleh air kurang jelas.]"
+    },
+    {
+      "id": "SAINS.SD5.PENCERNAAN.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "PENCERNAAN",
+        "nama": {
+          "id": "Sistem pencernaan",
+          "en": "The digestive system"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun jalan makanan di tubuh: mulut, kerongkongan, lambung, usus halus, usus besar, lalu anus",
+        "en": "I can order the path food takes through the body: mouth, oesophagus, stomach, small intestine, large intestine, then anus"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bs.04",
+          "note": "organ sistem pencernaan manusia dan fungsinya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Dua paket urutkan: susun (knob steps 4 → 6, dipotong dari mulut) dan perbaiki (satu pasang tertukar). Label menyebut kerja tiap organ supaya urutan bisa dinalar. Jebakan: usus besar ditaruh sebelum usus halus karena kata 'besar'; lambung dikira di awal (dekat mulut). Istilah 'anus' dipakai lugas sesuai acuan; PO boleh mengganti dengan 'dubur'. [Tinjauan 25 Okt 2026: emoji lambung diganti bentuk bulat — emoji sebelumnya bermakna orang hamil.]"
+    },
+    {
+      "id": "SAINS.SD5.PENCERNAAN.02",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "PENCERNAAN",
+        "nama": {
+          "id": "Sistem pencernaan",
+          "en": "The digestive system"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk organ pencernaan dari tugasnya dan tahu banyak hewan bertulang belakang punya sistem yang mirip",
+        "en": "I can identify a digestive organ from its job and know many vertebrates have a similar system"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.PENCERNAAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Bs.04",
+          "note": "fungsi organ pencernaan; banyak vertebrata punya sistem pencernaan serupa"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde: tugas → organ (pilihan berisi organ bertetangga), satu ronde penyerapan sari makanan, satu ronde perbandingan dengan vertebrata lain. Jebakan: penyerapan sari makanan dikira di lambung; penyerapan air dikira di usus halus."
+    },
+    {
+      "id": "SAINS.SD5.ADAPTASI.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "ADAPTASI",
+        "nama": {
+          "id": "Adaptasi makhluk hidup",
+          "en": "Adaptation"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencocokkan ciri hewan atau tumbuhan dengan lingkungan panas-kering, dingin, atau basah tempat ciri itu menolong",
+        "en": "I can match an animal or plant feature to the hot-dry, cold, or wet environment where that feature helps it survive"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Be.01",
+          "note": "adaptasi terhadap lingkungan panas, dingin, basah, dan/atau kering"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok tiga wadah lingkungan; tiap kartu memuat ciri DAN gunanya (unta: punuk menyimpan lemak) sehingga anak menalar 'ciri ini menolong di mana', bukan menghafal habitat. Contoh lokal: talas, bakau, katak pohon. Jebakan: kadal gurun bersembunyi di pasir (perilaku juga adaptasi); anjing laut di kutub. Knob itemCount 4 → 9."
+    },
+    {
+      "id": "SAINS.SD5.ADAPTASI.02",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "ADAPTASI",
+        "nama": {
+          "id": "Adaptasi makhluk hidup",
+          "en": "Adaptation"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah ciri yang menolong pemangsa berburu dan ciri yang menolong mangsa selamat",
+        "en": "I can sort features that help a predator hunt from features that help prey stay safe"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.ADAPTASI.01",
+        "SAINS.SD4.RANTAI-MAKANAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Be.03",
+          "note": "adaptasi umum hewan pemangsa dan mangsa"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah, kartu berupa ciri (bukan nama hewan) agar yang dinilai fungsinya. Ciri yang dimiliki keduanya (lari cepat, warna samaran) sengaja tidak dipakai karena ambigu. Jebakan: warna mencolok dikira membuat mangsa mudah ditangkap (tanda beracun); hidup berkawanan. Knob itemCount 4 → 9."
+    },
+    {
+      "id": "SAINS.SD5.LARUTAN.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "LARUTAN",
+        "nama": {
+          "id": "Melarutkan dan memisahkan campuran",
+          "en": "Dissolving and separating mixtures"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda yang larut di air dan yang tidak larut setelah diaduk",
+        "en": "I can sort substances that dissolve in water from those that do not after stirring"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.WUJUD-ZAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Cp.01",
+          "note": "kemampuan zat padat larut adalah sifat zat itu"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Cc.03",
+          "note": "menyelidiki dan menjelaskan melarutkan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dengan bingkai pengamatan: wadah berlabel apa yang terlihat setelah diaduk (tak terlihat lagi / mengendap atau mengapung). Jebakan: minyak (cair tetapi tidak larut, mengapung), gula batu (larut pelan), kopi instan (larut, air berwarna tetapi jernih). Tepung dan susu bubuk sengaja tidak dipakai (membentuk suspensi keruh, ambigu). Knob itemCount 4 → 10. [Tinjauan 25 Okt 2026: sirup (cairan) diganti bubuk oralit — acuan 5Cp.01 membahas zat padat yang larut; minyak tetap sebagai pengecoh cair.]"
+    },
+    {
+      "id": "SAINS.SD5.LARUTAN.02",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "LARUTAN",
+        "nama": {
+          "id": "Melarutkan dan memisahkan campuran",
+          "en": "Dissolving and separating mixtures"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih cara memisahkan campuran: menyaring, menguapkan, memakai magnet, mengayak, atau mengendapkan",
+        "en": "I can choose how to separate a mixture: filtering, evaporating, using a magnet, sieving, or letting it settle"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD5.LARUTAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Cc.02",
+          "note": "melarutkan dapat dibalik; memisahkan pelarut dan zat terlarut"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde. Inti acuan 5Cc.02: garam larut tidak bisa disaring, harus diuapkan (r1, r5, r6, r7). Ronde lain memberi pembanding cara pisah yang cocok untuk campuran tak larut. Ronde r8 menambahkan syarat 'airnya mau dipakai lagi' supaya 'diuapkan' tidak ikut benar. Konteks lokal: tambak garam."
+    },
+    {
+      "id": "SAINS.SD5.SIKLUS-AIR.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "SIKLUS-AIR",
+        "nama": {
+          "id": "Siklus air",
+          "en": "The water cycle"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun siklus air: penguapan, pengembunan menjadi awan, hujan, lalu air mengalir kembali",
+        "en": "I can order the water cycle: evaporation, condensation into clouds, rain, then water flowing back"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.WUJUD-ZAT.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5ESc.01",
+          "note": "siklus air: penguapan, pengembunan, presipitasi"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Cc.01",
+          "note": "penguapan dan pengembunan dikaitkan dengan suhu"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Urutkan susun tiga konteks: laut ke laut, genangan di halaman, dan pengembunan di gelas es (urutan kecil yang bisa dicoba di rumah). Langkah menyebut perubahan suhu (dipanaskan / mendingin) sehingga kaitan dengan 5Cc.01 terlihat. Jebakan: hujan sebelum awan; pengembunan dikira 'air keluar dari gelas'. Knob steps 4 → 5."
+    },
+    {
+      "id": "SAINS.SD5.GAYA.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "GAYA",
+        "nama": {
+          "id": "Macam-macam gaya",
+          "en": "Types of forces"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menamai gaya yang bekerja dalam suatu kejadian: gravitasi, gesek, hambatan udara, hambatan air, gaya apung, atau gaya normal",
+        "en": "I can name the force acting in an event: gravity, friction, air resistance, water resistance, upthrust, or the normal force"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Pf.01",
+          "note": "gravitasi, gaya dorong/tarik, gaya normal, gaya apung, gesek, hambatan udara dan air"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Pf.02",
+          "note": "benda diam pun bisa dikenai beberapa gaya"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 10 ronde berupa kejadian sehari-hari (rem sepeda, parasut, bola pantai di kolam, buku di meja). Ronde r8 menguji 5Pf.02: benda diam dikenai dua gaya, bukan nol. Jebakan: buku diam dikira tanpa gaya; kapal mengapung dikira 'ringan'. Diagram gaya (5Pf.03) belum dinilai — butuh mekanik gambar panah."
+    },
+    {
+      "id": "SAINS.SD5.BUNYI.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "BUNYI",
+        "nama": {
+          "id": "Bunyi: tinggi rendah dan keras pelan",
+          "en": "Sound: pitch and volume"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memprediksi bunyi jadi lebih tinggi, rendah, nyaring, atau pelan saat benda yang bergetar diubah",
+        "en": "I can predict whether a sound gets higher, lower, louder or quieter when the vibrating object is changed"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Ps.01",
+          "note": "bunyi dibuat oleh sumber yang bergetar"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Ps.02",
+          "note": "nada tinggi-rendah, volume keras-pelan"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Ps.03",
+          "note": "mengubah volume dan nada"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 10 ronde dengan alat yang mudah dicoba (karet gelang, penggaris di tepi meja, gendang, gelas berisi air). Pilihan selalu mencampur nada dan volume supaya anak memisahkan dua sifat itu — jebakan terbesar ('lebih tinggi' dipakai untuk 'lebih keras'). Ronde gelas: dipukul sendok, makin banyak air → nada makin rendah (berbeda dengan botol ditiup; hanya versi pukul yang dipakai)."
+    },
+    {
+      "id": "SAINS.SD5.MAGNET.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "MAGNET",
+        "nama": {
+          "id": "Magnet dan bahan magnetik",
+          "en": "Magnets and magnetic materials"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda yang tertarik magnet dan yang tidak, dan tahu tidak semua logam tertarik magnet",
+        "en": "I can sort objects that are attracted to a magnet from those that are not, and know not all metals are attracted"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.LISTRIK.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Pe.01",
+          "note": "beda magnet dan bahan magnetik"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5Pe.02",
+          "note": "gaya bekerja dari jarak antara magnet dan bahan magnetik"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah kelompok dua wadah. Prasyarat SD4 konduktor dipakai sebagai pembanding: semua logam menghantar listrik, tetapi hanya besi/baja (dan nikel) yang tertarik magnet. Jebakan sengaja: kaleng minuman aluminium, aluminium foil, kawat tembaga, kunci kuningan, gelang emas. Uang logam rupiah tidak dipakai (bahannya berbeda menurut tahun). Knob itemCount 4 → 10."
+    },
+    {
+      "id": "SAINS.SD5.BUMI-ORBIT.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "BUMI-ORBIT",
+        "nama": {
+          "id": "Orbit Bumi dan satelit",
+          "en": "Earth's orbit and satellites"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan Bumi berputar (sehari) dan Bumi mengelilingi Matahari (setahun), dan tahu Bulan adalah satelit alami",
+        "en": "I can tell the Earth spinning (one day) from the Earth orbiting the Sun (one year), and know the Moon is a natural satellite"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.BUMI-ANTARIKSA.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5ESs.01",
+          "note": "orbit Bumi mengelilingi Matahari: elips, berlawanan arah jarum jam, lamanya"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5ESs.03",
+          "note": "satelit mengorbit benda lebih besar; bulan adalah satelit alami"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 8 ronde. Inti: dua gerak Bumi tertukar adalah miskonsepsi paling umum (r1 vs r2 dengan pilihan sama: sehari / sebulan / setahun). Arah orbit 'berlawanan jarum jam bila dilihat dari atas kutub utara' sulit dinilai tanpa animasi — belum dinilai, dicatat untuk mode simulasi orbit. Musim karena kemiringan (5ESs.02) sengaja tidak dibuat: Indonesia tidak mengalami empat musim; perlu konteks negara lain (PO)."
+    },
+    {
+      "id": "SAINS.SD5.PENYELIDIKAN.01",
+      "track": "SAINS",
+      "level": "SD5",
+      "unit": {
+        "id": "PENYELIDIKAN",
+        "nama": {
+          "id": "Merancang uji adil",
+          "en": "Planning a fair test"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menentukan variabel yang diubah, yang diukur, dan yang dijaga tetap dalam sebuah uji adil",
+        "en": "I can identify the variable to change, the variable to measure and the variables to keep the same in a fair test"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD4.PENYELIDIKAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "5TWSp.04",
+          "note": "merencanakan uji adil: variabel bebas, terikat, dan kontrol"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilah pilih 9 ronde: tiga penyelidikan × tiga pertanyaan (diubah / diukur / dijaga tetap), dengan tiga pilihan yang sama dalam satu penyelidikan sehingga anak harus memetakan peran, bukan mengenali kata. Istilah 'variabel bebas/terikat/kontrol' muncul sebagai keterangan di umpan balik saja. Naik dari SD4: SD4 hanya 'diubah' dan 'dibuat sama'."
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "id": "sd6-mat-aturan-posisi-suku",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lompat ke Suku Mana Saja",
+      "instruksi": "Cari aturan dari posisi ke suku, lalu pakai untuk suku yang jauh. Sentuh jawabannya.",
+      "q1": "4, 8, 12, 16, … Suku ke-10 adalah …",
+      "c1": "40",
+      "c2": "20",
+      "c3": "44",
+      "c4": "36",
+      "q2": "3, 6, 9, 12, … Suku ke-20 adalah …",
+      "c5": "60",
+      "c6": "15",
+      "c7": "23",
+      "c8": "63",
+      "q3": "5, 7, 9, 11, … Suku ke-8 adalah …",
+      "c9": "19",
+      "c10": "16",
+      "c11": "13",
+      "c12": "21",
+      "q4": "7, 14, 21, 28, … Suku ke-15 adalah …",
+      "c13": "105",
+      "c14": "35",
+      "c15": "22",
+      "c16": "98",
+      "q5": "Aturan: suku = posisi × 5 + 1. Suku ke-6 adalah …",
+      "c17": "31",
+      "c18": "30",
+      "c19": "12",
+      "q6": "1, 4, 9, 16, … Suku ke-12 adalah …",
+      "c20": "144",
+      "c21": "24",
+      "c22": "25",
+      "c23": "48",
+      "q7": "2, 5, 10, 17, … Suku ke-7 adalah …",
+      "c24": "50",
+      "c25": "26",
+      "c26": "49",
+      "c27": "37",
+      "q8": "6, 12, 18, 24, … Suku ke berapa yang bernilai 90?",
+      "c28": "84",
+      "c29": "96",
+      "q9": "2, 4, 6, 8, … Suku ke-100 adalah …",
+      "c30": "200",
+      "c31": "102",
+      "c32": "100",
+      "c33": "10",
+      "q10": "Aturan: suku = 3 × posisi − 1. Suku ke-10 adalah …",
+      "c34": "29",
+      "c35": "27",
+      "q11": "0, 3, 8, 15, … Suku ke-6 adalah …",
+      "q12": "10, 20, 30, 40, … Suku ke-9 adalah …",
+      "c36": "90",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Jump to Any Term",
+      "instruksi": "Find the position-to-term rule, then use it for a far-away term. Touch the answer.",
+      "q1": "4, 8, 12, 16, … The 10th term is …",
+      "c1": "40",
+      "c2": "20",
+      "c3": "44",
+      "c4": "36",
+      "q2": "3, 6, 9, 12, … The 20th term is …",
+      "c5": "60",
+      "c6": "15",
+      "c7": "23",
+      "c8": "63",
+      "q3": "5, 7, 9, 11, … The 8th term is …",
+      "c9": "19",
+      "c10": "16",
+      "c11": "13",
+      "c12": "21",
+      "q4": "7, 14, 21, 28, … The 15th term is …",
+      "c13": "105",
+      "c14": "35",
+      "c15": "22",
+      "c16": "98",
+      "q5": "Rule: term = position × 5 + 1. The 6th term is …",
+      "c17": "31",
+      "c18": "30",
+      "c19": "12",
+      "q6": "1, 4, 9, 16, … The 12th term is …",
+      "c20": "144",
+      "c21": "24",
+      "c22": "25",
+      "c23": "48",
+      "q7": "2, 5, 10, 17, … The 7th term is …",
+      "c24": "50",
+      "c25": "26",
+      "c26": "49",
+      "c27": "37",
+      "q8": "6, 12, 18, 24, … Which term equals 90?",
+      "c28": "84",
+      "c29": "96",
+      "q9": "2, 4, 6, 8, … The 100th term is …",
+      "c30": "200",
+      "c31": "102",
+      "c32": "100",
+      "c33": "10",
+      "q10": "Rule: term = 3 × position − 1. The 10th term is …",
+      "c34": "29",
+      "c35": "27",
+      "q11": "0, 3, 8, 15, … The 6th term is …",
+      "q12": "10, 20, 30, 40, … The 9th term is …",
+      "c36": "90",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-angka",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c4",
+        "c18",
+        "c19"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c20",
+        "c21",
+        "c22",
+        "c23"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c24",
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c6",
+        "c28",
+        "c10",
+        "c29"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c30",
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c18",
+        "c17",
+        "c35"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c14",
+        "c21",
+        "c4",
+        "c15"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c36",
+        "c24",
+        "c9",
+        "c32"
+      ],
+      "correct": "c36"
+    }
+  ]
+}

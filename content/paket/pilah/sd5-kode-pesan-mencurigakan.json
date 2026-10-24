@@ -1,0 +1,157 @@
+{
+  "id": "sd5-kode-pesan-mencurigakan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.AMAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pesan Aman atau Mencurigakan?",
+      "instruksi": "Baca tiap pesan: seret ke 'aman' atau 'mencurigakan'. Pesan mencurigakan jangan dibalas, tunjukkan ke orang dewasa.",
+      "bin-aman": "aman",
+      "bin-curiga": "mencurigakan",
+      "i1": "Selamat! Kamu menang HP baru. Klik tautan ini sekarang!",
+      "i2": "Akun game-mu dihapus hari ini, kecuali kamu kirim kata sandimu.",
+      "i3": "Kirim kode OTP yang baru masuk ke HP ibumu, ya.",
+      "i4": "Gratis 1.000 berlian! Isi nama dan alamatmu di sini.",
+      "i5": "Teman baru di game: kirim foto dan alamat rumahmu dong.",
+      "i6": "Paketmu tertahan. Bayar Rp5.000 lewat tautan ini.",
+      "i7": "Jangan bilang orang tuamu soal obrolan kita, ya.",
+      "i8": "Ibu: Nanti dijemput jam 3 ya.",
+      "i9": "Guru di kelas daring: PR halaman 20 dikumpulkan Senin.",
+      "i10": "Teman sekelas: Besok bawa buku gambar.",
+      "i11": "Ayah: Sudah sampai rumah?",
+      "i12": "Pelatih: Latihan renang pindah ke hari Rabu.",
+      "i13": "Kakak: Aku pinjam pensil warnamu sebentar ya."
+    },
+    "en": {
+      "judul": "Safe or Suspicious Message?",
+      "instruksi": "Read each message: drag it to 'safe' or 'suspicious'. Don't reply to suspicious ones, show them to an adult.",
+      "bin-aman": "safe",
+      "bin-curiga": "suspicious",
+      "i1": "Congratulations! You won a new phone. Click this link now!",
+      "i2": "Your game account is deleted today unless you send your password.",
+      "i3": "Please send the OTP code that just arrived on your mum's phone.",
+      "i4": "Free 1,000 gems! Fill in your name and address here.",
+      "i5": "New friend in a game: send me your photo and home address.",
+      "i6": "Your parcel is held. Pay Rp5,000 through this link.",
+      "i7": "Don't tell your parents about our chat, OK?",
+      "i8": "Mum: I'll pick you up at 3.",
+      "i9": "Teacher in the online class: homework page 20 is due Monday.",
+      "i10": "Classmate: Bring your drawing book tomorrow.",
+      "i11": "Dad: Are you home yet?",
+      "i12": "Coach: Swimming practice moves to Wednesday.",
+      "i13": "Big sister: Can I borrow your coloured pencils for a bit?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah pesan per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "aman",
+      "labelKey": "bin-aman",
+      "emoji": "👍"
+    },
+    {
+      "id": "curiga",
+      "labelKey": "bin-curiga",
+      "emoji": "🚩"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "curiga",
+      "scale": 0.4
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "aman",
+      "scale": 0.4
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "aman",
+      "scale": 0.4
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "aman",
+      "scale": 0.4
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "aman",
+      "scale": 0.4
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "aman",
+      "scale": 0.4
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "aman",
+      "scale": 0.4
+    }
+  ]
+}

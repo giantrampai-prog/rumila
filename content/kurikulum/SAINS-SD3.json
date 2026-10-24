@@ -1,0 +1,647 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.SD3.TUMBUHAN.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "TUMBUHAN",
+        "nama": {
+          "id": "Tumbuhan: fungsi bagian dan kebutuhannya",
+          "en": "Plants: what parts do and what plants need"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih bagian tumbuhan yang bekerja dalam suatu kejadian: akar menyerap air, daun membuat makanan dengan cahaya",
+        "en": "I can pick the plant part doing the work in a situation: roots take in water, leaves make food using light"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Bs.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: dengar/baca kejadian nyata (seledri di air berwarna, pohon tidak roboh diterpa angin), sentuh bagian tumbuhan yang bekerja. Bukan definisi hafalan: tiap ronde adalah peristiwa yang bisa diamati atau dicoba di rumah. Jebakan: menyiram daun saja tidak menolong (akar yang menyerap); warna merah naik lewat batang. Lanjutan TKA BAGIAN-TUMBUHAN (nama bagian; tidak dicantumkan karena batas brief). Ronde tetap 3–4 pilihan per kejadian. [Tinjauan 25 Okt 2026: ditambah paket pilah kelompok 'rak tugas bagian tumbuhan' (6 tugas per ronde) agar bukti tidak bergantung pada satu pilihan per ronde.]"
+    },
+    {
+      "id": "SAINS.SD3.TUMBUHAN.02",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "TUMBUHAN",
+        "nama": {
+          "id": "Tumbuhan: fungsi bagian dan kebutuhannya",
+          "en": "Plants: what parts do and what plants need"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menebak tanaman mana yang tetap sehat dari tempat dan perawatannya: cukup cahaya, cukup air, dan suhu yang cocok",
+        "en": "I can predict which plants stay healthy from where they are and how they're cared for: enough light, enough water, the right warmth"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD3.TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Bp.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSp.03",
+          "note": "membuat prediksi hasil"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu pot ke rak 'tetap sehat' atau 'akan layu'. Tiap kartu menyebut satu kondisi yang kurang/berlebih (gelap, tanpa air, terendam, di kulkas, di samping kompor), sehingga suhu kini ikut dipertimbangkan (beda dengan TKB KEBUTUHAN-TUMBUHAN: cahaya dan air). Jebakan: terlalu banyak air juga membuat layu; teras teduh tetapi terang = sehat. Ide pengaya: mode rawat dengan akibat beberapa hari (belum ada). Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD3.HEWAN.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "HEWAN",
+        "nama": {
+          "id": "Kelompok dan siklus hidup hewan",
+          "en": "Animal groups and life cycles"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan ke kelompoknya: mamalia, burung, ikan, reptil, amfibi, atau serangga",
+        "en": "I can sort animals into their groups: mammals, birds, fish, reptiles, amphibians, or insects"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.CIRI-HEWAN.01",
+        "SAINS.SD2.CIRI-HEWAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Bs.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSc.01",
+          "note": "mengelompokkan berdasar pengamatan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret hewan ke rak kelompok; ikon rak memberi ciri pembeda (rambut, bulu, sirip, sisik kering, kulit lembap, 6 kaki) yang dipakai di SD 2 CIRI-HEWAN. Paket kedua berisi hewan 'menipu': paus, lumba-lumba, dan kelelawar (mamalia), penguin (burung), penyu (reptil), hiu (ikan). Jebakan: laba-laba bukan serangga — tidak dipakai karena tidak punya rak. Knob binCount 3 → 6, itemCount 6 → 8."
+    },
+    {
+      "id": "SAINS.SD3.HEWAN.02",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "HEWAN",
+        "nama": {
+          "id": "Kelompok dan siklus hidup hewan",
+          "en": "Animal groups and life cycles"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki urutan siklus hidup katak, kupu-kupu, atau ayam yang tertukar dengan menukar satu pasang gambar",
+        "en": "I can fix a frog, butterfly, or chicken life cycle that is mixed up by swapping one pair of pictures"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.TUMBUH-BESAR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Bp.04",
+          "note": "hewan saja; siklus manusia ditunda (keputusan PO)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: mode perbaiki — satu pasang tertukar (jarak 1 atau 2), anak menukar tepat sekali; tukar berlebih dicatat salah (detail swaps). Membandingkan beberapa hewan: katak dan kupu-kupu berubah bentuk (metamorfosis), ayam dan penyu hanya membesar. Jebakan: berudu berkaki sebelum katak muda; kepompong sebelum kupu-kupu; jentik nyamuk hidup di air (kaitan 3M Indonesia). Lanjutan TKA SIKLUS-HIDUP (susun). Knob steps 4 → 5. Siklus manusia (3Bp.04 menyebut humans) diserahkan ke PO."
+    },
+    {
+      "id": "SAINS.SD3.HIDUP.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "HIDUP",
+        "nama": {
+          "id": "Hidup, pernah hidup, tidak pernah hidup",
+          "en": "Living, once living, never living"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke masih hidup, pernah hidup, atau tidak pernah hidup: daun kering dan kursi kayu itu pernah hidup",
+        "en": "I can sort things into living, once living, or never living: a dry leaf and a wooden chair were once alive"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Bp.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu ke tiga rak. Lanjutan SD1 MAKHLUK-HIDUP.01 (dua rak): kini rak 'pernah hidup' untuk bagian makhluk yang sudah mati atau bahan dari makhluk hidup (kayu, daun kering, bulu, kulit kerang). Benda yang diperdebatkan (kertas, plastik dari minyak bumi, pasir pantai yang bercampur kerang, karang) sengaja tidak dipakai. Dua konteks: rumah dan pantai. Knob binCount 2 → 3 (pernah hidup muncul kedua), itemCount 6 → 9."
+    },
+    {
+      "id": "SAINS.SD3.RANTAI-MAKANAN.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "RANTAI-MAKANAN",
+        "nama": {
+          "id": "Rantai makanan",
+          "en": "Food chains"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun rantai makanan dari tumbuhan sampai pemakan terakhir: rumput, belalang, katak, lalu ular",
+        "en": "I can build a food chain from the plant to the last eater: grass, grasshopper, frog, then snake"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.02",
+        "SAINS.SD2.HABITAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Be.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun kartu makhluk dari kiri ke kanan; panah berarti 'dimakan oleh'. Rantai selalu mulai dari tumbuhan (produsen). Knob steps 3 → 4 memotong dari depan sehingga produsen selalu ada. Enam habitat: sawah, kebun, kolam, laut, sabana, hutan. Jebakan: menaruh pemangsa besar di depan karena 'paling penting'; ulat dan belalang sama-sama pemakan daun. Paket kedua mode perbaiki (satu pasang tertukar)."
+    },
+    {
+      "id": "SAINS.SD3.RANTAI-MAKANAN.02",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "RANTAI-MAKANAN",
+        "nama": {
+          "id": "Rantai makanan",
+          "en": "Food chains"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah makhluk hidup ke produsen atau konsumen: tumbuhan membuat makanan sendiri, hewan memakan makhluk lain",
+        "en": "I can sort living things into producers or consumers: plants make their own food, animals eat other living things"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD3.RANTAI-MAKANAN.01",
+        "SAINS.SD3.TUMBUHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Be.01",
+          "note": "produsen dan konsumen"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret makhluk ke rak produsen (🌞 membuat makanan dengan cahaya) atau konsumen (🍽️ makan makhluk lain). Jebakan: jamur bukan tumbuhan dan bukan produsen — tidak dipakai (bisa jadi pengaya 'pengurai'); pohon besar dan ganggang sama-sama produsen; ulat kecil tetap konsumen. Beda dengan .01: di sini peran, di sana urutan. Knob itemCount 6 → 10."
+    },
+    {
+      "id": "SAINS.SD3.WUJUD.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "WUJUD",
+        "nama": {
+          "id": "Padat, cair, gas",
+          "en": "Solids, liquids, gases"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke padat, cair, atau gas dari bentuknya di dalam wadah",
+        "en": "I can sort things into solids, liquids, or gases by how they behave in a container"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Cm.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Cp.01",
+          "note": "beda sifat padat dan cair"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke rak padat (bentuk tetap), cair (mengalir, mengikuti wadah), atau gas (memenuhi ruang, sering tak terlihat). Ikon rak memuat ciri, bukan hanya nama. Jebakan: gula pasir dan pasir padat walau bisa dituang; madu dan kecap cair walau kental; es batu padat; udara di balon dan ban adalah gas. Asap tidak dipakai (campuran partikel). Dua konteks: dapur dan halaman. Knob binCount 2 → 3 (gas terakhir), itemCount 6 → 9."
+    },
+    {
+      "id": "SAINS.SD3.CAMPURAN.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "CAMPURAN",
+        "nama": {
+          "id": "Campuran",
+          "en": "Mixtures"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih cara memisahkan campuran: ayakan untuk pasir dan kerikil, magnet untuk paku, kain saring untuk pasir di air",
+        "en": "I can choose how to separate a mixture: a sieve for sand and gravel, a magnet for nails, a cloth filter for sand in water"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD3.WUJUD.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Cm.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Cp.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Cp.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: dengar campuran, sentuh alat pemisah. Tiap ronde memaksa anak memakai sifat bahan: ukuran butir (ayakan), tertarik magnet (magnet), padat tak larut di dalam cair (kain saring). Campuran yang larut (garam di air) sengaja tidak dipakai (3Cp.03 mengecualikan pelarutan). Jebakan: paku di dalam air bisa magnet atau saring — tidak dipakai; 'ampas teh' = kain saring. Ide mode baru: simulasi menuang ke saringan dengan akibat terlihat. [Tinjauan 25 Okt 2026: ditambah paket pilah kelompok 'rak alat pemisah' (campuran ditulis 'pasir + kerikil'), 6 keputusan per ronde.]"
+    },
+    {
+      "id": "SAINS.SD3.CAMPURAN.02",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "CAMPURAN",
+        "nama": {
+          "id": "Campuran",
+          "en": "Mixtures"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke larut atau tidak larut setelah diaduk dalam air: gula larut, pasir mengendap",
+        "en": "I can sort things into dissolves or does not dissolve after stirring in water: sugar dissolves, sand sinks to the bottom"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD3.WUJUD.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Cc.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSc.01",
+          "note": "mengelompokkan dari hasil uji"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke rak 'larut' (hilang dari pandangan, air tetap bening/berwarna) atau 'tidak larut' (mengendap, mengapung, atau keruh). Umpan balik sebaiknya mengingatkan 'gula masih ada — airnya manis' (inti 3Cc.01). Jebakan: minyak tidak larut (mengapung); gula batu larut walau lama. Tepung dan kopi bubuk tidak dipakai (sebagian larut). Pengaya; ideal didahului mode simulasi aduk (belum ada). Knob itemCount 4 → 8. [Tinjauan 25 Okt 2026: REVISI menunggu PO — inti 3Cc.01 'zat terlarut masih ada' tidak terbukti oleh pemilahan (K4 = 1). Butuh mode simulasi aduk-dan-cicip/uapkan.]"
+    },
+    {
+      "id": "SAINS.SD3.GAYA.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "GAYA",
+        "nama": {
+          "id": "Gaya gesek",
+          "en": "Friction"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun permukaan dari yang paling licin ke paling kasar menurut jauhnya benda meluncur",
+        "en": "I can order surfaces from smoothest to roughest by how far something slides on them"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.GAYA.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Pf.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Pf.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun kartu permukaan dari yang membuat benda meluncur paling jauh (licin) sampai paling dekat (kasar). Kartu hanya menyebut permukaan; jarak tidak digambar sehingga anak menalar dari kekasaran (gaya gesek). Tiga percobaan: mobil mainan, kotak, kelereng; tiap permukaan jelas berbeda kekasarannya (es/kaca/ubin → kayu → karpet/handuk → pasir/amplas). [Tinjauan 25 Okt 2026: pasangan yang ambigu (semen vs tikar, kerikil vs rumput, kaus kaki di lantai basah) dibuang.] Jebakan: karpet berbulu menghambat walau lembut disentuh. Knob steps 3 → 4. Ide mode baru: lintasan miring dengan jarak terlihat."
+    },
+    {
+      "id": "SAINS.SD3.CAHAYA.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "CAHAYA",
+        "nama": {
+          "id": "Cahaya dan bayangan",
+          "en": "Light and shadows"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke tembus pandang, tembus cahaya, atau tidak tembus cahaya",
+        "en": "I can sort materials into transparent, translucent, or opaque"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.CAHAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Ps.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke tiga rak; ikon rak menunjukkan apa yang terlihat di baliknya (jelas / buram / gelap). Lanjutan TKB BAHAN.02 (tembus pandang atau tidak; tidak dicantumkan karena batas brief) dengan kategori tengah 'tembus cahaya' dan istilah Cambridge. Jebakan: kaca buram kamar mandi dan kertas minyak = tembus cahaya; air jernih = tembus pandang; kain tebal = tidak tembus. Knob binCount 2 → 3, itemCount 6 → 9. Ideal: mode senter-di-balik-benda (belum ada). [Tinjauan 25 Okt 2026: REVISI menunggu PO — 3Ps.01 menuntut menyelidiki; pemilahan dari ingatan (K4 = 1). Butuh mode simulasi senter-di-balik-benda.]"
+    },
+    {
+      "id": "SAINS.SD3.CAHAYA.02",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "CAHAYA",
+        "nama": {
+          "id": "Cahaya dan bayangan",
+          "en": "Light and shadows"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun bayangan dari yang paling besar ke paling kecil saat benda dijauhkan dari senter",
+        "en": "I can order shadows from biggest to smallest as an object is moved away from the torch"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD3.CAHAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Ps.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Ps.02",
+          "note": "bayangan terbentuk saat cahaya terhalang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun kartu posisi benda (dekat senter → dekat layar) menurut besar bayangannya. Gambar benda tidak diperbesar/diperkecil, sehingga anak harus memakai aturan 'makin dekat ke senter, makin besar bayangan', bukan membandingkan ukuran gambar. Empat benda: boneka, tangan kelinci, dinosaurus mainan, kunci. Jebakan: anak mengira benda yang dekat layar bayangannya paling besar. Knob steps 3 → 4. Ide mode baru: geser senter dengan bayangan berubah langsung."
+    },
+    {
+      "id": "SAINS.SD3.MAGNET.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "MAGNET",
+        "nama": {
+          "id": "Bahan magnetis",
+          "en": "Magnetic materials"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda logam ke yang ditarik magnet atau tidak: paku besi ditarik, kaleng aluminium dan cincin emas tidak",
+        "en": "I can sort metal objects into pulled by a magnet or not: an iron nail is pulled, an aluminium can and a gold ring are not"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3Pe.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke rak 'ditarik magnet' atau 'tidak'. Inti SD 3: TIDAK semua logam magnetis (TKA APUNG-TENGGELAM-MAGNET.03 sudah memisah logam vs non-logam; tidak dicantumkan karena batas brief). Mayoritas kartu adalah logam. Hanya benda yang jelas: besi/baja (paku, klip, peniti, tutup botol kaleng) vs aluminium, tembaga, emas, kuningan. Koin rupiah dan sendok stainless tidak dipakai (campuran berbeda tiap tahun/merek). Knob itemCount 4 → 8. [Tinjauan 25 Okt 2026: REVISI menunggu PO — 3Pe.03 menuntut menyelidiki; anak belum bisa mencoba magnet di game (K4 = 1). Butuh mode simulasi dekatkan-magnet.]"
+    },
+    {
+      "id": "SAINS.SD3.BULAN.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "BULAN",
+        "nama": {
+          "id": "Bentuk Bulan berubah",
+          "en": "The Moon's changing shape"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun bentuk Bulan dari sabit tipis sampai purnama, atau dari purnama kembali menipis",
+        "en": "I can order the Moon's shapes from a thin crescent to a full moon, or from full moon back to thin"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.MATAHARI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3ESs.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun gambar fase Bulan menurut malam pengamatan. Dua urutan utama (membesar, mengecil) satu arah sehingga tiap urutan tunggal; urutan ketiga melewati purnama dan hanya muncul pada knob 6–7. Judul memberi arah ('makin terang' / 'makin tipis'). Jebakan: separuh awal 🌓 dan separuh akhir 🌗 tampak mirip tetapi sisi terangnya berlawanan. Catatan: orientasi sabit di khatulistiwa miring; emoji memakai gaya belahan utara (PO: aset sendiri). 3ESs.02 (gerak Bumi–Bulan) ditunda: butuh simulasi orbit. Knob steps 3 → 7."
+    },
+    {
+      "id": "SAINS.SD3.FOSIL.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "FOSIL",
+        "nama": {
+          "id": "Fosil",
+          "en": "Fossils"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah temuan ke fosil atau bukan fosil: cetakan daun di batu itu fosil, tulang ayam sisa makan bukan",
+        "en": "I can sort finds into fossils or not fossils: a leaf print in rock is a fossil, a leftover chicken bone is not"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD3.HIDUP.01",
+        "SAINS.SD2.BATUAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3ESp.02"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret temuan ke rak fosil (jejak atau sisa makhluk yang PERNAH hidup, tersimpan di batu sejak lama) atau bukan fosil. Jebakan: mainan dinosaurus bukan fosil; kerang segar di pantai bukan fosil walau pernah hidup; jejak kaki dinosaurus di batu adalah fosil walau bukan tulang. Prasyarat HIDUP.01 karena 'pernah hidup' adalah kunci. Pengaya. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD3.PENYELIDIKAN.01",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "PENYELIDIKAN",
+        "nama": {
+          "id": "Penyelidikan ilmiah",
+          "en": "Scientific enquiry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih alat yang tepat untuk mengukur: termometer untuk suhu, timbangan untuk berat, penggaris untuk panjang",
+        "en": "I can choose the right tool to measure: a thermometer for temperature, scales for weight, a ruler for length"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.PENGAMATAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSc.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSc.03",
+          "note": "satuan baku"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: dengar apa yang ingin diketahui, sentuh alat ukur. Lima alat: termometer, timbangan, penggaris, gelas ukur, stopwatch. Tiap ronde 3 pilihan dan konteks penyelidikan sains (suhu air kolam, lama es mencair, banyak air hujan). Jebakan: 'tinggi tanaman' = penggaris; 'berapa lama' = stopwatch, bukan jam dinding. Beda dengan MAT.TKB alat-ukur (panjang vs berat untuk hewan). Ide lanjutan: memakai alatnya (mode simulasi baca termometer, belum ada). [Tinjauan 25 Okt 2026: ditambah paket pilah kelompok 'rak alat ukur' (pertanyaan pendek ke 5 rak alat), knob binCount 3 → 5.]"
+    },
+    {
+      "id": "SAINS.SD3.PENYELIDIKAN.02",
+      "track": "SAINS",
+      "level": "SD3",
+      "unit": {
+        "id": "PENYELIDIKAN",
+        "nama": {
+          "id": "Penyelidikan ilmiah",
+          "en": "Scientific enquiry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memutuskan apakah hasil percobaan mendukung tebakan atau tidak",
+        "en": "I can decide whether the results of an experiment support the prediction or not"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MATAHARI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSa.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "3TWSp.03"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: baca/dengar tebakan dan hasil, sentuh 'mendukung' (✅) atau 'tidak mendukung' (❌). Hasil sengaja kadang berbeda dari tebakan yang wajar, supaya anak membandingkan dua kalimat, bukan menilai tebakan masuk akal atau tidak. Seimbang 5:5. Jebakan: tebakan benar secara ilmu tetapi hasil percobaan ini tidak mendukung (mis. tanaman tidak tumbuh karena lupa disiram). Pengaya — menuntut membaca dua kalimat; untuk pembaca lambat, VO wajib. Satu kemampuan: membandingkan hasil dengan prediksi."
+    }
+  ]
+}

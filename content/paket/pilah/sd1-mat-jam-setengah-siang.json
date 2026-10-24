@@ -1,0 +1,266 @@
+{
+  "id": "sd1-mat-jam-setengah-siang",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jam Setengah: Siang",
+      "instruksi": "Setengah 4 artinya setengah jalan menuju pukul 4, yaitu 3.30. Taruh tiap jam di raknya.",
+      "b-pukul-1": "pukul 1",
+      "b-setengah-2": "setengah 2",
+      "b-pukul-2": "pukul 2",
+      "b-setengah-3": "setengah 3",
+      "b-pukul-3": "pukul 3",
+      "b-setengah-4": "setengah 4",
+      "b-pukul-4": "pukul 4",
+      "b-setengah-5": "setengah 5",
+      "b-pukul-5": "pukul 5",
+      "b-setengah-6": "setengah 6",
+      "i-jam-pukul-1": "jam pukul 1",
+      "i-01t00": "01.00",
+      "i-jam-1t30": "jam 1.30",
+      "i-01t30": "01.30",
+      "i-jam-pukul-2": "jam pukul 2",
+      "i-02t00": "02.00",
+      "i-jam-2t30": "jam 2.30",
+      "i-02t30": "02.30",
+      "i-jam-pukul-3": "jam pukul 3",
+      "i-03t00": "03.00",
+      "i-jam-3t30": "jam 3.30",
+      "i-03t30": "03.30",
+      "i-jam-pukul-4": "jam pukul 4",
+      "i-04t00": "04.00",
+      "i-jam-4t30": "jam 4.30",
+      "i-04t30": "04.30",
+      "i-jam-pukul-5": "jam pukul 5",
+      "i-05t00": "05.00",
+      "i-jam-5t30": "jam 5.30",
+      "i-05t30": "05.30"
+    },
+    "en": {
+      "judul": "Half Past: Afternoon",
+      "instruksi": "Look at both hands. Half past 3 is 3:30. Put each clock on its shelf.",
+      "b-pukul-1": "1 o'clock",
+      "b-setengah-2": "half past 1",
+      "b-pukul-2": "2 o'clock",
+      "b-setengah-3": "half past 2",
+      "b-pukul-3": "3 o'clock",
+      "b-setengah-4": "half past 3",
+      "b-pukul-4": "4 o'clock",
+      "b-setengah-5": "half past 4",
+      "b-pukul-5": "5 o'clock",
+      "b-setengah-6": "half past 5",
+      "i-jam-pukul-1": "clock at 1 o'clock",
+      "i-01t00": "01:00",
+      "i-jam-1t30": "clock at 1:30",
+      "i-01t30": "01:30",
+      "i-jam-pukul-2": "clock at 2 o'clock",
+      "i-02t00": "02:00",
+      "i-jam-2t30": "clock at 2:30",
+      "i-02t30": "02:30",
+      "i-jam-pukul-3": "clock at 3 o'clock",
+      "i-03t00": "03:00",
+      "i-jam-3t30": "clock at 3:30",
+      "i-03t30": "03:30",
+      "i-jam-pukul-4": "clock at 4 o'clock",
+      "i-04t00": "04:00",
+      "i-jam-4t30": "clock at 4:30",
+      "i-04t30": "04:30",
+      "i-jam-pukul-5": "clock at 5 o'clock",
+      "i-05t00": "05:00",
+      "i-jam-5t30": "clock at 5:30",
+      "i-05t30": "05:30"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jam per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "pukul-1",
+      "labelKey": "b-pukul-1"
+    },
+    {
+      "id": "setengah-2",
+      "labelKey": "b-setengah-2"
+    },
+    {
+      "id": "pukul-2",
+      "labelKey": "b-pukul-2"
+    },
+    {
+      "id": "setengah-3",
+      "labelKey": "b-setengah-3"
+    },
+    {
+      "id": "pukul-3",
+      "labelKey": "b-pukul-3"
+    },
+    {
+      "id": "setengah-4",
+      "labelKey": "b-setengah-4"
+    },
+    {
+      "id": "pukul-4",
+      "labelKey": "b-pukul-4"
+    },
+    {
+      "id": "setengah-5",
+      "labelKey": "b-setengah-5"
+    },
+    {
+      "id": "pukul-5",
+      "labelKey": "b-pukul-5"
+    },
+    {
+      "id": "setengah-6",
+      "labelKey": "b-setengah-6"
+    }
+  ],
+  "items": [
+    {
+      "id": "jam-1",
+      "labelKey": "i-jam-pukul-1",
+      "bin": "pukul-1",
+      "emoji": "🕐"
+    },
+    {
+      "id": "digital-1",
+      "labelKey": "i-01t00",
+      "bin": "pukul-1",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-1-30",
+      "labelKey": "i-jam-1t30",
+      "bin": "setengah-2",
+      "emoji": "🕜"
+    },
+    {
+      "id": "digital-1-30",
+      "labelKey": "i-01t30",
+      "bin": "setengah-2",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-2",
+      "labelKey": "i-jam-pukul-2",
+      "bin": "pukul-2",
+      "emoji": "🕑"
+    },
+    {
+      "id": "digital-2",
+      "labelKey": "i-02t00",
+      "bin": "pukul-2",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-2-30",
+      "labelKey": "i-jam-2t30",
+      "bin": "setengah-3",
+      "emoji": "🕝"
+    },
+    {
+      "id": "digital-2-30",
+      "labelKey": "i-02t30",
+      "bin": "setengah-3",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-3",
+      "labelKey": "i-jam-pukul-3",
+      "bin": "pukul-3",
+      "emoji": "🕒"
+    },
+    {
+      "id": "digital-3",
+      "labelKey": "i-03t00",
+      "bin": "pukul-3",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-3-30",
+      "labelKey": "i-jam-3t30",
+      "bin": "setengah-4",
+      "emoji": "🕞"
+    },
+    {
+      "id": "digital-3-30",
+      "labelKey": "i-03t30",
+      "bin": "setengah-4",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-4",
+      "labelKey": "i-jam-pukul-4",
+      "bin": "pukul-4",
+      "emoji": "🕓"
+    },
+    {
+      "id": "digital-4",
+      "labelKey": "i-04t00",
+      "bin": "pukul-4",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-4-30",
+      "labelKey": "i-jam-4t30",
+      "bin": "setengah-5",
+      "emoji": "🕟"
+    },
+    {
+      "id": "digital-4-30",
+      "labelKey": "i-04t30",
+      "bin": "setengah-5",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-5",
+      "labelKey": "i-jam-pukul-5",
+      "bin": "pukul-5",
+      "emoji": "🕔"
+    },
+    {
+      "id": "digital-5",
+      "labelKey": "i-05t00",
+      "bin": "pukul-5",
+      "scale": 0.6
+    },
+    {
+      "id": "jam-5-30",
+      "labelKey": "i-jam-5t30",
+      "bin": "setengah-6",
+      "emoji": "🕠"
+    },
+    {
+      "id": "digital-5-30",
+      "labelKey": "i-05t30",
+      "bin": "setengah-6",
+      "scale": 0.6
+    }
+  ]
+}

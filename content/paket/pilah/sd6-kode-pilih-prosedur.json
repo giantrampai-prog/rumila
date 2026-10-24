@@ -1,0 +1,462 @@
+{
+  "id": "sd6-kode-pilih-prosedur",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.SUBRUTIN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jadikan Prosedur",
+      "instruksi": "Cari bagian yang muncul berulang di program, lalu pilih prosedur yang paling tepat untuk mewakilinya.",
+      "pilihan": "pilihan",
+      "c1": "maju, maju, kanan, ambil bola",
+      "c2": "maju, maju",
+      "c3": "ambil bola, maju",
+      "q1": "Program: maju, maju, kanan, ambil bola, maju, maju, kanan, ambil bola, maju, maju, kanan, ambil bola. Bagian mana yang paling cocok dijadikan prosedur?",
+      "c4": "tepuk, tepuk, putar, lompat",
+      "c5": "putar, lompat, tepuk",
+      "c6": "tepuk",
+      "q2": "Tarian: tepuk, tepuk, putar, lompat, tepuk, tepuk, putar, lompat. Bagian mana yang dibuat jadi prosedur?",
+      "c7": "persegi(): ulangi 4: maju 3, kanan",
+      "c8": "geser()",
+      "c9": "kanan()",
+      "q3": "Gambar: (maju 3, kanan) ×4 lalu geser; (maju 3, kanan) ×4 lalu geser; (maju 3, kanan) ×4. Prosedur apa yang paling berguna?",
+      "c10": "mulai_ulang(): skor = 0, nyawa = 3, ke awal",
+      "c11": "skor_nol(): skor = 0",
+      "c12": "level_tiga()",
+      "q4": "Game: setiap kali nyawa habis → skor = 0, nyawa = 3, robot ke petak awal. Ini terjadi di 3 level. Prosedur apa yang sebaiknya dibuat?",
+      "c13": "satu_pot(): maju 2, siram",
+      "c14": "pulang()",
+      "c15": "siram(), pulang()",
+      "q5": "Robot penyiram: maju 2, siram, maju 2, siram, maju 2, siram, pulang. Prosedur mana yang paling pas?",
+      "c16": "ditulis sekali, dipakai berkali-kali",
+      "c17": "supaya programnya lebih panjang",
+      "c18": "supaya komputer tidak perlu perintah",
+      "q6": "Mengapa bagian yang sering diulang dibuat jadi prosedur?",
+      "c19": "ucapkan(nama): tampil nama, 'Selamat!', terompet",
+      "c20": "lima_teman()",
+      "c21": "terompet()",
+      "q7": "Program salam ulang tahun: tampil nama, tampil 'Selamat!', tiup terompet. Ini dipakai untuk 5 teman berbeda. Prosedur yang baik adalah…",
+      "c22": "ulangi 6 kali: tangga()",
+      "c23": "tangga() saja",
+      "c24": "maju 6, naik 6",
+      "q8": "Prosedur tangga() = maju 1, naik 1. Bangunan butuh 6 anak tangga. Program terpendek adalah…",
+      "c25": "siku(n): maju n, kanan, maju n",
+      "c26": "siku3() dan siku5()",
+      "q9": "Dua bagian kode ini sama kecuali angkanya: (maju 3, kanan, maju 3) dan (maju 5, kanan, maju 5). Prosedur yang paling berguna adalah…",
+      "c27": "cuci_tangan()",
+      "c28": "makan, main",
+      "c29": "tidur()",
+      "q10": "Program: cuci tangan, makan, cuci tangan, main, cuci tangan, tidur. Bagian mana yang cocok jadi prosedur?",
+      "c30": "buat fungsi diskon(harga)",
+      "c31": "tulis ulang di tiap halaman",
+      "c32": "hapus diskonnya",
+      "q11": "Kalkulator diskon dipakai di 6 halaman toko daring: harga_baru = harga - harga * 10 / 100. Sebaiknya…",
+      "c33": "ulangi 10 kali: lampu_kedip()",
+      "c34": "lampu_kedip() 1 kali",
+      "c35": "nyala, mati ×10 tanpa tunggu",
+      "q12": "Prosedur lampu_kedip(): nyala, tunggu 1 detik, mati, tunggu 1 detik. Untuk 10 kedipan, program terbaik adalah…"
+    },
+    "en": {
+      "judul": "Make It a Procedure",
+      "instruksi": "Find the part that repeats in the program, then choose the best procedure to stand for it.",
+      "pilihan": "choices",
+      "c1": "forward, forward, right, pick up ball",
+      "c2": "forward, forward",
+      "c3": "pick up ball, forward",
+      "q1": "Program: forward, forward, right, pick up ball, forward, forward, right, pick up ball, forward, forward, right, pick up ball. Which part is best made into a procedure?",
+      "c4": "clap, clap, spin, jump",
+      "c5": "spin, jump, clap",
+      "c6": "clap",
+      "q2": "Dance: clap, clap, spin, jump, clap, clap, spin, jump. Which part becomes a procedure?",
+      "c7": "square(): repeat 4: forward 3, right",
+      "c8": "move()",
+      "c9": "right()",
+      "q3": "Drawing: (forward 3, right) ×4 then move; (forward 3, right) ×4 then move; (forward 3, right) ×4. Which procedure is most useful?",
+      "c10": "restart(): score = 0, lives = 3, go to start",
+      "c11": "zero_score(): score = 0",
+      "c12": "level_three()",
+      "q4": "Game: every time lives run out → score = 0, lives = 3, robot back to start. This happens in 3 levels. Which procedure should you make?",
+      "c13": "one_pot(): forward 2, water",
+      "c14": "go_home()",
+      "c15": "water(), go_home()",
+      "q5": "Watering robot: forward 2, water, forward 2, water, forward 2, water, go home. Which procedure fits best?",
+      "c16": "write it once, use it many times",
+      "c17": "to make the program longer",
+      "c18": "so the computer needs no instructions",
+      "q6": "Why do we turn a part that is used often into a procedure?",
+      "c19": "celebrate(name): show name, 'Happy birthday!', horn",
+      "c20": "five_friends()",
+      "c21": "horn()",
+      "q7": "Birthday greeting: show name, show 'Happy birthday!', blow horn. It is used for 5 different friends. A good procedure is…",
+      "c22": "repeat 6 times: step()",
+      "c23": "step() only",
+      "c24": "forward 6, up 6",
+      "q8": "Procedure step() = forward 1, up 1. A building needs 6 steps. The shortest program is…",
+      "c25": "corner(n): forward n, right, forward n",
+      "c26": "corner3() and corner5()",
+      "q9": "These two parts are the same except for the number: (forward 3, right, forward 3) and (forward 5, right, forward 5). The most useful procedure is…",
+      "c27": "wash_hands()",
+      "c28": "eat, play",
+      "c29": "sleep()",
+      "q10": "Program: wash hands, eat, wash hands, play, wash hands, sleep. Which part fits a procedure?",
+      "c30": "make a function discount(price)",
+      "c31": "rewrite it on every page",
+      "c32": "remove the discount",
+      "q11": "A discount calculation is used on 6 pages of an online shop: new_price = price - price * 10 / 100. It is best to…",
+      "c33": "repeat 10 times: blink()",
+      "c34": "blink() once",
+      "c35": "on, off ×10 with no waiting",
+      "q12": "Procedure blink(): on, wait 1 second, off, wait 1 second. For 10 blinks, the best program is…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.34
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.34
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c9"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c33",
+        "c34",
+        "c35"
+      ],
+      "correct": "c33"
+    }
+  ]
+}

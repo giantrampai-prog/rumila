@@ -1,0 +1,168 @@
+{
+  "id": "sd3-sains-padat-cair-gas-dapur",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.WUJUD.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Padat, Cair, Gas di Dapur",
+      "instruksi": "Taruh tiap benda di dapur ke rak padat, cair, atau gas.",
+      "b-padat": "padat (bentuk tetap)",
+      "b-cair": "cair (mengalir)",
+      "b-gas": "gas (memenuhi ruang)",
+      "i-es": "es batu",
+      "i-sendok": "sendok",
+      "i-gula": "gula pasir",
+      "i-roti": "roti",
+      "i-air": "air",
+      "i-susu": "susu",
+      "i-minyak": "minyak goreng",
+      "i-madu": "madu",
+      "i-kecap": "kecap",
+      "i-uap": "uap air dari panci",
+      "i-gelembungsoda": "gelembung dalam soda",
+      "i-udarabalon": "udara di dalam balon"
+    },
+    "en": {
+      "judul": "Solids, Liquids, Gases in the Kitchen",
+      "instruksi": "Put each thing from the kitchen on the solid, liquid, or gas shelf.",
+      "b-padat": "solid (keeps its shape)",
+      "b-cair": "liquid (flows)",
+      "b-gas": "gas (fills the space)",
+      "i-es": "ice cube",
+      "i-sendok": "spoon",
+      "i-gula": "sugar",
+      "i-roti": "bread",
+      "i-air": "water",
+      "i-susu": "milk",
+      "i-minyak": "cooking oil",
+      "i-madu": "honey",
+      "i-kecap": "soy sauce",
+      "i-uap": "steam from a pot",
+      "i-gelembungsoda": "bubbles in a fizzy drink",
+      "i-udarabalon": "air inside a balloon"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (padat, cair) → 3 (tambah gas)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "padat",
+      "labelKey": "b-padat",
+      "emoji": "🧊",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "cair",
+      "labelKey": "b-cair",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "gas",
+      "labelKey": "b-gas",
+      "emoji": "🎈",
+      "color": "#f3e5f5"
+    }
+  ],
+  "items": [
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "padat",
+      "emoji": "🧊"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "padat",
+      "emoji": "🥄"
+    },
+    {
+      "id": "gula",
+      "labelKey": "i-gula",
+      "bin": "padat",
+      "emoji": "🍚",
+      "color": "#fafafa"
+    },
+    {
+      "id": "roti",
+      "labelKey": "i-roti",
+      "bin": "padat",
+      "emoji": "🍞"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "cair",
+      "emoji": "💧"
+    },
+    {
+      "id": "susu",
+      "labelKey": "i-susu",
+      "bin": "cair",
+      "emoji": "🥛"
+    },
+    {
+      "id": "minyak",
+      "labelKey": "i-minyak",
+      "bin": "cair",
+      "emoji": "🫗"
+    },
+    {
+      "id": "madu",
+      "labelKey": "i-madu",
+      "bin": "cair",
+      "emoji": "🍯"
+    },
+    {
+      "id": "kecap",
+      "labelKey": "i-kecap",
+      "bin": "cair",
+      "emoji": "🍶",
+      "color": "#4e342e"
+    },
+    {
+      "id": "uap",
+      "labelKey": "i-uap",
+      "bin": "gas",
+      "emoji": "♨️"
+    },
+    {
+      "id": "gelembungsoda",
+      "labelKey": "i-gelembungsoda",
+      "bin": "gas",
+      "emoji": "🫧"
+    },
+    {
+      "id": "udarabalon",
+      "labelKey": "i-udarabalon",
+      "bin": "gas",
+      "emoji": "🎈"
+    }
+  ],
+  "pilihan": []
+}

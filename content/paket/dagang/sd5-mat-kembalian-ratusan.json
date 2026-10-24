@@ -1,0 +1,151 @@
+{
+  "id": "sd5-mat-kembalian-ratusan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD5.UANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kasir Toko Pakaian",
+      "instruksi": "Pembeli membayar 50 ribu atau 100 ribu. Hitung kembaliannya, termasuk koin 500.",
+      "jus": "jus buah",
+      "kaos": "kaus",
+      "payung": "payung",
+      "sandal": "sandal",
+      "sepatu": "sepatu",
+      "tas": "tas",
+      "jam": "jam tangan",
+      "topi": "topi",
+      "kacamata": "kacamata",
+      "syal": "syal",
+      "dompet": "dompet",
+      "jaket": "jaket"
+    },
+    "en": {
+      "judul": "Clothes Shop Cashier",
+      "instruksi": "The customer pays 50,000 or 100,000. Work out the change, including 500 coins.",
+      "jus": "fruit juice",
+      "kaos": "T-shirt",
+      "payung": "umbrella",
+      "sandal": "sandals",
+      "sepatu": "shoes",
+      "tas": "bag",
+      "jam": "watch",
+      "topi": "hat",
+      "kacamata": "glasses",
+      "syal": "scarf",
+      "dompet": "wallet",
+      "jaket": "jacket"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu barang per pembeli; harga memakai ratusan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-pakaian",
+  "currency": "IDR",
+  "denominations": [
+    500,
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "jus",
+      "labelKey": "jus",
+      "price": 12500,
+      "emoji": "🧃"
+    },
+    {
+      "id": "kaos",
+      "labelKey": "kaos",
+      "price": 47500,
+      "emoji": "👕"
+    },
+    {
+      "id": "payung",
+      "labelKey": "payung",
+      "price": 36500,
+      "emoji": "☂️"
+    },
+    {
+      "id": "sandal",
+      "labelKey": "sandal",
+      "price": 28500,
+      "emoji": "🩴"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "sepatu",
+      "price": 82500,
+      "emoji": "👟"
+    },
+    {
+      "id": "tas",
+      "labelKey": "tas",
+      "price": 61500,
+      "emoji": "👜"
+    },
+    {
+      "id": "jam",
+      "labelKey": "jam",
+      "price": 95500,
+      "emoji": "⌚"
+    },
+    {
+      "id": "topi",
+      "labelKey": "topi",
+      "price": 19500,
+      "emoji": "👒"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "kacamata",
+      "price": 74500,
+      "emoji": "👓"
+    },
+    {
+      "id": "syal",
+      "labelKey": "syal",
+      "price": 53500,
+      "emoji": "🧣"
+    },
+    {
+      "id": "dompet",
+      "labelKey": "dompet",
+      "price": 41000,
+      "emoji": "👛"
+    },
+    {
+      "id": "jaket",
+      "labelKey": "jaket",
+      "price": 88000,
+      "emoji": "🧥"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 99500,
+    "kindsMax": 1
+  }
+}

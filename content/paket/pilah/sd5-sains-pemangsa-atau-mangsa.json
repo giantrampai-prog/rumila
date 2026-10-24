@@ -1,0 +1,143 @@
+{
+  "id": "sd5-sains-pemangsa-atau-mangsa",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.ADAPTASI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pemburu atau Penghindar?",
+      "instruksi": "Pilah tiap ciri: menolong pemangsa berburu, atau menolong mangsa selamat.",
+      "b-pemangsa": "menolong pemangsa berburu",
+      "b-mangsa": "menolong mangsa selamat",
+      "i-matadepan": "mata menghadap ke depan untuk mengukur jarak",
+      "i-cakar": "cakar tajam untuk mencengkeram",
+      "i-taring": "gigi taring runcing",
+      "i-paruh": "paruh bengkok dan tajam",
+      "i-senyap": "langkah tanpa suara saat mengendap",
+      "i-matasamping": "mata di samping kepala untuk melihat sekeliling",
+      "i-telinga": "telinga besar yang bisa diputar",
+      "i-kawanan": "berkumpul dalam kawanan besar",
+      "i-duri": "duri atau cangkang keras",
+      "i-racun": "warna mencolok tanda beracun",
+      "i-menggulung": "menggulung jadi bola bersisik keras"
+    },
+    "en": {
+      "judul": "Hunter or Escaper?",
+      "instruksi": "Sort each feature: it helps a predator hunt, or it helps prey stay safe.",
+      "b-pemangsa": "helps a predator hunt",
+      "b-mangsa": "helps prey stay safe",
+      "i-matadepan": "eyes facing forward to judge distance",
+      "i-cakar": "sharp claws for gripping",
+      "i-taring": "pointed fangs",
+      "i-paruh": "a hooked, sharp beak",
+      "i-senyap": "silent steps while stalking",
+      "i-matasamping": "eyes on the sides of the head to see all around",
+      "i-telinga": "big ears that can turn",
+      "i-kawanan": "staying together in a big herd",
+      "i-duri": "spines or a hard shell",
+      "i-racun": "bright colours that warn of poison",
+      "i-menggulung": "rolling up into a hard, scaly ball"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pemangsa",
+      "labelKey": "b-pemangsa",
+      "emoji": "🦁",
+      "color": "#ffcdd2"
+    },
+    {
+      "id": "mangsa",
+      "labelKey": "b-mangsa",
+      "emoji": "🐇",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "matadepan",
+      "labelKey": "i-matadepan",
+      "bin": "pemangsa",
+      "emoji": "👀"
+    },
+    {
+      "id": "cakar",
+      "labelKey": "i-cakar",
+      "bin": "pemangsa",
+      "emoji": "🐾"
+    },
+    {
+      "id": "taring",
+      "labelKey": "i-taring",
+      "bin": "pemangsa",
+      "emoji": "🦷"
+    },
+    {
+      "id": "paruh",
+      "labelKey": "i-paruh",
+      "bin": "pemangsa",
+      "emoji": "🦅"
+    },
+    {
+      "id": "senyap",
+      "labelKey": "i-senyap",
+      "bin": "pemangsa",
+      "emoji": "🐈‍⬛"
+    },
+    {
+      "id": "matasamping",
+      "labelKey": "i-matasamping",
+      "bin": "mangsa",
+      "emoji": "🐰"
+    },
+    {
+      "id": "telinga",
+      "labelKey": "i-telinga",
+      "bin": "mangsa",
+      "emoji": "👂"
+    },
+    {
+      "id": "kawanan",
+      "labelKey": "i-kawanan",
+      "bin": "mangsa",
+      "emoji": "🦓"
+    },
+    {
+      "id": "duri",
+      "labelKey": "i-duri",
+      "bin": "mangsa",
+      "emoji": "🦔"
+    },
+    {
+      "id": "racun",
+      "labelKey": "i-racun",
+      "bin": "mangsa",
+      "emoji": "🐸"
+    },
+    {
+      "id": "menggulung",
+      "labelKey": "i-menggulung",
+      "bin": "mangsa",
+      "emoji": "⚪"
+    }
+  ],
+  "pilihan": []
+}

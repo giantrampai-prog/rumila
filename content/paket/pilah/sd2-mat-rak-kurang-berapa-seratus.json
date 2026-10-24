@@ -1,0 +1,253 @@
+{
+  "id": "sd2-mat-rak-kurang-berapa-seratus",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.TAMBAH-KURANG-100.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kurang Berapa Supaya 100?",
+      "instruksi": "Tiap celengan harus berisi seratus. Taruh di rak 'kurang berapa'.",
+      "b-kurang-10": "kurang 10",
+      "b-kurang-20": "kurang 20",
+      "b-kurang-30": "kurang 30",
+      "b-kurang-40": "kurang 40",
+      "b-kurang-50": "kurang 50",
+      "b-kurang-60": "kurang 60",
+      "b-kurang-70": "kurang 70",
+      "b-kurang-80": "kurang 80",
+      "b-kurang-90": "kurang 90",
+      "i-10": "10",
+      "i-1-lembar-sepuluh": "1 lembar sepuluh",
+      "i-20": "20",
+      "i-2-lembar-sepuluh": "2 lembar sepuluh",
+      "i-30": "30",
+      "i-3-lembar-sepuluh": "3 lembar sepuluh",
+      "i-40": "40",
+      "i-4-lembar-sepuluh": "4 lembar sepuluh",
+      "i-50": "50",
+      "i-5-lembar-sepuluh": "5 lembar sepuluh",
+      "i-60": "60",
+      "i-6-lembar-sepuluh": "6 lembar sepuluh",
+      "i-70": "70",
+      "i-7-lembar-sepuluh": "7 lembar sepuluh",
+      "i-80": "80",
+      "i-8-lembar-sepuluh": "8 lembar sepuluh",
+      "i-90": "90",
+      "i-9-lembar-sepuluh": "9 lembar sepuluh"
+    },
+    "en": {
+      "judul": "How Many More to Make 100?",
+      "instruksi": "Every money box must hold one hundred. Put each on the 'needs how many' shelf.",
+      "b-kurang-10": "needs 10",
+      "b-kurang-20": "needs 20",
+      "b-kurang-30": "needs 30",
+      "b-kurang-40": "needs 40",
+      "b-kurang-50": "needs 50",
+      "b-kurang-60": "needs 60",
+      "b-kurang-70": "needs 70",
+      "b-kurang-80": "needs 80",
+      "b-kurang-90": "needs 90",
+      "i-10": "10",
+      "i-1-lembar-sepuluh": "1 tens",
+      "i-20": "20",
+      "i-2-lembar-sepuluh": "2 tens",
+      "i-30": "30",
+      "i-3-lembar-sepuluh": "3 tens",
+      "i-40": "40",
+      "i-4-lembar-sepuluh": "4 tens",
+      "i-50": "50",
+      "i-5-lembar-sepuluh": "5 tens",
+      "i-60": "60",
+      "i-6-lembar-sepuluh": "6 tens",
+      "i-70": "70",
+      "i-7-lembar-sepuluh": "7 tens",
+      "i-80": "80",
+      "i-8-lembar-sepuluh": "8 tens",
+      "i-90": "90",
+      "i-9-lembar-sepuluh": "9 tens"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 9,
+      "default": 4,
+      "step": 1,
+      "keterangan": "rak aktif: 4 → 9"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bank-mini",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k10",
+      "labelKey": "b-kurang-10"
+    },
+    {
+      "id": "k20",
+      "labelKey": "b-kurang-20"
+    },
+    {
+      "id": "k30",
+      "labelKey": "b-kurang-30"
+    },
+    {
+      "id": "k40",
+      "labelKey": "b-kurang-40"
+    },
+    {
+      "id": "k50",
+      "labelKey": "b-kurang-50"
+    },
+    {
+      "id": "k60",
+      "labelKey": "b-kurang-60"
+    },
+    {
+      "id": "k70",
+      "labelKey": "b-kurang-70"
+    },
+    {
+      "id": "k80",
+      "labelKey": "b-kurang-80"
+    },
+    {
+      "id": "k90",
+      "labelKey": "b-kurang-90"
+    }
+  ],
+  "items": [
+    {
+      "id": "angka-10",
+      "labelKey": "i-10",
+      "bin": "k90",
+      "scale": 1
+    },
+    {
+      "id": "lembar-10",
+      "labelKey": "i-1-lembar-sepuluh",
+      "bin": "k90",
+      "emoji": "🔟",
+      "count": 1
+    },
+    {
+      "id": "angka-20",
+      "labelKey": "i-20",
+      "bin": "k80",
+      "scale": 1
+    },
+    {
+      "id": "lembar-20",
+      "labelKey": "i-2-lembar-sepuluh",
+      "bin": "k80",
+      "emoji": "🔟",
+      "count": 2
+    },
+    {
+      "id": "angka-30",
+      "labelKey": "i-30",
+      "bin": "k70",
+      "scale": 1
+    },
+    {
+      "id": "lembar-30",
+      "labelKey": "i-3-lembar-sepuluh",
+      "bin": "k70",
+      "emoji": "🔟",
+      "count": 3
+    },
+    {
+      "id": "angka-40",
+      "labelKey": "i-40",
+      "bin": "k60",
+      "scale": 1
+    },
+    {
+      "id": "lembar-40",
+      "labelKey": "i-4-lembar-sepuluh",
+      "bin": "k60",
+      "emoji": "🔟",
+      "count": 4
+    },
+    {
+      "id": "angka-50",
+      "labelKey": "i-50",
+      "bin": "k50",
+      "scale": 1
+    },
+    {
+      "id": "lembar-50",
+      "labelKey": "i-5-lembar-sepuluh",
+      "bin": "k50",
+      "emoji": "🔟",
+      "count": 5
+    },
+    {
+      "id": "angka-60",
+      "labelKey": "i-60",
+      "bin": "k40",
+      "scale": 1
+    },
+    {
+      "id": "lembar-60",
+      "labelKey": "i-6-lembar-sepuluh",
+      "bin": "k40",
+      "emoji": "🔟",
+      "count": 6
+    },
+    {
+      "id": "angka-70",
+      "labelKey": "i-70",
+      "bin": "k30",
+      "scale": 1
+    },
+    {
+      "id": "lembar-70",
+      "labelKey": "i-7-lembar-sepuluh",
+      "bin": "k30",
+      "emoji": "🔟",
+      "count": 7
+    },
+    {
+      "id": "angka-80",
+      "labelKey": "i-80",
+      "bin": "k20",
+      "scale": 1
+    },
+    {
+      "id": "lembar-80",
+      "labelKey": "i-8-lembar-sepuluh",
+      "bin": "k20",
+      "emoji": "🔟",
+      "count": 8
+    },
+    {
+      "id": "angka-90",
+      "labelKey": "i-90",
+      "bin": "k10",
+      "scale": 1
+    },
+    {
+      "id": "lembar-90",
+      "labelKey": "i-9-lembar-sepuluh",
+      "bin": "k10",
+      "emoji": "🔟",
+      "count": 9
+    }
+  ]
+}

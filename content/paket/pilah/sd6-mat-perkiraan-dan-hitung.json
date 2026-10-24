@@ -1,0 +1,545 @@
+{
+  "id": "sd6-mat-perkiraan-dan-hitung",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.OPERASI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perkirakan Dulu",
+      "instruksi": "Bulatkan untuk memperkirakan, atau hitung tepat bila diminta. Sentuh jawabannya.",
+      "q1": "Perkiraan terdekat untuk 4.987 × 21?",
+      "c1": "100.000",
+      "c2": "10.000",
+      "c3": "1.000.000",
+      "c4": "50.000",
+      "q2": "1.250 × 12 = …",
+      "c5": "15.000",
+      "c6": "12.500",
+      "c7": "1.262",
+      "c8": "14.000",
+      "q3": "Pabrik membuat 2.345 baut sehari. Berapa baut dalam 30 hari?",
+      "c9": "70.350",
+      "c10": "7.035",
+      "c11": "70.035",
+      "c12": "69.350",
+      "q4": "864 : 24 = …",
+      "c13": "36",
+      "c14": "34",
+      "c15": "38",
+      "c16": "840",
+      "q5": "Perkiraan terdekat untuk 619 : 31?",
+      "c17": "20",
+      "c18": "2",
+      "c19": "200",
+      "c20": "30",
+      "q6": "Satu rak muat 48 buku. Ada 960 buku. Berapa rak yang perlu?",
+      "c21": "21",
+      "c22": "912",
+      "q7": "3.608 × 25 = …",
+      "c23": "90.200",
+      "c24": "9.020",
+      "c25": "90.020",
+      "c26": "88.200",
+      "q8": "Tiket konser Rp75.000. Berapa harga 120 tiket?",
+      "c27": "Rp9.000.000",
+      "c28": "Rp900.000",
+      "c29": "Rp90.000.000",
+      "c30": "Rp8.400.000",
+      "q9": "1.000 kursi disusun dalam 40 baris sama panjang. Tiap baris ada …",
+      "c31": "25",
+      "c32": "250",
+      "c33": "40",
+      "c34": "960",
+      "q10": "735 : 15 = …",
+      "c35": "49",
+      "c36": "47",
+      "c37": "51",
+      "c38": "720",
+      "q11": "Perkiraan terdekat untuk 7.912 × 48?",
+      "c39": "400.000",
+      "c40": "40.000",
+      "c41": "4.000.000",
+      "c42": "300.000",
+      "q12": "Satu bus muat 45 orang. 500 siswa ikut wisata. Paling sedikit berapa bus?",
+      "c43": "12",
+      "c44": "11",
+      "c45": "10",
+      "c46": "455",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Estimate First",
+      "instruksi": "Round to estimate, or calculate exactly when asked. Touch the answer.",
+      "q1": "Best estimate for 4,987 × 21?",
+      "c1": "100,000",
+      "c2": "10,000",
+      "c3": "1,000,000",
+      "c4": "50,000",
+      "q2": "1,250 × 12 = …",
+      "c5": "15,000",
+      "c6": "12,500",
+      "c7": "1,262",
+      "c8": "14,000",
+      "q3": "A factory makes 2,345 bolts a day. How many in 30 days?",
+      "c9": "70,350",
+      "c10": "7,035",
+      "c11": "70,035",
+      "c12": "69,350",
+      "q4": "864 ÷ 24 = …",
+      "c13": "36",
+      "c14": "34",
+      "c15": "38",
+      "c16": "840",
+      "q5": "Best estimate for 619 ÷ 31?",
+      "c17": "20",
+      "c18": "2",
+      "c19": "200",
+      "c20": "30",
+      "q6": "A shelf holds 48 books. There are 960 books. How many shelves are needed?",
+      "c21": "21",
+      "c22": "912",
+      "q7": "3,608 × 25 = …",
+      "c23": "90,200",
+      "c24": "9,020",
+      "c25": "90,020",
+      "c26": "88,200",
+      "q8": "A concert ticket costs Rp75,000. How much do 120 tickets cost?",
+      "c27": "Rp9,000,000",
+      "c28": "Rp900,000",
+      "c29": "Rp90,000,000",
+      "c30": "Rp8,400,000",
+      "q9": "1,000 chairs are set out in 40 equal rows. Each row has …",
+      "c31": "25",
+      "c32": "250",
+      "c33": "40",
+      "c34": "960",
+      "q10": "735 ÷ 15 = …",
+      "c35": "49",
+      "c36": "47",
+      "c37": "51",
+      "c38": "720",
+      "q11": "Best estimate for 7,912 × 48?",
+      "c39": "400,000",
+      "c40": "40,000",
+      "c41": "4,000,000",
+      "c42": "300,000",
+      "q12": "A bus holds 45 people. 500 pupils go on a trip. What is the fewest buses needed?",
+      "c43": "12",
+      "c44": "11",
+      "c45": "10",
+      "c46": "455",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c45",
+      "labelKey": "c45",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c46",
+      "labelKey": "c46",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c17",
+        "c18",
+        "c21",
+        "c22"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c23",
+        "c24",
+        "c25",
+        "c26"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c27",
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c31",
+        "c32",
+        "c33",
+        "c34"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c35",
+        "c36",
+        "c37",
+        "c38"
+      ],
+      "correct": "c35"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c39",
+        "c40",
+        "c41",
+        "c42"
+      ],
+      "correct": "c39"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c43",
+        "c44",
+        "c45",
+        "c46"
+      ],
+      "correct": "c43"
+    }
+  ]
+}

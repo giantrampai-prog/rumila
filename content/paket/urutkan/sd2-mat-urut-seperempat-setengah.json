@@ -1,0 +1,358 @@
+{
+  "id": "sd2-mat-urut-seperempat-setengah",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD2.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Antrean Pecahan",
+      "instruksi": "Bayangkan satu kue utuh. Susun potongannya dari yang terkecil ke yang terbesar.",
+      "s-seperempat": "¼",
+      "s-2per4": "2/4",
+      "s-3per4": "3/4",
+      "s-2per2": "2/2",
+      "j-dari-terkecil-ke-terbesar": "Dari terkecil ke terbesar",
+      "s-1per4": "1/4",
+      "s-tigaperempat": "¾",
+      "s-setengah": "½",
+      "s-1": "1",
+      "s-1per2": "1/2"
+    },
+    "en": {
+      "judul": "Fraction Line-Up",
+      "instruksi": "Imagine one whole cake. Put the pieces in order from smallest to largest.",
+      "s-seperempat": "¼",
+      "s-2per4": "2/4",
+      "s-3per4": "3/4",
+      "s-2per2": "2/2",
+      "j-dari-terkecil-ke-terbesar": "Smallest to largest",
+      "s-1per4": "1/4",
+      "s-tigaperempat": "¾",
+      "s-setengah": "½",
+      "s-1": "1",
+      "s-1per2": "1/2"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "pecahan-1",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "scale": 0.85
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "scale": 0.85
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-2",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-3",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "scale": 1
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-4",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-5",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "scale": 0.85
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "1",
+          "labelKey": "s-1",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "pecahan-6",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "1",
+          "labelKey": "s-1",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "pecahan-7",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "scale": 1
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "scale": 0.85
+        },
+        {
+          "id": "1",
+          "labelKey": "s-1",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "pecahan-8",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "scale": 1
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "scale": 0.85
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-9",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "scale": 1
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "scale": 0.85
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-10",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "scale": 0.85
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "pecahan-11",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "scale": 0.85
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "scale": 0.85
+        },
+        {
+          "id": "1",
+          "labelKey": "s-1",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "pecahan-12",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "scale": 1
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "scale": 0.85
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "scale": 1
+        },
+        {
+          "id": "1",
+          "labelKey": "s-1",
+          "scale": 1
+        }
+      ]
+    }
+  ]
+}
