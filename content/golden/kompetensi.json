@@ -38,7 +38,7 @@
         "pilah",
         "cari"
       ],
-      "catatan": "Aksi teramati: anak menyentuh benda satu per satu sambil jumlahnya bertambah. Jebakan: menghitung dua kali benda yang sama; item harus menyebar, bukan bertumpuk."
+      "catatan": "Aksi teramati: anak menyentuh benda satu per satu sambil jumlahnya bertambah. Jebakan: menghitung dua kali benda yang sama; item harus menyebar, bukan bertumpuk. Knob: jumlah benda 1–5."
     },
     {
       "id": "MAT.PAUD.BILANGAN-1-5.02",
@@ -78,17 +78,17 @@
         "dagang",
         "pilah"
       ],
-      "catatan": "Beda dengan .01: di sini anak berhenti sendiri pada jumlah yang diminta (kardinalitas). Pembeli di Pasar Buah minta '3 jeruk'."
+      "catatan": "Beda dengan .01: anak berhenti sendiri pada jumlah yang diminta (kardinalitas). Pembeli di Pasar Buah minta '3 jeruk'. Jebakan: anak mengambil semua yang ada. Knob: jumlah diminta 1–5, jumlah tersedia lebih banyak dari yang diminta."
     },
     {
-      "id": "MAT.PAUD.WARNA-BENTUK.01",
+      "id": "MAT.PAUD.WARNA.02",
       "track": "MAT",
       "level": "PAUD",
       "unit": {
-        "id": "WARNA-BENTUK",
+        "id": "WARNA",
         "nama": {
-          "id": "Warna dan bentuk",
-          "en": "Colours and shapes"
+          "id": "Warna dasar",
+          "en": "Basic colours"
         }
       },
       "statement": {
@@ -98,17 +98,85 @@
       "depth": [
         "pakai"
       ],
-      "prereq": [],
-      "refs": [],
+      "prereq": [
+        "MAT.PAUD.WARNA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.02",
+          "note": "pendahulu: mengorganisasi data kategorikal dengan benda nyata"
+        }
+      ],
       "core": true,
       "mechanics": [
         "pilah",
         "cari"
       ],
-      "catatan": "Empat warna dasar saja. Benda harus beragam bentuk supaya anak memilah berdasar warna, bukan bentuk. Acuan EYFS untuk ini ada di Understanding the World / pattern; tambahkan ref bila kamus menyediakan."
+      "catatan": "Empat warna dasar saja. Benda harus beragam bentuk supaya anak memilah berdasar warna, bukan bentuk. Mulai 2 keranjang, knob naik ke 4. Kamus belum punya kode EY untuk mengelompokkan warna; 1Ss.02 dipakai sebagai pendahulu."
+    },
+    {
+      "id": "MAT.PAUD.WARNA.01",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "WARNA",
+        "nama": {
+          "id": "Warna dasar",
+          "en": "Basic colours"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk benda berwarna merah, biru, kuning, atau hijau saat namanya disebut",
+        "en": "I can point to the red, blue, yellow, or green object when its name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Pengenalan nama warna (reseptif) sebelum memilah. Instruksi audio: 'Mana yang merah?'. Empat benda sejenis beda warna. Belum ada kode kerangka internasional untuk pengenalan warna; dibiarkan kosong daripada memaksakan."
     },
     {
       "id": "KODE.PAUD.URUTAN.01",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "URUTAN",
+        "nama": {
+          "id": "Urutan kegiatan",
+          "en": "Sequencing"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih gambar mana yang terjadi lebih dulu dari 2 gambar kegiatan",
+        "en": "I can choose which of 2 pictures of an activity happens first"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "1Mn.04",
+          "note": "mulai memakai urutan pertama/berikutnya dalam konteks praktis (EY1)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "cerita"
+      ],
+      "catatan": "Tahap sebelum 3 gambar: dua gambar (telur → ayam, biji → tunas, bola bersih → kotor), anak menyentuh yang terjadi lebih dulu. Umpan balik: dimainkan sebagai animasi dua adegan. Jebakan: pasangan yang bisa dibolak-balik (makan → main vs main → makan); pakai pasangan sebab-akibat jelas."
+    },
+    {
+      "id": "KODE.PAUD.URUTAN.02",
       "track": "KODE",
       "level": "PAUD",
       "unit": {
@@ -125,17 +193,14 @@
       "depth": [
         "pakai"
       ],
-      "prereq": [],
+      "prereq": [
+        "KODE.PAUD.URUTAN.01"
+      ],
       "refs": [
-        {
-          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
-          "code": "1CT.01",
-          "note": "mengikuti langkah algoritma kegiatan sehari-hari; kode belum terverifikasi dari PDF resmi"
-        },
         {
           "framework": "CAMBRIDGE_EY",
           "code": "2Mn.04",
-          "note": "urutan kejadian (ordinal) di EY2; di PAUD hanya 3 langkah tanpa istilah pertama/kedua"
+          "note": "urutan kejadian (EY2); kode Cambridge Primary Computing 1CT.01 belum terverifikasi sehingga tidak dirujuk"
         }
       ],
       "core": true,
@@ -143,7 +208,7 @@
         "urutkan",
         "cerita"
       ],
-      "catatan": "Dasar algoritma: urutan punya akibat. Gambar harus punya petunjuk visual jelas (gelap → terang, piring penuh → kosong). Mulai 3 langkah; knob naik ke 4–5."
+      "catatan": "Dasar algoritma: urutan punya akibat. Gambar harus punya petunjuk visual jelas (gelap → terang, piring penuh → kosong). Mulai 3 langkah; knob naik ke 4. Umpan balik: setelah disusun, urutan dimainkan sebagai animasi; kalau salah, kejadiannya terlihat lucu (sarapan sebelum bangun)."
     },
     {
       "id": "KODE.PAUD.PERINTAH.01",
@@ -177,7 +242,7 @@
       "mechanics": [
         "navigasi"
       ],
-      "catatan": "Hanya perintah maju, tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: Agam bergerak langkah demi langkah saat program dijalankan, bukan melompat. Kamus belum punya kode computing usia 3–4; ref 2CT.06 dipakai sebagai pendahulu."
+      "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: Agam bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, Agam berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
     }
   ]
 }

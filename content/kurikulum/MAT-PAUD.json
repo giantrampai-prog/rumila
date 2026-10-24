@@ -1,0 +1,402 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.01",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BILANGAN-1-5",
+        "nama": {
+          "id": "Bilangan 1–5",
+          "en": "Numbers 1–5"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung 1 sampai 5 benda dengan menunjuk satu per satu",
+        "en": "I can count 1 to 5 objects by pointing to each one"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01",
+          "note": "langkah awal menuju pemahaman bilangan sampai 10"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.01",
+          "note": "pendahulu: korespondensi satu-satu, di sini dibatasi 1–5"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Aksi teramati: anak menyentuh benda satu per satu sambil jumlahnya bertambah. Jebakan: menghitung dua kali benda yang sama; item harus menyebar, bukan bertumpuk. Knob: jumlah benda 1–5."
+    },
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.02",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BILANGAN-1-5",
+        "nama": {
+          "id": "Bilangan 1–5",
+          "en": "Numbers 1–5"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengambil benda sebanyak angka yang diminta, sampai 5",
+        "en": "I can take as many objects as the number asked for, up to 5"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BILANGAN-1-5.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01",
+          "note": "kardinalitas: berhenti pada jumlah yang diminta"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.01",
+          "note": "pendahulu"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah"
+      ],
+      "catatan": "Beda dengan .01: anak berhenti sendiri pada jumlah yang diminta (kardinalitas). Pembeli di Pasar Buah minta '3 jeruk'. Jebakan: anak mengambil semua yang ada. Knob: jumlah diminta 1–5, jumlah tersedia lebih banyak dari yang diminta."
+    },
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.03",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BILANGAN-1-5",
+        "nama": {
+          "id": "Bilangan 1–5",
+          "en": "Numbers 1–5"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengambil benda sebanyak jari yang diacungkan sekejap, sampai 3",
+        "en": "I can take as many objects as the fingers held up for a moment, up to 3"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BILANGAN-1-5.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-02",
+          "note": "subitising; di PAUD dibatasi sampai 3"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.02",
+          "note": "pendahulu: mengenali jumlah dalam pola tanpa menghitung"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "cari"
+      ],
+      "catatan": "Subitising tanpa lambang angka: pembeli mengacungkan 1–3 jari selama ±1 detik lalu menurunkan tangan; anak mengambil buah sebanyak itu. Jawaban jumlah-ke-jumlah, bukan pilih kotak angka. Latency pendek membedakan subitising dari menghitung. Jebakan: jari harus jelas terpisah. Knob: lama tampil 0,7–1,5 detik, maksimum 2–3."
+    },
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.04",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BILANGAN-1-5",
+        "nama": {
+          "id": "Bilangan 1–5",
+          "en": "Numbers 1–5"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencocokkan kelompok 1 sampai 5 benda dengan kartu angka yang ada titik-titiknya",
+        "en": "I can match a group of 1 to 5 objects to the number card that has matching dots"
+      },
+      "depth": [
+        "kenal",
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BILANGAN-1-5.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01",
+          "note": "komposisi bilangan lewat titik; lambang baru diperkenalkan"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.01",
+          "note": "pendahulu: membaca lambang bilangan; di PAUD lambang selalu ditemani titik"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah",
+        "dagang"
+      ],
+      "catatan": "Pengaya. Di PAUD kartu angka selalu bertitik, jadi yang dibuktikan adalah mencocokkan jumlah ke jumlah dengan lambang ikut terlihat. Kompetensi 'mencocokkan ke lambang tanpa titik' ditulis di TK A sebagai kompetensi terpisah, bukan knob, supaya buktinya tidak tercampur. Jebakan: kartu 4 titik vs 5 titik mirip; susunan titik tetap seperti dadu."
+    },
+    {
+      "id": "MAT.PAUD.BANDING.01",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BANDING",
+        "nama": {
+          "id": "Banyak sedikit, besar kecil, panjang pendek",
+          "en": "More and fewer, big and small, long and short"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih kelompok yang jelas lebih banyak dari dua kelompok benda sampai 5",
+        "en": "I can choose which of two groups of up to 5 objects clearly has more"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BILANGAN-1-5.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-PATTERNS-02",
+          "note": "membandingkan jumlah; di PAUD sampai 5 dengan selisih jelas"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Np.03",
+          "note": "pendahulu: ukuran relatif kuantitas"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "dagang"
+      ],
+      "catatan": "Perbandingan perseptual: selisih minimal 2 (1 vs 3, 2 vs 4, 3 vs 5), benda sejenis dan seukuran, tersusun rapi sejajar. Selisih 1 (4 vs 5) memaksa menghitung dua kelompok dan ditulis di TK A. Aksi: anak memberi piring yang lebih banyak ke tokoh yang lapar. Knob: hanya susunan (rapi → agak tersebar), bukan selisih."
+    },
+    {
+      "id": "MAT.PAUD.BANDING.02",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BANDING",
+        "nama": {
+          "id": "Banyak sedikit, besar kecil, panjang pendek",
+          "en": "More and fewer, big and small, long and short"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih benda yang lebih besar atau lebih kecil dari dua benda sejenis",
+        "en": "I can choose the bigger or the smaller of two similar objects"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.02",
+          "note": "pendahulu terdekat; kamus belum punya kode besar/kecil, 1Gg.02 bicara panjang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "rawat"
+      ],
+      "catatan": "Aksi teramati: beri baju yang lebih besar ke beruang besar, mangkuk kecil ke anak kucing. Instruksi menyebut 'lebih besar' atau 'lebih kecil' bergantian. Jebakan: beda ukuran harus jelas (rasio ≥ 1,5) di awal."
+    },
+    {
+      "id": "MAT.PAUD.BANDING.03",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BANDING",
+        "nama": {
+          "id": "Banyak sedikit, besar kecil, panjang pendek",
+          "en": "More and fewer, big and small, long and short"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih benda yang lebih panjang atau lebih pendek dari dua benda sejenis",
+        "en": "I can choose the longer or the shorter of two similar objects"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BANDING.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.02",
+          "note": "bahasa panjang-pendek; di PAUD hanya dua benda"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "bangun"
+      ],
+      "catatan": "Dua benda sejenis (ular, pensil, kereta) sejajar di garis dasar yang sama, beda panjang jelas (rasio ≥ 1,5). Instruksi bergantian 'lebih panjang' / 'lebih pendek'. Mengurutkan 3 benda (seriasi) ditulis di TK A. Jebakan: benda tidak sejajar membuat panjang tidak terbaca."
+    },
+    {
+      "id": "MAT.PAUD.BENTUK-DASAR.01",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BENTUK-DASAR",
+        "nama": {
+          "id": "Bentuk dasar",
+          "en": "Basic shapes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasukkan lingkaran, segitiga, dan kotak ke lubang yang bentuknya sama",
+        "en": "I can post circles, triangles, and squares into the hole of the same shape"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.01",
+          "note": "pendahulu: memilah bentuk 2D; di PAUD tanpa menyebut jumlah sisi"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "bangun"
+      ],
+      "catatan": "Mekanik kotak-pos: bentuk hanya masuk ke lubang yang cocok, jadi umpan balik fisik. Jebakan: segitiga yang diputar; di awal orientasi sama dengan lubang, knob menambah rotasi. Warna bentuk diacak supaya anak memilah bentuk, bukan warna."
+    },
+    {
+      "id": "MAT.PAUD.BENTUK-DASAR.02",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "BENTUK-DASAR",
+        "nama": {
+          "id": "Bentuk dasar",
+          "en": "Basic shapes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan benda berbentuk lingkaran, segitiga, atau kotak di sekitar Agam",
+        "en": "I can find things shaped like a circle, triangle, or square around Agam"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BENTUK-DASAR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.01",
+          "note": "pendahulu"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "cari"
+      ],
+      "catatan": "Dari bentuk abstrak ke benda nyata: jam dinding, atap rumah, jendela. Instruksi audio menyebut satu bentuk per putaran. Jebakan: benda dengan dua bentuk (rumah = kotak + segitiga); hindari di PAUD."
+    },
+    {
+      "id": "MAT.PAUD.WARNA.01",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "WARNA",
+        "nama": {
+          "id": "Warna dasar",
+          "en": "Basic colours"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk benda berwarna merah, biru, kuning, atau hijau saat namanya disebut",
+        "en": "I can point to the red, blue, yellow, or green object when its name is said"
+      },
+      "depth": [
+        "kenal"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "ucap"
+      ],
+      "catatan": "Pengenalan nama warna (reseptif) sebelum memilah. Instruksi audio: 'Mana yang merah?'. Empat benda sejenis beda warna. Belum ada kode kerangka internasional untuk pengenalan warna; dibiarkan kosong daripada memaksakan."
+    },
+    {
+      "id": "MAT.PAUD.WARNA.02",
+      "track": "MAT",
+      "level": "PAUD",
+      "unit": {
+        "id": "WARNA",
+        "nama": {
+          "id": "Warna dasar",
+          "en": "Basic colours"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengelompokkan benda menurut warnanya: merah, biru, kuning, hijau",
+        "en": "I can sort objects by colour: red, blue, yellow, green"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.WARNA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.02",
+          "note": "pendahulu: mengorganisasi data kategorikal dengan benda nyata"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Empat warna dasar saja. Benda harus beragam bentuk supaya anak memilah berdasar warna, bukan bentuk. Mulai 2 keranjang, knob naik ke 4. Kamus belum punya kode EY untuk mengelompokkan warna; 1Ss.02 dipakai sebagai pendahulu."
+    }
+  ]
+}

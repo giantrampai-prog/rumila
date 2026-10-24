@@ -3,34 +3,117 @@
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "pilah",
-  "competencyIds": ["MAT.PAUD.WARNA-BENTUK.01"],
+  "competencyIds": [
+    "MAT.PAUD.WARNA.02"
+  ],
   "instructionKey": "instruksi",
   "locale": {
-    "id": { "instruksi": "Masukkan setiap benda ke keranjang yang warnanya sama.", "merah": "merah", "biru": "biru", "kuning": "kuning", "hijau": "hijau",
-            "apel": "apel", "stroberi": "stroberi", "bola": "bola", "ikan": "ikan", "pisang": "pisang", "bebek": "bebek", "daun": "daun", "katak": "katak" },
-    "en": { "instruksi": "Put each object into the basket with the same colour.", "merah": "red", "biru": "blue", "kuning": "yellow", "hijau": "green",
-            "apel": "apple", "stroberi": "strawberry", "bola": "ball", "ikan": "fish", "pisang": "banana", "bebek": "duck", "daun": "leaf", "katak": "frog" }
+    "id": {
+      "instruksi": "Masukkan setiap benda ke keranjang yang warnanya sama.",
+      "merah": "merah",
+      "biru": "biru",
+      "kuning": "kuning",
+      "hijau": "hijau",
+      "apel": "apel",
+      "stroberi": "stroberi",
+      "bola": "bola",
+      "ikan": "ikan",
+      "pisang": "pisang",
+      "bebek": "bebek",
+      "daun": "daun",
+      "katak": "katak"
+    },
+    "en": {
+      "instruksi": "Put each object into the basket with the same colour.",
+      "merah": "red",
+      "biru": "blue",
+      "kuning": "yellow",
+      "hijau": "green",
+      "apel": "apple",
+      "stroberi": "strawberry",
+      "bola": "ball",
+      "ikan": "fish",
+      "pisang": "banana",
+      "bebek": "duck",
+      "daun": "leaf",
+      "katak": "frog"
+    }
   },
   "knobs": {
-    "binCount": { "min": 2, "max": 4, "default": 2, "step": 1, "keterangan": "jumlah keranjang/warna aktif" },
-    "itemCount": { "min": 4, "max": 12, "default": 6, "step": 2 }
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah keranjang/warna aktif"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 12,
+      "default": 6,
+      "step": 2
+    }
   },
   "assets": [],
   "generatif": true,
   "bins": [
-    { "id": "merah", "labelKey": "merah" },
-    { "id": "biru", "labelKey": "biru" },
-    { "id": "kuning", "labelKey": "kuning" },
-    { "id": "hijau", "labelKey": "hijau" }
+    {
+      "id": "merah",
+      "labelKey": "merah"
+    },
+    {
+      "id": "biru",
+      "labelKey": "biru"
+    },
+    {
+      "id": "kuning",
+      "labelKey": "kuning"
+    },
+    {
+      "id": "hijau",
+      "labelKey": "hijau"
+    }
   ],
   "items": [
-    { "id": "apel", "labelKey": "apel", "bin": "merah" },
-    { "id": "stroberi", "labelKey": "stroberi", "bin": "merah" },
-    { "id": "bola", "labelKey": "bola", "bin": "biru" },
-    { "id": "ikan", "labelKey": "ikan", "bin": "biru" },
-    { "id": "pisang", "labelKey": "pisang", "bin": "kuning" },
-    { "id": "bebek", "labelKey": "bebek", "bin": "kuning" },
-    { "id": "daun", "labelKey": "daun", "bin": "hijau" },
-    { "id": "katak", "labelKey": "katak", "bin": "hijau" }
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "bin": "merah"
+    },
+    {
+      "id": "stroberi",
+      "labelKey": "stroberi",
+      "bin": "merah"
+    },
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "bin": "biru"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "ikan",
+      "bin": "biru"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "bin": "kuning"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "bebek",
+      "bin": "kuning"
+    },
+    {
+      "id": "daun",
+      "labelKey": "daun",
+      "bin": "hijau"
+    },
+    {
+      "id": "katak",
+      "labelKey": "katak",
+      "bin": "hijau"
+    }
   ]
 }

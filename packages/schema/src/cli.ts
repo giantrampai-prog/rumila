@@ -26,42 +26,49 @@ for (const f of jsonFiles("content/kerangka")) {
 console.log(`kamus kerangka: ${kamus.size} kode`);
 
 let gagal = 0;
-const semua: Competency[] = [];
-let paket = 0;
-for (const f of targets.flatMap(jsonFiles)) {
-  const raw = JSON.parse(readFileSync(f, "utf8"));
-  const rel = f.slice(root.length + 1);
-  if (raw && Array.isArray(raw.kompetensi)) {
-    const r = KurikulumFile.safeParse(raw);
-    if (!r.success) { gagal++; console.error(`✗ ${rel}\n  ${r.error.issues.map(i => i.path.join(".") + ": " + i.message).join("\n  ")}`); continue; }
-    semua.push(...r.data.kompetensi);
-    console.log(`✓ ${rel}: ${r.data.kompetensi.length} kompetensi`);
-  } else if (raw && typeof raw.mechanic === "string") {
-    const r = ContentPack.safeParse(raw);
-    if (!r.success) { gagal++; console.error(`✗ ${rel}\n  ${r.error.issues.map(i => i.path.join(".") + ": " + i.message).join("\n  ")}`); continue; }
-    // kunci string harus ada di kedua bahasa
-    const kunci = new Set<string>([r.data.instructionKey]);
-    const d = r.data;
-    if (d.mechanic === "pilah") { d.bins.forEach(b => kunci.add(b.labelKey)); d.items.forEach(i => kunci.add(i.labelKey)); }
-    if (d.mechanic === "urutkan") d.sequences.forEach(s => { kunci.add(s.titleKey); s.steps.forEach(x => kunci.add(x.labelKey)); });
-    if (d.mechanic === "dagang") d.goods.forEach(g => kunci.add(g.labelKey));
-    const hilang = [...kunci].filter(k => !d.locale.id[k] || !d.locale.en[k]);
-    if (hilang.length) { gagal++; console.error(`✗ ${rel}: kunci locale hilang: ${hilang.join(", ")}`); continue; }
-    if (d.mechanic === "pilah") {
-      const bins = new Set(d.bins.map(b => b.id));
-      const salah = d.items.filter(i => !bins.has(i.bin)).map(i => i.id);
-      if (salah.length) { gagal++; console.error(`✗ ${rel}: item menunjuk bin yang tidak ada: ${salah.join(", ")}`); continue; }
-    }
-    paket++;
-    console.log(`✓ ${rel}: paket ${d.mechanic} (${d.competencyIds.length} kompetensi)`);
-  }
-}
+let paketTotal = 0;
 
-if (semua.length) {
-  const temuan = validasiKurikulum(semua, kamus);
-  for (const t of temuan) console[t.tingkat === "error" ? "error" : "warn"](`${t.tingkat === "error" ? "✗" : "!"} ${t.id}: ${t.pesan}`);
-  if (adaError(temuan)) gagal++;
-  console.log(`${semua.length} kompetensi, ${temuan.filter(t => t.tingkat === "error").length} error, ${temuan.filter(t => t.tingkat === "warning").length} peringatan`);
+/** Tiap target dinilai sebagai satu kurikulum utuh; golden set dan content/kurikulum sengaja memakai id yang sama. */
+for (const target of targets) {
+  const semua: Competency[] = [];
+  let paket = 0;
+  const files = jsonFiles(target);
+  if (!files.length) continue;
+  console.log(`\n== ${target}`);
+  for (const f of files) {
+    const raw = JSON.parse(readFileSync(f, "utf8"));
+    const rel = f.slice(root.length + 1);
+    if (raw && Array.isArray(raw.kompetensi)) {
+      const r = KurikulumFile.safeParse(raw);
+      if (!r.success) { gagal++; console.error(`✗ ${rel}\n  ${r.error.issues.map(i => i.path.join(".") + ": " + i.message).join("\n  ")}`); continue; }
+      semua.push(...r.data.kompetensi);
+      console.log(`✓ ${rel}: ${r.data.kompetensi.length} kompetensi`);
+    } else if (raw && typeof raw.mechanic === "string") {
+      const r = ContentPack.safeParse(raw);
+      if (!r.success) { gagal++; console.error(`✗ ${rel}\n  ${r.error.issues.map(i => i.path.join(".") + ": " + i.message).join("\n  ")}`); continue; }
+      const kunci = new Set<string>([r.data.instructionKey]);
+      const d = r.data;
+      if (d.mechanic === "pilah") { d.bins.forEach(b => kunci.add(b.labelKey)); d.items.forEach(i => kunci.add(i.labelKey)); }
+      if (d.mechanic === "urutkan") d.sequences.forEach(s => { kunci.add(s.titleKey); s.steps.forEach(x => kunci.add(x.labelKey)); });
+      if (d.mechanic === "dagang") d.goods.forEach(g => kunci.add(g.labelKey));
+      const hilang = [...kunci].filter(k => !d.locale.id[k] || !d.locale.en[k]);
+      if (hilang.length) { gagal++; console.error(`✗ ${rel}: kunci locale hilang: ${hilang.join(", ")}`); continue; }
+      if (d.mechanic === "pilah") {
+        const bins = new Set(d.bins.map(b => b.id));
+        const salah = d.items.filter(i => !bins.has(i.bin)).map(i => i.id);
+        if (salah.length) { gagal++; console.error(`✗ ${rel}: item menunjuk bin yang tidak ada: ${salah.join(", ")}`); continue; }
+      }
+      paket++;
+      console.log(`✓ ${rel}: paket ${d.mechanic} (${d.competencyIds.length} kompetensi)`);
+    }
+  }
+  if (semua.length) {
+    const temuan = validasiKurikulum(semua, kamus);
+    for (const t of temuan) console[t.tingkat === "error" ? "error" : "warn"](`${t.tingkat === "error" ? "✗" : "!"} ${t.id}: ${t.pesan}`);
+    if (adaError(temuan)) gagal++;
+    console.log(`${semua.length} kompetensi, ${temuan.filter(t => t.tingkat === "error").length} error, ${temuan.filter(t => t.tingkat === "warning").length} peringatan`);
+  }
+  paketTotal += paket;
 }
-console.log(`${paket} paket konten valid`);
+console.log(`\n${paketTotal} paket konten valid`);
 process.exit(gagal ? 1 : 0);
