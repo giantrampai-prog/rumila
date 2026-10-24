@@ -13,6 +13,7 @@ import { FRUIT_BY_ID } from '@/lib/fruits/catalog';
 import { Merge, backdropTree, buildPlant, swayMaterial, type Kit } from '@/components/fruits/garden/build';
 import * as TX from '@/components/fruits/garden/textures';
 import { LOT } from './layout';
+import { lookFor, makePerson, posePerson } from './people';
 
 const std = (c: string, rough = 0.8, extra: T.MeshStandardMaterialParameters = {}) => new T.MeshStandardMaterial({ color: c, roughness: rough, ...extra });
 
@@ -160,34 +161,12 @@ export function motorMesh(rider: Rider, r: () => number, mat: T.Material) {
 /* ---------------- pejalan kaki ---------------- */
 
 function pedestrian(r: () => number, mat: T.Material) {
-  const pick = <V,>(a: V[]) => a[Math.floor(r() * a.length)];
-  const hijab = r() < 0.35;
-  const female = hijab || r() < 0.2;
-  const skin = pick(['#e0b48a', '#c99466', '#a8764e', '#d9a67c']);
-  const top = pick(['#ffffff', '#dfe9f5', '#2d3e52', '#8a2a3a', '#3f6a8a', '#e8d8b8', '#5a7a4a', '#f2b8c6', '#ffffff']);
-  const bottom = pick(['#23262e', '#3a3f4a', '#5a4a3a', '#2a2a3a']);
-  const P: T.BufferGeometry[] = [];
-  P.push(part(new T.CapsuleGeometry(0.17, 0.4, 4, 10), top, 0, 1.13, 0, 0, 0, 0, 0.75, 1, 1));
-  for (const z of [-0.22, 0.22]) P.push(part(new T.CapsuleGeometry(0.05, 0.48, 3, 6), top, 0, 1.08, z, z * 0.25));
-  P.push(part(new T.SphereGeometry(0.115, 12, 10), skin, 0, 1.56, 0));
-  if (hijab) {
-    const hc = pick(['#e8b0c0', '#2d3e52', '#f4ecdc', '#6a4a7a', '#3f7a6a', '#c8a070']);
-    P.push(part(new T.SphereGeometry(0.135, 12, 10), hc, -0.01, 1.58, 0));
-    P.push(part(new T.CylinderGeometry(0.13, 0.25, 0.28, 12), hc, 0, 1.38, 0));
-  } else P.push(part(new T.SphereGeometry(0.12, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2.1), pick(['#1a120c', '#2a1a10', '#3a2a1a']), -0.01, 1.58, 0));
-  if (female && r() < 0.7) P.push(part(new T.CylinderGeometry(0.16, 0.26, 0.62, 12), bottom, 0, 0.55, 0));
-  if (r() < 0.35) P.push(part(new T.BoxGeometry(0.1, 0.3, 0.25), pick(['#1a1a1a', '#6a4a2a', '#2a3a5a']), -0.18, 1.12, 0));
+  // tokoh bersendi menghadap +z; diputar agar menghadap +x (arah jalan pejalan kaki)
+  const body = makePerson(lookFor(r() < 0.25 ? 'pekerja' : r() < 0.2 ? 'pelajar' : 'pejalan', r), mat, r());
+  body.rotation.y = Math.PI / 2;
   const g = new T.Group();
-  g.add(merged(P, mat));
-  const legs: T.Object3D[] = [];
-  for (const z of [-0.08, 0.08]) {
-    const leg = new T.Group();
-    leg.add(merged([part(new T.CapsuleGeometry(0.07, 0.62, 3, 6), bottom, 0, -0.38, 0), part(new T.BoxGeometry(0.22, 0.08, 0.1), '#1a1a1a', 0.05, -0.78, 0)], mat));
-    leg.position.set(0, 0.82, z);
-    g.add(leg);
-    legs.push(leg);
-  }
-  return { g, legs };
+  g.add(body);
+  return { g, body };
 }
 
 /* ---------------- tekstur fasad ---------------- */
@@ -421,7 +400,7 @@ interface Vehicle {
 
 interface Walker {
   g: T.Group;
-  legs: T.Object3D[];
+  body: T.Group;
   axis: 'x' | 'z';
   fixed: number;
   s: number;
@@ -1457,19 +1436,18 @@ export class City {
         const need = (z1 - z0) / (w.speed * 1.8) + 0.5;
         ok = w.cross === 'side' ? this.side === 'r' && this.main === 'g' && this.leftMain > need : this.main === 'r' && this.side === 'g' && this.leftSide > need;
       }
+      const moved = ok ? Math.abs(next - w.s) : 0;
       if (ok) w.s = next;
       if (w.s > w.hi) w.dir = -1;
       if (w.s < w.lo) w.dir = 1;
-      const ph = ok ? Math.sin(t * 6 * sp + w.ph) : 0;
       if (w.axis === 'x') {
-        w.g.position.set(w.s, 0.15 + Math.abs(ph) * 0.03, w.fixed);
+        w.g.position.set(w.s, 0.15, w.fixed);
         w.g.rotation.y = w.dir > 0 ? 0 : Math.PI;
       } else {
-        w.g.position.set(w.fixed, 0.15 + Math.abs(ph) * 0.03, w.s);
+        w.g.position.set(w.fixed, 0.15, w.s);
         w.g.rotation.y = w.dir > 0 ? -Math.PI / 2 : Math.PI / 2;
       }
-      w.legs[0].rotation.z = ph * 0.5;
-      w.legs[1].rotation.z = -ph * 0.5;
+      posePerson(w.body, { t, dt, moved, seat: null });
     }
     // gedung yang menghalangi pandangan kamera ke resto dibuat tembus pandang
     if (cam && target) {
