@@ -1,0 +1,14 @@
+{
+  "versi": "0.1.0",
+  "_harapan": { "MAT.PAUD.BILANGAN-1-5.01": "REVISI" },
+  "_alasan": { "MAT.PAUD.BILANGAN-1-5.01": "kriteria 3 Layak usia: PAUD diminta menulis angka dan menghitung sampai 20" },
+  "kompetensi": [
+    {
+      "id": "MAT.PAUD.BILANGAN-1-5.01", "track": "MAT", "level": "PAUD",
+      "unit": { "id": "BILANGAN-1-5", "nama": { "id": "Bilangan 1–5", "en": "Numbers 1–5" } },
+      "statement": { "id": "Aku bisa menulis angka 1 sampai 20 dengan rapi di kotak", "en": "I can write the numbers 1 to 20 neatly in the boxes" },
+      "depth": ["pakai"], "prereq": [], "refs": [], "core": true, "mechanics": ["telusur"],
+      "catatan": "Anak menelusuri angka dengan jari."
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.TKB.ULANGI.01",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan",
+          "en": "Repeat loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai blok ulangi 3 kali untuk mengganti tiga perintah maju yang sama",
+        "en": "I can use a repeat 3 times block instead of three identical forward commands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.NAVIGASI.03"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Perkenalan perulangan: rak hanya muat 2 blok, jalur butuh 3 maju; satu-satunya jalan adalah blok ulangi 3. Jumlah ulangan tetap 3 di kompetensi ini (variasi jumlah ada di .02). Kamus belum punya kode perulangan terverifikasi; refs kosong. Knob: arah jalur (kanan → atas), rak 2 → 1 blok."
+    },
+    {
+      "id": "KODE.TKB.ULANGI.02",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan",
+          "en": "Repeat loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih berapa kali blok ulangi harus dijalankan supaya Agam sampai tepat di bintang",
+        "en": "I can choose how many times the repeat block should run so Agam lands exactly on the star"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.ULANGI.01",
+        "MAT.TKA.BILANGAN-1-10.03"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Angka ulangan dipilih dari 2–6; jalur 2–6 petak. Bukti: tepat di bintang, tidak lewat. Jebakan: anak memilih jumlah petak termasuk petak awal. Knob: isi blok 1 perintah → 2 perintah (maju, belok)."
+    },
+    {
+      "id": "KODE.TKB.ULANGI.03",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan",
+          "en": "Repeat loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membuat program lebih pendek dengan blok ulangi tanpa mengubah jalan Agam",
+        "en": "I can make a program shorter with a repeat block without changing Agam's path"
+      },
+      "depth": [
+        "cipta"
+      ],
+      "prereq": [
+        "KODE.TKB.ULANGI.02",
+        "KODE.TKA.POLA-ABC.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Program panjang (maju maju belok maju maju belok) diberikan; anak menulis ulang dengan ulangi. Bukti: jalur sama, jumlah blok lebih sedikit. Pengaya."
+    },
+    {
+      "id": "KODE.TKB.PROGRAM-5-8.01",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "PROGRAM-5-8",
+        "nama": {
+          "id": "Program 5–8 perintah",
+          "en": "Programs of 5–8 commands"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun program 5 sampai 8 perintah maju dan belok sebelum dijalankan, sampai bintang di grid 4×4",
+        "en": "I can build a program of 5 to 8 forward and turn commands before running it, to reach the star on a 4×4 grid"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.NAVIGASI.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "2CT.06",
+          "note": "instruksi presisi; 2P.02 dilepas karena tidak ada algoritma yang disalin"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Dua belokan, satu dinding. Program disusun penuh sebelum jalan; tidak ada eksekusi langsung. Jebakan: belok dua kali ke arah yang sama; dinding mencegah jalan pintas. Knob: panjang 5 → 8, dinding 0 → 2."
+    },
+    {
+      "id": "KODE.TKB.PROGRAM-5-8.02",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "PROGRAM-5-8",
+        "nama": {
+          "id": "Program 5–8 perintah",
+          "en": "Programs of 5–8 commands"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk petak tujuan Agam sebelum tiap perintah dijalankan satu per satu",
+        "en": "I can point to the square Agam will land on before each command is run one at a time"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.PROGRAM-5-8.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Prediksi satu langkah, berselang-seling dengan tombol 'langkah': tunjuk → jalankan → tunjuk. Bukti: tepat ≥ 4 dari 5 prediksi. Tracing program utuh di kepala ditulis di SD 1. Jebakan: setelah belok, 'maju' mengarah ke arah baru. Knob: tanpa belok → 1 belok. Pengaya."
+    },
+    {
+      "id": "KODE.TKB.DEBUG-BANYAK.01",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "DEBUG-BANYAK",
+        "nama": {
+          "id": "Debugging beberapa langkah",
+          "en": "Debugging several steps"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki dua perintah yang salah dalam program Agam supaya sampai di bintang",
+        "en": "I can fix the two wrong commands in Agam's program so it reaches the star"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.DEBUG.02",
+        "KODE.TKB.PROGRAM-5-8.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Program 6–8 perintah, dua salah di tempat berbeda. Bukti: sampai bintang dengan mengubah tepat dua perintah; mengganti lebih dari dua dicatat sebagai belum. Kamus belum punya kode debugging terverifikasi."
+    },
+    {
+      "id": "KODE.TKB.DEBUG-BANYAK.02",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "DEBUG-BANYAK",
+        "nama": {
+          "id": "Debugging beberapa langkah",
+          "en": "Debugging several steps"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk perintah yang akan membuat Agam menabrak dinding sebelum perintah itu dijalankan",
+        "en": "I can point to the command that will make Agam hit the wall before that command is run"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.PROGRAM-5-8.02",
+        "KODE.TKA.DEBUG.02"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Anak menjalankan program langkah demi langkah dan harus berhenti tepat satu langkah sebelum tabrakan, lalu menunjuk perintah berikutnya tanpa menjalankannya. Perintah aktif tidak disorot. Bukti: tunjukan tepat sebelum tabrakan; membiarkan Agam menabrak dicatat belum. Jebakan: berhenti terlalu dini. Knob: posisi perintah penabrak awal → akhir. Pengaya."
+    },
+    {
+      "id": "KODE.TKB.KONDISI.01",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "KONDISI",
+        "nama": {
+          "id": "Kondisi dengan rintangan",
+          "en": "Conditions with obstacles"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai blok kalau batu lompat, kalau tidak maju supaya satu program berhasil di 3 jalur yang batunya berpindah",
+        "en": "I can use an if rock then jump, else forward block so one program works on 3 paths where the rock moves"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.KALAU.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Blok kondisi satu keping dengan dua cabang bawaan ('batu? lompat / kosong? maju'), selalu memajukan Agam. Rak tetap 4–6 slot, jalur 4–6 petak, dijalankan di 3 jalur dengan posisi batu berbeda; tanpa blok kalau, salah satu jalur gagal. Bukti: ketiga jalur berhasil dengan satu program. Kalau di dalam ulangi (bersarang) ditulis di SD 1. Kamus belum punya kode kondisi; refs kosong. Knob: 1 → 2 batu."
+    },
+    {
+      "id": "KODE.TKB.DEKOMPOSISI.01",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "DEKOMPOSISI",
+        "nama": {
+          "id": "Memecah tugas",
+          "en": "Breaking tasks down"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih titik bendera supaya jalur ke bintang terbagi jadi dua program yang masing-masing muat di rak 4 blok",
+        "en": "I can choose where to put the flag so the path to the star splits into two programs that each fit a 4-block rack"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.PROGRAM-5-8.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi",
+        "urutkan"
+      ],
+      "catatan": "Rak muat 4 blok, jalur butuh 6–7 perintah, jadi harus dipecah. Anak menaruh bendera sendiri (titik pecah), lalu menyusun program ke bendera dan dari bendera ke bintang. Bukti: bendera terjangkau ≤ 4 blok dan sisa ≤ 4 blok. Bendera di tempat salah membuat salah satu bagian tidak muat; itu umpan baliknya. Kamus belum punya kode dekomposisi terverifikasi. Knob: jalur 6 → 7, bendera bebas → 2 pilihan."
+    },
+    {
+      "id": "KODE.TKB.DEKOMPOSISI.02",
+      "track": "KODE",
+      "level": "TKB",
+      "unit": {
+        "id": "DEKOMPOSISI",
+        "nama": {
+          "id": "Memecah tugas",
+          "en": "Breaking tasks down"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengelompokkan 6 gambar langkah membuat kue ke 3 tahap: siapkan, campur, panggang",
+        "en": "I can group 6 picture steps of baking a cake into 3 stages: prepare, mix, bake"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.URUTAN.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "pilah",
+        "urutkan"
+      ],
+      "catatan": "Dekomposisi di luar grid: langkah kecil dimasukkan ke tahap besarnya. Bukti: tiap tahap berisi 2 langkah yang benar. Pengaya."
+    }
+  ]
+}

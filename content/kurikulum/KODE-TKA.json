@@ -1,0 +1,369 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.TKA.URUTAN.01",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "URUTAN",
+        "nama": {
+          "id": "Urutan 3–5 langkah",
+          "en": "Sequencing 3–5 steps"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 4 sampai 5 gambar kegiatan menjadi urutan yang benar",
+        "en": "I can put 4 to 5 pictures of an activity in the right order"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Mn.04",
+          "note": "urutan kejadian dengan ordinal (EY2)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "cerita"
+      ],
+      "catatan": "Dari 3 ke 4–5 gambar. Urutan dimainkan sebagai animasi setelah disusun. Jebakan: dua gambar yang bisa bertukar tanpa salah (pakai baju, pakai sepatu); hindari di TK A. Knob: 4 → 5 gambar, petunjuk visual kuat → halus."
+    },
+    {
+      "id": "KODE.TKA.URUTAN.02",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "URUTAN",
+        "nama": {
+          "id": "Urutan 3–5 langkah",
+          "en": "Sequencing 3–5 steps"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menempel kata pertama, lalu, dan terakhir pada gambar supaya Agam menceritakan urutannya dengan benar",
+        "en": "I can put the words first, then, and last on the pictures so Agam tells the sequence correctly"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.URUTAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Mn.04",
+          "note": "bahasa urutan pertama/berikutnya/terakhir"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "cerita",
+        "urutkan"
+      ],
+      "catatan": "Label = ikon + suara, bukan tulisan. Label menggerakkan narasi: Agam bercerita mengikuti label; 'terakhir' ditempel di gambar ke-2 membuat cerita terpotong dan gambar sisa meredup, jadi kesalahan terlihat di dalam game. Bukti: narasi utuh 3 adegan. Jebakan: 'lalu' bisa dipakai dua kali pada 4 gambar; di TK A pakai 3 gambar. Knob: 3 → 4 gambar (dua 'lalu'). Pengaya."
+    },
+    {
+      "id": "KODE.TKA.NAVIGASI.01",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "NAVIGASI",
+        "nama": {
+          "id": "Agam ke bintang",
+          "en": "Agam to the star"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 2 sampai 4 perintah maju lalu menjalankannya supaya Agam sampai di bintang",
+        "en": "I can build 2 to 4 forward commands and then run them so Agam reaches the star"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.PERINTAH.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "2CT.06",
+          "note": "pendahulu: instruksi presisi untuk tugas sederhana"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Beda dari PAUD: perintah disusun dulu di rak, baru tombol jalan. Jalur masih lurus. Bukti: program tepat sampai bintang, tidak kurang dan tidak lewat. Knob: jarak 2 → 4."
+    },
+    {
+      "id": "KODE.TKA.NAVIGASI.02",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "NAVIGASI",
+        "nama": {
+          "id": "Agam ke bintang",
+          "en": "Agam to the star"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai perintah belok kiri atau kanan supaya Agam menghadap ke bintang",
+        "en": "I can use the turn left or turn right command so Agam faces the star"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.NAVIGASI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gp.01",
+          "note": "pendahulu terdekat: bahasa arah; di sini anak memilih perintah belok, bukan mendeskripsikan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Kiri/kanan relatif terhadap Agam, bukan layar; Agam ditampilkan dari belakang supaya kiri anak = kiri Agam. Jebakan: Agam menghadap ke bawah layar; hindari di TK A. Knob: belok 1 → 2 kali."
+    },
+    {
+      "id": "KODE.TKA.NAVIGASI.03",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "NAVIGASI",
+        "nama": {
+          "id": "Agam ke bintang",
+          "en": "Agam to the star"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun program maju dan belok sampai 5 perintah untuk mencapai bintang di grid 3×3",
+        "en": "I can build a program of up to 5 forward and turn commands to reach the star on a 3×3 grid"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.NAVIGASI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "2CT.06",
+          "note": "pendahulu: instruksi presisi; 2P.02 dilepas karena anak tidak menyalin algoritma yang diberikan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Gabungan maju dan belok. Jalur punya satu belokan. Bukti: sampai bintang; efisiensi (jumlah perintah = optimal) dicatat tapi tidak jadi syarat di TK A. Knob: grid 3×3, belokan 1 → 2."
+    },
+    {
+      "id": "KODE.TKA.POLA-ABC.01",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "POLA-ABC",
+        "nama": {
+          "id": "Pola ABC",
+          "en": "ABC patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa melanjutkan pola ABC dari tiga warna atau tiga bentuk",
+        "en": "I can continue an ABC pattern of three colours or three shapes"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.POLA.01",
+        "MAT.PAUD.BENTUK-DASAR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Ms.09",
+          "note": "pola berulang unit tiga"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pola",
+        "pilah"
+      ],
+      "catatan": "Pola tampil 2 ulangan penuh (ABCABC) lalu 2–3 slot kosong. Jebakan: anak melanjutkan AB; distraktor ketiga wajib ada. Knob: warna → bentuk, slot kosong 2 → 3."
+    },
+    {
+      "id": "KODE.TKA.POLA-ABC.02",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "POLA-ABC",
+        "nama": {
+          "id": "Pola ABC",
+          "en": "ABC patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki satu bagian yang salah dalam pola AB atau ABC",
+        "en": "I can fix the one part that is wrong in an AB or ABC pattern"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.POLA-ABC.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "3Ms.09",
+          "note": "mengenali kesalahan dalam pola warna/bentuk (EY3)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pola"
+      ],
+      "catatan": "Pola 8 unsur, satu tertukar. Memperbaiki = menyentuh yang salah lalu memilih pengganti; dinilai dari hasil akhir. Jebakan: kesalahan di ujung lebih sulit dilihat daripada di tengah; mulai dari tengah."
+    },
+    {
+      "id": "KODE.TKA.POLA-ABC.03",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "POLA-ABC",
+        "nama": {
+          "id": "Pola ABC",
+          "en": "ABC patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membuat pola ABC sendiri dari tiga benda pilihanku",
+        "en": "I can make my own ABC pattern from three objects I choose"
+      },
+      "depth": [
+        "cipta"
+      ],
+      "prereq": [
+        "KODE.TKA.POLA-ABC.01",
+        "KODE.PAUD.POLA.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Ms.09",
+          "note": "membuat pola berulang"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pola",
+        "bangun"
+      ],
+      "catatan": "Benar bila unit tiga berulang penuh minimal 2 kali, dalam urutan apa pun. Hasil jadi hiasan dunia. Jebakan: anak memakai hanya dua dari tiga benda (jadi AB); pola dimainkan sebagai tiga nada supaya terdengar. Knob: slot 6 → 9. Pengaya."
+    },
+    {
+      "id": "KODE.TKA.DEBUG.01",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Debugging satu langkah",
+          "en": "Debugging one step"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki urutan 3 sampai 4 kegiatan yang satu gambarnya tertukar",
+        "en": "I can fix a 3 to 4 step sequence in which one picture is in the wrong place"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "cerita"
+      ],
+      "catatan": "Dipindah dari PAUD sesuai tinjauan. Agam sudah menyusun 3–4 gambar, satu salah tempat; anak menukarnya. Bukti: urutan benar dengan tepat satu pertukaran; lebih dari satu pertukaran dicatat belum. Jebakan: menukar dua gambar yang sama-sama benar. Kamus belum punya kode computing terverifikasi untuk 'mengenali satu kesalahan dalam algoritma'; refs kosong. Knob: 3 → 4 gambar, posisi salah tengah → ujung."
+    },
+    {
+      "id": "KODE.TKA.DEBUG.02",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Debugging satu langkah",
+          "en": "Debugging one step"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki satu perintah yang salah supaya program Agam sampai di bintang",
+        "en": "I can fix the one wrong command so Agam's program reaches the star"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.NAVIGASI.03"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Program 3–5 perintah sudah tersusun, satu salah (belok kiri seharusnya kanan, atau maju kurang). Anak menjalankan, melihat Agam meleset, mengganti satu perintah. Bukti: sampai bintang dengan mengubah tepat satu perintah. Knob: posisi perintah salah awal → akhir. Refs kosong seperti .01: 2CT.06 bukan tentang debugging."
+    },
+    {
+      "id": "KODE.TKA.KALAU.01",
+      "track": "KODE",
+      "level": "TKA",
+      "unit": {
+        "id": "KALAU",
+        "nama": {
+          "id": "Perintah sesuai keadaan",
+          "en": "The right command for the situation"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih lompat untuk petak berbatu dan maju untuk petak kosong saat menyusun program Agam",
+        "en": "I can choose jump for rocky squares and forward for empty squares when building Agam's program"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKA.NAVIGASI.01",
+        "KODE.PAUD.PERINTAH.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Benih kondisi tanpa blok 'kalau': batu terlihat sebelum program disusun; anak menaruh lompat tepat di posisi batu. Semantik (lihat docs/akademi/mekanik-navigasi.md): lompat selalu berpindah 2 petak, jadi lompat di petak kosong membuat Agam melewati satu petak dan bisa meleset dari bintang; strategi 'lompat semua' gagal. Bukti: sampai bintang dan jumlah lompat = jumlah batu. Jebakan: menghitung petak awal sebagai langkah. Jalur lurus 4–5 petak. Knob: 1 → 2 batu, posisi batu awal → akhir."
+    }
+  ]
+}

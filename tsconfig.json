@@ -35,7 +35,8 @@
     "scripts/**/*.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    ".next-fruits-build/types/**/*.ts"
+    ".next-fruits-build/types/**/*.ts",
+    "packages/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -1,0 +1,721 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.TKB.BILANGAN-20.01",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "BILANGAN-20",
+        "nama": {
+          "id": "Bilangan sampai 20",
+          "en": "Numbers to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung sampai 20 benda dengan menunjuk satu per satu",
+        "en": "I can count up to 20 objects by pointing to each one"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "cari"
+      ],
+      "catatan": "Benda 11–20 tersebar; anak boleh mengelompokkan dulu. Jebakan: kehilangan jejak di atas 12; benda yang sudah disentuh meredup. Knob: 11 → 20, susunan."
+    },
+    {
+      "id": "MAT.TKB.BILANGAN-20.02",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "BILANGAN-20",
+        "nama": {
+          "id": "Bilangan sampai 20",
+          "en": "Numbers to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencocokkan kelompok 11 sampai 20 benda dengan kartu angkanya",
+        "en": "I can match a group of 11 to 20 objects to its number card"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.BILANGAN-20.01",
+        "MAT.TKA.BILANGAN-1-10.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.01",
+          "note": "membaca bilangan 0–20"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "dagang"
+      ],
+      "catatan": "Belum nilai tempat: 14 dikenali sebagai lambang utuh. Cara jawab: memilah kelompok ke rak berlabel 11–20. Jebakan: 12 vs 21; rak berurutan sehingga posisi membantu. Knob: 11–15 → 11–20."
+    },
+    {
+      "id": "MAT.TKB.BILANGAN-20.03",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "BILANGAN-20",
+        "nama": {
+          "id": "Bilangan sampai 20",
+          "en": "Numbers to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa melanjutkan hitungan dari angka mana pun sampai 20 dengan menyusun kartu berikutnya, misalnya 8, 9, 10",
+        "en": "I can count on from any number up to 20 by laying the next cards, for example 8, 9, 10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.BILANGAN-20.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.04",
+          "note": "count on in ones from any number"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "pola",
+        "ucap"
+      ],
+      "catatan": "Agam berdiri di petak 7; petak di depannya kosong tanpa angka. Anak menyusun kartu 8, 9, 10, … dari tumpukan acak (atau mengucapkannya bila ucap aktif). Bukti: tidak mulai dari 1 dan urutan benar. Jebakan: setelah 9 memilih 01. Knob: titik mulai 2 → 15, panjang 3 → 6."
+    },
+    {
+      "id": "MAT.TKB.BILANGAN-20.04",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "BILANGAN-20",
+        "nama": {
+          "id": "Bilangan sampai 20",
+          "en": "Numbers to 20"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menaksir jumlah benda sampai 20 dengan menggeser penanda di garis bilangan, meleset paling banyak 3",
+        "en": "I can estimate how many objects there are, up to 20, by sliding a marker on a number line, within 3 of the real number"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.BILANGAN-20.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.03",
+          "note": "estimate up to 20 and check by counting"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "dagang",
+        "cari"
+      ],
+      "catatan": "Pembeli minta 'sekitar segini' sambil menunjuk keranjang penuh; benda tampil 2 detik, anak menggeser penanda di garis 0–20, lalu dihitung bersama sebagai umpan balik. Bukti dari posisi penanda saja. Jebakan: benda bertumpuk tampak lebih sedikit. Knob: lama tampil 3 → 1,5 detik, jumlah 8 → 20. Pengaya."
+    },
+    {
+      "id": "MAT.TKB.TAMBAH-KURANG-10.01",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "TAMBAH-KURANG-10",
+        "nama": {
+          "id": "Tambah dan kurang sampai 10",
+          "en": "Adding and subtracting to 10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menggabungkan dua kelompok benda dan menyebut jumlahnya, sampai 10",
+        "en": "I can put two groups of objects together and say how many there are, up to 10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.02",
+        "MAT.TKA.BILANGAN-1-10.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.02",
+          "note": "addition as combining two sets"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "bangun",
+        "ucap"
+      ],
+      "catatan": "Konkret: dua pembeli menaruh buah di satu keranjang; anak menggeser penanda di strip 1–10 (atau mengucapkan bila ucap aktif), bukan memilih dari beberapa kartu. Belum simbol '+'. Jebakan: anak menyebut jumlah kelompok terakhir saja. Knob: 2+2 → 6+4."
+    },
+    {
+      "id": "MAT.TKB.TAMBAH-KURANG-10.02",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "TAMBAH-KURANG-10",
+        "nama": {
+          "id": "Tambah dan kurang sampai 10",
+          "en": "Adding and subtracting to 10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjukkan sisa benda setelah beberapa diambil dengan menaruh jumlah yang sama, sampai 10",
+        "en": "I can show how many objects are left after some are taken away by placing the same number, up to 10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.03",
+          "note": "subtraction as take away"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "rawat",
+        "dagang"
+      ],
+      "catatan": "Produksi jumlah, bukan kuis: 7 ikan di kolam, 3 ditangkap, kolam tertutup kabut; anak menaruh pelet makanan sebanyak ikan yang tersisa. Belum simbol '−'. Jebakan: menaruh sebanyak yang diambil. Knob: pengurang 1 → 5, kolam terlihat → tertutup."
+    },
+    {
+      "id": "MAT.TKB.TAMBAH-KURANG-10.03",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "TAMBAH-KURANG-10",
+        "nama": {
+          "id": "Tambah dan kurang sampai 10",
+          "en": "Adding and subtracting to 10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa langsung melengkapi menjadi 5: kalau sudah ada 2, aku menambah 3 tanpa menghitung",
+        "en": "I can instantly make 5: if there are already 2, I add 3 without counting"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.01",
+        "MAT.PAUD.BILANGAN-1-5.03"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-03",
+          "note": "number bonds to 5"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.04",
+          "note": "pendahulu: komplemen 10"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pola",
+        "dagang"
+      ],
+      "catatan": "Pembeli menunjukkan koinnya sekejap (±1 detik) lalu menggenggamnya; harga 5 koin; anak menambahkan koin dari laci sebanyak kekurangannya. Bukti: jumlah tambahan tepat dan latency < 3 detik; koin tidak terlihat sehingga tidak bisa dihitung maju. Knob: pasangan 5 → pasangan 10 sebagai pengaya."
+    },
+    {
+      "id": "MAT.TKB.TAMBAH-KURANG-10.04",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "TAMBAH-KURANG-10",
+        "nama": {
+          "id": "Tambah dan kurang sampai 10",
+          "en": "Adding and subtracting to 10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membagi 2, 4, 6, atau 8 benda menjadi dua bagian sama banyak",
+        "en": "I can share 2, 4, 6, or 8 objects into two equal groups"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.TAMBAH-KURANG-10.01",
+        "MAT.TKA.BANDING.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nf.02",
+          "note": "setengah dari sekumpulan benda"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-PATTERNS-03",
+          "note": "membagi sama rata"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah",
+        "rawat"
+      ],
+      "catatan": "Dua anak kucing, 6 ikan; bagi adil. Bukti: kedua piring sama. Benih setengah. Pengaya."
+    },
+    {
+      "id": "MAT.TKB.UANG-10RB.01",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "UANG-10RB",
+        "nama": {
+          "id": "Uang sampai Rp10.000",
+          "en": "Money up to Rp10,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menukar satu uang lima ribu dengan lima koin seribu, dan satu uang dua ribu dengan dua koin seribu",
+        "en": "I can swap one Rp5,000 note for five Rp1,000 coins, and one Rp2,000 note for two Rp1,000 coins"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.UANG-KENAL.02",
+        "MAT.TKA.BILANGAN-1-10.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Nm.01",
+          "note": "pendahulu (Stage 2): nilai uang; di TK B hanya 1.000, 2.000, 5.000"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah"
+      ],
+      "catatan": "Jembatan dari 'jumlah koin' (TK A) ke 'nilai pecahan'. Mesin tukar: anak menaruh satu lembar, mesin mengeluarkan koin, anak menyusun koin di cetakan nilai. Bukti: tukar dua arah benar. Jebakan: dua ribu dianggap dua koin? benar; lima ribu dianggap lima lembar? salah. Knob: satu arah → dua arah."
+    },
+    {
+      "id": "MAT.TKB.UANG-10RB.02",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "UANG-10RB",
+        "nama": {
+          "id": "Uang sampai Rp10.000",
+          "en": "Money up to Rp10,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membayar barang sampai Rp10.000 dengan gabungan uang seribu, dua ribu, dan lima ribu",
+        "en": "I can pay for an item up to Rp10,000 using a mix of Rp1,000 coins and Rp2,000 and Rp5,000 notes"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.UANG-10RB.01",
+        "MAT.TKB.TAMBAH-KURANG-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Nm.01",
+          "note": "pendahulu: nilai & notasi uang"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Nm.02",
+          "note": "pendahulu: kombinasi koin/uang kertas"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Harga ribuan bulat, ditulis 'Rp7.000' dengan gambar. Lebih dari satu kombinasi benar (5+2 atau 2+2+2+1). Jebakan: membayar lebih tanpa kembalian dianggap belum. Knob: harga 2 → 10 ribu, pecahan tersedia 1 jenis → 3 jenis."
+    },
+    {
+      "id": "MAT.TKB.UANG-10RB.03",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "UANG-10RB",
+        "nama": {
+          "id": "Uang sampai Rp10.000",
+          "en": "Money up to Rp10,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memberi kembalian yang benar dari Rp10.000 untuk barang seharga ribuan bulat",
+        "en": "I can give the correct change from Rp10,000 for an item priced in whole thousands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.UANG-10RB.02",
+        "MAT.TKB.TAMBAH-KURANG-10.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.03",
+          "note": "selisih"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Nm.01",
+          "note": "pendahulu: nilai uang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Anak jadi kasir: pembeli bayar Rp10.000 untuk barang Rp7.000. Strategi hitung maju (7 → 10) ditampilkan sebagai bantuan pertama kali. Knob: harga 9 → 5 ribu. Berada di batas atas usia; dicatat sebagai inti yang boleh dikuasai di akhir TK B."
+    },
+    {
+      "id": "MAT.TKB.JAM-BULAT.01",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "JAM-BULAT",
+        "nama": {
+          "id": "Jam bulat",
+          "en": "O'clock"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membaca jam bulat pada jam dinding, misalnya pukul 3",
+        "en": "I can read o'clock times on a wall clock, for example 3 o'clock"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.03",
+        "MAT.TKB.BILANGAN-20.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gt.03",
+          "note": "time to the hour; half hour ditunda ke SD 1"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Jarum panjang selalu di 12; anak memilih kartu 'pukul N'. Jebakan: jarum pendek vs panjang; jarum pendek diberi warna berbeda di awal. Knob: angka jam 1–6 → 1–12, warna bantuan hilang."
+    },
+    {
+      "id": "MAT.TKB.JAM-BULAT.02",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "JAM-BULAT",
+        "nama": {
+          "id": "Jam bulat",
+          "en": "O'clock"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memutar jarum jam ke jam bulat yang diminta untuk kegiatan Agam",
+        "en": "I can turn the clock hands to the o'clock time asked for Agam's activity"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.JAM-BULAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gt.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gt.01",
+          "note": "bahasa waktu: pagi, siang, malam"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Kebalikan .01: dari kata ke jam. 'Agam sekolah pukul 7'; anak memutar jarum pendek. Pengaya."
+    },
+    {
+      "id": "MAT.TKB.UKUR-NONSTANDAR.01",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "UKUR-NONSTANDAR",
+        "nama": {
+          "id": "Mengukur dengan satuan tak baku",
+          "en": "Measuring with non-standard units"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengukur panjang benda dengan jengkal Agam tanpa celah dan tumpang tindih, sampai 10 jengkal",
+        "en": "I can measure how long something is in Agam's hand spans with no gaps or overlaps, up to 10 spans"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.UKUR-NONSTANDAR.01",
+        "MAT.TKA.BILANGAN-1-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Gg.03",
+          "note": "pendahulu (Stage 2): mengukur dengan satuan tak baku"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "bangun"
+      ],
+      "catatan": "Tanpa snap: anak menaruh jengkal sendiri. Celah/tumpang tindih terdeteksi dan ditunjukkan sebagai salah ukur, bukan salah hitung. Bukti: jumlah jengkal benar dan tanpa celah. Knob: panjang 4 → 10 jengkal, garis bayang bantu → hilang."
+    },
+    {
+      "id": "MAT.TKB.UKUR-NONSTANDAR.02",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "UKUR-NONSTANDAR",
+        "nama": {
+          "id": "Mengukur dengan satuan tak baku",
+          "en": "Measuring with non-standard units"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengukur panjang benda dengan penggaris kubus dan menyebut jumlah kubusnya, sampai 10",
+        "en": "I can measure an object with a cube ruler and say how many cubes long it is, up to 10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.UKUR-NONSTANDAR.01",
+        "MAT.TKB.BILANGAN-20.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Gg.04",
+          "note": "pendahulu (Stage 2): mengukur dengan satuan baku"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "2Gg.12",
+          "note": "pendahulu: skala sebagai garis bilangan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "bangun"
+      ],
+      "catatan": "Penggaris berupa deretan kubus bernomor; tiap kubus satu satuan. Anak menyejajarkan ujung benda ke kubus pertama dan membaca nomor di ujung lain. Jebakan: mulai dari kubus ke-2. Penggaris cm dan pembulatan ditulis di SD 1. Pengaya."
+    },
+    {
+      "id": "MAT.TKB.UKUR-NONSTANDAR.03",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "UKUR-NONSTANDAR",
+        "nama": {
+          "id": "Mengukur dengan satuan tak baku",
+          "en": "Measuring with non-standard units"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih dan memakai alat yang tepat: penggaris kubus untuk panjang, timbangan untuk berat",
+        "en": "I can choose and use the right tool: the cube ruler for length, the balance for weight"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.UKUR-NONSTANDAR.02",
+        "MAT.TKA.BANDING.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.08",
+          "note": "memilih alat ukur yang sesuai"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "rawat",
+        "simulasi"
+      ],
+      "catatan": "Hewan di klinik butuh diukur ('seberapa panjang ular?', 'seberapa berat kelinci?'); anak memilih alat lalu memakainya; alat salah memberi hasil yang jelas tidak menjawab (penggaris di kelinci: angka tapi tak bisa dicatat). Minimal 6 putaran diacak, bukan pencocokan 1:1. Kapasitas (gelas ukur) belum ada di kurikulum; menunggu PO. Pengaya."
+    },
+    {
+      "id": "MAT.TKB.DATA.01",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Turus dan piktogram",
+          "en": "Tallies and pictograms"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencatat tiap hewan yang lewat dengan satu turus di baris hewan itu",
+        "en": "I can record each animal that passes with one tally mark in that animal's row"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.02",
+          "note": "mencatat data kategorikal dengan turus/daftar"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "cari",
+        "simulasi"
+      ],
+      "catatan": "Hewan lewat satu per satu (kucing, bebek, kambing); anak menyentuh baris yang benar, turus muncul. Bukti: jumlah turus per baris sama dengan hewan yang lewat. Jebakan: dua hewan lewat berdekatan; jeda minimal 2 detik di awal. Knob: 3 → 4 jenis, jeda."
+    },
+    {
+      "id": "MAT.TKB.DATA.02",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Turus dan piktogram",
+          "en": "Tallies and pictograms"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun gambar buah menjadi piktogram, satu kolom untuk tiap jenis",
+        "en": "I can arrange fruit pictures into a pictogram, one column for each kind"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.01",
+        "MAT.PAUD.WARNA.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.02",
+          "note": "merepresentasikan data dengan gambar"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "bangun"
+      ],
+      "catatan": "Sekeranjang buah campur; anak menumpuk tiap buah di kolomnya dari bawah. Bukti: tiap kolom hanya satu jenis dan rapat dari bawah. Knob: 2 → 4 kolom, 6 → 15 buah."
+    },
+    {
+      "id": "MAT.TKB.DATA.03",
+      "track": "MAT",
+      "level": "TKB",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Turus dan piktogram",
+          "en": "Tallies and pictograms"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai piktogram stok untuk memilih rak yang paling sedikit untuk diisi dan paling banyak untuk diborong",
+        "en": "I can use the stock pictogram to pick the shelf with the fewest to restock and the one with the most for a bulk buyer"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKB.DATA.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.03",
+          "note": "describe data: more, less, most, least"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ss.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "rawat",
+        "dagang"
+      ],
+      "catatan": "Bukan pertanyaan audio: situasi game yang menuntut membaca piktogram. Putaran bergantian: tukang antar minta rak paling sedikit diisi; pemborong minta kolom paling banyak. Bukti: rak yang dipilih benar. Jebakan: dua kolom hampir sama. Knob: 3 → 4 kolom, selisih 2 → 1."
+    }
+  ]
+}

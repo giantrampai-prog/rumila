@@ -1,0 +1,269 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.PAUD.URUTAN.01",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "URUTAN",
+        "nama": {
+          "id": "Urutan kegiatan",
+          "en": "Sequencing"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih gambar mana yang terjadi lebih dulu dari 2 gambar kegiatan",
+        "en": "I can choose which of 2 pictures of an activity happens first"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "1Mn.04",
+          "note": "mulai memakai urutan pertama/berikutnya dalam konteks praktis (EY1)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "cerita"
+      ],
+      "catatan": "Tahap sebelum 3 gambar: dua gambar (telur → ayam, biji → tunas, bola bersih → kotor), anak menyentuh yang terjadi lebih dulu. Umpan balik: dimainkan sebagai animasi dua adegan. Jebakan: pasangan yang bisa dibolak-balik (makan → main vs main → makan); pakai pasangan sebab-akibat jelas."
+    },
+    {
+      "id": "KODE.PAUD.URUTAN.02",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "URUTAN",
+        "nama": {
+          "id": "Urutan kegiatan",
+          "en": "Sequencing"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 3 gambar kegiatan sehari-hari menjadi urutan yang benar",
+        "en": "I can put 3 pictures of a daily routine in the right order"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Mn.04",
+          "note": "urutan kejadian (EY2); kode Cambridge Primary Computing 1CT.01 belum terverifikasi sehingga tidak dirujuk"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "cerita"
+      ],
+      "catatan": "Dasar algoritma: urutan punya akibat. Gambar harus punya petunjuk visual jelas (gelap → terang, piring penuh → kosong). Mulai 3 langkah; knob naik ke 4. Umpan balik: setelah disusun, urutan dimainkan sebagai animasi; kalau salah, kejadiannya terlihat lucu (sarapan sebelum bangun)."
+    },
+    {
+      "id": "KODE.PAUD.POLA.01",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "POLA",
+        "nama": {
+          "id": "Pola AB",
+          "en": "AB patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa melanjutkan pola AB dari dua warna, misalnya merah biru merah biru",
+        "en": "I can continue an AB pattern of two colours, such as red blue red blue"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.WARNA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "1Ms.06",
+          "note": "mengenali pola di lingkungan (EY1)"
+        },
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Ms.09",
+          "note": "menyalin dan membuat pola berulang sederhana (EY2); di PAUD hanya melanjutkan unit AB"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pola",
+        "pilah"
+      ],
+      "catatan": "Pola ditampilkan minimal 3 ulangan (ABABAB) lalu dua slot kosong. Suara ikut berpola (tinggi-rendah) untuk anak yang lebih peka bunyi. Jebakan: distraktor warna ketiga; baru dimunculkan setelah 3 sukses. Knob: panjang pola tampil, jumlah slot kosong 1–2."
+    },
+    {
+      "id": "KODE.PAUD.POLA.02",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "POLA",
+        "nama": {
+          "id": "Pola AB",
+          "en": "AB patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membuat pola AB sendiri dari dua benda pilihanku",
+        "en": "I can make my own AB pattern from two objects I choose"
+      },
+      "depth": [
+        "cipta"
+      ],
+      "prereq": [
+        "KODE.PAUD.POLA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "2Ms.09",
+          "note": "membuat pola berulang (EY2)"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pola",
+        "bangun"
+      ],
+      "catatan": "Anak memilih 2 benda dari 4, lalu mengisi 6 slot. Benar bila ABABAB atau BABABA. Hasil disimpan sebagai hiasan di dunia (kalung, pagar) supaya ada alasan membuat. Pengaya karena 'cipta' belum wajib di PAUD. Jebakan: anak mengisi AAB tanpa sadar; tampilkan pola yang baru dibuat dimainkan sebagai lagu dua nada supaya kesalahan terdengar. Knob: jumlah slot 4–6."
+    },
+    {
+      "id": "KODE.PAUD.PERINTAH.01",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "PERINTAH",
+        "nama": {
+          "id": "Memberi perintah",
+          "en": "Giving commands"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyuruh Agam maju satu sampai tiga langkah untuk sampai ke bintang",
+        "en": "I can tell Agam to move forward one to three steps to reach the star"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.URUTAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "2CT.06",
+          "note": "pendahulu: instruksi presisi untuk tugas sederhana (Stage 2); di PAUD hanya perintah maju"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Hanya perintah 'maju', tanpa belok. Grid lurus 1×4 sampai 1×5. Umpan balik: Agam bergerak langkah demi langkah saat program dijalankan, bukan melompat. Jebakan: anak menekan maju terus; kalau lewat bintang, Agam berhenti di ujung dan menggeleng, bukan 'salah'. Kamus belum punya kode computing usia 3–4."
+    },
+    {
+      "id": "KODE.PAUD.PERINTAH.02",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "PERINTAH",
+        "nama": {
+          "id": "Memberi perintah",
+          "en": "Giving commands"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menekan lompat, bukan maju, saat batu tepat di depan Agam",
+        "en": "I can press jump instead of forward when a rock is right in front of Agam"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.PAUD.PERINTAH.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Eksekusi langsung: tiap tombol dijalankan seketika, tanpa menyusun program. Batu selalu tepat satu petak di depan Agam saat muncul, jadi yang diuji hanya memilih perintah yang tepat untuk keadaan. Versi 'susun 2–4 perintah dulu lalu jalankan' ditulis di TK A. Umpan balik: maju ke batu = tersandung dan tertawa, boleh coba lagi."
+    },
+    {
+      "id": "KODE.PAUD.SEBAB-AKIBAT.01",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "SEBAB-AKIBAT",
+        "nama": {
+          "id": "Sebab akibat",
+          "en": "Cause and effect"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk alat yang akan menyala sebelum menekan tombol yang sudah pernah kucoba",
+        "en": "I can point to the device that will turn on before pressing a button I have tried before"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Papan 3 tombol warna dan 3 alat (lampu, kipas, radio) tanpa kabel terlihat. Putaran 1: anak bebas menekan dan melihat akibatnya (tidak dinilai). Putaran 2: sebelum menekan tombol yang sama, anak menunjuk alat yang akan menyala; itulah bukti. Satu tindakan yang dicatat: tunjukan sebelum tekan. Knob: jumlah pasangan 2–3, pemetaan diacak per sesi."
+    },
+    {
+      "id": "KODE.PAUD.SEBAB-AKIBAT.02",
+      "track": "KODE",
+      "level": "PAUD",
+      "unit": {
+        "id": "SEBAB-AKIBAT",
+        "nama": {
+          "id": "Sebab akibat",
+          "en": "Cause and effect"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa meminta tolong Agam lewat tombol bantuan saat alat di dunia tidak bekerja",
+        "en": "I can ask Agam for help with the help button when something in the world does not work"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_EY",
+          "code": "1UWd.04",
+          "note": "minta tolong saat perangkat digital bermasalah (EY1)"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "cerita"
+      ],
+      "catatan": "Kebiasaan digital: alat 'macet' disengaja. Tombol bantuan tampil tetap, tidak berkedip dan tidak dipandu. Bukti sukses: menekan bantuan setelah ≤ 5 ketukan sia-sia; > 5 ketukan dicatat sebagai belum. Pengaya. Peninjau mencatat unit ini lebih dekat ke adab perangkat daripada koding; menunggu keputusan PO."
+    }
+  ]
+}
