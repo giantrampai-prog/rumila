@@ -1,12 +1,12 @@
 "use client";
 
-// Peta Petualangan: satu layar Academy yang berjenjang.
-// Kartu jenjang (posisi + target naik pangkat) → tombol Lanjut → chip pelajaran → jalur unit & misi → tangga 9 jenjang.
+// Peta Petualangan: satu jalur misi BERURUTAN per jenjang (Misi 1, 2, 3, …), tanpa lompat.
+// Kartu jenjang → tombol Lanjut (selalu misi "kamu di sini") → jalur unit & misi → Gerbang Naik Pangkat → tangga 9 jenjang.
 // Logika di src/lib/akademi/peta.ts; di sini hanya tampilan + naik jenjang otomatis.
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { LEVELS, levelIndex, type LevelId, type TrackId } from "@akademi/schema";
+import { LEVELS, levelIndex, type LevelId } from "@akademi/schema";
 import { MascotBubble } from "@/components/kid";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
@@ -15,7 +15,7 @@ import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { proyeksi } from "@/lib/akademi/mastery";
-import { jenjangBerikut, paketMisi, petaJenjang, type MisiPeta, type PelajaranPeta, type UnitPeta } from "@/lib/akademi/peta";
+import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, type MisiPeta, type PetaJenjang, type UnitPeta } from "@/lib/akademi/peta";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
@@ -24,19 +24,20 @@ import "../akademi.css";
 const KARTU = "rounded-[24px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
 const KUNCI_RAYAKAN = (memberId: string, level: LevelId) => `rinoya-naik-${memberId}-${level}`;
 /** Pola zig-zag jalur misi (persen lebar jalur). */
-const ZIGZAG = [0, 18, 36, 18];
+const ZIGZAG = [0, 9, 18, 9];
+const BIRU = { l: "#4fb3ff", m: "#0786eb", d: "#0567c2" };
+
+type Events = ReturnType<typeof useEvents>;
 
 export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: LevelId; onHadiah: () => void }) {
   const events = useEvents(me.id);
   const bahasa = useBahasaAnak(me.id);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
-  const peta = useMemo(() => petaJenjang(peng, KOMPETENSI, level, TRACK_SLICE), [peng, level]);
+  const selesaiSet = useMemo(() => kompetensiSelesai(events, PAKET), [events]);
+  const peta = useMemo(() => petaJenjang(peng, selesaiSet, KOMPETENSI, level, TRACK_SLICE), [peng, selesaiSet, level]);
   const streak = useMemo(() => hitungStreak(events), [events]);
   const berikut = jenjangBerikut(level, KOMPETENSI);
   const nama = me.name.replace(/^(Kak|Dek) /, "");
-
-  const [track, setTrack] = useState<TrackId | null>(null);
-  const aktif = peta.pelajaran.find((p) => p.track === (track ?? peta.lanjut?.track)) ?? peta.pelajaran[0];
 
   // Naik jenjang otomatis: pangkat tercapai → jenjang berikutnya dibuka, perayaan tampil sekali.
   const [rayakan, setRayakan] = useState<{ dari: LevelId; ke: LevelId } | null>(null);
@@ -47,11 +48,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       localStorage.setItem(KUNCI_RAYAKAN(me.id, level), new Date().toISOString());
     } catch {}
     setRayakan({ dari: level, ke: berikut });
-    setTrack(null);
     setLevelAnak(me.id, berikut);
   }, [peta.tercapai, berikut, me.id, level]);
 
-  const lanjutPaket = peta.lanjut ? paketMisi(peta.lanjut.misi.kompetensi.id, PAKET, events, level) : undefined;
+  const target = peta.sekarang ?? peta.pemantapan;
+  const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
 
   return (
     <>
@@ -67,11 +68,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         </div>
       </div>
 
-      <KartuJenjang level={level} inti={peta.inti} tercapai={peta.tercapai} berikut={berikut} />
+      <KartuJenjang peta={peta} berikut={berikut} />
 
-      {peta.lanjut && lanjutPaket && (
+      {target && targetPaket && (
         <Link
-          href={`/akademi/main/${lanjutPaket.id}`}
+          href={`/akademi/main/${targetPaket.id}`}
           className="flex items-center gap-3 rounded-[24px] px-4 py-3.5 text-[#0b2545] transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.98]"
           style={{ background: "linear-gradient(155deg,#ffb347,#fd861d 60%)", boxShadow: "0 5px 0 #c85400" }}
         >
@@ -80,25 +81,21 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
           </span>
           <span className="min-w-0 flex-1">
             <span className="block leading-tight" style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>
-              {peta.lanjut.misi.ulang ? "Latihan ulang" : "Lanjut"}: {peta.lanjut.misi.kompetensi.unit.nama[bahasa] ?? peta.lanjut.misi.kompetensi.unit.nama.id}
+              {peta.sekarang ? `Lanjut Misi ${target.nomor}` : "Latihan pemantapan"}
             </span>
             <span className="mt-0.5 line-clamp-2 text-[14px] leading-snug font-extrabold opacity-85">
-              {trackMeta(peta.lanjut.track).nama[bahasa] ?? trackMeta(peta.lanjut.track).nama.id} · {pernyataan(peta.lanjut.misi, bahasa)}
+              {namaPelajaran(target, bahasa)} · {pernyataan(target, bahasa)}
             </span>
           </span>
         </Link>
       )}
 
-      {peta.pelajaran.length > 0 && aktif && (
-        <section className="flex flex-col gap-3">
-          <div role="tablist" aria-label="Pelajaran" className="flex flex-wrap gap-2">
-            {peta.pelajaran.map((p) => (
-              <ChipPelajaran key={p.track} p={p} on={p.track === aktif.track} bahasa={bahasa} onClick={() => setTrack(p.track)} />
-            ))}
-          </div>
-          <Jalur pelajaran={aktif} bahasa={bahasa} events={events} level={level} />
-        </section>
-      )}
+      <div className="flex flex-col gap-4">
+        {peta.unit.map((u) => (
+          <KartuUnit key={`${u.track}-${u.id}`} u={u} bahasa={bahasa} events={events} level={level} sekarang={peta.sekarang} />
+        ))}
+        <Gerbang peta={peta} berikut={berikut} />
+      </div>
 
       <TanggaJenjang level={level} />
 
@@ -116,14 +113,13 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
 }
 
 const pernyataan = (m: MisiPeta, bahasa: BahasaAnak) => m.kompetensi.statement[bahasa] ?? m.kompetensi.statement.id;
+const namaPelajaran = (m: MisiPeta, bahasa: BahasaAnak) => trackMeta(m.kompetensi.track).nama[bahasa] ?? trackMeta(m.kompetensi.track).nama.id;
 
 /* ---------------- kartu jenjang ---------------- */
 
-function KartuJenjang({ level, inti, tercapai, berikut }: { level: LevelId; inti: { dikuasai: number; total: number }; tercapai: boolean; berikut?: LevelId }) {
-  const lv = levelMeta(level);
-  const sisa = inti.total - inti.dikuasai;
-  const persen = inti.total ? Math.round((inti.dikuasai / inti.total) * 100) : 0;
-  const nb = berikut ? levelMeta(berikut) : undefined;
+function KartuJenjang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
+  const lv = levelMeta(peta.level);
+  const persen = peta.total ? Math.round((peta.selesai / peta.total) * 100) : 0;
   return (
     <section className={`${KARTU} flex flex-col gap-2.5 p-4`} aria-label="Jenjang kamu">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -135,101 +131,25 @@ function KartuJenjang({ level, inti, tercapai, berikut }: { level: LevelId; inti
       <h2 className="leading-tight" style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 800, color: INK }}>
         {lv.nama} · {lv.lokal}
       </h2>
-      <div className="h-4 overflow-hidden rounded-full bg-[#fff0da]" role="progressbar" aria-valuemin={0} aria-valuemax={inti.total} aria-valuenow={inti.dikuasai} aria-label="Kemampuan inti dikuasai">
-        <div className="anim-bar-x h-full rounded-full" style={{ width: `${Math.max(persen, inti.dikuasai ? 4 : 0)}%`, background: "linear-gradient(90deg,#1f94f0,#0567c2)" }} />
+      <div className="h-4 overflow-hidden rounded-full bg-[#fff0da]" role="progressbar" aria-valuemin={0} aria-valuemax={peta.total} aria-valuenow={peta.selesai} aria-label="Misi selesai">
+        <div className="anim-bar-x h-full rounded-full" style={{ width: `${Math.max(persen, peta.selesai ? 4 : 0)}%`, background: "linear-gradient(90deg,#1f94f0,#0567c2)" }} />
       </div>
       <p className="text-[15px] leading-snug font-bold text-ink-2">
         <b style={{ color: INK }}>
-          {inti.dikuasai} dari {inti.total}
+          Misi {peta.selesai} dari {peta.total}
         </b>{" "}
-        kemampuan inti dikuasai.{" "}
-        {tercapai ? (
-          nb ? (
-            <>Hebat, kamu naik ke {nb.nama}!</>
-          ) : (
-            <>Semua selesai. Jenjang berikutnya segera hadir.</>
-          )
-        ) : nb ? (
-          <>
-            {sisa} lagi untuk meraih pangkat <b style={{ color: INK }}>{lv.pangkat}</b> dan naik ke {nb.lokal}.
-          </>
-        ) : (
-          <>
-            {sisa} lagi untuk meraih pangkat <b style={{ color: INK }}>{lv.pangkat}</b>.
-          </>
-        )}
+        selesai.{" "}
+        {peta.tercapai
+          ? berikut
+            ? `Pangkat ${lv.pangkat} tercapai!`
+            : "Semua selesai. Jenjang berikutnya segera hadir."
+          : `Selesaikan semua misi berurutan, lalu lewati Gerbang Naik Pangkat${berikut ? ` menuju ${levelMeta(berikut).lokal}` : ""}.`}
       </p>
     </section>
   );
 }
 
-/* ---------------- chip pelajaran ---------------- */
-
-function ChipPelajaran({ p, on, bahasa, onClick }: { p: PelajaranPeta; on: boolean; bahasa: BahasaAnak; onClick: () => void }) {
-  const c = TRACK_WARNA[p.track];
-  const [l, m, d] = PLAY[c];
-  const meta = trackMeta(p.track);
-  return (
-    <button
-      role="tab"
-      aria-selected={on}
-      onClick={onClick}
-      className="flex h-12 items-center gap-1.5 rounded-full pr-4 pl-2 transition-transform active:scale-95"
-      style={{
-        fontFamily: BALOO,
-        fontSize: 16,
-        fontWeight: 800,
-        color: on ? tintaPada(c) : INK,
-        background: on ? `linear-gradient(155deg, ${l}, ${m} 65%)` : "#fff",
-        boxShadow: on ? `0 4px 0 ${d}` : "0 3px 0 rgba(11,37,69,.08)",
-      }}
-    >
-      <span className="flex size-8 items-center justify-center rounded-full" style={{ background: on ? "rgba(255,255,255,.3)" : `${l}55`, color: on ? undefined : d }}>
-        <Icon name={TRACK_IKON[p.track]} size={20} />
-      </span>
-      {meta.nama[bahasa] ?? meta.nama.id}
-      <span className="rounded-full px-1.5 text-[13px] tabular-nums" style={{ background: on ? "rgba(255,255,255,.35)" : "#fff0da" }}>
-        {p.inti.dikuasai}/{p.inti.total}
-      </span>
-    </button>
-  );
-}
-
 /* ---------------- jalur unit & misi ---------------- */
-
-function Jalur({ pelajaran, bahasa, events, level }: { pelajaran: PelajaranPeta; bahasa: BahasaAnak; events: ReturnType<typeof useEvents>; level: LevelId }) {
-  const [kunci, setKunci] = useState<string | null>(null);
-  useEffect(() => setKunci(null), [pelajaran.track]);
-  let nomor = 0;
-  return (
-    <div className="flex flex-col gap-4">
-      {pelajaran.unit.map((u, i) => {
-        const terkunci = u.misi.every((m) => !m.terbuka && m.status === "belum");
-        return (
-          <div key={u.id} className={`${KARTU} p-4`}>
-            <KepalaUnit u={u} nomor={i + 1} bahasa={bahasa} terkunci={terkunci} />
-            <ol className="mt-3 flex max-w-[720px] flex-col gap-2.5">
-              {u.misi.map((m) => {
-                const geser = ZIGZAG[nomor++ % ZIGZAG.length];
-                const paket = m.terbuka || m.status !== "belum" ? paketMisi(m.kompetensi.id, PAKET, events, level) : undefined;
-                return (
-                  <li key={m.kompetensi.id} className="flex items-center gap-3" style={{ paddingLeft: `${geser}%` }}>
-                    <TitikMisi m={m} track={pelajaran.track} href={paket ? `/akademi/main/${paket.id}` : undefined} onKunci={() => setKunci(m.kompetensi.id)} />
-                    <span className="min-w-0 flex-1">
-                      {m.sekarang && <span className="mb-0.5 block text-[12px] font-black tracking-wide text-[#0567c2] uppercase">Kamu di sini</span>}
-                      <span className={`line-clamp-2 text-[14px] leading-snug font-extrabold ${m.terbuka || m.status !== "belum" ? "text-ink-2" : "text-ink-3"}`}>{pernyataan(m, bahasa)}</span>
-                      {kunci === m.kompetensi.id && <span className="mt-1 block text-[12px] font-extrabold text-[#a34a00]">Selesaikan misi sebelumnya dulu, ya.</span>}
-                    </span>
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
 const WARNA_LENCANA: Record<StatusLencana, { bg: string; fg: string; label: string }> = {
   emas: { bg: "#fdb724", fg: "#0b2545", label: "Lencana emas" },
@@ -238,75 +158,119 @@ const WARNA_LENCANA: Record<StatusLencana, { bg: string; fg: string; label: stri
   terkunci: { bg: "#fff0da", fg: "#5b6b85", label: "Lencana belum didapat" },
 };
 
-function KepalaUnit({ u, nomor, bahasa, terkunci }: { u: UnitPeta; nomor: number; bahasa: BahasaAnak; terkunci: boolean }) {
+function KartuUnit({ u, bahasa, events, level, sekarang }: { u: UnitPeta; bahasa: BahasaAnak; events: Events; level: LevelId; sekarang?: MisiPeta }) {
+  const [kunci, setKunci] = useState<number | null>(null);
+  const c = TRACK_WARNA[u.track];
+  const [l, m, d] = PLAY[c];
   const w = WARNA_LENCANA[u.lencana];
-  const selesai = u.misi.filter((m) => m.status === "dikuasai").length;
+  const selesai = u.misi.filter((x) => x.selesai).length;
+  const semuaKunci = u.misi.every((x) => x.terkunci);
   return (
-    <div className="flex items-center gap-3">
-      <span className="flex size-11 shrink-0 items-center justify-center rounded-[14px]" style={{ background: w.bg, color: w.fg }} aria-label={w.label} title={w.label}>
-        <Icon name={terkunci ? "lock" : "workspace_premium"} size={26} />
-      </span>
-      <div className="min-w-0 flex-1">
-        <span className="block text-[12px] font-extrabold text-ink-3">
-          Unit {nomor} · {selesai}/{u.misi.length} misi
+    <section className={`${KARTU} p-4 ${semuaKunci ? "opacity-75" : ""}`} aria-label={`${trackMeta(u.track).nama.id} unit ${u.ke}`}>
+      <div className="flex items-center gap-3">
+        <span className="flex size-12 shrink-0 items-center justify-center rounded-[16px]" style={{ background: `linear-gradient(155deg, ${l}, ${m} 65%)`, boxShadow: `0 3px 0 ${d}`, color: tintaPada(c) }}>
+          <Icon name={TRACK_IKON[u.track]} size={28} />
         </span>
-        <span className="block truncate" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>
-          {u.nama[bahasa] ?? u.nama.id}
+        <div className="min-w-0 flex-1">
+          <span className="block text-[12px] font-extrabold text-ink-3">
+            {trackMeta(u.track).nama[bahasa] ?? trackMeta(u.track).nama.id} · Unit {u.ke} · {selesai}/{u.misi.length} misi
+          </span>
+          <span className="block leading-tight" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, color: INK }}>
+            {u.nama[bahasa] ?? u.nama.id}
+          </span>
+        </div>
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-full" style={{ background: w.bg, color: w.fg }} aria-label={w.label} title={w.label}>
+          <Icon name="workspace_premium" size={22} />
         </span>
       </div>
-    </div>
+      <ol className="mt-3 flex max-w-[720px] flex-col gap-2.5">
+        {u.misi.map((x) => {
+          const href = !x.terkunci ? paketMisi(x.kompetensi.id, PAKET, events, level) : undefined;
+          return (
+            <li key={x.kompetensi.id} className="flex items-center gap-3" style={{ paddingLeft: `${ZIGZAG[(x.nomor - 1) % ZIGZAG.length]}%` }}>
+              <TitikMisi m={x} href={href ? `/akademi/main/${href.id}` : undefined} onKunci={() => setKunci(x.nomor)} />
+              <span className="min-w-0 flex-1">
+                <span className={`block text-[12px] font-black tracking-wide uppercase ${x.sekarang ? "text-[#0567c2]" : "text-ink-3"}`}>
+                  Misi {x.nomor}
+                  {x.sekarang ? " · Kamu di sini" : x.selesai ? " · Selesai" : ""}
+                </span>
+                <span className={`line-clamp-2 text-[14px] leading-snug font-extrabold ${x.terkunci ? "text-ink-3" : "text-ink-2"}`}>{pernyataan(x, bahasa)}</span>
+                {kunci === x.nomor && sekarang && <span className="mt-1 block text-[12px] font-extrabold text-[#a34a00]">Selesaikan Misi {sekarang.nomor} dulu, ya.</span>}
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   );
 }
 
-function TitikMisi({ m, track, href, onKunci }: { m: MisiPeta; track: TrackId; href?: string; onKunci: () => void }) {
-  const c = TRACK_WARNA[track];
-  const [l, mm, d] = PLAY[c];
-  const ukuran = m.sekarang ? 68 : 58;
-  let gaya: React.CSSProperties;
-  let ikon: string;
-  let label: string;
-  if (m.status === "dikuasai") {
-    gaya = { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 4px 0 #c88a00", color: INK };
-    ikon = "star";
-    label = "Dikuasai";
-  } else if (m.sekarang) {
-    gaya = { background: `linear-gradient(155deg, ${l}, ${mm} 65%)`, boxShadow: `0 5px 0 ${d}`, color: tintaPada(c) };
-    ikon = "play_arrow";
-    label = "Mainkan misi sekarang";
-  } else if (m.status === "berkembang") {
-    gaya = { background: "#fff", border: `4px solid ${mm}`, boxShadow: "0 4px 0 rgba(11,37,69,.1)", color: d };
-    ikon = "trending_up";
-    label = "Sedang dilatih";
-  } else if (m.terbuka) {
-    gaya = { background: "#fff", boxShadow: "0 4px 0 rgba(11,37,69,.1)", color: d };
-    ikon = "play_arrow";
-    label = "Siap dimainkan";
-  } else {
-    gaya = { background: "#fff0da", boxShadow: "0 3px 0 rgba(11,37,69,.06)", color: "#5b6b85" };
-    ikon = "lock";
-    label = "Terkunci";
-  }
+function TitikMisi({ m, href, onKunci }: { m: MisiPeta; href?: string; onKunci: () => void }) {
+  const ukuran = m.sekarang ? 70 : 56;
+  const gaya: React.CSSProperties = m.selesai
+    ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 4px 0 #c88a00", color: INK }
+    : m.sekarang
+      ? { background: `linear-gradient(155deg, ${BIRU.l}, ${BIRU.m} 65%)`, boxShadow: `0 5px 0 ${BIRU.d}`, color: "#fff" }
+      : { background: "#f3ece1", boxShadow: "0 3px 0 rgba(11,37,69,.08)", color: "#5b6b85" };
+  const ikon = m.selesai ? "star" : m.sekarang ? "play_arrow" : "lock";
+  const label = `Misi ${m.nomor}, ${m.selesai ? "selesai, main lagi" : m.sekarang ? "mainkan sekarang" : "terkunci"}`;
   const isi = (
     <>
       {m.sekarang && <span aria-hidden className="akademi-denyut absolute inset-0 rounded-full" />}
-      <Icon name={ikon} size={m.sekarang ? 38 : 30} />
-      {m.ulang && (
-        <span className="absolute -right-1 -bottom-1 flex size-6 items-center justify-center rounded-full bg-white text-[#0567c2] shadow-[0_2px_0_rgba(11,37,69,.15)]" title="Waktunya latihan ulang">
-          <Icon name="refresh" size={16} />
-        </span>
-      )}
+      <Icon name={ikon} size={m.sekarang ? 40 : 28} />
     </>
   );
   const kelas = "relative flex shrink-0 items-center justify-center rounded-full transition-transform active:scale-90";
-  const ukuranGaya = { width: ukuran, height: ukuran, ...gaya };
+  const gayaPenuh = { width: ukuran, height: ukuran, ...gaya };
   return href ? (
-    <Link href={href} aria-label={`${label}: ${m.kompetensi.statement.id}`} className={kelas} style={ukuranGaya}>
+    <Link href={href} aria-label={label} className={kelas} style={gayaPenuh}>
       {isi}
     </Link>
   ) : (
-    <button type="button" onClick={onKunci} aria-label={`${label}: ${m.kompetensi.statement.id}`} className={kelas} style={ukuranGaya}>
+    <button type="button" onClick={onKunci} aria-label={label} className={kelas} style={gayaPenuh}>
       {isi}
     </button>
+  );
+}
+
+/* ---------------- gerbang naik pangkat ---------------- */
+
+function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
+  const lv = levelMeta(peta.level);
+  const terbuka = !peta.sekarang;
+  const sisa = peta.inti.total - peta.inti.dikuasai;
+  return (
+    <section
+      className={`${KARTU} flex items-center gap-3 p-4`}
+      style={peta.tercapai ? { boxShadow: "0 4px 0 #c88a00, 0 0 0 3px #ffe46b" } : undefined}
+      aria-label="Gerbang naik pangkat"
+    >
+      <span
+        className="flex size-16 shrink-0 items-center justify-center rounded-[20px]"
+        style={peta.tercapai ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", color: INK } : terbuka ? { background: "#e3f1fd", color: "#0567c2" } : { background: "#f3ece1", color: "#5b6b85" }}
+      >
+        <Icon name={peta.tercapai ? "military_tech" : terbuka ? "fort" : "lock"} size={36} />
+      </span>
+      <div className="min-w-0 flex-1">
+        <span className="block text-[12px] font-black tracking-wide text-ink-3 uppercase">Gerbang naik pangkat</span>
+        <span className="block leading-tight" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>
+          Pangkat {lv.pangkat}
+          {berikut ? ` → ${levelMeta(berikut).lokal}` : ""}
+        </span>
+        <span className="mt-0.5 block text-[13px] leading-snug font-bold text-ink-2">
+          {peta.tercapai
+            ? "Tercapai! Sertifikat jenjang ini siap diambil."
+            : terbuka
+              ? `Semua misi selesai. Kuasai ${sisa} kemampuan inti lagi lewat latihan pemantapan.`
+              : `Terbuka setelah Misi ${peta.total} selesai.`}
+        </span>
+      </div>
+      {peta.tercapai && (
+        <Link href={`/akademi/sertifikat/${peta.level}`} className="shrink-0 rounded-full bg-[#0567c2] px-3.5 py-2 text-[13px] font-extrabold text-white">
+          Sertifikat
+        </Link>
+      )}
+    </section>
   );
 }
 
