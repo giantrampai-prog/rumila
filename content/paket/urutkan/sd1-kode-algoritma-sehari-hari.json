@@ -1,0 +1,315 @@
+{
+  "id": "sd1-kode-algoritma-sehari-hari",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD1.ALGORITMA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Algoritma Sehari-hari",
+      "instruksi": "Susun gambar langkah dari yang pertama sampai terakhir supaya tugasnya beres.",
+      "t-cuci-tangan": "Mencuci tangan",
+      "cuci-tangan-1": "buka keran",
+      "cuci-tangan-2": "basahi tangan",
+      "cuci-tangan-3": "gosok dengan sabun",
+      "cuci-tangan-4": "bilas sampai bersih",
+      "cuci-tangan-5": "tutup keran",
+      "cuci-tangan-6": "keringkan dengan handuk",
+      "t-tanam-biji": "Menanam biji",
+      "tanam-biji-1": "gali lubang kecil",
+      "tanam-biji-2": "masukkan biji",
+      "tanam-biji-3": "tutup dengan tanah",
+      "tanam-biji-4": "siram dengan air",
+      "tanam-biji-5": "tunas tumbuh",
+      "tanam-biji-6": "bunga mekar",
+      "t-teh": "Membuat teh",
+      "teh-1": "ambil cangkir",
+      "teh-2": "masukkan kantong teh",
+      "teh-3": "tuang air panas",
+      "teh-4": "tunggu warnanya berubah",
+      "teh-5": "buang kantong teh",
+      "teh-6": "minum tehnya",
+      "t-gosok-gigi": "Menggosok gigi",
+      "gosok-gigi-1": "ambil sikat gigi",
+      "gosok-gigi-2": "beri pasta gigi",
+      "gosok-gigi-3": "gosok semua gigi",
+      "gosok-gigi-4": "kumur-kumur",
+      "gosok-gigi-5": "simpan sikat di gelas",
+      "t-sepatu": "Memakai sepatu",
+      "sepatu-1": "pakai kaus kaki",
+      "sepatu-2": "masukkan kaki ke sepatu",
+      "sepatu-3": "ikat tali sepatu",
+      "sepatu-4": "berdiri",
+      "sepatu-5": "berjalan",
+      "t-roti-selai": "Membuat roti selai",
+      "roti-selai-1": "buka tutup selai",
+      "roti-selai-2": "oles selai di roti",
+      "roti-selai-3": "tutup dengan roti kedua",
+      "roti-selai-4": "potong jadi dua",
+      "roti-selai-5": "makan rotinya"
+    },
+    "en": {
+      "judul": "Everyday Algorithms",
+      "instruksi": "Put the picture steps in order from first to last so the job gets done.",
+      "t-cuci-tangan": "Washing hands",
+      "cuci-tangan-1": "turn on the tap",
+      "cuci-tangan-2": "wet your hands",
+      "cuci-tangan-3": "scrub with soap",
+      "cuci-tangan-4": "rinse clean",
+      "cuci-tangan-5": "turn off the tap",
+      "cuci-tangan-6": "dry with a towel",
+      "t-tanam-biji": "Planting a seed",
+      "tanam-biji-1": "dig a small hole",
+      "tanam-biji-2": "drop in the seed",
+      "tanam-biji-3": "cover with soil",
+      "tanam-biji-4": "water it",
+      "tanam-biji-5": "a sprout grows",
+      "tanam-biji-6": "a flower blooms",
+      "t-teh": "Making tea",
+      "teh-1": "get a cup",
+      "teh-2": "put in a tea bag",
+      "teh-3": "pour hot water",
+      "teh-4": "wait for it to change colour",
+      "teh-5": "take out the tea bag",
+      "teh-6": "drink the tea",
+      "t-gosok-gigi": "Brushing teeth",
+      "gosok-gigi-1": "pick up the toothbrush",
+      "gosok-gigi-2": "add toothpaste",
+      "gosok-gigi-3": "brush all your teeth",
+      "gosok-gigi-4": "rinse your mouth",
+      "gosok-gigi-5": "put the brush in its cup",
+      "t-sepatu": "Putting on shoes",
+      "sepatu-1": "put on socks",
+      "sepatu-2": "slide your foot into the shoe",
+      "sepatu-3": "tie the laces",
+      "sepatu-4": "stand up",
+      "sepatu-5": "walk",
+      "t-roti-selai": "Making a jam sandwich",
+      "roti-selai-1": "open the jam jar",
+      "roti-selai-2": "spread jam on the bread",
+      "roti-selai-3": "put the second slice on top",
+      "roti-selai-4": "cut it in half",
+      "roti-selai-5": "eat the sandwich"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah gambar: 5 → 6 (urutan dipotong dari depan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "cuci-tangan",
+      "titleKey": "t-cuci-tangan",
+      "steps": [
+        {
+          "id": "cuci-tangan-1",
+          "labelKey": "cuci-tangan-1",
+          "emoji": "🚰"
+        },
+        {
+          "id": "cuci-tangan-2",
+          "labelKey": "cuci-tangan-2",
+          "emoji": "💧"
+        },
+        {
+          "id": "cuci-tangan-3",
+          "labelKey": "cuci-tangan-3",
+          "emoji": "🧼"
+        },
+        {
+          "id": "cuci-tangan-4",
+          "labelKey": "cuci-tangan-4",
+          "emoji": "🚿"
+        },
+        {
+          "id": "cuci-tangan-5",
+          "labelKey": "cuci-tangan-5",
+          "emoji": "🔒"
+        },
+        {
+          "id": "cuci-tangan-6",
+          "labelKey": "cuci-tangan-6",
+          "emoji": "🧻"
+        }
+      ]
+    },
+    {
+      "id": "tanam-biji",
+      "titleKey": "t-tanam-biji",
+      "steps": [
+        {
+          "id": "tanam-biji-1",
+          "labelKey": "tanam-biji-1",
+          "emoji": "🕳️"
+        },
+        {
+          "id": "tanam-biji-2",
+          "labelKey": "tanam-biji-2",
+          "emoji": "🌰"
+        },
+        {
+          "id": "tanam-biji-3",
+          "labelKey": "tanam-biji-3",
+          "emoji": "🟫"
+        },
+        {
+          "id": "tanam-biji-4",
+          "labelKey": "tanam-biji-4",
+          "emoji": "💦"
+        },
+        {
+          "id": "tanam-biji-5",
+          "labelKey": "tanam-biji-5",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tanam-biji-6",
+          "labelKey": "tanam-biji-6",
+          "emoji": "🌻"
+        }
+      ]
+    },
+    {
+      "id": "teh",
+      "titleKey": "t-teh",
+      "steps": [
+        {
+          "id": "teh-1",
+          "labelKey": "teh-1",
+          "emoji": "☕"
+        },
+        {
+          "id": "teh-2",
+          "labelKey": "teh-2",
+          "emoji": "🍵"
+        },
+        {
+          "id": "teh-3",
+          "labelKey": "teh-3",
+          "emoji": "♨️"
+        },
+        {
+          "id": "teh-4",
+          "labelKey": "teh-4",
+          "emoji": "⏳"
+        },
+        {
+          "id": "teh-5",
+          "labelKey": "teh-5",
+          "emoji": "🗑️"
+        },
+        {
+          "id": "teh-6",
+          "labelKey": "teh-6",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "gosok-gigi",
+      "titleKey": "t-gosok-gigi",
+      "steps": [
+        {
+          "id": "gosok-gigi-1",
+          "labelKey": "gosok-gigi-1",
+          "emoji": "🪥"
+        },
+        {
+          "id": "gosok-gigi-2",
+          "labelKey": "gosok-gigi-2",
+          "emoji": "🧴"
+        },
+        {
+          "id": "gosok-gigi-3",
+          "labelKey": "gosok-gigi-3",
+          "emoji": "😁"
+        },
+        {
+          "id": "gosok-gigi-4",
+          "labelKey": "gosok-gigi-4",
+          "emoji": "💦"
+        },
+        {
+          "id": "gosok-gigi-5",
+          "labelKey": "gosok-gigi-5",
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "t-sepatu",
+      "steps": [
+        {
+          "id": "sepatu-1",
+          "labelKey": "sepatu-1",
+          "emoji": "🧦"
+        },
+        {
+          "id": "sepatu-2",
+          "labelKey": "sepatu-2",
+          "emoji": "👟"
+        },
+        {
+          "id": "sepatu-3",
+          "labelKey": "sepatu-3",
+          "emoji": "🎀"
+        },
+        {
+          "id": "sepatu-4",
+          "labelKey": "sepatu-4",
+          "emoji": "🧍"
+        },
+        {
+          "id": "sepatu-5",
+          "labelKey": "sepatu-5",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "roti-selai",
+      "titleKey": "t-roti-selai",
+      "steps": [
+        {
+          "id": "roti-selai-1",
+          "labelKey": "roti-selai-1",
+          "emoji": "🫙"
+        },
+        {
+          "id": "roti-selai-2",
+          "labelKey": "roti-selai-2",
+          "emoji": "🍓"
+        },
+        {
+          "id": "roti-selai-3",
+          "labelKey": "roti-selai-3",
+          "emoji": "🥪"
+        },
+        {
+          "id": "roti-selai-4",
+          "labelKey": "roti-selai-4",
+          "emoji": "🔪"
+        },
+        {
+          "id": "roti-selai-5",
+          "labelKey": "roti-selai-5",
+          "emoji": "😋"
+        }
+      ]
+    }
+  ]
+}

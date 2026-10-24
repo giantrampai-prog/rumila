@@ -1,0 +1,167 @@
+{
+  "id": "sd4-sains-konduktor-isolator",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.LISTRIK.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uji Celah Rangkaian",
+      "instruksi": "Tiap benda dijepit di celah rangkaian: taruh ke 'lampu menyala' atau 'lampu padam'.",
+      "b-konduktor": "lampu menyala (konduktor)",
+      "b-isolator": "lampu padam (isolator)",
+      "i-paku": "paku besi",
+      "i-sendok": "sendok logam",
+      "i-kunci": "kunci logam",
+      "i-klip": "klip kertas logam",
+      "i-tembaga": "kawat tembaga",
+      "i-koin": "uang logam",
+      "i-foil": "aluminium foil",
+      "i-penghapus": "penghapus karet",
+      "i-penggaris": "penggaris plastik",
+      "i-tusukgigi": "tusuk gigi kayu",
+      "i-kertas": "kertas",
+      "i-gelas": "gelas kaca",
+      "i-tali": "tali kain",
+      "i-sedotan": "sedotan plastik"
+    },
+    "en": {
+      "judul": "Circuit Gap Test",
+      "instruksi": "Each object is clipped into a gap in the circuit: put it in 'lamp lights' or 'lamp stays off'.",
+      "b-konduktor": "lamp lights (conductor)",
+      "b-isolator": "lamp stays off (insulator)",
+      "i-paku": "iron nail",
+      "i-sendok": "metal spoon",
+      "i-kunci": "metal key",
+      "i-klip": "metal paper clip",
+      "i-tembaga": "copper wire",
+      "i-koin": "metal coin",
+      "i-foil": "aluminium foil",
+      "i-penghapus": "rubber eraser",
+      "i-penggaris": "plastic ruler",
+      "i-tusukgigi": "wooden toothpick",
+      "i-kertas": "paper",
+      "i-gelas": "glass cup",
+      "i-tali": "cloth string",
+      "i-sedotan": "plastic straw"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "konduktor",
+      "labelKey": "b-konduktor",
+      "emoji": "⚡",
+      "color": "#fff59d"
+    },
+    {
+      "id": "isolator",
+      "labelKey": "b-isolator",
+      "emoji": "🚫",
+      "color": "#cfd8dc"
+    }
+  ],
+  "items": [
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "konduktor",
+      "emoji": "🔩"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "konduktor",
+      "emoji": "🥄"
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "konduktor",
+      "emoji": "🔑"
+    },
+    {
+      "id": "klip",
+      "labelKey": "i-klip",
+      "bin": "konduktor",
+      "emoji": "📎"
+    },
+    {
+      "id": "tembaga",
+      "labelKey": "i-tembaga",
+      "bin": "konduktor",
+      "emoji": "🧵"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "konduktor",
+      "emoji": "🪙"
+    },
+    {
+      "id": "foil",
+      "labelKey": "i-foil",
+      "bin": "konduktor",
+      "emoji": "🥈"
+    },
+    {
+      "id": "penghapus",
+      "labelKey": "i-penghapus",
+      "bin": "isolator",
+      "emoji": "🧽"
+    },
+    {
+      "id": "penggaris",
+      "labelKey": "i-penggaris",
+      "bin": "isolator",
+      "emoji": "📏"
+    },
+    {
+      "id": "tusukgigi",
+      "labelKey": "i-tusukgigi",
+      "bin": "isolator",
+      "emoji": "🪵"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "isolator",
+      "emoji": "📄"
+    },
+    {
+      "id": "gelas",
+      "labelKey": "i-gelas",
+      "bin": "isolator",
+      "emoji": "🥛"
+    },
+    {
+      "id": "tali",
+      "labelKey": "i-tali",
+      "bin": "isolator",
+      "emoji": "🧶"
+    },
+    {
+      "id": "sedotan",
+      "labelKey": "i-sedotan",
+      "bin": "isolator",
+      "emoji": "🥤"
+    }
+  ],
+  "pilihan": []
+}

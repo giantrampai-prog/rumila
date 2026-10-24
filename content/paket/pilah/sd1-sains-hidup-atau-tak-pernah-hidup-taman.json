@@ -1,0 +1,151 @@
+{
+  "id": "sd1-sains-hidup-atau-tak-pernah-hidup-taman",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.MAKHLUK-HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hidup atau Tak Pernah Hidup?",
+      "instruksi": "Lihat tiap benda di taman, lalu taruh ke rak hidup atau tidak pernah hidup.",
+      "b-hidup": "makhluk hidup",
+      "b-takpernah": "tidak pernah hidup",
+      "i-kucing": "kucing",
+      "i-pohon": "pohon",
+      "i-jamur": "jamur",
+      "i-cacing": "cacing",
+      "i-semut": "semut",
+      "i-bunga": "bunga matahari",
+      "i-batu": "batu",
+      "i-kaleng": "kaleng",
+      "i-bola": "bola",
+      "i-awan": "awan bergerak",
+      "i-mobil": "mobil mainan berjalan",
+      "i-sepeda": "sepeda"
+    },
+    "en": {
+      "judul": "Alive or Never Alive?",
+      "instruksi": "Look at each thing in the park, then put it on the alive shelf or the never-alive shelf.",
+      "b-hidup": "living things",
+      "b-takpernah": "never alive",
+      "i-kucing": "cat",
+      "i-pohon": "tree",
+      "i-jamur": "mushroom",
+      "i-cacing": "worm",
+      "i-semut": "ant",
+      "i-bunga": "sunflower",
+      "i-batu": "stone",
+      "i-kaleng": "tin can",
+      "i-bola": "ball",
+      "i-awan": "moving cloud",
+      "i-mobil": "moving toy car",
+      "i-sepeda": "bicycle"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "hidup",
+      "labelKey": "b-hidup",
+      "emoji": "🌱",
+      "color": "#dcedc8"
+    },
+    {
+      "id": "takpernah",
+      "labelKey": "b-takpernah",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "hidup",
+      "emoji": "🐈"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "i-pohon",
+      "bin": "hidup",
+      "emoji": "🌳"
+    },
+    {
+      "id": "jamur",
+      "labelKey": "i-jamur",
+      "bin": "hidup",
+      "emoji": "🍄"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "hidup",
+      "emoji": "🪱"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "hidup",
+      "emoji": "🐜"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "i-bunga",
+      "bin": "hidup",
+      "emoji": "🌻"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "takpernah",
+      "emoji": "🪨"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "takpernah",
+      "emoji": "🥫"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "takpernah",
+      "emoji": "⚽"
+    },
+    {
+      "id": "awan",
+      "labelKey": "i-awan",
+      "bin": "takpernah",
+      "emoji": "☁️"
+    },
+    {
+      "id": "mobil",
+      "labelKey": "i-mobil",
+      "bin": "takpernah",
+      "emoji": "🚗"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "takpernah",
+      "emoji": "🚲"
+    }
+  ],
+  "pilihan": []
+}

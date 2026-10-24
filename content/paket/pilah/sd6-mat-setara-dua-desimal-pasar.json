@@ -1,0 +1,183 @@
+{
+  "id": "sd6-mat-setara-dua-desimal-pasar",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.PECAHAN.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kembar Nilai di Pasar",
+      "instruksi": "Taruh tiap desimal, persen, atau pecahan di rak pecahan yang nilainya sama.",
+      "b-seperlima": "1/5",
+      "b-tigaperlima": "3/5",
+      "b-tujuhperduapuluh": "7/20",
+      "b-sembilanpersepuluh": "9/10",
+      "b-tigaperduapuluhlima": "3/25",
+      "i1": "0,2",
+      "i2": "20%",
+      "i3": "0,20",
+      "i4": "0,6",
+      "i5": "60%",
+      "i6": "0,60",
+      "i7": "0,35",
+      "i8": "35%",
+      "i9": "35/100",
+      "i10": "0,9",
+      "i11": "90%",
+      "i12": "0,90",
+      "i13": "0,12",
+      "i14": "12%",
+      "i15": "12/100"
+    },
+    "en": {
+      "judul": "Market Value Twins",
+      "instruksi": "Put each decimal, percentage or fraction on the fraction shelf with the same value.",
+      "b-seperlima": "1/5",
+      "b-tigaperlima": "3/5",
+      "b-tujuhperduapuluh": "7/20",
+      "b-sembilanpersepuluh": "9/10",
+      "b-tigaperduapuluhlima": "3/25",
+      "i1": "0.2",
+      "i2": "20%",
+      "i3": "0.20",
+      "i4": "0.6",
+      "i5": "60%",
+      "i6": "0.60",
+      "i7": "0.35",
+      "i8": "35%",
+      "i9": "35/100",
+      "i10": "0.9",
+      "i11": "90%",
+      "i12": "0.90",
+      "i13": "0.12",
+      "i14": "12%",
+      "i15": "12/100"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak aktif: 3 → 5"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "seperlima",
+      "labelKey": "b-seperlima"
+    },
+    {
+      "id": "tigaperlima",
+      "labelKey": "b-tigaperlima"
+    },
+    {
+      "id": "tujuhperduapuluh",
+      "labelKey": "b-tujuhperduapuluh"
+    },
+    {
+      "id": "sembilanpersepuluh",
+      "labelKey": "b-sembilanpersepuluh"
+    },
+    {
+      "id": "tigaperduapuluhlima",
+      "labelKey": "b-tigaperduapuluhlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "seperlima"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "tujuhperduapuluh"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tujuhperduapuluh"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tujuhperduapuluh",
+      "scale": 0.7
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "sembilanpersepuluh"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "sembilanpersepuluh"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "sembilanpersepuluh"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "tigaperduapuluhlima"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "tigaperduapuluhlima"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "tigaperduapuluhlima",
+      "scale": 0.7
+    }
+  ]
+}

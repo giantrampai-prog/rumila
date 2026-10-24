@@ -1,0 +1,163 @@
+{
+  "id": "sd3-kode-masuk-simpan-keluar",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD3.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Masuk, Simpan, Keluar",
+      "instruksi": "Perangkat ini untuk memasukkan, menyimpan, atau menampilkan data? Taruh di kotaknya.",
+      "bin-masuk": "memasukkan",
+      "bin-keluar": "menampilkan",
+      "bin-simpan": "menyimpan",
+      "i-keyboard": "keyboard",
+      "i-mouse": "mouse",
+      "i-microphone": "mikrofon",
+      "i-laptop-camera": "kamera laptop",
+      "i-usb-flash-drive": "flashdisk",
+      "i-memory-card": "kartu memori",
+      "i-hard-disk": "hard disk",
+      "i-cd": "kepingan CD",
+      "i-monitor": "monitor",
+      "i-speaker": "speaker",
+      "i-printer": "printer",
+      "i-headphones": "headphone"
+    },
+    "en": {
+      "judul": "In, Store, Out",
+      "instruksi": "Is this device for putting data in, storing it, or showing it? Put it in its box.",
+      "bin-masuk": "putting in",
+      "bin-keluar": "showing",
+      "bin-simpan": "storing",
+      "i-keyboard": "keyboard",
+      "i-mouse": "mouse",
+      "i-microphone": "microphone",
+      "i-laptop-camera": "laptop camera",
+      "i-usb-flash-drive": "USB flash drive",
+      "i-memory-card": "memory card",
+      "i-hard-disk": "hard disk",
+      "i-cd": "CD",
+      "i-monitor": "monitor",
+      "i-speaker": "speaker",
+      "i-printer": "printer",
+      "i-headphones": "headphones"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 = ulang masuk/tampil (SD 2), 3 = tambah kotak simpan"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 9,
+      "step": 3,
+      "keterangan": "jumlah perangkat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "masuk",
+      "labelKey": "bin-masuk",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "keluar",
+      "labelKey": "bin-keluar",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "simpan",
+      "labelKey": "bin-simpan",
+      "emoji": "🗄️"
+    }
+  ],
+  "items": [
+    {
+      "id": "keyboard",
+      "labelKey": "i-keyboard",
+      "bin": "masuk",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "mouse",
+      "labelKey": "i-mouse",
+      "bin": "masuk",
+      "emoji": "🖱️"
+    },
+    {
+      "id": "microphone",
+      "labelKey": "i-microphone",
+      "bin": "masuk",
+      "emoji": "🎤"
+    },
+    {
+      "id": "laptop-camera",
+      "labelKey": "i-laptop-camera",
+      "bin": "masuk",
+      "emoji": "📷"
+    },
+    {
+      "id": "usb-flash-drive",
+      "labelKey": "i-usb-flash-drive",
+      "bin": "simpan",
+      "emoji": "💾"
+    },
+    {
+      "id": "memory-card",
+      "labelKey": "i-memory-card",
+      "bin": "simpan",
+      "emoji": "🗂️"
+    },
+    {
+      "id": "hard-disk",
+      "labelKey": "i-hard-disk",
+      "bin": "simpan",
+      "emoji": "💽"
+    },
+    {
+      "id": "cd",
+      "labelKey": "i-cd",
+      "bin": "simpan",
+      "emoji": "💿"
+    },
+    {
+      "id": "monitor",
+      "labelKey": "i-monitor",
+      "bin": "keluar",
+      "emoji": "🖥️"
+    },
+    {
+      "id": "speaker",
+      "labelKey": "i-speaker",
+      "bin": "keluar",
+      "emoji": "🔊"
+    },
+    {
+      "id": "printer",
+      "labelKey": "i-printer",
+      "bin": "keluar",
+      "emoji": "🖨️"
+    },
+    {
+      "id": "headphones",
+      "labelKey": "i-headphones",
+      "bin": "keluar",
+      "emoji": "🎧"
+    }
+  ]
+}

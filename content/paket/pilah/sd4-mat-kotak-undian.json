@@ -1,0 +1,254 @@
+{
+  "id": "sd4-mat-kotak-undian",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.PELUANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kotak Undian",
+      "instruksi": "Bayangkan isi kotaknya, lalu sentuh kata peluang yang paling tepat.",
+      "q1": "Kotak berisi bola 7 biru. Diambil satu bola: biru.",
+      "c1": "pasti",
+      "c2": "kemungkinan besar",
+      "c3": "peluang sama",
+      "c4": "kemungkinan kecil",
+      "c5": "mustahil",
+      "q2": "Kotak berisi bola 10 kuning dan 1 biru. Diambil satu bola: kuning.",
+      "q3": "Kotak berisi bola 2 kuning dan 2 hijau. Diambil satu bola: kuning.",
+      "q4": "Kotak berisi bola 11 kuning dan 1 merah. Diambil satu bola: merah.",
+      "q5": "Kotak berisi bola 5 kuning dan 7 merah. Diambil satu bola: biru.",
+      "q6": "Kotak berisi bola 6 hijau. Diambil satu bola: hijau.",
+      "q7": "Kotak berisi bola 6 biru dan 1 merah. Diambil satu bola: biru.",
+      "q8": "Kotak berisi bola 9 merah dan 9 hijau. Diambil satu bola: hijau.",
+      "q9": "Kotak berisi bola 10 biru dan 1 hijau. Diambil satu bola: hijau.",
+      "q10": "Kotak berisi bola 8 kuning dan 4 biru. Diambil satu bola: merah.",
+      "q11": "Kotak berisi bola 4 hijau. Diambil satu bola: hijau.",
+      "q12": "Kotak berisi bola 7 kuning dan 1 biru. Diambil satu bola: kuning.",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Lucky Dip Box",
+      "instruksi": "Picture what is in the box, then touch the best chance word.",
+      "q1": "A box has 7 blue balls. One ball is taken: blue.",
+      "c1": "certain",
+      "c2": "likely",
+      "c3": "even chance",
+      "c4": "unlikely",
+      "c5": "impossible",
+      "q2": "A box has 10 yellow and 1 blue balls. One ball is taken: yellow.",
+      "q3": "A box has 2 yellow and 2 green balls. One ball is taken: yellow.",
+      "q4": "A box has 11 yellow and 1 red balls. One ball is taken: red.",
+      "q5": "A box has 5 yellow and 7 red balls. One ball is taken: blue.",
+      "q6": "A box has 6 green balls. One ball is taken: green.",
+      "q7": "A box has 6 blue and 1 red balls. One ball is taken: blue.",
+      "q8": "A box has 9 red and 9 green balls. One ball is taken: green.",
+      "q9": "A box has 10 blue and 1 green balls. One ball is taken: green.",
+      "q10": "A box has 8 yellow and 4 blue balls. One ball is taken: red.",
+      "q11": "A box has 4 green balls. One ball is taken: green.",
+      "q12": "A box has 7 yellow and 1 blue balls. One ball is taken: yellow.",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.55
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c1",
+        "c2",
+        "c4",
+        "c5"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c4",
+        "c1",
+        "c2",
+        "c3",
+        "c5"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c5",
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c3",
+        "c1",
+        "c2",
+        "c4",
+        "c5"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c4",
+        "c1",
+        "c2",
+        "c3",
+        "c5"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c5",
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c4",
+        "c5"
+      ],
+      "correct": "c2"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "id": "sd2-mat-jalan-loncat-lima",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Katak Loncat Lima",
+      "instruksi": "Katak mulai di 3 dan selalu loncat lima. Batu mana yang diinjaknya?",
+      "b-diinjak-katak": "diinjak katak",
+      "b-tidak-diinjak": "tidak diinjak",
+      "i-8": "8",
+      "i-13": "13",
+      "i-18": "18",
+      "i-23": "23",
+      "i-28": "28",
+      "i-33": "33",
+      "i-38": "38",
+      "i-43": "43",
+      "i-48": "48",
+      "i-53": "53",
+      "i-10": "10",
+      "i-15": "15",
+      "i-20": "20",
+      "i-25": "25",
+      "i-12": "12",
+      "i-31": "31",
+      "i-35": "35",
+      "i-40": "40",
+      "i-44": "44",
+      "i-50": "50"
+    },
+    "en": {
+      "judul": "Frog Jumps in Fives",
+      "instruksi": "The frog starts at 3 and always jumps five. Which stones does it land on?",
+      "b-diinjak-katak": "frog lands here",
+      "b-tidak-diinjak": "frog skips it",
+      "i-8": "8",
+      "i-13": "13",
+      "i-18": "18",
+      "i-23": "23",
+      "i-28": "28",
+      "i-33": "33",
+      "i-38": "38",
+      "i-43": "43",
+      "i-48": "48",
+      "i-53": "53",
+      "i-10": "10",
+      "i-15": "15",
+      "i-20": "20",
+      "i-25": "25",
+      "i-12": "12",
+      "i-31": "31",
+      "i-35": "35",
+      "i-40": "40",
+      "i-44": "44",
+      "i-50": "50"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "batu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kolam",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "di-jalan",
+      "labelKey": "b-diinjak-katak",
+      "emoji": "🐸"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-tidak-diinjak",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "n8",
+      "labelKey": "i-8",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n13",
+      "labelKey": "i-13",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n18",
+      "labelKey": "i-18",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n23",
+      "labelKey": "i-23",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n28",
+      "labelKey": "i-28",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n33",
+      "labelKey": "i-33",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n38",
+      "labelKey": "i-38",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n43",
+      "labelKey": "i-43",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n48",
+      "labelKey": "i-48",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n53",
+      "labelKey": "i-53",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n10",
+      "labelKey": "i-10",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n20",
+      "labelKey": "i-20",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n25",
+      "labelKey": "i-25",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n12",
+      "labelKey": "i-12",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n31",
+      "labelKey": "i-31",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n35",
+      "labelKey": "i-35",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n40",
+      "labelKey": "i-40",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n44",
+      "labelKey": "i-44",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n50",
+      "labelKey": "i-50",
+      "bin": "bukan",
+      "scale": 1
+    }
+  ]
+}

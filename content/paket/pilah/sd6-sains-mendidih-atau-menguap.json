@@ -1,0 +1,127 @@
+{
+  "id": "sd6-sains-mendidih-atau-menguap",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERUBAHAN-ZAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mendidih atau Menguap?",
+      "instruksi": "Pilah tiap kejadian: air mendidih, atau air menguap.",
+      "b-didih": "mendidih: gelembung di seluruh cairan, pada suhu didih",
+      "b-uap": "menguap: hanya di permukaan, pada suhu berapa pun",
+      "i-panci": "air di panci bergelembung besar di atas kompor",
+      "i-ketel": "ketel bersiul di atas kompor",
+      "i-seratus": "termometer di air bergolak tetap 100 °C walau api dibesarkan",
+      "i-sup": "sup bergolak di panci",
+      "i-genangan": "genangan di jalan hilang setelah siang",
+      "i-jemuran": "jemuran kering diembus angin",
+      "i-keringat": "keringat di kulit kering sendiri",
+      "i-piring": "air di piring berkurang setelah beberapa hari",
+      "i-tambak": "air laut di tambak garam berkurang dijemur"
+    },
+    "en": {
+      "judul": "Boiling or Evaporating?",
+      "instruksi": "Sort each event: water is boiling, or water is evaporating.",
+      "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
+      "b-uap": "evaporating: only at the surface, at any temperature",
+      "i-panci": "water in a pan on the stove bubbles hard",
+      "i-ketel": "a kettle whistles on the stove",
+      "i-seratus": "the thermometer in bubbling water stays at 100 °C even on a bigger flame",
+      "i-sup": "soup bubbling in a pot",
+      "i-genangan": "a puddle on the road is gone by the afternoon",
+      "i-jemuran": "washing dries in the breeze",
+      "i-keringat": "sweat dries off your skin",
+      "i-piring": "water in a dish goes down over a few days",
+      "i-tambak": "seawater in a salt pan shrinks in the sun"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "didih",
+      "labelKey": "b-didih",
+      "emoji": "♨️",
+      "color": "#ffccbc"
+    },
+    {
+      "id": "uap",
+      "labelKey": "b-uap",
+      "emoji": "🌬️",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "panci",
+      "labelKey": "i-panci",
+      "bin": "didih",
+      "emoji": "🍲"
+    },
+    {
+      "id": "ketel",
+      "labelKey": "i-ketel",
+      "bin": "didih",
+      "emoji": "🫖"
+    },
+    {
+      "id": "seratus",
+      "labelKey": "i-seratus",
+      "bin": "didih",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "sup",
+      "labelKey": "i-sup",
+      "bin": "didih",
+      "emoji": "🥣"
+    },
+    {
+      "id": "genangan",
+      "labelKey": "i-genangan",
+      "bin": "uap",
+      "emoji": "💧"
+    },
+    {
+      "id": "jemuran",
+      "labelKey": "i-jemuran",
+      "bin": "uap",
+      "emoji": "👕"
+    },
+    {
+      "id": "keringat",
+      "labelKey": "i-keringat",
+      "bin": "uap",
+      "emoji": "😅"
+    },
+    {
+      "id": "piring",
+      "labelKey": "i-piring",
+      "bin": "uap",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "tambak",
+      "labelKey": "i-tambak",
+      "bin": "uap",
+      "emoji": "🧂"
+    }
+  ],
+  "pilihan": []
+}

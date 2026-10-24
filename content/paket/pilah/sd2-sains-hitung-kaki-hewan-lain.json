@@ -1,0 +1,206 @@
+{
+  "id": "sd2-sains-hitung-kaki-hewan-lain",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.CIRI-HEWAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hitung Kaki Lagi!",
+      "instruksi": "Hitung kaki tiap hewan, lalu taruh ke rak yang angkanya sama.",
+      "b-k2": "2 kaki",
+      "b-k4": "4 kaki",
+      "b-k6": "6 kaki",
+      "b-k8": "8 kaki",
+      "b-k0": "tanpa kaki",
+      "i-kalkun": "kalkun",
+      "i-burunghantu": "burung hantu",
+      "i-merpati": "merpati",
+      "i-kuda": "kuda",
+      "i-gajah": "gajah",
+      "i-buaya": "buaya",
+      "i-tikus": "tikus",
+      "i-kecoak": "kecoak",
+      "i-lalat": "lalat",
+      "i-kepikmerah": "kepik",
+      "i-labalaba": "laba-laba rumah",
+      "i-kalajengking": "kalajengking",
+      "i-paus": "paus",
+      "i-lumba": "lumba-lumba",
+      "i-ularsawah": "ular"
+    },
+    "en": {
+      "judul": "Count the Legs Again!",
+      "instruksi": "Count each animal's legs, then put it on the shelf with the same number.",
+      "b-k2": "2 legs",
+      "b-k4": "4 legs",
+      "b-k6": "6 legs",
+      "b-k8": "8 legs",
+      "b-k0": "no legs",
+      "i-kalkun": "turkey",
+      "i-burunghantu": "owl",
+      "i-merpati": "pigeon",
+      "i-kuda": "horse",
+      "i-gajah": "elephant",
+      "i-buaya": "crocodile",
+      "i-tikus": "mouse",
+      "i-kecoak": "cockroach",
+      "i-lalat": "fly",
+      "i-kepikmerah": "ladybird",
+      "i-labalaba": "house spider",
+      "i-kalajengking": "scorpion",
+      "i-paus": "whale",
+      "i-lumba": "dolphin",
+      "i-ularsawah": "snake"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 3 (2, 4, 6 kaki) → 5"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "k2",
+      "labelKey": "b-k2",
+      "emoji": "✌️",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "k4",
+      "labelKey": "b-k4",
+      "emoji": "🐾",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "k6",
+      "labelKey": "b-k6",
+      "emoji": "🐜",
+      "color": "#fffde7"
+    },
+    {
+      "id": "k8",
+      "labelKey": "b-k8",
+      "emoji": "🕸️",
+      "color": "#ede7f6"
+    },
+    {
+      "id": "k0",
+      "labelKey": "b-k0",
+      "emoji": "🚫",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "kalkun",
+      "labelKey": "i-kalkun",
+      "bin": "k2",
+      "emoji": "🦃"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "k2",
+      "emoji": "🦉"
+    },
+    {
+      "id": "merpati",
+      "labelKey": "i-merpati",
+      "bin": "k2",
+      "emoji": "🕊️"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "k4",
+      "emoji": "🐎"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "k4",
+      "emoji": "🐘"
+    },
+    {
+      "id": "buaya",
+      "labelKey": "i-buaya",
+      "bin": "k4",
+      "emoji": "🐊"
+    },
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "k4",
+      "emoji": "🐭"
+    },
+    {
+      "id": "kecoak",
+      "labelKey": "i-kecoak",
+      "bin": "k6",
+      "emoji": "🪳"
+    },
+    {
+      "id": "lalat",
+      "labelKey": "i-lalat",
+      "bin": "k6",
+      "emoji": "🪰"
+    },
+    {
+      "id": "kepikmerah",
+      "labelKey": "i-kepikmerah",
+      "bin": "k6",
+      "emoji": "🐞"
+    },
+    {
+      "id": "labalaba",
+      "labelKey": "i-labalaba",
+      "bin": "k8",
+      "emoji": "🕷️"
+    },
+    {
+      "id": "kalajengking",
+      "labelKey": "i-kalajengking",
+      "bin": "k8",
+      "emoji": "🦂"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "k0",
+      "emoji": "🐋"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "k0",
+      "emoji": "🐬"
+    },
+    {
+      "id": "ularsawah",
+      "labelKey": "i-ularsawah",
+      "bin": "k0",
+      "emoji": "🐍"
+    }
+  ],
+  "pilihan": []
+}

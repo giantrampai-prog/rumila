@@ -1,0 +1,167 @@
+{
+  "id": "sd3-sains-hidup-pernah-tidak-pernah-pantai",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Temuan di Pantai",
+      "instruksi": "Taruh tiap temuan di pantai ke rak yang tepat.",
+      "b-hidup": "masih hidup",
+      "b-pernah": "pernah hidup",
+      "b-tidak": "tidak pernah hidup",
+      "i-kepiting": "kepiting",
+      "i-kelapa": "pohon kelapa",
+      "i-camar": "burung camar",
+      "i-rumputlaut": "rumput laut di batu",
+      "i-kerang": "kulit kerang kosong",
+      "i-kayuapung": "kayu terdampar",
+      "i-bulucamar": "bulu burung camar",
+      "i-batok": "batok kelapa kering",
+      "i-batukali": "batu",
+      "i-airlaut": "air laut",
+      "i-kaleng": "kaleng",
+      "i-botolkaca": "botol kaca"
+    },
+    "en": {
+      "judul": "Beach Finds",
+      "instruksi": "Put each beach find on the right shelf.",
+      "b-hidup": "living",
+      "b-pernah": "once living",
+      "b-tidak": "never living",
+      "i-kepiting": "crab",
+      "i-kelapa": "coconut tree",
+      "i-camar": "seagull",
+      "i-rumputlaut": "seaweed on a rock",
+      "i-kerang": "empty seashell",
+      "i-kayuapung": "driftwood",
+      "i-bulucamar": "seagull feather",
+      "i-batok": "dry coconut shell",
+      "i-batukali": "rock",
+      "i-airlaut": "seawater",
+      "i-kaleng": "tin can",
+      "i-botolkaca": "glass bottle"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (hidup, pernah hidup) → 3 (tambah tidak pernah hidup)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "hidup",
+      "labelKey": "b-hidup",
+      "emoji": "🌱",
+      "color": "#dcedc8"
+    },
+    {
+      "id": "pernah",
+      "labelKey": "b-pernah",
+      "emoji": "🍂",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "hidup",
+      "emoji": "🦀"
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "i-kelapa",
+      "bin": "hidup",
+      "emoji": "🌴"
+    },
+    {
+      "id": "camar",
+      "labelKey": "i-camar",
+      "bin": "hidup",
+      "emoji": "🐦"
+    },
+    {
+      "id": "rumputlaut",
+      "labelKey": "i-rumputlaut",
+      "bin": "hidup",
+      "emoji": "🌿",
+      "color": "#7cb342"
+    },
+    {
+      "id": "kerang",
+      "labelKey": "i-kerang",
+      "bin": "pernah",
+      "emoji": "🐚"
+    },
+    {
+      "id": "kayuapung",
+      "labelKey": "i-kayuapung",
+      "bin": "pernah",
+      "emoji": "🪵"
+    },
+    {
+      "id": "bulucamar",
+      "labelKey": "i-bulucamar",
+      "bin": "pernah",
+      "emoji": "🪶"
+    },
+    {
+      "id": "batok",
+      "labelKey": "i-batok",
+      "bin": "pernah",
+      "emoji": "🥥"
+    },
+    {
+      "id": "batukali",
+      "labelKey": "i-batukali",
+      "bin": "tidak",
+      "emoji": "🪨"
+    },
+    {
+      "id": "airlaut",
+      "labelKey": "i-airlaut",
+      "bin": "tidak",
+      "emoji": "🌊"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "tidak",
+      "emoji": "🥫"
+    },
+    {
+      "id": "botolkaca",
+      "labelKey": "i-botolkaca",
+      "bin": "tidak",
+      "emoji": "🍾"
+    }
+  ],
+  "pilihan": []
+}

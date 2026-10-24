@@ -1,0 +1,1461 @@
+{
+  "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+  "title": "Cambridge Primary Science 0097 Curriculum Framework — Stage 4–6 (acuan)",
+  "version": "Version 1, published September 2020 for first teaching September 2021",
+  "sources": [
+    "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf",
+    "https://cambridgeinternational.org/programmes-and-qualifications/cambridge-primary/resource-list/cambridge-primary-science-0097"
+  ],
+  "retrieved_at": "2026-10-25",
+  "notes": "Teks verbatim dari salinan PDF framework resmi 0097 (hlm. 21–29, © UCLES 2020) yang dicerminkan pea.ae; baris yang terpotong antarbaris digabung. Hanya Stage 4–6. 6Bs.03 dan 6Bp.01 (reproduksi/pubertas) dicantumkan sebagai kamus saja; belum dipakai kompetensi RINOYA (keputusan sensitif PO). Cambridge hanya acuan, bukan afiliasi.",
+  "entries": [
+    {
+      "code": "4TWSm.01",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Know that models are not fully representative of a real world situation and/or scientific idea.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSm.02",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Use models to show relationships, quantities or scale.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSm.03",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Draw a diagram to represent a real world situation and/or scientific idea.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSp.01",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Ask scientific questions that can be investigated.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSp.02",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Know that there are five main types of scientific enquiry (research, fair testing, observing over time, identifying and classifying, and pattern seeking).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSp.03",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Make a prediction describing some possible outcomes of an enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSp.04",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Identify variables that need to be taken into account when doing a fair test.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSp.05",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Identify risks and explain how to stay safe during practical work.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.01",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Use observations and tests to sort, group and classify objects.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.02",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Use keys to identify objects, materials and living things.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.03",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Choose equipment from a provided selection and use it appropriately.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.04",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Describe how repeated measurements and/or observations can give more reliable data.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.05",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Take measurements in standard units, describing the advantage of standard units over non-standard units.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.06",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Carry out practical work safely.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.07",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Use secondary information sources to research an answer to a question.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSc.08",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Collect and record observations and/or measurements in tables and diagrams.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSa.01",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Identify whether results support, or do not support, a prediction.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSa.02",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Describe simple patterns in results.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSa.03",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Make a conclusion from results and relate it to the scientific question being investigated.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4TWSa.04",
+      "stage": "4",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Present and interpret results using tables, bar charts and dot plots.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bs.01",
+      "stage": "4",
+      "strand": "Biology: Structure and function",
+      "text": "Identify some of the important bones in the human body (limited to skull, jaw, rib cage, hip, spine, leg bones and arm bones).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bs.02",
+      "stage": "4",
+      "strand": "Biology: Structure and function",
+      "text": "Know that bones move because pairs of muscles that are attached to them contract and relax.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bs.03",
+      "stage": "4",
+      "strand": "Biology: Structure and function",
+      "text": "Describe some of the important functions of skeletons (limited to protecting and supporting organs, enabling movement and giving shape to the body).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bs.04",
+      "stage": "4",
+      "strand": "Biology: Structure and function",
+      "text": "Know that some animals have an exoskeleton.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bs.05",
+      "stage": "4",
+      "strand": "Biology: Structure and function",
+      "text": "Identify vertebrates as animals with a backbone and invertebrates as animals without a backbone.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bp.01",
+      "stage": "4",
+      "strand": "Biology: Life processes",
+      "text": "Know that medicines can be used to treat some illnesses, and describe how to use them safely.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bp.02",
+      "stage": "4",
+      "strand": "Biology: Life processes",
+      "text": "Know that plants and animals can have infectious diseases, and vaccinations can prevent some infectious diseases of animals.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bp.03",
+      "stage": "4",
+      "strand": "Biology: Life processes",
+      "text": "Know that plants and animals need energy to grow, live and be healthy, and plants get their energy from light while animals get their energy from eating plants or other animals.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Bp.04",
+      "stage": "4",
+      "strand": "Biology: Life processes",
+      "text": "Describe the importance of movement in maintaining human health.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Be.01",
+      "stage": "4",
+      "strand": "Biology: Ecosystems",
+      "text": "Know that different animals are found in, and suited to, different habitats.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Be.02",
+      "stage": "4",
+      "strand": "Biology: Ecosystems",
+      "text": "Know plants and animals can survive in environments other than their habitats.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Be.03",
+      "stage": "4",
+      "strand": "Biology: Ecosystems",
+      "text": "Describe food chains as being made of producers and consumers, and classify consumers as herbivores, omnivores, carnivores, predators and/or prey.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cm.01",
+      "stage": "4",
+      "strand": "Chemistry: Materials and their structure",
+      "text": "Describe the particle model for solids and liquids.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cm.02",
+      "stage": "4",
+      "strand": "Chemistry: Materials and their structure",
+      "text": "Understand the difference between materials, substances and particles.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cm.03",
+      "stage": "4",
+      "strand": "Chemistry: Materials and their structure",
+      "text": "Know that particles are in constant motion, even when in a solid.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cp.01",
+      "stage": "4",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Use the particle model to explain the properties of solids and liquids.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cp.02",
+      "stage": "4",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Describe and explain how some solids can behave like liquids (e.g. powders), referring to the particle model.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cc.01",
+      "stage": "4",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Describe solidification/freezing and melting, using the particle model to describe the change of state.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cc.02",
+      "stage": "4",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Understand that the change of state of a substance is a physical process.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Cc.03",
+      "stage": "4",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Know that some substances will react with another substance to produce one or more new substances and this is called a chemical reaction.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pf.01",
+      "stage": "4",
+      "strand": "Physics: Forces and energy",
+      "text": "Know that energy is present in all matter and in sound, light and heat.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pf.02",
+      "stage": "4",
+      "strand": "Physics: Forces and energy",
+      "text": "Know that energy cannot be made, lost, used up or destroyed but it can be transferred.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pf.03",
+      "stage": "4",
+      "strand": "Physics: Forces and energy",
+      "text": "Know that energy is required for any movement or action to happen.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pf.04",
+      "stage": "4",
+      "strand": "Physics: Forces and energy",
+      "text": "Know that not all energy is transferred from one object to another, but often some energy during a process can be transferred to the surrounding environment and this can be detected as sound, light or temperature increase.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Ps.01",
+      "stage": "4",
+      "strand": "Physics: Light and sound",
+      "text": "Know that light travels in straight lines and this can be represented with ray diagrams.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Ps.02",
+      "stage": "4",
+      "strand": "Physics: Light and sound",
+      "text": "Know that light can reflect off surfaces.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Ps.03",
+      "stage": "4",
+      "strand": "Physics: Light and sound",
+      "text": "Describe how objects which are not light sources are seen.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pe.01",
+      "stage": "4",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Know that an electrical device will not work if there is a break in the circuit.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pe.02",
+      "stage": "4",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Describe how a simple switch is used to open and close a circuit.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pe.03",
+      "stage": "4",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Describe how changing the number or type of components in a series circuit can make a lamp brighter or dimmer.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4Pe.04",
+      "stage": "4",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Know some materials are good electrical conductors, especially metals, and some are good electrical insulators.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESp.01",
+      "stage": "4",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Describe the model of the structure of the Earth which includes a core, a mantle and a crust.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESp.02",
+      "stage": "4",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Describe common features of volcanoes and know they are found at breaks in the Earth's crust.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESp.03",
+      "stage": "4",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Know that the Earth's crust moves and when parts move suddenly this is called an earthquake.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESs.01",
+      "stage": "4",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Explain why the spinning of the Earth on its axis leads to the apparent movement of the Sun, night and day, and changes in shadows.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESs.02",
+      "stage": "4",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Name the planets in the Solar System.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESs.03",
+      "stage": "4",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Know that the Sun is at the centre of the Solar System.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4ESs.04",
+      "stage": "4",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Know that planetary systems can contain stars, planets, asteroids and comets.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4SIC.01",
+      "stage": "4",
+      "strand": "Science in Context",
+      "text": "Describe how scientific knowledge and understanding changes over time through the use of evidence gained by enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4SIC.02",
+      "stage": "4",
+      "strand": "Science in Context",
+      "text": "Describe how science is used in their local area.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4SIC.03",
+      "stage": "4",
+      "strand": "Science in Context",
+      "text": "Use science to support points when discussing issues, situations or actions.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4SIC.04",
+      "stage": "4",
+      "strand": "Science in Context",
+      "text": "Identify people who use science, including professionally, in their area and describe how they use science.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "4SIC.05",
+      "stage": "4",
+      "strand": "Science in Context",
+      "text": "Discuss how the use of science and technology can have positive and negative environmental effects on their local area.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSm.01",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Know that a model presents an object, process or idea in a way that shows some of the important features.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSm.02",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Use models, including diagrams, to represent and describe scientific phenomena and ideas.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSp.01",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Ask scientific questions and select appropriate scientific enquiries to use.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSp.02",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Know the features of the five main types of scientific enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSp.03",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Make predictions, referring to relevant scientific knowledge and understanding within familiar and unfamiliar contexts.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSp.04",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Plan fair test investigations, identifying the independent, dependent and control variables.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSp.05",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Describe risks when planning practical work and consider how to minimise them.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.01",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Sort, group and classify objects, materials and living things through testing, observation and using secondary information.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.02",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Complete a key based on easily observed differences.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.03",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Choose equipment to carry out an investigation and use it appropriately.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.04",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Decide when observations and measurements need to be repeated to give more reliable data.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.05",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Take appropriately accurate measurements.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.06",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Carry out practical work safely.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.07",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Use a range of secondary information sources to research and select relevant evidence to answer questions.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSc.08",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Collect and record observations and/or measurements in tables and diagrams appropriate to the type of scientific enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSa.01",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Describe the accuracy of predictions, based on results.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSa.02",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Describe patterns in results, including identifying any anomalous results.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSa.03",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Make a conclusion from results informed by scientific understanding.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSa.04",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Suggest how an investigation could be improved and explain any proposed changes.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5TWSa.05",
+      "stage": "5",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Present and interpret results using tables, bar charts, dot plots and line graphs.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bs.01",
+      "stage": "5",
+      "strand": "Biology: Structure and function",
+      "text": "Know that not all plants produce flowers.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bs.02",
+      "stage": "5",
+      "strand": "Biology: Structure and function",
+      "text": "Identify the parts of a flower (limited to petals, sepals, anthers, filaments, stamens, stigma, style, carpel, and ovary).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bs.03",
+      "stage": "5",
+      "strand": "Biology: Structure and function",
+      "text": "Describe the functions of the parts of a flower (limited to petals, anthers, stigma and ovary).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bs.04",
+      "stage": "5",
+      "strand": "Biology: Structure and function",
+      "text": "Describe the human digestive system, including the functions of the organs involved (limited to mouth, oesophagus, stomach, small intestine, large intestine and anus), and know that many vertebrates have a similar digestive system.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bp.01",
+      "stage": "5",
+      "strand": "Biology: Life processes",
+      "text": "Know that animals, including humans, need an adequate, balanced diet in order to be healthy.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bp.02",
+      "stage": "5",
+      "strand": "Biology: Life processes",
+      "text": "Know the stages in the life cycle of a flowering plant.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bp.03",
+      "stage": "5",
+      "strand": "Biology: Life processes",
+      "text": "Describe how flowering plants reproduce by pollination, fruit and seed production, and seed dispersal.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Bp.04",
+      "stage": "5",
+      "strand": "Biology: Life processes",
+      "text": "Describe seed germination and know that seeds, in general, require water and an appropriate temperature to germinate.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Be.01",
+      "stage": "5",
+      "strand": "Biology: Ecosystems",
+      "text": "Describe how plants and animals are adapted to environments that are hot, cold, wet and/or dry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Be.02",
+      "stage": "5",
+      "strand": "Biology: Ecosystems",
+      "text": "Describe how flowering plants are adapted to attract pollinators and promote seed dispersal.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Be.03",
+      "stage": "5",
+      "strand": "Biology: Ecosystems",
+      "text": "Describe the common adaptations of predator and prey animals.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cm.01",
+      "stage": "5",
+      "strand": "Chemistry: Materials and their structure",
+      "text": "Use the particle model to describe solid, liquids (including solutions) and gases.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cm.02",
+      "stage": "5",
+      "strand": "Chemistry: Materials and their structure",
+      "text": "Understand that substances can be gaseous and know the common gases at room temperature (limited to oxygen, carbon dioxide, water (vapour), nitrogen and hydrogen).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cp.01",
+      "stage": "5",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Know that the ability of a solid to dissolve and the ability of a liquid to act as a solvent are properties of the solid and liquid.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cp.02",
+      "stage": "5",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Know the main properties of water (limited to boiling point, melting point, expands when it solidifies, and its ability to dissolve a range of substances) and know that water acts differently from many other substances.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cc.01",
+      "stage": "5",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Describe the processes of evaporation and condensation, using the particle model and relating the processes to changes in temperature.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cc.02",
+      "stage": "5",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Understand that dissolving is a reversible process and investigate how to separate the solvent and solute after a solution is formed.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Cc.03",
+      "stage": "5",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Investigate and describe the process of dissolving, and relate it to mixing.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Pf.01",
+      "stage": "5",
+      "strand": "Physics: Forces and energy",
+      "text": "Identify a range of forces (limited to gravity, applied forces, normal forces, upthrust, friction, air resistance and water resistance).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Pf.02",
+      "stage": "5",
+      "strand": "Physics: Forces and energy",
+      "text": "Know that an object may have multiple forces acting upon it, even when at rest.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Pf.03",
+      "stage": "5",
+      "strand": "Physics: Forces and energy",
+      "text": "Use force diagrams to show the name and direction of forces acting on an object.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Ps.01",
+      "stage": "5",
+      "strand": "Physics: Light and sound",
+      "text": "Investigate how sounds are made by vibrating sources.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Ps.02",
+      "stage": "5",
+      "strand": "Physics: Light and sound",
+      "text": "Describe sounds in terms of high or low pitch and loud or quiet volume.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Ps.03",
+      "stage": "5",
+      "strand": "Physics: Light and sound",
+      "text": "Investigate how to change the volume and pitch of sounds.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Pe.01",
+      "stage": "5",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Know the difference between a magnet and a magnetic material.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Pe.02",
+      "stage": "5",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Know that forces act over a distance between magnets, and between a magnet and a magnetic material.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5Pe.03",
+      "stage": "5",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Know that magnets can have different magnetic strengths.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESp.01",
+      "stage": "5",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Know that the Earth is surrounded by a layer of air called the atmosphere, which is a mixture of different gases (including nitrogen, carbon dioxide and oxygen).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESp.02",
+      "stage": "5",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Understand that most water on Earth is not pure and has dissolved substances in it.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESp.03",
+      "stage": "5",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Understand that pollution is the introduction of substances by humans that harm the environment and identify examples of pollution.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESc.01",
+      "stage": "5",
+      "strand": "Earth and Space: Cycles on Earth",
+      "text": "Describe the water cycle (limited to evaporation, condensation and precipitation).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESs.01",
+      "stage": "5",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Describe the orbit of the Earth around the Sun (limited to slight ellipse, anticlockwise direction and the duration).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESs.02",
+      "stage": "5",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Describe how the tilt of the Earth can create different seasons in different places.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5ESs.03",
+      "stage": "5",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Know that a satellite is an object in space that orbits a larger object and a moon is a natural satellite that orbits a planet.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5SIC.01",
+      "stage": "5",
+      "strand": "Science in Context",
+      "text": "Describe how scientific knowledge and understanding changes over time through the use of evidence gained by enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5SIC.02",
+      "stage": "5",
+      "strand": "Science in Context",
+      "text": "Describe how science is used in their local area.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5SIC.03",
+      "stage": "5",
+      "strand": "Science in Context",
+      "text": "Use science to support points when discussing issues, situations or actions.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5SIC.04",
+      "stage": "5",
+      "strand": "Science in Context",
+      "text": "Identify people who use science, including professionally, in their area and describe how they use science.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "5SIC.05",
+      "stage": "5",
+      "strand": "Science in Context",
+      "text": "Discuss how the use of science and technology can have positive and negative environmental effects on their local area.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSm.01",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Describe how a model can help us understand and describe scientific phenomena and ideas.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSm.02",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Models and representations",
+      "text": "Use models, including diagrams, to represent and describe scientific phenomena and ideas.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSp.01",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Ask scientific questions and select appropriate scientific enquiries to use.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSp.02",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Know the features of the five main types of scientific enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSp.03",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Make predictions, referring to relevant scientific knowledge and understanding within familiar and unfamiliar contexts.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSp.04",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Plan fair test investigations, identifying the independent, dependent and control variables.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSp.05",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: purpose and planning",
+      "text": "Describe risks when planning practical work and consider how to minimise them.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.01",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Sort, group and classify objects, materials and living things through testing, observation and using secondary information.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.02",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Complete a key based on easily observed differences.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.03",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Choose equipment to carry out an investigation and use it appropriately.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.04",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Decide when observations and measurements need to be repeated to give more reliable data.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.05",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Take appropriately accurate measurements.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.06",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Carry out practical work safely.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.07",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Use a range of secondary information sources to research and select relevant evidence to answer questions.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSc.08",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Carrying out scientific enquiry",
+      "text": "Collect and record observations and/or measurements in tables and diagrams appropriate to the type of scientific enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSa.01",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Describe the accuracy of predictions, based on results.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSa.02",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Describe patterns in results, including identifying any anomalous results.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSa.03",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Make a conclusion from results informed by scientific understanding.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSa.04",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Suggest how an investigation could be improved and explain any proposed changes.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6TWSa.05",
+      "stage": "6",
+      "strand": "Thinking and Working Scientifically: Scientific enquiry: analysis, evaluation and conclusions",
+      "text": "Present and interpret results using tables, bar charts, dot plots, line graphs and scatter graphs.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bs.01",
+      "stage": "6",
+      "strand": "Biology: Structure and function",
+      "text": "Describe the human circulatory system in terms of the heart pumping blood through arteries, capillaries and veins, describe its function (limited to transporting oxygen, nutrients and waste) and know that many vertebrates have a similar circulatory system.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bs.02",
+      "stage": "6",
+      "strand": "Biology: Structure and function",
+      "text": "Describe the human respiratory system in terms of oxygen from the air moving into the blood in the lungs and know that many vertebrates have a similar respiratory system.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bs.03",
+      "stage": "6",
+      "strand": "Biology: Structure and function",
+      "text": "Name the parts of the human reproductive system.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bp.01",
+      "stage": "6",
+      "strand": "Biology: Life processes",
+      "text": "Describe the physical changes that take place during puberty in humans.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bp.02",
+      "stage": "6",
+      "strand": "Biology: Life processes",
+      "text": "Know that some diseases can be caused by infection with viruses, bacteria, parasites or fungi that can be passed from one host to another.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bp.03",
+      "stage": "6",
+      "strand": "Biology: Life processes",
+      "text": "Describe how good hygiene can control the spread of diseases transmitted in water, food and body fluids, and describe ways to avoid being bitten by insect vectors.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Bp.04",
+      "stage": "6",
+      "strand": "Biology: Life processes",
+      "text": "Know that humans have defence mechanisms against infectious diseases, including skin, stomach acid and mucus.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Be.01",
+      "stage": "6",
+      "strand": "Biology: Ecosystems",
+      "text": "Interpret food webs and identify food chains within them.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Be.02",
+      "stage": "6",
+      "strand": "Biology: Ecosystems",
+      "text": "Know that some substances can be toxic and damage living things, and that these substances can move through a food chain/web.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Be.03",
+      "stage": "6",
+      "strand": "Biology: Ecosystems",
+      "text": "Identify the energy source of a food chain/web and describe how energy is transferred through a food chain/web.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cp.01",
+      "stage": "6",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Know that the temperature at which a substance changes state is a property of the substance.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cp.02",
+      "stage": "6",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Know that gases have properties, including mass.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cp.03",
+      "stage": "6",
+      "strand": "Chemistry: Properties of materials",
+      "text": "Understand that electrical conductivity and thermal conductivity are properties of a substance.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cc.01",
+      "stage": "6",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Identify and describe physical changes that are reversible.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cc.02",
+      "stage": "6",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Describe how temperature affects solids dissolving in liquids and relate it to the particle model.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cc.03",
+      "stage": "6",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Describe the difference between boiling and evaporation.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cc.04",
+      "stage": "6",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Understand that chemical reactions involve substances, called reactants, interacting to form new substances, called products.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Cc.05",
+      "stage": "6",
+      "strand": "Chemistry: Changes to materials",
+      "text": "Observe and describe the evidence that a chemical reaction has taken place (limited to a gas being produced, colour change and change in temperature).",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pf.01",
+      "stage": "6",
+      "strand": "Physics: Forces and energy",
+      "text": "Describe the difference between mass, measured in kilograms (kg), and weight, measured in newtons (N)",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pf.02",
+      "stage": "6",
+      "strand": "Physics: Forces and energy",
+      "text": "Describe the effect of gravity and know that when gravity changes, the weight of an object changes but the mass does not.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pf.03",
+      "stage": "6",
+      "strand": "Physics: Forces and energy",
+      "text": "Use force diagrams to show the name, size and direction of forces acting on an object.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pf.04",
+      "stage": "6",
+      "strand": "Physics: Forces and energy",
+      "text": "Describe the effect of different forces on an object at rest and in motion.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pf.05",
+      "stage": "6",
+      "strand": "Physics: Forces and energy",
+      "text": "Recognise that the mass and shape of an object can affect if it floats or sinks.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Ps.01",
+      "stage": "6",
+      "strand": "Physics: Light and sound",
+      "text": "Describe how a ray of light changes direction when it is reflected from a plane mirror.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Ps.02",
+      "stage": "6",
+      "strand": "Physics: Light and sound",
+      "text": "Describe how a ray of light changes direction when it travels through different mediums and know that this is called refraction.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pe.01",
+      "stage": "6",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Use diagrams and conventional symbols to represent, make and compare circuits that include cells, switches, lamps and buzzers.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6Pe.02",
+      "stage": "6",
+      "strand": "Physics: Electricity and magnetism",
+      "text": "Make simple circuits and compare the brightness of lamps in series and parallel circuits.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESp.01",
+      "stage": "6",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Know that rocks can be classified as metamorphic, igneous and sedimentary, and describe the identifying features of each type of rock.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESp.02",
+      "stage": "6",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Describe the way fossils can form in sedimentary rocks.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESp.03",
+      "stage": "6",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Know that there are different types of soils and they can be classified based on their clay, sand and organic content.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESp.04",
+      "stage": "6",
+      "strand": "Earth and Space: Planet Earth",
+      "text": "Know that soil composition can change, which can support, or hinder, plant growth.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESc.01",
+      "stage": "6",
+      "strand": "Earth and Space: Cycles on Earth",
+      "text": "Describe the rock cycle and the formation of metamorphic, igneous and sedimentary rocks in terms of solidification, erosion, sedimentation, burial, metamorphism and melting.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESs.01",
+      "stage": "6",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Describe the relative position and movement of the planets, the Moon and the Sun in the Solar System.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6ESs.02",
+      "stage": "6",
+      "strand": "Earth and Space: Earth in space",
+      "text": "Observe and describe the changes in the appearance of the Moon over its monthly cycle.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6SIC.01",
+      "stage": "6",
+      "strand": "Science in Context",
+      "text": "Describe how scientific knowledge and understanding changes over time through the use of evidence gained by enquiry.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6SIC.02",
+      "stage": "6",
+      "strand": "Science in Context",
+      "text": "Describe how science is used in their local area.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6SIC.03",
+      "stage": "6",
+      "strand": "Science in Context",
+      "text": "Use science to support points when discussing issues, situations or actions.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6SIC.04",
+      "stage": "6",
+      "strand": "Science in Context",
+      "text": "Identify people who use science, including professionally, in their area and describe how they use science.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    },
+    {
+      "code": "6SIC.05",
+      "stage": "6",
+      "strand": "Science in Context",
+      "text": "Discuss how the use of science and technology can have positive and negative environmental effects on their local area.",
+      "verified": true,
+      "source": "https://www.pea.ae/linkfiles/Science-Curriculum-Framework0097_tcm142-592534.pdf"
+    }
+  ]
+}

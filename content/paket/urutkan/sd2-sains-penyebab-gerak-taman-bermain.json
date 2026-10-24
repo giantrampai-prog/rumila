@@ -1,0 +1,256 @@
+{
+  "id": "sd2-sains-penyebab-gerak-taman-bermain",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.GAYA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Penyebab di Taman Bermain",
+      "instruksi": "Benda tidak bergerak sendiri. Sentuh gambar yang terjadi lebih dulu.",
+      "s-kincir": "Mana yang lebih dulu?",
+      "kincir-awal": "angin berembus",
+      "kincir-akhir": "kincir berputar",
+      "s-kaleng": "Mana yang lebih dulu?",
+      "kaleng-awal": "anak menendang kaleng",
+      "kaleng-akhir": "kaleng menggelinding",
+      "s-jaring": "Mana yang lebih dulu?",
+      "jaring-awal": "bola masuk jaring",
+      "jaring-akhir": "bola berhenti",
+      "s-kasti": "Mana yang lebih dulu?",
+      "kasti-awal": "pemukul mengenai bola",
+      "kasti-akhir": "bola berbalik arah",
+      "s-pasir": "Mana yang lebih dulu?",
+      "pasir-awal": "mobil mainan masuk pasir",
+      "pasir-akhir": "mobil berhenti",
+      "s-daun": "Mana yang lebih dulu?",
+      "daun-awal": "air sungai mengalir",
+      "daun-akhir": "daun hanyut",
+      "s-pedal": "Mana yang lebih dulu?",
+      "pedal-awal": "kaki mengayuh pedal",
+      "pedal-akhir": "sepeda melaju",
+      "s-setang": "Mana yang lebih dulu?",
+      "setang-awal": "setang dibelokkan",
+      "setang-akhir": "sepeda berbelok",
+      "s-pintu": "Mana yang lebih dulu?",
+      "pintu-awal": "tangan menahan pintu",
+      "pintu-akhir": "pintu berhenti",
+      "s-gelinding": "Mana yang lebih dulu?",
+      "gelinding-awal": "anak mendorong bola salju pasir",
+      "gelinding-akhir": "bola pasir menggelinding"
+    },
+    "en": {
+      "judul": "Causes at the Playground",
+      "instruksi": "Things don't move by themselves. Touch the picture that happened first.",
+      "s-kincir": "Which came first?",
+      "kincir-awal": "wind blows",
+      "kincir-akhir": "windmill spins",
+      "s-kaleng": "Which came first?",
+      "kaleng-awal": "child kicks a can",
+      "kaleng-akhir": "can rolls away",
+      "s-jaring": "Which came first?",
+      "jaring-awal": "ball hits the net",
+      "jaring-akhir": "ball stops",
+      "s-kasti": "Which came first?",
+      "kasti-awal": "bat hits the ball",
+      "kasti-akhir": "ball changes direction",
+      "s-pasir": "Which came first?",
+      "pasir-awal": "toy car runs into sand",
+      "pasir-akhir": "car stops",
+      "s-daun": "Which came first?",
+      "daun-awal": "river water flows",
+      "daun-akhir": "leaf floats away",
+      "s-pedal": "Which came first?",
+      "pedal-awal": "feet push the pedals",
+      "pedal-akhir": "bike speeds up",
+      "s-setang": "Which came first?",
+      "setang-awal": "handlebars are turned",
+      "setang-akhir": "bike turns",
+      "s-pintu": "Which came first?",
+      "pintu-awal": "hand stops the door",
+      "pintu-akhir": "door stops",
+      "s-gelinding": "Which came first?",
+      "gelinding-awal": "child pushes a sand ball",
+      "gelinding-akhir": "sand ball rolls"
+    }
+  },
+  "knobs": {
+    "pasangan": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "dokumentasi: mode dulu selalu 2 gambar; variasi dari 10 pasangan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "dulu",
+  "sequences": [
+    {
+      "id": "kincir",
+      "titleKey": "s-kincir",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kincir-awal",
+          "emoji": "🌬️"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kincir-akhir",
+          "emoji": "🎡"
+        }
+      ]
+    },
+    {
+      "id": "kaleng",
+      "titleKey": "s-kaleng",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kaleng-awal",
+          "emoji": "🦶"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kaleng-akhir",
+          "emoji": "🥫"
+        }
+      ]
+    },
+    {
+      "id": "jaring",
+      "titleKey": "s-jaring",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "jaring-awal",
+          "emoji": "🥅"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "jaring-akhir",
+          "emoji": "⏹️"
+        }
+      ]
+    },
+    {
+      "id": "kasti",
+      "titleKey": "s-kasti",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kasti-awal",
+          "emoji": "🏏"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kasti-akhir",
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": "pasir",
+      "titleKey": "s-pasir",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "pasir-awal",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "pasir-akhir",
+          "emoji": "🚙"
+        }
+      ]
+    },
+    {
+      "id": "daun",
+      "titleKey": "s-daun",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "daun-awal",
+          "emoji": "🌊"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "daun-akhir",
+          "emoji": "🍃"
+        }
+      ]
+    },
+    {
+      "id": "pedal",
+      "titleKey": "s-pedal",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "pedal-awal",
+          "emoji": "🦵"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "pedal-akhir",
+          "emoji": "🚲"
+        }
+      ]
+    },
+    {
+      "id": "setang",
+      "titleKey": "s-setang",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "setang-awal",
+          "emoji": "↪️"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "setang-akhir",
+          "emoji": "🚲"
+        }
+      ]
+    },
+    {
+      "id": "pintu",
+      "titleKey": "s-pintu",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "pintu-awal",
+          "emoji": "✋"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "pintu-akhir",
+          "emoji": "🚪"
+        }
+      ]
+    },
+    {
+      "id": "gelinding",
+      "titleKey": "s-gelinding",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "gelinding-awal",
+          "emoji": "🤲"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "gelinding-akhir",
+          "emoji": "🟤"
+        }
+      ]
+    }
+  ]
+}

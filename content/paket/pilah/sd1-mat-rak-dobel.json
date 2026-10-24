@@ -1,0 +1,226 @@
+{
+  "id": "sd1-mat-rak-dobel",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Dobel dan Hampir Dobel",
+      "instruksi": "Pakai dobel: 7 + 8 itu dobel 7 tambah satu. Taruh kartu di rak hasilnya.",
+      "b-10": "10",
+      "b-11": "11",
+      "b-12": "12",
+      "b-13": "13",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-17": "17",
+      "b-18": "18",
+      "b-19": "19",
+      "i-5p5": "5+5",
+      "i-5p6": "5+6",
+      "i-6p5": "6+5",
+      "i-6p6": "6+6",
+      "i-6p7": "6+7",
+      "i-7p6": "7+6",
+      "i-7p7": "7+7",
+      "i-7p8": "7+8",
+      "i-8p7": "8+7",
+      "i-8p8": "8+8",
+      "i-8p9": "8+9",
+      "i-9p8": "9+8",
+      "i-9p9": "9+9",
+      "i-9p10": "9+10",
+      "i-10p9": "10+9"
+    },
+    "en": {
+      "judul": "Doubles and Near Doubles",
+      "instruksi": "Use doubles: 7 + 8 is double 7 plus one. Put each card on its answer shelf.",
+      "b-10": "10",
+      "b-11": "11",
+      "b-12": "12",
+      "b-13": "13",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-17": "17",
+      "b-18": "18",
+      "b-19": "19",
+      "i-5p5": "5+5",
+      "i-5p6": "5+6",
+      "i-6p5": "6+5",
+      "i-6p6": "6+6",
+      "i-6p7": "6+7",
+      "i-7p6": "7+6",
+      "i-7p7": "7+7",
+      "i-7p8": "7+8",
+      "i-8p7": "8+7",
+      "i-8p8": "8+8",
+      "i-8p9": "8+9",
+      "i-9p8": "9+8",
+      "i-9p9": "9+9",
+      "i-9p10": "9+10",
+      "i-10p9": "10+9"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak 10–13 dulu, lalu sampai 19"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "h10",
+      "labelKey": "b-10"
+    },
+    {
+      "id": "h11",
+      "labelKey": "b-11"
+    },
+    {
+      "id": "h12",
+      "labelKey": "b-12"
+    },
+    {
+      "id": "h13",
+      "labelKey": "b-13"
+    },
+    {
+      "id": "h14",
+      "labelKey": "b-14"
+    },
+    {
+      "id": "h15",
+      "labelKey": "b-15"
+    },
+    {
+      "id": "h16",
+      "labelKey": "b-16"
+    },
+    {
+      "id": "h17",
+      "labelKey": "b-17"
+    },
+    {
+      "id": "h18",
+      "labelKey": "b-18"
+    },
+    {
+      "id": "h19",
+      "labelKey": "b-19"
+    }
+  ],
+  "items": [
+    {
+      "id": "d10",
+      "labelKey": "i-5p5",
+      "bin": "h10",
+      "scale": 0.85
+    },
+    {
+      "id": "x11",
+      "labelKey": "i-5p6",
+      "bin": "h11",
+      "scale": 0.85
+    },
+    {
+      "id": "y11",
+      "labelKey": "i-6p5",
+      "bin": "h11",
+      "scale": 0.85
+    },
+    {
+      "id": "d12",
+      "labelKey": "i-6p6",
+      "bin": "h12",
+      "scale": 0.85
+    },
+    {
+      "id": "x13",
+      "labelKey": "i-6p7",
+      "bin": "h13",
+      "scale": 0.85
+    },
+    {
+      "id": "y13",
+      "labelKey": "i-7p6",
+      "bin": "h13",
+      "scale": 0.85
+    },
+    {
+      "id": "d14",
+      "labelKey": "i-7p7",
+      "bin": "h14",
+      "scale": 0.85
+    },
+    {
+      "id": "x15",
+      "labelKey": "i-7p8",
+      "bin": "h15",
+      "scale": 0.85
+    },
+    {
+      "id": "y15",
+      "labelKey": "i-8p7",
+      "bin": "h15",
+      "scale": 0.85
+    },
+    {
+      "id": "d16",
+      "labelKey": "i-8p8",
+      "bin": "h16",
+      "scale": 0.85
+    },
+    {
+      "id": "x17",
+      "labelKey": "i-8p9",
+      "bin": "h17",
+      "scale": 0.85
+    },
+    {
+      "id": "y17",
+      "labelKey": "i-9p8",
+      "bin": "h17",
+      "scale": 0.85
+    },
+    {
+      "id": "d18",
+      "labelKey": "i-9p9",
+      "bin": "h18",
+      "scale": 0.85
+    },
+    {
+      "id": "x19",
+      "labelKey": "i-9p10",
+      "bin": "h19",
+      "scale": 0.7
+    },
+    {
+      "id": "y19",
+      "labelKey": "i-10p9",
+      "bin": "h19",
+      "scale": 0.7
+    }
+  ]
+}

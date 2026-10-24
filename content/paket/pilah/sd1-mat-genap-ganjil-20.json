@@ -1,0 +1,275 @@
+{
+  "id": "sd1-mat-genap-ganjil-20",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BILANGAN-100.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Genap atau Ganjil?",
+      "instruksi": "Genap kalau bisa dipasangkan dua-dua tanpa sisa. Pilah tiap kartu.",
+      "b-genap": "genap",
+      "b-ganjil": "ganjil",
+      "i-0": "0",
+      "i-1": "1",
+      "i-2": "2",
+      "i-3": "3",
+      "i-4": "4",
+      "i-5": "5",
+      "i-6": "6",
+      "i-7": "7",
+      "i-8": "8",
+      "i-9": "9",
+      "i-10": "10",
+      "i-11": "11",
+      "i-12": "12",
+      "i-13": "13",
+      "i-14": "14",
+      "i-15": "15",
+      "i-16": "16",
+      "i-17": "17",
+      "i-18": "18",
+      "i-19": "19",
+      "i-20": "20",
+      "i-6-kaus-kaki": "6 kaus kaki",
+      "i-7-kaus-kaki": "7 kaus kaki",
+      "i-9-kaus-kaki": "9 kaus kaki",
+      "i-5-kepik": "5 kepik",
+      "i-8-kepik": "8 kepik",
+      "i-11-kepik": "11 kepik"
+    },
+    "en": {
+      "judul": "Even or Odd?",
+      "instruksi": "Even means it pairs up in twos with none left over. Sort each card.",
+      "b-genap": "even",
+      "b-ganjil": "odd",
+      "i-0": "0",
+      "i-1": "1",
+      "i-2": "2",
+      "i-3": "3",
+      "i-4": "4",
+      "i-5": "5",
+      "i-6": "6",
+      "i-7": "7",
+      "i-8": "8",
+      "i-9": "9",
+      "i-10": "10",
+      "i-11": "11",
+      "i-12": "12",
+      "i-13": "13",
+      "i-14": "14",
+      "i-15": "15",
+      "i-16": "16",
+      "i-17": "17",
+      "i-18": "18",
+      "i-19": "19",
+      "i-20": "20",
+      "i-6-kaus-kaki": "6 socks",
+      "i-7-kaus-kaki": "7 socks",
+      "i-9-kaus-kaki": "9 socks",
+      "i-5-kepik": "5 ladybirds",
+      "i-8-kepik": "8 ladybirds",
+      "i-11-kepik": "11 ladybirds"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap",
+      "labelKey": "b-genap",
+      "emoji": "👫"
+    },
+    {
+      "id": "ganjil",
+      "labelKey": "b-ganjil",
+      "emoji": "🧍"
+    }
+  ],
+  "items": [
+    {
+      "id": "n0",
+      "labelKey": "i-0",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n1",
+      "labelKey": "i-1",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n2",
+      "labelKey": "i-2",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n3",
+      "labelKey": "i-3",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n4",
+      "labelKey": "i-4",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n5",
+      "labelKey": "i-5",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n6",
+      "labelKey": "i-6",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n7",
+      "labelKey": "i-7",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n8",
+      "labelKey": "i-8",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n9",
+      "labelKey": "i-9",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n10",
+      "labelKey": "i-10",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n11",
+      "labelKey": "i-11",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n12",
+      "labelKey": "i-12",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n13",
+      "labelKey": "i-13",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n14",
+      "labelKey": "i-14",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n16",
+      "labelKey": "i-16",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n17",
+      "labelKey": "i-17",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n18",
+      "labelKey": "i-18",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "n19",
+      "labelKey": "i-19",
+      "bin": "ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n20",
+      "labelKey": "i-20",
+      "bin": "genap",
+      "scale": 1
+    },
+    {
+      "id": "kaus-kaki-6",
+      "labelKey": "i-6-kaus-kaki",
+      "bin": "genap",
+      "emoji": "🧦",
+      "count": 6
+    },
+    {
+      "id": "kaus-kaki-7",
+      "labelKey": "i-7-kaus-kaki",
+      "bin": "ganjil",
+      "emoji": "🧦",
+      "count": 7
+    },
+    {
+      "id": "kaus-kaki-9",
+      "labelKey": "i-9-kaus-kaki",
+      "bin": "ganjil",
+      "emoji": "🧦",
+      "count": 9
+    },
+    {
+      "id": "kepik-5",
+      "labelKey": "i-5-kepik",
+      "bin": "ganjil",
+      "emoji": "🐞",
+      "count": 5
+    },
+    {
+      "id": "kepik-8",
+      "labelKey": "i-8-kepik",
+      "bin": "genap",
+      "emoji": "🐞",
+      "count": 8
+    },
+    {
+      "id": "kepik-11",
+      "labelKey": "i-11-kepik",
+      "bin": "ganjil",
+      "emoji": "🐞",
+      "count": 11
+    }
+  ]
+}

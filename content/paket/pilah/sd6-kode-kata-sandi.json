@@ -1,0 +1,157 @@
+{
+  "id": "sd6-kode-kata-sandi",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.SANDI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kata Sandi Kuat atau Lemah?",
+      "instruksi": "Kata sandi kuat itu panjang, sulit ditebak, dan memakai campuran huruf, angka, atau simbol: seret tiap contoh ke kelompoknya.",
+      "bin-kuat": "kuat",
+      "bin-lemah": "lemah",
+      "i1": "123456",
+      "i2": "password",
+      "i3": "budi2014",
+      "i4": "qwerty",
+      "i5": "aaaaaa",
+      "i6": "12052014",
+      "i7": "kucing",
+      "i8": "Kuda-Ungu-Lompat-Pagar-7",
+      "i9": "Ma3!sTopi_Pantai",
+      "i10": "pisang#Terbang29Awan",
+      "i11": "Hujan?Kopi&Sepeda18",
+      "i12": "tiga-Gajah-Main-Biola!",
+      "i13": "Sungai_Lima+Batu42"
+    },
+    "en": {
+      "judul": "Strong or Weak Password?",
+      "instruksi": "A strong password is long, hard to guess and mixes letters, numbers or symbols: drag each example to its group.",
+      "bin-kuat": "strong",
+      "bin-lemah": "weak",
+      "i1": "123456",
+      "i2": "password",
+      "i3": "budi2014",
+      "i4": "qwerty",
+      "i5": "aaaaaa",
+      "i6": "12052014",
+      "i7": "kitty",
+      "i8": "Purple-Horse-Jumps-Fence-7",
+      "i9": "Ha3!tBeach_Day",
+      "i10": "banana#Flies29Cloud",
+      "i11": "Rain?Coffee&Bike18",
+      "i12": "three-Elephants-Play-Violin!",
+      "i13": "River_Five+Stone42"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah contoh per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kuat",
+      "labelKey": "bin-kuat",
+      "emoji": "💪"
+    },
+    {
+      "id": "lemah",
+      "labelKey": "bin-lemah",
+      "emoji": "⚠️"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "lemah",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "kuat",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "kuat",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "kuat",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "kuat",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "kuat",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "kuat",
+      "scale": 0.5
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "sd2-sains-habitat-sekitar-rumah",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.HABITAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Habitat Kecil di Sekitar Rumah",
+      "instruksi": "Di dekat rumah juga ada habitat. Antar tiap makhluk ke tempat tinggalnya.",
+      "b-batu": "bawah batu",
+      "b-pohon": "pohon",
+      "b-kolam": "kolam",
+      "b-tanah": "dalam tanah",
+      "i-kelabang": "kelabang",
+      "i-kumbang": "kumbang tanah",
+      "i-lumut": "lumut",
+      "i-burung": "burung di sarang",
+      "i-tupai": "tupai",
+      "i-ulat": "ulat di daun",
+      "i-ikan": "ikan kecil",
+      "i-berudu": "berudu",
+      "i-teratai": "teratai",
+      "i-cacing": "cacing tanah",
+      "i-semut": "semut di sarang tanah",
+      "i-akar": "akar rumput"
+    },
+    "en": {
+      "judul": "Tiny Habitats Around the House",
+      "instruksi": "There are habitats near home too. Take each living thing to where it lives.",
+      "b-batu": "under a stone",
+      "b-pohon": "tree",
+      "b-kolam": "pond",
+      "b-tanah": "in the soil",
+      "i-kelabang": "centipede",
+      "i-kumbang": "ground beetle",
+      "i-lumut": "moss",
+      "i-burung": "bird in a nest",
+      "i-tupai": "squirrel",
+      "i-ulat": "caterpillar on a leaf",
+      "i-ikan": "little fish",
+      "i-berudu": "tadpole",
+      "i-teratai": "water lily",
+      "i-cacing": "earthworm",
+      "i-semut": "ant in its nest",
+      "i-akar": "grass roots"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah habitat kecil"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah makhluk per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "batu",
+      "labelKey": "b-batu",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "pohon",
+      "labelKey": "b-pohon",
+      "emoji": "🌳",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "kolam",
+      "labelKey": "b-kolam",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tanah",
+      "labelKey": "b-tanah",
+      "emoji": "🟫",
+      "color": "#d7ccc8"
+    }
+  ],
+  "items": [
+    {
+      "id": "kelabang",
+      "labelKey": "i-kelabang",
+      "bin": "batu",
+      "emoji": "🐛",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "kumbang",
+      "labelKey": "i-kumbang",
+      "bin": "batu",
+      "emoji": "🪲"
+    },
+    {
+      "id": "lumut",
+      "labelKey": "i-lumut",
+      "bin": "batu",
+      "emoji": "🌱"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "pohon",
+      "emoji": "🐦"
+    },
+    {
+      "id": "tupai",
+      "labelKey": "i-tupai",
+      "bin": "pohon",
+      "emoji": "🐿️"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "pohon",
+      "emoji": "🐛"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "kolam",
+      "emoji": "🐟"
+    },
+    {
+      "id": "berudu",
+      "labelKey": "i-berudu",
+      "bin": "kolam",
+      "emoji": "⚫",
+      "scale": 0.5
+    },
+    {
+      "id": "teratai",
+      "labelKey": "i-teratai",
+      "bin": "kolam",
+      "emoji": "🪷"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "tanah",
+      "emoji": "🪱"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "tanah",
+      "emoji": "🐜"
+    },
+    {
+      "id": "akar",
+      "labelKey": "i-akar",
+      "bin": "tanah",
+      "emoji": "🌾"
+    }
+  ],
+  "pilihan": []
+}

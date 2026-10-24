@@ -1,0 +1,82 @@
+{
+  "id": "sd1-sains-turus-pengunjung-kolam",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.SD1.PENGAMATAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Mampir ke Kolam?",
+      "instruksi": "Hitung pengunjung kolam: ketuk baris hewan setiap ada yang lewat.",
+      "katak": "katak",
+      "bebek": "bebek",
+      "ikan": "ikan",
+      "kura": "kura-kura"
+    },
+    "en": {
+      "judul": "Who Visits the Pond?",
+      "instruksi": "Count the pond visitors: tap the animal's row each time one passes.",
+      "katak": "frog",
+      "bebek": "duck",
+      "ikan": "fish",
+      "kura": "turtle"
+    }
+  },
+  "knobs": {
+    "kinds": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah jenis hewan (baris turus)"
+    },
+    "count": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah hewan yang lewat per putaran"
+    },
+    "gapMs": {
+      "min": 1400,
+      "max": 2000,
+      "default": 2000,
+      "step": 200,
+      "keterangan": "jeda antarhewan (ms)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kolam",
+  "mode": "turus",
+  "items": [
+    {
+      "id": "katak",
+      "labelKey": "katak",
+      "role": "hewan",
+      "emoji": "🐸"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "bebek",
+      "role": "hewan",
+      "emoji": "🦆"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "ikan",
+      "role": "hewan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "kura",
+      "labelKey": "kura",
+      "role": "hewan",
+      "emoji": "🐢"
+    }
+  ]
+}

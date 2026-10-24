@@ -1,0 +1,58 @@
+{
+  "id": "sd2-mat-genap-dua-puluh-koin",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD2.TAMBAH-KURANG-100.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Genap Dua Puluh Koin",
+      "instruksi": "Pembeli menunjukkan koinnya sebentar. Harganya dua puluh koin: tambahkan kekurangannya.",
+      "g-buku-tulis": "buku tulis",
+      "g-kotak-pensil": "kotak pensil"
+    },
+    "en": {
+      "judul": "Make Twenty Coins",
+      "instruksi": "The shopper shows their coins for a moment. The price is twenty coins: add what is missing.",
+      "g-buku-tulis": "exercise book",
+      "g-kotak-pensil": "pencil case"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-alat-tulis",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "lengkapi",
+  "goods": [
+    {
+      "id": "buku",
+      "labelKey": "g-buku-tulis",
+      "price": 20000,
+      "emoji": "📒"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "g-kotak-pensil",
+      "price": 20000,
+      "emoji": "✏️"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "flashMs": 1500,
+    "target": 20
+  }
+}

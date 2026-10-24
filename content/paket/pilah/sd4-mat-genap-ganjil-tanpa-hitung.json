@@ -1,0 +1,163 @@
+{
+  "id": "sd4-mat-genap-ganjil-tanpa-hitung",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.POLA-BILANGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Genap atau Ganjil?",
+      "instruksi": "Tanpa menghitung sampai habis, tebak hasilnya genap atau ganjil, lalu taruh di raknya.",
+      "b-genap": "hasil genap",
+      "b-ganjil": "hasil ganjil",
+      "i1": "37 + 45",
+      "i2": "28 + 53",
+      "i3": "64 + 18",
+      "i4": "91 − 46",
+      "i5": "75 − 29",
+      "i6": "120 + 37",
+      "i7": "83 + 16",
+      "i8": "50 − 24",
+      "i9": "99 + 99",
+      "i10": "47 + 26",
+      "i11": "68 − 33",
+      "i12": "135 + 65",
+      "i13": "211 − 18",
+      "i14": "406 + 72"
+    },
+    "en": {
+      "judul": "Even or Odd?",
+      "instruksi": "Without working out the whole answer, decide if the result is even or odd, then shelve it.",
+      "b-genap": "even result",
+      "b-ganjil": "odd result",
+      "i1": "37 + 45",
+      "i2": "28 + 53",
+      "i3": "64 + 18",
+      "i4": "91 − 46",
+      "i5": "75 − 29",
+      "i6": "120 + 37",
+      "i7": "83 + 16",
+      "i8": "50 − 24",
+      "i9": "99 + 99",
+      "i10": "47 + 26",
+      "i11": "68 − 33",
+      "i12": "135 + 65",
+      "i13": "211 − 18",
+      "i14": "406 + 72"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10; bilangan besar supaya aturan lebih cepat daripada menghitung"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-angka",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap",
+      "labelKey": "b-genap"
+    },
+    {
+      "id": "ganjil",
+      "labelKey": "b-ganjil"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "genap",
+      "scale": 0.7
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "id": "sd2-mat-huruf-simetris",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Huruf Cermin",
+      "instruksi": "Bayangkan melipat huruf. Kalau kedua sisinya pas bertumpuk, huruf itu punya garis simetri.",
+      "b-simetris": "simetris",
+      "b-tidak-simetris": "tidak simetris",
+      "i-a": "A",
+      "i-h": "H",
+      "i-m": "M",
+      "i-t": "T",
+      "i-u": "U",
+      "i-v": "V",
+      "i-w": "W",
+      "i-x": "X",
+      "i-y": "Y",
+      "i-o": "O",
+      "i-b": "B",
+      "i-c": "C",
+      "i-d": "D",
+      "i-e": "E",
+      "i-i": "I",
+      "i-k": "K",
+      "i-f": "F",
+      "i-g": "G",
+      "i-j": "J",
+      "i-l": "L",
+      "i-n": "N",
+      "i-p": "P",
+      "i-r": "R",
+      "i-s": "S",
+      "i-z": "Z",
+      "i-q": "Q"
+    },
+    "en": {
+      "judul": "Mirror Letters",
+      "instruksi": "Imagine folding each letter. If both halves match exactly, it has a line of symmetry.",
+      "b-simetris": "symmetrical",
+      "b-tidak-simetris": "not symmetrical",
+      "i-a": "A",
+      "i-h": "H",
+      "i-m": "M",
+      "i-t": "T",
+      "i-u": "U",
+      "i-v": "V",
+      "i-w": "W",
+      "i-x": "X",
+      "i-y": "Y",
+      "i-o": "O",
+      "i-b": "B",
+      "i-c": "C",
+      "i-d": "D",
+      "i-e": "E",
+      "i-i": "I",
+      "i-k": "K",
+      "i-f": "F",
+      "i-g": "G",
+      "i-j": "J",
+      "i-l": "L",
+      "i-n": "N",
+      "i-p": "P",
+      "i-r": "R",
+      "i-s": "S",
+      "i-z": "Z",
+      "i-q": "Q"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "huruf per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "simetris",
+      "labelKey": "b-simetris",
+      "emoji": "🦋"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak-simetris",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "huruf-a",
+      "labelKey": "i-a",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-h",
+      "labelKey": "i-h",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-m",
+      "labelKey": "i-m",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-t",
+      "labelKey": "i-t",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-u",
+      "labelKey": "i-u",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-v",
+      "labelKey": "i-v",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-w",
+      "labelKey": "i-w",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-x",
+      "labelKey": "i-x",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-y",
+      "labelKey": "i-y",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-o",
+      "labelKey": "i-o",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-b",
+      "labelKey": "i-b",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-c",
+      "labelKey": "i-c",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-d",
+      "labelKey": "i-d",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-e",
+      "labelKey": "i-e",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-i",
+      "labelKey": "i-i",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-k",
+      "labelKey": "i-k",
+      "bin": "simetris"
+    },
+    {
+      "id": "huruf-f",
+      "labelKey": "i-f",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-g",
+      "labelKey": "i-g",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-j",
+      "labelKey": "i-j",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-l",
+      "labelKey": "i-l",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-n",
+      "labelKey": "i-n",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-p",
+      "labelKey": "i-p",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-r",
+      "labelKey": "i-r",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-s",
+      "labelKey": "i-s",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-z",
+      "labelKey": "i-z",
+      "bin": "tidak"
+    },
+    {
+      "id": "huruf-q",
+      "labelKey": "i-q",
+      "bin": "tidak"
+    }
+  ]
+}

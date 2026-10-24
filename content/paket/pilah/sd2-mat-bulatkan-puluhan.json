@@ -1,0 +1,436 @@
+{
+  "id": "sd2-mat-bulatkan-puluhan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pulang ke Puluhan Terdekat",
+      "instruksi": "Tiap bilangan pulang ke puluhan yang paling dekat. Kalau satuannya 5, pulang ke atas.",
+      "b-10": "10",
+      "b-20": "20",
+      "b-30": "30",
+      "b-40": "40",
+      "b-50": "50",
+      "b-60": "60",
+      "b-70": "70",
+      "b-80": "80",
+      "b-90": "90",
+      "i-12": "12",
+      "i-14": "14",
+      "i-15": "15",
+      "i-17": "17",
+      "i-19": "19",
+      "i-22": "22",
+      "i-24": "24",
+      "i-25": "25",
+      "i-27": "27",
+      "i-29": "29",
+      "i-32": "32",
+      "i-34": "34",
+      "i-35": "35",
+      "i-37": "37",
+      "i-39": "39",
+      "i-42": "42",
+      "i-44": "44",
+      "i-45": "45",
+      "i-47": "47",
+      "i-49": "49",
+      "i-52": "52",
+      "i-54": "54",
+      "i-55": "55",
+      "i-57": "57",
+      "i-59": "59",
+      "i-62": "62",
+      "i-64": "64",
+      "i-65": "65",
+      "i-67": "67",
+      "i-69": "69",
+      "i-72": "72",
+      "i-74": "74",
+      "i-75": "75",
+      "i-77": "77",
+      "i-79": "79",
+      "i-82": "82",
+      "i-84": "84",
+      "i-85": "85",
+      "i-87": "87",
+      "i-89": "89",
+      "i-92": "92",
+      "i-94": "94"
+    },
+    "en": {
+      "judul": "Home to the Nearest Ten",
+      "instruksi": "Each number goes home to the closest ten. If the ones digit is 5, it goes up.",
+      "b-10": "10",
+      "b-20": "20",
+      "b-30": "30",
+      "b-40": "40",
+      "b-50": "50",
+      "b-60": "60",
+      "b-70": "70",
+      "b-80": "80",
+      "b-90": "90",
+      "i-12": "12",
+      "i-14": "14",
+      "i-15": "15",
+      "i-17": "17",
+      "i-19": "19",
+      "i-22": "22",
+      "i-24": "24",
+      "i-25": "25",
+      "i-27": "27",
+      "i-29": "29",
+      "i-32": "32",
+      "i-34": "34",
+      "i-35": "35",
+      "i-37": "37",
+      "i-39": "39",
+      "i-42": "42",
+      "i-44": "44",
+      "i-45": "45",
+      "i-47": "47",
+      "i-49": "49",
+      "i-52": "52",
+      "i-54": "54",
+      "i-55": "55",
+      "i-57": "57",
+      "i-59": "59",
+      "i-62": "62",
+      "i-64": "64",
+      "i-65": "65",
+      "i-67": "67",
+      "i-69": "69",
+      "i-72": "72",
+      "i-74": "74",
+      "i-75": "75",
+      "i-77": "77",
+      "i-79": "79",
+      "i-82": "82",
+      "i-84": "84",
+      "i-85": "85",
+      "i-87": "87",
+      "i-89": "89",
+      "i-92": "92",
+      "i-94": "94"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 9,
+      "default": 3,
+      "step": 2,
+      "keterangan": "rak puluhan aktif: 3 → 9"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "p10",
+      "labelKey": "b-10"
+    },
+    {
+      "id": "p20",
+      "labelKey": "b-20"
+    },
+    {
+      "id": "p30",
+      "labelKey": "b-30"
+    },
+    {
+      "id": "p40",
+      "labelKey": "b-40"
+    },
+    {
+      "id": "p50",
+      "labelKey": "b-50"
+    },
+    {
+      "id": "p60",
+      "labelKey": "b-60"
+    },
+    {
+      "id": "p70",
+      "labelKey": "b-70"
+    },
+    {
+      "id": "p80",
+      "labelKey": "b-80"
+    },
+    {
+      "id": "p90",
+      "labelKey": "b-90"
+    }
+  ],
+  "items": [
+    {
+      "id": "n12",
+      "labelKey": "i-12",
+      "bin": "p10",
+      "scale": 1
+    },
+    {
+      "id": "n14",
+      "labelKey": "i-14",
+      "bin": "p10",
+      "scale": 1
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "p20",
+      "scale": 1
+    },
+    {
+      "id": "n17",
+      "labelKey": "i-17",
+      "bin": "p20",
+      "scale": 1
+    },
+    {
+      "id": "n19",
+      "labelKey": "i-19",
+      "bin": "p20",
+      "scale": 1
+    },
+    {
+      "id": "n22",
+      "labelKey": "i-22",
+      "bin": "p20",
+      "scale": 1
+    },
+    {
+      "id": "n24",
+      "labelKey": "i-24",
+      "bin": "p20",
+      "scale": 1
+    },
+    {
+      "id": "n25",
+      "labelKey": "i-25",
+      "bin": "p30",
+      "scale": 1
+    },
+    {
+      "id": "n27",
+      "labelKey": "i-27",
+      "bin": "p30",
+      "scale": 1
+    },
+    {
+      "id": "n29",
+      "labelKey": "i-29",
+      "bin": "p30",
+      "scale": 1
+    },
+    {
+      "id": "n32",
+      "labelKey": "i-32",
+      "bin": "p30",
+      "scale": 1
+    },
+    {
+      "id": "n34",
+      "labelKey": "i-34",
+      "bin": "p30",
+      "scale": 1
+    },
+    {
+      "id": "n35",
+      "labelKey": "i-35",
+      "bin": "p40",
+      "scale": 1
+    },
+    {
+      "id": "n37",
+      "labelKey": "i-37",
+      "bin": "p40",
+      "scale": 1
+    },
+    {
+      "id": "n39",
+      "labelKey": "i-39",
+      "bin": "p40",
+      "scale": 1
+    },
+    {
+      "id": "n42",
+      "labelKey": "i-42",
+      "bin": "p40",
+      "scale": 1
+    },
+    {
+      "id": "n44",
+      "labelKey": "i-44",
+      "bin": "p40",
+      "scale": 1
+    },
+    {
+      "id": "n45",
+      "labelKey": "i-45",
+      "bin": "p50",
+      "scale": 1
+    },
+    {
+      "id": "n47",
+      "labelKey": "i-47",
+      "bin": "p50",
+      "scale": 1
+    },
+    {
+      "id": "n49",
+      "labelKey": "i-49",
+      "bin": "p50",
+      "scale": 1
+    },
+    {
+      "id": "n52",
+      "labelKey": "i-52",
+      "bin": "p50",
+      "scale": 1
+    },
+    {
+      "id": "n54",
+      "labelKey": "i-54",
+      "bin": "p50",
+      "scale": 1
+    },
+    {
+      "id": "n55",
+      "labelKey": "i-55",
+      "bin": "p60",
+      "scale": 1
+    },
+    {
+      "id": "n57",
+      "labelKey": "i-57",
+      "bin": "p60",
+      "scale": 1
+    },
+    {
+      "id": "n59",
+      "labelKey": "i-59",
+      "bin": "p60",
+      "scale": 1
+    },
+    {
+      "id": "n62",
+      "labelKey": "i-62",
+      "bin": "p60",
+      "scale": 1
+    },
+    {
+      "id": "n64",
+      "labelKey": "i-64",
+      "bin": "p60",
+      "scale": 1
+    },
+    {
+      "id": "n65",
+      "labelKey": "i-65",
+      "bin": "p70",
+      "scale": 1
+    },
+    {
+      "id": "n67",
+      "labelKey": "i-67",
+      "bin": "p70",
+      "scale": 1
+    },
+    {
+      "id": "n69",
+      "labelKey": "i-69",
+      "bin": "p70",
+      "scale": 1
+    },
+    {
+      "id": "n72",
+      "labelKey": "i-72",
+      "bin": "p70",
+      "scale": 1
+    },
+    {
+      "id": "n74",
+      "labelKey": "i-74",
+      "bin": "p70",
+      "scale": 1
+    },
+    {
+      "id": "n75",
+      "labelKey": "i-75",
+      "bin": "p80",
+      "scale": 1
+    },
+    {
+      "id": "n77",
+      "labelKey": "i-77",
+      "bin": "p80",
+      "scale": 1
+    },
+    {
+      "id": "n79",
+      "labelKey": "i-79",
+      "bin": "p80",
+      "scale": 1
+    },
+    {
+      "id": "n82",
+      "labelKey": "i-82",
+      "bin": "p80",
+      "scale": 1
+    },
+    {
+      "id": "n84",
+      "labelKey": "i-84",
+      "bin": "p80",
+      "scale": 1
+    },
+    {
+      "id": "n85",
+      "labelKey": "i-85",
+      "bin": "p90",
+      "scale": 1
+    },
+    {
+      "id": "n87",
+      "labelKey": "i-87",
+      "bin": "p90",
+      "scale": 1
+    },
+    {
+      "id": "n89",
+      "labelKey": "i-89",
+      "bin": "p90",
+      "scale": 1
+    },
+    {
+      "id": "n92",
+      "labelKey": "i-92",
+      "bin": "p90",
+      "scale": 1
+    },
+    {
+      "id": "n94",
+      "labelKey": "i-94",
+      "bin": "p90",
+      "scale": 1
+    }
+  ]
+}

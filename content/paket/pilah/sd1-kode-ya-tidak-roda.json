@@ -1,0 +1,165 @@
+{
+  "id": "sd1-kode-ya-tidak-roda",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD1.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Punya Roda atau Tidak?",
+      "instruksi": "Pertanyaannya: punya roda? Taruh tiap benda di kotak ya atau kotak tidak.",
+      "bin-ya": "ya",
+      "bin-tidak": "tidak",
+      "i-car": "mobil",
+      "i-bus": "bus",
+      "i-bicycle": "sepeda",
+      "i-scooter": "skuter",
+      "i-shopping-cart": "troli belanja",
+      "i-skateboard": "papan luncur",
+      "i-truck": "truk",
+      "i-sailboat": "perahu layar",
+      "i-canoe": "kano",
+      "i-wooden-chair": "kursi kayu",
+      "i-ladder": "tangga",
+      "i-kite": "layang-layang",
+      "i-umbrella": "payung",
+      "i-balloon": "balon"
+    },
+    "en": {
+      "judul": "Wheels or No Wheels?",
+      "instruksi": "The question is: does it have wheels? Put each thing in the yes box or the no box.",
+      "bin-ya": "yes",
+      "bin-tidak": "no",
+      "i-car": "car",
+      "i-bus": "bus",
+      "i-bicycle": "bicycle",
+      "i-scooter": "scooter",
+      "i-shopping-cart": "shopping cart",
+      "i-skateboard": "skateboard",
+      "i-truck": "truck",
+      "i-sailboat": "sailboat",
+      "i-canoe": "canoe",
+      "i-wooden-chair": "wooden chair",
+      "i-ladder": "ladder",
+      "i-kite": "kite",
+      "i-umbrella": "umbrella",
+      "i-balloon": "balloon"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran; tiap kotak dijamin kebagian"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-ke-sekolah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "ya",
+      "labelKey": "bin-ya",
+      "emoji": "✅"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "bin-tidak",
+      "emoji": "❌"
+    }
+  ],
+  "items": [
+    {
+      "id": "car",
+      "labelKey": "i-car",
+      "bin": "ya",
+      "emoji": "🚗"
+    },
+    {
+      "id": "bus",
+      "labelKey": "i-bus",
+      "bin": "ya",
+      "emoji": "🚌"
+    },
+    {
+      "id": "bicycle",
+      "labelKey": "i-bicycle",
+      "bin": "ya",
+      "emoji": "🚲"
+    },
+    {
+      "id": "scooter",
+      "labelKey": "i-scooter",
+      "bin": "ya",
+      "emoji": "🛴"
+    },
+    {
+      "id": "shopping-cart",
+      "labelKey": "i-shopping-cart",
+      "bin": "ya",
+      "emoji": "🛒"
+    },
+    {
+      "id": "skateboard",
+      "labelKey": "i-skateboard",
+      "bin": "ya",
+      "emoji": "🛹"
+    },
+    {
+      "id": "truck",
+      "labelKey": "i-truck",
+      "bin": "ya",
+      "emoji": "🚚"
+    },
+    {
+      "id": "sailboat",
+      "labelKey": "i-sailboat",
+      "bin": "tidak",
+      "emoji": "⛵"
+    },
+    {
+      "id": "canoe",
+      "labelKey": "i-canoe",
+      "bin": "tidak",
+      "emoji": "🛶"
+    },
+    {
+      "id": "wooden-chair",
+      "labelKey": "i-wooden-chair",
+      "bin": "tidak",
+      "emoji": "🪑"
+    },
+    {
+      "id": "ladder",
+      "labelKey": "i-ladder",
+      "bin": "tidak",
+      "emoji": "🪜"
+    },
+    {
+      "id": "kite",
+      "labelKey": "i-kite",
+      "bin": "tidak",
+      "emoji": "🪁"
+    },
+    {
+      "id": "umbrella",
+      "labelKey": "i-umbrella",
+      "bin": "tidak",
+      "emoji": "☂️"
+    },
+    {
+      "id": "balloon",
+      "labelKey": "i-balloon",
+      "bin": "tidak",
+      "emoji": "🎈"
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "id": "sd5-mat-bandingkan-peluang",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.PELUANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mana Lebih Mungkin?",
+      "instruksi": "Bandingkan peluangnya, lalu sentuh jawaban yang paling tepat.",
+      "q1": "Kantong: 3 merah, 5 biru, 2 hijau. Warna apa yang paling mungkin terambil?",
+      "c1": "biru",
+      "c2": "merah",
+      "c3": "hijau",
+      "q2": "Kantong: 4 merah, 1 biru, 4 hijau, 6 kuning. Warna apa yang paling mungkin terambil?",
+      "c4": "kuning",
+      "q3": "Roda putar 8 bagian sama: 2 merah, 3 biru, 1 hijau, 2 kuning. Warna apa yang paling kecil peluangnya?",
+      "q4": "Roda putar 6 bagian sama: 3 merah, 2 biru, 1 hijau. Warna apa yang paling mungkin?",
+      "q5": "Dadu dilempar. Mana yang lebih mungkin: angka genap atau angka ganjil?",
+      "c5": "sama besar",
+      "c6": "genap",
+      "c7": "ganjil",
+      "q6": "Kantong: 5 merah dan 5 biru. Mana yang lebih mungkin terambil?",
+      "q7": "Kantong: 2 merah, 6 biru, 2 hijau. Dua warna mana yang peluangnya sama besar?",
+      "c8": "🔴 dan 🟢",
+      "c9": "🔴 dan 🔵",
+      "c10": "🔵 dan 🟢",
+      "q8": "Dadu dilempar. Mana yang lebih mungkin: angka 1 atau angka 6?",
+      "c11": "angka 1",
+      "c12": "angka 6",
+      "q9": "Dadu dilempar. Mana yang lebih mungkin: lebih dari 4, atau kurang dari 3?",
+      "c13": "lebih dari 4",
+      "c14": "kurang dari 3",
+      "q10": "Dadu dilempar. Mana yang lebih mungkin: lebih dari 2, atau kurang dari 3?",
+      "c15": "lebih dari 2",
+      "q11": "Kantong: 7 biru, 3 merah. Ambil satu, kembalikan, ulangi 100 kali. Biru kira-kira muncul …",
+      "c16": "sekitar 70 kali",
+      "c17": "tepat 70 kali",
+      "c18": "sekitar 30 kali",
+      "c19": "sekitar 50 kali",
+      "q12": "Koin dilempar 20 kali. Paling masuk akal, sisi angka muncul …",
+      "c20": "sekitar 10 kali",
+      "c21": "tepat 10 kali",
+      "c22": "sekitar 20 kali",
+      "c23": "tidak pernah",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Which Is More Likely?",
+      "instruksi": "Compare the chances, then touch the best answer.",
+      "q1": "Bag: 3 red, 5 blue, 2 green. Which colour is most likely to be picked?",
+      "c1": "blue",
+      "c2": "red",
+      "c3": "green",
+      "q2": "Bag: 4 red, 1 blue, 4 green, 6 yellow. Which colour is most likely?",
+      "c4": "yellow",
+      "q3": "Spinner with 8 equal parts: 2 red, 3 blue, 1 green, 2 yellow. Which colour is least likely?",
+      "q4": "Spinner with 6 equal parts: 3 red, 2 blue, 1 green. Which colour is most likely?",
+      "q5": "A dice is rolled. Which is more likely: an even number or an odd number?",
+      "c5": "equally likely",
+      "c6": "even",
+      "c7": "odd",
+      "q6": "Bag: 5 red and 5 blue. Which is more likely to be picked?",
+      "q7": "Bag: 2 red, 6 blue, 2 green. Which two colours are equally likely?",
+      "c8": "🔴 and 🟢",
+      "c9": "🔴 and 🔵",
+      "c10": "🔵 and 🟢",
+      "q8": "A dice is rolled. Which is more likely: a 1 or a 6?",
+      "c11": "a 1",
+      "c12": "a 6",
+      "q9": "A dice is rolled. Which is more likely: more than 4, or less than 3?",
+      "c13": "more than 4",
+      "c14": "less than 3",
+      "q10": "A dice is rolled. Which is more likely: more than 2, or less than 3?",
+      "c15": "more than 2",
+      "q11": "Bag: 7 blue, 3 red. Pick one, put it back, repeat 100 times. Blue comes up about …",
+      "c16": "about 70 times",
+      "c17": "exactly 70 times",
+      "c18": "about 30 times",
+      "c19": "about 50 times",
+      "q12": "A coin is tossed 20 times. Most sensibly, it lands number side up …",
+      "c20": "about 10 times",
+      "c21": "exactly 10 times",
+      "c22": "about 20 times",
+      "c23": "never",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "emoji": "🔵"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "emoji": "🔴"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "emoji": "🟢"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "emoji": "🟡"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.55
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c2",
+        "c1",
+        "c3"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c2",
+        "c1",
+        "c4"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c2",
+        "c1",
+        "c3"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c5",
+        "c2",
+        "c1"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c8",
+        "c9",
+        "c10"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c5",
+        "c11",
+        "c12"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c5",
+        "c13",
+        "c14"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c15",
+        "c14",
+        "c5"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c16",
+        "c17",
+        "c18",
+        "c19"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c20",
+        "c21",
+        "c22",
+        "c23"
+      ],
+      "correct": "c20"
+    }
+  ]
+}

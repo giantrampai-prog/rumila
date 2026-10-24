@@ -1,0 +1,206 @@
+{
+  "id": "sd3-sains-pilih-alat-ukur",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alat Ukur untuk Penyelidikan",
+      "instruksi": "Dengarkan apa yang ingin diketahui, lalu sentuh alat ukurnya.",
+      "pilihan": "pilihan",
+      "i-termometer": "termometer",
+      "i-timbangan": "timbangan",
+      "i-penggaris": "penggaris",
+      "i-gelasukur": "gelas ukur",
+      "i-stopwatch": "stopwatch",
+      "t-kolam": "Seberapa hangat air kolam siang ini?",
+      "t-semangka": "Seberapa berat semangka hasil panen?",
+      "t-kacang": "Seberapa tinggi tanaman kacang setelah seminggu?",
+      "t-hujan": "Berapa banyak air hujan yang tertampung di botol?",
+      "t-es": "Berapa lama es batu mencair di bawah Matahari?",
+      "t-kelas": "Apakah ruang kelas lebih panas siang daripada pagi?",
+      "t-tas": "Tas siapa yang paling berat?",
+      "t-mobil": "Berapa lama mobil mainan meluncur sampai ujung papan?",
+      "t-ulat": "Seberapa panjang ulat di daun ini?",
+      "t-siram": "Berapa banyak air untuk menyiram satu pot?"
+    },
+    "en": {
+      "judul": "Measuring Tools for Investigations",
+      "instruksi": "Listen to what we want to find out, then touch the measuring tool.",
+      "pilihan": "choices",
+      "i-termometer": "thermometer",
+      "i-timbangan": "scales",
+      "i-penggaris": "ruler",
+      "i-gelasukur": "measuring jug",
+      "i-stopwatch": "stopwatch",
+      "t-kolam": "How warm is the pond water this afternoon?",
+      "t-semangka": "How heavy is the harvested watermelon?",
+      "t-kacang": "How tall is the bean plant after a week?",
+      "t-hujan": "How much rainwater collected in the bottle?",
+      "t-es": "How long does an ice cube take to melt in the sun?",
+      "t-kelas": "Is the classroom hotter at midday than in the morning?",
+      "t-tas": "Whose school bag is the heaviest?",
+      "t-mobil": "How long does the toy car take to reach the end of the board?",
+      "t-ulat": "How long is the caterpillar on this leaf?",
+      "t-siram": "How much water to water one pot?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "termometer",
+      "labelKey": "i-termometer",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "timbangan",
+      "labelKey": "i-timbangan",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "penggaris",
+      "labelKey": "i-penggaris",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "gelasukur",
+      "labelKey": "i-gelasukur",
+      "bin": "pilihan",
+      "emoji": "🧪"
+    },
+    {
+      "id": "stopwatch",
+      "labelKey": "i-stopwatch",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "kolam",
+      "promptKey": "t-kolam",
+      "choices": [
+        "termometer",
+        "penggaris",
+        "timbangan"
+      ],
+      "correct": "termometer"
+    },
+    {
+      "id": "semangka",
+      "promptKey": "t-semangka",
+      "choices": [
+        "timbangan",
+        "gelasukur",
+        "stopwatch"
+      ],
+      "correct": "timbangan"
+    },
+    {
+      "id": "kacang",
+      "promptKey": "t-kacang",
+      "choices": [
+        "penggaris",
+        "termometer",
+        "gelasukur"
+      ],
+      "correct": "penggaris"
+    },
+    {
+      "id": "hujan",
+      "promptKey": "t-hujan",
+      "choices": [
+        "gelasukur",
+        "penggaris",
+        "stopwatch"
+      ],
+      "correct": "gelasukur"
+    },
+    {
+      "id": "es",
+      "promptKey": "t-es",
+      "choices": [
+        "stopwatch",
+        "timbangan",
+        "termometer"
+      ],
+      "correct": "stopwatch"
+    },
+    {
+      "id": "kelas",
+      "promptKey": "t-kelas",
+      "choices": [
+        "termometer",
+        "stopwatch",
+        "penggaris"
+      ],
+      "correct": "termometer"
+    },
+    {
+      "id": "tas",
+      "promptKey": "t-tas",
+      "choices": [
+        "timbangan",
+        "penggaris",
+        "gelasukur"
+      ],
+      "correct": "timbangan"
+    },
+    {
+      "id": "mobil",
+      "promptKey": "t-mobil",
+      "choices": [
+        "stopwatch",
+        "termometer",
+        "gelasukur"
+      ],
+      "correct": "stopwatch"
+    },
+    {
+      "id": "ulat",
+      "promptKey": "t-ulat",
+      "choices": [
+        "penggaris",
+        "timbangan",
+        "stopwatch"
+      ],
+      "correct": "penggaris"
+    },
+    {
+      "id": "siram",
+      "promptKey": "t-siram",
+      "choices": [
+        "gelasukur",
+        "termometer",
+        "penggaris"
+      ],
+      "correct": "gelasukur"
+    }
+  ]
+}

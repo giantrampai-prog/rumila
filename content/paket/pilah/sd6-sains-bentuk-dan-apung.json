@@ -1,0 +1,246 @@
+{
+  "id": "sd6-sains-bentuk-dan-apung",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.APUNG-TENGGELAM.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bentuk Penentu Apung",
+      "instruksi": "Bandingkan kedua benda, lalu tebak mana yang terapung atau tenggelam.",
+      "b-pilihan": "pilihan",
+      "i-bolaplastisin": "plastisin dibentuk bola padat",
+      "i-perahuplastisin": "plastisin dibentuk perahu bertepi tinggi",
+      "i-foilperahu": "aluminium foil dibentuk perahu",
+      "i-foilpadat": "aluminium foil dipukul jadi gumpalan padat",
+      "i-botolkosong": "botol plastik kosong bertutup",
+      "i-botolpasir": "botol yang sama diisi penuh pasir",
+      "i-perahukelereng": "perahu foil diisi sangat banyak kelereng",
+      "i-kapal": "kapal baja besar berongga",
+      "i-baut": "baut baja kecil",
+      "i-pingpong": "bola pingpong",
+      "i-kelereng": "kelereng kaca seukuran pingpong",
+      "i-kayu": "batang kayu besar",
+      "i-paku": "paku kecil",
+      "i-mangkuk": "mangkuk baja kosong",
+      "i-sendok": "sendok baja",
+      "p-r1": "Dua gumpal plastisin sama massanya. Mana yang terapung?",
+      "p-r2": "Dua lembar foil sama besar. Mana yang tenggelam?",
+      "p-r3": "Bentuknya sama. Mana yang tenggelam?",
+      "p-r4": "Mana yang tenggelam?",
+      "p-r5": "Sama-sama dari baja. Mana yang terapung?",
+      "p-r6": "Ukurannya sama. Mana yang terapung?",
+      "p-r7": "Mana yang tenggelam walau jauh lebih kecil?",
+      "p-r8": "Sama-sama dari baja. Mana yang terapung?"
+    },
+    "en": {
+      "judul": "Shape Decides Floating",
+      "instruksi": "Compare the two objects, then predict which floats or sinks.",
+      "b-pilihan": "choices",
+      "i-bolaplastisin": "clay squashed into a solid ball",
+      "i-perahuplastisin": "clay shaped into a boat with high sides",
+      "i-foilperahu": "foil shaped into a boat",
+      "i-foilpadat": "foil hammered into a tight lump",
+      "i-botolkosong": "an empty, capped plastic bottle",
+      "i-botolpasir": "the same bottle filled with sand",
+      "i-perahukelereng": "a foil boat loaded with lots of marbles",
+      "i-kapal": "a big hollow steel ship",
+      "i-baut": "a small steel bolt",
+      "i-pingpong": "a ping-pong ball",
+      "i-kelereng": "a glass marble the size of a ping-pong ball",
+      "i-kayu": "a large log",
+      "i-paku": "a small nail",
+      "i-mangkuk": "an empty steel bowl",
+      "i-sendok": "a steel spoon",
+      "p-r1": "Two lumps of clay have the same mass. Which one floats?",
+      "p-r2": "Two sheets of foil are the same size. Which one sinks?",
+      "p-r3": "Same shape. Which one sinks?",
+      "p-r4": "Which one sinks?",
+      "p-r5": "Both are made of steel. Which one floats?",
+      "p-r6": "They are the same size. Which one floats?",
+      "p-r7": "Which one sinks even though it is much smaller?",
+      "p-r8": "Both are made of steel. Which one floats?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kolam",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "bolaplastisin",
+      "labelKey": "i-bolaplastisin",
+      "bin": "pilihan",
+      "emoji": "🟤"
+    },
+    {
+      "id": "perahuplastisin",
+      "labelKey": "i-perahuplastisin",
+      "bin": "pilihan",
+      "emoji": "🛶"
+    },
+    {
+      "id": "foilperahu",
+      "labelKey": "i-foilperahu",
+      "bin": "pilihan",
+      "emoji": "🥈"
+    },
+    {
+      "id": "foilpadat",
+      "labelKey": "i-foilpadat",
+      "bin": "pilihan",
+      "emoji": "🪨"
+    },
+    {
+      "id": "botolkosong",
+      "labelKey": "i-botolkosong",
+      "bin": "pilihan",
+      "emoji": "🍶"
+    },
+    {
+      "id": "botolpasir",
+      "labelKey": "i-botolpasir",
+      "bin": "pilihan",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "perahukelereng",
+      "labelKey": "i-perahukelereng",
+      "bin": "pilihan",
+      "emoji": "🔮"
+    },
+    {
+      "id": "kapal",
+      "labelKey": "i-kapal",
+      "bin": "pilihan",
+      "emoji": "🚢"
+    },
+    {
+      "id": "baut",
+      "labelKey": "i-baut",
+      "bin": "pilihan",
+      "emoji": "🔩"
+    },
+    {
+      "id": "pingpong",
+      "labelKey": "i-pingpong",
+      "bin": "pilihan",
+      "emoji": "🏓"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "pilihan",
+      "emoji": "🔮"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "pilihan",
+      "emoji": "🪵"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "pilihan",
+      "emoji": "📌"
+    },
+    {
+      "id": "mangkuk",
+      "labelKey": "i-mangkuk",
+      "bin": "pilihan",
+      "emoji": "🥣"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "pilihan",
+      "emoji": "🥄"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "bolaplastisin",
+        "perahuplastisin"
+      ],
+      "correct": "perahuplastisin"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "foilperahu",
+        "foilpadat"
+      ],
+      "correct": "foilpadat"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "botolkosong",
+        "botolpasir"
+      ],
+      "correct": "botolpasir"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "foilperahu",
+        "perahukelereng"
+      ],
+      "correct": "perahukelereng"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "kapal",
+        "baut"
+      ],
+      "correct": "kapal"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "pingpong",
+        "kelereng"
+      ],
+      "correct": "pingpong"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "kayu",
+        "paku"
+      ],
+      "correct": "paku"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "mangkuk",
+        "sendok"
+      ],
+      "correct": "mangkuk"
+    }
+  ]
+}

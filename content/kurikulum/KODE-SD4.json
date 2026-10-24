@@ -1,0 +1,326 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.SD4.ULANGI.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan terhitung",
+          "en": "Count-controlled loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai dua blok ulangi berurutan dan satu belokan supaya robot menempuh jalur berbelok yang tidak muat di rak",
+        "en": "I can use two repeat blocks in a row with one turn so the robot follows a turning path that is too long for the rack"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "4P.02",
+          "note": "mengembangkan program dengan perulangan; paksaan rak 5 keping"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Jalur L: a petak, belok, b petak (a, b = 3–6). Rak 5 keping, jalur tanpa ulangi butuh 7–13 blok, jadi satu-satunya cara: ulangi a [maju], belok, ulangi b [maju]. Bukti: sampai bintang dengan ≤ 5 keping. Jebakan: menghitung petak awal sehingga ulangan kelebihan satu (robot melewati sudut), atau belok ke arah layar bukan arah robot. Knob: distance 7 → 13. Paket: sd4-kode-dua-ulangi-belok."
+    },
+    {
+      "id": "KODE.SD4.ULANGI.02",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan terhitung",
+          "en": "Count-controlled loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan dua perintah yang berulang di jalur berbatu lalu menaruh keduanya di dalam satu blok ulangi",
+        "en": "I can spot the two commands that repeat on a rocky path and put both inside one repeat block"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.ULANGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "4P.02",
+          "note": "perulangan dengan isi dua perintah"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Batu berjarak tetap (tiap 3 petak), satuan [maju, lompat] atau [lompat, maju]; rak 3 keping (4 bila ada satu maju di ekor). Bukti: satu blok ulangi berisi dua perintah, sampai bintang. Jebakan: 'lompat terus' (lompat di petak kosong tetap 2 petak, mendarat di batu) dan urutan isi terbalik. Knob: distance 4 → 6. Paket: sd4-kode-ulangi-maju-lompat."
+    },
+    {
+      "id": "KODE.SD4.DEBUG.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Mencari dan memperbaiki bug",
+          "en": "Debugging"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan satu bagian yang salah dalam program berisi ulangi, angka ulangan, isinya, atau belokan, lalu menggantinya saja",
+        "en": "I can find the one wrong part of a program with repeats, the repeat number, its inside or a turn, and change only that"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.ULANGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "4P.03",
+          "note": "hanya mirip: kode ini 'mengembangkan program dengan iterasi'; contoh progresi Stage 4 (tanpa kode) menyebut 'edit and correct algorithms that use iteration'"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Program L yang benar dengan satu mutasi: ulangan ±1/−2, isi ulangi diganti lompat, atau belok terbalik. Ulangan kelebihan di segmen terakhir tidak dipakai (robot berhenti di bintang lebih dulu). Mesin: edits == 1 dan sampai bintang; tiap peta diverifikasi punya perbaikan satu blok. Jebakan: mengubah dua bagian sekaligus 'biar aman'. Knob: distance. Paket: sd4-kode-perbaiki-ulangi."
+    },
+    {
+      "id": "KODE.SD4.DEBUG.02",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Mencari dan memperbaiki bug",
+          "en": "Debugging"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjalankan program, mengamati di mana robot menyimpang, lalu memperbaiki tepat dua kesalahan",
+        "en": "I can run a program, watch where the robot goes wrong, then fix exactly two mistakes"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.DEBUG.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Dua mutasi di dua bagian berbeda dari program L berisi ulangi. Tiap peta diverifikasi: tidak ada perbaikan satu blok yang cukup, perbaikan dua blok ada. Bukti: edits == 2 dan sampai bintang. Jebakan: berhenti setelah kesalahan pertama terlihat; bug kedua baru tampak setelah bug pertama diperbaiki. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd4-kode-dua-bug-ulangi. Pengaya."
+    },
+    {
+      "id": "KODE.SD4.VARIABEL.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "VARIABEL",
+        "nama": {
+          "id": "Variabel",
+          "en": "Variables"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membaca beberapa baris kode yang mengubah variabel dan menyebut nilai akhirnya",
+        "en": "I can read a few lines of code that change a variable and say its final value"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilih satu dari tiga angka. Instruksi menjelaskan tanda * (kali). Kode bergaya Python dalam satu baris dipisah ';'. Pengecoh mewakili salah paham umum: memakai nilai awal, menghitung dari kiri tanpa urutan baris (5 + 3 × 2), atau mengira 'y = x' ikut berubah saat x berubah. 13 soal, termasuk tukar nilai dengan variabel bantu. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd4-kode-lacak-variabel."
+    },
+    {
+      "id": "KODE.SD4.VARIABEL.02",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "VARIABEL",
+        "nama": {
+          "id": "Variabel",
+          "en": "Variables"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung nilai variabel setelah isi blok ulangi dijalankan beberapa kali",
+        "en": "I can work out a variable's value after the inside of a repeat block has run several times"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.VARIABEL.01",
+        "KODE.SD4.ULANGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "4P.03",
+          "note": "hanya mirip: menelusuri, bukan menulis, program dengan iterasi"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Akumulasi di dalam ulangi (tambah, kurang, kali), baris sesudah ulangi, dan soal terbalik 'ulangi berapa kali supaya x = 20'. Pengecoh: hasil satu putaran, atau menjumlah angka yang tampak. Bukti: ≥ 70% dari 10 ronde. Paket: sd4-kode-ulangi-variabel."
+    },
+    {
+      "id": "KODE.SD4.IPO.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "IPO",
+        "nama": {
+          "id": "Masukan, proses, keluaran",
+          "en": "Input, process, output"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun baris program kecil sehingga masukan diminta dulu, lalu diolah, lalu hasilnya ditampilkan",
+        "en": "I can order the lines of a small program so input is asked for first, then processed, then the result is shown"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Enam program teks (kalkulator, kuis, pengubah suhu, sapaan, luas persegi, rata-rata), 3–4 baris. Bukti: urutan persis benar. Tiap baris memakai variabel yang dibuat baris sebelumnya, jadi urutan tunggal; dua masukan selalu bernomor (pertama/kedua) agar tidak ambigu. Jebakan: menampilkan hasil sebelum dihitung. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: steps tetap 4 (versi 3 baris memotong baris keluaran). Paket: sd4-kode-masukan-proses-keluaran."
+    },
+    {
+      "id": "KODE.SD4.PERANGKAT.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "PERANGKAT",
+        "nama": {
+          "id": "Perangkat komputer",
+          "en": "Computer devices"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah perangkat menjadi alat masukan, alat keluaran, dan penyimpanan",
+        "en": "I can sort devices into input devices, output devices and storage"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu teks berikon (papan ketik, sensor suhu, printer, proyektor, flashdisk …). Bukti: semua kartu satu ronde benar. Jebakan: 'lampu LED robot' (keluaran) dan 'sensor suhu' (masukan) tidak tampak seperti komputer. Layar sentuh sengaja tidak dipakai karena masukan sekaligus keluaran. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: binCount 2 → 3, itemCount 6 → 10. Paket: sd4-kode-perangkat-masuk-keluar."
+    },
+    {
+      "id": "KODE.SD4.CARI.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "CARI",
+        "nama": {
+          "id": "Pencarian",
+          "en": "Searching"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung berapa kartu yang dibuka saat mencari satu per satu dari kiri sampai ketemu",
+        "en": "I can count how many cards are turned over when searching one by one from the left until the item is found"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.ULANGI.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pencarian linear sebagai perulangan yang berhenti saat ketemu. Soal: posisi target, angka kembar (berhenti di yang pertama), target tidak ada (semua kartu dibuka), dan kasus terburuk 20 kartu. Pengecoh: nilai target dikira posisinya, atau panjang daftar. Jembatan ke bagi dua (SD6). Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd4-kode-cari-satu-satu."
+    },
+    {
+      "id": "KODE.SD4.JARINGAN.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "JARINGAN",
+        "nama": {
+          "id": "Jaringan dan internet",
+          "en": "Networks and the internet"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan perjalanan data dari perangkat pengirim, lewat router dan internet, sampai ke penerima",
+        "en": "I can put in order a piece of data's journey from the sending device, through a router and the internet, to the receiver"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Lima perjalanan (pesan, video, email, cetak lewat Wi-Fi, panggilan video), 4–5 tahap; memperkenalkan kata 'paket' (data dipecah lalu disusun lagi). Bukti: urutan persis. Jebakan: router dianggap 'internet' itu sendiri. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: steps 4 → 5. Paket: sd4-kode-perjalanan-pesan."
+    },
+    {
+      "id": "KODE.SD4.AMAN.01",
+      "track": "KODE",
+      "level": "SD4",
+      "unit": {
+        "id": "AMAN",
+        "nama": {
+          "id": "Aman di dunia digital",
+          "en": "Staying safe online"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah informasi yang boleh dibagikan dan yang harus dirahasiakan saat online dengan orang tak dikenal",
+        "en": "I can sort information that is OK to share from information to keep private when online with people I don't know"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Konteks dikunci di instruksi: 'di internet, kepada orang yang tidak kamu kenal'. Rahasia: kata sandi, alamat, nomor HP orang tua, OTP/PIN, lokasi, foto berseragam dengan nama sekolah, tanggal lahir lengkap. Jebakan: foto berseragam terasa tidak berbahaya. Kamus belum punya kode Stage 4 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: itemCount 6 → 10. Paket: sd4-kode-boleh-atau-rahasia."
+    }
+  ]
+}

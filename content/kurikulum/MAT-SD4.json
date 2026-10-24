@@ -1,0 +1,694 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.SD4.NILAI-TEMPAT.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "NILAI-TEMPAT",
+        "nama": {
+          "id": "Bilangan sampai 100.000",
+          "en": "Numbers to 100,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyebut nilai tiap angka pada bilangan sampai 100.000 menurut tempatnya, misalnya 7 pada 47.250 bernilai 7.000",
+        "en": "I can say the value of each digit in numbers up to 100,000 from its place, e.g. the 7 in 47,250 is worth 7,000"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Np.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Ni.01",
+          "note": "membaca dan menulis bilangan lebih dari 1.000"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Soal: nilai satu angka yang ditunjuk, atau menulis bilangan dari nama bilangan. Jebakan: menjawab angkanya saja (7) atau tempat yang bergeser satu (700/70.000); angka nol di tengah (40.305). Bukti: menyentuh nilai yang benar dari 4 pilihan; tiap pengecoh = satu salah paham nilai tempat."
+    },
+    {
+      "id": "MAT.SD4.NILAI-TEMPAT.02",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "NILAI-TEMPAT",
+        "nama": {
+          "id": "Bilangan sampai 100.000",
+          "en": "Numbers to 100,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan bilangan sampai 100.000 dari yang terkecil sampai yang terbesar",
+        "en": "I can order numbers up to 100,000 from smallest to largest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NILAI-TEMPAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Np.04",
+          "note": "bilangan positif; lambang < dan > dipakai di bimbingan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Kartu bilangan diacak, anak menyusun naik. Jebakan: angka sama urutan beda (45.099 · 45.909 · 45.990), banyak angka beda (9.870 < 10.020), nol di tengah. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD4.NILAI-TEMPAT.03",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "NILAI-TEMPAT",
+        "nama": {
+          "id": "Bilangan sampai 100.000",
+          "en": "Numbers to 100,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membulatkan bilangan ke ratusan atau ribuan terdekat, misalnya 3.500 menjadi 4.000 dan 4.349 menjadi 4.300",
+        "en": "I can round numbers to the nearest hundred or thousand, e.g. 3,500 becomes 4,000 and 4,349 becomes 4,300"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NILAI-TEMPAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Np.05",
+          "note": "ratusan dan ribuan; 10, 10 000, 100 000 belum dipakai"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Dua paket: rak ribuan terdekat dan rak ratusan terdekat. Jebakan: tepat setengah (3.500 naik, 4.350 naik), 3.499 turun, 4.050 turun ke 4.000 (lihat angka ratusan, bukan puluhan). Knob: 2 → 4 rak, 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD4.NILAI-TEMPAT.04",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "NILAI-TEMPAT",
+        "nama": {
+          "id": "Bilangan sampai 100.000",
+          "en": "Numbers to 100,000"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun uang pas sampai Rp100.000 dari uang 50 ribu, 20 ribu, 10 ribu, 5 ribu, 2 ribu, dan seribu",
+        "en": "I can make an exact amount up to Rp100,000 from 50,000, 20,000, 10,000, 5,000, 2,000 and 1,000 money"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NILAI-TEMPAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Np.03",
+          "note": "menyusun dan mengurai bilangan lewat pecahan uang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Harga total tampil (Rp27.000, Rp73.000); anak menaruh uang dari laci tepat sebesar harga. Jebakan: kelebihan (bayar 30 ribu untuk 27 ribu) dianggap belum karena pembeli minta uang pas. Knob: 1 → 2 barang per pembeli."
+    },
+    {
+      "id": "MAT.SD4.NEGATIF.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "NEGATIF",
+        "nama": {
+          "id": "Bilangan negatif",
+          "en": "Negative numbers"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan suhu dari yang terdingin ke yang terhangat, termasuk suhu di bawah nol",
+        "en": "I can order temperatures from coldest to warmest, including temperatures below zero"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NILAI-TEMPAT.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Np.04",
+          "note": "membandingkan dan mengurutkan bilangan positif dan negatif"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nc.01",
+          "note": "menghitung mundur melewati nol"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Termometer kota/lemari pendingin; anak menyusun kartu suhu. Jebakan utama: −12 dianggap lebih besar dari −5 karena angkanya besar. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD4.TAMBAH-KURANG.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "TAMBAH-KURANG",
+        "nama": {
+          "id": "Tambah dan kurang",
+          "en": "Addition and subtraction"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memberi kembalian yang tepat dari Rp50.000 atau Rp100.000 untuk harga ribuan",
+        "en": "I can give the right change from Rp50,000 or Rp100,000 for prices in thousands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NILAI-TEMPAT.04"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Ni.02",
+          "note": "mengurangi bilangan sampai tiga angka (dalam ribuan rupiah)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Pembeli membayar 50 ribu (harga < 50 ribu) atau 100 ribu; anak menyusun kembalian dari laci. Jebakan: meminjam di puluhan ribu (100 − 74 = 26, bukan 36). Bukti: jumlah kembalian tepat."
+    },
+    {
+      "id": "MAT.SD4.KALI-BAGI.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "KALI-BAGI",
+        "nama": {
+          "id": "Perkalian dan pembagian",
+          "en": "Multiplication and division"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasangkan fakta perkalian 1–10 dengan hasilnya, termasuk dua perkalian berbeda yang hasilnya sama",
+        "en": "I can match times-table facts from 1 to 10 to their products, including two different facts with the same product"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Ni.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu \"4 × 6\" dan \"3 × 8\" ke rak 24. Jebakan: 6 × 6 vs 6 × 8; 3 × 8 vs 3 × 6. Knob: 3 → 6 rak hasil, 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD4.KALI-BAGI.02",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "KALI-BAGI",
+        "nama": {
+          "id": "Perkalian dan pembagian",
+          "en": "Multiplication and division"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyelesaikan soal cerita perkalian bilangan sampai 1.000 dengan bilangan 1 angka dan pembagian sampai 100",
+        "en": "I can solve word problems multiplying numbers up to 1,000 by 1-digit numbers and dividing numbers up to 100"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Ni.05"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Ni.06"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Soal cerita pendek (kardus, rak, perahu). Termasuk sisa pembagian dan pembulatan ke atas (58 anak, perahu isi 5 → 12 perahu). Pengecoh: menjumlah alih-alih mengali, salah simpan, lupa sisa."
+    },
+    {
+      "id": "MAT.SD4.POLA-BILANGAN.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "POLA-BILANGAN",
+        "nama": {
+          "id": "Pola bilangan",
+          "en": "Number patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menentukan hasil penjumlahan atau pengurangan genap atau ganjil tanpa menghitung, dari genap-ganjilnya bilangan",
+        "en": "I can tell whether a sum or difference is even or odd without calculating, from whether the numbers are even or odd"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nc.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu \"37 + 45\" dipilah ke rak genap/ganjil. Aturan yang dicari: ganjil ± ganjil = genap, genap ± ganjil = ganjil. Bukti generalisasi: bilangan cukup besar sehingga menghitung lebih lambat daripada memakai aturan. Knob: 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD4.POLA-BILANGAN.02",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "POLA-BILANGAN",
+        "nama": {
+          "id": "Pola bilangan",
+          "en": "Number patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa melanjutkan barisan bilangan dan menyebut aturan suku ke suku, termasuk barisan yang melewati nol",
+        "en": "I can continue number sequences and describe the term-to-term rule, including sequences that go below zero"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NEGATIF.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nc.04"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nc.01",
+          "note": "melangkah tetap melewati nol"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Barisan linear (+4, −6, +250) dan tak linear (kali 2, selisih bertambah). Dua jenis soal: suku berikutnya, atau aturan (\"tambah 4\"). Jebakan: aturan dari dua suku pertama saja; barisan turun melewati nol."
+    },
+    {
+      "id": "MAT.SD4.PECAHAN.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan",
+          "en": "Fractions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah pecahan yang senilai, misalnya 2/4, 3/6, dan 5/10 sama dengan 1/2",
+        "en": "I can sort equivalent fractions, e.g. 2/4, 3/6 and 5/10 are all equal to 1/2"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nf.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak 1/2, 1/3, 3/4, 1/5; kartu 2/4, 3/9, 9/12, 2/10, …. Jebakan: 2/6 masuk rak 1/2 (melihat pembilang 2), 6/8 vs 3/4. Knob: 2 → 4 rak, 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD4.PECAHAN.02",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan",
+          "en": "Fractions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan pecahan dari yang terkecil, memakai penyebut sama, pembilang sama, atau pecahan senilai",
+        "en": "I can order fractions from smallest, using same denominators, same numerators or equivalent fractions"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.PECAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nf.07"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Nf.01",
+          "note": "makin banyak bagian, makin kecil tiap bagian"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Kartu pecahan diacak lalu disusun naik. Jebakan utama: 1/8 dianggap lebih besar dari 1/5 karena 8 > 5; urutan campuran (1/8, 1/4, 1/2, 5/8, 3/4) butuh pecahan senilai. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD4.WAKTU.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "WAKTU",
+        "nama": {
+          "id": "Waktu",
+          "en": "Time"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengubah waktu antara format 12 jam dan 24 jam, misalnya pukul 3.15 sore sama dengan 15.15",
+        "en": "I can convert times between 12-hour and 24-hour notation, e.g. 3:15 p.m. is 15:15"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gt.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Dua arah: 12 jam → 24 jam dan sebaliknya; pagi/siang/sore/malam sebagai penanda a.m./p.m. Jebakan: +10 alih-alih +12 (3.15 sore → 13.15), tengah malam 00.10 vs 12.10, siang 12.30 tetap 12.30."
+    },
+    {
+      "id": "MAT.SD4.WAKTU.02",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "WAKTU",
+        "nama": {
+          "id": "Waktu",
+          "en": "Time"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membaca jadwal dan menghitung lama kegiatan dalam jam dan menit, serta mengubah satuan waktu",
+        "en": "I can read timetables, work out how long activities last in hours and minutes, and convert units of time"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.WAKTU.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gt.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gt.04",
+          "note": "menit dan jam tanpa melewati 60"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gt.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Selang waktu di Stage 4 sengaja tidak melewati batas 60 menit (15.10 → 15.55); yang melewati 60 ada di SD5. Termasuk konversi jam↔menit, minggu↔hari, tahun↔bulan, dan jadwal bus."
+    },
+    {
+      "id": "MAT.SD4.GEOMETRI.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah sudut menjadi lancip, siku-siku, atau tumpul, dari besar sudut atau dari jarum jam",
+        "en": "I can sort angles into acute, right or obtuse, from their size in degrees or from clock hands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gg.08"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu derajat (35°, 90°, 120°) dan jam bulat (sudut kecil antara dua jarum: pukul 3 = siku-siku, pukul 4 = tumpul). Jebakan: 89° dan 91° di sekitar siku-siku. Knob: 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD4.GEOMETRI.02",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung keliling dan luas persegi panjang dan persegi dari panjang sisinya",
+        "en": "I can work out the perimeter and area of rectangles and squares from their side lengths"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gg.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gg.02",
+          "note": "luas bangun gabungan = jumlah dua luas"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Soal hitung dan soal terbalik (luas 32 cm², lebar 4 cm → panjang). Pengecoh selalu memuat keliling-untuk-luas dan satuan salah (cm vs cm²)."
+    },
+    {
+      "id": "MAT.SD4.GEOMETRI.03",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah huruf dan bangun menurut banyak garis simetrinya: tidak ada, satu, atau dua",
+        "en": "I can sort letters and shapes by their number of lines of symmetry: none, one or two"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gg.07"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Huruf kapital dipilih yang simetrinya tidak bergantung huruf (font): H, I, X dua garis; A, M, T, U, V, W, Y satu garis tegak; F, G, J, L, N, P, R, S, Z tidak ada. Bangun: persegi panjang 2, segitiga sama kaki 1. Pengaya."
+    },
+    {
+      "id": "MAT.SD4.POSISI.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "POSISI",
+        "nama": {
+          "id": "Posisi dan arah",
+          "en": "Position and direction"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun program gerak dengan belok seperempat putaran (90°) ke kiri atau kanan agar sampai tujuan dengan blok paling sedikit",
+        "en": "I can build a movement program with quarter turns (90°) left or right to reach a target with the fewest blocks"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.GEOMETRI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Gp.01",
+          "note": "arah dan gerak; belok kanan/kiri = seperempat putaran"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Rak program dibatasi sebanyak blok terpendek, jadi jalan memutar tidak muat. Jebakan: arah hadap awal robot bukan ke atas; dinding memaksa belok dua kali. Pengaya, bersinggungan dengan KODE."
+    },
+    {
+      "id": "MAT.SD4.DATA.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Data",
+          "en": "Data"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bilangan ke diagram Carroll dengan dua sifat sekaligus, misalnya genap dan lebih dari 50",
+        "en": "I can sort numbers into a Carroll diagram using two properties at once, e.g. even and more than 50"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.POLA-BILANGAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Ss.02",
+          "note": "diagram Carroll"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Empat rak = empat sel diagram Carroll 2 × 2. Jebakan: 50 (genap, tidak lebih dari 50), 51; hanya memperhatikan satu sifat. Knob: 8 → 12 kartu."
+    },
+    {
+      "id": "MAT.SD4.PELUANG.01",
+      "track": "MAT",
+      "level": "SD4",
+      "unit": {
+        "id": "PELUANG",
+        "nama": {
+          "id": "Peluang",
+          "en": "Chance"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menggambarkan peluang kejadian dengan kata pasti, kemungkinan besar, peluang sama, kemungkinan kecil, atau mustahil",
+        "en": "I can describe the chance of events as certain, likely, even chance, unlikely or impossible"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "4Sp.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kejadian dibuat terukur supaya jawabannya tunggal: dadu biasa, kantong kelereng, roda putar bagian sama, plus beberapa fakta sehari-hari. Jebakan: \"mungkin\" untuk semua yang tidak pasti; kantong 9 merah 1 biru."
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "id": "sd6-sains-jalur-energi-sawah",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.JARING-MAKANAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jalur Energi di Sawah",
+      "instruksi": "Susun jalur energi dari Matahari sampai pemakan puncak.",
+      "s-j1": "Jalur 1 di jaring sawah",
+      "j1-matahari": "Matahari: sumber energi",
+      "j1-padi": "padi (produsen)",
+      "j1-belalang": "belalang",
+      "j1-katak": "katak",
+      "j1-ular": "ular sawah",
+      "j1-elang": "elang",
+      "s-j2": "Jalur 2 di jaring sawah",
+      "j2-matahari": "Matahari: sumber energi",
+      "j2-padi": "padi (produsen)",
+      "j2-tikus": "tikus sawah",
+      "j2-ular": "ular sawah",
+      "j2-elang": "elang",
+      "s-j3": "Jalur 3 di jaring sawah",
+      "j3-matahari": "Matahari: sumber energi",
+      "j3-padi": "padi (produsen)",
+      "j3-pipit": "burung pipit",
+      "j3-elang": "elang",
+      "s-j4": "Jalur di jaring kolam",
+      "j4-matahari": "Matahari: sumber energi",
+      "j4-ganggang": "ganggang (produsen)",
+      "j4-ikankecil": "ikan kecil",
+      "j4-bangau": "burung bangau"
+    },
+    "en": {
+      "judul": "Energy Paths in the Rice Field",
+      "instruksi": "Put the energy path in order from the Sun to the top consumer.",
+      "s-j1": "Path 1 in the rice-field web",
+      "j1-matahari": "the Sun: source of energy",
+      "j1-padi": "rice plant (producer)",
+      "j1-belalang": "grasshopper",
+      "j1-katak": "frog",
+      "j1-ular": "rice-field snake",
+      "j1-elang": "eagle",
+      "s-j2": "Path 2 in the rice-field web",
+      "j2-matahari": "the Sun: source of energy",
+      "j2-padi": "rice plant (producer)",
+      "j2-tikus": "field rat",
+      "j2-ular": "rice-field snake",
+      "j2-elang": "eagle",
+      "s-j3": "Path 3 in the rice-field web",
+      "j3-matahari": "the Sun: source of energy",
+      "j3-padi": "rice plant (producer)",
+      "j3-pipit": "sparrow",
+      "j3-elang": "eagle",
+      "s-j4": "A path in the pond web",
+      "j4-matahari": "the Sun: source of energy",
+      "j4-ganggang": "algae (producer)",
+      "j4-ikankecil": "small fish",
+      "j4-bangau": "heron"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah mata rantai dari Matahari: 4 → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "j1",
+      "titleKey": "s-j1",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j1-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "j1-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "j1-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "katak",
+          "labelKey": "j1-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "ular",
+          "labelKey": "j1-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "j1-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "j2",
+      "titleKey": "s-j2",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j2-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "j2-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "tikus",
+          "labelKey": "j2-tikus",
+          "emoji": "🐀"
+        },
+        {
+          "id": "ular",
+          "labelKey": "j2-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "j2-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "j3",
+      "titleKey": "s-j3",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j3-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "j3-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "pipit",
+          "labelKey": "j3-pipit",
+          "emoji": "🐦"
+        },
+        {
+          "id": "elang",
+          "labelKey": "j3-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "j4",
+      "titleKey": "s-j4",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j4-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "ganggang",
+          "labelKey": "j4-ganggang",
+          "emoji": "🟩"
+        },
+        {
+          "id": "ikankecil",
+          "labelKey": "j4-ikankecil",
+          "emoji": "🐟"
+        },
+        {
+          "id": "bangau",
+          "labelKey": "j4-bangau",
+          "emoji": "🐦"
+        }
+      ]
+    }
+  ]
+}

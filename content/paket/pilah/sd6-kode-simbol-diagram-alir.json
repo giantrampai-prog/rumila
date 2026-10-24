@@ -1,0 +1,186 @@
+{
+  "id": "sd6-kode-simbol-diagram-alir",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.FLOWCHART.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Simbol Diagram Alir",
+      "instruksi": "Seret tiap langkah ke bentuk diagram alirnya: oval untuk mulai/selesai, jajar genjang untuk masukan/keluaran, persegi untuk proses, belah ketupat untuk keputusan.",
+      "bin-oval": "mulai / selesai",
+      "bin-io": "masukan / keluaran",
+      "bin-proses": "proses",
+      "bin-keputusan": "keputusan",
+      "i1": "Mulai",
+      "i2": "Selesai",
+      "i3": "Baca suhu dari sensor",
+      "i4": "Minta nama pengguna",
+      "i5": "Tampilkan 'Halo'",
+      "i6": "Cetak struk",
+      "i7": "total = harga × 2",
+      "i8": "skor = skor + 1",
+      "i9": "Ubah °C ke °F",
+      "i10": "rata = jumlah / 3",
+      "i11": "Suhu > 30?",
+      "i12": "Sudah 10 kali?",
+      "i13": "Jawaban benar?",
+      "i14": "Baterai < 20%?"
+    },
+    "en": {
+      "judul": "Flowchart Symbols",
+      "instruksi": "Drag each step to its flowchart shape: oval for start/end, parallelogram for input/output, rectangle for process, diamond for decision.",
+      "bin-oval": "start / end",
+      "bin-io": "input / output",
+      "bin-proses": "process",
+      "bin-keputusan": "decision",
+      "i1": "Start",
+      "i2": "End",
+      "i3": "Read temperature from sensor",
+      "i4": "Ask for the user's name",
+      "i5": "Show 'Hello'",
+      "i6": "Print the receipt",
+      "i7": "total = price × 2",
+      "i8": "score = score + 1",
+      "i9": "Convert °C to °F",
+      "i10": "mean = total / 3",
+      "i11": "Temperature > 30?",
+      "i12": "Done 10 times?",
+      "i13": "Answer correct?",
+      "i14": "Battery < 20%?"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah bentuk aktif (urutan: oval, masukan/keluaran, proses, keputusan)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah langkah per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "oval",
+      "labelKey": "bin-oval",
+      "emoji": "⬭"
+    },
+    {
+      "id": "io",
+      "labelKey": "bin-io",
+      "emoji": "▱"
+    },
+    {
+      "id": "proses",
+      "labelKey": "bin-proses",
+      "emoji": "▭"
+    },
+    {
+      "id": "keputusan",
+      "labelKey": "bin-keputusan",
+      "emoji": "◇"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "oval",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "oval",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "keputusan",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "keputusan",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "keputusan",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "keputusan",
+      "scale": 0.5
+    }
+  ]
+}

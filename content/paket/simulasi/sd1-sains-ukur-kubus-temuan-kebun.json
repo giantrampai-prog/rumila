@@ -1,0 +1,116 @@
+{
+  "id": "sd1-sains-ukur-kubus-temuan-kebun",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.SD1.PENGAMATAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ukur Temuan di Kebun",
+      "instruksi": "Sejajarkan ujung temuan dengan kubus nomor satu, lalu baca ujung satunya.",
+      "ulat": "ulat",
+      "daunjambu": "daun jambu",
+      "bulu": "bulu burung",
+      "cacing": "cacing tanah",
+      "ranting": "ranting kecil",
+      "buncis": "buncis",
+      "jagung": "jagung",
+      "daunpisang": "sobekan daun pisang"
+    },
+    "en": {
+      "judul": "Measure Garden Finds",
+      "instruksi": "Line up one end of the find with cube number one, then read the other end.",
+      "ulat": "caterpillar",
+      "daunjambu": "guava leaf",
+      "bulu": "bird feather",
+      "cacing": "earthworm",
+      "ranting": "small twig",
+      "buncis": "green bean",
+      "jagung": "corn cob",
+      "daunpisang": "strip of banana leaf"
+    }
+  },
+  "knobs": {
+    "offset": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = temuan sudah sejajar kubus pertama; 1 = temuan mulai di kubus ke-2 (jebakan: hitung dari ujung temuan, bukan dari angka 1)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kubus",
+  "items": [
+    {
+      "id": "ulat",
+      "labelKey": "ulat",
+      "role": "benda",
+      "emoji": "🐛",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "id": "daunjambu",
+      "labelKey": "daunjambu",
+      "role": "benda",
+      "emoji": "🍃",
+      "value": 4,
+      "width": 1.6
+    },
+    {
+      "id": "bulu",
+      "labelKey": "bulu",
+      "role": "benda",
+      "emoji": "🪶",
+      "value": 5,
+      "width": 2.0
+    },
+    {
+      "id": "cacing",
+      "labelKey": "cacing",
+      "role": "benda",
+      "emoji": "🪱",
+      "value": 6,
+      "width": 2.4
+    },
+    {
+      "id": "ranting",
+      "labelKey": "ranting",
+      "role": "benda",
+      "emoji": "🌿",
+      "value": 7,
+      "width": 2.8
+    },
+    {
+      "id": "buncis",
+      "labelKey": "buncis",
+      "role": "benda",
+      "emoji": "🫛",
+      "value": 8,
+      "width": 3.2
+    },
+    {
+      "id": "jagung",
+      "labelKey": "jagung",
+      "role": "benda",
+      "emoji": "🌽",
+      "value": 9,
+      "width": 3.6
+    },
+    {
+      "id": "daunpisang",
+      "labelKey": "daunpisang",
+      "role": "benda",
+      "emoji": "🌱",
+      "value": 10,
+      "width": 4.0
+    }
+  ]
+}

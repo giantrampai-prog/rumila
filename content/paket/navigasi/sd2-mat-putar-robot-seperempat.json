@@ -1,0 +1,254 @@
+{
+  "id": "sd2-mat-putar-robot-seperempat",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "MAT.SD2.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Putar Seperempat, Putar Setengah",
+      "instruksi": "Kanan = seperempat putaran searah jarum jam, kiri = berlawanan. Dua kali = setengah putaran. Bawa robot ke bintang."
+    },
+    "en": {
+      "judul": "Quarter Turn, Half Turn",
+      "instruksi": "Right is a quarter turn clockwise, left is anticlockwise. Twice is a half turn. Take the robot to the star."
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "taman",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "debug": false,
+  "semuaGrid": false,
+  "prediksi": false,
+  "grids": [
+    {
+      "id": "balik-selatan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "balik-barat",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "balik-utara",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "balik-timur",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "seperempat-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7
+    },
+    {
+      "id": "seperempat-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7
+    },
+    {
+      "id": "balik-lalu-belok",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "balik-dinding",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "seperempat-dinding",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "balik-jauh",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "kanan-kanan-kiri",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9
+    },
+    {
+      "id": "kiri-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    }
+  ]
+}

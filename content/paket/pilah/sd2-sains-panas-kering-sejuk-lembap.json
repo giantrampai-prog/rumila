@@ -1,0 +1,136 @@
+{
+  "id": "sd2-sains-panas-kering-sejuk-lembap",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.HABITAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Panas-Kering atau Sejuk-Lembap?",
+      "instruksi": "Rasakan tiap tempat, lalu taruh ke rak panas-kering atau sejuk-lembap.",
+      "b-panas": "panas dan kering",
+      "b-lembap": "sejuk dan lembap",
+      "i-aspal": "jalan aspal siang hari",
+      "i-pasir": "pasir terkena Matahari",
+      "i-atap": "atap seng siang hari",
+      "i-lapangan": "lapangan tanpa pohon",
+      "i-batuterjemur": "batu besar di bawah terik",
+      "i-bawahbatu": "tanah di bawah batu",
+      "i-bawahpohon": "tanah di bawah pohon rindang",
+      "i-tepikolam": "tepi kolam",
+      "i-daun": "tumpukan daun basah",
+      "i-pot": "pot yang baru disiram"
+    },
+    "en": {
+      "judul": "Hot and Dry or Cool and Damp?",
+      "instruksi": "Imagine feeling each place, then put it on the hot-and-dry or cool-and-damp shelf.",
+      "b-panas": "hot and dry",
+      "b-lembap": "cool and damp",
+      "i-aspal": "road at midday",
+      "i-pasir": "sand in the sunshine",
+      "i-atap": "tin roof at midday",
+      "i-lapangan": "field with no trees",
+      "i-batuterjemur": "big rock in strong sun",
+      "i-bawahbatu": "soil under a stone",
+      "i-bawahpohon": "soil under a shady tree",
+      "i-tepikolam": "edge of the pond",
+      "i-daun": "pile of wet leaves",
+      "i-pot": "freshly watered pot"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "panas",
+      "labelKey": "b-panas",
+      "emoji": "☀️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "lembap",
+      "labelKey": "b-lembap",
+      "emoji": "💧",
+      "color": "#e0f2f1"
+    }
+  ],
+  "items": [
+    {
+      "id": "aspal",
+      "labelKey": "i-aspal",
+      "bin": "panas",
+      "emoji": "🛣️"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "panas",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "atap",
+      "labelKey": "i-atap",
+      "bin": "panas",
+      "emoji": "🏠"
+    },
+    {
+      "id": "lapangan",
+      "labelKey": "i-lapangan",
+      "bin": "panas",
+      "emoji": "🏟️"
+    },
+    {
+      "id": "batuterjemur",
+      "labelKey": "i-batuterjemur",
+      "bin": "panas",
+      "emoji": "🪨",
+      "color": "#ffcc80"
+    },
+    {
+      "id": "bawahbatu",
+      "labelKey": "i-bawahbatu",
+      "bin": "lembap",
+      "emoji": "🪨"
+    },
+    {
+      "id": "bawahpohon",
+      "labelKey": "i-bawahpohon",
+      "bin": "lembap",
+      "emoji": "🌳"
+    },
+    {
+      "id": "tepikolam",
+      "labelKey": "i-tepikolam",
+      "bin": "lembap",
+      "emoji": "💧"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "lembap",
+      "emoji": "🍂"
+    },
+    {
+      "id": "pot",
+      "labelKey": "i-pot",
+      "bin": "lembap",
+      "emoji": "🪴"
+    }
+  ],
+  "pilihan": []
+}

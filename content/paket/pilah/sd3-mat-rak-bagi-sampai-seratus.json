@@ -1,0 +1,418 @@
+{
+  "id": "sd3-mat-rak-bagi-sampai-seratus",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.KALI-BAGI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagi Sampai Seratus",
+      "instruksi": "75 ÷ 3 artinya berapa kali tiga menjadi 75. Taruh tiap kartu di rak hasilnya.",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-12": "12",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-20": "20",
+      "b-25": "25",
+      "i-12bagi2": "12÷2",
+      "i-18bagi3": "18÷3",
+      "i-24bagi4": "24÷4",
+      "i-30bagi5": "30÷5",
+      "i-14bagi2": "14÷2",
+      "i-21bagi3": "21÷3",
+      "i-28bagi4": "28÷4",
+      "i-35bagi5": "35÷5",
+      "i-16bagi2": "16÷2",
+      "i-24bagi3": "24÷3",
+      "i-32bagi4": "32÷4",
+      "i-40bagi5": "40÷5",
+      "i-18bagi2": "18÷2",
+      "i-27bagi3": "27÷3",
+      "i-36bagi4": "36÷4",
+      "i-45bagi5": "45÷5",
+      "i-24bagi2": "24÷2",
+      "i-36bagi3": "36÷3",
+      "i-48bagi4": "48÷4",
+      "i-60bagi5": "60÷5",
+      "i-28bagi2": "28÷2",
+      "i-42bagi3": "42÷3",
+      "i-56bagi4": "56÷4",
+      "i-70bagi5": "70÷5",
+      "i-30bagi2": "30÷2",
+      "i-45bagi3": "45÷3",
+      "i-60bagi4": "60÷4",
+      "i-75bagi5": "75÷5",
+      "i-32bagi2": "32÷2",
+      "i-48bagi3": "48÷3",
+      "i-64bagi4": "64÷4",
+      "i-80bagi5": "80÷5",
+      "i-40bagi2": "40÷2",
+      "i-60bagi3": "60÷3",
+      "i-80bagi4": "80÷4",
+      "i-100bagi5": "100÷5",
+      "i-50bagi2": "50÷2",
+      "i-75bagi3": "75÷3",
+      "i-100bagi4": "100÷4"
+    },
+    "en": {
+      "judul": "Dividing Up to 100",
+      "instruksi": "75 ÷ 3 asks how many threes make 75. Put each card on its answer shelf.",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-12": "12",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-20": "20",
+      "b-25": "25",
+      "i-12bagi2": "12÷2",
+      "i-18bagi3": "18÷3",
+      "i-24bagi4": "24÷4",
+      "i-30bagi5": "30÷5",
+      "i-14bagi2": "14÷2",
+      "i-21bagi3": "21÷3",
+      "i-28bagi4": "28÷4",
+      "i-35bagi5": "35÷5",
+      "i-16bagi2": "16÷2",
+      "i-24bagi3": "24÷3",
+      "i-32bagi4": "32÷4",
+      "i-40bagi5": "40÷5",
+      "i-18bagi2": "18÷2",
+      "i-27bagi3": "27÷3",
+      "i-36bagi4": "36÷4",
+      "i-45bagi5": "45÷5",
+      "i-24bagi2": "24÷2",
+      "i-36bagi3": "36÷3",
+      "i-48bagi4": "48÷4",
+      "i-60bagi5": "60÷5",
+      "i-28bagi2": "28÷2",
+      "i-42bagi3": "42÷3",
+      "i-56bagi4": "56÷4",
+      "i-70bagi5": "70÷5",
+      "i-30bagi2": "30÷2",
+      "i-45bagi3": "45÷3",
+      "i-60bagi4": "60÷4",
+      "i-75bagi5": "75÷5",
+      "i-32bagi2": "32÷2",
+      "i-48bagi3": "48÷3",
+      "i-64bagi4": "64÷4",
+      "i-80bagi5": "80÷5",
+      "i-40bagi2": "40÷2",
+      "i-60bagi3": "60÷3",
+      "i-80bagi4": "80÷4",
+      "i-100bagi5": "100÷5",
+      "i-50bagi2": "50÷2",
+      "i-75bagi3": "75÷3",
+      "i-100bagi4": "100÷4"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak hasil aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "q6",
+      "labelKey": "b-6"
+    },
+    {
+      "id": "q7",
+      "labelKey": "b-7"
+    },
+    {
+      "id": "q8",
+      "labelKey": "b-8"
+    },
+    {
+      "id": "q9",
+      "labelKey": "b-9"
+    },
+    {
+      "id": "q12",
+      "labelKey": "b-12"
+    },
+    {
+      "id": "q14",
+      "labelKey": "b-14"
+    },
+    {
+      "id": "q15",
+      "labelKey": "b-15"
+    },
+    {
+      "id": "q16",
+      "labelKey": "b-16"
+    },
+    {
+      "id": "q20",
+      "labelKey": "b-20"
+    },
+    {
+      "id": "q25",
+      "labelKey": "b-25"
+    }
+  ],
+  "items": [
+    {
+      "id": "q6-12bagi2",
+      "labelKey": "i-12bagi2",
+      "bin": "q6",
+      "scale": 0.7
+    },
+    {
+      "id": "q6-18bagi3",
+      "labelKey": "i-18bagi3",
+      "bin": "q6",
+      "scale": 0.7
+    },
+    {
+      "id": "q6-24bagi4",
+      "labelKey": "i-24bagi4",
+      "bin": "q6",
+      "scale": 0.7
+    },
+    {
+      "id": "q6-30bagi5",
+      "labelKey": "i-30bagi5",
+      "bin": "q6",
+      "scale": 0.7
+    },
+    {
+      "id": "q7-14bagi2",
+      "labelKey": "i-14bagi2",
+      "bin": "q7",
+      "scale": 0.7
+    },
+    {
+      "id": "q7-21bagi3",
+      "labelKey": "i-21bagi3",
+      "bin": "q7",
+      "scale": 0.7
+    },
+    {
+      "id": "q7-28bagi4",
+      "labelKey": "i-28bagi4",
+      "bin": "q7",
+      "scale": 0.7
+    },
+    {
+      "id": "q7-35bagi5",
+      "labelKey": "i-35bagi5",
+      "bin": "q7",
+      "scale": 0.7
+    },
+    {
+      "id": "q8-16bagi2",
+      "labelKey": "i-16bagi2",
+      "bin": "q8",
+      "scale": 0.7
+    },
+    {
+      "id": "q8-24bagi3",
+      "labelKey": "i-24bagi3",
+      "bin": "q8",
+      "scale": 0.7
+    },
+    {
+      "id": "q8-32bagi4",
+      "labelKey": "i-32bagi4",
+      "bin": "q8",
+      "scale": 0.7
+    },
+    {
+      "id": "q8-40bagi5",
+      "labelKey": "i-40bagi5",
+      "bin": "q8",
+      "scale": 0.7
+    },
+    {
+      "id": "q9-18bagi2",
+      "labelKey": "i-18bagi2",
+      "bin": "q9",
+      "scale": 0.7
+    },
+    {
+      "id": "q9-27bagi3",
+      "labelKey": "i-27bagi3",
+      "bin": "q9",
+      "scale": 0.7
+    },
+    {
+      "id": "q9-36bagi4",
+      "labelKey": "i-36bagi4",
+      "bin": "q9",
+      "scale": 0.7
+    },
+    {
+      "id": "q9-45bagi5",
+      "labelKey": "i-45bagi5",
+      "bin": "q9",
+      "scale": 0.7
+    },
+    {
+      "id": "q12-24bagi2",
+      "labelKey": "i-24bagi2",
+      "bin": "q12",
+      "scale": 0.7
+    },
+    {
+      "id": "q12-36bagi3",
+      "labelKey": "i-36bagi3",
+      "bin": "q12",
+      "scale": 0.7
+    },
+    {
+      "id": "q12-48bagi4",
+      "labelKey": "i-48bagi4",
+      "bin": "q12",
+      "scale": 0.7
+    },
+    {
+      "id": "q12-60bagi5",
+      "labelKey": "i-60bagi5",
+      "bin": "q12",
+      "scale": 0.7
+    },
+    {
+      "id": "q14-28bagi2",
+      "labelKey": "i-28bagi2",
+      "bin": "q14",
+      "scale": 0.7
+    },
+    {
+      "id": "q14-42bagi3",
+      "labelKey": "i-42bagi3",
+      "bin": "q14",
+      "scale": 0.7
+    },
+    {
+      "id": "q14-56bagi4",
+      "labelKey": "i-56bagi4",
+      "bin": "q14",
+      "scale": 0.7
+    },
+    {
+      "id": "q14-70bagi5",
+      "labelKey": "i-70bagi5",
+      "bin": "q14",
+      "scale": 0.7
+    },
+    {
+      "id": "q15-30bagi2",
+      "labelKey": "i-30bagi2",
+      "bin": "q15",
+      "scale": 0.7
+    },
+    {
+      "id": "q15-45bagi3",
+      "labelKey": "i-45bagi3",
+      "bin": "q15",
+      "scale": 0.7
+    },
+    {
+      "id": "q15-60bagi4",
+      "labelKey": "i-60bagi4",
+      "bin": "q15",
+      "scale": 0.7
+    },
+    {
+      "id": "q15-75bagi5",
+      "labelKey": "i-75bagi5",
+      "bin": "q15",
+      "scale": 0.7
+    },
+    {
+      "id": "q16-32bagi2",
+      "labelKey": "i-32bagi2",
+      "bin": "q16",
+      "scale": 0.7
+    },
+    {
+      "id": "q16-48bagi3",
+      "labelKey": "i-48bagi3",
+      "bin": "q16",
+      "scale": 0.7
+    },
+    {
+      "id": "q16-64bagi4",
+      "labelKey": "i-64bagi4",
+      "bin": "q16",
+      "scale": 0.7
+    },
+    {
+      "id": "q16-80bagi5",
+      "labelKey": "i-80bagi5",
+      "bin": "q16",
+      "scale": 0.7
+    },
+    {
+      "id": "q20-40bagi2",
+      "labelKey": "i-40bagi2",
+      "bin": "q20",
+      "scale": 0.7
+    },
+    {
+      "id": "q20-60bagi3",
+      "labelKey": "i-60bagi3",
+      "bin": "q20",
+      "scale": 0.7
+    },
+    {
+      "id": "q20-80bagi4",
+      "labelKey": "i-80bagi4",
+      "bin": "q20",
+      "scale": 0.7
+    },
+    {
+      "id": "q20-100bagi5",
+      "labelKey": "i-100bagi5",
+      "bin": "q20",
+      "scale": 0.6
+    },
+    {
+      "id": "q25-50bagi2",
+      "labelKey": "i-50bagi2",
+      "bin": "q25",
+      "scale": 0.7
+    },
+    {
+      "id": "q25-75bagi3",
+      "labelKey": "i-75bagi3",
+      "bin": "q25",
+      "scale": 0.7
+    },
+    {
+      "id": "q25-100bagi4",
+      "labelKey": "i-100bagi4",
+      "bin": "q25",
+      "scale": 0.6
+    }
+  ]
+}

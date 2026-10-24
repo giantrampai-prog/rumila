@@ -1,0 +1,191 @@
+{
+  "id": "sd5-mat-prima-50-sampai-100",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.FAKTOR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Prima di Atas 50",
+      "instruksi": "Semua kartu ganjil! Cari faktornya: kalau hanya 1 dan dirinya, berarti prima.",
+      "b-prima": "prima",
+      "b-komposit": "komposit",
+      "i1": "53",
+      "i2": "59",
+      "i3": "61",
+      "i4": "67",
+      "i5": "71",
+      "i6": "73",
+      "i7": "79",
+      "i8": "83",
+      "i9": "89",
+      "i10": "97",
+      "i11": "51",
+      "i12": "57",
+      "i13": "63",
+      "i14": "69",
+      "i15": "77",
+      "i16": "81",
+      "i17": "87",
+      "i18": "91",
+      "i19": "93",
+      "i20": "99"
+    },
+    "en": {
+      "judul": "Primes Above 50",
+      "instruksi": "Every card is odd! Look for factors: if only 1 and itself, it is prime.",
+      "b-prima": "prime",
+      "b-komposit": "composite",
+      "i1": "53",
+      "i2": "59",
+      "i3": "61",
+      "i4": "67",
+      "i5": "71",
+      "i6": "73",
+      "i7": "79",
+      "i8": "83",
+      "i9": "89",
+      "i10": "97",
+      "i11": "51",
+      "i12": "57",
+      "i13": "63",
+      "i14": "69",
+      "i15": "77",
+      "i16": "81",
+      "i17": "87",
+      "i18": "91",
+      "i19": "93",
+      "i20": "99"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "prima",
+      "labelKey": "b-prima"
+    },
+    {
+      "id": "komposit",
+      "labelKey": "b-komposit"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "prima"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "prima"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "prima"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "prima"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "prima"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "prima"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "prima"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "prima"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "prima"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "prima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "komposit"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "komposit"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "komposit"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "komposit"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "komposit"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "komposit"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "komposit"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "komposit"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i19",
+      "bin": "komposit"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i20",
+      "bin": "komposit"
+    }
+  ]
+}

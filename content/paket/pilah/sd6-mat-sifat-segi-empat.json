@@ -1,0 +1,370 @@
+{
+  "id": "sd6-mat-sifat-segi-empat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sifat Segi Empat",
+      "instruksi": "Pikirkan sisi, sudut, simetri, dan diagonal tiap bangun. Sentuh jawaban yang benar.",
+      "q1": "Sifat mana yang dimiliki belah ketupat tetapi tidak dimiliki persegi panjang biasa?",
+      "c1": "4 sisi sama panjang",
+      "c2": "4 sudut siku-siku",
+      "c3": "diagonal sama panjang",
+      "c4": "tidak ada sisi sejajar",
+      "q2": "Sifat mana yang dimiliki persegi panjang tetapi tidak dimiliki jajargenjang biasa?",
+      "c5": "sisi berhadapan sejajar",
+      "c6": "sisi berhadapan sama",
+      "q3": "Sifat mana yang benar untuk SEMUA jajargenjang?",
+      "c7": "diagonal tegak lurus",
+      "q4": "Sifat mana yang benar untuk SEMUA layang-layang?",
+      "c8": "dua pasang sisi sejajar",
+      "q5": "Sifat mana yang benar untuk SEMUA trapesium?",
+      "c9": "tepat sepasang sisi sejajar",
+      "q6": "Berapa garis simetri persegi panjang yang bukan persegi?",
+      "c10": "2",
+      "c11": "4",
+      "c12": "1",
+      "c13": "0",
+      "q7": "Berapa garis simetri belah ketupat yang bukan persegi?",
+      "q8": "Berapa garis simetri jajargenjang yang bukan persegi panjang dan bukan belah ketupat?",
+      "q9": "Berapa pasang sisi sejajar pada layang-layang yang bukan belah ketupat?",
+      "q10": "Segi empat dengan diagonal sama panjang, saling membagi dua, dan tidak tegak lurus adalah …",
+      "c14": "persegi panjang",
+      "c15": "persegi",
+      "c16": "belah ketupat",
+      "c17": "layang-layang",
+      "q11": "Segi empat dengan diagonal tegak lurus dan saling membagi dua, tetapi tidak sama panjang, adalah …",
+      "c18": "trapesium",
+      "q12": "Berapa jumlah semua sudut dalam segi empat apa pun?",
+      "c19": "360°",
+      "c20": "180°",
+      "c21": "90°",
+      "c22": "400°",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Quadrilateral Properties",
+      "instruksi": "Think about the sides, angles, symmetry and diagonals of each shape. Touch the right answer.",
+      "q1": "Which property does a rhombus have that an ordinary rectangle does not?",
+      "c1": "4 equal sides",
+      "c2": "4 right angles",
+      "c3": "equal diagonals",
+      "c4": "no parallel sides",
+      "q2": "Which property does a rectangle have that an ordinary parallelogram does not?",
+      "c5": "opposite sides parallel",
+      "c6": "opposite sides equal",
+      "q3": "Which property is true for EVERY parallelogram?",
+      "c7": "perpendicular diagonals",
+      "q4": "Which property is true for EVERY kite?",
+      "c8": "two pairs of parallel sides",
+      "q5": "Which property is true for EVERY trapezium?",
+      "c9": "exactly one pair of parallel sides",
+      "q6": "How many lines of symmetry does a non-square rectangle have?",
+      "c10": "2",
+      "c11": "4",
+      "c12": "1",
+      "c13": "0",
+      "q7": "How many lines of symmetry does a non-square rhombus have?",
+      "q8": "How many lines of symmetry does a parallelogram that is not a rectangle or rhombus have?",
+      "q9": "How many pairs of parallel sides does a kite that is not a rhombus have?",
+      "q10": "A quadrilateral whose diagonals are equal, bisect each other and are not perpendicular is a …",
+      "c14": "rectangle",
+      "c15": "square",
+      "c16": "rhombus",
+      "c17": "kite",
+      "q11": "A quadrilateral whose diagonals are perpendicular and bisect each other but are not equal is a …",
+      "c18": "trapezium",
+      "q12": "What do the angles inside any quadrilateral add up to?",
+      "c19": "360°",
+      "c20": "180°",
+      "c21": "90°",
+      "c22": "400°",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c5",
+        "c6",
+        "c1"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c5",
+        "c2",
+        "c1",
+        "c7"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c7",
+        "c8",
+        "c2",
+        "c3"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c9",
+        "c1",
+        "c7",
+        "c2"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c10",
+        "c11",
+        "c12",
+        "c13"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c10",
+        "c11",
+        "c12",
+        "c13"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c13",
+        "c10",
+        "c12",
+        "c11"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c13",
+        "c12",
+        "c10",
+        "c11"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c14",
+        "c15",
+        "c16",
+        "c17"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c16",
+        "c15",
+        "c14",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c19",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c19"
+    }
+  ]
+}

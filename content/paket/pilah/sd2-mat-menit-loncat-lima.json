@@ -1,0 +1,346 @@
+{
+  "id": "sd2-mat-menit-loncat-lima",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menit Loncat Lima",
+      "instruksi": "Kartu →4 artinya jarum panjang menunjuk angka 4. Tiap angka bernilai lima menit. Taruh di rak menitnya.",
+      "b-5-menit": "5 menit",
+      "b-10-menit": "10 menit",
+      "b-15-menit": "15 menit",
+      "b-20-menit": "20 menit",
+      "b-25-menit": "25 menit",
+      "b-30-menit": "30 menit",
+      "b-35-menit": "35 menit",
+      "b-40-menit": "40 menit",
+      "b-45-menit": "45 menit",
+      "b-50-menit": "50 menit",
+      "i-ke1": "→1",
+      "i-04t05": "04.05",
+      "i-10t05": "10.05",
+      "i-ke2": "→2",
+      "i-09t10": "09.10",
+      "i-03t10": "03.10",
+      "i-ke3": "→3",
+      "i-06t15": "06.15",
+      "i-10t15": "10.15",
+      "i-ke4": "→4",
+      "i-08t20": "08.20",
+      "i-10t20": "10.20",
+      "i-ke5": "→5",
+      "i-02t25": "02.25",
+      "i-10t25": "10.25",
+      "i-ke6": "→6",
+      "i-01t30": "01.30",
+      "i-08t30": "08.30",
+      "i-ke7": "→7",
+      "i-05t35": "05.35",
+      "i-09t35": "09.35",
+      "i-ke8": "→8",
+      "i-04t40": "04.40",
+      "i-11t40": "11.40",
+      "i-ke9": "→9",
+      "i-08t45": "08.45",
+      "i-09t45": "09.45",
+      "i-ke10": "→10",
+      "i-09t50": "09.50",
+      "i-08t50": "08.50"
+    },
+    "en": {
+      "judul": "Minutes in Fives",
+      "instruksi": "A →4 card means the long hand points to 4. Each number is worth five minutes. Put it on its minutes shelf.",
+      "b-5-menit": "5 minutes",
+      "b-10-menit": "10 minutes",
+      "b-15-menit": "15 minutes",
+      "b-20-menit": "20 minutes",
+      "b-25-menit": "25 minutes",
+      "b-30-menit": "30 minutes",
+      "b-35-menit": "35 minutes",
+      "b-40-menit": "40 minutes",
+      "b-45-menit": "45 minutes",
+      "b-50-menit": "50 minutes",
+      "i-ke1": "→1",
+      "i-04t05": "04:05",
+      "i-10t05": "10:05",
+      "i-ke2": "→2",
+      "i-09t10": "09:10",
+      "i-03t10": "03:10",
+      "i-ke3": "→3",
+      "i-06t15": "06:15",
+      "i-10t15": "10:15",
+      "i-ke4": "→4",
+      "i-08t20": "08:20",
+      "i-10t20": "10:20",
+      "i-ke5": "→5",
+      "i-02t25": "02:25",
+      "i-10t25": "10:25",
+      "i-ke6": "→6",
+      "i-01t30": "01:30",
+      "i-08t30": "08:30",
+      "i-ke7": "→7",
+      "i-05t35": "05:35",
+      "i-09t35": "09:35",
+      "i-ke8": "→8",
+      "i-04t40": "04:40",
+      "i-11t40": "11:40",
+      "i-ke9": "→9",
+      "i-08t45": "08:45",
+      "i-09t45": "09:45",
+      "i-ke10": "→10",
+      "i-09t50": "09:50",
+      "i-08t50": "08:50"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak menit aktif: 5–20 dulu, lalu sampai 50"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "m5",
+      "labelKey": "b-5-menit"
+    },
+    {
+      "id": "m10",
+      "labelKey": "b-10-menit"
+    },
+    {
+      "id": "m15",
+      "labelKey": "b-15-menit"
+    },
+    {
+      "id": "m20",
+      "labelKey": "b-20-menit"
+    },
+    {
+      "id": "m25",
+      "labelKey": "b-25-menit"
+    },
+    {
+      "id": "m30",
+      "labelKey": "b-30-menit"
+    },
+    {
+      "id": "m35",
+      "labelKey": "b-35-menit"
+    },
+    {
+      "id": "m40",
+      "labelKey": "b-40-menit"
+    },
+    {
+      "id": "m45",
+      "labelKey": "b-45-menit"
+    },
+    {
+      "id": "m50",
+      "labelKey": "b-50-menit"
+    }
+  ],
+  "items": [
+    {
+      "id": "jarum-1",
+      "labelKey": "i-ke1",
+      "bin": "m5",
+      "scale": 1
+    },
+    {
+      "id": "digital-4-5",
+      "labelKey": "i-04t05",
+      "bin": "m5",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-10-5",
+      "labelKey": "i-10t05",
+      "bin": "m5",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-2",
+      "labelKey": "i-ke2",
+      "bin": "m10",
+      "scale": 1
+    },
+    {
+      "id": "digital-9-10",
+      "labelKey": "i-09t10",
+      "bin": "m10",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-3-10",
+      "labelKey": "i-03t10",
+      "bin": "m10",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-3",
+      "labelKey": "i-ke3",
+      "bin": "m15",
+      "scale": 1
+    },
+    {
+      "id": "digital-6-15",
+      "labelKey": "i-06t15",
+      "bin": "m15",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-10-15",
+      "labelKey": "i-10t15",
+      "bin": "m15",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-4",
+      "labelKey": "i-ke4",
+      "bin": "m20",
+      "scale": 1
+    },
+    {
+      "id": "digital-8-20",
+      "labelKey": "i-08t20",
+      "bin": "m20",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-10-20",
+      "labelKey": "i-10t20",
+      "bin": "m20",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-5",
+      "labelKey": "i-ke5",
+      "bin": "m25",
+      "scale": 1
+    },
+    {
+      "id": "digital-2-25",
+      "labelKey": "i-02t25",
+      "bin": "m25",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-10-25",
+      "labelKey": "i-10t25",
+      "bin": "m25",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-6",
+      "labelKey": "i-ke6",
+      "bin": "m30",
+      "scale": 1
+    },
+    {
+      "id": "digital-1-30",
+      "labelKey": "i-01t30",
+      "bin": "m30",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-8-30",
+      "labelKey": "i-08t30",
+      "bin": "m30",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-7",
+      "labelKey": "i-ke7",
+      "bin": "m35",
+      "scale": 1
+    },
+    {
+      "id": "digital-5-35",
+      "labelKey": "i-05t35",
+      "bin": "m35",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-9-35",
+      "labelKey": "i-09t35",
+      "bin": "m35",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-8",
+      "labelKey": "i-ke8",
+      "bin": "m40",
+      "scale": 1
+    },
+    {
+      "id": "digital-4-40",
+      "labelKey": "i-04t40",
+      "bin": "m40",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-11-40",
+      "labelKey": "i-11t40",
+      "bin": "m40",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-9",
+      "labelKey": "i-ke9",
+      "bin": "m45",
+      "scale": 1
+    },
+    {
+      "id": "digital-8-45",
+      "labelKey": "i-08t45",
+      "bin": "m45",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-9-45",
+      "labelKey": "i-09t45",
+      "bin": "m45",
+      "scale": 0.6
+    },
+    {
+      "id": "jarum-10",
+      "labelKey": "i-ke10",
+      "bin": "m50",
+      "scale": 0.85
+    },
+    {
+      "id": "digital-9-50",
+      "labelKey": "i-09t50",
+      "bin": "m50",
+      "scale": 0.6
+    },
+    {
+      "id": "digital-8-50",
+      "labelKey": "i-08t50",
+      "bin": "m50",
+      "scale": 0.6
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "id": "sd5-kode-ulangi-dan-kalau",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.ULANGI-KONDISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kalau di Dalam Perulangan",
+      "instruksi": "Syarat dicek lagi di setiap putaran: jalankan putaran satu per satu, lalu pilih hasil akhirnya.",
+      "pilihan": "pilihan",
+      "c1": "12",
+      "c2": "21",
+      "c3": "9",
+      "q1": "total = 0. untuk angka 1 sampai 6: kalau angka genap: total = total + angka. Berapa total?",
+      "c4": "3",
+      "c5": "7",
+      "c6": "10",
+      "q2": "hitung = 0. untuk angka 1 sampai 10: kalau angka > 7: hitung = hitung + 1. Berapa hitung?",
+      "c7": "30",
+      "c8": "40",
+      "q3": "skor = 0. untuk tiap jawaban di [benar, salah, benar, benar]: kalau benar: skor = skor + 10. Berapa skor?",
+      "c9": "5",
+      "c10": "2",
+      "q4": "x = 0. ulangi 5 kali: kalau x < 3: x = x + 1. Berapa x?",
+      "c11": "6",
+      "c12": "15",
+      "q5": "total = 0. untuk angka 1 sampai 5: kalau angka ganjil: total = total + angka. Berapa total?",
+      "c13": "nyala",
+      "c14": "mati",
+      "q6": "lampu = 'mati'. ulangi 3 kali: kalau lampu == 'mati': lampu = 'nyala', kalau tidak: lampu = 'mati'. Bagaimana lampu sekarang?",
+      "c15": "4",
+      "c16": "1",
+      "q7": "x = 10. ulangi 4 kali: kalau x > 5: x = x - 3. Berapa x?",
+      "q8": "untuk suhu di [28, 33, 31, 25]: kalau suhu > 30: tampil 'panas'. Berapa kali 'panas' tampil?",
+      "c17": "103",
+      "c18": "100",
+      "q9": "jumlah = 0. untuk angka 1 sampai 4: kalau angka == 3: jumlah = jumlah + 100, kalau tidak: jumlah = jumlah + 1. Berapa jumlah?",
+      "q10": "koin = 0. untuk tiap kotak di [⭐, 💣, ⭐, ⭐, 💣]: kalau kotak == ⭐: koin = koin + 1. Berapa koin?",
+      "c19": "18",
+      "q11": "n = 0. untuk angka 1 sampai 9: kalau angka habis dibagi 3: n = n + 1. Berapa n?",
+      "q12": "terbesar = 0. untuk angka di [4, 9, 2, 7]: kalau angka > terbesar: terbesar = angka. Berapa terbesar?"
+    },
+    "en": {
+      "judul": "If Inside a Loop",
+      "instruksi": "The condition is checked again on every turn of the loop: run the turns one by one, then choose the final result.",
+      "pilihan": "choices",
+      "c1": "12",
+      "c2": "21",
+      "c3": "9",
+      "q1": "total = 0. for number 1 to 6: if number is even: total = total + number. What is total?",
+      "c4": "3",
+      "c5": "7",
+      "c6": "10",
+      "q2": "count = 0. for number 1 to 10: if number > 7: count = count + 1. What is count?",
+      "c7": "30",
+      "c8": "40",
+      "q3": "score = 0. for each answer in [right, wrong, right, right]: if right: score = score + 10. What is score?",
+      "c9": "5",
+      "c10": "2",
+      "q4": "x = 0. repeat 5 times: if x < 3: x = x + 1. What is x?",
+      "c11": "6",
+      "c12": "15",
+      "q5": "total = 0. for number 1 to 5: if number is odd: total = total + number. What is total?",
+      "c13": "on",
+      "c14": "off",
+      "q6": "lamp = 'off'. repeat 3 times: if lamp == 'off': lamp = 'on', else: lamp = 'off'. What is lamp now?",
+      "c15": "4",
+      "c16": "1",
+      "q7": "x = 10. repeat 4 times: if x > 5: x = x - 3. What is x?",
+      "q8": "for temp in [28, 33, 31, 25]: if temp > 30: show 'hot'. How many times is 'hot' shown?",
+      "c17": "103",
+      "c18": "100",
+      "q9": "sum = 0. for number 1 to 4: if number == 3: sum = sum + 100, else: sum = sum + 1. What is sum?",
+      "q10": "coins = 0. for each box in [⭐, 💣, ⭐, ⭐, 💣]: if box == ⭐: coins = coins + 1. What is coins?",
+      "c19": "18",
+      "q11": "n = 0. for number 1 to 9: if number divides exactly by 3: n = n + 1. What is n?",
+      "q12": "biggest = 0. for number in [4, 9, 2, 7]: if number > biggest: biggest = number. What is biggest?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c6"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c4",
+        "c9",
+        "c10"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c3",
+        "c11",
+        "c12"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c13",
+        "c14"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c15",
+        "c16",
+        "c5"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c10",
+        "c16",
+        "c4"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c17",
+        "c15",
+        "c18"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c4",
+        "c9",
+        "c10"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c4",
+        "c3",
+        "c19"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c3",
+        "c5",
+        "c15"
+      ],
+      "correct": "c3"
+    }
+  ]
+}

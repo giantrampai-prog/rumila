@@ -1,0 +1,174 @@
+{
+  "id": "sd1-mat-pilah-sisi-bangun",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BANGUN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hitung Sisinya",
+      "instruksi": "Hitung sisi tiap bangun. Lurus semua atau ada yang lengkung? Taruh di rak yang pas.",
+      "b-3-sisi-lurus": "3 sisi lurus",
+      "b-4-sisi-lurus": "4 sisi lurus",
+      "b-sisi-lengkung": "sisi lengkung",
+      "i-segitiga": "segitiga",
+      "i-segitiga-kecil": "segitiga kecil",
+      "i-segitiga-terbalik": "segitiga terbalik",
+      "i-penggaris-segitiga": "penggaris segitiga",
+      "i-persegi": "persegi",
+      "i-persegi-panjang": "persegi panjang",
+      "i-belah-ketupat": "belah ketupat",
+      "i-belah-ketupat-kecil": "belah ketupat kecil",
+      "i-lingkaran": "lingkaran",
+      "i-bulan-sabit": "bulan sabit",
+      "i-irisan-pizza": "irisan pizza",
+      "i-kue-bulat": "kue bulat",
+      "i-kotak-kuning": "kotak kuning"
+    },
+    "en": {
+      "judul": "Count the Sides",
+      "instruksi": "Count the sides of each shape. All straight, or is one curved? Put it on the right shelf.",
+      "b-3-sisi-lurus": "3 straight sides",
+      "b-4-sisi-lurus": "4 straight sides",
+      "b-sisi-lengkung": "curved side",
+      "i-segitiga": "triangle",
+      "i-segitiga-kecil": "small triangle",
+      "i-segitiga-terbalik": "upside-down triangle",
+      "i-penggaris-segitiga": "set square",
+      "i-persegi": "square",
+      "i-persegi-panjang": "rectangle",
+      "i-belah-ketupat": "rhombus",
+      "i-belah-ketupat-kecil": "small rhombus",
+      "i-lingkaran": "circle",
+      "i-bulan-sabit": "crescent",
+      "i-irisan-pizza": "pizza slice",
+      "i-kue-bulat": "round biscuit",
+      "i-kotak-kuning": "yellow square"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "bangun per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "tiga",
+      "labelKey": "b-3-sisi-lurus",
+      "shape": "triangle",
+      "color": "#ffb86b"
+    },
+    {
+      "id": "empat",
+      "labelKey": "b-4-sisi-lurus",
+      "shape": "square",
+      "color": "#6ab0e8"
+    },
+    {
+      "id": "lengkung",
+      "labelKey": "b-sisi-lengkung",
+      "shape": "circle",
+      "color": "#7ec8a0"
+    }
+  ],
+  "items": [
+    {
+      "id": "segitiga-merah",
+      "labelKey": "i-segitiga",
+      "bin": "tiga",
+      "shape": "triangle",
+      "color": "#ff5a6e"
+    },
+    {
+      "id": "segitiga-hijau-kecil",
+      "labelKey": "i-segitiga-kecil",
+      "bin": "tiga",
+      "shape": "triangle",
+      "color": "#22b573",
+      "scale": 0.6
+    },
+    {
+      "id": "segitiga-terbalik",
+      "labelKey": "i-segitiga-terbalik",
+      "bin": "tiga",
+      "emoji": "🔻"
+    },
+    {
+      "id": "penggaris-segitiga",
+      "labelKey": "i-penggaris-segitiga",
+      "bin": "tiga",
+      "emoji": "📐"
+    },
+    {
+      "id": "persegi",
+      "labelKey": "i-persegi",
+      "bin": "empat",
+      "shape": "square",
+      "color": "#c59be8"
+    },
+    {
+      "id": "persegi-panjang",
+      "labelKey": "i-persegi-panjang",
+      "bin": "empat",
+      "shape": "rect",
+      "color": "#ffd23f",
+      "width": 2
+    },
+    {
+      "id": "ketupat-biru",
+      "labelKey": "i-belah-ketupat",
+      "bin": "empat",
+      "emoji": "🔷"
+    },
+    {
+      "id": "ketupat-oranye",
+      "labelKey": "i-belah-ketupat-kecil",
+      "bin": "empat",
+      "emoji": "🔸"
+    },
+    {
+      "id": "lingkaran",
+      "labelKey": "i-lingkaran",
+      "bin": "lengkung",
+      "shape": "circle",
+      "color": "#ff8fa3"
+    },
+    {
+      "id": "bulan-sabit",
+      "labelKey": "i-bulan-sabit",
+      "bin": "lengkung",
+      "emoji": "🌙"
+    },
+    {
+      "id": "pizza",
+      "labelKey": "i-irisan-pizza",
+      "bin": "lengkung",
+      "emoji": "🍕"
+    },
+    {
+      "id": "kue-bulat",
+      "labelKey": "i-kue-bulat",
+      "bin": "lengkung",
+      "emoji": "🍪"
+    },
+    {
+      "id": "kotak-kuning",
+      "labelKey": "i-kotak-kuning",
+      "bin": "empat",
+      "emoji": "🟨"
+    }
+  ]
+}

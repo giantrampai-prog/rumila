@@ -1,0 +1,214 @@
+{
+  "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.HABITAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Tinggal di Mana?",
+      "instruksi": "Antar tiap hewan dan tumbuhan ke habitatnya.",
+      "b-gurun": "gurun",
+      "b-kolam": "kolam",
+      "b-hutan": "hutan hujan",
+      "b-laut": "laut",
+      "b-kutub": "kutub es",
+      "i-kaktus": "kaktus",
+      "i-unta": "unta",
+      "i-kalajengking": "kalajengking",
+      "i-teratai": "teratai",
+      "i-katak": "katak",
+      "i-bebek": "bebek",
+      "i-monyet": "orang utan",
+      "i-pakis": "pakis",
+      "i-harimau": "harimau",
+      "i-jamur": "jamur",
+      "i-karang": "karang",
+      "i-gurita": "gurita",
+      "i-paus": "paus",
+      "i-beruangkutub": "beruang kutub",
+      "i-penguin": "penguin",
+      "i-anjinglaut": "anjing laut"
+    },
+    "en": {
+      "judul": "Who Lives Where?",
+      "instruksi": "Take each animal and plant to its habitat.",
+      "b-gurun": "desert",
+      "b-kolam": "pond",
+      "b-hutan": "rainforest",
+      "b-laut": "sea",
+      "b-kutub": "icy pole",
+      "i-kaktus": "cactus",
+      "i-unta": "camel",
+      "i-kalajengking": "scorpion",
+      "i-teratai": "water lily",
+      "i-katak": "frog",
+      "i-bebek": "duck",
+      "i-monyet": "orangutan",
+      "i-pakis": "fern",
+      "i-harimau": "tiger",
+      "i-jamur": "mushroom",
+      "i-karang": "coral",
+      "i-gurita": "octopus",
+      "i-paus": "whale",
+      "i-beruangkutub": "polar bear",
+      "i-penguin": "penguin",
+      "i-anjinglaut": "seal"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah habitat: 3 (gurun, kolam, hutan) → 5 (tambah laut, kutub)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah makhluk per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gurun",
+      "labelKey": "b-gurun",
+      "emoji": "🏜️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kolam",
+      "labelKey": "b-kolam",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "hutan",
+      "labelKey": "b-hutan",
+      "emoji": "🌳",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "laut",
+      "labelKey": "b-laut",
+      "emoji": "🌊",
+      "color": "#b3e5fc"
+    },
+    {
+      "id": "kutub",
+      "labelKey": "b-kutub",
+      "emoji": "🧊",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "kaktus",
+      "labelKey": "i-kaktus",
+      "bin": "gurun",
+      "emoji": "🌵"
+    },
+    {
+      "id": "unta",
+      "labelKey": "i-unta",
+      "bin": "gurun",
+      "emoji": "🐫"
+    },
+    {
+      "id": "kalajengking",
+      "labelKey": "i-kalajengking",
+      "bin": "gurun",
+      "emoji": "🦂"
+    },
+    {
+      "id": "teratai",
+      "labelKey": "i-teratai",
+      "bin": "kolam",
+      "emoji": "🪷"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "kolam",
+      "emoji": "🐸"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "kolam",
+      "emoji": "🦆"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "hutan",
+      "emoji": "🦧"
+    },
+    {
+      "id": "pakis",
+      "labelKey": "i-pakis",
+      "bin": "hutan",
+      "emoji": "🌿"
+    },
+    {
+      "id": "harimau",
+      "labelKey": "i-harimau",
+      "bin": "hutan",
+      "emoji": "🐅"
+    },
+    {
+      "id": "jamur",
+      "labelKey": "i-jamur",
+      "bin": "hutan",
+      "emoji": "🍄"
+    },
+    {
+      "id": "karang",
+      "labelKey": "i-karang",
+      "bin": "laut",
+      "emoji": "🪸"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "laut",
+      "emoji": "🐙"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "laut",
+      "emoji": "🐋"
+    },
+    {
+      "id": "beruangkutub",
+      "labelKey": "i-beruangkutub",
+      "bin": "kutub",
+      "emoji": "🐻‍❄️"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "kutub",
+      "emoji": "🐧"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "kutub",
+      "emoji": "🦭"
+    }
+  ],
+  "pilihan": []
+}

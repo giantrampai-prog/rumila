@@ -1,0 +1,468 @@
+{
+  "id": "sd6-mat-bilangan-bulat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.BULAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Garis Bilangan Bulat",
+      "instruksi": "Hitung dengan bilangan positif dan negatif, lalu sentuh hasilnya.",
+      "q1": "−7 + (−5) = …",
+      "c1": "−12",
+      "c2": "12",
+      "c3": "−2",
+      "c4": "2",
+      "q2": "4 − (−6) = …",
+      "c5": "10",
+      "c6": "−10",
+      "q3": "−3 − 8 = …",
+      "c7": "−11",
+      "c8": "5",
+      "c9": "−5",
+      "c10": "11",
+      "q4": "−9 − (−4) = …",
+      "c11": "−13",
+      "c12": "13",
+      "q5": "12 + (−15) = …",
+      "c13": "−3",
+      "c14": "3",
+      "c15": "27",
+      "c16": "−27",
+      "q6": "−20 + 35 = …",
+      "c17": "15",
+      "c18": "−15",
+      "c19": "55",
+      "c20": "−55",
+      "q7": "−1 − 1 = …",
+      "c21": "0",
+      "c22": "−1",
+      "q8": "(−8) + 8 = …",
+      "c23": "−16",
+      "c24": "16",
+      "c25": "−8",
+      "q9": "−45 + (−55) = …",
+      "c26": "−100",
+      "c27": "100",
+      "q10": "0 − (−9) = …",
+      "c28": "9",
+      "c29": "−9",
+      "c30": "90",
+      "q11": "Suhu −6°C turun 7 derajat. Sekarang …",
+      "c31": "−13°C",
+      "c32": "1°C",
+      "c33": "−1°C",
+      "c34": "13°C",
+      "q12": "Selisih suhu antara 8°C dan −5°C adalah …",
+      "c35": "13°",
+      "c36": "3°",
+      "c37": "−3°",
+      "c38": "−13°",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Integer Number Line",
+      "instruksi": "Calculate with positive and negative numbers, then touch the answer.",
+      "q1": "−7 + (−5) = …",
+      "c1": "−12",
+      "c2": "12",
+      "c3": "−2",
+      "c4": "2",
+      "q2": "4 − (−6) = …",
+      "c5": "10",
+      "c6": "−10",
+      "q3": "−3 − 8 = …",
+      "c7": "−11",
+      "c8": "5",
+      "c9": "−5",
+      "c10": "11",
+      "q4": "−9 − (−4) = …",
+      "c11": "−13",
+      "c12": "13",
+      "q5": "12 + (−15) = …",
+      "c13": "−3",
+      "c14": "3",
+      "c15": "27",
+      "c16": "−27",
+      "q6": "−20 + 35 = …",
+      "c17": "15",
+      "c18": "−15",
+      "c19": "55",
+      "c20": "−55",
+      "q7": "−1 − 1 = …",
+      "c21": "0",
+      "c22": "−1",
+      "q8": "(−8) + 8 = …",
+      "c23": "−16",
+      "c24": "16",
+      "c25": "−8",
+      "q9": "−45 + (−55) = …",
+      "c26": "−100",
+      "c27": "100",
+      "q10": "0 − (−9) = …",
+      "c28": "9",
+      "c29": "−9",
+      "c30": "90",
+      "q11": "The temperature is −6°C and falls by 7 degrees. Now it is …",
+      "c31": "−13°C",
+      "c32": "1°C",
+      "c33": "−1°C",
+      "c34": "13°C",
+      "q12": "The difference between 8°C and −5°C is …",
+      "c35": "13°",
+      "c36": "3°",
+      "c37": "−3°",
+      "c38": "−13°",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kutub",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c3",
+        "c4",
+        "c6"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9",
+        "c10"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c9",
+        "c11",
+        "c8",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c3",
+        "c21",
+        "c4",
+        "c22"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c21",
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c26",
+        "c27",
+        "c6",
+        "c5"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c28",
+        "c29",
+        "c21",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c31",
+        "c32",
+        "c33",
+        "c34"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c35",
+        "c36",
+        "c37",
+        "c38"
+      ],
+      "correct": "c35"
+    }
+  ]
+}

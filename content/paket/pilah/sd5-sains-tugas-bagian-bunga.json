@@ -1,0 +1,230 @@
+{
+  "id": "sd5-sains-tugas-bagian-bunga",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUNGA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Bekerja di Bunga?",
+      "instruksi": "Baca tugasnya, lalu sentuh bagian bunga yang melakukannya.",
+      "b-pilihan": "pilihan",
+      "i-mahkota": "mahkota bunga",
+      "i-kelopak": "kelopak (sepal)",
+      "i-kepalasari": "kepala sari (antera)",
+      "i-tangkaisari": "tangkai sari (filamen)",
+      "i-kepalaputik": "kepala putik (stigma)",
+      "i-tangkaiputik": "tangkai putik",
+      "i-bakalbuah": "bakal buah (ovarium)",
+      "i-benangsari": "benang sari (stamen)",
+      "i-putik": "putik (karpel)",
+      "p-r1": "Bagian berwarna cerah dan harum yang menarik lebah datang.",
+      "p-r2": "Bagian di ujung benang yang menghasilkan serbuk kuning halus untuk penyerbukan.",
+      "p-r3": "Bagian lengket paling atas di tengah bunga yang menangkap serbuk kuning dari bunga lain.",
+      "p-r4": "Bagian berisi bakal biji yang kelak tumbuh menjadi buah.",
+      "p-r5": "Daun kecil hijau yang membungkus kuncup sebelum mekar.",
+      "p-r6": "Batang tipis yang mengangkat kepala sari.",
+      "p-r7": "Saluran dari kepala putik turun ke bakal buah.",
+      "p-r8": "Sesudah penyerbukan mahkota layu dan rontok. Bagian yang membesar menjadi buah adalah…",
+      "p-r9": "Kepala sari dan tangkai sari bersama-sama disebut…",
+      "p-r10": "Kepala putik, tangkai putik, dan bakal buah bersama-sama disebut…"
+    },
+    "en": {
+      "judul": "Who Works in the Flower?",
+      "instruksi": "Read the job, then touch the part of the flower that does it.",
+      "b-pilihan": "choices",
+      "i-mahkota": "petals",
+      "i-kelopak": "sepals",
+      "i-kepalasari": "anther",
+      "i-tangkaisari": "filament",
+      "i-kepalaputik": "stigma",
+      "i-tangkaiputik": "style",
+      "i-bakalbuah": "ovary",
+      "i-benangsari": "stamen",
+      "i-putik": "carpel",
+      "p-r1": "The bright, sweet-smelling part that attracts bees.",
+      "p-r2": "The part at the tip of the thread that makes the fine yellow powder used in pollination.",
+      "p-r3": "The sticky top part in the middle of the flower that catches yellow powder from other flowers.",
+      "p-r4": "The part holding the ovules that later grows into a fruit.",
+      "p-r5": "The small green leaves that wrap the bud before it opens.",
+      "p-r6": "The thin stalk that holds up the anther.",
+      "p-r7": "The tube from the stigma down to the ovary.",
+      "p-r8": "After pollination the petals wilt and fall. The part that swells into a fruit is the…",
+      "p-r9": "The anther and filament together are called the…",
+      "p-r10": "The stigma, style and ovary together are called the…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "mahkota",
+      "labelKey": "i-mahkota",
+      "bin": "pilihan",
+      "emoji": "🌸"
+    },
+    {
+      "id": "kelopak",
+      "labelKey": "i-kelopak",
+      "bin": "pilihan",
+      "emoji": "🍃"
+    },
+    {
+      "id": "kepalasari",
+      "labelKey": "i-kepalasari",
+      "bin": "pilihan",
+      "emoji": "🟡"
+    },
+    {
+      "id": "tangkaisari",
+      "labelKey": "i-tangkaisari",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "kepalaputik",
+      "labelKey": "i-kepalaputik",
+      "bin": "pilihan",
+      "emoji": "🟢"
+    },
+    {
+      "id": "tangkaiputik",
+      "labelKey": "i-tangkaiputik",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "bakalbuah",
+      "labelKey": "i-bakalbuah",
+      "bin": "pilihan",
+      "emoji": "🫒"
+    },
+    {
+      "id": "benangsari",
+      "labelKey": "i-benangsari",
+      "bin": "pilihan",
+      "emoji": "🌼"
+    },
+    {
+      "id": "putik",
+      "labelKey": "i-putik",
+      "bin": "pilihan",
+      "emoji": "🌷"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "mahkota",
+        "kelopak",
+        "bakalbuah"
+      ],
+      "correct": "mahkota"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "kepalasari",
+        "kepalaputik",
+        "mahkota"
+      ],
+      "correct": "kepalasari"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "kepalaputik",
+        "kepalasari",
+        "kelopak"
+      ],
+      "correct": "kepalaputik"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "bakalbuah",
+        "tangkaiputik",
+        "mahkota"
+      ],
+      "correct": "bakalbuah"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "kelopak",
+        "mahkota",
+        "kepalasari"
+      ],
+      "correct": "kelopak"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "tangkaisari",
+        "tangkaiputik",
+        "kelopak"
+      ],
+      "correct": "tangkaisari"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "tangkaiputik",
+        "tangkaisari",
+        "bakalbuah"
+      ],
+      "correct": "tangkaiputik"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "bakalbuah",
+        "kepalasari",
+        "kelopak"
+      ],
+      "correct": "bakalbuah"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "benangsari",
+        "putik",
+        "mahkota"
+      ],
+      "correct": "benangsari"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "putik",
+        "benangsari",
+        "kelopak"
+      ],
+      "correct": "putik"
+    }
+  ]
+}

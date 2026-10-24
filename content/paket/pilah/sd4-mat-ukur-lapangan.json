@@ -1,0 +1,511 @@
+{
+  "id": "sd4-mat-ukur-lapangan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ukur Lapangan",
+      "instruksi": "Keliling = jumlah semua sisi. Luas = panjang × lebar. Sentuh jawaban dengan satuan yang benar.",
+      "q1": "Luas kertas 88 cm² dan lebarnya 11 cm. Panjangnya …",
+      "c1": "8 cm",
+      "c2": "77 cm",
+      "c3": "19 cm",
+      "c4": "16 cm",
+      "q2": "Luas kertas 72 cm² dan lebarnya 9 cm. Panjangnya …",
+      "c5": "63 cm",
+      "c6": "17 cm",
+      "q3": "Luas kertas 22 cm² dan lebarnya 2 cm. Panjangnya …",
+      "c7": "11 cm",
+      "c8": "20 cm",
+      "c9": "13 cm",
+      "c10": "22 cm",
+      "q4": "Luas kertas 60 cm² dan lebarnya 6 cm. Panjangnya …",
+      "c11": "10 cm",
+      "c12": "54 cm",
+      "q5": "Keliling persegi 40 cm. Luasnya …",
+      "c13": "100 cm²",
+      "c14": "40 cm²",
+      "c15": "20 cm²",
+      "c16": "44 cm²",
+      "q6": "Luas kertas 135 cm² dan lebarnya 9 cm. Panjangnya …",
+      "c17": "15 cm",
+      "c18": "126 cm",
+      "c19": "24 cm",
+      "c20": "30 cm",
+      "q7": "Lapangan 11 m × 2 m. Luasnya …",
+      "c21": "22 m²",
+      "c22": "26 m²",
+      "c23": "13 m²",
+      "c24": "33 m²",
+      "q8": "Luas kertas 14 cm² dan lebarnya 2 cm. Panjangnya …",
+      "c25": "7 cm",
+      "c26": "12 cm",
+      "c27": "9 cm",
+      "c28": "14 cm",
+      "q9": "Lapangan 15 m × 8 m. Kelilingnya …",
+      "c29": "46 m",
+      "c30": "120 m",
+      "c31": "23 m",
+      "c32": "38 m",
+      "q10": "Lapangan 14 m × 6 m. Luasnya …",
+      "c33": "84 m²",
+      "c34": "40 m²",
+      "c35": "20 m²",
+      "c36": "98 m²",
+      "q11": "Keliling persegi 16 cm. Luasnya …",
+      "c37": "16 cm²",
+      "c38": "256 cm²",
+      "c39": "17 cm²",
+      "q12": "Lapangan 11 m × 5 m. Luasnya …",
+      "c40": "55 m²",
+      "c41": "32 m²",
+      "c42": "16 m²",
+      "c43": "66 m²",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Measure the Court",
+      "instruksi": "Perimeter = all sides added. Area = length × width. Touch the answer with the right unit.",
+      "q1": "A sheet has area 88 cm² and width 11 cm. Its length is …",
+      "c1": "8 cm",
+      "c2": "77 cm",
+      "c3": "19 cm",
+      "c4": "16 cm",
+      "q2": "A sheet has area 72 cm² and width 9 cm. Its length is …",
+      "c5": "63 cm",
+      "c6": "17 cm",
+      "q3": "A sheet has area 22 cm² and width 2 cm. Its length is …",
+      "c7": "11 cm",
+      "c8": "20 cm",
+      "c9": "13 cm",
+      "c10": "22 cm",
+      "q4": "A sheet has area 60 cm² and width 6 cm. Its length is …",
+      "c11": "10 cm",
+      "c12": "54 cm",
+      "q5": "A square has perimeter 40 cm. Its area is …",
+      "c13": "100 cm²",
+      "c14": "40 cm²",
+      "c15": "20 cm²",
+      "c16": "44 cm²",
+      "q6": "A sheet has area 135 cm² and width 9 cm. Its length is …",
+      "c17": "15 cm",
+      "c18": "126 cm",
+      "c19": "24 cm",
+      "c20": "30 cm",
+      "q7": "A court is 11 m × 2 m. Its area is …",
+      "c21": "22 m²",
+      "c22": "26 m²",
+      "c23": "13 m²",
+      "c24": "33 m²",
+      "q8": "A sheet has area 14 cm² and width 2 cm. Its length is …",
+      "c25": "7 cm",
+      "c26": "12 cm",
+      "c27": "9 cm",
+      "c28": "14 cm",
+      "q9": "A court is 15 m × 8 m. Its perimeter is …",
+      "c29": "46 m",
+      "c30": "120 m",
+      "c31": "23 m",
+      "c32": "38 m",
+      "q10": "A court is 14 m × 6 m. Its area is …",
+      "c33": "84 m²",
+      "c34": "40 m²",
+      "c35": "20 m²",
+      "c36": "98 m²",
+      "q11": "A square has perimeter 16 cm. Its area is …",
+      "c37": "16 cm²",
+      "c38": "256 cm²",
+      "c39": "17 cm²",
+      "q12": "A court is 11 m × 5 m. Its area is …",
+      "c40": "55 m²",
+      "c41": "32 m²",
+      "c42": "16 m²",
+      "c43": "66 m²",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c1",
+        "c5",
+        "c6",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9",
+        "c10"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c11",
+        "c12",
+        "c4",
+        "c8"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c33",
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c33"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c37",
+        "c38",
+        "c15",
+        "c39"
+      ],
+      "correct": "c37"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c40",
+        "c41",
+        "c42",
+        "c43"
+      ],
+      "correct": "c40"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": "sd2-sains-alami-atau-buatan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alami atau Buatan?",
+      "instruksi": "Bahan ini langsung dari alam atau dibuat manusia? Taruh ke raknya.",
+      "b-alami": "alami",
+      "b-buatan": "buatan manusia",
+      "i-kayu": "kayu",
+      "i-batu": "batu",
+      "i-wol": "bulu domba (wol)",
+      "i-pasir": "pasir",
+      "i-kapas": "kapas dari tanaman",
+      "i-daun": "daun pisang",
+      "i-plastik": "plastik",
+      "i-kaca": "kaca",
+      "i-kertas": "kertas",
+      "i-bata": "batu bata",
+      "i-nilon": "tali nilon",
+      "i-semen": "semen"
+    },
+    "en": {
+      "judul": "Natural or Made?",
+      "instruksi": "Does this material come straight from nature or is it made by people? Put it on its shelf.",
+      "b-alami": "natural",
+      "b-buatan": "made by people",
+      "i-kayu": "wood",
+      "i-batu": "rock",
+      "i-wol": "sheep's wool",
+      "i-pasir": "sand",
+      "i-kapas": "cotton from a plant",
+      "i-daun": "banana leaf",
+      "i-plastik": "plastic",
+      "i-kaca": "glass",
+      "i-kertas": "paper",
+      "i-bata": "brick",
+      "i-nilon": "nylon rope",
+      "i-semen": "cement"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "alami",
+      "labelKey": "b-alami",
+      "emoji": "🌿",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "buatan",
+      "labelKey": "b-buatan",
+      "emoji": "🏭",
+      "color": "#ede7f6"
+    }
+  ],
+  "items": [
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "alami",
+      "emoji": "🪵"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "alami",
+      "emoji": "🪨"
+    },
+    {
+      "id": "wol",
+      "labelKey": "i-wol",
+      "bin": "alami",
+      "emoji": "🐑"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "alami",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "kapas",
+      "labelKey": "i-kapas",
+      "bin": "alami",
+      "emoji": "☁️"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "alami",
+      "emoji": "🍃"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "buatan",
+      "emoji": "🧴"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "buatan",
+      "emoji": "🥛"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "buatan",
+      "emoji": "📄"
+    },
+    {
+      "id": "bata",
+      "labelKey": "i-bata",
+      "bin": "buatan",
+      "emoji": "🧱"
+    },
+    {
+      "id": "nilon",
+      "labelKey": "i-nilon",
+      "bin": "buatan",
+      "emoji": "🪢",
+      "color": "#4fc3f7"
+    },
+    {
+      "id": "semen",
+      "labelKey": "i-semen",
+      "bin": "buatan",
+      "emoji": "🪣",
+      "color": "#9e9e9e"
+    }
+  ],
+  "pilihan": []
+}

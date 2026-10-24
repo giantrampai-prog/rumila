@@ -1,0 +1,172 @@
+{
+  "id": "sd6-sains-siklus-batuan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.BATUAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Batuan Berkeliling",
+      "instruksi": "Baca judulnya, lalu susun perjalanan batuan.",
+      "s-lengkap": "Siklus batuan lengkap",
+      "lengkap-magma": "magma panas di bawah kerak",
+      "lengkap-beku": "pembekuan: mendingin jadi batuan beku",
+      "lengkap-erosi": "pelapukan dan erosi memecah batuan",
+      "lengkap-endap": "sedimentasi: butiran mengendap di dasar laut",
+      "lengkap-timbun": "penimbunan: memadat jadi batuan sedimen",
+      "lengkap-metamorf": "metamorfisme: panas dan tekanan mengubahnya",
+      "lengkap-leleh": "peleburan: meleleh kembali jadi magma",
+      "s-marmer": "Batu kapur menjadi marmer",
+      "marmer-kapur": "batu kapur di dasar laut",
+      "marmer-dalam": "terkubur sangat dalam",
+      "marmer-panas": "terkena panas dan tekanan besar",
+      "marmer-marmer": "berubah menjadi marmer",
+      "s-pantai": "Dari granit gunung ke batu pasir pantai",
+      "pantai-granit": "granit di puncak gunung",
+      "pantai-retak": "retak oleh panas, dingin, dan akar",
+      "pantai-sungai": "pecahannya terbawa sungai menjadi pasir",
+      "pantai-endap": "pasir mengendap di laut dangkal",
+      "pantai-padat": "pasir memadat menjadi batu pasir"
+    },
+    "en": {
+      "judul": "Rocks on the Move",
+      "instruksi": "Read the title, then put the rock's journey in order.",
+      "s-lengkap": "The full rock cycle",
+      "lengkap-magma": "hot magma under the crust",
+      "lengkap-beku": "solidification: it cools into igneous rock",
+      "lengkap-erosi": "weathering and erosion break the rock",
+      "lengkap-endap": "sedimentation: bits settle on the seabed",
+      "lengkap-timbun": "burial: they are pressed into sedimentary rock",
+      "lengkap-metamorf": "metamorphism: heat and pressure change it",
+      "lengkap-leleh": "melting: it melts back into magma",
+      "s-marmer": "Limestone becomes marble",
+      "marmer-kapur": "limestone on the seabed",
+      "marmer-dalam": "buried very deep",
+      "marmer-panas": "squeezed and heated strongly",
+      "marmer-marmer": "it turns into marble",
+      "s-pantai": "From mountain granite to beach sandstone",
+      "pantai-granit": "granite on a mountain top",
+      "pantai-retak": "cracked by heat, cold and roots",
+      "pantai-sungai": "the pieces are carried by rivers and become sand",
+      "pantai-endap": "the sand settles in shallow sea",
+      "pantai-padat": "the sand is pressed into sandstone"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 7 (jalur marmer 4, jalur pantai 5)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "lengkap",
+      "titleKey": "s-lengkap",
+      "steps": [
+        {
+          "id": "magma",
+          "labelKey": "lengkap-magma",
+          "emoji": "🔥"
+        },
+        {
+          "id": "beku",
+          "labelKey": "lengkap-beku",
+          "emoji": "🌋"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "lengkap-erosi",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "endap",
+          "labelKey": "lengkap-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "lengkap-timbun",
+          "emoji": "📚"
+        },
+        {
+          "id": "metamorf",
+          "labelKey": "lengkap-metamorf",
+          "emoji": "💎"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "lengkap-leleh",
+          "emoji": "♨️"
+        }
+      ]
+    },
+    {
+      "id": "marmer",
+      "titleKey": "s-marmer",
+      "steps": [
+        {
+          "id": "kapur",
+          "labelKey": "marmer-kapur",
+          "emoji": "🐚"
+        },
+        {
+          "id": "dalam",
+          "labelKey": "marmer-dalam",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "panas",
+          "labelKey": "marmer-panas",
+          "emoji": "🔥"
+        },
+        {
+          "id": "marmer",
+          "labelKey": "marmer-marmer",
+          "emoji": "🏛️"
+        }
+      ]
+    },
+    {
+      "id": "pantai",
+      "titleKey": "s-pantai",
+      "steps": [
+        {
+          "id": "granit",
+          "labelKey": "pantai-granit",
+          "emoji": "🏔️"
+        },
+        {
+          "id": "retak",
+          "labelKey": "pantai-retak",
+          "emoji": "🌱"
+        },
+        {
+          "id": "sungai",
+          "labelKey": "pantai-sungai",
+          "emoji": "🏞️"
+        },
+        {
+          "id": "endap",
+          "labelKey": "pantai-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "padat",
+          "labelKey": "pantai-padat",
+          "emoji": "🟫"
+        }
+      ]
+    }
+  ]
+}

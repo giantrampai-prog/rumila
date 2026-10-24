@@ -1,0 +1,58 @@
+{
+  "id": "sd1-mat-genap-sepuluh-koin",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Genap Sepuluh Koin",
+      "instruksi": "Pembeli menunjukkan koinnya sebentar. Harganya sepuluh koin: tambahkan kekurangannya.",
+      "g-roti": "roti",
+      "g-susu": "susu"
+    },
+    "en": {
+      "judul": "Make Ten Coins",
+      "instruksi": "The shopper shows their coins for a moment. The price is ten coins: add what is missing.",
+      "g-roti": "bread",
+      "g-susu": "milk"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kantin",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "lengkapi",
+  "goods": [
+    {
+      "id": "roti",
+      "labelKey": "g-roti",
+      "price": 10000,
+      "emoji": "🍞"
+    },
+    {
+      "id": "susu",
+      "labelKey": "g-susu",
+      "price": 10000,
+      "emoji": "🥛"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 10000,
+    "kindsMax": 1,
+    "flashMs": 1200,
+    "target": 10
+  }
+}

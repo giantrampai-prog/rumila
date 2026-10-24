@@ -1,0 +1,244 @@
+{
+  "id": "sd3-mat-keliling-petak",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.UKUR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pagar Keliling Kebun",
+      "instruksi": "Keliling = jumlah sisi petak di tepi luar. Hitung panjang + lebar + panjang + lebar, lalu taruh di raknya.",
+      "b-keliling-8": "keliling 8",
+      "b-keliling-10": "keliling 10",
+      "b-keliling-12": "keliling 12",
+      "b-keliling-14": "keliling 14",
+      "b-keliling-16": "keliling 16",
+      "b-keliling-18": "keliling 18",
+      "i-petak-biru-2x2": "petak biru 2×2",
+      "i-petak-hijau-2x2": "petak hijau 2×2",
+      "i-petak-kuning-2x2": "petak kuning 2×2",
+      "i-petak-biru-2x3": "petak biru 2×3",
+      "i-petak-hijau-2x3": "petak hijau 2×3",
+      "i-petak-kuning-2x3": "petak kuning 2×3",
+      "i-petak-biru-3x3": "petak biru 3×3",
+      "i-petak-hijau-3x3": "petak hijau 3×3",
+      "i-petak-kuning-3x3": "petak kuning 3×3",
+      "i-petak-biru-3x4": "petak biru 3×4",
+      "i-petak-hijau-3x4": "petak hijau 3×4",
+      "i-petak-kuning-3x4": "petak kuning 3×4",
+      "i-petak-biru-4x4": "petak biru 4×4",
+      "i-petak-hijau-4x4": "petak hijau 4×4",
+      "i-petak-kuning-4x4": "petak kuning 4×4",
+      "i-petak-biru-4x5": "petak biru 4×5",
+      "i-petak-hijau-4x5": "petak hijau 4×5",
+      "i-petak-kuning-4x5": "petak kuning 4×5"
+    },
+    "en": {
+      "judul": "Fence Around the Garden",
+      "instruksi": "Perimeter is all the outside edges. Add length + width + length + width, then put it on its shelf.",
+      "b-keliling-8": "perimeter 8",
+      "b-keliling-10": "perimeter 10",
+      "b-keliling-12": "perimeter 12",
+      "b-keliling-14": "perimeter 14",
+      "b-keliling-16": "perimeter 16",
+      "b-keliling-18": "perimeter 18",
+      "i-petak-biru-2x2": "blue 2×2 tiles",
+      "i-petak-hijau-2x2": "green 2×2 tiles",
+      "i-petak-kuning-2x2": "yellow 2×2 tiles",
+      "i-petak-biru-2x3": "blue 2×3 tiles",
+      "i-petak-hijau-2x3": "green 2×3 tiles",
+      "i-petak-kuning-2x3": "yellow 2×3 tiles",
+      "i-petak-biru-3x3": "blue 3×3 tiles",
+      "i-petak-hijau-3x3": "green 3×3 tiles",
+      "i-petak-kuning-3x3": "yellow 3×3 tiles",
+      "i-petak-biru-3x4": "blue 3×4 tiles",
+      "i-petak-hijau-3x4": "green 3×4 tiles",
+      "i-petak-kuning-3x4": "yellow 3×4 tiles",
+      "i-petak-biru-4x4": "blue 4×4 tiles",
+      "i-petak-hijau-4x4": "green 4×4 tiles",
+      "i-petak-kuning-4x4": "yellow 4×4 tiles",
+      "i-petak-biru-4x5": "blue 4×5 tiles",
+      "i-petak-hijau-4x5": "green 4×5 tiles",
+      "i-petak-kuning-4x5": "yellow 4×5 tiles"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak keliling aktif: 3 → 6"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kebun per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k8",
+      "labelKey": "b-keliling-8"
+    },
+    {
+      "id": "k10",
+      "labelKey": "b-keliling-10"
+    },
+    {
+      "id": "k12",
+      "labelKey": "b-keliling-12"
+    },
+    {
+      "id": "k14",
+      "labelKey": "b-keliling-14"
+    },
+    {
+      "id": "k16",
+      "labelKey": "b-keliling-16"
+    },
+    {
+      "id": "k18",
+      "labelKey": "b-keliling-18"
+    }
+  ],
+  "items": [
+    {
+      "id": "k8-biru",
+      "labelKey": "i-petak-biru-2x2",
+      "bin": "k8",
+      "emoji": "🟦",
+      "count": 4
+    },
+    {
+      "id": "k8-hijau",
+      "labelKey": "i-petak-hijau-2x2",
+      "bin": "k8",
+      "emoji": "🟩",
+      "count": 4
+    },
+    {
+      "id": "k8-kuning",
+      "labelKey": "i-petak-kuning-2x2",
+      "bin": "k8",
+      "emoji": "🟨",
+      "count": 4
+    },
+    {
+      "id": "k10-biru",
+      "labelKey": "i-petak-biru-2x3",
+      "bin": "k10",
+      "emoji": "🟦",
+      "count": 6
+    },
+    {
+      "id": "k10-hijau",
+      "labelKey": "i-petak-hijau-2x3",
+      "bin": "k10",
+      "emoji": "🟩",
+      "count": 6
+    },
+    {
+      "id": "k10-kuning",
+      "labelKey": "i-petak-kuning-2x3",
+      "bin": "k10",
+      "emoji": "🟨",
+      "count": 6
+    },
+    {
+      "id": "k12-biru",
+      "labelKey": "i-petak-biru-3x3",
+      "bin": "k12",
+      "emoji": "🟦",
+      "count": 9
+    },
+    {
+      "id": "k12-hijau",
+      "labelKey": "i-petak-hijau-3x3",
+      "bin": "k12",
+      "emoji": "🟩",
+      "count": 9
+    },
+    {
+      "id": "k12-kuning",
+      "labelKey": "i-petak-kuning-3x3",
+      "bin": "k12",
+      "emoji": "🟨",
+      "count": 9
+    },
+    {
+      "id": "k14-biru",
+      "labelKey": "i-petak-biru-3x4",
+      "bin": "k14",
+      "emoji": "🟦",
+      "count": 12
+    },
+    {
+      "id": "k14-hijau",
+      "labelKey": "i-petak-hijau-3x4",
+      "bin": "k14",
+      "emoji": "🟩",
+      "count": 12
+    },
+    {
+      "id": "k14-kuning",
+      "labelKey": "i-petak-kuning-3x4",
+      "bin": "k14",
+      "emoji": "🟨",
+      "count": 12
+    },
+    {
+      "id": "k16-biru",
+      "labelKey": "i-petak-biru-4x4",
+      "bin": "k16",
+      "emoji": "🟦",
+      "count": 16
+    },
+    {
+      "id": "k16-hijau",
+      "labelKey": "i-petak-hijau-4x4",
+      "bin": "k16",
+      "emoji": "🟩",
+      "count": 16
+    },
+    {
+      "id": "k16-kuning",
+      "labelKey": "i-petak-kuning-4x4",
+      "bin": "k16",
+      "emoji": "🟨",
+      "count": 16
+    },
+    {
+      "id": "k18-biru",
+      "labelKey": "i-petak-biru-4x5",
+      "bin": "k18",
+      "emoji": "🟦",
+      "count": 20
+    },
+    {
+      "id": "k18-hijau",
+      "labelKey": "i-petak-hijau-4x5",
+      "bin": "k18",
+      "emoji": "🟩",
+      "count": 20
+    },
+    {
+      "id": "k18-kuning",
+      "labelKey": "i-petak-kuning-4x5",
+      "bin": "k18",
+      "emoji": "🟨",
+      "count": 20
+    }
+  ]
+}

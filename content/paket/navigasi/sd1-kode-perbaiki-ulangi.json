@@ -1,0 +1,1106 @@
+{
+  "id": "sd1-kode-perbaiki-ulangi",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD1.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satu Blok Keliru",
+      "instruksi": "Ada satu blok yang salah: bisa angka ulangi, isi ulangi, atau blok lain. Ganti satu saja."
+    },
+    "en": {
+      "judul": "One Wrong Block",
+      "instruksi": "One block is wrong: the repeat number, what is inside the repeat, or another block. Change just one."
+    }
+  },
+  "knobs": {
+    "letak": {
+      "min": 0,
+      "max": 2,
+      "default": 0,
+      "step": 1,
+      "keterangan": "letak kesalahan (dokumentasi): 0 angka ulangi, 1 isi ulangi, 2 blok di luar ulangi"
+    },
+    "panjang": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek ke bintang (dokumentasi; soal dipilih acak dari semua peta)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan",
+    "ulangi"
+  ],
+  "debug": true,
+  "grids": [
+    {
+      "id": "satu-salah-angka-1-n",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-angka-1-s",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-angka-2-e",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 5
+    },
+    {
+      "id": "satu-salah-angka-2-w",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 5
+    },
+    {
+      "id": "satu-salah-angka-3-s",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-angka-3-n",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-angka-4-w",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 5,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 7
+    },
+    {
+      "id": "satu-salah-angka-4-e",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 7
+    },
+    {
+      "id": "satu-salah-angka-5-n",
+      "w": 4,
+      "h": 8,
+      "start": {
+        "x": 2,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 5
+    },
+    {
+      "id": "satu-salah-angka-5-s",
+      "w": 4,
+      "h": 8,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 5
+    },
+    {
+      "id": "satu-salah-isi-7-s",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-isi-7-n",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-isi-8-w",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 5,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 7
+    },
+    {
+      "id": "satu-salah-isi-8-e",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 7
+    },
+    {
+      "id": "satu-salah-isi-9-n",
+      "w": 7,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 5,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kiri"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 4
+    },
+    {
+      "id": "satu-salah-isi-9-s",
+      "w": 7,
+      "h": 3,
+      "start": {
+        "x": 5,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kiri"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 4
+    },
+    {
+      "id": "satu-salah-luar-10-e",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-luar-10-w",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-luar-11-s",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 5,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-luar-11-n",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 5,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-luar-12-w",
+      "w": 8,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 8
+    },
+    {
+      "id": "satu-salah-luar-12-e",
+      "w": 8,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 8
+    },
+    {
+      "id": "satu-salah-luar-13-n",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 7
+    },
+    {
+      "id": "satu-salah-luar-13-s",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 7
+    },
+    {
+      "id": "satu-salah-luar-14-e",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    },
+    {
+      "id": "satu-salah-luar-14-w",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "rackSlots": 6
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "id": "sd1-sains-makan-hewan-peternakan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.MAKHLUK-HIDUP.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Waktunya Memberi Makan Ternak",
+      "instruksi": "Seret tiap makanan ke hewan yang memakannya.",
+      "b-sapi": "sapi",
+      "b-ayam": "ayam",
+      "b-lebah": "lebah",
+      "b-ulat": "ulat",
+      "i-rumput": "rumput",
+      "i-jerami": "jerami",
+      "i-jagung": "jagung pipil",
+      "i-cacing": "cacing tanah",
+      "i-bunga": "bunga mekar",
+      "i-bungamatahari": "bunga matahari",
+      "i-murbei": "daun murbei",
+      "i-kubis": "daun kubis"
+    },
+    "en": {
+      "judul": "Feeding Time on the Farm",
+      "instruksi": "Drag each food to the animal that eats it.",
+      "b-sapi": "cow",
+      "b-ayam": "chicken",
+      "b-lebah": "bee",
+      "b-ulat": "caterpillar",
+      "i-rumput": "grass",
+      "i-jerami": "hay",
+      "i-jagung": "corn kernels",
+      "i-cacing": "earthworm",
+      "i-bunga": "blooming flower",
+      "i-bungamatahari": "sunflower",
+      "i-murbei": "mulberry leaf",
+      "i-kubis": "cabbage leaf"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah hewan: 3 → 4 (tambah ulat)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah makanan per putaran; 4 dari 6–8 makanan hewan aktif, diacak"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sapi",
+      "labelKey": "b-sapi",
+      "emoji": "🐄",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "b-ayam",
+      "emoji": "🐔",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "b-lebah",
+      "emoji": "🐝",
+      "color": "#fffde7"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "b-ulat",
+      "emoji": "🐛",
+      "color": "#e8f5e9"
+    }
+  ],
+  "items": [
+    {
+      "id": "rumput",
+      "labelKey": "i-rumput",
+      "bin": "sapi",
+      "emoji": "🌿"
+    },
+    {
+      "id": "jerami",
+      "labelKey": "i-jerami",
+      "bin": "sapi",
+      "emoji": "🌾"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "ayam",
+      "emoji": "🌽"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "ayam",
+      "emoji": "🪱"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "i-bunga",
+      "bin": "lebah",
+      "emoji": "🌸"
+    },
+    {
+      "id": "bungamatahari",
+      "labelKey": "i-bungamatahari",
+      "bin": "lebah",
+      "emoji": "🌻"
+    },
+    {
+      "id": "murbei",
+      "labelKey": "i-murbei",
+      "bin": "ulat",
+      "emoji": "🍃"
+    },
+    {
+      "id": "kubis",
+      "labelKey": "i-kubis",
+      "bin": "ulat",
+      "emoji": "🥬"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,467 @@
+{
+  "id": "sd2-mat-urut-dua-angka",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Antrean Bilangan Dua Angka",
+      "instruksi": "Lihat puluhannya dulu, lalu satuannya. Susun dari yang terkecil.",
+      "s-31": "31",
+      "s-47": "47",
+      "s-64": "64",
+      "s-74": "74",
+      "s-93": "93",
+      "j-dari-terkecil-ke-terbesar": "Dari terkecil ke terbesar",
+      "s-37": "37",
+      "s-38": "38",
+      "s-72": "72",
+      "s-83": "83",
+      "s-33": "33",
+      "s-56": "56",
+      "s-65": "65",
+      "s-77": "77",
+      "s-29": "29",
+      "s-41": "41",
+      "s-75": "75",
+      "s-78": "78",
+      "s-92": "92",
+      "s-10": "10",
+      "s-11": "11",
+      "s-16": "16",
+      "s-58": "58",
+      "s-61": "61",
+      "s-18": "18",
+      "s-73": "73",
+      "s-86": "86",
+      "s-15": "15",
+      "s-28": "28",
+      "s-39": "39",
+      "s-85": "85",
+      "s-14": "14",
+      "s-67": "67",
+      "s-90": "90",
+      "s-26": "26",
+      "s-53": "53",
+      "s-62": "62",
+      "s-68": "68",
+      "s-24": "24",
+      "s-80": "80",
+      "s-12": "12",
+      "s-45": "45",
+      "s-54": "54",
+      "s-59": "59",
+      "s-95": "95"
+    },
+    "en": {
+      "judul": "2-Digit Number Line-Up",
+      "instruksi": "Look at the tens first, then the ones. Order from smallest.",
+      "s-31": "31",
+      "s-47": "47",
+      "s-64": "64",
+      "s-74": "74",
+      "s-93": "93",
+      "j-dari-terkecil-ke-terbesar": "Smallest to largest",
+      "s-37": "37",
+      "s-38": "38",
+      "s-72": "72",
+      "s-83": "83",
+      "s-33": "33",
+      "s-56": "56",
+      "s-65": "65",
+      "s-77": "77",
+      "s-29": "29",
+      "s-41": "41",
+      "s-75": "75",
+      "s-78": "78",
+      "s-92": "92",
+      "s-10": "10",
+      "s-11": "11",
+      "s-16": "16",
+      "s-58": "58",
+      "s-61": "61",
+      "s-18": "18",
+      "s-73": "73",
+      "s-86": "86",
+      "s-15": "15",
+      "s-28": "28",
+      "s-39": "39",
+      "s-85": "85",
+      "s-14": "14",
+      "s-67": "67",
+      "s-90": "90",
+      "s-26": "26",
+      "s-53": "53",
+      "s-62": "62",
+      "s-68": "68",
+      "s-24": "24",
+      "s-80": "80",
+      "s-12": "12",
+      "s-45": "45",
+      "s-54": "54",
+      "s-59": "59",
+      "s-95": "95"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-angka",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "urut-1",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "31",
+          "labelKey": "s-31",
+          "scale": 1
+        },
+        {
+          "id": "47",
+          "labelKey": "s-47",
+          "scale": 1
+        },
+        {
+          "id": "64",
+          "labelKey": "s-64",
+          "scale": 1
+        },
+        {
+          "id": "74",
+          "labelKey": "s-74",
+          "scale": 1
+        },
+        {
+          "id": "93",
+          "labelKey": "s-93",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-2",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "37",
+          "labelKey": "s-37",
+          "scale": 1
+        },
+        {
+          "id": "38",
+          "labelKey": "s-38",
+          "scale": 1
+        },
+        {
+          "id": "47",
+          "labelKey": "s-47",
+          "scale": 1
+        },
+        {
+          "id": "72",
+          "labelKey": "s-72",
+          "scale": 1
+        },
+        {
+          "id": "83",
+          "labelKey": "s-83",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-3",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "33",
+          "labelKey": "s-33",
+          "scale": 1
+        },
+        {
+          "id": "56",
+          "labelKey": "s-56",
+          "scale": 1
+        },
+        {
+          "id": "65",
+          "labelKey": "s-65",
+          "scale": 1
+        },
+        {
+          "id": "72",
+          "labelKey": "s-72",
+          "scale": 1
+        },
+        {
+          "id": "77",
+          "labelKey": "s-77",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-4",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "29",
+          "labelKey": "s-29",
+          "scale": 1
+        },
+        {
+          "id": "41",
+          "labelKey": "s-41",
+          "scale": 1
+        },
+        {
+          "id": "75",
+          "labelKey": "s-75",
+          "scale": 1
+        },
+        {
+          "id": "78",
+          "labelKey": "s-78",
+          "scale": 1
+        },
+        {
+          "id": "92",
+          "labelKey": "s-92",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-5",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "10",
+          "labelKey": "s-10",
+          "scale": 1
+        },
+        {
+          "id": "11",
+          "labelKey": "s-11",
+          "scale": 1
+        },
+        {
+          "id": "16",
+          "labelKey": "s-16",
+          "scale": 1
+        },
+        {
+          "id": "58",
+          "labelKey": "s-58",
+          "scale": 1
+        },
+        {
+          "id": "61",
+          "labelKey": "s-61",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-6",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "18",
+          "labelKey": "s-18",
+          "scale": 1
+        },
+        {
+          "id": "37",
+          "labelKey": "s-37",
+          "scale": 1
+        },
+        {
+          "id": "65",
+          "labelKey": "s-65",
+          "scale": 1
+        },
+        {
+          "id": "73",
+          "labelKey": "s-73",
+          "scale": 1
+        },
+        {
+          "id": "86",
+          "labelKey": "s-86",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-7",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "15",
+          "labelKey": "s-15",
+          "scale": 1
+        },
+        {
+          "id": "28",
+          "labelKey": "s-28",
+          "scale": 1
+        },
+        {
+          "id": "39",
+          "labelKey": "s-39",
+          "scale": 1
+        },
+        {
+          "id": "58",
+          "labelKey": "s-58",
+          "scale": 1
+        },
+        {
+          "id": "85",
+          "labelKey": "s-85",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-8",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "14",
+          "labelKey": "s-14",
+          "scale": 1
+        },
+        {
+          "id": "41",
+          "labelKey": "s-41",
+          "scale": 1
+        },
+        {
+          "id": "64",
+          "labelKey": "s-64",
+          "scale": 1
+        },
+        {
+          "id": "67",
+          "labelKey": "s-67",
+          "scale": 1
+        },
+        {
+          "id": "90",
+          "labelKey": "s-90",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-9",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "14",
+          "labelKey": "s-14",
+          "scale": 1
+        },
+        {
+          "id": "26",
+          "labelKey": "s-26",
+          "scale": 1
+        },
+        {
+          "id": "53",
+          "labelKey": "s-53",
+          "scale": 1
+        },
+        {
+          "id": "62",
+          "labelKey": "s-62",
+          "scale": 1
+        },
+        {
+          "id": "68",
+          "labelKey": "s-68",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-10",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "24",
+          "labelKey": "s-24",
+          "scale": 1
+        },
+        {
+          "id": "39",
+          "labelKey": "s-39",
+          "scale": 1
+        },
+        {
+          "id": "74",
+          "labelKey": "s-74",
+          "scale": 1
+        },
+        {
+          "id": "80",
+          "labelKey": "s-80",
+          "scale": 1
+        },
+        {
+          "id": "93",
+          "labelKey": "s-93",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "urut-11",
+      "titleKey": "j-dari-terkecil-ke-terbesar",
+      "steps": [
+        {
+          "id": "12",
+          "labelKey": "s-12",
+          "scale": 1
+        },
+        {
+          "id": "45",
+          "labelKey": "s-45",
+          "scale": 1
+        },
+        {
+          "id": "54",
+          "labelKey": "s-54",
+          "scale": 1
+        },
+        {
+          "id": "59",
+          "labelKey": "s-59",
+          "scale": 1
+        },
+        {
+          "id": "95",
+          "labelKey": "s-95",
+          "scale": 1
+        }
+      ]
+    }
+  ]
+}

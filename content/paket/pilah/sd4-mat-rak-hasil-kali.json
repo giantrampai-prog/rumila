@@ -1,0 +1,203 @@
+{
+  "id": "sd4-mat-rak-hasil-kali",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.KALI-BAGI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Hasil Kali",
+      "instruksi": "Taruh tiap kartu perkalian di rak hasilnya. Satu rak bisa berisi beberapa perkalian.",
+      "b-h18": "18",
+      "b-h24": "24",
+      "b-h30": "30",
+      "b-h36": "36",
+      "b-h40": "40",
+      "b-h48": "48",
+      "i1": "2 × 9",
+      "i2": "3 × 6",
+      "i3": "9 × 2",
+      "i4": "3 × 8",
+      "i5": "4 × 6",
+      "i6": "8 × 3",
+      "i7": "5 × 6",
+      "i8": "3 × 10",
+      "i9": "6 × 5",
+      "i10": "4 × 9",
+      "i11": "6 × 6",
+      "i12": "9 × 4",
+      "i13": "5 × 8",
+      "i14": "4 × 10",
+      "i15": "8 × 5",
+      "i16": "6 × 8",
+      "i17": "8 × 6"
+    },
+    "en": {
+      "judul": "Product Shelves",
+      "instruksi": "Put each multiplication card on the shelf with its product. A shelf can hold several facts.",
+      "b-h18": "18",
+      "b-h24": "24",
+      "b-h30": "30",
+      "b-h36": "36",
+      "b-h40": "40",
+      "b-h48": "48",
+      "i1": "2 × 9",
+      "i2": "3 × 6",
+      "i3": "9 × 2",
+      "i4": "3 × 8",
+      "i5": "4 × 6",
+      "i6": "8 × 3",
+      "i7": "5 × 6",
+      "i8": "3 × 10",
+      "i9": "6 × 5",
+      "i10": "4 × 9",
+      "i11": "6 × 6",
+      "i12": "9 × 4",
+      "i13": "5 × 8",
+      "i14": "4 × 10",
+      "i15": "8 × 5",
+      "i16": "6 × 8",
+      "i17": "8 × 6"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak hasil aktif: 3 → 6"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "h18",
+      "labelKey": "b-h18"
+    },
+    {
+      "id": "h24",
+      "labelKey": "b-h24"
+    },
+    {
+      "id": "h30",
+      "labelKey": "b-h30"
+    },
+    {
+      "id": "h36",
+      "labelKey": "b-h36"
+    },
+    {
+      "id": "h40",
+      "labelKey": "b-h40"
+    },
+    {
+      "id": "h48",
+      "labelKey": "b-h48"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "h18"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "h18"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "h18"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "h24"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "h24"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "h24"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "h30"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "h30",
+      "scale": 0.7
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "h30"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "h36"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "h36"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "h36"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "h40"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "h40",
+      "scale": 0.7
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "h40"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "h48"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "h48"
+    }
+  ]
+}

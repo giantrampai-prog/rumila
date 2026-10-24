@@ -1,0 +1,158 @@
+{
+  "id": "sd4-sains-terang-atau-redup",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.LISTRIK.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Terang atau Redup?",
+      "instruksi": "Baca perubahan rangkaiannya, lalu tebak apa yang terjadi pada lampu.",
+      "b-pilihan": "pilihan",
+      "i-terang": "lebih terang",
+      "i-redup": "lebih redup",
+      "i-padam": "padam",
+      "p-r1": "Satu lampu menyala dengan satu baterai. Baterai kedua ditambahkan berderet. Lampunya jadi…",
+      "p-r2": "Satu lampu dengan satu baterai. Lampu kedua ditambahkan berderet. Kedua lampu jadi…",
+      "p-r3": "Dari tiga baterai berderet, satu dilepas dan rangkaian disambung lagi. Lampunya jadi…",
+      "p-r4": "Tiga lampu berderet dengan satu baterai. Satu lampu dilepas dan celahnya disambung kabel. Lampu yang tersisa jadi…",
+      "p-r5": "Dua lampu berderet. Kawat di dalam satu lampu putus. Lampu yang lain…",
+      "p-r6": "Baterai yang baru diganti baterai lama yang hampir habis. Lampunya jadi…",
+      "p-r7": "Rangkaian seri dengan dua lampu. Sakelarnya dibuka. Lampunya…",
+      "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…"
+    },
+    "en": {
+      "judul": "Brighter or Dimmer?",
+      "instruksi": "Read how the circuit changes, then predict what happens to the lamp.",
+      "b-pilihan": "choices",
+      "i-terang": "brighter",
+      "i-redup": "dimmer",
+      "i-padam": "goes out",
+      "p-r1": "One lamp is lit by one cell. A second cell is added in a row. The lamp becomes…",
+      "p-r2": "One lamp with one cell. A second lamp is added in a row. Both lamps become…",
+      "p-r3": "One of three cells in a row is removed and the circuit is joined again. The lamp becomes…",
+      "p-r4": "Three lamps in a row with one cell. One lamp is removed and the gap is joined with wire. The other lamps become…",
+      "p-r5": "Two lamps in a row. The wire inside one lamp breaks. The other lamp…",
+      "p-r6": "A new cell is swapped for an old, nearly flat one. The lamp becomes…",
+      "p-r7": "A series circuit with two lamps. The switch is opened. The lamps…",
+      "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "terang",
+      "labelKey": "i-terang",
+      "bin": "pilihan",
+      "emoji": "🔆"
+    },
+    {
+      "id": "redup",
+      "labelKey": "i-redup",
+      "bin": "pilihan",
+      "emoji": "🔅"
+    },
+    {
+      "id": "padam",
+      "labelKey": "i-padam",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    }
+  ]
+}

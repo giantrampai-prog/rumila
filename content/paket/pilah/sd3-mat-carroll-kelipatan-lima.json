@@ -1,0 +1,234 @@
+{
+  "id": "sd3-mat-carroll-kelipatan-lima",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Diagram Carroll Kelipatan 5",
+      "instruksi": "Kel. 5 = kelipatan 5 (satuannya 0 atau 5); bukan = bukan kelipatan 5. Genap bersatuan 0, 2, 4, 6, 8. Taruh di kotak yang cocok dua-duanya.",
+      "b-kelt-5-genap": "kel. 5 · genap",
+      "b-kelt-5-ganjil": "kel. 5 · ganjil",
+      "b-bukan-genap": "bukan · genap",
+      "b-bukan-ganjil": "bukan · ganjil",
+      "i-10": "10",
+      "i-40": "40",
+      "i-100": "100",
+      "i-250": "250",
+      "i-680": "680",
+      "i-5": "5",
+      "i-15": "15",
+      "i-35": "35",
+      "i-105": "105",
+      "i-945": "945",
+      "i-12": "12",
+      "i-36": "36",
+      "i-84": "84",
+      "i-222": "222",
+      "i-518": "518",
+      "i-7": "7",
+      "i-21": "21",
+      "i-63": "63",
+      "i-101": "101",
+      "i-789": "789"
+    },
+    "en": {
+      "judul": "Multiples of 5 Carroll Diagram",
+      "instruksi": "×5 means a multiple of 5 (ones digit 0 or 5). Even numbers end in 0, 2, 4, 6 or 8. Put each number in the box that fits both.",
+      "b-kelt-5-genap": "×5 · even",
+      "b-kelt-5-ganjil": "×5 · odd",
+      "b-bukan-genap": "not ×5 · even",
+      "b-bukan-ganjil": "not ×5 · odd",
+      "i-10": "10",
+      "i-40": "40",
+      "i-100": "100",
+      "i-250": "250",
+      "i-680": "680",
+      "i-5": "5",
+      "i-15": "15",
+      "i-35": "35",
+      "i-105": "105",
+      "i-945": "945",
+      "i-12": "12",
+      "i-36": "36",
+      "i-84": "84",
+      "i-222": "222",
+      "i-518": "518",
+      "i-7": "7",
+      "i-21": "21",
+      "i-63": "63",
+      "i-101": "101",
+      "i-789": "789"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 2,
+      "keterangan": "2 kotak kelipatan 5 dulu, lalu 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "ruang-main",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "lima-genap",
+      "labelKey": "b-kelt-5-genap",
+      "emoji": "🖐️"
+    },
+    {
+      "id": "lima-ganjil",
+      "labelKey": "b-kelt-5-ganjil",
+      "emoji": "✋"
+    },
+    {
+      "id": "bukan-genap",
+      "labelKey": "b-bukan-genap",
+      "emoji": "🔵"
+    },
+    {
+      "id": "bukan-ganjil",
+      "labelKey": "b-bukan-ganjil",
+      "emoji": "🟠"
+    }
+  ],
+  "items": [
+    {
+      "id": "n10",
+      "labelKey": "i-10",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "n40",
+      "labelKey": "i-40",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "n100",
+      "labelKey": "i-100",
+      "bin": "lima-genap",
+      "scale": 0.85
+    },
+    {
+      "id": "n250",
+      "labelKey": "i-250",
+      "bin": "lima-genap",
+      "scale": 0.85
+    },
+    {
+      "id": "n680",
+      "labelKey": "i-680",
+      "bin": "lima-genap",
+      "scale": 0.85
+    },
+    {
+      "id": "n5",
+      "labelKey": "i-5",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n35",
+      "labelKey": "i-35",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n105",
+      "labelKey": "i-105",
+      "bin": "lima-ganjil",
+      "scale": 0.85
+    },
+    {
+      "id": "n945",
+      "labelKey": "i-945",
+      "bin": "lima-ganjil",
+      "scale": 0.85
+    },
+    {
+      "id": "n12",
+      "labelKey": "i-12",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "n36",
+      "labelKey": "i-36",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "n84",
+      "labelKey": "i-84",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "n222",
+      "labelKey": "i-222",
+      "bin": "bukan-genap",
+      "scale": 0.85
+    },
+    {
+      "id": "n518",
+      "labelKey": "i-518",
+      "bin": "bukan-genap",
+      "scale": 0.85
+    },
+    {
+      "id": "n7",
+      "labelKey": "i-7",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n21",
+      "labelKey": "i-21",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n63",
+      "labelKey": "i-63",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "n101",
+      "labelKey": "i-101",
+      "bin": "bukan-ganjil",
+      "scale": 0.85
+    },
+    {
+      "id": "n789",
+      "labelKey": "i-789",
+      "bin": "bukan-ganjil",
+      "scale": 0.85
+    }
+  ]
+}

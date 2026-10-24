@@ -1,0 +1,166 @@
+{
+  "id": "sd3-sains-rak-alat-ukur",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Alat Ukur",
+      "instruksi": "Taruh tiap pertanyaan ke alat ukur yang tepat.",
+      "b-termometer": "termometer (suhu)",
+      "b-timbangan": "timbangan (berat)",
+      "b-penggaris": "penggaris (panjang)",
+      "b-gelasukur": "gelas ukur (banyak air)",
+      "b-stopwatch": "stopwatch (lama waktu)",
+      "i-airkolam": "seberapa hangat air kolam?",
+      "i-kelas": "seberapa panas kelas siang ini?",
+      "i-semangka": "seberapa berat semangka?",
+      "i-tas": "seberapa berat tas sekolah?",
+      "i-kacang": "seberapa tinggi tanaman kacang?",
+      "i-ulat": "seberapa panjang ulat?",
+      "i-hujan": "berapa banyak air hujan tertampung?",
+      "i-siram": "berapa banyak air untuk satu pot?",
+      "i-es": "berapa lama es mencair?",
+      "i-lari": "berapa lama berlari keliling lapangan?"
+    },
+    "en": {
+      "judul": "Measuring Tool Shelves",
+      "instruksi": "Put each question on the right measuring tool.",
+      "b-termometer": "thermometer (temperature)",
+      "b-timbangan": "scales (weight)",
+      "b-penggaris": "ruler (length)",
+      "b-gelasukur": "measuring jug (amount of water)",
+      "b-stopwatch": "stopwatch (how long)",
+      "i-airkolam": "how warm is the pond?",
+      "i-kelas": "how hot is the classroom at noon?",
+      "i-semangka": "how heavy is the watermelon?",
+      "i-tas": "how heavy is the school bag?",
+      "i-kacang": "how tall is the bean plant?",
+      "i-ulat": "how long is the caterpillar?",
+      "i-hujan": "how much rain was collected?",
+      "i-siram": "how much water for one pot?",
+      "i-es": "how long does the ice take to melt?",
+      "i-lari": "how long to run round the field?"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah alat: 3 (termometer, timbangan, penggaris) → 5"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah pertanyaan per putaran; diambil acak dari alat aktif"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "termometer",
+      "labelKey": "b-termometer",
+      "emoji": "🌡️",
+      "color": "#ffebee"
+    },
+    {
+      "id": "timbangan",
+      "labelKey": "b-timbangan",
+      "emoji": "⚖️",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "penggaris",
+      "labelKey": "b-penggaris",
+      "emoji": "📏",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "gelasukur",
+      "labelKey": "b-gelasukur",
+      "emoji": "🧪",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "stopwatch",
+      "labelKey": "b-stopwatch",
+      "emoji": "⏱️",
+      "color": "#ede7f6"
+    }
+  ],
+  "items": [
+    {
+      "id": "airkolam",
+      "labelKey": "i-airkolam",
+      "bin": "termometer",
+      "emoji": "🐟"
+    },
+    {
+      "id": "kelas",
+      "labelKey": "i-kelas",
+      "bin": "termometer",
+      "emoji": "🏫"
+    },
+    {
+      "id": "semangka",
+      "labelKey": "i-semangka",
+      "bin": "timbangan",
+      "emoji": "🍉"
+    },
+    {
+      "id": "tas",
+      "labelKey": "i-tas",
+      "bin": "timbangan",
+      "emoji": "🎒"
+    },
+    {
+      "id": "kacang",
+      "labelKey": "i-kacang",
+      "bin": "penggaris",
+      "emoji": "🌱"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "penggaris",
+      "emoji": "🐛"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "gelasukur",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "siram",
+      "labelKey": "i-siram",
+      "bin": "gelasukur",
+      "emoji": "🪴"
+    },
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "stopwatch",
+      "emoji": "🧊"
+    },
+    {
+      "id": "lari",
+      "labelKey": "i-lari",
+      "bin": "stopwatch",
+      "emoji": "🏃"
+    }
+  ],
+  "pilihan": []
+}

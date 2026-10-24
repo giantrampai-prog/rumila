@@ -1,0 +1,234 @@
+{
+  "id": "sd2-mat-carroll-genap-lima-puluh",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Diagram Carroll Bilangan",
+      "instruksi": "Cek dua hal: genap atau ganjil, dan kurang dari 50 atau tidak. Taruh di kotak yang cocok dua-duanya.",
+      "b-genap-kurang-50": "genap, < 50",
+      "b-ganjil-kurang-50": "ganjil, < 50",
+      "b-genap-50": "genap, ≥ 50",
+      "b-ganjil-50": "ganjil, ≥ 50",
+      "i-12": "12",
+      "i-24": "24",
+      "i-36": "36",
+      "i-48": "48",
+      "i-7": "7",
+      "i-19": "19",
+      "i-33": "33",
+      "i-49": "49",
+      "i-50": "50",
+      "i-64": "64",
+      "i-78": "78",
+      "i-96": "96",
+      "i-51": "51",
+      "i-67": "67",
+      "i-85": "85",
+      "i-99": "99",
+      "i-40": "40",
+      "i-21": "21",
+      "i-70": "70",
+      "i-53": "53"
+    },
+    "en": {
+      "judul": "Number Carroll Diagram",
+      "instruksi": "Check two things: even or odd, and less than 50 or not. Put each number in the box that fits both.",
+      "b-genap-kurang-50": "even, < 50",
+      "b-ganjil-kurang-50": "odd, < 50",
+      "b-genap-50": "even, ≥ 50",
+      "b-ganjil-50": "odd, ≥ 50",
+      "i-12": "12",
+      "i-24": "24",
+      "i-36": "36",
+      "i-48": "48",
+      "i-7": "7",
+      "i-19": "19",
+      "i-33": "33",
+      "i-49": "49",
+      "i-50": "50",
+      "i-64": "64",
+      "i-78": "78",
+      "i-96": "96",
+      "i-51": "51",
+      "i-67": "67",
+      "i-85": "85",
+      "i-99": "99",
+      "i-40": "40",
+      "i-21": "21",
+      "i-70": "70",
+      "i-53": "53"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 2,
+      "keterangan": "2 kotak (< 50) dulu, lalu 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "ruang-main",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap-kecil",
+      "labelKey": "b-genap-kurang-50",
+      "emoji": "🔵"
+    },
+    {
+      "id": "ganjil-kecil",
+      "labelKey": "b-ganjil-kurang-50",
+      "emoji": "🟠"
+    },
+    {
+      "id": "genap-besar",
+      "labelKey": "b-genap-50",
+      "emoji": "🟦"
+    },
+    {
+      "id": "ganjil-besar",
+      "labelKey": "b-ganjil-50",
+      "emoji": "🟧"
+    }
+  ],
+  "items": [
+    {
+      "id": "n12",
+      "labelKey": "i-12",
+      "bin": "genap-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n24",
+      "labelKey": "i-24",
+      "bin": "genap-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n36",
+      "labelKey": "i-36",
+      "bin": "genap-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n48",
+      "labelKey": "i-48",
+      "bin": "genap-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n7",
+      "labelKey": "i-7",
+      "bin": "ganjil-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n19",
+      "labelKey": "i-19",
+      "bin": "ganjil-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n33",
+      "labelKey": "i-33",
+      "bin": "ganjil-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n49",
+      "labelKey": "i-49",
+      "bin": "ganjil-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n50",
+      "labelKey": "i-50",
+      "bin": "genap-besar",
+      "scale": 1
+    },
+    {
+      "id": "n64",
+      "labelKey": "i-64",
+      "bin": "genap-besar",
+      "scale": 1
+    },
+    {
+      "id": "n78",
+      "labelKey": "i-78",
+      "bin": "genap-besar",
+      "scale": 1
+    },
+    {
+      "id": "n96",
+      "labelKey": "i-96",
+      "bin": "genap-besar",
+      "scale": 1
+    },
+    {
+      "id": "n51",
+      "labelKey": "i-51",
+      "bin": "ganjil-besar",
+      "scale": 1
+    },
+    {
+      "id": "n67",
+      "labelKey": "i-67",
+      "bin": "ganjil-besar",
+      "scale": 1
+    },
+    {
+      "id": "n85",
+      "labelKey": "i-85",
+      "bin": "ganjil-besar",
+      "scale": 1
+    },
+    {
+      "id": "n99",
+      "labelKey": "i-99",
+      "bin": "ganjil-besar",
+      "scale": 1
+    },
+    {
+      "id": "n40",
+      "labelKey": "i-40",
+      "bin": "genap-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n21",
+      "labelKey": "i-21",
+      "bin": "ganjil-kecil",
+      "scale": 1
+    },
+    {
+      "id": "n70",
+      "labelKey": "i-70",
+      "bin": "genap-besar",
+      "scale": 1
+    },
+    {
+      "id": "n53",
+      "labelKey": "i-53",
+      "bin": "ganjil-besar",
+      "scale": 1
+    }
+  ]
+}

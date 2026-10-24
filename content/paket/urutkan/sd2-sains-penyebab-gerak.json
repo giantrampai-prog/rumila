@@ -1,0 +1,256 @@
+{
+  "id": "sd2-sains-penyebab-gerak",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.GAYA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Apa Penyebabnya?",
+      "instruksi": "Benda tidak bergerak sendiri. Sentuh gambar yang terjadi lebih dulu.",
+      "s-tendang": "Mana yang lebih dulu?",
+      "tendang-awal": "kaki menendang bola",
+      "tendang-akhir": "bola melaju",
+      "s-tembok": "Mana yang lebih dulu?",
+      "tembok-awal": "bola menabrak tembok",
+      "tembok-akhir": "bola memantul balik",
+      "s-ayunan": "Mana yang lebih dulu?",
+      "ayunan-awal": "tangan mendorong ayunan",
+      "ayunan-akhir": "ayunan berayun",
+      "s-kelereng": "Mana yang lebih dulu?",
+      "kelereng-awal": "kelereng menabrak kelereng lain",
+      "kelereng-akhir": "kelereng kedua bergerak",
+      "s-rem": "Mana yang lebih dulu?",
+      "rem-awal": "rem sepeda ditekan",
+      "rem-akhir": "sepeda berhenti",
+      "s-tangkap": "Mana yang lebih dulu?",
+      "tangkap-awal": "tangan menangkap bola",
+      "tangkap-akhir": "bola berhenti",
+      "s-tali": "Mana yang lebih dulu?",
+      "tali-awal": "anak menarik tali",
+      "tali-akhir": "mobil mainan bergerak",
+      "s-magnet": "Mana yang lebih dulu?",
+      "magnet-awal": "magnet didekatkan",
+      "magnet-akhir": "paku bergeser mendekat",
+      "s-angin": "Mana yang lebih dulu?",
+      "angin-awal": "angin bertiup",
+      "angin-akhir": "perahu layar melaju",
+      "s-dayung": "Mana yang lebih dulu?",
+      "dayung-awal": "dayung dikayuh ke kiri",
+      "dayung-akhir": "perahu berbelok"
+    },
+    "en": {
+      "judul": "What Caused It?",
+      "instruksi": "Things don't move by themselves. Touch the picture that happened first.",
+      "s-tendang": "Which came first?",
+      "tendang-awal": "foot kicks the ball",
+      "tendang-akhir": "ball speeds away",
+      "s-tembok": "Which came first?",
+      "tembok-awal": "ball hits the wall",
+      "tembok-akhir": "ball bounces back",
+      "s-ayunan": "Which came first?",
+      "ayunan-awal": "hands push the swing",
+      "ayunan-akhir": "swing swings",
+      "s-kelereng": "Which came first?",
+      "kelereng-awal": "a marble hits another",
+      "kelereng-akhir": "second marble rolls",
+      "s-rem": "Which came first?",
+      "rem-awal": "bike brake is squeezed",
+      "rem-akhir": "bike stops",
+      "s-tangkap": "Which came first?",
+      "tangkap-awal": "hands catch the ball",
+      "tangkap-akhir": "ball stops",
+      "s-tali": "Which came first?",
+      "tali-awal": "child pulls the string",
+      "tali-akhir": "toy car moves",
+      "s-magnet": "Which came first?",
+      "magnet-awal": "magnet comes close",
+      "magnet-akhir": "nail slides closer",
+      "s-angin": "Which came first?",
+      "angin-awal": "wind blows",
+      "angin-akhir": "sailboat speeds along",
+      "s-dayung": "Which came first?",
+      "dayung-awal": "paddle pushes to the left",
+      "dayung-akhir": "boat turns"
+    }
+  },
+  "knobs": {
+    "pasangan": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "dokumentasi: mode dulu selalu 2 gambar; variasi dari 10 pasangan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "dulu",
+  "sequences": [
+    {
+      "id": "tendang",
+      "titleKey": "s-tendang",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "tendang-awal",
+          "emoji": "🦶"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "tendang-akhir",
+          "emoji": "⚽"
+        }
+      ]
+    },
+    {
+      "id": "tembok",
+      "titleKey": "s-tembok",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "tembok-awal",
+          "emoji": "🧱"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "tembok-akhir",
+          "emoji": "🔙"
+        }
+      ]
+    },
+    {
+      "id": "ayunan",
+      "titleKey": "s-ayunan",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "ayunan-awal",
+          "emoji": "🤲"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "ayunan-akhir",
+          "emoji": "🎠"
+        }
+      ]
+    },
+    {
+      "id": "kelereng",
+      "titleKey": "s-kelereng",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "kelereng-awal",
+          "emoji": "🔮"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "kelereng-akhir",
+          "emoji": "🟢"
+        }
+      ]
+    },
+    {
+      "id": "rem",
+      "titleKey": "s-rem",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "rem-awal",
+          "emoji": "✊"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "rem-akhir",
+          "emoji": "🚲"
+        }
+      ]
+    },
+    {
+      "id": "tangkap",
+      "titleKey": "s-tangkap",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "tangkap-awal",
+          "emoji": "🧤"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "tangkap-akhir",
+          "emoji": "⏹️"
+        }
+      ]
+    },
+    {
+      "id": "tali",
+      "titleKey": "s-tali",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "tali-awal",
+          "emoji": "🪢"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "tali-akhir",
+          "emoji": "🚙"
+        }
+      ]
+    },
+    {
+      "id": "magnet",
+      "titleKey": "s-magnet",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "magnet-awal",
+          "emoji": "🧲"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "magnet-akhir",
+          "emoji": "🔩"
+        }
+      ]
+    },
+    {
+      "id": "angin",
+      "titleKey": "s-angin",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "angin-awal",
+          "emoji": "🌬️"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "angin-akhir",
+          "emoji": "⛵"
+        }
+      ]
+    },
+    {
+      "id": "dayung",
+      "titleKey": "s-dayung",
+      "steps": [
+        {
+          "id": "awal",
+          "labelKey": "dayung-awal",
+          "emoji": "🛶"
+        },
+        {
+          "id": "akhir",
+          "labelKey": "dayung-akhir",
+          "emoji": "↪️"
+        }
+      ]
+    }
+  ]
+}

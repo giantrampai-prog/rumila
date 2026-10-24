@@ -1,0 +1,166 @@
+{
+  "id": "sd1-sains-gelinding-luncur-putar",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.GAYA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menggelinding, Meluncur, Berputar",
+      "instruksi": "Bagaimana tiap benda bergerak? Taruh ke rak menggelinding, meluncur, atau berputar.",
+      "b-gelinding": "menggelinding",
+      "b-luncur": "meluncur",
+      "b-putar": "berputar di tempat",
+      "i-bola": "bola di lantai miring",
+      "i-kelereng": "kelereng di lantai",
+      "i-ban": "ban menuruni bukit",
+      "i-jeruk": "jeruk jatuh dari meja",
+      "i-perosotan": "anak di perosotan",
+      "i-kotak": "kotak didorong di lantai licin",
+      "i-sabun": "sabun meluncur di lantai basah",
+      "i-buku": "buku didorong di meja",
+      "i-gasing": "gasing",
+      "i-kincir": "kincir angin",
+      "i-kipas": "baling-baling kipas",
+      "i-baling": "baling-baling bambu"
+    },
+    "en": {
+      "judul": "Roll, Slide, Spin",
+      "instruksi": "How does each thing move? Put it on the roll, slide, or spin shelf.",
+      "b-gelinding": "rolls",
+      "b-luncur": "slides",
+      "b-putar": "spins on the spot",
+      "i-bola": "ball on a slope",
+      "i-kelereng": "marble on the floor",
+      "i-ban": "tyre rolling downhill",
+      "i-jeruk": "orange rolling off the table",
+      "i-perosotan": "child on a slide",
+      "i-kotak": "box pushed on a slippery floor",
+      "i-sabun": "soap sliding on a wet floor",
+      "i-buku": "book pushed across a table",
+      "i-gasing": "spinning top",
+      "i-kincir": "windmill",
+      "i-kipas": "fan blades",
+      "i-baling": "bamboo propeller"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (menggelinding, meluncur) → 3 (tambah berputar)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gelinding",
+      "labelKey": "b-gelinding",
+      "emoji": "⚽",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "luncur",
+      "labelKey": "b-luncur",
+      "emoji": "🛝",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "putar",
+      "labelKey": "b-putar",
+      "emoji": "🌀",
+      "color": "#fff8e1"
+    }
+  ],
+  "items": [
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "gelinding",
+      "emoji": "⚽"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "gelinding",
+      "emoji": "🔮"
+    },
+    {
+      "id": "ban",
+      "labelKey": "i-ban",
+      "bin": "gelinding",
+      "emoji": "🛞"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "bin": "gelinding",
+      "emoji": "🍊"
+    },
+    {
+      "id": "perosotan",
+      "labelKey": "i-perosotan",
+      "bin": "luncur",
+      "emoji": "🛝"
+    },
+    {
+      "id": "kotak",
+      "labelKey": "i-kotak",
+      "bin": "luncur",
+      "emoji": "📦"
+    },
+    {
+      "id": "sabun",
+      "labelKey": "i-sabun",
+      "bin": "luncur",
+      "emoji": "🧼"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "luncur",
+      "emoji": "📘"
+    },
+    {
+      "id": "gasing",
+      "labelKey": "i-gasing",
+      "bin": "putar",
+      "emoji": "🪀"
+    },
+    {
+      "id": "kincir",
+      "labelKey": "i-kincir",
+      "bin": "putar",
+      "emoji": "🎡"
+    },
+    {
+      "id": "kipas",
+      "labelKey": "i-kipas",
+      "bin": "putar",
+      "emoji": "🌀"
+    },
+    {
+      "id": "baling",
+      "labelKey": "i-baling",
+      "bin": "putar",
+      "emoji": "🎐"
+    }
+  ],
+  "pilihan": []
+}

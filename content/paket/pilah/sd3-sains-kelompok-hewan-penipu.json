@@ -1,0 +1,211 @@
+{
+  "id": "sd3-sains-kelompok-hewan-penipu",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.HEWAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hewan Penipu!",
+      "instruksi": "Hati-hati, hewan ini menipu. Taruh ke kelompoknya yang benar.",
+      "b-mamalia": "mamalia (berambut, menyusui)",
+      "b-burung": "burung (berbulu, bertelur)",
+      "b-ikan": "ikan (bersirip, insang)",
+      "b-reptil": "reptil (sisik kering)",
+      "b-amfibi": "amfibi (kulit lembap)",
+      "b-serangga": "serangga (6 kaki)",
+      "i-paus": "paus",
+      "i-lumba": "lumba-lumba",
+      "i-kelelawar": "kelelawar",
+      "i-penguin": "penguin",
+      "i-burungunta": "burung unta",
+      "i-ayamkecil": "anak ayam",
+      "i-hiu": "hiu",
+      "i-kudalaut": "kuda laut",
+      "i-penyu": "penyu",
+      "i-komodo": "komodo",
+      "i-katakpohon": "katak pohon",
+      "i-kodok": "kodok",
+      "i-kumbang": "kumbang",
+      "i-belalang": "belalang"
+    },
+    "en": {
+      "judul": "Tricky Animals!",
+      "instruksi": "Careful, these animals are tricky. Put each one in its real group.",
+      "b-mamalia": "mammals (hair, feed milk)",
+      "b-burung": "birds (feathers, lay eggs)",
+      "b-ikan": "fish (fins, gills)",
+      "b-reptil": "reptiles (dry scales)",
+      "b-amfibi": "amphibians (moist skin)",
+      "b-serangga": "insects (6 legs)",
+      "i-paus": "whale",
+      "i-lumba": "dolphin",
+      "i-kelelawar": "bat",
+      "i-penguin": "penguin",
+      "i-burungunta": "ostrich",
+      "i-ayamkecil": "chick",
+      "i-hiu": "shark",
+      "i-kudalaut": "seahorse",
+      "i-penyu": "sea turtle",
+      "i-komodo": "Komodo dragon",
+      "i-katakpohon": "tree frog",
+      "i-kodok": "toad",
+      "i-kumbang": "beetle",
+      "i-belalang": "grasshopper"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kelompok: 3 (mamalia, burung, ikan) → 6"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "mamalia",
+      "labelKey": "b-mamalia",
+      "emoji": "🐄",
+      "color": "#efebe9"
+    },
+    {
+      "id": "burung",
+      "labelKey": "b-burung",
+      "emoji": "🪶",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "b-ikan",
+      "emoji": "🐟",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "reptil",
+      "labelKey": "b-reptil",
+      "emoji": "🦎",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "amfibi",
+      "labelKey": "b-amfibi",
+      "emoji": "🐸",
+      "color": "#e0f2f1"
+    },
+    {
+      "id": "serangga",
+      "labelKey": "b-serangga",
+      "emoji": "🐜",
+      "color": "#fffde7"
+    }
+  ],
+  "items": [
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "mamalia",
+      "emoji": "🐋"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "mamalia",
+      "emoji": "🐬"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "mamalia",
+      "emoji": "🦇"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "burung",
+      "emoji": "🐧"
+    },
+    {
+      "id": "burungunta",
+      "labelKey": "i-burungunta",
+      "bin": "burung",
+      "emoji": "🪶",
+      "scale": 1.4
+    },
+    {
+      "id": "ayamkecil",
+      "labelKey": "i-ayamkecil",
+      "bin": "burung",
+      "emoji": "🐥"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "ikan",
+      "emoji": "🦈"
+    },
+    {
+      "id": "kudalaut",
+      "labelKey": "i-kudalaut",
+      "bin": "ikan",
+      "emoji": "🐠",
+      "color": "#ffd54f"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "reptil",
+      "emoji": "🐢"
+    },
+    {
+      "id": "komodo",
+      "labelKey": "i-komodo",
+      "bin": "reptil",
+      "emoji": "🦎",
+      "scale": 1.4
+    },
+    {
+      "id": "katakpohon",
+      "labelKey": "i-katakpohon",
+      "bin": "amfibi",
+      "emoji": "🐸",
+      "color": "#8bc34a"
+    },
+    {
+      "id": "kodok",
+      "labelKey": "i-kodok",
+      "bin": "amfibi",
+      "emoji": "🐸",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "kumbang",
+      "labelKey": "i-kumbang",
+      "bin": "serangga",
+      "emoji": "🪲"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "i-belalang",
+      "bin": "serangga",
+      "emoji": "🦗"
+    }
+  ],
+  "pilihan": []
+}

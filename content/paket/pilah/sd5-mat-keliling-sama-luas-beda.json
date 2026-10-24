@@ -1,0 +1,419 @@
+{
+  "id": "sd5-mat-keliling-sama-luas-beda",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Keliling Sama, Luas Beda?",
+      "instruksi": "Bandingkan keliling dan luas beberapa persegi panjang, lalu sentuh jawaban yang benar.",
+      "q1": "Keliling 20 cm. Persegi panjang mana yang luasnya terbesar?",
+      "c1": "5 × 5",
+      "c2": "6 × 4",
+      "c3": "8 × 2",
+      "c4": "9 × 1",
+      "q2": "Keliling 24 cm. Persegi panjang mana yang luasnya terkecil?",
+      "c5": "11 × 1",
+      "c6": "6 × 6",
+      "c7": "8 × 4",
+      "c8": "9 × 3",
+      "q3": "Luas 24 cm². Persegi panjang mana yang kelilingnya terkecil?",
+      "c9": "4 × 6",
+      "c10": "1 × 24",
+      "c11": "2 × 12",
+      "c12": "3 × 8",
+      "q4": "Luas 36 cm². Persegi panjang mana yang kelilingnya terbesar?",
+      "c13": "1 × 36",
+      "c14": "2 × 18",
+      "c15": "4 × 9",
+      "q5": "Mana yang kelilingnya sama dengan persegi panjang 6 × 4?",
+      "c16": "7 × 3",
+      "c17": "6 × 5",
+      "c18": "8 × 3",
+      "c19": "12 × 2",
+      "q6": "Mana yang luasnya sama dengan persegi panjang 8 × 3?",
+      "c20": "9 × 2",
+      "c21": "7 × 4",
+      "q7": "Bangun L terdiri dari persegi panjang 6 × 2 dan 2 × 3 (cm). Luasnya …",
+      "c22": "18 cm²",
+      "c23": "13 cm²",
+      "c24": "17 cm²",
+      "c25": "20 cm²",
+      "q8": "Bangun 4 × 4 dan 8 × 2 (cm). Mana yang benar?",
+      "c26": "luas sama, keliling beda",
+      "c27": "keliling sama, luas beda",
+      "c28": "dua-duanya sama",
+      "c29": "dua-duanya beda",
+      "q9": "Bangun 9 × 2 dan 7 × 4 (cm). Mana yang benar?",
+      "q10": "Bangun 5 × 3 dan 4 × 4 (cm). Mana yang benar?",
+      "q11": "Bangun 3 × 3 dan 9 × 1 (cm). Mana yang benar?",
+      "q12": "Bangun 10 × 3 dan 6 × 5 (cm). Mana yang benar?",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Same Perimeter, Different Area?",
+      "instruksi": "Compare the perimeters and areas of the rectangles, then touch the right answer.",
+      "q1": "Perimeter 20 cm. Which rectangle has the largest area?",
+      "c1": "5 × 5",
+      "c2": "6 × 4",
+      "c3": "8 × 2",
+      "c4": "9 × 1",
+      "q2": "Perimeter 24 cm. Which rectangle has the smallest area?",
+      "c5": "11 × 1",
+      "c6": "6 × 6",
+      "c7": "8 × 4",
+      "c8": "9 × 3",
+      "q3": "Area 24 cm². Which rectangle has the smallest perimeter?",
+      "c9": "4 × 6",
+      "c10": "1 × 24",
+      "c11": "2 × 12",
+      "c12": "3 × 8",
+      "q4": "Area 36 cm². Which rectangle has the largest perimeter?",
+      "c13": "1 × 36",
+      "c14": "2 × 18",
+      "c15": "4 × 9",
+      "q5": "Which has the same perimeter as a 6 × 4 rectangle?",
+      "c16": "7 × 3",
+      "c17": "6 × 5",
+      "c18": "8 × 3",
+      "c19": "12 × 2",
+      "q6": "Which has the same area as an 8 × 3 rectangle?",
+      "c20": "9 × 2",
+      "c21": "7 × 4",
+      "q7": "An L-shape is made of a 6 × 2 and a 2 × 3 rectangle (cm). Its area is …",
+      "c22": "18 cm²",
+      "c23": "13 cm²",
+      "c24": "17 cm²",
+      "c25": "20 cm²",
+      "q8": "Shapes 4 × 4 and 8 × 2 (cm). Which is true?",
+      "c26": "same area, different perimeter",
+      "c27": "same perimeter, different area",
+      "c28": "both the same",
+      "c29": "both different",
+      "q9": "Shapes 9 × 2 and 7 × 4 (cm). Which is true?",
+      "q10": "Shapes 5 × 3 and 4 × 4 (cm). Which is true?",
+      "q11": "Shapes 3 × 3 and 9 × 1 (cm). Which is true?",
+      "q12": "Shapes 10 × 3 and 6 × 5 (cm). Which is true?",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.42
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c6"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c16",
+        "c17",
+        "c18",
+        "c19"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c2",
+        "c7",
+        "c20",
+        "c21"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c22",
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c27",
+        "c26",
+        "c28",
+        "c29"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c27",
+        "c26",
+        "c28",
+        "c29"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c26",
+        "c27",
+        "c28",
+        "c29"
+      ],
+      "correct": "c26"
+    }
+  ]
+}

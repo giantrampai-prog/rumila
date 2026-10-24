@@ -1,0 +1,158 @@
+{
+  "id": "sd3-sains-padat-cair-gas-halaman",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.WUJUD.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Padat, Cair, Gas di Halaman",
+      "instruksi": "Taruh tiap benda di halaman ke rak padat, cair, atau gas.",
+      "b-padat": "padat (bentuk tetap)",
+      "b-cair": "cair (mengalir)",
+      "b-gas": "gas (memenuhi ruang)",
+      "i-batu": "batu",
+      "i-pasir": "pasir",
+      "i-bola": "bola",
+      "i-kayu": "balok kayu",
+      "i-hujan": "air hujan",
+      "i-jus": "jus jeruk",
+      "i-airkolam": "air kolam",
+      "i-cat": "cat basah",
+      "i-ban": "udara di dalam ban sepeda",
+      "i-gelembungsabun": "udara dalam gelembung sabun",
+      "i-angin": "angin yang bertiup"
+    },
+    "en": {
+      "judul": "Solids, Liquids, Gases in the Yard",
+      "instruksi": "Put each thing from the yard on the solid, liquid, or gas shelf.",
+      "b-padat": "solid (keeps its shape)",
+      "b-cair": "liquid (flows)",
+      "b-gas": "gas (fills the space)",
+      "i-batu": "stone",
+      "i-pasir": "sand",
+      "i-bola": "ball",
+      "i-kayu": "wooden block",
+      "i-hujan": "rainwater",
+      "i-jus": "orange juice",
+      "i-airkolam": "pond water",
+      "i-cat": "wet paint",
+      "i-ban": "air inside a bike tyre",
+      "i-gelembungsabun": "air inside a soap bubble",
+      "i-angin": "blowing wind"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (padat, cair) → 3 (tambah gas)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "padat",
+      "labelKey": "b-padat",
+      "emoji": "🧊",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "cair",
+      "labelKey": "b-cair",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "gas",
+      "labelKey": "b-gas",
+      "emoji": "🎈",
+      "color": "#f3e5f5"
+    }
+  ],
+  "items": [
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "padat",
+      "emoji": "🪨"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "padat",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "padat",
+      "emoji": "⚽"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "padat",
+      "emoji": "🪵"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "cair",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "jus",
+      "labelKey": "i-jus",
+      "bin": "cair",
+      "emoji": "🧃"
+    },
+    {
+      "id": "airkolam",
+      "labelKey": "i-airkolam",
+      "bin": "cair",
+      "emoji": "💦"
+    },
+    {
+      "id": "cat",
+      "labelKey": "i-cat",
+      "bin": "cair",
+      "emoji": "🎨"
+    },
+    {
+      "id": "ban",
+      "labelKey": "i-ban",
+      "bin": "gas",
+      "emoji": "🛞"
+    },
+    {
+      "id": "gelembungsabun",
+      "labelKey": "i-gelembungsabun",
+      "bin": "gas",
+      "emoji": "🫧"
+    },
+    {
+      "id": "angin",
+      "labelKey": "i-angin",
+      "bin": "gas",
+      "emoji": "🌬️"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,434 @@
+{
+  "id": "sd6-mat-kpk-dan-fpb",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.FAKTOR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "KPK dan FPB",
+      "instruksi": "KPK = kelipatan bersama terkecil, FPB = faktor bersama terbesar. Sentuh jawaban yang benar.",
+      "q1": "KPK dari 4 dan 6 adalah …",
+      "c1": "12",
+      "c2": "24",
+      "c3": "2",
+      "c4": "10",
+      "q2": "FPB dari 12 dan 18 adalah …",
+      "c5": "6",
+      "c6": "3",
+      "c7": "36",
+      "q3": "Lampu A berkedip tiap 6 detik, lampu B tiap 8 detik. Keduanya berkedip bersama lagi setelah … detik",
+      "c8": "48",
+      "c9": "14",
+      "q4": "24 apel dan 36 jeruk dibagi ke keranjang yang isinya sama, sebanyak mungkin keranjang. Berapa keranjang?",
+      "c10": "72",
+      "c11": "60",
+      "q5": "KPK dari 9 dan 12 adalah …",
+      "c12": "108",
+      "q6": "FPB dari 20 dan 30 adalah …",
+      "c13": "5",
+      "q7": "Bus A berangkat tiap 15 menit, bus B tiap 20 menit. Berangkat bersama pukul 07.00. Bersama lagi pukul …",
+      "c14": "08.00",
+      "c15": "07.35",
+      "c16": "07.05",
+      "c17": "12.00",
+      "q8": "FPB dari 16 dan 40 adalah …",
+      "c18": "8",
+      "c19": "4",
+      "c20": "80",
+      "q9": "KPK dari 5 dan 7 adalah …",
+      "c21": "35",
+      "c22": "1",
+      "c23": "70",
+      "q10": "Faktor persekutuan 18 dan 27 adalah …",
+      "c24": "1, 3, 9",
+      "c25": "1, 2, 3, 9",
+      "c26": "3, 9, 27",
+      "c27": "1, 3, 6, 9",
+      "q11": "Kelipatan persekutuan 4 dan 10 yang kurang dari 50 adalah …",
+      "c28": "20, 40",
+      "c29": "10, 20, 40",
+      "c30": "4, 10, 20",
+      "c31": "20, 30, 40",
+      "q12": "FPB dari 14 dan 35 adalah …",
+      "c32": "7",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "LCM and HCF",
+      "instruksi": "LCM = lowest common multiple, HCF = highest common factor. Touch the right answer.",
+      "q1": "The LCM of 4 and 6 is …",
+      "c1": "12",
+      "c2": "24",
+      "c3": "2",
+      "c4": "10",
+      "q2": "The HCF of 12 and 18 is …",
+      "c5": "6",
+      "c6": "3",
+      "c7": "36",
+      "q3": "Light A flashes every 6 seconds, light B every 8 seconds. They flash together again after … seconds",
+      "c8": "48",
+      "c9": "14",
+      "q4": "24 apples and 36 oranges are shared into identical baskets, as many baskets as possible. How many baskets?",
+      "c10": "72",
+      "c11": "60",
+      "q5": "The LCM of 9 and 12 is …",
+      "c12": "108",
+      "q6": "The HCF of 20 and 30 is …",
+      "c13": "5",
+      "q7": "Bus A leaves every 15 minutes, bus B every 20 minutes. They leave together at 07:00. Together again at …",
+      "c14": "08:00",
+      "c15": "07:35",
+      "c16": "07:05",
+      "c17": "12:00",
+      "q8": "The HCF of 16 and 40 is …",
+      "c18": "8",
+      "c19": "4",
+      "c20": "80",
+      "q9": "The LCM of 5 and 7 is …",
+      "c21": "35",
+      "c22": "1",
+      "c23": "70",
+      "q10": "The common factors of 18 and 27 are …",
+      "c24": "1, 3, 9",
+      "c25": "1, 2, 3, 9",
+      "c26": "3, 9, 27",
+      "c27": "1, 3, 6, 9",
+      "q11": "The common multiples of 4 and 10 below 50 are …",
+      "c28": "20, 40",
+      "c29": "10, 20, 40",
+      "c30": "4, 10, 20",
+      "c31": "20, 30, 40",
+      "q12": "The HCF of 14 and 35 is …",
+      "c32": "7",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c3"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c2",
+        "c8",
+        "c9",
+        "c3"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c1",
+        "c5",
+        "c10",
+        "c11"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c7",
+        "c12",
+        "c6",
+        "c10"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c4",
+        "c13",
+        "c11",
+        "c3"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c14",
+        "c15",
+        "c16",
+        "c17"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c18",
+        "c19",
+        "c3",
+        "c20"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c21",
+        "c1",
+        "c22",
+        "c23"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c24",
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c28",
+        "c29",
+        "c30",
+        "c31"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c32",
+        "c13",
+        "c23",
+        "c3"
+      ],
+      "correct": "c32"
+    }
+  ]
+}

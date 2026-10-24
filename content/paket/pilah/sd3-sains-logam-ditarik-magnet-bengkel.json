@@ -1,0 +1,146 @@
+{
+  "id": "sd3-sains-logam-ditarik-magnet-bengkel",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.MAGNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Magnet di Bengkel",
+      "instruksi": "Dekatkan magnet ke tiap benda. Taruh ke rak ditarik atau tidak ditarik.",
+      "b-tarik": "ditarik magnet",
+      "b-tidak": "tidak ditarik",
+      "i-obeng": "ujung obeng baja",
+      "i-kaleng": "kaleng susu baja",
+      "i-binder": "penjepit kertas baja",
+      "i-kuncipas": "kunci pas baja",
+      "i-gunting": "bilah gunting baja",
+      "i-panci": "panci aluminium",
+      "i-pipa": "pipa tembaga",
+      "i-gelang": "gelang perak",
+      "i-lonceng": "lonceng kuningan",
+      "i-sendokplastik": "sendok plastik",
+      "i-uangkertas": "uang kertas"
+    },
+    "en": {
+      "judul": "Magnets in the Workshop",
+      "instruksi": "Bring the magnet near each thing. Put it on the pulled or not-pulled shelf.",
+      "b-tarik": "pulled by a magnet",
+      "b-tidak": "not pulled",
+      "i-obeng": "steel screwdriver tip",
+      "i-kaleng": "steel food tin",
+      "i-binder": "steel bulldog clip",
+      "i-kuncipas": "steel spanner",
+      "i-gunting": "steel scissor blade",
+      "i-panci": "aluminium pan",
+      "i-pipa": "copper pipe",
+      "i-gelang": "silver bangle",
+      "i-lonceng": "brass bell",
+      "i-sendokplastik": "plastic spoon",
+      "i-uangkertas": "banknote"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "tarik",
+      "labelKey": "b-tarik",
+      "emoji": "🧲",
+      "color": "#ffebee"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🚫",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "obeng",
+      "labelKey": "i-obeng",
+      "bin": "tarik",
+      "emoji": "🪛"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "tarik",
+      "emoji": "🥫"
+    },
+    {
+      "id": "binder",
+      "labelKey": "i-binder",
+      "bin": "tarik",
+      "emoji": "📎"
+    },
+    {
+      "id": "kuncipas",
+      "labelKey": "i-kuncipas",
+      "bin": "tarik",
+      "emoji": "🔧"
+    },
+    {
+      "id": "gunting",
+      "labelKey": "i-gunting",
+      "bin": "tarik",
+      "emoji": "✂️"
+    },
+    {
+      "id": "panci",
+      "labelKey": "i-panci",
+      "bin": "tidak",
+      "emoji": "🍳",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "pipa",
+      "labelKey": "i-pipa",
+      "bin": "tidak",
+      "emoji": "🟠"
+    },
+    {
+      "id": "gelang",
+      "labelKey": "i-gelang",
+      "bin": "tidak",
+      "emoji": "⭕",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "lonceng",
+      "labelKey": "i-lonceng",
+      "bin": "tidak",
+      "emoji": "🔔"
+    },
+    {
+      "id": "sendokplastik",
+      "labelKey": "i-sendokplastik",
+      "bin": "tidak",
+      "emoji": "🥄",
+      "color": "#ffcc80"
+    },
+    {
+      "id": "uangkertas",
+      "labelKey": "i-uangkertas",
+      "bin": "tidak",
+      "emoji": "💵"
+    }
+  ],
+  "pilihan": []
+}

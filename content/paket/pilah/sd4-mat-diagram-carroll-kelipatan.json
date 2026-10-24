@@ -1,0 +1,266 @@
+{
+  "id": "sd4-mat-diagram-carroll-kelipatan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Carroll Kelipatan",
+      "instruksi": "Dua sifat: kelipatan 5 atau bukan, dan kelipatan 3 atau bukan. Taruh tiap bilangan di kotak yang cocok untuk keduanya.",
+      "b-k5-k3": "kelipatan 5 & 3",
+      "b-k5-b3": "kelipatan 5, bukan 3",
+      "b-b5-k3": "kelipatan 3, bukan 5",
+      "b-b5-b3": "bukan keduanya",
+      "i1": "15",
+      "i2": "30",
+      "i3": "45",
+      "i4": "60",
+      "i5": "75",
+      "i6": "90",
+      "i7": "5",
+      "i8": "25",
+      "i9": "35",
+      "i10": "55",
+      "i11": "85",
+      "i12": "95",
+      "i13": "12",
+      "i14": "18",
+      "i15": "24",
+      "i16": "33",
+      "i17": "3",
+      "i18": "9",
+      "i19": "27",
+      "i20": "21",
+      "i21": "40",
+      "i22": "50",
+      "i23": "80",
+      "i24": "10",
+      "i25": "7",
+      "i26": "11",
+      "i27": "13",
+      "i28": "22",
+      "i29": "26"
+    },
+    "en": {
+      "judul": "Multiples Carroll Diagram",
+      "instruksi": "Two properties: a multiple of 5 or not, and a multiple of 3 or not. Put each number in the box that fits both.",
+      "b-k5-k3": "multiple of 5 & 3",
+      "b-k5-b3": "of 5, not 3",
+      "b-b5-k3": "of 3, not 5",
+      "b-b5-b3": "neither",
+      "i1": "15",
+      "i2": "30",
+      "i3": "45",
+      "i4": "60",
+      "i5": "75",
+      "i6": "90",
+      "i7": "5",
+      "i8": "25",
+      "i9": "35",
+      "i10": "55",
+      "i11": "85",
+      "i12": "95",
+      "i13": "12",
+      "i14": "18",
+      "i15": "24",
+      "i16": "33",
+      "i17": "3",
+      "i18": "9",
+      "i19": "27",
+      "i20": "21",
+      "i21": "40",
+      "i22": "50",
+      "i23": "80",
+      "i24": "10",
+      "i25": "7",
+      "i26": "11",
+      "i27": "13",
+      "i28": "22",
+      "i29": "26"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 8,
+      "max": 12,
+      "default": 8,
+      "step": 2,
+      "keterangan": "kartu per ronde: 8 → 12"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k5-k3",
+      "labelKey": "b-k5-k3"
+    },
+    {
+      "id": "k5-b3",
+      "labelKey": "b-k5-b3"
+    },
+    {
+      "id": "b5-k3",
+      "labelKey": "b-b5-k3"
+    },
+    {
+      "id": "b5-b3",
+      "labelKey": "b-b5-b3"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "k5-k3"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "k5-k3"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "k5-k3"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "k5-k3"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "k5-k3"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "k5-k3"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i19",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i20",
+      "bin": "b5-k3"
+    },
+    {
+      "id": "i21",
+      "labelKey": "i21",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i22",
+      "labelKey": "i22",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i23",
+      "labelKey": "i23",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i24",
+      "labelKey": "i24",
+      "bin": "k5-b3"
+    },
+    {
+      "id": "i25",
+      "labelKey": "i25",
+      "bin": "b5-b3"
+    },
+    {
+      "id": "i26",
+      "labelKey": "i26",
+      "bin": "b5-b3"
+    },
+    {
+      "id": "i27",
+      "labelKey": "i27",
+      "bin": "b5-b3"
+    },
+    {
+      "id": "i28",
+      "labelKey": "i28",
+      "bin": "b5-b3"
+    },
+    {
+      "id": "i29",
+      "labelKey": "i29",
+      "bin": "b5-b3"
+    }
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.SD2.CIRI-HEWAN.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "CIRI-HEWAN",
+        "nama": {
+          "id": "Ciri tubuh hewan",
+          "en": "Animal body features"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan menurut penutup tubuhnya: berambut, berbulu, bersisik, atau berkulit lembap",
+        "en": "I can sort animals by their body covering: hair or fur, feathers, scales, or moist skin"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Bs.01",
+          "note": "penutup tubuh (skin covering)"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2TWSc.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret hewan ke rak penutup tubuh; penutup terlihat pada gambar. Jebakan: penguin berbulu (burung), kelelawar berambut, ular dan buaya bersisik, katak berkulit lembap tanpa sisik. Paus/lumba-lumba dan kura-kura (cangkang) sengaja tidak dipakai agar jawaban tunggal. Knob binCount 3 → 4 (kulit lembap terakhir), itemCount 6 → 8. Dua konteks: peternakan-kebun dan kebun binatang."
+    },
+    {
+      "id": "SAINS.SD2.CIRI-HEWAN.02",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "CIRI-HEWAN",
+        "nama": {
+          "id": "Ciri tubuh hewan",
+          "en": "Animal body features"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan menurut jumlah kakinya: tanpa kaki, dua, empat, enam, atau delapan",
+        "en": "I can sort animals by how many legs they have: none, two, four, six, or eight"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Bs.01",
+          "note": "membandingkan bagian tubuh luar"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2TWSc.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menghitung kaki pada gambar lalu menyeret ke rak. Lanjutan PAUD HEWAN-SUARA.03 (2 vs 4 kaki, tidak dicantumkan sebagai prasyarat karena batas brief): kini 6 (serangga) dan 8 (laba-laba) yang perlu dihitung cermat. Jebakan: katak dan kadal 4 kaki; kalajengking 8 kaki (capitnya bukan kaki); kupu-kupu 6 kaki walau kakinya kecil. Gurita dan kaki seribu tidak dipakai. Knob binCount 3 → 5 (urutan: 2, 4, 6, lalu 8, tanpa kaki)."
+    },
+    {
+      "id": "SAINS.SD2.TUMBUH-BESAR.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "TUMBUH-BESAR",
+        "nama": {
+          "id": "Hewan tumbuh besar",
+          "en": "Animals growing up"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun gambar hewan dari bayi sampai dewasa: anak kucing, kucing muda, lalu kucing dewasa",
+        "en": "I can put pictures of an animal in order from baby to adult: kitten, young cat, then grown-up cat"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Bp.03",
+          "note": "hanya hewan; tahap manusia ditunda (keputusan PO)"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun 3–4 kartu tahap. Tiap kartu memuat ciri perubahan, bukan hanya ukuran (mata masih tertutup, bulu halus, jengger tumbuh, tanduk muncul), supaya bukan seriasi besar-kecil semata. Dua paket: susun dan perbaiki (satu pasang tertukar). Jebakan: anak ayam berbulu halus lebih kecil dari ayam remaja; kambing muda bertanduk kecil. Knob steps 3 → 4. Tahap pertumbuhan manusia (bayi–anak–dewasa) tidak ditulis: topik tubuh, diserahkan ke PO."
+    },
+    {
+      "id": "SAINS.SD2.HABITAT.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "HABITAT",
+        "nama": {
+          "id": "Habitat",
+          "en": "Habitats"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah hewan dan tumbuhan ke habitatnya: kaktus dan unta ke gurun, teratai dan katak ke kolam",
+        "en": "I can sort animals and plants into their habitats: cactus and camel to the desert, water lily and frog to the pond"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Be.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Be.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret makhluk ke kartu habitat. Lanjutan TKB HEWAN-HABITAT.01 (hanya hewan; tidak dicantumkan sebagai prasyarat karena batas brief): kini tumbuhan ikut dipilah, sehingga anak melihat tiap habitat punya hewan DAN tumbuhan sendiri. Paket kedua memakai habitat kecil di sekitar rumah (bawah batu, pohon, kolam, tanah). Jebakan: penguin ke kutub, bukan laut; jamur ke hutan lembap; cacing ke tanah, bukan kolam. Knob binCount 3 → 5, itemCount 6 → 8."
+    },
+    {
+      "id": "SAINS.SD2.HABITAT.02",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "HABITAT",
+        "nama": {
+          "id": "Habitat",
+          "en": "Habitats"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah tempat di sekitarku ke panas-kering atau sejuk-lembap dari gambar pengamatannya",
+        "en": "I can sort places around me into hot and dry or cool and damp from pictures of what I observe"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.HABITAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Be.03"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: pilah kartu tempat ke panas-kering / sejuk-lembap. [Tinjauan 25 Okt 2026: bagian 'menebak di mana cacing dan siput ditemukan' dibuang dari statement karena dua kemampuan (K2); paket pilihnya dihapus. Usul kompetensi lanjutan .03 bila PO mau.] Jebakan: bawah pohon rindang sejuk walau di luar; pasir di bawah Matahari panas; pot yang baru disiram lembap. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD2.BAHAN.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan: asal, kegunaan, perubahan",
+          "en": "Materials: origin, use, change"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bahan ke alami atau buatan manusia: kayu, batu, dan wol alami; plastik, kaca, dan kertas buatan",
+        "en": "I can sort materials into natural or made by people: wood, rock, and wool are natural; plastic, glass, and paper are made"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Cm.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret bahan ke rak alami (diambil langsung dari alam) atau buatan (dibuat di pabrik/bengkel). Jebakan utama: kertas dibuat dari kayu dan kaca dari pasir — bahan asalnya alami, tetapi kertas dan kaca itu sendiri buatan. Logam dan karet tidak dipakai (bisa keduanya). Umpan balik ideal menampilkan 'asal' bahan buatan (kertas ← kayu). Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD2.BAHAN.02",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan: asal, kegunaan, perubahan",
+          "en": "Materials: origin, use, change"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih bahan yang sifatnya cocok untuk tugasnya: kedap air untuk jas hujan, tembus pandang untuk jendela",
+        "en": "I can choose a material whose property suits the job: waterproof for a raincoat, see-through for a window"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Cp.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Cp.01",
+          "note": "satu bahan bisa punya beberapa sifat"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: dengar tugas yang menyebut sifat yang dibutuhkan ('harus kedap air'), sentuh bahan. Lanjutan TKB BAHAN.03 (tanpa nama sifat): di SD 2 sifat disebut sehingga anak menghubungkan sifat → bahan. Tiap ronde 3 pilihan dengan tepat satu bahan yang cocok (plastik tidak ditawarkan untuk gagang panci, kertas tidak untuk kantong belanja). Jebakan: kayu untuk gagang panci karena tidak menghantar panas, bukan karena kuat. Ide mode baru: 'bangun' dengan akibat terlihat (payung kertas basah). [Tinjauan 25 Okt 2026: ditambah paket pilah kelompok arah sebaliknya — benda ke sifat yang dibutuhkannya (kedap air, tembus pandang, lentur, menyerap).]"
+    },
+    {
+      "id": "SAINS.SD2.BAHAN.03",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan: asal, kegunaan, perubahan",
+          "en": "Materials: origin, use, change"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan perubahan yang menghasilkan bahan baru, seperti telur digoreng, dari yang bisa dikembalikan, seperti es mencair",
+        "en": "I can tell changes that make a new material, like frying an egg, from changes that can be undone, like ice melting"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.04"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Cc.01"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah",
+        "urutkan"
+      ],
+      "catatan": "Aksi utama: pilah kartu perubahan ke rak 'jadi bahan baru' (tidak bisa kembali) atau 'bisa dikembalikan' (es mencair → dibekukan lagi, cokelat meleleh → mengeras lagi). Paket kedua (mode dulu, konteks pendukung): dua gambar sebelum–sesudah perubahan bahan baru, sentuh yang lebih dulu. Beda dengan SD1 BAHAN.04: di sana bentuk berubah, bahan sama. Jebakan: lilin meleleh bisa mengeras lagi (bisa dikembalikan) walau lilin yang terbakar habis tidak; kertas dilipat bukan bahan baru. Knob itemCount 4 → 8. [Tinjauan 25 Okt 2026: statement lama 'menunjuk keadaan sebelum perubahan' hanya menguji urutan sehari-hari (K4 = 1); diganti membedakan dua jenis perubahan, paket pilah ditambah sebagai bukti utama.]"
+    },
+    {
+      "id": "SAINS.SD2.GAYA.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "GAYA",
+        "nama": {
+          "id": "Gaya mengubah gerak dan bentuk",
+          "en": "Forces change movement and shape"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kejadian ke gaya yang mengubah gerak benda atau gaya yang mengubah bentuknya",
+        "en": "I can sort events into forces that change how something moves or forces that change its shape"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.GAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Pf.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Pf.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu kejadian ke rak 'gerak berubah' atau 'bentuk berubah'. Jebakan: menangkap bola juga gaya (bola berhenti = gerak berubah); mengerem sepeda = gerak berubah; menginjak kaleng = bentuk berubah. Kejadian yang mengubah keduanya (bola tenis dipukul sampai gepeng sesaat) tidak dipakai. Lanjutan SD1 GAYA.01 (dorong/tarik = gaya). Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD2.GAYA.02",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "GAYA",
+        "nama": {
+          "id": "Gaya mengubah gerak dan bentuk",
+          "en": "Forces change movement and shape"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk penyebab sebelum benda mulai bergerak, berhenti, atau berbelok: tendangan sebelum bola melaju",
+        "en": "I can point to the cause before something starts, stops, or turns: the kick before the ball speeds away"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.GAYA.02",
+        "SAINS.SD2.GAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Pf.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: dua gambar (penyebab dan akibat gerak) tampil acak; anak menyentuh yang terjadi lebih dulu, yaitu penyebab. Tujuannya ide 'benda hanya mulai, berhenti, atau berbelok kalau ada penyebab'. Termasuk gaya tanpa sentuhan (magnet menarik paku, angin meniup perahu). Jebakan: gambar akibat lebih menarik (bola melayang) sehingga anak memilihnya. Mode dulu tanpa knob; 10 pasangan."
+    },
+    {
+      "id": "SAINS.SD2.CAHAYA.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "CAHAYA",
+        "nama": {
+          "id": "Sumber cahaya",
+          "en": "Light sources"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke sumber cahaya atau bukan: Matahari, lampu, dan lilin ke sumber cahaya; Bulan dan cermin bukan",
+        "en": "I can sort things into light sources or not: the Sun, a lamp, and a candle are light sources; the Moon and a mirror are not"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MATAHARI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Ps.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Ps.02",
+          "note": "gelap = tidak ada cahaya; dibahas di catatan umpan balik"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke rak 'sumber cahaya' (membuat cahaya sendiri) atau 'bukan' (hanya memantulkan, atau mati). Jebakan inti: Bulan dan cermin tampak terang tetapi memantulkan; lampu yang mati bukan sumber cahaya saat itu. Dua konteks: di rumah dan di luar malam hari. Knob itemCount 4 → 8. 2Ps.02 (gelap) belum punya bukti sendiri; usul pengaya: mode 'senter di ruang gelap' (belum ada)."
+    },
+    {
+      "id": "SAINS.SD2.LISTRIK.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "LISTRIK",
+        "nama": {
+          "id": "Aman dengan listrik",
+          "en": "Safe with electricity"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kebiasaan memakai listrik ke aman atau berbahaya, misalnya tidak memegang sakelar dengan tangan basah",
+        "en": "I can sort ways of using electricity into safe or dangerous, for example not touching a switch with wet hands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.LISTRIK.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2Pe.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu kebiasaan ke rak aman (✅) atau berbahaya (⚠️). Bahasa positif: kebiasaan aman ditulis sebagai tindakan yang boleh ditiru; kebiasaan berbahaya tanpa gambar cedera (tidak menakut-nakuti). Jebakan: 'minta orang dewasa mencolokkan kabel' = aman; 'main layang-layang di lapangan jauh dari kabel' = aman, 'dekat kabel' = berbahaya. Komponen rangkaian (2Pe.02–03) ditunda: butuh mekanik bangun. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD2.BATUAN.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "BATUAN",
+        "nama": {
+          "id": "Membandingkan batuan",
+          "en": "Comparing rocks"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membandingkan dua batu dengan timbangan dan menemukan bahwa batu besar belum tentu lebih berat",
+        "en": "I can compare two rocks on a balance and find out that a bigger rock is not always heavier"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BUMI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2ESp.01",
+          "note": "membandingkan jenis batuan"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2TWSc.02",
+          "note": "memakai alat yang diberikan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Aksi: menaruh dua batu di jungkat-jungkit, melihat sisi yang turun, lalu memilih yang lebih berat; mesin menilai pilihan. Nilai berat relatif dibuat masuk akal: batu apung besar ringan (berpori), granit dan marmer berat. Knob tipuan 0 → 1: pasangan 'besar tapi ringan' dipilih dengan sengaja — inilah bukti bahwa anak memakai timbangan, bukan menebak dari ukuran. Pengaya; perbandingan ciri lain (kasar/halus, berlapis) butuh aset gambar batuan."
+    },
+    {
+      "id": "SAINS.SD2.LINGKUNGAN.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "LINGKUNGAN",
+        "nama": {
+          "id": "Manusia dan lingkungan",
+          "en": "People and the environment"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kegiatan manusia ke yang merawat lingkungan atau yang merusaknya",
+        "en": "I can sort things people do into caring for the environment or harming it"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD2.HABITAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2ESp.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2SIC.04",
+          "note": "sains membantu memahami dampak kita"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu kegiatan ke rak merawat (🌱) atau merusak (🗑️). Contoh dekat anak Indonesia: sampah di sungai, menanam mangrove, membakar sampah, membawa botol minum sendiri. Bahasa tanpa menyalahkan orang tertentu. Jebakan: 'membuang sampah ke tempatnya' = merawat walau ada sampah; 'memetik bunga di taman kota' = merusak. Dua konteks: kota/rumah dan sungai/pantai. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD2.MATAHARI.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "MATAHARI",
+        "nama": {
+          "id": "Gerak semu Matahari",
+          "en": "The Sun's apparent movement"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun letak Matahari dari pagi, siang, sampai sore: terbit di timur, tinggi di atas, lalu terbenam di barat",
+        "en": "I can order where the Sun is from morning to afternoon: rising in the east, high overhead, then setting in the west"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MATAHARI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2ESs.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun 3–4 kartu letak Matahari/bayangan menurut waktu. Kata 'tampak bergerak' dipakai di umpan balik (yang berputar sebenarnya Bumi — TKB MATAHARI-BUMI-BULAN.03). Konteks: langit, bayangan tiang (panjang–pendek–panjang), kegiatan harian, bunga menghadap Matahari. Jebakan: bayangan pagi dan sore sama panjang tetapi berlawanan arah — kartu bayangan memakai arah (ke barat/ke timur). Knob steps 3 → 4."
+    },
+    {
+      "id": "SAINS.SD2.PENGAMATAN.01",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "PENGAMATAN",
+        "nama": {
+          "id": "Mencatat dan mencari pola",
+          "en": "Recording and finding patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencatat serangga yang kutemukan dengan turus untuk tiga jenis sekaligus",
+        "en": "I can record the insects I find with tally marks for three kinds at once"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.PENGAMATAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2TWSc.06"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2TWSa.03",
+          "note": "menyajikan hasil dalam tabel"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Aksi: tiap hewan lewat, ketuk barisnya; tabel turus per jenis dinilai mesin. Lanjutan SD1 PENGAMATAN.02: minimal 3 jenis, lebih banyak hewan, jeda lebih pendek. Konteks survei kebun sekolah dan tepi hutan. Jebakan: serangga mirip (lebah–kumbang) — dibedakan warna. Grafik blok (2TWSa.03) belum ada mekaniknya; turus = tabel. Knob kinds 3 → 4, count 8 → 12, gapMs 1600 → 1000."
+    },
+    {
+      "id": "SAINS.SD2.PENGAMATAN.02",
+      "track": "SAINS",
+      "level": "SD2",
+      "unit": {
+        "id": "PENGAMATAN",
+        "nama": {
+          "id": "Mencatat dan mencari pola",
+          "en": "Recording and finding patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun hasil pengamatan menurut polanya: kecambah makin tinggi tiap hari, es batu makin kecil tiap menit",
+        "en": "I can put observations in order by their pattern: a sprout gets taller each day, an ice cube gets smaller each minute"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.PENGAMATAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "2TWSa.02",
+          "note": "pola naik dan turun"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun 3–4 kartu pengamatan dari yang pertama sampai terakhir; judul menyebut apa yang diamati, kartu tidak memuat nomor hari. Campuran pola naik (kecambah, genangan mengering terbalik) dan turun (es, lilin) supaya anak tidak selalu mengurut kecil→besar. Jebakan: pola turun disusun naik. Knob steps 3 → 4. Pengaya; grafik blok menyusul bila ada mekanik grafik."
+    }
+  ]
+}

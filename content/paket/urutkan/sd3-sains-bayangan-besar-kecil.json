@@ -1,0 +1,180 @@
+{
+  "id": "sd3-sains-bayangan-besar-kecil",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD3.CAHAYA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bayangan Membesar dan Mengecil",
+      "instruksi": "Susun dari bayangan paling besar sampai paling kecil.",
+      "s-boneka": "Bayangan boneka di layar",
+      "boneka-p1": "boneka tepat di depan senter",
+      "boneka-p2": "boneka agak dekat senter",
+      "boneka-p3": "boneka di tengah",
+      "boneka-p4": "boneka dekat layar",
+      "s-tangan": "Bayangan tangan kelinci",
+      "tangan-p1": "tangan tepat di depan senter",
+      "tangan-p2": "tangan agak dekat senter",
+      "tangan-p3": "tangan di tengah",
+      "tangan-p4": "tangan dekat layar",
+      "s-dino": "Bayangan dinosaurus mainan",
+      "dino-p1": "dinosaurus tepat di depan senter",
+      "dino-p2": "dinosaurus agak dekat senter",
+      "dino-p3": "dinosaurus di tengah",
+      "dino-p4": "dinosaurus dekat layar",
+      "s-kunci": "Bayangan kunci",
+      "kunci-p1": "kunci tepat di depan senter",
+      "kunci-p2": "kunci agak dekat senter",
+      "kunci-p3": "kunci di tengah",
+      "kunci-p4": "kunci dekat layar"
+    },
+    "en": {
+      "judul": "Shadows Grow and Shrink",
+      "instruksi": "Order them from the biggest shadow to the smallest.",
+      "s-boneka": "A teddy's shadow on the screen",
+      "boneka-p1": "teddy right in front of the torch",
+      "boneka-p2": "teddy fairly close to the torch",
+      "boneka-p3": "teddy halfway",
+      "boneka-p4": "teddy close to the screen",
+      "s-tangan": "A rabbit hand shadow",
+      "tangan-p1": "hand right in front of the torch",
+      "tangan-p2": "hand fairly close to the torch",
+      "tangan-p3": "hand halfway",
+      "tangan-p4": "hand close to the screen",
+      "s-dino": "A toy dinosaur's shadow",
+      "dino-p1": "dinosaur right in front of the torch",
+      "dino-p2": "dinosaur fairly close to the torch",
+      "dino-p3": "dinosaur halfway",
+      "dino-p4": "dinosaur close to the screen",
+      "s-kunci": "A key's shadow",
+      "kunci-p1": "key right in front of the torch",
+      "kunci-p2": "key fairly close to the torch",
+      "kunci-p3": "key halfway",
+      "kunci-p4": "key close to the screen"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah posisi: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "boneka",
+      "titleKey": "s-boneka",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "boneka-p1",
+          "emoji": "🧸"
+        },
+        {
+          "id": "p2",
+          "labelKey": "boneka-p2",
+          "emoji": "🧸"
+        },
+        {
+          "id": "p3",
+          "labelKey": "boneka-p3",
+          "emoji": "🧸"
+        },
+        {
+          "id": "p4",
+          "labelKey": "boneka-p4",
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": "tangan",
+      "titleKey": "s-tangan",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "tangan-p1",
+          "emoji": "🤘"
+        },
+        {
+          "id": "p2",
+          "labelKey": "tangan-p2",
+          "emoji": "🤘"
+        },
+        {
+          "id": "p3",
+          "labelKey": "tangan-p3",
+          "emoji": "🤘"
+        },
+        {
+          "id": "p4",
+          "labelKey": "tangan-p4",
+          "emoji": "🤘"
+        }
+      ]
+    },
+    {
+      "id": "dino",
+      "titleKey": "s-dino",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "dino-p1",
+          "emoji": "🦖"
+        },
+        {
+          "id": "p2",
+          "labelKey": "dino-p2",
+          "emoji": "🦖"
+        },
+        {
+          "id": "p3",
+          "labelKey": "dino-p3",
+          "emoji": "🦖"
+        },
+        {
+          "id": "p4",
+          "labelKey": "dino-p4",
+          "emoji": "🦖"
+        }
+      ]
+    },
+    {
+      "id": "kunci",
+      "titleKey": "s-kunci",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "kunci-p1",
+          "emoji": "🔑"
+        },
+        {
+          "id": "p2",
+          "labelKey": "kunci-p2",
+          "emoji": "🔑"
+        },
+        {
+          "id": "p3",
+          "labelKey": "kunci-p3",
+          "emoji": "🔑"
+        },
+        {
+          "id": "p4",
+          "labelKey": "kunci-p4",
+          "emoji": "🔑"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "sd2-kode-masukan-keluaran",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD2.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Masuk atau Keluar?",
+      "instruksi": "Perangkat ini memasukkan perintah ke komputer atau menampilkan hasilnya? Taruh di kotak yang cocok.",
+      "bin-masuk": "untuk memasukkan",
+      "bin-keluar": "untuk menampilkan hasil",
+      "i-keyboard": "keyboard",
+      "i-mouse": "mouse",
+      "i-microphone": "mikrofon",
+      "i-laptop-camera": "kamera laptop",
+      "i-joystick": "stik game",
+      "i-monitor": "monitor",
+      "i-speaker": "speaker",
+      "i-printer": "printer",
+      "i-headphones": "headphone",
+      "i-projector": "proyektor"
+    },
+    "en": {
+      "judul": "In or Out?",
+      "instruksi": "Does this device put information into the computer or show the results? Put it in the right box.",
+      "bin-masuk": "puts information in",
+      "bin-keluar": "shows the results",
+      "i-keyboard": "keyboard",
+      "i-mouse": "mouse",
+      "i-microphone": "microphone",
+      "i-laptop-camera": "laptop camera",
+      "i-joystick": "joystick",
+      "i-monitor": "monitor",
+      "i-speaker": "speaker",
+      "i-printer": "printer",
+      "i-headphones": "headphones",
+      "i-projector": "projector"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah perangkat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "masuk",
+      "labelKey": "bin-masuk",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "keluar",
+      "labelKey": "bin-keluar",
+      "emoji": "⬆️"
+    }
+  ],
+  "items": [
+    {
+      "id": "keyboard",
+      "labelKey": "i-keyboard",
+      "bin": "masuk",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "mouse",
+      "labelKey": "i-mouse",
+      "bin": "masuk",
+      "emoji": "🖱️"
+    },
+    {
+      "id": "microphone",
+      "labelKey": "i-microphone",
+      "bin": "masuk",
+      "emoji": "🎤"
+    },
+    {
+      "id": "laptop-camera",
+      "labelKey": "i-laptop-camera",
+      "bin": "masuk",
+      "emoji": "📷"
+    },
+    {
+      "id": "joystick",
+      "labelKey": "i-joystick",
+      "bin": "masuk",
+      "emoji": "🕹️"
+    },
+    {
+      "id": "monitor",
+      "labelKey": "i-monitor",
+      "bin": "keluar",
+      "emoji": "🖥️"
+    },
+    {
+      "id": "speaker",
+      "labelKey": "i-speaker",
+      "bin": "keluar",
+      "emoji": "🔊"
+    },
+    {
+      "id": "printer",
+      "labelKey": "i-printer",
+      "bin": "keluar",
+      "emoji": "🖨️"
+    },
+    {
+      "id": "headphones",
+      "labelKey": "i-headphones",
+      "bin": "keluar",
+      "emoji": "🎧"
+    },
+    {
+      "id": "projector",
+      "labelKey": "i-projector",
+      "bin": "keluar",
+      "emoji": "📽️"
+    }
+  ]
+}

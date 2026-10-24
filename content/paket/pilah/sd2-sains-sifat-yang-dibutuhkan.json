@@ -1,0 +1,177 @@
+{
+  "id": "sd2-sains-sifat-yang-dibutuhkan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.BAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sifat Apa yang Dibutuhkan?",
+      "instruksi": "Pikirkan tugas tiap benda, lalu taruh ke sifat yang paling dibutuhkannya.",
+      "b-kedap": "kedap air",
+      "b-tembus": "tembus pandang",
+      "b-lentur": "lentur",
+      "b-serap": "menyerap air",
+      "i-payung": "payung",
+      "i-ember": "ember",
+      "i-atap": "genting atap",
+      "i-jendela": "jendela",
+      "i-kacamata": "kacamata",
+      "i-toples": "toples kue",
+      "i-ban": "ban sepeda",
+      "i-karetgelang": "karet gelang",
+      "i-selang": "selang",
+      "i-handuk": "handuk",
+      "i-kainpel": "kain pel",
+      "i-popokkain": "lap dapur"
+    },
+    "en": {
+      "judul": "Which Property Is Needed?",
+      "instruksi": "Think about each object's job, then put it on the property it needs most.",
+      "b-kedap": "waterproof",
+      "b-tembus": "see-through",
+      "b-lentur": "bendy",
+      "b-serap": "absorbent",
+      "i-payung": "umbrella",
+      "i-ember": "bucket",
+      "i-atap": "roof tile",
+      "i-jendela": "window",
+      "i-kacamata": "glasses",
+      "i-toples": "biscuit jar",
+      "i-ban": "bike tyre",
+      "i-karetgelang": "rubber band",
+      "i-selang": "hose",
+      "i-handuk": "towel",
+      "i-kainpel": "floor cloth",
+      "i-popokkain": "kitchen cloth"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah sifat: 2 → 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kedap",
+      "labelKey": "b-kedap",
+      "emoji": "☂️",
+      "color": "#ede7f6"
+    },
+    {
+      "id": "tembus",
+      "labelKey": "b-tembus",
+      "emoji": "🔍",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "lentur",
+      "labelKey": "b-lentur",
+      "emoji": "〰️",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "serap",
+      "labelKey": "b-serap",
+      "emoji": "🧽",
+      "color": "#fff8e1"
+    }
+  ],
+  "items": [
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "kedap",
+      "emoji": "☂️"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "kedap",
+      "emoji": "🪣"
+    },
+    {
+      "id": "atap",
+      "labelKey": "i-atap",
+      "bin": "kedap",
+      "emoji": "🏠"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "tembus",
+      "emoji": "🪟"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "bin": "tembus",
+      "emoji": "👓"
+    },
+    {
+      "id": "toples",
+      "labelKey": "i-toples",
+      "bin": "tembus",
+      "emoji": "🫙"
+    },
+    {
+      "id": "ban",
+      "labelKey": "i-ban",
+      "bin": "lentur",
+      "emoji": "🛞"
+    },
+    {
+      "id": "karetgelang",
+      "labelKey": "i-karetgelang",
+      "bin": "lentur",
+      "emoji": "⭕",
+      "color": "#ff8a65"
+    },
+    {
+      "id": "selang",
+      "labelKey": "i-selang",
+      "bin": "lentur",
+      "emoji": "🟢",
+      "color": "#66bb6a"
+    },
+    {
+      "id": "handuk",
+      "labelKey": "i-handuk",
+      "bin": "serap",
+      "emoji": "🟦",
+      "color": "#81d4fa"
+    },
+    {
+      "id": "kainpel",
+      "labelKey": "i-kainpel",
+      "bin": "serap",
+      "emoji": "🧹"
+    },
+    {
+      "id": "popokkain",
+      "labelKey": "i-popokkain",
+      "bin": "serap",
+      "emoji": "🧻"
+    }
+  ],
+  "pilihan": []
+}

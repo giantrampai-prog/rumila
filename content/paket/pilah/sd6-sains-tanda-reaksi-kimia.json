@@ -1,0 +1,151 @@
+{
+  "id": "sd6-sains-tanda-reaksi-kimia",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERUBAHAN-ZAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bukti Reaksi",
+      "instruksi": "Baca kejadiannya, lalu taruh ke bukti reaksi kimia yang terlihat.",
+      "b-gas": "muncul gas (gelembung atau busa)",
+      "b-warna": "warna berubah",
+      "b-suhu": "suhu berubah",
+      "i-cukasoda": "cuka dituang ke soda kue lalu berbusa",
+      "i-tablet": "tablet vitamin berbuih di air",
+      "i-ragi": "adonan roti mengembang oleh ragi",
+      "i-kapur": "batu kapur ditetesi cuka keluar gelembung",
+      "i-apel": "potongan apel berubah cokelat",
+      "i-karat": "paku besi berkarat menjadi jingga",
+      "i-perak": "sendok perak kusam menghitam",
+      "i-pisang": "kulit pisang menghitam",
+      "i-penghangat": "bungkus penghangat tangan memanas saat dibuka",
+      "i-semen": "semen basah terasa hangat saat mengeras",
+      "i-gamping": "batu gamping tohor disiram air menjadi panas"
+    },
+    "en": {
+      "judul": "Reaction Evidence",
+      "instruksi": "Read what happens, then put it with the evidence of a chemical reaction you can see.",
+      "b-gas": "a gas is given off (bubbles or fizz)",
+      "b-warna": "the colour changes",
+      "b-suhu": "the temperature changes",
+      "i-cukasoda": "vinegar poured on baking soda fizzes",
+      "i-tablet": "a vitamin tablet fizzes in water",
+      "i-ragi": "bread dough rises with yeast",
+      "i-kapur": "limestone bubbles when vinegar is dripped on it",
+      "i-apel": "a cut apple turns brown",
+      "i-karat": "an iron nail rusts orange",
+      "i-perak": "a silver spoon tarnishes black",
+      "i-pisang": "a banana skin turns black",
+      "i-penghangat": "a hand-warmer pack heats up when opened",
+      "i-semen": "wet cement feels warm as it sets",
+      "i-gamping": "quicklime gets hot when water is poured on it"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gas",
+      "labelKey": "b-gas",
+      "emoji": "🫧",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "warna",
+      "labelKey": "b-warna",
+      "emoji": "🎨",
+      "color": "#f8bbd0"
+    },
+    {
+      "id": "suhu",
+      "labelKey": "b-suhu",
+      "emoji": "🌡️",
+      "color": "#ffe0b2"
+    }
+  ],
+  "items": [
+    {
+      "id": "cukasoda",
+      "labelKey": "i-cukasoda",
+      "bin": "gas",
+      "emoji": "🫧"
+    },
+    {
+      "id": "tablet",
+      "labelKey": "i-tablet",
+      "bin": "gas",
+      "emoji": "💊"
+    },
+    {
+      "id": "ragi",
+      "labelKey": "i-ragi",
+      "bin": "gas",
+      "emoji": "🍞"
+    },
+    {
+      "id": "kapur",
+      "labelKey": "i-kapur",
+      "bin": "gas",
+      "emoji": "🪨"
+    },
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "warna",
+      "emoji": "🍎"
+    },
+    {
+      "id": "karat",
+      "labelKey": "i-karat",
+      "bin": "warna",
+      "emoji": "🔩"
+    },
+    {
+      "id": "perak",
+      "labelKey": "i-perak",
+      "bin": "warna",
+      "emoji": "🥄"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "warna",
+      "emoji": "🍌"
+    },
+    {
+      "id": "penghangat",
+      "labelKey": "i-penghangat",
+      "bin": "suhu",
+      "emoji": "🧤"
+    },
+    {
+      "id": "semen",
+      "labelKey": "i-semen",
+      "bin": "suhu",
+      "emoji": "🧱"
+    },
+    {
+      "id": "gamping",
+      "labelKey": "i-gamping",
+      "bin": "suhu",
+      "emoji": "♨️"
+    }
+  ],
+  "pilihan": []
+}

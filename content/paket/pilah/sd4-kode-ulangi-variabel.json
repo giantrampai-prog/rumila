@@ -1,0 +1,302 @@
+{
+  "id": "sd4-kode-ulangi-variabel",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.VARIABEL.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Variabel di Dalam Ulangi",
+      "instruksi": "Isi blok ulangi dijalankan berkali-kali: hitung putaran demi putaran, lalu pilih nilai akhirnya.",
+      "pilihan": "pilihan",
+      "c1": "12",
+      "c2": "3",
+      "c3": "7",
+      "q1": "x = 0; ulangi 4 kali: x = x + 3.  Berapa x?",
+      "c4": "4",
+      "c5": "8",
+      "c6": "2",
+      "q2": "skor = 10; ulangi 3 kali: skor = skor - 2.  Berapa skor?",
+      "c7": "6",
+      "q3": "a = 1; ulangi 3 kali: a = a * 2.  Berapa a?",
+      "c8": "15",
+      "c9": "10",
+      "c10": "20",
+      "q4": "n = 5; ulangi 2 kali: n = n + 5.  Berapa n?",
+      "c11": "5",
+      "c12": "1",
+      "q5": "bintang = 0; ulangi 5 kali: bintang = bintang + 1.  Berapa bintang?",
+      "c13": "16",
+      "q6": "x = 2; ulangi 3 kali: x = x + x.  Berapa x?",
+      "c14": "0",
+      "q7": "koin = 20; ulangi 4 kali: koin = koin - 5.  Berapa koin?",
+      "c15": "9",
+      "q8": "x = 0; ulangi 3 kali: x = x + 2. Sesudah ulangi selesai: x = x + 1.  Berapa x?",
+      "q9": "total = 1; ulangi 2 kali: total = total + 4.  Berapa total?",
+      "q10": "x = 0; ulangi ? kali: x = x + 4.  Supaya akhirnya x = 20, isi ? dengan angka berapa?",
+      "q11": "a = 1; ulangi 2 kali: a = a + 1, lalu a = a * 2.  Berapa a?",
+      "q12": "langkah = 0; ulangi 6 kali: langkah = langkah + 2.  Berapa langkah?"
+    },
+    "en": {
+      "judul": "Variables Inside a Repeat",
+      "instruksi": "The inside of a repeat runs many times: work it out turn by turn, then choose the final value.",
+      "pilihan": "choices",
+      "c1": "12",
+      "c2": "3",
+      "c3": "7",
+      "q1": "x = 0; repeat 4 times: x = x + 3.  What is x?",
+      "c4": "4",
+      "c5": "8",
+      "c6": "2",
+      "q2": "score = 10; repeat 3 times: score = score - 2.  What is score?",
+      "c7": "6",
+      "q3": "a = 1; repeat 3 times: a = a * 2.  What is a?",
+      "c8": "15",
+      "c9": "10",
+      "c10": "20",
+      "q4": "n = 5; repeat 2 times: n = n + 5.  What is n?",
+      "c11": "5",
+      "c12": "1",
+      "q5": "stars = 0; repeat 5 times: stars = stars + 1.  What is stars?",
+      "c13": "16",
+      "q6": "x = 2; repeat 3 times: x = x + x.  What is x?",
+      "c14": "0",
+      "q7": "coins = 20; repeat 4 times: coins = coins - 5.  What is coins?",
+      "c15": "9",
+      "q8": "x = 0; repeat 3 times: x = x + 2. After the repeat ends: x = x + 1.  What is x?",
+      "q9": "total = 1; repeat 2 times: total = total + 4.  What is total?",
+      "q10": "x = 0; repeat ? times: x = x + 4.  So that x ends at 20, which number goes in ?",
+      "q11": "a = 1; repeat 2 times: a = a + 1, then a = a * 2.  What is a?",
+      "q12": "steps = 0; repeat 6 times: steps = steps + 2.  What is steps?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c5",
+        "c7",
+        "c4"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c8",
+        "c9",
+        "c10"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c11",
+        "c12",
+        "c7"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c13",
+        "c5",
+        "c7"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c14",
+        "c8",
+        "c11"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c3",
+        "c15",
+        "c7"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c15",
+        "c5",
+        "c11"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c11",
+        "c4",
+        "c13"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c9",
+        "c7",
+        "c5"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c1",
+        "c5",
+        "c7"
+      ],
+      "correct": "c1"
+    }
+  ]
+}

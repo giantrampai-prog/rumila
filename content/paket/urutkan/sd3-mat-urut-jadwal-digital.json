@@ -1,0 +1,508 @@
+{
+  "id": "sd3-mat-urut-jadwal-digital",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD3.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jadwal Hari Ini",
+      "instruksi": "Bandingkan jamnya dulu, lalu menitnya. Susun dari kegiatan paling awal.",
+      "s-07t50": "07.50",
+      "s-08t10": "08.10",
+      "s-08t50": "08.50",
+      "s-11t10": "11.10",
+      "s-11t15": "11.15",
+      "j-jadwal-pagi": "Jadwal pagi",
+      "s-12t30": "12.30",
+      "s-01t05": "01.05",
+      "s-01t30": "01.30",
+      "s-04t15": "04.15",
+      "s-05t20": "05.20",
+      "j-jadwal-siang": "Jadwal siang",
+      "s-02t05": "02.05",
+      "s-02t20": "02.20",
+      "s-02t45": "02.45",
+      "s-03t35": "03.35",
+      "s-06t30": "06.30",
+      "j-jadwal-sore": "Jadwal sore",
+      "s-08t05": "08.05",
+      "s-08t30": "08.30",
+      "s-08t45": "08.45",
+      "s-09t50": "09.50",
+      "s-10t45": "10.45",
+      "s-02t55": "02.55",
+      "s-03t40": "03.40",
+      "s-04t50": "04.50",
+      "s-02t10": "02.10",
+      "s-02t50": "02.50",
+      "s-03t15": "03.15",
+      "s-05t10": "05.10",
+      "s-06t35": "06.35",
+      "s-07t10": "07.10",
+      "s-07t45": "07.45",
+      "s-08t35": "08.35",
+      "s-01t10": "01.10",
+      "s-01t15": "01.15",
+      "s-01t45": "01.45",
+      "s-01t50": "01.50",
+      "s-05t25": "05.25",
+      "s-01t55": "01.55",
+      "s-04t30": "04.30",
+      "s-06t50": "06.50",
+      "s-07t35": "07.35",
+      "s-09t05": "09.05",
+      "s-09t30": "09.30",
+      "s-11t20": "11.20",
+      "s-11t35": "11.35",
+      "s-02t25": "02.25",
+      "s-05t00": "05.00",
+      "s-05t55": "05.55"
+    },
+    "en": {
+      "judul": "Today's Timetable",
+      "instruksi": "Compare the hours first, then the minutes. Order from the earliest activity.",
+      "s-07t50": "07:50",
+      "s-08t10": "08:10",
+      "s-08t50": "08:50",
+      "s-11t10": "11:10",
+      "s-11t15": "11:15",
+      "j-jadwal-pagi": "Morning timetable",
+      "s-12t30": "12:30",
+      "s-01t05": "01:05",
+      "s-01t30": "01:30",
+      "s-04t15": "04:15",
+      "s-05t20": "05:20",
+      "j-jadwal-siang": "Afternoon timetable",
+      "s-02t05": "02:05",
+      "s-02t20": "02:20",
+      "s-02t45": "02:45",
+      "s-03t35": "03:35",
+      "s-06t30": "06:30",
+      "j-jadwal-sore": "Late-afternoon timetable",
+      "s-08t05": "08:05",
+      "s-08t30": "08:30",
+      "s-08t45": "08:45",
+      "s-09t50": "09:50",
+      "s-10t45": "10:45",
+      "s-02t55": "02:55",
+      "s-03t40": "03:40",
+      "s-04t50": "04:50",
+      "s-02t10": "02:10",
+      "s-02t50": "02:50",
+      "s-03t15": "03:15",
+      "s-05t10": "05:10",
+      "s-06t35": "06:35",
+      "s-07t10": "07:10",
+      "s-07t45": "07:45",
+      "s-08t35": "08:35",
+      "s-01t10": "01:10",
+      "s-01t15": "01:15",
+      "s-01t45": "01:45",
+      "s-01t50": "01:50",
+      "s-05t25": "05:25",
+      "s-01t55": "01:55",
+      "s-04t30": "04:30",
+      "s-06t50": "06:50",
+      "s-07t35": "07:35",
+      "s-09t05": "09:05",
+      "s-09t30": "09:30",
+      "s-11t20": "11:20",
+      "s-11t35": "11:35",
+      "s-02t25": "02:25",
+      "s-05t00": "05:00",
+      "s-05t55": "05:55"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "jadwal-1",
+      "titleKey": "j-jadwal-pagi",
+      "steps": [
+        {
+          "id": "07t50",
+          "labelKey": "s-07t50",
+          "scale": 0.6
+        },
+        {
+          "id": "08t10",
+          "labelKey": "s-08t10",
+          "scale": 0.6
+        },
+        {
+          "id": "08t50",
+          "labelKey": "s-08t50",
+          "scale": 0.6
+        },
+        {
+          "id": "11t10",
+          "labelKey": "s-11t10",
+          "scale": 0.6
+        },
+        {
+          "id": "11t15",
+          "labelKey": "s-11t15",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-2",
+      "titleKey": "j-jadwal-siang",
+      "steps": [
+        {
+          "id": "12t30",
+          "labelKey": "s-12t30",
+          "scale": 0.6
+        },
+        {
+          "id": "01t05",
+          "labelKey": "s-01t05",
+          "scale": 0.6
+        },
+        {
+          "id": "01t30",
+          "labelKey": "s-01t30",
+          "scale": 0.6
+        },
+        {
+          "id": "04t15",
+          "labelKey": "s-04t15",
+          "scale": 0.6
+        },
+        {
+          "id": "05t20",
+          "labelKey": "s-05t20",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-3",
+      "titleKey": "j-jadwal-sore",
+      "steps": [
+        {
+          "id": "02t05",
+          "labelKey": "s-02t05",
+          "scale": 0.6
+        },
+        {
+          "id": "02t20",
+          "labelKey": "s-02t20",
+          "scale": 0.6
+        },
+        {
+          "id": "02t45",
+          "labelKey": "s-02t45",
+          "scale": 0.6
+        },
+        {
+          "id": "03t35",
+          "labelKey": "s-03t35",
+          "scale": 0.6
+        },
+        {
+          "id": "06t30",
+          "labelKey": "s-06t30",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-4",
+      "titleKey": "j-jadwal-pagi",
+      "steps": [
+        {
+          "id": "08t05",
+          "labelKey": "s-08t05",
+          "scale": 0.6
+        },
+        {
+          "id": "08t30",
+          "labelKey": "s-08t30",
+          "scale": 0.6
+        },
+        {
+          "id": "08t45",
+          "labelKey": "s-08t45",
+          "scale": 0.6
+        },
+        {
+          "id": "09t50",
+          "labelKey": "s-09t50",
+          "scale": 0.6
+        },
+        {
+          "id": "10t45",
+          "labelKey": "s-10t45",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-5",
+      "titleKey": "j-jadwal-siang",
+      "steps": [
+        {
+          "id": "02t05",
+          "labelKey": "s-02t05",
+          "scale": 0.6
+        },
+        {
+          "id": "02t45",
+          "labelKey": "s-02t45",
+          "scale": 0.6
+        },
+        {
+          "id": "02t55",
+          "labelKey": "s-02t55",
+          "scale": 0.6
+        },
+        {
+          "id": "03t40",
+          "labelKey": "s-03t40",
+          "scale": 0.6
+        },
+        {
+          "id": "04t50",
+          "labelKey": "s-04t50",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-6",
+      "titleKey": "j-jadwal-sore",
+      "steps": [
+        {
+          "id": "02t10",
+          "labelKey": "s-02t10",
+          "scale": 0.6
+        },
+        {
+          "id": "02t50",
+          "labelKey": "s-02t50",
+          "scale": 0.6
+        },
+        {
+          "id": "03t15",
+          "labelKey": "s-03t15",
+          "scale": 0.6
+        },
+        {
+          "id": "05t10",
+          "labelKey": "s-05t10",
+          "scale": 0.6
+        },
+        {
+          "id": "06t35",
+          "labelKey": "s-06t35",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-7",
+      "titleKey": "j-jadwal-pagi",
+      "steps": [
+        {
+          "id": "07t10",
+          "labelKey": "s-07t10",
+          "scale": 0.6
+        },
+        {
+          "id": "07t45",
+          "labelKey": "s-07t45",
+          "scale": 0.6
+        },
+        {
+          "id": "08t30",
+          "labelKey": "s-08t30",
+          "scale": 0.6
+        },
+        {
+          "id": "08t35",
+          "labelKey": "s-08t35",
+          "scale": 0.6
+        },
+        {
+          "id": "08t45",
+          "labelKey": "s-08t45",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-8",
+      "titleKey": "j-jadwal-siang",
+      "steps": [
+        {
+          "id": "01t10",
+          "labelKey": "s-01t10",
+          "scale": 0.6
+        },
+        {
+          "id": "01t15",
+          "labelKey": "s-01t15",
+          "scale": 0.6
+        },
+        {
+          "id": "01t45",
+          "labelKey": "s-01t45",
+          "scale": 0.6
+        },
+        {
+          "id": "01t50",
+          "labelKey": "s-01t50",
+          "scale": 0.6
+        },
+        {
+          "id": "05t25",
+          "labelKey": "s-05t25",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-9",
+      "titleKey": "j-jadwal-sore",
+      "steps": [
+        {
+          "id": "01t55",
+          "labelKey": "s-01t55",
+          "scale": 0.6
+        },
+        {
+          "id": "02t05",
+          "labelKey": "s-02t05",
+          "scale": 0.6
+        },
+        {
+          "id": "02t45",
+          "labelKey": "s-02t45",
+          "scale": 0.6
+        },
+        {
+          "id": "04t30",
+          "labelKey": "s-04t30",
+          "scale": 0.6
+        },
+        {
+          "id": "06t50",
+          "labelKey": "s-06t50",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-10",
+      "titleKey": "j-jadwal-pagi",
+      "steps": [
+        {
+          "id": "07t35",
+          "labelKey": "s-07t35",
+          "scale": 0.6
+        },
+        {
+          "id": "09t05",
+          "labelKey": "s-09t05",
+          "scale": 0.6
+        },
+        {
+          "id": "09t30",
+          "labelKey": "s-09t30",
+          "scale": 0.6
+        },
+        {
+          "id": "11t20",
+          "labelKey": "s-11t20",
+          "scale": 0.6
+        },
+        {
+          "id": "11t35",
+          "labelKey": "s-11t35",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-11",
+      "titleKey": "j-jadwal-siang",
+      "steps": [
+        {
+          "id": "01t10",
+          "labelKey": "s-01t10",
+          "scale": 0.6
+        },
+        {
+          "id": "01t50",
+          "labelKey": "s-01t50",
+          "scale": 0.6
+        },
+        {
+          "id": "01t55",
+          "labelKey": "s-01t55",
+          "scale": 0.6
+        },
+        {
+          "id": "02t25",
+          "labelKey": "s-02t25",
+          "scale": 0.6
+        },
+        {
+          "id": "05t25",
+          "labelKey": "s-05t25",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "jadwal-12",
+      "titleKey": "j-jadwal-sore",
+      "steps": [
+        {
+          "id": "02t05",
+          "labelKey": "s-02t05",
+          "scale": 0.6
+        },
+        {
+          "id": "02t50",
+          "labelKey": "s-02t50",
+          "scale": 0.6
+        },
+        {
+          "id": "04t15",
+          "labelKey": "s-04t15",
+          "scale": 0.6
+        },
+        {
+          "id": "05t00",
+          "labelKey": "s-05t00",
+          "scale": 0.6
+        },
+        {
+          "id": "05t55",
+          "labelKey": "s-05t55",
+          "scale": 0.6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "sd2-sains-penutup-tubuh-peternakan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.CIRI-HEWAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rambut, Bulu, Sisik, atau Kulit Lembap?",
+      "instruksi": "Lihat kulit tiap hewan, lalu taruh ke rak penutup tubuhnya.",
+      "b-rambut": "berambut",
+      "b-bulu": "berbulu",
+      "b-sisik": "bersisik",
+      "b-lembap": "berkulit lembap",
+      "i-kucing": "kucing",
+      "i-sapi": "sapi",
+      "i-kambing": "kambing",
+      "i-kelinci": "kelinci",
+      "i-ayam": "ayam",
+      "i-bebek": "bebek",
+      "i-burung": "burung pipit",
+      "i-angsa": "angsa",
+      "i-ikan": "ikan mas",
+      "i-kadal": "kadal",
+      "i-ular": "ular sawah",
+      "i-katak": "katak",
+      "i-cacing": "cacing tanah"
+    },
+    "en": {
+      "judul": "Fur, Feathers, Scales, or Moist Skin?",
+      "instruksi": "Look at each animal's skin, then put it on the shelf for its body covering.",
+      "b-rambut": "hair or fur",
+      "b-bulu": "feathers",
+      "b-sisik": "scales",
+      "b-lembap": "moist skin",
+      "i-kucing": "cat",
+      "i-sapi": "cow",
+      "i-kambing": "goat",
+      "i-kelinci": "rabbit",
+      "i-ayam": "chicken",
+      "i-bebek": "duck",
+      "i-burung": "sparrow",
+      "i-angsa": "goose",
+      "i-ikan": "goldfish",
+      "i-kadal": "lizard",
+      "i-ular": "rice-field snake",
+      "i-katak": "frog",
+      "i-cacing": "earthworm"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 3 (rambut, bulu, sisik) → 4 (tambah kulit lembap)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "rambut",
+      "labelKey": "b-rambut",
+      "emoji": "🐑",
+      "color": "#efebe9"
+    },
+    {
+      "id": "bulu",
+      "labelKey": "b-bulu",
+      "emoji": "🪶",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "sisik",
+      "labelKey": "b-sisik",
+      "emoji": "🐟",
+      "color": "#e0f2f1"
+    },
+    {
+      "id": "lembap",
+      "labelKey": "b-lembap",
+      "emoji": "💧",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "rambut",
+      "emoji": "🐈"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "rambut",
+      "emoji": "🐄"
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "rambut",
+      "emoji": "🐐"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "rambut",
+      "emoji": "🐇"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "bulu",
+      "emoji": "🐔"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "bulu",
+      "emoji": "🦆"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "bulu",
+      "emoji": "🐦"
+    },
+    {
+      "id": "angsa",
+      "labelKey": "i-angsa",
+      "bin": "bulu",
+      "emoji": "🦢"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "sisik",
+      "emoji": "🐟",
+      "color": "#ffb74d"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "sisik",
+      "emoji": "🦎"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "sisik",
+      "emoji": "🐍"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "lembap",
+      "emoji": "🐸"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "lembap",
+      "emoji": "🪱"
+    }
+  ],
+  "pilihan": []
+}

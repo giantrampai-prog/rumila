@@ -1,0 +1,521 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "SAINS.SD1.MAKHLUK-HIDUP.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "MAKHLUK-HIDUP",
+        "nama": {
+          "id": "Makhluk hidup dan kebutuhannya",
+          "en": "Living things and their needs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke makhluk hidup atau yang tidak pernah hidup: kucing dan jamur hidup, batu dan kaleng tidak",
+        "en": "I can sort things into living things or things that have never been alive: cats and mushrooms are alive, stones and cans never were"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Bp.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1TWSc.01",
+          "note": "memilah berdasar pengamatan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret tiap kartu ke rak 'hidup' atau 'tidak pernah hidup'. Beda dengan PAUD HIDUP-TAK-HIDUP.01: kategori kedua kini 'tidak pernah hidup' (istilah Cambridge Stage 1) dan kumpulan memuat makhluk yang tidak bergerak (jamur, pohon, rumput laut) serta benda yang bergerak (awan, mobil mainan, ombak) sebagai jebakan. Benda yang PERNAH hidup (kayu, daun kering, kulit kerang) sengaja tidak dipakai; itu bahan SD3 HIDUP.01. Knob itemCount 4 → 8. Prasyarat alami SAINS.PAUD.HIDUP-TAK-HIDUP.01 tidak dicantumkan karena batas brief (SD1 hanya boleh menunjuk TK B)."
+    },
+    {
+      "id": "SAINS.SD1.MAKHLUK-HIDUP.02",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "MAKHLUK-HIDUP",
+        "nama": {
+          "id": "Makhluk hidup dan kebutuhannya",
+          "en": "Living things and their needs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memberi tiap hewan makanan yang cocok: wortel untuk kelinci, biji untuk burung, ikan untuk kucing",
+        "en": "I can give each animal food that suits it: carrots for the rabbit, seeds for the bird, fish for the cat"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.MAKHLUK-HIDUP.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Bp.02",
+          "note": "bagian 'suitable food'; udara dan air belum dibuktikan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret makanan ke tempat makan hewan. Tiap makanan hanya cocok untuk satu hewan di paket itu (rumput tidak dipasang bersama sapi dan kambing sekaligus) supaya jawaban tunggal. Jebakan: kucing diberi wortel, ayam diberi rumput. Dua konteks: hewan peliharaan dan peternakan. Knob binCount 3 → 4, itemCount 6 → 8. Kebutuhan udara dan air (sisa 1Bp.02) butuh mode rawat yang belum ada."
+    },
+    {
+      "id": "SAINS.SD1.BAHAN.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan dan sifatnya",
+          "en": "Materials and their properties"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda menurut bahannya: kertas, kain, batu, kayu, logam, plastik, atau kaca",
+        "en": "I can sort objects by their material: paper, fabric, rock, wood, metal, plastic, or glass"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.BAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Cm.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1TWSc.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke rak bahan. Lanjutan TKB BAHAN.01 (kayu, logam, plastik, kaca): rak kertas, kain, dan batu muncul lebih dulu (urutan bin), lalu keempat bahan lama ditambah lewat knob binCount 3 → 7. Benda dua bahan (gunting, payung) dihindari. Jebakan: kardus = kertas, cermin = kaca, ulekan = batu. Dua konteks: rumah dan halaman sekolah."
+    },
+    {
+      "id": "SAINS.SD1.BAHAN.02",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan dan sifatnya",
+          "en": "Materials and their properties"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan benda dan bahannya dengan memilah kartu: kursi dan baju itu benda, kayu dan kain itu bahan",
+        "en": "I can tell an object from its material by sorting cards: a chair and a shirt are objects, wood and fabric are materials"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Cm.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu ke rak 'benda' (sesuatu yang dibuat dan dipakai) atau 'bahan' (dari apa benda dibuat). Tiap bahan muncul bersama benda dari bahan itu (kayu–kursi, kain–baju, kaca–gelas) agar anak membandingkan. Jebakan: 'batu' bisa benda (batu di jalan) atau bahan; di paket ini batu hanya muncul sebagai bahan patung. Knob itemCount 6 → 10. Beda dengan BAHAN.01: di sana anak menamai bahan, di sini membedakan dua jenis kata."
+    },
+    {
+      "id": "SAINS.SD1.BAHAN.03",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan dan sifatnya",
+          "en": "Materials and their properties"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda menurut satu sifat bahannya, misalnya lentur atau kaku, menyerap air atau tidak",
+        "en": "I can sort objects by one property of their material, for example bendy or stiff, soaks up water or not"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.01",
+        "SAINS.TKB.BAHAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Cp.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Cp.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret benda ke rak sifat. Satu paket = satu sifat (lentur/kaku; menyerap/kedap air), sehingga satu kemampuan: menggolongkan menurut sifat yang disebut. Jebakan: kertas lentur walau tipis tidak terlihat lentur; handuk dan tisu menyerap, jas hujan tidak; benda dari bahan sama bisa beda sifat (plastik sedotan lentur, plastik penggaris tebal kaku — tidak dipakai agar jawaban tunggal). Knob itemCount 4 → 8. Idealnya didahului percobaan nyata (tekuk, tetesi air) — mode simulasi 'uji sifat' belum ada."
+    },
+    {
+      "id": "SAINS.SD1.BAHAN.04",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BAHAN",
+        "nama": {
+          "id": "Bahan dan sifatnya",
+          "en": "Materials and their properties"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah perubahan bentuk benda menurut caranya: diregangkan, ditekan, ditekuk, atau dipuntir",
+        "en": "I can sort changes in an object's shape by how they happen: stretching, squashing, bending, or twisting"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BAHAN.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Cc.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu perubahan (mis. 'spons diinjak jadi gepeng') ke rak cara. Label kartu menyebut keadaan sebelum–sesudah, bukan nama caranya, supaya anak menalar dari akibat. Jebakan: plastisin bisa ditekan atau diregangkan — dipakai hanya 'ditekan jadi pipih'; melipat kertas dihitung ditekuk. Knob binCount 2 → 4 (diregangkan, ditekan dulu), itemCount 4 → 8. Pengaya ideal: mode simulasi tekan/regang langsung (belum ada)."
+    },
+    {
+      "id": "SAINS.SD1.GAYA.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "GAYA",
+        "nama": {
+          "id": "Gaya dan gerak",
+          "en": "Forces and movement"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah gerakan ke dorong atau tarik: menutup laci dan menendang bola itu dorong, membuka laci itu tarik",
+        "en": "I can sort actions into pushes or pulls: closing a drawer and kicking a ball are pushes, opening a drawer is a pull"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Pf.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu gerakan ke rak dorong (menjauh dari badan) atau tarik (mendekat ke badan). Label kartu menyebut gerakan konkret; ikon panah di rak memberi petunjuk arah. Jebakan: pintu bisa didorong atau ditarik — tidak dipakai; 'menekan bel' = dorong. Dua konteks: rumah dan taman. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD1.GAYA.02",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "GAYA",
+        "nama": {
+          "id": "Gaya dan gerak",
+          "en": "Forces and movement"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda menurut caranya bergerak: menggelinding, meluncur, atau berputar di tempat",
+        "en": "I can sort objects by how they move: rolling, sliding, or spinning on the spot"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.GAYA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Pf.01"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu ke rak gerak. Label menyebut benda dan situasinya ('anak di perosotan') supaya geraknya bisa dibayangkan. Jebakan: roda bisa berputar maupun menggelinding — dipakai 'ban menuruni bukit' (menggelinding) dan 'kincir angin' (berputar di tempat). Pengaya: istilah gerak adalah bahasa deskripsi, belum menuntut gaya. Knob binCount 2 → 3, itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD1.BUNYI.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BUNYI",
+        "nama": {
+          "id": "Bunyi",
+          "en": "Sound"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan sumber bunyi dengan memilah benda yang sedang berbunyi dari yang diam",
+        "en": "I can find sources of sound by sorting things that are making a sound from things that are silent"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Ps.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret kartu ke rak 'berbunyi' atau 'diam'. Kartu memuat keadaan, sehingga benda sama bisa di dua rak: 'radio menyala' vs 'radio mati', 'anjing menggonggong' vs 'anjing tidur'. Ini mencegah hafalan 'radio = bunyi'. Bunyi asli tiap kartu (VO/SFX) bisa ditambah nanti lewat aset. Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD1.BUNYI.02",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BUNYI",
+        "nama": {
+          "id": "Bunyi",
+          "en": "Sound"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun anak dari yang paling dekat ke paling jauh dari bel, yaitu dari yang mendengar paling keras ke paling pelan",
+        "en": "I can order children from nearest to farthest from the bell, which is from who hears it loudest to who hears it quietest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.SD1.BUNYI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Ps.02"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Aksi: menyusun kartu posisi pendengar dari yang terdengar paling keras. Semua pendengar digambar sama (🧒) sehingga anak harus menalar 'makin jauh, makin pelan' dari letaknya, bukan dari ukuran ikon [Tinjauan 25 Okt 2026: ikon 🔊🔉🔈 yang mengecil dihapus]; knob steps 3 → 4 menambah posisi. Konteks: bel sekolah, ayam berkokok, mobil es krim, drum. Jebakan: dinding/pintu juga meredam — tidak dipakai agar hanya jarak yang berubah. Pengaya; idealnya ada mode dengar langsung dengan volume berubah (belum ada). [Tinjauan 25 Okt 2026: REVISI menunggu PO — tanpa bunyi yang benar-benar mengecil, bukti masih menalar dari label jarak (K4 = 1); butuh mode simulasi dengar-jarak.]"
+    },
+    {
+      "id": "SAINS.SD1.LISTRIK.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "LISTRIK",
+        "nama": {
+          "id": "Benda yang memakai listrik",
+          "en": "Things that use electricity"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah alat yang butuh listrik untuk bekerja dari yang tidak, termasuk alat yang memakai baterai",
+        "en": "I can sort things that need electricity to work from things that don't, including things that use batteries"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1Pe.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret alat ke rak 'butuh listrik' (berkabel/berbaterai) atau 'tanpa listrik'. Jebakan utama: alat berbaterai (senter, jam dinding, mainan robot, kalkulator) juga butuh listrik; sapu, sepeda, dan payung tidak. Dua konteks: rumah dan sekolah. Knob itemCount 4 → 8. Tanpa tuntutan cara kerja listrik (itu SD2)."
+    },
+    {
+      "id": "SAINS.SD1.BUMI.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "BUMI",
+        "nama": {
+          "id": "Bumi: air dan daratan",
+          "en": "Earth: water and land"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bagian Bumi ke perairan atau daratan: laut, danau, dan sungai ke air; gunung dan sawah ke darat",
+        "en": "I can sort parts of the Earth into water or land: seas, lakes, and rivers are water; mountains and fields are land"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.MATAHARI-BUMI-BULAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1ESp.01",
+          "note": "perairan menutup sebagian besar Bumi"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1ESp.02",
+          "note": "daratan dari batu dan tanah"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: menyeret gambar tempat ke rak perairan atau daratan. Jebakan: pulau (daratan di tengah air), pantai berpasir (daratan), danau di gunung (air). Fakta 'Bumi sebagian besar air' belum terbukti oleh pemilahan — catat sebagai pengamatan di umpan balik (rak air lebih panjang). Ide mode baru: tebak luas air vs darat di bola Bumi (taksir). Knob itemCount 4 → 8."
+    },
+    {
+      "id": "SAINS.SD1.MATAHARI.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "MATAHARI",
+        "nama": {
+          "id": "Matahari: panas dan cahaya",
+          "en": "The Sun: heat and light"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menebak benda mana yang lebih dulu hangat, kering, atau meleleh, yaitu yang terkena sinar Matahari",
+        "en": "I can predict which thing gets warm, dry, or melts first: the one in the sunshine"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1ESs.02",
+          "note": "Matahari sumber panas dan cahaya"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1TWSp.02",
+          "note": "membuat prediksi"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aksi: dengar situasi, sentuh tempat yang akan paling cepat berubah. Pertanyaan dibalik bergantian ('supaya es krim TIDAK cepat meleleh, simpan di mana?') agar jawaban tidak selalu 'di bawah Matahari'. Jebakan: di bawah pohon tetap terang tetapi teduh; di dalam kulkas paling dingin. Bukan kuis fakta murni: tiap ronde adalah prediksi pengalaman sehari-hari (jemuran, es, cokelat). Idealnya diikuti animasi hasil (belum ada di mode pilih). [Tinjauan 25 Okt 2026: mode pilih punya peluang tebak 33–50% per ronde; ditambah paket pilah kelompok 'cepat atau lambat' (6 keputusan per ronde, pasangan tempat panas/teduh untuk benda yang sama) sebagai bukti utama.]"
+    },
+    {
+      "id": "SAINS.SD1.PENGAMATAN.01",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "PENGAMATAN",
+        "nama": {
+          "id": "Mengamati dan mengukur",
+          "en": "Observing and measuring"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengukur panjang daun, ulat, atau ranting dengan satuan tidak baku: kubus atau jengkal",
+        "en": "I can measure the length of a leaf, caterpillar, or twig with non-standard units: cubes or hand spans"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1TWSc.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1TWSc.02",
+          "note": "memakai alat yang diberikan dengan benar"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Aksi: kubus — menyejajarkan benda dengan kubus nomor satu lalu membaca ujungnya; jengkal — menaruh telapak rapat tanpa celah lalu menghitung. Bukti dinilai mesin (angka == panjang, jengkal tanpa celah/tumpang). Konteks sains: benda hasil pengamatan di kebun, bukan alat tulis (beda dengan MAT.TKB.UKUR-NONSTANDAR). Jebakan: mulai dari kubus ke-2 (knob offset 1); jengkal bercelah. Knob offset 0 → 1; maxSpans 5 → 8."
+    },
+    {
+      "id": "SAINS.SD1.PENGAMATAN.02",
+      "track": "SAINS",
+      "level": "SD1",
+      "unit": {
+        "id": "PENGAMATAN",
+        "nama": {
+          "id": "Mengamati dan mengukur",
+          "en": "Observing and measuring"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencatat hewan yang datang ke kebun atau kolam dengan turus, satu garis untuk tiap hewan",
+        "en": "I can record the animals that visit the garden or pond with tally marks, one line for each animal"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_SCIENCE",
+          "code": "1TWSc.05",
+          "note": "mencatat pengamatan dalam tabel sederhana"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi"
+      ],
+      "catatan": "Aksi: tiap hewan lewat, anak mengetuk baris hewan itu di tabel turus; mesin menilai jumlah per jenis. Beda dengan MAT.TKB.DATA (membaca/menghitung data): di sini tekanan pada mencatat saat mengamati, dalam konteks survei kebun dan kolam. Jebakan: hewan sama datang beruntun; dua hewan mirip (lebah–lalat tidak dipakai). Knob kinds 2 → 3, count 5 → 8, gapMs 2000 → 1400."
+    }
+  ]
+}

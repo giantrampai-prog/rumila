@@ -1,0 +1,161 @@
+{
+  "id": "sd4-sains-tugas-rangka",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.RANGKA-OTOT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tugas Rangka",
+      "instruksi": "Baca keadaannya, lalu sentuh tugas rangka yang sedang terjadi.",
+      "b-pilihan": "pilihan",
+      "i-lindungi": "melindungi organ",
+      "i-topang": "menopang tubuh",
+      "i-gerak": "membantu bergerak",
+      "i-bentuk": "memberi bentuk tubuh",
+      "p-r1": "Tengkorak menutup otak rapat-rapat seperti helm. Apa tugas rangka di sini?",
+      "p-r2": "Tulang rusuk mengelilingi jantung dan paru-paru. Apa tugasnya?",
+      "p-r3": "Tanpa tulang belakang, badan tidak bisa duduk tegak. Apa tugasnya?",
+      "p-r4": "Tulang kaki menahan berat badan saat kita berdiri lama. Apa tugasnya?",
+      "p-r5": "Otot menarik tulang paha saat kita menendang bola. Apa tugas tulang di sini?",
+      "p-r6": "Sendi lutut membuat kaki bisa ditekuk saat naik tangga. Apa tugasnya?",
+      "p-r7": "Kerangka di museum masih menunjukkan wujud dinosaurus walau dagingnya sudah lama hilang. Apa tugasnya?"
+    },
+    "en": {
+      "judul": "The Skeleton's Jobs",
+      "instruksi": "Read the situation, then touch the job the skeleton is doing.",
+      "b-pilihan": "choices",
+      "i-lindungi": "protecting organs",
+      "i-topang": "supporting the body",
+      "i-gerak": "helping movement",
+      "i-bentuk": "giving the body shape",
+      "p-r1": "The skull covers the brain tightly like a helmet. What job is the skeleton doing?",
+      "p-r2": "The rib cage surrounds the heart and lungs. What is its job?",
+      "p-r3": "Without a spine, the body could not sit up straight. What is its job?",
+      "p-r4": "Leg bones hold up the body's weight when we stand for a long time. What is their job?",
+      "p-r5": "Muscles pull the thigh bone when we kick a ball. What job is the bone doing?",
+      "p-r6": "The knee joint lets the leg bend when we climb stairs. What is its job?",
+      "p-r7": "A museum skeleton still shows the dinosaur's form long after the flesh is gone. What is its job?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "lindungi",
+      "labelKey": "i-lindungi",
+      "bin": "pilihan",
+      "emoji": "🛡️"
+    },
+    {
+      "id": "topang",
+      "labelKey": "i-topang",
+      "bin": "pilihan",
+      "emoji": "🧍"
+    },
+    {
+      "id": "gerak",
+      "labelKey": "i-gerak",
+      "bin": "pilihan",
+      "emoji": "🏃"
+    },
+    {
+      "id": "bentuk",
+      "labelKey": "i-bentuk",
+      "bin": "pilihan",
+      "emoji": "📐"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "topang"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "topang"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "bentuk"
+    }
+  ]
+}

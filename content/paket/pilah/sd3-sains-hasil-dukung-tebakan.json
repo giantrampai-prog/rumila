@@ -1,0 +1,172 @@
+{
+  "id": "sd3-sains-hasil-dukung-tebakan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.PENYELIDIKAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hasilnya Mendukung Tebakan?",
+      "instruksi": "Dengarkan tebakan dan hasilnya. Mendukung atau tidak?",
+      "pilihan": "pilihan",
+      "i-dukung": "mendukung tebakan",
+      "i-tidak": "tidak mendukung",
+      "t-es": "Tebakan: es di bawah Matahari mencair lebih dulu. Hasil: es di bawah Matahari habis lebih dulu.",
+      "t-tanaman": "Tebakan: tanaman di jendela tumbuh paling tinggi. Hasil: tanaman di lemari tumbuh paling tinggi.",
+      "t-mobil": "Tebakan: mobil meluncur paling jauh di lantai licin. Hasil: mobil meluncur paling jauh di lantai keramik.",
+      "t-gula": "Tebakan: gula larut dalam air. Hasil: gula tetap terlihat di dasar gelas setelah diaduk lama.",
+      "t-bayangan": "Tebakan: bayangan membesar saat boneka didekatkan ke senter. Hasil: bayangan jadi besar.",
+      "t-magnet": "Tebakan: magnet menarik kaleng minuman. Hasil: kaleng minuman tidak bergerak.",
+      "t-jemuran": "Tebakan: baju di bawah Matahari kering lebih dulu. Hasil: baju di dalam rumah kering lebih dulu.",
+      "t-bola": "Tebakan: bola karet memantul lebih tinggi dari bola kain. Hasil: bola karet memantul lebih tinggi.",
+      "t-serap": "Tebakan: spons menyerap air paling banyak. Hasil: kain menyerap paling banyak, spons kedua.",
+      "t-kecambah": "Tebakan: biji yang disiram tumbuh lebih cepat. Hasil: biji yang disiram tumbuh duluan."
+    },
+    "en": {
+      "judul": "Do the Results Support the Prediction?",
+      "instruksi": "Listen to the prediction and the result. Do they match or not?",
+      "pilihan": "choices",
+      "i-dukung": "supports the prediction",
+      "i-tidak": "does not support it",
+      "t-es": "Prediction: the ice in the sun melts first. Result: the ice in the sun was gone first.",
+      "t-tanaman": "Prediction: the plant by the window grows tallest. Result: the plant in the cupboard grew tallest.",
+      "t-mobil": "Prediction: the car slides farthest on the smooth floor. Result: the car slid farthest on the tiled floor.",
+      "t-gula": "Prediction: sugar dissolves in water. Result: the sugar stayed at the bottom after lots of stirring.",
+      "t-bayangan": "Prediction: the shadow grows when the teddy moves closer to the torch. Result: the shadow got bigger.",
+      "t-magnet": "Prediction: the magnet pulls the drink can. Result: the can didn't move.",
+      "t-jemuran": "Prediction: the shirt in the sun dries first. Result: the shirt indoors dried first.",
+      "t-bola": "Prediction: the rubber ball bounces higher than the cloth ball. Result: the rubber ball bounced higher.",
+      "t-serap": "Prediction: the sponge soaks up the most water. Result: the cloth soaked up the most, the sponge came second.",
+      "t-kecambah": "Prediction: watered seeds sprout faster. Result: the watered seeds sprouted first."
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "dukung",
+      "labelKey": "i-dukung",
+      "bin": "pilihan",
+      "emoji": "✅"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "i-tidak",
+      "bin": "pilihan",
+      "emoji": "❌"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "es",
+      "promptKey": "t-es",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "tanaman",
+      "promptKey": "t-tanaman",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "mobil",
+      "promptKey": "t-mobil",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "gula",
+      "promptKey": "t-gula",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "bayangan",
+      "promptKey": "t-bayangan",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "magnet",
+      "promptKey": "t-magnet",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "jemuran",
+      "promptKey": "t-jemuran",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "bola",
+      "promptKey": "t-bola",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "serap",
+      "promptKey": "t-serap",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "kecambah",
+      "promptKey": "t-kecambah",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    }
+  ]
+}

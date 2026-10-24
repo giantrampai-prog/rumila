@@ -1,0 +1,711 @@
+{
+  "id": "sd4-mat-robot-belok-seperempat",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "MAT.SD4.POSISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Belok Seperempat Putaran",
+      "instruksi": "Susun program maju dan belok 90° ke kiri atau kanan. Raknya hanya muat jalan terpendek, jadi rencanakan dulu."
+    },
+    "en": {
+      "judul": "Quarter-Turn Robot",
+      "instruksi": "Build a program of forward moves and 90° left or right turns. The rack only fits the shortest route, so plan first."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 5,
+      "max": 9,
+      "default": 5,
+      "step": 1,
+      "keterangan": "panjang program terpendek: 5 → 9 blok; rak program = panjang itu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "debug": false,
+  "semuaGrid": false,
+  "prediksi": false,
+  "grids": [
+    {
+      "id": "petak-5-blok-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-4",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-5",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-6-blok-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "petak-6-blok-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "petak-6-blok-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "petak-6-blok-4",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "petak-6-blok-5",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "petak-7-blok-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "petak-7-blok-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "petak-7-blok-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "petak-7-blok-4",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "petak-7-blok-5",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "petak-8-blok-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "petak-8-blok-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "petak-8-blok-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "petak-8-blok-4",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "petak-8-blok-5",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "petak-9-blok-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "petak-9-blok-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "petak-9-blok-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "petak-9-blok-4",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "petak-9-blok-5",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    }
+  ]
+}

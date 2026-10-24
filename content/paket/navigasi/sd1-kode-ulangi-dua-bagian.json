@@ -1,0 +1,438 @@
+{
+  "id": "sd1-kode-ulangi-dua-bagian",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD1.ULANGI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dua Ulangi, Satu Belokan",
+      "instruksi": "Rak cuma muat lima blok: pakai satu ulangi sebelum belok dan satu ulangi sesudahnya."
+    },
+    "en": {
+      "judul": "Two Repeats, One Turn",
+      "instruksi": "The rack holds only five blocks: use one repeat before the turn and one after it."
+    }
+  },
+  "knobs": {
+    "panjang": {
+      "min": 7,
+      "max": 13,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah perintah tanpa ulangi (A + belok + B); rak 5 memaksa dua blok ulangi (dokumentasi; soal dipilih acak dari semua peta)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "taman",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "l-3-kanan-3-n",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-3-kiri-4-e",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-4-kanan-3-s",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-4-kiri-4-w",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-3-kanan-5-n",
+      "w": 6,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-5-kiri-3-e",
+      "w": 6,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-4-kanan-5-s",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 10,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-5-kiri-4-w",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 10,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-5-kanan-5-n",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 11,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-3-kiri-6-e",
+      "w": 4,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 10,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-6-kanan-3-s",
+      "w": 4,
+      "h": 7,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 10,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-4-kiri-6-w",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 11,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-6-kanan-4-n",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 11,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-5-kiri-6-e",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 12,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-6-kanan-5-s",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 12,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-6-kiri-6-w",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 13,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-3-kiri-3-s",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-3-kanan-4-w",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-4-kiri-3-n",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-4-kanan-4-e",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-3-kiri-5-s",
+      "w": 6,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 5,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5
+    },
+    {
+      "id": "l-5-kanan-3-w",
+      "w": 6,
+      "h": 4,
+      "start": {
+        "x": 5,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "sd1-sains-air-atau-daratan-dari-pesawat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BUMI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Terlihat dari Pesawat",
+      "instruksi": "Dari jendela pesawat, taruh tiap tempat ke rak perairan atau daratan.",
+      "b-air": "perairan",
+      "b-darat": "daratan",
+      "i-lautbiru": "laut biru luas",
+      "i-sungai": "sungai berkelok",
+      "i-waduk": "waduk",
+      "i-danau": "danau di kaki gunung",
+      "i-teluk": "teluk",
+      "i-gunungapi": "gunung berapi",
+      "i-lembah": "lembah hijau",
+      "i-kota": "kota",
+      "i-kebunteh": "kebun teh di bukit",
+      "i-pulau": "pulau di tengah laut",
+      "i-pantai": "pantai berpasir"
+    },
+    "en": {
+      "judul": "Seen from a Plane",
+      "instruksi": "From the plane window, put each place on the water shelf or the land shelf.",
+      "b-air": "water",
+      "b-darat": "land",
+      "i-lautbiru": "wide blue sea",
+      "i-sungai": "winding river",
+      "i-waduk": "reservoir",
+      "i-danau": "lake at the foot of a mountain",
+      "i-teluk": "bay",
+      "i-gunungapi": "volcano",
+      "i-lembah": "green valley",
+      "i-kota": "town",
+      "i-kebunteh": "tea garden on a hill",
+      "i-pulau": "island in the sea",
+      "i-pantai": "sandy beach"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "air",
+      "labelKey": "b-air",
+      "emoji": "🌊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "darat",
+      "labelKey": "b-darat",
+      "emoji": "⛰️",
+      "color": "#efebe9"
+    }
+  ],
+  "items": [
+    {
+      "id": "lautbiru",
+      "labelKey": "i-lautbiru",
+      "bin": "air",
+      "emoji": "🌊"
+    },
+    {
+      "id": "sungai",
+      "labelKey": "i-sungai",
+      "bin": "air",
+      "emoji": "🏞️"
+    },
+    {
+      "id": "waduk",
+      "labelKey": "i-waduk",
+      "bin": "air",
+      "emoji": "💧"
+    },
+    {
+      "id": "danau",
+      "labelKey": "i-danau",
+      "bin": "air",
+      "emoji": "🛶"
+    },
+    {
+      "id": "teluk",
+      "labelKey": "i-teluk",
+      "bin": "air",
+      "emoji": "⛵"
+    },
+    {
+      "id": "gunungapi",
+      "labelKey": "i-gunungapi",
+      "bin": "darat",
+      "emoji": "🌋"
+    },
+    {
+      "id": "lembah",
+      "labelKey": "i-lembah",
+      "bin": "darat",
+      "emoji": "🏕️"
+    },
+    {
+      "id": "kota",
+      "labelKey": "i-kota",
+      "bin": "darat",
+      "emoji": "🏙️"
+    },
+    {
+      "id": "kebunteh",
+      "labelKey": "i-kebunteh",
+      "bin": "darat",
+      "emoji": "🍵"
+    },
+    {
+      "id": "pulau",
+      "labelKey": "i-pulau",
+      "bin": "darat",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "pantai",
+      "labelKey": "i-pantai",
+      "bin": "darat",
+      "emoji": "🏖️"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,440 @@
+{
+  "framework": "CAMBRIDGE_PRIMARY_MATHS",
+  "title": "Cambridge Primary Mathematics Curriculum Framework (0096) — Stage 3",
+  "version": "Version 1.1; published September 2020 for first teaching September 2021",
+  "sources": [
+    "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+  ],
+  "retrieved_at": "2026-10-25",
+  "notes": [
+    "Pelengkap cambridge-primary-maths.json (Stage 1–2 + TWM): semua learning objective Stage 3 (hlm. 21–23), dibaca dari teks PDF yang sama dengan PyMuPDF dan diperiksa manual.",
+    "Sub-butir (o) di 3Ss.02 digabung dipisah ';' seperti konvensi berkas Stage 1–2. Selain itu teks verbatim.",
+    "Dibuat agen MAT SD1–SD3, 25 Okt 2026; berkas lama tidak disunting."
+  ],
+  "entries": [
+    {
+      "code": "3Nc.01",
+      "stage": "3",
+      "strand": "Number: Counting and sequences",
+      "text": "Estimate the number of objects or people (up to 1000).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nc.02",
+      "stage": "3",
+      "strand": "Number: Counting and sequences",
+      "text": "Count on and count back in steps of constant size: 1-digit numbers, tens or hundreds, starting from any number (from 0 to 1000).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nc.03",
+      "stage": "3",
+      "strand": "Number: Counting and sequences",
+      "text": "Use knowledge of even and odd numbers up to 10 to recognise and sort numbers.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nc.04",
+      "stage": "3",
+      "strand": "Number: Counting and sequences",
+      "text": "Recognise the use of an object to represent an unknown quantity in addition and subtraction calculations.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nc.05",
+      "stage": "3",
+      "strand": "Number: Counting and sequences",
+      "text": "Recognise and extend linear sequences, and describe the term-to-term rule.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nc.06",
+      "stage": "3",
+      "strand": "Number: Counting and sequences",
+      "text": "Extend spatial patterns formed from adding and subtracting a constant.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.01",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Recite, read and write number names and whole numbers (from 0 to 1000).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.02",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Understand the commutative and associative properties of addition, and use these to simplify calculations.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.03",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Recognise complements of 100 and complements of multiples of 10 or 100 (up to 1000).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.04",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Estimate, add and subtract whole numbers with up to three digits (regrouping of ones or tens).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.05",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Understand and explain the relationship between multiplication and division.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.06",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Understand and explain the commutative and distributive properties of multiplication, and use these to simplify calculations.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.07",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Know 1, 2, 3, 4, 5, 6, 8, 9 and 10 times tables.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.08",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Estimate and multiply whole numbers up to 100 by 2, 3, 4 and 5.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.09",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Estimate and divide whole numbers up to 100 by 2, 3, 4 and 5.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ni.10",
+      "stage": "3",
+      "strand": "Number: Integers and powers",
+      "text": "Recognise multiples of 2, 5 and 10 (up to 1000).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nm.01",
+      "stage": "3",
+      "strand": "Number: Money",
+      "text": "Interpret money notation for currencies that use a decimal point.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nm.02",
+      "stage": "3",
+      "strand": "Number: Money",
+      "text": "Add and subtract amounts of money to give change.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Np.01",
+      "stage": "3",
+      "strand": "Number: Place value, ordering and rounding",
+      "text": "Understand and explain that the value of each digit is determined by its position in that number (up to 3-digit numbers).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Np.02",
+      "stage": "3",
+      "strand": "Number: Place value, ordering and rounding",
+      "text": "Use knowledge of place value to multiply whole numbers by 10.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Np.03",
+      "stage": "3",
+      "strand": "Number: Place value, ordering and rounding",
+      "text": "Compose, decompose and regroup 3-digit numbers, using hundreds, tens and ones.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Np.04",
+      "stage": "3",
+      "strand": "Number: Place value, ordering and rounding",
+      "text": "Understand the relative size of quantities to compare and order 3-digit positive numbers, using the symbols =, > and <.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Np.05",
+      "stage": "3",
+      "strand": "Number: Place value, ordering and rounding",
+      "text": "Round 3-digit numbers to the nearest 10 or 100.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.01",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Understand and explain that fractions are several equal parts of an object or shape and all the parts, taken together, equal one whole.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.02",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Understand that the relationship between the whole and the parts depends on the relative size of each, regardless of their shape or orientation.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.03",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Understand and explain that fractions can describe equal parts of a quantity or set of objects.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.04",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Understand that a fraction can be represented as a division of the numerator by the denominator (half, quarter and three-quarters).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.05",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Understand that fractions (half, quarter, three-quarters, third and tenth) can act as operators.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.06",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Recognise that two fractions can have an equivalent value (halves, quarters, fifths and tenths).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.07",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Estimate, add and subtract fractions with the same denominator (within one whole).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Nf.08",
+      "stage": "3",
+      "strand": "Number: Fractions, decimals, percentages, ratio and proportion",
+      "text": "Use knowledge of equivalence to compare and order unit fractions and fractions with the same denominator, using the symbols =, > and <.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gt.01",
+      "stage": "3",
+      "strand": "Geometry and Measure: Time",
+      "text": "Choose the appropriate unit of time for familiar activities.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gt.02",
+      "stage": "3",
+      "strand": "Geometry and Measure: Time",
+      "text": "Read and record time accurately in digital notation (12-hour) and on analogue clocks.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gt.03",
+      "stage": "3",
+      "strand": "Geometry and Measure: Time",
+      "text": "Interpret and use the information in timetables (12-hour clock).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gt.04",
+      "stage": "3",
+      "strand": "Geometry and Measure: Time",
+      "text": "Understand the difference between a time and a time interval. Find time intervals between the same units in days, weeks, months and years.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.01",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Identify, describe, classify, name and sketch 2D shapes by their properties. Differentiate between regular and irregular polygons.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.02",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Estimate and measure lengths in centimetres (cm), metres (m) and kilometres (km). Understand the relationship between units.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.03",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Understand that perimeter is the total distance around a 2D shape and can be calculated by adding lengths, and area is how much space a 2D shape occupies within its boundary.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.04",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Draw lines, rectangles and squares. Estimate, measure and calculate the perimeter of a shape, using appropriate metric units, and area on a square grid.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.05",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Identify, describe, sort, name and sketch 3D shapes by their properties.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.06",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Estimate and measure the mass of objects in grams (g) and kilograms (kg). Understand the relationship between units.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.07",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Estimate and measure capacity in millilitres (ml) and litres (l), and understand their relationships.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.08",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Recognise pictures, drawings and diagrams of 3D shapes.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.09",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Identify both horizontal and vertical lines of symmetry on 2D shapes and patterns.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.10",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Compare angles with a right angle. Recognise that a straight line is equivalent to two right angles or a half turn.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gg.11",
+      "stage": "3",
+      "strand": "Geometry and Measure: Geometrical reasoning, shapes and measurements",
+      "text": "Use instruments that measure length, mass, capacity and temperature.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gp.01",
+      "stage": "3",
+      "strand": "Geometry and Measure: Position and transformation",
+      "text": "Interpret and create descriptions of position, direction and movement, including reference to cardinal points.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Gp.02",
+      "stage": "3",
+      "strand": "Geometry and Measure: Position and transformation",
+      "text": "Sketch the reflection of a 2D shape in a horizontal or vertical mirror line, including where the mirror line is the edge of the shape.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ss.01",
+      "stage": "3",
+      "strand": "Statistics and Probability: Statistics",
+      "text": "Conduct an investigation to answer non-statistical and statistical questions (categorical and discrete data).",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ss.02",
+      "stage": "3",
+      "strand": "Statistics and Probability: Statistics",
+      "text": "Record, organise and represent categorical and discrete data. Choose and explain which representation to use in a given situation: Venn and Carroll diagrams; tally charts and frequency tables; pictograms and bar charts.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Ss.03",
+      "stage": "3",
+      "strand": "Statistics and Probability: Statistics",
+      "text": "Interpret data, identifying similarities and variations, within data sets, to answer non-statistical and statistical questions and discuss conclusions.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Sp.01",
+      "stage": "3",
+      "strand": "Statistics and Probability: Probability",
+      "text": "Use familiar language associated with chance to describe events, including ‘it will happen’, ‘it will not happen’, ‘it might happen’.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    },
+    {
+      "code": "3Sp.02",
+      "stage": "3",
+      "strand": "Statistics and Probability: Probability",
+      "text": "Conduct chance experiments, and present and describe the results.",
+      "verified": true,
+      "source": "https://cmapspublic2.ihmc.us/rid=1X1FVKBN9-26QY3DL-426X/Cambridge%20Primary%20Mathematics%20Curriculum%20Framework%200096_tcm142-592530.pdf"
+    }
+  ]
+}

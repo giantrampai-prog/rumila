@@ -1,0 +1,169 @@
+{
+  "id": "sd2-sains-perbaiki-perjalanan-matahari",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.MATAHARI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Matahari Tertukar!",
+      "instruksi": "Dua gambar tertukar. Tukar sekali supaya urut dari pagi ke sore.",
+      "s-langit": "Matahari di langit",
+      "langit-fajar": "langit timur mulai terang",
+      "langit-pagi": "Matahari rendah di timur",
+      "langit-siang": "Matahari tinggi di atas kepala",
+      "langit-sore": "Matahari terbenam di barat",
+      "s-bayangan": "Bayangan tiang bendera",
+      "bayangan-pagi": "bayangan panjang ke arah barat",
+      "bayangan-siang": "bayangan pendek di bawah tiang",
+      "bayangan-sore": "bayangan panjang ke arah timur",
+      "s-kegiatan": "Kegiatan dan Matahari",
+      "kegiatan-bangun": "ayam berkokok, Matahari baru terbit",
+      "kegiatan-sekolah": "berangkat sekolah, Matahari masih rendah",
+      "kegiatan-makansiang": "makan siang, Matahari di atas",
+      "kegiatan-pulang": "pulang bermain, Matahari terbenam",
+      "s-bunga": "Bunga matahari menghadap Matahari",
+      "bunga-timur": "bunga menghadap timur",
+      "bunga-atas": "bunga menghadap ke atas",
+      "bunga-barat": "bunga menghadap barat"
+    },
+    "en": {
+      "judul": "The Sun Got Mixed Up!",
+      "instruksi": "Two pictures are swapped. Swap them once so they go from morning to evening.",
+      "s-langit": "The Sun in the sky",
+      "langit-fajar": "eastern sky getting light",
+      "langit-pagi": "Sun low in the east",
+      "langit-siang": "Sun high overhead",
+      "langit-sore": "Sun setting in the west",
+      "s-bayangan": "The flagpole's shadow",
+      "bayangan-pagi": "long shadow pointing west",
+      "bayangan-siang": "short shadow under the pole",
+      "bayangan-sore": "long shadow pointing east",
+      "s-kegiatan": "Activities and the Sun",
+      "kegiatan-bangun": "rooster crows as the Sun rises",
+      "kegiatan-sekolah": "off to school, the Sun is still low",
+      "kegiatan-makansiang": "lunch, the Sun is overhead",
+      "kegiatan-pulang": "home from play as the Sun sets",
+      "s-bunga": "A sunflower faces the Sun",
+      "bunga-timur": "flower facing east",
+      "bunga-atas": "flower facing up",
+      "bunga-barat": "flower facing west"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "langit",
+      "titleKey": "s-langit",
+      "steps": [
+        {
+          "id": "fajar",
+          "labelKey": "langit-fajar",
+          "emoji": "🌄"
+        },
+        {
+          "id": "pagi",
+          "labelKey": "langit-pagi",
+          "emoji": "🌅"
+        },
+        {
+          "id": "siang",
+          "labelKey": "langit-siang",
+          "emoji": "☀️"
+        },
+        {
+          "id": "sore",
+          "labelKey": "langit-sore",
+          "emoji": "🌇"
+        }
+      ]
+    },
+    {
+      "id": "bayangan",
+      "titleKey": "s-bayangan",
+      "steps": [
+        {
+          "id": "pagi",
+          "labelKey": "bayangan-pagi",
+          "emoji": "🚩",
+          "width": 3
+        },
+        {
+          "id": "siang",
+          "labelKey": "bayangan-siang",
+          "emoji": "🚩",
+          "width": 0.6
+        },
+        {
+          "id": "sore",
+          "labelKey": "bayangan-sore",
+          "emoji": "🚩",
+          "width": 3.2
+        }
+      ]
+    },
+    {
+      "id": "kegiatan",
+      "titleKey": "s-kegiatan",
+      "steps": [
+        {
+          "id": "bangun",
+          "labelKey": "kegiatan-bangun",
+          "emoji": "🐓"
+        },
+        {
+          "id": "sekolah",
+          "labelKey": "kegiatan-sekolah",
+          "emoji": "🎒"
+        },
+        {
+          "id": "makansiang",
+          "labelKey": "kegiatan-makansiang",
+          "emoji": "🍱"
+        },
+        {
+          "id": "pulang",
+          "labelKey": "kegiatan-pulang",
+          "emoji": "🌇"
+        }
+      ]
+    },
+    {
+      "id": "bunga",
+      "titleKey": "s-bunga",
+      "steps": [
+        {
+          "id": "timur",
+          "labelKey": "bunga-timur",
+          "emoji": "🌻"
+        },
+        {
+          "id": "atas",
+          "labelKey": "bunga-atas",
+          "emoji": "🌻"
+        },
+        {
+          "id": "barat",
+          "labelKey": "bunga-barat",
+          "emoji": "🌻"
+        }
+      ]
+    }
+  ]
+}

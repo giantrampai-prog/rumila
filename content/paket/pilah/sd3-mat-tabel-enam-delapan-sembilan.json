@@ -1,0 +1,274 @@
+{
+  "id": "sd3-mat-tabel-enam-delapan-sembilan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.KALI-BAGI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tabel 6, 8, dan 9",
+      "instruksi": "Ingat: 6 × 4 sama dengan 4 × 6. Taruh tiap kartu perkalian di rak hasilnya.",
+      "b-24": "24",
+      "b-36": "36",
+      "b-42": "42",
+      "b-48": "48",
+      "b-54": "54",
+      "b-56": "56",
+      "b-63": "63",
+      "b-64": "64",
+      "b-72": "72",
+      "b-81": "81",
+      "i-3x8": "3×8",
+      "i-4x6": "4×6",
+      "i-6x4": "6×4",
+      "i-8x3": "8×3",
+      "i-4x9": "4×9",
+      "i-6x6": "6×6",
+      "i-9x4": "9×4",
+      "i-6x7": "6×7",
+      "i-7x6": "7×6",
+      "i-6x8": "6×8",
+      "i-8x6": "8×6",
+      "i-6x9": "6×9",
+      "i-9x6": "9×6",
+      "i-7x8": "7×8",
+      "i-8x7": "8×7",
+      "i-7x9": "7×9",
+      "i-9x7": "9×7",
+      "i-8x8": "8×8",
+      "i-8x9": "8×9",
+      "i-9x8": "9×8",
+      "i-9x9": "9×9"
+    },
+    "en": {
+      "judul": "6, 8 and 9 Times Tables",
+      "instruksi": "Remember: 6 × 4 is the same as 4 × 6. Put each multiplication card on its answer shelf.",
+      "b-24": "24",
+      "b-36": "36",
+      "b-42": "42",
+      "b-48": "48",
+      "b-54": "54",
+      "b-56": "56",
+      "b-63": "63",
+      "b-64": "64",
+      "b-72": "72",
+      "b-81": "81",
+      "i-3x8": "3×8",
+      "i-4x6": "4×6",
+      "i-6x4": "6×4",
+      "i-8x3": "8×3",
+      "i-4x9": "4×9",
+      "i-6x6": "6×6",
+      "i-9x4": "9×4",
+      "i-6x7": "6×7",
+      "i-7x6": "7×6",
+      "i-6x8": "6×8",
+      "i-8x6": "8×6",
+      "i-6x9": "6×9",
+      "i-9x6": "9×6",
+      "i-7x8": "7×8",
+      "i-8x7": "8×7",
+      "i-7x9": "7×9",
+      "i-9x7": "9×7",
+      "i-8x8": "8×8",
+      "i-8x9": "8×9",
+      "i-9x8": "9×8",
+      "i-9x9": "9×9"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak hasil aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "h24",
+      "labelKey": "b-24"
+    },
+    {
+      "id": "h36",
+      "labelKey": "b-36"
+    },
+    {
+      "id": "h42",
+      "labelKey": "b-42"
+    },
+    {
+      "id": "h48",
+      "labelKey": "b-48"
+    },
+    {
+      "id": "h54",
+      "labelKey": "b-54"
+    },
+    {
+      "id": "h56",
+      "labelKey": "b-56"
+    },
+    {
+      "id": "h63",
+      "labelKey": "b-63"
+    },
+    {
+      "id": "h64",
+      "labelKey": "b-64"
+    },
+    {
+      "id": "h72",
+      "labelKey": "b-72"
+    },
+    {
+      "id": "h81",
+      "labelKey": "b-81"
+    }
+  ],
+  "items": [
+    {
+      "id": "h24-3x8",
+      "labelKey": "i-3x8",
+      "bin": "h24",
+      "scale": 0.85
+    },
+    {
+      "id": "h24-4x6",
+      "labelKey": "i-4x6",
+      "bin": "h24",
+      "scale": 0.85
+    },
+    {
+      "id": "h24-6x4",
+      "labelKey": "i-6x4",
+      "bin": "h24",
+      "scale": 0.85
+    },
+    {
+      "id": "h24-8x3",
+      "labelKey": "i-8x3",
+      "bin": "h24",
+      "scale": 0.85
+    },
+    {
+      "id": "h36-4x9",
+      "labelKey": "i-4x9",
+      "bin": "h36",
+      "scale": 0.85
+    },
+    {
+      "id": "h36-6x6",
+      "labelKey": "i-6x6",
+      "bin": "h36",
+      "scale": 0.85
+    },
+    {
+      "id": "h36-9x4",
+      "labelKey": "i-9x4",
+      "bin": "h36",
+      "scale": 0.85
+    },
+    {
+      "id": "h42-6x7",
+      "labelKey": "i-6x7",
+      "bin": "h42",
+      "scale": 0.85
+    },
+    {
+      "id": "h42-7x6",
+      "labelKey": "i-7x6",
+      "bin": "h42",
+      "scale": 0.85
+    },
+    {
+      "id": "h48-6x8",
+      "labelKey": "i-6x8",
+      "bin": "h48",
+      "scale": 0.85
+    },
+    {
+      "id": "h48-8x6",
+      "labelKey": "i-8x6",
+      "bin": "h48",
+      "scale": 0.85
+    },
+    {
+      "id": "h54-6x9",
+      "labelKey": "i-6x9",
+      "bin": "h54",
+      "scale": 0.85
+    },
+    {
+      "id": "h54-9x6",
+      "labelKey": "i-9x6",
+      "bin": "h54",
+      "scale": 0.85
+    },
+    {
+      "id": "h56-7x8",
+      "labelKey": "i-7x8",
+      "bin": "h56",
+      "scale": 0.85
+    },
+    {
+      "id": "h56-8x7",
+      "labelKey": "i-8x7",
+      "bin": "h56",
+      "scale": 0.85
+    },
+    {
+      "id": "h63-7x9",
+      "labelKey": "i-7x9",
+      "bin": "h63",
+      "scale": 0.85
+    },
+    {
+      "id": "h63-9x7",
+      "labelKey": "i-9x7",
+      "bin": "h63",
+      "scale": 0.85
+    },
+    {
+      "id": "h64-8x8",
+      "labelKey": "i-8x8",
+      "bin": "h64",
+      "scale": 0.85
+    },
+    {
+      "id": "h72-8x9",
+      "labelKey": "i-8x9",
+      "bin": "h72",
+      "scale": 0.85
+    },
+    {
+      "id": "h72-9x8",
+      "labelKey": "i-9x8",
+      "bin": "h72",
+      "scale": 0.85
+    },
+    {
+      "id": "h81-9x9",
+      "labelKey": "i-9x9",
+      "bin": "h81",
+      "scale": 0.85
+    }
+  ]
+}

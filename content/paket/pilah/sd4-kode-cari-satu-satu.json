@@ -1,0 +1,278 @@
+{
+  "id": "sd4-kode-cari-satu-satu",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.CARI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Satu per Satu",
+      "instruksi": "Komputer mencari dengan membuka kartu satu per satu dari kiri sampai ketemu: hitung berapa kartu yang dibuka.",
+      "pilihan": "pilihan",
+      "c1": "4",
+      "c2": "7",
+      "c3": "5",
+      "q1": "Kartu: 4, 9, 2, 7, 5. Cari 7 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 7 ketemu?",
+      "c4": "2",
+      "c5": "8",
+      "q2": "Kartu: 3, 8, 1, 6. Cari 8 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 8 ketemu?",
+      "c6": "1",
+      "c7": "6",
+      "q3": "Kartu: 5, 2, 9, 4, 1, 7. Cari 1 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 1 ketemu?",
+      "q4": "Kartu: 6, 3, 6, 2. Cari 6 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 6 ketemu?",
+      "c8": "3",
+      "q5": "Kartu: 2, 5, 8, 3. Cari 3 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 3 ketemu?",
+      "q6": "Kartu: 9, 1, 4, 7, 2. Cari 4 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 4 ketemu?",
+      "q7": "Kartu: 7, 7, 3, 8. Cari 3 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 3 ketemu?",
+      "c9": "9",
+      "q8": "Kartu: 1, 4, 6, 2, 9. Cari 9 dengan membuka kartu satu per satu dari kiri. Berapa kartu yang dibuka sampai 9 ketemu?",
+      "c10": "0",
+      "q9": "Kartu: 3, 1, 6, 2. Cari 8 satu per satu dari kiri. Berapa kartu dibuka sebelum yakin 8 tidak ada?",
+      "q10": "Kartu: 5, 9, 4, 7, 2. Cari 6 satu per satu dari kiri. Berapa kartu dibuka sebelum yakin 6 tidak ada?",
+      "q11": "Nama: Ani, Budi, Cici, Dodi, Eka. Cari Dodi dari depan. Berapa nama yang dicek?",
+      "c11": "20",
+      "c12": "10",
+      "q12": "Daftar 20 kartu acak. Angka yang dicari ada di kartu terakhir. Berapa kartu dibuka?"
+    },
+    "en": {
+      "judul": "Search One by One",
+      "instruksi": "The computer searches by turning over cards one at a time from the left until it finds the one: count the cards it turns over.",
+      "pilihan": "choices",
+      "c1": "4",
+      "c2": "7",
+      "c3": "5",
+      "q1": "Cards: 4, 9, 2, 7, 5. Look for 7 by turning over cards one at a time from the left. How many cards are turned over until 7 is found?",
+      "c4": "2",
+      "c5": "8",
+      "q2": "Cards: 3, 8, 1, 6. Look for 8 by turning over cards one at a time from the left. How many cards are turned over until 8 is found?",
+      "c6": "1",
+      "c7": "6",
+      "q3": "Cards: 5, 2, 9, 4, 1, 7. Look for 1 by turning over cards one at a time from the left. How many cards are turned over until 1 is found?",
+      "q4": "Cards: 6, 3, 6, 2. Look for 6 by turning over cards one at a time from the left. How many cards are turned over until 6 is found?",
+      "c8": "3",
+      "q5": "Cards: 2, 5, 8, 3. Look for 3 by turning over cards one at a time from the left. How many cards are turned over until 3 is found?",
+      "q6": "Cards: 9, 1, 4, 7, 2. Look for 4 by turning over cards one at a time from the left. How many cards are turned over until 4 is found?",
+      "q7": "Cards: 7, 7, 3, 8. Look for 3 by turning over cards one at a time from the left. How many cards are turned over until 3 is found?",
+      "c9": "9",
+      "q8": "Cards: 1, 4, 6, 2, 9. Look for 9 by turning over cards one at a time from the left. How many cards are turned over until 9 is found?",
+      "c10": "0",
+      "q9": "Cards: 3, 1, 6, 2. Look for 8 one at a time from the left. How many cards are turned over before you are sure 8 is not there?",
+      "q10": "Cards: 5, 9, 4, 7, 2. Look for 6 one at a time from the left. How many cards are turned over before you are sure 6 is not there?",
+      "q11": "Names: Ani, Budi, Cici, Dodi, Eka. Look for Dodi from the front. How many names are checked?",
+      "c11": "20",
+      "c12": "10",
+      "q12": "A list of 20 cards in random order. The number you want is on the last card. How many cards are turned over?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c6",
+        "c7"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c7",
+        "c1"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c1",
+        "c8",
+        "c7"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c8",
+        "c1",
+        "c3"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c8",
+        "c1",
+        "c3"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c3",
+        "c9",
+        "c1"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c1",
+        "c6",
+        "c10"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c3",
+        "c6",
+        "c10"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c1",
+        "c3",
+        "c6"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c11",
+        "c12",
+        "c6"
+      ],
+      "correct": "c11"
+    }
+  ]
+}

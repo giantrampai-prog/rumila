@@ -1,0 +1,531 @@
+{
+  "id": "sd6-mat-sudut-segitiga-rangka-atap",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rangka Atap Segitiga",
+      "instruksi": "Jumlah sudut segitiga 180°. Pada segitiga sama kaki, dua sudut kakinya sama besar.",
+      "q1": "Dua sudut segitiga: 39° dan 86°. Sudut ketiga …",
+      "c1": "55°",
+      "c2": "235°",
+      "c3": "125°",
+      "c4": "65°",
+      "q2": "Segitiga siku-siku punya satu sudut 57°. Sudut lancip lainnya …",
+      "c5": "33°",
+      "c6": "123°",
+      "c7": "213°",
+      "c8": "57°",
+      "q3": "Dua sudut segitiga: 46° dan 23°. Sudut ketiga …",
+      "c9": "111°",
+      "c10": "291°",
+      "c11": "69°",
+      "c12": "121°",
+      "q4": "Dua sudut segitiga: 94° dan 57°. Sudut ketiga …",
+      "c13": "29°",
+      "c14": "209°",
+      "c15": "151°",
+      "c16": "39°",
+      "q5": "Dua sudut segitiga: 85° dan 49°. Sudut ketiga …",
+      "c17": "46°",
+      "c18": "226°",
+      "c19": "134°",
+      "c20": "56°",
+      "q6": "Dua sudut segitiga: 54° dan 25°. Sudut ketiga …",
+      "c21": "101°",
+      "c22": "281°",
+      "c23": "79°",
+      "q7": "Segitiga siku-siku punya satu sudut 50°. Sudut lancip lainnya …",
+      "c24": "40°",
+      "c25": "130°",
+      "c26": "220°",
+      "c27": "50°",
+      "q8": "Segitiga siku-siku punya satu sudut 20°. Sudut lancip lainnya …",
+      "c28": "70°",
+      "c29": "160°",
+      "c30": "250°",
+      "c31": "20°",
+      "q9": "Dua sudut segitiga: 70° dan 62°. Sudut ketiga …",
+      "c32": "48°",
+      "c33": "228°",
+      "c34": "132°",
+      "c35": "58°",
+      "q10": "Dua sudut segitiga: 43° dan 100°. Sudut ketiga …",
+      "c36": "37°",
+      "c37": "217°",
+      "c38": "143°",
+      "c39": "47°",
+      "q11": "Dua sudut segitiga: 76° dan 24°. Sudut ketiga …",
+      "c40": "80°",
+      "c41": "260°",
+      "c42": "100°",
+      "c43": "90°",
+      "q12": "Dua sudut segitiga: 59° dan 28°. Sudut ketiga …",
+      "c44": "93°",
+      "c45": "273°",
+      "c46": "87°",
+      "c47": "103°",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Triangle Roof Frames",
+      "instruksi": "A triangle’s angles add up to 180°. In an isosceles triangle, the two base angles are equal.",
+      "q1": "Two angles of a triangle: 39° and 86°. The third angle is …",
+      "c1": "55°",
+      "c2": "235°",
+      "c3": "125°",
+      "c4": "65°",
+      "q2": "A right-angled triangle has one angle of 57°. The other acute angle is …",
+      "c5": "33°",
+      "c6": "123°",
+      "c7": "213°",
+      "c8": "57°",
+      "q3": "Two angles of a triangle: 46° and 23°. The third angle is …",
+      "c9": "111°",
+      "c10": "291°",
+      "c11": "69°",
+      "c12": "121°",
+      "q4": "Two angles of a triangle: 94° and 57°. The third angle is …",
+      "c13": "29°",
+      "c14": "209°",
+      "c15": "151°",
+      "c16": "39°",
+      "q5": "Two angles of a triangle: 85° and 49°. The third angle is …",
+      "c17": "46°",
+      "c18": "226°",
+      "c19": "134°",
+      "c20": "56°",
+      "q6": "Two angles of a triangle: 54° and 25°. The third angle is …",
+      "c21": "101°",
+      "c22": "281°",
+      "c23": "79°",
+      "q7": "A right-angled triangle has one angle of 50°. The other acute angle is …",
+      "c24": "40°",
+      "c25": "130°",
+      "c26": "220°",
+      "c27": "50°",
+      "q8": "A right-angled triangle has one angle of 20°. The other acute angle is …",
+      "c28": "70°",
+      "c29": "160°",
+      "c30": "250°",
+      "c31": "20°",
+      "q9": "Two angles of a triangle: 70° and 62°. The third angle is …",
+      "c32": "48°",
+      "c33": "228°",
+      "c34": "132°",
+      "c35": "58°",
+      "q10": "Two angles of a triangle: 43° and 100°. The third angle is …",
+      "c36": "37°",
+      "c37": "217°",
+      "c38": "143°",
+      "c39": "47°",
+      "q11": "Two angles of a triangle: 76° and 24°. The third angle is …",
+      "c40": "80°",
+      "c41": "260°",
+      "c42": "100°",
+      "c43": "90°",
+      "q12": "Two angles of a triangle: 59° and 28°. The third angle is …",
+      "c44": "93°",
+      "c45": "273°",
+      "c46": "87°",
+      "c47": "103°",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c45",
+      "labelKey": "c45",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c46",
+      "labelKey": "c46",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c47",
+      "labelKey": "c47",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c9"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c24",
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c28",
+        "c29",
+        "c30",
+        "c31"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c32",
+        "c33",
+        "c34",
+        "c35"
+      ],
+      "correct": "c32"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c36",
+        "c37",
+        "c38",
+        "c39"
+      ],
+      "correct": "c36"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c40",
+        "c41",
+        "c42",
+        "c43"
+      ],
+      "correct": "c40"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c44",
+        "c45",
+        "c46",
+        "c47"
+      ],
+      "correct": "c44"
+    }
+  ]
+}

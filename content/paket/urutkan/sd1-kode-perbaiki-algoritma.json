@@ -1,0 +1,272 @@
+{
+  "id": "sd1-kode-perbaiki-algoritma",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD1.ALGORITMA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Algoritma Tertukar",
+      "instruksi": "Ada dua langkah yang tertukar: tukar keduanya sekali saja supaya urutannya benar.",
+      "t-jus": "Membuat jus",
+      "jus-1": "cuci buah",
+      "jus-2": "potong buah",
+      "jus-3": "masukkan ke blender",
+      "jus-4": "tekan tombol blender",
+      "jus-5": "tuang ke gelas",
+      "jus-6": "minum jusnya",
+      "t-surat": "Mengirim surat",
+      "surat-1": "tulis surat",
+      "surat-2": "lipat surat",
+      "surat-3": "masukkan ke amplop",
+      "surat-4": "tutup amplop",
+      "surat-5": "masukkan ke kotak pos",
+      "surat-6": "tukang pos mengantar",
+      "t-foto": "Memotret",
+      "foto-1": "nyalakan kamera",
+      "foto-2": "arahkan ke bunga",
+      "foto-3": "tekan tombol potret",
+      "foto-4": "foto tersimpan",
+      "foto-5": "lihat hasil foto",
+      "t-senter": "Mengganti baterai senter",
+      "senter-1": "buka tutup senter",
+      "senter-2": "keluarkan baterai lama",
+      "senter-3": "masukkan baterai baru",
+      "senter-4": "tutup senter lagi",
+      "senter-5": "tekan tombol",
+      "senter-6": "lampu menyala",
+      "t-menara": "Membangun menara balok",
+      "menara-1": "taruh balok paling besar",
+      "menara-2": "taruh balok sedang di atasnya",
+      "menara-3": "taruh balok kecil di atasnya",
+      "menara-4": "pasang bendera di puncak",
+      "menara-5": "foto menaranya"
+    },
+    "en": {
+      "judul": "Mixed-Up Algorithm",
+      "instruksi": "Two steps have swapped places: swap them back just once to fix the order.",
+      "t-jus": "Making juice",
+      "jus-1": "wash the fruit",
+      "jus-2": "cut the fruit",
+      "jus-3": "put it in the blender",
+      "jus-4": "press the blender button",
+      "jus-5": "pour into a glass",
+      "jus-6": "drink the juice",
+      "t-surat": "Sending a letter",
+      "surat-1": "write the letter",
+      "surat-2": "fold the letter",
+      "surat-3": "put it in an envelope",
+      "surat-4": "seal the envelope",
+      "surat-5": "drop it in the postbox",
+      "surat-6": "the postman delivers it",
+      "t-foto": "Taking a photo",
+      "foto-1": "turn on the camera",
+      "foto-2": "point it at the flower",
+      "foto-3": "press the shutter button",
+      "foto-4": "the photo is saved",
+      "foto-5": "look at the photo",
+      "t-senter": "Changing torch batteries",
+      "senter-1": "open the torch",
+      "senter-2": "take out the old battery",
+      "senter-3": "put in a new battery",
+      "senter-4": "close the torch",
+      "senter-5": "press the button",
+      "senter-6": "the light comes on",
+      "t-menara": "Building a block tower",
+      "menara-1": "place the biggest block",
+      "menara-2": "put the middle block on top",
+      "menara-3": "put the small block on top",
+      "menara-4": "put a flag on top",
+      "menara-5": "take a photo of the tower"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 5 → 6; mesin menukar satu pasang (berdampingan atau berjarak satu)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "jus",
+      "titleKey": "t-jus",
+      "steps": [
+        {
+          "id": "jus-1",
+          "labelKey": "jus-1",
+          "emoji": "🍎"
+        },
+        {
+          "id": "jus-2",
+          "labelKey": "jus-2",
+          "emoji": "🔪"
+        },
+        {
+          "id": "jus-3",
+          "labelKey": "jus-3",
+          "emoji": "🫙"
+        },
+        {
+          "id": "jus-4",
+          "labelKey": "jus-4",
+          "emoji": "🔘"
+        },
+        {
+          "id": "jus-5",
+          "labelKey": "jus-5",
+          "emoji": "🥤"
+        },
+        {
+          "id": "jus-6",
+          "labelKey": "jus-6",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "surat",
+      "titleKey": "t-surat",
+      "steps": [
+        {
+          "id": "surat-1",
+          "labelKey": "surat-1",
+          "emoji": "✍️"
+        },
+        {
+          "id": "surat-2",
+          "labelKey": "surat-2",
+          "emoji": "📄"
+        },
+        {
+          "id": "surat-3",
+          "labelKey": "surat-3",
+          "emoji": "✉️"
+        },
+        {
+          "id": "surat-4",
+          "labelKey": "surat-4",
+          "emoji": "🔏"
+        },
+        {
+          "id": "surat-5",
+          "labelKey": "surat-5",
+          "emoji": "📮"
+        },
+        {
+          "id": "surat-6",
+          "labelKey": "surat-6",
+          "emoji": "🚲"
+        }
+      ]
+    },
+    {
+      "id": "foto",
+      "titleKey": "t-foto",
+      "steps": [
+        {
+          "id": "foto-1",
+          "labelKey": "foto-1",
+          "emoji": "📷"
+        },
+        {
+          "id": "foto-2",
+          "labelKey": "foto-2",
+          "emoji": "🌸"
+        },
+        {
+          "id": "foto-3",
+          "labelKey": "foto-3",
+          "emoji": "🔘"
+        },
+        {
+          "id": "foto-4",
+          "labelKey": "foto-4",
+          "emoji": "🖼️"
+        },
+        {
+          "id": "foto-5",
+          "labelKey": "foto-5",
+          "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "senter",
+      "titleKey": "t-senter",
+      "steps": [
+        {
+          "id": "senter-1",
+          "labelKey": "senter-1",
+          "emoji": "🔦"
+        },
+        {
+          "id": "senter-2",
+          "labelKey": "senter-2",
+          "emoji": "🪫"
+        },
+        {
+          "id": "senter-3",
+          "labelKey": "senter-3",
+          "emoji": "🔋"
+        },
+        {
+          "id": "senter-4",
+          "labelKey": "senter-4",
+          "emoji": "🔒"
+        },
+        {
+          "id": "senter-5",
+          "labelKey": "senter-5",
+          "emoji": "🔘"
+        },
+        {
+          "id": "senter-6",
+          "labelKey": "senter-6",
+          "emoji": "💡"
+        }
+      ]
+    },
+    {
+      "id": "menara",
+      "titleKey": "t-menara",
+      "steps": [
+        {
+          "id": "menara-1",
+          "labelKey": "menara-1",
+          "emoji": "🟫"
+        },
+        {
+          "id": "menara-2",
+          "labelKey": "menara-2",
+          "emoji": "🟧"
+        },
+        {
+          "id": "menara-3",
+          "labelKey": "menara-3",
+          "emoji": "🟨"
+        },
+        {
+          "id": "menara-4",
+          "labelKey": "menara-4",
+          "emoji": "🚩"
+        },
+        {
+          "id": "menara-5",
+          "labelKey": "menara-5",
+          "emoji": "📸"
+        }
+      ]
+    }
+  ]
+}

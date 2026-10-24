@@ -1,0 +1,152 @@
+{
+  "id": "sd2-sains-alami-atau-buatan-dapur",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alami atau Buatan di Dapur?",
+      "instruksi": "Bahan ini langsung dari alam atau dibuat manusia? Taruh ke raknya.",
+      "b-alami": "alami",
+      "b-buatan": "buatan manusia",
+      "i-bambu": "bambu",
+      "i-rotan": "rotan",
+      "i-tanahliat": "tanah liat",
+      "i-batukali": "batu kali",
+      "i-bulu": "bulu ayam",
+      "i-tempurung": "batok kelapa",
+      "i-keramik": "piring keramik",
+      "i-foil": "aluminium foil",
+      "i-plastikwrap": "plastik pembungkus",
+      "i-tisu": "tisu",
+      "i-botolkaca": "botol kaca",
+      "i-spons": "spons cuci piring"
+    },
+    "en": {
+      "judul": "Natural or Made in the Kitchen?",
+      "instruksi": "Does this material come straight from nature or is it made by people? Put it on its shelf.",
+      "b-alami": "natural",
+      "b-buatan": "made by people",
+      "i-bambu": "bamboo",
+      "i-rotan": "rattan",
+      "i-tanahliat": "clay",
+      "i-batukali": "river stone",
+      "i-bulu": "chicken feather",
+      "i-tempurung": "coconut shell",
+      "i-keramik": "ceramic plate",
+      "i-foil": "aluminium foil",
+      "i-plastikwrap": "plastic wrap",
+      "i-tisu": "tissue",
+      "i-botolkaca": "glass bottle",
+      "i-spons": "dish sponge"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "alami",
+      "labelKey": "b-alami",
+      "emoji": "🌿",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "buatan",
+      "labelKey": "b-buatan",
+      "emoji": "🏭",
+      "color": "#ede7f6"
+    }
+  ],
+  "items": [
+    {
+      "id": "bambu",
+      "labelKey": "i-bambu",
+      "bin": "alami",
+      "emoji": "🎋"
+    },
+    {
+      "id": "rotan",
+      "labelKey": "i-rotan",
+      "bin": "alami",
+      "emoji": "🧺"
+    },
+    {
+      "id": "tanahliat",
+      "labelKey": "i-tanahliat",
+      "bin": "alami",
+      "emoji": "🟤"
+    },
+    {
+      "id": "batukali",
+      "labelKey": "i-batukali",
+      "bin": "alami",
+      "emoji": "🪨"
+    },
+    {
+      "id": "bulu",
+      "labelKey": "i-bulu",
+      "bin": "alami",
+      "emoji": "🪶"
+    },
+    {
+      "id": "tempurung",
+      "labelKey": "i-tempurung",
+      "bin": "alami",
+      "emoji": "🥥"
+    },
+    {
+      "id": "keramik",
+      "labelKey": "i-keramik",
+      "bin": "buatan",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "foil",
+      "labelKey": "i-foil",
+      "bin": "buatan",
+      "emoji": "🪙",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "plastikwrap",
+      "labelKey": "i-plastikwrap",
+      "bin": "buatan",
+      "emoji": "🧴"
+    },
+    {
+      "id": "tisu",
+      "labelKey": "i-tisu",
+      "bin": "buatan",
+      "emoji": "🧻"
+    },
+    {
+      "id": "botolkaca",
+      "labelKey": "i-botolkaca",
+      "bin": "buatan",
+      "emoji": "🍾"
+    },
+    {
+      "id": "spons",
+      "labelKey": "i-spons",
+      "bin": "buatan",
+      "emoji": "🧽"
+    }
+  ],
+  "pilihan": []
+}

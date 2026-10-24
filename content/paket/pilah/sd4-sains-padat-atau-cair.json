@@ -1,0 +1,151 @@
+{
+  "id": "sd4-sains-padat-atau-cair",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.WUJUD-ZAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Padat atau Cair?",
+      "instruksi": "Pilah tiap benda: padat (bentuknya tetap) atau cair (mengalir, ikut bentuk wadah).",
+      "b-padat": "padat: bentuk sendiri tetap",
+      "b-cair": "cair: mengalir, ikut bentuk wadah",
+      "i-bata": "batu bata",
+      "i-es": "es batu",
+      "i-pasir": "pasir",
+      "i-gula": "gula pasir",
+      "i-tepung": "tepung terigu",
+      "i-kelereng": "kelereng",
+      "i-air": "air",
+      "i-minyak": "minyak goreng",
+      "i-madu": "madu",
+      "i-susu": "susu",
+      "i-kecap": "kecap",
+      "i-sabun": "sabun cair"
+    },
+    "en": {
+      "judul": "Solid or Liquid?",
+      "instruksi": "Sort each thing: solid (keeps its shape) or liquid (flows and takes the shape of its container).",
+      "b-padat": "solid: keeps its own shape",
+      "b-cair": "liquid: flows, takes the container's shape",
+      "i-bata": "brick",
+      "i-es": "ice cube",
+      "i-pasir": "sand",
+      "i-gula": "granulated sugar",
+      "i-tepung": "flour",
+      "i-kelereng": "marble",
+      "i-air": "water",
+      "i-minyak": "cooking oil",
+      "i-madu": "honey",
+      "i-susu": "milk",
+      "i-kecap": "soy sauce",
+      "i-sabun": "liquid soap"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "padat",
+      "labelKey": "b-padat",
+      "emoji": "🧱",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "cair",
+      "labelKey": "b-cair",
+      "emoji": "💧",
+      "color": "#bbdefb"
+    }
+  ],
+  "items": [
+    {
+      "id": "bata",
+      "labelKey": "i-bata",
+      "bin": "padat",
+      "emoji": "🧱"
+    },
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "padat",
+      "emoji": "🧊"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "padat",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "gula",
+      "labelKey": "i-gula",
+      "bin": "padat",
+      "emoji": "🍚"
+    },
+    {
+      "id": "tepung",
+      "labelKey": "i-tepung",
+      "bin": "padat",
+      "emoji": "🌾"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "padat",
+      "emoji": "🔮"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "cair",
+      "emoji": "💧"
+    },
+    {
+      "id": "minyak",
+      "labelKey": "i-minyak",
+      "bin": "cair",
+      "emoji": "🫗"
+    },
+    {
+      "id": "madu",
+      "labelKey": "i-madu",
+      "bin": "cair",
+      "emoji": "🍯"
+    },
+    {
+      "id": "susu",
+      "labelKey": "i-susu",
+      "bin": "cair",
+      "emoji": "🥛"
+    },
+    {
+      "id": "kecap",
+      "labelKey": "i-kecap",
+      "bin": "cair",
+      "emoji": "🍶"
+    },
+    {
+      "id": "sabun",
+      "labelKey": "i-sabun",
+      "bin": "cair",
+      "emoji": "🧴"
+    }
+  ],
+  "pilihan": []
+}

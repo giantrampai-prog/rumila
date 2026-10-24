@@ -1,0 +1,153 @@
+{
+  "id": "sd3-mat-segi-banyak-beraturan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Beraturan atau Tidak?",
+      "instruksi": "Beraturan artinya semua sisi sama panjang dan semua sudut sama besar. Pilah tiap bangun.",
+      "b-beraturan": "beraturan",
+      "b-tidak-beraturan": "tidak beraturan",
+      "i-persegi": "persegi",
+      "i-segitiga-sama-sisi": "segitiga sama sisi",
+      "i-segi-lima-beraturan": "segi lima beraturan",
+      "i-segi-enam-beraturan": "segi enam beraturan",
+      "i-segi-enam-mendatar": "segi enam mendatar",
+      "i-rambu-segi-delapan": "rambu segi delapan",
+      "i-persegi-panjang": "persegi panjang",
+      "i-belah-ketupat": "belah ketupat",
+      "i-belah-ketupat-kecil": "belah ketupat kecil",
+      "i-jajar-genjang": "jajar genjang",
+      "i-trapesium": "trapesium",
+      "i-segitiga-sikumsiku": "segitiga siku-siku"
+    },
+    "en": {
+      "judul": "Regular or Irregular?",
+      "instruksi": "Regular means all sides are the same length and all angles are the same size. Sort each shape.",
+      "b-beraturan": "regular",
+      "b-tidak-beraturan": "irregular",
+      "i-persegi": "square",
+      "i-segitiga-sama-sisi": "equilateral triangle",
+      "i-segi-lima-beraturan": "regular pentagon",
+      "i-segi-enam-beraturan": "regular hexagon",
+      "i-segi-enam-mendatar": "flat hexagon",
+      "i-rambu-segi-delapan": "octagon sign",
+      "i-persegi-panjang": "rectangle",
+      "i-belah-ketupat": "rhombus",
+      "i-belah-ketupat-kecil": "small rhombus",
+      "i-jajar-genjang": "parallelogram",
+      "i-trapesium": "trapezium",
+      "i-segitiga-sikumsiku": "right-angled triangle"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "bangun per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "beraturan",
+      "labelKey": "b-beraturan",
+      "emoji": "⬢"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak-beraturan",
+      "emoji": "▱"
+    }
+  ],
+  "items": [
+    {
+      "id": "persegi",
+      "labelKey": "i-persegi",
+      "bin": "beraturan",
+      "shape": "square",
+      "color": "#6ab0e8"
+    },
+    {
+      "id": "segitiga-sama-sisi",
+      "labelKey": "i-segitiga-sama-sisi",
+      "bin": "beraturan",
+      "shape": "triangle",
+      "color": "#ff5a6e"
+    },
+    {
+      "id": "segilima",
+      "labelKey": "i-segi-lima-beraturan",
+      "bin": "beraturan",
+      "emoji": "⬟"
+    },
+    {
+      "id": "segienam",
+      "labelKey": "i-segi-enam-beraturan",
+      "bin": "beraturan",
+      "emoji": "⬡"
+    },
+    {
+      "id": "segienam-datar",
+      "labelKey": "i-segi-enam-mendatar",
+      "bin": "beraturan",
+      "emoji": "⬣"
+    },
+    {
+      "id": "segidelapan",
+      "labelKey": "i-rambu-segi-delapan",
+      "bin": "beraturan",
+      "emoji": "🛑"
+    },
+    {
+      "id": "persegi-panjang",
+      "labelKey": "i-persegi-panjang",
+      "bin": "tidak",
+      "shape": "rect",
+      "color": "#ffd23f",
+      "width": 2
+    },
+    {
+      "id": "ketupat",
+      "labelKey": "i-belah-ketupat",
+      "bin": "tidak",
+      "emoji": "🔷"
+    },
+    {
+      "id": "ketupat-kecil",
+      "labelKey": "i-belah-ketupat-kecil",
+      "bin": "tidak",
+      "emoji": "🔶"
+    },
+    {
+      "id": "jajar-genjang",
+      "labelKey": "i-jajar-genjang",
+      "bin": "tidak",
+      "emoji": "▱"
+    },
+    {
+      "id": "trapesium",
+      "labelKey": "i-trapesium",
+      "bin": "tidak",
+      "emoji": "⏢"
+    },
+    {
+      "id": "segitiga-siku",
+      "labelKey": "i-segitiga-sikumsiku",
+      "bin": "tidak",
+      "emoji": "📐"
+    }
+  ]
+}

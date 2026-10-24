@@ -1,0 +1,296 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.SD1.ALGORITMA.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "ALGORITMA",
+        "nama": {
+          "id": "Algoritma",
+          "en": "Algorithms"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyusun 5 sampai 6 gambar langkah sebuah tugas sehari-hari menjadi algoritma yang urut",
+        "en": "I can put 5 to 6 picture steps of an everyday task in order to make an algorithm"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.DEKOMPOSISI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Lanjutan TK A URUTAN.01 (4–5 gambar kegiatan): kini tugas yang punya tujuan jelas (menanam biji, mencuci tangan, membuat teh) dan langkahnya saling bergantung. Aksi: menyusun kartu yang diacak; bukti = urutan persis. Jebakan: dua langkah yang tampak bisa bertukar (pakai sabun / basahi tangan) — penulis paket wajib memilih langkah yang tidak bisa dibalik. Acuan: Progression Grid Computing Stage 1 'Follow the steps in algorithms for everyday tasks' (dikutip tanpa kode di Cambridge Community); kode 1CT.01 di kamus belum terverifikasi sehingga refs kosong. Knob: steps 5 → 6."
+    },
+    {
+      "id": "KODE.SD1.ALGORITMA.02",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "ALGORITMA",
+        "nama": {
+          "id": "Algoritma",
+          "en": "Algorithms"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan satu langkah yang salah tempat dalam algoritma 5 sampai 6 langkah lalu memperbaikinya dengan satu tukar",
+        "en": "I can find the one step in the wrong place in a 5 to 6 step algorithm and fix it with one swap"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD1.ALGORITMA.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Mode perbaiki: mesin menukar tepat satu pasang (berdampingan atau berjarak satu), anak menukar balik tepat sekali; dua tukar atau lebih = belum. Beda dengan TK A DEBUG.01 (3–4 gambar, selalu berdampingan): kini 5–6 langkah dan pasangan boleh berjarak. Jebakan: anak menyusun ulang semuanya (banyak tukar). Kode 1CT.02 ('identify single errors in algorithms') belum terverifikasi; refs kosong. Knob: steps 5 → 6."
+    },
+    {
+      "id": "KODE.SD1.POLA.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "POLA",
+        "nama": {
+          "id": "Pola perintah",
+          "en": "Command patterns"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengisi perintah yang hilang di ujung barisan perintah robot yang berulang",
+        "en": "I can fill in the missing commands at the end of a repeating row of robot commands"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.ULANGI.03"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "pola"
+      ],
+      "catatan": "Benda pola = keping perintah (maju, belok kiri, belok kanan, lompat) sebagai panah/ikon, bukan warna. Satuan 3 perintah; slot kosong 2–3, sehingga anak harus menemukan satuan yang berulang — jembatan ke 'apa yang dimasukkan ke blok ulangi'. Jebakan: anak menyalin perintah terakhir yang terlihat, bukan melanjutkan satuan; pengecoh 1 keping di palet. Knob: blanks 2 → 3, shown 3 → 2."
+    },
+    {
+      "id": "KODE.SD1.ULANGI.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "ULANGI",
+        "nama": {
+          "id": "Perulangan",
+          "en": "Repeat loops"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai dua blok ulangi dalam satu program supaya robot melewati jalur berbelok yang tidak muat di rak",
+        "en": "I can use two repeat blocks in one program so robot follows a turning path too long for the rack"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.ULANGI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Jalur berbentuk L: A petak lurus, satu belokan, B petak lurus (A, B 2–5). Rak 5 blok sedangkan program tanpa ulangi butuh A+1+B ≥ 6 blok, sehingga satu-satunya jalan: ulangi A [maju], belok, ulangi B [maju]. Beda dengan TK B ULANGI.02 (satu ulangi, jalur lurus): kini dua bagian dengan jumlah ulangan berbeda. Perulangan bersarang (topik SD 1 di kurikulum) belum bisa dimainkan karena rak belum bisa menaruh ulangi di dalam ulangi; lihat tinjauan. Jebakan: angka ulangan bagian kedua disamakan dengan bagian pertama; belok dimasukkan ke dalam blok ulangi. Knob: distance 6 → 10."
+    },
+    {
+      "id": "KODE.SD1.KONDISI.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "KONDISI",
+        "nama": {
+          "id": "Kondisi",
+          "en": "Conditions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menaruh blok kalau di dalam blok ulangi supaya program 2 blok berhasil di tiga jalur yang batunya berpindah",
+        "en": "I can put the if block inside a repeat block so a 2-block program works on three paths where the rocks move"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.KONDISI.01",
+        "KODE.TKB.ULANGI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Usulan tinjauan TK B (KONDISI.02 dipindah ke SD 1). Keping kalau = 'batu? lompat : maju', selalu memajukan robot. Rak 2 blok memaksa ulangi N [kalau]; tiga jalur satu kelompok, batu 1–2 berpindah, sehingga deretan kalau tanpa ulangi tidak muat. Bukti: ketiga jalur sampai bintang dengan ≤ 2 blok. Jebakan: anak menaruh kalau di samping ulangi, bukan di dalamnya; anak memilih N sebanyak petak (padahal lompat memakan 2 petak — robot berhenti di bintang, jadi N terlalu besar tetap aman). Knob: rocks 1 → 2, distance 4 → 6."
+    },
+    {
+      "id": "KODE.SD1.PREDIKSI.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "PREDIKSI",
+        "nama": {
+          "id": "Menelusuri program",
+          "en": "Tracing programs"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk petak tujuan robot sebelum tiap langkah dijalankan, di program yang memakai blok ulangi",
+        "en": "I can point to where robot will land before each step runs, in a program that uses a repeat block"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.PROGRAM-5-8.02",
+        "KODE.TKB.ULANGI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Mode langkah + prediksi: program 6–9 langkah sudah tersusun (memuat satu blok ulangi berisi 1–2 perintah), anak menunjuk petak sebelum tiap ketukan Langkah. Yang baru dibanding TK B PROGRAM-5-8.02: isi ulangi dijalankan berkali-kali, jadi anak harus melacak putaran ke berapa. Bukti: ≥ 80% tebakan tepat. Prediksi setelah belok = petak yang sama. Jebakan: anak mengira ulangi selesai setelah satu putaran; setelah belok menunjuk kiri layar, bukan kiri robot. Knob: turns 0 → 2."
+    },
+    {
+      "id": "KODE.SD1.DEBUG.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Debugging",
+          "en": "Debugging"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki satu blok yang salah di program robot yang memakai blok ulangi",
+        "en": "I can fix the one wrong block in a robot program that uses a repeat block"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.DEBUG-BANYAK.01",
+        "KODE.TKB.ULANGI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Mode debug, fixes 1. Kesalahan bisa di angka ulangan (3× seharusnya 4×), di isi ulangi (kiri seharusnya kanan), atau di blok biasa di luar ulangi. Anak mengubah tepat satu keping (mengganti angka atau isi ulangi dihitung satu keping). Jebakan: anak membongkar ulangi menjadi deretan maju (lebih dari satu perubahan). Knob: letak salah (angka → isi → luar), distance 5 → 9."
+    },
+    {
+      "id": "KODE.SD1.DATA.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Data",
+          "en": "Data"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah benda ke kotak ya dan kotak tidak untuk menjawab satu pertanyaan tentang ciri benda",
+        "en": "I can sort objects into a yes box and a no box to answer one question about them"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.TKB.DEKOMPOSISI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pertanyaan tetap per paket (mis. 'Memakai listrik?', 'Punya roda?'), dibacakan dan tertulis; kotak berlabel ✅ ya / ❌ tidak. Ini dasar pertanyaan ya/tidak untuk memilah data (strand Managing Data). Benda dipilih supaya jawabannya tidak bergantung pada tafsir (hindari sepeda listrik, mainan bertenaga baterai yang tidak jelas). Jebakan: anak memilah menurut kesukaan atau warna; benda ya dan tidak dibuat mirip bentuknya. Kode Managing Data Stage 1 belum ada di kamus; refs kosong. Knob: itemCount 6 → 10."
+    },
+    {
+      "id": "KODE.SD1.PERANGKAT.01",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "PERANGKAT",
+        "nama": {
+          "id": "Perangkat komputer",
+          "en": "Computer devices"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah perangkat yang tersambung dengan kabel dan yang tersambung tanpa kabel",
+        "en": "I can sort devices that connect with a wire from devices that connect without a wire"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "1DC.03",
+          "note": "cocok langsung: kabel vs tanpa kabel"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Gambar perangkat sedang dipakai: kabel terlihat jelas (printer berkabel, mouse berkabel, telepon rumah, TV dengan kabel antena) vs tanpa kabel (ponsel, tablet, jam pintar, remote, speaker bluetooth). Jebakan: kabel pengisi daya — ponsel yang sedang dicas tetap 'tanpa kabel' untuk tersambung; paket menghindari gambar seperti itu. Knob: itemCount 6 → 10."
+    },
+    {
+      "id": "KODE.SD1.PERANGKAT.02",
+      "track": "KODE",
+      "level": "SD1",
+      "unit": {
+        "id": "PERANGKAT",
+        "nama": {
+          "id": "Perangkat komputer",
+          "en": "Computer devices"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah mesin yang termasuk robot dan benda yang bukan robot",
+        "en": "I can sort machines that are robots from things that are not robots"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "1CS.06",
+          "note": "cocok: mengenali apa itu robot dan di mana ditemukan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Robot = mesin yang bisa bergerak atau bekerja sendiri mengikuti program (robot penyedot debu, lengan robot pabrik, robot pemotong rumput, drone pengantar). Bukan robot = benda yang digerakkan orang atau tidak bergerak (boneka, sepeda, payung, gunting). Dunia nyata: rumah, pabrik, rumah sakit, gudang. Jebakan: mainan berbentuk robot (bukan robot) dan mesin yang tidak berbentuk manusia (robot). Benda abu-abu (mobil remote, mesin cuci) dihindari. Knob: itemCount 6 → 10."
+    }
+  ]
+}

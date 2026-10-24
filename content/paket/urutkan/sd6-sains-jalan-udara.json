@@ -1,0 +1,124 @@
+{
+  "id": "sd6-sains-jalan-udara",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERNAPASAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perjalanan Napas",
+      "instruksi": "Baca judulnya, lalu susun jalan udara di tubuh.",
+      "s-masuk": "Udara masuk: oksigen menuju darah",
+      "masuk-hidung": "hidung: udara disaring dan dihangatkan",
+      "masuk-tenggorokan": "tenggorokan",
+      "masuk-trakea": "batang tenggorok (trakea)",
+      "masuk-bronkus": "cabang tenggorok (bronkus) ke tiap paru-paru",
+      "masuk-alveolus": "gelembung kecil paru-paru (alveolus)",
+      "masuk-darah": "oksigen masuk ke darah",
+      "s-keluar": "Udara keluar: karbon dioksida dibuang",
+      "keluar-darah": "karbon dioksida keluar dari darah ke alveolus",
+      "keluar-bronkus": "melewati bronkus",
+      "keluar-trakea": "naik lewat trakea",
+      "keluar-hidung": "keluar lewat hidung atau mulut"
+    },
+    "en": {
+      "judul": "The Breath's Journey",
+      "instruksi": "Read the title, then put the path of air through the body in order.",
+      "s-masuk": "Breathing in: oxygen on its way to the blood",
+      "masuk-hidung": "nose: air is filtered and warmed",
+      "masuk-tenggorokan": "throat",
+      "masuk-trakea": "windpipe (trachea)",
+      "masuk-bronkus": "bronchi branching into each lung",
+      "masuk-alveolus": "tiny air sacs in the lungs (alveoli)",
+      "masuk-darah": "oxygen passes into the blood",
+      "s-keluar": "Breathing out: carbon dioxide removed",
+      "keluar-darah": "carbon dioxide leaves the blood into the alveoli",
+      "keluar-bronkus": "passes through the bronchi",
+      "keluar-trakea": "goes up the trachea",
+      "keluar-hidung": "out through the nose or mouth"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 6 (udara keluar hanya 4)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "masuk",
+      "titleKey": "s-masuk",
+      "steps": [
+        {
+          "id": "hidung",
+          "labelKey": "masuk-hidung",
+          "emoji": "👃"
+        },
+        {
+          "id": "tenggorokan",
+          "labelKey": "masuk-tenggorokan",
+          "emoji": "🗣️"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "masuk-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "masuk-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "masuk-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "masuk-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "keluar",
+      "titleKey": "s-keluar",
+      "steps": [
+        {
+          "id": "darah",
+          "labelKey": "keluar-darah",
+          "emoji": "🩸"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "keluar-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "keluar-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "hidung",
+          "labelKey": "keluar-hidung",
+          "emoji": "💨"
+        }
+      ]
+    }
+  ]
+}

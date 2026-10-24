@@ -1,0 +1,151 @@
+{
+  "id": "sd1-sains-butuh-listrik-sekolah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Butuh Listrik? (Sekolah)",
+      "instruksi": "Mana yang butuh listrik di sekolah? Taruh ke raknya.",
+      "b-listrik": "butuh listrik",
+      "b-tanpa": "tanpa listrik",
+      "i-komputer": "komputer",
+      "i-belistrik": "bel listrik",
+      "i-kalkulator": "kalkulator",
+      "i-robot": "mainan robot berbaterai",
+      "i-pengeras": "pengeras suara",
+      "i-pompa": "pompa air",
+      "i-pensil": "pensil",
+      "i-penggaris": "penggaris",
+      "i-sepeda": "sepeda",
+      "i-layang": "layang-layang",
+      "i-peluit": "peluit",
+      "i-bola": "bola"
+    },
+    "en": {
+      "judul": "Needs Electricity? (School)",
+      "instruksi": "Which things at school need electricity? Put them on their shelf.",
+      "b-listrik": "needs electricity",
+      "b-tanpa": "no electricity",
+      "i-komputer": "computer",
+      "i-belistrik": "electric bell",
+      "i-kalkulator": "calculator",
+      "i-robot": "battery toy robot",
+      "i-pengeras": "loudspeaker",
+      "i-pompa": "water pump",
+      "i-pensil": "pencil",
+      "i-penggaris": "ruler",
+      "i-sepeda": "bicycle",
+      "i-layang": "kite",
+      "i-peluit": "whistle",
+      "i-bola": "ball"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "listrik",
+      "labelKey": "b-listrik",
+      "emoji": "🔌",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "tanpa",
+      "labelKey": "b-tanpa",
+      "emoji": "🤚",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "komputer",
+      "labelKey": "i-komputer",
+      "bin": "listrik",
+      "emoji": "💻"
+    },
+    {
+      "id": "belistrik",
+      "labelKey": "i-belistrik",
+      "bin": "listrik",
+      "emoji": "🔔"
+    },
+    {
+      "id": "kalkulator",
+      "labelKey": "i-kalkulator",
+      "bin": "listrik",
+      "emoji": "🧮"
+    },
+    {
+      "id": "robot",
+      "labelKey": "i-robot",
+      "bin": "listrik",
+      "emoji": "🤖"
+    },
+    {
+      "id": "pengeras",
+      "labelKey": "i-pengeras",
+      "bin": "listrik",
+      "emoji": "📢"
+    },
+    {
+      "id": "pompa",
+      "labelKey": "i-pompa",
+      "bin": "listrik",
+      "emoji": "🚰"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "tanpa",
+      "emoji": "✏️"
+    },
+    {
+      "id": "penggaris",
+      "labelKey": "i-penggaris",
+      "bin": "tanpa",
+      "emoji": "📏"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "tanpa",
+      "emoji": "🚲"
+    },
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "tanpa",
+      "emoji": "🪁"
+    },
+    {
+      "id": "peluit",
+      "labelKey": "i-peluit",
+      "bin": "tanpa",
+      "emoji": "🎵"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "tanpa",
+      "emoji": "⚽"
+    }
+  ],
+  "pilihan": []
+}

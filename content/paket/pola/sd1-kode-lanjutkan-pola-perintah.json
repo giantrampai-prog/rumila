@@ -1,0 +1,151 @@
+{
+  "id": "sd1-kode-lanjutkan-pola-perintah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.SD1.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lanjutkan Pola Perintah",
+      "instruksi": "Perintah robot ini berulang: isi keping yang kosong di ujung supaya polanya berlanjut.",
+      "p-maju": "maju",
+      "p-kiri": "belok kiri",
+      "p-kanan": "belok kanan",
+      "p-lompat": "lompat"
+    },
+    "en": {
+      "judul": "Continue the Command Pattern",
+      "instruksi": "The robot's commands repeat: fill the empty pieces at the end so the pattern carries on.",
+      "p-maju": "forward",
+      "p-kiri": "turn left",
+      "p-kanan": "turn right",
+      "p-lompat": "jump"
+    }
+  },
+  "knobs": {
+    "blanks": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "keping kosong di ujung: 2 → 3 (3 = satu satuan penuh)"
+    },
+    "shown": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "ulangan penuh yang tampil: 3 → 2"
+    },
+    "distractor": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu keping pengecoh di palet"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "lanjut",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "maju",
+      "labelKey": "p-maju",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "kiri",
+      "labelKey": "p-kiri",
+      "emoji": "↩️"
+    },
+    {
+      "id": "kanan",
+      "labelKey": "p-kanan",
+      "emoji": "↪️"
+    },
+    {
+      "id": "lompat",
+      "labelKey": "p-lompat",
+      "emoji": "🦘"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "maju-kanan-lompat",
+      "unit": [
+        "maju",
+        "kanan",
+        "lompat"
+      ]
+    },
+    {
+      "id": "maju-kiri-lompat",
+      "unit": [
+        "maju",
+        "kiri",
+        "lompat"
+      ]
+    },
+    {
+      "id": "lompat-maju-kanan",
+      "unit": [
+        "lompat",
+        "maju",
+        "kanan"
+      ]
+    },
+    {
+      "id": "lompat-maju-kiri",
+      "unit": [
+        "lompat",
+        "maju",
+        "kiri"
+      ]
+    },
+    {
+      "id": "maju-lompat-kanan",
+      "unit": [
+        "maju",
+        "lompat",
+        "kanan"
+      ]
+    },
+    {
+      "id": "maju-lompat-kiri",
+      "unit": [
+        "maju",
+        "lompat",
+        "kiri"
+      ]
+    },
+    {
+      "id": "kanan-maju-lompat",
+      "unit": [
+        "kanan",
+        "maju",
+        "lompat"
+      ]
+    },
+    {
+      "id": "kiri-maju-lompat",
+      "unit": [
+        "kiri",
+        "maju",
+        "lompat"
+      ]
+    }
+  ],
+  "nada": {
+    "maju": "C4",
+    "kiri": "E4",
+    "kanan": "G4",
+    "lompat": "A4"
+  }
+}

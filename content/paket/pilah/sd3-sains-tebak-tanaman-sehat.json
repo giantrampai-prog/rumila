@@ -1,0 +1,143 @@
+{
+  "id": "sd3-sains-tebak-tanaman-sehat",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tanaman Mana yang Tetap Sehat?",
+      "instruksi": "Tebak dulu: taruh tiap pot ke rak tetap sehat atau akan layu.",
+      "b-sehat": "tetap sehat",
+      "b-layu": "akan layu",
+      "i-jendela": "pot di dekat jendela, disiram tiap hari",
+      "i-teras": "pot di teras terang, disiram secukupnya",
+      "i-taman": "pot di taman kena cahaya pagi",
+      "i-kelas": "pot di kelas terang dan sejuk",
+      "i-hujan": "pot di halaman, kena hujan sesekali",
+      "i-lemari": "pot di dalam lemari gelap",
+      "i-kering": "pot di jendela, tidak pernah disiram",
+      "i-kulkas": "pot di dalam kulkas",
+      "i-kompor": "pot di samping kompor panas",
+      "i-rendam": "pot terendam air terus-menerus",
+      "i-kardus": "pot ditutup kardus berhari-hari"
+    },
+    "en": {
+      "judul": "Which Plants Stay Healthy?",
+      "instruksi": "Predict first: put each pot on the stays-healthy shelf or the will-wilt shelf.",
+      "b-sehat": "stays healthy",
+      "b-layu": "will wilt",
+      "i-jendela": "pot by the window, watered every day",
+      "i-teras": "pot on a bright porch, watered just enough",
+      "i-taman": "pot in the garden with morning sun",
+      "i-kelas": "pot in a bright, cool classroom",
+      "i-hujan": "pot in the yard, rained on now and then",
+      "i-lemari": "pot inside a dark cupboard",
+      "i-kering": "pot by the window, never watered",
+      "i-kulkas": "pot inside the fridge",
+      "i-kompor": "pot next to a hot stove",
+      "i-rendam": "pot always sitting in water",
+      "i-kardus": "pot covered by a box for days"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sehat",
+      "labelKey": "b-sehat",
+      "emoji": "🌿",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "layu",
+      "labelKey": "b-layu",
+      "emoji": "🥀",
+      "color": "#efebe9"
+    }
+  ],
+  "items": [
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "sehat",
+      "emoji": "🪴"
+    },
+    {
+      "id": "teras",
+      "labelKey": "i-teras",
+      "bin": "sehat",
+      "emoji": "🪴"
+    },
+    {
+      "id": "taman",
+      "labelKey": "i-taman",
+      "bin": "sehat",
+      "emoji": "🌱"
+    },
+    {
+      "id": "kelas",
+      "labelKey": "i-kelas",
+      "bin": "sehat",
+      "emoji": "🌱"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "sehat",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "lemari",
+      "labelKey": "i-lemari",
+      "bin": "layu",
+      "emoji": "🚪"
+    },
+    {
+      "id": "kering",
+      "labelKey": "i-kering",
+      "bin": "layu",
+      "emoji": "🏜️"
+    },
+    {
+      "id": "kulkas",
+      "labelKey": "i-kulkas",
+      "bin": "layu",
+      "emoji": "🧊"
+    },
+    {
+      "id": "kompor",
+      "labelKey": "i-kompor",
+      "bin": "layu",
+      "emoji": "🔥"
+    },
+    {
+      "id": "rendam",
+      "labelKey": "i-rendam",
+      "bin": "layu",
+      "emoji": "🌊"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "layu",
+      "emoji": "📦"
+    }
+  ],
+  "pilihan": []
+}

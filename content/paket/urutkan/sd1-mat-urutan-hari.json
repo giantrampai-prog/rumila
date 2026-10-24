@@ -1,0 +1,365 @@
+{
+  "id": "sd1-mat-urutan-hari",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.WAKTU.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hari Demi Hari",
+      "instruksi": "Lihat hari pertamanya. Susun hari-hari berikutnya sesuai urutan seminggu.",
+      "s-senin": "Senin",
+      "s-selasa": "Selasa",
+      "s-rabu": "Rabu",
+      "s-kamis": "Kamis",
+      "s-jumat": "Jumat",
+      "j-mulai-hari-senin": "Mulai hari Senin",
+      "s-sabtu": "Sabtu",
+      "j-mulai-hari-selasa": "Mulai hari Selasa",
+      "s-minggu": "Minggu",
+      "j-mulai-hari-rabu": "Mulai hari Rabu",
+      "j-mulai-hari-kamis": "Mulai hari Kamis",
+      "j-mulai-hari-jumat": "Mulai hari Jumat",
+      "j-mulai-hari-sabtu": "Mulai hari Sabtu",
+      "j-mulai-hari-minggu": "Mulai hari Minggu",
+      "j-mulai-hari-sabtu-lewati-akhir-pekan": "Mulai hari Sabtu, lewati akhir pekan",
+      "j-mulai-hari-minggu-lewati-akhir-pekan": "Mulai hari Minggu, lewati akhir pekan",
+      "j-mulai-hari-jumat-lewati-akhir-pekan": "Mulai hari Jumat, lewati akhir pekan"
+    },
+    "en": {
+      "judul": "Day After Day",
+      "instruksi": "Look at the first day. Put the next days in order through the week.",
+      "s-senin": "Monday",
+      "s-selasa": "Tuesday",
+      "s-rabu": "Wednesday",
+      "s-kamis": "Thursday",
+      "s-jumat": "Friday",
+      "j-mulai-hari-senin": "Start on Monday",
+      "s-sabtu": "Saturday",
+      "j-mulai-hari-selasa": "Start on Tuesday",
+      "s-minggu": "Sunday",
+      "j-mulai-hari-rabu": "Start on Wednesday",
+      "j-mulai-hari-kamis": "Start on Thursday",
+      "j-mulai-hari-jumat": "Start on Friday",
+      "j-mulai-hari-sabtu": "Start on Saturday",
+      "j-mulai-hari-minggu": "Start on Sunday",
+      "j-mulai-hari-sabtu-lewati-akhir-pekan": "Start on Saturday, past the weekend",
+      "j-mulai-hari-minggu-lewati-akhir-pekan": "Start on Sunday, past the weekend",
+      "j-mulai-hari-jumat-lewati-akhir-pekan": "Start on Friday, past the weekend"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah hari: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "mulai-senin",
+      "titleKey": "j-mulai-hari-senin",
+      "steps": [
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        },
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        },
+        {
+          "id": "rabu",
+          "labelKey": "s-rabu",
+          "scale": 0.7
+        },
+        {
+          "id": "kamis",
+          "labelKey": "s-kamis",
+          "scale": 0.6
+        },
+        {
+          "id": "jumat",
+          "labelKey": "s-jumat",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "mulai-selasa",
+      "titleKey": "j-mulai-hari-selasa",
+      "steps": [
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        },
+        {
+          "id": "rabu",
+          "labelKey": "s-rabu",
+          "scale": 0.7
+        },
+        {
+          "id": "kamis",
+          "labelKey": "s-kamis",
+          "scale": 0.6
+        },
+        {
+          "id": "jumat",
+          "labelKey": "s-jumat",
+          "scale": 0.6
+        },
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "mulai-rabu",
+      "titleKey": "j-mulai-hari-rabu",
+      "steps": [
+        {
+          "id": "rabu",
+          "labelKey": "s-rabu",
+          "scale": 0.7
+        },
+        {
+          "id": "kamis",
+          "labelKey": "s-kamis",
+          "scale": 0.6
+        },
+        {
+          "id": "jumat",
+          "labelKey": "s-jumat",
+          "scale": 0.6
+        },
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        }
+      ]
+    },
+    {
+      "id": "mulai-kamis",
+      "titleKey": "j-mulai-hari-kamis",
+      "steps": [
+        {
+          "id": "kamis",
+          "labelKey": "s-kamis",
+          "scale": 0.6
+        },
+        {
+          "id": "jumat",
+          "labelKey": "s-jumat",
+          "scale": 0.6
+        },
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "mulai-jumat",
+      "titleKey": "j-mulai-hari-jumat",
+      "steps": [
+        {
+          "id": "jumat",
+          "labelKey": "s-jumat",
+          "scale": 0.6
+        },
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        },
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        }
+      ]
+    },
+    {
+      "id": "mulai-sabtu",
+      "titleKey": "j-mulai-hari-sabtu",
+      "steps": [
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        },
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        },
+        {
+          "id": "rabu",
+          "labelKey": "s-rabu",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "mulai-minggu",
+      "titleKey": "j-mulai-hari-minggu",
+      "steps": [
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        },
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        },
+        {
+          "id": "rabu",
+          "labelKey": "s-rabu",
+          "scale": 0.7
+        },
+        {
+          "id": "kamis",
+          "labelKey": "s-kamis",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "lewat-sabtu",
+      "titleKey": "j-mulai-hari-sabtu-lewati-akhir-pekan",
+      "steps": [
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        },
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        }
+      ]
+    },
+    {
+      "id": "lewat-minggu",
+      "titleKey": "j-mulai-hari-minggu-lewati-akhir-pekan",
+      "steps": [
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        },
+        {
+          "id": "selasa",
+          "labelKey": "s-selasa",
+          "scale": 0.5
+        },
+        {
+          "id": "rabu",
+          "labelKey": "s-rabu",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "lewat-jumat",
+      "titleKey": "j-mulai-hari-jumat-lewati-akhir-pekan",
+      "steps": [
+        {
+          "id": "jumat",
+          "labelKey": "s-jumat",
+          "scale": 0.6
+        },
+        {
+          "id": "sabtu",
+          "labelKey": "s-sabtu",
+          "scale": 0.6
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "senin",
+          "labelKey": "s-senin",
+          "scale": 0.6
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "id": "sd3-mat-rak-pasangan-ratusan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.TAMBAH-KURANG-1000.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lengkapi ke Ratusan",
+      "instruksi": "65→100 artinya: 65 kurang berapa supaya 100? Taruh tiap kartu di rak kekurangannya.",
+      "b-kurang-35": "kurang 35",
+      "b-kurang-350": "kurang 350",
+      "b-kurang-45": "kurang 45",
+      "b-kurang-450": "kurang 450",
+      "b-kurang-25": "kurang 25",
+      "b-kurang-250": "kurang 250",
+      "b-kurang-15": "kurang 15",
+      "b-kurang-150": "kurang 150",
+      "b-kurang-300": "kurang 300",
+      "b-kurang-60": "kurang 60",
+      "i-65ke100": "65→100",
+      "i-365ke400": "365→400",
+      "i-965ke1000": "965→1000",
+      "i-150ke500": "150→500",
+      "i-450ke800": "450→800",
+      "i-650ke1000": "650→1000",
+      "i-55ke100": "55→100",
+      "i-355ke400": "355→400",
+      "i-955ke1000": "955→1000",
+      "i-50ke500": "50→500",
+      "i-350ke800": "350→800",
+      "i-550ke1000": "550→1000",
+      "i-75ke100": "75→100",
+      "i-375ke400": "375→400",
+      "i-975ke1000": "975→1000",
+      "i-250ke500": "250→500",
+      "i-550ke800": "550→800",
+      "i-750ke1000": "750→1000",
+      "i-85ke100": "85→100",
+      "i-385ke400": "385→400",
+      "i-985ke1000": "985→1000",
+      "i-350ke500": "350→500",
+      "i-650ke800": "650→800",
+      "i-850ke1000": "850→1000",
+      "i-200ke500": "200→500",
+      "i-500ke800": "500→800",
+      "i-700ke1000": "700→1000",
+      "i-40ke100": "40→100",
+      "i-340ke400": "340→400",
+      "i-940ke1000": "940→1000"
+    },
+    "en": {
+      "judul": "Complete the Hundreds",
+      "instruksi": "65→100 means: how many more does 65 need to make 100? Put each card on its shelf.",
+      "b-kurang-35": "needs 35",
+      "b-kurang-350": "needs 350",
+      "b-kurang-45": "needs 45",
+      "b-kurang-450": "needs 450",
+      "b-kurang-25": "needs 25",
+      "b-kurang-250": "needs 250",
+      "b-kurang-15": "needs 15",
+      "b-kurang-150": "needs 150",
+      "b-kurang-300": "needs 300",
+      "b-kurang-60": "needs 60",
+      "i-65ke100": "65→100",
+      "i-365ke400": "365→400",
+      "i-965ke1000": "965→1000",
+      "i-150ke500": "150→500",
+      "i-450ke800": "450→800",
+      "i-650ke1000": "650→1000",
+      "i-55ke100": "55→100",
+      "i-355ke400": "355→400",
+      "i-955ke1000": "955→1000",
+      "i-50ke500": "50→500",
+      "i-350ke800": "350→800",
+      "i-550ke1000": "550→1000",
+      "i-75ke100": "75→100",
+      "i-375ke400": "375→400",
+      "i-975ke1000": "975→1000",
+      "i-250ke500": "250→500",
+      "i-550ke800": "550→800",
+      "i-750ke1000": "750→1000",
+      "i-85ke100": "85→100",
+      "i-385ke400": "385→400",
+      "i-985ke1000": "985→1000",
+      "i-350ke500": "350→500",
+      "i-650ke800": "650→800",
+      "i-850ke1000": "850→1000",
+      "i-200ke500": "200→500",
+      "i-500ke800": "500→800",
+      "i-700ke1000": "700→1000",
+      "i-40ke100": "40→100",
+      "i-340ke400": "340→400",
+      "i-940ke1000": "940→1000"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak aktif (berpasangan 35 & 350): 4 → 10"
+    },
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k35",
+      "labelKey": "b-kurang-35"
+    },
+    {
+      "id": "k350",
+      "labelKey": "b-kurang-350"
+    },
+    {
+      "id": "k45",
+      "labelKey": "b-kurang-45"
+    },
+    {
+      "id": "k450",
+      "labelKey": "b-kurang-450"
+    },
+    {
+      "id": "k25",
+      "labelKey": "b-kurang-25"
+    },
+    {
+      "id": "k250",
+      "labelKey": "b-kurang-250"
+    },
+    {
+      "id": "k15",
+      "labelKey": "b-kurang-15"
+    },
+    {
+      "id": "k150",
+      "labelKey": "b-kurang-150"
+    },
+    {
+      "id": "k300",
+      "labelKey": "b-kurang-300"
+    },
+    {
+      "id": "k60",
+      "labelKey": "b-kurang-60"
+    }
+  ],
+  "items": [
+    {
+      "id": "k35-65ke100",
+      "labelKey": "i-65ke100",
+      "bin": "k35",
+      "scale": 0.5
+    },
+    {
+      "id": "k35-365ke400",
+      "labelKey": "i-365ke400",
+      "bin": "k35",
+      "scale": 0.42
+    },
+    {
+      "id": "k35-965ke1000",
+      "labelKey": "i-965ke1000",
+      "bin": "k35",
+      "scale": 0.42
+    },
+    {
+      "id": "k350-150ke500",
+      "labelKey": "i-150ke500",
+      "bin": "k350",
+      "scale": 0.42
+    },
+    {
+      "id": "k350-450ke800",
+      "labelKey": "i-450ke800",
+      "bin": "k350",
+      "scale": 0.42
+    },
+    {
+      "id": "k350-650ke1000",
+      "labelKey": "i-650ke1000",
+      "bin": "k350",
+      "scale": 0.42
+    },
+    {
+      "id": "k45-55ke100",
+      "labelKey": "i-55ke100",
+      "bin": "k45",
+      "scale": 0.5
+    },
+    {
+      "id": "k45-355ke400",
+      "labelKey": "i-355ke400",
+      "bin": "k45",
+      "scale": 0.42
+    },
+    {
+      "id": "k45-955ke1000",
+      "labelKey": "i-955ke1000",
+      "bin": "k45",
+      "scale": 0.42
+    },
+    {
+      "id": "k450-50ke500",
+      "labelKey": "i-50ke500",
+      "bin": "k450",
+      "scale": 0.5
+    },
+    {
+      "id": "k450-350ke800",
+      "labelKey": "i-350ke800",
+      "bin": "k450",
+      "scale": 0.42
+    },
+    {
+      "id": "k450-550ke1000",
+      "labelKey": "i-550ke1000",
+      "bin": "k450",
+      "scale": 0.42
+    },
+    {
+      "id": "k25-75ke100",
+      "labelKey": "i-75ke100",
+      "bin": "k25",
+      "scale": 0.5
+    },
+    {
+      "id": "k25-375ke400",
+      "labelKey": "i-375ke400",
+      "bin": "k25",
+      "scale": 0.42
+    },
+    {
+      "id": "k25-975ke1000",
+      "labelKey": "i-975ke1000",
+      "bin": "k25",
+      "scale": 0.42
+    },
+    {
+      "id": "k250-250ke500",
+      "labelKey": "i-250ke500",
+      "bin": "k250",
+      "scale": 0.42
+    },
+    {
+      "id": "k250-550ke800",
+      "labelKey": "i-550ke800",
+      "bin": "k250",
+      "scale": 0.42
+    },
+    {
+      "id": "k250-750ke1000",
+      "labelKey": "i-750ke1000",
+      "bin": "k250",
+      "scale": 0.42
+    },
+    {
+      "id": "k15-85ke100",
+      "labelKey": "i-85ke100",
+      "bin": "k15",
+      "scale": 0.5
+    },
+    {
+      "id": "k15-385ke400",
+      "labelKey": "i-385ke400",
+      "bin": "k15",
+      "scale": 0.42
+    },
+    {
+      "id": "k15-985ke1000",
+      "labelKey": "i-985ke1000",
+      "bin": "k15",
+      "scale": 0.42
+    },
+    {
+      "id": "k150-350ke500",
+      "labelKey": "i-350ke500",
+      "bin": "k150",
+      "scale": 0.42
+    },
+    {
+      "id": "k150-650ke800",
+      "labelKey": "i-650ke800",
+      "bin": "k150",
+      "scale": 0.42
+    },
+    {
+      "id": "k150-850ke1000",
+      "labelKey": "i-850ke1000",
+      "bin": "k150",
+      "scale": 0.42
+    },
+    {
+      "id": "k300-200ke500",
+      "labelKey": "i-200ke500",
+      "bin": "k300",
+      "scale": 0.42
+    },
+    {
+      "id": "k300-500ke800",
+      "labelKey": "i-500ke800",
+      "bin": "k300",
+      "scale": 0.42
+    },
+    {
+      "id": "k300-700ke1000",
+      "labelKey": "i-700ke1000",
+      "bin": "k300",
+      "scale": 0.42
+    },
+    {
+      "id": "k60-40ke100",
+      "labelKey": "i-40ke100",
+      "bin": "k60",
+      "scale": 0.5
+    },
+    {
+      "id": "k60-340ke400",
+      "labelKey": "i-340ke400",
+      "bin": "k60",
+      "scale": 0.42
+    },
+    {
+      "id": "k60-940ke1000",
+      "labelKey": "i-940ke1000",
+      "bin": "k60",
+      "scale": 0.42
+    }
+  ]
+}

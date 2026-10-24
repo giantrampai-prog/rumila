@@ -3,7 +3,7 @@
 // Berkas yang tidak lolos skema dilaporkan ke console.error dan dilewati, bukan menjatuhkan aplikasi.
 
 import { useEffect, useState } from "react";
-import { ContentPack, KurikulumFile, LevelId, type Competency } from "@akademi/schema";
+import { ContentPack, DEFAULT_MASTERY, KurikulumFile, LevelId, type Competency } from "@akademi/schema";
 import { KURIKULUM_RAW, PAKET_RAW } from "./katalog.generated";
 
 function jelaskan(issues: { path: PropertyKey[]; message: string }[]) {
@@ -63,6 +63,13 @@ const kompetensiIdx = new Map(KOMPETENSI.map((c) => [c.id, c]));
 const paketIdx = new Map(PAKET.map((p) => [p.id, p]));
 const paketPerKompetensi = new Map<string, ContentPack[]>();
 for (const p of PAKET) for (const cid of p.competencyIds) (paketPerKompetensi.get(cid) ?? paketPerKompetensi.set(cid, []).get(cid)!).push(p);
+
+// Konteks = paket berbeda. Kompetensi yang paketnya kurang dari DEFAULT_MASTERY.minContexts tidak akan pernah
+// "dikuasai" (dan anak tertahan di Gerbang Naik Pangkat), jadi syaratnya diturunkan ke jumlah paket yang ada.
+for (const c of KOMPETENSI) {
+  const ada = paketPerKompetensi.get(c.id)?.length ?? 0;
+  if (c.mastery?.minContexts === undefined && ada < DEFAULT_MASTERY.minContexts) c.mastery = { ...c.mastery, minContexts: Math.max(1, ada) };
+}
 
 export function kompetensiById(id: string): Competency | undefined {
   return kompetensiIdx.get(id);

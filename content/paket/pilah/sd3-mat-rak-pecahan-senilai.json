@@ -1,0 +1,170 @@
+{
+  "id": "sd3-mat-rak-pecahan-senilai",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Pecahan Senilai",
+      "instruksi": "Pecahan senilai menunjukkan bagian yang sama besar. Taruh tiap kartu di rak nilainya.",
+      "b-1per2": "1/2",
+      "b-1": "1",
+      "b-1per5": "1/5",
+      "b-2per5": "2/5",
+      "b-3per5": "3/5",
+      "b-4per5": "4/5",
+      "i-2per4": "2/4",
+      "i-5per10": "5/10",
+      "i-setengah": "½",
+      "i-2per2": "2/2",
+      "i-4per4": "4/4",
+      "i-5per5": "5/5",
+      "i-10per10": "10/10",
+      "i-2per10": "2/10",
+      "i-4per10": "4/10",
+      "i-6per10": "6/10",
+      "i-8per10": "8/10"
+    },
+    "en": {
+      "judul": "Equivalent Fractions Shelf",
+      "instruksi": "Equivalent fractions show the same amount. Put each card on the shelf with its value.",
+      "b-1per2": "1/2",
+      "b-1": "1",
+      "b-1per5": "1/5",
+      "b-2per5": "2/5",
+      "b-3per5": "3/5",
+      "b-4per5": "4/5",
+      "i-2per4": "2/4",
+      "i-5per10": "5/10",
+      "i-setengah": "½",
+      "i-2per2": "2/2",
+      "i-4per4": "4/4",
+      "i-5per5": "5/5",
+      "i-10per10": "10/10",
+      "i-2per10": "2/10",
+      "i-4per10": "4/10",
+      "i-6per10": "6/10",
+      "i-8per10": "8/10"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak aktif: 1/2, 1, 1/5 dulu, lalu perlima lain"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "setengah",
+      "labelKey": "b-1per2"
+    },
+    {
+      "id": "satu",
+      "labelKey": "b-1"
+    },
+    {
+      "id": "seperlima",
+      "labelKey": "b-1per5"
+    },
+    {
+      "id": "duaperlima",
+      "labelKey": "b-2per5"
+    },
+    {
+      "id": "tigaperlima",
+      "labelKey": "b-3per5"
+    },
+    {
+      "id": "empatperlima",
+      "labelKey": "b-4per5"
+    }
+  ],
+  "items": [
+    {
+      "id": "setengah-2per4",
+      "labelKey": "i-2per4",
+      "bin": "setengah",
+      "scale": 0.85
+    },
+    {
+      "id": "setengah-5per10",
+      "labelKey": "i-5per10",
+      "bin": "setengah",
+      "scale": 0.7
+    },
+    {
+      "id": "setengah-setengah",
+      "labelKey": "i-setengah",
+      "bin": "setengah",
+      "scale": 1
+    },
+    {
+      "id": "satu-2per2",
+      "labelKey": "i-2per2",
+      "bin": "satu",
+      "scale": 0.85
+    },
+    {
+      "id": "satu-4per4",
+      "labelKey": "i-4per4",
+      "bin": "satu",
+      "scale": 0.85
+    },
+    {
+      "id": "satu-5per5",
+      "labelKey": "i-5per5",
+      "bin": "satu",
+      "scale": 0.85
+    },
+    {
+      "id": "satu-10per10",
+      "labelKey": "i-10per10",
+      "bin": "satu",
+      "scale": 0.6
+    },
+    {
+      "id": "seperlima-2per10",
+      "labelKey": "i-2per10",
+      "bin": "seperlima",
+      "scale": 0.7
+    },
+    {
+      "id": "duaperlima-4per10",
+      "labelKey": "i-4per10",
+      "bin": "duaperlima",
+      "scale": 0.7
+    },
+    {
+      "id": "tigaperlima-6per10",
+      "labelKey": "i-6per10",
+      "bin": "tigaperlima",
+      "scale": 0.7
+    },
+    {
+      "id": "empatperlima-8per10",
+      "labelKey": "i-8per10",
+      "bin": "empatperlima",
+      "scale": 0.7
+    }
+  ]
+}

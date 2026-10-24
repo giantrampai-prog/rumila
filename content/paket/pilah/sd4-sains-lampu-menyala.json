@@ -1,0 +1,135 @@
+{
+  "id": "sd4-sains-lampu-menyala",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lampu Menyala?",
+      "instruksi": "Baca keadaan rangkaiannya, lalu taruh ke 'menyala' atau 'tidak menyala'.",
+      "b-menyala": "lampu menyala",
+      "b-padam": "lampu tidak menyala",
+      "i-utuh": "baterai, kabel, dan lampu tersambung melingkar utuh",
+      "i-sakelartutup": "rangkaian utuh, sakelar ditutup",
+      "i-duabaterai": "dua baterai berderet, rangkaian utuh",
+      "i-kabelbaru": "kabel putus diganti kabel baru dan disambung lagi",
+      "i-lepas": "satu kabel lepas dari baterai",
+      "i-sakelarbuka": "sakelar dibuka",
+      "i-potong": "kabel terpotong di tengah",
+      "i-putus": "kabel lengkap, tetapi kawat di dalam lampu putus",
+      "i-kutubsama": "kedua kabel menempel di ujung baterai yang sama",
+      "i-tanpabaterai": "kabel dan lampu tersambung tanpa baterai"
+    },
+    "en": {
+      "judul": "Will the Lamp Light?",
+      "instruksi": "Read how the circuit is set up, then put it in 'lights' or 'does not light'.",
+      "b-menyala": "the lamp lights",
+      "b-padam": "the lamp does not light",
+      "i-utuh": "battery, wires and lamp joined in a complete loop",
+      "i-sakelartutup": "complete circuit, switch closed",
+      "i-duabaterai": "two cells in a row, complete circuit",
+      "i-kabelbaru": "a broken wire is replaced and reconnected",
+      "i-lepas": "one wire comes off the battery",
+      "i-sakelarbuka": "the switch is open",
+      "i-potong": "a wire is cut in the middle",
+      "i-putus": "all wires connected, but the wire inside the lamp is broken",
+      "i-kutubsama": "both wires touch the same end of the battery",
+      "i-tanpabaterai": "wires and lamp joined with no battery"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 8; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "menyala",
+      "labelKey": "b-menyala",
+      "emoji": "💡",
+      "color": "#fff59d"
+    },
+    {
+      "id": "padam",
+      "labelKey": "b-padam",
+      "emoji": "🌑",
+      "color": "#cfd8dc"
+    }
+  ],
+  "items": [
+    {
+      "id": "utuh",
+      "labelKey": "i-utuh",
+      "bin": "menyala",
+      "emoji": "🔋"
+    },
+    {
+      "id": "sakelartutup",
+      "labelKey": "i-sakelartutup",
+      "bin": "menyala",
+      "emoji": "🔘"
+    },
+    {
+      "id": "duabaterai",
+      "labelKey": "i-duabaterai",
+      "bin": "menyala",
+      "emoji": "🔋"
+    },
+    {
+      "id": "kabelbaru",
+      "labelKey": "i-kabelbaru",
+      "bin": "menyala",
+      "emoji": "🔌"
+    },
+    {
+      "id": "lepas",
+      "labelKey": "i-lepas",
+      "bin": "padam",
+      "emoji": "🔋"
+    },
+    {
+      "id": "sakelarbuka",
+      "labelKey": "i-sakelarbuka",
+      "bin": "padam",
+      "emoji": "🔘"
+    },
+    {
+      "id": "potong",
+      "labelKey": "i-potong",
+      "bin": "padam",
+      "emoji": "✂️"
+    },
+    {
+      "id": "putus",
+      "labelKey": "i-putus",
+      "bin": "padam",
+      "emoji": "💡"
+    },
+    {
+      "id": "kutubsama",
+      "labelKey": "i-kutubsama",
+      "bin": "padam",
+      "emoji": "🔋"
+    },
+    {
+      "id": "tanpabaterai",
+      "labelKey": "i-tanpabaterai",
+      "bin": "padam",
+      "emoji": "🔌"
+    }
+  ],
+  "pilihan": []
+}

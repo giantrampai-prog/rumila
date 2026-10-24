@@ -1,0 +1,196 @@
+{
+  "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD3.HEWAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perbaiki Siklus Hidup di Kebun",
+      "instruksi": "Dua tahap tertukar. Tukar sekali supaya siklusnya benar.",
+      "s-kupu": "Siklus hidup kupu-kupu",
+      "kupu-telur": "telur di daun",
+      "kupu-ulat": "ulat makan daun",
+      "kupu-kepompong": "kepompong menggantung",
+      "kupu-kupu": "kupu-kupu keluar",
+      "s-ayam": "Siklus hidup ayam",
+      "ayam-telur": "telur dierami",
+      "ayam-menetas": "telur menetas",
+      "ayam-anak": "anak ayam",
+      "ayam-remaja": "ayam muda",
+      "ayam-dewasa": "ayam dewasa",
+      "s-burung": "Siklus hidup burung",
+      "burung-telur": "telur di sarang",
+      "burung-menetas": "anak burung menetas",
+      "burung-belajar": "burung muda belajar terbang",
+      "burung-dewasa": "burung dewasa",
+      "s-semut": "Siklus hidup semut",
+      "semut-telur": "telur semut",
+      "semut-larva": "larva putih",
+      "semut-kepompong": "kepompong semut",
+      "semut-semut": "semut dewasa"
+    },
+    "en": {
+      "judul": "Fix the Garden Life Cycles",
+      "instruksi": "Two stages are swapped. Swap them once to fix the life cycle.",
+      "s-kupu": "Butterfly life cycle",
+      "kupu-telur": "egg on a leaf",
+      "kupu-ulat": "caterpillar eating leaves",
+      "kupu-kepompong": "hanging chrysalis",
+      "kupu-kupu": "butterfly comes out",
+      "s-ayam": "Chicken life cycle",
+      "ayam-telur": "egg being kept warm",
+      "ayam-menetas": "egg hatching",
+      "ayam-anak": "chick",
+      "ayam-remaja": "young chicken",
+      "ayam-dewasa": "adult chicken",
+      "s-burung": "Bird life cycle",
+      "burung-telur": "eggs in a nest",
+      "burung-menetas": "baby bird hatching",
+      "burung-belajar": "young bird learning to fly",
+      "burung-dewasa": "adult bird",
+      "s-semut": "Ant life cycle",
+      "semut-telur": "ant eggs",
+      "semut-larva": "white larva",
+      "semut-kepompong": "ant pupa",
+      "semut-semut": "adult ant"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tahap: 4 → 5 (siklus katak dan ikan lengkap)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "kupu",
+      "titleKey": "s-kupu",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kupu-telur",
+          "emoji": "🥚",
+          "scale": 0.5
+        },
+        {
+          "id": "ulat",
+          "labelKey": "kupu-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "kupu-kepompong",
+          "emoji": "🛡️",
+          "color": "#a1887f"
+        },
+        {
+          "id": "kupu",
+          "labelKey": "kupu-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "ayam",
+      "titleKey": "s-ayam",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "ayam-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "menetas",
+          "labelKey": "ayam-menetas",
+          "emoji": "🐣"
+        },
+        {
+          "id": "anak",
+          "labelKey": "ayam-anak",
+          "emoji": "🐥"
+        },
+        {
+          "id": "remaja",
+          "labelKey": "ayam-remaja",
+          "emoji": "🐤",
+          "scale": 1.2
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "ayam-dewasa",
+          "emoji": "🐔",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "burung",
+      "titleKey": "s-burung",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "burung-telur",
+          "emoji": "🪺"
+        },
+        {
+          "id": "menetas",
+          "labelKey": "burung-menetas",
+          "emoji": "🐣"
+        },
+        {
+          "id": "belajar",
+          "labelKey": "burung-belajar",
+          "emoji": "🐦",
+          "scale": 0.8
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "burung-dewasa",
+          "emoji": "🐦",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "semut",
+      "titleKey": "s-semut",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "semut-telur",
+          "emoji": "⚪",
+          "count": 4,
+          "scale": 0.3
+        },
+        {
+          "id": "larva",
+          "labelKey": "semut-larva",
+          "emoji": "〰️",
+          "color": "#fafafa"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "semut-kepompong",
+          "emoji": "🥜"
+        },
+        {
+          "id": "semut",
+          "labelKey": "semut-semut",
+          "emoji": "🐜"
+        }
+      ]
+    }
+  ]
+}

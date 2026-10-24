@@ -1,0 +1,180 @@
+{
+  "id": "sd3-sains-perbaiki-urutan-bayangan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD3.CAHAYA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bayangan Tertukar",
+      "instruksi": "Dua posisi tertukar. Tukar sekali supaya urut dari bayangan terbesar ke terkecil.",
+      "s-boneka": "Bayangan boneka di layar",
+      "boneka-p1": "boneka tepat di depan senter",
+      "boneka-p2": "boneka agak dekat senter",
+      "boneka-p3": "boneka di tengah",
+      "boneka-p4": "boneka dekat layar",
+      "s-dino": "Bayangan dinosaurus mainan",
+      "dino-p1": "dinosaurus tepat di depan senter",
+      "dino-p2": "dinosaurus agak dekat senter",
+      "dino-p3": "dinosaurus di tengah",
+      "dino-p4": "dinosaurus dekat layar",
+      "s-gelas": "Bayangan gelas",
+      "gelas-p1": "gelas tepat di depan senter",
+      "gelas-p2": "gelas agak dekat senter",
+      "gelas-p3": "gelas di tengah",
+      "gelas-p4": "gelas dekat layar",
+      "s-bintang": "Bayangan potongan bintang",
+      "bintang-p1": "bintang kertas tepat di depan senter",
+      "bintang-p2": "bintang kertas agak dekat senter",
+      "bintang-p3": "bintang kertas di tengah",
+      "bintang-p4": "bintang kertas dekat layar"
+    },
+    "en": {
+      "judul": "Shadows Mixed Up",
+      "instruksi": "Two positions are swapped. Swap them once so they go from the biggest shadow to the smallest.",
+      "s-boneka": "A teddy's shadow on the screen",
+      "boneka-p1": "teddy right in front of the torch",
+      "boneka-p2": "teddy fairly close to the torch",
+      "boneka-p3": "teddy halfway",
+      "boneka-p4": "teddy close to the screen",
+      "s-dino": "A toy dinosaur's shadow",
+      "dino-p1": "dinosaur right in front of the torch",
+      "dino-p2": "dinosaur fairly close to the torch",
+      "dino-p3": "dinosaur halfway",
+      "dino-p4": "dinosaur close to the screen",
+      "s-gelas": "A cup's shadow",
+      "gelas-p1": "cup right in front of the torch",
+      "gelas-p2": "cup fairly close to the torch",
+      "gelas-p3": "cup halfway",
+      "gelas-p4": "cup close to the screen",
+      "s-bintang": "A paper star's shadow",
+      "bintang-p1": "paper star right in front of the torch",
+      "bintang-p2": "paper star fairly close to the torch",
+      "bintang-p3": "paper star halfway",
+      "bintang-p4": "paper star close to the screen"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah posisi: 4; 3 sebagai bantuan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "boneka",
+      "titleKey": "s-boneka",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "boneka-p1",
+          "emoji": "🧸"
+        },
+        {
+          "id": "p2",
+          "labelKey": "boneka-p2",
+          "emoji": "🧸"
+        },
+        {
+          "id": "p3",
+          "labelKey": "boneka-p3",
+          "emoji": "🧸"
+        },
+        {
+          "id": "p4",
+          "labelKey": "boneka-p4",
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": "dino",
+      "titleKey": "s-dino",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "dino-p1",
+          "emoji": "🦖"
+        },
+        {
+          "id": "p2",
+          "labelKey": "dino-p2",
+          "emoji": "🦖"
+        },
+        {
+          "id": "p3",
+          "labelKey": "dino-p3",
+          "emoji": "🦖"
+        },
+        {
+          "id": "p4",
+          "labelKey": "dino-p4",
+          "emoji": "🦖"
+        }
+      ]
+    },
+    {
+      "id": "gelas",
+      "titleKey": "s-gelas",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "gelas-p1",
+          "emoji": "🥛"
+        },
+        {
+          "id": "p2",
+          "labelKey": "gelas-p2",
+          "emoji": "🥛"
+        },
+        {
+          "id": "p3",
+          "labelKey": "gelas-p3",
+          "emoji": "🥛"
+        },
+        {
+          "id": "p4",
+          "labelKey": "gelas-p4",
+          "emoji": "🥛"
+        }
+      ]
+    },
+    {
+      "id": "bintang",
+      "titleKey": "s-bintang",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "bintang-p1",
+          "emoji": "⭐"
+        },
+        {
+          "id": "p2",
+          "labelKey": "bintang-p2",
+          "emoji": "⭐"
+        },
+        {
+          "id": "p3",
+          "labelKey": "bintang-p3",
+          "emoji": "⭐"
+        },
+        {
+          "id": "p4",
+          "labelKey": "bintang-p4",
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ]
+}

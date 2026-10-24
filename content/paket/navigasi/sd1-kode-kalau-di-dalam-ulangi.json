@@ -1,0 +1,1586 @@
+{
+  "id": "sd1-kode-kalau-di-dalam-ulangi",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD1.KONDISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kalau di Dalam Ulangi",
+      "instruksi": "Rak cuma muat dua blok: taruh blok kalau di dalam ulangi supaya robot lolos di tiga jalur."
+    },
+    "en": {
+      "judul": "If Inside Repeat",
+      "instruksi": "The rack holds only two blocks: put the if block inside a repeat so robot passes all three paths."
+    }
+  },
+  "knobs": {
+    "rocks": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah batu per jalur; letaknya berpindah di tiga jalur satu kelompok"
+    },
+    "panjang": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "panjang jalur (dokumentasi; dipilih acak dari kelompok)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "bukit",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "lompat",
+    "kalau",
+    "ulangi"
+  ],
+  "semuaGrid": true,
+  "grids": [
+    {
+      "id": "g1-e-4-1-a-1",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 2,
+      "group": "g1-e-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g1-e-4-1-b-2",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g1-e-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g1-e-4-1-c-3",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 2,
+      "group": "g1-e-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g2-e-5-1-a-1",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g2-e-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g2-e-5-1-b-2",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g2-e-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g2-e-5-1-c-4",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g2-e-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g3-e-5-2-a-1-3",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g3-e-5-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g3-e-5-2-b-1-4",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g3-e-5-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g3-e-5-2-c-2-4",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g3-e-5-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g4-e-6-1-a-1",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g4-e-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g4-e-6-1-b-2",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g4-e-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g4-e-6-1-c-5",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g4-e-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g5-e-6-2-a-1-3",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g5-e-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g5-e-6-2-b-1-4",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g5-e-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g5-e-6-2-c-3-5",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g5-e-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g6-e-7-1-a-1",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g6-e-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g6-e-7-1-b-2",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g6-e-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g6-e-7-1-c-6",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g6-e-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g7-e-7-2-a-1-3",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g7-e-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g7-e-7-2-b-1-4",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g7-e-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g7-e-7-2-c-4-6",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 7,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g7-e-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g8-n-4-1-a-1",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 2,
+      "group": "g8-n-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g8-n-4-1-b-2",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 3,
+      "group": "g8-n-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g8-n-4-1-c-3",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 2,
+      "group": "g8-n-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g9-n-5-1-a-1",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 3,
+      "group": "g9-n-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g9-n-5-1-b-2",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "group": "g9-n-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g9-n-5-1-c-4",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "group": "g9-n-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g10-n-5-2-a-1-3",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 3,
+      "group": "g10-n-5-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g10-n-5-2-b-1-4",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "group": "g10-n-5-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g10-n-5-2-c-2-4",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "group": "g10-n-5-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g11-n-6-1-a-1",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "optimal": 3,
+      "group": "g11-n-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g11-n-6-1-b-2",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "group": "g11-n-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g11-n-6-1-c-5",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "group": "g11-n-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g12-n-6-2-a-1-3",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "group": "g12-n-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g12-n-6-2-b-1-4",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "group": "g12-n-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g12-n-6-2-c-3-5",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "group": "g12-n-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g13-n-7-1-a-1",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 6
+        }
+      ],
+      "optimal": 4,
+      "group": "g13-n-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g13-n-7-1-b-2",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "group": "g13-n-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g13-n-7-1-c-6",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 4,
+      "group": "g13-n-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g14-n-7-2-a-1-3",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "group": "g14-n-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g14-n-7-2-b-1-4",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 4,
+      "group": "g14-n-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g14-n-7-2-c-4-6",
+      "w": 2,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 7,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 4,
+      "group": "g14-n-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g15-w-4-1-a-1",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 2,
+      "group": "g15-w-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g15-w-4-1-b-2",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g15-w-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g15-w-4-1-c-3",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 2,
+      "group": "g15-w-4-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g16-w-5-1-a-1",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g16-w-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g16-w-5-1-b-2",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g16-w-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g16-w-5-1-c-4",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g16-w-5-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g17-w-6-1-a-1",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g17-w-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g17-w-6-1-b-2",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g17-w-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g17-w-6-1-c-5",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g17-w-6-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g18-w-6-2-a-1-3",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g18-w-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g18-w-6-2-b-1-4",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g18-w-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g18-w-6-2-c-3-5",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "group": "g18-w-6-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g19-w-7-1-a-1",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g19-w-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g19-w-7-1-b-2",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g19-w-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g19-w-7-1-c-6",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g19-w-7-1",
+      "rackSlots": 2
+    },
+    {
+      "id": "g20-w-7-2-a-1-3",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g20-w-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g20-w-7-2-b-1-4",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g20-w-7-2",
+      "rackSlots": 2
+    },
+    {
+      "id": "g20-w-7-2-c-4-6",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 4,
+      "group": "g20-w-7-2",
+      "rackSlots": 2
+    }
+  ]
+}

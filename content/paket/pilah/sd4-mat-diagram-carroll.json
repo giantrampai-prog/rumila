@@ -1,0 +1,189 @@
+{
+  "id": "sd4-mat-diagram-carroll",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Diagram Carroll",
+      "instruksi": "Setiap bilangan punya dua sifat: genap atau ganjil, dan lebih dari 50 atau tidak. Taruh di kotak yang cocok untuk keduanya.",
+      "b-genap-besar": "genap, > 50",
+      "b-genap-kecil": "genap, ≤ 50",
+      "b-ganjil-besar": "ganjil, > 50",
+      "b-ganjil-kecil": "ganjil, ≤ 50",
+      "i1": "12",
+      "i2": "48",
+      "i3": "50",
+      "i4": "64",
+      "i5": "98",
+      "i6": "7",
+      "i7": "33",
+      "i8": "49",
+      "i9": "51",
+      "i10": "77",
+      "i11": "90",
+      "i12": "25",
+      "i13": "86",
+      "i14": "61",
+      "i15": "100",
+      "i16": "2",
+      "i17": "75",
+      "i18": "39"
+    },
+    "en": {
+      "judul": "Carroll Diagram",
+      "instruksi": "Each number has two properties: even or odd, and more than 50 or not. Put it in the box that fits both.",
+      "b-genap-besar": "even, > 50",
+      "b-genap-kecil": "even, ≤ 50",
+      "b-ganjil-besar": "odd, > 50",
+      "b-ganjil-kecil": "odd, ≤ 50",
+      "i1": "12",
+      "i2": "48",
+      "i3": "50",
+      "i4": "64",
+      "i5": "98",
+      "i6": "7",
+      "i7": "33",
+      "i8": "49",
+      "i9": "51",
+      "i10": "77",
+      "i11": "90",
+      "i12": "25",
+      "i13": "86",
+      "i14": "61",
+      "i15": "100",
+      "i16": "2",
+      "i17": "75",
+      "i18": "39"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 8,
+      "max": 12,
+      "default": 8,
+      "step": 2,
+      "keterangan": "kartu per ronde: 8 → 12; 50 dan 51 sengaja ada"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap-besar",
+      "labelKey": "b-genap-besar"
+    },
+    {
+      "id": "genap-kecil",
+      "labelKey": "b-genap-kecil"
+    },
+    {
+      "id": "ganjil-besar",
+      "labelKey": "b-ganjil-besar"
+    },
+    {
+      "id": "ganjil-kecil",
+      "labelKey": "b-ganjil-kecil"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "genap-kecil"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "genap-kecil"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "genap-kecil"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "genap-besar"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "genap-besar"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "ganjil-kecil"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "ganjil-kecil"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "ganjil-kecil"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "ganjil-besar"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "ganjil-besar"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "genap-besar"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "ganjil-kecil"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "genap-besar"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "ganjil-besar"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "genap-besar"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "genap-kecil"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "ganjil-besar"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "ganjil-kecil"
+    }
+  ]
+}

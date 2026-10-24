@@ -1,0 +1,152 @@
+{
+  "id": "sd3-mat-sudut-jarum-jam",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sudut Jarum Jam",
+      "instruksi": "Lihat sudut di antara dua jarum jam. Bandingkan dengan sudut siku seperti pojok buku.",
+      "b-kurang-siku": "< siku",
+      "b-siku": "siku",
+      "b-lebih-siku": "> siku",
+      "b-garis-lurus": "garis lurus",
+      "i-jam-pukul-1": "jam pukul 1",
+      "i-jam-pukul-2": "jam pukul 2",
+      "i-jam-pukul-3": "jam pukul 3",
+      "i-jam-pukul-4": "jam pukul 4",
+      "i-jam-pukul-5": "jam pukul 5",
+      "i-jam-pukul-6": "jam pukul 6",
+      "i-jam-pukul-7": "jam pukul 7",
+      "i-jam-pukul-8": "jam pukul 8",
+      "i-jam-pukul-9": "jam pukul 9",
+      "i-jam-pukul-10": "jam pukul 10",
+      "i-jam-pukul-11": "jam pukul 11"
+    },
+    "en": {
+      "judul": "Clock-Hand Angles",
+      "instruksi": "Look at the angle between the two clock hands. Compare it with a right angle, like the corner of a book.",
+      "b-kurang-siku": "< right angle",
+      "b-siku": "right angle",
+      "b-lebih-siku": "> right angle",
+      "b-garis-lurus": "straight line",
+      "i-jam-pukul-1": "clock at 1 o'clock",
+      "i-jam-pukul-2": "clock at 2 o'clock",
+      "i-jam-pukul-3": "clock at 3 o'clock",
+      "i-jam-pukul-4": "clock at 4 o'clock",
+      "i-jam-pukul-5": "clock at 5 o'clock",
+      "i-jam-pukul-6": "clock at 6 o'clock",
+      "i-jam-pukul-7": "clock at 7 o'clock",
+      "i-jam-pukul-8": "clock at 8 o'clock",
+      "i-jam-pukul-9": "clock at 9 o'clock",
+      "i-jam-pukul-10": "clock at 10 o'clock",
+      "i-jam-pukul-11": "clock at 11 o'clock"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jam per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kecil",
+      "labelKey": "b-kurang-siku"
+    },
+    {
+      "id": "siku",
+      "labelKey": "b-siku",
+      "emoji": "📐"
+    },
+    {
+      "id": "besar",
+      "labelKey": "b-lebih-siku"
+    },
+    {
+      "id": "lurus",
+      "labelKey": "b-garis-lurus"
+    }
+  ],
+  "items": [
+    {
+      "id": "pukul-1",
+      "labelKey": "i-jam-pukul-1",
+      "bin": "kecil",
+      "emoji": "🕐"
+    },
+    {
+      "id": "pukul-2",
+      "labelKey": "i-jam-pukul-2",
+      "bin": "kecil",
+      "emoji": "🕑"
+    },
+    {
+      "id": "pukul-3",
+      "labelKey": "i-jam-pukul-3",
+      "bin": "siku",
+      "emoji": "🕒"
+    },
+    {
+      "id": "pukul-4",
+      "labelKey": "i-jam-pukul-4",
+      "bin": "besar",
+      "emoji": "🕓"
+    },
+    {
+      "id": "pukul-5",
+      "labelKey": "i-jam-pukul-5",
+      "bin": "besar",
+      "emoji": "🕔"
+    },
+    {
+      "id": "pukul-6",
+      "labelKey": "i-jam-pukul-6",
+      "bin": "lurus",
+      "emoji": "🕕"
+    },
+    {
+      "id": "pukul-7",
+      "labelKey": "i-jam-pukul-7",
+      "bin": "besar",
+      "emoji": "🕖"
+    },
+    {
+      "id": "pukul-8",
+      "labelKey": "i-jam-pukul-8",
+      "bin": "besar",
+      "emoji": "🕗"
+    },
+    {
+      "id": "pukul-9",
+      "labelKey": "i-jam-pukul-9",
+      "bin": "siku",
+      "emoji": "🕘"
+    },
+    {
+      "id": "pukul-10",
+      "labelKey": "i-jam-pukul-10",
+      "bin": "kecil",
+      "emoji": "🕙"
+    },
+    {
+      "id": "pukul-11",
+      "labelKey": "i-jam-pukul-11",
+      "bin": "kecil",
+      "emoji": "🕚"
+    }
+  ]
+}

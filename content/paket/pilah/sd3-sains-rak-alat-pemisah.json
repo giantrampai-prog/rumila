@@ -1,0 +1,166 @@
+{
+  "id": "sd3-sains-rak-alat-pemisah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.CAMPURAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Alat Pemisah",
+      "instruksi": "Taruh tiap campuran ke alat yang bisa memisahkannya.",
+      "b-ayakan": "ayakan",
+      "b-magnet": "magnet",
+      "b-saring": "kain saring",
+      "i-kerikil": "pasir + kerikil",
+      "i-kacang": "beras + kacang merah",
+      "i-kelereng": "tepung + kelereng",
+      "i-batu": "pasir halus + batu kecil",
+      "i-paku": "pasir + paku besi",
+      "i-klip": "kancing plastik + klip baja",
+      "i-serbuk": "pasir + serbuk besi",
+      "i-jepit": "serbuk kayu + jepit rambut besi",
+      "i-pasirair": "air + pasir",
+      "i-teh": "air teh + ampas daun teh",
+      "i-lumpur": "air + tanah",
+      "i-kopi": "air + ampas kopi tubruk"
+    },
+    "en": {
+      "judul": "Separating Tool Shelves",
+      "instruksi": "Put each mixture on the tool that can separate it.",
+      "b-ayakan": "sieve",
+      "b-magnet": "magnet",
+      "b-saring": "cloth filter",
+      "i-kerikil": "sand + gravel",
+      "i-kacang": "rice + red beans",
+      "i-kelereng": "flour + marbles",
+      "i-batu": "fine sand + small stones",
+      "i-paku": "sand + iron nails",
+      "i-klip": "plastic buttons + steel clips",
+      "i-serbuk": "sand + iron filings",
+      "i-jepit": "sawdust + steel hair grips",
+      "i-pasirair": "water + sand",
+      "i-teh": "tea + tea leaves",
+      "i-lumpur": "water + soil",
+      "i-kopi": "water + coffee grounds"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah alat: 2 → 3"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah campuran per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "ayakan",
+      "labelKey": "b-ayakan",
+      "emoji": "🥅",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "magnet",
+      "labelKey": "b-magnet",
+      "emoji": "🧲",
+      "color": "#ffebee"
+    },
+    {
+      "id": "saring",
+      "labelKey": "b-saring",
+      "emoji": "🧻",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "kerikil",
+      "labelKey": "i-kerikil",
+      "bin": "ayakan",
+      "emoji": "🪨"
+    },
+    {
+      "id": "kacang",
+      "labelKey": "i-kacang",
+      "bin": "ayakan",
+      "emoji": "🫘"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "ayakan",
+      "emoji": "🔮"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "ayakan",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "magnet",
+      "emoji": "🔩"
+    },
+    {
+      "id": "klip",
+      "labelKey": "i-klip",
+      "bin": "magnet",
+      "emoji": "📎"
+    },
+    {
+      "id": "serbuk",
+      "labelKey": "i-serbuk",
+      "bin": "magnet",
+      "emoji": "⚫"
+    },
+    {
+      "id": "jepit",
+      "labelKey": "i-jepit",
+      "bin": "magnet",
+      "emoji": "🪮"
+    },
+    {
+      "id": "pasirair",
+      "labelKey": "i-pasirair",
+      "bin": "saring",
+      "emoji": "💧"
+    },
+    {
+      "id": "teh",
+      "labelKey": "i-teh",
+      "bin": "saring",
+      "emoji": "🍵"
+    },
+    {
+      "id": "lumpur",
+      "labelKey": "i-lumpur",
+      "bin": "saring",
+      "emoji": "🟤"
+    },
+    {
+      "id": "kopi",
+      "labelKey": "i-kopi",
+      "bin": "saring",
+      "emoji": "☕"
+    }
+  ],
+  "pilihan": []
+}

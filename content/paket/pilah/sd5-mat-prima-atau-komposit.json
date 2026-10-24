@@ -1,0 +1,261 @@
+{
+  "id": "sd5-mat-prima-atau-komposit",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.FAKTOR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Prima atau Komposit?",
+      "instruksi": "Bilangan prima hanya punya dua faktor: 1 dan dirinya sendiri. Pilah tiap kartu ke rak prima atau komposit.",
+      "b-prima": "prima",
+      "b-komposit": "komposit",
+      "i1": "2",
+      "i2": "3",
+      "i3": "5",
+      "i4": "7",
+      "i5": "11",
+      "i6": "13",
+      "i7": "17",
+      "i8": "19",
+      "i9": "23",
+      "i10": "29",
+      "i11": "31",
+      "i12": "37",
+      "i13": "41",
+      "i14": "43",
+      "i15": "47",
+      "i16": "53",
+      "i17": "61",
+      "i18": "4",
+      "i19": "9",
+      "i20": "15",
+      "i21": "21",
+      "i22": "25",
+      "i23": "27",
+      "i24": "33",
+      "i25": "39",
+      "i26": "49",
+      "i27": "51",
+      "i28": "57",
+      "i29": "91",
+      "i30": "87"
+    },
+    "en": {
+      "judul": "Prime or Composite?",
+      "instruksi": "A prime number has exactly two factors: 1 and itself. Sort each card onto the prime or composite shelf.",
+      "b-prima": "prime",
+      "b-komposit": "composite",
+      "i1": "2",
+      "i2": "3",
+      "i3": "5",
+      "i4": "7",
+      "i5": "11",
+      "i6": "13",
+      "i7": "17",
+      "i8": "19",
+      "i9": "23",
+      "i10": "29",
+      "i11": "31",
+      "i12": "37",
+      "i13": "41",
+      "i14": "43",
+      "i15": "47",
+      "i16": "53",
+      "i17": "61",
+      "i18": "4",
+      "i19": "9",
+      "i20": "15",
+      "i21": "21",
+      "i22": "25",
+      "i23": "27",
+      "i24": "33",
+      "i25": "39",
+      "i26": "49",
+      "i27": "51",
+      "i28": "57",
+      "i29": "91",
+      "i30": "87"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10; banyak bilangan ganjil komposit sebagai jebakan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "prima",
+      "labelKey": "b-prima"
+    },
+    {
+      "id": "komposit",
+      "labelKey": "b-komposit"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "prima"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "prima"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "prima"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "prima"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "prima"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "prima"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "prima"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "prima"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "prima"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "prima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "prima"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "prima"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "prima"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "prima"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "prima"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "prima"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "prima"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "komposit"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i19",
+      "bin": "komposit"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i20",
+      "bin": "komposit"
+    },
+    {
+      "id": "i21",
+      "labelKey": "i21",
+      "bin": "komposit"
+    },
+    {
+      "id": "i22",
+      "labelKey": "i22",
+      "bin": "komposit"
+    },
+    {
+      "id": "i23",
+      "labelKey": "i23",
+      "bin": "komposit"
+    },
+    {
+      "id": "i24",
+      "labelKey": "i24",
+      "bin": "komposit"
+    },
+    {
+      "id": "i25",
+      "labelKey": "i25",
+      "bin": "komposit"
+    },
+    {
+      "id": "i26",
+      "labelKey": "i26",
+      "bin": "komposit"
+    },
+    {
+      "id": "i27",
+      "labelKey": "i27",
+      "bin": "komposit"
+    },
+    {
+      "id": "i28",
+      "labelKey": "i28",
+      "bin": "komposit"
+    },
+    {
+      "id": "i29",
+      "labelKey": "i29",
+      "bin": "komposit"
+    },
+    {
+      "id": "i30",
+      "labelKey": "i30",
+      "bin": "komposit"
+    }
+  ]
+}

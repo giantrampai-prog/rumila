@@ -1,0 +1,158 @@
+{
+  "id": "sd3-sains-rak-tugas-bagian-tumbuhan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Tugas Bagian Tumbuhan",
+      "instruksi": "Taruh tiap tugas ke bagian tumbuhan yang mengerjakannya.",
+      "b-akar": "akar",
+      "b-batang": "batang",
+      "b-daun": "daun",
+      "b-bunga": "bunga",
+      "i-serap": "menyerap air dari tanah",
+      "i-cengkeram": "mencengkeram tanah saat angin",
+      "i-simpan": "menyimpan makanan seperti wortel",
+      "i-angkut": "membawa air naik ke daun",
+      "i-tegak": "menopang tumbuhan tetap tegak",
+      "i-warna": "air berwarna naik di seledri",
+      "i-masak": "membuat makanan dengan cahaya",
+      "i-kuning": "menguning bila lama di tempat gelap",
+      "i-lebah": "didatangi lebah dan kupu-kupu",
+      "i-buah": "berubah menjadi buah dan biji"
+    },
+    "en": {
+      "judul": "Plant Part Job Shelves",
+      "instruksi": "Put each job on the plant part that does it.",
+      "b-akar": "roots",
+      "b-batang": "stem",
+      "b-daun": "leaves",
+      "b-bunga": "flower",
+      "i-serap": "takes in water from the soil",
+      "i-cengkeram": "grips the soil in the wind",
+      "i-simpan": "stores food, like a carrot",
+      "i-angkut": "carries water up to the leaves",
+      "i-tegak": "holds the plant upright",
+      "i-warna": "coloured water rising in celery",
+      "i-masak": "makes food using light",
+      "i-kuning": "turns yellow after long in the dark",
+      "i-lebah": "visited by bees and butterflies",
+      "i-buah": "turns into fruit and seeds"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah bagian: 2 (akar, batang) → 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah tugas per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "akar",
+      "labelKey": "b-akar",
+      "emoji": "🫚",
+      "color": "#efebe9"
+    },
+    {
+      "id": "batang",
+      "labelKey": "b-batang",
+      "emoji": "🎋",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "daun",
+      "labelKey": "b-daun",
+      "emoji": "🍃",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "bunga",
+      "labelKey": "b-bunga",
+      "emoji": "🌸",
+      "color": "#fce4ec"
+    }
+  ],
+  "items": [
+    {
+      "id": "serap",
+      "labelKey": "i-serap",
+      "bin": "akar",
+      "emoji": "💧"
+    },
+    {
+      "id": "cengkeram",
+      "labelKey": "i-cengkeram",
+      "bin": "akar",
+      "emoji": "🌬️"
+    },
+    {
+      "id": "simpan",
+      "labelKey": "i-simpan",
+      "bin": "akar",
+      "emoji": "🥕"
+    },
+    {
+      "id": "angkut",
+      "labelKey": "i-angkut",
+      "bin": "batang",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "tegak",
+      "labelKey": "i-tegak",
+      "bin": "batang",
+      "emoji": "🧍"
+    },
+    {
+      "id": "warna",
+      "labelKey": "i-warna",
+      "bin": "batang",
+      "emoji": "🥬"
+    },
+    {
+      "id": "masak",
+      "labelKey": "i-masak",
+      "bin": "daun",
+      "emoji": "☀️"
+    },
+    {
+      "id": "kuning",
+      "labelKey": "i-kuning",
+      "bin": "daun",
+      "emoji": "🌑"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "bunga",
+      "emoji": "🐝"
+    },
+    {
+      "id": "buah",
+      "labelKey": "i-buah",
+      "bin": "bunga",
+      "emoji": "🍎"
+    }
+  ],
+  "pilihan": []
+}

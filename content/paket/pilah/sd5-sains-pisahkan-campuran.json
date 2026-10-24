@@ -1,0 +1,219 @@
+{
+  "id": "sd5-sains-pisahkan-campuran",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.LARUTAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pisahkan Campuran",
+      "instruksi": "Baca campurannya, lalu sentuh cara memisahkan yang paling tepat.",
+      "b-pilihan": "pilihan",
+      "i-saring": "disaring dengan kain atau kertas saring",
+      "i-uapkan": "diuapkan sampai airnya habis",
+      "i-magnet": "ditarik dengan magnet",
+      "i-ayak": "diayak",
+      "i-endapkan": "didiamkan, lalu airnya dituang pelan",
+      "i-lewat": "ikut lewat saringan",
+      "i-tertahan": "tertahan di saringan",
+      "i-kristal": "kristal garam",
+      "i-kosong": "tidak ada apa-apa",
+      "i-muncullagi": "garam muncul lagi setelah airnya menguap",
+      "i-hilang": "garam hilang selamanya",
+      "p-r1": "Garam sudah larut di air. Bagaimana mendapatkan garamnya kembali?",
+      "p-r2": "Pasir tercampur di air. Cara paling cepat memisahkan pasirnya?",
+      "p-r3": "Serbuk besi tercampur pasir kering.",
+      "p-r4": "Tepung kering tercampur kerikil kecil.",
+      "p-r5": "Gula larut di teh. Kalau tehnya disaring, gulanya…",
+      "p-r6": "Air laut dijemur di tambak sampai airnya habis. Yang tertinggal adalah…",
+      "p-r7": "Melarutkan garam bisa dibalik. Buktinya…",
+      "p-r8": "Air bercampur lumpur, tidak ada saringan, dan airnya mau dipakai lagi. Apa yang bisa dilakukan?"
+    },
+    "en": {
+      "judul": "Separate the Mixture",
+      "instruksi": "Read the mixture, then touch the best way to separate it.",
+      "b-pilihan": "choices",
+      "i-saring": "filtered through cloth or filter paper",
+      "i-uapkan": "evaporated until the water is gone",
+      "i-magnet": "pulled out with a magnet",
+      "i-ayak": "sieved",
+      "i-endapkan": "left to settle, then the water poured off gently",
+      "i-lewat": "passes through the filter",
+      "i-tertahan": "is caught in the filter",
+      "i-kristal": "salt crystals",
+      "i-kosong": "nothing at all",
+      "i-muncullagi": "the salt appears again after the water evaporates",
+      "i-hilang": "the salt is gone forever",
+      "p-r1": "Salt has dissolved in water. How can you get the salt back?",
+      "p-r2": "Sand is mixed in water. The quickest way to get the sand out?",
+      "p-r3": "Iron filings are mixed with dry sand.",
+      "p-r4": "Dry flour is mixed with small pebbles.",
+      "p-r5": "Sugar has dissolved in tea. If the tea is filtered, the sugar…",
+      "p-r6": "Seawater is left in a salt pan until the water is gone. What is left behind?",
+      "p-r7": "Dissolving salt can be reversed. The evidence is…",
+      "p-r8": "Water is mixed with mud, there is no filter, and you want to use the water again. What can you do?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "saring",
+      "labelKey": "i-saring",
+      "bin": "pilihan",
+      "emoji": "🧻"
+    },
+    {
+      "id": "uapkan",
+      "labelKey": "i-uapkan",
+      "bin": "pilihan",
+      "emoji": "♨️"
+    },
+    {
+      "id": "magnet",
+      "labelKey": "i-magnet",
+      "bin": "pilihan",
+      "emoji": "🧲"
+    },
+    {
+      "id": "ayak",
+      "labelKey": "i-ayak",
+      "bin": "pilihan",
+      "emoji": "🥅"
+    },
+    {
+      "id": "endapkan",
+      "labelKey": "i-endapkan",
+      "bin": "pilihan",
+      "emoji": "⏳"
+    },
+    {
+      "id": "lewat",
+      "labelKey": "i-lewat",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "tertahan",
+      "labelKey": "i-tertahan",
+      "bin": "pilihan",
+      "emoji": "✋"
+    },
+    {
+      "id": "kristal",
+      "labelKey": "i-kristal",
+      "bin": "pilihan",
+      "emoji": "🧂"
+    },
+    {
+      "id": "kosong",
+      "labelKey": "i-kosong",
+      "bin": "pilihan",
+      "emoji": "⭕"
+    },
+    {
+      "id": "muncullagi",
+      "labelKey": "i-muncullagi",
+      "bin": "pilihan",
+      "emoji": "🧂"
+    },
+    {
+      "id": "hilang",
+      "labelKey": "i-hilang",
+      "bin": "pilihan",
+      "emoji": "💨"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "uapkan",
+        "saring",
+        "magnet"
+      ],
+      "correct": "uapkan"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "saring",
+        "uapkan",
+        "magnet"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "magnet",
+        "saring",
+        "uapkan"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "ayak",
+        "uapkan",
+        "magnet"
+      ],
+      "correct": "ayak"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "lewat",
+        "tertahan"
+      ],
+      "correct": "lewat"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "kristal",
+        "kosong"
+      ],
+      "correct": "kristal"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "muncullagi",
+        "hilang"
+      ],
+      "correct": "muncullagi"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "endapkan",
+        "uapkan",
+        "magnet"
+      ],
+      "correct": "endapkan"
+    }
+  ]
+}

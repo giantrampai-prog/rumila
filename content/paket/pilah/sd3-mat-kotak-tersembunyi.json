@@ -1,0 +1,426 @@
+{
+  "id": "sd3-mat-kotak-tersembunyi",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.TAMBAH-KURANG-1000.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bilangan di Balik Kotak",
+      "instruksi": "Kotak menyembunyikan satu bilangan. Cari bilangannya, lalu taruh kartu di rak itu.",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-12": "12",
+      "b-13": "13",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-18": "18",
+      "i-kotakp9s15": "□+9=15",
+      "i-9pkotaks15": "9+□=15",
+      "i-12mkotaks6": "12−□=6",
+      "i-kotakm5s1": "□−5=1",
+      "i-kotakp9s16": "□+9=16",
+      "i-9pkotaks16": "9+□=16",
+      "i-10mkotaks3": "10−□=3",
+      "i-kotakm3s4": "□−3=4",
+      "i-kotakp3s11": "□+3=11",
+      "i-3pkotaks11": "3+□=11",
+      "i-14mkotaks6": "14−□=6",
+      "i-kotakm6s2": "□−6=2",
+      "i-kotakp6s15": "□+6=15",
+      "i-6pkotaks15": "6+□=15",
+      "i-17mkotaks8": "17−□=8",
+      "i-kotakm8s1": "□−8=1",
+      "i-kotakp7s19": "□+7=19",
+      "i-7pkotaks19": "7+□=19",
+      "i-19mkotaks7": "19−□=7",
+      "i-kotakm7s5": "□−7=5",
+      "i-kotakp4s17": "□+4=17",
+      "i-4pkotaks17": "4+□=17",
+      "i-18mkotaks5": "18−□=5",
+      "i-kotakm5s8": "□−5=8",
+      "i-kotakp5s19": "□+5=19",
+      "i-5pkotaks19": "5+□=19",
+      "i-23mkotaks9": "23−□=9",
+      "i-kotakm9s5": "□−9=5",
+      "i-kotakp3s18": "□+3=18",
+      "i-3pkotaks18": "3+□=18",
+      "i-20mkotaks5": "20−□=5",
+      "i-kotakm5s10": "□−5=10",
+      "i-kotakp7s23": "□+7=23",
+      "i-7pkotaks23": "7+□=23",
+      "i-25mkotaks9": "25−□=9",
+      "i-kotakm9s7": "□−9=7",
+      "i-kotakp3s21": "□+3=21",
+      "i-3pkotaks21": "3+□=21",
+      "i-21mkotaks3": "21−□=3",
+      "i-kotakm3s15": "□−3=15"
+    },
+    "en": {
+      "judul": "The Number Under the Box",
+      "instruksi": "The box hides a number. Find it, then put the card on that number's shelf.",
+      "b-6": "6",
+      "b-7": "7",
+      "b-8": "8",
+      "b-9": "9",
+      "b-12": "12",
+      "b-13": "13",
+      "b-14": "14",
+      "b-15": "15",
+      "b-16": "16",
+      "b-18": "18",
+      "i-kotakp9s15": "□+9=15",
+      "i-9pkotaks15": "9+□=15",
+      "i-12mkotaks6": "12−□=6",
+      "i-kotakm5s1": "□−5=1",
+      "i-kotakp9s16": "□+9=16",
+      "i-9pkotaks16": "9+□=16",
+      "i-10mkotaks3": "10−□=3",
+      "i-kotakm3s4": "□−3=4",
+      "i-kotakp3s11": "□+3=11",
+      "i-3pkotaks11": "3+□=11",
+      "i-14mkotaks6": "14−□=6",
+      "i-kotakm6s2": "□−6=2",
+      "i-kotakp6s15": "□+6=15",
+      "i-6pkotaks15": "6+□=15",
+      "i-17mkotaks8": "17−□=8",
+      "i-kotakm8s1": "□−8=1",
+      "i-kotakp7s19": "□+7=19",
+      "i-7pkotaks19": "7+□=19",
+      "i-19mkotaks7": "19−□=7",
+      "i-kotakm7s5": "□−7=5",
+      "i-kotakp4s17": "□+4=17",
+      "i-4pkotaks17": "4+□=17",
+      "i-18mkotaks5": "18−□=5",
+      "i-kotakm5s8": "□−5=8",
+      "i-kotakp5s19": "□+5=19",
+      "i-5pkotaks19": "5+□=19",
+      "i-23mkotaks9": "23−□=9",
+      "i-kotakm9s5": "□−9=5",
+      "i-kotakp3s18": "□+3=18",
+      "i-3pkotaks18": "3+□=18",
+      "i-20mkotaks5": "20−□=5",
+      "i-kotakm5s10": "□−5=10",
+      "i-kotakp7s23": "□+7=23",
+      "i-7pkotaks23": "7+□=23",
+      "i-25mkotaks9": "25−□=9",
+      "i-kotakm9s7": "□−9=7",
+      "i-kotakp3s21": "□+3=21",
+      "i-3pkotaks21": "3+□=21",
+      "i-21mkotaks3": "21−□=3",
+      "i-kotakm3s15": "□−3=15"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 2,
+      "keterangan": "rak aktif: 4 → 10"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "n6",
+      "labelKey": "b-6"
+    },
+    {
+      "id": "n7",
+      "labelKey": "b-7"
+    },
+    {
+      "id": "n8",
+      "labelKey": "b-8"
+    },
+    {
+      "id": "n9",
+      "labelKey": "b-9"
+    },
+    {
+      "id": "n12",
+      "labelKey": "b-12"
+    },
+    {
+      "id": "n13",
+      "labelKey": "b-13"
+    },
+    {
+      "id": "n14",
+      "labelKey": "b-14"
+    },
+    {
+      "id": "n15",
+      "labelKey": "b-15"
+    },
+    {
+      "id": "n16",
+      "labelKey": "b-16"
+    },
+    {
+      "id": "n18",
+      "labelKey": "b-18"
+    }
+  ],
+  "items": [
+    {
+      "id": "n6-kotakp9s15",
+      "labelKey": "i-kotakp9s15",
+      "bin": "n6",
+      "scale": 0.5
+    },
+    {
+      "id": "n6-9pkotaks15",
+      "labelKey": "i-9pkotaks15",
+      "bin": "n6",
+      "scale": 0.5
+    },
+    {
+      "id": "n6-12mkotaks6",
+      "labelKey": "i-12mkotaks6",
+      "bin": "n6",
+      "scale": 0.5
+    },
+    {
+      "id": "n6-kotakm5s1",
+      "labelKey": "i-kotakm5s1",
+      "bin": "n6",
+      "scale": 0.6
+    },
+    {
+      "id": "n7-kotakp9s16",
+      "labelKey": "i-kotakp9s16",
+      "bin": "n7",
+      "scale": 0.5
+    },
+    {
+      "id": "n7-9pkotaks16",
+      "labelKey": "i-9pkotaks16",
+      "bin": "n7",
+      "scale": 0.5
+    },
+    {
+      "id": "n7-10mkotaks3",
+      "labelKey": "i-10mkotaks3",
+      "bin": "n7",
+      "scale": 0.5
+    },
+    {
+      "id": "n7-kotakm3s4",
+      "labelKey": "i-kotakm3s4",
+      "bin": "n7",
+      "scale": 0.6
+    },
+    {
+      "id": "n8-kotakp3s11",
+      "labelKey": "i-kotakp3s11",
+      "bin": "n8",
+      "scale": 0.5
+    },
+    {
+      "id": "n8-3pkotaks11",
+      "labelKey": "i-3pkotaks11",
+      "bin": "n8",
+      "scale": 0.5
+    },
+    {
+      "id": "n8-14mkotaks6",
+      "labelKey": "i-14mkotaks6",
+      "bin": "n8",
+      "scale": 0.5
+    },
+    {
+      "id": "n8-kotakm6s2",
+      "labelKey": "i-kotakm6s2",
+      "bin": "n8",
+      "scale": 0.6
+    },
+    {
+      "id": "n9-kotakp6s15",
+      "labelKey": "i-kotakp6s15",
+      "bin": "n9",
+      "scale": 0.5
+    },
+    {
+      "id": "n9-6pkotaks15",
+      "labelKey": "i-6pkotaks15",
+      "bin": "n9",
+      "scale": 0.5
+    },
+    {
+      "id": "n9-17mkotaks8",
+      "labelKey": "i-17mkotaks8",
+      "bin": "n9",
+      "scale": 0.5
+    },
+    {
+      "id": "n9-kotakm8s1",
+      "labelKey": "i-kotakm8s1",
+      "bin": "n9",
+      "scale": 0.6
+    },
+    {
+      "id": "n12-kotakp7s19",
+      "labelKey": "i-kotakp7s19",
+      "bin": "n12",
+      "scale": 0.5
+    },
+    {
+      "id": "n12-7pkotaks19",
+      "labelKey": "i-7pkotaks19",
+      "bin": "n12",
+      "scale": 0.5
+    },
+    {
+      "id": "n12-19mkotaks7",
+      "labelKey": "i-19mkotaks7",
+      "bin": "n12",
+      "scale": 0.5
+    },
+    {
+      "id": "n12-kotakm7s5",
+      "labelKey": "i-kotakm7s5",
+      "bin": "n12",
+      "scale": 0.6
+    },
+    {
+      "id": "n13-kotakp4s17",
+      "labelKey": "i-kotakp4s17",
+      "bin": "n13",
+      "scale": 0.5
+    },
+    {
+      "id": "n13-4pkotaks17",
+      "labelKey": "i-4pkotaks17",
+      "bin": "n13",
+      "scale": 0.5
+    },
+    {
+      "id": "n13-18mkotaks5",
+      "labelKey": "i-18mkotaks5",
+      "bin": "n13",
+      "scale": 0.5
+    },
+    {
+      "id": "n13-kotakm5s8",
+      "labelKey": "i-kotakm5s8",
+      "bin": "n13",
+      "scale": 0.6
+    },
+    {
+      "id": "n14-kotakp5s19",
+      "labelKey": "i-kotakp5s19",
+      "bin": "n14",
+      "scale": 0.5
+    },
+    {
+      "id": "n14-5pkotaks19",
+      "labelKey": "i-5pkotaks19",
+      "bin": "n14",
+      "scale": 0.5
+    },
+    {
+      "id": "n14-23mkotaks9",
+      "labelKey": "i-23mkotaks9",
+      "bin": "n14",
+      "scale": 0.5
+    },
+    {
+      "id": "n14-kotakm9s5",
+      "labelKey": "i-kotakm9s5",
+      "bin": "n14",
+      "scale": 0.6
+    },
+    {
+      "id": "n15-kotakp3s18",
+      "labelKey": "i-kotakp3s18",
+      "bin": "n15",
+      "scale": 0.5
+    },
+    {
+      "id": "n15-3pkotaks18",
+      "labelKey": "i-3pkotaks18",
+      "bin": "n15",
+      "scale": 0.5
+    },
+    {
+      "id": "n15-20mkotaks5",
+      "labelKey": "i-20mkotaks5",
+      "bin": "n15",
+      "scale": 0.5
+    },
+    {
+      "id": "n15-kotakm5s10",
+      "labelKey": "i-kotakm5s10",
+      "bin": "n15",
+      "scale": 0.5
+    },
+    {
+      "id": "n16-kotakp7s23",
+      "labelKey": "i-kotakp7s23",
+      "bin": "n16",
+      "scale": 0.5
+    },
+    {
+      "id": "n16-7pkotaks23",
+      "labelKey": "i-7pkotaks23",
+      "bin": "n16",
+      "scale": 0.5
+    },
+    {
+      "id": "n16-25mkotaks9",
+      "labelKey": "i-25mkotaks9",
+      "bin": "n16",
+      "scale": 0.5
+    },
+    {
+      "id": "n16-kotakm9s7",
+      "labelKey": "i-kotakm9s7",
+      "bin": "n16",
+      "scale": 0.6
+    },
+    {
+      "id": "n18-kotakp3s21",
+      "labelKey": "i-kotakp3s21",
+      "bin": "n18",
+      "scale": 0.5
+    },
+    {
+      "id": "n18-3pkotaks21",
+      "labelKey": "i-3pkotaks21",
+      "bin": "n18",
+      "scale": 0.5
+    },
+    {
+      "id": "n18-21mkotaks3",
+      "labelKey": "i-21mkotaks3",
+      "bin": "n18",
+      "scale": 0.5
+    },
+    {
+      "id": "n18-kotakm3s15",
+      "labelKey": "i-kotakm3s15",
+      "bin": "n18",
+      "scale": 0.5
+    }
+  ]
+}

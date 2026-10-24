@@ -1,0 +1,452 @@
+{
+  "id": "sd6-kode-dan-atau",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.KONDISI-GABUNG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Syarat Dan, Atau, Bukan",
+      "instruksi": "'dan' butuh dua syarat benar, 'atau' cukup satu yang benar: pilih satu-satunya pilihan yang memenuhi syarat.",
+      "pilihan": "pilihan",
+      "c1": "umur 11, tinggi 132",
+      "c2": "umur 9, tinggi 140",
+      "c3": "umur 12, tinggi 125",
+      "q1": "Syarat naik wahana: umur ≥ 10 dan tinggi ≥ 130. Siapa yang boleh?",
+      "c4": "bukan pelajar, umur 65",
+      "c5": "bukan pelajar, umur 40",
+      "c6": "bukan pelajar, umur 59",
+      "q2": "Diskon tiket: pelajar atau umur ≥ 60. Siapa yang dapat diskon?",
+      "c7": "tidak hujan, suhu 18",
+      "c8": "tidak hujan, suhu 25",
+      "c9": "tidak hujan, suhu 20",
+      "q3": "Bawa jaket kalau hujan atau suhu < 20. Kapan harus bawa jaket?",
+      "c10": "kering, siang",
+      "c11": "kering, malam",
+      "c12": "basah, siang",
+      "q4": "Robot menyiram kalau tanah kering dan bukan malam. Kapan robot menyiram?",
+      "c13": "skor 120, nyawa 1",
+      "c14": "skor 150, nyawa 0",
+      "c15": "skor 90, nyawa 3",
+      "q5": "Masuk level 2 kalau skor ≥ 100 dan nyawa > 0. Siapa yang masuk level 2?",
+      "c16": "terang, ada orang lewat",
+      "c17": "terang, tidak ada orang",
+      "q6": "Lampu taman menyala kalau gelap atau ada orang lewat. Kapan lampu menyala?",
+      "c18": "PR selesai, jam 4 sore",
+      "c19": "PR belum, jam 4 sore",
+      "c20": "PR selesai, jam tidur",
+      "q7": "Boleh main game kalau PR selesai dan bukan jam tidur. Kapan boleh main?",
+      "c21": "pintu terbuka, mode jaga nyala",
+      "c22": "pintu terbuka, mode jaga mati",
+      "c23": "pintu tertutup, mode jaga nyala",
+      "q8": "Alarm berbunyi kalau pintu terbuka dan mode jaga nyala. Kapan alarm berbunyi?",
+      "c24": "kucingku7",
+      "c25": "kucingku",
+      "c26": "kcg7",
+      "q9": "Kata sandi diterima kalau panjang ≥ 8 dan ada angka. Mana yang diterima?",
+      "c27": "belanja 30.000, anggota",
+      "c28": "belanja 45.000, bukan anggota",
+      "q10": "Gratis ongkir kalau belanja ≥ 50.000 atau anggota. Siapa yang gratis ongkir?",
+      "c29": "ada orang, tidak dikunci",
+      "c30": "ada orang, dikunci",
+      "c31": "tidak ada orang, tidak dikunci",
+      "q11": "Pintu otomatis membuka kalau ada orang dan bukan sedang dikunci. Kapan pintu membuka?",
+      "c32": "lari 11 detik, lompat 3,5 m, umur 12",
+      "c33": "lari 9 detik, lompat 2 m, umur 13",
+      "c34": "lari 12 detik, lompat 2 m, umur 11",
+      "q12": "Masuk tim kalau (lari < 10 detik atau lompat > 3 m) dan umur ≤ 12. Siapa yang masuk tim?"
+    },
+    "en": {
+      "judul": "And, Or, Not Conditions",
+      "instruksi": "'and' needs both conditions true, 'or' needs at least one: choose the only option that meets the rule.",
+      "pilihan": "choices",
+      "c1": "age 11, height 132",
+      "c2": "age 9, height 140",
+      "c3": "age 12, height 125",
+      "q1": "Ride rule: age ≥ 10 and height ≥ 130. Who may ride?",
+      "c4": "not a student, age 65",
+      "c5": "not a student, age 40",
+      "c6": "not a student, age 59",
+      "q2": "Ticket discount: student or age ≥ 60. Who gets the discount?",
+      "c7": "not raining, temp 18",
+      "c8": "not raining, temp 25",
+      "c9": "not raining, temp 20",
+      "q3": "Take a jacket if raining or temperature < 20. When must you take a jacket?",
+      "c10": "dry, daytime",
+      "c11": "dry, night",
+      "c12": "wet, daytime",
+      "q4": "The robot waters if the soil is dry and it is not night. When does it water?",
+      "c13": "score 120, lives 1",
+      "c14": "score 150, lives 0",
+      "c15": "score 90, lives 3",
+      "q5": "Go to level 2 if score ≥ 100 and lives > 0. Who goes to level 2?",
+      "c16": "bright, someone walks past",
+      "c17": "bright, nobody there",
+      "q6": "The garden light turns on if it is dark or someone walks past. When does it turn on?",
+      "c18": "homework done, 4 pm",
+      "c19": "homework not done, 4 pm",
+      "c20": "homework done, bedtime",
+      "q7": "You may play if homework is done and it is not bedtime. When may you play?",
+      "c21": "door open, guard mode on",
+      "c22": "door open, guard mode off",
+      "c23": "door closed, guard mode on",
+      "q8": "The alarm rings if the door is open and guard mode is on. When does it ring?",
+      "c24": "mycat777",
+      "c25": "mycatcat",
+      "c26": "cat7",
+      "q9": "A password is accepted if length ≥ 8 and it has a digit. Which is accepted?",
+      "c27": "spends 30,000, member",
+      "c28": "spends 45,000, not a member",
+      "q10": "Free delivery if spending ≥ 50,000 or a member. Who gets free delivery?",
+      "c29": "someone there, not locked",
+      "c30": "someone there, locked",
+      "c31": "nobody there, not locked",
+      "q11": "The automatic door opens if someone is there and it is not locked. When does it open?",
+      "c32": "run 11 s, jump 3.5 m, age 12",
+      "c33": "run 9 s, jump 2 m, age 13",
+      "c34": "run 12 s, jump 2 m, age 11",
+      "q12": "Join the team if (run < 10 seconds or jump > 3 m) and age ≤ 12. Who joins?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.36
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.36
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c21",
+        "c22",
+        "c23"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c24",
+        "c25",
+        "c26"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c27",
+        "c28"
+      ],
+      "correct": "c27"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c29",
+        "c30",
+        "c31"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c32",
+        "c33",
+        "c34"
+      ],
+      "correct": "c32"
+    }
+  ]
+}

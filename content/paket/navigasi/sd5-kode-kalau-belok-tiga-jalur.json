@@ -1,0 +1,1449 @@
+{
+  "id": "sd5-kode-kalau-belok-tiga-jalur",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD5.KONDISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satu Program, Tiga Jalur Berbelok",
+      "instruksi": "Letak batu berbeda di tiap jalur: susun satu program lima keping dengan ulangi dan kalau yang lolos di ketiganya."
+    },
+    "en": {
+      "judul": "One Program, Three Turning Paths",
+      "instruksi": "The rocks are in different places on each path: build one five-piece program with repeat and if that passes all three."
+    }
+  },
+  "knobs": {
+    "rocks": {
+      "min": 1,
+      "max": 4,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah batu di jalur pertama kelompok; makin banyak batu makin sulit menghitung ulangan sebelum belok"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "bukit",
+  "execMode": "program",
+  "semuaGrid": true,
+  "commands": [
+    "maju",
+    "lompat",
+    "kiri",
+    "kanan",
+    "kalau",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "sd5-kalau-0-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-kalau-0",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-0-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-kalau-0",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-0-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-0",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-1-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-1",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-1-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-1",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-1-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-1",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-2-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-2",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-2-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-2",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-2-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-2",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-3-1",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-3",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-3-2",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 5
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-3",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-3-3",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-3",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-4-1",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 2
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-4",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-4-2",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-4",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-4-3",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-4",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-5-1",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-5",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-5-2",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-5",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-5-3",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-5",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-6-1",
+      "w": 7,
+      "h": 6,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-6",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-6-2",
+      "w": 7,
+      "h": 6,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-6",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-6-3",
+      "w": 7,
+      "h": 6,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-kalau-6",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-7-1",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-7",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-7-2",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-7",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-7-3",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-7",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-8-1",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 2
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-kalau-8",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-8-2",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-kalau-8",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-8-3",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-8",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-9-1",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-kalau-9",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-9-2",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-9",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-9-3",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-kalau-9",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-10-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-10",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-10-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-kalau-10",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-10-3",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-kalau-10",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-11-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-11",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-11-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-11",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-11-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-11",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-12-1",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-12",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-12-2",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-12",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-12-3",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-12",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-13-1",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-13",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-13-2",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-13",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-13-3",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-13",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-14-1",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-14",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-14-2",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-kalau-14",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-14-3",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 6,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-14",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-15-1",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-15",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-15-2",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-15",
+      "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-15-3",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-kalau-15",
+      "rackSlots": 5
+    }
+  ]
+}

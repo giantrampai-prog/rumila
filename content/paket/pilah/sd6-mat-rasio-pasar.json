@@ -1,0 +1,438 @@
+{
+  "id": "sd6-mat-rasio-pasar",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.RASIO.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rasio di Pasar",
+      "instruksi": "Kalikan atau bagi kedua bagian rasio dengan bilangan yang sama. Sentuh jawabannya.",
+      "q1": "Gula : tepung = 5 : 6. Tepungnya 54 sendok. Gulanya … sendok",
+      "c1": "45",
+      "c2": "53",
+      "c3": "270",
+      "c4": "14",
+      "q2": "Gula : tepung = 3 : 5. Tepungnya 20 sendok. Gulanya … sendok",
+      "c5": "12",
+      "c6": "18",
+      "c7": "60",
+      "c8": "7",
+      "q3": "Kelereng merah : biru = 3 : 7, jumlahnya 30. Kelereng biru ada …",
+      "c9": "21",
+      "c10": "9",
+      "c11": "23",
+      "c12": "22",
+      "q4": "Gula : tepung = 7 : 4. Tepungnya 28 sendok. Gulanya … sendok",
+      "c13": "49",
+      "c14": "31",
+      "c15": "196",
+      "q5": "Kelereng merah : biru = 2 : 5, jumlahnya 35. Kelereng biru ada …",
+      "c16": "25",
+      "c17": "10",
+      "c18": "30",
+      "q6": "Gula : tepung = 7 : 6. Tepungnya 48 sendok. Gulanya … sendok",
+      "c19": "56",
+      "c20": "336",
+      "c21": "15",
+      "q7": "Mana yang setara dengan 36 : 27?",
+      "c22": "4 : 3",
+      "c23": "3 : 4",
+      "c24": "35 : 26",
+      "c25": "13 : 12",
+      "q8": "Gula : tepung = 5 : 1. Tepungnya 2 sendok. Gulanya … sendok",
+      "c26": "6",
+      "c27": "11",
+      "q9": "Mana yang setara dengan 15 : 20?",
+      "c28": "14 : 19",
+      "c29": "8 : 9",
+      "q10": "Mana yang setara dengan 24 : 32?",
+      "c30": "23 : 31",
+      "c31": "11 : 12",
+      "q11": "Gula : tepung = 7 : 8. Tepungnya 64 sendok. Gulanya … sendok",
+      "c32": "63",
+      "c33": "448",
+      "q12": "Gula : tepung = 5 : 6. Tepungnya 12 sendok. Gulanya … sendok",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Ratio at the Market",
+      "instruksi": "Multiply or divide both parts of the ratio by the same number. Touch the answer.",
+      "q1": "Sugar : flour = 5 : 6. There are 54 spoons of flour. How many spoons of sugar?",
+      "c1": "45",
+      "c2": "53",
+      "c3": "270",
+      "c4": "14",
+      "q2": "Sugar : flour = 3 : 5. There are 20 spoons of flour. How many spoons of sugar?",
+      "c5": "12",
+      "c6": "18",
+      "c7": "60",
+      "c8": "7",
+      "q3": "Red : blue marbles = 3 : 7, 30 in total. How many blue?",
+      "c9": "21",
+      "c10": "9",
+      "c11": "23",
+      "c12": "22",
+      "q4": "Sugar : flour = 7 : 4. There are 28 spoons of flour. How many spoons of sugar?",
+      "c13": "49",
+      "c14": "31",
+      "c15": "196",
+      "q5": "Red : blue marbles = 2 : 5, 35 in total. How many blue?",
+      "c16": "25",
+      "c17": "10",
+      "c18": "30",
+      "q6": "Sugar : flour = 7 : 6. There are 48 spoons of flour. How many spoons of sugar?",
+      "c19": "56",
+      "c20": "336",
+      "c21": "15",
+      "q7": "Which is equivalent to 36 : 27?",
+      "c22": "4 ÷ 3",
+      "c23": "3 ÷ 4",
+      "c24": "35 ÷ 26",
+      "c25": "13 ÷ 12",
+      "q8": "Sugar : flour = 5 : 1. There are 2 spoons of flour. How many spoons of sugar?",
+      "c26": "6",
+      "c27": "11",
+      "q9": "Which is equivalent to 15 : 20?",
+      "c28": "14 ÷ 19",
+      "c29": "8 ÷ 9",
+      "q10": "Which is equivalent to 24 : 32?",
+      "c30": "23 ÷ 31",
+      "c31": "11 ÷ 12",
+      "q11": "Sugar : flour = 7 : 8. There are 64 spoons of flour. How many spoons of sugar?",
+      "c32": "63",
+      "c33": "448",
+      "q12": "Sugar : flour = 5 : 6. There are 12 spoons of flour. How many spoons of sugar?",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c4"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c16",
+        "c17",
+        "c18",
+        "c8"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c19",
+        "c13",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c22",
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c17",
+        "c26",
+        "c8",
+        "c27"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c23",
+        "c22",
+        "c28",
+        "c29"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c23",
+        "c22",
+        "c30",
+        "c31"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c19",
+        "c32",
+        "c33",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c17",
+        "c27",
+        "c7",
+        "c8"
+      ],
+      "correct": "c17"
+    }
+  ]
+}

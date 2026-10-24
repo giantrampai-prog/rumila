@@ -1,0 +1,202 @@
+{
+  "id": "sd3-sains-pisahkan-campuran",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.CAMPURAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pisahkan Campurannya!",
+      "instruksi": "Dengarkan campurannya, lalu sentuh alat untuk memisahkannya.",
+      "pilihan": "pilihan",
+      "i-ayakan": "ayakan",
+      "i-magnet": "magnet",
+      "i-saring": "kain saring",
+      "t-kerikil": "Pasir bercampur kerikil.",
+      "t-paku": "Paku besi tercampur pasir.",
+      "t-pasirair": "Pasir di dalam segelas air.",
+      "t-klip": "Klip kertas besi bercampur kancing plastik.",
+      "t-kacang": "Kacang merah besar bercampur beras.",
+      "t-teh": "Ampas daun teh di dalam air teh.",
+      "t-serbuk": "Serbuk besi bercampur pasir.",
+      "t-kelereng": "Kelereng bercampur tepung.",
+      "t-lumpur": "Air keruh berisi tanah.",
+      "t-jepit": "Jepit rambut besi jatuh ke kotak pasir.",
+      "t-batu": "Batu kecil bercampur pasir halus di kebun."
+    },
+    "en": {
+      "judul": "Separate the Mixture!",
+      "instruksi": "Listen to the mixture, then touch the tool that separates it.",
+      "pilihan": "choices",
+      "i-ayakan": "sieve",
+      "i-magnet": "magnet",
+      "i-saring": "cloth filter",
+      "t-kerikil": "Sand mixed with gravel.",
+      "t-paku": "Iron nails mixed into sand.",
+      "t-pasirair": "Sand in a glass of water.",
+      "t-klip": "Steel paper clips mixed with plastic buttons.",
+      "t-kacang": "Big red beans mixed with rice.",
+      "t-teh": "Tea leaves floating in tea.",
+      "t-serbuk": "Iron filings mixed with sand.",
+      "t-kelereng": "Marbles mixed with flour.",
+      "t-lumpur": "Muddy water full of soil.",
+      "t-jepit": "Steel hair grips dropped in a sandpit.",
+      "t-batu": "Small stones mixed with fine garden sand."
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "ayakan",
+      "labelKey": "i-ayakan",
+      "bin": "pilihan",
+      "emoji": "🥅"
+    },
+    {
+      "id": "magnet",
+      "labelKey": "i-magnet",
+      "bin": "pilihan",
+      "emoji": "🧲"
+    },
+    {
+      "id": "saring",
+      "labelKey": "i-saring",
+      "bin": "pilihan",
+      "emoji": "🧻"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "kerikil",
+      "promptKey": "t-kerikil",
+      "choices": [
+        "ayakan",
+        "magnet",
+        "saring"
+      ],
+      "correct": "ayakan"
+    },
+    {
+      "id": "paku",
+      "promptKey": "t-paku",
+      "choices": [
+        "magnet",
+        "ayakan",
+        "saring"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "pasirair",
+      "promptKey": "t-pasirair",
+      "choices": [
+        "saring",
+        "magnet",
+        "ayakan"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "klip",
+      "promptKey": "t-klip",
+      "choices": [
+        "magnet",
+        "saring",
+        "ayakan"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "kacang",
+      "promptKey": "t-kacang",
+      "choices": [
+        "ayakan",
+        "magnet",
+        "saring"
+      ],
+      "correct": "ayakan"
+    },
+    {
+      "id": "teh",
+      "promptKey": "t-teh",
+      "choices": [
+        "saring",
+        "magnet",
+        "ayakan"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "serbuk",
+      "promptKey": "t-serbuk",
+      "choices": [
+        "magnet",
+        "ayakan",
+        "saring"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "kelereng",
+      "promptKey": "t-kelereng",
+      "choices": [
+        "ayakan",
+        "magnet",
+        "saring"
+      ],
+      "correct": "ayakan"
+    },
+    {
+      "id": "lumpur",
+      "promptKey": "t-lumpur",
+      "choices": [
+        "saring",
+        "ayakan",
+        "magnet"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "jepit",
+      "promptKey": "t-jepit",
+      "choices": [
+        "magnet",
+        "saring",
+        "ayakan"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "batu",
+      "promptKey": "t-batu",
+      "choices": [
+        "ayakan",
+        "saring",
+        "magnet"
+      ],
+      "correct": "ayakan"
+    }
+  ]
+}

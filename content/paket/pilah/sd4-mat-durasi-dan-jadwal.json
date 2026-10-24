@@ -1,0 +1,526 @@
+{
+  "id": "sd4-mat-durasi-dan-jadwal",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.WAKTU.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jadwal dan Lama Waktu",
+      "instruksi": "Baca jadwal atau waktunya, hitung lamanya, lalu sentuh jawabannya.",
+      "q1": "Les renang mulai 15.10 dan selesai 15.55. Berapa lama?",
+      "c1": "45 menit",
+      "c2": "55 menit",
+      "c3": "35 menit",
+      "c4": "1 jam 5 menit",
+      "q2": "Film mulai 13.15 dan selesai 15.40. Berapa lama?",
+      "c5": "2 jam 25 menit",
+      "c6": "2 jam 55 menit",
+      "c7": "1 jam 25 menit",
+      "c8": "3 jam 25 menit",
+      "q3": "Kereta berangkat 08.05, perjalanan 2 jam 30 menit. Tiba pukul …",
+      "c9": "10.35",
+      "c10": "10.05",
+      "c11": "10.30",
+      "c12": "08.35",
+      "q4": "Jadwal bus: 07.10, 07.35, 08.00. Kamu tiba di halte 07.20. Bus berikutnya pukul …",
+      "c13": "07.35",
+      "c14": "07.10",
+      "c15": "08.00",
+      "c16": "07.30",
+      "q5": "3 jam = … menit",
+      "c17": "180",
+      "c18": "300",
+      "c19": "120",
+      "c20": "30",
+      "q6": "2 minggu = … hari",
+      "c21": "14",
+      "c22": "7",
+      "c23": "12",
+      "c24": "24",
+      "q7": "240 menit = … jam",
+      "c25": "4",
+      "c26": "2",
+      "c27": "6",
+      "q8": "Kelas mulai 07.15, istirahat pukul 09.45. Berapa lama sebelum istirahat?",
+      "c28": "2 jam 30 menit",
+      "c29": "2 jam",
+      "c30": "3 jam 30 menit",
+      "c31": "1 jam 30 menit",
+      "q9": "Kapal berangkat 06.20, 09.20, 12.20, 15.20. Berapa selang tiap kapal?",
+      "c32": "3 jam",
+      "c33": "4 jam",
+      "c34": "3 jam 20 menit",
+      "q10": "1 tahun = … bulan",
+      "c35": "10",
+      "c36": "52",
+      "c37": "365",
+      "q11": "1 menit 20 detik = … detik",
+      "c38": "80",
+      "c39": "60",
+      "c40": "100",
+      "q12": "Pameran dibuka 4 hari mulai hari Senin. Hari terakhirnya …",
+      "c41": "Kamis",
+      "c42": "Jumat",
+      "c43": "Rabu",
+      "c44": "Selasa",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Timetables and Durations",
+      "instruksi": "Read the timetable or times, work out how long, then touch the answer.",
+      "q1": "Swimming starts at 15:10 and ends at 15:55. How long is it?",
+      "c1": "45 min",
+      "c2": "55 min",
+      "c3": "35 min",
+      "c4": "1 h 5 min",
+      "q2": "A film starts at 13:15 and ends at 15:40. How long is it?",
+      "c5": "2 h 25 min",
+      "c6": "2 h 55 min",
+      "c7": "1 h 25 min",
+      "c8": "3 h 25 min",
+      "q3": "A train leaves at 08:05 and the trip takes 2 h 30 min. It arrives at …",
+      "c9": "10:35",
+      "c10": "10:05",
+      "c11": "10:30",
+      "c12": "08:35",
+      "q4": "Bus times: 07:10, 07:35, 08:00. You reach the stop at 07:20. The next bus is at …",
+      "c13": "07:35",
+      "c14": "07:10",
+      "c15": "08:00",
+      "c16": "07:30",
+      "q5": "3 hours = … minutes",
+      "c17": "180",
+      "c18": "300",
+      "c19": "120",
+      "c20": "30",
+      "q6": "2 weeks = … days",
+      "c21": "14",
+      "c22": "7",
+      "c23": "12",
+      "c24": "24",
+      "q7": "240 minutes = … hours",
+      "c25": "4",
+      "c26": "2",
+      "c27": "6",
+      "q8": "Lessons start at 07:15 and break is at 09:45. How long until break?",
+      "c28": "2 h 30 min",
+      "c29": "2 h",
+      "c30": "3 h 30 min",
+      "c31": "1 h 30 min",
+      "q9": "Boats leave at 06:20, 09:20, 12:20, 15:20. How long between boats?",
+      "c32": "3 h",
+      "c33": "4 h",
+      "c34": "3 h 20 min",
+      "q10": "1 year = … months",
+      "c35": "10",
+      "c36": "52",
+      "c37": "365",
+      "q11": "1 minute 20 seconds = … seconds",
+      "c38": "80",
+      "c39": "60",
+      "c40": "100",
+      "q12": "A fair is open for 4 days starting on Monday. Its last day is …",
+      "c41": "Thursday",
+      "c42": "Friday",
+      "c43": "Wednesday",
+      "c44": "Tuesday",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.42
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan",
+      "scale": 0.75
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c24",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c28",
+        "c29",
+        "c30",
+        "c31"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c32",
+        "c29",
+        "c33",
+        "c34"
+      ],
+      "correct": "c32"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c23",
+        "c35",
+        "c36",
+        "c37"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c38",
+        "c19",
+        "c39",
+        "c40"
+      ],
+      "correct": "c38"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c41",
+        "c42",
+        "c43",
+        "c44"
+      ],
+      "correct": "c41"
+    }
+  ]
+}

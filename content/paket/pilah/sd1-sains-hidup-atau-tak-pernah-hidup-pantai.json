@@ -1,0 +1,152 @@
+{
+  "id": "sd1-sains-hidup-atau-tak-pernah-hidup-pantai",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.MAKHLUK-HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hidup atau Tak Pernah Hidup di Pantai",
+      "instruksi": "Taruh tiap benda di pantai ke rak hidup atau tidak pernah hidup.",
+      "b-hidup": "makhluk hidup",
+      "b-takpernah": "tidak pernah hidup",
+      "i-kepiting": "kepiting",
+      "i-ikan": "ikan",
+      "i-kelapa": "pohon kelapa",
+      "i-penyu": "penyu",
+      "i-camar": "burung camar",
+      "i-rumputlaut": "rumput laut",
+      "i-ombak": "ombak",
+      "i-ember": "ember",
+      "i-payung": "payung pantai",
+      "i-batu": "batu",
+      "i-sandal": "sandal",
+      "i-bolapantai": "bola pantai"
+    },
+    "en": {
+      "judul": "Alive or Never Alive at the Beach",
+      "instruksi": "Put each thing at the beach on the alive shelf or the never-alive shelf.",
+      "b-hidup": "living things",
+      "b-takpernah": "never alive",
+      "i-kepiting": "crab",
+      "i-ikan": "fish",
+      "i-kelapa": "coconut tree",
+      "i-penyu": "sea turtle",
+      "i-camar": "seagull",
+      "i-rumputlaut": "seaweed",
+      "i-ombak": "wave",
+      "i-ember": "bucket",
+      "i-payung": "beach umbrella",
+      "i-batu": "rock",
+      "i-sandal": "flip-flop",
+      "i-bolapantai": "beach ball"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "hidup",
+      "labelKey": "b-hidup",
+      "emoji": "🌱",
+      "color": "#dcedc8"
+    },
+    {
+      "id": "takpernah",
+      "labelKey": "b-takpernah",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "hidup",
+      "emoji": "🦀"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "hidup",
+      "emoji": "🐟"
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "i-kelapa",
+      "bin": "hidup",
+      "emoji": "🌴"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "hidup",
+      "emoji": "🐢"
+    },
+    {
+      "id": "camar",
+      "labelKey": "i-camar",
+      "bin": "hidup",
+      "emoji": "🐦"
+    },
+    {
+      "id": "rumputlaut",
+      "labelKey": "i-rumputlaut",
+      "bin": "hidup",
+      "emoji": "🌿",
+      "color": "#7cb342"
+    },
+    {
+      "id": "ombak",
+      "labelKey": "i-ombak",
+      "bin": "takpernah",
+      "emoji": "🌊"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "takpernah",
+      "emoji": "🪣"
+    },
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "takpernah",
+      "emoji": "⛱️"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "takpernah",
+      "emoji": "🪨"
+    },
+    {
+      "id": "sandal",
+      "labelKey": "i-sandal",
+      "bin": "takpernah",
+      "emoji": "🩴"
+    },
+    {
+      "id": "bolapantai",
+      "labelKey": "i-bolapantai",
+      "bin": "takpernah",
+      "emoji": "🏐"
+    }
+  ],
+  "pilihan": []
+}

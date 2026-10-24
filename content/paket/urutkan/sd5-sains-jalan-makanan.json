@@ -1,0 +1,90 @@
+{
+  "id": "sd5-sains-jalan-makanan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.PENCERNAAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perjalanan Makanan",
+      "instruksi": "Susun organ yang dilewati makanan, dari mulut sampai keluar.",
+      "s-cerna": "Perjalanan sepiring nasi",
+      "cerna-mulut": "mulut: dikunyah dan dibasahi ludah",
+      "cerna-kerongkongan": "kerongkongan: didorong turun",
+      "cerna-lambung": "lambung: diaduk dengan cairan asam",
+      "cerna-usushalus": "usus halus: sari makanan diserap ke darah",
+      "cerna-ususbesar": "usus besar: air diserap",
+      "cerna-anus": "anus: sisa dikeluarkan"
+    },
+    "en": {
+      "judul": "The Food Journey",
+      "instruksi": "Put the organs food passes through in order, from the mouth to the way out.",
+      "s-cerna": "The journey of a plate of rice",
+      "cerna-mulut": "mouth: chewed and wetted with saliva",
+      "cerna-kerongkongan": "oesophagus: pushed down",
+      "cerna-lambung": "stomach: churned with acid",
+      "cerna-usushalus": "small intestine: nutrients absorbed into the blood",
+      "cerna-ususbesar": "large intestine: water absorbed",
+      "cerna-anus": "anus: waste leaves the body"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah organ dari mulut: 4 (sampai usus halus) → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "cerna",
+      "titleKey": "s-cerna",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "cerna-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "kerongkongan",
+          "labelKey": "cerna-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "cerna-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "cerna-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "cerna-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "anus",
+          "labelKey": "cerna-anus",
+          "emoji": "🚽"
+        }
+      ]
+    }
+  ]
+}

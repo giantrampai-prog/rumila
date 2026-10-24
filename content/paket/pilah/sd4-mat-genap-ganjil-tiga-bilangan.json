@@ -1,0 +1,179 @@
+{
+  "id": "sd4-mat-genap-ganjil-tiga-bilangan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.POLA-BILANGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Genap Ganjil Tiga Bilangan",
+      "instruksi": "Lihat angka satuan tiap bilangan. Tanpa menghitung, apakah hasilnya genap atau ganjil?",
+      "b-genap": "hasil genap",
+      "b-ganjil": "hasil ganjil",
+      "i1": "115 − 21",
+      "i2": "139 − 59",
+      "i3": "153 − 48",
+      "i4": "156 − 85",
+      "i5": "160 − 56",
+      "i6": "18 + 96 + 94",
+      "i7": "180 − 54",
+      "i8": "25 + 46 + 94",
+      "i9": "29 + 38 + 70",
+      "i10": "33 − 52 + 51",
+      "i11": "34 + 62 + 29",
+      "i12": "40 − 76 + 92",
+      "i13": "70 + 88 + 42",
+      "i14": "72 − 11 + 66",
+      "i15": "80 − 57 + 62",
+      "i16": "87 + 23 + 51"
+    },
+    "en": {
+      "judul": "Even or Odd with Three Numbers",
+      "instruksi": "Look at the ones digit of each number. Without calculating, is the result even or odd?",
+      "b-genap": "even result",
+      "b-ganjil": "odd result",
+      "i1": "115 − 21",
+      "i2": "139 − 59",
+      "i3": "153 − 48",
+      "i4": "156 − 85",
+      "i5": "160 − 56",
+      "i6": "18 + 96 + 94",
+      "i7": "180 − 54",
+      "i8": "25 + 46 + 94",
+      "i9": "29 + 38 + 70",
+      "i10": "33 − 52 + 51",
+      "i11": "34 + 62 + 29",
+      "i12": "40 − 76 + 92",
+      "i13": "70 + 88 + 42",
+      "i14": "72 − 11 + 66",
+      "i15": "80 − 57 + 62",
+      "i16": "87 + 23 + 51"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-angka",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap",
+      "labelKey": "b-genap"
+    },
+    {
+      "id": "ganjil",
+      "labelKey": "b-ganjil"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "ganjil",
+      "scale": 0.7
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "genap",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "genap",
+      "scale": 0.7
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "ganjil",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "ganjil",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "genap",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "ganjil",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "genap",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "genap",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "ganjil",
+      "scale": 0.5
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "ganjil",
+      "scale": 0.5
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "ganjil",
+      "scale": 0.5
+    }
+  ]
+}

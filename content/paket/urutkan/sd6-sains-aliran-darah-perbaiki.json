@@ -1,0 +1,119 @@
+{
+  "id": "sd6-sains-aliran-darah-perbaiki",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.SIRKULASI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Aliran Darah Tertukar",
+      "instruksi": "Dua langkah tertukar tempat: tukar keduanya sekali saja.",
+      "s-tubuh": "Darah ke seluruh tubuh",
+      "tubuh-pompa": "jantung memompa darah kaya oksigen",
+      "tubuh-arteri": "arteri membawa darah ke seluruh tubuh",
+      "tubuh-kapiler": "kapiler: oksigen dan sari makanan masuk ke sel",
+      "tubuh-sisa": "sel menyerahkan karbon dioksida ke darah",
+      "tubuh-vena": "vena membawa darah kembali ke jantung",
+      "s-paru": "Darah ke paru-paru",
+      "paru-pompa": "jantung memompa darah ke paru-paru",
+      "paru-ambil": "di paru-paru darah melepas karbon dioksida dan mengambil oksigen",
+      "paru-kembali": "darah kaya oksigen kembali ke jantung",
+      "paru-ketubuh": "jantung memompanya ke seluruh tubuh"
+    },
+    "en": {
+      "judul": "Blood Flow Mix-Up",
+      "instruksi": "Two steps have swapped places: swap them back with one move.",
+      "s-tubuh": "Blood around the body",
+      "tubuh-pompa": "the heart pumps oxygen-rich blood",
+      "tubuh-arteri": "arteries carry blood around the body",
+      "tubuh-kapiler": "capillaries: oxygen and nutrients pass into cells",
+      "tubuh-sisa": "cells pass carbon dioxide into the blood",
+      "tubuh-vena": "veins carry blood back to the heart",
+      "s-paru": "Blood to the lungs",
+      "paru-pompa": "the heart pumps blood to the lungs",
+      "paru-ambil": "in the lungs blood drops carbon dioxide and picks up oxygen",
+      "paru-kembali": "oxygen-rich blood returns to the heart",
+      "paru-ketubuh": "the heart pumps it around the body"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "tubuh",
+      "titleKey": "s-tubuh",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "tubuh-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "tubuh-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "tubuh-kapiler",
+          "shape": "rect",
+          "color": "#ef9a9a",
+          "width": 0.5
+        },
+        {
+          "id": "sisa",
+          "labelKey": "tubuh-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "tubuh-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "paru",
+      "titleKey": "s-paru",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "paru-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "ambil",
+          "labelKey": "paru-ambil",
+          "emoji": "🫁"
+        },
+        {
+          "id": "kembali",
+          "labelKey": "paru-kembali",
+          "emoji": "↩️"
+        },
+        {
+          "id": "ketubuh",
+          "labelKey": "paru-ketubuh",
+          "emoji": "🏃"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "sd2-mat-bayar-lima-puluh-ribu",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD2.UANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Toko Perlengkapan Sekolah",
+      "instruksi": "Baca harganya. Gabungkan uang kertas dan koin dari laci sampai jumlahnya pas.",
+      "g-tas-sekolah": "tas sekolah",
+      "g-sepatu": "sepatu",
+      "g-bola": "bola",
+      "g-buku-cerita": "buku cerita",
+      "g-topi": "topi",
+      "g-kaos": "kaos",
+      "g-payung": "payung",
+      "g-boneka": "boneka",
+      "g-puzzle": "puzzle",
+      "g-kotak-pensil": "kotak pensil",
+      "g-kotak-jus": "kotak jus",
+      "g-jam-weker": "jam weker"
+    },
+    "en": {
+      "judul": "School Supplies Shop",
+      "instruksi": "Read the price. Combine notes and coins from the drawer until the total is exact.",
+      "g-tas-sekolah": "school bag",
+      "g-sepatu": "shoes",
+      "g-bola": "football",
+      "g-buku-cerita": "storybook",
+      "g-topi": "cap",
+      "g-kaos": "T-shirt",
+      "g-payung": "umbrella",
+      "g-boneka": "teddy bear",
+      "g-puzzle": "jigsaw",
+      "g-kotak-pensil": "pencil case",
+      "g-kotak-jus": "juice box",
+      "g-jam-weker": "alarm clock"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-alat-tulis",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000,
+    10000,
+    20000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "tas",
+      "labelKey": "g-tas-sekolah",
+      "price": 48000,
+      "emoji": "🎒"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "g-sepatu",
+      "price": 45000,
+      "emoji": "👟"
+    },
+    {
+      "id": "bola",
+      "labelKey": "g-bola",
+      "price": 35000,
+      "emoji": "⚽"
+    },
+    {
+      "id": "buku",
+      "labelKey": "g-buku-cerita",
+      "price": 27000,
+      "emoji": "📚"
+    },
+    {
+      "id": "topi",
+      "labelKey": "g-topi",
+      "price": 23000,
+      "emoji": "🧢"
+    },
+    {
+      "id": "kaos",
+      "labelKey": "g-kaos",
+      "price": 39000,
+      "emoji": "👕"
+    },
+    {
+      "id": "payung",
+      "labelKey": "g-payung",
+      "price": 32000,
+      "emoji": "☂️"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "g-boneka",
+      "price": 41000,
+      "emoji": "🧸"
+    },
+    {
+      "id": "puzzle",
+      "labelKey": "g-puzzle",
+      "price": 18000,
+      "emoji": "🧩"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "g-kotak-pensil",
+      "price": 12000,
+      "emoji": "✏️"
+    },
+    {
+      "id": "jus",
+      "labelKey": "g-kotak-jus",
+      "price": 16000,
+      "emoji": "🧃"
+    },
+    {
+      "id": "jam",
+      "labelKey": "g-jam-weker",
+      "price": 29000,
+      "emoji": "⏰"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 50000,
+    "kindsMax": 1
+  }
+}

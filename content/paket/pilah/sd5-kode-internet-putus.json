@@ -1,0 +1,165 @@
+{
+  "id": "sd5-kode-internet-putus",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.INTERNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kalau Internet Putus",
+      "instruksi": "Internet di rumah sedang putus: seret tiap kegiatan ke 'tetap bisa' atau 'tidak bisa'.",
+      "bin-bisa": "tetap bisa",
+      "bin-tidak": "tidak bisa",
+      "i1": "memotret dengan kamera HP",
+      "i2": "memakai kalkulator di HP",
+      "i3": "membuka foto di galeri",
+      "i4": "menulis catatan di laptop",
+      "i5": "mendengar lagu yang sudah diunduh",
+      "i6": "bermain game luring yang sudah terpasang",
+      "i7": "mencetak lewat kabel USB",
+      "i8": "panggilan video dengan nenek",
+      "i9": "mengirim email",
+      "i10": "menonton video streaming",
+      "i11": "mencari di mesin pencari",
+      "i12": "membuka peta daring untuk rute",
+      "i13": "membayar dengan dompet digital",
+      "i14": "mengunggah tugas ke kelas daring"
+    },
+    "en": {
+      "judul": "When the Internet Goes Down",
+      "instruksi": "The internet at home is down: drag each activity to 'still works' or 'does not work'.",
+      "bin-bisa": "still works",
+      "bin-tidak": "does not work",
+      "i1": "taking a photo with the phone camera",
+      "i2": "using the phone calculator",
+      "i3": "opening photos in the gallery",
+      "i4": "writing notes on a laptop",
+      "i5": "listening to a downloaded song",
+      "i6": "playing an installed offline game",
+      "i7": "printing over a USB cable",
+      "i8": "a video call with grandma",
+      "i9": "sending an email",
+      "i10": "watching a streaming video",
+      "i11": "searching with a search engine",
+      "i12": "opening an online map for directions",
+      "i13": "paying with a digital wallet",
+      "i14": "uploading homework to an online class"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kegiatan per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "bisa",
+      "labelKey": "bin-bisa",
+      "emoji": "📴"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "bin-tidak",
+      "emoji": "🌐"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "tidak",
+      "scale": 0.5
+    }
+  ]
+}

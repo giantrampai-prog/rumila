@@ -1,0 +1,233 @@
+{
+  "id": "sd1-sains-rak-tujuh-bahan-rumah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tujuh Rak Bahan di Rumah",
+      "instruksi": "Taruh tiap benda ke rak bahannya.",
+      "b-kertas": "kertas",
+      "b-kain": "kain",
+      "b-batu": "batu",
+      "b-kayu": "kayu",
+      "b-logam": "logam",
+      "b-plastik": "plastik",
+      "b-kaca": "kaca",
+      "i-koran": "koran",
+      "i-kardus": "kardus",
+      "i-amplop": "amplop",
+      "i-kaos": "kaus",
+      "i-kauskaki": "kaus kaki",
+      "i-syal": "syal",
+      "i-ulekan": "ulekan batu",
+      "i-kerikil": "kerikil",
+      "i-kursi": "kursi kayu",
+      "i-sendokkayu": "sendok kayu",
+      "i-kunci": "kunci",
+      "i-panci": "panci",
+      "i-botol": "botol plastik",
+      "i-sedotan": "sedotan",
+      "i-gelas": "gelas kaca",
+      "i-cermin": "cermin"
+    },
+    "en": {
+      "judul": "Seven Material Shelves at Home",
+      "instruksi": "Put each object on the shelf for its material.",
+      "b-kertas": "paper",
+      "b-kain": "fabric",
+      "b-batu": "rock",
+      "b-kayu": "wood",
+      "b-logam": "metal",
+      "b-plastik": "plastic",
+      "b-kaca": "glass",
+      "i-koran": "newspaper",
+      "i-kardus": "cardboard box",
+      "i-amplop": "envelope",
+      "i-kaos": "T-shirt",
+      "i-kauskaki": "socks",
+      "i-syal": "scarf",
+      "i-ulekan": "stone pestle",
+      "i-kerikil": "pebbles",
+      "i-kursi": "wooden chair",
+      "i-sendokkayu": "wooden spoon",
+      "i-kunci": "key",
+      "i-panci": "metal pot",
+      "i-botol": "plastic bottle",
+      "i-sedotan": "straw",
+      "i-gelas": "glass cup",
+      "i-cermin": "mirror"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 7,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 3 (kertas, kain, batu) → 7 (tambah kayu, logam, plastik, kaca)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran; diambil acak dari rak aktif"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kertas",
+      "labelKey": "b-kertas",
+      "emoji": "📄",
+      "color": "#fffde7"
+    },
+    {
+      "id": "kain",
+      "labelKey": "b-kain",
+      "emoji": "🧵",
+      "color": "#fce4ec"
+    },
+    {
+      "id": "batu",
+      "labelKey": "b-batu",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "b-kayu",
+      "emoji": "🪵",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "logam",
+      "labelKey": "b-logam",
+      "emoji": "🔩",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "b-plastik",
+      "emoji": "🧴",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "b-kaca",
+      "emoji": "🥛",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "koran",
+      "labelKey": "i-koran",
+      "bin": "kertas",
+      "emoji": "📰"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "kertas",
+      "emoji": "📦"
+    },
+    {
+      "id": "amplop",
+      "labelKey": "i-amplop",
+      "bin": "kertas",
+      "emoji": "✉️"
+    },
+    {
+      "id": "kaos",
+      "labelKey": "i-kaos",
+      "bin": "kain",
+      "emoji": "👕"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "kain",
+      "emoji": "🧦"
+    },
+    {
+      "id": "syal",
+      "labelKey": "i-syal",
+      "bin": "kain",
+      "emoji": "🧣"
+    },
+    {
+      "id": "ulekan",
+      "labelKey": "i-ulekan",
+      "bin": "batu",
+      "emoji": "🪨",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "kerikil",
+      "labelKey": "i-kerikil",
+      "bin": "batu",
+      "emoji": "🪨",
+      "scale": 0.6
+    },
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "kayu",
+      "emoji": "🪑"
+    },
+    {
+      "id": "sendokkayu",
+      "labelKey": "i-sendokkayu",
+      "bin": "kayu",
+      "emoji": "🥄",
+      "color": "#a1887f"
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "logam",
+      "emoji": "🔑"
+    },
+    {
+      "id": "panci",
+      "labelKey": "i-panci",
+      "bin": "logam",
+      "emoji": "🍳"
+    },
+    {
+      "id": "botol",
+      "labelKey": "i-botol",
+      "bin": "plastik",
+      "emoji": "🧴"
+    },
+    {
+      "id": "sedotan",
+      "labelKey": "i-sedotan",
+      "bin": "plastik",
+      "emoji": "🥤"
+    },
+    {
+      "id": "gelas",
+      "labelKey": "i-gelas",
+      "bin": "kaca",
+      "emoji": "🥛"
+    },
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "kaca",
+      "emoji": "🪞"
+    }
+  ],
+  "pilihan": []
+}

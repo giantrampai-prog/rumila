@@ -1,0 +1,151 @@
+{
+  "id": "sd5-sains-adaptasi-lingkungan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.ADAPTASI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ciri Penolong",
+      "instruksi": "Baca ciri dan gunanya, lalu taruh ke lingkungan tempat ciri itu menolong.",
+      "b-gurun": "panas dan kering (gurun)",
+      "b-kutub": "sangat dingin (kutub)",
+      "b-basah": "basah (hutan hujan, rawa)",
+      "i-unta": "unta: punuk menyimpan lemak, bulu mata panjang menahan pasir",
+      "i-kaktus": "kaktus: daun berupa duri, batang menyimpan air",
+      "i-fenek": "rubah fenek: telinga lebar melepas panas",
+      "i-kadal": "kadal: bersembunyi di bawah pasir saat siang terik",
+      "i-beruang": "beruang kutub: bulu tebal dan lapisan lemak",
+      "i-penguin": "penguin: bulu rapat dan berkerumun berbagi hangat",
+      "i-anjinglaut": "anjing laut: lemak tebal di bawah kulit",
+      "i-katak": "katak pohon: jari lengket memanjat daun basah",
+      "i-talas": "daun talas: licin, air hujan langsung meluncur",
+      "i-bakau": "bakau: akar napas mencuat dari lumpur",
+      "i-daunrunc": "daun berujung runcing meneteskan air hujan"
+    },
+    "en": {
+      "judul": "Helpful Features",
+      "instruksi": "Read the feature and what it does, then put it with the environment where it helps.",
+      "b-gurun": "hot and dry (desert)",
+      "b-kutub": "very cold (polar)",
+      "b-basah": "wet (rainforest, swamp)",
+      "i-unta": "camel: hump stores fat, long eyelashes keep out sand",
+      "i-kaktus": "cactus: spines instead of leaves, stem stores water",
+      "i-fenek": "fennec fox: big ears let heat escape",
+      "i-kadal": "lizard: hides under the sand in the midday heat",
+      "i-beruang": "polar bear: thick fur and a layer of fat",
+      "i-penguin": "penguin: tight feathers, huddles to share warmth",
+      "i-anjinglaut": "seal: thick blubber under the skin",
+      "i-katak": "tree frog: sticky toes grip wet leaves",
+      "i-talas": "taro leaf: waxy, rain slides straight off",
+      "i-bakau": "mangrove: breathing roots poke up out of the mud",
+      "i-daunrunc": "leaf with a pointed tip that drips rain away"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gurun",
+      "labelKey": "b-gurun",
+      "emoji": "🏜️",
+      "color": "#ffe082"
+    },
+    {
+      "id": "kutub",
+      "labelKey": "b-kutub",
+      "emoji": "🧊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "basah",
+      "labelKey": "b-basah",
+      "emoji": "🌧️",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "unta",
+      "labelKey": "i-unta",
+      "bin": "gurun",
+      "emoji": "🐫"
+    },
+    {
+      "id": "kaktus",
+      "labelKey": "i-kaktus",
+      "bin": "gurun",
+      "emoji": "🌵"
+    },
+    {
+      "id": "fenek",
+      "labelKey": "i-fenek",
+      "bin": "gurun",
+      "emoji": "🦊"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "gurun",
+      "emoji": "🦎"
+    },
+    {
+      "id": "beruang",
+      "labelKey": "i-beruang",
+      "bin": "kutub",
+      "emoji": "🐻‍❄️"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "kutub",
+      "emoji": "🐧"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "kutub",
+      "emoji": "🦭"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "basah",
+      "emoji": "🐸"
+    },
+    {
+      "id": "talas",
+      "labelKey": "i-talas",
+      "bin": "basah",
+      "emoji": "🍃"
+    },
+    {
+      "id": "bakau",
+      "labelKey": "i-bakau",
+      "bin": "basah",
+      "emoji": "🌳"
+    },
+    {
+      "id": "daunrunc",
+      "labelKey": "i-daunrunc",
+      "bin": "basah",
+      "emoji": "🌿"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,825 @@
+{
+  "id": "sd2-kode-jalan-terpendek",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD2.EFISIEN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pilih Jalan Terpendek",
+      "instruksi": "Ada dua jalan ke bintang, tapi rak hanya muat untuk jalan yang lebih pendek. Pilih yang tepat."
+    },
+    "en": {
+      "judul": "Pick the Shortest Way",
+      "instruksi": "There are two ways to the star, but the rack fits only the shorter one. Pick the right one."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "panjang jalan terpendek = jumlah slot rak"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "taman",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "pendek-8-01",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "pendek-7-02",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "pendek-8-03",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "pendek-7-04",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "pendek-8-05",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "pendek-6-06",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "pendek-7-07",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "pendek-7-08",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "pendek-7-09",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7
+    },
+    {
+      "id": "pendek-6-10",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "pendek-6-11",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "pendek-6-12",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "pendek-6-13",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6
+    },
+    {
+      "id": "pendek-9-14",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "pendek-8-15",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "pendek-8-16",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8
+    },
+    {
+      "id": "pendek-9-17",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "pendek-9-18",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "pendek-9-19",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    },
+    {
+      "id": "pendek-9-20",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9
+    }
+  ]
+}

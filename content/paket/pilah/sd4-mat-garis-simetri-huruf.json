@@ -1,0 +1,210 @@
+{
+  "id": "sd4-mat-garis-simetri-huruf",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cermin Huruf",
+      "instruksi": "Hitung garis simetri tiap huruf atau bangun, lalu taruh di rak 0, 1, atau 2 garis.",
+      "b-nol": "0 garis",
+      "b-satu": "1 garis",
+      "b-dua": "2 garis",
+      "i1": "H",
+      "i2": "I",
+      "i3": "X",
+      "i4": "A",
+      "i5": "M",
+      "i6": "T",
+      "i7": "U",
+      "i8": "V",
+      "i9": "W",
+      "i10": "Y",
+      "i11": "F",
+      "i12": "G",
+      "i13": "J",
+      "i14": "L",
+      "i15": "N",
+      "i16": "P",
+      "i17": "R",
+      "i18": "S",
+      "i19": "Z",
+      "i20": "persegi panjang",
+      "i21": "segitiga sama kaki"
+    },
+    "en": {
+      "judul": "Letter Mirrors",
+      "instruksi": "Count the lines of symmetry of each letter or shape, then put it on the 0, 1 or 2 line shelf.",
+      "b-nol": "0 lines",
+      "b-satu": "1 line",
+      "b-dua": "2 lines",
+      "i1": "H",
+      "i2": "I",
+      "i3": "X",
+      "i4": "A",
+      "i5": "M",
+      "i6": "T",
+      "i7": "U",
+      "i8": "V",
+      "i9": "W",
+      "i10": "Y",
+      "i11": "F",
+      "i12": "G",
+      "i13": "J",
+      "i14": "L",
+      "i15": "N",
+      "i16": "P",
+      "i17": "R",
+      "i18": "S",
+      "i19": "Z",
+      "i20": "rectangle",
+      "i21": "isosceles triangle"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "nol",
+      "labelKey": "b-nol"
+    },
+    {
+      "id": "satu",
+      "labelKey": "b-satu"
+    },
+    {
+      "id": "dua",
+      "labelKey": "b-dua"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "dua"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "dua"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "dua"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "satu"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "satu"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "satu"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "satu"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "satu"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "satu"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "satu"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "nol"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "nol"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "nol"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "nol"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "nol"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "nol"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "nol"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "nol"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i19",
+      "bin": "nol"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i20",
+      "bin": "dua",
+      "scale": 0.5,
+      "shape": "rect",
+      "color": "#0786eb"
+    },
+    {
+      "id": "i21",
+      "labelKey": "i21",
+      "bin": "satu",
+      "scale": 0.5,
+      "shape": "triangle",
+      "color": "#fd861d"
+    }
+  ]
+}

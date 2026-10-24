@@ -1,0 +1,220 @@
+{
+  "id": "sd4-sains-siang-malam-bayangan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.BUMI-ANTARIKSA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siang, Malam, dan Bayangan",
+      "instruksi": "Baca keadaannya, lalu sentuh penjelasan yang benar.",
+      "b-pilihan": "pilihan",
+      "i-berputar": "Bumi berputar pada porosnya",
+      "i-mengitari": "Matahari mengitari Bumi tiap hari",
+      "i-menutup": "Bulan menutupi Matahari",
+      "i-kebarat": "panjang, ke arah barat",
+      "i-ketimur": "panjang, ke arah timur",
+      "i-pendek": "pendek sekali",
+      "i-siang": "siang",
+      "i-malam": "malam",
+      "i-rendah": "makin rendah di langit",
+      "i-dekat": "makin dekat ke Bumi",
+      "i-besar": "makin besar",
+      "p-r1": "Mengapa ada siang dan malam?",
+      "p-r2": "Matahari tampak terbit di timur dan tenggelam di barat. Penyebabnya…",
+      "p-r3": "Pagi hari, Matahari di timur. Bayangan tiang bendera…",
+      "p-r4": "Sore hari, Matahari di barat. Bayangan tiang bendera…",
+      "p-r5": "Tengah hari, Matahari hampir tepat di atas kepala. Bayangan tiang bendera…",
+      "p-r6": "Di sisi Bumi yang membelakangi Matahari sedang…",
+      "p-r7": "Di sisi Bumi yang menghadap Matahari sedang…",
+      "p-r8": "Bayangan pohon makin panjang menjelang sore karena Matahari tampak…"
+    },
+    "en": {
+      "judul": "Day, Night and Shadows",
+      "instruksi": "Read the situation, then touch the correct explanation.",
+      "b-pilihan": "choices",
+      "i-berputar": "the Earth spins on its axis",
+      "i-mengitari": "the Sun goes round the Earth every day",
+      "i-menutup": "the Moon covers the Sun",
+      "i-kebarat": "long, pointing west",
+      "i-ketimur": "long, pointing east",
+      "i-pendek": "very short",
+      "i-siang": "day",
+      "i-malam": "night",
+      "i-rendah": "lower in the sky",
+      "i-dekat": "closer to the Earth",
+      "i-besar": "bigger",
+      "p-r1": "Why do we have day and night?",
+      "p-r2": "The Sun seems to rise in the east and set in the west. This is because…",
+      "p-r3": "In the morning the Sun is in the east. The flagpole's shadow is…",
+      "p-r4": "In the late afternoon the Sun is in the west. The flagpole's shadow is…",
+      "p-r5": "At midday the Sun is almost straight overhead. The flagpole's shadow is…",
+      "p-r6": "On the side of the Earth facing away from the Sun it is…",
+      "p-r7": "On the side of the Earth facing the Sun it is…",
+      "p-r8": "A tree's shadow grows longer towards evening because the Sun appears…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "berputar",
+      "labelKey": "i-berputar",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "mengitari",
+      "labelKey": "i-mengitari",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "menutup",
+      "labelKey": "i-menutup",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    },
+    {
+      "id": "kebarat",
+      "labelKey": "i-kebarat",
+      "bin": "pilihan",
+      "emoji": "⬅️"
+    },
+    {
+      "id": "ketimur",
+      "labelKey": "i-ketimur",
+      "bin": "pilihan",
+      "emoji": "➡️"
+    },
+    {
+      "id": "pendek",
+      "labelKey": "i-pendek",
+      "bin": "pilihan",
+      "emoji": "⏺️"
+    },
+    {
+      "id": "siang",
+      "labelKey": "i-siang",
+      "bin": "pilihan",
+      "emoji": "🌞"
+    },
+    {
+      "id": "malam",
+      "labelKey": "i-malam",
+      "bin": "pilihan",
+      "emoji": "🌙"
+    },
+    {
+      "id": "rendah",
+      "labelKey": "i-rendah",
+      "bin": "pilihan",
+      "emoji": "🌇"
+    },
+    {
+      "id": "dekat",
+      "labelKey": "i-dekat",
+      "bin": "pilihan",
+      "emoji": "🔜"
+    },
+    {
+      "id": "besar",
+      "labelKey": "i-besar",
+      "bin": "pilihan",
+      "emoji": "⭕"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "berputar",
+        "mengitari",
+        "menutup"
+      ],
+      "correct": "berputar"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "berputar",
+        "mengitari",
+        "menutup"
+      ],
+      "correct": "berputar"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "kebarat",
+        "ketimur",
+        "pendek"
+      ],
+      "correct": "kebarat"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "kebarat",
+        "ketimur",
+        "pendek"
+      ],
+      "correct": "ketimur"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "kebarat",
+        "ketimur",
+        "pendek"
+      ],
+      "correct": "pendek"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "malam"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "siang"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "rendah",
+        "dekat",
+        "besar"
+      ],
+      "correct": "rendah"
+    }
+  ]
+}

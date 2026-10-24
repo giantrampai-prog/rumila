@@ -1,0 +1,356 @@
+{
+  "id": "sd5-mat-modus-dan-median",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Modus dan Median",
+      "instruksi": "Modus = nilai yang paling sering muncul. Median = nilai tengah setelah data diurutkan.",
+      "q1": "Nilai kuis: 8, 3, 9, 3, 5. Modusnya …",
+      "c1": "3",
+      "c2": "5",
+      "c3": "9",
+      "c4": "6",
+      "q2": "Nilai kuis: 8, 3, 9, 3, 5. Mediannya …",
+      "q3": "Tinggi tanaman (cm): 12, 15, 11, 14, 15, 10, 13. Mediannya …",
+      "c5": "13",
+      "c6": "15",
+      "c7": "14",
+      "c8": "10",
+      "q4": "Tinggi tanaman (cm): 12, 15, 11, 14, 15, 10, 13. Modusnya …",
+      "q5": "Ukuran sepatu: 33, 36, 35, 36, 31. Modusnya …",
+      "c9": "36",
+      "c10": "35",
+      "c11": "31",
+      "c12": "34",
+      "q6": "Buku yang dibaca: 4, 9, 2, 6, 2, 7, 5. Mediannya …",
+      "c13": "2",
+      "q7": "Buku yang dibaca: 4, 9, 2, 6, 2, 7, 5. Modusnya …",
+      "q8": "Suhu harian (°C): 31, 28, 33, 29, 30. Mediannya …",
+      "c14": "30",
+      "c15": "33",
+      "c16": "28",
+      "q9": "Gol per pertandingan: 3, 0, 1, 4, 1, 2, 5, 1, 6. Mediannya …",
+      "c17": "1",
+      "c18": "0",
+      "q10": "Gol per pertandingan: 3, 0, 1, 4, 1, 2, 5, 1, 6. Modusnya …",
+      "q11": "Lompat jauh (cm): 210, 185, 240, 195, 225. Mediannya …",
+      "c19": "210",
+      "c20": "240",
+      "c21": "185",
+      "c22": "211",
+      "q12": "Jumlah saudara: 2, 1, 3, 1, 0, 2, 1. Modusnya …",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Mode and Median",
+      "instruksi": "Mode = the most common value. Median = the middle value after sorting the data.",
+      "q1": "Quiz scores: 8, 3, 9, 3, 5. The mode is …",
+      "c1": "3",
+      "c2": "5",
+      "c3": "9",
+      "c4": "6",
+      "q2": "Quiz scores: 8, 3, 9, 3, 5. The median is …",
+      "q3": "Plant heights (cm): 12, 15, 11, 14, 15, 10, 13. The median is …",
+      "c5": "13",
+      "c6": "15",
+      "c7": "14",
+      "c8": "10",
+      "q4": "Plant heights (cm): 12, 15, 11, 14, 15, 10, 13. The mode is …",
+      "q5": "Shoe sizes: 33, 36, 35, 36, 31. The mode is …",
+      "c9": "36",
+      "c10": "35",
+      "c11": "31",
+      "c12": "34",
+      "q6": "Books read: 4, 9, 2, 6, 2, 7, 5. The median is …",
+      "c13": "2",
+      "q7": "Books read: 4, 9, 2, 6, 2, 7, 5. The mode is …",
+      "q8": "Daily temperatures (°C): 31, 28, 33, 29, 30. The median is …",
+      "c14": "30",
+      "c15": "33",
+      "c16": "28",
+      "q9": "Goals per match: 3, 0, 1, 4, 1, 2, 5, 1, 6. The median is …",
+      "c17": "1",
+      "c18": "0",
+      "q10": "Goals per match: 3, 0, 1, 4, 1, 2, 5, 1, 6. The mode is …",
+      "q11": "Long jump (cm): 210, 185, 240, 195, 225. The median is …",
+      "c19": "210",
+      "c20": "240",
+      "c21": "185",
+      "c22": "211",
+      "q12": "Number of siblings: 2, 1, 3, 1, 0, 2, 1. The mode is …",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c4"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c5",
+        "c7",
+        "c8"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c2",
+        "c13",
+        "c4",
+        "c3"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c13",
+        "c2",
+        "c4",
+        "c3"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c14",
+        "c15",
+        "c16",
+        "c11"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c13",
+        "c17",
+        "c4",
+        "c18"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c17",
+        "c13",
+        "c4",
+        "c18"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c19",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c17",
+        "c1",
+        "c18",
+        "c13"
+      ],
+      "correct": "c17"
+    }
+  ]
+}

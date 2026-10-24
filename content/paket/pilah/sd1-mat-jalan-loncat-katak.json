@@ -1,0 +1,205 @@
+{
+  "id": "sd1-mat-jalan-loncat-katak",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BILANGAN-100.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jalan Katak Loncat 10",
+      "instruksi": "Katak mulai di 4 dan selalu loncat sepuluh. Batu mana yang diinjaknya?",
+      "b-diinjak-katak": "diinjak katak",
+      "b-tidak-diinjak": "tidak diinjak",
+      "i-14": "14",
+      "i-24": "24",
+      "i-34": "34",
+      "i-44": "44",
+      "i-54": "54",
+      "i-64": "64",
+      "i-74": "74",
+      "i-84": "84",
+      "i-94": "94",
+      "i-40": "40",
+      "i-41": "41",
+      "i-43": "43",
+      "i-45": "45",
+      "i-15": "15",
+      "i-49": "49",
+      "i-33": "33",
+      "i-47": "47",
+      "i-42": "42",
+      "i-70": "70"
+    },
+    "en": {
+      "judul": "Frog's Jump-10 Path",
+      "instruksi": "The frog starts at 4 and always jumps ten. Which stones does it land on?",
+      "b-diinjak-katak": "frog lands here",
+      "b-tidak-diinjak": "frog skips it",
+      "i-14": "14",
+      "i-24": "24",
+      "i-34": "34",
+      "i-44": "44",
+      "i-54": "54",
+      "i-64": "64",
+      "i-74": "74",
+      "i-84": "84",
+      "i-94": "94",
+      "i-40": "40",
+      "i-41": "41",
+      "i-43": "43",
+      "i-45": "45",
+      "i-15": "15",
+      "i-49": "49",
+      "i-33": "33",
+      "i-47": "47",
+      "i-42": "42",
+      "i-70": "70"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah batu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kolam",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "di-jalan",
+      "labelKey": "b-diinjak-katak",
+      "emoji": "🐸"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-tidak-diinjak",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "n14",
+      "labelKey": "i-14",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n24",
+      "labelKey": "i-24",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n34",
+      "labelKey": "i-34",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n44",
+      "labelKey": "i-44",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n54",
+      "labelKey": "i-54",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n64",
+      "labelKey": "i-64",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n74",
+      "labelKey": "i-74",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n84",
+      "labelKey": "i-84",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n94",
+      "labelKey": "i-94",
+      "bin": "di-jalan",
+      "scale": 1
+    },
+    {
+      "id": "n40",
+      "labelKey": "i-40",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n41",
+      "labelKey": "i-41",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n43",
+      "labelKey": "i-43",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n45",
+      "labelKey": "i-45",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n49",
+      "labelKey": "i-49",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n33",
+      "labelKey": "i-33",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n47",
+      "labelKey": "i-47",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n42",
+      "labelKey": "i-42",
+      "bin": "bukan",
+      "scale": 1
+    },
+    {
+      "id": "n70",
+      "labelKey": "i-70",
+      "bin": "bukan",
+      "scale": 1
+    }
+  ]
+}

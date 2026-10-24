@@ -1,0 +1,392 @@
+{
+  "id": "sd3-kode-sunting-algoritma",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD3.ALGORITMA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sunting Algoritma Panjang",
+      "instruksi": "Satu pasang kartu tertukar, mungkin tidak bersebelahan. Temukan dan tukar sekali saja.",
+      "t-surel": "Mengirim surel",
+      "surel-1": "nyalakan laptop",
+      "surel-2": "buka aplikasi surel",
+      "surel-3": "klik tulis pesan baru",
+      "surel-4": "ketik isi pesan",
+      "surel-5": "klik kirim",
+      "surel-6": "tunggu tanda terkirim",
+      "surel-7": "matikan laptop",
+      "t-pohon": "Menanam pohon",
+      "pohon-1": "pilih tempat yang terang",
+      "pohon-2": "gali lubang",
+      "pohon-3": "masukkan bibit",
+      "pohon-4": "timbun dengan tanah",
+      "pohon-5": "siram air",
+      "pohon-6": "tunggu seminggu",
+      "pohon-7": "daun baru tumbuh",
+      "t-game": "Bermain game di tablet",
+      "game-1": "buka aplikasi game",
+      "game-2": "tekan tombol mulai",
+      "game-3": "tokoh muncul di layar",
+      "game-4": "tekan panah untuk berjalan",
+      "game-5": "tokoh mengambil koin",
+      "game-6": "skor bertambah satu",
+      "game-7": "layar menang muncul",
+      "t-mesin-cuci": "Mencuci baju dengan mesin",
+      "mesin-cuci-1": "buka pintu mesin",
+      "mesin-cuci-2": "masukkan baju kotor",
+      "mesin-cuci-3": "tutup pintu mesin",
+      "mesin-cuci-4": "tekan tombol mulai",
+      "mesin-cuci-5": "tunggu mesin selesai",
+      "mesin-cuci-6": "keluarkan baju",
+      "mesin-cuci-7": "jemur baju",
+      "mesin-cuci-8": "angkat setelah kering",
+      "t-bus": "Naik bus kota",
+      "bus-1": "tunggu di halte",
+      "bus-2": "bus berhenti",
+      "bus-3": "pintu terbuka",
+      "bus-4": "naik ke bus",
+      "bus-5": "tempel kartu di mesin",
+      "bus-6": "duduk di kursi",
+      "bus-7": "tekan bel sebelum halte tujuan",
+      "bus-8": "turun dari bus",
+      "t-remote": "Mengganti baterai remote",
+      "remote-1": "buka tutup belakang remote",
+      "remote-2": "keluarkan baterai lama",
+      "remote-3": "masukkan baterai baru",
+      "remote-4": "tutup lagi",
+      "remote-5": "arahkan ke TV",
+      "remote-6": "tekan tombol daya",
+      "remote-7": "TV menyala"
+    },
+    "en": {
+      "judul": "Edit a Long Algorithm",
+      "instruksi": "One pair of cards has swapped, maybe not side by side. Find it and swap it back once.",
+      "t-surel": "Sending an email",
+      "surel-1": "turn on the laptop",
+      "surel-2": "open the email app",
+      "surel-3": "click write new message",
+      "surel-4": "type the message",
+      "surel-5": "click send",
+      "surel-6": "wait for the sent mark",
+      "surel-7": "shut down the laptop",
+      "t-pohon": "Planting a tree",
+      "pohon-1": "choose a sunny spot",
+      "pohon-2": "dig a hole",
+      "pohon-3": "put in the young tree",
+      "pohon-4": "fill in with soil",
+      "pohon-5": "water it",
+      "pohon-6": "wait a week",
+      "pohon-7": "new leaves grow",
+      "t-game": "Playing a tablet game",
+      "game-1": "open the game app",
+      "game-2": "press start",
+      "game-3": "the character appears",
+      "game-4": "press the arrow to walk",
+      "game-5": "the character grabs a coin",
+      "game-6": "the score goes up by one",
+      "game-7": "the winning screen appears",
+      "t-mesin-cuci": "Using the washing machine",
+      "mesin-cuci-1": "open the machine door",
+      "mesin-cuci-2": "put in the dirty clothes",
+      "mesin-cuci-3": "close the door",
+      "mesin-cuci-4": "press start",
+      "mesin-cuci-5": "wait until it finishes",
+      "mesin-cuci-6": "take the clothes out",
+      "mesin-cuci-7": "hang the clothes to dry",
+      "mesin-cuci-8": "bring them in when dry",
+      "t-bus": "Riding the city bus",
+      "bus-1": "wait at the bus stop",
+      "bus-2": "the bus stops",
+      "bus-3": "the door opens",
+      "bus-4": "get on the bus",
+      "bus-5": "tap your card on the reader",
+      "bus-6": "sit down",
+      "bus-7": "press the bell before your stop",
+      "bus-8": "get off the bus",
+      "t-remote": "Changing remote batteries",
+      "remote-1": "open the back of the remote",
+      "remote-2": "take out the old batteries",
+      "remote-3": "put in new batteries",
+      "remote-4": "close it again",
+      "remote-5": "point it at the TV",
+      "remote-6": "press the power button",
+      "remote-7": "the TV turns on"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 7,
+      "max": 8,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah kartu: 7 → 8; mesin menukar satu pasang (berdampingan atau berjarak satu)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "surel",
+      "titleKey": "t-surel",
+      "steps": [
+        {
+          "id": "surel-1",
+          "labelKey": "surel-1",
+          "emoji": "💻"
+        },
+        {
+          "id": "surel-2",
+          "labelKey": "surel-2",
+          "emoji": "📧"
+        },
+        {
+          "id": "surel-3",
+          "labelKey": "surel-3",
+          "emoji": "📝"
+        },
+        {
+          "id": "surel-4",
+          "labelKey": "surel-4",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "surel-5",
+          "labelKey": "surel-5",
+          "emoji": "📤"
+        },
+        {
+          "id": "surel-6",
+          "labelKey": "surel-6",
+          "emoji": "⏳"
+        },
+        {
+          "id": "surel-7",
+          "labelKey": "surel-7",
+          "emoji": "🔌"
+        }
+      ]
+    },
+    {
+      "id": "pohon",
+      "titleKey": "t-pohon",
+      "steps": [
+        {
+          "id": "pohon-1",
+          "labelKey": "pohon-1",
+          "emoji": "☀️"
+        },
+        {
+          "id": "pohon-2",
+          "labelKey": "pohon-2",
+          "emoji": "🕳️"
+        },
+        {
+          "id": "pohon-3",
+          "labelKey": "pohon-3",
+          "emoji": "🌱"
+        },
+        {
+          "id": "pohon-4",
+          "labelKey": "pohon-4",
+          "emoji": "🟫"
+        },
+        {
+          "id": "pohon-5",
+          "labelKey": "pohon-5",
+          "emoji": "💦"
+        },
+        {
+          "id": "pohon-6",
+          "labelKey": "pohon-6",
+          "emoji": "📅"
+        },
+        {
+          "id": "pohon-7",
+          "labelKey": "pohon-7",
+          "emoji": "🌿"
+        }
+      ]
+    },
+    {
+      "id": "game",
+      "titleKey": "t-game",
+      "steps": [
+        {
+          "id": "game-1",
+          "labelKey": "game-1",
+          "emoji": "📲"
+        },
+        {
+          "id": "game-2",
+          "labelKey": "game-2",
+          "emoji": "▶️"
+        },
+        {
+          "id": "game-3",
+          "labelKey": "game-3",
+          "emoji": "🧍"
+        },
+        {
+          "id": "game-4",
+          "labelKey": "game-4",
+          "emoji": "➡️"
+        },
+        {
+          "id": "game-5",
+          "labelKey": "game-5",
+          "emoji": "🪙"
+        },
+        {
+          "id": "game-6",
+          "labelKey": "game-6",
+          "emoji": "➕"
+        },
+        {
+          "id": "game-7",
+          "labelKey": "game-7",
+          "emoji": "🏆"
+        }
+      ]
+    },
+    {
+      "id": "mesin-cuci",
+      "titleKey": "t-mesin-cuci",
+      "steps": [
+        {
+          "id": "mesin-cuci-1",
+          "labelKey": "mesin-cuci-1",
+          "emoji": "🚪"
+        },
+        {
+          "id": "mesin-cuci-2",
+          "labelKey": "mesin-cuci-2",
+          "emoji": "👕"
+        },
+        {
+          "id": "mesin-cuci-3",
+          "labelKey": "mesin-cuci-3",
+          "emoji": "🔒"
+        },
+        {
+          "id": "mesin-cuci-4",
+          "labelKey": "mesin-cuci-4",
+          "emoji": "🔘"
+        },
+        {
+          "id": "mesin-cuci-5",
+          "labelKey": "mesin-cuci-5",
+          "emoji": "⏳"
+        },
+        {
+          "id": "mesin-cuci-6",
+          "labelKey": "mesin-cuci-6",
+          "emoji": "🧺"
+        },
+        {
+          "id": "mesin-cuci-7",
+          "labelKey": "mesin-cuci-7",
+          "emoji": "👚"
+        },
+        {
+          "id": "mesin-cuci-8",
+          "labelKey": "mesin-cuci-8",
+          "emoji": "☀️"
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "titleKey": "t-bus",
+      "steps": [
+        {
+          "id": "bus-1",
+          "labelKey": "bus-1",
+          "emoji": "🚏"
+        },
+        {
+          "id": "bus-2",
+          "labelKey": "bus-2",
+          "emoji": "🚌"
+        },
+        {
+          "id": "bus-3",
+          "labelKey": "bus-3",
+          "emoji": "🚪"
+        },
+        {
+          "id": "bus-4",
+          "labelKey": "bus-4",
+          "emoji": "🧍"
+        },
+        {
+          "id": "bus-5",
+          "labelKey": "bus-5",
+          "emoji": "💳"
+        },
+        {
+          "id": "bus-6",
+          "labelKey": "bus-6",
+          "emoji": "💺"
+        },
+        {
+          "id": "bus-7",
+          "labelKey": "bus-7",
+          "emoji": "🔔"
+        },
+        {
+          "id": "bus-8",
+          "labelKey": "bus-8",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "remote",
+      "titleKey": "t-remote",
+      "steps": [
+        {
+          "id": "remote-1",
+          "labelKey": "remote-1",
+          "emoji": "📡"
+        },
+        {
+          "id": "remote-2",
+          "labelKey": "remote-2",
+          "emoji": "🪫"
+        },
+        {
+          "id": "remote-3",
+          "labelKey": "remote-3",
+          "emoji": "🔋"
+        },
+        {
+          "id": "remote-4",
+          "labelKey": "remote-4",
+          "emoji": "🔒"
+        },
+        {
+          "id": "remote-5",
+          "labelKey": "remote-5",
+          "emoji": "📺"
+        },
+        {
+          "id": "remote-6",
+          "labelKey": "remote-6",
+          "emoji": "🔘"
+        },
+        {
+          "id": "remote-7",
+          "labelKey": "remote-7",
+          "emoji": "✨"
+        }
+      ]
+    }
+  ]
+}

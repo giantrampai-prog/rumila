@@ -1,0 +1,153 @@
+{
+  "id": "sd1-sains-lentur-atau-kaku",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lentur atau Kaku?",
+      "instruksi": "Bayangkan kamu menekuk tiap benda. Taruh ke rak lentur atau kaku.",
+      "b-lentur": "lentur, bisa ditekuk",
+      "b-kaku": "kaku, tidak bisa ditekuk",
+      "i-karet": "karet gelang",
+      "i-tali": "tali",
+      "i-kain": "kain",
+      "i-selang": "selang air",
+      "i-kertas": "selembar kertas",
+      "i-kabel": "kabel",
+      "i-batu": "batu",
+      "i-sendok": "sendok logam",
+      "i-balok": "balok kayu",
+      "i-kelereng": "kelereng kaca",
+      "i-piring": "piring kaca",
+      "i-pensil": "pensil kayu"
+    },
+    "en": {
+      "judul": "Bendy or Stiff?",
+      "instruksi": "Imagine bending each object. Put it on the bendy shelf or the stiff shelf.",
+      "b-lentur": "bendy",
+      "b-kaku": "stiff",
+      "i-karet": "rubber band",
+      "i-tali": "rope",
+      "i-kain": "cloth",
+      "i-selang": "garden hose",
+      "i-kertas": "sheet of paper",
+      "i-kabel": "cable",
+      "i-batu": "stone",
+      "i-sendok": "metal spoon",
+      "i-balok": "wooden block",
+      "i-kelereng": "glass marble",
+      "i-piring": "glass plate",
+      "i-pensil": "wooden pencil"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "lentur",
+      "labelKey": "b-lentur",
+      "emoji": "〰️",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "kaku",
+      "labelKey": "b-kaku",
+      "emoji": "📏",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "karet",
+      "labelKey": "i-karet",
+      "bin": "lentur",
+      "emoji": "⭕",
+      "color": "#ff8a65"
+    },
+    {
+      "id": "tali",
+      "labelKey": "i-tali",
+      "bin": "lentur",
+      "emoji": "🪢"
+    },
+    {
+      "id": "kain",
+      "labelKey": "i-kain",
+      "bin": "lentur",
+      "emoji": "🧣"
+    },
+    {
+      "id": "selang",
+      "labelKey": "i-selang",
+      "bin": "lentur",
+      "emoji": "🟢",
+      "color": "#66bb6a"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "lentur",
+      "emoji": "📄"
+    },
+    {
+      "id": "kabel",
+      "labelKey": "i-kabel",
+      "bin": "lentur",
+      "emoji": "🔌"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "kaku",
+      "emoji": "🪨"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "kaku",
+      "emoji": "🥄"
+    },
+    {
+      "id": "balok",
+      "labelKey": "i-balok",
+      "bin": "kaku",
+      "emoji": "🪵"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "kaku",
+      "emoji": "🔮"
+    },
+    {
+      "id": "piring",
+      "labelKey": "i-piring",
+      "bin": "kaku",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "kaku",
+      "emoji": "✏️"
+    }
+  ],
+  "pilihan": []
+}

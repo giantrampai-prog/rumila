@@ -1,0 +1,516 @@
+{
+  "id": "sd2-mat-loncat-dua-lima-sepuluh",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Loncat 2, 5, 10",
+      "instruksi": "Baca aturannya di judul: loncat maju atau mundur berapa. Susun kartu berikutnya.",
+      "s-38": "38",
+      "s-40": "40",
+      "s-42": "42",
+      "s-44": "44",
+      "s-46": "46",
+      "j-loncat-2-dari-36": "Loncat 2 dari 36",
+      "s-45": "45",
+      "s-50": "50",
+      "s-55": "55",
+      "s-60": "60",
+      "j-loncat-5-dari-35": "Loncat 5 dari 35",
+      "s-57": "57",
+      "s-67": "67",
+      "s-77": "77",
+      "s-87": "87",
+      "s-97": "97",
+      "j-loncat-10-dari-47": "Loncat 10 dari 47",
+      "s-48": "48",
+      "j-mundur-2-dari-50": "Mundur 2 dari 50",
+      "s-75": "75",
+      "s-70": "70",
+      "s-65": "65",
+      "j-mundur-5-dari-80": "Mundur 5 dari 80",
+      "s-83": "83",
+      "s-73": "73",
+      "s-63": "63",
+      "s-53": "53",
+      "s-43": "43",
+      "j-mundur-10-dari-93": "Mundur 10 dari 93",
+      "s-19": "19",
+      "s-21": "21",
+      "s-23": "23",
+      "s-25": "25",
+      "s-27": "27",
+      "j-loncat-2-dari-17": "Loncat 2 dari 17",
+      "s-72": "72",
+      "s-82": "82",
+      "j-loncat-5-dari-62": "Loncat 5 dari 62",
+      "s-18": "18",
+      "s-28": "28",
+      "s-58": "58",
+      "j-loncat-10-dari-8": "Loncat 10 dari 8",
+      "s-69": "69",
+      "s-61": "61",
+      "j-mundur-2-dari-71": "Mundur 2 dari 71",
+      "s-94": "94",
+      "s-89": "89",
+      "s-84": "84",
+      "s-79": "79",
+      "s-74": "74",
+      "j-mundur-5-dari-99": "Mundur 5 dari 99",
+      "s-90": "90",
+      "s-80": "80",
+      "j-mundur-10-dari-100": "Mundur 10 dari 100"
+    },
+    "en": {
+      "judul": "Jumps of 2, 5 and 10",
+      "instruksi": "Read the rule in the title: how far to jump, forward or back. Put the next cards in order.",
+      "s-38": "38",
+      "s-40": "40",
+      "s-42": "42",
+      "s-44": "44",
+      "s-46": "46",
+      "j-loncat-2-dari-36": "Jump 2 from 36",
+      "s-45": "45",
+      "s-50": "50",
+      "s-55": "55",
+      "s-60": "60",
+      "j-loncat-5-dari-35": "Jump 5 from 35",
+      "s-57": "57",
+      "s-67": "67",
+      "s-77": "77",
+      "s-87": "87",
+      "s-97": "97",
+      "j-loncat-10-dari-47": "Jump 10 from 47",
+      "s-48": "48",
+      "j-mundur-2-dari-50": "Back 2 from 50",
+      "s-75": "75",
+      "s-70": "70",
+      "s-65": "65",
+      "j-mundur-5-dari-80": "Back 5 from 80",
+      "s-83": "83",
+      "s-73": "73",
+      "s-63": "63",
+      "s-53": "53",
+      "s-43": "43",
+      "j-mundur-10-dari-93": "Back 10 from 93",
+      "s-19": "19",
+      "s-21": "21",
+      "s-23": "23",
+      "s-25": "25",
+      "s-27": "27",
+      "j-loncat-2-dari-17": "Jump 2 from 17",
+      "s-72": "72",
+      "s-82": "82",
+      "j-loncat-5-dari-62": "Jump 5 from 62",
+      "s-18": "18",
+      "s-28": "28",
+      "s-58": "58",
+      "j-loncat-10-dari-8": "Jump 10 from 8",
+      "s-69": "69",
+      "s-61": "61",
+      "j-mundur-2-dari-71": "Back 2 from 71",
+      "s-94": "94",
+      "s-89": "89",
+      "s-84": "84",
+      "s-79": "79",
+      "s-74": "74",
+      "j-mundur-5-dari-99": "Back 5 from 99",
+      "s-90": "90",
+      "s-80": "80",
+      "j-mundur-10-dari-100": "Back 10 from 100"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-angka",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "maju-2-dari-36",
+      "titleKey": "j-loncat-2-dari-36",
+      "steps": [
+        {
+          "id": "38",
+          "labelKey": "s-38",
+          "scale": 1
+        },
+        {
+          "id": "40",
+          "labelKey": "s-40",
+          "scale": 1
+        },
+        {
+          "id": "42",
+          "labelKey": "s-42",
+          "scale": 1
+        },
+        {
+          "id": "44",
+          "labelKey": "s-44",
+          "scale": 1
+        },
+        {
+          "id": "46",
+          "labelKey": "s-46",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "maju-5-dari-35",
+      "titleKey": "j-loncat-5-dari-35",
+      "steps": [
+        {
+          "id": "40",
+          "labelKey": "s-40",
+          "scale": 1
+        },
+        {
+          "id": "45",
+          "labelKey": "s-45",
+          "scale": 1
+        },
+        {
+          "id": "50",
+          "labelKey": "s-50",
+          "scale": 1
+        },
+        {
+          "id": "55",
+          "labelKey": "s-55",
+          "scale": 1
+        },
+        {
+          "id": "60",
+          "labelKey": "s-60",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "maju-10-dari-47",
+      "titleKey": "j-loncat-10-dari-47",
+      "steps": [
+        {
+          "id": "57",
+          "labelKey": "s-57",
+          "scale": 1
+        },
+        {
+          "id": "67",
+          "labelKey": "s-67",
+          "scale": 1
+        },
+        {
+          "id": "77",
+          "labelKey": "s-77",
+          "scale": 1
+        },
+        {
+          "id": "87",
+          "labelKey": "s-87",
+          "scale": 1
+        },
+        {
+          "id": "97",
+          "labelKey": "s-97",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "mundur-2-dari-50",
+      "titleKey": "j-mundur-2-dari-50",
+      "steps": [
+        {
+          "id": "48",
+          "labelKey": "s-48",
+          "scale": 1
+        },
+        {
+          "id": "46",
+          "labelKey": "s-46",
+          "scale": 1
+        },
+        {
+          "id": "44",
+          "labelKey": "s-44",
+          "scale": 1
+        },
+        {
+          "id": "42",
+          "labelKey": "s-42",
+          "scale": 1
+        },
+        {
+          "id": "40",
+          "labelKey": "s-40",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "mundur-5-dari-80",
+      "titleKey": "j-mundur-5-dari-80",
+      "steps": [
+        {
+          "id": "75",
+          "labelKey": "s-75",
+          "scale": 1
+        },
+        {
+          "id": "70",
+          "labelKey": "s-70",
+          "scale": 1
+        },
+        {
+          "id": "65",
+          "labelKey": "s-65",
+          "scale": 1
+        },
+        {
+          "id": "60",
+          "labelKey": "s-60",
+          "scale": 1
+        },
+        {
+          "id": "55",
+          "labelKey": "s-55",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "mundur-10-dari-93",
+      "titleKey": "j-mundur-10-dari-93",
+      "steps": [
+        {
+          "id": "83",
+          "labelKey": "s-83",
+          "scale": 1
+        },
+        {
+          "id": "73",
+          "labelKey": "s-73",
+          "scale": 1
+        },
+        {
+          "id": "63",
+          "labelKey": "s-63",
+          "scale": 1
+        },
+        {
+          "id": "53",
+          "labelKey": "s-53",
+          "scale": 1
+        },
+        {
+          "id": "43",
+          "labelKey": "s-43",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "maju-2-dari-17",
+      "titleKey": "j-loncat-2-dari-17",
+      "steps": [
+        {
+          "id": "19",
+          "labelKey": "s-19",
+          "scale": 1
+        },
+        {
+          "id": "21",
+          "labelKey": "s-21",
+          "scale": 1
+        },
+        {
+          "id": "23",
+          "labelKey": "s-23",
+          "scale": 1
+        },
+        {
+          "id": "25",
+          "labelKey": "s-25",
+          "scale": 1
+        },
+        {
+          "id": "27",
+          "labelKey": "s-27",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "maju-5-dari-62",
+      "titleKey": "j-loncat-5-dari-62",
+      "steps": [
+        {
+          "id": "67",
+          "labelKey": "s-67",
+          "scale": 1
+        },
+        {
+          "id": "72",
+          "labelKey": "s-72",
+          "scale": 1
+        },
+        {
+          "id": "77",
+          "labelKey": "s-77",
+          "scale": 1
+        },
+        {
+          "id": "82",
+          "labelKey": "s-82",
+          "scale": 1
+        },
+        {
+          "id": "87",
+          "labelKey": "s-87",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "maju-10-dari-8",
+      "titleKey": "j-loncat-10-dari-8",
+      "steps": [
+        {
+          "id": "18",
+          "labelKey": "s-18",
+          "scale": 1
+        },
+        {
+          "id": "28",
+          "labelKey": "s-28",
+          "scale": 1
+        },
+        {
+          "id": "38",
+          "labelKey": "s-38",
+          "scale": 1
+        },
+        {
+          "id": "48",
+          "labelKey": "s-48",
+          "scale": 1
+        },
+        {
+          "id": "58",
+          "labelKey": "s-58",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "mundur-2-dari-71",
+      "titleKey": "j-mundur-2-dari-71",
+      "steps": [
+        {
+          "id": "69",
+          "labelKey": "s-69",
+          "scale": 1
+        },
+        {
+          "id": "67",
+          "labelKey": "s-67",
+          "scale": 1
+        },
+        {
+          "id": "65",
+          "labelKey": "s-65",
+          "scale": 1
+        },
+        {
+          "id": "63",
+          "labelKey": "s-63",
+          "scale": 1
+        },
+        {
+          "id": "61",
+          "labelKey": "s-61",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "mundur-5-dari-99",
+      "titleKey": "j-mundur-5-dari-99",
+      "steps": [
+        {
+          "id": "94",
+          "labelKey": "s-94",
+          "scale": 1
+        },
+        {
+          "id": "89",
+          "labelKey": "s-89",
+          "scale": 1
+        },
+        {
+          "id": "84",
+          "labelKey": "s-84",
+          "scale": 1
+        },
+        {
+          "id": "79",
+          "labelKey": "s-79",
+          "scale": 1
+        },
+        {
+          "id": "74",
+          "labelKey": "s-74",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "mundur-10-dari-100",
+      "titleKey": "j-mundur-10-dari-100",
+      "steps": [
+        {
+          "id": "90",
+          "labelKey": "s-90",
+          "scale": 1
+        },
+        {
+          "id": "80",
+          "labelKey": "s-80",
+          "scale": 1
+        },
+        {
+          "id": "70",
+          "labelKey": "s-70",
+          "scale": 1
+        },
+        {
+          "id": "60",
+          "labelKey": "s-60",
+          "scale": 1
+        },
+        {
+          "id": "50",
+          "labelKey": "s-50",
+          "scale": 1
+        }
+      ]
+    }
+  ]
+}

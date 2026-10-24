@@ -1,0 +1,190 @@
+{
+  "id": "sd5-mat-bulatkan-desimal-timbangan",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.DESIMAL.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Timbangan Pasar",
+      "instruksi": "Berat barang dibulatkan ke kilogram terdekat. Taruh tiap kartu di raknya.",
+      "b-n7": "7 kg",
+      "b-n8": "8 kg",
+      "b-n9": "9 kg",
+      "b-n10": "10 kg",
+      "i1": "7,5 kg",
+      "i2": "7,4 kg",
+      "i3": "6,6 kg",
+      "i4": "8,9 kg",
+      "i5": "8,5 kg",
+      "i6": "9,4 kg",
+      "i7": "9,5 kg",
+      "i8": "7,9 kg",
+      "i9": "8,1 kg",
+      "i10": "9,8 kg",
+      "i11": "6,5 kg",
+      "i12": "8,2 kg",
+      "i13": "7,1 kg",
+      "i14": "10,4 kg",
+      "i15": "9,6 kg"
+    },
+    "en": {
+      "judul": "Market Scales",
+      "instruksi": "Round each mass to the nearest kilogram. Put each card on its shelf.",
+      "b-n7": "7 kg",
+      "b-n8": "8 kg",
+      "b-n9": "9 kg",
+      "b-n10": "10 kg",
+      "i1": "7.5 kg",
+      "i2": "7.4 kg",
+      "i3": "6.6 kg",
+      "i4": "8.9 kg",
+      "i5": "8.5 kg",
+      "i6": "9.4 kg",
+      "i7": "9.5 kg",
+      "i8": "7.9 kg",
+      "i9": "8.1 kg",
+      "i10": "9.8 kg",
+      "i11": "6.5 kg",
+      "i12": "8.2 kg",
+      "i13": "7.1 kg",
+      "i14": "10.4 kg",
+      "i15": "9.6 kg"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "n7",
+      "labelKey": "b-n7"
+    },
+    {
+      "id": "n8",
+      "labelKey": "b-n8"
+    },
+    {
+      "id": "n9",
+      "labelKey": "b-n9"
+    },
+    {
+      "id": "n10",
+      "labelKey": "b-n10"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "n8",
+      "scale": 0.7
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "n7",
+      "scale": 0.7
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "n7",
+      "scale": 0.7
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "n9",
+      "scale": 0.7
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "n9",
+      "scale": 0.7
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "n9",
+      "scale": 0.7
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "n10",
+      "scale": 0.7
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "n8",
+      "scale": 0.7
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "n8",
+      "scale": 0.7
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "n10",
+      "scale": 0.7
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "n7",
+      "scale": 0.7
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "n8",
+      "scale": 0.7
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "n7",
+      "scale": 0.7
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "n10",
+      "scale": 0.7
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "n10",
+      "scale": 0.7
+    }
+  ]
+}

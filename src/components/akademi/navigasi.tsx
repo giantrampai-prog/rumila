@@ -437,7 +437,8 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     }
     const d = hasil.detail as { outcome?: NavRun["outcome"]; edits?: number; blocks?: number };
     if (ronde.debug && ronde.fixes !== undefined && d.edits !== undefined && d.edits !== ronde.fixes) setPesan(`Ubah tepat ${ronde.fixes} blok ya`);
-    else if (ronde.rackSlots !== undefined && (d.blocks ?? 0) > ronde.rackSlots) setPesan("Rak tidak muat");
+    else if (ronde.rackSlots !== undefined && !modeBendera && (d.blocks ?? 0) > ronde.rackSlots) setPesan("Rak tidak muat");
+    else if (ronde.prediksi && d.outcome === "bintang") setPesan("Agam sampai, tapi tebakanmu masih banyak meleset. Coba lagi!");
     else if (d.outcome) setPesan(pesanGagal(d.outcome));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasil]);

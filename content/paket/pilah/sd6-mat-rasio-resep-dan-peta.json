@@ -1,0 +1,512 @@
+{
+  "id": "sd6-mat-rasio-resep-dan-peta",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.RASIO.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rasio di Dapur dan Peta",
+      "instruksi": "Kalikan atau bagi kedua bagian rasio dengan bilangan yang sama. Sentuh jawabannya.",
+      "q1": "Resep: 2 gelas tepung untuk 12 kue. Untuk 30 kue perlu … gelas",
+      "c1": "5",
+      "c2": "20",
+      "c3": "6",
+      "c4": "4",
+      "q2": "3 pensil harganya Rp6.000. Harga 7 pensil …",
+      "c5": "Rp14.000",
+      "c6": "Rp10.000",
+      "c7": "Rp21.000",
+      "c8": "Rp42.000",
+      "q3": "Kelereng merah : biru = 2 : 3. Ada 10 kelereng merah. Kelereng biru ada …",
+      "c9": "15",
+      "c10": "11",
+      "c11": "30",
+      "q4": "Rasio 4 : 6 sama dengan …",
+      "c12": "2 : 3",
+      "c13": "3 : 2",
+      "c14": "1 : 2",
+      "c15": "4 : 9",
+      "q5": "Sirop : air = 1 : 4. Airnya 800 ml. Siropnya … ml",
+      "c16": "200",
+      "c17": "3.200",
+      "c18": "160",
+      "c19": "804",
+      "q6": "Mobil menempuh 60 km tiap jam. Dalam 3,5 jam menempuh …",
+      "c20": "210 km",
+      "c21": "180 km",
+      "c22": "63,5 km",
+      "c23": "240 km",
+      "q7": "Skala peta 1 cm : 5 km. Jarak 7 cm di peta sama dengan …",
+      "c24": "35 km",
+      "c25": "12 km",
+      "c26": "75 km",
+      "c27": "2 km",
+      "q8": "Laki-laki : perempuan = 3 : 5, jumlah siswa 32. Siswa perempuan ada …",
+      "c28": "12",
+      "c29": "27",
+      "q9": "Mana yang setara dengan 6 : 9?",
+      "c30": "10 : 15",
+      "c31": "9 : 6",
+      "c32": "8 : 11",
+      "c33": "12 : 15",
+      "q10": "5 kg beras harganya Rp70.000. Harga 2 kg …",
+      "c34": "Rp28.000",
+      "c35": "Rp35.000",
+      "c36": "Rp140.000",
+      "q11": "Cat biru : kuning = 3 : 2. Pakai 12 liter biru. Kuningnya … liter",
+      "c37": "8",
+      "c38": "18",
+      "q12": "Bentuk paling sederhana dari 15 : 25 adalah …",
+      "c39": "3 : 5",
+      "c40": "5 : 3",
+      "c41": "1 : 10",
+      "c42": "5 : 25",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Ratio in the Kitchen and on Maps",
+      "instruksi": "Multiply or divide both parts of the ratio by the same number. Touch the answer.",
+      "q1": "Recipe: 2 cups of flour for 12 cakes. For 30 cakes you need … cups",
+      "c1": "5",
+      "c2": "20",
+      "c3": "6",
+      "c4": "4",
+      "q2": "3 pencils cost Rp6,000. 7 pencils cost …",
+      "c5": "Rp14,000",
+      "c6": "Rp10,000",
+      "c7": "Rp21,000",
+      "c8": "Rp42,000",
+      "q3": "Red : blue marbles = 2 : 3. There are 10 red. How many blue?",
+      "c9": "15",
+      "c10": "11",
+      "c11": "30",
+      "q4": "The ratio 4 : 6 is the same as …",
+      "c12": "2 ÷ 3",
+      "c13": "3 ÷ 2",
+      "c14": "1 ÷ 2",
+      "c15": "4 ÷ 9",
+      "q5": "Syrup : water = 1 : 4. There is 800 ml of water. How much syrup (ml)?",
+      "c16": "200",
+      "c17": "3,200",
+      "c18": "160",
+      "c19": "804",
+      "q6": "A car travels 60 km each hour. In 3.5 hours it travels …",
+      "c20": "210 km",
+      "c21": "180 km",
+      "c22": "63.5 km",
+      "c23": "240 km",
+      "q7": "A map scale is 1 cm : 5 km. 7 cm on the map is …",
+      "c24": "35 km",
+      "c25": "12 km",
+      "c26": "75 km",
+      "c27": "2 km",
+      "q8": "Boys : girls = 3 : 5, with 32 pupils. How many girls?",
+      "c28": "12",
+      "c29": "27",
+      "q9": "Which is equivalent to 6 : 9?",
+      "c30": "10 ÷ 15",
+      "c31": "9 ÷ 6",
+      "c32": "8 ÷ 11",
+      "c33": "12 ÷ 15",
+      "q10": "5 kg of rice costs Rp70,000. 2 kg costs …",
+      "c34": "Rp28,000",
+      "c35": "Rp35,000",
+      "c36": "Rp140,000",
+      "q11": "Blue : yellow paint = 3 : 2. You use 12 litres of blue. How many litres of yellow?",
+      "c37": "8",
+      "c38": "18",
+      "q12": "The simplest form of 15 : 25 is …",
+      "c39": "3 ÷ 5",
+      "c40": "5 ÷ 3",
+      "c41": "1 ÷ 10",
+      "c42": "5 ÷ 25",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.55
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan",
+      "scale": 0.75
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan",
+      "scale": 0.75
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c3"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c12",
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c16",
+        "c17",
+        "c18",
+        "c19"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c20",
+        "c21",
+        "c22",
+        "c23"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c24",
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c2",
+        "c28",
+        "c1",
+        "c29"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c30",
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c30"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c35",
+        "c5",
+        "c36"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c37",
+        "c10",
+        "c38",
+        "c3"
+      ],
+      "correct": "c37"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c39",
+        "c40",
+        "c41",
+        "c42"
+      ],
+      "correct": "c39"
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "KODE.SD6.SUBRUTIN.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "SUBRUTIN",
+        "nama": {
+          "id": "Fungsi dan prosedur",
+          "en": "Functions and procedures"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung hasil program yang memanggil fungsi yang sama berkali-kali",
+        "en": "I can work out the result of a program that calls the same function several times"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.VARIABEL.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "6CT.05",
+          "note": "sub-rutin yang sama dipakai berkali-kali dalam algoritma"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Fungsi gerak (persegi, segitiga), fungsi yang mengembalikan nilai (tambah2(tambah2(3))), dan manfaat: satu bug di dalam fungsi diperbaiki di satu tempat. Pengecoh: isi fungsi dihitung sekali saja. Paket: sd6-kode-panggil-fungsi."
+    },
+    {
+      "id": "KODE.SD6.SUBRUTIN.02",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "SUBRUTIN",
+        "nama": {
+          "id": "Fungsi dan prosedur",
+          "en": "Functions and procedures"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih bagian program yang berulang untuk dijadikan prosedur, termasuk prosedur dengan parameter",
+        "en": "I can choose the repeating part of a program to turn into a procedure, including one with a parameter"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD6.SUBRUTIN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "6P.02",
+          "note": "sebagian: anak memilih bagian yang dijadikan prosedur, belum menyusunnya dalam blok"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pilihan berupa potongan program; pengecoh: potongan terlalu pendek, potongan yang melintasi batas satuan, atau bagian yang hanya muncul sekali. Dua soal parameter (siku(n), ucapkan(nama)). Mekanik navigasi belum punya blok prosedur; menyusun prosedur sendiri menunggu mekanik baru. Paket: sd6-kode-pilih-prosedur."
+    },
+    {
+      "id": "KODE.SD6.FLOWCHART.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "FLOWCHART",
+        "nama": {
+          "id": "Diagram alir",
+          "en": "Flowcharts"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasangkan tiap langkah algoritma dengan simbol diagram alirnya: mulai/selesai, masukan/keluaran, proses, keputusan",
+        "en": "I can match each algorithm step to its flowchart symbol: start/end, input/output, process, decision"
+      },
+      "depth": [
+        "kenal",
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.KONDISI.02"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Empat bin berikon ⬭ ▱ ▭ ◇. Jebakan: 'Tampilkan' dan 'Cetak' adalah keluaran (jajar genjang), bukan proses; pertanyaan berakhir '?' adalah keputusan. Stage 6 (tanpa kode): 'algorithms presented as flowcharts'. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: binCount 2 → 4. Paket: sd6-kode-simbol-diagram-alir."
+    },
+    {
+      "id": "KODE.SD6.FLOWCHART.02",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "FLOWCHART",
+        "nama": {
+          "id": "Diagram alir",
+          "en": "Flowcharts"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengikuti diagram alir yang punya keputusan dan putaran balik, lalu menyebut apa yang ditampilkan",
+        "en": "I can follow a flowchart with decisions and a loop back, then say what it shows"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD6.FLOWCHART.01",
+        "KODE.SD5.ULANGI-KONDISI.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Diagram ditulis sebagai rangkaian panah (Mulai → … ◇ … ya/tidak … kembali ke ◇). Jawaban berulang dihitung kode. Pengecoh: berhenti satu putaran terlalu cepat atau terlambat. Catatan PO: diagram digambar sebagai teks; presenter diagram alir bergambar belum ada. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-telusur-diagram-alir."
+    },
+    {
+      "id": "KODE.SD6.KONDISI-GABUNG.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "KONDISI-GABUNG",
+        "nama": {
+          "id": "Syarat gabungan",
+          "en": "Combined conditions"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai syarat gabungan dengan dan, atau, bukan untuk memilih data yang memenuhinya",
+        "en": "I can use combined conditions with and, or, not to pick the data that meets them"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.KONDISI.03"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Tiap soal: satu aturan + 2–3 kandidat, tepat satu memenuhi. Pengecoh dibuat memenuhi satu bagian 'dan' saja, atau tidak memenuhi kedua bagian 'atau'. Satu soal bertanda kurung ((A atau B) dan C). Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-dan-atau."
+    },
+    {
+      "id": "KODE.SD6.DEBUG.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "DEBUG",
+        "nama": {
+          "id": "Mencari dan memperbaiki bug",
+          "en": "Debugging"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memperbaiki tepat dua kesalahan berbeda jenis di program tiga bagian supaya lolos di tiga jalur",
+        "en": "I can fix exactly two mistakes of different kinds in a three-part program so it passes three paths"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.DEBUG.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "navigasi"
+      ],
+      "catatan": "Jalur tiga segmen (U atau Z) berisi batu; program ulangi[kalau], belok, ulangi[kalau], belok, ulangi[kalau] dengan dua mutasi (lupa kalau, salah hitung, belok terbalik, lompat terus). Diverifikasi: tak ada perbaikan satu blok yang cukup. Bukti: edits == 2, ketiga jalur lolos. Jebakan: memperbaiki gejala di segmen akhir padahal penyebabnya di segmen awal. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-dua-bug-kalau."
+    },
+    {
+      "id": "KODE.SD6.AI.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "AI",
+        "nama": {
+          "id": "Dasar kecerdasan buatan",
+          "en": "AI basics"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membedakan tugas yang dikerjakan program yang belajar dari banyak contoh dengan tugas yang memakai aturan tetap",
+        "en": "I can tell tasks done by programs that learn from many examples apart from tasks that follow fixed rules"
+      },
+      "depth": [
+        "kenal",
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.KONDISI.03"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Belajar dari contoh: mengenali wajah, saran video, ucapan → tulisan, terjemahan, tulisan tangan, jenis bunga, email sampah. Aturan tetap: kalkulator, lampu lalu lintas berwaktu, alarm, total belanja, urut A–Z, mesin cuci berwaktu, aturan panjang kata sandi. Contoh ambigu (penyaring email sampah: bisa aturan, bisa belajar) sengaja dikeluarkan. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-belajar-dari-contoh."
+    },
+    {
+      "id": "KODE.SD6.AI.02",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "AI",
+        "nama": {
+          "id": "Dasar kecerdasan buatan",
+          "en": "AI basics"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih penjelasan tepat tentang pengaruh data latih pada tebakan AI, termasuk data kurang beragam atau salah label",
+        "en": "I can choose the right explanation of how training data affects an AI's guesses, including data lacking variety or wrong labels"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD6.AI.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "12 skenario: data kurang beragam (kucing oranye saja, suara dewasa saja), salah label, data tak seimbang (90 mangga : 10 pepaya), uji dengan contoh baru, tebakan dari pola (payung saat hujan). Bukti: memilih penjelasan yang tepat dari tiga; menjelaskan dengan kata sendiri belum bisa dibuktikan mekanik yang ada. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-data-latih. Pengaya."
+    },
+    {
+      "id": "KODE.SD6.SANDI.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "SANDI",
+        "nama": {
+          "id": "Kata sandi",
+          "en": "Passwords"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah kata sandi kuat dan lemah berdasarkan panjang, kemudahan ditebak, dan campuran karakternya",
+        "en": "I can sort strong and weak passwords by length, how easy they are to guess and their mix of characters"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.AMAN.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Lemah: 123456, password, nama + tahun, qwerty, huruf berulang, tanggal lahir, satu kata. Kuat: frasa panjang empat kata atau campuran huruf besar-kecil, angka, simbol. Contoh kuat dikarang, bukan untuk dipakai. Jebakan: 'budi2014' terlihat campur, tetapi nama + tahun mudah ditebak. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-kata-sandi."
+    },
+    {
+      "id": "KODE.SD6.ROBOT.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "ROBOT",
+        "nama": {
+          "id": "Robot di industri",
+          "en": "Robots in industry"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih manfaat robot di industri, seperti kerja berulang yang tepat, aman di tempat berbahaya, dan bersih",
+        "en": "I can pick out benefits of robots in industry, such as precise repeated work, safety in dangerous places and cleanliness"
+      },
+      "depth": [
+        "kenal",
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.PERANGKAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_COMPUTING",
+          "code": "6CS.08",
+          "note": "manfaat robot di industri, mis. pabrik mobil dan makanan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "12 soal pilihan: mengelas, mengecat, kebersihan makanan, tempat panas, gudang, kerja malam, presisi, peran manusia (memprogram dan merawat), kamera sebagai sensor. Pengecoh: klaim berlebihan ('robot lebih pintar dari semua manusia'). Paket: sd6-kode-robot-industri. Pengaya."
+    },
+    {
+      "id": "KODE.SD6.API.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "API",
+        "nama": {
+          "id": "Meminta data lewat API",
+          "en": "Using an API"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan langkah aplikasi yang meminta data ke server lewat API sampai hasilnya tampil",
+        "en": "I can order the steps of an app asking a server for data through an API until the result appears"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.INTERNET.01"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Lima aplikasi (cuaca, terjemahan, peta, papan skor, fakta acak) dengan pola sama: permintaan → server memproses → jawaban → tampil. Pola yang berulang memang inti konsepnya. Jebakan: aplikasi menampilkan data sebelum jawaban server tiba. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: steps 4 → 5. Paket: sd6-kode-minta-jawab-api. Pengaya."
+    },
+    {
+      "id": "KODE.SD6.GIT.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "GIT",
+        "nama": {
+          "id": "Kolaborasi kode",
+          "en": "Code collaboration"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menemukan dua langkah yang tertukar dalam alur kerja tim kode: ambil, cabang, ubah, uji, commit, kirim",
+        "en": "I can find two swapped steps in a team code workflow: pull, branch, change, test, commit, push"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD4.DEBUG.02"
+      ],
+      "refs": [],
+      "core": false,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Mode perbaiki (satu pasang tertukar, tukar tepat sekali). Lima alur: fitur baru, perbaiki bug, memeriksa kerja teman, bentrok, memulai proyek. Istilah git tampil dalam kurung. Jebakan: 'uji' dan 'commit' tertukar terasa wajar; aturan tim di sini: uji dulu baru commit. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Knob: steps 5 → 6. Paket: sd6-kode-kerja-tim-kode. Pengaya."
+    },
+    {
+      "id": "KODE.SD6.CARI-BAGI-DUA.01",
+      "track": "KODE",
+      "level": "SD6",
+      "unit": {
+        "id": "CARI-BAGI-DUA",
+        "nama": {
+          "id": "Pencarian bagi dua",
+          "en": "Binary search"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjuk kartu yang dicek pencarian bagi dua pada daftar urut dan tahu mengapa daftarnya harus urut",
+        "en": "I can point to the cards a binary search checks in a sorted list and know why the list must be sorted"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "KODE.SD5.URUT.01",
+        "KODE.SD4.CARI.01"
+      ],
+      "refs": [],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Aturan tengah dikunci di instruksi (genap → tengah kiri) supaya jawaban tunggal; jawaban dihitung kode. Soal: kartu pertama/kedua yang dicek, jumlah kartu dicek, tebak angka 1–100 (7 tebakan), alasan harus urut, bandingkan dengan pencarian satu per satu (SD4). Jebakan: langsung menunjuk target. Kamus belum punya kode Stage 6 terverifikasi untuk butir ini; refs kosong (lihat content/kerangka/cambridge-primary-computing-kode-sd4-6.json). Paket: sd6-kode-cari-bagi-dua."
+    }
+  ]
+}

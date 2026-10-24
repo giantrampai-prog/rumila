@@ -1,0 +1,456 @@
+{
+  "id": "sd1-mat-urutan-bulan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.WAKTU.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kalender Dua Belas Bulan",
+      "instruksi": "Lihat bulan pertamanya. Susun bulan-bulan berikutnya. Sesudah Desember, tahun baru dimulai lagi.",
+      "s-januari": "Januari",
+      "s-februari": "Februari",
+      "s-maret": "Maret",
+      "s-april": "April",
+      "s-mei": "Mei",
+      "j-mulai-bulan-januari": "Mulai bulan Januari",
+      "s-juni": "Juni",
+      "j-mulai-bulan-februari": "Mulai bulan Februari",
+      "s-juli": "Juli",
+      "j-mulai-bulan-maret": "Mulai bulan Maret",
+      "s-agustus": "Agustus",
+      "j-mulai-bulan-april": "Mulai bulan April",
+      "s-september": "September",
+      "j-mulai-bulan-mei": "Mulai bulan Mei",
+      "s-oktober": "Oktober",
+      "j-mulai-bulan-juni": "Mulai bulan Juni",
+      "s-november": "November",
+      "j-mulai-bulan-juli": "Mulai bulan Juli",
+      "s-desember": "Desember",
+      "j-mulai-bulan-agustus": "Mulai bulan Agustus",
+      "j-mulai-bulan-september": "Mulai bulan September",
+      "j-mulai-bulan-oktober": "Mulai bulan Oktober",
+      "j-mulai-bulan-november": "Mulai bulan November",
+      "j-mulai-bulan-desember": "Mulai bulan Desember"
+    },
+    "en": {
+      "judul": "Twelve-Month Calendar",
+      "instruksi": "Look at the first month. Put the next months in order. After December, a new year begins.",
+      "s-januari": "January",
+      "s-februari": "February",
+      "s-maret": "March",
+      "s-april": "April",
+      "s-mei": "May",
+      "j-mulai-bulan-januari": "Start in January",
+      "s-juni": "June",
+      "j-mulai-bulan-februari": "Start in February",
+      "s-juli": "July",
+      "j-mulai-bulan-maret": "Start in March",
+      "s-agustus": "August",
+      "j-mulai-bulan-april": "Start in April",
+      "s-september": "September",
+      "j-mulai-bulan-mei": "Start in May",
+      "s-oktober": "October",
+      "j-mulai-bulan-juni": "Start in June",
+      "s-november": "November",
+      "j-mulai-bulan-juli": "Start in July",
+      "s-desember": "December",
+      "j-mulai-bulan-agustus": "Start in August",
+      "j-mulai-bulan-september": "Start in September",
+      "j-mulai-bulan-oktober": "Start in October",
+      "j-mulai-bulan-november": "Start in November",
+      "j-mulai-bulan-desember": "Start in December"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah bulan: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "mulai-januari",
+      "titleKey": "j-mulai-bulan-januari",
+      "steps": [
+        {
+          "id": "januari",
+          "labelKey": "s-januari",
+          "scale": 0.42
+        },
+        {
+          "id": "februari",
+          "labelKey": "s-februari",
+          "scale": 0.42
+        },
+        {
+          "id": "maret",
+          "labelKey": "s-maret",
+          "scale": 0.6
+        },
+        {
+          "id": "april",
+          "labelKey": "s-april",
+          "scale": 0.6
+        },
+        {
+          "id": "mei",
+          "labelKey": "s-mei",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "mulai-februari",
+      "titleKey": "j-mulai-bulan-februari",
+      "steps": [
+        {
+          "id": "februari",
+          "labelKey": "s-februari",
+          "scale": 0.42
+        },
+        {
+          "id": "maret",
+          "labelKey": "s-maret",
+          "scale": 0.6
+        },
+        {
+          "id": "april",
+          "labelKey": "s-april",
+          "scale": 0.6
+        },
+        {
+          "id": "mei",
+          "labelKey": "s-mei",
+          "scale": 0.85
+        },
+        {
+          "id": "juni",
+          "labelKey": "s-juni",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "mulai-maret",
+      "titleKey": "j-mulai-bulan-maret",
+      "steps": [
+        {
+          "id": "maret",
+          "labelKey": "s-maret",
+          "scale": 0.6
+        },
+        {
+          "id": "april",
+          "labelKey": "s-april",
+          "scale": 0.6
+        },
+        {
+          "id": "mei",
+          "labelKey": "s-mei",
+          "scale": 0.85
+        },
+        {
+          "id": "juni",
+          "labelKey": "s-juni",
+          "scale": 0.7
+        },
+        {
+          "id": "juli",
+          "labelKey": "s-juli",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "mulai-april",
+      "titleKey": "j-mulai-bulan-april",
+      "steps": [
+        {
+          "id": "april",
+          "labelKey": "s-april",
+          "scale": 0.6
+        },
+        {
+          "id": "mei",
+          "labelKey": "s-mei",
+          "scale": 0.85
+        },
+        {
+          "id": "juni",
+          "labelKey": "s-juni",
+          "scale": 0.7
+        },
+        {
+          "id": "juli",
+          "labelKey": "s-juli",
+          "scale": 0.7
+        },
+        {
+          "id": "agustus",
+          "labelKey": "s-agustus",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-mei",
+      "titleKey": "j-mulai-bulan-mei",
+      "steps": [
+        {
+          "id": "mei",
+          "labelKey": "s-mei",
+          "scale": 0.85
+        },
+        {
+          "id": "juni",
+          "labelKey": "s-juni",
+          "scale": 0.7
+        },
+        {
+          "id": "juli",
+          "labelKey": "s-juli",
+          "scale": 0.7
+        },
+        {
+          "id": "agustus",
+          "labelKey": "s-agustus",
+          "scale": 0.42
+        },
+        {
+          "id": "september",
+          "labelKey": "s-september",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-juni",
+      "titleKey": "j-mulai-bulan-juni",
+      "steps": [
+        {
+          "id": "juni",
+          "labelKey": "s-juni",
+          "scale": 0.7
+        },
+        {
+          "id": "juli",
+          "labelKey": "s-juli",
+          "scale": 0.7
+        },
+        {
+          "id": "agustus",
+          "labelKey": "s-agustus",
+          "scale": 0.42
+        },
+        {
+          "id": "september",
+          "labelKey": "s-september",
+          "scale": 0.42
+        },
+        {
+          "id": "oktober",
+          "labelKey": "s-oktober",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-juli",
+      "titleKey": "j-mulai-bulan-juli",
+      "steps": [
+        {
+          "id": "juli",
+          "labelKey": "s-juli",
+          "scale": 0.7
+        },
+        {
+          "id": "agustus",
+          "labelKey": "s-agustus",
+          "scale": 0.42
+        },
+        {
+          "id": "september",
+          "labelKey": "s-september",
+          "scale": 0.42
+        },
+        {
+          "id": "oktober",
+          "labelKey": "s-oktober",
+          "scale": 0.42
+        },
+        {
+          "id": "november",
+          "labelKey": "s-november",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-agustus",
+      "titleKey": "j-mulai-bulan-agustus",
+      "steps": [
+        {
+          "id": "agustus",
+          "labelKey": "s-agustus",
+          "scale": 0.42
+        },
+        {
+          "id": "september",
+          "labelKey": "s-september",
+          "scale": 0.42
+        },
+        {
+          "id": "oktober",
+          "labelKey": "s-oktober",
+          "scale": 0.42
+        },
+        {
+          "id": "november",
+          "labelKey": "s-november",
+          "scale": 0.42
+        },
+        {
+          "id": "desember",
+          "labelKey": "s-desember",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-september",
+      "titleKey": "j-mulai-bulan-september",
+      "steps": [
+        {
+          "id": "september",
+          "labelKey": "s-september",
+          "scale": 0.42
+        },
+        {
+          "id": "oktober",
+          "labelKey": "s-oktober",
+          "scale": 0.42
+        },
+        {
+          "id": "november",
+          "labelKey": "s-november",
+          "scale": 0.42
+        },
+        {
+          "id": "desember",
+          "labelKey": "s-desember",
+          "scale": 0.42
+        },
+        {
+          "id": "januari",
+          "labelKey": "s-januari",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-oktober",
+      "titleKey": "j-mulai-bulan-oktober",
+      "steps": [
+        {
+          "id": "oktober",
+          "labelKey": "s-oktober",
+          "scale": 0.42
+        },
+        {
+          "id": "november",
+          "labelKey": "s-november",
+          "scale": 0.42
+        },
+        {
+          "id": "desember",
+          "labelKey": "s-desember",
+          "scale": 0.42
+        },
+        {
+          "id": "januari",
+          "labelKey": "s-januari",
+          "scale": 0.42
+        },
+        {
+          "id": "februari",
+          "labelKey": "s-februari",
+          "scale": 0.42
+        }
+      ]
+    },
+    {
+      "id": "mulai-november",
+      "titleKey": "j-mulai-bulan-november",
+      "steps": [
+        {
+          "id": "november",
+          "labelKey": "s-november",
+          "scale": 0.42
+        },
+        {
+          "id": "desember",
+          "labelKey": "s-desember",
+          "scale": 0.42
+        },
+        {
+          "id": "januari",
+          "labelKey": "s-januari",
+          "scale": 0.42
+        },
+        {
+          "id": "februari",
+          "labelKey": "s-februari",
+          "scale": 0.42
+        },
+        {
+          "id": "maret",
+          "labelKey": "s-maret",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "mulai-desember",
+      "titleKey": "j-mulai-bulan-desember",
+      "steps": [
+        {
+          "id": "desember",
+          "labelKey": "s-desember",
+          "scale": 0.42
+        },
+        {
+          "id": "januari",
+          "labelKey": "s-januari",
+          "scale": 0.42
+        },
+        {
+          "id": "februari",
+          "labelKey": "s-februari",
+          "scale": 0.42
+        },
+        {
+          "id": "maret",
+          "labelKey": "s-maret",
+          "scale": 0.6
+        },
+        {
+          "id": "april",
+          "labelKey": "s-april",
+          "scale": 0.6
+        }
+      ]
+    }
+  ]
+}

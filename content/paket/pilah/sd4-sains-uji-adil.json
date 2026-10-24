@@ -1,0 +1,270 @@
+{
+  "id": "sd4-sains-uji-adil",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uji yang Adil",
+      "instruksi": "Baca pertanyaan penyelidikannya, lalu sentuh jawaban yang membuat ujinya adil.",
+      "b-pilihan": "pilihan",
+      "i-jenistanah": "jenis tanah",
+      "i-banyakair": "banyak air siraman",
+      "i-jenisbiji": "jenis biji",
+      "i-tinggitanaman": "tinggi tanaman",
+      "i-jenislantai": "jenis lantai",
+      "i-tinggijatuh": "tinggi bola dijatuhkan",
+      "i-tinggipantul": "tinggi pantulan bola",
+      "i-jenisbola": "jenis bola",
+      "i-tempat": "tempat es diletakkan",
+      "i-ukuranes": "ukuran es batu",
+      "i-waktucair": "waktu sampai es habis mencair",
+      "i-ukurankain": "ukuran dan jenis kain",
+      "i-tempatjemur": "tempat menjemur",
+      "i-waktukering": "waktu sampai kain kering",
+      "i-duahal": "dua hal diubah sekaligus",
+      "i-warnamobil": "warna mobilnya berbeda",
+      "i-lantaimiring": "lantainya miring",
+      "p-r1": "Apakah jenis tanah memengaruhi tinggi tanaman kacang? Apa yang sengaja diubah?",
+      "p-r2": "Uji jenis tanah tadi: apa yang harus dibuat sama untuk semua pot?",
+      "p-r3": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Apa yang sengaja diubah?",
+      "p-r4": "Uji pantulan bola tadi: apa yang harus dibuat sama?",
+      "p-r5": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang sengaja diubah?",
+      "p-r6": "Uji es tadi: apa yang harus dibuat sama?",
+      "p-r7": "Apakah kain lebih cepat kering di bawah matahari atau di dalam rumah? Apa yang harus dibuat sama?",
+      "p-r8": "Dua mobil-mobilan berbeda diuji, mana yang meluncur lebih jauh dari papan miring, tetapi satu dilepas dari tempat lebih tinggi. Mengapa tidak adil?"
+    },
+    "en": {
+      "judul": "A Fair Test",
+      "instruksi": "Read the investigation question, then touch the answer that keeps the test fair.",
+      "b-pilihan": "choices",
+      "i-jenistanah": "type of soil",
+      "i-banyakair": "amount of water given",
+      "i-jenisbiji": "type of seed",
+      "i-tinggitanaman": "height of the plant",
+      "i-jenislantai": "type of floor",
+      "i-tinggijatuh": "height the ball is dropped from",
+      "i-tinggipantul": "height of the bounce",
+      "i-jenisbola": "type of ball",
+      "i-tempat": "where the ice is put",
+      "i-ukuranes": "size of the ice cube",
+      "i-waktucair": "time until the ice has melted",
+      "i-ukurankain": "size and type of cloth",
+      "i-tempatjemur": "where it is hung to dry",
+      "i-waktukering": "time until the cloth is dry",
+      "i-duahal": "two things were changed at once",
+      "i-warnamobil": "the cars are different colours",
+      "i-lantaimiring": "the slope is tilted",
+      "p-r1": "Does the type of soil affect how tall a bean plant grows? What do we change on purpose?",
+      "p-r2": "In the soil test: what must be kept the same for every pot?",
+      "p-r3": "Does a ball bounce higher on tiles or on carpet? What do we change on purpose?",
+      "p-r4": "In the bounce test: what must be kept the same?",
+      "p-r5": "Does ice melt faster in a sunny place or in the shade? What do we change on purpose?",
+      "p-r6": "In the ice test: what must be kept the same?",
+      "p-r7": "Does cloth dry faster in the sun or indoors? What must be kept the same?",
+      "p-r8": "Two different toy cars are tested to see which rolls farther down a ramp, but one is let go from higher up. Why is it unfair?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "jenistanah",
+      "labelKey": "i-jenistanah",
+      "bin": "pilihan",
+      "emoji": "🟫"
+    },
+    {
+      "id": "banyakair",
+      "labelKey": "i-banyakair",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "jenisbiji",
+      "labelKey": "i-jenisbiji",
+      "bin": "pilihan",
+      "emoji": "🫘"
+    },
+    {
+      "id": "tinggitanaman",
+      "labelKey": "i-tinggitanaman",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "jenislantai",
+      "labelKey": "i-jenislantai",
+      "bin": "pilihan",
+      "emoji": "🟦"
+    },
+    {
+      "id": "tinggijatuh",
+      "labelKey": "i-tinggijatuh",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "tinggipantul",
+      "labelKey": "i-tinggipantul",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "jenisbola",
+      "labelKey": "i-jenisbola",
+      "bin": "pilihan",
+      "emoji": "⚽"
+    },
+    {
+      "id": "tempat",
+      "labelKey": "i-tempat",
+      "bin": "pilihan",
+      "emoji": "📍"
+    },
+    {
+      "id": "ukuranes",
+      "labelKey": "i-ukuranes",
+      "bin": "pilihan",
+      "emoji": "🧊"
+    },
+    {
+      "id": "waktucair",
+      "labelKey": "i-waktucair",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "ukurankain",
+      "labelKey": "i-ukurankain",
+      "bin": "pilihan",
+      "emoji": "🧺"
+    },
+    {
+      "id": "tempatjemur",
+      "labelKey": "i-tempatjemur",
+      "bin": "pilihan",
+      "emoji": "🌬️"
+    },
+    {
+      "id": "waktukering",
+      "labelKey": "i-waktukering",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "duahal",
+      "labelKey": "i-duahal",
+      "bin": "pilihan",
+      "emoji": "⚠️"
+    },
+    {
+      "id": "warnamobil",
+      "labelKey": "i-warnamobil",
+      "bin": "pilihan",
+      "emoji": "🎨"
+    },
+    {
+      "id": "lantaimiring",
+      "labelKey": "i-lantaimiring",
+      "bin": "pilihan",
+      "emoji": "📐"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "jenistanah",
+        "banyakair",
+        "tinggitanaman"
+      ],
+      "correct": "jenistanah"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "banyakair",
+        "jenistanah",
+        "tinggitanaman"
+      ],
+      "correct": "banyakair"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "jenislantai",
+        "tinggijatuh",
+        "tinggipantul"
+      ],
+      "correct": "jenislantai"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "tinggijatuh",
+        "jenislantai",
+        "tinggipantul"
+      ],
+      "correct": "tinggijatuh"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "tempat",
+        "ukuranes",
+        "waktucair"
+      ],
+      "correct": "tempat"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "ukuranes",
+        "tempat",
+        "waktucair"
+      ],
+      "correct": "ukuranes"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "ukurankain",
+        "tempatjemur",
+        "waktukering"
+      ],
+      "correct": "ukurankain"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "duahal",
+        "warnamobil",
+        "lantaimiring"
+      ],
+      "correct": "duahal"
+    }
+  ]
+}

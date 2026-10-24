@@ -1,0 +1,161 @@
+{
+  "id": "sd4-mat-pecahan-senilai-pizza",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pizza Senilai",
+      "instruksi": "Potongan berbeda, banyaknya sama. Taruh tiap pecahan di rak yang nilainya sama.",
+      "b-duapertiga": "2/3",
+      "b-seperempat": "1/4",
+      "b-duaperlima": "2/5",
+      "b-tigaperlima": "3/5",
+      "i1": "4/6",
+      "i2": "6/9",
+      "i3": "8/12",
+      "i4": "2/8",
+      "i5": "3/12",
+      "i6": "4/16",
+      "i7": "5/20",
+      "i8": "4/10",
+      "i9": "6/15",
+      "i10": "8/20",
+      "i11": "6/10",
+      "i12": "9/15",
+      "i13": "12/20"
+    },
+    "en": {
+      "judul": "Equal Pizza Slices",
+      "instruksi": "Different slices, same amount. Put each fraction on the shelf with the same value.",
+      "b-duapertiga": "2/3",
+      "b-seperempat": "1/4",
+      "b-duaperlima": "2/5",
+      "b-tigaperlima": "3/5",
+      "i1": "4/6",
+      "i2": "6/9",
+      "i3": "8/12",
+      "i4": "2/8",
+      "i5": "3/12",
+      "i6": "4/16",
+      "i7": "5/20",
+      "i8": "4/10",
+      "i9": "6/15",
+      "i10": "8/20",
+      "i11": "6/10",
+      "i12": "9/15",
+      "i13": "12/20"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "duapertiga",
+      "labelKey": "b-duapertiga"
+    },
+    {
+      "id": "seperempat",
+      "labelKey": "b-seperempat"
+    },
+    {
+      "id": "duaperlima",
+      "labelKey": "b-duaperlima"
+    },
+    {
+      "id": "tigaperlima",
+      "labelKey": "b-tigaperlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "seperempat"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "seperempat"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "seperempat"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "seperempat"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "duaperlima"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "duaperlima"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "duaperlima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "tigaperlima"
+    }
+  ]
+}

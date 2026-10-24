@@ -1,0 +1,152 @@
+{
+  "id": "sd2-sains-bahan-baru-atau-bisa-kembali",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.BAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bahan Baru atau Bisa Kembali?",
+      "instruksi": "Setelah berubah, bisakah dikembalikan? Taruh ke raknya.",
+      "b-baru": "jadi bahan baru",
+      "b-kembali": "bisa dikembalikan",
+      "i-telur": "telur digoreng",
+      "i-kayu": "kayu dibakar jadi abu",
+      "i-roti": "adonan dipanggang jadi roti",
+      "i-paku": "paku berkarat",
+      "i-yoghurt": "susu jadi yoghurt",
+      "i-tempe": "kedelai jadi tempe",
+      "i-es": "es batu mencair",
+      "i-cokelat": "cokelat meleleh",
+      "i-air": "air dibekukan jadi es",
+      "i-lilin": "lilin dipanaskan jadi lembek",
+      "i-mentega": "mentega melunak di luar kulkas",
+      "i-kertas": "kertas dilipat"
+    },
+    "en": {
+      "judul": "New Material or Can Go Back?",
+      "instruksi": "After the change, can it go back? Put it on its shelf.",
+      "b-baru": "makes a new material",
+      "b-kembali": "can be undone",
+      "i-telur": "egg being fried",
+      "i-kayu": "wood burnt to ash",
+      "i-roti": "dough baked into bread",
+      "i-paku": "nail going rusty",
+      "i-yoghurt": "milk turning into yoghurt",
+      "i-tempe": "soybeans turning into tempeh",
+      "i-es": "ice cube melting",
+      "i-cokelat": "chocolate melting",
+      "i-air": "water frozen into ice",
+      "i-lilin": "candle wax warmed until soft",
+      "i-mentega": "butter softening out of the fridge",
+      "i-kertas": "paper folded"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "baru",
+      "labelKey": "b-baru",
+      "emoji": "🍳",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "kembali",
+      "labelKey": "b-kembali",
+      "emoji": "🔁",
+      "color": "#e1f5fe"
+    }
+  ],
+  "items": [
+    {
+      "id": "telur",
+      "labelKey": "i-telur",
+      "bin": "baru",
+      "emoji": "🍳"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "baru",
+      "emoji": "🔥"
+    },
+    {
+      "id": "roti",
+      "labelKey": "i-roti",
+      "bin": "baru",
+      "emoji": "🍞"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "baru",
+      "emoji": "🔩",
+      "color": "#a1522d"
+    },
+    {
+      "id": "yoghurt",
+      "labelKey": "i-yoghurt",
+      "bin": "baru",
+      "emoji": "🍶"
+    },
+    {
+      "id": "tempe",
+      "labelKey": "i-tempe",
+      "bin": "baru",
+      "emoji": "🫘"
+    },
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "kembali",
+      "emoji": "🧊"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "i-cokelat",
+      "bin": "kembali",
+      "emoji": "🍫"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "kembali",
+      "emoji": "❄️"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "kembali",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "mentega",
+      "labelKey": "i-mentega",
+      "bin": "kembali",
+      "emoji": "🧈"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "kembali",
+      "emoji": "📄"
+    }
+  ],
+  "pilihan": []
+}

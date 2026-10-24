@@ -1,0 +1,165 @@
+{
+  "id": "sd4-kode-boleh-atau-rahasia",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.AMAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Boleh Dibagikan atau Rahasia?",
+      "instruksi": "Di internet, kepada orang yang tidak kamu kenal: seret tiap informasi ke 'boleh dibagikan' atau 'rahasia'.",
+      "bin-boleh": "boleh dibagikan",
+      "bin-rahasia": "rahasia",
+      "i1": "warna favoritmu",
+      "i2": "nama panggilan di game",
+      "i3": "makanan kesukaanmu",
+      "i4": "judul buku favoritmu",
+      "i5": "gambar buatanmu tanpa wajah",
+      "i6": "hewan yang kamu suka",
+      "i7": "pendapatmu tentang sebuah lagu",
+      "i8": "kata sandi akunmu",
+      "i9": "alamat rumahmu",
+      "i10": "nomor HP orang tuamu",
+      "i11": "kode OTP atau PIN",
+      "i12": "lokasimu saat ini",
+      "i13": "foto berseragam dengan nama sekolah",
+      "i14": "tanggal lahir lengkapmu"
+    },
+    "en": {
+      "judul": "OK to Share or Private?",
+      "instruksi": "Online, with people you don't know: drag each piece of information to 'OK to share' or 'private'.",
+      "bin-boleh": "OK to share",
+      "bin-rahasia": "private",
+      "i1": "your favourite colour",
+      "i2": "your game nickname",
+      "i3": "your favourite food",
+      "i4": "your favourite book title",
+      "i5": "a drawing you made, with no face",
+      "i6": "an animal you like",
+      "i7": "what you think of a song",
+      "i8": "your account password",
+      "i9": "your home address",
+      "i10": "your parent's phone number",
+      "i11": "an OTP code or PIN",
+      "i12": "where you are right now",
+      "i13": "a photo in uniform showing your school name",
+      "i14": "your full date of birth"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah informasi per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "boleh",
+      "labelKey": "bin-boleh",
+      "emoji": "✅"
+    },
+    {
+      "id": "rahasia",
+      "labelKey": "bin-rahasia",
+      "emoji": "🔒"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "boleh",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "rahasia",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "rahasia",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "rahasia",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "rahasia",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "rahasia",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "rahasia",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "rahasia",
+      "scale": 0.5
+    }
+  ]
+}

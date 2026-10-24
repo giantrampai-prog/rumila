@@ -1,0 +1,179 @@
+{
+  "id": "sd5-kode-jenis-data",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.TIPE-DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Angka, Teks, atau Benar/Salah?",
+      "instruksi": "Lihat tanda kutipnya: seret tiap nilai ke jenis datanya, angka, teks, atau benar/salah.",
+      "bin-angka": "angka",
+      "bin-teks": "teks",
+      "bin-bool": "benar/salah",
+      "i1": "12",
+      "i2": "3.5",
+      "i3": "0",
+      "i4": "2026",
+      "i5": "-4",
+      "i6": "'Bandung'",
+      "i7": "'12'",
+      "i8": "'halo'",
+      "i9": "'A'",
+      "i10": "'True'",
+      "i11": "True",
+      "i12": "False",
+      "i13": "5 > 3",
+      "i14": "2 == 7"
+    },
+    "en": {
+      "judul": "Number, Text or True/False?",
+      "instruksi": "Look for quote marks: drag each value to its data type, number, text or true/false.",
+      "bin-angka": "number",
+      "bin-teks": "text",
+      "bin-bool": "true/false",
+      "i1": "12",
+      "i2": "3.5",
+      "i3": "0",
+      "i4": "2026",
+      "i5": "-4",
+      "i6": "'Bandung'",
+      "i7": "'12'",
+      "i8": "'hello'",
+      "i9": "'A'",
+      "i10": "'True'",
+      "i11": "True",
+      "i12": "False",
+      "i13": "5 > 3",
+      "i14": "2 == 7"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "2 = angka vs teks; 3 = tambah benar/salah"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah nilai per ronde; jebakan '12' dan 'True' bertanda kutip"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "angka",
+      "labelKey": "bin-angka",
+      "emoji": "🔢"
+    },
+    {
+      "id": "teks",
+      "labelKey": "bin-teks",
+      "emoji": "🔤"
+    },
+    {
+      "id": "bool",
+      "labelKey": "bin-bool",
+      "emoji": "⚖️"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "angka",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "angka",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "angka",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "angka",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "angka",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "teks",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "teks",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "teks",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "teks",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "teks",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "bool",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "bool",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "bool",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "bool",
+      "scale": 0.5
+    }
+  ]
+}

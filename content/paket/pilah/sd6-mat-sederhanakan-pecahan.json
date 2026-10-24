@@ -1,0 +1,154 @@
+{
+  "id": "sd6-mat-sederhanakan-pecahan",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Bentuk Paling Sederhana",
+      "instruksi": "Sederhanakan tiap pecahan dengan membagi pembilang dan penyebut dengan FPB-nya, lalu taruh di raknya.",
+      "b-setengah": "1/2",
+      "b-duapertiga": "2/3",
+      "b-tigaperempat": "3/4",
+      "b-tigaperlima": "3/5",
+      "i1": "6/12",
+      "i2": "9/18",
+      "i3": "15/30",
+      "i4": "4/6",
+      "i5": "10/15",
+      "i6": "14/21",
+      "i7": "9/12",
+      "i8": "15/20",
+      "i9": "18/24",
+      "i10": "6/10",
+      "i11": "9/15",
+      "i12": "12/20"
+    },
+    "en": {
+      "judul": "Simplest Form Shelves",
+      "instruksi": "Simplify each fraction by dividing top and bottom by their HCF, then shelve it.",
+      "b-setengah": "1/2",
+      "b-duapertiga": "2/3",
+      "b-tigaperempat": "3/4",
+      "b-tigaperlima": "3/5",
+      "i1": "6/12",
+      "i2": "9/18",
+      "i3": "15/30",
+      "i4": "4/6",
+      "i5": "10/15",
+      "i6": "14/21",
+      "i7": "9/12",
+      "i8": "15/20",
+      "i9": "18/24",
+      "i10": "6/10",
+      "i11": "9/15",
+      "i12": "12/20"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "rak aktif: 2 → 4"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "setengah",
+      "labelKey": "b-setengah"
+    },
+    {
+      "id": "duapertiga",
+      "labelKey": "b-duapertiga"
+    },
+    {
+      "id": "tigaperempat",
+      "labelKey": "b-tigaperempat"
+    },
+    {
+      "id": "tigaperlima",
+      "labelKey": "b-tigaperlima"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "setengah"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "setengah"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "setengah"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "duapertiga"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "tigaperempat"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tigaperempat"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tigaperempat"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tigaperlima"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "tigaperlima"
+    }
+  ]
+}

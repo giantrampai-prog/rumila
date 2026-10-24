@@ -1,0 +1,179 @@
+{
+  "id": "sd3-sains-bentuk-bulan-berubah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD3.BULAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bentuk Bulan Tiap Malam",
+      "instruksi": "Susun bentuk Bulan sesuai urutan malamnya.",
+      "s-membesar": "Bulan makin terang tiap malam",
+      "membesar-baru": "bulan baru, hampir tak terlihat",
+      "membesar-sabit": "sabit tipis",
+      "membesar-separuh": "separuh terang",
+      "membesar-cembung": "hampir bulat",
+      "membesar-purnama": "purnama",
+      "s-mengecil": "Bulan makin tipis tiap malam",
+      "mengecil-purnama": "purnama",
+      "mengecil-cembung": "mulai berkurang",
+      "mengecil-separuh": "separuh terang",
+      "mengecil-sabit": "sabit tipis",
+      "mengecil-baru": "bulan baru, hampir tak terlihat",
+      "s-sebulan": "Bulan sepanjang sebulan",
+      "sebulan-sabit1": "sabit muda",
+      "sebulan-separuh1": "separuh awal",
+      "sebulan-cembung1": "hampir bulat",
+      "sebulan-purnama": "purnama",
+      "sebulan-cembung2": "mulai berkurang",
+      "sebulan-separuh2": "separuh akhir",
+      "sebulan-sabit2": "sabit tua"
+    },
+    "en": {
+      "judul": "The Moon Night by Night",
+      "instruksi": "Order the Moon's shapes night by night.",
+      "s-membesar": "The Moon gets brighter each night",
+      "membesar-baru": "new moon, almost invisible",
+      "membesar-sabit": "thin crescent",
+      "membesar-separuh": "half lit",
+      "membesar-cembung": "almost round",
+      "membesar-purnama": "full moon",
+      "s-mengecil": "The Moon gets thinner each night",
+      "mengecil-purnama": "full moon",
+      "mengecil-cembung": "starting to shrink",
+      "mengecil-separuh": "half lit",
+      "mengecil-sabit": "thin crescent",
+      "mengecil-baru": "new moon, almost invisible",
+      "s-sebulan": "The Moon across a month",
+      "sebulan-sabit1": "young crescent",
+      "sebulan-separuh1": "first half",
+      "sebulan-cembung1": "almost round",
+      "sebulan-purnama": "full moon",
+      "sebulan-cembung2": "starting to shrink",
+      "sebulan-separuh2": "last half",
+      "sebulan-sabit2": "old crescent"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 7,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah bentuk: 3 → 5 (satu arah) → 6–7 (melewati purnama)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "membesar",
+      "titleKey": "s-membesar",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "membesar-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "membesar-sabit",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "membesar-separuh",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "membesar-cembung",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "membesar-purnama",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "mengecil",
+      "titleKey": "s-mengecil",
+      "steps": [
+        {
+          "id": "purnama",
+          "labelKey": "mengecil-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "mengecil-cembung",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "mengecil-separuh",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "mengecil-sabit",
+          "emoji": "🌘"
+        },
+        {
+          "id": "baru",
+          "labelKey": "mengecil-baru",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "sebulan",
+      "titleKey": "s-sebulan",
+      "steps": [
+        {
+          "id": "sabit1",
+          "labelKey": "sebulan-sabit1",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuh1",
+          "labelKey": "sebulan-separuh1",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembung1",
+          "labelKey": "sebulan-cembung1",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "sebulan-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembung2",
+          "labelKey": "sebulan-cembung2",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuh2",
+          "labelKey": "sebulan-separuh2",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabit2",
+          "labelKey": "sebulan-sabit2",
+          "emoji": "🌘"
+        }
+      ]
+    }
+  ]
+}

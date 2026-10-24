@@ -1,0 +1,123 @@
+{
+  "id": "sd2-mat-kembalian-puluhan-ribu",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD2.UANG.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kasir Toko Mainan",
+      "instruksi": "Pembeli membayar dengan uang besar. Hitung maju dari harga ke uangnya, lalu beri kembalian.",
+      "g-sepeda-roda-tiga": "sepeda roda tiga",
+      "g-tenda-main": "tenda main",
+      "g-gitar-mainan": "gitar mainan",
+      "g-robot-mainan": "robot mainan",
+      "g-sepatu-roda": "sepatu roda",
+      "g-bola-basket": "bola basket",
+      "g-buku-gambar": "buku gambar",
+      "g-balok-susun": "balok susun",
+      "g-drum-mainan": "drum mainan",
+      "g-layangmlayang": "layang-layang"
+    },
+    "en": {
+      "judul": "Toy Shop Till",
+      "instruksi": "The shopper pays with a big note. Count on from the price to the note, then give the change.",
+      "g-sepeda-roda-tiga": "tricycle",
+      "g-tenda-main": "play tent",
+      "g-gitar-mainan": "toy guitar",
+      "g-robot-mainan": "toy robot",
+      "g-sepatu-roda": "roller skates",
+      "g-bola-basket": "basketball",
+      "g-buku-gambar": "drawing book",
+      "g-balok-susun": "building blocks",
+      "g-drum-mainan": "toy drum",
+      "g-layangmlayang": "kite"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-mainan",
+  "currency": "IDR",
+  "denominations": [
+    10000,
+    20000,
+    50000,
+    100000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "sepeda",
+      "labelKey": "g-sepeda-roda-tiga",
+      "price": 90000,
+      "emoji": "🚲"
+    },
+    {
+      "id": "tenda",
+      "labelKey": "g-tenda-main",
+      "price": 70000,
+      "emoji": "⛺"
+    },
+    {
+      "id": "gitar",
+      "labelKey": "g-gitar-mainan",
+      "price": 60000,
+      "emoji": "🎸"
+    },
+    {
+      "id": "robot",
+      "labelKey": "g-robot-mainan",
+      "price": 80000,
+      "emoji": "🤖"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "g-sepatu-roda",
+      "price": 40000,
+      "emoji": "🛼"
+    },
+    {
+      "id": "bola",
+      "labelKey": "g-bola-basket",
+      "price": 30000,
+      "emoji": "🏀"
+    },
+    {
+      "id": "buku",
+      "labelKey": "g-buku-gambar",
+      "price": 10000,
+      "emoji": "📓"
+    },
+    {
+      "id": "lego",
+      "labelKey": "g-balok-susun",
+      "price": 50000,
+      "emoji": "🧱"
+    },
+    {
+      "id": "drum",
+      "labelKey": "g-drum-mainan",
+      "price": 20000,
+      "emoji": "🥁"
+    },
+    {
+      "id": "layang",
+      "labelKey": "g-layangmlayang",
+      "price": 10000,
+      "emoji": "🪁"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 90000,
+    "kindsMax": 1
+  }
+}

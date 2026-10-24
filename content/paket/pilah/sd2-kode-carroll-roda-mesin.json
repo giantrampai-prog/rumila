@@ -1,0 +1,186 @@
+{
+  "id": "sd2-kode-carroll-roda-mesin",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD2.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kotak Roda dan Mesin",
+      "instruksi": "Jawab dua pertanyaan untuk tiap kendaraan: punya roda? pakai mesin? Lalu taruh di kotak yang cocok.",
+      "bin-roda-mesin": "roda · mesin",
+      "bin-roda-tanpa": "roda · tanpa mesin",
+      "bin-tanpa-mesin": "tanpa roda · mesin",
+      "bin-tanpa-tanpa": "tanpa roda · tanpa mesin",
+      "i-car": "mobil",
+      "i-bus": "bus",
+      "i-motorbike": "sepeda motor",
+      "i-truck": "truk",
+      "i-bicycle": "sepeda",
+      "i-kick-scooter": "skuter",
+      "i-skateboard": "papan luncur",
+      "i-shopping-cart": "troli belanja",
+      "i-motorboat": "perahu motor",
+      "i-ferry": "kapal feri",
+      "i-ship": "kapal besar",
+      "i-sailboat": "perahu layar",
+      "i-canoe": "kano",
+      "i-kite": "layang-layang"
+    },
+    "en": {
+      "judul": "Wheels and Engine Boxes",
+      "instruksi": "Answer two questions for each vehicle: wheels? engine? Then put it in the matching box.",
+      "bin-roda-mesin": "wheels · engine",
+      "bin-roda-tanpa": "wheels · no engine",
+      "bin-tanpa-mesin": "no wheels · engine",
+      "bin-tanpa-tanpa": "no wheels · no engine",
+      "i-car": "car",
+      "i-bus": "bus",
+      "i-motorbike": "motorbike",
+      "i-truck": "truck",
+      "i-bicycle": "bicycle",
+      "i-kick-scooter": "kick scooter",
+      "i-skateboard": "skateboard",
+      "i-shopping-cart": "shopping cart",
+      "i-motorboat": "motorboat",
+      "i-ferry": "ferry",
+      "i-ship": "ship",
+      "i-sailboat": "sailboat",
+      "i-canoe": "canoe",
+      "i-kite": "kite"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 8,
+      "max": 12,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah kendaraan per putaran; tiap kotak dijamin kebagian"
+    },
+    "binCount": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat kotak diagram Carroll 2×2 selalu tampil"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-ke-sekolah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "roda-mesin",
+      "labelKey": "bin-roda-mesin",
+      "emoji": "🚗"
+    },
+    {
+      "id": "roda-tanpa",
+      "labelKey": "bin-roda-tanpa",
+      "emoji": "🚲"
+    },
+    {
+      "id": "tanpa-mesin",
+      "labelKey": "bin-tanpa-mesin",
+      "emoji": "🚤"
+    },
+    {
+      "id": "tanpa-tanpa",
+      "labelKey": "bin-tanpa-tanpa",
+      "emoji": "⛵"
+    }
+  ],
+  "items": [
+    {
+      "id": "car",
+      "labelKey": "i-car",
+      "bin": "roda-mesin",
+      "emoji": "🚗"
+    },
+    {
+      "id": "bus",
+      "labelKey": "i-bus",
+      "bin": "roda-mesin",
+      "emoji": "🚌"
+    },
+    {
+      "id": "motorbike",
+      "labelKey": "i-motorbike",
+      "bin": "roda-mesin",
+      "emoji": "🏍️"
+    },
+    {
+      "id": "truck",
+      "labelKey": "i-truck",
+      "bin": "roda-mesin",
+      "emoji": "🚚"
+    },
+    {
+      "id": "bicycle",
+      "labelKey": "i-bicycle",
+      "bin": "roda-tanpa",
+      "emoji": "🚲"
+    },
+    {
+      "id": "kick-scooter",
+      "labelKey": "i-kick-scooter",
+      "bin": "roda-tanpa",
+      "emoji": "🛴"
+    },
+    {
+      "id": "skateboard",
+      "labelKey": "i-skateboard",
+      "bin": "roda-tanpa",
+      "emoji": "🛹"
+    },
+    {
+      "id": "shopping-cart",
+      "labelKey": "i-shopping-cart",
+      "bin": "roda-tanpa",
+      "emoji": "🛒"
+    },
+    {
+      "id": "motorboat",
+      "labelKey": "i-motorboat",
+      "bin": "tanpa-mesin",
+      "emoji": "🚤"
+    },
+    {
+      "id": "ferry",
+      "labelKey": "i-ferry",
+      "bin": "tanpa-mesin",
+      "emoji": "⛴️"
+    },
+    {
+      "id": "ship",
+      "labelKey": "i-ship",
+      "bin": "tanpa-mesin",
+      "emoji": "🚢"
+    },
+    {
+      "id": "sailboat",
+      "labelKey": "i-sailboat",
+      "bin": "tanpa-tanpa",
+      "emoji": "⛵"
+    },
+    {
+      "id": "canoe",
+      "labelKey": "i-canoe",
+      "bin": "tanpa-tanpa",
+      "emoji": "🛶"
+    },
+    {
+      "id": "kite",
+      "labelKey": "i-kite",
+      "bin": "tanpa-tanpa",
+      "emoji": "🪁"
+    }
+  ]
+}

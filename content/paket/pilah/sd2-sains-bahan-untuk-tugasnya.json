@@ -1,0 +1,235 @@
+{
+  "id": "sd2-sains-bahan-untuk-tugasnya",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.BAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bahan yang Tepat untuk Tugasnya",
+      "instruksi": "Dengarkan tugasnya, lalu sentuh bahan yang sifatnya cocok.",
+      "pilihan": "pilihan",
+      "i-plastik": "plastik",
+      "i-kaca": "kaca",
+      "i-kayu": "kayu",
+      "i-logam": "logam",
+      "i-kain": "kain",
+      "i-kertas": "kertas",
+      "i-karet": "karet",
+      "t-jashujan": "Jas hujan harus kedap air. Bahan apa?",
+      "t-jendela": "Jendela harus tembus pandang. Bahan apa?",
+      "t-panci": "Panci harus tahan dipanaskan di kompor. Bahan apa?",
+      "t-handuk": "Handuk harus menyerap air. Bahan apa?",
+      "t-ban": "Ban sepeda harus lentur dan memantul. Bahan apa?",
+      "t-gagang": "Gagang panci tidak boleh ikut panas. Bahan apa?",
+      "t-tas": "Tas belanja harus ringan dan bisa dilipat. Bahan apa?",
+      "t-amplop": "Amplop harus ringan dan bisa ditulisi. Bahan apa?",
+      "t-sepatubot": "Sepatu bot harus kedap air dan lentur. Bahan apa?",
+      "t-paku": "Paku harus keras supaya bisa dipukul masuk ke kayu. Bahan apa?",
+      "t-akuarium": "Akuarium harus kedap air dan tembus pandang. Bahan apa?"
+    },
+    "en": {
+      "judul": "The Right Material for the Job",
+      "instruksi": "Listen to the job, then touch the material with the right property.",
+      "pilihan": "choices",
+      "i-plastik": "plastic",
+      "i-kaca": "glass",
+      "i-kayu": "wood",
+      "i-logam": "metal",
+      "i-kain": "fabric",
+      "i-kertas": "paper",
+      "i-karet": "rubber",
+      "t-jashujan": "A raincoat must be waterproof. Which material?",
+      "t-jendela": "A window must be see-through. Which material?",
+      "t-panci": "A pan must be safe to heat on the stove. Which material?",
+      "t-handuk": "A towel must soak up water. Which material?",
+      "t-ban": "A bike tyre must be bendy and bouncy. Which material?",
+      "t-gagang": "A pan handle must not get hot. Which material?",
+      "t-tas": "A shopping bag must be light and foldable. Which material?",
+      "t-amplop": "An envelope must be light and easy to write on. Which material?",
+      "t-sepatubot": "Rain boots must be waterproof and bendy. Which material?",
+      "t-paku": "A nail must be hard to hammer into wood. Which material?",
+      "t-akuarium": "A fish tank must be waterproof and see-through. Which material?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "dokumentasi: jumlah pilihan per pertanyaan ditetapkan per ronde di paket (2–4); mesin tidak mengubahnya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "pilihan",
+      "emoji": "🧴"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "pilihan",
+      "emoji": "🔷",
+      "color": "#b3e5fc"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "pilihan",
+      "emoji": "🪵"
+    },
+    {
+      "id": "logam",
+      "labelKey": "i-logam",
+      "bin": "pilihan",
+      "emoji": "🔩"
+    },
+    {
+      "id": "kain",
+      "labelKey": "i-kain",
+      "bin": "pilihan",
+      "emoji": "🧵"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "pilihan",
+      "emoji": "📄"
+    },
+    {
+      "id": "karet",
+      "labelKey": "i-karet",
+      "bin": "pilihan",
+      "emoji": "⚫"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "jashujan",
+      "promptKey": "t-jashujan",
+      "choices": [
+        "plastik",
+        "kertas",
+        "kain"
+      ],
+      "correct": "plastik"
+    },
+    {
+      "id": "jendela",
+      "promptKey": "t-jendela",
+      "choices": [
+        "kaca",
+        "kayu",
+        "logam"
+      ],
+      "correct": "kaca"
+    },
+    {
+      "id": "panci",
+      "promptKey": "t-panci",
+      "choices": [
+        "logam",
+        "plastik",
+        "kertas"
+      ],
+      "correct": "logam"
+    },
+    {
+      "id": "handuk",
+      "promptKey": "t-handuk",
+      "choices": [
+        "kain",
+        "plastik",
+        "kaca"
+      ],
+      "correct": "kain"
+    },
+    {
+      "id": "ban",
+      "promptKey": "t-ban",
+      "choices": [
+        "karet",
+        "kayu",
+        "kaca"
+      ],
+      "correct": "karet"
+    },
+    {
+      "id": "gagang",
+      "promptKey": "t-gagang",
+      "choices": [
+        "kayu",
+        "logam",
+        "kaca"
+      ],
+      "correct": "kayu"
+    },
+    {
+      "id": "tas",
+      "promptKey": "t-tas",
+      "choices": [
+        "kain",
+        "kayu",
+        "kaca"
+      ],
+      "correct": "kain"
+    },
+    {
+      "id": "amplop",
+      "promptKey": "t-amplop",
+      "choices": [
+        "kertas",
+        "logam",
+        "karet"
+      ],
+      "correct": "kertas"
+    },
+    {
+      "id": "sepatubot",
+      "promptKey": "t-sepatubot",
+      "choices": [
+        "karet",
+        "kertas",
+        "kain"
+      ],
+      "correct": "karet"
+    },
+    {
+      "id": "paku",
+      "promptKey": "t-paku",
+      "choices": [
+        "logam",
+        "plastik",
+        "kain"
+      ],
+      "correct": "logam"
+    },
+    {
+      "id": "akuarium",
+      "promptKey": "t-akuarium",
+      "choices": [
+        "kaca",
+        "kayu",
+        "kain"
+      ],
+      "correct": "kaca"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": "sd6-mat-uji-bagi-3-dan-9",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.FAKTOR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jumlah Angka Ajaib",
+      "instruksi": "Jumlahkan angka-angkanya. Habis dibagi 9 → rak 9; habis dibagi 3 saja → rak 3; selain itu → rak tidak.",
+      "b-b9": "habis dibagi 9",
+      "b-b3": "dibagi 3, tidak 9",
+      "b-tidak": "tidak habis dibagi 3",
+      "i1": "342",
+      "i2": "1.206",
+      "i3": "819",
+      "i4": "4.527",
+      "i5": "711",
+      "i6": "2.241",
+      "i7": "351",
+      "i8": "123",
+      "i9": "1.302",
+      "i10": "2.010",
+      "i11": "417",
+      "i12": "3.105",
+      "i13": "5.001",
+      "i14": "245",
+      "i15": "1.003",
+      "i16": "2.716",
+      "i17": "4.441",
+      "i18": "820"
+    },
+    "en": {
+      "judul": "Digit Sum Test",
+      "instruksi": "Add up the digits. Divisible by 9 → shelf 9; only by 3 → shelf 3; otherwise → shelf not.",
+      "b-b9": "divisible by 9",
+      "b-b3": "by 3, not by 9",
+      "b-tidak": "not divisible by 3",
+      "i1": "342",
+      "i2": "1,206",
+      "i3": "819",
+      "i4": "4,527",
+      "i5": "711",
+      "i6": "2,241",
+      "i7": "351",
+      "i8": "123",
+      "i9": "1,302",
+      "i10": "2,010",
+      "i11": "417",
+      "i12": "3,105",
+      "i13": "5,001",
+      "i14": "245",
+      "i15": "1,003",
+      "i16": "2,716",
+      "i17": "4,441",
+      "i18": "820"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "b9",
+      "labelKey": "b-b9"
+    },
+    {
+      "id": "b3",
+      "labelKey": "b-b3"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "b9"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "b9"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "b9"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "b9"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "b9"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "b9"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "b9"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "b3"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "b3"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "b3"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "b3"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "b9"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "b3"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "tidak"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "tidak"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "tidak"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "tidak"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "tidak"
+    }
+  ]
+}

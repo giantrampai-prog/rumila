@@ -1,0 +1,159 @@
+{
+  "id": "sd6-sains-jenis-tanah",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.TANAH.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uji Segenggam Tanah",
+      "instruksi": "Baca hasil ujinya, lalu taruh ke jenis tanah yang cocok.",
+      "b-liat": "tanah liat: lengket, menahan air",
+      "b-pasir": "tanah berpasir: kasar, air cepat lewat",
+      "b-humus": "tanah humus: gelap, kaya sisa makhluk hidup",
+      "i-bentuk": "saat basah lengket dan bisa dibentuk",
+      "i-retak": "retak-retak saat kemarau",
+      "i-genang": "air siraman menggenang lama",
+      "i-genteng": "dipakai membuat genteng dan gerabah",
+      "i-kasar": "butirnya terasa kasar di jari",
+      "i-cepat": "air siraman cepat menghilang ke bawah",
+      "i-buyar": "dikepal langsung buyar, tidak jadi bola",
+      "i-pantai": "banyak ditemukan di tepi pantai",
+      "i-gelap": "berwarna cokelat tua sampai hitam",
+      "i-cacing": "ada sisa daun dan banyak cacing",
+      "i-bau": "berbau seperti hutan setelah hujan",
+      "i-kompos": "makin subur setelah ditambah kompos"
+    },
+    "en": {
+      "judul": "The Handful-of-Soil Test",
+      "instruksi": "Read the test result, then put it with the matching soil type.",
+      "b-liat": "clay soil: sticky, holds water",
+      "b-pasir": "sandy soil: gritty, water drains fast",
+      "b-humus": "humus-rich soil: dark, full of once-living matter",
+      "i-bentuk": "when wet it is sticky and can be shaped",
+      "i-retak": "it cracks in the dry season",
+      "i-genang": "watering leaves puddles for a long time",
+      "i-genteng": "used to make roof tiles and pottery",
+      "i-kasar": "the grains feel gritty between fingers",
+      "i-cepat": "water disappears quickly downwards",
+      "i-buyar": "squeezed, it falls apart and won't make a ball",
+      "i-pantai": "found a lot near the beach",
+      "i-gelap": "dark brown to black",
+      "i-cacing": "full of bits of leaves and lots of worms",
+      "i-bau": "smells like a forest after rain",
+      "i-kompos": "gets richer when compost is added"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "liat",
+      "labelKey": "b-liat",
+      "emoji": "🏺",
+      "color": "#bcaaa4"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "b-pasir",
+      "emoji": "🏖️",
+      "color": "#fff59d"
+    },
+    {
+      "id": "humus",
+      "labelKey": "b-humus",
+      "emoji": "🍂",
+      "color": "#8d6e63"
+    }
+  ],
+  "items": [
+    {
+      "id": "bentuk",
+      "labelKey": "i-bentuk",
+      "bin": "liat",
+      "emoji": "🤲"
+    },
+    {
+      "id": "retak",
+      "labelKey": "i-retak",
+      "bin": "liat",
+      "emoji": "🧱"
+    },
+    {
+      "id": "genang",
+      "labelKey": "i-genang",
+      "bin": "liat",
+      "emoji": "💧"
+    },
+    {
+      "id": "genteng",
+      "labelKey": "i-genteng",
+      "bin": "liat",
+      "emoji": "🏺"
+    },
+    {
+      "id": "kasar",
+      "labelKey": "i-kasar",
+      "bin": "pasir",
+      "emoji": "✋"
+    },
+    {
+      "id": "cepat",
+      "labelKey": "i-cepat",
+      "bin": "pasir",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "buyar",
+      "labelKey": "i-buyar",
+      "bin": "pasir",
+      "emoji": "💨"
+    },
+    {
+      "id": "pantai",
+      "labelKey": "i-pantai",
+      "bin": "pasir",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "gelap",
+      "labelKey": "i-gelap",
+      "bin": "humus",
+      "emoji": "⬛"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "humus",
+      "emoji": "🪱"
+    },
+    {
+      "id": "bau",
+      "labelKey": "i-bau",
+      "bin": "humus",
+      "emoji": "🌲"
+    },
+    {
+      "id": "kompos",
+      "labelKey": "i-kompos",
+      "bin": "humus",
+      "emoji": "♻️"
+    }
+  ],
+  "pilihan": []
+}

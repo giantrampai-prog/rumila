@@ -1,0 +1,235 @@
+{
+  "id": "sd1-mat-rak-kurang-berapa-sepuluh",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kurang Berapa Supaya 10?",
+      "instruksi": "Tiap kotak harus berisi sepuluh. Taruh kotak di rak 'kurang berapa'.",
+      "b-kurang-1": "kurang 1",
+      "b-kurang-2": "kurang 2",
+      "b-kurang-3": "kurang 3",
+      "b-kurang-4": "kurang 4",
+      "b-kurang-5": "kurang 5",
+      "b-kurang-6": "kurang 6",
+      "b-kurang-7": "kurang 7",
+      "b-kurang-8": "kurang 8",
+      "b-kurang-9": "kurang 9",
+      "i-1": "1",
+      "i-2": "2",
+      "i-3": "3",
+      "i-4": "4",
+      "i-5": "5",
+      "i-6": "6",
+      "i-7": "7",
+      "i-8": "8",
+      "i-9": "9"
+    },
+    "en": {
+      "judul": "How Many More to Make 10?",
+      "instruksi": "Every box must hold ten. Put each box on the 'needs how many' shelf.",
+      "b-kurang-1": "needs 1",
+      "b-kurang-2": "needs 2",
+      "b-kurang-3": "needs 3",
+      "b-kurang-4": "needs 4",
+      "b-kurang-5": "needs 5",
+      "b-kurang-6": "needs 6",
+      "b-kurang-7": "needs 7",
+      "b-kurang-8": "needs 8",
+      "b-kurang-9": "needs 9",
+      "i-1": "1",
+      "i-2": "2",
+      "i-3": "3",
+      "i-4": "4",
+      "i-5": "5",
+      "i-6": "6",
+      "i-7": "7",
+      "i-8": "8",
+      "i-9": "9"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 4,
+      "max": 9,
+      "default": 4,
+      "step": 1,
+      "keterangan": "rak kurang 1–4 dulu, lalu sampai 9"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kotak per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k1",
+      "labelKey": "b-kurang-1"
+    },
+    {
+      "id": "k2",
+      "labelKey": "b-kurang-2"
+    },
+    {
+      "id": "k3",
+      "labelKey": "b-kurang-3"
+    },
+    {
+      "id": "k4",
+      "labelKey": "b-kurang-4"
+    },
+    {
+      "id": "k5",
+      "labelKey": "b-kurang-5"
+    },
+    {
+      "id": "k6",
+      "labelKey": "b-kurang-6"
+    },
+    {
+      "id": "k7",
+      "labelKey": "b-kurang-7"
+    },
+    {
+      "id": "k8",
+      "labelKey": "b-kurang-8"
+    },
+    {
+      "id": "k9",
+      "labelKey": "b-kurang-9"
+    }
+  ],
+  "items": [
+    {
+      "id": "titik-1",
+      "labelKey": "i-1",
+      "bin": "k9",
+      "emoji": "🔴",
+      "count": 1
+    },
+    {
+      "id": "angka-1",
+      "labelKey": "i-1",
+      "bin": "k9",
+      "scale": 1
+    },
+    {
+      "id": "titik-2",
+      "labelKey": "i-2",
+      "bin": "k8",
+      "emoji": "🔴",
+      "count": 2
+    },
+    {
+      "id": "angka-2",
+      "labelKey": "i-2",
+      "bin": "k8",
+      "scale": 1
+    },
+    {
+      "id": "titik-3",
+      "labelKey": "i-3",
+      "bin": "k7",
+      "emoji": "🔴",
+      "count": 3
+    },
+    {
+      "id": "angka-3",
+      "labelKey": "i-3",
+      "bin": "k7",
+      "scale": 1
+    },
+    {
+      "id": "titik-4",
+      "labelKey": "i-4",
+      "bin": "k6",
+      "emoji": "🔴",
+      "count": 4
+    },
+    {
+      "id": "angka-4",
+      "labelKey": "i-4",
+      "bin": "k6",
+      "scale": 1
+    },
+    {
+      "id": "titik-5",
+      "labelKey": "i-5",
+      "bin": "k5",
+      "emoji": "🔴",
+      "count": 5
+    },
+    {
+      "id": "angka-5",
+      "labelKey": "i-5",
+      "bin": "k5",
+      "scale": 1
+    },
+    {
+      "id": "titik-6",
+      "labelKey": "i-6",
+      "bin": "k4",
+      "emoji": "🔴",
+      "count": 6
+    },
+    {
+      "id": "angka-6",
+      "labelKey": "i-6",
+      "bin": "k4",
+      "scale": 1
+    },
+    {
+      "id": "titik-7",
+      "labelKey": "i-7",
+      "bin": "k3",
+      "emoji": "🔴",
+      "count": 7
+    },
+    {
+      "id": "angka-7",
+      "labelKey": "i-7",
+      "bin": "k3",
+      "scale": 1
+    },
+    {
+      "id": "titik-8",
+      "labelKey": "i-8",
+      "bin": "k2",
+      "emoji": "🔴",
+      "count": 8
+    },
+    {
+      "id": "angka-8",
+      "labelKey": "i-8",
+      "bin": "k2",
+      "scale": 1
+    },
+    {
+      "id": "titik-9",
+      "labelKey": "i-9",
+      "bin": "k1",
+      "emoji": "🔴",
+      "count": 9
+    },
+    {
+      "id": "angka-9",
+      "labelKey": "i-9",
+      "bin": "k1",
+      "scale": 1
+    }
+  ]
+}

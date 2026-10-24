@@ -87,8 +87,12 @@ function knobTetangga(p: ContentPack, knobs: Knobs): Knobs[] {
   return out;
 }
 
-/** Kunci pembanding dua ronde (isi soal identik → kunci sama). */
-export const kunciRonde = (r: Ronde) => JSON.stringify(r);
+/** Kunci pembanding dua ronde (isi soal identik → kunci sama). Mode pilih: urutan pilihan yang diacak tidak dihitung,
+ *  supaya soal yang sama dengan susunan pilihan lain tetap dianggap pernah keluar. */
+export const kunciRonde = (r: Ronde) =>
+  r.mechanic === "pilah" && r.ronde.mode === "pilih"
+    ? JSON.stringify({ mechanic: "pilah", promptKey: r.ronde.promptKey, correct: r.ronde.correct, choices: [...r.ronde.choices].map((c) => JSON.stringify(c)).sort() })
+    : JSON.stringify(r);
 
 export function nilai(_p: ContentPack, r: Ronde, j: Jawaban): Hasil {
   switch (r.mechanic) {

@@ -1,0 +1,357 @@
+{
+  "id": "sd2-kode-kartu-langkah",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD2.ALGORITMA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kartu Langkah Tertulis",
+      "instruksi": "Baca tiap kartu, lalu susun langkahnya dengan tepat dari awal sampai akhir.",
+      "t-siram": "Menyiram tanaman",
+      "siram-1": "ambil penyiram",
+      "siram-2": "bawa ke keran",
+      "siram-3": "isi dengan air",
+      "siram-4": "tutup keran",
+      "siram-5": "bawa ke tanaman",
+      "siram-6": "siram tanahnya",
+      "siram-7": "kembalikan penyiram",
+      "t-botol": "Mengisi botol minum",
+      "botol-1": "buka tutup botol",
+      "botol-2": "taruh di bawah keran dispenser",
+      "botol-3": "tekan tombol air",
+      "botol-4": "tunggu sampai penuh",
+      "botol-5": "lepas tombol",
+      "botol-6": "tutup botol",
+      "botol-7": "masukkan ke tas",
+      "t-komputer": "Menulis di komputer",
+      "komputer-1": "tekan tombol daya",
+      "komputer-2": "tunggu layar menyala",
+      "komputer-3": "buka aplikasi tulis",
+      "komputer-4": "ketik namamu",
+      "komputer-5": "simpan tulisan",
+      "komputer-6": "matikan komputer",
+      "t-pesawat": "Membuat pesawat kertas",
+      "pesawat-1": "ambil selembar kertas",
+      "pesawat-2": "lipat dua memanjang",
+      "pesawat-3": "buka lipatannya lagi",
+      "pesawat-4": "lipat dua sudut atas ke tengah",
+      "pesawat-5": "lipat sayap ke bawah",
+      "pesawat-6": "terbangkan pesawat",
+      "t-mi": "Memasak mi",
+      "mi-1": "rebus air di panci",
+      "mi-2": "tunggu air mendidih",
+      "mi-3": "masukkan mi",
+      "mi-4": "aduk tiga menit",
+      "mi-5": "tiriskan mi",
+      "mi-6": "tuang ke mangkuk",
+      "mi-7": "makan selagi hangat",
+      "t-telepon": "Menelepon teman",
+      "telepon-1": "buka aplikasi telepon",
+      "telepon-2": "ketik nomor teman",
+      "telepon-3": "tekan tombol hijau",
+      "telepon-4": "tunggu diangkat",
+      "telepon-5": "bicara dengan teman",
+      "telepon-6": "tekan tombol merah"
+    },
+    "en": {
+      "judul": "Written Step Cards",
+      "instruksi": "Read each card, then put the steps in exactly the right order from start to end.",
+      "t-siram": "Watering the plants",
+      "siram-1": "get the watering can",
+      "siram-2": "take it to the tap",
+      "siram-3": "fill it with water",
+      "siram-4": "turn off the tap",
+      "siram-5": "carry it to the plants",
+      "siram-6": "water the soil",
+      "siram-7": "put the can back",
+      "t-botol": "Filling a water bottle",
+      "botol-1": "open the bottle",
+      "botol-2": "hold it under the dispenser tap",
+      "botol-3": "press the water button",
+      "botol-4": "wait until it is full",
+      "botol-5": "let go of the button",
+      "botol-6": "close the bottle",
+      "botol-7": "put it in your bag",
+      "t-komputer": "Typing on a computer",
+      "komputer-1": "press the power button",
+      "komputer-2": "wait for the screen",
+      "komputer-3": "open the writing app",
+      "komputer-4": "type your name",
+      "komputer-5": "save your work",
+      "komputer-6": "shut down the computer",
+      "t-pesawat": "Making a paper plane",
+      "pesawat-1": "take a sheet of paper",
+      "pesawat-2": "fold it in half lengthways",
+      "pesawat-3": "unfold it again",
+      "pesawat-4": "fold the top corners to the middle",
+      "pesawat-5": "fold the wings down",
+      "pesawat-6": "fly the plane",
+      "t-mi": "Cooking noodles",
+      "mi-1": "boil water in a pan",
+      "mi-2": "wait for it to boil",
+      "mi-3": "add the noodles",
+      "mi-4": "stir for three minutes",
+      "mi-5": "drain the noodles",
+      "mi-6": "pour into a bowl",
+      "mi-7": "eat it while warm",
+      "t-telepon": "Calling a friend",
+      "telepon-1": "open the phone app",
+      "telepon-2": "type your friend's number",
+      "telepon-3": "press the green button",
+      "telepon-4": "wait for an answer",
+      "telepon-5": "talk to your friend",
+      "telepon-6": "press the red button"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 6,
+      "max": 7,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu: 6 → 7 (urutan dipotong dari depan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "siram",
+      "titleKey": "t-siram",
+      "steps": [
+        {
+          "id": "siram-1",
+          "labelKey": "siram-1",
+          "emoji": "🪣"
+        },
+        {
+          "id": "siram-2",
+          "labelKey": "siram-2",
+          "emoji": "🚶"
+        },
+        {
+          "id": "siram-3",
+          "labelKey": "siram-3",
+          "emoji": "🚰"
+        },
+        {
+          "id": "siram-4",
+          "labelKey": "siram-4",
+          "emoji": "🔒"
+        },
+        {
+          "id": "siram-5",
+          "labelKey": "siram-5",
+          "emoji": "🪴"
+        },
+        {
+          "id": "siram-6",
+          "labelKey": "siram-6",
+          "emoji": "💦"
+        },
+        {
+          "id": "siram-7",
+          "labelKey": "siram-7",
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": "botol",
+      "titleKey": "t-botol",
+      "steps": [
+        {
+          "id": "botol-1",
+          "labelKey": "botol-1",
+          "emoji": "🍶"
+        },
+        {
+          "id": "botol-2",
+          "labelKey": "botol-2",
+          "emoji": "🚰"
+        },
+        {
+          "id": "botol-3",
+          "labelKey": "botol-3",
+          "emoji": "🔘"
+        },
+        {
+          "id": "botol-4",
+          "labelKey": "botol-4",
+          "emoji": "⏳"
+        },
+        {
+          "id": "botol-5",
+          "labelKey": "botol-5",
+          "emoji": "✋"
+        },
+        {
+          "id": "botol-6",
+          "labelKey": "botol-6",
+          "emoji": "🔒"
+        },
+        {
+          "id": "botol-7",
+          "labelKey": "botol-7",
+          "emoji": "🎒"
+        }
+      ]
+    },
+    {
+      "id": "komputer",
+      "titleKey": "t-komputer",
+      "steps": [
+        {
+          "id": "komputer-1",
+          "labelKey": "komputer-1",
+          "emoji": "⏻"
+        },
+        {
+          "id": "komputer-2",
+          "labelKey": "komputer-2",
+          "emoji": "🖥️"
+        },
+        {
+          "id": "komputer-3",
+          "labelKey": "komputer-3",
+          "emoji": "📝"
+        },
+        {
+          "id": "komputer-4",
+          "labelKey": "komputer-4",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "komputer-5",
+          "labelKey": "komputer-5",
+          "emoji": "💾"
+        },
+        {
+          "id": "komputer-6",
+          "labelKey": "komputer-6",
+          "emoji": "🔌"
+        }
+      ]
+    },
+    {
+      "id": "pesawat",
+      "titleKey": "t-pesawat",
+      "steps": [
+        {
+          "id": "pesawat-1",
+          "labelKey": "pesawat-1",
+          "emoji": "📄"
+        },
+        {
+          "id": "pesawat-2",
+          "labelKey": "pesawat-2",
+          "emoji": "📏"
+        },
+        {
+          "id": "pesawat-3",
+          "labelKey": "pesawat-3",
+          "emoji": "↔️"
+        },
+        {
+          "id": "pesawat-4",
+          "labelKey": "pesawat-4",
+          "emoji": "📐"
+        },
+        {
+          "id": "pesawat-5",
+          "labelKey": "pesawat-5",
+          "emoji": "✈️"
+        },
+        {
+          "id": "pesawat-6",
+          "labelKey": "pesawat-6",
+          "emoji": "🌬️"
+        }
+      ]
+    },
+    {
+      "id": "mi",
+      "titleKey": "t-mi",
+      "steps": [
+        {
+          "id": "mi-1",
+          "labelKey": "mi-1",
+          "emoji": "🍲"
+        },
+        {
+          "id": "mi-2",
+          "labelKey": "mi-2",
+          "emoji": "♨️"
+        },
+        {
+          "id": "mi-3",
+          "labelKey": "mi-3",
+          "emoji": "🍜"
+        },
+        {
+          "id": "mi-4",
+          "labelKey": "mi-4",
+          "emoji": "🥢"
+        },
+        {
+          "id": "mi-5",
+          "labelKey": "mi-5",
+          "emoji": "🫗"
+        },
+        {
+          "id": "mi-6",
+          "labelKey": "mi-6",
+          "emoji": "🥣"
+        },
+        {
+          "id": "mi-7",
+          "labelKey": "mi-7",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "telepon",
+      "titleKey": "t-telepon",
+      "steps": [
+        {
+          "id": "telepon-1",
+          "labelKey": "telepon-1",
+          "emoji": "📱"
+        },
+        {
+          "id": "telepon-2",
+          "labelKey": "telepon-2",
+          "emoji": "🔢"
+        },
+        {
+          "id": "telepon-3",
+          "labelKey": "telepon-3",
+          "emoji": "🟢"
+        },
+        {
+          "id": "telepon-4",
+          "labelKey": "telepon-4",
+          "emoji": "⏳"
+        },
+        {
+          "id": "telepon-5",
+          "labelKey": "telepon-5",
+          "emoji": "🗣️"
+        },
+        {
+          "id": "telepon-6",
+          "labelKey": "telepon-6",
+          "emoji": "🔴"
+        }
+      ]
+    }
+  ]
+}

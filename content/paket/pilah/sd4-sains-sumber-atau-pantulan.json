@@ -1,0 +1,159 @@
+{
+  "id": "sd4-sains-sumber-atau-pantulan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Membuat atau Memantulkan?",
+      "instruksi": "Pilah tiap benda: membuat cahaya sendiri, atau terlihat karena memantulkan cahaya.",
+      "b-sumber": "sumber cahaya: membuat cahaya sendiri",
+      "b-pantul": "bukan sumber: memantulkan cahaya",
+      "i-matahari": "Matahari",
+      "i-senter": "senter menyala",
+      "i-lilin": "lilin menyala",
+      "i-api": "api unggun",
+      "i-layar": "layar HP yang menyala",
+      "i-lampujalan": "lampu jalan menyala",
+      "i-bulan": "Bulan purnama",
+      "i-cermin": "cermin",
+      "i-buku": "buku",
+      "i-apel": "apel",
+      "i-sendok": "sendok mengkilap",
+      "i-reflektor": "pemantul di sepeda",
+      "i-awan": "awan putih"
+    },
+    "en": {
+      "judul": "Makes Light or Reflects It?",
+      "instruksi": "Sort each thing: it makes its own light, or we see it because it reflects light.",
+      "b-sumber": "light source: makes its own light",
+      "b-pantul": "not a source: reflects light",
+      "i-matahari": "the Sun",
+      "i-senter": "a lit torch",
+      "i-lilin": "a burning candle",
+      "i-api": "a campfire",
+      "i-layar": "a phone screen that is on",
+      "i-lampujalan": "a lit street lamp",
+      "i-bulan": "the full Moon",
+      "i-cermin": "a mirror",
+      "i-buku": "a book",
+      "i-apel": "an apple",
+      "i-sendok": "a shiny spoon",
+      "i-reflektor": "a bicycle reflector",
+      "i-awan": "a white cloud"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sumber",
+      "labelKey": "b-sumber",
+      "emoji": "☀️",
+      "color": "#fff59d"
+    },
+    {
+      "id": "pantul",
+      "labelKey": "b-pantul",
+      "emoji": "🪞",
+      "color": "#cfd8dc"
+    }
+  ],
+  "items": [
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "sumber",
+      "emoji": "☀️"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "sumber",
+      "emoji": "🔦"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "sumber",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "api",
+      "labelKey": "i-api",
+      "bin": "sumber",
+      "emoji": "🔥"
+    },
+    {
+      "id": "layar",
+      "labelKey": "i-layar",
+      "bin": "sumber",
+      "emoji": "📱"
+    },
+    {
+      "id": "lampujalan",
+      "labelKey": "i-lampujalan",
+      "bin": "sumber",
+      "emoji": "💡"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "pantul",
+      "emoji": "🌕"
+    },
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "pantul",
+      "emoji": "🪞"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "pantul",
+      "emoji": "📕"
+    },
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "pantul",
+      "emoji": "🍎"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "pantul",
+      "emoji": "🥄"
+    },
+    {
+      "id": "reflektor",
+      "labelKey": "i-reflektor",
+      "bin": "pantul",
+      "emoji": "🚲"
+    },
+    {
+      "id": "awan",
+      "labelKey": "i-awan",
+      "bin": "pantul",
+      "emoji": "☁️"
+    }
+  ],
+  "pilihan": []
+}

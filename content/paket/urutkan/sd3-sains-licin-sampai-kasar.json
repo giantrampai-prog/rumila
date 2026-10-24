@@ -1,0 +1,149 @@
+{
+  "id": "sd3-sains-licin-sampai-kasar",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD3.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Paling Jauh Meluncur",
+      "instruksi": "Susun dari permukaan yang membuat benda meluncur paling jauh sampai paling dekat.",
+      "s-mobil": "Mobil mainan didorong sama kuat",
+      "mobil-es": "lantai es",
+      "mobil-keramik": "lantai keramik mengilap",
+      "mobil-karpet": "karpet berbulu",
+      "mobil-pasir": "jalan berpasir",
+      "s-kotak": "Kotak didorong sama kuat",
+      "kotak-kaca": "meja kaca",
+      "kotak-kayu": "papan kayu halus",
+      "kotak-handuk": "handuk",
+      "kotak-amplas": "kertas amplas",
+      "s-kelereng": "Kelereng digelindingkan sama kuat",
+      "kelereng-ubin": "ubin licin",
+      "kelereng-kayu": "papan kayu",
+      "kelereng-handuk": "handuk tebal",
+      "kelereng-pasir": "pasir"
+    },
+    "en": {
+      "judul": "Slides the Farthest",
+      "instruksi": "Order the surfaces from where things slide farthest to where they stop soonest.",
+      "s-mobil": "A toy car pushed just as hard each time",
+      "mobil-es": "ice rink",
+      "mobil-keramik": "shiny tiled floor",
+      "mobil-karpet": "shaggy carpet",
+      "mobil-pasir": "sandy path",
+      "s-kotak": "A box pushed just as hard each time",
+      "kotak-kaca": "glass table",
+      "kotak-kayu": "smooth wooden board",
+      "kotak-handuk": "towel",
+      "kotak-amplas": "sandpaper",
+      "s-kelereng": "A marble rolled just as hard each time",
+      "kelereng-ubin": "smooth tiles",
+      "kelereng-kayu": "wooden board",
+      "kelereng-handuk": "thick towel",
+      "kelereng-pasir": "sand"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah permukaan: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "mobil",
+      "titleKey": "s-mobil",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "mobil-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "keramik",
+          "labelKey": "mobil-keramik",
+          "emoji": "⬜"
+        },
+        {
+          "id": "karpet",
+          "labelKey": "mobil-karpet",
+          "emoji": "🟫",
+          "color": "#a1887f"
+        },
+        {
+          "id": "pasir",
+          "labelKey": "mobil-pasir",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "kotak",
+      "titleKey": "s-kotak",
+      "steps": [
+        {
+          "id": "kaca",
+          "labelKey": "kotak-kaca",
+          "emoji": "🔷",
+          "color": "#b3e5fc"
+        },
+        {
+          "id": "kayu",
+          "labelKey": "kotak-kayu",
+          "emoji": "🪵"
+        },
+        {
+          "id": "handuk",
+          "labelKey": "kotak-handuk",
+          "emoji": "🟦",
+          "color": "#81d4fa"
+        },
+        {
+          "id": "amplas",
+          "labelKey": "kotak-amplas",
+          "emoji": "🟫",
+          "color": "#a1887f"
+        }
+      ]
+    },
+    {
+      "id": "kelereng",
+      "titleKey": "s-kelereng",
+      "steps": [
+        {
+          "id": "ubin",
+          "labelKey": "kelereng-ubin",
+          "emoji": "⬜"
+        },
+        {
+          "id": "kayu",
+          "labelKey": "kelereng-kayu",
+          "emoji": "🪵"
+        },
+        {
+          "id": "handuk",
+          "labelKey": "kelereng-handuk",
+          "emoji": "🟦",
+          "color": "#81d4fa"
+        },
+        {
+          "id": "pasir",
+          "labelKey": "kelereng-pasir",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

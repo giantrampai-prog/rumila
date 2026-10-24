@@ -1,0 +1,136 @@
+{
+  "id": "sd2-sains-rawat-atau-rusak-sungai-pantai",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.LINGKUNGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Merawat atau Merusak? (Sungai dan Pantai)",
+      "instruksi": "Di sungai dan pantai: kegiatan ini merawat atau merusak? Taruh ke raknya.",
+      "b-rawat": "merawat lingkungan",
+      "b-rusak": "merusak lingkungan",
+      "i-mangrove": "menanam bakau di pantai",
+      "i-pungut": "memungut sampah di pantai",
+      "i-tukik": "melepas tukik ke laut",
+      "i-jaring": "menangkap ikan secukupnya",
+      "i-bersihsungai": "kerja bakti membersihkan sungai",
+      "i-sampahsungai": "membuang sampah ke sungai",
+      "i-karang": "menginjak terumbu karang",
+      "i-limbah": "membuang air sabun ke sungai",
+      "i-kantong": "meninggalkan kantong plastik di pasir",
+      "i-bom": "menangkap ikan dengan racun"
+    },
+    "en": {
+      "judul": "Caring or Harming? (River and Beach)",
+      "instruksi": "At the river and beach: does this action care or harm? Put it on its shelf.",
+      "b-rawat": "caring for the environment",
+      "b-rusak": "harming the environment",
+      "i-mangrove": "planting mangroves on the shore",
+      "i-pungut": "picking up litter on the beach",
+      "i-tukik": "releasing baby turtles to the sea",
+      "i-jaring": "catching only enough fish",
+      "i-bersihsungai": "cleaning up the river together",
+      "i-sampahsungai": "throwing rubbish into the river",
+      "i-karang": "stepping on coral reefs",
+      "i-limbah": "pouring soapy water into the river",
+      "i-kantong": "leaving plastic bags on the sand",
+      "i-bom": "catching fish with poison"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "rawat",
+      "labelKey": "b-rawat",
+      "emoji": "🌱",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "rusak",
+      "labelKey": "b-rusak",
+      "emoji": "🗑️",
+      "color": "#ffebee"
+    }
+  ],
+  "items": [
+    {
+      "id": "mangrove",
+      "labelKey": "i-mangrove",
+      "bin": "rawat",
+      "emoji": "🌱"
+    },
+    {
+      "id": "pungut",
+      "labelKey": "i-pungut",
+      "bin": "rawat",
+      "emoji": "🛍️"
+    },
+    {
+      "id": "tukik",
+      "labelKey": "i-tukik",
+      "bin": "rawat",
+      "emoji": "🐢"
+    },
+    {
+      "id": "jaring",
+      "labelKey": "i-jaring",
+      "bin": "rawat",
+      "emoji": "🎣"
+    },
+    {
+      "id": "bersihsungai",
+      "labelKey": "i-bersihsungai",
+      "bin": "rawat",
+      "emoji": "🧹"
+    },
+    {
+      "id": "sampahsungai",
+      "labelKey": "i-sampahsungai",
+      "bin": "rusak",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "karang",
+      "labelKey": "i-karang",
+      "bin": "rusak",
+      "emoji": "🪸"
+    },
+    {
+      "id": "limbah",
+      "labelKey": "i-limbah",
+      "bin": "rusak",
+      "emoji": "🧼"
+    },
+    {
+      "id": "kantong",
+      "labelKey": "i-kantong",
+      "bin": "rusak",
+      "emoji": "🛍️",
+      "color": "#ef9a9a"
+    },
+    {
+      "id": "bom",
+      "labelKey": "i-bom",
+      "bin": "rusak",
+      "emoji": "☠️"
+    }
+  ],
+  "pilihan": []
+}

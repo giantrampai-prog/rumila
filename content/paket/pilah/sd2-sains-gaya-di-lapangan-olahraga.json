@@ -1,0 +1,136 @@
+{
+  "id": "sd2-sains-gaya-di-lapangan-olahraga",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gaya di Lapangan Olahraga",
+      "instruksi": "Gaya ini mengubah gerak atau bentuk? Taruh ke raknya.",
+      "b-gerak": "gerak berubah",
+      "b-bentuk": "bentuk berubah",
+      "i-sundul": "menyundul bola",
+      "i-kasti": "memukul bola kasti",
+      "i-tahan": "menahan bola basket",
+      "i-gawang": "bola ditangkap jaring gawang",
+      "i-dayung": "mendayung perahu",
+      "i-bolastres": "meremas bola lunak",
+      "i-kardus": "menginjak kardus",
+      "i-sedotan": "membengkokkan sedotan",
+      "i-pasir": "menekan pasir basah",
+      "i-matras": "duduk di matras empuk"
+    },
+    "en": {
+      "judul": "Forces on the Sports Field",
+      "instruksi": "Does this force change movement or shape? Put it on its shelf.",
+      "b-gerak": "movement changes",
+      "b-bentuk": "shape changes",
+      "i-sundul": "heading a ball",
+      "i-kasti": "hitting a rounders ball",
+      "i-tahan": "stopping a basketball",
+      "i-gawang": "ball caught by the goal net",
+      "i-dayung": "paddling a boat",
+      "i-bolastres": "squeezing a soft ball",
+      "i-kardus": "stepping on a box",
+      "i-sedotan": "bending a straw",
+      "i-pasir": "pressing wet sand",
+      "i-matras": "sitting on a soft mat"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gerak",
+      "labelKey": "b-gerak",
+      "emoji": "➡️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "bentuk",
+      "labelKey": "b-bentuk",
+      "emoji": "🫳",
+      "color": "#fce4ec"
+    }
+  ],
+  "items": [
+    {
+      "id": "sundul",
+      "labelKey": "i-sundul",
+      "bin": "gerak",
+      "emoji": "⚽"
+    },
+    {
+      "id": "kasti",
+      "labelKey": "i-kasti",
+      "bin": "gerak",
+      "emoji": "🏏"
+    },
+    {
+      "id": "tahan",
+      "labelKey": "i-tahan",
+      "bin": "gerak",
+      "emoji": "🏀"
+    },
+    {
+      "id": "gawang",
+      "labelKey": "i-gawang",
+      "bin": "gerak",
+      "emoji": "🥅"
+    },
+    {
+      "id": "dayung",
+      "labelKey": "i-dayung",
+      "bin": "gerak",
+      "emoji": "🛶"
+    },
+    {
+      "id": "bolastres",
+      "labelKey": "i-bolastres",
+      "bin": "bentuk",
+      "emoji": "🔴"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "bentuk",
+      "emoji": "📦"
+    },
+    {
+      "id": "sedotan",
+      "labelKey": "i-sedotan",
+      "bin": "bentuk",
+      "emoji": "🥤"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "bentuk",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "matras",
+      "labelKey": "i-matras",
+      "bin": "bentuk",
+      "emoji": "🟦",
+      "color": "#90caf9"
+    }
+  ],
+  "pilihan": []
+}

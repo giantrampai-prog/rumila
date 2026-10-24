@@ -1,0 +1,198 @@
+{
+  "id": "sd5-sains-tugas-organ-cerna",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.PENCERNAAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Mengolah Makanan?",
+      "instruksi": "Baca tugasnya, lalu sentuh organ yang melakukannya.",
+      "b-pilihan": "pilihan",
+      "i-mulut": "mulut",
+      "i-kerongkongan": "kerongkongan",
+      "i-lambung": "lambung",
+      "i-usushalus": "usus halus",
+      "i-ususbesar": "usus besar",
+      "i-anus": "anus",
+      "i-mirip": "mirip dengan manusia",
+      "i-beda": "sama sekali berbeda",
+      "p-r1": "Di sini gigi memotong dan mengunyah makanan, lalu ludah melunakkannya.",
+      "p-r2": "Saluran yang mendorong makanan dari mulut ke lambung.",
+      "p-r3": "Kantong berotot yang mengaduk makanan dengan cairan asam.",
+      "p-r4": "Saluran panjang tempat sari makanan diserap masuk ke darah.",
+      "p-r5": "Bagian yang menyerap air dari sisa makanan sehingga sisanya memadat.",
+      "p-r6": "Ujung saluran tempat sisa makanan keluar dari tubuh.",
+      "p-r7": "Gula dan zat lain dari nasi paling banyak masuk ke darah di…",
+      "p-r8": "Kucing dan sapi juga punya mulut, lambung, dan usus. Sistem pencernaan banyak hewan bertulang belakang…"
+    },
+    "en": {
+      "judul": "Who Processes the Food?",
+      "instruksi": "Read the job, then touch the organ that does it.",
+      "b-pilihan": "choices",
+      "i-mulut": "mouth",
+      "i-kerongkongan": "oesophagus",
+      "i-lambung": "stomach",
+      "i-usushalus": "small intestine",
+      "i-ususbesar": "large intestine",
+      "i-anus": "anus",
+      "i-mirip": "similar to humans",
+      "i-beda": "completely different",
+      "p-r1": "Here teeth cut and chew the food, and saliva softens it.",
+      "p-r2": "The tube that pushes food from the mouth to the stomach.",
+      "p-r3": "The muscular bag that churns food with acid.",
+      "p-r4": "The long tube where nutrients are absorbed into the blood.",
+      "p-r5": "The part that takes water out of the leftovers so they become solid.",
+      "p-r6": "The end of the tube where waste leaves the body.",
+      "p-r7": "Sugars and other nutrients from rice mostly enter the blood in the…",
+      "p-r8": "Cats and cows also have a mouth, stomach and intestines. The digestive system of many vertebrates is…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "mulut",
+      "labelKey": "i-mulut",
+      "bin": "pilihan",
+      "emoji": "👄"
+    },
+    {
+      "id": "kerongkongan",
+      "labelKey": "i-kerongkongan",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "lambung",
+      "labelKey": "i-lambung",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#ffab91"
+    },
+    {
+      "id": "usushalus",
+      "labelKey": "i-usushalus",
+      "bin": "pilihan",
+      "emoji": "🌀"
+    },
+    {
+      "id": "ususbesar",
+      "labelKey": "i-ususbesar",
+      "bin": "pilihan",
+      "emoji": "🌀"
+    },
+    {
+      "id": "anus",
+      "labelKey": "i-anus",
+      "bin": "pilihan",
+      "emoji": "🚽"
+    },
+    {
+      "id": "mirip",
+      "labelKey": "i-mirip",
+      "bin": "pilihan",
+      "emoji": "🐄"
+    },
+    {
+      "id": "beda",
+      "labelKey": "i-beda",
+      "bin": "pilihan",
+      "emoji": "❓"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "mulut",
+        "lambung",
+        "kerongkongan"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "kerongkongan",
+        "usushalus",
+        "ususbesar"
+      ],
+      "correct": "kerongkongan"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "lambung",
+        "mulut",
+        "ususbesar"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "usushalus",
+        "lambung",
+        "ususbesar"
+      ],
+      "correct": "usushalus"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "ususbesar",
+        "usushalus",
+        "kerongkongan"
+      ],
+      "correct": "ususbesar"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "anus",
+        "ususbesar",
+        "mulut"
+      ],
+      "correct": "anus"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "usushalus",
+        "lambung",
+        "mulut"
+      ],
+      "correct": "usushalus"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "mirip",
+        "beda"
+      ],
+      "correct": "mirip"
+    }
+  ]
+}

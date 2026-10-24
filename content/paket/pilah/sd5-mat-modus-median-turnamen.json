@@ -1,0 +1,321 @@
+{
+  "id": "sd5-mat-modus-median-turnamen",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Data Turnamen",
+      "instruksi": "Urutkan datanya dulu. Median = tengah, modus = paling sering. Sentuh jawabannya.",
+      "q1": "Jumlah ikan ditangkap: 11, 13, 14, 16, 16, 18, 8. Mediannya …",
+      "c1": "14",
+      "c2": "16",
+      "c3": "18",
+      "c4": "8",
+      "q2": "Lompat tali (kali): 7, 3, 8, 3, 12, 16, 11. Mediannya …",
+      "c5": "3",
+      "c6": "9",
+      "q3": "Lompat tali (kali): 14, 3, 7, 2, 9, 15, 1. Mediannya …",
+      "c7": "7",
+      "c8": "15",
+      "c9": "2",
+      "c10": "1",
+      "q4": "Jumlah ikan ditangkap: 4, 2, 9, 17, 19, 17, 8, 4, 11. Mediannya …",
+      "c11": "19",
+      "c12": "10",
+      "q5": "Jumlah ikan ditangkap: 19, 4, 4, 14, 16, 2, 8, 15, 10. Modusnya …",
+      "c13": "4",
+      "q6": "Jumlah ikan ditangkap: 6, 1, 13, 12, 13, 8, 5. Modusnya …",
+      "c14": "13",
+      "c15": "12",
+      "q7": "Skor permainan: 7, 18, 9, 17, 17. Mediannya …",
+      "c16": "17",
+      "q8": "Jumlah ikan ditangkap: 6, 15, 11, 4, 18, 17, 8, 5, 4. Modusnya …",
+      "q9": "Jumlah ikan ditangkap: 7, 10, 1, 16, 6. Mediannya …",
+      "q10": "Jumlah ikan ditangkap: 19, 7, 3, 15, 19. Modusnya …",
+      "q11": "Skor permainan: 17, 8, 4, 17, 10. Mediannya …",
+      "c17": "11",
+      "q12": "Skor permainan: 17, 7, 7, 18, 2, 15, 5. Mediannya …",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Tournament Data",
+      "instruksi": "Sort the data first. Median = middle, mode = most often. Touch the answer.",
+      "q1": "Fish caught: 11, 13, 14, 16, 16, 18, 8. The median is …",
+      "c1": "14",
+      "c2": "16",
+      "c3": "18",
+      "c4": "8",
+      "q2": "Rope skips: 7, 3, 8, 3, 12, 16, 11. The median is …",
+      "c5": "3",
+      "c6": "9",
+      "q3": "Rope skips: 14, 3, 7, 2, 9, 15, 1. The median is …",
+      "c7": "7",
+      "c8": "15",
+      "c9": "2",
+      "c10": "1",
+      "q4": "Fish caught: 4, 2, 9, 17, 19, 17, 8, 4, 11. The median is …",
+      "c11": "19",
+      "c12": "10",
+      "q5": "Fish caught: 19, 4, 4, 14, 16, 2, 8, 15, 10. The mode is …",
+      "c13": "4",
+      "q6": "Fish caught: 6, 1, 13, 12, 13, 8, 5. The mode is …",
+      "c14": "13",
+      "c15": "12",
+      "q7": "Game scores: 7, 18, 9, 17, 17. The median is …",
+      "c16": "17",
+      "q8": "Fish caught: 6, 15, 11, 4, 18, 17, 8, 5, 4. The mode is …",
+      "q9": "Fish caught: 7, 10, 1, 16, 6. The median is …",
+      "q10": "Fish caught: 19, 7, 3, 15, 19. The mode is …",
+      "q11": "Game scores: 17, 8, 4, 17, 10. The median is …",
+      "c17": "11",
+      "q12": "Game scores: 17, 7, 7, 18, 2, 15, 5. The median is …",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c2",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9",
+        "c10"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c11",
+        "c9",
+        "c12"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c12",
+        "c2",
+        "c11"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c14",
+        "c4",
+        "c15",
+        "c10"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c16",
+        "c6",
+        "c3",
+        "c7"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c13",
+        "c4",
+        "c3",
+        "c12"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c7",
+        "c2",
+        "c10",
+        "c4"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c11",
+        "c8",
+        "c5",
+        "c14"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c12",
+        "c16",
+        "c13",
+        "c17"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c7",
+        "c3",
+        "c9",
+        "c12"
+      ],
+      "correct": "c7"
+    }
+  ]
+}

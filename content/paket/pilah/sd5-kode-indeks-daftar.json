@@ -1,0 +1,358 @@
+{
+  "id": "sd5-kode-indeks-daftar",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.LIST.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Isi Daftar di Indeks Ini",
+      "instruksi": "Indeks daftar mulai dari 0: hitung posisinya dengan teliti, lalu pilih isinya.",
+      "pilihan": "pilihan",
+      "c1": "jeruk",
+      "c2": "apel",
+      "c3": "mangga",
+      "q1": "buah = ['apel', 'jeruk', 'mangga']. Apa isi buah[1]?",
+      "c4": "5",
+      "c5": "8",
+      "c6": "9",
+      "q2": "angka = [5, 8, 3, 9]. Apa isi angka[0]?",
+      "c7": "3",
+      "c8": "error (tidak ada)",
+      "q3": "angka = [5, 8, 3, 9]. Apa isi angka[3]?",
+      "c9": "4",
+      "q4": "angka = [5, 8, 3, 9]. Apa isi angka[4]?",
+      "c10": "2",
+      "q5": "warna = ['merah', 'biru']. warna.append('hijau'). Berapa len(warna)?",
+      "c11": "ikan",
+      "c12": "bebek",
+      "c13": "ayam",
+      "q6": "hewan = ['kucing', 'ayam', 'bebek']. hewan[2] = 'ikan'. Apa isi hewan[2]?",
+      "c14": "160",
+      "c15": "155",
+      "c16": "175",
+      "q7": "nilai = [70, 85, 90]. Berapa nilai[0] + nilai[2]?",
+      "c17": "Ambon",
+      "c18": "Makassar",
+      "q8": "kota = ['Medan', 'Bandung', 'Makassar', 'Ambon']. Apa isi kota[len(kota) - 1]?",
+      "c19": "6",
+      "q9": "skor = [3, 6]. skor.append(9). Apa isi skor[2]?",
+      "c20": "0",
+      "c21": "1",
+      "q10": "huruf = ['x', 'y', 'z']. Di indeks berapa 'x' berada?",
+      "c22": "7",
+      "q11": "daftar = []. daftar.append(4). daftar.append(7). Apa isi daftar[0]?",
+      "q12": "hari = ['Senin', 'Selasa', 'Rabu']. Berapa len(hari)?"
+    },
+    "en": {
+      "judul": "What's at This Index?",
+      "instruksi": "List indexes start at 0: count the position carefully, then choose what is there.",
+      "pilihan": "choices",
+      "c1": "orange",
+      "c2": "apple",
+      "c3": "mango",
+      "q1": "fruit = ['apple', 'orange', 'mango']. What is fruit[1]?",
+      "c4": "5",
+      "c5": "8",
+      "c6": "9",
+      "q2": "nums = [5, 8, 3, 9]. What is nums[0]?",
+      "c7": "3",
+      "c8": "error (not there)",
+      "q3": "nums = [5, 8, 3, 9]. What is nums[3]?",
+      "c9": "4",
+      "q4": "nums = [5, 8, 3, 9]. What is nums[4]?",
+      "c10": "2",
+      "q5": "colours = ['red', 'blue']. colours.append('green'). What is len(colours)?",
+      "c11": "fish",
+      "c12": "duck",
+      "c13": "hen",
+      "q6": "animals = ['cat', 'hen', 'duck']. animals[2] = 'fish'. What is animals[2]?",
+      "c14": "160",
+      "c15": "155",
+      "c16": "175",
+      "q7": "marks = [70, 85, 90]. What is marks[0] + marks[2]?",
+      "c17": "Ambon",
+      "c18": "Makassar",
+      "q8": "cities = ['Medan', 'Bandung', 'Makassar', 'Ambon']. What is cities[len(cities) - 1]?",
+      "c19": "6",
+      "q9": "score = [3, 6]. score.append(9). What is score[2]?",
+      "c20": "0",
+      "c21": "1",
+      "q10": "letters = ['x', 'y', 'z']. At which index is 'x'?",
+      "c22": "7",
+      "q11": "items = []. items.append(4). items.append(7). What is items[0]?",
+      "q12": "days = ['Monday', 'Tuesday', 'Wednesday']. What is len(days)?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c8",
+        "c6",
+        "c9"
+      ],
+      "correct": "c8"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c7",
+        "c10",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c11",
+        "c12",
+        "c13"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c17",
+        "c18",
+        "c8"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c6",
+        "c19",
+        "c8"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c20",
+        "c21",
+        "c7"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c9",
+        "c22",
+        "c8"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c7",
+        "c10",
+        "c9"
+      ],
+      "correct": "c7"
+    }
+  ]
+}

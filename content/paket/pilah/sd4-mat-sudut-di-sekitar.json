@@ -1,0 +1,180 @@
+{
+  "id": "sd4-mat-sudut-di-sekitar",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sudut di Sekitar Kita",
+      "instruksi": "Pilah tiap sudut: lancip (< 90°), siku-siku (= 90°), atau tumpul (> 90°). Seperempat putaran = 90°.",
+      "b-lancip": "lancip",
+      "b-siku": "siku-siku",
+      "b-tumpul": "tumpul",
+      "i1": "5°",
+      "i2": "25°",
+      "i3": "45°",
+      "i4": "70°",
+      "i5": "80°",
+      "i6": "88°",
+      "i7": "90°",
+      "i8": "92°",
+      "i9": "100°",
+      "i10": "110°",
+      "i11": "135°",
+      "i12": "160°",
+      "i13": "179°",
+      "i14": "pojok buku",
+      "i15": "¼ putaran",
+      "i16": "⅛ putaran",
+      "i17": "⅜ putaran"
+    },
+    "en": {
+      "judul": "Angles Around Us",
+      "instruksi": "Sort each angle: acute (< 90°), right (= 90°) or obtuse (> 90°). A quarter turn = 90°.",
+      "b-lancip": "acute",
+      "b-siku": "right angle",
+      "b-tumpul": "obtuse",
+      "i1": "5°",
+      "i2": "25°",
+      "i3": "45°",
+      "i4": "70°",
+      "i5": "80°",
+      "i6": "88°",
+      "i7": "90°",
+      "i8": "92°",
+      "i9": "100°",
+      "i10": "110°",
+      "i11": "135°",
+      "i12": "160°",
+      "i13": "179°",
+      "i14": "book corner",
+      "i15": "¼ turn",
+      "i16": "⅛ turn",
+      "i17": "⅜ turn"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "lancip",
+      "labelKey": "b-lancip"
+    },
+    {
+      "id": "siku",
+      "labelKey": "b-siku"
+    },
+    {
+      "id": "tumpul",
+      "labelKey": "b-tumpul"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "lancip"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "lancip"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "lancip"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "lancip"
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "lancip"
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "lancip"
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "siku"
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "tumpul"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "siku",
+      "scale": 0.5
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "siku",
+      "scale": 0.5
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "lancip",
+      "scale": 0.5
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "tumpul",
+      "scale": 0.5
+    }
+  ]
+}

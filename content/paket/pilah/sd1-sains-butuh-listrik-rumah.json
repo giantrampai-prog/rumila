@@ -1,0 +1,151 @@
+{
+  "id": "sd1-sains-butuh-listrik-rumah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Butuh Listrik? (Rumah)",
+      "instruksi": "Alat ini bekerja dengan listrik atau tidak? Taruh ke raknya.",
+      "b-listrik": "butuh listrik",
+      "b-tanpa": "tanpa listrik",
+      "i-kipas": "kipas angin",
+      "i-lampu": "lampu",
+      "i-tv": "televisi",
+      "i-kulkas": "kulkas",
+      "i-senter": "senter berbaterai",
+      "i-jam": "jam dinding berbaterai",
+      "i-sapu": "sapu",
+      "i-gunting": "gunting",
+      "i-payung": "payung",
+      "i-buku": "buku cerita",
+      "i-ember": "ember",
+      "i-kursi": "kursi"
+    },
+    "en": {
+      "judul": "Needs Electricity? (Home)",
+      "instruksi": "Does this thing work with electricity or not? Put it on its shelf.",
+      "b-listrik": "needs electricity",
+      "b-tanpa": "no electricity",
+      "i-kipas": "electric fan",
+      "i-lampu": "lamp",
+      "i-tv": "television",
+      "i-kulkas": "fridge",
+      "i-senter": "battery torch",
+      "i-jam": "battery wall clock",
+      "i-sapu": "broom",
+      "i-gunting": "scissors",
+      "i-payung": "umbrella",
+      "i-buku": "storybook",
+      "i-ember": "bucket",
+      "i-kursi": "chair"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "listrik",
+      "labelKey": "b-listrik",
+      "emoji": "🔌",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "tanpa",
+      "labelKey": "b-tanpa",
+      "emoji": "🤚",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "kipas",
+      "labelKey": "i-kipas",
+      "bin": "listrik",
+      "emoji": "🌀"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "listrik",
+      "emoji": "💡"
+    },
+    {
+      "id": "tv",
+      "labelKey": "i-tv",
+      "bin": "listrik",
+      "emoji": "📺"
+    },
+    {
+      "id": "kulkas",
+      "labelKey": "i-kulkas",
+      "bin": "listrik",
+      "emoji": "🧊"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "listrik",
+      "emoji": "🔦"
+    },
+    {
+      "id": "jam",
+      "labelKey": "i-jam",
+      "bin": "listrik",
+      "emoji": "🕰️"
+    },
+    {
+      "id": "sapu",
+      "labelKey": "i-sapu",
+      "bin": "tanpa",
+      "emoji": "🧹"
+    },
+    {
+      "id": "gunting",
+      "labelKey": "i-gunting",
+      "bin": "tanpa",
+      "emoji": "✂️"
+    },
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "tanpa",
+      "emoji": "☂️"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "tanpa",
+      "emoji": "📖"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "tanpa",
+      "emoji": "🪣"
+    },
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "tanpa",
+      "emoji": "🪑"
+    }
+  ],
+  "pilihan": []
+}

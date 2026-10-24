@@ -1,0 +1,183 @@
+{
+  "id": "sd3-sains-hidup-pernah-tidak-pernah-rumah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hidup, Pernah Hidup, Tak Pernah Hidup",
+      "instruksi": "Taruh tiap benda di rumah ke rak yang tepat.",
+      "b-hidup": "masih hidup",
+      "b-pernah": "pernah hidup",
+      "b-tidak": "tidak pernah hidup",
+      "i-kucing": "kucing",
+      "i-tanaman": "tanaman di pot",
+      "i-semut": "semut",
+      "i-ikan": "ikan di akuarium",
+      "i-kursi": "kursi kayu",
+      "i-daunkering": "daun kering",
+      "i-bulu": "bulu ayam",
+      "i-tulang": "tulang sisa sup",
+      "i-ranting": "ranting kering",
+      "i-batu": "batu",
+      "i-sendok": "sendok logam",
+      "i-kelereng": "kelereng kaca",
+      "i-garam": "garam",
+      "i-air": "air minum"
+    },
+    "en": {
+      "judul": "Living, Once Living, Never Living",
+      "instruksi": "Put each thing from the house on the right shelf.",
+      "b-hidup": "living",
+      "b-pernah": "once living",
+      "b-tidak": "never living",
+      "i-kucing": "cat",
+      "i-tanaman": "potted plant",
+      "i-semut": "ant",
+      "i-ikan": "fish in the tank",
+      "i-kursi": "wooden chair",
+      "i-daunkering": "dry leaf",
+      "i-bulu": "chicken feather",
+      "i-tulang": "bone left from soup",
+      "i-ranting": "dry twig",
+      "i-batu": "stone",
+      "i-sendok": "metal spoon",
+      "i-kelereng": "glass marble",
+      "i-garam": "salt",
+      "i-air": "drinking water"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (hidup, pernah hidup) → 3 (tambah tidak pernah hidup)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "hidup",
+      "labelKey": "b-hidup",
+      "emoji": "🌱",
+      "color": "#dcedc8"
+    },
+    {
+      "id": "pernah",
+      "labelKey": "b-pernah",
+      "emoji": "🍂",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🪨",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "hidup",
+      "emoji": "🐈"
+    },
+    {
+      "id": "tanaman",
+      "labelKey": "i-tanaman",
+      "bin": "hidup",
+      "emoji": "🪴"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "hidup",
+      "emoji": "🐜"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "hidup",
+      "emoji": "🐠"
+    },
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "pernah",
+      "emoji": "🪑"
+    },
+    {
+      "id": "daunkering",
+      "labelKey": "i-daunkering",
+      "bin": "pernah",
+      "emoji": "🍂"
+    },
+    {
+      "id": "bulu",
+      "labelKey": "i-bulu",
+      "bin": "pernah",
+      "emoji": "🪶"
+    },
+    {
+      "id": "tulang",
+      "labelKey": "i-tulang",
+      "bin": "pernah",
+      "emoji": "🦴"
+    },
+    {
+      "id": "ranting",
+      "labelKey": "i-ranting",
+      "bin": "pernah",
+      "emoji": "🥢",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "tidak",
+      "emoji": "🪨"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "tidak",
+      "emoji": "🥄"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "tidak",
+      "emoji": "🔮"
+    },
+    {
+      "id": "garam",
+      "labelKey": "i-garam",
+      "bin": "tidak",
+      "emoji": "🧂"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "tidak",
+      "emoji": "💧"
+    }
+  ],
+  "pilihan": []
+}

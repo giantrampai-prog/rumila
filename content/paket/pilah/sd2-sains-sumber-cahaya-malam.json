@@ -1,0 +1,135 @@
+{
+  "id": "sd2-sains-sumber-cahaya-malam",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cahaya di Malam Hari",
+      "instruksi": "Di luar malam hari, mana yang membuat cahaya sendiri? Taruh ke raknya.",
+      "b-sumber": "sumber cahaya",
+      "b-bukan": "bukan sumber cahaya",
+      "i-bintang": "bintang",
+      "i-kunang": "kunang-kunang",
+      "i-unggun": "api unggun",
+      "i-kilat": "kilat",
+      "i-lampujalan": "lampu jalan menyala",
+      "i-bulan": "Bulan",
+      "i-reflektor": "stiker pemantul di sepeda",
+      "i-genangan": "genangan air mengilap",
+      "i-matakucing": "mata kucing berkilau",
+      "i-rambu": "rambu jalan mengilap"
+    },
+    "en": {
+      "judul": "Lights at Night",
+      "instruksi": "Outside at night, which things make their own light? Put them on their shelf.",
+      "b-sumber": "light source",
+      "b-bukan": "not a light source",
+      "i-bintang": "star",
+      "i-kunang": "firefly",
+      "i-unggun": "campfire",
+      "i-kilat": "lightning",
+      "i-lampujalan": "street light switched on",
+      "i-bulan": "the Moon",
+      "i-reflektor": "reflector on a bike",
+      "i-genangan": "shiny puddle",
+      "i-matakucing": "cat's shining eyes",
+      "i-rambu": "shiny road sign"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sumber",
+      "labelKey": "b-sumber",
+      "emoji": "💡",
+      "color": "#fff9c4"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-bukan",
+      "emoji": "🌑",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "sumber",
+      "emoji": "⭐"
+    },
+    {
+      "id": "kunang",
+      "labelKey": "i-kunang",
+      "bin": "sumber",
+      "emoji": "✨"
+    },
+    {
+      "id": "unggun",
+      "labelKey": "i-unggun",
+      "bin": "sumber",
+      "emoji": "🔥"
+    },
+    {
+      "id": "kilat",
+      "labelKey": "i-kilat",
+      "bin": "sumber",
+      "emoji": "⚡"
+    },
+    {
+      "id": "lampujalan",
+      "labelKey": "i-lampujalan",
+      "bin": "sumber",
+      "emoji": "🏮"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "bukan",
+      "emoji": "🌕"
+    },
+    {
+      "id": "reflektor",
+      "labelKey": "i-reflektor",
+      "bin": "bukan",
+      "emoji": "🚲"
+    },
+    {
+      "id": "genangan",
+      "labelKey": "i-genangan",
+      "bin": "bukan",
+      "emoji": "💧"
+    },
+    {
+      "id": "matakucing",
+      "labelKey": "i-matakucing",
+      "bin": "bukan",
+      "emoji": "🐈‍⬛"
+    },
+    {
+      "id": "rambu",
+      "labelKey": "i-rambu",
+      "bin": "bukan",
+      "emoji": "🚸"
+    }
+  ],
+  "pilihan": []
+}

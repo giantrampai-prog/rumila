@@ -1,0 +1,82 @@
+{
+  "id": "sd1-sains-turus-pengunjung-kebun",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.SD1.PENGAMATAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Mampir ke Kebun?",
+      "instruksi": "Tiap hewan lewat, ketuk barisnya supaya satu turus tercatat.",
+      "kupu": "kupu-kupu",
+      "lebah": "lebah",
+      "burung": "burung",
+      "siput": "siput"
+    },
+    "en": {
+      "judul": "Who Visits the Garden?",
+      "instruksi": "Each time an animal passes, tap its row to add one tally mark.",
+      "kupu": "butterfly",
+      "lebah": "bee",
+      "burung": "bird",
+      "siput": "snail"
+    }
+  },
+  "knobs": {
+    "kinds": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah jenis hewan (baris turus)"
+    },
+    "count": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah hewan yang lewat per putaran"
+    },
+    "gapMs": {
+      "min": 1400,
+      "max": 2000,
+      "default": 2000,
+      "step": 200,
+      "keterangan": "jeda antarhewan (ms)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "turus",
+  "items": [
+    {
+      "id": "kupu",
+      "labelKey": "kupu",
+      "role": "hewan",
+      "emoji": "🦋"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "lebah",
+      "role": "hewan",
+      "emoji": "🐝"
+    },
+    {
+      "id": "burung",
+      "labelKey": "burung",
+      "role": "hewan",
+      "emoji": "🐦"
+    },
+    {
+      "id": "siput",
+      "labelKey": "siput",
+      "role": "hewan",
+      "emoji": "🐌"
+    }
+  ]
+}

@@ -1,0 +1,726 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.SD5.DESIMAL.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "DESIMAL",
+        "nama": {
+          "id": "Desimal",
+          "en": "Decimals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menyebut nilai tiap angka pada desimal sampai perseratus, misalnya 7 pada 3,47 bernilai 0,07",
+        "en": "I can say the value of each digit in decimals to hundredths, e.g. the 7 in 3.47 is worth 0.07"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NILAI-TEMPAT.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Np.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Np.04",
+          "note": "menyusun desimal dari satuan, persepuluhan, perseratusan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Nilai angka yang ditunjuk, menulis \"tiga persepuluh\", dan menyusun 4 + 0,6 + 0,05. Jebakan: 0,7 vs 0,07; 4,605 untuk 4 + 0,6 + 0,05; 6,02 (nol penyangga)."
+    },
+    {
+      "id": "MAT.SD5.DESIMAL.02",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "DESIMAL",
+        "nama": {
+          "id": "Desimal",
+          "en": "Decimals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan desimal satu angka di belakang koma, pecahan, dan persen dari yang terkecil",
+        "en": "I can order one-place decimals, fractions and percentages from smallest to largest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.DESIMAL.01",
+        "MAT.SD5.PECAHAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nf.08"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan"
+      ],
+      "catatan": "Sebagian deret satu jenis (hanya desimal / hanya persen / pecahan berpenyebut sama), sebagian campuran yang butuh kesetaraan (10%, 0,3, 1/2, 70%, 0,9). Jebakan: 9,9 vs 10,1; 50% vs 52%. Knob: 3 → 5 kartu."
+    },
+    {
+      "id": "MAT.SD5.DESIMAL.03",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "DESIMAL",
+        "nama": {
+          "id": "Desimal",
+          "en": "Decimals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membulatkan desimal satu angka di belakang koma ke bilangan bulat terdekat",
+        "en": "I can round numbers with one decimal place to the nearest whole number"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.DESIMAL.01",
+        "MAT.SD4.NILAI-TEMPAT.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Np.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu 3,5 · 3,4 · 2,6 dipilah ke rak 3, 4, 5, 6. Jebakan: x,5 naik; 2,6 ke 3 (bukan 2 karena angka depannya). Knob: 2 → 4 rak, 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD5.DESIMAL.04",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "DESIMAL",
+        "nama": {
+          "id": "Desimal",
+          "en": "Decimals"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengalikan dan membagi bilangan bulat dan desimal dengan 10, 100, dan 1.000",
+        "en": "I can multiply and divide whole numbers and decimals by 10, 100 and 1,000"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD5.DESIMAL.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Np.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Np.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Angka bergeser tempat, bukan \"tambah nol\": 3,7 × 10 = 37 (bukan 3,70). Juga konversi m↔cm dan g↔kg. Pengecoh: geser ke arah salah, geser satu tempat terlalu jauh."
+    },
+    {
+      "id": "MAT.SD5.UANG.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "UANG",
+        "nama": {
+          "id": "Uang",
+          "en": "Money"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memberi kembalian yang tepat dari Rp50.000 atau Rp100.000 untuk harga yang memakai ratusan, misalnya Rp63.500",
+        "en": "I can give the right change from Rp50,000 or Rp100,000 for prices with hundreds, e.g. Rp63,500"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.TAMBAH-KURANG.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.01",
+          "note": "menjumlah dan mengurangi bilangan bulat dalam konteks uang"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Laci punya koin 500. Jebakan: lupa 500 (kembalian 36.000 untuk 63.500 dari 100.000), meminjam di ribuan. Pengaya; lanjutan SD4 TAMBAH-KURANG.01."
+    },
+    {
+      "id": "MAT.SD5.BULAT.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "BULAT",
+        "nama": {
+          "id": "Bilangan bulat",
+          "en": "Integers"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung penjumlahan dan pengurangan yang melewati nol, misalnya suhu −4°C naik 9 derajat menjadi 5°C",
+        "en": "I can add and subtract across zero, e.g. a temperature of −4°C rising by 9 degrees becomes 5°C"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.NEGATIF.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.01",
+          "note": "salah satu bilangan negatif"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nc.01",
+          "note": "melangkah melewati nol"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Konteks suhu, lift, kapal selam, lalu soal tanpa konteks. Jebakan: tanda salah (−13 untuk −4 + 9), menjumlah angka tanpa melihat tanda."
+    },
+    {
+      "id": "MAT.SD5.OPERASI.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "OPERASI",
+        "nama": {
+          "id": "Operasi hitung",
+          "en": "Operations"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung soal campuran dengan urutan yang benar: kali dan bagi dulu, baru tambah dan kurang",
+        "en": "I can work out mixed calculations in the right order: multiply and divide first, then add and subtract"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Belum ada tanda kurung (itu SD6). Pengecoh = hasil bila dihitung kiri ke kanan. Jebakan: 7 + 8 : 2 menjadi 7,5; 36 : 6 : 2 dikerjakan dari kanan."
+    },
+    {
+      "id": "MAT.SD5.OPERASI.02",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "OPERASI",
+        "nama": {
+          "id": "Operasi hitung",
+          "en": "Operations"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengalikan bilangan sampai 1.000 dengan bilangan 2 angka dan membagi bilangan sampai 1.000 dengan bilangan 1 angka",
+        "en": "I can multiply numbers up to 1,000 by 2-digit numbers and divide numbers up to 1,000 by 1-digit numbers"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.04"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Soal cerita dan soal langsung, termasuk perkiraan (498 × 21 ≈ 10.000) dan sisa. Pengecoh: lupa baris kedua perkalian bersusun (144 × 15 → 864), salah simpan."
+    },
+    {
+      "id": "MAT.SD5.FAKTOR.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "FAKTOR",
+        "nama": {
+          "id": "Faktor dan kelipatan",
+          "en": "Factors and multiples"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bilangan prima dan bilangan komposit sampai 100",
+        "en": "I can sort numbers up to 100 into prime and composite numbers"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.06"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Jebakan: semua bilangan ganjil dianggap prima (9, 21, 51, 57, 91); 2 adalah prima genap. Angka 1 sengaja tidak ada. Knob: 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD5.FAKTOR.02",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "FAKTOR",
+        "nama": {
+          "id": "Faktor dan kelipatan",
+          "en": "Factors and multiples"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengenali bilangan kuadrat dan bilangan segitiga dari polanya",
+        "en": "I can recognise square numbers and triangular numbers from their patterns"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.01",
+        "MAT.SD4.POLA-BILANGAN.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.08"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nc.04"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak kuadrat / segitiga / bukan keduanya. 1 dan 36 (keduanya) sengaja tidak dipakai supaya jawaban tunggal. Jebakan: 8 (2 × 4, bukan kuadrat), 12 dan 20."
+    },
+    {
+      "id": "MAT.SD5.FAKTOR.03",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "FAKTOR",
+        "nama": {
+          "id": "Faktor dan kelipatan",
+          "en": "Factors and multiples"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memakai dua angka terakhir untuk menguji apakah bilangan habis dibagi 4 atau 8",
+        "en": "I can use the last digits to test whether a number is divisible by 4 or 8"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.KALI-BAGI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ni.07"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Tiga rak saling lepas: habis dibagi 8 / habis dibagi 4 tetapi tidak 8 / tidak habis dibagi 4. Uji 4: dua angka terakhir; uji 8: tiga angka terakhir. Pengaya."
+    },
+    {
+      "id": "MAT.SD5.PECAHAN.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasangkan pecahan tidak wajar dengan pecahan campuran yang senilai, misalnya 9/4 = 2¼",
+        "en": "I can match improper fractions to equal mixed numbers, e.g. 9/4 = 2¼"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.PECAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nf.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak pecahan campuran, kartu pecahan tidak wajar termasuk yang senilai (9/6 = 1½). Jebakan: 7/2 → 2½ (membaca 7 − 2 · 2). Knob: 2 → 4 rak."
+    },
+    {
+      "id": "MAT.SD5.PECAHAN.02",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memasangkan pecahan, desimal, dan persen yang nilainya sama, misalnya 1/2 = 0,5 = 50%",
+        "en": "I can match fractions, decimals and percentages with the same value, e.g. 1/2 = 0.5 = 50%"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.PECAHAN.01",
+        "MAT.SD5.DESIMAL.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nf.04"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nf.01",
+          "note": "pecahan sebagai pembagian; persepuluhan dan perseratusan"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Rak 1/2, 1/10, 3/10, 4/5; kartu 0,5 · 50% · 10/100 · 0,8 …. Jebakan: 4/5 = 0,4 atau 45%; 1/10 = 1%. Knob: 2 → 4 rak."
+    },
+    {
+      "id": "MAT.SD5.PECAHAN.03",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "PECAHAN",
+        "nama": {
+          "id": "Pecahan, desimal, persen",
+          "en": "Fractions, decimals, percentages"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menjumlah dan mengurangi pecahan yang penyebutnya sama atau kelipatannya, misalnya 1/2 + 1/4",
+        "en": "I can add and subtract fractions with the same denominator or where one is a multiple of the other, e.g. 1/2 + 1/4"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.PECAHAN.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Nf.05"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Jawaban ditulis dengan penyebut yang lebih besar (5/10, bukan 1/2) supaya tidak ada dua jawaban benar di pilihan. Pengecoh utama: pembilang + pembilang dan penyebut + penyebut (1/2 + 1/4 = 2/6)."
+    },
+    {
+      "id": "MAT.SD5.WAKTU.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "WAKTU",
+        "nama": {
+          "id": "Waktu",
+          "en": "Time"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung lama waktu yang melewati batas 60 menit, misalnya dari 09.45 sampai 11.20",
+        "en": "I can work out time intervals that bridge 60 minutes, e.g. from 09:45 to 11:20"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.WAKTU.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gt.03"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gt.04",
+          "note": "selang waktu sebagai desimal (1,5 jam)"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gt.02",
+          "note": "beda zona waktu WIB–WIT"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Pengecoh utama: mengurangi waktu seperti desimal (11.20 − 9.45 = 1.75 → \"1 jam 75 menit\"). Termasuk 1,5 jam = 1 jam 30 menit dan zona WIB/WIT."
+    },
+    {
+      "id": "MAT.SD5.GEOMETRI.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah segitiga sama sisi, sama kaki, dan sembarang dari panjang sisi atau besar sudutnya",
+        "en": "I can sort triangles into equilateral, isosceles and scalene from their side lengths or angles"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.GEOMETRI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gg.01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kartu tiga ukuran sisi (5, 8, 5) atau tiga sudut (40°, 40°, 100°). Jebakan: dua sisi sama yang tidak berdampingan di kartu; 30°, 60°, 90° = sembarang. Knob: 6 → 10 kartu."
+    },
+    {
+      "id": "MAT.SD5.GEOMETRI.02",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencari sudut yang hilang pada garis lurus karena jumlah sudutnya 180°",
+        "en": "I can find a missing angle on a straight line because the angles add up to 180°"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.GEOMETRI.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gg.08"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Satu atau dua sudut diketahui. Pengecoh: 90 − x (mengira siku-siku), 360 − x (mengira satu putaran), salah hitung 10."
+    },
+    {
+      "id": "MAT.SD5.GEOMETRI.03",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "GEOMETRI",
+        "nama": {
+          "id": "Geometri dan pengukuran",
+          "en": "Geometry and measure"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menunjukkan bahwa bangun dengan keliling sama bisa punya luas berbeda, dan luas sama bisa punya keliling berbeda",
+        "en": "I can show that shapes with the same perimeter can have different areas, and the same area can have different perimeters"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.GEOMETRI.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gg.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Gg.03",
+          "note": "luas bangun gabungan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Membandingkan beberapa persegi panjang sekaligus (keliling 20: 5 × 5 paling luas). Pengaya; bukti lebih kuat di mekanik bangun bila sudah ada."
+    },
+    {
+      "id": "MAT.SD5.DATA.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "DATA",
+        "nama": {
+          "id": "Data",
+          "en": "Data"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencari modus dan median sekumpulan data",
+        "en": "I can find the mode and the median of a set of data"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.DATA.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Ss.03"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Jumlah data ganjil supaya median satu nilai. Pengecoh: nilai tengah sebelum diurutkan, modus untuk median, nilai terbesar. Data dipilih supaya modus ≠ median."
+    },
+    {
+      "id": "MAT.SD5.PELUANG.01",
+      "track": "MAT",
+      "level": "SD5",
+      "unit": {
+        "id": "PELUANG",
+        "nama": {
+          "id": "Peluang",
+          "en": "Chance"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membandingkan peluang dua kejadian dan mengenali kejadian yang peluangnya sama besar",
+        "en": "I can compare the likelihood of two events and recognise events that are equally likely"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.SD4.PELUANG.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Sp.02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Sp.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "5Sp.03",
+          "note": "perkiraan hasil percobaan berulang"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah"
+      ],
+      "catatan": "Kantong, roda putar, dadu; plus perkiraan banyak kejadian pada percobaan berulang (\"sekitar 70 kali\", bukan \"tepat 70 kali\")."
+    }
+  ]
+}

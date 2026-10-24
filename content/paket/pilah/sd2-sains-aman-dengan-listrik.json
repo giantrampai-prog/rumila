@@ -1,0 +1,151 @@
+{
+  "id": "sd2-sains-aman-dengan-listrik",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Aman dengan Listrik",
+      "instruksi": "Taruh tiap kebiasaan ke rak aman atau berbahaya.",
+      "b-aman": "aman",
+      "b-bahaya": "berbahaya",
+      "i-dewasa": "minta orang dewasa mencolokkan kabel",
+      "i-keringkan": "mengeringkan tangan sebelum menyalakan lampu",
+      "i-jauhikabel": "menjauhi kabel listrik yang putus",
+      "i-layanglapang": "main layang-layang di lapangan terbuka",
+      "i-tombol": "mematikan TV dengan tombolnya",
+      "i-lapor": "melapor kalau kabel terkelupas",
+      "i-jari": "memasukkan benda ke lubang stopkontak",
+      "i-basah": "memegang sakelar dengan tangan basah",
+      "i-layangkabel": "main layang-layang dekat kabel listrik",
+      "i-panjat": "memanjat tiang listrik",
+      "i-sentak": "mencabut kabel dengan menyentak",
+      "i-airdekat": "menaruh minuman di atas stopkontak"
+    },
+    "en": {
+      "judul": "Safe with Electricity",
+      "instruksi": "Put each habit on the safe shelf or the dangerous shelf.",
+      "b-aman": "safe",
+      "b-bahaya": "dangerous",
+      "i-dewasa": "asking a grown-up to plug in",
+      "i-keringkan": "drying hands before switching on",
+      "i-jauhikabel": "staying away from a broken wire",
+      "i-layanglapang": "flying a kite in an open field",
+      "i-tombol": "turning off the TV with its button",
+      "i-lapor": "telling someone about a frayed cable",
+      "i-jari": "poking things into a socket",
+      "i-basah": "touching a switch with wet hands",
+      "i-layangkabel": "flying a kite near power lines",
+      "i-panjat": "climbing an electricity pole",
+      "i-sentak": "yanking a plug out by its cable",
+      "i-airdekat": "putting a drink on top of a socket"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "aman",
+      "labelKey": "b-aman",
+      "emoji": "✅",
+      "color": "#e8f5e9"
+    },
+    {
+      "id": "bahaya",
+      "labelKey": "b-bahaya",
+      "emoji": "⚠️",
+      "color": "#ffebee"
+    }
+  ],
+  "items": [
+    {
+      "id": "dewasa",
+      "labelKey": "i-dewasa",
+      "bin": "aman",
+      "emoji": "🧑"
+    },
+    {
+      "id": "keringkan",
+      "labelKey": "i-keringkan",
+      "bin": "aman",
+      "emoji": "🙌"
+    },
+    {
+      "id": "jauhikabel",
+      "labelKey": "i-jauhikabel",
+      "bin": "aman",
+      "emoji": "↩️"
+    },
+    {
+      "id": "layanglapang",
+      "labelKey": "i-layanglapang",
+      "bin": "aman",
+      "emoji": "🪁"
+    },
+    {
+      "id": "tombol",
+      "labelKey": "i-tombol",
+      "bin": "aman",
+      "emoji": "📺"
+    },
+    {
+      "id": "lapor",
+      "labelKey": "i-lapor",
+      "bin": "aman",
+      "emoji": "🗣️"
+    },
+    {
+      "id": "jari",
+      "labelKey": "i-jari",
+      "bin": "bahaya",
+      "emoji": "🔌"
+    },
+    {
+      "id": "basah",
+      "labelKey": "i-basah",
+      "bin": "bahaya",
+      "emoji": "💦"
+    },
+    {
+      "id": "layangkabel",
+      "labelKey": "i-layangkabel",
+      "bin": "bahaya",
+      "emoji": "⚡"
+    },
+    {
+      "id": "panjat",
+      "labelKey": "i-panjat",
+      "bin": "bahaya",
+      "emoji": "🗼"
+    },
+    {
+      "id": "sentak",
+      "labelKey": "i-sentak",
+      "bin": "bahaya",
+      "emoji": "🫳"
+    },
+    {
+      "id": "airdekat",
+      "labelKey": "i-airdekat",
+      "bin": "bahaya",
+      "emoji": "🥤"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,90 @@
+{
+  "id": "sd2-sains-turus-serangga-kebun",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "SAINS.SD2.PENGAMATAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Survei Serangga Kebun",
+      "instruksi": "Setiap serangga lewat, ketuk barisnya supaya tercatat.",
+      "semut": "semut",
+      "kupu": "kupu-kupu",
+      "kumbang": "kumbang",
+      "belalang": "belalang",
+      "lebah": "lebah"
+    },
+    "en": {
+      "judul": "Garden Insect Survey",
+      "instruksi": "Each time an insect passes, tap its row to record it.",
+      "semut": "ant",
+      "kupu": "butterfly",
+      "kumbang": "beetle",
+      "belalang": "grasshopper",
+      "lebah": "bee"
+    }
+  },
+  "knobs": {
+    "kinds": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah jenis (baris turus)"
+    },
+    "count": {
+      "min": 8,
+      "max": 12,
+      "default": 8,
+      "step": 1,
+      "keterangan": "jumlah hewan yang lewat"
+    },
+    "gapMs": {
+      "min": 1000,
+      "max": 1600,
+      "default": 1600,
+      "step": 200,
+      "keterangan": "jeda antarhewan (ms)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "turus",
+  "items": [
+    {
+      "id": "semut",
+      "labelKey": "semut",
+      "role": "hewan",
+      "emoji": "🐜"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "kupu",
+      "role": "hewan",
+      "emoji": "🦋"
+    },
+    {
+      "id": "kumbang",
+      "labelKey": "kumbang",
+      "role": "hewan",
+      "emoji": "🪲"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "belalang",
+      "role": "hewan",
+      "emoji": "🦗"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "lebah",
+      "role": "hewan",
+      "emoji": "🐝"
+    }
+  ]
+}

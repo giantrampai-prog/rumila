@@ -1,0 +1,265 @@
+{
+  "id": "sd5-mat-cari-angka-desimal",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.DESIMAL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Detektif Desimal",
+      "instruksi": "Temukan angka di tempat yang ditanya: persepuluhan tepat di kanan koma, perseratusan di sebelahnya.",
+      "q1": "Pada 19,52, angka di tempat puluhan adalah …",
+      "c1": "1",
+      "c2": "9",
+      "c3": "5",
+      "c4": "2",
+      "q2": "Pada 94,72, angka di tempat persepuluhan adalah …",
+      "c5": "7",
+      "c6": "4",
+      "q3": "Pada 48,32, angka di tempat perseratusan adalah …",
+      "c7": "8",
+      "c8": "3",
+      "q4": "Pada 82,16, angka di tempat perseratusan adalah …",
+      "c9": "6",
+      "q5": "Pada 92,85, angka di tempat satuan adalah …",
+      "q6": "Pada 62,97, angka di tempat satuan adalah …",
+      "q7": "Pada 97,83, angka di tempat puluhan adalah …",
+      "q8": "Pada 46,91, angka di tempat puluhan adalah …",
+      "q9": "Pada 41,82, angka di tempat satuan adalah …",
+      "q10": "Pada 56,17, angka di tempat satuan adalah …",
+      "q11": "Pada 34,56, angka di tempat perseratusan adalah …",
+      "q12": "Pada 85,62, angka di tempat satuan adalah …",
+      "pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Decimal Detective",
+      "instruksi": "Find the digit in the place asked for: tenths are just right of the point, hundredths next to them.",
+      "q1": "In 19.52, the digit in the tens place is …",
+      "c1": "1",
+      "c2": "9",
+      "c3": "5",
+      "c4": "2",
+      "q2": "In 94.72, the digit in the tenths place is …",
+      "c5": "7",
+      "c6": "4",
+      "q3": "In 48.32, the digit in the hundredths place is …",
+      "c7": "8",
+      "c8": "3",
+      "q4": "In 82.16, the digit in the hundredths place is …",
+      "c9": "6",
+      "q5": "In 92.85, the digit in the ones place is …",
+      "q6": "In 62.97, the digit in the ones place is …",
+      "q7": "In 97.83, the digit in the tens place is …",
+      "q8": "In 46.91, the digit in the tens place is …",
+      "q9": "In 41.82, the digit in the ones place is …",
+      "q10": "In 56.17, the digit in the ones place is …",
+      "q11": "In 34.56, the digit in the hundredths place is …",
+      "q12": "In 85.62, the digit in the ones place is …",
+      "pilihan": "choices"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "satu soal per ronde; tiap pengecoh mewakili satu salah paham umum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c2",
+        "c6",
+        "c4"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c4",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c9",
+        "c7",
+        "c4",
+        "c1"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c4",
+        "c2",
+        "c7",
+        "c3"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c4",
+        "c9",
+        "c2",
+        "c5"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c2",
+        "c5",
+        "c7",
+        "c8"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c6",
+        "c9",
+        "c2",
+        "c1"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c1",
+        "c6",
+        "c7",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c9",
+        "c3",
+        "c1",
+        "c5"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c9",
+        "c8",
+        "c6",
+        "c3"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c3",
+        "c7",
+        "c9",
+        "c4"
+      ],
+      "correct": "c3"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "id": "sd1-sains-ubah-bentuk-taman-bermain",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BAHAN.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ubah Bentuk di Taman Bermain",
+      "instruksi": "Lihat bagaimana bentuknya berubah, lalu taruh ke rak caranya.",
+      "b-regang": "diregangkan",
+      "b-tekan": "ditekan",
+      "b-tekuk": "ditekuk",
+      "b-puntir": "dipuntir",
+      "i-tali": "tali karet lompat ditarik panjang",
+      "i-kauskaki": "kaus kaki ditarik melar",
+      "i-ketapel": "karet ketapel ditarik",
+      "i-bola": "bola karet ditekan jadi gepeng",
+      "i-pasir": "pasir basah ditekan dalam cetakan",
+      "i-roti": "roti tawar ditekan jadi pipih",
+      "i-ranting": "ranting lentur dibengkokkan",
+      "i-kardus": "kardus dilipat",
+      "i-pipa": "selang dibengkokkan",
+      "i-pel": "kain pel diperas",
+      "i-tambang": "tali tambang dipilin",
+      "i-kawat": "kawat dipuntir"
+    },
+    "en": {
+      "judul": "Changing Shapes at the Playground",
+      "instruksi": "See how the shape changed, then put it on the shelf for how it happened.",
+      "b-regang": "stretched",
+      "b-tekan": "squashed",
+      "b-tekuk": "bent",
+      "b-puntir": "twisted",
+      "i-tali": "elastic skipping rope pulled long",
+      "i-kauskaki": "sock pulled and stretched",
+      "i-ketapel": "catapult band pulled back",
+      "i-bola": "rubber ball squashed flat",
+      "i-pasir": "wet sand pressed into a mould",
+      "i-roti": "bread pressed flat",
+      "i-ranting": "bendy twig bent over",
+      "i-kardus": "cardboard folded",
+      "i-pipa": "hose bent round",
+      "i-pel": "mop cloth wrung out",
+      "i-tambang": "rope twisted together",
+      "i-kawat": "wire twisted"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak cara: 2 → 4"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "regang",
+      "labelKey": "b-regang",
+      "emoji": "↔️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "tekan",
+      "labelKey": "b-tekan",
+      "emoji": "⬇️",
+      "color": "#fce4ec"
+    },
+    {
+      "id": "tekuk",
+      "labelKey": "b-tekuk",
+      "emoji": "↪️",
+      "color": "#f1f8e9"
+    },
+    {
+      "id": "puntir",
+      "labelKey": "b-puntir",
+      "emoji": "🔄",
+      "color": "#fff8e1"
+    }
+  ],
+  "items": [
+    {
+      "id": "tali",
+      "labelKey": "i-tali",
+      "bin": "regang",
+      "emoji": "➰"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "regang",
+      "emoji": "🧦"
+    },
+    {
+      "id": "ketapel",
+      "labelKey": "i-ketapel",
+      "bin": "regang",
+      "emoji": "⭕",
+      "color": "#ff8a65"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "tekan",
+      "emoji": "🔴"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "tekan",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "roti",
+      "labelKey": "i-roti",
+      "bin": "tekan",
+      "emoji": "🍞"
+    },
+    {
+      "id": "ranting",
+      "labelKey": "i-ranting",
+      "bin": "tekuk",
+      "emoji": "🌿"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "tekuk",
+      "emoji": "📦"
+    },
+    {
+      "id": "pipa",
+      "labelKey": "i-pipa",
+      "bin": "tekuk",
+      "emoji": "🟢",
+      "color": "#66bb6a"
+    },
+    {
+      "id": "pel",
+      "labelKey": "i-pel",
+      "bin": "puntir",
+      "emoji": "🧹"
+    },
+    {
+      "id": "tambang",
+      "labelKey": "i-tambang",
+      "bin": "puntir",
+      "emoji": "🪢"
+    },
+    {
+      "id": "kawat",
+      "labelKey": "i-kawat",
+      "bin": "puntir",
+      "emoji": "🌀"
+    }
+  ],
+  "pilihan": []
+}

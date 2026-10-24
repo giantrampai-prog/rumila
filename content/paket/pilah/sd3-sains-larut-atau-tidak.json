@@ -1,0 +1,147 @@
+{
+  "id": "sd3-sains-larut-atau-tidak",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.CAMPURAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Larut atau Tidak?",
+      "instruksi": "Bayangkan diaduk di air. Taruh ke rak larut atau tidak larut.",
+      "b-larut": "larut",
+      "b-tidak": "tidak larut",
+      "i-gula": "gula pasir",
+      "i-garam": "garam",
+      "i-gulabatu": "gula batu",
+      "i-susububuk": "susu bubuk",
+      "i-sirup": "bubuk minuman rasa jeruk",
+      "i-pasir": "pasir",
+      "i-kerikil": "kerikil",
+      "i-minyak": "minyak goreng",
+      "i-kelereng": "kelereng",
+      "i-kacanghijau": "kacang hijau",
+      "i-serbukkayu": "serbuk kayu"
+    },
+    "en": {
+      "judul": "Dissolves or Not?",
+      "instruksi": "Imagine stirring it into water. Put it on the dissolves or does-not-dissolve shelf.",
+      "b-larut": "dissolves",
+      "b-tidak": "does not dissolve",
+      "i-gula": "sugar",
+      "i-garam": "salt",
+      "i-gulabatu": "rock sugar",
+      "i-susububuk": "milk powder",
+      "i-sirup": "orange drink powder",
+      "i-pasir": "sand",
+      "i-kerikil": "gravel",
+      "i-minyak": "cooking oil",
+      "i-kelereng": "marble",
+      "i-kacanghijau": "mung beans",
+      "i-serbukkayu": "sawdust"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "larut",
+      "labelKey": "b-larut",
+      "emoji": "🥄",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "⏬",
+      "color": "#efebe9"
+    }
+  ],
+  "items": [
+    {
+      "id": "gula",
+      "labelKey": "i-gula",
+      "bin": "larut",
+      "emoji": "🍚",
+      "color": "#fafafa"
+    },
+    {
+      "id": "garam",
+      "labelKey": "i-garam",
+      "bin": "larut",
+      "emoji": "🧂"
+    },
+    {
+      "id": "gulabatu",
+      "labelKey": "i-gulabatu",
+      "bin": "larut",
+      "emoji": "🧊",
+      "color": "#fff8e1"
+    },
+    {
+      "id": "susububuk",
+      "labelKey": "i-susububuk",
+      "bin": "larut",
+      "emoji": "🥛"
+    },
+    {
+      "id": "sirup",
+      "labelKey": "i-sirup",
+      "bin": "larut",
+      "emoji": "🍊"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "tidak",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "kerikil",
+      "labelKey": "i-kerikil",
+      "bin": "tidak",
+      "emoji": "🪨",
+      "scale": 0.6
+    },
+    {
+      "id": "minyak",
+      "labelKey": "i-minyak",
+      "bin": "tidak",
+      "emoji": "🫗"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "tidak",
+      "emoji": "🔮"
+    },
+    {
+      "id": "kacanghijau",
+      "labelKey": "i-kacanghijau",
+      "bin": "tidak",
+      "emoji": "🫛"
+    },
+    {
+      "id": "serbukkayu",
+      "labelKey": "i-serbukkayu",
+      "bin": "tidak",
+      "emoji": "🪵",
+      "scale": 0.6
+    }
+  ],
+  "pilihan": []
+}

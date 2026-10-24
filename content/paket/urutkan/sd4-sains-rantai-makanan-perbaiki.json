@@ -1,0 +1,210 @@
+{
+  "id": "sd4-sains-rantai-makanan-perbaiki",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.RANTAI-MAKANAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rantai yang Tertukar",
+      "instruksi": "Dua mata rantai tertukar tempat: tukar keduanya sekali saja.",
+      "s-sawah": "Rantai makanan di sawah",
+      "sawah-padi": "padi (produsen)",
+      "sawah-tikus": "tikus sawah",
+      "sawah-ular": "ular",
+      "sawah-elang": "elang",
+      "s-kebun": "Rantai makanan di kebun sayur",
+      "kebun-sawi": "daun sawi (produsen)",
+      "kebun-ulat": "ulat",
+      "kebun-pipit": "burung pipit",
+      "kebun-kucing": "kucing",
+      "s-laut": "Rantai makanan di laut",
+      "laut-fito": "fitoplankton, tumbuhan renik (produsen)",
+      "laut-udang": "udang kecil",
+      "laut-ikan": "ikan",
+      "laut-hiu": "hiu",
+      "s-padang": "Rantai makanan di padang rumput",
+      "padang-rumput": "rumput (produsen)",
+      "padang-rusa": "rusa",
+      "padang-harimau": "harimau",
+      "s-kolam": "Rantai makanan di kolam",
+      "kolam-ganggang": "ganggang (produsen)",
+      "kolam-berudu": "berudu",
+      "kolam-ikankecil": "ikan kecil",
+      "kolam-bangau": "burung bangau"
+    },
+    "en": {
+      "judul": "Mixed-Up Chain",
+      "instruksi": "Two links have swapped places: swap them back with one move.",
+      "s-sawah": "Rice-field food chain",
+      "sawah-padi": "rice plant (producer)",
+      "sawah-tikus": "field rat",
+      "sawah-ular": "snake",
+      "sawah-elang": "eagle",
+      "s-kebun": "Vegetable-garden food chain",
+      "kebun-sawi": "mustard greens (producer)",
+      "kebun-ulat": "caterpillar",
+      "kebun-pipit": "sparrow",
+      "kebun-kucing": "cat",
+      "s-laut": "Ocean food chain",
+      "laut-fito": "phytoplankton, tiny plants (producer)",
+      "laut-udang": "small shrimp",
+      "laut-ikan": "fish",
+      "laut-hiu": "shark",
+      "s-padang": "Grassland food chain",
+      "padang-rumput": "grass (producer)",
+      "padang-rusa": "deer",
+      "padang-harimau": "tiger",
+      "s-kolam": "Pond food chain",
+      "kolam-ganggang": "algae (producer)",
+      "kolam-berudu": "tadpole",
+      "kolam-ikankecil": "small fish",
+      "kolam-bangau": "heron"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah mata rantai: 3 → 4; tukaran bisa bertetangga atau berjarak satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "sawah",
+      "titleKey": "s-sawah",
+      "steps": [
+        {
+          "id": "padi",
+          "labelKey": "sawah-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "tikus",
+          "labelKey": "sawah-tikus",
+          "emoji": "🐀"
+        },
+        {
+          "id": "ular",
+          "labelKey": "sawah-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "sawah-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "kebun",
+      "titleKey": "s-kebun",
+      "steps": [
+        {
+          "id": "sawi",
+          "labelKey": "kebun-sawi",
+          "emoji": "🥬"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "kebun-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "pipit",
+          "labelKey": "kebun-pipit",
+          "emoji": "🐦"
+        },
+        {
+          "id": "kucing",
+          "labelKey": "kebun-kucing",
+          "emoji": "🐈"
+        }
+      ]
+    },
+    {
+      "id": "laut",
+      "titleKey": "s-laut",
+      "steps": [
+        {
+          "id": "fito",
+          "labelKey": "laut-fito",
+          "emoji": "🌿",
+          "scale": 0.6
+        },
+        {
+          "id": "udang",
+          "labelKey": "laut-udang",
+          "emoji": "🦐"
+        },
+        {
+          "id": "ikan",
+          "labelKey": "laut-ikan",
+          "emoji": "🐟"
+        },
+        {
+          "id": "hiu",
+          "labelKey": "laut-hiu",
+          "emoji": "🦈"
+        }
+      ]
+    },
+    {
+      "id": "padang",
+      "titleKey": "s-padang",
+      "steps": [
+        {
+          "id": "rumput",
+          "labelKey": "padang-rumput",
+          "emoji": "🌱"
+        },
+        {
+          "id": "rusa",
+          "labelKey": "padang-rusa",
+          "emoji": "🦌"
+        },
+        {
+          "id": "harimau",
+          "labelKey": "padang-harimau",
+          "emoji": "🐅"
+        }
+      ]
+    },
+    {
+      "id": "kolam",
+      "titleKey": "s-kolam",
+      "steps": [
+        {
+          "id": "ganggang",
+          "labelKey": "kolam-ganggang",
+          "emoji": "🟩"
+        },
+        {
+          "id": "berudu",
+          "labelKey": "kolam-berudu",
+          "emoji": "🐸"
+        },
+        {
+          "id": "ikankecil",
+          "labelKey": "kolam-ikankecil",
+          "emoji": "🐟"
+        },
+        {
+          "id": "bangau",
+          "labelKey": "kolam-bangau",
+          "emoji": "🐦"
+        }
+      ]
+    }
+  ]
+}

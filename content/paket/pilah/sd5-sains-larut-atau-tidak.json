@@ -1,0 +1,151 @@
+{
+  "id": "sd5-sains-larut-atau-tidak",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.LARUTAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Larut atau Tidak?",
+      "instruksi": "Tiap benda diaduk di segelas air: taruh ke 'larut' atau 'tidak larut'.",
+      "b-larut": "larut: tak terlihat lagi di air",
+      "b-tidak": "tidak larut: mengendap atau mengapung",
+      "i-gula": "gula pasir",
+      "i-garam": "garam dapur",
+      "i-gulabatu": "gula batu (larut pelan)",
+      "i-kopi": "kopi bubuk instan",
+      "i-oralit": "bubuk oralit",
+      "i-kaldu": "kaldu bubuk",
+      "i-pasir": "pasir",
+      "i-kerikil": "kerikil",
+      "i-minyak": "minyak goreng",
+      "i-serbukkayu": "serbuk kayu",
+      "i-beras": "beras",
+      "i-kelereng": "kelereng"
+    },
+    "en": {
+      "judul": "Dissolves or Not?",
+      "instruksi": "Each thing is stirred into a glass of water: put it in 'dissolves' or 'does not dissolve'.",
+      "b-larut": "dissolves: can no longer be seen",
+      "b-tidak": "does not dissolve: sinks or floats",
+      "i-gula": "granulated sugar",
+      "i-garam": "table salt",
+      "i-gulabatu": "rock sugar (dissolves slowly)",
+      "i-kopi": "instant coffee powder",
+      "i-oralit": "oral rehydration powder",
+      "i-kaldu": "stock powder",
+      "i-pasir": "sand",
+      "i-kerikil": "gravel",
+      "i-minyak": "cooking oil",
+      "i-serbukkayu": "sawdust",
+      "i-beras": "uncooked rice",
+      "i-kelereng": "a marble"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "larut",
+      "labelKey": "b-larut",
+      "emoji": "🫙",
+      "color": "#bbdefb"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🪨",
+      "color": "#d7ccc8"
+    }
+  ],
+  "items": [
+    {
+      "id": "gula",
+      "labelKey": "i-gula",
+      "bin": "larut",
+      "emoji": "🍚"
+    },
+    {
+      "id": "garam",
+      "labelKey": "i-garam",
+      "bin": "larut",
+      "emoji": "🧂"
+    },
+    {
+      "id": "gulabatu",
+      "labelKey": "i-gulabatu",
+      "bin": "larut",
+      "emoji": "🧊"
+    },
+    {
+      "id": "kopi",
+      "labelKey": "i-kopi",
+      "bin": "larut",
+      "emoji": "☕"
+    },
+    {
+      "id": "oralit",
+      "labelKey": "i-oralit",
+      "bin": "larut",
+      "emoji": "💊"
+    },
+    {
+      "id": "kaldu",
+      "labelKey": "i-kaldu",
+      "bin": "larut",
+      "emoji": "🥣"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "tidak",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "kerikil",
+      "labelKey": "i-kerikil",
+      "bin": "tidak",
+      "emoji": "🪨"
+    },
+    {
+      "id": "minyak",
+      "labelKey": "i-minyak",
+      "bin": "tidak",
+      "emoji": "🫗"
+    },
+    {
+      "id": "serbukkayu",
+      "labelKey": "i-serbukkayu",
+      "bin": "tidak",
+      "emoji": "🪵"
+    },
+    {
+      "id": "beras",
+      "labelKey": "i-beras",
+      "bin": "tidak",
+      "emoji": "🌾"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "tidak",
+      "emoji": "🔮"
+    }
+  ],
+  "pilihan": []
+}

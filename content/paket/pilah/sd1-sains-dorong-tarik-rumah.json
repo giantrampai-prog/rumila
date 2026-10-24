@@ -1,0 +1,136 @@
+{
+  "id": "sd1-sains-dorong-tarik-rumah",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dorong atau Tarik di Rumah",
+      "instruksi": "Dorong itu menjauh, tarik itu mendekat. Taruh tiap gerakan ke raknya.",
+      "b-dorong": "dorong",
+      "b-tarik": "tarik",
+      "i-tutuplaci": "menutup laci",
+      "i-bel": "menekan bel",
+      "i-kursimasuk": "mendorong kursi ke meja",
+      "i-troli": "mendorong troli belanja",
+      "i-tombol": "menekan tombol lampu",
+      "i-bukalaci": "membuka laci",
+      "i-tisu": "menarik tisu dari kotak",
+      "i-selimut": "menarik selimut",
+      "i-koper": "menarik koper beroda",
+      "i-tirai": "menarik tirai jendela"
+    },
+    "en": {
+      "judul": "Push or Pull at Home",
+      "instruksi": "A push moves away from you, a pull moves towards you. Put each action on its shelf.",
+      "b-dorong": "push",
+      "b-tarik": "pull",
+      "i-tutuplaci": "closing a drawer",
+      "i-bel": "pressing a doorbell",
+      "i-kursimasuk": "pushing a chair in",
+      "i-troli": "pushing a shopping cart",
+      "i-tombol": "pressing the light switch",
+      "i-bukalaci": "opening a drawer",
+      "i-tisu": "pulling a tissue from the box",
+      "i-selimut": "pulling up a blanket",
+      "i-koper": "pulling a wheeled suitcase",
+      "i-tirai": "pulling the curtain"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "dorong",
+      "labelKey": "b-dorong",
+      "emoji": "👐",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "tarik",
+      "labelKey": "b-tarik",
+      "emoji": "🫴",
+      "color": "#fff3e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "tutuplaci",
+      "labelKey": "i-tutuplaci",
+      "bin": "dorong",
+      "emoji": "🗄️"
+    },
+    {
+      "id": "bel",
+      "labelKey": "i-bel",
+      "bin": "dorong",
+      "emoji": "🔔"
+    },
+    {
+      "id": "kursimasuk",
+      "labelKey": "i-kursimasuk",
+      "bin": "dorong",
+      "emoji": "🪑"
+    },
+    {
+      "id": "troli",
+      "labelKey": "i-troli",
+      "bin": "dorong",
+      "emoji": "🛒"
+    },
+    {
+      "id": "tombol",
+      "labelKey": "i-tombol",
+      "bin": "dorong",
+      "emoji": "💡"
+    },
+    {
+      "id": "bukalaci",
+      "labelKey": "i-bukalaci",
+      "bin": "tarik",
+      "emoji": "🗄️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "tisu",
+      "labelKey": "i-tisu",
+      "bin": "tarik",
+      "emoji": "🧻"
+    },
+    {
+      "id": "selimut",
+      "labelKey": "i-selimut",
+      "bin": "tarik",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "koper",
+      "labelKey": "i-koper",
+      "bin": "tarik",
+      "emoji": "🧳"
+    },
+    {
+      "id": "tirai",
+      "labelKey": "i-tirai",
+      "bin": "tarik",
+      "emoji": "🪟"
+    }
+  ],
+  "pilihan": []
+}

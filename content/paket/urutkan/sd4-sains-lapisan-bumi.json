@@ -1,0 +1,114 @@
+{
+  "id": "sd4-sains-lapisan-bumi",
+  "version": "1.0.0",
+  "level": "SD4",
+  "competencyIds": [
+    "SAINS.SD4.BUMI-ANTARIKSA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menembus Lapisan Bumi",
+      "instruksi": "Baca arahnya di judul, lalu susun lapisan Bumi.",
+      "s-luarke": "Dari permukaan ke pusat Bumi",
+      "luarke-kerak": "kerak: batuan tempat kita berdiri",
+      "luarke-mantel": "mantel: batuan sangat panas yang bergerak pelan",
+      "luarke-intiluar": "inti luar: logam cair",
+      "luarke-intidalam": "inti dalam: logam padat, paling panas",
+      "s-dalamke": "Dari pusat Bumi ke permukaan",
+      "dalamke-intidalam": "inti dalam: logam padat, paling panas",
+      "dalamke-intiluar": "inti luar: logam cair",
+      "dalamke-mantel": "mantel: batuan sangat panas yang bergerak pelan",
+      "dalamke-kerak": "kerak: batuan tempat kita berdiri"
+    },
+    "en": {
+      "judul": "Through the Earth's Layers",
+      "instruksi": "Read the direction in the title, then put the Earth's layers in order.",
+      "s-luarke": "From the surface to the centre of the Earth",
+      "luarke-kerak": "crust: the rock we stand on",
+      "luarke-mantel": "mantle: very hot rock that moves slowly",
+      "luarke-intiluar": "outer core: liquid metal",
+      "luarke-intidalam": "inner core: solid metal, the hottest",
+      "s-dalamke": "From the centre of the Earth to the surface",
+      "dalamke-intidalam": "inner core: solid metal, the hottest",
+      "dalamke-intiluar": "outer core: liquid metal",
+      "dalamke-mantel": "mantle: very hot rock that moves slowly",
+      "dalamke-kerak": "crust: the rock we stand on"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah lapisan: 3 (kerak, mantel, inti luar / dari pusat: inti dalam, inti luar, mantel) → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mechanic": "urutkan",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "luarke",
+      "titleKey": "s-luarke",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "luarke-kerak",
+          "emoji": "🏔️"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "luarke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "luarke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "luarke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "dalamke",
+      "titleKey": "s-dalamke",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "dalamke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "dalamke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "dalamke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "kerak",
+          "labelKey": "dalamke-kerak",
+          "emoji": "🏔️"
+        }
+      ]
+    }
+  ]
+}

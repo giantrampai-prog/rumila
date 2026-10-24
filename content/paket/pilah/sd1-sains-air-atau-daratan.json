@@ -1,0 +1,151 @@
+{
+  "id": "sd1-sains-air-atau-daratan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.BUMI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Air atau Daratan?",
+      "instruksi": "Taruh tiap tempat ke rak perairan atau daratan.",
+      "b-air": "perairan",
+      "b-darat": "daratan",
+      "i-laut": "laut",
+      "i-danau": "danau",
+      "i-sungai": "sungai",
+      "i-kolam": "kolam ikan",
+      "i-airterjun": "air terjun",
+      "i-samudra": "samudra luas",
+      "i-gunung": "gunung",
+      "i-sawah": "sawah",
+      "i-gurun": "gurun pasir",
+      "i-hutan": "hutan",
+      "i-pulau": "pulau kecil",
+      "i-bukit": "bukit berbatu"
+    },
+    "en": {
+      "judul": "Water or Land?",
+      "instruksi": "Put each place on the water shelf or the land shelf.",
+      "b-air": "water",
+      "b-darat": "land",
+      "i-laut": "sea",
+      "i-danau": "lake",
+      "i-sungai": "river",
+      "i-kolam": "fish pond",
+      "i-airterjun": "waterfall",
+      "i-samudra": "wide ocean",
+      "i-gunung": "mountain",
+      "i-sawah": "rice field",
+      "i-gurun": "sandy desert",
+      "i-hutan": "forest",
+      "i-pulau": "small island",
+      "i-bukit": "rocky hill"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "air",
+      "labelKey": "b-air",
+      "emoji": "🌊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "darat",
+      "labelKey": "b-darat",
+      "emoji": "⛰️",
+      "color": "#efebe9"
+    }
+  ],
+  "items": [
+    {
+      "id": "laut",
+      "labelKey": "i-laut",
+      "bin": "air",
+      "emoji": "🌊"
+    },
+    {
+      "id": "danau",
+      "labelKey": "i-danau",
+      "bin": "air",
+      "emoji": "🏞️"
+    },
+    {
+      "id": "sungai",
+      "labelKey": "i-sungai",
+      "bin": "air",
+      "emoji": "🛶"
+    },
+    {
+      "id": "kolam",
+      "labelKey": "i-kolam",
+      "bin": "air",
+      "emoji": "🐟"
+    },
+    {
+      "id": "airterjun",
+      "labelKey": "i-airterjun",
+      "bin": "air",
+      "emoji": "💦"
+    },
+    {
+      "id": "samudra",
+      "labelKey": "i-samudra",
+      "bin": "air",
+      "emoji": "🐋"
+    },
+    {
+      "id": "gunung",
+      "labelKey": "i-gunung",
+      "bin": "darat",
+      "emoji": "⛰️"
+    },
+    {
+      "id": "sawah",
+      "labelKey": "i-sawah",
+      "bin": "darat",
+      "emoji": "🌾"
+    },
+    {
+      "id": "gurun",
+      "labelKey": "i-gurun",
+      "bin": "darat",
+      "emoji": "🏜️"
+    },
+    {
+      "id": "hutan",
+      "labelKey": "i-hutan",
+      "bin": "darat",
+      "emoji": "🌲"
+    },
+    {
+      "id": "pulau",
+      "labelKey": "i-pulau",
+      "bin": "darat",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "bukit",
+      "labelKey": "i-bukit",
+      "bin": "darat",
+      "emoji": "🪨"
+    }
+  ],
+  "pilihan": []
+}

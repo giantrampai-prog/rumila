@@ -1,0 +1,253 @@
+{
+  "id": "sd5-sains-nama-gaya",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gaya Apa Itu?",
+      "instruksi": "Baca kejadiannya, lalu sentuh gaya yang paling berperan.",
+      "b-pilihan": "pilihan",
+      "i-gravitasi": "gravitasi",
+      "i-gesek": "gaya gesek",
+      "i-udara": "hambatan udara",
+      "i-air": "hambatan air",
+      "i-apung": "gaya apung",
+      "i-dorong": "gaya dorong atau tarik",
+      "i-normal": "gaya normal: permukaan mendorong ke atas",
+      "i-nol": "tidak ada gaya, karena diam",
+      "i-dua": "gravitasi ke bawah dan gaya normal ke atas",
+      "i-satu": "hanya gravitasi",
+      "i-lebihbesar": "lebih besar",
+      "i-lebihkecil": "lebih kecil",
+      "p-r1": "Apel lepas dari tangkainya dan jatuh ke tanah.",
+      "p-r2": "Rem sepeda menjepit roda sampai sepeda berhenti.",
+      "p-r3": "Parasut membuat penerjun turun dengan pelan.",
+      "p-r4": "Bola pantai susah ditekan masuk ke dalam air kolam.",
+      "p-r5": "Perenang terasa tertahan saat bergerak maju di air.",
+      "p-r6": "Buku diam di atas meja. Gaya dari meja yang menahan buku ke atas adalah…",
+      "p-r7": "Anak menendang bola sehingga bola meluncur.",
+      "p-r8": "Buku diam di atas meja. Gaya apa saja yang bekerja padanya?",
+      "p-r9": "Sol sepatu dibuat bergerigi supaya tidak licin, karena gesekannya jadi…",
+      "p-r10": "Kapal laut yang sangat berat tetap mengapung karena…"
+    },
+    "en": {
+      "judul": "Which Force Is It?",
+      "instruksi": "Read what happens, then touch the force that matters most.",
+      "b-pilihan": "choices",
+      "i-gravitasi": "gravity",
+      "i-gesek": "friction",
+      "i-udara": "air resistance",
+      "i-air": "water resistance",
+      "i-apung": "upthrust",
+      "i-dorong": "a push or pull",
+      "i-normal": "normal force: a surface pushes back up",
+      "i-nol": "no forces, because it is still",
+      "i-dua": "gravity down and the normal force up",
+      "i-satu": "only gravity",
+      "i-lebihbesar": "greater",
+      "i-lebihkecil": "smaller",
+      "p-r1": "An apple comes off its stalk and falls to the ground.",
+      "p-r2": "Bike brakes grip the wheel until the bike stops.",
+      "p-r3": "A parachute makes the skydiver fall slowly.",
+      "p-r4": "A beach ball is hard to push under the pool water.",
+      "p-r5": "A swimmer feels held back while moving forward through water.",
+      "p-r6": "A book rests on a table. The force from the table holding the book up is…",
+      "p-r7": "A child kicks a ball and it rolls away.",
+      "p-r8": "A book rests on a table. Which forces act on it?",
+      "p-r9": "Shoe soles have deep grooves so they don't slip, because the friction becomes…",
+      "p-r10": "A very heavy ship still floats because of…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "gravitasi",
+      "labelKey": "i-gravitasi",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "gesek",
+      "labelKey": "i-gesek",
+      "bin": "pilihan",
+      "emoji": "🛞"
+    },
+    {
+      "id": "udara",
+      "labelKey": "i-udara",
+      "bin": "pilihan",
+      "emoji": "🪂"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "pilihan",
+      "emoji": "🏊"
+    },
+    {
+      "id": "apung",
+      "labelKey": "i-apung",
+      "bin": "pilihan",
+      "emoji": "🛟"
+    },
+    {
+      "id": "dorong",
+      "labelKey": "i-dorong",
+      "bin": "pilihan",
+      "emoji": "✋"
+    },
+    {
+      "id": "normal",
+      "labelKey": "i-normal",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "nol",
+      "labelKey": "i-nol",
+      "bin": "pilihan",
+      "emoji": "⭕"
+    },
+    {
+      "id": "dua",
+      "labelKey": "i-dua",
+      "bin": "pilihan",
+      "emoji": "↕️"
+    },
+    {
+      "id": "satu",
+      "labelKey": "i-satu",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "lebihbesar",
+      "labelKey": "i-lebihbesar",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "lebihkecil",
+      "labelKey": "i-lebihkecil",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "gravitasi",
+        "apung",
+        "gesek"
+      ],
+      "correct": "gravitasi"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "gesek",
+        "gravitasi",
+        "udara"
+      ],
+      "correct": "gesek"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "udara",
+        "apung",
+        "dorong"
+      ],
+      "correct": "udara"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "apung",
+        "gravitasi",
+        "gesek"
+      ],
+      "correct": "apung"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "air",
+        "udara",
+        "apung"
+      ],
+      "correct": "air"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "normal",
+        "gesek",
+        "apung"
+      ],
+      "correct": "normal"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "dorong",
+        "gravitasi",
+        "normal"
+      ],
+      "correct": "dorong"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "dua",
+        "nol",
+        "satu"
+      ],
+      "correct": "dua"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "lebihbesar",
+        "lebihkecil"
+      ],
+      "correct": "lebihbesar"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "apung",
+        "gravitasi",
+        "gesek"
+      ],
+      "correct": "apung"
+    }
+  ]
+}
