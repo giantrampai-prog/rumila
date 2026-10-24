@@ -198,6 +198,495 @@
         }
       ],
       "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-7-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-8-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6b-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-7-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-8-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-7-cermin-tegak-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-8-cermin-tegak-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-8-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6b-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-cermin-datar-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 2
     }
   ]
 }

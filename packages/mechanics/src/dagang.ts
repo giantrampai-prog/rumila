@@ -21,7 +21,7 @@ function laciDari(denominations: number[]): number[] {
 function kosong(p: PaketDagang): RondeDagang {
   return {
     mode: p.mode, tersedia: {}, pesanan: [], harga: 0, dibayar: 0, laci: [], benda: [],
-    kelompok: [0, 0], target: 0, strip: [0, 0], flashMs: 0, priceLabel: p.priceLabel,
+    kelompok: [0, 0], target: 0, strip: [0, 0], flashMs: 0, priceLabel: p.priceLabel, lembar: [],
   };
 }
 
@@ -101,10 +101,21 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       return ronde;
     }
     case "tukar": {
-      const lembar = denoms.filter(d => d > KOIN);
-      const dibayar = lembar.length ? pilihSatu(lembar, r) : 10000;
+      // 1–3 lembar (customerRule.itemsMax, maks 3) yang totalnya ≤ batas: knob harga (ribuan) atau customerRule.maxTotal.
+      const pecahan = denoms.filter(d => d > KOIN);
+      const batas = knobs.harga !== undefined ? Math.floor(knobs.harga) * KOIN : rule.maxTotal;
+      const boleh = pecahan.filter(d => d <= batas);
+      const pakai = boleh.length ? boleh : pecahan.length ? [pecahan[0]] : [10000];
+      const maksLembar = Math.min(3, Math.max(1, rule.itemsMax));
+      let lembar: number[] = [pilihSatu(pakai, r)];
+      for (let coba = 0; coba < 12; coba++) {
+        const calon = Array.from({ length: acakInt(r, 1, maksLembar) }, () => pilihSatu(pakai, r));
+        if (calon.reduce((a, b) => a + b, 0) <= Math.max(batas, pakai[0])) { lembar = calon; break; }
+      }
+      lembar.sort((a, b) => b - a);
+      const dibayar = lembar.reduce((a, b) => a + b, 0);
       const target = Math.round(dibayar / KOIN);
-      ronde.dibayar = dibayar; ronde.target = target; ronde.harga = dibayar;
+      ronde.lembar = lembar; ronde.dibayar = dibayar; ronde.target = target; ronde.harga = dibayar;
       ronde.laci = new Array<number>(target + 3).fill(KOIN);
       return ronde;
     }

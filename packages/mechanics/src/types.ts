@@ -78,6 +78,8 @@ export interface RondeDagang {
   /** lama tampil (ms) untuk subitasi/lengkapi */
   flashMs: number;
   priceLabel: PaketDagang["priceLabel"];
+  /** tukar: lembar uang kertas yang dibawa pembeli (jumlahnya = dibayar) */
+  lembar: number[];
 }
 /** ambil/subitasi/sisa: keranjang goodId → qty · bayar/kembalian/tukar/lengkapi: daftar pecahan yang ditaruh · hitung/gabung: angka strip */
 export type JawabanDagang =

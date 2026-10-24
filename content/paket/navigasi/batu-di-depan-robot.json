@@ -156,6 +156,256 @@
         }
       ],
       "optimal": 3
+    },
+    {
+      "id": "batu-awal-2-papan-5x1-00",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 1
+    },
+    {
+      "id": "batu-awal-3-papan-6x1-00",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 2
+    },
+    {
+      "id": "batu-tengah-3-papan-6x1-00",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 2
+    },
+    {
+      "id": "batu-tengah-4-papan-7x1-00",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3
+    },
+    {
+      "id": "dua-batu-5-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3
+    },
+    {
+      "id": "batu-awal-2-papan-5x1-00-papan-6x1-00",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 1
+    },
+    {
+      "id": "batu-awal-3-papan-6x1-00-papan-7x1-00",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 2
+    },
+    {
+      "id": "batu-tengah-3-papan-6x1-00-papan-7x1-00",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 2
+    },
+    {
+      "id": "batu-tengah-4-papan-7x1-00-papan-8x1-00",
+      "w": 8,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3
+    },
+    {
+      "id": "dua-batu-5-papan-8x1-00-papan-9x1-00",
+      "w": 9,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3
+    },
+    {
+      "id": "batu-awal-2-papan-5x1-10",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 1
     }
   ]
 }

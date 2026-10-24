@@ -130,6 +130,267 @@
       ],
       "rocks": [],
       "optimal": 8
+    },
+    {
+      "id": "dinding-kiri-6-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "memutar-dinding-8-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "balik-arah-6-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "jalan-panjang-8-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "dinding-kiri-6-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "memutar-dinding-8-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "dinding-kiri-6-putar-kanan-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "memutar-dinding-8-putar-kanan-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "balik-arah-6-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "jalan-panjang-8-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "balik-arah-6-cermin-tegak-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "jalan-panjang-8-cermin-tegak-putar-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
     }
   ]
 }
