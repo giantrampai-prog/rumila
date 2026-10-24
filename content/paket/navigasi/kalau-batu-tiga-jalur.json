@@ -1,0 +1,192 @@
+{
+  "id": "kalau-batu-tiga-jalur",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.KONDISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Satu program harus berhasil di tiga jalur yang batunya pindah-pindah: pakai blok 'kalau batu lompat, kalau tidak maju'."
+    },
+    "en": {
+      "instruksi": "One program must work on three paths where the rock moves: use the 'if rock jump, else forward' block."
+    }
+  },
+  "knobs": {
+    "rocks": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah batu per jalur; posisinya berpindah di tiga jalur satu kelompok"
+    },
+    "distance": {
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek per jalur"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "semuaGrid": true,
+  "commands": [
+    "maju",
+    "lompat",
+    "kalau",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "empat-batu-1",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 2,
+      "rackSlots": 4,
+      "group": "empat"
+    },
+    {
+      "id": "empat-batu-2",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 4,
+      "group": "empat"
+    },
+    {
+      "id": "empat-batu-3",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 2,
+      "rackSlots": 4,
+      "group": "empat"
+    },
+    {
+      "id": "lima-batu-2",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima"
+    },
+    {
+      "id": "lima-batu-3",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima"
+    },
+    {
+      "id": "lima-batu-4",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima"
+    }
+  ]
+}

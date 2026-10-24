@@ -1,0 +1,106 @@
+{
+  "id": "perbaiki-urutan-pagi-agam",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKA.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam salah menyusun satu gambar: tukar dua gambar supaya urutannya benar.",
+      "pagi": "Pagi hari Agam",
+      "mandi": "Agam mandi",
+      "bangun": "bangun tidur",
+      "gosok": "gosok gigi",
+      "sarapan": "sarapan",
+      "berangkat": "berangkat",
+      "handuk": "ambil handuk",
+      "siram": "siram badan",
+      "sabun": "pakai sabun",
+      "bilas": "bilas sampai bersih"
+    },
+    "en": {
+      "instruksi": "Agam put one picture in the wrong place: swap two pictures to fix the order.",
+      "pagi": "Agam's morning",
+      "mandi": "Agam's bath",
+      "bangun": "wake up",
+      "gosok": "brush teeth",
+      "sarapan": "breakfast",
+      "berangkat": "head out",
+      "handuk": "get the towel",
+      "siram": "pour water",
+      "sabun": "soap up",
+      "bilas": "rinse clean"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar: 3 → 4; mesin menukar tepat satu pasang, anak menukar balik tepat sekali"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah-agam",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "pagi",
+      "titleKey": "pagi",
+      "steps": [
+        {
+          "id": "bangun",
+          "labelKey": "bangun",
+          "emoji": "🌅"
+        },
+        {
+          "id": "gosok",
+          "labelKey": "gosok",
+          "emoji": "🪥"
+        },
+        {
+          "id": "sarapan",
+          "labelKey": "sarapan",
+          "emoji": "🍳"
+        },
+        {
+          "id": "berangkat",
+          "labelKey": "berangkat",
+          "emoji": "🎒"
+        }
+      ]
+    },
+    {
+      "id": "mandi",
+      "titleKey": "mandi",
+      "steps": [
+        {
+          "id": "handuk",
+          "labelKey": "handuk",
+          "emoji": "🧺"
+        },
+        {
+          "id": "siram",
+          "labelKey": "siram",
+          "emoji": "🚿"
+        },
+        {
+          "id": "sabun",
+          "labelKey": "sabun",
+          "emoji": "🧼"
+        },
+        {
+          "id": "bilas",
+          "labelKey": "bilas",
+          "emoji": "✨"
+        }
+      ]
+    }
+  ]
+}

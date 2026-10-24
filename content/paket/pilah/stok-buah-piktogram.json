@@ -1,0 +1,174 @@
+{
+  "id": "stok-buah-piktogram",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKB.DATA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Lihat piktogram stok buah, lalu sentuh rak yang diminta pembeli.",
+      "pilihan": "pilihan",
+      "apel": "apel",
+      "pisang": "pisang",
+      "jeruk": "jeruk",
+      "anggur": "anggur",
+      "tSedikit": "Tukang antar datang. Rak mana yang paling sedikit, supaya diisi?",
+      "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
+    },
+    "en": {
+      "instruksi": "Look at the fruit stock chart, then touch the shelf the customer asks for.",
+      "pilihan": "choices",
+      "apel": "apples",
+      "pisang": "bananas",
+      "jeruk": "oranges",
+      "anggur": "grapes",
+      "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
+      "tBanyak": "The wholesaler is here. Which shelf has the most, so they can buy it all?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah kolom piktogram yang dibandingkan; selisih antar kolom terdekat 2 → 1"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 6,
+  "world": "kebun-pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel-a",
+      "labelKey": "apel",
+      "bin": "pilihan",
+      "emoji": "🍎",
+      "count": 2
+    },
+    {
+      "id": "apel-b",
+      "labelKey": "apel",
+      "bin": "pilihan",
+      "emoji": "🍎",
+      "count": 7
+    },
+    {
+      "id": "pisang-a",
+      "labelKey": "pisang",
+      "bin": "pilihan",
+      "emoji": "🍌",
+      "count": 4
+    },
+    {
+      "id": "pisang-b",
+      "labelKey": "pisang",
+      "bin": "pilihan",
+      "emoji": "🍌",
+      "count": 6
+    },
+    {
+      "id": "jeruk-a",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 6
+    },
+    {
+      "id": "jeruk-b",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "count": 5
+    },
+    {
+      "id": "anggur-a",
+      "labelKey": "anggur",
+      "bin": "pilihan",
+      "emoji": "🍇",
+      "count": 8
+    },
+    {
+      "id": "anggur-b",
+      "labelKey": "anggur",
+      "bin": "pilihan",
+      "emoji": "🍇",
+      "count": 4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tSedikit",
+      "choices": [
+        "apel-a",
+        "pisang-a",
+        "jeruk-a"
+      ],
+      "correct": "apel-a"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tBanyak",
+      "choices": [
+        "apel-a",
+        "pisang-a",
+        "jeruk-a"
+      ],
+      "correct": "jeruk-a"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tSedikit",
+      "choices": [
+        "pisang-a",
+        "jeruk-a",
+        "anggur-a"
+      ],
+      "correct": "pisang-a"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tBanyak",
+      "choices": [
+        "apel-a",
+        "pisang-a",
+        "jeruk-a",
+        "anggur-a"
+      ],
+      "correct": "anggur-a"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tSedikit",
+      "choices": [
+        "apel-b",
+        "pisang-b",
+        "jeruk-b",
+        "anggur-b"
+      ],
+      "correct": "anggur-b"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tBanyak",
+      "choices": [
+        "apel-b",
+        "pisang-b",
+        "jeruk-b"
+      ],
+      "correct": "apel-b"
+    }
+  ]
+}

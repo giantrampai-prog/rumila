@@ -1,0 +1,113 @@
+{
+  "id": "dari-kebun-ke-meja",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKA.URUTAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun gambar supaya ceritanya urut dari menanam sampai memanen.",
+      "tanam": "Menanam apel",
+      "sayur": "Memasak sayur",
+      "biji": "tanam biji",
+      "siram": "siram air",
+      "bunga": "bunga mekar",
+      "buah": "buah matang",
+      "panen": "panen ke keranjang",
+      "cuci": "cuci sayur",
+      "potong": "potong sayur",
+      "masak": "masak di panci",
+      "sajikan": "sajikan di piring"
+    },
+    "en": {
+      "instruksi": "Put the pictures in order, from planting to harvest.",
+      "tanam": "Growing an apple",
+      "sayur": "Cooking vegetables",
+      "biji": "plant the seed",
+      "siram": "water it",
+      "bunga": "blossom",
+      "buah": "ripe fruit",
+      "panen": "harvest into the basket",
+      "cuci": "wash the vegetables",
+      "potong": "chop them",
+      "masak": "cook in the pot",
+      "sajikan": "serve on a plate"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah gambar yang ditampilkan: 4 → 5; tidak ada dua gambar yang bisa bertukar tanpa salah"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "tanam",
+      "titleKey": "tanam",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "biji",
+          "emoji": "🌱"
+        },
+        {
+          "id": "siram",
+          "labelKey": "siram",
+          "emoji": "💧"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "bunga",
+          "emoji": "🌸"
+        },
+        {
+          "id": "buah",
+          "labelKey": "buah",
+          "emoji": "🍎"
+        },
+        {
+          "id": "panen",
+          "labelKey": "panen",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
+      "id": "sayur",
+      "titleKey": "sayur",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "cuci",
+          "emoji": "🥬"
+        },
+        {
+          "id": "potong",
+          "labelKey": "potong",
+          "emoji": "🔪"
+        },
+        {
+          "id": "masak",
+          "labelKey": "masak",
+          "emoji": "🍲"
+        },
+        {
+          "id": "sajikan",
+          "labelKey": "sajikan",
+          "emoji": "🍽️"
+        }
+      ]
+    }
+  ]
+}

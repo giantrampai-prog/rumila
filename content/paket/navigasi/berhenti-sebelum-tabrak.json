@@ -1,0 +1,213 @@
+{
+  "id": "berhenti-sebelum-tabrak",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.DEBUG-BANYAK.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Jalankan program selangkah demi selangkah dan berhenti tepat sebelum Agam menabrak, lalu tunjuk blok penabraknya."
+    },
+    "en": {
+      "instruksi": "Run the program one step at a time and stop right before Agam crashes, then point to the crashing block."
+    }
+  },
+  "knobs": {
+    "posisi": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "letak perintah penabrak: 0 = awal program, 1 = akhir program"
+    },
+    "distance": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "panjang program yang diberikan"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "execMode": "langkah",
+  "prediksi": true,
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "tabrak-dinding-awal",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tabrak-dinding-tengah",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tabrak-tepi-akhir",
+      "w": 5,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    },
+    {
+      "id": "tabrak-setelah-belok",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ]
+    }
+  ]
+}

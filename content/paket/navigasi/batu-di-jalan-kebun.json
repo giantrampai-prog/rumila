@@ -1,0 +1,159 @@
+{
+  "id": "batu-di-jalan-kebun",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.PAUD.PERINTAH.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam jalan ke atas kebun: lompat kalau ada batu di depannya, maju kalau kosong."
+    },
+    "en": {
+      "instruksi": "Agam walks up the garden: jump when a rock is right in front, step forward when it is clear."
+    }
+  },
+  "knobs": {
+    "rocks": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah batu di jalur; tiap batu tepat satu petak di depan Agam saat Agam tiba"
+    },
+    "distance": {
+      "min": 1,
+      "max": 4,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "kebun",
+  "execMode": "langsung",
+  "commands": [
+    "maju",
+    "lompat"
+  ],
+  "grids": [
+    {
+      "id": "atas-batu-awal-2",
+      "w": 2,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 1
+    },
+    {
+      "id": "atas-batu-awal-3",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 2
+    },
+    {
+      "id": "atas-batu-tengah-3",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 2
+    },
+    {
+      "id": "atas-batu-tengah-4",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3
+    },
+    {
+      "id": "atas-dua-batu-5",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 3
+    }
+  ]
+}

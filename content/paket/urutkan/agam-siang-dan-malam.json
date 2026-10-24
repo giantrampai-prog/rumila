@@ -1,0 +1,106 @@
+{
+  "id": "agam-siang-dan-malam",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.PAUD.URUTAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun gambar supaya kegiatan Agam urut dari awal sampai akhir.",
+      "makan": "Makan siang Agam",
+      "tidur": "Agam tidur malam",
+      "cuci": "cuci tangan",
+      "ambil": "ambil piring",
+      "santap": "makan",
+      "habis": "piring kosong",
+      "sikat": "sikat gigi",
+      "piyama": "pakai piyama",
+      "lampu": "matikan lampu",
+      "bobo": "tidur"
+    },
+    "en": {
+      "instruksi": "Put the pictures in order so Agam's activity goes from start to finish.",
+      "makan": "Agam's lunch",
+      "tidur": "Agam's bedtime",
+      "cuci": "wash hands",
+      "ambil": "get a plate",
+      "santap": "eat",
+      "habis": "empty plate",
+      "sikat": "brush teeth",
+      "piyama": "put on pyjamas",
+      "lampu": "turn off the light",
+      "bobo": "sleep"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah langkah yang ditampilkan; mulai 3, naik ke 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah-agam",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "makan",
+      "titleKey": "makan",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "ambil",
+          "labelKey": "ambil",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "santap",
+          "labelKey": "santap",
+          "emoji": "🍚"
+        },
+        {
+          "id": "habis",
+          "labelKey": "habis",
+          "emoji": "✨"
+        }
+      ]
+    },
+    {
+      "id": "tidur",
+      "titleKey": "tidur",
+      "steps": [
+        {
+          "id": "sikat",
+          "labelKey": "sikat",
+          "emoji": "🪥"
+        },
+        {
+          "id": "piyama",
+          "labelKey": "piyama",
+          "emoji": "👕"
+        },
+        {
+          "id": "lampu",
+          "labelKey": "lampu",
+          "emoji": "🌙"
+        },
+        {
+          "id": "bobo",
+          "labelKey": "bobo",
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

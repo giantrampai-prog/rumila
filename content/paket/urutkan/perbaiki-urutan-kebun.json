@@ -1,0 +1,99 @@
+{
+  "id": "perbaiki-urutan-kebun",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKA.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Satu gambar di kebun tertukar: tukar dua gambar supaya urutannya benar.",
+      "tanam": "Menanam bunga",
+      "layang": "Main layang-layang",
+      "gali": "gali tanah",
+      "taruh": "taruh biji",
+      "siram": "siram air",
+      "mekar": "bunga mekar",
+      "buat": "buat layang-layang",
+      "lari": "lari sambil tarik",
+      "terbang": "layang-layang terbang"
+    },
+    "en": {
+      "instruksi": "One garden picture is swapped: swap two pictures to fix the order.",
+      "tanam": "Planting a flower",
+      "layang": "Flying a kite",
+      "gali": "dig the soil",
+      "taruh": "drop the seed",
+      "siram": "water it",
+      "mekar": "flower blooms",
+      "buat": "make the kite",
+      "lari": "run and pull",
+      "terbang": "kite flies"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar: 3 → 4; mesin menukar tepat satu pasang, anak menukar balik tepat sekali"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "kebun",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "tanam",
+      "titleKey": "tanam",
+      "steps": [
+        {
+          "id": "gali",
+          "labelKey": "gali",
+          "emoji": "🪏"
+        },
+        {
+          "id": "taruh",
+          "labelKey": "taruh",
+          "emoji": "🌰"
+        },
+        {
+          "id": "siram",
+          "labelKey": "siram",
+          "emoji": "💧"
+        },
+        {
+          "id": "mekar",
+          "labelKey": "mekar",
+          "emoji": "🌼"
+        }
+      ]
+    },
+    {
+      "id": "layang",
+      "titleKey": "layang",
+      "steps": [
+        {
+          "id": "buat",
+          "labelKey": "buat",
+          "emoji": "✂️"
+        },
+        {
+          "id": "lari",
+          "labelKey": "lari",
+          "emoji": "🏃"
+        },
+        {
+          "id": "terbang",
+          "labelKey": "terbang",
+          "emoji": "🪁"
+        }
+      ]
+    }
+  ]
+}

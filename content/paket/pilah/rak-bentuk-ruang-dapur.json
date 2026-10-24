@@ -1,0 +1,145 @@
+{
+  "id": "rak-bentuk-ruang-dapur",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.BENTUK-RUANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Bantu Agam menata dapur: taruh tiap benda di rak yang bentuknya sama.",
+      "bola": "bola",
+      "kubus": "kubus",
+      "tabung": "tabung",
+      "melon": "melon",
+      "jeruk": "jeruk",
+      "bilyar": "bola bilyar",
+      "es": "es batu",
+      "susu": "kotak susu",
+      "kado": "kotak kado",
+      "gelas": "gelas",
+      "kaleng": "kaleng",
+      "lilin": "lilin",
+      "tisu": "gulungan tisu"
+    },
+    "en": {
+      "instruksi": "Help Agam tidy the kitchen: put each thing on the shelf with the same shape.",
+      "bola": "sphere",
+      "kubus": "cube",
+      "tabung": "cylinder",
+      "melon": "melon",
+      "jeruk": "orange",
+      "bilyar": "billiard ball",
+      "es": "ice cube",
+      "susu": "milk carton",
+      "kado": "gift box",
+      "gelas": "cup",
+      "kaleng": "can",
+      "lilin": "candle",
+      "tisu": "paper roll"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak aktif: bola & kubus dulu, tabung menyusul"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "emoji": "⚪"
+    },
+    {
+      "id": "kubus",
+      "labelKey": "kubus",
+      "emoji": "🎲"
+    },
+    {
+      "id": "tabung",
+      "labelKey": "tabung",
+      "emoji": "🥫"
+    }
+  ],
+  "items": [
+    {
+      "id": "melon",
+      "labelKey": "melon",
+      "bin": "bola",
+      "emoji": "🍈"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "bin": "bola",
+      "emoji": "🍊"
+    },
+    {
+      "id": "bilyar",
+      "labelKey": "bilyar",
+      "bin": "bola",
+      "emoji": "🎱"
+    },
+    {
+      "id": "es",
+      "labelKey": "es",
+      "bin": "kubus",
+      "emoji": "🧊"
+    },
+    {
+      "id": "susu",
+      "labelKey": "susu",
+      "bin": "kubus",
+      "emoji": "🧃"
+    },
+    {
+      "id": "kado",
+      "labelKey": "kado",
+      "bin": "kubus",
+      "emoji": "🎁"
+    },
+    {
+      "id": "gelas",
+      "labelKey": "gelas",
+      "bin": "tabung",
+      "emoji": "🥤"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "kaleng",
+      "bin": "tabung",
+      "emoji": "🥫"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "lilin",
+      "bin": "tabung",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "tisu",
+      "labelKey": "tisu",
+      "bin": "tabung",
+      "emoji": "🧻"
+    }
+  ]
+}

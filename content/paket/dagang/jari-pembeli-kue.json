@@ -1,0 +1,70 @@
+{
+  "id": "jari-pembeli-kue",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Pembeli kue mengacungkan jari sebentar: ambil kue sebanyak jarinya.",
+      "donat": "donat",
+      "kuecangkir": "kue cangkir"
+    },
+    "en": {
+      "instruksi": "The cake customer holds up fingers for a moment: take that many cakes.",
+      "donat": "doughnuts",
+      "kuecangkir": "cupcakes"
+    }
+  },
+  "knobs": {
+    "flashMs": {
+      "min": 700,
+      "max": 1500,
+      "default": 1000,
+      "step": 100,
+      "keterangan": "lama jari pembeli terlihat (ms); makin pendek makin mengandalkan subitising"
+    },
+    "itemsMax": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jari terbanyak yang diacungkan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "toko-kue",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "subitasi",
+  "goods": [
+    {
+      "id": "donat",
+      "labelKey": "donat",
+      "price": 1000,
+      "emoji": "🍩"
+    },
+    {
+      "id": "kuecangkir",
+      "labelKey": "kuecangkir",
+      "price": 1000,
+      "emoji": "🧁"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 3,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "flashMs": 1000
+  }
+}

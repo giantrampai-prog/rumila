@@ -1,0 +1,175 @@
+{
+  "id": "perbaiki-satu-langkah",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKA.DEBUG.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam meleset karena satu blok keliru: temukan dan ganti blok itu supaya sampai bintang."
+    },
+    "en": {
+      "instruksi": "Agam misses because one block is wrong: find it and change it so he reaches the star."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "panjang program yang benar"
+    },
+    "posisi": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = perintah salah di awal/tengah, 1 = di akhir (dipilih presenter dari id grid)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "taman",
+  "execMode": "program",
+  "debug": true,
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "lurus-belok-nyasar",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "lurus-belok-di-akhir",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "maju-harusnya-belok",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belok-kepagian",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    }
+  ]
+}

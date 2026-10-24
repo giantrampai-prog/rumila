@@ -59,61 +59,77 @@
   "bins": [
     {
       "id": "merah",
-      "labelKey": "merah"
+      "labelKey": "merah",
+      "emoji": "🧺",
+      "color": "#e8646a"
     },
     {
       "id": "biru",
-      "labelKey": "biru"
+      "labelKey": "biru",
+      "emoji": "🧺",
+      "color": "#5b8fd6"
     },
     {
       "id": "kuning",
-      "labelKey": "kuning"
+      "labelKey": "kuning",
+      "emoji": "🧺",
+      "color": "#fdc23e"
     },
     {
       "id": "hijau",
-      "labelKey": "hijau"
+      "labelKey": "hijau",
+      "emoji": "🧺",
+      "color": "#5db57c"
     }
   ],
   "items": [
     {
       "id": "apel",
       "labelKey": "apel",
-      "bin": "merah"
+      "bin": "merah",
+      "emoji": "🍎"
     },
     {
       "id": "stroberi",
       "labelKey": "stroberi",
-      "bin": "merah"
+      "bin": "merah",
+      "emoji": "🍓"
     },
     {
       "id": "bola",
       "labelKey": "bola",
-      "bin": "biru"
+      "bin": "biru",
+      "emoji": "🔵"
     },
     {
       "id": "ikan",
       "labelKey": "ikan",
-      "bin": "biru"
+      "bin": "biru",
+      "emoji": "🐟"
     },
     {
       "id": "pisang",
       "labelKey": "pisang",
-      "bin": "kuning"
+      "bin": "kuning",
+      "emoji": "🍌"
     },
     {
       "id": "bebek",
       "labelKey": "bebek",
-      "bin": "kuning"
+      "bin": "kuning",
+      "emoji": "🐤"
     },
     {
       "id": "daun",
       "labelKey": "daun",
-      "bin": "hijau"
+      "bin": "hijau",
+      "emoji": "🍃"
     },
     {
       "id": "katak",
       "labelKey": "katak",
-      "bin": "hijau"
+      "bin": "hijau",
+      "emoji": "🐸"
     }
   ]
 }

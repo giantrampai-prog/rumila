@@ -1,0 +1,144 @@
+{
+  "id": "mana-dulu-alam",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.PAUD.URUTAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Lihat dua gambar, lalu sentuh yang terjadi lebih dulu.",
+      "telur": "Telur dan anak ayam",
+      "biji": "Biji dan pohon",
+      "ulat": "Ulat dan kupu-kupu",
+      "awan": "Awan dan hujan",
+      "bunga": "Bunga dan buah",
+      "sTelur": "telur",
+      "sAnak": "anak ayam",
+      "sBiji": "tunas kecil",
+      "sPohon": "pohon besar",
+      "sUlat": "ulat",
+      "sKupu": "kupu-kupu",
+      "sAwan": "awan gelap",
+      "sHujan": "hujan turun",
+      "sBunga": "bunga mekar",
+      "sBuah": "apel matang"
+    },
+    "en": {
+      "instruksi": "Look at the two pictures, then touch the one that happens first.",
+      "telur": "Egg and chick",
+      "biji": "Seed and tree",
+      "ulat": "Caterpillar and butterfly",
+      "awan": "Cloud and rain",
+      "bunga": "Blossom and fruit",
+      "sTelur": "egg",
+      "sAnak": "chick",
+      "sBiji": "little sprout",
+      "sPohon": "big tree",
+      "sUlat": "caterpillar",
+      "sKupu": "butterfly",
+      "sAwan": "dark cloud",
+      "sHujan": "rain falls",
+      "sBunga": "blossom",
+      "sBuah": "ripe apple"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua gambar; pasangan sebab-akibat jelas, tidak bisa dibolak-balik"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "mode": "dulu",
+  "sequences": [
+    {
+      "id": "telur",
+      "titleKey": "telur",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "sTelur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "sAnak",
+          "emoji": "🐥"
+        }
+      ]
+    },
+    {
+      "id": "biji",
+      "titleKey": "biji",
+      "steps": [
+        {
+          "id": "tunas",
+          "labelKey": "sBiji",
+          "emoji": "🌱"
+        },
+        {
+          "id": "pohon",
+          "labelKey": "sPohon",
+          "emoji": "🌳"
+        }
+      ]
+    },
+    {
+      "id": "ulat",
+      "titleKey": "ulat",
+      "steps": [
+        {
+          "id": "ulat",
+          "labelKey": "sUlat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kupu",
+          "labelKey": "sKupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "awan",
+      "titleKey": "awan",
+      "steps": [
+        {
+          "id": "awan",
+          "labelKey": "sAwan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "sHujan",
+          "emoji": "☔"
+        }
+      ]
+    },
+    {
+      "id": "bunga",
+      "titleKey": "bunga",
+      "steps": [
+        {
+          "id": "bunga",
+          "labelKey": "sBunga",
+          "emoji": "🌸"
+        },
+        {
+          "id": "buah",
+          "labelKey": "sBuah",
+          "emoji": "🍎"
+        }
+      ]
+    }
+  ]
+}

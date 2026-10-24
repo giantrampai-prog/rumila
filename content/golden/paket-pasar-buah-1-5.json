@@ -3,30 +3,104 @@
   "version": "1.0.0",
   "level": "PAUD",
   "mechanic": "dagang",
-  "competencyIds": ["MAT.PAUD.BILANGAN-1-5.01", "MAT.PAUD.BILANGAN-1-5.02"],
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.01",
+    "MAT.PAUD.BILANGAN-1-5.02"
+  ],
   "instructionKey": "instruksi",
   "locale": {
-    "id": { "instruksi": "Pembeli datang. Dengarkan, lalu ambil buah sebanyak yang diminta.", "jeruk": "jeruk", "apel": "apel", "pisang": "pisang", "mangga": "mangga" },
-    "en": { "instruksi": "A customer is here. Listen, then pick as many fruits as they ask for.", "jeruk": "orange", "apel": "apple", "pisang": "banana", "mangga": "mango" }
+    "id": {
+      "instruksi": "Pembeli datang. Dengarkan, lalu ambil buah sebanyak yang diminta.",
+      "jeruk": "jeruk",
+      "apel": "apel",
+      "pisang": "pisang",
+      "mangga": "mangga"
+    },
+    "en": {
+      "instruksi": "A customer is here. Listen, then pick as many fruits as they ask for.",
+      "jeruk": "orange",
+      "apel": "apple",
+      "pisang": "banana",
+      "mangga": "mango"
+    }
   },
   "knobs": {
-    "itemsMax": { "min": 1, "max": 5, "default": 3, "step": 1, "keterangan": "jumlah buah maksimum per pesanan" },
-    "kinds": { "min": 1, "max": 2, "default": 1, "step": 1, "keterangan": "berapa jenis buah dalam satu pesanan" }
+    "itemsMax": {
+      "min": 1,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah buah maksimum per pesanan"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "berapa jenis buah dalam satu pesanan"
+    }
   },
   "assets": [
-    { "id": "jeruk", "kind": "image", "path": "fruits/jeruk.png" },
-    { "id": "apel", "kind": "image", "path": "fruits/apel.png" },
-    { "id": "pisang", "kind": "image", "path": "fruits/pisang.png" },
-    { "id": "mangga", "kind": "image", "path": "fruits/mangga.png" }
+    {
+      "id": "jeruk",
+      "kind": "image",
+      "path": "fruits/jeruk.png"
+    },
+    {
+      "id": "apel",
+      "kind": "image",
+      "path": "fruits/apel.png"
+    },
+    {
+      "id": "pisang",
+      "kind": "image",
+      "path": "fruits/pisang.png"
+    },
+    {
+      "id": "mangga",
+      "kind": "image",
+      "path": "fruits/mangga.png"
+    }
   ],
   "generatif": true,
   "currency": "IDR",
-  "denominations": [1000],
-  "goods": [
-    { "id": "jeruk", "labelKey": "jeruk", "price": 1000, "assetId": "jeruk" },
-    { "id": "apel", "labelKey": "apel", "price": 1000, "assetId": "apel" },
-    { "id": "pisang", "labelKey": "pisang", "price": 1000, "assetId": "pisang" },
-    { "id": "mangga", "labelKey": "mangga", "price": 1000, "assetId": "mangga" }
+  "denominations": [
+    1000
   ],
-  "customerRule": { "itemsMin": 1, "itemsMax": 5, "payExact": true, "maxTotal": 5000 }
+  "goods": [
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "price": 1000,
+      "assetId": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "price": 1000,
+      "assetId": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "price": 1000,
+      "assetId": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "id": "mangga",
+      "labelKey": "mangga",
+      "price": 1000,
+      "assetId": "mangga",
+      "emoji": "🥭"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 5,
+    "payExact": true,
+    "maxTotal": 5000
+  }
 }

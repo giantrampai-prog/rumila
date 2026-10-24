@@ -1,0 +1,85 @@
+{
+  "id": "toko-mainan-6-10",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Pembeli toko mainan menyebut jumlahnya: ambil mainan tepat sebanyak itu.",
+      "bola": "bola",
+      "boneka": "boneka beruang",
+      "mobil": "mobil-mobilan",
+      "balon": "balon"
+    },
+    "en": {
+      "instruksi": "The toy-shop customer says a number: take exactly that many toys.",
+      "bola": "balls",
+      "boneka": "teddy bears",
+      "mobil": "toy cars",
+      "balon": "balloons"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 6,
+      "max": 10,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah yang diminta; tersedia 10–12"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jenis barang dalam satu pesanan: 1 → 2"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "toko-mainan",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "ambil",
+  "goods": [
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "price": 1000,
+      "emoji": "⚽"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "boneka",
+      "price": 1000,
+      "emoji": "🧸"
+    },
+    {
+      "id": "mobil",
+      "labelKey": "mobil",
+      "price": 1000,
+      "emoji": "🚗"
+    },
+    {
+      "id": "balon",
+      "labelKey": "balon",
+      "price": 1000,
+      "emoji": "🎈"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 6,
+    "itemsMax": 10,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 2
+  }
+}

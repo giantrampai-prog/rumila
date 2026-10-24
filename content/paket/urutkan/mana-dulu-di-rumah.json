@@ -1,0 +1,144 @@
+{
+  "id": "mana-dulu-di-rumah",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.PAUD.URUTAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Lihat dua gambar di rumah Agam, lalu sentuh yang terjadi lebih dulu.",
+      "nasi": "Piring nasi",
+      "es": "Es batu",
+      "kue": "Kue ulang tahun",
+      "lilin": "Lilin",
+      "balon": "Balon",
+      "sPenuh": "piring penuh",
+      "sKosong": "piring kosong",
+      "sEs": "es batu",
+      "sAir": "air",
+      "sUtuh": "kue utuh",
+      "sPotong": "kue dipotong",
+      "sNyala": "lilin menyala",
+      "sPadam": "lilin padam",
+      "sKempis": "balon kempis",
+      "sTiup": "balon besar"
+    },
+    "en": {
+      "instruksi": "Look at the two pictures from Agam's house, then touch the one that happens first.",
+      "nasi": "Plate of rice",
+      "es": "Ice cube",
+      "kue": "Birthday cake",
+      "lilin": "Candle",
+      "balon": "Balloon",
+      "sPenuh": "full plate",
+      "sKosong": "empty plate",
+      "sEs": "ice cube",
+      "sAir": "water",
+      "sUtuh": "whole cake",
+      "sPotong": "cake slice",
+      "sNyala": "lit candle",
+      "sPadam": "candle out",
+      "sKempis": "flat balloon",
+      "sTiup": "blown-up balloon"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua gambar; pasangan sebab-akibat jelas, tidak bisa dibolak-balik"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah-agam",
+  "mode": "dulu",
+  "sequences": [
+    {
+      "id": "nasi",
+      "titleKey": "nasi",
+      "steps": [
+        {
+          "id": "penuh",
+          "labelKey": "sPenuh",
+          "emoji": "🍚"
+        },
+        {
+          "id": "kosong",
+          "labelKey": "sKosong",
+          "emoji": "🍽️"
+        }
+      ]
+    },
+    {
+      "id": "es",
+      "titleKey": "es",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "sEs",
+          "emoji": "🧊"
+        },
+        {
+          "id": "air",
+          "labelKey": "sAir",
+          "emoji": "💧"
+        }
+      ]
+    },
+    {
+      "id": "kue",
+      "titleKey": "kue",
+      "steps": [
+        {
+          "id": "utuh",
+          "labelKey": "sUtuh",
+          "emoji": "🎂"
+        },
+        {
+          "id": "potong",
+          "labelKey": "sPotong",
+          "emoji": "🍰"
+        }
+      ]
+    },
+    {
+      "id": "lilin",
+      "titleKey": "lilin",
+      "steps": [
+        {
+          "id": "nyala",
+          "labelKey": "sNyala",
+          "emoji": "🕯️"
+        },
+        {
+          "id": "padam",
+          "labelKey": "sPadam",
+          "emoji": "💨"
+        }
+      ]
+    },
+    {
+      "id": "balon",
+      "titleKey": "balon",
+      "steps": [
+        {
+          "id": "kempis",
+          "labelKey": "sKempis",
+          "emoji": "🫧"
+        },
+        {
+          "id": "tiup",
+          "labelKey": "sTiup",
+          "emoji": "🎈"
+        }
+      ]
+    }
+  ]
+}

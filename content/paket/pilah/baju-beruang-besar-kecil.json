@@ -1,0 +1,173 @@
+{
+  "id": "baju-beruang-besar-kecil",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BANDING.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Beruang besar dan beruang kecil mau berpakaian: sentuh yang diminta.",
+      "pilihan": "pilihan",
+      "baju": "baju",
+      "topi": "topi",
+      "sepatu": "sepatu",
+      "mangkuk": "mangkuk",
+      "bola": "bola",
+      "tBesar": "Mana yang lebih besar?",
+      "tKecil": "Mana yang lebih kecil?"
+    },
+    "en": {
+      "instruksi": "Big bear and little bear are getting dressed: touch the one asked for.",
+      "pilihan": "choices",
+      "baju": "shirt",
+      "topi": "hat",
+      "sepatu": "shoe",
+      "mangkuk": "bowl",
+      "bola": "ball",
+      "tBesar": "Which one is bigger?",
+      "tKecil": "Which one is smaller?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua benda sejenis; rasio ukuran 1,5–2 (knob rasio diatur lewat scale item)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah-beruang",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "baju-besar",
+      "labelKey": "baju",
+      "bin": "pilihan",
+      "emoji": "👕",
+      "scale": 1.8
+    },
+    {
+      "id": "baju-kecil",
+      "labelKey": "baju",
+      "bin": "pilihan",
+      "emoji": "👕",
+      "scale": 1
+    },
+    {
+      "id": "topi-besar",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "emoji": "🎩",
+      "scale": 1.6
+    },
+    {
+      "id": "topi-kecil",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "emoji": "🎩",
+      "scale": 1
+    },
+    {
+      "id": "sepatu-besar",
+      "labelKey": "sepatu",
+      "bin": "pilihan",
+      "emoji": "👟",
+      "scale": 1.7
+    },
+    {
+      "id": "sepatu-kecil",
+      "labelKey": "sepatu",
+      "bin": "pilihan",
+      "emoji": "👟",
+      "scale": 1
+    },
+    {
+      "id": "mangkuk-besar",
+      "labelKey": "mangkuk",
+      "bin": "pilihan",
+      "emoji": "🥣",
+      "scale": 1.6
+    },
+    {
+      "id": "mangkuk-kecil",
+      "labelKey": "mangkuk",
+      "bin": "pilihan",
+      "emoji": "🥣",
+      "scale": 1
+    },
+    {
+      "id": "bola-besar",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "emoji": "⚽",
+      "scale": 1.8
+    },
+    {
+      "id": "bola-kecil",
+      "labelKey": "bola",
+      "bin": "pilihan",
+      "emoji": "⚽",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBesar",
+      "choices": [
+        "baju-kecil",
+        "baju-besar"
+      ],
+      "correct": "baju-besar"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tKecil",
+      "choices": [
+        "topi-besar",
+        "topi-kecil"
+      ],
+      "correct": "topi-kecil"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tBesar",
+      "choices": [
+        "sepatu-kecil",
+        "sepatu-besar"
+      ],
+      "correct": "sepatu-besar"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tKecil",
+      "choices": [
+        "mangkuk-besar",
+        "mangkuk-kecil"
+      ],
+      "correct": "mangkuk-kecil"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tBesar",
+      "choices": [
+        "bola-kecil",
+        "bola-besar"
+      ],
+      "correct": "bola-besar"
+    }
+  ]
+}

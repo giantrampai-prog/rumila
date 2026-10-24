@@ -1,0 +1,113 @@
+{
+  "id": "kue-tiga-tahap",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.TKB.DEKOMPOSISI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
+      "siapkan": "siapkan",
+      "campur": "campur",
+      "panggang": "panggang",
+      "tepung": "ambil tepung",
+      "telur": "ambil telur",
+      "aduk": "aduk adonan",
+      "tuang": "tuang susu",
+      "oven": "masukkan ke oven",
+      "jadi": "kue matang"
+    },
+    "en": {
+      "instruksi": "Agam is baking a cake: put each small step into its big stage.",
+      "siapkan": "get ready",
+      "campur": "mix",
+      "panggang": "bake",
+      "tepung": "get the flour",
+      "telur": "get the eggs",
+      "aduk": "stir the batter",
+      "tuang": "pour the milk",
+      "oven": "put it in the oven",
+      "jadi": "the cake is done"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah tahap aktif; 3 tahap adalah bentuk utuhnya"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 6,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah langkah kecil per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "siapkan",
+      "labelKey": "siapkan",
+      "emoji": "🧺"
+    },
+    {
+      "id": "campur",
+      "labelKey": "campur",
+      "emoji": "🥣"
+    },
+    {
+      "id": "panggang",
+      "labelKey": "panggang",
+      "emoji": "🔥"
+    }
+  ],
+  "items": [
+    {
+      "id": "tepung",
+      "labelKey": "tepung",
+      "bin": "siapkan",
+      "emoji": "🌾"
+    },
+    {
+      "id": "telur",
+      "labelKey": "telur",
+      "bin": "siapkan",
+      "emoji": "🥚"
+    },
+    {
+      "id": "aduk",
+      "labelKey": "aduk",
+      "bin": "campur",
+      "emoji": "🥄"
+    },
+    {
+      "id": "tuang",
+      "labelKey": "tuang",
+      "bin": "campur",
+      "emoji": "🥛"
+    },
+    {
+      "id": "oven",
+      "labelKey": "oven",
+      "bin": "panggang",
+      "emoji": "♨️"
+    },
+    {
+      "id": "jadi",
+      "labelKey": "jadi",
+      "bin": "panggang",
+      "emoji": "🎂"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "kue-piring-sisa",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.TAMBAH-KURANG-10.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Beberapa kue dibeli lalu piring ditutup: taruh lilin sebanyak kue yang tersisa.",
+      "kue": "kue",
+      "lilin": "lilin"
+    },
+    "en": {
+      "instruksi": "Some cakes were bought and the plate was covered: put down one candle for each cake left.",
+      "kue": "cakes",
+      "lilin": "candles"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 5,
+      "max": 10,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah awal benda"
+    },
+    "pengurang": {
+      "min": 1,
+      "max": 5,
+      "default": 2,
+      "step": 1,
+      "keterangan": "berapa yang diambil; kolam terlihat → tertutup kabut diatur presenter"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "toko-kue",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "sisa",
+  "goods": [
+    {
+      "id": "kue",
+      "labelKey": "kue",
+      "price": 1000,
+      "emoji": "🧁"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "lilin",
+      "price": 1000,
+      "emoji": "🕯️"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 5,
+    "itemsMax": 10,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "target": 10
+  }
+}

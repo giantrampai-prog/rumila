@@ -1,0 +1,126 @@
+{
+  "id": "mana-topi-warna",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.WARNA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam mau pakai topi pesta: sentuh topi yang warnanya disebut.",
+      "pilihan": "pilihan",
+      "tMerah": "Mana yang merah?",
+      "tBiru": "Mana yang biru?",
+      "tKuning": "Mana yang kuning?",
+      "tHijau": "Mana yang hijau?",
+      "topi": "topi pesta"
+    },
+    "en": {
+      "instruksi": "Agam wants a party hat: touch the hat of the colour you hear.",
+      "pilihan": "choices",
+      "tMerah": "Which one is red?",
+      "tBiru": "Which one is blue?",
+      "tKuning": "Which one is yellow?",
+      "tHijau": "Which one is green?",
+      "topi": "party hat"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah topi yang ditampilkan per pertanyaan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "pesta",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "topi-merah",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#e53935"
+    },
+    {
+      "id": "topi-biru",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "topi-kuning",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#fdd835"
+    },
+    {
+      "id": "topi-hijau",
+      "labelKey": "topi",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#43a047"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "merah",
+      "promptKey": "tMerah",
+      "choices": [
+        "topi-merah",
+        "topi-biru",
+        "topi-kuning",
+        "topi-hijau"
+      ],
+      "correct": "topi-merah"
+    },
+    {
+      "id": "biru",
+      "promptKey": "tBiru",
+      "choices": [
+        "topi-merah",
+        "topi-biru",
+        "topi-kuning",
+        "topi-hijau"
+      ],
+      "correct": "topi-biru"
+    },
+    {
+      "id": "kuning",
+      "promptKey": "tKuning",
+      "choices": [
+        "topi-merah",
+        "topi-biru",
+        "topi-kuning",
+        "topi-hijau"
+      ],
+      "correct": "topi-kuning"
+    },
+    {
+      "id": "hijau",
+      "promptKey": "tHijau",
+      "choices": [
+        "topi-merah",
+        "topi-biru",
+        "topi-kuning",
+        "topi-hijau"
+      ],
+      "correct": "topi-hijau"
+    }
+  ]
+}

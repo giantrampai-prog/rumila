@@ -1,0 +1,248 @@
+{
+  "id": "rak-angka-1-10-buah",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Hitung buahnya, lalu taruh di rak yang angkanya pas.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "n6": "6",
+      "n7": "7",
+      "n8": "8",
+      "n9": "9",
+      "n10": "10",
+      "jeruk": "jeruk",
+      "anggur": "anggur"
+    },
+    "en": {
+      "instruksi": "Count the fruit, then put them on the shelf with the matching number.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "n6": "6",
+      "n7": "7",
+      "n8": "8",
+      "n9": "9",
+      "n10": "10",
+      "jeruk": "oranges",
+      "anggur": "grapes"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 5,
+      "max": 10,
+      "default": 5,
+      "step": 1,
+      "keterangan": "angka terbesar yang aktif; rak di atas maxCount disembunyikan (6 dan 9 rawan tertukar)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah kelompok benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "r1",
+      "labelKey": "n1"
+    },
+    {
+      "id": "r2",
+      "labelKey": "n2"
+    },
+    {
+      "id": "r3",
+      "labelKey": "n3"
+    },
+    {
+      "id": "r4",
+      "labelKey": "n4"
+    },
+    {
+      "id": "r5",
+      "labelKey": "n5"
+    },
+    {
+      "id": "r6",
+      "labelKey": "n6"
+    },
+    {
+      "id": "r7",
+      "labelKey": "n7"
+    },
+    {
+      "id": "r8",
+      "labelKey": "n8"
+    },
+    {
+      "id": "r9",
+      "labelKey": "n9"
+    },
+    {
+      "id": "r10",
+      "labelKey": "n10"
+    }
+  ],
+  "items": [
+    {
+      "id": "jeruk-1",
+      "labelKey": "jeruk",
+      "bin": "r1",
+      "emoji": "🍊",
+      "count": 1
+    },
+    {
+      "id": "anggur-1",
+      "labelKey": "anggur",
+      "bin": "r1",
+      "emoji": "🍇",
+      "count": 1
+    },
+    {
+      "id": "jeruk-2",
+      "labelKey": "jeruk",
+      "bin": "r2",
+      "emoji": "🍊",
+      "count": 2
+    },
+    {
+      "id": "anggur-2",
+      "labelKey": "anggur",
+      "bin": "r2",
+      "emoji": "🍇",
+      "count": 2
+    },
+    {
+      "id": "jeruk-3",
+      "labelKey": "jeruk",
+      "bin": "r3",
+      "emoji": "🍊",
+      "count": 3
+    },
+    {
+      "id": "anggur-3",
+      "labelKey": "anggur",
+      "bin": "r3",
+      "emoji": "🍇",
+      "count": 3
+    },
+    {
+      "id": "jeruk-4",
+      "labelKey": "jeruk",
+      "bin": "r4",
+      "emoji": "🍊",
+      "count": 4
+    },
+    {
+      "id": "anggur-4",
+      "labelKey": "anggur",
+      "bin": "r4",
+      "emoji": "🍇",
+      "count": 4
+    },
+    {
+      "id": "jeruk-5",
+      "labelKey": "jeruk",
+      "bin": "r5",
+      "emoji": "🍊",
+      "count": 5
+    },
+    {
+      "id": "anggur-5",
+      "labelKey": "anggur",
+      "bin": "r5",
+      "emoji": "🍇",
+      "count": 5
+    },
+    {
+      "id": "jeruk-6",
+      "labelKey": "jeruk",
+      "bin": "r6",
+      "emoji": "🍊",
+      "count": 6
+    },
+    {
+      "id": "anggur-6",
+      "labelKey": "anggur",
+      "bin": "r6",
+      "emoji": "🍇",
+      "count": 6
+    },
+    {
+      "id": "jeruk-7",
+      "labelKey": "jeruk",
+      "bin": "r7",
+      "emoji": "🍊",
+      "count": 7
+    },
+    {
+      "id": "anggur-7",
+      "labelKey": "anggur",
+      "bin": "r7",
+      "emoji": "🍇",
+      "count": 7
+    },
+    {
+      "id": "jeruk-8",
+      "labelKey": "jeruk",
+      "bin": "r8",
+      "emoji": "🍊",
+      "count": 8
+    },
+    {
+      "id": "anggur-8",
+      "labelKey": "anggur",
+      "bin": "r8",
+      "emoji": "🍇",
+      "count": 8
+    },
+    {
+      "id": "jeruk-9",
+      "labelKey": "jeruk",
+      "bin": "r9",
+      "emoji": "🍊",
+      "count": 9
+    },
+    {
+      "id": "anggur-9",
+      "labelKey": "anggur",
+      "bin": "r9",
+      "emoji": "🍇",
+      "count": 9
+    },
+    {
+      "id": "jeruk-10",
+      "labelKey": "jeruk",
+      "bin": "r10",
+      "emoji": "🍊",
+      "count": 10
+    },
+    {
+      "id": "anggur-10",
+      "labelKey": "anggur",
+      "bin": "r10",
+      "emoji": "🍇",
+      "count": 10
+    }
+  ]
+}

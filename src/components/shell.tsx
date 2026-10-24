@@ -15,6 +15,7 @@ function requiredPerm(path: string): PermKey | null {
   if (["/jelajah-tubuh", "/buah-buahan", "/jelajah-angkasa", "/roket", "/laut", "/bumi"].some((r) => path.startsWith(r))) return "angkasa";
   if (path.startsWith("/resto") || path.startsWith("/ular-tangga")) return "game";
   if (path.startsWith("/koding")) return "coding";
+  if (path.startsWith("/akademi")) return "edukasi";
   const m = path.match(/^\/beranda\/([^/]+)/);
   if (m) return (getFolder(m[1])?.id as PermKey) ?? null;
   return null;
@@ -61,7 +62,7 @@ function Ready({ children }: { children: ReactNode }) {
   const page = allowed ? children : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
-  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/resto", "/ular-tangga", "/koding"].some((r) => path.startsWith(r)))
+  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/rapor"].some((r) => path.startsWith(r)))
     return (
       <>
         {page}

@@ -1,0 +1,86 @@
+{
+  "id": "bayar-koin-kantin-sekolah",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKA.UANG-KENAL.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam jajan di kantin: lihat harga koinnya, lalu bayar dengan koin seribu sebanyak itu.",
+      "pisanggoreng": "pisang goreng",
+      "tahu": "tahu goreng",
+      "bakwan": "bakwan",
+      "tehmanis": "teh manis",
+      "nasikuning": "nasi kuning"
+    },
+    "en": {
+      "instruksi": "Agam buys a snack at the canteen: read the coin price, then pay with that many thousand coins.",
+      "pisanggoreng": "fried banana",
+      "tahu": "fried tofu",
+      "bakwan": "veggie fritter",
+      "tehmanis": "sweet tea",
+      "nasikuning": "yellow rice"
+    }
+  },
+  "knobs": {
+    "harga": {
+      "min": 1,
+      "max": 5,
+      "default": 2,
+      "step": 1,
+      "keterangan": "harga dalam koin seribu; koin di laci selalu lebih banyak dari harga"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kantin",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "tahu",
+      "labelKey": "tahu",
+      "price": 1000,
+      "emoji": "🍢"
+    },
+    {
+      "id": "bakwan",
+      "labelKey": "bakwan",
+      "price": 2000,
+      "emoji": "🥟"
+    },
+    {
+      "id": "pisanggoreng",
+      "labelKey": "pisanggoreng",
+      "price": 3000,
+      "emoji": "🍌"
+    },
+    {
+      "id": "tehmanis",
+      "labelKey": "tehmanis",
+      "price": 4000,
+      "emoji": "🧋"
+    },
+    {
+      "id": "nasikuning",
+      "labelKey": "nasikuning",
+      "price": 5000,
+      "emoji": "🍛"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 5000,
+    "kindsMax": 1
+  }
+}

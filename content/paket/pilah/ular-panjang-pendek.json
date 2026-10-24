@@ -1,0 +1,173 @@
+{
+  "id": "ular-panjang-pendek",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BANDING.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Dua ular berjemur sejajar: sentuh yang lebih panjang atau lebih pendek sesuai permintaan.",
+      "pilihan": "pilihan",
+      "ular": "ular",
+      "cacing": "cacing",
+      "ikan": "ikan",
+      "buaya": "buaya",
+      "ulat": "ulat",
+      "tPanjang": "Mana yang lebih panjang?",
+      "tPendek": "Mana yang lebih pendek?"
+    },
+    "en": {
+      "instruksi": "Two snakes are sunbathing side by side: touch the longer or shorter one as asked.",
+      "pilihan": "choices",
+      "ular": "snake",
+      "cacing": "worm",
+      "ikan": "fish",
+      "buaya": "crocodile",
+      "ulat": "caterpillar",
+      "tPanjang": "Which one is longer?",
+      "tPendek": "Which one is shorter?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua benda sejenis sejajar di garis dasar yang sama; rasio panjang ≥ 1,5 lewat width"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "sungai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "ular-panjang",
+      "labelKey": "ular",
+      "bin": "pilihan",
+      "emoji": "🐍",
+      "width": 2
+    },
+    {
+      "id": "ular-pendek",
+      "labelKey": "ular",
+      "bin": "pilihan",
+      "emoji": "🐍",
+      "width": 1
+    },
+    {
+      "id": "cacing-panjang",
+      "labelKey": "cacing",
+      "bin": "pilihan",
+      "emoji": "🪱",
+      "width": 1.8
+    },
+    {
+      "id": "cacing-pendek",
+      "labelKey": "cacing",
+      "bin": "pilihan",
+      "emoji": "🪱",
+      "width": 1
+    },
+    {
+      "id": "ikan-panjang",
+      "labelKey": "ikan",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "width": 1.6
+    },
+    {
+      "id": "ikan-pendek",
+      "labelKey": "ikan",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "width": 1
+    },
+    {
+      "id": "buaya-panjang",
+      "labelKey": "buaya",
+      "bin": "pilihan",
+      "emoji": "🐊",
+      "width": 2
+    },
+    {
+      "id": "buaya-pendek",
+      "labelKey": "buaya",
+      "bin": "pilihan",
+      "emoji": "🐊",
+      "width": 1
+    },
+    {
+      "id": "ulat-panjang",
+      "labelKey": "ulat",
+      "bin": "pilihan",
+      "emoji": "🐛",
+      "width": 1.7
+    },
+    {
+      "id": "ulat-pendek",
+      "labelKey": "ulat",
+      "bin": "pilihan",
+      "emoji": "🐛",
+      "width": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tPanjang",
+      "choices": [
+        "ular-pendek",
+        "ular-panjang"
+      ],
+      "correct": "ular-panjang"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tPendek",
+      "choices": [
+        "cacing-panjang",
+        "cacing-pendek"
+      ],
+      "correct": "cacing-pendek"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tPanjang",
+      "choices": [
+        "ikan-pendek",
+        "ikan-panjang"
+      ],
+      "correct": "ikan-panjang"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tPendek",
+      "choices": [
+        "buaya-panjang",
+        "buaya-pendek"
+      ],
+      "correct": "buaya-pendek"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tPanjang",
+      "choices": [
+        "ulat-pendek",
+        "ulat-panjang"
+      ],
+      "correct": "ulat-panjang"
+    }
+  ]
+}

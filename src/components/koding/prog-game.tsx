@@ -9,6 +9,7 @@
 import { useRouter } from 'next/navigation';
 import { useRef, useState, type ReactNode } from 'react';
 import { Icon } from '@/components/ui';
+import { catatGagalKoding, catatMenangKoding, type GameKoding } from '@/lib/akademi/bukti-koding';
 import { countBlocks, newId, progStars, runWorld, type PBlock, type Program, type ProgLevelBase, type Step, type Stmt, type World } from '@/lib/koding/prog';
 import { sfx } from '@/lib/sfx';
 import { useMe } from '@/lib/store';
@@ -63,9 +64,13 @@ export interface ProgGameConfig<L extends ProgLevelBase> {
   useAdapter: (level: L | null, dark: boolean) => Adapter;
 }
 
+/** game yang buktinya dicatat ke Academy (dari nama tool `koding-<game>`) */
+const BUKTI_GAME: Record<string, GameKoding> = { 'koding-ulangi': 'ulangi', 'koding-kalau': 'kalau' };
+
 export function ProgGame<L extends ProgLevelBase>({ cfg }: { cfg: ProgGameConfig<L> }) {
   const { levels, tool, title } = cfg;
   const TOTAL = levels.length;
+  const buktiGame = BUKTI_GAME[tool];
   const me = useMe();
   const memberId = me?.id ?? 'dev';
   useToolSession(memberId, tool, 'coding');
@@ -91,6 +96,9 @@ export function ProgGame<L extends ProgLevelBase>({ cfg }: { cfg: ProgGameConfig
   const [helpStep, setHelpStep] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const runId = useRef(0);
+  /** bukti ke Academy: kapan level dibuka & apakah Bantuan pernah ditekan di level ini */
+  const openedAt = useRef(0);
+  const hintUsed = useRef(false);
 
   const { doneCount, starTotal, allDone, current } = summarize(levels, prog);
   const hasJurus = !!level?.palette.includes('jurus');
@@ -117,6 +125,8 @@ export function ProgGame<L extends ProgLevelBase>({ cfg }: { cfg: ProgGameConfig
     setRunning(false);
     setSay(l.hint);
     clearRun();
+    openedAt.current = Date.now();
+    hintUsed.current = false;
   };
 
   const stop = () => {
@@ -184,6 +194,7 @@ export function ProgGame<L extends ProgLevelBase>({ cfg }: { cfg: ProgGameConfig
   const help = () => {
     if (!level || locked) return;
     sfx.pick();
+    hintUsed.current = true;
     if (helpStep === 0) {
       setHelpStep(1);
       setSay(`${level.hint} Jatahnya ${level.limit} blok; paling hemat ${level.best} blok.`);
@@ -227,6 +238,7 @@ export function ProgGame<L extends ProgLevelBase>({ cfg }: { cfg: ProgGameConfig
     setRunning(false);
     setCheck(null);
     const last = r.steps.filter((s) => s.kind !== 'check' && s.kind !== 'call').at(-1);
+    const bukti = buktiGame ? { learnerId: memberId, game: buktiGame, levelId: level.id, index: li!, blocks: used, hintUsed: hintUsed.current, latencyMs: Date.now() - openedAt.current } : null;
     if (r.result === 'win') {
       const st = progStars(level.best, used, revealed);
       sfx.celebrate();
@@ -234,9 +246,11 @@ export function ProgGame<L extends ProgLevelBase>({ cfg }: { cfg: ProgGameConfig
       setWin(st);
       if (!(prog.stars[level.id] ?? 0)) completeTool(memberId, tool, 'coding', `level:${level.id}`);
       saveProg(withStars(levels, prog, level.id, st));
+      if (bukti) catatMenangKoding({ ...bukti, stars: st });
       ad.after?.('win');
       return;
     }
+    if (bukti) catatGagalKoding(bukti);
     const f = fails + 1;
     setFails(f);
     const nudge = f >= 2 ? ' Butuh bantuan? Ketuk lampu.' : '';

@@ -3,11 +3,11 @@
 
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { ContentPack, Kamus, KerangkaFile, KurikulumFile, adaError, validasiKurikulum, type Competency } from "./index";
+import { ContentPack, Kamus, KerangkaFile, KurikulumFile, adaError, kunciLocale, validasiKurikulum, type Competency } from "./index";
 
 const root = resolve(process.cwd());
 const args = process.argv.slice(2);
-const targets = args.length ? args : ["content/kurikulum", "content/golden"];
+const targets = args.length ? args : ["content/kurikulum", "content/golden", "content/paket"];
 
 function jsonFiles(p: string): string[] {
   const abs = resolve(root, p);
@@ -27,6 +27,14 @@ console.log(`kamus kerangka: ${kamus.size} kode`);
 
 let gagal = 0;
 let paketTotal = 0;
+const paketId = new Map<string, number>();
+
+/** id kompetensi dari content/kurikulum: paket hanya boleh menunjuk ke sini (golden set diperlakukan sama). */
+const semuaKompetensi = new Set<string>();
+for (const f of jsonFiles("content/kurikulum")) {
+  const raw = JSON.parse(readFileSync(f, "utf8"));
+  if (raw && Array.isArray(raw.kompetensi)) for (const c of raw.kompetensi) if (c?.id) semuaKompetensi.add(c.id);
+}
 
 /** Tiap target dinilai sebagai satu kurikulum utuh; golden set dan content/kurikulum sengaja memakai id yang sama. */
 for (const target of targets) {
@@ -46,18 +54,11 @@ for (const target of targets) {
     } else if (raw && typeof raw.mechanic === "string") {
       const r = ContentPack.safeParse(raw);
       if (!r.success) { gagal++; console.error(`✗ ${rel}\n  ${r.error.issues.map(i => i.path.join(".") + ": " + i.message).join("\n  ")}`); continue; }
-      const kunci = new Set<string>([r.data.instructionKey]);
       const d = r.data;
-      if (d.mechanic === "pilah") { d.bins.forEach(b => kunci.add(b.labelKey)); d.items.forEach(i => kunci.add(i.labelKey)); }
-      if (d.mechanic === "urutkan") d.sequences.forEach(s => { kunci.add(s.titleKey); s.steps.forEach(x => kunci.add(x.labelKey)); });
-      if (d.mechanic === "dagang") d.goods.forEach(g => kunci.add(g.labelKey));
-      const hilang = [...kunci].filter(k => !d.locale.id[k] || !d.locale.en[k]);
+      const hilang = [...kunciLocale(d)].filter(k => !d.locale.id[k] || !d.locale.en[k]);
       if (hilang.length) { gagal++; console.error(`✗ ${rel}: kunci locale hilang: ${hilang.join(", ")}`); continue; }
-      if (d.mechanic === "pilah") {
-        const bins = new Set(d.bins.map(b => b.id));
-        const salah = d.items.filter(i => !bins.has(i.bin)).map(i => i.id);
-        if (salah.length) { gagal++; console.error(`✗ ${rel}: item menunjuk bin yang tidak ada: ${salah.join(", ")}`); continue; }
-      }
+      for (const cid of d.competencyIds) if (!semuaKompetensi.has(cid)) { gagal++; console.error(`✗ ${rel}: kompetensi ${cid} tidak ada di content/kurikulum`); }
+      paketId.set(d.id, (paketId.get(d.id) ?? 0) + 1);
       paket++;
       console.log(`✓ ${rel}: paket ${d.mechanic} (${d.competencyIds.length} kompetensi)`);
     }
@@ -70,5 +71,6 @@ for (const target of targets) {
   }
   paketTotal += paket;
 }
+for (const [id, n] of paketId) if (n > 1) { gagal++; console.error(`✗ id paket ganda: ${id} (${n}×)`); }
 console.log(`\n${paketTotal} paket konten valid`);
 process.exit(gagal ? 1 : 0);

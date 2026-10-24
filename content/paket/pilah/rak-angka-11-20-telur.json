@@ -1,0 +1,248 @@
+{
+  "id": "rak-angka-11-20-telur",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKB.BILANGAN-20.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Hitung telur di keranjang, lalu taruh di rak yang angkanya pas.",
+      "n11": "11",
+      "n12": "12",
+      "n13": "13",
+      "n14": "14",
+      "n15": "15",
+      "n16": "16",
+      "n17": "17",
+      "n18": "18",
+      "n19": "19",
+      "n20": "20",
+      "telur": "telur",
+      "biji": "biji"
+    },
+    "en": {
+      "instruksi": "Count the eggs in the basket, then put them on the shelf with the matching number.",
+      "n11": "11",
+      "n12": "12",
+      "n13": "13",
+      "n14": "14",
+      "n15": "15",
+      "n16": "16",
+      "n17": "17",
+      "n18": "18",
+      "n19": "19",
+      "n20": "20",
+      "telur": "eggs",
+      "biji": "seeds"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 15,
+      "max": 20,
+      "default": 15,
+      "step": 1,
+      "keterangan": "angka terbesar yang aktif: 11–15 dulu, lalu sampai 20; rak berurutan supaya posisi membantu"
+    },
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kelompok per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "r11",
+      "labelKey": "n11"
+    },
+    {
+      "id": "r12",
+      "labelKey": "n12"
+    },
+    {
+      "id": "r13",
+      "labelKey": "n13"
+    },
+    {
+      "id": "r14",
+      "labelKey": "n14"
+    },
+    {
+      "id": "r15",
+      "labelKey": "n15"
+    },
+    {
+      "id": "r16",
+      "labelKey": "n16"
+    },
+    {
+      "id": "r17",
+      "labelKey": "n17"
+    },
+    {
+      "id": "r18",
+      "labelKey": "n18"
+    },
+    {
+      "id": "r19",
+      "labelKey": "n19"
+    },
+    {
+      "id": "r20",
+      "labelKey": "n20"
+    }
+  ],
+  "items": [
+    {
+      "id": "telur-11",
+      "labelKey": "telur",
+      "bin": "r11",
+      "emoji": "🥚",
+      "count": 11
+    },
+    {
+      "id": "biji-11",
+      "labelKey": "biji",
+      "bin": "r11",
+      "emoji": "🌰",
+      "count": 11
+    },
+    {
+      "id": "telur-12",
+      "labelKey": "telur",
+      "bin": "r12",
+      "emoji": "🥚",
+      "count": 12
+    },
+    {
+      "id": "biji-12",
+      "labelKey": "biji",
+      "bin": "r12",
+      "emoji": "🌰",
+      "count": 12
+    },
+    {
+      "id": "telur-13",
+      "labelKey": "telur",
+      "bin": "r13",
+      "emoji": "🥚",
+      "count": 13
+    },
+    {
+      "id": "biji-13",
+      "labelKey": "biji",
+      "bin": "r13",
+      "emoji": "🌰",
+      "count": 13
+    },
+    {
+      "id": "telur-14",
+      "labelKey": "telur",
+      "bin": "r14",
+      "emoji": "🥚",
+      "count": 14
+    },
+    {
+      "id": "biji-14",
+      "labelKey": "biji",
+      "bin": "r14",
+      "emoji": "🌰",
+      "count": 14
+    },
+    {
+      "id": "telur-15",
+      "labelKey": "telur",
+      "bin": "r15",
+      "emoji": "🥚",
+      "count": 15
+    },
+    {
+      "id": "biji-15",
+      "labelKey": "biji",
+      "bin": "r15",
+      "emoji": "🌰",
+      "count": 15
+    },
+    {
+      "id": "telur-16",
+      "labelKey": "telur",
+      "bin": "r16",
+      "emoji": "🥚",
+      "count": 16
+    },
+    {
+      "id": "biji-16",
+      "labelKey": "biji",
+      "bin": "r16",
+      "emoji": "🌰",
+      "count": 16
+    },
+    {
+      "id": "telur-17",
+      "labelKey": "telur",
+      "bin": "r17",
+      "emoji": "🥚",
+      "count": 17
+    },
+    {
+      "id": "biji-17",
+      "labelKey": "biji",
+      "bin": "r17",
+      "emoji": "🌰",
+      "count": 17
+    },
+    {
+      "id": "telur-18",
+      "labelKey": "telur",
+      "bin": "r18",
+      "emoji": "🥚",
+      "count": 18
+    },
+    {
+      "id": "biji-18",
+      "labelKey": "biji",
+      "bin": "r18",
+      "emoji": "🌰",
+      "count": 18
+    },
+    {
+      "id": "telur-19",
+      "labelKey": "telur",
+      "bin": "r19",
+      "emoji": "🥚",
+      "count": 19
+    },
+    {
+      "id": "biji-19",
+      "labelKey": "biji",
+      "bin": "r19",
+      "emoji": "🌰",
+      "count": 19
+    },
+    {
+      "id": "telur-20",
+      "labelKey": "telur",
+      "bin": "r20",
+      "emoji": "🥚",
+      "count": 20
+    },
+    {
+      "id": "biji-20",
+      "labelKey": "biji",
+      "bin": "r20",
+      "emoji": "🌰",
+      "count": 20
+    }
+  ]
+}

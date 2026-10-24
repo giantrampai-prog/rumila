@@ -1,0 +1,131 @@
+{
+  "id": "kue-bentuk-toko-agam",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BENTUK-DASAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Taruh tiap kue di nampan yang bentuknya sama supaya toko Agam rapi.",
+      "lingkaran": "lingkaran",
+      "segitiga": "segitiga",
+      "kotak": "kotak"
+    },
+    "en": {
+      "instruksi": "Put each cookie on the tray with the same shape so Agam's shop looks neat.",
+      "lingkaran": "circle",
+      "segitiga": "triangle",
+      "kotak": "square"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah lubang/bentuk aktif"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah keping per putaran; warna diacak supaya anak memilah bentuk, bukan warna"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "toko-kue",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "lingkaran",
+      "labelKey": "lingkaran",
+      "shape": "circle",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "segitiga",
+      "labelKey": "segitiga",
+      "shape": "triangle",
+      "color": "#9e9e9e"
+    },
+    {
+      "id": "kotak",
+      "labelKey": "kotak",
+      "shape": "square",
+      "color": "#9e9e9e"
+    }
+  ],
+  "items": [
+    {
+      "id": "lingkaran-merah",
+      "labelKey": "lingkaran",
+      "bin": "lingkaran",
+      "shape": "circle",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "lingkaran-biru",
+      "labelKey": "lingkaran",
+      "bin": "lingkaran",
+      "shape": "circle",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "lingkaran-kuning",
+      "labelKey": "lingkaran",
+      "bin": "lingkaran",
+      "shape": "circle",
+      "color": "#fb8c00"
+    },
+    {
+      "id": "segitiga-merah",
+      "labelKey": "segitiga",
+      "bin": "segitiga",
+      "shape": "triangle",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "segitiga-biru",
+      "labelKey": "segitiga",
+      "bin": "segitiga",
+      "shape": "triangle",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "segitiga-kuning",
+      "labelKey": "segitiga",
+      "bin": "segitiga",
+      "shape": "triangle",
+      "color": "#fb8c00"
+    },
+    {
+      "id": "kotak-merah",
+      "labelKey": "kotak",
+      "bin": "kotak",
+      "shape": "square",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "kotak-biru",
+      "labelKey": "kotak",
+      "bin": "kotak",
+      "shape": "square",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "kotak-kuning",
+      "labelKey": "kotak",
+      "bin": "kotak",
+      "shape": "square",
+      "color": "#fb8c00"
+    }
+  ]
+}

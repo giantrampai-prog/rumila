@@ -1,0 +1,78 @@
+{
+  "id": "gabung-keranjang-buah",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.TAMBAH-KURANG-10.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Dua pembeli menaruh buah di satu keranjang: geser penanda ke jumlah semuanya.",
+      "jeruk": "jeruk",
+      "apel": "apel",
+      "mangga": "mangga"
+    },
+    "en": {
+      "instruksi": "Two customers put fruit into one basket: slide the marker to how many there are altogether.",
+      "jeruk": "oranges",
+      "apel": "apples",
+      "mangga": "mangoes"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 2,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah terbesar tiap kelompok; mulai 2+2, naik ke 6+4"
+    },
+    "target": {
+      "min": 10,
+      "max": 10,
+      "default": 10,
+      "step": 1,
+      "keterangan": "jumlah gabungan tidak melebihi 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "gabung",
+  "goods": [
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "price": 1000,
+      "emoji": "🍊"
+    },
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "price": 1000,
+      "emoji": "🍎"
+    },
+    {
+      "id": "mangga",
+      "labelKey": "mangga",
+      "price": 1000,
+      "emoji": "🥭"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 2,
+    "itemsMax": 6,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "target": 10
+  }
+}

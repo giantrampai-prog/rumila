@@ -1,0 +1,113 @@
+{
+  "id": "hujan-dan-pesta-ulang-tahun",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKA.URUTAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun gambar supaya ceritanya urut dari awal sampai akhir.",
+      "hujan": "Hujan lalu pelangi",
+      "pesta": "Pesta ulang tahun Agam",
+      "awan": "awan datang",
+      "turun": "hujan turun",
+      "reda": "hujan reda",
+      "pelangi": "pelangi muncul",
+      "hias": "pasang balon",
+      "kue": "kue datang",
+      "tiup": "tiup lilin",
+      "potong": "potong kue",
+      "makan": "makan kue"
+    },
+    "en": {
+      "instruksi": "Put the pictures in order from the beginning to the end of the story.",
+      "hujan": "Rain then rainbow",
+      "pesta": "Agam's birthday party",
+      "awan": "clouds gather",
+      "turun": "rain falls",
+      "reda": "rain stops",
+      "pelangi": "a rainbow appears",
+      "hias": "hang balloons",
+      "kue": "the cake arrives",
+      "tiup": "blow out the candle",
+      "potong": "cut the cake",
+      "makan": "eat the cake"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah gambar yang ditampilkan: 4 → 5; tidak ada dua gambar yang bisa bertukar tanpa salah"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "pesta",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "hujan",
+      "titleKey": "hujan",
+      "steps": [
+        {
+          "id": "awan",
+          "labelKey": "awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "turun",
+          "labelKey": "turun",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "reda",
+          "labelKey": "reda",
+          "emoji": "⛅"
+        },
+        {
+          "id": "pelangi",
+          "labelKey": "pelangi",
+          "emoji": "🌈"
+        }
+      ]
+    },
+    {
+      "id": "pesta",
+      "titleKey": "pesta",
+      "steps": [
+        {
+          "id": "hias",
+          "labelKey": "hias",
+          "emoji": "🎈"
+        },
+        {
+          "id": "kue",
+          "labelKey": "kue",
+          "emoji": "🎂"
+        },
+        {
+          "id": "tiup",
+          "labelKey": "tiup",
+          "emoji": "🕯️"
+        },
+        {
+          "id": "potong",
+          "labelKey": "potong",
+          "emoji": "🍰"
+        },
+        {
+          "id": "makan",
+          "labelKey": "makan",
+          "emoji": "😋"
+        }
+      ]
+    }
+  ]
+}

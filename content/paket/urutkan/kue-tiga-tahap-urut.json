@@ -1,0 +1,130 @@
+{
+  "id": "kue-tiga-tahap-urut",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKB.DEKOMPOSISI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun enam langkah membuat kue: dua langkah siapkan, dua campur, dua panggang.",
+      "kue": "Membuat kue: siapkan, campur, panggang",
+      "roti": "Membuat roti: siapkan, campur, panggang",
+      "tepung": "ambil tepung",
+      "telur": "ambil telur",
+      "aduk": "aduk adonan",
+      "tuang": "tuang ke loyang",
+      "oven": "masukkan ke oven",
+      "jadi": "kue matang",
+      "ragi": "ambil ragi",
+      "uleni": "uleni adonan",
+      "bentuk": "bentuk roti",
+      "roti2": "roti matang"
+    },
+    "en": {
+      "instruksi": "Order the six cake steps: two to get ready, two to mix, two to bake.",
+      "kue": "Baking: get ready, mix, bake",
+      "roti": "Bread: get ready, mix, bake",
+      "tepung": "get the flour",
+      "telur": "get the eggs",
+      "aduk": "stir the batter",
+      "tuang": "pour into the tin",
+      "oven": "put it in the oven",
+      "jadi": "the cake is done",
+      "ragi": "get the yeast",
+      "uleni": "knead the dough",
+      "bentuk": "shape the loaf",
+      "roti2": "the bread is done"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah langkah tampil; 6 = tiga tahap lengkap"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "dapur",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "kue",
+      "titleKey": "kue",
+      "steps": [
+        {
+          "id": "tepung",
+          "labelKey": "tepung",
+          "emoji": "🌾"
+        },
+        {
+          "id": "telur",
+          "labelKey": "telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "aduk",
+          "labelKey": "aduk",
+          "emoji": "🥄"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "tuang",
+          "emoji": "🥣"
+        },
+        {
+          "id": "oven",
+          "labelKey": "oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "jadi",
+          "emoji": "🎂"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "roti",
+      "steps": [
+        {
+          "id": "tepung2",
+          "labelKey": "tepung",
+          "emoji": "🌾"
+        },
+        {
+          "id": "ragi",
+          "labelKey": "ragi",
+          "emoji": "🧂"
+        },
+        {
+          "id": "uleni",
+          "labelKey": "uleni",
+          "emoji": "🤲"
+        },
+        {
+          "id": "bentuk",
+          "labelKey": "bentuk",
+          "emoji": "🫓"
+        },
+        {
+          "id": "oven2",
+          "labelKey": "oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "roti2",
+          "labelKey": "roti2",
+          "emoji": "🍞"
+        }
+      ]
+    }
+  ]
+}

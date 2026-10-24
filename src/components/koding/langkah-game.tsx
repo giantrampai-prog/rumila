@@ -10,6 +10,7 @@
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Icon } from '@/components/ui';
+import { catatGagalKoding, catatMenangKoding, imporProgresKoding } from '@/lib/akademi/bukti-koding';
 import { DX, DY, nextHint, parse, run, starsFor, type Cmd, type Dir, type Level } from '@/lib/koding/engine';
 import { LANGKAH } from '@/lib/koding/langkah';
 import { sfx } from '@/lib/sfx';
@@ -54,8 +55,16 @@ export function LangkahGame() {
   const [tipBad, setTipBad] = useState<number | null>(null);
   const [fails, setFails] = useState(0);
   const runId = useRef(0);
+  /** bukti ke Academy: kapan level dibuka & apakah Bantuan pernah ditekan di level ini */
+  const openedAt = useRef(0);
+  const hintUsed = useRef(false);
 
   const { doneCount, starTotal, allDone, current } = summarize(LANGKAH, prog);
+
+  // progres lama (bintang di localStorage) jadi bukti awal Academy, sekali per anak
+  useEffect(() => {
+    imporProgresKoding(memberId);
+  }, [memberId]);
 
   const clearTip = () => {
     setTipCmd(null);
@@ -80,6 +89,8 @@ export function LangkahGame() {
     clearTip();
     setSay(l.hint);
     resetAgam(l);
+    openedAt.current = Date.now();
+    hintUsed.current = false;
   };
 
   const stop = () => {
@@ -92,6 +103,7 @@ export function LangkahGame() {
     if (!level || running) return;
     const h = nextHint(level, code);
     sfx.pick();
+    hintUsed.current = true;
     if (h.kind === 'next') {
       setTipBad(null);
       setTipCmd(h.cmd);
@@ -145,14 +157,17 @@ export function LangkahGame() {
     }
     if (runId.current !== id) return;
     setRunning(false);
+    const bukti = { learnerId: memberId, game: 'langkah' as const, levelId: level.id, index: li!, blocks: code.length, hintUsed: hintUsed.current, latencyMs: Date.now() - openedAt.current };
     if (r.result === 'win') {
       const st = starsFor(level, code.length);
       sfx.celebrate();
       setWin(st);
       if (!(prog.stars[level.id] ?? 0)) completeTool(memberId, TOOL, 'coding', `level:${level.id}`);
       saveProg(withStars(LANGKAH, prog, level.id, st));
+      catatMenangKoding({ ...bukti, stars: st });
       return;
     }
+    catatGagalKoding(bukti);
     const f = fails + 1;
     setFails(f);
     const nudge = f >= 2 ? ' Butuh bantuan? Ketuk lampu.' : '';

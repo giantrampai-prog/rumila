@@ -1,0 +1,133 @@
+{
+  "id": "grid-4x4-tembok-taman",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.PROGRAM-5-8.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Lihat tembok dan arah Agam, lalu susun program utuh sebelum dijalankan."
+    },
+    "en": {
+      "instruksi": "Look at the walls and Agam's direction, then build the whole program before running it."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "panjang program terpendek: 5 → 8"
+    },
+    "walls": {
+      "min": 0,
+      "max": 2,
+      "default": 0,
+      "step": 1,
+      "keterangan": "jumlah dinding: 0 → 2 (dinding mencegah jalan pintas)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "taman",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "balik-arah-6",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "dinding-kiri-6",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "memutar-dinding-8",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    },
+    {
+      "id": "jalan-panjang-8",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 8
+    }
+  ]
+}

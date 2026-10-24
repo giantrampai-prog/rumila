@@ -1,0 +1,95 @@
+{
+  "id": "bayar-rupiah-alat-tulis",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.UANG-10RB.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam beli alat tulis: lihat harganya, lalu bayar pas dengan uang di laci.",
+      "pensil": "pensil",
+      "penghapus": "penghapus",
+      "buku": "buku tulis",
+      "krayon": "krayon",
+      "tas": "tas pensil"
+    },
+    "en": {
+      "instruksi": "Agam buys school supplies: read the price, then pay exactly with the money in the drawer.",
+      "pensil": "pencil",
+      "penghapus": "eraser",
+      "buku": "notebook",
+      "krayon": "crayons",
+      "tas": "pencil case"
+    }
+  },
+  "knobs": {
+    "harga": {
+      "min": 2,
+      "max": 10,
+      "default": 3,
+      "step": 1,
+      "keterangan": "harga dalam ribuan bulat: 2 → 10"
+    },
+    "pecahan": {
+      "min": 1,
+      "max": 3,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jenis pecahan yang tersedia di laci: 1 → 3 (seribu, dua ribu, lima ribu)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "toko-alat-tulis",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "penghapus",
+      "labelKey": "penghapus",
+      "price": 2000,
+      "emoji": "🩹"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "pensil",
+      "price": 3000,
+      "emoji": "✏️"
+    },
+    {
+      "id": "buku",
+      "labelKey": "buku",
+      "price": 6000,
+      "emoji": "📒"
+    },
+    {
+      "id": "krayon",
+      "labelKey": "krayon",
+      "price": 8000,
+      "emoji": "🖍️"
+    },
+    {
+      "id": "tas",
+      "labelKey": "tas",
+      "price": 9000,
+      "emoji": "👝"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 10000,
+    "kindsMax": 1
+  }
+}

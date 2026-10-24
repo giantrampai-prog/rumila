@@ -12,6 +12,7 @@ import { PLAY, canonicalToolId, getTool, type Folder, type Tool } from "@/lib/ca
 import { greeting } from "@/lib/format";
 import { PullToRefresh } from "@/components/pwa";
 import { can, useMe, useRumila, useUI } from "@/lib/store";
+import { JUMLAH_PAKET } from "@/lib/akademi/jumlah.generated";
 
 const INK = "#2b1d4e";
 
@@ -98,9 +99,12 @@ export function MascotBubble({ children }: { children: ReactNode }) {
 export function WorldCard({ f }: { f: Folder }) {
   const [l, m, d] = PLAY[f.c];
   const ready = f.items.filter((t) => !t.planned);
+  // Academy punya portal sendiri (Hari ini, Pelajaran); folder Edukasi lama tidak dipakai lagi.
+  const akademi = f.id === "edukasi";
+  const sub = akademi ? `${JUMLAH_PAKET} aktivitas` : ready.length ? `${ready.length} permainan` : "Segera hadir";
   return (
     <Link
-      href={`/beranda/${f.id}`}
+      href={akademi ? "/akademi" : `/beranda/${f.id}`}
       className="relative flex min-h-[124px] flex-col justify-between overflow-hidden rounded-[22px] p-3.5 text-white transition-transform duration-200 ease-[cubic-bezier(.3,1.6,.5,1)] active:scale-[.97] sm:min-h-[136px]"
       style={{ background: `linear-gradient(155deg, ${l} 0%, ${m} 65%)`, boxShadow: `0 5px 0 ${d}` }}
     >
@@ -112,7 +116,7 @@ export function WorldCard({ f }: { f: Folder }) {
       </span>
       <div className="relative">
         <div style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{f.name}</div>
-        <div className="mt-0.5 text-[12px] font-extrabold text-white/85">{ready.length ? `${ready.length} permainan` : "Segera hadir"}</div>
+        <div className="mt-0.5 text-[12px] font-extrabold text-white/85">{sub}</div>
       </div>
     </Link>
   );

@@ -1,0 +1,105 @@
+{
+  "id": "rak-maju-lurus-kanan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKA.NAVIGASI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Susun blok 'maju' di rak sebanyak langkah ke bintang, lalu tekan jalan."
+    },
+    "en": {
+      "instruksi": "Put 'forward' blocks on the rack, one for each step to the star, then press go."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jarak ke bintang; memilih grid dengan optimal = distance"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju"
+  ],
+  "grids": [
+    {
+      "id": "kanan-2",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2
+    },
+    {
+      "id": "kanan-3",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3
+    },
+    {
+      "id": "kanan-4",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4
+    },
+    {
+      "id": "kanan-3b",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3
+    }
+  ]
+}

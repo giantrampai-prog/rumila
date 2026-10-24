@@ -1,0 +1,131 @@
+{
+  "id": "belok-menghadap-bintang",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKA.NAVIGASI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam belum menghadap bintang: pakai blok kiri atau kanan, lalu maju."
+    },
+    "en": {
+      "instruksi": "Agam is not facing the star yet: use a left or right block, then forward."
+    }
+  },
+  "knobs": {
+    "turns": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah belokan yang dibutuhkan: 1 → 2"
+    },
+    "distance": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "kiri-lalu-maju",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2
+    },
+    {
+      "id": "kanan-lalu-maju",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2
+    },
+    {
+      "id": "kiri-dari-utara",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2
+    },
+    {
+      "id": "putar-balik-ke-timur",
+      "w": 3,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3
+    },
+    {
+      "id": "naik-jauh-lalu-kanan",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4
+    }
+  ]
+}

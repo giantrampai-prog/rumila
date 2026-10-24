@@ -1,0 +1,29 @@
+/* Animasi kecil Academy */
+@keyframes akademi-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.akademi-pop { animation: akademi-pop 420ms cubic-bezier(0.3, 1.5, 0.5, 1) both; }
+
+@keyframes akademi-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.akademi-fade { animation: akademi-fade 260ms ease-out both; }
+
+@keyframes akademi-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+.akademi-shake { animation: akademi-shake 320ms ease-in-out; }
+
+@keyframes akademi-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.akademi-bounce { animation: akademi-bounce 700ms ease-in-out infinite; }
+
+/* Agam menghadap arah: dipakai presenter navigasi */
+.akademi-agam { transition: transform 280ms cubic-bezier(0.3, 1.2, 0.5, 1), left 280ms ease, top 280ms ease; }

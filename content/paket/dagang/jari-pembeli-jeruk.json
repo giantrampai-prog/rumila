@@ -1,0 +1,70 @@
+{
+  "id": "jari-pembeli-jeruk",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Lihat cepat jari pembeli, lalu ambil jeruk sebanyak jarinya.",
+      "jeruk": "jeruk",
+      "apel": "apel"
+    },
+    "en": {
+      "instruksi": "Look quickly at the customer's fingers, then take that many oranges.",
+      "jeruk": "oranges",
+      "apel": "apples"
+    }
+  },
+  "knobs": {
+    "flashMs": {
+      "min": 700,
+      "max": 1500,
+      "default": 1000,
+      "step": 100,
+      "keterangan": "lama jari pembeli terlihat (ms); makin pendek makin mengandalkan subitising"
+    },
+    "itemsMax": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jari terbanyak yang diacungkan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun-pasar",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "subitasi",
+  "goods": [
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "price": 1000,
+      "emoji": "🍊"
+    },
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "price": 1000,
+      "emoji": "🍎"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 3,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "flashMs": 1000
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "hitung-anak-ayam-kandang",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Sentuh anak ayam satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
+      "anakayam": "anak ayam",
+      "bebek": "bebek",
+      "kelinci": "kelinci"
+    },
+    "en": {
+      "instruksi": "Touch each chick one at a time as you count, then slide the marker to the number.",
+      "anakayam": "chicks",
+      "bebek": "ducks",
+      "kelinci": "rabbits"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 1,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah benda terbanyak yang harus dihitung"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu jenis benda per putaran; benda disebar, tidak bertumpuk"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "peternakan",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "hitung",
+  "goods": [
+    {
+      "id": "anakayam",
+      "labelKey": "anakayam",
+      "price": 1000,
+      "emoji": "🐥"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "bebek",
+      "price": 1000,
+      "emoji": "🦆"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "kelinci",
+      "price": 1000,
+      "emoji": "🐰"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 5,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1
+  }
+}

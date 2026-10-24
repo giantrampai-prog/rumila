@@ -1,0 +1,168 @@
+{
+  "id": "piktogram-sayur-kebun",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKB.DATA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Panen Agam campur: tumpuk tiap sayur di kolomnya sendiri, mulai dari bawah.",
+      "wortel": "wortel",
+      "brokoli": "brokoli",
+      "jagung": "jagung",
+      "tomat": "tomat"
+    },
+    "en": {
+      "instruksi": "Agam's harvest is mixed: stack each vegetable in its own column, starting from the bottom.",
+      "wortel": "carrots",
+      "brokoli": "broccoli",
+      "jagung": "corn",
+      "tomat": "tomatoes"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah kolom/jenis aktif"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 15,
+      "default": 6,
+      "step": 3,
+      "keterangan": "jumlah benda yang ditumpuk per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "wortel",
+      "labelKey": "wortel",
+      "emoji": "🥕"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "brokoli",
+      "emoji": "🥦"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "jagung",
+      "emoji": "🌽"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "tomat",
+      "emoji": "🍅"
+    }
+  ],
+  "items": [
+    {
+      "id": "wortel-a",
+      "labelKey": "wortel",
+      "bin": "wortel",
+      "emoji": "🥕"
+    },
+    {
+      "id": "wortel-b",
+      "labelKey": "wortel",
+      "bin": "wortel",
+      "emoji": "🥕"
+    },
+    {
+      "id": "wortel-c",
+      "labelKey": "wortel",
+      "bin": "wortel",
+      "emoji": "🥕"
+    },
+    {
+      "id": "wortel-d",
+      "labelKey": "wortel",
+      "bin": "wortel",
+      "emoji": "🥕"
+    },
+    {
+      "id": "brokoli-a",
+      "labelKey": "brokoli",
+      "bin": "brokoli",
+      "emoji": "🥦"
+    },
+    {
+      "id": "brokoli-b",
+      "labelKey": "brokoli",
+      "bin": "brokoli",
+      "emoji": "🥦"
+    },
+    {
+      "id": "brokoli-c",
+      "labelKey": "brokoli",
+      "bin": "brokoli",
+      "emoji": "🥦"
+    },
+    {
+      "id": "brokoli-d",
+      "labelKey": "brokoli",
+      "bin": "brokoli",
+      "emoji": "🥦"
+    },
+    {
+      "id": "jagung-a",
+      "labelKey": "jagung",
+      "bin": "jagung",
+      "emoji": "🌽"
+    },
+    {
+      "id": "jagung-b",
+      "labelKey": "jagung",
+      "bin": "jagung",
+      "emoji": "🌽"
+    },
+    {
+      "id": "jagung-c",
+      "labelKey": "jagung",
+      "bin": "jagung",
+      "emoji": "🌽"
+    },
+    {
+      "id": "jagung-d",
+      "labelKey": "jagung",
+      "bin": "jagung",
+      "emoji": "🌽"
+    },
+    {
+      "id": "tomat-a",
+      "labelKey": "tomat",
+      "bin": "tomat",
+      "emoji": "🍅"
+    },
+    {
+      "id": "tomat-b",
+      "labelKey": "tomat",
+      "bin": "tomat",
+      "emoji": "🍅"
+    },
+    {
+      "id": "tomat-c",
+      "labelKey": "tomat",
+      "bin": "tomat",
+      "emoji": "🍅"
+    },
+    {
+      "id": "tomat-d",
+      "labelKey": "tomat",
+      "bin": "tomat",
+      "emoji": "🍅"
+    }
+  ]
+}

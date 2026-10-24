@@ -1,0 +1,207 @@
+{
+  "id": "sarang-telur-selisih-satu",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.TKA.BANDING.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Dua sarang ayam hampir sama: sentuh yang telurnya lebih banyak.",
+      "pilihan": "pilihan",
+      "telur": "telur",
+      "tBanyak": "Sarang mana yang telurnya lebih banyak?"
+    },
+    "en": {
+      "instruksi": "Two hen nests look alike: touch the one with more eggs.",
+      "pilihan": "choices",
+      "telur": "eggs",
+      "tBanyak": "Which nest has more eggs?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu dua kelompok; selisih 1 sehingga harus dihitung atau dipasangkan; kelompok lebih sedikit sengaja digambar lebih besar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 6,
+  "world": "peternakan",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "telur-4",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 4
+    },
+    {
+      "id": "telur-4-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 4,
+      "scale": 1.4
+    },
+    {
+      "id": "telur-5",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 5
+    },
+    {
+      "id": "telur-5-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 5,
+      "scale": 1.4
+    },
+    {
+      "id": "telur-6",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 6
+    },
+    {
+      "id": "telur-6-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 6,
+      "scale": 1.4
+    },
+    {
+      "id": "telur-7",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 7
+    },
+    {
+      "id": "telur-7-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 7,
+      "scale": 1.4
+    },
+    {
+      "id": "telur-8",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 8
+    },
+    {
+      "id": "telur-8-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 8,
+      "scale": 1.4
+    },
+    {
+      "id": "telur-9",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 9
+    },
+    {
+      "id": "telur-9-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 9,
+      "scale": 1.4
+    },
+    {
+      "id": "telur-10",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 10
+    },
+    {
+      "id": "telur-10-besar",
+      "labelKey": "telur",
+      "bin": "pilihan",
+      "emoji": "🥚",
+      "count": 10,
+      "scale": 1.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBanyak",
+      "choices": [
+        "telur-4-besar",
+        "telur-5"
+      ],
+      "correct": "telur-5"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tBanyak",
+      "choices": [
+        "telur-6",
+        "telur-5-besar"
+      ],
+      "correct": "telur-6"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tBanyak",
+      "choices": [
+        "telur-6-besar",
+        "telur-7"
+      ],
+      "correct": "telur-7"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tBanyak",
+      "choices": [
+        "telur-8",
+        "telur-7-besar"
+      ],
+      "correct": "telur-8"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tBanyak",
+      "choices": [
+        "telur-8-besar",
+        "telur-9"
+      ],
+      "correct": "telur-9"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tBanyak",
+      "choices": [
+        "telur-10",
+        "telur-9-besar"
+      ],
+      "correct": "telur-10"
+    }
+  ]
+}

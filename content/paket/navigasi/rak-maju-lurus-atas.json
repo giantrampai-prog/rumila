@@ -1,0 +1,105 @@
+{
+  "id": "rak-maju-lurus-atas",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKA.NAVIGASI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Agam mau naik ke bintang: susun blok 'maju' secukupnya di rak, lalu tekan jalan."
+    },
+    "en": {
+      "instruksi": "Agam wants to climb to the star: put just enough 'forward' blocks on the rack, then press go."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jarak ke bintang; memilih grid dengan optimal = distance"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "menara",
+  "execMode": "program",
+  "commands": [
+    "maju"
+  ],
+  "grids": [
+    {
+      "id": "atas-2",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2
+    },
+    {
+      "id": "atas-3",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3
+    },
+    {
+      "id": "atas-4",
+      "w": 2,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4
+    },
+    {
+      "id": "atas-2b",
+      "w": 2,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 2
+    }
+  ]
+}

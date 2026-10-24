@@ -1,0 +1,92 @@
+{
+  "id": "ulangi-tiga-ke-kanan",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.ULANGI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Rak cuma muat dua blok: pakai blok 'ulangi 3' berisi maju supaya Agam sampai bintang."
+    },
+    "en": {
+      "instruksi": "The rack only holds two blocks: use a 'repeat 3' block with forward so Agam reaches the star."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jalur selalu 3 petak; rak hanya 2 slot sehingga 'ulangi 3 × maju' satu-satunya jalan"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 4,
+  "world": "kebun-pasar",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "kanan-3",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "kanan-3-geser",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    },
+    {
+      "id": "kanan-3-lebar",
+      "w": 6,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 2
+    }
+  ]
+}

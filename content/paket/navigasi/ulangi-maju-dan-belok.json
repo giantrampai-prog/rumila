@@ -1,0 +1,129 @@
+{
+  "id": "ulangi-maju-dan-belok",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.ULANGI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya Agam tepat di bintang."
+    },
+    "en": {
+      "instruksi": "Fill the repeat block with two commands, then choose how many times so Agam lands right on the star."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah perintah terpendek tanpa ulangi; rak 3 slot memaksa 'ulangi N × (dua perintah)'"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 5,
+  "world": "taman",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kanan",
+    "ulangi"
+  ],
+  "grids": [
+    {
+      "id": "maju-maju-x2",
+      "w": 6,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-maju-x3",
+      "w": 7,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-kanan-x2-pojok",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-kanan-x2-tengah",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 3
+    },
+    {
+      "id": "maju-kanan-x2-naik",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 3,
+      "rackSlots": 3
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "kasir-kembalian-warung",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.TKB.UANG-10RB.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "instruksi": "Pembeli bayar sepuluh ribu: hitung maju dari harganya, lalu beri kembalian yang pas.",
+      "sabun": "sabun",
+      "susu": "susu",
+      "roti": "roti",
+      "telur": "telur",
+      "minyak": "minyak goreng"
+    },
+    "en": {
+      "instruksi": "The customer pays ten thousand: count on from the price, then give the right change.",
+      "sabun": "soap",
+      "susu": "milk",
+      "roti": "bread",
+      "telur": "eggs",
+      "minyak": "cooking oil"
+    }
+  },
+  "knobs": {
+    "harga": {
+      "min": 5,
+      "max": 9,
+      "default": 9,
+      "step": 1,
+      "keterangan": "harga barang (ribuan); kembalian kecil dulu (harga 9) lalu makin besar (harga 5)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "warung",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "sabun",
+      "labelKey": "sabun",
+      "price": 5000,
+      "emoji": "🧼"
+    },
+    {
+      "id": "susu",
+      "labelKey": "susu",
+      "price": 6000,
+      "emoji": "🥛"
+    },
+    {
+      "id": "roti",
+      "labelKey": "roti",
+      "price": 7000,
+      "emoji": "🍞"
+    },
+    {
+      "id": "telur",
+      "labelKey": "telur",
+      "price": 8000,
+      "emoji": "🥚"
+    },
+    {
+      "id": "minyak",
+      "labelKey": "minyak",
+      "price": 9000,
+      "emoji": "🫙"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 10000,
+    "kindsMax": 1
+  }
+}
