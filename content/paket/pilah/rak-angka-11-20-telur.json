@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rak Angka Telur",
-      "instruksi": "Hitung telur di keranjang, lalu taruh di rak yang angkanya pas.",
+      "instruksi": "Hitung isi tiap keranjang (telur atau biji), lalu taruh di rak yang angkanya pas.",
       "n11": "11",
       "n12": "12",
       "n13": "13",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Egg Number Shelf",
-      "instruksi": "Count the eggs in the basket, then put them on the shelf with the matching number.",
+      "instruksi": "Count what is in each basket (eggs or seeds), then put it on the shelf with the matching number.",
       "n11": "11",
       "n12": "12",
       "n13": "13",

@@ -5,7 +5,7 @@
 
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { ContentPack } from "@akademi/schema";
+import { isiBarang, type ContentPack } from "@akademi/schema";
 import { buatRonde, buatRondeBaru, knobDefaults, kunciRonde, nilai, type Hasil, type Jawaban, type Knobs, type Ronde } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
 import { catatEvent } from "@/lib/akademi/jejak";
@@ -88,7 +88,17 @@ function Runner({ paket }: { paket: ContentPack }) {
   const mulaiRonde = useRef(Date.now());
   const total = paket.rounds;
 
-  const ucap = useCallback(() => ucapkan(t(paket.instructionKey), lang), [paket.instructionKey, t, lang]);
+  // {barang} di instruksi = nama barang ronde ini (dagang yang barangnya diacak per ronde)
+  const instruksi = useMemo(() => {
+    const teks = t(paket.instructionKey);
+    if (!teks.includes("arang}") || ronde.mechanic !== "dagang") return teks;
+    const r = ronde.ronde;
+    const id = Object.keys(r.tersedia)[0] ?? r.benda[0] ?? r.pesanan[0]?.goodId;
+    const goods = paket.mechanic === "dagang" ? paket.goods : [];
+    const g = goods.find((x) => x.id === id) ?? goods[0];
+    return isiBarang(teks, g ? t(g.labelKey) : "");
+  }, [paket, ronde, t]);
+  const ucap = useCallback(() => ucapkan(instruksi, lang), [instruksi, lang]);
 
   const sudahMulai = useRef(false);
   useEffect(() => {
@@ -155,7 +165,7 @@ function Runner({ paket }: { paket: ContentPack }) {
 
   const props = { paket, ronde, t, onJawab, onHint, hasil } as const;
   return (
-    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={t(paket.instructionKey)} onUcap={ucap}>
+    <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap}>
       <div key={idx} className="akademi-fade">
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
