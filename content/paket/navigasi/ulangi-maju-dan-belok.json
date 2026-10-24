@@ -28,7 +28,7 @@
   },
   "assets": [],
   "generatif": false,
-  "rounds": 5,
+  "rounds": 10,
   "world": "taman",
   "execMode": "program",
   "commands": [

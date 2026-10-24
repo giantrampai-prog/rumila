@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ContentPack, type PaketDagang, type PaketPilah, type PaketUrutkan } from "@akademi/schema";
 import {
-  acak, buatRonde, buatRondeDagang, buatRondePilah, buatRondeUrutkan, hitungSwap, knobDefaults, nilai, nilaiDagang, nilaiPilah, nilaiUrutkan, rng,
+  acak, buatRonde, buatRondeBaru, buatRondeDagang, buatRondePilah, buatRondeUrutkan, hitungSwap, knobDefaults, kunciRonde, nilai, nilaiDagang, nilaiPilah, nilaiUrutkan, rng,
   type RondeDagang, type RondePilahKelompok, type RondePilahPilih,
 } from "../src";
 import keranjang from "../../../content/golden/paket-keranjang-warna.json";
@@ -239,5 +239,22 @@ describe("dagang", () => {
       expect((a.ronde as RondeDagang).mode).toBe(m);
       expect(nilai(pk, a, { keranjang: {} }).benar).toBe(false);
     }
+  });
+});
+
+describe("buatRondeBaru", () => {
+  const p = ContentPack.parse(keranjang);
+  const k = knobDefaults(p);
+  it("tidak mengulang ronde yang sudah keluar selama masih ada pilihan", () => {
+    const riwayat: string[] = [];
+    for (let i = 0; i < 6; i++) {
+      const r = buatRondeBaru(p, k, 1000 + i, riwayat);
+      const kunci = kunciRonde(r);
+      expect(riwayat).not.toContain(kunci);
+      riwayat.push(kunci);
+    }
+  });
+  it("deterministik untuk seed & riwayat sama", () => {
+    expect(kunciRonde(buatRondeBaru(p, k, 7, []))).toBe(kunciRonde(buatRondeBaru(p, k, 7, [])));
   });
 });

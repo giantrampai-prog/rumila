@@ -43,6 +43,53 @@ export function buatRonde(p: ContentPack, knobs: Knobs, seed: number): Ronde {
   }
 }
 
+/**
+ * Ronde berikutnya tanpa mengulang soal: coba beberapa seed turunan dan ambil yang belum pernah keluar di sesi ini
+ * (`riwayat` = kunci ronde sebelumnya, lihat `kunciRonde`). Bila kumpulan soal untuk knob ini habis, minimal jangan
+ * sama dengan ronde terakhir — dengan meminjam knob tetangga, dan untuk navigasi saringan knob dilepas sebagai pilihan terakhir.
+ */
+export function buatRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwayat: readonly string[], percobaan = 24): Ronde {
+  const pernah = new Set(riwayat);
+  const terakhir = riwayat[riwayat.length - 1];
+  const turunan = (i: number) => (seed + Math.imul(i, 0x9e3779b1)) >>> 0;
+  let bedaTerakhir: Ronde | undefined;
+  for (let i = 0; i < percobaan; i++) {
+    const r = buatRonde(p, knobs, turunan(i));
+    const k = kunciRonde(r);
+    if (!pernah.has(k)) return r;
+    if (!bedaTerakhir && k !== terakhir) bedaTerakhir = r;
+  }
+  // Kumpulan soal di tingkat ini habis → pinjam dari tingkat kesulitan tetangga (satu langkah knob naik/turun).
+  const tetangga = knobTetangga(p, knobs);
+  for (let i = 0; i < percobaan; i++) {
+    const r = buatRonde(p, tetangga[i % Math.max(1, tetangga.length)] ?? knobs, turunan(percobaan + i));
+    if (!pernah.has(kunciRonde(r))) return r;
+  }
+  if (bedaTerakhir) return bedaTerakhir;
+  for (let i = 0; i < percobaan; i++) {
+    const r = buatRonde(p, p.mechanic === "navigasi" ? {} : (tetangga[i % Math.max(1, tetangga.length)] ?? knobs), turunan(2 * percobaan + i));
+    if (kunciRonde(r) !== terakhir) return r;
+  }
+  return buatRonde(p, knobs, seed);
+}
+
+/** Knob yang bergeser satu langkah (naik dulu, lalu turun) dari `knobs`, tetap dalam rentang paket. */
+function knobTetangga(p: ContentPack, knobs: Knobs): Knobs[] {
+  const spek = (p as { knobs?: Record<string, { min: number; max: number; step?: number }> }).knobs ?? {};
+  const out: Knobs[] = [];
+  for (const arah of [1, -1])
+    for (const [kunci, k] of Object.entries(spek)) {
+      const kini = (knobs as Record<string, number>)[kunci];
+      if (typeof kini !== "number") continue;
+      const baru = kini + arah * (k.step ?? 1);
+      if (baru >= k.min && baru <= k.max) out.push({ ...knobs, [kunci]: baru });
+    }
+  return out;
+}
+
+/** Kunci pembanding dua ronde (isi soal identik → kunci sama). */
+export const kunciRonde = (r: Ronde) => JSON.stringify(r);
+
 export function nilai(_p: ContentPack, r: Ronde, j: Jawaban): Hasil {
   switch (r.mechanic) {
     case "pilah": return nilaiPilah(r.ronde, j as JawabanPilah);

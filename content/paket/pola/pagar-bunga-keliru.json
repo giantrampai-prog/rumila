@@ -36,7 +36,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 5,
+  "rounds": 10,
   "world": "taman",
   "mode": "perbaiki",
   "unitLen": 3,

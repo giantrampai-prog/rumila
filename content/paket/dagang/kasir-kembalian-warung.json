@@ -38,7 +38,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 5,
+  "rounds": 10,
   "world": "warung",
   "currency": "IDR",
   "denominations": [

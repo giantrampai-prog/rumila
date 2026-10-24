@@ -28,7 +28,7 @@
   },
   "assets": [],
   "generatif": false,
-  "rounds": 4,
+  "rounds": 10,
   "world": "kebun-pasar",
   "execMode": "program",
   "commands": [
