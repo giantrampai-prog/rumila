@@ -11,7 +11,7 @@ import { Icon, Segmented } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, levelAnak, paketById, setBahasaAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { KOMPETENSI, levelAnak, paketById, setBahasaAnak, setLevelAnak, useBahasaAnak, type BahasaAnak, anakRumah, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import { useMe, useRumila, type Member } from "@/lib/store";
 import { BadgeStatus, INK, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, namaFramework, tanggalJam, tanggalLokal, trackMeta } from "./bersama";
@@ -28,7 +28,9 @@ const PRINT_CSS = `
 export function RaporView() {
   const me = useMe();
   const members = useRumila((s) => s.members);
-  const anak = useMemo(() => members.filter((m) => !m.admin), [members]);
+  const versiProfil = useProfilAkademiVersi();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const anak = useMemo(() => anakRumah(members), [members, versiProfil]);
   const router = useRouter();
   const sp = useSearchParams();
   const qAnak = sp.get("anak");
@@ -64,7 +66,7 @@ export function RaporView() {
       </header>
 
       {anak.length === 0 ? (
-        <p className="rapor-card rounded-[20px] bg-white p-5 text-[14px] font-bold text-ink-3">Belum ada profil anak. Tambahkan anggota non-admin dulu.</p>
+        <p className="rapor-card rounded-[20px] bg-white p-5 text-[14px] font-bold text-ink-3">Belum ada profil anak. Tambahkan anggota, lalu tandai sebagai anak di pengaturan profil.</p>
       ) : (
         <>
           <div className="no-print flex flex-wrap gap-2" role="tablist" aria-label="Pilih anak">
