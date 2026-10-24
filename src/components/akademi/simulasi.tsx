@@ -1,7 +1,7 @@
 "use client";
 
-// Presenter mekanik simulasi: sepuluh mode (jam-baca, jam-putar, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi)
-// lewat switch `ronde.mode` → sub-komponen. Presenter hanya menampilkan dan mengirim jawaban; kebenaran dinilai runner
+// Presenter mekanik simulasi: tiga belas mode (jam-baca, jam-putar, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi,
+// menara, bantuan, telusur) lewat switch `ronde.mode` → sub-komponen. Presenter hanya menampilkan dan mengirim jawaban; kebenaran dinilai runner
 // (nilaiSimulasi). Setelah `hasil` terisi interaksi dikunci dan jawaban benar ditunjukkan.
 
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent, type ReactNode } from "react";
@@ -191,6 +191,9 @@ export function PresenterSimulasi(props: Props) {
     case "tombol": return <ModeTombol {...ctx} />;
     case "alat": return <ModeAlat {...ctx} />;
     case "bagi": return <ModeBagi {...ctx} />;
+    case "menara": return <ModeMenara {...ctx} />;
+    case "bantuan": return <ModeBantuan {...ctx} />;
+    case "telusur": return <ModeTelusur {...ctx} />;
   }
   return null;
 }
@@ -1082,6 +1085,345 @@ function ModeBagi(c: Ctx) {
       <div className="flex gap-2">
         <TombolBantu onClick={() => { bantu(); ucapkan("Satu untuk kucing kiri, satu untuk kucing kanan, bergantian sampai keranjang kosong."); }} disabled={terkunci} />
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ kiri, kanan }); }} disabled={terkunci || kiri + kanan === 0}><Icon name="balance" size={26} /> Sudah adil</TombolBesar>
+      </div>
+    </Kunci>
+  );
+}
+
+/* ---------------- menara ---------------- */
+
+const B = 58; // tinggi satu tingkat menara (px)
+
+function ModeMenara(c: Ctx) {
+  const { ronde, onJawab, hasil, terkunci, visual, nama, itemById } = c;
+  const [tumpukan, setTumpukan] = useState<string[]>([]);
+  const [jatuh, setJatuh] = useState<{ id: string; fase: "atas" | "gelinding" } | null>(null);
+  const { hint, bantu } = useBantu(c.onHint);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  useEffect(() => () => { timers.current.forEach(clearTimeout); }, []);
+
+  const nilaiBenda = (id: string) => itemById(id)?.value ?? 1;
+  const lantai = ronde.items.filter((i) => !tumpukan.includes(i.id) && jatuh?.id !== i.id);
+  const penuh = tumpukan.length >= ronde.target;
+  const tinggiPapan = (ronde.target + 1) * B + 36;
+  const teks = `Bangun menara ${ronde.target} tingkat. Ketuk benda untuk menaruhnya di atas.`;
+
+  const ketukLantai = (id: string) => {
+    if (terkunci || jatuh || penuh) return;
+    if (nilaiBenda(id) === 0) {
+      // bola: naik sebentar, lalu menggelinding jatuh — tumpukan tidak berubah, boleh coba lagi
+      sfx.thud();
+      setJatuh({ id, fase: "atas" });
+      timers.current.push(setTimeout(() => { setJatuh({ id, fase: "gelinding" }); sfx.whoosh(); }, 420));
+      timers.current.push(setTimeout(() => setJatuh(null), 1400));
+      return;
+    }
+    if (nilaiBenda(id) === 2) sfx.sparkle(); else sfx.plop();
+    setTumpukan((tp) => [...tp, id]);
+  };
+  const ambilAtas = () => { if (terkunci || !tumpukan.length || jatuh) return; sfx.whoosh(); setTumpukan((tp) => tp.slice(0, -1)); };
+
+  // posisi memakai left/calc (bukan translateX) supaya tidak bentrok dengan transform animasi akademi-pop/shake
+  const posBola: CSSProperties = jatuh?.fase === "gelinding"
+    ? { left: "calc(50% + 128px)", bottom: 0, transform: "rotate(720deg)" }
+    : { left: "calc(50% - 22px)", bottom: tumpukan.length * B + 8, transform: "rotate(0deg)" };
+
+  return (
+    <Kunci terkunci={terkunci}>
+      <Instruksi teks={teks} hasil={hasil} />
+      <Umpan hasil={hasil} benar={hasil?.benar ? `menara ${ronde.target} tingkat berdiri!` : "pakai benda yang rata bawahnya, bola menggelinding"} />
+      <Papan>
+        <div className="relative mx-auto w-full max-w-[420px] overflow-hidden" style={{ height: tinggiPapan }} role="img" aria-label={`Menara ${tumpukan.length} dari ${ronde.target} tingkat`}>
+          {/* garis target */}
+          <div className="absolute right-0 left-0 flex items-center gap-2" style={{ bottom: ronde.target * B + 6, borderTop: `3px dashed ${hint || penuh ? BENAR : "rgba(91,75,255,.45)"}` }} aria-hidden>
+            <span className="ml-1 rounded-full bg-white px-2" style={{ ...Tebal, fontSize: 14, transform: "translateY(-50%)" }}>{ronde.target} tingkat</span>
+          </div>
+          {/* lantai */}
+          <div className="absolute right-0 bottom-0 left-0" style={{ height: 8, background: "#8a7ac9", borderRadius: 4 }} aria-hidden />
+          {/* tingkat menara */}
+          {tumpukan.map((id, i) => {
+            const tabung = nilaiBenda(id) === 2;
+            const teratas = i === tumpukan.length - 1;
+            return (
+              <button
+                key={`${id}-${i}`}
+                type="button"
+                disabled={terkunci || !teratas}
+                onClick={ambilAtas}
+                aria-label={`Tingkat ${i + 1}: ${nama(id)}${teratas ? ", ketuk untuk menurunkan" : ""}`}
+                className="akademi-pop absolute flex items-center justify-center rounded-[14px] bg-white"
+                style={{ left: "calc(50% - 38px)", bottom: i * B + 8, width: 76, height: B - 4, boxShadow: BAYANG, transition: "bottom 300ms ease" }}
+              >
+                <Benda v={visual(id)} size={44} />
+                {tabung && <span className="akademi-pop absolute -top-2 -right-2 rounded-full bg-white px-1.5" style={{ ...Tebal, fontSize: 11, boxShadow: BAYANG }} aria-label="tabung tegak bisa ditumpuk">tegak ✨</span>}
+              </button>
+            );
+          })}
+          {/* bola yang jatuh */}
+          {jatuh && (
+            <div className="absolute" style={{ ...posBola, transition: jatuh.fase === "gelinding" ? "left 900ms cubic-bezier(.4,0,.7,1), bottom 900ms cubic-bezier(.6,0,.9,.4), transform 900ms linear" : "none" }} aria-hidden>
+              <Benda v={visual(jatuh.id)} size={44} />
+            </div>
+          )}
+          {/* penghitung */}
+          <span className="absolute top-1 right-1 rounded-full bg-white px-3 py-1" style={{ ...Tebal, fontSize: 18, boxShadow: BAYANG }} aria-live="polite">{tumpukan.length}/{ronde.target}</span>
+        </div>
+        {/* benda di lantai */}
+        <div className="mt-2 flex flex-wrap justify-center gap-2" role="group" aria-label="Benda di lantai">
+          {lantai.map((b) => (
+            <KartuBenda
+              key={b.id}
+              v={visual(b.id)}
+              size={48}
+              label={nama(b.id)}
+              onClick={() => ketukLantai(b.id)}
+              className={`min-h-20 min-w-20 ${hint && (b.value ?? 1) !== 0 && !penuh ? "akademi-bounce" : ""}`}
+              style={{ opacity: penuh || jatuh ? 0.6 : 1, boxShadow: hint && (b.value ?? 1) !== 0 ? `${BAYANG}, 0 0 0 4px ${KUNING}` : undefined }}
+            />
+          ))}
+          {!lantai.length && <span className="text-[14px] font-bold opacity-60">Lantai kosong</span>}
+        </div>
+        {hint && <div className="akademi-fade mt-2 text-center" style={{ ...Tebal, fontSize: 15, opacity: 0.75 }}>Bola menggelinding. Pilih benda yang rata bawahnya.</div>}
+      </Papan>
+      <div className="flex gap-2">
+        <TombolBantu onClick={() => { bantu(); ucapkan("Bola itu bulat, jadi menggelinding. Pilih benda yang rata bawahnya."); }} disabled={terkunci} />
+        <button type="button" onClick={ambilAtas} disabled={terkunci || !tumpukan.length} aria-label="Turunkan benda teratas" className="flex min-h-14 min-w-14 items-center justify-center rounded-[20px] bg-white px-3 active:scale-95 disabled:opacity-50" style={{ boxShadow: BAYANG, color: INK }}><Icon name="undo" size={26} /></button>
+        <TombolBesar onClick={() => { sfx.tap(); onJawab({ tumpukan }); }} disabled={terkunci || !penuh}><Icon name="check" size={26} /> Selesai</TombolBesar>
+      </div>
+    </Kunci>
+  );
+}
+
+/* ---------------- bantuan ---------------- */
+
+/** Reaksi alat saat sudah diperbaiki robot (emoji tambahan di sebelah alat). */
+const REAKSI_ALAT: Record<string, string> = { "🚰": "💦", "💡": "✨", "🚪": "🌤️", "🔌": "⚡" };
+
+function ModeBantuan(c: Ctx) {
+  const { ronde, onJawab, hasil, terkunci, nama, itemById, paket, t } = c;
+  const macet = useMemo(() => (ronde.correctId ? itemById(ronde.correctId) : undefined) ?? ronde.items[0], [ronde.correctId, ronde.items, itemById]);
+  const [ketukan, setKetukan] = useState(0);
+  const ketukanRef = useRef(0);
+  const [goyang, setGoyang] = useState(0);
+  const [fase, setFase] = useState<"macet" | "datang" | "beres">("macet");
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  useEffect(() => () => { timers.current.forEach(clearTimeout); }, []);
+  const emoji = macet?.emoji ?? "🔌";
+  const teks = t(paket.instructionKey);
+
+  const ketuk = () => {
+    if (terkunci || fase !== "macet") return;
+    sfx.clunk();
+    ketukanRef.current += 1;
+    setKetukan(ketukanRef.current);
+    setGoyang((g) => g + 1);
+  };
+  const tolong = () => {
+    if (terkunci || fase !== "macet") return;
+    sfx.tap();
+    ucapkan("Tolong!");
+    setFase("datang");
+    timers.current.push(setTimeout(() => { setFase("beres"); sfx.sparkle(); }, 1500));
+    timers.current.push(setTimeout(() => onJawab({ ketukanSiaSia: ketukanRef.current, mintaTolong: true }), 2600));
+  };
+
+  return (
+    <Kunci terkunci={terkunci}>
+      <Instruksi teks={teks} hasil={hasil} />
+      <Umpan hasil={hasil} benar={hasil?.benar ? "minta tolong itu pintar!" : `kamu mengetuk ${ketukan} kali; kalau macet, langsung minta tolong ya`} />
+      <Papan>
+        <div className="relative mx-auto w-full max-w-[420px] overflow-hidden" style={{ height: 240 }}>
+          {/* alat besar: tidak bereaksi, hanya bergoyang kecil */}
+          <button
+            type="button"
+            onClick={ketuk}
+            disabled={terkunci || fase !== "macet"}
+            aria-label={`${macet ? nama(macet.id) : "Alat"}${fase === "beres" ? " sudah bekerja" : " tidak bereaksi"}`}
+            className="absolute left-1/2 top-1/2 flex size-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[28px] bg-white active:scale-[.98]"
+            style={{ boxShadow: BAYANG }}
+          >
+            <span key={goyang} className={goyang > 0 && fase === "macet" ? "akademi-shake" : fase === "beres" ? "akademi-pop" : ""} style={{ fontSize: 104, lineHeight: 1, display: "inline-block", filter: fase === "beres" ? "drop-shadow(0 0 12px #ffd23f)" : "grayscale(.7) opacity(.8)" }} aria-hidden>{emoji}</span>
+            {fase === "beres" && <span className="akademi-pop absolute -top-3 -right-3" style={{ fontSize: 44, lineHeight: 1 }} aria-hidden>{REAKSI_ALAT[emoji] ?? "✨"}</span>}
+          </button>
+          {/* robot datang dari kiri */}
+          <div className="absolute bottom-2 flex items-end" style={{ left: fase === "macet" ? -110 : "calc(50% - 150px)", transition: "left 1300ms cubic-bezier(.3,1,.4,1)" }} aria-hidden>
+            <span style={{ fontSize: 64, lineHeight: 1 }}>🤖</span>
+            <span className={fase === "datang" ? "akademi-bounce" : ""} style={{ fontSize: 34, lineHeight: 1, marginLeft: -12 }}>🔧</span>
+          </div>
+          {fase !== "macet" && <div className="akademi-fade absolute top-2 left-2 rounded-[14px] bg-white px-3 py-1" style={{ ...Tebal, fontSize: 15, boxShadow: BAYANG }} aria-live="polite">{fase === "datang" ? "Robot datang…" : "Sudah diperbaiki!"}</div>}
+        </div>
+      </Papan>
+      <div className="flex gap-2">
+        {/* tombol tolong: selalu tampil, tidak berkedip, tidak dipandu */}
+        <TombolBesar onClick={tolong} disabled={terkunci || fase !== "macet"} warna={UNGU} bayang="#3b2fc0" className="max-w-[220px]">
+          Tolong 🙋
+        </TombolBesar>
+        <div className="flex min-h-16 flex-1 items-center justify-center rounded-[20px] bg-white/70 px-3 text-center" style={{ ...Tebal, fontSize: 15, opacity: 0.8 }}>
+          {macet ? nama(macet.id) : "Alat"}
+        </div>
+      </div>
+    </Kunci>
+  );
+}
+
+/* ---------------- telusur ---------------- */
+
+type Titik = [number, number];
+/** Jalur angka 1–5 di viewBox 100×140: daftar goresan (polyline) berurutan; panah = awal tiap goresan. */
+const JALUR_ANGKA: Record<number, Titik[][]> = {
+  1: [[[32, 44], [54, 22], [54, 120]]],
+  2: [[[28, 46], [32, 32], [44, 22], [58, 22], [68, 30], [72, 44], [68, 58], [56, 76], [28, 118], [76, 118]]],
+  3: [[[28, 36], [38, 24], [52, 21], [66, 26], [71, 40], [65, 55], [50, 62], [66, 70], [73, 86], [69, 104], [56, 118], [40, 118], [28, 106]]],
+  4: [[[62, 22], [26, 86], [78, 86]], [[62, 22], [62, 120]]],
+  5: [[[34, 22], [29, 66], [46, 59], [62, 63], [72, 80], [70, 100], [58, 116], [40, 119], [27, 108]], [[34, 22], [72, 22]]],
+};
+const TINGGI_ANGKA = 100; // 22 → 120
+const TOL = TINGGI_ANGKA * 0.25; // toleransi ±25% tinggi angka
+const LANGKAH_SAMPEL = 6;
+
+/** Titik sampel di sepanjang jalur, setiap ~6 satuan viewBox. */
+function sampelJalur(goresan: Titik[][]): Titik[] {
+  const out: Titik[] = [];
+  for (const g of goresan) {
+    for (let i = 0; i + 1 < g.length; i++) {
+      const [x0, y0] = g[i], [x1, y1] = g[i + 1];
+      const d = Math.hypot(x1 - x0, y1 - y0);
+      const n = Math.max(1, Math.round(d / LANGKAH_SAMPEL));
+      for (let k = 0; k < n; k++) out.push([x0 + (x1 - x0) * k / n, y0 + (y1 - y0) * k / n]);
+    }
+    out.push(g[g.length - 1]);
+  }
+  return out;
+}
+
+function ModeTelusur(c: Ctx) {
+  const { ronde, onJawab, hasil, terkunci, visual } = c;
+  const peti = useMemo(() => ronde.items.find((i) => i.role === "benda") ?? ronde.items[0], [ronde.items]);
+  const jalur = JALUR_ANGKA[ronde.target] ?? JALUR_ANGKA[1];
+  const titik = useMemo(() => sampelJalur(jalur), [jalur]);
+  const [goresan, setGoresan] = useState<Titik[][]>([]);
+  const [ukuran, setUkuran] = useState({ kena: 0, sampel: 0, keluar: 0 });
+  const kena = useRef<boolean[]>([]);
+  const hitung = useRef({ kena: 0, sampel: 0, keluar: 0 });
+  const menggores = useRef(false);
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const { hint, bantu } = useBantu(c.onHint);
+  const tampilPanah = ronde.offset === 1 || hint;
+
+  const ulang = useCallback(() => {
+    kena.current = new Array(titik.length).fill(false);
+    hitung.current = { kena: 0, sampel: 0, keluar: 0 };
+    setUkuran({ kena: 0, sampel: 0, keluar: 0 });
+    setGoresan([]);
+  }, [titik.length]);
+  useEffect(() => { ulang(); }, [ulang]);
+
+  const keViewBox = (e: RPointerEvent<SVGSVGElement>): Titik | null => {
+    const el = svgRef.current; if (!el) return null;
+    const r = el.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    return [((e.clientX - r.left) / r.width) * 100, ((e.clientY - r.top) / r.height) * 140];
+  };
+  const catat = (p: Titik) => {
+    let terdekat = Infinity;
+    titik.forEach(([x, y], i) => {
+      const d = Math.hypot(x - p[0], y - p[1]);
+      if (d < terdekat) terdekat = d;
+      if (d <= TOL && !kena.current[i]) { kena.current[i] = true; hitung.current.kena++; }
+    });
+    hitung.current.sampel++;
+    if (terdekat > TOL) hitung.current.keluar++;
+    setUkuran({ ...hitung.current });
+  };
+  const turun = (e: RPointerEvent<SVGSVGElement>) => {
+    if (terkunci) return;
+    const p = keViewBox(e); if (!p) return;
+    menggores.current = true;
+    try { e.currentTarget.setPointerCapture(e.pointerId); } catch { /* pointer sudah lepas: abaikan */ }
+    sfx.brush();
+    setGoresan((g) => [...g, [p]]);
+    catat(p);
+  };
+  const gerak = (e: RPointerEvent<SVGSVGElement>) => {
+    if (!menggores.current) return;
+    const p = keViewBox(e); if (!p) return;
+    setGoresan((g) => { const v = g.slice(); v[v.length - 1] = [...v[v.length - 1], p]; return v; });
+    catat(p);
+  };
+  const lepas = () => { menggores.current = false; };
+
+  const cakupan = titik.length ? ukuran.kena / titik.length : 0;
+  const keluar = ukuran.sampel ? ukuran.keluar / ukuran.sampel : 0;
+  const terbuka = !!hasil?.benar;
+  const teks = `Telusuri angka ${ronde.target} dengan jarimu${ronde.offset === 1 ? ", ikuti panahnya" : ""}. Itu mantra pembuka peti!`;
+  /** Penanda goresan ke-i ditaruh 15·i satuan di sepanjang goresannya sendiri, supaya dua goresan yang berawal di titik sama (4, 5) tidak saling menutup. */
+  const panahDi = (g: Titik[], i: number) => {
+    let sisa = 15 * i;
+    for (let k = 0; k + 1 < g.length; k++) {
+      const [a, b] = [g[k], g[k + 1]];
+      const d = Math.hypot(b[0] - a[0], b[1] - a[1]);
+      const sudut = (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180) / Math.PI;
+      if (sisa <= d || k + 2 === g.length) { const f = Math.min(1, sisa / Math.max(1e-6, d)); return { x: a[0] + (b[0] - a[0]) * f, y: a[1] + (b[1] - a[1]) * f, sudut }; }
+      sisa -= d;
+    }
+    return { x: g[0][0], y: g[0][1], sudut: 0 };
+  };
+
+  return (
+    <Kunci terkunci={terkunci}>
+      <Instruksi teks={teks} hasil={hasil} />
+      <Umpan hasil={hasil} benar={terbuka ? "peti terbuka!" : `telusuri angka ${ronde.target} pelan-pelan di dalam jalurnya`} />
+      <Papan>
+        <div className="flex items-stretch justify-center gap-3">
+          <svg
+            ref={svgRef}
+            viewBox="0 0 100 140"
+            className="rounded-[20px] bg-white select-none"
+            style={{ width: "min(100%, 260px)", height: "auto", aspectRatio: "100 / 140", touchAction: "none", boxShadow: BAYANG, cursor: "crosshair" }}
+            role="img"
+            aria-label={`Jalur angka ${ronde.target}, ${Math.round(cakupan * 100)} persen sudah ditelusuri`}
+            onPointerDown={turun}
+            onPointerMove={gerak}
+            onPointerUp={lepas}
+            onPointerCancel={lepas}
+          >
+            {/* jalur tebal (toleransi) */}
+            {jalur.map((g, i) => <polyline key={`t${i}`} points={g.map((p) => p.join(",")).join(" ")} fill="none" stroke={hasil ? (hasil.benar ? "#dff5e9" : "#ffe9ec") : "#e9e4ff"} strokeWidth={TOL * 2} strokeLinecap="round" strokeLinejoin="round" />)}
+            {/* garis tengah */}
+            {jalur.map((g, i) => <polyline key={`g${i}`} points={g.map((p) => p.join(",")).join(" ")} fill="none" stroke="#b9b1d6" strokeWidth="2.5" strokeDasharray="4 4" strokeLinecap="round" strokeLinejoin="round" />)}
+            {/* goresan anak */}
+            {goresan.map((g, i) => <polyline key={`a${i}`} points={g.map((p) => p.join(",")).join(" ")} fill="none" stroke={UNGU} strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" opacity={0.9} />)}
+            {/* panah urutan goresan */}
+            {tampilPanah && jalur.map((g, i) => {
+              const { x, y, sudut } = panahDi(g, i);
+              return (
+                <g key={`p${i}`} className={hint ? "akademi-bounce" : ""}>
+                  <g transform={`rotate(${sudut} ${x} ${y})`}>
+                    <polygon points={`${x + 9},${y} ${x + 1},${y - 5} ${x + 1},${y + 5}`} fill={KUNING} stroke={INK} strokeWidth="1" />
+                  </g>
+                  <circle cx={x} cy={y} r="7" fill={KUNING} stroke={INK} strokeWidth="1.5" />
+                  <text x={x} y={y + 3.2} textAnchor="middle" fontSize="9" fontWeight="900" fill={INK} style={{ fontFamily: BALOO }}>{i + 1}</text>
+                </g>
+              );
+            })}
+          </svg>
+          {/* peti harta */}
+          <div className="flex w-24 flex-col items-center justify-center gap-1 rounded-[20px] bg-white" style={{ boxShadow: BAYANG }} aria-label={terbuka ? "Peti terbuka" : "Peti tertutup"}>
+            <span className={terbuka ? "akademi-bounce" : ""} style={{ fontSize: 52, lineHeight: 1, filter: terbuka ? "drop-shadow(0 0 12px #ffd23f)" : undefined }} aria-hidden>{terbuka ? "✨" : peti?.emoji ?? "🧰"}</span>
+            {terbuka && <span className="akademi-pop" style={{ fontSize: 40, lineHeight: 1 }} aria-hidden>{visual(peti?.id ?? "").emoji ?? "🧰"}💎</span>}
+            <span style={{ ...Tebal, fontSize: 13, opacity: 0.75 }}>{terbuka ? "terbuka!" : "terkunci"}</span>
+          </div>
+        </div>
+        <div className="mt-2 flex items-center justify-center gap-2" aria-hidden>
+          <div className="h-3 w-40 overflow-hidden rounded-full bg-white"><div style={{ width: `${Math.round(cakupan * 100)}%`, height: "100%", background: cakupan >= 0.85 ? BENAR : UNGU, transition: "width 150ms" }} /></div>
+          <span style={{ ...Tebal, fontSize: 14, opacity: 0.75 }}>{Math.round(cakupan * 100)}%</span>
+        </div>
+        {hint && <div className="akademi-fade mt-1 text-center" style={{ ...Tebal, fontSize: 15, opacity: 0.75 }}>Mulai dari panah nomor 1, ikuti jalur sampai ujung.</div>}
+      </Papan>
+      <div className="flex gap-2">
+        <TombolBantu onClick={() => { bantu(); ucapkan("Mulai dari panah nomor satu, lalu ikuti jalurnya pelan pelan sampai ujung."); }} disabled={terkunci} />
+        <button type="button" onClick={() => { sfx.whoosh(); ulang(); }} disabled={terkunci || !goresan.length} aria-label="Hapus goresan" className="flex min-h-14 min-w-14 items-center justify-center rounded-[20px] bg-white px-3 active:scale-95 disabled:opacity-50" style={{ boxShadow: BAYANG, color: INK }}><Icon name="undo" size={26} /></button>
+        <TombolBesar onClick={() => { sfx.tap(); onJawab({ angka: ronde.target, cakupan, keluar }); }} disabled={terkunci || ukuran.sampel === 0}><Icon name="check" size={26} /> Selesai</TombolBesar>
       </div>
     </Kunci>
   );

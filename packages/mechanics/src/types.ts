@@ -44,9 +44,12 @@ export interface RondeUrutkan {
   shown: PaketUrutkan["sequences"][number]["steps"];
   /** indeks pasangan yang tertukar pada mode perbaiki */
   swapped?: [number, number];
+  /** mode label: label benar per posisi (shown sudah urut): ["pertama", "lalu", …, "terakhir"] */
+  labels?: LabelUrutan[];
 }
-/** susun/perbaiki: urutan id akhir · dulu: id langkah yang dipilih sebagai "lebih dulu" */
-export type JawabanUrutkan = string[] | string;
+export type LabelUrutan = "pertama" | "lalu" | "terakhir";
+/** susun/perbaiki: urutan id akhir · dulu: id langkah yang dipilih sebagai "lebih dulu" · label: label yang dipasang per posisi */
+export type JawabanUrutkan = string[] | string | { labels: string[] };
 
 /* ---------------- dagang ---------------- */
 
@@ -168,17 +171,18 @@ export interface RondeSimulasi {
   mode: PaketSimulasi["mode"];
   /** benda/hewan/tombol/alat yang terlibat di ronde ini */
   items: PaketSimulasi["items"];
-  /** jam-baca: jam yang ditampilkan · jam-putar: jam target · jengkal/kubus: panjang · taksir: jumlah · bagi: jumlah benda */
+  /** jam-baca: jam yang ditampilkan · jam-putar: jam target · jengkal/kubus: panjang · taksir: jumlah · bagi: jumlah benda ·
+   *  menara: tinggi menara · bantuan: batas ketukan sia-sia · telusur: angka yang ditelusuri */
   target: number;
   /** jam-baca: pilihan kartu jam · taksir: rentang garis [0,20] dipakai presenter */
   options: number[];
-  /** jam-putar: kunci kegiatan · timbangan: id benda yang lebih berat · alat: id alat yang benar */
+  /** jam-putar: kunci kegiatan · timbangan: id benda yang lebih berat · alat: id alat yang benar · bantuan: id alat yang macet */
   correctId?: string;
   /** turus: urutan hewan yang lewat (id) · tombol: urutan tombol yang diuji di putaran 2 */
   urutan: string[];
   /** tombol: peta tombol → alat (rahasia, dipakai presenter untuk menyalakan alat) */
   peta: Record<string, string>;
-  /** jengkal: snap otomatis? · kubus: benda dimulai di kubus ke-`offset` (0 = pas) */
+  /** jengkal: snap otomatis? · kubus: benda dimulai di kubus ke-`offset` (0 = pas) · telusur: offset 1 = panah urutan goresan ditampilkan */
   snap: boolean;
   offset: number;
   /** lama tampil (taksir) ms; jeda antar hewan (turus) ms */
@@ -190,4 +194,7 @@ export type JawabanSimulasi =
   | { posisi: number[]; angka: number }                 // jengkal: posisi awal tiap jengkal (satuan jengkal) + jumlah yang disebut
   | { turus: Record<string, number> }                   // turus
   | { tebakan: Record<string, string> }                 // tombol: tombol → alat yang ditunjuk sebelum ditekan
-  | { kiri: number; kanan: number };                    // bagi
+  | { kiri: number; kanan: number }                     // bagi
+  | { tumpukan: string[] }                              // menara: id benda dari bawah ke atas
+  | { ketukanSiaSia: number; mintaTolong: boolean }     // bantuan
+  | { angka: number; cakupan: number; keluar: number }; // telusur: angka, rasio jalur tersentuh (0–1), rasio sampel jari di luar toleransi (0–1)

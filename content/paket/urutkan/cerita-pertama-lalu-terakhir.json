@@ -1,0 +1,76 @@
+{
+  "id": "cerita-pertama-lalu-terakhir",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKA.URUTAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cerita Pertama, Lalu, Terakhir",
+      "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar, lalu tekan Ceritakan supaya robot bercerita.",
+      "pagi": "Pagi hari",
+      "bangun": "bangun tidur",
+      "mandi": "mandi",
+      "sarapan": "sarapan",
+      "berangkat": "berangkat sekolah",
+      "tanam": "Menanam biji",
+      "gali": "gali tanah",
+      "biji": "taruh biji",
+      "siram": "siram air",
+      "tumbuh": "tunas tumbuh"
+    },
+    "en": {
+      "judul": "First, Then, Last Story",
+      "instruksi": "Put the first, then, and last labels under the pictures, then press Tell so the robot tells the story.",
+      "pagi": "Morning time",
+      "bangun": "wake up",
+      "mandi": "take a bath",
+      "sarapan": "eat breakfast",
+      "berangkat": "go to school",
+      "tanam": "Planting a seed",
+      "gali": "dig the soil",
+      "biji": "put in the seed",
+      "siram": "water it",
+      "tumbuh": "a sprout grows"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar; 3 = pertama/lalu/terakhir, 4 = dua label lalu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah",
+  "mode": "label",
+  "sequences": [
+    {
+      "id": "pagi",
+      "titleKey": "pagi",
+      "steps": [
+        { "id": "bangun", "labelKey": "bangun", "emoji": "🛏️" },
+        { "id": "mandi", "labelKey": "mandi", "emoji": "🚿" },
+        { "id": "sarapan", "labelKey": "sarapan", "emoji": "🍳" },
+        { "id": "berangkat", "labelKey": "berangkat", "emoji": "🎒" }
+      ]
+    },
+    {
+      "id": "tanam",
+      "titleKey": "tanam",
+      "steps": [
+        { "id": "gali", "labelKey": "gali", "emoji": "⛏️" },
+        { "id": "biji", "labelKey": "biji", "emoji": "🌰" },
+        { "id": "siram", "labelKey": "siram", "emoji": "🪣" },
+        { "id": "tumbuh", "labelKey": "tumbuh", "emoji": "🌱" }
+      ]
+    }
+  ]
+}

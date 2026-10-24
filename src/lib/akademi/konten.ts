@@ -2,6 +2,7 @@
 // Sumber: src/lib/akademi/katalog.generated.ts (dibuat `npm run -s akademi:index`), diparse zod sekali saat modul dimuat.
 // Berkas yang tidak lolos skema dilaporkan ke console.error dan dilewati, bukan menjatuhkan aplikasi.
 
+import { useEffect, useState } from "react";
 import { ContentPack, KurikulumFile, LevelId, type Competency } from "@akademi/schema";
 import { KURIKULUM_RAW, PAKET_RAW } from "./katalog.generated";
 
@@ -109,3 +110,64 @@ export function setLevelAnak(memberId: string, level: LevelId) {
   } catch {}
 }
 
+
+/* ---------------- bahasa konten anak (objek JSON yang sama dengan level) ---------------- */
+
+/** Bahasa konten Academy per anak: instruksi paket, pernyataan kompetensi, nama unit/track. UI kerangka tetap Indonesia. */
+export type BahasaAnak = "id" | "en";
+const BAHASA_DEFAULT: BahasaAnak = "id";
+
+export function bahasaAnak(memberId: string): BahasaAnak {
+  if (typeof window === "undefined") return BAHASA_DEFAULT;
+  try {
+    const raw = localStorage.getItem(LEVEL_ANAK_KEY(memberId));
+    if (!raw) return BAHASA_DEFAULT;
+    const v = JSON.parse(raw) as { bahasa?: unknown };
+    return v?.bahasa === "en" ? "en" : BAHASA_DEFAULT;
+  } catch {
+    return BAHASA_DEFAULT;
+  }
+}
+
+type PendengarBahasa = (memberId: string) => void;
+const pendengarBahasa = new Set<PendengarBahasa>();
+
+export function setBahasaAnak(memberId: string, bahasa: BahasaAnak) {
+  if (typeof window === "undefined") return;
+  try {
+    let prev: Record<string, unknown> = {};
+    try {
+      prev = JSON.parse(localStorage.getItem(LEVEL_ANAK_KEY(memberId)) ?? "{}") ?? {};
+    } catch {}
+    localStorage.setItem(LEVEL_ANAK_KEY(memberId), JSON.stringify({ ...prev, bahasa }));
+  } catch {}
+  for (const fn of pendengarBahasa) {
+    try {
+      fn(memberId);
+    } catch (e) {
+      console.error("[akademi] pendengar bahasa gagal", e);
+    }
+  }
+}
+
+/** Hook: bahasa konten anak, ikut berubah saat setBahasaAnak() atau sinkron akun (event `rumila:saves`). */
+export function useBahasaAnak(memberId: string): BahasaAnak {
+  const [bahasa, setBahasa] = useState<BahasaAnak>(() => bahasaAnak(memberId));
+  useEffect(() => {
+    setBahasa(bahasaAnak(memberId));
+    const segar = (id: string) => {
+      if (id === memberId) setBahasa(bahasaAnak(memberId));
+    };
+    const dariSaves = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      if (!Array.isArray(detail) || detail.includes(LEVEL_ANAK_KEY(memberId))) setBahasa(bahasaAnak(memberId));
+    };
+    pendengarBahasa.add(segar);
+    window.addEventListener("rumila:saves", dariSaves);
+    return () => {
+      pendengarBahasa.delete(segar);
+      window.removeEventListener("rumila:saves", dariSaves);
+    };
+  }, [memberId]);
+  return bahasa;
+}

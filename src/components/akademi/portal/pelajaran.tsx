@@ -9,7 +9,7 @@ import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI } from "@/lib/akademi/konten";
+import { KOMPETENSI, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta } from "./bersama";
@@ -17,6 +17,7 @@ import { CincinProgres, unitUntuk } from "./track";
 
 export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
   const events = useEvents(me.id);
+  const bahasa = useBahasaAnak(me.id);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
   const lv = levelMeta(level);
   const lain = TRACKS.filter((t) => !TRACK_SLICE.includes(t.id));
@@ -34,7 +35,7 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           {TRACK_SLICE.map((id) => {
             const r = ringkasTrack(peng, KOMPETENSI, id, level);
-            return <KartuTrack key={id} id={id} level={level} peng={peng} dikuasai={r.dikuasai} total={r.total} />;
+            return <KartuTrack key={id} id={id} level={level} peng={peng} dikuasai={r.dikuasai} total={r.total} bahasa={bahasa} />;
           })}
         </div>
       </section>
@@ -52,7 +53,7 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
                   </span>
                 </span>
                 <div>
-                  <div style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, lineHeight: 1.1 }}>{t.nama.id}</div>
+                  <div style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, lineHeight: 1.1 }}>{t.nama[bahasa]}</div>
                   <div className="mt-0.5 text-[11px] font-extrabold text-white/90">Segera</div>
                 </div>
               </div>
@@ -64,11 +65,11 @@ export function PetaPelajaran({ me, level }: { me: Member; level: LevelId }) {
   );
 }
 
-function KartuTrack({ id, level, peng, dikuasai, total }: { id: TrackId; level: LevelId; peng: Record<string, Penguasaan>; dikuasai: number; total: number }) {
+function KartuTrack({ id, level, peng, dikuasai, total, bahasa }: { id: TrackId; level: LevelId; peng: Record<string, Penguasaan>; dikuasai: number; total: number; bahasa: BahasaAnak }) {
   const t = TRACKS.find((x) => x.id === id)!;
   const [l, m, d] = PLAY[TRACK_WARNA[id]];
   const pct = total ? Math.round((dikuasai / total) * 100) : 0;
-  const unit = unitUntuk(id, level);
+  const unit = unitUntuk(id, level, KOMPETENSI, bahasa);
   const pratinjau = unit.slice(0, 3);
   const sisa = unit.length - pratinjau.length;
   return (
@@ -85,10 +86,10 @@ function KartuTrack({ id, level, peng, dikuasai, total }: { id: TrackId; level: 
               {TRACK_IKON[id]}
             </span>
           </span>
-          <span className="rounded-full bg-white/25 px-2.5 py-1 text-[12px] font-black">{t.nama.en}</span>
+          <span className="rounded-full bg-white/25 px-2.5 py-1 text-[12px] font-black">{t.nama[bahasa === "en" ? "id" : "en"]}</span>
         </div>
         <div className="relative">
-          <div style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{t.nama.id}</div>
+          <div style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800, lineHeight: 1.1, textShadow: "0 1px 0 rgba(0,0,0,.12)" }}>{t.nama[bahasa]}</div>
           <div className="mt-1 text-[13px] font-extrabold text-white/90">{total ? `${dikuasai} dari ${total} kompetensi dikuasai` : "Konten segera"}</div>
           <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-white/30">
             <div className="h-full rounded-full bg-white" style={{ width: `${pct}%` }} />

@@ -9,8 +9,9 @@ import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY, type ColorKey } from "@/lib/catalog";
-import { kompetensiUntuk, paketById } from "@/lib/akademi/konten";
+import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import type { Status } from "@/lib/akademi/mastery";
+import { useMe } from "@/lib/store";
 
 export const INK = "#2b1d4e";
 
@@ -135,9 +136,10 @@ export function paketSelesai(events: GameEvent[]): Set<string> {
   return out;
 }
 
-/** Satu kalimat "Aku bisa …" dari kompetensi pertama paket. */
-export function kalimatKompetensi(p: ContentPack): string {
-  return kompetensiUntuk(p.id)[0]?.statement.id ?? "";
+/** Satu kalimat "Aku bisa …" dari kompetensi pertama paket (bahasa konten anak, default id). */
+export function kalimatKompetensi(p: ContentPack, bahasa: BahasaAnak = "id"): string {
+  const c = kompetensiUntuk(p.id)[0];
+  return c ? (c.statement[bahasa] ?? c.statement.id) : "";
 }
 
 /* ---------------- potongan UI ---------------- */
@@ -215,6 +217,8 @@ export function IkonMekanik({ mekanik, size = 44 }: { mekanik: string; size?: nu
 
 /** Tombol aktivitas besar (≥56px): ikon mekanik netral, judul, label mekanik, ⭐ bila pernah selesai, ▶ di kanan. */
 export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesai?: boolean }) {
+  const me = useMe();
+  const bahasa = useBahasaAnak(me.id);
   return (
     <Link
       href={`/akademi/main/${p.id}`}
@@ -225,7 +229,7 @@ export function TombolAktivitas({ p, selesai = false }: { p: ContentPack; selesa
       <span className="min-w-0 flex-1">
         <span className="flex items-center gap-1.5">
           <span className="truncate leading-tight" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: INK }}>
-            {judulPaket(p)}
+            {judulPaket(p, bahasa)}
           </span>
           {selesai && (
             <span aria-label="Pernah diselesaikan" className="shrink-0 text-[14px] leading-none">

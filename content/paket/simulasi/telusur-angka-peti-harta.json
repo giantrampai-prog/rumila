@@ -1,0 +1,46 @@
+{
+  "id": "telusur-angka-peti-harta",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Telusur Angka Peti Harta",
+      "instruksi": "Telusuri angka dengan jarimu mengikuti panah, itu mantra pembuka peti harta.",
+      "peti": "peti harta"
+    },
+    "en": {
+      "judul": "Trace the Treasure Number",
+      "instruksi": "Trace the number with your finger following the arrows; it is the spell that opens the treasure chest.",
+      "peti": "treasure chest"
+    }
+  },
+  "knobs": {
+    "max": {
+      "min": 1,
+      "max": 5,
+      "default": 5,
+      "step": 1,
+      "keterangan": "angka terbesar yang diacak (1 sampai max)"
+    },
+    "panah": {
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = panah urutan goresan ditampilkan, 0 = disembunyikan (anak mengingat arah sendiri)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "pulau-harta",
+  "mode": "telusur",
+  "items": [
+    { "id": "peti", "labelKey": "peti", "role": "benda", "emoji": "🧰" }
+  ]
+}

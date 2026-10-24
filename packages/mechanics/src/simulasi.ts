@@ -1,6 +1,7 @@
-// Mekanik simulasi: sepuluh mode (jam-baca, jam-putar, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi).
-// Satu buatRonde dengan switch mode; field yang tidak relevan diisi nilai kosong ([], {}, 0, false).
-// Knob yang dibaca bila ada: hourMax, tipuan, maxSpans, snap, offset, count, kinds, gapMs, max, flashMs, pairs.
+// Mekanik simulasi: tiga belas mode (jam-baca, jam-putar, timbangan, jengkal, kubus, turus, taksir, tombol, alat, bagi,
+// menara, bantuan, telusur). Satu buatRonde dengan switch mode; field yang tidak relevan diisi nilai kosong ([], {}, 0, false).
+// Knob yang dibaca bila ada: hourMax, tipuan, maxSpans, snap, offset, count, kinds, gapMs, max, flashMs, pairs,
+// tinggi & benda (menara), batas (bantuan), max & panah (telusur).
 
 import type { PaketSimulasi } from "@akademi/schema";
 import { acak, acakInt, pilihSatu, rng } from "./rng";
@@ -13,6 +14,12 @@ export const ALAT_BERAT = "timbangan";
 /** toleransi taksir (selisih mutlak) dan jengkal (celah/tumpang tindih dalam satuan jengkal) */
 const TOLERANSI_TAKSIR = 3;
 const TOLERANSI_JENGKAL = 0.2;
+/** telusur: minimal rasio jalur angka yang disentuh, maksimal rasio sampel jari di luar toleransi */
+export const TELUSUR_CAKUPAN_MIN = 0.85;
+export const TELUSUR_KELUAR_MAX = 0.25;
+/** menara: nilai benda — 0 menggelinding, 1 bisa ditumpuk, 2 tabung (bisa bila tegak = penemuan, dihitung bisa) */
+export const MENARA_GELINDING = 0;
+export const MENARA_TABUNG = 2;
 
 function kosong(p: PaketSimulasi): RondeSimulasi {
   return { mode: p.mode, items: [], target: 0, options: [], urutan: [], peta: {}, snap: false, offset: 0, flashMs: 0 };
@@ -120,6 +127,30 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
       const benda = peran(p, "benda").length ? peran(p, "benda") : p.items;
       return { ...dasar, items: [pilihSatu(benda, r)], target };
     }
+    case "menara": {
+      // target = tinggi menara (knob tinggi, default 4); benda di lantai = knob benda (default 5–6 acak), dijamin ≥ target yang bisa
+      // ditumpuk dan ≥ 1 yang menggelinding (bila paket punya keduanya) supaya penemuan "bola jatuh" selalu mungkin.
+      const semua = bernilai(p, "benda");
+      const target = jepit(knobs.tinggi, 2, 8, 4);
+      const jumlah = Math.min(semua.length, knobs.benda !== undefined ? jepit(knobs.benda, 2, 12, 5) : acakInt(r, 5, 6));
+      const bisa = acak(semua.filter(i => (i.value ?? 0) !== MENARA_GELINDING), r);
+      const gelinding = acak(semua.filter(i => (i.value ?? 0) === MENARA_GELINDING), r);
+      const wajibBisa = Math.min(bisa.length, Math.max(target, jumlah - gelinding.length));
+      const wajibGelinding = Math.min(gelinding.length, Math.max(gelinding.length ? 1 : 0, jumlah - wajibBisa));
+      const dipilih = [...bisa.slice(0, wajibBisa), ...gelinding.slice(0, wajibGelinding)];
+      const sisa = acak([...bisa.slice(wajibBisa), ...gelinding.slice(wajibGelinding)], r);
+      while (dipilih.length < jumlah && sisa.length) dipilih.push(sisa.shift()!);
+      return { ...dasar, items: acak(dipilih, r), target };
+    }
+    case "bantuan": {
+      const alat = peran(p, "alat").length ? peran(p, "alat") : p.items;
+      const macet = pilihSatu(alat, r);
+      return { ...dasar, items: acak(alat, r), correctId: macet.id, target: jepit(knobs.batas, 1, 20, 5) };
+    }
+    case "telusur": {
+      const max = jepit(knobs.max, 1, 5, 5);
+      return { ...dasar, items: p.items, target: acakInt(r, 1, max), offset: jepit(knobs.panah, 0, 1, 1) };
+    }
   }
 }
 
@@ -174,6 +205,35 @@ export function nilaiSimulasi(r: RondeSimulasi, j: JawabanSimulasi): Hasil {
       const kanan = "kanan" in j && typeof j.kanan === "number" ? j.kanan : -1;
       const benar = kiri >= 0 && kanan >= 0 && kiri === kanan && kiri + kanan === r.target;
       return { benar, detail: { kiri, kanan, target: r.target } };
+    }
+    case "menara": {
+      const tumpukan = "tumpukan" in j && Array.isArray(j.tumpukan) ? j.tumpukan.filter((x): x is string => typeof x === "string") : [];
+      const nilaiBenda = new Map(r.items.map(i => [i.id, i.value ?? 1] as const));
+      // jatuhDi = indeks (dari bawah) benda pertama yang menggelinding / tidak dikenal / dipakai dua kali; null bila menara berdiri
+      let jatuhDi: number | null = null;
+      const dipakai = new Set<string>();
+      for (let i = 0; i < tumpukan.length; i++) {
+        const v = nilaiBenda.get(tumpukan[i]);
+        if (v === undefined || v === MENARA_GELINDING || dipakai.has(tumpukan[i])) { jatuhDi = i; break; }
+        dipakai.add(tumpukan[i]);
+      }
+      const tabung = tumpukan.filter(id => nilaiBenda.get(id) === MENARA_TABUNG).length;
+      const benar = jatuhDi === null && tumpukan.length === r.target;
+      return { benar, detail: { jatuhDi, tinggi: tumpukan.length, target: r.target, tabung } };
+    }
+    case "bantuan": {
+      const ketukanSiaSia = "ketukanSiaSia" in j && typeof j.ketukanSiaSia === "number" && Number.isFinite(j.ketukanSiaSia) ? Math.max(0, Math.floor(j.ketukanSiaSia)) : Infinity;
+      const mintaTolong = "mintaTolong" in j && j.mintaTolong === true;
+      const benar = mintaTolong && ketukanSiaSia <= r.target;
+      return { benar, detail: { ketukanSiaSia: Number.isFinite(ketukanSiaSia) ? ketukanSiaSia : null, mintaTolong, batas: r.target, macet: r.correctId ?? "" } };
+    }
+    case "telusur": {
+      const angka = angkaDari(j);
+      const jepit01 = (v: unknown, def: number) => (typeof v === "number" && Number.isFinite(v) ? Math.min(1, Math.max(0, v)) : def);
+      const cakupan = jepit01("cakupan" in j ? j.cakupan : undefined, 0);
+      const keluar = jepit01("keluar" in j ? j.keluar : undefined, 1);
+      const benar = angka === r.target && cakupan >= TELUSUR_CAKUPAN_MIN && keluar <= TELUSUR_KELUAR_MAX;
+      return { benar, detail: { angka, target: r.target, cakupan, keluar, panah: r.offset === 1 } };
     }
   }
 }

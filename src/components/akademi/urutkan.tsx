@@ -1,12 +1,14 @@
 "use client";
 
-// Presenter mekanik "urutkan": susun (kartu → slot bernomor), perbaiki (tukar dua kartu), dulu (pilih yang lebih dulu).
+// Presenter mekanik "urutkan": susun (kartu → slot bernomor), perbaiki (tukar dua kartu), dulu (pilih yang lebih dulu),
+// label (tempel pertama/lalu/terakhir di bawah gambar, lalu tokoh bercerita mengikuti label).
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
 import { useEffect, useRef, useState } from "react";
 import type { PaketUrutkan } from "@akademi/schema";
-import type { JawabanUrutkan, RondeUrutkan } from "@akademi/mechanics";
+import type { JawabanUrutkan, LabelUrutan, RondeUrutkan } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
+import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { KartuBenda, type VisualSpec } from "./benda";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
@@ -63,6 +65,7 @@ function Nomor({ n, warna }: { n: number; warna?: string }) {
 export function PresenterUrutkan(props: Props) {
   if (props.ronde.mode === "dulu") return <Dulu {...props} />;
   if (props.ronde.mode === "perbaiki") return <Perbaiki {...props} />;
+  if (props.ronde.mode === "label") return <Label {...props} />;
   return <Susun {...props} />;
 }
 
@@ -354,6 +357,184 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
           );
         })}
       </div>
+    </div>
+  );
+}
+
+/* ---------------- mode label ---------------- */
+
+/** Label = ikon + suara (bukan tulisan yang harus dibaca); kata dibacakan saat keping diketuk dan saat cerita. */
+const LABEL: Record<LabelUrutan, { ikon: string; kata: string }> = {
+  pertama: { ikon: "🥇", kata: "pertama" },
+  lalu: { ikon: "➡️", kata: "lalu" },
+  terakhir: { ikon: "🏁", kata: "terakhir" },
+};
+const URUTAN_LABEL: LabelUrutan[] = ["pertama", "lalu", "terakhir"];
+const JEDA_ADEGAN = 1800;
+
+function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
+  const { shown, labels: benar = [] } = ronde;
+  const n = shown.length;
+  const [slot, setSlot] = useState<(LabelUrutan | null)[]>(() => Array(n).fill(null));
+  const [terpilih, setTerpilih] = useState<LabelUrutan | null>(null);
+  const [cerita, setCerita] = useState<{ aktif: number; berhenti: number | null; selesai: boolean } | null>(null);
+  const [hint, setHint] = useState<{ slot: number; label: LabelUrutan } | null>(null);
+  const [terkirim, setTerkirim] = useState(false);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const kunci = !!hasil || terkirim || (!!cerita && !cerita.selesai);
+
+  useEffect(() => {
+    setSlot(Array(shown.length).fill(null));
+    setTerpilih(null);
+    setCerita(null);
+    setHint(null);
+    setTerkirim(false);
+    const tm = timers.current;
+    return () => { tm.forEach(clearTimeout); tm.length = 0; diamkan(); };
+  }, [ronde, shown.length]);
+
+  // jatah keping: pertama 1, lalu n−2, terakhir 1
+  const jatah = (l: LabelUrutan) => (l === "lalu" ? Math.max(0, n - 2) : 1);
+  const sisa = (l: LabelUrutan) => jatah(l) - slot.filter((s) => s === l).length;
+  const lengkap = slot.every(Boolean);
+
+  const ketukLabel = (l: LabelUrutan) => {
+    if (kunci || sisa(l) <= 0) return;
+    sfx.tap();
+    ucapkan(LABEL[l].kata);
+    setTerpilih((x) => (x === l ? null : l));
+  };
+  const ketukSlot = (i: number) => {
+    if (kunci) return;
+    if (slot[i]) {
+      sfx.whoosh();
+      setSlot((s) => s.map((v, k) => (k === i ? null : v)));
+      setTerpilih(null);
+      return;
+    }
+    if (!terpilih || sisa(terpilih) <= 0) return;
+    sfx.plop();
+    setSlot((s) => s.map((v, k) => (k === i ? terpilih : v)));
+    setTerpilih(null);
+    if (hint?.slot === i) setHint(null);
+  };
+  const bantu = () => {
+    if (kunci) return;
+    onHint?.();
+    const i = slot.findIndex((v, k) => v !== benar[k]);
+    if (i >= 0 && benar[i]) { setHint({ slot: i, label: benar[i] }); ucapkan(`Gambar ini yang ${LABEL[benar[i]].kata}.`); }
+  };
+
+  /** Tokoh bercerita mengikuti label yang dipasang: "terakhir" sebelum gambar terakhir menghentikan cerita, sisanya meredup. */
+  const ceritakan = () => {
+    if (kunci || !lengkap) return;
+    sfx.open();
+    const labels = slot as LabelUrutan[];
+    let berhenti: number | null = null;
+    const adegan: number[] = [];
+    for (let i = 0; i < n; i++) {
+      adegan.push(i);
+      if (labels[i] === "terakhir" && i < n - 1) { berhenti = i; break; }
+    }
+    adegan.forEach((i, k) => {
+      timers.current.push(setTimeout(() => {
+        setCerita({ aktif: i, berhenti: null, selesai: false });
+        ucapkan(`${LABEL[labels[i]].kata}, ${t(shown[i].labelKey)}.`);
+      }, k * JEDA_ADEGAN));
+    });
+    const akhir = adegan.length * JEDA_ADEGAN;
+    timers.current.push(setTimeout(() => {
+      setCerita({ aktif: -1, berhenti, selesai: true });
+      if (berhenti !== null) { sfx.thud(); ucapkan("Lho, ceritanya berhenti di sini."); }
+      else sfx.celebrate();
+    }, akhir));
+    timers.current.push(setTimeout(() => {
+      setTerkirim(true);
+      onJawab({ labels });
+    }, akhir + (berhenti !== null ? 1600 : 700)));
+  };
+
+  const ukuran = n <= 3 ? 72 : 60;
+
+  return (
+    <div className="flex flex-col gap-3" style={{ color: INK }}>
+      <Kepala judul={t(ronde.titleKey)} onBantu={bantu} kunci={kunci} />
+
+      {/* gambar berjajar + slot label di bawah tiap gambar */}
+      <div className="flex flex-wrap justify-center gap-2 rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(43,29,78,.08)]">
+        {shown.map((s, i) => {
+          const l = slot[i];
+          const aktif = cerita?.aktif === i;
+          const redup = cerita?.selesai && cerita.berhenti !== null && i > cerita.berhenti;
+          const benarKah = !!hasil && l === benar[i];
+          const salahKah = !!hasil && l !== benar[i];
+          const disorot = hint?.slot === i;
+          const siap = !!terpilih && !l && !kunci;
+          const ring = benarKah ? BENAR : salahKah ? SALAH : disorot ? SOROT : siap ? "#5b4bff" : "rgba(43,29,78,.3)";
+          return (
+            <div key={s.id} className="flex flex-1 flex-col items-center gap-2 transition-opacity duration-700" style={{ minWidth: 92, maxWidth: 150, opacity: redup ? 0.3 : 1 }}>
+              <KartuBenda
+                v={visual(s, t)}
+                size={ukuran}
+                label={t(s.labelKey)}
+                className={`w-full min-h-[108px] ${aktif ? "akademi-bounce" : ""}`}
+                style={{ boxShadow: aktif ? `0 4px 0 rgba(43,29,78,.12), 0 0 0 4px ${SOROT}` : undefined, pointerEvents: "none" }}
+              />
+              <button
+                type="button"
+                onClick={() => ketukSlot(i)}
+                disabled={kunci}
+                aria-label={`Label gambar ${i + 1}${l ? `: ${LABEL[l].kata}` : ", kosong"}`}
+                className={`flex min-h-16 w-full items-center justify-center gap-1 rounded-[18px] transition-transform active:scale-95 ${salahKah ? "akademi-shake" : ""} ${disorot ? "akademi-bounce" : ""}`}
+                style={{ border: `3px ${l ? "solid" : "dashed"} ${ring}`, background: benarKah ? "#e6f8ef" : salahKah ? "#ffe9ec" : l ? "#fff" : "rgba(255,255,255,.5)", boxShadow: l ? "0 4px 0 rgba(43,29,78,.12)" : undefined }}
+              >
+                {l ? (
+                  <>
+                    <span style={{ fontSize: 30, lineHeight: 1 }} aria-hidden>{LABEL[l].ikon}</span>
+                    <span style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800 }}>{LABEL[l].kata}</span>
+                  </>
+                ) : (
+                  <span style={{ fontSize: 24, opacity: 0.3 }}>?</span>
+                )}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* palet label: ikon + suara */}
+      <div className="flex justify-center gap-2" role="group" aria-label="Keping label">
+        {URUTAN_LABEL.map((l) => {
+          const tersisa = sisa(l);
+          const dipilih = terpilih === l;
+          const disorot = hint?.label === l;
+          return (
+            <button
+              key={l}
+              type="button"
+              onClick={() => ketukLabel(l)}
+              disabled={kunci || tersisa <= 0}
+              aria-label={`Label ${LABEL[l].kata}, sisa ${tersisa}`}
+              className={`relative flex min-h-20 min-w-[92px] flex-col items-center justify-center gap-0.5 rounded-[18px] bg-white px-3 transition-transform active:scale-95 disabled:opacity-40 ${disorot ? "akademi-bounce" : ""}`}
+              style={{ boxShadow: `0 4px 0 rgba(43,29,78,.12), 0 0 0 3px ${dipilih ? "#5b4bff" : disorot ? SOROT : "transparent"}`, transform: dipilih ? "scale(1.08)" : undefined }}
+            >
+              <span style={{ fontSize: 34, lineHeight: 1 }} aria-hidden>{LABEL[l].ikon}</span>
+              <span style={{ fontFamily: BALOO, fontSize: 14, fontWeight: 800 }}>{LABEL[l].kata}</span>
+              {jatah(l) > 1 && <span className="absolute -top-2 -right-2 flex size-7 items-center justify-center rounded-full text-white" style={{ background: "#5b4bff", fontFamily: BALOO, fontSize: 14, fontWeight: 900 }}>{tersisa}</span>}
+            </button>
+          );
+        })}
+      </div>
+
+      <button
+        type="button"
+        onClick={ceritakan}
+        disabled={kunci || !lengkap}
+        className="flex min-h-[60px] items-center justify-center gap-2 rounded-[20px] bg-[#22b573] py-3 text-white shadow-[0_5px_0_#16804f] active:translate-y-1 disabled:opacity-60"
+        style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 900 }}
+      >
+        {cerita && !cerita.selesai ? <><Icon name="volume_up" size={26} /> Robot bercerita…</> : <>Ceritakan <Icon name="play_arrow" size={28} /></>}
+      </button>
     </div>
   );
 }

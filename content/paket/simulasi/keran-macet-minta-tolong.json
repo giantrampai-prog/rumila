@@ -1,0 +1,45 @@
+{
+  "id": "keran-macet-minta-tolong",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "KODE.PAUD.SEBAB-AKIBAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alat Macet, Minta Tolong",
+      "instruksi": "Robot mau pakai alat di rumah. Ketuk alatnya supaya bekerja.",
+      "keran": "keran",
+      "lampu": "lampu",
+      "pintu": "pintu"
+    },
+    "en": {
+      "judul": "It's Stuck, Ask for Help",
+      "instruksi": "The robot wants to use something at home. Tap it to make it work.",
+      "keran": "tap",
+      "lampu": "lamp",
+      "pintu": "door"
+    }
+  },
+  "knobs": {
+    "batas": {
+      "min": 3,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "batas ketukan sia-sia sebelum minta tolong yang masih dihitung berhasil; lebih dari itu dicatat belum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah",
+  "mode": "bantuan",
+  "items": [
+    { "id": "keran", "labelKey": "keran", "role": "alat", "emoji": "🚰" },
+    { "id": "lampu", "labelKey": "lampu", "role": "alat", "emoji": "💡" },
+    { "id": "pintu", "labelKey": "pintu", "role": "alat", "emoji": "🚪" }
+  ]
+}

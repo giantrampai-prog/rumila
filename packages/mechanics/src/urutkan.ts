@@ -1,13 +1,21 @@
-// Mekanik urutkan: susun (langkah diacak), perbaiki (satu pasang tertukar), dulu (dua langkah, pilih yang lebih dulu).
+// Mekanik urutkan: susun (langkah diacak), perbaiki (satu pasang tertukar), dulu (dua langkah, pilih yang lebih dulu),
+// label (langkah sudah urut; anak memasang label pertama/lalu/terakhir per posisi).
 // Knob: steps = jumlah langkah tampil; sequence yang cukup panjang dipilih lalu dipotong dari depan.
 
 import type { PaketUrutkan } from "@akademi/schema";
 import { acak, acakInt, pilihSatu, rng } from "./rng";
-import type { Hasil, JawabanUrutkan, Knobs, RondeUrutkan } from "./types";
+import type { Hasil, JawabanUrutkan, Knobs, LabelUrutan, RondeUrutkan } from "./types";
 
 type Step = PaketUrutkan["sequences"][number]["steps"][number];
 
 const samaUrutan = (a: string[], b: string[]) => a.length === b.length && a.every((x, i) => x === b[i]);
+
+/** Label benar untuk n langkah: pertama, lalu × (n − 2), terakhir. */
+export function labelUrutan(n: number): LabelUrutan[] {
+  if (n <= 0) return [];
+  if (n === 1) return ["pertama"];
+  return ["pertama", ...Array.from({ length: n - 2 }, () => "lalu" as const), "terakhir"];
+}
 
 /** Jumlah pertukaran minimal untuk mengubah `dari` menjadi `ke` (n − jumlah siklus). null bila bukan permutasi yang sama. */
 export function hitungSwap(dari: string[], ke: string[]): number | null {
@@ -39,6 +47,9 @@ export function buatRondeUrutkan(p: PaketUrutkan, knobs: Knobs, seed: number): R
   const correct = steps.map(s => s.id);
   const dasar = { mode: p.mode, sequenceId: seq.id, titleKey: seq.titleKey, correct };
 
+  // label: gambar tampil urut benar; tugasnya memasang label, bukan menyusun
+  if (p.mode === "label") return { ...dasar, shown: steps, labels: labelUrutan(steps.length) };
+
   if (p.mode === "perbaiki") {
     const jarak = steps.length >= 3 && r() < 0.5 ? 2 : 1;
     const i = acakInt(r, 0, steps.length - 1 - jarak);
@@ -57,6 +68,15 @@ export function nilaiUrutkan(r: RondeUrutkan, j: JawabanUrutkan): Hasil {
   if (r.mode === "dulu") {
     const dipilih = typeof j === "string" ? j : Array.isArray(j) ? j[0] ?? "" : "";
     return { benar: dipilih === r.correct[0], detail: { dipilih } };
+  }
+  if (r.mode === "label") {
+    const seharusnya = r.labels ?? labelUrutan(r.correct.length);
+    const labels = j && typeof j === "object" && !Array.isArray(j) && Array.isArray(j.labels) ? j.labels : [];
+    const salah = seharusnya.map((l, i) => (labels[i] === l ? -1 : i)).filter(i => i >= 0);
+    const benar = labels.length === seharusnya.length && salah.length === 0;
+    // terputus: "terakhir" dipasang sebelum gambar terakhir → cerita berhenti di sana
+    const terputus = labels.findIndex((l, i) => l === "terakhir" && i < seharusnya.length - 1);
+    return { benar, detail: { salah, terputusDi: terputus >= 0 ? terputus : null } };
   }
   const urutan = Array.isArray(j) ? j : [];
   const cocok = samaUrutan(urutan, r.correct);
