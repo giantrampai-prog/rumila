@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Pensil Pendek ke Panjang",
       "instruksi": "Susun pensil dari yang paling pendek ke yang paling panjang.",
       "pensil": "Pensil: pendek ke panjang",
       "kereta": "Kereta: pendek ke panjang",
@@ -18,6 +19,7 @@
       "terpanjang": "paling panjang"
     },
     "en": {
+      "judul": "Pencils Short to Long",
       "instruksi": "Line up the pencils from the shortest to the longest.",
       "pensil": "Pencils: short to long",
       "kereta": "Trains: short to long",

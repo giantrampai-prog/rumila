@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Laci Uang Warung",
       "instruksi": "Masukkan tiap uang ke laci warung yang gambarnya sama.",
       "koin500": "koin lima ratus",
       "koin1000": "koin seribu",
@@ -17,6 +18,7 @@
       "kertas10000": "uang sepuluh ribu"
     },
     "en": {
+      "judul": "Shop Cash Drawer",
       "instruksi": "Put each coin or note into the shop drawer with the same picture.",
       "koin500": "500 coin",
       "koin1000": "1,000 coin",

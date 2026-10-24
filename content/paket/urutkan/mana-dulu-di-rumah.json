@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Mana Dulu di Rumah?",
       "instruksi": "Lihat dua gambar di rumah, lalu sentuh yang terjadi lebih dulu.",
       "nasi": "Piring nasi",
       "es": "Es batu",
@@ -27,6 +28,7 @@
       "sTiup": "balon besar"
     },
     "en": {
+      "judul": "Which Came First at Home?",
       "instruksi": "Look at the two pictures from the house, then touch the one that happens first.",
       "nasi": "Plate of rice",
       "es": "Ice cube",

@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Stok Buah di Rak",
       "instruksi": "Lihat piktogram stok buah, lalu sentuh rak yang diminta pembeli.",
       "pilihan": "pilihan",
       "apel": "apel",
@@ -19,6 +20,7 @@
       "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
     },
     "en": {
+      "judul": "Fruit Stock on the Shelf",
       "instruksi": "Look at the fruit stock chart, then touch the shelf the customer asks for.",
       "pilihan": "choices",
       "apel": "apples",

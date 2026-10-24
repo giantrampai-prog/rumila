@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Lanjut Hitung Sampai 20",
       "instruksi": "Robot sudah sampai angka ini: susun kartu berikutnya sampai dua puluh.",
       "n9": "9",
       "n10": "10",
@@ -28,6 +29,7 @@
       "dari15": "Lanjutkan dari 15"
     },
     "en": {
+      "judul": "Keep Counting to 20",
       "instruksi": "Robot has reached this number: lay out the next cards, up to twenty.",
       "n9": "9",
       "n10": "10",

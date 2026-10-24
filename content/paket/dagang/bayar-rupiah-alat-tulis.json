@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Beli Alat Tulis",
       "instruksi": "Robot beli alat tulis: lihat harganya, lalu bayar pas dengan uang di laci.",
       "pensil": "pensil",
       "penghapus": "penghapus",
@@ -17,6 +18,7 @@
       "tas": "tas pensil"
     },
     "en": {
+      "judul": "Buying Stationery",
       "instruksi": "Robot buys school supplies: read the price, then pay exactly with the money in the drawer.",
       "pensil": "pencil",
       "penghapus": "eraser",

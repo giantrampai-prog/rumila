@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Tebak Petak Berikutnya",
       "instruksi": "Sebelum tiap blok dijalankan, tunjuk petak tempat robot akan berdiri, lalu tekan langkah."
     },
     "en": {
+      "judul": "Guess the Next Square",
       "instruksi": "Before each block runs, point to the square where robot will stand, then press step."
     }
   },

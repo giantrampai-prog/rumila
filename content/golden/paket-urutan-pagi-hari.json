@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Urutan Pagi Hari",
       "instruksi": "Susun gambar supaya pagi hari berurutan.",
       "pagi": "Pagi hari",
       "bangun": "bangun tidur",
@@ -21,6 +22,7 @@
       "tumbuh": "tunas tumbuh"
     },
     "en": {
+      "judul": "Morning Routine",
       "instruksi": "Put the pictures in order so The morning makes sense.",
       "pagi": "The morning",
       "bangun": "wake up",

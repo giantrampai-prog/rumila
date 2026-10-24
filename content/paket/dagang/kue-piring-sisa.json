@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kue yang Tersisa",
       "instruksi": "Beberapa kue dibeli lalu piring ditutup: taruh lilin sebanyak kue yang tersisa.",
       "kue": "kue",
       "lilin": "lilin"
     },
     "en": {
+      "judul": "Cakes Left Over",
       "instruksi": "Some cakes were bought and the plate was covered: put down one candle for each cake left.",
       "kue": "cakes",
       "lilin": "candles"

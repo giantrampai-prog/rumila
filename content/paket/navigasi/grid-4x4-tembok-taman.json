@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Tembok di Taman Luas",
       "instruksi": "Lihat tembok dan arah robot, lalu susun program utuh sebelum dijalankan."
     },
     "en": {
+      "judul": "Wall in the Big Garden",
       "instruksi": "Look at the walls and the robot's direction, then build the whole program before running it."
     }
   },

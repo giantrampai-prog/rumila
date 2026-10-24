@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Meleset Dua Kali",
       "instruksi": "Program ini meleset dua kali: jalankan, perhatikan, lalu perbaiki tepat dua blok."
     },
     "en": {
+      "judul": "Missed Twice",
       "instruksi": "This program goes wrong twice: run it, watch closely, then fix exactly two blocks."
     }
   },

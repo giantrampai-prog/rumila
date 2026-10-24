@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Bebek Berkumpul",
       "instruksi": "Bebek dari dua sisi berkumpul di kolam: geser penanda ke jumlah semua bebek.",
       "bebek": "bebek",
       "katak": "katak",
       "angsa": "angsa"
     },
     "en": {
+      "judul": "Ducks Gather",
       "instruksi": "Ducks from both sides gather in the pond: slide the marker to how many ducks there are in all.",
       "bebek": "ducks",
       "katak": "frogs",

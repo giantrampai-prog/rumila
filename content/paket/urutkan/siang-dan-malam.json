@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Siang dan Malam",
       "instruksi": "Susun gambar supaya kegiatan urut dari awal sampai akhir.",
       "makan": "Makan siang robot",
       "tidur": "Robot tidur malam",
@@ -22,6 +23,7 @@
       "bobo": "tidur"
     },
     "en": {
+      "judul": "Day and Night",
       "instruksi": "Put the pictures in order so the activity goes from start to finish.",
       "makan": "The robot's lunch",
       "tidur": "The robot's bedtime",

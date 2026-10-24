@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kasir Toko Mainan",
       "instruksi": "Robot jadi kasir toko mainan: pembeli bayar sepuluh ribu, beri kembalian yang pas.",
       "kelereng": "kelereng",
       "yoyo": "yoyo",
@@ -17,6 +18,7 @@
       "boneka": "boneka"
     },
     "en": {
+      "judul": "Toy Shop Cashier",
       "instruksi": "Robot is the toy-shop cashier: the customer pays ten thousand, give the right change.",
       "kelereng": "marbles",
       "yoyo": "yo-yo",

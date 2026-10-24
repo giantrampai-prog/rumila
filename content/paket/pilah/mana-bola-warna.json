@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Bola Warna Apa?",
       "instruksi": "Dengarkan warna yang disebut, lalu sentuh bola yang warnanya itu.",
       "pilihan": "pilihan",
       "tMerah": "Mana yang merah?",
@@ -18,6 +19,7 @@
       "bola": "bola"
     },
     "en": {
+      "judul": "Which Color Ball?",
       "instruksi": "Listen to the colour, then touch the ball of that colour.",
       "pilihan": "choices",
       "tMerah": "Which one is red?",

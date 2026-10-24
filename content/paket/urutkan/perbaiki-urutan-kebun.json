@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Urutan Kebun Tertukar",
       "instruksi": "Satu gambar di kebun tertukar: tukar dua gambar supaya urutannya benar.",
       "tanam": "Menanam bunga",
       "layang": "Main layang-layang",
@@ -21,6 +22,7 @@
       "terbang": "layang-layang terbang"
     },
     "en": {
+      "judul": "Mixed-Up Garden Order",
       "instruksi": "One garden picture is swapped: swap two pictures to fix the order.",
       "tanam": "Planting a flower",
       "layang": "Flying a kite",

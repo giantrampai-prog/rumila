@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Panjang Pendek di Meja",
       "instruksi": "Di meja robot ada dua benda sejenis: sentuh yang lebih panjang atau lebih pendek.",
       "pilihan": "pilihan",
       "pensil": "pensil",
@@ -20,6 +21,7 @@
       "tPendek": "Mana yang lebih pendek?"
     },
     "en": {
+      "judul": "Long and Short on the Desk",
       "instruksi": "On the robot's desk are two of the same thing: touch the longer or the shorter one.",
       "pilihan": "choices",
       "pensil": "pencil",

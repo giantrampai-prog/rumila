@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Rak Angka Kandang",
       "instruksi": "Hitung hewan di kandang, lalu taruh di rak yang angkanya pas.",
       "n1": "1",
       "n2": "2",
@@ -24,6 +25,7 @@
       "kelinci": "kelinci"
     },
     "en": {
+      "judul": "Barn Number Shelf",
       "instruksi": "Count the animals in the pen, then put them on the shelf with the matching number.",
       "n1": "1",
       "n2": "2",

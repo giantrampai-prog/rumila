@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Berangkat Sekolah",
       "instruksi": "Susun gambar supaya berangkat sekolah dengan urutan yang benar.",
       "sekolah": "Robot ke sekolah",
       "teh": "Membuat teh hangat",
@@ -21,6 +22,7 @@
       "minum": "minum teh"
     },
     "en": {
+      "judul": "Off to School",
       "instruksi": "Put the pictures in order so getting to school the right way.",
       "sekolah": "Robot goes to school",
       "teh": "Making warm tea",

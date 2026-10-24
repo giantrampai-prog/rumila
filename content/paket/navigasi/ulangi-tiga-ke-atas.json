@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Ulangi Tiga ke Atas",
       "instruksi": "Robot naik tiga petak tapi rak cuma dua slot: pakai 'ulangi 3' berisi maju."
     },
     "en": {
+      "judul": "Repeat Three Upward",
       "instruksi": "Robot climbs three squares but the rack has two slots: use 'repeat 3' with forward."
     }
   },

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Satu Blok Keliru",
       "instruksi": "Robot meleset karena satu blok keliru: temukan dan ganti blok itu supaya sampai bintang."
     },
     "en": {
+      "judul": "One Wrong Block",
       "instruksi": "Robot misses because one block is wrong: find it and change it so he reaches the star."
     }
   },

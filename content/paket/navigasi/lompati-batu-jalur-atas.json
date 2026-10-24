@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Mendaki Bukit Berbatu",
       "instruksi": "Robot mendaki bukit berbatu: taruh 'lompat' hanya di petak batu, sisanya 'maju'."
     },
     "en": {
+      "judul": "Climbing the Rocky Hill",
       "instruksi": "Robot climbs a rocky hill: put 'jump' only on the rock squares, 'forward' for the rest."
     }
   },

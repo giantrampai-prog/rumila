@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Anak Ayam di Kandang",
       "instruksi": "Sentuh anak ayam satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "anakayam": "anak ayam",
       "bebek": "bebek",
       "kelinci": "kelinci"
     },
     "en": {
+      "judul": "Chicks in the Coop",
       "instruksi": "Touch each chick one at a time as you count, then slide the marker to the number.",
       "anakayam": "chicks",
       "bebek": "ducks",

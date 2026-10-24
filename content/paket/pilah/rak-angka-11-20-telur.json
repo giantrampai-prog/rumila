@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Rak Angka Telur",
       "instruksi": "Hitung telur di keranjang, lalu taruh di rak yang angkanya pas.",
       "n11": "11",
       "n12": "12",
@@ -24,6 +25,7 @@
       "biji": "biji"
     },
     "en": {
+      "judul": "Egg Number Shelf",
       "instruksi": "Count the eggs in the basket, then put them on the shelf with the matching number.",
       "n11": "11",
       "n12": "12",

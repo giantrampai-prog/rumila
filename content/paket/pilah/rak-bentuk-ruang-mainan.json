@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Rak Bentuk Mainan",
       "instruksi": "Taruh tiap mainan di rak yang bentuknya sama: bola, kubus, atau tabung.",
       "bola": "bola",
       "kubus": "kubus",
@@ -24,6 +25,7 @@
       "kayu": "gelondong kayu"
     },
     "en": {
+      "judul": "Toy Shape Shelf",
       "instruksi": "Put each toy on the shelf with the same shape: sphere, cube or cylinder.",
       "bola": "sphere",
       "kubus": "cube",

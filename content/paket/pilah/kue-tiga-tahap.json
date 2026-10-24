@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Tiga Tahap Membuat Kue",
       "instruksi": "Robot mau membuat kue: masukkan tiap langkah kecil ke tahap besarnya.",
       "siapkan": "siapkan",
       "campur": "campur",
@@ -21,6 +22,7 @@
       "jadi": "kue matang"
     },
     "en": {
+      "judul": "Three Baking Stages",
       "instruksi": "Robot is baking a cake: put each small step into its big stage.",
       "siapkan": "get ready",
       "campur": "mix",

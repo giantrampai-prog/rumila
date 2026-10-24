@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Keranjang Warna",
       "instruksi": "Masukkan setiap benda ke keranjang yang warnanya sama.",
       "merah": "merah",
       "biru": "biru",
@@ -24,6 +25,7 @@
       "katak": "katak"
     },
     "en": {
+      "judul": "Color Baskets",
       "instruksi": "Put each object into the basket with the same colour.",
       "merah": "red",
       "biru": "blue",

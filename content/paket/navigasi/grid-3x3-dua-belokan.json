@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Memutari Tembok Taman",
       "instruksi": "Ada tembok di taman: susun program maju dan belok supaya robot memutar sampai bintang."
     },
     "en": {
+      "judul": "Around the Garden Wall",
       "instruksi": "There is a wall in the park: build a forward-and-turn program so robot goes around to the star."
     }
   },

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Ulangi Maju dan Belok",
       "instruksi": "Isi blok ulangi dengan dua perintah, lalu pilih berapa kali supaya robot tepat di bintang."
     },
     "en": {
+      "judul": "Repeat Forward and Turn",
       "instruksi": "Fill the repeat block with two commands, then choose how many times so robot lands right on the star."
     }
   },

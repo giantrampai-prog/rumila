@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Genap Lima di Pasar",
       "instruksi": "Pembeli menunjukkan koinnya sebentar lalu menggenggamnya: tambahkan koin supaya pas lima.",
       "mangga": "mangga",
       "nanas": "nanas"
     },
     "en": {
+      "judul": "Make Five at the Market",
       "instruksi": "The customer flashes their coins then hides them: add coins to make exactly five.",
       "mangga": "mango",
       "nanas": "pineapple"

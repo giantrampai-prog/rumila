@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Bunga di Taman",
       "instruksi": "Bunga di taman tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "tulip": "tulip",
       "matahari": "bunga matahari",
       "kupu": "kupu-kupu"
     },
     "en": {
+      "judul": "Flowers in the Park",
       "instruksi": "The garden flowers are scattered: touch each one as you count, then slide the marker to the number.",
       "tulip": "tulips",
       "matahari": "sunflowers",

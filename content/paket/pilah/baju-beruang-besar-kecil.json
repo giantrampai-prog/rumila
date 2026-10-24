@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Baju Beruang",
       "instruksi": "Beruang besar dan beruang kecil mau berpakaian: sentuh yang diminta.",
       "pilihan": "pilihan",
       "baju": "baju",
@@ -20,6 +21,7 @@
       "tKecil": "Mana yang lebih kecil?"
     },
     "en": {
+      "judul": "Bear Outfits",
       "instruksi": "Big bear and little bear are getting dressed: touch the one asked for.",
       "pilihan": "choices",
       "baju": "shirt",

@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Ulangi Berapa Kali?",
       "instruksi": "Hitung petak sampai bintang, jangan hitung petak robot, lalu pilih angka ulangi yang pas."
     },
     "en": {
+      "judul": "Repeat How Many Times?",
       "instruksi": "Count the squares to the star, not the robot's own square, then pick the right repeat number."
     }
   },

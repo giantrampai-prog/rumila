@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Pasar Buah Ramai",
       "instruksi": "Pembeli minta banyak buah: dengarkan, lalu ambil tepat sebanyak itu.",
       "jeruk": "jeruk",
       "mangga": "mangga",
@@ -16,6 +17,7 @@
       "apel": "apel"
     },
     "en": {
+      "judul": "Busy Fruit Market",
       "instruksi": "The customer wants lots of fruit: listen, then take exactly that many.",
       "jeruk": "oranges",
       "mangga": "mangoes",

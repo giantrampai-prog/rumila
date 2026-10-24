@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kartu Titik",
       "instruksi": "Hitung bendanya, lalu taruh di kartu yang titiknya sama banyak.",
       "n1": "1",
       "n2": "2",
@@ -19,6 +20,7 @@
       "ikan": "ikan"
     },
     "en": {
+      "judul": "Dot Cards",
       "instruksi": "Count the things, then put them on the card with the same number of dots.",
       "n1": "1",
       "n2": "2",

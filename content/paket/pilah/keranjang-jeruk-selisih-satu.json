@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Keranjang Jeruk: Mana Lebih Banyak?",
       "instruksi": "Dua keranjang jeruk hampir sama: sentuh yang jeruknya lebih banyak.",
       "pilihan": "pilihan",
       "jeruk": "jeruk",
       "tBanyak": "Keranjang mana yang jeruknya lebih banyak?"
     },
     "en": {
+      "judul": "Orange Baskets: Which Has More?",
       "instruksi": "Two baskets of oranges look alike: touch the one with more oranges.",
       "pilihan": "choices",
       "jeruk": "oranges",

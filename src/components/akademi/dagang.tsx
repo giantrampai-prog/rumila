@@ -7,7 +7,16 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, 
 import type { PaketDagang } from "@akademi/schema";
 import type { JawabanDagang, RondeDagang } from "@akademi/mechanics";
 import { Icon } from "@/components/ui";
-import { ucapkan } from "@/lib/akademi/suara";
+import { angkaKata, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
+
+/** Pesanan "Aku mau 3 jeruk dan 2 apel." → potongan pra-rekam ElevenLabs; selain pola itu dibacakan utuh. */
+function ucapPesanan(teks: string) {
+  const m = /^Aku mau (\d+) ([^.]+?)(?: dan (\d+) ([^.]+?))?\.$/.exec(teks);
+  if (!m) return ucapkan(teks);
+  const pot = ["Aku mau", angkaKata(Number(m[1])), m[2]];
+  if (m[3]) pot.push("dan", angkaKata(Number(m[3])), m[4]);
+  ucapkanBerurutan(pot);
+}
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
@@ -81,7 +90,7 @@ function Pembeli({
       </div>
       <button
         type="button"
-        onClick={() => { sfx.tap(); ucapkan(teksUcap); }}
+        onClick={() => { sfx.tap(); ucapPesanan(teksUcap); }}
         aria-label={`Dengar pesanan: ${teksUcap}`}
         className="relative min-h-14 flex-1 rounded-[20px] bg-white px-3 py-2 text-left active:scale-[.98]"
         style={{ boxShadow: "0 4px 0 rgba(43,29,78,.12)", color: INK }}

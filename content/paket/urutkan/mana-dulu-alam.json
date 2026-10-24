@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Mana Dulu di Alam?",
       "instruksi": "Lihat dua gambar, lalu sentuh yang terjadi lebih dulu.",
       "telur": "Telur dan anak ayam",
       "biji": "Biji dan pohon",
@@ -27,6 +28,7 @@
       "sBuah": "apel matang"
     },
     "en": {
+      "judul": "Which Came First in Nature?",
       "instruksi": "Look at the two pictures, then touch the one that happens first.",
       "telur": "Egg and chick",
       "biji": "Seed and tree",

@@ -9,11 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Ikan yang Tersisa",
       "instruksi": "Beberapa ikan ditangkap lalu kolam berkabut: taruh pelet sebanyak ikan yang tersisa.",
       "ikan": "ikan",
       "pelet": "pelet"
     },
     "en": {
+      "judul": "Fish Left Over",
       "instruksi": "Some fish were caught and the pond fogged up: put down one pellet for each fish left.",
       "ikan": "fish",
       "pelet": "pellets"

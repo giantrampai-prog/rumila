@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Lompat di Petak Batu",
       "instruksi": "Lihat di mana batunya: taruh 'lompat' tepat di situ dan 'maju' di petak kosong, lalu jalan."
     },
     "en": {
+      "judul": "Jump at the Rock",
       "instruksi": "See where the rock is: put 'jump' right there and 'forward' for the empty squares, then go."
     }
   },

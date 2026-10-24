@@ -160,8 +160,9 @@ function Runner({ paket }: { paket: ContentPack }) {
   );
 }
 
-/** Judul aktivitas dari id paket (slug → Kata Kapital) */
+/** Judul aktivitas: locale.id.judul; cadangan dari id paket (slug → Kata Kapital) */
 export function judulPaket(p: ContentPack) {
+  if (p.locale.id.judul) return p.locale.id.judul;
   return p.id.split("-").map((s) => (/^\d/.test(s) ? s : s.charAt(0).toUpperCase() + s.slice(1))).join(" ");
 }
 

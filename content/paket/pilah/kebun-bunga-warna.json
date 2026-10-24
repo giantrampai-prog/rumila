@@ -9,6 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kebun Bunga Warna",
       "instruksi": "Masukkan tiap bunga dan buah dari kebun ke keranjang yang warnanya sama.",
       "merah": "merah",
       "biru": "biru",
@@ -24,6 +25,7 @@
       "timun": "timun"
     },
     "en": {
+      "judul": "Colorful Flower Garden",
       "instruksi": "Put each flower and fruit from the garden into the basket with the same colour.",
       "merah": "red",
       "biru": "blue",

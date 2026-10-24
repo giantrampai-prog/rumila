@@ -9,12 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Kotak Pos Bentuk",
       "instruksi": "Masukkan tiap keping ke lubang kotak pos yang bentuknya sama.",
       "lingkaran": "lingkaran",
       "segitiga": "segitiga",
       "kotak": "kotak"
     },
     "en": {
+      "judul": "Shape Mailbox",
       "instruksi": "Post each piece through the hole with the same shape.",
       "lingkaran": "circle",
       "segitiga": "triangle",

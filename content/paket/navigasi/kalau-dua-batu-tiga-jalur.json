@@ -9,9 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
+      "judul": "Dua Batu Pindah-Pindah",
       "instruksi": "Dua batu di tiap jalur dan letaknya berbeda-beda: susun satu program dengan blok kalau yang lolos di ketiganya."
     },
     "en": {
+      "judul": "Two Moving Rocks",
       "instruksi": "Two rocks on each path in different places: build one program with the if-block that passes all three."
     }
   },
