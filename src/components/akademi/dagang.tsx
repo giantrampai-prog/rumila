@@ -164,25 +164,69 @@ function StripAngka({ min, max, dipilih, sorot, onPilih, disabled }: { min: numb
   // Pilihan selalu sampai minimal 10 agar anak tidak bisa menebak dari sedikit tombol; soal tetap mengikuti jenjang.
   const atas = Math.max(max, PILIHAN_MINIMAL);
   const angka = useMemo(() => Array.from({ length: Math.max(0, atas - min + 1) }, (_, k) => min + k), [min, atas]);
+  // Penanda kuning: diseret dari parkiran ke angka (atau angka diketuk langsung); dilepas = jawaban.
+  const [seret, setSeret] = useState(false);
+  const [geser, setGeser] = useState<number | null>(null);
+  const angkaDi = (x: number, y: number) => {
+    const el = document.elementFromPoint(x, y)?.closest<HTMLElement>("[data-angka]");
+    return el ? Number(el.dataset.angka) : null;
+  };
+  const tampil = seret ? geser : (dipilih ?? null);
   return (
-    <div className="flex flex-wrap justify-center gap-2 rounded-[20px] bg-white/80 p-2" role="group" aria-label="Pilih angka">
+    <div
+      className="flex select-none flex-wrap items-center justify-center gap-2 rounded-[20px] bg-white/80 p-2 pt-5"
+      style={{ touchAction: "none" }}
+      role="group"
+      aria-label="Geser penanda ke angka"
+      onPointerDown={(e) => {
+        if (disabled) return;
+        e.currentTarget.setPointerCapture(e.pointerId);
+        setSeret(true);
+        setGeser(angkaDi(e.clientX, e.clientY));
+      }}
+      onPointerMove={(e) => { if (seret) setGeser(angkaDi(e.clientX, e.clientY)); }}
+      onPointerUp={() => {
+        if (!seret) return;
+        setSeret(false);
+        if (geser != null) onPilih(geser);
+      }}
+      onPointerCancel={() => setSeret(false)}
+    >
+      <span
+        className={`flex size-12 shrink-0 cursor-grab items-center justify-center rounded-full ${tampil == null && !disabled ? "akademi-bounce" : ""}`}
+        style={{ background: tampil == null ? "#ffd23f" : "rgba(11,37,69,.08)", boxShadow: tampil == null ? "0 4px 0 #d9a400" : "none", opacity: disabled ? 0.6 : 1 }}
+        aria-hidden
+      >
+        {tampil == null && <Penanda />}
+      </span>
       {angka.map((n) => {
-        const aktif = dipilih === n;
+        const aktif = tampil === n;
         return (
           <button
             key={n}
             type="button"
+            data-angka={n}
             disabled={disabled}
-            onClick={() => onPilih(n)}
-            className={`flex size-16 items-center justify-center rounded-full transition-transform active:scale-90 disabled:opacity-60 ${sorot === n ? "akademi-bounce" : ""}`}
+            onClick={(e) => { if (e.detail === 0) onPilih(n); }}
+            className={`relative flex size-16 items-center justify-center rounded-full transition-transform active:scale-90 disabled:opacity-60 ${sorot === n ? "akademi-bounce" : ""}`}
             style={{ ...Tebal, fontSize: 28, background: aktif ? "#0786eb" : "#fff", color: aktif ? "#fff" : INK, boxShadow: `0 4px 0 ${aktif ? "#0567c2" : "rgba(11,37,69,.15)"}${sorot === n ? ", 0 0 0 4px #ffd23f" : ""}` }}
             aria-label={`Angka ${n}`}
           >
             {n}
+            {aktif && <span className="pointer-events-none absolute -top-5 left-1/2 -translate-x-1/2"><Penanda /></span>}
           </button>
         );
       })}
     </div>
+  );
+}
+
+/** Penanda strip: segitiga kuning menunjuk ke bawah. */
+function Penanda() {
+  return (
+    <svg width="28" height="24" viewBox="0 0 28 24" aria-hidden>
+      <path d="M3 3h22L14 21z" fill="#ffd23f" stroke="#0b2545" strokeWidth="2.5" strokeLinejoin="round" />
+    </svg>
   );
 }
 
