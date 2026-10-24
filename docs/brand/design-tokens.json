@@ -1,0 +1,135 @@
+{
+  "name": "RINOYA Academy",
+  "version": 1,
+  "color": {
+    "themes": [
+      { "id": "anak", "name": "Anak" },
+      { "id": "wali", "name": "Wali" }
+    ],
+    "tokens": [
+      { "name": "brand-blue", "value": "#0786eb", "usage": "Biru RINOYA dari logo (huruf R dan RINO). Untuk bidang besar, ikon, dan judul ≥24px. Teks putih di atasnya hanya untuk label tebal ≥19px (3,7:1)." },
+      { "name": "brand-blue-deep", "value": "#0567c2", "usage": "Biru tua untuk teks tautan dan tombol bertulisan kecil; putih di atasnya 5,6:1. Juga warna tepi bawah tombol biru." },
+      { "name": "brand-blue-tint", "value": "#e3f1fd", "usage": "Latar lembut untuk sorotan biru, misalnya chip terpilih. Teks `ink` atau `brand-blue-deep` di atasnya." },
+      { "name": "brand-orange", "value": "#fd861d", "usage": "Oranye RINOYA dari logo (YA). Aksen seru: tombol main, hadiah, notifikasi pencapaian. Teks di atasnya selalu `ink`, tidak pernah putih." },
+      { "name": "brand-orange-deep", "value": "#a34a00", "usage": "Oranye tua untuk teks oranye di atas `page`, `surface`, atau `brand-orange-tint` (≥5:1)." },
+      { "name": "brand-orange-tint", "value": "#ffead6", "usage": "Latar lembut untuk kartu hadiah dan pesan pencapaian." },
+      { "name": "star-gold", "value": "#fdb724", "usage": "Bintang di logo. Hanya untuk bintang, lencana, dan pangkat. Teks `ink` di atasnya (8,8:1)." },
+      { "name": "star-gold-tint", "value": "#fff3d1", "usage": "Latar koleksi stiker dan lencana." },
+      { "name": "academy-navy", "value": "#135385", "usage": "Biru dongker tulisan ACADEMY di logo. Untuk label resmi: sertifikat, kop rapor. Putih di atasnya 8,1:1." },
+      { "name": "page", "value": { "anak": "#fff8ee", "wali": "#f4f7fb" }, "usage": "Latar halaman. Anak: krem hangat. Wali: putih kebiruan yang tenang." },
+      { "name": "surface", "value": { "anak": "#ffffff", "wali": "#ffffff" }, "usage": "Kartu, lembar, dan panel di atas `page`." },
+      { "name": "fill", "value": { "anak": "#fff0da", "wali": "#eaf0f7" }, "usage": "Isian lembut: lintasan bilah progres, kolom input, ubin kosong." },
+      { "name": "line", "value": { "anak": "#f0e4d2", "wali": "#d8e3f0" }, "usage": "Garis pemisah dekoratif. Bukan untuk tepi kontrol." },
+      { "name": "line-strong", "value": "#7d8da6", "usage": "Tepi kontrol (input, kotak centang) dan cincin non-fokus; ≥3,2:1 di `page` dan `surface` kedua tema." },
+      { "name": "ink", "value": "#0b2545", "usage": "Teks utama di `page`, `surface`, `fill`, semua tint, `brand-orange`, dan `star-gold`." },
+      { "name": "ink-2", "value": "#4a5a75", "usage": "Teks kedua (keterangan, subjudul) di `page` dan `surface` kedua tema (≥6,5:1)." },
+      { "name": "ink-3", "value": "#5b6b85", "usage": "Teks redup (waktu, metadata) di `page`, `surface`, dan `fill` (≥4,7:1). Jangan lebih pucat dari ini." },
+      { "name": "action", "value": { "anak": "{brand-blue}", "wali": "{brand-blue-deep}" }, "usage": "Isian tombol utama. Anak memakai biru logo dengan label ≥20px tebal; wali memakai biru tua karena labelnya lebih kecil." },
+      { "name": "on-action", "value": "#ffffff", "usage": "Label di atas `action`, `academy-navy`, dan warna pilar." },
+      { "name": "focus", "value": "#0b2545", "usage": "Cincin fokus keyboard: garis padat 3px, jarak 2px; ≥13:1 di semua permukaan terang." },
+      { "name": "positive", "value": "#127a43", "usage": "Benar, dikuasai, selesai. Teks di `surface` (5,4:1) dan `positive-tint`. Selalu disertai ikon atau kata." },
+      { "name": "positive-tint", "value": "#e3f4ea", "usage": "Latar umpan balik benar." },
+      { "name": "negative", "value": "#c0283a", "usage": "Galat sistem untuk wali. Untuk anak, jawaban salah TIDAK memakai merah: pakai `brand-orange-tint` dan ajakan mencoba lagi." },
+      { "name": "negative-tint", "value": "#fde6e8", "usage": "Latar pesan galat untuk wali." },
+      { "name": "pilar-mat", "value": "#5b4bff", "usage": "Pilar Mathematics & Logical Thinking. Ubin dan aksen; label putih (5,4:1)." },
+      { "name": "pilar-sains", "value": "#0a8a7c", "usage": "Pilar Science & Discovery. Label putih tebal ≥19px (4,3:1)." },
+      { "name": "pilar-bahasa", "value": "#d12a7c", "usage": "Pilar English & Communication. Label putih (4,9:1)." },
+      { "name": "pilar-teknologi", "value": "#8b45f5", "usage": "Pilar Technology & Digital Literacy. Label putih (4,9:1)." },
+      { "name": "pilar-kreativitas", "value": "#d9480f", "usage": "Pilar Creativity & Innovation. Label putih tebal ≥19px (4,3:1)." },
+      { "name": "pilar-karakter", "value": "#12904a", "usage": "Pilar Character & Life Skills. Label putih tebal ≥19px (4,1:1)." }
+    ]
+  },
+  "type": {
+    "fonts": [],
+    "families": {
+      "display": "\"Baloo 2\", Nunito, system-ui, sans-serif",
+      "body": "Nunito, system-ui, sans-serif",
+      "ui": "\"Plus Jakarta Sans\", system-ui, sans-serif"
+    },
+    "groups": [
+      {
+        "name": "Judul",
+        "family": "display",
+        "styles": [
+          { "name": "display-xl", "fontSize": "56px", "lineHeight": 1, "fontWeight": 800, "letterSpacing": "-0.01em", "sample": "Ayo berpetualang!", "usage": "Satu judul besar per layar: pembuka dunia, layar naik pangkat." },
+          { "name": "display", "fontSize": "40px", "lineHeight": 1.05, "fontWeight": 800, "sample": "Dunia Angkasa", "usage": "Judul halaman anak." },
+          { "name": "title", "fontSize": "28px", "lineHeight": 1.15, "fontWeight": 800, "sample": "Misi 3: Hitung bintang", "usage": "Judul kartu petualangan dan bagian." },
+          { "name": "subtitle", "fontSize": "22px", "lineHeight": 1.2, "fontWeight": 700, "sample": "Primary 1 · Pilot", "usage": "Subjudul, nama jenjang, angka skor anak." }
+        ]
+      },
+      {
+        "name": "Anak · Early Years",
+        "family": "body",
+        "styles": [
+          { "name": "ey-body", "fontSize": "22px", "lineHeight": "30px", "fontWeight": 700, "sample": "Pilih buah yang warnanya merah.", "usage": "Instruksi untuk usia 3–6. Maksimal 8 kata per kalimat, selalu ada tombol suara." },
+          { "name": "ey-label", "fontSize": "20px", "lineHeight": "24px", "fontWeight": 800, "sample": "Main lagi", "usage": "Label tombol Early Years. Satu atau dua kata." }
+        ]
+      },
+      {
+        "name": "Anak · Primary",
+        "family": "body",
+        "styles": [
+          { "name": "pr-body", "fontSize": "18px", "lineHeight": "26px", "fontWeight": 600, "sample": "Susun langkah agar robot sampai ke bintang.", "usage": "Instruksi dan cerita untuk SD 1–6." },
+          { "name": "pr-label", "fontSize": "17px", "lineHeight": "22px", "fontWeight": 800, "sample": "Cek jawaban", "usage": "Label tombol dan tab Primary." },
+          { "name": "pr-small", "fontSize": "15px", "lineHeight": "21px", "fontWeight": 700, "sample": "3 dari 5 misi selesai", "usage": "Keterangan kecil, hanya di Primary atas (SD 4–6)." }
+        ]
+      },
+      {
+        "name": "Wali",
+        "family": "ui",
+        "styles": [
+          { "name": "wali-heading", "fontSize": "22px", "lineHeight": "28px", "fontWeight": 700, "letterSpacing": "-0.02em", "sample": "Rapor Nayla", "usage": "Judul halaman portal wali." },
+          { "name": "wali-body", "fontSize": "15px", "lineHeight": "23px", "fontWeight": 500, "sample": "Nayla sudah menguasai 12 dari 18 kompetensi Early Years 3.", "usage": "Teks isi portal wali." },
+          { "name": "wali-label", "fontSize": "13px", "lineHeight": "17px", "fontWeight": 600, "sample": "Kompetensi dikuasai", "usage": "Label stat, kepala tabel, tab." },
+          { "name": "wali-caption", "fontSize": "12px", "lineHeight": "17px", "fontWeight": 500, "sample": "Diperbarui 24 Okt 2026, 19.40 WIB", "usage": "Metadata dan catatan kaki." },
+          { "name": "wali-number", "fontSize": "32px", "lineHeight": "36px", "fontWeight": 700, "letterSpacing": "-0.02em", "sample": "12/18", "usage": "Angka stat utama. Pakai tabular-nums." }
+        ]
+      }
+    ]
+  },
+  "spacing": {
+    "tokens": [
+      { "name": "space-1", "value": "4px", "usage": "Jarak ikon ke teks di dalam chip." },
+      { "name": "space-2", "value": "8px", "usage": "Jarak antar chip, jarak kecil di dalam tombol." },
+      { "name": "space-3", "value": "12px", "usage": "Padding chip dan lencana." },
+      { "name": "space-4", "value": "16px", "usage": "Padding kartu wali; tepi halaman minimum di HP." },
+      { "name": "space-5", "value": "20px", "usage": "Padding kartu anak Primary." },
+      { "name": "space-6", "value": "24px", "usage": "Padding kartu anak Early Years; jarak antar kartu." },
+      { "name": "space-7", "value": "28px", "usage": "Jarak judul ke isi pada layar anak." },
+      { "name": "space-8", "value": "32px", "usage": "Jarak antar bagian di portal wali." },
+      { "name": "space-9", "value": "40px", "usage": "Jarak antar bagian di layar anak." },
+      { "name": "space-10", "value": "48px", "usage": "Ruang atas layar pembuka." },
+      { "name": "space-11", "value": "56px", "usage": "Ruang lega di sekitar karakter atau objek 3D." },
+      { "name": "space-12", "value": "72px", "usage": "Jarak bagian di halaman pemasaran dan sertifikat." }
+    ]
+  },
+  "radius": {
+    "tokens": [
+      { "name": "radius-xs", "value": "8px", "usage": "Tag kecil, sel tabel wali." },
+      { "name": "radius-sm", "value": "12px", "usage": "Input dan tombol wali." },
+      { "name": "radius-md", "value": "16px", "usage": "Tombol ikon anak, ubin kecil." },
+      { "name": "radius-lg", "value": "24px", "usage": "Kartu anak dan kartu wali." },
+      { "name": "radius-xl", "value": "28px", "usage": "Lembar bawah (bottom sheet), panel besar." },
+      { "name": "radius-2xl", "value": "32px", "usage": "Kartu pahlawan dunia petualangan." },
+      { "name": "radius-pill", "value": "999px", "usage": "Tombol anak, chip, lencana jenjang, bilah progres." }
+    ]
+  },
+  "shadow": {
+    "note": "Anak memakai bayangan padat ke bawah (terasa bisa ditekan). Wali memakai bayangan lembut.",
+    "tokens": [
+      { "name": "lift-1", "value": { "anak": "0 4px 0 rgba(11,37,69,0.10)", "wali": "0 1px 2px rgba(11,37,69,0.04), 0 12px 32px rgba(11,37,69,0.06)" }, "usage": "Kartu dan ubin yang bisa diketuk." },
+      { "name": "lift-2", "value": { "anak": "0 6px 0 rgba(11,37,69,0.14)", "wali": "0 30px 80px rgba(11,37,69,0.12)" }, "usage": "Lembar, dialog, kartu terpilih." },
+      { "name": "edge-action", "value": { "anak": "0 5px 0 #0567c2", "wali": "0 1px 0 #0a4a8c" }, "usage": "Tepi bawah tombol `action`. Saat ditekan, tombol turun 3px dan tepinya mengecil." },
+      { "name": "edge-orange", "value": "0 5px 0 #c96510", "usage": "Tepi bawah tombol oranye (main, hadiah)." }
+    ]
+  },
+  "target": {
+    "note": "Ukuran sentuh minimum per lapis usia.",
+    "tokens": [
+      { "name": "target-early", "value": "64px", "usage": "Early Years 1–3 (PAUD–TK B, 3–6 th): tinggi tombol dan ubin minimum." },
+      { "name": "target-primary-low", "value": "56px", "usage": "Primary 1–3 (SD 1–3, 6–9 th)." },
+      { "name": "target-primary-high", "value": "48px", "usage": "Primary 4–6 (SD 4–6, 9–12 th)." },
+      { "name": "target-wali", "value": "44px", "usage": "Portal wali." }
+    ]
+  }
+}
