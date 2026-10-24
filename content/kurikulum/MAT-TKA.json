@@ -1,0 +1,489 @@
+{
+  "versi": "0.1.0",
+  "kompetensi": [
+    {
+      "id": "MAT.TKA.BILANGAN-1-10.01",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BILANGAN-1-10",
+        "nama": {
+          "id": "Bilangan 1–10",
+          "en": "Numbers 1–10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menghitung 1 sampai 10 benda dengan menunjuk satu per satu",
+        "en": "I can count 1 to 10 objects by pointing to each one"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BILANGAN-1-5.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.01",
+          "note": "pendahulu; di TK A dibatasi 10"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah",
+        "cari"
+      ],
+      "catatan": "Lanjutan PAUD 1–5. Benda tersebar acak, bukan berbaris, supaya anak harus melacak mana yang sudah dihitung. Jebakan: menghitung ulang; tandai benda yang sudah disentuh dengan redup. Knob: jumlah 6–10, susunan rapi → tersebar."
+    },
+    {
+      "id": "MAT.TKA.BILANGAN-1-10.02",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BILANGAN-1-10",
+        "nama": {
+          "id": "Bilangan 1–10",
+          "en": "Numbers 1–10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengambil benda sebanyak angka yang diminta, sampai 10",
+        "en": "I can take as many objects as the number asked for, up to 10"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.01",
+        "MAT.PAUD.BILANGAN-1-5.02"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01",
+          "note": "kardinalitas sampai 10"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.01",
+          "note": "pendahulu"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah"
+      ],
+      "catatan": "Pembeli minta '7 jeruk' lewat suara; yang tersedia 10–12. Jebakan: anak mengambil semua. Knob: jumlah diminta 6–10, jenis buah dalam satu pesanan 1–2."
+    },
+    {
+      "id": "MAT.TKA.BILANGAN-1-10.03",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BILANGAN-1-10",
+        "nama": {
+          "id": "Bilangan 1–10",
+          "en": "Numbers 1–10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mencocokkan kelompok 1 sampai 10 benda dengan kartu angka tanpa titik",
+        "en": "I can match a group of 1 to 10 objects to its number card without dots"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.01",
+        "MAT.PAUD.BILANGAN-1-5.04"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.01",
+          "note": "membaca lambang bilangan 0–20; di TK A sampai 10, hanya membaca"
+        },
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-NUMBER-01"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "dagang"
+      ],
+      "catatan": "Lambang murni, kelanjutan kartu bertitik di PAUD. Kartu 6 dan 9 rawan tertukar; tampilkan garis bawah pada 6 dan 9. Knob: rentang 1–5 → 1–10, jumlah kartu pilihan 2 → 4."
+    },
+    {
+      "id": "MAT.TKA.BILANGAN-1-10.04",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BILANGAN-1-10",
+        "nama": {
+          "id": "Bilangan 1–10",
+          "en": "Numbers 1–10"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa menelusuri angka 1 sampai 5 dengan jari mengikuti panah",
+        "en": "I can trace the numerals 1 to 5 with my finger following the arrows"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Ni.01",
+          "note": "pendahulu: menulis lambang; di TK A hanya menelusuri"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "telusur"
+      ],
+      "catatan": "Pengaya motorik halus, bukan tulisan rapi. Toleransi lebar jalur ±25% tinggi angka, arah goresan mengikuti panah berurutan. Hasil telusuran jadi 'mantra' yang membuka peti. Knob: lebar jalur, panah ditampilkan → disembunyikan."
+    },
+    {
+      "id": "MAT.TKA.BANDING.01",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BANDING",
+        "nama": {
+          "id": "Membandingkan dan mengurutkan",
+          "en": "Comparing and ordering"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih kelompok yang lebih banyak dari dua kelompok sampai 10, meski selisihnya satu",
+        "en": "I can choose which of two groups of up to 10 objects has more, even when the difference is one"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BANDING.01",
+        "MAT.TKA.BILANGAN-1-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "EYFS",
+          "code": "ELG-MATH-PATTERNS-02"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Np.03",
+          "note": "pendahulu: ukuran relatif kuantitas"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang",
+        "pilah"
+      ],
+      "catatan": "Selisih 1 memaksa menghitung kedua kelompok atau memasangkan satu-satu; keduanya dibolehkan dan dicatat sebagai strategi berbeda (latency). Jebakan: benda besar tapi sedikit; dipakai sejak awal di TK A. Knob: selisih 2 → 1, susunan sejajar → acak."
+    },
+    {
+      "id": "MAT.TKA.BANDING.02",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BANDING",
+        "nama": {
+          "id": "Membandingkan dan mengurutkan",
+          "en": "Comparing and ordering"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengurutkan 3 benda dari paling pendek ke paling panjang",
+        "en": "I can put 3 objects in order from shortest to longest"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BANDING.03"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.02",
+          "note": "short, shorter, shortest"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "urutkan",
+        "bangun"
+      ],
+      "catatan": "Seriasi 3 benda sejenis sejajar di garis dasar; dipindah dari PAUD sesuai tinjauan. Jebakan: anak mengurutkan dua ujung lalu menaruh tengah sembarang; beda panjang antar benda minimal 20%. Knob: 3 → 4 benda sebagai pengaya."
+    },
+    {
+      "id": "MAT.TKA.BANDING.03",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BANDING",
+        "nama": {
+          "id": "Membandingkan dan mengurutkan",
+          "en": "Comparing and ordering"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih benda yang lebih berat dari dua benda dengan melihat timbangan jungkat-jungkit",
+        "en": "I can choose the heavier of two objects by looking at a balance scale"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.04",
+          "note": "bahasa heavy, light; di TK A hanya dua benda dengan timbangan"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Berat tidak terlihat; anak menaruh dua benda di timbangan, melihat sisi yang turun, lalu memilih. Jebakan: benda besar tapi ringan (balon vs batu) sengaja dipakai setelah 3 sukses. Pengaya."
+    },
+    {
+      "id": "MAT.TKA.BENTUK-RUANG.01",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BENTUK-RUANG",
+        "nama": {
+          "id": "Bentuk ruang",
+          "en": "3D shapes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah bola, kubus, dan tabung ke rak yang bentuknya sama",
+        "en": "I can sort balls, cubes, and cylinders onto the shelf with the same shape"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.PAUD.BENTUK-DASAR.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.03",
+          "note": "pendahulu: memilah bentuk 3D; tanpa menyebut sisi/rusuk"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.06",
+          "note": "pendahulu: bentuk 2D vs 3D"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "bangun"
+      ],
+      "catatan": "Benda nyata berbentuk ruang (bola sepak, dadu, kaleng), bukan bentuk abstrak, supaya beda dari bentuk datar di PAUD. Jebakan: kaleng dilihat dari atas tampak lingkaran; benda ditampilkan berputar pelan. Knob: 2 → 3 rak."
+    },
+    {
+      "id": "MAT.TKA.BENTUK-RUANG.02",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "BENTUK-RUANG",
+        "nama": {
+          "id": "Bentuk ruang",
+          "en": "3D shapes"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih bentuk yang bisa ditumpuk, bukan yang menggelinding, saat membangun menara",
+        "en": "I can choose shapes that stack, not ones that roll, when building a tower"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BENTUK-RUANG.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.03",
+          "note": "sifat bentuk 3D: menggelinding / menumpuk"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "bangun",
+        "simulasi"
+      ],
+      "catatan": "Fisika sederhana: bola di atas kubus jatuh, kubus di atas tabung berdiri bertahan. Bukti: menara 4 tingkat berdiri. Jebakan: tabung bisa ditumpuk jika tegak; itu sengaja jadi penemuan, bukan penalti. Pengaya."
+    },
+    {
+      "id": "MAT.TKA.UKUR-NONSTANDAR.01",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "UKUR-NONSTANDAR",
+        "nama": {
+          "id": "Mengukur dengan jengkal dan langkah",
+          "en": "Measuring with hands and steps"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa mengukur panjang benda dengan jengkal Agam, sampai 10 jengkal",
+        "en": "I can measure how long something is in Agam's hand spans, up to 10 spans"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.BILANGAN-1-10.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.08",
+          "note": "pendahulu: alat ukur; di TK A satuan tak baku"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.02"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "simulasi",
+        "bangun"
+      ],
+      "catatan": "Anak menaruh jengkal berturut-turut tanpa celah dan tanpa tumpang tindih, lalu menyebut jumlahnya. Celah/tumpang tindih terdeteksi sebagai salah ukur, bukan salah hitung. Knob: panjang benda 3 → 10 jengkal, bantuan garis bayang hilang."
+    },
+    {
+      "id": "MAT.TKA.UKUR-NONSTANDAR.02",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "UKUR-NONSTANDAR",
+        "nama": {
+          "id": "Mengukur dengan jengkal dan langkah",
+          "en": "Measuring with hands and steps"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilih benda yang lebih panjang dengan membandingkan jumlah jengkalnya",
+        "en": "I can choose the longer object by comparing how many hand spans each one is"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.UKUR-NONSTANDAR.01",
+        "MAT.TKA.BANDING.01"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Gg.02"
+        }
+      ],
+      "core": false,
+      "mechanics": [
+        "simulasi",
+        "pilah"
+      ],
+      "catatan": "Dua benda tidak sejajar (satu tegak, satu miring) sehingga tidak bisa dibandingkan langsung; jembatan ke pengukuran. Pengaya."
+    },
+    {
+      "id": "MAT.TKA.UANG-KENAL.01",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "UANG-KENAL",
+        "nama": {
+          "id": "Mengenal uang",
+          "en": "Knowing money"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa memilah koin dan uang kertas rupiah ke laci yang gambarnya sama",
+        "en": "I can sort rupiah coins and notes into the drawer with the matching picture"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nm.01",
+          "note": "mengenali uang mata uang setempat"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "pilah",
+        "dagang"
+      ],
+      "catatan": "Pecahan: koin Rp500, Rp1.000; kertas Rp2.000, Rp5.000, Rp10.000. Pengenalan visual, belum nilai. Jebakan: Rp1.000 koin vs kertas lama; pakai koin saja untuk Rp1.000. Knob: 2 → 5 laci."
+    },
+    {
+      "id": "MAT.TKA.UANG-KENAL.02",
+      "track": "MAT",
+      "level": "TKA",
+      "unit": {
+        "id": "UANG-KENAL",
+        "nama": {
+          "id": "Mengenal uang",
+          "en": "Knowing money"
+        }
+      },
+      "statement": {
+        "id": "Aku bisa membayar barang dengan koin seribuan sebanyak harganya, sampai 5 koin",
+        "en": "I can pay for an item with one-thousand coins matching its price, up to 5 coins"
+      },
+      "depth": [
+        "pakai"
+      ],
+      "prereq": [
+        "MAT.TKA.UANG-KENAL.01",
+        "MAT.TKA.BILANGAN-1-10.02"
+      ],
+      "refs": [
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nm.01"
+        },
+        {
+          "framework": "CAMBRIDGE_PRIMARY_MATHS",
+          "code": "1Nc.01",
+          "note": "menghitung koin"
+        }
+      ],
+      "core": true,
+      "mechanics": [
+        "dagang"
+      ],
+      "catatan": "Harga tertulis sebagai '3 koin' dengan gambar, belum 'Rp3.000'. Bukti: jumlah koin di nampan sama dengan harga. Jebakan: anak menaruh semua koin. Knob: harga 1 → 5 koin, koin di laci lebih banyak dari harga."
+    }
+  ]
+}
