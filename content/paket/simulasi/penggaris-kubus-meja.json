@@ -1,0 +1,116 @@
+{
+  "id": "penggaris-kubus-meja",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.UKUR-NONSTANDAR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Berapa Kubus Panjangnya?",
+      "instruksi": "Sejajarkan ujung benda dengan kubus nomor satu, lalu baca nomor di ujung satunya.",
+      "krayon": "krayon",
+      "kunci": "kunci",
+      "sendok": "sendok",
+      "sikat-gigi": "sikat gigi",
+      "pensil": "pensil",
+      "wortel": "wortel",
+      "sumpit": "sumpit",
+      "penggaris-kayu": "tongkat kayu"
+    },
+    "en": {
+      "judul": "How Many Cubes Long?",
+      "instruksi": "Line up the end of the object with cube number one, then read the number at the other end.",
+      "krayon": "crayon",
+      "kunci": "key",
+      "sendok": "spoon",
+      "sikat-gigi": "toothbrush",
+      "pensil": "pencil",
+      "wortel": "carrot",
+      "sumpit": "chopstick",
+      "penggaris-kayu": "wooden stick"
+    }
+  },
+  "knobs": {
+    "offset": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = benda sudah sejajar kubus pertama; 1 = benda mulai di kubus ke-2 (jebakan: anak harus menggeser atau menghitung selisih)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "kubus",
+  "items": [
+    {
+      "labelKey": "krayon",
+      "id": "krayon",
+      "role": "benda",
+      "emoji": "🖍️",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "kunci",
+      "id": "kunci",
+      "role": "benda",
+      "emoji": "🔑",
+      "value": 4,
+      "width": 1.6
+    },
+    {
+      "labelKey": "sendok",
+      "id": "sendok",
+      "role": "benda",
+      "emoji": "🥄",
+      "value": 5,
+      "width": 2
+    },
+    {
+      "labelKey": "sikat-gigi",
+      "id": "sikat-gigi",
+      "role": "benda",
+      "emoji": "🪥",
+      "value": 6,
+      "width": 2.4
+    },
+    {
+      "labelKey": "pensil",
+      "id": "pensil",
+      "role": "benda",
+      "emoji": "✏️",
+      "value": 7,
+      "width": 2.8
+    },
+    {
+      "labelKey": "wortel",
+      "id": "wortel",
+      "role": "benda",
+      "emoji": "🥕",
+      "value": 8,
+      "width": 3.2
+    },
+    {
+      "labelKey": "sumpit",
+      "id": "sumpit",
+      "role": "benda",
+      "emoji": "🥢",
+      "value": 9,
+      "width": 3.6
+    },
+    {
+      "labelKey": "penggaris-kayu",
+      "id": "penggaris-kayu",
+      "role": "benda",
+      "emoji": "🪄",
+      "value": 10,
+      "width": 4
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "barisan-buah-piring",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.PAUD.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Barisan Buah",
+      "instruksi": "Lihat barisan buah di piring, lalu taruh buah yang tepat di tempat kosong.",
+      "apel": "apel",
+      "pisang": "pisang",
+      "anggur": "anggur"
+    },
+    "en": {
+      "judul": "Fruit Parade",
+      "instruksi": "Look at the row of fruit on the plate, then put the right fruit in the empty spot.",
+      "apel": "apple",
+      "pisang": "banana",
+      "anggur": "grapes"
+    }
+  },
+  "knobs": {
+    "shown": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah ulangan penuh pola yang ditampilkan sebelum slot kosong"
+    },
+    "blanks": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah slot kosong di ujung pola"
+    },
+    "distractor": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = palet hanya dua buah pola; 1 = tambah buah ketiga sebagai pengecoh"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "dapur",
+  "mode": "lanjut",
+  "unitLen": 2,
+  "items": [
+    {
+      "labelKey": "apel",
+      "id": "apel",
+      "emoji": "🍎"
+    },
+    {
+      "labelKey": "pisang",
+      "id": "pisang",
+      "emoji": "🍌"
+    },
+    {
+      "labelKey": "anggur",
+      "id": "anggur",
+      "emoji": "🍇"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "apel": "C4",
+    "pisang": "G4",
+    "anggur": "E4"
+  }
+}

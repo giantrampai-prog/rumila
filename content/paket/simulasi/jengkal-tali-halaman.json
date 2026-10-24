@@ -1,0 +1,110 @@
+{
+  "id": "jengkal-tali-halaman",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.UKUR-NONSTANDAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jengkal di Halaman",
+      "instruksi": "Taruh jengkalmu satu per satu tanpa celah dan tanpa tumpang tindih, lalu sebutkan jumlahnya.",
+      "tali": "tali",
+      "bambu": "bambu",
+      "ular": "ular",
+      "selang": "selang air",
+      "kayu": "kayu",
+      "sapu": "sapu"
+    },
+    "en": {
+      "judul": "Spans in the Yard",
+      "instruksi": "Place your spans one by one with no gaps and no overlaps, then say how many there are.",
+      "tali": "rope",
+      "bambu": "bamboo",
+      "ular": "snake",
+      "selang": "hose",
+      "kayu": "log",
+      "sapu": "broom"
+    }
+  },
+  "knobs": {
+    "snap": {
+      "min": 0,
+      "max": 0,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = tanpa snap; anak menaruh jengkal sendiri, celah/tumpang tindih terdeteksi"
+    },
+    "maxSpans": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 1,
+      "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
+    },
+    "bayang": {
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = garis bayang bantu posisi jengkal berikutnya; 0 = tanpa bantuan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "kebun",
+  "mode": "jengkal",
+  "items": [
+    {
+      "labelKey": "tali",
+      "id": "tali",
+      "role": "benda",
+      "emoji": "🪢",
+      "value": 10,
+      "width": 4
+    },
+    {
+      "labelKey": "bambu",
+      "id": "bambu",
+      "role": "benda",
+      "emoji": "🎋",
+      "value": 8,
+      "width": 3.2
+    },
+    {
+      "labelKey": "ular",
+      "id": "ular",
+      "role": "benda",
+      "emoji": "🐍",
+      "value": 7,
+      "width": 2.8
+    },
+    {
+      "labelKey": "selang",
+      "id": "selang",
+      "role": "benda",
+      "emoji": "🧵",
+      "value": 6,
+      "width": 2.4
+    },
+    {
+      "labelKey": "kayu",
+      "id": "kayu",
+      "role": "benda",
+      "emoji": "🪵",
+      "value": 5,
+      "width": 2
+    },
+    {
+      "labelKey": "sapu",
+      "id": "sapu",
+      "role": "benda",
+      "emoji": "🧹",
+      "value": 4,
+      "width": 1.6
+    }
+  ]
+}

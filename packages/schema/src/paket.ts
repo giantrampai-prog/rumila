@@ -234,7 +234,70 @@ function refineNavigasi(p: z.infer<typeof PaketNavigasiObj>, ctx: z.RefinementCt
 }
 export type PaketNavigasi = z.infer<typeof PaketNavigasi>;
 
-export const ContentPack = z.discriminatedUnion("mechanic", [PaketPilahObj, PaketUrutkanObj, PaketDagang, PaketNavigasiObj]).superRefine((p, ctx) => {
+
+/* ---------------- pola ---------------- */
+
+export const PolaItem = z.object({ id: Slug, labelKey: Key, assetId: Slug.optional(), ...Visual });
+export const PaketPola = z.object({
+  ...Base,
+  mechanic: z.literal("pola"),
+  /** lanjut: isi slot kosong di ujung pola · perbaiki: satu unsur tertukar, ganti tepat satu · cipta: pilih benda lalu isi slot jadi pola berulang */
+  mode: z.enum(["lanjut", "perbaiki", "cipta"]).default("lanjut"),
+  /** panjang satuan pola: 2 = AB, 3 = ABC */
+  unitLen: z.number().int().min(2).max(3).default(2),
+  /** benda yang boleh dipakai (≥ unitLen + 1 supaya ada pengecoh) */
+  items: z.array(PolaItem).min(3).max(8),
+  /** pola tetap (opsional); kosong = mesin menyusun dari items */
+  patterns: z.array(z.object({ id: Slug, unit: z.array(Slug).min(2).max(3) })).default([]),
+  /** bunyi per benda (pola juga dimainkan sebagai nada): nama nada/oktaf sederhana, mis. "C4" */
+  nada: z.record(Slug, z.string()).default({}),
+});
+export type PaketPola = z.infer<typeof PaketPola>;
+
+/* ---------------- simulasi ---------------- */
+
+export const SIMULASI_MODES = [
+  /** jam dinding bulat; anak memilih kartu "pukul N" */
+  "jam-baca",
+  /** kalimat kegiatan "sekolah pukul 7"; anak memutar jarum pendek */
+  "jam-putar",
+  /** dua benda di jungkat-jungkit; anak memilih yang lebih berat setelah melihat timbangan */
+  "timbangan",
+  /** mengukur panjang benda dengan jengkal tangan (snap atau bebas) lalu menyebut jumlah */
+  "jengkal",
+  /** penggaris kubus bernomor; anak membaca jumlah kubus */
+  "kubus",
+  /** hewan lewat satu per satu; anak mengetuk baris hewan → turus */
+  "turus",
+  /** benda tampil sekejap; anak menggeser penanda garis bilangan 0–20 */
+  "taksir",
+  /** papan tombol → alat tanpa kabel; putaran 1 coba bebas, putaran 2 tunjuk alat sebelum menekan */
+  "tombol",
+  /** hewan butuh diukur: pilih alat (penggaris kubus / timbangan) lalu pakai */
+  "alat",
+  /** bagi N benda ke dua piring sama banyak */
+  "bagi",
+] as const;
+export const SimulasiMode = z.enum(SIMULASI_MODES);
+export type SimulasiMode = z.infer<typeof SimulasiMode>;
+
+export const SimulasiItem = z.object({
+  id: Slug, labelKey: Key, assetId: Slug.optional(), ...Visual,
+  /** peran dalam mode: benda (timbangan/jengkal/kubus/taksir/bagi), hewan (turus/alat), tombol & alat (tombol), kegiatan (jam-putar) */
+  role: z.enum(["benda", "hewan", "tombol", "alat", "kegiatan"]).default("benda"),
+  /** nilai tersembunyi: berat relatif (timbangan), panjang dalam jengkal/kubus, jam kegiatan (1–12), besaran yang diminta (alat: 1 = panjang, 2 = berat) */
+  value: z.number().optional(),
+});
+export const PaketSimulasi = z.object({
+  ...Base,
+  mechanic: z.literal("simulasi"),
+  mode: SimulasiMode,
+  items: z.array(SimulasiItem).min(1),
+  /** batas: jam 1–6 → 1–12, jengkal maks, jumlah taksir, pasangan tombol, dsb. dibaca dari knobs */
+});
+export type PaketSimulasi = z.infer<typeof PaketSimulasi>;
+
+export const ContentPack = z.discriminatedUnion("mechanic", [PaketPilahObj, PaketUrutkanObj, PaketDagang, PaketNavigasiObj, PaketPola, PaketSimulasi]).superRefine((p, ctx) => {
   if (p.mechanic === "pilah") refinePilah(p, ctx);
   else if (p.mechanic === "urutkan") refineUrutkan(p, ctx);
   else if (p.mechanic === "navigasi") refineNavigasi(p, ctx);
@@ -242,7 +305,7 @@ export const ContentPack = z.discriminatedUnion("mechanic", [PaketPilahObj, Pake
 export type ContentPack = z.infer<typeof ContentPack>;
 
 /** Mekanik yang sudah punya skema paket. Mekanik lain menyusul. */
-export const PACK_MECHANICS: readonly MechanicId[] = ["pilah", "urutkan", "dagang", "navigasi"];
+export const PACK_MECHANICS: readonly MechanicId[] = ["pilah", "urutkan", "dagang", "navigasi", "pola", "simulasi"];
 
 /** Semua kunci locale yang dipakai sebuah paket (untuk validasi dwibahasa). */
 export function kunciLocale(d: ContentPack): Set<string> {
@@ -251,6 +314,7 @@ export function kunciLocale(d: ContentPack): Set<string> {
   if (d.mechanic === "pilah") { d.bins.forEach(b => k.add(b.labelKey)); d.items.forEach(i => k.add(i.labelKey)); d.pilihan.forEach(r => k.add(r.promptKey)); }
   if (d.mechanic === "urutkan") d.sequences.forEach(s => { k.add(s.titleKey); s.steps.forEach(x => k.add(x.labelKey)); });
   if (d.mechanic === "dagang") d.goods.forEach(g => k.add(g.labelKey));
+  if (d.mechanic === "pola" || d.mechanic === "simulasi") d.items.forEach(i => k.add(i.labelKey));
   return k;
 }
 

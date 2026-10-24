@@ -1,0 +1,110 @@
+{
+  "id": "jengkal-meja-dapur",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.UKUR-NONSTANDAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jengkal di Dapur",
+      "instruksi": "Ukur benda di meja dengan jengkalmu, rapat tanpa celah, lalu sebutkan berapa jengkal.",
+      "taplak": "taplak meja",
+      "nampan": "nampan",
+      "roti": "roti panjang",
+      "talenan": "talenan",
+      "pisang": "pisang",
+      "sendok": "sendok kayu"
+    },
+    "en": {
+      "judul": "Spans in the Kitchen",
+      "instruksi": "Measure the thing on the table with your spans, snug with no gaps, then say how many spans.",
+      "taplak": "tablecloth",
+      "nampan": "tray",
+      "roti": "long bread",
+      "talenan": "cutting board",
+      "pisang": "banana",
+      "sendok": "wooden spoon"
+    }
+  },
+  "knobs": {
+    "snap": {
+      "min": 0,
+      "max": 0,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = tanpa snap; anak menaruh jengkal sendiri, celah/tumpang tindih terdeteksi"
+    },
+    "maxSpans": {
+      "min": 4,
+      "max": 10,
+      "default": 4,
+      "step": 1,
+      "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
+    },
+    "bayang": {
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = garis bayang bantu posisi jengkal berikutnya; 0 = tanpa bantuan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "dapur",
+  "mode": "jengkal",
+  "items": [
+    {
+      "labelKey": "taplak",
+      "id": "taplak",
+      "role": "benda",
+      "emoji": "🧣",
+      "value": 10,
+      "width": 4
+    },
+    {
+      "labelKey": "nampan",
+      "id": "nampan",
+      "role": "benda",
+      "emoji": "🍽️",
+      "value": 9,
+      "width": 3.6
+    },
+    {
+      "labelKey": "roti",
+      "id": "roti",
+      "role": "benda",
+      "emoji": "🥖",
+      "value": 7,
+      "width": 2.8
+    },
+    {
+      "labelKey": "talenan",
+      "id": "talenan",
+      "role": "benda",
+      "emoji": "🪵",
+      "value": 6,
+      "width": 2.4
+    },
+    {
+      "labelKey": "pisang",
+      "id": "pisang",
+      "role": "benda",
+      "emoji": "🍌",
+      "value": 5,
+      "width": 2
+    },
+    {
+      "labelKey": "sendok",
+      "id": "sendok",
+      "role": "benda",
+      "emoji": "🥄",
+      "value": 4,
+      "width": 1.6
+    }
+  ]
+}

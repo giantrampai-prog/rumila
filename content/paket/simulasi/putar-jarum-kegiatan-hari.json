@@ -1,0 +1,90 @@
+{
+  "id": "putar-jarum-kegiatan-hari",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.JAM-BULAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jam Kegiatanku",
+      "instruksi": "Dengar kegiatannya pukul berapa, lalu putar jarum pendek ke angka itu.",
+      "bangun-tidur": "bangun tidur pukul 6",
+      "berangkat-sekolah": "berangkat sekolah pukul 7",
+      "istirahat": "istirahat pukul 10",
+      "makan-siang": "makan siang pukul 12",
+      "mandi-sore": "mandi sore pukul 4",
+      "tidur-malam": "tidur malam pukul 8"
+    },
+    "en": {
+      "judul": "My Day on the Clock",
+      "instruksi": "Listen to what time the activity happens, then turn the short hand to that number.",
+      "bangun-tidur": "wake up at 6 o'clock",
+      "berangkat-sekolah": "go to school at 7 o'clock",
+      "istirahat": "playtime at 10 o'clock",
+      "makan-siang": "lunch at 12 o'clock",
+      "mandi-sore": "bath at 4 o'clock",
+      "tidur-malam": "bedtime at 8 o'clock"
+    }
+  },
+  "knobs": {
+    "kegiatanAktif": {
+      "min": 3,
+      "max": 6,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kegiatan yang bisa diundi; semua jam bulat dan tidak ada jam ganda"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 6,
+  "world": "rumah",
+  "mode": "jam-putar",
+  "items": [
+    {
+      "labelKey": "bangun-tidur",
+      "id": "bangun-tidur",
+      "role": "kegiatan",
+      "emoji": "🛏️",
+      "value": 6
+    },
+    {
+      "labelKey": "berangkat-sekolah",
+      "id": "berangkat-sekolah",
+      "role": "kegiatan",
+      "emoji": "🏫",
+      "value": 7
+    },
+    {
+      "labelKey": "istirahat",
+      "id": "istirahat",
+      "role": "kegiatan",
+      "emoji": "⚽",
+      "value": 10
+    },
+    {
+      "labelKey": "makan-siang",
+      "id": "makan-siang",
+      "role": "kegiatan",
+      "emoji": "🍚",
+      "value": 12
+    },
+    {
+      "labelKey": "mandi-sore",
+      "id": "mandi-sore",
+      "role": "kegiatan",
+      "emoji": "🚿",
+      "value": 4
+    },
+    {
+      "labelKey": "tidur-malam",
+      "id": "tidur-malam",
+      "role": "kegiatan",
+      "emoji": "😴",
+      "value": 8
+    }
+  ]
+}

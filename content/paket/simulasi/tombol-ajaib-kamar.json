@@ -1,0 +1,87 @@
+{
+  "id": "tombol-ajaib-kamar",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "KODE.PAUD.SEBAB-AKIBAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tombol Ajaib Kamar",
+      "instruksi": "Coba tekan tiap tombol dulu, lalu tunjuk alat yang akan menyala sebelum kamu menekannya lagi.",
+      "tombol-merah": "tombol merah",
+      "tombol-biru": "tombol biru",
+      "tombol-kuning": "tombol kuning",
+      "lampu": "lampu",
+      "kipas": "kipas angin",
+      "radio": "radio"
+    },
+    "en": {
+      "judul": "Magic Room Buttons",
+      "instruksi": "Try each button first, then point to the device that will turn on before you press it again.",
+      "tombol-merah": "red button",
+      "tombol-biru": "blue button",
+      "tombol-kuning": "yellow button",
+      "lampu": "lamp",
+      "kipas": "fan",
+      "radio": "radio"
+    }
+  },
+  "knobs": {
+    "pairs": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "rumah",
+  "mode": "tombol",
+  "items": [
+    {
+      "labelKey": "tombol-merah",
+      "id": "tombol-merah",
+      "role": "tombol",
+      "shape": "circle",
+      "color": "#e53935"
+    },
+    {
+      "labelKey": "tombol-biru",
+      "id": "tombol-biru",
+      "role": "tombol",
+      "shape": "circle",
+      "color": "#1e88e5"
+    },
+    {
+      "labelKey": "tombol-kuning",
+      "id": "tombol-kuning",
+      "role": "tombol",
+      "shape": "circle",
+      "color": "#fdd835"
+    },
+    {
+      "labelKey": "lampu",
+      "id": "lampu",
+      "role": "alat",
+      "emoji": "💡"
+    },
+    {
+      "labelKey": "kipas",
+      "id": "kipas",
+      "role": "alat",
+      "emoji": "🌀"
+    },
+    {
+      "labelKey": "radio",
+      "id": "radio",
+      "role": "alat",
+      "emoji": "📻"
+    }
+  ]
+}

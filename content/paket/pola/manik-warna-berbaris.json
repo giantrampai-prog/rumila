@@ -1,0 +1,81 @@
+{
+  "id": "manik-warna-berbaris",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.PAUD.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Manik Warna Berbaris",
+      "instruksi": "Lihat barisan manik, lalu taruh manik yang tepat di tempat kosong.",
+      "manik-merah": "manik merah",
+      "manik-biru": "manik biru",
+      "manik-kuning": "manik kuning"
+    },
+    "en": {
+      "judul": "Colour Bead Line",
+      "instruksi": "Look at the row of beads, then put the right bead in the empty spot.",
+      "manik-merah": "red bead",
+      "manik-biru": "blue bead",
+      "manik-kuning": "yellow bead"
+    }
+  },
+  "knobs": {
+    "shown": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah ulangan penuh pola yang ditampilkan sebelum slot kosong"
+    },
+    "blanks": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jumlah slot kosong di ujung pola"
+    },
+    "distractor": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = palet hanya dua manik pola; 1 = tambah manik warna ketiga sebagai pengecoh (setelah 3 sukses)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "lanjut",
+  "unitLen": 2,
+  "items": [
+    {
+      "labelKey": "manik-merah",
+      "id": "manik-merah",
+      "shape": "circle",
+      "color": "#e53935"
+    },
+    {
+      "labelKey": "manik-biru",
+      "id": "manik-biru",
+      "shape": "square",
+      "color": "#1e88e5"
+    },
+    {
+      "labelKey": "manik-kuning",
+      "id": "manik-kuning",
+      "shape": "triangle",
+      "color": "#fdd835"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "manik-merah": "C4",
+    "manik-biru": "G4",
+    "manik-kuning": "E4"
+  }
+}

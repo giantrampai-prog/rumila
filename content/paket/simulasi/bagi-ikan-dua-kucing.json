@@ -1,0 +1,62 @@
+{
+  "id": "bagi-ikan-dua-kucing",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.TAMBAH-KURANG-10.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagi Ikan Adil",
+      "instruksi": "Dua anak kucing lapar, bagi semua ikan ke dua piring supaya sama banyak.",
+      "ikan": "ikan",
+      "kucing-kiri": "kucing kiri",
+      "kucing-kanan": "kucing kanan"
+    },
+    "en": {
+      "judul": "Share the Fish Fairly",
+      "instruksi": "Two kittens are hungry; share all the fish onto two plates so each gets the same.",
+      "ikan": "fish",
+      "kucing-kiri": "left kitten",
+      "kucing-kanan": "right kitten"
+    }
+  },
+  "knobs": {
+    "max": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "jumlah ikan terbanyak yang dibagi (target genap 2/4/6/8 sampai max)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "rumah",
+  "mode": "bagi",
+  "items": [
+    {
+      "labelKey": "ikan",
+      "id": "ikan",
+      "role": "benda",
+      "emoji": "🐟"
+    },
+    {
+      "labelKey": "kucing-kiri",
+      "id": "kucing-kiri",
+      "role": "hewan",
+      "emoji": "🐱",
+      "color": "#fb8c00"
+    },
+    {
+      "labelKey": "kucing-kanan",
+      "id": "kucing-kanan",
+      "role": "hewan",
+      "emoji": "🐱",
+      "color": "#9e9e9e"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "barisan-pantai-keliru",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.TKA.POLA-ABC.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Barisan Pantai Keliru",
+      "instruksi": "Satu benda di barisan ini salah tempat, sentuh yang salah lalu ganti dengan yang benar.",
+      "ikan": "ikan",
+      "kerang": "kerang",
+      "kepiting": "kepiting"
+    },
+    "en": {
+      "judul": "Beach Row Mix-Up",
+      "instruksi": "One thing in this row is in the wrong place; touch it, then swap in the right one.",
+      "ikan": "fish",
+      "kerang": "shell",
+      "kepiting": "crab"
+    }
+  },
+  "knobs": {
+    "posisi": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = unsur yang tertukar ada di tengah pola; 1 = boleh di ujung (lebih sulit dilihat)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "pantai",
+  "mode": "perbaiki",
+  "unitLen": 2,
+  "items": [
+    {
+      "labelKey": "ikan",
+      "id": "ikan",
+      "emoji": "🐟"
+    },
+    {
+      "labelKey": "kerang",
+      "id": "kerang",
+      "emoji": "🐚"
+    },
+    {
+      "labelKey": "kepiting",
+      "id": "kepiting",
+      "emoji": "🦀"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "ikan": "C4",
+    "kerang": "G4",
+    "kepiting": "E4"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "pagar-bunga-keliru",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.TKA.POLA-ABC.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pagar Bunga Keliru",
+      "instruksi": "Satu bunga di pagar ini salah tempat, sentuh yang salah lalu ganti dengan bunga yang benar.",
+      "tulip": "tulip",
+      "matahari": "bunga matahari",
+      "melati": "bunga putih",
+      "semanggi": "semanggi"
+    },
+    "en": {
+      "judul": "Flower Fence Mix-Up",
+      "instruksi": "One flower on this fence is in the wrong place; touch it, then swap in the right flower.",
+      "tulip": "tulip",
+      "matahari": "sunflower",
+      "melati": "white blossom",
+      "semanggi": "clover"
+    }
+  },
+  "knobs": {
+    "posisi": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = unsur yang tertukar ada di tengah pola; 1 = boleh di ujung (lebih sulit dilihat)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "taman",
+  "mode": "perbaiki",
+  "unitLen": 3,
+  "items": [
+    {
+      "labelKey": "tulip",
+      "id": "tulip",
+      "emoji": "🌷"
+    },
+    {
+      "labelKey": "matahari",
+      "id": "matahari",
+      "emoji": "🌻"
+    },
+    {
+      "labelKey": "melati",
+      "id": "melati",
+      "emoji": "🌼"
+    },
+    {
+      "labelKey": "semanggi",
+      "id": "semanggi",
+      "emoji": "🍀"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "tulip": "C4",
+    "matahari": "E4",
+    "melati": "G4",
+    "semanggi": "A4"
+  }
+}

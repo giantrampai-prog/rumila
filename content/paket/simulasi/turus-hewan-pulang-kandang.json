@@ -1,0 +1,82 @@
+{
+  "id": "turus-hewan-pulang-kandang",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hewan Pulang Kandang",
+      "instruksi": "Sore ini hewan pulang satu per satu, sentuh baris hewan yang lewat supaya turusnya bertambah.",
+      "ayam": "ayam",
+      "babi": "babi",
+      "domba": "domba",
+      "kuda": "kuda"
+    },
+    "en": {
+      "judul": "Animals Coming Home",
+      "instruksi": "This evening the animals come home one by one; touch the row of the one passing to add a tally.",
+      "ayam": "chicken",
+      "babi": "pig",
+      "domba": "sheep",
+      "kuda": "horse"
+    }
+  },
+  "knobs": {
+    "count": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan yang lewat dalam satu putaran"
+    },
+    "kinds": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah jenis hewan (baris turus) yang dipakai"
+    },
+    "gapMs": {
+      "min": 1200,
+      "max": 2000,
+      "default": 2000,
+      "step": 100,
+      "keterangan": "jeda antar hewan lewat (ms); makin pendek makin menuntut perhatian"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 5,
+  "world": "peternakan",
+  "mode": "turus",
+  "items": [
+    {
+      "labelKey": "ayam",
+      "id": "ayam",
+      "role": "hewan",
+      "emoji": "🐔"
+    },
+    {
+      "labelKey": "babi",
+      "id": "babi",
+      "role": "hewan",
+      "emoji": "🐷"
+    },
+    {
+      "labelKey": "domba",
+      "id": "domba",
+      "role": "hewan",
+      "emoji": "🐑"
+    },
+    {
+      "labelKey": "kuda",
+      "id": "kuda",
+      "role": "hewan",
+      "emoji": "🐴"
+    }
+  ]
+}

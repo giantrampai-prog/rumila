@@ -39,8 +39,8 @@ export const TRACK_IKON: Record<TrackId, string> = {
   KARAKTER: "volunteer_activism",
 };
 
-const MEKANIK_IKON: Record<string, string> = { pilah: "category", urutkan: "low_priority", dagang: "storefront", navigasi: "smart_toy" };
-const MEKANIK_LABEL: Record<string, string> = { pilah: "Pilah", urutkan: "Urutkan", dagang: "Pasar", navigasi: "Robot" };
+const MEKANIK_IKON: Record<string, string> = { pilah: "category", urutkan: "low_priority", dagang: "storefront", navigasi: "smart_toy", pola: "pattern", simulasi: "science" };
+const MEKANIK_LABEL: Record<string, string> = { pilah: "Pilah", urutkan: "Urutkan", dagang: "Pasar", navigasi: "Robot", pola: "Pola", simulasi: "Coba" };
 export const ikonMekanik = (m: string) => MEKANIK_IKON[m] ?? "extension";
 export const labelMekanik = (m: string) => MEKANIK_LABEL[m] ?? "Main";
 /** Satu warna netral untuk semua ikon mekanik (indigo lembut) — mekanik bukan makna, jadi tidak diberi warna berbeda. */

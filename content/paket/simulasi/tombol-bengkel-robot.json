@@ -1,0 +1,87 @@
+{
+  "id": "tombol-bengkel-robot",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "KODE.PAUD.SEBAB-AKIBAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tombol Bengkel Robot",
+      "instruksi": "Robot lupa tombol mana untuk apa, coba dulu, lalu tunjuk alat yang akan menyala sebelum menekan lagi.",
+      "tombol-merah": "tombol merah",
+      "tombol-biru": "tombol biru",
+      "tombol-kuning": "tombol kuning",
+      "lampu": "lampu",
+      "kipas": "kipas angin",
+      "radio": "radio"
+    },
+    "en": {
+      "judul": "Robot Workshop Buttons",
+      "instruksi": "The robot forgot which button does what; try them, then point to the device that will turn on before pressing again.",
+      "tombol-merah": "red button",
+      "tombol-biru": "blue button",
+      "tombol-kuning": "yellow button",
+      "lampu": "lamp",
+      "kipas": "fan",
+      "radio": "radio"
+    }
+  },
+  "knobs": {
+    "pairs": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 4,
+  "world": "menara",
+  "mode": "tombol",
+  "items": [
+    {
+      "labelKey": "tombol-merah",
+      "id": "tombol-merah",
+      "role": "tombol",
+      "shape": "circle",
+      "color": "#e53935"
+    },
+    {
+      "labelKey": "tombol-biru",
+      "id": "tombol-biru",
+      "role": "tombol",
+      "shape": "circle",
+      "color": "#1e88e5"
+    },
+    {
+      "labelKey": "tombol-kuning",
+      "id": "tombol-kuning",
+      "role": "tombol",
+      "shape": "circle",
+      "color": "#fdd835"
+    },
+    {
+      "labelKey": "lampu",
+      "id": "lampu",
+      "role": "alat",
+      "emoji": "💡"
+    },
+    {
+      "labelKey": "kipas",
+      "id": "kipas",
+      "role": "alat",
+      "emoji": "🌀"
+    },
+    {
+      "labelKey": "radio",
+      "id": "radio",
+      "role": "alat",
+      "emoji": "📻"
+    }
+  ]
+}

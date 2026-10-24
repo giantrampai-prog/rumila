@@ -1,5 +1,5 @@
 // DIBUAT OTOMATIS oleh scripts/akademi-index.ts — jangan diedit.
-// Sumber: content/kurikulum/*.json (6 berkas) dan content/paket/**/*.json (99 berkas).
+// Sumber: content/kurikulum/*.json (6 berkas) dan content/paket/**/*.json (122 berkas).
 // Perbarui dengan: npm run -s akademi:index
 
 export const KURIKULUM_RAW = [
@@ -13647,6 +13647,1917 @@ export const PAKET_RAW: unknown[] = [
           "ulat-panjang"
         ],
         "correct": "ulat-panjang"
+      }
+    ]
+  },
+  {
+    "id": "barisan-buah-piring",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.PAUD.POLA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Barisan Buah",
+        "instruksi": "Lihat barisan buah di piring, lalu taruh buah yang tepat di tempat kosong.",
+        "apel": "apel",
+        "pisang": "pisang",
+        "anggur": "anggur"
+      },
+      "en": {
+        "judul": "Fruit Parade",
+        "instruksi": "Look at the row of fruit on the plate, then put the right fruit in the empty spot.",
+        "apel": "apple",
+        "pisang": "banana",
+        "anggur": "grapes"
+      }
+    },
+    "knobs": {
+      "shown": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah ulangan penuh pola yang ditampilkan sebelum slot kosong"
+      },
+      "blanks": {
+        "min": 1,
+        "max": 2,
+        "default": 1,
+        "step": 1,
+        "keterangan": "jumlah slot kosong di ujung pola"
+      },
+      "distractor": {
+        "min": 0,
+        "max": 1,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = palet hanya dua buah pola; 1 = tambah buah ketiga sebagai pengecoh"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "dapur",
+    "mode": "lanjut",
+    "unitLen": 2,
+    "items": [
+      {
+        "labelKey": "apel",
+        "id": "apel",
+        "emoji": "🍎"
+      },
+      {
+        "labelKey": "pisang",
+        "id": "pisang",
+        "emoji": "🍌"
+      },
+      {
+        "labelKey": "anggur",
+        "id": "anggur",
+        "emoji": "🍇"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "apel": "C4",
+      "pisang": "G4",
+      "anggur": "E4"
+    }
+  },
+  {
+    "id": "barisan-pantai-keliru",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.TKA.POLA-ABC.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Barisan Pantai Keliru",
+        "instruksi": "Satu benda di barisan ini salah tempat, sentuh yang salah lalu ganti dengan yang benar.",
+        "ikan": "ikan",
+        "kerang": "kerang",
+        "kepiting": "kepiting"
+      },
+      "en": {
+        "judul": "Beach Row Mix-Up",
+        "instruksi": "One thing in this row is in the wrong place; touch it, then swap in the right one.",
+        "ikan": "fish",
+        "kerang": "shell",
+        "kepiting": "crab"
+      }
+    },
+    "knobs": {
+      "posisi": {
+        "min": 0,
+        "max": 1,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = unsur yang tertukar ada di tengah pola; 1 = boleh di ujung (lebih sulit dilihat)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "pantai",
+    "mode": "perbaiki",
+    "unitLen": 2,
+    "items": [
+      {
+        "labelKey": "ikan",
+        "id": "ikan",
+        "emoji": "🐟"
+      },
+      {
+        "labelKey": "kerang",
+        "id": "kerang",
+        "emoji": "🐚"
+      },
+      {
+        "labelKey": "kepiting",
+        "id": "kepiting",
+        "emoji": "🦀"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "ikan": "C4",
+      "kerang": "G4",
+      "kepiting": "E4"
+    }
+  },
+  {
+    "id": "bendera-tiga-warna",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.TKA.POLA-ABC.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Bendera Tiga Warna",
+        "instruksi": "Lihat barisan bendera, lalu gantung bendera yang tepat di tali yang kosong.",
+        "bendera-merah": "bendera merah",
+        "bendera-biru": "bendera biru",
+        "bendera-kuning": "bendera kuning",
+        "bendera-hijau": "bendera hijau"
+      },
+      "en": {
+        "judul": "Three-Colour Flags",
+        "instruksi": "Look at the row of flags, then hang the right flags on the empty string.",
+        "bendera-merah": "red flag",
+        "bendera-biru": "blue flag",
+        "bendera-kuning": "yellow flag",
+        "bendera-hijau": "green flag"
+      }
+    },
+    "knobs": {
+      "shown": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah ulangan penuh ABC yang ditampilkan"
+      },
+      "blanks": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah slot kosong di ujung pola"
+      },
+      "distractor": {
+        "min": 1,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "pengecoh warna keempat selalu ada di palet supaya anak tidak melanjutkan AB"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "pesta",
+    "mode": "lanjut",
+    "unitLen": 3,
+    "items": [
+      {
+        "labelKey": "bendera-merah",
+        "id": "bendera-merah",
+        "shape": "triangle",
+        "color": "#e53935"
+      },
+      {
+        "labelKey": "bendera-biru",
+        "id": "bendera-biru",
+        "shape": "triangle",
+        "color": "#1e88e5"
+      },
+      {
+        "labelKey": "bendera-kuning",
+        "id": "bendera-kuning",
+        "shape": "triangle",
+        "color": "#fdd835"
+      },
+      {
+        "labelKey": "bendera-hijau",
+        "id": "bendera-hijau",
+        "shape": "triangle",
+        "color": "#43a047"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "bendera-merah": "C4",
+      "bendera-biru": "E4",
+      "bendera-kuning": "G4",
+      "bendera-hijau": "A4"
+    }
+  },
+  {
+    "id": "kalung-buatanku",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.PAUD.POLA.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Kalung Buatanku",
+        "instruksi": "Pilih dua benda kesukaanmu, lalu susun bergantian sampai kalungnya penuh.",
+        "kerang": "kerang",
+        "bunga": "bunga",
+        "bintang": "bintang",
+        "permata": "permata"
+      },
+      "en": {
+        "judul": "My Own Necklace",
+        "instruksi": "Pick two things you like, then place them one after the other until the necklace is full.",
+        "kerang": "shell",
+        "bunga": "flower",
+        "bintang": "star",
+        "permata": "gem"
+      }
+    },
+    "knobs": {
+      "slots": {
+        "min": 4,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah slot kalung yang harus diisi; benar bila ABAB… atau BABA… penuh"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "pantai",
+    "mode": "cipta",
+    "unitLen": 2,
+    "items": [
+      {
+        "labelKey": "kerang",
+        "id": "kerang",
+        "emoji": "🐚"
+      },
+      {
+        "labelKey": "bunga",
+        "id": "bunga",
+        "emoji": "🌸"
+      },
+      {
+        "labelKey": "bintang",
+        "id": "bintang",
+        "emoji": "⭐"
+      },
+      {
+        "labelKey": "permata",
+        "id": "permata",
+        "emoji": "💎"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "kerang": "C4",
+      "bunga": "E4",
+      "bintang": "G4",
+      "permata": "A4"
+    }
+  },
+  {
+    "id": "lagu-tiga-nada",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.TKA.POLA-ABC.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Lagu Tiga Nada",
+        "instruksi": "Pilih tiga alat musik, lalu susun berulang sampai barisnya penuh dan dengarkan lagumu.",
+        "drum": "drum",
+        "lonceng": "lonceng",
+        "terompet": "terompet",
+        "gitar": "gitar",
+        "marakas": "marakas"
+      },
+      "en": {
+        "judul": "Three-Note Song",
+        "instruksi": "Pick three instruments, then repeat them in order until the row is full and hear your song.",
+        "drum": "drum",
+        "lonceng": "bell",
+        "terompet": "trumpet",
+        "gitar": "guitar",
+        "marakas": "maracas"
+      }
+    },
+    "knobs": {
+      "slots": {
+        "min": 6,
+        "max": 9,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah slot yang harus diisi; benar bila unit tiga berulang penuh minimal 2 kali"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "pesta",
+    "mode": "cipta",
+    "unitLen": 3,
+    "items": [
+      {
+        "labelKey": "drum",
+        "id": "drum",
+        "emoji": "🥁"
+      },
+      {
+        "labelKey": "lonceng",
+        "id": "lonceng",
+        "emoji": "🔔"
+      },
+      {
+        "labelKey": "terompet",
+        "id": "terompet",
+        "emoji": "🎺"
+      },
+      {
+        "labelKey": "gitar",
+        "id": "gitar",
+        "emoji": "🎸"
+      },
+      {
+        "labelKey": "marakas",
+        "id": "marakas",
+        "emoji": "🪇"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "drum": "C4",
+      "lonceng": "E4",
+      "terompet": "G4",
+      "gitar": "A4",
+      "marakas": "D4"
+    }
+  },
+  {
+    "id": "manik-warna-berbaris",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.PAUD.POLA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Manik Warna Berbaris",
+        "instruksi": "Lihat barisan manik, lalu taruh manik yang tepat di tempat kosong.",
+        "manik-merah": "manik merah",
+        "manik-biru": "manik biru",
+        "manik-kuning": "manik kuning"
+      },
+      "en": {
+        "judul": "Colour Bead Line",
+        "instruksi": "Look at the row of beads, then put the right bead in the empty spot.",
+        "manik-merah": "red bead",
+        "manik-biru": "blue bead",
+        "manik-kuning": "yellow bead"
+      }
+    },
+    "knobs": {
+      "shown": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah ulangan penuh pola yang ditampilkan sebelum slot kosong"
+      },
+      "blanks": {
+        "min": 1,
+        "max": 2,
+        "default": 1,
+        "step": 1,
+        "keterangan": "jumlah slot kosong di ujung pola"
+      },
+      "distractor": {
+        "min": 0,
+        "max": 1,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = palet hanya dua manik pola; 1 = tambah manik warna ketiga sebagai pengecoh (setelah 3 sukses)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "lanjut",
+    "unitLen": 2,
+    "items": [
+      {
+        "labelKey": "manik-merah",
+        "id": "manik-merah",
+        "shape": "circle",
+        "color": "#e53935"
+      },
+      {
+        "labelKey": "manik-biru",
+        "id": "manik-biru",
+        "shape": "square",
+        "color": "#1e88e5"
+      },
+      {
+        "labelKey": "manik-kuning",
+        "id": "manik-kuning",
+        "shape": "triangle",
+        "color": "#fdd835"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "manik-merah": "C4",
+      "manik-biru": "G4",
+      "manik-kuning": "E4"
+    }
+  },
+  {
+    "id": "pagar-bunga-keliru",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.TKA.POLA-ABC.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Pagar Bunga Keliru",
+        "instruksi": "Satu bunga di pagar ini salah tempat, sentuh yang salah lalu ganti dengan bunga yang benar.",
+        "tulip": "tulip",
+        "matahari": "bunga matahari",
+        "melati": "bunga putih",
+        "semanggi": "semanggi"
+      },
+      "en": {
+        "judul": "Flower Fence Mix-Up",
+        "instruksi": "One flower on this fence is in the wrong place; touch it, then swap in the right flower.",
+        "tulip": "tulip",
+        "matahari": "sunflower",
+        "melati": "white blossom",
+        "semanggi": "clover"
+      }
+    },
+    "knobs": {
+      "posisi": {
+        "min": 0,
+        "max": 1,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = unsur yang tertukar ada di tengah pola; 1 = boleh di ujung (lebih sulit dilihat)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "taman",
+    "mode": "perbaiki",
+    "unitLen": 3,
+    "items": [
+      {
+        "labelKey": "tulip",
+        "id": "tulip",
+        "emoji": "🌷"
+      },
+      {
+        "labelKey": "matahari",
+        "id": "matahari",
+        "emoji": "🌻"
+      },
+      {
+        "labelKey": "melati",
+        "id": "melati",
+        "emoji": "🌼"
+      },
+      {
+        "labelKey": "semanggi",
+        "id": "semanggi",
+        "emoji": "🍀"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "tulip": "C4",
+      "matahari": "E4",
+      "melati": "G4",
+      "semanggi": "A4"
+    }
+  },
+  {
+    "id": "ubin-tiga-bentuk",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pola",
+    "competencyIds": [
+      "KODE.TKA.POLA-ABC.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Ubin Tiga Bentuk",
+        "instruksi": "Lihat barisan ubin, lalu pasang ubin yang bentuknya tepat di lantai yang kosong.",
+        "ubin-lingkaran": "ubin lingkaran",
+        "ubin-kotak": "ubin kotak",
+        "ubin-segitiga": "ubin segitiga",
+        "ubin-bintang": "ubin bintang"
+      },
+      "en": {
+        "judul": "Three-Shape Tiles",
+        "instruksi": "Look at the row of tiles, then fit the right shapes into the empty floor spots.",
+        "ubin-lingkaran": "circle tile",
+        "ubin-kotak": "square tile",
+        "ubin-segitiga": "triangle tile",
+        "ubin-bintang": "star tile"
+      }
+    },
+    "knobs": {
+      "shown": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah ulangan penuh ABC yang ditampilkan"
+      },
+      "blanks": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah slot kosong di ujung pola"
+      },
+      "distractor": {
+        "min": 1,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "pengecoh bentuk keempat selalu ada di palet; semua ubin satu warna supaya yang dibaca bentuknya"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "lanjut",
+    "unitLen": 3,
+    "items": [
+      {
+        "labelKey": "ubin-lingkaran",
+        "id": "ubin-lingkaran",
+        "shape": "circle",
+        "color": "#9e9e9e"
+      },
+      {
+        "labelKey": "ubin-kotak",
+        "id": "ubin-kotak",
+        "shape": "square",
+        "color": "#9e9e9e"
+      },
+      {
+        "labelKey": "ubin-segitiga",
+        "id": "ubin-segitiga",
+        "shape": "triangle",
+        "color": "#9e9e9e"
+      },
+      {
+        "labelKey": "ubin-bintang",
+        "id": "ubin-bintang",
+        "shape": "star",
+        "color": "#9e9e9e"
+      }
+    ],
+    "patterns": [],
+    "nada": {
+      "ubin-lingkaran": "C4",
+      "ubin-kotak": "E4",
+      "ubin-segitiga": "G4",
+      "ubin-bintang": "A4"
+    }
+  },
+  {
+    "id": "bagi-ikan-dua-kucing",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.TAMBAH-KURANG-10.04"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Bagi Ikan Adil",
+        "instruksi": "Dua anak kucing lapar, bagi semua ikan ke dua piring supaya sama banyak.",
+        "ikan": "ikan",
+        "kucing-kiri": "kucing kiri",
+        "kucing-kanan": "kucing kanan"
+      },
+      "en": {
+        "judul": "Share the Fish Fairly",
+        "instruksi": "Two kittens are hungry; share all the fish onto two plates so each gets the same.",
+        "ikan": "fish",
+        "kucing-kiri": "left kitten",
+        "kucing-kanan": "right kitten"
+      }
+    },
+    "knobs": {
+      "max": {
+        "min": 4,
+        "max": 8,
+        "default": 4,
+        "step": 2,
+        "keterangan": "jumlah ikan terbanyak yang dibagi (target genap 2/4/6/8 sampai max)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "bagi",
+    "items": [
+      {
+        "labelKey": "ikan",
+        "id": "ikan",
+        "role": "benda",
+        "emoji": "🐟"
+      },
+      {
+        "labelKey": "kucing-kiri",
+        "id": "kucing-kiri",
+        "role": "hewan",
+        "emoji": "🐱",
+        "color": "#fb8c00"
+      },
+      {
+        "labelKey": "kucing-kanan",
+        "id": "kucing-kanan",
+        "role": "hewan",
+        "emoji": "🐱",
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "id": "jam-dinding-dapur",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.JAM-BULAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Jam di Dapur",
+        "instruksi": "Robot bertanya pukul berapa, lihat jam di dapur lalu sentuh kartu jam yang benar.",
+        "jam-dinding": "jam dinding"
+      },
+      "en": {
+        "judul": "Kitchen Clock",
+        "instruksi": "The robot asks what time it is; look at the kitchen clock, then touch the right time card.",
+        "jam-dinding": "wall clock"
+      }
+    },
+    "knobs": {
+      "hourMax": {
+        "min": 6,
+        "max": 12,
+        "default": 6,
+        "step": 1,
+        "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+      },
+      "bantuanWarna": {
+        "min": 0,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "1 = jarum pendek diberi warna beda sebagai bantuan; 0 = kedua jarum sewarna"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "dapur",
+    "mode": "jam-baca",
+    "items": [
+      {
+        "labelKey": "jam-dinding",
+        "id": "jam-dinding",
+        "role": "benda",
+        "emoji": "🕒"
+      }
+    ]
+  },
+  {
+    "id": "jam-dinding-kelas",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.JAM-BULAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Pukul Berapa Sekarang?",
+        "instruksi": "Lihat jarum pendek di jam dinding kelas, lalu sentuh kartu pukul berapa sekarang.",
+        "jam-dinding": "jam dinding"
+      },
+      "en": {
+        "judul": "What Time Is It?",
+        "instruksi": "Look at the short hand on the classroom clock, then touch the card that says what time it is.",
+        "jam-dinding": "wall clock"
+      }
+    },
+    "knobs": {
+      "hourMax": {
+        "min": 6,
+        "max": 12,
+        "default": 6,
+        "step": 1,
+        "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+      },
+      "bantuanWarna": {
+        "min": 0,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "1 = jarum pendek diberi warna beda sebagai bantuan; 0 = kedua jarum sewarna"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "jalan-ke-sekolah",
+    "mode": "jam-baca",
+    "items": [
+      {
+        "labelKey": "jam-dinding",
+        "id": "jam-dinding",
+        "role": "benda",
+        "emoji": "🕒"
+      }
+    ]
+  },
+  {
+    "id": "jengkal-meja-dapur",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.UKUR-NONSTANDAR.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Jengkal di Dapur",
+        "instruksi": "Ukur benda di meja dengan jengkalmu, rapat tanpa celah, lalu sebutkan berapa jengkal.",
+        "taplak": "taplak meja",
+        "nampan": "nampan",
+        "roti": "roti panjang",
+        "talenan": "talenan",
+        "pisang": "pisang",
+        "sendok": "sendok kayu"
+      },
+      "en": {
+        "judul": "Spans in the Kitchen",
+        "instruksi": "Measure the thing on the table with your spans, snug with no gaps, then say how many spans.",
+        "taplak": "tablecloth",
+        "nampan": "tray",
+        "roti": "long bread",
+        "talenan": "cutting board",
+        "pisang": "banana",
+        "sendok": "wooden spoon"
+      }
+    },
+    "knobs": {
+      "snap": {
+        "min": 0,
+        "max": 0,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = tanpa snap; anak menaruh jengkal sendiri, celah/tumpang tindih terdeteksi"
+      },
+      "maxSpans": {
+        "min": 4,
+        "max": 10,
+        "default": 4,
+        "step": 1,
+        "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
+      },
+      "bayang": {
+        "min": 0,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "1 = garis bayang bantu posisi jengkal berikutnya; 0 = tanpa bantuan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "dapur",
+    "mode": "jengkal",
+    "items": [
+      {
+        "labelKey": "taplak",
+        "id": "taplak",
+        "role": "benda",
+        "emoji": "🧣",
+        "value": 10,
+        "width": 4
+      },
+      {
+        "labelKey": "nampan",
+        "id": "nampan",
+        "role": "benda",
+        "emoji": "🍽️",
+        "value": 9,
+        "width": 3.6
+      },
+      {
+        "labelKey": "roti",
+        "id": "roti",
+        "role": "benda",
+        "emoji": "🥖",
+        "value": 7,
+        "width": 2.8
+      },
+      {
+        "labelKey": "talenan",
+        "id": "talenan",
+        "role": "benda",
+        "emoji": "🪵",
+        "value": 6,
+        "width": 2.4
+      },
+      {
+        "labelKey": "pisang",
+        "id": "pisang",
+        "role": "benda",
+        "emoji": "🍌",
+        "value": 5,
+        "width": 2
+      },
+      {
+        "labelKey": "sendok",
+        "id": "sendok",
+        "role": "benda",
+        "emoji": "🥄",
+        "value": 4,
+        "width": 1.6
+      }
+    ]
+  },
+  {
+    "id": "jengkal-sayur-kebun",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKA.UKUR-NONSTANDAR.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Ukur dengan Jengkal",
+        "instruksi": "Tempelkan jengkal tanganmu dari ujung ke ujung, lalu sebutkan berapa jengkal panjangnya.",
+        "wortel": "wortel",
+        "timun": "timun",
+        "jagung": "jagung",
+        "terong": "terong",
+        "roti": "roti panjang"
+      },
+      "en": {
+        "judul": "Measure in Hand Spans",
+        "instruksi": "Lay your hand spans from one end to the other, then say how many spans long it is.",
+        "wortel": "carrot",
+        "timun": "cucumber",
+        "jagung": "corn",
+        "terong": "eggplant",
+        "roti": "long bread"
+      }
+    },
+    "knobs": {
+      "snap": {
+        "min": 1,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "1 = jengkal menempel otomatis ke ujung jengkal sebelumnya"
+      },
+      "maxSpans": {
+        "min": 2,
+        "max": 5,
+        "default": 2,
+        "step": 1,
+        "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun",
+    "mode": "jengkal",
+    "items": [
+      {
+        "labelKey": "wortel",
+        "id": "wortel",
+        "role": "benda",
+        "emoji": "🥕",
+        "value": 2,
+        "width": 1
+      },
+      {
+        "labelKey": "timun",
+        "id": "timun",
+        "role": "benda",
+        "emoji": "🥒",
+        "value": 3,
+        "width": 1.5
+      },
+      {
+        "labelKey": "jagung",
+        "id": "jagung",
+        "role": "benda",
+        "emoji": "🌽",
+        "value": 4,
+        "width": 2
+      },
+      {
+        "labelKey": "terong",
+        "id": "terong",
+        "role": "benda",
+        "emoji": "🍆",
+        "value": 3,
+        "width": 1.5
+      },
+      {
+        "labelKey": "roti",
+        "id": "roti",
+        "role": "benda",
+        "emoji": "🥖",
+        "value": 5,
+        "width": 2.5
+      }
+    ]
+  },
+  {
+    "id": "jengkal-tali-halaman",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.UKUR-NONSTANDAR.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Jengkal di Halaman",
+        "instruksi": "Taruh jengkalmu satu per satu tanpa celah dan tanpa tumpang tindih, lalu sebutkan jumlahnya.",
+        "tali": "tali",
+        "bambu": "bambu",
+        "ular": "ular",
+        "selang": "selang air",
+        "kayu": "kayu",
+        "sapu": "sapu"
+      },
+      "en": {
+        "judul": "Spans in the Yard",
+        "instruksi": "Place your spans one by one with no gaps and no overlaps, then say how many there are.",
+        "tali": "rope",
+        "bambu": "bamboo",
+        "ular": "snake",
+        "selang": "hose",
+        "kayu": "log",
+        "sapu": "broom"
+      }
+    },
+    "knobs": {
+      "snap": {
+        "min": 0,
+        "max": 0,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = tanpa snap; anak menaruh jengkal sendiri, celah/tumpang tindih terdeteksi"
+      },
+      "maxSpans": {
+        "min": 4,
+        "max": 10,
+        "default": 4,
+        "step": 1,
+        "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
+      },
+      "bayang": {
+        "min": 0,
+        "max": 1,
+        "default": 1,
+        "step": 1,
+        "keterangan": "1 = garis bayang bantu posisi jengkal berikutnya; 0 = tanpa bantuan"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "kebun",
+    "mode": "jengkal",
+    "items": [
+      {
+        "labelKey": "tali",
+        "id": "tali",
+        "role": "benda",
+        "emoji": "🪢",
+        "value": 10,
+        "width": 4
+      },
+      {
+        "labelKey": "bambu",
+        "id": "bambu",
+        "role": "benda",
+        "emoji": "🎋",
+        "value": 8,
+        "width": 3.2
+      },
+      {
+        "labelKey": "ular",
+        "id": "ular",
+        "role": "benda",
+        "emoji": "🐍",
+        "value": 7,
+        "width": 2.8
+      },
+      {
+        "labelKey": "selang",
+        "id": "selang",
+        "role": "benda",
+        "emoji": "🧵",
+        "value": 6,
+        "width": 2.4
+      },
+      {
+        "labelKey": "kayu",
+        "id": "kayu",
+        "role": "benda",
+        "emoji": "🪵",
+        "value": 5,
+        "width": 2
+      },
+      {
+        "labelKey": "sapu",
+        "id": "sapu",
+        "role": "benda",
+        "emoji": "🧹",
+        "value": 4,
+        "width": 1.6
+      }
+    ]
+  },
+  {
+    "id": "jungkat-jungkit-berat",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKA.BANDING.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Mana Lebih Berat?",
+        "instruksi": "Taruh dua benda di timbangan, lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
+        "batu": "batu",
+        "semangka": "semangka",
+        "buku": "buku",
+        "bola": "bola",
+        "boneka": "boneka beruang",
+        "stroberi": "stroberi",
+        "balon": "balon"
+      },
+      "en": {
+        "judul": "Which Is Heavier?",
+        "instruksi": "Put the two things on the balance, watch which side goes down, then touch the heavier one.",
+        "batu": "rock",
+        "semangka": "watermelon",
+        "buku": "book",
+        "bola": "ball",
+        "boneka": "teddy bear",
+        "stroberi": "strawberry",
+        "balon": "balloon"
+      }
+    },
+    "knobs": {
+      "tipuan": {
+        "min": 0,
+        "max": 1,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = pasangan biasa; 1 = pakai pasangan besar-ringan vs kecil-berat (balon vs batu) setelah 3 sukses"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "taman",
+    "mode": "timbangan",
+    "items": [
+      {
+        "labelKey": "batu",
+        "id": "batu",
+        "role": "benda",
+        "emoji": "🪨",
+        "value": 9,
+        "scale": 0.8
+      },
+      {
+        "labelKey": "semangka",
+        "id": "semangka",
+        "role": "benda",
+        "emoji": "🍉",
+        "value": 8,
+        "scale": 1.6
+      },
+      {
+        "labelKey": "buku",
+        "id": "buku",
+        "role": "benda",
+        "emoji": "📚",
+        "value": 6,
+        "scale": 1
+      },
+      {
+        "labelKey": "bola",
+        "id": "bola",
+        "role": "benda",
+        "emoji": "⚽",
+        "value": 4,
+        "scale": 1.3
+      },
+      {
+        "labelKey": "boneka",
+        "id": "boneka",
+        "role": "benda",
+        "emoji": "🧸",
+        "value": 3,
+        "scale": 1.5
+      },
+      {
+        "labelKey": "stroberi",
+        "id": "stroberi",
+        "role": "benda",
+        "emoji": "🍓",
+        "value": 2,
+        "scale": 0.6
+      },
+      {
+        "labelKey": "balon",
+        "id": "balon",
+        "role": "benda",
+        "emoji": "🎈",
+        "value": 1,
+        "scale": 1.8
+      }
+    ]
+  },
+  {
+    "id": "klinik-hewan-alat-ukur",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.UKUR-NONSTANDAR.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Alat Ukur Klinik",
+        "instruksi": "Dengar apa yang ditanya tentang hewan ini, lalu pilih alat yang tepat dan pakai untuk mengukurnya.",
+        "ular": "ular",
+        "cacing": "cacing",
+        "kadal": "kadal",
+        "kelinci": "kelinci",
+        "kucing": "kucing",
+        "ayam": "ayam",
+        "penggaris-kubus": "penggaris kubus",
+        "timbangan": "timbangan"
+      },
+      "en": {
+        "judul": "Clinic Measuring Tools",
+        "instruksi": "Listen to what we need to know about this animal, then pick the right tool and use it.",
+        "ular": "snake",
+        "cacing": "worm",
+        "kadal": "lizard",
+        "kelinci": "rabbit",
+        "kucing": "cat",
+        "ayam": "chicken",
+        "penggaris-kubus": "cube ruler",
+        "timbangan": "balance scale"
+      }
+    },
+    "knobs": {
+      "hewanAktif": {
+        "min": 4,
+        "max": 6,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah jenis hewan yang bisa muncul; putaran diacak, bukan pencocokan 1:1"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 6,
+    "world": "peternakan",
+    "mode": "alat",
+    "items": [
+      {
+        "labelKey": "ular",
+        "id": "ular",
+        "role": "hewan",
+        "emoji": "🐍",
+        "value": 1
+      },
+      {
+        "labelKey": "cacing",
+        "id": "cacing",
+        "role": "hewan",
+        "emoji": "🪱",
+        "value": 1
+      },
+      {
+        "labelKey": "kadal",
+        "id": "kadal",
+        "role": "hewan",
+        "emoji": "🦎",
+        "value": 1
+      },
+      {
+        "labelKey": "kelinci",
+        "id": "kelinci",
+        "role": "hewan",
+        "emoji": "🐰",
+        "value": 2
+      },
+      {
+        "labelKey": "kucing",
+        "id": "kucing",
+        "role": "hewan",
+        "emoji": "🐱",
+        "value": 2
+      },
+      {
+        "labelKey": "ayam",
+        "id": "ayam",
+        "role": "hewan",
+        "emoji": "🐔",
+        "value": 2
+      },
+      {
+        "labelKey": "penggaris-kubus",
+        "id": "penggaris-kubus",
+        "role": "alat",
+        "emoji": "📏"
+      },
+      {
+        "labelKey": "timbangan",
+        "id": "timbangan",
+        "role": "alat",
+        "emoji": "⚖️"
+      }
+    ]
+  },
+  {
+    "id": "penggaris-kubus-meja",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.UKUR-NONSTANDAR.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Berapa Kubus Panjangnya?",
+        "instruksi": "Sejajarkan ujung benda dengan kubus nomor satu, lalu baca nomor di ujung satunya.",
+        "krayon": "krayon",
+        "kunci": "kunci",
+        "sendok": "sendok",
+        "sikat-gigi": "sikat gigi",
+        "pensil": "pensil",
+        "wortel": "wortel",
+        "sumpit": "sumpit",
+        "penggaris-kayu": "tongkat kayu"
+      },
+      "en": {
+        "judul": "How Many Cubes Long?",
+        "instruksi": "Line up the end of the object with cube number one, then read the number at the other end.",
+        "krayon": "crayon",
+        "kunci": "key",
+        "sendok": "spoon",
+        "sikat-gigi": "toothbrush",
+        "pensil": "pencil",
+        "wortel": "carrot",
+        "sumpit": "chopstick",
+        "penggaris-kayu": "wooden stick"
+      }
+    },
+    "knobs": {
+      "offset": {
+        "min": 0,
+        "max": 1,
+        "default": 0,
+        "step": 1,
+        "keterangan": "0 = benda sudah sejajar kubus pertama; 1 = benda mulai di kubus ke-2 (jebakan: anak harus menggeser atau menghitung selisih)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "rumah",
+    "mode": "kubus",
+    "items": [
+      {
+        "labelKey": "krayon",
+        "id": "krayon",
+        "role": "benda",
+        "emoji": "🖍️",
+        "value": 3,
+        "width": 1.2
+      },
+      {
+        "labelKey": "kunci",
+        "id": "kunci",
+        "role": "benda",
+        "emoji": "🔑",
+        "value": 4,
+        "width": 1.6
+      },
+      {
+        "labelKey": "sendok",
+        "id": "sendok",
+        "role": "benda",
+        "emoji": "🥄",
+        "value": 5,
+        "width": 2
+      },
+      {
+        "labelKey": "sikat-gigi",
+        "id": "sikat-gigi",
+        "role": "benda",
+        "emoji": "🪥",
+        "value": 6,
+        "width": 2.4
+      },
+      {
+        "labelKey": "pensil",
+        "id": "pensil",
+        "role": "benda",
+        "emoji": "✏️",
+        "value": 7,
+        "width": 2.8
+      },
+      {
+        "labelKey": "wortel",
+        "id": "wortel",
+        "role": "benda",
+        "emoji": "🥕",
+        "value": 8,
+        "width": 3.2
+      },
+      {
+        "labelKey": "sumpit",
+        "id": "sumpit",
+        "role": "benda",
+        "emoji": "🥢",
+        "value": 9,
+        "width": 3.6
+      },
+      {
+        "labelKey": "penggaris-kayu",
+        "id": "penggaris-kayu",
+        "role": "benda",
+        "emoji": "🪄",
+        "value": 10,
+        "width": 4
+      }
+    ]
+  },
+  {
+    "id": "putar-jarum-kegiatan-hari",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.JAM-BULAT.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Jam Kegiatanku",
+        "instruksi": "Dengar kegiatannya pukul berapa, lalu putar jarum pendek ke angka itu.",
+        "bangun-tidur": "bangun tidur pukul 6",
+        "berangkat-sekolah": "berangkat sekolah pukul 7",
+        "istirahat": "istirahat pukul 10",
+        "makan-siang": "makan siang pukul 12",
+        "mandi-sore": "mandi sore pukul 4",
+        "tidur-malam": "tidur malam pukul 8"
+      },
+      "en": {
+        "judul": "My Day on the Clock",
+        "instruksi": "Listen to what time the activity happens, then turn the short hand to that number.",
+        "bangun-tidur": "wake up at 6 o'clock",
+        "berangkat-sekolah": "go to school at 7 o'clock",
+        "istirahat": "playtime at 10 o'clock",
+        "makan-siang": "lunch at 12 o'clock",
+        "mandi-sore": "bath at 4 o'clock",
+        "tidur-malam": "bedtime at 8 o'clock"
+      }
+    },
+    "knobs": {
+      "kegiatanAktif": {
+        "min": 3,
+        "max": 6,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah kegiatan yang bisa diundi; semua jam bulat dan tidak ada jam ganda"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 6,
+    "world": "rumah",
+    "mode": "jam-putar",
+    "items": [
+      {
+        "labelKey": "bangun-tidur",
+        "id": "bangun-tidur",
+        "role": "kegiatan",
+        "emoji": "🛏️",
+        "value": 6
+      },
+      {
+        "labelKey": "berangkat-sekolah",
+        "id": "berangkat-sekolah",
+        "role": "kegiatan",
+        "emoji": "🏫",
+        "value": 7
+      },
+      {
+        "labelKey": "istirahat",
+        "id": "istirahat",
+        "role": "kegiatan",
+        "emoji": "⚽",
+        "value": 10
+      },
+      {
+        "labelKey": "makan-siang",
+        "id": "makan-siang",
+        "role": "kegiatan",
+        "emoji": "🍚",
+        "value": 12
+      },
+      {
+        "labelKey": "mandi-sore",
+        "id": "mandi-sore",
+        "role": "kegiatan",
+        "emoji": "🚿",
+        "value": 4
+      },
+      {
+        "labelKey": "tidur-malam",
+        "id": "tidur-malam",
+        "role": "kegiatan",
+        "emoji": "😴",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "id": "taksir-keranjang-apel",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.BILANGAN-20.04"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Kira-kira Berapa Apel?",
+        "instruksi": "Lihat keranjang apel sebentar saja, lalu geser penanda ke angka yang kira-kira sama banyaknya.",
+        "apel": "apel"
+      },
+      "en": {
+        "judul": "About How Many Apples?",
+        "instruksi": "Look at the basket of apples for a moment, then slide the marker to about how many you saw.",
+        "apel": "apple"
+      }
+    },
+    "knobs": {
+      "max": {
+        "min": 8,
+        "max": 20,
+        "default": 8,
+        "step": 1,
+        "keterangan": "jumlah apel terbanyak yang bisa muncul (target acak 8..max)"
+      },
+      "flashMs": {
+        "min": 1500,
+        "max": 3000,
+        "default": 3000,
+        "step": 100,
+        "keterangan": "lama keranjang terlihat (ms) sebelum ditutup"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "pasar",
+    "mode": "taksir",
+    "items": [
+      {
+        "labelKey": "apel",
+        "id": "apel",
+        "role": "benda",
+        "emoji": "🍎"
+      }
+    ]
+  },
+  {
+    "id": "tombol-ajaib-kamar",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "KODE.PAUD.SEBAB-AKIBAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Tombol Ajaib Kamar",
+        "instruksi": "Coba tekan tiap tombol dulu, lalu tunjuk alat yang akan menyala sebelum kamu menekannya lagi.",
+        "tombol-merah": "tombol merah",
+        "tombol-biru": "tombol biru",
+        "tombol-kuning": "tombol kuning",
+        "lampu": "lampu",
+        "kipas": "kipas angin",
+        "radio": "radio"
+      },
+      "en": {
+        "judul": "Magic Room Buttons",
+        "instruksi": "Try each button first, then point to the device that will turn on before you press it again.",
+        "tombol-merah": "red button",
+        "tombol-biru": "blue button",
+        "tombol-kuning": "yellow button",
+        "lampu": "lamp",
+        "kipas": "fan",
+        "radio": "radio"
+      }
+    },
+    "knobs": {
+      "pairs": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "rumah",
+    "mode": "tombol",
+    "items": [
+      {
+        "labelKey": "tombol-merah",
+        "id": "tombol-merah",
+        "role": "tombol",
+        "shape": "circle",
+        "color": "#e53935"
+      },
+      {
+        "labelKey": "tombol-biru",
+        "id": "tombol-biru",
+        "role": "tombol",
+        "shape": "circle",
+        "color": "#1e88e5"
+      },
+      {
+        "labelKey": "tombol-kuning",
+        "id": "tombol-kuning",
+        "role": "tombol",
+        "shape": "circle",
+        "color": "#fdd835"
+      },
+      {
+        "labelKey": "lampu",
+        "id": "lampu",
+        "role": "alat",
+        "emoji": "💡"
+      },
+      {
+        "labelKey": "kipas",
+        "id": "kipas",
+        "role": "alat",
+        "emoji": "🌀"
+      },
+      {
+        "labelKey": "radio",
+        "id": "radio",
+        "role": "alat",
+        "emoji": "📻"
+      }
+    ]
+  },
+  {
+    "id": "tombol-bengkel-robot",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "KODE.PAUD.SEBAB-AKIBAT.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Tombol Bengkel Robot",
+        "instruksi": "Robot lupa tombol mana untuk apa, coba dulu, lalu tunjuk alat yang akan menyala sebelum menekan lagi.",
+        "tombol-merah": "tombol merah",
+        "tombol-biru": "tombol biru",
+        "tombol-kuning": "tombol kuning",
+        "lampu": "lampu",
+        "kipas": "kipas angin",
+        "radio": "radio"
+      },
+      "en": {
+        "judul": "Robot Workshop Buttons",
+        "instruksi": "The robot forgot which button does what; try them, then point to the device that will turn on before pressing again.",
+        "tombol-merah": "red button",
+        "tombol-biru": "blue button",
+        "tombol-kuning": "yellow button",
+        "lampu": "lamp",
+        "kipas": "fan",
+        "radio": "radio"
+      }
+    },
+    "knobs": {
+      "pairs": {
+        "min": 2,
+        "max": 3,
+        "default": 2,
+        "step": 1,
+        "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 4,
+    "world": "menara",
+    "mode": "tombol",
+    "items": [
+      {
+        "labelKey": "tombol-merah",
+        "id": "tombol-merah",
+        "role": "tombol",
+        "shape": "circle",
+        "color": "#e53935"
+      },
+      {
+        "labelKey": "tombol-biru",
+        "id": "tombol-biru",
+        "role": "tombol",
+        "shape": "circle",
+        "color": "#1e88e5"
+      },
+      {
+        "labelKey": "tombol-kuning",
+        "id": "tombol-kuning",
+        "role": "tombol",
+        "shape": "circle",
+        "color": "#fdd835"
+      },
+      {
+        "labelKey": "lampu",
+        "id": "lampu",
+        "role": "alat",
+        "emoji": "💡"
+      },
+      {
+        "labelKey": "kipas",
+        "id": "kipas",
+        "role": "alat",
+        "emoji": "🌀"
+      },
+      {
+        "labelKey": "radio",
+        "id": "radio",
+        "role": "alat",
+        "emoji": "📻"
+      }
+    ]
+  },
+  {
+    "id": "turus-hewan-lewat-gerbang",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.DATA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Catat Hewan Lewat",
+        "instruksi": "Tiap ada hewan lewat gerbang, sentuh baris hewan itu supaya satu turus tercatat.",
+        "kucing": "kucing",
+        "bebek": "bebek",
+        "kambing": "kambing",
+        "sapi": "sapi"
+      },
+      "en": {
+        "judul": "Tally the Animals",
+        "instruksi": "Each time an animal passes the gate, touch that animal's row so one tally mark is recorded.",
+        "kucing": "cat",
+        "bebek": "duck",
+        "kambing": "goat",
+        "sapi": "cow"
+      }
+    },
+    "knobs": {
+      "count": {
+        "min": 6,
+        "max": 10,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah hewan yang lewat dalam satu putaran"
+      },
+      "kinds": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah jenis hewan (baris turus) yang dipakai"
+      },
+      "gapMs": {
+        "min": 1200,
+        "max": 2000,
+        "default": 2000,
+        "step": 100,
+        "keterangan": "jeda antar hewan lewat (ms); makin pendek makin menuntut perhatian"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "peternakan",
+    "mode": "turus",
+    "items": [
+      {
+        "labelKey": "kucing",
+        "id": "kucing",
+        "role": "hewan",
+        "emoji": "🐱"
+      },
+      {
+        "labelKey": "bebek",
+        "id": "bebek",
+        "role": "hewan",
+        "emoji": "🦆"
+      },
+      {
+        "labelKey": "kambing",
+        "id": "kambing",
+        "role": "hewan",
+        "emoji": "🐐"
+      },
+      {
+        "labelKey": "sapi",
+        "id": "sapi",
+        "role": "hewan",
+        "emoji": "🐄"
+      }
+    ]
+  },
+  {
+    "id": "turus-hewan-pulang-kandang",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "simulasi",
+    "competencyIds": [
+      "MAT.TKB.DATA.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hewan Pulang Kandang",
+        "instruksi": "Sore ini hewan pulang satu per satu, sentuh baris hewan yang lewat supaya turusnya bertambah.",
+        "ayam": "ayam",
+        "babi": "babi",
+        "domba": "domba",
+        "kuda": "kuda"
+      },
+      "en": {
+        "judul": "Animals Coming Home",
+        "instruksi": "This evening the animals come home one by one; touch the row of the one passing to add a tally.",
+        "ayam": "chicken",
+        "babi": "pig",
+        "domba": "sheep",
+        "kuda": "horse"
+      }
+    },
+    "knobs": {
+      "count": {
+        "min": 6,
+        "max": 10,
+        "default": 6,
+        "step": 1,
+        "keterangan": "jumlah hewan yang lewat dalam satu putaran"
+      },
+      "kinds": {
+        "min": 3,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah jenis hewan (baris turus) yang dipakai"
+      },
+      "gapMs": {
+        "min": 1200,
+        "max": 2000,
+        "default": 2000,
+        "step": 100,
+        "keterangan": "jeda antar hewan lewat (ms); makin pendek makin menuntut perhatian"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 5,
+    "world": "peternakan",
+    "mode": "turus",
+    "items": [
+      {
+        "labelKey": "ayam",
+        "id": "ayam",
+        "role": "hewan",
+        "emoji": "🐔"
+      },
+      {
+        "labelKey": "babi",
+        "id": "babi",
+        "role": "hewan",
+        "emoji": "🐷"
+      },
+      {
+        "labelKey": "domba",
+        "id": "domba",
+        "role": "hewan",
+        "emoji": "🐑"
+      },
+      {
+        "labelKey": "kuda",
+        "id": "kuda",
+        "role": "hewan",
+        "emoji": "🐴"
       }
     ]
   },
