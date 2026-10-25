@@ -175,12 +175,13 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
 
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
+      {/* tombol Bantu di atas area benda, tidak menutupi kartu di layar sempit */}
+      <div className="-mb-1 flex justify-end">
+        <TombolBantu onClick={bantu} disabled={kunci} />
+      </div>
       {/* item yang belum dipilah */}
       <div className="relative rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]" style={{ minHeight: 120 }}>
-        <div className="absolute top-2 right-2 z-10">
-          <TombolBantu onClick={bantu} disabled={kunci} />
-        </div>
-        <div className="grid gap-2 pr-0 sm:pr-32" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(76px, 1fr))"}}>
+        <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(76px, 1fr))"}}>
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
             const disorot = hint?.item === i.id;
@@ -234,9 +235,9 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
               className={`flex min-h-[112px] flex-col rounded-[22px] bg-white p-2 transition-transform ${hover ? "scale-[1.04]" : ""} ${disorot ? "akademi-bounce" : ""}`}
               style={{ boxShadow: `0 5px 0 rgba(11,37,69,.12), 0 0 0 4px ${ring}`, background: hijau ? "#e6f8ef" : undefined }}
             >
-              <div className="flex items-center justify-center gap-2 px-1">
+              <div className={`flex items-center justify-center px-1 ${n >= 3 ? "flex-col gap-0.5 sm:flex-row sm:gap-2" : "gap-2"}`}>
                 <Benda v={visual(b, t)} size={40} />
-                <span className="truncate" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, lineHeight: 1.1 }}>
+                <span className="text-center break-words" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, lineHeight: 1.1 }}>
                   {t(b.labelKey)}
                 </span>
               </div>
