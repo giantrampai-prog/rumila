@@ -1,6 +1,6 @@
 {
   "id": "sains-ciri-tubuh-dan-habitat",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,11 @@
       "i-punuk": "punuk penyimpan cadangan",
       "i-kakilebar": "kaki lebar untuk pasir",
       "i-warnahijau": "warna hijau daun untuk bersembunyi",
-      "i-ekorpanjang": "ekor panjang untuk bergelantung"
+      "i-ekorpanjang": "ekor panjang untuk bergelantung",
+      "i-bulupolar": "bulu putih seperti salju",
+      "i-selaput": "kaki berselaput untuk mendayung",
+      "i-ramping": "tubuh licin untuk berenang cepat",
+      "i-bulumata": "bulu mata panjang penahan pasir"
     },
     "en": {
       "judul": "Which Home Fits This Body?",
@@ -38,7 +42,11 @@
       "i-punuk": "hump that stores reserves",
       "i-kakilebar": "wide feet for sand",
       "i-warnahijau": "leaf-green colour to hide",
-      "i-ekorpanjang": "long tail for hanging"
+      "i-ekorpanjang": "long tail for hanging",
+      "i-bulupolar": "snow-white fur",
+      "i-selaput": "webbed feet for paddling",
+      "i-ramping": "smooth body for fast swimming",
+      "i-bulumata": "long eyelashes that block sand"
     }
   },
   "knobs": {
@@ -144,6 +152,30 @@
       "bin": "hutan",
       "emoji": "🐒",
       "color": "#c8e6c9"
+    },
+    {
+      "id": "bulupolar",
+      "labelKey": "i-bulupolar",
+      "bin": "es",
+      "emoji": "🐻‍❄️"
+    },
+    {
+      "id": "selaput",
+      "labelKey": "i-selaput",
+      "bin": "air",
+      "emoji": "🦆"
+    },
+    {
+      "id": "ramping",
+      "labelKey": "i-ramping",
+      "bin": "air",
+      "emoji": "🐬"
+    },
+    {
+      "id": "bulumata",
+      "labelKey": "i-bulumata",
+      "bin": "gurun",
+      "emoji": "🐫"
     }
   ],
   "pilihan": []

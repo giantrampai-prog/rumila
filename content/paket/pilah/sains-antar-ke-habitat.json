@@ -1,6 +1,6 @@
 {
   "id": "sains-antar-ke-habitat",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,11 @@
       "i-monyet": "monyet",
       "i-harimau": "harimau",
       "i-ikanbadut": "ikan badut",
-      "i-penyu": "penyu"
+      "i-penyu": "penyu",
+      "i-kalajengking": "kalajengking",
+      "i-ular": "ular pasir",
+      "i-untaduapunuk": "unta berpunuk dua",
+      "i-anjinglaut": "anjing laut"
     },
     "en": {
       "judul": "Take Them Home",
@@ -38,7 +42,11 @@
       "i-monyet": "monkey",
       "i-harimau": "tiger",
       "i-ikanbadut": "clownfish",
-      "i-penyu": "sea turtle"
+      "i-penyu": "sea turtle",
+      "i-kalajengking": "scorpion",
+      "i-ular": "sand snake",
+      "i-untaduapunuk": "two-humped camel",
+      "i-anjinglaut": "seal"
     }
   },
   "knobs": {
@@ -137,6 +145,31 @@
       "labelKey": "i-penyu",
       "bin": "terumbu",
       "emoji": "🐢"
+    },
+    {
+      "id": "kalajengking",
+      "labelKey": "i-kalajengking",
+      "bin": "gurun",
+      "emoji": "🦂"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "gurun",
+      "emoji": "🐍",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "untaduapunuk",
+      "labelKey": "i-untaduapunuk",
+      "bin": "gurun",
+      "emoji": "🐫"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "es",
+      "emoji": "🦭"
     }
   ],
   "pilihan": []

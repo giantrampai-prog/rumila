@@ -1,6 +1,6 @@
 {
   "id": "kartu-titik-1-5",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,7 +17,10 @@
       "n4": "4",
       "n5": "5",
       "apel": "apel",
-      "ikan": "ikan"
+      "ikan": "ikan",
+      "bintang": "bintang",
+      "bebek": "bebek",
+      "bola": "bola"
     },
     "en": {
       "judul": "Dot Cards",
@@ -28,7 +31,10 @@
       "n4": "4",
       "n5": "5",
       "apel": "apples",
-      "ikan": "fish"
+      "ikan": "fish",
+      "bintang": "star",
+      "bebek": "duck",
+      "bola": "ball"
     }
   },
   "knobs": {
@@ -149,6 +155,111 @@
       "labelKey": "ikan",
       "bin": "k5",
       "emoji": "🐟",
+      "count": 5
+    },
+    {
+      "id": "bintang-1",
+      "labelKey": "bintang",
+      "bin": "k1",
+      "emoji": "⭐",
+      "count": 1
+    },
+    {
+      "id": "bintang-2",
+      "labelKey": "bintang",
+      "bin": "k2",
+      "emoji": "⭐",
+      "count": 2
+    },
+    {
+      "id": "bintang-3",
+      "labelKey": "bintang",
+      "bin": "k3",
+      "emoji": "⭐",
+      "count": 3
+    },
+    {
+      "id": "bintang-4",
+      "labelKey": "bintang",
+      "bin": "k4",
+      "emoji": "⭐",
+      "count": 4
+    },
+    {
+      "id": "bintang-5",
+      "labelKey": "bintang",
+      "bin": "k5",
+      "emoji": "⭐",
+      "count": 5
+    },
+    {
+      "id": "bebek-1",
+      "labelKey": "bebek",
+      "bin": "k1",
+      "emoji": "🦆",
+      "count": 1
+    },
+    {
+      "id": "bebek-2",
+      "labelKey": "bebek",
+      "bin": "k2",
+      "emoji": "🦆",
+      "count": 2
+    },
+    {
+      "id": "bebek-3",
+      "labelKey": "bebek",
+      "bin": "k3",
+      "emoji": "🦆",
+      "count": 3
+    },
+    {
+      "id": "bebek-4",
+      "labelKey": "bebek",
+      "bin": "k4",
+      "emoji": "🦆",
+      "count": 4
+    },
+    {
+      "id": "bebek-5",
+      "labelKey": "bebek",
+      "bin": "k5",
+      "emoji": "🦆",
+      "count": 5
+    },
+    {
+      "id": "bola-1",
+      "labelKey": "bola",
+      "bin": "k1",
+      "emoji": "⚽",
+      "count": 1
+    },
+    {
+      "id": "bola-2",
+      "labelKey": "bola",
+      "bin": "k2",
+      "emoji": "⚽",
+      "count": 2
+    },
+    {
+      "id": "bola-3",
+      "labelKey": "bola",
+      "bin": "k3",
+      "emoji": "⚽",
+      "count": 3
+    },
+    {
+      "id": "bola-4",
+      "labelKey": "bola",
+      "bin": "k4",
+      "emoji": "⚽",
+      "count": 4
+    },
+    {
+      "id": "bola-5",
+      "labelKey": "bola",
+      "bin": "k5",
+      "emoji": "⚽",
       "count": 5
     }
   ]

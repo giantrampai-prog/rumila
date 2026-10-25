@@ -1,6 +1,6 @@
 {
   "id": "sains-keranjang-indra-rumah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,24 @@
       "i-bunga": "bunga harum",
       "i-sabun": "sabun wangi",
       "i-kue": "kue manis",
-      "i-permen": "permen"
+      "i-permen": "permen",
+      "i-lukisan": "lukisan",
+      "i-cermin": "cermin",
+      "i-senter": "senter menyala",
+      "i-bukugambar": "buku bergambar",
+      "i-bintang": "bintang di langit",
+      "i-terompet": "terompet",
+      "i-gitar": "petikan gitar",
+      "i-radio": "radio",
+      "i-biola": "biola",
+      "i-piano": "piano",
+      "i-mawar": "mawar harum",
+      "i-melati": "bunga melati harum",
+      "i-kauskaki": "kaus kaki bau",
+      "i-sampah": "tempat sampah bau",
+      "i-eskrim": "es krim manis",
+      "i-lemon": "lemon asam",
+      "i-madu": "madu manis"
     },
     "en": {
       "judul": "Five-Sense Baskets",
@@ -38,7 +55,24 @@
       "i-bunga": "sweet-smelling flower",
       "i-sabun": "scented soap",
       "i-kue": "sweet cake",
-      "i-permen": "candy"
+      "i-permen": "candy",
+      "i-lukisan": "painting",
+      "i-cermin": "mirror",
+      "i-senter": "glowing flashlight",
+      "i-bukugambar": "picture book",
+      "i-bintang": "star in the sky",
+      "i-terompet": "trumpet",
+      "i-gitar": "guitar strumming",
+      "i-radio": "radio",
+      "i-biola": "violin",
+      "i-piano": "piano",
+      "i-mawar": "sweet-smelling rose",
+      "i-melati": "fragrant jasmine",
+      "i-kauskaki": "smelly socks",
+      "i-sampah": "smelly trash can",
+      "i-eskrim": "sweet ice cream",
+      "i-lemon": "sour lemon",
+      "i-madu": "sweet honey"
     }
   },
   "knobs": {
@@ -132,6 +166,108 @@
       "labelKey": "i-permen",
       "bin": "lidah",
       "emoji": "🍬"
+    },
+    {
+      "id": "lukisan",
+      "labelKey": "i-lukisan",
+      "bin": "mata",
+      "emoji": "🖼️"
+    },
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "mata",
+      "emoji": "🪞"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "mata",
+      "emoji": "🔦"
+    },
+    {
+      "id": "bukugambar",
+      "labelKey": "i-bukugambar",
+      "bin": "mata",
+      "emoji": "📖"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "mata",
+      "emoji": "⭐"
+    },
+    {
+      "id": "terompet",
+      "labelKey": "i-terompet",
+      "bin": "telinga",
+      "emoji": "🎺"
+    },
+    {
+      "id": "gitar",
+      "labelKey": "i-gitar",
+      "bin": "telinga",
+      "emoji": "🎸"
+    },
+    {
+      "id": "radio",
+      "labelKey": "i-radio",
+      "bin": "telinga",
+      "emoji": "📻"
+    },
+    {
+      "id": "biola",
+      "labelKey": "i-biola",
+      "bin": "telinga",
+      "emoji": "🎻"
+    },
+    {
+      "id": "piano",
+      "labelKey": "i-piano",
+      "bin": "telinga",
+      "emoji": "🎹"
+    },
+    {
+      "id": "mawar",
+      "labelKey": "i-mawar",
+      "bin": "hidung",
+      "emoji": "🌹"
+    },
+    {
+      "id": "melati",
+      "labelKey": "i-melati",
+      "bin": "hidung",
+      "emoji": "🌼"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "hidung",
+      "emoji": "🧦"
+    },
+    {
+      "id": "sampah",
+      "labelKey": "i-sampah",
+      "bin": "hidung",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "eskrim",
+      "labelKey": "i-eskrim",
+      "bin": "lidah",
+      "emoji": "🍦"
+    },
+    {
+      "id": "lemon",
+      "labelKey": "i-lemon",
+      "bin": "lidah",
+      "emoji": "🍋"
+    },
+    {
+      "id": "madu",
+      "labelKey": "i-madu",
+      "bin": "lidah",
+      "emoji": "🍯"
     }
   ],
   "pilihan": []

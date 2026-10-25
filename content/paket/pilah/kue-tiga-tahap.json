@@ -1,6 +1,6 @@
 {
   "id": "kue-tiga-tahap",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,18 @@
       "aduk": "aduk adonan",
       "tuang": "tuang susu",
       "oven": "masukkan ke oven",
-      "jadi": "kue matang"
+      "jadi": "kue matang",
+      "i-mentega": "ambil mentega",
+      "i-cucitangan": "cuci tangan",
+      "i-resep": "baca resep",
+      "i-cokelat": "ambil cokelat",
+      "i-tepungmangkuk": "tuang tepung ke mangkuk",
+      "i-garam": "tambah sejumput garam",
+      "i-madu": "tuang madu ke adonan",
+      "i-waktu": "atur waktu oven",
+      "i-sarungtangan": "pakai sarung tangan oven",
+      "i-tunggu": "tunggu kue mengembang",
+      "i-cupcake": "cupcake matang"
     },
     "en": {
       "judul": "Three Baking Stages",
@@ -32,7 +43,18 @@
       "aduk": "stir the batter",
       "tuang": "pour the milk",
       "oven": "put it in the oven",
-      "jadi": "the cake is done"
+      "jadi": "the cake is done",
+      "i-mentega": "get the butter",
+      "i-cucitangan": "wash your hands",
+      "i-resep": "read the recipe",
+      "i-cokelat": "get the chocolate",
+      "i-tepungmangkuk": "pour flour into the bowl",
+      "i-garam": "add a pinch of salt",
+      "i-madu": "pour honey into the batter",
+      "i-waktu": "set the oven timer",
+      "i-sarungtangan": "put on oven mitts",
+      "i-tunggu": "wait for the cake to rise",
+      "i-cupcake": "baked cupcake"
     }
   },
   "knobs": {
@@ -110,6 +132,72 @@
       "labelKey": "jadi",
       "bin": "panggang",
       "emoji": "🎂"
+    },
+    {
+      "id": "mentega",
+      "labelKey": "i-mentega",
+      "bin": "siapkan",
+      "emoji": "🧈"
+    },
+    {
+      "id": "cucitangan",
+      "labelKey": "i-cucitangan",
+      "bin": "siapkan",
+      "emoji": "🧼"
+    },
+    {
+      "id": "resep",
+      "labelKey": "i-resep",
+      "bin": "siapkan",
+      "emoji": "📖"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "i-cokelat",
+      "bin": "siapkan",
+      "emoji": "🍫"
+    },
+    {
+      "id": "tepungmangkuk",
+      "labelKey": "i-tepungmangkuk",
+      "bin": "campur",
+      "emoji": "🥣"
+    },
+    {
+      "id": "garam",
+      "labelKey": "i-garam",
+      "bin": "campur",
+      "emoji": "🧂"
+    },
+    {
+      "id": "madu",
+      "labelKey": "i-madu",
+      "bin": "campur",
+      "emoji": "🍯"
+    },
+    {
+      "id": "waktu",
+      "labelKey": "i-waktu",
+      "bin": "panggang",
+      "emoji": "⏲️"
+    },
+    {
+      "id": "sarungtangan",
+      "labelKey": "i-sarungtangan",
+      "bin": "panggang",
+      "emoji": "🧤"
+    },
+    {
+      "id": "tunggu",
+      "labelKey": "i-tunggu",
+      "bin": "panggang",
+      "emoji": "⏳"
+    },
+    {
+      "id": "cupcake",
+      "labelKey": "i-cupcake",
+      "bin": "panggang",
+      "emoji": "🧁"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-rak-tujuh-bahan-sekolah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -31,7 +31,12 @@
       "i-penggaris": "penggaris plastik",
       "i-ember": "ember plastik",
       "i-jendela": "kaca jendela",
-      "i-toples": "toples kaca"
+      "i-toples": "toples kaca",
+      "i-koran": "koran",
+      "i-amplop": "amplop surat",
+      "i-kaos": "kaus olahraga",
+      "i-kauskaki": "kaus kaki",
+      "i-bendera": "bendera merah putih"
     },
     "en": {
       "judul": "Seven Material Shelves at School",
@@ -56,7 +61,12 @@
       "i-penggaris": "plastic ruler",
       "i-ember": "plastic bucket",
       "i-jendela": "window glass",
-      "i-toples": "glass jar"
+      "i-toples": "glass jar",
+      "i-koran": "newspaper",
+      "i-amplop": "paper envelope",
+      "i-kaos": "sports T-shirt",
+      "i-kauskaki": "socks",
+      "i-bendera": "red-and-white flag"
     }
   },
   "knobs": {
@@ -210,6 +220,36 @@
       "labelKey": "i-toples",
       "bin": "kaca",
       "emoji": "🫙"
+    },
+    {
+      "id": "koran",
+      "labelKey": "i-koran",
+      "bin": "kertas",
+      "emoji": "📰"
+    },
+    {
+      "id": "amplop",
+      "labelKey": "i-amplop",
+      "bin": "kertas",
+      "emoji": "✉️"
+    },
+    {
+      "id": "kaos",
+      "labelKey": "i-kaos",
+      "bin": "kain",
+      "emoji": "👕"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "kain",
+      "emoji": "🧦"
+    },
+    {
+      "id": "bendera",
+      "labelKey": "i-bendera",
+      "bin": "kain",
+      "emoji": "🇮🇩"
     }
   ],
   "pilihan": []

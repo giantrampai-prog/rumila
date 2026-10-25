@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-sayur-bagian-tumbuhan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,8 @@
       "i-selada": "selada",
       "i-kangkung": "kangkung",
       "i-brokoli": "brokoli",
-      "i-kembangkol": "kembang kol"
+      "i-kembangkol": "kembang kol",
+      "i-kentang": "kentang (umbi batang)"
     },
     "en": {
       "judul": "Which Part Is the Veggie?",
@@ -42,7 +43,8 @@
       "i-selada": "lettuce",
       "i-kangkung": "water spinach",
       "i-brokoli": "broccoli",
-      "i-kembangkol": "cauliflower"
+      "i-kembangkol": "cauliflower",
+      "i-kentang": "potato (stem tuber)"
     }
   },
   "knobs": {
@@ -151,6 +153,12 @@
       "bin": "bunga",
       "emoji": "🥦",
       "color": "#fff8e1"
+    },
+    {
+      "id": "kentang",
+      "labelKey": "i-kentang",
+      "bin": "batang",
+      "emoji": "🥔"
     }
   ],
   "pilihan": []

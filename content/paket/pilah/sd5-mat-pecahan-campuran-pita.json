@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-pecahan-campuran-pita",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,23 @@
       "i7": "7/4",
       "i8": "14/8",
       "i9": "16/5",
-      "i10": "32/10"
+      "i10": "32/10",
+      "i-i11": "15/6",
+      "i-i12": "20/8",
+      "i-i13": "25/10",
+      "i-i14": "30/12",
+      "i-i15": "15/12",
+      "i-i16": "20/16",
+      "i-i17": "25/20",
+      "i-i18": "30/24",
+      "i-i19": "24/9",
+      "i-i20": "32/12",
+      "i-i21": "40/15",
+      "i-i22": "48/18",
+      "i-i23": "21/12",
+      "i-i24": "28/16",
+      "i-i25": "48/15",
+      "i-i26": "64/20"
     },
     "en": {
       "judul": "Mixed Number Ribbons",
@@ -44,7 +60,23 @@
       "i7": "7/4",
       "i8": "14/8",
       "i9": "16/5",
-      "i10": "32/10"
+      "i10": "32/10",
+      "i-i11": "15/6",
+      "i-i12": "20/8",
+      "i-i13": "25/10",
+      "i-i14": "30/12",
+      "i-i15": "15/12",
+      "i-i16": "20/16",
+      "i-i17": "25/20",
+      "i-i18": "30/24",
+      "i-i19": "24/9",
+      "i-i20": "32/12",
+      "i-i21": "40/15",
+      "i-i22": "48/18",
+      "i-i23": "21/12",
+      "i-i24": "28/16",
+      "i-i25": "48/15",
+      "i-i26": "64/20"
     }
   },
   "knobs": {
@@ -140,6 +172,86 @@
     {
       "id": "i10",
       "labelKey": "i10",
+      "bin": "tigaseperlima"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i-i11",
+      "bin": "duasetengah"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i-i12",
+      "bin": "duasetengah"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i-i13",
+      "bin": "duasetengah"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i-i14",
+      "bin": "duasetengah"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i-i15",
+      "bin": "satuseperempat"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i-i16",
+      "bin": "satuseperempat"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i-i17",
+      "bin": "satuseperempat"
+    },
+    {
+      "id": "i18",
+      "labelKey": "i-i18",
+      "bin": "satuseperempat"
+    },
+    {
+      "id": "i19",
+      "labelKey": "i-i19",
+      "bin": "duaduapertiga"
+    },
+    {
+      "id": "i20",
+      "labelKey": "i-i20",
+      "bin": "duaduapertiga"
+    },
+    {
+      "id": "i21",
+      "labelKey": "i-i21",
+      "bin": "duaduapertiga"
+    },
+    {
+      "id": "i22",
+      "labelKey": "i-i22",
+      "bin": "duaduapertiga"
+    },
+    {
+      "id": "i23",
+      "labelKey": "i-i23",
+      "bin": "satutigaperempat"
+    },
+    {
+      "id": "i24",
+      "labelKey": "i-i24",
+      "bin": "satutigaperempat"
+    },
+    {
+      "id": "i25",
+      "labelKey": "i-i25",
+      "bin": "tigaseperlima"
+    },
+    {
+      "id": "i26",
+      "labelKey": "i-i26",
       "bin": "tigaseperlima"
     }
   ]
