@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-kerja-tim-kode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -42,7 +42,46 @@
       "s5-2": "jalankan git init",
       "s5-3": "tulis kode pertama",
       "s5-4": "commit pertama",
-      "s5-5": "unggah ke repositori tim"
+      "s5-5": "unggah ke repositori tim",
+      "s6": "Mengajukan perubahan",
+      "s6-1": "kirim cabangmu ke repositori (push)",
+      "s6-2": "buka permintaan gabung (pull request)",
+      "s6-3": "teman membaca dan memberi saran",
+      "s6-4": "perbaiki kode sesuai saran",
+      "s6-5": "teman menyetujui perubahan",
+      "s6-6": "gabungkan ke versi utama (merge)",
+      "s7": "Kembali ke versi lama",
+      "s7-1": "program tiba-tiba error",
+      "s7-2": "lihat riwayat commit (log)",
+      "s7-3": "temukan commit penyebabnya",
+      "s7-4": "batalkan commit itu (revert)",
+      "s7-5": "uji lagi: program jalan",
+      "s7-6": "kirim perbaikan ke tim (push)",
+      "s8": "Menambah gambar ke game",
+      "s8-1": "ambil versi terbaru (pull)",
+      "s8-2": "simpan gambar baru di folder aset",
+      "s8-3": "tulis kode untuk memanggil gambar",
+      "s8-4": "jalankan game: gambar muncul",
+      "s8-5": "commit: 'tambah gambar tokoh'",
+      "s8-6": "kirim ke repositori tim (push)",
+      "s9": "Bergabung ke proyek tim",
+      "s9-1": "salin repositori ke komputermu (clone)",
+      "s9-2": "baca petunjuk di README",
+      "s9-3": "pasang yang dibutuhkan program",
+      "s9-4": "jalankan program untuk mencoba",
+      "s9-5": "buat cabang pertamamu (branch)",
+      "s10": "Cabang yang tertinggal",
+      "s10-1": "cabangmu tertinggal dari versi utama",
+      "s10-2": "ambil perubahan terbaru (pull)",
+      "s10-3": "gabungkan versi utama ke cabangmu (merge)",
+      "s10-4": "uji lagi programmu",
+      "s10-5": "kirim cabangmu (push)",
+      "s11": "Membagi tugas tim",
+      "s11-1": "tim memecah proyek jadi tugas kecil",
+      "s11-2": "tiap orang memilih satu tugas",
+      "s11-3": "tiap orang membuat cabang sendiri",
+      "s11-4": "tiap orang mengerjakan dan menguji tugasnya",
+      "s11-5": "semua cabang digabung ke versi utama"
     },
     "en": {
       "judul": "Teamwork with Code Versions",
@@ -78,7 +117,46 @@
       "s5-2": "run git init",
       "s5-3": "write the first code",
       "s5-4": "first commit",
-      "s5-5": "upload to the team repository"
+      "s5-5": "upload to the team repository",
+      "s6": "Proposing a change",
+      "s6-1": "push your branch to the repository",
+      "s6-2": "open a pull request",
+      "s6-3": "a teammate reads it and gives suggestions",
+      "s6-4": "fix the code using the suggestions",
+      "s6-5": "the teammate approves the change",
+      "s6-6": "merge into the main version",
+      "s7": "Going back to an old version",
+      "s7-1": "the program suddenly has an error",
+      "s7-2": "look at the commit history (log)",
+      "s7-3": "find the commit that caused it",
+      "s7-4": "undo that commit (revert)",
+      "s7-5": "test again: the program works",
+      "s7-6": "push the fix to the team",
+      "s8": "Adding a picture to a game",
+      "s8-1": "get the latest version (pull)",
+      "s8-2": "save the new picture in the assets folder",
+      "s8-3": "write code that loads the picture",
+      "s8-4": "run the game: the picture appears",
+      "s8-5": "commit: 'add character picture'",
+      "s8-6": "send it to the team repository (push)",
+      "s9": "Joining a team project",
+      "s9-1": "copy the repository to your computer (clone)",
+      "s9-2": "read the instructions in the README",
+      "s9-3": "install what the program needs",
+      "s9-4": "run the program to try it",
+      "s9-5": "make your first branch",
+      "s10": "A branch that fell behind",
+      "s10-1": "your branch is behind the main version",
+      "s10-2": "get the latest changes (pull)",
+      "s10-3": "merge the main version into your branch",
+      "s10-4": "test your program again",
+      "s10-5": "push your branch",
+      "s11": "Sharing out team tasks",
+      "s11-1": "the team splits the project into small tasks",
+      "s11-2": "each person picks one task",
+      "s11-3": "each person makes their own branch",
+      "s11-4": "each person does and tests their task",
+      "s11-5": "all branches are merged into the main version"
     }
   },
   "knobs": {
@@ -257,6 +335,207 @@
         {
           "id": "s5-5",
           "labelKey": "s5-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-1",
+          "labelKey": "s6-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-2",
+          "labelKey": "s6-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-3",
+          "labelKey": "s6-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-4",
+          "labelKey": "s6-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-5",
+          "labelKey": "s6-5",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-6",
+          "labelKey": "s6-6",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-1",
+          "labelKey": "s7-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-2",
+          "labelKey": "s7-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-3",
+          "labelKey": "s7-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-4",
+          "labelKey": "s7-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-5",
+          "labelKey": "s7-5",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-6",
+          "labelKey": "s7-6",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-1",
+          "labelKey": "s8-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-2",
+          "labelKey": "s8-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-3",
+          "labelKey": "s8-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-4",
+          "labelKey": "s8-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-5",
+          "labelKey": "s8-5",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-6",
+          "labelKey": "s8-6",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-1",
+          "labelKey": "s9-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-2",
+          "labelKey": "s9-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-3",
+          "labelKey": "s9-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-4",
+          "labelKey": "s9-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-5",
+          "labelKey": "s9-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-1",
+          "labelKey": "s10-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-2",
+          "labelKey": "s10-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-3",
+          "labelKey": "s10-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-4",
+          "labelKey": "s10-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-5",
+          "labelKey": "s10-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "titleKey": "s11",
+      "steps": [
+        {
+          "id": "s11-1",
+          "labelKey": "s11-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-2",
+          "labelKey": "s11-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-3",
+          "labelKey": "s11-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-4",
+          "labelKey": "s11-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-5",
+          "labelKey": "s11-5",
           "scale": 0.4
         }
       ]

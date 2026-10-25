@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-biji-mana-berkecambah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.02"
@@ -34,7 +34,11 @@
       "p-r5": "Dua hal yang dibutuhkan hampir semua biji untuk berkecambah adalah…",
       "p-r6": "Biji ditanam di pasir kering di halaman yang panas. Apa yang paling perlu ditambahkan?",
       "p-r7": "Biji di kapas basah dalam freezer tidak berkecambah. Apa yang kurang?",
-      "p-r8": "Kecambah sudah keluar di lemari gelap. Agar tumbuh menjadi tanaman hijau, sekarang ia butuh…"
+      "p-r8": "Kecambah sudah keluar di lemari gelap. Agar tumbuh menjadi tanaman hijau, sekarang ia butuh…",
+      "p-r9": "Tiga cawan biji kacang hijau. Mana yang tidak berkecambah?",
+      "p-r10": "Biji ditaruh di kapas kering di kelas yang hangat. Apa yang terjadi?",
+      "p-r11": "Biji kacang hijau di kapas kering tidak berkecambah. Apa yang kurang?",
+      "p-r12": "Biji yang terendam air dingin di kulkas lambat berkecambah. Apa yang perlu diubah?"
     },
     "en": {
       "judul": "Sprout Prediction",
@@ -63,7 +67,11 @@
       "p-r5": "The two things almost all seeds need to germinate are…",
       "p-r6": "Seeds are planted in dry sand in a hot yard. What do they most need?",
       "p-r7": "Seeds on wet cotton wool in the freezer do not germinate. What is missing?",
-      "p-r8": "Sprouts have come up in the dark cupboard. To grow into green plants, they now need…"
+      "p-r8": "Sprouts have come up in the dark cupboard. To grow into green plants, they now need…",
+      "p-r9": "Three dishes of mung bean seeds. Which one does not germinate?",
+      "p-r10": "Seeds are put on dry cotton wool in a warm classroom. What happens?",
+      "p-r11": "Mung bean seeds on dry cotton wool do not germinate. What is missing?",
+      "p-r12": "Seeds soaking in cold water in the fridge are slow to germinate. What needs to change?"
     }
   },
   "knobs": {},
@@ -255,6 +263,45 @@
         "tambahpupuk"
       ],
       "correct": "tambahcahaya"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "basahbeku",
+        "basahhangat",
+        "basahgelap"
+      ],
+      "correct": "basahbeku"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "tetap",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "tambahair",
+        "tambahcahaya",
+        "tambahpupuk"
+      ],
+      "correct": "tambahair"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "hangat",
+        "tambahcahaya",
+        "tambahpupuk"
+      ],
+      "correct": "hangat"
     }
   ]
 }

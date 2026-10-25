@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalan-udara",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERNAPASAN.01"
@@ -21,7 +21,60 @@
       "keluar-darah": "karbon dioksida keluar dari darah ke alveolus",
       "keluar-bronkus": "melewati bronkus",
       "keluar-trakea": "naik lewat trakea",
-      "keluar-hidung": "keluar lewat hidung atau mulut"
+      "keluar-hidung": "keluar lewat hidung atau mulut",
+      "s-taman": "Menghirup udara pagi di taman",
+      "taman-hidung": "udara pagi masuk lewat hidung",
+      "taman-trakea": "udara turun lewat batang tenggorok (trakea)",
+      "taman-bronkus": "udara masuk ke cabang tenggorok (bronkus)",
+      "taman-alveolus": "udara sampai di gelembung paru-paru (alveolus)",
+      "taman-darah": "oksigen berpindah ke darah",
+      "s-flu": "Bernapas saat hidung tersumbat",
+      "flu-mulut": "hidung tersumbat, udara masuk lewat mulut",
+      "flu-tenggorokan": "udara melewati tenggorokan",
+      "flu-trakea": "udara turun lewat trakea",
+      "flu-bronkus": "udara masuk ke bronkus",
+      "flu-alveolus": "udara mengisi alveolus",
+      "s-otot": "Oksigen untuk otot kaki",
+      "otot-alveolus": "oksigen sampai di alveolus",
+      "otot-darah": "oksigen masuk ke darah",
+      "otot-jantung": "darah kaya oksigen dipompa jantung",
+      "otot-kaki": "oksigen sampai di sel otot kaki",
+      "s-dalam": "Udara di dalam paru-paru",
+      "dalam-trakea": "udara turun lewat trakea",
+      "dalam-bronkus": "trakea bercabang dua jadi bronkus",
+      "dalam-bronkiolus": "bronkus bercabang jadi saluran kecil (bronkiolus)",
+      "dalam-alveolus": "ujung bronkiolus berupa alveolus",
+      "dalam-darah": "oksigen pindah dari alveolus ke darah",
+      "s-aroma": "Mencium wangi nasi goreng",
+      "aroma-hidung": "kamu menghirup wangi nasi goreng lewat hidung",
+      "aroma-tenggorokan": "udara melewati tenggorokan",
+      "aroma-trakea": "udara turun lewat trakea",
+      "aroma-bronkiolus": "udara menyebar ke bronkiolus",
+      "aroma-alveolus": "udara sampai di alveolus",
+      "s-lilin": "Meniup lilin ulang tahun",
+      "lilin-alveolus": "udara terdorong keluar dari alveolus",
+      "lilin-bronkus": "udara melewati bronkus",
+      "lilin-trakea": "udara naik lewat trakea",
+      "lilin-tenggorokan": "udara melewati tenggorokan",
+      "lilin-lilin": "udara keluar dari mulut, lilin padam",
+      "s-balon": "Meniup balon",
+      "balon-darah": "darah melepas karbon dioksida ke alveolus",
+      "balon-bronkus": "udara keluar melewati bronkus",
+      "balon-trakea": "udara naik lewat trakea",
+      "balon-tenggorokan": "udara melewati tenggorokan",
+      "balon-balon": "udara keluar dari mulut dan mengisi balon",
+      "s-sisa": "Karbon dioksida dari otot kaki",
+      "sisa-kaki": "sel otot kaki menghasilkan karbon dioksida",
+      "sisa-darah": "darah membawanya ke paru-paru",
+      "sisa-alveolus": "karbon dioksida pindah ke alveolus",
+      "sisa-trakea": "naik lewat trakea",
+      "sisa-hidung": "keluar lewat hidung",
+      "s-kaca": "Napas di kaca jendela",
+      "kaca-alveolus": "udara hangat keluar dari alveolus",
+      "kaca-bronkus": "udara melewati bronkus",
+      "kaca-trakea": "udara naik lewat trakea",
+      "kaca-mulut": "napas hangat keluar dari mulut",
+      "kaca-kaca": "uap air dari napas mengembun di kaca yang dingin"
     },
     "en": {
       "judul": "The Breath's Journey",
@@ -37,7 +90,60 @@
       "keluar-darah": "carbon dioxide leaves the blood into the alveoli",
       "keluar-bronkus": "passes through the bronchi",
       "keluar-trakea": "goes up the trachea",
-      "keluar-hidung": "out through the nose or mouth"
+      "keluar-hidung": "out through the nose or mouth",
+      "s-taman": "Breathing in morning air in the park",
+      "taman-hidung": "morning air comes in through the nose",
+      "taman-trakea": "the air goes down the windpipe (trachea)",
+      "taman-bronkus": "the air enters the bronchi",
+      "taman-alveolus": "the air reaches the air sacs (alveoli)",
+      "taman-darah": "oxygen moves into the blood",
+      "s-flu": "Breathing with a blocked nose",
+      "flu-mulut": "the nose is blocked, so air comes in through the mouth",
+      "flu-tenggorokan": "the air passes the throat",
+      "flu-trakea": "the air goes down the trachea",
+      "flu-bronkus": "the air enters the bronchi",
+      "flu-alveolus": "the air fills the alveoli",
+      "s-otot": "Oxygen for the leg muscles",
+      "otot-alveolus": "oxygen reaches the alveoli",
+      "otot-darah": "oxygen passes into the blood",
+      "otot-jantung": "the heart pumps the oxygen-rich blood",
+      "otot-kaki": "oxygen reaches the leg muscle cells",
+      "s-dalam": "Air inside the lungs",
+      "dalam-trakea": "air goes down the trachea",
+      "dalam-bronkus": "the trachea splits into two bronchi",
+      "dalam-bronkiolus": "the bronchi branch into tiny tubes (bronchioles)",
+      "dalam-alveolus": "the bronchioles end in alveoli",
+      "dalam-darah": "oxygen moves from the alveoli into the blood",
+      "s-aroma": "Smelling fried rice",
+      "aroma-hidung": "you breathe in the smell of fried rice through your nose",
+      "aroma-tenggorokan": "the air passes the throat",
+      "aroma-trakea": "the air goes down the trachea",
+      "aroma-bronkiolus": "the air spreads into the bronchioles",
+      "aroma-alveolus": "the air reaches the alveoli",
+      "s-lilin": "Blowing out birthday candles",
+      "lilin-alveolus": "air is pushed out of the alveoli",
+      "lilin-bronkus": "the air passes through the bronchi",
+      "lilin-trakea": "the air goes up the trachea",
+      "lilin-tenggorokan": "the air passes the throat",
+      "lilin-lilin": "the air leaves the mouth and the candle goes out",
+      "s-balon": "Blowing up a balloon",
+      "balon-darah": "the blood lets go of carbon dioxide into the alveoli",
+      "balon-bronkus": "the air goes out through the bronchi",
+      "balon-trakea": "the air goes up the trachea",
+      "balon-tenggorokan": "the air passes the throat",
+      "balon-balon": "the air leaves the mouth and fills the balloon",
+      "s-sisa": "Carbon dioxide from the leg muscles",
+      "sisa-kaki": "leg muscle cells make carbon dioxide",
+      "sisa-darah": "the blood carries it to the lungs",
+      "sisa-alveolus": "the carbon dioxide moves into the alveoli",
+      "sisa-trakea": "it goes up the trachea",
+      "sisa-hidung": "it leaves through the nose",
+      "s-kaca": "Breath on a window",
+      "kaca-alveolus": "warm air leaves the alveoli",
+      "kaca-bronkus": "the air passes through the bronchi",
+      "kaca-trakea": "the air goes up the trachea",
+      "kaca-mulut": "warm breath leaves the mouth",
+      "kaca-kaca": "water vapour in the breath condenses on the cold glass"
     }
   },
   "knobs": {
@@ -46,7 +152,7 @@
       "max": 6,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah langkah: 4 → 6 (udara keluar hanya 4)"
+      "keterangan": "jumlah langkah: 4 → 6 (beberapa jalur hanya 4–5 langkah)"
     }
   },
   "assets": [],
@@ -117,6 +223,300 @@
           "id": "hidung",
           "labelKey": "keluar-hidung",
           "emoji": "💨"
+        }
+      ]
+    },
+    {
+      "id": "taman",
+      "titleKey": "s-taman",
+      "steps": [
+        {
+          "id": "hidung",
+          "labelKey": "taman-hidung",
+          "emoji": "👃"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "taman-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "taman-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "taman-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "taman-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "flu",
+      "titleKey": "s-flu",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "flu-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "tenggorokan",
+          "labelKey": "flu-tenggorokan",
+          "shape": "rect",
+          "color": "#b3e5fc",
+          "width": 0.8
+        },
+        {
+          "id": "trakea",
+          "labelKey": "flu-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "flu-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "flu-alveolus",
+          "emoji": "🫧"
+        }
+      ]
+    },
+    {
+      "id": "otot",
+      "titleKey": "s-otot",
+      "steps": [
+        {
+          "id": "alveolus",
+          "labelKey": "otot-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "otot-darah",
+          "emoji": "🩸"
+        },
+        {
+          "id": "jantung",
+          "labelKey": "otot-jantung",
+          "emoji": "🫀"
+        },
+        {
+          "id": "kaki",
+          "labelKey": "otot-kaki",
+          "emoji": "🦵"
+        }
+      ]
+    },
+    {
+      "id": "dalam",
+      "titleKey": "s-dalam",
+      "steps": [
+        {
+          "id": "trakea",
+          "labelKey": "dalam-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "dalam-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bronkiolus",
+          "labelKey": "dalam-bronkiolus",
+          "shape": "rect",
+          "color": "#bbdefb",
+          "width": 0.5
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "dalam-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "dalam-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "aroma",
+      "titleKey": "s-aroma",
+      "steps": [
+        {
+          "id": "hidung",
+          "labelKey": "aroma-hidung",
+          "emoji": "👃"
+        },
+        {
+          "id": "tenggorokan",
+          "labelKey": "aroma-tenggorokan",
+          "shape": "rect",
+          "color": "#b3e5fc",
+          "width": 0.8
+        },
+        {
+          "id": "trakea",
+          "labelKey": "aroma-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "bronkiolus",
+          "labelKey": "aroma-bronkiolus",
+          "shape": "rect",
+          "color": "#bbdefb",
+          "width": 0.5
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "aroma-alveolus",
+          "emoji": "🫧"
+        }
+      ]
+    },
+    {
+      "id": "lilin",
+      "titleKey": "s-lilin",
+      "steps": [
+        {
+          "id": "alveolus",
+          "labelKey": "lilin-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "lilin-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "lilin-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "tenggorokan",
+          "labelKey": "lilin-tenggorokan",
+          "shape": "rect",
+          "color": "#b3e5fc",
+          "width": 0.8
+        },
+        {
+          "id": "lilin",
+          "labelKey": "lilin-lilin",
+          "emoji": "🕯️"
+        }
+      ]
+    },
+    {
+      "id": "balon",
+      "titleKey": "s-balon",
+      "steps": [
+        {
+          "id": "darah",
+          "labelKey": "balon-darah",
+          "emoji": "🩸"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "balon-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "balon-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "tenggorokan",
+          "labelKey": "balon-tenggorokan",
+          "shape": "rect",
+          "color": "#b3e5fc",
+          "width": 0.8
+        },
+        {
+          "id": "balon",
+          "labelKey": "balon-balon",
+          "emoji": "🎈"
+        }
+      ]
+    },
+    {
+      "id": "sisa",
+      "titleKey": "s-sisa",
+      "steps": [
+        {
+          "id": "kaki",
+          "labelKey": "sisa-kaki",
+          "emoji": "🦵"
+        },
+        {
+          "id": "darah",
+          "labelKey": "sisa-darah",
+          "emoji": "🩸"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "sisa-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "sisa-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "hidung",
+          "labelKey": "sisa-hidung",
+          "emoji": "💨"
+        }
+      ]
+    },
+    {
+      "id": "kaca",
+      "titleKey": "s-kaca",
+      "steps": [
+        {
+          "id": "alveolus",
+          "labelKey": "kaca-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "kaca-bronkus",
+          "emoji": "🌳"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "kaca-trakea",
+          "shape": "rect",
+          "color": "#90caf9"
+        },
+        {
+          "id": "mulut",
+          "labelKey": "kaca-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "kaca",
+          "labelKey": "kaca-kaca",
+          "emoji": "🪟"
         }
       ]
     }

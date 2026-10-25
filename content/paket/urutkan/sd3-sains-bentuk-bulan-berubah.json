@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-bentuk-bulan-berubah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -30,7 +30,36 @@
       "sebulan-purnama": "purnama",
       "sebulan-cembung2": "mulai berkurang",
       "sebulan-separuh2": "separuh akhir",
-      "sebulan-sabit2": "sabit tua"
+      "sebulan-sabit2": "sabit tua",
+      "t-terang-lanjut": "Bulan makin terang, malam demi malam",
+      "terang-lanjut-1": "separuh terang",
+      "terang-lanjut-2": "hampir bulat",
+      "terang-lanjut-3": "purnama",
+      "t-tipis-lanjut": "Bulan makin tipis, malam demi malam",
+      "tipis-lanjut-1": "mulai berkurang",
+      "tipis-lanjut-2": "separuh terang",
+      "tipis-lanjut-3": "sabit tipis",
+      "tipis-lanjut-4": "bulan baru, hampir tak terlihat",
+      "t-tipis-akhir": "Bulan makin tipis di akhir bulan",
+      "tipis-akhir-1": "separuh terang",
+      "tipis-akhir-2": "sabit tipis",
+      "tipis-akhir-3": "bulan baru, hampir tak terlihat",
+      "t-terang-mingguan": "Bulan makin terang, dilihat seminggu sekali",
+      "terang-mingguan-1": "bulan baru, hampir tak terlihat",
+      "terang-mingguan-2": "separuh terang",
+      "terang-mingguan-3": "purnama",
+      "t-tipis-mingguan": "Bulan makin tipis, dilihat seminggu sekali",
+      "tipis-mingguan-1": "purnama",
+      "tipis-mingguan-2": "separuh terang",
+      "tipis-mingguan-3": "bulan baru, hampir tak terlihat",
+      "t-terang-loncat": "Bulan makin terang, dilihat beberapa malam sekali",
+      "terang-loncat-1": "sabit tipis",
+      "terang-loncat-2": "separuh terang",
+      "terang-loncat-3": "purnama",
+      "t-tipis-loncat": "Bulan makin tipis, dilihat beberapa malam sekali",
+      "tipis-loncat-1": "purnama",
+      "tipis-loncat-2": "mulai berkurang",
+      "tipis-loncat-3": "sabit tipis"
     },
     "en": {
       "judul": "The Moon Night by Night",
@@ -54,7 +83,36 @@
       "sebulan-purnama": "full moon",
       "sebulan-cembung2": "starting to shrink",
       "sebulan-separuh2": "last half",
-      "sebulan-sabit2": "old crescent"
+      "sebulan-sabit2": "old crescent",
+      "t-terang-lanjut": "The Moon grows brighter, night after night",
+      "terang-lanjut-1": "half lit",
+      "terang-lanjut-2": "almost round",
+      "terang-lanjut-3": "full moon",
+      "t-tipis-lanjut": "The Moon grows thinner, night after night",
+      "tipis-lanjut-1": "starting to shrink",
+      "tipis-lanjut-2": "half lit",
+      "tipis-lanjut-3": "thin crescent",
+      "tipis-lanjut-4": "new moon, almost invisible",
+      "t-tipis-akhir": "The Moon grows thinner at the end of the month",
+      "tipis-akhir-1": "half lit",
+      "tipis-akhir-2": "thin crescent",
+      "tipis-akhir-3": "new moon, almost invisible",
+      "t-terang-mingguan": "The Moon grows brighter, seen once a week",
+      "terang-mingguan-1": "new moon, almost invisible",
+      "terang-mingguan-2": "half lit",
+      "terang-mingguan-3": "full moon",
+      "t-tipis-mingguan": "The Moon grows thinner, seen once a week",
+      "tipis-mingguan-1": "full moon",
+      "tipis-mingguan-2": "half lit",
+      "tipis-mingguan-3": "new moon, almost invisible",
+      "t-terang-loncat": "The Moon grows brighter, seen every few nights",
+      "terang-loncat-1": "thin crescent",
+      "terang-loncat-2": "half lit",
+      "terang-loncat-3": "full moon",
+      "t-tipis-loncat": "The Moon grows thinner, seen every few nights",
+      "tipis-loncat-1": "full moon",
+      "tipis-loncat-2": "starting to shrink",
+      "tipis-loncat-3": "thin crescent"
     }
   },
   "knobs": {
@@ -171,6 +229,158 @@
         {
           "id": "sabit2",
           "labelKey": "sebulan-sabit2",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "terang-lanjut",
+      "titleKey": "t-terang-lanjut",
+      "steps": [
+        {
+          "id": "terang-lanjut-1",
+          "labelKey": "terang-lanjut-1",
+          "emoji": "🌓"
+        },
+        {
+          "id": "terang-lanjut-2",
+          "labelKey": "terang-lanjut-2",
+          "emoji": "🌔"
+        },
+        {
+          "id": "terang-lanjut-3",
+          "labelKey": "terang-lanjut-3",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "tipis-lanjut",
+      "titleKey": "t-tipis-lanjut",
+      "steps": [
+        {
+          "id": "tipis-lanjut-1",
+          "labelKey": "tipis-lanjut-1",
+          "emoji": "🌖"
+        },
+        {
+          "id": "tipis-lanjut-2",
+          "labelKey": "tipis-lanjut-2",
+          "emoji": "🌗"
+        },
+        {
+          "id": "tipis-lanjut-3",
+          "labelKey": "tipis-lanjut-3",
+          "emoji": "🌘"
+        },
+        {
+          "id": "tipis-lanjut-4",
+          "labelKey": "tipis-lanjut-4",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "tipis-akhir",
+      "titleKey": "t-tipis-akhir",
+      "steps": [
+        {
+          "id": "tipis-akhir-1",
+          "labelKey": "tipis-akhir-1",
+          "emoji": "🌗"
+        },
+        {
+          "id": "tipis-akhir-2",
+          "labelKey": "tipis-akhir-2",
+          "emoji": "🌘"
+        },
+        {
+          "id": "tipis-akhir-3",
+          "labelKey": "tipis-akhir-3",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "terang-mingguan",
+      "titleKey": "t-terang-mingguan",
+      "steps": [
+        {
+          "id": "terang-mingguan-1",
+          "labelKey": "terang-mingguan-1",
+          "emoji": "🌑"
+        },
+        {
+          "id": "terang-mingguan-2",
+          "labelKey": "terang-mingguan-2",
+          "emoji": "🌓"
+        },
+        {
+          "id": "terang-mingguan-3",
+          "labelKey": "terang-mingguan-3",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "tipis-mingguan",
+      "titleKey": "t-tipis-mingguan",
+      "steps": [
+        {
+          "id": "tipis-mingguan-1",
+          "labelKey": "tipis-mingguan-1",
+          "emoji": "🌕"
+        },
+        {
+          "id": "tipis-mingguan-2",
+          "labelKey": "tipis-mingguan-2",
+          "emoji": "🌗"
+        },
+        {
+          "id": "tipis-mingguan-3",
+          "labelKey": "tipis-mingguan-3",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "terang-loncat",
+      "titleKey": "t-terang-loncat",
+      "steps": [
+        {
+          "id": "terang-loncat-1",
+          "labelKey": "terang-loncat-1",
+          "emoji": "🌒"
+        },
+        {
+          "id": "terang-loncat-2",
+          "labelKey": "terang-loncat-2",
+          "emoji": "🌓"
+        },
+        {
+          "id": "terang-loncat-3",
+          "labelKey": "terang-loncat-3",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "tipis-loncat",
+      "titleKey": "t-tipis-loncat",
+      "steps": [
+        {
+          "id": "tipis-loncat-1",
+          "labelKey": "tipis-loncat-1",
+          "emoji": "🌕"
+        },
+        {
+          "id": "tipis-loncat-2",
+          "labelKey": "tipis-loncat-2",
+          "emoji": "🌖"
+        },
+        {
+          "id": "tipis-loncat-3",
+          "labelKey": "tipis-loncat-3",
           "emoji": "🌘"
         }
       ]

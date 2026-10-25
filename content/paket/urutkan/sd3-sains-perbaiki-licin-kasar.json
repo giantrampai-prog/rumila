@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-licin-kasar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -25,7 +25,42 @@
       "kelereng-ubin": "ubin licin",
       "kelereng-kayu": "papan kayu",
       "kelereng-handuk": "handuk tebal",
-      "kelereng-pasir": "pasir"
+      "kelereng-pasir": "pasir",
+      "s-sepatu": "Sepatu didorong sama kuat",
+      "sepatu-es": "lantai es",
+      "sepatu-keramik": "lantai keramik mengilap",
+      "sepatu-kayu": "papan kayu",
+      "sepatu-amplas": "kertas amplas",
+      "s-buku": "Buku didorong sama kuat",
+      "buku-es": "lantai es",
+      "buku-keramik": "lantai keramik mengilap",
+      "buku-handuk": "handuk tebal",
+      "buku-pasir": "pasir",
+      "s-truk": "Truk mainan didorong sama kuat",
+      "truk-es": "lantai es",
+      "truk-keramik": "lantai keramik mengilap",
+      "truk-handuk": "handuk tebal",
+      "truk-kerikil": "jalan berkerikil",
+      "s-balok": "Balok kayu ditarik sama kuat",
+      "balok-es": "lantai es",
+      "balok-kaca": "meja kaca",
+      "balok-kayu": "papan kayu",
+      "balok-pasir": "pasir",
+      "s-kardus": "Kardus didorong sama kuat",
+      "kardus-es": "lantai es",
+      "kardus-keramik": "lantai keramik mengilap",
+      "kardus-kayu": "papan kayu",
+      "kardus-kerikil": "jalan berkerikil",
+      "s-piring": "Piring plastik didorong sama kuat",
+      "piring-es": "lantai es",
+      "piring-kaca": "meja kaca",
+      "piring-handuk": "handuk tebal",
+      "piring-amplas": "kertas amplas",
+      "s-pensil": "Kotak pensil didorong sama kuat",
+      "pensil-es": "lantai es",
+      "pensil-kaca": "meja kaca",
+      "pensil-karpet": "karpet berbulu",
+      "pensil-kerikil": "jalan berkerikil"
     },
     "en": {
       "judul": "Friction Order Mixed Up",
@@ -44,7 +79,42 @@
       "kelereng-ubin": "smooth tiles",
       "kelereng-kayu": "wooden board",
       "kelereng-handuk": "thick towel",
-      "kelereng-pasir": "sand"
+      "kelereng-pasir": "sand",
+      "s-sepatu": "A shoe pushed with the same push",
+      "sepatu-es": "ice floor",
+      "sepatu-keramik": "shiny tiled floor",
+      "sepatu-kayu": "wooden board",
+      "sepatu-amplas": "sandpaper",
+      "s-buku": "A book pushed with the same push",
+      "buku-es": "ice floor",
+      "buku-keramik": "shiny tiled floor",
+      "buku-handuk": "thick towel",
+      "buku-pasir": "sand",
+      "s-truk": "A toy truck pushed with the same push",
+      "truk-es": "ice floor",
+      "truk-keramik": "shiny tiled floor",
+      "truk-handuk": "thick towel",
+      "truk-kerikil": "gravel path",
+      "s-balok": "A wooden block pulled with the same pull",
+      "balok-es": "ice floor",
+      "balok-kaca": "glass table",
+      "balok-kayu": "wooden board",
+      "balok-pasir": "sand",
+      "s-kardus": "A cardboard box pushed with the same push",
+      "kardus-es": "ice floor",
+      "kardus-keramik": "shiny tiled floor",
+      "kardus-kayu": "wooden board",
+      "kardus-kerikil": "gravel path",
+      "s-piring": "A plastic plate pushed with the same push",
+      "piring-es": "ice floor",
+      "piring-kaca": "glass table",
+      "piring-handuk": "thick towel",
+      "piring-amplas": "sandpaper",
+      "s-pensil": "A pencil case pushed with the same push",
+      "pensil-es": "ice floor",
+      "pensil-kaca": "glass table",
+      "pensil-karpet": "fluffy carpet",
+      "pensil-kerikil": "gravel path"
     }
   },
   "knobs": {
@@ -142,6 +212,197 @@
           "id": "pasir",
           "labelKey": "kelereng-pasir",
           "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "s-sepatu",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "sepatu-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "keramik",
+          "labelKey": "sepatu-keramik",
+          "emoji": "⬜"
+        },
+        {
+          "id": "kayu",
+          "labelKey": "sepatu-kayu",
+          "emoji": "🪵"
+        },
+        {
+          "id": "amplas",
+          "labelKey": "sepatu-amplas",
+          "emoji": "🟫",
+          "color": "#a1887f"
+        }
+      ]
+    },
+    {
+      "id": "buku",
+      "titleKey": "s-buku",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "buku-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "keramik",
+          "labelKey": "buku-keramik",
+          "emoji": "⬜"
+        },
+        {
+          "id": "handuk",
+          "labelKey": "buku-handuk",
+          "emoji": "🟦",
+          "color": "#81d4fa"
+        },
+        {
+          "id": "pasir",
+          "labelKey": "buku-pasir",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "truk",
+      "titleKey": "s-truk",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "truk-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "keramik",
+          "labelKey": "truk-keramik",
+          "emoji": "⬜"
+        },
+        {
+          "id": "handuk",
+          "labelKey": "truk-handuk",
+          "emoji": "🟦",
+          "color": "#81d4fa"
+        },
+        {
+          "id": "kerikil",
+          "labelKey": "truk-kerikil",
+          "emoji": "🪨"
+        }
+      ]
+    },
+    {
+      "id": "balok",
+      "titleKey": "s-balok",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "balok-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "kaca",
+          "labelKey": "balok-kaca",
+          "emoji": "🔷",
+          "color": "#b3e5fc"
+        },
+        {
+          "id": "kayu",
+          "labelKey": "balok-kayu",
+          "emoji": "🪵"
+        },
+        {
+          "id": "pasir",
+          "labelKey": "balok-pasir",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "kardus",
+      "titleKey": "s-kardus",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "kardus-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "keramik",
+          "labelKey": "kardus-keramik",
+          "emoji": "⬜"
+        },
+        {
+          "id": "kayu",
+          "labelKey": "kardus-kayu",
+          "emoji": "🪵"
+        },
+        {
+          "id": "kerikil",
+          "labelKey": "kardus-kerikil",
+          "emoji": "🪨"
+        }
+      ]
+    },
+    {
+      "id": "piring",
+      "titleKey": "s-piring",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "piring-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "kaca",
+          "labelKey": "piring-kaca",
+          "emoji": "🔷",
+          "color": "#b3e5fc"
+        },
+        {
+          "id": "handuk",
+          "labelKey": "piring-handuk",
+          "emoji": "🟦",
+          "color": "#81d4fa"
+        },
+        {
+          "id": "amplas",
+          "labelKey": "piring-amplas",
+          "emoji": "🟫",
+          "color": "#a1887f"
+        }
+      ]
+    },
+    {
+      "id": "pensil",
+      "titleKey": "s-pensil",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "pensil-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "kaca",
+          "labelKey": "pensil-kaca",
+          "emoji": "🔷",
+          "color": "#b3e5fc"
+        },
+        {
+          "id": "karpet",
+          "labelKey": "pensil-karpet",
+          "emoji": "🟫",
+          "color": "#a1887f"
+        },
+        {
+          "id": "kerikil",
+          "labelKey": "pensil-kerikil",
+          "emoji": "🪨"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -40,7 +40,27 @@
       "sapi-bayi": "anak sapi baru berdiri",
       "sapi-kecil": "anak sapi menyusu",
       "sapi-muda": "sapi muda makan rumput",
-      "sapi-dewasa": "sapi dewasa"
+      "sapi-dewasa": "sapi dewasa",
+      "t-kuda": "Kuda tumbuh besar",
+      "kuda-1": "anak kuda baru lahir, kaki goyah",
+      "kuda-2": "anak kuda belajar berlari",
+      "kuda-3": "kuda muda, kaki makin kuat",
+      "kuda-4": "kuda dewasa",
+      "t-kelinci": "Kelinci tumbuh besar",
+      "kelinci-1": "anak kelinci baru lahir, belum berbulu",
+      "kelinci-2": "anak kelinci berbulu halus, mata terbuka",
+      "kelinci-3": "kelinci muda, telinga makin panjang",
+      "kelinci-4": "kelinci dewasa",
+      "t-domba": "Domba tumbuh besar",
+      "domba-1": "anak domba menyusu",
+      "domba-2": "anak domba mulai makan rumput",
+      "domba-3": "domba muda, bulu makin tebal",
+      "domba-4": "domba dewasa, bulu tebal",
+      "t-gajah": "Gajah tumbuh besar",
+      "gajah-1": "anak gajah baru lahir",
+      "gajah-2": "anak gajah berjalan di samping induknya",
+      "gajah-3": "gajah muda, belalai makin panjang",
+      "gajah-4": "gajah dewasa, tubuh paling besar"
     },
     "en": {
       "judul": "Something Is Swapped!",
@@ -74,7 +94,27 @@
       "sapi-bayi": "newborn calf just standing",
       "sapi-kecil": "calf drinking milk",
       "sapi-muda": "young cow eating grass",
-      "sapi-dewasa": "adult cow"
+      "sapi-dewasa": "adult cow",
+      "t-kuda": "A horse grows up",
+      "kuda-1": "newborn foal, wobbly legs",
+      "kuda-2": "foal learning to run",
+      "kuda-3": "young horse, stronger legs",
+      "kuda-4": "adult horse",
+      "t-kelinci": "A rabbit grows up",
+      "kelinci-1": "newborn bunny, no fur yet",
+      "kelinci-2": "fluffy bunny, eyes open",
+      "kelinci-3": "young rabbit, longer ears",
+      "kelinci-4": "adult rabbit",
+      "t-domba": "A sheep grows up",
+      "domba-1": "lamb drinking milk",
+      "domba-2": "lamb starting to eat grass",
+      "domba-3": "young sheep, thicker wool",
+      "domba-4": "adult sheep, thick wool",
+      "t-gajah": "An elephant grows up",
+      "gajah-1": "newborn elephant calf",
+      "gajah-2": "calf walking beside its mother",
+      "gajah-3": "young elephant, longer trunk",
+      "gajah-4": "adult elephant, biggest body"
     }
   },
   "knobs": {
@@ -268,6 +308,126 @@
           "id": "dewasa",
           "labelKey": "sapi-dewasa",
           "emoji": "🐄",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "kuda",
+      "titleKey": "t-kuda",
+      "steps": [
+        {
+          "id": "kuda-1",
+          "labelKey": "kuda-1",
+          "emoji": "🐴",
+          "scale": 0.6
+        },
+        {
+          "id": "kuda-2",
+          "labelKey": "kuda-2",
+          "emoji": "🐴",
+          "scale": 0.85
+        },
+        {
+          "id": "kuda-3",
+          "labelKey": "kuda-3",
+          "emoji": "🐎",
+          "scale": 1.05
+        },
+        {
+          "id": "kuda-4",
+          "labelKey": "kuda-4",
+          "emoji": "🐎",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "kelinci",
+      "titleKey": "t-kelinci",
+      "steps": [
+        {
+          "id": "kelinci-1",
+          "labelKey": "kelinci-1",
+          "emoji": "🐰",
+          "scale": 0.6
+        },
+        {
+          "id": "kelinci-2",
+          "labelKey": "kelinci-2",
+          "emoji": "🐰",
+          "scale": 0.85
+        },
+        {
+          "id": "kelinci-3",
+          "labelKey": "kelinci-3",
+          "emoji": "🐇",
+          "scale": 1.05
+        },
+        {
+          "id": "kelinci-4",
+          "labelKey": "kelinci-4",
+          "emoji": "🐇",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "domba",
+      "titleKey": "t-domba",
+      "steps": [
+        {
+          "id": "domba-1",
+          "labelKey": "domba-1",
+          "emoji": "🐑",
+          "scale": 0.6
+        },
+        {
+          "id": "domba-2",
+          "labelKey": "domba-2",
+          "emoji": "🐑",
+          "scale": 0.85
+        },
+        {
+          "id": "domba-3",
+          "labelKey": "domba-3",
+          "emoji": "🐑",
+          "scale": 1.05
+        },
+        {
+          "id": "domba-4",
+          "labelKey": "domba-4",
+          "emoji": "🐑",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "gajah",
+      "titleKey": "t-gajah",
+      "steps": [
+        {
+          "id": "gajah-1",
+          "labelKey": "gajah-1",
+          "emoji": "🐘",
+          "scale": 0.6
+        },
+        {
+          "id": "gajah-2",
+          "labelKey": "gajah-2",
+          "emoji": "🐘",
+          "scale": 0.85
+        },
+        {
+          "id": "gajah-3",
+          "labelKey": "gajah-3",
+          "emoji": "🐘",
+          "scale": 1.05
+        },
+        {
+          "id": "gajah-4",
+          "labelKey": "gajah-4",
+          "emoji": "🐘",
           "scale": 1.3
         }
       ]

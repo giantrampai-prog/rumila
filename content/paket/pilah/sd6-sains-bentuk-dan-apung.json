@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-bentuk-dan-apung",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.APUNG-TENGGELAM.01"
@@ -23,7 +23,7 @@
       "i-pingpong": "bola pingpong",
       "i-kelereng": "kelereng kaca seukuran pingpong",
       "i-kayu": "batang kayu besar",
-      "i-paku": "paku kecil",
+      "i-paku": "paku payung",
       "i-mangkuk": "mangkuk baja kosong",
       "i-sendok": "sendok baja",
       "p-r1": "Dua gumpal plastisin sama massanya. Mana yang terapung?",
@@ -33,7 +33,15 @@
       "p-r5": "Sama-sama dari baja. Mana yang terapung?",
       "p-r6": "Ukurannya sama. Mana yang terapung?",
       "p-r7": "Mana yang tenggelam walau jauh lebih kecil?",
-      "p-r8": "Sama-sama dari baja. Mana yang terapung?"
+      "p-r8": "Sama-sama dari baja. Mana yang terapung?",
+      "i-jerukutuh": "jeruk utuh dengan kulitnya",
+      "i-jerukkupas": "jeruk yang sama setelah dikupas",
+      "i-kalengkosong": "kaleng aluminium kosong yang tertutup rapat",
+      "i-kalengair": "kaleng yang sama diisi penuh air",
+      "p-r9": "Jeruknya sama. Mana yang tenggelam?",
+      "p-r10": "Kalengnya sama. Mana yang terapung?",
+      "p-r11": "Dua gumpal plastisin sama massanya. Mana yang tenggelam?",
+      "p-r12": "Sama-sama dari baja. Mana yang tenggelam?"
     },
     "en": {
       "judul": "Shape Decides Floating",
@@ -51,7 +59,7 @@
       "i-pingpong": "a ping-pong ball",
       "i-kelereng": "a glass marble the size of a ping-pong ball",
       "i-kayu": "a large log",
-      "i-paku": "a small nail",
+      "i-paku": "drawing pin",
       "i-mangkuk": "an empty steel bowl",
       "i-sendok": "a steel spoon",
       "p-r1": "Two lumps of clay have the same mass. Which one floats?",
@@ -61,7 +69,15 @@
       "p-r5": "Both are made of steel. Which one floats?",
       "p-r6": "They are the same size. Which one floats?",
       "p-r7": "Which one sinks even though it is much smaller?",
-      "p-r8": "Both are made of steel. Which one floats?"
+      "p-r8": "Both are made of steel. Which one floats?",
+      "i-jerukutuh": "a whole orange with its peel",
+      "i-jerukkupas": "the same orange after peeling",
+      "i-kalengkosong": "an empty, tightly sealed aluminium can",
+      "i-kalengair": "the same can filled with water",
+      "p-r9": "It is the same orange. Which one sinks?",
+      "p-r10": "It is the same can. Which one floats?",
+      "p-r11": "Two lumps of modelling clay have the same mass. Which one sinks?",
+      "p-r12": "Both are made of steel. Which one sinks?"
     }
   },
   "knobs": {},
@@ -167,6 +183,30 @@
       "labelKey": "i-sendok",
       "bin": "pilihan",
       "emoji": "🥄"
+    },
+    {
+      "id": "jerukutuh",
+      "labelKey": "i-jerukutuh",
+      "bin": "pilihan",
+      "emoji": "🍊"
+    },
+    {
+      "id": "jerukkupas",
+      "labelKey": "i-jerukkupas",
+      "bin": "pilihan",
+      "emoji": "🍊"
+    },
+    {
+      "id": "kalengkosong",
+      "labelKey": "i-kalengkosong",
+      "bin": "pilihan",
+      "emoji": "🥫"
+    },
+    {
+      "id": "kalengair",
+      "labelKey": "i-kalengair",
+      "bin": "pilihan",
+      "emoji": "🥫"
     }
   ],
   "pilihan": [
@@ -241,6 +281,42 @@
         "sendok"
       ],
       "correct": "mangkuk"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "jerukutuh",
+        "jerukkupas"
+      ],
+      "correct": "jerukkupas"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "kalengkosong",
+        "kalengair"
+      ],
+      "correct": "kalengkosong"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "bolaplastisin",
+        "perahuplastisin"
+      ],
+      "correct": "bolaplastisin"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "mangkuk",
+        "sendok"
+      ],
+      "correct": "sendok"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-ukur-jengkal-temuan-kebun",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -17,7 +17,17 @@
       "rantingbesar": "ranting besar",
       "akar": "akar pohon yang menjalar",
       "batangpisang": "batang pisang rebah",
-      "labu": "labu panjang"
+      "labu": "timun",
+      "wortel": "wortel besar",
+      "terong": "terong ungu",
+      "sawi": "sawi hijau",
+      "ubi": "ubi jalar",
+      "jagung": "tongkol jagung",
+      "mawar": "setangkai mawar",
+      "nanas": "nanas dengan daunnya",
+      "daunjati": "daun jati kering",
+      "kaktus": "batang kaktus",
+      "bungamatahari": "tangkai bunga matahari"
     },
     "en": {
       "judul": "Measure Stems and Leaves in Spans",
@@ -28,7 +38,17 @@
       "rantingbesar": "big branch",
       "akar": "long tree root",
       "batangpisang": "fallen banana trunk",
-      "labu": "long gourd"
+      "labu": "cucumber",
+      "wortel": "big carrot",
+      "terong": "purple aubergine",
+      "sawi": "green mustard greens",
+      "ubi": "sweet potato",
+      "jagung": "corn cob",
+      "mawar": "rose stem",
+      "nanas": "pineapple with its leaves",
+      "daunjati": "dry teak leaf",
+      "kaktus": "cactus stem",
+      "bungamatahari": "sunflower stalk"
     }
   },
   "knobs": {
@@ -62,22 +82,6 @@
       "width": 1.8
     },
     {
-      "id": "batangtebu",
-      "labelKey": "batangtebu",
-      "role": "benda",
-      "emoji": "🎋",
-      "value": 4,
-      "width": 2.4
-    },
-    {
-      "id": "bambu",
-      "labelKey": "bambu",
-      "role": "benda",
-      "emoji": "🎍",
-      "value": 5,
-      "width": 3.0
-    },
-    {
       "id": "rantingbesar",
       "labelKey": "rantingbesar",
       "role": "benda",
@@ -94,20 +98,92 @@
       "width": 3.7
     },
     {
-      "id": "batangpisang",
-      "labelKey": "batangpisang",
-      "role": "benda",
-      "emoji": "🌴",
-      "value": 8,
-      "width": 4.0
-    },
-    {
       "id": "labu",
       "labelKey": "labu",
       "role": "benda",
       "emoji": "🥒",
       "value": 2,
       "width": 1.2
+    },
+    {
+      "id": "wortel",
+      "labelKey": "wortel",
+      "role": "benda",
+      "emoji": "🥕",
+      "value": 2,
+      "width": 1.2
+    },
+    {
+      "id": "terong",
+      "labelKey": "terong",
+      "role": "benda",
+      "emoji": "🍆",
+      "value": 2,
+      "width": 1.2
+    },
+    {
+      "id": "sawi",
+      "labelKey": "sawi",
+      "role": "benda",
+      "emoji": "🥬",
+      "value": 2,
+      "width": 1.2
+    },
+    {
+      "id": "ubi",
+      "labelKey": "ubi",
+      "role": "benda",
+      "emoji": "🍠",
+      "value": 2,
+      "width": 1.2
+    },
+    {
+      "id": "jagung",
+      "labelKey": "jagung",
+      "role": "benda",
+      "emoji": "🌽",
+      "value": 3,
+      "width": 1.8
+    },
+    {
+      "id": "mawar",
+      "labelKey": "mawar",
+      "role": "benda",
+      "emoji": "🌹",
+      "value": 3,
+      "width": 1.8
+    },
+    {
+      "id": "nanas",
+      "labelKey": "nanas",
+      "role": "benda",
+      "emoji": "🍍",
+      "value": 3,
+      "width": 1.8
+    },
+    {
+      "id": "daunjati",
+      "labelKey": "daunjati",
+      "role": "benda",
+      "emoji": "🍂",
+      "value": 4,
+      "width": 2.4
+    },
+    {
+      "id": "kaktus",
+      "labelKey": "kaktus",
+      "role": "benda",
+      "emoji": "🌵",
+      "value": 4,
+      "width": 2.4
+    },
+    {
+      "id": "bungamatahari",
+      "labelKey": "bungamatahari",
+      "role": "benda",
+      "emoji": "🌻",
+      "value": 5,
+      "width": 3.0
     }
   ]
 }

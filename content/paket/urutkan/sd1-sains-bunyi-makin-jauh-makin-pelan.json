@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -30,7 +30,37 @@
       "drum-p1": "anak di depan panggung",
       "drum-p2": "anak di tengah lapangan",
       "drum-p3": "anak di parkiran",
-      "drum-p4": "anak di luar pagar"
+      "drum-p4": "anak di luar pagar",
+      "t-peluit": "Wasit meniup peluit",
+      "peluit-1": "anak di samping wasit",
+      "peluit-2": "anak di tengah lapangan",
+      "peluit-3": "anak di bangku penonton",
+      "peluit-4": "anak di luar stadion",
+      "t-anjing": "Anjing menggonggong",
+      "anjing-1": "anak di samping anjing",
+      "anjing-2": "anak di halaman rumah",
+      "anjing-3": "anak di ujung jalan",
+      "anjing-4": "anak di kampung sebelah",
+      "t-tepuk": "Guru bertepuk tangan di kelas",
+      "tepuk-1": "anak di depan meja guru",
+      "tepuk-2": "anak di tengah kelas",
+      "tepuk-3": "anak di bangku paling belakang",
+      "tepuk-4": "anak di kantin sekolah",
+      "t-burung": "Burung berkicau di pohon",
+      "burung-1": "anak di bawah pohon",
+      "burung-2": "anak di pagar kebun",
+      "burung-3": "anak di seberang jalan",
+      "burung-4": "anak di sawah yang jauh",
+      "t-beduk": "Beduk dipukul di masjid",
+      "beduk-1": "anak di samping beduk",
+      "beduk-2": "anak di halaman masjid",
+      "beduk-3": "anak di ujung desa",
+      "beduk-4": "anak di desa sebelah",
+      "t-gitar": "Kakak memetik gitar di teras",
+      "gitar-1": "anak di samping kakak",
+      "gitar-2": "anak di ujung teras",
+      "gitar-3": "anak di pagar depan",
+      "gitar-4": "anak di rumah ujung gang"
     },
     "en": {
       "judul": "Farther Away, Quieter",
@@ -54,7 +84,37 @@
       "drum-p1": "child in front of the stage",
       "drum-p2": "child in the middle of the field",
       "drum-p3": "child in the car park",
-      "drum-p4": "child outside the fence"
+      "drum-p4": "child outside the fence",
+      "t-peluit": "The referee blows a whistle",
+      "peluit-1": "a child next to the referee",
+      "peluit-2": "a child in the middle of the field",
+      "peluit-3": "a child in the crowd seats",
+      "peluit-4": "a child outside the stadium",
+      "t-anjing": "A dog barks",
+      "anjing-1": "a child next to the dog",
+      "anjing-2": "a child in the front yard",
+      "anjing-3": "a child at the end of the street",
+      "anjing-4": "a child in the next village",
+      "t-tepuk": "The teacher claps in class",
+      "tepuk-1": "a child at the teacher's desk",
+      "tepuk-2": "a child in the middle of the class",
+      "tepuk-3": "a child in the back row",
+      "tepuk-4": "a child in the school canteen",
+      "t-burung": "A bird sings in a tree",
+      "burung-1": "a child under the tree",
+      "burung-2": "a child at the garden fence",
+      "burung-3": "a child across the road",
+      "burung-4": "a child in a faraway rice field",
+      "t-beduk": "The mosque drum is beaten",
+      "beduk-1": "a child next to the drum",
+      "beduk-2": "a child in the mosque yard",
+      "beduk-3": "a child at the edge of the village",
+      "beduk-4": "a child in the next village",
+      "t-gitar": "Big sister plays guitar on the porch",
+      "gitar-1": "a child next to big sister",
+      "gitar-2": "a child at the end of the porch",
+      "gitar-3": "a child at the front gate",
+      "gitar-4": "a child in the house at the end of the lane"
     }
   },
   "knobs": {
@@ -172,6 +232,162 @@
         {
           "id": "p4",
           "labelKey": "drum-p4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "peluit",
+      "titleKey": "t-peluit",
+      "steps": [
+        {
+          "id": "peluit-1",
+          "labelKey": "peluit-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "peluit-2",
+          "labelKey": "peluit-2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "peluit-3",
+          "labelKey": "peluit-3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "peluit-4",
+          "labelKey": "peluit-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "anjing",
+      "titleKey": "t-anjing",
+      "steps": [
+        {
+          "id": "anjing-1",
+          "labelKey": "anjing-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "anjing-2",
+          "labelKey": "anjing-2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "anjing-3",
+          "labelKey": "anjing-3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "anjing-4",
+          "labelKey": "anjing-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "tepuk",
+      "titleKey": "t-tepuk",
+      "steps": [
+        {
+          "id": "tepuk-1",
+          "labelKey": "tepuk-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "tepuk-2",
+          "labelKey": "tepuk-2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "tepuk-3",
+          "labelKey": "tepuk-3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "tepuk-4",
+          "labelKey": "tepuk-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "burung",
+      "titleKey": "t-burung",
+      "steps": [
+        {
+          "id": "burung-1",
+          "labelKey": "burung-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "burung-2",
+          "labelKey": "burung-2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "burung-3",
+          "labelKey": "burung-3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "burung-4",
+          "labelKey": "burung-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "beduk",
+      "titleKey": "t-beduk",
+      "steps": [
+        {
+          "id": "beduk-1",
+          "labelKey": "beduk-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "beduk-2",
+          "labelKey": "beduk-2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "beduk-3",
+          "labelKey": "beduk-3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "beduk-4",
+          "labelKey": "beduk-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "gitar",
+      "titleKey": "t-gitar",
+      "steps": [
+        {
+          "id": "gitar-1",
+          "labelKey": "gitar-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "gitar-2",
+          "labelKey": "gitar-2",
+          "emoji": "🧒"
+        },
+        {
+          "id": "gitar-3",
+          "labelKey": "gitar-3",
+          "emoji": "🧒"
+        },
+        {
+          "id": "gitar-4",
+          "labelKey": "gitar-4",
           "emoji": "🧒"
         }
       ]

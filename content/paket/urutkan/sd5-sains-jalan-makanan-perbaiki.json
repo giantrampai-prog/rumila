@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-jalan-makanan-perbaiki",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.01"
@@ -16,7 +16,71 @@
       "cerna-lambung": "lambung: diaduk dengan cairan asam",
       "cerna-usushalus": "usus halus: sari makanan diserap ke darah",
       "cerna-ususbesar": "usus besar: air diserap",
-      "cerna-anus": "anus: sisa dikeluarkan"
+      "cerna-anus": "anus: sisa dikeluarkan",
+      "s-roti": "Perjalanan sepotong roti",
+      "roti-kerongkongan": "kerongkongan: roti yang sudah lumat didorong turun",
+      "roti-lambung": "lambung: roti diaduk dengan cairan asam",
+      "roti-usushalus": "usus halus: sari roti diserap ke darah",
+      "roti-ususbesar": "usus besar: air diserap dari sisa roti",
+      "roti-rektum": "rektum: sisa roti ditampung sebentar",
+      "roti-anus": "anus: sisa roti dikeluarkan",
+      "s-pisang": "Perjalanan sebuah pisang",
+      "pisang-mulut": "mulut: pisang dikunyah dan dibasahi ludah",
+      "pisang-lambung": "lambung: pisang diaduk dengan cairan asam",
+      "pisang-usushalus": "usus halus: sari pisang diserap ke darah",
+      "pisang-ususbesar": "usus besar: air diserap dari sisa pisang",
+      "pisang-rektum": "rektum: sisa pisang ditampung sebentar",
+      "pisang-anus": "anus: sisa pisang dikeluarkan",
+      "s-telur": "Perjalanan sebutir telur rebus",
+      "telur-mulut": "mulut: telur dikunyah dan dibasahi ludah",
+      "telur-kerongkongan": "kerongkongan: telur yang sudah lumat didorong turun",
+      "telur-usushalus": "usus halus: sari telur diserap ke darah",
+      "telur-ususbesar": "usus besar: air diserap dari sisa telur",
+      "telur-rektum": "rektum: sisa telur ditampung sebentar",
+      "telur-anus": "anus: sisa telur dikeluarkan",
+      "s-bayam": "Perjalanan sesendok sayur bayam",
+      "bayam-mulut": "mulut: bayam dikunyah dan dibasahi ludah",
+      "bayam-kerongkongan": "kerongkongan: bayam yang sudah lumat didorong turun",
+      "bayam-lambung": "lambung: bayam diaduk dengan cairan asam",
+      "bayam-ususbesar": "usus besar: air diserap dari sisa bayam",
+      "bayam-rektum": "rektum: sisa bayam ditampung sebentar",
+      "bayam-anus": "anus: sisa bayam dikeluarkan",
+      "s-apel": "Perjalanan sepotong apel",
+      "apel-lambung": "lambung: apel diaduk dengan cairan asam",
+      "apel-usushalus": "usus halus: sari apel diserap ke darah",
+      "apel-ususbesar": "usus besar: air diserap dari sisa apel",
+      "apel-rektum": "rektum: sisa apel ditampung sebentar",
+      "apel-anus": "anus: sisa apel dikeluarkan",
+      "s-sate": "Perjalanan setusuk sate",
+      "sate-kerongkongan": "kerongkongan: sate yang sudah lumat didorong turun",
+      "sate-usushalus": "usus halus: sari sate diserap ke darah",
+      "sate-ususbesar": "usus besar: air diserap dari sisa sate",
+      "sate-rektum": "rektum: sisa sate ditampung sebentar",
+      "sate-anus": "anus: sisa sate dikeluarkan",
+      "s-jagung": "Perjalanan sebatang jagung rebus",
+      "jagung-mulut": "mulut: jagung dikunyah dan dibasahi ludah",
+      "jagung-usushalus": "usus halus: sari jagung diserap ke darah",
+      "jagung-ususbesar": "usus besar: air diserap dari sisa jagung",
+      "jagung-rektum": "rektum: sisa jagung ditampung sebentar",
+      "jagung-anus": "anus: sisa jagung dikeluarkan",
+      "s-ikan": "Perjalanan sepotong ikan goreng",
+      "ikan-kerongkongan": "kerongkongan: ikan yang sudah lumat didorong turun",
+      "ikan-lambung": "lambung: ikan diaduk dengan cairan asam",
+      "ikan-ususbesar": "usus besar: air diserap dari sisa ikan",
+      "ikan-rektum": "rektum: sisa ikan ditampung sebentar",
+      "ikan-anus": "anus: sisa ikan dikeluarkan",
+      "s-tempe": "Perjalanan sepotong tempe",
+      "tempe-mulut": "mulut: tempe dikunyah dan dibasahi ludah",
+      "tempe-lambung": "lambung: tempe diaduk dengan cairan asam",
+      "tempe-usushalus": "usus halus: sari tempe diserap ke darah",
+      "tempe-rektum": "rektum: sisa tempe ditampung sebentar",
+      "tempe-anus": "anus: sisa tempe dikeluarkan",
+      "s-kentang": "Perjalanan sebuah kentang rebus",
+      "kentang-kerongkongan": "kerongkongan: kentang yang sudah lumat didorong turun",
+      "kentang-lambung": "lambung: kentang diaduk dengan cairan asam",
+      "kentang-usushalus": "usus halus: sari kentang diserap ke darah",
+      "kentang-rektum": "rektum: sisa kentang ditampung sebentar",
+      "kentang-anus": "anus: sisa kentang dikeluarkan"
     },
     "en": {
       "judul": "Food Path Mix-Up",
@@ -27,16 +91,80 @@
       "cerna-lambung": "stomach: churned with acid",
       "cerna-usushalus": "small intestine: nutrients absorbed into the blood",
       "cerna-ususbesar": "large intestine: water absorbed",
-      "cerna-anus": "anus: waste leaves the body"
+      "cerna-anus": "anus: waste leaves the body",
+      "s-roti": "The journey of a slice of bread",
+      "roti-kerongkongan": "oesophagus: the mashed bread is pushed down",
+      "roti-lambung": "stomach: the bread is churned with acid",
+      "roti-usushalus": "small intestine: nutrients from the bread pass into the blood",
+      "roti-ususbesar": "large intestine: water is taken back from what is left",
+      "roti-rektum": "rectum: the waste is stored for a while",
+      "roti-anus": "anus: the waste leaves the body",
+      "s-pisang": "The journey of a banana",
+      "pisang-mulut": "mouth: the banana is chewed and wetted with saliva",
+      "pisang-lambung": "stomach: the banana is churned with acid",
+      "pisang-usushalus": "small intestine: nutrients from the banana pass into the blood",
+      "pisang-ususbesar": "large intestine: water is taken back from what is left",
+      "pisang-rektum": "rectum: the waste is stored for a while",
+      "pisang-anus": "anus: the waste leaves the body",
+      "s-telur": "The journey of a boiled egg",
+      "telur-mulut": "mouth: the egg is chewed and wetted with saliva",
+      "telur-kerongkongan": "oesophagus: the mashed egg is pushed down",
+      "telur-usushalus": "small intestine: nutrients from the egg pass into the blood",
+      "telur-ususbesar": "large intestine: water is taken back from what is left",
+      "telur-rektum": "rectum: the waste is stored for a while",
+      "telur-anus": "anus: the waste leaves the body",
+      "s-bayam": "The journey of a spoonful of spinach",
+      "bayam-mulut": "mouth: the spinach is chewed and wetted with saliva",
+      "bayam-kerongkongan": "oesophagus: the mashed spinach is pushed down",
+      "bayam-lambung": "stomach: the spinach is churned with acid",
+      "bayam-ususbesar": "large intestine: water is taken back from what is left",
+      "bayam-rektum": "rectum: the waste is stored for a while",
+      "bayam-anus": "anus: the waste leaves the body",
+      "s-apel": "The journey of a piece of apple",
+      "apel-lambung": "stomach: the apple is churned with acid",
+      "apel-usushalus": "small intestine: nutrients from the apple pass into the blood",
+      "apel-ususbesar": "large intestine: water is taken back from what is left",
+      "apel-rektum": "rectum: the waste is stored for a while",
+      "apel-anus": "anus: the waste leaves the body",
+      "s-sate": "The journey of a stick of satay",
+      "sate-kerongkongan": "oesophagus: the mashed satay is pushed down",
+      "sate-usushalus": "small intestine: nutrients from the satay pass into the blood",
+      "sate-ususbesar": "large intestine: water is taken back from what is left",
+      "sate-rektum": "rectum: the waste is stored for a while",
+      "sate-anus": "anus: the waste leaves the body",
+      "s-jagung": "The journey of a boiled corn cob",
+      "jagung-mulut": "mouth: the corn is chewed and wetted with saliva",
+      "jagung-usushalus": "small intestine: nutrients from the corn pass into the blood",
+      "jagung-ususbesar": "large intestine: water is taken back from what is left",
+      "jagung-rektum": "rectum: the waste is stored for a while",
+      "jagung-anus": "anus: the waste leaves the body",
+      "s-ikan": "The journey of a piece of fried fish",
+      "ikan-kerongkongan": "oesophagus: the mashed fish is pushed down",
+      "ikan-lambung": "stomach: the fish is churned with acid",
+      "ikan-ususbesar": "large intestine: water is taken back from what is left",
+      "ikan-rektum": "rectum: the waste is stored for a while",
+      "ikan-anus": "anus: the waste leaves the body",
+      "s-tempe": "The journey of a piece of tempeh",
+      "tempe-mulut": "mouth: the tempeh is chewed and wetted with saliva",
+      "tempe-lambung": "stomach: the tempeh is churned with acid",
+      "tempe-usushalus": "small intestine: nutrients from the tempeh pass into the blood",
+      "tempe-rektum": "rectum: the waste is stored for a while",
+      "tempe-anus": "anus: the waste leaves the body",
+      "s-kentang": "The journey of a boiled potato",
+      "kentang-kerongkongan": "oesophagus: the mashed potato is pushed down",
+      "kentang-lambung": "stomach: the potato is churned with acid",
+      "kentang-usushalus": "small intestine: nutrients from the potato pass into the blood",
+      "kentang-rektum": "rectum: the waste is stored for a while",
+      "kentang-anus": "anus: the waste leaves the body"
     }
   },
   "knobs": {
     "steps": {
       "min": 4,
       "max": 6,
-      "default": 6,
+      "default": 5,
       "step": 1,
-      "keterangan": "jumlah organ: 4 → 6"
+      "keterangan": "jumlah organ: 4 → 6 (bawaan 5 supaya cukup banyak perjalanan berbeda)"
     }
   },
   "assets": [],
@@ -82,6 +210,387 @@
         {
           "id": "anus",
           "labelKey": "cerna-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "s-roti",
+      "steps": [
+        {
+          "id": "kerongkongan",
+          "labelKey": "roti-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "roti-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "roti-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "roti-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "roti-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "roti-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "pisang",
+      "titleKey": "s-pisang",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "pisang-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "pisang-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "pisang-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "pisang-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "pisang-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "pisang-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "s-telur",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "telur-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "kerongkongan",
+          "labelKey": "telur-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "telur-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "telur-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "telur-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "telur-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "bayam",
+      "titleKey": "s-bayam",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "bayam-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "kerongkongan",
+          "labelKey": "bayam-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "bayam-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "bayam-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "bayam-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "bayam-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "apel",
+      "titleKey": "s-apel",
+      "steps": [
+        {
+          "id": "lambung",
+          "labelKey": "apel-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "apel-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "apel-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "apel-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "apel-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "sate",
+      "titleKey": "s-sate",
+      "steps": [
+        {
+          "id": "kerongkongan",
+          "labelKey": "sate-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "sate-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "sate-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "sate-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "sate-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "jagung",
+      "titleKey": "s-jagung",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "jagung-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "jagung-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "jagung-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "jagung-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "jagung-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "ikan",
+      "titleKey": "s-ikan",
+      "steps": [
+        {
+          "id": "kerongkongan",
+          "labelKey": "ikan-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "ikan-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "ususbesar",
+          "labelKey": "ikan-ususbesar",
+          "shape": "rect",
+          "color": "#ce93d8",
+          "width": 1.6
+        },
+        {
+          "id": "rektum",
+          "labelKey": "ikan-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "ikan-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "tempe",
+      "titleKey": "s-tempe",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "tempe-mulut",
+          "emoji": "👄"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "tempe-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "tempe-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "rektum",
+          "labelKey": "tempe-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "tempe-anus",
+          "emoji": "🚽"
+        }
+      ]
+    },
+    {
+      "id": "kentang",
+      "titleKey": "s-kentang",
+      "steps": [
+        {
+          "id": "kerongkongan",
+          "labelKey": "kentang-kerongkongan",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "lambung",
+          "labelKey": "kentang-lambung",
+          "shape": "circle",
+          "color": "#ffab91"
+        },
+        {
+          "id": "usushalus",
+          "labelKey": "kentang-usushalus",
+          "shape": "rect",
+          "color": "#f48fb1"
+        },
+        {
+          "id": "rektum",
+          "labelKey": "kentang-rektum",
+          "shape": "rect",
+          "color": "#a1887f",
+          "width": 0.7
+        },
+        {
+          "id": "anus",
+          "labelKey": "kentang-anus",
           "emoji": "🚽"
         }
       ]

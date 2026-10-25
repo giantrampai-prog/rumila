@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-perjalanan-matahari-sehari",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -28,7 +28,37 @@
       "s-bunga": "Bunga matahari menghadap Matahari",
       "bunga-timur": "bunga menghadap timur",
       "bunga-atas": "bunga menghadap ke atas",
-      "bunga-barat": "bunga menghadap barat"
+      "bunga-barat": "bunga menghadap barat",
+      "t-petani": "Petani dan Matahari",
+      "petani-1": "petani berangkat, Matahari baru terbit",
+      "petani-2": "petani menanam padi, Matahari masih rendah",
+      "petani-3": "petani berteduh, Matahari di atas kepala",
+      "petani-4": "petani pulang, Matahari terbenam",
+      "t-bayangan-pohon": "Bayangan pohon",
+      "bayangan-pohon-1": "bayangan panjang ke arah barat",
+      "bayangan-pohon-2": "bayangan makin pendek",
+      "bayangan-pohon-3": "bayangan pendek di bawah pohon",
+      "bayangan-pohon-4": "bayangan panjang ke arah timur",
+      "t-pasir": "Pasir di pantai",
+      "pasir-1": "pasir dingin, Matahari baru terbit",
+      "pasir-2": "pasir hangat, Matahari masih rendah di timur",
+      "pasir-3": "pasir sangat panas, Matahari di atas kepala",
+      "pasir-4": "pasir mulai dingin, Matahari terbenam",
+      "t-jemuran": "Menjemur baju",
+      "jemuran-1": "jemur baju basah, Matahari baru terbit di timur",
+      "jemuran-2": "baju mulai kering, Matahari makin tinggi",
+      "jemuran-3": "baju kering, Matahari di atas kepala",
+      "jemuran-4": "angkat jemuran, Matahari terbenam di barat",
+      "t-burung": "Burung dan Matahari",
+      "burung-1": "burung berkicau, Matahari baru terbit",
+      "burung-2": "burung mencari ulat, Matahari masih rendah",
+      "burung-3": "burung berteduh, Matahari di atas kepala",
+      "burung-4": "burung pulang ke sarang, Matahari terbenam",
+      "t-bayangan-diri": "Bayangan tubuhmu",
+      "bayangan-diri-1": "bayanganmu panjang ke arah barat",
+      "bayangan-diri-2": "bayanganmu makin pendek",
+      "bayangan-diri-3": "bayanganmu pendek di bawah kaki",
+      "bayangan-diri-4": "bayanganmu panjang ke arah timur"
     },
     "en": {
       "judul": "The Sun's Journey in a Day",
@@ -50,7 +80,37 @@
       "s-bunga": "A sunflower faces the Sun",
       "bunga-timur": "flower facing east",
       "bunga-atas": "flower facing up",
-      "bunga-barat": "flower facing west"
+      "bunga-barat": "flower facing west",
+      "t-petani": "The farmer and the Sun",
+      "petani-1": "the farmer sets off as the Sun rises",
+      "petani-2": "the farmer plants rice, the Sun is still low",
+      "petani-3": "the farmer rests in the shade, the Sun is overhead",
+      "petani-4": "the farmer goes home as the Sun sets",
+      "t-bayangan-pohon": "A tree's shadow",
+      "bayangan-pohon-1": "long shadow pointing west",
+      "bayangan-pohon-2": "shadow getting shorter",
+      "bayangan-pohon-3": "short shadow under the tree",
+      "bayangan-pohon-4": "long shadow pointing east",
+      "t-pasir": "Sand at the beach",
+      "pasir-1": "cool sand, the Sun has just risen",
+      "pasir-2": "warm sand, the Sun is still low in the east",
+      "pasir-3": "very hot sand, the Sun is overhead",
+      "pasir-4": "sand cooling down, the Sun is setting",
+      "t-jemuran": "Drying the washing",
+      "jemuran-1": "hang up wet clothes, the Sun has just risen in the east",
+      "jemuran-2": "clothes drying, the Sun climbs higher",
+      "jemuran-3": "clothes dry, the Sun is overhead",
+      "jemuran-4": "bring the washing in, the Sun sets in the west",
+      "t-burung": "Birds and the Sun",
+      "burung-1": "birds sing as the Sun rises",
+      "burung-2": "birds hunt caterpillars, the Sun is still low",
+      "burung-3": "birds shelter in the shade, the Sun is overhead",
+      "burung-4": "birds fly home as the Sun sets",
+      "t-bayangan-diri": "Your own shadow",
+      "bayangan-diri-1": "your shadow is long, pointing west",
+      "bayangan-diri-2": "your shadow gets shorter",
+      "bayangan-diri-3": "your shadow is short under your feet",
+      "bayangan-diri-4": "your shadow is long, pointing east"
     }
   },
   "knobs": {
@@ -162,6 +222,170 @@
           "id": "barat",
           "labelKey": "bunga-barat",
           "emoji": "🌻"
+        }
+      ]
+    },
+    {
+      "id": "petani",
+      "titleKey": "t-petani",
+      "steps": [
+        {
+          "id": "petani-1",
+          "labelKey": "petani-1",
+          "emoji": "🧑‍🌾"
+        },
+        {
+          "id": "petani-2",
+          "labelKey": "petani-2",
+          "emoji": "🌾"
+        },
+        {
+          "id": "petani-3",
+          "labelKey": "petani-3",
+          "emoji": "🌳"
+        },
+        {
+          "id": "petani-4",
+          "labelKey": "petani-4",
+          "emoji": "🏡"
+        }
+      ]
+    },
+    {
+      "id": "bayangan-pohon",
+      "titleKey": "t-bayangan-pohon",
+      "steps": [
+        {
+          "id": "bayangan-pohon-1",
+          "labelKey": "bayangan-pohon-1",
+          "emoji": "🌳",
+          "width": 3
+        },
+        {
+          "id": "bayangan-pohon-2",
+          "labelKey": "bayangan-pohon-2",
+          "emoji": "🌳",
+          "width": 1.8
+        },
+        {
+          "id": "bayangan-pohon-3",
+          "labelKey": "bayangan-pohon-3",
+          "emoji": "🌳",
+          "width": 0.6
+        },
+        {
+          "id": "bayangan-pohon-4",
+          "labelKey": "bayangan-pohon-4",
+          "emoji": "🌳",
+          "width": 3.2
+        }
+      ]
+    },
+    {
+      "id": "pasir",
+      "titleKey": "t-pasir",
+      "steps": [
+        {
+          "id": "pasir-1",
+          "labelKey": "pasir-1",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "pasir-2",
+          "labelKey": "pasir-2",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "pasir-3",
+          "labelKey": "pasir-3",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "pasir-4",
+          "labelKey": "pasir-4",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "jemuran",
+      "titleKey": "t-jemuran",
+      "steps": [
+        {
+          "id": "jemuran-1",
+          "labelKey": "jemuran-1",
+          "emoji": "👕"
+        },
+        {
+          "id": "jemuran-2",
+          "labelKey": "jemuran-2",
+          "emoji": "👕"
+        },
+        {
+          "id": "jemuran-3",
+          "labelKey": "jemuran-3",
+          "emoji": "👕"
+        },
+        {
+          "id": "jemuran-4",
+          "labelKey": "jemuran-4",
+          "emoji": "👕"
+        }
+      ]
+    },
+    {
+      "id": "burung",
+      "titleKey": "t-burung",
+      "steps": [
+        {
+          "id": "burung-1",
+          "labelKey": "burung-1",
+          "emoji": "🐦"
+        },
+        {
+          "id": "burung-2",
+          "labelKey": "burung-2",
+          "emoji": "🐛"
+        },
+        {
+          "id": "burung-3",
+          "labelKey": "burung-3",
+          "emoji": "🌳"
+        },
+        {
+          "id": "burung-4",
+          "labelKey": "burung-4",
+          "emoji": "🌇"
+        }
+      ]
+    },
+    {
+      "id": "bayangan-diri",
+      "titleKey": "t-bayangan-diri",
+      "steps": [
+        {
+          "id": "bayangan-diri-1",
+          "labelKey": "bayangan-diri-1",
+          "emoji": "🧍",
+          "width": 3
+        },
+        {
+          "id": "bayangan-diri-2",
+          "labelKey": "bayangan-diri-2",
+          "emoji": "🧍",
+          "width": 1.8
+        },
+        {
+          "id": "bayangan-diri-3",
+          "labelKey": "bayangan-diri-3",
+          "emoji": "🧍",
+          "width": 0.6
+        },
+        {
+          "id": "bayangan-diri-4",
+          "labelKey": "bayangan-diri-4",
+          "emoji": "🧍",
+          "width": 3.2
         }
       ]
     }

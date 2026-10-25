@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-lapisan-bumi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.BUMI-ANTARIKSA.01"
@@ -36,15 +36,7 @@
       "dalamke-kerak": "crust: the rock we stand on"
     }
   },
-  "knobs": {
-    "steps": {
-      "min": 3,
-      "max": 4,
-      "default": 4,
-      "step": 1,
-      "keterangan": "jumlah lapisan: 3 (kerak, mantel, inti luar / dari pusat: inti dalam, inti luar, mantel) → 4"
-    }
-  },
+  "knobs": {},
   "assets": [],
   "generatif": true,
   "rounds": 10,
@@ -107,6 +99,192 @@
           "id": "kerak",
           "labelKey": "dalamke-kerak",
           "emoji": "🏔️"
+        }
+      ]
+    },
+    {
+      "id": "luarke-tanpa-kerak",
+      "titleKey": "s-luarke",
+      "steps": [
+        {
+          "id": "mantel",
+          "labelKey": "luarke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "luarke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "luarke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "luarke-tanpa-mantel",
+      "titleKey": "s-luarke",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "luarke-kerak",
+          "emoji": "🏔️"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "luarke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "luarke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "luarke-tanpa-intiluar",
+      "titleKey": "s-luarke",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "luarke-kerak",
+          "emoji": "🏔️"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "luarke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "luarke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "luarke-tanpa-intidalam",
+      "titleKey": "s-luarke",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "luarke-kerak",
+          "emoji": "🏔️"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "luarke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "luarke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        }
+      ]
+    },
+    {
+      "id": "dalamke-tanpa-intidalam",
+      "titleKey": "s-dalamke",
+      "steps": [
+        {
+          "id": "intiluar",
+          "labelKey": "dalamke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "dalamke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "kerak",
+          "labelKey": "dalamke-kerak",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+    {
+      "id": "dalamke-tanpa-intiluar",
+      "titleKey": "s-dalamke",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "dalamke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "dalamke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
+        },
+        {
+          "id": "kerak",
+          "labelKey": "dalamke-kerak",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+    {
+      "id": "dalamke-tanpa-mantel",
+      "titleKey": "s-dalamke",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "dalamke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "dalamke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "kerak",
+          "labelKey": "dalamke-kerak",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+    {
+      "id": "dalamke-tanpa-kerak",
+      "titleKey": "s-dalamke",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "dalamke-intidalam",
+          "shape": "circle",
+          "color": "#fdd835"
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "dalamke-intiluar",
+          "shape": "circle",
+          "color": "#e53935"
+        },
+        {
+          "id": "mantel",
+          "labelKey": "dalamke-mantel",
+          "shape": "circle",
+          "color": "#ff8a65"
         }
       ]
     }

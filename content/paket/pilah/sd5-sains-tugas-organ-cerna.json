@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tugas-organ-cerna",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.02"
@@ -26,7 +26,12 @@
       "p-r5": "Bagian yang menyerap air dari sisa makanan sehingga sisanya memadat.",
       "p-r6": "Ujung saluran tempat sisa makanan keluar dari tubuh.",
       "p-r7": "Gula dan zat lain dari nasi paling banyak masuk ke darah di…",
-      "p-r8": "Kucing dan sapi juga punya mulut, lambung, dan usus. Sistem pencernaan banyak hewan bertulang belakang…"
+      "p-r8": "Kucing dan sapi juga punya mulut, lambung, dan usus. Sistem pencernaan banyak hewan bertulang belakang…",
+      "p-r9": "Makanan yang sudah dikunyah ditelan, lalu turun melalui…",
+      "p-r10": "Pencernaan makanan dimulai di…",
+      "p-r11": "Makanan dari kerongkongan masuk ke…",
+      "p-r12": "Setelah keluar dari lambung, makanan masuk ke…",
+      "p-r13": "Setelah dari usus halus, sisa makanan masuk ke…"
     },
     "en": {
       "judul": "Who Processes the Food?",
@@ -47,7 +52,12 @@
       "p-r5": "The part that takes water out of the leftovers so they become solid.",
       "p-r6": "The end of the tube where waste leaves the body.",
       "p-r7": "Sugars and other nutrients from rice mostly enter the blood in the…",
-      "p-r8": "Cats and cows also have a mouth, stomach and intestines. The digestive system of many vertebrates is…"
+      "p-r8": "Cats and cows also have a mouth, stomach and intestines. The digestive system of many vertebrates is…",
+      "p-r9": "Chewed food is swallowed, then goes down through the…",
+      "p-r10": "Digestion of food starts in the…",
+      "p-r11": "Food from the oesophagus goes into the…",
+      "p-r12": "After leaving the stomach, food goes into the…",
+      "p-r13": "After the small intestine, leftover food goes into the…"
     }
   },
   "knobs": {},
@@ -193,6 +203,56 @@
         "beda"
       ],
       "correct": "mirip"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "kerongkongan",
+        "usushalus",
+        "anus"
+      ],
+      "correct": "kerongkongan"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "mulut",
+        "lambung",
+        "usushalus"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "lambung",
+        "usushalus",
+        "mulut"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "usushalus",
+        "ususbesar",
+        "kerongkongan"
+      ],
+      "correct": "usushalus"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "ususbesar",
+        "lambung",
+        "mulut"
+      ],
+      "correct": "ususbesar"
     }
   ]
 }

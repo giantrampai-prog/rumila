@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-racun-di-rantai-makanan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.02"
@@ -36,7 +36,12 @@
       "p-r5": "Di jaring sawah, katak memakan belalang. Bila katak mati karena racun, belalang kemungkinan…",
       "p-r6": "Di kolam ini ular hanya memakan katak. Bila katak mati karena racun, ular kemungkinan…",
       "p-r7": "Petani memelihara burung hantu untuk memangsa tikus, bukan memakai racun tikus. Mengapa lebih aman bagi elang?",
-      "p-r8": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling sedikit?"
+      "p-r8": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling sedikit?",
+      "p-r9": "Limbah merkuri di danau: ganggang → ikan kecil → bangau. Siapa yang pertama menyerap merkuri?",
+      "p-r10": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling banyak?",
+      "p-r11": "Pestisida di sawah: padi → belalang → katak → elang. Siapa yang menumpuk racun paling sedikit?",
+      "p-r12": "Di sungai ini berang-berang hanya memakan ikan. Bila ikan mati karena racun, berang-berang kemungkinan…",
+      "p-r13": "Di danau ini hanya ikan kecil yang memakan ganggang. Bila ikan kecil mati karena racun, ganggang kemungkinan…"
     },
     "en": {
       "judul": "Tracking the Poison",
@@ -67,7 +72,12 @@
       "p-r5": "In the rice-field web, frogs eat grasshoppers. If the frogs die from poison, the grasshoppers will probably…",
       "p-r6": "In this pond the snakes eat only frogs. If the frogs die from poison, the snakes will probably…",
       "p-r7": "Farmers keep barn owls to catch rats instead of using rat poison. Why is this safer for eagles?",
-      "p-r8": "Pesticide gets into a river: water weed → fish → otter. Who builds up the least poison?"
+      "p-r8": "Pesticide gets into a river: water weed → fish → otter. Who builds up the least poison?",
+      "p-r9": "Mercury waste in a lake: algae → small fish → heron. Who takes in the mercury first?",
+      "p-r10": "Pesticide gets into a river: water moss → fish → otter. Who builds up the most poison?",
+      "p-r11": "Pesticide in a rice field: rice → grasshopper → frog → eagle. Who builds up the least poison?",
+      "p-r12": "In this river otters eat only fish. If the fish die from poison, the otters will probably…",
+      "p-r13": "In this lake only small fish eat the algae. If the small fish die from poison, the algae will probably…"
     }
   },
   "knobs": {},
@@ -273,6 +283,56 @@
         "berang"
       ],
       "correct": "lumut"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "ganggang",
+        "ikankecil",
+        "bangau"
+      ],
+      "correct": "ganggang"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "berang",
+        "ikan",
+        "lumut"
+      ],
+      "correct": "berang"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "padi",
+        "belalang",
+        "elang"
+      ],
+      "correct": "padi"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "berkurang",
+        "bertambah",
+        "tetap"
+      ],
+      "correct": "berkurang"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
     }
   ]
 }

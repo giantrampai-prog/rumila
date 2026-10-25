@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-tumbuhan-berbunga",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -32,7 +32,68 @@
       "matahari-mekar": "bunga besar mekar",
       "matahari-serbuk": "serangga membawa serbuk sari antarbunga",
       "matahari-matang": "biji baru matang di kepala bunga",
-      "matahari-burung": "burung mematuk dan menyebarkan biji"
+      "matahari-burung": "burung mematuk dan menyebarkan biji",
+      "s-tomat": "Siklus hidup tomat",
+      "tomat-biji": "biji tomat ditanam di pot",
+      "tomat-kecambah": "biji berkecambah",
+      "tomat-tumbuh": "tanaman tomat tumbuh berdaun",
+      "tomat-bunga": "bunga tomat yang kuning mekar",
+      "tomat-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "tomat-buah": "bakal buah membesar jadi tomat",
+      "tomat-bijibaru": "tomat dibelah: ada biji-biji baru",
+      "s-cabai": "Siklus hidup cabai",
+      "cabai-biji": "biji cabai disemai",
+      "cabai-kecambah": "biji berkecambah",
+      "cabai-tumbuh": "tanaman cabai tumbuh berdaun",
+      "cabai-bunga": "bunga cabai yang putih mekar",
+      "cabai-serbuk": "serangga membawa serbuk sari ke kepala putik",
+      "cabai-buah": "bakal buah tumbuh jadi cabai berisi biji baru",
+      "s-semangka": "Siklus hidup semangka",
+      "semangka-biji": "biji semangka ditanam",
+      "semangka-kecambah": "biji berkecambah",
+      "semangka-rambat": "batang semangka merambat di tanah",
+      "semangka-bunga": "bunga semangka yang kuning mekar",
+      "semangka-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "semangka-buah": "bakal buah membesar jadi semangka",
+      "semangka-bijibaru": "semangka dibelah: banyak biji hitam baru",
+      "s-timun": "Siklus hidup mentimun",
+      "timun-biji": "biji mentimun ditanam",
+      "timun-kecambah": "biji berkecambah",
+      "timun-rambat": "batang mentimun merambat di tiang",
+      "timun-bunga": "bunga mentimun yang kuning mekar",
+      "timun-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "timun-buah": "bakal buah tumbuh jadi mentimun berisi biji baru",
+      "s-jeruk": "Siklus hidup pohon jeruk",
+      "jeruk-biji": "biji jeruk ditanam",
+      "jeruk-kecambah": "biji berkecambah",
+      "jeruk-pohon": "pohon jeruk muda tumbuh",
+      "jeruk-bunga": "bunga jeruk yang putih dan harum mekar",
+      "jeruk-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "jeruk-buah": "bakal buah membesar jadi jeruk",
+      "jeruk-bijibaru": "jeruk dikupas: ada biji-biji baru",
+      "s-stroberi": "Siklus hidup stroberi",
+      "stroberi-biji": "biji stroberi yang kecil disemai",
+      "stroberi-kecambah": "biji berkecambah",
+      "stroberi-tumbuh": "tanaman stroberi tumbuh berdaun",
+      "stroberi-bunga": "bunga stroberi yang putih mekar",
+      "stroberi-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "stroberi-buah": "bakal buah jadi stroberi berbiji di kulitnya",
+      "s-melon": "Siklus hidup melon",
+      "melon-biji": "biji melon ditanam",
+      "melon-kecambah": "biji berkecambah",
+      "melon-rambat": "batang melon merambat",
+      "melon-bunga": "bunga melon yang kuning mekar",
+      "melon-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "melon-buah": "bakal buah membesar jadi melon",
+      "melon-bijibaru": "melon dibelah: banyak biji baru",
+      "s-apel": "Siklus hidup pohon apel",
+      "apel-biji": "biji apel ditanam",
+      "apel-kecambah": "biji berkecambah",
+      "apel-pohon": "pohon apel muda tumbuh",
+      "apel-bunga": "bunga apel yang putih kemerahan mekar",
+      "apel-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "apel-buah": "bakal buah membesar jadi apel",
+      "apel-bijibaru": "apel dibelah: ada biji-biji baru"
     },
     "en": {
       "judul": "From Seed to Seed",
@@ -59,7 +120,68 @@
       "matahari-mekar": "the big flower opens",
       "matahari-serbuk": "insects carry pollen between flowers",
       "matahari-matang": "new seeds ripen in the flower head",
-      "matahari-burung": "birds peck and scatter the seeds"
+      "matahari-burung": "birds peck and scatter the seeds",
+      "s-tomat": "Life cycle of a tomato",
+      "tomat-biji": "a tomato seed is planted in a pot",
+      "tomat-kecambah": "the seed germinates",
+      "tomat-tumbuh": "the tomato plant grows leaves",
+      "tomat-bunga": "yellow tomato flowers open",
+      "tomat-serbuk": "a bee carries pollen to the stigma",
+      "tomat-buah": "the ovary swells into a tomato",
+      "tomat-bijibaru": "the tomato is cut open: there are new seeds",
+      "s-cabai": "Life cycle of a chilli",
+      "cabai-biji": "a chilli seed is sown",
+      "cabai-kecambah": "the seed germinates",
+      "cabai-tumbuh": "the chilli plant grows leaves",
+      "cabai-bunga": "white chilli flowers open",
+      "cabai-serbuk": "an insect carries pollen to the stigma",
+      "cabai-buah": "the ovary grows into a chilli full of new seeds",
+      "s-semangka": "Life cycle of a watermelon",
+      "semangka-biji": "a watermelon seed is planted",
+      "semangka-kecambah": "the seed germinates",
+      "semangka-rambat": "the watermelon stem creeps along the ground",
+      "semangka-bunga": "yellow watermelon flowers open",
+      "semangka-serbuk": "a bee carries pollen to the stigma",
+      "semangka-buah": "the ovary swells into a watermelon",
+      "semangka-bijibaru": "the watermelon is cut open: lots of new black seeds",
+      "s-timun": "Life cycle of a cucumber",
+      "timun-biji": "a cucumber seed is planted",
+      "timun-kecambah": "the seed germinates",
+      "timun-rambat": "the cucumber stem climbs a pole",
+      "timun-bunga": "yellow cucumber flowers open",
+      "timun-serbuk": "a bee carries pollen to the stigma",
+      "timun-buah": "the ovary grows into a cucumber full of new seeds",
+      "s-jeruk": "Life cycle of an orange tree",
+      "jeruk-biji": "an orange seed is planted",
+      "jeruk-kecambah": "the seed germinates",
+      "jeruk-pohon": "a young orange tree grows",
+      "jeruk-bunga": "white, sweet-smelling orange flowers open",
+      "jeruk-serbuk": "a bee carries pollen to the stigma",
+      "jeruk-buah": "the ovary swells into an orange",
+      "jeruk-bijibaru": "the orange is peeled: there are new seeds",
+      "s-stroberi": "Life cycle of a strawberry",
+      "stroberi-biji": "a tiny strawberry seed is sown",
+      "stroberi-kecambah": "the seed germinates",
+      "stroberi-tumbuh": "the strawberry plant grows leaves",
+      "stroberi-bunga": "white strawberry flowers open",
+      "stroberi-serbuk": "a bee carries pollen to the stigma",
+      "stroberi-buah": "it becomes a strawberry with seeds on its skin",
+      "s-melon": "Life cycle of a melon",
+      "melon-biji": "a melon seed is planted",
+      "melon-kecambah": "the seed germinates",
+      "melon-rambat": "the melon stem creeps along",
+      "melon-bunga": "yellow melon flowers open",
+      "melon-serbuk": "a bee carries pollen to the stigma",
+      "melon-buah": "the ovary swells into a melon",
+      "melon-bijibaru": "the melon is cut open: lots of new seeds",
+      "s-apel": "Life cycle of an apple tree",
+      "apel-biji": "an apple seed is planted",
+      "apel-kecambah": "the seed germinates",
+      "apel-pohon": "a young apple tree grows",
+      "apel-bunga": "pinkish-white apple blossoms open",
+      "apel-serbuk": "a bee carries pollen to the stigma",
+      "apel-buah": "the ovary swells into an apple",
+      "apel-bijibaru": "the apple is cut open: there are new seeds"
     }
   },
   "knobs": {
@@ -193,6 +315,350 @@
           "id": "burung",
           "labelKey": "matahari-burung",
           "emoji": "🐦"
+        }
+      ]
+    },
+    {
+      "id": "tomat",
+      "titleKey": "s-tomat",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "tomat-biji",
+          "shape": "circle",
+          "color": "#f5deb3",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "tomat-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "tomat-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "tomat-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "tomat-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "tomat-buah",
+          "emoji": "🍅"
+        },
+        {
+          "id": "bijibaru",
+          "labelKey": "tomat-bijibaru",
+          "shape": "circle",
+          "color": "#f5deb3",
+          "scale": 0.3,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "cabai",
+      "titleKey": "s-cabai",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "cabai-biji",
+          "shape": "circle",
+          "color": "#fff3c4",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "cabai-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "cabai-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "cabai-bunga",
+          "emoji": "💮"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "cabai-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "cabai-buah",
+          "emoji": "🌶️"
+        }
+      ]
+    },
+    {
+      "id": "semangka",
+      "titleKey": "s-semangka",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "semangka-biji",
+          "shape": "circle",
+          "color": "#212121",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "semangka-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "rambat",
+          "labelKey": "semangka-rambat",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "semangka-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "semangka-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "semangka-buah",
+          "emoji": "🍉"
+        },
+        {
+          "id": "bijibaru",
+          "labelKey": "semangka-bijibaru",
+          "shape": "circle",
+          "color": "#212121",
+          "scale": 0.3,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "timun",
+      "titleKey": "s-timun",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "timun-biji",
+          "shape": "circle",
+          "color": "#fffde7",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "timun-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "rambat",
+          "labelKey": "timun-rambat",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "timun-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "timun-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "timun-buah",
+          "emoji": "🥒"
+        }
+      ]
+    },
+    {
+      "id": "jeruk",
+      "titleKey": "s-jeruk",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "jeruk-biji",
+          "shape": "circle",
+          "color": "#fff8e1",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "jeruk-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "pohon",
+          "labelKey": "jeruk-pohon",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "jeruk-bunga",
+          "emoji": "💮"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "jeruk-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "jeruk-buah",
+          "emoji": "🍊"
+        },
+        {
+          "id": "bijibaru",
+          "labelKey": "jeruk-bijibaru",
+          "shape": "circle",
+          "color": "#fff8e1",
+          "scale": 0.3,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "stroberi",
+      "titleKey": "s-stroberi",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "stroberi-biji",
+          "shape": "circle",
+          "color": "#fbc02d",
+          "scale": 0.3
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "stroberi-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "stroberi-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "stroberi-bunga",
+          "emoji": "💮"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "stroberi-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "stroberi-buah",
+          "emoji": "🍓"
+        }
+      ]
+    },
+    {
+      "id": "melon",
+      "titleKey": "s-melon",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "melon-biji",
+          "shape": "circle",
+          "color": "#ffe0b2",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "melon-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "rambat",
+          "labelKey": "melon-rambat",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "melon-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "melon-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "melon-buah",
+          "emoji": "🍈"
+        },
+        {
+          "id": "bijibaru",
+          "labelKey": "melon-bijibaru",
+          "shape": "circle",
+          "color": "#ffe0b2",
+          "scale": 0.3,
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": "apel",
+      "titleKey": "s-apel",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "apel-biji",
+          "shape": "circle",
+          "color": "#5d4037",
+          "scale": 0.5
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "apel-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "pohon",
+          "labelKey": "apel-pohon",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "apel-bunga",
+          "emoji": "🌸"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "apel-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "apel-buah",
+          "emoji": "🍎"
+        },
+        {
+          "id": "bijibaru",
+          "labelKey": "apel-bijibaru",
+          "shape": "circle",
+          "color": "#5d4037",
+          "scale": 0.3,
+          "count": 6
         }
       ]
     }

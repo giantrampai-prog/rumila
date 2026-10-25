@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -31,7 +31,37 @@
       "semut-telur": "telur semut",
       "semut-larva": "larva putih",
       "semut-kepompong": "kepompong semut",
-      "semut-semut": "semut dewasa"
+      "semut-semut": "semut dewasa",
+      "s-kepik": "Siklus hidup kepik",
+      "kepik-telur": "telur kuning di bawah daun",
+      "kepik-larva": "larva berduri makan kutu daun",
+      "kepik-kepompong": "kepompong menempel di daun",
+      "kepik-dewasa": "kepik dewasa berbintik",
+      "s-lebah": "Siklus hidup lebah",
+      "lebah-telur": "telur di sel sarang",
+      "lebah-larva": "larva diberi makan",
+      "lebah-kepompong": "kepompong di sel tertutup",
+      "lebah-dewasa": "lebah dewasa keluar",
+      "s-belalang": "Siklus hidup belalang",
+      "belalang-telur": "telur di dalam tanah",
+      "belalang-nimfa": "nimfa kecil tanpa sayap",
+      "belalang-nimfabesar": "nimfa lebih besar, sayap mulai tumbuh",
+      "belalang-dewasa": "belalang dewasa bersayap",
+      "s-kumbang": "Siklus hidup kumbang",
+      "kumbang-telur": "telur di tanah gembur",
+      "kumbang-larva": "larva gemuk di dalam tanah",
+      "kumbang-kepompong": "kepompong di dalam tanah",
+      "kumbang-dewasa": "kumbang dewasa keluar dari tanah",
+      "s-siput": "Siklus hidup siput kebun",
+      "siput-telur": "telur di tanah lembap",
+      "siput-anak": "anak siput menetas, cangkangnya tipis",
+      "siput-muda": "siput muda, cangkangnya makin besar",
+      "siput-dewasa": "siput dewasa bertelur",
+      "s-labalaba": "Siklus hidup laba-laba",
+      "labalaba-telur": "telur di dalam kantong sutra",
+      "labalaba-anak": "anak laba-laba keluar dari kantong",
+      "labalaba-muda": "laba-laba muda berganti kulit",
+      "labalaba-dewasa": "laba-laba dewasa membuat jaring"
     },
     "en": {
       "judul": "Fix the Garden Life Cycles",
@@ -56,7 +86,37 @@
       "semut-telur": "ant eggs",
       "semut-larva": "white larva",
       "semut-kepompong": "ant pupa",
-      "semut-semut": "adult ant"
+      "semut-semut": "adult ant",
+      "s-kepik": "Life cycle of a ladybird",
+      "kepik-telur": "yellow eggs under a leaf",
+      "kepik-larva": "spiky larva eats aphids",
+      "kepik-kepompong": "pupa stuck to a leaf",
+      "kepik-dewasa": "spotted adult ladybird",
+      "s-lebah": "Life cycle of a bee",
+      "lebah-telur": "egg in a honeycomb cell",
+      "lebah-larva": "larva is fed",
+      "lebah-kepompong": "pupa in a capped cell",
+      "lebah-dewasa": "adult bee comes out",
+      "s-belalang": "Life cycle of a grasshopper",
+      "belalang-telur": "eggs in the soil",
+      "belalang-nimfa": "small nymph with no wings",
+      "belalang-nimfabesar": "bigger nymph, wings starting to grow",
+      "belalang-dewasa": "adult grasshopper with wings",
+      "s-kumbang": "Life cycle of a beetle",
+      "kumbang-telur": "eggs in loose soil",
+      "kumbang-larva": "fat larva in the soil",
+      "kumbang-kepompong": "pupa in the soil",
+      "kumbang-dewasa": "adult beetle comes out of the soil",
+      "s-siput": "Life cycle of a garden snail",
+      "siput-telur": "eggs in damp soil",
+      "siput-anak": "baby snail hatches with a thin shell",
+      "siput-muda": "young snail, its shell grows bigger",
+      "siput-dewasa": "adult snail lays eggs",
+      "s-labalaba": "Life cycle of a spider",
+      "labalaba-telur": "eggs in a silk sac",
+      "labalaba-anak": "baby spiders come out of the sac",
+      "labalaba-muda": "young spider sheds its skin",
+      "labalaba-dewasa": "adult spider spins a web"
     }
   },
   "knobs": {
@@ -189,6 +249,195 @@
           "id": "semut",
           "labelKey": "semut-semut",
           "emoji": "🐜"
+        }
+      ]
+    },
+    {
+      "id": "kepik",
+      "titleKey": "s-kepik",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kepik-telur",
+          "shape": "circle",
+          "color": "#fdd835",
+          "scale": 0.4
+        },
+        {
+          "id": "larva",
+          "labelKey": "kepik-larva",
+          "shape": "rect",
+          "color": "#37474f",
+          "scale": 0.6
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "kepik-kepompong",
+          "shape": "circle",
+          "color": "#ff8f00",
+          "scale": 0.6
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "kepik-dewasa",
+          "emoji": "🐞"
+        }
+      ]
+    },
+    {
+      "id": "lebah",
+      "titleKey": "s-lebah",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "lebah-telur",
+          "shape": "circle",
+          "color": "#fafafa",
+          "scale": 0.4
+        },
+        {
+          "id": "larva",
+          "labelKey": "lebah-larva",
+          "shape": "rect",
+          "color": "#fff8e1",
+          "scale": 0.6
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "lebah-kepompong",
+          "shape": "rect",
+          "color": "#ffe082",
+          "scale": 0.8
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "lebah-dewasa",
+          "emoji": "🐝"
+        }
+      ]
+    },
+    {
+      "id": "belalang",
+      "titleKey": "s-belalang",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "belalang-telur",
+          "shape": "circle",
+          "color": "#a1887f",
+          "scale": 0.4
+        },
+        {
+          "id": "nimfa",
+          "labelKey": "belalang-nimfa",
+          "emoji": "🦗",
+          "scale": 0.5
+        },
+        {
+          "id": "nimfabesar",
+          "labelKey": "belalang-nimfabesar",
+          "emoji": "🦗",
+          "scale": 0.8
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "belalang-dewasa",
+          "emoji": "🦗",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "kumbang",
+      "titleKey": "s-kumbang",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kumbang-telur",
+          "shape": "circle",
+          "color": "#fafafa",
+          "scale": 0.4
+        },
+        {
+          "id": "larva",
+          "labelKey": "kumbang-larva",
+          "shape": "rect",
+          "color": "#fff3e0",
+          "scale": 0.7
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "kumbang-kepompong",
+          "shape": "circle",
+          "color": "#bcaaa4",
+          "scale": 0.7
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "kumbang-dewasa",
+          "emoji": "🪲"
+        }
+      ]
+    },
+    {
+      "id": "siput",
+      "titleKey": "s-siput",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "siput-telur",
+          "shape": "circle",
+          "color": "#fafafa",
+          "scale": 0.4
+        },
+        {
+          "id": "anak",
+          "labelKey": "siput-anak",
+          "emoji": "🐌",
+          "scale": 0.5
+        },
+        {
+          "id": "muda",
+          "labelKey": "siput-muda",
+          "emoji": "🐌",
+          "scale": 0.8
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "siput-dewasa",
+          "emoji": "🐌",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "labalaba",
+      "titleKey": "s-labalaba",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "labalaba-telur",
+          "shape": "circle",
+          "color": "#eeeeee",
+          "scale": 0.6
+        },
+        {
+          "id": "anak",
+          "labelKey": "labalaba-anak",
+          "emoji": "🕷️",
+          "scale": 0.4
+        },
+        {
+          "id": "muda",
+          "labelKey": "labalaba-muda",
+          "emoji": "🕷️",
+          "scale": 0.7
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "labalaba-dewasa",
+          "emoji": "🕷️",
+          "scale": 1.1
         }
       ]
     }

@@ -15984,7 +15984,7 @@ export const PAKET_RAW: unknown[] = [
     "knobs": {},
     "assets": [],
     "generatif": true,
-    "rounds": 10,
+    "rounds": 9,
     "world": "kantin",
     "currency": "IDR",
     "denominations": [
@@ -115561,7 +115561,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-otot-berpasangan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.RANGKA-OTOT.03"
@@ -115591,7 +115591,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Kaki diluruskan untuk menendang bola. Otot mana yang mengerut?",
         "p-r6": "Lutut ditekuk ke belakang saat berlari. Otot mana yang mengerut?",
         "p-r7": "Apa yang membuat tulang bergerak?",
-        "p-r8": "Otot hanya bisa menarik, tidak bisa mendorong. Karena itu otot bekerja…"
+        "p-r8": "Otot hanya bisa menarik, tidak bisa mendorong. Karena itu otot bekerja…",
+        "p-r9": "Lutut diluruskan. Otot belakang paha…",
+        "p-r10": "Lutut ditekuk. Otot depan paha…",
+        "p-r11": "Tangan mengangkat gelas ke mulut. Otot mana yang mengerut?",
+        "p-r12": "Lengan mendorong pintu sampai lurus. Otot mana yang mengerut?"
       },
       "en": {
         "judul": "Muscle Pairs",
@@ -115616,7 +115620,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "The leg straightens to kick a ball. Which muscle contracts?",
         "p-r6": "The knee bends backwards while running. Which muscle contracts?",
         "p-r7": "What makes a bone move?",
-        "p-r8": "Muscles can only pull, not push. So muscles work…"
+        "p-r8": "Muscles can only pull, not push. So muscles work…",
+        "p-r9": "The knee straightens. The back thigh muscle…",
+        "p-r10": "The knee bends. The front thigh muscle…",
+        "p-r11": "The hand lifts a cup to the mouth. Which muscle contracts?",
+        "p-r12": "The arm pushes a door until it is straight. Which muscle contracts?"
       }
     },
     "knobs": {},
@@ -115783,6 +115791,44 @@ export const PAKET_RAW: unknown[] = [
           "sendirian"
         ],
         "correct": "berpasangan"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "mengerut",
+          "mengendur"
+        ],
+        "correct": "mengendur"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "mengerut",
+          "mengendur"
+        ],
+        "correct": "mengendur"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "biseps",
+          "trisep",
+          "tulang"
+        ],
+        "correct": "biseps"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "biseps",
+          "trisep",
+          "tulang"
+        ],
+        "correct": "trisep"
       }
     ]
   },
@@ -116265,7 +116311,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-siang-malam-bayangan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.BUMI-ANTARIKSA.03"
@@ -116294,7 +116340,15 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Tengah hari, Matahari hampir tepat di atas kepala. Bayangan tiang bendera…",
         "p-r6": "Di sisi Bumi yang membelakangi Matahari sedang…",
         "p-r7": "Di sisi Bumi yang menghadap Matahari sedang…",
-        "p-r8": "Bayangan pohon makin panjang menjelang sore karena Matahari tampak…"
+        "p-r8": "Bayangan pohon makin panjang menjelang sore karena Matahari tampak…",
+        "i-pagi": "pagi hari",
+        "i-tengahhari": "tengah hari",
+        "i-sore": "sore hari",
+        "p-r9": "Langit gelap dan bintang-bintang terlihat. Di tempat itu sedang…",
+        "p-r10": "Di Indonesia sedang siang. Di sisi Bumi yang berseberangan sedang…",
+        "p-r11": "Kapan bayangan tiang bendera paling pendek?",
+        "p-r12": "Kapan bayangan tiang bendera panjang ke arah barat?",
+        "p-r13": "Kapan bayangan tiang bendera panjang ke arah timur?"
       },
       "en": {
         "judul": "Day, Night and Shadows",
@@ -116318,7 +116372,15 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "At midday the Sun is almost straight overhead. The flagpole's shadow is…",
         "p-r6": "On the side of the Earth facing away from the Sun it is…",
         "p-r7": "On the side of the Earth facing the Sun it is…",
-        "p-r8": "A tree's shadow grows longer towards evening because the Sun appears…"
+        "p-r8": "A tree's shadow grows longer towards evening because the Sun appears…",
+        "i-pagi": "morning",
+        "i-tengahhari": "midday",
+        "i-sore": "late afternoon",
+        "p-r9": "The sky is dark and the stars can be seen. In that place it is…",
+        "p-r10": "It is daytime in Indonesia. On the opposite side of the Earth it is…",
+        "p-r11": "When is the flagpole's shadow shortest?",
+        "p-r12": "When is the flagpole's shadow long and pointing west?",
+        "p-r13": "When is the flagpole's shadow long and pointing east?"
       }
     },
     "knobs": {},
@@ -116400,6 +116462,24 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-besar",
         "bin": "pilihan",
         "emoji": "⭕"
+      },
+      {
+        "id": "pagi",
+        "labelKey": "i-pagi",
+        "bin": "pilihan",
+        "emoji": "🌅"
+      },
+      {
+        "id": "tengahhari",
+        "labelKey": "i-tengahhari",
+        "bin": "pilihan",
+        "emoji": "🕛"
+      },
+      {
+        "id": "sore",
+        "labelKey": "i-sore",
+        "bin": "pilihan",
+        "emoji": "🌆"
       }
     ],
     "pilihan": [
@@ -116480,6 +116560,54 @@ export const PAKET_RAW: unknown[] = [
           "besar"
         ],
         "correct": "rendah"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "siang",
+          "malam"
+        ],
+        "correct": "malam"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "siang",
+          "malam"
+        ],
+        "correct": "malam"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "pagi",
+          "tengahhari",
+          "sore"
+        ],
+        "correct": "tengahhari"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "pagi",
+          "tengahhari",
+          "sore"
+        ],
+        "correct": "pagi"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "pagi",
+          "tengahhari",
+          "sore"
+        ],
+        "correct": "sore"
       }
     ]
   },
@@ -116644,7 +116772,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-terang-atau-redup",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.LISTRIK.03"
@@ -116665,7 +116793,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Dua lampu berderet. Kawat di dalam satu lampu putus. Lampu yang lain…",
         "p-r6": "Baterai yang baru diganti baterai lama yang hampir habis. Lampunya jadi…",
         "p-r7": "Rangkaian seri dengan dua lampu. Sakelarnya dibuka. Lampunya…",
-        "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…"
+        "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…",
+        "p-r9": "Satu lampu dengan satu baterai. Satu kabel dilepas dari baterai sehingga ada celah. Lampunya…",
+        "p-r10": "Dua lampu berderet dengan satu baterai. Baterai kedua ditambahkan berderet. Lampunya jadi…",
+        "p-r11": "Satu lampu dengan dua baterai berderet. Lampu kedua ditambahkan berderet. Lampunya jadi…",
+        "p-r12": "Satu kabel tembaga dalam rangkaian diganti tali plastik. Lampunya…"
       },
       "en": {
         "judul": "Brighter or Dimmer?",
@@ -116681,7 +116813,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Two lamps in a row. The wire inside one lamp breaks. The other lamp…",
         "p-r6": "A new cell is swapped for an old, nearly flat one. The lamp becomes…",
         "p-r7": "A series circuit with two lamps. The switch is opened. The lamps…",
-        "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…"
+        "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…",
+        "p-r9": "One bulb with one battery. One wire is taken off the battery, leaving a gap. The bulb…",
+        "p-r10": "Two bulbs in a row with one battery. A second battery is added in the row. The bulbs become…",
+        "p-r11": "One bulb with two batteries in a row. A second bulb is added in the row. The bulbs become…",
+        "p-r12": "One copper wire in the circuit is replaced with a plastic string. The bulb…"
       }
     },
     "knobs": {},
@@ -116797,12 +116933,52 @@ export const PAKET_RAW: unknown[] = [
           "padam"
         ],
         "correct": "terang"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "terang",
+          "redup",
+          "padam"
+        ],
+        "correct": "padam"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "terang",
+          "redup",
+          "padam"
+        ],
+        "correct": "terang"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "terang",
+          "redup",
+          "padam"
+        ],
+        "correct": "redup"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "terang",
+          "redup",
+          "padam"
+        ],
+        "correct": "padam"
       }
     ]
   },
   {
     "id": "sd4-sains-tugas-rangka",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.RANGKA-OTOT.02"
@@ -116823,7 +116999,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r4": "Tulang kaki menahan berat badan saat kita berdiri lama. Apa tugasnya?",
         "p-r5": "Otot menarik tulang paha saat kita menendang bola. Apa tugas tulang di sini?",
         "p-r6": "Sendi lutut membuat kaki bisa ditekuk saat naik tangga. Apa tugasnya?",
-        "p-r7": "Kerangka di museum masih menunjukkan wujud dinosaurus walau dagingnya sudah lama hilang. Apa tugasnya?"
+        "p-r7": "Kerangka di museum masih menunjukkan wujud dinosaurus walau dagingnya sudah lama hilang. Apa tugasnya?",
+        "p-r8": "Ruas-ruas tulang belakang membungkus saraf penting seperti terowongan. Apa tugasnya di sini?",
+        "p-r9": "Tempurung lutut menutupi bagian depan sendi lutut agar tidak mudah cedera. Apa tugasnya?",
+        "p-r10": "Tulang panggul menahan berat tubuh bagian atas saat kita duduk. Apa tugasnya?",
+        "p-r11": "Sendi bahu membuat lengan bisa diputar saat berenang. Apa tugasnya?",
+        "p-r12": "Otot menarik tulang rahang naik-turun saat kita mengunyah. Apa tugas tulang di sini?",
+        "p-r13": "Rangka membuat wujud tubuh kita khas manusia: bahu lebar, lengan dan kaki panjang. Apa tugasnya?"
       },
       "en": {
         "judul": "The Skeleton's Jobs",
@@ -116839,7 +117021,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r4": "Leg bones hold up the body's weight when we stand for a long time. What is their job?",
         "p-r5": "Muscles pull the thigh bone when we kick a ball. What job is the bone doing?",
         "p-r6": "The knee joint lets the leg bend when we climb stairs. What is its job?",
-        "p-r7": "A museum skeleton still shows the dinosaur's form long after the flesh is gone. What is its job?"
+        "p-r7": "A museum skeleton still shows the dinosaur's form long after the flesh is gone. What is its job?",
+        "p-r8": "The bones of the spine wrap around important nerves like a tunnel. What is their job here?",
+        "p-r9": "The kneecap covers the front of the knee joint so it is not easily hurt. What is its job?",
+        "p-r10": "The hip bones hold up the weight of the upper body when we sit. What is their job?",
+        "p-r11": "The shoulder joint lets the arm turn round while swimming. What is its job?",
+        "p-r12": "Muscles pull the jaw bone up and down while we chew. What is the bone's job here?",
+        "p-r13": "The skeleton gives our body its human outline: wide shoulders, long arms and legs. What is its job?"
       }
     },
     "knobs": {},
@@ -116958,12 +117146,78 @@ export const PAKET_RAW: unknown[] = [
           "bentuk"
         ],
         "correct": "bentuk"
+      },
+      {
+        "id": "r8",
+        "promptKey": "p-r8",
+        "choices": [
+          "lindungi",
+          "topang",
+          "gerak",
+          "bentuk"
+        ],
+        "correct": "lindungi"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "lindungi",
+          "topang",
+          "gerak",
+          "bentuk"
+        ],
+        "correct": "lindungi"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "lindungi",
+          "topang",
+          "gerak",
+          "bentuk"
+        ],
+        "correct": "topang"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "lindungi",
+          "topang",
+          "gerak",
+          "bentuk"
+        ],
+        "correct": "gerak"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "lindungi",
+          "topang",
+          "gerak",
+          "bentuk"
+        ],
+        "correct": "gerak"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "lindungi",
+          "topang",
+          "gerak",
+          "bentuk"
+        ],
+        "correct": "bentuk"
       }
     ]
   },
   {
     "id": "sd4-sains-uji-adil",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.PENYELIDIKAN.01"
@@ -116998,7 +117252,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang sengaja diubah?",
         "p-r6": "Uji es tadi: apa yang harus dibuat sama?",
         "p-r7": "Apakah kain lebih cepat kering di bawah matahari atau di dalam rumah? Apa yang harus dibuat sama?",
-        "p-r8": "Dua mobil-mobilan berbeda diuji, mana yang meluncur lebih jauh dari papan miring, tetapi satu dilepas dari tempat lebih tinggi. Mengapa tidak adil?"
+        "p-r8": "Dua mobil-mobilan berbeda diuji, mana yang meluncur lebih jauh dari papan miring, tetapi satu dilepas dari tempat lebih tinggi. Mengapa tidak adil?",
+        "p-r9": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang diukur?",
+        "p-r10": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Apa yang diukur?",
+        "p-r11": "Apakah jenis tanah memengaruhi tinggi tanaman kacang? Selain banyak air, apa lagi yang harus sama?",
+        "p-r12": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Selain tinggi jatuh, apa lagi yang harus sama?",
+        "p-r13": "Apakah kain lebih cepat kering di bawah matahari atau di dalam rumah? Apa yang sengaja diubah?"
       },
       "en": {
         "judul": "A Fair Test",
@@ -117028,7 +117287,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Does ice melt faster in a sunny place or in the shade? What do we change on purpose?",
         "p-r6": "In the ice test: what must be kept the same?",
         "p-r7": "Does cloth dry faster in the sun or indoors? What must be kept the same?",
-        "p-r8": "Two different toy cars are tested to see which rolls farther down a ramp, but one is let go from higher up. Why is it unfair?"
+        "p-r8": "Two different toy cars are tested to see which rolls farther down a ramp, but one is let go from higher up. Why is it unfair?",
+        "p-r9": "Does ice melt faster in a sunny place or in the shade? What is measured?",
+        "p-r10": "Does a ball bounce higher on a tiled floor or on carpet? What is measured?",
+        "p-r11": "Does the type of soil affect how tall bean plants grow? Besides the amount of water, what else must be the same?",
+        "p-r12": "Does a ball bounce higher on a tiled floor or on carpet? Besides the drop height, what else must be the same?",
+        "p-r13": "Does cloth dry faster in the sun or indoors? What is changed on purpose?"
       }
     },
     "knobs": {},
@@ -117228,6 +117492,56 @@ export const PAKET_RAW: unknown[] = [
           "lantaimiring"
         ],
         "correct": "duahal"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "waktucair",
+          "tempat",
+          "ukuranes"
+        ],
+        "correct": "waktucair"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "tinggipantul",
+          "jenislantai",
+          "tinggijatuh"
+        ],
+        "correct": "tinggipantul"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "jenisbiji",
+          "jenistanah",
+          "tinggitanaman"
+        ],
+        "correct": "jenisbiji"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "jenisbola",
+          "jenislantai",
+          "tinggipantul"
+        ],
+        "correct": "jenisbola"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "tempatjemur",
+          "ukurankain",
+          "waktukering"
+        ],
+        "correct": "tempatjemur"
       }
     ]
   },
@@ -126372,7 +126686,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-mat-pecahan-campuran",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "mechanic": "pilah",
     "competencyIds": [
@@ -126396,7 +126710,14 @@ export const PAKET_RAW: unknown[] = [
         "i7": "10/6",
         "i8": "7/2",
         "i9": "14/4",
-        "i10": "21/6"
+        "i10": "21/6",
+        "i11": "12/8",
+        "i12": "15/10",
+        "i13": "27/12",
+        "i14": "36/16",
+        "i15": "15/9",
+        "i16": "20/12",
+        "i17": "28/8"
       },
       "en": {
         "judul": "Mixed Number Shelves",
@@ -126414,7 +126735,14 @@ export const PAKET_RAW: unknown[] = [
         "i7": "10/6",
         "i8": "7/2",
         "i9": "14/4",
-        "i10": "21/6"
+        "i10": "21/6",
+        "i11": "12/8",
+        "i12": "15/10",
+        "i13": "27/12",
+        "i14": "36/16",
+        "i15": "15/9",
+        "i16": "20/12",
+        "i17": "28/8"
       }
     },
     "knobs": {
@@ -126506,6 +126834,41 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "i10",
         "labelKey": "i10",
+        "bin": "tigasetengah"
+      },
+      {
+        "id": "i11",
+        "labelKey": "i11",
+        "bin": "satusetengah"
+      },
+      {
+        "id": "i12",
+        "labelKey": "i12",
+        "bin": "satusetengah"
+      },
+      {
+        "id": "i13",
+        "labelKey": "i13",
+        "bin": "duaseperempat"
+      },
+      {
+        "id": "i14",
+        "labelKey": "i14",
+        "bin": "duaseperempat"
+      },
+      {
+        "id": "i15",
+        "labelKey": "i15",
+        "bin": "satuduapertiga"
+      },
+      {
+        "id": "i16",
+        "labelKey": "i16",
+        "bin": "satuduapertiga"
+      },
+      {
+        "id": "i17",
+        "labelKey": "i17",
         "bin": "tigasetengah"
       }
     ]
@@ -131906,7 +132269,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-biji-mana-berkecambah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.02"
@@ -131940,7 +132303,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Dua hal yang dibutuhkan hampir semua biji untuk berkecambah adalah…",
         "p-r6": "Biji ditanam di pasir kering di halaman yang panas. Apa yang paling perlu ditambahkan?",
         "p-r7": "Biji di kapas basah dalam freezer tidak berkecambah. Apa yang kurang?",
-        "p-r8": "Kecambah sudah keluar di lemari gelap. Agar tumbuh menjadi tanaman hijau, sekarang ia butuh…"
+        "p-r8": "Kecambah sudah keluar di lemari gelap. Agar tumbuh menjadi tanaman hijau, sekarang ia butuh…",
+        "p-r9": "Tiga cawan biji kacang hijau. Mana yang tidak berkecambah?",
+        "p-r10": "Biji ditaruh di kapas kering di kelas yang hangat. Apa yang terjadi?",
+        "p-r11": "Biji kacang hijau di kapas kering tidak berkecambah. Apa yang kurang?",
+        "p-r12": "Biji yang terendam air dingin di kulkas lambat berkecambah. Apa yang perlu diubah?"
       },
       "en": {
         "judul": "Sprout Prediction",
@@ -131969,7 +132336,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "The two things almost all seeds need to germinate are…",
         "p-r6": "Seeds are planted in dry sand in a hot yard. What do they most need?",
         "p-r7": "Seeds on wet cotton wool in the freezer do not germinate. What is missing?",
-        "p-r8": "Sprouts have come up in the dark cupboard. To grow into green plants, they now need…"
+        "p-r8": "Sprouts have come up in the dark cupboard. To grow into green plants, they now need…",
+        "p-r9": "Three dishes of mung bean seeds. Which one does not germinate?",
+        "p-r10": "Seeds are put on dry cotton wool in a warm classroom. What happens?",
+        "p-r11": "Mung bean seeds on dry cotton wool do not germinate. What is missing?",
+        "p-r12": "Seeds soaking in cold water in the fridge are slow to germinate. What needs to change?"
       }
     },
     "knobs": {},
@@ -132161,12 +132532,51 @@ export const PAKET_RAW: unknown[] = [
           "tambahpupuk"
         ],
         "correct": "tambahcahaya"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "basahbeku",
+          "basahhangat",
+          "basahgelap"
+        ],
+        "correct": "basahbeku"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "tetap",
+          "tidak"
+        ],
+        "correct": "tidak"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "tambahair",
+          "tambahcahaya",
+          "tambahpupuk"
+        ],
+        "correct": "tambahair"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "hangat",
+          "tambahcahaya",
+          "tambahpupuk"
+        ],
+        "correct": "hangat"
       }
     ]
   },
   {
     "id": "sd5-sains-bumi-bulan-orbit",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.BUMI-ORBIT.01"
@@ -132197,7 +132607,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Benda buatan yang mengitari Bumi untuk siaran TV dan ramalan cuaca disebut…",
         "p-r6": "Bentuk lintasan Bumi mengelilingi Matahari adalah…",
         "p-r7": "Benda di pusat tata surya yang dikelilingi Bumi adalah…",
-        "p-r8": "Satelit adalah benda yang…"
+        "p-r8": "Satelit adalah benda yang…",
+        "i-pantul": "memantulkan cahaya Matahari",
+        "p-r9": "Planet tempat kita tinggal, yang mengelilingi Matahari, adalah…",
+        "p-r10": "Bulan adalah satelit alami milik planet…",
+        "p-r11": "Bulan tampak terang di malam hari karena…",
+        "p-r12": "Bentuk lintasan Bulan mengelilingi Bumi adalah…",
+        "p-r13": "Mana yang BUKAN satelit Bumi?"
       },
       "en": {
         "judul": "Spinning and Orbiting",
@@ -132223,7 +132639,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "A human-made object that orbits the Earth for TV and weather forecasts is…",
         "p-r6": "The shape of the Earth's path around the Sun is…",
         "p-r7": "The object at the centre of the Solar System that the Earth goes round is…",
-        "p-r8": "A satellite is an object that…"
+        "p-r8": "A satellite is an object that…",
+        "i-pantul": "reflects light from the Sun",
+        "p-r9": "The planet we live on, which travels around the Sun, is…",
+        "p-r10": "The Moon is the natural satellite of the planet…",
+        "p-r11": "The Moon looks bright at night because it…",
+        "p-r12": "The shape of the Moon's path around the Earth is…",
+        "p-r13": "Which one is NOT a satellite of the Earth?"
       }
     },
     "knobs": {},
@@ -132317,6 +132739,12 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-diam",
         "bin": "pilihan",
         "emoji": "📍"
+      },
+      {
+        "id": "pantul",
+        "labelKey": "i-pantul",
+        "bin": "pilihan",
+        "emoji": "🪞"
       }
     ],
     "pilihan": [
@@ -132399,6 +132827,55 @@ export const PAKET_RAW: unknown[] = [
           "diam"
         ],
         "correct": "mengorbit"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "bumi",
+          "bulan",
+          "matahari"
+        ],
+        "correct": "bumi"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "bumi",
+          "matahari",
+          "bulan"
+        ],
+        "correct": "bumi"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "pantul",
+          "bercahaya"
+        ],
+        "correct": "pantul"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "elips",
+          "kotak",
+          "lurus"
+        ],
+        "correct": "elips"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "matahari",
+          "bulan",
+          "buatan"
+        ],
+        "correct": "matahari"
       }
     ]
   },
@@ -133118,7 +133595,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-pisahkan-campuran",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.LARUTAN.02"
@@ -133147,7 +133624,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Gula larut di teh. Kalau tehnya disaring, gulanya…",
         "p-r6": "Air laut dijemur di tambak sampai airnya habis. Yang tertinggal adalah…",
         "p-r7": "Melarutkan garam bisa dibalik. Buktinya…",
-        "p-r8": "Air bercampur lumpur, tidak ada saringan, dan airnya mau dipakai lagi. Apa yang bisa dilakukan?"
+        "p-r8": "Air bercampur lumpur, tidak ada saringan, dan airnya mau dipakai lagi. Apa yang bisa dilakukan?",
+        "p-r9": "Klip kertas dari besi jatuh ke dalam toples beras.",
+        "p-r10": "Air teh bercampur ampas daun teh.",
+        "p-r11": "Beras kering tercampur butiran pasir yang lebih kecil dari beras.",
+        "p-r12": "Air berpasir dituang ke kertas saring. Pasirnya…"
       },
       "en": {
         "judul": "Separate the Mixture",
@@ -133171,7 +133652,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Sugar has dissolved in tea. If the tea is filtered, the sugar…",
         "p-r6": "Seawater is left in a salt pan until the water is gone. What is left behind?",
         "p-r7": "Dissolving salt can be reversed. The evidence is…",
-        "p-r8": "Water is mixed with mud, there is no filter, and you want to use the water again. What can you do?"
+        "p-r8": "Water is mixed with mud, there is no filter, and you want to use the water again. What can you do?",
+        "p-r9": "Iron paper clips fell into a jar of rice.",
+        "p-r10": "Tea is mixed with soggy tea leaves.",
+        "p-r11": "Dry rice is mixed with sand grains that are smaller than the rice.",
+        "p-r12": "Sandy water is poured through filter paper. The sand…"
       }
     },
     "knobs": {},
@@ -133332,6 +133817,45 @@ export const PAKET_RAW: unknown[] = [
           "magnet"
         ],
         "correct": "endapkan"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "magnet",
+          "uapkan",
+          "saring"
+        ],
+        "correct": "magnet"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "saring",
+          "uapkan",
+          "magnet"
+        ],
+        "correct": "saring"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "ayak",
+          "magnet",
+          "uapkan"
+        ],
+        "correct": "ayak"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "tertahan",
+          "lewat"
+        ],
+        "correct": "tertahan"
       }
     ]
   },
@@ -133978,7 +134502,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-tugas-organ-cerna",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.02"
@@ -134004,7 +134528,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Bagian yang menyerap air dari sisa makanan sehingga sisanya memadat.",
         "p-r6": "Ujung saluran tempat sisa makanan keluar dari tubuh.",
         "p-r7": "Gula dan zat lain dari nasi paling banyak masuk ke darah di…",
-        "p-r8": "Kucing dan sapi juga punya mulut, lambung, dan usus. Sistem pencernaan banyak hewan bertulang belakang…"
+        "p-r8": "Kucing dan sapi juga punya mulut, lambung, dan usus. Sistem pencernaan banyak hewan bertulang belakang…",
+        "p-r9": "Makanan yang sudah dikunyah ditelan, lalu turun melalui…",
+        "p-r10": "Pencernaan makanan dimulai di…",
+        "p-r11": "Makanan dari kerongkongan masuk ke…",
+        "p-r12": "Setelah keluar dari lambung, makanan masuk ke…",
+        "p-r13": "Setelah dari usus halus, sisa makanan masuk ke…"
       },
       "en": {
         "judul": "Who Processes the Food?",
@@ -134025,7 +134554,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "The part that takes water out of the leftovers so they become solid.",
         "p-r6": "The end of the tube where waste leaves the body.",
         "p-r7": "Sugars and other nutrients from rice mostly enter the blood in the…",
-        "p-r8": "Cats and cows also have a mouth, stomach and intestines. The digestive system of many vertebrates is…"
+        "p-r8": "Cats and cows also have a mouth, stomach and intestines. The digestive system of many vertebrates is…",
+        "p-r9": "Chewed food is swallowed, then goes down through the…",
+        "p-r10": "Digestion of food starts in the…",
+        "p-r11": "Food from the oesophagus goes into the…",
+        "p-r12": "After leaving the stomach, food goes into the…",
+        "p-r13": "After the small intestine, leftover food goes into the…"
       }
     },
     "knobs": {},
@@ -134171,12 +134705,62 @@ export const PAKET_RAW: unknown[] = [
           "beda"
         ],
         "correct": "mirip"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "kerongkongan",
+          "usushalus",
+          "anus"
+        ],
+        "correct": "kerongkongan"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "mulut",
+          "lambung",
+          "usushalus"
+        ],
+        "correct": "mulut"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "lambung",
+          "usushalus",
+          "mulut"
+        ],
+        "correct": "lambung"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "usushalus",
+          "ususbesar",
+          "kerongkongan"
+        ],
+        "correct": "usushalus"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "ususbesar",
+          "lambung",
+          "mulut"
+        ],
+        "correct": "ususbesar"
       }
     ]
   },
   {
     "id": "sd5-sains-variabel-penyelidikan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENYELIDIKAN.01"
@@ -134204,7 +134788,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r6": "Apakah tinggi papan memengaruhi jarak mobil meluncur? Apa yang dijaga tetap?",
         "p-r7": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang diubah?",
         "p-r8": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang diukur?",
-        "p-r9": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang dijaga tetap?"
+        "p-r9": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang dijaga tetap?",
+        "i-ukuranparasut": "ukuran parasut",
+        "i-lamajatuh": "lama parasut sampai ke lantai",
+        "i-tinggilepas": "tinggi tempat parasut dilepas",
+        "p-r10": "Apakah ukuran parasut memengaruhi lama jatuhnya? Apa yang diubah?",
+        "p-r11": "Apakah ukuran parasut memengaruhi lama jatuhnya? Apa yang diukur?",
+        "p-r12": "Apakah ukuran parasut memengaruhi lama jatuhnya? Apa yang dijaga tetap?"
       },
       "en": {
         "judul": "Each Variable's Job",
@@ -134227,7 +134817,13 @@ export const PAKET_RAW: unknown[] = [
         "p-r6": "Does the height of a ramp affect how far a toy car rolls? What do you keep the same?",
         "p-r7": "Does the amount of light affect how tall a plant grows? What do you change?",
         "p-r8": "Does the amount of light affect how tall a plant grows? What do you measure?",
-        "p-r9": "Does the amount of light affect how tall a plant grows? What do you keep the same?"
+        "p-r9": "Does the amount of light affect how tall a plant grows? What do you keep the same?",
+        "i-ukuranparasut": "size of the parachute",
+        "i-lamajatuh": "time for the parachute to reach the floor",
+        "i-tinggilepas": "height the parachute is dropped from",
+        "p-r10": "Does the size of a parachute affect how long it takes to fall? What is changed?",
+        "p-r11": "Does the size of a parachute affect how long it takes to fall? What is measured?",
+        "p-r12": "Does the size of a parachute affect how long it takes to fall? What is kept the same?"
       }
     },
     "knobs": {},
@@ -134297,6 +134893,24 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-banyakair",
         "bin": "pilihan",
         "emoji": "💧"
+      },
+      {
+        "id": "ukuranparasut",
+        "labelKey": "i-ukuranparasut",
+        "bin": "pilihan",
+        "emoji": "🪂"
+      },
+      {
+        "id": "lamajatuh",
+        "labelKey": "i-lamajatuh",
+        "bin": "pilihan",
+        "emoji": "⏱️"
+      },
+      {
+        "id": "tinggilepas",
+        "labelKey": "i-tinggilepas",
+        "bin": "pilihan",
+        "emoji": "📏"
       }
     ],
     "pilihan": [
@@ -134389,6 +135003,36 @@ export const PAKET_RAW: unknown[] = [
           "tinggitanaman"
         ],
         "correct": "banyakair"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "ukuranparasut",
+          "lamajatuh",
+          "tinggilepas"
+        ],
+        "correct": "ukuranparasut"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "lamajatuh",
+          "ukuranparasut",
+          "tinggilepas"
+        ],
+        "correct": "lamajatuh"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "tinggilepas",
+          "ukuranparasut",
+          "lamajatuh"
+        ],
+        "correct": "tinggilepas"
       }
     ]
   },
@@ -151891,7 +152535,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-bentuk-dan-apung",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.APUNG-TENGGELAM.01"
@@ -151914,7 +152558,7 @@ export const PAKET_RAW: unknown[] = [
         "i-pingpong": "bola pingpong",
         "i-kelereng": "kelereng kaca seukuran pingpong",
         "i-kayu": "batang kayu besar",
-        "i-paku": "paku kecil",
+        "i-paku": "paku payung",
         "i-mangkuk": "mangkuk baja kosong",
         "i-sendok": "sendok baja",
         "p-r1": "Dua gumpal plastisin sama massanya. Mana yang terapung?",
@@ -151924,7 +152568,15 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Sama-sama dari baja. Mana yang terapung?",
         "p-r6": "Ukurannya sama. Mana yang terapung?",
         "p-r7": "Mana yang tenggelam walau jauh lebih kecil?",
-        "p-r8": "Sama-sama dari baja. Mana yang terapung?"
+        "p-r8": "Sama-sama dari baja. Mana yang terapung?",
+        "i-jerukutuh": "jeruk utuh dengan kulitnya",
+        "i-jerukkupas": "jeruk yang sama setelah dikupas",
+        "i-kalengkosong": "kaleng aluminium kosong yang tertutup rapat",
+        "i-kalengair": "kaleng yang sama diisi penuh air",
+        "p-r9": "Jeruknya sama. Mana yang tenggelam?",
+        "p-r10": "Kalengnya sama. Mana yang terapung?",
+        "p-r11": "Dua gumpal plastisin sama massanya. Mana yang tenggelam?",
+        "p-r12": "Sama-sama dari baja. Mana yang tenggelam?"
       },
       "en": {
         "judul": "Shape Decides Floating",
@@ -151942,7 +152594,7 @@ export const PAKET_RAW: unknown[] = [
         "i-pingpong": "a ping-pong ball",
         "i-kelereng": "a glass marble the size of a ping-pong ball",
         "i-kayu": "a large log",
-        "i-paku": "a small nail",
+        "i-paku": "drawing pin",
         "i-mangkuk": "an empty steel bowl",
         "i-sendok": "a steel spoon",
         "p-r1": "Two lumps of clay have the same mass. Which one floats?",
@@ -151952,7 +152604,15 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Both are made of steel. Which one floats?",
         "p-r6": "They are the same size. Which one floats?",
         "p-r7": "Which one sinks even though it is much smaller?",
-        "p-r8": "Both are made of steel. Which one floats?"
+        "p-r8": "Both are made of steel. Which one floats?",
+        "i-jerukutuh": "a whole orange with its peel",
+        "i-jerukkupas": "the same orange after peeling",
+        "i-kalengkosong": "an empty, tightly sealed aluminium can",
+        "i-kalengair": "the same can filled with water",
+        "p-r9": "It is the same orange. Which one sinks?",
+        "p-r10": "It is the same can. Which one floats?",
+        "p-r11": "Two lumps of modelling clay have the same mass. Which one sinks?",
+        "p-r12": "Both are made of steel. Which one sinks?"
       }
     },
     "knobs": {},
@@ -152058,6 +152718,30 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-sendok",
         "bin": "pilihan",
         "emoji": "🥄"
+      },
+      {
+        "id": "jerukutuh",
+        "labelKey": "i-jerukutuh",
+        "bin": "pilihan",
+        "emoji": "🍊"
+      },
+      {
+        "id": "jerukkupas",
+        "labelKey": "i-jerukkupas",
+        "bin": "pilihan",
+        "emoji": "🍊"
+      },
+      {
+        "id": "kalengkosong",
+        "labelKey": "i-kalengkosong",
+        "bin": "pilihan",
+        "emoji": "🥫"
+      },
+      {
+        "id": "kalengair",
+        "labelKey": "i-kalengair",
+        "bin": "pilihan",
+        "emoji": "🥫"
       }
     ],
     "pilihan": [
@@ -152132,6 +152816,42 @@ export const PAKET_RAW: unknown[] = [
           "sendok"
         ],
         "correct": "mangkuk"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "jerukutuh",
+          "jerukkupas"
+        ],
+        "correct": "jerukkupas"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "kalengkosong",
+          "kalengair"
+        ],
+        "correct": "kalengkosong"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "bolaplastisin",
+          "perahuplastisin"
+        ],
+        "correct": "bolaplastisin"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "mangkuk",
+          "sendok"
+        ],
+        "correct": "sendok"
       }
     ]
   },
@@ -152463,7 +153183,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-hasil-janggal",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.PENYELIDIKAN.01"
@@ -152511,7 +153231,27 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Tinggi kecambah di hari ke-5 pada 4 cawan yang sama. Mana hasil yang janggal?",
         "p-r8": "Jumlah ayunan bandul dalam 10 detik dihitung 4 kali. Mana hasil yang janggal?",
         "p-r6": "Satu hasil sangat berbeda dari yang lain. Apa yang sebaiknya dilakukan?",
-        "p-r7": "Mengapa pengukuran dalam percobaan diulang beberapa kali?"
+        "p-r7": "Mengapa pengukuran dalam percobaan diulang beberapa kali?",
+        "i-r9-u1": "ulangan 1: 20 menit",
+        "i-r9-u2": "ulangan 2: 21 menit",
+        "i-r9-u3": "ulangan 3: 5 menit",
+        "i-r9-u4": "ulangan 4: 19 menit",
+        "i-r10-u1": "ulangan 1: 150 g",
+        "i-r10-u2": "ulangan 2: 152 g",
+        "i-r10-u3": "ulangan 3: 151 g",
+        "i-r10-u4": "ulangan 4: 250 g",
+        "i-r11-u1": "ulangan 1: 25 cm",
+        "i-r11-u2": "ulangan 2: 80 cm",
+        "i-r11-u3": "ulangan 3: 24 cm",
+        "i-r11-u4": "ulangan 4: 26 cm",
+        "i-r12-u1": "ulangan 1: 3 detik",
+        "i-r12-u2": "ulangan 2: 12 detik",
+        "i-r12-u3": "ulangan 3: 11 detik",
+        "i-r12-u4": "ulangan 4: 13 detik",
+        "p-r9": "Lama es batu yang sama besar mencair di piring diukur 4 kali. Mana hasil yang janggal?",
+        "p-r10": "Massa satu apel yang sama ditimbang 4 kali. Mana hasil yang janggal?",
+        "p-r11": "Jarak lompatan katak mainan yang sama diukur 4 kali. Mana hasil yang janggal?",
+        "p-r12": "Lama lilin padam setelah ditutup gelas yang sama diukur 4 kali. Mana hasil yang janggal?"
       },
       "en": {
         "judul": "The Odd One Out",
@@ -152554,7 +153294,27 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Sprout height on day 5 in 4 identical dishes. Which result is anomalous?",
         "p-r8": "The number of pendulum swings in 10 seconds was counted 4 times. Which result is anomalous?",
         "p-r6": "One result is very different from the others. What should you do?",
-        "p-r7": "Why are measurements in an experiment repeated several times?"
+        "p-r7": "Why are measurements in an experiment repeated several times?",
+        "i-r9-u1": "try 1: 20 minutes",
+        "i-r9-u2": "try 2: 21 minutes",
+        "i-r9-u3": "try 3: 5 minutes",
+        "i-r9-u4": "try 4: 19 minutes",
+        "i-r10-u1": "try 1: 150 g",
+        "i-r10-u2": "try 2: 152 g",
+        "i-r10-u3": "try 3: 151 g",
+        "i-r10-u4": "try 4: 250 g",
+        "i-r11-u1": "try 1: 25 cm",
+        "i-r11-u2": "try 2: 80 cm",
+        "i-r11-u3": "try 3: 24 cm",
+        "i-r11-u4": "try 4: 26 cm",
+        "i-r12-u1": "try 1: 3 seconds",
+        "i-r12-u2": "try 2: 12 seconds",
+        "i-r12-u3": "try 3: 11 seconds",
+        "i-r12-u4": "try 4: 13 seconds",
+        "p-r9": "The time for same-sized ice cubes to melt on a plate is measured 4 times. Which result is odd?",
+        "p-r10": "The mass of the same apple is weighed 4 times. Which result is odd?",
+        "p-r11": "The jump distance of the same toy frog is measured 4 times. Which result is odd?",
+        "p-r12": "The time for a candle to go out under the same glass is measured 4 times. Which result is odd?"
       }
     },
     "knobs": {},
@@ -152750,6 +153510,102 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-berbeda",
         "bin": "pilihan",
         "emoji": "🔀"
+      },
+      {
+        "id": "r9-u1",
+        "labelKey": "i-r9-u1",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r9-u2",
+        "labelKey": "i-r9-u2",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r9-u3",
+        "labelKey": "i-r9-u3",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r9-u4",
+        "labelKey": "i-r9-u4",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r10-u1",
+        "labelKey": "i-r10-u1",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r10-u2",
+        "labelKey": "i-r10-u2",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r10-u3",
+        "labelKey": "i-r10-u3",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r10-u4",
+        "labelKey": "i-r10-u4",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r11-u1",
+        "labelKey": "i-r11-u1",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r11-u2",
+        "labelKey": "i-r11-u2",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r11-u3",
+        "labelKey": "i-r11-u3",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r11-u4",
+        "labelKey": "i-r11-u4",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r12-u1",
+        "labelKey": "i-r12-u1",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r12-u2",
+        "labelKey": "i-r12-u2",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r12-u3",
+        "labelKey": "i-r12-u3",
+        "bin": "pilihan",
+        "emoji": "📋"
+      },
+      {
+        "id": "r12-u4",
+        "labelKey": "i-r12-u4",
+        "bin": "pilihan",
+        "emoji": "📋"
       }
     ],
     "pilihan": [
@@ -152838,6 +153694,50 @@ export const PAKET_RAW: unknown[] = [
           "berbeda"
         ],
         "correct": "andal"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "r9-u1",
+          "r9-u2",
+          "r9-u3",
+          "r9-u4"
+        ],
+        "correct": "r9-u3"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "r10-u1",
+          "r10-u2",
+          "r10-u3",
+          "r10-u4"
+        ],
+        "correct": "r10-u4"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "r11-u1",
+          "r11-u2",
+          "r11-u3",
+          "r11-u4"
+        ],
+        "correct": "r11-u2"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "r12-u1",
+          "r12-u2",
+          "r12-u3",
+          "r12-u4"
+        ],
+        "correct": "r12-u1"
       }
     ]
   },
@@ -153161,7 +154061,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-massa-dan-berat",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.MASSA-BERAT.01"
@@ -153190,7 +154090,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r6": "Di Bulan, berat astronaut itu…",
         "p-r7": "Di Jupiter yang gravitasinya lebih besar, berat sebuah apel…",
         "p-r8": "Tas bermassa 2 kg dibawa dari Bumi ke Bulan. Massanya di Bulan…",
-        "p-r9": "Di stasiun angkasa, astronaut melayang. Massanya…"
+        "p-r9": "Di stasiun angkasa, astronaut melayang. Massanya…",
+        "p-r10": "Di Jupiter yang gravitasinya lebih besar, massa sebuah apel…",
+        "p-r11": "Astronaut pulang dari Bulan ke Bumi. Beratnya…",
+        "p-r12": "Tas bermassa 2 kg dibawa ke Mars yang gravitasinya lebih kecil. Massanya di Mars…",
+        "p-r13": "Di Mars yang gravitasinya lebih kecil daripada Bumi, berat tas itu…"
       },
       "en": {
         "judul": "Mass or Weight?",
@@ -153214,7 +154118,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r6": "On the Moon, the astronaut's weight…",
         "p-r7": "On Jupiter, where gravity is stronger, an apple's weight…",
         "p-r8": "A bag with a mass of 2 kg is taken from the Earth to the Moon. Its mass on the Moon is…",
-        "p-r9": "On a space station, astronauts float. Their mass…"
+        "p-r9": "On a space station, astronauts float. Their mass…",
+        "p-r10": "On Jupiter, where gravity is stronger, the mass of an apple…",
+        "p-r11": "An astronaut comes back from the Moon to Earth. Their weight…",
+        "p-r12": "A bag with a mass of 2 kg is taken to Mars, where gravity is weaker. Its mass on Mars…",
+        "p-r13": "On Mars, where gravity is weaker than on Earth, the bag's weight…"
       }
     },
     "knobs": {},
@@ -153378,6 +154286,46 @@ export const PAKET_RAW: unknown[] = [
           "bertambah"
         ],
         "correct": "tetap"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "tetap",
+          "bertambah",
+          "berkurang"
+        ],
+        "correct": "tetap"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "bertambah",
+          "berkurang",
+          "tetap"
+        ],
+        "correct": "bertambah"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "duakg",
+          "kurangkg",
+          "nolkg"
+        ],
+        "correct": "duakg"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "berkurang",
+          "tetap",
+          "bertambah"
+        ],
+        "correct": "berkurang"
       }
     ]
   },
@@ -153661,7 +154609,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-racun-di-rantai-makanan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.JARING-MAKANAN.02"
@@ -153697,7 +154645,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "Di jaring sawah, katak memakan belalang. Bila katak mati karena racun, belalang kemungkinan…",
         "p-r6": "Di kolam ini ular hanya memakan katak. Bila katak mati karena racun, ular kemungkinan…",
         "p-r7": "Petani memelihara burung hantu untuk memangsa tikus, bukan memakai racun tikus. Mengapa lebih aman bagi elang?",
-        "p-r8": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling sedikit?"
+        "p-r8": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling sedikit?",
+        "p-r9": "Limbah merkuri di danau: ganggang → ikan kecil → bangau. Siapa yang pertama menyerap merkuri?",
+        "p-r10": "Pestisida masuk sungai: lumut air → ikan → berang-berang. Siapa yang menumpuk racun paling banyak?",
+        "p-r11": "Pestisida di sawah: padi → belalang → katak → elang. Siapa yang menumpuk racun paling sedikit?",
+        "p-r12": "Di sungai ini berang-berang hanya memakan ikan. Bila ikan mati karena racun, berang-berang kemungkinan…",
+        "p-r13": "Di danau ini hanya ikan kecil yang memakan ganggang. Bila ikan kecil mati karena racun, ganggang kemungkinan…"
       },
       "en": {
         "judul": "Tracking the Poison",
@@ -153728,7 +154681,12 @@ export const PAKET_RAW: unknown[] = [
         "p-r5": "In the rice-field web, frogs eat grasshoppers. If the frogs die from poison, the grasshoppers will probably…",
         "p-r6": "In this pond the snakes eat only frogs. If the frogs die from poison, the snakes will probably…",
         "p-r7": "Farmers keep barn owls to catch rats instead of using rat poison. Why is this safer for eagles?",
-        "p-r8": "Pesticide gets into a river: water weed → fish → otter. Who builds up the least poison?"
+        "p-r8": "Pesticide gets into a river: water weed → fish → otter. Who builds up the least poison?",
+        "p-r9": "Mercury waste in a lake: algae → small fish → heron. Who takes in the mercury first?",
+        "p-r10": "Pesticide gets into a river: water moss → fish → otter. Who builds up the most poison?",
+        "p-r11": "Pesticide in a rice field: rice → grasshopper → frog → eagle. Who builds up the least poison?",
+        "p-r12": "In this river otters eat only fish. If the fish die from poison, the otters will probably…",
+        "p-r13": "In this lake only small fish eat the algae. If the small fish die from poison, the algae will probably…"
       }
     },
     "knobs": {},
@@ -153934,12 +154892,62 @@ export const PAKET_RAW: unknown[] = [
           "berang"
         ],
         "correct": "lumut"
+      },
+      {
+        "id": "r9",
+        "promptKey": "p-r9",
+        "choices": [
+          "ganggang",
+          "ikankecil",
+          "bangau"
+        ],
+        "correct": "ganggang"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "berang",
+          "ikan",
+          "lumut"
+        ],
+        "correct": "berang"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "padi",
+          "belalang",
+          "elang"
+        ],
+        "correct": "padi"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "berkurang",
+          "bertambah",
+          "tetap"
+        ],
+        "correct": "berkurang"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "bertambah",
+          "berkurang",
+          "tetap"
+        ],
+        "correct": "bertambah"
       }
     ]
   },
   {
     "id": "sd6-sains-seri-atau-paralel",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.LISTRIK.01"
@@ -153965,7 +154973,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r6": "Rangkaian paralel: satu lampu dilepas. Lampu yang lain…",
         "p-r7": "Lampu di rumah bisa dimatikan satu per satu tanpa memadamkan yang lain. Rumah memakai rangkaian…",
         "p-r8": "Untaian lampu hias: satu lampu putus, semuanya padam. Lampunya disusun…",
-        "p-r9": "Dua lampu harus sama-sama paling terang dengan satu baterai. Pilih rangkaian…"
+        "p-r9": "Dua lampu harus sama-sama paling terang dengan satu baterai. Pilih rangkaian…",
+        "p-r10": "Tiga lampu disusun berderet dalam satu jalur dengan baterai. Rangkaian ini…",
+        "p-r11": "Dibanding satu lampu sendirian, tiap lampu di rangkaian paralel dua lampu dengan baterai yang sama menyala…",
+        "p-r12": "Rangkaian seri: sakelarnya dibuka. Semua lampu…",
+        "p-r13": "Tiap lampu punya jalur dan sakelar sendiri ke baterai. Satu sakelar dibuka. Lampu yang lain…"
       },
       "en": {
         "judul": "Series or Parallel?",
@@ -153986,7 +154998,11 @@ export const PAKET_RAW: unknown[] = [
         "p-r6": "Parallel circuit: one lamp is taken out. The other lamp…",
         "p-r7": "Lights at home can be switched off one at a time without the others going out. Homes use a…",
         "p-r8": "A string of fairy lights: one bulb fails and they all go out. The bulbs are wired in…",
-        "p-r9": "Two lamps must both be as bright as possible with one cell. Choose a…"
+        "p-r9": "Two lamps must both be as bright as possible with one cell. Choose a…",
+        "p-r10": "Three bulbs are placed in a row in one path with a battery. This circuit is…",
+        "p-r11": "Compared with one bulb on its own, each bulb in a two-bulb parallel circuit with the same battery shines…",
+        "p-r12": "Series circuit: the switch is opened. All the bulbs…",
+        "p-r13": "Each bulb has its own path and switch to the battery. One switch is opened. The other bulbs…"
       }
     },
     "knobs": {},
@@ -154129,6 +155145,43 @@ export const PAKET_RAW: unknown[] = [
           "seri"
         ],
         "correct": "paralel"
+      },
+      {
+        "id": "r10",
+        "promptKey": "p-r10",
+        "choices": [
+          "seri",
+          "paralel"
+        ],
+        "correct": "seri"
+      },
+      {
+        "id": "r11",
+        "promptKey": "p-r11",
+        "choices": [
+          "samaterang",
+          "lebihredup",
+          "lebihterang"
+        ],
+        "correct": "samaterang"
+      },
+      {
+        "id": "r12",
+        "promptKey": "p-r12",
+        "choices": [
+          "padamsemua",
+          "tetapnyala"
+        ],
+        "correct": "padamsemua"
+      },
+      {
+        "id": "r13",
+        "promptKey": "p-r13",
+        "choices": [
+          "tetapnyala",
+          "padamsemua"
+        ],
+        "correct": "tetapnyala"
       }
     ]
   },
@@ -156046,7 +157099,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-kode-cipta-pola-perintah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "pola",
     "competencyIds": [
@@ -156060,7 +157113,11 @@ export const PAKET_RAW: unknown[] = [
         "p-maju": "maju",
         "p-kiri": "belok kiri",
         "p-kanan": "belok kanan",
-        "p-lompat": "lompat"
+        "p-lompat": "lompat",
+        "p-mundur": "mundur",
+        "p-putar": "putar satu kali",
+        "p-tepuk": "tepuk tangan",
+        "p-berhenti": "berhenti"
       },
       "en": {
         "judul": "My Command Pattern",
@@ -156068,7 +157125,11 @@ export const PAKET_RAW: unknown[] = [
         "p-maju": "forward",
         "p-kiri": "turn left",
         "p-kanan": "turn right",
-        "p-lompat": "jump"
+        "p-lompat": "jump",
+        "p-mundur": "backward",
+        "p-putar": "spin round",
+        "p-tepuk": "clap",
+        "p-berhenti": "stop"
       }
     },
     "knobs": {
@@ -156106,6 +157167,26 @@ export const PAKET_RAW: unknown[] = [
         "id": "lompat",
         "labelKey": "p-lompat",
         "emoji": "🦘"
+      },
+      {
+        "id": "mundur",
+        "labelKey": "p-mundur",
+        "emoji": "⬇️"
+      },
+      {
+        "id": "putar",
+        "labelKey": "p-putar",
+        "emoji": "🔄"
+      },
+      {
+        "id": "tepuk",
+        "labelKey": "p-tepuk",
+        "emoji": "👏"
+      },
+      {
+        "id": "berhenti",
+        "labelKey": "p-berhenti",
+        "emoji": "🛑"
       }
     ],
     "patterns": [],
@@ -156113,7 +157194,11 @@ export const PAKET_RAW: unknown[] = [
       "maju": "C4",
       "kiri": "E4",
       "kanan": "G4",
-      "lompat": "A4"
+      "lompat": "A4",
+      "mundur": "D4",
+      "putar": "F4",
+      "tepuk": "B4",
+      "berhenti": "C5"
     }
   },
   {
@@ -157891,7 +158976,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-ukur-jengkal-temuan-kebun",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -157908,7 +158993,17 @@ export const PAKET_RAW: unknown[] = [
         "rantingbesar": "ranting besar",
         "akar": "akar pohon yang menjalar",
         "batangpisang": "batang pisang rebah",
-        "labu": "labu panjang"
+        "labu": "timun",
+        "wortel": "wortel besar",
+        "terong": "terong ungu",
+        "sawi": "sawi hijau",
+        "ubi": "ubi jalar",
+        "jagung": "tongkol jagung",
+        "mawar": "setangkai mawar",
+        "nanas": "nanas dengan daunnya",
+        "daunjati": "daun jati kering",
+        "kaktus": "batang kaktus",
+        "bungamatahari": "tangkai bunga matahari"
       },
       "en": {
         "judul": "Measure Stems and Leaves in Spans",
@@ -157919,7 +159014,17 @@ export const PAKET_RAW: unknown[] = [
         "rantingbesar": "big branch",
         "akar": "long tree root",
         "batangpisang": "fallen banana trunk",
-        "labu": "long gourd"
+        "labu": "cucumber",
+        "wortel": "big carrot",
+        "terong": "purple aubergine",
+        "sawi": "green mustard greens",
+        "ubi": "sweet potato",
+        "jagung": "corn cob",
+        "mawar": "rose stem",
+        "nanas": "pineapple with its leaves",
+        "daunjati": "dry teak leaf",
+        "kaktus": "cactus stem",
+        "bungamatahari": "sunflower stalk"
       }
     },
     "knobs": {
@@ -157953,22 +159058,6 @@ export const PAKET_RAW: unknown[] = [
         "width": 1.8
       },
       {
-        "id": "batangtebu",
-        "labelKey": "batangtebu",
-        "role": "benda",
-        "emoji": "🎋",
-        "value": 4,
-        "width": 2.4
-      },
-      {
-        "id": "bambu",
-        "labelKey": "bambu",
-        "role": "benda",
-        "emoji": "🎍",
-        "value": 5,
-        "width": 3
-      },
-      {
         "id": "rantingbesar",
         "labelKey": "rantingbesar",
         "role": "benda",
@@ -157985,20 +159074,92 @@ export const PAKET_RAW: unknown[] = [
         "width": 3.7
       },
       {
-        "id": "batangpisang",
-        "labelKey": "batangpisang",
-        "role": "benda",
-        "emoji": "🌴",
-        "value": 8,
-        "width": 4
-      },
-      {
         "id": "labu",
         "labelKey": "labu",
         "role": "benda",
         "emoji": "🥒",
         "value": 2,
         "width": 1.2
+      },
+      {
+        "id": "wortel",
+        "labelKey": "wortel",
+        "role": "benda",
+        "emoji": "🥕",
+        "value": 2,
+        "width": 1.2
+      },
+      {
+        "id": "terong",
+        "labelKey": "terong",
+        "role": "benda",
+        "emoji": "🍆",
+        "value": 2,
+        "width": 1.2
+      },
+      {
+        "id": "sawi",
+        "labelKey": "sawi",
+        "role": "benda",
+        "emoji": "🥬",
+        "value": 2,
+        "width": 1.2
+      },
+      {
+        "id": "ubi",
+        "labelKey": "ubi",
+        "role": "benda",
+        "emoji": "🍠",
+        "value": 2,
+        "width": 1.2
+      },
+      {
+        "id": "jagung",
+        "labelKey": "jagung",
+        "role": "benda",
+        "emoji": "🌽",
+        "value": 3,
+        "width": 1.8
+      },
+      {
+        "id": "mawar",
+        "labelKey": "mawar",
+        "role": "benda",
+        "emoji": "🌹",
+        "value": 3,
+        "width": 1.8
+      },
+      {
+        "id": "nanas",
+        "labelKey": "nanas",
+        "role": "benda",
+        "emoji": "🍍",
+        "value": 3,
+        "width": 1.8
+      },
+      {
+        "id": "daunjati",
+        "labelKey": "daunjati",
+        "role": "benda",
+        "emoji": "🍂",
+        "value": 4,
+        "width": 2.4
+      },
+      {
+        "id": "kaktus",
+        "labelKey": "kaktus",
+        "role": "benda",
+        "emoji": "🌵",
+        "value": 4,
+        "width": 2.4
+      },
+      {
+        "id": "bungamatahari",
+        "labelKey": "bungamatahari",
+        "role": "benda",
+        "emoji": "🌻",
+        "value": 5,
+        "width": 3
       }
     ]
   },
@@ -165093,7 +166254,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-algoritma-sehari-hari",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -165110,7 +166271,7 @@ export const PAKET_RAW: unknown[] = [
         "cuci-tangan-3": "gosok dengan sabun",
         "cuci-tangan-4": "bilas sampai bersih",
         "cuci-tangan-5": "tutup keran",
-        "cuci-tangan-6": "keringkan dengan handuk",
+        "cuci-tangan-6": "keringkan tangan",
         "t-tanam-biji": "Menanam biji",
         "tanam-biji-1": "gali lubang kecil",
         "tanam-biji-2": "masukkan biji",
@@ -165142,7 +166303,35 @@ export const PAKET_RAW: unknown[] = [
         "roti-selai-2": "oles selai di roti",
         "roti-selai-3": "tutup dengan roti kedua",
         "roti-selai-4": "potong jadi dua",
-        "roti-selai-5": "makan rotinya"
+        "roti-selai-5": "makan rotinya",
+        "t-kado": "Membungkus kado",
+        "kado-1": "ambil kotak",
+        "kado-2": "masukkan boneka",
+        "kado-3": "bungkus dengan kertas kado",
+        "kado-4": "ikat pita",
+        "kado-5": "berikan kepada teman",
+        "kado-6": "teman membuka kado",
+        "t-cuci-piring": "Mencuci piring",
+        "cuci-piring-1": "kumpulkan piring kotor",
+        "cuci-piring-2": "buang sisa makanan",
+        "cuci-piring-3": "gosok dengan spons bersabun",
+        "cuci-piring-4": "bilas dengan air",
+        "cuci-piring-5": "tunggu sampai kering",
+        "cuci-piring-6": "piring bersih siap dipakai",
+        "t-ke-sekolah": "Bersiap ke sekolah",
+        "ke-sekolah-1": "bangun tidur",
+        "ke-sekolah-2": "mandi",
+        "ke-sekolah-3": "pakai seragam",
+        "ke-sekolah-4": "pakai tas",
+        "ke-sekolah-5": "berjalan ke sekolah",
+        "ke-sekolah-6": "sampai di sekolah",
+        "t-cuci-mobil": "Mencuci mobil",
+        "cuci-mobil-1": "siram mobil dengan air",
+        "cuci-mobil-2": "gosok dengan spons bersabun",
+        "cuci-mobil-3": "bilas busa sabun",
+        "cuci-mobil-4": "jemur sampai kering",
+        "cuci-mobil-5": "mobil mengilap",
+        "cuci-mobil-6": "mobil siap berangkat"
       },
       "en": {
         "judul": "Everyday Algorithms",
@@ -165153,7 +166342,7 @@ export const PAKET_RAW: unknown[] = [
         "cuci-tangan-3": "scrub with soap",
         "cuci-tangan-4": "rinse clean",
         "cuci-tangan-5": "turn off the tap",
-        "cuci-tangan-6": "dry with a towel",
+        "cuci-tangan-6": "dry your hands",
         "t-tanam-biji": "Planting a seed",
         "tanam-biji-1": "dig a small hole",
         "tanam-biji-2": "drop in the seed",
@@ -165185,7 +166374,35 @@ export const PAKET_RAW: unknown[] = [
         "roti-selai-2": "spread jam on the bread",
         "roti-selai-3": "put the second slice on top",
         "roti-selai-4": "cut it in half",
-        "roti-selai-5": "eat the sandwich"
+        "roti-selai-5": "eat the sandwich",
+        "t-kado": "Wrapping a present",
+        "kado-1": "get a box",
+        "kado-2": "put the teddy inside",
+        "kado-3": "wrap it in gift paper",
+        "kado-4": "tie a ribbon",
+        "kado-5": "give it to your friend",
+        "kado-6": "your friend opens it",
+        "t-cuci-piring": "Washing the dishes",
+        "cuci-piring-1": "collect the dirty plates",
+        "cuci-piring-2": "scrape off the leftovers",
+        "cuci-piring-3": "scrub with a soapy sponge",
+        "cuci-piring-4": "rinse with water",
+        "cuci-piring-5": "wait until dry",
+        "cuci-piring-6": "clean plates ready to use",
+        "t-ke-sekolah": "Getting ready for school",
+        "ke-sekolah-1": "wake up",
+        "ke-sekolah-2": "take a bath",
+        "ke-sekolah-3": "put on your uniform",
+        "ke-sekolah-4": "put on your bag",
+        "ke-sekolah-5": "walk to school",
+        "ke-sekolah-6": "arrive at school",
+        "t-cuci-mobil": "Washing the car",
+        "cuci-mobil-1": "spray the car with water",
+        "cuci-mobil-2": "scrub with a soapy sponge",
+        "cuci-mobil-3": "rinse off the soap",
+        "cuci-mobil-4": "let it dry in the sun",
+        "cuci-mobil-5": "the car shines",
+        "cuci-mobil-6": "the car is ready to go"
       }
     },
     "knobs": {
@@ -165235,7 +166452,7 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "cuci-tangan-6",
             "labelKey": "cuci-tangan-6",
-            "emoji": "🧻"
+            "emoji": "👐"
           }
         ]
       },
@@ -165403,12 +166620,156 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "😋"
           }
         ]
+      },
+      {
+        "id": "kado",
+        "titleKey": "t-kado",
+        "steps": [
+          {
+            "id": "kado-1",
+            "labelKey": "kado-1",
+            "emoji": "📦"
+          },
+          {
+            "id": "kado-2",
+            "labelKey": "kado-2",
+            "emoji": "🧸"
+          },
+          {
+            "id": "kado-3",
+            "labelKey": "kado-3",
+            "emoji": "🎁"
+          },
+          {
+            "id": "kado-4",
+            "labelKey": "kado-4",
+            "emoji": "🎀"
+          },
+          {
+            "id": "kado-5",
+            "labelKey": "kado-5",
+            "emoji": "🤝"
+          },
+          {
+            "id": "kado-6",
+            "labelKey": "kado-6",
+            "emoji": "😃"
+          }
+        ]
+      },
+      {
+        "id": "cuci-piring",
+        "titleKey": "t-cuci-piring",
+        "steps": [
+          {
+            "id": "cuci-piring-1",
+            "labelKey": "cuci-piring-1",
+            "emoji": "🍽️"
+          },
+          {
+            "id": "cuci-piring-2",
+            "labelKey": "cuci-piring-2",
+            "emoji": "🗑️"
+          },
+          {
+            "id": "cuci-piring-3",
+            "labelKey": "cuci-piring-3",
+            "emoji": "🧽"
+          },
+          {
+            "id": "cuci-piring-4",
+            "labelKey": "cuci-piring-4",
+            "emoji": "🚰"
+          },
+          {
+            "id": "cuci-piring-5",
+            "labelKey": "cuci-piring-5",
+            "emoji": "⏳"
+          },
+          {
+            "id": "cuci-piring-6",
+            "labelKey": "cuci-piring-6",
+            "emoji": "✨"
+          }
+        ]
+      },
+      {
+        "id": "ke-sekolah",
+        "titleKey": "t-ke-sekolah",
+        "steps": [
+          {
+            "id": "ke-sekolah-1",
+            "labelKey": "ke-sekolah-1",
+            "emoji": "⏰"
+          },
+          {
+            "id": "ke-sekolah-2",
+            "labelKey": "ke-sekolah-2",
+            "emoji": "🛁"
+          },
+          {
+            "id": "ke-sekolah-3",
+            "labelKey": "ke-sekolah-3",
+            "emoji": "👕"
+          },
+          {
+            "id": "ke-sekolah-4",
+            "labelKey": "ke-sekolah-4",
+            "emoji": "🎒"
+          },
+          {
+            "id": "ke-sekolah-5",
+            "labelKey": "ke-sekolah-5",
+            "emoji": "🚶"
+          },
+          {
+            "id": "ke-sekolah-6",
+            "labelKey": "ke-sekolah-6",
+            "emoji": "🏫"
+          }
+        ]
+      },
+      {
+        "id": "cuci-mobil",
+        "titleKey": "t-cuci-mobil",
+        "steps": [
+          {
+            "id": "cuci-mobil-1",
+            "labelKey": "cuci-mobil-1",
+            "emoji": "💦"
+          },
+          {
+            "id": "cuci-mobil-2",
+            "labelKey": "cuci-mobil-2",
+            "emoji": "🧽"
+          },
+          {
+            "id": "cuci-mobil-3",
+            "labelKey": "cuci-mobil-3",
+            "emoji": "🚿"
+          },
+          {
+            "id": "cuci-mobil-4",
+            "labelKey": "cuci-mobil-4",
+            "emoji": "☀️"
+          },
+          {
+            "id": "cuci-mobil-5",
+            "labelKey": "cuci-mobil-5",
+            "emoji": "✨"
+          },
+          {
+            "id": "cuci-mobil-6",
+            "labelKey": "cuci-mobil-6",
+            "emoji": "🚗"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd1-kode-perbaiki-algoritma",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -165451,7 +166812,42 @@ export const PAKET_RAW: unknown[] = [
         "menara-2": "taruh balok sedang di atasnya",
         "menara-3": "taruh balok kecil di atasnya",
         "menara-4": "pasang bendera di puncak",
-        "menara-5": "foto menaranya"
+        "menara-5": "foto menaranya",
+        "t-kue": "Membuat kue",
+        "kue-1": "pecahkan telur ke mangkuk",
+        "kue-2": "aduk dengan tepung",
+        "kue-3": "tuang adonan ke cetakan",
+        "kue-4": "panggang di oven",
+        "kue-5": "tunggu kue dingin",
+        "kue-6": "potong dan makan kuenya",
+        "t-belanja": "Belanja buah di toko",
+        "belanja-1": "ambil keranjang",
+        "belanja-2": "masukkan buah ke keranjang",
+        "belanja-3": "antre di kasir",
+        "belanja-4": "bayar belanjaan",
+        "belanja-5": "terima struk",
+        "belanja-6": "bawa pulang belanjaan",
+        "t-bioskop": "Menonton film di bioskop",
+        "bioskop-1": "beli tiket",
+        "bioskop-2": "masuk ke ruang film",
+        "bioskop-3": "duduk di kursi",
+        "bioskop-4": "film diputar",
+        "bioskop-5": "tepuk tangan saat film selesai",
+        "bioskop-6": "keluar dari ruangan",
+        "t-pancing": "Memancing ikan",
+        "pancing-1": "pasang umpan cacing",
+        "pancing-2": "lempar kail ke kolam",
+        "pancing-3": "tunggu dengan sabar",
+        "pancing-4": "tarik joran",
+        "pancing-5": "ikan tertangkap",
+        "pancing-6": "masukkan ikan ke ember",
+        "t-istana-pasir": "Membuat istana pasir",
+        "istana-pasir-1": "kumpulkan pasir basah",
+        "istana-pasir-2": "isi ember dengan pasir",
+        "istana-pasir-3": "balik ember ke bawah",
+        "istana-pasir-4": "angkat ember pelan-pelan",
+        "istana-pasir-5": "istana pasir berdiri",
+        "istana-pasir-6": "tancapkan bendera di atasnya"
       },
       "en": {
         "judul": "Mixed-Up Algorithm",
@@ -165488,7 +166884,42 @@ export const PAKET_RAW: unknown[] = [
         "menara-2": "put the middle block on top",
         "menara-3": "put the small block on top",
         "menara-4": "put a flag on top",
-        "menara-5": "take a photo of the tower"
+        "menara-5": "take a photo of the tower",
+        "t-kue": "Baking a cake",
+        "kue-1": "crack eggs into a bowl",
+        "kue-2": "mix in the flour",
+        "kue-3": "pour the batter into a tin",
+        "kue-4": "bake it in the oven",
+        "kue-5": "let the cake cool",
+        "kue-6": "cut and eat the cake",
+        "t-belanja": "Buying fruit at the shop",
+        "belanja-1": "take a basket",
+        "belanja-2": "put fruit in the basket",
+        "belanja-3": "queue at the till",
+        "belanja-4": "pay for the shopping",
+        "belanja-5": "get the receipt",
+        "belanja-6": "carry the shopping home",
+        "t-bioskop": "Watching a film at the cinema",
+        "bioskop-1": "buy a ticket",
+        "bioskop-2": "go into the cinema room",
+        "bioskop-3": "sit in your seat",
+        "bioskop-4": "the film starts",
+        "bioskop-5": "clap when the film ends",
+        "bioskop-6": "walk out of the room",
+        "t-pancing": "Going fishing",
+        "pancing-1": "put a worm on the hook",
+        "pancing-2": "cast the line into the pond",
+        "pancing-3": "wait patiently",
+        "pancing-4": "pull the rod",
+        "pancing-5": "a fish is caught",
+        "pancing-6": "put the fish in a bucket",
+        "t-istana-pasir": "Making a sandcastle",
+        "istana-pasir-1": "gather wet sand",
+        "istana-pasir-2": "fill the bucket with sand",
+        "istana-pasir-3": "turn the bucket upside down",
+        "istana-pasir-4": "lift the bucket slowly",
+        "istana-pasir-5": "the sandcastle stands",
+        "istana-pasir-6": "stick a flag on top"
       }
     },
     "knobs": {
@@ -165673,6 +167104,186 @@ export const PAKET_RAW: unknown[] = [
             "id": "menara-5",
             "labelKey": "menara-5",
             "emoji": "📸"
+          }
+        ]
+      },
+      {
+        "id": "kue",
+        "titleKey": "t-kue",
+        "steps": [
+          {
+            "id": "kue-1",
+            "labelKey": "kue-1",
+            "emoji": "🥚"
+          },
+          {
+            "id": "kue-2",
+            "labelKey": "kue-2",
+            "emoji": "🥣"
+          },
+          {
+            "id": "kue-3",
+            "labelKey": "kue-3",
+            "emoji": "🫗"
+          },
+          {
+            "id": "kue-4",
+            "labelKey": "kue-4",
+            "emoji": "🔥"
+          },
+          {
+            "id": "kue-5",
+            "labelKey": "kue-5",
+            "emoji": "⏳"
+          },
+          {
+            "id": "kue-6",
+            "labelKey": "kue-6",
+            "emoji": "🍰"
+          }
+        ]
+      },
+      {
+        "id": "belanja",
+        "titleKey": "t-belanja",
+        "steps": [
+          {
+            "id": "belanja-1",
+            "labelKey": "belanja-1",
+            "emoji": "🧺"
+          },
+          {
+            "id": "belanja-2",
+            "labelKey": "belanja-2",
+            "emoji": "🍎"
+          },
+          {
+            "id": "belanja-3",
+            "labelKey": "belanja-3",
+            "emoji": "🏪"
+          },
+          {
+            "id": "belanja-4",
+            "labelKey": "belanja-4",
+            "emoji": "💵"
+          },
+          {
+            "id": "belanja-5",
+            "labelKey": "belanja-5",
+            "emoji": "🧾"
+          },
+          {
+            "id": "belanja-6",
+            "labelKey": "belanja-6",
+            "emoji": "🛍️"
+          }
+        ]
+      },
+      {
+        "id": "bioskop",
+        "titleKey": "t-bioskop",
+        "steps": [
+          {
+            "id": "bioskop-1",
+            "labelKey": "bioskop-1",
+            "emoji": "🎟️"
+          },
+          {
+            "id": "bioskop-2",
+            "labelKey": "bioskop-2",
+            "emoji": "🚪"
+          },
+          {
+            "id": "bioskop-3",
+            "labelKey": "bioskop-3",
+            "emoji": "💺"
+          },
+          {
+            "id": "bioskop-4",
+            "labelKey": "bioskop-4",
+            "emoji": "🎬"
+          },
+          {
+            "id": "bioskop-5",
+            "labelKey": "bioskop-5",
+            "emoji": "👏"
+          },
+          {
+            "id": "bioskop-6",
+            "labelKey": "bioskop-6",
+            "emoji": "🚶"
+          }
+        ]
+      },
+      {
+        "id": "pancing",
+        "titleKey": "t-pancing",
+        "steps": [
+          {
+            "id": "pancing-1",
+            "labelKey": "pancing-1",
+            "emoji": "🪱"
+          },
+          {
+            "id": "pancing-2",
+            "labelKey": "pancing-2",
+            "emoji": "🎣"
+          },
+          {
+            "id": "pancing-3",
+            "labelKey": "pancing-3",
+            "emoji": "⏳"
+          },
+          {
+            "id": "pancing-4",
+            "labelKey": "pancing-4",
+            "emoji": "💪"
+          },
+          {
+            "id": "pancing-5",
+            "labelKey": "pancing-5",
+            "emoji": "🐟"
+          },
+          {
+            "id": "pancing-6",
+            "labelKey": "pancing-6",
+            "emoji": "🪣"
+          }
+        ]
+      },
+      {
+        "id": "istana-pasir",
+        "titleKey": "t-istana-pasir",
+        "steps": [
+          {
+            "id": "istana-pasir-1",
+            "labelKey": "istana-pasir-1",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "istana-pasir-2",
+            "labelKey": "istana-pasir-2",
+            "emoji": "🪣"
+          },
+          {
+            "id": "istana-pasir-3",
+            "labelKey": "istana-pasir-3",
+            "emoji": "🔄"
+          },
+          {
+            "id": "istana-pasir-4",
+            "labelKey": "istana-pasir-4",
+            "emoji": "⬆️"
+          },
+          {
+            "id": "istana-pasir-5",
+            "labelKey": "istana-pasir-5",
+            "emoji": "🏰"
+          },
+          {
+            "id": "istana-pasir-6",
+            "labelKey": "istana-pasir-6",
+            "emoji": "🚩"
           }
         ]
       }
@@ -168420,7 +170031,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-bunyi-makin-jauh-makin-pelan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -168450,7 +170061,37 @@ export const PAKET_RAW: unknown[] = [
         "drum-p1": "anak di depan panggung",
         "drum-p2": "anak di tengah lapangan",
         "drum-p3": "anak di parkiran",
-        "drum-p4": "anak di luar pagar"
+        "drum-p4": "anak di luar pagar",
+        "t-peluit": "Wasit meniup peluit",
+        "peluit-1": "anak di samping wasit",
+        "peluit-2": "anak di tengah lapangan",
+        "peluit-3": "anak di bangku penonton",
+        "peluit-4": "anak di luar stadion",
+        "t-anjing": "Anjing menggonggong",
+        "anjing-1": "anak di samping anjing",
+        "anjing-2": "anak di halaman rumah",
+        "anjing-3": "anak di ujung jalan",
+        "anjing-4": "anak di kampung sebelah",
+        "t-tepuk": "Guru bertepuk tangan di kelas",
+        "tepuk-1": "anak di depan meja guru",
+        "tepuk-2": "anak di tengah kelas",
+        "tepuk-3": "anak di bangku paling belakang",
+        "tepuk-4": "anak di kantin sekolah",
+        "t-burung": "Burung berkicau di pohon",
+        "burung-1": "anak di bawah pohon",
+        "burung-2": "anak di pagar kebun",
+        "burung-3": "anak di seberang jalan",
+        "burung-4": "anak di sawah yang jauh",
+        "t-beduk": "Beduk dipukul di masjid",
+        "beduk-1": "anak di samping beduk",
+        "beduk-2": "anak di halaman masjid",
+        "beduk-3": "anak di ujung desa",
+        "beduk-4": "anak di desa sebelah",
+        "t-gitar": "Kakak memetik gitar di teras",
+        "gitar-1": "anak di samping kakak",
+        "gitar-2": "anak di ujung teras",
+        "gitar-3": "anak di pagar depan",
+        "gitar-4": "anak di rumah ujung gang"
       },
       "en": {
         "judul": "Farther Away, Quieter",
@@ -168474,7 +170115,37 @@ export const PAKET_RAW: unknown[] = [
         "drum-p1": "child in front of the stage",
         "drum-p2": "child in the middle of the field",
         "drum-p3": "child in the car park",
-        "drum-p4": "child outside the fence"
+        "drum-p4": "child outside the fence",
+        "t-peluit": "The referee blows a whistle",
+        "peluit-1": "a child next to the referee",
+        "peluit-2": "a child in the middle of the field",
+        "peluit-3": "a child in the crowd seats",
+        "peluit-4": "a child outside the stadium",
+        "t-anjing": "A dog barks",
+        "anjing-1": "a child next to the dog",
+        "anjing-2": "a child in the front yard",
+        "anjing-3": "a child at the end of the street",
+        "anjing-4": "a child in the next village",
+        "t-tepuk": "The teacher claps in class",
+        "tepuk-1": "a child at the teacher's desk",
+        "tepuk-2": "a child in the middle of the class",
+        "tepuk-3": "a child in the back row",
+        "tepuk-4": "a child in the school canteen",
+        "t-burung": "A bird sings in a tree",
+        "burung-1": "a child under the tree",
+        "burung-2": "a child at the garden fence",
+        "burung-3": "a child across the road",
+        "burung-4": "a child in a faraway rice field",
+        "t-beduk": "The mosque drum is beaten",
+        "beduk-1": "a child next to the drum",
+        "beduk-2": "a child in the mosque yard",
+        "beduk-3": "a child at the edge of the village",
+        "beduk-4": "a child in the next village",
+        "t-gitar": "Big sister plays guitar on the porch",
+        "gitar-1": "a child next to big sister",
+        "gitar-2": "a child at the end of the porch",
+        "gitar-3": "a child at the front gate",
+        "gitar-4": "a child in the house at the end of the lane"
       }
     },
     "knobs": {
@@ -168595,12 +170266,168 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🧒"
           }
         ]
+      },
+      {
+        "id": "peluit",
+        "titleKey": "t-peluit",
+        "steps": [
+          {
+            "id": "peluit-1",
+            "labelKey": "peluit-1",
+            "emoji": "🧒"
+          },
+          {
+            "id": "peluit-2",
+            "labelKey": "peluit-2",
+            "emoji": "🧒"
+          },
+          {
+            "id": "peluit-3",
+            "labelKey": "peluit-3",
+            "emoji": "🧒"
+          },
+          {
+            "id": "peluit-4",
+            "labelKey": "peluit-4",
+            "emoji": "🧒"
+          }
+        ]
+      },
+      {
+        "id": "anjing",
+        "titleKey": "t-anjing",
+        "steps": [
+          {
+            "id": "anjing-1",
+            "labelKey": "anjing-1",
+            "emoji": "🧒"
+          },
+          {
+            "id": "anjing-2",
+            "labelKey": "anjing-2",
+            "emoji": "🧒"
+          },
+          {
+            "id": "anjing-3",
+            "labelKey": "anjing-3",
+            "emoji": "🧒"
+          },
+          {
+            "id": "anjing-4",
+            "labelKey": "anjing-4",
+            "emoji": "🧒"
+          }
+        ]
+      },
+      {
+        "id": "tepuk",
+        "titleKey": "t-tepuk",
+        "steps": [
+          {
+            "id": "tepuk-1",
+            "labelKey": "tepuk-1",
+            "emoji": "🧒"
+          },
+          {
+            "id": "tepuk-2",
+            "labelKey": "tepuk-2",
+            "emoji": "🧒"
+          },
+          {
+            "id": "tepuk-3",
+            "labelKey": "tepuk-3",
+            "emoji": "🧒"
+          },
+          {
+            "id": "tepuk-4",
+            "labelKey": "tepuk-4",
+            "emoji": "🧒"
+          }
+        ]
+      },
+      {
+        "id": "burung",
+        "titleKey": "t-burung",
+        "steps": [
+          {
+            "id": "burung-1",
+            "labelKey": "burung-1",
+            "emoji": "🧒"
+          },
+          {
+            "id": "burung-2",
+            "labelKey": "burung-2",
+            "emoji": "🧒"
+          },
+          {
+            "id": "burung-3",
+            "labelKey": "burung-3",
+            "emoji": "🧒"
+          },
+          {
+            "id": "burung-4",
+            "labelKey": "burung-4",
+            "emoji": "🧒"
+          }
+        ]
+      },
+      {
+        "id": "beduk",
+        "titleKey": "t-beduk",
+        "steps": [
+          {
+            "id": "beduk-1",
+            "labelKey": "beduk-1",
+            "emoji": "🧒"
+          },
+          {
+            "id": "beduk-2",
+            "labelKey": "beduk-2",
+            "emoji": "🧒"
+          },
+          {
+            "id": "beduk-3",
+            "labelKey": "beduk-3",
+            "emoji": "🧒"
+          },
+          {
+            "id": "beduk-4",
+            "labelKey": "beduk-4",
+            "emoji": "🧒"
+          }
+        ]
+      },
+      {
+        "id": "gitar",
+        "titleKey": "t-gitar",
+        "steps": [
+          {
+            "id": "gitar-1",
+            "labelKey": "gitar-1",
+            "emoji": "🧒"
+          },
+          {
+            "id": "gitar-2",
+            "labelKey": "gitar-2",
+            "emoji": "🧒"
+          },
+          {
+            "id": "gitar-3",
+            "labelKey": "gitar-3",
+            "emoji": "🧒"
+          },
+          {
+            "id": "gitar-4",
+            "labelKey": "gitar-4",
+            "emoji": "🧒"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd2-kode-kartu-langkah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -168655,7 +170482,39 @@ export const PAKET_RAW: unknown[] = [
         "telepon-3": "tekan tombol hijau",
         "telepon-4": "tunggu diangkat",
         "telepon-5": "bicara dengan teman",
-        "telepon-6": "tekan tombol merah"
+        "telepon-6": "tekan tombol merah",
+        "t-perpustakaan": "Meminjam buku di perpustakaan",
+        "perpustakaan-1": "masuk ke perpustakaan",
+        "perpustakaan-2": "cari buku di rak",
+        "perpustakaan-3": "ambil bukunya",
+        "perpustakaan-4": "serahkan kartu anggota",
+        "perpustakaan-5": "petugas mencatat pinjaman",
+        "perpustakaan-6": "bawa pulang buku",
+        "perpustakaan-7": "kembalikan sebelum tanggalnya",
+        "t-lift": "Naik lift",
+        "lift-1": "tekan tombol lift",
+        "lift-2": "tunggu pintu terbuka",
+        "lift-3": "masuk ke lift",
+        "lift-4": "tekan nomor lantai",
+        "lift-5": "lift naik",
+        "lift-6": "pintu terbuka di lantai tujuan",
+        "lift-7": "keluar dari lift",
+        "t-kereta": "Naik kereta api",
+        "kereta-1": "beli tiket di loket",
+        "kereta-2": "masuk lewat gerbang tiket",
+        "kereta-3": "tunggu di peron",
+        "kereta-4": "kereta berhenti di peron",
+        "kereta-5": "naik ke kereta",
+        "kereta-6": "duduk di kursi",
+        "kereta-7": "turun di stasiun tujuan",
+        "t-keramas": "Mencuci rambut",
+        "keramas-1": "nyalakan pancuran",
+        "keramas-2": "basahi rambut",
+        "keramas-3": "tuang sampo ke tangan",
+        "keramas-4": "gosok rambut sampai berbusa",
+        "keramas-5": "bilas busanya sampai bersih",
+        "keramas-6": "matikan pancuran",
+        "keramas-7": "keringkan rambut dengan pengering"
       },
       "en": {
         "judul": "Written Step Cards",
@@ -168704,7 +170563,39 @@ export const PAKET_RAW: unknown[] = [
         "telepon-3": "press the green button",
         "telepon-4": "wait for an answer",
         "telepon-5": "talk to your friend",
-        "telepon-6": "press the red button"
+        "telepon-6": "press the red button",
+        "t-perpustakaan": "Borrowing a library book",
+        "perpustakaan-1": "go into the library",
+        "perpustakaan-2": "look for a book on the shelf",
+        "perpustakaan-3": "take the book",
+        "perpustakaan-4": "hand over your library card",
+        "perpustakaan-5": "the librarian records the loan",
+        "perpustakaan-6": "take the book home",
+        "perpustakaan-7": "return it before the due date",
+        "t-lift": "Taking the lift",
+        "lift-1": "press the lift button",
+        "lift-2": "wait for the doors to open",
+        "lift-3": "step into the lift",
+        "lift-4": "press the floor number",
+        "lift-5": "the lift goes up",
+        "lift-6": "the doors open on your floor",
+        "lift-7": "step out of the lift",
+        "t-kereta": "Riding a train",
+        "kereta-1": "buy a ticket at the counter",
+        "kereta-2": "go through the ticket gate",
+        "kereta-3": "wait on the platform",
+        "kereta-4": "the train stops at the platform",
+        "kereta-5": "get on the train",
+        "kereta-6": "sit in a seat",
+        "kereta-7": "get off at your station",
+        "t-keramas": "Washing your hair",
+        "keramas-1": "turn on the shower",
+        "keramas-2": "wet your hair",
+        "keramas-3": "pour shampoo into your hand",
+        "keramas-4": "rub your hair until foamy",
+        "keramas-5": "rinse out all the foam",
+        "keramas-6": "turn off the shower",
+        "keramas-7": "dry your hair with a dryer"
       }
     },
     "knobs": {
@@ -168950,6 +170841,170 @@ export const PAKET_RAW: unknown[] = [
             "id": "telepon-6",
             "labelKey": "telepon-6",
             "emoji": "🔴"
+          }
+        ]
+      },
+      {
+        "id": "perpustakaan",
+        "titleKey": "t-perpustakaan",
+        "steps": [
+          {
+            "id": "perpustakaan-1",
+            "labelKey": "perpustakaan-1",
+            "emoji": "🚪"
+          },
+          {
+            "id": "perpustakaan-2",
+            "labelKey": "perpustakaan-2",
+            "emoji": "🔍"
+          },
+          {
+            "id": "perpustakaan-3",
+            "labelKey": "perpustakaan-3",
+            "emoji": "📕"
+          },
+          {
+            "id": "perpustakaan-4",
+            "labelKey": "perpustakaan-4",
+            "emoji": "🪪"
+          },
+          {
+            "id": "perpustakaan-5",
+            "labelKey": "perpustakaan-5",
+            "emoji": "✅"
+          },
+          {
+            "id": "perpustakaan-6",
+            "labelKey": "perpustakaan-6",
+            "emoji": "🎒"
+          },
+          {
+            "id": "perpustakaan-7",
+            "labelKey": "perpustakaan-7",
+            "emoji": "📅"
+          }
+        ]
+      },
+      {
+        "id": "lift",
+        "titleKey": "t-lift",
+        "steps": [
+          {
+            "id": "lift-1",
+            "labelKey": "lift-1",
+            "emoji": "🔘"
+          },
+          {
+            "id": "lift-2",
+            "labelKey": "lift-2",
+            "emoji": "⏳"
+          },
+          {
+            "id": "lift-3",
+            "labelKey": "lift-3",
+            "emoji": "🛗"
+          },
+          {
+            "id": "lift-4",
+            "labelKey": "lift-4",
+            "emoji": "🔢"
+          },
+          {
+            "id": "lift-5",
+            "labelKey": "lift-5",
+            "emoji": "⬆️"
+          },
+          {
+            "id": "lift-6",
+            "labelKey": "lift-6",
+            "emoji": "🚪"
+          },
+          {
+            "id": "lift-7",
+            "labelKey": "lift-7",
+            "emoji": "🚶"
+          }
+        ]
+      },
+      {
+        "id": "kereta",
+        "titleKey": "t-kereta",
+        "steps": [
+          {
+            "id": "kereta-1",
+            "labelKey": "kereta-1",
+            "emoji": "🎫"
+          },
+          {
+            "id": "kereta-2",
+            "labelKey": "kereta-2",
+            "emoji": "🚪"
+          },
+          {
+            "id": "kereta-3",
+            "labelKey": "kereta-3",
+            "emoji": "🚉"
+          },
+          {
+            "id": "kereta-4",
+            "labelKey": "kereta-4",
+            "emoji": "🚆"
+          },
+          {
+            "id": "kereta-5",
+            "labelKey": "kereta-5",
+            "emoji": "🚶"
+          },
+          {
+            "id": "kereta-6",
+            "labelKey": "kereta-6",
+            "emoji": "💺"
+          },
+          {
+            "id": "kereta-7",
+            "labelKey": "kereta-7",
+            "emoji": "👋"
+          }
+        ]
+      },
+      {
+        "id": "keramas",
+        "titleKey": "t-keramas",
+        "steps": [
+          {
+            "id": "keramas-1",
+            "labelKey": "keramas-1",
+            "emoji": "🚿"
+          },
+          {
+            "id": "keramas-2",
+            "labelKey": "keramas-2",
+            "emoji": "💦"
+          },
+          {
+            "id": "keramas-3",
+            "labelKey": "keramas-3",
+            "emoji": "🧴"
+          },
+          {
+            "id": "keramas-4",
+            "labelKey": "keramas-4",
+            "emoji": "🫧"
+          },
+          {
+            "id": "keramas-5",
+            "labelKey": "keramas-5",
+            "emoji": "💧"
+          },
+          {
+            "id": "keramas-6",
+            "labelKey": "keramas-6",
+            "emoji": "🔒"
+          },
+          {
+            "id": "keramas-7",
+            "labelKey": "keramas-7",
+            "emoji": "💨"
           }
         ]
       }
@@ -170722,7 +172777,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-hewan-tumbuh-besar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -170762,7 +172817,27 @@ export const PAKET_RAW: unknown[] = [
         "sapi-bayi": "anak sapi baru berdiri",
         "sapi-kecil": "anak sapi menyusu",
         "sapi-muda": "sapi muda makan rumput",
-        "sapi-dewasa": "sapi dewasa"
+        "sapi-dewasa": "sapi dewasa",
+        "t-kuda": "Kuda tumbuh besar",
+        "kuda-1": "anak kuda baru lahir, kaki goyah",
+        "kuda-2": "anak kuda belajar berlari",
+        "kuda-3": "kuda muda, kaki makin kuat",
+        "kuda-4": "kuda dewasa",
+        "t-kelinci": "Kelinci tumbuh besar",
+        "kelinci-1": "anak kelinci baru lahir, belum berbulu",
+        "kelinci-2": "anak kelinci berbulu halus, mata terbuka",
+        "kelinci-3": "kelinci muda, telinga makin panjang",
+        "kelinci-4": "kelinci dewasa",
+        "t-domba": "Domba tumbuh besar",
+        "domba-1": "anak domba menyusu",
+        "domba-2": "anak domba mulai makan rumput",
+        "domba-3": "domba muda, bulu makin tebal",
+        "domba-4": "domba dewasa, bulu tebal",
+        "t-gajah": "Gajah tumbuh besar",
+        "gajah-1": "anak gajah baru lahir",
+        "gajah-2": "anak gajah berjalan di samping induknya",
+        "gajah-3": "gajah muda, belalai makin panjang",
+        "gajah-4": "gajah dewasa, tubuh paling besar"
       },
       "en": {
         "judul": "From Baby to Grown-Up",
@@ -170796,7 +172871,27 @@ export const PAKET_RAW: unknown[] = [
         "sapi-bayi": "newborn calf just standing",
         "sapi-kecil": "calf drinking milk",
         "sapi-muda": "young cow eating grass",
-        "sapi-dewasa": "adult cow"
+        "sapi-dewasa": "adult cow",
+        "t-kuda": "A horse grows up",
+        "kuda-1": "newborn foal, wobbly legs",
+        "kuda-2": "foal learning to run",
+        "kuda-3": "young horse, stronger legs",
+        "kuda-4": "adult horse",
+        "t-kelinci": "A rabbit grows up",
+        "kelinci-1": "newborn bunny, no fur yet",
+        "kelinci-2": "fluffy bunny, eyes open",
+        "kelinci-3": "young rabbit, longer ears",
+        "kelinci-4": "adult rabbit",
+        "t-domba": "A sheep grows up",
+        "domba-1": "lamb drinking milk",
+        "domba-2": "lamb starting to eat grass",
+        "domba-3": "young sheep, thicker wool",
+        "domba-4": "adult sheep, thick wool",
+        "t-gajah": "An elephant grows up",
+        "gajah-1": "newborn elephant calf",
+        "gajah-2": "calf walking beside its mother",
+        "gajah-3": "young elephant, longer trunk",
+        "gajah-4": "adult elephant, biggest body"
       }
     },
     "knobs": {
@@ -170990,6 +173085,126 @@ export const PAKET_RAW: unknown[] = [
             "id": "dewasa",
             "labelKey": "sapi-dewasa",
             "emoji": "🐄",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "kuda",
+        "titleKey": "t-kuda",
+        "steps": [
+          {
+            "id": "kuda-1",
+            "labelKey": "kuda-1",
+            "emoji": "🐴",
+            "scale": 0.6
+          },
+          {
+            "id": "kuda-2",
+            "labelKey": "kuda-2",
+            "emoji": "🐴",
+            "scale": 0.85
+          },
+          {
+            "id": "kuda-3",
+            "labelKey": "kuda-3",
+            "emoji": "🐎",
+            "scale": 1.05
+          },
+          {
+            "id": "kuda-4",
+            "labelKey": "kuda-4",
+            "emoji": "🐎",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "kelinci",
+        "titleKey": "t-kelinci",
+        "steps": [
+          {
+            "id": "kelinci-1",
+            "labelKey": "kelinci-1",
+            "emoji": "🐰",
+            "scale": 0.6
+          },
+          {
+            "id": "kelinci-2",
+            "labelKey": "kelinci-2",
+            "emoji": "🐰",
+            "scale": 0.85
+          },
+          {
+            "id": "kelinci-3",
+            "labelKey": "kelinci-3",
+            "emoji": "🐇",
+            "scale": 1.05
+          },
+          {
+            "id": "kelinci-4",
+            "labelKey": "kelinci-4",
+            "emoji": "🐇",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "domba",
+        "titleKey": "t-domba",
+        "steps": [
+          {
+            "id": "domba-1",
+            "labelKey": "domba-1",
+            "emoji": "🐑",
+            "scale": 0.6
+          },
+          {
+            "id": "domba-2",
+            "labelKey": "domba-2",
+            "emoji": "🐑",
+            "scale": 0.85
+          },
+          {
+            "id": "domba-3",
+            "labelKey": "domba-3",
+            "emoji": "🐑",
+            "scale": 1.05
+          },
+          {
+            "id": "domba-4",
+            "labelKey": "domba-4",
+            "emoji": "🐑",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "gajah",
+        "titleKey": "t-gajah",
+        "steps": [
+          {
+            "id": "gajah-1",
+            "labelKey": "gajah-1",
+            "emoji": "🐘",
+            "scale": 0.6
+          },
+          {
+            "id": "gajah-2",
+            "labelKey": "gajah-2",
+            "emoji": "🐘",
+            "scale": 0.85
+          },
+          {
+            "id": "gajah-3",
+            "labelKey": "gajah-3",
+            "emoji": "🐘",
+            "scale": 1.05
+          },
+          {
+            "id": "gajah-4",
+            "labelKey": "gajah-4",
+            "emoji": "🐘",
             "scale": 1.3
           }
         ]
@@ -171788,7 +174003,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-sains-perbaiki-hewan-tumbuh-besar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -171828,7 +174043,27 @@ export const PAKET_RAW: unknown[] = [
         "sapi-bayi": "anak sapi baru berdiri",
         "sapi-kecil": "anak sapi menyusu",
         "sapi-muda": "sapi muda makan rumput",
-        "sapi-dewasa": "sapi dewasa"
+        "sapi-dewasa": "sapi dewasa",
+        "t-kuda": "Kuda tumbuh besar",
+        "kuda-1": "anak kuda baru lahir, kaki goyah",
+        "kuda-2": "anak kuda belajar berlari",
+        "kuda-3": "kuda muda, kaki makin kuat",
+        "kuda-4": "kuda dewasa",
+        "t-kelinci": "Kelinci tumbuh besar",
+        "kelinci-1": "anak kelinci baru lahir, belum berbulu",
+        "kelinci-2": "anak kelinci berbulu halus, mata terbuka",
+        "kelinci-3": "kelinci muda, telinga makin panjang",
+        "kelinci-4": "kelinci dewasa",
+        "t-domba": "Domba tumbuh besar",
+        "domba-1": "anak domba menyusu",
+        "domba-2": "anak domba mulai makan rumput",
+        "domba-3": "domba muda, bulu makin tebal",
+        "domba-4": "domba dewasa, bulu tebal",
+        "t-gajah": "Gajah tumbuh besar",
+        "gajah-1": "anak gajah baru lahir",
+        "gajah-2": "anak gajah berjalan di samping induknya",
+        "gajah-3": "gajah muda, belalai makin panjang",
+        "gajah-4": "gajah dewasa, tubuh paling besar"
       },
       "en": {
         "judul": "Something Is Swapped!",
@@ -171862,7 +174097,27 @@ export const PAKET_RAW: unknown[] = [
         "sapi-bayi": "newborn calf just standing",
         "sapi-kecil": "calf drinking milk",
         "sapi-muda": "young cow eating grass",
-        "sapi-dewasa": "adult cow"
+        "sapi-dewasa": "adult cow",
+        "t-kuda": "A horse grows up",
+        "kuda-1": "newborn foal, wobbly legs",
+        "kuda-2": "foal learning to run",
+        "kuda-3": "young horse, stronger legs",
+        "kuda-4": "adult horse",
+        "t-kelinci": "A rabbit grows up",
+        "kelinci-1": "newborn bunny, no fur yet",
+        "kelinci-2": "fluffy bunny, eyes open",
+        "kelinci-3": "young rabbit, longer ears",
+        "kelinci-4": "adult rabbit",
+        "t-domba": "A sheep grows up",
+        "domba-1": "lamb drinking milk",
+        "domba-2": "lamb starting to eat grass",
+        "domba-3": "young sheep, thicker wool",
+        "domba-4": "adult sheep, thick wool",
+        "t-gajah": "An elephant grows up",
+        "gajah-1": "newborn elephant calf",
+        "gajah-2": "calf walking beside its mother",
+        "gajah-3": "young elephant, longer trunk",
+        "gajah-4": "adult elephant, biggest body"
       }
     },
     "knobs": {
@@ -172059,12 +174314,132 @@ export const PAKET_RAW: unknown[] = [
             "scale": 1.3
           }
         ]
+      },
+      {
+        "id": "kuda",
+        "titleKey": "t-kuda",
+        "steps": [
+          {
+            "id": "kuda-1",
+            "labelKey": "kuda-1",
+            "emoji": "🐴",
+            "scale": 0.6
+          },
+          {
+            "id": "kuda-2",
+            "labelKey": "kuda-2",
+            "emoji": "🐴",
+            "scale": 0.85
+          },
+          {
+            "id": "kuda-3",
+            "labelKey": "kuda-3",
+            "emoji": "🐎",
+            "scale": 1.05
+          },
+          {
+            "id": "kuda-4",
+            "labelKey": "kuda-4",
+            "emoji": "🐎",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "kelinci",
+        "titleKey": "t-kelinci",
+        "steps": [
+          {
+            "id": "kelinci-1",
+            "labelKey": "kelinci-1",
+            "emoji": "🐰",
+            "scale": 0.6
+          },
+          {
+            "id": "kelinci-2",
+            "labelKey": "kelinci-2",
+            "emoji": "🐰",
+            "scale": 0.85
+          },
+          {
+            "id": "kelinci-3",
+            "labelKey": "kelinci-3",
+            "emoji": "🐇",
+            "scale": 1.05
+          },
+          {
+            "id": "kelinci-4",
+            "labelKey": "kelinci-4",
+            "emoji": "🐇",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "domba",
+        "titleKey": "t-domba",
+        "steps": [
+          {
+            "id": "domba-1",
+            "labelKey": "domba-1",
+            "emoji": "🐑",
+            "scale": 0.6
+          },
+          {
+            "id": "domba-2",
+            "labelKey": "domba-2",
+            "emoji": "🐑",
+            "scale": 0.85
+          },
+          {
+            "id": "domba-3",
+            "labelKey": "domba-3",
+            "emoji": "🐑",
+            "scale": 1.05
+          },
+          {
+            "id": "domba-4",
+            "labelKey": "domba-4",
+            "emoji": "🐑",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "gajah",
+        "titleKey": "t-gajah",
+        "steps": [
+          {
+            "id": "gajah-1",
+            "labelKey": "gajah-1",
+            "emoji": "🐘",
+            "scale": 0.6
+          },
+          {
+            "id": "gajah-2",
+            "labelKey": "gajah-2",
+            "emoji": "🐘",
+            "scale": 0.85
+          },
+          {
+            "id": "gajah-3",
+            "labelKey": "gajah-3",
+            "emoji": "🐘",
+            "scale": 1.05
+          },
+          {
+            "id": "gajah-4",
+            "labelKey": "gajah-4",
+            "emoji": "🐘",
+            "scale": 1.3
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd2-sains-perbaiki-perjalanan-matahari",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -172092,7 +174467,37 @@ export const PAKET_RAW: unknown[] = [
         "s-bunga": "Bunga matahari menghadap Matahari",
         "bunga-timur": "bunga menghadap timur",
         "bunga-atas": "bunga menghadap ke atas",
-        "bunga-barat": "bunga menghadap barat"
+        "bunga-barat": "bunga menghadap barat",
+        "t-petani": "Petani dan Matahari",
+        "petani-1": "petani berangkat, Matahari baru terbit",
+        "petani-2": "petani menanam padi, Matahari masih rendah",
+        "petani-3": "petani berteduh, Matahari di atas kepala",
+        "petani-4": "petani pulang, Matahari terbenam",
+        "t-bayangan-pohon": "Bayangan pohon",
+        "bayangan-pohon-1": "bayangan panjang ke arah barat",
+        "bayangan-pohon-2": "bayangan makin pendek",
+        "bayangan-pohon-3": "bayangan pendek di bawah pohon",
+        "bayangan-pohon-4": "bayangan panjang ke arah timur",
+        "t-pasir": "Pasir di pantai",
+        "pasir-1": "pasir dingin, Matahari baru terbit",
+        "pasir-2": "pasir hangat, Matahari masih rendah di timur",
+        "pasir-3": "pasir sangat panas, Matahari di atas kepala",
+        "pasir-4": "pasir mulai dingin, Matahari terbenam",
+        "t-jemuran": "Menjemur baju",
+        "jemuran-1": "jemur baju basah, Matahari baru terbit di timur",
+        "jemuran-2": "baju mulai kering, Matahari makin tinggi",
+        "jemuran-3": "baju kering, Matahari di atas kepala",
+        "jemuran-4": "angkat jemuran, Matahari terbenam di barat",
+        "t-burung": "Burung dan Matahari",
+        "burung-1": "burung berkicau, Matahari baru terbit",
+        "burung-2": "burung mencari ulat, Matahari masih rendah",
+        "burung-3": "burung berteduh, Matahari di atas kepala",
+        "burung-4": "burung pulang ke sarang, Matahari terbenam",
+        "t-bayangan-diri": "Bayangan tubuhmu",
+        "bayangan-diri-1": "bayanganmu panjang ke arah barat",
+        "bayangan-diri-2": "bayanganmu makin pendek",
+        "bayangan-diri-3": "bayanganmu pendek di bawah kaki",
+        "bayangan-diri-4": "bayanganmu panjang ke arah timur"
       },
       "en": {
         "judul": "The Sun Got Mixed Up!",
@@ -172114,7 +174519,37 @@ export const PAKET_RAW: unknown[] = [
         "s-bunga": "A sunflower faces the Sun",
         "bunga-timur": "flower facing east",
         "bunga-atas": "flower facing up",
-        "bunga-barat": "flower facing west"
+        "bunga-barat": "flower facing west",
+        "t-petani": "The farmer and the Sun",
+        "petani-1": "the farmer sets off as the Sun rises",
+        "petani-2": "the farmer plants rice, the Sun is still low",
+        "petani-3": "the farmer rests in the shade, the Sun is overhead",
+        "petani-4": "the farmer goes home as the Sun sets",
+        "t-bayangan-pohon": "A tree's shadow",
+        "bayangan-pohon-1": "long shadow pointing west",
+        "bayangan-pohon-2": "shadow getting shorter",
+        "bayangan-pohon-3": "short shadow under the tree",
+        "bayangan-pohon-4": "long shadow pointing east",
+        "t-pasir": "Sand at the beach",
+        "pasir-1": "cool sand, the Sun has just risen",
+        "pasir-2": "warm sand, the Sun is still low in the east",
+        "pasir-3": "very hot sand, the Sun is overhead",
+        "pasir-4": "sand cooling down, the Sun is setting",
+        "t-jemuran": "Drying the washing",
+        "jemuran-1": "hang up wet clothes, the Sun has just risen in the east",
+        "jemuran-2": "clothes drying, the Sun climbs higher",
+        "jemuran-3": "clothes dry, the Sun is overhead",
+        "jemuran-4": "bring the washing in, the Sun sets in the west",
+        "t-burung": "Birds and the Sun",
+        "burung-1": "birds sing as the Sun rises",
+        "burung-2": "birds hunt caterpillars, the Sun is still low",
+        "burung-3": "birds shelter in the shade, the Sun is overhead",
+        "burung-4": "birds fly home as the Sun sets",
+        "t-bayangan-diri": "Your own shadow",
+        "bayangan-diri-1": "your shadow is long, pointing west",
+        "bayangan-diri-2": "your shadow gets shorter",
+        "bayangan-diri-3": "your shadow is short under your feet",
+        "bayangan-diri-4": "your shadow is long, pointing east"
       }
     },
     "knobs": {
@@ -172228,12 +174663,176 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🌻"
           }
         ]
+      },
+      {
+        "id": "petani",
+        "titleKey": "t-petani",
+        "steps": [
+          {
+            "id": "petani-1",
+            "labelKey": "petani-1",
+            "emoji": "🧑‍🌾"
+          },
+          {
+            "id": "petani-2",
+            "labelKey": "petani-2",
+            "emoji": "🌾"
+          },
+          {
+            "id": "petani-3",
+            "labelKey": "petani-3",
+            "emoji": "🌳"
+          },
+          {
+            "id": "petani-4",
+            "labelKey": "petani-4",
+            "emoji": "🏡"
+          }
+        ]
+      },
+      {
+        "id": "bayangan-pohon",
+        "titleKey": "t-bayangan-pohon",
+        "steps": [
+          {
+            "id": "bayangan-pohon-1",
+            "labelKey": "bayangan-pohon-1",
+            "emoji": "🌳",
+            "width": 3
+          },
+          {
+            "id": "bayangan-pohon-2",
+            "labelKey": "bayangan-pohon-2",
+            "emoji": "🌳",
+            "width": 1.8
+          },
+          {
+            "id": "bayangan-pohon-3",
+            "labelKey": "bayangan-pohon-3",
+            "emoji": "🌳",
+            "width": 0.6
+          },
+          {
+            "id": "bayangan-pohon-4",
+            "labelKey": "bayangan-pohon-4",
+            "emoji": "🌳",
+            "width": 3.2
+          }
+        ]
+      },
+      {
+        "id": "pasir",
+        "titleKey": "t-pasir",
+        "steps": [
+          {
+            "id": "pasir-1",
+            "labelKey": "pasir-1",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "pasir-2",
+            "labelKey": "pasir-2",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "pasir-3",
+            "labelKey": "pasir-3",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "pasir-4",
+            "labelKey": "pasir-4",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "jemuran",
+        "titleKey": "t-jemuran",
+        "steps": [
+          {
+            "id": "jemuran-1",
+            "labelKey": "jemuran-1",
+            "emoji": "👕"
+          },
+          {
+            "id": "jemuran-2",
+            "labelKey": "jemuran-2",
+            "emoji": "👕"
+          },
+          {
+            "id": "jemuran-3",
+            "labelKey": "jemuran-3",
+            "emoji": "👕"
+          },
+          {
+            "id": "jemuran-4",
+            "labelKey": "jemuran-4",
+            "emoji": "👕"
+          }
+        ]
+      },
+      {
+        "id": "burung",
+        "titleKey": "t-burung",
+        "steps": [
+          {
+            "id": "burung-1",
+            "labelKey": "burung-1",
+            "emoji": "🐦"
+          },
+          {
+            "id": "burung-2",
+            "labelKey": "burung-2",
+            "emoji": "🐛"
+          },
+          {
+            "id": "burung-3",
+            "labelKey": "burung-3",
+            "emoji": "🌳"
+          },
+          {
+            "id": "burung-4",
+            "labelKey": "burung-4",
+            "emoji": "🌇"
+          }
+        ]
+      },
+      {
+        "id": "bayangan-diri",
+        "titleKey": "t-bayangan-diri",
+        "steps": [
+          {
+            "id": "bayangan-diri-1",
+            "labelKey": "bayangan-diri-1",
+            "emoji": "🧍",
+            "width": 3
+          },
+          {
+            "id": "bayangan-diri-2",
+            "labelKey": "bayangan-diri-2",
+            "emoji": "🧍",
+            "width": 1.8
+          },
+          {
+            "id": "bayangan-diri-3",
+            "labelKey": "bayangan-diri-3",
+            "emoji": "🧍",
+            "width": 0.6
+          },
+          {
+            "id": "bayangan-diri-4",
+            "labelKey": "bayangan-diri-4",
+            "emoji": "🧍",
+            "width": 3.2
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd2-sains-perjalanan-matahari-sehari",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -172261,7 +174860,37 @@ export const PAKET_RAW: unknown[] = [
         "s-bunga": "Bunga matahari menghadap Matahari",
         "bunga-timur": "bunga menghadap timur",
         "bunga-atas": "bunga menghadap ke atas",
-        "bunga-barat": "bunga menghadap barat"
+        "bunga-barat": "bunga menghadap barat",
+        "t-petani": "Petani dan Matahari",
+        "petani-1": "petani berangkat, Matahari baru terbit",
+        "petani-2": "petani menanam padi, Matahari masih rendah",
+        "petani-3": "petani berteduh, Matahari di atas kepala",
+        "petani-4": "petani pulang, Matahari terbenam",
+        "t-bayangan-pohon": "Bayangan pohon",
+        "bayangan-pohon-1": "bayangan panjang ke arah barat",
+        "bayangan-pohon-2": "bayangan makin pendek",
+        "bayangan-pohon-3": "bayangan pendek di bawah pohon",
+        "bayangan-pohon-4": "bayangan panjang ke arah timur",
+        "t-pasir": "Pasir di pantai",
+        "pasir-1": "pasir dingin, Matahari baru terbit",
+        "pasir-2": "pasir hangat, Matahari masih rendah di timur",
+        "pasir-3": "pasir sangat panas, Matahari di atas kepala",
+        "pasir-4": "pasir mulai dingin, Matahari terbenam",
+        "t-jemuran": "Menjemur baju",
+        "jemuran-1": "jemur baju basah, Matahari baru terbit di timur",
+        "jemuran-2": "baju mulai kering, Matahari makin tinggi",
+        "jemuran-3": "baju kering, Matahari di atas kepala",
+        "jemuran-4": "angkat jemuran, Matahari terbenam di barat",
+        "t-burung": "Burung dan Matahari",
+        "burung-1": "burung berkicau, Matahari baru terbit",
+        "burung-2": "burung mencari ulat, Matahari masih rendah",
+        "burung-3": "burung berteduh, Matahari di atas kepala",
+        "burung-4": "burung pulang ke sarang, Matahari terbenam",
+        "t-bayangan-diri": "Bayangan tubuhmu",
+        "bayangan-diri-1": "bayanganmu panjang ke arah barat",
+        "bayangan-diri-2": "bayanganmu makin pendek",
+        "bayangan-diri-3": "bayanganmu pendek di bawah kaki",
+        "bayangan-diri-4": "bayanganmu panjang ke arah timur"
       },
       "en": {
         "judul": "The Sun's Journey in a Day",
@@ -172283,7 +174912,37 @@ export const PAKET_RAW: unknown[] = [
         "s-bunga": "A sunflower faces the Sun",
         "bunga-timur": "flower facing east",
         "bunga-atas": "flower facing up",
-        "bunga-barat": "flower facing west"
+        "bunga-barat": "flower facing west",
+        "t-petani": "The farmer and the Sun",
+        "petani-1": "the farmer sets off as the Sun rises",
+        "petani-2": "the farmer plants rice, the Sun is still low",
+        "petani-3": "the farmer rests in the shade, the Sun is overhead",
+        "petani-4": "the farmer goes home as the Sun sets",
+        "t-bayangan-pohon": "A tree's shadow",
+        "bayangan-pohon-1": "long shadow pointing west",
+        "bayangan-pohon-2": "shadow getting shorter",
+        "bayangan-pohon-3": "short shadow under the tree",
+        "bayangan-pohon-4": "long shadow pointing east",
+        "t-pasir": "Sand at the beach",
+        "pasir-1": "cool sand, the Sun has just risen",
+        "pasir-2": "warm sand, the Sun is still low in the east",
+        "pasir-3": "very hot sand, the Sun is overhead",
+        "pasir-4": "sand cooling down, the Sun is setting",
+        "t-jemuran": "Drying the washing",
+        "jemuran-1": "hang up wet clothes, the Sun has just risen in the east",
+        "jemuran-2": "clothes drying, the Sun climbs higher",
+        "jemuran-3": "clothes dry, the Sun is overhead",
+        "jemuran-4": "bring the washing in, the Sun sets in the west",
+        "t-burung": "Birds and the Sun",
+        "burung-1": "birds sing as the Sun rises",
+        "burung-2": "birds hunt caterpillars, the Sun is still low",
+        "burung-3": "birds shelter in the shade, the Sun is overhead",
+        "burung-4": "birds fly home as the Sun sets",
+        "t-bayangan-diri": "Your own shadow",
+        "bayangan-diri-1": "your shadow is long, pointing west",
+        "bayangan-diri-2": "your shadow gets shorter",
+        "bayangan-diri-3": "your shadow is short under your feet",
+        "bayangan-diri-4": "your shadow is long, pointing east"
       }
     },
     "knobs": {
@@ -172397,12 +175056,176 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🌻"
           }
         ]
+      },
+      {
+        "id": "petani",
+        "titleKey": "t-petani",
+        "steps": [
+          {
+            "id": "petani-1",
+            "labelKey": "petani-1",
+            "emoji": "🧑‍🌾"
+          },
+          {
+            "id": "petani-2",
+            "labelKey": "petani-2",
+            "emoji": "🌾"
+          },
+          {
+            "id": "petani-3",
+            "labelKey": "petani-3",
+            "emoji": "🌳"
+          },
+          {
+            "id": "petani-4",
+            "labelKey": "petani-4",
+            "emoji": "🏡"
+          }
+        ]
+      },
+      {
+        "id": "bayangan-pohon",
+        "titleKey": "t-bayangan-pohon",
+        "steps": [
+          {
+            "id": "bayangan-pohon-1",
+            "labelKey": "bayangan-pohon-1",
+            "emoji": "🌳",
+            "width": 3
+          },
+          {
+            "id": "bayangan-pohon-2",
+            "labelKey": "bayangan-pohon-2",
+            "emoji": "🌳",
+            "width": 1.8
+          },
+          {
+            "id": "bayangan-pohon-3",
+            "labelKey": "bayangan-pohon-3",
+            "emoji": "🌳",
+            "width": 0.6
+          },
+          {
+            "id": "bayangan-pohon-4",
+            "labelKey": "bayangan-pohon-4",
+            "emoji": "🌳",
+            "width": 3.2
+          }
+        ]
+      },
+      {
+        "id": "pasir",
+        "titleKey": "t-pasir",
+        "steps": [
+          {
+            "id": "pasir-1",
+            "labelKey": "pasir-1",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "pasir-2",
+            "labelKey": "pasir-2",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "pasir-3",
+            "labelKey": "pasir-3",
+            "emoji": "🏖️"
+          },
+          {
+            "id": "pasir-4",
+            "labelKey": "pasir-4",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "jemuran",
+        "titleKey": "t-jemuran",
+        "steps": [
+          {
+            "id": "jemuran-1",
+            "labelKey": "jemuran-1",
+            "emoji": "👕"
+          },
+          {
+            "id": "jemuran-2",
+            "labelKey": "jemuran-2",
+            "emoji": "👕"
+          },
+          {
+            "id": "jemuran-3",
+            "labelKey": "jemuran-3",
+            "emoji": "👕"
+          },
+          {
+            "id": "jemuran-4",
+            "labelKey": "jemuran-4",
+            "emoji": "👕"
+          }
+        ]
+      },
+      {
+        "id": "burung",
+        "titleKey": "t-burung",
+        "steps": [
+          {
+            "id": "burung-1",
+            "labelKey": "burung-1",
+            "emoji": "🐦"
+          },
+          {
+            "id": "burung-2",
+            "labelKey": "burung-2",
+            "emoji": "🐛"
+          },
+          {
+            "id": "burung-3",
+            "labelKey": "burung-3",
+            "emoji": "🌳"
+          },
+          {
+            "id": "burung-4",
+            "labelKey": "burung-4",
+            "emoji": "🌇"
+          }
+        ]
+      },
+      {
+        "id": "bayangan-diri",
+        "titleKey": "t-bayangan-diri",
+        "steps": [
+          {
+            "id": "bayangan-diri-1",
+            "labelKey": "bayangan-diri-1",
+            "emoji": "🧍",
+            "width": 3
+          },
+          {
+            "id": "bayangan-diri-2",
+            "labelKey": "bayangan-diri-2",
+            "emoji": "🧍",
+            "width": 1.8
+          },
+          {
+            "id": "bayangan-diri-3",
+            "labelKey": "bayangan-diri-3",
+            "emoji": "🧍",
+            "width": 0.6
+          },
+          {
+            "id": "bayangan-diri-4",
+            "labelKey": "bayangan-diri-4",
+            "emoji": "🧍",
+            "width": 3.2
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd2-sains-susun-pola-pengamatan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -172436,7 +175259,32 @@ export const PAKET_RAW: unknown[] = [
         "pisang-a": "pisang hijau",
         "pisang-b": "pisang kuning",
         "pisang-c": "pisang berbintik cokelat",
-        "pisang-d": "pisang cokelat lembek"
+        "pisang-d": "pisang cokelat lembek",
+        "t-balon": "Balon dibiarkan berhari-hari",
+        "balon-1": "balon besar dan kencang",
+        "balon-2": "balon sedikit mengecil",
+        "balon-3": "balon kecil dan keriput",
+        "balon-4": "balon kempis",
+        "t-sabun": "Sabun mandi dipakai tiap hari",
+        "sabun-1": "sabun baru, besar",
+        "sabun-2": "sabun lebih kecil",
+        "sabun-3": "sabun tipis",
+        "sabun-4": "tinggal sepotong kecil",
+        "t-pensil": "Pensil diraut setiap hari",
+        "pensil-1": "pensil baru, panjang",
+        "pensil-2": "pensil lebih pendek",
+        "pensil-3": "pensil pendek",
+        "pensil-4": "pensil tinggal sangat pendek",
+        "t-es-krim": "Es krim di hari panas",
+        "es-krim-1": "es krim baru dibeli",
+        "es-krim-2": "es krim mulai meleleh",
+        "es-krim-3": "es krim meleleh dan menetes",
+        "es-krim-4": "tinggal cairan manis",
+        "t-mawar": "Bunga mawar di taman",
+        "mawar-1": "kuncup mawar tertutup",
+        "mawar-2": "kuncup mulai membuka",
+        "mawar-3": "mawar mekar penuh",
+        "mawar-4": "mawar layu"
       },
       "en": {
         "judul": "Patterns in Observations",
@@ -172464,7 +175312,32 @@ export const PAKET_RAW: unknown[] = [
         "pisang-a": "green banana",
         "pisang-b": "yellow banana",
         "pisang-c": "banana with brown spots",
-        "pisang-d": "soft brown banana"
+        "pisang-d": "soft brown banana",
+        "t-balon": "A balloon left for days",
+        "balon-1": "big, tight balloon",
+        "balon-2": "balloon a little smaller",
+        "balon-3": "small, wrinkly balloon",
+        "balon-4": "flat balloon",
+        "t-sabun": "A soap bar used every day",
+        "sabun-1": "new soap, big",
+        "sabun-2": "smaller soap",
+        "sabun-3": "thin soap",
+        "sabun-4": "just a tiny piece left",
+        "t-pensil": "A pencil sharpened every day",
+        "pensil-1": "new pencil, long",
+        "pensil-2": "shorter pencil",
+        "pensil-3": "short pencil",
+        "pensil-4": "very short pencil",
+        "t-es-krim": "Ice cream on a hot day",
+        "es-krim-1": "ice cream just bought",
+        "es-krim-2": "ice cream starting to melt",
+        "es-krim-3": "ice cream melting and dripping",
+        "es-krim-4": "only sweet liquid left",
+        "t-mawar": "A rose in the garden",
+        "mawar-1": "closed rosebud",
+        "mawar-2": "bud starting to open",
+        "mawar-3": "rose in full bloom",
+        "mawar-4": "wilted rose"
       }
     },
     "knobs": {
@@ -172624,12 +175497,162 @@ export const PAKET_RAW: unknown[] = [
             "color": "#6d4c41"
           }
         ]
+      },
+      {
+        "id": "balon",
+        "titleKey": "t-balon",
+        "steps": [
+          {
+            "id": "balon-1",
+            "labelKey": "balon-1",
+            "emoji": "🎈",
+            "scale": 1.4
+          },
+          {
+            "id": "balon-2",
+            "labelKey": "balon-2",
+            "emoji": "🎈",
+            "scale": 1
+          },
+          {
+            "id": "balon-3",
+            "labelKey": "balon-3",
+            "emoji": "🎈",
+            "scale": 0.7
+          },
+          {
+            "id": "balon-4",
+            "labelKey": "balon-4",
+            "emoji": "🎈",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "sabun",
+        "titleKey": "t-sabun",
+        "steps": [
+          {
+            "id": "sabun-1",
+            "labelKey": "sabun-1",
+            "emoji": "🧼",
+            "scale": 1.4
+          },
+          {
+            "id": "sabun-2",
+            "labelKey": "sabun-2",
+            "emoji": "🧼",
+            "scale": 1
+          },
+          {
+            "id": "sabun-3",
+            "labelKey": "sabun-3",
+            "emoji": "🧼",
+            "scale": 0.7
+          },
+          {
+            "id": "sabun-4",
+            "labelKey": "sabun-4",
+            "emoji": "🧼",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "pensil",
+        "titleKey": "t-pensil",
+        "steps": [
+          {
+            "id": "pensil-1",
+            "labelKey": "pensil-1",
+            "emoji": "✏️",
+            "scale": 1.4
+          },
+          {
+            "id": "pensil-2",
+            "labelKey": "pensil-2",
+            "emoji": "✏️",
+            "scale": 1
+          },
+          {
+            "id": "pensil-3",
+            "labelKey": "pensil-3",
+            "emoji": "✏️",
+            "scale": 0.7
+          },
+          {
+            "id": "pensil-4",
+            "labelKey": "pensil-4",
+            "emoji": "✏️",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "es-krim",
+        "titleKey": "t-es-krim",
+        "steps": [
+          {
+            "id": "es-krim-1",
+            "labelKey": "es-krim-1",
+            "emoji": "🍦",
+            "scale": 1.3
+          },
+          {
+            "id": "es-krim-2",
+            "labelKey": "es-krim-2",
+            "emoji": "🍦",
+            "scale": 1
+          },
+          {
+            "id": "es-krim-3",
+            "labelKey": "es-krim-3",
+            "emoji": "🍦",
+            "scale": 0.7
+          },
+          {
+            "id": "es-krim-4",
+            "labelKey": "es-krim-4",
+            "emoji": "💧",
+            "scale": 0.8
+          }
+        ]
+      },
+      {
+        "id": "mawar",
+        "titleKey": "t-mawar",
+        "steps": [
+          {
+            "id": "mawar-1",
+            "labelKey": "mawar-1",
+            "emoji": "🌹",
+            "scale": 0.6
+          },
+          {
+            "id": "mawar-2",
+            "labelKey": "mawar-2",
+            "emoji": "🌹",
+            "scale": 0.85
+          },
+          {
+            "id": "mawar-3",
+            "labelKey": "mawar-3",
+            "emoji": "🌹",
+            "scale": 1.2
+          },
+          {
+            "id": "mawar-4",
+            "labelKey": "mawar-4",
+            "emoji": "🥀",
+            "scale": 1
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-kode-perjalanan-pesan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -172667,7 +175690,49 @@ export const PAKET_RAW: unknown[] = [
         "panggilan-3": "panggilan lewat internet",
         "panggilan-4": "ponsel teman berdering",
         "panggilan-5": "teman mengangkat",
-        "panggilan-6": "kalian saling melihat"
+        "panggilan-6": "kalian saling melihat",
+        "t-surel": "Mengirim surel ke guru",
+        "surel-1": "tulis surel",
+        "surel-2": "klik kirim",
+        "surel-3": "surel lewat wifi ke router",
+        "surel-4": "surel lewat internet ke server surel",
+        "surel-5": "surel sampai di laptop guru",
+        "surel-6": "guru membaca surel",
+        "t-lagu": "Mendengarkan lagu daring",
+        "lagu-1": "cari judul lagu",
+        "lagu-2": "tekan putar",
+        "lagu-3": "permintaan lewat internet ke server",
+        "lagu-4": "server mengirim lagu",
+        "lagu-5": "lagu sampai di ponsel",
+        "lagu-6": "lagu terdengar di headset",
+        "t-printer": "Mencetak gambar lewat wifi",
+        "printer-1": "pilih gambar",
+        "printer-2": "klik cetak",
+        "printer-3": "data lewat wifi ke router",
+        "printer-4": "router meneruskan ke printer",
+        "printer-5": "printer mulai mencetak",
+        "printer-6": "gambar tercetak di kertas",
+        "t-pesan-suara": "Mengirim pesan suara",
+        "pesan-suara-1": "tekan dan tahan tombol rekam",
+        "pesan-suara-2": "ucapkan pesanmu",
+        "pesan-suara-3": "lepas tombol, pesan terkirim",
+        "pesan-suara-4": "pesan lewat internet ke server",
+        "pesan-suara-5": "pesan sampai di ponsel kakak",
+        "pesan-suara-6": "kakak mendengarkan pesan",
+        "t-situs": "Membuka situs sekolah",
+        "situs-1": "ketik alamat situs",
+        "situs-2": "tekan enter",
+        "situs-3": "permintaan lewat wifi ke router",
+        "situs-4": "permintaan lewat internet ke server sekolah",
+        "situs-5": "server mengirim halaman",
+        "situs-6": "halaman muncul di layar",
+        "t-stiker": "Mengirim stiker ke grup kelas",
+        "stiker-1": "pilih stiker kucing",
+        "stiker-2": "tekan kirim ke grup",
+        "stiker-3": "stiker lewat internet ke server",
+        "stiker-4": "server meneruskan ke semua anggota grup",
+        "stiker-5": "ponsel teman-teman bergetar",
+        "stiker-6": "teman-teman tertawa"
       },
       "en": {
         "judul": "A Message's Journey",
@@ -172699,7 +175764,49 @@ export const PAKET_RAW: unknown[] = [
         "panggilan-3": "the call travels over the internet",
         "panggilan-4": "your friend's phone rings",
         "panggilan-5": "your friend answers",
-        "panggilan-6": "you see each other"
+        "panggilan-6": "you see each other",
+        "t-surel": "Emailing your teacher",
+        "surel-1": "write the email",
+        "surel-2": "click send",
+        "surel-3": "the email goes over wifi to the router",
+        "surel-4": "the email travels over the internet to the mail server",
+        "surel-5": "the email reaches the teacher's laptop",
+        "surel-6": "the teacher reads the email",
+        "t-lagu": "Listening to a song online",
+        "lagu-1": "search for the song title",
+        "lagu-2": "press play",
+        "lagu-3": "the request travels over the internet to the server",
+        "lagu-4": "the server sends the song",
+        "lagu-5": "the song reaches the phone",
+        "lagu-6": "you hear the song in your headphones",
+        "t-printer": "Printing a picture over wifi",
+        "printer-1": "choose a picture",
+        "printer-2": "click print",
+        "printer-3": "the data goes over wifi to the router",
+        "printer-4": "the router passes it to the printer",
+        "printer-5": "the printer starts printing",
+        "printer-6": "the picture is on paper",
+        "t-pesan-suara": "Sending a voice message",
+        "pesan-suara-1": "press and hold the record button",
+        "pesan-suara-2": "say your message",
+        "pesan-suara-3": "let go, the message is sent",
+        "pesan-suara-4": "the message travels over the internet to the server",
+        "pesan-suara-5": "the message reaches your sister's phone",
+        "pesan-suara-6": "your sister listens to it",
+        "t-situs": "Opening the school website",
+        "situs-1": "type the website address",
+        "situs-2": "press enter",
+        "situs-3": "the request goes over wifi to the router",
+        "situs-4": "the request travels over the internet to the school server",
+        "situs-5": "the server sends the page",
+        "situs-6": "the page appears on screen",
+        "t-stiker": "Sending a sticker to the class group",
+        "stiker-1": "choose a cat sticker",
+        "stiker-2": "press send to the group",
+        "stiker-3": "the sticker travels over the internet to the server",
+        "stiker-4": "the server passes it to everyone in the group",
+        "stiker-5": "your friends' phones buzz",
+        "stiker-6": "your friends laugh"
       }
     },
     "knobs": {
@@ -172860,12 +175967,228 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "😊"
           }
         ]
+      },
+      {
+        "id": "surel",
+        "titleKey": "t-surel",
+        "steps": [
+          {
+            "id": "surel-1",
+            "labelKey": "surel-1",
+            "emoji": "✍️"
+          },
+          {
+            "id": "surel-2",
+            "labelKey": "surel-2",
+            "emoji": "📤"
+          },
+          {
+            "id": "surel-3",
+            "labelKey": "surel-3",
+            "emoji": "📶"
+          },
+          {
+            "id": "surel-4",
+            "labelKey": "surel-4",
+            "emoji": "🌐"
+          },
+          {
+            "id": "surel-5",
+            "labelKey": "surel-5",
+            "emoji": "💻"
+          },
+          {
+            "id": "surel-6",
+            "labelKey": "surel-6",
+            "emoji": "👩‍🏫"
+          }
+        ]
+      },
+      {
+        "id": "lagu",
+        "titleKey": "t-lagu",
+        "steps": [
+          {
+            "id": "lagu-1",
+            "labelKey": "lagu-1",
+            "emoji": "🔍"
+          },
+          {
+            "id": "lagu-2",
+            "labelKey": "lagu-2",
+            "emoji": "▶️"
+          },
+          {
+            "id": "lagu-3",
+            "labelKey": "lagu-3",
+            "emoji": "🌐"
+          },
+          {
+            "id": "lagu-4",
+            "labelKey": "lagu-4",
+            "emoji": "🗄️"
+          },
+          {
+            "id": "lagu-5",
+            "labelKey": "lagu-5",
+            "emoji": "📱"
+          },
+          {
+            "id": "lagu-6",
+            "labelKey": "lagu-6",
+            "emoji": "🎧"
+          }
+        ]
+      },
+      {
+        "id": "printer",
+        "titleKey": "t-printer",
+        "steps": [
+          {
+            "id": "printer-1",
+            "labelKey": "printer-1",
+            "emoji": "🖼️"
+          },
+          {
+            "id": "printer-2",
+            "labelKey": "printer-2",
+            "emoji": "🖱️"
+          },
+          {
+            "id": "printer-3",
+            "labelKey": "printer-3",
+            "emoji": "📶"
+          },
+          {
+            "id": "printer-4",
+            "labelKey": "printer-4",
+            "emoji": "📡"
+          },
+          {
+            "id": "printer-5",
+            "labelKey": "printer-5",
+            "emoji": "🖨️"
+          },
+          {
+            "id": "printer-6",
+            "labelKey": "printer-6",
+            "emoji": "📄"
+          }
+        ]
+      },
+      {
+        "id": "pesan-suara",
+        "titleKey": "t-pesan-suara",
+        "steps": [
+          {
+            "id": "pesan-suara-1",
+            "labelKey": "pesan-suara-1",
+            "emoji": "🎙️"
+          },
+          {
+            "id": "pesan-suara-2",
+            "labelKey": "pesan-suara-2",
+            "emoji": "🗣️"
+          },
+          {
+            "id": "pesan-suara-3",
+            "labelKey": "pesan-suara-3",
+            "emoji": "📤"
+          },
+          {
+            "id": "pesan-suara-4",
+            "labelKey": "pesan-suara-4",
+            "emoji": "🌐"
+          },
+          {
+            "id": "pesan-suara-5",
+            "labelKey": "pesan-suara-5",
+            "emoji": "📱"
+          },
+          {
+            "id": "pesan-suara-6",
+            "labelKey": "pesan-suara-6",
+            "emoji": "👂"
+          }
+        ]
+      },
+      {
+        "id": "situs",
+        "titleKey": "t-situs",
+        "steps": [
+          {
+            "id": "situs-1",
+            "labelKey": "situs-1",
+            "emoji": "⌨️"
+          },
+          {
+            "id": "situs-2",
+            "labelKey": "situs-2",
+            "emoji": "↩️"
+          },
+          {
+            "id": "situs-3",
+            "labelKey": "situs-3",
+            "emoji": "📶"
+          },
+          {
+            "id": "situs-4",
+            "labelKey": "situs-4",
+            "emoji": "🌐"
+          },
+          {
+            "id": "situs-5",
+            "labelKey": "situs-5",
+            "emoji": "🗄️"
+          },
+          {
+            "id": "situs-6",
+            "labelKey": "situs-6",
+            "emoji": "🖥️"
+          }
+        ]
+      },
+      {
+        "id": "stiker",
+        "titleKey": "t-stiker",
+        "steps": [
+          {
+            "id": "stiker-1",
+            "labelKey": "stiker-1",
+            "emoji": "😺"
+          },
+          {
+            "id": "stiker-2",
+            "labelKey": "stiker-2",
+            "emoji": "📤"
+          },
+          {
+            "id": "stiker-3",
+            "labelKey": "stiker-3",
+            "emoji": "🌐"
+          },
+          {
+            "id": "stiker-4",
+            "labelKey": "stiker-4",
+            "emoji": "🗄️"
+          },
+          {
+            "id": "stiker-5",
+            "labelKey": "stiker-5",
+            "emoji": "📳"
+          },
+          {
+            "id": "stiker-6",
+            "labelKey": "stiker-6",
+            "emoji": "😄"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-kode-sunting-algoritma",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -172925,7 +176248,43 @@ export const PAKET_RAW: unknown[] = [
         "remote-4": "tutup lagi",
         "remote-5": "arahkan ke TV",
         "remote-6": "tekan tombol daya",
-        "remote-7": "TV menyala"
+        "remote-7": "TV menyala",
+        "t-pesan-makanan": "Memesan makanan lewat aplikasi",
+        "pesan-makanan-1": "buka aplikasi pesan antar",
+        "pesan-makanan-2": "pilih makanan",
+        "pesan-makanan-3": "masukkan ke keranjang",
+        "pesan-makanan-4": "bayar pesanan",
+        "pesan-makanan-5": "restoran memasak makanan",
+        "pesan-makanan-6": "kurir mengantar makanan",
+        "pesan-makanan-7": "kurir mengetuk pintu",
+        "pesan-makanan-8": "makan bersama keluarga",
+        "t-pesawat": "Naik pesawat",
+        "pesawat-1": "bawa koper ke bandara",
+        "pesawat-2": "lapor dan ambil tiket naik",
+        "pesawat-3": "lewati pemeriksaan keamanan",
+        "pesawat-4": "tunggu di ruang tunggu",
+        "pesawat-5": "naik ke pesawat",
+        "pesawat-6": "pasang sabuk pengaman",
+        "pesawat-7": "pesawat lepas landas",
+        "pesawat-8": "pesawat mendarat",
+        "t-dokter": "Berobat ke dokter",
+        "dokter-1": "datang ke klinik",
+        "dokter-2": "daftar di meja pendaftaran",
+        "dokter-3": "tunggu namamu dipanggil",
+        "dokter-4": "masuk ke ruang dokter",
+        "dokter-5": "dokter memeriksamu",
+        "dokter-6": "dokter menulis resep",
+        "dokter-7": "ambil obat di apotek",
+        "dokter-8": "pulang dan beristirahat",
+        "t-video-tugas": "Membuat video tugas",
+        "video-tugas-1": "buka kamera tablet",
+        "video-tugas-2": "tekan tombol rekam",
+        "video-tugas-3": "jelaskan hasil karyamu",
+        "video-tugas-4": "tekan tombol berhenti",
+        "video-tugas-5": "tonton ulang videonya",
+        "video-tugas-6": "potong bagian yang salah",
+        "video-tugas-7": "simpan videonya",
+        "video-tugas-8": "kirim video ke guru"
       },
       "en": {
         "judul": "Edit a Long Algorithm",
@@ -172979,7 +176338,43 @@ export const PAKET_RAW: unknown[] = [
         "remote-4": "close it again",
         "remote-5": "point it at the TV",
         "remote-6": "press the power button",
-        "remote-7": "the TV turns on"
+        "remote-7": "the TV turns on",
+        "t-pesan-makanan": "Ordering food on an app",
+        "pesan-makanan-1": "open the delivery app",
+        "pesan-makanan-2": "choose your food",
+        "pesan-makanan-3": "add it to the basket",
+        "pesan-makanan-4": "pay for the order",
+        "pesan-makanan-5": "the restaurant cooks the food",
+        "pesan-makanan-6": "the rider delivers the food",
+        "pesan-makanan-7": "the rider knocks on the door",
+        "pesan-makanan-8": "eat with your family",
+        "t-pesawat": "Taking a plane",
+        "pesawat-1": "take your suitcase to the airport",
+        "pesawat-2": "check in and get a boarding pass",
+        "pesawat-3": "go through the security check",
+        "pesawat-4": "wait in the departure lounge",
+        "pesawat-5": "board the plane",
+        "pesawat-6": "fasten your seat belt",
+        "pesawat-7": "the plane takes off",
+        "pesawat-8": "the plane lands",
+        "t-dokter": "Visiting the doctor",
+        "dokter-1": "arrive at the clinic",
+        "dokter-2": "register at the front desk",
+        "dokter-3": "wait for your name to be called",
+        "dokter-4": "go into the doctor's room",
+        "dokter-5": "the doctor examines you",
+        "dokter-6": "the doctor writes a prescription",
+        "dokter-7": "collect medicine at the pharmacy",
+        "dokter-8": "go home and rest",
+        "t-video-tugas": "Making a video for homework",
+        "video-tugas-1": "open the tablet camera",
+        "video-tugas-2": "press record",
+        "video-tugas-3": "explain your work",
+        "video-tugas-4": "press stop",
+        "video-tugas-5": "watch the video back",
+        "video-tugas-6": "cut out the mistakes",
+        "video-tugas-7": "save the video",
+        "video-tugas-8": "send the video to your teacher"
       }
     },
     "knobs": {
@@ -173250,6 +176645,190 @@ export const PAKET_RAW: unknown[] = [
             "id": "remote-7",
             "labelKey": "remote-7",
             "emoji": "✨"
+          }
+        ]
+      },
+      {
+        "id": "pesan-makanan",
+        "titleKey": "t-pesan-makanan",
+        "steps": [
+          {
+            "id": "pesan-makanan-1",
+            "labelKey": "pesan-makanan-1",
+            "emoji": "📱"
+          },
+          {
+            "id": "pesan-makanan-2",
+            "labelKey": "pesan-makanan-2",
+            "emoji": "🍔"
+          },
+          {
+            "id": "pesan-makanan-3",
+            "labelKey": "pesan-makanan-3",
+            "emoji": "🛒"
+          },
+          {
+            "id": "pesan-makanan-4",
+            "labelKey": "pesan-makanan-4",
+            "emoji": "💳"
+          },
+          {
+            "id": "pesan-makanan-5",
+            "labelKey": "pesan-makanan-5",
+            "emoji": "🧑‍🍳"
+          },
+          {
+            "id": "pesan-makanan-6",
+            "labelKey": "pesan-makanan-6",
+            "emoji": "🛵"
+          },
+          {
+            "id": "pesan-makanan-7",
+            "labelKey": "pesan-makanan-7",
+            "emoji": "🚪"
+          },
+          {
+            "id": "pesan-makanan-8",
+            "labelKey": "pesan-makanan-8",
+            "emoji": "😋"
+          }
+        ]
+      },
+      {
+        "id": "pesawat",
+        "titleKey": "t-pesawat",
+        "steps": [
+          {
+            "id": "pesawat-1",
+            "labelKey": "pesawat-1",
+            "emoji": "🧳"
+          },
+          {
+            "id": "pesawat-2",
+            "labelKey": "pesawat-2",
+            "emoji": "🎫"
+          },
+          {
+            "id": "pesawat-3",
+            "labelKey": "pesawat-3",
+            "emoji": "🔍"
+          },
+          {
+            "id": "pesawat-4",
+            "labelKey": "pesawat-4",
+            "emoji": "🪑"
+          },
+          {
+            "id": "pesawat-5",
+            "labelKey": "pesawat-5",
+            "emoji": "🚶"
+          },
+          {
+            "id": "pesawat-6",
+            "labelKey": "pesawat-6",
+            "emoji": "💺"
+          },
+          {
+            "id": "pesawat-7",
+            "labelKey": "pesawat-7",
+            "emoji": "🛫"
+          },
+          {
+            "id": "pesawat-8",
+            "labelKey": "pesawat-8",
+            "emoji": "🛬"
+          }
+        ]
+      },
+      {
+        "id": "dokter",
+        "titleKey": "t-dokter",
+        "steps": [
+          {
+            "id": "dokter-1",
+            "labelKey": "dokter-1",
+            "emoji": "🏥"
+          },
+          {
+            "id": "dokter-2",
+            "labelKey": "dokter-2",
+            "emoji": "📝"
+          },
+          {
+            "id": "dokter-3",
+            "labelKey": "dokter-3",
+            "emoji": "🪑"
+          },
+          {
+            "id": "dokter-4",
+            "labelKey": "dokter-4",
+            "emoji": "🚪"
+          },
+          {
+            "id": "dokter-5",
+            "labelKey": "dokter-5",
+            "emoji": "🩺"
+          },
+          {
+            "id": "dokter-6",
+            "labelKey": "dokter-6",
+            "emoji": "📄"
+          },
+          {
+            "id": "dokter-7",
+            "labelKey": "dokter-7",
+            "emoji": "💊"
+          },
+          {
+            "id": "dokter-8",
+            "labelKey": "dokter-8",
+            "emoji": "🛌"
+          }
+        ]
+      },
+      {
+        "id": "video-tugas",
+        "titleKey": "t-video-tugas",
+        "steps": [
+          {
+            "id": "video-tugas-1",
+            "labelKey": "video-tugas-1",
+            "emoji": "📱"
+          },
+          {
+            "id": "video-tugas-2",
+            "labelKey": "video-tugas-2",
+            "emoji": "🔴"
+          },
+          {
+            "id": "video-tugas-3",
+            "labelKey": "video-tugas-3",
+            "emoji": "🗣️"
+          },
+          {
+            "id": "video-tugas-4",
+            "labelKey": "video-tugas-4",
+            "emoji": "⏹️"
+          },
+          {
+            "id": "video-tugas-5",
+            "labelKey": "video-tugas-5",
+            "emoji": "▶️"
+          },
+          {
+            "id": "video-tugas-6",
+            "labelKey": "video-tugas-6",
+            "emoji": "✂️"
+          },
+          {
+            "id": "video-tugas-7",
+            "labelKey": "video-tugas-7",
+            "emoji": "💾"
+          },
+          {
+            "id": "video-tugas-8",
+            "labelKey": "video-tugas-8",
+            "emoji": "📤"
           }
         ]
       }
@@ -175238,7 +178817,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-bayangan-besar-kecil",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -175268,7 +178847,37 @@ export const PAKET_RAW: unknown[] = [
         "kunci-p1": "kunci tepat di depan senter",
         "kunci-p2": "kunci agak dekat senter",
         "kunci-p3": "kunci di tengah",
-        "kunci-p4": "kunci dekat layar"
+        "kunci-p4": "kunci dekat layar",
+        "t-bintang": "Bayangan bintang kertas",
+        "bintang-1": "bintang tepat di depan senter",
+        "bintang-2": "bintang agak dekat senter",
+        "bintang-3": "bintang di tengah",
+        "bintang-4": "bintang dekat layar",
+        "t-kupu": "Bayangan kupu-kupu kertas",
+        "kupu-1": "kupu-kupu tepat di depan senter",
+        "kupu-2": "kupu-kupu agak dekat senter",
+        "kupu-3": "kupu-kupu di tengah",
+        "kupu-4": "kupu-kupu dekat layar",
+        "t-mobil": "Bayangan mobil mainan",
+        "mobil-1": "mobil tepat di depan senter",
+        "mobil-2": "mobil agak dekat senter",
+        "mobil-3": "mobil di tengah",
+        "mobil-4": "mobil dekat layar",
+        "t-gunting": "Bayangan gunting",
+        "gunting-1": "gunting tepat di depan senter",
+        "gunting-2": "gunting agak dekat senter",
+        "gunting-3": "gunting di tengah",
+        "gunting-4": "gunting dekat layar",
+        "t-apel": "Bayangan apel",
+        "apel-1": "apel tepat di depan senter",
+        "apel-2": "apel agak dekat senter",
+        "apel-3": "apel di tengah",
+        "apel-4": "apel dekat layar",
+        "t-pensil": "Bayangan pensil",
+        "pensil-1": "pensil tepat di depan senter",
+        "pensil-2": "pensil agak dekat senter",
+        "pensil-3": "pensil di tengah",
+        "pensil-4": "pensil dekat layar"
       },
       "en": {
         "judul": "Shadows Grow and Shrink",
@@ -175292,7 +178901,37 @@ export const PAKET_RAW: unknown[] = [
         "kunci-p1": "key right in front of the torch",
         "kunci-p2": "key fairly close to the torch",
         "kunci-p3": "key halfway",
-        "kunci-p4": "key close to the screen"
+        "kunci-p4": "key close to the screen",
+        "t-bintang": "Shadow of a paper star",
+        "bintang-1": "star right in front of the torch",
+        "bintang-2": "star fairly close to the torch",
+        "bintang-3": "star in the middle",
+        "bintang-4": "star close to the screen",
+        "t-kupu": "Shadow of a paper butterfly",
+        "kupu-1": "butterfly right in front of the torch",
+        "kupu-2": "butterfly fairly close to the torch",
+        "kupu-3": "butterfly in the middle",
+        "kupu-4": "butterfly close to the screen",
+        "t-mobil": "Shadow of a toy car",
+        "mobil-1": "car right in front of the torch",
+        "mobil-2": "car fairly close to the torch",
+        "mobil-3": "car in the middle",
+        "mobil-4": "car close to the screen",
+        "t-gunting": "Shadow of scissors",
+        "gunting-1": "scissors right in front of the torch",
+        "gunting-2": "scissors fairly close to the torch",
+        "gunting-3": "scissors in the middle",
+        "gunting-4": "scissors close to the screen",
+        "t-apel": "Shadow of an apple",
+        "apel-1": "apple right in front of the torch",
+        "apel-2": "apple fairly close to the torch",
+        "apel-3": "apple in the middle",
+        "apel-4": "apple close to the screen",
+        "t-pensil": "Shadow of a pencil",
+        "pensil-1": "pencil right in front of the torch",
+        "pensil-2": "pencil fairly close to the torch",
+        "pensil-3": "pencil in the middle",
+        "pensil-4": "pencil close to the screen"
       }
     },
     "knobs": {
@@ -175413,12 +179052,168 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🔑"
           }
         ]
+      },
+      {
+        "id": "bintang",
+        "titleKey": "t-bintang",
+        "steps": [
+          {
+            "id": "bintang-1",
+            "labelKey": "bintang-1",
+            "emoji": "⭐"
+          },
+          {
+            "id": "bintang-2",
+            "labelKey": "bintang-2",
+            "emoji": "⭐"
+          },
+          {
+            "id": "bintang-3",
+            "labelKey": "bintang-3",
+            "emoji": "⭐"
+          },
+          {
+            "id": "bintang-4",
+            "labelKey": "bintang-4",
+            "emoji": "⭐"
+          }
+        ]
+      },
+      {
+        "id": "kupu",
+        "titleKey": "t-kupu",
+        "steps": [
+          {
+            "id": "kupu-1",
+            "labelKey": "kupu-1",
+            "emoji": "🦋"
+          },
+          {
+            "id": "kupu-2",
+            "labelKey": "kupu-2",
+            "emoji": "🦋"
+          },
+          {
+            "id": "kupu-3",
+            "labelKey": "kupu-3",
+            "emoji": "🦋"
+          },
+          {
+            "id": "kupu-4",
+            "labelKey": "kupu-4",
+            "emoji": "🦋"
+          }
+        ]
+      },
+      {
+        "id": "mobil",
+        "titleKey": "t-mobil",
+        "steps": [
+          {
+            "id": "mobil-1",
+            "labelKey": "mobil-1",
+            "emoji": "🚗"
+          },
+          {
+            "id": "mobil-2",
+            "labelKey": "mobil-2",
+            "emoji": "🚗"
+          },
+          {
+            "id": "mobil-3",
+            "labelKey": "mobil-3",
+            "emoji": "🚗"
+          },
+          {
+            "id": "mobil-4",
+            "labelKey": "mobil-4",
+            "emoji": "🚗"
+          }
+        ]
+      },
+      {
+        "id": "gunting",
+        "titleKey": "t-gunting",
+        "steps": [
+          {
+            "id": "gunting-1",
+            "labelKey": "gunting-1",
+            "emoji": "✂️"
+          },
+          {
+            "id": "gunting-2",
+            "labelKey": "gunting-2",
+            "emoji": "✂️"
+          },
+          {
+            "id": "gunting-3",
+            "labelKey": "gunting-3",
+            "emoji": "✂️"
+          },
+          {
+            "id": "gunting-4",
+            "labelKey": "gunting-4",
+            "emoji": "✂️"
+          }
+        ]
+      },
+      {
+        "id": "apel",
+        "titleKey": "t-apel",
+        "steps": [
+          {
+            "id": "apel-1",
+            "labelKey": "apel-1",
+            "emoji": "🍎"
+          },
+          {
+            "id": "apel-2",
+            "labelKey": "apel-2",
+            "emoji": "🍎"
+          },
+          {
+            "id": "apel-3",
+            "labelKey": "apel-3",
+            "emoji": "🍎"
+          },
+          {
+            "id": "apel-4",
+            "labelKey": "apel-4",
+            "emoji": "🍎"
+          }
+        ]
+      },
+      {
+        "id": "pensil",
+        "titleKey": "t-pensil",
+        "steps": [
+          {
+            "id": "pensil-1",
+            "labelKey": "pensil-1",
+            "emoji": "✏️"
+          },
+          {
+            "id": "pensil-2",
+            "labelKey": "pensil-2",
+            "emoji": "✏️"
+          },
+          {
+            "id": "pensil-3",
+            "labelKey": "pensil-3",
+            "emoji": "✏️"
+          },
+          {
+            "id": "pensil-4",
+            "labelKey": "pensil-4",
+            "emoji": "✏️"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-bentuk-bulan-berubah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -175448,7 +179243,36 @@ export const PAKET_RAW: unknown[] = [
         "sebulan-purnama": "purnama",
         "sebulan-cembung2": "mulai berkurang",
         "sebulan-separuh2": "separuh akhir",
-        "sebulan-sabit2": "sabit tua"
+        "sebulan-sabit2": "sabit tua",
+        "t-terang-lanjut": "Bulan makin terang, malam demi malam",
+        "terang-lanjut-1": "separuh terang",
+        "terang-lanjut-2": "hampir bulat",
+        "terang-lanjut-3": "purnama",
+        "t-tipis-lanjut": "Bulan makin tipis, malam demi malam",
+        "tipis-lanjut-1": "mulai berkurang",
+        "tipis-lanjut-2": "separuh terang",
+        "tipis-lanjut-3": "sabit tipis",
+        "tipis-lanjut-4": "bulan baru, hampir tak terlihat",
+        "t-tipis-akhir": "Bulan makin tipis di akhir bulan",
+        "tipis-akhir-1": "separuh terang",
+        "tipis-akhir-2": "sabit tipis",
+        "tipis-akhir-3": "bulan baru, hampir tak terlihat",
+        "t-terang-mingguan": "Bulan makin terang, dilihat seminggu sekali",
+        "terang-mingguan-1": "bulan baru, hampir tak terlihat",
+        "terang-mingguan-2": "separuh terang",
+        "terang-mingguan-3": "purnama",
+        "t-tipis-mingguan": "Bulan makin tipis, dilihat seminggu sekali",
+        "tipis-mingguan-1": "purnama",
+        "tipis-mingguan-2": "separuh terang",
+        "tipis-mingguan-3": "bulan baru, hampir tak terlihat",
+        "t-terang-loncat": "Bulan makin terang, dilihat beberapa malam sekali",
+        "terang-loncat-1": "sabit tipis",
+        "terang-loncat-2": "separuh terang",
+        "terang-loncat-3": "purnama",
+        "t-tipis-loncat": "Bulan makin tipis, dilihat beberapa malam sekali",
+        "tipis-loncat-1": "purnama",
+        "tipis-loncat-2": "mulai berkurang",
+        "tipis-loncat-3": "sabit tipis"
       },
       "en": {
         "judul": "The Moon Night by Night",
@@ -175472,7 +179296,36 @@ export const PAKET_RAW: unknown[] = [
         "sebulan-purnama": "full moon",
         "sebulan-cembung2": "starting to shrink",
         "sebulan-separuh2": "last half",
-        "sebulan-sabit2": "old crescent"
+        "sebulan-sabit2": "old crescent",
+        "t-terang-lanjut": "The Moon grows brighter, night after night",
+        "terang-lanjut-1": "half lit",
+        "terang-lanjut-2": "almost round",
+        "terang-lanjut-3": "full moon",
+        "t-tipis-lanjut": "The Moon grows thinner, night after night",
+        "tipis-lanjut-1": "starting to shrink",
+        "tipis-lanjut-2": "half lit",
+        "tipis-lanjut-3": "thin crescent",
+        "tipis-lanjut-4": "new moon, almost invisible",
+        "t-tipis-akhir": "The Moon grows thinner at the end of the month",
+        "tipis-akhir-1": "half lit",
+        "tipis-akhir-2": "thin crescent",
+        "tipis-akhir-3": "new moon, almost invisible",
+        "t-terang-mingguan": "The Moon grows brighter, seen once a week",
+        "terang-mingguan-1": "new moon, almost invisible",
+        "terang-mingguan-2": "half lit",
+        "terang-mingguan-3": "full moon",
+        "t-tipis-mingguan": "The Moon grows thinner, seen once a week",
+        "tipis-mingguan-1": "full moon",
+        "tipis-mingguan-2": "half lit",
+        "tipis-mingguan-3": "new moon, almost invisible",
+        "t-terang-loncat": "The Moon grows brighter, seen every few nights",
+        "terang-loncat-1": "thin crescent",
+        "terang-loncat-2": "half lit",
+        "terang-loncat-3": "full moon",
+        "t-tipis-loncat": "The Moon grows thinner, seen every few nights",
+        "tipis-loncat-1": "full moon",
+        "tipis-loncat-2": "starting to shrink",
+        "tipis-loncat-3": "thin crescent"
       }
     },
     "knobs": {
@@ -175592,12 +179445,164 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🌘"
           }
         ]
+      },
+      {
+        "id": "terang-lanjut",
+        "titleKey": "t-terang-lanjut",
+        "steps": [
+          {
+            "id": "terang-lanjut-1",
+            "labelKey": "terang-lanjut-1",
+            "emoji": "🌓"
+          },
+          {
+            "id": "terang-lanjut-2",
+            "labelKey": "terang-lanjut-2",
+            "emoji": "🌔"
+          },
+          {
+            "id": "terang-lanjut-3",
+            "labelKey": "terang-lanjut-3",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "tipis-lanjut",
+        "titleKey": "t-tipis-lanjut",
+        "steps": [
+          {
+            "id": "tipis-lanjut-1",
+            "labelKey": "tipis-lanjut-1",
+            "emoji": "🌖"
+          },
+          {
+            "id": "tipis-lanjut-2",
+            "labelKey": "tipis-lanjut-2",
+            "emoji": "🌗"
+          },
+          {
+            "id": "tipis-lanjut-3",
+            "labelKey": "tipis-lanjut-3",
+            "emoji": "🌘"
+          },
+          {
+            "id": "tipis-lanjut-4",
+            "labelKey": "tipis-lanjut-4",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "tipis-akhir",
+        "titleKey": "t-tipis-akhir",
+        "steps": [
+          {
+            "id": "tipis-akhir-1",
+            "labelKey": "tipis-akhir-1",
+            "emoji": "🌗"
+          },
+          {
+            "id": "tipis-akhir-2",
+            "labelKey": "tipis-akhir-2",
+            "emoji": "🌘"
+          },
+          {
+            "id": "tipis-akhir-3",
+            "labelKey": "tipis-akhir-3",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "terang-mingguan",
+        "titleKey": "t-terang-mingguan",
+        "steps": [
+          {
+            "id": "terang-mingguan-1",
+            "labelKey": "terang-mingguan-1",
+            "emoji": "🌑"
+          },
+          {
+            "id": "terang-mingguan-2",
+            "labelKey": "terang-mingguan-2",
+            "emoji": "🌓"
+          },
+          {
+            "id": "terang-mingguan-3",
+            "labelKey": "terang-mingguan-3",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "tipis-mingguan",
+        "titleKey": "t-tipis-mingguan",
+        "steps": [
+          {
+            "id": "tipis-mingguan-1",
+            "labelKey": "tipis-mingguan-1",
+            "emoji": "🌕"
+          },
+          {
+            "id": "tipis-mingguan-2",
+            "labelKey": "tipis-mingguan-2",
+            "emoji": "🌗"
+          },
+          {
+            "id": "tipis-mingguan-3",
+            "labelKey": "tipis-mingguan-3",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "terang-loncat",
+        "titleKey": "t-terang-loncat",
+        "steps": [
+          {
+            "id": "terang-loncat-1",
+            "labelKey": "terang-loncat-1",
+            "emoji": "🌒"
+          },
+          {
+            "id": "terang-loncat-2",
+            "labelKey": "terang-loncat-2",
+            "emoji": "🌓"
+          },
+          {
+            "id": "terang-loncat-3",
+            "labelKey": "terang-loncat-3",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "tipis-loncat",
+        "titleKey": "t-tipis-loncat",
+        "steps": [
+          {
+            "id": "tipis-loncat-1",
+            "labelKey": "tipis-loncat-1",
+            "emoji": "🌕"
+          },
+          {
+            "id": "tipis-loncat-2",
+            "labelKey": "tipis-loncat-2",
+            "emoji": "🌖"
+          },
+          {
+            "id": "tipis-loncat-3",
+            "labelKey": "tipis-loncat-3",
+            "emoji": "🌘"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-licin-sampai-kasar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -175622,7 +179627,42 @@ export const PAKET_RAW: unknown[] = [
         "kelereng-ubin": "ubin licin",
         "kelereng-kayu": "papan kayu",
         "kelereng-handuk": "handuk tebal",
-        "kelereng-pasir": "pasir"
+        "kelereng-pasir": "pasir",
+        "t-buku": "Buku didorong sama kuat",
+        "buku-1": "lantai es",
+        "buku-2": "papan kayu",
+        "buku-3": "handuk tebal",
+        "buku-4": "pasir",
+        "t-kaleng": "Kaleng didorong sama kuat",
+        "kaleng-1": "lantai es",
+        "kaleng-2": "meja kaca",
+        "kaleng-3": "karpet berbulu",
+        "kaleng-4": "jalan berkerikil",
+        "t-balok": "Balok kayu didorong sama kuat",
+        "balok-1": "cermin yang diletakkan datar",
+        "balok-2": "papan kayu",
+        "balok-3": "karpet berbulu",
+        "balok-4": "jalan berkerikil",
+        "t-mangkuk": "Mangkuk plastik didorong sama kuat",
+        "mangkuk-1": "lantai keramik mengilap",
+        "mangkuk-2": "papan kayu",
+        "mangkuk-3": "karpet berbulu",
+        "mangkuk-4": "pasir",
+        "t-kotak-sepatu": "Kotak sepatu didorong sama kuat",
+        "kotak-sepatu-1": "lantai es",
+        "kotak-sepatu-2": "ubin licin",
+        "kotak-sepatu-3": "handuk tebal",
+        "kotak-sepatu-4": "jalan berkerikil",
+        "t-kardus": "Kardus didorong sama kuat",
+        "kardus-1": "lantai es",
+        "kardus-2": "cermin yang diletakkan datar",
+        "kardus-3": "papan kayu",
+        "kardus-4": "pasir",
+        "t-botol": "Botol plastik didorong sama kuat",
+        "botol-1": "lantai es",
+        "botol-2": "meja kaca",
+        "botol-3": "papan kayu",
+        "botol-4": "handuk tebal"
       },
       "en": {
         "judul": "Slides the Farthest",
@@ -175641,7 +179681,42 @@ export const PAKET_RAW: unknown[] = [
         "kelereng-ubin": "smooth tiles",
         "kelereng-kayu": "wooden board",
         "kelereng-handuk": "thick towel",
-        "kelereng-pasir": "sand"
+        "kelereng-pasir": "sand",
+        "t-buku": "A book pushed equally hard",
+        "buku-1": "ice floor",
+        "buku-2": "wooden board",
+        "buku-3": "thick towel",
+        "buku-4": "sand",
+        "t-kaleng": "A tin pushed equally hard",
+        "kaleng-1": "ice floor",
+        "kaleng-2": "glass table",
+        "kaleng-3": "fluffy carpet",
+        "kaleng-4": "gravel path",
+        "t-balok": "A wooden block pushed equally hard",
+        "balok-1": "a mirror laid flat",
+        "balok-2": "wooden board",
+        "balok-3": "fluffy carpet",
+        "balok-4": "gravel path",
+        "t-mangkuk": "A plastic bowl pushed equally hard",
+        "mangkuk-1": "shiny tiled floor",
+        "mangkuk-2": "wooden board",
+        "mangkuk-3": "fluffy carpet",
+        "mangkuk-4": "sand",
+        "t-kotak-sepatu": "A shoebox pushed equally hard",
+        "kotak-sepatu-1": "ice floor",
+        "kotak-sepatu-2": "smooth tiles",
+        "kotak-sepatu-3": "thick towel",
+        "kotak-sepatu-4": "gravel path",
+        "t-kardus": "A cardboard box pushed equally hard",
+        "kardus-1": "ice floor",
+        "kardus-2": "a mirror laid flat",
+        "kardus-3": "wooden board",
+        "kardus-4": "sand",
+        "t-botol": "A plastic bottle pushed equally hard",
+        "botol-1": "ice floor",
+        "botol-2": "glass table",
+        "botol-3": "wooden board",
+        "botol-4": "thick towel"
       }
     },
     "knobs": {
@@ -175741,12 +179816,202 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏖️"
           }
         ]
+      },
+      {
+        "id": "buku",
+        "titleKey": "t-buku",
+        "steps": [
+          {
+            "id": "buku-1",
+            "labelKey": "buku-1",
+            "emoji": "🧊"
+          },
+          {
+            "id": "buku-2",
+            "labelKey": "buku-2",
+            "emoji": "🪵"
+          },
+          {
+            "id": "buku-3",
+            "labelKey": "buku-3",
+            "emoji": "🟦",
+            "color": "#81d4fa"
+          },
+          {
+            "id": "buku-4",
+            "labelKey": "buku-4",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "kaleng",
+        "titleKey": "t-kaleng",
+        "steps": [
+          {
+            "id": "kaleng-1",
+            "labelKey": "kaleng-1",
+            "emoji": "🧊"
+          },
+          {
+            "id": "kaleng-2",
+            "labelKey": "kaleng-2",
+            "emoji": "🔷",
+            "color": "#b3e5fc"
+          },
+          {
+            "id": "kaleng-3",
+            "labelKey": "kaleng-3",
+            "emoji": "🟫",
+            "color": "#a1887f"
+          },
+          {
+            "id": "kaleng-4",
+            "labelKey": "kaleng-4",
+            "emoji": "🪨"
+          }
+        ]
+      },
+      {
+        "id": "balok",
+        "titleKey": "t-balok",
+        "steps": [
+          {
+            "id": "balok-1",
+            "labelKey": "balok-1",
+            "emoji": "🪞"
+          },
+          {
+            "id": "balok-2",
+            "labelKey": "balok-2",
+            "emoji": "🪵"
+          },
+          {
+            "id": "balok-3",
+            "labelKey": "balok-3",
+            "emoji": "🟫",
+            "color": "#a1887f"
+          },
+          {
+            "id": "balok-4",
+            "labelKey": "balok-4",
+            "emoji": "🪨"
+          }
+        ]
+      },
+      {
+        "id": "mangkuk",
+        "titleKey": "t-mangkuk",
+        "steps": [
+          {
+            "id": "mangkuk-1",
+            "labelKey": "mangkuk-1",
+            "emoji": "⬜"
+          },
+          {
+            "id": "mangkuk-2",
+            "labelKey": "mangkuk-2",
+            "emoji": "🪵"
+          },
+          {
+            "id": "mangkuk-3",
+            "labelKey": "mangkuk-3",
+            "emoji": "🟫",
+            "color": "#a1887f"
+          },
+          {
+            "id": "mangkuk-4",
+            "labelKey": "mangkuk-4",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "kotak-sepatu",
+        "titleKey": "t-kotak-sepatu",
+        "steps": [
+          {
+            "id": "kotak-sepatu-1",
+            "labelKey": "kotak-sepatu-1",
+            "emoji": "🧊"
+          },
+          {
+            "id": "kotak-sepatu-2",
+            "labelKey": "kotak-sepatu-2",
+            "emoji": "⬜"
+          },
+          {
+            "id": "kotak-sepatu-3",
+            "labelKey": "kotak-sepatu-3",
+            "emoji": "🟦",
+            "color": "#81d4fa"
+          },
+          {
+            "id": "kotak-sepatu-4",
+            "labelKey": "kotak-sepatu-4",
+            "emoji": "🪨"
+          }
+        ]
+      },
+      {
+        "id": "kardus",
+        "titleKey": "t-kardus",
+        "steps": [
+          {
+            "id": "kardus-1",
+            "labelKey": "kardus-1",
+            "emoji": "🧊"
+          },
+          {
+            "id": "kardus-2",
+            "labelKey": "kardus-2",
+            "emoji": "🪞"
+          },
+          {
+            "id": "kardus-3",
+            "labelKey": "kardus-3",
+            "emoji": "🪵"
+          },
+          {
+            "id": "kardus-4",
+            "labelKey": "kardus-4",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "botol",
+        "titleKey": "t-botol",
+        "steps": [
+          {
+            "id": "botol-1",
+            "labelKey": "botol-1",
+            "emoji": "🧊"
+          },
+          {
+            "id": "botol-2",
+            "labelKey": "botol-2",
+            "emoji": "🔷",
+            "color": "#b3e5fc"
+          },
+          {
+            "id": "botol-3",
+            "labelKey": "botol-3",
+            "emoji": "🪵"
+          },
+          {
+            "id": "botol-4",
+            "labelKey": "botol-4",
+            "emoji": "🟦",
+            "color": "#81d4fa"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-perbaiki-bentuk-bulan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -175863,12 +180128,220 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🌑"
           }
         ]
+      },
+      {
+        "id": "membesar-tanpa-baru",
+        "titleKey": "s-membesar",
+        "steps": [
+          {
+            "id": "sabit",
+            "labelKey": "membesar-sabit",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuh",
+            "labelKey": "membesar-separuh",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembung",
+            "labelKey": "membesar-cembung",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "membesar-purnama",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "membesar-tanpa-sabit",
+        "titleKey": "s-membesar",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "membesar-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuh",
+            "labelKey": "membesar-separuh",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembung",
+            "labelKey": "membesar-cembung",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "membesar-purnama",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "membesar-tanpa-separuh",
+        "titleKey": "s-membesar",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "membesar-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabit",
+            "labelKey": "membesar-sabit",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembung",
+            "labelKey": "membesar-cembung",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "membesar-purnama",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "membesar-tanpa-cembung",
+        "titleKey": "s-membesar",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "membesar-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabit",
+            "labelKey": "membesar-sabit",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuh",
+            "labelKey": "membesar-separuh",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "membesar-purnama",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "mengecil-tanpa-purnama",
+        "titleKey": "s-mengecil",
+        "steps": [
+          {
+            "id": "cembung",
+            "labelKey": "mengecil-cembung",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuh",
+            "labelKey": "mengecil-separuh",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabit",
+            "labelKey": "mengecil-sabit",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "mengecil-baru",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "mengecil-tanpa-cembung",
+        "titleKey": "s-mengecil",
+        "steps": [
+          {
+            "id": "purnama",
+            "labelKey": "mengecil-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuh",
+            "labelKey": "mengecil-separuh",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabit",
+            "labelKey": "mengecil-sabit",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "mengecil-baru",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "mengecil-tanpa-separuh",
+        "titleKey": "s-mengecil",
+        "steps": [
+          {
+            "id": "purnama",
+            "labelKey": "mengecil-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembung",
+            "labelKey": "mengecil-cembung",
+            "emoji": "🌖"
+          },
+          {
+            "id": "sabit",
+            "labelKey": "mengecil-sabit",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "mengecil-baru",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "mengecil-tanpa-sabit",
+        "titleKey": "s-mengecil",
+        "steps": [
+          {
+            "id": "purnama",
+            "labelKey": "mengecil-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembung",
+            "labelKey": "mengecil-cembung",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuh",
+            "labelKey": "mengecil-separuh",
+            "emoji": "🌗"
+          },
+          {
+            "id": "baru",
+            "labelKey": "mengecil-baru",
+            "emoji": "🌑"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-perbaiki-licin-kasar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -175893,7 +180366,42 @@ export const PAKET_RAW: unknown[] = [
         "kelereng-ubin": "ubin licin",
         "kelereng-kayu": "papan kayu",
         "kelereng-handuk": "handuk tebal",
-        "kelereng-pasir": "pasir"
+        "kelereng-pasir": "pasir",
+        "s-sepatu": "Sepatu didorong sama kuat",
+        "sepatu-es": "lantai es",
+        "sepatu-keramik": "lantai keramik mengilap",
+        "sepatu-kayu": "papan kayu",
+        "sepatu-amplas": "kertas amplas",
+        "s-buku": "Buku didorong sama kuat",
+        "buku-es": "lantai es",
+        "buku-keramik": "lantai keramik mengilap",
+        "buku-handuk": "handuk tebal",
+        "buku-pasir": "pasir",
+        "s-truk": "Truk mainan didorong sama kuat",
+        "truk-es": "lantai es",
+        "truk-keramik": "lantai keramik mengilap",
+        "truk-handuk": "handuk tebal",
+        "truk-kerikil": "jalan berkerikil",
+        "s-balok": "Balok kayu ditarik sama kuat",
+        "balok-es": "lantai es",
+        "balok-kaca": "meja kaca",
+        "balok-kayu": "papan kayu",
+        "balok-pasir": "pasir",
+        "s-kardus": "Kardus didorong sama kuat",
+        "kardus-es": "lantai es",
+        "kardus-keramik": "lantai keramik mengilap",
+        "kardus-kayu": "papan kayu",
+        "kardus-kerikil": "jalan berkerikil",
+        "s-piring": "Piring plastik didorong sama kuat",
+        "piring-es": "lantai es",
+        "piring-kaca": "meja kaca",
+        "piring-handuk": "handuk tebal",
+        "piring-amplas": "kertas amplas",
+        "s-pensil": "Kotak pensil didorong sama kuat",
+        "pensil-es": "lantai es",
+        "pensil-kaca": "meja kaca",
+        "pensil-karpet": "karpet berbulu",
+        "pensil-kerikil": "jalan berkerikil"
       },
       "en": {
         "judul": "Friction Order Mixed Up",
@@ -175912,7 +180420,42 @@ export const PAKET_RAW: unknown[] = [
         "kelereng-ubin": "smooth tiles",
         "kelereng-kayu": "wooden board",
         "kelereng-handuk": "thick towel",
-        "kelereng-pasir": "sand"
+        "kelereng-pasir": "sand",
+        "s-sepatu": "A shoe pushed with the same push",
+        "sepatu-es": "ice floor",
+        "sepatu-keramik": "shiny tiled floor",
+        "sepatu-kayu": "wooden board",
+        "sepatu-amplas": "sandpaper",
+        "s-buku": "A book pushed with the same push",
+        "buku-es": "ice floor",
+        "buku-keramik": "shiny tiled floor",
+        "buku-handuk": "thick towel",
+        "buku-pasir": "sand",
+        "s-truk": "A toy truck pushed with the same push",
+        "truk-es": "ice floor",
+        "truk-keramik": "shiny tiled floor",
+        "truk-handuk": "thick towel",
+        "truk-kerikil": "gravel path",
+        "s-balok": "A wooden block pulled with the same pull",
+        "balok-es": "ice floor",
+        "balok-kaca": "glass table",
+        "balok-kayu": "wooden board",
+        "balok-pasir": "sand",
+        "s-kardus": "A cardboard box pushed with the same push",
+        "kardus-es": "ice floor",
+        "kardus-keramik": "shiny tiled floor",
+        "kardus-kayu": "wooden board",
+        "kardus-kerikil": "gravel path",
+        "s-piring": "A plastic plate pushed with the same push",
+        "piring-es": "ice floor",
+        "piring-kaca": "glass table",
+        "piring-handuk": "thick towel",
+        "piring-amplas": "sandpaper",
+        "s-pensil": "A pencil case pushed with the same push",
+        "pensil-es": "ice floor",
+        "pensil-kaca": "glass table",
+        "pensil-karpet": "fluffy carpet",
+        "pensil-kerikil": "gravel path"
       }
     },
     "knobs": {
@@ -176012,12 +180555,203 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏖️"
           }
         ]
+      },
+      {
+        "id": "sepatu",
+        "titleKey": "s-sepatu",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "sepatu-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "keramik",
+            "labelKey": "sepatu-keramik",
+            "emoji": "⬜"
+          },
+          {
+            "id": "kayu",
+            "labelKey": "sepatu-kayu",
+            "emoji": "🪵"
+          },
+          {
+            "id": "amplas",
+            "labelKey": "sepatu-amplas",
+            "emoji": "🟫",
+            "color": "#a1887f"
+          }
+        ]
+      },
+      {
+        "id": "buku",
+        "titleKey": "s-buku",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "buku-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "keramik",
+            "labelKey": "buku-keramik",
+            "emoji": "⬜"
+          },
+          {
+            "id": "handuk",
+            "labelKey": "buku-handuk",
+            "emoji": "🟦",
+            "color": "#81d4fa"
+          },
+          {
+            "id": "pasir",
+            "labelKey": "buku-pasir",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "truk",
+        "titleKey": "s-truk",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "truk-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "keramik",
+            "labelKey": "truk-keramik",
+            "emoji": "⬜"
+          },
+          {
+            "id": "handuk",
+            "labelKey": "truk-handuk",
+            "emoji": "🟦",
+            "color": "#81d4fa"
+          },
+          {
+            "id": "kerikil",
+            "labelKey": "truk-kerikil",
+            "emoji": "🪨"
+          }
+        ]
+      },
+      {
+        "id": "balok",
+        "titleKey": "s-balok",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "balok-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "kaca",
+            "labelKey": "balok-kaca",
+            "emoji": "🔷",
+            "color": "#b3e5fc"
+          },
+          {
+            "id": "kayu",
+            "labelKey": "balok-kayu",
+            "emoji": "🪵"
+          },
+          {
+            "id": "pasir",
+            "labelKey": "balok-pasir",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "kardus",
+        "titleKey": "s-kardus",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "kardus-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "keramik",
+            "labelKey": "kardus-keramik",
+            "emoji": "⬜"
+          },
+          {
+            "id": "kayu",
+            "labelKey": "kardus-kayu",
+            "emoji": "🪵"
+          },
+          {
+            "id": "kerikil",
+            "labelKey": "kardus-kerikil",
+            "emoji": "🪨"
+          }
+        ]
+      },
+      {
+        "id": "piring",
+        "titleKey": "s-piring",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "piring-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "kaca",
+            "labelKey": "piring-kaca",
+            "emoji": "🔷",
+            "color": "#b3e5fc"
+          },
+          {
+            "id": "handuk",
+            "labelKey": "piring-handuk",
+            "emoji": "🟦",
+            "color": "#81d4fa"
+          },
+          {
+            "id": "amplas",
+            "labelKey": "piring-amplas",
+            "emoji": "🟫",
+            "color": "#a1887f"
+          }
+        ]
+      },
+      {
+        "id": "pensil",
+        "titleKey": "s-pensil",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "pensil-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "kaca",
+            "labelKey": "pensil-kaca",
+            "emoji": "🔷",
+            "color": "#b3e5fc"
+          },
+          {
+            "id": "karpet",
+            "labelKey": "pensil-karpet",
+            "emoji": "🟫",
+            "color": "#a1887f"
+          },
+          {
+            "id": "kerikil",
+            "labelKey": "pensil-kerikil",
+            "emoji": "🪨"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-perbaiki-rantai-makanan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -176056,7 +180790,32 @@ export const PAKET_RAW: unknown[] = [
         "kolam-lumut": "lumut air",
         "kolam-siput": "siput air",
         "kolam-ikan": "ikan",
-        "kolam-bangau": "burung bangau"
+        "kolam-bangau": "elang",
+        "s-sawah2": "Rantai makanan lain di sawah",
+        "sawah2-padi": "padi",
+        "sawah2-belalang": "belalang",
+        "sawah2-katak": "katak",
+        "sawah2-ular": "ular sawah",
+        "s-hutan": "Rantai makanan di hutan",
+        "hutan-biji": "kacang dan biji di pohon",
+        "hutan-tupai": "tupai",
+        "hutan-ular": "ular pohon",
+        "hutan-elang": "elang",
+        "s-padang2": "Rantai makanan lain di padang rumput",
+        "padang2-rumput": "rumput",
+        "padang2-kelinci": "kelinci liar",
+        "padang2-ular": "ular",
+        "padang2-elang": "elang",
+        "s-lautlepas": "Rantai makanan di laut lepas",
+        "lautlepas-rumputlaut": "rumput laut",
+        "lautlepas-ikan": "ikan kecil",
+        "lautlepas-cumi": "cumi-cumi",
+        "lautlepas-lumba": "lumba-lumba",
+        "s-karang": "Rantai makanan di terumbu karang",
+        "karang-ganggang": "ganggang di batu karang",
+        "karang-kepiting": "kepiting",
+        "karang-gurita": "gurita",
+        "karang-hiu": "hiu karang"
       },
       "en": {
         "judul": "Mixed-Up Food Chain",
@@ -176089,7 +180848,32 @@ export const PAKET_RAW: unknown[] = [
         "kolam-lumut": "pond algae",
         "kolam-siput": "water snail",
         "kolam-ikan": "fish",
-        "kolam-bangau": "heron"
+        "kolam-bangau": "eagle",
+        "s-sawah2": "Another rice field food chain",
+        "sawah2-padi": "rice plant",
+        "sawah2-belalang": "grasshopper",
+        "sawah2-katak": "frog",
+        "sawah2-ular": "rice field snake",
+        "s-hutan": "A forest food chain",
+        "hutan-biji": "nuts and seeds on a tree",
+        "hutan-tupai": "squirrel",
+        "hutan-ular": "tree snake",
+        "hutan-elang": "eagle",
+        "s-padang2": "Another grassland food chain",
+        "padang2-rumput": "grass",
+        "padang2-kelinci": "wild rabbit",
+        "padang2-ular": "snake",
+        "padang2-elang": "eagle",
+        "s-lautlepas": "An open sea food chain",
+        "lautlepas-rumputlaut": "seaweed",
+        "lautlepas-ikan": "small fish",
+        "lautlepas-cumi": "squid",
+        "lautlepas-lumba": "dolphin",
+        "s-karang": "A coral reef food chain",
+        "karang-ganggang": "algae on the reef rocks",
+        "karang-kepiting": "crab",
+        "karang-gurita": "octopus",
+        "karang-hiu": "reef shark"
       }
     },
     "knobs": {
@@ -176255,8 +181039,140 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bangau",
             "labelKey": "kolam-bangau",
-            "emoji": "🦩",
+            "emoji": "🦅",
             "color": "#eceff1"
+          }
+        ]
+      },
+      {
+        "id": "sawah2",
+        "titleKey": "s-sawah2",
+        "steps": [
+          {
+            "id": "padi",
+            "labelKey": "sawah2-padi",
+            "emoji": "🌾"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "sawah2-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "katak",
+            "labelKey": "sawah2-katak",
+            "emoji": "🐸"
+          },
+          {
+            "id": "ular",
+            "labelKey": "sawah2-ular",
+            "emoji": "🐍"
+          }
+        ]
+      },
+      {
+        "id": "hutan",
+        "titleKey": "s-hutan",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "hutan-biji",
+            "emoji": "🌰"
+          },
+          {
+            "id": "tupai",
+            "labelKey": "hutan-tupai",
+            "emoji": "🐿️"
+          },
+          {
+            "id": "ular",
+            "labelKey": "hutan-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "hutan-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "padang2",
+        "titleKey": "s-padang2",
+        "steps": [
+          {
+            "id": "rumput",
+            "labelKey": "padang2-rumput",
+            "emoji": "🌿"
+          },
+          {
+            "id": "kelinci",
+            "labelKey": "padang2-kelinci",
+            "emoji": "🐇"
+          },
+          {
+            "id": "ular",
+            "labelKey": "padang2-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "padang2-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "lautlepas",
+        "titleKey": "s-lautlepas",
+        "steps": [
+          {
+            "id": "rumputlaut",
+            "labelKey": "lautlepas-rumputlaut",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "ikan",
+            "labelKey": "lautlepas-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "cumi",
+            "labelKey": "lautlepas-cumi",
+            "emoji": "🦑"
+          },
+          {
+            "id": "lumba",
+            "labelKey": "lautlepas-lumba",
+            "emoji": "🐬"
+          }
+        ]
+      },
+      {
+        "id": "karang",
+        "titleKey": "s-karang",
+        "steps": [
+          {
+            "id": "ganggang",
+            "labelKey": "karang-ganggang",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "kepiting",
+            "labelKey": "karang-kepiting",
+            "emoji": "🦀"
+          },
+          {
+            "id": "gurita",
+            "labelKey": "karang-gurita",
+            "emoji": "🐙"
+          },
+          {
+            "id": "hiu",
+            "labelKey": "karang-hiu",
+            "emoji": "🦈"
           }
         ]
       }
@@ -176264,7 +181180,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-air",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -176296,7 +181212,12 @@ export const PAKET_RAW: unknown[] = [
         "nyamuk-telur": "telur di permukaan air",
         "nyamuk-jentik": "jentik berenang di air",
         "nyamuk-kepompong": "kepompong nyamuk di air",
-        "nyamuk-nyamuk": "nyamuk dewasa terbang"
+        "nyamuk-nyamuk": "nyamuk dewasa terbang",
+        "s-buaya": "Siklus hidup buaya",
+        "buaya-telur": "telur di sarang tepi sungai",
+        "buaya-anak": "anak buaya menetas",
+        "buaya-muda": "buaya muda berenang di sungai",
+        "buaya-dewasa": "buaya dewasa bertelur"
       },
       "en": {
         "judul": "Fix the Water Life Cycles",
@@ -176322,7 +181243,12 @@ export const PAKET_RAW: unknown[] = [
         "nyamuk-telur": "eggs on the water's surface",
         "nyamuk-jentik": "wriggling larva in water",
         "nyamuk-kepompong": "mosquito pupa in water",
-        "nyamuk-nyamuk": "adult mosquito flying"
+        "nyamuk-nyamuk": "adult mosquito flying",
+        "s-buaya": "Life cycle of a crocodile",
+        "buaya-telur": "eggs in a nest by the river",
+        "buaya-anak": "baby crocodile hatches",
+        "buaya-muda": "young crocodile swims in the river",
+        "buaya-dewasa": "adult crocodile lays eggs"
       }
     },
     "knobs": {
@@ -176354,15 +181280,16 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "berudu",
             "labelKey": "katak-berudu",
-            "emoji": "⚫",
-            "scale": 0.6
+            "scale": 0.6,
+            "shape": "berudu",
+            "color": "#37474f"
           },
           {
             "id": "berkaki",
             "labelKey": "katak-berkaki",
-            "emoji": "🦎",
-            "scale": 0.6,
-            "color": "#6d4c41"
+            "scale": 1.2,
+            "color": "#6d4c41",
+            "shape": "berudu"
           },
           {
             "id": "katakmuda",
@@ -176469,12 +181396,196 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🦟"
           }
         ]
+      },
+      {
+        "id": "buaya",
+        "titleKey": "s-buaya",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "buaya-telur",
+            "emoji": "🥚"
+          },
+          {
+            "id": "anak",
+            "labelKey": "buaya-anak",
+            "emoji": "🐊",
+            "scale": 0.5
+          },
+          {
+            "id": "muda",
+            "labelKey": "buaya-muda",
+            "emoji": "🐊",
+            "scale": 0.8
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "buaya-dewasa",
+            "emoji": "🐊",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "katak-tanpa-berkaki",
+        "titleKey": "s-katak",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "katak-telur",
+            "emoji": "⚪",
+            "count": 5,
+            "scale": 0.4
+          },
+          {
+            "id": "berudu",
+            "labelKey": "katak-berudu",
+            "scale": 0.6,
+            "shape": "berudu",
+            "color": "#37474f"
+          },
+          {
+            "id": "katakmuda",
+            "labelKey": "katak-katakmuda",
+            "emoji": "🐸",
+            "scale": 0.8
+          },
+          {
+            "id": "katak",
+            "labelKey": "katak-katak",
+            "emoji": "🐸",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "katak-tanpa-katakmuda",
+        "titleKey": "s-katak",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "katak-telur",
+            "emoji": "⚪",
+            "count": 5,
+            "scale": 0.4
+          },
+          {
+            "id": "berudu",
+            "labelKey": "katak-berudu",
+            "scale": 0.6,
+            "shape": "berudu",
+            "color": "#37474f"
+          },
+          {
+            "id": "berkaki",
+            "labelKey": "katak-berkaki",
+            "scale": 1.2,
+            "color": "#6d4c41",
+            "shape": "berudu"
+          },
+          {
+            "id": "katak",
+            "labelKey": "katak-katak",
+            "emoji": "🐸",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "katak-dari-berudu",
+        "titleKey": "s-katak",
+        "steps": [
+          {
+            "id": "berudu",
+            "labelKey": "katak-berudu",
+            "scale": 0.6,
+            "shape": "berudu",
+            "color": "#37474f"
+          },
+          {
+            "id": "berkaki",
+            "labelKey": "katak-berkaki",
+            "scale": 1.2,
+            "color": "#6d4c41",
+            "shape": "berudu"
+          },
+          {
+            "id": "katakmuda",
+            "labelKey": "katak-katakmuda",
+            "emoji": "🐸",
+            "scale": 0.8
+          },
+          {
+            "id": "katak",
+            "labelKey": "katak-katak",
+            "emoji": "🐸",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "ikan-tanpa-larva",
+        "titleKey": "s-ikan",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "ikan-telur",
+            "emoji": "🫧"
+          },
+          {
+            "id": "burayak",
+            "labelKey": "ikan-burayak",
+            "emoji": "🐟",
+            "scale": 0.5
+          },
+          {
+            "id": "remaja",
+            "labelKey": "ikan-remaja",
+            "emoji": "🐟",
+            "scale": 0.9
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "ikan-dewasa",
+            "emoji": "🐟",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "ikan-dari-larva",
+        "titleKey": "s-ikan",
+        "steps": [
+          {
+            "id": "larva",
+            "labelKey": "ikan-larva",
+            "emoji": "〰️"
+          },
+          {
+            "id": "burayak",
+            "labelKey": "ikan-burayak",
+            "emoji": "🐟",
+            "scale": 0.5
+          },
+          {
+            "id": "remaja",
+            "labelKey": "ikan-remaja",
+            "emoji": "🐟",
+            "scale": 0.9
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "ikan-dewasa",
+            "emoji": "🐟",
+            "scale": 1.3
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-perbaiki-siklus-hidup-kebun",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -176505,7 +181616,37 @@ export const PAKET_RAW: unknown[] = [
         "semut-telur": "telur semut",
         "semut-larva": "larva putih",
         "semut-kepompong": "kepompong semut",
-        "semut-semut": "semut dewasa"
+        "semut-semut": "semut dewasa",
+        "s-kepik": "Siklus hidup kepik",
+        "kepik-telur": "telur kuning di bawah daun",
+        "kepik-larva": "larva berduri makan kutu daun",
+        "kepik-kepompong": "kepompong menempel di daun",
+        "kepik-dewasa": "kepik dewasa berbintik",
+        "s-lebah": "Siklus hidup lebah",
+        "lebah-telur": "telur di sel sarang",
+        "lebah-larva": "larva diberi makan",
+        "lebah-kepompong": "kepompong di sel tertutup",
+        "lebah-dewasa": "lebah dewasa keluar",
+        "s-belalang": "Siklus hidup belalang",
+        "belalang-telur": "telur di dalam tanah",
+        "belalang-nimfa": "nimfa kecil tanpa sayap",
+        "belalang-nimfabesar": "nimfa lebih besar, sayap mulai tumbuh",
+        "belalang-dewasa": "belalang dewasa bersayap",
+        "s-kumbang": "Siklus hidup kumbang",
+        "kumbang-telur": "telur di tanah gembur",
+        "kumbang-larva": "larva gemuk di dalam tanah",
+        "kumbang-kepompong": "kepompong di dalam tanah",
+        "kumbang-dewasa": "kumbang dewasa keluar dari tanah",
+        "s-siput": "Siklus hidup siput kebun",
+        "siput-telur": "telur di tanah lembap",
+        "siput-anak": "anak siput menetas, cangkangnya tipis",
+        "siput-muda": "siput muda, cangkangnya makin besar",
+        "siput-dewasa": "siput dewasa bertelur",
+        "s-labalaba": "Siklus hidup laba-laba",
+        "labalaba-telur": "telur di dalam kantong sutra",
+        "labalaba-anak": "anak laba-laba keluar dari kantong",
+        "labalaba-muda": "laba-laba muda berganti kulit",
+        "labalaba-dewasa": "laba-laba dewasa membuat jaring"
       },
       "en": {
         "judul": "Fix the Garden Life Cycles",
@@ -176530,7 +181671,37 @@ export const PAKET_RAW: unknown[] = [
         "semut-telur": "ant eggs",
         "semut-larva": "white larva",
         "semut-kepompong": "ant pupa",
-        "semut-semut": "adult ant"
+        "semut-semut": "adult ant",
+        "s-kepik": "Life cycle of a ladybird",
+        "kepik-telur": "yellow eggs under a leaf",
+        "kepik-larva": "spiky larva eats aphids",
+        "kepik-kepompong": "pupa stuck to a leaf",
+        "kepik-dewasa": "spotted adult ladybird",
+        "s-lebah": "Life cycle of a bee",
+        "lebah-telur": "egg in a honeycomb cell",
+        "lebah-larva": "larva is fed",
+        "lebah-kepompong": "pupa in a capped cell",
+        "lebah-dewasa": "adult bee comes out",
+        "s-belalang": "Life cycle of a grasshopper",
+        "belalang-telur": "eggs in the soil",
+        "belalang-nimfa": "small nymph with no wings",
+        "belalang-nimfabesar": "bigger nymph, wings starting to grow",
+        "belalang-dewasa": "adult grasshopper with wings",
+        "s-kumbang": "Life cycle of a beetle",
+        "kumbang-telur": "eggs in loose soil",
+        "kumbang-larva": "fat larva in the soil",
+        "kumbang-kepompong": "pupa in the soil",
+        "kumbang-dewasa": "adult beetle comes out of the soil",
+        "s-siput": "Life cycle of a garden snail",
+        "siput-telur": "eggs in damp soil",
+        "siput-anak": "baby snail hatches with a thin shell",
+        "siput-muda": "young snail, its shell grows bigger",
+        "siput-dewasa": "adult snail lays eggs",
+        "s-labalaba": "Life cycle of a spider",
+        "labalaba-telur": "eggs in a silk sac",
+        "labalaba-anak": "baby spiders come out of the sac",
+        "labalaba-muda": "young spider sheds its skin",
+        "labalaba-dewasa": "adult spider spins a web"
       }
     },
     "knobs": {
@@ -176665,12 +181836,201 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🐜"
           }
         ]
+      },
+      {
+        "id": "kepik",
+        "titleKey": "s-kepik",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "kepik-telur",
+            "shape": "circle",
+            "color": "#fdd835",
+            "scale": 0.4
+          },
+          {
+            "id": "larva",
+            "labelKey": "kepik-larva",
+            "shape": "rect",
+            "color": "#37474f",
+            "scale": 0.6
+          },
+          {
+            "id": "kepompong",
+            "labelKey": "kepik-kepompong",
+            "shape": "circle",
+            "color": "#ff8f00",
+            "scale": 0.6
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "kepik-dewasa",
+            "emoji": "🐞"
+          }
+        ]
+      },
+      {
+        "id": "lebah",
+        "titleKey": "s-lebah",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "lebah-telur",
+            "shape": "circle",
+            "color": "#fafafa",
+            "scale": 0.4
+          },
+          {
+            "id": "larva",
+            "labelKey": "lebah-larva",
+            "shape": "rect",
+            "color": "#fff8e1",
+            "scale": 0.6
+          },
+          {
+            "id": "kepompong",
+            "labelKey": "lebah-kepompong",
+            "shape": "rect",
+            "color": "#ffe082",
+            "scale": 0.8
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "lebah-dewasa",
+            "emoji": "🐝"
+          }
+        ]
+      },
+      {
+        "id": "belalang",
+        "titleKey": "s-belalang",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "belalang-telur",
+            "shape": "circle",
+            "color": "#a1887f",
+            "scale": 0.4
+          },
+          {
+            "id": "nimfa",
+            "labelKey": "belalang-nimfa",
+            "emoji": "🦗",
+            "scale": 0.5
+          },
+          {
+            "id": "nimfabesar",
+            "labelKey": "belalang-nimfabesar",
+            "emoji": "🦗",
+            "scale": 0.8
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "belalang-dewasa",
+            "emoji": "🦗",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "kumbang",
+        "titleKey": "s-kumbang",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "kumbang-telur",
+            "shape": "circle",
+            "color": "#fafafa",
+            "scale": 0.4
+          },
+          {
+            "id": "larva",
+            "labelKey": "kumbang-larva",
+            "shape": "rect",
+            "color": "#fff3e0",
+            "scale": 0.7
+          },
+          {
+            "id": "kepompong",
+            "labelKey": "kumbang-kepompong",
+            "shape": "circle",
+            "color": "#bcaaa4",
+            "scale": 0.7
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "kumbang-dewasa",
+            "emoji": "🪲"
+          }
+        ]
+      },
+      {
+        "id": "siput",
+        "titleKey": "s-siput",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "siput-telur",
+            "shape": "circle",
+            "color": "#fafafa",
+            "scale": 0.4
+          },
+          {
+            "id": "anak",
+            "labelKey": "siput-anak",
+            "emoji": "🐌",
+            "scale": 0.5
+          },
+          {
+            "id": "muda",
+            "labelKey": "siput-muda",
+            "emoji": "🐌",
+            "scale": 0.8
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "siput-dewasa",
+            "emoji": "🐌",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "labalaba",
+        "titleKey": "s-labalaba",
+        "steps": [
+          {
+            "id": "telur",
+            "labelKey": "labalaba-telur",
+            "shape": "circle",
+            "color": "#eeeeee",
+            "scale": 0.6
+          },
+          {
+            "id": "anak",
+            "labelKey": "labalaba-anak",
+            "emoji": "🕷️",
+            "scale": 0.4
+          },
+          {
+            "id": "muda",
+            "labelKey": "labalaba-muda",
+            "emoji": "🕷️",
+            "scale": 0.7
+          },
+          {
+            "id": "dewasa",
+            "labelKey": "labalaba-dewasa",
+            "emoji": "🕷️",
+            "scale": 1.1
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-perbaiki-urutan-bayangan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -176700,7 +182060,37 @@ export const PAKET_RAW: unknown[] = [
         "bintang-p1": "bintang kertas tepat di depan senter",
         "bintang-p2": "bintang kertas agak dekat senter",
         "bintang-p3": "bintang kertas di tengah",
-        "bintang-p4": "bintang kertas dekat layar"
+        "bintang-p4": "bintang kertas dekat layar",
+        "s-apel": "Bayangan apel",
+        "apel-p1": "apel tepat di depan senter",
+        "apel-p2": "apel agak dekat senter",
+        "apel-p3": "apel di tengah",
+        "apel-p4": "apel dekat layar",
+        "s-mobil": "Bayangan mobil mainan",
+        "mobil-p1": "mobil mainan tepat di depan senter",
+        "mobil-p2": "mobil mainan agak dekat senter",
+        "mobil-p3": "mobil mainan di tengah",
+        "mobil-p4": "mobil mainan dekat layar",
+        "s-tangan": "Bayangan tangan",
+        "tangan-p1": "tangan tepat di depan senter",
+        "tangan-p2": "tangan agak dekat senter",
+        "tangan-p3": "tangan di tengah",
+        "tangan-p4": "tangan dekat layar",
+        "s-kupu": "Bayangan kupu-kupu kertas",
+        "kupu-p1": "kupu-kupu kertas tepat di depan senter",
+        "kupu-p2": "kupu-kupu kertas agak dekat senter",
+        "kupu-p3": "kupu-kupu kertas di tengah",
+        "kupu-p4": "kupu-kupu kertas dekat layar",
+        "s-kunci": "Bayangan kunci",
+        "kunci-p1": "kunci tepat di depan senter",
+        "kunci-p2": "kunci agak dekat senter",
+        "kunci-p3": "kunci di tengah",
+        "kunci-p4": "kunci dekat layar",
+        "s-payung": "Bayangan payung mainan",
+        "payung-p1": "payung mainan tepat di depan senter",
+        "payung-p2": "payung mainan agak dekat senter",
+        "payung-p3": "payung mainan di tengah",
+        "payung-p4": "payung mainan dekat layar"
       },
       "en": {
         "judul": "Shadows Mixed Up",
@@ -176724,7 +182114,37 @@ export const PAKET_RAW: unknown[] = [
         "bintang-p1": "paper star right in front of the torch",
         "bintang-p2": "paper star fairly close to the torch",
         "bintang-p3": "paper star halfway",
-        "bintang-p4": "paper star close to the screen"
+        "bintang-p4": "paper star close to the screen",
+        "s-apel": "An apple's shadow",
+        "apel-p1": "An apple right in front of the torch",
+        "apel-p2": "An apple quite close to the torch",
+        "apel-p3": "An apple in the middle",
+        "apel-p4": "An apple close to the screen",
+        "s-mobil": "A toy car's shadow",
+        "mobil-p1": "The toy car right in front of the torch",
+        "mobil-p2": "The toy car quite close to the torch",
+        "mobil-p3": "The toy car in the middle",
+        "mobil-p4": "The toy car close to the screen",
+        "s-tangan": "A hand's shadow",
+        "tangan-p1": "A hand right in front of the torch",
+        "tangan-p2": "A hand quite close to the torch",
+        "tangan-p3": "A hand in the middle",
+        "tangan-p4": "A hand close to the screen",
+        "s-kupu": "A paper butterfly's shadow",
+        "kupu-p1": "The paper butterfly right in front of the torch",
+        "kupu-p2": "The paper butterfly quite close to the torch",
+        "kupu-p3": "The paper butterfly in the middle",
+        "kupu-p4": "The paper butterfly close to the screen",
+        "s-kunci": "A key's shadow",
+        "kunci-p1": "The key right in front of the torch",
+        "kunci-p2": "The key quite close to the torch",
+        "kunci-p3": "The key in the middle",
+        "kunci-p4": "The key close to the screen",
+        "s-payung": "A toy umbrella's shadow",
+        "payung-p1": "The toy umbrella right in front of the torch",
+        "payung-p2": "The toy umbrella quite close to the torch",
+        "payung-p3": "The toy umbrella in the middle",
+        "payung-p4": "The toy umbrella close to the screen"
       }
     },
     "knobs": {
@@ -176845,12 +182265,168 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "⭐"
           }
         ]
+      },
+      {
+        "id": "apel",
+        "titleKey": "s-apel",
+        "steps": [
+          {
+            "id": "p1",
+            "labelKey": "apel-p1",
+            "emoji": "🍎"
+          },
+          {
+            "id": "p2",
+            "labelKey": "apel-p2",
+            "emoji": "🍎"
+          },
+          {
+            "id": "p3",
+            "labelKey": "apel-p3",
+            "emoji": "🍎"
+          },
+          {
+            "id": "p4",
+            "labelKey": "apel-p4",
+            "emoji": "🍎"
+          }
+        ]
+      },
+      {
+        "id": "mobil",
+        "titleKey": "s-mobil",
+        "steps": [
+          {
+            "id": "p1",
+            "labelKey": "mobil-p1",
+            "emoji": "🚗"
+          },
+          {
+            "id": "p2",
+            "labelKey": "mobil-p2",
+            "emoji": "🚗"
+          },
+          {
+            "id": "p3",
+            "labelKey": "mobil-p3",
+            "emoji": "🚗"
+          },
+          {
+            "id": "p4",
+            "labelKey": "mobil-p4",
+            "emoji": "🚗"
+          }
+        ]
+      },
+      {
+        "id": "tangan",
+        "titleKey": "s-tangan",
+        "steps": [
+          {
+            "id": "p1",
+            "labelKey": "tangan-p1",
+            "emoji": "✋"
+          },
+          {
+            "id": "p2",
+            "labelKey": "tangan-p2",
+            "emoji": "✋"
+          },
+          {
+            "id": "p3",
+            "labelKey": "tangan-p3",
+            "emoji": "✋"
+          },
+          {
+            "id": "p4",
+            "labelKey": "tangan-p4",
+            "emoji": "✋"
+          }
+        ]
+      },
+      {
+        "id": "kupu",
+        "titleKey": "s-kupu",
+        "steps": [
+          {
+            "id": "p1",
+            "labelKey": "kupu-p1",
+            "emoji": "🦋"
+          },
+          {
+            "id": "p2",
+            "labelKey": "kupu-p2",
+            "emoji": "🦋"
+          },
+          {
+            "id": "p3",
+            "labelKey": "kupu-p3",
+            "emoji": "🦋"
+          },
+          {
+            "id": "p4",
+            "labelKey": "kupu-p4",
+            "emoji": "🦋"
+          }
+        ]
+      },
+      {
+        "id": "kunci",
+        "titleKey": "s-kunci",
+        "steps": [
+          {
+            "id": "p1",
+            "labelKey": "kunci-p1",
+            "emoji": "🔑"
+          },
+          {
+            "id": "p2",
+            "labelKey": "kunci-p2",
+            "emoji": "🔑"
+          },
+          {
+            "id": "p3",
+            "labelKey": "kunci-p3",
+            "emoji": "🔑"
+          },
+          {
+            "id": "p4",
+            "labelKey": "kunci-p4",
+            "emoji": "🔑"
+          }
+        ]
+      },
+      {
+        "id": "payung",
+        "titleKey": "s-payung",
+        "steps": [
+          {
+            "id": "p1",
+            "labelKey": "payung-p1",
+            "emoji": "☂️"
+          },
+          {
+            "id": "p2",
+            "labelKey": "payung-p2",
+            "emoji": "☂️"
+          },
+          {
+            "id": "p3",
+            "labelKey": "payung-p3",
+            "emoji": "☂️"
+          },
+          {
+            "id": "p4",
+            "labelKey": "payung-p4",
+            "emoji": "☂️"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd3-sains-susun-rantai-makanan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -176889,7 +182465,32 @@ export const PAKET_RAW: unknown[] = [
         "kolam-lumut": "lumut air",
         "kolam-siput": "siput air",
         "kolam-ikan": "ikan",
-        "kolam-bangau": "burung bangau"
+        "kolam-bangau": "elang",
+        "s-sawah2": "Rantai makanan lain di sawah",
+        "sawah2-padi": "padi",
+        "sawah2-belalang": "belalang",
+        "sawah2-katak": "katak",
+        "sawah2-ular": "ular sawah",
+        "s-hutan": "Rantai makanan di hutan",
+        "hutan-biji": "kacang dan biji di pohon",
+        "hutan-tupai": "tupai",
+        "hutan-ular": "ular pohon",
+        "hutan-elang": "elang",
+        "s-padang2": "Rantai makanan lain di padang rumput",
+        "padang2-rumput": "rumput",
+        "padang2-kelinci": "kelinci liar",
+        "padang2-ular": "ular",
+        "padang2-elang": "elang",
+        "s-lautlepas": "Rantai makanan di laut lepas",
+        "lautlepas-rumputlaut": "rumput laut",
+        "lautlepas-ikan": "ikan kecil",
+        "lautlepas-cumi": "cumi-cumi",
+        "lautlepas-lumba": "lumba-lumba",
+        "s-karang": "Rantai makanan di terumbu karang",
+        "karang-ganggang": "ganggang di batu karang",
+        "karang-kepiting": "kepiting",
+        "karang-gurita": "gurita",
+        "karang-hiu": "hiu karang"
       },
       "en": {
         "judul": "Who Eats Whom?",
@@ -176922,7 +182523,32 @@ export const PAKET_RAW: unknown[] = [
         "kolam-lumut": "pond algae",
         "kolam-siput": "water snail",
         "kolam-ikan": "fish",
-        "kolam-bangau": "heron"
+        "kolam-bangau": "eagle",
+        "s-sawah2": "Another rice field food chain",
+        "sawah2-padi": "rice plant",
+        "sawah2-belalang": "grasshopper",
+        "sawah2-katak": "frog",
+        "sawah2-ular": "rice field snake",
+        "s-hutan": "A forest food chain",
+        "hutan-biji": "nuts and seeds on a tree",
+        "hutan-tupai": "squirrel",
+        "hutan-ular": "tree snake",
+        "hutan-elang": "eagle",
+        "s-padang2": "Another grassland food chain",
+        "padang2-rumput": "grass",
+        "padang2-kelinci": "wild rabbit",
+        "padang2-ular": "snake",
+        "padang2-elang": "eagle",
+        "s-lautlepas": "An open sea food chain",
+        "lautlepas-rumputlaut": "seaweed",
+        "lautlepas-ikan": "small fish",
+        "lautlepas-cumi": "squid",
+        "lautlepas-lumba": "dolphin",
+        "s-karang": "A coral reef food chain",
+        "karang-ganggang": "algae on the reef rocks",
+        "karang-kepiting": "crab",
+        "karang-gurita": "octopus",
+        "karang-hiu": "reef shark"
       }
     },
     "knobs": {
@@ -177088,8 +182714,140 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "bangau",
             "labelKey": "kolam-bangau",
-            "emoji": "🦩",
+            "emoji": "🦅",
             "color": "#eceff1"
+          }
+        ]
+      },
+      {
+        "id": "sawah2",
+        "titleKey": "s-sawah2",
+        "steps": [
+          {
+            "id": "padi",
+            "labelKey": "sawah2-padi",
+            "emoji": "🌾"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "sawah2-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "katak",
+            "labelKey": "sawah2-katak",
+            "emoji": "🐸"
+          },
+          {
+            "id": "ular",
+            "labelKey": "sawah2-ular",
+            "emoji": "🐍"
+          }
+        ]
+      },
+      {
+        "id": "hutan",
+        "titleKey": "s-hutan",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "hutan-biji",
+            "emoji": "🌰"
+          },
+          {
+            "id": "tupai",
+            "labelKey": "hutan-tupai",
+            "emoji": "🐿️"
+          },
+          {
+            "id": "ular",
+            "labelKey": "hutan-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "hutan-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "padang2",
+        "titleKey": "s-padang2",
+        "steps": [
+          {
+            "id": "rumput",
+            "labelKey": "padang2-rumput",
+            "emoji": "🌿"
+          },
+          {
+            "id": "kelinci",
+            "labelKey": "padang2-kelinci",
+            "emoji": "🐇"
+          },
+          {
+            "id": "ular",
+            "labelKey": "padang2-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "padang2-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "lautlepas",
+        "titleKey": "s-lautlepas",
+        "steps": [
+          {
+            "id": "rumputlaut",
+            "labelKey": "lautlepas-rumputlaut",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "ikan",
+            "labelKey": "lautlepas-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "cumi",
+            "labelKey": "lautlepas-cumi",
+            "emoji": "🦑"
+          },
+          {
+            "id": "lumba",
+            "labelKey": "lautlepas-lumba",
+            "emoji": "🐬"
+          }
+        ]
+      },
+      {
+        "id": "karang",
+        "titleKey": "s-karang",
+        "steps": [
+          {
+            "id": "ganggang",
+            "labelKey": "karang-ganggang",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "kepiting",
+            "labelKey": "karang-kepiting",
+            "emoji": "🦀"
+          },
+          {
+            "id": "gurita",
+            "labelKey": "karang-gurita",
+            "emoji": "🐙"
+          },
+          {
+            "id": "hiu",
+            "labelKey": "karang-hiu",
+            "emoji": "🦈"
           }
         ]
       }
@@ -177097,7 +182855,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-kode-masukan-proses-keluaran",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -177137,7 +182895,27 @@ export const PAKET_RAW: unknown[] = [
         "s6-1": "minta nilai n1, n2, n3",
         "s6-2": "jumlah = n1 + n2 + n3",
         "s6-3": "rata = jumlah / 3",
-        "s6-4": "tampilkan rata"
+        "s6-4": "tampilkan rata",
+        "s7": "Umur tahun depan",
+        "s7-1": "tampilkan 'Berapa umurmu?'",
+        "s7-2": "umur = angka dari pengguna",
+        "s7-3": "umur = umur + 1",
+        "s7-4": "tampilkan umur",
+        "s8": "Uang jajan seminggu",
+        "s8-1": "tampilkan 'Uang jajan sehari?'",
+        "s8-2": "harian = angka dari pengguna",
+        "s8-3": "seminggu = harian * 7",
+        "s8-4": "tampilkan seminggu",
+        "s9": "Menit jadi detik",
+        "s9-1": "tampilkan 'Berapa menit?'",
+        "s9-2": "m = angka dari pengguna",
+        "s9-3": "d = m * 60",
+        "s9-4": "tampilkan d detik",
+        "s10": "Bagi permen berdua",
+        "s10-1": "tampilkan 'Ada berapa permen?'",
+        "s10-2": "permen = angka dari pengguna",
+        "s10-3": "bagian = permen / 2",
+        "s10-4": "tampilkan bagian"
       },
       "en": {
         "judul": "Input, Process, Output",
@@ -177171,7 +182949,27 @@ export const PAKET_RAW: unknown[] = [
         "s6-1": "ask for marks m1, m2, m3",
         "s6-2": "total = m1 + m2 + m3",
         "s6-3": "mean = total / 3",
-        "s6-4": "show mean"
+        "s6-4": "show mean",
+        "s7": "Age next year",
+        "s7-1": "show 'How old are you?'",
+        "s7-2": "age = number from the user",
+        "s7-3": "age = age + 1",
+        "s7-4": "show age",
+        "s8": "Pocket money for a week",
+        "s8-1": "show 'Pocket money per day?'",
+        "s8-2": "daily = number from the user",
+        "s8-3": "week = daily * 7",
+        "s8-4": "show week",
+        "s9": "Minutes to seconds",
+        "s9-1": "show 'How many minutes?'",
+        "s9-2": "m = number from the user",
+        "s9-3": "s = m * 60",
+        "s9-4": "show s seconds",
+        "s10": "Share sweets between two",
+        "s10-1": "show 'How many sweets?'",
+        "s10-2": "sweets = number from the user",
+        "s10-3": "share = sweets / 2",
+        "s10-4": "show share"
       }
     },
     "knobs": {
@@ -177344,12 +183142,100 @@ export const PAKET_RAW: unknown[] = [
             "scale": 0.4
           }
         ]
+      },
+      {
+        "id": "s7",
+        "titleKey": "s7",
+        "steps": [
+          {
+            "id": "s7-1",
+            "labelKey": "s7-1"
+          },
+          {
+            "id": "s7-2",
+            "labelKey": "s7-2"
+          },
+          {
+            "id": "s7-3",
+            "labelKey": "s7-3"
+          },
+          {
+            "id": "s7-4",
+            "labelKey": "s7-4"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "titleKey": "s8",
+        "steps": [
+          {
+            "id": "s8-1",
+            "labelKey": "s8-1"
+          },
+          {
+            "id": "s8-2",
+            "labelKey": "s8-2"
+          },
+          {
+            "id": "s8-3",
+            "labelKey": "s8-3"
+          },
+          {
+            "id": "s8-4",
+            "labelKey": "s8-4"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "titleKey": "s9",
+        "steps": [
+          {
+            "id": "s9-1",
+            "labelKey": "s9-1"
+          },
+          {
+            "id": "s9-2",
+            "labelKey": "s9-2"
+          },
+          {
+            "id": "s9-3",
+            "labelKey": "s9-3"
+          },
+          {
+            "id": "s9-4",
+            "labelKey": "s9-4"
+          }
+        ]
+      },
+      {
+        "id": "s10",
+        "titleKey": "s10",
+        "steps": [
+          {
+            "id": "s10-1",
+            "labelKey": "s10-1"
+          },
+          {
+            "id": "s10-2",
+            "labelKey": "s10-2"
+          },
+          {
+            "id": "s10-3",
+            "labelKey": "s10-3"
+          },
+          {
+            "id": "s10-4",
+            "labelKey": "s10-4"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd4-kode-perjalanan-pesan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -177388,7 +183274,37 @@ export const PAKET_RAW: unknown[] = [
         "s5-2": "gambar dipecah jadi paket",
         "s5-3": "paket dikirim lewat internet",
         "s5-4": "HP temanmu menyusun paketnya",
-        "s5-5": "wajahmu muncul di layar temanmu"
+        "s5-5": "wajahmu muncul di layar temanmu",
+        "s6": "Mencari di internet",
+        "s6-1": "kamu mengetik kata kunci lalu menekan Cari",
+        "s6-2": "permintaan dikirim lewat Wi-Fi ke router",
+        "s6-3": "router meneruskan ke server mesin pencari",
+        "s6-4": "server mengirim daftar hasil kembali",
+        "s6-5": "hasil pencarian muncul di layarmu",
+        "s7": "Mengirim foto ke kakek",
+        "s7-1": "kamu memilih foto lalu menekan kirim",
+        "s7-2": "foto dipecah jadi paket-paket",
+        "s7-3": "paket lewat internet ke server",
+        "s7-4": "server meneruskan paket ke HP kakek",
+        "s7-5": "HP kakek menyusun paket jadi foto",
+        "s8": "Membuka situs sekolah",
+        "s8-1": "kamu mengetik alamat situs sekolah",
+        "s8-2": "laptop mengirim permintaan ke router",
+        "s8-3": "permintaan sampai ke server situs sekolah",
+        "s8-4": "server mengirim halaman dalam paket-paket",
+        "s8-5": "browser menyusun paket dan menampilkan halaman",
+        "s9": "Bermain gim daring",
+        "s9-1": "kamu menekan tombol lompat",
+        "s9-2": "perangkatmu mengirim perintah lewat internet",
+        "s9-3": "server gim menerima perintah",
+        "s9-4": "server mengirim posisi baru ke semua pemain",
+        "s9-5": "tokohmu melompat di layar temanmu",
+        "s10": "Pesan suara",
+        "s10-1": "kamu merekam suaramu",
+        "s10-2": "suara diubah jadi data lalu dipecah jadi paket",
+        "s10-3": "paket dikirim lewat internet ke server",
+        "s10-4": "server meneruskan paket ke HP temanmu",
+        "s10-5": "temanmu memutar pesan suaramu"
       },
       "en": {
         "judul": "A Message's Journey",
@@ -177421,7 +183337,37 @@ export const PAKET_RAW: unknown[] = [
         "s5-2": "the picture is split into packets",
         "s5-3": "the packets are sent across the internet",
         "s5-4": "your friend's phone puts the packets together",
-        "s5-5": "your face appears on your friend's screen"
+        "s5-5": "your face appears on your friend's screen",
+        "s6": "Searching the internet",
+        "s6-1": "you type a keyword and press Search",
+        "s6-2": "the request goes over Wi-Fi to the router",
+        "s6-3": "the router passes it to the search engine server",
+        "s6-4": "the server sends back a list of results",
+        "s6-5": "the search results appear on your screen",
+        "s7": "Sending a photo to Grandpa",
+        "s7-1": "you choose a photo and press send",
+        "s7-2": "the photo is split into packets",
+        "s7-3": "the packets travel over the internet to the server",
+        "s7-4": "the server passes the packets to Grandpa's phone",
+        "s7-5": "Grandpa's phone puts the packets back into a photo",
+        "s8": "Opening the school website",
+        "s8-1": "you type the school website address",
+        "s8-2": "the laptop sends a request to the router",
+        "s8-3": "the request reaches the school website server",
+        "s8-4": "the server sends the page in packets",
+        "s8-5": "the browser puts the packets together and shows the page",
+        "s9": "Playing an online game",
+        "s9-1": "you press the jump button",
+        "s9-2": "your device sends the command over the internet",
+        "s9-3": "the game server receives the command",
+        "s9-4": "the server sends the new position to all players",
+        "s9-5": "your character jumps on your friend's screen",
+        "s10": "Voice message",
+        "s10-1": "you record your voice",
+        "s10-2": "the sound is turned into data and split into packets",
+        "s10-3": "the packets are sent over the internet to the server",
+        "s10-4": "the server passes the packets to your friend's phone",
+        "s10-5": "your friend plays your voice message"
       }
     },
     "knobs": {
@@ -177586,6 +183532,136 @@ export const PAKET_RAW: unknown[] = [
             "id": "s5-5",
             "labelKey": "s5-5",
             "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "titleKey": "s6",
+        "steps": [
+          {
+            "id": "s6-1",
+            "labelKey": "s6-1"
+          },
+          {
+            "id": "s6-2",
+            "labelKey": "s6-2"
+          },
+          {
+            "id": "s6-3",
+            "labelKey": "s6-3"
+          },
+          {
+            "id": "s6-4",
+            "labelKey": "s6-4"
+          },
+          {
+            "id": "s6-5",
+            "labelKey": "s6-5"
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "titleKey": "s7",
+        "steps": [
+          {
+            "id": "s7-1",
+            "labelKey": "s7-1"
+          },
+          {
+            "id": "s7-2",
+            "labelKey": "s7-2"
+          },
+          {
+            "id": "s7-3",
+            "labelKey": "s7-3"
+          },
+          {
+            "id": "s7-4",
+            "labelKey": "s7-4"
+          },
+          {
+            "id": "s7-5",
+            "labelKey": "s7-5"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "titleKey": "s8",
+        "steps": [
+          {
+            "id": "s8-1",
+            "labelKey": "s8-1"
+          },
+          {
+            "id": "s8-2",
+            "labelKey": "s8-2"
+          },
+          {
+            "id": "s8-3",
+            "labelKey": "s8-3"
+          },
+          {
+            "id": "s8-4",
+            "labelKey": "s8-4"
+          },
+          {
+            "id": "s8-5",
+            "labelKey": "s8-5"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "titleKey": "s9",
+        "steps": [
+          {
+            "id": "s9-1",
+            "labelKey": "s9-1"
+          },
+          {
+            "id": "s9-2",
+            "labelKey": "s9-2"
+          },
+          {
+            "id": "s9-3",
+            "labelKey": "s9-3"
+          },
+          {
+            "id": "s9-4",
+            "labelKey": "s9-4"
+          },
+          {
+            "id": "s9-5",
+            "labelKey": "s9-5"
+          }
+        ]
+      },
+      {
+        "id": "s10",
+        "titleKey": "s10",
+        "steps": [
+          {
+            "id": "s10-1",
+            "labelKey": "s10-1"
+          },
+          {
+            "id": "s10-2",
+            "labelKey": "s10-2"
+          },
+          {
+            "id": "s10-3",
+            "labelKey": "s10-3"
+          },
+          {
+            "id": "s10-4",
+            "labelKey": "s10-4"
+          },
+          {
+            "id": "s10-5",
+            "labelKey": "s10-5"
           }
         ]
       }
@@ -180091,7 +186167,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-lapisan-bumi",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.BUMI-ANTARIKSA.01"
@@ -180127,15 +186203,7 @@ export const PAKET_RAW: unknown[] = [
         "dalamke-kerak": "crust: the rock we stand on"
       }
     },
-    "knobs": {
-      "steps": {
-        "min": 3,
-        "max": 4,
-        "default": 4,
-        "step": 1,
-        "keterangan": "jumlah lapisan: 3 (kerak, mantel, inti luar / dari pusat: inti dalam, inti luar, mantel) → 4"
-      }
-    },
+    "knobs": {},
     "assets": [],
     "generatif": true,
     "rounds": 10,
@@ -180200,12 +186268,198 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏔️"
           }
         ]
+      },
+      {
+        "id": "luarke-tanpa-kerak",
+        "titleKey": "s-luarke",
+        "steps": [
+          {
+            "id": "mantel",
+            "labelKey": "luarke-mantel",
+            "shape": "circle",
+            "color": "#ff8a65"
+          },
+          {
+            "id": "intiluar",
+            "labelKey": "luarke-intiluar",
+            "shape": "circle",
+            "color": "#e53935"
+          },
+          {
+            "id": "intidalam",
+            "labelKey": "luarke-intidalam",
+            "shape": "circle",
+            "color": "#fdd835"
+          }
+        ]
+      },
+      {
+        "id": "luarke-tanpa-mantel",
+        "titleKey": "s-luarke",
+        "steps": [
+          {
+            "id": "kerak",
+            "labelKey": "luarke-kerak",
+            "emoji": "🏔️"
+          },
+          {
+            "id": "intiluar",
+            "labelKey": "luarke-intiluar",
+            "shape": "circle",
+            "color": "#e53935"
+          },
+          {
+            "id": "intidalam",
+            "labelKey": "luarke-intidalam",
+            "shape": "circle",
+            "color": "#fdd835"
+          }
+        ]
+      },
+      {
+        "id": "luarke-tanpa-intiluar",
+        "titleKey": "s-luarke",
+        "steps": [
+          {
+            "id": "kerak",
+            "labelKey": "luarke-kerak",
+            "emoji": "🏔️"
+          },
+          {
+            "id": "mantel",
+            "labelKey": "luarke-mantel",
+            "shape": "circle",
+            "color": "#ff8a65"
+          },
+          {
+            "id": "intidalam",
+            "labelKey": "luarke-intidalam",
+            "shape": "circle",
+            "color": "#fdd835"
+          }
+        ]
+      },
+      {
+        "id": "luarke-tanpa-intidalam",
+        "titleKey": "s-luarke",
+        "steps": [
+          {
+            "id": "kerak",
+            "labelKey": "luarke-kerak",
+            "emoji": "🏔️"
+          },
+          {
+            "id": "mantel",
+            "labelKey": "luarke-mantel",
+            "shape": "circle",
+            "color": "#ff8a65"
+          },
+          {
+            "id": "intiluar",
+            "labelKey": "luarke-intiluar",
+            "shape": "circle",
+            "color": "#e53935"
+          }
+        ]
+      },
+      {
+        "id": "dalamke-tanpa-intidalam",
+        "titleKey": "s-dalamke",
+        "steps": [
+          {
+            "id": "intiluar",
+            "labelKey": "dalamke-intiluar",
+            "shape": "circle",
+            "color": "#e53935"
+          },
+          {
+            "id": "mantel",
+            "labelKey": "dalamke-mantel",
+            "shape": "circle",
+            "color": "#ff8a65"
+          },
+          {
+            "id": "kerak",
+            "labelKey": "dalamke-kerak",
+            "emoji": "🏔️"
+          }
+        ]
+      },
+      {
+        "id": "dalamke-tanpa-intiluar",
+        "titleKey": "s-dalamke",
+        "steps": [
+          {
+            "id": "intidalam",
+            "labelKey": "dalamke-intidalam",
+            "shape": "circle",
+            "color": "#fdd835"
+          },
+          {
+            "id": "mantel",
+            "labelKey": "dalamke-mantel",
+            "shape": "circle",
+            "color": "#ff8a65"
+          },
+          {
+            "id": "kerak",
+            "labelKey": "dalamke-kerak",
+            "emoji": "🏔️"
+          }
+        ]
+      },
+      {
+        "id": "dalamke-tanpa-mantel",
+        "titleKey": "s-dalamke",
+        "steps": [
+          {
+            "id": "intidalam",
+            "labelKey": "dalamke-intidalam",
+            "shape": "circle",
+            "color": "#fdd835"
+          },
+          {
+            "id": "intiluar",
+            "labelKey": "dalamke-intiluar",
+            "shape": "circle",
+            "color": "#e53935"
+          },
+          {
+            "id": "kerak",
+            "labelKey": "dalamke-kerak",
+            "emoji": "🏔️"
+          }
+        ]
+      },
+      {
+        "id": "dalamke-tanpa-kerak",
+        "titleKey": "s-dalamke",
+        "steps": [
+          {
+            "id": "intidalam",
+            "labelKey": "dalamke-intidalam",
+            "shape": "circle",
+            "color": "#fdd835"
+          },
+          {
+            "id": "intiluar",
+            "labelKey": "dalamke-intiluar",
+            "shape": "circle",
+            "color": "#e53935"
+          },
+          {
+            "id": "mantel",
+            "labelKey": "dalamke-mantel",
+            "shape": "circle",
+            "color": "#ff8a65"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd4-sains-mencair-dan-membeku",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.WUJUD-ZAT.02"
@@ -180234,7 +186488,37 @@ export const PAKET_RAW: unknown[] = [
         "lilin-padat": "potongan lilin padat",
         "lilin-panci": "dipanaskan sampai meleleh",
         "lilin-tuang": "lilin cair dituang ke cetakan",
-        "lilin-beku": "mendingin dan membeku jadi lilin baru"
+        "lilin-beku": "mendingin dan membeku jadi lilin baru",
+        "s-eskrim": "Es krim meleleh",
+        "eskrim-beku": "es krim beku dari freezer",
+        "eskrim-matahari": "dibiarkan di bawah terik matahari",
+        "eskrim-menetes": "es krim mulai menetes",
+        "eskrim-cair": "tinggal es krim cair di mangkuk",
+        "s-esloli": "Membuat es loli",
+        "esloli-jus": "jus buah cair",
+        "esloli-tuang": "jus dituang ke cetakan",
+        "esloli-freezer": "cetakan disimpan di freezer semalam",
+        "esloli-padat": "jus membeku jadi es loli padat",
+        "s-salju": "Boneka salju di hari cerah",
+        "salju-boneka": "boneka salju padat",
+        "salju-matahari": "matahari bersinar hangat",
+        "salju-meleleh": "salju mulai meleleh dan menetes",
+        "salju-genangan": "tinggal genangan air di tanah",
+        "s-danau": "Danau di musim dingin",
+        "danau-air": "air danau masih cair",
+        "danau-dingin": "udara musim dingin sangat dingin",
+        "danau-tipis": "permukaan danau membeku tipis",
+        "danau-tebal": "esnya tebal, bisa dipakai berseluncur",
+        "s-emas": "Membuat cincin emas",
+        "emas-padat": "potongan emas padat",
+        "emas-panas": "dipanaskan di tungku sangat panas",
+        "emas-tuang": "emas cair dituang ke cetakan",
+        "emas-cincin": "mendingin dan membeku jadi cincin",
+        "s-mentega": "Mentega meleleh lalu mengeras",
+        "mentega-padat": "mentega padat dari kulkas",
+        "mentega-wajan": "dipanaskan di wajan",
+        "mentega-leleh": "mentega meleleh jadi cair",
+        "mentega-keras": "didinginkan di kulkas, mengeras lagi"
       },
       "en": {
         "judul": "Melting and Freezing",
@@ -180258,7 +186542,37 @@ export const PAKET_RAW: unknown[] = [
         "lilin-padat": "pieces of solid wax",
         "lilin-panci": "heated until it melts",
         "lilin-tuang": "liquid wax poured into a mould",
-        "lilin-beku": "it cools and freezes into a new candle"
+        "lilin-beku": "it cools and freezes into a new candle",
+        "s-eskrim": "Ice cream melts",
+        "eskrim-beku": "frozen ice cream from the freezer",
+        "eskrim-matahari": "left out in the hot sun",
+        "eskrim-menetes": "the ice cream starts to drip",
+        "eskrim-cair": "only runny ice cream is left in the bowl",
+        "s-esloli": "Making ice lollies",
+        "esloli-jus": "liquid fruit juice",
+        "esloli-tuang": "the juice is poured into a mould",
+        "esloli-freezer": "the mould stays in the freezer overnight",
+        "esloli-padat": "the juice freezes into a solid ice lolly",
+        "s-salju": "A snowman on a sunny day",
+        "salju-boneka": "a solid snowman",
+        "salju-matahari": "the sun shines warmly",
+        "salju-meleleh": "the snow starts to melt and drip",
+        "salju-genangan": "only a puddle of water is left",
+        "s-danau": "A lake in winter",
+        "danau-air": "the lake water is still liquid",
+        "danau-dingin": "the winter air is very cold",
+        "danau-tipis": "a thin layer of ice forms on top",
+        "danau-tebal": "the ice is thick enough for skating",
+        "s-emas": "Making a gold ring",
+        "emas-padat": "a solid piece of gold",
+        "emas-panas": "heated in a very hot furnace",
+        "emas-tuang": "the liquid gold is poured into a mould",
+        "emas-cincin": "it cools and freezes into a ring",
+        "s-mentega": "Butter melts then hardens",
+        "mentega-padat": "solid butter from the fridge",
+        "mentega-wajan": "heated in a pan",
+        "mentega-leleh": "the butter melts into a liquid",
+        "mentega-keras": "cooled in the fridge, it hardens again"
       }
     },
     "knobs": {
@@ -180380,12 +186694,172 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🕯️"
           }
         ]
+      },
+      {
+        "id": "eskrim",
+        "titleKey": "s-eskrim",
+        "steps": [
+          {
+            "id": "beku",
+            "labelKey": "eskrim-beku",
+            "emoji": "🍦"
+          },
+          {
+            "id": "matahari",
+            "labelKey": "eskrim-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "menetes",
+            "labelKey": "eskrim-menetes",
+            "emoji": "💧"
+          },
+          {
+            "id": "cair",
+            "labelKey": "eskrim-cair",
+            "emoji": "🥣"
+          }
+        ]
+      },
+      {
+        "id": "esloli",
+        "titleKey": "s-esloli",
+        "steps": [
+          {
+            "id": "jus",
+            "labelKey": "esloli-jus",
+            "emoji": "🧃"
+          },
+          {
+            "id": "tuang",
+            "labelKey": "esloli-tuang",
+            "emoji": "🫗"
+          },
+          {
+            "id": "freezer",
+            "labelKey": "esloli-freezer",
+            "emoji": "❄️"
+          },
+          {
+            "id": "padat",
+            "labelKey": "esloli-padat",
+            "shape": "rect",
+            "color": "#ff7043"
+          }
+        ]
+      },
+      {
+        "id": "salju",
+        "titleKey": "s-salju",
+        "steps": [
+          {
+            "id": "boneka",
+            "labelKey": "salju-boneka",
+            "emoji": "⛄"
+          },
+          {
+            "id": "matahari",
+            "labelKey": "salju-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "meleleh",
+            "labelKey": "salju-meleleh",
+            "emoji": "💧"
+          },
+          {
+            "id": "genangan",
+            "labelKey": "salju-genangan",
+            "shape": "circle",
+            "color": "#90caf9",
+            "scale": 1.3
+          }
+        ]
+      },
+      {
+        "id": "danau",
+        "titleKey": "s-danau",
+        "steps": [
+          {
+            "id": "air",
+            "labelKey": "danau-air",
+            "emoji": "💧"
+          },
+          {
+            "id": "dingin",
+            "labelKey": "danau-dingin",
+            "emoji": "❄️"
+          },
+          {
+            "id": "tipis",
+            "labelKey": "danau-tipis",
+            "emoji": "🧊",
+            "scale": 0.6
+          },
+          {
+            "id": "tebal",
+            "labelKey": "danau-tebal",
+            "emoji": "⛸️"
+          }
+        ]
+      },
+      {
+        "id": "emas",
+        "titleKey": "s-emas",
+        "steps": [
+          {
+            "id": "padat",
+            "labelKey": "emas-padat",
+            "emoji": "🪙"
+          },
+          {
+            "id": "panas",
+            "labelKey": "emas-panas",
+            "emoji": "🔥"
+          },
+          {
+            "id": "tuang",
+            "labelKey": "emas-tuang",
+            "emoji": "🫗"
+          },
+          {
+            "id": "cincin",
+            "labelKey": "emas-cincin",
+            "emoji": "💍"
+          }
+        ]
+      },
+      {
+        "id": "mentega",
+        "titleKey": "s-mentega",
+        "steps": [
+          {
+            "id": "padat",
+            "labelKey": "mentega-padat",
+            "emoji": "🧈"
+          },
+          {
+            "id": "wajan",
+            "labelKey": "mentega-wajan",
+            "emoji": "🔥"
+          },
+          {
+            "id": "leleh",
+            "labelKey": "mentega-leleh",
+            "emoji": "🫗"
+          },
+          {
+            "id": "keras",
+            "labelKey": "mentega-keras",
+            "emoji": "🧈"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd4-sains-rantai-makanan-perbaiki",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.RANTAI-MAKANAN.01"
@@ -180418,7 +186892,37 @@ export const PAKET_RAW: unknown[] = [
         "kolam-ganggang": "ganggang (produsen)",
         "kolam-berudu": "berudu",
         "kolam-ikankecil": "ikan kecil",
-        "kolam-bangau": "burung bangau"
+        "kolam-bangau": "burung bangau",
+        "s-sawah2": "Rantai makanan lain di sawah",
+        "sawah2-padi": "padi (produsen)",
+        "sawah2-belalang": "belalang",
+        "sawah2-katak": "katak",
+        "sawah2-ular": "ular sawah",
+        "s-hutan": "Rantai makanan di hutan",
+        "hutan-biji": "kacang dan biji pohon (produsen)",
+        "hutan-tupai": "tupai",
+        "hutan-ular": "ular pohon",
+        "hutan-elang": "elang",
+        "s-padang2": "Rantai makanan lain di padang rumput",
+        "padang2-rumput": "rumput (produsen)",
+        "padang2-kelinci": "kelinci liar",
+        "padang2-ular": "ular",
+        "padang2-elang": "elang",
+        "s-lautlepas": "Rantai makanan di laut lepas",
+        "lautlepas-rumputlaut": "rumput laut (produsen)",
+        "lautlepas-ikan": "ikan kecil",
+        "lautlepas-cumi": "cumi-cumi",
+        "lautlepas-lumba": "lumba-lumba",
+        "s-karang": "Rantai makanan di terumbu karang",
+        "karang-ganggang": "ganggang di batu karang (produsen)",
+        "karang-kepiting": "kepiting",
+        "karang-gurita": "gurita",
+        "karang-hiu": "hiu karang",
+        "s-kutub": "Rantai makanan di laut kutub",
+        "kutub-fito": "fitoplankton, tumbuhan renik (produsen)",
+        "kutub-krill": "krill, udang kecil",
+        "kutub-penguin": "penguin",
+        "kutub-anjinglaut": "anjing laut"
       },
       "en": {
         "judul": "Mixed-Up Chain",
@@ -180446,7 +186950,37 @@ export const PAKET_RAW: unknown[] = [
         "kolam-ganggang": "algae (producer)",
         "kolam-berudu": "tadpole",
         "kolam-ikankecil": "small fish",
-        "kolam-bangau": "heron"
+        "kolam-bangau": "heron",
+        "s-sawah2": "Another rice field food chain",
+        "sawah2-padi": "rice plant (producer)",
+        "sawah2-belalang": "grasshopper",
+        "sawah2-katak": "frog",
+        "sawah2-ular": "rice field snake",
+        "s-hutan": "A forest food chain",
+        "hutan-biji": "tree nuts and seeds (producer)",
+        "hutan-tupai": "squirrel",
+        "hutan-ular": "tree snake",
+        "hutan-elang": "eagle",
+        "s-padang2": "Another grassland food chain",
+        "padang2-rumput": "grass (producer)",
+        "padang2-kelinci": "wild rabbit",
+        "padang2-ular": "snake",
+        "padang2-elang": "eagle",
+        "s-lautlepas": "An open sea food chain",
+        "lautlepas-rumputlaut": "seaweed (producer)",
+        "lautlepas-ikan": "small fish",
+        "lautlepas-cumi": "squid",
+        "lautlepas-lumba": "dolphin",
+        "s-karang": "A coral reef food chain",
+        "karang-ganggang": "algae on the reef rocks (producer)",
+        "karang-kepiting": "crab",
+        "karang-gurita": "octopus",
+        "karang-hiu": "reef shark",
+        "s-kutub": "A polar sea food chain",
+        "kutub-fito": "phytoplankton, tiny plants (producer)",
+        "kutub-krill": "krill, tiny shrimp",
+        "kutub-penguin": "penguin",
+        "kutub-anjinglaut": "seal"
       }
     },
     "knobs": {
@@ -180590,12 +187124,170 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🐦"
           }
         ]
+      },
+      {
+        "id": "sawah2",
+        "titleKey": "s-sawah2",
+        "steps": [
+          {
+            "id": "padi",
+            "labelKey": "sawah2-padi",
+            "emoji": "🌾"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "sawah2-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "katak",
+            "labelKey": "sawah2-katak",
+            "emoji": "🐸"
+          },
+          {
+            "id": "ular",
+            "labelKey": "sawah2-ular",
+            "emoji": "🐍"
+          }
+        ]
+      },
+      {
+        "id": "hutan",
+        "titleKey": "s-hutan",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "hutan-biji",
+            "emoji": "🌰"
+          },
+          {
+            "id": "tupai",
+            "labelKey": "hutan-tupai",
+            "emoji": "🐿️"
+          },
+          {
+            "id": "ular",
+            "labelKey": "hutan-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "hutan-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "padang2",
+        "titleKey": "s-padang2",
+        "steps": [
+          {
+            "id": "rumput",
+            "labelKey": "padang2-rumput",
+            "emoji": "🌱"
+          },
+          {
+            "id": "kelinci",
+            "labelKey": "padang2-kelinci",
+            "emoji": "🐇"
+          },
+          {
+            "id": "ular",
+            "labelKey": "padang2-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "padang2-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "lautlepas",
+        "titleKey": "s-lautlepas",
+        "steps": [
+          {
+            "id": "rumputlaut",
+            "labelKey": "lautlepas-rumputlaut",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "ikan",
+            "labelKey": "lautlepas-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "cumi",
+            "labelKey": "lautlepas-cumi",
+            "emoji": "🦑"
+          },
+          {
+            "id": "lumba",
+            "labelKey": "lautlepas-lumba",
+            "emoji": "🐬"
+          }
+        ]
+      },
+      {
+        "id": "karang",
+        "titleKey": "s-karang",
+        "steps": [
+          {
+            "id": "ganggang",
+            "labelKey": "karang-ganggang",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "kepiting",
+            "labelKey": "karang-kepiting",
+            "emoji": "🦀"
+          },
+          {
+            "id": "gurita",
+            "labelKey": "karang-gurita",
+            "emoji": "🐙"
+          },
+          {
+            "id": "hiu",
+            "labelKey": "karang-hiu",
+            "emoji": "🦈"
+          }
+        ]
+      },
+      {
+        "id": "kutub",
+        "titleKey": "s-kutub",
+        "steps": [
+          {
+            "id": "fito",
+            "labelKey": "kutub-fito",
+            "emoji": "🌿"
+          },
+          {
+            "id": "krill",
+            "labelKey": "kutub-krill",
+            "emoji": "🦐"
+          },
+          {
+            "id": "penguin",
+            "labelKey": "kutub-penguin",
+            "emoji": "🐧"
+          },
+          {
+            "id": "anjinglaut",
+            "labelKey": "kutub-anjinglaut",
+            "emoji": "🦭"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd4-sains-rantai-makanan-susun",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.RANTAI-MAKANAN.01"
@@ -180628,7 +187320,37 @@ export const PAKET_RAW: unknown[] = [
         "kolam-ganggang": "ganggang (produsen)",
         "kolam-berudu": "berudu",
         "kolam-ikankecil": "ikan kecil",
-        "kolam-bangau": "burung bangau"
+        "kolam-bangau": "burung bangau",
+        "s-sawah2": "Rantai makanan lain di sawah",
+        "sawah2-padi": "padi (produsen)",
+        "sawah2-belalang": "belalang",
+        "sawah2-katak": "katak",
+        "sawah2-ular": "ular sawah",
+        "s-hutan": "Rantai makanan di hutan",
+        "hutan-biji": "kacang dan biji pohon (produsen)",
+        "hutan-tupai": "tupai",
+        "hutan-ular": "ular pohon",
+        "hutan-elang": "elang",
+        "s-padang2": "Rantai makanan lain di padang rumput",
+        "padang2-rumput": "rumput (produsen)",
+        "padang2-kelinci": "kelinci liar",
+        "padang2-ular": "ular",
+        "padang2-elang": "elang",
+        "s-lautlepas": "Rantai makanan di laut lepas",
+        "lautlepas-rumputlaut": "rumput laut (produsen)",
+        "lautlepas-ikan": "ikan kecil",
+        "lautlepas-cumi": "cumi-cumi",
+        "lautlepas-lumba": "lumba-lumba",
+        "s-karang": "Rantai makanan di terumbu karang",
+        "karang-ganggang": "ganggang di batu karang (produsen)",
+        "karang-kepiting": "kepiting",
+        "karang-gurita": "gurita",
+        "karang-hiu": "hiu karang",
+        "s-kutub": "Rantai makanan di laut kutub",
+        "kutub-fito": "fitoplankton, tumbuhan renik (produsen)",
+        "kutub-krill": "krill, udang kecil",
+        "kutub-penguin": "penguin",
+        "kutub-anjinglaut": "anjing laut"
       },
       "en": {
         "judul": "Who Eats Whom?",
@@ -180656,7 +187378,37 @@ export const PAKET_RAW: unknown[] = [
         "kolam-ganggang": "algae (producer)",
         "kolam-berudu": "tadpole",
         "kolam-ikankecil": "small fish",
-        "kolam-bangau": "heron"
+        "kolam-bangau": "heron",
+        "s-sawah2": "Another rice field food chain",
+        "sawah2-padi": "rice plant (producer)",
+        "sawah2-belalang": "grasshopper",
+        "sawah2-katak": "frog",
+        "sawah2-ular": "rice field snake",
+        "s-hutan": "A forest food chain",
+        "hutan-biji": "tree nuts and seeds (producer)",
+        "hutan-tupai": "squirrel",
+        "hutan-ular": "tree snake",
+        "hutan-elang": "eagle",
+        "s-padang2": "Another grassland food chain",
+        "padang2-rumput": "grass (producer)",
+        "padang2-kelinci": "wild rabbit",
+        "padang2-ular": "snake",
+        "padang2-elang": "eagle",
+        "s-lautlepas": "An open sea food chain",
+        "lautlepas-rumputlaut": "seaweed (producer)",
+        "lautlepas-ikan": "small fish",
+        "lautlepas-cumi": "squid",
+        "lautlepas-lumba": "dolphin",
+        "s-karang": "A coral reef food chain",
+        "karang-ganggang": "algae on the reef rocks (producer)",
+        "karang-kepiting": "crab",
+        "karang-gurita": "octopus",
+        "karang-hiu": "reef shark",
+        "s-kutub": "A polar sea food chain",
+        "kutub-fito": "phytoplankton, tiny plants (producer)",
+        "kutub-krill": "krill, tiny shrimp",
+        "kutub-penguin": "penguin",
+        "kutub-anjinglaut": "seal"
       }
     },
     "knobs": {
@@ -180800,12 +187552,170 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🐦"
           }
         ]
+      },
+      {
+        "id": "sawah2",
+        "titleKey": "s-sawah2",
+        "steps": [
+          {
+            "id": "padi",
+            "labelKey": "sawah2-padi",
+            "emoji": "🌾"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "sawah2-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "katak",
+            "labelKey": "sawah2-katak",
+            "emoji": "🐸"
+          },
+          {
+            "id": "ular",
+            "labelKey": "sawah2-ular",
+            "emoji": "🐍"
+          }
+        ]
+      },
+      {
+        "id": "hutan",
+        "titleKey": "s-hutan",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "hutan-biji",
+            "emoji": "🌰"
+          },
+          {
+            "id": "tupai",
+            "labelKey": "hutan-tupai",
+            "emoji": "🐿️"
+          },
+          {
+            "id": "ular",
+            "labelKey": "hutan-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "hutan-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "padang2",
+        "titleKey": "s-padang2",
+        "steps": [
+          {
+            "id": "rumput",
+            "labelKey": "padang2-rumput",
+            "emoji": "🌱"
+          },
+          {
+            "id": "kelinci",
+            "labelKey": "padang2-kelinci",
+            "emoji": "🐇"
+          },
+          {
+            "id": "ular",
+            "labelKey": "padang2-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "padang2-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "lautlepas",
+        "titleKey": "s-lautlepas",
+        "steps": [
+          {
+            "id": "rumputlaut",
+            "labelKey": "lautlepas-rumputlaut",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "ikan",
+            "labelKey": "lautlepas-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "cumi",
+            "labelKey": "lautlepas-cumi",
+            "emoji": "🦑"
+          },
+          {
+            "id": "lumba",
+            "labelKey": "lautlepas-lumba",
+            "emoji": "🐬"
+          }
+        ]
+      },
+      {
+        "id": "karang",
+        "titleKey": "s-karang",
+        "steps": [
+          {
+            "id": "ganggang",
+            "labelKey": "karang-ganggang",
+            "emoji": "🌿",
+            "color": "#26a69a"
+          },
+          {
+            "id": "kepiting",
+            "labelKey": "karang-kepiting",
+            "emoji": "🦀"
+          },
+          {
+            "id": "gurita",
+            "labelKey": "karang-gurita",
+            "emoji": "🐙"
+          },
+          {
+            "id": "hiu",
+            "labelKey": "karang-hiu",
+            "emoji": "🦈"
+          }
+        ]
+      },
+      {
+        "id": "kutub",
+        "titleKey": "s-kutub",
+        "steps": [
+          {
+            "id": "fito",
+            "labelKey": "kutub-fito",
+            "emoji": "🌿"
+          },
+          {
+            "id": "krill",
+            "labelKey": "kutub-krill",
+            "emoji": "🦐"
+          },
+          {
+            "id": "penguin",
+            "labelKey": "kutub-penguin",
+            "emoji": "🐧"
+          },
+          {
+            "id": "anjinglaut",
+            "labelKey": "kutub-anjinglaut",
+            "emoji": "🦭"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd4-sains-urutan-planet",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.BUMI-ANTARIKSA.02"
@@ -180845,7 +187755,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 8,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah planet dari Matahari: 4 (planet berbatu) → 8"
+        "keterangan": "jumlah planet yang disusun: 4 → 8; tiap ronde memakai pilihan planet berbeda, tetap urut dari Matahari"
       }
     },
     "assets": [],
@@ -180905,6 +187815,383 @@ export const PAKET_RAW: unknown[] = [
             "shape": "circle",
             "color": "#a6e3e9",
             "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "dari-venus",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "venus",
+            "labelKey": "planet-venus",
+            "shape": "circle",
+            "color": "#e0c068",
+            "scale": 0.8
+          },
+          {
+            "id": "bumi",
+            "labelKey": "planet-bumi",
+            "emoji": "🌍",
+            "scale": 0.8
+          },
+          {
+            "id": "mars",
+            "labelKey": "planet-mars",
+            "shape": "circle",
+            "color": "#c1440e",
+            "scale": 0.6
+          },
+          {
+            "id": "jupiter",
+            "labelKey": "planet-jupiter",
+            "shape": "circle",
+            "color": "#d8a46c",
+            "scale": 2
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "dari-bumi",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "bumi",
+            "labelKey": "planet-bumi",
+            "emoji": "🌍",
+            "scale": 0.8
+          },
+          {
+            "id": "mars",
+            "labelKey": "planet-mars",
+            "shape": "circle",
+            "color": "#c1440e",
+            "scale": 0.6
+          },
+          {
+            "id": "jupiter",
+            "labelKey": "planet-jupiter",
+            "shape": "circle",
+            "color": "#d8a46c",
+            "scale": 2
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "dari-mars",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "mars",
+            "labelKey": "planet-mars",
+            "shape": "circle",
+            "color": "#c1440e",
+            "scale": 0.6
+          },
+          {
+            "id": "jupiter",
+            "labelKey": "planet-jupiter",
+            "shape": "circle",
+            "color": "#d8a46c",
+            "scale": 2
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "raksasa",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "jupiter",
+            "labelKey": "planet-jupiter",
+            "shape": "circle",
+            "color": "#d8a46c",
+            "scale": 2
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "loncat-a",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "merkurius",
+            "labelKey": "planet-merkurius",
+            "shape": "circle",
+            "color": "#9e9e9e",
+            "scale": 0.5
+          },
+          {
+            "id": "bumi",
+            "labelKey": "planet-bumi",
+            "emoji": "🌍",
+            "scale": 0.8
+          },
+          {
+            "id": "jupiter",
+            "labelKey": "planet-jupiter",
+            "shape": "circle",
+            "color": "#d8a46c",
+            "scale": 2
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "loncat-b",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "merkurius",
+            "labelKey": "planet-merkurius",
+            "shape": "circle",
+            "color": "#9e9e9e",
+            "scale": 0.5
+          },
+          {
+            "id": "venus",
+            "labelKey": "planet-venus",
+            "shape": "circle",
+            "color": "#e0c068",
+            "scale": 0.8
+          },
+          {
+            "id": "mars",
+            "labelKey": "planet-mars",
+            "shape": "circle",
+            "color": "#c1440e",
+            "scale": 0.6
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "loncat-c",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "merkurius",
+            "labelKey": "planet-merkurius",
+            "shape": "circle",
+            "color": "#9e9e9e",
+            "scale": 0.5
+          },
+          {
+            "id": "venus",
+            "labelKey": "planet-venus",
+            "shape": "circle",
+            "color": "#e0c068",
+            "scale": 0.8
+          },
+          {
+            "id": "jupiter",
+            "labelKey": "planet-jupiter",
+            "shape": "circle",
+            "color": "#d8a46c",
+            "scale": 2
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "loncat-d",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "venus",
+            "labelKey": "planet-venus",
+            "shape": "circle",
+            "color": "#e0c068",
+            "scale": 0.8
+          },
+          {
+            "id": "bumi",
+            "labelKey": "planet-bumi",
+            "emoji": "🌍",
+            "scale": 0.8
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
+          },
+          {
+            "id": "uranus",
+            "labelKey": "planet-uranus",
+            "shape": "circle",
+            "color": "#a6e3e9",
+            "scale": 1.2
+          },
+          {
+            "id": "neptunus",
+            "labelKey": "planet-neptunus",
+            "shape": "circle",
+            "color": "#3f51b5",
+            "scale": 1.2
+          }
+        ]
+      },
+      {
+        "id": "loncat-e",
+        "titleKey": "s-planet",
+        "steps": [
+          {
+            "id": "merkurius",
+            "labelKey": "planet-merkurius",
+            "shape": "circle",
+            "color": "#9e9e9e",
+            "scale": 0.5
+          },
+          {
+            "id": "bumi",
+            "labelKey": "planet-bumi",
+            "emoji": "🌍",
+            "scale": 0.8
+          },
+          {
+            "id": "mars",
+            "labelKey": "planet-mars",
+            "shape": "circle",
+            "color": "#c1440e",
+            "scale": 0.6
+          },
+          {
+            "id": "saturnus",
+            "labelKey": "planet-saturnus",
+            "emoji": "🪐",
+            "scale": 1.8
           },
           {
             "id": "neptunus",
@@ -181739,7 +189026,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-jalan-makanan-perbaiki",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -181755,7 +189042,71 @@ export const PAKET_RAW: unknown[] = [
         "cerna-lambung": "lambung: diaduk dengan cairan asam",
         "cerna-usushalus": "usus halus: sari makanan diserap ke darah",
         "cerna-ususbesar": "usus besar: air diserap",
-        "cerna-anus": "anus: sisa dikeluarkan"
+        "cerna-anus": "anus: sisa dikeluarkan",
+        "s-roti": "Perjalanan sepotong roti",
+        "roti-kerongkongan": "kerongkongan: roti yang sudah lumat didorong turun",
+        "roti-lambung": "lambung: roti diaduk dengan cairan asam",
+        "roti-usushalus": "usus halus: sari roti diserap ke darah",
+        "roti-ususbesar": "usus besar: air diserap dari sisa roti",
+        "roti-rektum": "rektum: sisa roti ditampung sebentar",
+        "roti-anus": "anus: sisa roti dikeluarkan",
+        "s-pisang": "Perjalanan sebuah pisang",
+        "pisang-mulut": "mulut: pisang dikunyah dan dibasahi ludah",
+        "pisang-lambung": "lambung: pisang diaduk dengan cairan asam",
+        "pisang-usushalus": "usus halus: sari pisang diserap ke darah",
+        "pisang-ususbesar": "usus besar: air diserap dari sisa pisang",
+        "pisang-rektum": "rektum: sisa pisang ditampung sebentar",
+        "pisang-anus": "anus: sisa pisang dikeluarkan",
+        "s-telur": "Perjalanan sebutir telur rebus",
+        "telur-mulut": "mulut: telur dikunyah dan dibasahi ludah",
+        "telur-kerongkongan": "kerongkongan: telur yang sudah lumat didorong turun",
+        "telur-usushalus": "usus halus: sari telur diserap ke darah",
+        "telur-ususbesar": "usus besar: air diserap dari sisa telur",
+        "telur-rektum": "rektum: sisa telur ditampung sebentar",
+        "telur-anus": "anus: sisa telur dikeluarkan",
+        "s-bayam": "Perjalanan sesendok sayur bayam",
+        "bayam-mulut": "mulut: bayam dikunyah dan dibasahi ludah",
+        "bayam-kerongkongan": "kerongkongan: bayam yang sudah lumat didorong turun",
+        "bayam-lambung": "lambung: bayam diaduk dengan cairan asam",
+        "bayam-ususbesar": "usus besar: air diserap dari sisa bayam",
+        "bayam-rektum": "rektum: sisa bayam ditampung sebentar",
+        "bayam-anus": "anus: sisa bayam dikeluarkan",
+        "s-apel": "Perjalanan sepotong apel",
+        "apel-lambung": "lambung: apel diaduk dengan cairan asam",
+        "apel-usushalus": "usus halus: sari apel diserap ke darah",
+        "apel-ususbesar": "usus besar: air diserap dari sisa apel",
+        "apel-rektum": "rektum: sisa apel ditampung sebentar",
+        "apel-anus": "anus: sisa apel dikeluarkan",
+        "s-sate": "Perjalanan setusuk sate",
+        "sate-kerongkongan": "kerongkongan: sate yang sudah lumat didorong turun",
+        "sate-usushalus": "usus halus: sari sate diserap ke darah",
+        "sate-ususbesar": "usus besar: air diserap dari sisa sate",
+        "sate-rektum": "rektum: sisa sate ditampung sebentar",
+        "sate-anus": "anus: sisa sate dikeluarkan",
+        "s-jagung": "Perjalanan sebatang jagung rebus",
+        "jagung-mulut": "mulut: jagung dikunyah dan dibasahi ludah",
+        "jagung-usushalus": "usus halus: sari jagung diserap ke darah",
+        "jagung-ususbesar": "usus besar: air diserap dari sisa jagung",
+        "jagung-rektum": "rektum: sisa jagung ditampung sebentar",
+        "jagung-anus": "anus: sisa jagung dikeluarkan",
+        "s-ikan": "Perjalanan sepotong ikan goreng",
+        "ikan-kerongkongan": "kerongkongan: ikan yang sudah lumat didorong turun",
+        "ikan-lambung": "lambung: ikan diaduk dengan cairan asam",
+        "ikan-ususbesar": "usus besar: air diserap dari sisa ikan",
+        "ikan-rektum": "rektum: sisa ikan ditampung sebentar",
+        "ikan-anus": "anus: sisa ikan dikeluarkan",
+        "s-tempe": "Perjalanan sepotong tempe",
+        "tempe-mulut": "mulut: tempe dikunyah dan dibasahi ludah",
+        "tempe-lambung": "lambung: tempe diaduk dengan cairan asam",
+        "tempe-usushalus": "usus halus: sari tempe diserap ke darah",
+        "tempe-rektum": "rektum: sisa tempe ditampung sebentar",
+        "tempe-anus": "anus: sisa tempe dikeluarkan",
+        "s-kentang": "Perjalanan sebuah kentang rebus",
+        "kentang-kerongkongan": "kerongkongan: kentang yang sudah lumat didorong turun",
+        "kentang-lambung": "lambung: kentang diaduk dengan cairan asam",
+        "kentang-usushalus": "usus halus: sari kentang diserap ke darah",
+        "kentang-rektum": "rektum: sisa kentang ditampung sebentar",
+        "kentang-anus": "anus: sisa kentang dikeluarkan"
       },
       "en": {
         "judul": "Food Path Mix-Up",
@@ -181766,16 +189117,80 @@ export const PAKET_RAW: unknown[] = [
         "cerna-lambung": "stomach: churned with acid",
         "cerna-usushalus": "small intestine: nutrients absorbed into the blood",
         "cerna-ususbesar": "large intestine: water absorbed",
-        "cerna-anus": "anus: waste leaves the body"
+        "cerna-anus": "anus: waste leaves the body",
+        "s-roti": "The journey of a slice of bread",
+        "roti-kerongkongan": "oesophagus: the mashed bread is pushed down",
+        "roti-lambung": "stomach: the bread is churned with acid",
+        "roti-usushalus": "small intestine: nutrients from the bread pass into the blood",
+        "roti-ususbesar": "large intestine: water is taken back from what is left",
+        "roti-rektum": "rectum: the waste is stored for a while",
+        "roti-anus": "anus: the waste leaves the body",
+        "s-pisang": "The journey of a banana",
+        "pisang-mulut": "mouth: the banana is chewed and wetted with saliva",
+        "pisang-lambung": "stomach: the banana is churned with acid",
+        "pisang-usushalus": "small intestine: nutrients from the banana pass into the blood",
+        "pisang-ususbesar": "large intestine: water is taken back from what is left",
+        "pisang-rektum": "rectum: the waste is stored for a while",
+        "pisang-anus": "anus: the waste leaves the body",
+        "s-telur": "The journey of a boiled egg",
+        "telur-mulut": "mouth: the egg is chewed and wetted with saliva",
+        "telur-kerongkongan": "oesophagus: the mashed egg is pushed down",
+        "telur-usushalus": "small intestine: nutrients from the egg pass into the blood",
+        "telur-ususbesar": "large intestine: water is taken back from what is left",
+        "telur-rektum": "rectum: the waste is stored for a while",
+        "telur-anus": "anus: the waste leaves the body",
+        "s-bayam": "The journey of a spoonful of spinach",
+        "bayam-mulut": "mouth: the spinach is chewed and wetted with saliva",
+        "bayam-kerongkongan": "oesophagus: the mashed spinach is pushed down",
+        "bayam-lambung": "stomach: the spinach is churned with acid",
+        "bayam-ususbesar": "large intestine: water is taken back from what is left",
+        "bayam-rektum": "rectum: the waste is stored for a while",
+        "bayam-anus": "anus: the waste leaves the body",
+        "s-apel": "The journey of a piece of apple",
+        "apel-lambung": "stomach: the apple is churned with acid",
+        "apel-usushalus": "small intestine: nutrients from the apple pass into the blood",
+        "apel-ususbesar": "large intestine: water is taken back from what is left",
+        "apel-rektum": "rectum: the waste is stored for a while",
+        "apel-anus": "anus: the waste leaves the body",
+        "s-sate": "The journey of a stick of satay",
+        "sate-kerongkongan": "oesophagus: the mashed satay is pushed down",
+        "sate-usushalus": "small intestine: nutrients from the satay pass into the blood",
+        "sate-ususbesar": "large intestine: water is taken back from what is left",
+        "sate-rektum": "rectum: the waste is stored for a while",
+        "sate-anus": "anus: the waste leaves the body",
+        "s-jagung": "The journey of a boiled corn cob",
+        "jagung-mulut": "mouth: the corn is chewed and wetted with saliva",
+        "jagung-usushalus": "small intestine: nutrients from the corn pass into the blood",
+        "jagung-ususbesar": "large intestine: water is taken back from what is left",
+        "jagung-rektum": "rectum: the waste is stored for a while",
+        "jagung-anus": "anus: the waste leaves the body",
+        "s-ikan": "The journey of a piece of fried fish",
+        "ikan-kerongkongan": "oesophagus: the mashed fish is pushed down",
+        "ikan-lambung": "stomach: the fish is churned with acid",
+        "ikan-ususbesar": "large intestine: water is taken back from what is left",
+        "ikan-rektum": "rectum: the waste is stored for a while",
+        "ikan-anus": "anus: the waste leaves the body",
+        "s-tempe": "The journey of a piece of tempeh",
+        "tempe-mulut": "mouth: the tempeh is chewed and wetted with saliva",
+        "tempe-lambung": "stomach: the tempeh is churned with acid",
+        "tempe-usushalus": "small intestine: nutrients from the tempeh pass into the blood",
+        "tempe-rektum": "rectum: the waste is stored for a while",
+        "tempe-anus": "anus: the waste leaves the body",
+        "s-kentang": "The journey of a boiled potato",
+        "kentang-kerongkongan": "oesophagus: the mashed potato is pushed down",
+        "kentang-lambung": "stomach: the potato is churned with acid",
+        "kentang-usushalus": "small intestine: nutrients from the potato pass into the blood",
+        "kentang-rektum": "rectum: the waste is stored for a while",
+        "kentang-anus": "anus: the waste leaves the body"
       }
     },
     "knobs": {
       "steps": {
         "min": 4,
         "max": 6,
-        "default": 6,
+        "default": 5,
         "step": 1,
-        "keterangan": "jumlah organ: 4 → 6"
+        "keterangan": "jumlah organ: 4 → 6 (bawaan 5 supaya cukup banyak perjalanan berbeda)"
       }
     },
     "assets": [],
@@ -181824,12 +189239,393 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🚽"
           }
         ]
+      },
+      {
+        "id": "roti",
+        "titleKey": "s-roti",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "roti-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "roti-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "roti-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "roti-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "roti-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "roti-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "pisang",
+        "titleKey": "s-pisang",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "pisang-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "pisang-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "pisang-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "pisang-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "pisang-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "pisang-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "telur",
+        "titleKey": "s-telur",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "telur-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "kerongkongan",
+            "labelKey": "telur-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "telur-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "telur-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "telur-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "telur-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "bayam",
+        "titleKey": "s-bayam",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "bayam-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "kerongkongan",
+            "labelKey": "bayam-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "bayam-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "bayam-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "bayam-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "bayam-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "apel",
+        "titleKey": "s-apel",
+        "steps": [
+          {
+            "id": "lambung",
+            "labelKey": "apel-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "apel-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "apel-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "apel-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "apel-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "sate",
+        "titleKey": "s-sate",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "sate-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "sate-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "sate-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "sate-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "sate-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "jagung",
+        "titleKey": "s-jagung",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "jagung-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "jagung-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "jagung-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "jagung-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "jagung-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "ikan",
+        "titleKey": "s-ikan",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "ikan-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "ikan-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "ikan-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "ikan-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "ikan-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "tempe",
+        "titleKey": "s-tempe",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "tempe-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "tempe-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "tempe-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "rektum",
+            "labelKey": "tempe-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "tempe-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "kentang",
+        "titleKey": "s-kentang",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "kentang-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "kentang-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "kentang-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "rektum",
+            "labelKey": "kentang-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "kentang-anus",
+            "emoji": "🚽"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd5-sains-jalan-makanan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.PENCERNAAN.01"
@@ -181838,25 +189634,153 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Perjalanan Makanan",
-        "instruksi": "Susun organ yang dilewati makanan, dari mulut sampai keluar.",
+        "instruksi": "Baca judulnya, lalu susun organ yang dilewati makanan sesuai urutannya.",
         "s-cerna": "Perjalanan sepiring nasi",
         "cerna-mulut": "mulut: dikunyah dan dibasahi ludah",
         "cerna-kerongkongan": "kerongkongan: didorong turun",
         "cerna-lambung": "lambung: diaduk dengan cairan asam",
         "cerna-usushalus": "usus halus: sari makanan diserap ke darah",
         "cerna-ususbesar": "usus besar: air diserap",
-        "cerna-anus": "anus: sisa dikeluarkan"
+        "cerna-anus": "anus: sisa dikeluarkan",
+        "s-roti": "Perjalanan sepotong roti",
+        "roti-kerongkongan": "kerongkongan: roti yang sudah lumat didorong turun",
+        "roti-lambung": "lambung: roti diaduk dengan cairan asam",
+        "roti-usushalus": "usus halus: sari roti diserap ke darah",
+        "roti-ususbesar": "usus besar: air diserap dari sisa roti",
+        "roti-rektum": "rektum: sisa roti ditampung sebentar",
+        "roti-anus": "anus: sisa roti dikeluarkan",
+        "s-pisang": "Perjalanan sebuah pisang",
+        "pisang-mulut": "mulut: pisang dikunyah dan dibasahi ludah",
+        "pisang-lambung": "lambung: pisang diaduk dengan cairan asam",
+        "pisang-usushalus": "usus halus: sari pisang diserap ke darah",
+        "pisang-ususbesar": "usus besar: air diserap dari sisa pisang",
+        "pisang-rektum": "rektum: sisa pisang ditampung sebentar",
+        "pisang-anus": "anus: sisa pisang dikeluarkan",
+        "s-telur": "Perjalanan sebutir telur rebus",
+        "telur-mulut": "mulut: telur dikunyah dan dibasahi ludah",
+        "telur-kerongkongan": "kerongkongan: telur yang sudah lumat didorong turun",
+        "telur-usushalus": "usus halus: sari telur diserap ke darah",
+        "telur-ususbesar": "usus besar: air diserap dari sisa telur",
+        "telur-rektum": "rektum: sisa telur ditampung sebentar",
+        "telur-anus": "anus: sisa telur dikeluarkan",
+        "s-bayam": "Perjalanan sesendok sayur bayam",
+        "bayam-mulut": "mulut: bayam dikunyah dan dibasahi ludah",
+        "bayam-kerongkongan": "kerongkongan: bayam yang sudah lumat didorong turun",
+        "bayam-lambung": "lambung: bayam diaduk dengan cairan asam",
+        "bayam-ususbesar": "usus besar: air diserap dari sisa bayam",
+        "bayam-rektum": "rektum: sisa bayam ditampung sebentar",
+        "bayam-anus": "anus: sisa bayam dikeluarkan",
+        "s-apel": "Perjalanan sepotong apel",
+        "apel-lambung": "lambung: apel diaduk dengan cairan asam",
+        "apel-usushalus": "usus halus: sari apel diserap ke darah",
+        "apel-ususbesar": "usus besar: air diserap dari sisa apel",
+        "apel-rektum": "rektum: sisa apel ditampung sebentar",
+        "apel-anus": "anus: sisa apel dikeluarkan",
+        "s-sate": "Perjalanan setusuk sate",
+        "sate-kerongkongan": "kerongkongan: sate yang sudah lumat didorong turun",
+        "sate-usushalus": "usus halus: sari sate diserap ke darah",
+        "sate-ususbesar": "usus besar: air diserap dari sisa sate",
+        "sate-rektum": "rektum: sisa sate ditampung sebentar",
+        "sate-anus": "anus: sisa sate dikeluarkan",
+        "s-jagung": "Perjalanan sebatang jagung rebus",
+        "jagung-mulut": "mulut: jagung dikunyah dan dibasahi ludah",
+        "jagung-usushalus": "usus halus: sari jagung diserap ke darah",
+        "jagung-ususbesar": "usus besar: air diserap dari sisa jagung",
+        "jagung-rektum": "rektum: sisa jagung ditampung sebentar",
+        "jagung-anus": "anus: sisa jagung dikeluarkan",
+        "s-ikan": "Perjalanan sepotong ikan goreng",
+        "ikan-kerongkongan": "kerongkongan: ikan yang sudah lumat didorong turun",
+        "ikan-lambung": "lambung: ikan diaduk dengan cairan asam",
+        "ikan-ususbesar": "usus besar: air diserap dari sisa ikan",
+        "ikan-rektum": "rektum: sisa ikan ditampung sebentar",
+        "ikan-anus": "anus: sisa ikan dikeluarkan",
+        "s-tempe": "Perjalanan sepotong tempe",
+        "tempe-mulut": "mulut: tempe dikunyah dan dibasahi ludah",
+        "tempe-lambung": "lambung: tempe diaduk dengan cairan asam",
+        "tempe-usushalus": "usus halus: sari tempe diserap ke darah",
+        "tempe-rektum": "rektum: sisa tempe ditampung sebentar",
+        "tempe-anus": "anus: sisa tempe dikeluarkan",
+        "s-kentang": "Perjalanan sebuah kentang rebus",
+        "kentang-kerongkongan": "kerongkongan: kentang yang sudah lumat didorong turun",
+        "kentang-lambung": "lambung: kentang diaduk dengan cairan asam",
+        "kentang-usushalus": "usus halus: sari kentang diserap ke darah",
+        "kentang-rektum": "rektum: sisa kentang ditampung sebentar",
+        "kentang-anus": "anus: sisa kentang dikeluarkan"
       },
       "en": {
         "judul": "The Food Journey",
-        "instruksi": "Put the organs food passes through in order, from the mouth to the way out.",
+        "instruksi": "Read the title, then put the organs the food passes through in order.",
         "s-cerna": "The journey of a plate of rice",
         "cerna-mulut": "mouth: chewed and wetted with saliva",
         "cerna-kerongkongan": "oesophagus: pushed down",
         "cerna-lambung": "stomach: churned with acid",
         "cerna-usushalus": "small intestine: nutrients absorbed into the blood",
         "cerna-ususbesar": "large intestine: water absorbed",
-        "cerna-anus": "anus: waste leaves the body"
+        "cerna-anus": "anus: waste leaves the body",
+        "s-roti": "The journey of a slice of bread",
+        "roti-kerongkongan": "oesophagus: the mashed bread is pushed down",
+        "roti-lambung": "stomach: the bread is churned with acid",
+        "roti-usushalus": "small intestine: nutrients from the bread pass into the blood",
+        "roti-ususbesar": "large intestine: water is taken back from what is left",
+        "roti-rektum": "rectum: the waste is stored for a while",
+        "roti-anus": "anus: the waste leaves the body",
+        "s-pisang": "The journey of a banana",
+        "pisang-mulut": "mouth: the banana is chewed and wetted with saliva",
+        "pisang-lambung": "stomach: the banana is churned with acid",
+        "pisang-usushalus": "small intestine: nutrients from the banana pass into the blood",
+        "pisang-ususbesar": "large intestine: water is taken back from what is left",
+        "pisang-rektum": "rectum: the waste is stored for a while",
+        "pisang-anus": "anus: the waste leaves the body",
+        "s-telur": "The journey of a boiled egg",
+        "telur-mulut": "mouth: the egg is chewed and wetted with saliva",
+        "telur-kerongkongan": "oesophagus: the mashed egg is pushed down",
+        "telur-usushalus": "small intestine: nutrients from the egg pass into the blood",
+        "telur-ususbesar": "large intestine: water is taken back from what is left",
+        "telur-rektum": "rectum: the waste is stored for a while",
+        "telur-anus": "anus: the waste leaves the body",
+        "s-bayam": "The journey of a spoonful of spinach",
+        "bayam-mulut": "mouth: the spinach is chewed and wetted with saliva",
+        "bayam-kerongkongan": "oesophagus: the mashed spinach is pushed down",
+        "bayam-lambung": "stomach: the spinach is churned with acid",
+        "bayam-ususbesar": "large intestine: water is taken back from what is left",
+        "bayam-rektum": "rectum: the waste is stored for a while",
+        "bayam-anus": "anus: the waste leaves the body",
+        "s-apel": "The journey of a piece of apple",
+        "apel-lambung": "stomach: the apple is churned with acid",
+        "apel-usushalus": "small intestine: nutrients from the apple pass into the blood",
+        "apel-ususbesar": "large intestine: water is taken back from what is left",
+        "apel-rektum": "rectum: the waste is stored for a while",
+        "apel-anus": "anus: the waste leaves the body",
+        "s-sate": "The journey of a stick of satay",
+        "sate-kerongkongan": "oesophagus: the mashed satay is pushed down",
+        "sate-usushalus": "small intestine: nutrients from the satay pass into the blood",
+        "sate-ususbesar": "large intestine: water is taken back from what is left",
+        "sate-rektum": "rectum: the waste is stored for a while",
+        "sate-anus": "anus: the waste leaves the body",
+        "s-jagung": "The journey of a boiled corn cob",
+        "jagung-mulut": "mouth: the corn is chewed and wetted with saliva",
+        "jagung-usushalus": "small intestine: nutrients from the corn pass into the blood",
+        "jagung-ususbesar": "large intestine: water is taken back from what is left",
+        "jagung-rektum": "rectum: the waste is stored for a while",
+        "jagung-anus": "anus: the waste leaves the body",
+        "s-ikan": "The journey of a piece of fried fish",
+        "ikan-kerongkongan": "oesophagus: the mashed fish is pushed down",
+        "ikan-lambung": "stomach: the fish is churned with acid",
+        "ikan-ususbesar": "large intestine: water is taken back from what is left",
+        "ikan-rektum": "rectum: the waste is stored for a while",
+        "ikan-anus": "anus: the waste leaves the body",
+        "s-tempe": "The journey of a piece of tempeh",
+        "tempe-mulut": "mouth: the tempeh is chewed and wetted with saliva",
+        "tempe-lambung": "stomach: the tempeh is churned with acid",
+        "tempe-usushalus": "small intestine: nutrients from the tempeh pass into the blood",
+        "tempe-rektum": "rectum: the waste is stored for a while",
+        "tempe-anus": "anus: the waste leaves the body",
+        "s-kentang": "The journey of a boiled potato",
+        "kentang-kerongkongan": "oesophagus: the mashed potato is pushed down",
+        "kentang-lambung": "stomach: the potato is churned with acid",
+        "kentang-usushalus": "small intestine: nutrients from the potato pass into the blood",
+        "kentang-rektum": "rectum: the waste is stored for a while",
+        "kentang-anus": "anus: the waste leaves the body"
       }
     },
     "knobs": {
@@ -181865,7 +189789,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 6,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah organ dari mulut: 4 (sampai usus halus) → 6"
+        "keterangan": "jumlah organ yang tampil (dipotong dari depan): 4 → 6"
       }
     },
     "assets": [],
@@ -181914,12 +189838,393 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🚽"
           }
         ]
+      },
+      {
+        "id": "roti",
+        "titleKey": "s-roti",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "roti-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "roti-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "roti-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "roti-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "roti-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "roti-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "pisang",
+        "titleKey": "s-pisang",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "pisang-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "pisang-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "pisang-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "pisang-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "pisang-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "pisang-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "telur",
+        "titleKey": "s-telur",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "telur-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "kerongkongan",
+            "labelKey": "telur-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "telur-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "telur-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "telur-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "telur-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "bayam",
+        "titleKey": "s-bayam",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "bayam-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "kerongkongan",
+            "labelKey": "bayam-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "bayam-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "bayam-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "bayam-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "bayam-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "apel",
+        "titleKey": "s-apel",
+        "steps": [
+          {
+            "id": "lambung",
+            "labelKey": "apel-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "apel-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "apel-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "apel-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "apel-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "sate",
+        "titleKey": "s-sate",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "sate-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "sate-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "sate-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "sate-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "sate-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "jagung",
+        "titleKey": "s-jagung",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "jagung-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "jagung-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "jagung-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "jagung-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "jagung-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "ikan",
+        "titleKey": "s-ikan",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "ikan-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "ikan-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "ususbesar",
+            "labelKey": "ikan-ususbesar",
+            "shape": "rect",
+            "color": "#ce93d8",
+            "width": 1.6
+          },
+          {
+            "id": "rektum",
+            "labelKey": "ikan-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "ikan-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "tempe",
+        "titleKey": "s-tempe",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "tempe-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "tempe-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "tempe-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "rektum",
+            "labelKey": "tempe-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "tempe-anus",
+            "emoji": "🚽"
+          }
+        ]
+      },
+      {
+        "id": "kentang",
+        "titleKey": "s-kentang",
+        "steps": [
+          {
+            "id": "kerongkongan",
+            "labelKey": "kentang-kerongkongan",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "lambung",
+            "labelKey": "kentang-lambung",
+            "shape": "circle",
+            "color": "#ffab91"
+          },
+          {
+            "id": "usushalus",
+            "labelKey": "kentang-usushalus",
+            "shape": "rect",
+            "color": "#f48fb1"
+          },
+          {
+            "id": "rektum",
+            "labelKey": "kentang-rektum",
+            "shape": "rect",
+            "color": "#a1887f",
+            "width": 0.7
+          },
+          {
+            "id": "anus",
+            "labelKey": "kentang-anus",
+            "emoji": "🚽"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd5-sains-siklus-air",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-AIR.01"
@@ -181945,7 +190250,53 @@ export const PAKET_RAW: unknown[] = [
         "gelas-es": "gelas berisi es teh di meja",
         "gelas-udara": "udara hangat menyentuh gelas yang dingin",
         "gelas-embun": "uap air di udara mengembun",
-        "gelas-titik": "titik-titik air muncul di luar gelas"
+        "gelas-titik": "titik-titik air muncul di luar gelas",
+        "s-cermin": "Cermin kamar mandi",
+        "cermin-mandi": "kamu mandi dengan air hangat",
+        "cermin-uap": "air hangat menguap, uap memenuhi kamar mandi",
+        "cermin-cermin": "uap menyentuh cermin yang dingin",
+        "cermin-buram": "uap mengembun, cermin jadi buram",
+        "cermin-titik": "titik-titik air menyatu dan mengalir turun",
+        "s-panci": "Panci di atas kompor",
+        "panci-api": "air dalam panci dipanaskan di atas api",
+        "panci-didih": "air mendidih dan menguap",
+        "panci-naik": "uap naik ke tutup panci yang lebih dingin",
+        "panci-embun": "uap mengembun jadi titik air di tutup",
+        "panci-tetes": "titik air menetes kembali ke panci",
+        "s-daun": "Embun di daun",
+        "daun-siang": "siang hari, air di tanah menguap ke udara",
+        "daun-malam": "malam tiba, udara mendingin",
+        "daun-embun": "uap air mengembun jadi titik embun di daun",
+        "daun-pagi": "pagi hari, daun basah oleh embun",
+        "daun-hilang": "Matahari makin tinggi, embun menguap lagi",
+        "s-pohon": "Air lewat sebatang pohon",
+        "pohon-akar": "akar pohon menyerap air dari tanah",
+        "pohon-batang": "air naik lewat batang ke daun",
+        "pohon-daun": "daun melepaskan air sebagai uap air",
+        "pohon-awan": "uap naik, mendingin, mengembun jadi awan",
+        "pohon-hujan": "hujan turun membasahi tanah lagi",
+        "s-salju": "Salju di puncak gunung",
+        "salju-awan": "uap air naik dan mengembun jadi awan di atas gunung",
+        "salju-beku": "di awan yang sangat dingin, air membeku jadi kepingan salju",
+        "salju-turun": "salju turun menutupi puncak gunung",
+        "salju-cair": "hari menghangat, salju mencair",
+        "salju-sungai": "air lelehan salju mengalir ke sungai",
+        "s-esbatu": "Es batu di piring",
+        "esbatu-es": "es batu di piring, ditaruh di bawah terik",
+        "esbatu-cair": "es mencair jadi genangan air",
+        "esbatu-uap": "air di piring menguap jadi uap air",
+        "esbatu-kering": "piring kering, airnya pindah ke udara",
+        "s-jemuran": "Baju di jemuran",
+        "jemuran-cuci": "baju dicuci dengan sabun",
+        "jemuran-jemur": "baju basah dijemur di bawah terik",
+        "jemuran-uap": "air di baju menguap",
+        "jemuran-angkat": "baju kering diangkat ke keranjang",
+        "s-keringat": "Keringat sesudah berlari",
+        "keringat-lari": "kamu berlari di siang hari",
+        "keringat-panas": "tubuhmu kepanasan",
+        "keringat-keringat": "keringat keluar di kulit",
+        "keringat-uap": "keringat menguap dari kulit",
+        "keringat-sejuk": "kulitmu terasa lebih sejuk"
       },
       "en": {
         "judul": "A Water Drop's Journey",
@@ -181966,7 +190317,53 @@ export const PAKET_RAW: unknown[] = [
         "gelas-es": "a glass of iced tea on the table",
         "gelas-udara": "warm air touches the cold glass",
         "gelas-embun": "water vapour in the air condenses",
-        "gelas-titik": "drops of water appear on the outside of the glass"
+        "gelas-titik": "drops of water appear on the outside of the glass",
+        "s-cermin": "The bathroom mirror",
+        "cermin-mandi": "you have a shower with warm water",
+        "cermin-uap": "the warm water evaporates and steam fills the room",
+        "cermin-cermin": "the steam touches the cold mirror",
+        "cermin-buram": "the steam condenses and the mirror fogs up",
+        "cermin-titik": "the droplets join and run down",
+        "s-panci": "A pan on the stove",
+        "panci-api": "water in a pan is heated over a flame",
+        "panci-didih": "the water boils and evaporates",
+        "panci-naik": "the steam rises to the cooler lid",
+        "panci-embun": "the steam condenses into drops on the lid",
+        "panci-tetes": "the drops fall back into the pan",
+        "s-daun": "Dew on a leaf",
+        "daun-siang": "in the daytime, water in the ground evaporates into the air",
+        "daun-malam": "night comes and the air cools",
+        "daun-embun": "water vapour condenses into dew on the leaves",
+        "daun-pagi": "in the morning, the leaves are wet with dew",
+        "daun-hilang": "as the Sun rises higher, the dew evaporates again",
+        "s-pohon": "Water through a tree",
+        "pohon-akar": "the tree's roots take in water from the soil",
+        "pohon-batang": "the water moves up the trunk to the leaves",
+        "pohon-daun": "the leaves give off the water as water vapour",
+        "pohon-awan": "the vapour rises, cools and condenses into clouds",
+        "pohon-hujan": "rain falls and wets the soil again",
+        "s-salju": "Snow on a mountain top",
+        "salju-awan": "water vapour rises and condenses into clouds above the mountain",
+        "salju-beku": "in the very cold cloud, water freezes into snowflakes",
+        "salju-turun": "snow falls and covers the mountain top",
+        "salju-cair": "the day warms up and the snow melts",
+        "salju-sungai": "the meltwater flows into a river",
+        "s-esbatu": "Ice cubes on a plate",
+        "esbatu-es": "ice cubes on a plate are left in the hot sun",
+        "esbatu-cair": "the ice melts into a puddle",
+        "esbatu-uap": "the water on the plate evaporates into water vapour",
+        "esbatu-kering": "the plate is dry: the water has gone into the air",
+        "s-jemuran": "Clothes on the line",
+        "jemuran-cuci": "the clothes are washed with soap",
+        "jemuran-jemur": "the wet clothes are hung in the hot sun",
+        "jemuran-uap": "the water in the clothes evaporates",
+        "jemuran-angkat": "the dry clothes go into the basket",
+        "s-keringat": "Sweat after a run",
+        "keringat-lari": "you run in the daytime",
+        "keringat-panas": "your body gets hot",
+        "keringat-keringat": "sweat comes out on your skin",
+        "keringat-uap": "the sweat evaporates from your skin",
+        "keringat-sejuk": "your skin feels cooler"
       }
     },
     "knobs": {
@@ -181975,7 +190372,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 5,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah langkah: 4 → 5 (gelas es hanya 4 langkah)"
+        "keterangan": "jumlah langkah: 4 → 5 (beberapa cerita hanya 4 langkah)"
       }
     },
     "assets": [],
@@ -182072,12 +190469,250 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "💧"
           }
         ]
+      },
+      {
+        "id": "cermin",
+        "titleKey": "s-cermin",
+        "steps": [
+          {
+            "id": "mandi",
+            "labelKey": "cermin-mandi",
+            "emoji": "🚿"
+          },
+          {
+            "id": "uap",
+            "labelKey": "cermin-uap",
+            "emoji": "♨️"
+          },
+          {
+            "id": "cermin",
+            "labelKey": "cermin-cermin",
+            "emoji": "🪞"
+          },
+          {
+            "id": "buram",
+            "labelKey": "cermin-buram",
+            "emoji": "🌫️"
+          },
+          {
+            "id": "titik",
+            "labelKey": "cermin-titik",
+            "emoji": "💧"
+          }
+        ]
+      },
+      {
+        "id": "panci",
+        "titleKey": "s-panci",
+        "steps": [
+          {
+            "id": "api",
+            "labelKey": "panci-api",
+            "emoji": "🔥"
+          },
+          {
+            "id": "didih",
+            "labelKey": "panci-didih",
+            "emoji": "♨️"
+          },
+          {
+            "id": "naik",
+            "labelKey": "panci-naik",
+            "emoji": "⬆️"
+          },
+          {
+            "id": "embun",
+            "labelKey": "panci-embun",
+            "emoji": "💧"
+          },
+          {
+            "id": "tetes",
+            "labelKey": "panci-tetes",
+            "emoji": "⬇️"
+          }
+        ]
+      },
+      {
+        "id": "daun",
+        "titleKey": "s-daun",
+        "steps": [
+          {
+            "id": "siang",
+            "labelKey": "daun-siang",
+            "emoji": "☀️"
+          },
+          {
+            "id": "malam",
+            "labelKey": "daun-malam",
+            "emoji": "🌙"
+          },
+          {
+            "id": "embun",
+            "labelKey": "daun-embun",
+            "emoji": "🍃"
+          },
+          {
+            "id": "pagi",
+            "labelKey": "daun-pagi",
+            "emoji": "🌅"
+          },
+          {
+            "id": "hilang",
+            "labelKey": "daun-hilang",
+            "emoji": "🌤️"
+          }
+        ]
+      },
+      {
+        "id": "pohon",
+        "titleKey": "s-pohon",
+        "steps": [
+          {
+            "id": "akar",
+            "labelKey": "pohon-akar",
+            "emoji": "🌳"
+          },
+          {
+            "id": "batang",
+            "labelKey": "pohon-batang",
+            "emoji": "⬆️"
+          },
+          {
+            "id": "daun",
+            "labelKey": "pohon-daun",
+            "emoji": "🍃"
+          },
+          {
+            "id": "awan",
+            "labelKey": "pohon-awan",
+            "emoji": "☁️"
+          },
+          {
+            "id": "hujan",
+            "labelKey": "pohon-hujan",
+            "emoji": "🌧️"
+          }
+        ]
+      },
+      {
+        "id": "salju",
+        "titleKey": "s-salju",
+        "steps": [
+          {
+            "id": "awan",
+            "labelKey": "salju-awan",
+            "emoji": "☁️"
+          },
+          {
+            "id": "beku",
+            "labelKey": "salju-beku",
+            "emoji": "❄️"
+          },
+          {
+            "id": "turun",
+            "labelKey": "salju-turun",
+            "emoji": "🏔️"
+          },
+          {
+            "id": "cair",
+            "labelKey": "salju-cair",
+            "emoji": "💧"
+          },
+          {
+            "id": "sungai",
+            "labelKey": "salju-sungai",
+            "emoji": "🏞️"
+          }
+        ]
+      },
+      {
+        "id": "esbatu",
+        "titleKey": "s-esbatu",
+        "steps": [
+          {
+            "id": "es",
+            "labelKey": "esbatu-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "cair",
+            "labelKey": "esbatu-cair",
+            "emoji": "💧"
+          },
+          {
+            "id": "uap",
+            "labelKey": "esbatu-uap",
+            "emoji": "♨️"
+          },
+          {
+            "id": "kering",
+            "labelKey": "esbatu-kering",
+            "emoji": "🍽️"
+          }
+        ]
+      },
+      {
+        "id": "jemuran",
+        "titleKey": "s-jemuran",
+        "steps": [
+          {
+            "id": "cuci",
+            "labelKey": "jemuran-cuci",
+            "emoji": "🫧"
+          },
+          {
+            "id": "jemur",
+            "labelKey": "jemuran-jemur",
+            "emoji": "👕"
+          },
+          {
+            "id": "uap",
+            "labelKey": "jemuran-uap",
+            "emoji": "♨️"
+          },
+          {
+            "id": "angkat",
+            "labelKey": "jemuran-angkat",
+            "emoji": "🧺"
+          }
+        ]
+      },
+      {
+        "id": "keringat",
+        "titleKey": "s-keringat",
+        "steps": [
+          {
+            "id": "lari",
+            "labelKey": "keringat-lari",
+            "emoji": "🏃"
+          },
+          {
+            "id": "panas",
+            "labelKey": "keringat-panas",
+            "emoji": "🥵"
+          },
+          {
+            "id": "keringat",
+            "labelKey": "keringat-keringat",
+            "emoji": "💦"
+          },
+          {
+            "id": "uap",
+            "labelKey": "keringat-uap",
+            "emoji": "♨️"
+          },
+          {
+            "id": "sejuk",
+            "labelKey": "keringat-sejuk",
+            "emoji": "😌"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd5-sains-siklus-tumbuhan-berbunga",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.SIKLUS-TUMBUHAN.01"
@@ -182109,7 +190744,68 @@ export const PAKET_RAW: unknown[] = [
         "matahari-mekar": "bunga besar mekar",
         "matahari-serbuk": "serangga membawa serbuk sari antarbunga",
         "matahari-matang": "biji baru matang di kepala bunga",
-        "matahari-burung": "burung mematuk dan menyebarkan biji"
+        "matahari-burung": "burung mematuk dan menyebarkan biji",
+        "s-tomat": "Siklus hidup tomat",
+        "tomat-biji": "biji tomat ditanam di pot",
+        "tomat-kecambah": "biji berkecambah",
+        "tomat-tumbuh": "tanaman tomat tumbuh berdaun",
+        "tomat-bunga": "bunga tomat yang kuning mekar",
+        "tomat-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "tomat-buah": "bakal buah membesar jadi tomat",
+        "tomat-bijibaru": "tomat dibelah: ada biji-biji baru",
+        "s-cabai": "Siklus hidup cabai",
+        "cabai-biji": "biji cabai disemai",
+        "cabai-kecambah": "biji berkecambah",
+        "cabai-tumbuh": "tanaman cabai tumbuh berdaun",
+        "cabai-bunga": "bunga cabai yang putih mekar",
+        "cabai-serbuk": "serangga membawa serbuk sari ke kepala putik",
+        "cabai-buah": "bakal buah tumbuh jadi cabai berisi biji baru",
+        "s-semangka": "Siklus hidup semangka",
+        "semangka-biji": "biji semangka ditanam",
+        "semangka-kecambah": "biji berkecambah",
+        "semangka-rambat": "batang semangka merambat di tanah",
+        "semangka-bunga": "bunga semangka yang kuning mekar",
+        "semangka-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "semangka-buah": "bakal buah membesar jadi semangka",
+        "semangka-bijibaru": "semangka dibelah: banyak biji hitam baru",
+        "s-timun": "Siklus hidup mentimun",
+        "timun-biji": "biji mentimun ditanam",
+        "timun-kecambah": "biji berkecambah",
+        "timun-rambat": "batang mentimun merambat di tiang",
+        "timun-bunga": "bunga mentimun yang kuning mekar",
+        "timun-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "timun-buah": "bakal buah tumbuh jadi mentimun berisi biji baru",
+        "s-jeruk": "Siklus hidup pohon jeruk",
+        "jeruk-biji": "biji jeruk ditanam",
+        "jeruk-kecambah": "biji berkecambah",
+        "jeruk-pohon": "pohon jeruk muda tumbuh",
+        "jeruk-bunga": "bunga jeruk yang putih dan harum mekar",
+        "jeruk-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "jeruk-buah": "bakal buah membesar jadi jeruk",
+        "jeruk-bijibaru": "jeruk dikupas: ada biji-biji baru",
+        "s-stroberi": "Siklus hidup stroberi",
+        "stroberi-biji": "biji stroberi yang kecil disemai",
+        "stroberi-kecambah": "biji berkecambah",
+        "stroberi-tumbuh": "tanaman stroberi tumbuh berdaun",
+        "stroberi-bunga": "bunga stroberi yang putih mekar",
+        "stroberi-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "stroberi-buah": "bakal buah jadi stroberi berbiji di kulitnya",
+        "s-melon": "Siklus hidup melon",
+        "melon-biji": "biji melon ditanam",
+        "melon-kecambah": "biji berkecambah",
+        "melon-rambat": "batang melon merambat",
+        "melon-bunga": "bunga melon yang kuning mekar",
+        "melon-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "melon-buah": "bakal buah membesar jadi melon",
+        "melon-bijibaru": "melon dibelah: banyak biji baru",
+        "s-apel": "Siklus hidup pohon apel",
+        "apel-biji": "biji apel ditanam",
+        "apel-kecambah": "biji berkecambah",
+        "apel-pohon": "pohon apel muda tumbuh",
+        "apel-bunga": "bunga apel yang putih kemerahan mekar",
+        "apel-serbuk": "lebah membawa serbuk sari ke kepala putik",
+        "apel-buah": "bakal buah membesar jadi apel",
+        "apel-bijibaru": "apel dibelah: ada biji-biji baru"
       },
       "en": {
         "judul": "From Seed to Seed",
@@ -182136,7 +190832,68 @@ export const PAKET_RAW: unknown[] = [
         "matahari-mekar": "the big flower opens",
         "matahari-serbuk": "insects carry pollen between flowers",
         "matahari-matang": "new seeds ripen in the flower head",
-        "matahari-burung": "birds peck and scatter the seeds"
+        "matahari-burung": "birds peck and scatter the seeds",
+        "s-tomat": "Life cycle of a tomato",
+        "tomat-biji": "a tomato seed is planted in a pot",
+        "tomat-kecambah": "the seed germinates",
+        "tomat-tumbuh": "the tomato plant grows leaves",
+        "tomat-bunga": "yellow tomato flowers open",
+        "tomat-serbuk": "a bee carries pollen to the stigma",
+        "tomat-buah": "the ovary swells into a tomato",
+        "tomat-bijibaru": "the tomato is cut open: there are new seeds",
+        "s-cabai": "Life cycle of a chilli",
+        "cabai-biji": "a chilli seed is sown",
+        "cabai-kecambah": "the seed germinates",
+        "cabai-tumbuh": "the chilli plant grows leaves",
+        "cabai-bunga": "white chilli flowers open",
+        "cabai-serbuk": "an insect carries pollen to the stigma",
+        "cabai-buah": "the ovary grows into a chilli full of new seeds",
+        "s-semangka": "Life cycle of a watermelon",
+        "semangka-biji": "a watermelon seed is planted",
+        "semangka-kecambah": "the seed germinates",
+        "semangka-rambat": "the watermelon stem creeps along the ground",
+        "semangka-bunga": "yellow watermelon flowers open",
+        "semangka-serbuk": "a bee carries pollen to the stigma",
+        "semangka-buah": "the ovary swells into a watermelon",
+        "semangka-bijibaru": "the watermelon is cut open: lots of new black seeds",
+        "s-timun": "Life cycle of a cucumber",
+        "timun-biji": "a cucumber seed is planted",
+        "timun-kecambah": "the seed germinates",
+        "timun-rambat": "the cucumber stem climbs a pole",
+        "timun-bunga": "yellow cucumber flowers open",
+        "timun-serbuk": "a bee carries pollen to the stigma",
+        "timun-buah": "the ovary grows into a cucumber full of new seeds",
+        "s-jeruk": "Life cycle of an orange tree",
+        "jeruk-biji": "an orange seed is planted",
+        "jeruk-kecambah": "the seed germinates",
+        "jeruk-pohon": "a young orange tree grows",
+        "jeruk-bunga": "white, sweet-smelling orange flowers open",
+        "jeruk-serbuk": "a bee carries pollen to the stigma",
+        "jeruk-buah": "the ovary swells into an orange",
+        "jeruk-bijibaru": "the orange is peeled: there are new seeds",
+        "s-stroberi": "Life cycle of a strawberry",
+        "stroberi-biji": "a tiny strawberry seed is sown",
+        "stroberi-kecambah": "the seed germinates",
+        "stroberi-tumbuh": "the strawberry plant grows leaves",
+        "stroberi-bunga": "white strawberry flowers open",
+        "stroberi-serbuk": "a bee carries pollen to the stigma",
+        "stroberi-buah": "it becomes a strawberry with seeds on its skin",
+        "s-melon": "Life cycle of a melon",
+        "melon-biji": "a melon seed is planted",
+        "melon-kecambah": "the seed germinates",
+        "melon-rambat": "the melon stem creeps along",
+        "melon-bunga": "yellow melon flowers open",
+        "melon-serbuk": "a bee carries pollen to the stigma",
+        "melon-buah": "the ovary swells into a melon",
+        "melon-bijibaru": "the melon is cut open: lots of new seeds",
+        "s-apel": "Life cycle of an apple tree",
+        "apel-biji": "an apple seed is planted",
+        "apel-kecambah": "the seed germinates",
+        "apel-pohon": "a young apple tree grows",
+        "apel-bunga": "pinkish-white apple blossoms open",
+        "apel-serbuk": "a bee carries pollen to the stigma",
+        "apel-buah": "the ovary swells into an apple",
+        "apel-bijibaru": "the apple is cut open: there are new seeds"
       }
     },
     "knobs": {
@@ -182272,12 +191029,356 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🐦"
           }
         ]
+      },
+      {
+        "id": "tomat",
+        "titleKey": "s-tomat",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "tomat-biji",
+            "shape": "circle",
+            "color": "#f5deb3",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "tomat-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "tumbuh",
+            "labelKey": "tomat-tumbuh",
+            "emoji": "🌿"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "tomat-bunga",
+            "emoji": "🌼"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "tomat-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "tomat-buah",
+            "emoji": "🍅"
+          },
+          {
+            "id": "bijibaru",
+            "labelKey": "tomat-bijibaru",
+            "shape": "circle",
+            "color": "#f5deb3",
+            "scale": 0.3,
+            "count": 6
+          }
+        ]
+      },
+      {
+        "id": "cabai",
+        "titleKey": "s-cabai",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "cabai-biji",
+            "shape": "circle",
+            "color": "#fff3c4",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "cabai-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "tumbuh",
+            "labelKey": "cabai-tumbuh",
+            "emoji": "🌿"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "cabai-bunga",
+            "emoji": "💮"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "cabai-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "cabai-buah",
+            "emoji": "🌶️"
+          }
+        ]
+      },
+      {
+        "id": "semangka",
+        "titleKey": "s-semangka",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "semangka-biji",
+            "shape": "circle",
+            "color": "#212121",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "semangka-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "rambat",
+            "labelKey": "semangka-rambat",
+            "emoji": "🌿"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "semangka-bunga",
+            "emoji": "🌼"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "semangka-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "semangka-buah",
+            "emoji": "🍉"
+          },
+          {
+            "id": "bijibaru",
+            "labelKey": "semangka-bijibaru",
+            "shape": "circle",
+            "color": "#212121",
+            "scale": 0.3,
+            "count": 6
+          }
+        ]
+      },
+      {
+        "id": "timun",
+        "titleKey": "s-timun",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "timun-biji",
+            "shape": "circle",
+            "color": "#fffde7",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "timun-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "rambat",
+            "labelKey": "timun-rambat",
+            "emoji": "🌿"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "timun-bunga",
+            "emoji": "🌼"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "timun-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "timun-buah",
+            "emoji": "🥒"
+          }
+        ]
+      },
+      {
+        "id": "jeruk",
+        "titleKey": "s-jeruk",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "jeruk-biji",
+            "shape": "circle",
+            "color": "#fff8e1",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "jeruk-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "pohon",
+            "labelKey": "jeruk-pohon",
+            "emoji": "🌳"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "jeruk-bunga",
+            "emoji": "💮"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "jeruk-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "jeruk-buah",
+            "emoji": "🍊"
+          },
+          {
+            "id": "bijibaru",
+            "labelKey": "jeruk-bijibaru",
+            "shape": "circle",
+            "color": "#fff8e1",
+            "scale": 0.3,
+            "count": 6
+          }
+        ]
+      },
+      {
+        "id": "stroberi",
+        "titleKey": "s-stroberi",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "stroberi-biji",
+            "shape": "circle",
+            "color": "#fbc02d",
+            "scale": 0.3
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "stroberi-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "tumbuh",
+            "labelKey": "stroberi-tumbuh",
+            "emoji": "🌿"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "stroberi-bunga",
+            "emoji": "💮"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "stroberi-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "stroberi-buah",
+            "emoji": "🍓"
+          }
+        ]
+      },
+      {
+        "id": "melon",
+        "titleKey": "s-melon",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "melon-biji",
+            "shape": "circle",
+            "color": "#ffe0b2",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "melon-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "rambat",
+            "labelKey": "melon-rambat",
+            "emoji": "🌿"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "melon-bunga",
+            "emoji": "🌼"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "melon-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "melon-buah",
+            "emoji": "🍈"
+          },
+          {
+            "id": "bijibaru",
+            "labelKey": "melon-bijibaru",
+            "shape": "circle",
+            "color": "#ffe0b2",
+            "scale": 0.3,
+            "count": 6
+          }
+        ]
+      },
+      {
+        "id": "apel",
+        "titleKey": "s-apel",
+        "steps": [
+          {
+            "id": "biji",
+            "labelKey": "apel-biji",
+            "shape": "circle",
+            "color": "#5d4037",
+            "scale": 0.5
+          },
+          {
+            "id": "kecambah",
+            "labelKey": "apel-kecambah",
+            "emoji": "🌱"
+          },
+          {
+            "id": "pohon",
+            "labelKey": "apel-pohon",
+            "emoji": "🌳"
+          },
+          {
+            "id": "bunga",
+            "labelKey": "apel-bunga",
+            "emoji": "🌸"
+          },
+          {
+            "id": "serbuk",
+            "labelKey": "apel-serbuk",
+            "emoji": "🐝"
+          },
+          {
+            "id": "buah",
+            "labelKey": "apel-buah",
+            "emoji": "🍎"
+          },
+          {
+            "id": "bijibaru",
+            "labelKey": "apel-bijibaru",
+            "shape": "circle",
+            "color": "#5d4037",
+            "scale": 0.3,
+            "count": 6
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-kode-kerja-tim-kode",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -182319,7 +191420,46 @@ export const PAKET_RAW: unknown[] = [
         "s5-2": "jalankan git init",
         "s5-3": "tulis kode pertama",
         "s5-4": "commit pertama",
-        "s5-5": "unggah ke repositori tim"
+        "s5-5": "unggah ke repositori tim",
+        "s6": "Mengajukan perubahan",
+        "s6-1": "kirim cabangmu ke repositori (push)",
+        "s6-2": "buka permintaan gabung (pull request)",
+        "s6-3": "teman membaca dan memberi saran",
+        "s6-4": "perbaiki kode sesuai saran",
+        "s6-5": "teman menyetujui perubahan",
+        "s6-6": "gabungkan ke versi utama (merge)",
+        "s7": "Kembali ke versi lama",
+        "s7-1": "program tiba-tiba error",
+        "s7-2": "lihat riwayat commit (log)",
+        "s7-3": "temukan commit penyebabnya",
+        "s7-4": "batalkan commit itu (revert)",
+        "s7-5": "uji lagi: program jalan",
+        "s7-6": "kirim perbaikan ke tim (push)",
+        "s8": "Menambah gambar ke game",
+        "s8-1": "ambil versi terbaru (pull)",
+        "s8-2": "simpan gambar baru di folder aset",
+        "s8-3": "tulis kode untuk memanggil gambar",
+        "s8-4": "jalankan game: gambar muncul",
+        "s8-5": "commit: 'tambah gambar tokoh'",
+        "s8-6": "kirim ke repositori tim (push)",
+        "s9": "Bergabung ke proyek tim",
+        "s9-1": "salin repositori ke komputermu (clone)",
+        "s9-2": "baca petunjuk di README",
+        "s9-3": "pasang yang dibutuhkan program",
+        "s9-4": "jalankan program untuk mencoba",
+        "s9-5": "buat cabang pertamamu (branch)",
+        "s10": "Cabang yang tertinggal",
+        "s10-1": "cabangmu tertinggal dari versi utama",
+        "s10-2": "ambil perubahan terbaru (pull)",
+        "s10-3": "gabungkan versi utama ke cabangmu (merge)",
+        "s10-4": "uji lagi programmu",
+        "s10-5": "kirim cabangmu (push)",
+        "s11": "Membagi tugas tim",
+        "s11-1": "tim memecah proyek jadi tugas kecil",
+        "s11-2": "tiap orang memilih satu tugas",
+        "s11-3": "tiap orang membuat cabang sendiri",
+        "s11-4": "tiap orang mengerjakan dan menguji tugasnya",
+        "s11-5": "semua cabang digabung ke versi utama"
       },
       "en": {
         "judul": "Teamwork with Code Versions",
@@ -182355,7 +191495,46 @@ export const PAKET_RAW: unknown[] = [
         "s5-2": "run git init",
         "s5-3": "write the first code",
         "s5-4": "first commit",
-        "s5-5": "upload to the team repository"
+        "s5-5": "upload to the team repository",
+        "s6": "Proposing a change",
+        "s6-1": "push your branch to the repository",
+        "s6-2": "open a pull request",
+        "s6-3": "a teammate reads it and gives suggestions",
+        "s6-4": "fix the code using the suggestions",
+        "s6-5": "the teammate approves the change",
+        "s6-6": "merge into the main version",
+        "s7": "Going back to an old version",
+        "s7-1": "the program suddenly has an error",
+        "s7-2": "look at the commit history (log)",
+        "s7-3": "find the commit that caused it",
+        "s7-4": "undo that commit (revert)",
+        "s7-5": "test again: the program works",
+        "s7-6": "push the fix to the team",
+        "s8": "Adding a picture to a game",
+        "s8-1": "get the latest version (pull)",
+        "s8-2": "save the new picture in the assets folder",
+        "s8-3": "write code that loads the picture",
+        "s8-4": "run the game: the picture appears",
+        "s8-5": "commit: 'add character picture'",
+        "s8-6": "send it to the team repository (push)",
+        "s9": "Joining a team project",
+        "s9-1": "copy the repository to your computer (clone)",
+        "s9-2": "read the instructions in the README",
+        "s9-3": "install what the program needs",
+        "s9-4": "run the program to try it",
+        "s9-5": "make your first branch",
+        "s10": "A branch that fell behind",
+        "s10-1": "your branch is behind the main version",
+        "s10-2": "get the latest changes (pull)",
+        "s10-3": "merge the main version into your branch",
+        "s10-4": "test your program again",
+        "s10-5": "push your branch",
+        "s11": "Sharing out team tasks",
+        "s11-1": "the team splits the project into small tasks",
+        "s11-2": "each person picks one task",
+        "s11-3": "each person makes their own branch",
+        "s11-4": "each person does and tests their task",
+        "s11-5": "all branches are merged into the main version"
       }
     },
     "knobs": {
@@ -182537,12 +191716,213 @@ export const PAKET_RAW: unknown[] = [
             "scale": 0.4
           }
         ]
+      },
+      {
+        "id": "s6",
+        "titleKey": "s6",
+        "steps": [
+          {
+            "id": "s6-1",
+            "labelKey": "s6-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-2",
+            "labelKey": "s6-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-3",
+            "labelKey": "s6-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-4",
+            "labelKey": "s6-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-5",
+            "labelKey": "s6-5",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-6",
+            "labelKey": "s6-6",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "titleKey": "s7",
+        "steps": [
+          {
+            "id": "s7-1",
+            "labelKey": "s7-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-2",
+            "labelKey": "s7-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-3",
+            "labelKey": "s7-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-4",
+            "labelKey": "s7-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-5",
+            "labelKey": "s7-5",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-6",
+            "labelKey": "s7-6",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "titleKey": "s8",
+        "steps": [
+          {
+            "id": "s8-1",
+            "labelKey": "s8-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-2",
+            "labelKey": "s8-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-3",
+            "labelKey": "s8-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-4",
+            "labelKey": "s8-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-5",
+            "labelKey": "s8-5",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-6",
+            "labelKey": "s8-6",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "titleKey": "s9",
+        "steps": [
+          {
+            "id": "s9-1",
+            "labelKey": "s9-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-2",
+            "labelKey": "s9-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-3",
+            "labelKey": "s9-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-4",
+            "labelKey": "s9-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-5",
+            "labelKey": "s9-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s10",
+        "titleKey": "s10",
+        "steps": [
+          {
+            "id": "s10-1",
+            "labelKey": "s10-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-2",
+            "labelKey": "s10-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-3",
+            "labelKey": "s10-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-4",
+            "labelKey": "s10-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-5",
+            "labelKey": "s10-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s11",
+        "titleKey": "s11",
+        "steps": [
+          {
+            "id": "s11-1",
+            "labelKey": "s11-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-2",
+            "labelKey": "s11-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-3",
+            "labelKey": "s11-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-4",
+            "labelKey": "s11-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-5",
+            "labelKey": "s11-5",
+            "scale": 0.4
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-kode-minta-jawab-api",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -182582,7 +191962,43 @@ export const PAKET_RAW: unknown[] = [
         "s5-2": "aplikasi mengirim permintaan ke API fakta",
         "s5-3": "server memilih satu fakta",
         "s5-4": "server mengirim teks fakta itu",
-        "s5-5": "fakta muncul di layar"
+        "s5-5": "fakta muncul di layar",
+        "s6": "Toko buku daring",
+        "s6-1": "kamu mencari 'buku dinosaurus'",
+        "s6-2": "aplikasi mengirim kata kunci ke API toko",
+        "s6-3": "server mencari buku yang cocok",
+        "s6-4": "server mengirim daftar buku",
+        "s6-5": "aplikasi menampilkan sampul-sampul buku",
+        "s7": "Jadwal kereta",
+        "s7-1": "kamu memilih stasiun Bogor",
+        "s7-2": "aplikasi meminta jadwal ke API kereta",
+        "s7-3": "server membaca jadwal hari ini",
+        "s7-4": "server mengirim jam keberangkatan",
+        "s7-5": "aplikasi menampilkan kereta berikutnya: 07.15",
+        "s8": "Pesan obrolan",
+        "s8-1": "kamu menekan kirim: 'Halo!'",
+        "s8-2": "aplikasi mengirim pesan ke API obrolan",
+        "s8-3": "server menyimpan pesan untuk temanmu",
+        "s8-4": "server menjawab: pesan diterima",
+        "s8-5": "aplikasi menampilkan tanda centang ✓",
+        "s9": "Aplikasi resep",
+        "s9-1": "kamu memilih bahan: telur",
+        "s9-2": "aplikasi mengirim permintaan ke API resep",
+        "s9-3": "server mencari resep berbahan telur",
+        "s9-4": "server mengirim daftar resep",
+        "s9-5": "aplikasi menampilkan resep telur dadar",
+        "s10": "Video pelajaran",
+        "s10-1": "kamu memilih video 'gunung api'",
+        "s10-2": "aplikasi meminta video itu ke API video",
+        "s10-3": "server mencari berkas videonya",
+        "s10-4": "server mengirim videonya sedikit demi sedikit",
+        "s10-5": "video mulai diputar di layar",
+        "s11": "Penukar mata uang",
+        "s11-1": "kamu menulis 10 dolar",
+        "s11-2": "aplikasi mengirim angka itu ke API kurs",
+        "s11-3": "server menghitung dengan kurs hari ini",
+        "s11-4": "server mengirim hasilnya dalam rupiah",
+        "s11-5": "aplikasi menampilkan hasil dalam rupiah"
       },
       "en": {
         "judul": "Request and Response via an API",
@@ -182616,7 +192032,43 @@ export const PAKET_RAW: unknown[] = [
         "s5-2": "the app sends a request to the facts API",
         "s5-3": "the server picks one fact",
         "s5-4": "the server sends that fact's text",
-        "s5-5": "the fact appears on screen"
+        "s5-5": "the fact appears on screen",
+        "s6": "An online bookshop",
+        "s6-1": "you search for 'dinosaur books'",
+        "s6-2": "the app sends the keyword to the shop API",
+        "s6-3": "the server looks for matching books",
+        "s6-4": "the server sends back a list of books",
+        "s6-5": "the app shows the book covers",
+        "s7": "Train times",
+        "s7-1": "you choose Bogor station",
+        "s7-2": "the app asks the train API for the timetable",
+        "s7-3": "the server reads today's timetable",
+        "s7-4": "the server sends the departure times",
+        "s7-5": "the app shows the next train: 07:15",
+        "s8": "A chat message",
+        "s8-1": "you press send: 'Hello!'",
+        "s8-2": "the app sends the message to the chat API",
+        "s8-3": "the server stores the message for your friend",
+        "s8-4": "the server replies: message received",
+        "s8-5": "the app shows a tick ✓",
+        "s9": "A recipe app",
+        "s9-1": "you choose an ingredient: egg",
+        "s9-2": "the app sends a request to the recipe API",
+        "s9-3": "the server looks for recipes with egg",
+        "s9-4": "the server sends back a list of recipes",
+        "s9-5": "the app shows an omelette recipe",
+        "s10": "A lesson video",
+        "s10-1": "you choose the video 'volcanoes'",
+        "s10-2": "the app asks the video API for it",
+        "s10-3": "the server finds the video file",
+        "s10-4": "the server sends the video bit by bit",
+        "s10-5": "the video starts playing on screen",
+        "s11": "A currency converter",
+        "s11-1": "you type 10 dollars",
+        "s11-2": "the app sends the number to the exchange-rate API",
+        "s11-3": "the server works it out with today's rate",
+        "s11-4": "the server sends back the answer in rupiah",
+        "s11-5": "the app shows the answer in rupiah"
       }
     },
     "knobs": {
@@ -182785,6 +192237,192 @@ export const PAKET_RAW: unknown[] = [
           {
             "id": "s5-5",
             "labelKey": "s5-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "titleKey": "s6",
+        "steps": [
+          {
+            "id": "s6-1",
+            "labelKey": "s6-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-2",
+            "labelKey": "s6-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-3",
+            "labelKey": "s6-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-4",
+            "labelKey": "s6-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s6-5",
+            "labelKey": "s6-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "titleKey": "s7",
+        "steps": [
+          {
+            "id": "s7-1",
+            "labelKey": "s7-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-2",
+            "labelKey": "s7-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-3",
+            "labelKey": "s7-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-4",
+            "labelKey": "s7-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s7-5",
+            "labelKey": "s7-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "titleKey": "s8",
+        "steps": [
+          {
+            "id": "s8-1",
+            "labelKey": "s8-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-2",
+            "labelKey": "s8-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-3",
+            "labelKey": "s8-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-4",
+            "labelKey": "s8-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s8-5",
+            "labelKey": "s8-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "titleKey": "s9",
+        "steps": [
+          {
+            "id": "s9-1",
+            "labelKey": "s9-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-2",
+            "labelKey": "s9-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-3",
+            "labelKey": "s9-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-4",
+            "labelKey": "s9-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s9-5",
+            "labelKey": "s9-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s10",
+        "titleKey": "s10",
+        "steps": [
+          {
+            "id": "s10-1",
+            "labelKey": "s10-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-2",
+            "labelKey": "s10-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-3",
+            "labelKey": "s10-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-4",
+            "labelKey": "s10-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s10-5",
+            "labelKey": "s10-5",
+            "scale": 0.4
+          }
+        ]
+      },
+      {
+        "id": "s11",
+        "titleKey": "s11",
+        "steps": [
+          {
+            "id": "s11-1",
+            "labelKey": "s11-1",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-2",
+            "labelKey": "s11-2",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-3",
+            "labelKey": "s11-3",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-4",
+            "labelKey": "s11-4",
+            "scale": 0.4
+          },
+          {
+            "id": "s11-5",
+            "labelKey": "s11-5",
             "scale": 0.4
           }
         ]
@@ -183613,7 +193251,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd6-sains-aliran-darah-perbaiki",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.SIRKULASI.01"
@@ -183633,7 +193271,61 @@ export const PAKET_RAW: unknown[] = [
         "paru-pompa": "jantung memompa darah ke paru-paru",
         "paru-ambil": "di paru-paru darah melepas karbon dioksida dan mengambil oksigen",
         "paru-kembali": "darah kaya oksigen kembali ke jantung",
-        "paru-ketubuh": "jantung memompanya ke seluruh tubuh"
+        "paru-ketubuh": "jantung memompanya ke seluruh tubuh",
+        "s-otak": "Darah menuju otak",
+        "otak-pompa": "jantung memompa darah kaya oksigen",
+        "otak-arteri": "arteri membawa darah ke otak",
+        "otak-kapiler": "di kapiler otak, oksigen dan sari makanan masuk ke sel",
+        "otak-sisa": "sel otak menyerahkan karbon dioksida ke darah",
+        "otak-vena": "vena membawa darah kembali ke jantung",
+        "s-kaki": "Darah menuju otot kaki",
+        "kaki-pompa": "jantung memompa darah kaya oksigen",
+        "kaki-arteri": "arteri membawa darah ke otot kaki",
+        "kaki-kapiler": "di kapiler otot kaki, oksigen dan sari makanan masuk ke sel",
+        "kaki-sisa": "sel otot kaki menyerahkan karbon dioksida ke darah",
+        "kaki-vena": "vena membawa darah kembali ke jantung",
+        "s-lengan": "Darah menuju otot lengan",
+        "lengan-pompa": "jantung memompa darah kaya oksigen",
+        "lengan-arteri": "arteri membawa darah ke otot lengan",
+        "lengan-kapiler": "di kapiler otot lengan, oksigen dan sari makanan masuk ke sel",
+        "lengan-sisa": "sel otot lengan menyerahkan karbon dioksida ke darah",
+        "lengan-vena": "vena membawa darah kembali ke jantung",
+        "s-tangan": "Darah menuju jari tangan",
+        "tangan-pompa": "jantung memompa darah kaya oksigen",
+        "tangan-arteri": "arteri membawa darah ke jari tangan",
+        "tangan-kapiler": "di kapiler jari tangan, oksigen dan sari makanan masuk ke sel",
+        "tangan-sisa": "sel jari tangan menyerahkan karbon dioksida ke darah",
+        "tangan-vena": "vena membawa darah kembali ke jantung",
+        "s-telinga": "Darah menuju telinga",
+        "telinga-pompa": "jantung memompa darah kaya oksigen",
+        "telinga-arteri": "arteri membawa darah ke telinga",
+        "telinga-kapiler": "di kapiler telinga, oksigen dan sari makanan masuk ke sel",
+        "telinga-sisa": "sel telinga menyerahkan karbon dioksida ke darah",
+        "telinga-vena": "vena membawa darah kembali ke jantung",
+        "s-lidah": "Darah menuju lidah",
+        "lidah-pompa": "jantung memompa darah kaya oksigen",
+        "lidah-arteri": "arteri membawa darah ke lidah",
+        "lidah-kapiler": "di kapiler lidah, oksigen dan sari makanan masuk ke sel",
+        "lidah-sisa": "sel lidah menyerahkan karbon dioksida ke darah",
+        "lidah-vena": "vena membawa darah kembali ke jantung",
+        "s-hidung": "Darah menuju hidung",
+        "hidung-pompa": "jantung memompa darah kaya oksigen",
+        "hidung-arteri": "arteri membawa darah ke hidung",
+        "hidung-kapiler": "di kapiler hidung, oksigen dan sari makanan masuk ke sel",
+        "hidung-sisa": "sel hidung menyerahkan karbon dioksida ke darah",
+        "hidung-vena": "vena membawa darah kembali ke jantung",
+        "s-mata": "Darah menuju mata",
+        "mata-pompa": "jantung memompa darah kaya oksigen",
+        "mata-arteri": "arteri membawa darah ke mata",
+        "mata-kapiler": "di kapiler mata, oksigen dan sari makanan masuk ke sel",
+        "mata-sisa": "sel mata menyerahkan karbon dioksida ke darah",
+        "mata-vena": "vena membawa darah kembali ke jantung",
+        "s-parupanjang": "Darah singgah di paru-paru",
+        "parupanjang-pompa": "jantung memompa darah miskin oksigen",
+        "parupanjang-arteri": "arteri paru-paru membawanya ke paru-paru",
+        "parupanjang-tukar": "di kapiler paru-paru, karbon dioksida dilepas dan oksigen diambil",
+        "parupanjang-venaparu": "vena paru-paru membawa darah kaya oksigen",
+        "parupanjang-tiba": "darah tiba kembali di jantung"
       },
       "en": {
         "judul": "Blood Flow Mix-Up",
@@ -183648,7 +193340,61 @@ export const PAKET_RAW: unknown[] = [
         "paru-pompa": "the heart pumps blood to the lungs",
         "paru-ambil": "in the lungs blood drops carbon dioxide and picks up oxygen",
         "paru-kembali": "oxygen-rich blood returns to the heart",
-        "paru-ketubuh": "the heart pumps it around the body"
+        "paru-ketubuh": "the heart pumps it around the body",
+        "s-otak": "Blood to the brain",
+        "otak-pompa": "the heart pumps oxygen-rich blood",
+        "otak-arteri": "arteries carry the blood to the brain",
+        "otak-kapiler": "in the capillaries of the brain, oxygen and nutrients pass into the cells",
+        "otak-sisa": "cells of the brain pass carbon dioxide into the blood",
+        "otak-vena": "veins carry the blood back to the heart",
+        "s-kaki": "Blood to the leg muscles",
+        "kaki-pompa": "the heart pumps oxygen-rich blood",
+        "kaki-arteri": "arteries carry the blood to the leg muscles",
+        "kaki-kapiler": "in the capillaries of the leg muscles, oxygen and nutrients pass into the cells",
+        "kaki-sisa": "cells of the leg muscles pass carbon dioxide into the blood",
+        "kaki-vena": "veins carry the blood back to the heart",
+        "s-lengan": "Blood to the arm muscles",
+        "lengan-pompa": "the heart pumps oxygen-rich blood",
+        "lengan-arteri": "arteries carry the blood to the arm muscles",
+        "lengan-kapiler": "in the capillaries of the arm muscles, oxygen and nutrients pass into the cells",
+        "lengan-sisa": "cells of the arm muscles pass carbon dioxide into the blood",
+        "lengan-vena": "veins carry the blood back to the heart",
+        "s-tangan": "Blood to the fingers",
+        "tangan-pompa": "the heart pumps oxygen-rich blood",
+        "tangan-arteri": "arteries carry the blood to the fingers",
+        "tangan-kapiler": "in the capillaries of the fingers, oxygen and nutrients pass into the cells",
+        "tangan-sisa": "cells of the fingers pass carbon dioxide into the blood",
+        "tangan-vena": "veins carry the blood back to the heart",
+        "s-telinga": "Blood to the ears",
+        "telinga-pompa": "the heart pumps oxygen-rich blood",
+        "telinga-arteri": "arteries carry the blood to the ears",
+        "telinga-kapiler": "in the capillaries of the ears, oxygen and nutrients pass into the cells",
+        "telinga-sisa": "cells of the ears pass carbon dioxide into the blood",
+        "telinga-vena": "veins carry the blood back to the heart",
+        "s-lidah": "Blood to the tongue",
+        "lidah-pompa": "the heart pumps oxygen-rich blood",
+        "lidah-arteri": "arteries carry the blood to the tongue",
+        "lidah-kapiler": "in the capillaries of the tongue, oxygen and nutrients pass into the cells",
+        "lidah-sisa": "cells of the tongue pass carbon dioxide into the blood",
+        "lidah-vena": "veins carry the blood back to the heart",
+        "s-hidung": "Blood to the nose",
+        "hidung-pompa": "the heart pumps oxygen-rich blood",
+        "hidung-arteri": "arteries carry the blood to the nose",
+        "hidung-kapiler": "in the capillaries of the nose, oxygen and nutrients pass into the cells",
+        "hidung-sisa": "cells of the nose pass carbon dioxide into the blood",
+        "hidung-vena": "veins carry the blood back to the heart",
+        "s-mata": "Blood to the eyes",
+        "mata-pompa": "the heart pumps oxygen-rich blood",
+        "mata-arteri": "arteries carry the blood to the eyes",
+        "mata-kapiler": "in the capillaries of the eyes, oxygen and nutrients pass into the cells",
+        "mata-sisa": "cells of the eyes pass carbon dioxide into the blood",
+        "mata-vena": "veins carry the blood back to the heart",
+        "s-parupanjang": "Blood visits the lungs",
+        "parupanjang-pompa": "the heart pumps oxygen-poor blood",
+        "parupanjang-arteri": "the pulmonary artery carries it to the lungs",
+        "parupanjang-tukar": "in the lung capillaries, carbon dioxide is let go and oxygen is picked up",
+        "parupanjang-venaparu": "the pulmonary vein carries oxygen-rich blood",
+        "parupanjang-tiba": "the blood arrives back at the heart"
       }
     },
     "knobs": {
@@ -183727,12 +193473,309 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏃"
           }
         ]
+      },
+      {
+        "id": "otak",
+        "titleKey": "s-otak",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "otak-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "otak-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "otak-kapiler",
+            "emoji": "🧠"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "otak-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "otak-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "kaki",
+        "titleKey": "s-kaki",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "kaki-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "kaki-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "kaki-kapiler",
+            "emoji": "🦵"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "kaki-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "kaki-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "lengan",
+        "titleKey": "s-lengan",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "lengan-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "lengan-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "lengan-kapiler",
+            "emoji": "💪"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "lengan-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "lengan-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "tangan",
+        "titleKey": "s-tangan",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "tangan-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "tangan-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "tangan-kapiler",
+            "emoji": "🖐️"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "tangan-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "tangan-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "telinga",
+        "titleKey": "s-telinga",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "telinga-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "telinga-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "telinga-kapiler",
+            "emoji": "👂"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "telinga-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "telinga-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "lidah",
+        "titleKey": "s-lidah",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "lidah-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "lidah-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "lidah-kapiler",
+            "emoji": "👅"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "lidah-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "lidah-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "hidung",
+        "titleKey": "s-hidung",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "hidung-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "hidung-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "hidung-kapiler",
+            "emoji": "👃"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "hidung-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "hidung-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "mata",
+        "titleKey": "s-mata",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "mata-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "mata-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "mata-kapiler",
+            "emoji": "👁️"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "mata-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "mata-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "parupanjang",
+        "titleKey": "s-parupanjang",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "parupanjang-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "parupanjang-arteri",
+            "shape": "rect",
+            "color": "#3949ab"
+          },
+          {
+            "id": "tukar",
+            "labelKey": "parupanjang-tukar",
+            "emoji": "🫁"
+          },
+          {
+            "id": "venaparu",
+            "labelKey": "parupanjang-venaparu",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "tiba",
+            "labelKey": "parupanjang-tiba",
+            "emoji": "↩️"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-aliran-darah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.SIRKULASI.01"
@@ -183741,7 +193784,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Keliling Pembuluh Darah",
-        "instruksi": "Baca judulnya, lalu susun perjalanan darah.",
+        "instruksi": "Baca judulnya, lalu susun perjalanan darah, mulai dari jantung memompa.",
         "s-tubuh": "Darah ke seluruh tubuh",
         "tubuh-pompa": "jantung memompa darah kaya oksigen",
         "tubuh-arteri": "arteri membawa darah ke seluruh tubuh",
@@ -183752,11 +193795,65 @@ export const PAKET_RAW: unknown[] = [
         "paru-pompa": "jantung memompa darah ke paru-paru",
         "paru-ambil": "di paru-paru darah melepas karbon dioksida dan mengambil oksigen",
         "paru-kembali": "darah kaya oksigen kembali ke jantung",
-        "paru-ketubuh": "jantung memompanya ke seluruh tubuh"
+        "paru-ketubuh": "jantung memompanya ke seluruh tubuh",
+        "s-otak": "Darah menuju otak",
+        "otak-pompa": "jantung memompa darah kaya oksigen",
+        "otak-arteri": "arteri membawa darah ke otak",
+        "otak-kapiler": "di kapiler otak, oksigen dan sari makanan masuk ke sel",
+        "otak-sisa": "sel otak menyerahkan karbon dioksida ke darah",
+        "otak-vena": "vena membawa darah kembali ke jantung",
+        "s-kaki": "Darah menuju otot kaki",
+        "kaki-pompa": "jantung memompa darah kaya oksigen",
+        "kaki-arteri": "arteri membawa darah ke otot kaki",
+        "kaki-kapiler": "di kapiler otot kaki, oksigen dan sari makanan masuk ke sel",
+        "kaki-sisa": "sel otot kaki menyerahkan karbon dioksida ke darah",
+        "kaki-vena": "vena membawa darah kembali ke jantung",
+        "s-lengan": "Darah menuju otot lengan",
+        "lengan-pompa": "jantung memompa darah kaya oksigen",
+        "lengan-arteri": "arteri membawa darah ke otot lengan",
+        "lengan-kapiler": "di kapiler otot lengan, oksigen dan sari makanan masuk ke sel",
+        "lengan-sisa": "sel otot lengan menyerahkan karbon dioksida ke darah",
+        "lengan-vena": "vena membawa darah kembali ke jantung",
+        "s-tangan": "Darah menuju jari tangan",
+        "tangan-pompa": "jantung memompa darah kaya oksigen",
+        "tangan-arteri": "arteri membawa darah ke jari tangan",
+        "tangan-kapiler": "di kapiler jari tangan, oksigen dan sari makanan masuk ke sel",
+        "tangan-sisa": "sel jari tangan menyerahkan karbon dioksida ke darah",
+        "tangan-vena": "vena membawa darah kembali ke jantung",
+        "s-telinga": "Darah menuju telinga",
+        "telinga-pompa": "jantung memompa darah kaya oksigen",
+        "telinga-arteri": "arteri membawa darah ke telinga",
+        "telinga-kapiler": "di kapiler telinga, oksigen dan sari makanan masuk ke sel",
+        "telinga-sisa": "sel telinga menyerahkan karbon dioksida ke darah",
+        "telinga-vena": "vena membawa darah kembali ke jantung",
+        "s-lidah": "Darah menuju lidah",
+        "lidah-pompa": "jantung memompa darah kaya oksigen",
+        "lidah-arteri": "arteri membawa darah ke lidah",
+        "lidah-kapiler": "di kapiler lidah, oksigen dan sari makanan masuk ke sel",
+        "lidah-sisa": "sel lidah menyerahkan karbon dioksida ke darah",
+        "lidah-vena": "vena membawa darah kembali ke jantung",
+        "s-hidung": "Darah menuju hidung",
+        "hidung-pompa": "jantung memompa darah kaya oksigen",
+        "hidung-arteri": "arteri membawa darah ke hidung",
+        "hidung-kapiler": "di kapiler hidung, oksigen dan sari makanan masuk ke sel",
+        "hidung-sisa": "sel hidung menyerahkan karbon dioksida ke darah",
+        "hidung-vena": "vena membawa darah kembali ke jantung",
+        "s-mata": "Darah menuju mata",
+        "mata-pompa": "jantung memompa darah kaya oksigen",
+        "mata-arteri": "arteri membawa darah ke mata",
+        "mata-kapiler": "di kapiler mata, oksigen dan sari makanan masuk ke sel",
+        "mata-sisa": "sel mata menyerahkan karbon dioksida ke darah",
+        "mata-vena": "vena membawa darah kembali ke jantung",
+        "s-parupanjang": "Darah singgah di paru-paru",
+        "parupanjang-pompa": "jantung memompa darah miskin oksigen",
+        "parupanjang-arteri": "arteri paru-paru membawanya ke paru-paru",
+        "parupanjang-tukar": "di kapiler paru-paru, karbon dioksida dilepas dan oksigen diambil",
+        "parupanjang-venaparu": "vena paru-paru membawa darah kaya oksigen",
+        "parupanjang-tiba": "darah tiba kembali di jantung"
       },
       "en": {
         "judul": "Round the Blood Vessels",
-        "instruksi": "Read the title, then put the blood's journey in order.",
+        "instruksi": "Read the title, then put the blood's journey in order, starting when the heart pumps.",
         "s-tubuh": "Blood around the body",
         "tubuh-pompa": "the heart pumps oxygen-rich blood",
         "tubuh-arteri": "arteries carry blood around the body",
@@ -183767,7 +193864,61 @@ export const PAKET_RAW: unknown[] = [
         "paru-pompa": "the heart pumps blood to the lungs",
         "paru-ambil": "in the lungs blood drops carbon dioxide and picks up oxygen",
         "paru-kembali": "oxygen-rich blood returns to the heart",
-        "paru-ketubuh": "the heart pumps it around the body"
+        "paru-ketubuh": "the heart pumps it around the body",
+        "s-otak": "Blood to the brain",
+        "otak-pompa": "the heart pumps oxygen-rich blood",
+        "otak-arteri": "arteries carry the blood to the brain",
+        "otak-kapiler": "in the capillaries of the brain, oxygen and nutrients pass into the cells",
+        "otak-sisa": "cells of the brain pass carbon dioxide into the blood",
+        "otak-vena": "veins carry the blood back to the heart",
+        "s-kaki": "Blood to the leg muscles",
+        "kaki-pompa": "the heart pumps oxygen-rich blood",
+        "kaki-arteri": "arteries carry the blood to the leg muscles",
+        "kaki-kapiler": "in the capillaries of the leg muscles, oxygen and nutrients pass into the cells",
+        "kaki-sisa": "cells of the leg muscles pass carbon dioxide into the blood",
+        "kaki-vena": "veins carry the blood back to the heart",
+        "s-lengan": "Blood to the arm muscles",
+        "lengan-pompa": "the heart pumps oxygen-rich blood",
+        "lengan-arteri": "arteries carry the blood to the arm muscles",
+        "lengan-kapiler": "in the capillaries of the arm muscles, oxygen and nutrients pass into the cells",
+        "lengan-sisa": "cells of the arm muscles pass carbon dioxide into the blood",
+        "lengan-vena": "veins carry the blood back to the heart",
+        "s-tangan": "Blood to the fingers",
+        "tangan-pompa": "the heart pumps oxygen-rich blood",
+        "tangan-arteri": "arteries carry the blood to the fingers",
+        "tangan-kapiler": "in the capillaries of the fingers, oxygen and nutrients pass into the cells",
+        "tangan-sisa": "cells of the fingers pass carbon dioxide into the blood",
+        "tangan-vena": "veins carry the blood back to the heart",
+        "s-telinga": "Blood to the ears",
+        "telinga-pompa": "the heart pumps oxygen-rich blood",
+        "telinga-arteri": "arteries carry the blood to the ears",
+        "telinga-kapiler": "in the capillaries of the ears, oxygen and nutrients pass into the cells",
+        "telinga-sisa": "cells of the ears pass carbon dioxide into the blood",
+        "telinga-vena": "veins carry the blood back to the heart",
+        "s-lidah": "Blood to the tongue",
+        "lidah-pompa": "the heart pumps oxygen-rich blood",
+        "lidah-arteri": "arteries carry the blood to the tongue",
+        "lidah-kapiler": "in the capillaries of the tongue, oxygen and nutrients pass into the cells",
+        "lidah-sisa": "cells of the tongue pass carbon dioxide into the blood",
+        "lidah-vena": "veins carry the blood back to the heart",
+        "s-hidung": "Blood to the nose",
+        "hidung-pompa": "the heart pumps oxygen-rich blood",
+        "hidung-arteri": "arteries carry the blood to the nose",
+        "hidung-kapiler": "in the capillaries of the nose, oxygen and nutrients pass into the cells",
+        "hidung-sisa": "cells of the nose pass carbon dioxide into the blood",
+        "hidung-vena": "veins carry the blood back to the heart",
+        "s-mata": "Blood to the eyes",
+        "mata-pompa": "the heart pumps oxygen-rich blood",
+        "mata-arteri": "arteries carry the blood to the eyes",
+        "mata-kapiler": "in the capillaries of the eyes, oxygen and nutrients pass into the cells",
+        "mata-sisa": "cells of the eyes pass carbon dioxide into the blood",
+        "mata-vena": "veins carry the blood back to the heart",
+        "s-parupanjang": "Blood visits the lungs",
+        "parupanjang-pompa": "the heart pumps oxygen-poor blood",
+        "parupanjang-arteri": "the pulmonary artery carries it to the lungs",
+        "parupanjang-tukar": "in the lung capillaries, carbon dioxide is let go and oxygen is picked up",
+        "parupanjang-venaparu": "the pulmonary vein carries oxygen-rich blood",
+        "parupanjang-tiba": "the blood arrives back at the heart"
       }
     },
     "knobs": {
@@ -183846,12 +193997,309 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🏃"
           }
         ]
+      },
+      {
+        "id": "otak",
+        "titleKey": "s-otak",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "otak-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "otak-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "otak-kapiler",
+            "emoji": "🧠"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "otak-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "otak-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "kaki",
+        "titleKey": "s-kaki",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "kaki-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "kaki-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "kaki-kapiler",
+            "emoji": "🦵"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "kaki-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "kaki-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "lengan",
+        "titleKey": "s-lengan",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "lengan-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "lengan-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "lengan-kapiler",
+            "emoji": "💪"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "lengan-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "lengan-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "tangan",
+        "titleKey": "s-tangan",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "tangan-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "tangan-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "tangan-kapiler",
+            "emoji": "🖐️"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "tangan-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "tangan-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "telinga",
+        "titleKey": "s-telinga",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "telinga-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "telinga-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "telinga-kapiler",
+            "emoji": "👂"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "telinga-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "telinga-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "lidah",
+        "titleKey": "s-lidah",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "lidah-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "lidah-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "lidah-kapiler",
+            "emoji": "👅"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "lidah-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "lidah-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "hidung",
+        "titleKey": "s-hidung",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "hidung-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "hidung-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "hidung-kapiler",
+            "emoji": "👃"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "hidung-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "hidung-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "mata",
+        "titleKey": "s-mata",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "mata-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "mata-arteri",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "kapiler",
+            "labelKey": "mata-kapiler",
+            "emoji": "👁️"
+          },
+          {
+            "id": "sisa",
+            "labelKey": "mata-sisa",
+            "emoji": "💨"
+          },
+          {
+            "id": "vena",
+            "labelKey": "mata-vena",
+            "shape": "rect",
+            "color": "#3949ab"
+          }
+        ]
+      },
+      {
+        "id": "parupanjang",
+        "titleKey": "s-parupanjang",
+        "steps": [
+          {
+            "id": "pompa",
+            "labelKey": "parupanjang-pompa",
+            "emoji": "🫀"
+          },
+          {
+            "id": "arteri",
+            "labelKey": "parupanjang-arteri",
+            "shape": "rect",
+            "color": "#3949ab"
+          },
+          {
+            "id": "tukar",
+            "labelKey": "parupanjang-tukar",
+            "emoji": "🫁"
+          },
+          {
+            "id": "venaparu",
+            "labelKey": "parupanjang-venaparu",
+            "shape": "rect",
+            "color": "#e53935"
+          },
+          {
+            "id": "tiba",
+            "labelKey": "parupanjang-tiba",
+            "emoji": "↩️"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-fase-bulan-perbaiki",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.TATA-SURYA.01"
@@ -183869,7 +194317,27 @@ export const PAKET_RAW: unknown[] = [
         "fase-purnama": "purnama",
         "fase-cembungakhir": "cembung akhir",
         "fase-separuhakhir": "separuh akhir (kuartal ketiga)",
-        "fase-sabitakhir": "sabit akhir"
+        "fase-sabitakhir": "sabit akhir",
+        "s-catat2": "Catatan pengamatan Bulan 2",
+        "s-catat3": "Catatan pengamatan Bulan 3",
+        "s-catat4": "Catatan pengamatan Bulan 4",
+        "s-catat5": "Catatan pengamatan Bulan 5",
+        "s-catat6": "Catatan pengamatan Bulan 6",
+        "s-catat7": "Catatan pengamatan Bulan 7",
+        "s-catat8": "Catatan pengamatan Bulan 8",
+        "s-catat9": "Catatan pengamatan Bulan 9",
+        "s-catat10": "Catatan pengamatan Bulan 10",
+        "s-catat11": "Catatan pengamatan Bulan 11",
+        "s-catat12": "Catatan pengamatan Bulan 12",
+        "s-catat13": "Catatan pengamatan Bulan 13",
+        "s-catat14": "Catatan pengamatan Bulan 14",
+        "s-mulai-sabitawal": "Kalender Bulan, lembar 2",
+        "s-mulai-separuhawal": "Kalender Bulan, lembar 3",
+        "s-mulai-cembungawal": "Kalender Bulan, lembar 4",
+        "s-mulai-purnama": "Kalender Bulan, lembar 5",
+        "s-mulai-cembungakhir": "Kalender Bulan, lembar 6",
+        "s-mulai-separuhakhir": "Kalender Bulan, lembar 7",
+        "s-mulai-sabitakhir": "Kalender Bulan, lembar 8"
       },
       "en": {
         "judul": "Moon Calendar Mix-Up",
@@ -183882,16 +194350,36 @@ export const PAKET_RAW: unknown[] = [
         "fase-purnama": "full moon",
         "fase-cembungakhir": "waning gibbous",
         "fase-separuhakhir": "last quarter",
-        "fase-sabitakhir": "waning crescent"
+        "fase-sabitakhir": "waning crescent",
+        "s-catat2": "Moon observation log 2",
+        "s-catat3": "Moon observation log 3",
+        "s-catat4": "Moon observation log 4",
+        "s-catat5": "Moon observation log 5",
+        "s-catat6": "Moon observation log 6",
+        "s-catat7": "Moon observation log 7",
+        "s-catat8": "Moon observation log 8",
+        "s-catat9": "Moon observation log 9",
+        "s-catat10": "Moon observation log 10",
+        "s-catat11": "Moon observation log 11",
+        "s-catat12": "Moon observation log 12",
+        "s-catat13": "Moon observation log 13",
+        "s-catat14": "Moon observation log 14",
+        "s-mulai-sabitawal": "Moon calendar, page 2",
+        "s-mulai-separuhawal": "Moon calendar, page 3",
+        "s-mulai-cembungawal": "Moon calendar, page 4",
+        "s-mulai-purnama": "Moon calendar, page 5",
+        "s-mulai-cembungakhir": "Moon calendar, page 6",
+        "s-mulai-separuhakhir": "Moon calendar, page 7",
+        "s-mulai-sabitakhir": "Moon calendar, page 8"
       }
     },
     "knobs": {
       "steps": {
         "min": 5,
         "max": 8,
-        "default": 8,
+        "default": 7,
         "step": 1,
-        "keterangan": "jumlah fase: 5 → 8"
+        "keterangan": "jumlah fase: 5 → 8 (bawaan 7 supaya cukup banyak kalender berbeda)"
       }
     },
     "assets": [],
@@ -183946,12 +194434,802 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🌘"
           }
         ]
+      },
+      {
+        "id": "catat2",
+        "titleKey": "s-catat2",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat3",
+        "titleKey": "s-catat3",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat4",
+        "titleKey": "s-catat4",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat5",
+        "titleKey": "s-catat5",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat6",
+        "titleKey": "s-catat6",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat7",
+        "titleKey": "s-catat7",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat8",
+        "titleKey": "s-catat8",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat9",
+        "titleKey": "s-catat9",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat10",
+        "titleKey": "s-catat10",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat11",
+        "titleKey": "s-catat11",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat12",
+        "titleKey": "s-catat12",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat13",
+        "titleKey": "s-catat13",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat14",
+        "titleKey": "s-catat14",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "mulai-sabitawal",
+        "titleKey": "s-mulai-sabitawal",
+        "steps": [
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          }
+        ]
+      },
+      {
+        "id": "mulai-separuhawal",
+        "titleKey": "s-mulai-separuhawal",
+        "steps": [
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          }
+        ]
+      },
+      {
+        "id": "mulai-cembungawal",
+        "titleKey": "s-mulai-cembungawal",
+        "steps": [
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          }
+        ]
+      },
+      {
+        "id": "mulai-purnama",
+        "titleKey": "s-mulai-purnama",
+        "steps": [
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          }
+        ]
+      },
+      {
+        "id": "mulai-cembungakhir",
+        "titleKey": "s-mulai-cembungakhir",
+        "steps": [
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          }
+        ]
+      },
+      {
+        "id": "mulai-separuhakhir",
+        "titleKey": "s-mulai-separuhakhir",
+        "steps": [
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          }
+        ]
+      },
+      {
+        "id": "mulai-sabitakhir",
+        "titleKey": "s-mulai-sabitakhir",
+        "steps": [
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          },
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-fase-bulan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.TATA-SURYA.01"
@@ -183960,7 +195238,7 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Wajah Bulan Sebulan",
-        "instruksi": "Susun bentuk Bulan dari bulan baru, menurut urutan malam demi malam.",
+        "instruksi": "Susun bentuk Bulan yang tercatat, mulai dari bulan baru, menurut urutan kemunculannya dalam sebulan.",
         "s-fase": "Bentuk Bulan selama sebulan",
         "fase-baru": "bulan baru (hampir tak terlihat)",
         "fase-sabitawal": "sabit awal",
@@ -183969,11 +195247,24 @@ export const PAKET_RAW: unknown[] = [
         "fase-purnama": "purnama",
         "fase-cembungakhir": "cembung akhir",
         "fase-separuhakhir": "separuh akhir (kuartal ketiga)",
-        "fase-sabitakhir": "sabit akhir"
+        "fase-sabitakhir": "sabit akhir",
+        "s-catat2": "Catatan pengamatan Bulan 2",
+        "s-catat3": "Catatan pengamatan Bulan 3",
+        "s-catat4": "Catatan pengamatan Bulan 4",
+        "s-catat5": "Catatan pengamatan Bulan 5",
+        "s-catat6": "Catatan pengamatan Bulan 6",
+        "s-catat7": "Catatan pengamatan Bulan 7",
+        "s-catat8": "Catatan pengamatan Bulan 8",
+        "s-catat9": "Catatan pengamatan Bulan 9",
+        "s-catat10": "Catatan pengamatan Bulan 10",
+        "s-catat11": "Catatan pengamatan Bulan 11",
+        "s-catat12": "Catatan pengamatan Bulan 12",
+        "s-catat13": "Catatan pengamatan Bulan 13",
+        "s-catat14": "Catatan pengamatan Bulan 14"
       },
       "en": {
         "judul": "The Moon's Faces in a Month",
-        "instruksi": "Put the Moon's shapes in order, night after night, starting from the new moon.",
+        "instruksi": "Put the recorded Moon shapes in order, starting from the new moon, as they appear through the month.",
         "s-fase": "The Moon's shape over a month",
         "fase-baru": "new moon (almost invisible)",
         "fase-sabitawal": "waxing crescent",
@@ -183982,7 +195273,20 @@ export const PAKET_RAW: unknown[] = [
         "fase-purnama": "full moon",
         "fase-cembungakhir": "waning gibbous",
         "fase-separuhakhir": "last quarter",
-        "fase-sabitakhir": "waning crescent"
+        "fase-sabitakhir": "waning crescent",
+        "s-catat2": "Moon observation log 2",
+        "s-catat3": "Moon observation log 3",
+        "s-catat4": "Moon observation log 4",
+        "s-catat5": "Moon observation log 5",
+        "s-catat6": "Moon observation log 6",
+        "s-catat7": "Moon observation log 7",
+        "s-catat8": "Moon observation log 8",
+        "s-catat9": "Moon observation log 9",
+        "s-catat10": "Moon observation log 10",
+        "s-catat11": "Moon observation log 11",
+        "s-catat12": "Moon observation log 12",
+        "s-catat13": "Moon observation log 13",
+        "s-catat14": "Moon observation log 14"
       }
     },
     "knobs": {
@@ -183991,7 +195295,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 8,
         "default": 5,
         "step": 1,
-        "keterangan": "jumlah fase dari bulan baru: 5 (sampai purnama) → 8"
+        "keterangan": "jumlah fase yang tampil, selalu mulai dari bulan baru: 5 → 8"
       }
     },
     "assets": [],
@@ -184046,12 +195350,480 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🌘"
           }
         ]
+      },
+      {
+        "id": "catat2",
+        "titleKey": "s-catat2",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat3",
+        "titleKey": "s-catat3",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat4",
+        "titleKey": "s-catat4",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat5",
+        "titleKey": "s-catat5",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat6",
+        "titleKey": "s-catat6",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat7",
+        "titleKey": "s-catat7",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat8",
+        "titleKey": "s-catat8",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat9",
+        "titleKey": "s-catat9",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat10",
+        "titleKey": "s-catat10",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat11",
+        "titleKey": "s-catat11",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "separuhawal",
+            "labelKey": "fase-separuhawal",
+            "emoji": "🌓"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat12",
+        "titleKey": "s-catat12",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat13",
+        "titleKey": "s-catat13",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "cembungawal",
+            "labelKey": "fase-cembungawal",
+            "emoji": "🌔"
+          },
+          {
+            "id": "cembungakhir",
+            "labelKey": "fase-cembungakhir",
+            "emoji": "🌖"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
+      },
+      {
+        "id": "catat14",
+        "titleKey": "s-catat14",
+        "steps": [
+          {
+            "id": "baru",
+            "labelKey": "fase-baru",
+            "emoji": "🌑"
+          },
+          {
+            "id": "sabitawal",
+            "labelKey": "fase-sabitawal",
+            "emoji": "🌒"
+          },
+          {
+            "id": "purnama",
+            "labelKey": "fase-purnama",
+            "emoji": "🌕"
+          },
+          {
+            "id": "separuhakhir",
+            "labelKey": "fase-separuhakhir",
+            "emoji": "🌗"
+          },
+          {
+            "id": "sabitakhir",
+            "labelKey": "fase-sabitakhir",
+            "emoji": "🌘"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-jalan-udara",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.PERNAPASAN.01"
@@ -184072,7 +195844,60 @@ export const PAKET_RAW: unknown[] = [
         "keluar-darah": "karbon dioksida keluar dari darah ke alveolus",
         "keluar-bronkus": "melewati bronkus",
         "keluar-trakea": "naik lewat trakea",
-        "keluar-hidung": "keluar lewat hidung atau mulut"
+        "keluar-hidung": "keluar lewat hidung atau mulut",
+        "s-taman": "Menghirup udara pagi di taman",
+        "taman-hidung": "udara pagi masuk lewat hidung",
+        "taman-trakea": "udara turun lewat batang tenggorok (trakea)",
+        "taman-bronkus": "udara masuk ke cabang tenggorok (bronkus)",
+        "taman-alveolus": "udara sampai di gelembung paru-paru (alveolus)",
+        "taman-darah": "oksigen berpindah ke darah",
+        "s-flu": "Bernapas saat hidung tersumbat",
+        "flu-mulut": "hidung tersumbat, udara masuk lewat mulut",
+        "flu-tenggorokan": "udara melewati tenggorokan",
+        "flu-trakea": "udara turun lewat trakea",
+        "flu-bronkus": "udara masuk ke bronkus",
+        "flu-alveolus": "udara mengisi alveolus",
+        "s-otot": "Oksigen untuk otot kaki",
+        "otot-alveolus": "oksigen sampai di alveolus",
+        "otot-darah": "oksigen masuk ke darah",
+        "otot-jantung": "darah kaya oksigen dipompa jantung",
+        "otot-kaki": "oksigen sampai di sel otot kaki",
+        "s-dalam": "Udara di dalam paru-paru",
+        "dalam-trakea": "udara turun lewat trakea",
+        "dalam-bronkus": "trakea bercabang dua jadi bronkus",
+        "dalam-bronkiolus": "bronkus bercabang jadi saluran kecil (bronkiolus)",
+        "dalam-alveolus": "ujung bronkiolus berupa alveolus",
+        "dalam-darah": "oksigen pindah dari alveolus ke darah",
+        "s-aroma": "Mencium wangi nasi goreng",
+        "aroma-hidung": "kamu menghirup wangi nasi goreng lewat hidung",
+        "aroma-tenggorokan": "udara melewati tenggorokan",
+        "aroma-trakea": "udara turun lewat trakea",
+        "aroma-bronkiolus": "udara menyebar ke bronkiolus",
+        "aroma-alveolus": "udara sampai di alveolus",
+        "s-lilin": "Meniup lilin ulang tahun",
+        "lilin-alveolus": "udara terdorong keluar dari alveolus",
+        "lilin-bronkus": "udara melewati bronkus",
+        "lilin-trakea": "udara naik lewat trakea",
+        "lilin-tenggorokan": "udara melewati tenggorokan",
+        "lilin-lilin": "udara keluar dari mulut, lilin padam",
+        "s-balon": "Meniup balon",
+        "balon-darah": "darah melepas karbon dioksida ke alveolus",
+        "balon-bronkus": "udara keluar melewati bronkus",
+        "balon-trakea": "udara naik lewat trakea",
+        "balon-tenggorokan": "udara melewati tenggorokan",
+        "balon-balon": "udara keluar dari mulut dan mengisi balon",
+        "s-sisa": "Karbon dioksida dari otot kaki",
+        "sisa-kaki": "sel otot kaki menghasilkan karbon dioksida",
+        "sisa-darah": "darah membawanya ke paru-paru",
+        "sisa-alveolus": "karbon dioksida pindah ke alveolus",
+        "sisa-trakea": "naik lewat trakea",
+        "sisa-hidung": "keluar lewat hidung",
+        "s-kaca": "Napas di kaca jendela",
+        "kaca-alveolus": "udara hangat keluar dari alveolus",
+        "kaca-bronkus": "udara melewati bronkus",
+        "kaca-trakea": "udara naik lewat trakea",
+        "kaca-mulut": "napas hangat keluar dari mulut",
+        "kaca-kaca": "uap air dari napas mengembun di kaca yang dingin"
       },
       "en": {
         "judul": "The Breath's Journey",
@@ -184088,7 +195913,60 @@ export const PAKET_RAW: unknown[] = [
         "keluar-darah": "carbon dioxide leaves the blood into the alveoli",
         "keluar-bronkus": "passes through the bronchi",
         "keluar-trakea": "goes up the trachea",
-        "keluar-hidung": "out through the nose or mouth"
+        "keluar-hidung": "out through the nose or mouth",
+        "s-taman": "Breathing in morning air in the park",
+        "taman-hidung": "morning air comes in through the nose",
+        "taman-trakea": "the air goes down the windpipe (trachea)",
+        "taman-bronkus": "the air enters the bronchi",
+        "taman-alveolus": "the air reaches the air sacs (alveoli)",
+        "taman-darah": "oxygen moves into the blood",
+        "s-flu": "Breathing with a blocked nose",
+        "flu-mulut": "the nose is blocked, so air comes in through the mouth",
+        "flu-tenggorokan": "the air passes the throat",
+        "flu-trakea": "the air goes down the trachea",
+        "flu-bronkus": "the air enters the bronchi",
+        "flu-alveolus": "the air fills the alveoli",
+        "s-otot": "Oxygen for the leg muscles",
+        "otot-alveolus": "oxygen reaches the alveoli",
+        "otot-darah": "oxygen passes into the blood",
+        "otot-jantung": "the heart pumps the oxygen-rich blood",
+        "otot-kaki": "oxygen reaches the leg muscle cells",
+        "s-dalam": "Air inside the lungs",
+        "dalam-trakea": "air goes down the trachea",
+        "dalam-bronkus": "the trachea splits into two bronchi",
+        "dalam-bronkiolus": "the bronchi branch into tiny tubes (bronchioles)",
+        "dalam-alveolus": "the bronchioles end in alveoli",
+        "dalam-darah": "oxygen moves from the alveoli into the blood",
+        "s-aroma": "Smelling fried rice",
+        "aroma-hidung": "you breathe in the smell of fried rice through your nose",
+        "aroma-tenggorokan": "the air passes the throat",
+        "aroma-trakea": "the air goes down the trachea",
+        "aroma-bronkiolus": "the air spreads into the bronchioles",
+        "aroma-alveolus": "the air reaches the alveoli",
+        "s-lilin": "Blowing out birthday candles",
+        "lilin-alveolus": "air is pushed out of the alveoli",
+        "lilin-bronkus": "the air passes through the bronchi",
+        "lilin-trakea": "the air goes up the trachea",
+        "lilin-tenggorokan": "the air passes the throat",
+        "lilin-lilin": "the air leaves the mouth and the candle goes out",
+        "s-balon": "Blowing up a balloon",
+        "balon-darah": "the blood lets go of carbon dioxide into the alveoli",
+        "balon-bronkus": "the air goes out through the bronchi",
+        "balon-trakea": "the air goes up the trachea",
+        "balon-tenggorokan": "the air passes the throat",
+        "balon-balon": "the air leaves the mouth and fills the balloon",
+        "s-sisa": "Carbon dioxide from the leg muscles",
+        "sisa-kaki": "leg muscle cells make carbon dioxide",
+        "sisa-darah": "the blood carries it to the lungs",
+        "sisa-alveolus": "the carbon dioxide moves into the alveoli",
+        "sisa-trakea": "it goes up the trachea",
+        "sisa-hidung": "it leaves through the nose",
+        "s-kaca": "Breath on a window",
+        "kaca-alveolus": "warm air leaves the alveoli",
+        "kaca-bronkus": "the air passes through the bronchi",
+        "kaca-trakea": "the air goes up the trachea",
+        "kaca-mulut": "warm breath leaves the mouth",
+        "kaca-kaca": "water vapour in the breath condenses on the cold glass"
       }
     },
     "knobs": {
@@ -184097,7 +195975,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 6,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah langkah: 4 → 6 (udara keluar hanya 4)"
+        "keterangan": "jumlah langkah: 4 → 6 (beberapa jalur hanya 4–5 langkah)"
       }
     },
     "assets": [],
@@ -184170,12 +196048,306 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "💨"
           }
         ]
+      },
+      {
+        "id": "taman",
+        "titleKey": "s-taman",
+        "steps": [
+          {
+            "id": "hidung",
+            "labelKey": "taman-hidung",
+            "emoji": "👃"
+          },
+          {
+            "id": "trakea",
+            "labelKey": "taman-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "bronkus",
+            "labelKey": "taman-bronkus",
+            "emoji": "🌳"
+          },
+          {
+            "id": "alveolus",
+            "labelKey": "taman-alveolus",
+            "emoji": "🫧"
+          },
+          {
+            "id": "darah",
+            "labelKey": "taman-darah",
+            "emoji": "🩸"
+          }
+        ]
+      },
+      {
+        "id": "flu",
+        "titleKey": "s-flu",
+        "steps": [
+          {
+            "id": "mulut",
+            "labelKey": "flu-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "tenggorokan",
+            "labelKey": "flu-tenggorokan",
+            "shape": "rect",
+            "color": "#b3e5fc",
+            "width": 0.8
+          },
+          {
+            "id": "trakea",
+            "labelKey": "flu-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "bronkus",
+            "labelKey": "flu-bronkus",
+            "emoji": "🌳"
+          },
+          {
+            "id": "alveolus",
+            "labelKey": "flu-alveolus",
+            "emoji": "🫧"
+          }
+        ]
+      },
+      {
+        "id": "otot",
+        "titleKey": "s-otot",
+        "steps": [
+          {
+            "id": "alveolus",
+            "labelKey": "otot-alveolus",
+            "emoji": "🫧"
+          },
+          {
+            "id": "darah",
+            "labelKey": "otot-darah",
+            "emoji": "🩸"
+          },
+          {
+            "id": "jantung",
+            "labelKey": "otot-jantung",
+            "emoji": "🫀"
+          },
+          {
+            "id": "kaki",
+            "labelKey": "otot-kaki",
+            "emoji": "🦵"
+          }
+        ]
+      },
+      {
+        "id": "dalam",
+        "titleKey": "s-dalam",
+        "steps": [
+          {
+            "id": "trakea",
+            "labelKey": "dalam-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "bronkus",
+            "labelKey": "dalam-bronkus",
+            "emoji": "🌳"
+          },
+          {
+            "id": "bronkiolus",
+            "labelKey": "dalam-bronkiolus",
+            "shape": "rect",
+            "color": "#bbdefb",
+            "width": 0.5
+          },
+          {
+            "id": "alveolus",
+            "labelKey": "dalam-alveolus",
+            "emoji": "🫧"
+          },
+          {
+            "id": "darah",
+            "labelKey": "dalam-darah",
+            "emoji": "🩸"
+          }
+        ]
+      },
+      {
+        "id": "aroma",
+        "titleKey": "s-aroma",
+        "steps": [
+          {
+            "id": "hidung",
+            "labelKey": "aroma-hidung",
+            "emoji": "👃"
+          },
+          {
+            "id": "tenggorokan",
+            "labelKey": "aroma-tenggorokan",
+            "shape": "rect",
+            "color": "#b3e5fc",
+            "width": 0.8
+          },
+          {
+            "id": "trakea",
+            "labelKey": "aroma-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "bronkiolus",
+            "labelKey": "aroma-bronkiolus",
+            "shape": "rect",
+            "color": "#bbdefb",
+            "width": 0.5
+          },
+          {
+            "id": "alveolus",
+            "labelKey": "aroma-alveolus",
+            "emoji": "🫧"
+          }
+        ]
+      },
+      {
+        "id": "lilin",
+        "titleKey": "s-lilin",
+        "steps": [
+          {
+            "id": "alveolus",
+            "labelKey": "lilin-alveolus",
+            "emoji": "🫧"
+          },
+          {
+            "id": "bronkus",
+            "labelKey": "lilin-bronkus",
+            "emoji": "🌳"
+          },
+          {
+            "id": "trakea",
+            "labelKey": "lilin-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "tenggorokan",
+            "labelKey": "lilin-tenggorokan",
+            "shape": "rect",
+            "color": "#b3e5fc",
+            "width": 0.8
+          },
+          {
+            "id": "lilin",
+            "labelKey": "lilin-lilin",
+            "emoji": "🕯️"
+          }
+        ]
+      },
+      {
+        "id": "balon",
+        "titleKey": "s-balon",
+        "steps": [
+          {
+            "id": "darah",
+            "labelKey": "balon-darah",
+            "emoji": "🩸"
+          },
+          {
+            "id": "bronkus",
+            "labelKey": "balon-bronkus",
+            "emoji": "🌳"
+          },
+          {
+            "id": "trakea",
+            "labelKey": "balon-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "tenggorokan",
+            "labelKey": "balon-tenggorokan",
+            "shape": "rect",
+            "color": "#b3e5fc",
+            "width": 0.8
+          },
+          {
+            "id": "balon",
+            "labelKey": "balon-balon",
+            "emoji": "🎈"
+          }
+        ]
+      },
+      {
+        "id": "sisa",
+        "titleKey": "s-sisa",
+        "steps": [
+          {
+            "id": "kaki",
+            "labelKey": "sisa-kaki",
+            "emoji": "🦵"
+          },
+          {
+            "id": "darah",
+            "labelKey": "sisa-darah",
+            "emoji": "🩸"
+          },
+          {
+            "id": "alveolus",
+            "labelKey": "sisa-alveolus",
+            "emoji": "🫧"
+          },
+          {
+            "id": "trakea",
+            "labelKey": "sisa-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "hidung",
+            "labelKey": "sisa-hidung",
+            "emoji": "💨"
+          }
+        ]
+      },
+      {
+        "id": "kaca",
+        "titleKey": "s-kaca",
+        "steps": [
+          {
+            "id": "alveolus",
+            "labelKey": "kaca-alveolus",
+            "emoji": "🫧"
+          },
+          {
+            "id": "bronkus",
+            "labelKey": "kaca-bronkus",
+            "emoji": "🌳"
+          },
+          {
+            "id": "trakea",
+            "labelKey": "kaca-trakea",
+            "shape": "rect",
+            "color": "#90caf9"
+          },
+          {
+            "id": "mulut",
+            "labelKey": "kaca-mulut",
+            "emoji": "👄"
+          },
+          {
+            "id": "kaca",
+            "labelKey": "kaca-kaca",
+            "emoji": "🪟"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-jalur-energi-sawah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.JARING-MAKANAN.01"
@@ -184183,7 +196355,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Jalur Energi di Sawah",
+        "judul": "Jalur Energi di Alam",
         "instruksi": "Susun jalur energi dari Matahari sampai pemakan puncak.",
         "s-j1": "Jalur 1 di jaring sawah",
         "j1-matahari": "Matahari: sumber energi",
@@ -184207,10 +196379,71 @@ export const PAKET_RAW: unknown[] = [
         "j4-matahari": "Matahari: sumber energi",
         "j4-ganggang": "ganggang (produsen)",
         "j4-ikankecil": "ikan kecil",
-        "j4-bangau": "burung bangau"
+        "j4-bangau": "burung bangau",
+        "s-j5": "Jalur 4 di jaring sawah",
+        "j5-matahari": "Matahari: sumber energi",
+        "j5-padi": "padi (produsen)",
+        "j5-belalang": "belalang",
+        "j5-labalaba": "laba-laba",
+        "j5-katak": "katak",
+        "j5-ular": "ular sawah",
+        "s-j6": "Jalur di laut",
+        "j6-matahari": "Matahari: sumber energi",
+        "j6-fito": "fitoplankton (produsen)",
+        "j6-udang": "udang kecil",
+        "j6-ikan": "ikan kecil",
+        "j6-cumi": "cumi-cumi",
+        "j6-hiu": "hiu",
+        "s-j7": "Jalur di gurun",
+        "j7-matahari": "Matahari: sumber energi",
+        "j7-kaktus": "kaktus (produsen)",
+        "j7-belalang": "belalang gurun",
+        "j7-kadal": "kadal",
+        "j7-ular": "ular gurun",
+        "j7-elang": "elang",
+        "s-j8": "Jalur di hutan",
+        "j8-matahari": "Matahari: sumber energi",
+        "j8-pohon": "daun pohon (produsen)",
+        "j8-ulat": "ulat",
+        "j8-burung": "burung kecil",
+        "j8-ular": "ular pohon",
+        "j8-elang": "elang",
+        "s-j9": "Jalur di rawa",
+        "j9-matahari": "Matahari: sumber energi",
+        "j9-tumbuhan": "tumbuhan air (produsen)",
+        "j9-siput": "siput air",
+        "j9-bebek": "bebek liar",
+        "j9-buaya": "buaya",
+        "s-j10": "Jalur di laut kutub selatan",
+        "j10-matahari": "Matahari: sumber energi",
+        "j10-fito": "fitoplankton (produsen)",
+        "j10-zoo": "zooplankton (hewan renik)",
+        "j10-ikan": "ikan",
+        "j10-penguin": "penguin",
+        "j10-anjinglaut": "anjing laut tutul",
+        "s-j11": "Jalur di laut kutub utara",
+        "j11-matahari": "Matahari: sumber energi",
+        "j11-fito": "fitoplankton (produsen)",
+        "j11-zoo": "zooplankton (hewan renik)",
+        "j11-ikan": "ikan kod kutub",
+        "j11-anjinglaut": "anjing laut",
+        "j11-beruang": "beruang kutub",
+        "s-j12": "Jalur di kebun sayur",
+        "j12-matahari": "Matahari: sumber energi",
+        "j12-sawi": "sawi (produsen)",
+        "j12-ulat": "ulat",
+        "j12-burung": "burung kutilang",
+        "j12-elang": "elang",
+        "s-j13": "Jalur di padang rumput",
+        "j13-matahari": "Matahari: sumber energi",
+        "j13-rumput": "rumput (produsen)",
+        "j13-belalang": "belalang",
+        "j13-tikus": "tikus",
+        "j13-ular": "ular",
+        "j13-burunghantu": "burung hantu"
       },
       "en": {
-        "judul": "Energy Paths in the Rice Field",
+        "judul": "Energy Paths in Nature",
         "instruksi": "Put the energy path in order from the Sun to the top consumer.",
         "s-j1": "Path 1 in the rice-field web",
         "j1-matahari": "the Sun: source of energy",
@@ -184234,7 +196467,68 @@ export const PAKET_RAW: unknown[] = [
         "j4-matahari": "the Sun: source of energy",
         "j4-ganggang": "algae (producer)",
         "j4-ikankecil": "small fish",
-        "j4-bangau": "heron"
+        "j4-bangau": "heron",
+        "s-j5": "Path 4 in the rice-field web",
+        "j5-matahari": "the Sun: source of energy",
+        "j5-padi": "rice plant (producer)",
+        "j5-belalang": "grasshopper",
+        "j5-labalaba": "spider",
+        "j5-katak": "frog",
+        "j5-ular": "rice-field snake",
+        "s-j6": "A path in the sea",
+        "j6-matahari": "the Sun: source of energy",
+        "j6-fito": "phytoplankton (producer)",
+        "j6-udang": "small shrimp",
+        "j6-ikan": "small fish",
+        "j6-cumi": "squid",
+        "j6-hiu": "shark",
+        "s-j7": "A path in the desert",
+        "j7-matahari": "the Sun: source of energy",
+        "j7-kaktus": "cactus (producer)",
+        "j7-belalang": "desert grasshopper",
+        "j7-kadal": "lizard",
+        "j7-ular": "desert snake",
+        "j7-elang": "hawk",
+        "s-j8": "A path in the forest",
+        "j8-matahari": "the Sun: source of energy",
+        "j8-pohon": "tree leaves (producer)",
+        "j8-ulat": "caterpillar",
+        "j8-burung": "small bird",
+        "j8-ular": "tree snake",
+        "j8-elang": "eagle",
+        "s-j9": "A path in the swamp",
+        "j9-matahari": "the Sun: source of energy",
+        "j9-tumbuhan": "water plants (producer)",
+        "j9-siput": "water snail",
+        "j9-bebek": "wild duck",
+        "j9-buaya": "crocodile",
+        "s-j10": "A path in the Antarctic sea",
+        "j10-matahari": "the Sun: source of energy",
+        "j10-fito": "phytoplankton (producer)",
+        "j10-zoo": "zooplankton (tiny animals)",
+        "j10-ikan": "fish",
+        "j10-penguin": "penguin",
+        "j10-anjinglaut": "leopard seal",
+        "s-j11": "A path in the Arctic sea",
+        "j11-matahari": "the Sun: source of energy",
+        "j11-fito": "phytoplankton (producer)",
+        "j11-zoo": "zooplankton (tiny animals)",
+        "j11-ikan": "Arctic cod",
+        "j11-anjinglaut": "seal",
+        "j11-beruang": "polar bear",
+        "s-j12": "A path in the vegetable garden",
+        "j12-matahari": "the Sun: source of energy",
+        "j12-sawi": "mustard greens (producer)",
+        "j12-ulat": "caterpillar",
+        "j12-burung": "bulbul",
+        "j12-elang": "hawk",
+        "s-j13": "A path in the grassland",
+        "j13-matahari": "the Sun: source of energy",
+        "j13-rumput": "grass (producer)",
+        "j13-belalang": "grasshopper",
+        "j13-tikus": "mouse",
+        "j13-ular": "snake",
+        "j13-burunghantu": "owl"
       }
     },
     "knobs": {
@@ -184371,12 +196665,341 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🐦"
           }
         ]
+      },
+      {
+        "id": "j5",
+        "titleKey": "s-j5",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j5-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "padi",
+            "labelKey": "j5-padi",
+            "emoji": "🌾"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "j5-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "labalaba",
+            "labelKey": "j5-labalaba",
+            "emoji": "🕷️"
+          },
+          {
+            "id": "katak",
+            "labelKey": "j5-katak",
+            "emoji": "🐸"
+          },
+          {
+            "id": "ular",
+            "labelKey": "j5-ular",
+            "emoji": "🐍"
+          }
+        ]
+      },
+      {
+        "id": "j6",
+        "titleKey": "s-j6",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j6-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "fito",
+            "labelKey": "j6-fito",
+            "shape": "circle",
+            "color": "#66bb6a",
+            "scale": 0.3,
+            "count": 6
+          },
+          {
+            "id": "udang",
+            "labelKey": "j6-udang",
+            "emoji": "🦐"
+          },
+          {
+            "id": "ikan",
+            "labelKey": "j6-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "cumi",
+            "labelKey": "j6-cumi",
+            "emoji": "🦑"
+          },
+          {
+            "id": "hiu",
+            "labelKey": "j6-hiu",
+            "emoji": "🦈"
+          }
+        ]
+      },
+      {
+        "id": "j7",
+        "titleKey": "s-j7",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j7-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "kaktus",
+            "labelKey": "j7-kaktus",
+            "emoji": "🌵"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "j7-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "kadal",
+            "labelKey": "j7-kadal",
+            "emoji": "🦎"
+          },
+          {
+            "id": "ular",
+            "labelKey": "j7-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "j7-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "j8",
+        "titleKey": "s-j8",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j8-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "pohon",
+            "labelKey": "j8-pohon",
+            "emoji": "🌳"
+          },
+          {
+            "id": "ulat",
+            "labelKey": "j8-ulat",
+            "emoji": "🐛"
+          },
+          {
+            "id": "burung",
+            "labelKey": "j8-burung",
+            "emoji": "🐦"
+          },
+          {
+            "id": "ular",
+            "labelKey": "j8-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "elang",
+            "labelKey": "j8-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "j9",
+        "titleKey": "s-j9",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j9-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "tumbuhan",
+            "labelKey": "j9-tumbuhan",
+            "emoji": "🌿"
+          },
+          {
+            "id": "siput",
+            "labelKey": "j9-siput",
+            "emoji": "🐌"
+          },
+          {
+            "id": "bebek",
+            "labelKey": "j9-bebek",
+            "emoji": "🦆"
+          },
+          {
+            "id": "buaya",
+            "labelKey": "j9-buaya",
+            "emoji": "🐊"
+          }
+        ]
+      },
+      {
+        "id": "j10",
+        "titleKey": "s-j10",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j10-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "fito",
+            "labelKey": "j10-fito",
+            "shape": "circle",
+            "color": "#66bb6a",
+            "scale": 0.3,
+            "count": 6
+          },
+          {
+            "id": "zoo",
+            "labelKey": "j10-zoo",
+            "shape": "circle",
+            "color": "#b0bec5",
+            "scale": 0.35,
+            "count": 4
+          },
+          {
+            "id": "ikan",
+            "labelKey": "j10-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "penguin",
+            "labelKey": "j10-penguin",
+            "emoji": "🐧"
+          },
+          {
+            "id": "anjinglaut",
+            "labelKey": "j10-anjinglaut",
+            "emoji": "🦭"
+          }
+        ]
+      },
+      {
+        "id": "j11",
+        "titleKey": "s-j11",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j11-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "fito",
+            "labelKey": "j11-fito",
+            "shape": "circle",
+            "color": "#66bb6a",
+            "scale": 0.3,
+            "count": 6
+          },
+          {
+            "id": "zoo",
+            "labelKey": "j11-zoo",
+            "shape": "circle",
+            "color": "#b0bec5",
+            "scale": 0.35,
+            "count": 4
+          },
+          {
+            "id": "ikan",
+            "labelKey": "j11-ikan",
+            "emoji": "🐟"
+          },
+          {
+            "id": "anjinglaut",
+            "labelKey": "j11-anjinglaut",
+            "emoji": "🦭"
+          },
+          {
+            "id": "beruang",
+            "labelKey": "j11-beruang",
+            "emoji": "🐻‍❄️"
+          }
+        ]
+      },
+      {
+        "id": "j12",
+        "titleKey": "s-j12",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j12-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "sawi",
+            "labelKey": "j12-sawi",
+            "emoji": "🥬"
+          },
+          {
+            "id": "ulat",
+            "labelKey": "j12-ulat",
+            "emoji": "🐛"
+          },
+          {
+            "id": "burung",
+            "labelKey": "j12-burung",
+            "emoji": "🐦"
+          },
+          {
+            "id": "elang",
+            "labelKey": "j12-elang",
+            "emoji": "🦅"
+          }
+        ]
+      },
+      {
+        "id": "j13",
+        "titleKey": "s-j13",
+        "steps": [
+          {
+            "id": "matahari",
+            "labelKey": "j13-matahari",
+            "emoji": "☀️"
+          },
+          {
+            "id": "rumput",
+            "labelKey": "j13-rumput",
+            "emoji": "🌿"
+          },
+          {
+            "id": "belalang",
+            "labelKey": "j13-belalang",
+            "emoji": "🦗"
+          },
+          {
+            "id": "tikus",
+            "labelKey": "j13-tikus",
+            "emoji": "🐁"
+          },
+          {
+            "id": "ular",
+            "labelKey": "j13-ular",
+            "emoji": "🐍"
+          },
+          {
+            "id": "burunghantu",
+            "labelKey": "j13-burunghantu",
+            "emoji": "🦉"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-siklus-batuan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.BATUAN.03"
@@ -184404,7 +197027,52 @@ export const PAKET_RAW: unknown[] = [
         "pantai-retak": "retak oleh panas, dingin, dan akar",
         "pantai-sungai": "pecahannya terbawa sungai menjadi pasir",
         "pantai-endap": "pasir mengendap di laut dangkal",
-        "pantai-padat": "pasir memadat menjadi batu pasir"
+        "pantai-padat": "pasir memadat menjadi batu pasir",
+        "s-apung": "Batu yang bisa mengapung",
+        "apung-letus": "gunung api meletus",
+        "apung-lava": "lava pijar menyembur, penuh gelembung gas",
+        "apung-beku": "lava cepat mendingin dan membeku",
+        "apung-apung": "jadi batu apung yang berlubang-lubang",
+        "apung-laut": "batu apung terbawa ke laut dan mengapung",
+        "s-granit": "Bukit granit",
+        "granit-magma": "magma naik tetapi tertahan jauh di bawah tanah",
+        "granit-lambat": "magma mendingin sangat lambat selama ribuan tahun",
+        "granit-granit": "membeku jadi granit berkristal besar",
+        "granit-kikis": "tanah dan batuan di atasnya terkikis hujan",
+        "granit-muncul": "granit muncul di permukaan sebagai bukit batu",
+        "s-batubara": "Hutan rawa menjadi batu bara",
+        "batubara-tumbang": "pohon-pohon rawa tumbang dan mati",
+        "batubara-timbun": "tertimbun lumpur dan pasir",
+        "batubara-tekan": "lapisan di atasnya menekan selama jutaan tahun",
+        "batubara-bara": "berubah menjadi batu bara",
+        "s-kapur": "Cangkang menjadi batu kapur",
+        "kapur-mati": "hewan laut bercangkang mati",
+        "kapur-endap": "cangkangnya mengendap di dasar laut",
+        "kapur-lapis": "cangkang menumpuk berlapis-lapis",
+        "kapur-kapur": "lapisan memadat menjadi batu kapur",
+        "s-sabak": "Lumpur menjadi batu sabak",
+        "sabak-bawa": "sungai membawa lumpur halus ke danau",
+        "sabak-endap": "lumpur mengendap di dasar danau",
+        "sabak-serpih": "lumpur memadat jadi batu serpih",
+        "sabak-dalam": "batu serpih terkubur dalam, terkena panas dan tekanan",
+        "sabak-sabak": "berubah menjadi batu sabak",
+        "s-tanah": "Tanah subur dari gunung api",
+        "tanah-letus": "gunung api meletus",
+        "tanah-lava": "lava mengalir lalu membeku jadi batuan beku",
+        "tanah-lapuk": "hujan dan panas melapukkan batuan",
+        "tanah-tanah": "batuan hancur menjadi tanah subur",
+        "tanah-sawah": "padi tumbuh subur di tanah itu",
+        "s-kerikil": "Kerikil di sungai",
+        "kerikil-runtuh": "batu besar runtuh dari tebing",
+        "kerikil-arus": "batu terbawa arus sungai",
+        "kerikil-benturan": "batu saling berbenturan dan tergosok",
+        "kerikil-bulat": "menjadi kerikil yang bulat dan halus",
+        "s-gurun": "Bukit pasir di gurun",
+        "gurun-batu": "batu besar di gurun",
+        "gurun-retak": "siang sangat panas, malam dingin: batu retak",
+        "gurun-pecah": "batu pecah jadi butiran kecil",
+        "gurun-angin": "angin meniup butiran pasir",
+        "gurun-bukit": "pasir menumpuk jadi bukit pasir"
       },
       "en": {
         "judul": "Rocks on the Move",
@@ -184427,7 +197095,52 @@ export const PAKET_RAW: unknown[] = [
         "pantai-retak": "cracked by heat, cold and roots",
         "pantai-sungai": "the pieces are carried by rivers and become sand",
         "pantai-endap": "the sand settles in shallow sea",
-        "pantai-padat": "the sand is pressed into sandstone"
+        "pantai-padat": "the sand is pressed into sandstone",
+        "s-apung": "A rock that floats",
+        "apung-letus": "a volcano erupts",
+        "apung-lava": "glowing lava sprays out, full of gas bubbles",
+        "apung-beku": "the lava cools fast and hardens",
+        "apung-apung": "it becomes pumice, full of holes",
+        "apung-laut": "the pumice is carried to the sea and floats",
+        "s-granit": "A granite hill",
+        "granit-magma": "magma rises but stays deep underground",
+        "granit-lambat": "the magma cools very slowly over thousands of years",
+        "granit-granit": "it hardens into granite with big crystals",
+        "granit-kikis": "rain wears away the soil and rock above it",
+        "granit-muncul": "the granite appears at the surface as a rocky hill",
+        "s-batubara": "A swamp forest becomes coal",
+        "batubara-tumbang": "swamp trees fall and die",
+        "batubara-timbun": "they are buried by mud and sand",
+        "batubara-tekan": "the layers above press down for millions of years",
+        "batubara-bara": "they turn into coal",
+        "s-kapur": "Shells become limestone",
+        "kapur-mati": "sea animals with shells die",
+        "kapur-endap": "their shells settle on the sea floor",
+        "kapur-lapis": "the shells pile up in layers",
+        "kapur-kapur": "the layers harden into limestone",
+        "s-sabak": "Mud becomes slate",
+        "sabak-bawa": "a river carries fine mud into a lake",
+        "sabak-endap": "the mud settles on the lake floor",
+        "sabak-serpih": "the mud hardens into shale",
+        "sabak-dalam": "the shale is buried deep and heated and squeezed",
+        "sabak-sabak": "it changes into slate",
+        "s-tanah": "Rich soil from a volcano",
+        "tanah-letus": "a volcano erupts",
+        "tanah-lava": "lava flows and hardens into igneous rock",
+        "tanah-lapuk": "rain and heat weather the rock",
+        "tanah-tanah": "the rock breaks down into rich soil",
+        "tanah-sawah": "rice grows well in that soil",
+        "s-kerikil": "Pebbles in a river",
+        "kerikil-runtuh": "a big rock falls from a cliff",
+        "kerikil-arus": "the river carries the rock along",
+        "kerikil-benturan": "the rocks bump and rub against each other",
+        "kerikil-bulat": "they become smooth, round pebbles",
+        "s-gurun": "Sand dunes in the desert",
+        "gurun-batu": "a big rock in the desert",
+        "gurun-retak": "very hot days and cold nights crack the rock",
+        "gurun-pecah": "the rock breaks into small grains",
+        "gurun-angin": "the wind blows the sand grains",
+        "gurun-bukit": "the sand piles up into dunes"
       }
     },
     "knobs": {
@@ -184436,7 +197149,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 7,
         "default": 4,
         "step": 1,
-        "keterangan": "jumlah langkah: 4 → 7 (jalur marmer 4, jalur pantai 5)"
+        "keterangan": "jumlah langkah: 4 → 7 (beberapa jalur hanya 4–5 langkah)"
       }
     },
     "assets": [],
@@ -184543,12 +197256,260 @@ export const PAKET_RAW: unknown[] = [
             "emoji": "🟫"
           }
         ]
+      },
+      {
+        "id": "apung",
+        "titleKey": "s-apung",
+        "steps": [
+          {
+            "id": "letus",
+            "labelKey": "apung-letus",
+            "emoji": "🌋"
+          },
+          {
+            "id": "lava",
+            "labelKey": "apung-lava",
+            "shape": "rect",
+            "color": "#ff5722"
+          },
+          {
+            "id": "beku",
+            "labelKey": "apung-beku",
+            "shape": "rect",
+            "color": "#8d6e63"
+          },
+          {
+            "id": "apung",
+            "labelKey": "apung-apung",
+            "shape": "circle",
+            "color": "#e0e0e0"
+          },
+          {
+            "id": "laut",
+            "labelKey": "apung-laut",
+            "emoji": "🌊"
+          }
+        ]
+      },
+      {
+        "id": "granit",
+        "titleKey": "s-granit",
+        "steps": [
+          {
+            "id": "magma",
+            "labelKey": "granit-magma",
+            "emoji": "🔥"
+          },
+          {
+            "id": "lambat",
+            "labelKey": "granit-lambat",
+            "emoji": "⏳"
+          },
+          {
+            "id": "granit",
+            "labelKey": "granit-granit",
+            "shape": "square",
+            "color": "#bcaaa4"
+          },
+          {
+            "id": "kikis",
+            "labelKey": "granit-kikis",
+            "emoji": "🌧️"
+          },
+          {
+            "id": "muncul",
+            "labelKey": "granit-muncul",
+            "emoji": "🏔️"
+          }
+        ]
+      },
+      {
+        "id": "batubara",
+        "titleKey": "s-batubara",
+        "steps": [
+          {
+            "id": "tumbang",
+            "labelKey": "batubara-tumbang",
+            "emoji": "🪵"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "batubara-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "tekan",
+            "labelKey": "batubara-tekan",
+            "emoji": "📚"
+          },
+          {
+            "id": "bara",
+            "labelKey": "batubara-bara",
+            "shape": "square",
+            "color": "#212121"
+          }
+        ]
+      },
+      {
+        "id": "kapur",
+        "titleKey": "s-kapur",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "kapur-mati",
+            "emoji": "🐚"
+          },
+          {
+            "id": "endap",
+            "labelKey": "kapur-endap",
+            "emoji": "🌊"
+          },
+          {
+            "id": "lapis",
+            "labelKey": "kapur-lapis",
+            "emoji": "📚"
+          },
+          {
+            "id": "kapur",
+            "labelKey": "kapur-kapur",
+            "shape": "square",
+            "color": "#f5f5f5"
+          }
+        ]
+      },
+      {
+        "id": "sabak",
+        "titleKey": "s-sabak",
+        "steps": [
+          {
+            "id": "bawa",
+            "labelKey": "sabak-bawa",
+            "emoji": "🏞️"
+          },
+          {
+            "id": "endap",
+            "labelKey": "sabak-endap",
+            "emoji": "🟫"
+          },
+          {
+            "id": "serpih",
+            "labelKey": "sabak-serpih",
+            "shape": "square",
+            "color": "#8d8d8d"
+          },
+          {
+            "id": "dalam",
+            "labelKey": "sabak-dalam",
+            "emoji": "⬇️"
+          },
+          {
+            "id": "sabak",
+            "labelKey": "sabak-sabak",
+            "shape": "square",
+            "color": "#455a64"
+          }
+        ]
+      },
+      {
+        "id": "tanah",
+        "titleKey": "s-tanah",
+        "steps": [
+          {
+            "id": "letus",
+            "labelKey": "tanah-letus",
+            "emoji": "🌋"
+          },
+          {
+            "id": "lava",
+            "labelKey": "tanah-lava",
+            "shape": "rect",
+            "color": "#ff5722"
+          },
+          {
+            "id": "lapuk",
+            "labelKey": "tanah-lapuk",
+            "emoji": "🌧️"
+          },
+          {
+            "id": "tanah",
+            "labelKey": "tanah-tanah",
+            "emoji": "🟫"
+          },
+          {
+            "id": "sawah",
+            "labelKey": "tanah-sawah",
+            "emoji": "🌾"
+          }
+        ]
+      },
+      {
+        "id": "kerikil",
+        "titleKey": "s-kerikil",
+        "steps": [
+          {
+            "id": "runtuh",
+            "labelKey": "kerikil-runtuh",
+            "emoji": "🪨"
+          },
+          {
+            "id": "arus",
+            "labelKey": "kerikil-arus",
+            "emoji": "🏞️"
+          },
+          {
+            "id": "benturan",
+            "labelKey": "kerikil-benturan",
+            "emoji": "💥"
+          },
+          {
+            "id": "bulat",
+            "labelKey": "kerikil-bulat",
+            "shape": "circle",
+            "color": "#9e9e9e",
+            "scale": 0.4,
+            "count": 3
+          }
+        ]
+      },
+      {
+        "id": "gurun",
+        "titleKey": "s-gurun",
+        "steps": [
+          {
+            "id": "batu",
+            "labelKey": "gurun-batu",
+            "emoji": "🪨"
+          },
+          {
+            "id": "retak",
+            "labelKey": "gurun-retak",
+            "emoji": "🌡️"
+          },
+          {
+            "id": "pecah",
+            "labelKey": "gurun-pecah",
+            "shape": "circle",
+            "color": "#e6c27a",
+            "scale": 0.25,
+            "count": 8
+          },
+          {
+            "id": "angin",
+            "labelKey": "gurun-angin",
+            "emoji": "🌬️"
+          },
+          {
+            "id": "bukit",
+            "labelKey": "gurun-bukit",
+            "emoji": "🏜️"
+          }
+        ]
       }
     ]
   },
   {
     "id": "sd6-sains-terbentuknya-fosil",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD6",
     "competencyIds": [
       "SAINS.SD6.BATUAN.02"
@@ -184570,7 +197531,65 @@ export const PAKET_RAW: unknown[] = [
         "jejak-kering": "lumpur mengering dan mengeras",
         "jejak-tutup": "pasir halus menutupi jejak",
         "jejak-batu": "lapisan memadat menjadi batu",
-        "jejak-tampak": "batuan terkikis, jejak terlihat lagi"
+        "jejak-tampak": "batuan terkikis, jejak terlihat lagi",
+        "s-dino": "Fosil dinosaurus",
+        "dino-mati": "dinosaurus mati di tepi sungai",
+        "dino-timbun": "tubuhnya tertimbun lumpur sungai",
+        "dino-busuk": "daging membusuk, tulang tertinggal",
+        "dino-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+        "dino-mineral": "mineral perlahan menggantikan tulang",
+        "dino-gali": "ahli fosil menggali dan menemukannya",
+        "s-ikan": "Fosil ikan purba",
+        "ikan-mati": "ikan purba mati dan tenggelam ke dasar danau",
+        "ikan-timbun": "tertutup lumpur halus",
+        "ikan-busuk": "bagian lunak membusuk, tulang dan sisik tertinggal",
+        "ikan-tekan": "lapisan lumpur menekan jadi batuan sedimen",
+        "ikan-mineral": "mineral menggantikan tulangnya",
+        "ikan-sungai": "sungai mengikis batuan, fosil ikan terlihat",
+        "s-daun": "Fosil daun",
+        "daun-pohon": "pohon purba tumbuh di tepi rawa",
+        "daun-gugur": "daunnya gugur ke air rawa",
+        "daun-timbun": "daun tertutup lumpur halus",
+        "daun-batu": "lumpur memadat menjadi batu",
+        "daun-belah": "batu dibelah, cetakan daun terlihat",
+        "s-amber": "Nyamuk di dalam amber",
+        "amber-getah": "getah menetes dari batang pohon pinus",
+        "amber-jebak": "nyamuk hinggap dan terjebak di getah",
+        "amber-tutup": "getah baru menutupi seluruh tubuhnya",
+        "amber-keras": "getah mengeras selama jutaan tahun jadi amber",
+        "amber-temu": "amber ditemukan, nyamuknya terlihat utuh",
+        "s-hiu": "Fosil gigi hiu",
+        "hiu-mati": "hiu purba mati dan tenggelam ke dasar laut",
+        "hiu-timbun": "tertimbun pasir dan lumpur",
+        "hiu-busuk": "bagian lunak hancur, gigi yang keras tertinggal",
+        "hiu-mineral": "mineral menggantikan gigi itu",
+        "hiu-pantai": "ombak mengikis batuan, gigi fosil ditemukan di pantai",
+        "s-mamut": "Mamut beku",
+        "mamut-mati": "mamut mati di daerah yang sangat dingin",
+        "mamut-salju": "tubuhnya tertutup salju",
+        "mamut-es": "salju menjadi es, tubuhnya membeku",
+        "mamut-lama": "membeku ribuan tahun tanpa membusuk",
+        "mamut-temu": "es mencair, ilmuwan menemukan mamut itu",
+        "s-burung": "Fosil burung purba",
+        "burung-mati": "burung purba mati di tepi danau",
+        "burung-timbun": "tertutup lumpur yang sangat halus",
+        "burung-busuk": "daging membusuk, tulang dan bekas bulu tertinggal",
+        "burung-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+        "burung-mineral": "mineral menggantikan tulangnya",
+        "burung-tambang": "penambang batu membelah batuan dan menemukannya",
+        "s-penyu": "Fosil penyu purba",
+        "penyu-mati": "penyu purba mati di dasar laut",
+        "penyu-timbun": "tertimbun pasir",
+        "penyu-busuk": "bagian lunak membusuk, tempurung dan tulang tertinggal",
+        "penyu-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+        "penyu-mineral": "mineral menggantikan tempurung dan tulang",
+        "penyu-gurun": "laut purba itu kini gurun; angin mengikis batuan, fosil tersingkap",
+        "s-kayu": "Kayu yang membatu",
+        "kayu-tumbang": "pohon tumbang ke sungai",
+        "kayu-timbun": "batangnya tertimbun lumpur dan abu gunung api",
+        "kayu-resap": "air berisi mineral meresap ke dalam kayu",
+        "kayu-ganti": "mineral menggantikan kayu sedikit demi sedikit",
+        "kayu-batu": "kayu berubah jadi batu (kayu membatu)"
       },
       "en": {
         "judul": "How a Fossil Forms",
@@ -184587,7 +197606,65 @@ export const PAKET_RAW: unknown[] = [
         "jejak-kering": "the mud dries and hardens",
         "jejak-tutup": "fine sand covers the print",
         "jejak-batu": "the layers harden into rock",
-        "jejak-tampak": "the rock wears away and the print shows again"
+        "jejak-tampak": "the rock wears away and the print shows again",
+        "s-dino": "A dinosaur fossil",
+        "dino-mati": "a dinosaur dies by a river",
+        "dino-timbun": "its body is buried by river mud",
+        "dino-busuk": "the flesh rots and the bones are left",
+        "dino-tekan": "layers pile up and press into sedimentary rock",
+        "dino-mineral": "minerals slowly replace the bones",
+        "dino-gali": "fossil hunters dig it up",
+        "s-ikan": "An ancient fish fossil",
+        "ikan-mati": "an ancient fish dies and sinks to the lake floor",
+        "ikan-timbun": "it is covered by fine mud",
+        "ikan-busuk": "the soft parts rot; bones and scales are left",
+        "ikan-tekan": "layers of mud press into sedimentary rock",
+        "ikan-mineral": "minerals replace the bones",
+        "ikan-sungai": "a river wears the rock away and the fish fossil shows",
+        "s-daun": "A leaf fossil",
+        "daun-pohon": "an ancient tree grows by a swamp",
+        "daun-gugur": "its leaves fall into the swamp water",
+        "daun-timbun": "the leaves are covered by fine mud",
+        "daun-batu": "the mud hardens into rock",
+        "daun-belah": "the rock is split and a leaf print shows",
+        "s-amber": "A mosquito in amber",
+        "amber-getah": "sticky resin drips from a pine tree",
+        "amber-jebak": "a mosquito lands and gets stuck in the resin",
+        "amber-tutup": "more resin covers its whole body",
+        "amber-keras": "over millions of years the resin hardens into amber",
+        "amber-temu": "the amber is found with the mosquito still whole",
+        "s-hiu": "A shark tooth fossil",
+        "hiu-mati": "an ancient shark dies and sinks to the sea floor",
+        "hiu-timbun": "it is buried by sand and mud",
+        "hiu-busuk": "the soft parts break down; the hard teeth are left",
+        "hiu-mineral": "minerals replace the tooth",
+        "hiu-pantai": "waves wear the rock away and the fossil tooth is found on a beach",
+        "s-mamut": "A frozen mammoth",
+        "mamut-mati": "a mammoth dies in a very cold place",
+        "mamut-salju": "its body is covered with snow",
+        "mamut-es": "the snow turns to ice and the body freezes",
+        "mamut-lama": "it stays frozen for thousands of years without rotting",
+        "mamut-temu": "the ice melts and scientists find the mammoth",
+        "s-burung": "An ancient bird fossil",
+        "burung-mati": "an ancient bird dies by a lake",
+        "burung-timbun": "it is covered by very fine mud",
+        "burung-busuk": "the flesh rots; bones and feather marks are left",
+        "burung-tekan": "layers pile up and press into sedimentary rock",
+        "burung-mineral": "minerals replace the bones",
+        "burung-tambang": "quarry workers split the rock and find it",
+        "s-penyu": "An ancient turtle fossil",
+        "penyu-mati": "an ancient turtle dies on the sea floor",
+        "penyu-timbun": "it is buried by sand",
+        "penyu-busuk": "the soft parts rot; the shell and bones are left",
+        "penyu-tekan": "layers pile up and press into sedimentary rock",
+        "penyu-mineral": "minerals replace the shell and bones",
+        "penyu-gurun": "the old sea is now a desert; wind wears the rock and the fossil shows",
+        "s-kayu": "Wood that turned to stone",
+        "kayu-tumbang": "a tree falls into a river",
+        "kayu-timbun": "the trunk is buried by mud and volcanic ash",
+        "kayu-resap": "mineral-rich water soaks into the wood",
+        "kayu-ganti": "minerals replace the wood bit by bit",
+        "kayu-batu": "the wood turns to stone (petrified wood)"
       }
     },
     "knobs": {
@@ -184596,7 +197673,7 @@ export const PAKET_RAW: unknown[] = [
         "max": 6,
         "default": 5,
         "step": 1,
-        "keterangan": "jumlah langkah: 4 → 6 (jejak kaki 5 langkah)"
+        "keterangan": "jumlah langkah: 4 → 6 (beberapa fosil hanya 5 langkah)"
       }
     },
     "assets": [],
@@ -184670,6 +197747,306 @@ export const PAKET_RAW: unknown[] = [
             "id": "tampak",
             "labelKey": "jejak-tampak",
             "emoji": "👀"
+          }
+        ]
+      },
+      {
+        "id": "dino",
+        "titleKey": "s-dino",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "dino-mati",
+            "emoji": "🦕"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "dino-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "busuk",
+            "labelKey": "dino-busuk",
+            "emoji": "🦴"
+          },
+          {
+            "id": "tekan",
+            "labelKey": "dino-tekan",
+            "emoji": "📚"
+          },
+          {
+            "id": "mineral",
+            "labelKey": "dino-mineral",
+            "emoji": "💎"
+          },
+          {
+            "id": "gali",
+            "labelKey": "dino-gali",
+            "emoji": "⛏️"
+          }
+        ]
+      },
+      {
+        "id": "ikan",
+        "titleKey": "s-ikan",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "ikan-mati",
+            "emoji": "🐟"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "ikan-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "busuk",
+            "labelKey": "ikan-busuk",
+            "emoji": "🦴"
+          },
+          {
+            "id": "tekan",
+            "labelKey": "ikan-tekan",
+            "emoji": "📚"
+          },
+          {
+            "id": "mineral",
+            "labelKey": "ikan-mineral",
+            "emoji": "💎"
+          },
+          {
+            "id": "sungai",
+            "labelKey": "ikan-sungai",
+            "emoji": "🏞️"
+          }
+        ]
+      },
+      {
+        "id": "daun",
+        "titleKey": "s-daun",
+        "steps": [
+          {
+            "id": "pohon",
+            "labelKey": "daun-pohon",
+            "emoji": "🌳"
+          },
+          {
+            "id": "gugur",
+            "labelKey": "daun-gugur",
+            "emoji": "🍃"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "daun-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "batu",
+            "labelKey": "daun-batu",
+            "emoji": "📚"
+          },
+          {
+            "id": "belah",
+            "labelKey": "daun-belah",
+            "emoji": "🔨"
+          }
+        ]
+      },
+      {
+        "id": "amber",
+        "titleKey": "s-amber",
+        "steps": [
+          {
+            "id": "getah",
+            "labelKey": "amber-getah",
+            "emoji": "🌲"
+          },
+          {
+            "id": "jebak",
+            "labelKey": "amber-jebak",
+            "emoji": "🦟"
+          },
+          {
+            "id": "tutup",
+            "labelKey": "amber-tutup",
+            "shape": "circle",
+            "color": "#ffb300"
+          },
+          {
+            "id": "keras",
+            "labelKey": "amber-keras",
+            "emoji": "⏳"
+          },
+          {
+            "id": "temu",
+            "labelKey": "amber-temu",
+            "emoji": "🔍"
+          }
+        ]
+      },
+      {
+        "id": "hiu",
+        "titleKey": "s-hiu",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "hiu-mati",
+            "emoji": "🦈"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "hiu-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "busuk",
+            "labelKey": "hiu-busuk",
+            "emoji": "🦷"
+          },
+          {
+            "id": "mineral",
+            "labelKey": "hiu-mineral",
+            "emoji": "💎"
+          },
+          {
+            "id": "pantai",
+            "labelKey": "hiu-pantai",
+            "emoji": "🏖️"
+          }
+        ]
+      },
+      {
+        "id": "mamut",
+        "titleKey": "s-mamut",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "mamut-mati",
+            "emoji": "🦣"
+          },
+          {
+            "id": "salju",
+            "labelKey": "mamut-salju",
+            "emoji": "❄️"
+          },
+          {
+            "id": "es",
+            "labelKey": "mamut-es",
+            "emoji": "🧊"
+          },
+          {
+            "id": "lama",
+            "labelKey": "mamut-lama",
+            "emoji": "⏳"
+          },
+          {
+            "id": "temu",
+            "labelKey": "mamut-temu",
+            "emoji": "🔍"
+          }
+        ]
+      },
+      {
+        "id": "burung",
+        "titleKey": "s-burung",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "burung-mati",
+            "emoji": "🐦"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "burung-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "busuk",
+            "labelKey": "burung-busuk",
+            "emoji": "🪶"
+          },
+          {
+            "id": "tekan",
+            "labelKey": "burung-tekan",
+            "emoji": "📚"
+          },
+          {
+            "id": "mineral",
+            "labelKey": "burung-mineral",
+            "emoji": "💎"
+          },
+          {
+            "id": "tambang",
+            "labelKey": "burung-tambang",
+            "emoji": "⛏️"
+          }
+        ]
+      },
+      {
+        "id": "penyu",
+        "titleKey": "s-penyu",
+        "steps": [
+          {
+            "id": "mati",
+            "labelKey": "penyu-mati",
+            "emoji": "🐢"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "penyu-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "busuk",
+            "labelKey": "penyu-busuk",
+            "emoji": "🦴"
+          },
+          {
+            "id": "tekan",
+            "labelKey": "penyu-tekan",
+            "emoji": "📚"
+          },
+          {
+            "id": "mineral",
+            "labelKey": "penyu-mineral",
+            "emoji": "💎"
+          },
+          {
+            "id": "gurun",
+            "labelKey": "penyu-gurun",
+            "emoji": "🏜️"
+          }
+        ]
+      },
+      {
+        "id": "kayu",
+        "titleKey": "s-kayu",
+        "steps": [
+          {
+            "id": "tumbang",
+            "labelKey": "kayu-tumbang",
+            "emoji": "🪵"
+          },
+          {
+            "id": "timbun",
+            "labelKey": "kayu-timbun",
+            "emoji": "🟫"
+          },
+          {
+            "id": "resap",
+            "labelKey": "kayu-resap",
+            "emoji": "💧"
+          },
+          {
+            "id": "ganti",
+            "labelKey": "kayu-ganti",
+            "emoji": "💎"
+          },
+          {
+            "id": "batu",
+            "labelKey": "kayu-batu",
+            "emoji": "🪨"
           }
         ]
       }

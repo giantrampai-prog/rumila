@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-fase-bulan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.TATA-SURYA.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Wajah Bulan Sebulan",
-      "instruksi": "Susun bentuk Bulan dari bulan baru, menurut urutan malam demi malam.",
+      "instruksi": "Susun bentuk Bulan yang tercatat, mulai dari bulan baru, menurut urutan kemunculannya dalam sebulan.",
       "s-fase": "Bentuk Bulan selama sebulan",
       "fase-baru": "bulan baru (hampir tak terlihat)",
       "fase-sabitawal": "sabit awal",
@@ -18,11 +18,24 @@
       "fase-purnama": "purnama",
       "fase-cembungakhir": "cembung akhir",
       "fase-separuhakhir": "separuh akhir (kuartal ketiga)",
-      "fase-sabitakhir": "sabit akhir"
+      "fase-sabitakhir": "sabit akhir",
+      "s-catat2": "Catatan pengamatan Bulan 2",
+      "s-catat3": "Catatan pengamatan Bulan 3",
+      "s-catat4": "Catatan pengamatan Bulan 4",
+      "s-catat5": "Catatan pengamatan Bulan 5",
+      "s-catat6": "Catatan pengamatan Bulan 6",
+      "s-catat7": "Catatan pengamatan Bulan 7",
+      "s-catat8": "Catatan pengamatan Bulan 8",
+      "s-catat9": "Catatan pengamatan Bulan 9",
+      "s-catat10": "Catatan pengamatan Bulan 10",
+      "s-catat11": "Catatan pengamatan Bulan 11",
+      "s-catat12": "Catatan pengamatan Bulan 12",
+      "s-catat13": "Catatan pengamatan Bulan 13",
+      "s-catat14": "Catatan pengamatan Bulan 14"
     },
     "en": {
       "judul": "The Moon's Faces in a Month",
-      "instruksi": "Put the Moon's shapes in order, night after night, starting from the new moon.",
+      "instruksi": "Put the recorded Moon shapes in order, starting from the new moon, as they appear through the month.",
       "s-fase": "The Moon's shape over a month",
       "fase-baru": "new moon (almost invisible)",
       "fase-sabitawal": "waxing crescent",
@@ -31,7 +44,20 @@
       "fase-purnama": "full moon",
       "fase-cembungakhir": "waning gibbous",
       "fase-separuhakhir": "last quarter",
-      "fase-sabitakhir": "waning crescent"
+      "fase-sabitakhir": "waning crescent",
+      "s-catat2": "Moon observation log 2",
+      "s-catat3": "Moon observation log 3",
+      "s-catat4": "Moon observation log 4",
+      "s-catat5": "Moon observation log 5",
+      "s-catat6": "Moon observation log 6",
+      "s-catat7": "Moon observation log 7",
+      "s-catat8": "Moon observation log 8",
+      "s-catat9": "Moon observation log 9",
+      "s-catat10": "Moon observation log 10",
+      "s-catat11": "Moon observation log 11",
+      "s-catat12": "Moon observation log 12",
+      "s-catat13": "Moon observation log 13",
+      "s-catat14": "Moon observation log 14"
     }
   },
   "knobs": {
@@ -40,7 +66,7 @@
       "max": 8,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah fase dari bulan baru: 5 (sampai purnama) → 8"
+      "keterangan": "jumlah fase yang tampil, selalu mulai dari bulan baru: 5 → 8"
     }
   },
   "assets": [],
@@ -83,6 +109,474 @@
           "id": "cembungakhir",
           "labelKey": "fase-cembungakhir",
           "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat2",
+      "titleKey": "s-catat2",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat3",
+      "titleKey": "s-catat3",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat4",
+      "titleKey": "s-catat4",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat5",
+      "titleKey": "s-catat5",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat6",
+      "titleKey": "s-catat6",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat7",
+      "titleKey": "s-catat7",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat8",
+      "titleKey": "s-catat8",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat9",
+      "titleKey": "s-catat9",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat10",
+      "titleKey": "s-catat10",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat11",
+      "titleKey": "s-catat11",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "separuhawal",
+          "labelKey": "fase-separuhawal",
+          "emoji": "🌓"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat12",
+      "titleKey": "s-catat12",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat13",
+      "titleKey": "s-catat13",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "cembungawal",
+          "labelKey": "fase-cembungawal",
+          "emoji": "🌔"
+        },
+        {
+          "id": "cembungakhir",
+          "labelKey": "fase-cembungakhir",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuhakhir",
+          "labelKey": "fase-separuhakhir",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabitakhir",
+          "labelKey": "fase-sabitakhir",
+          "emoji": "🌘"
+        }
+      ]
+    },
+    {
+      "id": "catat14",
+      "titleKey": "s-catat14",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "fase-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabitawal",
+          "labelKey": "fase-sabitawal",
+          "emoji": "🌒"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "fase-purnama",
+          "emoji": "🌕"
         },
         {
           "id": "separuhakhir",

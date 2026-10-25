@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-siang-malam-bayangan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.BUMI-ANTARIKSA.03"
@@ -29,7 +29,15 @@
       "p-r5": "Tengah hari, Matahari hampir tepat di atas kepala. Bayangan tiang bendera…",
       "p-r6": "Di sisi Bumi yang membelakangi Matahari sedang…",
       "p-r7": "Di sisi Bumi yang menghadap Matahari sedang…",
-      "p-r8": "Bayangan pohon makin panjang menjelang sore karena Matahari tampak…"
+      "p-r8": "Bayangan pohon makin panjang menjelang sore karena Matahari tampak…",
+      "i-pagi": "pagi hari",
+      "i-tengahhari": "tengah hari",
+      "i-sore": "sore hari",
+      "p-r9": "Langit gelap dan bintang-bintang terlihat. Di tempat itu sedang…",
+      "p-r10": "Di Indonesia sedang siang. Di sisi Bumi yang berseberangan sedang…",
+      "p-r11": "Kapan bayangan tiang bendera paling pendek?",
+      "p-r12": "Kapan bayangan tiang bendera panjang ke arah barat?",
+      "p-r13": "Kapan bayangan tiang bendera panjang ke arah timur?"
     },
     "en": {
       "judul": "Day, Night and Shadows",
@@ -53,7 +61,15 @@
       "p-r5": "At midday the Sun is almost straight overhead. The flagpole's shadow is…",
       "p-r6": "On the side of the Earth facing away from the Sun it is…",
       "p-r7": "On the side of the Earth facing the Sun it is…",
-      "p-r8": "A tree's shadow grows longer towards evening because the Sun appears…"
+      "p-r8": "A tree's shadow grows longer towards evening because the Sun appears…",
+      "i-pagi": "morning",
+      "i-tengahhari": "midday",
+      "i-sore": "late afternoon",
+      "p-r9": "The sky is dark and the stars can be seen. In that place it is…",
+      "p-r10": "It is daytime in Indonesia. On the opposite side of the Earth it is…",
+      "p-r11": "When is the flagpole's shadow shortest?",
+      "p-r12": "When is the flagpole's shadow long and pointing west?",
+      "p-r13": "When is the flagpole's shadow long and pointing east?"
     }
   },
   "knobs": {},
@@ -135,6 +151,24 @@
       "labelKey": "i-besar",
       "bin": "pilihan",
       "emoji": "⭕"
+    },
+    {
+      "id": "pagi",
+      "labelKey": "i-pagi",
+      "bin": "pilihan",
+      "emoji": "🌅"
+    },
+    {
+      "id": "tengahhari",
+      "labelKey": "i-tengahhari",
+      "bin": "pilihan",
+      "emoji": "🕛"
+    },
+    {
+      "id": "sore",
+      "labelKey": "i-sore",
+      "bin": "pilihan",
+      "emoji": "🌆"
     }
   ],
   "pilihan": [
@@ -215,6 +249,54 @@
         "besar"
       ],
       "correct": "rendah"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "malam"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "malam"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "pagi",
+        "tengahhari",
+        "sore"
+      ],
+      "correct": "tengahhari"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "pagi",
+        "tengahhari",
+        "sore"
+      ],
+      "correct": "pagi"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "pagi",
+        "tengahhari",
+        "sore"
+      ],
+      "correct": "sore"
     }
   ]
 }

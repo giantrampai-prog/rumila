@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-massa-dan-berat",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.MASSA-BERAT.01"
@@ -29,7 +29,11 @@
       "p-r6": "Di Bulan, berat astronaut itu…",
       "p-r7": "Di Jupiter yang gravitasinya lebih besar, berat sebuah apel…",
       "p-r8": "Tas bermassa 2 kg dibawa dari Bumi ke Bulan. Massanya di Bulan…",
-      "p-r9": "Di stasiun angkasa, astronaut melayang. Massanya…"
+      "p-r9": "Di stasiun angkasa, astronaut melayang. Massanya…",
+      "p-r10": "Di Jupiter yang gravitasinya lebih besar, massa sebuah apel…",
+      "p-r11": "Astronaut pulang dari Bulan ke Bumi. Beratnya…",
+      "p-r12": "Tas bermassa 2 kg dibawa ke Mars yang gravitasinya lebih kecil. Massanya di Mars…",
+      "p-r13": "Di Mars yang gravitasinya lebih kecil daripada Bumi, berat tas itu…"
     },
     "en": {
       "judul": "Mass or Weight?",
@@ -53,7 +57,11 @@
       "p-r6": "On the Moon, the astronaut's weight…",
       "p-r7": "On Jupiter, where gravity is stronger, an apple's weight…",
       "p-r8": "A bag with a mass of 2 kg is taken from the Earth to the Moon. Its mass on the Moon is…",
-      "p-r9": "On a space station, astronauts float. Their mass…"
+      "p-r9": "On a space station, astronauts float. Their mass…",
+      "p-r10": "On Jupiter, where gravity is stronger, the mass of an apple…",
+      "p-r11": "An astronaut comes back from the Moon to Earth. Their weight…",
+      "p-r12": "A bag with a mass of 2 kg is taken to Mars, where gravity is weaker. Its mass on Mars…",
+      "p-r13": "On Mars, where gravity is weaker than on Earth, the bag's weight…"
     }
   },
   "knobs": {},
@@ -217,6 +225,46 @@
         "bertambah"
       ],
       "correct": "tetap"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "tetap",
+        "bertambah",
+        "berkurang"
+      ],
+      "correct": "tetap"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "duakg",
+        "kurangkg",
+        "nolkg"
+      ],
+      "correct": "duakg"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "berkurang",
+        "tetap",
+        "bertambah"
+      ],
+      "correct": "berkurang"
     }
   ]
 }

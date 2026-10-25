@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-langkah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -55,7 +55,39 @@
       "telepon-3": "tekan tombol hijau",
       "telepon-4": "tunggu diangkat",
       "telepon-5": "bicara dengan teman",
-      "telepon-6": "tekan tombol merah"
+      "telepon-6": "tekan tombol merah",
+      "t-perpustakaan": "Meminjam buku di perpustakaan",
+      "perpustakaan-1": "masuk ke perpustakaan",
+      "perpustakaan-2": "cari buku di rak",
+      "perpustakaan-3": "ambil bukunya",
+      "perpustakaan-4": "serahkan kartu anggota",
+      "perpustakaan-5": "petugas mencatat pinjaman",
+      "perpustakaan-6": "bawa pulang buku",
+      "perpustakaan-7": "kembalikan sebelum tanggalnya",
+      "t-lift": "Naik lift",
+      "lift-1": "tekan tombol lift",
+      "lift-2": "tunggu pintu terbuka",
+      "lift-3": "masuk ke lift",
+      "lift-4": "tekan nomor lantai",
+      "lift-5": "lift naik",
+      "lift-6": "pintu terbuka di lantai tujuan",
+      "lift-7": "keluar dari lift",
+      "t-kereta": "Naik kereta api",
+      "kereta-1": "beli tiket di loket",
+      "kereta-2": "masuk lewat gerbang tiket",
+      "kereta-3": "tunggu di peron",
+      "kereta-4": "kereta berhenti di peron",
+      "kereta-5": "naik ke kereta",
+      "kereta-6": "duduk di kursi",
+      "kereta-7": "turun di stasiun tujuan",
+      "t-keramas": "Mencuci rambut",
+      "keramas-1": "nyalakan pancuran",
+      "keramas-2": "basahi rambut",
+      "keramas-3": "tuang sampo ke tangan",
+      "keramas-4": "gosok rambut sampai berbusa",
+      "keramas-5": "bilas busanya sampai bersih",
+      "keramas-6": "matikan pancuran",
+      "keramas-7": "keringkan rambut dengan pengering"
     },
     "en": {
       "judul": "Written Step Cards",
@@ -104,7 +136,39 @@
       "telepon-3": "press the green button",
       "telepon-4": "wait for an answer",
       "telepon-5": "talk to your friend",
-      "telepon-6": "press the red button"
+      "telepon-6": "press the red button",
+      "t-perpustakaan": "Borrowing a library book",
+      "perpustakaan-1": "go into the library",
+      "perpustakaan-2": "look for a book on the shelf",
+      "perpustakaan-3": "take the book",
+      "perpustakaan-4": "hand over your library card",
+      "perpustakaan-5": "the librarian records the loan",
+      "perpustakaan-6": "take the book home",
+      "perpustakaan-7": "return it before the due date",
+      "t-lift": "Taking the lift",
+      "lift-1": "press the lift button",
+      "lift-2": "wait for the doors to open",
+      "lift-3": "step into the lift",
+      "lift-4": "press the floor number",
+      "lift-5": "the lift goes up",
+      "lift-6": "the doors open on your floor",
+      "lift-7": "step out of the lift",
+      "t-kereta": "Riding a train",
+      "kereta-1": "buy a ticket at the counter",
+      "kereta-2": "go through the ticket gate",
+      "kereta-3": "wait on the platform",
+      "kereta-4": "the train stops at the platform",
+      "kereta-5": "get on the train",
+      "kereta-6": "sit in a seat",
+      "kereta-7": "get off at your station",
+      "t-keramas": "Washing your hair",
+      "keramas-1": "turn on the shower",
+      "keramas-2": "wet your hair",
+      "keramas-3": "pour shampoo into your hand",
+      "keramas-4": "rub your hair until foamy",
+      "keramas-5": "rinse out all the foam",
+      "keramas-6": "turn off the shower",
+      "keramas-7": "dry your hair with a dryer"
     }
   },
   "knobs": {
@@ -350,6 +414,170 @@
           "id": "telepon-6",
           "labelKey": "telepon-6",
           "emoji": "🔴"
+        }
+      ]
+    },
+    {
+      "id": "perpustakaan",
+      "titleKey": "t-perpustakaan",
+      "steps": [
+        {
+          "id": "perpustakaan-1",
+          "labelKey": "perpustakaan-1",
+          "emoji": "🚪"
+        },
+        {
+          "id": "perpustakaan-2",
+          "labelKey": "perpustakaan-2",
+          "emoji": "🔍"
+        },
+        {
+          "id": "perpustakaan-3",
+          "labelKey": "perpustakaan-3",
+          "emoji": "📕"
+        },
+        {
+          "id": "perpustakaan-4",
+          "labelKey": "perpustakaan-4",
+          "emoji": "🪪"
+        },
+        {
+          "id": "perpustakaan-5",
+          "labelKey": "perpustakaan-5",
+          "emoji": "✅"
+        },
+        {
+          "id": "perpustakaan-6",
+          "labelKey": "perpustakaan-6",
+          "emoji": "🎒"
+        },
+        {
+          "id": "perpustakaan-7",
+          "labelKey": "perpustakaan-7",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": "lift",
+      "titleKey": "t-lift",
+      "steps": [
+        {
+          "id": "lift-1",
+          "labelKey": "lift-1",
+          "emoji": "🔘"
+        },
+        {
+          "id": "lift-2",
+          "labelKey": "lift-2",
+          "emoji": "⏳"
+        },
+        {
+          "id": "lift-3",
+          "labelKey": "lift-3",
+          "emoji": "🛗"
+        },
+        {
+          "id": "lift-4",
+          "labelKey": "lift-4",
+          "emoji": "🔢"
+        },
+        {
+          "id": "lift-5",
+          "labelKey": "lift-5",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "lift-6",
+          "labelKey": "lift-6",
+          "emoji": "🚪"
+        },
+        {
+          "id": "lift-7",
+          "labelKey": "lift-7",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "kereta",
+      "titleKey": "t-kereta",
+      "steps": [
+        {
+          "id": "kereta-1",
+          "labelKey": "kereta-1",
+          "emoji": "🎫"
+        },
+        {
+          "id": "kereta-2",
+          "labelKey": "kereta-2",
+          "emoji": "🚪"
+        },
+        {
+          "id": "kereta-3",
+          "labelKey": "kereta-3",
+          "emoji": "🚉"
+        },
+        {
+          "id": "kereta-4",
+          "labelKey": "kereta-4",
+          "emoji": "🚆"
+        },
+        {
+          "id": "kereta-5",
+          "labelKey": "kereta-5",
+          "emoji": "🚶"
+        },
+        {
+          "id": "kereta-6",
+          "labelKey": "kereta-6",
+          "emoji": "💺"
+        },
+        {
+          "id": "kereta-7",
+          "labelKey": "kereta-7",
+          "emoji": "👋"
+        }
+      ]
+    },
+    {
+      "id": "keramas",
+      "titleKey": "t-keramas",
+      "steps": [
+        {
+          "id": "keramas-1",
+          "labelKey": "keramas-1",
+          "emoji": "🚿"
+        },
+        {
+          "id": "keramas-2",
+          "labelKey": "keramas-2",
+          "emoji": "💦"
+        },
+        {
+          "id": "keramas-3",
+          "labelKey": "keramas-3",
+          "emoji": "🧴"
+        },
+        {
+          "id": "keramas-4",
+          "labelKey": "keramas-4",
+          "emoji": "🫧"
+        },
+        {
+          "id": "keramas-5",
+          "labelKey": "keramas-5",
+          "emoji": "💧"
+        },
+        {
+          "id": "keramas-6",
+          "labelKey": "keramas-6",
+          "emoji": "🔒"
+        },
+        {
+          "id": "keramas-7",
+          "labelKey": "keramas-7",
+          "emoji": "💨"
         }
       ]
     }

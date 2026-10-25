@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-siklus-batuan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.03"
@@ -28,7 +28,52 @@
       "pantai-retak": "retak oleh panas, dingin, dan akar",
       "pantai-sungai": "pecahannya terbawa sungai menjadi pasir",
       "pantai-endap": "pasir mengendap di laut dangkal",
-      "pantai-padat": "pasir memadat menjadi batu pasir"
+      "pantai-padat": "pasir memadat menjadi batu pasir",
+      "s-apung": "Batu yang bisa mengapung",
+      "apung-letus": "gunung api meletus",
+      "apung-lava": "lava pijar menyembur, penuh gelembung gas",
+      "apung-beku": "lava cepat mendingin dan membeku",
+      "apung-apung": "jadi batu apung yang berlubang-lubang",
+      "apung-laut": "batu apung terbawa ke laut dan mengapung",
+      "s-granit": "Bukit granit",
+      "granit-magma": "magma naik tetapi tertahan jauh di bawah tanah",
+      "granit-lambat": "magma mendingin sangat lambat selama ribuan tahun",
+      "granit-granit": "membeku jadi granit berkristal besar",
+      "granit-kikis": "tanah dan batuan di atasnya terkikis hujan",
+      "granit-muncul": "granit muncul di permukaan sebagai bukit batu",
+      "s-batubara": "Hutan rawa menjadi batu bara",
+      "batubara-tumbang": "pohon-pohon rawa tumbang dan mati",
+      "batubara-timbun": "tertimbun lumpur dan pasir",
+      "batubara-tekan": "lapisan di atasnya menekan selama jutaan tahun",
+      "batubara-bara": "berubah menjadi batu bara",
+      "s-kapur": "Cangkang menjadi batu kapur",
+      "kapur-mati": "hewan laut bercangkang mati",
+      "kapur-endap": "cangkangnya mengendap di dasar laut",
+      "kapur-lapis": "cangkang menumpuk berlapis-lapis",
+      "kapur-kapur": "lapisan memadat menjadi batu kapur",
+      "s-sabak": "Lumpur menjadi batu sabak",
+      "sabak-bawa": "sungai membawa lumpur halus ke danau",
+      "sabak-endap": "lumpur mengendap di dasar danau",
+      "sabak-serpih": "lumpur memadat jadi batu serpih",
+      "sabak-dalam": "batu serpih terkubur dalam, terkena panas dan tekanan",
+      "sabak-sabak": "berubah menjadi batu sabak",
+      "s-tanah": "Tanah subur dari gunung api",
+      "tanah-letus": "gunung api meletus",
+      "tanah-lava": "lava mengalir lalu membeku jadi batuan beku",
+      "tanah-lapuk": "hujan dan panas melapukkan batuan",
+      "tanah-tanah": "batuan hancur menjadi tanah subur",
+      "tanah-sawah": "padi tumbuh subur di tanah itu",
+      "s-kerikil": "Kerikil di sungai",
+      "kerikil-runtuh": "batu besar runtuh dari tebing",
+      "kerikil-arus": "batu terbawa arus sungai",
+      "kerikil-benturan": "batu saling berbenturan dan tergosok",
+      "kerikil-bulat": "menjadi kerikil yang bulat dan halus",
+      "s-gurun": "Bukit pasir di gurun",
+      "gurun-batu": "batu besar di gurun",
+      "gurun-retak": "siang sangat panas, malam dingin: batu retak",
+      "gurun-pecah": "batu pecah jadi butiran kecil",
+      "gurun-angin": "angin meniup butiran pasir",
+      "gurun-bukit": "pasir menumpuk jadi bukit pasir"
     },
     "en": {
       "judul": "Rocks on the Move",
@@ -51,7 +96,52 @@
       "pantai-retak": "cracked by heat, cold and roots",
       "pantai-sungai": "the pieces are carried by rivers and become sand",
       "pantai-endap": "the sand settles in shallow sea",
-      "pantai-padat": "the sand is pressed into sandstone"
+      "pantai-padat": "the sand is pressed into sandstone",
+      "s-apung": "A rock that floats",
+      "apung-letus": "a volcano erupts",
+      "apung-lava": "glowing lava sprays out, full of gas bubbles",
+      "apung-beku": "the lava cools fast and hardens",
+      "apung-apung": "it becomes pumice, full of holes",
+      "apung-laut": "the pumice is carried to the sea and floats",
+      "s-granit": "A granite hill",
+      "granit-magma": "magma rises but stays deep underground",
+      "granit-lambat": "the magma cools very slowly over thousands of years",
+      "granit-granit": "it hardens into granite with big crystals",
+      "granit-kikis": "rain wears away the soil and rock above it",
+      "granit-muncul": "the granite appears at the surface as a rocky hill",
+      "s-batubara": "A swamp forest becomes coal",
+      "batubara-tumbang": "swamp trees fall and die",
+      "batubara-timbun": "they are buried by mud and sand",
+      "batubara-tekan": "the layers above press down for millions of years",
+      "batubara-bara": "they turn into coal",
+      "s-kapur": "Shells become limestone",
+      "kapur-mati": "sea animals with shells die",
+      "kapur-endap": "their shells settle on the sea floor",
+      "kapur-lapis": "the shells pile up in layers",
+      "kapur-kapur": "the layers harden into limestone",
+      "s-sabak": "Mud becomes slate",
+      "sabak-bawa": "a river carries fine mud into a lake",
+      "sabak-endap": "the mud settles on the lake floor",
+      "sabak-serpih": "the mud hardens into shale",
+      "sabak-dalam": "the shale is buried deep and heated and squeezed",
+      "sabak-sabak": "it changes into slate",
+      "s-tanah": "Rich soil from a volcano",
+      "tanah-letus": "a volcano erupts",
+      "tanah-lava": "lava flows and hardens into igneous rock",
+      "tanah-lapuk": "rain and heat weather the rock",
+      "tanah-tanah": "the rock breaks down into rich soil",
+      "tanah-sawah": "rice grows well in that soil",
+      "s-kerikil": "Pebbles in a river",
+      "kerikil-runtuh": "a big rock falls from a cliff",
+      "kerikil-arus": "the river carries the rock along",
+      "kerikil-benturan": "the rocks bump and rub against each other",
+      "kerikil-bulat": "they become smooth, round pebbles",
+      "s-gurun": "Sand dunes in the desert",
+      "gurun-batu": "a big rock in the desert",
+      "gurun-retak": "very hot days and cold nights crack the rock",
+      "gurun-pecah": "the rock breaks into small grains",
+      "gurun-angin": "the wind blows the sand grains",
+      "gurun-bukit": "the sand piles up into dunes"
     }
   },
   "knobs": {
@@ -60,7 +150,7 @@
       "max": 7,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah langkah: 4 → 7 (jalur marmer 4, jalur pantai 5)"
+      "keterangan": "jumlah langkah: 4 → 7 (beberapa jalur hanya 4–5 langkah)"
     }
   },
   "assets": [],
@@ -165,6 +255,254 @@
           "id": "padat",
           "labelKey": "pantai-padat",
           "emoji": "🟫"
+        }
+      ]
+    },
+    {
+      "id": "apung",
+      "titleKey": "s-apung",
+      "steps": [
+        {
+          "id": "letus",
+          "labelKey": "apung-letus",
+          "emoji": "🌋"
+        },
+        {
+          "id": "lava",
+          "labelKey": "apung-lava",
+          "shape": "rect",
+          "color": "#ff5722"
+        },
+        {
+          "id": "beku",
+          "labelKey": "apung-beku",
+          "shape": "rect",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "apung",
+          "labelKey": "apung-apung",
+          "shape": "circle",
+          "color": "#e0e0e0"
+        },
+        {
+          "id": "laut",
+          "labelKey": "apung-laut",
+          "emoji": "🌊"
+        }
+      ]
+    },
+    {
+      "id": "granit",
+      "titleKey": "s-granit",
+      "steps": [
+        {
+          "id": "magma",
+          "labelKey": "granit-magma",
+          "emoji": "🔥"
+        },
+        {
+          "id": "lambat",
+          "labelKey": "granit-lambat",
+          "emoji": "⏳"
+        },
+        {
+          "id": "granit",
+          "labelKey": "granit-granit",
+          "shape": "square",
+          "color": "#bcaaa4"
+        },
+        {
+          "id": "kikis",
+          "labelKey": "granit-kikis",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "muncul",
+          "labelKey": "granit-muncul",
+          "emoji": "🏔️"
+        }
+      ]
+    },
+    {
+      "id": "batubara",
+      "titleKey": "s-batubara",
+      "steps": [
+        {
+          "id": "tumbang",
+          "labelKey": "batubara-tumbang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "batubara-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "batubara-tekan",
+          "emoji": "📚"
+        },
+        {
+          "id": "bara",
+          "labelKey": "batubara-bara",
+          "shape": "square",
+          "color": "#212121"
+        }
+      ]
+    },
+    {
+      "id": "kapur",
+      "titleKey": "s-kapur",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "kapur-mati",
+          "emoji": "🐚"
+        },
+        {
+          "id": "endap",
+          "labelKey": "kapur-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "lapis",
+          "labelKey": "kapur-lapis",
+          "emoji": "📚"
+        },
+        {
+          "id": "kapur",
+          "labelKey": "kapur-kapur",
+          "shape": "square",
+          "color": "#f5f5f5"
+        }
+      ]
+    },
+    {
+      "id": "sabak",
+      "titleKey": "s-sabak",
+      "steps": [
+        {
+          "id": "bawa",
+          "labelKey": "sabak-bawa",
+          "emoji": "🏞️"
+        },
+        {
+          "id": "endap",
+          "labelKey": "sabak-endap",
+          "emoji": "🟫"
+        },
+        {
+          "id": "serpih",
+          "labelKey": "sabak-serpih",
+          "shape": "square",
+          "color": "#8d8d8d"
+        },
+        {
+          "id": "dalam",
+          "labelKey": "sabak-dalam",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "sabak",
+          "labelKey": "sabak-sabak",
+          "shape": "square",
+          "color": "#455a64"
+        }
+      ]
+    },
+    {
+      "id": "tanah",
+      "titleKey": "s-tanah",
+      "steps": [
+        {
+          "id": "letus",
+          "labelKey": "tanah-letus",
+          "emoji": "🌋"
+        },
+        {
+          "id": "lava",
+          "labelKey": "tanah-lava",
+          "shape": "rect",
+          "color": "#ff5722"
+        },
+        {
+          "id": "lapuk",
+          "labelKey": "tanah-lapuk",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "tanah",
+          "labelKey": "tanah-tanah",
+          "emoji": "🟫"
+        },
+        {
+          "id": "sawah",
+          "labelKey": "tanah-sawah",
+          "emoji": "🌾"
+        }
+      ]
+    },
+    {
+      "id": "kerikil",
+      "titleKey": "s-kerikil",
+      "steps": [
+        {
+          "id": "runtuh",
+          "labelKey": "kerikil-runtuh",
+          "emoji": "🪨"
+        },
+        {
+          "id": "arus",
+          "labelKey": "kerikil-arus",
+          "emoji": "🏞️"
+        },
+        {
+          "id": "benturan",
+          "labelKey": "kerikil-benturan",
+          "emoji": "💥"
+        },
+        {
+          "id": "bulat",
+          "labelKey": "kerikil-bulat",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.4,
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "gurun",
+      "titleKey": "s-gurun",
+      "steps": [
+        {
+          "id": "batu",
+          "labelKey": "gurun-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "retak",
+          "labelKey": "gurun-retak",
+          "emoji": "🌡️"
+        },
+        {
+          "id": "pecah",
+          "labelKey": "gurun-pecah",
+          "shape": "circle",
+          "color": "#e6c27a",
+          "scale": 0.25,
+          "count": 8
+        },
+        {
+          "id": "angin",
+          "labelKey": "gurun-angin",
+          "emoji": "🌬️"
+        },
+        {
+          "id": "bukit",
+          "labelKey": "gurun-bukit",
+          "emoji": "🏜️"
         }
       ]
     }

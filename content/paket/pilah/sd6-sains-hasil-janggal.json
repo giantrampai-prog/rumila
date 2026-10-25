@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-hasil-janggal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PENYELIDIKAN.01"
@@ -48,7 +48,27 @@
       "p-r5": "Tinggi kecambah di hari ke-5 pada 4 cawan yang sama. Mana hasil yang janggal?",
       "p-r8": "Jumlah ayunan bandul dalam 10 detik dihitung 4 kali. Mana hasil yang janggal?",
       "p-r6": "Satu hasil sangat berbeda dari yang lain. Apa yang sebaiknya dilakukan?",
-      "p-r7": "Mengapa pengukuran dalam percobaan diulang beberapa kali?"
+      "p-r7": "Mengapa pengukuran dalam percobaan diulang beberapa kali?",
+      "i-r9-u1": "ulangan 1: 20 menit",
+      "i-r9-u2": "ulangan 2: 21 menit",
+      "i-r9-u3": "ulangan 3: 5 menit",
+      "i-r9-u4": "ulangan 4: 19 menit",
+      "i-r10-u1": "ulangan 1: 150 g",
+      "i-r10-u2": "ulangan 2: 152 g",
+      "i-r10-u3": "ulangan 3: 151 g",
+      "i-r10-u4": "ulangan 4: 250 g",
+      "i-r11-u1": "ulangan 1: 25 cm",
+      "i-r11-u2": "ulangan 2: 80 cm",
+      "i-r11-u3": "ulangan 3: 24 cm",
+      "i-r11-u4": "ulangan 4: 26 cm",
+      "i-r12-u1": "ulangan 1: 3 detik",
+      "i-r12-u2": "ulangan 2: 12 detik",
+      "i-r12-u3": "ulangan 3: 11 detik",
+      "i-r12-u4": "ulangan 4: 13 detik",
+      "p-r9": "Lama es batu yang sama besar mencair di piring diukur 4 kali. Mana hasil yang janggal?",
+      "p-r10": "Massa satu apel yang sama ditimbang 4 kali. Mana hasil yang janggal?",
+      "p-r11": "Jarak lompatan katak mainan yang sama diukur 4 kali. Mana hasil yang janggal?",
+      "p-r12": "Lama lilin padam setelah ditutup gelas yang sama diukur 4 kali. Mana hasil yang janggal?"
     },
     "en": {
       "judul": "The Odd One Out",
@@ -91,7 +111,27 @@
       "p-r5": "Sprout height on day 5 in 4 identical dishes. Which result is anomalous?",
       "p-r8": "The number of pendulum swings in 10 seconds was counted 4 times. Which result is anomalous?",
       "p-r6": "One result is very different from the others. What should you do?",
-      "p-r7": "Why are measurements in an experiment repeated several times?"
+      "p-r7": "Why are measurements in an experiment repeated several times?",
+      "i-r9-u1": "try 1: 20 minutes",
+      "i-r9-u2": "try 2: 21 minutes",
+      "i-r9-u3": "try 3: 5 minutes",
+      "i-r9-u4": "try 4: 19 minutes",
+      "i-r10-u1": "try 1: 150 g",
+      "i-r10-u2": "try 2: 152 g",
+      "i-r10-u3": "try 3: 151 g",
+      "i-r10-u4": "try 4: 250 g",
+      "i-r11-u1": "try 1: 25 cm",
+      "i-r11-u2": "try 2: 80 cm",
+      "i-r11-u3": "try 3: 24 cm",
+      "i-r11-u4": "try 4: 26 cm",
+      "i-r12-u1": "try 1: 3 seconds",
+      "i-r12-u2": "try 2: 12 seconds",
+      "i-r12-u3": "try 3: 11 seconds",
+      "i-r12-u4": "try 4: 13 seconds",
+      "p-r9": "The time for same-sized ice cubes to melt on a plate is measured 4 times. Which result is odd?",
+      "p-r10": "The mass of the same apple is weighed 4 times. Which result is odd?",
+      "p-r11": "The jump distance of the same toy frog is measured 4 times. Which result is odd?",
+      "p-r12": "The time for a candle to go out under the same glass is measured 4 times. Which result is odd?"
     }
   },
   "knobs": {},
@@ -287,6 +327,102 @@
       "labelKey": "i-berbeda",
       "bin": "pilihan",
       "emoji": "🔀"
+    },
+    {
+      "id": "r9-u1",
+      "labelKey": "i-r9-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r9-u2",
+      "labelKey": "i-r9-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r9-u3",
+      "labelKey": "i-r9-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r9-u4",
+      "labelKey": "i-r9-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r10-u1",
+      "labelKey": "i-r10-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r10-u2",
+      "labelKey": "i-r10-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r10-u3",
+      "labelKey": "i-r10-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r10-u4",
+      "labelKey": "i-r10-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r11-u1",
+      "labelKey": "i-r11-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r11-u2",
+      "labelKey": "i-r11-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r11-u3",
+      "labelKey": "i-r11-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r11-u4",
+      "labelKey": "i-r11-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r12-u1",
+      "labelKey": "i-r12-u1",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r12-u2",
+      "labelKey": "i-r12-u2",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r12-u3",
+      "labelKey": "i-r12-u3",
+      "bin": "pilihan",
+      "emoji": "📋"
+    },
+    {
+      "id": "r12-u4",
+      "labelKey": "i-r12-u4",
+      "bin": "pilihan",
+      "emoji": "📋"
     }
   ],
   "pilihan": [
@@ -375,6 +511,50 @@
         "berbeda"
       ],
       "correct": "andal"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "r9-u1",
+        "r9-u2",
+        "r9-u3",
+        "r9-u4"
+      ],
+      "correct": "r9-u3"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "r10-u1",
+        "r10-u2",
+        "r10-u3",
+        "r10-u4"
+      ],
+      "correct": "r10-u4"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "r11-u1",
+        "r11-u2",
+        "r11-u3",
+        "r11-u4"
+      ],
+      "correct": "r11-u2"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "r12-u1",
+        "r12-u2",
+        "r12-u3",
+        "r12-u4"
+      ],
+      "correct": "r12-u1"
     }
   ]
 }

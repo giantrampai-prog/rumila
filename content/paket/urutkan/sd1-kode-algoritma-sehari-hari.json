@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-sehari-hari",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -17,7 +17,7 @@
       "cuci-tangan-3": "gosok dengan sabun",
       "cuci-tangan-4": "bilas sampai bersih",
       "cuci-tangan-5": "tutup keran",
-      "cuci-tangan-6": "keringkan dengan handuk",
+      "cuci-tangan-6": "keringkan tangan",
       "t-tanam-biji": "Menanam biji",
       "tanam-biji-1": "gali lubang kecil",
       "tanam-biji-2": "masukkan biji",
@@ -49,7 +49,35 @@
       "roti-selai-2": "oles selai di roti",
       "roti-selai-3": "tutup dengan roti kedua",
       "roti-selai-4": "potong jadi dua",
-      "roti-selai-5": "makan rotinya"
+      "roti-selai-5": "makan rotinya",
+      "t-kado": "Membungkus kado",
+      "kado-1": "ambil kotak",
+      "kado-2": "masukkan boneka",
+      "kado-3": "bungkus dengan kertas kado",
+      "kado-4": "ikat pita",
+      "kado-5": "berikan kepada teman",
+      "kado-6": "teman membuka kado",
+      "t-cuci-piring": "Mencuci piring",
+      "cuci-piring-1": "kumpulkan piring kotor",
+      "cuci-piring-2": "buang sisa makanan",
+      "cuci-piring-3": "gosok dengan spons bersabun",
+      "cuci-piring-4": "bilas dengan air",
+      "cuci-piring-5": "tunggu sampai kering",
+      "cuci-piring-6": "piring bersih siap dipakai",
+      "t-ke-sekolah": "Bersiap ke sekolah",
+      "ke-sekolah-1": "bangun tidur",
+      "ke-sekolah-2": "mandi",
+      "ke-sekolah-3": "pakai seragam",
+      "ke-sekolah-4": "pakai tas",
+      "ke-sekolah-5": "berjalan ke sekolah",
+      "ke-sekolah-6": "sampai di sekolah",
+      "t-cuci-mobil": "Mencuci mobil",
+      "cuci-mobil-1": "siram mobil dengan air",
+      "cuci-mobil-2": "gosok dengan spons bersabun",
+      "cuci-mobil-3": "bilas busa sabun",
+      "cuci-mobil-4": "jemur sampai kering",
+      "cuci-mobil-5": "mobil mengilap",
+      "cuci-mobil-6": "mobil siap berangkat"
     },
     "en": {
       "judul": "Everyday Algorithms",
@@ -60,7 +88,7 @@
       "cuci-tangan-3": "scrub with soap",
       "cuci-tangan-4": "rinse clean",
       "cuci-tangan-5": "turn off the tap",
-      "cuci-tangan-6": "dry with a towel",
+      "cuci-tangan-6": "dry your hands",
       "t-tanam-biji": "Planting a seed",
       "tanam-biji-1": "dig a small hole",
       "tanam-biji-2": "drop in the seed",
@@ -92,7 +120,35 @@
       "roti-selai-2": "spread jam on the bread",
       "roti-selai-3": "put the second slice on top",
       "roti-selai-4": "cut it in half",
-      "roti-selai-5": "eat the sandwich"
+      "roti-selai-5": "eat the sandwich",
+      "t-kado": "Wrapping a present",
+      "kado-1": "get a box",
+      "kado-2": "put the teddy inside",
+      "kado-3": "wrap it in gift paper",
+      "kado-4": "tie a ribbon",
+      "kado-5": "give it to your friend",
+      "kado-6": "your friend opens it",
+      "t-cuci-piring": "Washing the dishes",
+      "cuci-piring-1": "collect the dirty plates",
+      "cuci-piring-2": "scrape off the leftovers",
+      "cuci-piring-3": "scrub with a soapy sponge",
+      "cuci-piring-4": "rinse with water",
+      "cuci-piring-5": "wait until dry",
+      "cuci-piring-6": "clean plates ready to use",
+      "t-ke-sekolah": "Getting ready for school",
+      "ke-sekolah-1": "wake up",
+      "ke-sekolah-2": "take a bath",
+      "ke-sekolah-3": "put on your uniform",
+      "ke-sekolah-4": "put on your bag",
+      "ke-sekolah-5": "walk to school",
+      "ke-sekolah-6": "arrive at school",
+      "t-cuci-mobil": "Washing the car",
+      "cuci-mobil-1": "spray the car with water",
+      "cuci-mobil-2": "scrub with a soapy sponge",
+      "cuci-mobil-3": "rinse off the soap",
+      "cuci-mobil-4": "let it dry in the sun",
+      "cuci-mobil-5": "the car shines",
+      "cuci-mobil-6": "the car is ready to go"
     }
   },
   "knobs": {
@@ -142,7 +198,7 @@
         {
           "id": "cuci-tangan-6",
           "labelKey": "cuci-tangan-6",
-          "emoji": "🧻"
+          "emoji": "👐"
         }
       ]
     },
@@ -308,6 +364,150 @@
           "id": "roti-selai-5",
           "labelKey": "roti-selai-5",
           "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "kado",
+      "titleKey": "t-kado",
+      "steps": [
+        {
+          "id": "kado-1",
+          "labelKey": "kado-1",
+          "emoji": "📦"
+        },
+        {
+          "id": "kado-2",
+          "labelKey": "kado-2",
+          "emoji": "🧸"
+        },
+        {
+          "id": "kado-3",
+          "labelKey": "kado-3",
+          "emoji": "🎁"
+        },
+        {
+          "id": "kado-4",
+          "labelKey": "kado-4",
+          "emoji": "🎀"
+        },
+        {
+          "id": "kado-5",
+          "labelKey": "kado-5",
+          "emoji": "🤝"
+        },
+        {
+          "id": "kado-6",
+          "labelKey": "kado-6",
+          "emoji": "😃"
+        }
+      ]
+    },
+    {
+      "id": "cuci-piring",
+      "titleKey": "t-cuci-piring",
+      "steps": [
+        {
+          "id": "cuci-piring-1",
+          "labelKey": "cuci-piring-1",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "cuci-piring-2",
+          "labelKey": "cuci-piring-2",
+          "emoji": "🗑️"
+        },
+        {
+          "id": "cuci-piring-3",
+          "labelKey": "cuci-piring-3",
+          "emoji": "🧽"
+        },
+        {
+          "id": "cuci-piring-4",
+          "labelKey": "cuci-piring-4",
+          "emoji": "🚰"
+        },
+        {
+          "id": "cuci-piring-5",
+          "labelKey": "cuci-piring-5",
+          "emoji": "⏳"
+        },
+        {
+          "id": "cuci-piring-6",
+          "labelKey": "cuci-piring-6",
+          "emoji": "✨"
+        }
+      ]
+    },
+    {
+      "id": "ke-sekolah",
+      "titleKey": "t-ke-sekolah",
+      "steps": [
+        {
+          "id": "ke-sekolah-1",
+          "labelKey": "ke-sekolah-1",
+          "emoji": "⏰"
+        },
+        {
+          "id": "ke-sekolah-2",
+          "labelKey": "ke-sekolah-2",
+          "emoji": "🛁"
+        },
+        {
+          "id": "ke-sekolah-3",
+          "labelKey": "ke-sekolah-3",
+          "emoji": "👕"
+        },
+        {
+          "id": "ke-sekolah-4",
+          "labelKey": "ke-sekolah-4",
+          "emoji": "🎒"
+        },
+        {
+          "id": "ke-sekolah-5",
+          "labelKey": "ke-sekolah-5",
+          "emoji": "🚶"
+        },
+        {
+          "id": "ke-sekolah-6",
+          "labelKey": "ke-sekolah-6",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "cuci-mobil",
+      "titleKey": "t-cuci-mobil",
+      "steps": [
+        {
+          "id": "cuci-mobil-1",
+          "labelKey": "cuci-mobil-1",
+          "emoji": "💦"
+        },
+        {
+          "id": "cuci-mobil-2",
+          "labelKey": "cuci-mobil-2",
+          "emoji": "🧽"
+        },
+        {
+          "id": "cuci-mobil-3",
+          "labelKey": "cuci-mobil-3",
+          "emoji": "🚿"
+        },
+        {
+          "id": "cuci-mobil-4",
+          "labelKey": "cuci-mobil-4",
+          "emoji": "☀️"
+        },
+        {
+          "id": "cuci-mobil-5",
+          "labelKey": "cuci-mobil-5",
+          "emoji": "✨"
+        },
+        {
+          "id": "cuci-mobil-6",
+          "labelKey": "cuci-mobil-6",
+          "emoji": "🚗"
         }
       ]
     }
