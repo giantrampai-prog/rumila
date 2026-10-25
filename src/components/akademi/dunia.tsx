@@ -3,9 +3,10 @@
 // Dunia 2D "Kebun & Pasar": latar semua aktivitas Slice 1. Langit → kebun → lapak pasar, digambar CSS + emoji.
 // Satu komponen latar + kerangka layar aktivitas (header kembali, progres ronde, tombol dengar instruksi).
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
 import { Icon } from "@/components/ui";
+import { diamkan } from "@/lib/akademi/suara";
 import { BALOO, INK, NUNITO } from "./jenis";
 
 export function LatarKebunPasar() {
@@ -31,6 +32,15 @@ export function LayarAktivitas({
 }: {
   judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string;
 }) {
+  const router = useRouter();
+  // Tombol kembali: hentikan suara dulu (ketukan pertama di HP bisa membuka ucapan yang tertahan),
+  // lalu kembali lewat riwayat bila datang dari aplikasi ini (instan dari cache), selain itu ke kembaliKe.
+  const kembali = () => {
+    diamkan();
+    const dariSini = typeof document !== "undefined" && document.referrer.startsWith(location.origin);
+    if (dariSini && window.history.length > 1) router.back();
+    else router.push(kembaliKe);
+  };
   return (
     <div className="relative min-h-dvh" style={{ fontFamily: NUNITO, color: INK }}>
       <LatarKebunPasar />
@@ -39,9 +49,9 @@ export function LayarAktivitas({
         style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(20px, env(safe-area-inset-bottom))" }}
       >
         <header className="flex items-center gap-2">
-          <Link href={kembaliKe} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95">
+          <button type="button" onClick={kembali} aria-label="Kembali" className="flex size-11 shrink-0 items-center justify-center rounded-[16px] bg-white text-[#0567c2] shadow-[0_4px_0_rgba(11,37,69,.12)] active:scale-95">
             <Icon name="arrow_back" size={24} />
-          </Link>
+          </button>
           <div className="min-w-0 flex-1">
             <div className="truncate" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, lineHeight: 1.1 }}>{judul}</div>
             <div className="mt-1 flex gap-1" aria-label={`Ronde ${ronde} dari ${total}`}>

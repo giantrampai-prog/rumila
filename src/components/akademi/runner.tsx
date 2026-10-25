@@ -106,7 +106,10 @@ function Runner({ paket }: { paket: ContentPack }) {
       sudahMulai.current = true; // StrictMode menjalankan efek dua kali di dev; event mulai cukup sekali
       catatEvent({ learnerId, sessionId: sessionId.current, activityId: paket.id, mechanic: paket.mechanic, type: "activity_start", payload: { level: paket.level } });
     }
-    const timer = setTimeout(ucap, 400);
+    // Putar instruksi otomatis hanya bila halaman sudah pernah disentuh (datang lewat ketukan). Bila tidak,
+    // HP menahan ucapan lalu memutarnya pada ketukan pertama, mis. saat anak menekan tombol kembali.
+    const aktif = (navigator as Navigator & { userActivation?: { hasBeenActive: boolean } }).userActivation?.hasBeenActive ?? true;
+    const timer = aktif ? setTimeout(ucap, 400) : undefined;
     return () => {
       clearTimeout(timer);
       diamkan();
