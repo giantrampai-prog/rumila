@@ -334,7 +334,8 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
 
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
-      <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />
+      {/* judul kegiatan; dilewati bila paket memakai judul umum yang sama dengan pertanyaan di bawah */}
+      {!/^mana yang lebih dulu/i.test(t(ronde.titleKey)) && <Kepala judul={t(ronde.titleKey)} onBantu={() => {}} kunci={kunci} tanpaBantu />}
       <div className="rounded-[22px] bg-white px-4 py-3 text-center shadow-[0_4px_0_rgba(11,37,69,.1)]" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 900, lineHeight: 1.15 }}>
         Mana yang lebih dulu? <span style={{ color: "#0567c2" }}>?</span>
       </div>
@@ -347,6 +348,8 @@ function Dulu({ ronde, t, onJawab, hasil }: Props) {
               key={s.id}
               v={visual(s, t)}
               size={96}
+              label={t(s.labelKey)}
+              labelSize={18}
               selected={!hasil && dipilih === s.id}
               right={benar}
               wrong={salah}
