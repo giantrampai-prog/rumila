@@ -132,8 +132,8 @@ function TombolBesar({ children, onClick, disabled, warna = "#22b573", bayang = 
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`flex min-h-16 flex-1 items-center justify-center gap-2 rounded-[20px] px-4 text-white transition-transform active:translate-y-1 disabled:opacity-50 ${className}`}
-      style={{ background: warna, boxShadow: `0 5px 0 ${bayang}`, fontFamily: BALOO, fontWeight: 900, fontSize: 20 }}
+      className={`flex min-h-16 flex-1 items-center justify-center gap-2 rounded-[20px] px-4 text-white transition-transform active:translate-y-1 ${className}`}
+      style={{ background: disabled ? "#cdd6d2" : warna, boxShadow: `0 5px 0 ${disabled ? "#aab5b0" : bayang}`, fontFamily: BALOO, fontWeight: 900, fontSize: 20 }}
     >
       {children}
     </button>
@@ -450,7 +450,9 @@ function ModeSubitasi(c: Ctx) {
   const target = pesanan.qty;
   const tersedia = ronde.tersedia[id] ?? target + 2;
   const [jumlah, setJumlah] = useState(0);
-  const [tampil, setTampil] = useState(true);
+  // Anak sendiri yang memulai kilasan jari (ketuk "Lihat jari") supaya tidak terlewat saat instruksi dibacakan.
+  const [sudahLihat, setSudahLihat] = useState(false);
+  const [tampil, setTampil] = useState(false);
   const jam = useJam();
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -460,7 +462,8 @@ function ModeSubitasi(c: Ctx) {
     timer.current = setTimeout(() => { setTampil(false); jam.mulai(); }, Math.max(300, ronde.flashMs || 1000));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ronde.flashMs]);
-  useEffect(() => { flash(); return () => { if (timer.current) clearTimeout(timer.current); }; }, [flash]);
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  const lihatPertama = () => { sfx.tap(); setSudahLihat(true); flash(); };
 
   const lihatLagi = () => { c.onHint?.(); flash(); };
   const teks = `Aku mau ${nama(id)} sebanyak jariku.`;
@@ -470,30 +473,48 @@ function ModeSubitasi(c: Ctx) {
       <Pembeli
         wajah={wajah} teksUcap={teks} hasil={hasil}
         balon={
-          <div className="flex items-center gap-3">
-            <span className={tampil ? "akademi-pop" : ""} style={{ fontSize: 56, lineHeight: 1 }} aria-label={tampil ? `${target} jari` : "tangan turun"}>{tampil ? tangan(target) : "✊"}</span>
-            <Benda v={visual(id)} size={40} />
-            {!tampil && <span style={{ ...Tebal, fontSize: 22, opacity: 0.5 }}>?</span>}
-          </div>
+          !sudahLihat ? (
+            <div className="flex items-center gap-3">
+              <span style={{ fontSize: 48, lineHeight: 1 }}>🖐️</span>
+              <span style={{ ...Tebal, fontSize: 18 }}>Siap? Lihat jariku!</span>
+            </div>
+          ) : tampil ? (
+            <div className="flex items-center gap-3">
+              <span className="akademi-pop" style={{ fontSize: 56, lineHeight: 1 }} aria-label={`${target} jari`}>{tangan(target)}</span>
+              <span style={{ ...Tebal, fontSize: 18 }}>Lihat jarinya!</span>
+            </div>
+          ) : (
+            // tangan sudah turun: satu pertanyaan jelas, bukan kepalan tangan yang bisa dikira "nol"
+            <div className="flex items-center gap-3" aria-label="Tangan sudah turun. Berapa jari tadi?">
+              <span style={{ fontSize: 48, lineHeight: 1 }}>🙈</span>
+              <span style={{ ...Tebal, fontSize: 18 }}>Berapa jari tadi?</span>
+            </div>
+          )
         }
         jawabanBenar={`${target} ${nama(id)}`}
       />
       <Lapak>
         <div className="flex flex-wrap justify-center gap-2">
           {Array.from({ length: tersedia - jumlah }, (_, k) => (
-            <KartuBenda key={k} v={visual(id)} size={48} onClick={() => { if (!tampil) { sfx.pick(); setJumlah((n) => n + 1); } }} dim={tampil} className="min-h-14 min-w-14" />
+            <KartuBenda key={k} v={visual(id)} size={48} onClick={() => { if (sudahLihat && !tampil) { sfx.pick(); setJumlah((n) => n + 1); } }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" />
           ))}
         </div>
       </Lapak>
       <Keranjang isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))} onKembali={() => { sfx.plop(); setJumlah((n) => Math.max(0, n - 1)); }} />
+      {!sudahLihat ? (
+        <TombolBesar onClick={lihatPertama} warna="#0786eb" bayang="#0567c2">
+          <Icon name="visibility" size={26} /> Lihat jari
+        </TombolBesar>
+      ) : (
       <div className="flex gap-2">
-        <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:opacity-50" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}>
+        <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:bg-[#eef1f0] disabled:text-[#9aa7b4]" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}>
           <Icon name="visibility" size={24} /> Lihat lagi
         </button>
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [id]: jumlah }, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || jumlah === 0}>
           <Icon name="volunteer_activism" size={26} /> Beri
         </TombolBesar>
       </div>
+      )}
     </Kunci>
   );
 }
