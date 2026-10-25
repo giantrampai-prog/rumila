@@ -57,8 +57,11 @@ export function buatRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwaya
   // jadi dari semua calon baru dipilih yang paling sedikit berbagi benda dengan ronde-ronde terakhir.
   const kelompok = p.mechanic === "pilah" && p.mode !== "pilih";
   const bendaLalu = kelompok ? riwayat.map((k) => { try { const j = JSON.parse(k); return j[0] === "pilah-kelompok" ? new Set<string>(j[1]) : new Set<string>(); } catch { return new Set<string>(); } }) : [];
-  const tumpang = (r: Ronde) => r.mechanic !== "pilah" || r.ronde.mode !== "kelompok" ? 0
-    : bendaLalu.reduce((s, lalu, i) => s + r.ronde.items.filter((x) => lalu.has(x.id)).length / (bendaLalu.length - i), 0);
+  const tumpang = (r: Ronde) => {
+    if (r.mechanic !== "pilah" || r.ronde.mode !== "kelompok") return 0;
+    const ids = r.ronde.items.map((x) => x.id);
+    return bendaLalu.reduce((s, lalu, i) => s + ids.filter((id) => lalu.has(id)).length / (bendaLalu.length - i), 0);
+  };
   let terbaik: { r: Ronde; skor: number } | undefined;
   for (let i = 0; i < percobaan; i++) {
     const r = buatRonde(p, knobs, turunan(i));
