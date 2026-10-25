@@ -32,7 +32,11 @@ function itemAktif(p: PaketPilah, bins: Bin[], knobs: Knobs, r: () => number): I
   const kandidat = p.items.filter(i => aktif.has(i.bin));
   if (!p.generatif) return kandidat;
   const diacak = acak(kandidat, r);
-  const batas = knobs.itemCount !== undefined ? Math.max(1, Math.floor(knobs.itemCount)) : diacak.length;
+  const diminta = knobs.itemCount !== undefined ? Math.max(1, Math.floor(knobs.itemCount)) : diacak.length;
+  // Paling banyak separuh stok per ronde, supaya dua ronde berturut-turut bisa memakai benda yang berbeda
+  // (anak merasa "dobel" bila benda yang sama terus muncul). Minimal tetap bins+1 / 3 benda; stok kecil tidak dipotong.
+  const bawah = Math.max(bins.length + 1, 3);
+  const batas = kandidat.length >= 2 * bawah ? Math.max(bawah, Math.min(diminta, Math.floor(kandidat.length / 2))) : diminta;
   if (batas >= diacak.length) return diacak;
   // satu wakil per bin dulu, sisanya diisi dari yang tersisa
   const terpilih: Item[] = [];

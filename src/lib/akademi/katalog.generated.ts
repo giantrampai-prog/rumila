@@ -74694,7 +74694,15 @@ export const PAKET_RAW: unknown[] = [
         "lonceng": "lonceng toko",
         "pengeras": "penjual berteriak",
         "bawang": "bawang putih",
-        "permen": "permen manis"
+        "permen": "permen manis",
+        "cermin": "cermin",
+        "lampu": "lampu terang",
+        "radio": "radio",
+        "gendang": "gendang",
+        "melati": "bunga melati",
+        "pandan": "daun pandan wangi",
+        "cokelat": "cokelat",
+        "garam": "garam asin"
       },
       "en": {
         "judul": "Senses at the Market",
@@ -74716,7 +74724,15 @@ export const PAKET_RAW: unknown[] = [
         "lonceng": "shop bell",
         "pengeras": "seller shouting",
         "bawang": "garlic",
-        "permen": "sweet lollipop"
+        "permen": "sweet lollipop",
+        "cermin": "mirror",
+        "lampu": "bright lamp",
+        "radio": "radio",
+        "gendang": "drum",
+        "melati": "jasmine",
+        "pandan": "fragrant pandan leaf",
+        "cokelat": "chocolate",
+        "garam": "salt"
       }
     },
     "knobs": {
@@ -74730,7 +74746,7 @@ export const PAKET_RAW: unknown[] = [
       "itemCount": {
         "min": 4,
         "max": 8,
-        "default": 6,
+        "default": 4,
         "step": 2,
         "keterangan": "jumlah benda per putaran; tiap benda hanya satu indra dominan"
       }
@@ -74840,6 +74856,54 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "permen",
         "bin": "lidah",
         "emoji": "🍭"
+      },
+      {
+        "id": "cermin",
+        "labelKey": "cermin",
+        "bin": "mata",
+        "emoji": "🪞"
+      },
+      {
+        "id": "lampu",
+        "labelKey": "lampu",
+        "bin": "mata",
+        "emoji": "💡"
+      },
+      {
+        "id": "radio",
+        "labelKey": "radio",
+        "bin": "telinga",
+        "emoji": "📻"
+      },
+      {
+        "id": "gendang",
+        "labelKey": "gendang",
+        "bin": "telinga",
+        "emoji": "🥁"
+      },
+      {
+        "id": "melati",
+        "labelKey": "melati",
+        "bin": "hidung",
+        "emoji": "🌼"
+      },
+      {
+        "id": "pandan",
+        "labelKey": "pandan",
+        "bin": "hidung",
+        "emoji": "🍃"
+      },
+      {
+        "id": "cokelat",
+        "labelKey": "cokelat",
+        "bin": "lidah",
+        "emoji": "🍫"
+      },
+      {
+        "id": "garam",
+        "labelKey": "garam",
+        "bin": "lidah",
+        "emoji": "🧂"
       }
     ],
     "pilihan": []
