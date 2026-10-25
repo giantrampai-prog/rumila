@@ -1,6 +1,6 @@
 {
   "id": "mana-dulu-alam",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,40 +11,70 @@
     "id": {
       "judul": "Mana Dulu di Alam?",
       "instruksi": "Lihat dua gambar, lalu sentuh yang terjadi lebih dulu.",
-      "telur": "Telur dan anak ayam",
-      "biji": "Biji dan pohon",
-      "ulat": "Ulat dan kupu-kupu",
-      "awan": "Awan dan hujan",
-      "bunga": "Bunga dan buah",
-      "sTelur": "telur",
-      "sAnak": "anak ayam",
-      "sBiji": "tunas kecil",
-      "sPohon": "pohon besar",
-      "sUlat": "ulat",
-      "sKupu": "kupu-kupu",
-      "sAwan": "awan gelap",
-      "sHujan": "hujan turun",
-      "sBunga": "bunga mekar",
-      "sBuah": "apel matang"
+      "t_ayam": "Telur menetas",
+      "s_ayam_telur": "telur",
+      "s_ayam_anak": "anak ayam",
+      "t_pohon": "Biji tumbuh jadi pohon",
+      "s_pohon_tunas": "tunas kecil",
+      "s_pohon_pohon": "pohon besar",
+      "t_kupu": "Ulat jadi kupu-kupu",
+      "s_kupu_ulat": "ulat",
+      "s_kupu_kupu": "kupu-kupu",
+      "t_hujan": "Hujan lalu pelangi",
+      "s_hujan_hujan": "hujan",
+      "s_hujan_pelangi": "pelangi",
+      "t_buah": "Bunga jadi buah",
+      "s_buah_bunga": "bunga mekar",
+      "s_buah_apel": "apel matang",
+      "t_katak": "Berudu jadi katak",
+      "s_katak_berudu": "berudu",
+      "s_katak_katak": "katak",
+      "t_pagi": "Matahari terbit",
+      "s_pagi_malam": "malam",
+      "s_pagi_pagi": "pagi",
+      "t_bunga2": "Kuncup jadi bunga",
+      "s_bunga2_kuncup": "kuncup",
+      "s_bunga2_mekar": "bunga mekar",
+      "t_kelapa": "Kelapa jatuh",
+      "s_kelapa_pohon": "kelapa di pohon",
+      "s_kelapa_jatuh": "kelapa di tanah",
+      "t_daun": "Daun gugur",
+      "s_daun_hijau": "daun di pohon",
+      "s_daun_gugur": "daun gugur"
     },
     "en": {
       "judul": "Which Came First in Nature?",
       "instruksi": "Look at the two pictures, then touch the one that happens first.",
-      "telur": "Egg and chick",
-      "biji": "Seed and tree",
-      "ulat": "Caterpillar and butterfly",
-      "awan": "Cloud and rain",
-      "bunga": "Blossom and fruit",
-      "sTelur": "egg",
-      "sAnak": "chick",
-      "sBiji": "little sprout",
-      "sPohon": "big tree",
-      "sUlat": "caterpillar",
-      "sKupu": "butterfly",
-      "sAwan": "dark cloud",
-      "sHujan": "rain falls",
-      "sBunga": "blossom",
-      "sBuah": "ripe apple"
+      "t_ayam": "An egg hatching",
+      "s_ayam_telur": "egg",
+      "s_ayam_anak": "chick",
+      "t_pohon": "A seed growing into a tree",
+      "s_pohon_tunas": "small sprout",
+      "s_pohon_pohon": "big tree",
+      "t_kupu": "A caterpillar becoming a butterfly",
+      "s_kupu_ulat": "caterpillar",
+      "s_kupu_kupu": "butterfly",
+      "t_hujan": "Rain, then a rainbow",
+      "s_hujan_hujan": "rain",
+      "s_hujan_pelangi": "rainbow",
+      "t_buah": "A flower becoming fruit",
+      "s_buah_bunga": "flower",
+      "s_buah_apel": "ripe apple",
+      "t_katak": "A tadpole becoming a frog",
+      "s_katak_berudu": "tadpole",
+      "s_katak_katak": "frog",
+      "t_pagi": "The sun rising",
+      "s_pagi_malam": "night",
+      "s_pagi_pagi": "morning",
+      "t_bunga2": "A bud opening into a flower",
+      "s_bunga2_kuncup": "bud",
+      "s_bunga2_mekar": "bloomed flower",
+      "t_kelapa": "A coconut falling",
+      "s_kelapa_pohon": "coconut on the tree",
+      "s_kelapa_jatuh": "coconut on the ground",
+      "t_daun": "A leaf falling",
+      "s_daun_hijau": "leaf on the tree",
+      "s_daun_gugur": "fallen leaf"
     }
   },
   "knobs": {
@@ -63,82 +93,162 @@
   "mode": "dulu",
   "sequences": [
     {
-      "id": "telur",
-      "titleKey": "telur",
+      "id": "ayam",
+      "titleKey": "t_ayam",
       "steps": [
         {
           "id": "telur",
-          "labelKey": "sTelur",
+          "labelKey": "s_ayam_telur",
           "emoji": "🥚"
         },
         {
           "id": "anak",
-          "labelKey": "sAnak",
+          "labelKey": "s_ayam_anak",
           "emoji": "🐥"
         }
       ]
     },
     {
-      "id": "biji",
-      "titleKey": "biji",
+      "id": "pohon",
+      "titleKey": "t_pohon",
       "steps": [
         {
           "id": "tunas",
-          "labelKey": "sBiji",
+          "labelKey": "s_pohon_tunas",
           "emoji": "🌱"
         },
         {
           "id": "pohon",
-          "labelKey": "sPohon",
+          "labelKey": "s_pohon_pohon",
           "emoji": "🌳"
         }
       ]
     },
     {
-      "id": "ulat",
-      "titleKey": "ulat",
+      "id": "kupu",
+      "titleKey": "t_kupu",
       "steps": [
         {
           "id": "ulat",
-          "labelKey": "sUlat",
+          "labelKey": "s_kupu_ulat",
           "emoji": "🐛"
         },
         {
           "id": "kupu",
-          "labelKey": "sKupu",
+          "labelKey": "s_kupu_kupu",
           "emoji": "🦋"
         }
       ]
     },
     {
-      "id": "awan",
-      "titleKey": "awan",
+      "id": "hujan",
+      "titleKey": "t_hujan",
       "steps": [
         {
-          "id": "awan",
-          "labelKey": "sAwan",
+          "id": "hujan",
+          "labelKey": "s_hujan_hujan",
           "emoji": "🌧️"
         },
         {
-          "id": "hujan",
-          "labelKey": "sHujan",
-          "emoji": "☔"
+          "id": "pelangi",
+          "labelKey": "s_hujan_pelangi",
+          "emoji": "🌈"
         }
       ]
     },
     {
-      "id": "bunga",
-      "titleKey": "bunga",
+      "id": "buah",
+      "titleKey": "t_buah",
       "steps": [
         {
           "id": "bunga",
-          "labelKey": "sBunga",
+          "labelKey": "s_buah_bunga",
           "emoji": "🌸"
         },
         {
-          "id": "buah",
-          "labelKey": "sBuah",
+          "id": "apel",
+          "labelKey": "s_buah_apel",
           "emoji": "🍎"
+        }
+      ]
+    },
+    {
+      "id": "katak",
+      "titleKey": "t_katak",
+      "steps": [
+        {
+          "id": "berudu",
+          "labelKey": "s_katak_berudu",
+          "emoji": "🐟"
+        },
+        {
+          "id": "katak",
+          "labelKey": "s_katak_katak",
+          "emoji": "🐸"
+        }
+      ]
+    },
+    {
+      "id": "pagi",
+      "titleKey": "t_pagi",
+      "steps": [
+        {
+          "id": "malam",
+          "labelKey": "s_pagi_malam",
+          "emoji": "🌙"
+        },
+        {
+          "id": "pagi",
+          "labelKey": "s_pagi_pagi",
+          "emoji": "🌅"
+        }
+      ]
+    },
+    {
+      "id": "bunga2",
+      "titleKey": "t_bunga2",
+      "steps": [
+        {
+          "id": "kuncup",
+          "labelKey": "s_bunga2_kuncup",
+          "emoji": "🌷"
+        },
+        {
+          "id": "mekar",
+          "labelKey": "s_bunga2_mekar",
+          "emoji": "🌺"
+        }
+      ]
+    },
+    {
+      "id": "kelapa",
+      "titleKey": "t_kelapa",
+      "steps": [
+        {
+          "id": "pohon",
+          "labelKey": "s_kelapa_pohon",
+          "emoji": "🌴"
+        },
+        {
+          "id": "jatuh",
+          "labelKey": "s_kelapa_jatuh",
+          "emoji": "🥥"
+        }
+      ]
+    },
+    {
+      "id": "daun",
+      "titleKey": "t_daun",
+      "steps": [
+        {
+          "id": "hijau",
+          "labelKey": "s_daun_hijau",
+          "emoji": "🌿"
+        },
+        {
+          "id": "gugur",
+          "labelKey": "s_daun_gugur",
+          "emoji": "🍂"
         }
       ]
     }

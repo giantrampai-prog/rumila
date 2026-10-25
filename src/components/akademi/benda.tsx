@@ -69,9 +69,9 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
 
 /** Kartu benda yang bisa disentuh/diseret: latar putih, bayangan tebal gaya Rumila. */
 export function KartuBenda({
-  v, size = 56, label, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "",
+  v, size = 56, label, labelSize = 13, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "",
 }: {
-  v: VisualSpec; size?: number; label?: string; selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
+  v: VisualSpec; size?: number; label?: string; labelSize?: number; selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
   onClick?: () => void; style?: CSSProperties; draggable?: boolean; onDragStart?: React.DragEventHandler; onPointerDown?: React.PointerEventHandler; className?: string;
 }) {
   const ring = right ? "#22b573" : wrong ? "#ff5a6e" : selected ? "#0786eb" : "transparent";
@@ -87,7 +87,7 @@ export function KartuBenda({
     >
       <Benda v={v} size={size} />
       {label && (
-        <span style={{ fontFamily: BALOO, fontSize: 13, fontWeight: 800, color: INK, lineHeight: 1.1 }} className="text-center">
+        <span style={{ fontFamily: BALOO, fontSize: labelSize, fontWeight: 800, color: INK, lineHeight: 1.1 }} className="text-center">
           {label}
         </span>
       )}

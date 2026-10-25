@@ -1,6 +1,6 @@
 {
   "id": "mana-dulu-di-rumah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -11,40 +11,70 @@
     "id": {
       "judul": "Mana Dulu di Rumah?",
       "instruksi": "Lihat dua gambar di rumah, lalu sentuh yang terjadi lebih dulu.",
-      "nasi": "Piring nasi",
-      "es": "Es batu",
-      "kue": "Kue ulang tahun",
-      "lilin": "Lilin",
-      "balon": "Balon",
-      "sPenuh": "piring penuh",
-      "sKosong": "piring kosong",
-      "sEs": "es batu",
-      "sAir": "air",
-      "sUtuh": "kue utuh",
-      "sPotong": "kue dipotong",
-      "sNyala": "lilin menyala",
-      "sPadam": "lilin padam",
-      "sKempis": "balon kempis",
-      "sTiup": "balon besar"
+      "t_makan": "Makan nasi",
+      "s_makan_penuh": "piring penuh",
+      "s_makan_kosong": "piring kosong",
+      "t_telur": "Menggoreng telur",
+      "s_telur_mentah": "telur mentah",
+      "s_telur_goreng": "telur goreng",
+      "t_kue": "Memotong kue ulang tahun",
+      "s_kue_utuh": "kue utuh",
+      "s_kue_potong": "sepotong kue",
+      "t_es": "Es batu mencair",
+      "s_es_es": "es batu",
+      "s_es_air": "air",
+      "t_sepatu": "Memakai sepatu",
+      "s_sepatu_kaus": "kaus kaki",
+      "s_sepatu_sepatu": "sepatu",
+      "t_tidur": "Mau tidur",
+      "s_tidur_gigi": "sikat gigi",
+      "s_tidur_tidur": "tidur",
+      "t_kado": "Membuka kado",
+      "s_kado_bungkus": "kado terbungkus",
+      "s_kado_mainan": "mainan",
+      "t_teh": "Membuat teh",
+      "s_teh_teko": "teko",
+      "s_teh_teh": "teh di cangkir",
+      "t_tanam": "Menanam bunga di halaman",
+      "s_tanam_tunas": "tunas kecil",
+      "s_tanam_bunga": "bunga mekar",
+      "t_roti": "Membuat roti isi",
+      "s_roti_roti": "roti tawar",
+      "s_roti_isi": "roti isi"
     },
     "en": {
       "judul": "Which Came First at Home?",
       "instruksi": "Look at the two pictures from the house, then touch the one that happens first.",
-      "nasi": "Plate of rice",
-      "es": "Ice cube",
-      "kue": "Birthday cake",
-      "lilin": "Candle",
-      "balon": "Balloon",
-      "sPenuh": "full plate",
-      "sKosong": "empty plate",
-      "sEs": "ice cube",
-      "sAir": "water",
-      "sUtuh": "whole cake",
-      "sPotong": "cake slice",
-      "sNyala": "lit candle",
-      "sPadam": "candle out",
-      "sKempis": "flat balloon",
-      "sTiup": "blown-up balloon"
+      "t_makan": "Eating rice",
+      "s_makan_penuh": "full plate",
+      "s_makan_kosong": "empty plate",
+      "t_telur": "Frying an egg",
+      "s_telur_mentah": "raw egg",
+      "s_telur_goreng": "fried egg",
+      "t_kue": "Cutting the birthday cake",
+      "s_kue_utuh": "whole cake",
+      "s_kue_potong": "slice of cake",
+      "t_es": "Ice melting",
+      "s_es_es": "ice cube",
+      "s_es_air": "water",
+      "t_sepatu": "Putting on shoes",
+      "s_sepatu_kaus": "socks",
+      "s_sepatu_sepatu": "shoes",
+      "t_tidur": "Getting ready for bed",
+      "s_tidur_gigi": "brush teeth",
+      "s_tidur_tidur": "sleep",
+      "t_kado": "Opening a present",
+      "s_kado_bungkus": "wrapped present",
+      "s_kado_mainan": "toy",
+      "t_teh": "Making tea",
+      "s_teh_teko": "teapot",
+      "s_teh_teh": "cup of tea",
+      "t_tanam": "Planting a flower in the yard",
+      "s_tanam_tunas": "small sprout",
+      "s_tanam_bunga": "flower in bloom",
+      "t_roti": "Making a sandwich",
+      "s_roti_roti": "bread",
+      "s_roti_isi": "sandwich"
     }
   },
   "knobs": {
@@ -53,7 +83,7 @@
       "max": 2,
       "default": 2,
       "step": 1,
-      "keterangan": "selalu dua gambar; pasangan sebab-akibat jelas, tidak bisa dibolak-balik"
+      "keterangan": "selalu dua gambar; tiap pasangan satu kegiatan di rumah dengan urutan sebab-akibat yang jelas"
     }
   },
   "assets": [],
@@ -63,82 +93,162 @@
   "mode": "dulu",
   "sequences": [
     {
-      "id": "nasi",
-      "titleKey": "nasi",
+      "id": "makan",
+      "titleKey": "t_makan",
       "steps": [
         {
           "id": "penuh",
-          "labelKey": "sPenuh",
+          "labelKey": "s_makan_penuh",
           "emoji": "🍚"
         },
         {
           "id": "kosong",
-          "labelKey": "sKosong",
+          "labelKey": "s_makan_kosong",
           "emoji": "🍽️"
         }
       ]
     },
     {
-      "id": "es",
-      "titleKey": "es",
+      "id": "telur",
+      "titleKey": "t_telur",
       "steps": [
         {
-          "id": "es",
-          "labelKey": "sEs",
-          "emoji": "🧊"
+          "id": "mentah",
+          "labelKey": "s_telur_mentah",
+          "emoji": "🥚"
         },
         {
-          "id": "air",
-          "labelKey": "sAir",
-          "emoji": "💧"
+          "id": "goreng",
+          "labelKey": "s_telur_goreng",
+          "emoji": "🍳"
         }
       ]
     },
     {
       "id": "kue",
-      "titleKey": "kue",
+      "titleKey": "t_kue",
       "steps": [
         {
           "id": "utuh",
-          "labelKey": "sUtuh",
+          "labelKey": "s_kue_utuh",
           "emoji": "🎂"
         },
         {
           "id": "potong",
-          "labelKey": "sPotong",
+          "labelKey": "s_kue_potong",
           "emoji": "🍰"
         }
       ]
     },
     {
-      "id": "lilin",
-      "titleKey": "lilin",
+      "id": "es",
+      "titleKey": "t_es",
       "steps": [
         {
-          "id": "nyala",
-          "labelKey": "sNyala",
-          "emoji": "🕯️"
+          "id": "es",
+          "labelKey": "s_es_es",
+          "emoji": "🧊"
         },
         {
-          "id": "padam",
-          "labelKey": "sPadam",
-          "emoji": "💨"
+          "id": "air",
+          "labelKey": "s_es_air",
+          "emoji": "💧"
         }
       ]
     },
     {
-      "id": "balon",
-      "titleKey": "balon",
+      "id": "sepatu",
+      "titleKey": "t_sepatu",
       "steps": [
         {
-          "id": "kempis",
-          "labelKey": "sKempis",
-          "emoji": "🫧"
+          "id": "kaus",
+          "labelKey": "s_sepatu_kaus",
+          "emoji": "🧦"
         },
         {
-          "id": "tiup",
-          "labelKey": "sTiup",
-          "emoji": "🎈"
+          "id": "sepatu",
+          "labelKey": "s_sepatu_sepatu",
+          "emoji": "👟"
+        }
+      ]
+    },
+    {
+      "id": "tidur",
+      "titleKey": "t_tidur",
+      "steps": [
+        {
+          "id": "gigi",
+          "labelKey": "s_tidur_gigi",
+          "emoji": "🪥"
+        },
+        {
+          "id": "tidur",
+          "labelKey": "s_tidur_tidur",
+          "emoji": "🛌"
+        }
+      ]
+    },
+    {
+      "id": "kado",
+      "titleKey": "t_kado",
+      "steps": [
+        {
+          "id": "bungkus",
+          "labelKey": "s_kado_bungkus",
+          "emoji": "🎁"
+        },
+        {
+          "id": "mainan",
+          "labelKey": "s_kado_mainan",
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": "teh",
+      "titleKey": "t_teh",
+      "steps": [
+        {
+          "id": "teko",
+          "labelKey": "s_teh_teko",
+          "emoji": "🫖"
+        },
+        {
+          "id": "teh",
+          "labelKey": "s_teh_teh",
+          "emoji": "🍵"
+        }
+      ]
+    },
+    {
+      "id": "tanam",
+      "titleKey": "t_tanam",
+      "steps": [
+        {
+          "id": "tunas",
+          "labelKey": "s_tanam_tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "s_tanam_bunga",
+          "emoji": "🌻"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "t_roti",
+      "steps": [
+        {
+          "id": "roti",
+          "labelKey": "s_roti_roti",
+          "emoji": "🍞"
+        },
+        {
+          "id": "isi",
+          "labelKey": "s_roti_isi",
+          "emoji": "🥪"
         }
       ]
     }
