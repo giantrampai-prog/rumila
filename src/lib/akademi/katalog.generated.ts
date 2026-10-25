@@ -74666,7 +74666,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-keranjang-indra-pasar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -74688,7 +74688,13 @@ export const PAKET_RAW: unknown[] = [
         "i-mawar": "bunga mawar",
         "i-parfum": "minyak wangi",
         "i-eskrim": "es krim",
-        "i-madu": "madu manis"
+        "i-madu": "madu manis",
+        "lampion": "lampion menyala",
+        "papanharga": "papan harga",
+        "lonceng": "lonceng toko",
+        "pengeras": "penjual berteriak",
+        "bawang": "bawang putih",
+        "permen": "permen manis"
       },
       "en": {
         "judul": "Senses at the Market",
@@ -74704,7 +74710,13 @@ export const PAKET_RAW: unknown[] = [
         "i-mawar": "rose",
         "i-parfum": "perfume",
         "i-eskrim": "ice cream",
-        "i-madu": "sweet honey"
+        "i-madu": "sweet honey",
+        "lampion": "glowing lantern",
+        "papanharga": "price sign",
+        "lonceng": "shop bell",
+        "pengeras": "seller shouting",
+        "bawang": "garlic",
+        "permen": "sweet lollipop"
       }
     },
     "knobs": {
@@ -74752,16 +74764,22 @@ export const PAKET_RAW: unknown[] = [
     ],
     "items": [
       {
-        "id": "balon",
-        "labelKey": "i-balon",
-        "bin": "mata",
-        "emoji": "🎈"
-      },
-      {
         "id": "lukisan",
         "labelKey": "i-lukisan",
         "bin": "mata",
         "emoji": "🖼️"
+      },
+      {
+        "id": "lampion",
+        "labelKey": "lampion",
+        "bin": "mata",
+        "emoji": "🏮"
+      },
+      {
+        "id": "papanharga",
+        "labelKey": "papanharga",
+        "bin": "mata",
+        "emoji": "🪧"
       },
       {
         "id": "terompet",
@@ -74776,6 +74794,18 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🎸"
       },
       {
+        "id": "lonceng",
+        "labelKey": "lonceng",
+        "bin": "telinga",
+        "emoji": "🔔"
+      },
+      {
+        "id": "pengeras",
+        "labelKey": "pengeras",
+        "bin": "telinga",
+        "emoji": "📣"
+      },
+      {
         "id": "mawar",
         "labelKey": "i-mawar",
         "bin": "hidung",
@@ -74788,6 +74818,12 @@ export const PAKET_RAW: unknown[] = [
         "emoji": "🧴"
       },
       {
+        "id": "bawang",
+        "labelKey": "bawang",
+        "bin": "hidung",
+        "emoji": "🧄"
+      },
+      {
         "id": "eskrim",
         "labelKey": "i-eskrim",
         "bin": "lidah",
@@ -74798,6 +74834,12 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-madu",
         "bin": "lidah",
         "emoji": "🍯"
+      },
+      {
+        "id": "permen",
+        "labelKey": "permen",
+        "bin": "lidah",
+        "emoji": "🍭"
       }
     ],
     "pilihan": []
