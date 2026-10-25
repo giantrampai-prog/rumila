@@ -11,7 +11,7 @@ import { KOMPETENSI } from "@/lib/akademi/konten";
 import "../akademi.css";
 
 /** Lambang + warna medali per jenjang (urut PAUD → SD6). */
-const LAMBANG: Record<LevelId, { ikon: string; warna: [string, string] }> = {
+export const LAMBANG: Record<LevelId, { ikon: string; warna: [string, string] }> = {
   PAUD: { ikon: "eco", warna: ["#7fdc6a", "#2f9e44"] },
   TKA: { ikon: "star", warna: ["#ffe066", "#f2a705"] },
   TKB: { ikon: "explore", warna: ["#ffb072", "#e8590c"] },
