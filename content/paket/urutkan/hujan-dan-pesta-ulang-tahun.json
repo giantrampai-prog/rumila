@@ -1,6 +1,6 @@
 {
   "id": "hujan-dan-pesta-ulang-tahun",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,7 +21,47 @@
       "kue": "kue datang",
       "tiup": "tiup lilin",
       "potong": "potong kue",
-      "makan": "makan kue"
+      "makan": "makan kue",
+      "t-kado": "Kado untuk teman",
+      "kado-beli": "beli boneka",
+      "kado-bungkus": "bungkus kado",
+      "kado-beri": "berikan ke teman",
+      "kado-senang": "teman senang",
+      "t-payung": "Pakai payung",
+      "payung-awan": "awan gelap datang",
+      "payung-turun": "hujan turun",
+      "payung-payung": "buka payung",
+      "payung-reda": "hujan reda",
+      "t-lilin": "Lilin ulang tahun",
+      "lilin-pasang": "pasang lilin",
+      "lilin-nyala": "nyalakan lilin",
+      "lilin-nyanyi": "nyanyi selamat ulang tahun",
+      "lilin-tiup": "tiup lilin",
+      "t-jemuran": "Jemuran baju",
+      "jemuran-cerah": "matahari bersinar",
+      "jemuran-jemur": "jemur baju",
+      "jemuran-turun": "hujan turun",
+      "jemuran-angkat": "angkat jemuran",
+      "t-undangan": "Teman datang",
+      "undangan-undang": "kirim undangan",
+      "undangan-datang": "teman datang",
+      "undangan-main": "main bersama",
+      "undangan-pulang": "pulang, dadah",
+      "t-beres": "Setelah pesta",
+      "beres-makan": "makan kue",
+      "beres-kotor": "piring kotor",
+      "beres-cuci": "cuci piring",
+      "beres-bersih": "piring bersih",
+      "t-basah": "Main hujan",
+      "basah-turun": "hujan turun",
+      "basah-main": "main air hujan",
+      "basah-basah": "baju basah",
+      "basah-mandi": "mandi air hangat",
+      "t-kue": "Kue untuk pesta",
+      "kue-aduk": "aduk adonan",
+      "kue-panggang": "panggang di oven",
+      "kue-hias": "hias kue",
+      "kue-bagi": "bagikan kue"
     },
     "en": {
       "judul": "Rain and the Party",
@@ -36,7 +76,47 @@
       "kue": "the cake arrives",
       "tiup": "blow out the candle",
       "potong": "cut the cake",
-      "makan": "eat the cake"
+      "makan": "eat the cake",
+      "t-kado": "A present for a friend",
+      "kado-beli": "buy a teddy bear",
+      "kado-bungkus": "wrap the present",
+      "kado-beri": "give it to a friend",
+      "kado-senang": "the friend is happy",
+      "t-payung": "Using an umbrella",
+      "payung-awan": "dark clouds come",
+      "payung-turun": "rain falls",
+      "payung-payung": "open the umbrella",
+      "payung-reda": "the rain stops",
+      "t-lilin": "Birthday candles",
+      "lilin-pasang": "put in the candles",
+      "lilin-nyala": "light the candles",
+      "lilin-nyanyi": "sing happy birthday",
+      "lilin-tiup": "blow out the candles",
+      "t-jemuran": "Laundry on the line",
+      "jemuran-cerah": "the sun shines",
+      "jemuran-jemur": "hang the clothes",
+      "jemuran-turun": "rain falls",
+      "jemuran-angkat": "bring the laundry in",
+      "t-undangan": "Friends come over",
+      "undangan-undang": "send invitations",
+      "undangan-datang": "friends arrive",
+      "undangan-main": "play together",
+      "undangan-pulang": "go home, bye-bye",
+      "t-beres": "After the party",
+      "beres-makan": "eat cake",
+      "beres-kotor": "dirty plates",
+      "beres-cuci": "wash the plates",
+      "beres-bersih": "clean plates",
+      "t-basah": "Playing in the rain",
+      "basah-turun": "rain falls",
+      "basah-main": "play in the rain",
+      "basah-basah": "wet clothes",
+      "basah-mandi": "take a warm bath",
+      "t-kue": "A cake for the party",
+      "kue-aduk": "stir the batter",
+      "kue-panggang": "bake in the oven",
+      "kue-hias": "decorate the cake",
+      "kue-bagi": "share the cake"
     }
   },
   "knobs": {
@@ -108,6 +188,214 @@
           "id": "makan",
           "labelKey": "makan",
           "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "kado",
+      "titleKey": "t-kado",
+      "steps": [
+        {
+          "id": "beli",
+          "labelKey": "kado-beli",
+          "emoji": "🧸"
+        },
+        {
+          "id": "bungkus",
+          "labelKey": "kado-bungkus",
+          "emoji": "🎁"
+        },
+        {
+          "id": "beri",
+          "labelKey": "kado-beri",
+          "emoji": "🤲"
+        },
+        {
+          "id": "senang",
+          "labelKey": "kado-senang",
+          "emoji": "😊"
+        }
+      ]
+    },
+    {
+      "id": "payung",
+      "titleKey": "t-payung",
+      "steps": [
+        {
+          "id": "awan",
+          "labelKey": "payung-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "turun",
+          "labelKey": "payung-turun",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "payung",
+          "labelKey": "payung-payung",
+          "emoji": "☂️"
+        },
+        {
+          "id": "reda",
+          "labelKey": "payung-reda",
+          "emoji": "⛅"
+        }
+      ]
+    },
+    {
+      "id": "lilin",
+      "titleKey": "t-lilin",
+      "steps": [
+        {
+          "id": "pasang",
+          "labelKey": "lilin-pasang",
+          "emoji": "🕯️"
+        },
+        {
+          "id": "nyala",
+          "labelKey": "lilin-nyala",
+          "emoji": "🔥"
+        },
+        {
+          "id": "nyanyi",
+          "labelKey": "lilin-nyanyi",
+          "emoji": "🎶"
+        },
+        {
+          "id": "tiup",
+          "labelKey": "lilin-tiup",
+          "emoji": "💨"
+        }
+      ]
+    },
+    {
+      "id": "jemuran",
+      "titleKey": "t-jemuran",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "jemuran-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "jemur",
+          "labelKey": "jemuran-jemur",
+          "emoji": "👕"
+        },
+        {
+          "id": "turun",
+          "labelKey": "jemuran-turun",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "angkat",
+          "labelKey": "jemuran-angkat",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
+      "id": "undangan",
+      "titleKey": "t-undangan",
+      "steps": [
+        {
+          "id": "undang",
+          "labelKey": "undangan-undang",
+          "emoji": "💌"
+        },
+        {
+          "id": "datang",
+          "labelKey": "undangan-datang",
+          "emoji": "👫"
+        },
+        {
+          "id": "main",
+          "labelKey": "undangan-main",
+          "emoji": "🎉"
+        },
+        {
+          "id": "pulang",
+          "labelKey": "undangan-pulang",
+          "emoji": "👋"
+        }
+      ]
+    },
+    {
+      "id": "beres",
+      "titleKey": "t-beres",
+      "steps": [
+        {
+          "id": "makan",
+          "labelKey": "beres-makan",
+          "emoji": "🍰"
+        },
+        {
+          "id": "kotor",
+          "labelKey": "beres-kotor",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "cuci",
+          "labelKey": "beres-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "bersih",
+          "labelKey": "beres-bersih",
+          "emoji": "✨"
+        }
+      ]
+    },
+    {
+      "id": "basah",
+      "titleKey": "t-basah",
+      "steps": [
+        {
+          "id": "turun",
+          "labelKey": "basah-turun",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "main",
+          "labelKey": "basah-main",
+          "emoji": "💦"
+        },
+        {
+          "id": "basah",
+          "labelKey": "basah-basah",
+          "emoji": "👕"
+        },
+        {
+          "id": "mandi",
+          "labelKey": "basah-mandi",
+          "emoji": "🛁"
+        }
+      ]
+    },
+    {
+      "id": "kue",
+      "titleKey": "t-kue",
+      "steps": [
+        {
+          "id": "aduk",
+          "labelKey": "kue-aduk",
+          "emoji": "🥣"
+        },
+        {
+          "id": "panggang",
+          "labelKey": "kue-panggang",
+          "emoji": "♨️"
+        },
+        {
+          "id": "hias",
+          "labelKey": "kue-hias",
+          "emoji": "🎂"
+        },
+        {
+          "id": "bagi",
+          "labelKey": "kue-bagi",
+          "emoji": "🍰"
         }
       ]
     }

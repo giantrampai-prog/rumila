@@ -1,6 +1,6 @@
 {
   "id": "ular-panjang-pendek",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,8 @@
       "buaya": "buaya",
       "ulat": "ulat",
       "tPanjang": "Mana yang lebih panjang?",
-      "tPendek": "Mana yang lebih pendek?"
+      "tPendek": "Mana yang lebih pendek?",
+      "kadal": "kadal"
     },
     "en": {
       "judul": "Sunbathing Snakes",
@@ -30,7 +31,8 @@
       "buaya": "crocodile",
       "ulat": "caterpillar",
       "tPanjang": "Which one is longer?",
-      "tPendek": "Which one is shorter?"
+      "tPendek": "Which one is shorter?",
+      "kadal": "lizard"
     }
   },
   "knobs": {
@@ -123,6 +125,20 @@
       "bin": "pilihan",
       "emoji": "🐛",
       "width": 1
+    },
+    {
+      "id": "kadal-panjang",
+      "labelKey": "kadal",
+      "bin": "pilihan",
+      "emoji": "🦎",
+      "width": 1.8
+    },
+    {
+      "id": "kadal-pendek",
+      "labelKey": "kadal",
+      "bin": "pilihan",
+      "emoji": "🦎",
+      "width": 1
     }
   ],
   "pilihan": [
@@ -170,6 +186,69 @@
         "ulat-panjang"
       ],
       "correct": "ulat-panjang"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tPendek",
+      "choices": [
+        "ular-panjang",
+        "ular-pendek"
+      ],
+      "correct": "ular-pendek"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tPanjang",
+      "choices": [
+        "cacing-pendek",
+        "cacing-panjang"
+      ],
+      "correct": "cacing-panjang"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tPendek",
+      "choices": [
+        "ikan-panjang",
+        "ikan-pendek"
+      ],
+      "correct": "ikan-pendek"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tPanjang",
+      "choices": [
+        "buaya-pendek",
+        "buaya-panjang"
+      ],
+      "correct": "buaya-panjang"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tPendek",
+      "choices": [
+        "ulat-panjang",
+        "ulat-pendek"
+      ],
+      "correct": "ulat-pendek"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tPanjang",
+      "choices": [
+        "kadal-pendek",
+        "kadal-panjang"
+      ],
+      "correct": "kadal-panjang"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tPendek",
+      "choices": [
+        "kadal-panjang",
+        "kadal-pendek"
+      ],
+      "correct": "kadal-pendek"
     }
   ]
 }

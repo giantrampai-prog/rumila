@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-organ-tubuh",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,15 @@
       "t-jantung": "Mana jantungnya? Jantung berdetak dug-dug.",
       "t-paru": "Mana paru-parunya? Paru-paru untuk bernapas.",
       "t-otak": "Mana otaknya? Otak untuk berpikir.",
-      "t-jantung2": "Mana jantungnya?"
+      "t-jantung2": "Mana jantungnya?",
+      "i-otot": "otot",
+      "t-tulang": "Mana tulangnya? Tulang membuat tubuh kita kuat dan tegak.",
+      "t-otot": "Mana ototnya? Otot membantu kita bergerak.",
+      "t-jantung3": "Mana jantungnya? Jantung memompa darah ke seluruh tubuh.",
+      "t-paru2": "Mana paru-parunya?",
+      "t-otak2": "Mana otaknya?",
+      "t-tulang2": "Mana tulangnya?",
+      "t-otot2": "Mana ototnya?"
     },
     "en": {
       "judul": "Where Is That Organ?",
@@ -32,7 +40,15 @@
       "t-jantung": "Where is the heart? It goes thump-thump.",
       "t-paru": "Where are the lungs? Lungs are for breathing.",
       "t-otak": "Where is the brain? The brain is for thinking.",
-      "t-jantung2": "Where is the heart?"
+      "t-jantung2": "Where is the heart?",
+      "i-otot": "muscle",
+      "t-tulang": "Where is the bone? Bones keep our body strong and upright.",
+      "t-otot": "Where is the muscle? Muscles help us move.",
+      "t-jantung3": "Where is the heart? The heart pumps blood around the body.",
+      "t-paru2": "Where are the lungs?",
+      "t-otak2": "Where is the brain?",
+      "t-tulang2": "Where is the bone?",
+      "t-otot2": "Where is the muscle?"
     }
   },
   "knobs": {
@@ -79,6 +95,12 @@
       "labelKey": "i-tulang",
       "bin": "pilihan",
       "emoji": "🦴"
+    },
+    {
+      "id": "otot",
+      "labelKey": "i-otot",
+      "bin": "pilihan",
+      "emoji": "💪"
     }
   ],
   "pilihan": [
@@ -124,6 +146,79 @@
         "otak"
       ],
       "correct": "jantung"
+    },
+    {
+      "id": "tulang",
+      "promptKey": "t-tulang",
+      "choices": [
+        "tulang",
+        "jantung",
+        "otak"
+      ],
+      "correct": "tulang"
+    },
+    {
+      "id": "otot",
+      "promptKey": "t-otot",
+      "choices": [
+        "otot",
+        "paru",
+        "tulang",
+        "otak"
+      ],
+      "correct": "otot"
+    },
+    {
+      "id": "jantung3",
+      "promptKey": "t-jantung3",
+      "choices": [
+        "jantung",
+        "otot",
+        "paru"
+      ],
+      "correct": "jantung"
+    },
+    {
+      "id": "paru2",
+      "promptKey": "t-paru2",
+      "choices": [
+        "otak",
+        "paru",
+        "tulang",
+        "jantung"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "otak2",
+      "promptKey": "t-otak2",
+      "choices": [
+        "jantung",
+        "otot",
+        "otak"
+      ],
+      "correct": "otak"
+    },
+    {
+      "id": "tulang2",
+      "promptKey": "t-tulang2",
+      "choices": [
+        "paru",
+        "otot",
+        "tulang",
+        "otak"
+      ],
+      "correct": "tulang"
+    },
+    {
+      "id": "otot2",
+      "promptKey": "t-otot2",
+      "choices": [
+        "tulang",
+        "otot",
+        "jantung"
+      ],
+      "correct": "otot"
     }
   ]
 }

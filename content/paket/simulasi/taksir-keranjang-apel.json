@@ -1,6 +1,6 @@
 {
   "id": "taksir-keranjang-apel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -11,19 +11,21 @@
     "id": {
       "judul": "Kira-kira Berapa Apel?",
       "instruksi": "Lihat keranjang apel sebentar saja, lalu geser penanda ke angka yang kira-kira sama banyaknya.",
-      "apel": "apel"
+      "apel": "apel",
+      "apel-hijau": "apel hijau"
     },
     "en": {
       "judul": "About How Many Apples?",
       "instruksi": "Look at the basket of apples for a moment, then slide the marker to about how many you saw.",
-      "apel": "apple"
+      "apel": "apple",
+      "apel-hijau": "green apple"
     }
   },
   "knobs": {
     "max": {
       "min": 8,
       "max": 20,
-      "default": 8,
+      "default": 15,
       "step": 1,
       "keterangan": "jumlah apel terbanyak yang bisa muncul (target acak 8..max)"
     },
@@ -46,6 +48,12 @@
       "id": "apel",
       "role": "benda",
       "emoji": "🍎"
+    },
+    {
+      "labelKey": "apel-hijau",
+      "id": "apel-hijau",
+      "role": "benda",
+      "emoji": "🍏"
     }
   ]
 }

@@ -101,12 +101,12 @@ export function buatRondeDagang(p: PaketDagang, knobs: Knobs, seed: number): Ron
       return ronde;
     }
     case "tukar": {
-      // 1–3 lembar (customerRule.itemsMax, maks 3) yang totalnya ≤ batas: knob harga (ribuan) atau customerRule.maxTotal.
+      // 1–4 lembar (customerRule.itemsMax, maks 4) yang totalnya ≤ batas: knob harga (ribuan) atau customerRule.maxTotal.
       const pecahan = denoms.filter(d => d > KOIN);
       const batas = knobs.harga !== undefined ? Math.floor(knobs.harga) * KOIN : rule.maxTotal;
       const boleh = pecahan.filter(d => d <= batas);
       const pakai = boleh.length ? boleh : pecahan.length ? [pecahan[0]] : [10000];
-      const maksLembar = Math.min(3, Math.max(1, rule.itemsMax));
+      const maksLembar = Math.min(4, Math.max(1, rule.itemsMax));
       let lembar: number[] = [pilihSatu(pakai, r)];
       for (let coba = 0; coba < 12; coba++) {
         const calon = Array.from({ length: acakInt(r, 1, maksLembar) }, () => pilihSatu(pakai, r));

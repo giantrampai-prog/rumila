@@ -1,6 +1,6 @@
 {
   "id": "sains-bekal-cuaca-piknik",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,17 @@
       "t-hujan": "Hujan turun, jalan becek. Pakai apa di kaki?",
       "t-dingin": "Dingin sekali, tangan kaku. Pakai apa?",
       "t-hujan2": "Gerimis mulai turun. Bawa apa?",
-      "t-panas2": "Hari panas dan gerah. Pakai baju apa?"
+      "t-panas2": "Hari panas dan gerah. Pakai baju apa?",
+      "i-topi": "topi lebar",
+      "i-syal": "syal",
+      "i-jaket": "jaket tebal",
+      "i-sandal": "sandal jepit",
+      "i-kauskaki": "kaus kaki",
+      "t-panas3": "Matahari terik, kepala kepanasan. Pakai apa di kepala?",
+      "t-dingin2": "Angin dingin bertiup, leher terasa dingin. Pakai apa?",
+      "t-dingin3": "Badan menggigil kedinginan. Pakai apa?",
+      "t-panas4": "Pasir pantai panas, mau main air. Pakai apa di kaki?",
+      "t-dingin4": "Kaki dingin sekali. Pakai apa di kaki?"
     },
     "en": {
       "judul": "Getting Ready for the Picnic",
@@ -36,7 +46,17 @@
       "t-hujan": "It's raining, the path is muddy. What goes on our feet?",
       "t-dingin": "So cold, our hands are stiff. What do we wear?",
       "t-hujan2": "A drizzle is starting. What do we take?",
-      "t-panas2": "A hot, sticky day. Which top do we wear?"
+      "t-panas2": "A hot, sticky day. Which top do we wear?",
+      "i-topi": "sun hat",
+      "i-syal": "scarf",
+      "i-jaket": "warm jacket",
+      "i-sandal": "flip-flops",
+      "i-kauskaki": "socks",
+      "t-panas3": "The sun is blazing, your head is hot. What do you wear on your head?",
+      "t-dingin2": "A cold wind blows and your neck feels cold. What do you wear?",
+      "t-dingin3": "Your body is shivering with cold. What do you wear?",
+      "t-panas4": "The beach sand is hot and we'll play in the water. What do you wear on your feet?",
+      "t-dingin4": "Your feet are very cold. What do you wear on your feet?"
     }
   },
   "knobs": {
@@ -89,6 +109,36 @@
       "labelKey": "i-kaus",
       "bin": "pilihan",
       "emoji": "👕"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi",
+      "labelKey": "i-topi",
+      "emoji": "👒"
+    },
+    {
+      "bin": "pilihan",
+      "id": "syal",
+      "labelKey": "i-syal",
+      "emoji": "🧣"
+    },
+    {
+      "bin": "pilihan",
+      "id": "jaket",
+      "labelKey": "i-jaket",
+      "emoji": "🧥"
+    },
+    {
+      "bin": "pilihan",
+      "id": "sandal",
+      "labelKey": "i-sandal",
+      "emoji": "🩴"
+    },
+    {
+      "bin": "pilihan",
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "emoji": "🧦"
     }
   ],
   "pilihan": [
@@ -143,6 +193,57 @@
         "payung"
       ],
       "correct": "kaus"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t-panas3",
+      "choices": [
+        "sarungtangan",
+        "topi",
+        "sepatubot"
+      ],
+      "correct": "topi"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t-dingin2",
+      "choices": [
+        "syal",
+        "kacamata",
+        "sandal"
+      ],
+      "correct": "syal"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t-dingin3",
+      "choices": [
+        "kaus",
+        "kacamata",
+        "jaket",
+        "sandal"
+      ],
+      "correct": "jaket"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t-panas4",
+      "choices": [
+        "sarungtangan",
+        "sandal",
+        "syal"
+      ],
+      "correct": "sandal"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t-dingin4",
+      "choices": [
+        "sandal",
+        "kacamata",
+        "kauskaki"
+      ],
+      "correct": "kauskaki"
     }
   ]
 }

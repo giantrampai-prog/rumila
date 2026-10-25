@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-ayam",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,7 +19,41 @@
       "s-bebek": "Siklus hidup bebek",
       "bebek-telur": "telur bebek",
       "bebek-anak": "anak bebek kecil",
-      "bebek-dewasa": "bebek dewasa"
+      "bebek-dewasa": "bebek dewasa",
+      "t-jago": "Siklus ayam jago",
+      "jago-telur": "telur",
+      "jago-anak": "anak ayam",
+      "jago-dewasa": "ayam jago",
+      "t-induk": "Induk ayam",
+      "induk-induk": "induk ayam bertelur",
+      "induk-telur": "telur",
+      "induk-retak": "telur retak, menetas",
+      "induk-anak": "anak ayam",
+      "t-bebek-menetas": "Bebek menetas",
+      "bebek-menetas-telur": "telur bebek",
+      "bebek-menetas-retak": "telur retak, menetas",
+      "bebek-menetas-anak": "anak bebek kecil",
+      "bebek-menetas-dewasa": "bebek dewasa",
+      "t-tumbuh": "Ayam tumbuh",
+      "tumbuh-telur": "telur",
+      "tumbuh-retak": "telur retak, menetas",
+      "tumbuh-dewasa": "ayam jago",
+      "t-besar": "Anak ayam besar",
+      "besar-retak": "baru menetas",
+      "besar-anak": "anak ayam",
+      "besar-dewasa": "ayam dewasa",
+      "t-jago-kecil": "Jago kecil",
+      "jago-kecil-retak": "baru menetas",
+      "jago-kecil-anak": "anak ayam",
+      "jago-kecil-dewasa": "ayam jago",
+      "t-bebek-induk": "Induk bebek",
+      "bebek-induk-induk": "induk bebek bertelur",
+      "bebek-induk-telur": "telur bebek",
+      "bebek-induk-anak": "anak bebek kecil",
+      "t-bebek-besar": "Anak bebek besar",
+      "bebek-besar-retak": "baru menetas",
+      "bebek-besar-anak": "anak bebek kecil",
+      "bebek-besar-dewasa": "bebek dewasa"
     },
     "en": {
       "judul": "Egg to Chicken",
@@ -32,7 +66,41 @@
       "s-bebek": "Duck life cycle",
       "bebek-telur": "duck egg",
       "bebek-anak": "little duckling",
-      "bebek-dewasa": "grown duck"
+      "bebek-dewasa": "grown duck",
+      "t-jago": "The rooster's life cycle",
+      "jago-telur": "egg",
+      "jago-anak": "chick",
+      "jago-dewasa": "rooster",
+      "t-induk": "The mother hen",
+      "induk-induk": "the hen lays an egg",
+      "induk-telur": "egg",
+      "induk-retak": "the egg cracks and hatches",
+      "induk-anak": "chick",
+      "t-bebek-menetas": "A duckling hatches",
+      "bebek-menetas-telur": "duck egg",
+      "bebek-menetas-retak": "the egg cracks and hatches",
+      "bebek-menetas-anak": "little duckling",
+      "bebek-menetas-dewasa": "grown-up duck",
+      "t-tumbuh": "A chicken grows",
+      "tumbuh-telur": "egg",
+      "tumbuh-retak": "the egg cracks and hatches",
+      "tumbuh-dewasa": "rooster",
+      "t-besar": "The chick gets big",
+      "besar-retak": "just hatched",
+      "besar-anak": "chick",
+      "besar-dewasa": "grown-up hen",
+      "t-jago-kecil": "The little rooster",
+      "jago-kecil-retak": "just hatched",
+      "jago-kecil-anak": "chick",
+      "jago-kecil-dewasa": "rooster",
+      "t-bebek-induk": "The mother duck",
+      "bebek-induk-induk": "the duck lays an egg",
+      "bebek-induk-telur": "duck egg",
+      "bebek-induk-anak": "little duckling",
+      "t-bebek-besar": "The duckling gets big",
+      "bebek-besar-retak": "just hatched",
+      "bebek-besar-anak": "little duckling",
+      "bebek-besar-dewasa": "grown-up duck"
     }
   },
   "knobs": {
@@ -101,6 +169,213 @@
         {
           "id": "dewasa",
           "labelKey": "bebek-dewasa",
+          "emoji": "🦆",
+          "scale": 1.4
+        }
+      ]
+    },
+    {
+      "id": "jago",
+      "titleKey": "t-jago",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "jago-telur",
+          "emoji": "🥚",
+          "scale": 0.8
+        },
+        {
+          "id": "anak",
+          "labelKey": "jago-anak",
+          "emoji": "🐤",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "jago-dewasa",
+          "emoji": "🐓",
+          "scale": 1.4
+        }
+      ]
+    },
+    {
+      "id": "induk",
+      "titleKey": "t-induk",
+      "steps": [
+        {
+          "id": "induk",
+          "labelKey": "induk-induk",
+          "emoji": "🐔",
+          "scale": 1.4
+        },
+        {
+          "id": "telur",
+          "labelKey": "induk-telur",
+          "emoji": "🥚",
+          "scale": 0.8
+        },
+        {
+          "id": "retak",
+          "labelKey": "induk-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "anak",
+          "labelKey": "induk-anak",
+          "emoji": "🐥",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "bebek-menetas",
+      "titleKey": "t-bebek-menetas",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "bebek-menetas-telur",
+          "emoji": "🥚",
+          "scale": 0.8,
+          "color": "#c8e6c9"
+        },
+        {
+          "id": "retak",
+          "labelKey": "bebek-menetas-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "anak",
+          "labelKey": "bebek-menetas-anak",
+          "emoji": "🐤",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "bebek-menetas-dewasa",
+          "emoji": "🦆",
+          "scale": 1.4
+        }
+      ]
+    },
+    {
+      "id": "tumbuh",
+      "titleKey": "t-tumbuh",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "tumbuh-telur",
+          "emoji": "🥚",
+          "scale": 0.8
+        },
+        {
+          "id": "retak",
+          "labelKey": "tumbuh-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "tumbuh-dewasa",
+          "emoji": "🐓",
+          "scale": 1.4
+        }
+      ]
+    },
+    {
+      "id": "besar",
+      "titleKey": "t-besar",
+      "steps": [
+        {
+          "id": "retak",
+          "labelKey": "besar-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "anak",
+          "labelKey": "besar-anak",
+          "emoji": "🐥",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "besar-dewasa",
+          "emoji": "🐔",
+          "scale": 1.4,
+          "color": "#8d6e63"
+        }
+      ]
+    },
+    {
+      "id": "jago-kecil",
+      "titleKey": "t-jago-kecil",
+      "steps": [
+        {
+          "id": "retak",
+          "labelKey": "jago-kecil-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "anak",
+          "labelKey": "jago-kecil-anak",
+          "emoji": "🐤",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "jago-kecil-dewasa",
+          "emoji": "🐓",
+          "scale": 1.4
+        }
+      ]
+    },
+    {
+      "id": "bebek-induk",
+      "titleKey": "t-bebek-induk",
+      "steps": [
+        {
+          "id": "induk",
+          "labelKey": "bebek-induk-induk",
+          "emoji": "🦆",
+          "scale": 1.4
+        },
+        {
+          "id": "telur",
+          "labelKey": "bebek-induk-telur",
+          "emoji": "🥚",
+          "scale": 0.8,
+          "color": "#c8e6c9"
+        },
+        {
+          "id": "anak",
+          "labelKey": "bebek-induk-anak",
+          "emoji": "🐤",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "bebek-besar",
+      "titleKey": "t-bebek-besar",
+      "steps": [
+        {
+          "id": "retak",
+          "labelKey": "bebek-besar-retak",
+          "emoji": "🐣",
+          "scale": 0.9
+        },
+        {
+          "id": "anak",
+          "labelKey": "bebek-besar-anak",
+          "emoji": "🐤",
+          "scale": 1
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "bebek-besar-dewasa",
           "emoji": "🦆",
           "scale": 1.4
         }

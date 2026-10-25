@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-benda-langit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,15 @@
       "t-matahari": "Mana Matahari?",
       "t-bulan": "Mana Bulan? Bulan kecil dan abu-abu.",
       "t-bumi2": "Mana Bumi?",
-      "t-mars": "Mana Mars yang merah?"
+      "t-mars": "Mana Mars yang merah?",
+      "i-saturnus": "Saturnus",
+      "i-komet": "komet",
+      "t-bintang": "Mana bintangnya?",
+      "t-saturnus": "Mana Saturnus? Saturnus punya cincin.",
+      "t-komet": "Mana komet? Komet punya ekor panjang.",
+      "t-matahari2": "Mana Matahari? Matahari memberi kita cahaya dan panas.",
+      "t-bulan2": "Mana Bulan? Bulan mengelilingi Bumi.",
+      "t-mars2": "Mana Mars?"
     },
     "en": {
       "judul": "Which Is Earth, Which Is Moon?",
@@ -36,7 +44,15 @@
       "t-matahari": "Where is the Sun?",
       "t-bulan": "Where is the Moon? The Moon is small and grey.",
       "t-bumi2": "Where is Earth?",
-      "t-mars": "Where is red Mars?"
+      "t-mars": "Where is red Mars?",
+      "i-saturnus": "Saturn",
+      "i-komet": "a comet",
+      "t-bintang": "Where is the star?",
+      "t-saturnus": "Where is Saturn? Saturn has rings.",
+      "t-komet": "Where is the comet? A comet has a long tail.",
+      "t-matahari2": "Where is the Sun? The Sun gives us light and heat.",
+      "t-bulan2": "Where is the Moon? The Moon goes around Earth.",
+      "t-mars2": "Where is Mars?"
     }
   },
   "knobs": {
@@ -95,6 +111,18 @@
       "bin": "pilihan",
       "emoji": "⭐",
       "scale": 0.6
+    },
+    {
+      "id": "saturnus",
+      "labelKey": "i-saturnus",
+      "bin": "pilihan",
+      "emoji": "🪐"
+    },
+    {
+      "id": "komet",
+      "labelKey": "i-komet",
+      "bin": "pilihan",
+      "emoji": "☄️"
     }
   ],
   "pilihan": [
@@ -148,6 +176,69 @@
         "bumi",
         "matahari",
         "bintang"
+      ],
+      "correct": "mars"
+    },
+    {
+      "id": "bintang",
+      "promptKey": "t-bintang",
+      "choices": [
+        "bintang",
+        "bumi",
+        "bulan"
+      ],
+      "correct": "bintang"
+    },
+    {
+      "id": "saturnus",
+      "promptKey": "t-saturnus",
+      "choices": [
+        "saturnus",
+        "bumi",
+        "mars",
+        "bulan"
+      ],
+      "correct": "saturnus"
+    },
+    {
+      "id": "komet",
+      "promptKey": "t-komet",
+      "choices": [
+        "komet",
+        "bintang",
+        "bulan",
+        "saturnus"
+      ],
+      "correct": "komet"
+    },
+    {
+      "id": "matahari2",
+      "promptKey": "t-matahari2",
+      "choices": [
+        "matahari",
+        "bulan",
+        "saturnus"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "bulan2",
+      "promptKey": "t-bulan2",
+      "choices": [
+        "bulan",
+        "matahari",
+        "komet",
+        "bumi"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "mars2",
+      "promptKey": "t-mars2",
+      "choices": [
+        "mars",
+        "saturnus",
+        "bumi"
       ],
       "correct": "mars"
     }

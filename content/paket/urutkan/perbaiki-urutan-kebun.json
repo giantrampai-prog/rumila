@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-kebun",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,7 +19,40 @@
       "mekar": "bunga mekar",
       "buat": "buat layang-layang",
       "lari": "lari sambil tarik",
-      "terbang": "layang-layang terbang"
+      "terbang": "layang-layang terbang",
+      "t-siram": "Menyiram bunga",
+      "siram-isi": "isi air dari keran",
+      "siram-siram": "siram bunga",
+      "siram-segar": "bunga segar",
+      "t-daun": "Daun di halaman",
+      "daun-jatuh": "daun jatuh",
+      "daun-sapu": "sapu daun",
+      "daun-buang": "buang ke tempat sampah",
+      "t-petik": "Memetik mangga",
+      "petik-tangga": "naik tangga",
+      "petik-petik": "petik mangga",
+      "petik-keranjang": "taruh di keranjang",
+      "t-wortel": "Menanam wortel",
+      "wortel-biji": "tanam biji",
+      "wortel-daun": "daun tumbuh",
+      "wortel-cabut": "cabut wortel",
+      "t-pohon": "Menanam pohon",
+      "pohon-lubang": "gali lubang",
+      "pohon-bibit": "tanam bibit",
+      "pohon-siram": "siram air",
+      "pohon-besar": "pohon besar",
+      "t-semangka": "Menanam semangka",
+      "semangka-biji": "tanam biji",
+      "semangka-buah": "semangka besar",
+      "semangka-makan": "potong dan makan",
+      "t-lebah": "Lebah di kebun",
+      "lebah-mekar": "bunga mekar",
+      "lebah-lebah": "lebah hinggap",
+      "lebah-madu": "madu di sarang",
+      "t-cacing": "Habis hujan",
+      "cacing-hujan": "hujan turun",
+      "cacing-becek": "tanah basah",
+      "cacing-cacing": "cacing keluar"
     },
     "en": {
       "judul": "Mixed-Up Garden Order",
@@ -32,7 +65,40 @@
       "mekar": "flower blooms",
       "buat": "make the kite",
       "lari": "run and pull",
-      "terbang": "kite flies"
+      "terbang": "kite flies",
+      "t-siram": "Watering flowers",
+      "siram-isi": "fill water from the tap",
+      "siram-siram": "water the flowers",
+      "siram-segar": "fresh flowers",
+      "t-daun": "Leaves in the yard",
+      "daun-jatuh": "leaves fall",
+      "daun-sapu": "sweep the leaves",
+      "daun-buang": "throw them in the bin",
+      "t-petik": "Picking mangoes",
+      "petik-tangga": "climb the ladder",
+      "petik-petik": "pick a mango",
+      "petik-keranjang": "put it in the basket",
+      "t-wortel": "Growing carrots",
+      "wortel-biji": "plant the seeds",
+      "wortel-daun": "leaves grow",
+      "wortel-cabut": "pull up the carrot",
+      "t-pohon": "Planting a tree",
+      "pohon-lubang": "dig a hole",
+      "pohon-bibit": "plant the seedling",
+      "pohon-siram": "water it",
+      "pohon-besar": "a big tree",
+      "t-semangka": "Growing watermelon",
+      "semangka-biji": "plant the seeds",
+      "semangka-buah": "a big watermelon",
+      "semangka-makan": "cut and eat",
+      "t-lebah": "Bees in the garden",
+      "lebah-mekar": "flowers bloom",
+      "lebah-lebah": "a bee lands",
+      "lebah-madu": "honey in the hive",
+      "t-cacing": "After the rain",
+      "cacing-hujan": "rain falls",
+      "cacing-becek": "the soil gets wet",
+      "cacing-cacing": "worms come out"
     }
   },
   "knobs": {
@@ -94,6 +160,179 @@
           "id": "terbang",
           "labelKey": "terbang",
           "emoji": "🪁"
+        }
+      ]
+    },
+    {
+      "id": "siram",
+      "titleKey": "t-siram",
+      "steps": [
+        {
+          "id": "isi",
+          "labelKey": "siram-isi",
+          "emoji": "🚰"
+        },
+        {
+          "id": "siram",
+          "labelKey": "siram-siram",
+          "emoji": "💧"
+        },
+        {
+          "id": "segar",
+          "labelKey": "siram-segar",
+          "emoji": "🌷"
+        }
+      ]
+    },
+    {
+      "id": "daun",
+      "titleKey": "t-daun",
+      "steps": [
+        {
+          "id": "jatuh",
+          "labelKey": "daun-jatuh",
+          "emoji": "🍂"
+        },
+        {
+          "id": "sapu",
+          "labelKey": "daun-sapu",
+          "emoji": "🧹"
+        },
+        {
+          "id": "buang",
+          "labelKey": "daun-buang",
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": "petik",
+      "titleKey": "t-petik",
+      "steps": [
+        {
+          "id": "tangga",
+          "labelKey": "petik-tangga",
+          "emoji": "🪜"
+        },
+        {
+          "id": "petik",
+          "labelKey": "petik-petik",
+          "emoji": "🥭"
+        },
+        {
+          "id": "keranjang",
+          "labelKey": "petik-keranjang",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
+      "id": "wortel",
+      "titleKey": "t-wortel",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "wortel-biji",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "wortel-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "cabut",
+          "labelKey": "wortel-cabut",
+          "emoji": "🥕"
+        }
+      ]
+    },
+    {
+      "id": "pohon",
+      "titleKey": "t-pohon",
+      "steps": [
+        {
+          "id": "lubang",
+          "labelKey": "pohon-lubang",
+          "emoji": "🕳️"
+        },
+        {
+          "id": "bibit",
+          "labelKey": "pohon-bibit",
+          "emoji": "🌱"
+        },
+        {
+          "id": "siram",
+          "labelKey": "pohon-siram",
+          "emoji": "💧"
+        },
+        {
+          "id": "besar",
+          "labelKey": "pohon-besar",
+          "emoji": "🌳"
+        }
+      ]
+    },
+    {
+      "id": "semangka",
+      "titleKey": "t-semangka",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "semangka-biji",
+          "emoji": "🌱"
+        },
+        {
+          "id": "buah",
+          "labelKey": "semangka-buah",
+          "emoji": "🍉"
+        },
+        {
+          "id": "makan",
+          "labelKey": "semangka-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "lebah",
+      "titleKey": "t-lebah",
+      "steps": [
+        {
+          "id": "mekar",
+          "labelKey": "lebah-mekar",
+          "emoji": "🌸"
+        },
+        {
+          "id": "lebah",
+          "labelKey": "lebah-lebah",
+          "emoji": "🐝"
+        },
+        {
+          "id": "madu",
+          "labelKey": "lebah-madu",
+          "emoji": "🍯"
+        }
+      ]
+    },
+    {
+      "id": "cacing",
+      "titleKey": "t-cacing",
+      "steps": [
+        {
+          "id": "hujan",
+          "labelKey": "cacing-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "becek",
+          "labelKey": "cacing-becek",
+          "emoji": "💧"
+        },
+        {
+          "id": "cacing",
+          "labelKey": "cacing-cacing",
+          "emoji": "🪱"
         }
       ]
     }

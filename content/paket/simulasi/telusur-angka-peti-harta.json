@@ -1,6 +1,6 @@
 {
   "id": "telusur-angka-peti-harta",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -22,10 +22,10 @@
   "knobs": {
     "max": {
       "min": 1,
-      "max": 5,
-      "default": 5,
+      "max": 9,
+      "default": 9,
       "step": 1,
-      "keterangan": "angka terbesar yang diacak (1 sampai max)"
+      "keterangan": "angka terbesar yang diacak (1 sampai max; max ≥ 6 ikut angka 0)"
     },
     "panah": {
       "min": 0,
@@ -41,6 +41,11 @@
   "world": "pulau-harta",
   "mode": "telusur",
   "items": [
-    { "id": "peti", "labelKey": "peti", "role": "benda", "emoji": "🧰" }
+    {
+      "id": "peti",
+      "labelKey": "peti",
+      "role": "benda",
+      "emoji": "🧰"
+    }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "kalung-buatanku",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pola",
   "competencyIds": [
@@ -14,7 +14,11 @@
       "kerang": "kerang",
       "bunga": "bunga",
       "bintang": "bintang",
-      "permata": "permata"
+      "permata": "permata",
+      "stroberi": "stroberi",
+      "kupu": "kupu-kupu",
+      "daun": "daun semanggi",
+      "bulan": "bulan"
     },
     "en": {
       "judul": "My Own Necklace",
@@ -22,7 +26,11 @@
       "kerang": "shell",
       "bunga": "flower",
       "bintang": "star",
-      "permata": "gem"
+      "permata": "gem",
+      "stroberi": "strawberry",
+      "kupu": "butterfly",
+      "daun": "clover",
+      "bulan": "moon"
     }
   },
   "knobs": {
@@ -60,6 +68,26 @@
       "labelKey": "permata",
       "id": "permata",
       "emoji": "💎"
+    },
+    {
+      "labelKey": "stroberi",
+      "id": "stroberi",
+      "emoji": "🍓"
+    },
+    {
+      "labelKey": "kupu",
+      "id": "kupu",
+      "emoji": "🦋"
+    },
+    {
+      "labelKey": "daun",
+      "id": "daun",
+      "emoji": "🍀"
+    },
+    {
+      "labelKey": "bulan",
+      "id": "bulan",
+      "emoji": "🌙"
     }
   ],
   "patterns": [],

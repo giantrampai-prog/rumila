@@ -1,6 +1,6 @@
 {
   "id": "baju-beruang-besar-kecil",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,9 @@
       "mangkuk": "mangkuk",
       "bola": "bola",
       "tBesar": "Mana yang lebih besar?",
-      "tKecil": "Mana yang lebih kecil?"
+      "tKecil": "Mana yang lebih kecil?",
+      "celana": "celana",
+      "kauskaki": "kaus kaki"
     },
     "en": {
       "judul": "Bear Outfits",
@@ -30,7 +32,9 @@
       "mangkuk": "bowl",
       "bola": "ball",
       "tBesar": "Which one is bigger?",
-      "tKecil": "Which one is smaller?"
+      "tKecil": "Which one is smaller?",
+      "celana": "trousers",
+      "kauskaki": "socks"
     }
   },
   "knobs": {
@@ -123,6 +127,34 @@
       "bin": "pilihan",
       "emoji": "⚽",
       "scale": 1
+    },
+    {
+      "id": "celana-besar",
+      "labelKey": "celana",
+      "bin": "pilihan",
+      "emoji": "👖",
+      "scale": 1.7
+    },
+    {
+      "id": "celana-kecil",
+      "labelKey": "celana",
+      "bin": "pilihan",
+      "emoji": "👖",
+      "scale": 1
+    },
+    {
+      "id": "kauskaki-besar",
+      "labelKey": "kauskaki",
+      "bin": "pilihan",
+      "emoji": "🧦",
+      "scale": 1.7
+    },
+    {
+      "id": "kauskaki-kecil",
+      "labelKey": "kauskaki",
+      "bin": "pilihan",
+      "emoji": "🧦",
+      "scale": 1
     }
   ],
   "pilihan": [
@@ -170,6 +202,87 @@
         "bola-besar"
       ],
       "correct": "bola-besar"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tKecil",
+      "choices": [
+        "baju-besar",
+        "baju-kecil"
+      ],
+      "correct": "baju-kecil"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBesar",
+      "choices": [
+        "topi-kecil",
+        "topi-besar"
+      ],
+      "correct": "topi-besar"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tKecil",
+      "choices": [
+        "sepatu-besar",
+        "sepatu-kecil"
+      ],
+      "correct": "sepatu-kecil"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tBesar",
+      "choices": [
+        "mangkuk-kecil",
+        "mangkuk-besar"
+      ],
+      "correct": "mangkuk-besar"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tKecil",
+      "choices": [
+        "bola-besar",
+        "bola-kecil"
+      ],
+      "correct": "bola-kecil"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tBesar",
+      "choices": [
+        "celana-kecil",
+        "celana-besar"
+      ],
+      "correct": "celana-besar"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tKecil",
+      "choices": [
+        "celana-besar",
+        "celana-kecil"
+      ],
+      "correct": "celana-kecil"
+    },
+    {
+      "id": "r13",
+      "promptKey": "tKecil",
+      "choices": [
+        "kauskaki-besar",
+        "kauskaki-kecil"
+      ],
+      "correct": "kauskaki-kecil"
+    },
+    {
+      "id": "r14",
+      "promptKey": "tBesar",
+      "choices": [
+        "kauskaki-kecil",
+        "kauskaki-besar"
+      ],
+      "correct": "kauskaki-besar"
     }
   ]
 }

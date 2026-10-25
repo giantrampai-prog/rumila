@@ -1,6 +1,6 @@
 {
   "id": "cerita-pertama-lalu-terakhir",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -20,7 +20,43 @@
       "gali": "gali tanah",
       "biji": "taruh biji",
       "siram": "siram air",
-      "tumbuh": "tunas tumbuh"
+      "tumbuh": "tunas tumbuh",
+      "t-tangan": "Sebelum makan",
+      "tangan-sabun": "cuci tangan pakai sabun",
+      "tangan-bilas": "bilas dengan air",
+      "tangan-makan": "makan nasi",
+      "t-gambar": "Menggambar",
+      "gambar-kertas": "ambil kertas",
+      "gambar-krayon": "gambar dengan krayon",
+      "gambar-tempel": "tempel di dinding",
+      "t-telur": "Telur goreng",
+      "telur-pecah": "pecahkan telur",
+      "telur-goreng": "goreng di wajan",
+      "telur-makan": "makan telur",
+      "t-dongeng": "Sebelum tidur",
+      "dongeng-buku": "ambil buku cerita",
+      "dongeng-baca": "dibacakan cerita",
+      "dongeng-tidur": "tertidur",
+      "t-pasar": "Ke pasar",
+      "pasar-keranjang": "bawa keranjang",
+      "pasar-beli": "beli sayur",
+      "pasar-masak": "masak di rumah",
+      "t-pisang": "Makan pisang",
+      "pisang-kupas": "kupas pisang",
+      "pisang-makan": "makan pisang",
+      "pisang-buang": "buang kulit ke tempat sampah",
+      "t-hujan": "Hari hujan",
+      "hujan-awan": "awan datang",
+      "hujan-turun": "hujan turun",
+      "hujan-pelangi": "pelangi muncul",
+      "t-bola": "Main bola",
+      "bola-tendang": "tendang bola",
+      "bola-gol": "bola masuk gawang",
+      "bola-sorak": "bersorak senang",
+      "t-malam": "Malam hari",
+      "malam-sikat": "sikat gigi",
+      "malam-lampu": "matikan lampu",
+      "malam-tidur": "tidur"
     },
     "en": {
       "judul": "First, Then, Last Story",
@@ -34,7 +70,43 @@
       "gali": "dig the soil",
       "biji": "put in the seed",
       "siram": "water it",
-      "tumbuh": "a sprout grows"
+      "tumbuh": "a sprout grows",
+      "t-tangan": "Before eating",
+      "tangan-sabun": "wash hands with soap",
+      "tangan-bilas": "rinse with water",
+      "tangan-makan": "eat rice",
+      "t-gambar": "Drawing",
+      "gambar-kertas": "take some paper",
+      "gambar-krayon": "draw with crayons",
+      "gambar-tempel": "stick it on the wall",
+      "t-telur": "Fried egg",
+      "telur-pecah": "crack the egg",
+      "telur-goreng": "fry it in the pan",
+      "telur-makan": "eat the egg",
+      "t-dongeng": "Before bed",
+      "dongeng-buku": "take a storybook",
+      "dongeng-baca": "listen to the story",
+      "dongeng-tidur": "fall asleep",
+      "t-pasar": "To the market",
+      "pasar-keranjang": "bring a basket",
+      "pasar-beli": "buy vegetables",
+      "pasar-masak": "cook at home",
+      "t-pisang": "Eating a banana",
+      "pisang-kupas": "peel the banana",
+      "pisang-makan": "eat the banana",
+      "pisang-buang": "throw the peel in the bin",
+      "t-hujan": "A rainy day",
+      "hujan-awan": "clouds come",
+      "hujan-turun": "rain falls",
+      "hujan-pelangi": "a rainbow appears",
+      "t-bola": "Playing football",
+      "bola-tendang": "kick the ball",
+      "bola-gol": "the ball goes in the goal",
+      "bola-sorak": "cheer happily",
+      "t-malam": "Night time",
+      "malam-sikat": "brush teeth",
+      "malam-lampu": "turn off the light",
+      "malam-tidur": "go to sleep"
     }
   },
   "knobs": {
@@ -56,20 +128,241 @@
       "id": "pagi",
       "titleKey": "pagi",
       "steps": [
-        { "id": "bangun", "labelKey": "bangun", "emoji": "🛏️" },
-        { "id": "mandi", "labelKey": "mandi", "emoji": "🚿" },
-        { "id": "sarapan", "labelKey": "sarapan", "emoji": "🍳" },
-        { "id": "berangkat", "labelKey": "berangkat", "emoji": "🎒" }
+        {
+          "id": "bangun",
+          "labelKey": "bangun",
+          "emoji": "🛏️"
+        },
+        {
+          "id": "mandi",
+          "labelKey": "mandi",
+          "emoji": "🚿"
+        },
+        {
+          "id": "sarapan",
+          "labelKey": "sarapan",
+          "emoji": "🍳"
+        },
+        {
+          "id": "berangkat",
+          "labelKey": "berangkat",
+          "emoji": "🎒"
+        }
       ]
     },
     {
       "id": "tanam",
       "titleKey": "tanam",
       "steps": [
-        { "id": "gali", "labelKey": "gali", "emoji": "⛏️" },
-        { "id": "biji", "labelKey": "biji", "emoji": "🌰" },
-        { "id": "siram", "labelKey": "siram", "emoji": "🪣" },
-        { "id": "tumbuh", "labelKey": "tumbuh", "emoji": "🌱" }
+        {
+          "id": "gali",
+          "labelKey": "gali",
+          "emoji": "⛏️"
+        },
+        {
+          "id": "biji",
+          "labelKey": "biji",
+          "emoji": "🌰"
+        },
+        {
+          "id": "siram",
+          "labelKey": "siram",
+          "emoji": "🪣"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "tumbuh",
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": "tangan",
+      "titleKey": "t-tangan",
+      "steps": [
+        {
+          "id": "sabun",
+          "labelKey": "tangan-sabun",
+          "emoji": "🧼"
+        },
+        {
+          "id": "bilas",
+          "labelKey": "tangan-bilas",
+          "emoji": "🚰"
+        },
+        {
+          "id": "makan",
+          "labelKey": "tangan-makan",
+          "emoji": "🍚"
+        }
+      ]
+    },
+    {
+      "id": "gambar",
+      "titleKey": "t-gambar",
+      "steps": [
+        {
+          "id": "kertas",
+          "labelKey": "gambar-kertas",
+          "emoji": "📄"
+        },
+        {
+          "id": "krayon",
+          "labelKey": "gambar-krayon",
+          "emoji": "🖍️"
+        },
+        {
+          "id": "tempel",
+          "labelKey": "gambar-tempel",
+          "emoji": "🖼️"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "pecah",
+          "labelKey": "telur-pecah",
+          "emoji": "🥚"
+        },
+        {
+          "id": "goreng",
+          "labelKey": "telur-goreng",
+          "emoji": "🍳"
+        },
+        {
+          "id": "makan",
+          "labelKey": "telur-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "dongeng",
+      "titleKey": "t-dongeng",
+      "steps": [
+        {
+          "id": "buku",
+          "labelKey": "dongeng-buku",
+          "emoji": "📚"
+        },
+        {
+          "id": "baca",
+          "labelKey": "dongeng-baca",
+          "emoji": "📖"
+        },
+        {
+          "id": "tidur",
+          "labelKey": "dongeng-tidur",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": "pasar",
+      "titleKey": "t-pasar",
+      "steps": [
+        {
+          "id": "keranjang",
+          "labelKey": "pasar-keranjang",
+          "emoji": "🧺"
+        },
+        {
+          "id": "beli",
+          "labelKey": "pasar-beli",
+          "emoji": "🥬"
+        },
+        {
+          "id": "masak",
+          "labelKey": "pasar-masak",
+          "emoji": "🍲"
+        }
+      ]
+    },
+    {
+      "id": "pisang",
+      "titleKey": "t-pisang",
+      "steps": [
+        {
+          "id": "kupas",
+          "labelKey": "pisang-kupas",
+          "emoji": "🍌"
+        },
+        {
+          "id": "makan",
+          "labelKey": "pisang-makan",
+          "emoji": "😋"
+        },
+        {
+          "id": "buang",
+          "labelKey": "pisang-buang",
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": "hujan",
+      "titleKey": "t-hujan",
+      "steps": [
+        {
+          "id": "awan",
+          "labelKey": "hujan-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "turun",
+          "labelKey": "hujan-turun",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "pelangi",
+          "labelKey": "hujan-pelangi",
+          "emoji": "🌈"
+        }
+      ]
+    },
+    {
+      "id": "bola",
+      "titleKey": "t-bola",
+      "steps": [
+        {
+          "id": "tendang",
+          "labelKey": "bola-tendang",
+          "emoji": "⚽"
+        },
+        {
+          "id": "gol",
+          "labelKey": "bola-gol",
+          "emoji": "🥅"
+        },
+        {
+          "id": "sorak",
+          "labelKey": "bola-sorak",
+          "emoji": "🎉"
+        }
+      ]
+    },
+    {
+      "id": "malam",
+      "titleKey": "t-malam",
+      "steps": [
+        {
+          "id": "sikat",
+          "labelKey": "malam-sikat",
+          "emoji": "🪥"
+        },
+        {
+          "id": "lampu",
+          "labelKey": "malam-lampu",
+          "emoji": "💡"
+        },
+        {
+          "id": "tidur",
+          "labelKey": "malam-tidur",
+          "emoji": "😴"
+        }
       ]
     }
   ]

@@ -99,7 +99,7 @@ export function kunciRonde(r: Ronde): string {
     case "urutkan":
       return JSON.stringify(["urutkan", r.ronde.mode, r.ronde.sequenceId]);
     case "pola":
-      return JSON.stringify(["pola", r.ronde.mode, r.ronde.correct, r.ronde.shown, r.ronde.wrongIndex ?? null, r.ronde.pilih ?? null]);
+      return JSON.stringify(["pola", r.ronde.mode, r.ronde.correct, r.ronde.shown, r.ronde.wrongIndex ?? null, r.ronde.pilih ?? null, r.ronde.mode === "cipta" ? r.ronde.palette.map((i) => i.id).sort() : null]);
     case "dagang":
       return JSON.stringify(["dagang", { ...r.ronde, laci: [...r.ronde.laci].sort((a, b) => a - b), lembar: [...r.ronde.lembar].sort((a, b) => a - b), benda: [...r.ronde.benda].sort(), pesanan: urut(r.ronde.pesanan) }]);
     case "simulasi":

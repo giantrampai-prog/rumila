@@ -1,6 +1,6 @@
 {
   "id": "putar-jarum-kegiatan-hari",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -16,7 +16,13 @@
       "istirahat": "istirahat pukul 10",
       "makan-siang": "makan siang pukul 12",
       "mandi-sore": "mandi sore pukul 4",
-      "tidur-malam": "tidur malam pukul 8"
+      "tidur-malam": "tidur malam pukul 8",
+      "menggambar": "menggambar pukul 9",
+      "pulang-sekolah": "pulang sekolah pukul 11",
+      "tidur-siang": "tidur siang pukul 1",
+      "membaca-buku": "membaca buku pukul 2",
+      "main-sepeda": "main sepeda pukul 3",
+      "minum-susu": "minum susu pukul 5"
     },
     "en": {
       "judul": "My Day on the Clock",
@@ -26,14 +32,20 @@
       "istirahat": "playtime at 10 o'clock",
       "makan-siang": "lunch at 12 o'clock",
       "mandi-sore": "bath at 4 o'clock",
-      "tidur-malam": "bedtime at 8 o'clock"
+      "tidur-malam": "bedtime at 8 o'clock",
+      "menggambar": "drawing at 9 o'clock",
+      "pulang-sekolah": "go home from school at 11 o'clock",
+      "tidur-siang": "nap time at 1 o'clock",
+      "membaca-buku": "reading a book at 2 o'clock",
+      "main-sepeda": "riding a bike at 3 o'clock",
+      "minum-susu": "drinking milk at 5 o'clock"
     }
   },
   "knobs": {
     "kegiatanAktif": {
       "min": 3,
-      "max": 6,
-      "default": 6,
+      "max": 12,
+      "default": 12,
       "step": 1,
       "keterangan": "jumlah kegiatan yang bisa diundi; semua jam bulat dan tidak ada jam ganda"
     }
@@ -85,6 +97,48 @@
       "role": "kegiatan",
       "emoji": "😴",
       "value": 8
+    },
+    {
+      "labelKey": "menggambar",
+      "id": "menggambar",
+      "role": "kegiatan",
+      "emoji": "🖍️",
+      "value": 9
+    },
+    {
+      "labelKey": "pulang-sekolah",
+      "id": "pulang-sekolah",
+      "role": "kegiatan",
+      "emoji": "🎒",
+      "value": 11
+    },
+    {
+      "labelKey": "tidur-siang",
+      "id": "tidur-siang",
+      "role": "kegiatan",
+      "emoji": "🛌",
+      "value": 1
+    },
+    {
+      "labelKey": "membaca-buku",
+      "id": "membaca-buku",
+      "role": "kegiatan",
+      "emoji": "📖",
+      "value": 2
+    },
+    {
+      "labelKey": "main-sepeda",
+      "id": "main-sepeda",
+      "role": "kegiatan",
+      "emoji": "🚲",
+      "value": 3
+    },
+    {
+      "labelKey": "minum-susu",
+      "id": "minum-susu",
+      "role": "kegiatan",
+      "emoji": "🥛",
+      "value": 5
     }
   ]
 }

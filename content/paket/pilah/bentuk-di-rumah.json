@@ -1,6 +1,6 @@
 {
   "id": "bentuk-di-rumah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,10 @@
       "gantungan": "gantungan baju",
       "tBulat": "Mana yang bulat?",
       "tKotak": "Mana yang kotak?",
-      "tSegitiga": "Mana yang segitiga?"
+      "tSegitiga": "Mana yang segitiga?",
+      "koin": "uang koin",
+      "kardus": "kardus",
+      "penggaris": "penggaris segitiga"
     },
     "en": {
       "judul": "Shapes at Home",
@@ -40,7 +43,10 @@
       "gantungan": "coat hanger",
       "tBulat": "Which one is round?",
       "tKotak": "Which one is square?",
-      "tSegitiga": "Which one is a triangle?"
+      "tSegitiga": "Which one is a triangle?",
+      "koin": "coin",
+      "kardus": "cardboard box",
+      "penggaris": "triangle ruler"
     }
   },
   "knobs": {
@@ -117,6 +123,24 @@
       "labelKey": "gantungan",
       "bin": "pilihan",
       "emoji": "🪝"
+    },
+    {
+      "bin": "pilihan",
+      "id": "koin",
+      "labelKey": "koin",
+      "emoji": "🪙"
+    },
+    {
+      "bin": "pilihan",
+      "id": "kardus",
+      "labelKey": "kardus",
+      "emoji": "📦"
+    },
+    {
+      "bin": "pilihan",
+      "id": "penggaris",
+      "labelKey": "penggaris",
+      "emoji": "📐"
     }
   ],
   "pilihan": [
@@ -179,6 +203,56 @@
         "piring"
       ],
       "correct": "pizza"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBulat",
+      "choices": [
+        "piring",
+        "kado",
+        "tenda"
+      ],
+      "correct": "piring"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tKotak",
+      "choices": [
+        "bingkai",
+        "bola",
+        "pizza"
+      ],
+      "correct": "bingkai"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "penggaris",
+        "jam",
+        "jendela"
+      ],
+      "correct": "penggaris"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tBulat",
+      "choices": [
+        "koin",
+        "kardus",
+        "penggaris"
+      ],
+      "correct": "koin"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tKotak",
+      "choices": [
+        "kardus",
+        "piring",
+        "tenda"
+      ],
+      "correct": "kardus"
     }
   ]
 }

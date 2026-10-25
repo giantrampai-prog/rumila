@@ -1,6 +1,6 @@
 {
   "id": "kue-tiga-tahap-urut",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -22,7 +22,63 @@
       "ragi": "ambil ragi",
       "uleni": "uleni adonan",
       "bentuk": "bentuk roti",
-      "roti2": "roti matang"
+      "roti2": "roti matang",
+      "t-kering": "Membuat kue kering: siapkan, campur, panggang",
+      "kering-cuci": "cuci tangan",
+      "kering-mentega": "ambil mentega",
+      "kering-aduk": "aduk adonan",
+      "kering-cetak": "cetak bentuk bintang",
+      "kering-oven": "masukkan ke oven",
+      "kering-jadi": "kue kering matang",
+      "t-pizza": "Membuat pizza: siapkan, campur, panggang",
+      "pizza-cuci": "cuci tangan",
+      "pizza-tepung": "ambil tepung",
+      "pizza-uleni": "uleni adonan",
+      "pizza-keju": "taburi keju",
+      "pizza-oven": "masukkan ke oven",
+      "pizza-jadi": "pizza matang",
+      "t-mangkuk": "Membuat kue mangkuk: siapkan, campur, panggang",
+      "mangkuk-cuci": "cuci tangan",
+      "mangkuk-telur": "ambil telur",
+      "mangkuk-kocok": "kocok adonan",
+      "mangkuk-tuang": "tuang ke cetakan",
+      "mangkuk-oven": "masukkan ke oven",
+      "mangkuk-jadi": "kue mangkuk matang",
+      "t-pai": "Membuat pai apel: siapkan, campur, panggang",
+      "pai-cuci": "cuci apel",
+      "pai-potong": "potong apel",
+      "pai-aduk": "aduk adonan",
+      "pai-tutup": "tutup apel dengan adonan",
+      "pai-oven": "masukkan ke oven",
+      "pai-jadi": "pai apel matang",
+      "t-bolu": "Membuat bolu pisang: siapkan, campur, panggang",
+      "bolu-kupas": "kupas pisang",
+      "bolu-lumat": "lumatkan pisang",
+      "bolu-telur": "tambah telur",
+      "bolu-aduk": "aduk adonan",
+      "bolu-oven": "masukkan ke oven",
+      "bolu-jadi": "bolu pisang matang",
+      "t-roti-cokelat": "Membuat roti cokelat: siapkan, campur, panggang",
+      "roti-cokelat-cuci": "cuci tangan",
+      "roti-cokelat-tepung": "ambil tepung",
+      "roti-cokelat-uleni": "uleni adonan",
+      "roti-cokelat-isi": "isi dengan cokelat",
+      "roti-cokelat-oven": "masukkan ke oven",
+      "roti-cokelat-jadi": "roti cokelat matang",
+      "t-nastar": "Membuat nastar: siapkan, campur, panggang",
+      "nastar-kupas": "kupas nanas",
+      "nastar-selai": "masak selai nanas",
+      "nastar-aduk": "aduk adonan",
+      "nastar-bulat": "bulatkan, isi selai",
+      "nastar-oven": "masukkan ke oven",
+      "nastar-jadi": "nastar matang",
+      "t-roti-sosis": "Membuat roti sosis: siapkan, campur, panggang",
+      "roti-sosis-cuci": "cuci tangan",
+      "roti-sosis-tepung": "ambil tepung",
+      "roti-sosis-uleni": "uleni adonan",
+      "roti-sosis-gulung": "gulung dengan sosis",
+      "roti-sosis-oven": "masukkan ke oven",
+      "roti-sosis-jadi": "roti sosis matang"
     },
     "en": {
       "judul": "Six Baking Steps",
@@ -38,7 +94,63 @@
       "ragi": "get the yeast",
       "uleni": "knead the dough",
       "bentuk": "shape the loaf",
-      "roti2": "the bread is done"
+      "roti2": "the bread is done",
+      "t-kering": "Making cookies: prepare, mix, bake",
+      "kering-cuci": "wash hands",
+      "kering-mentega": "take the butter",
+      "kering-aduk": "stir the dough",
+      "kering-cetak": "cut out star shapes",
+      "kering-oven": "put it in the oven",
+      "kering-jadi": "cookies are done",
+      "t-pizza": "Making pizza: prepare, mix, bake",
+      "pizza-cuci": "wash hands",
+      "pizza-tepung": "take the flour",
+      "pizza-uleni": "knead the dough",
+      "pizza-keju": "sprinkle cheese",
+      "pizza-oven": "put it in the oven",
+      "pizza-jadi": "pizza is done",
+      "t-mangkuk": "Making cupcakes: prepare, mix, bake",
+      "mangkuk-cuci": "wash hands",
+      "mangkuk-telur": "take the eggs",
+      "mangkuk-kocok": "whisk the batter",
+      "mangkuk-tuang": "spoon into the cups",
+      "mangkuk-oven": "put it in the oven",
+      "mangkuk-jadi": "cupcakes are done",
+      "t-pai": "Making apple pie: prepare, mix, bake",
+      "pai-cuci": "wash the apples",
+      "pai-potong": "cut the apples",
+      "pai-aduk": "stir the dough",
+      "pai-tutup": "cover the apples with dough",
+      "pai-oven": "put it in the oven",
+      "pai-jadi": "apple pie is done",
+      "t-bolu": "Making banana cake: prepare, mix, bake",
+      "bolu-kupas": "peel the bananas",
+      "bolu-lumat": "mash the bananas",
+      "bolu-telur": "add the eggs",
+      "bolu-aduk": "stir the batter",
+      "bolu-oven": "put it in the oven",
+      "bolu-jadi": "banana cake is done",
+      "t-roti-cokelat": "Making chocolate bread: prepare, mix, bake",
+      "roti-cokelat-cuci": "wash hands",
+      "roti-cokelat-tepung": "take the flour",
+      "roti-cokelat-uleni": "knead the dough",
+      "roti-cokelat-isi": "fill with chocolate",
+      "roti-cokelat-oven": "put it in the oven",
+      "roti-cokelat-jadi": "chocolate bread is done",
+      "t-nastar": "Making pineapple tarts: prepare, mix, bake",
+      "nastar-kupas": "peel the pineapple",
+      "nastar-selai": "cook pineapple jam",
+      "nastar-aduk": "stir the dough",
+      "nastar-bulat": "roll into balls with jam inside",
+      "nastar-oven": "put it in the oven",
+      "nastar-jadi": "pineapple tarts are done",
+      "t-roti-sosis": "Making sausage rolls: prepare, mix, bake",
+      "roti-sosis-cuci": "wash hands",
+      "roti-sosis-tepung": "take the flour",
+      "roti-sosis-uleni": "knead the dough",
+      "roti-sosis-gulung": "roll it around a sausage",
+      "roti-sosis-oven": "put it in the oven",
+      "roti-sosis-jadi": "sausage rolls are done"
     }
   },
   "knobs": {
@@ -125,6 +237,294 @@
           "id": "roti2",
           "labelKey": "roti2",
           "emoji": "🍞"
+        }
+      ]
+    },
+    {
+      "id": "kering",
+      "titleKey": "t-kering",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "kering-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "mentega",
+          "labelKey": "kering-mentega",
+          "emoji": "🧈"
+        },
+        {
+          "id": "aduk",
+          "labelKey": "kering-aduk",
+          "emoji": "🥣"
+        },
+        {
+          "id": "cetak",
+          "labelKey": "kering-cetak",
+          "emoji": "⭐"
+        },
+        {
+          "id": "oven",
+          "labelKey": "kering-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "kering-jadi",
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": "pizza",
+      "titleKey": "t-pizza",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "pizza-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "tepung",
+          "labelKey": "pizza-tepung",
+          "emoji": "🌾"
+        },
+        {
+          "id": "uleni",
+          "labelKey": "pizza-uleni",
+          "emoji": "🤲"
+        },
+        {
+          "id": "keju",
+          "labelKey": "pizza-keju",
+          "emoji": "🧀"
+        },
+        {
+          "id": "oven",
+          "labelKey": "pizza-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "pizza-jadi",
+          "emoji": "🍕"
+        }
+      ]
+    },
+    {
+      "id": "mangkuk",
+      "titleKey": "t-mangkuk",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "mangkuk-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "telur",
+          "labelKey": "mangkuk-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "kocok",
+          "labelKey": "mangkuk-kocok",
+          "emoji": "🥣"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "mangkuk-tuang",
+          "emoji": "🥄"
+        },
+        {
+          "id": "oven",
+          "labelKey": "mangkuk-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "mangkuk-jadi",
+          "emoji": "🧁"
+        }
+      ]
+    },
+    {
+      "id": "pai",
+      "titleKey": "t-pai",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "pai-cuci",
+          "emoji": "🍎"
+        },
+        {
+          "id": "potong",
+          "labelKey": "pai-potong",
+          "emoji": "🔪"
+        },
+        {
+          "id": "aduk",
+          "labelKey": "pai-aduk",
+          "emoji": "🥣"
+        },
+        {
+          "id": "tutup",
+          "labelKey": "pai-tutup",
+          "emoji": "🫓"
+        },
+        {
+          "id": "oven",
+          "labelKey": "pai-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "pai-jadi",
+          "emoji": "🥧"
+        }
+      ]
+    },
+    {
+      "id": "bolu",
+      "titleKey": "t-bolu",
+      "steps": [
+        {
+          "id": "kupas",
+          "labelKey": "bolu-kupas",
+          "emoji": "🍌"
+        },
+        {
+          "id": "lumat",
+          "labelKey": "bolu-lumat",
+          "emoji": "🥄"
+        },
+        {
+          "id": "telur",
+          "labelKey": "bolu-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "aduk",
+          "labelKey": "bolu-aduk",
+          "emoji": "🥣"
+        },
+        {
+          "id": "oven",
+          "labelKey": "bolu-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "bolu-jadi",
+          "emoji": "🍰"
+        }
+      ]
+    },
+    {
+      "id": "roti-cokelat",
+      "titleKey": "t-roti-cokelat",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "roti-cokelat-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "tepung",
+          "labelKey": "roti-cokelat-tepung",
+          "emoji": "🌾"
+        },
+        {
+          "id": "uleni",
+          "labelKey": "roti-cokelat-uleni",
+          "emoji": "🤲"
+        },
+        {
+          "id": "isi",
+          "labelKey": "roti-cokelat-isi",
+          "emoji": "🍫"
+        },
+        {
+          "id": "oven",
+          "labelKey": "roti-cokelat-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "roti-cokelat-jadi",
+          "emoji": "🍞"
+        }
+      ]
+    },
+    {
+      "id": "nastar",
+      "titleKey": "t-nastar",
+      "steps": [
+        {
+          "id": "kupas",
+          "labelKey": "nastar-kupas",
+          "emoji": "🍍"
+        },
+        {
+          "id": "selai",
+          "labelKey": "nastar-selai",
+          "emoji": "🍯"
+        },
+        {
+          "id": "aduk",
+          "labelKey": "nastar-aduk",
+          "emoji": "🥣"
+        },
+        {
+          "id": "bulat",
+          "labelKey": "nastar-bulat",
+          "emoji": "🟡"
+        },
+        {
+          "id": "oven",
+          "labelKey": "nastar-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "nastar-jadi",
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": "roti-sosis",
+      "titleKey": "t-roti-sosis",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "roti-sosis-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "tepung",
+          "labelKey": "roti-sosis-tepung",
+          "emoji": "🌾"
+        },
+        {
+          "id": "uleni",
+          "labelKey": "roti-sosis-uleni",
+          "emoji": "🤲"
+        },
+        {
+          "id": "gulung",
+          "labelKey": "roti-sosis-gulung",
+          "emoji": "🌭"
+        },
+        {
+          "id": "oven",
+          "labelKey": "roti-sosis-oven",
+          "emoji": "♨️"
+        },
+        {
+          "id": "jadi",
+          "labelKey": "roti-sosis-jadi",
+          "emoji": "🥖"
         }
       ]
     }

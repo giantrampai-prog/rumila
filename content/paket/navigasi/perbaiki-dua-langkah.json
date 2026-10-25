@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-dua-langkah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -702,6 +702,462 @@
         },
         {
           "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-a",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-b",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-c",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-d",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-e",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-f",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-g",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-h",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-i",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-j",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-k",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 2
+    },
+    {
+      "id": "dua-salah-6-l",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
         }
       ],
       "fixes": 2

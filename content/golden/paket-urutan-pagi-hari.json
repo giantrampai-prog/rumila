@@ -1,6 +1,6 @@
 {
   "id": "urutan-pagi-hari",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,7 +19,43 @@
       "gali": "gali tanah",
       "taruh": "taruh biji",
       "siram": "siram air",
-      "tumbuh": "tunas tumbuh"
+      "tumbuh": "tunas tumbuh",
+      "t-sepatu": "Memakai sepatu",
+      "sepatu-kaus": "pakai kaus kaki",
+      "sepatu-sepatu": "pakai sepatu",
+      "sepatu-jalan": "berangkat",
+      "t-ayam": "Bangun pagi",
+      "ayam-kokok": "ayam berkokok",
+      "ayam-bangun": "bangun tidur",
+      "ayam-kasur": "rapikan kasur",
+      "t-telur": "Sarapan telur",
+      "telur-pecah": "pecahkan telur",
+      "telur-goreng": "goreng telur",
+      "telur-makan": "makan telur",
+      "t-roti": "Sarapan roti",
+      "roti-ambil": "ambil roti",
+      "roti-oles": "oles madu",
+      "roti-makan": "makan roti",
+      "t-teh": "Teh hangat",
+      "teh-rebus": "rebus air",
+      "teh-tuang": "tuang ke cangkir",
+      "teh-minum": "minum teh",
+      "t-matahari": "Pagi datang",
+      "matahari-bulan": "bulan di langit",
+      "matahari-terbit": "matahari terbit",
+      "matahari-terang": "pagi terang",
+      "t-bus": "Naik bus",
+      "bus-halte": "tunggu di halte",
+      "bus-naik": "naik bus",
+      "bus-tiba": "sampai sekolah",
+      "t-gigi": "Gigi bersih",
+      "gigi-sikat": "sikat gigi",
+      "gigi-kumur": "kumur-kumur",
+      "gigi-bersih": "gigi bersih",
+      "t-tas": "Siap sekolah",
+      "tas-buku": "masukkan buku ke tas",
+      "tas-pakai": "pakai tas",
+      "tas-berangkat": "berangkat sekolah"
     },
     "en": {
       "judul": "Morning Routine",
@@ -32,7 +68,43 @@
       "gali": "dig the soil",
       "taruh": "put the seed",
       "siram": "water it",
-      "tumbuh": "a sprout grows"
+      "tumbuh": "a sprout grows",
+      "t-sepatu": "Putting on shoes",
+      "sepatu-kaus": "put on socks",
+      "sepatu-sepatu": "put on shoes",
+      "sepatu-jalan": "head out",
+      "t-ayam": "Waking up",
+      "ayam-kokok": "the rooster crows",
+      "ayam-bangun": "wake up",
+      "ayam-kasur": "make the bed",
+      "t-telur": "Eggs for breakfast",
+      "telur-pecah": "crack the egg",
+      "telur-goreng": "fry the egg",
+      "telur-makan": "eat the egg",
+      "t-roti": "Bread for breakfast",
+      "roti-ambil": "take the bread",
+      "roti-oles": "spread honey",
+      "roti-makan": "eat the bread",
+      "t-teh": "Warm tea",
+      "teh-rebus": "boil water",
+      "teh-tuang": "pour into the cup",
+      "teh-minum": "drink the tea",
+      "t-matahari": "Morning comes",
+      "matahari-bulan": "the moon in the sky",
+      "matahari-terbit": "the sun rises",
+      "matahari-terang": "bright morning",
+      "t-bus": "Taking the bus",
+      "bus-halte": "wait at the bus stop",
+      "bus-naik": "get on the bus",
+      "bus-tiba": "arrive at school",
+      "t-gigi": "Clean teeth",
+      "gigi-sikat": "brush teeth",
+      "gigi-kumur": "rinse your mouth",
+      "gigi-bersih": "clean teeth",
+      "t-tas": "Ready for school",
+      "tas-buku": "put books in the bag",
+      "tas-pakai": "put on the backpack",
+      "tas-berangkat": "leave for school"
     }
   },
   "knobs": {
@@ -91,6 +163,195 @@
           "id": "tumbuh",
           "labelKey": "tumbuh",
           "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "t-sepatu",
+      "steps": [
+        {
+          "id": "kaus",
+          "labelKey": "sepatu-kaus",
+          "emoji": "🧦"
+        },
+        {
+          "id": "sepatu",
+          "labelKey": "sepatu-sepatu",
+          "emoji": "👟"
+        },
+        {
+          "id": "jalan",
+          "labelKey": "sepatu-jalan",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "ayam",
+      "titleKey": "t-ayam",
+      "steps": [
+        {
+          "id": "kokok",
+          "labelKey": "ayam-kokok",
+          "emoji": "🐓"
+        },
+        {
+          "id": "bangun",
+          "labelKey": "ayam-bangun",
+          "emoji": "🥱"
+        },
+        {
+          "id": "kasur",
+          "labelKey": "ayam-kasur",
+          "emoji": "🛏️"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "pecah",
+          "labelKey": "telur-pecah",
+          "emoji": "🥚"
+        },
+        {
+          "id": "goreng",
+          "labelKey": "telur-goreng",
+          "emoji": "🍳"
+        },
+        {
+          "id": "makan",
+          "labelKey": "telur-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "t-roti",
+      "steps": [
+        {
+          "id": "ambil",
+          "labelKey": "roti-ambil",
+          "emoji": "🍞"
+        },
+        {
+          "id": "oles",
+          "labelKey": "roti-oles",
+          "emoji": "🍯"
+        },
+        {
+          "id": "makan",
+          "labelKey": "roti-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "teh",
+      "titleKey": "t-teh",
+      "steps": [
+        {
+          "id": "rebus",
+          "labelKey": "teh-rebus",
+          "emoji": "♨️"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "teh-tuang",
+          "emoji": "🫖"
+        },
+        {
+          "id": "minum",
+          "labelKey": "teh-minum",
+          "emoji": "🍵"
+        }
+      ]
+    },
+    {
+      "id": "matahari",
+      "titleKey": "t-matahari",
+      "steps": [
+        {
+          "id": "bulan",
+          "labelKey": "matahari-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "terbit",
+          "labelKey": "matahari-terbit",
+          "emoji": "🌅"
+        },
+        {
+          "id": "terang",
+          "labelKey": "matahari-terang",
+          "emoji": "☀️"
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "titleKey": "t-bus",
+      "steps": [
+        {
+          "id": "halte",
+          "labelKey": "bus-halte",
+          "emoji": "🚏"
+        },
+        {
+          "id": "naik",
+          "labelKey": "bus-naik",
+          "emoji": "🚌"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "bus-tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "gigi",
+      "titleKey": "t-gigi",
+      "steps": [
+        {
+          "id": "sikat",
+          "labelKey": "gigi-sikat",
+          "emoji": "🪥"
+        },
+        {
+          "id": "kumur",
+          "labelKey": "gigi-kumur",
+          "emoji": "💦"
+        },
+        {
+          "id": "bersih",
+          "labelKey": "gigi-bersih",
+          "emoji": "😁"
+        }
+      ]
+    },
+    {
+      "id": "tas",
+      "titleKey": "t-tas",
+      "steps": [
+        {
+          "id": "buku",
+          "labelKey": "tas-buku",
+          "emoji": "📚"
+        },
+        {
+          "id": "pakai",
+          "labelKey": "tas-pakai",
+          "emoji": "🎒"
+        },
+        {
+          "id": "berangkat",
+          "labelKey": "tas-berangkat",
+          "emoji": "🏫"
         }
       ]
     }

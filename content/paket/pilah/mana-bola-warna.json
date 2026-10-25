@@ -1,6 +1,6 @@
 {
   "id": "mana-bola-warna",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,13 @@
       "tBiru": "Mana yang biru?",
       "tKuning": "Mana yang kuning?",
       "tHijau": "Mana yang hijau?",
-      "bola": "bola"
+      "bola": "bola",
+      "tOranye": "Mana yang oranye?",
+      "tUngu": "Mana yang ungu?",
+      "tMerahMuda": "Mana yang merah muda?",
+      "tCokelat": "Mana yang cokelat?",
+      "tHitam": "Mana yang hitam?",
+      "tAbu": "Mana yang abu-abu?"
     },
     "en": {
       "judul": "Which Color Ball?",
@@ -26,7 +32,13 @@
       "tBiru": "Which one is blue?",
       "tKuning": "Which one is yellow?",
       "tHijau": "Which one is green?",
-      "bola": "ball"
+      "bola": "ball",
+      "tOranye": "Which one is orange?",
+      "tUngu": "Which one is purple?",
+      "tMerahMuda": "Which one is pink?",
+      "tCokelat": "Which one is brown?",
+      "tHitam": "Which one is black?",
+      "tAbu": "Which one is grey?"
     }
   },
   "knobs": {
@@ -77,6 +89,48 @@
       "bin": "pilihan",
       "shape": "circle",
       "color": "#43a047"
+    },
+    {
+      "bin": "pilihan",
+      "id": "bola-oranye",
+      "labelKey": "bola",
+      "shape": "circle",
+      "color": "#fb8c00"
+    },
+    {
+      "bin": "pilihan",
+      "id": "bola-ungu",
+      "labelKey": "bola",
+      "shape": "circle",
+      "color": "#8e24aa"
+    },
+    {
+      "bin": "pilihan",
+      "id": "bola-merahmuda",
+      "labelKey": "bola",
+      "shape": "circle",
+      "color": "#f48fb1"
+    },
+    {
+      "bin": "pilihan",
+      "id": "bola-cokelat",
+      "labelKey": "bola",
+      "shape": "circle",
+      "color": "#6d4c41"
+    },
+    {
+      "bin": "pilihan",
+      "id": "bola-hitam",
+      "labelKey": "bola",
+      "shape": "circle",
+      "color": "#212121"
+    },
+    {
+      "bin": "pilihan",
+      "id": "bola-abuabu",
+      "labelKey": "bola",
+      "shape": "circle",
+      "color": "#9e9e9e"
     }
   ],
   "pilihan": [
@@ -123,6 +177,72 @@
         "bola-hijau"
       ],
       "correct": "bola-hijau"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tOranye",
+      "choices": [
+        "bola-oranye",
+        "bola-biru",
+        "bola-hijau",
+        "bola-ungu"
+      ],
+      "correct": "bola-oranye"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tUngu",
+      "choices": [
+        "bola-kuning",
+        "bola-oranye",
+        "bola-hijau",
+        "bola-ungu"
+      ],
+      "correct": "bola-ungu"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tMerahMuda",
+      "choices": [
+        "bola-hijau",
+        "bola-cokelat",
+        "bola-merahmuda",
+        "bola-biru"
+      ],
+      "correct": "bola-merahmuda"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tCokelat",
+      "choices": [
+        "bola-merahmuda",
+        "bola-cokelat",
+        "bola-kuning",
+        "bola-biru"
+      ],
+      "correct": "bola-cokelat"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tHitam",
+      "choices": [
+        "bola-hitam",
+        "bola-kuning",
+        "bola-merah",
+        "bola-hijau"
+      ],
+      "correct": "bola-hitam"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tAbu",
+      "choices": [
+        "bola-merah",
+        "bola-kuning",
+        "bola-ungu",
+        "bola-abuabu"
+      ],
+      "correct": "bola-abuabu"
     }
   ]
 }

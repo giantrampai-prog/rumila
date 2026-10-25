@@ -1,6 +1,6 @@
 {
   "id": "jengkal-meja-dapur",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -16,7 +16,17 @@
       "roti": "roti panjang",
       "talenan": "talenan",
       "pisang": "pisang",
-      "sendok": "sendok kayu"
+      "sendok": "sendok kayu",
+      "wajan": "wajan",
+      "terong": "terong",
+      "jagung": "jagung",
+      "ikan": "ikan bandeng",
+      "teko": "teko",
+      "sumpit": "sumpit",
+      "timun": "timun",
+      "wortel": "wortel",
+      "roti-tawar": "roti tawar",
+      "garpu": "sendok garpu"
     },
     "en": {
       "judul": "Spans in the Kitchen",
@@ -26,7 +36,17 @@
       "roti": "long bread",
       "talenan": "cutting board",
       "pisang": "banana",
-      "sendok": "wooden spoon"
+      "sendok": "wooden spoon",
+      "wajan": "frying pan",
+      "terong": "eggplant",
+      "jagung": "corn",
+      "ikan": "milkfish",
+      "teko": "teapot",
+      "sumpit": "chopsticks",
+      "timun": "cucumber",
+      "wortel": "carrot",
+      "roti-tawar": "loaf of bread",
+      "garpu": "fork and knife"
     }
   },
   "knobs": {
@@ -40,7 +60,7 @@
     "maxSpans": {
       "min": 4,
       "max": 10,
-      "default": 4,
+      "default": 6,
       "step": 1,
       "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
     },
@@ -105,6 +125,86 @@
       "emoji": "🥄",
       "value": 4,
       "width": 1.6
+    },
+    {
+      "labelKey": "wajan",
+      "id": "wajan",
+      "role": "benda",
+      "emoji": "🍳",
+      "value": 5,
+      "width": 2
+    },
+    {
+      "labelKey": "terong",
+      "id": "terong",
+      "role": "benda",
+      "emoji": "🍆",
+      "value": 6,
+      "width": 2.4
+    },
+    {
+      "labelKey": "jagung",
+      "id": "jagung",
+      "role": "benda",
+      "emoji": "🌽",
+      "value": 4,
+      "width": 1.6
+    },
+    {
+      "labelKey": "ikan",
+      "id": "ikan",
+      "role": "benda",
+      "emoji": "🐟",
+      "value": 4,
+      "width": 1.6
+    },
+    {
+      "labelKey": "teko",
+      "id": "teko",
+      "role": "benda",
+      "emoji": "🫖",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "sumpit",
+      "id": "sumpit",
+      "role": "benda",
+      "emoji": "🥢",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "timun",
+      "id": "timun",
+      "role": "benda",
+      "emoji": "🥒",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "wortel",
+      "id": "wortel",
+      "role": "benda",
+      "emoji": "🥕",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "roti-tawar",
+      "id": "roti-tawar",
+      "role": "benda",
+      "emoji": "🍞",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "garpu",
+      "id": "garpu",
+      "role": "benda",
+      "emoji": "🍴",
+      "value": 2,
+      "width": 0.8
     }
   ]
 }

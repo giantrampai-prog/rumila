@@ -4,8 +4,9 @@ import {
   acak, buatRonde, buatRondeBaru, buatRondeDagang, buatRondePilah, buatRondeUrutkan, hitungSwap, knobDefaults, kunciRonde, nilai, nilaiDagang, nilaiPilah, nilaiUrutkan, rng,
   type RondeDagang, type RondePilahKelompok, type RondePilahPilih,
 } from "../src";
-import keranjang from "../../../content/golden/paket-keranjang-warna.json";
-import hitungJari from "../../../content/golden/paket-hitung-jari.json";
+// salinan beku: konten golden boleh bertambah tanpa mematahkan tes perilaku
+import keranjang from "./fixtures/paket-keranjang-warna.json";
+import hitungJari from "./fixtures/paket-hitung-jari.json";
 import pagi from "../../../content/golden/paket-urutan-pagi-hari.json";
 import pasar from "../../../content/golden/paket-pasar-buah-1-5.json";
 

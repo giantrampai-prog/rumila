@@ -1,6 +1,6 @@
 {
   "id": "sains-siklus-kupu-kupu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -15,7 +15,18 @@
       "kupu-telur": "telur kecil di daun",
       "kupu-ulat": "ulat makan daun",
       "kupu-kepompong": "kepompong menggantung",
-      "kupu-kupu": "kupu-kupu terbang"
+      "kupu-kupu": "kupu-kupu terbang",
+      "t-gemuk": "Ulat makan banyak",
+      "gemuk-telur": "telur kecil di daun",
+      "gemuk-ulat": "ulat kecil",
+      "gemuk-gemuk": "ulat besar dan gemuk",
+      "gemuk-kepompong": "kepompong menggantung",
+      "gemuk-kupu": "kupu-kupu terbang",
+      "t-bunga": "Kupu-kupu dan bunga",
+      "bunga-ulat": "ulat makan daun",
+      "bunga-kepompong": "kepompong menggantung",
+      "bunga-kupu": "kupu-kupu keluar",
+      "bunga-bunga": "hinggap di bunga"
     },
     "en": {
       "judul": "Caterpillar to Butterfly",
@@ -24,7 +35,18 @@
       "kupu-telur": "tiny egg on a leaf",
       "kupu-ulat": "caterpillar eating leaves",
       "kupu-kepompong": "chrysalis hanging",
-      "kupu-kupu": "butterfly flies"
+      "kupu-kupu": "butterfly flies",
+      "t-gemuk": "The caterpillar eats a lot",
+      "gemuk-telur": "tiny egg on a leaf",
+      "gemuk-ulat": "little caterpillar",
+      "gemuk-gemuk": "big fat caterpillar",
+      "gemuk-kepompong": "hanging cocoon",
+      "gemuk-kupu": "butterfly flies",
+      "t-bunga": "The butterfly and the flower",
+      "bunga-ulat": "caterpillar eats leaves",
+      "bunga-kepompong": "hanging cocoon",
+      "bunga-kupu": "the butterfly comes out",
+      "bunga-bunga": "lands on a flower"
     }
   },
   "knobs": {
@@ -38,7 +60,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 3,
   "world": "kebun-pasar",
   "mode": "susun",
   "sequences": [
@@ -68,6 +90,70 @@
           "labelKey": "kupu-kupu",
           "emoji": "🦋",
           "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "gemuk",
+      "titleKey": "t-gemuk",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "gemuk-telur",
+          "emoji": "🍃",
+          "scale": 0.8
+        },
+        {
+          "id": "ulat",
+          "labelKey": "gemuk-ulat",
+          "emoji": "🐛",
+          "scale": 0.7
+        },
+        {
+          "id": "gemuk",
+          "labelKey": "gemuk-gemuk",
+          "emoji": "🐛",
+          "scale": 1.3
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "gemuk-kepompong",
+          "emoji": "🛡️",
+          "color": "#a1887f"
+        },
+        {
+          "id": "kupu",
+          "labelKey": "gemuk-kupu",
+          "emoji": "🦋",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "bunga",
+      "titleKey": "t-bunga",
+      "steps": [
+        {
+          "id": "ulat",
+          "labelKey": "bunga-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "bunga-kepompong",
+          "emoji": "🛡️",
+          "color": "#a1887f"
+        },
+        {
+          "id": "kupu",
+          "labelKey": "bunga-kupu",
+          "emoji": "🦋",
+          "scale": 1.2
+        },
+        {
+          "id": "bunga",
+          "labelKey": "bunga-bunga",
+          "emoji": "🌸"
         }
       ]
     }

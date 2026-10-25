@@ -1,6 +1,6 @@
 {
   "id": "ular-pendek-ke-panjang",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -16,7 +16,15 @@
       "pendek": "pendek",
       "sedang": "sedang",
       "panjang": "panjang",
-      "terpanjang": "paling panjang"
+      "terpanjang": "paling panjang",
+      "t-buaya": "Buaya: pendek ke panjang",
+      "t-ikan": "Ikan: pendek ke panjang",
+      "t-kadal": "Kadal: pendek ke panjang",
+      "t-ulat": "Ulat: pendek ke panjang",
+      "t-perahu": "Perahu: pendek ke panjang",
+      "t-kayu": "Kayu: pendek ke panjang",
+      "t-timun": "Timun: pendek ke panjang",
+      "t-roti": "Roti: pendek ke panjang"
     },
     "en": {
       "judul": "Snakes Short to Long",
@@ -26,7 +34,15 @@
       "pendek": "short",
       "sedang": "medium",
       "panjang": "long",
-      "terpanjang": "longest"
+      "terpanjang": "longest",
+      "t-buaya": "Crocodiles: short to long",
+      "t-ikan": "Fish: short to long",
+      "t-kadal": "Lizards: short to long",
+      "t-ulat": "Caterpillars: short to long",
+      "t-perahu": "Boats: short to long",
+      "t-kayu": "Logs: short to long",
+      "t-timun": "Cucumbers: short to long",
+      "t-roti": "Bread loaves: short to long"
     }
   },
   "knobs": {
@@ -95,6 +111,210 @@
           "labelKey": "terpanjang",
           "emoji": "🪱",
           "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "buaya",
+      "titleKey": "t-buaya",
+      "steps": [
+        {
+          "id": "buaya-1",
+          "labelKey": "pendek",
+          "emoji": "🐊",
+          "width": 1
+        },
+        {
+          "id": "buaya-2",
+          "labelKey": "sedang",
+          "emoji": "🐊",
+          "width": 1.4
+        },
+        {
+          "id": "buaya-3",
+          "labelKey": "panjang",
+          "emoji": "🐊",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "ikan",
+      "titleKey": "t-ikan",
+      "steps": [
+        {
+          "id": "ikan-1",
+          "labelKey": "pendek",
+          "emoji": "🐟",
+          "width": 0.9
+        },
+        {
+          "id": "ikan-2",
+          "labelKey": "sedang",
+          "emoji": "🐟",
+          "width": 1.3
+        },
+        {
+          "id": "ikan-3",
+          "labelKey": "panjang",
+          "emoji": "🐟",
+          "width": 1.8
+        }
+      ]
+    },
+    {
+      "id": "kadal",
+      "titleKey": "t-kadal",
+      "steps": [
+        {
+          "id": "kadal-1",
+          "labelKey": "pendek",
+          "emoji": "🦎",
+          "width": 1
+        },
+        {
+          "id": "kadal-2",
+          "labelKey": "sedang",
+          "emoji": "🦎",
+          "width": 1.3
+        },
+        {
+          "id": "kadal-3",
+          "labelKey": "panjang",
+          "emoji": "🦎",
+          "width": 1.7
+        },
+        {
+          "id": "kadal-4",
+          "labelKey": "terpanjang",
+          "emoji": "🦎",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "ulat",
+      "titleKey": "t-ulat",
+      "steps": [
+        {
+          "id": "ulat-1",
+          "labelKey": "pendek",
+          "emoji": "🐛",
+          "width": 1
+        },
+        {
+          "id": "ulat-2",
+          "labelKey": "sedang",
+          "emoji": "🐛",
+          "width": 1.4
+        },
+        {
+          "id": "ulat-3",
+          "labelKey": "panjang",
+          "emoji": "🐛",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "perahu",
+      "titleKey": "t-perahu",
+      "steps": [
+        {
+          "id": "perahu-1",
+          "labelKey": "pendek",
+          "emoji": "🛶",
+          "width": 1
+        },
+        {
+          "id": "perahu-2",
+          "labelKey": "sedang",
+          "emoji": "🛶",
+          "width": 1.3
+        },
+        {
+          "id": "perahu-3",
+          "labelKey": "panjang",
+          "emoji": "🛶",
+          "width": 1.7
+        },
+        {
+          "id": "perahu-4",
+          "labelKey": "terpanjang",
+          "emoji": "🛶",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "kayu",
+      "titleKey": "t-kayu",
+      "steps": [
+        {
+          "id": "kayu-1",
+          "labelKey": "pendek",
+          "emoji": "🪵",
+          "width": 0.9
+        },
+        {
+          "id": "kayu-2",
+          "labelKey": "sedang",
+          "emoji": "🪵",
+          "width": 1.3
+        },
+        {
+          "id": "kayu-3",
+          "labelKey": "panjang",
+          "emoji": "🪵",
+          "width": 1.8
+        }
+      ]
+    },
+    {
+      "id": "timun",
+      "titleKey": "t-timun",
+      "steps": [
+        {
+          "id": "timun-1",
+          "labelKey": "pendek",
+          "emoji": "🥒",
+          "width": 1
+        },
+        {
+          "id": "timun-2",
+          "labelKey": "sedang",
+          "emoji": "🥒",
+          "width": 1.4
+        },
+        {
+          "id": "timun-3",
+          "labelKey": "panjang",
+          "emoji": "🥒",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "t-roti",
+      "steps": [
+        {
+          "id": "roti-1",
+          "labelKey": "pendek",
+          "emoji": "🥖",
+          "width": 0.8
+        },
+        {
+          "id": "roti-2",
+          "labelKey": "sedang",
+          "emoji": "🥖",
+          "width": 1.2
+        },
+        {
+          "id": "roti-3",
+          "labelKey": "panjang",
+          "emoji": "🥖",
+          "width": 1.7
         }
       ]
     }

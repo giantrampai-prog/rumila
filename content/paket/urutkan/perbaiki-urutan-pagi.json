@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-pagi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -20,7 +20,41 @@
       "handuk": "ambil handuk",
       "siram": "siram badan",
       "sabun": "pakai sabun",
-      "bilas": "bilas sampai bersih"
+      "bilas": "bilas sampai bersih",
+      "t-sepatu": "Memakai sepatu",
+      "sepatu-kaus": "pakai kaus kaki",
+      "sepatu-sepatu": "pakai sepatu",
+      "sepatu-jalan": "berangkat",
+      "t-telur": "Sarapan telur",
+      "telur-pecah": "pecahkan telur",
+      "telur-goreng": "goreng telur",
+      "telur-makan": "makan telur",
+      "t-bangun": "Bangun pagi",
+      "bangun-kokok": "ayam berkokok",
+      "bangun-bangun": "bangun tidur",
+      "bangun-kasur": "rapikan kasur",
+      "bangun-mandi": "mandi",
+      "t-gigi": "Gigi bersih",
+      "gigi-sikat": "sikat gigi",
+      "gigi-kumur": "kumur-kumur",
+      "gigi-bersih": "gigi bersih",
+      "t-bus": "Naik bus",
+      "bus-keluar": "keluar rumah",
+      "bus-halte": "tunggu di halte",
+      "bus-naik": "naik bus",
+      "bus-tiba": "sampai sekolah",
+      "t-roti": "Sarapan roti",
+      "roti-ambil": "ambil roti",
+      "roti-oles": "oles madu",
+      "roti-makan": "makan roti",
+      "t-teh": "Teh hangat",
+      "teh-rebus": "rebus air",
+      "teh-tuang": "tuang ke cangkir",
+      "teh-minum": "minum teh",
+      "t-matahari": "Pagi datang",
+      "matahari-bulan": "bulan di langit",
+      "matahari-terbit": "matahari terbit",
+      "matahari-terang": "pagi terang"
     },
     "en": {
       "judul": "Mixed-Up Morning Order",
@@ -34,7 +68,41 @@
       "handuk": "get the towel",
       "siram": "pour water",
       "sabun": "soap up",
-      "bilas": "rinse clean"
+      "bilas": "rinse clean",
+      "t-sepatu": "Putting on shoes",
+      "sepatu-kaus": "put on socks",
+      "sepatu-sepatu": "put on shoes",
+      "sepatu-jalan": "head out",
+      "t-telur": "Eggs for breakfast",
+      "telur-pecah": "crack the egg",
+      "telur-goreng": "fry the egg",
+      "telur-makan": "eat the egg",
+      "t-bangun": "Waking up",
+      "bangun-kokok": "the rooster crows",
+      "bangun-bangun": "wake up",
+      "bangun-kasur": "make the bed",
+      "bangun-mandi": "take a bath",
+      "t-gigi": "Clean teeth",
+      "gigi-sikat": "brush teeth",
+      "gigi-kumur": "rinse your mouth",
+      "gigi-bersih": "clean teeth",
+      "t-bus": "Taking the bus",
+      "bus-keluar": "leave the house",
+      "bus-halte": "wait at the bus stop",
+      "bus-naik": "get on the bus",
+      "bus-tiba": "arrive at school",
+      "t-roti": "Bread for breakfast",
+      "roti-ambil": "take the bread",
+      "roti-oles": "spread honey",
+      "roti-makan": "eat the bread",
+      "t-teh": "Warm tea",
+      "teh-rebus": "boil water",
+      "teh-tuang": "pour into the cup",
+      "teh-minum": "drink the tea",
+      "t-matahari": "Morning comes",
+      "matahari-bulan": "the moon in the sky",
+      "matahari-terbit": "the sun rises",
+      "matahari-terang": "bright morning"
     }
   },
   "knobs": {
@@ -101,6 +169,184 @@
           "id": "bilas",
           "labelKey": "bilas",
           "emoji": "✨"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "t-sepatu",
+      "steps": [
+        {
+          "id": "kaus",
+          "labelKey": "sepatu-kaus",
+          "emoji": "🧦"
+        },
+        {
+          "id": "sepatu",
+          "labelKey": "sepatu-sepatu",
+          "emoji": "👟"
+        },
+        {
+          "id": "jalan",
+          "labelKey": "sepatu-jalan",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "pecah",
+          "labelKey": "telur-pecah",
+          "emoji": "🥚"
+        },
+        {
+          "id": "goreng",
+          "labelKey": "telur-goreng",
+          "emoji": "🍳"
+        },
+        {
+          "id": "makan",
+          "labelKey": "telur-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "bangun",
+      "titleKey": "t-bangun",
+      "steps": [
+        {
+          "id": "kokok",
+          "labelKey": "bangun-kokok",
+          "emoji": "🐓"
+        },
+        {
+          "id": "bangun",
+          "labelKey": "bangun-bangun",
+          "emoji": "🥱"
+        },
+        {
+          "id": "kasur",
+          "labelKey": "bangun-kasur",
+          "emoji": "🛏️"
+        },
+        {
+          "id": "mandi",
+          "labelKey": "bangun-mandi",
+          "emoji": "🚿"
+        }
+      ]
+    },
+    {
+      "id": "gigi",
+      "titleKey": "t-gigi",
+      "steps": [
+        {
+          "id": "sikat",
+          "labelKey": "gigi-sikat",
+          "emoji": "🪥"
+        },
+        {
+          "id": "kumur",
+          "labelKey": "gigi-kumur",
+          "emoji": "💦"
+        },
+        {
+          "id": "bersih",
+          "labelKey": "gigi-bersih",
+          "emoji": "😁"
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "titleKey": "t-bus",
+      "steps": [
+        {
+          "id": "keluar",
+          "labelKey": "bus-keluar",
+          "emoji": "🏠"
+        },
+        {
+          "id": "halte",
+          "labelKey": "bus-halte",
+          "emoji": "🚏"
+        },
+        {
+          "id": "naik",
+          "labelKey": "bus-naik",
+          "emoji": "🚌"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "bus-tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "t-roti",
+      "steps": [
+        {
+          "id": "ambil",
+          "labelKey": "roti-ambil",
+          "emoji": "🍞"
+        },
+        {
+          "id": "oles",
+          "labelKey": "roti-oles",
+          "emoji": "🍯"
+        },
+        {
+          "id": "makan",
+          "labelKey": "roti-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "teh",
+      "titleKey": "t-teh",
+      "steps": [
+        {
+          "id": "rebus",
+          "labelKey": "teh-rebus",
+          "emoji": "♨️"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "teh-tuang",
+          "emoji": "🫖"
+        },
+        {
+          "id": "minum",
+          "labelKey": "teh-minum",
+          "emoji": "🍵"
+        }
+      ]
+    },
+    {
+      "id": "matahari",
+      "titleKey": "t-matahari",
+      "steps": [
+        {
+          "id": "bulan",
+          "labelKey": "matahari-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "terbit",
+          "labelKey": "matahari-terbit",
+          "emoji": "🌅"
+        },
+        {
+          "id": "terang",
+          "labelKey": "matahari-terang",
+          "emoji": "☀️"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-hewan-laut",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,16 @@
       "t-ikan": "Mana ikannya?",
       "t-gurita": "Mana guritanya?",
       "t-kepiting": "Mana kepitingnya?",
-      "t-lumba": "Mana lumba-lumbanya?"
+      "t-lumba": "Mana lumba-lumbanya?",
+      "i-paus": "paus",
+      "i-hiu": "hiu",
+      "i-cumi": "cumi-cumi",
+      "i-anjinglaut": "anjing laut",
+      "t-udang": "Mana udangnya?",
+      "t-paus": "Mana pausnya?",
+      "t-hiu": "Mana hiunya?",
+      "t-cumi": "Mana cumi-cuminya?",
+      "t-anjinglaut": "Mana anjing lautnya?"
     },
     "en": {
       "judul": "Animals Under the Sea",
@@ -38,7 +47,16 @@
       "t-ikan": "Where is the fish?",
       "t-gurita": "Where is the octopus?",
       "t-kepiting": "Where is the crab?",
-      "t-lumba": "Where is the dolphin?"
+      "t-lumba": "Where is the dolphin?",
+      "i-paus": "whale",
+      "i-hiu": "shark",
+      "i-cumi": "squid",
+      "i-anjinglaut": "seal",
+      "t-udang": "Where is the shrimp?",
+      "t-paus": "Where is the whale?",
+      "t-hiu": "Where is the shark?",
+      "t-cumi": "Where is the squid?",
+      "t-anjinglaut": "Where is the seal?"
     }
   },
   "knobs": {
@@ -99,6 +117,32 @@
       "bin": "pilihan",
       "emoji": "🦐",
       "scale": 0.8
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "pilihan",
+      "emoji": "🐳",
+      "scale": 1.4
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "pilihan",
+      "emoji": "🦈",
+      "scale": 1.2
+    },
+    {
+      "id": "cumi",
+      "labelKey": "i-cumi",
+      "bin": "pilihan",
+      "emoji": "🦑"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "pilihan",
+      "emoji": "🦭"
     }
   ],
   "pilihan": [
@@ -156,6 +200,61 @@
         "gurita"
       ],
       "correct": "lumba"
+    },
+    {
+      "id": "udang",
+      "promptKey": "t-udang",
+      "choices": [
+        "udang",
+        "kepiting",
+        "gurita",
+        "penyu"
+      ],
+      "correct": "udang"
+    },
+    {
+      "id": "paus",
+      "promptKey": "t-paus",
+      "choices": [
+        "paus",
+        "hiu",
+        "penyu",
+        "kepiting"
+      ],
+      "correct": "paus"
+    },
+    {
+      "id": "hiu",
+      "promptKey": "t-hiu",
+      "choices": [
+        "hiu",
+        "ikan",
+        "gurita",
+        "udang"
+      ],
+      "correct": "hiu"
+    },
+    {
+      "id": "cumi",
+      "promptKey": "t-cumi",
+      "choices": [
+        "cumi",
+        "udang",
+        "ikan",
+        "penyu"
+      ],
+      "correct": "cumi"
+    },
+    {
+      "id": "anjinglaut",
+      "promptKey": "t-anjinglaut",
+      "choices": [
+        "anjinglaut",
+        "lumba",
+        "kepiting",
+        "cumi"
+      ],
+      "correct": "anjinglaut"
     }
   ]
 }

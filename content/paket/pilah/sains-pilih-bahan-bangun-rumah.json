@@ -1,6 +1,6 @@
 {
   "id": "sains-pilih-bahan-bangun-rumah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,13 @@
       "t-kursi": "Kursi untuk duduk yang kuat dan nyaman. Bahan apa?",
       "t-paku": "Paku supaya papan tidak lepas. Bahan apa?",
       "t-botol": "Botol minum yang ringan dan tidak pecah. Bahan apa?",
-      "t-pintu": "Pintu rumah yang kokoh. Bahan apa?"
+      "t-pintu": "Pintu rumah yang kokoh. Bahan apa?",
+      "t-cermin": "Cermin untuk bercermin. Bahan apa?",
+      "t-bohlam": "Bohlam lampu yang bening. Bahan apa?",
+      "t-kunci": "Kunci pintu yang keras dan kuat. Bahan apa?",
+      "t-panci": "Panci untuk memasak di atas kompor. Bahan apa?",
+      "t-kresek": "Kantong kresek untuk belanja. Bahan apa?",
+      "t-lantai": "Lantai rumah panggung. Bahan apa?"
     },
     "en": {
       "judul": "Pick Materials for the Little House",
@@ -34,7 +40,13 @@
       "t-kursi": "A strong, comfy chair to sit on. Which material?",
       "t-paku": "A nail to hold the boards. Which material?",
       "t-botol": "A light drinking bottle that won't break. Which material?",
-      "t-pintu": "A sturdy front door. Which material?"
+      "t-pintu": "A sturdy front door. Which material?",
+      "t-cermin": "A mirror to look at yourself. Which material?",
+      "t-bohlam": "A clear light bulb. Which material?",
+      "t-kunci": "A hard, strong door key. Which material?",
+      "t-panci": "A pot for cooking on the stove. Which material?",
+      "t-kresek": "A shopping bag. Which material?",
+      "t-lantai": "The floor of a house on stilts. Which material?"
     }
   },
   "knobs": {
@@ -138,6 +150,69 @@
       "choices": [
         "kayu",
         "kaca",
+        "plastik"
+      ],
+      "correct": "kayu"
+    },
+    {
+      "id": "cermin",
+      "promptKey": "t-cermin",
+      "choices": [
+        "kaca",
+        "kayu",
+        "plastik",
+        "logam"
+      ],
+      "correct": "kaca"
+    },
+    {
+      "id": "bohlam",
+      "promptKey": "t-bohlam",
+      "choices": [
+        "kayu",
+        "kaca",
+        "plastik"
+      ],
+      "correct": "kaca"
+    },
+    {
+      "id": "kunci",
+      "promptKey": "t-kunci",
+      "choices": [
+        "logam",
+        "kayu",
+        "plastik",
+        "kaca"
+      ],
+      "correct": "logam"
+    },
+    {
+      "id": "panci",
+      "promptKey": "t-panci",
+      "choices": [
+        "plastik",
+        "logam",
+        "kayu"
+      ],
+      "correct": "logam"
+    },
+    {
+      "id": "kresek",
+      "promptKey": "t-kresek",
+      "choices": [
+        "plastik",
+        "kayu",
+        "kaca",
+        "logam"
+      ],
+      "correct": "plastik"
+    },
+    {
+      "id": "lantai",
+      "promptKey": "t-lantai",
+      "choices": [
+        "kaca",
+        "kayu",
         "plastik"
       ],
       "correct": "kayu"

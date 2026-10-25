@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-bagian-tubuh",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,16 @@
       "t-telinga": "Mana telinganya?",
       "t-mulut": "Mana mulutnya?",
       "t-tangan": "Mana tangannya?",
-      "t-kaki": "Mana kakinya?"
+      "t-kaki": "Mana kakinya?",
+      "i-gigi": "gigi",
+      "i-lidah": "lidah",
+      "i-jempol": "jempol",
+      "t-gigi": "Mana giginya?",
+      "t-lidah": "Mana lidahnya?",
+      "t-jempol": "Mana jempolnya?",
+      "t-mata2": "Mana matanya? Mata untuk melihat.",
+      "t-telinga2": "Mana telinganya? Telinga untuk mendengar.",
+      "t-hidung2": "Mana hidungnya? Hidung untuk mencium bau."
     },
     "en": {
       "judul": "Where Is That Body Part?",
@@ -40,7 +49,16 @@
       "t-telinga": "Where is the ear?",
       "t-mulut": "Where is the mouth?",
       "t-tangan": "Where is the hand?",
-      "t-kaki": "Where is the foot?"
+      "t-kaki": "Where is the foot?",
+      "i-gigi": "tooth",
+      "i-lidah": "tongue",
+      "i-jempol": "thumb",
+      "t-gigi": "Where is the tooth?",
+      "t-lidah": "Where is the tongue?",
+      "t-jempol": "Where is the thumb?",
+      "t-mata2": "Where is the eye? Eyes are for seeing.",
+      "t-telinga2": "Where is the ear? Ears are for hearing.",
+      "t-hidung2": "Where is the nose? Noses are for smelling."
     }
   },
   "knobs": {
@@ -99,6 +117,24 @@
       "labelKey": "i-kaki",
       "bin": "pilihan",
       "emoji": "🦶"
+    },
+    {
+      "id": "gigi",
+      "labelKey": "i-gigi",
+      "bin": "pilihan",
+      "emoji": "🦷"
+    },
+    {
+      "id": "lidah",
+      "labelKey": "i-lidah",
+      "bin": "pilihan",
+      "emoji": "👅"
+    },
+    {
+      "id": "jempol",
+      "labelKey": "i-jempol",
+      "bin": "pilihan",
+      "emoji": "👍"
     }
   ],
   "pilihan": [
@@ -167,6 +203,72 @@
         "hidung"
       ],
       "correct": "kaki"
+    },
+    {
+      "id": "gigi",
+      "promptKey": "t-gigi",
+      "choices": [
+        "gigi",
+        "lidah",
+        "mata",
+        "kaki"
+      ],
+      "correct": "gigi"
+    },
+    {
+      "id": "lidah",
+      "promptKey": "t-lidah",
+      "choices": [
+        "lidah",
+        "gigi",
+        "telinga",
+        "tangan"
+      ],
+      "correct": "lidah"
+    },
+    {
+      "id": "jempol",
+      "promptKey": "t-jempol",
+      "choices": [
+        "jempol",
+        "kaki",
+        "hidung",
+        "mulut"
+      ],
+      "correct": "jempol"
+    },
+    {
+      "id": "mata2",
+      "promptKey": "t-mata2",
+      "choices": [
+        "mata",
+        "telinga",
+        "jempol",
+        "lidah"
+      ],
+      "correct": "mata"
+    },
+    {
+      "id": "telinga2",
+      "promptKey": "t-telinga2",
+      "choices": [
+        "telinga",
+        "hidung",
+        "gigi",
+        "kaki"
+      ],
+      "correct": "telinga"
+    },
+    {
+      "id": "hidung2",
+      "promptKey": "t-hidung2",
+      "choices": [
+        "hidung",
+        "lidah",
+        "mata",
+        "jempol"
+      ],
+      "correct": "hidung"
     }
   ]
 }

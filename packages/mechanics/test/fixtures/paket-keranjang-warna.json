@@ -1,0 +1,137 @@
+{
+  "id": "keranjang-warna",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.WARNA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Keranjang Warna",
+      "instruksi": "Masukkan setiap benda ke keranjang yang warnanya sama.",
+      "merah": "merah",
+      "biru": "biru",
+      "kuning": "kuning",
+      "hijau": "hijau",
+      "apel": "apel",
+      "stroberi": "stroberi",
+      "bola": "bola",
+      "ikan": "ikan",
+      "pisang": "pisang",
+      "bebek": "bebek",
+      "daun": "daun",
+      "katak": "katak"
+    },
+    "en": {
+      "judul": "Color Baskets",
+      "instruksi": "Put each object into the basket with the same colour.",
+      "merah": "red",
+      "biru": "blue",
+      "kuning": "yellow",
+      "hijau": "green",
+      "apel": "apple",
+      "stroberi": "strawberry",
+      "bola": "ball",
+      "ikan": "fish",
+      "pisang": "banana",
+      "bebek": "duck",
+      "daun": "leaf",
+      "katak": "frog"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah keranjang/warna aktif"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 12,
+      "default": 6,
+      "step": 2
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "bins": [
+    {
+      "id": "merah",
+      "labelKey": "merah",
+      "emoji": "🧺",
+      "color": "#e8646a"
+    },
+    {
+      "id": "biru",
+      "labelKey": "biru",
+      "emoji": "🧺",
+      "color": "#5b8fd6"
+    },
+    {
+      "id": "kuning",
+      "labelKey": "kuning",
+      "emoji": "🧺",
+      "color": "#fdc23e"
+    },
+    {
+      "id": "hijau",
+      "labelKey": "hijau",
+      "emoji": "🧺",
+      "color": "#5db57c"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "bin": "merah",
+      "emoji": "🍎"
+    },
+    {
+      "id": "stroberi",
+      "labelKey": "stroberi",
+      "bin": "merah",
+      "emoji": "🍓"
+    },
+    {
+      "id": "bola",
+      "labelKey": "bola",
+      "bin": "biru",
+      "emoji": "🔵"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "ikan",
+      "bin": "biru",
+      "emoji": "🐟"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "bin": "kuning",
+      "emoji": "🍌"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "bebek",
+      "bin": "kuning",
+      "emoji": "🐤"
+    },
+    {
+      "id": "daun",
+      "labelKey": "daun",
+      "bin": "hijau",
+      "emoji": "🍃"
+    },
+    {
+      "id": "katak",
+      "labelKey": "katak",
+      "bin": "hijau",
+      "emoji": "🐸"
+    }
+  ]
+}

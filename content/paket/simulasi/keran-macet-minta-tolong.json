@@ -1,6 +1,6 @@
 {
   "id": "keran-macet-minta-tolong",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -13,14 +13,32 @@
       "instruksi": "Robot mau pakai alat di rumah. Ketuk alatnya supaya bekerja.",
       "keran": "keran",
       "lampu": "lampu",
-      "pintu": "pintu"
+      "pintu": "pintu",
+      "televisi": "televisi",
+      "radio": "radio",
+      "senter": "senter",
+      "jam-weker": "jam weker",
+      "telepon": "telepon",
+      "jendela": "jendela",
+      "payung": "payung",
+      "toilet": "toilet",
+      "laptop": "laptop"
     },
     "en": {
       "judul": "It's Stuck, Ask for Help",
       "instruksi": "The robot wants to use something at home. Tap it to make it work.",
       "keran": "tap",
       "lampu": "lamp",
-      "pintu": "door"
+      "pintu": "door",
+      "televisi": "television",
+      "radio": "radio",
+      "senter": "flashlight",
+      "jam-weker": "alarm clock",
+      "telepon": "telephone",
+      "jendela": "window",
+      "payung": "umbrella",
+      "toilet": "toilet",
+      "laptop": "laptop"
     }
   },
   "knobs": {
@@ -38,8 +56,77 @@
   "world": "rumah",
   "mode": "bantuan",
   "items": [
-    { "id": "keran", "labelKey": "keran", "role": "alat", "emoji": "🚰" },
-    { "id": "lampu", "labelKey": "lampu", "role": "alat", "emoji": "💡" },
-    { "id": "pintu", "labelKey": "pintu", "role": "alat", "emoji": "🚪" }
+    {
+      "id": "keran",
+      "labelKey": "keran",
+      "role": "alat",
+      "emoji": "🚰"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "lampu",
+      "role": "alat",
+      "emoji": "💡"
+    },
+    {
+      "id": "pintu",
+      "labelKey": "pintu",
+      "role": "alat",
+      "emoji": "🚪"
+    },
+    {
+      "labelKey": "televisi",
+      "id": "televisi",
+      "role": "alat",
+      "emoji": "📺"
+    },
+    {
+      "labelKey": "radio",
+      "id": "radio",
+      "role": "alat",
+      "emoji": "📻"
+    },
+    {
+      "labelKey": "senter",
+      "id": "senter",
+      "role": "alat",
+      "emoji": "🔦"
+    },
+    {
+      "labelKey": "jam-weker",
+      "id": "jam-weker",
+      "role": "alat",
+      "emoji": "⏰"
+    },
+    {
+      "labelKey": "telepon",
+      "id": "telepon",
+      "role": "alat",
+      "emoji": "☎️"
+    },
+    {
+      "labelKey": "jendela",
+      "id": "jendela",
+      "role": "alat",
+      "emoji": "🪟"
+    },
+    {
+      "labelKey": "payung",
+      "id": "payung",
+      "role": "alat",
+      "emoji": "☂️"
+    },
+    {
+      "labelKey": "toilet",
+      "id": "toilet",
+      "role": "alat",
+      "emoji": "🚽"
+    },
+    {
+      "labelKey": "laptop",
+      "id": "laptop",
+      "role": "alat",
+      "emoji": "💻"
+    }
   ]
 }

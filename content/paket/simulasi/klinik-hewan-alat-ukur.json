@@ -1,6 +1,6 @@
 {
   "id": "klinik-hewan-alat-ukur",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -17,6 +17,12 @@
       "kelinci": "kelinci",
       "kucing": "kucing",
       "ayam": "ayam",
+      "ulat": "ulat",
+      "ikan": "ikan",
+      "anjing": "anjing",
+      "bebek": "bebek",
+      "hamster": "hamster",
+      "kura-kura": "kura-kura",
       "penggaris-kubus": "penggaris kubus",
       "timbangan": "timbangan"
     },
@@ -29,6 +35,12 @@
       "kelinci": "rabbit",
       "kucing": "cat",
       "ayam": "chicken",
+      "ulat": "caterpillar",
+      "ikan": "fish",
+      "anjing": "dog",
+      "bebek": "duck",
+      "hamster": "hamster",
+      "kura-kura": "turtle",
       "penggaris-kubus": "cube ruler",
       "timbangan": "balance scale"
     }
@@ -36,8 +48,8 @@
   "knobs": {
     "hewanAktif": {
       "min": 4,
-      "max": 6,
-      "default": 6,
+      "max": 12,
+      "default": 12,
       "step": 1,
       "keterangan": "jumlah jenis hewan yang bisa muncul; putaran diacak, bukan pencocokan 1:1"
     }
@@ -88,6 +100,48 @@
       "id": "ayam",
       "role": "hewan",
       "emoji": "🐔",
+      "value": 2
+    },
+    {
+      "labelKey": "ulat",
+      "id": "ulat",
+      "role": "hewan",
+      "emoji": "🐛",
+      "value": 1
+    },
+    {
+      "labelKey": "ikan",
+      "id": "ikan",
+      "role": "hewan",
+      "emoji": "🐟",
+      "value": 1
+    },
+    {
+      "labelKey": "anjing",
+      "id": "anjing",
+      "role": "hewan",
+      "emoji": "🐶",
+      "value": 2
+    },
+    {
+      "labelKey": "bebek",
+      "id": "bebek",
+      "role": "hewan",
+      "emoji": "🦆",
+      "value": 2
+    },
+    {
+      "labelKey": "hamster",
+      "id": "hamster",
+      "role": "hewan",
+      "emoji": "🐹",
+      "value": 2
+    },
+    {
+      "labelKey": "kura-kura",
+      "id": "kura-kura",
+      "role": "hewan",
+      "emoji": "🐢",
       "value": 2
     },
     {

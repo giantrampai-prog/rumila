@@ -1,6 +1,6 @@
 {
   "id": "lanjutkan-hitungan-sampai-10",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -22,7 +22,11 @@
       "dari2": "Lanjutkan dari 2",
       "dari4": "Lanjutkan dari 4",
       "dari5": "Lanjutkan dari 5",
-      "dari7": "Lanjutkan dari 7"
+      "dari7": "Lanjutkan dari 7",
+      "dari1": "Lanjutkan dari 1",
+      "n2": "2",
+      "dari3": "Lanjutkan dari 3",
+      "dari6": "Lanjutkan dari 6"
     },
     "en": {
       "judul": "Keep Counting to 10",
@@ -38,7 +42,11 @@
       "dari2": "Continue from 2",
       "dari4": "Continue from 4",
       "dari5": "Continue from 5",
-      "dari7": "Continue from 7"
+      "dari7": "Continue from 7",
+      "dari1": "Continue from 1",
+      "n2": "2",
+      "dari3": "Continue from 3",
+      "dari6": "Continue from 6"
     }
   },
   "knobs": {
@@ -52,7 +60,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 7,
   "world": "jalan-angka",
   "mode": "susun",
   "sequences": [
@@ -118,6 +126,72 @@
       "id": "dari-7",
       "titleKey": "dari7",
       "steps": [
+        {
+          "id": "k8",
+          "labelKey": "n8"
+        },
+        {
+          "id": "k9",
+          "labelKey": "n9"
+        },
+        {
+          "id": "k10",
+          "labelKey": "n10"
+        }
+      ]
+    },
+    {
+      "id": "dari-1",
+      "titleKey": "dari1",
+      "steps": [
+        {
+          "id": "k2",
+          "labelKey": "n2"
+        },
+        {
+          "id": "k3",
+          "labelKey": "n3"
+        },
+        {
+          "id": "k4",
+          "labelKey": "n4"
+        },
+        {
+          "id": "k5",
+          "labelKey": "n5"
+        }
+      ]
+    },
+    {
+      "id": "dari-3",
+      "titleKey": "dari3",
+      "steps": [
+        {
+          "id": "k4",
+          "labelKey": "n4"
+        },
+        {
+          "id": "k5",
+          "labelKey": "n5"
+        },
+        {
+          "id": "k6",
+          "labelKey": "n6"
+        },
+        {
+          "id": "k7",
+          "labelKey": "n7"
+        }
+      ]
+    },
+    {
+      "id": "dari-6",
+      "titleKey": "dari6",
+      "steps": [
+        {
+          "id": "k7",
+          "labelKey": "n7"
+        },
         {
           "id": "k8",
           "labelKey": "n8"

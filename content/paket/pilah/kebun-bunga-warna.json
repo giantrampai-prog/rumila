@@ -1,6 +1,6 @@
 {
   "id": "kebun-bunga-warna",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,16 @@
       "matahari": "bunga matahari",
       "lemon": "lemon",
       "kaktus": "kaktus",
-      "timun": "timun"
+      "timun": "timun",
+      "apel": "apel",
+      "tomat": "tomat",
+      "cabai": "cabai",
+      "tetesair": "tetes air",
+      "ikan": "ikan kolam",
+      "pisang": "pisang",
+      "jagung": "jagung",
+      "brokoli": "brokoli",
+      "daun": "daun"
     },
     "en": {
       "judul": "Colorful Flower Garden",
@@ -38,7 +47,16 @@
       "matahari": "sunflower",
       "lemon": "lemon",
       "kaktus": "cactus",
-      "timun": "cucumber"
+      "timun": "cucumber",
+      "apel": "apple",
+      "tomat": "tomato",
+      "cabai": "chilli",
+      "tetesair": "water drop",
+      "ikan": "pond fish",
+      "pisang": "banana",
+      "jagung": "corn",
+      "brokoli": "broccoli",
+      "daun": "leaf"
     }
   },
   "knobs": {
@@ -140,6 +158,69 @@
       "labelKey": "timun",
       "bin": "hijau",
       "emoji": "🥒",
+      "color": "#43a047"
+    },
+    {
+      "id": "apel",
+      "labelKey": "apel",
+      "bin": "merah",
+      "emoji": "🍎",
+      "color": "#e53935"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "tomat",
+      "bin": "merah",
+      "emoji": "🍅",
+      "color": "#e53935"
+    },
+    {
+      "id": "cabai",
+      "labelKey": "cabai",
+      "bin": "merah",
+      "emoji": "🌶️",
+      "color": "#e53935"
+    },
+    {
+      "id": "tetesair",
+      "labelKey": "tetesair",
+      "bin": "biru",
+      "emoji": "💧",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "ikan",
+      "bin": "biru",
+      "emoji": "🐟",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "pisang",
+      "bin": "kuning",
+      "emoji": "🍌",
+      "color": "#fdd835"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "jagung",
+      "bin": "kuning",
+      "emoji": "🌽",
+      "color": "#fdd835"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "brokoli",
+      "bin": "hijau",
+      "emoji": "🥦",
+      "color": "#43a047"
+    },
+    {
+      "id": "daun",
+      "labelKey": "daun",
+      "bin": "hijau",
+      "emoji": "🍃",
       "color": "#43a047"
     }
   ]
