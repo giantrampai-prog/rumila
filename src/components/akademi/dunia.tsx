@@ -4,7 +4,7 @@
 // Satu komponen latar + kerangka layar aktivitas (header kembali, progres ronde, tombol dengar instruksi).
 
 import { useRouter } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
 import { BALOO, INK, NUNITO } from "./jenis";
@@ -22,6 +22,42 @@ export function LatarKebunPasar() {
   );
 }
 
+/**
+ * Tablet: layar permainan dirancang selebar HP–960 px, jadi di tablet besar (mis. 13", 1280×800) isinya kecil dan
+ * banyak ruang kosong. Lebar viewport diatur ulang supaya peramban sendiri yang memperbesar halaman; koordinat
+ * sentuh, drag, dan elemen fixed tetap konsisten (berbeda dengan CSS zoom/transform). HP dan desktop tidak berubah.
+ */
+export function viewportTablet(layar: { w: number; h: number }, landscape: boolean): string | null {
+  const w = landscape ? Math.max(layar.w, layar.h) : Math.min(layar.w, layar.h);
+  const h = landscape ? Math.min(layar.w, layar.h) : Math.max(layar.w, layar.h);
+  if (Math.min(w, h) < 600) return null;
+  // patokan desain: landscape ±900×620, potret ±720×900 CSS px
+  const skala = landscape ? Math.min(w / 900, h / 620, 1.6) : Math.min(w / 720, h / 900, 1.6);
+  if (skala <= 1.05) return null;
+  const lebar = Math.round(w / skala);
+  return `width=${lebar}, initial-scale=${(w / lebar).toFixed(3)}, viewport-fit=cover`;
+}
+
+function useSkalaTablet() {
+  useEffect(() => {
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="viewport"]');
+    if (!meta) return;
+    const asli = meta.content;
+    // ukuran layar fisik (CSS px); jendela awal dipakai bila screen.* lebih kecil (mis. WebView/emulator)
+    const layar = { w: Math.max(window.screen.width, window.innerWidth), h: Math.max(window.screen.height, window.innerHeight) };
+    const atur = () => {
+      const isi = viewportTablet(layar, window.matchMedia("(orientation: landscape)").matches);
+      meta.content = isi ?? asli;
+    };
+    atur();
+    window.addEventListener("orientationchange", atur);
+    return () => {
+      window.removeEventListener("orientationchange", atur);
+      meta.content = asli;
+    };
+  }, []);
+}
+
 /** Kerangka layar aktivitas: kembali · judul & progres · instruksi (bisa diputar ulang) · isi. */
 export function LayarAktivitas({
   judul, ronde, total, instruksi, onUcap, children, kembaliKe = "/akademi",
@@ -29,6 +65,7 @@ export function LayarAktivitas({
   judul: string; ronde: number; total: number; instruksi: string; onUcap: () => void; children: ReactNode; kembaliKe?: string;
 }) {
   const router = useRouter();
+  useSkalaTablet();
   // Tombol kembali: hentikan suara dulu (ketukan pertama di HP bisa membuka ucapan yang tertahan),
   // lalu kembali lewat riwayat bila datang dari aplikasi ini (instan dari cache), selain itu ke kembaliKe.
   const kembali = () => {
@@ -41,7 +78,7 @@ export function LayarAktivitas({
     <div className="relative min-h-dvh" style={{ fontFamily: NUNITO, color: INK }}>
       <LatarKebunPasar />
       <div
-        className="relative mx-auto flex max-w-[960px] flex-col gap-3 px-3 sm:px-5"
+        className="relative mx-auto flex min-h-dvh max-w-[960px] flex-col gap-3 px-3 sm:px-5"
         style={{ paddingTop: "max(12px, env(safe-area-inset-top))", paddingBottom: "max(20px, env(safe-area-inset-bottom))" }}
       >
         <header className="flex items-center gap-2">
@@ -67,7 +104,8 @@ export function LayarAktivitas({
           </span>
           <span style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 700, lineHeight: 1.2 }}>{instruksi}</span>
         </button>
-        {children}
+        {/* area main mengisi sisa tinggi dan berada di tengah, supaya layar tinggi tidak kosong di bawah */}
+        <div className="flex flex-1 flex-col justify-center gap-3 pb-[12dvh]">{children}</div>
       </div>
     </div>
   );
