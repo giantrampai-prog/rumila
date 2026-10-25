@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peternakan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,12 @@
       "i-bunga": "bunga mekar",
       "i-bungamatahari": "bunga matahari",
       "i-murbei": "daun murbei",
-      "i-kubis": "daun kubis"
+      "i-kubis": "daun kubis",
+      "i-semanggi": "daun semanggi",
+      "i-nasi": "sisa nasi",
+      "i-jangkrik": "jangkrik",
+      "i-bungasepatu": "bunga sepatu",
+      "i-tulip": "bunga tulip"
     },
     "en": {
       "judul": "Feeding Time on the Farm",
@@ -38,7 +43,12 @@
       "i-bunga": "blooming flower",
       "i-bungamatahari": "sunflower",
       "i-murbei": "mulberry leaf",
-      "i-kubis": "cabbage leaf"
+      "i-kubis": "cabbage leaf",
+      "i-semanggi": "clover leaves",
+      "i-nasi": "leftover rice",
+      "i-jangkrik": "cricket",
+      "i-bungasepatu": "hibiscus flower",
+      "i-tulip": "tulip flower"
     }
   },
   "knobs": {
@@ -136,6 +146,36 @@
       "labelKey": "i-kubis",
       "bin": "ulat",
       "emoji": "🥬"
+    },
+    {
+      "id": "semanggi",
+      "labelKey": "i-semanggi",
+      "bin": "sapi",
+      "emoji": "🍀"
+    },
+    {
+      "id": "nasi",
+      "labelKey": "i-nasi",
+      "bin": "ayam",
+      "emoji": "🍚"
+    },
+    {
+      "id": "jangkrik",
+      "labelKey": "i-jangkrik",
+      "bin": "ayam",
+      "emoji": "🦗"
+    },
+    {
+      "id": "bungasepatu",
+      "labelKey": "i-bungasepatu",
+      "bin": "lebah",
+      "emoji": "🌺"
+    },
+    {
+      "id": "tulip",
+      "labelKey": "i-tulip",
+      "bin": "lebah",
+      "emoji": "🌷"
     }
   ],
   "pilihan": []

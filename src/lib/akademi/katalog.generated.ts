@@ -67786,7 +67786,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kartu-titik-1-5",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -67803,7 +67803,10 @@ export const PAKET_RAW: unknown[] = [
         "n4": "4",
         "n5": "5",
         "apel": "apel",
-        "ikan": "ikan"
+        "ikan": "ikan",
+        "bintang": "bintang",
+        "bebek": "bebek",
+        "bola": "bola"
       },
       "en": {
         "judul": "Dot Cards",
@@ -67814,7 +67817,10 @@ export const PAKET_RAW: unknown[] = [
         "n4": "4",
         "n5": "5",
         "apel": "apples",
-        "ikan": "fish"
+        "ikan": "fish",
+        "bintang": "star",
+        "bebek": "duck",
+        "bola": "ball"
       }
     },
     "knobs": {
@@ -67935,6 +67941,111 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "ikan",
         "bin": "k5",
         "emoji": "🐟",
+        "count": 5
+      },
+      {
+        "id": "bintang-1",
+        "labelKey": "bintang",
+        "bin": "k1",
+        "emoji": "⭐",
+        "count": 1
+      },
+      {
+        "id": "bintang-2",
+        "labelKey": "bintang",
+        "bin": "k2",
+        "emoji": "⭐",
+        "count": 2
+      },
+      {
+        "id": "bintang-3",
+        "labelKey": "bintang",
+        "bin": "k3",
+        "emoji": "⭐",
+        "count": 3
+      },
+      {
+        "id": "bintang-4",
+        "labelKey": "bintang",
+        "bin": "k4",
+        "emoji": "⭐",
+        "count": 4
+      },
+      {
+        "id": "bintang-5",
+        "labelKey": "bintang",
+        "bin": "k5",
+        "emoji": "⭐",
+        "count": 5
+      },
+      {
+        "id": "bebek-1",
+        "labelKey": "bebek",
+        "bin": "k1",
+        "emoji": "🦆",
+        "count": 1
+      },
+      {
+        "id": "bebek-2",
+        "labelKey": "bebek",
+        "bin": "k2",
+        "emoji": "🦆",
+        "count": 2
+      },
+      {
+        "id": "bebek-3",
+        "labelKey": "bebek",
+        "bin": "k3",
+        "emoji": "🦆",
+        "count": 3
+      },
+      {
+        "id": "bebek-4",
+        "labelKey": "bebek",
+        "bin": "k4",
+        "emoji": "🦆",
+        "count": 4
+      },
+      {
+        "id": "bebek-5",
+        "labelKey": "bebek",
+        "bin": "k5",
+        "emoji": "🦆",
+        "count": 5
+      },
+      {
+        "id": "bola-1",
+        "labelKey": "bola",
+        "bin": "k1",
+        "emoji": "⚽",
+        "count": 1
+      },
+      {
+        "id": "bola-2",
+        "labelKey": "bola",
+        "bin": "k2",
+        "emoji": "⚽",
+        "count": 2
+      },
+      {
+        "id": "bola-3",
+        "labelKey": "bola",
+        "bin": "k3",
+        "emoji": "⚽",
+        "count": 3
+      },
+      {
+        "id": "bola-4",
+        "labelKey": "bola",
+        "bin": "k4",
+        "emoji": "⚽",
+        "count": 4
+      },
+      {
+        "id": "bola-5",
+        "labelKey": "bola",
+        "bin": "k5",
+        "emoji": "⚽",
         "count": 5
       }
     ]
@@ -69475,7 +69586,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kue-tiga-tahap",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -69494,7 +69605,18 @@ export const PAKET_RAW: unknown[] = [
         "aduk": "aduk adonan",
         "tuang": "tuang susu",
         "oven": "masukkan ke oven",
-        "jadi": "kue matang"
+        "jadi": "kue matang",
+        "i-mentega": "ambil mentega",
+        "i-cucitangan": "cuci tangan",
+        "i-resep": "baca resep",
+        "i-cokelat": "ambil cokelat",
+        "i-tepungmangkuk": "tuang tepung ke mangkuk",
+        "i-garam": "tambah sejumput garam",
+        "i-madu": "tuang madu ke adonan",
+        "i-waktu": "atur waktu oven",
+        "i-sarungtangan": "pakai sarung tangan oven",
+        "i-tunggu": "tunggu kue mengembang",
+        "i-cupcake": "cupcake matang"
       },
       "en": {
         "judul": "Three Baking Stages",
@@ -69507,7 +69629,18 @@ export const PAKET_RAW: unknown[] = [
         "aduk": "stir the batter",
         "tuang": "pour the milk",
         "oven": "put it in the oven",
-        "jadi": "the cake is done"
+        "jadi": "the cake is done",
+        "i-mentega": "get the butter",
+        "i-cucitangan": "wash your hands",
+        "i-resep": "read the recipe",
+        "i-cokelat": "get the chocolate",
+        "i-tepungmangkuk": "pour flour into the bowl",
+        "i-garam": "add a pinch of salt",
+        "i-madu": "pour honey into the batter",
+        "i-waktu": "set the oven timer",
+        "i-sarungtangan": "put on oven mitts",
+        "i-tunggu": "wait for the cake to rise",
+        "i-cupcake": "baked cupcake"
       }
     },
     "knobs": {
@@ -69585,6 +69718,72 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "jadi",
         "bin": "panggang",
         "emoji": "🎂"
+      },
+      {
+        "id": "mentega",
+        "labelKey": "i-mentega",
+        "bin": "siapkan",
+        "emoji": "🧈"
+      },
+      {
+        "id": "cucitangan",
+        "labelKey": "i-cucitangan",
+        "bin": "siapkan",
+        "emoji": "🧼"
+      },
+      {
+        "id": "resep",
+        "labelKey": "i-resep",
+        "bin": "siapkan",
+        "emoji": "📖"
+      },
+      {
+        "id": "cokelat",
+        "labelKey": "i-cokelat",
+        "bin": "siapkan",
+        "emoji": "🍫"
+      },
+      {
+        "id": "tepungmangkuk",
+        "labelKey": "i-tepungmangkuk",
+        "bin": "campur",
+        "emoji": "🥣"
+      },
+      {
+        "id": "garam",
+        "labelKey": "i-garam",
+        "bin": "campur",
+        "emoji": "🧂"
+      },
+      {
+        "id": "madu",
+        "labelKey": "i-madu",
+        "bin": "campur",
+        "emoji": "🍯"
+      },
+      {
+        "id": "waktu",
+        "labelKey": "i-waktu",
+        "bin": "panggang",
+        "emoji": "⏲️"
+      },
+      {
+        "id": "sarungtangan",
+        "labelKey": "i-sarungtangan",
+        "bin": "panggang",
+        "emoji": "🧤"
+      },
+      {
+        "id": "tunggu",
+        "labelKey": "i-tunggu",
+        "bin": "panggang",
+        "emoji": "⏳"
+      },
+      {
+        "id": "cupcake",
+        "labelKey": "i-cupcake",
+        "bin": "panggang",
+        "emoji": "🧁"
       }
     ]
   },
@@ -72665,7 +72864,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-antar-ke-habitat",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -72687,7 +72886,11 @@ export const PAKET_RAW: unknown[] = [
         "i-monyet": "monyet",
         "i-harimau": "harimau",
         "i-ikanbadut": "ikan badut",
-        "i-penyu": "penyu"
+        "i-penyu": "penyu",
+        "i-kalajengking": "kalajengking",
+        "i-ular": "ular pasir",
+        "i-untaduapunuk": "unta berpunuk dua",
+        "i-anjinglaut": "anjing laut"
       },
       "en": {
         "judul": "Take Them Home",
@@ -72703,7 +72906,11 @@ export const PAKET_RAW: unknown[] = [
         "i-monyet": "monkey",
         "i-harimau": "tiger",
         "i-ikanbadut": "clownfish",
-        "i-penyu": "sea turtle"
+        "i-penyu": "sea turtle",
+        "i-kalajengking": "scorpion",
+        "i-ular": "sand snake",
+        "i-untaduapunuk": "two-humped camel",
+        "i-anjinglaut": "seal"
       }
     },
     "knobs": {
@@ -72802,6 +73009,31 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-penyu",
         "bin": "terumbu",
         "emoji": "🐢"
+      },
+      {
+        "id": "kalajengking",
+        "labelKey": "i-kalajengking",
+        "bin": "gurun",
+        "emoji": "🦂"
+      },
+      {
+        "id": "ular",
+        "labelKey": "i-ular",
+        "bin": "gurun",
+        "emoji": "🐍",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "untaduapunuk",
+        "labelKey": "i-untaduapunuk",
+        "bin": "gurun",
+        "emoji": "🐫"
+      },
+      {
+        "id": "anjinglaut",
+        "labelKey": "i-anjinglaut",
+        "bin": "es",
+        "emoji": "🦭"
       }
     ],
     "pilihan": []
@@ -73359,7 +73591,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-ciri-tubuh-dan-habitat",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -73381,7 +73613,11 @@ export const PAKET_RAW: unknown[] = [
         "i-punuk": "punuk penyimpan cadangan",
         "i-kakilebar": "kaki lebar untuk pasir",
         "i-warnahijau": "warna hijau daun untuk bersembunyi",
-        "i-ekorpanjang": "ekor panjang untuk bergelantung"
+        "i-ekorpanjang": "ekor panjang untuk bergelantung",
+        "i-bulupolar": "bulu putih seperti salju",
+        "i-selaput": "kaki berselaput untuk mendayung",
+        "i-ramping": "tubuh licin untuk berenang cepat",
+        "i-bulumata": "bulu mata panjang penahan pasir"
       },
       "en": {
         "judul": "Which Home Fits This Body?",
@@ -73397,7 +73633,11 @@ export const PAKET_RAW: unknown[] = [
         "i-punuk": "hump that stores reserves",
         "i-kakilebar": "wide feet for sand",
         "i-warnahijau": "leaf-green colour to hide",
-        "i-ekorpanjang": "long tail for hanging"
+        "i-ekorpanjang": "long tail for hanging",
+        "i-bulupolar": "snow-white fur",
+        "i-selaput": "webbed feet for paddling",
+        "i-ramping": "smooth body for fast swimming",
+        "i-bulumata": "long eyelashes that block sand"
       }
     },
     "knobs": {
@@ -73503,6 +73743,30 @@ export const PAKET_RAW: unknown[] = [
         "bin": "hutan",
         "emoji": "🐒",
         "color": "#c8e6c9"
+      },
+      {
+        "id": "bulupolar",
+        "labelKey": "i-bulupolar",
+        "bin": "es",
+        "emoji": "🐻‍❄️"
+      },
+      {
+        "id": "selaput",
+        "labelKey": "i-selaput",
+        "bin": "air",
+        "emoji": "🦆"
+      },
+      {
+        "id": "ramping",
+        "labelKey": "i-ramping",
+        "bin": "air",
+        "emoji": "🐬"
+      },
+      {
+        "id": "bulumata",
+        "labelKey": "i-bulumata",
+        "bin": "gurun",
+        "emoji": "🐫"
       }
     ],
     "pilihan": []
@@ -73793,7 +74057,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-habitat-hewan-lain",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -73815,7 +74079,11 @@ export const PAKET_RAW: unknown[] = [
         "i-burungbeo": "burung beo",
         "i-gorila": "gorila",
         "i-kepiting": "kepiting karang",
-        "i-cumi": "cumi-cumi"
+        "i-cumi": "cumi-cumi",
+        "i-untaduapunuk": "unta berpunuk dua",
+        "i-kadal": "kadal gurun",
+        "i-penguin": "penguin",
+        "i-beruangkutub": "beruang kutub"
       },
       "en": {
         "judul": "Animal Homes Around the World",
@@ -73831,7 +74099,11 @@ export const PAKET_RAW: unknown[] = [
         "i-burungbeo": "parrot",
         "i-gorila": "gorilla",
         "i-kepiting": "reef crab",
-        "i-cumi": "squid"
+        "i-cumi": "squid",
+        "i-untaduapunuk": "two-humped camel",
+        "i-kadal": "desert lizard",
+        "i-penguin": "penguin",
+        "i-beruangkutub": "polar bear"
       }
     },
     "knobs": {
@@ -73931,6 +74203,31 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-cumi",
         "bin": "terumbu",
         "emoji": "🦑"
+      },
+      {
+        "id": "untaduapunuk",
+        "labelKey": "i-untaduapunuk",
+        "bin": "gurun",
+        "emoji": "🐫"
+      },
+      {
+        "id": "kadal",
+        "labelKey": "i-kadal",
+        "bin": "gurun",
+        "emoji": "🦎"
+      },
+      {
+        "id": "penguin",
+        "labelKey": "i-penguin",
+        "bin": "es",
+        "emoji": "🐧",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "beruangkutub",
+        "labelKey": "i-beruangkutub",
+        "bin": "es",
+        "emoji": "🐻‍❄️"
       }
     ],
     "pilihan": []
@@ -74910,7 +75207,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-keranjang-indra-rumah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -74932,7 +75229,24 @@ export const PAKET_RAW: unknown[] = [
         "i-bunga": "bunga harum",
         "i-sabun": "sabun wangi",
         "i-kue": "kue manis",
-        "i-permen": "permen"
+        "i-permen": "permen",
+        "i-lukisan": "lukisan",
+        "i-cermin": "cermin",
+        "i-senter": "senter menyala",
+        "i-bukugambar": "buku bergambar",
+        "i-bintang": "bintang di langit",
+        "i-terompet": "terompet",
+        "i-gitar": "petikan gitar",
+        "i-radio": "radio",
+        "i-biola": "biola",
+        "i-piano": "piano",
+        "i-mawar": "mawar harum",
+        "i-melati": "bunga melati harum",
+        "i-kauskaki": "kaus kaki bau",
+        "i-sampah": "tempat sampah bau",
+        "i-eskrim": "es krim manis",
+        "i-lemon": "lemon asam",
+        "i-madu": "madu manis"
       },
       "en": {
         "judul": "Five-Sense Baskets",
@@ -74948,7 +75262,24 @@ export const PAKET_RAW: unknown[] = [
         "i-bunga": "sweet-smelling flower",
         "i-sabun": "scented soap",
         "i-kue": "sweet cake",
-        "i-permen": "candy"
+        "i-permen": "candy",
+        "i-lukisan": "painting",
+        "i-cermin": "mirror",
+        "i-senter": "glowing flashlight",
+        "i-bukugambar": "picture book",
+        "i-bintang": "star in the sky",
+        "i-terompet": "trumpet",
+        "i-gitar": "guitar strumming",
+        "i-radio": "radio",
+        "i-biola": "violin",
+        "i-piano": "piano",
+        "i-mawar": "sweet-smelling rose",
+        "i-melati": "fragrant jasmine",
+        "i-kauskaki": "smelly socks",
+        "i-sampah": "smelly trash can",
+        "i-eskrim": "sweet ice cream",
+        "i-lemon": "sour lemon",
+        "i-madu": "sweet honey"
       }
     },
     "knobs": {
@@ -75042,6 +75373,108 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-permen",
         "bin": "lidah",
         "emoji": "🍬"
+      },
+      {
+        "id": "lukisan",
+        "labelKey": "i-lukisan",
+        "bin": "mata",
+        "emoji": "🖼️"
+      },
+      {
+        "id": "cermin",
+        "labelKey": "i-cermin",
+        "bin": "mata",
+        "emoji": "🪞"
+      },
+      {
+        "id": "senter",
+        "labelKey": "i-senter",
+        "bin": "mata",
+        "emoji": "🔦"
+      },
+      {
+        "id": "bukugambar",
+        "labelKey": "i-bukugambar",
+        "bin": "mata",
+        "emoji": "📖"
+      },
+      {
+        "id": "bintang",
+        "labelKey": "i-bintang",
+        "bin": "mata",
+        "emoji": "⭐"
+      },
+      {
+        "id": "terompet",
+        "labelKey": "i-terompet",
+        "bin": "telinga",
+        "emoji": "🎺"
+      },
+      {
+        "id": "gitar",
+        "labelKey": "i-gitar",
+        "bin": "telinga",
+        "emoji": "🎸"
+      },
+      {
+        "id": "radio",
+        "labelKey": "i-radio",
+        "bin": "telinga",
+        "emoji": "📻"
+      },
+      {
+        "id": "biola",
+        "labelKey": "i-biola",
+        "bin": "telinga",
+        "emoji": "🎻"
+      },
+      {
+        "id": "piano",
+        "labelKey": "i-piano",
+        "bin": "telinga",
+        "emoji": "🎹"
+      },
+      {
+        "id": "mawar",
+        "labelKey": "i-mawar",
+        "bin": "hidung",
+        "emoji": "🌹"
+      },
+      {
+        "id": "melati",
+        "labelKey": "i-melati",
+        "bin": "hidung",
+        "emoji": "🌼"
+      },
+      {
+        "id": "kauskaki",
+        "labelKey": "i-kauskaki",
+        "bin": "hidung",
+        "emoji": "🧦"
+      },
+      {
+        "id": "sampah",
+        "labelKey": "i-sampah",
+        "bin": "hidung",
+        "emoji": "🗑️"
+      },
+      {
+        "id": "eskrim",
+        "labelKey": "i-eskrim",
+        "bin": "lidah",
+        "emoji": "🍦"
+      },
+      {
+        "id": "lemon",
+        "labelKey": "i-lemon",
+        "bin": "lidah",
+        "emoji": "🍋"
+      },
+      {
+        "id": "madu",
+        "labelKey": "i-madu",
+        "bin": "lidah",
+        "emoji": "🍯"
       }
     ],
     "pilihan": []
@@ -78521,7 +78954,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-rak-bahan-dapur",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -78543,7 +78976,11 @@ export const PAKET_RAW: unknown[] = [
         "i-botolplastik": "botol plastik",
         "i-sedotan": "sedotan plastik",
         "i-gelaskaca": "gelas kaca",
-        "i-toples": "toples kaca"
+        "i-toples": "toples kaca",
+        "i-sumpit": "sumpit kayu",
+        "i-kursi": "kursi makan kayu",
+        "i-garpu": "garpu makan",
+        "i-pisau": "pisau dapur"
       },
       "en": {
         "judul": "Kitchen Material Shelves",
@@ -78559,7 +78996,11 @@ export const PAKET_RAW: unknown[] = [
         "i-botolplastik": "plastic bottle",
         "i-sedotan": "plastic straw",
         "i-gelaskaca": "glass cup",
-        "i-toples": "glass jar"
+        "i-toples": "glass jar",
+        "i-sumpit": "wooden chopsticks",
+        "i-kursi": "wooden dining chair",
+        "i-garpu": "metal fork",
+        "i-pisau": "kitchen knife"
       }
     },
     "knobs": {
@@ -78658,13 +79099,37 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-toples",
         "bin": "kaca",
         "emoji": "🫙"
+      },
+      {
+        "id": "sumpit",
+        "labelKey": "i-sumpit",
+        "bin": "kayu",
+        "emoji": "🥢"
+      },
+      {
+        "id": "kursi",
+        "labelKey": "i-kursi",
+        "bin": "kayu",
+        "emoji": "🪑"
+      },
+      {
+        "id": "garpu",
+        "labelKey": "i-garpu",
+        "bin": "logam",
+        "emoji": "🍴"
+      },
+      {
+        "id": "pisau",
+        "labelKey": "i-pisau",
+        "bin": "logam",
+        "emoji": "🔪"
       }
     ],
     "pilihan": []
   },
   {
     "id": "sains-rak-bahan-halaman",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -78686,7 +79151,13 @@ export const PAKET_RAW: unknown[] = [
         "i-ember": "ember plastik",
         "i-mainan": "mainan plastik",
         "i-jendela": "kaca jendela",
-        "i-botolkaca": "botol kaca"
+        "i-botolkaca": "botol kaca",
+        "i-pintu": "pintu kayu",
+        "i-bumerang": "bumerang kayu",
+        "i-tangga": "tangga kayu",
+        "i-gembok": "gembok",
+        "i-rantai": "rantai besi",
+        "i-kaleng": "kaleng"
       },
       "en": {
         "judul": "Materials in the Yard",
@@ -78702,7 +79173,13 @@ export const PAKET_RAW: unknown[] = [
         "i-ember": "plastic bucket",
         "i-mainan": "plastic toy",
         "i-jendela": "window glass",
-        "i-botolkaca": "glass bottle"
+        "i-botolkaca": "glass bottle",
+        "i-pintu": "wooden door",
+        "i-bumerang": "wooden boomerang",
+        "i-tangga": "wooden ladder",
+        "i-gembok": "padlock",
+        "i-rantai": "iron chain",
+        "i-kaleng": "tin can"
       }
     },
     "knobs": {
@@ -78801,13 +79278,49 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-botolkaca",
         "bin": "kaca",
         "emoji": "🍾"
+      },
+      {
+        "id": "pintu",
+        "labelKey": "i-pintu",
+        "bin": "kayu",
+        "emoji": "🚪"
+      },
+      {
+        "id": "bumerang",
+        "labelKey": "i-bumerang",
+        "bin": "kayu",
+        "emoji": "🪃"
+      },
+      {
+        "id": "tangga",
+        "labelKey": "i-tangga",
+        "bin": "kayu",
+        "emoji": "🪜"
+      },
+      {
+        "id": "gembok",
+        "labelKey": "i-gembok",
+        "bin": "logam",
+        "emoji": "🔒"
+      },
+      {
+        "id": "rantai",
+        "labelKey": "i-rantai",
+        "bin": "logam",
+        "emoji": "⛓️"
+      },
+      {
+        "id": "kaleng",
+        "labelKey": "i-kaleng",
+        "bin": "logam",
+        "emoji": "🥫"
       }
     ],
     "pilihan": []
   },
   {
     "id": "sains-rak-sayur-bagian-tumbuhan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -78831,7 +79344,8 @@ export const PAKET_RAW: unknown[] = [
         "i-selada": "selada",
         "i-kangkung": "kangkung",
         "i-brokoli": "brokoli",
-        "i-kembangkol": "kembang kol"
+        "i-kembangkol": "kembang kol",
+        "i-kentang": "kentang (umbi batang)"
       },
       "en": {
         "judul": "Which Part Is the Veggie?",
@@ -78849,7 +79363,8 @@ export const PAKET_RAW: unknown[] = [
         "i-selada": "lettuce",
         "i-kangkung": "water spinach",
         "i-brokoli": "broccoli",
-        "i-kembangkol": "cauliflower"
+        "i-kembangkol": "cauliflower",
+        "i-kentang": "potato (stem tuber)"
       }
     },
     "knobs": {
@@ -78958,6 +79473,12 @@ export const PAKET_RAW: unknown[] = [
         "bin": "bunga",
         "emoji": "🥦",
         "color": "#fff8e1"
+      },
+      {
+        "id": "kentang",
+        "labelKey": "i-kentang",
+        "bin": "batang",
+        "emoji": "🥔"
       }
     ],
     "pilihan": []
@@ -79083,7 +79604,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sains-siapa-yang-bekerja",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "pilah",
     "competencyIds": [
@@ -79105,7 +79626,19 @@ export const PAKET_RAW: unknown[] = [
         "i-tas": "mengangkat tas",
         "i-beban": "mengangkat beban",
         "i-baca": "membaca buku",
-        "i-puzel": "memikirkan puzel"
+        "i-puzel": "memikirkan puzel",
+        "i-sepeda": "mengayuh sepeda",
+        "i-jalan": "berjalan kaki",
+        "i-sepaturoda": "main sepatu roda",
+        "i-skuter": "mendorong skuter dengan kaki",
+        "i-lilin": "meniup lilin ulang tahun",
+        "i-terompet": "meniup terompet",
+        "i-gelembung": "meniup gelembung sabun",
+        "i-saksofon": "meniup saksofon",
+        "i-dayung": "mendayung perahu",
+        "i-basket": "melempar bola basket",
+        "i-pingpong": "memukul bola pingpong",
+        "i-keranjang": "mengangkat keranjang cucian"
       },
       "en": {
         "judul": "Which Part Is Working?",
@@ -79121,7 +79654,19 @@ export const PAKET_RAW: unknown[] = [
         "i-tas": "lifting a bag",
         "i-beban": "lifting weights",
         "i-baca": "reading a book",
-        "i-puzel": "solving a puzzle"
+        "i-puzel": "solving a puzzle",
+        "i-sepeda": "pedaling a bike",
+        "i-jalan": "walking",
+        "i-sepaturoda": "roller skating",
+        "i-skuter": "kicking a scooter along",
+        "i-lilin": "blowing out birthday candles",
+        "i-terompet": "blowing a trumpet",
+        "i-gelembung": "blowing soap bubbles",
+        "i-saksofon": "blowing a saxophone",
+        "i-dayung": "rowing a boat",
+        "i-basket": "throwing a basketball",
+        "i-pingpong": "hitting a ping-pong ball",
+        "i-keranjang": "lifting a laundry basket"
       }
     },
     "knobs": {
@@ -79215,6 +79760,78 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-puzel",
         "bin": "otak",
         "emoji": "🧩"
+      },
+      {
+        "id": "sepeda",
+        "labelKey": "i-sepeda",
+        "bin": "kaki",
+        "emoji": "🚴"
+      },
+      {
+        "id": "jalan",
+        "labelKey": "i-jalan",
+        "bin": "kaki",
+        "emoji": "🚶"
+      },
+      {
+        "id": "sepaturoda",
+        "labelKey": "i-sepaturoda",
+        "bin": "kaki",
+        "emoji": "🛼"
+      },
+      {
+        "id": "skuter",
+        "labelKey": "i-skuter",
+        "bin": "kaki",
+        "emoji": "🛴"
+      },
+      {
+        "id": "lilin",
+        "labelKey": "i-lilin",
+        "bin": "paru",
+        "emoji": "🎂"
+      },
+      {
+        "id": "terompet",
+        "labelKey": "i-terompet",
+        "bin": "paru",
+        "emoji": "🎺"
+      },
+      {
+        "id": "gelembung",
+        "labelKey": "i-gelembung",
+        "bin": "paru",
+        "emoji": "🫧"
+      },
+      {
+        "id": "saksofon",
+        "labelKey": "i-saksofon",
+        "bin": "paru",
+        "emoji": "🎷"
+      },
+      {
+        "id": "dayung",
+        "labelKey": "i-dayung",
+        "bin": "lengan",
+        "emoji": "🚣"
+      },
+      {
+        "id": "basket",
+        "labelKey": "i-basket",
+        "bin": "lengan",
+        "emoji": "🏀"
+      },
+      {
+        "id": "pingpong",
+        "labelKey": "i-pingpong",
+        "bin": "lengan",
+        "emoji": "🏓"
+      },
+      {
+        "id": "keranjang",
+        "labelKey": "i-keranjang",
+        "bin": "lengan",
+        "emoji": "🧺"
       }
     ],
     "pilihan": []
@@ -82183,7 +82800,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-rak-dobel",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -82218,7 +82835,22 @@ export const PAKET_RAW: unknown[] = [
         "i-9p8": "9+8",
         "i-9p9": "9+9",
         "i-9p10": "9+10",
-        "i-10p9": "10+9"
+        "i-10p9": "10+9",
+        "i-e10": "dobel 5",
+        "i-p11": "dobel 5 + 1",
+        "i-m11": "dobel 6 − 1",
+        "i-e12": "dobel 6",
+        "i-p13": "dobel 6 + 1",
+        "i-m13": "dobel 7 − 1",
+        "i-e14": "dobel 7",
+        "i-p15": "dobel 7 + 1",
+        "i-m15": "dobel 8 − 1",
+        "i-e16": "dobel 8",
+        "i-p17": "dobel 8 + 1",
+        "i-m17": "dobel 9 − 1",
+        "i-e18": "dobel 9",
+        "i-p19": "dobel 9 + 1",
+        "i-m19": "dobel 10 − 1"
       },
       "en": {
         "judul": "Doubles and Near Doubles",
@@ -82247,7 +82879,22 @@ export const PAKET_RAW: unknown[] = [
         "i-9p8": "9+8",
         "i-9p9": "9+9",
         "i-9p10": "9+10",
-        "i-10p9": "10+9"
+        "i-10p9": "10+9",
+        "i-e10": "double 5",
+        "i-p11": "double 5 + 1",
+        "i-m11": "double 6 − 1",
+        "i-e12": "double 6",
+        "i-p13": "double 6 + 1",
+        "i-m13": "double 7 − 1",
+        "i-e14": "double 7",
+        "i-p15": "double 7 + 1",
+        "i-m15": "double 8 − 1",
+        "i-e16": "double 8",
+        "i-p17": "double 8 + 1",
+        "i-m17": "double 9 − 1",
+        "i-e18": "double 9",
+        "i-p19": "double 9 + 1",
+        "i-m19": "double 10 − 1"
       }
     },
     "knobs": {
@@ -82402,6 +83049,96 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "y19",
         "labelKey": "i-10p9",
+        "bin": "h19",
+        "scale": 0.7
+      },
+      {
+        "id": "e10",
+        "labelKey": "i-e10",
+        "bin": "h10",
+        "scale": 0.85
+      },
+      {
+        "id": "p11",
+        "labelKey": "i-p11",
+        "bin": "h11",
+        "scale": 0.7
+      },
+      {
+        "id": "m11",
+        "labelKey": "i-m11",
+        "bin": "h11",
+        "scale": 0.7
+      },
+      {
+        "id": "e12",
+        "labelKey": "i-e12",
+        "bin": "h12",
+        "scale": 0.85
+      },
+      {
+        "id": "p13",
+        "labelKey": "i-p13",
+        "bin": "h13",
+        "scale": 0.7
+      },
+      {
+        "id": "m13",
+        "labelKey": "i-m13",
+        "bin": "h13",
+        "scale": 0.7
+      },
+      {
+        "id": "e14",
+        "labelKey": "i-e14",
+        "bin": "h14",
+        "scale": 0.85
+      },
+      {
+        "id": "p15",
+        "labelKey": "i-p15",
+        "bin": "h15",
+        "scale": 0.7
+      },
+      {
+        "id": "m15",
+        "labelKey": "i-m15",
+        "bin": "h15",
+        "scale": 0.7
+      },
+      {
+        "id": "e16",
+        "labelKey": "i-e16",
+        "bin": "h16",
+        "scale": 0.85
+      },
+      {
+        "id": "p17",
+        "labelKey": "i-p17",
+        "bin": "h17",
+        "scale": 0.7
+      },
+      {
+        "id": "m17",
+        "labelKey": "i-m17",
+        "bin": "h17",
+        "scale": 0.7
+      },
+      {
+        "id": "e18",
+        "labelKey": "i-e18",
+        "bin": "h18",
+        "scale": 0.85
+      },
+      {
+        "id": "p19",
+        "labelKey": "i-p19",
+        "bin": "h19",
+        "scale": 0.7
+      },
+      {
+        "id": "m19",
+        "labelKey": "i-m19",
         "bin": "h19",
         "scale": 0.7
       }
@@ -82644,7 +83381,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-mat-rak-puluhan-satuan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -82683,7 +83420,27 @@ export const PAKET_RAW: unknown[] = [
         "i-8p10": "8+10",
         "i-10p9": "10+9",
         "i-9p10": "9+10",
-        "i-10p10": "10+10"
+        "i-10p10": "10+10",
+        "i-c11": "1 puluhan 1 satuan",
+        "i-n11": "sebelas",
+        "i-c12": "1 puluhan 2 satuan",
+        "i-n12": "dua belas",
+        "i-c13": "1 puluhan 3 satuan",
+        "i-n13": "tiga belas",
+        "i-c14": "1 puluhan 4 satuan",
+        "i-n14": "empat belas",
+        "i-c15": "1 puluhan 5 satuan",
+        "i-n15": "lima belas",
+        "i-c16": "1 puluhan 6 satuan",
+        "i-n16": "enam belas",
+        "i-c17": "1 puluhan 7 satuan",
+        "i-n17": "tujuh belas",
+        "i-c18": "1 puluhan 8 satuan",
+        "i-n18": "delapan belas",
+        "i-c19": "1 puluhan 9 satuan",
+        "i-n19": "sembilan belas",
+        "i-c20": "2 puluhan",
+        "i-n20": "dua puluh"
       },
       "en": {
         "judul": "Tens and Ones Shelf",
@@ -82716,7 +83473,27 @@ export const PAKET_RAW: unknown[] = [
         "i-8p10": "8+10",
         "i-10p9": "10+9",
         "i-9p10": "9+10",
-        "i-10p10": "10+10"
+        "i-10p10": "10+10",
+        "i-c11": "1 ten 1 one",
+        "i-n11": "eleven",
+        "i-c12": "1 ten 2 ones",
+        "i-n12": "twelve",
+        "i-c13": "1 ten 3 ones",
+        "i-n13": "thirteen",
+        "i-c14": "1 ten 4 ones",
+        "i-n14": "fourteen",
+        "i-c15": "1 ten 5 ones",
+        "i-n15": "fifteen",
+        "i-c16": "1 ten 6 ones",
+        "i-n16": "sixteen",
+        "i-c17": "1 ten 7 ones",
+        "i-n17": "seventeen",
+        "i-c18": "1 ten 8 ones",
+        "i-n18": "eighteen",
+        "i-c19": "1 ten 9 ones",
+        "i-n19": "nineteen",
+        "i-c20": "2 tens",
+        "i-n20": "twenty"
       }
     },
     "knobs": {
@@ -82901,6 +83678,126 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "b20",
         "labelKey": "i-10p10",
+        "bin": "r20",
+        "scale": 0.6
+      },
+      {
+        "id": "c11",
+        "labelKey": "i-c11",
+        "bin": "r11",
+        "scale": 0.6
+      },
+      {
+        "id": "n11",
+        "labelKey": "i-n11",
+        "bin": "r11",
+        "scale": 0.6
+      },
+      {
+        "id": "c12",
+        "labelKey": "i-c12",
+        "bin": "r12",
+        "scale": 0.6
+      },
+      {
+        "id": "n12",
+        "labelKey": "i-n12",
+        "bin": "r12",
+        "scale": 0.6
+      },
+      {
+        "id": "c13",
+        "labelKey": "i-c13",
+        "bin": "r13",
+        "scale": 0.6
+      },
+      {
+        "id": "n13",
+        "labelKey": "i-n13",
+        "bin": "r13",
+        "scale": 0.6
+      },
+      {
+        "id": "c14",
+        "labelKey": "i-c14",
+        "bin": "r14",
+        "scale": 0.6
+      },
+      {
+        "id": "n14",
+        "labelKey": "i-n14",
+        "bin": "r14",
+        "scale": 0.6
+      },
+      {
+        "id": "c15",
+        "labelKey": "i-c15",
+        "bin": "r15",
+        "scale": 0.6
+      },
+      {
+        "id": "n15",
+        "labelKey": "i-n15",
+        "bin": "r15",
+        "scale": 0.6
+      },
+      {
+        "id": "c16",
+        "labelKey": "i-c16",
+        "bin": "r16",
+        "scale": 0.6
+      },
+      {
+        "id": "n16",
+        "labelKey": "i-n16",
+        "bin": "r16",
+        "scale": 0.6
+      },
+      {
+        "id": "c17",
+        "labelKey": "i-c17",
+        "bin": "r17",
+        "scale": 0.6
+      },
+      {
+        "id": "n17",
+        "labelKey": "i-n17",
+        "bin": "r17",
+        "scale": 0.6
+      },
+      {
+        "id": "c18",
+        "labelKey": "i-c18",
+        "bin": "r18",
+        "scale": 0.6
+      },
+      {
+        "id": "n18",
+        "labelKey": "i-n18",
+        "bin": "r18",
+        "scale": 0.6
+      },
+      {
+        "id": "c19",
+        "labelKey": "i-c19",
+        "bin": "r19",
+        "scale": 0.6
+      },
+      {
+        "id": "n19",
+        "labelKey": "i-n19",
+        "bin": "r19",
+        "scale": 0.6
+      },
+      {
+        "id": "c20",
+        "labelKey": "i-c20",
+        "bin": "r20",
+        "scale": 0.6
+      },
+      {
+        "id": "n20",
+        "labelKey": "i-n20",
         "bin": "r20",
         "scale": 0.6
       }
@@ -85474,7 +86371,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-makan-hewan-peliharaan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -85496,7 +86393,13 @@ export const PAKET_RAW: unknown[] = [
         "i-biji": "biji-bijian",
         "i-pepaya": "potongan pepaya",
         "i-pelet": "pelet ikan",
-        "i-jentik": "cacing kecil"
+        "i-jentik": "cacing kecil",
+        "i-rumput": "rumput segar",
+        "i-brokoli": "brokoli",
+        "i-ayam": "ayam rebus",
+        "i-kaleng": "makanan kucing kaleng",
+        "i-jagung": "jagung pipil",
+        "i-bijimatahari": "biji bunga matahari"
       },
       "en": {
         "judul": "Pet Lunchtime",
@@ -85512,7 +86415,13 @@ export const PAKET_RAW: unknown[] = [
         "i-biji": "birdseed",
         "i-pepaya": "papaya pieces",
         "i-pelet": "fish pellets",
-        "i-jentik": "tiny worms"
+        "i-jentik": "tiny worms",
+        "i-rumput": "fresh grass",
+        "i-brokoli": "broccoli",
+        "i-ayam": "boiled chicken",
+        "i-kaleng": "canned cat food",
+        "i-jagung": "corn kernels",
+        "i-bijimatahari": "sunflower seeds"
       }
     },
     "knobs": {
@@ -85611,13 +86520,49 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-jentik",
         "bin": "ikanhias",
         "emoji": "🪱"
+      },
+      {
+        "id": "rumput",
+        "labelKey": "i-rumput",
+        "bin": "kelinci",
+        "emoji": "🌿"
+      },
+      {
+        "id": "brokoli",
+        "labelKey": "i-brokoli",
+        "bin": "kelinci",
+        "emoji": "🥦"
+      },
+      {
+        "id": "ayam",
+        "labelKey": "i-ayam",
+        "bin": "kucing",
+        "emoji": "🍗"
+      },
+      {
+        "id": "kaleng",
+        "labelKey": "i-kaleng",
+        "bin": "kucing",
+        "emoji": "🥫"
+      },
+      {
+        "id": "jagung",
+        "labelKey": "i-jagung",
+        "bin": "burung",
+        "emoji": "🌽"
+      },
+      {
+        "id": "bijimatahari",
+        "labelKey": "i-bijimatahari",
+        "bin": "burung",
+        "emoji": "🌻"
       }
     ],
     "pilihan": []
   },
   {
     "id": "sd1-sains-makan-hewan-peternakan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -85639,7 +86584,12 @@ export const PAKET_RAW: unknown[] = [
         "i-bunga": "bunga mekar",
         "i-bungamatahari": "bunga matahari",
         "i-murbei": "daun murbei",
-        "i-kubis": "daun kubis"
+        "i-kubis": "daun kubis",
+        "i-semanggi": "daun semanggi",
+        "i-nasi": "sisa nasi",
+        "i-jangkrik": "jangkrik",
+        "i-bungasepatu": "bunga sepatu",
+        "i-tulip": "bunga tulip"
       },
       "en": {
         "judul": "Feeding Time on the Farm",
@@ -85655,7 +86605,12 @@ export const PAKET_RAW: unknown[] = [
         "i-bunga": "blooming flower",
         "i-bungamatahari": "sunflower",
         "i-murbei": "mulberry leaf",
-        "i-kubis": "cabbage leaf"
+        "i-kubis": "cabbage leaf",
+        "i-semanggi": "clover leaves",
+        "i-nasi": "leftover rice",
+        "i-jangkrik": "cricket",
+        "i-bungasepatu": "hibiscus flower",
+        "i-tulip": "tulip flower"
       }
     },
     "knobs": {
@@ -85753,6 +86708,36 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-kubis",
         "bin": "ulat",
         "emoji": "🥬"
+      },
+      {
+        "id": "semanggi",
+        "labelKey": "i-semanggi",
+        "bin": "sapi",
+        "emoji": "🍀"
+      },
+      {
+        "id": "nasi",
+        "labelKey": "i-nasi",
+        "bin": "ayam",
+        "emoji": "🍚"
+      },
+      {
+        "id": "jangkrik",
+        "labelKey": "i-jangkrik",
+        "bin": "ayam",
+        "emoji": "🦗"
+      },
+      {
+        "id": "bungasepatu",
+        "labelKey": "i-bungasepatu",
+        "bin": "lebah",
+        "emoji": "🌺"
+      },
+      {
+        "id": "tulip",
+        "labelKey": "i-tulip",
+        "bin": "lebah",
+        "emoji": "🌷"
       }
     ],
     "pilihan": []
@@ -86145,7 +87130,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-sains-rak-tujuh-bahan-sekolah",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "pilah",
     "competencyIds": [
@@ -86176,7 +87161,12 @@ export const PAKET_RAW: unknown[] = [
         "i-penggaris": "penggaris plastik",
         "i-ember": "ember plastik",
         "i-jendela": "kaca jendela",
-        "i-toples": "toples kaca"
+        "i-toples": "toples kaca",
+        "i-koran": "koran",
+        "i-amplop": "amplop surat",
+        "i-kaos": "kaus olahraga",
+        "i-kauskaki": "kaus kaki",
+        "i-bendera": "bendera merah putih"
       },
       "en": {
         "judul": "Seven Material Shelves at School",
@@ -86201,7 +87191,12 @@ export const PAKET_RAW: unknown[] = [
         "i-penggaris": "plastic ruler",
         "i-ember": "plastic bucket",
         "i-jendela": "window glass",
-        "i-toples": "glass jar"
+        "i-toples": "glass jar",
+        "i-koran": "newspaper",
+        "i-amplop": "paper envelope",
+        "i-kaos": "sports T-shirt",
+        "i-kauskaki": "socks",
+        "i-bendera": "red-and-white flag"
       }
     },
     "knobs": {
@@ -86355,6 +87350,36 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-toples",
         "bin": "kaca",
         "emoji": "🫙"
+      },
+      {
+        "id": "koran",
+        "labelKey": "i-koran",
+        "bin": "kertas",
+        "emoji": "📰"
+      },
+      {
+        "id": "amplop",
+        "labelKey": "i-amplop",
+        "bin": "kertas",
+        "emoji": "✉️"
+      },
+      {
+        "id": "kaos",
+        "labelKey": "i-kaos",
+        "bin": "kain",
+        "emoji": "👕"
+      },
+      {
+        "id": "kauskaki",
+        "labelKey": "i-kauskaki",
+        "bin": "kain",
+        "emoji": "🧦"
+      },
+      {
+        "id": "bendera",
+        "labelKey": "i-bendera",
+        "bin": "kain",
+        "emoji": "🇮🇩"
       }
     ],
     "pilihan": []
@@ -87237,7 +88262,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-kode-tahap-game-mini",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -87260,7 +88285,22 @@ export const PAKET_RAW: unknown[] = [
         "i-play-the-game-to-the-end": "mainkan game sampai selesai",
         "i-ask-a-friend-to-try-it": "minta teman mencoba",
         "i-change-the-wrong-block": "ganti blok yang salah",
-        "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat"
+        "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat",
+        "i-choose-the-background-colors": "pilih warna latar",
+        "i-draw-a-map-of-the-level": "gambar peta level",
+        "i-decide-which-enemy-to-avoid": "tentukan musuh yang harus dihindari",
+        "i-put-in-the-background-picture": "pasang gambar latar",
+        "i-add-coins-to-collect": "tambahkan koin untuk dikumpulkan",
+        "i-make-the-score-go-up": "buat skor bertambah",
+        "i-set-arrow-keys-to-move": "pasang tombol panah untuk bergerak",
+        "i-press-every-button": "coba tekan semua tombol",
+        "i-check-the-coins-can-be-taken": "lihat apakah koin bisa diambil",
+        "i-time-one-level": "hitung lama satu level",
+        "i-play-once-more": "mainkan sekali lagi dari awal",
+        "i-fix-the-silent-sound": "betulkan suara yang tidak berbunyi",
+        "i-make-the-tiny-button-bigger": "perbesar tombol yang terlalu kecil",
+        "i-delete-extra-blocks": "hapus blok yang tidak perlu",
+        "i-speed-up-a-character-that-is-too-slow": "percepat tokoh yang terlalu lambat"
       },
       "en": {
         "judul": "Four Stages of Making a Game",
@@ -87277,7 +88317,22 @@ export const PAKET_RAW: unknown[] = [
         "i-play-the-game-to-the-end": "play the game to the end",
         "i-ask-a-friend-to-try-it": "ask a friend to try it",
         "i-change-the-wrong-block": "change the wrong block",
-        "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast"
+        "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast",
+        "i-choose-the-background-colors": "choose the background colors",
+        "i-draw-a-map-of-the-level": "draw a map of the level",
+        "i-decide-which-enemy-to-avoid": "decide which enemy to avoid",
+        "i-put-in-the-background-picture": "put in the background picture",
+        "i-add-coins-to-collect": "add coins to collect",
+        "i-make-the-score-go-up": "make the score go up",
+        "i-set-arrow-keys-to-move": "set arrow keys to move",
+        "i-press-every-button": "try pressing every button",
+        "i-check-the-coins-can-be-taken": "check whether the coins can be picked up",
+        "i-time-one-level": "time how long one level takes",
+        "i-play-once-more": "play once more from the start",
+        "i-fix-the-silent-sound": "fix the sound that does not play",
+        "i-make-the-tiny-button-bigger": "make the tiny button bigger",
+        "i-delete-extra-blocks": "delete blocks that are not needed",
+        "i-speed-up-a-character-that-is-too-slow": "speed up a character that is too slow"
       }
     },
     "knobs": {
@@ -87378,6 +88433,96 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-slow-down-a-character-that-is-too-fast",
         "bin": "perbaiki",
         "emoji": "🐢"
+      },
+      {
+        "id": "choose-the-background-colors",
+        "labelKey": "i-choose-the-background-colors",
+        "bin": "rancang",
+        "emoji": "🎨"
+      },
+      {
+        "id": "draw-a-map-of-the-level",
+        "labelKey": "i-draw-a-map-of-the-level",
+        "bin": "rancang",
+        "emoji": "🗺️"
+      },
+      {
+        "id": "decide-which-enemy-to-avoid",
+        "labelKey": "i-decide-which-enemy-to-avoid",
+        "bin": "rancang",
+        "emoji": "👾"
+      },
+      {
+        "id": "put-in-the-background-picture",
+        "labelKey": "i-put-in-the-background-picture",
+        "bin": "buat",
+        "emoji": "🖼️"
+      },
+      {
+        "id": "add-coins-to-collect",
+        "labelKey": "i-add-coins-to-collect",
+        "bin": "buat",
+        "emoji": "🪙"
+      },
+      {
+        "id": "make-the-score-go-up",
+        "labelKey": "i-make-the-score-go-up",
+        "bin": "buat",
+        "emoji": "🔢"
+      },
+      {
+        "id": "set-arrow-keys-to-move",
+        "labelKey": "i-set-arrow-keys-to-move",
+        "bin": "buat",
+        "emoji": "⌨️"
+      },
+      {
+        "id": "press-every-button",
+        "labelKey": "i-press-every-button",
+        "bin": "uji",
+        "emoji": "👆"
+      },
+      {
+        "id": "check-the-coins-can-be-taken",
+        "labelKey": "i-check-the-coins-can-be-taken",
+        "bin": "uji",
+        "emoji": "👀"
+      },
+      {
+        "id": "time-one-level",
+        "labelKey": "i-time-one-level",
+        "bin": "uji",
+        "emoji": "⏱️"
+      },
+      {
+        "id": "play-once-more",
+        "labelKey": "i-play-once-more",
+        "bin": "uji",
+        "emoji": "🔁"
+      },
+      {
+        "id": "fix-the-silent-sound",
+        "labelKey": "i-fix-the-silent-sound",
+        "bin": "perbaiki",
+        "emoji": "🔇"
+      },
+      {
+        "id": "make-the-tiny-button-bigger",
+        "labelKey": "i-make-the-tiny-button-bigger",
+        "bin": "perbaiki",
+        "emoji": "🔍"
+      },
+      {
+        "id": "delete-extra-blocks",
+        "labelKey": "i-delete-extra-blocks",
+        "bin": "perbaiki",
+        "emoji": "🗑️"
+      },
+      {
+        "id": "speed-up-a-character-that-is-too-slow",
+        "labelKey": "i-speed-up-a-character-that-is-too-slow",
+        "bin": "perbaiki",
+        "emoji": "🐇"
       }
     ]
   },
@@ -103922,7 +105067,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-rak-alat-ukur",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -103947,7 +105092,16 @@ export const PAKET_RAW: unknown[] = [
         "i-hujan": "berapa banyak air hujan tertampung?",
         "i-siram": "berapa banyak air untuk satu pot?",
         "i-es": "berapa lama es mencair?",
-        "i-lari": "berapa lama berlari keliling lapangan?"
+        "i-lari": "berapa lama berlari keliling lapangan?",
+        "i-teh": "seberapa panas teh di gelas?",
+        "i-demam": "berapa suhu badan saat demam?",
+        "i-sup": "seberapa hangat sup di mangkuk?",
+        "i-kucing": "seberapa berat kucing peliharaan?",
+        "i-nanas": "seberapa berat buah nanas?",
+        "i-labu": "seberapa berat labu?",
+        "i-pensil": "seberapa panjang pensil?",
+        "i-pita": "seberapa panjang pita?",
+        "i-buku": "seberapa lebar buku tulis?"
       },
       "en": {
         "judul": "Measuring Tool Shelves",
@@ -103966,7 +105120,16 @@ export const PAKET_RAW: unknown[] = [
         "i-hujan": "how much rain was collected?",
         "i-siram": "how much water for one pot?",
         "i-es": "how long does the ice take to melt?",
-        "i-lari": "how long to run round the field?"
+        "i-lari": "how long to run round the field?",
+        "i-teh": "how hot is the tea in the cup?",
+        "i-demam": "what is your body temperature with a fever?",
+        "i-sup": "how warm is the soup in the bowl?",
+        "i-kucing": "how heavy is the pet cat?",
+        "i-nanas": "how heavy is the pineapple?",
+        "i-labu": "how heavy is the pumpkin?",
+        "i-pensil": "how long is the pencil?",
+        "i-pita": "how long is the ribbon?",
+        "i-buku": "how wide is the notebook?"
       }
     },
     "knobs": {
@@ -104082,6 +105245,60 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-lari",
         "bin": "stopwatch",
         "emoji": "🏃"
+      },
+      {
+        "id": "teh",
+        "labelKey": "i-teh",
+        "bin": "termometer",
+        "emoji": "🍵"
+      },
+      {
+        "id": "demam",
+        "labelKey": "i-demam",
+        "bin": "termometer",
+        "emoji": "🤒"
+      },
+      {
+        "id": "sup",
+        "labelKey": "i-sup",
+        "bin": "termometer",
+        "emoji": "🍲"
+      },
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "timbangan",
+        "emoji": "🐈"
+      },
+      {
+        "id": "nanas",
+        "labelKey": "i-nanas",
+        "bin": "timbangan",
+        "emoji": "🍍"
+      },
+      {
+        "id": "labu",
+        "labelKey": "i-labu",
+        "bin": "timbangan",
+        "emoji": "🎃"
+      },
+      {
+        "id": "pensil",
+        "labelKey": "i-pensil",
+        "bin": "penggaris",
+        "emoji": "✏️"
+      },
+      {
+        "id": "pita",
+        "labelKey": "i-pita",
+        "bin": "penggaris",
+        "emoji": "🎀"
+      },
+      {
+        "id": "buku",
+        "labelKey": "i-buku",
+        "bin": "penggaris",
+        "emoji": "📘"
       }
     ],
     "pilihan": []
@@ -126646,7 +127863,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-mat-pecahan-campuran-pita",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "mechanic": "pilah",
     "competencyIds": [
@@ -126671,7 +127888,23 @@ export const PAKET_RAW: unknown[] = [
         "i7": "7/4",
         "i8": "14/8",
         "i9": "16/5",
-        "i10": "32/10"
+        "i10": "32/10",
+        "i-i11": "15/6",
+        "i-i12": "20/8",
+        "i-i13": "25/10",
+        "i-i14": "30/12",
+        "i-i15": "15/12",
+        "i-i16": "20/16",
+        "i-i17": "25/20",
+        "i-i18": "30/24",
+        "i-i19": "24/9",
+        "i-i20": "32/12",
+        "i-i21": "40/15",
+        "i-i22": "48/18",
+        "i-i23": "21/12",
+        "i-i24": "28/16",
+        "i-i25": "48/15",
+        "i-i26": "64/20"
       },
       "en": {
         "judul": "Mixed Number Ribbons",
@@ -126690,7 +127923,23 @@ export const PAKET_RAW: unknown[] = [
         "i7": "7/4",
         "i8": "14/8",
         "i9": "16/5",
-        "i10": "32/10"
+        "i10": "32/10",
+        "i-i11": "15/6",
+        "i-i12": "20/8",
+        "i-i13": "25/10",
+        "i-i14": "30/12",
+        "i-i15": "15/12",
+        "i-i16": "20/16",
+        "i-i17": "25/20",
+        "i-i18": "30/24",
+        "i-i19": "24/9",
+        "i-i20": "32/12",
+        "i-i21": "40/15",
+        "i-i22": "48/18",
+        "i-i23": "21/12",
+        "i-i24": "28/16",
+        "i-i25": "48/15",
+        "i-i26": "64/20"
       }
     },
     "knobs": {
@@ -126786,6 +128035,86 @@ export const PAKET_RAW: unknown[] = [
       {
         "id": "i10",
         "labelKey": "i10",
+        "bin": "tigaseperlima"
+      },
+      {
+        "id": "i11",
+        "labelKey": "i-i11",
+        "bin": "duasetengah"
+      },
+      {
+        "id": "i12",
+        "labelKey": "i-i12",
+        "bin": "duasetengah"
+      },
+      {
+        "id": "i13",
+        "labelKey": "i-i13",
+        "bin": "duasetengah"
+      },
+      {
+        "id": "i14",
+        "labelKey": "i-i14",
+        "bin": "duasetengah"
+      },
+      {
+        "id": "i15",
+        "labelKey": "i-i15",
+        "bin": "satuseperempat"
+      },
+      {
+        "id": "i16",
+        "labelKey": "i-i16",
+        "bin": "satuseperempat"
+      },
+      {
+        "id": "i17",
+        "labelKey": "i-i17",
+        "bin": "satuseperempat"
+      },
+      {
+        "id": "i18",
+        "labelKey": "i-i18",
+        "bin": "satuseperempat"
+      },
+      {
+        "id": "i19",
+        "labelKey": "i-i19",
+        "bin": "duaduapertiga"
+      },
+      {
+        "id": "i20",
+        "labelKey": "i-i20",
+        "bin": "duaduapertiga"
+      },
+      {
+        "id": "i21",
+        "labelKey": "i-i21",
+        "bin": "duaduapertiga"
+      },
+      {
+        "id": "i22",
+        "labelKey": "i-i22",
+        "bin": "duaduapertiga"
+      },
+      {
+        "id": "i23",
+        "labelKey": "i-i23",
+        "bin": "satutigaperempat"
+      },
+      {
+        "id": "i24",
+        "labelKey": "i-i24",
+        "bin": "satutigaperempat"
+      },
+      {
+        "id": "i25",
+        "labelKey": "i-i25",
+        "bin": "tigaseperlima"
+      },
+      {
+        "id": "i26",
+        "labelKey": "i-i26",
         "bin": "tigaseperlima"
       }
     ]

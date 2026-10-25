@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-rak-dobel",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -35,7 +35,22 @@
       "i-9p8": "9+8",
       "i-9p9": "9+9",
       "i-9p10": "9+10",
-      "i-10p9": "10+9"
+      "i-10p9": "10+9",
+      "i-e10": "dobel 5",
+      "i-p11": "dobel 5 + 1",
+      "i-m11": "dobel 6 − 1",
+      "i-e12": "dobel 6",
+      "i-p13": "dobel 6 + 1",
+      "i-m13": "dobel 7 − 1",
+      "i-e14": "dobel 7",
+      "i-p15": "dobel 7 + 1",
+      "i-m15": "dobel 8 − 1",
+      "i-e16": "dobel 8",
+      "i-p17": "dobel 8 + 1",
+      "i-m17": "dobel 9 − 1",
+      "i-e18": "dobel 9",
+      "i-p19": "dobel 9 + 1",
+      "i-m19": "dobel 10 − 1"
     },
     "en": {
       "judul": "Doubles and Near Doubles",
@@ -64,7 +79,22 @@
       "i-9p8": "9+8",
       "i-9p9": "9+9",
       "i-9p10": "9+10",
-      "i-10p9": "10+9"
+      "i-10p9": "10+9",
+      "i-e10": "double 5",
+      "i-p11": "double 5 + 1",
+      "i-m11": "double 6 − 1",
+      "i-e12": "double 6",
+      "i-p13": "double 6 + 1",
+      "i-m13": "double 7 − 1",
+      "i-e14": "double 7",
+      "i-p15": "double 7 + 1",
+      "i-m15": "double 8 − 1",
+      "i-e16": "double 8",
+      "i-p17": "double 8 + 1",
+      "i-m17": "double 9 − 1",
+      "i-e18": "double 9",
+      "i-p19": "double 9 + 1",
+      "i-m19": "double 10 − 1"
     }
   },
   "knobs": {
@@ -219,6 +249,96 @@
     {
       "id": "y19",
       "labelKey": "i-10p9",
+      "bin": "h19",
+      "scale": 0.7
+    },
+    {
+      "id": "e10",
+      "labelKey": "i-e10",
+      "bin": "h10",
+      "scale": 0.85
+    },
+    {
+      "id": "p11",
+      "labelKey": "i-p11",
+      "bin": "h11",
+      "scale": 0.7
+    },
+    {
+      "id": "m11",
+      "labelKey": "i-m11",
+      "bin": "h11",
+      "scale": 0.7
+    },
+    {
+      "id": "e12",
+      "labelKey": "i-e12",
+      "bin": "h12",
+      "scale": 0.85
+    },
+    {
+      "id": "p13",
+      "labelKey": "i-p13",
+      "bin": "h13",
+      "scale": 0.7
+    },
+    {
+      "id": "m13",
+      "labelKey": "i-m13",
+      "bin": "h13",
+      "scale": 0.7
+    },
+    {
+      "id": "e14",
+      "labelKey": "i-e14",
+      "bin": "h14",
+      "scale": 0.85
+    },
+    {
+      "id": "p15",
+      "labelKey": "i-p15",
+      "bin": "h15",
+      "scale": 0.7
+    },
+    {
+      "id": "m15",
+      "labelKey": "i-m15",
+      "bin": "h15",
+      "scale": 0.7
+    },
+    {
+      "id": "e16",
+      "labelKey": "i-e16",
+      "bin": "h16",
+      "scale": 0.85
+    },
+    {
+      "id": "p17",
+      "labelKey": "i-p17",
+      "bin": "h17",
+      "scale": 0.7
+    },
+    {
+      "id": "m17",
+      "labelKey": "i-m17",
+      "bin": "h17",
+      "scale": 0.7
+    },
+    {
+      "id": "e18",
+      "labelKey": "i-e18",
+      "bin": "h18",
+      "scale": 0.85
+    },
+    {
+      "id": "p19",
+      "labelKey": "i-p19",
+      "bin": "h19",
+      "scale": 0.7
+    },
+    {
+      "id": "m19",
+      "labelKey": "i-m19",
       "bin": "h19",
       "scale": 0.7
     }

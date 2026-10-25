@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-tahap-game-mini",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,22 @@
       "i-play-the-game-to-the-end": "mainkan game sampai selesai",
       "i-ask-a-friend-to-try-it": "minta teman mencoba",
       "i-change-the-wrong-block": "ganti blok yang salah",
-      "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat"
+      "i-slow-down-a-character-that-is-too-fast": "pelankan tokoh yang terlalu cepat",
+      "i-choose-the-background-colors": "pilih warna latar",
+      "i-draw-a-map-of-the-level": "gambar peta level",
+      "i-decide-which-enemy-to-avoid": "tentukan musuh yang harus dihindari",
+      "i-put-in-the-background-picture": "pasang gambar latar",
+      "i-add-coins-to-collect": "tambahkan koin untuk dikumpulkan",
+      "i-make-the-score-go-up": "buat skor bertambah",
+      "i-set-arrow-keys-to-move": "pasang tombol panah untuk bergerak",
+      "i-press-every-button": "coba tekan semua tombol",
+      "i-check-the-coins-can-be-taken": "lihat apakah koin bisa diambil",
+      "i-time-one-level": "hitung lama satu level",
+      "i-play-once-more": "mainkan sekali lagi dari awal",
+      "i-fix-the-silent-sound": "betulkan suara yang tidak berbunyi",
+      "i-make-the-tiny-button-bigger": "perbesar tombol yang terlalu kecil",
+      "i-delete-extra-blocks": "hapus blok yang tidak perlu",
+      "i-speed-up-a-character-that-is-too-slow": "percepat tokoh yang terlalu lambat"
     },
     "en": {
       "judul": "Four Stages of Making a Game",
@@ -40,7 +55,22 @@
       "i-play-the-game-to-the-end": "play the game to the end",
       "i-ask-a-friend-to-try-it": "ask a friend to try it",
       "i-change-the-wrong-block": "change the wrong block",
-      "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast"
+      "i-slow-down-a-character-that-is-too-fast": "slow down a character that is too fast",
+      "i-choose-the-background-colors": "choose the background colors",
+      "i-draw-a-map-of-the-level": "draw a map of the level",
+      "i-decide-which-enemy-to-avoid": "decide which enemy to avoid",
+      "i-put-in-the-background-picture": "put in the background picture",
+      "i-add-coins-to-collect": "add coins to collect",
+      "i-make-the-score-go-up": "make the score go up",
+      "i-set-arrow-keys-to-move": "set arrow keys to move",
+      "i-press-every-button": "try pressing every button",
+      "i-check-the-coins-can-be-taken": "check whether the coins can be picked up",
+      "i-time-one-level": "time how long one level takes",
+      "i-play-once-more": "play once more from the start",
+      "i-fix-the-silent-sound": "fix the sound that does not play",
+      "i-make-the-tiny-button-bigger": "make the tiny button bigger",
+      "i-delete-extra-blocks": "delete blocks that are not needed",
+      "i-speed-up-a-character-that-is-too-slow": "speed up a character that is too slow"
     }
   },
   "knobs": {
@@ -141,6 +171,96 @@
       "labelKey": "i-slow-down-a-character-that-is-too-fast",
       "bin": "perbaiki",
       "emoji": "🐢"
+    },
+    {
+      "id": "choose-the-background-colors",
+      "labelKey": "i-choose-the-background-colors",
+      "bin": "rancang",
+      "emoji": "🎨"
+    },
+    {
+      "id": "draw-a-map-of-the-level",
+      "labelKey": "i-draw-a-map-of-the-level",
+      "bin": "rancang",
+      "emoji": "🗺️"
+    },
+    {
+      "id": "decide-which-enemy-to-avoid",
+      "labelKey": "i-decide-which-enemy-to-avoid",
+      "bin": "rancang",
+      "emoji": "👾"
+    },
+    {
+      "id": "put-in-the-background-picture",
+      "labelKey": "i-put-in-the-background-picture",
+      "bin": "buat",
+      "emoji": "🖼️"
+    },
+    {
+      "id": "add-coins-to-collect",
+      "labelKey": "i-add-coins-to-collect",
+      "bin": "buat",
+      "emoji": "🪙"
+    },
+    {
+      "id": "make-the-score-go-up",
+      "labelKey": "i-make-the-score-go-up",
+      "bin": "buat",
+      "emoji": "🔢"
+    },
+    {
+      "id": "set-arrow-keys-to-move",
+      "labelKey": "i-set-arrow-keys-to-move",
+      "bin": "buat",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "press-every-button",
+      "labelKey": "i-press-every-button",
+      "bin": "uji",
+      "emoji": "👆"
+    },
+    {
+      "id": "check-the-coins-can-be-taken",
+      "labelKey": "i-check-the-coins-can-be-taken",
+      "bin": "uji",
+      "emoji": "👀"
+    },
+    {
+      "id": "time-one-level",
+      "labelKey": "i-time-one-level",
+      "bin": "uji",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "play-once-more",
+      "labelKey": "i-play-once-more",
+      "bin": "uji",
+      "emoji": "🔁"
+    },
+    {
+      "id": "fix-the-silent-sound",
+      "labelKey": "i-fix-the-silent-sound",
+      "bin": "perbaiki",
+      "emoji": "🔇"
+    },
+    {
+      "id": "make-the-tiny-button-bigger",
+      "labelKey": "i-make-the-tiny-button-bigger",
+      "bin": "perbaiki",
+      "emoji": "🔍"
+    },
+    {
+      "id": "delete-extra-blocks",
+      "labelKey": "i-delete-extra-blocks",
+      "bin": "perbaiki",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "speed-up-a-character-that-is-too-slow",
+      "labelKey": "i-speed-up-a-character-that-is-too-slow",
+      "bin": "perbaiki",
+      "emoji": "🐇"
     }
   ]
 }

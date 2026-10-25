@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-rak-puluhan-satuan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -39,7 +39,27 @@
       "i-8p10": "8+10",
       "i-10p9": "10+9",
       "i-9p10": "9+10",
-      "i-10p10": "10+10"
+      "i-10p10": "10+10",
+      "i-c11": "1 puluhan 1 satuan",
+      "i-n11": "sebelas",
+      "i-c12": "1 puluhan 2 satuan",
+      "i-n12": "dua belas",
+      "i-c13": "1 puluhan 3 satuan",
+      "i-n13": "tiga belas",
+      "i-c14": "1 puluhan 4 satuan",
+      "i-n14": "empat belas",
+      "i-c15": "1 puluhan 5 satuan",
+      "i-n15": "lima belas",
+      "i-c16": "1 puluhan 6 satuan",
+      "i-n16": "enam belas",
+      "i-c17": "1 puluhan 7 satuan",
+      "i-n17": "tujuh belas",
+      "i-c18": "1 puluhan 8 satuan",
+      "i-n18": "delapan belas",
+      "i-c19": "1 puluhan 9 satuan",
+      "i-n19": "sembilan belas",
+      "i-c20": "2 puluhan",
+      "i-n20": "dua puluh"
     },
     "en": {
       "judul": "Tens and Ones Shelf",
@@ -72,7 +92,27 @@
       "i-8p10": "8+10",
       "i-10p9": "10+9",
       "i-9p10": "9+10",
-      "i-10p10": "10+10"
+      "i-10p10": "10+10",
+      "i-c11": "1 ten 1 one",
+      "i-n11": "eleven",
+      "i-c12": "1 ten 2 ones",
+      "i-n12": "twelve",
+      "i-c13": "1 ten 3 ones",
+      "i-n13": "thirteen",
+      "i-c14": "1 ten 4 ones",
+      "i-n14": "fourteen",
+      "i-c15": "1 ten 5 ones",
+      "i-n15": "fifteen",
+      "i-c16": "1 ten 6 ones",
+      "i-n16": "sixteen",
+      "i-c17": "1 ten 7 ones",
+      "i-n17": "seventeen",
+      "i-c18": "1 ten 8 ones",
+      "i-n18": "eighteen",
+      "i-c19": "1 ten 9 ones",
+      "i-n19": "nineteen",
+      "i-c20": "2 tens",
+      "i-n20": "twenty"
     }
   },
   "knobs": {
@@ -257,6 +297,126 @@
     {
       "id": "b20",
       "labelKey": "i-10p10",
+      "bin": "r20",
+      "scale": 0.6
+    },
+    {
+      "id": "c11",
+      "labelKey": "i-c11",
+      "bin": "r11",
+      "scale": 0.6
+    },
+    {
+      "id": "n11",
+      "labelKey": "i-n11",
+      "bin": "r11",
+      "scale": 0.6
+    },
+    {
+      "id": "c12",
+      "labelKey": "i-c12",
+      "bin": "r12",
+      "scale": 0.6
+    },
+    {
+      "id": "n12",
+      "labelKey": "i-n12",
+      "bin": "r12",
+      "scale": 0.6
+    },
+    {
+      "id": "c13",
+      "labelKey": "i-c13",
+      "bin": "r13",
+      "scale": 0.6
+    },
+    {
+      "id": "n13",
+      "labelKey": "i-n13",
+      "bin": "r13",
+      "scale": 0.6
+    },
+    {
+      "id": "c14",
+      "labelKey": "i-c14",
+      "bin": "r14",
+      "scale": 0.6
+    },
+    {
+      "id": "n14",
+      "labelKey": "i-n14",
+      "bin": "r14",
+      "scale": 0.6
+    },
+    {
+      "id": "c15",
+      "labelKey": "i-c15",
+      "bin": "r15",
+      "scale": 0.6
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-n15",
+      "bin": "r15",
+      "scale": 0.6
+    },
+    {
+      "id": "c16",
+      "labelKey": "i-c16",
+      "bin": "r16",
+      "scale": 0.6
+    },
+    {
+      "id": "n16",
+      "labelKey": "i-n16",
+      "bin": "r16",
+      "scale": 0.6
+    },
+    {
+      "id": "c17",
+      "labelKey": "i-c17",
+      "bin": "r17",
+      "scale": 0.6
+    },
+    {
+      "id": "n17",
+      "labelKey": "i-n17",
+      "bin": "r17",
+      "scale": 0.6
+    },
+    {
+      "id": "c18",
+      "labelKey": "i-c18",
+      "bin": "r18",
+      "scale": 0.6
+    },
+    {
+      "id": "n18",
+      "labelKey": "i-n18",
+      "bin": "r18",
+      "scale": 0.6
+    },
+    {
+      "id": "c19",
+      "labelKey": "i-c19",
+      "bin": "r19",
+      "scale": 0.6
+    },
+    {
+      "id": "n19",
+      "labelKey": "i-n19",
+      "bin": "r19",
+      "scale": 0.6
+    },
+    {
+      "id": "c20",
+      "labelKey": "i-c20",
+      "bin": "r20",
+      "scale": 0.6
+    },
+    {
+      "id": "n20",
+      "labelKey": "i-n20",
       "bin": "r20",
       "scale": 0.6
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-rak-alat-ukur",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -25,7 +25,16 @@
       "i-hujan": "berapa banyak air hujan tertampung?",
       "i-siram": "berapa banyak air untuk satu pot?",
       "i-es": "berapa lama es mencair?",
-      "i-lari": "berapa lama berlari keliling lapangan?"
+      "i-lari": "berapa lama berlari keliling lapangan?",
+      "i-teh": "seberapa panas teh di gelas?",
+      "i-demam": "berapa suhu badan saat demam?",
+      "i-sup": "seberapa hangat sup di mangkuk?",
+      "i-kucing": "seberapa berat kucing peliharaan?",
+      "i-nanas": "seberapa berat buah nanas?",
+      "i-labu": "seberapa berat labu?",
+      "i-pensil": "seberapa panjang pensil?",
+      "i-pita": "seberapa panjang pita?",
+      "i-buku": "seberapa lebar buku tulis?"
     },
     "en": {
       "judul": "Measuring Tool Shelves",
@@ -44,7 +53,16 @@
       "i-hujan": "how much rain was collected?",
       "i-siram": "how much water for one pot?",
       "i-es": "how long does the ice take to melt?",
-      "i-lari": "how long to run round the field?"
+      "i-lari": "how long to run round the field?",
+      "i-teh": "how hot is the tea in the cup?",
+      "i-demam": "what is your body temperature with a fever?",
+      "i-sup": "how warm is the soup in the bowl?",
+      "i-kucing": "how heavy is the pet cat?",
+      "i-nanas": "how heavy is the pineapple?",
+      "i-labu": "how heavy is the pumpkin?",
+      "i-pensil": "how long is the pencil?",
+      "i-pita": "how long is the ribbon?",
+      "i-buku": "how wide is the notebook?"
     }
   },
   "knobs": {
@@ -160,6 +178,60 @@
       "labelKey": "i-lari",
       "bin": "stopwatch",
       "emoji": "🏃"
+    },
+    {
+      "id": "teh",
+      "labelKey": "i-teh",
+      "bin": "termometer",
+      "emoji": "🍵"
+    },
+    {
+      "id": "demam",
+      "labelKey": "i-demam",
+      "bin": "termometer",
+      "emoji": "🤒"
+    },
+    {
+      "id": "sup",
+      "labelKey": "i-sup",
+      "bin": "termometer",
+      "emoji": "🍲"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "timbangan",
+      "emoji": "🐈"
+    },
+    {
+      "id": "nanas",
+      "labelKey": "i-nanas",
+      "bin": "timbangan",
+      "emoji": "🍍"
+    },
+    {
+      "id": "labu",
+      "labelKey": "i-labu",
+      "bin": "timbangan",
+      "emoji": "🎃"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "penggaris",
+      "emoji": "✏️"
+    },
+    {
+      "id": "pita",
+      "labelKey": "i-pita",
+      "bin": "penggaris",
+      "emoji": "🎀"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "penggaris",
+      "emoji": "📘"
     }
   ],
   "pilihan": []

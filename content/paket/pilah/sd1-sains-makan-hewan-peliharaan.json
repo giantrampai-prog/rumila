@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peliharaan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,13 @@
       "i-biji": "biji-bijian",
       "i-pepaya": "potongan pepaya",
       "i-pelet": "pelet ikan",
-      "i-jentik": "cacing kecil"
+      "i-jentik": "cacing kecil",
+      "i-rumput": "rumput segar",
+      "i-brokoli": "brokoli",
+      "i-ayam": "ayam rebus",
+      "i-kaleng": "makanan kucing kaleng",
+      "i-jagung": "jagung pipil",
+      "i-bijimatahari": "biji bunga matahari"
     },
     "en": {
       "judul": "Pet Lunchtime",
@@ -38,7 +44,13 @@
       "i-biji": "birdseed",
       "i-pepaya": "papaya pieces",
       "i-pelet": "fish pellets",
-      "i-jentik": "tiny worms"
+      "i-jentik": "tiny worms",
+      "i-rumput": "fresh grass",
+      "i-brokoli": "broccoli",
+      "i-ayam": "boiled chicken",
+      "i-kaleng": "canned cat food",
+      "i-jagung": "corn kernels",
+      "i-bijimatahari": "sunflower seeds"
     }
   },
   "knobs": {
@@ -137,6 +149,42 @@
       "labelKey": "i-jentik",
       "bin": "ikanhias",
       "emoji": "🪱"
+    },
+    {
+      "id": "rumput",
+      "labelKey": "i-rumput",
+      "bin": "kelinci",
+      "emoji": "🌿"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "i-brokoli",
+      "bin": "kelinci",
+      "emoji": "🥦"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "kucing",
+      "emoji": "🍗"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "kucing",
+      "emoji": "🥫"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "burung",
+      "emoji": "🌽"
+    },
+    {
+      "id": "bijimatahari",
+      "labelKey": "i-bijimatahari",
+      "bin": "burung",
+      "emoji": "🌻"
     }
   ],
   "pilihan": []

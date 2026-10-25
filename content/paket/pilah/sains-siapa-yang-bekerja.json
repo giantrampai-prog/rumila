@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-yang-bekerja",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,19 @@
       "i-tas": "mengangkat tas",
       "i-beban": "mengangkat beban",
       "i-baca": "membaca buku",
-      "i-puzel": "memikirkan puzel"
+      "i-puzel": "memikirkan puzel",
+      "i-sepeda": "mengayuh sepeda",
+      "i-jalan": "berjalan kaki",
+      "i-sepaturoda": "main sepatu roda",
+      "i-skuter": "mendorong skuter dengan kaki",
+      "i-lilin": "meniup lilin ulang tahun",
+      "i-terompet": "meniup terompet",
+      "i-gelembung": "meniup gelembung sabun",
+      "i-saksofon": "meniup saksofon",
+      "i-dayung": "mendayung perahu",
+      "i-basket": "melempar bola basket",
+      "i-pingpong": "memukul bola pingpong",
+      "i-keranjang": "mengangkat keranjang cucian"
     },
     "en": {
       "judul": "Which Part Is Working?",
@@ -38,7 +50,19 @@
       "i-tas": "lifting a bag",
       "i-beban": "lifting weights",
       "i-baca": "reading a book",
-      "i-puzel": "solving a puzzle"
+      "i-puzel": "solving a puzzle",
+      "i-sepeda": "pedaling a bike",
+      "i-jalan": "walking",
+      "i-sepaturoda": "roller skating",
+      "i-skuter": "kicking a scooter along",
+      "i-lilin": "blowing out birthday candles",
+      "i-terompet": "blowing a trumpet",
+      "i-gelembung": "blowing soap bubbles",
+      "i-saksofon": "blowing a saxophone",
+      "i-dayung": "rowing a boat",
+      "i-basket": "throwing a basketball",
+      "i-pingpong": "hitting a ping-pong ball",
+      "i-keranjang": "lifting a laundry basket"
     }
   },
   "knobs": {
@@ -132,6 +156,78 @@
       "labelKey": "i-puzel",
       "bin": "otak",
       "emoji": "🧩"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "kaki",
+      "emoji": "🚴"
+    },
+    {
+      "id": "jalan",
+      "labelKey": "i-jalan",
+      "bin": "kaki",
+      "emoji": "🚶"
+    },
+    {
+      "id": "sepaturoda",
+      "labelKey": "i-sepaturoda",
+      "bin": "kaki",
+      "emoji": "🛼"
+    },
+    {
+      "id": "skuter",
+      "labelKey": "i-skuter",
+      "bin": "kaki",
+      "emoji": "🛴"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "paru",
+      "emoji": "🎂"
+    },
+    {
+      "id": "terompet",
+      "labelKey": "i-terompet",
+      "bin": "paru",
+      "emoji": "🎺"
+    },
+    {
+      "id": "gelembung",
+      "labelKey": "i-gelembung",
+      "bin": "paru",
+      "emoji": "🫧"
+    },
+    {
+      "id": "saksofon",
+      "labelKey": "i-saksofon",
+      "bin": "paru",
+      "emoji": "🎷"
+    },
+    {
+      "id": "dayung",
+      "labelKey": "i-dayung",
+      "bin": "lengan",
+      "emoji": "🚣"
+    },
+    {
+      "id": "basket",
+      "labelKey": "i-basket",
+      "bin": "lengan",
+      "emoji": "🏀"
+    },
+    {
+      "id": "pingpong",
+      "labelKey": "i-pingpong",
+      "bin": "lengan",
+      "emoji": "🏓"
+    },
+    {
+      "id": "keranjang",
+      "labelKey": "i-keranjang",
+      "bin": "lengan",
+      "emoji": "🧺"
     }
   ],
   "pilihan": []

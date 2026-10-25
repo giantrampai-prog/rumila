@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-dapur",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,11 @@
       "i-botolplastik": "botol plastik",
       "i-sedotan": "sedotan plastik",
       "i-gelaskaca": "gelas kaca",
-      "i-toples": "toples kaca"
+      "i-toples": "toples kaca",
+      "i-sumpit": "sumpit kayu",
+      "i-kursi": "kursi makan kayu",
+      "i-garpu": "garpu makan",
+      "i-pisau": "pisau dapur"
     },
     "en": {
       "judul": "Kitchen Material Shelves",
@@ -38,7 +42,11 @@
       "i-botolplastik": "plastic bottle",
       "i-sedotan": "plastic straw",
       "i-gelaskaca": "glass cup",
-      "i-toples": "glass jar"
+      "i-toples": "glass jar",
+      "i-sumpit": "wooden chopsticks",
+      "i-kursi": "wooden dining chair",
+      "i-garpu": "metal fork",
+      "i-pisau": "kitchen knife"
     }
   },
   "knobs": {
@@ -137,6 +145,30 @@
       "labelKey": "i-toples",
       "bin": "kaca",
       "emoji": "🫙"
+    },
+    {
+      "id": "sumpit",
+      "labelKey": "i-sumpit",
+      "bin": "kayu",
+      "emoji": "🥢"
+    },
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "kayu",
+      "emoji": "🪑"
+    },
+    {
+      "id": "garpu",
+      "labelKey": "i-garpu",
+      "bin": "logam",
+      "emoji": "🍴"
+    },
+    {
+      "id": "pisau",
+      "labelKey": "i-pisau",
+      "bin": "logam",
+      "emoji": "🔪"
     }
   ],
   "pilihan": []

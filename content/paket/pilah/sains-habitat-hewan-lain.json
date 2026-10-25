@@ -1,6 +1,6 @@
 {
   "id": "sains-habitat-hewan-lain",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,11 @@
       "i-burungbeo": "burung beo",
       "i-gorila": "gorila",
       "i-kepiting": "kepiting karang",
-      "i-cumi": "cumi-cumi"
+      "i-cumi": "cumi-cumi",
+      "i-untaduapunuk": "unta berpunuk dua",
+      "i-kadal": "kadal gurun",
+      "i-penguin": "penguin",
+      "i-beruangkutub": "beruang kutub"
     },
     "en": {
       "judul": "Animal Homes Around the World",
@@ -38,7 +42,11 @@
       "i-burungbeo": "parrot",
       "i-gorila": "gorilla",
       "i-kepiting": "reef crab",
-      "i-cumi": "squid"
+      "i-cumi": "squid",
+      "i-untaduapunuk": "two-humped camel",
+      "i-kadal": "desert lizard",
+      "i-penguin": "penguin",
+      "i-beruangkutub": "polar bear"
     }
   },
   "knobs": {
@@ -138,6 +146,31 @@
       "labelKey": "i-cumi",
       "bin": "terumbu",
       "emoji": "🦑"
+    },
+    {
+      "id": "untaduapunuk",
+      "labelKey": "i-untaduapunuk",
+      "bin": "gurun",
+      "emoji": "🐫"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "gurun",
+      "emoji": "🦎"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "es",
+      "emoji": "🐧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "beruangkutub",
+      "labelKey": "i-beruangkutub",
+      "bin": "es",
+      "emoji": "🐻‍❄️"
     }
   ],
   "pilihan": []

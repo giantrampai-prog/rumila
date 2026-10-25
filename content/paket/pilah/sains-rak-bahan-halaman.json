@@ -1,6 +1,6 @@
 {
   "id": "sains-rak-bahan-halaman",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,13 @@
       "i-ember": "ember plastik",
       "i-mainan": "mainan plastik",
       "i-jendela": "kaca jendela",
-      "i-botolkaca": "botol kaca"
+      "i-botolkaca": "botol kaca",
+      "i-pintu": "pintu kayu",
+      "i-bumerang": "bumerang kayu",
+      "i-tangga": "tangga kayu",
+      "i-gembok": "gembok",
+      "i-rantai": "rantai besi",
+      "i-kaleng": "kaleng"
     },
     "en": {
       "judul": "Materials in the Yard",
@@ -38,7 +44,13 @@
       "i-ember": "plastic bucket",
       "i-mainan": "plastic toy",
       "i-jendela": "window glass",
-      "i-botolkaca": "glass bottle"
+      "i-botolkaca": "glass bottle",
+      "i-pintu": "wooden door",
+      "i-bumerang": "wooden boomerang",
+      "i-tangga": "wooden ladder",
+      "i-gembok": "padlock",
+      "i-rantai": "iron chain",
+      "i-kaleng": "tin can"
     }
   },
   "knobs": {
@@ -137,6 +149,42 @@
       "labelKey": "i-botolkaca",
       "bin": "kaca",
       "emoji": "🍾"
+    },
+    {
+      "id": "pintu",
+      "labelKey": "i-pintu",
+      "bin": "kayu",
+      "emoji": "🚪"
+    },
+    {
+      "id": "bumerang",
+      "labelKey": "i-bumerang",
+      "bin": "kayu",
+      "emoji": "🪃"
+    },
+    {
+      "id": "tangga",
+      "labelKey": "i-tangga",
+      "bin": "kayu",
+      "emoji": "🪜"
+    },
+    {
+      "id": "gembok",
+      "labelKey": "i-gembok",
+      "bin": "logam",
+      "emoji": "🔒"
+    },
+    {
+      "id": "rantai",
+      "labelKey": "i-rantai",
+      "bin": "logam",
+      "emoji": "⛓️"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "logam",
+      "emoji": "🥫"
     }
   ],
   "pilihan": []
