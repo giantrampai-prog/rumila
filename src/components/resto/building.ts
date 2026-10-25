@@ -249,6 +249,23 @@ const TX = {
       },
       false,
     ),
+  /** papan nama kecil di pintu ruang belakang */
+  roomSign: (label: string) =>
+    tex(
+      `room-${label}`,
+      256,
+      64,
+      (g) => {
+        g.fillStyle = '#2a2c30';
+        g.fillRect(0, 0, 256, 64);
+        g.fillStyle = '#f4ecdc';
+        g.font = '800 30px system-ui, sans-serif';
+        g.textAlign = 'center';
+        g.textBaseline = 'middle';
+        g.fillText(label, 128, 34);
+      },
+      false,
+    ),
   wcSign: (kind: 'akses' | 'wc') =>
     tex(
       `wc-${kind}`,
@@ -810,32 +827,64 @@ export function buildResto(s: RestoState, built: boolean): BuiltResto {
     sink.position.set(x + (grab ? 0.8 : -0.7), FLOOR_Y + 0.8, -10.35);
     dyn.add(sink);
   }
-  // pintu toilet bertanda
+  // pintu berkusen (daun pintu tertutup) di celah sekat; muka bertanda menghadap +z
+  const doorM = std('#b8824a', 0.6);
+  const door = (x: number, z: number, w: number, face: T.Material, sign?: string) => {
+    box(dyn, w + 0.16, 0.08, 0.18, darkTimber, x, FLOOR_Y + 2.12, z); // ambang atas
+    for (const s of [-1, 1]) box(dyn, 0.08, 2.12, 0.18, darkTimber, x + s * (w / 2 + 0.04), FLOOR_Y, z); // kusen
+    box(dyn, w, 2.1, 0.05, [doorM, doorM, doorM, doorM, face, doorM], x, FLOOR_Y + 0.01, z);
+    const lever = new T.Mesh(new T.BoxGeometry(0.14, 0.025, 0.025), steel);
+    lever.position.set(x + w * 0.32, FLOOR_Y + 1.0, z + 0.06);
+    dyn.add(lever);
+    if (sign) {
+      const pl = new T.Mesh(new T.PlaneGeometry(0.56, 0.14), new T.MeshStandardMaterial({ map: TX.roomSign(sign), roughness: 0.5 }));
+      pl.position.set(x, FLOOR_Y + 1.62, z + 0.035);
+      dyn.add(pl);
+    }
+  };
+  // toilet aksesibel & toilet: daun pintu kayu bertanda di celah sekat depan
   for (const [x, kind] of [
     [2.15, 'akses'],
     [4.45, 'wc'],
-  ] as const) {
-    const d = new T.Mesh(new T.PlaneGeometry(1.05, 2.1), new T.MeshStandardMaterial({ map: TX.wcSign(kind), roughness: 0.6 }));
-    d.position.set(x, FLOOR_Y + 1.05, ROOMS.toilet.z1 + 0.08);
-    dyn.add(d);
-  }
-  // area cuci tangan: meja batu, wastafel batu, cermin oval, dinding kisi kayu
+  ] as const)
+    door(x, ROOMS.toilet.z1, 1.1, new T.MeshStandardMaterial({ map: TX.wcSign(kind), roughness: 0.6 }));
+  // ruang belakang: pintu tertutup berpapan nama ke koridor
+  for (const [x, label] of [
+    [-7.9, 'CUCI'],
+    [-4.6, 'GUDANG'],
+    [-1.5, 'PENDINGIN'],
+    [1.8, 'STAF'],
+  ] as const)
+    door(x, KZ, 1.0, doorM, label);
+  // area cuci tangan: dinding kisi kayu di antara pintu toilet, meja batu & wastafel di dinding kanan, cermin oval
   {
-    const zw = ROOMS.toilet.z1 + 0.45;
-    box(dyn, 3.4, 0.14, 0.6, stoneTop, 3.3, FLOOR_Y + 0.8, zw);
-    for (let x = 1.6; x < 5.2; x += 0.14) box(dyn, 0.08, 3.0, 0.06, timberM, x, FLOOR_Y, ROOMS.toilet.z1 + 0.12, undefined, false);
-    for (const x of [2.5, 4.1]) {
-      const basin = new T.Mesh(new T.SphereGeometry(0.24, 16, 10, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), std('#b8b2a6', 0.8, { side: T.DoubleSide }));
-      basin.position.set(x, FLOOR_Y + 1.1, zw);
+    for (const [a, b] of [
+      [ROOMS.toilet.x0 + 0.1, 1.5],
+      [2.8, 3.8],
+      [5.1, BLD.x1 - 0.1],
+    ])
+      for (let x = a; x < b; x += 0.14) box(dyn, 0.08, 3.0, 0.06, timberM, x, FLOOR_Y, ROOMS.toilet.z1 + 0.12, undefined, false);
+    const xw = BLD.x1 - 0.42;
+    // mulai 0,6 m dari sekat agar jalan ke pintu WC tetap lega
+    const zc = ROOMS.wash.z1 - 0.75;
+    box(dyn, 0.6, 0.14, 1.4, stoneTop, xw, FLOOR_Y + 0.8, zc);
+    box(dyn, 0.5, 0.8, 1.3, timberM, xw + 0.04, FLOOR_Y, zc);
+    for (const z of [zc - 0.34, zc + 0.34]) {
+      const basin = new T.Mesh(new T.SphereGeometry(0.22, 16, 10, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), std('#b8b2a6', 0.8, { side: T.DoubleSide }));
+      basin.position.set(xw - 0.02, FLOOR_Y + 1.1, z);
       const tap = new T.Mesh(new T.BoxGeometry(0.04, 0.3, 0.04), steel);
-      tap.position.set(x, FLOOR_Y + 1.1, zw - 0.25);
-      const mirror = new T.Mesh(new T.CapsuleGeometry(0.3, 0.55, 6, 16), std('#aab8c0', 0.05, { metalness: 0.95 }));
+      tap.position.set(xw + 0.22, FLOOR_Y + 1.1, z);
+      const spout = new T.Mesh(new T.BoxGeometry(0.14, 0.03, 0.03), steel);
+      spout.position.set(xw + 0.16, FLOOR_Y + 1.25, z);
+      const mirror = new T.Mesh(new T.CapsuleGeometry(0.26, 0.5, 6, 16), std('#aab8c0', 0.05, { metalness: 0.95 }));
       mirror.scale.z = 0.05;
-      mirror.position.set(x, FLOOR_Y + 1.9, ROOMS.toilet.z1 + 0.2);
-      const frame = new T.Mesh(new T.CapsuleGeometry(0.32, 0.55, 6, 16), std('#1a1a1a', 0.4));
+      mirror.rotation.y = -Math.PI / 2;
+      mirror.position.set(BLD.x1 - 0.13, FLOOR_Y + 1.85, z);
+      const frame = new T.Mesh(new T.CapsuleGeometry(0.28, 0.5, 6, 16), std('#1a1a1a', 0.4));
       frame.scale.z = 0.03;
-      frame.position.set(x, FLOOR_Y + 1.9, ROOMS.toilet.z1 + 0.18);
-      dyn.add(basin, tap, frame, mirror);
+      frame.rotation.y = -Math.PI / 2;
+      frame.position.set(BLD.x1 - 0.12, FLOOR_Y + 1.85, z);
+      dyn.add(basin, tap, spout, frame, mirror);
     }
   }
 

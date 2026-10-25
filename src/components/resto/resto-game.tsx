@@ -241,6 +241,10 @@ export function RestoGame() {
   const [panel, setPanel] = useState<Panel>(null);
   const [topView, setTopView] = useState(false);
   const [roofOn, setRoofOn] = useState(true);
+  /** pandangan orang aktif (ikon orang diseret ke lantai) */
+  const [pov, setPov] = useState(false);
+  /** ikon orang sedang diseret: posisi jari + ada lantai di bawahnya */
+  const [peg, setPeg] = useState<{ x: number; y: number; sx: number; sy: number; ok: boolean } | null>(null);
   const [toast, setToast] = useState<{ text: string; good: boolean } | null>(null);
   const [intro, setIntro] = useState(false);
   const run = useRef<S.DayRun | null>(null);
@@ -270,6 +274,7 @@ export function RestoGame() {
     import('./scene').then(({ RestoScene }) => {
       if (!alive || !host.current) return;
       scene.current = new RestoScene(host.current);
+      scene.current.onPov = (on) => (setPov(on), on && setTopView(false));
       scene.current.sync(g);
     });
     installAudioUnlock();
@@ -496,8 +501,8 @@ export function RestoGame() {
         </div>
       </div>
 
-      {/* Sensei Hana */}
-      {g.phase !== 'open' && (
+      {/* Sensei Hana (disembunyikan saat pandangan orang agar pemandangan lega) */}
+      {g.phase !== 'open' && !pov && (
         <div className="pointer-events-none absolute left-2 right-2 flex max-w-[460px] items-end gap-2 sm:left-3" style={{ top: HUD_BELOW }}>
           <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-[28px] shadow-[0_3px_0_rgba(0,0,0,.18)] sm:size-14 sm:text-[34px]">👩‍🍳</span>
           <div className="resto-pop min-w-0 rounded-[18px] rounded-bl-md bg-white px-3 py-2 shadow-[0_3px_0_rgba(0,0,0,.12)] sm:px-3.5">
@@ -556,16 +561,52 @@ export function RestoGame() {
         </div>
       )}
 
-      {/* kontrol kamera: perbesar, perkecil, pandangan dari atas, kembali */}
-      <div className="pointer-events-auto absolute right-2 flex flex-col gap-1.5 sm:right-3 sm:gap-2" style={{ top: '38%' }}>
+      {/* kontrol kamera: perbesar, perkecil, pandangan dari atas, kembali; ikon orang diseret = pandangan orang */}
+      <div className="pointer-events-auto absolute right-2 flex flex-col gap-1.5 sm:right-3 sm:gap-2" style={{ top: pov ? '30%' : '34%' }}>
+        <button
+          aria-label="Seret ke lantai untuk melihat dari mata orang"
+          title="Seret ke lantai: lihat dari mata orang"
+          onPointerDown={(e) => {
+            e.preventDefault();
+            e.currentTarget.setPointerCapture(e.pointerId);
+            sfx.tap();
+            setPeg({ x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY, ok: false });
+          }}
+          onPointerMove={(e) => {
+            if (!peg) return;
+            setPeg({ ...peg, x: e.clientX, y: e.clientY, ok: !!scene.current?.povHover(e.clientX, e.clientY) });
+          }}
+          onPointerUp={(e) => {
+            if (!peg) return;
+            setPeg(null);
+            // ketuk saja (tanpa seret) = petunjuk, bukan langsung masuk
+            const dragged = Math.hypot(e.clientX - peg.sx, e.clientY - peg.sy) > 24;
+            if (dragged && scene.current?.povAt(e.clientX, e.clientY)) sfx.open();
+            else {
+              scene.current?.povHover(-1, -1);
+              say('Seret ikon orang ini ke lantai resto, lalu lepaskan.');
+            }
+          }}
+          onPointerCancel={() => (setPeg(null), scene.current?.povHover(-1, -1))}
+          className="flex size-10 touch-none items-center justify-center rounded-full text-white shadow-[0_3px_0_rgba(0,0,0,.25)] active:scale-90 sm:size-11"
+          style={{ background: '#f29a1a', cursor: peg ? 'grabbing' : 'grab', opacity: peg ? 0.4 : 1 }}
+        >
+          <Icon name="man" size={26} />
+        </button>
         {(
-          [
-            [roofOn ? 'roofing' : 'house', roofOn ? 'Buka atap (lihat isi)' : 'Pasang atap', () => setRoofOn(!!scene.current?.toggleRoof())],
-            ['add', 'Perbesar', () => scene.current?.zoomBy(0.75)],
-            ['remove', 'Perkecil', () => scene.current?.zoomBy(1.33)],
-            [topView ? 'view_in_ar' : 'satellite_alt', topView ? 'Pandangan miring' : 'Lihat dari atas', () => setTopView(!!scene.current?.toggleTop())],
-            ['center_focus_strong', 'Kembali ke resto', () => (scene.current?.resetView(), setTopView(false))],
-          ] as const
+          (pov
+            ? [
+                ['close', 'Keluar dari pandangan orang', () => scene.current?.exitPov()],
+                ['add', 'Perbesar', () => scene.current?.zoomBy(0.8)],
+                ['remove', 'Perkecil', () => scene.current?.zoomBy(1.25)],
+              ]
+            : [
+                [roofOn ? 'roofing' : 'house', roofOn ? 'Buka atap (lihat isi)' : 'Pasang atap', () => setRoofOn(!!scene.current?.toggleRoof())],
+                ['add', 'Perbesar', () => scene.current?.zoomBy(0.75)],
+                ['remove', 'Perkecil', () => scene.current?.zoomBy(1.33)],
+                [topView ? 'view_in_ar' : 'satellite_alt', topView ? 'Pandangan miring' : 'Lihat dari atas', () => setTopView(!!scene.current?.toggleTop())],
+                ['center_focus_strong', 'Kembali ke resto', () => (scene.current?.resetView(), setTopView(false))],
+              ]) as [string, string, () => void][]
         ).map(([icon, label, fn]) => (
           <button
             key={label}
@@ -578,6 +619,26 @@ export function RestoGame() {
           </button>
         ))}
       </div>
+
+      {/* ikon orang yang sedang diseret mengikuti jari */}
+      {peg && (
+        <div
+          className="pointer-events-none fixed z-50 flex size-12 items-center justify-center rounded-full text-white shadow-lg"
+          style={{ left: peg.x - 24, top: peg.y - 44, background: peg.ok ? '#f29a1a' : '#9a8a7a', transform: 'rotate(-8deg)' }}
+        >
+          <Icon name="man" size={30} />
+        </div>
+      )}
+
+      {/* petunjuk pandangan orang */}
+      {pov && (
+        <div className="pointer-events-auto absolute left-1/2 top-2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/60 py-1.5 pl-3.5 pr-1.5 text-[13px] font-bold text-white sm:top-3">
+          <span>👀 Geser untuk menoleh · ketuk lantai untuk berjalan</span>
+          <button onClick={() => (sfx.tap(), scene.current?.exitPov())} className="rounded-full bg-white px-3 py-1 text-[13px] font-extrabold text-[#3a2416] active:scale-95">
+            Keluar
+          </button>
+        </div>
+      )}
 
       {/* dok bawah: aksi sesuai fase */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 p-2 sm:p-3" style={{ paddingBottom: 'max(10px, env(safe-area-inset-bottom))' }}>
