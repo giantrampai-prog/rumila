@@ -79,8 +79,8 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       )}
 
       <div className="flex flex-col gap-3">
-        {peta.unit.map((u) => (
-          <Unit key={`${u.track}-${u.id}`} u={u} bahasa={bahasa} events={events} level={level} sekarang={peta.sekarang} />
+        {peta.unit.map((u, i) => (
+          <Unit key={`${u.track}-${u.id}`} u={u} urutan={i} bahasa={bahasa} events={events} level={level} sekarang={peta.sekarang} />
         ))}
         <Gerbang peta={peta} berikut={berikut} />
       </div>
@@ -159,18 +159,31 @@ const WARNA_LENCANA: Record<StatusLencana, { bg: string; fg: string; label: stri
   perunggu: { bg: "#e7a46a", fg: "#0b2545", label: "Lencana perunggu" },
   terkunci: { bg: "rgba(255,255,255,.25)", fg: "#fff", label: "Lencana belum didapat" },
 };
-/** Geser horizontal titik misi (px), berulang mengikuti nomor misi supaya jalur berkelok tanpa putus antar-unit. */
-const KELOK = [0, 56, 84, 56, 0, -56, -84, -56];
+/** Tiap unit = satu lengkung rapi: titik pertama & terakhir di tengah, puncak lengkung sejauh LENGKUNG px. Arah berganti tiap unit. */
+const LENGKUNG = 72;
+const SLOT = 92; // tinggi tetap tiap titik misi (px) agar garis penghubung bisa digambar
+const geserTitik = (i: number, n: number, arah: number) => (n < 2 ? 0 : Math.round(arah * LENGKUNG * Math.sin((Math.PI * i) / (n - 1))));
 
-function Unit({ u, bahasa, events, level, sekarang }: { u: UnitPeta; bahasa: BahasaAnak; events: Events; level: LevelId; sekarang?: MisiPeta }) {
+function Unit({ u, urutan, bahasa, events, level, sekarang }: { u: UnitPeta; urutan: number; bahasa: BahasaAnak; events: Events; level: LevelId; sekarang?: MisiPeta }) {
   const c = TRACK_WARNA[u.track];
   const [l, m, d] = PLAY[c];
   const w = WARNA_LENCANA[u.lencana];
   const selesai = u.misi.filter((x) => x.selesai).length;
   const semuaKunci = u.misi.every((x) => x.terkunci);
   const tinta = tintaPada(c);
-  const geserRata = u.misi.reduce((t, x) => t + KELOK[(x.nomor - 1) % KELOK.length], 0) / Math.max(1, u.misi.length);
-  const sisiHias = geserRata > 0 ? "left" : "right";
+  const arah = urutan % 2 === 0 ? 1 : -1;
+  const sisiHias = arah > 0 ? "left" : "right";
+  const n = u.misi.length;
+  const geser = u.misi.map((_, i) => geserTitik(i, n, arah));
+  const tinggi = n * SLOT;
+  const yTitik = (i: number) => i * SLOT + SLOT / 2;
+  // garis penghubung: kurva halus lewat pusat tiap titik; bagian yang sudah dilewati berwarna pelajaran
+  const garis = (sampai: number) =>
+    geser
+      .slice(0, sampai + 1)
+      .map((x, i) => (i === 0 ? `M ${x} ${yTitik(0)}` : `C ${geser[i - 1]} ${yTitik(i) - SLOT / 2} ${x} ${yTitik(i - 1) + SLOT / 2} ${x} ${yTitik(i)}`))
+      .join(" ");
+  const terakhirTerbuka = u.misi.reduce((t, x, i) => (x.selesai || x.sekarang ? i : t), -1);
   return (
     <section aria-label={`${trackMeta(u.track).nama.id}: ${u.nama.id}, ${selesai} dari ${u.misi.length} misi`}>
       <div
@@ -190,7 +203,11 @@ function Unit({ u, bahasa, events, level, sekarang }: { u: UnitPeta; bahasa: Bah
           <Icon name="workspace_premium" size={20} />
         </span>
       </div>
-      <ol className="relative flex flex-col items-center gap-3 py-4">
+      <ol className="relative mb-3 mt-6 flex flex-col items-center" style={{ height: tinggi }}>
+        <svg aria-hidden className="pointer-events-none absolute left-1/2 top-0 overflow-visible" width={1} height={tinggi}>
+          <path d={garis(n - 1)} fill="none" stroke="#e6dccd" strokeWidth={10} strokeLinecap="round" strokeDasharray="0.1 18" />
+          {terakhirTerbuka > 0 && <path d={garis(terakhirTerbuka)} fill="none" stroke={m} strokeOpacity={0.5} strokeWidth={10} strokeLinecap="round" strokeDasharray="0.1 18" />}
+        </svg>
         {/* hiasan: lambang pelajaran besar di sisi yang tidak dilewati jalur */}
         <span
           aria-hidden
@@ -199,10 +216,10 @@ function Unit({ u, bahasa, events, level, sekarang }: { u: UnitPeta; bahasa: Bah
         >
           <Icon name={TRACK_IKON[u.track]} size={40} />
         </span>
-        {u.misi.map((x) => {
+        {u.misi.map((x, i) => {
           const href = !x.terkunci ? paketMisi(x.kompetensi.id, PAKET, events, level) : undefined;
           return (
-            <li key={x.kompetensi.id} className="relative focus-within:z-10 hover:z-10" style={{ transform: `translateX(${KELOK[(x.nomor - 1) % KELOK.length]}px)` }}>
+            <li key={x.kompetensi.id} className="relative flex items-center justify-center focus-within:z-10 hover:z-10" style={{ height: SLOT, transform: `translateX(${geser[i]}px)` }}>
               <TitikMisi m={x} warna={[l, m, d]} href={href ? `/akademi/main/${href.id}` : undefined} sekarang={sekarang} bahasa={bahasa} />
             </li>
           );
@@ -215,18 +232,27 @@ function Unit({ u, bahasa, events, level, sekarang }: { u: UnitPeta; bahasa: Bah
 function TitikMisi({ m, warna, href, sekarang, bahasa }: { m: MisiPeta; warna: [string, string, string]; href?: string; sekarang?: MisiPeta; bahasa: BahasaAnak }) {
   const [goyang, setGoyang] = useState(0);
   const [l, mm, d] = warna;
-  const ukuran = m.sekarang ? 80 : 64;
+  const ukuran = m.sekarang ? 76 : 62;
   const gaya: React.CSSProperties = m.selesai
     ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 6px 0 #c88a00", color: INK }
     : m.sekarang
       ? { background: `linear-gradient(155deg, ${l}, ${mm} 65%)`, boxShadow: `0 7px 0 ${d}`, color: "#fff" }
       : { background: "#ece4d8", boxShadow: "0 5px 0 #d6cbbb", color: "#a99c8a" };
-  const ikon = m.selesai ? "star" : m.sekarang ? "play_arrow" : "lock";
+  const ikon = m.selesai ? "star" : "play_arrow";
   const label = `Misi ${m.nomor}: ${pernyataan(m, bahasa)}. ${m.selesai ? "Selesai, main lagi" : m.sekarang ? "Mainkan sekarang" : "Terkunci"}`;
   const isi = (
     <>
       {m.sekarang && <span aria-hidden className="akademi-denyut absolute inset-0 rounded-full" />}
-      <Icon name={ikon} size={m.sekarang ? 46 : 32} />
+      {m.terkunci ? (
+        <span style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>{m.nomor}</span>
+      ) : (
+        <Icon name={ikon} size={m.sekarang ? 44 : 32} />
+      )}
+      {m.terkunci && (
+        <span aria-hidden className="absolute -bottom-0.5 -right-0.5 flex size-6 items-center justify-center rounded-full border-2 border-[#fffaf2] bg-[#cfc3b1] text-white">
+          <Icon name="lock" size={13} />
+        </span>
+      )}
     </>
   );
   const kelas = "relative flex items-center justify-center rounded-full transition-transform active:translate-y-1 active:scale-95";
@@ -234,7 +260,7 @@ function TitikMisi({ m, warna, href, sekarang, bahasa }: { m: MisiPeta; warna: [
   return (
     <div className="relative flex flex-col items-center">
       {m.sekarang && (
-        <span className="akademi-bounce mb-2 rounded-[12px] bg-white px-3 py-1 text-[13px] font-black tracking-wide uppercase shadow-md" style={{ color: d }}>
+        <span className="akademi-bounce absolute -top-8 z-10 rounded-[12px] bg-white px-3 py-1 text-[13px] font-black tracking-wide uppercase shadow-md" style={{ color: d }}>
           Mulai
         </span>
       )}
