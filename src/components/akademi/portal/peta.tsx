@@ -1,13 +1,13 @@
 "use client";
 
 // Peta Petualangan: satu jalur misi BERURUTAN per jenjang (Misi 1, 2, 3, …), tanpa lompat.
-// Kartu jenjang → tombol Lanjut (selalu misi "kamu di sini") → jalur unit & misi → Gerbang Naik Pangkat → tangga 9 jenjang.
+// Kartu jenjang (+ tangga mini 9 jenjang) → tombol Lanjut (selalu misi "kamu di sini") → jalur unit & misi → Gerbang Naik Pangkat.
 // Logika di src/lib/akademi/peta.ts; di sini hanya tampilan + naik jenjang otomatis.
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { type LevelId } from "@akademi/schema";
-import { LAMBANG, TanggaJenjang } from "./tangga";
+import { LAMBANG, TanggaMini } from "./tangga";
 import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { tintaPada } from "@/lib/brand";
@@ -85,8 +85,6 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         <Gerbang peta={peta} berikut={berikut} />
       </div>
 
-      <TanggaJenjang level={level} />
-
       {me.admin && (
         <div className="mt-1 flex justify-center">
           <Link href="/akademi/rapor" className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.08)] transition-transform active:scale-95">
@@ -111,41 +109,44 @@ function KartuJenjang({ peta, streak, onHadiah }: { peta: PetaJenjang; streak: n
   const R = 44;
   const kel = 2 * Math.PI * R;
   return (
-    <section className={`${KARTU} relative flex items-center gap-4 overflow-hidden p-4`} aria-label={`Jenjang ${lv.nama}, misi ${peta.selesai} dari ${peta.total}, target pangkat ${lv.pangkat}`}>
-      <span aria-hidden className="absolute -left-10 -top-12 size-40 rounded-full" style={{ background: `${warna[0]}33` }} />
-      <span className="relative shrink-0" style={{ width: 104, height: 104 }}>
-        <svg width={104} height={104} viewBox="0 0 104 104" aria-hidden className="absolute inset-0 -rotate-90">
-          <circle cx={52} cy={52} r={R} fill="none" stroke="#fff0da" strokeWidth={9} />
-          {progres > 0 && <circle cx={52} cy={52} r={R} fill="none" stroke={warna[1]} strokeWidth={9} strokeLinecap="round" strokeDasharray={`${Math.max(progres * kel, 6)} ${kel}`} />}
-        </svg>
-        <span
-          className="absolute inset-[15px] flex items-center justify-center rounded-full border-4 border-white text-white"
-          style={{ background: `radial-gradient(circle at 32% 28%, ${warna[0]}, ${warna[1]})`, boxShadow: `0 4px 0 ${warna[1]}99` }}
-        >
-          <Icon name={ikon} size={38} />
+    <section className={`${KARTU} relative flex flex-col gap-3 overflow-hidden p-4`} aria-label={`Jenjang ${lv.nama}, misi ${peta.selesai} dari ${peta.total}, target pangkat ${lv.pangkat}`}>
+      <div className="relative flex items-center gap-4">
+        <span aria-hidden className="absolute -left-10 -top-12 size-40 rounded-full" style={{ background: `${warna[0]}33` }} />
+        <span className="relative shrink-0" style={{ width: 104, height: 104 }}>
+          <svg width={104} height={104} viewBox="0 0 104 104" aria-hidden className="absolute inset-0 -rotate-90">
+            <circle cx={52} cy={52} r={R} fill="none" stroke="#fff0da" strokeWidth={9} />
+            {progres > 0 && <circle cx={52} cy={52} r={R} fill="none" stroke={warna[1]} strokeWidth={9} strokeLinecap="round" strokeDasharray={`${Math.max(progres * kel, 6)} ${kel}`} />}
+          </svg>
+          <span
+            className="absolute inset-[15px] flex items-center justify-center rounded-full border-4 border-white text-white"
+            style={{ background: `radial-gradient(circle at 32% 28%, ${warna[0]}, ${warna[1]})`, boxShadow: `0 4px 0 ${warna[1]}99` }}
+          >
+            <Icon name={ikon} size={38} />
+          </span>
         </span>
-      </span>
-      <div className="relative min-w-0 flex-1">
-        <span className="inline-flex items-center gap-1 rounded-full bg-[#fff3d1] px-2.5 py-0.5 text-[12px] font-black text-[#7a5200]">
-          <Icon name="military_tech" size={16} /> {lv.pangkat}
-        </span>
-        <h2 className="mt-1 leading-none" style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK }}>
-          {lv.lokal}
-        </h2>
-        <p className="mt-1 text-[13px] font-extrabold text-ink-3">{lv.nama}</p>
-        <p className="mt-1.5 leading-none" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: warna[1] }}>
-          {peta.selesai}/{peta.total} <span className="text-[13px] text-ink-3">misi</span>
-        </p>
+        <div className="relative min-w-0 flex-1">
+          <span className="inline-flex items-center gap-1 rounded-full bg-[#fff3d1] px-2.5 py-0.5 text-[12px] font-black text-[#7a5200]">
+            <Icon name="military_tech" size={16} /> {lv.pangkat}
+          </span>
+          <h2 className="mt-1 leading-none" style={{ fontFamily: BALOO, fontSize: 28, fontWeight: 800, color: INK }}>
+            {lv.lokal}
+          </h2>
+          <p className="mt-1 text-[13px] font-extrabold text-ink-3">{lv.nama}</p>
+          <p className="mt-1.5 leading-none" style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800, color: warna[1] }}>
+            {peta.selesai}/{peta.total} <span className="text-[13px] text-ink-3">misi</span>
+          </p>
+        </div>
+        <div className="relative flex shrink-0 flex-col gap-2">
+          <span className="flex h-11 min-w-11 items-center justify-center gap-1 rounded-full bg-[#fff1e6] px-3" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: "#c2410c" }} aria-label={`Rajin ${streak} hari`} title={`Rajin ${streak} hari`}>
+            <span aria-hidden>🔥</span>
+            {streak}
+          </span>
+          <button onClick={onHadiah} aria-label="Hadiah" title="Hadiah" className="flex size-11 items-center justify-center rounded-full bg-[#fff3d1] text-[#a34a00] transition-transform active:scale-90">
+            <Icon name="redeem" size={24} />
+          </button>
+        </div>
       </div>
-      <div className="relative flex shrink-0 flex-col gap-2">
-        <span className="flex h-11 min-w-11 items-center justify-center gap-1 rounded-full bg-[#fff1e6] px-3" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, color: "#c2410c" }} aria-label={`Rajin ${streak} hari`} title={`Rajin ${streak} hari`}>
-          <span aria-hidden>🔥</span>
-          {streak}
-        </span>
-        <button onClick={onHadiah} aria-label="Hadiah" title="Hadiah" className="flex size-11 items-center justify-center rounded-full bg-[#fff3d1] text-[#a34a00] transition-transform active:scale-90">
-          <Icon name="redeem" size={24} />
-        </button>
-      </div>
+      <TanggaMini level={peta.level} />
     </section>
   );
 }
