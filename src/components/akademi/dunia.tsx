@@ -12,13 +12,9 @@ import { BALOO, INK, NUNITO } from "./jenis";
 export function LatarKebunPasar() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden" style={{ background: "linear-gradient(180deg,#bfe9ff 0%,#e9f7ff 38%,#d8f3c4 60%,#b6e39a 100%)" }}>
-      <div className="absolute top-[6%] left-[8%] text-[64px] opacity-90" style={{ filter: "drop-shadow(0 6px 0 rgba(0,0,0,.05))" }}>☀️</div>
-      <div className="absolute top-[12%] right-[10%] text-[48px] opacity-80">☁️</div>
-      <div className="absolute top-[22%] left-[32%] text-[36px] opacity-70">☁️</div>
-      <div className="absolute bottom-[26%] left-[-10px] text-[96px] opacity-90">🌳</div>
-      <div className="absolute bottom-[28%] right-[-6px] text-[84px] opacity-90">🌳</div>
-      <div className="absolute bottom-[23%] left-[22%] text-[40px]">🌻</div>
-      <div className="absolute bottom-[22%] right-[26%] text-[36px]">🌷</div>
+      {/* hiasan dibuat tipis dan menjauh dari area main supaya anak fokus ke soal */}
+      <div className="absolute bottom-[14%] left-[-14px] text-[72px] opacity-45">🌳</div>
+      <div className="absolute bottom-[15%] right-[-10px] text-[64px] opacity-45">🌳</div>
       {/* lapak pasar */}
       <div className="absolute inset-x-0 bottom-0 h-[22%]" style={{ background: "linear-gradient(180deg,#9ed07c,#7fbf63)" }} />
       <div className="absolute inset-x-[6%] bottom-[18%] h-5 rounded-t-[10px]" style={{ background: "repeating-linear-gradient(90deg,#fd861d 0 28px,#ffd23f 28px 56px)" }} />
