@@ -1,8 +1,10 @@
-// Peta Petualangan Academy: satu jalur misi BERURUTAN per jenjang — fungsi murni, tanpa React/DOM.
+// Peta Petualangan Academy: satu jalur misi per jenjang — fungsi murni, tanpa React/DOM.
 //   urutan    = unit diselang-seling antarpelajaran (unit 1 Matematika, unit 1 Coding, unit 1 Sains, unit 2 …),
 //               di dalam unit mengikuti urutan file kurikulum; satu misi = satu kompetensi
 //   selesai   = pernah menamatkan paket yang memuat kompetensi itu dengan sukses ≥ AMBANG_STIKER, atau sudah dikuasai
-//   sekarang  = misi pertama yang belum selesai; misi sesudahnya terkunci (tidak ada lompat)
+//   sekarang  = misi pertama yang belum selesai (saran "Lanjut"); semua misi terbuka, anak boleh memilih urutan sendiri
+//               (keputusan PO 25 Okt 2026, menggantikan urutan saklek PR #19)
+//   progres   = ronde terjauh yang pernah dimainkan dalam satu sesi paket misi itu / jumlah ronde paket
 //   gerbang   = setelah semua misi selesai, latihan pemantapan untuk kompetensi inti yang belum dikuasai
 // Naik jenjang tetap memakai penguasaan: semua kompetensi inti jenjang dikuasai.
 
@@ -18,6 +20,8 @@ export interface MisiPeta {
   dikuasai: boolean;
   sekarang: boolean;
   terkunci: boolean;
+  /** 0..1: bagian paket yang sudah dimainkan (untuk badge persen misi yang belum selesai) */
+  progres: number;
 }
 
 export interface UnitPeta {
@@ -38,7 +42,7 @@ export interface Hitungan {
 export interface PetaJenjang {
   level: LevelId;
   unit: UnitPeta[];
-  /** misi selesai berurutan dari Misi 1 (misi yang tamat di luar urutan tidak dihitung) / total misi */
+  /** jumlah misi selesai (urutan bebas) / total misi */
   selesai: number;
   total: number;
   inti: Hitungan;
@@ -64,7 +68,32 @@ export function kompetensiSelesai(events: GameEvent[], paket: ContentPack[]): Se
   return out;
 }
 
-export function petaJenjang(peng: Record<string, Penguasaan>, selesaiSet: Set<string>, kompetensi: Competency[], level: LevelId, tracks: readonly TrackId[]): PetaJenjang {
+/** Progres terjauh per kompetensi: ronde dimainkan dalam satu sesi (sessionId + paket) / jumlah ronde paket, maksimal 1. */
+export function progresMisi(events: GameEvent[], paket: ContentPack[]): Map<string, number> {
+  const idx = new Map(paket.map((p) => [p.id, p]));
+  const ronde = new Map<string, number>();
+  for (const e of events) {
+    if (e.type !== "attempt" || !idx.has(e.activityId)) continue;
+    const k = `${e.sessionId}|${e.activityId}`;
+    ronde.set(k, (ronde.get(k) ?? 0) + 1);
+  }
+  const out = new Map<string, number>();
+  for (const [k, n] of ronde) {
+    const p = idx.get(k.slice(k.indexOf("|") + 1))!;
+    const nilai = Math.min(1, n / Math.max(1, p.rounds));
+    for (const c of p.competencyIds) out.set(c, Math.max(out.get(c) ?? 0, nilai));
+  }
+  return out;
+}
+
+export function petaJenjang(
+  peng: Record<string, Penguasaan>,
+  selesaiSet: Set<string>,
+  kompetensi: Competency[],
+  level: LevelId,
+  tracks: readonly TrackId[],
+  progres: ReadonlyMap<string, number> = new Map(),
+): PetaJenjang {
   // unit per pelajaran, urut kemunculan
   const perTrack = tracks.map((track) => {
     const map = new Map<string, Competency[]>();
@@ -76,17 +105,19 @@ export function petaJenjang(peng: Record<string, Penguasaan>, selesaiSet: Set<st
   for (let i = 0; i < terbanyak; i++) for (const u of perTrack) if (u[i]) urutUnit.push(u[i]);
 
   let nomor = 0;
+  let jumlahSelesai = 0;
   let sekarang: MisiPeta | undefined;
   const inti: Hitungan = { dikuasai: 0, total: 0 };
   const unit: UnitPeta[] = urutUnit.map(({ track, ke, isi }) => {
     const misi = isi.map((c) => {
       const dikuasai = peng[c.id]?.status === "dikuasai";
       const selesai = dikuasai || selesaiSet.has(c.id);
-      const m: MisiPeta = { nomor: ++nomor, kompetensi: c, selesai, dikuasai, sekarang: false, terkunci: false };
-      if (!sekarang && !selesai) {
+      const m: MisiPeta = { nomor: ++nomor, kompetensi: c, selesai, dikuasai, sekarang: false, terkunci: false, progres: selesai ? 1 : (progres.get(c.id) ?? 0) };
+      if (selesai) jumlahSelesai++;
+      else if (!sekarang) {
         m.sekarang = true;
         sekarang = m;
-      } else if (sekarang && !selesai) m.terkunci = true;
+      }
       if (c.core) {
         inti.total++;
         if (dikuasai) inti.dikuasai++;
@@ -98,7 +129,7 @@ export function petaJenjang(peng: Record<string, Penguasaan>, selesaiSet: Set<st
 
   const tercapai = inti.total > 0 && inti.dikuasai === inti.total;
   const pemantapan = !sekarang && !tercapai ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
-  return { level, unit, selesai: sekarang ? sekarang.nomor - 1 : nomor, total: nomor, inti, tercapai, sekarang, pemantapan };
+  return { level, unit, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan };
 }
 
 /** Jenjang berikutnya yang sudah punya kurikulum; undefined bila tidak ada. */

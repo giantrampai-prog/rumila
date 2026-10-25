@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
 import type { Penguasaan, Status } from "../mastery";
-import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang } from "../peta";
+import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi } from "../peta";
 import { LEARNER, SESSION, idBaru, kompetensi, paket, waktuHari } from "./helper";
 
 const M1 = "MAT.PAUD.BILANGAN.01";
@@ -34,18 +34,24 @@ describe("petaJenjang", () => {
     expect(peta.total).toBe(5);
   });
 
-  it("hanya satu misi 'sekarang'; semua sesudahnya terkunci", () => {
+  it("hanya satu misi 'sekarang' (saran lanjut); tidak ada misi terkunci", () => {
     const peta = petaJenjang({}, new Set([M1]), KOMP, "PAUD", TRACKS);
     const misi = peta.unit.flatMap((u) => u.misi);
-    expect(misi.map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "?")).join("")).toBe("SNKKK");
+    expect(misi.map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "-")).join("")).toBe("SN---");
     expect(peta.sekarang?.kompetensi.id).toBe(M2);
     expect(peta.selesai).toBe(1);
   });
 
-  it("hitungan selesai mengikuti urutan: misi yang tamat di luar urutan tidak menambah", () => {
+  it("urutan bebas: misi yang tamat di luar urutan ikut dihitung selesai", () => {
     const peta = petaJenjang({}, new Set([M1, K1]), KOMP, "PAUD", TRACKS);
     expect(peta.sekarang?.nomor).toBe(2);
-    expect(peta.selesai).toBe(1);
+    expect(peta.selesai).toBe(2);
+  });
+
+  it("progres misi yang belum selesai diteruskan; misi selesai = 1", () => {
+    const peta = petaJenjang({}, new Set([M1]), KOMP, "PAUD", TRACKS, new Map([[M2, 0.5], [M1, 0.3]]));
+    const misi = peta.unit.flatMap((u) => u.misi);
+    expect(misi.slice(0, 3).map((m) => m.progres)).toEqual([1, 0.5, 0]);
   });
 
   it("dikuasai juga dihitung selesai", () => {
@@ -91,5 +97,18 @@ describe("paketMisi", () => {
     expect(paketMisi(M1, PAKET, [], "PAUD")?.id).toBe("b");
     expect(paketMisi(M1, PAKET, [ev("activity_start", "b")], "PAUD")?.id).toBe("d");
     expect(paketMisi("TIDAK.ADA", PAKET, [], "PAUD")).toBeUndefined();
+  });
+});
+
+describe("progresMisi", () => {
+  const PAKET = [paket("a", "PAUD", [M1, M2]), paket("b", "PAUD", [K1])];
+  it("ronde terjauh dalam satu sesi / jumlah ronde paket, maksimal 1", () => {
+    const coba = (activityId: string, sessionId: string) => ({ ...ev("attempt", activityId, { correct: true }), sessionId }) as GameEvent;
+    const n = PAKET[0].rounds;
+    const ev2 = [...Array.from({ length: Math.ceil(n / 2) }, () => coba("a", "s1")), coba("a", "s2"), coba("b", "s1"), coba("x", "s1")];
+    const pr = progresMisi(ev2, PAKET);
+    expect(pr.get(M1)).toBeCloseTo(Math.ceil(n / 2) / n);
+    expect(pr.get(M2)).toBeCloseTo(Math.ceil(n / 2) / n);
+    expect(pr.get(K1)).toBeCloseTo(1 / PAKET[1].rounds);
   });
 });
