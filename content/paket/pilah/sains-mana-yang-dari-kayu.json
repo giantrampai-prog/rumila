@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-yang-dari-kayu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,13 +16,24 @@
       "i-kaleng": "kaleng",
       "i-ember": "ember plastik",
       "i-gelas": "gelas kaca",
-      "i-paku": "paku",
+      "i-paku": "baut",
       "i-talenan": "talenan kayu",
       "t-kayu": "Mana yang terbuat dari kayu?",
       "t-logam": "Mana yang terbuat dari logam?",
       "t-kaca": "Mana yang terbuat dari kaca?",
       "t-plastik": "Mana yang terbuat dari plastik?",
-      "t-logam2": "Mana yang terbuat dari logam?"
+      "t-logam2": "Mana yang terbuat dari logam?",
+      "i-pensil": "pensil",
+      "i-kunci": "kunci",
+      "i-sikatgigi": "sikat gigi",
+      "i-cermin": "cermin",
+      "i-koin": "koin",
+      "t-kayu2": "Mana yang terbuat dari kayu?",
+      "t-kayu3": "Mana yang terbuat dari kayu?",
+      "t-logam3": "Mana yang terbuat dari logam?",
+      "t-logam4": "Mana yang terbuat dari logam?",
+      "t-plastik2": "Mana yang terbuat dari plastik?",
+      "t-kaca2": "Mana yang terbuat dari kaca?"
     },
     "en": {
       "judul": "What Is It Made Of?",
@@ -32,13 +43,24 @@
       "i-kaleng": "tin can",
       "i-ember": "plastic bucket",
       "i-gelas": "glass cup",
-      "i-paku": "nail",
+      "i-paku": "bolt",
       "i-talenan": "wooden board",
       "t-kayu": "Which one is made of wood?",
       "t-logam": "Which one is made of metal?",
       "t-kaca": "Which one is made of glass?",
       "t-plastik": "Which one is made of plastic?",
-      "t-logam2": "Which one is made of metal?"
+      "t-logam2": "Which one is made of metal?",
+      "i-pensil": "pencil",
+      "i-kunci": "key",
+      "i-sikatgigi": "toothbrush",
+      "i-cermin": "mirror",
+      "i-koin": "coin",
+      "t-kayu2": "Which one is made of wood?",
+      "t-kayu3": "Which one is made of wood?",
+      "t-logam3": "Which one is made of metal?",
+      "t-logam4": "Which one is made of metal?",
+      "t-plastik2": "Which one is made of plastic?",
+      "t-kaca2": "Which one is made of glass?"
     }
   },
   "knobs": {
@@ -97,6 +119,36 @@
       "labelKey": "i-talenan",
       "bin": "pilihan",
       "emoji": "🪵"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "pilihan",
+      "emoji": "✏️"
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "pilihan",
+      "emoji": "🔑"
+    },
+    {
+      "id": "sikatgigi",
+      "labelKey": "i-sikatgigi",
+      "bin": "pilihan",
+      "emoji": "🪥"
+    },
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "pilihan",
+      "emoji": "🪞"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "pilihan",
+      "emoji": "🪙"
     }
   ],
   "pilihan": [
@@ -151,6 +203,68 @@
         "gelas"
       ],
       "correct": "paku"
+    },
+    {
+      "id": "kayu2",
+      "promptKey": "t-kayu2",
+      "choices": [
+        "talenan",
+        "gelas",
+        "kaleng"
+      ],
+      "correct": "talenan"
+    },
+    {
+      "id": "kayu3",
+      "promptKey": "t-kayu3",
+      "choices": [
+        "pensil",
+        "ember",
+        "kunci"
+      ],
+      "correct": "pensil"
+    },
+    {
+      "id": "logam3",
+      "promptKey": "t-logam3",
+      "choices": [
+        "kunci",
+        "ember",
+        "talenan",
+        "cermin"
+      ],
+      "correct": "kunci"
+    },
+    {
+      "id": "logam4",
+      "promptKey": "t-logam4",
+      "choices": [
+        "koin",
+        "sikatgigi",
+        "pensil"
+      ],
+      "correct": "koin"
+    },
+    {
+      "id": "plastik2",
+      "promptKey": "t-plastik2",
+      "choices": [
+        "sikatgigi",
+        "kunci",
+        "gelas",
+        "kursi"
+      ],
+      "correct": "sikatgigi"
+    },
+    {
+      "id": "kaca2",
+      "promptKey": "t-kaca2",
+      "choices": [
+        "cermin",
+        "talenan",
+        "kaleng"
+      ],
+      "correct": "cermin"
     }
   ]
 }

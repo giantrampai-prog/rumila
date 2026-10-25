@@ -1,6 +1,6 @@
 {
   "id": "sains-urutkan-matahari-bumi-bulan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -12,10 +12,10 @@
       "judul": "Paling Besar ke Paling Kecil di Langit",
       "instruksi": "Susun benda langit dari yang paling besar ke paling kecil: Matahari, Bumi, lalu Bulan.",
       "s-besar": "Dari paling besar",
+      "s-kecil": "Dari paling kecil",
       "besar-matahari": "Matahari paling besar",
       "besar-bumi": "Bumi",
       "besar-bulan": "Bulan paling kecil",
-      "s-kecil": "Dari paling kecil",
       "kecil-bulan": "Bulan paling kecil",
       "kecil-bumi": "Bumi",
       "kecil-matahari": "Matahari paling besar"
@@ -24,10 +24,10 @@
       "judul": "Biggest to Smallest in the Sky",
       "instruksi": "Put the space objects in order from biggest to smallest: Sun, Earth, then Moon.",
       "s-besar": "From the biggest",
+      "s-kecil": "From the smallest",
       "besar-matahari": "the Sun, the biggest",
       "besar-bumi": "Earth",
       "besar-bulan": "the Moon, the smallest",
-      "s-kecil": "From the smallest",
       "kecil-bulan": "the Moon, the smallest",
       "kecil-bumi": "Earth",
       "kecil-matahari": "the Sun, the biggest"
@@ -44,7 +44,7 @@
   },
   "assets": [],
   "generatif": true,
-  "rounds": 10,
+  "rounds": 2,
   "world": "angkasa",
   "mode": "susun",
   "sequences": [

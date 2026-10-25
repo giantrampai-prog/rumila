@@ -1,6 +1,6 @@
 {
   "id": "dari-kebun-ke-meja",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,7 +21,53 @@
       "cuci": "cuci sayur",
       "potong": "potong sayur",
       "masak": "masak di panci",
-      "sajikan": "sajikan di piring"
+      "sajikan": "sajikan di piring",
+      "t-jagung": "Cerita jagung",
+      "jagung-tanam": "tanam biji jagung",
+      "jagung-panen": "petik jagung",
+      "jagung-bakar": "bakar jagung",
+      "jagung-makan": "makan jagung",
+      "t-padi": "Cerita padi",
+      "padi-tanam": "tanam bibit padi",
+      "padi-kuning": "padi menguning",
+      "padi-masak": "masak nasi",
+      "padi-makan": "makan nasi",
+      "t-tomat": "Cerita tomat",
+      "tomat-tanam": "tanam bibit tomat",
+      "tomat-buah": "tomat merah",
+      "tomat-petik": "petik ke keranjang",
+      "tomat-sup": "masak sup",
+      "t-telur": "Cerita telur",
+      "telur-ayam": "ayam bertelur",
+      "telur-ambil": "ambil telur",
+      "telur-goreng": "goreng telur",
+      "telur-makan": "makan telur",
+      "t-susu": "Cerita susu",
+      "susu-sapi": "sapi di kandang",
+      "susu-perah": "perah susu ke ember",
+      "susu-tuang": "tuang ke gelas",
+      "susu-minum": "minum susu",
+      "t-wortel": "Cerita wortel",
+      "wortel-tanam": "tanam biji wortel",
+      "wortel-cabut": "cabut wortel",
+      "wortel-cuci": "cuci wortel",
+      "wortel-potong": "potong wortel",
+      "wortel-sup": "masak sup",
+      "t-kentang": "Cerita kentang",
+      "kentang-tanam": "tanam bibit kentang",
+      "kentang-gali": "gali kentang",
+      "kentang-goreng": "goreng kentang",
+      "kentang-makan": "makan kentang",
+      "t-semangka": "Cerita semangka",
+      "semangka-tanam": "tanam biji semangka",
+      "semangka-buah": "semangka besar",
+      "semangka-potong": "potong semangka",
+      "semangka-makan": "makan semangka",
+      "t-jeruk": "Cerita jeruk",
+      "jeruk-tanam": "tanam bibit jeruk",
+      "jeruk-bunga": "bunga mekar",
+      "jeruk-buah": "jeruk matang",
+      "jeruk-jus": "minum jus jeruk"
     },
     "en": {
       "judul": "From Garden to Table",
@@ -36,7 +82,53 @@
       "cuci": "wash the vegetables",
       "potong": "chop them",
       "masak": "cook in the pot",
-      "sajikan": "serve on a plate"
+      "sajikan": "serve on a plate",
+      "t-jagung": "The corn story",
+      "jagung-tanam": "plant corn seeds",
+      "jagung-panen": "pick the corn",
+      "jagung-bakar": "grill the corn",
+      "jagung-makan": "eat the corn",
+      "t-padi": "The rice story",
+      "padi-tanam": "plant rice seedlings",
+      "padi-kuning": "the rice turns golden",
+      "padi-masak": "cook the rice",
+      "padi-makan": "eat the rice",
+      "t-tomat": "The tomato story",
+      "tomat-tanam": "plant a tomato seedling",
+      "tomat-buah": "red tomatoes",
+      "tomat-petik": "pick into the basket",
+      "tomat-sup": "cook soup",
+      "t-telur": "The egg story",
+      "telur-ayam": "the hen lays an egg",
+      "telur-ambil": "take the egg",
+      "telur-goreng": "fry the egg",
+      "telur-makan": "eat the egg",
+      "t-susu": "The milk story",
+      "susu-sapi": "the cow in the barn",
+      "susu-perah": "milk into the pail",
+      "susu-tuang": "pour into a glass",
+      "susu-minum": "drink the milk",
+      "t-wortel": "The carrot story",
+      "wortel-tanam": "plant carrot seeds",
+      "wortel-cabut": "pull up the carrot",
+      "wortel-cuci": "wash the carrot",
+      "wortel-potong": "cut the carrot",
+      "wortel-sup": "cook soup",
+      "t-kentang": "The potato story",
+      "kentang-tanam": "plant a potato",
+      "kentang-gali": "dig up the potatoes",
+      "kentang-goreng": "fry the potatoes",
+      "kentang-makan": "eat the fries",
+      "t-semangka": "The watermelon story",
+      "semangka-tanam": "plant watermelon seeds",
+      "semangka-buah": "a big watermelon",
+      "semangka-potong": "cut the watermelon",
+      "semangka-makan": "eat the watermelon",
+      "t-jeruk": "The orange story",
+      "jeruk-tanam": "plant an orange seedling",
+      "jeruk-bunga": "flowers bloom",
+      "jeruk-buah": "the oranges are ripe",
+      "jeruk-jus": "drink orange juice"
     }
   },
   "knobs": {
@@ -108,6 +200,245 @@
           "id": "sajikan",
           "labelKey": "sajikan",
           "emoji": "🍽️"
+        }
+      ]
+    },
+    {
+      "id": "jagung",
+      "titleKey": "t-jagung",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "jagung-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "panen",
+          "labelKey": "jagung-panen",
+          "emoji": "🌽"
+        },
+        {
+          "id": "bakar",
+          "labelKey": "jagung-bakar",
+          "emoji": "🔥"
+        },
+        {
+          "id": "makan",
+          "labelKey": "jagung-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "padi",
+      "titleKey": "t-padi",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "padi-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "kuning",
+          "labelKey": "padi-kuning",
+          "emoji": "🌾"
+        },
+        {
+          "id": "masak",
+          "labelKey": "padi-masak",
+          "emoji": "♨️"
+        },
+        {
+          "id": "makan",
+          "labelKey": "padi-makan",
+          "emoji": "🍚"
+        }
+      ]
+    },
+    {
+      "id": "tomat",
+      "titleKey": "t-tomat",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "tomat-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "buah",
+          "labelKey": "tomat-buah",
+          "emoji": "🍅"
+        },
+        {
+          "id": "petik",
+          "labelKey": "tomat-petik",
+          "emoji": "🧺"
+        },
+        {
+          "id": "sup",
+          "labelKey": "tomat-sup",
+          "emoji": "🍲"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "ayam",
+          "labelKey": "telur-ayam",
+          "emoji": "🐔"
+        },
+        {
+          "id": "ambil",
+          "labelKey": "telur-ambil",
+          "emoji": "🥚"
+        },
+        {
+          "id": "goreng",
+          "labelKey": "telur-goreng",
+          "emoji": "🍳"
+        },
+        {
+          "id": "makan",
+          "labelKey": "telur-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "susu",
+      "titleKey": "t-susu",
+      "steps": [
+        {
+          "id": "sapi",
+          "labelKey": "susu-sapi",
+          "emoji": "🐄"
+        },
+        {
+          "id": "perah",
+          "labelKey": "susu-perah",
+          "emoji": "🪣"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "susu-tuang",
+          "emoji": "🥛"
+        },
+        {
+          "id": "minum",
+          "labelKey": "susu-minum",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "wortel",
+      "titleKey": "t-wortel",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "wortel-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "cabut",
+          "labelKey": "wortel-cabut",
+          "emoji": "🥕"
+        },
+        {
+          "id": "cuci",
+          "labelKey": "wortel-cuci",
+          "emoji": "💧"
+        },
+        {
+          "id": "potong",
+          "labelKey": "wortel-potong",
+          "emoji": "🔪"
+        },
+        {
+          "id": "sup",
+          "labelKey": "wortel-sup",
+          "emoji": "🍲"
+        }
+      ]
+    },
+    {
+      "id": "kentang",
+      "titleKey": "t-kentang",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "kentang-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "gali",
+          "labelKey": "kentang-gali",
+          "emoji": "🥔"
+        },
+        {
+          "id": "goreng",
+          "labelKey": "kentang-goreng",
+          "emoji": "🍟"
+        },
+        {
+          "id": "makan",
+          "labelKey": "kentang-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "semangka",
+      "titleKey": "t-semangka",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "semangka-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "buah",
+          "labelKey": "semangka-buah",
+          "emoji": "🍉"
+        },
+        {
+          "id": "potong",
+          "labelKey": "semangka-potong",
+          "emoji": "🔪"
+        },
+        {
+          "id": "makan",
+          "labelKey": "semangka-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "jeruk",
+      "titleKey": "t-jeruk",
+      "steps": [
+        {
+          "id": "tanam",
+          "labelKey": "jeruk-tanam",
+          "emoji": "🌱"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "jeruk-bunga",
+          "emoji": "🌸"
+        },
+        {
+          "id": "buah",
+          "labelKey": "jeruk-buah",
+          "emoji": "🍊"
+        },
+        {
+          "id": "jus",
+          "labelKey": "jeruk-jus",
+          "emoji": "🧃"
         }
       ]
     }

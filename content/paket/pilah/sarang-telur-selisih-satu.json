@@ -1,6 +1,6 @@
 {
   "id": "sarang-telur-selisih-satu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,18 +9,20 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Sarang Telur: Mana Lebih Banyak?",
-      "instruksi": "Dua sarang ayam hampir sama: sentuh yang telurnya lebih banyak.",
+      "judul": "Sarang Telur Ayam",
+      "instruksi": "Dua sarang ayam hampir sama: dengarkan pertanyaannya, lalu sentuh sarang yang telurnya lebih banyak atau lebih sedikit.",
       "pilihan": "pilihan",
       "telur": "telur",
-      "tBanyak": "Sarang mana yang telurnya lebih banyak?"
+      "tBanyak": "Sarang mana yang telurnya lebih banyak?",
+      "tSedikit": "Sarang mana yang telurnya lebih sedikit?"
     },
     "en": {
-      "judul": "Egg Nests: Which Has More?",
-      "instruksi": "Two hen nests look alike: touch the one with more eggs.",
+      "judul": "Hen Nests",
+      "instruksi": "Two hen nests look alike: listen to the question, then touch the nest with more or fewer eggs.",
       "pilihan": "choices",
       "telur": "eggs",
-      "tBanyak": "Which nest has more eggs?"
+      "tBanyak": "Which nest has more eggs?",
+      "tSedikit": "Which nest has fewer eggs?"
     }
   },
   "knobs": {
@@ -204,6 +206,60 @@
         "telur-9-besar"
       ],
       "correct": "telur-10"
+    },
+    {
+      "id": "s4",
+      "promptKey": "tSedikit",
+      "choices": [
+        "telur-4-besar",
+        "telur-5"
+      ],
+      "correct": "telur-4-besar"
+    },
+    {
+      "id": "s5",
+      "promptKey": "tSedikit",
+      "choices": [
+        "telur-6",
+        "telur-5-besar"
+      ],
+      "correct": "telur-5-besar"
+    },
+    {
+      "id": "s6",
+      "promptKey": "tSedikit",
+      "choices": [
+        "telur-6-besar",
+        "telur-7"
+      ],
+      "correct": "telur-6-besar"
+    },
+    {
+      "id": "s7",
+      "promptKey": "tSedikit",
+      "choices": [
+        "telur-8",
+        "telur-7-besar"
+      ],
+      "correct": "telur-7-besar"
+    },
+    {
+      "id": "s8",
+      "promptKey": "tSedikit",
+      "choices": [
+        "telur-8-besar",
+        "telur-9"
+      ],
+      "correct": "telur-8-besar"
+    },
+    {
+      "id": "s9",
+      "promptKey": "tSedikit",
+      "choices": [
+        "telur-10",
+        "telur-9-besar"
+      ],
+      "correct": "telur-9-besar"
     }
   ]
 }

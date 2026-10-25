@@ -1,6 +1,6 @@
 {
   "id": "lanjutkan-hitungan-sampai-20",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -26,7 +26,13 @@
       "dari8": "Lanjutkan dari 8",
       "dari11": "Lanjutkan dari 11",
       "dari13": "Lanjutkan dari 13",
-      "dari15": "Lanjutkan dari 15"
+      "dari15": "Lanjutkan dari 15",
+      "dari9": "Lanjutkan dari 9",
+      "dari10": "Lanjutkan dari 10",
+      "dari12": "Lanjutkan dari 12",
+      "dari14": "Lanjutkan dari 14",
+      "dari16": "Lanjutkan dari 16",
+      "dari17": "Lanjutkan dari 17"
     },
     "en": {
       "judul": "Keep Counting to 20",
@@ -46,7 +52,13 @@
       "dari8": "Continue from 8",
       "dari11": "Continue from 11",
       "dari13": "Continue from 13",
-      "dari15": "Continue from 15"
+      "dari15": "Continue from 15",
+      "dari9": "Continue from 9",
+      "dari10": "Continue from 10",
+      "dari12": "Continue from 12",
+      "dari14": "Continue from 14",
+      "dari16": "Continue from 16",
+      "dari17": "Continue from 17"
     }
   },
   "knobs": {
@@ -138,6 +150,142 @@
           "id": "k17",
           "labelKey": "n17"
         },
+        {
+          "id": "k18",
+          "labelKey": "n18"
+        },
+        {
+          "id": "k19",
+          "labelKey": "n19"
+        },
+        {
+          "id": "k20",
+          "labelKey": "n20"
+        }
+      ]
+    },
+    {
+      "id": "dari-9",
+      "titleKey": "dari9",
+      "steps": [
+        {
+          "id": "k10",
+          "labelKey": "n10"
+        },
+        {
+          "id": "k11",
+          "labelKey": "n11"
+        },
+        {
+          "id": "k12",
+          "labelKey": "n12"
+        },
+        {
+          "id": "k13",
+          "labelKey": "n13"
+        },
+        {
+          "id": "k14",
+          "labelKey": "n14"
+        }
+      ]
+    },
+    {
+      "id": "dari-10",
+      "titleKey": "dari10",
+      "steps": [
+        {
+          "id": "k11",
+          "labelKey": "n11"
+        },
+        {
+          "id": "k12",
+          "labelKey": "n12"
+        },
+        {
+          "id": "k13",
+          "labelKey": "n13"
+        },
+        {
+          "id": "k14",
+          "labelKey": "n14"
+        },
+        {
+          "id": "k15",
+          "labelKey": "n15"
+        }
+      ]
+    },
+    {
+      "id": "dari-12",
+      "titleKey": "dari12",
+      "steps": [
+        {
+          "id": "k13",
+          "labelKey": "n13"
+        },
+        {
+          "id": "k14",
+          "labelKey": "n14"
+        },
+        {
+          "id": "k15",
+          "labelKey": "n15"
+        },
+        {
+          "id": "k16",
+          "labelKey": "n16"
+        }
+      ]
+    },
+    {
+      "id": "dari-14",
+      "titleKey": "dari14",
+      "steps": [
+        {
+          "id": "k15",
+          "labelKey": "n15"
+        },
+        {
+          "id": "k16",
+          "labelKey": "n16"
+        },
+        {
+          "id": "k17",
+          "labelKey": "n17"
+        },
+        {
+          "id": "k18",
+          "labelKey": "n18"
+        }
+      ]
+    },
+    {
+      "id": "dari-16",
+      "titleKey": "dari16",
+      "steps": [
+        {
+          "id": "k17",
+          "labelKey": "n17"
+        },
+        {
+          "id": "k18",
+          "labelKey": "n18"
+        },
+        {
+          "id": "k19",
+          "labelKey": "n19"
+        },
+        {
+          "id": "k20",
+          "labelKey": "n20"
+        }
+      ]
+    },
+    {
+      "id": "dari-17",
+      "titleKey": "dari17",
+      "steps": [
         {
           "id": "k18",
           "labelKey": "n18"

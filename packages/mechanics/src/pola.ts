@@ -42,7 +42,8 @@ export function buatRondePola(p: PaketPola, knobs: Knobs, seed: number): RondePo
   if (p.mode === "cipta") {
     const slots = Math.max(jepit(knobs.slots, 4, 9, 6), 2 * unitLen);
     return {
-      mode: "cipta", unitLen, palette: acak(p.items, r), correct: [],
+      // palet = sebagian benda (unitLen + 2) supaya tiap ronde bahan kalung/lagunya berganti
+      mode: "cipta", unitLen, palette: acak(p.items, r).slice(0, Math.min(p.items.length, unitLen + 2)), correct: [],
       shown: new Array<string | null>(slots).fill(null), pilih: unitLen,
     };
   }

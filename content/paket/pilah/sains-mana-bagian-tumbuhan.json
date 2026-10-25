@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-bagian-tumbuhan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,14 @@
       "t-akar": "Mana akarnya? Akar ada di dalam tanah.",
       "t-daun": "Mana daunnya?",
       "t-bunga": "Mana bunganya?",
-      "t-batang": "Mana batangnya?"
+      "t-batang": "Mana batangnya?",
+      "t-akar2": "Mana akarnya? Akar menyerap air untuk tumbuhan.",
+      "t-batang2": "Mana batangnya? Batang membuat tumbuhan berdiri tegak.",
+      "t-batang3": "Mana batangnya? Air naik lewat batang ke daun.",
+      "t-daun2": "Mana daunnya? Daun menangkap cahaya matahari.",
+      "t-daun3": "Mana daunnya? Banyak daun berwarna hijau.",
+      "t-bunga2": "Mana bunganya? Lebah dan kupu-kupu suka hinggap di bunga.",
+      "t-bunga3": "Mana bunganya? Bunga sering harum dan berwarna-warni."
     },
     "en": {
       "judul": "Which Plant Part?",
@@ -32,7 +39,14 @@
       "t-akar": "Where is the root? Roots grow in the soil.",
       "t-daun": "Where is the leaf?",
       "t-bunga": "Where is the flower?",
-      "t-batang": "Where is the stem?"
+      "t-batang": "Where is the stem?",
+      "t-akar2": "Where is the root? Roots take in water for the plant.",
+      "t-batang2": "Where is the stem? The stem holds the plant up.",
+      "t-batang3": "Where is the stem? Water moves up the stem to the leaves.",
+      "t-daun2": "Where is the leaf? Leaves catch the sunlight.",
+      "t-daun3": "Where is the leaf? Many leaves are green.",
+      "t-bunga2": "Where is the flower? Bees and butterflies like to visit flowers.",
+      "t-bunga3": "Where is the flower? Flowers are often sweet-smelling and colourful."
     }
   },
   "knobs": {
@@ -126,6 +140,80 @@
         "daun"
       ],
       "correct": "batang"
+    },
+    {
+      "id": "akar2",
+      "promptKey": "t-akar2",
+      "choices": [
+        "akar",
+        "daun",
+        "bunga",
+        "batang"
+      ],
+      "correct": "akar"
+    },
+    {
+      "id": "batang2",
+      "promptKey": "t-batang2",
+      "choices": [
+        "batang",
+        "daun",
+        "akar",
+        "bunga"
+      ],
+      "correct": "batang"
+    },
+    {
+      "id": "batang3",
+      "promptKey": "t-batang3",
+      "choices": [
+        "bunga",
+        "batang",
+        "akar"
+      ],
+      "correct": "batang"
+    },
+    {
+      "id": "daun2",
+      "promptKey": "t-daun2",
+      "choices": [
+        "akar",
+        "bunga",
+        "daun",
+        "batang"
+      ],
+      "correct": "daun"
+    },
+    {
+      "id": "daun3",
+      "promptKey": "t-daun3",
+      "choices": [
+        "daun",
+        "batang",
+        "akar"
+      ],
+      "correct": "daun"
+    },
+    {
+      "id": "bunga2",
+      "promptKey": "t-bunga2",
+      "choices": [
+        "daun",
+        "akar",
+        "bunga",
+        "batang"
+      ],
+      "correct": "bunga"
+    },
+    {
+      "id": "bunga3",
+      "promptKey": "t-bunga3",
+      "choices": [
+        "bunga",
+        "akar",
+        "batang"
+      ],
+      "correct": "bunga"
     }
   ]
 }

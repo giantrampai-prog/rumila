@@ -1,6 +1,6 @@
 {
   "id": "piring-kue-lebih-banyak",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -13,14 +13,18 @@
       "instruksi": "Robot lapar sekali: sentuh piring yang kuenya lebih banyak.",
       "pilihan": "pilihan",
       "kue": "kue",
-      "tBanyak": "Mana piring yang kuenya lebih banyak?"
+      "tBanyak": "Mana piring yang kuenya lebih banyak?",
+      "kuemangkuk": "kue mangkuk",
+      "donat": "donat"
     },
     "en": {
       "judul": "Cake Plates: Which Has More?",
       "instruksi": "Robot is very hungry: touch the plate with more cookies.",
       "pilihan": "choices",
       "kue": "cookies",
-      "tBanyak": "Which plate has more cookies?"
+      "tBanyak": "Which plate has more cookies?",
+      "kuemangkuk": "cupcake",
+      "donat": "doughnut"
     }
   },
   "knobs": {
@@ -78,6 +82,76 @@
       "bin": "pilihan",
       "emoji": "🍪",
       "count": 5
+    },
+    {
+      "bin": "pilihan",
+      "id": "mangkuk-1",
+      "labelKey": "kuemangkuk",
+      "emoji": "🧁",
+      "count": 1
+    },
+    {
+      "bin": "pilihan",
+      "id": "mangkuk-2",
+      "labelKey": "kuemangkuk",
+      "emoji": "🧁",
+      "count": 2
+    },
+    {
+      "bin": "pilihan",
+      "id": "mangkuk-3",
+      "labelKey": "kuemangkuk",
+      "emoji": "🧁",
+      "count": 3
+    },
+    {
+      "bin": "pilihan",
+      "id": "mangkuk-4",
+      "labelKey": "kuemangkuk",
+      "emoji": "🧁",
+      "count": 4
+    },
+    {
+      "bin": "pilihan",
+      "id": "mangkuk-5",
+      "labelKey": "kuemangkuk",
+      "emoji": "🧁",
+      "count": 5
+    },
+    {
+      "bin": "pilihan",
+      "id": "donat-1",
+      "labelKey": "donat",
+      "emoji": "🍩",
+      "count": 1
+    },
+    {
+      "bin": "pilihan",
+      "id": "donat-2",
+      "labelKey": "donat",
+      "emoji": "🍩",
+      "count": 2
+    },
+    {
+      "bin": "pilihan",
+      "id": "donat-3",
+      "labelKey": "donat",
+      "emoji": "🍩",
+      "count": 3
+    },
+    {
+      "bin": "pilihan",
+      "id": "donat-4",
+      "labelKey": "donat",
+      "emoji": "🍩",
+      "count": 4
+    },
+    {
+      "bin": "pilihan",
+      "id": "donat-5",
+      "labelKey": "donat",
+      "emoji": "🍩",
+      "count": 5
     }
   ],
   "pilihan": [
@@ -125,6 +199,78 @@
         "kue-5"
       ],
       "correct": "kue-5"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tBanyak",
+      "choices": [
+        "mangkuk-1",
+        "mangkuk-3"
+      ],
+      "correct": "mangkuk-3"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBanyak",
+      "choices": [
+        "mangkuk-4",
+        "mangkuk-2"
+      ],
+      "correct": "mangkuk-4"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tBanyak",
+      "choices": [
+        "mangkuk-2",
+        "mangkuk-5"
+      ],
+      "correct": "mangkuk-5"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tBanyak",
+      "choices": [
+        "mangkuk-1",
+        "mangkuk-2"
+      ],
+      "correct": "mangkuk-2"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tBanyak",
+      "choices": [
+        "donat-3",
+        "donat-1"
+      ],
+      "correct": "donat-3"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tBanyak",
+      "choices": [
+        "donat-2",
+        "donat-4"
+      ],
+      "correct": "donat-4"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tBanyak",
+      "choices": [
+        "donat-5",
+        "donat-3"
+      ],
+      "correct": "donat-5"
+    },
+    {
+      "id": "r13",
+      "promptKey": "tBanyak",
+      "choices": [
+        "donat-2",
+        "donat-1"
+      ],
+      "correct": "donat-2"
     }
   ]
 }

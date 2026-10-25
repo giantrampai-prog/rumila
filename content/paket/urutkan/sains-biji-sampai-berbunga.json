@@ -1,6 +1,6 @@
 {
   "id": "sains-biji-sampai-berbunga",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -20,7 +20,40 @@
       "kacang-biji": "biji kacang",
       "kacang-tunas": "tunas kecil",
       "kacang-daun": "berdaun lebat",
-      "kacang-bunga": "berbunga"
+      "kacang-bunga": "berbunga",
+      "t-tulip": "Tulip tumbuh",
+      "tulip-biji": "biji di tanah",
+      "tulip-tunas": "tunas kecil",
+      "tulip-bunga": "berbunga",
+      "t-mawar": "Mawar tumbuh",
+      "mawar-biji": "biji di tanah",
+      "mawar-tunas": "tunas kecil",
+      "mawar-bunga": "berbunga",
+      "t-sepatu": "Kembang sepatu tumbuh",
+      "sepatu-biji": "biji di tanah",
+      "sepatu-tunas": "tunas kecil",
+      "sepatu-bunga": "berbunga",
+      "t-merahmuda": "Bunga merah muda tumbuh",
+      "merahmuda-biji": "biji di tanah",
+      "merahmuda-tunas": "tunas kecil",
+      "merahmuda-bunga": "berbunga",
+      "t-kuning": "Bunga kuning tumbuh",
+      "kuning-biji": "biji di tanah",
+      "kuning-tunas": "tunas kecil",
+      "kuning-bunga": "berbunga",
+      "t-matahari": "Bunga matahari kecil",
+      "matahari-biji": "biji di tanah",
+      "matahari-tunas": "tunas kecil",
+      "matahari-bunga": "berbunga",
+      "t-teratai": "Teratai tumbuh",
+      "teratai-biji": "biji di kolam",
+      "teratai-tunas": "tunas kecil",
+      "teratai-bunga": "berbunga",
+      "t-kacangtanah": "Kacang tanah tumbuh",
+      "kacangtanah-biji": "biji kacang tanah",
+      "kacangtanah-tunas": "tunas kecil",
+      "kacangtanah-daun": "berdaun banyak",
+      "kacangtanah-bunga": "berbunga kuning"
     },
     "en": {
       "judul": "From Seed to Flower",
@@ -34,7 +67,40 @@
       "kacang-biji": "bean seed",
       "kacang-tunas": "little sprout",
       "kacang-daun": "lots of leaves",
-      "kacang-bunga": "flowering"
+      "kacang-bunga": "flowering",
+      "t-tulip": "A tulip grows",
+      "tulip-biji": "seed in the soil",
+      "tulip-tunas": "a little sprout",
+      "tulip-bunga": "it blooms",
+      "t-mawar": "A rose grows",
+      "mawar-biji": "seed in the soil",
+      "mawar-tunas": "a little sprout",
+      "mawar-bunga": "it blooms",
+      "t-sepatu": "A hibiscus grows",
+      "sepatu-biji": "seed in the soil",
+      "sepatu-tunas": "a little sprout",
+      "sepatu-bunga": "it blooms",
+      "t-merahmuda": "A pink flower grows",
+      "merahmuda-biji": "seed in the soil",
+      "merahmuda-tunas": "a little sprout",
+      "merahmuda-bunga": "it blooms",
+      "t-kuning": "A yellow flower grows",
+      "kuning-biji": "seed in the soil",
+      "kuning-tunas": "a little sprout",
+      "kuning-bunga": "it blooms",
+      "t-matahari": "A little sunflower",
+      "matahari-biji": "seed in the soil",
+      "matahari-tunas": "a little sprout",
+      "matahari-bunga": "it blooms",
+      "t-teratai": "A lotus grows",
+      "teratai-biji": "seed in the pond",
+      "teratai-tunas": "a little sprout",
+      "teratai-bunga": "it blooms",
+      "t-kacangtanah": "A peanut plant grows",
+      "kacangtanah-biji": "a peanut seed",
+      "kacangtanah-tunas": "a little sprout",
+      "kacangtanah-daun": "lots of leaves",
+      "kacangtanah-bunga": "yellow flowers bloom"
     }
   },
   "knobs": {
@@ -107,6 +173,204 @@
         {
           "id": "bunga",
           "labelKey": "kacang-bunga",
+          "emoji": "🌼",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "tulip",
+      "titleKey": "t-tulip",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "tulip-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "tulip-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "tulip-bunga",
+          "emoji": "🌷",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "mawar",
+      "titleKey": "t-mawar",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "mawar-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "mawar-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "mawar-bunga",
+          "emoji": "🌹",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "t-sepatu",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "sepatu-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "sepatu-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "sepatu-bunga",
+          "emoji": "🌺",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "merahmuda",
+      "titleKey": "t-merahmuda",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "merahmuda-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "merahmuda-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "merahmuda-bunga",
+          "emoji": "🌸",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "kuning",
+      "titleKey": "t-kuning",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kuning-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "kuning-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kuning-bunga",
+          "emoji": "🌼",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "matahari",
+      "titleKey": "t-matahari",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "matahari-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "matahari-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "matahari-bunga",
+          "emoji": "🌻",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "teratai",
+      "titleKey": "t-teratai",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "teratai-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "teratai-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "bunga",
+          "labelKey": "teratai-bunga",
+          "emoji": "🪷",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "kacangtanah",
+      "titleKey": "t-kacangtanah",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacangtanah-biji",
+          "emoji": "🥜",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "kacangtanah-tunas",
+          "emoji": "🌱",
+          "scale": 0.8
+        },
+        {
+          "id": "daun",
+          "labelKey": "kacangtanah-daun",
+          "emoji": "🌿",
+          "scale": 1.1
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacangtanah-bunga",
           "emoji": "🌼",
           "scale": 1.3
         }

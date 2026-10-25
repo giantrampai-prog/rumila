@@ -1,6 +1,6 @@
 {
   "id": "kotak-mainan-warna",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,15 @@
       "taksi": "taksi",
       "lonceng": "lonceng",
       "puzel": "kepingan puzel",
-      "kura": "kura-kura"
+      "kura": "kura-kura",
+      "pemadam": "mobil pemadam",
+      "balap": "mobil balap",
+      "kelereng": "kelereng",
+      "lumba": "lumba-lumba",
+      "bintang": "bintang",
+      "dino": "dinosaurus",
+      "buaya": "buaya",
+      "anakayam": "anak ayam"
     },
     "en": {
       "judul": "Color Toy Boxes",
@@ -38,7 +46,15 @@
       "taksi": "taxi",
       "lonceng": "bell",
       "puzel": "puzzle piece",
-      "kura": "turtle"
+      "kura": "turtle",
+      "pemadam": "fire engine",
+      "balap": "race car",
+      "kelereng": "marble",
+      "lumba": "dolphin",
+      "bintang": "star",
+      "dino": "dinosaur",
+      "buaya": "crocodile",
+      "anakayam": "chick"
     }
   },
   "knobs": {
@@ -140,6 +156,62 @@
       "labelKey": "kura",
       "bin": "hijau",
       "emoji": "🐢",
+      "color": "#43a047"
+    },
+    {
+      "id": "pemadam",
+      "labelKey": "pemadam",
+      "bin": "merah",
+      "emoji": "🚒",
+      "color": "#e53935"
+    },
+    {
+      "id": "balap",
+      "labelKey": "balap",
+      "bin": "merah",
+      "emoji": "🏎️",
+      "color": "#e53935"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "kelereng",
+      "bin": "biru",
+      "emoji": "🔵",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "lumba",
+      "bin": "biru",
+      "emoji": "🐬",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "anakayam",
+      "labelKey": "anakayam",
+      "bin": "kuning",
+      "emoji": "🐤",
+      "color": "#fdd835"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "bintang",
+      "bin": "kuning",
+      "emoji": "⭐",
+      "color": "#fdd835"
+    },
+    {
+      "id": "dino",
+      "labelKey": "dino",
+      "bin": "hijau",
+      "emoji": "🦖",
+      "color": "#43a047"
+    },
+    {
+      "id": "buaya",
+      "labelKey": "buaya",
+      "bin": "hijau",
+      "emoji": "🐊",
       "color": "#43a047"
     }
   ]

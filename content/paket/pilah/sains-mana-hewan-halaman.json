@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-hewan-halaman",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,17 @@
       "t-ayam": "Mana ayamnya?",
       "t-bebek": "Mana bebeknya?",
       "t-kambing": "Mana kambingnya?",
-      "t-burung": "Mana burungnya?"
+      "t-burung": "Mana burungnya?",
+      "i-anjing": "anjing",
+      "i-kelinci": "kelinci",
+      "i-kupu": "kupu-kupu",
+      "i-semut": "semut",
+      "i-kuda": "kuda",
+      "t-anjing": "Mana anjingnya?",
+      "t-kelinci": "Mana kelincinya?",
+      "t-kupu": "Mana kupu-kupunya?",
+      "t-semut": "Mana semutnya?",
+      "t-kuda": "Mana kudanya?"
     },
     "en": {
       "judul": "Animals in the Yard",
@@ -40,7 +50,17 @@
       "t-ayam": "Where is the chicken?",
       "t-bebek": "Where is the duck?",
       "t-kambing": "Where is the goat?",
-      "t-burung": "Where is the bird?"
+      "t-burung": "Where is the bird?",
+      "i-anjing": "dog",
+      "i-kelinci": "rabbit",
+      "i-kupu": "butterfly",
+      "i-semut": "ant",
+      "i-kuda": "horse",
+      "t-anjing": "Where is the dog?",
+      "t-kelinci": "Where is the rabbit?",
+      "t-kupu": "Where is the butterfly?",
+      "t-semut": "Where is the ant?",
+      "t-kuda": "Where is the horse?"
     }
   },
   "knobs": {
@@ -101,6 +121,37 @@
       "bin": "pilihan",
       "emoji": "🐦",
       "scale": 0.8
+    },
+    {
+      "id": "anjing",
+      "labelKey": "i-anjing",
+      "bin": "pilihan",
+      "emoji": "🐶"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "pilihan",
+      "emoji": "🐰"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "pilihan",
+      "emoji": "🦋"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "pilihan",
+      "emoji": "🐜",
+      "scale": 0.8
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "pilihan",
+      "emoji": "🐴"
     }
   ],
   "pilihan": [
@@ -169,6 +220,61 @@
         "kambing"
       ],
       "correct": "burung"
+    },
+    {
+      "id": "anjing",
+      "promptKey": "t-anjing",
+      "choices": [
+        "anjing",
+        "kucing",
+        "kelinci",
+        "ayam"
+      ],
+      "correct": "anjing"
+    },
+    {
+      "id": "kelinci",
+      "promptKey": "t-kelinci",
+      "choices": [
+        "kelinci",
+        "kucing",
+        "kambing",
+        "semut"
+      ],
+      "correct": "kelinci"
+    },
+    {
+      "id": "kupu",
+      "promptKey": "t-kupu",
+      "choices": [
+        "kupu",
+        "burung",
+        "semut",
+        "bebek"
+      ],
+      "correct": "kupu"
+    },
+    {
+      "id": "semut",
+      "promptKey": "t-semut",
+      "choices": [
+        "semut",
+        "kupu",
+        "ayam",
+        "kuda"
+      ],
+      "correct": "semut"
+    },
+    {
+      "id": "kuda",
+      "promptKey": "t-kuda",
+      "choices": [
+        "kuda",
+        "sapi",
+        "kambing",
+        "anjing"
+      ],
+      "correct": "kuda"
     }
   ]
 }

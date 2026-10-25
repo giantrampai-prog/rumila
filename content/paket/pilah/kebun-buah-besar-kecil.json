@@ -1,6 +1,6 @@
 {
   "id": "kebun-buah-besar-kecil",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,9 @@
       "daun": "daun",
       "jamur": "jamur",
       "tBesar": "Mana yang lebih besar?",
-      "tKecil": "Mana yang lebih kecil?"
+      "tKecil": "Mana yang lebih kecil?",
+      "nanas": "nanas",
+      "jeruk": "jeruk"
     },
     "en": {
       "judul": "Big and Small Fruit",
@@ -30,7 +32,9 @@
       "daun": "leaf",
       "jamur": "mushroom",
       "tBesar": "Which one is bigger?",
-      "tKecil": "Which one is smaller?"
+      "tKecil": "Which one is smaller?",
+      "nanas": "pineapple",
+      "jeruk": "orange"
     }
   },
   "knobs": {
@@ -123,6 +127,34 @@
       "bin": "pilihan",
       "emoji": "🍄",
       "scale": 1
+    },
+    {
+      "id": "nanas-besar",
+      "labelKey": "nanas",
+      "bin": "pilihan",
+      "emoji": "🍍",
+      "scale": 1.7
+    },
+    {
+      "id": "nanas-kecil",
+      "labelKey": "nanas",
+      "bin": "pilihan",
+      "emoji": "🍍",
+      "scale": 1
+    },
+    {
+      "id": "jeruk-besar",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "scale": 1.8
+    },
+    {
+      "id": "jeruk-kecil",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊",
+      "scale": 1
     }
   ],
   "pilihan": [
@@ -170,6 +202,87 @@
         "jamur-besar"
       ],
       "correct": "jamur-besar"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tKecil",
+      "choices": [
+        "semangka-besar",
+        "semangka-kecil"
+      ],
+      "correct": "semangka-kecil"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBesar",
+      "choices": [
+        "labu-kecil",
+        "labu-besar"
+      ],
+      "correct": "labu-besar"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tKecil",
+      "choices": [
+        "mangga-besar",
+        "mangga-kecil"
+      ],
+      "correct": "mangga-kecil"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tBesar",
+      "choices": [
+        "daun-kecil",
+        "daun-besar"
+      ],
+      "correct": "daun-besar"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tKecil",
+      "choices": [
+        "jamur-besar",
+        "jamur-kecil"
+      ],
+      "correct": "jamur-kecil"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tBesar",
+      "choices": [
+        "nanas-kecil",
+        "nanas-besar"
+      ],
+      "correct": "nanas-besar"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tKecil",
+      "choices": [
+        "nanas-besar",
+        "nanas-kecil"
+      ],
+      "correct": "nanas-kecil"
+    },
+    {
+      "id": "r13",
+      "promptKey": "tKecil",
+      "choices": [
+        "jeruk-besar",
+        "jeruk-kecil"
+      ],
+      "correct": "jeruk-kecil"
+    },
+    {
+      "id": "r14",
+      "promptKey": "tBesar",
+      "choices": [
+        "jeruk-kecil",
+        "jeruk-besar"
+      ],
+      "correct": "jeruk-besar"
     }
   ]
 }

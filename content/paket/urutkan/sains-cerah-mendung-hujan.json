@@ -1,6 +1,6 @@
 {
   "id": "sains-cerah-mendung-hujan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -24,7 +24,39 @@
       "awan-cerah": "langit cerah",
       "awan-tipis": "awan tipis datang",
       "awan-tebal": "awan tebal, langit gelap",
-      "awan-hujan": "hujan turun"
+      "awan-hujan": "hujan turun",
+      "t-petir": "Ada petir",
+      "petir-cerah": "langit cerah",
+      "petir-mendung": "awan tebal, langit gelap",
+      "petir-hujan": "hujan dan petir",
+      "t-malam": "Malam hari",
+      "malam-cerah": "bulan terang",
+      "malam-mendung": "awan menutup bulan",
+      "malam-hujan": "hujan turun",
+      "t-bintang": "Langit berbintang",
+      "bintang-cerah": "bintang bersinar",
+      "bintang-mendung": "awan datang",
+      "bintang-hujan": "hujan turun",
+      "t-gerimis": "Matahari bersembunyi",
+      "gerimis-cerah": "cerah, sedikit awan",
+      "gerimis-mendung": "awan menutup matahari",
+      "gerimis-hujan": "hujan turun",
+      "t-tertutup": "Awan besar",
+      "tertutup-cerah": "langit cerah",
+      "tertutup-mendung": "awan besar datang",
+      "tertutup-hujan": "hujan dan petir",
+      "t-payung": "Hujan deras",
+      "payung-cerah": "langit cerah",
+      "payung-mendung": "awan tebal, langit gelap",
+      "payung-hujan": "hujan deras, pakai payung",
+      "t-berawan": "Langit berawan",
+      "berawan-cerah": "cerah berawan",
+      "berawan-mendung": "awan tebal, langit gelap",
+      "berawan-hujan": "hujan dan petir",
+      "t-pagi": "Pagi hari",
+      "pagi-cerah": "pagi cerah",
+      "pagi-mendung": "awan tebal datang",
+      "pagi-hujan": "hujan turun"
     },
     "en": {
       "judul": "Clouds Come, Rain Falls",
@@ -42,7 +74,39 @@
       "awan-cerah": "sunny sky",
       "awan-tipis": "a thin cloud comes",
       "awan-tebal": "thick cloud, dark sky",
-      "awan-hujan": "rain falls"
+      "awan-hujan": "rain falls",
+      "t-petir": "Thunder and lightning",
+      "petir-cerah": "clear sky",
+      "petir-mendung": "thick clouds, dark sky",
+      "petir-hujan": "rain and lightning",
+      "t-malam": "At night",
+      "malam-cerah": "bright moon",
+      "malam-mendung": "clouds cover the moon",
+      "malam-hujan": "rain falls",
+      "t-bintang": "Starry sky",
+      "bintang-cerah": "stars shine",
+      "bintang-mendung": "clouds come",
+      "bintang-hujan": "rain falls",
+      "t-gerimis": "The sun hides",
+      "gerimis-cerah": "sunny, a few clouds",
+      "gerimis-mendung": "clouds cover the sun",
+      "gerimis-hujan": "rain falls",
+      "t-tertutup": "A big cloud",
+      "tertutup-cerah": "clear sky",
+      "tertutup-mendung": "a big cloud comes",
+      "tertutup-hujan": "rain and lightning",
+      "t-payung": "Heavy rain",
+      "payung-cerah": "clear sky",
+      "payung-mendung": "thick clouds, dark sky",
+      "payung-hujan": "heavy rain, use an umbrella",
+      "t-berawan": "Cloudy sky",
+      "berawan-cerah": "partly sunny",
+      "berawan-mendung": "thick clouds, dark sky",
+      "berawan-hujan": "rain and lightning",
+      "t-pagi": "In the morning",
+      "pagi-cerah": "a bright morning",
+      "pagi-mendung": "thick clouds come",
+      "pagi-hujan": "rain falls"
     }
   },
   "knobs": {
@@ -134,6 +198,190 @@
         {
           "id": "hujan",
           "labelKey": "awan-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "petir",
+      "titleKey": "t-petir",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "petir-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "petir-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "petir-hujan",
+          "emoji": "⛈️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "malam",
+      "titleKey": "t-malam",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "malam-cerah",
+          "emoji": "🌙"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "malam-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "malam-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "bintang",
+      "titleKey": "t-bintang",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "bintang-cerah",
+          "emoji": "⭐"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "bintang-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "bintang-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "gerimis",
+      "titleKey": "t-gerimis",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "gerimis-cerah",
+          "emoji": "🌤️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "gerimis-mendung",
+          "emoji": "🌥️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "gerimis-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "tertutup",
+      "titleKey": "t-tertutup",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "tertutup-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "tertutup-mendung",
+          "emoji": "🌥️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "tertutup-hujan",
+          "emoji": "⛈️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "payung",
+      "titleKey": "t-payung",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "payung-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "payung-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "payung-hujan",
+          "emoji": "☔",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "berawan",
+      "titleKey": "t-berawan",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "berawan-cerah",
+          "emoji": "⛅"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "berawan-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "berawan-hujan",
+          "emoji": "⛈️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "pagi",
+      "titleKey": "t-pagi",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "pagi-cerah",
+          "emoji": "🌅"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "pagi-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "pagi-hujan",
           "emoji": "🌧️",
           "color": "#546e7a"
         }

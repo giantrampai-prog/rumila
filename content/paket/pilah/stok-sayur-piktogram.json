@@ -1,6 +1,6 @@
 {
   "id": "stok-sayur-piktogram",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -171,6 +171,56 @@
         "tomat-b"
       ],
       "correct": "wortel-b"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tSedikit",
+      "choices": [
+        "tomat-b",
+        "jagung-b",
+        "terong-a"
+      ],
+      "correct": "tomat-b"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jagung-b",
+        "tomat-b",
+        "terong-b"
+      ],
+      "correct": "jagung-b"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tSedikit",
+      "choices": [
+        "wortel-b",
+        "tomat-a",
+        "terong-a"
+      ],
+      "correct": "tomat-a"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tBanyak",
+      "choices": [
+        "wortel-a",
+        "jagung-a",
+        "tomat-b"
+      ],
+      "correct": "tomat-b"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tSedikit",
+      "choices": [
+        "wortel-b",
+        "jagung-b",
+        "terong-a"
+      ],
+      "correct": "jagung-b"
     }
   ]
 }

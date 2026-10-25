@@ -121,8 +121,8 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
       return { ...dasar, items: [h, ...acak(peran(p, "alat"), r)], target: h.value ?? 1, correctId };
     }
     case "bagi": {
-      const max = jepit(knobs.max, 2, 8, 8);
-      const kandidat = [2, 4, 6, 8].filter(n => n <= max);
+      const max = jepit(knobs.max, 2, 12, 8);
+      const kandidat = [2, 4, 6, 8, 10, 12].filter(n => n <= max);
       const target = pilihSatu(kandidat.length ? kandidat : [2], r);
       const benda = peran(p, "benda").length ? peran(p, "benda") : p.items;
       return { ...dasar, items: [pilihSatu(benda, r)], target };
@@ -148,8 +148,9 @@ export function buatRondeSimulasi(p: PaketSimulasi, knobs: Knobs, seed: number):
       return { ...dasar, items: acak(alat, r), correctId: macet.id, target: jepit(knobs.batas, 1, 20, 5) };
     }
     case "telusur": {
-      const max = jepit(knobs.max, 1, 5, 5);
-      return { ...dasar, items: p.items, target: acakInt(r, 1, max), offset: jepit(knobs.panah, 0, 1, 1) };
+      // angka 0–max (max ≥ 6 menyertakan 0 agar stok soal 10)
+      const max = jepit(knobs.max, 1, 9, 5);
+      return { ...dasar, items: p.items, target: acakInt(r, max >= 6 ? 0 : 1, max), offset: jepit(knobs.panah, 0, 1, 1) };
     }
   }
 }

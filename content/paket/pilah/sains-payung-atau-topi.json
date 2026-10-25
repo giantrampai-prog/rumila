@@ -1,6 +1,6 @@
 {
   "id": "sains-payung-atau-topi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,13 @@
       "t-hujan1": "Langit gelap, hujan turun. Mana yang dipakai?",
       "t-cerah2": "Matahari bersinar terang. Mana yang dipakai?",
       "t-hujan2": "Tetes hujan jatuh dari langit. Mana yang dipakai?",
-      "t-angin": "Angin bertiup kencang, daun beterbangan. Mana yang dimainkan?"
+      "t-angin": "Angin bertiup kencang, daun beterbangan. Mana yang dimainkan?",
+      "t-cerah3": "Siang hari panas sekali di lapangan. Mana yang dipakai?",
+      "t-cerah4": "Tidak ada awan, matahari bersinar di atas kepala. Mana yang dipakai?",
+      "t-hujan3": "Hujan deras, jalanan jadi basah. Mana yang dipakai?",
+      "t-hujan4": "Gerimis turun rintik-rintik. Mana yang dipakai?",
+      "t-hujan5": "Tik-tik-tik, bunyi hujan di atap. Mana yang dipakai?",
+      "t-angin2": "Angin bertiup kencang di lapangan luas. Mana yang dimainkan?"
     },
     "en": {
       "judul": "Umbrella or Hat?",
@@ -32,7 +38,13 @@
       "t-hujan1": "Dark sky, the rain is falling. Which one do we use?",
       "t-cerah2": "The sun is shining bright. Which one do we use?",
       "t-hujan2": "Raindrops are falling from the sky. Which one do we use?",
-      "t-angin": "The wind is blowing hard, leaves are flying. Which one do we play with?"
+      "t-angin": "The wind is blowing hard, leaves are flying. Which one do we play with?",
+      "t-cerah3": "It is very hot at noon in the field. Which one do we use?",
+      "t-cerah4": "No clouds, the sun is shining overhead. Which one do we use?",
+      "t-hujan3": "Heavy rain, the road is wet. Which one do we use?",
+      "t-hujan4": "A light drizzle is falling. Which one do we use?",
+      "t-hujan5": "Pitter-patter, rain on the roof. Which one do we use?",
+      "t-angin2": "A strong wind blows across the wide field. Which one do we play with?"
     }
   },
   "knobs": {
@@ -121,6 +133,64 @@
         "layang",
         "payung",
         "topi"
+      ],
+      "correct": "layang"
+    },
+    {
+      "id": "cerah3",
+      "promptKey": "t-cerah3",
+      "choices": [
+        "topi",
+        "payung"
+      ],
+      "correct": "topi"
+    },
+    {
+      "id": "cerah4",
+      "promptKey": "t-cerah4",
+      "choices": [
+        "payung",
+        "topi",
+        "layang"
+      ],
+      "correct": "topi"
+    },
+    {
+      "id": "hujan3",
+      "promptKey": "t-hujan3",
+      "choices": [
+        "topi",
+        "payung"
+      ],
+      "correct": "payung"
+    },
+    {
+      "id": "hujan4",
+      "promptKey": "t-hujan4",
+      "choices": [
+        "payung",
+        "layang",
+        "topi"
+      ],
+      "correct": "payung"
+    },
+    {
+      "id": "hujan5",
+      "promptKey": "t-hujan5",
+      "choices": [
+        "layang",
+        "topi",
+        "payung"
+      ],
+      "correct": "payung"
+    },
+    {
+      "id": "angin2",
+      "promptKey": "t-angin2",
+      "choices": [
+        "topi",
+        "layang",
+        "payung"
       ],
       "correct": "layang"
     }

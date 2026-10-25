@@ -1,6 +1,6 @@
 {
   "id": "jengkal-tali-halaman",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -16,7 +16,16 @@
       "ular": "ular",
       "selang": "selang air",
       "kayu": "kayu",
-      "sapu": "sapu"
+      "sapu": "sapu",
+      "tangga": "tangga",
+      "bunga-matahari": "bunga matahari",
+      "layangan": "layang-layang",
+      "kadal": "kadal",
+      "raket": "raket",
+      "payung": "payung",
+      "cacing": "cacing",
+      "ulat": "ulat",
+      "daun": "daun"
     },
     "en": {
       "judul": "Spans in the Yard",
@@ -26,7 +35,16 @@
       "ular": "snake",
       "selang": "hose",
       "kayu": "log",
-      "sapu": "broom"
+      "sapu": "broom",
+      "tangga": "ladder",
+      "bunga-matahari": "sunflower",
+      "layangan": "kite",
+      "kadal": "lizard",
+      "raket": "racket",
+      "payung": "umbrella",
+      "cacing": "worm",
+      "ulat": "caterpillar",
+      "daun": "leaf"
     }
   },
   "knobs": {
@@ -40,7 +58,7 @@
     "maxSpans": {
       "min": 4,
       "max": 10,
-      "default": 4,
+      "default": 6,
       "step": 1,
       "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
     },
@@ -105,6 +123,78 @@
       "emoji": "🧹",
       "value": 4,
       "width": 1.6
+    },
+    {
+      "labelKey": "tangga",
+      "id": "tangga",
+      "role": "benda",
+      "emoji": "🪜",
+      "value": 6,
+      "width": 2.4
+    },
+    {
+      "labelKey": "bunga-matahari",
+      "id": "bunga-matahari",
+      "role": "benda",
+      "emoji": "🌻",
+      "value": 5,
+      "width": 2
+    },
+    {
+      "labelKey": "layangan",
+      "id": "layangan",
+      "role": "benda",
+      "emoji": "🪁",
+      "value": 4,
+      "width": 1.6
+    },
+    {
+      "labelKey": "kadal",
+      "id": "kadal",
+      "role": "benda",
+      "emoji": "🦎",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "raket",
+      "id": "raket",
+      "role": "benda",
+      "emoji": "🏸",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "payung",
+      "id": "payung",
+      "role": "benda",
+      "emoji": "☂️",
+      "value": 3,
+      "width": 1.2
+    },
+    {
+      "labelKey": "cacing",
+      "id": "cacing",
+      "role": "benda",
+      "emoji": "🪱",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "ulat",
+      "id": "ulat",
+      "role": "benda",
+      "emoji": "🐛",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "labelKey": "daun",
+      "id": "daun",
+      "role": "benda",
+      "emoji": "🍃",
+      "value": 2,
+      "width": 0.8
     }
   ]
 }

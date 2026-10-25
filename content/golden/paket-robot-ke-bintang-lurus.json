@@ -1,6 +1,6 @@
 {
   "id": "robot-ke-bintang-lurus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -84,6 +84,294 @@
       "id": "lurus-4",
       "w": 5,
       "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 4
+    },
+    {
+      "id": "lurus-pendek-2",
+      "w": 3,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-ke-kiri-2",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-tengah-2",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-ke-kiri-pendek-2",
+      "w": 4,
+      "h": 1,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-lebar-2",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-lebar-atas-2",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-lebar-kiri-2",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-naik-2",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-turun-2",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-turun-kanan-2",
+      "w": 4,
+      "h": 3,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-naik-tengah-2",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 2
+    },
+    {
+      "id": "lurus-ke-kiri-1",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 1
+    },
+    {
+      "id": "lurus-naik-1",
+      "w": 3,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "optimal": 1
+    },
+    {
+      "id": "lurus-ke-kiri-3",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 3
+    },
+    {
+      "id": "lurus-lebar-3",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "optimal": 3
+    },
+    {
+      "id": "lurus-naik-3",
+      "w": 3,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 3
+    },
+    {
+      "id": "lurus-ke-kiri-4",
+      "w": 5,
+      "h": 1,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "optimal": 4
+    },
+    {
+      "id": "lurus-lebar-4",
+      "w": 5,
+      "h": 3,
       "start": {
         "x": 0,
         "y": 0,

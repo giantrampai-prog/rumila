@@ -1,6 +1,6 @@
 {
   "id": "mana-topi-warna",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,13 @@
       "tBiru": "Mana yang biru?",
       "tKuning": "Mana yang kuning?",
       "tHijau": "Mana yang hijau?",
-      "topi": "topi pesta"
+      "topi": "topi pesta",
+      "tOranye": "Mana yang oranye?",
+      "tUngu": "Mana yang ungu?",
+      "tMerahMuda": "Mana yang merah muda?",
+      "tCokelat": "Mana yang cokelat?",
+      "tHitam": "Mana yang hitam?",
+      "tAbu": "Mana yang abu-abu?"
     },
     "en": {
       "judul": "Robot's Party Hat",
@@ -26,7 +32,13 @@
       "tBiru": "Which one is blue?",
       "tKuning": "Which one is yellow?",
       "tHijau": "Which one is green?",
-      "topi": "party hat"
+      "topi": "party hat",
+      "tOranye": "Which one is orange?",
+      "tUngu": "Which one is purple?",
+      "tMerahMuda": "Which one is pink?",
+      "tCokelat": "Which one is brown?",
+      "tHitam": "Which one is black?",
+      "tAbu": "Which one is grey?"
     }
   },
   "knobs": {
@@ -77,6 +89,48 @@
       "bin": "pilihan",
       "shape": "triangle",
       "color": "#43a047"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi-oranye",
+      "labelKey": "topi",
+      "shape": "triangle",
+      "color": "#fb8c00"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi-ungu",
+      "labelKey": "topi",
+      "shape": "triangle",
+      "color": "#8e24aa"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi-merahmuda",
+      "labelKey": "topi",
+      "shape": "triangle",
+      "color": "#f48fb1"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi-cokelat",
+      "labelKey": "topi",
+      "shape": "triangle",
+      "color": "#6d4c41"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi-hitam",
+      "labelKey": "topi",
+      "shape": "triangle",
+      "color": "#212121"
+    },
+    {
+      "bin": "pilihan",
+      "id": "topi-abuabu",
+      "labelKey": "topi",
+      "shape": "triangle",
+      "color": "#9e9e9e"
     }
   ],
   "pilihan": [
@@ -123,6 +177,72 @@
         "topi-hijau"
       ],
       "correct": "topi-hijau"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tOranye",
+      "choices": [
+        "topi-oranye",
+        "topi-biru",
+        "topi-hijau",
+        "topi-ungu"
+      ],
+      "correct": "topi-oranye"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tUngu",
+      "choices": [
+        "topi-kuning",
+        "topi-oranye",
+        "topi-hijau",
+        "topi-ungu"
+      ],
+      "correct": "topi-ungu"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tMerahMuda",
+      "choices": [
+        "topi-hijau",
+        "topi-cokelat",
+        "topi-merahmuda",
+        "topi-biru"
+      ],
+      "correct": "topi-merahmuda"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tCokelat",
+      "choices": [
+        "topi-merahmuda",
+        "topi-cokelat",
+        "topi-kuning",
+        "topi-biru"
+      ],
+      "correct": "topi-cokelat"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tHitam",
+      "choices": [
+        "topi-hitam",
+        "topi-kuning",
+        "topi-merah",
+        "topi-hijau"
+      ],
+      "correct": "topi-hitam"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tAbu",
+      "choices": [
+        "topi-merah",
+        "topi-kuning",
+        "topi-ungu",
+        "topi-abuabu"
+      ],
+      "correct": "topi-abuabu"
     }
   ]
 }

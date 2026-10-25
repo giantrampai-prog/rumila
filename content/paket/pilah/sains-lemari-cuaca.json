@@ -1,6 +1,6 @@
 {
   "id": "sains-lemari-cuaca",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -21,7 +21,16 @@
       "t-panas": "Matahari terik, hari panas. Pakai apa?",
       "t-dingin": "Udara dingin sekali, menggigil. Pakai apa?",
       "t-hujan2": "Awan gelap, hujan turun lagi. Pakai apa?",
-      "t-dingin2": "Angin dingin bertiup di pagi hari. Pakai apa?"
+      "t-dingin2": "Angin dingin bertiup di pagi hari. Pakai apa?",
+      "i-sarungtangan": "sarung tangan",
+      "i-kaus": "kaus tipis",
+      "i-sepatubot": "sepatu bot",
+      "i-kacamata": "kacamata hitam",
+      "t-dingin3": "Tangan dingin dan kaku. Pakai apa?",
+      "t-panas2": "Hari panas dan gerah. Pakai baju apa?",
+      "t-hujan3": "Jalan becek karena hujan. Pakai apa di kaki?",
+      "t-panas3": "Hari panas, mau main di pantai. Pakai apa di kaki?",
+      "t-panas4": "Silau sekali kena sinar matahari. Pakai apa di mata?"
     },
     "en": {
       "judul": "The Weather Wardrobe",
@@ -36,7 +45,16 @@
       "t-panas": "The sun is strong, it's hot. What do we wear?",
       "t-dingin": "It's very cold and chilly. What do we wear?",
       "t-hujan2": "Dark clouds, it's raining again. What do we wear?",
-      "t-dingin2": "A cold wind blows this morning. What do we wear?"
+      "t-dingin2": "A cold wind blows this morning. What do we wear?",
+      "i-sarungtangan": "gloves",
+      "i-kaus": "light T-shirt",
+      "i-sepatubot": "boots",
+      "i-kacamata": "sunglasses",
+      "t-dingin3": "Your hands are cold and stiff. What do we wear?",
+      "t-panas2": "It's hot and sticky today. Which top do we wear?",
+      "t-hujan3": "The path is muddy from the rain. What do we wear on our feet?",
+      "t-panas3": "It's hot and we're going to the beach. What do we wear on our feet?",
+      "t-panas4": "The sunlight is so bright. What do we wear over our eyes?"
     }
   },
   "knobs": {
@@ -91,6 +109,30 @@
       "labelKey": "i-sandal",
       "bin": "pilihan",
       "emoji": "🩴"
+    },
+    {
+      "bin": "pilihan",
+      "id": "sarungtangan",
+      "labelKey": "i-sarungtangan",
+      "emoji": "🧤"
+    },
+    {
+      "bin": "pilihan",
+      "id": "kaus",
+      "labelKey": "i-kaus",
+      "emoji": "👕"
+    },
+    {
+      "bin": "pilihan",
+      "id": "sepatubot",
+      "labelKey": "i-sepatubot",
+      "emoji": "🥾"
+    },
+    {
+      "bin": "pilihan",
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "emoji": "🕶️"
     }
   ],
   "pilihan": [
@@ -145,6 +187,56 @@
         "jashujan"
       ],
       "correct": "syal"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t-dingin3",
+      "choices": [
+        "sarungtangan",
+        "topi",
+        "sandal"
+      ],
+      "correct": "sarungtangan"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t-panas2",
+      "choices": [
+        "jaket",
+        "kaus",
+        "syal"
+      ],
+      "correct": "kaus"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t-hujan3",
+      "choices": [
+        "topi",
+        "syal",
+        "sepatubot"
+      ],
+      "correct": "sepatubot"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t-panas3",
+      "choices": [
+        "sandal",
+        "syal",
+        "jaket"
+      ],
+      "correct": "sandal"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t-panas4",
+      "choices": [
+        "syal",
+        "jashujan",
+        "kacamata"
+      ],
+      "correct": "kacamata"
     }
   ]
 }

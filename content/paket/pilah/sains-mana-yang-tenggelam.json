@@ -1,6 +1,6 @@
 {
   "id": "sains-mana-yang-tenggelam",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -15,14 +15,24 @@
       "i-kayu": "balok kayu",
       "i-batu": "batu",
       "i-daun": "daun",
-      "i-paku": "paku logam",
+      "i-paku": "baut logam",
       "i-bola": "bola plastik",
       "i-kunci": "kunci logam",
       "t-t1": "Mana yang akan tenggelam?",
       "t-a1": "Mana yang akan terapung?",
       "t-t2": "Mana yang akan tenggelam?",
       "t-a2": "Kayunya besar sekali. Mana yang akan terapung?",
-      "t-t3": "Mana yang akan tenggelam?"
+      "t-t3": "Mana yang akan tenggelam?",
+      "i-koin": "koin logam",
+      "i-apel": "apel",
+      "i-bulu": "bulu burung",
+      "i-bata": "batu bata",
+      "t-a3": "Mana yang akan terapung?",
+      "t-t4": "Mana yang akan tenggelam?",
+      "t-a4": "Mana yang akan terapung?",
+      "t-a5": "Mana yang akan terapung?",
+      "t-t5": "Mana yang akan tenggelam?",
+      "t-a6": "Mana yang akan terapung?"
     },
     "en": {
       "judul": "Guess Which One Sinks",
@@ -31,14 +41,24 @@
       "i-kayu": "wooden block",
       "i-batu": "stone",
       "i-daun": "leaf",
-      "i-paku": "metal nail",
+      "i-paku": "metal bolt",
       "i-bola": "plastic ball",
       "i-kunci": "metal key",
       "t-t1": "Which one will sink?",
       "t-a1": "Which one will float?",
       "t-t2": "Which one will sink?",
       "t-a2": "The wood is really big. Which one will float?",
-      "t-t3": "Which one will sink?"
+      "t-t3": "Which one will sink?",
+      "i-koin": "metal coin",
+      "i-apel": "apple",
+      "i-bulu": "feather",
+      "i-bata": "brick",
+      "t-a3": "Which one will float?",
+      "t-t4": "Which one will sink?",
+      "t-a4": "Which one will float?",
+      "t-a5": "Which one will float?",
+      "t-t5": "Which one will sink?",
+      "t-a6": "Which one will float?"
     }
   },
   "knobs": {
@@ -98,6 +118,30 @@
       "labelKey": "i-kunci",
       "bin": "pilihan",
       "emoji": "🔑"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "pilihan",
+      "emoji": "🪙"
+    },
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "pilihan",
+      "emoji": "🍎"
+    },
+    {
+      "id": "bulu",
+      "labelKey": "i-bulu",
+      "bin": "pilihan",
+      "emoji": "🪶"
+    },
+    {
+      "id": "bata",
+      "labelKey": "i-bata",
+      "bin": "pilihan",
+      "emoji": "🧱"
     }
   ],
   "pilihan": [
@@ -150,6 +194,66 @@
         "bola"
       ],
       "correct": "kunci"
+    },
+    {
+      "id": "a3",
+      "promptKey": "t-a3",
+      "choices": [
+        "bola",
+        "batu",
+        "koin"
+      ],
+      "correct": "bola"
+    },
+    {
+      "id": "t4",
+      "promptKey": "t-t4",
+      "choices": [
+        "koin",
+        "daun",
+        "bola"
+      ],
+      "correct": "koin"
+    },
+    {
+      "id": "a4",
+      "promptKey": "t-a4",
+      "choices": [
+        "apel",
+        "kunci",
+        "batu"
+      ],
+      "correct": "apel"
+    },
+    {
+      "id": "a5",
+      "promptKey": "t-a5",
+      "choices": [
+        "bulu",
+        "paku",
+        "bata"
+      ],
+      "correct": "bulu"
+    },
+    {
+      "id": "t5",
+      "promptKey": "t-t5",
+      "choices": [
+        "bata",
+        "kayu",
+        "bulu"
+      ],
+      "correct": "bata"
+    },
+    {
+      "id": "a6",
+      "promptKey": "t-a6",
+      "choices": [
+        "kayu",
+        "koin",
+        "paku"
+      ],
+      "correct": "kayu"
     }
   ]
 }

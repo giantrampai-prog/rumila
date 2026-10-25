@@ -1,6 +1,6 @@
 {
   "id": "pensil-panjang-pendek",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -18,7 +18,9 @@
       "sendok": "sendok",
       "pita": "pita",
       "tPanjang": "Mana yang lebih panjang?",
-      "tPendek": "Mana yang lebih pendek?"
+      "tPendek": "Mana yang lebih pendek?",
+      "sikatgigi": "sikat gigi",
+      "krayon": "krayon"
     },
     "en": {
       "judul": "Long and Short on the Desk",
@@ -30,7 +32,9 @@
       "sendok": "spoon",
       "pita": "ribbon",
       "tPanjang": "Which one is longer?",
-      "tPendek": "Which one is shorter?"
+      "tPendek": "Which one is shorter?",
+      "sikatgigi": "toothbrush",
+      "krayon": "crayon"
     }
   },
   "knobs": {
@@ -123,6 +127,34 @@
       "bin": "pilihan",
       "emoji": "🎀",
       "width": 1
+    },
+    {
+      "id": "sikatgigi-panjang",
+      "labelKey": "sikatgigi",
+      "bin": "pilihan",
+      "emoji": "🪥",
+      "width": 1.8
+    },
+    {
+      "id": "sikatgigi-pendek",
+      "labelKey": "sikatgigi",
+      "bin": "pilihan",
+      "emoji": "🪥",
+      "width": 1
+    },
+    {
+      "id": "krayon-panjang",
+      "labelKey": "krayon",
+      "bin": "pilihan",
+      "emoji": "🖍️",
+      "width": 1.8
+    },
+    {
+      "id": "krayon-pendek",
+      "labelKey": "krayon",
+      "bin": "pilihan",
+      "emoji": "🖍️",
+      "width": 1
     }
   ],
   "pilihan": [
@@ -170,6 +202,87 @@
         "pita-panjang"
       ],
       "correct": "pita-panjang"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tPendek",
+      "choices": [
+        "pensil-panjang",
+        "pensil-pendek"
+      ],
+      "correct": "pensil-pendek"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tPanjang",
+      "choices": [
+        "kereta-pendek",
+        "kereta-panjang"
+      ],
+      "correct": "kereta-panjang"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tPendek",
+      "choices": [
+        "penggaris-panjang",
+        "penggaris-pendek"
+      ],
+      "correct": "penggaris-pendek"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tPanjang",
+      "choices": [
+        "sendok-pendek",
+        "sendok-panjang"
+      ],
+      "correct": "sendok-panjang"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tPendek",
+      "choices": [
+        "pita-panjang",
+        "pita-pendek"
+      ],
+      "correct": "pita-pendek"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tPanjang",
+      "choices": [
+        "sikatgigi-pendek",
+        "sikatgigi-panjang"
+      ],
+      "correct": "sikatgigi-panjang"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tPendek",
+      "choices": [
+        "sikatgigi-panjang",
+        "sikatgigi-pendek"
+      ],
+      "correct": "sikatgigi-pendek"
+    },
+    {
+      "id": "r13",
+      "promptKey": "tPendek",
+      "choices": [
+        "krayon-panjang",
+        "krayon-pendek"
+      ],
+      "correct": "krayon-pendek"
+    },
+    {
+      "id": "r14",
+      "promptKey": "tPanjang",
+      "choices": [
+        "krayon-pendek",
+        "krayon-panjang"
+      ],
+      "correct": "krayon-panjang"
     }
   ]
 }

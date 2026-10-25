@@ -1,6 +1,6 @@
 {
   "id": "sains-siapa-yang-bersuara",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -23,7 +23,15 @@
       "t-moo": "Siapa yang bilang mooo?",
       "t-kwek": "Siapa yang bilang kwek kwek?",
       "t-mbee": "Siapa yang bilang mbeee?",
-      "t-cicit": "Siapa yang bilang cit cit cuit?"
+      "t-cicit": "Siapa yang bilang cit cit cuit?",
+      "i-anjing": "anjing",
+      "i-kodok": "kodok",
+      "i-betina": "ayam betina",
+      "i-burunghantu": "burung hantu",
+      "t-gukguk": "Siapa yang bilang guk guk?",
+      "t-krok": "Siapa yang bilang krok krok?",
+      "t-petok": "Siapa yang bilang petok petok?",
+      "t-huhu": "Siapa yang bilang huu huu?"
     },
     "en": {
       "judul": "Who Made That Sound?",
@@ -40,7 +48,15 @@
       "t-moo": "Who says moo?",
       "t-kwek": "Who says quack quack?",
       "t-mbee": "Who says baa?",
-      "t-cicit": "Who says tweet tweet?"
+      "t-cicit": "Who says tweet tweet?",
+      "i-anjing": "dog",
+      "i-kodok": "frog",
+      "i-betina": "hen",
+      "i-burunghantu": "owl",
+      "t-gukguk": "Who says woof woof?",
+      "t-krok": "Who says ribbit ribbit?",
+      "t-petok": "Who says cluck cluck?",
+      "t-huhu": "Who says hoo hoo?"
     }
   },
   "knobs": {
@@ -101,6 +117,30 @@
       "bin": "pilihan",
       "emoji": "🐦",
       "scale": 0.8
+    },
+    {
+      "id": "anjing",
+      "labelKey": "i-anjing",
+      "bin": "pilihan",
+      "emoji": "🐶"
+    },
+    {
+      "id": "kodok",
+      "labelKey": "i-kodok",
+      "bin": "pilihan",
+      "emoji": "🐸"
+    },
+    {
+      "id": "betina",
+      "labelKey": "i-betina",
+      "bin": "pilihan",
+      "emoji": "🐔"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "pilihan",
+      "emoji": "🦉"
     }
   ],
   "pilihan": [
@@ -169,6 +209,50 @@
         "kambing"
       ],
       "correct": "burung"
+    },
+    {
+      "id": "gukguk",
+      "promptKey": "t-gukguk",
+      "choices": [
+        "anjing",
+        "kucing",
+        "sapi",
+        "bebek"
+      ],
+      "correct": "anjing"
+    },
+    {
+      "id": "krok",
+      "promptKey": "t-krok",
+      "choices": [
+        "kodok",
+        "bebek",
+        "kambing",
+        "kucing"
+      ],
+      "correct": "kodok"
+    },
+    {
+      "id": "petok",
+      "promptKey": "t-petok",
+      "choices": [
+        "betina",
+        "bebek",
+        "kucing",
+        "sapi"
+      ],
+      "correct": "betina"
+    },
+    {
+      "id": "huhu",
+      "promptKey": "t-huhu",
+      "choices": [
+        "burunghantu",
+        "anjing",
+        "kambing",
+        "bebek"
+      ],
+      "correct": "burunghantu"
     }
   ]
 }

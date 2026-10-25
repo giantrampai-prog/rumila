@@ -1,6 +1,6 @@
 {
   "id": "siang-dan-malam",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -20,7 +20,40 @@
       "sikat": "sikat gigi",
       "piyama": "pakai piyama",
       "lampu": "matikan lampu",
-      "bobo": "tidur"
+      "bobo": "tidur",
+      "t-mandi": "Sore hari",
+      "mandi-main": "main bola",
+      "mandi-mandi": "mandi",
+      "mandi-baju": "pakai baju bersih",
+      "t-makan-malam": "Makan malam",
+      "makan-malam-masak": "ibu memasak",
+      "makan-malam-makan": "makan bersama",
+      "makan-malam-cuci": "cuci piring",
+      "t-tidur-siang": "Tidur siang",
+      "tidur-siang-makan": "makan siang",
+      "tidur-siang-tidur": "tidur siang",
+      "tidur-siang-bangun": "bangun tidur",
+      "t-hari": "Satu hari",
+      "hari-pagi": "pagi",
+      "hari-siang": "siang terik",
+      "hari-sore": "sore",
+      "hari-malam": "malam",
+      "t-lampu": "Membaca malam",
+      "lampu-gelap": "langit gelap",
+      "lampu-lampu": "nyalakan lampu",
+      "lampu-baca": "membaca buku",
+      "t-jemur": "Menjemur baju",
+      "jemur-cuci": "cuci baju",
+      "jemur-jemur": "jemur di bawah matahari",
+      "jemur-kering": "baju kering",
+      "t-dongeng": "Dongeng malam",
+      "dongeng-buku": "ambil buku cerita",
+      "dongeng-baca": "dibacakan cerita",
+      "dongeng-tidur": "tertidur",
+      "t-pulang": "Pulang sekolah",
+      "pulang-bel": "bel pulang berbunyi",
+      "pulang-sepeda": "naik sepeda",
+      "pulang-rumah": "sampai rumah"
     },
     "en": {
       "judul": "Day and Night",
@@ -34,7 +67,40 @@
       "sikat": "brush teeth",
       "piyama": "put on pyjamas",
       "lampu": "turn off the light",
-      "bobo": "sleep"
+      "bobo": "sleep",
+      "t-mandi": "In the afternoon",
+      "mandi-main": "play football",
+      "mandi-mandi": "take a bath",
+      "mandi-baju": "put on clean clothes",
+      "t-makan-malam": "Dinner",
+      "makan-malam-masak": "mom cooks",
+      "makan-malam-makan": "eat together",
+      "makan-malam-cuci": "wash the dishes",
+      "t-tidur-siang": "Nap time",
+      "tidur-siang-makan": "eat lunch",
+      "tidur-siang-tidur": "take a nap",
+      "tidur-siang-bangun": "wake up",
+      "t-hari": "One day",
+      "hari-pagi": "morning",
+      "hari-siang": "hot midday",
+      "hari-sore": "evening",
+      "hari-malam": "night",
+      "t-lampu": "Reading at night",
+      "lampu-gelap": "the sky gets dark",
+      "lampu-lampu": "turn on the light",
+      "lampu-baca": "read a book",
+      "t-jemur": "Drying clothes",
+      "jemur-cuci": "wash the clothes",
+      "jemur-jemur": "hang them in the sun",
+      "jemur-kering": "dry clothes",
+      "t-dongeng": "Bedtime story",
+      "dongeng-buku": "take a storybook",
+      "dongeng-baca": "listen to the story",
+      "dongeng-tidur": "fall asleep",
+      "t-pulang": "Going home from school",
+      "pulang-bel": "the home bell rings",
+      "pulang-sepeda": "ride the bike",
+      "pulang-rumah": "arrive home"
     }
   },
   "knobs": {
@@ -101,6 +167,179 @@
           "id": "bobo",
           "labelKey": "bobo",
           "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": "mandi",
+      "titleKey": "t-mandi",
+      "steps": [
+        {
+          "id": "main",
+          "labelKey": "mandi-main",
+          "emoji": "⚽"
+        },
+        {
+          "id": "mandi",
+          "labelKey": "mandi-mandi",
+          "emoji": "🛁"
+        },
+        {
+          "id": "baju",
+          "labelKey": "mandi-baju",
+          "emoji": "👕"
+        }
+      ]
+    },
+    {
+      "id": "makan-malam",
+      "titleKey": "t-makan-malam",
+      "steps": [
+        {
+          "id": "masak",
+          "labelKey": "makan-malam-masak",
+          "emoji": "🍲"
+        },
+        {
+          "id": "makan",
+          "labelKey": "makan-malam-makan",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "cuci",
+          "labelKey": "makan-malam-cuci",
+          "emoji": "🧼"
+        }
+      ]
+    },
+    {
+      "id": "tidur-siang",
+      "titleKey": "t-tidur-siang",
+      "steps": [
+        {
+          "id": "makan",
+          "labelKey": "tidur-siang-makan",
+          "emoji": "🍚"
+        },
+        {
+          "id": "tidur",
+          "labelKey": "tidur-siang-tidur",
+          "emoji": "😴"
+        },
+        {
+          "id": "bangun",
+          "labelKey": "tidur-siang-bangun",
+          "emoji": "🥱"
+        }
+      ]
+    },
+    {
+      "id": "hari",
+      "titleKey": "t-hari",
+      "steps": [
+        {
+          "id": "pagi",
+          "labelKey": "hari-pagi",
+          "emoji": "🌅"
+        },
+        {
+          "id": "siang",
+          "labelKey": "hari-siang",
+          "emoji": "☀️"
+        },
+        {
+          "id": "sore",
+          "labelKey": "hari-sore",
+          "emoji": "🌇"
+        },
+        {
+          "id": "malam",
+          "labelKey": "hari-malam",
+          "emoji": "🌙"
+        }
+      ]
+    },
+    {
+      "id": "lampu",
+      "titleKey": "t-lampu",
+      "steps": [
+        {
+          "id": "gelap",
+          "labelKey": "lampu-gelap",
+          "emoji": "🌙"
+        },
+        {
+          "id": "lampu",
+          "labelKey": "lampu-lampu",
+          "emoji": "💡"
+        },
+        {
+          "id": "baca",
+          "labelKey": "lampu-baca",
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": "jemur",
+      "titleKey": "t-jemur",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "jemur-cuci",
+          "emoji": "🧼"
+        },
+        {
+          "id": "jemur",
+          "labelKey": "jemur-jemur",
+          "emoji": "☀️"
+        },
+        {
+          "id": "kering",
+          "labelKey": "jemur-kering",
+          "emoji": "👕"
+        }
+      ]
+    },
+    {
+      "id": "dongeng",
+      "titleKey": "t-dongeng",
+      "steps": [
+        {
+          "id": "buku",
+          "labelKey": "dongeng-buku",
+          "emoji": "📚"
+        },
+        {
+          "id": "baca",
+          "labelKey": "dongeng-baca",
+          "emoji": "📖"
+        },
+        {
+          "id": "tidur",
+          "labelKey": "dongeng-tidur",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": "pulang",
+      "titleKey": "t-pulang",
+      "steps": [
+        {
+          "id": "bel",
+          "labelKey": "pulang-bel",
+          "emoji": "🔔"
+        },
+        {
+          "id": "sepeda",
+          "labelKey": "pulang-sepeda",
+          "emoji": "🚲"
+        },
+        {
+          "id": "rumah",
+          "labelKey": "pulang-rumah",
+          "emoji": "🏠"
         }
       ]
     }

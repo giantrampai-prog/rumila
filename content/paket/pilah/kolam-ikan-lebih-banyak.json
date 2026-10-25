@@ -1,6 +1,6 @@
 {
   "id": "kolam-ikan-lebih-banyak",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -78,6 +78,76 @@
       "bin": "pilihan",
       "emoji": "🐟",
       "count": 5
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-hias-1",
+      "labelKey": "ikan",
+      "emoji": "🐠",
+      "count": 1
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-hias-2",
+      "labelKey": "ikan",
+      "emoji": "🐠",
+      "count": 2
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-hias-3",
+      "labelKey": "ikan",
+      "emoji": "🐠",
+      "count": 3
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-hias-4",
+      "labelKey": "ikan",
+      "emoji": "🐠",
+      "count": 4
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-hias-5",
+      "labelKey": "ikan",
+      "emoji": "🐠",
+      "count": 5
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-buntal-1",
+      "labelKey": "ikan",
+      "emoji": "🐡",
+      "count": 1
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-buntal-2",
+      "labelKey": "ikan",
+      "emoji": "🐡",
+      "count": 2
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-buntal-3",
+      "labelKey": "ikan",
+      "emoji": "🐡",
+      "count": 3
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-buntal-4",
+      "labelKey": "ikan",
+      "emoji": "🐡",
+      "count": 4
+    },
+    {
+      "bin": "pilihan",
+      "id": "ikan-buntal-5",
+      "labelKey": "ikan",
+      "emoji": "🐡",
+      "count": 5
     }
   ],
   "pilihan": [
@@ -125,6 +195,78 @@
         "ikan-5"
       ],
       "correct": "ikan-5"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-hias-1",
+        "ikan-hias-3"
+      ],
+      "correct": "ikan-hias-3"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-hias-4",
+        "ikan-hias-2"
+      ],
+      "correct": "ikan-hias-4"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-hias-2",
+        "ikan-hias-5"
+      ],
+      "correct": "ikan-hias-5"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-hias-1",
+        "ikan-hias-2"
+      ],
+      "correct": "ikan-hias-2"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-buntal-3",
+        "ikan-buntal-1"
+      ],
+      "correct": "ikan-buntal-3"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-buntal-2",
+        "ikan-buntal-4"
+      ],
+      "correct": "ikan-buntal-4"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-buntal-5",
+        "ikan-buntal-3"
+      ],
+      "correct": "ikan-buntal-5"
+    },
+    {
+      "id": "r13",
+      "promptKey": "tBanyak",
+      "choices": [
+        "ikan-buntal-2",
+        "ikan-buntal-1"
+      ],
+      "correct": "ikan-buntal-2"
     }
   ]
 }

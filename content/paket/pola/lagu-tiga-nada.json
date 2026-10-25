@@ -1,6 +1,6 @@
 {
   "id": "lagu-tiga-nada",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pola",
   "competencyIds": [
@@ -15,7 +15,10 @@
       "lonceng": "lonceng",
       "terompet": "terompet",
       "gitar": "gitar",
-      "marakas": "marakas"
+      "marakas": "marakas",
+      "piano": "piano",
+      "biola": "biola",
+      "akordeon": "akordeon"
     },
     "en": {
       "judul": "Three-Note Song",
@@ -24,7 +27,10 @@
       "lonceng": "bell",
       "terompet": "trumpet",
       "gitar": "guitar",
-      "marakas": "maracas"
+      "marakas": "maracas",
+      "piano": "piano",
+      "biola": "violin",
+      "akordeon": "accordion"
     }
   },
   "knobs": {
@@ -67,6 +73,21 @@
       "labelKey": "marakas",
       "id": "marakas",
       "emoji": "🪇"
+    },
+    {
+      "labelKey": "piano",
+      "id": "piano",
+      "emoji": "🎹"
+    },
+    {
+      "labelKey": "biola",
+      "id": "biola",
+      "emoji": "🎻"
+    },
+    {
+      "labelKey": "akordeon",
+      "id": "akordeon",
+      "emoji": "🪗"
     }
   ],
   "patterns": [],
@@ -75,6 +96,9 @@
     "lonceng": "E4",
     "terompet": "G4",
     "gitar": "A4",
-    "marakas": "D4"
+    "marakas": "D4",
+    "piano": "F4",
+    "biola": "B4",
+    "akordeon": "E5"
   }
 }

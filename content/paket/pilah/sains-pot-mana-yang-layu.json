@@ -1,6 +1,6 @@
 {
   "id": "sains-pot-mana-yang-layu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -19,7 +19,17 @@
       "t-r1": "Satu pot ditaruh di jendela, satu di lemari gelap. Pot mana yang akan layu?",
       "t-r2": "Pot di jendela, pot di teras, dan pot di kotak tertutup. Mana yang akan layu?",
       "t-r3": "Semua disiram, tapi satu tak kena cahaya. Mana yang akan layu?",
-      "t-r4": "Mana pot yang akan layu karena gelap?"
+      "t-r4": "Mana pot yang akan layu karena gelap?",
+      "i-kebun": "pot di kebun",
+      "i-gudang": "pot di gudang gelap",
+      "i-kolong": "pot di kolong tempat tidur",
+      "t-r5": "Satu pot di kebun, satu di gudang gelap. Pot mana yang akan layu?",
+      "t-r6": "Pot di teras, pot di jendela, dan pot di kolong tempat tidur. Mana yang akan layu?",
+      "t-r7": "Mana pot yang tidak kena sinar matahari, sehingga akan layu?",
+      "t-r8": "Tiga pot disiram setiap hari. Mana yang akan layu?",
+      "t-r9": "Mana pot yang akan layu karena tidak mendapat cahaya?",
+      "t-r10": "Pot di kebun, pot di teras, dan pot di dalam kotak tertutup. Mana yang akan layu?",
+      "t-r11": "Satu pot di kebun, satu di kolong tempat tidur. Mana yang akan layu?"
     },
     "en": {
       "judul": "Which Pot Will Wilt?",
@@ -32,7 +42,17 @@
       "t-r1": "One pot is by the window, one in a dark cupboard. Which will wilt?",
       "t-r2": "A pot by the window, one on the porch, one in a closed box. Which will wilt?",
       "t-r3": "All were watered, but one gets no light. Which will wilt?",
-      "t-r4": "Which pot will wilt because it is dark?"
+      "t-r4": "Which pot will wilt because it is dark?",
+      "i-kebun": "pot in the garden",
+      "i-gudang": "pot in the dark shed",
+      "i-kolong": "pot under the bed",
+      "t-r5": "One pot is in the garden, one in a dark shed. Which will wilt?",
+      "t-r6": "A pot on the porch, one by the window, one under the bed. Which will wilt?",
+      "t-r7": "Which pot gets no sunlight, so it will wilt?",
+      "t-r8": "Three pots are watered every day. Which will wilt?",
+      "t-r9": "Which pot will wilt because it gets no light?",
+      "t-r10": "A pot in the garden, one on the porch, one in a closed box. Which will wilt?",
+      "t-r11": "One pot is in the garden, one under the bed. Which will wilt?"
     }
   },
   "knobs": {
@@ -83,6 +103,27 @@
       "bin": "pilihan",
       "emoji": "📦",
       "color": "#4e342e"
+    },
+    {
+      "id": "kebun",
+      "labelKey": "i-kebun",
+      "bin": "pilihan",
+      "emoji": "🪴",
+      "color": "#dcedc8"
+    },
+    {
+      "id": "gudang",
+      "labelKey": "i-gudang",
+      "bin": "pilihan",
+      "emoji": "🪴",
+      "color": "#212121"
+    },
+    {
+      "id": "kolong",
+      "labelKey": "i-kolong",
+      "bin": "pilihan",
+      "emoji": "🪴",
+      "color": "#37474f"
     }
   ],
   "pilihan": [
@@ -125,6 +166,75 @@
         "lemari"
       ],
       "correct": "kotak"
+    },
+    {
+      "id": "r5",
+      "promptKey": "t-r5",
+      "choices": [
+        "kebun",
+        "gudang"
+      ],
+      "correct": "gudang"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t-r6",
+      "choices": [
+        "teras",
+        "jendela",
+        "kolong"
+      ],
+      "correct": "kolong"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t-r7",
+      "choices": [
+        "kebun",
+        "lemari",
+        "teras"
+      ],
+      "correct": "lemari"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t-r8",
+      "choices": [
+        "gudang",
+        "jendela",
+        "kebun"
+      ],
+      "correct": "gudang"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t-r9",
+      "choices": [
+        "kolong",
+        "kebun",
+        "jendela",
+        "teras"
+      ],
+      "correct": "kolong"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t-r10",
+      "choices": [
+        "kebun",
+        "teras",
+        "kotak"
+      ],
+      "correct": "kotak"
+    },
+    {
+      "id": "r11",
+      "promptKey": "t-r11",
+      "choices": [
+        "kolong",
+        "kebun"
+      ],
+      "correct": "kolong"
     }
   ]
 }

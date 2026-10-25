@@ -1,6 +1,6 @@
 {
   "id": "pensil-pendek-ke-panjang",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -16,7 +16,15 @@
       "pendek": "pendek",
       "sedang": "sedang",
       "panjang": "panjang",
-      "terpanjang": "paling panjang"
+      "terpanjang": "paling panjang",
+      "t-krayon": "Krayon: pendek ke panjang",
+      "t-pena": "Pena: pendek ke panjang",
+      "t-kuas": "Kuas: pendek ke panjang",
+      "t-penggaris": "Penggaris: pendek ke panjang",
+      "t-sikat": "Sikat gigi: pendek ke panjang",
+      "t-wortel": "Wortel: pendek ke panjang",
+      "t-sendok": "Sendok: pendek ke panjang",
+      "t-bus": "Bus: pendek ke panjang"
     },
     "en": {
       "judul": "Pencils Short to Long",
@@ -26,7 +34,15 @@
       "pendek": "short",
       "sedang": "medium",
       "panjang": "long",
-      "terpanjang": "longest"
+      "terpanjang": "longest",
+      "t-krayon": "Crayons: short to long",
+      "t-pena": "Pens: short to long",
+      "t-kuas": "Paintbrushes: short to long",
+      "t-penggaris": "Rulers: short to long",
+      "t-sikat": "Toothbrushes: short to long",
+      "t-wortel": "Carrots: short to long",
+      "t-sendok": "Spoons: short to long",
+      "t-bus": "Buses: short to long"
     }
   },
   "knobs": {
@@ -94,6 +110,210 @@
           "id": "kereta-4",
           "labelKey": "terpanjang",
           "emoji": "🚃",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "krayon",
+      "titleKey": "t-krayon",
+      "steps": [
+        {
+          "id": "krayon-1",
+          "labelKey": "pendek",
+          "emoji": "🖍️",
+          "width": 1
+        },
+        {
+          "id": "krayon-2",
+          "labelKey": "sedang",
+          "emoji": "🖍️",
+          "width": 1.3
+        },
+        {
+          "id": "krayon-3",
+          "labelKey": "panjang",
+          "emoji": "🖍️",
+          "width": 1.7
+        },
+        {
+          "id": "krayon-4",
+          "labelKey": "terpanjang",
+          "emoji": "🖍️",
+          "width": 2.2
+        }
+      ]
+    },
+    {
+      "id": "pena",
+      "titleKey": "t-pena",
+      "steps": [
+        {
+          "id": "pena-1",
+          "labelKey": "pendek",
+          "emoji": "🖊️",
+          "width": 1
+        },
+        {
+          "id": "pena-2",
+          "labelKey": "sedang",
+          "emoji": "🖊️",
+          "width": 1.4
+        },
+        {
+          "id": "pena-3",
+          "labelKey": "panjang",
+          "emoji": "🖊️",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "kuas",
+      "titleKey": "t-kuas",
+      "steps": [
+        {
+          "id": "kuas-1",
+          "labelKey": "pendek",
+          "emoji": "🖌️",
+          "width": 0.9
+        },
+        {
+          "id": "kuas-2",
+          "labelKey": "sedang",
+          "emoji": "🖌️",
+          "width": 1.3
+        },
+        {
+          "id": "kuas-3",
+          "labelKey": "panjang",
+          "emoji": "🖌️",
+          "width": 1.8
+        }
+      ]
+    },
+    {
+      "id": "penggaris",
+      "titleKey": "t-penggaris",
+      "steps": [
+        {
+          "id": "penggaris-1",
+          "labelKey": "pendek",
+          "emoji": "📏",
+          "width": 1
+        },
+        {
+          "id": "penggaris-2",
+          "labelKey": "sedang",
+          "emoji": "📏",
+          "width": 1.5
+        },
+        {
+          "id": "penggaris-3",
+          "labelKey": "panjang",
+          "emoji": "📏",
+          "width": 2.1
+        }
+      ]
+    },
+    {
+      "id": "sikat",
+      "titleKey": "t-sikat",
+      "steps": [
+        {
+          "id": "sikat-1",
+          "labelKey": "pendek",
+          "emoji": "🪥",
+          "width": 0.9
+        },
+        {
+          "id": "sikat-2",
+          "labelKey": "sedang",
+          "emoji": "🪥",
+          "width": 1.3
+        },
+        {
+          "id": "sikat-3",
+          "labelKey": "panjang",
+          "emoji": "🪥",
+          "width": 1.8
+        }
+      ]
+    },
+    {
+      "id": "wortel",
+      "titleKey": "t-wortel",
+      "steps": [
+        {
+          "id": "wortel-1",
+          "labelKey": "pendek",
+          "emoji": "🥕",
+          "width": 1
+        },
+        {
+          "id": "wortel-2",
+          "labelKey": "sedang",
+          "emoji": "🥕",
+          "width": 1.4
+        },
+        {
+          "id": "wortel-3",
+          "labelKey": "panjang",
+          "emoji": "🥕",
+          "width": 2
+        }
+      ]
+    },
+    {
+      "id": "sendok",
+      "titleKey": "t-sendok",
+      "steps": [
+        {
+          "id": "sendok-1",
+          "labelKey": "pendek",
+          "emoji": "🥄",
+          "width": 0.8
+        },
+        {
+          "id": "sendok-2",
+          "labelKey": "sedang",
+          "emoji": "🥄",
+          "width": 1.2
+        },
+        {
+          "id": "sendok-3",
+          "labelKey": "panjang",
+          "emoji": "🥄",
+          "width": 1.7
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "titleKey": "t-bus",
+      "steps": [
+        {
+          "id": "bus-1",
+          "labelKey": "pendek",
+          "emoji": "🚌",
+          "width": 1
+        },
+        {
+          "id": "bus-2",
+          "labelKey": "sedang",
+          "emoji": "🚌",
+          "width": 1.3
+        },
+        {
+          "id": "bus-3",
+          "labelKey": "panjang",
+          "emoji": "🚌",
+          "width": 1.7
+        },
+        {
+          "id": "bus-4",
+          "labelKey": "terpanjang",
+          "emoji": "🚌",
           "width": 2.2
         }
       ]

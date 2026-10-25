@@ -1,6 +1,6 @@
 {
   "id": "keranjang-jeruk-selisih-satu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "pilah",
   "competencyIds": [
@@ -204,6 +204,60 @@
         "jeruk-9-besar"
       ],
       "correct": "jeruk-10"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-5-besar",
+        "jeruk-4-besar"
+      ],
+      "correct": "jeruk-5-besar"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-5-besar",
+        "jeruk-6-besar"
+      ],
+      "correct": "jeruk-6-besar"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-7-besar",
+        "jeruk-6-besar"
+      ],
+      "correct": "jeruk-7-besar"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-7-besar",
+        "jeruk-8-besar"
+      ],
+      "correct": "jeruk-8-besar"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-9-besar",
+        "jeruk-8-besar"
+      ],
+      "correct": "jeruk-9-besar"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tBanyak",
+      "choices": [
+        "jeruk-9-besar",
+        "jeruk-10-besar"
+      ],
+      "correct": "jeruk-10-besar"
     }
   ]
 }

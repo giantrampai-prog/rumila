@@ -1,6 +1,6 @@
 {
   "id": "berangkat-sekolah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,7 +19,40 @@
       "tiba": "sampai sekolah",
       "rebus": "rebus air",
       "tuang": "tuang ke cangkir",
-      "minum": "minum teh"
+      "minum": "minum teh",
+      "t-sepatu": "Memakai sepatu",
+      "sepatu-kaus": "pakai kaus kaki",
+      "sepatu-sepatu": "pakai sepatu",
+      "sepatu-jalan": "jalan ke sekolah",
+      "t-bus": "Naik bus sekolah",
+      "bus-halte": "tunggu di halte",
+      "bus-naik": "naik bus",
+      "bus-tiba": "sampai sekolah",
+      "t-hujan": "Pergi saat hujan",
+      "hujan-turun": "hujan turun",
+      "hujan-payung": "buka payung",
+      "hujan-tiba": "sampai sekolah",
+      "t-jalan-kaki": "Jalan kaki",
+      "jalan-kaki-keluar": "keluar rumah",
+      "jalan-kaki-kunci": "kunci pintu",
+      "jalan-kaki-jalan": "jalan kaki",
+      "jalan-kaki-tiba": "sampai sekolah",
+      "t-bangun": "Pagi hari",
+      "bangun-alarm": "jam weker berbunyi",
+      "bangun-bangun": "bangun tidur",
+      "bangun-mandi": "mandi",
+      "t-bekal": "Bekal sekolah",
+      "bekal-isi": "isi kotak bekal",
+      "bekal-tas": "masukkan ke tas",
+      "bekal-makan": "makan bekal di sekolah",
+      "t-kereta": "Naik kereta",
+      "kereta-stasiun": "tunggu di stasiun",
+      "kereta-naik": "naik kereta",
+      "kereta-tiba": "sampai sekolah",
+      "t-roti": "Sarapan roti",
+      "roti-ambil": "ambil roti",
+      "roti-oles": "oles madu",
+      "roti-makan": "makan roti"
     },
     "en": {
       "judul": "Off to School",
@@ -32,7 +65,40 @@
       "tiba": "arrive at school",
       "rebus": "boil water",
       "tuang": "pour into the cup",
-      "minum": "drink the tea"
+      "minum": "drink the tea",
+      "t-sepatu": "Putting on shoes",
+      "sepatu-kaus": "put on socks",
+      "sepatu-sepatu": "put on shoes",
+      "sepatu-jalan": "walk to school",
+      "t-bus": "Riding the school bus",
+      "bus-halte": "wait at the bus stop",
+      "bus-naik": "get on the bus",
+      "bus-tiba": "arrive at school",
+      "t-hujan": "Going out in the rain",
+      "hujan-turun": "rain falls",
+      "hujan-payung": "open the umbrella",
+      "hujan-tiba": "arrive at school",
+      "t-jalan-kaki": "Walking",
+      "jalan-kaki-keluar": "leave the house",
+      "jalan-kaki-kunci": "lock the door",
+      "jalan-kaki-jalan": "walk",
+      "jalan-kaki-tiba": "arrive at school",
+      "t-bangun": "Morning time",
+      "bangun-alarm": "the alarm rings",
+      "bangun-bangun": "wake up",
+      "bangun-mandi": "take a bath",
+      "t-bekal": "School lunch box",
+      "bekal-isi": "fill the lunch box",
+      "bekal-tas": "put it in the backpack",
+      "bekal-makan": "eat lunch at school",
+      "t-kereta": "Taking the train",
+      "kereta-stasiun": "wait at the station",
+      "kereta-naik": "ride the train",
+      "kereta-tiba": "arrive at school",
+      "t-roti": "Bread for breakfast",
+      "roti-ambil": "take the bread",
+      "roti-oles": "spread honey",
+      "roti-makan": "eat the bread"
     }
   },
   "knobs": {
@@ -94,6 +160,179 @@
           "id": "minum",
           "labelKey": "minum",
           "emoji": "🍵"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "t-sepatu",
+      "steps": [
+        {
+          "id": "kaus",
+          "labelKey": "sepatu-kaus",
+          "emoji": "🧦"
+        },
+        {
+          "id": "sepatu",
+          "labelKey": "sepatu-sepatu",
+          "emoji": "👟"
+        },
+        {
+          "id": "jalan",
+          "labelKey": "sepatu-jalan",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "bus",
+      "titleKey": "t-bus",
+      "steps": [
+        {
+          "id": "halte",
+          "labelKey": "bus-halte",
+          "emoji": "🚏"
+        },
+        {
+          "id": "naik",
+          "labelKey": "bus-naik",
+          "emoji": "🚌"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "bus-tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "hujan",
+      "titleKey": "t-hujan",
+      "steps": [
+        {
+          "id": "turun",
+          "labelKey": "hujan-turun",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "payung",
+          "labelKey": "hujan-payung",
+          "emoji": "☂️"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "hujan-tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "jalan-kaki",
+      "titleKey": "t-jalan-kaki",
+      "steps": [
+        {
+          "id": "keluar",
+          "labelKey": "jalan-kaki-keluar",
+          "emoji": "🏠"
+        },
+        {
+          "id": "kunci",
+          "labelKey": "jalan-kaki-kunci",
+          "emoji": "🔑"
+        },
+        {
+          "id": "jalan",
+          "labelKey": "jalan-kaki-jalan",
+          "emoji": "🚶"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "jalan-kaki-tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "bangun",
+      "titleKey": "t-bangun",
+      "steps": [
+        {
+          "id": "alarm",
+          "labelKey": "bangun-alarm",
+          "emoji": "⏰"
+        },
+        {
+          "id": "bangun",
+          "labelKey": "bangun-bangun",
+          "emoji": "🥱"
+        },
+        {
+          "id": "mandi",
+          "labelKey": "bangun-mandi",
+          "emoji": "🛁"
+        }
+      ]
+    },
+    {
+      "id": "bekal",
+      "titleKey": "t-bekal",
+      "steps": [
+        {
+          "id": "isi",
+          "labelKey": "bekal-isi",
+          "emoji": "🍱"
+        },
+        {
+          "id": "tas",
+          "labelKey": "bekal-tas",
+          "emoji": "🎒"
+        },
+        {
+          "id": "makan",
+          "labelKey": "bekal-makan",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "kereta",
+      "titleKey": "t-kereta",
+      "steps": [
+        {
+          "id": "stasiun",
+          "labelKey": "kereta-stasiun",
+          "emoji": "🚉"
+        },
+        {
+          "id": "naik",
+          "labelKey": "kereta-naik",
+          "emoji": "🚆"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "kereta-tiba",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "t-roti",
+      "steps": [
+        {
+          "id": "ambil",
+          "labelKey": "roti-ambil",
+          "emoji": "🍞"
+        },
+        {
+          "id": "oles",
+          "labelKey": "roti-oles",
+          "emoji": "🍯"
+        },
+        {
+          "id": "makan",
+          "labelKey": "roti-makan",
+          "emoji": "😋"
         }
       ]
     }

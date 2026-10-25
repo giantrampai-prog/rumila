@@ -1,6 +1,6 @@
 {
   "id": "sains-susun-tumbuhan-utuh",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -19,7 +19,52 @@
       "s-pohon": "Pohon kecil dari bawah ke atas",
       "pohon-akar": "akar di dalam tanah",
       "pohon-batang": "batang pohon",
-      "pohon-daun": "daun rimbun"
+      "pohon-daun": "daun rimbun",
+      "t-tulip": "Tulip dari bawah ke atas",
+      "tulip-akar": "akar di dalam tanah",
+      "tulip-batang": "batang di atas tanah",
+      "tulip-daun": "daun di batang",
+      "tulip-bunga": "bunga di pucuk",
+      "t-mawar": "Mawar dari bawah ke atas",
+      "mawar-akar": "akar di dalam tanah",
+      "mawar-batang": "batang di atas tanah",
+      "mawar-daun": "daun di batang",
+      "mawar-bunga": "bunga di pucuk",
+      "t-sepatu": "Kembang sepatu dari bawah ke atas",
+      "sepatu-akar": "akar di dalam tanah",
+      "sepatu-batang": "batang di atas tanah",
+      "sepatu-daun": "daun di batang",
+      "sepatu-bunga": "bunga di pucuk",
+      "t-kuning": "Bunga kuning dari bawah ke atas",
+      "kuning-akar": "akar di dalam tanah",
+      "kuning-batang": "batang di atas tanah",
+      "kuning-daun": "daun di batang",
+      "kuning-bunga": "bunga di pucuk",
+      "t-merahmuda": "Bunga merah muda dari bawah ke atas",
+      "merahmuda-akar": "akar di dalam tanah",
+      "merahmuda-batang": "batang di atas tanah",
+      "merahmuda-daun": "daun di batang",
+      "merahmuda-bunga": "bunga di pucuk",
+      "t-teratai": "Teratai dari bawah ke atas",
+      "teratai-akar": "akar di dalam lumpur",
+      "teratai-batang": "batang di dalam air",
+      "teratai-daun": "daun di atas air",
+      "teratai-bunga": "bunga di pucuk",
+      "t-padi": "Padi dari bawah ke atas",
+      "padi-akar": "akar di dalam tanah",
+      "padi-batang": "batang padi",
+      "padi-daun": "daun panjang",
+      "padi-bulir": "bulir padi di pucuk",
+      "t-mangga": "Pohon mangga dari bawah ke atas",
+      "mangga-akar": "akar di dalam tanah",
+      "mangga-batang": "batang pohon",
+      "mangga-ranting": "ranting",
+      "mangga-daun": "daun rimbun di atas",
+      "t-cemara": "Pohon cemara dari bawah ke atas",
+      "cemara-akar": "akar di dalam tanah",
+      "cemara-batang": "batang pohon",
+      "cemara-ranting": "ranting",
+      "cemara-daun": "daun jarum di atas"
     },
     "en": {
       "judul": "Build the Whole Plant",
@@ -32,7 +77,52 @@
       "s-pohon": "Little tree from bottom to top",
       "pohon-akar": "root under the soil",
       "pohon-batang": "tree trunk",
-      "pohon-daun": "leafy top"
+      "pohon-daun": "leafy top",
+      "t-tulip": "Tulip from bottom to top",
+      "tulip-akar": "root under the soil",
+      "tulip-batang": "stem above the soil",
+      "tulip-daun": "leaf on the stem",
+      "tulip-bunga": "flower at the top",
+      "t-mawar": "Rose from bottom to top",
+      "mawar-akar": "root under the soil",
+      "mawar-batang": "stem above the soil",
+      "mawar-daun": "leaf on the stem",
+      "mawar-bunga": "flower at the top",
+      "t-sepatu": "Hibiscus from bottom to top",
+      "sepatu-akar": "root under the soil",
+      "sepatu-batang": "stem above the soil",
+      "sepatu-daun": "leaf on the stem",
+      "sepatu-bunga": "flower at the top",
+      "t-kuning": "Yellow flower from bottom to top",
+      "kuning-akar": "root under the soil",
+      "kuning-batang": "stem above the soil",
+      "kuning-daun": "leaf on the stem",
+      "kuning-bunga": "flower at the top",
+      "t-merahmuda": "Pink flower from bottom to top",
+      "merahmuda-akar": "root under the soil",
+      "merahmuda-batang": "stem above the soil",
+      "merahmuda-daun": "leaf on the stem",
+      "merahmuda-bunga": "flower at the top",
+      "t-teratai": "Lotus from bottom to top",
+      "teratai-akar": "root in the mud",
+      "teratai-batang": "stem in the water",
+      "teratai-daun": "leaf on the water",
+      "teratai-bunga": "flower at the top",
+      "t-padi": "Rice plant from bottom to top",
+      "padi-akar": "root under the soil",
+      "padi-batang": "rice stalk",
+      "padi-daun": "long leaves",
+      "padi-bulir": "rice grains at the top",
+      "t-mangga": "Mango tree from bottom to top",
+      "mangga-akar": "root under the soil",
+      "mangga-batang": "tree trunk",
+      "mangga-ranting": "branches",
+      "mangga-daun": "leafy top",
+      "t-cemara": "Pine tree from bottom to top",
+      "cemara-akar": "root under the soil",
+      "cemara-batang": "tree trunk",
+      "cemara-ranting": "branches",
+      "cemara-daun": "needle leaves on top"
     }
   },
   "knobs": {
@@ -96,6 +186,249 @@
           "id": "daun",
           "labelKey": "pohon-daun",
           "emoji": "🌳"
+        }
+      ]
+    },
+    {
+      "id": "tulip",
+      "titleKey": "t-tulip",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "tulip-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "tulip-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "tulip-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "tulip-bunga",
+          "emoji": "🌷"
+        }
+      ]
+    },
+    {
+      "id": "mawar",
+      "titleKey": "t-mawar",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "mawar-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "mawar-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "mawar-daun",
+          "emoji": "☘️"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "mawar-bunga",
+          "emoji": "🌹"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "t-sepatu",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "sepatu-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "sepatu-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "sepatu-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "sepatu-bunga",
+          "emoji": "🌺"
+        }
+      ]
+    },
+    {
+      "id": "kuning",
+      "titleKey": "t-kuning",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "kuning-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "kuning-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "kuning-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kuning-bunga",
+          "emoji": "🌼"
+        }
+      ]
+    },
+    {
+      "id": "merahmuda",
+      "titleKey": "t-merahmuda",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "merahmuda-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "merahmuda-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "merahmuda-daun",
+          "emoji": "☘️"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "merahmuda-bunga",
+          "emoji": "🌸"
+        }
+      ]
+    },
+    {
+      "id": "teratai",
+      "titleKey": "t-teratai",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "teratai-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "teratai-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "teratai-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "teratai-bunga",
+          "emoji": "🪷"
+        }
+      ]
+    },
+    {
+      "id": "padi",
+      "titleKey": "t-padi",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "padi-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "padi-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "padi-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bulir",
+          "labelKey": "padi-bulir",
+          "emoji": "🌾"
+        }
+      ]
+    },
+    {
+      "id": "mangga",
+      "titleKey": "t-mangga",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "mangga-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "mangga-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "ranting",
+          "labelKey": "mangga-ranting",
+          "emoji": "🌿"
+        },
+        {
+          "id": "daun",
+          "labelKey": "mangga-daun",
+          "emoji": "🌳"
+        }
+      ]
+    },
+    {
+      "id": "cemara",
+      "titleKey": "t-cemara",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "cemara-akar",
+          "emoji": "🫚",
+          "color": "#8d6e63"
+        },
+        {
+          "id": "batang",
+          "labelKey": "cemara-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "ranting",
+          "labelKey": "cemara-ranting",
+          "emoji": "🌿"
+        },
+        {
+          "id": "daun",
+          "labelKey": "cemara-daun",
+          "emoji": "🌲"
         }
       ]
     }

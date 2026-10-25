@@ -1,6 +1,6 @@
 {
   "id": "keranjang-warna",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -22,7 +22,19 @@
       "pisang": "pisang",
       "bebek": "bebek",
       "daun": "daun",
-      "katak": "katak"
+      "katak": "katak",
+      "tomat": "tomat",
+      "cabai": "cabai",
+      "ceri": "ceri",
+      "blueberry": "buah bluberi",
+      "paus": "paus",
+      "topi": "topi",
+      "bunga-matahari": "bunga matahari",
+      "keju": "keju",
+      "lemon": "lemon",
+      "brokoli": "brokoli",
+      "timun": "timun",
+      "kura": "kura-kura"
     },
     "en": {
       "judul": "Color Baskets",
@@ -38,7 +50,19 @@
       "pisang": "banana",
       "bebek": "duck",
       "daun": "leaf",
-      "katak": "frog"
+      "katak": "frog",
+      "tomat": "tomato",
+      "cabai": "chili",
+      "ceri": "cherry",
+      "blueberry": "blueberries",
+      "paus": "whale",
+      "topi": "cap",
+      "bunga-matahari": "sunflower",
+      "keju": "cheese",
+      "lemon": "lemon",
+      "brokoli": "broccoli",
+      "timun": "cucumber",
+      "kura": "turtle"
     }
   },
   "knobs": {
@@ -132,6 +156,78 @@
       "labelKey": "katak",
       "bin": "hijau",
       "emoji": "🐸"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "tomat",
+      "bin": "merah",
+      "emoji": "🍅"
+    },
+    {
+      "id": "cabai",
+      "labelKey": "cabai",
+      "bin": "merah",
+      "emoji": "🌶️"
+    },
+    {
+      "id": "ceri",
+      "labelKey": "ceri",
+      "bin": "merah",
+      "emoji": "🍒"
+    },
+    {
+      "id": "blueberry",
+      "labelKey": "blueberry",
+      "bin": "biru",
+      "emoji": "🫐"
+    },
+    {
+      "id": "paus",
+      "labelKey": "paus",
+      "bin": "biru",
+      "emoji": "🐳"
+    },
+    {
+      "id": "topi",
+      "labelKey": "topi",
+      "bin": "biru",
+      "emoji": "🧢"
+    },
+    {
+      "id": "bunga-matahari",
+      "labelKey": "bunga-matahari",
+      "bin": "kuning",
+      "emoji": "🌻"
+    },
+    {
+      "id": "keju",
+      "labelKey": "keju",
+      "bin": "kuning",
+      "emoji": "🧀"
+    },
+    {
+      "id": "lemon",
+      "labelKey": "lemon",
+      "bin": "kuning",
+      "emoji": "🍋"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "brokoli",
+      "bin": "hijau",
+      "emoji": "🥦"
+    },
+    {
+      "id": "timun",
+      "labelKey": "timun",
+      "bin": "hijau",
+      "emoji": "🥒"
+    },
+    {
+      "id": "kura",
+      "labelKey": "kura",
+      "bin": "hijau",
+      "emoji": "🐢"
     }
   ]
 }

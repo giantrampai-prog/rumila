@@ -1,6 +1,6 @@
 {
   "id": "jengkal-sayur-kebun",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -15,7 +15,15 @@
       "timun": "timun",
       "jagung": "jagung",
       "terong": "terong",
-      "roti": "roti panjang"
+      "roti": "roti panjang",
+      "pisang": "pisang",
+      "nanas": "nanas",
+      "ubi": "ubi",
+      "brokoli": "brokoli",
+      "sawi": "sawi",
+      "paprika": "paprika",
+      "cabai": "cabai",
+      "kentang": "kentang"
     },
     "en": {
       "judul": "Measure in Hand Spans",
@@ -24,7 +32,15 @@
       "timun": "cucumber",
       "jagung": "corn",
       "terong": "eggplant",
-      "roti": "long bread"
+      "roti": "long bread",
+      "pisang": "banana",
+      "nanas": "pineapple",
+      "ubi": "sweet potato",
+      "brokoli": "broccoli",
+      "sawi": "mustard greens",
+      "paprika": "bell pepper",
+      "cabai": "chili",
+      "kentang": "potato"
     }
   },
   "knobs": {
@@ -38,7 +54,7 @@
     "maxSpans": {
       "min": 2,
       "max": 5,
-      "default": 2,
+      "default": 4,
       "step": 1,
       "keterangan": "panjang benda terpanjang yang muncul (jengkal)"
     }
@@ -88,6 +104,70 @@
       "emoji": "🥖",
       "value": 5,
       "width": 2.5
+    },
+    {
+      "labelKey": "pisang",
+      "id": "pisang",
+      "role": "benda",
+      "emoji": "🍌",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "labelKey": "nanas",
+      "id": "nanas",
+      "role": "benda",
+      "emoji": "🍍",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "labelKey": "ubi",
+      "id": "ubi",
+      "role": "benda",
+      "emoji": "🍠",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "labelKey": "brokoli",
+      "id": "brokoli",
+      "role": "benda",
+      "emoji": "🥦",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "labelKey": "sawi",
+      "id": "sawi",
+      "role": "benda",
+      "emoji": "🥬",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "labelKey": "paprika",
+      "id": "paprika",
+      "role": "benda",
+      "emoji": "🫑",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "labelKey": "cabai",
+      "id": "cabai",
+      "role": "benda",
+      "emoji": "🌶️",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "labelKey": "kentang",
+      "id": "kentang",
+      "role": "benda",
+      "emoji": "🥔",
+      "value": 1,
+      "width": 0.5
     }
   ]
 }
