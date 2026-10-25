@@ -87,12 +87,27 @@ function knobTetangga(p: ContentPack, knobs: Knobs): Knobs[] {
   return out;
 }
 
-/** Kunci pembanding dua ronde (isi soal identik → kunci sama). Mode pilih: urutan pilihan yang diacak tidak dihitung,
- *  supaya soal yang sama dengan susunan pilihan lain tetap dianggap pernah keluar. */
-export const kunciRonde = (r: Ronde) =>
-  r.mechanic === "pilah" && r.ronde.mode === "pilih"
-    ? JSON.stringify({ mechanic: "pilah", promptKey: r.ronde.promptKey, correct: r.ronde.correct, choices: [...r.ronde.choices].map((c) => JSON.stringify(c)).sort() })
-    : JSON.stringify(r);
+/** Kunci pembanding dua ronde menurut mata anak: soal yang sama dengan susunan acak lain (pilihan diacak, gambar cerita
+ *  dikocok, pasangan kiri-kanan ditukar, laci uang diurut beda) tetap dianggap soal yang sama. */
+export function kunciRonde(r: Ronde): string {
+  const urut = (xs: readonly unknown[]) => xs.map((x) => JSON.stringify(x)).sort();
+  switch (r.mechanic) {
+    case "pilah":
+      return r.ronde.mode === "pilih"
+        ? JSON.stringify(["pilah-pilih", r.ronde.promptKey, r.ronde.correct])
+        : JSON.stringify(["pilah-kelompok", r.ronde.items.map((i) => i.id).sort()]);
+    case "urutkan":
+      return JSON.stringify(["urutkan", r.ronde.mode, r.ronde.sequenceId]);
+    case "pola":
+      return JSON.stringify(["pola", r.ronde.mode, r.ronde.correct, r.ronde.shown, r.ronde.wrongIndex ?? null, r.ronde.pilih ?? null]);
+    case "dagang":
+      return JSON.stringify(["dagang", { ...r.ronde, laci: [...r.ronde.laci].sort((a, b) => a - b), lembar: [...r.ronde.lembar].sort((a, b) => a - b), benda: [...r.ronde.benda].sort(), pesanan: urut(r.ronde.pesanan) }]);
+    case "simulasi":
+      return JSON.stringify(["simulasi", { ...r.ronde, items: r.ronde.items.map((i) => i.id).sort(), options: [...r.ronde.options].sort((a, b) => a - b) }]);
+    default:
+      return JSON.stringify(r);
+  }
+}
 
 export function nilai(_p: ContentPack, r: Ronde, j: Jawaban): Hasil {
   switch (r.mechanic) {

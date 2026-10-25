@@ -257,7 +257,12 @@ describe("dagang", () => {
 
 describe("buatRondeBaru", () => {
   const p = ContentPack.parse(keranjang);
-  const k = knobDefaults(p);
+  // 3 dari 6 benda per ronde: cukup banyak kombinasi berbeda untuk 6 ronde tanpa ulang
+  const k = { ...knobDefaults(p), itemCount: 3 };
+  it("soal sama dengan urutan acak lain dianggap sama (kunci menurut mata anak)", () => {
+    const semua = { ...knobDefaults(p) };
+    expect(kunciRonde(buatRonde(p, semua, 1))).toBe(kunciRonde(buatRonde(p, semua, 2)));
+  });
   it("tidak mengulang ronde yang sudah keluar selama masih ada pilihan", () => {
     const riwayat: string[] = [];
     for (let i = 0; i < 6; i++) {
