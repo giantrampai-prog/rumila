@@ -238,7 +238,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
   const [goyang, setGoyang] = useState(0);
   const [l, mm, d] = warna;
   const ukuran = m.sekarang ? 76 : 62;
-  const persen = !m.selesai && m.progres > 0 ? Math.round(m.progres * 100) : 0;
+  const persen = m.selesai ? 100 : m.progres > 0 ? Math.round(m.progres * 100) : 0;
   const gaya: React.CSSProperties = m.selesai
     ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 6px 0 #c88a00", color: INK }
     : m.sekarang
@@ -252,7 +252,10 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
     <>
       {m.sekarang && <span aria-hidden className="akademi-denyut absolute inset-0 rounded-full" />}
       {m.selesai ? (
-        <Icon name="star" size={32} />
+        <span className="flex flex-col items-center leading-none">
+          <Icon name="star" size={26} />
+          <span className="mt-0.5 text-[10px] font-black text-[#7a5200]">100%</span>
+        </span>
       ) : m.sekarang ? (
         <Icon name="play_arrow" size={44} />
       ) : (
@@ -278,7 +281,7 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
       {persen > 0 && (
         <svg aria-hidden width={sisi} height={sisi} className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
           <circle cx={sisi / 2} cy={sisi / 2} r={r} fill="none" stroke="#f1e6d6" strokeWidth={tebal} />
-          <circle cx={sisi / 2} cy={sisi / 2} r={r} fill="none" stroke="#fd861d" strokeWidth={tebal} strokeLinecap="round" strokeDasharray={`${(persen / 100) * kel} ${kel}`} />
+          <circle cx={sisi / 2} cy={sisi / 2} r={r} fill="none" stroke={m.selesai ? "#22a06b" : "#fd861d"} strokeWidth={tebal} strokeLinecap="round" strokeDasharray={`${(persen / 100) * kel} ${kel}`} />
         </svg>
       )}
       {m.sekarang && (
