@@ -49,6 +49,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   }, [peta.tercapai, berikut, me.id, level]);
 
   const target = peta.sekarang ?? peta.pemantapan;
+  const unitAktif = peta.sekarang ? (peta.sekarang.kompetensi.unit.nama[bahasa] ?? peta.sekarang.kompetensi.unit.nama.id) : undefined;
   const targetPaket = target ? paketMisi(target.kompetensi.id, PAKET, events, level) : undefined;
 
   return (
@@ -81,7 +82,7 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
 
       <div className="flex flex-col gap-3">
         {peta.unit.map((u, i) => (
-          <Unit key={`${u.track}-${u.id}`} u={u} urutan={i} bahasa={bahasa} events={events} level={level} />
+          <Unit key={`${u.track}-${u.id}`} u={u} urutan={i} unitAktif={unitAktif} bahasa={bahasa} events={events} level={level} />
         ))}
         <Gerbang peta={peta} berikut={berikut} />
       </div>
@@ -165,7 +166,7 @@ const LENGKUNG = 52;
 const SLOT = 92; // tinggi tetap tiap titik misi (px) agar garis penghubung bisa digambar
 const geserTitik = (i: number, n: number, arah: number) => (n < 2 ? 0 : Math.round(arah * LENGKUNG * Math.sin((Math.PI * i) / (n - 1))));
 
-function Unit({ u, urutan, bahasa, events, level }: { u: UnitPeta; urutan: number; bahasa: BahasaAnak; events: Events; level: LevelId }) {
+function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; urutan: number; unitAktif?: string; bahasa: BahasaAnak; events: Events; level: LevelId }) {
   const c = TRACK_WARNA[u.track];
   const [l, m, d] = PLAY[c];
   const w = WARNA_LENCANA[u.lencana];
@@ -224,7 +225,7 @@ function Unit({ u, urutan, bahasa, events, level }: { u: UnitPeta; urutan: numbe
           const judul = utama ? (utama.locale[bahasa]?.judul ?? utama.locale.id?.judul) : undefined;
           return (
             <li key={x.kompetensi.id} className="relative flex items-center justify-center focus-within:z-10 hover:z-10" style={{ height: SLOT, transform: `translateX(${geser[i]}px)` }}>
-              <TitikMisi m={x} warna={[l, m, d]} href={pk ? `/akademi/main/${pk.id}` : undefined} judul={judul ?? (u.nama[bahasa] ?? u.nama.id)} sisiLabel={arah > 0 ? "kanan" : "kiri"} bahasa={bahasa} />
+              <TitikMisi m={x} warna={[l, m, d]} unitAktif={unitAktif} href={pk && !x.terkunci ? `/akademi/main/${pk.id}` : undefined} judul={judul ?? (u.nama[bahasa] ?? u.nama.id)} sisiLabel={arah > 0 ? "kanan" : "kiri"} bahasa={bahasa} />
             </li>
           );
         })}
@@ -233,7 +234,8 @@ function Unit({ u, urutan, bahasa, events, level }: { u: UnitPeta; urutan: numbe
   );
 }
 
-function TitikMisi({ m, warna, href, judul, sisiLabel, bahasa }: { m: MisiPeta; warna: [string, string, string]; href?: string; judul: string; sisiLabel: "kiri" | "kanan"; bahasa: BahasaAnak }) {
+function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m: MisiPeta; warna: [string, string, string]; unitAktif?: string; href?: string; judul: string; sisiLabel: "kiri" | "kanan"; bahasa: BahasaAnak }) {
+  const [goyang, setGoyang] = useState(0);
   const [l, mm, d] = warna;
   const ukuran = m.sekarang ? 76 : 62;
   const persen = !m.selesai && m.progres > 0 ? Math.round(m.progres * 100) : 0;
@@ -241,8 +243,10 @@ function TitikMisi({ m, warna, href, judul, sisiLabel, bahasa }: { m: MisiPeta; 
     ? { background: "linear-gradient(155deg,#ffe46b,#fdb724 65%)", boxShadow: "0 6px 0 #c88a00", color: INK }
     : m.sekarang
       ? { background: `linear-gradient(155deg, ${l}, ${mm} 65%)`, boxShadow: `0 7px 0 ${d}`, color: "#fff" }
-      : { background: "#fff", boxShadow: `0 5px 0 ${l}`, border: `3px solid ${l}`, color: mm };
-  const label = `Misi ${m.nomor}, ${judul}: ${pernyataan(m, bahasa)}. ${m.selesai ? "Selesai, main lagi" : persen ? `Sudah ${persen}%` : "Belum dimainkan"}`;
+      : m.terkunci
+        ? { background: "#ece4d8", boxShadow: "0 5px 0 #d6cbbb", color: "#a99c8a" }
+        : { background: "#fff", boxShadow: `0 5px 0 ${l}`, border: `3px solid ${l}`, color: mm };
+  const label = `Misi ${m.nomor}, ${judul}: ${pernyataan(m, bahasa)}. ${m.selesai ? "Selesai, main lagi" : m.terkunci ? "Terkunci" : persen ? `Sudah ${persen}%` : "Belum dimainkan"}`;
   const kelas = "relative flex items-center justify-center rounded-full transition-transform active:translate-y-1 active:scale-95";
   const isi = (
     <>
@@ -255,6 +259,11 @@ function TitikMisi({ m, warna, href, judul, sisiLabel, bahasa }: { m: MisiPeta; 
         <span className="flex flex-col items-center leading-none">
           <span style={{ fontFamily: BALOO, fontSize: persen ? 20 : 24, fontWeight: 800 }}>{m.nomor}</span>
           {persen > 0 && <span className="mt-0.5 text-[10px] font-black text-[#c2410c]">{persen}%</span>}
+        </span>
+      )}
+      {m.terkunci && (
+        <span aria-hidden className="absolute -bottom-0.5 -right-0.5 flex size-6 items-center justify-center rounded-full border-2 border-[#fffaf2] bg-[#cfc3b1] text-white">
+          <Icon name="lock" size={13} />
         </span>
       )}
     </>
@@ -277,19 +286,24 @@ function TitikMisi({ m, warna, href, judul, sisiLabel, bahasa }: { m: MisiPeta; 
           {persen ? "Lanjut" : "Mulai"}
         </span>
       )}
+      {goyang > 0 && unitAktif && (
+        <span key={`pesan-${goyang}`} className="anim-fade absolute -top-9 z-20 whitespace-nowrap rounded-[12px] bg-[#0b2545] px-3 py-1 text-[12px] font-extrabold text-white">
+          Tuntaskan {unitAktif} dulu
+        </span>
+      )}
       {href ? (
         <Link href={href} aria-label={label} title={pernyataan(m, bahasa)} className={kelas} style={{ width: ukuran, height: ukuran, ...gaya }}>
           {isi}
         </Link>
       ) : (
-        <span aria-label={label} className={kelas} style={{ width: ukuran, height: ukuran, ...gaya }}>
+        <button type="button" key={`titik-${goyang}`} onClick={() => setGoyang((n) => n + 1)} aria-label={label} className={`${kelas} ${goyang ? "akademi-shake" : ""}`} style={{ width: ukuran, height: ukuran, ...gaya }}>
           {isi}
-        </span>
+        </button>
       )}
       <span
         aria-hidden
         className={`absolute top-1/2 w-[92px] -translate-y-1/2 text-[12px] leading-tight font-extrabold ${sisiLabel === "kanan" ? "left-full ml-2.5 text-left" : "right-full mr-2.5 text-right"}`}
-        style={{ color: m.selesai || m.sekarang || persen ? INK : "#6b7a90" }}
+        style={{ color: m.terkunci ? "#a99c8a" : m.selesai || m.sekarang || persen ? INK : "#6b7a90" }}
       >
         <span className="line-clamp-2">{judul}</span>
       </span>

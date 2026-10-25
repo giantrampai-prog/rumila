@@ -34,10 +34,13 @@ describe("petaJenjang", () => {
     expect(peta.total).toBe(5);
   });
 
-  it("hanya satu misi 'sekarang' (saran lanjut); tidak ada misi terkunci", () => {
+  it("unit aktif terbuka dalam urutan bebas; unit sesudahnya terkunci", () => {
     const peta = petaJenjang({}, new Set([M1]), KOMP, "PAUD", TRACKS);
     const misi = peta.unit.flatMap((u) => u.misi);
-    expect(misi.map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "-")).join("")).toBe("SN---");
+    expect(misi.map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "-")).join("")).toBe("SNKKK");
+    // M2 dikerjakan dulu (M1 belum): unit pertama tetap aktif, misi lain di unit itu tetap terbuka
+    const bebas = petaJenjang({}, new Set([M2]), KOMP, "PAUD", TRACKS).unit.flatMap((u) => u.misi);
+    expect(bebas.map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "-")).join("")).toBe("NSKKK");
     expect(peta.sekarang?.kompetensi.id).toBe(M2);
     expect(peta.selesai).toBe(1);
   });

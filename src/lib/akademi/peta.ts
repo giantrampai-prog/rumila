@@ -2,8 +2,9 @@
 //   urutan    = unit diselang-seling antarpelajaran (unit 1 Matematika, unit 1 Coding, unit 1 Sains, unit 2 …),
 //               di dalam unit mengikuti urutan file kurikulum; satu misi = satu kompetensi
 //   selesai   = pernah menamatkan paket yang memuat kompetensi itu dengan sukses ≥ AMBANG_STIKER, atau sudah dikuasai
-//   sekarang  = misi pertama yang belum selesai (saran "Lanjut"); semua misi terbuka, anak boleh memilih urutan sendiri
-//               (keputusan PO 25 Okt 2026, menggantikan urutan saklek PR #19)
+//   unit aktif = unit pertama yang masih punya misi belum selesai. Misi di unit aktif boleh dikerjakan dalam urutan
+//               bebas; unit sesudahnya terkunci sampai unit aktif tuntas (keputusan PO 25 Okt 2026)
+//   sekarang  = misi pertama yang belum selesai di unit aktif (saran "Lanjut")
 //   progres   = ronde terjauh yang pernah dimainkan dalam satu sesi paket misi itu / jumlah ronde paket
 //   gerbang   = setelah semua misi selesai, latihan pemantapan untuk kompetensi inti yang belum dikuasai
 // Naik jenjang tetap memakai penguasaan: semua kompetensi inti jenjang dikuasai.
@@ -126,6 +127,10 @@ export function petaJenjang(
     });
     return { id: isi[0].unit.id, track, ke, nama: isi[0].unit.nama, misi, lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
   });
+
+  // kunci unit sesudah unit aktif (unit yang memuat misi "sekarang")
+  const aktif = unit.findIndex((u) => u.misi.some((m) => m.sekarang));
+  if (aktif >= 0) for (const u of unit.slice(aktif + 1)) for (const m of u.misi) if (!m.selesai) m.terkunci = true;
 
   const tercapai = inti.total > 0 && inti.dikuasai === inti.total;
   const pemantapan = !sekarang && !tercapai ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
