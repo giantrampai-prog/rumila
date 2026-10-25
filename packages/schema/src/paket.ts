@@ -38,7 +38,7 @@ const Visual = {
   /** jumlah salinan yang digambar (kelompok benda) */
   count: z.number().int().min(1).max(20).optional(),
   /** bentuk dasar untuk benda tanpa emoji */
-  shape: z.enum(["circle", "square", "triangle", "rect", "star"]).optional(),
+  shape: z.enum(["circle", "square", "triangle", "rect", "star", "berudu"]).optional(),
   /** lebar relatif untuk benda memanjang (ular, pensil) */
   width: z.number().min(0.25).max(4).optional(),
 };

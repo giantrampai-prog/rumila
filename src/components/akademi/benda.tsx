@@ -11,7 +11,7 @@ export interface VisualSpec {
   color?: string;
   scale?: number;
   count?: number;
-  shape?: "circle" | "square" | "triangle" | "rect" | "star";
+  shape?: "circle" | "square" | "triangle" | "rect" | "star" | "berudu";
   width?: number;
   /** teks pendek bila tidak ada emoji/bentuk (mis. angka kartu) */
   label?: string;
@@ -26,6 +26,15 @@ function Bentuk({ shape, color, size, width = 1 }: { shape: NonNullable<VisualSp
     return (
       <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden>
         <polygon points="50,6 96,92 4,92" fill={color} />
+      </svg>
+    );
+  if (shape === "berudu")
+    return (
+      <svg width={w} height={h} viewBox="0 0 100 100" aria-hidden>
+        <path d="M52 50 C66 38 78 64 96 44 C88 66 70 70 52 58 Z" fill={color} opacity="0.8" />
+        <ellipse cx="34" cy="52" rx="26" ry="22" fill={color} />
+        <circle cx="26" cy="46" r="6" fill="#fff" />
+        <circle cx="25" cy="46" r="3" fill="#0b2545" />
       </svg>
     );
   return (
