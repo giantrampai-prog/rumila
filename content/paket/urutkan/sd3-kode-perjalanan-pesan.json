@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-perjalanan-pesan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -38,7 +38,49 @@
       "panggilan-3": "panggilan lewat internet",
       "panggilan-4": "ponsel teman berdering",
       "panggilan-5": "teman mengangkat",
-      "panggilan-6": "kalian saling melihat"
+      "panggilan-6": "kalian saling melihat",
+      "t-surel": "Mengirim surel ke guru",
+      "surel-1": "tulis surel",
+      "surel-2": "klik kirim",
+      "surel-3": "surel lewat wifi ke router",
+      "surel-4": "surel lewat internet ke server surel",
+      "surel-5": "surel sampai di laptop guru",
+      "surel-6": "guru membaca surel",
+      "t-lagu": "Mendengarkan lagu daring",
+      "lagu-1": "cari judul lagu",
+      "lagu-2": "tekan putar",
+      "lagu-3": "permintaan lewat internet ke server",
+      "lagu-4": "server mengirim lagu",
+      "lagu-5": "lagu sampai di ponsel",
+      "lagu-6": "lagu terdengar di headset",
+      "t-printer": "Mencetak gambar lewat wifi",
+      "printer-1": "pilih gambar",
+      "printer-2": "klik cetak",
+      "printer-3": "data lewat wifi ke router",
+      "printer-4": "router meneruskan ke printer",
+      "printer-5": "printer mulai mencetak",
+      "printer-6": "gambar tercetak di kertas",
+      "t-pesan-suara": "Mengirim pesan suara",
+      "pesan-suara-1": "tekan dan tahan tombol rekam",
+      "pesan-suara-2": "ucapkan pesanmu",
+      "pesan-suara-3": "lepas tombol, pesan terkirim",
+      "pesan-suara-4": "pesan lewat internet ke server",
+      "pesan-suara-5": "pesan sampai di ponsel kakak",
+      "pesan-suara-6": "kakak mendengarkan pesan",
+      "t-situs": "Membuka situs sekolah",
+      "situs-1": "ketik alamat situs",
+      "situs-2": "tekan enter",
+      "situs-3": "permintaan lewat wifi ke router",
+      "situs-4": "permintaan lewat internet ke server sekolah",
+      "situs-5": "server mengirim halaman",
+      "situs-6": "halaman muncul di layar",
+      "t-stiker": "Mengirim stiker ke grup kelas",
+      "stiker-1": "pilih stiker kucing",
+      "stiker-2": "tekan kirim ke grup",
+      "stiker-3": "stiker lewat internet ke server",
+      "stiker-4": "server meneruskan ke semua anggota grup",
+      "stiker-5": "ponsel teman-teman bergetar",
+      "stiker-6": "teman-teman tertawa"
     },
     "en": {
       "judul": "A Message's Journey",
@@ -70,7 +112,49 @@
       "panggilan-3": "the call travels over the internet",
       "panggilan-4": "your friend's phone rings",
       "panggilan-5": "your friend answers",
-      "panggilan-6": "you see each other"
+      "panggilan-6": "you see each other",
+      "t-surel": "Emailing your teacher",
+      "surel-1": "write the email",
+      "surel-2": "click send",
+      "surel-3": "the email goes over wifi to the router",
+      "surel-4": "the email travels over the internet to the mail server",
+      "surel-5": "the email reaches the teacher's laptop",
+      "surel-6": "the teacher reads the email",
+      "t-lagu": "Listening to a song online",
+      "lagu-1": "search for the song title",
+      "lagu-2": "press play",
+      "lagu-3": "the request travels over the internet to the server",
+      "lagu-4": "the server sends the song",
+      "lagu-5": "the song reaches the phone",
+      "lagu-6": "you hear the song in your headphones",
+      "t-printer": "Printing a picture over wifi",
+      "printer-1": "choose a picture",
+      "printer-2": "click print",
+      "printer-3": "the data goes over wifi to the router",
+      "printer-4": "the router passes it to the printer",
+      "printer-5": "the printer starts printing",
+      "printer-6": "the picture is on paper",
+      "t-pesan-suara": "Sending a voice message",
+      "pesan-suara-1": "press and hold the record button",
+      "pesan-suara-2": "say your message",
+      "pesan-suara-3": "let go, the message is sent",
+      "pesan-suara-4": "the message travels over the internet to the server",
+      "pesan-suara-5": "the message reaches your sister's phone",
+      "pesan-suara-6": "your sister listens to it",
+      "t-situs": "Opening the school website",
+      "situs-1": "type the website address",
+      "situs-2": "press enter",
+      "situs-3": "the request goes over wifi to the router",
+      "situs-4": "the request travels over the internet to the school server",
+      "situs-5": "the server sends the page",
+      "situs-6": "the page appears on screen",
+      "t-stiker": "Sending a sticker to the class group",
+      "stiker-1": "choose a cat sticker",
+      "stiker-2": "press send to the group",
+      "stiker-3": "the sticker travels over the internet to the server",
+      "stiker-4": "the server passes it to everyone in the group",
+      "stiker-5": "your friends' phones buzz",
+      "stiker-6": "your friends laugh"
     }
   },
   "knobs": {
@@ -229,6 +313,222 @@
           "id": "panggilan-6",
           "labelKey": "panggilan-6",
           "emoji": "😊"
+        }
+      ]
+    },
+    {
+      "id": "surel",
+      "titleKey": "t-surel",
+      "steps": [
+        {
+          "id": "surel-1",
+          "labelKey": "surel-1",
+          "emoji": "✍️"
+        },
+        {
+          "id": "surel-2",
+          "labelKey": "surel-2",
+          "emoji": "📤"
+        },
+        {
+          "id": "surel-3",
+          "labelKey": "surel-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "surel-4",
+          "labelKey": "surel-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "surel-5",
+          "labelKey": "surel-5",
+          "emoji": "💻"
+        },
+        {
+          "id": "surel-6",
+          "labelKey": "surel-6",
+          "emoji": "👩‍🏫"
+        }
+      ]
+    },
+    {
+      "id": "lagu",
+      "titleKey": "t-lagu",
+      "steps": [
+        {
+          "id": "lagu-1",
+          "labelKey": "lagu-1",
+          "emoji": "🔍"
+        },
+        {
+          "id": "lagu-2",
+          "labelKey": "lagu-2",
+          "emoji": "▶️"
+        },
+        {
+          "id": "lagu-3",
+          "labelKey": "lagu-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "lagu-4",
+          "labelKey": "lagu-4",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "lagu-5",
+          "labelKey": "lagu-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "lagu-6",
+          "labelKey": "lagu-6",
+          "emoji": "🎧"
+        }
+      ]
+    },
+    {
+      "id": "printer",
+      "titleKey": "t-printer",
+      "steps": [
+        {
+          "id": "printer-1",
+          "labelKey": "printer-1",
+          "emoji": "🖼️"
+        },
+        {
+          "id": "printer-2",
+          "labelKey": "printer-2",
+          "emoji": "🖱️"
+        },
+        {
+          "id": "printer-3",
+          "labelKey": "printer-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "printer-4",
+          "labelKey": "printer-4",
+          "emoji": "📡"
+        },
+        {
+          "id": "printer-5",
+          "labelKey": "printer-5",
+          "emoji": "🖨️"
+        },
+        {
+          "id": "printer-6",
+          "labelKey": "printer-6",
+          "emoji": "📄"
+        }
+      ]
+    },
+    {
+      "id": "pesan-suara",
+      "titleKey": "t-pesan-suara",
+      "steps": [
+        {
+          "id": "pesan-suara-1",
+          "labelKey": "pesan-suara-1",
+          "emoji": "🎙️"
+        },
+        {
+          "id": "pesan-suara-2",
+          "labelKey": "pesan-suara-2",
+          "emoji": "🗣️"
+        },
+        {
+          "id": "pesan-suara-3",
+          "labelKey": "pesan-suara-3",
+          "emoji": "📤"
+        },
+        {
+          "id": "pesan-suara-4",
+          "labelKey": "pesan-suara-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "pesan-suara-5",
+          "labelKey": "pesan-suara-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "pesan-suara-6",
+          "labelKey": "pesan-suara-6",
+          "emoji": "👂"
+        }
+      ]
+    },
+    {
+      "id": "situs",
+      "titleKey": "t-situs",
+      "steps": [
+        {
+          "id": "situs-1",
+          "labelKey": "situs-1",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "situs-2",
+          "labelKey": "situs-2",
+          "emoji": "↩️"
+        },
+        {
+          "id": "situs-3",
+          "labelKey": "situs-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "situs-4",
+          "labelKey": "situs-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "situs-5",
+          "labelKey": "situs-5",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "situs-6",
+          "labelKey": "situs-6",
+          "emoji": "🖥️"
+        }
+      ]
+    },
+    {
+      "id": "stiker",
+      "titleKey": "t-stiker",
+      "steps": [
+        {
+          "id": "stiker-1",
+          "labelKey": "stiker-1",
+          "emoji": "😺"
+        },
+        {
+          "id": "stiker-2",
+          "labelKey": "stiker-2",
+          "emoji": "📤"
+        },
+        {
+          "id": "stiker-3",
+          "labelKey": "stiker-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "stiker-4",
+          "labelKey": "stiker-4",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "stiker-5",
+          "labelKey": "stiker-5",
+          "emoji": "📳"
+        },
+        {
+          "id": "stiker-6",
+          "labelKey": "stiker-6",
+          "emoji": "😄"
         }
       ]
     }

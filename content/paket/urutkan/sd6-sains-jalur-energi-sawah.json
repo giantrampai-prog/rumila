@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalur-energi-sawah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.01"
@@ -8,7 +8,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Jalur Energi di Sawah",
+      "judul": "Jalur Energi di Alam",
       "instruksi": "Susun jalur energi dari Matahari sampai pemakan puncak.",
       "s-j1": "Jalur 1 di jaring sawah",
       "j1-matahari": "Matahari: sumber energi",
@@ -32,10 +32,71 @@
       "j4-matahari": "Matahari: sumber energi",
       "j4-ganggang": "ganggang (produsen)",
       "j4-ikankecil": "ikan kecil",
-      "j4-bangau": "burung bangau"
+      "j4-bangau": "burung bangau",
+      "s-j5": "Jalur 4 di jaring sawah",
+      "j5-matahari": "Matahari: sumber energi",
+      "j5-padi": "padi (produsen)",
+      "j5-belalang": "belalang",
+      "j5-labalaba": "laba-laba",
+      "j5-katak": "katak",
+      "j5-ular": "ular sawah",
+      "s-j6": "Jalur di laut",
+      "j6-matahari": "Matahari: sumber energi",
+      "j6-fito": "fitoplankton (produsen)",
+      "j6-udang": "udang kecil",
+      "j6-ikan": "ikan kecil",
+      "j6-cumi": "cumi-cumi",
+      "j6-hiu": "hiu",
+      "s-j7": "Jalur di gurun",
+      "j7-matahari": "Matahari: sumber energi",
+      "j7-kaktus": "kaktus (produsen)",
+      "j7-belalang": "belalang gurun",
+      "j7-kadal": "kadal",
+      "j7-ular": "ular gurun",
+      "j7-elang": "elang",
+      "s-j8": "Jalur di hutan",
+      "j8-matahari": "Matahari: sumber energi",
+      "j8-pohon": "daun pohon (produsen)",
+      "j8-ulat": "ulat",
+      "j8-burung": "burung kecil",
+      "j8-ular": "ular pohon",
+      "j8-elang": "elang",
+      "s-j9": "Jalur di rawa",
+      "j9-matahari": "Matahari: sumber energi",
+      "j9-tumbuhan": "tumbuhan air (produsen)",
+      "j9-siput": "siput air",
+      "j9-bebek": "bebek liar",
+      "j9-buaya": "buaya",
+      "s-j10": "Jalur di laut kutub selatan",
+      "j10-matahari": "Matahari: sumber energi",
+      "j10-fito": "fitoplankton (produsen)",
+      "j10-zoo": "zooplankton (hewan renik)",
+      "j10-ikan": "ikan",
+      "j10-penguin": "penguin",
+      "j10-anjinglaut": "anjing laut tutul",
+      "s-j11": "Jalur di laut kutub utara",
+      "j11-matahari": "Matahari: sumber energi",
+      "j11-fito": "fitoplankton (produsen)",
+      "j11-zoo": "zooplankton (hewan renik)",
+      "j11-ikan": "ikan kod kutub",
+      "j11-anjinglaut": "anjing laut",
+      "j11-beruang": "beruang kutub",
+      "s-j12": "Jalur di kebun sayur",
+      "j12-matahari": "Matahari: sumber energi",
+      "j12-sawi": "sawi (produsen)",
+      "j12-ulat": "ulat",
+      "j12-burung": "burung kutilang",
+      "j12-elang": "elang",
+      "s-j13": "Jalur di padang rumput",
+      "j13-matahari": "Matahari: sumber energi",
+      "j13-rumput": "rumput (produsen)",
+      "j13-belalang": "belalang",
+      "j13-tikus": "tikus",
+      "j13-ular": "ular",
+      "j13-burunghantu": "burung hantu"
     },
     "en": {
-      "judul": "Energy Paths in the Rice Field",
+      "judul": "Energy Paths in Nature",
       "instruksi": "Put the energy path in order from the Sun to the top consumer.",
       "s-j1": "Path 1 in the rice-field web",
       "j1-matahari": "the Sun: source of energy",
@@ -59,7 +120,68 @@
       "j4-matahari": "the Sun: source of energy",
       "j4-ganggang": "algae (producer)",
       "j4-ikankecil": "small fish",
-      "j4-bangau": "heron"
+      "j4-bangau": "heron",
+      "s-j5": "Path 4 in the rice-field web",
+      "j5-matahari": "the Sun: source of energy",
+      "j5-padi": "rice plant (producer)",
+      "j5-belalang": "grasshopper",
+      "j5-labalaba": "spider",
+      "j5-katak": "frog",
+      "j5-ular": "rice-field snake",
+      "s-j6": "A path in the sea",
+      "j6-matahari": "the Sun: source of energy",
+      "j6-fito": "phytoplankton (producer)",
+      "j6-udang": "small shrimp",
+      "j6-ikan": "small fish",
+      "j6-cumi": "squid",
+      "j6-hiu": "shark",
+      "s-j7": "A path in the desert",
+      "j7-matahari": "the Sun: source of energy",
+      "j7-kaktus": "cactus (producer)",
+      "j7-belalang": "desert grasshopper",
+      "j7-kadal": "lizard",
+      "j7-ular": "desert snake",
+      "j7-elang": "hawk",
+      "s-j8": "A path in the forest",
+      "j8-matahari": "the Sun: source of energy",
+      "j8-pohon": "tree leaves (producer)",
+      "j8-ulat": "caterpillar",
+      "j8-burung": "small bird",
+      "j8-ular": "tree snake",
+      "j8-elang": "eagle",
+      "s-j9": "A path in the swamp",
+      "j9-matahari": "the Sun: source of energy",
+      "j9-tumbuhan": "water plants (producer)",
+      "j9-siput": "water snail",
+      "j9-bebek": "wild duck",
+      "j9-buaya": "crocodile",
+      "s-j10": "A path in the Antarctic sea",
+      "j10-matahari": "the Sun: source of energy",
+      "j10-fito": "phytoplankton (producer)",
+      "j10-zoo": "zooplankton (tiny animals)",
+      "j10-ikan": "fish",
+      "j10-penguin": "penguin",
+      "j10-anjinglaut": "leopard seal",
+      "s-j11": "A path in the Arctic sea",
+      "j11-matahari": "the Sun: source of energy",
+      "j11-fito": "phytoplankton (producer)",
+      "j11-zoo": "zooplankton (tiny animals)",
+      "j11-ikan": "Arctic cod",
+      "j11-anjinglaut": "seal",
+      "j11-beruang": "polar bear",
+      "s-j12": "A path in the vegetable garden",
+      "j12-matahari": "the Sun: source of energy",
+      "j12-sawi": "mustard greens (producer)",
+      "j12-ulat": "caterpillar",
+      "j12-burung": "bulbul",
+      "j12-elang": "hawk",
+      "s-j13": "A path in the grassland",
+      "j13-matahari": "the Sun: source of energy",
+      "j13-rumput": "grass (producer)",
+      "j13-belalang": "grasshopper",
+      "j13-tikus": "mouse",
+      "j13-ular": "snake",
+      "j13-burunghantu": "owl"
     }
   },
   "knobs": {
@@ -194,6 +316,335 @@
           "id": "bangau",
           "labelKey": "j4-bangau",
           "emoji": "🐦"
+        }
+      ]
+    },
+    {
+      "id": "j5",
+      "titleKey": "s-j5",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j5-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "j5-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "j5-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "labalaba",
+          "labelKey": "j5-labalaba",
+          "emoji": "🕷️"
+        },
+        {
+          "id": "katak",
+          "labelKey": "j5-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "ular",
+          "labelKey": "j5-ular",
+          "emoji": "🐍"
+        }
+      ]
+    },
+    {
+      "id": "j6",
+      "titleKey": "s-j6",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j6-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "fito",
+          "labelKey": "j6-fito",
+          "shape": "circle",
+          "color": "#66bb6a",
+          "scale": 0.3,
+          "count": 6
+        },
+        {
+          "id": "udang",
+          "labelKey": "j6-udang",
+          "emoji": "🦐"
+        },
+        {
+          "id": "ikan",
+          "labelKey": "j6-ikan",
+          "emoji": "🐟"
+        },
+        {
+          "id": "cumi",
+          "labelKey": "j6-cumi",
+          "emoji": "🦑"
+        },
+        {
+          "id": "hiu",
+          "labelKey": "j6-hiu",
+          "emoji": "🦈"
+        }
+      ]
+    },
+    {
+      "id": "j7",
+      "titleKey": "s-j7",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j7-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "kaktus",
+          "labelKey": "j7-kaktus",
+          "emoji": "🌵"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "j7-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "kadal",
+          "labelKey": "j7-kadal",
+          "emoji": "🦎"
+        },
+        {
+          "id": "ular",
+          "labelKey": "j7-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "j7-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "j8",
+      "titleKey": "s-j8",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j8-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "pohon",
+          "labelKey": "j8-pohon",
+          "emoji": "🌳"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "j8-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "burung",
+          "labelKey": "j8-burung",
+          "emoji": "🐦"
+        },
+        {
+          "id": "ular",
+          "labelKey": "j8-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "j8-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "j9",
+      "titleKey": "s-j9",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j9-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "tumbuhan",
+          "labelKey": "j9-tumbuhan",
+          "emoji": "🌿"
+        },
+        {
+          "id": "siput",
+          "labelKey": "j9-siput",
+          "emoji": "🐌"
+        },
+        {
+          "id": "bebek",
+          "labelKey": "j9-bebek",
+          "emoji": "🦆"
+        },
+        {
+          "id": "buaya",
+          "labelKey": "j9-buaya",
+          "emoji": "🐊"
+        }
+      ]
+    },
+    {
+      "id": "j10",
+      "titleKey": "s-j10",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j10-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "fito",
+          "labelKey": "j10-fito",
+          "shape": "circle",
+          "color": "#66bb6a",
+          "scale": 0.3,
+          "count": 6
+        },
+        {
+          "id": "zoo",
+          "labelKey": "j10-zoo",
+          "shape": "circle",
+          "color": "#b0bec5",
+          "scale": 0.35,
+          "count": 4
+        },
+        {
+          "id": "ikan",
+          "labelKey": "j10-ikan",
+          "emoji": "🐟"
+        },
+        {
+          "id": "penguin",
+          "labelKey": "j10-penguin",
+          "emoji": "🐧"
+        },
+        {
+          "id": "anjinglaut",
+          "labelKey": "j10-anjinglaut",
+          "emoji": "🦭"
+        }
+      ]
+    },
+    {
+      "id": "j11",
+      "titleKey": "s-j11",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j11-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "fito",
+          "labelKey": "j11-fito",
+          "shape": "circle",
+          "color": "#66bb6a",
+          "scale": 0.3,
+          "count": 6
+        },
+        {
+          "id": "zoo",
+          "labelKey": "j11-zoo",
+          "shape": "circle",
+          "color": "#b0bec5",
+          "scale": 0.35,
+          "count": 4
+        },
+        {
+          "id": "ikan",
+          "labelKey": "j11-ikan",
+          "emoji": "🐟"
+        },
+        {
+          "id": "anjinglaut",
+          "labelKey": "j11-anjinglaut",
+          "emoji": "🦭"
+        },
+        {
+          "id": "beruang",
+          "labelKey": "j11-beruang",
+          "emoji": "🐻‍❄️"
+        }
+      ]
+    },
+    {
+      "id": "j12",
+      "titleKey": "s-j12",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j12-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "sawi",
+          "labelKey": "j12-sawi",
+          "emoji": "🥬"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "j12-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "burung",
+          "labelKey": "j12-burung",
+          "emoji": "🐦"
+        },
+        {
+          "id": "elang",
+          "labelKey": "j12-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "j13",
+      "titleKey": "s-j13",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "j13-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "rumput",
+          "labelKey": "j13-rumput",
+          "emoji": "🌿"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "j13-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "tikus",
+          "labelKey": "j13-tikus",
+          "emoji": "🐁"
+        },
+        {
+          "id": "ular",
+          "labelKey": "j13-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "burunghantu",
+          "labelKey": "j13-burunghantu",
+          "emoji": "🦉"
         }
       ]
     }

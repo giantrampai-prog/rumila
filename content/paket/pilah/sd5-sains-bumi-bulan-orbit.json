@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-bumi-bulan-orbit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUMI-ORBIT.01"
@@ -31,7 +31,13 @@
       "p-r5": "Benda buatan yang mengitari Bumi untuk siaran TV dan ramalan cuaca disebut…",
       "p-r6": "Bentuk lintasan Bumi mengelilingi Matahari adalah…",
       "p-r7": "Benda di pusat tata surya yang dikelilingi Bumi adalah…",
-      "p-r8": "Satelit adalah benda yang…"
+      "p-r8": "Satelit adalah benda yang…",
+      "i-pantul": "memantulkan cahaya Matahari",
+      "p-r9": "Planet tempat kita tinggal, yang mengelilingi Matahari, adalah…",
+      "p-r10": "Bulan adalah satelit alami milik planet…",
+      "p-r11": "Bulan tampak terang di malam hari karena…",
+      "p-r12": "Bentuk lintasan Bulan mengelilingi Bumi adalah…",
+      "p-r13": "Mana yang BUKAN satelit Bumi?"
     },
     "en": {
       "judul": "Spinning and Orbiting",
@@ -57,7 +63,13 @@
       "p-r5": "A human-made object that orbits the Earth for TV and weather forecasts is…",
       "p-r6": "The shape of the Earth's path around the Sun is…",
       "p-r7": "The object at the centre of the Solar System that the Earth goes round is…",
-      "p-r8": "A satellite is an object that…"
+      "p-r8": "A satellite is an object that…",
+      "i-pantul": "reflects light from the Sun",
+      "p-r9": "The planet we live on, which travels around the Sun, is…",
+      "p-r10": "The Moon is the natural satellite of the planet…",
+      "p-r11": "The Moon looks bright at night because it…",
+      "p-r12": "The shape of the Moon's path around the Earth is…",
+      "p-r13": "Which one is NOT a satellite of the Earth?"
     }
   },
   "knobs": {},
@@ -151,6 +163,12 @@
       "labelKey": "i-diam",
       "bin": "pilihan",
       "emoji": "📍"
+    },
+    {
+      "id": "pantul",
+      "labelKey": "i-pantul",
+      "bin": "pilihan",
+      "emoji": "🪞"
     }
   ],
   "pilihan": [
@@ -233,6 +251,55 @@
         "diam"
       ],
       "correct": "mengorbit"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "bumi",
+        "bulan",
+        "matahari"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "bumi",
+        "matahari",
+        "bulan"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "pantul",
+        "bercahaya"
+      ],
+      "correct": "pantul"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "elips",
+        "kotak",
+        "lurus"
+      ],
+      "correct": "elips"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "matahari",
+        "bulan",
+        "buatan"
+      ],
+      "correct": "matahari"
     }
   ]
 }

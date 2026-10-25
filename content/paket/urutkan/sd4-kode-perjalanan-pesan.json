@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perjalanan-pesan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -39,7 +39,37 @@
       "s5-2": "gambar dipecah jadi paket",
       "s5-3": "paket dikirim lewat internet",
       "s5-4": "HP temanmu menyusun paketnya",
-      "s5-5": "wajahmu muncul di layar temanmu"
+      "s5-5": "wajahmu muncul di layar temanmu",
+      "s6": "Mencari di internet",
+      "s6-1": "kamu mengetik kata kunci lalu menekan Cari",
+      "s6-2": "permintaan dikirim lewat Wi-Fi ke router",
+      "s6-3": "router meneruskan ke server mesin pencari",
+      "s6-4": "server mengirim daftar hasil kembali",
+      "s6-5": "hasil pencarian muncul di layarmu",
+      "s7": "Mengirim foto ke kakek",
+      "s7-1": "kamu memilih foto lalu menekan kirim",
+      "s7-2": "foto dipecah jadi paket-paket",
+      "s7-3": "paket lewat internet ke server",
+      "s7-4": "server meneruskan paket ke HP kakek",
+      "s7-5": "HP kakek menyusun paket jadi foto",
+      "s8": "Membuka situs sekolah",
+      "s8-1": "kamu mengetik alamat situs sekolah",
+      "s8-2": "laptop mengirim permintaan ke router",
+      "s8-3": "permintaan sampai ke server situs sekolah",
+      "s8-4": "server mengirim halaman dalam paket-paket",
+      "s8-5": "browser menyusun paket dan menampilkan halaman",
+      "s9": "Bermain gim daring",
+      "s9-1": "kamu menekan tombol lompat",
+      "s9-2": "perangkatmu mengirim perintah lewat internet",
+      "s9-3": "server gim menerima perintah",
+      "s9-4": "server mengirim posisi baru ke semua pemain",
+      "s9-5": "tokohmu melompat di layar temanmu",
+      "s10": "Pesan suara",
+      "s10-1": "kamu merekam suaramu",
+      "s10-2": "suara diubah jadi data lalu dipecah jadi paket",
+      "s10-3": "paket dikirim lewat internet ke server",
+      "s10-4": "server meneruskan paket ke HP temanmu",
+      "s10-5": "temanmu memutar pesan suaramu"
     },
     "en": {
       "judul": "A Message's Journey",
@@ -72,7 +102,37 @@
       "s5-2": "the picture is split into packets",
       "s5-3": "the packets are sent across the internet",
       "s5-4": "your friend's phone puts the packets together",
-      "s5-5": "your face appears on your friend's screen"
+      "s5-5": "your face appears on your friend's screen",
+      "s6": "Searching the internet",
+      "s6-1": "you type a keyword and press Search",
+      "s6-2": "the request goes over Wi-Fi to the router",
+      "s6-3": "the router passes it to the search engine server",
+      "s6-4": "the server sends back a list of results",
+      "s6-5": "the search results appear on your screen",
+      "s7": "Sending a photo to Grandpa",
+      "s7-1": "you choose a photo and press send",
+      "s7-2": "the photo is split into packets",
+      "s7-3": "the packets travel over the internet to the server",
+      "s7-4": "the server passes the packets to Grandpa's phone",
+      "s7-5": "Grandpa's phone puts the packets back into a photo",
+      "s8": "Opening the school website",
+      "s8-1": "you type the school website address",
+      "s8-2": "the laptop sends a request to the router",
+      "s8-3": "the request reaches the school website server",
+      "s8-4": "the server sends the page in packets",
+      "s8-5": "the browser puts the packets together and shows the page",
+      "s9": "Playing an online game",
+      "s9-1": "you press the jump button",
+      "s9-2": "your device sends the command over the internet",
+      "s9-3": "the game server receives the command",
+      "s9-4": "the server sends the new position to all players",
+      "s9-5": "your character jumps on your friend's screen",
+      "s10": "Voice message",
+      "s10-1": "you record your voice",
+      "s10-2": "the sound is turned into data and split into packets",
+      "s10-3": "the packets are sent over the internet to the server",
+      "s10-4": "the server passes the packets to your friend's phone",
+      "s10-5": "your friend plays your voice message"
     }
   },
   "knobs": {
@@ -237,6 +297,136 @@
           "id": "s5-5",
           "labelKey": "s5-5",
           "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-1",
+          "labelKey": "s6-1"
+        },
+        {
+          "id": "s6-2",
+          "labelKey": "s6-2"
+        },
+        {
+          "id": "s6-3",
+          "labelKey": "s6-3"
+        },
+        {
+          "id": "s6-4",
+          "labelKey": "s6-4"
+        },
+        {
+          "id": "s6-5",
+          "labelKey": "s6-5"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-1",
+          "labelKey": "s7-1"
+        },
+        {
+          "id": "s7-2",
+          "labelKey": "s7-2"
+        },
+        {
+          "id": "s7-3",
+          "labelKey": "s7-3"
+        },
+        {
+          "id": "s7-4",
+          "labelKey": "s7-4"
+        },
+        {
+          "id": "s7-5",
+          "labelKey": "s7-5"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-1",
+          "labelKey": "s8-1"
+        },
+        {
+          "id": "s8-2",
+          "labelKey": "s8-2"
+        },
+        {
+          "id": "s8-3",
+          "labelKey": "s8-3"
+        },
+        {
+          "id": "s8-4",
+          "labelKey": "s8-4"
+        },
+        {
+          "id": "s8-5",
+          "labelKey": "s8-5"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-1",
+          "labelKey": "s9-1"
+        },
+        {
+          "id": "s9-2",
+          "labelKey": "s9-2"
+        },
+        {
+          "id": "s9-3",
+          "labelKey": "s9-3"
+        },
+        {
+          "id": "s9-4",
+          "labelKey": "s9-4"
+        },
+        {
+          "id": "s9-5",
+          "labelKey": "s9-5"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-1",
+          "labelKey": "s10-1"
+        },
+        {
+          "id": "s10-2",
+          "labelKey": "s10-2"
+        },
+        {
+          "id": "s10-3",
+          "labelKey": "s10-3"
+        },
+        {
+          "id": "s10-4",
+          "labelKey": "s10-4"
+        },
+        {
+          "id": "s10-5",
+          "labelKey": "s10-5"
         }
       ]
     }

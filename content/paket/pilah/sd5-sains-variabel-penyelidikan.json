@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-variabel-penyelidikan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENYELIDIKAN.01"
@@ -28,7 +28,13 @@
       "p-r6": "Apakah tinggi papan memengaruhi jarak mobil meluncur? Apa yang dijaga tetap?",
       "p-r7": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang diubah?",
       "p-r8": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang diukur?",
-      "p-r9": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang dijaga tetap?"
+      "p-r9": "Apakah banyak cahaya memengaruhi tinggi tanaman? Apa yang dijaga tetap?",
+      "i-ukuranparasut": "ukuran parasut",
+      "i-lamajatuh": "lama parasut sampai ke lantai",
+      "i-tinggilepas": "tinggi tempat parasut dilepas",
+      "p-r10": "Apakah ukuran parasut memengaruhi lama jatuhnya? Apa yang diubah?",
+      "p-r11": "Apakah ukuran parasut memengaruhi lama jatuhnya? Apa yang diukur?",
+      "p-r12": "Apakah ukuran parasut memengaruhi lama jatuhnya? Apa yang dijaga tetap?"
     },
     "en": {
       "judul": "Each Variable's Job",
@@ -51,7 +57,13 @@
       "p-r6": "Does the height of a ramp affect how far a toy car rolls? What do you keep the same?",
       "p-r7": "Does the amount of light affect how tall a plant grows? What do you change?",
       "p-r8": "Does the amount of light affect how tall a plant grows? What do you measure?",
-      "p-r9": "Does the amount of light affect how tall a plant grows? What do you keep the same?"
+      "p-r9": "Does the amount of light affect how tall a plant grows? What do you keep the same?",
+      "i-ukuranparasut": "size of the parachute",
+      "i-lamajatuh": "time for the parachute to reach the floor",
+      "i-tinggilepas": "height the parachute is dropped from",
+      "p-r10": "Does the size of a parachute affect how long it takes to fall? What is changed?",
+      "p-r11": "Does the size of a parachute affect how long it takes to fall? What is measured?",
+      "p-r12": "Does the size of a parachute affect how long it takes to fall? What is kept the same?"
     }
   },
   "knobs": {},
@@ -121,6 +133,24 @@
       "labelKey": "i-banyakair",
       "bin": "pilihan",
       "emoji": "💧"
+    },
+    {
+      "id": "ukuranparasut",
+      "labelKey": "i-ukuranparasut",
+      "bin": "pilihan",
+      "emoji": "🪂"
+    },
+    {
+      "id": "lamajatuh",
+      "labelKey": "i-lamajatuh",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "tinggilepas",
+      "labelKey": "i-tinggilepas",
+      "bin": "pilihan",
+      "emoji": "📏"
     }
   ],
   "pilihan": [
@@ -213,6 +243,36 @@
         "tinggitanaman"
       ],
       "correct": "banyakair"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "ukuranparasut",
+        "lamajatuh",
+        "tinggilepas"
+      ],
+      "correct": "ukuranparasut"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "lamajatuh",
+        "ukuranparasut",
+        "tinggilepas"
+      ],
+      "correct": "lamajatuh"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "tinggilepas",
+        "ukuranparasut",
+        "lamajatuh"
+      ],
+      "correct": "tinggilepas"
     }
   ]
 }

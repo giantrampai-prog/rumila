@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-tugas-rangka",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.RANGKA-OTOT.02"
@@ -21,7 +21,13 @@
       "p-r4": "Tulang kaki menahan berat badan saat kita berdiri lama. Apa tugasnya?",
       "p-r5": "Otot menarik tulang paha saat kita menendang bola. Apa tugas tulang di sini?",
       "p-r6": "Sendi lutut membuat kaki bisa ditekuk saat naik tangga. Apa tugasnya?",
-      "p-r7": "Kerangka di museum masih menunjukkan wujud dinosaurus walau dagingnya sudah lama hilang. Apa tugasnya?"
+      "p-r7": "Kerangka di museum masih menunjukkan wujud dinosaurus walau dagingnya sudah lama hilang. Apa tugasnya?",
+      "p-r8": "Ruas-ruas tulang belakang membungkus saraf penting seperti terowongan. Apa tugasnya di sini?",
+      "p-r9": "Tempurung lutut menutupi bagian depan sendi lutut agar tidak mudah cedera. Apa tugasnya?",
+      "p-r10": "Tulang panggul menahan berat tubuh bagian atas saat kita duduk. Apa tugasnya?",
+      "p-r11": "Sendi bahu membuat lengan bisa diputar saat berenang. Apa tugasnya?",
+      "p-r12": "Otot menarik tulang rahang naik-turun saat kita mengunyah. Apa tugas tulang di sini?",
+      "p-r13": "Rangka membuat wujud tubuh kita khas manusia: bahu lebar, lengan dan kaki panjang. Apa tugasnya?"
     },
     "en": {
       "judul": "The Skeleton's Jobs",
@@ -37,7 +43,13 @@
       "p-r4": "Leg bones hold up the body's weight when we stand for a long time. What is their job?",
       "p-r5": "Muscles pull the thigh bone when we kick a ball. What job is the bone doing?",
       "p-r6": "The knee joint lets the leg bend when we climb stairs. What is its job?",
-      "p-r7": "A museum skeleton still shows the dinosaur's form long after the flesh is gone. What is its job?"
+      "p-r7": "A museum skeleton still shows the dinosaur's form long after the flesh is gone. What is its job?",
+      "p-r8": "The bones of the spine wrap around important nerves like a tunnel. What is their job here?",
+      "p-r9": "The kneecap covers the front of the knee joint so it is not easily hurt. What is its job?",
+      "p-r10": "The hip bones hold up the weight of the upper body when we sit. What is their job?",
+      "p-r11": "The shoulder joint lets the arm turn round while swimming. What is its job?",
+      "p-r12": "Muscles pull the jaw bone up and down while we chew. What is the bone's job here?",
+      "p-r13": "The skeleton gives our body its human outline: wide shoulders, long arms and legs. What is its job?"
     }
   },
   "knobs": {},
@@ -149,6 +161,72 @@
     {
       "id": "r7",
       "promptKey": "p-r7",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "bentuk"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "topang"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
       "choices": [
         "lindungi",
         "topang",

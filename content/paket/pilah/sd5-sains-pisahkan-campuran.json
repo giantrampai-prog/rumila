@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pisahkan-campuran",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.02"
@@ -29,7 +29,11 @@
       "p-r5": "Gula larut di teh. Kalau tehnya disaring, gulanya…",
       "p-r6": "Air laut dijemur di tambak sampai airnya habis. Yang tertinggal adalah…",
       "p-r7": "Melarutkan garam bisa dibalik. Buktinya…",
-      "p-r8": "Air bercampur lumpur, tidak ada saringan, dan airnya mau dipakai lagi. Apa yang bisa dilakukan?"
+      "p-r8": "Air bercampur lumpur, tidak ada saringan, dan airnya mau dipakai lagi. Apa yang bisa dilakukan?",
+      "p-r9": "Klip kertas dari besi jatuh ke dalam toples beras.",
+      "p-r10": "Air teh bercampur ampas daun teh.",
+      "p-r11": "Beras kering tercampur butiran pasir yang lebih kecil dari beras.",
+      "p-r12": "Air berpasir dituang ke kertas saring. Pasirnya…"
     },
     "en": {
       "judul": "Separate the Mixture",
@@ -53,7 +57,11 @@
       "p-r5": "Sugar has dissolved in tea. If the tea is filtered, the sugar…",
       "p-r6": "Seawater is left in a salt pan until the water is gone. What is left behind?",
       "p-r7": "Dissolving salt can be reversed. The evidence is…",
-      "p-r8": "Water is mixed with mud, there is no filter, and you want to use the water again. What can you do?"
+      "p-r8": "Water is mixed with mud, there is no filter, and you want to use the water again. What can you do?",
+      "p-r9": "Iron paper clips fell into a jar of rice.",
+      "p-r10": "Tea is mixed with soggy tea leaves.",
+      "p-r11": "Dry rice is mixed with sand grains that are smaller than the rice.",
+      "p-r12": "Sandy water is poured through filter paper. The sand…"
     }
   },
   "knobs": {},
@@ -214,6 +222,45 @@
         "magnet"
       ],
       "correct": "endapkan"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "magnet",
+        "uapkan",
+        "saring"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "saring",
+        "uapkan",
+        "magnet"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "ayak",
+        "magnet",
+        "uapkan"
+      ],
+      "correct": "ayak"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "tertahan",
+        "lewat"
+      ],
+      "correct": "tertahan"
     }
   ]
 }

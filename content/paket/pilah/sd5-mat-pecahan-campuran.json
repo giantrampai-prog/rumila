@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-pecahan-campuran",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -24,7 +24,14 @@
       "i7": "10/6",
       "i8": "7/2",
       "i9": "14/4",
-      "i10": "21/6"
+      "i10": "21/6",
+      "i11": "12/8",
+      "i12": "15/10",
+      "i13": "27/12",
+      "i14": "36/16",
+      "i15": "15/9",
+      "i16": "20/12",
+      "i17": "28/8"
     },
     "en": {
       "judul": "Mixed Number Shelves",
@@ -42,7 +49,14 @@
       "i7": "10/6",
       "i8": "7/2",
       "i9": "14/4",
-      "i10": "21/6"
+      "i10": "21/6",
+      "i11": "12/8",
+      "i12": "15/10",
+      "i13": "27/12",
+      "i14": "36/16",
+      "i15": "15/9",
+      "i16": "20/12",
+      "i17": "28/8"
     }
   },
   "knobs": {
@@ -134,6 +148,41 @@
     {
       "id": "i10",
       "labelKey": "i10",
+      "bin": "tigasetengah"
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "satusetengah"
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "satusetengah"
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "duaseperempat"
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "duaseperempat"
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "satuduapertiga"
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "satuduapertiga"
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
       "bin": "tigasetengah"
     }
   ]

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-bentuk-bulan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -110,6 +110,214 @@
           "id": "sabit",
           "labelKey": "mengecil-sabit",
           "emoji": "🌘"
+        },
+        {
+          "id": "baru",
+          "labelKey": "mengecil-baru",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "membesar-tanpa-baru",
+      "titleKey": "s-membesar",
+      "steps": [
+        {
+          "id": "sabit",
+          "labelKey": "membesar-sabit",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "membesar-separuh",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "membesar-cembung",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "membesar-purnama",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "membesar-tanpa-sabit",
+      "titleKey": "s-membesar",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "membesar-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "membesar-separuh",
+          "emoji": "🌓"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "membesar-cembung",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "membesar-purnama",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "membesar-tanpa-separuh",
+      "titleKey": "s-membesar",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "membesar-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "membesar-sabit",
+          "emoji": "🌒"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "membesar-cembung",
+          "emoji": "🌔"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "membesar-purnama",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "membesar-tanpa-cembung",
+      "titleKey": "s-membesar",
+      "steps": [
+        {
+          "id": "baru",
+          "labelKey": "membesar-baru",
+          "emoji": "🌑"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "membesar-sabit",
+          "emoji": "🌒"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "membesar-separuh",
+          "emoji": "🌓"
+        },
+        {
+          "id": "purnama",
+          "labelKey": "membesar-purnama",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "mengecil-tanpa-purnama",
+      "titleKey": "s-mengecil",
+      "steps": [
+        {
+          "id": "cembung",
+          "labelKey": "mengecil-cembung",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "mengecil-separuh",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "mengecil-sabit",
+          "emoji": "🌘"
+        },
+        {
+          "id": "baru",
+          "labelKey": "mengecil-baru",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "mengecil-tanpa-cembung",
+      "titleKey": "s-mengecil",
+      "steps": [
+        {
+          "id": "purnama",
+          "labelKey": "mengecil-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "mengecil-separuh",
+          "emoji": "🌗"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "mengecil-sabit",
+          "emoji": "🌘"
+        },
+        {
+          "id": "baru",
+          "labelKey": "mengecil-baru",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "mengecil-tanpa-separuh",
+      "titleKey": "s-mengecil",
+      "steps": [
+        {
+          "id": "purnama",
+          "labelKey": "mengecil-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "mengecil-cembung",
+          "emoji": "🌖"
+        },
+        {
+          "id": "sabit",
+          "labelKey": "mengecil-sabit",
+          "emoji": "🌘"
+        },
+        {
+          "id": "baru",
+          "labelKey": "mengecil-baru",
+          "emoji": "🌑"
+        }
+      ]
+    },
+    {
+      "id": "mengecil-tanpa-sabit",
+      "titleKey": "s-mengecil",
+      "steps": [
+        {
+          "id": "purnama",
+          "labelKey": "mengecil-purnama",
+          "emoji": "🌕"
+        },
+        {
+          "id": "cembung",
+          "labelKey": "mengecil-cembung",
+          "emoji": "🌖"
+        },
+        {
+          "id": "separuh",
+          "labelKey": "mengecil-separuh",
+          "emoji": "🌗"
         },
         {
           "id": "baru",

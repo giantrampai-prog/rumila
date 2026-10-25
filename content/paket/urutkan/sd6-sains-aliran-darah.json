@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-aliran-darah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.SIRKULASI.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Keliling Pembuluh Darah",
-      "instruksi": "Baca judulnya, lalu susun perjalanan darah.",
+      "instruksi": "Baca judulnya, lalu susun perjalanan darah, mulai dari jantung memompa.",
       "s-tubuh": "Darah ke seluruh tubuh",
       "tubuh-pompa": "jantung memompa darah kaya oksigen",
       "tubuh-arteri": "arteri membawa darah ke seluruh tubuh",
@@ -20,11 +20,65 @@
       "paru-pompa": "jantung memompa darah ke paru-paru",
       "paru-ambil": "di paru-paru darah melepas karbon dioksida dan mengambil oksigen",
       "paru-kembali": "darah kaya oksigen kembali ke jantung",
-      "paru-ketubuh": "jantung memompanya ke seluruh tubuh"
+      "paru-ketubuh": "jantung memompanya ke seluruh tubuh",
+      "s-otak": "Darah menuju otak",
+      "otak-pompa": "jantung memompa darah kaya oksigen",
+      "otak-arteri": "arteri membawa darah ke otak",
+      "otak-kapiler": "di kapiler otak, oksigen dan sari makanan masuk ke sel",
+      "otak-sisa": "sel otak menyerahkan karbon dioksida ke darah",
+      "otak-vena": "vena membawa darah kembali ke jantung",
+      "s-kaki": "Darah menuju otot kaki",
+      "kaki-pompa": "jantung memompa darah kaya oksigen",
+      "kaki-arteri": "arteri membawa darah ke otot kaki",
+      "kaki-kapiler": "di kapiler otot kaki, oksigen dan sari makanan masuk ke sel",
+      "kaki-sisa": "sel otot kaki menyerahkan karbon dioksida ke darah",
+      "kaki-vena": "vena membawa darah kembali ke jantung",
+      "s-lengan": "Darah menuju otot lengan",
+      "lengan-pompa": "jantung memompa darah kaya oksigen",
+      "lengan-arteri": "arteri membawa darah ke otot lengan",
+      "lengan-kapiler": "di kapiler otot lengan, oksigen dan sari makanan masuk ke sel",
+      "lengan-sisa": "sel otot lengan menyerahkan karbon dioksida ke darah",
+      "lengan-vena": "vena membawa darah kembali ke jantung",
+      "s-tangan": "Darah menuju jari tangan",
+      "tangan-pompa": "jantung memompa darah kaya oksigen",
+      "tangan-arteri": "arteri membawa darah ke jari tangan",
+      "tangan-kapiler": "di kapiler jari tangan, oksigen dan sari makanan masuk ke sel",
+      "tangan-sisa": "sel jari tangan menyerahkan karbon dioksida ke darah",
+      "tangan-vena": "vena membawa darah kembali ke jantung",
+      "s-telinga": "Darah menuju telinga",
+      "telinga-pompa": "jantung memompa darah kaya oksigen",
+      "telinga-arteri": "arteri membawa darah ke telinga",
+      "telinga-kapiler": "di kapiler telinga, oksigen dan sari makanan masuk ke sel",
+      "telinga-sisa": "sel telinga menyerahkan karbon dioksida ke darah",
+      "telinga-vena": "vena membawa darah kembali ke jantung",
+      "s-lidah": "Darah menuju lidah",
+      "lidah-pompa": "jantung memompa darah kaya oksigen",
+      "lidah-arteri": "arteri membawa darah ke lidah",
+      "lidah-kapiler": "di kapiler lidah, oksigen dan sari makanan masuk ke sel",
+      "lidah-sisa": "sel lidah menyerahkan karbon dioksida ke darah",
+      "lidah-vena": "vena membawa darah kembali ke jantung",
+      "s-hidung": "Darah menuju hidung",
+      "hidung-pompa": "jantung memompa darah kaya oksigen",
+      "hidung-arteri": "arteri membawa darah ke hidung",
+      "hidung-kapiler": "di kapiler hidung, oksigen dan sari makanan masuk ke sel",
+      "hidung-sisa": "sel hidung menyerahkan karbon dioksida ke darah",
+      "hidung-vena": "vena membawa darah kembali ke jantung",
+      "s-mata": "Darah menuju mata",
+      "mata-pompa": "jantung memompa darah kaya oksigen",
+      "mata-arteri": "arteri membawa darah ke mata",
+      "mata-kapiler": "di kapiler mata, oksigen dan sari makanan masuk ke sel",
+      "mata-sisa": "sel mata menyerahkan karbon dioksida ke darah",
+      "mata-vena": "vena membawa darah kembali ke jantung",
+      "s-parupanjang": "Darah singgah di paru-paru",
+      "parupanjang-pompa": "jantung memompa darah miskin oksigen",
+      "parupanjang-arteri": "arteri paru-paru membawanya ke paru-paru",
+      "parupanjang-tukar": "di kapiler paru-paru, karbon dioksida dilepas dan oksigen diambil",
+      "parupanjang-venaparu": "vena paru-paru membawa darah kaya oksigen",
+      "parupanjang-tiba": "darah tiba kembali di jantung"
     },
     "en": {
       "judul": "Round the Blood Vessels",
-      "instruksi": "Read the title, then put the blood's journey in order.",
+      "instruksi": "Read the title, then put the blood's journey in order, starting when the heart pumps.",
       "s-tubuh": "Blood around the body",
       "tubuh-pompa": "the heart pumps oxygen-rich blood",
       "tubuh-arteri": "arteries carry blood around the body",
@@ -35,7 +89,61 @@
       "paru-pompa": "the heart pumps blood to the lungs",
       "paru-ambil": "in the lungs blood drops carbon dioxide and picks up oxygen",
       "paru-kembali": "oxygen-rich blood returns to the heart",
-      "paru-ketubuh": "the heart pumps it around the body"
+      "paru-ketubuh": "the heart pumps it around the body",
+      "s-otak": "Blood to the brain",
+      "otak-pompa": "the heart pumps oxygen-rich blood",
+      "otak-arteri": "arteries carry the blood to the brain",
+      "otak-kapiler": "in the capillaries of the brain, oxygen and nutrients pass into the cells",
+      "otak-sisa": "cells of the brain pass carbon dioxide into the blood",
+      "otak-vena": "veins carry the blood back to the heart",
+      "s-kaki": "Blood to the leg muscles",
+      "kaki-pompa": "the heart pumps oxygen-rich blood",
+      "kaki-arteri": "arteries carry the blood to the leg muscles",
+      "kaki-kapiler": "in the capillaries of the leg muscles, oxygen and nutrients pass into the cells",
+      "kaki-sisa": "cells of the leg muscles pass carbon dioxide into the blood",
+      "kaki-vena": "veins carry the blood back to the heart",
+      "s-lengan": "Blood to the arm muscles",
+      "lengan-pompa": "the heart pumps oxygen-rich blood",
+      "lengan-arteri": "arteries carry the blood to the arm muscles",
+      "lengan-kapiler": "in the capillaries of the arm muscles, oxygen and nutrients pass into the cells",
+      "lengan-sisa": "cells of the arm muscles pass carbon dioxide into the blood",
+      "lengan-vena": "veins carry the blood back to the heart",
+      "s-tangan": "Blood to the fingers",
+      "tangan-pompa": "the heart pumps oxygen-rich blood",
+      "tangan-arteri": "arteries carry the blood to the fingers",
+      "tangan-kapiler": "in the capillaries of the fingers, oxygen and nutrients pass into the cells",
+      "tangan-sisa": "cells of the fingers pass carbon dioxide into the blood",
+      "tangan-vena": "veins carry the blood back to the heart",
+      "s-telinga": "Blood to the ears",
+      "telinga-pompa": "the heart pumps oxygen-rich blood",
+      "telinga-arteri": "arteries carry the blood to the ears",
+      "telinga-kapiler": "in the capillaries of the ears, oxygen and nutrients pass into the cells",
+      "telinga-sisa": "cells of the ears pass carbon dioxide into the blood",
+      "telinga-vena": "veins carry the blood back to the heart",
+      "s-lidah": "Blood to the tongue",
+      "lidah-pompa": "the heart pumps oxygen-rich blood",
+      "lidah-arteri": "arteries carry the blood to the tongue",
+      "lidah-kapiler": "in the capillaries of the tongue, oxygen and nutrients pass into the cells",
+      "lidah-sisa": "cells of the tongue pass carbon dioxide into the blood",
+      "lidah-vena": "veins carry the blood back to the heart",
+      "s-hidung": "Blood to the nose",
+      "hidung-pompa": "the heart pumps oxygen-rich blood",
+      "hidung-arteri": "arteries carry the blood to the nose",
+      "hidung-kapiler": "in the capillaries of the nose, oxygen and nutrients pass into the cells",
+      "hidung-sisa": "cells of the nose pass carbon dioxide into the blood",
+      "hidung-vena": "veins carry the blood back to the heart",
+      "s-mata": "Blood to the eyes",
+      "mata-pompa": "the heart pumps oxygen-rich blood",
+      "mata-arteri": "arteries carry the blood to the eyes",
+      "mata-kapiler": "in the capillaries of the eyes, oxygen and nutrients pass into the cells",
+      "mata-sisa": "cells of the eyes pass carbon dioxide into the blood",
+      "mata-vena": "veins carry the blood back to the heart",
+      "s-parupanjang": "Blood visits the lungs",
+      "parupanjang-pompa": "the heart pumps oxygen-poor blood",
+      "parupanjang-arteri": "the pulmonary artery carries it to the lungs",
+      "parupanjang-tukar": "in the lung capillaries, carbon dioxide is let go and oxygen is picked up",
+      "parupanjang-venaparu": "the pulmonary vein carries oxygen-rich blood",
+      "parupanjang-tiba": "the blood arrives back at the heart"
     }
   },
   "knobs": {
@@ -112,6 +220,303 @@
           "id": "ketubuh",
           "labelKey": "paru-ketubuh",
           "emoji": "🏃"
+        }
+      ]
+    },
+    {
+      "id": "otak",
+      "titleKey": "s-otak",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "otak-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "otak-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "otak-kapiler",
+          "emoji": "🧠"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "otak-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "otak-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "kaki",
+      "titleKey": "s-kaki",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "kaki-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "kaki-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "kaki-kapiler",
+          "emoji": "🦵"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "kaki-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "kaki-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "lengan",
+      "titleKey": "s-lengan",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "lengan-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "lengan-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "lengan-kapiler",
+          "emoji": "💪"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "lengan-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "lengan-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "tangan",
+      "titleKey": "s-tangan",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "tangan-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "tangan-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "tangan-kapiler",
+          "emoji": "🖐️"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "tangan-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "tangan-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "telinga",
+      "titleKey": "s-telinga",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "telinga-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "telinga-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "telinga-kapiler",
+          "emoji": "👂"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "telinga-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "telinga-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "lidah",
+      "titleKey": "s-lidah",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "lidah-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "lidah-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "lidah-kapiler",
+          "emoji": "👅"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "lidah-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "lidah-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "hidung",
+      "titleKey": "s-hidung",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "hidung-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "hidung-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "hidung-kapiler",
+          "emoji": "👃"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "hidung-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "hidung-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "mata",
+      "titleKey": "s-mata",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "mata-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "mata-arteri",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "kapiler",
+          "labelKey": "mata-kapiler",
+          "emoji": "👁️"
+        },
+        {
+          "id": "sisa",
+          "labelKey": "mata-sisa",
+          "emoji": "💨"
+        },
+        {
+          "id": "vena",
+          "labelKey": "mata-vena",
+          "shape": "rect",
+          "color": "#3949ab"
+        }
+      ]
+    },
+    {
+      "id": "parupanjang",
+      "titleKey": "s-parupanjang",
+      "steps": [
+        {
+          "id": "pompa",
+          "labelKey": "parupanjang-pompa",
+          "emoji": "🫀"
+        },
+        {
+          "id": "arteri",
+          "labelKey": "parupanjang-arteri",
+          "shape": "rect",
+          "color": "#3949ab"
+        },
+        {
+          "id": "tukar",
+          "labelKey": "parupanjang-tukar",
+          "emoji": "🫁"
+        },
+        {
+          "id": "venaparu",
+          "labelKey": "parupanjang-venaparu",
+          "shape": "rect",
+          "color": "#e53935"
+        },
+        {
+          "id": "tiba",
+          "labelKey": "parupanjang-tiba",
+          "emoji": "↩️"
         }
       ]
     }

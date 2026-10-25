@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-perbaiki-urutan-bayangan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -30,7 +30,37 @@
       "bintang-p1": "bintang kertas tepat di depan senter",
       "bintang-p2": "bintang kertas agak dekat senter",
       "bintang-p3": "bintang kertas di tengah",
-      "bintang-p4": "bintang kertas dekat layar"
+      "bintang-p4": "bintang kertas dekat layar",
+      "s-apel": "Bayangan apel",
+      "apel-p1": "apel tepat di depan senter",
+      "apel-p2": "apel agak dekat senter",
+      "apel-p3": "apel di tengah",
+      "apel-p4": "apel dekat layar",
+      "s-mobil": "Bayangan mobil mainan",
+      "mobil-p1": "mobil mainan tepat di depan senter",
+      "mobil-p2": "mobil mainan agak dekat senter",
+      "mobil-p3": "mobil mainan di tengah",
+      "mobil-p4": "mobil mainan dekat layar",
+      "s-tangan": "Bayangan tangan",
+      "tangan-p1": "tangan tepat di depan senter",
+      "tangan-p2": "tangan agak dekat senter",
+      "tangan-p3": "tangan di tengah",
+      "tangan-p4": "tangan dekat layar",
+      "s-kupu": "Bayangan kupu-kupu kertas",
+      "kupu-p1": "kupu-kupu kertas tepat di depan senter",
+      "kupu-p2": "kupu-kupu kertas agak dekat senter",
+      "kupu-p3": "kupu-kupu kertas di tengah",
+      "kupu-p4": "kupu-kupu kertas dekat layar",
+      "s-kunci": "Bayangan kunci",
+      "kunci-p1": "kunci tepat di depan senter",
+      "kunci-p2": "kunci agak dekat senter",
+      "kunci-p3": "kunci di tengah",
+      "kunci-p4": "kunci dekat layar",
+      "s-payung": "Bayangan payung mainan",
+      "payung-p1": "payung mainan tepat di depan senter",
+      "payung-p2": "payung mainan agak dekat senter",
+      "payung-p3": "payung mainan di tengah",
+      "payung-p4": "payung mainan dekat layar"
     },
     "en": {
       "judul": "Shadows Mixed Up",
@@ -54,7 +84,37 @@
       "bintang-p1": "paper star right in front of the torch",
       "bintang-p2": "paper star fairly close to the torch",
       "bintang-p3": "paper star halfway",
-      "bintang-p4": "paper star close to the screen"
+      "bintang-p4": "paper star close to the screen",
+      "s-apel": "An apple's shadow",
+      "apel-p1": "An apple right in front of the torch",
+      "apel-p2": "An apple quite close to the torch",
+      "apel-p3": "An apple in the middle",
+      "apel-p4": "An apple close to the screen",
+      "s-mobil": "A toy car's shadow",
+      "mobil-p1": "The toy car right in front of the torch",
+      "mobil-p2": "The toy car quite close to the torch",
+      "mobil-p3": "The toy car in the middle",
+      "mobil-p4": "The toy car close to the screen",
+      "s-tangan": "A hand's shadow",
+      "tangan-p1": "A hand right in front of the torch",
+      "tangan-p2": "A hand quite close to the torch",
+      "tangan-p3": "A hand in the middle",
+      "tangan-p4": "A hand close to the screen",
+      "s-kupu": "A paper butterfly's shadow",
+      "kupu-p1": "The paper butterfly right in front of the torch",
+      "kupu-p2": "The paper butterfly quite close to the torch",
+      "kupu-p3": "The paper butterfly in the middle",
+      "kupu-p4": "The paper butterfly close to the screen",
+      "s-kunci": "A key's shadow",
+      "kunci-p1": "The key right in front of the torch",
+      "kunci-p2": "The key quite close to the torch",
+      "kunci-p3": "The key in the middle",
+      "kunci-p4": "The key close to the screen",
+      "s-payung": "A toy umbrella's shadow",
+      "payung-p1": "The toy umbrella right in front of the torch",
+      "payung-p2": "The toy umbrella quite close to the torch",
+      "payung-p3": "The toy umbrella in the middle",
+      "payung-p4": "The toy umbrella close to the screen"
     }
   },
   "knobs": {
@@ -173,6 +233,162 @@
           "id": "p4",
           "labelKey": "bintang-p4",
           "emoji": "⭐"
+        }
+      ]
+    },
+    {
+      "id": "apel",
+      "titleKey": "s-apel",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "apel-p1",
+          "emoji": "🍎"
+        },
+        {
+          "id": "p2",
+          "labelKey": "apel-p2",
+          "emoji": "🍎"
+        },
+        {
+          "id": "p3",
+          "labelKey": "apel-p3",
+          "emoji": "🍎"
+        },
+        {
+          "id": "p4",
+          "labelKey": "apel-p4",
+          "emoji": "🍎"
+        }
+      ]
+    },
+    {
+      "id": "mobil",
+      "titleKey": "s-mobil",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "mobil-p1",
+          "emoji": "🚗"
+        },
+        {
+          "id": "p2",
+          "labelKey": "mobil-p2",
+          "emoji": "🚗"
+        },
+        {
+          "id": "p3",
+          "labelKey": "mobil-p3",
+          "emoji": "🚗"
+        },
+        {
+          "id": "p4",
+          "labelKey": "mobil-p4",
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": "tangan",
+      "titleKey": "s-tangan",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "tangan-p1",
+          "emoji": "✋"
+        },
+        {
+          "id": "p2",
+          "labelKey": "tangan-p2",
+          "emoji": "✋"
+        },
+        {
+          "id": "p3",
+          "labelKey": "tangan-p3",
+          "emoji": "✋"
+        },
+        {
+          "id": "p4",
+          "labelKey": "tangan-p4",
+          "emoji": "✋"
+        }
+      ]
+    },
+    {
+      "id": "kupu",
+      "titleKey": "s-kupu",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "kupu-p1",
+          "emoji": "🦋"
+        },
+        {
+          "id": "p2",
+          "labelKey": "kupu-p2",
+          "emoji": "🦋"
+        },
+        {
+          "id": "p3",
+          "labelKey": "kupu-p3",
+          "emoji": "🦋"
+        },
+        {
+          "id": "p4",
+          "labelKey": "kupu-p4",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "kunci",
+      "titleKey": "s-kunci",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "kunci-p1",
+          "emoji": "🔑"
+        },
+        {
+          "id": "p2",
+          "labelKey": "kunci-p2",
+          "emoji": "🔑"
+        },
+        {
+          "id": "p3",
+          "labelKey": "kunci-p3",
+          "emoji": "🔑"
+        },
+        {
+          "id": "p4",
+          "labelKey": "kunci-p4",
+          "emoji": "🔑"
+        }
+      ]
+    },
+    {
+      "id": "payung",
+      "titleKey": "s-payung",
+      "steps": [
+        {
+          "id": "p1",
+          "labelKey": "payung-p1",
+          "emoji": "☂️"
+        },
+        {
+          "id": "p2",
+          "labelKey": "payung-p2",
+          "emoji": "☂️"
+        },
+        {
+          "id": "p3",
+          "labelKey": "payung-p3",
+          "emoji": "☂️"
+        },
+        {
+          "id": "p4",
+          "labelKey": "payung-p4",
+          "emoji": "☂️"
         }
       ]
     }

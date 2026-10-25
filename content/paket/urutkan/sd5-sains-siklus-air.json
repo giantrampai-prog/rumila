@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-air",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-AIR.01"
@@ -26,7 +26,53 @@
       "gelas-es": "gelas berisi es teh di meja",
       "gelas-udara": "udara hangat menyentuh gelas yang dingin",
       "gelas-embun": "uap air di udara mengembun",
-      "gelas-titik": "titik-titik air muncul di luar gelas"
+      "gelas-titik": "titik-titik air muncul di luar gelas",
+      "s-cermin": "Cermin kamar mandi",
+      "cermin-mandi": "kamu mandi dengan air hangat",
+      "cermin-uap": "air hangat menguap, uap memenuhi kamar mandi",
+      "cermin-cermin": "uap menyentuh cermin yang dingin",
+      "cermin-buram": "uap mengembun, cermin jadi buram",
+      "cermin-titik": "titik-titik air menyatu dan mengalir turun",
+      "s-panci": "Panci di atas kompor",
+      "panci-api": "air dalam panci dipanaskan di atas api",
+      "panci-didih": "air mendidih dan menguap",
+      "panci-naik": "uap naik ke tutup panci yang lebih dingin",
+      "panci-embun": "uap mengembun jadi titik air di tutup",
+      "panci-tetes": "titik air menetes kembali ke panci",
+      "s-daun": "Embun di daun",
+      "daun-siang": "siang hari, air di tanah menguap ke udara",
+      "daun-malam": "malam tiba, udara mendingin",
+      "daun-embun": "uap air mengembun jadi titik embun di daun",
+      "daun-pagi": "pagi hari, daun basah oleh embun",
+      "daun-hilang": "Matahari makin tinggi, embun menguap lagi",
+      "s-pohon": "Air lewat sebatang pohon",
+      "pohon-akar": "akar pohon menyerap air dari tanah",
+      "pohon-batang": "air naik lewat batang ke daun",
+      "pohon-daun": "daun melepaskan air sebagai uap air",
+      "pohon-awan": "uap naik, mendingin, mengembun jadi awan",
+      "pohon-hujan": "hujan turun membasahi tanah lagi",
+      "s-salju": "Salju di puncak gunung",
+      "salju-awan": "uap air naik dan mengembun jadi awan di atas gunung",
+      "salju-beku": "di awan yang sangat dingin, air membeku jadi kepingan salju",
+      "salju-turun": "salju turun menutupi puncak gunung",
+      "salju-cair": "hari menghangat, salju mencair",
+      "salju-sungai": "air lelehan salju mengalir ke sungai",
+      "s-esbatu": "Es batu di piring",
+      "esbatu-es": "es batu di piring, ditaruh di bawah terik",
+      "esbatu-cair": "es mencair jadi genangan air",
+      "esbatu-uap": "air di piring menguap jadi uap air",
+      "esbatu-kering": "piring kering, airnya pindah ke udara",
+      "s-jemuran": "Baju di jemuran",
+      "jemuran-cuci": "baju dicuci dengan sabun",
+      "jemuran-jemur": "baju basah dijemur di bawah terik",
+      "jemuran-uap": "air di baju menguap",
+      "jemuran-angkat": "baju kering diangkat ke keranjang",
+      "s-keringat": "Keringat sesudah berlari",
+      "keringat-lari": "kamu berlari di siang hari",
+      "keringat-panas": "tubuhmu kepanasan",
+      "keringat-keringat": "keringat keluar di kulit",
+      "keringat-uap": "keringat menguap dari kulit",
+      "keringat-sejuk": "kulitmu terasa lebih sejuk"
     },
     "en": {
       "judul": "A Water Drop's Journey",
@@ -47,7 +93,53 @@
       "gelas-es": "a glass of iced tea on the table",
       "gelas-udara": "warm air touches the cold glass",
       "gelas-embun": "water vapour in the air condenses",
-      "gelas-titik": "drops of water appear on the outside of the glass"
+      "gelas-titik": "drops of water appear on the outside of the glass",
+      "s-cermin": "The bathroom mirror",
+      "cermin-mandi": "you have a shower with warm water",
+      "cermin-uap": "the warm water evaporates and steam fills the room",
+      "cermin-cermin": "the steam touches the cold mirror",
+      "cermin-buram": "the steam condenses and the mirror fogs up",
+      "cermin-titik": "the droplets join and run down",
+      "s-panci": "A pan on the stove",
+      "panci-api": "water in a pan is heated over a flame",
+      "panci-didih": "the water boils and evaporates",
+      "panci-naik": "the steam rises to the cooler lid",
+      "panci-embun": "the steam condenses into drops on the lid",
+      "panci-tetes": "the drops fall back into the pan",
+      "s-daun": "Dew on a leaf",
+      "daun-siang": "in the daytime, water in the ground evaporates into the air",
+      "daun-malam": "night comes and the air cools",
+      "daun-embun": "water vapour condenses into dew on the leaves",
+      "daun-pagi": "in the morning, the leaves are wet with dew",
+      "daun-hilang": "as the Sun rises higher, the dew evaporates again",
+      "s-pohon": "Water through a tree",
+      "pohon-akar": "the tree's roots take in water from the soil",
+      "pohon-batang": "the water moves up the trunk to the leaves",
+      "pohon-daun": "the leaves give off the water as water vapour",
+      "pohon-awan": "the vapour rises, cools and condenses into clouds",
+      "pohon-hujan": "rain falls and wets the soil again",
+      "s-salju": "Snow on a mountain top",
+      "salju-awan": "water vapour rises and condenses into clouds above the mountain",
+      "salju-beku": "in the very cold cloud, water freezes into snowflakes",
+      "salju-turun": "snow falls and covers the mountain top",
+      "salju-cair": "the day warms up and the snow melts",
+      "salju-sungai": "the meltwater flows into a river",
+      "s-esbatu": "Ice cubes on a plate",
+      "esbatu-es": "ice cubes on a plate are left in the hot sun",
+      "esbatu-cair": "the ice melts into a puddle",
+      "esbatu-uap": "the water on the plate evaporates into water vapour",
+      "esbatu-kering": "the plate is dry: the water has gone into the air",
+      "s-jemuran": "Clothes on the line",
+      "jemuran-cuci": "the clothes are washed with soap",
+      "jemuran-jemur": "the wet clothes are hung in the hot sun",
+      "jemuran-uap": "the water in the clothes evaporates",
+      "jemuran-angkat": "the dry clothes go into the basket",
+      "s-keringat": "Sweat after a run",
+      "keringat-lari": "you run in the daytime",
+      "keringat-panas": "your body gets hot",
+      "keringat-keringat": "sweat comes out on your skin",
+      "keringat-uap": "the sweat evaporates from your skin",
+      "keringat-sejuk": "your skin feels cooler"
     }
   },
   "knobs": {
@@ -56,7 +148,7 @@
       "max": 5,
       "default": 4,
       "step": 1,
-      "keterangan": "jumlah langkah: 4 → 5 (gelas es hanya 4 langkah)"
+      "keterangan": "jumlah langkah: 4 → 5 (beberapa cerita hanya 4 langkah)"
     }
   },
   "assets": [],
@@ -151,6 +243,244 @@
           "id": "titik",
           "labelKey": "gelas-titik",
           "emoji": "💧"
+        }
+      ]
+    },
+    {
+      "id": "cermin",
+      "titleKey": "s-cermin",
+      "steps": [
+        {
+          "id": "mandi",
+          "labelKey": "cermin-mandi",
+          "emoji": "🚿"
+        },
+        {
+          "id": "uap",
+          "labelKey": "cermin-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "cermin",
+          "labelKey": "cermin-cermin",
+          "emoji": "🪞"
+        },
+        {
+          "id": "buram",
+          "labelKey": "cermin-buram",
+          "emoji": "🌫️"
+        },
+        {
+          "id": "titik",
+          "labelKey": "cermin-titik",
+          "emoji": "💧"
+        }
+      ]
+    },
+    {
+      "id": "panci",
+      "titleKey": "s-panci",
+      "steps": [
+        {
+          "id": "api",
+          "labelKey": "panci-api",
+          "emoji": "🔥"
+        },
+        {
+          "id": "didih",
+          "labelKey": "panci-didih",
+          "emoji": "♨️"
+        },
+        {
+          "id": "naik",
+          "labelKey": "panci-naik",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "embun",
+          "labelKey": "panci-embun",
+          "emoji": "💧"
+        },
+        {
+          "id": "tetes",
+          "labelKey": "panci-tetes",
+          "emoji": "⬇️"
+        }
+      ]
+    },
+    {
+      "id": "daun",
+      "titleKey": "s-daun",
+      "steps": [
+        {
+          "id": "siang",
+          "labelKey": "daun-siang",
+          "emoji": "☀️"
+        },
+        {
+          "id": "malam",
+          "labelKey": "daun-malam",
+          "emoji": "🌙"
+        },
+        {
+          "id": "embun",
+          "labelKey": "daun-embun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "pagi",
+          "labelKey": "daun-pagi",
+          "emoji": "🌅"
+        },
+        {
+          "id": "hilang",
+          "labelKey": "daun-hilang",
+          "emoji": "🌤️"
+        }
+      ]
+    },
+    {
+      "id": "pohon",
+      "titleKey": "s-pohon",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "pohon-akar",
+          "emoji": "🌳"
+        },
+        {
+          "id": "batang",
+          "labelKey": "pohon-batang",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "daun",
+          "labelKey": "pohon-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "awan",
+          "labelKey": "pohon-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "pohon-hujan",
+          "emoji": "🌧️"
+        }
+      ]
+    },
+    {
+      "id": "salju",
+      "titleKey": "s-salju",
+      "steps": [
+        {
+          "id": "awan",
+          "labelKey": "salju-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "beku",
+          "labelKey": "salju-beku",
+          "emoji": "❄️"
+        },
+        {
+          "id": "turun",
+          "labelKey": "salju-turun",
+          "emoji": "🏔️"
+        },
+        {
+          "id": "cair",
+          "labelKey": "salju-cair",
+          "emoji": "💧"
+        },
+        {
+          "id": "sungai",
+          "labelKey": "salju-sungai",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "esbatu",
+      "titleKey": "s-esbatu",
+      "steps": [
+        {
+          "id": "es",
+          "labelKey": "esbatu-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "cair",
+          "labelKey": "esbatu-cair",
+          "emoji": "💧"
+        },
+        {
+          "id": "uap",
+          "labelKey": "esbatu-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "kering",
+          "labelKey": "esbatu-kering",
+          "emoji": "🍽️"
+        }
+      ]
+    },
+    {
+      "id": "jemuran",
+      "titleKey": "s-jemuran",
+      "steps": [
+        {
+          "id": "cuci",
+          "labelKey": "jemuran-cuci",
+          "emoji": "🫧"
+        },
+        {
+          "id": "jemur",
+          "labelKey": "jemuran-jemur",
+          "emoji": "👕"
+        },
+        {
+          "id": "uap",
+          "labelKey": "jemuran-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "angkat",
+          "labelKey": "jemuran-angkat",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
+      "id": "keringat",
+      "titleKey": "s-keringat",
+      "steps": [
+        {
+          "id": "lari",
+          "labelKey": "keringat-lari",
+          "emoji": "🏃"
+        },
+        {
+          "id": "panas",
+          "labelKey": "keringat-panas",
+          "emoji": "🥵"
+        },
+        {
+          "id": "keringat",
+          "labelKey": "keringat-keringat",
+          "emoji": "💦"
+        },
+        {
+          "id": "uap",
+          "labelKey": "keringat-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "sejuk",
+          "labelKey": "keringat-sejuk",
+          "emoji": "😌"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-sunting-algoritma",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -60,7 +60,43 @@
       "remote-4": "tutup lagi",
       "remote-5": "arahkan ke TV",
       "remote-6": "tekan tombol daya",
-      "remote-7": "TV menyala"
+      "remote-7": "TV menyala",
+      "t-pesan-makanan": "Memesan makanan lewat aplikasi",
+      "pesan-makanan-1": "buka aplikasi pesan antar",
+      "pesan-makanan-2": "pilih makanan",
+      "pesan-makanan-3": "masukkan ke keranjang",
+      "pesan-makanan-4": "bayar pesanan",
+      "pesan-makanan-5": "restoran memasak makanan",
+      "pesan-makanan-6": "kurir mengantar makanan",
+      "pesan-makanan-7": "kurir mengetuk pintu",
+      "pesan-makanan-8": "makan bersama keluarga",
+      "t-pesawat": "Naik pesawat",
+      "pesawat-1": "bawa koper ke bandara",
+      "pesawat-2": "lapor dan ambil tiket naik",
+      "pesawat-3": "lewati pemeriksaan keamanan",
+      "pesawat-4": "tunggu di ruang tunggu",
+      "pesawat-5": "naik ke pesawat",
+      "pesawat-6": "pasang sabuk pengaman",
+      "pesawat-7": "pesawat lepas landas",
+      "pesawat-8": "pesawat mendarat",
+      "t-dokter": "Berobat ke dokter",
+      "dokter-1": "datang ke klinik",
+      "dokter-2": "daftar di meja pendaftaran",
+      "dokter-3": "tunggu namamu dipanggil",
+      "dokter-4": "masuk ke ruang dokter",
+      "dokter-5": "dokter memeriksamu",
+      "dokter-6": "dokter menulis resep",
+      "dokter-7": "ambil obat di apotek",
+      "dokter-8": "pulang dan beristirahat",
+      "t-video-tugas": "Membuat video tugas",
+      "video-tugas-1": "buka kamera tablet",
+      "video-tugas-2": "tekan tombol rekam",
+      "video-tugas-3": "jelaskan hasil karyamu",
+      "video-tugas-4": "tekan tombol berhenti",
+      "video-tugas-5": "tonton ulang videonya",
+      "video-tugas-6": "potong bagian yang salah",
+      "video-tugas-7": "simpan videonya",
+      "video-tugas-8": "kirim video ke guru"
     },
     "en": {
       "judul": "Edit a Long Algorithm",
@@ -114,7 +150,43 @@
       "remote-4": "close it again",
       "remote-5": "point it at the TV",
       "remote-6": "press the power button",
-      "remote-7": "the TV turns on"
+      "remote-7": "the TV turns on",
+      "t-pesan-makanan": "Ordering food on an app",
+      "pesan-makanan-1": "open the delivery app",
+      "pesan-makanan-2": "choose your food",
+      "pesan-makanan-3": "add it to the basket",
+      "pesan-makanan-4": "pay for the order",
+      "pesan-makanan-5": "the restaurant cooks the food",
+      "pesan-makanan-6": "the rider delivers the food",
+      "pesan-makanan-7": "the rider knocks on the door",
+      "pesan-makanan-8": "eat with your family",
+      "t-pesawat": "Taking a plane",
+      "pesawat-1": "take your suitcase to the airport",
+      "pesawat-2": "check in and get a boarding pass",
+      "pesawat-3": "go through the security check",
+      "pesawat-4": "wait in the departure lounge",
+      "pesawat-5": "board the plane",
+      "pesawat-6": "fasten your seat belt",
+      "pesawat-7": "the plane takes off",
+      "pesawat-8": "the plane lands",
+      "t-dokter": "Visiting the doctor",
+      "dokter-1": "arrive at the clinic",
+      "dokter-2": "register at the front desk",
+      "dokter-3": "wait for your name to be called",
+      "dokter-4": "go into the doctor's room",
+      "dokter-5": "the doctor examines you",
+      "dokter-6": "the doctor writes a prescription",
+      "dokter-7": "collect medicine at the pharmacy",
+      "dokter-8": "go home and rest",
+      "t-video-tugas": "Making a video for homework",
+      "video-tugas-1": "open the tablet camera",
+      "video-tugas-2": "press record",
+      "video-tugas-3": "explain your work",
+      "video-tugas-4": "press stop",
+      "video-tugas-5": "watch the video back",
+      "video-tugas-6": "cut out the mistakes",
+      "video-tugas-7": "save the video",
+      "video-tugas-8": "send the video to your teacher"
     }
   },
   "knobs": {
@@ -385,6 +457,190 @@
           "id": "remote-7",
           "labelKey": "remote-7",
           "emoji": "✨"
+        }
+      ]
+    },
+    {
+      "id": "pesan-makanan",
+      "titleKey": "t-pesan-makanan",
+      "steps": [
+        {
+          "id": "pesan-makanan-1",
+          "labelKey": "pesan-makanan-1",
+          "emoji": "📱"
+        },
+        {
+          "id": "pesan-makanan-2",
+          "labelKey": "pesan-makanan-2",
+          "emoji": "🍔"
+        },
+        {
+          "id": "pesan-makanan-3",
+          "labelKey": "pesan-makanan-3",
+          "emoji": "🛒"
+        },
+        {
+          "id": "pesan-makanan-4",
+          "labelKey": "pesan-makanan-4",
+          "emoji": "💳"
+        },
+        {
+          "id": "pesan-makanan-5",
+          "labelKey": "pesan-makanan-5",
+          "emoji": "🧑‍🍳"
+        },
+        {
+          "id": "pesan-makanan-6",
+          "labelKey": "pesan-makanan-6",
+          "emoji": "🛵"
+        },
+        {
+          "id": "pesan-makanan-7",
+          "labelKey": "pesan-makanan-7",
+          "emoji": "🚪"
+        },
+        {
+          "id": "pesan-makanan-8",
+          "labelKey": "pesan-makanan-8",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "pesawat",
+      "titleKey": "t-pesawat",
+      "steps": [
+        {
+          "id": "pesawat-1",
+          "labelKey": "pesawat-1",
+          "emoji": "🧳"
+        },
+        {
+          "id": "pesawat-2",
+          "labelKey": "pesawat-2",
+          "emoji": "🎫"
+        },
+        {
+          "id": "pesawat-3",
+          "labelKey": "pesawat-3",
+          "emoji": "🔍"
+        },
+        {
+          "id": "pesawat-4",
+          "labelKey": "pesawat-4",
+          "emoji": "🪑"
+        },
+        {
+          "id": "pesawat-5",
+          "labelKey": "pesawat-5",
+          "emoji": "🚶"
+        },
+        {
+          "id": "pesawat-6",
+          "labelKey": "pesawat-6",
+          "emoji": "💺"
+        },
+        {
+          "id": "pesawat-7",
+          "labelKey": "pesawat-7",
+          "emoji": "🛫"
+        },
+        {
+          "id": "pesawat-8",
+          "labelKey": "pesawat-8",
+          "emoji": "🛬"
+        }
+      ]
+    },
+    {
+      "id": "dokter",
+      "titleKey": "t-dokter",
+      "steps": [
+        {
+          "id": "dokter-1",
+          "labelKey": "dokter-1",
+          "emoji": "🏥"
+        },
+        {
+          "id": "dokter-2",
+          "labelKey": "dokter-2",
+          "emoji": "📝"
+        },
+        {
+          "id": "dokter-3",
+          "labelKey": "dokter-3",
+          "emoji": "🪑"
+        },
+        {
+          "id": "dokter-4",
+          "labelKey": "dokter-4",
+          "emoji": "🚪"
+        },
+        {
+          "id": "dokter-5",
+          "labelKey": "dokter-5",
+          "emoji": "🩺"
+        },
+        {
+          "id": "dokter-6",
+          "labelKey": "dokter-6",
+          "emoji": "📄"
+        },
+        {
+          "id": "dokter-7",
+          "labelKey": "dokter-7",
+          "emoji": "💊"
+        },
+        {
+          "id": "dokter-8",
+          "labelKey": "dokter-8",
+          "emoji": "🛌"
+        }
+      ]
+    },
+    {
+      "id": "video-tugas",
+      "titleKey": "t-video-tugas",
+      "steps": [
+        {
+          "id": "video-tugas-1",
+          "labelKey": "video-tugas-1",
+          "emoji": "📱"
+        },
+        {
+          "id": "video-tugas-2",
+          "labelKey": "video-tugas-2",
+          "emoji": "🔴"
+        },
+        {
+          "id": "video-tugas-3",
+          "labelKey": "video-tugas-3",
+          "emoji": "🗣️"
+        },
+        {
+          "id": "video-tugas-4",
+          "labelKey": "video-tugas-4",
+          "emoji": "⏹️"
+        },
+        {
+          "id": "video-tugas-5",
+          "labelKey": "video-tugas-5",
+          "emoji": "▶️"
+        },
+        {
+          "id": "video-tugas-6",
+          "labelKey": "video-tugas-6",
+          "emoji": "✂️"
+        },
+        {
+          "id": "video-tugas-7",
+          "labelKey": "video-tugas-7",
+          "emoji": "💾"
+        },
+        {
+          "id": "video-tugas-8",
+          "labelKey": "video-tugas-8",
+          "emoji": "📤"
         }
       ]
     }

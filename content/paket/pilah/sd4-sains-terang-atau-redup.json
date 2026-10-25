@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-terang-atau-redup",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.03"
@@ -21,7 +21,11 @@
       "p-r5": "Dua lampu berderet. Kawat di dalam satu lampu putus. Lampu yang lain…",
       "p-r6": "Baterai yang baru diganti baterai lama yang hampir habis. Lampunya jadi…",
       "p-r7": "Rangkaian seri dengan dua lampu. Sakelarnya dibuka. Lampunya…",
-      "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…"
+      "p-r8": "Dua lampu berderet diganti satu lampu saja, baterainya tetap. Lampunya jadi…",
+      "p-r9": "Satu lampu dengan satu baterai. Satu kabel dilepas dari baterai sehingga ada celah. Lampunya…",
+      "p-r10": "Dua lampu berderet dengan satu baterai. Baterai kedua ditambahkan berderet. Lampunya jadi…",
+      "p-r11": "Satu lampu dengan dua baterai berderet. Lampu kedua ditambahkan berderet. Lampunya jadi…",
+      "p-r12": "Satu kabel tembaga dalam rangkaian diganti tali plastik. Lampunya…"
     },
     "en": {
       "judul": "Brighter or Dimmer?",
@@ -37,7 +41,11 @@
       "p-r5": "Two lamps in a row. The wire inside one lamp breaks. The other lamp…",
       "p-r6": "A new cell is swapped for an old, nearly flat one. The lamp becomes…",
       "p-r7": "A series circuit with two lamps. The switch is opened. The lamps…",
-      "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…"
+      "p-r8": "Two lamps in a row are replaced by just one lamp, same cell. The lamp becomes…",
+      "p-r9": "One bulb with one battery. One wire is taken off the battery, leaving a gap. The bulb…",
+      "p-r10": "Two bulbs in a row with one battery. A second battery is added in the row. The bulbs become…",
+      "p-r11": "One bulb with two batteries in a row. A second bulb is added in the row. The bulbs become…",
+      "p-r12": "One copper wire in the circuit is replaced with a plastic string. The bulb…"
     }
   },
   "knobs": {},
@@ -153,6 +161,46 @@
         "padam"
       ],
       "correct": "terang"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
     }
   ]
 }

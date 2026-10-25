@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-perbaiki-algoritma",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -43,7 +43,42 @@
       "menara-2": "taruh balok sedang di atasnya",
       "menara-3": "taruh balok kecil di atasnya",
       "menara-4": "pasang bendera di puncak",
-      "menara-5": "foto menaranya"
+      "menara-5": "foto menaranya",
+      "t-kue": "Membuat kue",
+      "kue-1": "pecahkan telur ke mangkuk",
+      "kue-2": "aduk dengan tepung",
+      "kue-3": "tuang adonan ke cetakan",
+      "kue-4": "panggang di oven",
+      "kue-5": "tunggu kue dingin",
+      "kue-6": "potong dan makan kuenya",
+      "t-belanja": "Belanja buah di toko",
+      "belanja-1": "ambil keranjang",
+      "belanja-2": "masukkan buah ke keranjang",
+      "belanja-3": "antre di kasir",
+      "belanja-4": "bayar belanjaan",
+      "belanja-5": "terima struk",
+      "belanja-6": "bawa pulang belanjaan",
+      "t-bioskop": "Menonton film di bioskop",
+      "bioskop-1": "beli tiket",
+      "bioskop-2": "masuk ke ruang film",
+      "bioskop-3": "duduk di kursi",
+      "bioskop-4": "film diputar",
+      "bioskop-5": "tepuk tangan saat film selesai",
+      "bioskop-6": "keluar dari ruangan",
+      "t-pancing": "Memancing ikan",
+      "pancing-1": "pasang umpan cacing",
+      "pancing-2": "lempar kail ke kolam",
+      "pancing-3": "tunggu dengan sabar",
+      "pancing-4": "tarik joran",
+      "pancing-5": "ikan tertangkap",
+      "pancing-6": "masukkan ikan ke ember",
+      "t-istana-pasir": "Membuat istana pasir",
+      "istana-pasir-1": "kumpulkan pasir basah",
+      "istana-pasir-2": "isi ember dengan pasir",
+      "istana-pasir-3": "balik ember ke bawah",
+      "istana-pasir-4": "angkat ember pelan-pelan",
+      "istana-pasir-5": "istana pasir berdiri",
+      "istana-pasir-6": "tancapkan bendera di atasnya"
     },
     "en": {
       "judul": "Mixed-Up Algorithm",
@@ -80,7 +115,42 @@
       "menara-2": "put the middle block on top",
       "menara-3": "put the small block on top",
       "menara-4": "put a flag on top",
-      "menara-5": "take a photo of the tower"
+      "menara-5": "take a photo of the tower",
+      "t-kue": "Baking a cake",
+      "kue-1": "crack eggs into a bowl",
+      "kue-2": "mix in the flour",
+      "kue-3": "pour the batter into a tin",
+      "kue-4": "bake it in the oven",
+      "kue-5": "let the cake cool",
+      "kue-6": "cut and eat the cake",
+      "t-belanja": "Buying fruit at the shop",
+      "belanja-1": "take a basket",
+      "belanja-2": "put fruit in the basket",
+      "belanja-3": "queue at the till",
+      "belanja-4": "pay for the shopping",
+      "belanja-5": "get the receipt",
+      "belanja-6": "carry the shopping home",
+      "t-bioskop": "Watching a film at the cinema",
+      "bioskop-1": "buy a ticket",
+      "bioskop-2": "go into the cinema room",
+      "bioskop-3": "sit in your seat",
+      "bioskop-4": "the film starts",
+      "bioskop-5": "clap when the film ends",
+      "bioskop-6": "walk out of the room",
+      "t-pancing": "Going fishing",
+      "pancing-1": "put a worm on the hook",
+      "pancing-2": "cast the line into the pond",
+      "pancing-3": "wait patiently",
+      "pancing-4": "pull the rod",
+      "pancing-5": "a fish is caught",
+      "pancing-6": "put the fish in a bucket",
+      "t-istana-pasir": "Making a sandcastle",
+      "istana-pasir-1": "gather wet sand",
+      "istana-pasir-2": "fill the bucket with sand",
+      "istana-pasir-3": "turn the bucket upside down",
+      "istana-pasir-4": "lift the bucket slowly",
+      "istana-pasir-5": "the sandcastle stands",
+      "istana-pasir-6": "stick a flag on top"
     }
   },
   "knobs": {
@@ -265,6 +335,186 @@
           "id": "menara-5",
           "labelKey": "menara-5",
           "emoji": "📸"
+        }
+      ]
+    },
+    {
+      "id": "kue",
+      "titleKey": "t-kue",
+      "steps": [
+        {
+          "id": "kue-1",
+          "labelKey": "kue-1",
+          "emoji": "🥚"
+        },
+        {
+          "id": "kue-2",
+          "labelKey": "kue-2",
+          "emoji": "🥣"
+        },
+        {
+          "id": "kue-3",
+          "labelKey": "kue-3",
+          "emoji": "🫗"
+        },
+        {
+          "id": "kue-4",
+          "labelKey": "kue-4",
+          "emoji": "🔥"
+        },
+        {
+          "id": "kue-5",
+          "labelKey": "kue-5",
+          "emoji": "⏳"
+        },
+        {
+          "id": "kue-6",
+          "labelKey": "kue-6",
+          "emoji": "🍰"
+        }
+      ]
+    },
+    {
+      "id": "belanja",
+      "titleKey": "t-belanja",
+      "steps": [
+        {
+          "id": "belanja-1",
+          "labelKey": "belanja-1",
+          "emoji": "🧺"
+        },
+        {
+          "id": "belanja-2",
+          "labelKey": "belanja-2",
+          "emoji": "🍎"
+        },
+        {
+          "id": "belanja-3",
+          "labelKey": "belanja-3",
+          "emoji": "🏪"
+        },
+        {
+          "id": "belanja-4",
+          "labelKey": "belanja-4",
+          "emoji": "💵"
+        },
+        {
+          "id": "belanja-5",
+          "labelKey": "belanja-5",
+          "emoji": "🧾"
+        },
+        {
+          "id": "belanja-6",
+          "labelKey": "belanja-6",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": "bioskop",
+      "titleKey": "t-bioskop",
+      "steps": [
+        {
+          "id": "bioskop-1",
+          "labelKey": "bioskop-1",
+          "emoji": "🎟️"
+        },
+        {
+          "id": "bioskop-2",
+          "labelKey": "bioskop-2",
+          "emoji": "🚪"
+        },
+        {
+          "id": "bioskop-3",
+          "labelKey": "bioskop-3",
+          "emoji": "💺"
+        },
+        {
+          "id": "bioskop-4",
+          "labelKey": "bioskop-4",
+          "emoji": "🎬"
+        },
+        {
+          "id": "bioskop-5",
+          "labelKey": "bioskop-5",
+          "emoji": "👏"
+        },
+        {
+          "id": "bioskop-6",
+          "labelKey": "bioskop-6",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "pancing",
+      "titleKey": "t-pancing",
+      "steps": [
+        {
+          "id": "pancing-1",
+          "labelKey": "pancing-1",
+          "emoji": "🪱"
+        },
+        {
+          "id": "pancing-2",
+          "labelKey": "pancing-2",
+          "emoji": "🎣"
+        },
+        {
+          "id": "pancing-3",
+          "labelKey": "pancing-3",
+          "emoji": "⏳"
+        },
+        {
+          "id": "pancing-4",
+          "labelKey": "pancing-4",
+          "emoji": "💪"
+        },
+        {
+          "id": "pancing-5",
+          "labelKey": "pancing-5",
+          "emoji": "🐟"
+        },
+        {
+          "id": "pancing-6",
+          "labelKey": "pancing-6",
+          "emoji": "🪣"
+        }
+      ]
+    },
+    {
+      "id": "istana-pasir",
+      "titleKey": "t-istana-pasir",
+      "steps": [
+        {
+          "id": "istana-pasir-1",
+          "labelKey": "istana-pasir-1",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "istana-pasir-2",
+          "labelKey": "istana-pasir-2",
+          "emoji": "🪣"
+        },
+        {
+          "id": "istana-pasir-3",
+          "labelKey": "istana-pasir-3",
+          "emoji": "🔄"
+        },
+        {
+          "id": "istana-pasir-4",
+          "labelKey": "istana-pasir-4",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "istana-pasir-5",
+          "labelKey": "istana-pasir-5",
+          "emoji": "🏰"
+        },
+        {
+          "id": "istana-pasir-6",
+          "labelKey": "istana-pasir-6",
+          "emoji": "🚩"
         }
       ]
     }

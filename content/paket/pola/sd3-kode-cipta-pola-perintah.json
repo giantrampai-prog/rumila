@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-cipta-pola-perintah",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "pola",
   "competencyIds": [
@@ -14,7 +14,11 @@
       "p-maju": "maju",
       "p-kiri": "belok kiri",
       "p-kanan": "belok kanan",
-      "p-lompat": "lompat"
+      "p-lompat": "lompat",
+      "p-mundur": "mundur",
+      "p-putar": "putar satu kali",
+      "p-tepuk": "tepuk tangan",
+      "p-berhenti": "berhenti"
     },
     "en": {
       "judul": "My Command Pattern",
@@ -22,7 +26,11 @@
       "p-maju": "forward",
       "p-kiri": "turn left",
       "p-kanan": "turn right",
-      "p-lompat": "jump"
+      "p-lompat": "jump",
+      "p-mundur": "backward",
+      "p-putar": "spin round",
+      "p-tepuk": "clap",
+      "p-berhenti": "stop"
     }
   },
   "knobs": {
@@ -60,6 +68,26 @@
       "id": "lompat",
       "labelKey": "p-lompat",
       "emoji": "🦘"
+    },
+    {
+      "id": "mundur",
+      "labelKey": "p-mundur",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "putar",
+      "labelKey": "p-putar",
+      "emoji": "🔄"
+    },
+    {
+      "id": "tepuk",
+      "labelKey": "p-tepuk",
+      "emoji": "👏"
+    },
+    {
+      "id": "berhenti",
+      "labelKey": "p-berhenti",
+      "emoji": "🛑"
     }
   ],
   "patterns": [],
@@ -67,6 +95,10 @@
     "maju": "C4",
     "kiri": "E4",
     "kanan": "G4",
-    "lompat": "A4"
+    "lompat": "A4",
+    "mundur": "D4",
+    "putar": "F4",
+    "tepuk": "B4",
+    "berhenti": "C5"
   }
 }

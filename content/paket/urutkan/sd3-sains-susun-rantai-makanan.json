@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-susun-rantai-makanan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -39,7 +39,32 @@
       "kolam-lumut": "lumut air",
       "kolam-siput": "siput air",
       "kolam-ikan": "ikan",
-      "kolam-bangau": "burung bangau"
+      "kolam-bangau": "elang",
+      "s-sawah2": "Rantai makanan lain di sawah",
+      "sawah2-padi": "padi",
+      "sawah2-belalang": "belalang",
+      "sawah2-katak": "katak",
+      "sawah2-ular": "ular sawah",
+      "s-hutan": "Rantai makanan di hutan",
+      "hutan-biji": "kacang dan biji di pohon",
+      "hutan-tupai": "tupai",
+      "hutan-ular": "ular pohon",
+      "hutan-elang": "elang",
+      "s-padang2": "Rantai makanan lain di padang rumput",
+      "padang2-rumput": "rumput",
+      "padang2-kelinci": "kelinci liar",
+      "padang2-ular": "ular",
+      "padang2-elang": "elang",
+      "s-lautlepas": "Rantai makanan di laut lepas",
+      "lautlepas-rumputlaut": "rumput laut",
+      "lautlepas-ikan": "ikan kecil",
+      "lautlepas-cumi": "cumi-cumi",
+      "lautlepas-lumba": "lumba-lumba",
+      "s-karang": "Rantai makanan di terumbu karang",
+      "karang-ganggang": "ganggang di batu karang",
+      "karang-kepiting": "kepiting",
+      "karang-gurita": "gurita",
+      "karang-hiu": "hiu karang"
     },
     "en": {
       "judul": "Who Eats Whom?",
@@ -72,7 +97,32 @@
       "kolam-lumut": "pond algae",
       "kolam-siput": "water snail",
       "kolam-ikan": "fish",
-      "kolam-bangau": "heron"
+      "kolam-bangau": "eagle",
+      "s-sawah2": "Another rice field food chain",
+      "sawah2-padi": "rice plant",
+      "sawah2-belalang": "grasshopper",
+      "sawah2-katak": "frog",
+      "sawah2-ular": "rice field snake",
+      "s-hutan": "A forest food chain",
+      "hutan-biji": "nuts and seeds on a tree",
+      "hutan-tupai": "squirrel",
+      "hutan-ular": "tree snake",
+      "hutan-elang": "eagle",
+      "s-padang2": "Another grassland food chain",
+      "padang2-rumput": "grass",
+      "padang2-kelinci": "wild rabbit",
+      "padang2-ular": "snake",
+      "padang2-elang": "eagle",
+      "s-lautlepas": "An open sea food chain",
+      "lautlepas-rumputlaut": "seaweed",
+      "lautlepas-ikan": "small fish",
+      "lautlepas-cumi": "squid",
+      "lautlepas-lumba": "dolphin",
+      "s-karang": "A coral reef food chain",
+      "karang-ganggang": "algae on the reef rocks",
+      "karang-kepiting": "crab",
+      "karang-gurita": "octopus",
+      "karang-hiu": "reef shark"
     }
   },
   "knobs": {
@@ -238,8 +288,140 @@
         {
           "id": "bangau",
           "labelKey": "kolam-bangau",
-          "emoji": "🦩",
+          "emoji": "🦅",
           "color": "#eceff1"
+        }
+      ]
+    },
+    {
+      "id": "sawah2",
+      "titleKey": "s-sawah2",
+      "steps": [
+        {
+          "id": "padi",
+          "labelKey": "sawah2-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "sawah2-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "katak",
+          "labelKey": "sawah2-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "ular",
+          "labelKey": "sawah2-ular",
+          "emoji": "🐍"
+        }
+      ]
+    },
+    {
+      "id": "hutan",
+      "titleKey": "s-hutan",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "hutan-biji",
+          "emoji": "🌰"
+        },
+        {
+          "id": "tupai",
+          "labelKey": "hutan-tupai",
+          "emoji": "🐿️"
+        },
+        {
+          "id": "ular",
+          "labelKey": "hutan-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "hutan-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "padang2",
+      "titleKey": "s-padang2",
+      "steps": [
+        {
+          "id": "rumput",
+          "labelKey": "padang2-rumput",
+          "emoji": "🌿"
+        },
+        {
+          "id": "kelinci",
+          "labelKey": "padang2-kelinci",
+          "emoji": "🐇"
+        },
+        {
+          "id": "ular",
+          "labelKey": "padang2-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "padang2-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "lautlepas",
+      "titleKey": "s-lautlepas",
+      "steps": [
+        {
+          "id": "rumputlaut",
+          "labelKey": "lautlepas-rumputlaut",
+          "emoji": "🌿",
+          "color": "#26a69a"
+        },
+        {
+          "id": "ikan",
+          "labelKey": "lautlepas-ikan",
+          "emoji": "🐟"
+        },
+        {
+          "id": "cumi",
+          "labelKey": "lautlepas-cumi",
+          "emoji": "🦑"
+        },
+        {
+          "id": "lumba",
+          "labelKey": "lautlepas-lumba",
+          "emoji": "🐬"
+        }
+      ]
+    },
+    {
+      "id": "karang",
+      "titleKey": "s-karang",
+      "steps": [
+        {
+          "id": "ganggang",
+          "labelKey": "karang-ganggang",
+          "emoji": "🌿",
+          "color": "#26a69a"
+        },
+        {
+          "id": "kepiting",
+          "labelKey": "karang-kepiting",
+          "emoji": "🦀"
+        },
+        {
+          "id": "gurita",
+          "labelKey": "karang-gurita",
+          "emoji": "🐙"
+        },
+        {
+          "id": "hiu",
+          "labelKey": "karang-hiu",
+          "emoji": "🦈"
         }
       ]
     }

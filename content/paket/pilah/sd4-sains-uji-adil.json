@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-uji-adil",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.PENYELIDIKAN.01"
@@ -35,7 +35,12 @@
       "p-r5": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang sengaja diubah?",
       "p-r6": "Uji es tadi: apa yang harus dibuat sama?",
       "p-r7": "Apakah kain lebih cepat kering di bawah matahari atau di dalam rumah? Apa yang harus dibuat sama?",
-      "p-r8": "Dua mobil-mobilan berbeda diuji, mana yang meluncur lebih jauh dari papan miring, tetapi satu dilepas dari tempat lebih tinggi. Mengapa tidak adil?"
+      "p-r8": "Dua mobil-mobilan berbeda diuji, mana yang meluncur lebih jauh dari papan miring, tetapi satu dilepas dari tempat lebih tinggi. Mengapa tidak adil?",
+      "p-r9": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang diukur?",
+      "p-r10": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Apa yang diukur?",
+      "p-r11": "Apakah jenis tanah memengaruhi tinggi tanaman kacang? Selain banyak air, apa lagi yang harus sama?",
+      "p-r12": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Selain tinggi jatuh, apa lagi yang harus sama?",
+      "p-r13": "Apakah kain lebih cepat kering di bawah matahari atau di dalam rumah? Apa yang sengaja diubah?"
     },
     "en": {
       "judul": "A Fair Test",
@@ -65,7 +70,12 @@
       "p-r5": "Does ice melt faster in a sunny place or in the shade? What do we change on purpose?",
       "p-r6": "In the ice test: what must be kept the same?",
       "p-r7": "Does cloth dry faster in the sun or indoors? What must be kept the same?",
-      "p-r8": "Two different toy cars are tested to see which rolls farther down a ramp, but one is let go from higher up. Why is it unfair?"
+      "p-r8": "Two different toy cars are tested to see which rolls farther down a ramp, but one is let go from higher up. Why is it unfair?",
+      "p-r9": "Does ice melt faster in a sunny place or in the shade? What is measured?",
+      "p-r10": "Does a ball bounce higher on a tiled floor or on carpet? What is measured?",
+      "p-r11": "Does the type of soil affect how tall bean plants grow? Besides the amount of water, what else must be the same?",
+      "p-r12": "Does a ball bounce higher on a tiled floor or on carpet? Besides the drop height, what else must be the same?",
+      "p-r13": "Does cloth dry faster in the sun or indoors? What is changed on purpose?"
     }
   },
   "knobs": {},
@@ -265,6 +275,56 @@
         "lantaimiring"
       ],
       "correct": "duahal"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "waktucair",
+        "tempat",
+        "ukuranes"
+      ],
+      "correct": "waktucair"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "tinggipantul",
+        "jenislantai",
+        "tinggijatuh"
+      ],
+      "correct": "tinggipantul"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "jenisbiji",
+        "jenistanah",
+        "tinggitanaman"
+      ],
+      "correct": "jenisbiji"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "jenisbola",
+        "jenislantai",
+        "tinggipantul"
+      ],
+      "correct": "jenisbola"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "tempatjemur",
+        "ukurankain",
+        "waktukering"
+      ],
+      "correct": "tempatjemur"
     }
   ]
 }

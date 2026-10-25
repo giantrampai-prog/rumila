@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-bayangan-besar-kecil",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -30,7 +30,37 @@
       "kunci-p1": "kunci tepat di depan senter",
       "kunci-p2": "kunci agak dekat senter",
       "kunci-p3": "kunci di tengah",
-      "kunci-p4": "kunci dekat layar"
+      "kunci-p4": "kunci dekat layar",
+      "t-bintang": "Bayangan bintang kertas",
+      "bintang-1": "bintang tepat di depan senter",
+      "bintang-2": "bintang agak dekat senter",
+      "bintang-3": "bintang di tengah",
+      "bintang-4": "bintang dekat layar",
+      "t-kupu": "Bayangan kupu-kupu kertas",
+      "kupu-1": "kupu-kupu tepat di depan senter",
+      "kupu-2": "kupu-kupu agak dekat senter",
+      "kupu-3": "kupu-kupu di tengah",
+      "kupu-4": "kupu-kupu dekat layar",
+      "t-mobil": "Bayangan mobil mainan",
+      "mobil-1": "mobil tepat di depan senter",
+      "mobil-2": "mobil agak dekat senter",
+      "mobil-3": "mobil di tengah",
+      "mobil-4": "mobil dekat layar",
+      "t-gunting": "Bayangan gunting",
+      "gunting-1": "gunting tepat di depan senter",
+      "gunting-2": "gunting agak dekat senter",
+      "gunting-3": "gunting di tengah",
+      "gunting-4": "gunting dekat layar",
+      "t-apel": "Bayangan apel",
+      "apel-1": "apel tepat di depan senter",
+      "apel-2": "apel agak dekat senter",
+      "apel-3": "apel di tengah",
+      "apel-4": "apel dekat layar",
+      "t-pensil": "Bayangan pensil",
+      "pensil-1": "pensil tepat di depan senter",
+      "pensil-2": "pensil agak dekat senter",
+      "pensil-3": "pensil di tengah",
+      "pensil-4": "pensil dekat layar"
     },
     "en": {
       "judul": "Shadows Grow and Shrink",
@@ -54,7 +84,37 @@
       "kunci-p1": "key right in front of the torch",
       "kunci-p2": "key fairly close to the torch",
       "kunci-p3": "key halfway",
-      "kunci-p4": "key close to the screen"
+      "kunci-p4": "key close to the screen",
+      "t-bintang": "Shadow of a paper star",
+      "bintang-1": "star right in front of the torch",
+      "bintang-2": "star fairly close to the torch",
+      "bintang-3": "star in the middle",
+      "bintang-4": "star close to the screen",
+      "t-kupu": "Shadow of a paper butterfly",
+      "kupu-1": "butterfly right in front of the torch",
+      "kupu-2": "butterfly fairly close to the torch",
+      "kupu-3": "butterfly in the middle",
+      "kupu-4": "butterfly close to the screen",
+      "t-mobil": "Shadow of a toy car",
+      "mobil-1": "car right in front of the torch",
+      "mobil-2": "car fairly close to the torch",
+      "mobil-3": "car in the middle",
+      "mobil-4": "car close to the screen",
+      "t-gunting": "Shadow of scissors",
+      "gunting-1": "scissors right in front of the torch",
+      "gunting-2": "scissors fairly close to the torch",
+      "gunting-3": "scissors in the middle",
+      "gunting-4": "scissors close to the screen",
+      "t-apel": "Shadow of an apple",
+      "apel-1": "apple right in front of the torch",
+      "apel-2": "apple fairly close to the torch",
+      "apel-3": "apple in the middle",
+      "apel-4": "apple close to the screen",
+      "t-pensil": "Shadow of a pencil",
+      "pensil-1": "pencil right in front of the torch",
+      "pensil-2": "pencil fairly close to the torch",
+      "pensil-3": "pencil in the middle",
+      "pensil-4": "pencil close to the screen"
     }
   },
   "knobs": {
@@ -173,6 +233,162 @@
           "id": "p4",
           "labelKey": "kunci-p4",
           "emoji": "🔑"
+        }
+      ]
+    },
+    {
+      "id": "bintang",
+      "titleKey": "t-bintang",
+      "steps": [
+        {
+          "id": "bintang-1",
+          "labelKey": "bintang-1",
+          "emoji": "⭐"
+        },
+        {
+          "id": "bintang-2",
+          "labelKey": "bintang-2",
+          "emoji": "⭐"
+        },
+        {
+          "id": "bintang-3",
+          "labelKey": "bintang-3",
+          "emoji": "⭐"
+        },
+        {
+          "id": "bintang-4",
+          "labelKey": "bintang-4",
+          "emoji": "⭐"
+        }
+      ]
+    },
+    {
+      "id": "kupu",
+      "titleKey": "t-kupu",
+      "steps": [
+        {
+          "id": "kupu-1",
+          "labelKey": "kupu-1",
+          "emoji": "🦋"
+        },
+        {
+          "id": "kupu-2",
+          "labelKey": "kupu-2",
+          "emoji": "🦋"
+        },
+        {
+          "id": "kupu-3",
+          "labelKey": "kupu-3",
+          "emoji": "🦋"
+        },
+        {
+          "id": "kupu-4",
+          "labelKey": "kupu-4",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "mobil",
+      "titleKey": "t-mobil",
+      "steps": [
+        {
+          "id": "mobil-1",
+          "labelKey": "mobil-1",
+          "emoji": "🚗"
+        },
+        {
+          "id": "mobil-2",
+          "labelKey": "mobil-2",
+          "emoji": "🚗"
+        },
+        {
+          "id": "mobil-3",
+          "labelKey": "mobil-3",
+          "emoji": "🚗"
+        },
+        {
+          "id": "mobil-4",
+          "labelKey": "mobil-4",
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": "gunting",
+      "titleKey": "t-gunting",
+      "steps": [
+        {
+          "id": "gunting-1",
+          "labelKey": "gunting-1",
+          "emoji": "✂️"
+        },
+        {
+          "id": "gunting-2",
+          "labelKey": "gunting-2",
+          "emoji": "✂️"
+        },
+        {
+          "id": "gunting-3",
+          "labelKey": "gunting-3",
+          "emoji": "✂️"
+        },
+        {
+          "id": "gunting-4",
+          "labelKey": "gunting-4",
+          "emoji": "✂️"
+        }
+      ]
+    },
+    {
+      "id": "apel",
+      "titleKey": "t-apel",
+      "steps": [
+        {
+          "id": "apel-1",
+          "labelKey": "apel-1",
+          "emoji": "🍎"
+        },
+        {
+          "id": "apel-2",
+          "labelKey": "apel-2",
+          "emoji": "🍎"
+        },
+        {
+          "id": "apel-3",
+          "labelKey": "apel-3",
+          "emoji": "🍎"
+        },
+        {
+          "id": "apel-4",
+          "labelKey": "apel-4",
+          "emoji": "🍎"
+        }
+      ]
+    },
+    {
+      "id": "pensil",
+      "titleKey": "t-pensil",
+      "steps": [
+        {
+          "id": "pensil-1",
+          "labelKey": "pensil-1",
+          "emoji": "✏️"
+        },
+        {
+          "id": "pensil-2",
+          "labelKey": "pensil-2",
+          "emoji": "✏️"
+        },
+        {
+          "id": "pensil-3",
+          "labelKey": "pensil-3",
+          "emoji": "✏️"
+        },
+        {
+          "id": "pensil-4",
+          "labelKey": "pensil-4",
+          "emoji": "✏️"
         }
       ]
     }

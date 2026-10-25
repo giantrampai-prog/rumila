@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-mencair-dan-membeku",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.WUJUD-ZAT.02"
@@ -29,7 +29,37 @@
       "lilin-padat": "potongan lilin padat",
       "lilin-panci": "dipanaskan sampai meleleh",
       "lilin-tuang": "lilin cair dituang ke cetakan",
-      "lilin-beku": "mendingin dan membeku jadi lilin baru"
+      "lilin-beku": "mendingin dan membeku jadi lilin baru",
+      "s-eskrim": "Es krim meleleh",
+      "eskrim-beku": "es krim beku dari freezer",
+      "eskrim-matahari": "dibiarkan di bawah terik matahari",
+      "eskrim-menetes": "es krim mulai menetes",
+      "eskrim-cair": "tinggal es krim cair di mangkuk",
+      "s-esloli": "Membuat es loli",
+      "esloli-jus": "jus buah cair",
+      "esloli-tuang": "jus dituang ke cetakan",
+      "esloli-freezer": "cetakan disimpan di freezer semalam",
+      "esloli-padat": "jus membeku jadi es loli padat",
+      "s-salju": "Boneka salju di hari cerah",
+      "salju-boneka": "boneka salju padat",
+      "salju-matahari": "matahari bersinar hangat",
+      "salju-meleleh": "salju mulai meleleh dan menetes",
+      "salju-genangan": "tinggal genangan air di tanah",
+      "s-danau": "Danau di musim dingin",
+      "danau-air": "air danau masih cair",
+      "danau-dingin": "udara musim dingin sangat dingin",
+      "danau-tipis": "permukaan danau membeku tipis",
+      "danau-tebal": "esnya tebal, bisa dipakai berseluncur",
+      "s-emas": "Membuat cincin emas",
+      "emas-padat": "potongan emas padat",
+      "emas-panas": "dipanaskan di tungku sangat panas",
+      "emas-tuang": "emas cair dituang ke cetakan",
+      "emas-cincin": "mendingin dan membeku jadi cincin",
+      "s-mentega": "Mentega meleleh lalu mengeras",
+      "mentega-padat": "mentega padat dari kulkas",
+      "mentega-wajan": "dipanaskan di wajan",
+      "mentega-leleh": "mentega meleleh jadi cair",
+      "mentega-keras": "didinginkan di kulkas, mengeras lagi"
     },
     "en": {
       "judul": "Melting and Freezing",
@@ -53,7 +83,37 @@
       "lilin-padat": "pieces of solid wax",
       "lilin-panci": "heated until it melts",
       "lilin-tuang": "liquid wax poured into a mould",
-      "lilin-beku": "it cools and freezes into a new candle"
+      "lilin-beku": "it cools and freezes into a new candle",
+      "s-eskrim": "Ice cream melts",
+      "eskrim-beku": "frozen ice cream from the freezer",
+      "eskrim-matahari": "left out in the hot sun",
+      "eskrim-menetes": "the ice cream starts to drip",
+      "eskrim-cair": "only runny ice cream is left in the bowl",
+      "s-esloli": "Making ice lollies",
+      "esloli-jus": "liquid fruit juice",
+      "esloli-tuang": "the juice is poured into a mould",
+      "esloli-freezer": "the mould stays in the freezer overnight",
+      "esloli-padat": "the juice freezes into a solid ice lolly",
+      "s-salju": "A snowman on a sunny day",
+      "salju-boneka": "a solid snowman",
+      "salju-matahari": "the sun shines warmly",
+      "salju-meleleh": "the snow starts to melt and drip",
+      "salju-genangan": "only a puddle of water is left",
+      "s-danau": "A lake in winter",
+      "danau-air": "the lake water is still liquid",
+      "danau-dingin": "the winter air is very cold",
+      "danau-tipis": "a thin layer of ice forms on top",
+      "danau-tebal": "the ice is thick enough for skating",
+      "s-emas": "Making a gold ring",
+      "emas-padat": "a solid piece of gold",
+      "emas-panas": "heated in a very hot furnace",
+      "emas-tuang": "the liquid gold is poured into a mould",
+      "emas-cincin": "it cools and freezes into a ring",
+      "s-mentega": "Butter melts then hardens",
+      "mentega-padat": "solid butter from the fridge",
+      "mentega-wajan": "heated in a pan",
+      "mentega-leleh": "the butter melts into a liquid",
+      "mentega-keras": "cooled in the fridge, it hardens again"
     }
   },
   "knobs": {
@@ -173,6 +233,166 @@
           "id": "beku",
           "labelKey": "lilin-beku",
           "emoji": "🕯️"
+        }
+      ]
+    },
+    {
+      "id": "eskrim",
+      "titleKey": "s-eskrim",
+      "steps": [
+        {
+          "id": "beku",
+          "labelKey": "eskrim-beku",
+          "emoji": "🍦"
+        },
+        {
+          "id": "matahari",
+          "labelKey": "eskrim-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "menetes",
+          "labelKey": "eskrim-menetes",
+          "emoji": "💧"
+        },
+        {
+          "id": "cair",
+          "labelKey": "eskrim-cair",
+          "emoji": "🥣"
+        }
+      ]
+    },
+    {
+      "id": "esloli",
+      "titleKey": "s-esloli",
+      "steps": [
+        {
+          "id": "jus",
+          "labelKey": "esloli-jus",
+          "emoji": "🧃"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "esloli-tuang",
+          "emoji": "🫗"
+        },
+        {
+          "id": "freezer",
+          "labelKey": "esloli-freezer",
+          "emoji": "❄️"
+        },
+        {
+          "id": "padat",
+          "labelKey": "esloli-padat",
+          "shape": "rect",
+          "color": "#ff7043"
+        }
+      ]
+    },
+    {
+      "id": "salju",
+      "titleKey": "s-salju",
+      "steps": [
+        {
+          "id": "boneka",
+          "labelKey": "salju-boneka",
+          "emoji": "⛄"
+        },
+        {
+          "id": "matahari",
+          "labelKey": "salju-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "meleleh",
+          "labelKey": "salju-meleleh",
+          "emoji": "💧"
+        },
+        {
+          "id": "genangan",
+          "labelKey": "salju-genangan",
+          "shape": "circle",
+          "color": "#90caf9",
+          "scale": 1.3
+        }
+      ]
+    },
+    {
+      "id": "danau",
+      "titleKey": "s-danau",
+      "steps": [
+        {
+          "id": "air",
+          "labelKey": "danau-air",
+          "emoji": "💧"
+        },
+        {
+          "id": "dingin",
+          "labelKey": "danau-dingin",
+          "emoji": "❄️"
+        },
+        {
+          "id": "tipis",
+          "labelKey": "danau-tipis",
+          "emoji": "🧊",
+          "scale": 0.6
+        },
+        {
+          "id": "tebal",
+          "labelKey": "danau-tebal",
+          "emoji": "⛸️"
+        }
+      ]
+    },
+    {
+      "id": "emas",
+      "titleKey": "s-emas",
+      "steps": [
+        {
+          "id": "padat",
+          "labelKey": "emas-padat",
+          "emoji": "🪙"
+        },
+        {
+          "id": "panas",
+          "labelKey": "emas-panas",
+          "emoji": "🔥"
+        },
+        {
+          "id": "tuang",
+          "labelKey": "emas-tuang",
+          "emoji": "🫗"
+        },
+        {
+          "id": "cincin",
+          "labelKey": "emas-cincin",
+          "emoji": "💍"
+        }
+      ]
+    },
+    {
+      "id": "mentega",
+      "titleKey": "s-mentega",
+      "steps": [
+        {
+          "id": "padat",
+          "labelKey": "mentega-padat",
+          "emoji": "🧈"
+        },
+        {
+          "id": "wajan",
+          "labelKey": "mentega-wajan",
+          "emoji": "🔥"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "mentega-leleh",
+          "emoji": "🫗"
+        },
+        {
+          "id": "keras",
+          "labelKey": "mentega-keras",
+          "emoji": "🧈"
         }
       ]
     }

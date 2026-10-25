@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-terbentuknya-fosil",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.BATUAN.02"
@@ -22,7 +22,65 @@
       "jejak-kering": "lumpur mengering dan mengeras",
       "jejak-tutup": "pasir halus menutupi jejak",
       "jejak-batu": "lapisan memadat menjadi batu",
-      "jejak-tampak": "batuan terkikis, jejak terlihat lagi"
+      "jejak-tampak": "batuan terkikis, jejak terlihat lagi",
+      "s-dino": "Fosil dinosaurus",
+      "dino-mati": "dinosaurus mati di tepi sungai",
+      "dino-timbun": "tubuhnya tertimbun lumpur sungai",
+      "dino-busuk": "daging membusuk, tulang tertinggal",
+      "dino-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+      "dino-mineral": "mineral perlahan menggantikan tulang",
+      "dino-gali": "ahli fosil menggali dan menemukannya",
+      "s-ikan": "Fosil ikan purba",
+      "ikan-mati": "ikan purba mati dan tenggelam ke dasar danau",
+      "ikan-timbun": "tertutup lumpur halus",
+      "ikan-busuk": "bagian lunak membusuk, tulang dan sisik tertinggal",
+      "ikan-tekan": "lapisan lumpur menekan jadi batuan sedimen",
+      "ikan-mineral": "mineral menggantikan tulangnya",
+      "ikan-sungai": "sungai mengikis batuan, fosil ikan terlihat",
+      "s-daun": "Fosil daun",
+      "daun-pohon": "pohon purba tumbuh di tepi rawa",
+      "daun-gugur": "daunnya gugur ke air rawa",
+      "daun-timbun": "daun tertutup lumpur halus",
+      "daun-batu": "lumpur memadat menjadi batu",
+      "daun-belah": "batu dibelah, cetakan daun terlihat",
+      "s-amber": "Nyamuk di dalam amber",
+      "amber-getah": "getah menetes dari batang pohon pinus",
+      "amber-jebak": "nyamuk hinggap dan terjebak di getah",
+      "amber-tutup": "getah baru menutupi seluruh tubuhnya",
+      "amber-keras": "getah mengeras selama jutaan tahun jadi amber",
+      "amber-temu": "amber ditemukan, nyamuknya terlihat utuh",
+      "s-hiu": "Fosil gigi hiu",
+      "hiu-mati": "hiu purba mati dan tenggelam ke dasar laut",
+      "hiu-timbun": "tertimbun pasir dan lumpur",
+      "hiu-busuk": "bagian lunak hancur, gigi yang keras tertinggal",
+      "hiu-mineral": "mineral menggantikan gigi itu",
+      "hiu-pantai": "ombak mengikis batuan, gigi fosil ditemukan di pantai",
+      "s-mamut": "Mamut beku",
+      "mamut-mati": "mamut mati di daerah yang sangat dingin",
+      "mamut-salju": "tubuhnya tertutup salju",
+      "mamut-es": "salju menjadi es, tubuhnya membeku",
+      "mamut-lama": "membeku ribuan tahun tanpa membusuk",
+      "mamut-temu": "es mencair, ilmuwan menemukan mamut itu",
+      "s-burung": "Fosil burung purba",
+      "burung-mati": "burung purba mati di tepi danau",
+      "burung-timbun": "tertutup lumpur yang sangat halus",
+      "burung-busuk": "daging membusuk, tulang dan bekas bulu tertinggal",
+      "burung-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+      "burung-mineral": "mineral menggantikan tulangnya",
+      "burung-tambang": "penambang batu membelah batuan dan menemukannya",
+      "s-penyu": "Fosil penyu purba",
+      "penyu-mati": "penyu purba mati di dasar laut",
+      "penyu-timbun": "tertimbun pasir",
+      "penyu-busuk": "bagian lunak membusuk, tempurung dan tulang tertinggal",
+      "penyu-tekan": "lapisan menumpuk dan menekan jadi batuan sedimen",
+      "penyu-mineral": "mineral menggantikan tempurung dan tulang",
+      "penyu-gurun": "laut purba itu kini gurun; angin mengikis batuan, fosil tersingkap",
+      "s-kayu": "Kayu yang membatu",
+      "kayu-tumbang": "pohon tumbang ke sungai",
+      "kayu-timbun": "batangnya tertimbun lumpur dan abu gunung api",
+      "kayu-resap": "air berisi mineral meresap ke dalam kayu",
+      "kayu-ganti": "mineral menggantikan kayu sedikit demi sedikit",
+      "kayu-batu": "kayu berubah jadi batu (kayu membatu)"
     },
     "en": {
       "judul": "How a Fossil Forms",
@@ -39,7 +97,65 @@
       "jejak-kering": "the mud dries and hardens",
       "jejak-tutup": "fine sand covers the print",
       "jejak-batu": "the layers harden into rock",
-      "jejak-tampak": "the rock wears away and the print shows again"
+      "jejak-tampak": "the rock wears away and the print shows again",
+      "s-dino": "A dinosaur fossil",
+      "dino-mati": "a dinosaur dies by a river",
+      "dino-timbun": "its body is buried by river mud",
+      "dino-busuk": "the flesh rots and the bones are left",
+      "dino-tekan": "layers pile up and press into sedimentary rock",
+      "dino-mineral": "minerals slowly replace the bones",
+      "dino-gali": "fossil hunters dig it up",
+      "s-ikan": "An ancient fish fossil",
+      "ikan-mati": "an ancient fish dies and sinks to the lake floor",
+      "ikan-timbun": "it is covered by fine mud",
+      "ikan-busuk": "the soft parts rot; bones and scales are left",
+      "ikan-tekan": "layers of mud press into sedimentary rock",
+      "ikan-mineral": "minerals replace the bones",
+      "ikan-sungai": "a river wears the rock away and the fish fossil shows",
+      "s-daun": "A leaf fossil",
+      "daun-pohon": "an ancient tree grows by a swamp",
+      "daun-gugur": "its leaves fall into the swamp water",
+      "daun-timbun": "the leaves are covered by fine mud",
+      "daun-batu": "the mud hardens into rock",
+      "daun-belah": "the rock is split and a leaf print shows",
+      "s-amber": "A mosquito in amber",
+      "amber-getah": "sticky resin drips from a pine tree",
+      "amber-jebak": "a mosquito lands and gets stuck in the resin",
+      "amber-tutup": "more resin covers its whole body",
+      "amber-keras": "over millions of years the resin hardens into amber",
+      "amber-temu": "the amber is found with the mosquito still whole",
+      "s-hiu": "A shark tooth fossil",
+      "hiu-mati": "an ancient shark dies and sinks to the sea floor",
+      "hiu-timbun": "it is buried by sand and mud",
+      "hiu-busuk": "the soft parts break down; the hard teeth are left",
+      "hiu-mineral": "minerals replace the tooth",
+      "hiu-pantai": "waves wear the rock away and the fossil tooth is found on a beach",
+      "s-mamut": "A frozen mammoth",
+      "mamut-mati": "a mammoth dies in a very cold place",
+      "mamut-salju": "its body is covered with snow",
+      "mamut-es": "the snow turns to ice and the body freezes",
+      "mamut-lama": "it stays frozen for thousands of years without rotting",
+      "mamut-temu": "the ice melts and scientists find the mammoth",
+      "s-burung": "An ancient bird fossil",
+      "burung-mati": "an ancient bird dies by a lake",
+      "burung-timbun": "it is covered by very fine mud",
+      "burung-busuk": "the flesh rots; bones and feather marks are left",
+      "burung-tekan": "layers pile up and press into sedimentary rock",
+      "burung-mineral": "minerals replace the bones",
+      "burung-tambang": "quarry workers split the rock and find it",
+      "s-penyu": "An ancient turtle fossil",
+      "penyu-mati": "an ancient turtle dies on the sea floor",
+      "penyu-timbun": "it is buried by sand",
+      "penyu-busuk": "the soft parts rot; the shell and bones are left",
+      "penyu-tekan": "layers pile up and press into sedimentary rock",
+      "penyu-mineral": "minerals replace the shell and bones",
+      "penyu-gurun": "the old sea is now a desert; wind wears the rock and the fossil shows",
+      "s-kayu": "Wood that turned to stone",
+      "kayu-tumbang": "a tree falls into a river",
+      "kayu-timbun": "the trunk is buried by mud and volcanic ash",
+      "kayu-resap": "mineral-rich water soaks into the wood",
+      "kayu-ganti": "minerals replace the wood bit by bit",
+      "kayu-batu": "the wood turns to stone (petrified wood)"
     }
   },
   "knobs": {
@@ -48,7 +164,7 @@
       "max": 6,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah langkah: 4 → 6 (jejak kaki 5 langkah)"
+      "keterangan": "jumlah langkah: 4 → 6 (beberapa fosil hanya 5 langkah)"
     }
   },
   "assets": [],
@@ -122,6 +238,306 @@
           "id": "tampak",
           "labelKey": "jejak-tampak",
           "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "dino",
+      "titleKey": "s-dino",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "dino-mati",
+          "emoji": "🦕"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "dino-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "dino-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "dino-tekan",
+          "emoji": "📚"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "dino-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "gali",
+          "labelKey": "dino-gali",
+          "emoji": "⛏️"
+        }
+      ]
+    },
+    {
+      "id": "ikan",
+      "titleKey": "s-ikan",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "ikan-mati",
+          "emoji": "🐟"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "ikan-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "ikan-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "ikan-tekan",
+          "emoji": "📚"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "ikan-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "sungai",
+          "labelKey": "ikan-sungai",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "daun",
+      "titleKey": "s-daun",
+      "steps": [
+        {
+          "id": "pohon",
+          "labelKey": "daun-pohon",
+          "emoji": "🌳"
+        },
+        {
+          "id": "gugur",
+          "labelKey": "daun-gugur",
+          "emoji": "🍃"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "daun-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "batu",
+          "labelKey": "daun-batu",
+          "emoji": "📚"
+        },
+        {
+          "id": "belah",
+          "labelKey": "daun-belah",
+          "emoji": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "amber",
+      "titleKey": "s-amber",
+      "steps": [
+        {
+          "id": "getah",
+          "labelKey": "amber-getah",
+          "emoji": "🌲"
+        },
+        {
+          "id": "jebak",
+          "labelKey": "amber-jebak",
+          "emoji": "🦟"
+        },
+        {
+          "id": "tutup",
+          "labelKey": "amber-tutup",
+          "shape": "circle",
+          "color": "#ffb300"
+        },
+        {
+          "id": "keras",
+          "labelKey": "amber-keras",
+          "emoji": "⏳"
+        },
+        {
+          "id": "temu",
+          "labelKey": "amber-temu",
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": "hiu",
+      "titleKey": "s-hiu",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "hiu-mati",
+          "emoji": "🦈"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "hiu-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "hiu-busuk",
+          "emoji": "🦷"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "hiu-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "pantai",
+          "labelKey": "hiu-pantai",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "mamut",
+      "titleKey": "s-mamut",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "mamut-mati",
+          "emoji": "🦣"
+        },
+        {
+          "id": "salju",
+          "labelKey": "mamut-salju",
+          "emoji": "❄️"
+        },
+        {
+          "id": "es",
+          "labelKey": "mamut-es",
+          "emoji": "🧊"
+        },
+        {
+          "id": "lama",
+          "labelKey": "mamut-lama",
+          "emoji": "⏳"
+        },
+        {
+          "id": "temu",
+          "labelKey": "mamut-temu",
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": "burung",
+      "titleKey": "s-burung",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "burung-mati",
+          "emoji": "🐦"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "burung-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "burung-busuk",
+          "emoji": "🪶"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "burung-tekan",
+          "emoji": "📚"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "burung-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "tambang",
+          "labelKey": "burung-tambang",
+          "emoji": "⛏️"
+        }
+      ]
+    },
+    {
+      "id": "penyu",
+      "titleKey": "s-penyu",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "penyu-mati",
+          "emoji": "🐢"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "penyu-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "penyu-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "penyu-tekan",
+          "emoji": "📚"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "penyu-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "gurun",
+          "labelKey": "penyu-gurun",
+          "emoji": "🏜️"
+        }
+      ]
+    },
+    {
+      "id": "kayu",
+      "titleKey": "s-kayu",
+      "steps": [
+        {
+          "id": "tumbang",
+          "labelKey": "kayu-tumbang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "kayu-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "resap",
+          "labelKey": "kayu-resap",
+          "emoji": "💧"
+        },
+        {
+          "id": "ganti",
+          "labelKey": "kayu-ganti",
+          "emoji": "💎"
+        },
+        {
+          "id": "batu",
+          "labelKey": "kayu-batu",
+          "emoji": "🪨"
         }
       ]
     }

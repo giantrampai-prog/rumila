@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-minta-jawab-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD6",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -40,7 +40,43 @@
       "s5-2": "aplikasi mengirim permintaan ke API fakta",
       "s5-3": "server memilih satu fakta",
       "s5-4": "server mengirim teks fakta itu",
-      "s5-5": "fakta muncul di layar"
+      "s5-5": "fakta muncul di layar",
+      "s6": "Toko buku daring",
+      "s6-1": "kamu mencari 'buku dinosaurus'",
+      "s6-2": "aplikasi mengirim kata kunci ke API toko",
+      "s6-3": "server mencari buku yang cocok",
+      "s6-4": "server mengirim daftar buku",
+      "s6-5": "aplikasi menampilkan sampul-sampul buku",
+      "s7": "Jadwal kereta",
+      "s7-1": "kamu memilih stasiun Bogor",
+      "s7-2": "aplikasi meminta jadwal ke API kereta",
+      "s7-3": "server membaca jadwal hari ini",
+      "s7-4": "server mengirim jam keberangkatan",
+      "s7-5": "aplikasi menampilkan kereta berikutnya: 07.15",
+      "s8": "Pesan obrolan",
+      "s8-1": "kamu menekan kirim: 'Halo!'",
+      "s8-2": "aplikasi mengirim pesan ke API obrolan",
+      "s8-3": "server menyimpan pesan untuk temanmu",
+      "s8-4": "server menjawab: pesan diterima",
+      "s8-5": "aplikasi menampilkan tanda centang ✓",
+      "s9": "Aplikasi resep",
+      "s9-1": "kamu memilih bahan: telur",
+      "s9-2": "aplikasi mengirim permintaan ke API resep",
+      "s9-3": "server mencari resep berbahan telur",
+      "s9-4": "server mengirim daftar resep",
+      "s9-5": "aplikasi menampilkan resep telur dadar",
+      "s10": "Video pelajaran",
+      "s10-1": "kamu memilih video 'gunung api'",
+      "s10-2": "aplikasi meminta video itu ke API video",
+      "s10-3": "server mencari berkas videonya",
+      "s10-4": "server mengirim videonya sedikit demi sedikit",
+      "s10-5": "video mulai diputar di layar",
+      "s11": "Penukar mata uang",
+      "s11-1": "kamu menulis 10 dolar",
+      "s11-2": "aplikasi mengirim angka itu ke API kurs",
+      "s11-3": "server menghitung dengan kurs hari ini",
+      "s11-4": "server mengirim hasilnya dalam rupiah",
+      "s11-5": "aplikasi menampilkan hasil dalam rupiah"
     },
     "en": {
       "judul": "Request and Response via an API",
@@ -74,7 +110,43 @@
       "s5-2": "the app sends a request to the facts API",
       "s5-3": "the server picks one fact",
       "s5-4": "the server sends that fact's text",
-      "s5-5": "the fact appears on screen"
+      "s5-5": "the fact appears on screen",
+      "s6": "An online bookshop",
+      "s6-1": "you search for 'dinosaur books'",
+      "s6-2": "the app sends the keyword to the shop API",
+      "s6-3": "the server looks for matching books",
+      "s6-4": "the server sends back a list of books",
+      "s6-5": "the app shows the book covers",
+      "s7": "Train times",
+      "s7-1": "you choose Bogor station",
+      "s7-2": "the app asks the train API for the timetable",
+      "s7-3": "the server reads today's timetable",
+      "s7-4": "the server sends the departure times",
+      "s7-5": "the app shows the next train: 07:15",
+      "s8": "A chat message",
+      "s8-1": "you press send: 'Hello!'",
+      "s8-2": "the app sends the message to the chat API",
+      "s8-3": "the server stores the message for your friend",
+      "s8-4": "the server replies: message received",
+      "s8-5": "the app shows a tick ✓",
+      "s9": "A recipe app",
+      "s9-1": "you choose an ingredient: egg",
+      "s9-2": "the app sends a request to the recipe API",
+      "s9-3": "the server looks for recipes with egg",
+      "s9-4": "the server sends back a list of recipes",
+      "s9-5": "the app shows an omelette recipe",
+      "s10": "A lesson video",
+      "s10-1": "you choose the video 'volcanoes'",
+      "s10-2": "the app asks the video API for it",
+      "s10-3": "the server finds the video file",
+      "s10-4": "the server sends the video bit by bit",
+      "s10-5": "the video starts playing on screen",
+      "s11": "A currency converter",
+      "s11-1": "you type 10 dollars",
+      "s11-2": "the app sends the number to the exchange-rate API",
+      "s11-3": "the server works it out with today's rate",
+      "s11-4": "the server sends back the answer in rupiah",
+      "s11-5": "the app shows the answer in rupiah"
     }
   },
   "knobs": {
@@ -243,6 +315,192 @@
         {
           "id": "s5-5",
           "labelKey": "s5-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-1",
+          "labelKey": "s6-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-2",
+          "labelKey": "s6-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-3",
+          "labelKey": "s6-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-4",
+          "labelKey": "s6-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-5",
+          "labelKey": "s6-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-1",
+          "labelKey": "s7-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-2",
+          "labelKey": "s7-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-3",
+          "labelKey": "s7-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-4",
+          "labelKey": "s7-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-5",
+          "labelKey": "s7-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-1",
+          "labelKey": "s8-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-2",
+          "labelKey": "s8-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-3",
+          "labelKey": "s8-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-4",
+          "labelKey": "s8-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-5",
+          "labelKey": "s8-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-1",
+          "labelKey": "s9-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-2",
+          "labelKey": "s9-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-3",
+          "labelKey": "s9-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-4",
+          "labelKey": "s9-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-5",
+          "labelKey": "s9-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-1",
+          "labelKey": "s10-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-2",
+          "labelKey": "s10-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-3",
+          "labelKey": "s10-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-4",
+          "labelKey": "s10-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-5",
+          "labelKey": "s10-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "titleKey": "s11",
+      "steps": [
+        {
+          "id": "s11-1",
+          "labelKey": "s11-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-2",
+          "labelKey": "s11-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-3",
+          "labelKey": "s11-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-4",
+          "labelKey": "s11-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-5",
+          "labelKey": "s11-5",
           "scale": 0.4
         }
       ]

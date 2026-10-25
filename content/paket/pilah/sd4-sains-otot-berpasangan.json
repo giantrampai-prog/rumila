@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-otot-berpasangan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.RANGKA-OTOT.03"
@@ -30,7 +30,11 @@
       "p-r5": "Kaki diluruskan untuk menendang bola. Otot mana yang mengerut?",
       "p-r6": "Lutut ditekuk ke belakang saat berlari. Otot mana yang mengerut?",
       "p-r7": "Apa yang membuat tulang bergerak?",
-      "p-r8": "Otot hanya bisa menarik, tidak bisa mendorong. Karena itu otot bekerja…"
+      "p-r8": "Otot hanya bisa menarik, tidak bisa mendorong. Karena itu otot bekerja…",
+      "p-r9": "Lutut diluruskan. Otot belakang paha…",
+      "p-r10": "Lutut ditekuk. Otot depan paha…",
+      "p-r11": "Tangan mengangkat gelas ke mulut. Otot mana yang mengerut?",
+      "p-r12": "Lengan mendorong pintu sampai lurus. Otot mana yang mengerut?"
     },
     "en": {
       "judul": "Muscle Pairs",
@@ -55,7 +59,11 @@
       "p-r5": "The leg straightens to kick a ball. Which muscle contracts?",
       "p-r6": "The knee bends backwards while running. Which muscle contracts?",
       "p-r7": "What makes a bone move?",
-      "p-r8": "Muscles can only pull, not push. So muscles work…"
+      "p-r8": "Muscles can only pull, not push. So muscles work…",
+      "p-r9": "The knee straightens. The back thigh muscle…",
+      "p-r10": "The knee bends. The front thigh muscle…",
+      "p-r11": "The hand lifts a cup to the mouth. Which muscle contracts?",
+      "p-r12": "The arm pushes a door until it is straight. Which muscle contracts?"
     }
   },
   "knobs": {},
@@ -222,6 +230,44 @@
         "sendirian"
       ],
       "correct": "berpasangan"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "biseps",
+        "trisep",
+        "tulang"
+      ],
+      "correct": "biseps"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "biseps",
+        "trisep",
+        "tulang"
+      ],
+      "correct": "trisep"
     }
   ]
 }

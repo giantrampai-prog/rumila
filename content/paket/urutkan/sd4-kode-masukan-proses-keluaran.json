@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-masukan-proses-keluaran",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -40,7 +40,27 @@
       "s6-1": "minta nilai n1, n2, n3",
       "s6-2": "jumlah = n1 + n2 + n3",
       "s6-3": "rata = jumlah / 3",
-      "s6-4": "tampilkan rata"
+      "s6-4": "tampilkan rata",
+      "s7": "Umur tahun depan",
+      "s7-1": "tampilkan 'Berapa umurmu?'",
+      "s7-2": "umur = angka dari pengguna",
+      "s7-3": "umur = umur + 1",
+      "s7-4": "tampilkan umur",
+      "s8": "Uang jajan seminggu",
+      "s8-1": "tampilkan 'Uang jajan sehari?'",
+      "s8-2": "harian = angka dari pengguna",
+      "s8-3": "seminggu = harian * 7",
+      "s8-4": "tampilkan seminggu",
+      "s9": "Menit jadi detik",
+      "s9-1": "tampilkan 'Berapa menit?'",
+      "s9-2": "m = angka dari pengguna",
+      "s9-3": "d = m * 60",
+      "s9-4": "tampilkan d detik",
+      "s10": "Bagi permen berdua",
+      "s10-1": "tampilkan 'Ada berapa permen?'",
+      "s10-2": "permen = angka dari pengguna",
+      "s10-3": "bagian = permen / 2",
+      "s10-4": "tampilkan bagian"
     },
     "en": {
       "judul": "Input, Process, Output",
@@ -74,7 +94,27 @@
       "s6-1": "ask for marks m1, m2, m3",
       "s6-2": "total = m1 + m2 + m3",
       "s6-3": "mean = total / 3",
-      "s6-4": "show mean"
+      "s6-4": "show mean",
+      "s7": "Age next year",
+      "s7-1": "show 'How old are you?'",
+      "s7-2": "age = number from the user",
+      "s7-3": "age = age + 1",
+      "s7-4": "show age",
+      "s8": "Pocket money for a week",
+      "s8-1": "show 'Pocket money per day?'",
+      "s8-2": "daily = number from the user",
+      "s8-3": "week = daily * 7",
+      "s8-4": "show week",
+      "s9": "Minutes to seconds",
+      "s9-1": "show 'How many minutes?'",
+      "s9-2": "m = number from the user",
+      "s9-3": "s = m * 60",
+      "s9-4": "show s seconds",
+      "s10": "Share sweets between two",
+      "s10-1": "show 'How many sweets?'",
+      "s10-2": "sweets = number from the user",
+      "s10-3": "share = sweets / 2",
+      "s10-4": "show share"
     }
   },
   "knobs": {
@@ -245,6 +285,94 @@
           "id": "s6-4",
           "labelKey": "s6-4",
           "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-1",
+          "labelKey": "s7-1"
+        },
+        {
+          "id": "s7-2",
+          "labelKey": "s7-2"
+        },
+        {
+          "id": "s7-3",
+          "labelKey": "s7-3"
+        },
+        {
+          "id": "s7-4",
+          "labelKey": "s7-4"
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-1",
+          "labelKey": "s8-1"
+        },
+        {
+          "id": "s8-2",
+          "labelKey": "s8-2"
+        },
+        {
+          "id": "s8-3",
+          "labelKey": "s8-3"
+        },
+        {
+          "id": "s8-4",
+          "labelKey": "s8-4"
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-1",
+          "labelKey": "s9-1"
+        },
+        {
+          "id": "s9-2",
+          "labelKey": "s9-2"
+        },
+        {
+          "id": "s9-3",
+          "labelKey": "s9-3"
+        },
+        {
+          "id": "s9-4",
+          "labelKey": "s9-4"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-1",
+          "labelKey": "s10-1"
+        },
+        {
+          "id": "s10-2",
+          "labelKey": "s10-2"
+        },
+        {
+          "id": "s10-3",
+          "labelKey": "s10-3"
+        },
+        {
+          "id": "s10-4",
+          "labelKey": "s10-4"
         }
       ]
     }
