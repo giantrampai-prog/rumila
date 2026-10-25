@@ -53,12 +53,25 @@ export function buatRondeBaru(p: ContentPack, knobs: Knobs, seed: number, riwaya
   const terakhir = riwayat[riwayat.length - 1];
   const turunan = (i: number) => (seed + Math.imul(i, 0x9e3779b1)) >>> 0;
   let bedaTerakhir: Ronde | undefined;
+  // Pilah kelompok: soal "baru" yang benda-bendanya sebagian besar baru saja tampil tetap terasa dobel bagi anak,
+  // jadi dari semua calon baru dipilih yang paling sedikit berbagi benda dengan ronde-ronde terakhir.
+  const kelompok = p.mechanic === "pilah" && p.mode !== "pilih";
+  const bendaLalu = kelompok ? riwayat.map((k) => { try { const j = JSON.parse(k); return j[0] === "pilah-kelompok" ? new Set<string>(j[1]) : new Set<string>(); } catch { return new Set<string>(); } }) : [];
+  const tumpang = (r: Ronde) => r.mechanic !== "pilah" || r.ronde.mode !== "kelompok" ? 0
+    : bendaLalu.reduce((s, lalu, i) => s + r.ronde.items.filter((x) => lalu.has(x.id)).length / (bendaLalu.length - i), 0);
+  let terbaik: { r: Ronde; skor: number } | undefined;
   for (let i = 0; i < percobaan; i++) {
     const r = buatRonde(p, knobs, turunan(i));
     const k = kunciRonde(r);
-    if (!pernah.has(k)) return r;
+    if (!pernah.has(k)) {
+      if (!kelompok) return r;
+      const skor = tumpang(r);
+      if (!terbaik || skor < terbaik.skor) terbaik = { r, skor };
+      continue;
+    }
     if (!bedaTerakhir && k !== terakhir) bedaTerakhir = r;
   }
+  if (terbaik) return terbaik.r;
   // Kumpulan soal di tingkat ini habis → pinjam dari tingkat kesulitan tetangga (satu langkah knob naik/turun).
   const tetangga = knobTetangga(p, knobs);
   for (let i = 0; i < percobaan; i++) {
