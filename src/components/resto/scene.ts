@@ -10,13 +10,18 @@ import { setTrafficLevel, sfx, startTraffic, stopTraffic } from '@/lib/sfx';
 import { City } from './city';
 import { buildSite, type Site } from './site';
 import { buildResto } from './building';
-import { AISLE_Z, CHAIRS, COUNTER, PASS_Z, QUEUE_X, SIDEWALK_IN, STATIONS, groundY, route } from './layout';
+import { AISLE_Z, BLD, CHAIRS, COUNTER, PASS_Z, QUEUE_X, ROOMS, SIDEWALK_IN, STATIONS, groundY, route } from './layout';
 import { navFromScene, type NavGrid } from './nav';
 import { buildProgress } from '@/lib/resto/sim';
 import { buildRealSky } from '@/components/fruits/garden/sky';
 import { disposePerson, lookFor, makePerson, posePerson } from './people';
 
 const _sunOff = new T.Vector3(24, 48, 30);
+const _ray = new T.Raycaster();
+const _ndc = new T.Vector2();
+const _ground = new T.Plane(new T.Vector3(0, 1, 0), 0);
+/** Tinggi mata orang dewasa di atas lantai (pandangan orang). */
+const EYE_H = 1.6;
 
 
 function canvasTex(w: number, h: number, draw: (g: CanvasRenderingContext2D) => void) {
@@ -56,6 +61,8 @@ interface Member {
   eat?: boolean;
   /** staf yang bekerja di tempatnya saat diam (koki memasak, kasir melayani) */
   work?: boolean;
+  /** arah hadap saat diam di tempat kerja (radian); koki menghadap kompor, kasir menghadap pelanggan */
+  rest?: number;
 }
 
 /** Tinggi dudukan kursi makan di atas lantai (building.ts: papan 0.42 + bantal). */
@@ -88,6 +95,12 @@ export class RestoScene {
   private drag: { x: number; y: number } | null = null;
   private pinch = 0;
   private pointers = new Map<number, { x: number; y: number }>();
+  /** pandangan orang (ikon diseret ke lantai): kamera di mata, geser = menoleh, ketuk lantai = berjalan */
+  private pov: { pos: T.Vector3; path: T.Vector3[]; yaw: number; pitch: number; fov: number } | null = null;
+  private povMark: T.Mesh;
+  private tapAt: { x: number; y: number; moved: number } | null = null;
+  /** dipanggil saat pandangan orang dimulai/selesai (untuk tombol di layar) */
+  onPov: ((on: boolean) => void) | null = null;
 
   private shell = new T.Group(); // dinding, lantai, atap: dibangun ulang saat keadaan berubah
   private dyn = new T.Group(); // alat, meja, dekorasi
@@ -158,11 +171,20 @@ export class RestoScene {
     });
     this.textures.push(this.greet);
     this.buildWorld();
+    // penanda lingkaran di lantai saat ikon orang diseret / tujuan berjalan
+    this.povMark = new T.Mesh(
+      new T.RingGeometry(0.28, 0.42, 32).rotateX(-Math.PI / 2),
+      new T.MeshBasicMaterial({ color: '#ffb02e', transparent: true, opacity: 0.9, depthWrite: false }),
+    );
+    this.povMark.visible = false;
+    this.povMark.renderOrder = 5;
+    this.scene.add(this.povMark);
 
     const el = this.renderer.domElement;
     el.addEventListener('pointerdown', (e) => {
       this.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       this.drag = { x: e.clientX, y: e.clientY };
+      this.tapAt = this.pointers.size === 1 ? { x: e.clientX, y: e.clientY, moved: 0 } : null;
     });
     el.addEventListener('pointermove', (e) => {
       const p = this.pointers.get(e.pointerId);
@@ -172,7 +194,10 @@ export class RestoScene {
         p.y = e.clientY;
         const [a, b] = [...this.pointers.values()];
         const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (this.pinch) this.dist = T.MathUtils.clamp(this.dist * (this.pinch / d), RestoScene.MIN_D, RestoScene.MAX_D);
+        if (this.pinch) {
+          if (this.pov) this.pov.fov = T.MathUtils.clamp(this.pov.fov * (this.pinch / d), 35, 95);
+          else this.dist = T.MathUtils.clamp(this.dist * (this.pinch / d), RestoScene.MIN_D, RestoScene.MAX_D);
+        }
         this.pinch = d;
         return;
       }
@@ -180,6 +205,14 @@ export class RestoScene {
         dy = e.clientY - p.y;
       p.x = e.clientX;
       p.y = e.clientY;
+      if (this.tapAt) this.tapAt.moved += Math.abs(dx) + Math.abs(dy);
+      if (this.pov) {
+        // menoleh: seret ke kiri = pandangan ikut ke kiri (seperti Street View)
+        const k = (this.pov.fov / 70) * 0.005;
+        this.pov.yaw += dx * k;
+        this.pov.pitch = T.MathUtils.clamp(this.pov.pitch + dy * k, -1.2, 1.2);
+        return;
+      }
       if (this.pitch > 1.3) {
         // tampilan dari atas: geser peta
         const k = this.dist * 0.0016;
@@ -193,6 +226,12 @@ export class RestoScene {
       this.pitch = T.MathUtils.clamp(this.pitch + dy * 0.004, 0.3, 1.25);
     });
     const up = (e: PointerEvent) => {
+      // ketukan (tanpa geser) di pandangan orang = berjalan ke titik itu
+      if (e.type === 'pointerup' && this.pov && this.tapAt && this.tapAt.moved < 8) {
+        const h = this.pick(e.clientX, e.clientY);
+        if (h) this.povWalk(h);
+      }
+      this.tapAt = null;
       this.pointers.delete(e.pointerId);
       if (this.pointers.size < 2) this.pinch = 0;
       this.drag = null;
@@ -203,7 +242,8 @@ export class RestoScene {
       'wheel',
       (e) => {
         e.preventDefault();
-        this.dist = T.MathUtils.clamp(this.dist * Math.exp(e.deltaY * 0.001), RestoScene.MIN_D, RestoScene.MAX_D);
+        if (this.pov) this.pov.fov = T.MathUtils.clamp(this.pov.fov * Math.exp(e.deltaY * 0.001), 35, 95);
+        else this.dist = T.MathUtils.clamp(this.dist * Math.exp(e.deltaY * 0.001), RestoScene.MIN_D, RestoScene.MAX_D);
       },
       { passive: false },
     );
@@ -279,11 +319,16 @@ export class RestoScene {
   }
 
   zoomBy(f: number) {
+    if (this.pov) {
+      this.pov.fov = T.MathUtils.clamp(this.pov.fov * f, 35, 95);
+      return;
+    }
     this.dist = T.MathUtils.clamp(this.dist * f, RestoScene.MIN_D, RestoScene.MAX_D);
   }
 
   /** Beralih ke pandangan dari atas (peta, bisa digeser) atau kembali ke pandangan miring. */
   toggleTop() {
+    this.exitPov();
     if (this.pitch > 1.3) this.resetView();
     else {
       this.pitch = 1.52;
@@ -292,7 +337,100 @@ export class RestoScene {
     return this.pitch > 1.3;
   }
 
+  /* ---------- pandangan orang: ikon diseret ke lantai (seperti pegman Google Maps) ---------- */
+
+  /** Titik lantai di bawah posisi layar (lantai resto, halaman, atau jalan); null = di luar kanvas / langit. */
+  private pick(cx: number, cy: number) {
+    const r = this.renderer.domElement.getBoundingClientRect();
+    if (cx < r.left || cx > r.right || cy < r.top || cy > r.bottom) return null;
+    _ndc.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+    _ray.setFromCamera(_ndc, this.camera);
+    // titik di bidang lantai tepat di bawah kursor (lantai resto lebih tinggi dari halaman: ulang 3× dengan tinggi
+    // lantai di titik itu); dinding & perabot diabaikan, nanti digeser ke sel bebas terdekat
+    const p = new T.Vector3();
+    _ground.constant = 0;
+    for (let k = 0; k < 3; k++) {
+      if (!_ray.ray.intersectPlane(_ground, p)) return null;
+      _ground.constant = -groundY(p.x, p.z);
+    }
+    _ground.constant = 0;
+    if (Math.abs(p.x) > 90 || Math.abs(p.z) > 90) return null;
+    p.y = groundY(p.x, p.z);
+    return p;
+  }
+
+  /** Tampilkan penanda di lantai selama ikon diseret; false = tidak ada lantai di bawah jari. */
+  povHover(cx: number, cy: number) {
+    const p = this.pick(cx, cy);
+    this.povMark.visible = !!p;
+    if (p) this.povMark.position.copy(p).setY(p.y + 0.03);
+    return !!p;
+  }
+
+  /** Lepas ikon: kamera pindah ke mata orang yang berdiri di titik itu. */
+  povAt(cx: number, cy: number) {
+    const p = this.pick(cx, cy);
+    this.povMark.visible = false;
+    if (!p) return false;
+    // menghadap ke tengah ruangan tempat ia berdiri (dapur: memandang sepanjang dapur), selain itu ke tengah resto
+    const inBld = p.x > BLD.x0 && p.x < BLD.x1 && p.z > BLD.z0 && p.z < BLD.z1;
+    const kitchen = inBld && p.z < ROOMS.kitchenZ[1];
+    const look = kitchen
+      ? new T.Vector3(p.x > (ROOMS.dapur[0] + ROOMS.dapur[1]) / 2 ? ROOMS.dapur[0] : ROOMS.dapur[1], 0, (ROOMS.kitchenZ[0] + ROOMS.kitchenZ[1]) / 2 + 0.6)
+      : new T.Vector3(-8, 0, -7);
+    const dir = look.sub(p);
+    const yaw = dir.lengthSq() > 1 ? Math.atan2(-dir.x, -dir.z) : 0;
+    // berdiri di sel bebas terdekat (tidak di dalam meja/dinding)
+    const spot = this.nav?.route(p, p, true)?.pop();
+    if (spot) p.set(spot.x, groundY(spot.x, spot.z), spot.z);
+    this.pov = { pos: p.clone(), path: [], yaw, pitch: kitchen ? -0.12 : -0.05, fov: 75 };
+    this.onPov?.(true);
+    return true;
+  }
+
+  /** Berjalan ke titik yang diketuk lewat kisi jalur (memutari meja, sekat, dinding). */
+  private povWalk(dest: T.Vector3) {
+    if (!this.pov) return;
+    const path = this.nav?.route(this.pov.pos, dest, true) ?? null;
+    if (path) {
+      this.pov.path = path;
+      return;
+    }
+    // tanpa rute (mis. dapur tertutup meja saji): jalan lurus, berhenti sebelum menabrak meja/dinding
+    const from = this.pov.pos;
+    const dir = dest.clone().sub(from).setY(0);
+    let len = dir.length();
+    if (len < 0.1) return;
+    dir.normalize();
+    for (const h of [0.35, 0.95]) {
+      _ray.set(new T.Vector3(from.x, from.y + h, from.z), dir);
+      _ray.far = len + 0.4;
+      const hit = _ray.intersectObjects([this.shell, this.dyn], true).find((x) => (x.object as T.Mesh).visible);
+      if (hit) len = Math.min(len, hit.distance - 0.4);
+    }
+    _ray.far = Infinity;
+    if (len > 0.1) this.pov.path = [from.clone().addScaledVector(dir, len)];
+  }
+
+  exitPov() {
+    if (!this.pov) return;
+    // kamera orbit kembali menyorot titik tempat orang tadi berdiri
+    this.target.set(this.pov.pos.x, 1, this.pov.pos.z);
+    this.dist = Math.min(this.dist, 22);
+    this.pitch = Math.min(this.pitch, 1.0);
+    this.pov = null;
+    this.povMark.visible = false;
+    this.camera.fov = this.host.clientWidth < this.host.clientHeight ? 55 : 40;
+    this.camera.updateProjectionMatrix();
+    this.onPov?.(false);
+  }
+
+  get inPov() {
+    return !!this.pov;
+  }
+
   resetView() {
+    this.exitPov();
     this.yaw = 0.55;
     this.pitch = 0.95;
     this.dist = 32;
@@ -328,17 +466,27 @@ export class RestoScene {
     for (const m of s.handed ? s.staff : []) {
       if (this.staffActors.has(m.id)) continue;
       const o = makePerson(lookFor(m.role), this.personMat);
-      const home = this.staffHome(m.role, [...this.staffActors.keys()].length);
+      const home = this.staffHome(m.role, this.roleIndex(s, m.id));
       o.position.copy(home);
       this.people.add(o);
       const work = m.role === 'koki' || m.role === 'kasir';
-      this.staffActors.set(m.id, { members: [{ obj: o, path: [], delay: 0, face: null, work }], key: 'home', food: [], bubble: null });
+      // koki & pelayan menghadap ke belakang (kompor / meja saji), kasir & kebersihan ke depan
+      const rest = m.role === 'koki' || m.role === 'pelayan' ? Math.PI : 0;
+      o.rotation.y = rest;
+      this.staffActors.set(m.id, { members: [{ obj: o, path: [], delay: 0, face: null, work, rest }], key: 'home', food: [], bubble: null });
     }
   }
 
+  /** Urutan staf di antara rekan seperan (kasir ke-2 berdiri di sebelah kasir ke-1, tidak bertumpuk). */
+  private roleIndex(s: RestoState, id: string) {
+    const m = s.staff.find((x) => x.id === id);
+    return m ? s.staff.filter((x) => x.role === m.role).findIndex((x) => x.id === id) : 0;
+  }
+
   private staffHome(role: string, i: number) {
-    if (role === 'kasir') return new T.Vector3(COUNTER.x, 0, COUNTER.z - 0.9);
-    if (role === 'koki') return STATIONS[['goreng', 'kompor', 'sushi', 'minum'][i % 4]].clone().add(new T.Vector3(0, 0, 1.0));
+    // kasir pertama di depan monitor POS, berikutnya bergeser ke kiri sepanjang meja kasir
+    if (role === 'kasir') return new T.Vector3(COUNTER.x + 0.5 - (i % 3) * 0.95, 0, COUNTER.z - 0.9);
+    if (role === 'koki') return STATIONS[['goreng', 'kompor', 'sushi', 'minum'][i % 4]].clone().add(new T.Vector3(0, 0, 0.7));
     if (role === 'pelayan') return new T.Vector3(-14 + i * 1.2, 0, PASS_Z + 0.55);
     return new T.Vector3(-7.6, 0, -3.4);
   }
@@ -442,7 +590,7 @@ export class RestoScene {
         const a = this.staffActors.get(m.id);
         if (!a) continue;
         let key = 'home',
-          dest = this.staffHome(m.role, [...this.staffActors.keys()].indexOf(m.id));
+          dest = this.staffHome(m.role, this.roleIndex(s, m.id));
         if (m.role === 'pelayan' && serving && this.tablePos[serving.table]) {
           key = `serve${serving.table}`;
           dest = this.tablePos[serving.table].clone().add(new T.Vector3(1.0, 0, 0));
@@ -481,7 +629,7 @@ export class RestoScene {
     this.renderer.domElement.style.width = '100%';
     this.renderer.domElement.style.height = '100%';
     this.camera.aspect = w / h;
-    this.camera.fov = w < h ? 55 : 40;
+    if (!this.pov) this.camera.fov = w < h ? 55 : 40;
     this.camera.updateProjectionMatrix();
   }
 
@@ -491,10 +639,44 @@ export class RestoScene {
     const dt = Math.min(0.05, (now - this.last) / 1000);
     this.last = now;
     this.t += dt;
-    // kamera mengorbit restoran
     const d = this.dist;
-    this.camera.position.set(Math.sin(this.yaw) * Math.cos(this.pitch) * d, Math.sin(this.pitch) * d, Math.cos(this.yaw) * Math.cos(this.pitch) * d).add(this.target);
-    this.camera.lookAt(this.target);
+    if (this.pov) {
+      // pandangan orang: berjalan pelan ke titik yang diketuk, mata di ketinggian orang dewasa
+      const v = this.pov;
+      let step = dt * 1.8;
+      while (v.path.length && step > 0) {
+        const to = v.path[0].clone().sub(v.pos).setY(0);
+        const dd = to.length();
+        if (dd <= step) {
+          v.pos.x = v.path[0].x;
+          v.pos.z = v.path[0].z;
+          v.path.shift();
+          step -= dd;
+        } else {
+          v.pos.addScaledVector(to.normalize(), step);
+          step = 0;
+        }
+      }
+      v.pos.y = groundY(v.pos.x, v.pos.z);
+      const walking = v.path.length > 0;
+      this.povMark.visible = walking;
+      if (walking) {
+        const end = v.path[v.path.length - 1];
+        this.povMark.position.set(end.x, groundY(end.x, end.z) + 0.03, end.z);
+      }
+      const bob = walking ? Math.sin(this.t * 9) * 0.025 : 0;
+      this.camera.position.set(v.pos.x, v.pos.y + EYE_H + bob, v.pos.z);
+      this.camera.rotation.set(v.pitch, v.yaw, 0, 'YXZ');
+      if (Math.abs(this.camera.fov - v.fov) > 0.01) {
+        this.camera.fov = T.MathUtils.damp(this.camera.fov, v.fov, 10, dt);
+        this.camera.updateProjectionMatrix();
+      }
+      this.target.set(v.pos.x, 1, v.pos.z);
+    } else {
+      // kamera mengorbit restoran
+      this.camera.position.set(Math.sin(this.yaw) * Math.cos(this.pitch) * d, Math.sin(this.pitch) * d, Math.cos(this.yaw) * Math.cos(this.pitch) * d).add(this.target);
+      this.camera.lookAt(this.target);
+    }
     this.uTime.value = this.t;
     // bayangan matahari mengikuti area yang dilihat
     this.sun.target.position.copy(this.target).setY(0);
@@ -543,6 +725,10 @@ export class RestoScene {
             o.rotation.y = T.MathUtils.damp(o.rotation.y, o.rotation.y + Math.atan2(Math.sin(Math.atan2(to.x, to.z) - o.rotation.y), Math.cos(Math.atan2(to.x, to.z) - o.rotation.y)), 12, dt);
           }
         } else if (m.face) o.rotation.y = Math.atan2(m.face.x - o.position.x, m.face.z - o.position.z);
+        else if (m.rest != null && a.key === 'home') {
+          const dr = Math.atan2(Math.sin(m.rest - o.rotation.y), Math.cos(m.rest - o.rotation.y));
+          o.rotation.y = T.MathUtils.damp(o.rotation.y, o.rotation.y + dr, 6, dt);
+        }
         o.position.y = groundY(o.position.x, o.position.z);
         const seated = !!m.face && !m.path.length && m.delay <= 0;
         posePerson(o, { t: this.t, dt, moved, seat: seated ? SEAT_H : null, eat: seated && m.eat, work: m.work && !m.path.length });

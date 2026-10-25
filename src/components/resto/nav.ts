@@ -96,8 +96,9 @@ export class NavGrid {
     return true;
   }
 
-  /** Daftar titik yang dilalui (tanpa titik awal, diakhiri `to` persis). null bila tak ada jalur. */
-  route(from: T.Vector3, to: T.Vector3): T.Vector3[] | null {
+  /** Daftar titik yang dilalui (tanpa titik awal, diakhiri `to` persis). null bila tak ada jalur.
+   *  `snap`: bila `to` terhalang (meja, dinding), berhenti di sel bebas terdekat, bukan menembus. */
+  route(from: T.Vector3, to: T.Vector3, snap = false): T.Vector3[] | null {
     const [si0, sj0] = this.cell(from),
       [ti0, tj0] = this.cell(to);
     const s = this.nearestFree(si0, sj0),
@@ -115,7 +116,7 @@ export class NavGrid {
       i = j;
     }
     const pts = out.map(([i, j]) => this.center(i, j));
-    pts.push(to.clone().setY(0));
+    pts.push(snap && !this.free(ti0, tj0) ? this.center(t[0], t[1]) : to.clone().setY(0));
     return pts.filter((p, k) => k === pts.length - 1 || k === 0 || p.distanceTo(pts[k - 1]) > 0.15);
   }
 
