@@ -252,17 +252,26 @@ function TitikMisi({ m, warna, href, judul, sisiLabel, bahasa }: { m: MisiPeta; 
       ) : m.sekarang ? (
         <Icon name="play_arrow" size={44} />
       ) : (
-        <span style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800 }}>{m.nomor}</span>
-      )}
-      {persen > 0 && (
-        <span aria-hidden className="absolute -right-2 -top-1.5 rounded-full border-2 border-white bg-[#fd861d] px-1.5 text-[11px] leading-[18px] font-black text-white shadow">
-          {persen}%
+        <span className="flex flex-col items-center leading-none">
+          <span style={{ fontFamily: BALOO, fontSize: persen ? 20 : 24, fontWeight: 800 }}>{m.nomor}</span>
+          {persen > 0 && <span className="mt-0.5 text-[10px] font-black text-[#c2410c]">{persen}%</span>}
         </span>
       )}
     </>
   );
+  // cincin donat progres di sekeliling titik (hanya misi yang dimainkan sebagian)
+  const tebal = 6;
+  const sisi = ukuran + 2 * (tebal + 4);
+  const r = (sisi - tebal) / 2;
+  const kel = 2 * Math.PI * r;
   return (
     <div className="relative flex flex-col items-center">
+      {persen > 0 && (
+        <svg aria-hidden width={sisi} height={sisi} className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90">
+          <circle cx={sisi / 2} cy={sisi / 2} r={r} fill="none" stroke="#f1e6d6" strokeWidth={tebal} />
+          <circle cx={sisi / 2} cy={sisi / 2} r={r} fill="none" stroke="#fd861d" strokeWidth={tebal} strokeLinecap="round" strokeDasharray={`${(persen / 100) * kel} ${kel}`} />
+        </svg>
+      )}
       {m.sekarang && (
         <span className="akademi-bounce absolute -top-8 z-10 rounded-[12px] bg-white px-3 py-1 text-[13px] font-black tracking-wide uppercase shadow-md" style={{ color: d }}>
           {persen ? "Lanjut" : "Mulai"}
