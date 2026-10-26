@@ -2,7 +2,7 @@ import * as T from 'three';
 import type { Rect, UmrohWorld, WorldResources } from './types';
 
 interface Person { x: number; z: number; angle: number; scale: number; phase: number; female: boolean; skin: T.Color }
-interface BodyPart { mesh: T.InstancedMesh; position: T.Vector3; scale: T.Vector3; swing: number; color: 'skin' | 'cloth' | 'fixed'; femaleOnly?: boolean; maleOnly?: boolean }
+interface BodyPart { mesh: T.InstancedMesh; position: T.Vector3; scale: T.Vector3; swing: number; color: 'skin' | 'cloth' | 'fixed'; femaleOnly?: boolean; maleOnly?: boolean; attire?: 'ihram' | 'travel' }
 const scratch = new T.Object3D();
 const rotation = new T.Quaternion();
 const yAxis = new T.Vector3(0, 1, 0);
@@ -28,6 +28,7 @@ export class Pilgrims {
   private people: Person[];
   private spec: NonNullable<UmrohWorld['crowd']>;
   private elapsed = 0;
+  private attire: 'ihram' | 'travel' = 'ihram';
   private main = false;
   private mainPosition = new T.Vector3();
   private mainAngle = 0;
@@ -48,11 +49,11 @@ export class Pilgrims {
     const sandals = r.keep(new T.MeshStandardMaterial({ color: '#413a31', roughness: .84 }));
     const face = r.keep(new T.MeshStandardMaterial({ color: '#30231d', roughness: .9 }));
     const hair = r.keep(new T.MeshStandardMaterial({ color: '#24221f', roughness: 1 }));
-    const add = (geo: T.BufferGeometry, mat: T.Material, position: [number, number, number], scale: [number, number, number], color: BodyPart['color'] = 'fixed', swing = 0, only?: 'female' | 'male') => {
+    const add = (geo: T.BufferGeometry, mat: T.Material, position: [number, number, number], scale: [number, number, number], color: BodyPart['color'] = 'fixed', swing = 0, only?: 'female' | 'male', attire?: 'ihram' | 'travel') => {
       const mesh = new T.InstancedMesh(r.keep(geo), mat, count);
       mesh.instanceMatrix.setUsage(T.DynamicDrawUsage); mesh.castShadow = true; mesh.receiveShadow = true;
       mesh.frustumCulled = false; this.group.add(mesh);
-      this.parts.push({ mesh, position: new T.Vector3(...position), scale: new T.Vector3(...scale), swing, color, femaleOnly: only === 'female', maleOnly: only === 'male' });
+      this.parts.push({ mesh, position: new T.Vector3(...position), scale: new T.Vector3(...scale), swing, color, femaleOnly: only === 'female', maleOnly: only === 'male', attire });
     };
     const sphere = () => new T.SphereGeometry(1, 14, 10);
     // Head narrows towards the jaw; neck and ears retain ordinary adult proportions.
@@ -65,27 +66,35 @@ export class Pilgrims {
       add(sphere(), skin, [side * .108, 1.60, 0], [.018, .034, .024], 'skin');
       add(sphere(), face, [side * .037, 1.636, .096], [.013, .007, .006]);
     }
-    add(sphere(), skin, [0, 1.21, 0], [.225, .275, .12], 'skin', 0, 'male');
-    add(foldedCloth(.78, .225, .255), cloth, [0, .66, 0], [1, 1, 1], 'cloth', 0, 'male');
-    add(foldedCloth(.44, .245, .22), cloth, [0, 1.23, 0], [1, 1, 1], 'cloth', 0, 'male');
+    add(sphere(), skin, [0, 1.21, 0], [.225, .275, .12], 'skin', 0, 'male', 'ihram');
+    add(foldedCloth(.78, .225, .255), cloth, [0, .66, 0], [1, 1, 1], 'cloth', 0, 'male', 'ihram');
+    add(foldedCloth(.44, .245, .22), cloth, [0, 1.23, 0], [1, 1, 1], 'cloth', 0, 'male', 'ihram');
     // The upper wrap falls over the left shoulder and across the chest.
-    add(sphere(), cloth, [-.18, 1.405, -.005], [.103, .073, .149], 'cloth', 0, 'male');
+    add(sphere(), cloth, [-.18, 1.405, -.005], [.103, .073, .149], 'cloth', 0, 'male', 'ihram');
     add(foldedCloth(1.25, .23, .31), cloth, [0, .78, 0], [1, 1, 1], 'cloth', 0, 'female');
     add(sphere(), cloth, [0, 1.60, -.024], [.14, .19, .14], 'cloth', 0, 'female');
     add(foldedCloth(.38, .12, .24), cloth, [0, 1.40, -.03], [1, 1, 1], 'cloth', 0, 'female');
     // A face opening in front of the hood.
     add(sphere(), skin, [0, 1.595, .093], [.083, .112, .045], 'skin', 0, 'female');
     for (const side of [-1, 1]) {
-      add(new T.CapsuleGeometry(.058, .23, 4, 10), skin, [side * .272, 1.25, 0], [1, 1, 1], 'skin', side, 'male');
+      add(new T.CapsuleGeometry(.058, .23, 4, 10), skin, [side * .272, 1.25, 0], [1, 1, 1], 'skin', side, 'male', 'ihram');
       add(new T.CapsuleGeometry(.048, .22, 4, 10), skin, [side * .288, .98, .025], [1, 1, 1], 'skin', side * 1.5, 'male');
       add(new T.CapsuleGeometry(.07, .45, 4, 10), cloth, [side * .265, 1.11, 0], [1, 1, 1], 'cloth', side, 'female');
       add(sphere(), skin, [side * .285, .82, .035], [.045, .075, .025], 'skin', side * 1.5);
-      add(new T.CapsuleGeometry(.065, .27, 4, 10), skin, [side * .105, .255, 0], [1, 1, 1], 'skin', -side * 1.8, 'male');
+      add(new T.CapsuleGeometry(.065, .27, 4, 10), skin, [side * .105, .255, 0], [1, 1, 1], 'skin', -side * 1.8, 'male', 'ihram');
       add(sphere(), sandals, [side * .105, .055, .04], [.075, .045, .145], 'fixed', -side * 1.8);
+    }
+    const shirt = r.keep(r.mat.fabric.clone()); shirt.color.set('#456478');
+    const trousers = r.keep(r.mat.fabric.clone()); trousers.color.set('#706454');
+    add(foldedCloth(.59, .25, .24), shirt, [0, 1.17, 0], [1, 1, 1], 'fixed', 0, 'male', 'travel');
+    for (const side of [-1, 1]) {
+      add(new T.CapsuleGeometry(.072, .25, 4, 10), shirt, [side * .267, 1.25, 0], [1, 1, 1], 'fixed', side, 'male', 'travel');
+      add(new T.CylinderGeometry(.099, .077, .76, 12), trousers, [side * .107, .50, 0], [1, 1, 1], 'fixed', -side * 1.8, 'male', 'travel');
     }
     this.update(0, false);
   }
 
+  setAttire(attire: 'ihram' | 'travel'): void { this.attire = attire; }
   pose(position: T.Vector3, angle: number, walking: boolean, female: boolean): void {
     this.mainPosition.copy(position); this.mainAngle = angle; this.mainWalking = walking; this.people[0].female = female;
   }
@@ -123,7 +132,7 @@ export class Pilgrims {
       rotation.setFromAxisAngle(yAxis, angle);
       translation.set(x, 0, z);
       for (const part of this.parts) {
-        const hidden = part.femaleOnly && !p.female || part.maleOnly && p.female;
+        const hidden = part.femaleOnly && !p.female || part.maleOnly && p.female || part.attire && part.attire !== this.attire;
         scratch.position.copy(part.position);
         const swing = gait * part.swing;
         scratch.position.z += swing * .06;

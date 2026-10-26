@@ -13,6 +13,8 @@ export interface UmrohWorld {
   blockers: Rect[];
   landmarks: Landmark[];
   indoor?: boolean;
+  /** Static vehicle interior with scenery translated by journey progress. */
+  motion?: { group: T.Group; axis: 'x' | 'z'; distance: number; loop?: boolean };
   crowd?: { kind: 'tawaf' | 'walk' | 'sai'; count: number; radius?: number; area?: Rect };
 }
 export interface WorldResources {

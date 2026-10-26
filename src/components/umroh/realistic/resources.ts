@@ -101,6 +101,7 @@ export class Resources implements WorldResources {
     const remove: T.Object3D[] = [];
     group.traverse((o) => {
       if (!(o instanceof T.Mesh) || o instanceof T.InstancedMesh || Array.isArray(o.material)) return;
+      for (let parent = o.parent; parent && parent !== group; parent = parent.parent) if (parent.userData.dynamic) return;
       const geometry = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
       geometry.applyMatrix4(o.matrixWorld);
       if (!geometry.getAttribute('normal')) geometry.computeVertexNormals();

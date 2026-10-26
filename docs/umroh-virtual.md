@@ -1,12 +1,32 @@
 # Umroh Virtual
 
-Modul pembelajaran berbahasa Indonesia ini mengenalkan urutan dari persiapan dan miqat sampai tahallul. Dua pilihan perjalanan adalah dari Madinah melalui Bir Ali atau melalui penerbangan; pilihan putra/putri menyesuaikan petunjuk pakaian, sa'i, dan rambut.
+Modul pembelajaran berbahasa Indonesia ini mengikuti perjalanan dari rumah di Indonesia, kunjungan Madinah, umroh di Makkah, hingga kembali ke rumah melalui Jeddah. Perjalanan baru memakai miqat Bir Ali dari Madinah. Progres lama tetap dapat dilanjutkan, termasuk jalur miqat melalui penerbangan yang dipilih pada versi sebelumnya. Pilihan putra/putri menyesuaikan petunjuk pakaian, sa'i, dan rambut.
+
+## Perjalanan pulang-pergi Indonesia
+
+`src/lib/umroh/journey.ts` membungkus modul ibadah dengan 18 bab cerita: rumah → Bluebird ke CGK → bandara CGK → Garuda ke Jeddah → kedatangan Jeddah → Haramain → stasiun Madinah → Uber ke Nabawi → Masjid Nabawi → Raudhah → salam → rangkaian umroh → Makkah ke bandara Jeddah → keberangkatan Jeddah → Garuda ke CGK → kedatangan CGK → Bluebird ke rumah → rumah kembali. Kepulangan melalui Jeddah, tanpa memutar kembali ke Madinah. Perjalanan baru memakai jalur umroh dari Madinah melalui Bir Ali.
+
+Nama Bluebird, Garuda, dan Uber adalah nama operator dalam skenario yang diminta, bukan integrasi pemesanan, transaksi, kerja sama, atau jaminan tersedianya layanan. Dua penerbangan memakai waktu cerita 9 jam; waktu cerita kereta adalah sekitar 1 jam 45 menit. Angka tersebut bukan jadwal langsung. Tujuh adegan perjalanan berlangsung 12–20 detik aktif agar perjalanan dapat dipelajari dalam satu sesi; durasi tidak merepresentasikan waktu tempuh nyata. Nomor penerbangan, gerbang, terminal kedatangan, serta ketentuan bagasi tidak disimulasikan sebagai informasi operasional.
+
+Nabawi, Raudhah, dan salam merupakan bab kunjungan dalam cerita, bukan tambahan rukun umroh. Raudhah adalah area ibadah yang berbeda dari ruang makam. Adegan salam berada di sisi luar pembatas dan tidak memberi akses ke dalam ruang makam; tidak ada penggambaran Nabi atau bagian dalam makam. Ketentuan kunjungan dan jalur pengunjung mengikuti Nusuk serta petugas, termasuk perbedaan akses yang berlaku. Bagian Raudhah menggambarkan kunjungan edukatif jamaah dewasa: FAQ Nusuk pada pemeriksaan 27 Oktober 2026 menyatakan anak tidak diperbolehkan masuk Raudhah, sementara anak dapat berkunjung ke Masjid Nabawi. Mengikuti simulasi ini tidak menerbitkan izin atau menjanjikan akses.
+
+Rujukan cerita dan kunjungan:
+
+- [Nusuk — Raudhah](https://www.nusuk.sa/rawdah/): pemesanan jadwal, kode masuk, ketentuan pengunjung, dan perbedaan akses Raudhah dengan Masjid Nabawi. Ketentuan dapat berubah; aplikasi meminta pengguna memeriksa informasi resmi sebelum kunjungan nyata.
+- [Al Haramain — Al-Masjid Al-Nabawi](https://alharamain.gov.sa/public/?page=masjid-nabawi-en): Raudhah berada antara rumah Nabi dan mimbar; ruang makam diterangkan sebagai tempat tersendiri. Batas visualisasi salam ditetapkan di luar ruang makam.
+- [SPA — Haramain High-Speed Railway Station at King Abdulaziz Airport](https://www.spa.gov.sa/en/w2586844), 15 Mei 2026: stasiun terhubung dengan Terminal 1, jaringan menuju Madinah, dan waktu acuan sekitar 1 jam 45 menit. Ini rujukan koneksi transportasi, bukan jadwal keberangkatan yang dipesan.
+
+`JourneyProgress` versi 2 memuat `chapter`, `travelSeconds`, dan objek `umroh` versi 1. `createJourneyProgress(pilgrim)` dimulai dari rumah dengan umroh tahap persiapan dan jalur Madinah. `advanceJourneyTravel` hanya menambah detik aktif pada bab perjalanan, mengabaikan delta tidak valid, dan membatasi waktu pada durasi bab. `nextJourneyChapter` memerlukan perjalanan selesai sebelum berpindah; antarmuka dapat menuntaskan durasi transportasi melalui tombol Singkatkan perjalanan. Kemudahan ini tidak tersedia untuk tawaf atau sa'i: bab umroh tetap terkunci sampai tahap internal `selesai`. Berakhirnya animasi tidak otomatis mengganti bab. `updateJourneyUmroh` hanya menerima pembaruan yang valid selama bab umroh, tanpa mengganti jalur.
+
+`parseJourneyProgress` memvalidasi versi, bab, waktu, data umroh, serta hubungan keduanya. Sebelum bab umroh, tahap internal wajib `persiapan` dan jalurnya Madinah; setelah bab umroh, tahap wajib `selesai`. Waktu perjalanan harus nol di bab lain. Progres versi 1 yang valid dimigrasikan ke bab `umroh` tanpa mengulang tawaf atau sa'i, termasuk hitungan parsial, pilihan putra/putri, dan jalur pesawat lama. Progres lama yang sudah `selesai` tetap ditempatkan pada bab umroh agar pengguna dapat melanjutkan cerita pulang. Jalur pesawat hasil migrasi tetap valid saat disimpan ulang dan selama kepulangan. Parser tidak menganggap data lokal sebagai bukti ibadah atau pencegah manipulasi oleh pemilik browser.
+
+Tes `src/lib/umroh/__tests__/journey.test.ts` mencakup urutan pulang-pergi, penguncian ketujuh bab perjalanan, batas waktu, delta tidak valid, kewajiban menuntaskan dua praktik tujuh bagian dan tahallul sebelum pulang, imutabilitas, pemulihan perjalanan terputus, migrasi setiap tahap versi 1 pada dua jalur, serta penolakan kontradiksi bab/waktu/tahap/jalur. Bagian kontrak state di bawah menjelaskan mesin umroh versi 1 yang tetap dipakai sebagai bagian internal perjalanan versi 2.
 
 ## Menjelajahi lingkungan
 
 Lingkungan memenuhi area utama layar. Panel panduan selebar 330 piksel di desktop dapat ditutup melalui tombol Panduan; tombol utama pelajaran tetap tersedia di bagian bawah, termasuk pada ponsel. Kamera menyediakan Jalan kaki, Ikuti jamaah, dan Lihat kawasan, dengan pilihan cahaya Siang atau Senja. Navigasi berjalan menggunakan WASD/tombol arah atau pad sentuh, sementara geseran mengubah arah pandang. Dialog, perpindahan kamera, dan kehilangan fokus menghentikan input gerak. Peta menampilkan titik kunjungan dari lokasi yang sedang aktif.
 
-Masjid Nabawi tersedia sebagai kunjungan pilihan pada jalur Madinah, melalui persiapan atau peta. Kunjungan ini bukan miqat, bukan rukun, dan tidak menambah tahap umroh. Tombol Kembali ke pelajaran mengembalikan lokasi sesuai tahap tanpa mengubah hitungan latihan. Kunjungan, kamera, suasana cahaya, dan kecepatan tidak mengubah format progres versi 1.
+Masjid Nabawi, Raudhah, dan salam hadir sebagai tiga bab kunjungan sebelum umroh dalam perjalanan baru. Selama bab umroh, peta juga menawarkan tur tambahan Kunjungi kembali Masjid Nabawi. Tombol Kembali ke perjalanan mengembalikan lokasi sesuai tahap tanpa mengubah hitungan latihan. Kunjungan tersebut bukan miqat, bukan rukun, dan tidak menambah tahap ritual. Tur tambahan, kamera, suasana cahaya, serta kecepatan merupakan pengaturan sesi yang tidak disimpan dalam progres perjalanan versi 2.
 
 ## Cakupan pelajaran
 
@@ -44,7 +64,7 @@ Daftar berkas, pembuat, lisensi, serta tautan rujukan arsitektur Masjidil Haram,
 - `restart(progress)` menghapus kemajuan dan mempertahankan pilihan perjalanan/pelajar.
 - `serializeProgress` dan `parseSavedProgress` menangani penyimpanan versi 1. Parser menolak versi lain, angka tidak valid, tahap/pilihan tidak dikenal, serta waktu/hitungan yang bertentangan. Properti tambahan dibuang. Ini validasi format data lokal, bukan bukti bahwa pengguna pernah mengerjakan ibadah atau pencegah manipulasi oleh pemilik browser.
 
-Semua operasi state mengembalikan data baru ketika berubah. Antarmuka menyimpan kemajuan masing-masing anggota ke `localStorage` dengan kunci `rumila-umroh:<memberId>`, lalu memvalidasinya melalui `parseSavedProgress` saat dibuka kembali. Pemulihan bersifat lokal pada browser dan perangkat yang sama; kemajuan tidak disinkronkan ke akun atau perangkat lain. Jika penyimpanan browser tidak tersedia, sesi tetap berjalan dalam memori. Antarmuka mengelola status jeda dan penanganan kegagalan penyimpanan.
+Semua operasi state mengembalikan data baru ketika berubah. Antarmuka menyimpan `JourneyProgress` versi 2 untuk masing-masing anggota ke `localStorage` dengan kunci yang tetap sama, `rumila-umroh:<memberId>`. Saat dibuka kembali, `parseJourneyProgress` memvalidasi versi 2 atau memigrasikan data versi 1; `parseSavedProgress` tetap memvalidasi objek umroh di dalamnya. Melanjutkan simpanan mempertahankan bab dan hitungan dengan animasi dijeda. Memilih Mulai dari rumah membuat perjalanan baru melalui Madinah, sambil mempertahankan pilihan putra/putri. Pemulihan bersifat lokal pada browser dan perangkat yang sama; kemajuan tidak disinkronkan ke akun atau perangkat lain. Jika penyimpanan browser tidak tersedia, sesi tetap berjalan dalam memori. Antarmuka mengelola status jeda dan penanganan kegagalan penyimpanan.
 
 ## Verifikasi
 

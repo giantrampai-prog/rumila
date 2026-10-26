@@ -167,3 +167,13 @@
 @media(max-height:500px) and (max-width:950px) { .umroh-panel { top:12px; right:12px; left:auto; bottom:105px; width:280px; } .umroh-panel h2 { font-size:17px; } .umroh-panel-top { margin-bottom:10px; } .umroh-scene-label { max-width:calc(100% - 335px); } .umroh-camera-toolbar { max-width:calc(100% - 335px); } .umroh-time { position:static; } .guide-open .umroh-action-dock { right:12px; } .umroh-dock-caption { display:none; } .umroh-action-dock { width:300px; max-width:calc(100% - 48px); } .umroh-counter { top:180px; } }
 @media(max-height:640px) and (min-width:951px) { .umroh-panel { top:12px; bottom:12px; } }
 @media(prefers-reduced-motion:reduce) { .umroh-app * { scroll-behavior:auto; transition:none!important; } }
+
+/* Transport chapter controls stay readable inside the compact guide. */
+.umroh-travel-card { margin: 22px 0; padding: 18px; border: 1px solid rgba(219,193,131,.3); border-radius: 12px; background: rgba(219,193,131,.06); }
+.umroh-travel-card > div { display:flex; align-items:center; gap:10px; font-size:13px; }
+.umroh-travel-card > div > span:last-child { margin-left:auto; color:#ddc58b; font-variant-numeric:tabular-nums; }
+.umroh-travel-card progress { display:block; width:100%; height:6px; margin:18px 0 12px; accent-color:#ddc58b; border:0; border-radius:10px; overflow:hidden; background:#304542; }
+.umroh-travel-card progress::-webkit-progress-bar { background:#304542; }
+.umroh-travel-card progress::-webkit-progress-value { background:#ddc58b; }
+.umroh-travel-card p { font-size:13px; line-height:1.6; margin:0 0 8px; }
+.umroh-travel-card small { display:block; font-size:11px; line-height:1.6; color:#aabcb5; margin-bottom:16px; }

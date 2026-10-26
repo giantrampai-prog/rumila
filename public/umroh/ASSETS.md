@@ -27,5 +27,10 @@ Bangunan, lingkungan, dan jamaah dibentuk dengan geometri prosedural yang dituli
 - [Al Haramain — Nabawi architecture](https://alharamain.gov.sa/public/?page=nabawi-architecture-en): ciri arsitektur Masjid Nabawi.
 - [Saudi Press Agency — Prophet's Holy Mosque's Huge Convertible Umbrellas](https://www.spa.gov.sa/w1720120): bentuk dan ukuran acuan payung.
 - [Visit Madinah — Al Miqat Mosque](https://visitmadinahsa.com/sa-en/destinations/Al-Miqat----Mosque): Masjid Bir Ali / Dzulhulaifah.
+- [Nusuk — Rawdah](https://www.nusuk.sa/rawdah/): rujukan resmi mengenai area Rawdah di antara minbar dan kamar Nabi. Halaman dibaca pada 27 Oktober 2026; foto, teks penjelasan, dan model dari situs tidak disalin ke aplikasi.
+
+Interior Rawdah dan lorong salam dibuat dari geometri asli di `nabawi-interior.ts`. Pilar, lengkung, karpet, lampu, isyarat mihrab/minbar, serta pola geometris kisi adalah interpretasi visual untuk pembelajaran. Pola dekoratif tidak meniru tulisan Arab. Tampilan salam dibatasi pada sisi luar kisi dengan permukaan belakang tertutup; bagian dalam kamar, makam, jenazah, dan figur Nabi tidak dimodelkan. Tidak ada aset baru yang diunduh untuk kedua interior ini.
+
+Rumah, taksi, pesawat, terminal, kabin kereta, dan Stasiun Madinah dibuat dari geometri asli di `itinerary.ts` serta `travel.ts`. Nama Bluebird, Garuda Indonesia, Haramain, dan Uber ditulis sebagai teks biasa untuk mengenali kendaraan dalam skenario; tidak ada berkas logo atau model kendaraan dari operator yang disalin. Bentuk kendaraan dan bangunan merupakan interpretasi visual, bukan model bersertifikat atau denah operasional. Koneksi stasiun di Terminal 1 Jeddah merujuk pada [King Abdulaziz International Airport](https://www.kaia.sa/About-KAIA) dan [Saudi Press Agency](https://www.spa.gov.sa/en/w2586844).
 
 Halaman referensi bukan sumber model 3D berlisensi CC0. Bentuk, jarak, arah pandang, dan kepadatan jamaah dalam aplikasi disederhanakan untuk pembelajaran. Lingkungan ini bukan hasil survei, digital twin terukur, atau petunjuk navigasi di lokasi sebenarnya. Rujukan materi ibadah dan batas editorial dicatat di `docs/umroh-virtual.md`.
