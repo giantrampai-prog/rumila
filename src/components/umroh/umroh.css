@@ -1,103 +1,169 @@
-.umroh-app { --u-ink:#153b3a; --u-green:#146b5d; --u-soft:#e9f4ed; --u-gold:#e4b65e; min-height:100dvh; background:#faf6ed; color:var(--u-ink); font-family:var(--ff-nunito),sans-serif; padding:0 22px 16px; }
+.umroh-app { --u-ink:#f3f0e7; --u-muted:#afbeb7; --u-panel:#102421f5; --u-line:#ffffff1c; --u-gold:#dbc18a; background:#10201e; color:var(--u-ink); font-family:var(--ff-nunito),sans-serif; min-height:100dvh; }
 .umroh-app button,.umroh-app a { -webkit-tap-highlight-color:transparent; }
-.umroh-app button { cursor:pointer; }
-.umroh-app button:disabled { opacity:.45; cursor:not-allowed; box-shadow:none; }
-.umroh-app button:focus-visible,.umroh-app a:focus-visible,.umroh-app summary:focus-visible,.umroh-app input:focus-visible { outline:3px solid #e09c20; outline-offset:4px; }
-.umroh-header { max-width:1660px; margin:auto; min-height:84px; display:flex; align-items:center; gap:16px; }
-.umroh-title span { color:#63827a; font-size:10px; letter-spacing:2px; font-weight:900; }
-.umroh-title h1 { font-family:var(--ff-baloo),sans-serif; font-size:28px; font-weight:800; line-height:1.15; }
-.umroh-header-actions { margin-left:auto; display:flex; align-items:center; gap:10px; }
-.umroh-icon-btn { border:1px solid #d9e3d9; width:43px; height:43px; border-radius:15px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; background:#fffdf7; color:var(--u-ink); box-shadow:0 3px 0 #dae0d3; transition:transform .15s; }
-.umroh-icon-btn:hover { transform:translateY(-2px); }
-.umroh-outline-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 15px; border:1px solid #cddbd0; border-radius:14px; background:#fffdf8; font-size:13px; font-weight:900; color:var(--u-ink); }
-.umroh-layout { max-width:1660px; margin:auto; display:grid; grid-template-columns:minmax(0,1fr) 390px; gap:20px; height:calc(100dvh - 186px); min-height:530px; max-height:1000px; }
-.umroh-world { position:relative; overflow:hidden; border-radius:30px; background:#d1e7e5; border:1px solid #e0e4d4; box-shadow:0 5px 0 #dfdcca; isolation:isolate; }
+.umroh-app button { cursor:pointer; font-family:inherit; }
+.umroh-app button:disabled { opacity:.48; cursor:not-allowed; }
+.umroh-app button:focus-visible,.umroh-app a:focus-visible,.umroh-app summary:focus-visible,.umroh-app input:focus-visible { outline:2px solid #f3d295; outline-offset:3px; }
+.umroh-header { height:64px; padding:0 22px; display:flex; align-items:center; gap:13px; background:#0d1b1b; border-bottom:1px solid var(--u-line); }
+.umroh-title span { color:#9caea6; font-size:8px; letter-spacing:1.6px; font-weight:800; }
+.umroh-title h1 { font-family:inherit; font-size:20px; font-weight:800; line-height:1.2; }
+.umroh-header-actions { margin-left:auto; display:flex; align-items:center; gap:8px; }
+.umroh-icon-btn { border:1px solid var(--u-line); width:36px; height:36px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; background:#132825df; color:var(--u-ink); transition:background .15s; }
+.umroh-icon-btn:hover,.umroh-outline-btn:hover { background:#29413b; }
+.umroh-outline-btn { min-height:36px; display:inline-flex; align-items:center; justify-content:center; gap:7px; padding:7px 11px; border:1px solid var(--u-line); border-radius:7px; background:#132825df; font-size:11px; font-weight:800; color:var(--u-ink); }
+.umroh-outline-btn.selected { border-color:#d4b97c65; color:#efd9a8; background:#dbc18a12; }
+.umroh-layout { position:relative; height:calc(100dvh - 64px); min-height:0; }
+.umroh-world { position:absolute; inset:0; overflow:hidden; background:#819793; isolation:isolate; }
 .umroh-viewport { position:absolute; inset:0; }
 .umroh-viewport canvas { width:100%; height:100%; display:block; touch-action:none; }
-.umroh-scene-label { position:absolute; top:20px; left:20px; z-index:1; display:flex; align-items:center; gap:8px; background:#fffdf4eb; padding:10px 14px; border-radius:99px; box-shadow:0 2px 8px #173e3210; font-size:10px; letter-spacing:1.1px; font-weight:900; }
-.umroh-live-dot { width:7px; height:7px; border-radius:50%; background:#2b8f6c; box-shadow:0 0 0 3px #2b8f6c15; }
-.umroh-camera-tools { position:absolute; top:16px; right:16px; display:flex; align-items:center; gap:10px; }
-.umroh-camera-tools>span { display:none; font-size:11px; font-weight:800; background:#fffdf4dd; padding:9px 12px; border-radius:20px; }
-.umroh-scene-footer { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:8px; width:max-content; max-width:calc(100% - 32px); background:#17493fe8; color:#fff9e9; border:1px solid #ffffff35; box-shadow:0 5px 15px #164c3f22; backdrop-filter:blur(8px); border-radius:99px; padding:10px 17px; font-size:12px; font-weight:800; }
-.umroh-counter { position:absolute; top:80px; left:20px; padding:15px 18px; border-radius:20px; background:#fffdf4ed; min-width:152px; box-shadow:0 5px 20px #1d4d3820; }
-.umroh-counter>span { font-size:9px; font-weight:900; letter-spacing:1px; color:#648077; }
-.umroh-counter strong { display:block; font-family:var(--ff-baloo),sans-serif; font-size:45px; line-height:1.05; }
-.umroh-counter strong small { font-size:24px; color:#8b9a8a; }
-.umroh-counter>div { font-size:11px; font-weight:800; margin-top:6px; }
-.umroh-loading { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:32px; text-align:center; background:linear-gradient(140deg,#e7eee2,#d1e4dc); font-weight:800; }
-.umroh-loading p { max-width:330px; font-size:14px; line-height:1.5; }
-.umroh-panel { background:#fffdf8; border:1px solid #e6e4d9; border-radius:28px; padding:25px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:#d2dace transparent; box-shadow:0 5px 0 #e3dfd2; }
-.umroh-step-heading { display:flex; align-items:center; gap:12px; }
-.umroh-step-icon { display:flex; align-items:center; justify-content:center; width:50px; height:50px; border-radius:17px; background:var(--u-soft); color:var(--u-green); flex-shrink:0; }
-.umroh-eyebrow { color:#658174; font-size:10px; font-weight:900; letter-spacing:1.2px; }
-.umroh-panel h2 { font-family:var(--ff-baloo),sans-serif; font-size:26px; line-height:1.15; margin-top:3px; font-weight:800; }
-.umroh-progress-track { height:5px; margin:21px 0; background:#ecefe3; border-radius:10px; overflow:hidden; }
-.umroh-progress-track span { display:block; height:100%; background:#378d70; border-radius:10px; transition:width .4s; }
-.umroh-subtitle { font-size:16px; font-weight:900; margin-bottom:8px; line-height:1.4; }
-.umroh-instruction { font-size:14px; font-weight:700; line-height:1.65; color:#527067; margin-bottom:18px; }
-.umroh-setup fieldset { border:0; padding:0; margin:0 0 16px; }
-.umroh-setup legend { font-size:12px; font-weight:900; margin-bottom:8px; }
-.umroh-choice-row { display:flex; gap:8px; }
-.umroh-choice { flex:1; display:flex; flex-direction:column; align-items:flex-start; gap:5px; padding:12px; border-radius:16px; border:1.5px solid #e0e6dc; background:#fffefb; text-align:left; color:#5d746a; }
-.umroh-choice.selected { border-color:#388d6a; background:#eff7eb; box-shadow:inset 0 0 0 .5px #388d6a; color:#165741; }
-.umroh-choice strong { font-size:12px; font-weight:900; }
-.umroh-choice>span:last-child { font-size:10px; line-height:1.4; }
-.umroh-choice-small { font-size:13px; font-weight:900; align-items:center; padding:10px; }
-.umroh-checklist { display:grid; gap:10px; margin:18px 0; }
-.umroh-checklist label { display:flex; align-items:center; gap:10px; font-size:12px; font-weight:800; cursor:pointer; min-height:28px; }
-.umroh-checklist input { width:20px; height:20px; flex-shrink:0; accent-color:#247b5c; cursor:pointer; }
-.umroh-note { display:flex; align-items:flex-start; gap:9px; padding:13px; background:#f5f1df; border:1px solid #ede7ce; border-radius:15px; margin:15px 0; color:#79632e; }
-.umroh-note>.ms { flex-shrink:0; margin-top:2px; }
-.umroh-note p { font-size:12px; line-height:1.6; font-weight:700; }
-.umroh-dua { border:1px solid #e0e7db; border-radius:16px; padding:12px 14px; margin:15px 0; }
-.umroh-dua summary { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:900; cursor:pointer; list-style:none; }
+.umroh-scene-label { position:absolute; top:21px; left:24px; display:flex; align-items:flex-start; gap:9px; z-index:1; color:#fffdf5; background:#0c2421c9; backdrop-filter:blur(12px); padding:10px 12px; border:1px solid #ffffff1c; border-radius:7px; font-size:10px; letter-spacing:1.2px; font-weight:800; }
+.umroh-scene-label small { display:block; margin-top:3px; font-size:9px; letter-spacing:.1px; color:#cad4ca; font-weight:600; }
+.umroh-live-dot { width:5px; height:5px; border-radius:50%; background:#d7c08b; flex-shrink:0; margin-top:5px; }
+.umroh-camera-toolbar { position:absolute; top:85px; left:24px; display:flex; flex-wrap:wrap; align-items:center; gap:8px; max-width:calc(100% - 400px); }
+.guide-closed .umroh-camera-toolbar { max-width:calc(100% - 48px); }
+.umroh-segmented { display:flex; align-items:center; gap:2px; padding:4px; border:1px solid #ffffff22; border-radius:8px; background:#0c2421d9; backdrop-filter:blur(14px); }
+.umroh-segmented button { display:flex; align-items:center; justify-content:center; gap:5px; min-height:34px; padding:6px 10px; border:0; border-radius:5px; color:#d5ddd5; font-size:11px; font-weight:700; white-space:nowrap; }
+.umroh-segmented button:hover { background:#ffffff13; }
+.umroh-segmented button[aria-pressed=true] { color:#f4e3bd; background:#ffffff16; box-shadow:inset 0 0 0 1px #dbc18a40; }
+.umroh-time button { padding:6px 8px; }
+.umroh-counter { position:absolute; top:147px; left:24px; padding:12px 14px; border-radius:8px; background:#0c2421d9; backdrop-filter:blur(12px); border:1px solid #ffffff22; min-width:150px; }
+.umroh-counter>span { font-size:8px; font-weight:800; letter-spacing:1.3px; color:#bbc6b9; }
+.umroh-counter strong { display:block; font-family:inherit; font-size:32px; font-weight:800; line-height:1.25; color:#f3e5c2; font-variant-numeric:tabular-nums; }
+.umroh-counter strong small { font-size:17px; color:#bec8bc; font-weight:600; }
+.umroh-counter>div { font-size:10px; font-weight:600; margin-top:3px; }
+.umroh-reset-camera { position:absolute; right:24px; bottom:24px; background:#0c2421d9; backdrop-filter:blur(12px); }
+.guide-open .umroh-reset-camera { right:374px; }
+.umroh-scene-footer { position:absolute; bottom:119px; left:24px; display:flex; align-items:center; gap:6px; background:#0c2421b8; color:#f0f0e1; border-radius:5px; padding:7px 9px; font-size:10px; font-weight:600; backdrop-filter:blur(10px); }
+.umroh-touch-hint { display:none; }
+.umroh-loading { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:32px; text-align:center; background:linear-gradient(145deg,#1c3832,#102523); font-size:13px; font-weight:700; }
+.umroh-loading p { max-width:330px; font-size:13px; line-height:1.65; color:#b9c8bd; }
+.umroh-panel { position:absolute; z-index:2; top:18px; right:18px; bottom:18px; width:330px; background:var(--u-panel); border:1px solid #ffffff1f; border-radius:10px; padding:18px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#6b7b68 transparent; backdrop-filter:blur(20px); box-shadow:0 10px 40px #03171326; }
+.umroh-panel[hidden] { display:none; }
+.umroh-panel-top { display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--u-line); margin:-3px 0 17px; padding-bottom:11px; }
+.umroh-panel-top>span { font-size:8px; letter-spacing:1.7px; color:#aebcb0; font-weight:800; }
+.umroh-panel-top .umroh-icon-btn { width:28px; height:28px; border:0; background:transparent; }
+.umroh-step-heading { display:flex; align-items:center; gap:10px; }
+.umroh-step-icon { width:36px; height:39px; display:flex; align-items:center; justify-content:center; border:1px solid #dbc18a30; border-radius:7px; background:#dbc18a0d; color:var(--u-gold); flex-shrink:0; }
+.umroh-eyebrow { color:#b8c0ad; font-size:8px; font-weight:800; letter-spacing:1px; }
+.umroh-panel h2 { font-family:inherit; font-size:20px; line-height:1.25; margin-top:4px; font-weight:800; letter-spacing:-.3px; }
+.umroh-progress-track { height:3px; margin:19px 0; background:#ffffff15; border-radius:3px; overflow:hidden; }
+.umroh-progress-track span { display:block; height:100%; background:#bca570; transition:width .4s; }
+.umroh-subtitle { font-size:12px; font-weight:800; margin:16px 0 8px; line-height:1.5; color:#e5d4af; }
+.umroh-instruction { font-size:13px; font-weight:600; line-height:1.7; color:#c1d0c4; margin-bottom:17px; }
+.umroh-setup fieldset { border:0; padding:0; margin:0 0 15px; }
+.umroh-setup legend { font-size:10px; font-weight:800; margin-bottom:8px; color:#d3ded0; }
+.umroh-choice-row { display:flex; gap:6px; }
+.umroh-choice { flex:1; display:flex; flex-direction:column; align-items:flex-start; gap:5px; padding:10px; border-radius:7px; border:1px solid #ffffff21; background:#ffffff03; text-align:left; color:#bcc8bd; }
+.umroh-choice.selected { border-color:#d8bd7f89; background:#d8bd7f10; color:#ead6a8; }
+.umroh-choice strong { font-size:11px; font-weight:800; line-height:1.35; }
+.umroh-choice>span:last-child { font-size:9px; line-height:1.4; }
+.umroh-choice-small { font-size:11px; font-weight:700; align-items:center; justify-content:center; min-height:36px; }
+.umroh-visit-button { display:flex; align-items:center; gap:9px; width:100%; padding:11px 10px; margin:13px 0; border:1px solid #d9bb7b45; border-radius:7px; background:#dbc18a0a; color:#e4c78e; text-align:left; }
+.umroh-visit-button>span:not(.ms) { flex:1; }
+.umroh-visit-button strong { display:block; font-size:11px; font-weight:800; }
+.umroh-visit-button small { display:block; margin-top:4px; color:#b7c5b8; font-size:9px; line-height:1.45; }
+.umroh-checklist { display:grid; gap:7px; margin:17px 0; }
+.umroh-checklist label { display:flex; align-items:center; gap:9px; font-size:11px; font-weight:600; line-height:1.5; cursor:pointer; min-height:30px; color:#cfdbcf; }
+.umroh-checklist input { width:17px; height:17px; flex-shrink:0; accent-color:#d2ba85; cursor:pointer; }
+.umroh-note { display:flex; align-items:flex-start; gap:9px; padding:12px; background:#d8bd7f0a; border:1px solid #d8bd7f22; border-radius:7px; margin:16px 0; color:#d8d0b6; }
+.umroh-note>.ms { flex-shrink:0; margin-top:2px; color:#d6bb7e; }
+.umroh-note p { font-size:11px; line-height:1.75; font-weight:600; }
+.umroh-dua { border:1px solid var(--u-line); border-radius:7px; padding:12px; margin:16px 0; }
+.umroh-dua summary { display:flex; align-items:center; gap:7px; font-size:11px; font-weight:800; cursor:pointer; list-style:none; }
 .umroh-dua summary::-webkit-details-marker { display:none; }
 .umroh-dua summary>.ms:last-child { margin-left:auto; }
 .umroh-dua[open] summary>.ms:last-child { transform:rotate(180deg); }
-.umroh-dua p { margin-top:12px; font-size:12px; line-height:1.7; color:#577165; }
-.umroh-dua p.umroh-arabic { font-family:serif; font-size:24px; line-height:1.9; color:#174d3c; text-align:right; }
+.umroh-dua p { margin-top:12px; font-size:11px; line-height:1.8; color:#c2cbbd; }
+.umroh-dua p.umroh-arabic { font-family:serif; font-size:23px; line-height:2; color:#f1e4c5; text-align:right; }
 .umroh-dua p.umroh-latin { font-style:italic; }
 .umroh-practice { margin:18px 0; }
-.umroh-laps { display:flex; gap:8px; }
-.umroh-laps>span { display:flex; align-items:center; justify-content:center; flex:1; aspect-ratio:1; max-width:38px; border:1px solid #dde5d6; background:#f6f7f0; color:#71826b; border-radius:50%; font-size:13px; font-weight:900; }
-.umroh-laps>span.done { background:#277e5a; border-color:#277e5a; color:white; }
-.umroh-laps>span.current { border:2px solid #b38a30; color:#775c1c; background:#fff6d7; }
-.umroh-practice p { font-size:13px; line-height:1.6; font-weight:800; margin:14px 0 7px; }
-.umroh-sim-note { display:block; font-size:11px; line-height:1.5; color:#7b8573; }
-.umroh-panel-actions { margin-top:23px; }
-.umroh-primary { width:100%; display:flex; align-items:center; justify-content:center; gap:10px; border:0; border-radius:16px; background:linear-gradient(145deg,#29836a,#11614f); box-shadow:0 4px 0 #094738; color:#fffdf3; padding:14px 16px; font-weight:900; font-size:14px; text-decoration:none; min-height:50px; text-align:center; }
-.umroh-primary:active { transform:translateY(2px); box-shadow:0 2px 0 #094738; }
-.umroh-secondary-actions { display:flex; justify-content:space-between; gap:10px; margin-top:18px; }
-.umroh-secondary-actions button { display:flex; align-items:center; gap:6px; padding:6px 0; font-size:11px; font-weight:900; color:#5b796b; }
-.umroh-save-note { font-size:10px; line-height:1.5; color:#7c8777; text-align:center; margin-top:16px; }
-.umroh-complete { padding:20px; margin-top:20px; border-radius:20px; background:#edf6e6; text-align:center; color:#256344; }
-.umroh-complete strong { display:block; margin:10px 0; font-family:var(--ff-baloo),sans-serif; font-size:22px; }
-.umroh-complete p { font-size:13px; line-height:1.6; }
-.umroh-journey-strip { display:flex; justify-content:center; max-width:1450px; margin:23px auto 0; gap:8px; }
-.umroh-journey-strip>div { flex:1; display:flex; flex-direction:column; align-items:center; gap:5px; text-align:center; color:#89917e; position:relative; }
-.umroh-journey-strip>div:not(:last-child):after { content:''; position:absolute; height:1px; width:calc(100% - 28px); background:#dfe3d2; left:calc(50% + 18px); top:16px; }
-.umroh-journey-strip>div>span { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid #e0e3d3; border-radius:50%; background:#f1f1e5; }
-.umroh-journey-strip>div.active { color:#146b5d; }
-.umroh-journey-strip>div.active>span { background:#146b5d; color:#fff9e8; border-color:#146b5d; box-shadow:0 0 0 4px #146b5d15; }
-.umroh-journey-strip>div.done { color:#408164; }
-.umroh-journey-strip>div.done>span { background:#e2edda; border-color:#cddfc3; }
-.umroh-journey-strip small { font-size:10px; font-weight:800; }
-.umroh-dialog { position:fixed; inset:0; margin:auto; border:1px solid #e1e6d5; border-radius:25px; background:#fffdf6; color:#153b3a; padding:0; max-width:480px; width:calc(100% - 32px); max-height:85dvh; box-shadow:0 24px 80px #0c352d44; }
-.umroh-dialog::backdrop { background:#123d3659; backdrop-filter:blur(4px); }
-.umroh-dialog-content { padding:24px; }
-.umroh-dialog header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px; }
-.umroh-dialog h2 { font-family:var(--ff-baloo),sans-serif; font-weight:800; font-size:24px; line-height:1.2; }
-.umroh-dialog p { font-size:14px; line-height:1.7; margin:14px 0; }
-.umroh-dialog a { text-decoration:underline; font-size:13px; font-weight:800; }
-.umroh-full { width:100%; margin-top:14px; }
-.umroh-map-list { display:grid; gap:7px; list-style:none; padding:0; }
-.umroh-map-list li { display:flex; align-items:center; gap:13px; padding:8px 12px; border-radius:14px; }
-.umroh-map-list li.active { background:#eaf3e4; }
-.umroh-map-list li>span { display:flex; align-items:center; justify-content:center; border-radius:50%; width:30px; height:30px; background:#e5ecde; font-size:12px; font-weight:900; }
-.umroh-map-list strong { display:block; font-size:14px; }
-.umroh-map-list small { display:block; color:#638171; font-size:11px; }
-@media(min-width:1500px) { .umroh-camera-tools>span { display:block; } .umroh-layout { grid-template-columns:minmax(0,1fr) 420px; } .umroh-panel { padding:28px; } }
-@media(max-width:1100px) { .umroh-app { padding:0 14px 15px; } .umroh-layout { grid-template-columns:minmax(0,1fr) 350px; gap:14px; } .umroh-panel { padding:20px; } .umroh-scene-label { left:14px; top:18px; font-size:9px; padding:9px 11px; } .umroh-scene-footer { font-size:10px; padding:10px 12px; } }
-@media(max-width:800px) { .umroh-header { min-height:76px; gap:11px; } .umroh-title h1 { font-size:24px; } .umroh-title span { font-size:8px; } .umroh-layout { display:flex; flex-direction:column; height:auto; min-height:0; max-height:none; gap:18px; } .umroh-world { height:44dvh; min-height:300px; max-height:480px; border-radius:24px; } .umroh-panel { overflow:visible; padding:23px; } .umroh-journey-strip { overflow-x:auto; justify-content:flex-start; padding:4px 0 10px; margin-top:20px; } .umroh-journey-strip>div { flex:0 0 80px; } .umroh-counter { top:70px; left:14px; min-width:130px; padding:10px 14px; } .umroh-counter strong { font-size:36px; } .umroh-counter>div { font-size:10px; } }
-@media(max-width:420px) { .umroh-app { padding:0 10px 16px; } .umroh-header { gap:9px; } .umroh-title h1 { font-size:22px; } .umroh-header-actions { gap:7px; } .umroh-header-actions .umroh-outline-btn { width:40px; height:40px; padding:0; } .umroh-header-actions .umroh-outline-btn>span:last-child:not(.ms) { display:none; } .umroh-icon-btn { width:39px; height:39px; border-radius:13px; } .umroh-panel { padding:19px; } .umroh-world { min-height:290px; } .umroh-scene-footer { width:calc(100% - 24px); justify-content:center; white-space:normal; text-align:center; } }
+.umroh-laps { display:flex; gap:5px; }
+.umroh-laps>span { display:flex; align-items:center; justify-content:center; flex:1; height:30px; border:1px solid #ffffff1d; background:#ffffff04; color:#bec6b8; border-radius:5px; font-size:11px; font-weight:800; }
+.umroh-laps>span.done { background:#46715b65; border-color:#7bac7d66; color:#d8f0d3; }
+.umroh-laps>span.current { border-color:#d7bd7d; color:#f2dab1; background:#dac08c13; }
+.umroh-practice p { font-size:12px; line-height:1.7; font-weight:600; margin:14px 0 7px; }
+.umroh-sim-note { display:block; font-size:10px; line-height:1.6; color:#aebaaa; }
+.umroh-speed-control { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:14px 0 10px; }
+.umroh-speed-control>span { font-size:10px; color:#c4cdbd; }
+.umroh-speed-control .umroh-segmented button { font-size:10px; min-height:30px; padding:5px 8px; }
+.umroh-panel-actions { margin-top:19px; border-top:1px solid var(--u-line); padding-top:13px; }
+.umroh-primary { width:100%; display:flex; align-items:center; justify-content:center; gap:9px; border:1px solid #ead5a599; border-radius:7px; background:#d7bc83; color:#192c24; padding:12px 15px; font-weight:800; font-size:12px; text-decoration:none; min-height:44px; text-align:center; transition:background .15s; }
+.umroh-primary:hover:not(:disabled) { background:#e8ce99; }
+.umroh-secondary-actions { display:flex; align-items:center; justify-content:space-between; gap:7px; flex-wrap:wrap; }
+.umroh-secondary-actions button { display:flex; align-items:center; gap:5px; padding:6px 0; min-height:32px; font-size:10px; font-weight:700; color:#c5d1bf; }
+.umroh-save-note { font-size:9px; line-height:1.6; color:#a0afa0; margin-top:12px; }
+.umroh-action-dock { position:absolute; bottom:22px; left:24px; width:350px; max-width:calc(100% - 430px); padding:13px; background:#0c2421ed; border:1px solid #ffffff26; border-radius:9px; backdrop-filter:blur(16px); box-shadow:0 8px 28px #00000020; }
+.guide-closed .umroh-action-dock { max-width:calc(100% - 100px); }
+.umroh-dock-caption { display:flex; align-items:baseline; justify-content:space-between; gap:9px; margin-bottom:9px; }
+.umroh-dock-caption>span { color:#b6bdaa; font-size:8px; letter-spacing:.8px; font-weight:800; white-space:nowrap; }
+.umroh-dock-caption strong { color:#e7e9da; font-size:11px; font-weight:700; text-align:right; }
+.umroh-complete { padding:17px; margin-top:18px; border-radius:8px; background:#bdd1970d; border:1px solid #bdd19726; text-align:center; color:#d4e3bc; }
+.umroh-complete strong { display:block; margin:9px 0; font-family:inherit; font-size:17px; font-weight:800; }
+.umroh-complete p { font-size:12px; line-height:1.7; }
+.umroh-dpad { display:none; }
+.umroh-dialog { position:fixed; inset:0; margin:auto; border:1px solid #ffffff29; border-radius:12px; background:#122821; color:#eeeadd; padding:0; max-width:460px; width:calc(100% - 28px); max-height:85dvh; box-shadow:0 24px 80px #06130d80; font-family:var(--ff-nunito),sans-serif; }
+.umroh-dialog::backdrop { background:#06161399; backdrop-filter:blur(6px); }
+.umroh-dialog-content { padding:23px; }
+.umroh-dialog header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:17px; }
+.umroh-dialog h2 { font-family:inherit; font-weight:800; font-size:21px; line-height:1.3; }
+.umroh-dialog p { font-size:13px; line-height:1.75; margin:14px 0; color:#c8d2c5; }
+.umroh-dialog a { display:block; text-decoration:underline; font-size:12px; font-weight:700; margin-top:14px; }
+.umroh-dialog p.umroh-asset-note { padding-top:14px; border-top:1px solid var(--u-line); font-size:10px; color:#a7b4a4; }
+.umroh-dialog .umroh-asset-note a { font-size:10px; margin-top:6px; }
+.umroh-dialog-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:#d8c18d; margin:23px 0 12px; font-weight:800; }
+.umroh-full { width:100%; margin-top:12px; }
+.umroh-map-list { display:grid; gap:4px; list-style:none; padding:0; }
+.umroh-map-list li { display:flex; align-items:center; gap:12px; padding:8px 9px; border-radius:6px; }
+.umroh-map-list li.active { background:#dac18a12; box-shadow:inset 0 0 0 1px #dac18a38; }
+.umroh-map-list li>span { display:flex; align-items:center; justify-content:center; border-radius:5px; width:27px; height:27px; background:#ffffff0c; font-size:11px; font-weight:800; color:#d5c495; }
+.umroh-map-list strong { display:block; font-size:12px; font-weight:700; }
+.umroh-map-list small { display:block; color:#a5b59f; font-size:10px; margin-top:2px; }
+.umroh-landmark-list { display:grid; grid-template-columns:1fr 1fr; gap:7px; }
+.umroh-landmark-list button { display:flex; align-items:center; gap:6px; border:1px solid var(--u-line); background:#ffffff04; border-radius:6px; padding:11px 9px; color:#dfd8be; text-align:left; font-size:11px; min-height:44px; }
+.umroh-landmark-list button>span:not(.ms) { flex:1; }
+.umroh-map-visit { margin-bottom:21px; }
+@media(max-width:1150px) and (min-width:761px) { .umroh-camera-toolbar { flex-direction:column; align-items:flex-start; } .umroh-counter { top:195px; } .umroh-action-dock { width:320px; max-width:calc(100% - 390px); } .umroh-dock-caption { display:block; } .umroh-dock-caption strong { display:block; margin-top:4px; text-align:left; } .umroh-scene-footer { bottom:139px; } }
+@media(pointer:coarse) { .umroh-dpad { display:grid; grid-template-columns:44px 44px 44px; grid-template-rows:44px 44px; gap:5px; position:absolute; bottom:144px; left:24px; user-select:none; -webkit-user-select:none; } .umroh-dpad button { display:flex; align-items:center; justify-content:center; border:1px solid #ffffff40; border-radius:7px; background:#102c27d9; color:#f2e7c9; backdrop-filter:blur(9px); touch-action:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; } .umroh-dpad button:active { background:#e4cb91; color:#192c24; } .umroh-move-forward { grid-column:2; grid-row:1; } .umroh-move-left { grid-column:1; grid-row:2; } .umroh-move-back { grid-column:2; grid-row:2; } .umroh-move-right { grid-column:3; grid-row:2; } .umroh-desktop-hint { display:none; } .umroh-touch-hint { display:inline; } }
+@media(max-width:760px) {
+  .umroh-header { height:58px; padding:0 12px; gap:9px; }
+  .umroh-title span { font-size:7px; letter-spacing:1px; }
+  .umroh-title h1 { font-size:17px; }
+  .umroh-header-actions { gap:5px; }
+  .umroh-header-actions>.umroh-outline-btn:not(.umroh-guide-toggle) { width:34px; padding:0; }
+  .umroh-header-actions>.umroh-outline-btn:not(.umroh-guide-toggle)>span:not(.ms) { display:none; }
+  .umroh-header-actions>.umroh-icon-btn { width:32px; }
+  .umroh-guide-toggle { padding:6px 8px; font-size:10px; gap:4px; }
+  .umroh-guide-toggle>.ms { font-size:19px!important; }
+  .umroh-layout { height:calc(100dvh - 58px); min-height:0; }
+  .umroh-scene-label { top:12px; left:12px; font-size:9px; padding:8px 10px; }
+  .umroh-scene-label small { font-size:8px; }
+  .umroh-camera-toolbar,.guide-closed .umroh-camera-toolbar { top:74px; left:12px; right:12px; max-width:none; gap:6px; }
+  .umroh-segmented { padding:3px; }
+  .umroh-segmented button { min-height:33px; padding:6px 8px; font-size:10px; gap:4px; }
+  .umroh-time { position:absolute; right:0; top:-61px; }
+  .umroh-time button { padding:6px; }
+  .umroh-time button span:not(.ms) { display:none; }
+  .umroh-time button[aria-pressed=true] span:not(.ms) { display:inline; font-size:9px; }
+  .umroh-counter { top:127px; left:12px; min-width:136px; padding:10px 12px; }
+  .umroh-counter strong { font-size:27px; }
+  .umroh-panel { top:128px; right:12px; left:12px; bottom:110px; width:auto; padding:17px; border-radius:9px; background:#102421fa; }
+  .umroh-panel-top { margin-bottom:15px; }
+  .umroh-panel-top .umroh-icon-btn { width:32px; height:32px; }
+  .umroh-panel h2 { font-size:20px; }
+  .umroh-action-dock,.guide-closed .umroh-action-dock { bottom:12px; left:12px; right:12px; width:auto; max-width:none; padding:10px; border-radius:8px; }
+  .umroh-dock-caption { margin-bottom:8px; }
+  .umroh-primary { min-height:44px; font-size:12px; }
+  .umroh-scene-footer { bottom:110px; left:12px; right:auto; font-size:8px; gap:4px; max-width:calc(100% - 70px); padding:6px 8px; }
+  .guide-open .umroh-scene-footer { visibility:hidden; }
+  .umroh-reset-camera,.guide-open .umroh-reset-camera { right:12px; bottom:109px; }
+  .guide-open .umroh-reset-camera,.guide-open .umroh-dpad { visibility:hidden; }
+  .umroh-dpad { left:16px; bottom:148px; }
+  .umroh-dialog-content { padding:20px; }
+  .umroh-dialog h2 { font-size:20px; }
+  .umroh-checklist label { min-height:36px; }
+  .umroh-choice-small { min-height:40px; }
+}
+@media(max-width:380px) { .umroh-header { padding:0 9px; gap:7px; } .umroh-title h1 { font-size:15px; } .umroh-title span { font-size:6px; } .umroh-header-actions { gap:4px; } .umroh-header>.umroh-icon-btn { width:32px; } .umroh-guide-toggle { padding:6px; } .umroh-segmented button { padding:6px; font-size:9px; } .umroh-scene-label { max-width:calc(100% - 115px); } .umroh-dock-caption strong { font-size:10px; } }
+@media(max-width:1050px) and (min-width:761px) { .umroh-panel { width:280px; padding:16px; } .guide-open .umroh-reset-camera { right:320px; } .umroh-camera-toolbar { max-width:calc(100% - 340px); } .umroh-action-dock { max-width:calc(100% - 340px); } }
+@media(max-height:500px) and (max-width:950px) { .umroh-panel { top:12px; right:12px; left:auto; bottom:105px; width:280px; } .umroh-panel h2 { font-size:17px; } .umroh-panel-top { margin-bottom:10px; } .umroh-scene-label { max-width:calc(100% - 335px); } .umroh-camera-toolbar { max-width:calc(100% - 335px); } .umroh-time { position:static; } .guide-open .umroh-action-dock { right:12px; } .umroh-dock-caption { display:none; } .umroh-action-dock { width:300px; max-width:calc(100% - 48px); } .umroh-counter { top:180px; } }
+@media(max-height:640px) and (min-width:951px) { .umroh-panel { top:12px; bottom:12px; } }
 @media(prefers-reduced-motion:reduce) { .umroh-app * { scroll-behavior:auto; transition:none!important; } }
