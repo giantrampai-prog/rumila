@@ -57,7 +57,7 @@ export class Pilgrims {
     const sphere = () => new T.SphereGeometry(1, 14, 10);
     // Head narrows towards the jaw; neck and ears retain ordinary adult proportions.
     add(sphere(), skin, [0, 1.60, 0], [.105, .145, .108], 'skin');
-    add(new T.SphereGeometry(1, 16, 10, 0, Math.PI * 2, 0, Math.PI * .47), hair, [0, 1.607, -.008], [.108, .148, .112], 'fixed', 0, 'male');
+    add(new T.SphereGeometry(1, 16, 10, 0, Math.PI * 2, 0, Math.PI * .47), hair, [0, 1.60, 0], [.11, .15, .113], 'fixed', 0, 'male');
     add(sphere(), skin, [0, 1.50, .032], [.083, .055, .075], 'skin');
     add(new T.CylinderGeometry(.052, .06, .10, 12), skin, [0, 1.43, 0], [1, 1, 1], 'skin');
     add(sphere(), skin, [0, 1.59, .108], [.026, .038, .04], 'skin');
