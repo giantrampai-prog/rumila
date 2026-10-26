@@ -13,7 +13,7 @@ import { SheetHost } from "./sheets";
 /** Izin yang dibutuhkan sebuah route (guard sisi klien; fase Supabase ditambah RLS). */
 function requiredPerm(path: string): PermKey | null {
   // semua modul 3D ada di dunia Petualangan 3D (izin "angkasa")
-  if (["/jelajah-tubuh", "/buah-buahan", "/jelajah-angkasa", "/roket", "/laut", "/bumi"].some((r) => path.startsWith(r))) return "angkasa";
+  if (["/jelajah-tubuh", "/buah-buahan", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual"].some((r) => path.startsWith(r))) return "angkasa";
   if (path.startsWith("/resto") || path.startsWith("/ular-tangga")) return "game";
   if (path.startsWith("/koding")) return "coding";
   if (path.startsWith("/akademi")) return "edukasi";
@@ -65,7 +65,7 @@ function Ready({ children }: { children: ReactNode }) {
   const page = allowed ? children : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
-  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/rapor", "/akademi/telemetri", "/akademi/sertifikat"].some((r) => path.startsWith(r)))
+  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/rapor", "/akademi/telemetri", "/akademi/sertifikat"].some((r) => path.startsWith(r)))
     return (
       <>
         {page}
@@ -119,6 +119,7 @@ export function useOpenTool() {
       angkasa3: "/roket",
       "petualangan-laut": "/laut",
       "petualangan-bumi": "/bumi",
+      "petualangan-umroh": "/umroh-virtual",
       "game-resto": "/resto",
       "game-ular": "/ular-tangga",
       "koding-langkah": "/koding/langkah",
