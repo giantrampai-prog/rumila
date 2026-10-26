@@ -12,6 +12,7 @@ import {
   type JourneyProgress, type UmrohPilgrim,
 } from '@/lib/umroh';
 import type { UmrohScene } from './scene';
+import { getFlightPov, isFlightChapter, type FlightCameraMode } from './flight-camera';
 import './umroh.css';
 
 const TOOL_ID = 'petualangan-umroh';
@@ -21,6 +22,11 @@ const CAMERA_VIEWS = [
   { id: 'walk', label: 'Jalan kaki', icon: 'directions_walk' },
   { id: 'follow', label: 'Ikuti jamaah', icon: 'person_pin_circle' },
   { id: 'overview', label: 'Lihat kawasan', icon: 'map' },
+] as const;
+const FLIGHT_VIEWS = [
+  { id: 'auto', label: 'Otomatis', icon: 'autorenew' },
+  { id: 'cabin', label: 'Dalam kabin', icon: 'airline_seat_recline_normal' },
+  { id: 'exterior', label: 'Luar pesawat', icon: 'flight' },
 ] as const;
 const NABAWI_VISIT = {
   title: 'Mengenal Masjid Nabawi', subtitle: 'Kunjungan pilihan di Madinah',
@@ -53,9 +59,13 @@ function Journey({ memberId }: { memberId: string }) {
   const [showInfo, setShowInfo] = useState(false);
   const [guideOpen, setGuideOpen] = useState(true);
   const [view, setView] = useState<CameraView>('walk');
+  const [flightCamera, setFlightCamera] = useState<FlightCameraMode>('auto');
+  const [reducedMotion, setReducedMotion] = useState(false);
   const [timeOfDay, setTimeOfDay] = useState<'day' | 'sunset'>('day');
   const [practiceSpeed, setPracticeSpeed] = useState<'normal' | 'fast'>('normal');
   const [visit, setVisit] = useState<'nabawi' | null>(null);
+  const flying = !visit && isFlightChapter(journey.chapter);
+  const flightPov = getFlightPov(travelFraction, flightCamera, reducedMotion);
   const [landmarks, setLandmarks] = useState<{ id: string; label: string }[]>([]);
   const [sceneError, setSceneError] = useState(false);
   const [sceneReady, setSceneReady] = useState(false);
@@ -92,6 +102,13 @@ function Journey({ memberId }: { memberId: string }) {
     movementPointers.current.forEach((direction) => { forward += direction.forward; right += direction.right; });
     scene.current?.setMovement(Math.max(-1, Math.min(1, forward)), Math.max(-1, Math.min(1, right)));
   };
+
+  useEffect(() => {
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setReducedMotion(preference.matches);
+    update(); preference.addEventListener('change', update);
+    return () => preference.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     try {
@@ -140,16 +157,16 @@ function Journey({ memberId }: { memberId: string }) {
   useEffect(() => {
     const currentScene = scene.current;
     if (!currentScene) return;
-    currentScene.update({ ...progress, chapter: journey.chapter, travelProgress: travelFraction, progress: practice ? Math.min(7, progress.elapsedSeconds / duration) : 0, running: running && !visit, view, timeOfDay, visit, paused: dialogOpen });
+    currentScene.update({ ...progress, chapter: journey.chapter, travelProgress: travelFraction, progress: practice ? Math.min(7, progress.elapsedSeconds / duration) : 0, running: running && !visit, view, flightCamera, reducedMotion, guideOpen, timeOfDay, visit, paused: dialogOpen });
     if (pendingLandmark.current && !dialogOpen) {
       currentScene.jumpToLandmark(pendingLandmark.current);
       pendingLandmark.current = null;
     }
-  }, [progress, journey.chapter, travelFraction, practice, duration, running, sceneReady, view, timeOfDay, visit, dialogOpen]);
+  }, [progress, journey.chapter, travelFraction, practice, duration, running, sceneReady, view, flightCamera, reducedMotion, guideOpen, timeOfDay, visit, dialogOpen]);
 
   useEffect(() => {
     stopMovement();
-  }, [dialogOpen, view, visit, progress.stage, journey.chapter, stopMovement]);
+  }, [dialogOpen, view, flightCamera, visit, progress.stage, journey.chapter, stopMovement]);
 
   useEffect(() => {
     const element = viewport.current;
@@ -216,15 +233,16 @@ function Journey({ memberId }: { memberId: string }) {
       useRumila.getState().completeToolItem(memberId, TOOL_ID, 'angkasa', 'perjalanan-' + journey.chapter);
     }
     stopMovement(); setRunning(false); setJourney(updated); setGuideOpen(true); setChecks([false, false, false]);
-    if (updated.chapter !== journey.chapter) setView('walk');
+    if (updated.chapter !== journey.chapter) { setView('walk'); setFlightCamera('auto'); }
   };
   const changePilgrim = (pilgrim: UmrohPilgrim) => setJourney((current) => ({ ...current, umroh: { ...current.umroh, pilgrim } }));
-  const reset = () => { const current = saved ?? journey; stopMovement(); setVisit(null); setRunning(false); setSaved(null); setChecks([false, false, false]); setJourney(createJourneyProgress(current.umroh.pilgrim)); setShowRestart(false); setGuideOpen(true); setView('walk'); };
+  const reset = () => { const current = saved ?? journey; stopMovement(); setVisit(null); setRunning(false); setSaved(null); setChecks([false, false, false]); setJourney(createJourneyProgress(current.umroh.pilgrim)); setShowRestart(false); setGuideOpen(true); setView('walk'); setFlightCamera('auto'); };
   const finishTravel = () => { setRunning(false); setJourney((current) => advanceJourneyTravel(current, chapter.durationSeconds ?? 0)); };
   const openNabawi = () => { setRunning(false); stopMovement(); setVisit('nabawi'); setShowMap(false); setGuideOpen(true); };
   const returnToLesson = () => { stopMovement(); setVisit(null); setRunning(false); setGuideOpen(true); };
   const jumpTo = (id: string) => {
     pendingLandmark.current = id;
+    if (flying) setFlightCamera(flightPov);
     stopMovement(); setRunning(false); setView('walk'); setShowMap(false);
   };
   const narrate = () => {
@@ -266,13 +284,13 @@ function Journey({ memberId }: { memberId: string }) {
           {!sceneReady && !sceneError && <div className="umroh-loading" role="status"><Icon name="mosque" size={40} /><span>Menyiapkan perjalanan…</span></div>}
           {sceneError && <div className="umroh-loading"><Icon name="view_in_ar" size={40} /><strong>Tampilan 3D belum bisa dibuka</strong><p>Coba browser yang mendukung WebGL. Panduan langkah tetap bisa dibaca di sini.</p></div>}
           <div className="umroh-camera-toolbar">
-            <div className="umroh-segmented" role="group" aria-label="Cara menjelajah">{CAMERA_VIEWS.map((mode) => <button key={mode.id} aria-pressed={view === mode.id} onClick={() => { stopMovement(); setView(mode.id); }}><Icon name={mode.icon} size={18} /><span>{travelling && mode.id === 'follow' ? 'Dalam kendaraan' : mode.label}</span></button>)}</div>
+            {flying ? <div className="umroh-segmented" role="group" aria-label="Sudut pandang penerbangan">{FLIGHT_VIEWS.map((mode) => <button key={mode.id} aria-pressed={flightCamera === mode.id} onClick={() => { stopMovement(); setFlightCamera(mode.id); }}><Icon name={mode.icon} size={18} /><span>{mode.label}</span></button>)}</div> : <div className="umroh-segmented" role="group" aria-label="Cara menjelajah">{CAMERA_VIEWS.map((mode) => <button key={mode.id} aria-pressed={view === mode.id} onClick={() => { stopMovement(); setView(mode.id); }}><Icon name={mode.icon} size={18} /><span>{travelling && mode.id === 'follow' ? 'Dalam kendaraan' : mode.label}</span></button>)}</div>}
             <div className="umroh-segmented umroh-time" role="group" aria-label="Suasana cahaya"><button aria-label="Siang" aria-pressed={timeOfDay === 'day'} onClick={() => setTimeOfDay('day')}><Icon name="light_mode" size={17} /><span>Siang</span></button><button aria-label="Senja" aria-pressed={timeOfDay === 'sunset'} onClick={() => setTimeOfDay('sunset')}><Icon name="wb_twilight" size={17} /><span>Senja</span></button></div>
           </div>
           {practice && !visit && <div className="umroh-counter" aria-live="polite"><span>{progress.stage === 'tawaf' ? 'PUTARAN TAWAF' : 'PERJALANAN SA’I'}</span><strong>{progress.count}<small> / 7</small></strong><div>{practiceDone ? (progress.stage === 'tawaf' ? 'Tujuh putaran lengkap' : 'Tujuh perjalanan lengkap') : progress.stage === 'sai' ? (progress.count % 2 === 0 ? 'Safa → Marwah' : 'Marwah → Safa') : 'Ka’bah di sebelah kiri'}</div></div>}
-          {travelling && !visit && <div className="umroh-counter umroh-transport-counter"><span>{travelDone ? 'SUDAH TIBA' : running ? 'DALAM PERJALANAN' : journey.travelSeconds > 0 ? 'PERJALANAN DIJEDA' : 'SIAP BERANGKAT'}</span><strong>{Math.round(travelFraction * 100)}<small>%</small></strong><div>{chapter.storyMinutes ? storyClock + ' dalam cerita' : chapter.subtitle}</div></div>}
+          {travelling && !visit && <div className="umroh-counter umroh-transport-counter"><span>{travelDone ? 'SUDAH TIBA' : running ? 'DALAM PERJALANAN' : journey.travelSeconds > 0 ? 'PERJALANAN DIJEDA' : 'SIAP BERANGKAT'}</span><strong>{Math.round(travelFraction * 100)}<small>%</small></strong><div>{chapter.storyMinutes ? storyClock + ' dalam cerita' : chapter.subtitle}</div>{flying && <div className="umroh-flight-caption">{flightCamera === 'auto' && !reducedMotion ? 'POV otomatis · ' : ''}{flightPov === 'exterior' ? 'Luar pesawat' : 'Dalam kabin'}{flightCamera === 'auto' && reducedMotion ? ' · gerak dikurangi' : ''}</div>}</div>}
           <button className="umroh-icon-btn umroh-reset-camera" aria-label="Atur ulang kamera" onClick={() => { stopMovement(); scene.current?.resetCamera(); }}><Icon name="center_focus_strong" /></button>
-          {view === 'walk' && !dialogOpen && <div className="umroh-dpad" role="group" aria-label="Navigasi jalan kaki">{[
+          {!flying && view === 'walk' && !dialogOpen && <div className="umroh-dpad" role="group" aria-label="Navigasi jalan kaki">{[
             { id: 'forward', label: 'Maju', icon: 'keyboard_arrow_up', forward: 1, right: 0 },
             { id: 'left', label: 'Ke kiri', icon: 'keyboard_arrow_left', forward: 0, right: -1 },
             { id: 'back', label: 'Mundur', icon: 'keyboard_arrow_down', forward: -1, right: 0 },
@@ -283,7 +301,7 @@ function Journey({ memberId }: { memberId: string }) {
             onPointerCancel={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
             onLostPointerCapture={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
             onContextMenu={(event) => event.preventDefault()}><Icon name={direction.icon} size={26} /></button>)}</div>}
-          <div className="umroh-scene-footer"><Icon name={view === 'walk' ? 'directions_walk' : 'pan_tool_alt'} size={16} /><span className="umroh-desktop-hint">{travelling && view === 'follow' ? 'Geser untuk melihat dari dalam kendaraan' : view === 'walk' ? 'WASD / tombol arah · Geser untuk melihat' : 'Geser untuk melihat · Gulir untuk mendekat'}</span><span className="umroh-touch-hint">{travelling && view === 'follow' ? 'Geser untuk melihat dari dalam kendaraan' : view === 'walk' ? 'Tombol arah untuk berjalan · Geser untuk melihat' : 'Geser untuk melihat · Cubit untuk mendekat'}</span></div>
+          <div className="umroh-scene-footer"><Icon name={!flying && view === 'walk' ? 'directions_walk' : 'pan_tool_alt'} size={16} /><span className="umroh-desktop-hint">{flying ? flightCamera === 'auto' && !reducedMotion ? 'POV berganti otomatis · Pilih POV untuk menjelajah' : flightPov === 'cabin' ? 'Geser untuk melihat kabin dan penumpang' : 'Geser untuk mengitari pesawat · Gulir untuk mendekat' : travelling && view === 'follow' ? 'Geser untuk melihat dari dalam kendaraan' : view === 'walk' ? 'WASD / tombol arah · Geser untuk melihat' : 'Geser untuk melihat · Gulir untuk mendekat'}</span><span className="umroh-touch-hint">{flying ? flightCamera === 'auto' && !reducedMotion ? 'POV berganti otomatis · Pilih POV untuk menjelajah' : flightPov === 'cabin' ? 'Geser untuk melihat kabin dan penumpang' : 'Geser untuk mengitari pesawat · Cubit untuk mendekat' : travelling && view === 'follow' ? 'Geser untuk melihat dari dalam kendaraan' : view === 'walk' ? 'Tombol arah untuk berjalan · Geser untuk melihat' : 'Geser untuk melihat · Cubit untuk mendekat'}</span></div>
           <div className="umroh-action-dock"><div className="umroh-dock-caption"><span>{caption}</span><strong>{displayedLesson.title}</strong></div>{primaryAction}</div>
         </section>
 
@@ -331,7 +349,7 @@ function Journey({ memberId }: { memberId: string }) {
         {inUmroh && <><h3 className="umroh-dialog-label">Rangkaian manasik</h3><ol className="umroh-map-list">{STAGES.map((s, i) => <li key={s.id} className={i === stageIndex ? 'active' : ''} aria-current={i === stageIndex ? 'step' : undefined}><span>{i < stageIndex ? <Icon name="check" size={17} /> : i + 1}</span><div><strong>{s.title}</strong><small>{i < stageIndex ? 'Sudah dipelajari' : i === stageIndex ? 'Pelajaranmu saat ini' : 'Langkah berikutnya'}</small></div></li>)}</ol></>}
       </Modal>}
 
-      {showInfo && <Modal title="Tentang perjalanan ini" onClose={() => setShowInfo(false)}><p>Jelajahi tempat-tempat dalam rangkaian umroh, lalu ikuti panduan langkah demi langkah. Bangunan dan lingkungan dibuat sebagai visualisasi untuk belajar, bukan denah terukur atau petunjuk navigasi di lokasi sebenarnya.</p><p>Rute cerita: rumah di Indonesia, Bluebird, Soekarno–Hatta, Garuda ke Jeddah, kereta Haramain ke Madinah, Uber ke Masjid Nabawi, lalu Bir Ali dan rangkaian umroh. Kepulangan melalui Jeddah dan Soekarno–Hatta sampai rumah.</p><p>Tur Nabawi, Raudhah, dan ziarah salam bukan rukun umroh. Raudhah berbeda dari area makam; kunjungan nyata mengikuti ketentuan Nusuk dan petugas. Visualisasi salam berada di luar pembatas ruang makam.</p><p>Nama layanan transportasi dipakai sebagai bagian cerita. Modul tidak melakukan pemesanan, menerbitkan tiket/izin, atau mewakili operator. Durasi penerbangan sekitar 9 jam adalah ilustrasi cerita yang dipercepat.</p><a href="https://www.nusuk.sa/rawdah/" target="_blank" rel="noreferrer">Panduan resmi kunjungan Raudhah · Nusuk ↗</a><p>Salat setelah tawaf, minum Zamzam, dan bacaan anjuran ditampilkan sebagai panduan, bukan semuanya rukun umroh. Gunakan bersama arahan pembimbing manasik; simulasi tidak menggantikan ibadah dan tidak menilai sahnya ibadah.</p>{UMROH_SOURCES.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}<p className="umroh-asset-note">Tekstur marmer: Rob Tuytel / Poly Haven, CC0. <a href="https://polyhaven.com/a/marble_01" target="_blank" rel="noreferrer">Lihat sumber tekstur ↗</a></p></Modal>}
+      {showInfo && <Modal title="Tentang perjalanan ini" onClose={() => setShowInfo(false)}><p>Jelajahi tempat-tempat dalam rangkaian umroh, lalu ikuti panduan langkah demi langkah. Bangunan dan lingkungan dibuat sebagai visualisasi untuk belajar, bukan denah terukur atau petunjuk navigasi di lokasi sebenarnya.</p><p>Rute cerita: rumah di Indonesia, taksi, Soekarno–Hatta, Garuda ke Jeddah, kereta Haramain ke Madinah, Uber ke Masjid Nabawi, lalu Bir Ali dan rangkaian umroh. Kepulangan melalui Jeddah dan Soekarno–Hatta sampai rumah.</p><p>Tur Nabawi, Raudhah, dan ziarah salam bukan rukun umroh. Raudhah berbeda dari area makam; kunjungan nyata mengikuti ketentuan Nusuk dan petugas. Visualisasi salam berada di luar pembatas ruang makam.</p><p>Nama layanan transportasi dipakai sebagai bagian cerita. Modul tidak melakukan pemesanan, menerbitkan tiket/izin, atau mewakili operator. Durasi penerbangan sekitar 9 jam adalah ilustrasi cerita yang dipercepat.</p><a href="https://www.nusuk.sa/rawdah/" target="_blank" rel="noreferrer">Panduan resmi kunjungan Raudhah · Nusuk ↗</a><p>Salat setelah tawaf, minum Zamzam, dan bacaan anjuran ditampilkan sebagai panduan, bukan semuanya rukun umroh. Gunakan bersama arahan pembimbing manasik; simulasi tidak menggantikan ibadah dan tidak menilai sahnya ibadah.</p>{UMROH_SOURCES.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}<p className="umroh-asset-note">Tekstur marmer: Rob Tuytel / Poly Haven, CC0. <a href="https://polyhaven.com/a/marble_01" target="_blank" rel="noreferrer">Lihat sumber tekstur ↗</a></p></Modal>}
     </main>
   );
 }

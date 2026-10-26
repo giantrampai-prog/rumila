@@ -15,6 +15,8 @@ export interface UmrohWorld {
   indoor?: boolean;
   /** Static vehicle interior with scenery translated by journey progress. */
   motion?: { group: T.Group; axis: 'x' | 'z'; distance: number; loop?: boolean };
+  /** Complete aircraft used only by exterior flight cameras. */
+  flight?: { aircraft: T.Group };
   crowd?: { kind: 'tawaf' | 'walk' | 'sai'; count: number; radius?: number; area?: Rect };
 }
 export interface WorldResources {

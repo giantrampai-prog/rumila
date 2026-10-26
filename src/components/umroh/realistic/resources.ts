@@ -96,14 +96,15 @@ export class Resources implements WorldResources {
   }
   /** Collapse static architecture to one draw per material/shadow class. */
   batch(group: T.Group): void {
-    group.updateMatrixWorld(true);
+    group.updateWorldMatrix(true, true);
+    const inverse = group.matrixWorld.clone().invert();
     const buckets = new Map<string, { material: T.Material; geometries: T.BufferGeometry[]; shadow: boolean }>();
     const remove: T.Object3D[] = [];
     group.traverse((o) => {
       if (!(o instanceof T.Mesh) || o instanceof T.InstancedMesh || Array.isArray(o.material)) return;
       for (let parent = o.parent; parent && parent !== group; parent = parent.parent) if (parent.userData.dynamic) return;
       const geometry = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
-      geometry.applyMatrix4(o.matrixWorld);
+      geometry.applyMatrix4(new T.Matrix4().multiplyMatrices(inverse, o.matrixWorld));
       if (!geometry.getAttribute('normal')) geometry.computeVertexNormals();
       const positions = geometry.getAttribute('position');
       const normals = geometry.getAttribute('normal');
