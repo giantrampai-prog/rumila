@@ -159,6 +159,7 @@ export interface Vendor {
 export const VENDORS: Vendor[] = [
   { id: 'hemat', name: 'Pasar Hemat', mult: 0.9, quality: 65, min: 500, shelf: 2, sameDay: false, note: 'Murah, mutu cukup, cepat kedaluwarsa.' },
   { id: 'segar', name: 'Segar Andal (bahan Jepang)', mult: 1.0, quality: 85, min: 800, shelf: 3, sameDay: false, note: 'Mutu konsisten, belanja minimum lebih besar.' },
+  { id: 'super', name: 'Supermarket Serba Ada (sebelah)', mult: 1.15, quality: 72, min: 100, shelf: 2, sameDay: true, note: 'Pemilik jalan kaki ke sebelah: belanja sedikit pun boleh, langsung dibawa pulang.' },
   { id: 'kilat', name: 'Kilat', mult: 1.25, quality: 80, min: 200, shelf: 2, sameDay: true, note: 'Datang hari ini juga, tapi lebih mahal.' },
 ];
 

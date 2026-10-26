@@ -489,7 +489,7 @@ function stockLabel(s: RestoState, active: Menu[]) {
   const short = active.filter((m) => portionsAvailable(s, m) < MIN_OPEN_PORTIONS);
   if (!short.length) return `Stok bahan cukup untuk menu aktif (min ${MIN_OPEN_PORTIONS} porsi)`;
   const list = short.map((m) => `${m.name} ${portionsAvailable(s, m)}/${MIN_OPEN_PORTIONS}`).join(', ');
-  const why = hasPendingOrder(s) ? ' — pesananmu baru datang besok. Pakai vendor Kilat agar datang hari ini, atau matikan menu itu.' : ' — belanja di Bahan (vendor Kilat datang hari ini), atau matikan menu itu.';
+  const why = hasPendingOrder(s) ? ' — pesananmu baru datang besok. Belanja di Supermarket Serba Ada (sebelah) atau vendor Kilat agar datang hari ini, atau matikan menu itu.' : ' — belanja di Bahan (Serba Ada di sebelah & Kilat datang hari ini), atau matikan menu itu.';
   return `Stok kurang: ${list}${why}`;
 }
 
@@ -888,7 +888,7 @@ export function closeDay(s: RestoState, run: DayRun): DayReport {
   const findings: Finding[] = [];
   if (st.lostQueue >= 3) findings.push({ icon: 'hourglass_top', text: `${st.lostQueue} kelompok pergi karena antrean lama. Latih kasir atau kurangi promo dulu.` });
   if (st.lostSeat >= 3) findings.push({ icon: 'table_restaurant', text: `${st.lostSeat} kelompok pergi karena meja penuh. Tambah meja atau percepat pembersihan.` });
-  if (st.lostStock >= 1) findings.push({ icon: 'inventory_2', text: `${st.lostStock} kelompok batal karena stok habis. Pesan bahan lebih banyak, atau pakai vendor Kilat saat darurat.` });
+  if (st.lostStock >= 1) findings.push({ icon: 'inventory_2', text: `${st.lostStock} kelompok batal karena stok habis. Pesan bahan lebih banyak, atau belanja di Serba Ada / Kilat saat darurat.` });
   const avgWait = st.served ? st.waitSum / st.served : 0;
   if (avgWait > 18) findings.push({ icon: 'skillet', text: `Makanan rata-rata ${Math.round(avgWait)} menit baru tersaji. Latih koki atau tambah koki/alat.` });
   for (const m of MENUS)

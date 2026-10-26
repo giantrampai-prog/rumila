@@ -101,6 +101,8 @@ export class RestoScene {
   private tapAt: { x: number; y: number; moved: number } | null = null;
   /** dipanggil saat pandangan orang dimulai/selesai (untuk tombol di layar) */
   onPov: ((on: boolean) => void) | null = null;
+  /** gedung supermarket di sebelah resto diketuk */
+  onMart: (() => void) | null = null;
 
   private shell = new T.Group(); // dinding, lantai, atap: dibangun ulang saat keadaan berubah
   private dyn = new T.Group(); // alat, meja, dekorasi
@@ -226,10 +228,13 @@ export class RestoScene {
       this.pitch = T.MathUtils.clamp(this.pitch + dy * 0.004, 0.3, 1.25);
     });
     const up = (e: PointerEvent) => {
-      // ketukan (tanpa geser) di pandangan orang = berjalan ke titik itu
-      if (e.type === 'pointerup' && this.pov && this.tapAt && this.tapAt.moved < 8) {
-        const h = this.pick(e.clientX, e.clientY);
-        if (h) this.povWalk(h);
+      // ketukan (tanpa geser) di gedung supermarket = belanja; di pandangan orang = berjalan ke titik itu
+      if (e.type === 'pointerup' && this.tapAt && this.tapAt.moved < 8) {
+        if (this.tapsMart(e.clientX, e.clientY)) this.onMart?.();
+        else if (this.pov) {
+          const h = this.pick(e.clientX, e.clientY);
+          if (h) this.povWalk(h);
+        }
       }
       this.tapAt = null;
       this.pointers.delete(e.pointerId);
@@ -338,6 +343,14 @@ export class RestoScene {
   }
 
   /* ---------- pandangan orang: ikon diseret ke lantai (seperti pegman Google Maps) ---------- */
+
+  private tapsMart(cx: number, cy: number) {
+    if (!this.city?.mart) return false;
+    const r = this.renderer.domElement.getBoundingClientRect();
+    _ndc.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+    _ray.setFromCamera(_ndc, this.camera);
+    return this.city.hitsMart(_ray, [this.shell, this.dyn]);
+  }
 
   /** Titik lantai di bawah posisi layar (lantai resto, halaman, atau jalan); null = di luar kanvas / langit. */
   private pick(cx: number, cy: number) {

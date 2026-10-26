@@ -239,6 +239,9 @@ export function RestoGame() {
   const host = useRef<HTMLDivElement>(null);
   const scene = useRef<RestoScene | null>(null);
   const [panel, setPanel] = useState<Panel>(null);
+  /** panel Bahan dibuka dari gedung supermarket → vendor Supermarket terpilih */
+  const [fromMart, setFromMart] = useState(false);
+  const onMart = useRef(() => {});
   const [topView, setTopView] = useState(false);
   const [roofOn, setRoofOn] = useState(true);
   /** pandangan orang aktif (ikon orang diseret ke lantai) */
@@ -275,6 +278,7 @@ export function RestoGame() {
       if (!alive || !host.current) return;
       scene.current = new RestoScene(host.current);
       scene.current.onPov = (on) => (setPov(on), on && setTopView(false));
+      scene.current.onMart = () => onMart.current();
       scene.current.sync(g);
     });
     installAudioUnlock();
@@ -313,6 +317,17 @@ export function RestoGame() {
   const say = (text: string, good = true) => {
     setToast({ text, good });
     window.setTimeout(() => setToast((t) => (t?.text === text ? null : t)), 2600);
+  };
+
+  // gedung supermarket di sebelah resto diketuk: pemilik belanja bahan & kebutuhan sehari-hari di sana
+  onMart.current = () => {
+    if (panel) return;
+    if (g.phase === 'prep' || g.phase === 'review') {
+      sfx.open();
+      setFromMart(true);
+      setPanel('bahan');
+    } else if (g.phase === 'open') say('Resto sedang buka — belanja ke Serba Ada setelah tutup, ya!', false);
+    else say('Supermarket Serba Ada: belanja bahan setelah restoranmu jadi.', false);
   };
 
   /** Jalankan perintah bisnis; tampilkan hasilnya; simpan. */
@@ -444,7 +459,7 @@ export function RestoGame() {
         kasir: 'Beli meja kasir & kulkas bahan di Toko Alat dulu.',
         meja: 'Pelanggan butuh tempat duduk. Beli minimal 2 meja.',
         menu: 'Aktifkan minimal 2 menu di Menu. Pastikan alat dapurnya sudah dibeli!',
-        stok: 'Belanja bahan untuk menu aktif. Vendor biasa datang besok; Kilat datang hari ini tapi lebih mahal.',
+        stok: 'Belanja bahan untuk menu aktif. Vendor biasa datang besok; Supermarket Serba Ada di sebelah & Kilat datang hari ini tapi lebih mahal.',
         tim: 'Rekrut kasir, koki, pelayan, dan petugas kebersihan di Tim.',
         kas: 'Uang cadangan kurang. Kurangi belanja atau pakai hibah belajar di Keuangan.',
       };
@@ -849,7 +864,7 @@ export function RestoGame() {
         </Sheet>
       )}
 
-      {panel === 'bahan' && <BahanPanel g={g} act={act} onClose={() => setPanel(null)} />}
+      {panel === 'bahan' && <BahanPanel g={g} act={act} mart={fromMart} onClose={() => (setPanel(null), setFromMart(false))} />}
 
       {panel === 'menu' && (
         <Sheet title="Menu & harga" emoji="🍜" onClose={() => setPanel(null)}>
@@ -1027,28 +1042,28 @@ export function RestoGame() {
 
 /* ---------------- panel belanja bahan ---------------- */
 
-function BahanPanel({ g, act, onClose }: { g: S.RestoState; act: (fn: () => S.Result, s?: () => void) => boolean; onClose: () => void }) {
+function BahanPanel({ g, act, mart, onClose }: { g: S.RestoState; act: (fn: () => S.Result, s?: () => void) => boolean; mart?: boolean; onClose: () => void }) {
   const active = MENUS.filter((m) => g.menu[m.id].active);
   const last = g.reports[g.reports.length - 1];
   const short = S.shortMenus(g);
-  const [vendor, setVendor] = useState(short.length ? 'kilat' : 'segar');
+  const [vendor, setVendor] = useState(mart ? 'super' : short.length ? 'kilat' : 'segar');
   const [qty, setQty] = useState<Record<string, number>>(() => Object.fromEntries(MENUS.map((m) => [m.id, active.some((a) => a.id === m.id) ? Math.max(10, Math.round((last?.sold[m.id] ?? 20) * 1.2 / 5) * 5) : 0])));
   const v = VENDORS.find((x) => x.id === vendor)!;
   const units = MENUS.reduce((a, m) => a + recipeCost(m) * (qty[m.id] ?? 0), 0);
   const cost = Math.round(units * v.mult);
   return (
-    <Sheet title="Belanja bahan" emoji="🧺" onClose={onClose}>
+    <Sheet title={mart ? 'Belanja di Serba Ada' : 'Belanja bahan'} emoji={mart ? '🛒' : '🧺'} onClose={onClose}>
       <p className="mb-2 text-[14px] font-bold opacity-80">Pesan secukupnya: kebanyakan → bahan kedaluwarsa & terbuang; kekurangan → pelanggan batal pesan.</p>
       {short.length > 0 && (
         <div className="mb-2 flex flex-wrap items-center gap-2 rounded-[14px] bg-[#ffe3d8] p-2.5 text-[13px] font-bold text-[#8a2a1a]">
           <span className="flex-1">
             ⚠️ Belum bisa buka: stok {short.map((m) => `${m.emoji} ${m.name} (${S.portionsAvailable(g, m)}/${S.MIN_OPEN_PORTIONS})`).join(', ')} kurang.
-            {S.hasPendingOrder(g) ? ' Pesanan sebelumnya baru datang besok.' : ''} Vendor <b>Kilat</b> datang hari ini.
+            {S.hasPendingOrder(g) ? ' Pesanan sebelumnya baru datang besok.' : ''} <b>Serba Ada</b> (sebelah) & <b>Kilat</b> datang hari ini.
           </span>
           <Btn
             tone="orange"
             onClick={() => {
-              setVendor('kilat');
+              setVendor(mart ? 'super' : 'kilat');
               setQty(Object.fromEntries(MENUS.map((m) => [m.id, short.some((x) => x.id === m.id) ? Math.max(10, Math.ceil((S.MIN_OPEN_PORTIONS * 2 - S.portionsAvailable(g, m)) / 5) * 5) : 0])));
             }}
           >
@@ -1056,7 +1071,7 @@ function BahanPanel({ g, act, onClose }: { g: S.RestoState; act: (fn: () => S.Re
           </Btn>
         </div>
       )}
-      <div className="grid gap-2 sm:grid-cols-3">
+      <div className="grid gap-2 sm:grid-cols-2">
         {VENDORS.map((x) => (
           <button key={x.id} onClick={() => setVendor(x.id)} className="rounded-[16px] bg-white p-2.5 text-left shadow-[0_2px_0_#e3cfb2]" style={vendor === x.id ? { boxShadow: 'inset 0 0 0 3px #ff8a1a' } : undefined}>
             <div className="text-[15px] font-extrabold">{x.name}</div>
