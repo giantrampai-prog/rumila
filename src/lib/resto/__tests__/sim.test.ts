@@ -81,3 +81,14 @@ describe('Rinoya Resto — simulasi', () => {
     expect(s.wasteCarry).toBeGreaterThan(0);
   });
 });
+
+describe('Supermarket Serba Ada (sebelah resto)', () => {
+  it('belanja kecil langsung datang hari ini', () => {
+    const s = readyGame();
+    const before = S.portionsAvailable(s, MENUS.find((m) => m.id === 'katsu')!);
+    const r = S.placeOrder(s, 'super', { katsu: 5 });
+    expect(r.ok).toBe(true);
+    expect(r.msg).toBe('Bahan datang hari ini!');
+    expect(S.portionsAvailable(s, MENUS.find((m) => m.id === 'katsu')!)).toBe(before + 5);
+  });
+});

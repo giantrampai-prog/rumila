@@ -337,6 +337,108 @@ function lobbyCanvas(name: string, stone: string, glass: string, seed: number) {
   });
 }
 
+/** Etalase supermarket (lantai dasar, 18 m × 4.6 m): kaca lebar, rak warna-warni di dalam, pintu otomatis di tengah. */
+function martFrontCanvas() {
+  const r = rnd(4242);
+  return canvas(768, 196, (g) => {
+    g.fillStyle = '#f4f1ea';
+    g.fillRect(0, 0, 768, 196);
+    // dalam toko: lantai terang, rak berisi barang
+    g.fillStyle = '#fbf6e6';
+    g.fillRect(10, 18, 748, 178);
+    const goods = ['#e8504a', '#f2b134', '#3f7ac8', '#6aa84f', '#f08a3a', '#8a3aa8', '#ffffff', '#e86aa0', '#2e9d4a', '#c8342a'];
+    for (let col = 0; col < 9; col++) {
+      if (col === 4) continue; // pintu masuk
+      const x0 = 18 + col * 82;
+      g.fillStyle = '#c9ccd1';
+      g.fillRect(x0, 50, 70, 130);
+      for (let row = 0; row < 4; row++) {
+        const y = 58 + row * 31;
+        g.fillStyle = '#9aa0a6';
+        g.fillRect(x0, y + 24, 70, 3);
+        for (let k = 0; k < 6; k++) {
+          g.fillStyle = goods[Math.floor(r() * goods.length)];
+          const h = 12 + r() * 10;
+          g.fillRect(x0 + 3 + k * 11, y + 24 - h, 9, h);
+        }
+      }
+    }
+    // pintu otomatis kaca
+    g.fillStyle = '#3a3f46';
+    g.fillRect(334, 40, 100, 156);
+    g.fillStyle = 'rgba(210,235,245,.75)';
+    g.fillRect(338, 44, 45, 152);
+    g.fillRect(385, 44, 45, 152);
+    g.fillStyle = '#2e9d4a';
+    g.fillRect(334, 24, 100, 16);
+    g.fillStyle = '#fff';
+    g.font = '900 12px system-ui, sans-serif';
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    g.fillText('MASUK', 384, 32);
+    // pantulan kaca & rangka
+    g.fillStyle = 'rgba(255,255,255,.22)';
+    for (let x = 0; x < 768; x += 96) {
+      g.beginPath();
+      g.moveTo(x + 20, 18);
+      g.lineTo(x + 50, 18);
+      g.lineTo(x + 10, 196);
+      g.lineTo(x - 20, 196);
+      g.fill();
+    }
+    g.fillStyle = '#8a9096';
+    for (let x = 6; x < 768; x += 94) g.fillRect(x, 18, 5, 178);
+    g.fillRect(0, 14, 768, 6);
+    // poster promo di kaca
+    g.fillStyle = '#f2b134';
+    g.fillRect(120, 26, 70, 22);
+    g.fillRect(580, 26, 70, 22);
+    g.fillStyle = '#c8342a';
+    g.font = '900 13px system-ui, sans-serif';
+    g.fillText('PROMO!', 155, 37);
+    g.fillText('SEGAR', 615, 37);
+  });
+}
+
+/** Papan nama supermarket di lantai atas. */
+function martSignCanvas() {
+  return canvas(768, 144, (g) => {
+    g.fillStyle = '#f6f2e8';
+    g.fillRect(0, 0, 768, 144);
+    g.fillStyle = '#2e9d4a';
+    g.fillRect(40, 22, 688, 100);
+    g.fillStyle = '#f2b134';
+    g.fillRect(40, 108, 688, 14);
+    g.fillStyle = '#ffffff';
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    g.font = '900 52px system-ui, sans-serif';
+    g.fillText('🛒 SERBA ADA', 384, 58);
+    g.font = '900 20px system-ui, sans-serif';
+    g.fillText('SUPERMARKET · KEBUTUHAN SEHARI-HARI', 384, 96);
+  });
+}
+
+/** Penanda melayang "ketuk untuk belanja". */
+function martTagCanvas() {
+  return canvas(256, 96, (g) => {
+    g.fillStyle = '#ffffff';
+    g.beginPath();
+    g.roundRect(8, 8, 240, 64, 32);
+    g.fill();
+    g.beginPath();
+    g.moveTo(112, 70);
+    g.lineTo(128, 90);
+    g.lineTo(144, 70);
+    g.fill();
+    g.fillStyle = '#2e7d1a';
+    g.font = '900 30px system-ui, sans-serif';
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    g.fillText('🛒 Belanja', 128, 41);
+  });
+}
+
 function billboardCanvas(i: number) {
   const ads: [string, string, string, string][] = [
     ['Ayo Minum Air Putih!', '💧 8 gelas sehari', '#1f6fd1', '#ffffff'],
@@ -438,12 +540,18 @@ const STONE = ['#d8cfc0', '#c9c3b8', '#e6e0d4', '#b8b2a8', '#d4c8b4', '#e8e4dc']
 const _ray = new T.Ray();
 const _hit = new T.Vector3();
 
+/** Lahan supermarket Serba Ada, tepat di kiri lahan resto (muka gedung di z = 3.2). */
+export const MART = { x0: LOT.x0 - 18.4, x1: LOT.x0 - 0.4 };
+
 export class City {
   group = new T.Group();
   private uTime = { value: 0 };
   private textures: T.Texture[] = [];
   private texCache = new Map<string, T.CanvasTexture>();
   private occ: Occluder[] = [];
+  /** gedung supermarket & penanda "🛒 Belanja" di atasnya */
+  mart: T.Group | null = null;
+  private martTag: T.Sprite | null = null;
   private cars: Vehicle[] = [];
   private walkers: Walker[] = [];
   private heads: Head[] = [];
@@ -868,6 +976,100 @@ export class City {
     this.occ.push({ box: new T.Box3().setFromObject(g), mats, op: 1, faded: false });
   }
 
+  /**
+   * Supermarket "Serba Ada" tepat di kiri lahan resto: tempat pemilik Rinoya belanja bahan & kebutuhan sehari-hari.
+   * Gedung 2 lantai dengan etalase kaca, papan nama, kanopi, troli, peti buah-sayur di depan, dan penanda
+   * "🛒 Belanja" yang bisa diketuk (lihat RestoScene → onMart).
+   */
+  private supermarket() {
+    const W = MART.x1 - MART.x0,
+      D = 14,
+      gH = 4.6,
+      H = 8;
+    const g = new T.Group();
+    const mats: T.Material[] = [];
+    const M = (p: T.MeshStandardMaterialParameters) => {
+      const m = new T.MeshStandardMaterial({ roughness: 0.85, ...p });
+      mats.push(m);
+      return m;
+    };
+    const wall = M({ color: '#f6f2e8' });
+    const roofM = M({ color: '#8a8a86', roughness: 0.95 });
+    const front = M({ map: this.tex('mart|front', martFrontCanvas), roughness: 0.35 });
+    const sign = M({ map: this.tex('mart|sign', martSignCanvas), roughness: 0.6 });
+    const lower = new T.Mesh(new T.BoxGeometry(W, gH, D), [wall, wall, roofM, roofM, front, wall]);
+    lower.position.y = gH / 2;
+    const upper = new T.Mesh(new T.BoxGeometry(W, H - gH, D), [wall, wall, roofM, roofM, sign, wall]);
+    upper.position.y = gH + (H - gH) / 2;
+    for (const m of [lower, upper]) {
+      m.castShadow = true;
+      m.receiveShadow = true;
+      g.add(m);
+    }
+    const par = new T.Mesh(new T.BoxGeometry(W + 0.1, 0.6, D + 0.1), [wall, wall, roofM, roofM, wall, wall]);
+    par.position.y = H + 0.3;
+    g.add(par);
+    // kanopi hijau bergaris kuning di atas etalase
+    const canopy = new T.Mesh(new T.BoxGeometry(W - 0.4, 0.18, 2.2), M({ color: '#2e9d4a', roughness: 0.6 }));
+    canopy.position.set(0, gH - 0.2, D / 2 + 1.1);
+    canopy.castShadow = true;
+    const trim = new T.Mesh(new T.BoxGeometry(W - 0.4, 0.3, 0.08), M({ color: '#f2b134', roughness: 0.6 }));
+    trim.position.set(0, gH - 0.38, D / 2 + 2.2);
+    g.add(canopy, trim);
+    // perlengkapan depan & atap (digabung): troli, peti buah-sayur, keset, unit AC
+    const P: T.BufferGeometry[] = [];
+    const fz = D / 2;
+    // deret troli: keranjang kawat abu-abu, pegangan merah, rangka & roda
+    for (let i = 0; i < 4; i++) {
+      const x = W / 2 - 1.6 - i * 0.7,
+        z = fz + 1.2;
+      P.push(part(new T.BoxGeometry(0.52, 0.04, 0.8), '#9aa0a6', x, 0.62, z)); // dasar keranjang
+      for (const s of [-1, 1]) P.push(part(new T.BoxGeometry(0.03, 0.36, 0.8), '#b8bec4', x + s * 0.25, 0.8, z)); // sisi
+      P.push(part(new T.BoxGeometry(0.52, 0.36, 0.03), '#b8bec4', x, 0.8, z - 0.4)); // depan
+      P.push(part(new T.BoxGeometry(0.52, 0.36, 0.03), '#b8bec4', x, 0.8, z + 0.4)); // belakang
+      P.push(part(new T.CylinderGeometry(0.03, 0.03, 0.56, 8), '#e8322a', x, 1.08, z + 0.5, 0, 0, Math.PI / 2)); // pegangan
+      for (const s of [-1, 1]) P.push(part(new T.BoxGeometry(0.03, 0.45, 0.03), '#7a8086', x + s * 0.22, 0.4, z + 0.35));
+      for (const [dx, dz] of [[-0.2, -0.3], [0.2, -0.3], [-0.2, 0.3], [0.2, 0.3]]) P.push(part(new T.CylinderGeometry(0.06, 0.06, 0.04, 10), '#2d3238', x + dx, 0.21, z + dz, 0, 0, Math.PI / 2));
+    }
+    P.push(part(new T.BoxGeometry(2.2, 0.02, 1.2), '#c8342a', 0, 0.16, fz + 0.6)); // keset di pintu
+    const produce = ['#e8322a', '#f2b134', '#6aa84f', '#f08a3a', '#8a3aa8', '#2e9d4a'];
+    for (let i = 0; i < 6; i++) {
+      const x = -W / 2 + 1.4 + (i % 3) * 1.05,
+        z = fz + 0.9 + Math.floor(i / 3) * 0.75,
+        y = 0.35 + Math.floor(i / 3) * 0.25;
+      P.push(part(new T.BoxGeometry(0.95, 0.4, 0.65), '#b07a44', x, y, z));
+      for (let k = 0; k < 6; k++) P.push(part(new T.SphereGeometry(0.11, 8, 6), produce[i], x - 0.32 + (k % 3) * 0.32, y + 0.24, z - 0.12 + Math.floor(k / 3) * 0.24));
+    }
+    for (let i = 0; i < 3; i++) P.push(part(new T.BoxGeometry(1.2, 0.8, 0.9), '#c9ccd1', -W / 2 + 3 + i * 5, H + 0.4 + 0.3, -1));
+    P.push(part(new T.CylinderGeometry(0.7, 0.7, 1.4, 12), '#e8e8e8', W / 2 - 2, H + 0.3 + 0.7, -3));
+    const pm = new T.MeshStandardMaterial({ vertexColors: true, roughness: 0.7 });
+    mats.push(pm);
+    const props = merged(P, pm);
+    props.castShadow = true;
+    g.add(props);
+    // penanda melayang "🛒 Belanja" (selalu menghadap kamera)
+    const tag = new T.Sprite(new T.SpriteMaterial({ map: this.tex('mart|tag', martTagCanvas), depthWrite: false }));
+    tag.scale.set(4.2, 1.575, 1);
+    tag.position.set(0, H + 2.4, D / 2);
+    tag.renderOrder = 4;
+    g.add(tag);
+    this.martTag = tag;
+    g.position.set((MART.x0 + MART.x1) / 2, 0, 3.2 - D / 2);
+    this.add(g);
+    g.updateMatrixWorld(true);
+    this.mart = g;
+    this.occ.push({ box: new T.Box3().setFromObject(g), mats, op: 1, faded: false });
+  }
+
+  /** true bila sinar mengenai gedung supermarket lebih dulu daripada objek lain di `others`. */
+  hitsMart(ray: T.Raycaster, others: T.Object3D[]) {
+    if (!this.mart) return false;
+    const m = ray.intersectObject(this.mart, true)[0];
+    if (!m) return false;
+    const o = ray.intersectObjects(others, true).find((x) => x.object.visible);
+    return !o || m.distance <= o.distance;
+  }
+
   /** Isi deret [x0,x1] dengan bangunan yang menghadap ke jalan (face +1 → +z, −1 → −z). */
   private row(x0: number, x1: number, zFront: number, face: 1 | -1, kind: 'ruko' | 'kantor' | 'mix', maxFloors: number, second = false) {
     const r = this.r;
@@ -902,8 +1104,10 @@ export class City {
     const E = this.E,
       loc = this.loc;
     const kantor = loc === 'kantor';
-    // sisi resto: tetangga kiri ruko rendah; seberang jalan simpang (timur) — semua bertingkat rendah-sedang
-    this.row(-117, LOT.x0 - 0.4, 3.2, 1, 'ruko', 4);
+    // sisi resto: tepat di kiri supermarket Serba Ada, lalu deret ruko rendah; seberang jalan simpang (timur) —
+    // semua bertingkat rendah-sedang
+    this.supermarket();
+    this.row(-117, MART.x0 - 1.5, 3.2, 1, 'ruko', 4);
     this.row(19.8, 101, 3.2, 1, kantor ? 'mix' : 'ruko', kantor ? 5 : 4);
     // seberang jalan utama: bangunan umum, tidak terlalu tinggi, agar seimbang dengan resto
     if (loc === 'sekolah') {
@@ -1356,6 +1560,7 @@ export class City {
   update(t: number, dt: number, cam?: T.Camera, target?: T.Vector3) {
     this.uTime.value = t;
     this.updateSignals(t);
+    if (this.martTag) this.martTag.position.y = 10.4 + Math.sin(t * 2.5) * 0.25;
     this.hornCd -= dt;
     // klakson acak khas jalanan (jarang)
     if (this.onSound && cam && this.hornCd <= 0 && Math.random() < dt * 0.05) {
