@@ -129,7 +129,7 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
       name: "Petualangan 3D",
       c: "space",
       icon: "view_in_ar",
-      desc: "Jelajahi angkasa, tubuh, buah, dan laut dalam 3D.",
+      desc: "Jelajahi dunia dan belajar rangkaian umroh dalam 3D.",
       pal: ["space", "indigo", "sky", "purple", "orange", "pink"],
       items: [], // Isi & id tetap ada di ADVENTURE_3D (id lama dipertahankan agar progres tidak bergeser).
     },
@@ -183,6 +183,7 @@ const ADVENTURE_3D: Omit<Tool, "folder" | "folderName" | "c">[] = [
   { ...edu("edukasi-buah"), name: "Kebun Buah", g: "orange", desc: "Putar dan kenali 48 buah dalam 3D." },
   { id: "petualangan-laut", name: "Bawah Laut", icon: "scuba_diving", g: "sky", desc: "Menyelam dari terumbu karang sampai palung laut terdalam." },
   { id: "petualangan-bumi", name: "Dalam Bumi", icon: "landscape", g: "orange", desc: "Menjelajah gua, fosil, dan kristal sampai ke inti Bumi." },
+  { id: "petualangan-umroh", name: "Umroh Virtual", icon: "mosque", g: "green", desc: "Belajar manasik umroh dari miqat, tawaf, sa’i Safa–Marwah, sampai tahallul.", keywords: ["umrah", "ihram", "manasik", "ka'bah", "safa", "marwah", "tahalul"] },
 ];
 
 export const FOLDERS: Folder[] = RAW.map(({ id, name, c, icon, desc, pal, items }) => ({
