@@ -62,7 +62,7 @@ export class UmrohScene {
     this.renderer.toneMapping = T.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.15;
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = T.PCFSoftShadowMap;
+    this.renderer.shadowMap.type = T.PCFShadowMap;
     const canvas = this.renderer.domElement;
     canvas.style.display = 'block';
     canvas.style.width = '100%';
