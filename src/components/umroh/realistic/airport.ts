@@ -141,7 +141,8 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
   const garuda = color(k, 'garuda-blue', '#0d5f7e', { roughness: .5 });
   const desk = color(k, 'counter-desk', '#e8e4dc', { roughness: .45 }), top = color(k, 'counter-top', '#3a3f44', { roughness: .35 });
   const belt = color(k, 'belt', '#202325', { roughness: .9 });
-  const fascia = textPlate(k, group, 'GARUDA INDONESIA · CHECK-IN', [-13.05, 3.7, COUNTER_Z - 1], 12, '#ffffff', '#0d5f7e'); fascia.rotation.y = Math.PI / 2;
+  // Backlit airline fascia high above the counter screens, so neither covers the other.
+  const fascia = airlineFascia(k, group, [-13.05, 4.55, COUNTER_Z - 1], 26); fascia.rotation.y = Math.PI / 2;
   r.box(group, [.4, 3.4, 30], [-17.3, 1.7, 28], garuda);
   r.box(group, [1, .55, 29], [-15.6, .45, 28], belt);
   for (let z = 14; z <= 42; z += .9) { const roller = r.cylinder(group, .05, .05, .9, [-15.6, .74, z], r.mat.metal, 8); roller.rotation.z = Math.PI / 2; }
@@ -153,7 +154,8 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
     r.box(group, [1.2, .05, 2.1], [-13.4, 1.08, z], top);
     r.box(group, [.05, .32, .5], [-13.9, 1.3, z - .3], r.mat.black);
     // Counter screen: flight, destination and counter number.
-    const plate = textPlate(k, group, `GA · JEDDAH (JED) · ${i + 3}`, [-13.1, 2.55, z], 1.9, '#ffffff', '#123a52'); plate.rotation.y = Math.PI / 2;
+    const plate = counterScreen(k, group, i + 3, [-13.1, 2.7, z]); plate.rotation.y = Math.PI / 2;
+    r.box(group, [.06, .9, .06], [-13.16, 3.3, z], k.r.mat.metal);
     // Baggage scale feeding an inclined belt into the collector.
     r.box(group, [.95, .22, .8], [-12.35, .11, z + 1.3], r.mat.metal);
     r.box(group, [.9, .03, .75], [-12.35, .235, z + 1.3], belt);
@@ -221,6 +223,59 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
 function i2c(k: Kit, z: number): T.MeshStandardMaterial {
   const palette = ['#2d3a4a', '#7b2e2e', '#2f5d50', '#4a4a4a', '#6a5236'];
   return color(k, 'bag-' + Math.abs(Math.round(z)) % 5, palette[Math.abs(Math.round(z)) % 5], { roughness: .5 });
+}
+
+/**
+ * An original, stylised bird emblem in the airline's blue and teal. It is a simplified
+ * illustration for learning, not a reproduction of the registered logo.
+ */
+function drawEmblem(ctx: CanvasRenderingContext2D, cx: number, cy: number, size: number): void {
+  const g = ctx.createLinearGradient(cx - size, cy + size, cx + size, cy - size);
+  g.addColorStop(0, '#005b86'); g.addColorStop(.55, '#0093a8'); g.addColorStop(1, '#6cc9d1');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, size, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = '#ffffff';
+  // Five sweeping feathers rising to the right.
+  for (let i = 0; i < 5; i++) {
+    const t = i / 4, w = size * (.95 - t * .38);
+    ctx.beginPath();
+    ctx.moveTo(cx - size * .62, cy + size * (.42 - t * .1));
+    ctx.quadraticCurveTo(cx - size * .05, cy + size * (.3 - t * .42), cx - size * .62 + w * 1.25, cy - size * (.15 + t * .2));
+    ctx.quadraticCurveTo(cx - size * .1, cy + size * (.12 - t * .4) + size * .14, cx - size * .62, cy + size * (.42 - t * .1) + size * .1);
+    ctx.fill();
+  }
+}
+
+function airlineFascia(k: Kit, parent: T.Object3D, at: Position, width: number): T.Mesh {
+  const canvas = document.createElement('canvas'); canvas.width = 2048; canvas.height = 220;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Papan maskapai tidak tersedia.');
+  ctx.fillStyle = '#0d5f7e'; ctx.fillRect(0, 0, 2048, 220);
+  ctx.fillStyle = '#0a4f69'; ctx.fillRect(0, 196, 2048, 24);
+  drawEmblem(ctx, 120, 108, 78);
+  ctx.textBaseline = 'middle'; ctx.fillStyle = '#ffffff';
+  ctx.font = 'italic 600 104px Arial, sans-serif'; ctx.fillText('Garuda Indonesia', 230, 100);
+  ctx.textAlign = 'right'; ctx.font = '600 66px Arial, sans-serif'; ctx.fillStyle = '#d7f1f4';
+  ctx.fillText('CHECK-IN  ·  INTERNASIONAL', 1990, 104);
+  const map = k.r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; map.anisotropy = 8;
+  const material = k.r.keep(new T.MeshStandardMaterial({ map, emissiveMap: map, emissive: '#ffffff', emissiveIntensity: .55, roughness: .5 }));
+  material.userData.keepUV = true;
+  const sign = k.r.mesh(parent, k.r.keep(new T.PlaneGeometry(width, width * 220 / 2048)), material, at); sign.castShadow = false;
+  return sign;
+}
+
+function counterScreen(k: Kit, parent: T.Object3D, counter: number, at: Position): T.Mesh {
+  const canvas = document.createElement('canvas'); canvas.width = 640; canvas.height = 240;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Layar konter tidak tersedia.');
+  ctx.fillStyle = '#0b2233'; ctx.fillRect(0, 0, 640, 240);
+  drawEmblem(ctx, 70, 70, 44);
+  ctx.textBaseline = 'middle'; ctx.fillStyle = '#ffffff'; ctx.font = 'italic 600 44px Arial, sans-serif'; ctx.fillText('Garuda Indonesia', 130, 70);
+  ctx.font = 'bold 58px Arial, sans-serif'; ctx.fillText('JEDDAH (JED)', 26, 160);
+  ctx.textAlign = 'right'; ctx.fillStyle = '#f2c230'; ctx.font = 'bold 96px Arial, sans-serif'; ctx.fillText(String(counter), 616, 150);
+  ctx.textAlign = 'left'; ctx.fillStyle = '#9fc0d2'; ctx.font = '30px Arial, sans-serif'; ctx.fillText('Ekonomi · Umroh', 26, 214);
+  const map = k.r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; map.anisotropy = 4;
+  const material = k.r.keep(new T.MeshStandardMaterial({ map, emissiveMap: map, emissive: '#ffffff', emissiveIntensity: .7, roughness: .3 }));
+  material.userData.keepUV = true;
+  const plate = k.r.mesh(parent, k.r.keep(new T.PlaneGeometry(1.6, .6)), material, at); plate.castShadow = false;
+  return plate;
 }
 
 /** X-ray tunnel with roller tables; `axis` is the belt direction. */

@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 import type { Position, Rect, UmrohWorld, WorldResources } from './types';
 import { createSeatedPassengers } from './pilgrims';
 import { createGarudaAircraft } from './aircraft';
@@ -98,7 +99,8 @@ export function roof(k: Kit, parent: T.Object3D, width: number, length: number, 
 function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotation: number): T.Group {
   const { r } = k, group = new T.Group(); group.position.set(...at); group.rotation.y = rotation;
   const paint = color(k, `taxi-${kind}`, kind === 'taxi' ? '#268fca' : '#1c2126', { metalness: 0.35, roughness: 0.28 });
-  const glass = color(k, 'car-glass', '#80a2ae', { transparent: true, opacity: 0.22, metalness: 0.1, roughness: 0.15 });
+  // Nearly clear glass so the sky and street read through the windscreen.
+  const glass = color(k, 'car-glass', '#c9e1ea', { transparent: true, opacity: 0.08, metalness: 0.1, roughness: 0.05, depthWrite: false });
   const trim = color(k, 'taxi-inner-trim', '#454b4d', { roughness: 0.88 });
   const headlining = color(k, 'taxi-headlining', '#bbbcb5', { roughness: 0.98 });
   // A hollow passenger compartment: painted bodywork must not fill the cabin.
@@ -113,8 +115,13 @@ function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotat
     r.box(group, [0.13, 0.075, 0.5], [side * 0.71, 0.79, 0.75], trim);
     r.box(group, [0.12, 0.075, 0.45], [side * 0.71, 0.79, -0.38], trim);
   }
-  r.box(group, [1.5, 0.1, 2.28], [0, 1.57, 0.2], paint);
-  r.box(group, [1.47, 0.025, 2.18], [0, 1.507, 0.2], headlining);
+  // Roof with a panoramic glass panel over the cabin, framed by the headlining.
+  // A slim front header keeps most of the sky open above the windscreen.
+  r.box(group, [1.5, 0.08, 0.14], [0, 1.57, -0.87], paint); r.box(group, [1.5, 0.1, 0.32], [0, 1.57, 1.18], paint);
+  for (const side of [-1, 1]) r.box(group, [0.14, 0.1, 2.28], [side * 0.68, 1.57, 0.2], paint);
+  r.box(group, [1.22, 0.02, 1.84], [0, 1.6, 0.13], glass);
+  r.box(group, [1.47, 0.02, 0.12], [0, 1.515, -0.87], headlining); r.box(group, [1.47, 0.025, 0.3], [0, 1.507, 1.2], headlining);
+  for (const side of [-1, 1]) r.box(group, [0.14, 0.025, 2.18], [side * 0.67, 1.507, 0.2], headlining);
   r.box(group, [1.72, 0.13, 1.1], [0, 0.96, -1.66], paint);
   for (const side of [-1, 1]) {
     for (const z of [-1.4, 1.4]) {
@@ -123,7 +130,7 @@ function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotat
     }
     r.box(group, [0.05, 0.49, 1.88], [side * 0.78, 1.27, 0.2], glass);
     r.box(group, [0.075, 0.58, 0.075], [side * 0.79, 1.28, 0.32], paint);
-    beam(k, group, [side * 0.75, 1.55, -0.91], [side * 0.86, 0.94, -1.35], 0.055, paint);
+    beam(k, group, [side * 0.75, 1.55, -0.91], [side * 0.86, 0.94, -1.35], 0.035, paint);
     beam(k, group, [side * 0.75, 1.55, 1.28], [side * 0.86, 0.96, 1.68], 0.055, paint);
     r.box(group, [0.045, 0.04, 0.21], [side * 0.938, 0.88, 0.5], r.mat.metal);
     r.box(group, [0.22, 0.14, 0.27], [side * 1.01, 1.02, -1.04], paint);
@@ -142,20 +149,56 @@ function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotat
     r.box(group, [0.55, 0.17, 0.24], [0, 1.7, 0.1], r.mat.white);
     textPlate(k, group, 'TAKSI', [0, 1.71, -0.025], 0.47, '#116f9c');
   }
-  // The cabin remains visible from its rear passenger viewpoint.
-  const upholstery = color(k, 'taxi-upholstery', '#303638');
-  for (const x of [-0.47, 0.47]) {
-    r.box(group, [0.44, 0.15, 0.5], [x, 0.55, -0.22], upholstery);
-    r.box(group, [0.44, 0.62, 0.13], [x, 0.91, 0.08], upholstery);
-    r.box(group, [0.27, 0.2, 0.1], [x, 1.32, 0.1], upholstery);
+  // Interior seen from the front passenger seat: contoured seats with separate
+  // headrests, a shaped dashboard with instruments, mirror, visors and belts.
+  const upholstery = color(k, 'taxi-upholstery', '#2f3437', { roughness: 0.92 });
+  const stitch = color(k, 'taxi-seat-centre', '#3d4448', { roughness: 0.95 });
+  const dash = color(k, 'taxi-dash', '#24282b', { roughness: 0.8 });
+  const rounded = geo(k, 'car-rounded', () => new RoundedBoxGeometry(1, 1, 1, 2, 0.12));
+  const soft = (size: Position, at: Position, material: T.Material, tilt = 0) => { const mesh = k.r.mesh(group, rounded, material, at); mesh.scale.set(...size); mesh.rotation.x = tilt; return mesh; };
+  const driverX = kind === 'taxi' ? 0.42 : -0.42, passengerX = -driverX;
+  for (const x of [-0.42, 0.42]) {
+    soft([0.5, 0.14, 0.52], [x, 0.56, -0.2], upholstery);
+    soft([0.3, 0.05, 0.42], [x, 0.635, -0.2], stitch);
+    soft([0.5, 0.62, 0.14], [x, 0.93, 0.1], upholstery, -0.18);
+    soft([0.3, 0.5, 0.05], [x, 0.94, 0.03], stitch, -0.18);
+    soft([0.26, 0.19, 0.11], [x, 1.38, 0.2], upholstery, -0.1);
+    for (const dx of [-0.07, 0.07]) r.cylinder(group, 0.009, 0.009, 0.1, [x + dx, 1.26, 0.19], r.mat.metal, 6);
   }
-  r.box(group, [1.4, 0.18, 0.56], [0, 0.52, 1.05], upholstery);
-  r.box(group, [1.4, 0.62, 0.12], [0, 0.9, 1.49], upholstery);
-  r.box(group, [1.58, 0.2, 0.45], [0, 0.96, -0.91], upholstery);
-  r.box(group, [0.25, 0.16, 0.025], [0.1, 1.09, -0.72], color(k, 'screen', '#284557', { emissive: '#244759', emissiveIntensity: 0.25 }));
-  const driverX = kind === 'taxi' ? 0.47 : -0.47;
+  soft([1.42, 0.18, 0.56], [0, 0.52, 1.05], upholstery);
+  soft([1.42, 0.62, 0.14], [0, 0.9, 1.45], upholstery, 0.12);
+  // Centre console with gear selector between the front seats.
+  soft([0.22, 0.28, 0.75], [0, 0.6, -0.35], dash);
+  r.box(group, [0.05, 0.12, 0.05], [0, 0.8, -0.45], r.mat.black);
+  // Dashboard, glove box and the instrument hood in front of the driver.
+  soft([1.62, 0.26, 0.5], [0, 0.94, -0.92], dash);
+  soft([1.55, 0.1, 0.32], [0, 1.08, -1.02], dash, 0.25);
+  soft([0.5, 0.12, 0.05], [passengerX, 0.84, -0.66], color(k, 'taxi-glovebox', '#2c3134'));
+  soft([0.38, 0.12, 0.2], [driverX, 1.12, -0.82], dash);
+  const gauge = color(k, 'taxi-gauge', '#0e1a22', { emissive: '#4fb3ff', emissiveIntensity: 0.55 });
+  for (const dx of [-0.08, 0.08]) { const dial = r.cylinder(group, 0.055, 0.055, 0.01, [driverX + dx, 1.1, -0.71], gauge, 18); dial.rotation.x = Math.PI / 2 - 0.3; }
+  for (const x of [-0.6, -0.2, 0.2, 0.6]) r.box(group, [0.12, 0.05, 0.02], [x, 1.0, -0.665], r.mat.metal);
+  r.box(group, [0.25, 0.16, 0.025], [0, 1.05, -0.68], color(k, 'screen', '#284557', { emissive: '#3a77a0', emissiveIntensity: 0.45 }));
+  if (kind === 'taxi') {
+    // Fare meter on the dashboard.
+    const meter = textPlate(k, group, 'Rp 86.500', [0.02, 1.155, -0.79], 0.22, '#ff5a3c', '#120b08'); meter.rotation.x = -0.25;
+  } else {
+    // Phone holder showing the route.
+    r.box(group, [0.09, 0.16, 0.012], [-0.16, 1.17, -0.75], color(k, 'phone-map', '#cfe3d4', { emissive: '#7fbf95', emissiveIntensity: 0.35 }));
+  }
+  // Rear-view mirror and sun visors.
+  r.box(group, [0.26, 0.07, 0.02], [0, 1.47, -0.84], color(k, 'mirror', '#9bb0b8', { metalness: 0.9, roughness: 0.1 }));
+  r.box(group, [0.02, 0.05, 0.02], [0, 1.52, -0.84], dash);
+  // Visors folded flat against the headlining.
+  for (const x of [-0.42, 0.42]) r.box(group, [0.4, 0.012, 0.1], [x, 1.5, -0.87], headlining);
+  // Inner door panels with arm rests and handles.
+  for (const side of [-1, 1]) for (const z of [-0.3, 0.75]) {
+    soft([0.05, 0.42, 0.85], [side * 0.79, 0.86, z], trim);
+    r.box(group, [0.03, 0.03, 0.12], [side * 0.765, 0.98, z - 0.25], r.mat.metal);
+  }
   const steering = r.mesh(group, geo(k, 'steering', () => new T.TorusGeometry(0.17, 0.022, 7, 20)), r.mat.black, [driverX, 1.09, -0.58]); steering.rotation.x = -0.35;
-  const driver = createSeatedPassengers(r, [{ position: [driverX, .625, -.22], angle: Math.PI, driving: true }]);
+  r.cylinder(group, 0.04, 0.04, 0.03, [driverX, 1.09, -0.58], dash, 12);
+  const driver = createSeatedPassengers(r, [{ position: [driverX, .625, -.2], angle: Math.PI, driving: true }]);
   driver.name = 'Pengemudi'; group.add(driver);
   parent.add(group); return group;
 }
@@ -394,14 +437,16 @@ export function createTaxiWorld(r: WorldResources, kind: TaxiKind, returning = f
   scenery.name = 'Pemandangan jalan bergerak'; scenery.userData.dynamic = true;
   const traffic = street(k, scenery, kind, returning); group.add(scenery);
   vehicle(k, group, kind, [0, 0, 0], 0);
-  const distance = 220, span = 820;
+  const distance = 220, span = 820, passengerSeat = kind === 'taxi' ? -0.42 : 0.42;
   return {
-    group, spawn: [0, 1.25, 0.96], lookAt: [0, 1.3, -60], overview: [5.4, 3.2, 5.8], indoor: true,
-    bounds: { minX: -0.55, maxX: 0.55, minZ: 0.25, maxZ: 1.28 }, blockers: [],
+    // The learner rides in the front passenger seat (left in Indonesia, right in Saudi Arabia).
+    group, spawn: [passengerSeat, 1.2, -0.12], lookAt: [passengerSeat * 0.6, 5, -60], overview: [5.4, 3.2, 5.8], indoor: true,
+    bounds: { minX: passengerSeat - 0.1, maxX: passengerSeat + 0.1, minZ: -0.2, maxZ: 0.05 }, blockers: [],
     motion: { group: scenery, axis: 'z', distance },
     landmarks: [
-      { id: 'taxi-front', label: 'Pemandangan jalan', position: [0, 1.25, 0.96], lookAt: [0, 1.3, -60] },
-      { id: 'taxi-side', label: 'Jendela penumpang', position: [-0.15, 1.25, 0.94], lookAt: [-18, 2.5, -10] },
+      { id: 'taxi-front', label: 'Pemandangan jalan', position: [passengerSeat, 1.2, -0.12], lookAt: [passengerSeat * 0.6, 5, -60] },
+      { id: 'taxi-side', label: 'Jendela samping', position: [passengerSeat, 1.2, -0.12], lookAt: [passengerSeat * 40, 3, -12] },
+      { id: 'taxi-sky', label: 'Langit lewat atap kaca', position: [passengerSeat, 1.2, -0.12], lookAt: [passengerSeat, 12, -8] },
     ],
     animate(frame) {
       // Same-direction cars keep pace with the taxi and slowly overtake or fall back;

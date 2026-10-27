@@ -16,6 +16,7 @@ import { Pilgrims } from './realistic/pilgrims';
 import type { UmrohWorld, Position, WorldFrame } from './realistic/types';
 import { createBoardingWorld, createTerminalWorld } from './realistic/airport';
 import { FlightAudio } from './flight-audio';
+import { cloudMaterial } from './realistic/flight-env';
 import { moveWithinWorld } from './realistic/navigation';
 
 export type { UmrohStage };
@@ -49,6 +50,23 @@ export class UmrohScene {
   private orbit: OrbitControls;
   private resources: Resources;
   private sky = new Sky();
+  /** Fair-weather cumulus around the horizon for every ground-level scene. */
+  private cumulus = new T.Group();
+  /** Ground-level sky: a clean blue gradient with a sun glow; Sky.js stays for flights. */
+  private dome = new T.Mesh(new T.SphereGeometry(2000, 48, 24), new T.ShaderMaterial({
+    side: T.BackSide, depthWrite: false, fog: false, toneMapped: false,
+    uniforms: { uZenith: { value: new T.Color('#2f78c8') }, uHorizon: { value: new T.Color('#bfdcf2') }, uGround: { value: new T.Color('#9fb7c8') }, uSun: { value: new T.Vector3(0, 1, 0) }, uGlow: { value: new T.Color('#fff4dc') } },
+    vertexShader: 'varying vec3 vDir; void main() { vDir = normalize((modelMatrix * vec4(position, 1.0)).xyz - cameraPosition); gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position, 1.0); gl_Position.z = gl_Position.w; }',
+    fragmentShader: `uniform vec3 uZenith; uniform vec3 uHorizon; uniform vec3 uGround; uniform vec3 uSun; uniform vec3 uGlow; varying vec3 vDir;
+      void main() {
+        vec3 d = normalize(vDir); float h = d.y;
+        vec3 sky = h > 0.0 ? mix(uHorizon, uZenith, pow(h, 0.55)) : mix(uHorizon, uGround, clamp(-h * 6.0, 0.0, 1.0));
+        float s = max(dot(d, normalize(uSun)), 0.0);
+        sky += uGlow * (pow(s, 6.0) * 0.18 + pow(s, 64.0) * 0.35 + smoothstep(0.9993, 0.9997, s) * 1.4);
+        gl_FragColor = vec4(sky, 1.0);
+        #include <colorspace_fragment>
+      }`,
+  }));
   private sun = new T.DirectionalLight('#fff2da', 3.4);
   private hemisphere = new T.HemisphereLight('#dbe7ef', '#938471', 1.1);
   private environment: T.WebGLRenderTarget | null = null;
@@ -111,6 +129,7 @@ export class UmrohScene {
     Object.assign(this.sun.shadow.camera, { left: -85, right: 85, top: 85, bottom: -85, near: 1, far: 350 });
     this.sun.shadow.normalBias = .045; this.sun.shadow.bias = -.00012;
     this.sky.scale.setScalar(1800); this.sky.renderOrder = -100; this.scene.add(this.sky);
+    this.dome.renderOrder = -101; this.dome.frustumCulled = false; this.dome.name = 'Kubah langit'; this.scene.add(this.dome);
     Object.assign(this.sky.material.uniforms.turbidity, { value: 3 });
     this.sky.material.uniforms.rayleigh.value = 1.7;
     this.sky.material.uniforms.mieCoefficient.value = .005;
@@ -120,6 +139,7 @@ export class UmrohScene {
     this.orbit.enableDamping = true; this.orbit.dampingFactor = .09; this.orbit.enablePan = false;
     this.orbit.minDistance = 2.2; this.orbit.maxDistance = 220; this.orbit.maxPolarAngle = Math.PI / 2 - .025; this.orbit.enabled = false;
     this.guide = new Pilgrims(this.resources, { kind: 'walk', count: 1 }, true); this.scene.add(this.guide.group);
+    this.buildCumulus();
     this.observer = new ResizeObserver(this.resize); this.observer.observe(container);
     canvas.addEventListener('pointerdown', this.pointerDown); canvas.addEventListener('pointermove', this.pointerMove);
     canvas.addEventListener('pointerup', this.pointerUp); canvas.addEventListener('pointercancel', this.pointerUp);
@@ -129,9 +149,26 @@ export class UmrohScene {
     try { this.resize(); this.update(this.state); this.frame = requestAnimationFrame(this.tick); }
     catch (error) { this.dispose(); throw error; }
   }
+  private buildCumulus(): void {
+    const materials = [0, 1, 2].map((variant) => {
+      // Clouds sit beyond the scene fog, so they keep their own colour.
+      const material = this.resources.keep(cloudMaterial(this.resources, variant).clone()); material.fog = false; return material;
+    });
+    let seed = 1913;
+    const random = () => { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 4294967296; };
+    for (let i = 0; i < 46; i++) {
+      const sprite = new T.Sprite(materials[i % 3]);
+      const angle = random() * Math.PI * 2, distance = 700 + random() * 900, width = 220 + random() * 420;
+      sprite.position.set(Math.cos(angle) * distance, 180 + random() * 360 + distance * .08, Math.sin(angle) * distance);
+      sprite.scale.set(width, width * (.36 + random() * .16), 1);
+      sprite.renderOrder = -90; this.cumulus.add(sprite);
+    }
+    this.cumulus.name = 'Awan cumulus'; this.scene.add(this.cumulus);
+  }
   private makeEnvironment(): void {
     const pmrem = new T.PMREMGenerator(this.renderer);
-    const env = new T.Scene(); env.add(this.sky.clone());
+    // The atmosphere lights the scene even when the gradient dome is what you see.
+    const env = new T.Scene(), atmosphere = this.sky.clone(); atmosphere.visible = true; env.add(atmosphere);
     this.environment = pmrem.fromScene(env, .04, .1, 2200);
     this.scene.environment = this.environment.texture; this.scene.environmentIntensity = .15; pmrem.dispose();
   }
@@ -139,12 +176,13 @@ export class UmrohScene {
     const sunset = time === 'sunset';
     const flying = Boolean(this.world?.flight);
     const aloft = Boolean(this.world?.telemetry);
-    this.sky.visible = true;
+    this.sky.visible = aloft;
+    this.dome.visible = !aloft;
     // Flights keep the sun ahead-left of the aircraft so the window seat catches its light.
     const direction = aloft ? new T.Vector3(-.62, sunset ? .1 : .55, -.5).normalize() : new T.Vector3(-.45, sunset ? .13 : .75, .45).normalize();
     this.sunDirection.copy(direction);
     this.sky.material.uniforms.sunPosition.value.copy(direction);
-    this.sky.material.uniforms.turbidity.value = sunset ? 5 : 3;
+    this.sky.material.uniforms.turbidity.value = sunset ? 5 : 1.5;
     this.sun.color.set(sunset ? '#ffd2a2' : '#fff2dc'); this.sun.intensity = sunset ? 1.8 : 2.8;
     this.sun.position.copy(direction).multiplyScalar(170);
     this.hemisphere.intensity = this.world?.indoor ? (aloft ? 1.05 : 1.45) : flying ? 1.2 : sunset ? .55 : .7;
@@ -154,7 +192,13 @@ export class UmrohScene {
     // Bright sky reflections suit the painted aircraft; the cabin interior stays matte.
     this.scene.environmentIntensity = aloft && !this.world?.indoor ? .55 : .15;
     // Flight worlds retune the atmosphere for altitude every frame; restore ground level here.
-    this.sky.material.uniforms.rayleigh.value = 1.7; this.sky.material.uniforms.mieCoefficient.value = .005;
+    // A clear tropical blue at ground level, warmer and hazier at sunset.
+    this.sky.material.uniforms.rayleigh.value = sunset ? 1.7 : 3; this.sky.material.uniforms.mieCoefficient.value = sunset ? .005 : .0022;
+    this.cumulus.visible = !aloft;
+    const dome = this.dome.material.uniforms;
+    dome.uSun.value.copy(direction);
+    dome.uZenith.value.set(sunset ? '#3c5f9c' : '#2f78c8'); dome.uHorizon.value.set(sunset ? '#f3b986' : '#c3def2');
+    dome.uGround.value.set(sunset ? '#b8998a' : '#a6bccb'); dome.uGlow.value.set(sunset ? '#ffb070' : '#fff4dc');
   }
   private keyFor(state: UmrohSceneState): WorldKey {
     if (state.visit === 'nabawi') return 'nabawi';
@@ -493,6 +537,7 @@ export class UmrohScene {
     const delta = this.lastTime ? Math.min((time - this.lastTime) / 1000, .05) : 0; this.lastTime = time;
     if (this.contextLost || document.visibilityState !== 'visible') return;
     this.elapsed += delta;
+    if (this.cumulus.visible && !this.reducedMotion) this.cumulus.rotation.y += delta * .004;
     const target = Math.max(0, Math.min(1, this.state.travelProgress ?? 0));
     this.travel += (target - this.travel) * Math.min(1, delta * 7);
     this.animateWorld(delta);
@@ -521,6 +566,7 @@ export class UmrohScene {
     });
     this.audio?.dispose(); this.audio = null;
     this.resources.dispose(); this.environment?.dispose(); this.sky.geometry.dispose(); this.sky.material.dispose(); this.sun.shadow.dispose();
+    this.dome.geometry.dispose(); this.dome.material.dispose();
     this.renderer.dispose(); this.renderer.forceContextLoss(); canvas.remove(); this.worlds.clear();
   }
 }
