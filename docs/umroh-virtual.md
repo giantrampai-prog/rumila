@@ -26,6 +26,8 @@ Tes `src/lib/umroh/__tests__/journey.test.ts` mencakup urutan pulang-pergi, peng
 
 ## Menjelajahi lingkungan
 
+Tombol mata di pojok kanan atas lingkungan menyembunyikan semua label, kartu, dan petunjuk sehingga pemandangan terlihat penuh; hanya tombol utama berukuran kecil yang tersisa. Saat perjalanan berjalan, kartu perjalanan dibuat ringkas (status, persen, fase, ketinggian/kecepatan), petunjuk kamera disembunyikan, dan di layar lebar panel panduan otomatis tertutup ketika tombol perjalanan ditekan. Pilihan Siang/Senja dan Suara tampil sebagai ikon.
+
 Lingkungan memenuhi area utama layar. Panel panduan selebar 330 piksel di desktop dapat ditutup melalui tombol Panduan; tombol utama pelajaran tetap tersedia di bagian bawah, termasuk pada ponsel. Kamera menyediakan Jalan kaki, Ikuti jamaah, dan Lihat kawasan, dengan pilihan cahaya Siang atau Senja. Navigasi berjalan menggunakan WASD/tombol arah atau pad sentuh, sementara geseran mengubah arah pandang. Dialog, perpindahan kamera, dan kehilangan fokus menghentikan input gerak. Peta menampilkan titik kunjungan dari lokasi yang sedang aktif.
 
 Masjid Nabawi, Raudhah, dan salam hadir sebagai tiga bab kunjungan sebelum umroh dalam perjalanan baru. Selama bab umroh, peta juga menawarkan tur tambahan Kunjungi kembali Masjid Nabawi. Tombol Kembali ke perjalanan mengembalikan lokasi sesuai tahap tanpa mengubah hitungan latihan. Kunjungan tersebut bukan miqat, bukan rukun, dan tidak menambah tahap ritual. Tur tambahan, kamera, suasana cahaya, serta kecepatan merupakan pengaturan sesi yang tidak disimpan dalam progres perjalanan versi 2.
