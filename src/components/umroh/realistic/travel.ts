@@ -5,6 +5,7 @@ import { createSeatedPassengers, StandingPeople } from './pilgrims';
 import { animateAircraft, createGarudaAircraft, type AircraftParts } from './aircraft';
 import { applyAttitude, createFlightEnvironment, flightTelemetry, updateTelemetry } from './flight-env';
 import { getFlightState } from '../flight-profile';
+import { drawFlightMap } from '../flight-map';
 
 function seat(r: WorldResources, parent: T.Object3D, x: number, z: number, fabric: T.Material) {
   r.box(parent, [.49, .12, .52], [x, .5, z], fabric);
@@ -152,12 +153,19 @@ export function createCabinWorld(r: WorldResources, destination?: 'jeddah' | 'ja
     bounds: { minX: -.5, maxX: .5, minZ: -18.5, maxZ: 18.5 }, blockers: [],
     seat: { position: SEAT_EYE, lookAt: SEAT_VIEW },
     landmarks: [{ id: 'cabin-front', label: 'Depan kabin', position: [0, 1.63, -15], lookAt: [0, 1.55, 14] }, { id: 'cabin-aisle', label: 'Kabin dan penumpang', position: [0, 1.63, 12], lookAt: [0, 1.6, -12] }] };
-  if (destination && !boarding) Object.assign(world, flightCabin(r, group, cabin, destination, lightMat, signs));
+  if (destination && !boarding) Object.assign(world, flightCabin(r, group, cabin, destination, lightMat, signs, screen));
   return world;
 }
 
 /** Wing, crew, signs and the moving sky outside the windows for a flying cabin. */
-function flightCabin(r: WorldResources, group: T.Group, cabin: T.Group, destination: 'jeddah' | 'jakarta', lightMat: T.MeshStandardMaterial, signs: T.MeshStandardMaterial | null): Partial<UmrohWorld> {
+function flightCabin(r: WorldResources, group: T.Group, cabin: T.Group, destination: 'jeddah' | 'jakarta', lightMat: T.MeshStandardMaterial, signs: T.MeshStandardMaterial | null, screen: T.MeshStandardMaterial): Partial<UmrohWorld> {
+  // Seat-back screens show the moving map, redrawn a few times a second.
+  const mapCanvas = document.createElement('canvas'); mapCanvas.width = 320; mapCanvas.height = 240;
+  const mapContext = mapCanvas.getContext('2d');
+  const mapTexture = r.keep(new T.CanvasTexture(mapCanvas)); mapTexture.colorSpace = T.SRGBColorSpace;
+  Object.assign(screen, { map: mapTexture, emissiveMap: mapTexture, color: new T.Color('#ffffff'), emissive: new T.Color('#ffffff'), emissiveIntensity: .7 });
+  screen.userData.keepUV = true; screen.needsUpdate = true;
+  let mapDrawnAt = -1;
   cabin.userData.dynamic = true;
   // The real wing and engines sit outside the fuselage, visible from the over-wing seats.
   // The wing box passes under the cabin floor, so from a window seat the wing is seen from above.
@@ -186,10 +194,15 @@ function flightCabin(r: WorldResources, group: T.Group, cabin: T.Group, destinat
       env.update(frame, state); updateTelemetry(telemetry, state);
       applyAttitude(cabin, state, frame);
       animateAircraft(parts, {
-        gear: state.gearDown ? 1 : 0, flaps: state.flaps, spoilers: state.spoilers, thrust: state.thrust,
-        landingLights: state.altitude < 3000 && (state.phase.id !== 'cruise'), contrail: 0,
+        gear: state.gearDown ? 1 : 0, flaps: state.flaps, spoilers: state.spoilers, thrust: state.thrust, smoke: state.smoke, noseLoad: state.noseDown ? 1 : 0,
+        landingLights: state.altitude < 3000 && state.phase.id !== 'cruise' && state.phase.id !== 'stopped', contrail: 0,
       }, frame.time, frame.delta);
       lightMat.emissiveIntensity = state.cabinDim ? .35 : 1.4;
+      if (mapContext && (mapDrawnAt < 0 || frame.time - mapDrawnAt > .5)) {
+        mapDrawnAt = frame.time;
+        drawFlightMap(mapContext, 320, 240, frame.travel, destination === 'jeddah', { footer: false });
+        mapTexture.needsUpdate = true;
+      }
       if (signs) signs.emissiveIntensity = state.seatbelt ? 1.6 : .05;
       // Safety demonstration: point to the exits, show the belt, then walk away.
       const briefing = state.phase.id === 'pushback' || state.phase.id === 'taxi';

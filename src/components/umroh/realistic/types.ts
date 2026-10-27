@@ -18,6 +18,8 @@ export interface WorldFrame {
   reducedMotion: boolean;
   sunDirection: T.Vector3;
   sunset: boolean;
+  /** Active camera mode, for worlds that show different geometry from outside. */
+  view?: 'walk' | 'follow' | 'overview';
   /** Atmosphere shader shared by the scene; flight worlds tune it for altitude. */
   sky?: { material: T.ShaderMaterial; visible: boolean };
 }
@@ -52,6 +54,8 @@ export interface UmrohWorld {
   vehicle?: T.Group;
   telemetry?: FlightTelemetry;
   animate?: (frame: WorldFrame) => void;
+  /** Scripted aerial camera used in place of the orbit view (for example a drone over a train). */
+  drone?: (time: number, travel: number) => CameraPose;
 }
 export interface WorldResources {
   mat: Record<MaterialName, T.MeshStandardMaterial>;

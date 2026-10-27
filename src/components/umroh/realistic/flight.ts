@@ -29,8 +29,8 @@ export function createFlightWorld(r: WorldResources, destination: 'jeddah' | 'ja
       env.update(frame, state); updateTelemetry(telemetry, state);
       applyAttitude(aircraft, state, frame);
       animateAircraft(parts, {
-        gear: state.gearDown ? 1 : 0, flaps: state.flaps, spoilers: state.spoilers, thrust: state.thrust,
-        landingLights: state.altitude < 3000 && state.phase.id !== 'cruise', contrail: Math.max(0, Math.min(1, (state.altitude - 7800) / 1200)),
+        gear: state.gearDown ? 1 : 0, flaps: state.flaps, spoilers: state.spoilers, thrust: state.thrust, smoke: state.smoke, noseLoad: state.noseDown ? 1 : 0,
+        landingLights: state.altitude < 3000 && state.phase.id !== 'cruise' && state.phase.id !== 'stopped', contrail: Math.max(0, Math.min(1, (state.altitude - 7800) / 1200)),
       }, frame.time, frame.delta);
     },
   };

@@ -79,8 +79,8 @@ export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
   {
     id: "garuda_jed", title: "Terbang ke Jeddah", subtitle: "Garuda · cerita penerbangan 9 jam",
     instruction: "Dengarkan peragaan keselamatan, rasakan lepas landas, lihat langit dari jendela, dan ikuti penerbangan menuju Arab Saudi.",
-    detail: "Pesawat didorong mundur, meluncur ke landasan, lepas landas, menembus awan, lalu terbang jelajah sekitar 9 jam dalam cerita sebelum turun dan mendarat di Jeddah. Tetap duduk dengan sabuk terpasang saat lampu tanda sabuk menyala.",
-    action: "Tiba di Jeddah", icon: "flight", location: "Garuda Indonesia · CGK → JED", kind: "travel", durationSeconds: 48, storyMinutes: 540,
+    detail: "Pesawat didorong mundur, meluncur ke landasan, lepas landas, menembus awan, lalu terbang jelajah sekitar 9 jam dalam cerita. Peta menunjukkan rute dari Jakarta ke Jeddah. Saat mendarat, roda utama menyentuh landasan lebih dulu, lalu pesawat mengerem sampai berhenti. Tetap duduk dengan sabuk terpasang saat lampu tanda sabuk menyala.",
+    action: "Tiba di Jeddah", icon: "flight", location: "Garuda Indonesia · CGK → JED", kind: "travel", durationSeconds: 160, storyMinutes: 540,
   },
   {
     id: "jeddah", title: "Tiba di Jeddah", subtitle: "Bandara King Abdulaziz",
@@ -146,7 +146,7 @@ export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
     id: "garuda_cgk", title: "Terbang pulang ke Indonesia", subtitle: "Garuda · Jeddah menuju CGK",
     instruction: "Ikuti penerbangan pulang, gunakan sabuk pengaman saat diminta, dan bersiap mendarat di Indonesia.",
     detail: "Penerbangan pulang dalam cerita berlangsung 9 jam. Beristirahatlah dan ikuti arahan awak kabin. Saat mendarat, periksa barang pribadi sebelum meninggalkan kursi.",
-    action: "Tiba di Soekarno–Hatta", icon: "flight_land", location: "Garuda Indonesia · JED → CGK", kind: "travel", durationSeconds: 48, storyMinutes: 540,
+    action: "Tiba di Soekarno–Hatta", icon: "flight_land", location: "Garuda Indonesia · JED → CGK", kind: "travel", durationSeconds: 160, storyMinutes: 540,
   },
   {
     id: "cgk_pulang", title: "Kembali di Soekarno–Hatta", subtitle: "Kedatangan di Indonesia",
