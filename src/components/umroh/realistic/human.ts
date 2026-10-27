@@ -5,7 +5,10 @@ import type { Position, WorldResources } from './types';
 export type Attire = 'ihram' | 'travel';
 type Bone = 'body' | 'head' | 'leftUpperArm' | 'rightUpperArm' | 'leftForearm' | 'rightForearm' | 'leftThigh' | 'rightThigh' | 'leftCalf' | 'rightCalf' | 'leftFoot' | 'rightFoot';
 type ColorSlot = 'skin' | 'shirt' | 'trousers' | 'dress' | 'scarf' | 'hair' | 'white' | 'fixed';
-interface HumanPart { mesh: T.InstancedMesh; bone: Bone; color: ColorSlot; female?: boolean; attire?: Attire }
+interface HumanPart {
+  mesh: T.InstancedMesh; bone: Bone; color: ColorSlot; female?: boolean; attire?: Attire;
+  transforms: Float32Array; colors?: Float32Array; visible: Uint8Array;
+}
 export interface HumanAppearance { female: boolean; skin: T.Color; shirt: T.Color; trousers: T.Color; dress: T.Color; scarf: T.Color; hair: T.Color }
 export interface HumanPose { position: T.Vector3; angle: number; scale: number; gait: number; walking: boolean; seated?: boolean; driving?: boolean; headTurn?: number }
 interface Joint { position: T.Vector3; rotation: T.Quaternion }
@@ -109,8 +112,9 @@ export class HumanBatch {
   private joints = Object.fromEntries(bones.map((bone) => [bone, { position: new T.Vector3(), rotation: new T.Quaternion() }])) as Record<Bone, Joint>;
   private transform = new T.Object3D();
   private rootRotation = new T.Quaternion();
-  private colorsInitialized = new Set<number>();
+  private visible: Uint8Array;
   constructor(r: WorldResources, count: number, seated = false) {
+    this.visible = new Uint8Array(count);
     const material = (options: T.MeshStandardMaterialParameters) => r.keep(new T.MeshStandardMaterial(options));
     const skin = material({ color: '#ffffff', roughness: .67 });
     const fabric = r.keep(r.mat.fabric.clone()); fabric.color.set('#ffffff');
@@ -124,7 +128,10 @@ export class HumanBatch {
       const mesh = new T.InstancedMesh(r.keep(geometry), mat, count);
       mesh.name = `human-${bone}-${color}${female === undefined ? '' : female ? '-female' : '-male'}${attire ? '-' + attire : ''}`;
       mesh.instanceMatrix.setUsage(seated ? T.StaticDrawUsage : T.DynamicDrawUsage); mesh.castShadow = true; mesh.receiveShadow = true; mesh.frustumCulled = false;
-      this.group.add(mesh); this.parts.push({ mesh, bone, color, female, attire });
+      const colors = color === 'fixed' ? undefined : new Float32Array(count * 3);
+      if (colors) mesh.instanceColor = new T.InstancedBufferAttribute(new Float32Array(count * 3), 3).setUsage(T.DynamicDrawUsage);
+      mesh.count = 0;
+      this.group.add(mesh); this.parts.push({ mesh, bone, color, female, attire, transforms: new Float32Array(count * 16), colors, visible: new Uint8Array(count) });
     };
     add(headSkin(), skin, 'head', 'skin');
     add(hairCap(), hair, 'head', 'hair', false);
@@ -191,6 +198,8 @@ export class HumanBatch {
     joint.rotation.setFromAxisAngle(axisX, rotationX);
   }
   pose(index: number, appearance: HumanAppearance, pose: HumanPose, attire: Attire): void {
+    if (!Number.isInteger(index) || index < 0 || index >= this.visible.length) return;
+    this.visible[index] = 1;
     const bob = pose.walking && !pose.seated ? Math.cos(pose.gait * 2) * .006 : 0;
     this.setJoint('body', 0, bob, 0); this.setJoint('head', 0, 1.605 + bob, 0);
     this.joints.head.rotation.setFromAxisAngle(axisY, pose.headTurn ?? 0);
@@ -208,20 +217,37 @@ export class HumanBatch {
     // Seat coordinates describe the top of the cushion, rather than the floor.
     const seatOffset = pose.seated ? -.90 : 0;
     this.rootRotation.setFromAxisAngle(axisY, pose.angle);
-    const colorChanged = !this.colorsInitialized.has(index);
     for (const part of this.parts) {
       const hidden = part.female !== undefined && part.female !== appearance.female || part.attire !== undefined && part.attire !== attire;
+      part.visible[index] = hidden ? 0 : 1;
+      if (hidden) continue;
       const joint = this.joints[part.bone], transform = this.transform;
       transform.position.copy(joint.position); transform.position.y += seatOffset;
       transform.position.multiplyScalar(pose.scale).applyQuaternion(this.rootRotation).add(pose.position);
       transform.quaternion.copy(this.rootRotation).multiply(joint.rotation);
-      transform.scale.setScalar(hidden ? 0 : pose.scale); transform.updateMatrix(); part.mesh.setMatrixAt(index, transform.matrix);
-      if (colorChanged && part.color !== 'fixed') part.mesh.setColorAt(index, part.color === 'white' ? WHITE : appearance[part.color]);
+      transform.scale.setScalar(pose.scale); transform.updateMatrix(); transform.matrix.toArray(part.transforms, index * 16);
+      if (part.colors && part.color !== 'fixed') (part.color === 'white' ? WHITE : appearance[part.color]).toArray(part.colors, index * 3);
     }
-    this.colorsInitialized.add(index);
   }
   flush(): void {
-    for (const part of this.parts) { part.mesh.instanceMatrix.needsUpdate = true; if (part.mesh.instanceColor) part.mesh.instanceColor.needsUpdate = true; }
+    for (const part of this.parts) {
+      const matrices = part.mesh.instanceMatrix.array, colors = part.mesh.instanceColor?.array;
+      let packed = 0;
+      for (let index = 0; index < this.visible.length; index++) {
+        if (!this.visible[index] || !part.visible[index]) continue;
+        // Source slots stay stable when the compact GPU slots change between frames.
+        for (let component = 0; component < 16; component++) matrices[packed * 16 + component] = part.transforms[index * 16 + component];
+        if (colors && part.colors) for (let component = 0; component < 3; component++) colors[packed * 3 + component] = part.colors[index * 3 + component];
+        packed++;
+      }
+      part.mesh.count = packed; part.mesh.visible = packed > 0;
+      part.mesh.instanceMatrix.needsUpdate = true;
+      if (part.mesh.instanceColor) part.mesh.instanceColor.needsUpdate = true;
+    }
+  }
+  /** Keep the fallback only until the corresponding textured character is ready. */
+  hide(index: number): void {
+    if (Number.isInteger(index) && index >= 0 && index < this.visible.length) this.visible[index] = 0;
   }
   dispose(): void { this.parts.forEach((part) => part.mesh.dispose()); this.group.removeFromParent(); }
 }

@@ -48,9 +48,19 @@ Rujukan detail diperiksa pada 27 Oktober 2026:
 
 Kedua penerbangan Garuda menyediakan tiga pilihan POV: Otomatis, Dalam kabin, dan Luar pesawat. Mode otomatis membagi progres penerbangan menjadi empat bagian: luar → kabin → luar → kabin. Pergantian mengikuti waktu perjalanan aktif, sehingga jeda, dialog, dan pemulihan progres tidak menjalankan kamera lebih dahulu. Pilihan manual tetap berlaku sampai pengguna menggantinya atau berpindah bab. Preferensi perangkat `prefers-reduced-motion` menonaktifkan pergantian dan gerak kamera otomatis; pengguna tetap dapat memilih kabin secara manual.
 
-Tampilan luar menampilkan pesawat utuh dengan badan melengkung, kokpit, sayap, mesin, jendela, dan ekor bercorak Garuda di antara lapisan awan. Kamera menyesuaikan jarak dengan rasio layar serta ruang yang tersisa di samping panduan desktop. Kabin berisi 72 penumpang duduk, kursi, kompartemen bagasi, ventilasi, dan jendela. Jamaah dan penumpang memakai proporsi tubuh, wajah, pakaian, dan sendi yang lebih terperinci; geometri diinstansikan untuk membatasi jumlah draw call. Model manusia dan pesawat tetap interpretasi prosedural, bukan pemindaian fotorealistik.
+Tampilan luar menampilkan pesawat utuh dengan badan melengkung, kokpit, sayap, mesin, jendela, dan ekor bercorak Garuda di antara lapisan awan. Kamera menyesuaikan jarak dengan rasio layar serta ruang yang tersisa di samping panduan desktop. Kabin berisi 72 penumpang duduk, kursi, kompartemen bagasi, ventilasi, dan jendela. Pesawat tetap dibuat dari geometri prosedural. Model manusia bertekstur dan batas cakupannya dijelaskan di bagian berikutnya; tidak ada klaim pemindaian fotorealistik.
 
 Panel, dialog, tombol, dan HUD mengikuti warna Rinoya yang sudah ada: dasar krem/putih, tulisan biru tua, tombol biru, dan aksen oranye/kuning. Penyebutan kendaraan rumah–bandara adalah “taksi”, dengan penanda TAKSI pada kendaraan.
+
+## Model jamaah pria
+
+Jamaah pria utama, kerumunan pria, dan penumpang pria memakai model bertekstur **Muslim and hajj man** karya **Mostafa 1001 / Mostafa Ebrahim**. Model sumber memiliki proporsi anatomi, wajah, tekstur kulit, serta lipatan pakaian yang lebih terperinci daripada geometri prosedural sebelumnya. Dua varian disiapkan untuk perjalanan dan ihram; kopiah dihapus dari varian ihram. Ini model manusia buatan, bukan hasil pemindaian orang nyata. Model perempuan tetap prosedural sampai tersedia aset pengganti yang sesuai.
+
+Model dioptimalkan untuk browser dan disajikan sebagai GLB dari berkas aplikasi. Pengguna tidak perlu masuk ke Fab atau mengunduh model secara terpisah. Kredit pembuat dan keterangan adaptasi dapat dibaca melalui **Tentang panduan → Kredit aset**; sumber dan lisensinya tercatat di bawah.
+
+Varian ihram berukuran 3.923.460 byte dengan 24.089 segitiga; varian perjalanan 2.405.704 byte dengan 24.783 segitiga. Keduanya dinormalisasi ke tinggi 1,76 m dan mempertahankan UV/tekstur sumber yang diperkecil. Tepi rumbai ihram memakai mask alpha untuk membuang latar hitam dari tekstur sumber. Animasi diam dan berjalan dipertahankan; pose duduk serta mengemudi ditambahkan pada varian perjalanan. Skrip ekspor Blender 4.5 LTS, perintah `--disable-autoexec`, checksum sumber, dan manifest hasil tersedia dalam [catatan aset](../public/umroh/ASSETS.md#reproduksi-ekspor).
+
+`realistic/character-assets.ts` memuat setiap varian sekali per pemilik sumber daya, mengambil 12 sampel animasi berjalan dan satu pose diam, lalu membagikan geometri/material hasilnya kepada `character-batch.ts`. Instanced morph targets menginterpolasi dua sampel berdekatan tanpa menjalankan satu skeleton untuk tiap orang. Pergeseran horizontal pada rig sumber dibuang agar posisi jamaah tetap mengikuti lintasan simulasi. Pose duduk ditambatkan pada panggul di atas kursi. Model prosedural menjadi cadangan selama pemuatan atau bila aset gagal dimuat; slot cadangan pria dikeluarkan dari jumlah instans GPU setelah asetnya siap. Batch cadangan hanya mengirim bagian tubuh dan pakaian yang sesuai untuk tiap orang. Pembatalan pemuatan serta pelepasan mesh, tekstur, dan bitmap ditangani ketika modul ditutup.
 
 ## Cakupan pelajaran
 
@@ -74,6 +84,8 @@ Data pelajaran, state machine, tes, dan geometri prosedural modul Rumila ditulis
 
 Material marmer menggunakan foto tekstur [Marble 01 oleh Rob Tuytel / Poly Haven](https://polyhaven.com/a/marble_01), dengan [lisensi CC0](https://polyhaven.com/license). Berkas diffuse, normal OpenGL, dan roughness beresolusi 1K disimpan di `public/umroh/textures/marble-{diff,nor_gl,rough}.jpg` (sekitar 500 KB total). Atribusi dicantumkan pada informasi modul. Aset diambil dari berkas lokal aplikasi saat runtime; tidak ada permintaan tekstur atau audio ke penyedia eksternal.
 
+Model pria [Muslim and hajj man oleh Mostafa 1001 / Mostafa Ebrahim](https://www.fab.com/listings/90d395a5-a805-4193-855c-61179178b3be) diunduh dari Fab dengan [lisensi CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) pada 27 Oktober 2026. Adaptasi mencakup pemisahan pakaian, penghapusan kopiah pada varian ihram, optimasi geometri dan tekstur, serta konversi ke `public/umroh/models/man-ihram.glb` dan `man-travel.glb`. Atribusi, tautan sumber/lisensi, dan keterangan perubahan tersedia dalam informasi modul. Lisensi model ini berbeda dari CC0 untuk tekstur marmer dan tidak mengubah lisensi kode aplikasi.
+
 Daftar berkas, pembuat, lisensi, serta tautan rujukan arsitektur Masjidil Haram, koridor sa'i, Masjid Nabawi, dan Bir Ali tersedia di [catatan aset](../public/umroh/ASSETS.md). Halaman rujukan arsitektur tidak menjadi sumber model 3D atau gambar yang dibundel; lisensi CC0 di atas hanya berlaku untuk tiga peta tekstur marmer.
 
 ## Kontrak state
@@ -92,6 +104,8 @@ Semua operasi state mengembalikan data baru ketika berubah. Antarmuka menyimpan 
 
 ## Verifikasi
 
-`npm test -- src/lib/umroh src/components/umroh/flight-camera.test.ts src/components/umroh/tawaf-camera.test.ts src/components/umroh/tawaf-scene.test.ts src/components/umroh/realistic/navigation.test.ts src/components/umroh/realistic/resources.test.ts` memeriksa urutan penuh, pencegahan lompatan praktik, batas tujuh, hitungan satu arah sa'i, posisi akhir Marwah, arah tawaf, update parsial, nilai delta tidak valid, restart, round-trip simpan/muat, penolakan data rusak, variasi petunjuk dan penamaan sunah, serta batas dan tabrakan navigasi. Tes kamera mencakup urutan POV, batas fraksi, pilihan manual, dan reduced motion. Tes batching memastikan transformasi geometri tidak diterapkan dua kali dan grup bergerak tetap terpisah.
+`npm test -- src/lib/umroh src/components/umroh` memeriksa urutan penuh, pencegahan lompatan praktik, batas tujuh, hitungan satu arah sa'i, posisi akhir Marwah, arah tawaf, update parsial, nilai delta tidak valid, restart, round-trip simpan/muat, penolakan data rusak, variasi petunjuk dan penamaan sunah, serta batas dan tabrakan navigasi. Tes kamera mencakup urutan POV, batas fraksi, pilihan manual, dan reduced motion. Tes batching memastikan transformasi geometri tidak diterapkan dua kali dan grup bergerak tetap terpisah.
 
 Tes tawaf memeriksa gerak dan rotasi kamera Three.js pada mode POV dan Ikuti jamaah, sumbu awal Hajar Aswad, arah Ka’bah di kiri, lintasan di luar Hijir, kontinuitas antarputaran, jeda/dialog, kontrol berjalan bebas, pemulihan progres, reset kamera, serta kamera tetap untuk reduced motion.
+
+Tes karakter memeriksa deformasi tulang menjadi morph targets, pelestarian UV/material, pembuangan gerak horizontal rig, jangkar panggul, ketersediaan pose, pengulangan fase berjalan, deduplikasi pemuatan, dan pembersihan setelah pembatalan. Tes cadangan prosedural memeriksa jumlah instans GPU, kesesuaian warna/transformasi setelah pemadatan, kondisi semua slot tersembunyi, serta penggunaan ulang indeks dengan pakaian dan penampilan baru.

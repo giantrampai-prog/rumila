@@ -17,9 +17,39 @@ Ketiga berkas berikut merupakan peta material **Marble 01**, dibuat oleh **Rob T
 
 Catatan lisensi ini berlaku untuk berkas tekstur tersebut. Tidak ada klaim bahwa foto referensi, logo, teks situs sumber, atau keseluruhan kode Rumila berada di bawah CC0.
 
+## Model manusia bertekstur
+
+Model pria menggunakan **Muslim and hajj man**, karya **Mostafa 1001 / Mostafa Ebrahim**, dari [halaman resmi Fab](https://www.fab.com/listings/90d395a5-a805-4193-855c-61179178b3be). Model dan tekstur diunduh gratis melalui tautan resmi setelah persetujuan EULA Fab oleh pengguna pada 27 Oktober 2026. Lisensi aset yang tercantum pada halaman dan dialog unduhan adalah [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). [Halaman asli pembuat di Sketchfab](https://sketchfab.com/3d-models/free-hajj-man-animated-a8806a0125274befb8d021e16c727fdf) mengarahkan unduhan ke Fab.
+
+| Berkas lokal | Penggunaan | Ukuran | Segitiga | Animasi |
+| --- | --- | ---: | ---: | --- |
+| `models/man-ihram.glb` | Pria dengan dua kain ihram, tanpa kopiah | 3.923.460 byte | 24.089 | `idle`, `walk` |
+| `models/man-travel.glb` | Pria dengan pakaian perjalanan dari model sumber | 2.405.704 byte | 24.783 | `idle`, `walk`, `seated`, `driving` |
+
+Berkas tersebut merupakan adaptasi Rumila: pakaian dipisah menjadi dua varian, kopiah dihapus pada varian ihram, serta geometri dan tekstur dioptimalkan untuk browser dan dikonversi ke GLB. Tinggi dinormalisasi ke 1,76 m. Proporsi tubuh, wajah, UV, tekstur kulit/pakaian, dan animasi berjalan berasal dari model berlisensi tersebut. Tekstur kulit dibatasi ke 2K dan tekstur lainnya ke 1K. Tepi rumbai kain ihram memakai mask alpha yang dipulihkan dari latar hitam pada tekstur sumber, sehingga latar tersebut tidak terlihat sebagai kotak hitam. Pose duduk (`seated`) dan mengemudi (`driving`) ditambahkan untuk varian perjalanan. Angka ekspor dicatat dalam `models/manifest.json`.
+
+Model pria digunakan untuk jamaah utama, kerumunan, dan penumpang. Runtime membagikan geometri/material dan menginstansikan hasil animasi; tekstur sumber tetap digunakan. Model bukan pemindaian fotogrametri; metadata Fab menyatakan “Scanned: No”. Model perempuan masih menggunakan geometri prosedural Rumila.
+
+Atribusi pembuat, judul, sumber, lisensi, dan perubahan juga tersedia melalui tombol **Tentang panduan** di dalam modul. Berkas GLB dilayani dari `/umroh/models/` milik aplikasi, tanpa mengambil model dari Fab saat runtime. CC BY 4.0 berlaku pada model sumber beserta materi adaptasinya; lisensi itu tidak diberlakukan pada keseluruhan kode atau aset Rumila lainnya.
+
+### Reproduksi ekspor
+
+Ekspor menggunakan Blender 4.5 LTS dan `scripts/umroh/prepare-human-assets.py`, dijalankan dari akar repositori. Unduh berkas sumber resmi `hajj_man.blend` secara terpisah dari Fab; berkas sumber besar tersebut tidak dibundel dalam aplikasi. Skrip membaca mesh/rig/material dari sumber dan tidak mengaktifkan skrip tertanam di dalam berkas Blender.
+
+```sh
+blender --background --disable-autoexec --python scripts/umroh/prepare-human-assets.py -- \
+  --source /path/to/hajj_man.blend --output public/umroh/models
+```
+
+Sumber Blender yang digunakan berukuran 150.851.748 byte, dengan SHA-256:
+
+```text
+94f4d97f960741f8bf7855279dcc57103beed4a88b13ec96f18f081a59129a53  hajj_man.blend
+```
+
 ## Geometri dan rujukan arsitektur
 
-Bangunan, lingkungan, dan jamaah dibentuk dengan geometri prosedural yang ditulis untuk Rumila. Tidak ada model pindai atau model 3D pihak ketiga yang disertakan. Foto dan materi pada halaman referensi berikut digunakan untuk mengenali ciri tempat; berkasnya tidak disertakan sebagai aset aplikasi.
+Bangunan dan lingkungan dibentuk dengan geometri prosedural yang ditulis untuk Rumila. Model manusia bertekstur dari pihak ketiga dijelaskan di bagian sebelumnya. Foto dan materi pada halaman referensi berikut digunakan untuk mengenali ciri tempat; berkasnya tidak disertakan sebagai aset aplikasi.
 
 - [Al Haramain — Mataf](https://alharamain.gov.sa/public/?page=mataf-ar): pelataran tawaf dan lingkungan Ka'bah.
 - [Al Haramain — Safa and Marwa](https://alharamain.gov.sa/public/?page=safa-marwa-en): koridor sa'i.

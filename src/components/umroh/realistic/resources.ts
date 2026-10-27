@@ -101,7 +101,8 @@ export class Resources implements WorldResources {
     const buckets = new Map<string, { material: T.Material; geometries: T.BufferGeometry[]; shadow: boolean }>();
     const remove: T.Object3D[] = [];
     group.traverse((o) => {
-      if (!(o instanceof T.Mesh) || o instanceof T.InstancedMesh || Array.isArray(o.material)) return;
+      // Skinned meshes retain their skeleton and skin attributes for animation.
+      if (!(o instanceof T.Mesh) || o instanceof T.InstancedMesh || o instanceof T.SkinnedMesh || Array.isArray(o.material)) return;
       for (let parent = o.parent; parent && parent !== group; parent = parent.parent) if (parent.userData.dynamic) return;
       const geometry = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
       geometry.applyMatrix4(new T.Matrix4().multiplyMatrices(inverse, o.matrixWorld));

@@ -28,6 +28,12 @@ const FLIGHT_VIEWS = [
   { id: 'cabin', label: 'Dalam kabin', icon: 'airline_seat_recline_normal' },
   { id: 'exterior', label: 'Luar pesawat', icon: 'flight' },
 ] as const;
+const HUMAN_MODEL_CREDIT = {
+  title: 'Muslim and hajj man',
+  creator: 'Mostafa 1001 / Mostafa Ebrahim',
+  source: 'https://www.fab.com/listings/90d395a5-a805-4193-855c-61179178b3be',
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+};
 const NABAWI_VISIT = {
   title: 'Mengenal Masjid Nabawi', subtitle: 'Kunjungan pilihan di Madinah',
   instruction: 'Jelajahi halaman, payung peneduh, dan bangunan Masjid Nabawi dari dekat.',
@@ -355,7 +361,23 @@ function Journey({ memberId }: { memberId: string }) {
         {inUmroh && <><h3 className="umroh-dialog-label">Rangkaian manasik</h3><ol className="umroh-map-list">{STAGES.map((s, i) => <li key={s.id} className={i === stageIndex ? 'active' : ''} aria-current={i === stageIndex ? 'step' : undefined}><span>{i < stageIndex ? <Icon name="check" size={17} /> : i + 1}</span><div><strong>{s.title}</strong><small>{i < stageIndex ? 'Sudah dipelajari' : i === stageIndex ? 'Pelajaranmu saat ini' : 'Langkah berikutnya'}</small></div></li>)}</ol></>}
       </Modal>}
 
-      {showInfo && <Modal title="Tentang perjalanan ini" onClose={() => setShowInfo(false)}><p>Jelajahi tempat-tempat dalam rangkaian umroh, lalu ikuti panduan langkah demi langkah. Bangunan dan lingkungan dibuat sebagai visualisasi untuk belajar, bukan denah terukur atau petunjuk navigasi di lokasi sebenarnya.</p><p>Rute cerita: rumah di Indonesia, taksi, Soekarno–Hatta, Garuda ke Jeddah, kereta Haramain ke Madinah, Uber ke Masjid Nabawi, lalu Bir Ali dan rangkaian umroh. Kepulangan melalui Jeddah dan Soekarno–Hatta sampai rumah.</p><p>Tur Nabawi, Raudhah, dan ziarah salam bukan rukun umroh. Raudhah berbeda dari area makam; kunjungan nyata mengikuti ketentuan Nusuk dan petugas. Visualisasi salam berada di luar pembatas ruang makam.</p><p>Nama layanan transportasi dipakai sebagai bagian cerita. Modul tidak melakukan pemesanan, menerbitkan tiket/izin, atau mewakili operator. Durasi penerbangan sekitar 9 jam adalah ilustrasi cerita yang dipercepat.</p><a href="https://www.nusuk.sa/rawdah/" target="_blank" rel="noreferrer">Panduan resmi kunjungan Raudhah · Nusuk ↗</a><p>Salat setelah tawaf, minum Zamzam, dan bacaan anjuran ditampilkan sebagai panduan, bukan semuanya rukun umroh. Gunakan bersama arahan pembimbing manasik; simulasi tidak menggantikan ibadah dan tidak menilai sahnya ibadah.</p>{UMROH_SOURCES.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}<p className="umroh-asset-note">Tekstur marmer: Rob Tuytel / Poly Haven, CC0. <a href="https://polyhaven.com/a/marble_01" target="_blank" rel="noreferrer">Lihat sumber tekstur ↗</a></p></Modal>}
+      {showInfo && <Modal title="Tentang perjalanan ini" onClose={() => setShowInfo(false)}>
+        <p>Jelajahi tempat-tempat dalam rangkaian umroh, lalu ikuti panduan langkah demi langkah. Bangunan dan lingkungan dibuat sebagai visualisasi untuk belajar, bukan denah terukur atau petunjuk navigasi di lokasi sebenarnya.</p>
+        <p>Rute cerita: rumah di Indonesia, taksi, Soekarno–Hatta, Garuda ke Jeddah, kereta Haramain ke Madinah, Uber ke Masjid Nabawi, lalu Bir Ali dan rangkaian umroh. Kepulangan melalui Jeddah dan Soekarno–Hatta sampai rumah.</p>
+        <p>Tur Nabawi, Raudhah, dan ziarah salam bukan rukun umroh. Raudhah berbeda dari area makam; kunjungan nyata mengikuti ketentuan Nusuk dan petugas. Visualisasi salam berada di luar pembatas ruang makam.</p>
+        <p>Nama layanan transportasi dipakai sebagai bagian cerita. Modul tidak melakukan pemesanan, menerbitkan tiket/izin, atau mewakili operator. Durasi penerbangan sekitar 9 jam adalah ilustrasi cerita yang dipercepat.</p>
+        <a href="https://www.nusuk.sa/rawdah/" target="_blank" rel="noreferrer">Panduan resmi kunjungan Raudhah · Nusuk ↗</a>
+        <p>Salat setelah tawaf, minum Zamzam, dan bacaan anjuran ditampilkan sebagai panduan, bukan semuanya rukun umroh. Gunakan bersama arahan pembimbing manasik; simulasi tidak menggantikan ibadah dan tidak menilai sahnya ibadah.</p>
+        {UMROH_SOURCES.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>)}
+        <h3 className="umroh-dialog-label">Kredit aset</h3>
+        <p className="umroh-asset-note">
+          Model pria: <strong>{HUMAN_MODEL_CREDIT.title}</strong> oleh {HUMAN_MODEL_CREDIT.creator}.
+          {' '}Diadaptasi untuk web: geometri dan tekstur dioptimalkan, pakaian dipisah, serta kopiah dihapus pada versi ihram.
+          <a href={HUMAN_MODEL_CREDIT.source} target="_blank" rel="noreferrer">Model asli di Fab ↗</a>
+          <a href={HUMAN_MODEL_CREDIT.license} target="_blank" rel="noreferrer">Lisensi Creative Commons Attribution 4.0 (CC BY 4.0) ↗</a>
+        </p>
+        <p className="umroh-asset-note">Tekstur marmer: Rob Tuytel / Poly Haven, CC0. <a href="https://polyhaven.com/a/marble_01" target="_blank" rel="noreferrer">Lihat sumber tekstur ↗</a></p>
+      </Modal>}
     </main>
   );
 }
