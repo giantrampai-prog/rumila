@@ -148,7 +148,7 @@
 .umroh-landmark-list button { display:flex; align-items:center; gap:6px; border:1px solid var(--u-line); background:#ffffff; border-radius:12px; padding:11px 9px; color:var(--u-ink); text-align:left; font-size:11px; min-height:44px; }
 .umroh-landmark-list button>span:not(.ms) { flex:1; }
 .umroh-map-visit { margin-bottom:21px; }
-@media(max-width:1150px) and (min-width:761px) { .umroh-camera-toolbar { flex-direction:column; align-items:flex-start; } .umroh-counter { top:195px; } .umroh-action-dock { width:320px; max-width:calc(100% - 390px); } .umroh-dock-caption { display:block; } .umroh-dock-caption strong { display:block; margin-top:4px; text-align:left; } .umroh-scene-footer { bottom:139px; } }
+@media(max-width:1150px) and (min-width:761px) { .umroh-action-dock { width:320px; max-width:calc(100% - 390px); } .umroh-dock-caption { display:block; } .umroh-dock-caption strong { display:block; margin-top:4px; text-align:left; } .umroh-scene-footer { bottom:139px; } }
 @media(pointer:coarse) { .umroh-dpad { display:grid; grid-template-columns:44px 44px 44px; grid-template-rows:44px 44px; gap:5px; position:absolute; bottom:144px; left:24px; user-select:none; -webkit-user-select:none; } .umroh-dpad button { display:flex; align-items:center; justify-content:center; border:1px solid var(--u-line); border-radius:16px; background:#fffffff5; color:var(--u-accent-deep); backdrop-filter:blur(9px); touch-action:none; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; } .umroh-dpad button:active { background:var(--u-accent-tint); color:var(--u-ink); } .umroh-move-forward { grid-column:2; grid-row:1; } .umroh-move-left { grid-column:1; grid-row:2; } .umroh-move-back { grid-column:2; grid-row:2; } .umroh-move-right { grid-column:3; grid-row:2; } .umroh-desktop-hint { display:none; } .umroh-touch-hint { display:inline; } }
 @media(max-width:760px) {
   .umroh-header { height:58px; padding:0 12px; gap:9px; }
@@ -205,3 +205,27 @@
 .umroh-travel-card progress::-moz-progress-bar { background:var(--u-accent-deep); }
 .umroh-travel-card p { font-size:13px; line-height:1.6; margin:0 0 8px; }
 .umroh-travel-card small { display:block; font-size:11px; line-height:1.6; color:var(--u-muted); margin-bottom:16px; }
+
+/* Compact travel HUD and an immersive mode that hides every overlay. */
+.umroh-transport-counter { min-width:0; max-width:230px; padding:9px 12px; }
+.umroh-transport-counter>span { display:block; letter-spacing:.8px; }
+.umroh-transport-counter progress { display:block; width:100%; height:4px; margin-top:6px; appearance:none; border:0; border-radius:4px; background:var(--u-accent-tint); overflow:hidden; }
+.umroh-transport-counter progress::-webkit-progress-bar { background:var(--u-accent-tint); }
+.umroh-transport-counter progress::-webkit-progress-value { background:var(--u-accent); }
+.umroh-transport-counter progress::-moz-progress-bar { background:var(--u-accent); }
+.umroh-transport-counter .umroh-flight-phase { margin-top:6px; padding-top:0; border-top:0; }
+.umroh-flight-phase span .ms { vertical-align:-2px; color:var(--brand-orange-deep); }
+.umroh-time button>span:not(.ms), .umroh-sr-label { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.umroh-hud-toggle { position:absolute; top:21px; right:24px; z-index:2; background:#fffffff5; backdrop-filter:blur(12px); }
+.guide-open .umroh-hud-toggle { right:374px; }
+.is-running .umroh-dock-caption { display:none; }
+.hud-hidden .umroh-scene-label, .hud-hidden .umroh-camera-toolbar, .hud-hidden .umroh-counter,
+.hud-hidden .umroh-scene-footer, .hud-hidden .umroh-reset-camera, .hud-hidden .umroh-dpad, .hud-hidden .umroh-dock-caption { display:none; }
+.hud-hidden .umroh-hud-toggle { opacity:.7; }
+.hud-hidden .umroh-hud-toggle:hover, .hud-hidden .umroh-hud-toggle:focus-visible { opacity:1; }
+.hud-hidden .umroh-action-dock { width:auto; padding:6px; background:#ffffffb8; }
+.hud-hidden .umroh-action-dock .umroh-primary { min-height:40px; padding:0 16px; font-size:12px; }
+@media(max-width:760px) {
+  .umroh-hud-toggle, .guide-open .umroh-hud-toggle { top:12px; right:12px; }
+  .umroh-transport-counter { max-width:200px; }
+}
