@@ -1,5 +1,8 @@
 import * as T from 'three';
-import type { UmrohWorld, WorldResources } from './types';
+import type { Position, UmrohWorld, WorldResources } from './types';
+import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
+import { createSeatedPassengers } from './pilgrims';
+import { createCloudLayer, createFlightSky } from './flight';
 
 function seat(r: WorldResources, parent: T.Object3D, x: number, z: number, fabric: T.Material) {
   r.box(parent, [.49, .12, .52], [x, .5, z], fabric);
@@ -12,57 +15,93 @@ function seat(r: WorldResources, parent: T.Object3D, x: number, z: number, fabri
 }
 
 export function createCabinWorld(r: WorldResources, destination?: 'jeddah' | 'jakarta'): UmrohWorld {
-  const group = new T.Group();
-  const blue = r.keep(new T.MeshStandardMaterial({ color: '#313e52', roughness: .93 }));
-  const lining = r.keep(r.mat.plaster.clone()); lining.side = T.DoubleSide;
-  // Each side-wall bay has a real oval opening; a transparent pane cannot reveal
-  // the moving sky if an opaque fuselage surface still spans the window behind it.
+  const group = new T.Group(); group.name = 'Kabin penumpang Garuda Indonesia';
+  const blue = r.keep(new T.MeshStandardMaterial({ color: '#263d62', roughness: .89 }));
+  const shell = r.keep(new T.MeshStandardMaterial({ color: '#9aa5ad', roughness: .65 }));
+  const ivory = r.keep(new T.MeshStandardMaterial({ color: '#f2f0e9', roughness: .83, side: T.DoubleSide }));
+  const softGrey = r.keep(new T.MeshStandardMaterial({ color: '#d4d8d8', roughness: .72 }));
+  const trim = r.keep(new T.MeshStandardMaterial({ color: '#555e67', roughness: .66 }));
+  const carpet = r.keep(r.mat.carpet.clone()); carpet.color.set('#353e50');
+  const rounded = r.keep(new RoundedBoxGeometry(1, 1, 1, 1, .075));
+  const cushioned = (size: Position, at: Position, material: T.Material) => { const mesh = r.mesh(group, rounded, material, at); mesh.scale.set(...size); return mesh; };
+  r.floor(group, 6.25, 42, carpet);
   const windowShape = new T.Shape();
-  windowShape.moveTo(-.75, 0); windowShape.lineTo(.75, 0); windowShape.lineTo(.75, .7); windowShape.lineTo(-.75, .7); windowShape.closePath();
-  const opening = new T.Path(); opening.absellipse(0, .33, .22, .315, 0, Math.PI * 2, true); windowShape.holes.push(opening);
+  windowShape.moveTo(-.75, 0); windowShape.lineTo(.75, 0); windowShape.lineTo(.75, .92); windowShape.lineTo(-.75, .92); windowShape.closePath();
+  const opening = new T.Path(); opening.absellipse(0, .43, .23, .32, 0, Math.PI * 2, true); windowShape.holes.push(opening);
   const windowBay = r.keep(new T.ExtrudeGeometry(windowShape, { depth: .13, bevelEnabled: false, curveSegments: 24 }));
-  r.floor(group, 6.5, 42, r.mat.carpet);
+  const pane = r.keep(new T.MeshStandardMaterial({ color: '#b2d8ed', roughness: .09, transparent: Boolean(destination), opacity: destination ? .1 : .8, side: T.DoubleSide }));
+  const lightMat = r.keep(new T.MeshStandardMaterial({ color: '#fff4e3', emissive: '#fff0dc', emissiveIntensity: 1.4 }));
+  const screen = r.keep(new T.MeshStandardMaterial({ color: '#122942', emissive: '#173758', emissiveIntensity: .25, roughness: .3 }));
+  const passengerSeats: { position: Position; angle: number }[] = [];
   for (const side of [-1, 1]) {
-    r.box(group, [.18, 1.7, 42], [side * 3.05, .85, 0], r.mat.plaster);
-    r.box(group, [.4, .2, 42], [side * 2.87, 1.6, 0], r.mat.white);
-    r.box(group, [.35, .08, 42], [side * 2.88, 2.4, 0], r.mat.white);
-    r.box(group, [.72, .55, 41], [side * 2.5, 2.65, 0], r.mat.white);
-    const pane = r.keep(new T.MeshStandardMaterial({ color: '#b4d5df', emissive: '#6b8b9d', emissiveIntensity: .25, roughness: .1, transparent: Boolean(destination), opacity: destination ? .35 : 1 }));
-    for (let z = -18; z <= 18; z += 1.5) {
-      const wall = r.mesh(group, windowBay, lining, [side * 2.98, 1.7, z]); wall.rotation.y = side * Math.PI / 2;
-      const frame = r.mesh(group, new T.TorusGeometry(.29, .035, 8, 24), r.mat.darkStone, [side * 2.96, 2.03, z]); frame.rotation.y = Math.PI / 2; frame.scale.set(.78, 1.2, 1);
-      r.sphere(group, [.065, .29, .20], [side * 2.9, 2.03, z], pane);
-      r.box(group, [.72, .025, .012], [side * 2.5, 2.38, z], r.mat.darkGold);
+    r.box(group, [.18, 1.3, 42], [side * 3.05, .65, 0], ivory);
+    r.box(group, [.18, .04, 42], [side * 2.95, 1.3, 0], softGrey);
+    r.box(group, [.35, .16, 42], [side * 2.89, 2.3, 0], ivory);
+    // Angled luggage bins have individual doors and recessed handles.
+    for (let z = -18.75; z < 20; z += 2.5) {
+      const bin = cushioned([1.03, .49, 2.47], [side * 2.45, 2.69, z], ivory); bin.rotation.z = side * .14;
+      r.box(group, [.045, .038, .2], [side * 1.93, 2.58, z], trim);
+      r.box(group, [.022, .012, 2.47], [side * 1.94, 2.52, z], softGrey);
     }
-    for (const z of [-19.875, 19.875]) r.box(group, [.13, .7, 2.25], [side * 3.045, 2.05, z], r.mat.plaster);
-    for (let z = -16; z <= 16; z += 1.12) for (const x of [1.02, 1.6, 2.18]) seat(r, group, side * x, z, blue);
+    r.box(group, [.11, .02, 40], [side * 2.86, 2.43, 0], lightMat);
+    for (let z = -18; z <= 18; z += 1.5) {
+      const wall = r.mesh(group, windowBay, ivory, [side * 2.98, 1.3, z]); wall.rotation.y = side * Math.PI / 2;
+      const frame = r.mesh(group, new T.TorusGeometry(.29, .025, 8, 32), softGrey, [side * 2.96, 1.73, z]); frame.rotation.y = Math.PI / 2; frame.scale.set(.82, 1.16, 1);
+      r.sphere(group, [.025, .3, .21], [side * 2.99, 1.73, z], pane);
+      r.box(group, [.025, .035, .1], [side * 2.93, 2.035, z], ivory);
+    }
+    for (const z of [-19.875, 19.875]) r.box(group, [.13, .92, 2.25], [side * 3.045, 1.76, z], ivory);
+    let row = 0;
+    for (let z = -16; z <= 16; z += 1.12, row++) for (const [column, x] of [1.02, 1.6, 2.18].entries()) {
+      const sx = side * x;
+      cushioned([.5, .12, .53], [sx, .5, z], blue);
+      const backShell = cushioned([.52, .75, .13], [sx, .94, z + .28], shell); backShell.rotation.x = -.09;
+      const back = cushioned([.47, .71, .1], [sx, .95, z + .205], blue); back.rotation.x = -.09;
+      cushioned([.4, .25, .14], [sx, 1.26, z + .285], blue);
+      r.box(group, [.29, .2, .019], [sx, 1.285, z + .365], ivory);
+      r.box(group, [.41, .07, .4], [sx, .4, z], trim);
+      for (const dx of [-.17, .17]) r.box(group, [.035, .34, .06], [sx + dx, .2, z + .1], r.mat.metal);
+      for (const dx of [-.275, .275]) cushioned([.055, .06, .46], [sx + dx, .73, z], trim);
+      r.box(group, [.3, .21, .025], [sx, 1.06, z + .365], trim);
+      r.box(group, [.265, .17, .026], [sx, 1.065, z + .381], screen);
+      r.box(group, [.31, .21, .025], [sx, .77, z + .36], softGrey);
+      r.box(group, [.035, .022, .027], [sx, .865, z + .379], trim);
+      // Vary occupancy, leaving some free seats and a clear aisle. Nearby
+      // passengers are included so heads, shoulders and hands read at eye level.
+      if (destination && (column === (row + (side > 0 ? 1 : 0)) % 3 || (row >= 21 && row <= 27 && column === (row + 1 + (side > 0 ? 1 : 0)) % 3))) passengerSeats.push({ position: [sx, .56, z], angle: Math.PI });
+    }
   }
-  // The continuous ceiling starts above the window band, with no surface behind the openings.
+  if (passengerSeats.length) group.add(createSeatedPassengers(r, passengerSeats));
+  // A continuous curved ceiling begins above the real window openings.
   const positions: number[] = [], uvs: number[] = [], indices: number[] = [];
-  const shoulder = Math.asin((2.4 - 1.55) / 1.9);
+  const shoulder = Math.asin((2.22 - 1.55) / 1.9);
   for (let j = 0; j <= 1; j++) for (let i = 0; i <= 32; i++) {
     const theta = shoulder + i / 32 * (Math.PI - shoulder * 2);
     positions.push(Math.cos(theta) * 3.12, 1.55 + Math.sin(theta) * 1.9, j ? 21 : -21); uvs.push(i / 32, j);
   }
   for (let i = 0; i < 32; i++) { const a = i, b = i + 33; indices.push(a, b, a + 1, b, b + 1, a + 1); }
-  const roof = new T.BufferGeometry(); roof.setAttribute('position', new T.Float32BufferAttribute(positions, 3)); roof.setAttribute('uv', new T.Float32BufferAttribute(uvs, 2)); roof.setIndex(indices); roof.computeVertexNormals();
-  r.mesh(group, roof, lining);
-  const lightMat = r.keep(new T.MeshStandardMaterial({ color: '#fff4dc', emissive: '#ffe8bd', emissiveIntensity: 1.5 }));
-  for (const x of [-.65, .65]) r.box(group, [.09, .025, 39], [x, 3.24, 0], lightMat);
-  r.box(group, [6, 3.5, .2], [0, 1.75, -20], r.mat.plaster);
-  r.box(group, [.9, 2.1, .23], [0, 1.05, -19.96], r.mat.darkStone);
-  r.sign(group, destination ? 'GARUDA INDONESIA' : 'BERSIAP SEBELUM MIQAT', destination ? destination === 'jeddah' ? 'Jakarta → Jeddah · perjalanan ke Madinah' : 'Jeddah → Jakarta · perjalanan pulang' : 'Ikuti pengumuman awak pesawat', [0, 2.7, -19.7], 3.7);
-  const clouds = new T.Group(); clouds.userData.dynamic = true; group.add(clouds);
-  if (destination) {
-    const cloudMaterial = r.keep(new T.MeshStandardMaterial({ color: '#ffffff', roughness: 1 }));
-    for (let i = 0; i < 22; i++) {
-      const side = i % 2 ? 1 : -1;
-      for (let k = 0; k < 3; k++) r.sphere(clouds, [12 + k * 3, 4 + k, 9 + k * 2], [side * (38 + i % 4 * 9) + k * 6, -4 + i % 5, -80 - i * 22 + k * 3], cloudMaterial);
+  const roof = new T.BufferGeometry(); roof.setAttribute('position', new T.Float32BufferAttribute(positions, 3)); roof.setAttribute('uv', new T.Float32BufferAttribute(uvs, 2)); roof.setIndex(indices); roof.computeVertexNormals(); r.mesh(group, roof, ivory);
+  for (const x of [-.82, .82]) r.box(group, [.11, .025, 39], [x, 3.25, 0], lightMat);
+  for (let z = -18; z <= 18; z += 1.12) for (const x of [-1.5, 1.5]) {
+    r.box(group, [.43, .03, .31], [x, 3.01, z], softGrey);
+    for (const dx of [-.11, .11]) { const vent = r.cylinder(group, .035, .035, .025, [x + dx, 2.985, z], trim, 10); vent.rotation.x = Math.PI; }
+  }
+  // Closed bulkheads at both ends keep the sky outside the passenger cabin.
+  for (const end of [-1, 1]) {
+    r.box(group, [6.25, 3.5, .2], [0, 1.75, end * 20], ivory);
+    r.box(group, [.82, 2.05, .23], [0, 1.025, end * 19.85], trim);
+    r.box(group, [.065, .17, .04], [.25, 1, end * 19.715], r.mat.metal);
+    for (const side of [-1, 1]) {
+      r.box(group, [1.25, 2.15, .4], [side * 2.04, 1.08, end * 19.6], softGrey);
+      for (let y = .4; y < 2; y += .44) r.box(group, [1.08, .025, .015], [side * 2.04, y, end * 19.39], trim);
     }
   }
-  return { group, motion: destination ? { group: clouds, axis: 'z', distance: 480 } : undefined, spawn: [0, 1.67, 11], lookAt: [0, 1.65, -10], overview: [0, 3, 19], indoor: true,
+  r.sign(group, destination ? 'GARUDA INDONESIA' : 'BERSIAP SEBELUM MIQAT', destination ? destination === 'jeddah' ? 'Jakarta → Jeddah' : 'Jeddah → Jakarta' : 'Ikuti pengumuman awak pesawat', [0, 2.65, -19.7], 2.8);
+  const clouds = destination ? createCloudLayer(r, true) : new T.Group(); clouds.userData.dynamic = true; group.add(clouds);
+  if (destination) group.add(createFlightSky(r));
+  return { group, motion: destination ? { group: clouds, axis: 'z', distance: 640 } : undefined, spawn: [0, 1.63, 11], lookAt: [0, 1.61, -10], overview: [0, 2.05, 18], indoor: true,
     bounds: { minX: -.5, maxX: .5, minZ: -18.5, maxZ: 18.5 }, blockers: [],
-    landmarks: [{ id: 'cabin-front', label: 'Depan kabin', position: [0, 1.67, -15], lookAt: [0, 1.8, 14] }, { id: 'cabin-aisle', label: 'Lorong kabin', position: [0, 1.67, 12], lookAt: [0, 1.67, -12] }] };
+    landmarks: [{ id: 'cabin-front', label: 'Depan kabin', position: [0, 1.63, -15], lookAt: [0, 1.55, 14] }, { id: 'cabin-aisle', label: 'Kabin dan penumpang', position: [0, 1.63, 12], lookAt: [0, 1.6, -12] }] };
 }
 
 export function createJourneyWorld(r: WorldResources, returning = false): UmrohWorld {

@@ -1,9 +1,11 @@
 import * as T from 'three';
 import type { Position, Rect, UmrohWorld, WorldResources } from './types';
+import { createSeatedPassengers } from './pilgrims';
+import { createGarudaAircraft } from './aircraft';
 
 /** Original, human-scale travel environments. Operator names are plain text, not copied logos. */
 interface Kit { r: WorldResources; geometries: Map<string, T.BufferGeometry>; materials: Map<string, T.MeshStandardMaterial> }
-type TaxiKind = 'bluebird' | 'uber';
+type TaxiKind = 'taxi' | 'uber';
 const UP = new T.Vector3(0, 1, 0);
 
 function kit(r: WorldResources): Kit { return { r, geometries: new Map(), materials: new Map() }; }
@@ -95,7 +97,7 @@ function roof(k: Kit, parent: T.Object3D, width: number, length: number, base: n
 }
 function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotation: number): T.Group {
   const { r } = k, group = new T.Group(); group.position.set(...at); group.rotation.y = rotation;
-  const paint = color(k, `taxi-${kind}`, kind === 'bluebird' ? '#268fca' : '#1c2126', { metalness: 0.35, roughness: 0.28 });
+  const paint = color(k, `taxi-${kind}`, kind === 'taxi' ? '#268fca' : '#1c2126', { metalness: 0.35, roughness: 0.28 });
   const glass = color(k, 'car-glass', '#80a2ae', { transparent: true, opacity: 0.22, metalness: 0.1, roughness: 0.15 });
   const trim = color(k, 'taxi-inner-trim', '#454b4d', { roughness: 0.88 });
   const headlining = color(k, 'taxi-headlining', '#bbbcb5', { roughness: 0.98 });
@@ -125,7 +127,7 @@ function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotat
     beam(k, group, [side * 0.75, 1.55, 1.28], [side * 0.86, 0.96, 1.68], 0.055, paint);
     r.box(group, [0.045, 0.04, 0.21], [side * 0.938, 0.88, 0.5], r.mat.metal);
     r.box(group, [0.22, 0.14, 0.27], [side * 1.01, 1.02, -1.04], paint);
-    const wordmark = textPlate(k, group, kind === 'bluebird' ? 'Bluebird' : 'Uber', [side * 0.924, 0.71, -0.1], 1.18);
+    const wordmark = textPlate(k, group, kind === 'taxi' ? 'TAKSI' : 'Uber', [side * 0.924, 0.71, -0.1], 1.18);
     wordmark.rotation.y = side * Math.PI / 2;
   }
   const windscreen = r.box(group, [1.52, 0.69, 0.02], [0, 1.26, -1.1], glass); windscreen.rotation.x = -0.53;
@@ -136,7 +138,7 @@ function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotat
   }
   r.box(group, [0.74, 0.16, 0.06], [0, 0.53, -2.28], r.mat.black);
   r.box(group, [0.44, 0.11, 0.02], [0, 0.48, -2.32], r.mat.white);
-  if (kind === 'bluebird') {
+  if (kind === 'taxi') {
     r.box(group, [0.55, 0.17, 0.24], [0, 1.7, 0.1], r.mat.white);
     textPlate(k, group, 'TAKSI', [0, 1.71, -0.025], 0.47, '#116f9c');
   }
@@ -151,17 +153,10 @@ function vehicle(k: Kit, parent: T.Object3D, kind: TaxiKind, at: Position, rotat
   r.box(group, [1.4, 0.62, 0.12], [0, 0.9, 1.49], upholstery);
   r.box(group, [1.58, 0.2, 0.45], [0, 0.96, -0.91], upholstery);
   r.box(group, [0.25, 0.16, 0.025], [0.1, 1.09, -0.72], color(k, 'screen', '#284557', { emissive: '#244759', emissiveIntensity: 0.25 }));
-  const driverX = kind === 'bluebird' ? 0.47 : -0.47;
+  const driverX = kind === 'taxi' ? 0.47 : -0.47;
   const steering = r.mesh(group, geo(k, 'steering', () => new T.TorusGeometry(0.17, 0.022, 7, 20)), r.mat.black, [driverX, 1.09, -0.58]); steering.rotation.x = -0.35;
-  const shirt = color(k, `driver-shirt-${kind}`, kind === 'bluebird' ? '#6e9daf' : '#777e7d');
-  const skin = color(k, 'driver-skin', '#b58663');
-  r.box(group, [0.33, 0.43, 0.22], [driverX, 0.94, -0.22], shirt);
-  r.sphere(group, [0.135, 0.17, 0.135], [driverX, 1.32, -0.24], skin);
-  r.sphere(group, [0.137, 0.075, 0.138], [driverX, 1.43, -0.21], r.mat.black);
-  for (const side of [-1, 1]) {
-    beam(k, group, [driverX + side * 0.16, 1.08, -0.2], [driverX + side * 0.12, 0.99, -0.44], 0.055, shirt);
-    beam(k, group, [driverX + side * 0.12, 0.99, -0.44], [driverX + side * 0.12, 1.1, -0.59], 0.04, skin);
-  }
+  const driver = createSeatedPassengers(r, [{ position: [driverX, .625, -.22], angle: Math.PI, driving: true }]);
+  driver.name = 'Pengemudi'; group.add(driver);
   parent.add(group); return group;
 }
 
@@ -170,41 +165,32 @@ export function addTaxiVehicle(r: WorldResources, parent: T.Object3D, kind: Taxi
   return vehicle(kit(r), parent, kind, at, rotation);
 }
 
-/** Procedural passenger jet with a teal tail and plain Garuda Indonesia wordmark. */
+/** The flight aircraft at the original apron footprint. `at` is ground level. */
 export function addGarudaAircraft(r: WorldResources, parent: T.Object3D, at: Position = [0, 0, 0], scale = 1, rotation = 0): T.Group {
-  const k = kit(r), group = new T.Group(); group.position.set(...at); group.scale.setScalar(scale); group.rotation.y = rotation;
-  const teal = color(k, 'aircraft-teal', '#177b8d', { metalness: 0.15, roughness: 0.4 });
-  const fuselage = geo(k, 'aircraft-fuselage', () => new T.LatheGeometry([
-    new T.Vector2(0.05, -20), new T.Vector2(0.8, -19), new T.Vector2(1.6, -16), new T.Vector2(1.9, -12),
-    new T.Vector2(1.9, 11), new T.Vector2(1.1, 16), new T.Vector2(0.12, 19),
-  ], 32));
-  const body = r.mesh(group, fuselage, r.mat.white, [0, 4.05, 0]); body.rotation.x = Math.PI / 2;
+  const k = kit(r), group = new T.Group(); group.name = 'Garuda Indonesia — parked';
+  group.position.set(...at); group.scale.setScalar(scale); group.rotation.y = rotation;
+  const aircraft = createGarudaAircraft(r);
+  // Preserve this helper's former ~39 m length / 35 m span so its callers and
+  // the terminal's boarding bridge keep their existing clearance.
+  aircraft.scale.setScalar(.6); aircraft.position.y = 3.85;
+  delete aircraft.userData.dynamic; group.add(aircraft);
+  const tyre = color(k, 'aircraft-tyre', '#20252a', { roughness: .95 });
+  const hub = color(k, 'aircraft-wheel-hub', '#b8c0c6', { metalness: .7, roughness: .38 });
+  const wheel = (x: number, y: number, z: number, radius: number, width: number) => {
+    const rubber = r.cylinder(group, radius, radius, width, [x, y, z], tyre, 24); rubber.rotation.z = Math.PI / 2;
+    const rim = r.cylinder(group, radius * .53, radius * .53, width + .012, [x, y, z], hub, 16); rim.rotation.z = Math.PI / 2;
+  };
+  // Paired nose wheels and two four-wheel main bogies. Each tyre touches the
+  // local y=0 ground; the nacelles remain more than one metre above the apron.
+  beam(k, group, [0, .45, -14.7], [0, 2.45, -14.7], .09);
+  beam(k, group, [0, 1, -14.7], [0, 2.55, -13.6], .055);
+  for (const x of [-.19, .19]) wheel(x, .38, -14.7, .38, .19);
   for (const side of [-1, 1]) {
-    const cockpit = r.box(group, [0.84, 0.45, 0.07], [side * 0.5, 4.75, -17.5], r.mat.darkStone);
-    cockpit.rotation.y = side * 0.43;
-  }
-  for (const side of [-1, 1]) {
-    for (let z = -12.8; z < 12; z += 0.9) r.sphere(group, [0.035, 0.22, 0.14], [side * 1.87, 4.63, z], r.mat.darkStone);
-    const wingShape = new T.Shape(); wingShape.moveTo(side * 0.9, -2); wingShape.lineTo(side * 17.5, 6); wingShape.lineTo(side * 17, 8.8); wingShape.lineTo(side * 1.4, 5.5); wingShape.closePath();
-    const wing = r.mesh(group, r.keep(new T.ExtrudeGeometry(wingShape, { depth: 0.2, bevelEnabled: false })), r.mat.white, [0, 3.25, 0]); wing.rotation.x = Math.PI / 2;
-    const engine = r.cylinder(group, 0.88, 0.88, 3.7, [side * 5.4, 2.4, 1.7], r.mat.white, 24); engine.rotation.x = Math.PI / 2;
-    const intake = r.cylinder(group, 0.71, 0.71, 0.08, [side * 5.4, 2.4, -0.18], r.mat.black, 24); intake.rotation.x = Math.PI / 2;
-    const tailWing = r.box(group, [7.8, 0.17, 1.65], [side * 3, 5.4, 15.7], r.mat.white); tailWing.rotation.y = -side * 0.28;
-    const mark = textPlate(k, group, 'Garuda Indonesia', [side * 1.92, 5.15, -4], 10.6, '#28666d'); mark.rotation.y = side * Math.PI / 2;
-  }
-  const finGeometry = new T.BufferGeometry();
-  finGeometry.setAttribute('position', new T.Float32BufferAttribute([0, 4.5, 11, 0, 11.4, 17, 0, 5, 18.8], 3)); finGeometry.computeVertexNormals();
-  const finMaterial = color(k, 'tail-double', '#117b8d', { side: T.DoubleSide, roughness: 0.45 });
-  r.mesh(group, r.keep(finGeometry), finMaterial);
-  for (const side of [-1, 1]) {
-    for (let index = 0; index < 3; index += 1) {
-      const stripe = r.box(group, [0.022, 0.26, 2.3], [side * 0.025, 7 + index * 0.7, 16.2 + index * 0.25], index % 2 ? r.mat.white : teal);
-      stripe.rotation.x = 0.36;
-    }
-  }
-  for (const z of [-11, 5.7]) {
-    r.cylinder(group, 0.11, 0.11, 1.8, [0, 1.75, z], r.mat.metal, 8);
-    for (const x of [-0.33, 0.33]) { const wheel = r.cylinder(group, 0.46, 0.46, 0.22, [x, 0.55, z], r.mat.black, 16); wheel.rotation.z = Math.PI / 2; }
+    const x = side * 3.1;
+    beam(k, group, [x, .65, 4.2], [x, 3.65, 3.6], .13);
+    beam(k, group, [side * 1.9, 2.9, 2.7], [x, 1.45, 4], .075);
+    r.box(group, [.24, .18, 1.65], [x, .6, 4.2], hub);
+    for (const dx of [-.32, .32]) for (const dz of [-.58, .58]) wheel(x + dx, .53, 4.2 + dz, .53, .29);
   }
   parent.add(group); return group;
 }
@@ -250,7 +236,7 @@ export function createHomeWorld(r: WorldResources): UmrohWorld {
   }
   luggage(k, group, [1.1, 0.16, 0.6], 1.1);
   luggage(k, group, [1.8, 0.16, 0.9], 0.85, r.mat.darkStone);
-  vehicle(k, group, 'bluebird', [4.8, 0, 15.5], Math.PI / 2);
+  vehicle(k, group, 'taxi', [4.8, 0, 15.5], Math.PI / 2);
   r.sign(group, 'RUMAH · INDONESIA', 'Awal dan akhir perjalanan umroh', [0, 3.0, -1.72], 4.6);
   return {
     group, spawn: [-2.3, 1.68, 7.4], lookAt: [0, 1.8, -1.7], overview: [24, 16, 32],
@@ -266,14 +252,14 @@ export function createHomeWorld(r: WorldResources): UmrohWorld {
     landmarks: [
       { id: 'home-porch', label: 'Teras rumah', position: [-1.2, 1.68, 3.2], lookAt: [0, 1.8, -1.7] },
       { id: 'home-luggage', label: 'Koper siap', position: [3.7, 1.68, 3.4], lookAt: [1.4, 0.8, 0.8] },
-      { id: 'home-taxi', label: 'Taksi Bluebird', position: [0.1, 1.68, 12], lookAt: [4.8, 0.9, 15.5] },
+      { id: 'home-taxi', label: 'Taksi', position: [0.1, 1.68, 12], lookAt: [4.8, 0.9, 15.5] },
     ],
   };
 }
 
 function street(k: Kit, group: T.Group, kind: TaxiKind, returning: boolean): void {
   const { r } = k;
-  const ground = r.floor(group, 1600, 1600, kind === 'bluebird' ? r.mat.paving : r.mat.sand); ground.position.y = -0.02;
+  const ground = r.floor(group, 1600, 1600, kind === 'taxi' ? r.mat.paving : r.mat.sand); ground.position.y = -0.02;
   r.box(group, [18, 0.04, 1800], [0, 0, -450], r.mat.asphalt);
   for (const x of [-8.6, -2.9, 2.9, 8.6]) {
     if (Math.abs(x) > 8) r.box(group, [0.11, 0.02, 1800], [x, 0.035, -450], r.mat.white);
@@ -282,25 +268,25 @@ function street(k: Kit, group: T.Group, kind: TaxiKind, returning: boolean): voi
   for (const side of [-1, 1]) {
     r.box(group, [4.5, 0.15, 1200], [side * 11.7, 0.05, -330], r.mat.paving);
     for (let i = 0; i < 14; i += 1) {
-      const z = 150 - i * 43, x = side * (22 + i % 3 * 3), height = kind === 'bluebird' ? 7 + i % 4 * 6 : 9 + i % 5 * 3;
-      r.box(group, [13, height, 24], [x, height / 2, z], kind === 'bluebird' && i % 3 === 0 ? r.mat.white : r.mat.limestone);
+      const z = 150 - i * 43, x = side * (22 + i % 3 * 3), height = kind === 'taxi' ? 7 + i % 4 * 6 : 9 + i % 5 * 3;
+      r.box(group, [13, height, 24], [x, height / 2, z], kind === 'taxi' && i % 3 === 0 ? r.mat.white : r.mat.limestone);
       for (let level = 0; level < Math.min(6, Math.floor(height / 3)); level += 1) {
         for (let bay = -2; bay <= 2; bay += 1) r.box(group, [0.05, 1.5, 1.65], [x - side * 6.54, 2.6 + level * 2.9, z + bay * 3.4], r.mat.glass);
       }
-      palm(k, group, side * 11.6, z + 17, kind === 'bluebird' ? 6.5 : 8);
+      palm(k, group, side * 11.6, z + 17, kind === 'taxi' ? 6.5 : 8);
       r.cylinder(group, 0.07, 0.1, 7, [side * 9.8, 3.5, z], r.mat.metal, 8);
       r.box(group, [1.4, 0.13, 0.3], [side * 9.3, 7.05, z], r.mat.white);
     }
   }
-  const title = kind === 'bluebird' ? returning ? 'JAKARTA · MENUJU RUMAH' : 'BANDARA SOEKARNO–HATTA' : returning ? 'STASIUN HARAMAIN' : 'MADINAH · MASJID NABAWI';
-  r.sign(group, title, kind === 'bluebird' ? 'Perjalanan bersama Bluebird' : 'Perjalanan bersama Uber', [0, 6.6, -105], 12);
+  const title = kind === 'taxi' ? returning ? 'JAKARTA · MENUJU RUMAH' : 'BANDARA SOEKARNO–HATTA' : returning ? 'STASIUN HARAMAIN' : 'MADINAH · MASJID NABAWI';
+  r.sign(group, title, kind === 'taxi' ? 'Perjalanan dengan taksi' : 'Perjalanan bersama Uber', [0, 6.6, -105], 12);
   for (const x of [-8, 8]) r.cylinder(group, 0.15, 0.15, 7, [x, 3.5, -105], r.mat.metal, 10);
   beam(k, group, [-8, 7, -105], [8, 7, -105], 0.15);
 }
 
 export function createTaxiWorld(r: WorldResources, kind: TaxiKind, returning = false): UmrohWorld {
   const k = kit(r), group = new T.Group(), scenery = new T.Group();
-  group.name = kind === 'bluebird' ? 'Bluebird — perjalanan Indonesia' : 'Uber — perjalanan Madinah';
+  group.name = kind === 'taxi' ? 'Taksi — perjalanan Indonesia' : 'Uber — perjalanan Madinah';
   scenery.name = 'Pemandangan jalan bergerak'; scenery.userData.dynamic = true;
   street(k, scenery, kind, returning); group.add(scenery);
   vehicle(k, group, kind, [0, 0, 0], 0);
