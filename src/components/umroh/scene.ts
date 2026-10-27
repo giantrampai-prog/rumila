@@ -272,7 +272,7 @@ export class UmrohScene {
     const progressRestored = isTawafScene(this.state) && old.progress !== this.state.progress && !old.running && !this.state.running && !this.state.paused;
     if (changed || framingChanged || progressRestored || old.stage !== next.stage || old.chapter !== next.chapter || old.view !== this.state.view || old.flightCamera !== this.state.flightCamera) { this.pauseInput(); this.resetCamera(); }
     if (isTawafScene(this.state) && old.running !== this.state.running) this.pauseInput();
-    this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused;
+    this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !this.isDroneView() && !isGuidedTawaf(this.state) && !this.state.paused;
     if (isGuidedTawaf(this.state)) { this.pressed.clear(); this.forward = this.right = 0; this.frameTawaf(); }
     else if (isGuidedTawaf(old) && isTawafScene(this.state) && !this.state.paused && old.progress !== this.state.progress) this.frameTawaf();
     if (this.state.paused) this.pauseInput();
@@ -291,6 +291,11 @@ export class UmrohScene {
   }
   private isRide(): boolean { return ['taxi-cgk', 'taxi-home', 'uber', 'haramain', 'garuda-jed', 'garuda-cgk', 'flight-jed', 'flight-cgk', 'journey', 'jeddah-bus', 'boarding'].includes(this.worldKey ?? ''); }
   private isSeatedView(): boolean { return this.state.view === 'follow' && this.isRide(); }
+  private isDroneView(): boolean { return this.state.view === 'overview' && Boolean(this.world?.drone); }
+  private placeDrone(): void {
+    const pose = this.world.drone!(this.elapsed, this.travel);
+    this.camera.position.set(...pose.position); this.camera.lookAt(this.tmp.set(...pose.lookAt));
+  }
   private isAutomaticFlightView(): boolean { return Boolean(this.world?.flight) && this.state.flightCamera === 'auto' && !this.reducedMotion; }
   /** Cinematic outside shots chosen by flight phase: chase, runway spotter, belly, cruise orbit, approach. */
   private frameFlight(delta: number): void {
@@ -352,6 +357,7 @@ export class UmrohScene {
     frame.chapter = this.state.chapter; frame.step = this.state.step ?? 0; frame.travel = this.travel; frame.time = this.elapsed; frame.delta = delta;
     frame.running = this.state.running && !this.state.paused; frame.reducedMotion = this.reducedMotion; frame.sunset = this.state.timeOfDay === 'sunset';
     frame.sky = world.telemetry ? this.sky : undefined;
+    frame.view = this.state.view;
     world.animate(frame);
     const telemetry = world.telemetry; if (!telemetry) return;
     // Inside the cloud layer the view closes in to a bright grey.
@@ -525,6 +531,7 @@ export class UmrohScene {
     if (this.world.rail && this.state.view !== 'overview') { this.placeOnRail(); return; }
     if (this.world.seat && this.world.vehicle && this.isSeatedView()) { this.placeSeated(delta); return; }
     if (this.isAutomaticFlightView()) { if (!this.state.paused) this.frameFlight(delta); return; }
+    if (this.isDroneView()) { this.placeDrone(); return; }
     if (!this.state.paused) {
       if (isGuidedTawaf(this.state)) this.frameTawaf();
       else {
@@ -532,7 +539,7 @@ export class UmrohScene {
         if (this.state.view === 'follow' && !this.isRide()) { this.tmp.copy(this.avatar).sub(this.lastFollow); this.camera.position.add(this.tmp); this.orbit.target.add(this.tmp); this.lastFollow.copy(this.avatar); }
       }
     }
-    if (this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused) this.orbit.update();
+    if (this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !this.isDroneView() && !isGuidedTawaf(this.state) && !this.state.paused) this.orbit.update();
     if (this.state.view === 'follow' && !this.isRide() && !isGuidedTawaf(this.state) && !this.state.paused) {
       const safe = moveWithinWorld(this.avatar.x, this.avatar.z, this.camera.position.x - this.avatar.x, this.camera.position.z - this.avatar.z, this.world.bounds, this.world.blockers, .35);
       this.camera.position.x = safe.x; this.camera.position.z = safe.z; this.camera.lookAt(this.orbit.target);

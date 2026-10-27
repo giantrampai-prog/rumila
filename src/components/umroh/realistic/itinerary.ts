@@ -464,15 +464,20 @@ export function createTaxiWorld(r: WorldResources, kind: TaxiKind, returning = f
 
 function railLandscape(k: Kit, group: T.Group): void {
   const { r } = k, ground = r.floor(group, 3000, 4000, r.mat.sand); ground.position.set(0, -1.5, -800);
-  for (const x of [-6, 6]) {
+  // Our train runs on the track at x = 0; the second line carries trains the other way.
+  for (const x of [0, -5]) {
     r.box(group, [3.3, 0.18, 3600], [x, -1.33, -700], r.mat.darkStone);
     for (const rail of [-0.75, 0.75]) r.box(group, [0.075, 0.13, 3600], [x + rail, -1.15, -700], r.mat.metal);
     for (let z = 300; z > -2300; z -= 3.5) r.box(group, [2.3, 0.12, 0.19], [x, -1.24, z], r.mat.limestone);
   }
-  for (let z = 300; z > -2300; z -= 75) {
-    for (const x of [-10, 10]) r.cylinder(group, 0.1, 0.14, 7.5, [x, 2.25, z], r.mat.metal, 8);
-    beam(k, group, [-10, 6, z], [10, 6, z], 0.09);
+  for (let z = 300; z > -2300; z -= 60) {
+    for (const x of [3.6, -8.6]) r.cylinder(group, 0.12, 0.16, 8, [x, 2.5, z], r.mat.metal, 8);
+    beam(k, group, [-8.6, 6.2, z], [3.6, 6.2, z], 0.09);
+    for (const x of [0, -5]) r.box(group, [0.05, 0.6, 0.05], [x, 5.9, z], r.mat.metal);
   }
+  // Contact wires above both tracks.
+  for (const x of [0, -5]) r.box(group, [0.03, 0.03, 3600], [x, 5.6, -700], r.mat.black);
+
   for (const side of [-1, 1]) {
     const terrain = new T.PlaneGeometry(650, 3500, 32, 72); terrain.rotateX(-Math.PI / 2);
     const positions = terrain.getAttribute('position');
@@ -490,6 +495,45 @@ function railLandscape(k: Kit, group: T.Group): void {
     r.box(group, [7, 3.1, 11], [40 + index % 3 * 14, 0.1, z], r.mat.limestone);
     r.cylinder(group, 1.3, 1.3, 3.2, [48 + index % 3 * 14, 0.1, z], r.mat.white, 12);
   }
+}
+
+/** Exterior of a Haramain trainset; `count` cars of 25 m with streamlined power cars at each end. */
+function haramainTrain(k: Kit, count: number, firstZ: number): T.Group {
+  const { r } = k, train = new T.Group(); train.name = 'Kereta Haramain — luar'; train.userData.dynamic = true;
+  const body = color(k, 'haramain-body', '#f4f2ec', { roughness: 0.35, metalness: 0.2 });
+  const band = color(k, 'haramain-band', '#2c3338', { roughness: 0.2, metalness: 0.4 });
+  const gold = color(k, 'haramain-gold', '#b8893b', { roughness: 0.35, metalness: 0.6 });
+  const under = color(k, 'haramain-under', '#3a3d40', { roughness: 0.8 });
+  const rounded = geo(k, 'train-rounded', () => new RoundedBoxGeometry(1, 1, 1, 3, 0.18));
+  const shell = (size: Position, at: Position, material: T.Material) => { const mesh = r.mesh(train, rounded, material, at); mesh.scale.set(...size); return mesh; };
+  for (let i = 0; i < count; i++) {
+    const z = firstZ + i * 25.4;
+    // Slightly wider than the interior walls so nothing pokes through from inside.
+    shell([3.62, 3.25, 25], [0, 1.52, z], body);
+    shell([3.66, 0.9, 24.2], [0, 1.62, z], band);
+    shell([3.68, 0.12, 24.6], [0, 0.95, z], gold);
+    r.box(train, [2.9, 0.55, 23], [0, -0.35, z], under);
+    for (const dz of [-8.5, 8.5]) for (const dx of [-0.75, 0.75]) {
+      const wheel = r.cylinder(train, 0.46, 0.46, 0.14, [dx, -0.62, z + dz], r.mat.black, 16); wheel.rotation.z = Math.PI / 2;
+    }
+    // Gangway bellows between cars and roof equipment.
+    if (i < count - 1) r.box(train, [2.6, 2.6, 0.6], [0, 1.4, z + 12.7], under);
+    r.box(train, [1.4, 0.3, 4], [0, 3.1, z - 6], under);
+  }
+  // Streamlined noses at both ends, with a pantograph reaching the contact wire.
+  for (const end of [-1, 1]) {
+    const z = end < 0 ? firstZ - 12.5 : firstZ + (count - 1) * 25.4 + 12.5;
+    const nose = r.sphere(train, [1.81, 1.6, 7], [0, 1.3, z], body); void nose;
+    const visor = r.sphere(train, [1.2, 0.55, 3.6], [0, 2.05, z + end * 2.6], band); void visor;
+    r.sphere(train, [1.84, 0.1, 6.6], [0, 0.95, z], gold);
+    r.box(train, [2.9, 0.55, 6], [0, -0.35, z - end * 1], under);
+    for (const dx of [-0.6, 0.6]) r.sphere(train, [0.18, 0.1, 0.05], [dx, 0.7, z + end * 6.95], color(k, 'train-headlight', '#fffbe8', { emissive: '#fff4cc', emissiveIntensity: 1.2 }));
+  }
+  beam(k, train, [0, 3.2, firstZ + 5], [0, 4.3, firstZ + 6.5], 0.04);
+  beam(k, train, [0, 4.3, firstZ + 6.5], [0, 5.55, firstZ + 5.5], 0.03);
+  r.box(train, [1.6, 0.05, 0.25], [0, 5.57, firstZ + 5.5], r.mat.metal);
+  r.batch(train);
+  return train;
 }
 
 export function createHaramainWorld(r: WorldResources): UmrohWorld {
@@ -517,10 +561,25 @@ export function createHaramainWorld(r: WorldResources): UmrohWorld {
     r.box(group, [0.64, 0.83, 0.08], [0, 1.35, z + (z < 0 ? 0.13 : -0.13)], r.mat.glass);
   }
   r.sign(group, 'HARAMAIN · MADINAH', 'Jeddah Airport → Madinah', [0, 2.42, -11.85], 2.5);
+  // Outside of our own train (the passenger car is the third of six), shown only from the drone.
+  const exterior = haramainTrain(k, 6, -50.8); exterior.position.y = 0; exterior.visible = false; group.add(exterior);
+  // A train in the opposite direction passes halfway through the trip.
+  const oncoming = haramainTrain(k, 4, 0); oncoming.position.x = -5; oncoming.rotation.y = Math.PI; scenery.add(oncoming);
+  // 1500 m in 18 active seconds is about 300 km/h, the line's running speed.
+  const distance = 1500;
   return {
     group, spawn: [0, 1.65, 7.6], lookAt: [-1.3, 1.55, -1.5], overview: [0, 2.3, 10.5], indoor: true,
     bounds: { minX: -0.48, maxX: 0.48, minZ: -10.7, maxZ: 10.7 }, blockers: [],
-    motion: { group: scenery, axis: 'z', distance: 900 },
+    motion: { group: scenery, axis: 'z', distance },
+    animate(frame) {
+      exterior.visible = frame.view === 'overview';
+      oncoming.position.z = -1500 + frame.travel * distance;
+    },
+    // The drone circles slowly above the speeding train; the desert races underneath.
+    drone(time) {
+      const a = 0.9 + time * 0.07, radius = 46 + Math.sin(time * 0.11) * 10, height = 16 + Math.sin(time * 0.17) * 7;
+      return { position: [Math.cos(a) * radius, height, -10 + Math.sin(a) * radius], lookAt: [0, 1.2, -18] };
+    },
     landmarks: [
       { id: 'train-window', label: 'Pemandangan gurun', position: [0, 1.65, 7.6], lookAt: [-20, 1.5, -20] },
       { id: 'train-aisle', label: 'Lorong kereta', position: [0, 1.65, 9.8], lookAt: [0, 1.65, -10] },
