@@ -55,7 +55,7 @@ describe("Indonesia round-trip journey", () => {
       expect(parseJourneyProgress(serializeJourneyProgress(progress))).toEqual(progress);
     }
     expect(seen).toEqual([
-      "rumah", "taxi_cgk", "cgk", "garuda_jed", "jeddah", "haramain", "madinah_station",
+      "rumah", "taxi_cgk", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate", "cgk_boarding", "garuda_jed", "jeddah", "haramain", "madinah_station",
       "uber_nabawi", "nabawi", "rawdah", "salam", "umroh", "makkah_jed", "jeddah_pulang",
       "garuda_cgk", "cgk_pulang", "taxi_rumah", "rumah_selesai",
     ]);
@@ -63,12 +63,28 @@ describe("Indonesia round-trip journey", () => {
     expect(nextJourneyChapter(progress)).toBe(progress);
   });
 
+  it("walks through the Soekarno–Hatta departure step by step before boarding", () => {
+    const airport = ["cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate"] as const;
+    for (const id of airport) {
+      const chapter = getJourneyChapter(id);
+      expect(chapter.kind).toBe("lesson");
+      expect(chapter.steps?.length).toBeGreaterThanOrEqual(3);
+    }
+    expect(getJourneyChapter("cgk").steps?.at(-1)).toMatch(/boarding pass/);
+    expect(getJourneyChapter("cgk_boarding").kind).toBe("travel");
+    // A save made before the airport was split still resumes at check-in.
+    const legacy = { ...createJourneyProgress(), chapter: "cgk" };
+    expect(parseJourneyProgress(JSON.stringify(legacy))?.chapter).toBe("cgk");
+    expect(nextJourneyChapter(legacy as JourneyProgress).chapter).toBe("cgk_imigrasi");
+  });
+
   it.each(JOURNEY_CHAPTERS.filter((chapter) => chapter.kind === "travel"))(
     "waits for $id travel to finish and still requires acknowledgement",
     (chapter) => {
       const initial = reachChapter(chapter.id);
       expect(chapter.durationSeconds).toBeGreaterThanOrEqual(12);
-      expect(chapter.durationSeconds).toBeLessThanOrEqual(20);
+      // Flights stage pushback, takeoff, cruise and landing, so they run longer than ground rides.
+      expect(chapter.durationSeconds).toBeLessThanOrEqual(chapter.id.startsWith("garuda_") ? 60 : 20);
       expect(nextJourneyChapter(initial)).toBe(initial);
       const almost = advanceJourneyTravel(initial, chapter.durationSeconds! - 0.001);
       expect(nextJourneyChapter(almost)).toBe(almost);

@@ -4,6 +4,30 @@ export type MaterialName = 'marble' | 'limestone' | 'plaster' | 'gold' | 'darkGo
 export type Position = [number, number, number];
 export interface Rect { minX: number; maxX: number; minZ: number; maxZ: number }
 export interface Landmark { id: string; label: string; position: Position; lookAt: Position }
+export interface CameraPose { position: Position; lookAt: Position }
+/** Per-frame context handed to animated worlds; progress values are smoothed by the scene. */
+export interface WorldFrame {
+  chapter?: string;
+  /** Completed checklist steps in the current lesson chapter. */
+  step: number;
+  /** Smoothed travel progress, 0–1. */
+  travel: number;
+  time: number;
+  delta: number;
+  running: boolean;
+  reducedMotion: boolean;
+  sunDirection: T.Vector3;
+  sunset: boolean;
+  /** Atmosphere shader shared by the scene; flight worlds tune it for altitude. */
+  sky?: { material: T.ShaderMaterial; visible: boolean };
+}
+/** Live flight values a world publishes for cameras, lights and sound. */
+export interface FlightTelemetry {
+  altitude: number; speed: number; thrust: number; onGround: boolean; shake: number; inCloud: number;
+  seatbelt: boolean; phase: string; local: number; heading: number; pitch: number; bank: number;
+  /** Converts a point in the active runway frame to scene coordinates. */
+  toScene(x: number, y: number, z: number, arrival?: boolean): T.Vector3;
+}
 export interface UmrohWorld {
   group: T.Group;
   spawn: Position;
@@ -18,6 +42,16 @@ export interface UmrohWorld {
   /** Complete aircraft used only by exterior flight cameras. */
   flight?: { aircraft: T.Group };
   crowd?: { kind: 'tawaf' | 'walk' | 'sai'; count: number; radius?: number; area?: Rect };
+  /** Walking viewpoints keyed by journey chapter, for worlds shared by several chapters. */
+  stations?: Partial<Record<string, CameraPose>>;
+  /** Scripted camera path following travel progress (for example boarding the aircraft). */
+  rail?: (progress: number) => CameraPose;
+  /** Seated eye point inside `vehicle`, in its local coordinates. */
+  seat?: CameraPose;
+  /** Moves with flight attitude; batched separately so it can rotate as one object. */
+  vehicle?: T.Group;
+  telemetry?: FlightTelemetry;
+  animate?: (frame: WorldFrame) => void;
 }
 export interface WorldResources {
   mat: Record<MaterialName, T.MeshStandardMaterial>;
@@ -28,4 +62,6 @@ export interface WorldResources {
   mesh(parent: T.Object3D, geometry: T.BufferGeometry, material: T.Material, at?: Position): T.Mesh;
   floor(parent: T.Object3D, width: number, depth: number, material?: T.Material): T.Mesh;
   sign(parent: T.Object3D, title: string, subtitle: string, at: Position, width?: number): T.Mesh;
+  /** Collapses static descendants into one mesh per material. */
+  batch(group: T.Group): void;
 }

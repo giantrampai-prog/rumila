@@ -4,29 +4,29 @@ import { createSeatedPassengers } from './pilgrims';
 import { createGarudaAircraft } from './aircraft';
 
 /** Original, human-scale travel environments. Operator names are plain text, not copied logos. */
-interface Kit { r: WorldResources; geometries: Map<string, T.BufferGeometry>; materials: Map<string, T.MeshStandardMaterial> }
+export interface Kit { r: WorldResources; geometries: Map<string, T.BufferGeometry>; materials: Map<string, T.MeshStandardMaterial> }
 type TaxiKind = 'taxi' | 'uber';
 const UP = new T.Vector3(0, 1, 0);
 
-function kit(r: WorldResources): Kit { return { r, geometries: new Map(), materials: new Map() }; }
-function color(k: Kit, name: string, value: string, options: T.MeshStandardMaterialParameters = {}): T.MeshStandardMaterial {
+export function kit(r: WorldResources): Kit { return { r, geometries: new Map(), materials: new Map() }; }
+export function color(k: Kit, name: string, value: string, options: T.MeshStandardMaterialParameters = {}): T.MeshStandardMaterial {
   let result = k.materials.get(name);
   if (!result) { result = k.r.keep(new T.MeshStandardMaterial({ color: value, roughness: 0.72, ...options })); k.materials.set(name, result); }
   return result;
 }
-function geo(k: Kit, key: string, make: () => T.BufferGeometry): T.BufferGeometry {
+export function geo(k: Kit, key: string, make: () => T.BufferGeometry): T.BufferGeometry {
   let result = k.geometries.get(key);
   if (!result) { result = k.r.keep(make()); k.geometries.set(key, result); }
   return result;
 }
-function beam(k: Kit, parent: T.Object3D, a: Position, b: Position, radius: number, material = k.r.mat.metal): void {
+export function beam(k: Kit, parent: T.Object3D, a: Position, b: Position, radius: number, material = k.r.mat.metal): void {
   const from = new T.Vector3(...a), to = new T.Vector3(...b), delta = to.clone().sub(from);
   const object = k.r.mesh(parent, geo(k, 'unit-rod', () => new T.CylinderGeometry(1, 1, 1, 8)), material);
   object.position.copy(from).add(to).multiplyScalar(0.5);
   object.scale.set(radius, delta.length(), radius);
   object.quaternion.setFromUnitVectors(UP, delta.normalize());
 }
-function textPlate(k: Kit, parent: T.Object3D, text: string, at: Position, width: number, ink = '#ffffff', background = 'transparent'): T.Mesh {
+export function textPlate(k: Kit, parent: T.Object3D, text: string, at: Position, width: number, ink = '#ffffff', background = 'transparent'): T.Mesh {
   const canvas = document.createElement('canvas'); canvas.width = 1024; canvas.height = 192;
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('Tidak dapat membuat papan perjalanan.');
@@ -39,7 +39,7 @@ function textPlate(k: Kit, parent: T.Object3D, text: string, at: Position, width
   object.scale.setScalar(width); object.castShadow = false;
   return object;
 }
-function palm(k: Kit, parent: T.Object3D, x: number, z: number, height = 7): void {
+export function palm(k: Kit, parent: T.Object3D, x: number, z: number, height = 7): void {
   k.r.cylinder(parent, 0.16, 0.31, height, [x, height / 2, z], k.r.mat.wood, 10);
   const leaf = color(k, 'leaf', '#3c6747', { side: T.DoubleSide, roughness: 0.95 });
   for (let index = 0; index < 9; index += 1) {
@@ -55,7 +55,7 @@ function palm(k: Kit, parent: T.Object3D, x: number, z: number, height = 7): voi
     object.rotation.y = index / 9 * Math.PI * 2; object.rotation.x = index % 2 ? -0.12 : 0.15;
   }
 }
-function luggage(k: Kit, parent: T.Object3D, at: Position, size = 1, material = k.r.mat.green): void {
+export function luggage(k: Kit, parent: T.Object3D, at: Position, size = 1, material = k.r.mat.green): void {
   const bag = new T.Group(); bag.position.set(...at); bag.scale.setScalar(size);
   k.r.box(bag, [0.47, 0.68, 0.29], [0, 0.4, 0], material);
   for (const x of [-0.15, -0.05, 0.05, 0.15]) k.r.box(bag, [0.018, 0.58, 0.02], [x, 0.4, 0.155], k.r.mat.darkStone);
@@ -63,7 +63,7 @@ function luggage(k: Kit, parent: T.Object3D, at: Position, size = 1, material = 
   for (const x of [-0.1, 0.1]) k.r.cylinder(bag, 0.012, 0.012, 0.35, [x, 0.86, 0], k.r.mat.metal, 6);
   k.r.box(bag, [0.23, 0.04, 0.04], [0, 1.04, 0], k.r.mat.black); parent.add(bag);
 }
-function seat(k: Kit, parent: T.Object3D, x: number, z: number, upholstery: T.Material, facing = 0): void {
+export function seat(k: Kit, parent: T.Object3D, x: number, z: number, upholstery: T.Material, facing = 0): void {
   const group = new T.Group(); group.position.set(x, 0, z); group.rotation.y = facing;
   k.r.box(group, [0.47, 0.12, 0.5], [0, 0.5, 0], upholstery);
   const back = k.r.box(group, [0.48, 0.73, 0.12], [0, 0.93, 0.25], upholstery); back.rotation.x = -0.08;
@@ -72,11 +72,11 @@ function seat(k: Kit, parent: T.Object3D, x: number, z: number, upholstery: T.Ma
   for (const dx of [-0.27, 0.27]) k.r.box(group, [0.06, 0.055, 0.43], [dx, 0.72, 0], k.r.mat.darkStone);
   parent.add(group);
 }
-function bench(k: Kit, parent: T.Object3D, x: number, z: number, count = 4): void {
+export function bench(k: Kit, parent: T.Object3D, x: number, z: number, count = 4): void {
   const fabric = color(k, 'terminal-seat', '#3a454b');
   for (let index = 0; index < count; index += 1) seat(k, parent, x + (index - (count - 1) / 2) * 0.63, z, fabric);
 }
-function roof(k: Kit, parent: T.Object3D, width: number, length: number, base: number, rise: number, at: Position = [0, 0, 0]): void {
+export function roof(k: Kit, parent: T.Object3D, width: number, length: number, base: number, rise: number, at: Position = [0, 0, 0]): void {
   const material = color(k, 'roof-lining', '#dfdfda', { side: T.DoubleSide });
   const object = k.r.mesh(parent, geo(k, `roof-${width}-${length}-${base}-${rise}`, () => {
     const positions: number[] = [], indices: number[] = [];
@@ -298,98 +298,6 @@ export function createTaxiWorld(r: WorldResources, kind: TaxiKind, returning = f
       { id: 'taxi-front', label: 'Pemandangan jalan', position: [0, 1.25, 0.96], lookAt: [0, 1.3, -60] },
       { id: 'taxi-side', label: 'Jendela penumpang', position: [-0.15, 1.25, 0.94], lookAt: [-18, 2.5, -10] },
     ],
-  };
-}
-
-function airportCounters(k: Kit, group: T.Group, departing: boolean, blockers: Rect[]): void {
-  const { r } = k;
-  if (departing) {
-    for (let i = 0; i < 6; i += 1) {
-      const z = 7 - i * 4;
-      r.box(group, [4, 1.12, 1.7], [-23, 0.56, z], r.mat.limestone);
-      r.box(group, [4.2, 0.12, 1.85], [-23, 1.18, z], r.mat.darkStone);
-      r.box(group, [0.75, 0.46, 0.06], [-23, 1.63, z], r.mat.black);
-      r.box(group, [1.45, 0.18, 1.7], [-19.8, 0.23, z], r.mat.metal);
-      luggage(k, group, [-19.8, 0.36, z], 0.85);
-    }
-    blockers.push({ minX: -26, maxX: -18.5, minZ: -15, maxZ: 9 });
-    r.sign(group, 'CHECK-IN', 'Dokumen perjalanan · bagasi', [-22, 4.2, -15.7], 8);
-    for (let z = 5; z >= -12; z -= 4) {
-      r.cylinder(group, 0.04, 0.04, 0.95, [-15, 0.47, z], r.mat.metal, 8);
-      r.cylinder(group, 0.23, 0.23, 0.05, [-15, 0.03, z], r.mat.metal, 12);
-    }
-  } else {
-    r.box(group, [11, 0.55, 20], [-24, 0.27, -2], r.mat.metal);
-    r.box(group, [10.5, 0.07, 19.5], [-24, 0.6, -2], r.mat.black);
-    r.box(group, [6.8, 0.18, 15.8], [-24, 0.7, -2], r.mat.darkStone);
-    for (let z = -9; z <= 6; z += 5) luggage(k, group, [-28.2, 0.66, z], 1.1);
-    blockers.push({ minX: -30, maxX: -18, minZ: -13, maxZ: 9 });
-    r.sign(group, 'PENGAMBILAN BAGASI', 'Periksa koper sebelum melanjutkan', [-24, 4.2, -14], 9);
-  }
-}
-
-export function createAirportWorld(r: WorldResources, airport: 'cgk' | 'jed', returning = false): UmrohWorld {
-  const k = kit(r), group = new T.Group(), blockers: Rect[] = [];
-  const departing = airport === 'cgk' ? !returning : returning;
-  group.name = airport === 'cgk' ? 'Bandara Soekarno–Hatta — Indonesia' : 'Bandara King Abdulaziz — Jeddah';
-  r.floor(group, 85, 105, r.mat.marble);
-  const apron = r.floor(group, 420, 400, r.mat.paving); apron.position.set(0, -0.1, -230);
-  for (const x of [-32, 32]) {
-    for (let z = -42; z <= 42; z += 14) {
-      r.cylinder(group, 0.35, 0.5, 11.4, [x, 5.7, z], r.mat.metal, 16);
-      blockers.push({ minX: x - 0.6, maxX: x + 0.6, minZ: z - 0.6, maxZ: z + 0.6 });
-      beam(k, group, [x, 8.6, z], [x * 0.78, 12.7, z], 0.16);
-      beam(k, group, [x, 8.6, z], [x * 1.09, 11.1, z], 0.16);
-    }
-  }
-  roof(k, group, 83, 104, airport === 'cgk' ? 10.5 : 11.5, airport === 'cgk' ? 4.8 : 6.5);
-  for (let x = -40; x <= 40; x += 5) {
-    r.box(group, [0.14, 10.6, 0.18], [x, 5.3, -48], r.mat.metal);
-    if (x < 40) r.box(group, [4.85, 10.1, 0.06], [x + 2.5, 5.1, -48], r.mat.glass);
-  }
-  for (const y of [2.8, 5.6, 8.4]) r.box(group, [82, 0.11, 0.18], [0, y, -48], r.mat.metal);
-  for (const side of [-1, 1]) {
-    r.box(group, [0.2, 10.5, 103], [side * 41, 5.25, 0], r.mat.plaster);
-    for (let z = -40; z <= 40; z += 10) r.box(group, [0.23, 4.4, 6], [side * 40.85, 3.2, z], r.mat.glass);
-  }
-  airportCounters(k, group, departing, blockers);
-  for (const x of [16, 24]) {
-    for (const z of [-18, -24, -30]) {
-      bench(k, group, x, z, 5);
-      blockers.push({ minX: x - 1.9, maxX: x + 1.9, minZ: z - 0.55, maxZ: z + 0.65 });
-    }
-  }
-  const signTitle = airport === 'cgk' ? 'SOEKARNO–HATTA · CGK' : 'KING ABDULAZIZ · JEDDAH';
-  const subtitle = departing ? 'Keberangkatan internasional' : 'Kedatangan internasional';
-  r.sign(group, signTitle, subtitle, [0, 5.5, 13], 18);
-  if (airport === 'jed' && !returning) {
-    r.sign(group, 'HARAMAIN  →', 'Koneksi kereta di Terminal 1 · menuju Madinah', [24, 4.1, 7], 10);
-    for (const x of [18, 21, 24, 27]) {
-      r.box(group, [0.42, 1, 1.4], [x, 0.5, 8], r.mat.metal);
-      blockers.push({ minX: x - 0.3, maxX: x + 0.3, minZ: 7.1, maxZ: 8.9 });
-    }
-  } else r.sign(group, departing ? 'PINTU KEBERANGKATAN' : 'PENJEMPUTAN · TAKSI', departing ? 'Garuda Indonesia' : 'Lanjutkan perjalanan pulang', [20, 4.2, -38], 10);
-  r.box(group, [11, 0.12, 2.4], [0, 0.02, -68], r.mat.gold);
-  addGarudaAircraft(r, group, [-5, 0, -91], 1.05, -0.15);
-  // A covered boarding bridge and apron lane frame the aircraft through the glass wall.
-  r.box(group, [3.1, 3.5, 19], [12, 3.4, -57.5], r.mat.plaster);
-  r.box(group, [3.15, 1.6, 18], [12, 3.8, -57.5], r.mat.glass);
-  for (let z = -140; z >= -280; z -= 18) r.box(group, [0.25, 0.015, 9], [43, -0.07, z], r.mat.white);
-  for (const x of [-36, 36]) {
-    r.cylinder(group, 1.4, 1.6, 0.75, [x, 0.38, 33], r.mat.limestone, 16);
-    palm(k, group, x, 33, 6.2);
-    blockers.push({ minX: x - 1.8, maxX: x + 1.8, minZ: 31.2, maxZ: 34.8 });
-  }
-  return {
-    group, spawn: [2, 1.68, 31], lookAt: [0, 4, -39], overview: [35, 13, 39], indoor: true,
-    bounds: { minX: -38.5, maxX: 38.5, minZ: -45, maxZ: 44 }, blockers,
-    landmarks: [
-      { id: 'airport-hall', label: 'Aula terminal', position: [2, 1.68, 31], lookAt: [0, 4, -39] },
-      { id: 'airport-service', label: departing ? 'Check-in dan bagasi' : 'Ambil bagasi', position: [-12, 1.68, 7], lookAt: [-23, 1.5, -5] },
-      { id: 'airport-aircraft', label: 'Pesawat Garuda', position: [0, 1.68, -40], lookAt: [-5, 5, -90] },
-      { id: 'airport-next', label: airport === 'jed' && !returning ? 'Koneksi Haramain' : departing ? 'Pintu keberangkatan' : 'Penjemputan', position: [12, 1.68, 13], lookAt: [24, 3, airport === 'jed' && !returning ? 7 : -38] },
-    ],
-    crowd: { kind: 'walk', count: 48, area: { minX: -9, maxX: 9, minZ: -35, maxZ: 35 } },
   };
 }
 
