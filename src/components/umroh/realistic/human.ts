@@ -10,7 +10,9 @@ interface HumanPart {
   transforms: Float32Array; colors?: Float32Array; visible: Uint8Array;
 }
 export interface HumanAppearance { female: boolean; skin: T.Color; shirt: T.Color; trousers: T.Color; dress: T.Color; scarf: T.Color; hair: T.Color }
-export interface HumanPose { position: T.Vector3; angle: number; scale: number; gait: number; walking: boolean; seated?: boolean; driving?: boolean; headTurn?: number }
+export interface HumanPose { position: T.Vector3; angle: number; scale: number; gait: number; walking: boolean; seated?: boolean; driving?: boolean; headTurn?: number;
+  /** Optional shoulder rotation per arm (negative lifts forward), e.g. staff gesturing. */
+  arms?: [number, number]; forearms?: [number, number] }
 interface Joint { position: T.Vector3; rotation: T.Quaternion }
 const bones: Bone[] = ['body', 'head', 'leftUpperArm', 'rightUpperArm', 'leftForearm', 'rightForearm', 'leftThigh', 'rightThigh', 'leftCalf', 'rightCalf', 'leftFoot', 'rightFoot'];
 const axisX = new T.Vector3(1, 0, 0), axisY = new T.Vector3(0, 1, 0);
@@ -205,9 +207,11 @@ export class HumanBatch {
     this.joints.head.rotation.setFromAxisAngle(axisY, pose.headTurn ?? 0);
     for (const [side, sign] of [['left', -1], ['right', 1]] as const) {
       const stride = pose.walking ? Math.sin(pose.gait) * sign : 0;
-      const arm = pose.driving ? -.60 : pose.seated ? -.10 : stride * .24;
+      const custom = pose.arms?.[side === 'left' ? 0 : 1];
+      const arm = custom ?? (pose.driving ? -.60 : pose.seated ? -.10 : stride * .24);
       this.setJoint(`${side}UpperArm`, sign * .228, 1.375 + bob, -.005, arm);
-      this.child(`${side}Forearm`, `${side}UpperArm`, .275, pose.driving ? -2.35 : pose.seated ? -1.24 : arm - .10 - Math.max(0, stride) * .15);
+      const fore = pose.forearms?.[side === 'left' ? 0 : 1];
+      this.child(`${side}Forearm`, `${side}UpperArm`, .275, fore ?? (pose.driving ? -2.35 : pose.seated ? -1.24 : arm - .10 - Math.max(0, stride) * .15));
       const leg = pose.driving ? -Math.PI / 2 - .50 : pose.seated ? -Math.PI / 2 + .16 : -stride * .30;
       this.setJoint(`${side}Thigh`, sign * .102, .90 + bob, 0, leg);
       const knee = pose.seated ? .02 : leg + Math.max(0, -stride) * .40;

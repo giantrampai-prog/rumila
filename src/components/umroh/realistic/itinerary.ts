@@ -4,29 +4,29 @@ import { createSeatedPassengers } from './pilgrims';
 import { createGarudaAircraft } from './aircraft';
 
 /** Original, human-scale travel environments. Operator names are plain text, not copied logos. */
-interface Kit { r: WorldResources; geometries: Map<string, T.BufferGeometry>; materials: Map<string, T.MeshStandardMaterial> }
+export interface Kit { r: WorldResources; geometries: Map<string, T.BufferGeometry>; materials: Map<string, T.MeshStandardMaterial> }
 type TaxiKind = 'taxi' | 'uber';
 const UP = new T.Vector3(0, 1, 0);
 
-function kit(r: WorldResources): Kit { return { r, geometries: new Map(), materials: new Map() }; }
-function color(k: Kit, name: string, value: string, options: T.MeshStandardMaterialParameters = {}): T.MeshStandardMaterial {
+export function kit(r: WorldResources): Kit { return { r, geometries: new Map(), materials: new Map() }; }
+export function color(k: Kit, name: string, value: string, options: T.MeshStandardMaterialParameters = {}): T.MeshStandardMaterial {
   let result = k.materials.get(name);
   if (!result) { result = k.r.keep(new T.MeshStandardMaterial({ color: value, roughness: 0.72, ...options })); k.materials.set(name, result); }
   return result;
 }
-function geo(k: Kit, key: string, make: () => T.BufferGeometry): T.BufferGeometry {
+export function geo(k: Kit, key: string, make: () => T.BufferGeometry): T.BufferGeometry {
   let result = k.geometries.get(key);
   if (!result) { result = k.r.keep(make()); k.geometries.set(key, result); }
   return result;
 }
-function beam(k: Kit, parent: T.Object3D, a: Position, b: Position, radius: number, material = k.r.mat.metal): void {
+export function beam(k: Kit, parent: T.Object3D, a: Position, b: Position, radius: number, material = k.r.mat.metal): void {
   const from = new T.Vector3(...a), to = new T.Vector3(...b), delta = to.clone().sub(from);
   const object = k.r.mesh(parent, geo(k, 'unit-rod', () => new T.CylinderGeometry(1, 1, 1, 8)), material);
   object.position.copy(from).add(to).multiplyScalar(0.5);
   object.scale.set(radius, delta.length(), radius);
   object.quaternion.setFromUnitVectors(UP, delta.normalize());
 }
-function textPlate(k: Kit, parent: T.Object3D, text: string, at: Position, width: number, ink = '#ffffff', background = 'transparent'): T.Mesh {
+export function textPlate(k: Kit, parent: T.Object3D, text: string, at: Position, width: number, ink = '#ffffff', background = 'transparent'): T.Mesh {
   const canvas = document.createElement('canvas'); canvas.width = 1024; canvas.height = 192;
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('Tidak dapat membuat papan perjalanan.');
@@ -39,7 +39,7 @@ function textPlate(k: Kit, parent: T.Object3D, text: string, at: Position, width
   object.scale.setScalar(width); object.castShadow = false;
   return object;
 }
-function palm(k: Kit, parent: T.Object3D, x: number, z: number, height = 7): void {
+export function palm(k: Kit, parent: T.Object3D, x: number, z: number, height = 7): void {
   k.r.cylinder(parent, 0.16, 0.31, height, [x, height / 2, z], k.r.mat.wood, 10);
   const leaf = color(k, 'leaf', '#3c6747', { side: T.DoubleSide, roughness: 0.95 });
   for (let index = 0; index < 9; index += 1) {
@@ -55,7 +55,7 @@ function palm(k: Kit, parent: T.Object3D, x: number, z: number, height = 7): voi
     object.rotation.y = index / 9 * Math.PI * 2; object.rotation.x = index % 2 ? -0.12 : 0.15;
   }
 }
-function luggage(k: Kit, parent: T.Object3D, at: Position, size = 1, material = k.r.mat.green): void {
+export function luggage(k: Kit, parent: T.Object3D, at: Position, size = 1, material = k.r.mat.green): void {
   const bag = new T.Group(); bag.position.set(...at); bag.scale.setScalar(size);
   k.r.box(bag, [0.47, 0.68, 0.29], [0, 0.4, 0], material);
   for (const x of [-0.15, -0.05, 0.05, 0.15]) k.r.box(bag, [0.018, 0.58, 0.02], [x, 0.4, 0.155], k.r.mat.darkStone);
@@ -63,7 +63,7 @@ function luggage(k: Kit, parent: T.Object3D, at: Position, size = 1, material = 
   for (const x of [-0.1, 0.1]) k.r.cylinder(bag, 0.012, 0.012, 0.35, [x, 0.86, 0], k.r.mat.metal, 6);
   k.r.box(bag, [0.23, 0.04, 0.04], [0, 1.04, 0], k.r.mat.black); parent.add(bag);
 }
-function seat(k: Kit, parent: T.Object3D, x: number, z: number, upholstery: T.Material, facing = 0): void {
+export function seat(k: Kit, parent: T.Object3D, x: number, z: number, upholstery: T.Material, facing = 0): void {
   const group = new T.Group(); group.position.set(x, 0, z); group.rotation.y = facing;
   k.r.box(group, [0.47, 0.12, 0.5], [0, 0.5, 0], upholstery);
   const back = k.r.box(group, [0.48, 0.73, 0.12], [0, 0.93, 0.25], upholstery); back.rotation.x = -0.08;
@@ -72,11 +72,11 @@ function seat(k: Kit, parent: T.Object3D, x: number, z: number, upholstery: T.Ma
   for (const dx of [-0.27, 0.27]) k.r.box(group, [0.06, 0.055, 0.43], [dx, 0.72, 0], k.r.mat.darkStone);
   parent.add(group);
 }
-function bench(k: Kit, parent: T.Object3D, x: number, z: number, count = 4): void {
+export function bench(k: Kit, parent: T.Object3D, x: number, z: number, count = 4): void {
   const fabric = color(k, 'terminal-seat', '#3a454b');
   for (let index = 0; index < count; index += 1) seat(k, parent, x + (index - (count - 1) / 2) * 0.63, z, fabric);
 }
-function roof(k: Kit, parent: T.Object3D, width: number, length: number, base: number, rise: number, at: Position = [0, 0, 0]): void {
+export function roof(k: Kit, parent: T.Object3D, width: number, length: number, base: number, rise: number, at: Position = [0, 0, 0]): void {
   const material = color(k, 'roof-lining', '#dfdfda', { side: T.DoubleSide });
   const object = k.r.mesh(parent, geo(k, `roof-${width}-${length}-${base}-${rise}`, () => {
     const positions: number[] = [], indices: number[] = [];
@@ -257,139 +257,163 @@ export function createHomeWorld(r: WorldResources): UmrohWorld {
   };
 }
 
-function street(k: Kit, group: T.Group, kind: TaxiKind, returning: boolean): void {
-  const { r } = k;
-  const ground = r.floor(group, 1600, 1600, kind === 'taxi' ? r.mat.paving : r.mat.sand); ground.position.y = -0.02;
+/** Repeating 3 m facade cell: one storey, one window bay. Batching maps UVs in metres / 3. */
+function facadeMaterial(k: Kit, name: string, style: 'tower' | 'arched' | 'shophouse'): T.MeshStandardMaterial {
+  let material = k.materials.get('facade-' + name);
+  if (material) return material;
+  const canvas = document.createElement('canvas'); canvas.width = canvas.height = 128;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Fasad tidak tersedia.');
+  if (style === 'tower') {
+    ctx.fillStyle = '#9fb3bf'; ctx.fillRect(0, 0, 128, 128);
+    const glass = ctx.createLinearGradient(0, 0, 0, 128); glass.addColorStop(0, '#5f8197'); glass.addColorStop(1, '#29495d');
+    ctx.fillStyle = glass; ctx.fillRect(6, 10, 116, 96);
+    ctx.fillStyle = 'rgba(255,255,255,.18)'; ctx.fillRect(6, 10, 116, 18);
+    ctx.fillStyle = '#c9d3d8'; ctx.fillRect(62, 10, 4, 96);
+  } else if (style === 'arched') {
+    ctx.fillStyle = '#e4d6bd'; ctx.fillRect(0, 0, 128, 128);
+    ctx.fillStyle = '#5b4a3a'; ctx.beginPath(); ctx.moveTo(40, 112); ctx.lineTo(40, 52); ctx.arc(64, 52, 24, Math.PI, 0); ctx.lineTo(88, 112); ctx.fill();
+    ctx.fillStyle = '#a07d55'; for (let x = 44; x < 88; x += 8) ctx.fillRect(x, 50, 3, 62);
+    ctx.fillStyle = '#d2c2a5'; ctx.fillRect(0, 118, 128, 10);
+  } else {
+    ctx.fillStyle = '#e9e2d6'; ctx.fillRect(0, 0, 128, 128);
+    ctx.fillStyle = '#334a57'; ctx.fillRect(18, 26, 38, 60); ctx.fillRect(72, 26, 38, 60);
+    ctx.fillStyle = '#b6532f'; ctx.fillRect(0, 0, 128, 10);
+    ctx.fillStyle = '#cfc6b6'; ctx.fillRect(0, 100, 128, 6);
+  }
+  const map = k.r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; map.wrapS = map.wrapT = T.RepeatWrapping; map.anisotropy = 4;
+  material = k.r.keep(new T.MeshStandardMaterial({ map, roughness: style === 'tower' ? .35 : .85, metalness: style === 'tower' ? .25 : 0 }));
+  k.materials.set('facade-' + name, material); return material;
+}
+
+/** Simple saloon, MPV or bus, merged to a handful of meshes. */
+function trafficVehicle(k: Kit, paint: string, type: 'car' | 'mpv' | 'bus'): T.Group {
+  const { r } = k, car = new T.Group(); car.userData.dynamic = true;
+  const body = color(k, 'traffic-' + paint, paint, { metalness: .45, roughness: .3 });
+  const glass = color(k, 'traffic-glass', '#1d2a33', { metalness: .4, roughness: .15 });
+  const length = type === 'bus' ? 11.5 : type === 'mpv' ? 4.7 : 4.4, width = type === 'bus' ? 2.5 : 1.8;
+  if (type === 'bus') {
+    r.box(car, [width, 2.6, length], [0, 1.75, 0], body);
+    for (const side of [-1, 1]) r.box(car, [.02, .9, length - 1.2], [side * (width / 2 + .005), 2.3, .2], glass);
+    r.box(car, [width - .2, 1, .02], [0, 2.3, -length / 2 - .005], glass);
+  } else {
+    r.box(car, [width, .62, length], [0, .62, 0], body);
+    const cabin = r.box(car, [width - .18, .52, length * (type === 'mpv' ? .62 : .48)], [0, 1.18, type === 'mpv' ? .2 : .1], glass); void cabin;
+    r.box(car, [width - .16, .06, length * (type === 'mpv' ? .6 : .46)], [0, 1.46, type === 'mpv' ? .2 : .1], body);
+  }
+  for (const side of [-1, 1]) for (const z of [-length * .34, length * .34]) {
+    const wheel = r.cylinder(car, type === 'bus' ? .5 : .33, type === 'bus' ? .5 : .33, .24, [side * (width / 2 - .08), type === 'bus' ? .5 : .33, z], r.mat.black, 14); wheel.rotation.z = Math.PI / 2;
+  }
+  const head = color(k, 'headlight', '#fffbe8', { emissive: '#fff6d5', emissiveIntensity: .8 }), tail = color(k, 'taillight', '#7a1010', { emissive: '#ff2a1a', emissiveIntensity: .9 });
+  for (const side of [-1, 1]) { r.box(car, [.35, .12, .05], [side * (width / 2 - .3), .78, -length / 2], head); r.box(car, [.35, .12, .05], [side * (width / 2 - .3), .8, length / 2], tail); }
+  r.batch(car); return car;
+}
+
+interface Traffic { car: T.Group; base: number; lane: number; drift: number; oncoming: boolean }
+
+function street(k: Kit, group: T.Group, kind: TaxiKind, returning: boolean): Traffic[] {
+  const { r } = k, jakarta = kind === 'taxi';
+  const ground = r.floor(group, 1600, 1600, jakarta ? color(k, 'verge-grass', '#5f7b4a', { roughness: 1 }) : r.mat.sand); ground.position.y = -0.02;
+  // Our carriageway, a planted median with a concrete barrier, and the opposite carriageway.
   r.box(group, [18, 0.04, 1800], [0, 0, -450], r.mat.asphalt);
+  r.box(group, [14, 0.04, 1800], [-23, 0, -450], r.mat.asphalt);
   for (const x of [-8.6, -2.9, 2.9, 8.6]) {
     if (Math.abs(x) > 8) r.box(group, [0.11, 0.02, 1800], [x, 0.035, -450], r.mat.white);
     else for (let z = 250; z > -1000; z -= 14) r.box(group, [0.12, 0.02, 5.3], [x, 0.035, z], r.mat.white);
   }
+  for (const x of [-29.6, -16.4]) r.box(group, [0.11, 0.02, 1800], [x, 0.035, -450], r.mat.white);
+  for (let z = 250; z > -1000; z -= 14) r.box(group, [0.12, 0.02, 5.3], [-23, 0.035, z], r.mat.white);
+  r.box(group, [6, 0.25, 1800], [-12.5, .12, -450], jakarta ? color(k, 'median-grass', '#4f6e3c', { roughness: 1 }) : r.mat.paving);
+  for (const x of [-9.7, -15.3]) {
+    r.box(group, [.5, .45, 1800], [x, .23, -450], color(k, 'barrier', '#cfcbc2', { roughness: .9 }));
+    r.box(group, [.22, .4, 1800], [x, .62, -450], color(k, 'barrier', '#cfcbc2', { roughness: .9 }));
+  }
+  const tower = facadeMaterial(k, 'tower', 'tower'), low = facadeMaterial(k, jakarta ? 'shophouse' : 'arched', jakarta ? 'shophouse' : 'arched');
+  const random = (() => { let v = jakarta ? 41 : 87; return () => { v = (Math.imul(v, 1664525) + 1013904223) >>> 0; return v / 4294967296; }; })();
   for (const side of [-1, 1]) {
-    r.box(group, [4.5, 0.15, 1200], [side * 11.7, 0.05, -330], r.mat.paving);
-    for (let i = 0; i < 14; i += 1) {
-      const z = 150 - i * 43, x = side * (22 + i % 3 * 3), height = kind === 'taxi' ? 7 + i % 4 * 6 : 9 + i % 5 * 3;
-      r.box(group, [13, height, 24], [x, height / 2, z], kind === 'taxi' && i % 3 === 0 ? r.mat.white : r.mat.limestone);
-      for (let level = 0; level < Math.min(6, Math.floor(height / 3)); level += 1) {
-        for (let bay = -2; bay <= 2; bay += 1) r.box(group, [0.05, 1.5, 1.65], [x - side * 6.54, 2.6 + level * 2.9, z + bay * 3.4], r.mat.glass);
-      }
-      palm(k, group, side * 11.6, z + 17, kind === 'taxi' ? 6.5 : 8);
-      r.cylinder(group, 0.07, 0.1, 7, [side * 9.8, 3.5, z], r.mat.metal, 8);
-      r.box(group, [1.4, 0.13, 0.3], [side * 9.3, 7.05, z], r.mat.white);
+    r.box(group, [4.5, 0.15, 1200], [side * (side > 0 ? 11.7 : 34), 0.05, -330], r.mat.paving);
+    for (let i = 0; i < 26; i += 1) {
+      const z = 170 - i * 44 - random() * 12, near = i % 2 === 0;
+      // Row of low shops near the road; towers stand further back in Jakarta.
+      const x = side * ((side > 0 ? 24 : 46) + (near ? 0 : 18) + random() * 8);
+      const height = jakarta ? (near ? 7 + Math.round(random() * 2) * 3 : 36 + Math.round(random() * 22) * 3) : 9 + Math.round(random() * 3) * 3;
+      const width = near ? 12 : 18 + random() * 8;
+      r.box(group, [width, height, near ? 20 : 22], [x, height / 2, z], jakarta && !near ? tower : low);
+      if (jakarta && !near) r.box(group, [width * .8, 2.4, 18], [x, height + 1.2, z], color(k, 'roof-plant', '#8f979b'));
+      if (!jakarta) for (const dx of [-width / 2 + .4, width / 2 - .4]) r.box(group, [.8, .6, 20], [x + dx, height + .3, z], r.mat.limestone);
+    }
+    for (let z = 240; z > -1000; z -= 32) {
+      const vx = side > 0 ? 11.6 : -33.4;
+      if (jakarta) {
+        // Rain trees and angsana along the verge.
+        const trunkH = 3.2 + random() * 1.5;
+        r.cylinder(group, .22, .32, trunkH, [vx, trunkH / 2, z], r.mat.wood, 8);
+        const leaf = color(k, 'canopy-' + (Math.round(z) % 3 + 3) % 3, ['#3d5f32', '#4a6b37', '#36552c'][(Math.round(z) % 3 + 3) % 3], { roughness: 1 });
+        for (let j = 0; j < 4; j++) r.sphere(group, [2.4 + random(), 1.5 + random() * .6, 2.4 + random()], [vx + (random() - .5) * 2.4, trunkH + 1 + random() * .8, z + (random() - .5) * 2.4], leaf);
+      } else palm(k, group, vx, z + 17, 8);
     }
   }
-  const title = kind === 'taxi' ? returning ? 'JAKARTA · MENUJU RUMAH' : 'BANDARA SOEKARNO–HATTA' : returning ? 'STASIUN HARAMAIN' : 'MADINAH · MASJID NABAWI';
-  r.sign(group, title, kind === 'taxi' ? 'Perjalanan dengan taksi' : 'Perjalanan bersama Uber', [0, 6.6, -105], 12);
-  for (const x of [-8, 8]) r.cylinder(group, 0.15, 0.15, 7, [x, 3.5, -105], r.mat.metal, 10);
-  beam(k, group, [-8, 7, -105], [8, 7, -105], 0.15);
+  // Street lights with curved arms over both carriageways.
+  for (let z = 230; z > -1000; z -= 42) {
+    r.cylinder(group, 0.11, 0.16, 10, [-12.5, 5, z], r.mat.metal, 10);
+    for (const side of [-1, 1]) {
+      beam(k, group, [-12.5, 9.6, z], [-12.5 + side * 4.5, 10.2, z], .07);
+      r.box(group, [1.1, .18, .4], [-12.5 + side * 4.9, 10.05, z], color(k, 'lamp-head', '#3a3f43'));
+      r.box(group, [.9, .04, .3], [-12.5 + side * 4.9, 9.95, z], color(k, 'lamp-glow', '#fff3cf', { emissive: '#ffe6a8', emissiveIntensity: .6 }));
+    }
+  }
+  // Overhead direction signs: green in Indonesia, blue in Saudi Arabia.
+  const signTitle = jakarta ? returning ? 'Jakarta Pusat · Cengkareng' : 'Bandara Soekarno–Hatta' : returning ? 'Stasiun Haramain' : 'Masjid Nabawi · المسجد النبوي';
+  const signSub = jakarta ? returning ? 'Keluar tol berikutnya  ↗' : 'Terminal 1 · 2 · 3   ↑' : returning ? 'Haramain Station  ↑' : 'Central Area  ↑';
+  for (const z of [-60, -330, -640]) {
+    for (const x of [-10.4, 10]) r.cylinder(group, .2, .25, 7.6, [x, 3.8, z], r.mat.metal, 10);
+    beam(k, group, [-10.4, 7.4, z], [10, 7.4, z], .18);
+    const board = textPlate(k, group, signTitle, [2, 8.9, z + .2], 13, '#ffffff', jakarta ? '#0b6b3a' : '#1f4f9b');
+    board.scale.set(13, 13 * 1.6, 1);
+    textPlate(k, group, signSub, [2, 8.05, z + .25], 9, '#ffffff', jakarta ? '#0b6b3a' : '#1f4f9b');
+  }
+  r.sign(group, jakarta ? returning ? 'JAKARTA · MENUJU RUMAH' : 'BANDARA SOEKARNO–HATTA' : returning ? 'STASIUN HARAMAIN' : 'MADINAH · MASJID NABAWI', jakarta ? 'Perjalanan dengan taksi' : 'Perjalanan bersama Uber', [16, 4.5, -170], 7);
+  r.cylinder(group, 0.15, 0.15, 3.7, [16, 1.85, -170], r.mat.metal, 10);
+  // Traffic in both directions; cars ride with the scenery and drift relative to it.
+  const paints = jakarta ? ['#f2f2f0', '#1c1f22', '#9aa3a8', '#7a1f22', '#2b4f7a', '#d9d5cc', '#3d4a3f'] : ['#f2f2f0', '#c9c2b2', '#1c1f22', '#9aa3a8', '#b8a07a'];
+  const traffic: Traffic[] = [];
+  for (let i = 0; i < 22; i++) {
+    const oncoming = i % 3 === 0, type = i % 7 === 3 ? 'bus' : i % 4 === 1 ? 'mpv' : 'car';
+    const car = trafficVehicle(k, paints[i % paints.length], type);
+    if (oncoming) car.rotation.y = Math.PI;
+    group.add(car);
+    // The taxi drives in the middle lane, so traffic uses the lanes either side of it.
+    const lane = oncoming ? (i % 2 ? -26.5 : -19.5) : i % 2 ? -5.75 : 5.75;
+    traffic.push({ car, base: 120 - i * 37, lane, drift: oncoming ? 0 : (i % 5 - 2) * .045, oncoming });
+  }
+  return traffic;
 }
 
 export function createTaxiWorld(r: WorldResources, kind: TaxiKind, returning = false): UmrohWorld {
   const k = kit(r), group = new T.Group(), scenery = new T.Group();
   group.name = kind === 'taxi' ? 'Taksi — perjalanan Indonesia' : 'Uber — perjalanan Madinah';
   scenery.name = 'Pemandangan jalan bergerak'; scenery.userData.dynamic = true;
-  street(k, scenery, kind, returning); group.add(scenery);
+  const traffic = street(k, scenery, kind, returning); group.add(scenery);
   vehicle(k, group, kind, [0, 0, 0], 0);
+  const distance = 220, span = 820;
   return {
     group, spawn: [0, 1.25, 0.96], lookAt: [0, 1.3, -60], overview: [5.4, 3.2, 5.8], indoor: true,
     bounds: { minX: -0.55, maxX: 0.55, minZ: 0.25, maxZ: 1.28 }, blockers: [],
-    motion: { group: scenery, axis: 'z', distance: 220 },
+    motion: { group: scenery, axis: 'z', distance },
     landmarks: [
       { id: 'taxi-front', label: 'Pemandangan jalan', position: [0, 1.25, 0.96], lookAt: [0, 1.3, -60] },
       { id: 'taxi-side', label: 'Jendela penumpang', position: [-0.15, 1.25, 0.94], lookAt: [-18, 2.5, -10] },
     ],
-  };
-}
-
-function airportCounters(k: Kit, group: T.Group, departing: boolean, blockers: Rect[]): void {
-  const { r } = k;
-  if (departing) {
-    for (let i = 0; i < 6; i += 1) {
-      const z = 7 - i * 4;
-      r.box(group, [4, 1.12, 1.7], [-23, 0.56, z], r.mat.limestone);
-      r.box(group, [4.2, 0.12, 1.85], [-23, 1.18, z], r.mat.darkStone);
-      r.box(group, [0.75, 0.46, 0.06], [-23, 1.63, z], r.mat.black);
-      r.box(group, [1.45, 0.18, 1.7], [-19.8, 0.23, z], r.mat.metal);
-      luggage(k, group, [-19.8, 0.36, z], 0.85);
-    }
-    blockers.push({ minX: -26, maxX: -18.5, minZ: -15, maxZ: 9 });
-    r.sign(group, 'CHECK-IN', 'Dokumen perjalanan · bagasi', [-22, 4.2, -15.7], 8);
-    for (let z = 5; z >= -12; z -= 4) {
-      r.cylinder(group, 0.04, 0.04, 0.95, [-15, 0.47, z], r.mat.metal, 8);
-      r.cylinder(group, 0.23, 0.23, 0.05, [-15, 0.03, z], r.mat.metal, 12);
-    }
-  } else {
-    r.box(group, [11, 0.55, 20], [-24, 0.27, -2], r.mat.metal);
-    r.box(group, [10.5, 0.07, 19.5], [-24, 0.6, -2], r.mat.black);
-    r.box(group, [6.8, 0.18, 15.8], [-24, 0.7, -2], r.mat.darkStone);
-    for (let z = -9; z <= 6; z += 5) luggage(k, group, [-28.2, 0.66, z], 1.1);
-    blockers.push({ minX: -30, maxX: -18, minZ: -13, maxZ: 9 });
-    r.sign(group, 'PENGAMBILAN BAGASI', 'Periksa koper sebelum melanjutkan', [-24, 4.2, -14], 9);
-  }
-}
-
-export function createAirportWorld(r: WorldResources, airport: 'cgk' | 'jed', returning = false): UmrohWorld {
-  const k = kit(r), group = new T.Group(), blockers: Rect[] = [];
-  const departing = airport === 'cgk' ? !returning : returning;
-  group.name = airport === 'cgk' ? 'Bandara Soekarno–Hatta — Indonesia' : 'Bandara King Abdulaziz — Jeddah';
-  r.floor(group, 85, 105, r.mat.marble);
-  const apron = r.floor(group, 420, 400, r.mat.paving); apron.position.set(0, -0.1, -230);
-  for (const x of [-32, 32]) {
-    for (let z = -42; z <= 42; z += 14) {
-      r.cylinder(group, 0.35, 0.5, 11.4, [x, 5.7, z], r.mat.metal, 16);
-      blockers.push({ minX: x - 0.6, maxX: x + 0.6, minZ: z - 0.6, maxZ: z + 0.6 });
-      beam(k, group, [x, 8.6, z], [x * 0.78, 12.7, z], 0.16);
-      beam(k, group, [x, 8.6, z], [x * 1.09, 11.1, z], 0.16);
-    }
-  }
-  roof(k, group, 83, 104, airport === 'cgk' ? 10.5 : 11.5, airport === 'cgk' ? 4.8 : 6.5);
-  for (let x = -40; x <= 40; x += 5) {
-    r.box(group, [0.14, 10.6, 0.18], [x, 5.3, -48], r.mat.metal);
-    if (x < 40) r.box(group, [4.85, 10.1, 0.06], [x + 2.5, 5.1, -48], r.mat.glass);
-  }
-  for (const y of [2.8, 5.6, 8.4]) r.box(group, [82, 0.11, 0.18], [0, y, -48], r.mat.metal);
-  for (const side of [-1, 1]) {
-    r.box(group, [0.2, 10.5, 103], [side * 41, 5.25, 0], r.mat.plaster);
-    for (let z = -40; z <= 40; z += 10) r.box(group, [0.23, 4.4, 6], [side * 40.85, 3.2, z], r.mat.glass);
-  }
-  airportCounters(k, group, departing, blockers);
-  for (const x of [16, 24]) {
-    for (const z of [-18, -24, -30]) {
-      bench(k, group, x, z, 5);
-      blockers.push({ minX: x - 1.9, maxX: x + 1.9, minZ: z - 0.55, maxZ: z + 0.65 });
-    }
-  }
-  const signTitle = airport === 'cgk' ? 'SOEKARNO–HATTA · CGK' : 'KING ABDULAZIZ · JEDDAH';
-  const subtitle = departing ? 'Keberangkatan internasional' : 'Kedatangan internasional';
-  r.sign(group, signTitle, subtitle, [0, 5.5, 13], 18);
-  if (airport === 'jed' && !returning) {
-    r.sign(group, 'HARAMAIN  →', 'Koneksi kereta di Terminal 1 · menuju Madinah', [24, 4.1, 7], 10);
-    for (const x of [18, 21, 24, 27]) {
-      r.box(group, [0.42, 1, 1.4], [x, 0.5, 8], r.mat.metal);
-      blockers.push({ minX: x - 0.3, maxX: x + 0.3, minZ: 7.1, maxZ: 8.9 });
-    }
-  } else r.sign(group, departing ? 'PINTU KEBERANGKATAN' : 'PENJEMPUTAN · TAKSI', departing ? 'Garuda Indonesia' : 'Lanjutkan perjalanan pulang', [20, 4.2, -38], 10);
-  r.box(group, [11, 0.12, 2.4], [0, 0.02, -68], r.mat.gold);
-  addGarudaAircraft(r, group, [-5, 0, -91], 1.05, -0.15);
-  // A covered boarding bridge and apron lane frame the aircraft through the glass wall.
-  r.box(group, [3.1, 3.5, 19], [12, 3.4, -57.5], r.mat.plaster);
-  r.box(group, [3.15, 1.6, 18], [12, 3.8, -57.5], r.mat.glass);
-  for (let z = -140; z >= -280; z -= 18) r.box(group, [0.25, 0.015, 9], [43, -0.07, z], r.mat.white);
-  for (const x of [-36, 36]) {
-    r.cylinder(group, 1.4, 1.6, 0.75, [x, 0.38, 33], r.mat.limestone, 16);
-    palm(k, group, x, 33, 6.2);
-    blockers.push({ minX: x - 1.8, maxX: x + 1.8, minZ: 31.2, maxZ: 34.8 });
-  }
-  return {
-    group, spawn: [2, 1.68, 31], lookAt: [0, 4, -39], overview: [35, 13, 39], indoor: true,
-    bounds: { minX: -38.5, maxX: 38.5, minZ: -45, maxZ: 44 }, blockers,
-    landmarks: [
-      { id: 'airport-hall', label: 'Aula terminal', position: [2, 1.68, 31], lookAt: [0, 4, -39] },
-      { id: 'airport-service', label: departing ? 'Check-in dan bagasi' : 'Ambil bagasi', position: [-12, 1.68, 7], lookAt: [-23, 1.5, -5] },
-      { id: 'airport-aircraft', label: 'Pesawat Garuda', position: [0, 1.68, -40], lookAt: [-5, 5, -90] },
-      { id: 'airport-next', label: airport === 'jed' && !returning ? 'Koneksi Haramain' : departing ? 'Pintu keberangkatan' : 'Penjemputan', position: [12, 1.68, 13], lookAt: [24, 3, airport === 'jed' && !returning ? 7 : -38] },
-    ],
-    crowd: { kind: 'walk', count: 48, area: { minX: -9, maxX: 9, minZ: -35, maxZ: 35 } },
+    animate(frame) {
+      // Same-direction cars keep pace with the taxi and slowly overtake or fall back;
+      // oncoming cars close at twice the speed. Positions wrap around the viewpoint.
+      const travelled = frame.travel * distance;
+      for (const t of traffic) {
+        const along = t.oncoming ? t.base + travelled * 1.1 : t.base - travelled * (1 + t.drift);
+        const sceneZ = along + travelled;
+        const wrapped = ((sceneZ + 400) % span + span) % span - 400 - travelled;
+        t.car.position.set(t.lane, 0, wrapped);
+      }
+    },
   };
 }
 
