@@ -1,13 +1,11 @@
 import * as T from 'three';
 import type { Position, Rect, UmrohWorld, WorldResources } from './types';
+import { addKaabaSanctuary } from './kaaba';
 
 /** Educational geometry in metres; the court and sa'i route are deliberately compressed.
  * Visual references: alharamain.gov.sa/public/?page=mataf-ar and
  * alharamain.gov.sa/public/?page=safa-marwa-en. No scanned or third-party models.
  */
-const KAABA_WIDTH = 11.5;
-const KAABA_DEPTH = 12.5;
-const KAABA_HEIGHT = 12;
 const COURT_EDGE = 80;
 const SAI_END = 75;
 
@@ -36,107 +34,6 @@ function column(r: WorldResources, parent: T.Object3D, at: Position, height: num
 function dome(r: WorldResources, parent: T.Object3D, radius: number, at: Position, material: T.Material) {
   const geo = r.keep(new T.SphereGeometry(radius, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2));
   return r.mesh(parent, geo, material, at);
-}
-
-function addKaaba(r: WorldResources, group: T.Group): Rect[] {
-  const halfX = KAABA_WIDTH / 2;
-  const halfZ = KAABA_DEPTH / 2;
-  r.box(group, [KAABA_WIDTH + 0.55, 0.4, KAABA_DEPTH + 0.55], [0, 0.2, 0], r.mat.darkStone);
-  r.box(group, [KAABA_WIDTH, KAABA_HEIGHT, KAABA_DEPTH], [0, KAABA_HEIGHT / 2 + 0.24, 0], r.mat.kiswa);
-  r.box(group, [KAABA_WIDTH + 0.12, 0.12, KAABA_DEPTH + 0.12], [0, KAABA_HEIGHT + 0.27, 0], r.mat.black);
-
-  // Hizam and woven border panels use geometry, without fabricated religious lettering.
-  const beltY = 8.9;
-  const panelGeometry = r.keep(new T.BoxGeometry(1.12, 0.42, 0.025));
-  const panelInset = r.keep(new T.BoxGeometry(0.93, 0.27, 0.03));
-  const rosette = r.keep(new T.TorusGeometry(0.13, 0.024, 5, 12));
-  for (let side = 0; side < 4; side++) {
-    const wall = new T.Group();
-    const long = side % 2 === 0 ? KAABA_WIDTH : KAABA_DEPTH;
-    wall.rotation.y = side * Math.PI / 2;
-    wall.position.set(side === 1 ? halfX + 0.025 : side === 3 ? -halfX - 0.025 : 0, 0,
-      side === 0 ? halfZ + 0.025 : side === 2 ? -halfZ - 0.025 : 0);
-    group.add(wall);
-    r.box(wall, [long, 0.74, 0.035], [0, beltY, 0], r.mat.darkGold);
-    for (const y of [beltY - 0.38, beltY - 0.28, beltY + 0.28, beltY + 0.38])
-      r.box(wall, [long, 0.045, 0.05], [0, y, 0.035], r.mat.gold);
-    const panels = Math.floor(long / 1.55);
-    for (let i = 0; i < panels; i++) {
-      const x = (i - (panels - 1) / 2) * 1.55;
-      r.mesh(wall, panelGeometry, r.mat.gold, [x, beltY, 0.04]);
-      r.mesh(wall, panelInset, r.mat.black, [x, beltY, 0.06]);
-      r.mesh(wall, rosette, r.mat.gold, [x, beltY, 0.085]);
-      if (i % 2 === 0) {
-        const lower = r.mesh(wall, rosette, r.mat.gold, [x, 7.1, 0.06]);
-        lower.scale.set(1.5, 2.1, 1);
-      }
-    }
-    // The bottom folds make the otherwise flat black textile readable at human eye level.
-    for (let x = -long / 2 + 0.4; x < long / 2; x += 0.65)
-      r.box(wall, [0.035, 4.1, 0.055], [x, 2.45, 0.018], r.mat.black);
-  }
-
-  const door = new T.Group();
-  door.position.set(2.35, 1.8, halfZ + 0.1);
-  group.add(door);
-  r.box(door, [2.35, 4.25, 0.12], [0, 2.125, 0], r.mat.darkGold);
-  r.box(door, [2.05, 3.97, 0.14], [0, 2.125, 0.045], r.mat.gold);
-  r.box(door, [0.045, 3.95, 0.07], [0, 2.12, 0.14], r.mat.darkGold);
-  for (const x of [-0.51, 0.51]) for (const y of [0.65, 1.65, 2.65, 3.6]) {
-    r.box(door, [0.83, 0.78, 0.08], [x, y, 0.14], r.mat.darkGold);
-    r.box(door, [0.7, 0.65, 0.08], [x, y, 0.19], r.mat.gold);
-  }
-  for (const x of [-0.14, 0.14]) {
-    const handle = r.mesh(door, r.keep(new T.TorusGeometry(0.1, 0.025, 6, 14)), r.mat.darkGold, [x, 1.72, 0.26]);
-    handle.scale.y = 1.4;
-  }
-  r.box(group, [2.8, 0.3, 0.55], [2.35, 1.65, halfZ + 0.18], r.mat.darkStone);
-
-  // Black Stone: silver oval on the (+x,+z) corner, the start of the practice circle.
-  const hajar = new T.Group();
-  hajar.position.set(halfX + 0.025, 1.35, halfZ + 0.025);
-  hajar.rotation.y = Math.PI / 4;
-  group.add(hajar);
-  const stoneFrame = r.mesh(hajar, r.keep(new T.TorusGeometry(0.31, 0.075, 8, 24)), r.mat.metal);
-  stoneFrame.scale.set(0.82, 1.3, 1);
-  r.sphere(hajar, [0.19, 0.3, 0.055], [0, 0, -0.035], r.mat.darkStone);
-
-  // Mizab, on the rear wall toward Hijr Ismail.
-  r.box(group, [0.4, 0.22, 1.6], [0, 11.95, -halfZ - 0.65], r.mat.gold);
-  r.box(group, [0.4, 0.3, 0.1], [0, 11.8, -halfZ - 1.4], r.mat.darkGold);
-
-  const hijrShape = new T.Shape();
-  const start = Math.PI * 0.08, end = Math.PI * 0.92;
-  hijrShape.absarc(0, 0, 7.55, start, end, false);
-  hijrShape.absarc(0, 0, 6.9, end, start, true);
-  hijrShape.closePath();
-  const hijrGeometry = r.keep(new T.ExtrudeGeometry(hijrShape, { depth: 1.18, bevelEnabled: false, curveSegments: 40 }));
-  const hijr = r.mesh(group, hijrGeometry, r.mat.marble, [0, 0.02, -halfZ]);
-  hijr.rotation.x = -Math.PI / 2;
-  const cap = r.mesh(group, hijrGeometry, r.mat.limestone, [0, 1.19, -halfZ]);
-  cap.rotation.x = -Math.PI / 2;
-  cap.scale.z = 0.065;
-  return [
-    { minX: -6.1, maxX: 6.1, minZ: -6.6, maxZ: 6.6 },
-    { minX: -7.8, maxX: 7.8, minZ: -14.2, maxZ: -6.25 },
-  ];
-}
-
-function addMaqam(r: WorldResources, group: T.Group) {
-  const kiosk = new T.Group();
-  kiosk.position.set(12, 0, 7);
-  group.add(kiosk);
-  r.cylinder(kiosk, 1.02, 1.12, 0.2, [0, 0.1, 0], r.mat.marble, 8);
-  r.cylinder(kiosk, 0.75, 0.9, 0.38, [0, 0.35, 0], r.mat.darkGold, 8);
-  r.cylinder(kiosk, 0.78, 0.78, 1.65, [0, 1.32, 0], r.mat.glass, 8);
-  for (let side = 0; side < 8; side++) {
-    const a = side * Math.PI / 4;
-    r.cylinder(kiosk, 0.045, 0.055, 1.8, [Math.sin(a) * 0.79, 1.3, Math.cos(a) * 0.79], r.mat.gold, 6);
-  }
-  r.cylinder(kiosk, 0.88, 0.85, 0.18, [0, 2.2, 0], r.mat.gold, 8);
-  dome(r, kiosk, 0.83, [0, 2.26, 0], r.mat.gold);
-  r.cylinder(kiosk, 0.025, 0.08, 0.45, [0, 3.2, 0], r.mat.gold, 8);
-  r.sphere(kiosk, [0.16, 0.16, 0.16], [0, 3.46, 0], r.mat.gold);
 }
 
 function minaret(r: WorldResources, group: T.Group, x: number, z: number) {
@@ -278,13 +175,11 @@ export function createHaramWorld(r: WorldResources): UmrohWorld {
     r.box(group, [0.016, 0.006, 156], [x, 0.006, 0], r.mat.limestone);
   for (let z = -76; z <= 76; z += 4)
     r.box(group, [156, 0.006, 0.016], [0, 0.006, z], r.mat.limestone);
-  const blockers = addKaaba(r, group);
-  addMaqam(r, group);
+  const { blockers, landmarks } = addKaabaSanctuary(r, group);
   addArcades(r, group);
   addClockSkyline(r, group);
   addZamzam(r, group);
   blockers.push(
-    { minX: 10.7, maxX: 13.3, minZ: 5.7, maxZ: 8.3 },
     { minX: 62.8, maxX: 65.3, minZ: 23.7, maxZ: 32.3 },
   );
   return {
@@ -292,10 +187,7 @@ export function createHaramWorld(r: WorldResources): UmrohWorld {
     spawn: [27, 1.7, 32], lookAt: [0, 5, 0], overview: [53, 49, 64],
     bounds: { minX: -75, maxX: 75, minZ: -75, maxZ: 75 }, blockers,
     landmarks: [
-      { id: 'kaaba', label: 'Ka’bah', position: [18, 1.7, 22], lookAt: [0, 6, 0] },
-      { id: 'hajar-aswad', label: 'Hajar Aswad', position: [10.8, 1.7, 11.8], lookAt: [5.75, 1.35, 6.25] },
-      { id: 'maqam', label: 'Maqam Ibrahim', position: [16.5, 1.7, 12], lookAt: [12, 1.8, 7] },
-      { id: 'hijr', label: 'Hijr Ismail', position: [0, 1.7, -20], lookAt: [0, 1.6, -8] },
+      ...landmarks,
       { id: 'zamzam', label: 'Air Zamzam', position: [58.5, 1.7, 28], lookAt: [64, 1.1, 28] },
     ],
     crowd: { kind: 'tawaf', count: 600, radius: 26, area: { minX: -52, maxX: 52, minZ: -52, maxZ: 52 } },

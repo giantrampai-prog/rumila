@@ -28,6 +28,22 @@ Lingkungan memenuhi area utama layar. Panel panduan selebar 330 piksel di deskto
 
 Masjid Nabawi, Raudhah, dan salam hadir sebagai tiga bab kunjungan sebelum umroh dalam perjalanan baru. Selama bab umroh, peta juga menawarkan tur tambahan Kunjungi kembali Masjid Nabawi. Tombol Kembali ke perjalanan mengembalikan lokasi sesuai tahap tanpa mengubah hitungan latihan. Kunjungan tersebut bukan miqat, bukan rukun, dan tidak menambah tahap ritual. Tur tambahan, kamera, suasana cahaya, serta kecepatan merupakan pengaturan sesi yang tidak disimpan dalam progres perjalanan versi 2.
 
+## Kamera tawaf dan kawasan Ka’bah
+
+Pada tahap tawaf, mode Jalan kaki berubah menjadi **POV tawaf**. Saat latihan berjalan, kamera bergerak pada lintasan yang sama dengan progres putaran di ketinggian mata; arah pandang ikut berputar, dengan Ka’bah di sisi kiri-depan. Geseran mempertahankan offset pandangan terhadap arah berjalan. **Ikuti jamaah** mengitari lintasan dari belakang dan sedikit di luar jamaah. **Lihat kawasan** tetap dapat dijelajahi secara manual. Jeda menghentikan gerak kamera mengikuti latihan dan memungkinkan berjalan bebas; lanjut/reset kembali ke posisi progres saat ini. Tombol arah tidak aktif selama POV mengikuti latihan. Pengaturan perangkat `prefers-reduced-motion` memakai kamera kawasan yang tetap, disertai penjelasan di antarmuka.
+
+`realistic/kaaba-layout.ts` menyatukan orientasi landmark dan titik awal tawaf: sisi pintu/timur berada di +Z lokal, Hijir/utara di +X, serta Hajar Aswad di sudut -X/+Z. Lintasan berlawanan arah jarum jam melewati sisi pintu, lalu bagian luar Hijir. Lampu hijau berada pada bangunan sekeliling di sumbu yang sama dengan Hajar Aswad; tidak ada garis hijau permanen di lantai. Sudut kamera tidak di-reset saat hitungan berganti putaran. Progres simpanan tetap memakai format sebelumnya.
+
+Ka’bah memakai kiswah bertekstur anyaman dengan lipatan, pita sulaman geometris, pintu emas berelief dan sitarah, serta alas marmer miring (shadhrawan). Hajar Aswad dimodelkan sebagai fragmen batu gelap dalam bingkai perak oval. Hijir memiliki dinding marmer melengkung dengan dua bukaan dan Mizab di atasnya. Maqam Ibrahim memiliki pelindung emas/kaca dengan batu di dalamnya. Peta menyediakan sudut pandang dekat untuk pintu, Hajar Aswad, Hijir/Mizab, Maqam Ibrahim, dan lampu hijau. Ornamen disederhanakan dan tidak meniru teks kaligrafi asli; rekonstruksi ini tidak mengklaim fotorealisme atau ketepatan survei.
+
+Rujukan detail diperiksa pada 27 Oktober 2026:
+
+- [Saudipedia — Grand Mosque](https://saudipedia.com/en/grand-mosque): sisi pintu, ketinggian Hajar Aswad, Maqam Ibrahim, serta penghapusan garis penanda lama di lantai.
+- [Saudipedia — Dimensions of the Four Sides of the Holy Kaaba](https://saudipedia.com/en/a-list-of-the-dimensions-of-the-four-sides-of-the-holy-kaaba): acuan proporsi; model memakai pendekatan persegi panjang 11,68 × 10,18 m.
+- [Al Haramain — Black Stone](https://alharamain.gov.sa/public/?page=The_Black_Stone-en): lampu penanda sejajar Hajar Aswad.
+- [Al Haramain — Hijr](https://alharamain.gov.sa/public/?page=hijr-en&site=ur), [Mizab](https://alharamain.gov.sa/public/?page=mizab-ar), dan [Shadhrawan](https://alharamain.gov.sa/public/?page=shadrawan-ar): posisi, bentuk dan lintasan di luar Hijir.
+- [SPA — Hijr Ismail, Maret 2026](https://www.spa.gov.sa/fr/N2537986): dinding marmer sekitar 1,3 m tinggi dan 0,9 m tebal.
+
 ## Penerbangan dan tampilan Rinoya
 
 Kedua penerbangan Garuda menyediakan tiga pilihan POV: Otomatis, Dalam kabin, dan Luar pesawat. Mode otomatis membagi progres penerbangan menjadi empat bagian: luar → kabin → luar → kabin. Pergantian mengikuti waktu perjalanan aktif, sehingga jeda, dialog, dan pemulihan progres tidak menjalankan kamera lebih dahulu. Pilihan manual tetap berlaku sampai pengguna menggantinya atau berpindah bab. Preferensi perangkat `prefers-reduced-motion` menonaktifkan pergantian dan gerak kamera otomatis; pengguna tetap dapat memilih kabin secara manual.
@@ -76,4 +92,6 @@ Semua operasi state mengembalikan data baru ketika berubah. Antarmuka menyimpan 
 
 ## Verifikasi
 
-`npm test -- src/lib/umroh src/components/umroh/flight-camera.test.ts src/components/umroh/realistic/navigation.test.ts src/components/umroh/realistic/resources.test.ts` memeriksa urutan penuh, pencegahan lompatan praktik, batas tujuh, hitungan satu arah sa'i, posisi akhir Marwah, arah tawaf, update parsial, nilai delta tidak valid, restart, round-trip simpan/muat, penolakan data rusak, variasi petunjuk dan penamaan sunah, serta batas dan tabrakan navigasi. Tes kamera mencakup urutan POV, batas fraksi, pilihan manual, dan reduced motion. Tes batching memastikan transformasi geometri tidak diterapkan dua kali dan grup bergerak tetap terpisah.
+`npm test -- src/lib/umroh src/components/umroh/flight-camera.test.ts src/components/umroh/tawaf-camera.test.ts src/components/umroh/tawaf-scene.test.ts src/components/umroh/realistic/navigation.test.ts src/components/umroh/realistic/resources.test.ts` memeriksa urutan penuh, pencegahan lompatan praktik, batas tujuh, hitungan satu arah sa'i, posisi akhir Marwah, arah tawaf, update parsial, nilai delta tidak valid, restart, round-trip simpan/muat, penolakan data rusak, variasi petunjuk dan penamaan sunah, serta batas dan tabrakan navigasi. Tes kamera mencakup urutan POV, batas fraksi, pilihan manual, dan reduced motion. Tes batching memastikan transformasi geometri tidak diterapkan dua kali dan grup bergerak tetap terpisah.
+
+Tes tawaf memeriksa gerak dan rotasi kamera Three.js pada mode POV dan Ikuti jamaah, sumbu awal Hajar Aswad, arah Ka’bah di kiri, lintasan di luar Hijir, kontinuitas antarputaran, jeda/dialog, kontrol berjalan bebas, pemulihan progres, reset kamera, serta kamera tetap untuk reduced motion.

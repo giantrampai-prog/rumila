@@ -35,7 +35,7 @@ export const STAGES: readonly UmrohStageContent[] = [
   {
     id: "tawaf", title: "Tawaf tujuh putaran", subtitle: "Ka'bah berada di sebelah kiri",
     instruction: "Ikuti lintasan berlawanan arah jarum jam hingga tujuh putaran lengkap.",
-    detail: "Mulai dan akhiri di garis Hajar Aswad, mengitari bagian luar Hijir Ismail. Tidak perlu berdesakan untuk menyentuh Hajar Aswad.",
+    detail: "Mulai dan akhiri sejajar Hajar Aswad; lampu hijau di bangunan sekeliling membantu mengenali posisinya. Lintasan mengitari bagian luar Hijir Ismail. Tidak perlu berdesakan untuk menyentuh Hajar Aswad.",
     action: "Lanjut setelah 7 putaran", kind: "tawaf",
   },
   {
@@ -72,6 +72,8 @@ export const STAGES: readonly UmrohStageContent[] = [
 
 export const UMROH_SOURCES = [
   { label: "JAWHAR · Panduan Haji dan Umrah", url: "https://www.jawhar.gov.my/haji-dan-umrah/panduan-haji-dan-umrah/" },
+  { label: "Al Haramain · Hajar Aswad dan penanda tawaf", url: "https://alharamain.gov.sa/public/?page=The_Black_Stone-en" },
+  { label: "Saudipedia · Ka’bah dan Masjidil Haram", url: "https://saudipedia.com/en/grand-mosque" },
 ] as const;
 
 export function getStageContent(stage: UmrohStage, route: UmrohRoute, pilgrim: UmrohPilgrim): UmrohStageContent {

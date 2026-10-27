@@ -10,6 +10,8 @@ import { createHomeWorld, createTaxiWorld, createAirportWorld, createHaramainWor
 import { createRawdahWorld, createSalamWorld } from './realistic/nabawi-interior';
 import { createFlightWorld } from './realistic/flight';
 import { getFlightPov, isFlightChapter, type FlightCameraMode } from './flight-camera';
+import { getTawafCameraFrame, getTawafRoutePose, getTawafView, isGuidedTawaf, isTawafScene } from './tawaf-camera';
+import { MAQAM_POSITION } from './realistic/kaaba-layout';
 import { Pilgrims } from './realistic/pilgrims';
 import type { UmrohWorld, Position } from './realistic/types';
 import { moveWithinWorld } from './realistic/navigation';
@@ -32,7 +34,7 @@ export interface UmrohSceneState {
   paused?: boolean;
 }
 type WorldKey = 'nabawi' | 'birali' | 'cabin' | 'journey' | 'haram' | 'sai' | 'tahallul' | 'home' | 'taxi-cgk' | 'taxi-home' | 'uber' | 'cgk' | 'cgk-return' | 'jed' | 'jed-return' | 'garuda-jed' | 'garuda-cgk' | 'flight-jed' | 'flight-cgk' | 'haramain' | 'madinah-station' | 'rawdah' | 'salam' | 'jeddah-bus';
-const EYE_HEIGHT = 1.68, TAWAF_RADIUS = 22, SAI_END = 75;
+const EYE_HEIGHT = 1.68, SAI_END = 75;
 
 /** Walkable human-scale reconstruction; architecture and PBR textures share GPU resources. */
 export class UmrohScene {
@@ -62,6 +64,8 @@ export class UmrohScene {
   private contextLost = false;
   private yaw = 0;
   private pitch = 0;
+  private tawafLookYaw = 0;
+  private tawafLookPitch = 0;
   private pointer: { id: number; x: number; y: number } | null = null;
   private pressed = new Set<string>();
   private forward = 0;
@@ -172,7 +176,8 @@ export class UmrohScene {
     if (this.disposed) return;
     const old = this.state;
     this.reducedMotion = next.reducedMotion ?? this.reducedMotion;
-    this.state = { ...next, view: next.view ?? 'walk', flightCamera: next.flightCamera ?? 'auto', timeOfDay: next.timeOfDay ?? 'day', visit: next.visit ?? null };
+    this.state = { ...next, reducedMotion: this.reducedMotion, view: next.view ?? 'walk', flightCamera: next.flightCamera ?? 'auto', timeOfDay: next.timeOfDay ?? 'day', visit: next.visit ?? null };
+    this.state.view = getTawafView(this.state);
     if (!next.visit && isFlightChapter(next.chapter)) this.state.view = getFlightPov(next.travelProgress ?? 0, this.state.flightCamera, this.reducedMotion) === 'exterior' ? 'overview' : 'follow';
     const key = this.keyFor(this.state), changed = key !== this.worldKey;
     if (changed) this.loadWorld(key);
@@ -186,8 +191,12 @@ export class UmrohScene {
     this.placeGuide();
     const framingChanged = old.guideOpen !== next.guideOpen && Boolean(this.world.flight);
     if (framingChanged) this.updateProjection();
-    if (changed || framingChanged || old.stage !== next.stage || old.chapter !== next.chapter || old.view !== this.state.view || old.flightCamera !== this.state.flightCamera) { this.pauseInput(); this.resetCamera(); }
-    this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !this.state.paused;
+    const progressRestored = isTawafScene(this.state) && old.progress !== this.state.progress && !old.running && !this.state.running && !this.state.paused;
+    if (changed || framingChanged || progressRestored || old.stage !== next.stage || old.chapter !== next.chapter || old.view !== this.state.view || old.flightCamera !== this.state.flightCamera) { this.pauseInput(); this.resetCamera(); }
+    if (isTawafScene(this.state) && old.running !== this.state.running) this.pauseInput();
+    this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused;
+    if (isGuidedTawaf(this.state)) { this.pressed.clear(); this.forward = this.right = 0; this.frameTawaf(); }
+    else if (isGuidedTawaf(old) && isTawafScene(this.state) && !this.state.paused && old.progress !== this.state.progress) this.frameTawaf();
     if (this.isAutomaticFlightView() && !this.state.paused) this.frameFlight();
     if (this.state.paused) this.pauseInput();
     const places: Record<WorldKey, string> = {
@@ -199,7 +208,8 @@ export class UmrohScene {
       rawdah: 'Gambaran area Raudhah di Masjid Nabawi', salam: 'Koridor ziarah salam di luar pembatas ruang makam', 'jeddah-bus': 'Perjalanan pulang dari Makkah menuju bandara Jeddah',
     };
     const place = places[key];
-    this.renderer.domElement.setAttribute('aria-label', `${place}. Rekonstruksi tiga dimensi. ${isFlightChapter(this.state.chapter) ? 'Pilih POV otomatis, dalam kabin, atau luar pesawat.' : 'Geser untuk melihat; WASD atau tombol arah untuk berjalan setelah memilih area 3D.'}`);
+    const tawafHint = this.state.view === 'walk' ? 'Kamera mengikuti putaran tawaf. Geser untuk melihat; jeda untuk berjalan bebas.' : 'Kamera mengikuti jamaah saat tawaf. Jeda untuk mengubah sudut pandang.';
+    this.renderer.domElement.setAttribute('aria-label', `${place}. Rekonstruksi tiga dimensi. ${isGuidedTawaf(this.state) ? tawafHint : isTawafScene(this.state) && this.reducedMotion ? 'Gerak dikurangi: kamera kawasan tetap selama tawaf. Geser untuk melihat kawasan.' : isFlightChapter(this.state.chapter) ? 'Pilih POV otomatis, dalam kabin, atau luar pesawat.' : 'Geser untuk melihat; WASD atau tombol arah untuk berjalan setelah memilih area 3D.'}`);
   }
   private isRide(): boolean { return ['taxi-cgk', 'taxi-home', 'uber', 'haramain', 'garuda-jed', 'garuda-cgk', 'flight-jed', 'flight-cgk', 'journey', 'jeddah-bus'].includes(this.worldKey ?? ''); }
   private isSeatedView(): boolean { return this.state.view === 'follow' && this.isRide(); }
@@ -212,6 +222,14 @@ export class UmrohScene {
     this.camera.position.sub(this.tmp.set(0, 2, 0)).multiplyScalar(this.flightFramingScale).add(this.tmp);
     this.camera.lookAt(0, 2, 0);
   }
+  private frameTawaf(): void {
+    if (this.state.view === 'overview') return;
+    const frame = getTawafCameraFrame(this.state.progress, this.state.view ?? 'walk', this.tawafLookYaw, this.tawafLookPitch, this.camera.aspect);
+    this.camera.position.set(...frame.position);
+    this.yaw = frame.yaw; this.pitch = frame.pitch;
+    this.camera.rotation.set(this.pitch, this.yaw, 0, 'YXZ');
+    this.orbit.target.set(...frame.target); this.lastFollow.copy(this.avatar);
+  }
   private placeGuide(): void {
     const { stage, route, progress, visit } = this.state;
     const p = Math.max(0, Math.min(7, progress));
@@ -222,16 +240,16 @@ export class UmrohScene {
       const position = moveWithinWorld(x, z, direction.x * 3.5, direction.z * 3.5, this.world.bounds, this.world.blockers);
       this.avatar.set(position.x, 0, position.z); this.heading = Math.atan2(direction.x, direction.z);
     }
-    else if (stage === 'tawaf') { const angle = Math.PI / 4 - p * Math.PI * 2; this.avatar.set(Math.cos(angle) * TAWAF_RADIUS, 0, Math.sin(angle) * TAWAF_RADIUS); this.heading = Math.PI - angle; }
+    else if (stage === 'tawaf') { const pose = getTawafRoutePose(p); this.avatar.set(...pose.position); this.heading = pose.heading; }
     else if (stage === 'sai') { const leg = p >= 7 ? 6 : Math.floor(p), amount = p >= 7 ? 1 : p - leg, outbound = leg % 2 === 0; this.avatar.set(0, 0, -SAI_END + SAI_END * 2 * (outbound ? amount : 1 - amount)); this.heading = outbound ? 0 : Math.PI; }
-    else if (stage === 'salat') { this.avatar.set(14, 0, 15); this.heading = Math.atan2(-14, -15); }
+    else if (stage === 'salat') { this.avatar.set(MAQAM_POSITION.x, 0, MAQAM_POSITION.z + 6); this.heading = Math.atan2(-this.avatar.x, -this.avatar.z); }
     else if (stage === 'zamzam') { this.avatar.set(61, 0, 28); this.heading = Math.PI / 2; }
     else if (stage === 'masuk' || stage === 'selesai') { this.avatar.set(19, 0, 25); this.heading = Math.atan2(-19, -25); }
     else if (stage === 'tahallul') { this.avatar.set(0, 0, -2.5); this.heading = Math.PI; }
     else if (stage === 'perjalanan') { this.avatar.set(.77, .16, -.8); this.heading = Math.PI; }
     else if (route === 'pesawat') { this.avatar.set(0, 0, 5); this.heading = Math.PI; }
     else { this.avatar.set(0, 0, 15); this.heading = Math.PI; }
-    this.guide.group.visible = !this.isRide();
+    this.guide.group.visible = !this.isRide() && !(isTawafScene(this.state) && this.state.view === 'walk');
     this.guide.setAttire(!visit && (!this.state.chapter || this.state.chapter === 'umroh') && stage !== 'selesai' ? 'ihram' : 'travel');
     this.guide.pose(this.avatar, this.heading, this.state.running && !this.state.paused, this.state.pilgrim === 'putri');
   }
@@ -245,13 +263,20 @@ export class UmrohScene {
       this.orbit.update();
     }
   }
-  setMovement(forward: number, right: number): void { this.forward = T.MathUtils.clamp(forward, -1, 1); this.right = T.MathUtils.clamp(right, -1, 1); }
+  setMovement(forward: number, right: number): void { if (isGuidedTawaf(this.state)) return; this.forward = T.MathUtils.clamp(forward, -1, 1); this.right = T.MathUtils.clamp(right, -1, 1); }
   resetCamera(): void {
     if (!this.world) return;
+    if (isTawafScene(this.state) && this.state.view !== 'overview') {
+      // Discard any residual orbit inertia before handing control to the guided camera.
+      this.orbit.enableDamping = false; this.orbit.update(); this.orbit.enableDamping = true;
+      this.tawafLookYaw = this.tawafLookPitch = 0; this.frameTawaf();
+      this.orbit.minDistance = 2.2; this.orbit.maxDistance = 38;
+      return;
+    }
     if (this.state.view === 'walk') {
       this.camera.position.set(...this.world.spawn); let at = this.world.lookAt;
       if (!this.state.visit && (!this.state.chapter || this.state.chapter === 'umroh')) {
-        if (this.state.stage === 'salat') { this.camera.position.set(18, EYE_HEIGHT, 22); at = [0, 5, 0]; }
+        if (this.state.stage === 'salat') { this.camera.position.set(MAQAM_POSITION.x, EYE_HEIGHT, MAQAM_POSITION.z + 9); at = [0, 5, 0]; }
         if (this.state.stage === 'zamzam') { this.camera.position.set(58, EYE_HEIGHT, 32); at = [64, 1.1, 28]; }
       }
       this.lookAt(at);
@@ -279,12 +304,19 @@ export class UmrohScene {
   private pointerMove = (e: PointerEvent): void => {
     if (!this.pointer || this.pointer.id !== e.pointerId || this.state.paused) return;
     const scale = 2.8 / Math.max(420, this.container.clientWidth);
-    this.yaw -= (e.clientX - this.pointer.x) * scale; this.pitch = T.MathUtils.clamp(this.pitch - (e.clientY - this.pointer.y) * scale, -1.25, 1.3);
+    const dx = (e.clientX - this.pointer.x) * scale, dy = (e.clientY - this.pointer.y) * scale;
+    this.yaw -= dx; this.pitch = T.MathUtils.clamp(this.pitch - dy, -1.25, 1.3);
+    if (isTawafScene(this.state) && this.state.view === 'walk') {
+      // Store the glance relative to the route, not as a fixed world direction.
+      const baseFrame = getTawafCameraFrame(this.state.progress, 'walk', 0, 0, this.camera.aspect);
+      this.tawafLookYaw = this.yaw - baseFrame.yaw;
+      this.tawafLookPitch = this.pitch - baseFrame.pitch;
+    }
     this.pointer.x = e.clientX; this.pointer.y = e.clientY; this.camera.rotation.set(this.pitch, this.yaw, 0, 'YXZ');
   };
   private pointerUp = (e: PointerEvent): void => { if (this.pointer?.id === e.pointerId) this.pointer = null; };
   private keyDown = (e: KeyboardEvent): void => {
-    if (this.state.view !== 'walk' || this.state.paused || document.activeElement !== this.renderer.domElement) return;
+    if (this.state.view !== 'walk' || this.state.paused || isGuidedTawaf(this.state) || document.activeElement !== this.renderer.domElement) return;
     if (['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) { e.preventDefault(); this.pressed.add(e.code); }
   };
   private keyUp = (e: KeyboardEvent): void => { this.pressed.delete(e.code); };
@@ -318,20 +350,26 @@ export class UmrohScene {
     this.renderer.setSize(Math.max(1, this.container.clientWidth), Math.max(1, this.container.clientHeight), false);
     if (this.world?.flight) { this.resetCamera(); if (this.isAutomaticFlightView()) this.frameFlight(); }
   };
+  private updateCamera(delta: number): void {
+    if (!this.state.paused) {
+      if (isGuidedTawaf(this.state)) this.frameTawaf();
+      else {
+        if (this.state.view === 'walk') this.walk(delta);
+        if (this.state.view === 'follow' && !this.isRide()) { this.tmp.copy(this.avatar).sub(this.lastFollow); this.camera.position.add(this.tmp); this.orbit.target.add(this.tmp); this.lastFollow.copy(this.avatar); }
+      }
+    }
+    if (this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused) this.orbit.update();
+    if (this.state.view === 'follow' && !this.isRide() && !isGuidedTawaf(this.state) && !this.state.paused) {
+      const safe = moveWithinWorld(this.avatar.x, this.avatar.z, this.camera.position.x - this.avatar.x, this.camera.position.z - this.avatar.z, this.world.bounds, this.world.blockers, .35);
+      this.camera.position.x = safe.x; this.camera.position.z = safe.z; this.camera.lookAt(this.orbit.target);
+    }
+  }
   private tick = (time: number): void => {
     if (this.disposed) return;
     this.frame = requestAnimationFrame(this.tick);
     const delta = this.lastTime ? Math.min((time - this.lastTime) / 1000, .05) : 0; this.lastTime = time;
     if (this.contextLost || document.visibilityState !== 'visible') return;
-    if (!this.state.paused) {
-      if (this.state.view === 'walk') this.walk(delta);
-      if (this.state.view === 'follow' && !this.isRide()) { this.tmp.copy(this.avatar).sub(this.lastFollow); this.camera.position.add(this.tmp); this.orbit.target.add(this.tmp); this.lastFollow.copy(this.avatar); }
-    }
-    if (this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView()) this.orbit.update();
-    if (this.state.view === 'follow' && !this.isRide()) {
-      const safe = moveWithinWorld(this.avatar.x, this.avatar.z, this.camera.position.x - this.avatar.x, this.camera.position.z - this.avatar.z, this.world.bounds, this.world.blockers, .35);
-      this.camera.position.x = safe.x; this.camera.position.z = safe.z; this.camera.lookAt(this.orbit.target);
-    }
+    this.updateCamera(delta);
     this.crowdTime += delta;
     if (this.crowdTime > (this.compact ? 1 / 20 : 1 / 30)) { const animate = !this.reducedMotion && !this.state.paused; this.crowd?.update(this.crowdTime, animate, this.camera.position); this.guide.update(this.crowdTime, animate); this.crowdTime = 0; }
     this.renderer.render(this.scene, this.camera);
