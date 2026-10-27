@@ -229,3 +229,18 @@
   .umroh-hud-toggle, .guide-open .umroh-hud-toggle { top:12px; right:12px; }
   .umroh-transport-counter { max-width:200px; }
 }
+
+/* Moving map and flight speed controls. */
+.umroh-flight-map { position:absolute; top:74px; right:24px; z-index:1; padding:0; border:1px solid #ffffff55; border-radius:14px; overflow:hidden; background:#0a2a45; box-shadow:0 8px 24px #0b254533; cursor:pointer; width:220px; transition:width .35s ease; }
+.umroh-flight-map.expanded { width:min(420px, calc(100% - 48px)); }
+.umroh-flight-map canvas { display:block; width:100%; height:auto; }
+.umroh-map-toggle { position:absolute; top:74px; right:24px; z-index:1; background:#fffffff5; backdrop-filter:blur(12px); }
+.guide-open .umroh-flight-map, .guide-open .umroh-map-toggle { right:374px; top:140px; }
+.guide-open .umroh-flight-map.expanded { width:min(420px, calc(100% - 420px)); }
+.umroh-rate button { min-width:34px; font-weight:800; font-size:12px; }
+.hud-hidden .umroh-flight-map, .hud-hidden .umroh-map-toggle { display:none; }
+@media(max-width:760px) {
+  .umroh-flight-map, .umroh-map-toggle, .guide-open .umroh-flight-map, .guide-open .umroh-map-toggle { top:62px; right:12px; }
+  .umroh-flight-map { width:150px; }
+  .umroh-flight-map.expanded, .guide-open .umroh-flight-map.expanded { width:calc(100% - 24px); }
+}

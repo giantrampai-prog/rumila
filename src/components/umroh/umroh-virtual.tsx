@@ -13,7 +13,8 @@ import {
 } from '@/lib/umroh';
 import type { UmrohScene } from './scene';
 import { getFlightPov, isFlightChapter, type FlightCameraMode } from './flight-camera';
-import { getBoardingStep, getFlightState } from './flight-profile';
+import { DESCENT_START, getBoardingStep, getFlightState } from './flight-profile';
+import { drawFlightMap, routeFraction } from './flight-map';
 import './umroh.css';
 
 const TOOL_ID = 'petualangan-umroh';
@@ -64,6 +65,9 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   const [running, setRunning] = useState(false);
   const [checks, setChecks] = useState<boolean[]>([]);
   const [soundOn, setSoundOn] = useState(true);
+  // Flights can run faster than real-time; only the active flight is affected.
+  const [travelRate, setTravelRate] = useState<1 | 2 | 4>(1);
+  const [mapMode, setMapMode] = useState<'auto' | 'open' | 'closed'>('auto');
   // Hides every overlay so the scenery can be enjoyed; one button brings it back.
   const [hudHidden, setHudHidden] = useState(false);
   const [showMap, setShowMap] = useState(false);
@@ -79,6 +83,8 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   const flying = !visit && isFlightChapter(journey.chapter);
   const flightPov = getFlightPov(travelFraction, flightCamera, reducedMotion);
   const flightState = flying ? getFlightState(travelFraction) : null;
+  // The map opens wide for the moments around lift-off, then settles into the corner.
+  const takeoffMap = Boolean(flightState && (flightState.phase.id === 'rotate' || (flightState.phase.id === 'takeoff' && flightState.local > .4) || (flightState.phase.id === 'climb' && flightState.local < .3)));
   const boardingStep = journey.chapter === 'cgk_boarding' && !visit ? getBoardingStep(travelFraction) : null;
   const [landmarks, setLandmarks] = useState<{ id: string; label: string }[]>([]);
   const [sceneError, setSceneError] = useState(false);
@@ -239,13 +245,13 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
       previous = now;
       if (document.visibilityState !== 'visible') return;
       const current = latest.current;
-      const next = travelling ? advanceJourneyTravel(current, delta) : updateJourneyUmroh(current, advancePractice(current.umroh, delta * practiceRate));
+      const next = travelling ? advanceJourneyTravel(current, delta * (isFlightChapter(current.chapter) ? travelRate : 1)) : updateJourneyUmroh(current, advancePractice(current.umroh, delta * practiceRate));
       latest.current = next;
       setJourney(next);
       if (travelling ? next.travelSeconds >= (chapter.durationSeconds ?? 0) : next.umroh.count >= 7) setRunning(false);
     }, 40);
     return () => clearInterval(timer);
-  }, [running, practice, travelling, chapter.durationSeconds, practiceRate, visit, saved, showMap, showInfo, showRestart]);
+  }, [running, practice, travelling, chapter.durationSeconds, practiceRate, travelRate, visit, saved, showMap, showInfo, showRestart]);
 
   const next = () => {
     let updated = journey;
@@ -261,10 +267,11 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
       useRumila.getState().completeToolItem(memberId, TOOL_ID, 'angkasa', 'perjalanan-' + journey.chapter);
     }
     stopMovement(); setRunning(false); setJourney(updated); setGuideOpen(true); setChecks([]);
-    if (updated.chapter !== journey.chapter) { setView('walk'); setFlightCamera('auto'); }
+    if (updated.chapter !== journey.chapter) { setView('walk'); setFlightCamera('auto'); setTravelRate(1); setMapMode('auto'); }
   };
   const changePilgrim = (pilgrim: UmrohPilgrim) => setJourney((current) => ({ ...current, umroh: { ...current.umroh, pilgrim } }));
   const reset = () => { const current = saved ?? journey; stopMovement(); setVisit(null); setRunning(false); setSaved(null); setChecks([]); setJourney(createJourneyProgress(current.umroh.pilgrim)); setShowRestart(false); setGuideOpen(true); setView('walk'); setFlightCamera('auto'); };
+  const skipToLanding = () => setJourney((current) => advanceJourneyTravel(current, DESCENT_START * (chapter.durationSeconds ?? 0) - current.travelSeconds));
   const finishTravel = () => { setRunning(false); setJourney((current) => advanceJourneyTravel(current, chapter.durationSeconds ?? 0)); };
   const openNabawi = () => { setRunning(false); stopMovement(); setVisit('nabawi'); setShowMap(false); setGuideOpen(true); };
   const returnToLesson = () => { stopMovement(); setVisit(null); setRunning(false); setGuideOpen(true); };
@@ -320,15 +327,17 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
           {sceneError && <div className="umroh-loading"><Icon name="view_in_ar" size={40} /><strong>Tampilan 3D belum bisa dibuka</strong><p>Coba browser yang mendukung WebGL. Panduan langkah tetap bisa dibaca di sini.</p></div>}
           <div className="umroh-camera-toolbar">
             {flying ? <><div className="umroh-segmented" role="group" aria-label="Sudut pandang penerbangan">{FLIGHT_VIEWS.map((mode) => <button key={mode.id} aria-pressed={flightCamera === mode.id} onClick={() => { stopMovement(); setFlightCamera(mode.id); }}><Icon name={mode.icon} size={18} /><span>{mode.label}</span></button>)}</div>
-              <div className="umroh-segmented umroh-time" role="group" aria-label="Suara pesawat"><button aria-pressed={soundOn} aria-label={soundOn ? 'Matikan suara pesawat' : 'Nyalakan suara pesawat'} onClick={() => { const on = !soundOn; setSoundOn(on); if (on) scene.current?.unlockAudio(); }}><Icon name={soundOn ? 'volume_up' : 'volume_off'} size={17} /><span className="umroh-sr-label">Suara</span></button></div></> : <div className="umroh-segmented" role="group" aria-label="Cara menjelajah">{CAMERA_VIEWS.map((mode) => <button key={mode.id} aria-pressed={cameraView === mode.id} disabled={tawaf && reducedMotion && mode.id !== 'overview'} onClick={() => { stopMovement(); setView(mode.id); }}><Icon name={mode.icon} size={18} /><span>{travelling && mode.id === 'follow' ? 'Dalam kendaraan' : tawaf && mode.id === 'walk' ? 'POV tawaf' : mode.label}</span></button>)}</div>}
+              <div className="umroh-segmented umroh-time" role="group" aria-label="Suara pesawat"><button aria-pressed={soundOn} aria-label={soundOn ? 'Matikan suara pesawat' : 'Nyalakan suara pesawat'} onClick={() => { const on = !soundOn; setSoundOn(on); if (on) scene.current?.unlockAudio(); }}><Icon name={soundOn ? 'volume_up' : 'volume_off'} size={17} /><span className="umroh-sr-label">Suara</span></button></div>
+              <div className="umroh-segmented umroh-rate" role="group" aria-label="Kecepatan penerbangan">{([1, 2, 4] as const).map((rate) => <button key={rate} aria-pressed={travelRate === rate} aria-label={`Kecepatan ${rate} kali`} onClick={() => setTravelRate(rate)}>{rate}×</button>)}{travelFraction < DESCENT_START && <button aria-label="Lewati ke pendaratan" title="Lewati ke pendaratan" onClick={skipToLanding}><Icon name="flight_land" size={17} /></button>}</div></> : <div className="umroh-segmented" role="group" aria-label="Cara menjelajah">{CAMERA_VIEWS.map((mode) => <button key={mode.id} aria-pressed={cameraView === mode.id} disabled={tawaf && reducedMotion && mode.id !== 'overview'} onClick={() => { stopMovement(); setView(mode.id); }}><Icon name={mode.icon} size={18} /><span>{travelling && mode.id === 'follow' ? 'Dalam kendaraan' : tawaf && mode.id === 'walk' ? 'POV tawaf' : mode.label}</span></button>)}</div>}
             <div className="umroh-segmented umroh-time" role="group" aria-label="Suasana cahaya"><button aria-label="Siang" aria-pressed={timeOfDay === 'day'} onClick={() => setTimeOfDay('day')}><Icon name="light_mode" size={17} /><span>Siang</span></button><button aria-label="Senja" aria-pressed={timeOfDay === 'sunset'} onClick={() => setTimeOfDay('sunset')}><Icon name="wb_twilight" size={17} /><span>Senja</span></button></div>
           </div>
           {practice && !visit && <div className="umroh-counter" aria-live="polite"><span>{progress.stage === 'tawaf' ? 'PUTARAN TAWAF' : 'PERJALANAN SA’I'}</span><strong>{progress.count}<small> / 7</small></strong><div>{practiceDone ? (progress.stage === 'tawaf' ? 'Tujuh putaran lengkap' : 'Tujuh perjalanan lengkap') : progress.stage === 'sai' ? (progress.count % 2 === 0 ? 'Safa → Marwah' : 'Marwah → Safa') : 'Ka’bah di sebelah kiri'}</div></div>}
           {travelling && !visit && <div className="umroh-counter umroh-transport-counter"><span>{travelDone ? 'SUDAH TIBA' : running ? 'DALAM PERJALANAN' : journey.travelSeconds > 0 ? 'DIJEDA' : 'SIAP BERANGKAT'} · {Math.round(travelFraction * 100)}%{chapter.storyMinutes ? ' · ' + storyClock : ''}</span>
             <progress aria-label="Progres perjalanan" value={travelFraction} max={1} />
-            {flightState && <div className="umroh-flight-phase"><strong>{flightState.phase.label}</strong><span>{flightState.onGround ? `${Math.round(Math.abs(flightState.speed) * 3.6)} km/jam di darat` : `${(Math.round(flightState.altitude / 100) * 100).toLocaleString('id-ID')} m · ${Math.round(flightState.speed * 3.6)} km/jam`}{flightState.seatbelt ? ' · ' : ''}{flightState.seatbelt && <Icon name="airline_seat_recline_extra" size={13} />}</span></div>}
+            {flightState && <div className="umroh-flight-phase"><strong>{flightState.phase.label}</strong><span>{flightState.onGround ? `${Math.round(Math.abs(flightState.speed) * 3.6)} km/jam di darat` : `${(flightState.altitude < 1000 ? Math.round(flightState.altitude) : Math.round(flightState.altitude / 100) * 100).toLocaleString('id-ID')} m · ${Math.round(flightState.speed * 3.6)} km/jam`}{flightState.seatbelt ? ' · ' : ''}{flightState.seatbelt && <Icon name="airline_seat_recline_extra" size={13} />}</span></div>}
             {boardingStep && <div className="umroh-flight-phase"><strong>{boardingStep.label}</strong><span>Langkah {boardingStep.index + 1} dari 5 · kursi 32A</span></div>}
             {!flightState && !boardingStep && <div>{chapter.subtitle}</div>}</div>}
+          {flying && <FlightMap progress={travelFraction} toJeddah={journey.chapter === 'garuda_jed'} expanded={mapMode === 'open' || (mapMode === 'auto' && takeoffMap)} hidden={mapMode === 'closed'} onToggle={() => setMapMode((mode) => mode === 'closed' ? 'open' : mode === 'open' ? 'closed' : takeoffMap ? 'closed' : 'open')} />}
           <button className="umroh-icon-btn umroh-reset-camera" aria-label="Atur ulang kamera" onClick={() => { stopMovement(); scene.current?.resetCamera(); }}><Icon name="center_focus_strong" /></button>
           {!flying && journey.chapter !== 'cgk_boarding' && cameraView === 'walk' && !guidedTawaf && !dialogOpen && <div className="umroh-dpad" role="group" aria-label="Navigasi jalan kaki">{[
             { id: 'forward', label: 'Maju', icon: 'keyboard_arrow_up', forward: 1, right: 0 },
@@ -364,6 +373,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
             <progress aria-label="Progres perjalanan kendaraan" value={travelFraction} max={1} />
             <p>{chapter.storyMinutes === 540 ? (journey.chapter === 'garuda_cgk' ? 'Jeddah → Jakarta · sekitar 9 jam dalam cerita' : 'Jakarta → Jeddah · sekitar 9 jam dalam cerita') : chapter.storyMinutes ? `Sekitar ${chapter.storyMinutes >= 60 ? Math.floor(chapter.storyMinutes / 60) + ' jam' + (chapter.storyMinutes % 60 ? ' ' + chapter.storyMinutes % 60 + ' menit' : '') : chapter.storyMinutes + ' menit'} dalam cerita` : 'Nikmati pemandangan perjalanan'}</p>
             <small>Waktu dipercepat untuk simulasi. Durasi nyata mengikuti kondisi dan jadwal perjalanan.</small>
+            {flying && travelFraction < DESCENT_START && <button className="umroh-outline-btn umroh-full" onClick={skipToLanding}><Icon name="flight_land" size={18} />Lewati ke pendaratan</button>}
             {!travelDone && <button className="umroh-outline-btn umroh-full" onClick={finishTravel}><Icon name="fast_forward" size={18} />Singkatkan perjalanan</button>}
           </div>}
 
@@ -410,6 +420,29 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
       </Modal>}
     </main>
   );
+}
+
+/** Moving map, enlarged during take-off and climb; a tap collapses or opens it. */
+function FlightMap({ progress, toJeddah, expanded, hidden, onToggle }: { progress: number; toJeddah: boolean; expanded: boolean; hidden: boolean; onToggle: () => void }) {
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const width = expanded ? 640 : 320;
+  const [reveal, setReveal] = useState(1);
+  // Each time the map opens wide, the route is drawn from origin to destination.
+  useEffect(() => {
+    if (!expanded || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setReveal(1); return; }
+    let frame = 0; const start = performance.now();
+    const step = (now: number) => { const t = Math.min(1, (now - start) / 2200); setReveal(t * t * (3 - 2 * t)); if (t < 1) frame = requestAnimationFrame(step); };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [expanded]);
+  useEffect(() => {
+    const ctx = canvas.current?.getContext('2d');
+    if (ctx && !hidden) drawFlightMap(ctx, width, width * .6, progress, toJeddah, { footer: expanded, reveal });
+  }, [progress, toJeddah, expanded, hidden, width, reveal]);
+  if (hidden) return <button className="umroh-icon-btn umroh-map-toggle" aria-label="Tampilkan peta penerbangan" onClick={onToggle}><Icon name="map" /></button>;
+  return <button className={'umroh-flight-map ' + (expanded ? 'expanded' : '')} onClick={onToggle} aria-label={`Peta penerbangan, ${Math.round(routeFraction(progress) * 100)} persen rute. Ketuk untuk ${expanded ? 'mengecilkan' : 'menyembunyikan'}.`}>
+    <canvas ref={canvas} width={width} height={width * .6} />
+  </button>;
 }
 
 /** Illustrative boarding pass; fields are examples for learning, not a ticket. */

@@ -295,16 +295,23 @@ export class UmrohScene {
   /** Cinematic outside shots chosen by flight phase: chase, runway spotter, belly, cruise orbit, approach. */
   private frameFlight(delta: number): void {
     const telemetry = this.world.telemetry; if (!telemetry) return;
-    const p = this.travel, scale = this.flightFramingScale, heading = telemetry.heading;
+    const scale = this.flightFramingScale, heading = telemetry.heading;
     const offset = (x: number, y: number, z: number) => new T.Vector3(x * scale, y * scale, z * scale).applyAxisAngle(UP, heading);
     let shot: number, target: T.Vector3, fixed = false;
-    if (p < .215) { shot = 0; target = offset(-24, 4.5, 46); }
-    else if (p < .27) { shot = 1; target = telemetry.toScene(-68, 1.7, -470); fixed = true; }
-    else if (p < .34) { shot = 2; target = offset(16, -12, 66); }
-    else if (p < .66) { shot = 3; const a = -.7 + Math.max(0, (p - .5) / .16) * 2.6; target = offset(Math.sin(a) * 80, 13 + 5 * Math.sin(a * .7), Math.cos(a) * 80); }
-    else if (p < .905) { shot = 4; target = offset(62, 9, -74); }
-    else if (p < .957) { shot = 5; target = telemetry.toScene(-72, 1.7, -230, true); fixed = true; }
-    else { shot = 6; target = offset(-30, 5, 42); }
+    const phase = telemetry.phase, local = telemetry.local;
+    if (phase === 'pushback' || phase === 'taxi' || phase === 'lineup') { shot = 0; target = offset(-34, 9, 52); }
+    else if (phase === 'takeoff') { shot = 1; target = offset(-24, 4.5, 46); }
+    else if (phase === 'rotate' || (phase === 'climb' && local < .08)) { shot = 2; target = telemetry.toScene(-68, 1.7, -640); fixed = true; }
+    else if (phase === 'climb') { shot = 3; target = offset(16, -12, 66); }
+    else if (phase === 'cruise') { shot = 4; const a = -.7 + local * 2.6; target = offset(Math.sin(a) * 80, 13 + 5 * Math.sin(a * .7), Math.cos(a) * 80); }
+    else if (phase === 'descent') { shot = 5; target = offset(62, 9, -74); }
+    // Final approach seen from behind and above, the runway and its lights ahead.
+    else if (phase === 'approach' && local < .6) { shot = 6; target = offset(-10, 14, 70); }
+    // Low front quarter over the approach lights: gear, flaps and the flare.
+    else if (phase === 'approach' || phase === 'flare') { shot = 7; target = offset(40, -2.5, -62); }
+    // A spotter beside the touchdown zone: main wheels touch, smoke, then the nose comes down.
+    else if (phase === 'touchdown' || (phase === 'rollout' && local < .25)) { shot = 8; target = telemetry.toScene(-46, 1.8, -470, true); fixed = true; }
+    else { shot = 9; target = offset(-58, 6, 34); }
     if (shot !== this.shot) { this.shot = shot; this.shotPosition.copy(target); }
     else if (fixed) this.shotPosition.copy(target);
     else this.shotPosition.lerp(target, Math.min(1, delta * 2.5));
@@ -322,7 +329,7 @@ export class UmrohScene {
     this.tmp.set(...seat.position);
     if (telemetry && !this.reducedMotion) {
       // Pressed back into the seat on the take-off roll, pulled forward by reverse thrust.
-      const surge = telemetry.phase === 'takeoff' ? .06 : telemetry.phase === 'rotate' ? .04 : telemetry.phase === 'rollout' && telemetry.thrust < 0 ? -.05 : 0;
+      const surge = telemetry.phase === 'takeoff' ? .06 : telemetry.phase === 'rotate' ? .04 : (telemetry.phase === 'rollout' || telemetry.phase === 'touchdown') && telemetry.thrust < 0 ? -.07 : 0;
       this.surge += (surge - this.surge) * Math.min(1, delta * 3);
       const t = this.elapsed, k = telemetry.shake;
       this.tmp.z += this.surge; this.tmp.y += k * (.006 * Math.sin(t * 37) + .004 * Math.sin(t * 61)); this.tmp.x += k * .003 * Math.sin(t * 29);
