@@ -33,6 +33,10 @@
 .umroh-counter strong small { font-size:17px; color:var(--u-muted); font-weight:600; }
 .umroh-counter>div { font-size:10px; font-weight:600; margin-top:3px; }
 .umroh-counter .umroh-flight-caption { display:block; margin-top:7px; padding-top:6px; border-top:1px solid var(--u-line); color:var(--u-accent-deep); font-size:10px; line-height:1.4; font-weight:800; letter-spacing:0; }
+.umroh-counter .umroh-flight-phase { display:grid; gap:3px; margin-top:7px; padding-top:7px; border-top:1px solid var(--u-line); max-width:190px; }
+.umroh-flight-phase strong { font-size:11px; line-height:1.35; color:var(--u-ink); letter-spacing:0; }
+.umroh-flight-phase span { font-size:10px; font-weight:700; color:var(--u-muted); letter-spacing:0; line-height:1.4; }
+.umroh-flight-phase .umroh-seatbelt { display:flex; align-items:center; gap:4px; color:var(--brand-orange-deep); }
 .umroh-reset-camera { position:absolute; right:24px; bottom:24px; background:#fffffff5; backdrop-filter:blur(12px); }
 .guide-open .umroh-reset-camera { right:374px; }
 .umroh-scene-footer { position:absolute; bottom:119px; left:24px; display:flex; align-items:center; gap:6px; background:#fffffff0; color:var(--u-ink); border-radius:10px; padding:7px 9px; font-size:10px; font-weight:600; backdrop-filter:blur(10px); }
@@ -67,6 +71,26 @@
 .umroh-checklist { display:grid; gap:7px; margin:17px 0; }
 .umroh-checklist label { display:flex; align-items:center; gap:9px; font-size:11px; font-weight:600; line-height:1.5; cursor:pointer; min-height:30px; color:var(--u-ink); }
 .umroh-checklist input { width:17px; height:17px; flex-shrink:0; accent-color:var(--u-accent-deep); cursor:pointer; }
+.umroh-checklist label.current span { color:var(--u-accent-deep); font-weight:800; }
+.umroh-checklist input:disabled { cursor:not-allowed; }
+.umroh-checklist input:disabled+span { opacity:.55; }
+.umroh-checklist span b { display:inline-grid; place-items:center; width:18px; height:18px; margin-right:6px; border-radius:50%; background:var(--u-accent-tint); color:var(--u-accent-deep); font-size:10px; }
+.umroh-step-hint { margin-top:12px; font-size:11px; line-height:1.6; font-weight:600; color:var(--u-muted); }
+.umroh-boarding-pass { margin:14px 0; border-radius:16px; overflow:hidden; background:#fff; border:1px solid var(--u-line); box-shadow:0 6px 18px #0d3b5a1a; }
+.umroh-bp-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; padding:10px 13px; background:#0d5f7e; color:#fff; font-weight:800; font-size:12px; }
+.umroh-bp-head small { font-size:8px; letter-spacing:.08em; opacity:.85; }
+.umroh-bp-route { display:flex; align-items:center; justify-content:space-between; padding:11px 15px 4px; color:#0d5f7e; }
+.umroh-bp-route div { display:grid; }
+.umroh-bp-route div:last-child { text-align:right; }
+.umroh-bp-route strong { font-size:22px; line-height:1; color:var(--u-ink); }
+.umroh-bp-route small { font-size:10px; font-weight:700; color:var(--u-muted); }
+.umroh-boarding-pass dl { display:grid; grid-template-columns:1.6fr 1fr; gap:7px 12px; padding:8px 15px 10px; margin:0; }
+.umroh-boarding-pass dt { font-size:8px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--u-muted); }
+.umroh-boarding-pass dd { margin:0; font-size:11px; font-weight:800; color:var(--u-ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.umroh-bp-foot { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 15px 11px; border-top:1px dashed var(--u-line); }
+.umroh-bp-code { width:96px; height:24px; background:repeating-linear-gradient(90deg,#1c2a33 0 2px,transparent 2px 4px,#1c2a33 4px 5px,transparent 5px 8px); border-radius:2px; }
+.umroh-bp-foot em { font-style:normal; font-size:10px; font-weight:800; color:var(--u-muted); }
+.umroh-bp-foot em.boarding { color:#178a4c; }
 .umroh-note { display:flex; align-items:flex-start; gap:9px; padding:12px; background:var(--star-gold-tint); border:1px solid #f1d69e; border-radius:16px; margin:16px 0; color:#725015; }
 .umroh-note>.ms { flex-shrink:0; margin-top:2px; color:var(--brand-orange-deep); }
 .umroh-note p { font-size:11px; line-height:1.75; font-weight:600; }

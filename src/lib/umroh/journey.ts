@@ -2,7 +2,7 @@ import { createProgress, parseSavedProgress } from "./state";
 import type { UmrohPilgrim, UmrohProgress } from "./types";
 
 export const JOURNEY_CHAPTER_IDS = [
-  "rumah", "taxi_cgk", "cgk", "garuda_jed", "jeddah", "haramain",
+  "rumah", "taxi_cgk", "cgk", "cgk_imigrasi", "cgk_keamanan", "cgk_gate", "cgk_boarding", "garuda_jed", "jeddah", "haramain",
   "madinah_station", "uber_nabawi", "nabawi", "rawdah", "salam", "umroh",
   "makkah_jed", "jeddah_pulang", "garuda_cgk", "cgk_pulang", "taxi_rumah", "rumah_selesai",
 ] as const;
@@ -24,6 +24,8 @@ export interface JourneyChapter {
   readonly durationSeconds?: number;
   /** Narrative duration only; never a live timetable or a booking promise. */
   readonly storyMinutes?: number;
+  /** Ordered tasks the learner ticks before continuing; the 3D scene follows the same order. */
+  readonly steps?: readonly string[];
 }
 
 export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
@@ -32,6 +34,7 @@ export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
     instruction: "Siapkan koper, dokumen perjalanan, dan kebutuhan pribadi bersama keluarga.",
     detail: "Kita berangkat melalui Jeddah, berkunjung ke Madinah, lalu umroh di Makkah. Periksa dokumen dan koper bersama keluarga sebelum kendaraan datang.",
     action: "Naik taksi", icon: "home", location: "Rumah · Indonesia", kind: "lesson",
+    steps: ["Paspor dan dokumen perjalanan siap", "Koper dan perlengkapan sudah diperiksa", "Siap berangkat bersama pendamping"],
   },
   {
     id: "taxi_cgk", title: "Taksi menuju bandara", subtitle: "Dari rumah ke Soekarno–Hatta",
@@ -40,16 +43,44 @@ export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
     action: "Masuk terminal CGK", icon: "local_taxi", location: "Jalan menuju CGK", kind: "travel", durationSeconds: 14,
   },
   {
-    id: "cgk", title: "Berangkat dari CGK", subtitle: "Bandara Soekarno–Hatta",
-    instruction: "Kenali alur check-in, pemeriksaan keamanan, imigrasi, lalu ruang tunggu keberangkatan.",
-    detail: "Cocokkan dokumen dan bagasi saat check-in. Setelah pemeriksaan, temukan gerbang pada boarding pass dan perhatikan pengumuman petugas.",
-    action: "Naik pesawat Garuda", icon: "flight_takeoff", location: "Bandara Soekarno–Hatta · CGK", kind: "lesson",
+    id: "cgk", title: "Check-in di Soekarno–Hatta", subtitle: "Terminal keberangkatan internasional",
+    instruction: "Lewati pemeriksaan di pintu masuk terminal, antre di konter maskapai, serahkan paspor, timbang koper, lalu terima boarding pass.",
+    detail: "Koper besar masuk bagasi dan diberi label tujuan JED. Tas kecil tetap dibawa ke kabin. Periksa nama, tujuan, nomor kursi, dan jam boarding pada boarding pass sebelum meninggalkan konter.",
+    action: "Menuju imigrasi", icon: "luggage", location: "Bandara Soekarno–Hatta · Check-in", kind: "lesson",
+    steps: ["Antre di konter check-in Garuda", "Serahkan paspor dan dokumen perjalanan", "Taruh koper di timbangan dan beri label bagasi", "Terima boarding pass dan periksa isinya"],
+  },
+  {
+    id: "cgk_imigrasi", title: "Pemeriksaan imigrasi", subtitle: "Keberangkatan luar negeri",
+    instruction: "Siapkan paspor dan boarding pass, antre di jalur imigrasi, lalu ikuti arahan petugas atau gerbang otomatis.",
+    detail: "Petugas imigrasi memeriksa paspor sebelum kita meninggalkan Indonesia. Lepas topi atau kacamata hitam saat difoto, tatap kamera, dan tunggu sampai gerbang terbuka. Anak-anak didampingi orang tua.",
+    action: "Menuju pemeriksaan keamanan", icon: "badge", location: "Bandara Soekarno–Hatta · Imigrasi", kind: "lesson",
+    steps: ["Siapkan paspor dan boarding pass", "Antre di jalur imigrasi", "Pindai paspor dan tatap kamera", "Paspor dikembalikan, gerbang terbuka"],
+  },
+  {
+    id: "cgk_keamanan", title: "Pemeriksaan keamanan", subtitle: "Tas kabin dan penumpang diperiksa",
+    instruction: "Letakkan tas, jaket, ikat pinggang, ponsel, dan benda logam di nampan, lalu berjalan melewati gerbang pemeriksaan.",
+    detail: "Nampan masuk mesin X-ray agar petugas dapat melihat isi tas tanpa membukanya. Cairan di tas kabin dibatasi sesuai ketentuan bandara. Ambil kembali semua barang dari nampan setelah pemeriksaan.",
+    action: "Cari gerbang keberangkatan", icon: "security", location: "Bandara Soekarno–Hatta · Pemeriksaan keamanan", kind: "lesson",
+    steps: ["Taruh tas dan barang logam di nampan", "Nampan masuk mesin X-ray", "Berjalan melewati gerbang pemeriksaan", "Ambil kembali semua barang"],
+  },
+  {
+    id: "cgk_gate", title: "Ruang tunggu gerbang", subtitle: "Menunggu panggilan boarding",
+    instruction: "Cocokkan nomor gerbang di layar keberangkatan dengan boarding pass, duduk di ruang tunggu, dan dengarkan panggilan boarding.",
+    detail: "Status penerbangan di layar berubah dari Jadwal menjadi Boarding. Penumpang dipanggil bertahap; siapkan boarding pass dan paspor ketika kelompok kita dipanggil. Nomor gerbang pada simulasi ini hanya contoh.",
+    action: "Mulai boarding", icon: "event_seat", location: "Bandara Soekarno–Hatta · Gerbang keberangkatan", kind: "lesson",
+    steps: ["Cocokkan gerbang di layar keberangkatan", "Duduk di ruang tunggu dekat gerbang", "Dengar panggilan boarding untuk kelompok kita"],
+  },
+  {
+    id: "cgk_boarding", title: "Boarding ke pesawat", subtitle: "Pindai boarding pass, garbarata, lalu duduk",
+    instruction: "Pindai boarding pass di gerbang, berjalan melewati garbarata, disambut awak kabin di pintu, lalu cari kursi dan pasang sabuk pengaman.",
+    detail: "Nomor kursi ada di boarding pass; huruf A dan K biasanya di dekat jendela. Simpan tas di bagasi atas atau di bawah kursi depan, lalu duduk dan kencangkan sabuk sampai lampu tanda sabuk dipadamkan.",
+    action: "Pesawat siap terbang", icon: "airline_seat_recline_normal", location: "Garbarata · menuju kabin Garuda", kind: "travel", durationSeconds: 20,
   },
   {
     id: "garuda_jed", title: "Terbang ke Jeddah", subtitle: "Garuda · cerita penerbangan 9 jam",
-    instruction: "Kenali suasana kabin, dengarkan arahan awak, dan ikuti penerbangan menuju Arab Saudi.",
-    detail: "Dalam cerita ini penerbangan berlangsung 9 jam. Gunakan waktu untuk beristirahat dan mengenal tujuan kita: Madinah terlebih dahulu, kemudian umroh dari Bir Ali.",
-    action: "Tiba di Jeddah", icon: "flight", location: "Garuda Indonesia · CGK → JED", kind: "travel", durationSeconds: 20, storyMinutes: 540,
+    instruction: "Dengarkan peragaan keselamatan, rasakan lepas landas, lihat langit dari jendela, dan ikuti penerbangan menuju Arab Saudi.",
+    detail: "Pesawat didorong mundur, meluncur ke landasan, lepas landas, menembus awan, lalu terbang jelajah sekitar 9 jam dalam cerita sebelum turun dan mendarat di Jeddah. Tetap duduk dengan sabuk terpasang saat lampu tanda sabuk menyala.",
+    action: "Tiba di Jeddah", icon: "flight", location: "Garuda Indonesia · CGK → JED", kind: "travel", durationSeconds: 48, storyMinutes: 540,
   },
   {
     id: "jeddah", title: "Tiba di Jeddah", subtitle: "Bandara King Abdulaziz",
@@ -115,7 +146,7 @@ export const JOURNEY_CHAPTERS: readonly JourneyChapter[] = [
     id: "garuda_cgk", title: "Terbang pulang ke Indonesia", subtitle: "Garuda · Jeddah menuju CGK",
     instruction: "Ikuti penerbangan pulang, gunakan sabuk pengaman saat diminta, dan bersiap mendarat di Indonesia.",
     detail: "Penerbangan pulang dalam cerita berlangsung 9 jam. Beristirahatlah dan ikuti arahan awak kabin. Saat mendarat, periksa barang pribadi sebelum meninggalkan kursi.",
-    action: "Tiba di Soekarno–Hatta", icon: "flight_land", location: "Garuda Indonesia · JED → CGK", kind: "travel", durationSeconds: 20, storyMinutes: 540,
+    action: "Tiba di Soekarno–Hatta", icon: "flight_land", location: "Garuda Indonesia · JED → CGK", kind: "travel", durationSeconds: 48, storyMinutes: 540,
   },
   {
     id: "cgk_pulang", title: "Kembali di Soekarno–Hatta", subtitle: "Kedatangan di Indonesia",

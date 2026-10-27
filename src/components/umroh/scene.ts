@@ -6,14 +6,16 @@ import { Resources } from './realistic/resources';
 import { createNabawiWorld, createBirAliWorld } from './realistic/madinah';
 import { createHaramWorld, createSaiWorld } from './realistic/haram';
 import { createCabinWorld, createJourneyWorld, createTahallulWorld } from './realistic/travel';
-import { createHomeWorld, createTaxiWorld, createAirportWorld, createHaramainWorld, createMadinahStationWorld } from './realistic/itinerary';
+import { createHomeWorld, createTaxiWorld, createHaramainWorld, createMadinahStationWorld } from './realistic/itinerary';
 import { createRawdahWorld, createSalamWorld } from './realistic/nabawi-interior';
 import { createFlightWorld } from './realistic/flight';
 import { getFlightPov, isFlightChapter, type FlightCameraMode } from './flight-camera';
 import { getTawafCameraFrame, getTawafRoutePose, getTawafView, isGuidedTawaf, isTawafScene } from './tawaf-camera';
 import { MAQAM_POSITION } from './realistic/kaaba-layout';
 import { Pilgrims } from './realistic/pilgrims';
-import type { UmrohWorld, Position } from './realistic/types';
+import type { UmrohWorld, Position, WorldFrame } from './realistic/types';
+import { createBoardingWorld, createTerminalWorld } from './realistic/airport';
+import { FlightAudio } from './flight-audio';
 import { moveWithinWorld } from './realistic/navigation';
 
 export type { UmrohStage };
@@ -32,9 +34,12 @@ export interface UmrohSceneState {
   timeOfDay?: 'day' | 'sunset';
   visit?: 'nabawi' | null;
   paused?: boolean;
+  /** Completed checklist steps in the current lesson chapter. */
+  step?: number;
 }
-type WorldKey = 'nabawi' | 'birali' | 'cabin' | 'journey' | 'haram' | 'sai' | 'tahallul' | 'home' | 'taxi-cgk' | 'taxi-home' | 'uber' | 'cgk' | 'cgk-return' | 'jed' | 'jed-return' | 'garuda-jed' | 'garuda-cgk' | 'flight-jed' | 'flight-cgk' | 'haramain' | 'madinah-station' | 'rawdah' | 'salam' | 'jeddah-bus';
+type WorldKey = 'nabawi' | 'birali' | 'cabin' | 'journey' | 'haram' | 'sai' | 'tahallul' | 'home' | 'taxi-cgk' | 'taxi-home' | 'uber' | 'cgk' | 'cgk-return' | 'jed' | 'jed-return' | 'garuda-jed' | 'garuda-cgk' | 'flight-jed' | 'flight-cgk' | 'haramain' | 'madinah-station' | 'rawdah' | 'salam' | 'jeddah-bus' | 'boarding';
 const EYE_HEIGHT = 1.68, SAI_END = 75;
+const UP = new T.Vector3(0, 1, 0);
 
 /** Walkable human-scale reconstruction; architecture and PBR textures share GPU resources. */
 export class UmrohScene {
@@ -75,6 +80,21 @@ export class UmrohScene {
   private lastFollow = new T.Vector3();
   private tmp = new T.Vector3();
   private flightFramingScale = 1;
+  private surge = 0;
+  /** Travel progress eased between the 25 Hz journey updates so motion stays fluid. */
+  private travel = 0;
+  private elapsed = 0;
+  private railYaw = 0;
+  private railPitch = 0;
+  private shot = -1;
+  private shotPosition = new T.Vector3();
+  private seatQuaternion = new T.Quaternion();
+  private worldQuaternion = new T.Quaternion();
+  private euler = new T.Euler(0, 0, 0, 'YXZ');
+  private sunDirection = new T.Vector3();
+  private frameInfo: WorldFrame = { step: 0, travel: 0, time: 0, delta: 0, running: false, reducedMotion: false, sunDirection: this.sunDirection, sunset: false };
+  private audio: FlightAudio | null = null;
+  private soundOn = true;
 
   constructor(private container: HTMLElement) {
     this.renderer = new T.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
@@ -90,7 +110,7 @@ export class UmrohScene {
     this.sun.castShadow = true; this.sun.shadow.mapSize.setScalar(this.compact ? 1024 : 2048);
     Object.assign(this.sun.shadow.camera, { left: -85, right: 85, top: 85, bottom: -85, near: 1, far: 350 });
     this.sun.shadow.normalBias = .045; this.sun.shadow.bias = -.00012;
-    this.sky.scale.setScalar(1800); this.scene.add(this.sky);
+    this.sky.scale.setScalar(1800); this.sky.renderOrder = -100; this.scene.add(this.sky);
     Object.assign(this.sky.material.uniforms.turbidity, { value: 3 });
     this.sky.material.uniforms.rayleigh.value = 1.7;
     this.sky.material.uniforms.mieCoefficient.value = .005;
@@ -118,22 +138,29 @@ export class UmrohScene {
   private setTime(time: 'day' | 'sunset'): void {
     const sunset = time === 'sunset';
     const flying = Boolean(this.world?.flight);
-    this.sky.visible = !flying && !isFlightChapter(this.state.chapter);
-    const direction = new T.Vector3(-.45, sunset ? .13 : .75, .45).normalize();
+    const aloft = Boolean(this.world?.telemetry);
+    this.sky.visible = true;
+    // Flights keep the sun ahead-left of the aircraft so the window seat catches its light.
+    const direction = aloft ? new T.Vector3(-.62, sunset ? .1 : .55, -.5).normalize() : new T.Vector3(-.45, sunset ? .13 : .75, .45).normalize();
+    this.sunDirection.copy(direction);
     this.sky.material.uniforms.sunPosition.value.copy(direction);
     this.sky.material.uniforms.turbidity.value = sunset ? 5 : 3;
     this.sun.color.set(sunset ? '#ffd2a2' : '#fff2dc'); this.sun.intensity = sunset ? 1.8 : 2.8;
     this.sun.position.copy(direction).multiplyScalar(170);
-    this.hemisphere.intensity = this.world?.indoor ? 1.45 : flying ? 1.2 : sunset ? .55 : .7;
+    this.hemisphere.intensity = this.world?.indoor ? (aloft ? 1.05 : 1.45) : flying ? 1.2 : sunset ? .55 : .7;
     this.hemisphere.color.set(sunset ? '#d7c8c1' : '#dbe7ef');
-    this.renderer.toneMappingExposure = flying ? .95 : sunset ? .66 : .7;
-    this.scene.fog = new T.Fog(sunset ? '#d6bba0' : flying ? '#bfdaf3' : '#c6d2d4', flying ? 900 : 170, flying ? 2500 : 1100);
+    this.renderer.toneMappingExposure = aloft ? (sunset ? .62 : .68) : flying ? .95 : sunset ? .66 : .7;
+    this.scene.fog = new T.Fog(sunset ? '#d6bba0' : aloft ? '#d4e1e8' : '#c6d2d4', aloft ? 1500 : 170, aloft ? 45000 : 1100);
+    // Bright sky reflections suit the painted aircraft; the cabin interior stays matte.
+    this.scene.environmentIntensity = aloft && !this.world?.indoor ? .55 : .15;
+    // Flight worlds retune the atmosphere for altitude every frame; restore ground level here.
+    this.sky.material.uniforms.rayleigh.value = 1.7; this.sky.material.uniforms.mieCoefficient.value = .005;
   }
   private keyFor(state: UmrohSceneState): WorldKey {
     if (state.visit === 'nabawi') return 'nabawi';
     if (isFlightChapter(state.chapter) && getFlightPov(state.travelProgress ?? 0, state.flightCamera, this.reducedMotion) === 'exterior') return state.chapter === 'garuda_jed' ? 'flight-jed' : 'flight-cgk';
     const chapters: Partial<Record<JourneyChapterId, WorldKey>> = {
-      rumah: 'home', taxi_cgk: 'taxi-cgk', cgk: 'cgk', garuda_jed: 'garuda-jed', jeddah: 'jed', haramain: 'haramain',
+      rumah: 'home', taxi_cgk: 'taxi-cgk', cgk: 'cgk', cgk_imigrasi: 'cgk', cgk_keamanan: 'cgk', cgk_gate: 'cgk', cgk_boarding: 'boarding', garuda_jed: 'garuda-jed', jeddah: 'jed', haramain: 'haramain',
       madinah_station: 'madinah-station', uber_nabawi: 'uber', nabawi: 'nabawi', rawdah: 'rawdah', salam: 'salam',
       makkah_jed: 'jeddah-bus', jeddah_pulang: 'jed-return', garuda_cgk: 'garuda-cgk', cgk_pulang: 'cgk-return', taxi_rumah: 'taxi-home', rumah_selesai: 'home',
     };
@@ -152,22 +179,31 @@ export class UmrohScene {
       cabin: () => createCabinWorld(this.resources), journey: () => createJourneyWorld(this.resources),
       haram: () => createHaramWorld(this.resources), sai: () => createSaiWorld(this.resources), tahallul: () => createTahallulWorld(this.resources),
       home: () => createHomeWorld(this.resources), 'taxi-cgk': () => createTaxiWorld(this.resources, 'taxi'), 'taxi-home': () => createTaxiWorld(this.resources, 'taxi', true),
-      uber: () => createTaxiWorld(this.resources, 'uber'), cgk: () => createAirportWorld(this.resources, 'cgk'), 'cgk-return': () => createAirportWorld(this.resources, 'cgk', true),
-      jed: () => createAirportWorld(this.resources, 'jed'), 'jed-return': () => createAirportWorld(this.resources, 'jed', true),
+      uber: () => createTaxiWorld(this.resources, 'uber'), cgk: () => createTerminalWorld(this.resources, 'cgk', 'departure'), 'cgk-return': () => createTerminalWorld(this.resources, 'cgk', 'arrival'),
+      jed: () => createTerminalWorld(this.resources, 'jed', 'arrival'), 'jed-return': () => createTerminalWorld(this.resources, 'jed', 'departure'),
+      boarding: () => createBoardingWorld(this.resources),
       'garuda-jed': () => createCabinWorld(this.resources, 'jeddah'), 'garuda-cgk': () => createCabinWorld(this.resources, 'jakarta'),
       'flight-jed': () => createFlightWorld(this.resources, 'jeddah'), 'flight-cgk': () => createFlightWorld(this.resources, 'jakarta'),
       haramain: () => createHaramainWorld(this.resources), 'madinah-station': () => createMadinahStationWorld(this.resources),
       rawdah: () => createRawdahWorld(this.resources), salam: () => createSalamWorld(this.resources), 'jeddah-bus': () => createJourneyWorld(this.resources, true),
     };
     let world = this.worlds.get(key);
-    if (!world) { world = factories[key](); if (world.motion) this.resources.batch(world.motion.group); if (world.flight) this.resources.batch(world.flight.aircraft); this.resources.batch(world.group); this.worlds.set(key, world); }
+    if (!world) {
+      world = factories[key]();
+      if (world.motion) this.resources.batch(world.motion.group);
+      if (world.vehicle) this.resources.batch(world.vehicle); else if (world.flight) this.resources.batch(world.flight.aircraft);
+      this.resources.batch(world.group); this.worlds.set(key, world);
+    }
     this.world = world; this.worldKey = key; this.scene.add(world.group);
     if (world.crowd) {
       this.crowd = this.crowds.get(key) ?? new Pilgrims(this.resources, { ...world.crowd, count: Math.min(world.crowd.count, this.compact ? 90 : 220) });
       this.crowds.set(key, this.crowd); this.crowd.setAttire(['haram', 'sai', 'birali', 'tahallul'].includes(key) ? 'ihram' : 'travel'); this.scene.add(this.crowd.group);
     }
     this.setTime(this.state.timeOfDay ?? 'day');
-    this.camera.fov = world.flight ? 50 : isFlightChapter(this.state.chapter) ? 60 : 64;
+    this.camera.fov = world.flight ? 50 : isFlightChapter(this.state.chapter) ? 68 : 64;
+    // Flights see the ground to the horizon; the cabin still needs a close near plane.
+    this.camera.near = world.flight ? .5 : .05; this.camera.far = world.telemetry ? 400000 : 2600;
+    this.shot = -1;
     this.updateProjection();
     this.orbit.maxPolarAngle = world.flight ? Math.PI * .85 : Math.PI / 2 - .025;
     this.container.dispatchEvent(new CustomEvent('umroh-landmarks-changed', { bubbles: true }));
@@ -183,11 +219,9 @@ export class UmrohScene {
     if (changed) this.loadWorld(key);
     if (old.timeOfDay !== this.state.timeOfDay) this.setTime(this.state.timeOfDay!);
     if (this.world.motion) this.world.motion.group.position[this.world.motion.axis] = Math.max(0, Math.min(1, this.state.travelProgress ?? 0)) * this.world.motion.distance;
-    if (this.world.flight) {
-      const phase = (this.state.travelProgress ?? 0) * Math.PI * 2;
-      this.world.flight.aircraft.rotation.z = this.reducedMotion ? 0 : Math.sin(phase) * .035;
-      this.world.flight.aircraft.position.y = this.reducedMotion ? 0 : Math.sin(phase * 1.5) * .4;
-    }
+    if (changed || Math.abs((this.state.travelProgress ?? 0) - this.travel) > .03) this.travel = Math.max(0, Math.min(1, this.state.travelProgress ?? 0));
+    if (changed) this.animateWorld(0);
+    this.audio?.setEnabled(this.soundOn && Boolean(this.world.telemetry) && this.state.running && !this.state.paused);
     this.placeGuide();
     const framingChanged = old.guideOpen !== next.guideOpen && Boolean(this.world.flight);
     if (framingChanged) this.updateProjection();
@@ -197,7 +231,6 @@ export class UmrohScene {
     this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused;
     if (isGuidedTawaf(this.state)) { this.pressed.clear(); this.forward = this.right = 0; this.frameTawaf(); }
     else if (isGuidedTawaf(old) && isTawafScene(this.state) && !this.state.paused && old.progress !== this.state.progress) this.frameTawaf();
-    if (this.isAutomaticFlightView() && !this.state.paused) this.frameFlight();
     if (this.state.paused) this.pauseInput();
     const places: Record<WorldKey, string> = {
       nabawi: 'Pelataran Masjid Nabawi', birali: 'Masjid miqat Bir Ali', haram: 'Masjidil Haram dan Kaabah', sai: 'Koridor Safa dan Marwah', cabin: 'Kabin pesawat sebelum miqat', journey: 'Perjalanan menuju Makkah', tahallul: 'Tempat tahallul',
@@ -205,22 +238,76 @@ export class UmrohScene {
       cgk: 'Bandara Soekarno–Hatta, keberangkatan', 'cgk-return': 'Bandara Soekarno–Hatta, kedatangan', jed: 'Bandara King Abdulaziz Jeddah, kedatangan', 'jed-return': 'Bandara King Abdulaziz Jeddah, keberangkatan',
       'garuda-jed': 'Kabin Garuda Indonesia menuju Jeddah', 'garuda-cgk': 'Kabin Garuda Indonesia menuju Jakarta', haramain: 'Kereta cepat Haramain menuju Madinah', 'madinah-station': 'Stasiun Haramain Madinah',
       'flight-jed': 'Pesawat Garuda Indonesia terbang di atas awan menuju Jeddah', 'flight-cgk': 'Pesawat Garuda Indonesia terbang di atas awan menuju Jakarta',
+      boarding: 'Gerbang keberangkatan, garbarata, dan kabin Garuda Indonesia',
       rawdah: 'Gambaran area Raudhah di Masjid Nabawi', salam: 'Koridor ziarah salam di luar pembatas ruang makam', 'jeddah-bus': 'Perjalanan pulang dari Makkah menuju bandara Jeddah',
     };
     const place = places[key];
     const tawafHint = this.state.view === 'walk' ? 'Kamera mengikuti putaran tawaf. Geser untuk melihat; jeda untuk berjalan bebas.' : 'Kamera mengikuti jamaah saat tawaf. Jeda untuk mengubah sudut pandang.';
     this.renderer.domElement.setAttribute('aria-label', `${place}. Rekonstruksi tiga dimensi. ${isGuidedTawaf(this.state) ? tawafHint : isTawafScene(this.state) && this.reducedMotion ? 'Gerak dikurangi: kamera kawasan tetap selama tawaf. Geser untuk melihat kawasan.' : isFlightChapter(this.state.chapter) ? 'Pilih POV otomatis, dalam kabin, atau luar pesawat.' : 'Geser untuk melihat; WASD atau tombol arah untuk berjalan setelah memilih area 3D.'}`);
   }
-  private isRide(): boolean { return ['taxi-cgk', 'taxi-home', 'uber', 'haramain', 'garuda-jed', 'garuda-cgk', 'flight-jed', 'flight-cgk', 'journey', 'jeddah-bus'].includes(this.worldKey ?? ''); }
+  private isRide(): boolean { return ['taxi-cgk', 'taxi-home', 'uber', 'haramain', 'garuda-jed', 'garuda-cgk', 'flight-jed', 'flight-cgk', 'journey', 'jeddah-bus', 'boarding'].includes(this.worldKey ?? ''); }
   private isSeatedView(): boolean { return this.state.view === 'follow' && this.isRide(); }
   private isAutomaticFlightView(): boolean { return Boolean(this.world?.flight) && this.state.flightCamera === 'auto' && !this.reducedMotion; }
-  private frameFlight(): void {
-    const p = Math.max(0, Math.min(1, this.state.travelProgress ?? 0));
-    const second = p >= .5;
-    const local = second ? (p - .5) * 4 : p * 4;
-    this.camera.position.set(second ? -64 + local * 8 : 58 + local * 8, second ? 23 : 18 + local * 4, second ? 50 - local * 10 : -65 + local * 15);
-    this.camera.position.sub(this.tmp.set(0, 2, 0)).multiplyScalar(this.flightFramingScale).add(this.tmp);
-    this.camera.lookAt(0, 2, 0);
+  /** Cinematic outside shots chosen by flight phase: chase, runway spotter, belly, cruise orbit, approach. */
+  private frameFlight(delta: number): void {
+    const telemetry = this.world.telemetry; if (!telemetry) return;
+    const p = this.travel, scale = this.flightFramingScale, heading = telemetry.heading;
+    const offset = (x: number, y: number, z: number) => new T.Vector3(x * scale, y * scale, z * scale).applyAxisAngle(UP, heading);
+    let shot: number, target: T.Vector3, fixed = false;
+    if (p < .215) { shot = 0; target = offset(-24, 4.5, 46); }
+    else if (p < .27) { shot = 1; target = telemetry.toScene(-68, 1.7, -470); fixed = true; }
+    else if (p < .34) { shot = 2; target = offset(16, -12, 66); }
+    else if (p < .66) { shot = 3; const a = -.7 + Math.max(0, (p - .5) / .16) * 2.6; target = offset(Math.sin(a) * 80, 13 + 5 * Math.sin(a * .7), Math.cos(a) * 80); }
+    else if (p < .905) { shot = 4; target = offset(62, 9, -74); }
+    else if (p < .957) { shot = 5; target = telemetry.toScene(-72, 1.7, -230, true); fixed = true; }
+    else { shot = 6; target = offset(-30, 5, 42); }
+    if (shot !== this.shot) { this.shot = shot; this.shotPosition.copy(target); }
+    else if (fixed) this.shotPosition.copy(target);
+    else this.shotPosition.lerp(target, Math.min(1, delta * 2.5));
+    this.camera.position.copy(this.shotPosition);
+    if (!this.reducedMotion && telemetry.shake > 0) {
+      const t = this.elapsed, k = telemetry.shake * (fixed ? .02 : .12);
+      this.camera.position.x += Math.sin(t * 41) * k; this.camera.position.y += Math.sin(t * 53 + 1) * k;
+    }
+    this.camera.lookAt(this.tmp.set(0, 0, -6).applyAxisAngle(UP, heading));
+  }
+  /** Seated eye point fixed to the cabin, so pitch, bank and bumps are felt through the window. */
+  private placeSeated(delta: number): void {
+    const seat = this.world.seat!, vehicle = this.world.vehicle!, telemetry = this.world.telemetry;
+    vehicle.updateWorldMatrix(true, false);
+    this.tmp.set(...seat.position);
+    if (telemetry && !this.reducedMotion) {
+      // Pressed back into the seat on the take-off roll, pulled forward by reverse thrust.
+      const surge = telemetry.phase === 'takeoff' ? .06 : telemetry.phase === 'rotate' ? .04 : telemetry.phase === 'rollout' && telemetry.thrust < 0 ? -.05 : 0;
+      this.surge += (surge - this.surge) * Math.min(1, delta * 3);
+      const t = this.elapsed, k = telemetry.shake;
+      this.tmp.z += this.surge; this.tmp.y += k * (.006 * Math.sin(t * 37) + .004 * Math.sin(t * 61)); this.tmp.x += k * .003 * Math.sin(t * 29);
+    }
+    this.camera.position.copy(this.tmp).applyMatrix4(vehicle.matrixWorld);
+    this.euler.set(this.pitch, this.yaw, 0, 'YXZ'); this.seatQuaternion.setFromEuler(this.euler);
+    vehicle.getWorldQuaternion(this.worldQuaternion);
+    this.camera.quaternion.copy(this.worldQuaternion).multiply(this.seatQuaternion);
+  }
+  private placeOnRail(): void {
+    const pose = this.world.rail!(this.travel);
+    this.camera.position.set(...pose.position);
+    this.tmp.set(...pose.lookAt).sub(this.camera.position).normalize();
+    this.yaw = Math.atan2(-this.tmp.x, -this.tmp.z) + this.railYaw; this.pitch = Math.asin(T.MathUtils.clamp(this.tmp.y, -.95, .95)) + this.railPitch;
+    this.camera.rotation.set(this.pitch, this.yaw, 0, 'YXZ');
+  }
+  private animateWorld(delta: number): void {
+    const world = this.world; if (!world?.animate) return;
+    const frame = this.frameInfo;
+    frame.chapter = this.state.chapter; frame.step = this.state.step ?? 0; frame.travel = this.travel; frame.time = this.elapsed; frame.delta = delta;
+    frame.running = this.state.running && !this.state.paused; frame.reducedMotion = this.reducedMotion; frame.sunset = this.state.timeOfDay === 'sunset';
+    frame.sky = world.telemetry ? this.sky : undefined;
+    world.animate(frame);
+    const telemetry = world.telemetry; if (!telemetry) return;
+    // Inside the cloud layer the view closes in to a bright grey.
+    const fog = this.scene.fog as T.Fog;
+    if (telemetry.inCloud > .01) { fog.color.set('#e4eaee'); fog.near = 2; fog.far = T.MathUtils.lerp(45000, 90, telemetry.inCloud); }
+    else { fog.color.set(frame.sunset ? '#e9b993' : '#d4e1e8'); fog.near = 1500; fog.far = 45000; }
+    this.audio?.update(telemetry, this.isSeatedView(), delta);
   }
   private frameTawaf(): void {
     if (this.state.view === 'overview') return;
@@ -235,8 +322,10 @@ export class UmrohScene {
     const p = Math.max(0, Math.min(7, progress));
     if (visit === 'nabawi' || this.state.chapter === 'nabawi') { this.avatar.set(1, 0, 63); this.heading = Math.PI; }
     else if (this.state.chapter && this.state.chapter !== 'umroh') {
-      const [x, , z] = this.world.spawn;
-      const direction = new T.Vector3(...this.world.lookAt).sub(new T.Vector3(...this.world.spawn)); direction.y = 0; direction.normalize();
+      const station = this.world.stations?.[this.state.chapter];
+      const from = station?.position ?? this.world.spawn, to = station?.lookAt ?? this.world.lookAt;
+      const [x, , z] = from;
+      const direction = new T.Vector3(...to).sub(new T.Vector3(...from)); direction.y = 0; direction.normalize();
       const position = moveWithinWorld(x, z, direction.x * 3.5, direction.z * 3.5, this.world.bounds, this.world.blockers);
       this.avatar.set(position.x, 0, position.z); this.heading = Math.atan2(direction.x, direction.z);
     }
@@ -249,9 +338,23 @@ export class UmrohScene {
     else if (stage === 'perjalanan') { this.avatar.set(.77, .16, -.8); this.heading = Math.PI; }
     else if (route === 'pesawat') { this.avatar.set(0, 0, 5); this.heading = Math.PI; }
     else { this.avatar.set(0, 0, 15); this.heading = Math.PI; }
-    this.guide.group.visible = !this.isRide() && !(isTawafScene(this.state) && this.state.view === 'walk');
+    // First-person stations (check-in, immigration, security, gate) need a clear view ahead.
+    const station = this.state.chapter && !visit ? this.world.stations?.[this.state.chapter] : undefined;
+    this.guide.group.visible = !this.isRide() && !(isTawafScene(this.state) && this.state.view === 'walk') && !(station && this.state.view === 'walk');
     this.guide.setAttire(!visit && (!this.state.chapter || this.state.chapter === 'umroh') && stage !== 'selesai' ? 'ihram' : 'travel');
     this.guide.pose(this.avatar, this.heading, this.state.running && !this.state.paused, this.state.pilgrim === 'putri');
+  }
+  /** Call from a click or key handler: browsers only start audio after a user gesture. */
+  unlockAudio(): void {
+    if (!this.soundOn) return;
+    this.audio ??= FlightAudio.create();
+    this.audio?.resume();
+    this.audio?.setEnabled(Boolean(this.world?.telemetry) && this.state.running && !this.state.paused);
+  }
+  /** Never creates the audio context itself; that waits for unlockAudio from a gesture. */
+  setSound(on: boolean): void {
+    this.soundOn = on;
+    this.audio?.setEnabled(on && Boolean(this.world?.telemetry) && this.state.running && !this.state.paused);
   }
   getLandmarks(): { id: string; label: string }[] { return this.world?.landmarks.map(({ id, label }) => ({ id, label })) ?? []; }
   jumpToLandmark(id: string): void {
@@ -273,13 +376,24 @@ export class UmrohScene {
       this.orbit.minDistance = 2.2; this.orbit.maxDistance = 38;
       return;
     }
+    if (this.world.rail && this.state.view !== 'overview') {
+      this.railYaw = this.railPitch = 0; this.placeOnRail(); return;
+    }
     if (this.state.view === 'walk') {
-      this.camera.position.set(...this.world.spawn); let at = this.world.lookAt;
+      const station = this.state.chapter ? this.world.stations?.[this.state.chapter] : undefined;
+      this.camera.position.set(...(station?.position ?? this.world.spawn)); let at = station?.lookAt ?? this.world.lookAt;
       if (!this.state.visit && (!this.state.chapter || this.state.chapter === 'umroh')) {
         if (this.state.stage === 'salat') { this.camera.position.set(MAQAM_POSITION.x, EYE_HEIGHT, MAQAM_POSITION.z + 9); at = [0, 5, 0]; }
         if (this.state.stage === 'zamzam') { this.camera.position.set(58, EYE_HEIGHT, 32); at = [64, 1.1, 28]; }
       }
       this.lookAt(at);
+    } else if (this.world.rail) {
+      this.railYaw = this.railPitch = 0; this.placeOnRail();
+    } else if (this.state.view === 'follow' && this.isRide() && this.world.seat) {
+      const [x, y, z] = this.world.seat.position, [lx, ly, lz] = this.world.seat.lookAt;
+      this.tmp.set(lx - x, ly - y, lz - z).normalize();
+      this.yaw = Math.atan2(-this.tmp.x, -this.tmp.z); this.pitch = Math.asin(T.MathUtils.clamp(this.tmp.y, -.95, .95));
+      this.surge = 0; if (this.world.vehicle) this.placeSeated(0);
     } else if (this.state.view === 'follow' && this.isRide()) {
       this.camera.position.set(...this.world.spawn); this.lookAt(this.world.lookAt);
     } else if (this.state.view === 'follow') {
@@ -305,6 +419,11 @@ export class UmrohScene {
     if (!this.pointer || this.pointer.id !== e.pointerId || this.state.paused) return;
     const scale = 2.8 / Math.max(420, this.container.clientWidth);
     const dx = (e.clientX - this.pointer.x) * scale, dy = (e.clientY - this.pointer.y) * scale;
+    if (this.world.rail && this.state.view !== 'overview') {
+      // Look around while the boarding walk continues along its path.
+      this.railYaw -= dx; this.railPitch = T.MathUtils.clamp(this.railPitch - dy, -.9, .9);
+      this.pointer.x = e.clientX; this.pointer.y = e.clientY; return;
+    }
     this.yaw -= dx; this.pitch = T.MathUtils.clamp(this.pitch - dy, -1.25, 1.3);
     if (isTawafScene(this.state) && this.state.view === 'walk') {
       // Store the glance relative to the route, not as a fixed world direction.
@@ -322,6 +441,7 @@ export class UmrohScene {
   private keyUp = (e: KeyboardEvent): void => { this.pressed.delete(e.code); };
   private pauseInput = (): void => { this.pressed.clear(); this.forward = this.right = 0; this.pointer = null; };
   private walk(delta: number): void {
+    if (this.world.rail) return;
     const f = this.forward + Number(this.pressed.has('KeyW') || this.pressed.has('ArrowUp')) - Number(this.pressed.has('KeyS') || this.pressed.has('ArrowDown'));
     const r = this.right + Number(this.pressed.has('KeyD') || this.pressed.has('ArrowRight')) - Number(this.pressed.has('KeyA') || this.pressed.has('ArrowLeft'));
     const length = Math.max(1, Math.hypot(f, r));
@@ -348,9 +468,12 @@ export class UmrohScene {
   private resize = (): void => {
     this.updateProjection();
     this.renderer.setSize(Math.max(1, this.container.clientWidth), Math.max(1, this.container.clientHeight), false);
-    if (this.world?.flight) { this.resetCamera(); if (this.isAutomaticFlightView()) this.frameFlight(); }
+    if (this.world?.flight) { this.resetCamera(); this.shot = -1; }
   };
   private updateCamera(delta: number): void {
+    if (this.world.rail && this.state.view !== 'overview') { this.placeOnRail(); return; }
+    if (this.world.seat && this.world.vehicle && this.isSeatedView()) { this.placeSeated(delta); return; }
+    if (this.isAutomaticFlightView()) { if (!this.state.paused) this.frameFlight(delta); return; }
     if (!this.state.paused) {
       if (isGuidedTawaf(this.state)) this.frameTawaf();
       else {
@@ -369,6 +492,10 @@ export class UmrohScene {
     this.frame = requestAnimationFrame(this.tick);
     const delta = this.lastTime ? Math.min((time - this.lastTime) / 1000, .05) : 0; this.lastTime = time;
     if (this.contextLost || document.visibilityState !== 'visible') return;
+    this.elapsed += delta;
+    const target = Math.max(0, Math.min(1, this.state.travelProgress ?? 0));
+    this.travel += (target - this.travel) * Math.min(1, delta * 7);
+    this.animateWorld(delta);
     this.updateCamera(delta);
     this.crowdTime += delta;
     if (this.crowdTime > (this.compact ? 1 / 20 : 1 / 30)) { const animate = !this.reducedMotion && !this.state.paused; this.crowd?.update(this.crowdTime, animate, this.camera.position); this.guide.update(this.crowdTime, animate); this.crowdTime = 0; }
@@ -385,6 +512,7 @@ export class UmrohScene {
     window.removeEventListener('keydown', this.keyDown); window.removeEventListener('keyup', this.keyUp); window.removeEventListener('blur', this.pauseInput); document.removeEventListener('visibilitychange', this.pauseInput);
     this.crowds.forEach((crowd) => crowd.dispose()); this.crowds.clear(); this.guide.dispose();
     this.worlds.forEach((world) => world.group.traverse((object) => { if (object instanceof T.InstancedMesh) object.dispose(); }));
+    this.audio?.dispose(); this.audio = null;
     this.resources.dispose(); this.environment?.dispose(); this.sky.geometry.dispose(); this.sky.material.dispose(); this.sun.shadow.dispose();
     this.renderer.dispose(); this.renderer.forceContextLoss(); canvas.remove(); this.worlds.clear();
   }

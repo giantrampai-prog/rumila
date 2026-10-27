@@ -1,6 +1,6 @@
 import * as T from 'three';
 import type { Position, Rect, UmrohWorld, WorldResources } from './types';
-import { HumanBatch, humanAppearance, type Attire, type HumanAppearance } from './human';
+import { HumanBatch, humanAppearance, type Attire, type HumanAppearance, type HumanPose } from './human';
 
 interface Person { x: number; z: number; angle: number; scale: number; phase: number; appearance: HumanAppearance }
 const position = new T.Vector3();
@@ -81,4 +81,37 @@ export function createSeatedPassengers(r: WorldResources, seats: readonly { posi
     headTurn: i % 7 === 2 ? .12 : i % 7 === 5 ? -.15 : 0,
   }, 'travel'));
   passengers.flush(); return passengers.group;
+}
+
+export interface StandingPerson {
+  position: Position; angle?: number; female?: boolean;
+  /** Uniform colours, for example airport staff or cabin crew. */
+  colors?: Partial<Record<'shirt' | 'trousers' | 'dress' | 'scarf', string>>;
+  pose?: Partial<Pick<HumanPose, 'arms' | 'forearms' | 'headTurn'>>;
+}
+/** Static or individually re-posed standing figures (staff, crew, queueing travellers). */
+export class StandingPeople {
+  readonly group: T.Group;
+  private batch: HumanBatch;
+  private appearances: HumanAppearance[];
+  constructor(r: WorldResources, private people: StandingPerson[]) {
+    this.batch = new HumanBatch(r, people.length); this.group = this.batch.group; this.group.name = 'Petugas dan penumpang berdiri';
+    this.appearances = people.map((person, i) => {
+      const appearance = humanAppearance(i + 3, person.female ?? i % 2 === 1);
+      for (const [slot, value] of Object.entries(person.colors ?? {})) appearance[slot as 'shirt'].set(value);
+      return appearance;
+    });
+    people.forEach((_, i) => this.pose(i));
+    this.batch.flush();
+  }
+  /** Re-poses one figure; call flush() after a batch of updates. */
+  pose(index: number, override: Partial<Pick<HumanPose, 'arms' | 'forearms' | 'headTurn' | 'walking' | 'gait'>> & { position?: Position; angle?: number } = {}): void {
+    const person = this.people[index];
+    const { position: at, angle, ...limbs } = override;
+    this.batch.pose(index, this.appearances[index], {
+      gait: 0, walking: false, ...person.pose, ...limbs,
+      position: new T.Vector3(...(at ?? person.position)), angle: angle ?? person.angle ?? 0, scale: .98 + (index % 3) * .02,
+    }, 'travel');
+  }
+  flush(): void { this.batch.flush(); }
 }

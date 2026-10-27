@@ -1,8 +1,10 @@
 import * as T from 'three';
 import type { Position, UmrohWorld, WorldResources } from './types';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
-import { createSeatedPassengers } from './pilgrims';
-import { createCloudLayer, createFlightSky } from './flight';
+import { createSeatedPassengers, StandingPeople } from './pilgrims';
+import { animateAircraft, createGarudaAircraft, type AircraftParts } from './aircraft';
+import { applyAttitude, createFlightEnvironment, flightTelemetry, updateTelemetry } from './flight-env';
+import { getFlightState } from '../flight-profile';
 
 function seat(r: WorldResources, parent: T.Object3D, x: number, z: number, fabric: T.Material) {
   r.box(parent, [.49, .12, .52], [x, .5, z], fabric);
@@ -14,43 +16,82 @@ function seat(r: WorldResources, parent: T.Object3D, x: number, z: number, fabri
   r.box(parent, [.21, .13, .015], [x, .98, z + .34], r.mat.black);
 }
 
-export function createCabinWorld(r: WorldResources, destination?: 'jeddah' | 'jakarta'): UmrohWorld {
+/** Window seat 32A, over the wing on the left side; the learner's own seat stays free. */
+export const CABIN_SEAT = { x: -2.18, z: 1.92 } as const;
+// Leaning slightly toward the window, as anyone in a window seat does.
+const SEAT_EYE: Position = [CABIN_SEAT.x - .12, 1.3, CABIN_SEAT.z + .02];
+const SEAT_VIEW: Position = [CABIN_SEAT.x - 1.4, 1.02, CABIN_SEAT.z - .95];
+
+export function createCabinWorld(r: WorldResources, destination?: 'jeddah' | 'jakarta', options: { boarding?: boolean } = {}): UmrohWorld {
   const group = new T.Group(); group.name = 'Kabin penumpang Garuda Indonesia';
+  const flying = Boolean(destination) && !options.boarding, boarding = Boolean(options.boarding);
+  // Everything inside the fuselage lives in one group so the whole cabin can pitch and bank.
+  const cabin = new T.Group(); cabin.name = 'Kabin'; group.add(cabin);
   const blue = r.keep(new T.MeshStandardMaterial({ color: '#263d62', roughness: .89 }));
   const shell = r.keep(new T.MeshStandardMaterial({ color: '#9aa5ad', roughness: .65 }));
   const ivory = r.keep(new T.MeshStandardMaterial({ color: '#f2f0e9', roughness: .83, side: T.DoubleSide }));
   const softGrey = r.keep(new T.MeshStandardMaterial({ color: '#d4d8d8', roughness: .72 }));
   const trim = r.keep(new T.MeshStandardMaterial({ color: '#555e67', roughness: .66 }));
+  const batik = cabinBatikMaterial(r);
   const carpet = r.keep(r.mat.carpet.clone()); carpet.color.set('#353e50');
   const rounded = r.keep(new RoundedBoxGeometry(1, 1, 1, 1, .075));
-  const cushioned = (size: Position, at: Position, material: T.Material) => { const mesh = r.mesh(group, rounded, material, at); mesh.scale.set(...size); return mesh; };
-  r.floor(group, 6.25, 42, carpet);
+  const cushioned = (size: Position, at: Position, material: T.Material) => { const mesh = r.mesh(cabin, rounded, material, at); mesh.scale.set(...size); return mesh; };
+  r.floor(cabin, 6.25, 42, carpet);
+  // Aisle runner and floor-path lighting strips.
+  r.box(cabin, [.62, .006, 40], [0, .004, 0], r.keep(new T.MeshStandardMaterial({ color: '#2b3344', roughness: 1 })));
+  const pathLight = r.keep(new T.MeshStandardMaterial({ color: '#ffe6b0', emissive: '#ffd27a', emissiveIntensity: .7 }));
+  for (const x of [-.34, .34]) r.box(cabin, [.02, .012, 38], [x, .01, 0], pathLight);
   const windowShape = new T.Shape();
   windowShape.moveTo(-.75, 0); windowShape.lineTo(.75, 0); windowShape.lineTo(.75, .92); windowShape.lineTo(-.75, .92); windowShape.closePath();
   const opening = new T.Path(); opening.absellipse(0, .43, .23, .32, 0, Math.PI * 2, true); windowShape.holes.push(opening);
   const windowBay = r.keep(new T.ExtrudeGeometry(windowShape, { depth: .13, bevelEnabled: false, curveSegments: 24 }));
-  const pane = r.keep(new T.MeshStandardMaterial({ color: '#b2d8ed', roughness: .09, transparent: Boolean(destination), opacity: destination ? .1 : .8, side: T.DoubleSide }));
+  const pane = r.keep(new T.MeshStandardMaterial({ color: '#b2d8ed', roughness: .09, transparent: Boolean(destination), opacity: destination ? .08 : .8, side: T.DoubleSide }));
   const lightMat = r.keep(new T.MeshStandardMaterial({ color: '#fff4e3', emissive: '#fff0dc', emissiveIntensity: 1.4 }));
   const screen = r.keep(new T.MeshStandardMaterial({ color: '#122942', emissive: '#173758', emissiveIntensity: .25, roughness: .3 }));
+  const shade = r.keep(new T.MeshStandardMaterial({ color: '#e7e3d8', roughness: .8, side: T.DoubleSide }));
   const passengerSeats: { position: Position; angle: number }[] = [];
+  const DOOR = { from: -19.45, to: -18.35 };
+  const doorGap = (side: number) => boarding && side < 0;
+  const wallRun = (side: number, size: [number, number], x: number, y: number) => {
+    if (!doorGap(side)) { r.box(cabin, [size[0], size[1], 42], [x, y, 0], ivory); return; }
+    r.box(cabin, [size[0], size[1], DOOR.from + 21], [x, y, (-21 + DOOR.from) / 2], ivory);
+    r.box(cabin, [size[0], size[1], 21 - DOOR.to], [x, y, (DOOR.to + 21) / 2], ivory);
+  };
+  // Windows sit at seated eye height (~1.2 m), as on real airliners; standing passengers look down to them.
+  const SILL = .95;
   for (const side of [-1, 1]) {
-    r.box(group, [.18, 1.3, 42], [side * 3.05, .65, 0], ivory);
-    r.box(group, [.18, .04, 42], [side * 2.95, 1.3, 0], softGrey);
-    r.box(group, [.35, .16, 42], [side * 2.89, 2.3, 0], ivory);
+    wallRun(side, [.18, SILL], side * 3.05, SILL / 2);
+    r.box(cabin, [.18, .04, 42], [side * 2.95, SILL, 0], softGrey);
+    wallRun(side, [.12, 2.3 - SILL - .9], side * 3.0, (SILL + .9 + 2.3) / 2);
+    r.box(cabin, [.35, .16, 42], [side * 2.89, 2.3, 0], ivory);
     // Angled luggage bins have individual doors and recessed handles.
     for (let z = -18.75; z < 20; z += 2.5) {
       const bin = cushioned([1.03, .49, 2.47], [side * 2.45, 2.69, z], ivory); bin.rotation.z = side * .14;
-      r.box(group, [.045, .038, .2], [side * 1.93, 2.58, z], trim);
-      r.box(group, [.022, .012, 2.47], [side * 1.94, 2.52, z], softGrey);
+      r.box(cabin, [.045, .038, .2], [side * 1.93, 2.58, z], trim);
+      r.box(cabin, [.022, .012, 2.47], [side * 1.94, 2.52, z], softGrey);
+      // Seat-row numbers under the bins.
+      r.box(cabin, [.012, .05, .08], [side * 1.94, 2.47, z + .9], trim);
     }
-    r.box(group, [.11, .02, 40], [side * 2.86, 2.43, 0], lightMat);
+    r.box(cabin, [.11, .02, 40], [side * 2.86, 2.43, 0], lightMat);
     for (let z = -18; z <= 18; z += 1.5) {
-      const wall = r.mesh(group, windowBay, ivory, [side * 2.98, 1.3, z]); wall.rotation.y = side * Math.PI / 2;
-      const frame = r.mesh(group, new T.TorusGeometry(.29, .025, 8, 32), softGrey, [side * 2.96, 1.73, z]); frame.rotation.y = Math.PI / 2; frame.scale.set(.82, 1.16, 1);
-      r.sphere(group, [.025, .3, .21], [side * 2.99, 1.73, z], pane);
-      r.box(group, [.025, .035, .1], [side * 2.93, 2.035, z], ivory);
+      if (doorGap(side) && z < -17) {
+        // Door surround in place of the first window.
+        r.box(cabin, [.2, 2.12, .1], [side * 3.0, 1.06, DOOR.from - .05], softGrey);
+        r.box(cabin, [.2, 2.12, .1], [side * 3.0, 1.06, DOOR.to + .05], softGrey);
+        r.box(cabin, [.2, .14, 1.3], [side * 3.0, 2.1, (DOOR.from + DOOR.to) / 2], softGrey);
+        r.box(cabin, [.2, .2, .55], [side * 3.0, 2.24, DOOR.to + .4], ivory);
+        continue;
+      }
+      const wall = r.mesh(cabin, windowBay, ivory, [side * 2.98, SILL, z]); wall.rotation.y = side * Math.PI / 2;
+      const frame = r.mesh(cabin, new T.TorusGeometry(.29, .025, 8, 32), softGrey, [side * 2.96, SILL + .43, z]); frame.rotation.y = Math.PI / 2; frame.scale.set(.82, 1.16, 1);
+      r.sphere(cabin, [.025, .3, .21], [side * 2.99, SILL + .43, z], pane);
+      r.box(cabin, [.025, .035, .1], [side * 2.93, SILL + .735, z], ivory);
+      // A few blinds are half drawn, as on any long flight (never the learner's own window).
+      const blind = (Math.round(z / 1.5) * 7 + side * 3) % 5;
+      const ownWindow = side < 0 && Math.abs(z - CABIN_SEAT.z) < 1;
+      if (!ownWindow && (blind === 0 || blind === 3)) r.box(cabin, [.012, blind ? .26 : .5, .44], [side * 2.945, SILL + (blind ? .63 : .52), z], shade);
     }
-    for (const z of [-19.875, 19.875]) r.box(group, [.13, .92, 2.25], [side * 3.045, 1.76, z], ivory);
+    for (const z of [-19.875, 19.875]) if (!(doorGap(side) && z < 0)) r.box(cabin, [.13, .92, 2.25], [side * 3.045, 1.76, z], ivory);
     let row = 0;
     for (let z = -16; z <= 16; z += 1.12, row++) for (const [column, x] of [1.02, 1.6, 2.18].entries()) {
       const sx = side * x;
@@ -58,20 +99,23 @@ export function createCabinWorld(r: WorldResources, destination?: 'jeddah' | 'ja
       const backShell = cushioned([.52, .75, .13], [sx, .94, z + .28], shell); backShell.rotation.x = -.09;
       const back = cushioned([.47, .71, .1], [sx, .95, z + .205], blue); back.rotation.x = -.09;
       cushioned([.4, .25, .14], [sx, 1.26, z + .285], blue);
-      r.box(group, [.29, .2, .019], [sx, 1.285, z + .365], ivory);
-      r.box(group, [.41, .07, .4], [sx, .4, z], trim);
-      for (const dx of [-.17, .17]) r.box(group, [.035, .34, .06], [sx + dx, .2, z + .1], r.mat.metal);
+      r.box(cabin, [.29, .2, .019], [sx, 1.285, z + .365], batik);
+      r.box(cabin, [.41, .07, .4], [sx, .4, z], trim);
+      for (const dx of [-.17, .17]) r.box(cabin, [.035, .34, .06], [sx + dx, .2, z + .1], r.mat.metal);
       for (const dx of [-.275, .275]) cushioned([.055, .06, .46], [sx + dx, .73, z], trim);
-      r.box(group, [.3, .21, .025], [sx, 1.06, z + .365], trim);
-      r.box(group, [.265, .17, .026], [sx, 1.065, z + .381], screen);
-      r.box(group, [.31, .21, .025], [sx, .77, z + .36], softGrey);
-      r.box(group, [.035, .022, .027], [sx, .865, z + .379], trim);
+      r.box(cabin, [.3, .21, .025], [sx, 1.06, z + .365], trim);
+      r.box(cabin, [.265, .17, .026], [sx, 1.065, z + .381], screen);
+      r.box(cabin, [.31, .21, .025], [sx, .77, z + .36], softGrey);
+      r.box(cabin, [.035, .022, .027], [sx, .865, z + .379], trim);
+      // Seat-belt buckles resting on each cushion.
+      r.box(cabin, [.07, .012, .05], [sx, .57, z - .02], r.mat.metal);
+      const own = side < 0 && column === 2 && Math.abs(z - CABIN_SEAT.z) < .01;
       // Vary occupancy, leaving some free seats and a clear aisle. Nearby
       // passengers are included so heads, shoulders and hands read at eye level.
-      if (destination && (column === (row + (side > 0 ? 1 : 0)) % 3 || (row >= 21 && row <= 27 && column === (row + 1 + (side > 0 ? 1 : 0)) % 3))) passengerSeats.push({ position: [sx, .56, z], angle: Math.PI });
+      if (destination && !own && (column === (row + (side > 0 ? 1 : 0)) % 3 || (row >= 13 && row <= 27 && column === (row + 1 + (side > 0 ? 1 : 0)) % 3))) passengerSeats.push({ position: [sx, .56, z], angle: Math.PI });
     }
   }
-  if (passengerSeats.length) group.add(createSeatedPassengers(r, passengerSeats));
+  if (passengerSeats.length) cabin.add(createSeatedPassengers(r, passengerSeats));
   // A continuous curved ceiling begins above the real window openings.
   const positions: number[] = [], uvs: number[] = [], indices: number[] = [];
   const shoulder = Math.asin((2.22 - 1.55) / 1.9);
@@ -80,28 +124,117 @@ export function createCabinWorld(r: WorldResources, destination?: 'jeddah' | 'ja
     positions.push(Math.cos(theta) * 3.12, 1.55 + Math.sin(theta) * 1.9, j ? 21 : -21); uvs.push(i / 32, j);
   }
   for (let i = 0; i < 32; i++) { const a = i, b = i + 33; indices.push(a, b, a + 1, b, b + 1, a + 1); }
-  const roof = new T.BufferGeometry(); roof.setAttribute('position', new T.Float32BufferAttribute(positions, 3)); roof.setAttribute('uv', new T.Float32BufferAttribute(uvs, 2)); roof.setIndex(indices); roof.computeVertexNormals(); r.mesh(group, roof, ivory);
-  for (const x of [-.82, .82]) r.box(group, [.11, .025, 39], [x, 3.25, 0], lightMat);
+  const roof = new T.BufferGeometry(); roof.setAttribute('position', new T.Float32BufferAttribute(positions, 3)); roof.setAttribute('uv', new T.Float32BufferAttribute(uvs, 2)); roof.setIndex(indices); roof.computeVertexNormals(); r.mesh(cabin, roof, ivory);
+  for (const x of [-.82, .82]) r.box(cabin, [.11, .025, 39], [x, 3.25, 0], lightMat);
+  // Passenger service units: reading lights, air vents and the seat-belt / no-smoking signs.
+  const signs = flying || boarding ? seatbeltSignMaterial(r) : null;
   for (let z = -18; z <= 18; z += 1.12) for (const x of [-1.5, 1.5]) {
-    r.box(group, [.43, .03, .31], [x, 3.01, z], softGrey);
-    for (const dx of [-.11, .11]) { const vent = r.cylinder(group, .035, .035, .025, [x + dx, 2.985, z], trim, 10); vent.rotation.x = Math.PI; }
+    r.box(cabin, [.43, .03, .31], [x, 3.01, z], softGrey);
+    for (const dx of [-.11, .11]) { const vent = r.cylinder(cabin, .035, .035, .025, [x + dx, 2.985, z], trim, 10); vent.rotation.x = Math.PI; }
+    if (signs && Math.round((z + 18) / 1.12) % 3 === 0) { const sign = r.box(cabin, [.16, .006, .08], [x, 2.992, z + .12], signs); sign.castShadow = false; }
   }
   // Closed bulkheads at both ends keep the sky outside the passenger cabin.
   for (const end of [-1, 1]) {
-    r.box(group, [6.25, 3.5, .2], [0, 1.75, end * 20], ivory);
-    r.box(group, [.82, 2.05, .23], [0, 1.025, end * 19.85], trim);
-    r.box(group, [.065, .17, .04], [.25, 1, end * 19.715], r.mat.metal);
+    r.box(cabin, [6.25, 3.5, .2], [0, 1.75, end * 20], ivory);
+    r.box(cabin, [.82, 2.05, .23], [0, 1.025, end * 19.85], trim);
+    r.box(cabin, [.065, .17, .04], [.25, 1, end * 19.715], r.mat.metal);
     for (const side of [-1, 1]) {
-      r.box(group, [1.25, 2.15, .4], [side * 2.04, 1.08, end * 19.6], softGrey);
-      for (let y = .4; y < 2; y += .44) r.box(group, [1.08, .025, .015], [side * 2.04, y, end * 19.39], trim);
+      r.box(cabin, [1.25, 2.15, .4], [side * 2.04, 1.08, end * 19.6], softGrey);
+      for (let y = .4; y < 2; y += .44) r.box(cabin, [1.08, .025, .015], [side * 2.04, y, end * 19.39], trim);
     }
+    // A batik panel on each bulkhead.
+    r.box(cabin, [1.8, .9, .02], [0, 2.6, end * 19.88], batik);
   }
-  r.sign(group, destination ? 'GARUDA INDONESIA' : 'BERSIAP SEBELUM MIQAT', destination ? destination === 'jeddah' ? 'Jakarta → Jeddah' : 'Jeddah → Jakarta' : 'Ikuti pengumuman awak pesawat', [0, 2.65, -19.7], 2.8);
-  const clouds = destination ? createCloudLayer(r, true) : new T.Group(); clouds.userData.dynamic = true; group.add(clouds);
-  if (destination) group.add(createFlightSky(r));
-  return { group, motion: destination ? { group: clouds, axis: 'z', distance: 640 } : undefined, spawn: [0, 1.63, 11], lookAt: [0, 1.61, -10], overview: [0, 2.05, 18], indoor: true,
+  if (signs) { const big = r.box(cabin, [.5, .25, .02], [-1.25, 2.55, -19.86], signs); big.castShadow = false; }
+  r.sign(cabin, destination ? 'GARUDA INDONESIA' : 'BERSIAP SEBELUM MIQAT', destination ? destination === 'jeddah' ? 'Jakarta → Jeddah' : 'Jeddah → Jakarta' : 'Ikuti pengumuman awak pesawat', [0, 2.65, -19.7], 2.8);
+
+  const world: UmrohWorld = { group, spawn: [0, 1.63, 11], lookAt: [0, 1.61, -10], overview: [0, 2.05, 18], indoor: true,
     bounds: { minX: -.5, maxX: .5, minZ: -18.5, maxZ: 18.5 }, blockers: [],
+    seat: { position: SEAT_EYE, lookAt: SEAT_VIEW },
     landmarks: [{ id: 'cabin-front', label: 'Depan kabin', position: [0, 1.63, -15], lookAt: [0, 1.55, 14] }, { id: 'cabin-aisle', label: 'Kabin dan penumpang', position: [0, 1.63, 12], lookAt: [0, 1.6, -12] }] };
+  if (destination && !boarding) Object.assign(world, flightCabin(r, group, cabin, destination, lightMat, signs));
+  return world;
+}
+
+/** Wing, crew, signs and the moving sky outside the windows for a flying cabin. */
+function flightCabin(r: WorldResources, group: T.Group, cabin: T.Group, destination: 'jeddah' | 'jakarta', lightMat: T.MeshStandardMaterial, signs: T.MeshStandardMaterial | null): Partial<UmrohWorld> {
+  cabin.userData.dynamic = true;
+  // The real wing and engines sit outside the fuselage, visible from the over-wing seats.
+  // The wing box passes under the cabin floor, so from a window seat the wing is seen from above.
+  const wings = createGarudaAircraft(r, { wingsOnly: true, animated: true }); wings.position.y = .2;
+  cabin.userData.baseY = -1.2;
+  const parts = wings.userData.parts as AircraftParts;
+  delete wings.userData.dynamic; cabin.add(wings);
+  // Two crew members give the safety briefing in the aisle before take-off.
+  const uniform = { dress: '#106c78', scarf: '#c27b3a', shirt: '#106c78', trousers: '#173d4a' };
+  const crew = new StandingPeople(r, [
+    { position: [0, 0, -6.6], angle: 0, female: true, colors: uniform },
+    { position: [0, 0, 8.4], angle: Math.PI, female: false, colors: uniform },
+  ]);
+  crew.group.userData.dynamic = true; cabin.add(crew.group);
+  const env = createFlightEnvironment(r, destination); group.add(env.group);
+  const telemetry = flightTelemetry(env);
+  return {
+    vehicle: cabin, telemetry,
+    landmarks: [
+      { id: 'cabin-window', label: 'Jendela kursi 32A', position: SEAT_EYE, lookAt: SEAT_VIEW },
+      { id: 'cabin-wing', label: 'Sayap dan mesin', position: SEAT_EYE, lookAt: [CABIN_SEAT.x - 6, .2, CABIN_SEAT.z - 1] },
+      { id: 'cabin-aisle', label: 'Lorong kabin', position: SEAT_EYE, lookAt: [0, 1.5, -12] },
+    ],
+    animate(frame) {
+      const state = getFlightState(frame.travel);
+      env.update(frame, state); updateTelemetry(telemetry, state);
+      applyAttitude(cabin, state, frame);
+      animateAircraft(parts, {
+        gear: state.gearDown ? 1 : 0, flaps: state.flaps, spoilers: state.spoilers, thrust: state.thrust,
+        landingLights: state.altitude < 3000 && (state.phase.id !== 'cruise'), contrail: 0,
+      }, frame.time, frame.delta);
+      lightMat.emissiveIntensity = state.cabinDim ? .35 : 1.4;
+      if (signs) signs.emissiveIntensity = state.seatbelt ? 1.6 : .05;
+      // Safety demonstration: point to the exits, show the belt, then walk away.
+      const briefing = state.phase.id === 'pushback' || state.phase.id === 'taxi';
+      crew.group.visible = briefing || state.phase.id === 'cruise';
+      const beat = Math.floor(frame.time / 2.2) % 4, cruise = state.phase.id === 'cruise';
+      for (let i = 0; i < 2; i++) {
+        const arms: [number, number] = cruise || frame.reducedMotion ? [-.05, -.05] : beat === 0 ? [-1.5, -.05] : beat === 1 ? [-.05, -1.5] : beat === 2 ? [-.9, -.9] : [-2.6, -2.6];
+        const z = cruise ? (i ? 12 - state.local * 20 : -10 + state.local * 18) : i ? 8.4 : -6.6;
+        crew.pose(i, { arms, forearms: beat === 2 && !cruise ? [-1.2, -1.2] : undefined, position: [0, 0, z], angle: cruise ? (i ? Math.PI : 0) : i ? Math.PI : 0, walking: cruise && frame.running, gait: frame.time * 4 });
+      }
+      crew.flush();
+    },
+  };
+}
+
+function seatbeltSignMaterial(r: WorldResources): T.MeshStandardMaterial {
+  const canvas = document.createElement('canvas'); canvas.width = 256; canvas.height = 128;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Tanda sabuk tidak tersedia.');
+  ctx.fillStyle = '#20262c'; ctx.fillRect(0, 0, 256, 128);
+  ctx.strokeStyle = '#fff3d6'; ctx.fillStyle = '#fff3d6'; ctx.lineWidth = 7; ctx.lineCap = 'round';
+  // Seat-belt pictogram.
+  ctx.beginPath(); ctx.arc(64, 34, 12, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(64, 50); ctx.lineTo(64, 84); ctx.lineTo(86, 84); ctx.lineTo(90, 108); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(40, 72); ctx.lineTo(90, 72); ctx.stroke();
+  // No-smoking pictogram.
+  ctx.beginPath(); ctx.arc(190, 64, 40, 0, Math.PI * 2); ctx.stroke();
+  ctx.fillRect(160, 58, 52, 12);
+  ctx.beginPath(); ctx.moveTo(162, 36); ctx.lineTo(218, 92); ctx.stroke();
+  const map = r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace;
+  const material = r.keep(new T.MeshStandardMaterial({ map, emissiveMap: map, emissive: '#ffffff', emissiveIntensity: 1.6, roughness: .5 }));
+  material.userData.keepUV = true; return material;
+}
+
+/** An original batik-inspired kawung pattern for headrest covers and bulkheads. */
+function cabinBatikMaterial(r: WorldResources): T.MeshStandardMaterial {
+  const canvas = document.createElement('canvas'); canvas.width = canvas.height = 256;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Motif kabin tidak tersedia.');
+  ctx.fillStyle = '#efe9dc'; ctx.fillRect(0, 0, 256, 256);
+  for (let y = 0; y < 256; y += 64) for (let x = 0; x < 256; x += 64) for (let k = 0; k < 4; k++) {
+    const a = k * Math.PI / 2 + Math.PI / 4;
+    ctx.fillStyle = (x + y) % 128 ? '#2d6d79' : '#9a6a3a';
+    ctx.beginPath(); ctx.ellipse(x + 32 + Math.cos(a) * 14, y + 32 + Math.sin(a) * 14, 13, 7, a, 0, Math.PI * 2); ctx.fill();
+  }
+  const map = r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; map.wrapS = map.wrapT = T.RepeatWrapping;
+  const material = r.keep(new T.MeshStandardMaterial({ map, roughness: .9 })); material.userData.keepUV = true; return material;
 }
 
 export function createJourneyWorld(r: WorldResources, returning = false): UmrohWorld {
