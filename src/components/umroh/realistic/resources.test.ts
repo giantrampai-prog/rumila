@@ -79,4 +79,45 @@ describe('environment resource batching', () => {
     expectSameVertices(verticesInWorld(scenery), before.map((point) => point.clone().add(new T.Vector3(0, 0, 40))));
     resources.dispose();
   });
+
+  it('preserves a two-bone character and its deformation while batching nearby architecture', () => {
+    const resources = batchingResources();
+    const world = new T.Group();
+    const material = resources.keep(new T.MeshStandardMaterial());
+    const geometry = resources.keep(new T.CylinderGeometry(.25, .25, 2, 8, 2).translate(0, 1, 0));
+    const positions = geometry.getAttribute('position');
+    const indices: number[] = [], weights: number[] = [];
+    let upperVertex = 0;
+    for (let i = 0; i < positions.count; i++) {
+      const upper = positions.getY(i) > 1;
+      indices.push(upper ? 1 : 0, 0, 0, 0); weights.push(1, 0, 0, 0);
+      if (upper) upperVertex = i;
+    }
+    const skinIndex = new T.Uint16BufferAttribute(indices, 4);
+    const skinWeight = new T.Float32BufferAttribute(weights, 4);
+    geometry.setAttribute('skinIndex', skinIndex); geometry.setAttribute('skinWeight', skinWeight);
+    const character = new T.SkinnedMesh(geometry, material);
+    const root = new T.Bone(), upper = new T.Bone(); upper.position.y = 1;
+    root.add(upper); character.add(root); world.add(character);
+    const skeleton = new T.Skeleton([root, upper]); character.bind(skeleton);
+    const wall = resources.box(world, [2, 4, .3], [4, 2, 0], material);
+    world.updateMatrixWorld(true);
+    const before = character.getVertexPosition(upperVertex, new T.Vector3());
+
+    resources.batch(world);
+
+    expect(character.parent).toBe(world);
+    expect(character.geometry).toBe(geometry);
+    expect(character.geometry.getAttribute('skinIndex')).toBe(skinIndex);
+    expect(character.geometry.getAttribute('skinWeight')).toBe(skinWeight);
+    expect(character.skeleton).toBe(skeleton);
+    expect(root.parent).toBe(character);
+    expect(wall.parent).toBeNull();
+    expect(world.children.some((object) => object instanceof T.Mesh && !(object instanceof T.SkinnedMesh))).toBe(true);
+    upper.rotation.z = Math.PI / 4; world.updateMatrixWorld(true);
+    const after = character.getVertexPosition(upperVertex, new T.Vector3());
+    expect(after.distanceTo(before)).toBeGreaterThan(.5);
+    expect(after.toArray().every(Number.isFinite)).toBe(true);
+    skeleton.dispose(); resources.dispose();
+  });
 });

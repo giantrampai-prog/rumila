@@ -1,6 +1,7 @@
 import * as T from 'three';
 import type { Position, Rect, UmrohWorld, WorldResources } from './types';
 import { HumanBatch, humanAppearance, type Attire, type HumanAppearance } from './human';
+import { RealisticHumanBatch } from './character-batch';
 
 interface Person { x: number; z: number; angle: number; scale: number; phase: number; appearance: HumanAppearance }
 const position = new T.Vector3();
@@ -9,6 +10,7 @@ const position = new T.Vector3();
 export class Pilgrims {
   readonly group: T.Group;
   private bodies: HumanBatch;
+  private realistic: RealisticHumanBatch;
   private people: Person[];
   private spec: NonNullable<UmrohWorld['crowd']>;
   private elapsed = 0;
@@ -28,7 +30,10 @@ export class Pilgrims {
       angle: random(i + 40) * Math.PI * 2, scale: .94 + random(i + 75) * .12, phase: random(i + 98) * Math.PI * 2,
       appearance: humanAppearance(i, main ? female : random(i + 21) > .63),
     }));
-    this.bodies = new HumanBatch(r, count); this.group = this.bodies.group;
+    this.bodies = new HumanBatch(r, count);
+    this.realistic = new RealisticHumanBatch(r, count);
+    this.group = new T.Group(); this.group.name = main ? 'Selected pilgrim' : 'Pilgrim crowd'; this.group.userData.dynamic = true;
+    this.group.add(this.bodies.group, this.realistic.group);
     this.update(0, false);
   }
 
@@ -65,20 +70,32 @@ export class Pilgrims {
         if (distance < 1.1) { const a = distance < .001 ? p.angle : Math.atan2(z - avoid.z, x - avoid.x); x = avoid.x + Math.cos(a) * 1.1; z = avoid.z + Math.sin(a) * 1.1; }
       }
       const walking = animate && (!this.main || this.mainWalking);
-      this.bodies.pose(i, p.appearance, { position: position.set(x, 0, z), angle, scale: p.scale, gait: this.elapsed * 4.5 + p.phase, walking }, this.attire);
+      const pose = { position: position.set(x, 0, z), angle, scale: p.scale, gait: this.elapsed * 4.5 + p.phase, walking };
+      this.bodies.pose(i, p.appearance, pose, this.attire);
+      this.realistic.pose(i, p.appearance, pose, this.attire);
+      if (!p.appearance.female && this.realistic.isReady(this.attire)) this.bodies.hide(i);
     });
-    this.bodies.flush();
+    this.bodies.flush(); this.realistic.flush();
   }
-  dispose(): void { this.bodies.dispose(); }
+  dispose(): void { this.bodies.dispose(); this.realistic.dispose(); this.group.removeFromParent(); }
 }
 
 /** Seat positions are cushion/hip positions. A zero angle faces +Z; PI faces -Z. */
 export function createSeatedPassengers(r: WorldResources, seats: readonly { position: Position; angle?: number; driving?: boolean }[]): T.Group {
   const passengers = new HumanBatch(r, seats.length, true);
-  passengers.group.name = 'Seated passengers';
-  seats.forEach((seat, i) => passengers.pose(i, humanAppearance(i, i % 5 === 1 || i % 5 === 3), {
-    position: new T.Vector3(...seat.position), angle: seat.angle ?? 0, scale: .97 + (i % 4) * .018, gait: 0, walking: false, seated: true, driving: seat.driving,
-    headTurn: i % 7 === 2 ? .12 : i % 7 === 5 ? -.15 : 0,
-  }, 'travel'));
-  passengers.flush(); return passengers.group;
+  const group = new T.Group(); group.name = 'Seated passengers'; group.userData.dynamic = true;
+  const update = () => {
+    seats.forEach((seat, i) => {
+      const appearance = humanAppearance(i, i % 5 === 1 || i % 5 === 3);
+      const pose = { position: new T.Vector3(...seat.position), angle: seat.angle ?? 0, scale: .97 + (i % 4) * .018, gait: 0, walking: false, seated: true, driving: seat.driving,
+        headTurn: i % 7 === 2 ? .12 : i % 7 === 5 ? -.15 : 0 };
+      passengers.pose(i, appearance, pose, 'travel'); realistic.pose(i, appearance, pose, 'travel');
+      if (!appearance.female && realistic.isReady('travel', pose)) passengers.hide(i);
+    });
+    passengers.flush(); realistic.flush();
+  };
+  const realistic = new RealisticHumanBatch(r, seats.length, true, update);
+  group.add(passengers.group, realistic.group);
+  group.userData.disposeCharacters = () => { realistic.dispose(); passengers.dispose(); };
+  update(); return group;
 }

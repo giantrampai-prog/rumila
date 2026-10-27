@@ -1,0 +1,32 @@
+{
+  "ihram": {
+    "file": "man-ihram.glb",
+    "bytes": 3923460,
+    "sourceTriangles": 417844,
+    "triangles": 24089,
+    "meshes": 4,
+    "materials": 9,
+    "heightMeters": 1.76,
+    "clips": [
+      "idle",
+      "walk"
+    ],
+    "removedCap": true
+  },
+  "travel": {
+    "file": "man-travel.glb",
+    "bytes": 2405704,
+    "sourceTriangles": 306882,
+    "triangles": 24783,
+    "meshes": 5,
+    "materials": 9,
+    "heightMeters": 1.76,
+    "clips": [
+      "idle",
+      "walk",
+      "seated",
+      "driving"
+    ],
+    "removedCap": false
+  }
+}

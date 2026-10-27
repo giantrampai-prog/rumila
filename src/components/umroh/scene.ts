@@ -384,7 +384,14 @@ export class UmrohScene {
     canvas.removeEventListener('webglcontextlost', this.onContextLost); canvas.removeEventListener('webglcontextrestored', this.onContextRestored);
     window.removeEventListener('keydown', this.keyDown); window.removeEventListener('keyup', this.keyUp); window.removeEventListener('blur', this.pauseInput); document.removeEventListener('visibilitychange', this.pauseInput);
     this.crowds.forEach((crowd) => crowd.dispose()); this.crowds.clear(); this.guide.dispose();
-    this.worlds.forEach((world) => world.group.traverse((object) => { if (object instanceof T.InstancedMesh) object.dispose(); }));
+    this.worlds.forEach((world) => {
+      const characterDisposers: (() => void)[] = [];
+      world.group.traverse((object) => {
+        if (typeof object.userData.disposeCharacters === 'function') characterDisposers.push(object.userData.disposeCharacters);
+        if (object instanceof T.InstancedMesh) object.dispose();
+      });
+      characterDisposers.forEach((dispose) => dispose());
+    });
     this.resources.dispose(); this.environment?.dispose(); this.sky.geometry.dispose(); this.sky.material.dispose(); this.sun.shadow.dispose();
     this.renderer.dispose(); this.renderer.forceContextLoss(); canvas.remove(); this.worlds.clear();
   }
