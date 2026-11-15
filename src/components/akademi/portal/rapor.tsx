@@ -121,7 +121,7 @@ function TombolKembali({ ikon }: { ikon?: boolean }) {
 
 /* ---------------- isi per anak ---------------- */
 
-function RaporAnak({ anak }: { anak: Member }) {
+export function RaporAnak({ anak }: { anak: Member }) {
   const events = useEvents(anak.id);
   const bahasa = useBahasaAnak(anak.id);
   const versi = useProfilAkademiVersi();

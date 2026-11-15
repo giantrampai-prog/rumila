@@ -46,3 +46,26 @@ describe("mengulang", () => {
     expect([...m.values()][0].lulus).toBe(true);
   });
 });
+
+describe("piagam & sertifikat semester", async () => {
+  const { piagamModul, sertifikatSemester, tahunAjaran, nomorSemester } = await import("../piagam");
+  const { kompetensi } = await import("./helper");
+  const K = [kompetensi("MAT.PAUD.A.01", { core: true }), kompetensi("MAT.PAUD.A.02"), kompetensi("KODE.PAUD.B.01", { core: true }), kompetensi("MAT.PAUD.C.01")];
+  const h = (jenis: HasilUjian["jenis"], ruang: string, nilai: number, sessionId = `${jenis}-${ruang}-${nilai}`): HasilUjian => ({ jenis, level: "PAUD", ruang, sessionId, benar: 0, total: 8, nilai, lulus: nilai >= 70, at: "2026-11-15T03:00:00.000Z" });
+
+  it("piagam hanya untuk kuis lulus, nilai terbaik per modul", () => {
+    const p = piagamModul([h("kuis", "A", 50), h("kuis", "A", 90), h("kuis", "A", 80), h("kuis", "B", 60)], K);
+    expect(p.map((x) => `${x.unitId}:${x.nilai}:${x.ke}`)).toEqual(["A:90:1"]);
+  });
+
+  it("sertifikat semester: nilai per pelajaran dari kuis, nilai akhir 60/40", () => {
+    const s = sertifikatSemester([h("kuis", "A", 80), h("kuis", "B", 100), h("semester", "S1", 90)], K);
+    expect(s).toHaveLength(1);
+    expect(s[0].ke).toBe(1);
+    expect(s[0].perPelajaran.map((x) => `${x.track}:${x.nilai}`).sort()).toEqual(expect.arrayContaining([expect.stringMatching(/^MAT:/)]));
+    expect(s[0].nilaiAkhir).toBe(Math.round(0.6 * 90 + 0.4 * ((s[0].perPelajaran.reduce((a, b) => a + b.nilai * b.modul, 0)) / s[0].perPelajaran.reduce((a, b) => a + b.modul, 0))));
+    expect(tahunAjaran("2026-11-15T00:00:00Z")).toBe("2026/2027");
+    expect(tahunAjaran("2027-03-01T00:00:00Z")).toBe("2026/2027");
+    expect(nomorSemester({ level: "PAUD", ke: 1, at: "2026-11-15T00:00:00Z", sessionId: "ab12cd34-0000-4000-8000-000000000000" })).toBe("RA/2026/PAUD-S1/AB12CD34");
+  });
+});
