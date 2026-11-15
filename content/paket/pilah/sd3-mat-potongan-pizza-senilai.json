@@ -1,0 +1,178 @@
+{
+  "id": "sd3-mat-potongan-pizza-senilai",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Potongan Pizza Senilai",
+      "instruksi": "Pizza dipotong dengan banyak cara. Pecahan senilai artinya bagiannya sama besar. Taruh tiap kartu di rak pecahan yang senilai.",
+      "b-setengah": "1/2",
+      "b-seperempat": "1/4",
+      "b-tigaperempat": "3/4",
+      "b-sepertiga": "1/3",
+      "b-duapertiga": "2/3",
+      "i1": "3/6",
+      "i2": "4/8",
+      "i3": "3 dari 6 potong",
+      "i4": "4 dari 8 potong",
+      "i5": "2/8",
+      "i6": "2 dari 8 potong",
+      "i7": "6/8",
+      "i8": "6 dari 8 potong",
+      "i9": "2/6",
+      "i10": "2 dari 6 potong",
+      "i11": "4/6",
+      "i12": "4 dari 6 potong"
+    },
+    "en": {
+      "judul": "Matching Pizza Slices",
+      "instruksi": "Pizzas are cut in different ways. Equivalent fractions show the same amount. Put each card on the shelf with the equal fraction.",
+      "b-setengah": "1/2",
+      "b-seperempat": "1/4",
+      "b-tigaperempat": "3/4",
+      "b-sepertiga": "1/3",
+      "b-duapertiga": "2/3",
+      "i1": "3/6",
+      "i2": "4/8",
+      "i3": "3 of 6 slices",
+      "i4": "4 of 8 slices",
+      "i5": "2/8",
+      "i6": "2 of 8 slices",
+      "i7": "6/8",
+      "i8": "6 of 8 slices",
+      "i9": "2/6",
+      "i10": "2 of 6 slices",
+      "i11": "4/6",
+      "i12": "4 of 6 slices"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rak aktif: 1/2, 1/4, 3/4 dulu, lalu pertigaan"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "setengah",
+      "labelKey": "b-setengah"
+    },
+    {
+      "id": "seperempat",
+      "labelKey": "b-seperempat"
+    },
+    {
+      "id": "tigaperempat",
+      "labelKey": "b-tigaperempat"
+    },
+    {
+      "id": "sepertiga",
+      "labelKey": "b-sepertiga"
+    },
+    {
+      "id": "duapertiga",
+      "labelKey": "b-duapertiga"
+    }
+  ],
+  "items": [
+    {
+      "id": "setengah-1",
+      "labelKey": "i1",
+      "bin": "setengah",
+      "scale": 0.85
+    },
+    {
+      "id": "setengah-2",
+      "labelKey": "i2",
+      "bin": "setengah",
+      "scale": 0.85
+    },
+    {
+      "id": "setengah-3",
+      "labelKey": "i3",
+      "bin": "setengah",
+      "emoji": "🍕",
+      "scale": 0.8
+    },
+    {
+      "id": "setengah-4",
+      "labelKey": "i4",
+      "bin": "setengah",
+      "emoji": "🍕",
+      "scale": 0.8
+    },
+    {
+      "id": "seperempat-5",
+      "labelKey": "i5",
+      "bin": "seperempat",
+      "scale": 0.85
+    },
+    {
+      "id": "seperempat-6",
+      "labelKey": "i6",
+      "bin": "seperempat",
+      "emoji": "🍕",
+      "scale": 0.8
+    },
+    {
+      "id": "tigaperempat-7",
+      "labelKey": "i7",
+      "bin": "tigaperempat",
+      "scale": 0.85
+    },
+    {
+      "id": "tigaperempat-8",
+      "labelKey": "i8",
+      "bin": "tigaperempat",
+      "emoji": "🍕",
+      "scale": 0.8
+    },
+    {
+      "id": "sepertiga-9",
+      "labelKey": "i9",
+      "bin": "sepertiga",
+      "scale": 0.85
+    },
+    {
+      "id": "sepertiga-10",
+      "labelKey": "i10",
+      "bin": "sepertiga",
+      "emoji": "🍕",
+      "scale": 0.8
+    },
+    {
+      "id": "duapertiga-11",
+      "labelKey": "i11",
+      "bin": "duapertiga",
+      "scale": 0.85
+    },
+    {
+      "id": "duapertiga-12",
+      "labelKey": "i12",
+      "bin": "duapertiga",
+      "emoji": "🍕",
+      "scale": 0.8
+    }
+  ]
+}

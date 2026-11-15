@@ -1,0 +1,358 @@
+{
+  "id": "sd6-sains-timbang-massa-berat",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.MASSA-BERAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Timbangan dan Neraca Pegas",
+      "instruksi": "Baca soalnya, lalu pilih jawaban yang tepat tentang massa dan berat.",
+      "b-pilihan": "pilihan",
+      "i-massa": "massa",
+      "i-berat": "berat",
+      "i-volume": "volume",
+      "i-newton": "newton",
+      "i-kilogram": "kilogram",
+      "i-liter": "liter",
+      "i-meter": "meter",
+      "i-kg900": "900 kg",
+      "i-kurang900": "kurang dari 900 kg",
+      "i-lebih900": "lebih dari 900 kg",
+      "i-tetap": "tetap sama",
+      "i-bertambah": "bertambah",
+      "i-berkurang": "berkurang",
+      "i-n50": "50 N",
+      "i-n5": "5 N",
+      "i-n500": "500 N",
+      "i-kurang50": "kurang dari 50 N",
+      "i-tepat50": "tepat 50 N",
+      "i-lebih50": "lebih dari 50 N",
+      "i-beratkecil": "beratnya lebih kecil di sana",
+      "i-massahilang": "massanya hilang",
+      "i-massabertambah": "massanya bertambah",
+      "p-r1": "Pedagang menimbang beras di timbangan dan menulis \"5 kg\". Angka itu menunjukkan…",
+      "p-r2": "Tas digantung di neraca pegas yang menunjukkan \"20 N\". Angka itu menunjukkan…",
+      "p-r3": "Neraca pegas bertuliskan \"N\". Huruf N adalah singkatan dari satuan…",
+      "p-r4": "Satuan yang tepat untuk menuliskan massa sekantong gula adalah…",
+      "p-r5": "Robot penjelajah bermassa 900 kg dikirim ke Mars. Di Mars massanya…",
+      "p-r6": "Gravitasi Mars lebih kecil daripada Bumi. Dibanding di Bumi, berat robot itu di Mars…",
+      "p-r7": "Astronaut di Bulan bisa melompat lebih tinggi daripada di Bumi karena…",
+      "p-r8": "Batu dari Bulan dibawa ke Bumi yang gravitasinya lebih besar. Berat batu itu…",
+      "p-r9": "Batu dari Bulan itu dibawa ke Bumi. Massanya…",
+      "p-r10": "Di Bumi, benda bermassa 1 kg beratnya sekitar 10 N. Berapa kira-kira berat karung beras 5 kg di Bumi?",
+      "p-r11": "Karung beras 5 kg beratnya sekitar 50 N di Bumi. Di Bulan yang gravitasinya jauh lebih kecil, beratnya…",
+      "p-r12": "Bila sebuah benda dibawa ke planet lain, yang berubah adalah…"
+    },
+    "en": {
+      "judul": "Scales and Spring Balances",
+      "instruksi": "Read the question, then choose the right answer about mass and weight.",
+      "b-pilihan": "choices",
+      "i-massa": "mass",
+      "i-berat": "weight",
+      "i-volume": "volume",
+      "i-newton": "newton",
+      "i-kilogram": "kilogram",
+      "i-liter": "litre",
+      "i-meter": "metre",
+      "i-kg900": "900 kg",
+      "i-kurang900": "less than 900 kg",
+      "i-lebih900": "more than 900 kg",
+      "i-tetap": "stays the same",
+      "i-bertambah": "increases",
+      "i-berkurang": "decreases",
+      "i-n50": "50 N",
+      "i-n5": "5 N",
+      "i-n500": "500 N",
+      "i-kurang50": "less than 50 N",
+      "i-tepat50": "exactly 50 N",
+      "i-lebih50": "more than 50 N",
+      "i-beratkecil": "their weight is smaller there",
+      "i-massahilang": "their mass disappears",
+      "i-massabertambah": "their mass increases",
+      "p-r1": "A seller weighs rice on the scales and writes \"5 kg\". This number shows the rice's…",
+      "p-r2": "A bag hangs from a spring balance that shows \"20 N\". This number shows the bag's…",
+      "p-r3": "A spring balance is marked \"N\". The letter N stands for the unit…",
+      "p-r4": "The right unit for writing the mass of a bag of sugar is…",
+      "p-r5": "A 900 kg rover is sent to Mars. On Mars its mass is…",
+      "p-r6": "Mars's gravity is weaker than Earth's. Compared with Earth, the rover's weight on Mars…",
+      "p-r7": "Astronauts on the Moon can jump higher than on Earth because…",
+      "p-r8": "A Moon rock is brought to Earth, where gravity is stronger. The rock's weight…",
+      "p-r9": "That Moon rock is brought to Earth. Its mass…",
+      "p-r10": "On Earth, a 1 kg object weighs about 10 N. About how much does a 5 kg sack of rice weigh on Earth?",
+      "p-r11": "A 5 kg sack of rice weighs about 50 N on Earth. On the Moon, where gravity is much weaker, it weighs…",
+      "p-r12": "When an object is taken to another planet, the thing that changes is its…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "massa",
+      "labelKey": "i-massa",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "berat",
+      "labelKey": "i-berat",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "volume",
+      "labelKey": "i-volume",
+      "bin": "pilihan",
+      "emoji": "🧪"
+    },
+    {
+      "id": "newton",
+      "labelKey": "i-newton",
+      "bin": "pilihan",
+      "emoji": "🔤"
+    },
+    {
+      "id": "kilogram",
+      "labelKey": "i-kilogram",
+      "bin": "pilihan",
+      "emoji": "🏋️"
+    },
+    {
+      "id": "liter",
+      "labelKey": "i-liter",
+      "bin": "pilihan",
+      "emoji": "🥤"
+    },
+    {
+      "id": "meter",
+      "labelKey": "i-meter",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "kg900",
+      "labelKey": "i-kg900",
+      "bin": "pilihan",
+      "emoji": "🤖"
+    },
+    {
+      "id": "kurang900",
+      "labelKey": "i-kurang900",
+      "bin": "pilihan",
+      "emoji": "🔽"
+    },
+    {
+      "id": "lebih900",
+      "labelKey": "i-lebih900",
+      "bin": "pilihan",
+      "emoji": "🔼"
+    },
+    {
+      "id": "tetap",
+      "labelKey": "i-tetap",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "bertambah",
+      "labelKey": "i-bertambah",
+      "bin": "pilihan",
+      "emoji": "📈"
+    },
+    {
+      "id": "berkurang",
+      "labelKey": "i-berkurang",
+      "bin": "pilihan",
+      "emoji": "📉"
+    },
+    {
+      "id": "n50",
+      "labelKey": "i-n50",
+      "bin": "pilihan",
+      "emoji": "🔟"
+    },
+    {
+      "id": "n5",
+      "labelKey": "i-n5",
+      "bin": "pilihan",
+      "emoji": "5️⃣"
+    },
+    {
+      "id": "n500",
+      "labelKey": "i-n500",
+      "bin": "pilihan",
+      "emoji": "💯"
+    },
+    {
+      "id": "kurang50",
+      "labelKey": "i-kurang50",
+      "bin": "pilihan",
+      "emoji": "🌙"
+    },
+    {
+      "id": "tepat50",
+      "labelKey": "i-tepat50",
+      "bin": "pilihan",
+      "emoji": "🎯"
+    },
+    {
+      "id": "lebih50",
+      "labelKey": "i-lebih50",
+      "bin": "pilihan",
+      "emoji": "🪐"
+    },
+    {
+      "id": "beratkecil",
+      "labelKey": "i-beratkecil",
+      "bin": "pilihan",
+      "emoji": "🪶"
+    },
+    {
+      "id": "massahilang",
+      "labelKey": "i-massahilang",
+      "bin": "pilihan",
+      "emoji": "💨"
+    },
+    {
+      "id": "massabertambah",
+      "labelKey": "i-massabertambah",
+      "bin": "pilihan",
+      "emoji": "➕"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "massa",
+        "berat",
+        "volume"
+      ],
+      "correct": "massa"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "berat",
+        "massa",
+        "volume"
+      ],
+      "correct": "berat"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "newton",
+        "kilogram",
+        "liter"
+      ],
+      "correct": "newton"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "kilogram",
+        "newton",
+        "meter"
+      ],
+      "correct": "kilogram"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "kg900",
+        "kurang900",
+        "lebih900"
+      ],
+      "correct": "kg900"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "berkurang",
+        "bertambah",
+        "tetap"
+      ],
+      "correct": "berkurang"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "beratkecil",
+        "massahilang",
+        "massabertambah"
+      ],
+      "correct": "beratkecil"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "tetap",
+        "bertambah",
+        "berkurang"
+      ],
+      "correct": "tetap"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "n50",
+        "n5",
+        "n500"
+      ],
+      "correct": "n50"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "kurang50",
+        "tepat50",
+        "lebih50"
+      ],
+      "correct": "kurang50"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "berat",
+        "massa",
+        "volume"
+      ],
+      "correct": "berat"
+    }
+  ]
+}

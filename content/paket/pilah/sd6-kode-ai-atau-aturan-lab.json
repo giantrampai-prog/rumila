@@ -1,0 +1,149 @@
+{
+  "id": "sd6-kode-ai-atau-aturan-lab",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.AI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mesin Belajar atau Mesin Aturan?",
+      "instruksi": "Di laboratorium ada banyak program: seret tiap tugas, dikerjakan program yang belajar dari banyak contoh, atau program yang mengikuti aturan tetap yang ditulis manusia?",
+      "bin-ai": "belajar dari contoh",
+      "bin-aturan": "aturan tetap",
+      "i1": "menebak penyakit daun dari fotonya",
+      "i2": "mengenali suara burung dari rekaman",
+      "i3": "menebak gambar dari coretan tangan",
+      "i4": "mobil swakemudi mengenali pejalan kaki",
+      "i5": "membaca tulisan di foto papan jalan",
+      "i6": "menyarankan lagu yang mungkin kamu suka",
+      "i7": "menghitung rata-rata nilai kelas",
+      "i8": "lampu taman menyala tepat jam 18.00",
+      "i9": "AC menyala kalau suhu di atas 28°C",
+      "i10": "mengubah sentimeter menjadi meter",
+      "i11": "menghitung diskon 10% di kasir",
+      "i12": "mengunci HP setelah 3 kali PIN salah"
+    },
+    "en": {
+      "judul": "Learning Machine or Rule Machine?",
+      "instruksi": "The lab has many programs: drag each task, is it done by a program that learns from many examples, or by a program following fixed rules written by people?",
+      "bin-ai": "learns from examples",
+      "bin-aturan": "fixed rules",
+      "i1": "guessing a leaf disease from its photo",
+      "i2": "recognising a bird from a recording of its song",
+      "i3": "guessing a picture from a hand sketch",
+      "i4": "a self-driving car recognising people walking",
+      "i5": "reading the words in a photo of a road sign",
+      "i6": "suggesting songs you might like",
+      "i7": "working out the class average mark",
+      "i8": "park lights turning on at exactly 18:00",
+      "i9": "the air conditioner turning on above 28°C",
+      "i10": "changing centimetres into metres",
+      "i11": "working out a 10% discount at the till",
+      "i12": "locking a phone after 3 wrong PINs"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah tugas per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "ai",
+      "labelKey": "bin-ai",
+      "emoji": "🧠"
+    },
+    {
+      "id": "aturan",
+      "labelKey": "bin-aturan",
+      "emoji": "📏"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "ai",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "ai",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "ai",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "ai",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "ai",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "ai",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "aturan",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "aturan",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "aturan",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "aturan",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "aturan",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "aturan",
+      "scale": 0.5
+    }
+  ]
+}

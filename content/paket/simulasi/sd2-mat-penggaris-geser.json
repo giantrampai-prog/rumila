@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-penggaris-geser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "i-sumpit": "sumpit",
       "i-pisang": "pisang",
       "i-seruling": "seruling",
-      "i-tongkat": "tongkat"
+      "i-tongkat": "tongkat kayu"
     },
     "en": {
       "judul": "The Shifted Ruler",
@@ -34,7 +34,7 @@
       "i-sumpit": "chopsticks",
       "i-pisang": "banana",
       "i-seruling": "flute",
-      "i-tongkat": "stick"
+      "i-tongkat": "wooden stick"
     }
   },
   "knobs": {
@@ -128,9 +128,10 @@
       "id": "tongkat",
       "labelKey": "i-tongkat",
       "role": "benda",
-      "emoji": "🦯",
       "width": 4,
-      "value": 11
+      "value": 11,
+      "shape": "rect",
+      "color": "#8d6e63"
     }
   ]
 }

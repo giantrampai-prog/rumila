@@ -1,0 +1,397 @@
+{
+  "id": "sd3-mat-kotak-es-kutub",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.TAMBAH-KURANG-1000.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bilangan di Bawah Es",
+      "instruksi": "Kotak □ menyembunyikan satu bilangan. Pikirkan: tambah atau kurang yang bisa membukanya? Sentuh bilangannya.",
+      "pilihan": "pilihan",
+      "q1": "Beruang kutub menutup satu bilangan dengan es: □ + 30 = 90. Bilangan di balik □?",
+      "c1": "60",
+      "c2": "120",
+      "c3": "70",
+      "c4": "59",
+      "q2": "Beruang kutub menutup satu bilangan dengan es: 45 − □ = 20. Bilangan di balik □?",
+      "c5": "25",
+      "c6": "65",
+      "c7": "35",
+      "c8": "24",
+      "q3": "Beruang kutub menutup satu bilangan dengan es: □ − 12 = 30. Bilangan di balik □?",
+      "c9": "42",
+      "c10": "18",
+      "c11": "52",
+      "c12": "41",
+      "q4": "Beruang kutub menutup satu bilangan dengan es: 8 + □ = 50. Bilangan di balik □?",
+      "c13": "58",
+      "q5": "Beruang kutub menutup satu bilangan dengan es: □ + 25 = 60. Bilangan di balik □?",
+      "c14": "85",
+      "c15": "45",
+      "c16": "34",
+      "q6": "Beruang kutub menutup satu bilangan dengan es: 70 − □ = 35. Bilangan di balik □?",
+      "c17": "105",
+      "q7": "Beruang kutub menutup satu bilangan dengan es: □ − 40 = 15. Bilangan di balik □?",
+      "c18": "55",
+      "c19": "54",
+      "q8": "Beruang kutub menutup satu bilangan dengan es: 16 + □ = 41. Bilangan di balik □?",
+      "c20": "57",
+      "q9": "Beruang kutub menutup satu bilangan dengan es: 100 − □ = 64. Bilangan di balik □?",
+      "c21": "36",
+      "c22": "164",
+      "c23": "46",
+      "q10": "Beruang kutub menutup satu bilangan dengan es: □ + 9 = 52. Bilangan di balik □?",
+      "c24": "43",
+      "c25": "61",
+      "c26": "53",
+      "q11": "Beruang kutub menutup satu bilangan dengan es: □ − 18 = 7. Bilangan di balik □?",
+      "c27": "11",
+      "q12": "Beruang kutub menutup satu bilangan dengan es: 33 + □ = 80. Bilangan di balik □?",
+      "c28": "47",
+      "c29": "113"
+    },
+    "en": {
+      "judul": "Number Under the Ice",
+      "instruksi": "The box □ hides one number. Think: which add or take away finds it? Touch the number.",
+      "pilihan": "choices",
+      "q1": "A polar bear hides a number under ice: □ + 30 = 90. What is under □?",
+      "c1": "60",
+      "c2": "120",
+      "c3": "70",
+      "c4": "59",
+      "q2": "A polar bear hides a number under ice: 45 − □ = 20. What is under □?",
+      "c5": "25",
+      "c6": "65",
+      "c7": "35",
+      "c8": "24",
+      "q3": "A polar bear hides a number under ice: □ − 12 = 30. What is under □?",
+      "c9": "42",
+      "c10": "18",
+      "c11": "52",
+      "c12": "41",
+      "q4": "A polar bear hides a number under ice: 8 + □ = 50. What is under □?",
+      "c13": "58",
+      "q5": "A polar bear hides a number under ice: □ + 25 = 60. What is under □?",
+      "c14": "85",
+      "c15": "45",
+      "c16": "34",
+      "q6": "A polar bear hides a number under ice: 70 − □ = 35. What is under □?",
+      "c17": "105",
+      "q7": "A polar bear hides a number under ice: □ − 40 = 15. What is under □?",
+      "c18": "55",
+      "c19": "54",
+      "q8": "A polar bear hides a number under ice: 16 + □ = 41. What is under □?",
+      "c20": "57",
+      "q9": "A polar bear hides a number under ice: 100 − □ = 64. What is under □?",
+      "c21": "36",
+      "c22": "164",
+      "c23": "46",
+      "q10": "A polar bear hides a number under ice: □ + 9 = 52. What is under □?",
+      "c24": "43",
+      "c25": "61",
+      "c26": "53",
+      "q11": "A polar bear hides a number under ice: □ − 18 = 7. What is under □?",
+      "c27": "11",
+      "q12": "A polar bear hides a number under ice: 33 + □ = 80. What is under □?",
+      "c28": "47",
+      "c29": "113"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kutub",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c9",
+        "c13",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c7",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c7",
+        "c17",
+        "c15",
+        "c16"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c18",
+        "c5",
+        "c6",
+        "c19"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c5",
+        "c20",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c7"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c24",
+        "c25",
+        "c26",
+        "c9"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c5",
+        "c27",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c28",
+        "c29",
+        "c20",
+        "c23"
+      ],
+      "correct": "c28"
+    }
+  ]
+}

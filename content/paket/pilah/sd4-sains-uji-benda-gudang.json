@@ -1,0 +1,149 @@
+{
+  "id": "sd4-sains-uji-benda-gudang",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.LISTRIK.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menyala Saat Dijepit?",
+      "instruksi": "Benda dari gudang dijepit di celah rangkaian. Taruh ke rak lampu menyala (konduktor) atau lampu padam (isolator).",
+      "b-konduktor": "lampu menyala (konduktor)",
+      "b-isolator": "lampu padam (isolator)",
+      "i-gunting": "bilah gunting logam",
+      "i-cincin": "cincin emas",
+      "i-obeng": "ujung logam obeng",
+      "i-rantai": "rantai besi",
+      "i-garpu": "garpu logam",
+      "i-peniti": "peniti logam",
+      "i-balon": "balon karet",
+      "i-kancing": "kancing plastik",
+      "i-sumpit": "sumpit kayu",
+      "i-kauskaki": "kaus kaki kain",
+      "i-sikatgigi": "gagang sikat gigi plastik",
+      "i-daun": "daun kering"
+    },
+    "en": {
+      "judul": "Does It Light When Clipped In?",
+      "instruksi": "Things from the shed are clipped into the gap in the circuit. Put each on the lamp-lights shelf (conductor) or the lamp-stays-off shelf (insulator).",
+      "b-konduktor": "lamp lights (conductor)",
+      "b-isolator": "lamp stays off (insulator)",
+      "i-gunting": "the metal blade of scissors",
+      "i-cincin": "a gold ring",
+      "i-obeng": "the metal tip of a screwdriver",
+      "i-rantai": "an iron chain",
+      "i-garpu": "a metal fork",
+      "i-peniti": "a metal safety pin",
+      "i-balon": "a rubber balloon",
+      "i-kancing": "a plastic button",
+      "i-sumpit": "wooden chopsticks",
+      "i-kauskaki": "a cloth sock",
+      "i-sikatgigi": "a plastic toothbrush handle",
+      "i-daun": "a dry leaf"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "konduktor",
+      "labelKey": "b-konduktor",
+      "emoji": "⚡"
+    },
+    {
+      "id": "isolator",
+      "labelKey": "b-isolator",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "gunting",
+      "labelKey": "i-gunting",
+      "bin": "konduktor",
+      "emoji": "✂️"
+    },
+    {
+      "id": "cincin",
+      "labelKey": "i-cincin",
+      "bin": "konduktor",
+      "emoji": "💍"
+    },
+    {
+      "id": "obeng",
+      "labelKey": "i-obeng",
+      "bin": "konduktor",
+      "emoji": "🪛"
+    },
+    {
+      "id": "rantai",
+      "labelKey": "i-rantai",
+      "bin": "konduktor",
+      "emoji": "⛓️"
+    },
+    {
+      "id": "garpu",
+      "labelKey": "i-garpu",
+      "bin": "konduktor",
+      "emoji": "🍴"
+    },
+    {
+      "id": "peniti",
+      "labelKey": "i-peniti",
+      "bin": "konduktor",
+      "emoji": "🧷"
+    },
+    {
+      "id": "balon",
+      "labelKey": "i-balon",
+      "bin": "isolator",
+      "emoji": "🎈"
+    },
+    {
+      "id": "kancing",
+      "labelKey": "i-kancing",
+      "bin": "isolator",
+      "emoji": "🔘"
+    },
+    {
+      "id": "sumpit",
+      "labelKey": "i-sumpit",
+      "bin": "isolator",
+      "emoji": "🥢"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "isolator",
+      "emoji": "🧦"
+    },
+    {
+      "id": "sikatgigi",
+      "labelKey": "i-sikatgigi",
+      "bin": "isolator",
+      "emoji": "🪥"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "isolator",
+      "emoji": "🍂"
+    }
+  ],
+  "pilihan": []
+}

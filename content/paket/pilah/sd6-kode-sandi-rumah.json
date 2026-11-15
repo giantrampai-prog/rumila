@@ -1,0 +1,165 @@
+{
+  "id": "sd6-kode-sandi-rumah",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.SANDI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kata Sandi Wi-Fi Rumah",
+      "instruksi": "Keluarga sedang memilih kata sandi baru. Kata sandi kuat itu panjang, sulit ditebak, dan memakai campuran huruf, angka, atau simbol. Seret tiap contoh ke kelompoknya (contoh ini karangan, jangan dipakai).",
+      "bin-kuat": "kuat",
+      "bin-lemah": "lemah",
+      "i1": "111111",
+      "i2": "abc123",
+      "i3": "admin",
+      "i4": "sayang",
+      "i5": "987654321",
+      "i6": "mimi2016",
+      "i7": "matahari",
+      "i8": "asdfgh",
+      "i9": "Kapal-Hijau-Menari-Senja-4",
+      "i10": "Teh!Manis_Gunung27",
+      "i11": "jeruk#Bulan8Sepatu",
+      "i12": "Awan_Tujuh+Rumput3",
+      "i13": "Lima-Bebek-Naik-Kereta!",
+      "i14": "Rak?Buku9_Pelangi"
+    },
+    "en": {
+      "judul": "Home Wi-Fi Passwords",
+      "instruksi": "The family is choosing a new password. A strong password is long, hard to guess, and mixes letters, numbers, or symbols. Drag each example to its group (these are made up, don't use them).",
+      "bin-kuat": "strong",
+      "bin-lemah": "weak",
+      "i1": "111111",
+      "i2": "abc123",
+      "i3": "admin",
+      "i4": "sayang",
+      "i5": "987654321",
+      "i6": "mimi2016",
+      "i7": "matahari",
+      "i8": "asdfgh",
+      "i9": "Kapal-Hijau-Menari-Senja-4",
+      "i10": "Teh!Manis_Gunung27",
+      "i11": "jeruk#Bulan8Sepatu",
+      "i12": "Awan_Tujuh+Rumput3",
+      "i13": "Lima-Bebek-Naik-Kereta!",
+      "i14": "Rak?Buku9_Pelangi"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah contoh per ronde; jebakan nama hewan + tahun"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kuat",
+      "labelKey": "bin-kuat",
+      "emoji": "💪"
+    },
+    {
+      "id": "lemah",
+      "labelKey": "bin-lemah",
+      "emoji": "🥀"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "lemah",
+      "scale": 0.6
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "kuat",
+      "scale": 0.6
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "kuat",
+      "scale": 0.6
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "kuat",
+      "scale": 0.6
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "kuat",
+      "scale": 0.6
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "kuat",
+      "scale": 0.6
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "kuat",
+      "scale": 0.6
+    }
+  ]
+}

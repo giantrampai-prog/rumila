@@ -1,0 +1,194 @@
+{
+  "id": "sd4-sains-tulang-di-tempatnya",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.RANGKA-OTOT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tulang di Tempatnya",
+      "instruksi": "Model kerangka di kelas terlepas. Taruh tiap tulang ke bagian tubuh tempatnya.",
+      "b-kepala": "kepala",
+      "b-badan": "badan (dada sampai pinggang)",
+      "b-kaki": "kaki",
+      "b-lengan": "lengan dan tangan",
+      "i-tengkorak": "tengkorak",
+      "i-rahang": "tulang rahang",
+      "i-hidung": "tulang hidung",
+      "i-pipi": "tulang pipi",
+      "i-rusuk": "tulang rusuk",
+      "i-panggul": "tulang panggul",
+      "i-dada": "tulang dada",
+      "i-punggung": "ruas tulang punggung",
+      "i-paha": "tulang paha",
+      "i-betis": "tulang betis",
+      "i-tumit": "tulang tumit",
+      "i-jarikaki": "tulang jari kaki",
+      "i-hasta": "tulang hasta",
+      "i-pengumpil": "tulang pengumpil",
+      "i-telapak": "tulang telapak tangan"
+    },
+    "en": {
+      "judul": "Bones in Their Places",
+      "instruksi": "The classroom skeleton model has come apart. Put each bone back in its part of the body.",
+      "b-kepala": "head",
+      "b-badan": "trunk (chest to hips)",
+      "b-kaki": "leg",
+      "b-lengan": "arm and hand",
+      "i-tengkorak": "skull",
+      "i-rahang": "jawbone",
+      "i-hidung": "nose bone",
+      "i-pipi": "cheekbone",
+      "i-rusuk": "ribs",
+      "i-panggul": "hip bone (pelvis)",
+      "i-dada": "breastbone",
+      "i-punggung": "backbone segments",
+      "i-paha": "thigh bone",
+      "i-betis": "calf bone",
+      "i-tumit": "heel bone",
+      "i-jarikaki": "toe bones",
+      "i-hasta": "ulna (forearm bone)",
+      "i-pengumpil": "radius (forearm bone)",
+      "i-telapak": "palm bones"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah wadah: 3 (kepala, badan, kaki) → 4 (tambah lengan dan tangan)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 8; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kepala",
+      "labelKey": "b-kepala",
+      "emoji": "💀"
+    },
+    {
+      "id": "badan",
+      "labelKey": "b-badan",
+      "emoji": "🫁"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "b-kaki",
+      "emoji": "🦵"
+    },
+    {
+      "id": "lengan",
+      "labelKey": "b-lengan",
+      "emoji": "💪"
+    }
+  ],
+  "items": [
+    {
+      "id": "tengkorak",
+      "labelKey": "i-tengkorak",
+      "bin": "kepala",
+      "emoji": "💀"
+    },
+    {
+      "id": "rahang",
+      "labelKey": "i-rahang",
+      "bin": "kepala",
+      "emoji": "😬"
+    },
+    {
+      "id": "hidung",
+      "labelKey": "i-hidung",
+      "bin": "kepala",
+      "emoji": "👃"
+    },
+    {
+      "id": "pipi",
+      "labelKey": "i-pipi",
+      "bin": "kepala",
+      "emoji": "😊"
+    },
+    {
+      "id": "rusuk",
+      "labelKey": "i-rusuk",
+      "bin": "badan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "panggul",
+      "labelKey": "i-panggul",
+      "bin": "badan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "dada",
+      "labelKey": "i-dada",
+      "bin": "badan",
+      "emoji": "🫁"
+    },
+    {
+      "id": "punggung",
+      "labelKey": "i-punggung",
+      "bin": "badan",
+      "emoji": "🦴"
+    },
+    {
+      "id": "paha",
+      "labelKey": "i-paha",
+      "bin": "kaki",
+      "emoji": "🦵"
+    },
+    {
+      "id": "betis",
+      "labelKey": "i-betis",
+      "bin": "kaki",
+      "emoji": "🦵"
+    },
+    {
+      "id": "tumit",
+      "labelKey": "i-tumit",
+      "bin": "kaki",
+      "emoji": "🦶"
+    },
+    {
+      "id": "jarikaki",
+      "labelKey": "i-jarikaki",
+      "bin": "kaki",
+      "emoji": "🦶"
+    },
+    {
+      "id": "hasta",
+      "labelKey": "i-hasta",
+      "bin": "lengan",
+      "emoji": "💪"
+    },
+    {
+      "id": "pengumpil",
+      "labelKey": "i-pengumpil",
+      "bin": "lengan",
+      "emoji": "💪"
+    },
+    {
+      "id": "telapak",
+      "labelKey": "i-telapak",
+      "bin": "lengan",
+      "emoji": "🖐️"
+    }
+  ],
+  "pilihan": []
+}

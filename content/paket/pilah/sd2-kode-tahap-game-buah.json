@@ -1,0 +1,266 @@
+{
+  "id": "sd2-kode-tahap-game-buah",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD2.DEKOMPOSISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tahap Game Tangkap Buah",
+      "instruksi": "Kita membuat game tangkap buah. Taruh tiap langkah kecil ke tahapnya: rancang, buat, uji, atau perbaiki.",
+      "bin-rancang": "rancang",
+      "bin-buat": "buat",
+      "bin-uji": "uji",
+      "bin-perbaiki": "perbaiki",
+      "i-r-tokoh": "tentukan tokohnya: keranjang",
+      "i-r-sketsa": "gambar layar game di kertas",
+      "i-r-buah": "tentukan buah apa saja yang jatuh",
+      "i-r-aturan": "tulis aturan: buah busuk mengurangi skor",
+      "i-r-nyawa": "tentukan jumlah nyawa pemain",
+      "i-r-menang": "tentukan skor untuk menang",
+      "i-b-jatuh": "susun blok supaya buah jatuh dari atas",
+      "i-b-tombol": "pasang tombol kiri-kanan untuk keranjang",
+      "i-b-skor": "buat skor bertambah saat buah tertangkap",
+      "i-b-suara": "tambahkan bunyi saat buah tertangkap",
+      "i-b-gambar": "gambar keranjang di aplikasi",
+      "i-b-acak": "buat buah muncul di tempat acak",
+      "i-u-main": "mainkan sampai nyawa habis",
+      "i-u-adik": "minta adik mencoba",
+      "i-u-skor": "cek apakah skor bertambah",
+      "i-u-catat": "catat bagian yang membingungkan",
+      "i-u-tablet": "coba game di tablet lain",
+      "i-u-tombol": "coba tekan semua tombol",
+      "i-p-pelan": "perlambat buah yang jatuh terlalu cepat",
+      "i-p-tembus": "betulkan keranjang yang tembus dinding",
+      "i-p-tulisan": "perbesar tulisan skor yang terlalu kecil",
+      "i-p-keras": "kecilkan bunyi yang terlalu keras",
+      "i-p-terbalik": "tukar tombol kiri-kanan yang terbalik",
+      "i-p-dobel": "hapus buah yang muncul dobel"
+    },
+    "en": {
+      "judul": "Stages of a Fruit-Catch Game",
+      "instruksi": "We are making a fruit-catching game. Put each small step in its stage: plan, build, test or fix.",
+      "bin-rancang": "plan",
+      "bin-buat": "build",
+      "bin-uji": "test",
+      "bin-perbaiki": "fix",
+      "i-r-tokoh": "decide the character: a basket",
+      "i-r-sketsa": "sketch the game screen on paper",
+      "i-r-buah": "decide which fruits will fall",
+      "i-r-aturan": "write a rule: rotten fruit lowers the score",
+      "i-r-nyawa": "decide how many lives the player has",
+      "i-r-menang": "decide the score needed to win",
+      "i-b-jatuh": "put blocks together so fruit falls from the top",
+      "i-b-tombol": "add left and right buttons for the basket",
+      "i-b-skor": "make the score go up when fruit is caught",
+      "i-b-suara": "add a sound when fruit is caught",
+      "i-b-gambar": "draw the basket in the app",
+      "i-b-acak": "make fruit appear in random places",
+      "i-u-main": "play until all lives are gone",
+      "i-u-adik": "ask a younger sibling to try it",
+      "i-u-skor": "check whether the score goes up",
+      "i-u-catat": "note the confusing parts",
+      "i-u-tablet": "try the game on another tablet",
+      "i-u-tombol": "try pressing every button",
+      "i-p-pelan": "slow down fruit that falls too fast",
+      "i-p-tembus": "fix the basket going through the wall",
+      "i-p-tulisan": "make the tiny score text bigger",
+      "i-p-keras": "turn down a sound that is too loud",
+      "i-p-terbalik": "swap the left and right buttons that are mixed up",
+      "i-p-dobel": "remove fruit that appears twice"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tahap aktif; 4 tahap adalah bentuk utuhnya"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah langkah kecil per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "rancang",
+      "labelKey": "bin-rancang",
+      "emoji": "✏️"
+    },
+    {
+      "id": "buat",
+      "labelKey": "bin-buat",
+      "emoji": "🧩"
+    },
+    {
+      "id": "uji",
+      "labelKey": "bin-uji",
+      "emoji": "🎮"
+    },
+    {
+      "id": "perbaiki",
+      "labelKey": "bin-perbaiki",
+      "emoji": "🔧"
+    }
+  ],
+  "items": [
+    {
+      "id": "r-tokoh",
+      "labelKey": "i-r-tokoh",
+      "bin": "rancang",
+      "emoji": "🧺"
+    },
+    {
+      "id": "r-sketsa",
+      "labelKey": "i-r-sketsa",
+      "bin": "rancang",
+      "emoji": "📝"
+    },
+    {
+      "id": "r-buah",
+      "labelKey": "i-r-buah",
+      "bin": "rancang",
+      "emoji": "🍉"
+    },
+    {
+      "id": "r-aturan",
+      "labelKey": "i-r-aturan",
+      "bin": "rancang",
+      "emoji": "📋"
+    },
+    {
+      "id": "r-nyawa",
+      "labelKey": "i-r-nyawa",
+      "bin": "rancang",
+      "emoji": "❤️"
+    },
+    {
+      "id": "r-menang",
+      "labelKey": "i-r-menang",
+      "bin": "rancang",
+      "emoji": "🎯"
+    },
+    {
+      "id": "b-jatuh",
+      "labelKey": "i-b-jatuh",
+      "bin": "buat",
+      "emoji": "🧱"
+    },
+    {
+      "id": "b-tombol",
+      "labelKey": "i-b-tombol",
+      "bin": "buat",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "b-skor",
+      "labelKey": "i-b-skor",
+      "bin": "buat",
+      "emoji": "🔢"
+    },
+    {
+      "id": "b-suara",
+      "labelKey": "i-b-suara",
+      "bin": "buat",
+      "emoji": "🔊"
+    },
+    {
+      "id": "b-gambar",
+      "labelKey": "i-b-gambar",
+      "bin": "buat",
+      "emoji": "🖌️"
+    },
+    {
+      "id": "b-acak",
+      "labelKey": "i-b-acak",
+      "bin": "buat",
+      "emoji": "🎲"
+    },
+    {
+      "id": "u-main",
+      "labelKey": "i-u-main",
+      "bin": "uji",
+      "emoji": "▶️"
+    },
+    {
+      "id": "u-adik",
+      "labelKey": "i-u-adik",
+      "bin": "uji",
+      "emoji": "👧"
+    },
+    {
+      "id": "u-skor",
+      "labelKey": "i-u-skor",
+      "bin": "uji",
+      "emoji": "👀"
+    },
+    {
+      "id": "u-catat",
+      "labelKey": "i-u-catat",
+      "bin": "uji",
+      "emoji": "🗒️"
+    },
+    {
+      "id": "u-tablet",
+      "labelKey": "i-u-tablet",
+      "bin": "uji",
+      "emoji": "📱"
+    },
+    {
+      "id": "u-tombol",
+      "labelKey": "i-u-tombol",
+      "bin": "uji",
+      "emoji": "👆"
+    },
+    {
+      "id": "p-pelan",
+      "labelKey": "i-p-pelan",
+      "bin": "perbaiki",
+      "emoji": "🐢"
+    },
+    {
+      "id": "p-tembus",
+      "labelKey": "i-p-tembus",
+      "bin": "perbaiki",
+      "emoji": "🚧"
+    },
+    {
+      "id": "p-tulisan",
+      "labelKey": "i-p-tulisan",
+      "bin": "perbaiki",
+      "emoji": "🔍"
+    },
+    {
+      "id": "p-keras",
+      "labelKey": "i-p-keras",
+      "bin": "perbaiki",
+      "emoji": "🔉"
+    },
+    {
+      "id": "p-terbalik",
+      "labelKey": "i-p-terbalik",
+      "bin": "perbaiki",
+      "emoji": "🔁"
+    },
+    {
+      "id": "p-dobel",
+      "labelKey": "i-p-dobel",
+      "bin": "perbaiki",
+      "emoji": "🗑️"
+    }
+  ]
+}

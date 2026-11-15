@@ -1,0 +1,256 @@
+{
+  "id": "sd5-sains-pencernaan-hewan-ternak",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.PENCERNAAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perut Manusia dan Hewan Ternak",
+      "instruksi": "Baca tugasnya, lalu sentuh organ pencernaan yang tepat. Ingat, banyak hewan ternak punya organ yang mirip denganmu.",
+      "b-pilihan": "pilihan",
+      "i-mulut": "mulut",
+      "i-kerongkongan": "kerongkongan",
+      "i-lambung": "lambung",
+      "i-usushalus": "usus halus",
+      "i-ususbesar": "usus besar",
+      "i-anus": "anus",
+      "i-mirip": "banyak hewan bertulang belakang punya sistem pencernaan yang mirip",
+      "i-beda": "hanya manusia yang punya lambung dan usus",
+      "i-takcerna": "hewan tidak perlu mencerna makanan",
+      "p-r1": "Nasi yang dikunyah lama terasa manis karena ludah mulai mencernanya. Ini terjadi di…",
+      "p-r2": "Kambing mengunyah rumput dengan gigi gerahamnya. Pada manusia, gigi juga bekerja di…",
+      "p-r3": "Sapi menelan rumput yang lalu turun lewat saluran panjang di lehernya. Pada manusia, saluran itu disebut…",
+      "p-r4": "Organ berbentuk kantong berotot yang meremas makanan bersama cairan asam sampai menjadi bubur.",
+      "p-r5": "Tablet obat ditelan bersama air. Sesudah melewati kerongkongan, tablet sampai di…",
+      "p-r6": "Sari makanan dari susu diserap ke darah lewat dinding saluran yang panjang dan berlipat-lipat. Saluran itu adalah…",
+      "p-r7": "Saluran pencernaan yang paling panjang, sampai beberapa meter di perutmu.",
+      "p-r8": "Saat diare, air tidak sempat diserap sehingga kotoran encer. Organ yang biasanya menyerap air itu adalah…",
+      "p-r9": "Kotoran ayam keluar dari ujung saluran pencernaannya. Pada manusia, sisa makanan keluar lewat…",
+      "p-r10": "Kucing makan ikan. Dari lambungnya, makanan berlanjut ke…",
+      "p-r11": "Dokter hewan memeriksa kerbau, ayam, dan ikan. Semuanya punya mulut, lambung, dan usus. Kesimpulannya…",
+      "p-r12": "Kuda, domba, dan manusia sama-sama mencerna makanan dari mulut sampai anus. Ini menunjukkan…"
+    },
+    "en": {
+      "judul": "Human and Farm Animal Tummies",
+      "instruksi": "Read the job, then touch the right digestive organ. Remember, many farm animals have organs like yours.",
+      "b-pilihan": "choices",
+      "i-mulut": "mouth",
+      "i-kerongkongan": "oesophagus",
+      "i-lambung": "stomach",
+      "i-usushalus": "small intestine",
+      "i-ususbesar": "large intestine",
+      "i-anus": "anus",
+      "i-mirip": "many vertebrates have a similar digestive system",
+      "i-beda": "only humans have a stomach and intestines",
+      "i-takcerna": "animals do not need to digest food",
+      "p-r1": "Rice chewed for a long time tastes sweet because saliva starts digesting it. This happens in the…",
+      "p-r2": "A goat chews grass with its back teeth. In humans, teeth also work in the…",
+      "p-r3": "A cow swallows grass, which travels down a long tube in its neck. In humans, this tube is the…",
+      "p-r4": "A muscular bag that squeezes food with acid until it becomes mushy.",
+      "p-r5": "A tablet is swallowed with water. After the oesophagus, it reaches the…",
+      "p-r6": "Nutrients from milk are absorbed into the blood through the walls of a long, folded tube. That tube is the…",
+      "p-r7": "The longest part of the digestive tract, several metres long inside your belly.",
+      "p-r8": "With diarrhoea, water is not absorbed in time, so the waste is runny. The organ that usually absorbs that water is the…",
+      "p-r9": "Chicken droppings leave from the end of its digestive tract. In humans, waste leaves through the…",
+      "p-r10": "A cat eats fish. From its stomach, the food moves on to the…",
+      "p-r11": "A vet examines a buffalo, a chicken and a fish. All have a mouth, stomach and intestines. So…",
+      "p-r12": "Horses, sheep and humans all digest food from mouth to anus. This shows that…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "mulut",
+      "labelKey": "i-mulut",
+      "bin": "pilihan",
+      "emoji": "👄"
+    },
+    {
+      "id": "kerongkongan",
+      "labelKey": "i-kerongkongan",
+      "bin": "pilihan",
+      "emoji": "🔽"
+    },
+    {
+      "id": "lambung",
+      "labelKey": "i-lambung",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#f48fb1",
+      "scale": 0.8
+    },
+    {
+      "id": "usushalus",
+      "labelKey": "i-usushalus",
+      "bin": "pilihan",
+      "emoji": "〰️"
+    },
+    {
+      "id": "ususbesar",
+      "labelKey": "i-ususbesar",
+      "bin": "pilihan",
+      "emoji": "🌀"
+    },
+    {
+      "id": "anus",
+      "labelKey": "i-anus",
+      "bin": "pilihan",
+      "emoji": "⭕"
+    },
+    {
+      "id": "mirip",
+      "labelKey": "i-mirip",
+      "bin": "pilihan",
+      "emoji": "🐄"
+    },
+    {
+      "id": "beda",
+      "labelKey": "i-beda",
+      "bin": "pilihan",
+      "emoji": "🙅"
+    },
+    {
+      "id": "takcerna",
+      "labelKey": "i-takcerna",
+      "bin": "pilihan",
+      "emoji": "🚫"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "mulut",
+        "lambung",
+        "ususbesar"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "mulut",
+        "kerongkongan",
+        "usushalus"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "kerongkongan",
+        "ususbesar",
+        "anus"
+      ],
+      "correct": "kerongkongan"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "lambung",
+        "mulut",
+        "ususbesar"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "lambung",
+        "ususbesar",
+        "anus"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "usushalus",
+        "lambung",
+        "kerongkongan"
+      ],
+      "correct": "usushalus"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "usushalus",
+        "kerongkongan",
+        "lambung"
+      ],
+      "correct": "usushalus"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "ususbesar",
+        "mulut",
+        "lambung"
+      ],
+      "correct": "ususbesar"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "anus",
+        "mulut",
+        "lambung"
+      ],
+      "correct": "anus"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "usushalus",
+        "kerongkongan",
+        "mulut"
+      ],
+      "correct": "usushalus"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "mirip",
+        "beda",
+        "takcerna"
+      ],
+      "correct": "mirip"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "mirip",
+        "takcerna",
+        "beda"
+      ],
+      "correct": "mirip"
+    }
+  ]
+}

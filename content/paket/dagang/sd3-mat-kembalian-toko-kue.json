@@ -1,0 +1,142 @@
+{
+  "id": "sd3-mat-kembalian-toko-kue",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD3.UANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kasir Toko Kue",
+      "instruksi": "Pembeli membeli satu atau dua kue dan membayar dengan selembar uang. Jumlahkan harganya, lalu beri kembalian yang tepat.",
+      "g-roti": "roti tawar",
+      "g-donat": "sekotak donat",
+      "g-tar": "kue tar",
+      "g-croissant": "croissant",
+      "g-cupcake": "kue mangkuk",
+      "g-pai": "pai buah",
+      "g-biskuit": "biskuit",
+      "g-cokelat": "cokelat",
+      "g-puding": "puding",
+      "g-kue-bulan": "kue bulan",
+      "g-wafel": "wafel",
+      "g-permen": "sekantong permen"
+    },
+    "en": {
+      "judul": "Bakery Till",
+      "instruksi": "The shopper buys one or two cakes and pays with one note. Add the prices, then give the exact change.",
+      "g-roti": "bread loaf",
+      "g-donat": "box of doughnuts",
+      "g-tar": "birthday cake",
+      "g-croissant": "croissant",
+      "g-cupcake": "cupcake",
+      "g-pai": "fruit pie",
+      "g-biskuit": "biscuits",
+      "g-cokelat": "chocolate bar",
+      "g-puding": "pudding",
+      "g-kue-bulan": "mooncake",
+      "g-wafel": "waffle",
+      "g-permen": "bag of sweets"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "currency": "IDR",
+  "denominations": [
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "roti",
+      "labelKey": "g-roti",
+      "price": 12000,
+      "emoji": "🍞"
+    },
+    {
+      "id": "donat",
+      "labelKey": "g-donat",
+      "price": 9000,
+      "emoji": "🍩"
+    },
+    {
+      "id": "tar",
+      "labelKey": "g-tar",
+      "price": 45000,
+      "emoji": "🎂"
+    },
+    {
+      "id": "croissant",
+      "labelKey": "g-croissant",
+      "price": 8000,
+      "emoji": "🥐"
+    },
+    {
+      "id": "cupcake",
+      "labelKey": "g-cupcake",
+      "price": 6000,
+      "emoji": "🧁"
+    },
+    {
+      "id": "pai",
+      "labelKey": "g-pai",
+      "price": 27000,
+      "emoji": "🥧"
+    },
+    {
+      "id": "biskuit",
+      "labelKey": "g-biskuit",
+      "price": 15000,
+      "emoji": "🍪"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "g-cokelat",
+      "price": 18000,
+      "emoji": "🍫"
+    },
+    {
+      "id": "puding",
+      "labelKey": "g-puding",
+      "price": 11000,
+      "emoji": "🍮"
+    },
+    {
+      "id": "kue-bulan",
+      "labelKey": "g-kue-bulan",
+      "price": 23000,
+      "emoji": "🥮"
+    },
+    {
+      "id": "wafel",
+      "labelKey": "g-wafel",
+      "price": 16000,
+      "emoji": "🧇"
+    },
+    {
+      "id": "permen",
+      "labelKey": "g-permen",
+      "price": 7000,
+      "emoji": "🍬"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 2,
+    "payExact": true,
+    "maxTotal": 96000,
+    "kindsMax": 2
+  }
+}

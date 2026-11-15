@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-hasil-dukung-tebakan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -16,7 +16,7 @@
       "i-tidak": "tidak mendukung",
       "t-es": "Tebakan: es di bawah Matahari mencair lebih dulu. Hasil: es di bawah Matahari habis lebih dulu.",
       "t-tanaman": "Tebakan: tanaman di jendela tumbuh paling tinggi. Hasil: tanaman di lemari tumbuh paling tinggi.",
-      "t-mobil": "Tebakan: mobil meluncur paling jauh di lantai licin. Hasil: mobil meluncur paling jauh di lantai keramik.",
+      "t-mobil": "Tebakan: mobil meluncur paling jauh di lantai licin. Hasil: mobil meluncur paling jauh di lantai keramik yang paling licin.",
       "t-gula": "Tebakan: gula larut dalam air. Hasil: gula tetap terlihat di dasar gelas setelah diaduk lama.",
       "t-bayangan": "Tebakan: bayangan membesar saat boneka didekatkan ke senter. Hasil: bayangan jadi besar.",
       "t-magnet": "Tebakan: magnet menarik kaleng minuman. Hasil: kaleng minuman tidak bergerak.",
@@ -33,7 +33,7 @@
       "i-tidak": "does not support it",
       "t-es": "Prediction: the ice in the sun melts first. Result: the ice in the sun was gone first.",
       "t-tanaman": "Prediction: the plant by the window grows tallest. Result: the plant in the cupboard grew tallest.",
-      "t-mobil": "Prediction: the car slides farthest on the smooth floor. Result: the car slid farthest on the tiled floor.",
+      "t-mobil": "Prediction: the car rolls furthest on the slippery floor. Result: the car rolls furthest on the tiled floor, the most slippery one.",
       "t-gula": "Prediction: sugar dissolves in water. Result: the sugar stayed at the bottom after lots of stirring.",
       "t-bayangan": "Prediction: the shadow grows when the teddy moves closer to the torch. Result: the shadow got bigger.",
       "t-magnet": "Prediction: the magnet pulls the drink can. Result: the can didn't move.",

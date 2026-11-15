@@ -1,0 +1,586 @@
+{
+  "id": "sd1-kode-tukar-langkah-taman",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD1.ALGORITMA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satu Tukar Beres",
+      "instruksi": "Satu langkah salah tempat. Cari langkah itu, lalu tukar sekali saja supaya urutannya benar.",
+      "t-telur": "Menggoreng telur",
+      "telur-1": "tuang minyak ke wajan",
+      "telur-2": "panaskan minyaknya",
+      "telur-3": "pecahkan telur ke wajan",
+      "telur-4": "tunggu bagian bawah matang",
+      "telur-5": "balik telurnya",
+      "telur-6": "angkat ke piring",
+      "t-layang": "Menerbangkan layang-layang",
+      "layang-1": "ambil layang-layang",
+      "layang-2": "ikat benangnya",
+      "layang-3": "tunggu angin bertiup",
+      "layang-4": "berlari melawan angin",
+      "layang-5": "layang-layang naik",
+      "layang-6": "ulur benang pelan-pelan",
+      "t-anjing": "Memandikan anjing",
+      "anjing-1": "ajak anjing ke kamar mandi",
+      "anjing-2": "basahi bulunya",
+      "anjing-3": "gosok dengan sampo",
+      "anjing-4": "bilas busanya",
+      "anjing-5": "keringkan dengan handuk",
+      "anjing-6": "anjing bersih dan wangi",
+      "t-kolase": "Membuat kolase",
+      "kolase-1": "gunting kertas warna",
+      "kolase-2": "susun potongannya",
+      "kolase-3": "oles lem di belakangnya",
+      "kolase-4": "tempel di kertas gambar",
+      "kolase-5": "tunggu lemnya kering",
+      "kolase-6": "pajang karyamu",
+      "t-nasi": "Memasak nasi",
+      "nasi-1": "takar beras",
+      "nasi-2": "cuci beras",
+      "nasi-3": "masukkan ke penanak nasi",
+      "nasi-4": "tekan tombol masak",
+      "nasi-5": "tunggu sampai matang",
+      "nasi-6": "sendokkan nasi ke piring",
+      "t-balon": "Menghias dengan balon",
+      "balon-1": "ambil balon",
+      "balon-2": "tiup balonnya",
+      "balon-3": "ikat ujung balon",
+      "balon-4": "pasang tali",
+      "balon-5": "tempel di dinding",
+      "balon-6": "pesta dimulai",
+      "t-akuarium": "Mengisi akuarium baru",
+      "akuarium-1": "isi ember dengan air",
+      "akuarium-2": "tuang air ke akuarium",
+      "akuarium-3": "tunggu airnya jernih",
+      "akuarium-4": "masukkan ikan",
+      "akuarium-5": "beri makan ikan",
+      "akuarium-6": "lihat ikan berenang",
+      "t-perahu": "Naik perahu di danau",
+      "perahu-1": "pakai pelampung",
+      "perahu-2": "naik ke perahu",
+      "perahu-3": "duduk dengan tenang",
+      "perahu-4": "dayung perahunya",
+      "perahu-5": "sampai di seberang",
+      "perahu-6": "turun dari perahu",
+      "t-jemur": "Menjemur pakaian",
+      "jemur-1": "bawa ember baju basah",
+      "jemur-2": "kibaskan bajunya",
+      "jemur-3": "gantung di jemuran",
+      "jemur-4": "jepit dengan penjepit",
+      "jemur-5": "tunggu sampai kering",
+      "jemur-6": "angkat baju yang kering",
+      "t-piknik": "Piknik di taman",
+      "piknik-1": "bawa keranjang piknik",
+      "piknik-2": "cari tempat teduh",
+      "piknik-3": "bentangkan tikar",
+      "piknik-4": "buka bekal makanan",
+      "piknik-5": "makan bersama",
+      "piknik-6": "buang sampah ke tempatnya",
+      "t-tanam-pot": "Menanam bunga di pot",
+      "tanam-pot-1": "siapkan pot kosong",
+      "tanam-pot-2": "isi pot dengan tanah",
+      "tanam-pot-3": "tanam bibit bunga",
+      "tanam-pot-4": "siram dengan air",
+      "tanam-pot-5": "tunggu beberapa hari",
+      "tanam-pot-6": "bunganya mekar"
+    },
+    "en": {
+      "judul": "One Swap Fixes It",
+      "instruksi": "One step is in the wrong place. Find it and swap just once so the order is right.",
+      "t-telur": "Frying an egg",
+      "telur-1": "pour oil into the pan",
+      "telur-2": "heat the oil",
+      "telur-3": "crack the egg into the pan",
+      "telur-4": "wait for the bottom to cook",
+      "telur-5": "flip the egg",
+      "telur-6": "lift it onto a plate",
+      "t-layang": "Flying a kite",
+      "layang-1": "take the kite",
+      "layang-2": "tie on the string",
+      "layang-3": "wait for the wind",
+      "layang-4": "run against the wind",
+      "layang-5": "the kite rises",
+      "layang-6": "let out the string slowly",
+      "t-anjing": "Bathing the dog",
+      "anjing-1": "bring the dog to the bathroom",
+      "anjing-2": "wet its fur",
+      "anjing-3": "rub in shampoo",
+      "anjing-4": "rinse off the foam",
+      "anjing-5": "dry it with a towel",
+      "anjing-6": "the dog is clean and fresh",
+      "t-kolase": "Making a collage",
+      "kolase-1": "cut coloured paper",
+      "kolase-2": "arrange the pieces",
+      "kolase-3": "put glue on the back",
+      "kolase-4": "stick them on drawing paper",
+      "kolase-5": "wait for the glue to dry",
+      "kolase-6": "display your work",
+      "t-nasi": "Cooking rice",
+      "nasi-1": "measure the rice",
+      "nasi-2": "wash the rice",
+      "nasi-3": "put it in the rice cooker",
+      "nasi-4": "press the cook button",
+      "nasi-5": "wait until it is cooked",
+      "nasi-6": "scoop rice onto a plate",
+      "t-balon": "Decorating with balloons",
+      "balon-1": "take a balloon",
+      "balon-2": "blow up the balloon",
+      "balon-3": "tie the end",
+      "balon-4": "attach a string",
+      "balon-5": "stick it on the wall",
+      "balon-6": "the party starts",
+      "t-akuarium": "Filling a new fish tank",
+      "akuarium-1": "fill a bucket with water",
+      "akuarium-2": "pour the water into the tank",
+      "akuarium-3": "wait for the water to clear",
+      "akuarium-4": "put in the fish",
+      "akuarium-5": "feed the fish",
+      "akuarium-6": "watch the fish swim",
+      "t-perahu": "Riding a boat on the lake",
+      "perahu-1": "put on a life jacket",
+      "perahu-2": "get into the boat",
+      "perahu-3": "sit still",
+      "perahu-4": "paddle the boat",
+      "perahu-5": "reach the other side",
+      "perahu-6": "get out of the boat",
+      "t-jemur": "Hanging out the washing",
+      "jemur-1": "carry the bucket of wet clothes",
+      "jemur-2": "shake out the shirt",
+      "jemur-3": "hang it on the line",
+      "jemur-4": "clip it with a peg",
+      "jemur-5": "wait until it is dry",
+      "jemur-6": "take in the dry clothes",
+      "t-piknik": "A picnic in the park",
+      "piknik-1": "bring the picnic basket",
+      "piknik-2": "find a shady spot",
+      "piknik-3": "spread out the mat",
+      "piknik-4": "open the food",
+      "piknik-5": "eat together",
+      "piknik-6": "put the rubbish in the bin",
+      "t-tanam-pot": "Planting a flower in a pot",
+      "tanam-pot-1": "get an empty pot",
+      "tanam-pot-2": "fill the pot with soil",
+      "tanam-pot-3": "plant the seedling",
+      "tanam-pot-4": "water it",
+      "tanam-pot-5": "wait a few days",
+      "tanam-pot-6": "the flower blooms"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 5 → 6; mesin menukar satu pasang (berdampingan atau berjarak satu)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "telur-1",
+          "labelKey": "telur-1",
+          "emoji": "🫗"
+        },
+        {
+          "id": "telur-2",
+          "labelKey": "telur-2",
+          "emoji": "🔥"
+        },
+        {
+          "id": "telur-3",
+          "labelKey": "telur-3",
+          "emoji": "🥚"
+        },
+        {
+          "id": "telur-4",
+          "labelKey": "telur-4",
+          "emoji": "⏳"
+        },
+        {
+          "id": "telur-5",
+          "labelKey": "telur-5",
+          "emoji": "🔄"
+        },
+        {
+          "id": "telur-6",
+          "labelKey": "telur-6",
+          "emoji": "🍽️"
+        }
+      ]
+    },
+    {
+      "id": "layang",
+      "titleKey": "t-layang",
+      "steps": [
+        {
+          "id": "layang-1",
+          "labelKey": "layang-1",
+          "emoji": "🪁"
+        },
+        {
+          "id": "layang-2",
+          "labelKey": "layang-2",
+          "emoji": "🧵"
+        },
+        {
+          "id": "layang-3",
+          "labelKey": "layang-3",
+          "emoji": "🌬️"
+        },
+        {
+          "id": "layang-4",
+          "labelKey": "layang-4",
+          "emoji": "🏃"
+        },
+        {
+          "id": "layang-5",
+          "labelKey": "layang-5",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "layang-6",
+          "labelKey": "layang-6",
+          "emoji": "🙌"
+        }
+      ]
+    },
+    {
+      "id": "anjing",
+      "titleKey": "t-anjing",
+      "steps": [
+        {
+          "id": "anjing-1",
+          "labelKey": "anjing-1",
+          "emoji": "🐕"
+        },
+        {
+          "id": "anjing-2",
+          "labelKey": "anjing-2",
+          "emoji": "💦"
+        },
+        {
+          "id": "anjing-3",
+          "labelKey": "anjing-3",
+          "emoji": "🧴"
+        },
+        {
+          "id": "anjing-4",
+          "labelKey": "anjing-4",
+          "emoji": "🚿"
+        },
+        {
+          "id": "anjing-5",
+          "labelKey": "anjing-5",
+          "emoji": "🧺"
+        },
+        {
+          "id": "anjing-6",
+          "labelKey": "anjing-6",
+          "emoji": "🐶"
+        }
+      ]
+    },
+    {
+      "id": "kolase",
+      "titleKey": "t-kolase",
+      "steps": [
+        {
+          "id": "kolase-1",
+          "labelKey": "kolase-1",
+          "emoji": "✂️"
+        },
+        {
+          "id": "kolase-2",
+          "labelKey": "kolase-2",
+          "emoji": "🧩"
+        },
+        {
+          "id": "kolase-3",
+          "labelKey": "kolase-3",
+          "emoji": "🧴"
+        },
+        {
+          "id": "kolase-4",
+          "labelKey": "kolase-4",
+          "emoji": "📄"
+        },
+        {
+          "id": "kolase-5",
+          "labelKey": "kolase-5",
+          "emoji": "⏳"
+        },
+        {
+          "id": "kolase-6",
+          "labelKey": "kolase-6",
+          "emoji": "🖼️"
+        }
+      ]
+    },
+    {
+      "id": "nasi",
+      "titleKey": "t-nasi",
+      "steps": [
+        {
+          "id": "nasi-1",
+          "labelKey": "nasi-1",
+          "emoji": "🍚"
+        },
+        {
+          "id": "nasi-2",
+          "labelKey": "nasi-2",
+          "emoji": "💧"
+        },
+        {
+          "id": "nasi-3",
+          "labelKey": "nasi-3",
+          "emoji": "🍲"
+        },
+        {
+          "id": "nasi-4",
+          "labelKey": "nasi-4",
+          "emoji": "🔘"
+        },
+        {
+          "id": "nasi-5",
+          "labelKey": "nasi-5",
+          "emoji": "⏳"
+        },
+        {
+          "id": "nasi-6",
+          "labelKey": "nasi-6",
+          "emoji": "🍛"
+        }
+      ]
+    },
+    {
+      "id": "balon",
+      "titleKey": "t-balon",
+      "steps": [
+        {
+          "id": "balon-1",
+          "labelKey": "balon-1",
+          "emoji": "🎈"
+        },
+        {
+          "id": "balon-2",
+          "labelKey": "balon-2",
+          "emoji": "😮"
+        },
+        {
+          "id": "balon-3",
+          "labelKey": "balon-3",
+          "emoji": "🪢"
+        },
+        {
+          "id": "balon-4",
+          "labelKey": "balon-4",
+          "emoji": "🧵"
+        },
+        {
+          "id": "balon-5",
+          "labelKey": "balon-5",
+          "emoji": "📌"
+        },
+        {
+          "id": "balon-6",
+          "labelKey": "balon-6",
+          "emoji": "🎉"
+        }
+      ]
+    },
+    {
+      "id": "akuarium",
+      "titleKey": "t-akuarium",
+      "steps": [
+        {
+          "id": "akuarium-1",
+          "labelKey": "akuarium-1",
+          "emoji": "🪣"
+        },
+        {
+          "id": "akuarium-2",
+          "labelKey": "akuarium-2",
+          "emoji": "🫗"
+        },
+        {
+          "id": "akuarium-3",
+          "labelKey": "akuarium-3",
+          "emoji": "⏳"
+        },
+        {
+          "id": "akuarium-4",
+          "labelKey": "akuarium-4",
+          "emoji": "🐠"
+        },
+        {
+          "id": "akuarium-5",
+          "labelKey": "akuarium-5",
+          "emoji": "🍤"
+        },
+        {
+          "id": "akuarium-6",
+          "labelKey": "akuarium-6",
+          "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "perahu",
+      "titleKey": "t-perahu",
+      "steps": [
+        {
+          "id": "perahu-1",
+          "labelKey": "perahu-1",
+          "emoji": "🦺"
+        },
+        {
+          "id": "perahu-2",
+          "labelKey": "perahu-2",
+          "emoji": "🚣"
+        },
+        {
+          "id": "perahu-3",
+          "labelKey": "perahu-3",
+          "emoji": "🪑"
+        },
+        {
+          "id": "perahu-4",
+          "labelKey": "perahu-4",
+          "emoji": "🛶"
+        },
+        {
+          "id": "perahu-5",
+          "labelKey": "perahu-5",
+          "emoji": "🏝️"
+        },
+        {
+          "id": "perahu-6",
+          "labelKey": "perahu-6",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "jemur",
+      "titleKey": "t-jemur",
+      "steps": [
+        {
+          "id": "jemur-1",
+          "labelKey": "jemur-1",
+          "emoji": "🧺"
+        },
+        {
+          "id": "jemur-2",
+          "labelKey": "jemur-2",
+          "emoji": "👕"
+        },
+        {
+          "id": "jemur-3",
+          "labelKey": "jemur-3",
+          "emoji": "🪝"
+        },
+        {
+          "id": "jemur-4",
+          "labelKey": "jemur-4",
+          "emoji": "📎"
+        },
+        {
+          "id": "jemur-5",
+          "labelKey": "jemur-5",
+          "emoji": "☀️"
+        },
+        {
+          "id": "jemur-6",
+          "labelKey": "jemur-6",
+          "emoji": "👚"
+        }
+      ]
+    },
+    {
+      "id": "piknik",
+      "titleKey": "t-piknik",
+      "steps": [
+        {
+          "id": "piknik-1",
+          "labelKey": "piknik-1",
+          "emoji": "🧺"
+        },
+        {
+          "id": "piknik-2",
+          "labelKey": "piknik-2",
+          "emoji": "🌳"
+        },
+        {
+          "id": "piknik-3",
+          "labelKey": "piknik-3",
+          "emoji": "🟥"
+        },
+        {
+          "id": "piknik-4",
+          "labelKey": "piknik-4",
+          "emoji": "🥪"
+        },
+        {
+          "id": "piknik-5",
+          "labelKey": "piknik-5",
+          "emoji": "😋"
+        },
+        {
+          "id": "piknik-6",
+          "labelKey": "piknik-6",
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": "tanam-pot",
+      "titleKey": "t-tanam-pot",
+      "steps": [
+        {
+          "id": "tanam-pot-1",
+          "labelKey": "tanam-pot-1",
+          "emoji": "🪴"
+        },
+        {
+          "id": "tanam-pot-2",
+          "labelKey": "tanam-pot-2",
+          "emoji": "🟫"
+        },
+        {
+          "id": "tanam-pot-3",
+          "labelKey": "tanam-pot-3",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tanam-pot-4",
+          "labelKey": "tanam-pot-4",
+          "emoji": "💦"
+        },
+        {
+          "id": "tanam-pot-5",
+          "labelKey": "tanam-pot-5",
+          "emoji": "📅"
+        },
+        {
+          "id": "tanam-pot-6",
+          "labelKey": "tanam-pot-6",
+          "emoji": "🌷"
+        }
+      ]
+    }
+  ]
+}

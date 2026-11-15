@@ -1,0 +1,312 @@
+{
+  "id": "sd6-sains-apung-tenggelam-dermaga",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.APUNG-TENGGELAM.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uji Apung di Dermaga",
+      "instruksi": "Perhatikan massa dan bentuk bendanya, lalu tebak: mana yang mengapung atau tenggelam?",
+      "b-pilihan": "pilihan",
+      "i-liatmangkuk": "tanah liat dibentuk mangkuk lebar",
+      "i-liatbola": "tanah liat yang sama dibentuk bola padat",
+      "i-kotakkosong": "kotak bekal kosong tertutup rapat",
+      "i-kotakbatu": "kotak bekal yang sama berisi penuh batu",
+      "i-sengperahu": "lembar seng dibentuk perahu bertepi tinggi",
+      "i-senggumpal": "lembar seng yang sama dilipat jadi gumpalan padat",
+      "i-perahusedikit": "perahu tanah liat berisi sedikit kelereng",
+      "i-perahubanyak": "perahu tanah liat yang sama berisi kelereng sangat banyak sampai air masuk",
+      "i-busa": "balok busa pelampung",
+      "i-bata": "batu bata seukuran balok busa",
+      "i-bambu": "batang bambu berongga",
+      "i-besi": "batang besi seukuran bambu",
+      "i-plastisinpiring": "plastisin 100 g dipipihkan jadi piring bertepi",
+      "i-plastisintongkat": "plastisin 100 g yang sama digulung jadi tongkat padat",
+      "i-tenggelam": "tenggelam",
+      "i-mengapung": "mengapung",
+      "p-r1": "Dua gumpal tanah liat sama massanya. Mana yang mengapung?",
+      "p-r2": "Dua gumpal tanah liat sama massanya. Mana yang tenggelam?",
+      "p-r3": "Bentuk kotaknya sama. Mana yang tenggelam?",
+      "p-r4": "Lembar sengnya sama. Mana yang mengapung?",
+      "p-r5": "Perahu tanah liatnya sama. Mana yang tenggelam?",
+      "p-r6": "Ukurannya sama. Mana yang tenggelam?",
+      "p-r7": "Ukurannya sama. Mana yang mengapung?",
+      "p-r8": "Dua plastisin sama massanya. Mana yang mengapung?",
+      "p-r9": "Kapal selam memasukkan air laut ke tangkinya sehingga massanya bertambah, tetapi bentuknya tetap. Kapal selam itu…",
+      "p-r10": "Kapal selam memompa air keluar dari tangkinya sehingga massanya berkurang. Kapal selam itu…",
+      "p-r11": "Perahu seng yang mengapung dilubangi bagian bawahnya, lalu air masuk ke dalamnya. Perahu itu…",
+      "p-r12": "Kotak bekal berisi batu tenggelam. Batunya dikeluarkan, lalu kotak ditutup rapat lagi. Kotak itu…"
+    },
+    "en": {
+      "judul": "Float Test at the Pier",
+      "instruksi": "Look at each object's mass and shape, then predict: which floats or sinks?",
+      "b-pilihan": "choices",
+      "i-liatmangkuk": "clay shaped into a wide bowl",
+      "i-liatbola": "the same clay rolled into a solid ball",
+      "i-kotakkosong": "an empty lunch box, tightly closed",
+      "i-kotakbatu": "the same lunch box filled with stones",
+      "i-sengperahu": "a metal sheet shaped into a high-sided boat",
+      "i-senggumpal": "the same metal sheet folded into a solid lump",
+      "i-perahusedikit": "a clay boat holding a few marbles",
+      "i-perahubanyak": "the same clay boat holding so many marbles that water pours in",
+      "i-busa": "a foam float block",
+      "i-bata": "a brick the same size as the foam block",
+      "i-bambu": "a hollow bamboo pole",
+      "i-besi": "an iron bar the same size as the bamboo",
+      "i-plastisinpiring": "100 g of playdough flattened into a plate with a rim",
+      "i-plastisintongkat": "the same 100 g of playdough rolled into a solid stick",
+      "i-tenggelam": "sinks",
+      "i-mengapung": "floats",
+      "p-r1": "Two lumps of clay have the same mass. Which one floats?",
+      "p-r2": "Two lumps of clay have the same mass. Which one sinks?",
+      "p-r3": "The boxes have the same shape. Which one sinks?",
+      "p-r4": "The metal sheets are the same. Which one floats?",
+      "p-r5": "The clay boats are the same. Which one sinks?",
+      "p-r6": "They are the same size. Which one sinks?",
+      "p-r7": "They are the same size. Which one floats?",
+      "p-r8": "Two pieces of playdough have the same mass. Which one floats?",
+      "p-r9": "A submarine lets seawater into its tanks so its mass goes up, but its shape stays the same. The submarine…",
+      "p-r10": "A submarine pumps water out of its tanks so its mass goes down. The submarine…",
+      "p-r11": "A floating metal boat gets a hole in the bottom and water comes in. The boat…",
+      "p-r12": "A lunch box full of stones sinks. The stones are taken out and the box is closed tight again. The box…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "liatmangkuk",
+      "labelKey": "i-liatmangkuk",
+      "bin": "pilihan",
+      "shape": "rect",
+      "color": "#a1887f",
+      "scale": 0.9
+    },
+    {
+      "id": "liatbola",
+      "labelKey": "i-liatbola",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#a1887f",
+      "scale": 0.7
+    },
+    {
+      "id": "kotakkosong",
+      "labelKey": "i-kotakkosong",
+      "bin": "pilihan",
+      "emoji": "🍱"
+    },
+    {
+      "id": "kotakbatu",
+      "labelKey": "i-kotakbatu",
+      "bin": "pilihan",
+      "emoji": "🪨"
+    },
+    {
+      "id": "sengperahu",
+      "labelKey": "i-sengperahu",
+      "bin": "pilihan",
+      "emoji": "🛶"
+    },
+    {
+      "id": "senggumpal",
+      "labelKey": "i-senggumpal",
+      "bin": "pilihan",
+      "shape": "square",
+      "color": "#90a4ae",
+      "scale": 0.6
+    },
+    {
+      "id": "perahusedikit",
+      "labelKey": "i-perahusedikit",
+      "bin": "pilihan",
+      "emoji": "⛵"
+    },
+    {
+      "id": "perahubanyak",
+      "labelKey": "i-perahubanyak",
+      "bin": "pilihan",
+      "emoji": "🌊"
+    },
+    {
+      "id": "busa",
+      "labelKey": "i-busa",
+      "bin": "pilihan",
+      "shape": "rect",
+      "color": "#ffeb3b",
+      "scale": 0.9
+    },
+    {
+      "id": "bata",
+      "labelKey": "i-bata",
+      "bin": "pilihan",
+      "emoji": "🧱"
+    },
+    {
+      "id": "bambu",
+      "labelKey": "i-bambu",
+      "bin": "pilihan",
+      "emoji": "🎋"
+    },
+    {
+      "id": "besi",
+      "labelKey": "i-besi",
+      "bin": "pilihan",
+      "shape": "rect",
+      "color": "#616161",
+      "scale": 0.9
+    },
+    {
+      "id": "plastisinpiring",
+      "labelKey": "i-plastisinpiring",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#ab47bc",
+      "scale": 1
+    },
+    {
+      "id": "plastisintongkat",
+      "labelKey": "i-plastisintongkat",
+      "bin": "pilihan",
+      "shape": "rect",
+      "color": "#ab47bc",
+      "scale": 0.6
+    },
+    {
+      "id": "tenggelam",
+      "labelKey": "i-tenggelam",
+      "bin": "pilihan",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "mengapung",
+      "labelKey": "i-mengapung",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "liatmangkuk",
+        "liatbola"
+      ],
+      "correct": "liatmangkuk"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "liatbola",
+        "liatmangkuk"
+      ],
+      "correct": "liatbola"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "kotakbatu",
+        "kotakkosong"
+      ],
+      "correct": "kotakbatu"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "sengperahu",
+        "senggumpal"
+      ],
+      "correct": "sengperahu"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "perahubanyak",
+        "perahusedikit"
+      ],
+      "correct": "perahubanyak"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "bata",
+        "busa"
+      ],
+      "correct": "bata"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "bambu",
+        "besi"
+      ],
+      "correct": "bambu"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "plastisinpiring",
+        "plastisintongkat"
+      ],
+      "correct": "plastisinpiring"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "tenggelam",
+        "mengapung"
+      ],
+      "correct": "tenggelam"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "mengapung",
+        "tenggelam"
+      ],
+      "correct": "mengapung"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "tenggelam",
+        "mengapung"
+      ],
+      "correct": "tenggelam"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "mengapung",
+        "tenggelam"
+      ],
+      "correct": "mengapung"
+    }
+  ]
+}

@@ -1,0 +1,412 @@
+{
+  "id": "sd1-mat-wadah-halaman-isi",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.UKUR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Muat Paling Banyak?",
+      "instruksi": "Kalau semua diisi air sampai penuh, wadah mana yang airnya paling sedikit? Susun sampai yang airnya paling banyak.",
+      "j-isi-sedikit-banyak": "Isi paling sedikit ke paling banyak",
+      "s-sendok": "sendok",
+      "s-cangkir": "cangkir",
+      "s-mangkuk": "mangkuk",
+      "s-panci": "panci",
+      "s-ember": "ember",
+      "s-tong": "tong air",
+      "s-kolam": "kolam renang"
+    },
+    "en": {
+      "judul": "Who Can Hold the Most Water?",
+      "instruksi": "If every container is filled with water to the top, which holds the least? Line them up to the one that holds the most.",
+      "j-isi-sedikit-banyak": "Holds least to holds most",
+      "s-sendok": "spoon",
+      "s-cangkir": "cup",
+      "s-mangkuk": "bowl",
+      "s-panci": "cooking pot",
+      "s-ember": "bucket",
+      "s-tong": "water barrel",
+      "s-kolam": "swimming pool"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah wadah: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "wadah-1",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.4
+        },
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "panci",
+          "labelKey": "s-panci",
+          "emoji": "🍲",
+          "scale": 1.0
+        }
+      ]
+    },
+    {
+      "id": "wadah-2",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.4
+        },
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "panci",
+          "labelKey": "s-panci",
+          "emoji": "🍲",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        }
+      ]
+    },
+    {
+      "id": "wadah-3",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.4
+        },
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        },
+        {
+          "id": "kolam",
+          "labelKey": "s-kolam",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "wadah-4",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.4
+        },
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "wadah-5",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.4
+        },
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        },
+        {
+          "id": "kolam",
+          "labelKey": "s-kolam",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "wadah-6",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "sendok",
+          "labelKey": "s-sendok",
+          "emoji": "🥄",
+          "scale": 1.4
+        },
+        {
+          "id": "panci",
+          "labelKey": "s-panci",
+          "emoji": "🍲",
+          "scale": 1.0
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        },
+        {
+          "id": "kolam",
+          "labelKey": "s-kolam",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "wadah-7",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "panci",
+          "labelKey": "s-panci",
+          "emoji": "🍲",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        }
+      ]
+    },
+    {
+      "id": "wadah-8",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "wadah-9",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "panci",
+          "labelKey": "s-panci",
+          "emoji": "🍲",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "wadah-10",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "cangkir",
+          "labelKey": "s-cangkir",
+          "emoji": "🍵",
+          "scale": 1.2
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        },
+        {
+          "id": "kolam",
+          "labelKey": "s-kolam",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    },
+    {
+      "id": "wadah-11",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "panci",
+          "labelKey": "s-panci",
+          "emoji": "🍲",
+          "scale": 1.0
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "wadah-12",
+      "titleKey": "j-isi-sedikit-banyak",
+      "steps": [
+        {
+          "id": "mangkuk",
+          "labelKey": "s-mangkuk",
+          "emoji": "🥣",
+          "scale": 1.1
+        },
+        {
+          "id": "ember",
+          "labelKey": "s-ember",
+          "emoji": "🪣",
+          "scale": 0.9
+        },
+        {
+          "id": "tong",
+          "labelKey": "s-tong",
+          "emoji": "🛢️",
+          "scale": 0.85
+        },
+        {
+          "id": "kolam",
+          "labelKey": "s-kolam",
+          "emoji": "🏊",
+          "scale": 0.7
+        }
+      ]
+    }
+  ]
+}

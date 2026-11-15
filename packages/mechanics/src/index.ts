@@ -112,8 +112,17 @@ export function kunciRonde(r: Ronde): string {
       return r.ronde.mode === "pilih"
         ? JSON.stringify(["pilah-pilih", r.ronde.promptKey, r.ronde.correct])
         : JSON.stringify(["pilah-kelompok", r.ronde.items.map((i) => i.id).sort()]);
-    case "urutkan":
-      return JSON.stringify(["urutkan", r.ronde.mode, r.ronde.sequenceId]);
+    case "urutkan": {
+      // kartu yang benar-benar tampil (urutan benar, tanpa id): dua urutan berbeda yang setelah dipotong knob `steps`
+      // menampilkan kartu sama = soal sama (temuan audit 15 Nov 2026; dulu memakai sequenceId)
+      const byId = new Map(r.ronde.shown.map((s) => [s.id, s] as const));
+      const kartu = r.ronde.correct.map((id) => {
+        const { id: _id, ...tampak } = (byId.get(id) ?? { id }) as Record<string, unknown>;
+        void _id;
+        return JSON.stringify(tampak);
+      });
+      return JSON.stringify(["urutkan", r.ronde.mode, kartu]);
+    }
     case "pola":
       return JSON.stringify(["pola", r.ronde.mode, r.ronde.correct, r.ronde.shown, r.ronde.wrongIndex ?? null, r.ronde.pilih ?? null, r.ronde.mode === "cipta" ? r.ronde.palette.map((i) => i.id).sort() : null]);
     case "dagang":

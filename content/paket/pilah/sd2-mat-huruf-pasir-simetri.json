@@ -1,0 +1,360 @@
+{
+  "id": "sd2-mat-huruf-pasir-simetri",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Huruf di Pasir Pantai",
+      "instruksi": "Tarik garis lurus di tengah huruf. Kalau dua belahnya sama seperti bayangan di cermin, huruf itu punya garis simetri.",
+      "t-punya": "Huruf mana yang punya garis simetri?",
+      "i-huruf-a": "A",
+      "i-huruf-f": "F",
+      "i-huruf-j": "J",
+      "i-huruf-h": "H",
+      "i-huruf-l": "L",
+      "i-huruf-n": "N",
+      "i-huruf-m": "M",
+      "i-huruf-p": "P",
+      "i-huruf-r": "R",
+      "i-huruf-t": "T",
+      "i-huruf-g": "G",
+      "i-huruf-s": "S",
+      "i-huruf-u": "U",
+      "i-huruf-z": "Z",
+      "i-huruf-q": "Q",
+      "i-huruf-w": "W",
+      "i-huruf-x": "X",
+      "i-huruf-o": "O",
+      "t-tidak": "Huruf mana yang tidak punya garis simetri?",
+      "i-huruf-v": "V",
+      "i-huruf-y": "Y",
+      "i-huruf-i": "I",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Letters in the Beach Sand",
+      "instruksi": "Draw a straight line through the middle of a letter. If the two halves match like a mirror image, the letter has a line of symmetry.",
+      "t-punya": "Which letter has a line of symmetry?",
+      "i-huruf-a": "A",
+      "i-huruf-f": "F",
+      "i-huruf-j": "J",
+      "i-huruf-h": "H",
+      "i-huruf-l": "L",
+      "i-huruf-n": "N",
+      "i-huruf-m": "M",
+      "i-huruf-p": "P",
+      "i-huruf-r": "R",
+      "i-huruf-t": "T",
+      "i-huruf-g": "G",
+      "i-huruf-s": "S",
+      "i-huruf-u": "U",
+      "i-huruf-z": "Z",
+      "i-huruf-q": "Q",
+      "i-huruf-w": "W",
+      "i-huruf-x": "X",
+      "i-huruf-o": "O",
+      "t-tidak": "Which letter has no line of symmetry?",
+      "i-huruf-v": "V",
+      "i-huruf-y": "Y",
+      "i-huruf-i": "I",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "huruf-a",
+      "labelKey": "i-huruf-a",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-f",
+      "labelKey": "i-huruf-f",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-j",
+      "labelKey": "i-huruf-j",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-h",
+      "labelKey": "i-huruf-h",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-l",
+      "labelKey": "i-huruf-l",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-n",
+      "labelKey": "i-huruf-n",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-m",
+      "labelKey": "i-huruf-m",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-p",
+      "labelKey": "i-huruf-p",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-r",
+      "labelKey": "i-huruf-r",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-t",
+      "labelKey": "i-huruf-t",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-g",
+      "labelKey": "i-huruf-g",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-s",
+      "labelKey": "i-huruf-s",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-u",
+      "labelKey": "i-huruf-u",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-z",
+      "labelKey": "i-huruf-z",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-q",
+      "labelKey": "i-huruf-q",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-w",
+      "labelKey": "i-huruf-w",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-x",
+      "labelKey": "i-huruf-x",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-o",
+      "labelKey": "i-huruf-o",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-v",
+      "labelKey": "i-huruf-v",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-y",
+      "labelKey": "i-huruf-y",
+      "bin": "pilihan",
+      "scale": 1.2
+    },
+    {
+      "id": "huruf-i",
+      "labelKey": "i-huruf-i",
+      "bin": "pilihan",
+      "scale": 1.2
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-punya-a",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-a",
+        "huruf-f",
+        "huruf-j"
+      ],
+      "correct": "huruf-a"
+    },
+    {
+      "id": "r-punya-h",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-h",
+        "huruf-l",
+        "huruf-n"
+      ],
+      "correct": "huruf-h"
+    },
+    {
+      "id": "r-punya-m",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-m",
+        "huruf-p",
+        "huruf-r"
+      ],
+      "correct": "huruf-m"
+    },
+    {
+      "id": "r-punya-t",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-t",
+        "huruf-g",
+        "huruf-s"
+      ],
+      "correct": "huruf-t"
+    },
+    {
+      "id": "r-punya-u",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-u",
+        "huruf-z",
+        "huruf-q"
+      ],
+      "correct": "huruf-u"
+    },
+    {
+      "id": "r-punya-w",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-w",
+        "huruf-f",
+        "huruf-l"
+      ],
+      "correct": "huruf-w"
+    },
+    {
+      "id": "r-punya-x",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-x",
+        "huruf-j",
+        "huruf-p"
+      ],
+      "correct": "huruf-x"
+    },
+    {
+      "id": "r-punya-o",
+      "promptKey": "t-punya",
+      "choices": [
+        "huruf-o",
+        "huruf-r",
+        "huruf-n"
+      ],
+      "correct": "huruf-o"
+    },
+    {
+      "id": "r-tidak-f",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-f",
+        "huruf-a",
+        "huruf-h"
+      ],
+      "correct": "huruf-f"
+    },
+    {
+      "id": "r-tidak-j",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-j",
+        "huruf-m",
+        "huruf-u"
+      ],
+      "correct": "huruf-j"
+    },
+    {
+      "id": "r-tidak-l",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-l",
+        "huruf-t",
+        "huruf-o"
+      ],
+      "correct": "huruf-l"
+    },
+    {
+      "id": "r-tidak-n",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-n",
+        "huruf-w",
+        "huruf-x"
+      ],
+      "correct": "huruf-n"
+    },
+    {
+      "id": "r-tidak-p",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-p",
+        "huruf-v",
+        "huruf-y"
+      ],
+      "correct": "huruf-p"
+    },
+    {
+      "id": "r-tidak-s",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-s",
+        "huruf-i",
+        "huruf-h"
+      ],
+      "correct": "huruf-s"
+    },
+    {
+      "id": "r-tidak-z",
+      "promptKey": "t-tidak",
+      "choices": [
+        "huruf-z",
+        "huruf-o",
+        "huruf-a"
+      ],
+      "correct": "huruf-z"
+    }
+  ]
+}

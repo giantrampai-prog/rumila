@@ -1,0 +1,189 @@
+{
+  "id": "sd4-sains-hewan-pantai-rangka",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.VERTEBRATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tulang Belakang, Cangkang, atau Lunak?",
+      "instruksi": "Pilah hewan-hewan ini: bertulang belakang, berangka luar yang keras, atau bertubuh lunak tanpa tulang belakang.",
+      "b-vertebrata": "bertulang belakang (vertebrata)",
+      "b-rangkaluar": "tanpa tulang belakang, rangka luar keras",
+      "b-lunak": "tanpa tulang belakang, tubuh lunak",
+      "i-lumba": "lumba-lumba",
+      "i-kelelawar": "kelelawar",
+      "i-buaya": "buaya",
+      "i-kadal": "kadal",
+      "i-ayam": "ayam",
+      "i-gajah": "gajah",
+      "i-lobster": "lobster",
+      "i-kalajengking": "kalajengking",
+      "i-belalang": "belalang",
+      "i-kupu": "kupu-kupu",
+      "i-lebah": "lebah",
+      "i-kecoak": "kecoak",
+      "i-cumi": "cumi-cumi",
+      "i-lintah": "lintah",
+      "i-uburubur": "ubur-ubur",
+      "i-gurita": "gurita"
+    },
+    "en": {
+      "judul": "Backbone, Hard Shell, or Soft Body?",
+      "instruksi": "Sort these animals: with a backbone, with a hard outer skeleton, or with a soft body and no backbone.",
+      "b-vertebrata": "has a backbone (vertebrate)",
+      "b-rangkaluar": "no backbone, hard outer skeleton",
+      "b-lunak": "no backbone, soft body",
+      "i-lumba": "dolphin",
+      "i-kelelawar": "bat",
+      "i-buaya": "crocodile",
+      "i-kadal": "lizard",
+      "i-ayam": "chicken",
+      "i-gajah": "elephant",
+      "i-lobster": "lobster",
+      "i-kalajengking": "scorpion",
+      "i-belalang": "grasshopper",
+      "i-kupu": "butterfly",
+      "i-lebah": "bee",
+      "i-kecoak": "cockroach",
+      "i-cumi": "squid",
+      "i-lintah": "leech",
+      "i-uburubur": "jellyfish",
+      "i-gurita": "octopus"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 5,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 5 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "vertebrata",
+      "labelKey": "b-vertebrata",
+      "emoji": "🦴"
+    },
+    {
+      "id": "rangkaluar",
+      "labelKey": "b-rangkaluar",
+      "emoji": "🦞"
+    },
+    {
+      "id": "lunak",
+      "labelKey": "b-lunak",
+      "emoji": "🦑"
+    }
+  ],
+  "items": [
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "vertebrata",
+      "emoji": "🐬"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "vertebrata",
+      "emoji": "🦇"
+    },
+    {
+      "id": "buaya",
+      "labelKey": "i-buaya",
+      "bin": "vertebrata",
+      "emoji": "🐊"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "vertebrata",
+      "emoji": "🦎"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "vertebrata",
+      "emoji": "🐔"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "vertebrata",
+      "emoji": "🐘"
+    },
+    {
+      "id": "lobster",
+      "labelKey": "i-lobster",
+      "bin": "rangkaluar",
+      "emoji": "🦞"
+    },
+    {
+      "id": "kalajengking",
+      "labelKey": "i-kalajengking",
+      "bin": "rangkaluar",
+      "emoji": "🦂"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "i-belalang",
+      "bin": "rangkaluar",
+      "emoji": "🦗"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "rangkaluar",
+      "emoji": "🦋"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "rangkaluar",
+      "emoji": "🐝"
+    },
+    {
+      "id": "kecoak",
+      "labelKey": "i-kecoak",
+      "bin": "rangkaluar",
+      "emoji": "🪳"
+    },
+    {
+      "id": "cumi",
+      "labelKey": "i-cumi",
+      "bin": "lunak",
+      "emoji": "🦑"
+    },
+    {
+      "id": "lintah",
+      "labelKey": "i-lintah",
+      "bin": "lunak",
+      "emoji": "🪱",
+      "color": "#3e2723"
+    },
+    {
+      "id": "uburubur",
+      "labelKey": "i-uburubur",
+      "bin": "lunak",
+      "emoji": "🪼"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "lunak",
+      "emoji": "🐙"
+    }
+  ],
+  "pilihan": []
+}

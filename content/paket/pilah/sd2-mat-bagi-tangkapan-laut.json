@@ -1,0 +1,287 @@
+{
+  "id": "sd2-mat-bagi-tangkapan-laut",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.KALI-BAGI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagi Hasil Tangkapan",
+      "instruksi": "Untuk membagi, ingat tabel kali. Contohnya 40 ÷ 5 = 8 karena 8 × 5 = 40. Sentuh hasil baginya.",
+      "i-n9": "9",
+      "i-n10": "10",
+      "i-n8": "8",
+      "t-18bagi2": "… × 2 = 18, jadi 18 ÷ 2 = ?",
+      "i-n7": "7",
+      "i-n6": "6",
+      "t-14bagi2": "… × 2 = 14, jadi 14 ÷ 2 = ?",
+      "t-16bagi2": "… × 2 = 16, jadi 16 ÷ 2 = ?",
+      "i-n5": "5",
+      "t-12bagi2": "… × 2 = 12, jadi 12 ÷ 2 = ?",
+      "t-20bagi2": "… × 2 = 20, jadi 20 ÷ 2 = ?",
+      "t-45bagi5": "… × 5 = 45, jadi 45 ÷ 5 = ?",
+      "t-30bagi5": "… × 5 = 30, jadi 30 ÷ 5 = ?",
+      "t-40bagi5": "… × 5 = 40, jadi 40 ÷ 5 = ?",
+      "i-n4": "4",
+      "t-25bagi5": "… × 5 = 25, jadi 25 ÷ 5 = ?",
+      "i-n3": "3",
+      "i-n2": "2",
+      "t-15bagi5": "… × 5 = 15, jadi 15 ÷ 5 = ?",
+      "t-70bagi10": "… × 10 = 70, jadi 70 ÷ 10 = ?",
+      "t-90bagi10": "… × 10 = 90, jadi 90 ÷ 10 = ?",
+      "t-40bagi10": "… × 10 = 40, jadi 40 ÷ 10 = ?",
+      "t-80bagi10": "… × 10 = 80, jadi 80 ÷ 10 = ?",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Sharing the Catch",
+      "instruksi": "To divide, remember the times table. For example, 40 ÷ 5 = 8 because 8 × 5 = 40. Tap the answer.",
+      "i-n9": "9",
+      "i-n10": "10",
+      "i-n8": "8",
+      "t-18bagi2": "… × 2 = 18, so 18 ÷ 2 = ?",
+      "i-n7": "7",
+      "i-n6": "6",
+      "t-14bagi2": "… × 2 = 14, so 14 ÷ 2 = ?",
+      "t-16bagi2": "… × 2 = 16, so 16 ÷ 2 = ?",
+      "i-n5": "5",
+      "t-12bagi2": "… × 2 = 12, so 12 ÷ 2 = ?",
+      "t-20bagi2": "… × 2 = 20, so 20 ÷ 2 = ?",
+      "t-45bagi5": "… × 5 = 45, so 45 ÷ 5 = ?",
+      "t-30bagi5": "… × 5 = 30, so 30 ÷ 5 = ?",
+      "t-40bagi5": "… × 5 = 40, so 40 ÷ 5 = ?",
+      "i-n4": "4",
+      "t-25bagi5": "… × 5 = 25, so 25 ÷ 5 = ?",
+      "i-n3": "3",
+      "i-n2": "2",
+      "t-15bagi5": "… × 5 = 15, so 15 ÷ 5 = ?",
+      "t-70bagi10": "… × 10 = 70, so 70 ÷ 10 = ?",
+      "t-90bagi10": "… × 10 = 90, so 90 ÷ 10 = ?",
+      "t-40bagi10": "… × 10 = 40, so 40 ÷ 10 = ?",
+      "t-80bagi10": "… × 10 = 80, so 80 ÷ 10 = ?",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "n9",
+      "labelKey": "i-n9",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n10",
+      "labelKey": "i-n10",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n8",
+      "labelKey": "i-n8",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n7",
+      "labelKey": "i-n7",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n6",
+      "labelKey": "i-n6",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n5",
+      "labelKey": "i-n5",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n4",
+      "labelKey": "i-n4",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n3",
+      "labelKey": "i-n3",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    },
+    {
+      "id": "n2",
+      "labelKey": "i-n2",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-18bagi2",
+      "promptKey": "t-18bagi2",
+      "choices": [
+        "n9",
+        "n10",
+        "n8"
+      ],
+      "correct": "n9"
+    },
+    {
+      "id": "r-14bagi2",
+      "promptKey": "t-14bagi2",
+      "choices": [
+        "n7",
+        "n8",
+        "n6"
+      ],
+      "correct": "n7"
+    },
+    {
+      "id": "r-16bagi2",
+      "promptKey": "t-16bagi2",
+      "choices": [
+        "n8",
+        "n9",
+        "n7"
+      ],
+      "correct": "n8"
+    },
+    {
+      "id": "r-12bagi2",
+      "promptKey": "t-12bagi2",
+      "choices": [
+        "n6",
+        "n7",
+        "n5"
+      ],
+      "correct": "n6"
+    },
+    {
+      "id": "r-20bagi2",
+      "promptKey": "t-20bagi2",
+      "choices": [
+        "n10",
+        "n9",
+        "n8"
+      ],
+      "correct": "n10"
+    },
+    {
+      "id": "r-45bagi5",
+      "promptKey": "t-45bagi5",
+      "choices": [
+        "n9",
+        "n10",
+        "n8"
+      ],
+      "correct": "n9"
+    },
+    {
+      "id": "r-30bagi5",
+      "promptKey": "t-30bagi5",
+      "choices": [
+        "n6",
+        "n7",
+        "n5"
+      ],
+      "correct": "n6"
+    },
+    {
+      "id": "r-40bagi5",
+      "promptKey": "t-40bagi5",
+      "choices": [
+        "n8",
+        "n9",
+        "n7"
+      ],
+      "correct": "n8"
+    },
+    {
+      "id": "r-25bagi5",
+      "promptKey": "t-25bagi5",
+      "choices": [
+        "n5",
+        "n6",
+        "n4"
+      ],
+      "correct": "n5"
+    },
+    {
+      "id": "r-15bagi5",
+      "promptKey": "t-15bagi5",
+      "choices": [
+        "n3",
+        "n4",
+        "n2"
+      ],
+      "correct": "n3"
+    },
+    {
+      "id": "r-70bagi10",
+      "promptKey": "t-70bagi10",
+      "choices": [
+        "n7",
+        "n8",
+        "n6"
+      ],
+      "correct": "n7"
+    },
+    {
+      "id": "r-90bagi10",
+      "promptKey": "t-90bagi10",
+      "choices": [
+        "n9",
+        "n10",
+        "n8"
+      ],
+      "correct": "n9"
+    },
+    {
+      "id": "r-40bagi10",
+      "promptKey": "t-40bagi10",
+      "choices": [
+        "n4",
+        "n5",
+        "n3"
+      ],
+      "correct": "n4"
+    },
+    {
+      "id": "r-80bagi10",
+      "promptKey": "t-80bagi10",
+      "choices": [
+        "n8",
+        "n9",
+        "n7"
+      ],
+      "correct": "n8"
+    }
+  ]
+}

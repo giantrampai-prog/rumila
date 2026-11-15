@@ -1,0 +1,189 @@
+{
+  "id": "sd3-mat-sudut-potongan-pizza",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.GEOMETRI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Sudut Potongan Pizza",
+      "instruksi": "Bandingkan tiap sudut dengan sudut siku, seperti seperempat putaran. Setengah putaran membentuk garis lurus. Taruh tiap kartu di raknya.",
+      "b-kecil": "lebih kecil dari siku",
+      "b-siku": "sudut siku",
+      "b-besar": "lebih besar dari siku",
+      "b-lurus": "garis lurus",
+      "i1": "ujung potongan pizza, dibagi 8 sama besar",
+      "i2": "ujung potongan pizza, dibagi 6 sama besar",
+      "i3": "ujung potongan pizza, dibagi 5 sama besar",
+      "i4": "ujung potongan pizza, dibagi 4 sama besar",
+      "i5": "ujung potongan pizza, dibagi 3 sama besar",
+      "i6": "ujung potongan pizza, dibagi 2 sama besar",
+      "i7": "robot berbelok seperdelapan putaran",
+      "i8": "robot berbelok seperempat putaran",
+      "i9": "robot berbelok sepertiga putaran",
+      "i10": "robot berbelok setengah putaran",
+      "i11": "pojok segitiga sama sisi",
+      "i12": "pojok ubin persegi",
+      "i13": "pojok rambu segi delapan",
+      "i14": "pojok segi enam beraturan",
+      "i15": "buku dibuka rata di meja",
+      "i16": "gunting terbuka sedikit"
+    },
+    "en": {
+      "judul": "Pizza Slice Angles",
+      "instruksi": "Compare each angle with a right angle, like a quarter turn. A half turn makes a straight line. Put each card on its shelf.",
+      "b-kecil": "smaller than a right angle",
+      "b-siku": "right angle",
+      "b-besar": "bigger than a right angle",
+      "b-lurus": "straight line",
+      "i1": "tip of a pizza slice cut into 8 equal parts",
+      "i2": "tip of a pizza slice cut into 6 equal parts",
+      "i3": "tip of a pizza slice cut into 5 equal parts",
+      "i4": "tip of a pizza slice cut into 4 equal parts",
+      "i5": "tip of a pizza slice cut into 3 equal parts",
+      "i6": "tip of a pizza slice cut into 2 equal parts",
+      "i7": "robot turns an eighth turn",
+      "i8": "robot turns a quarter turn",
+      "i9": "robot turns a third of a turn",
+      "i10": "robot turns a half turn",
+      "i11": "corner of an equilateral triangle",
+      "i12": "corner of a square tile",
+      "i13": "corner of an octagon sign",
+      "i14": "corner of a regular hexagon",
+      "i15": "a book opened flat on the table",
+      "i16": "scissors opened a little"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 5,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kecil",
+      "labelKey": "b-kecil"
+    },
+    {
+      "id": "siku",
+      "labelKey": "b-siku"
+    },
+    {
+      "id": "besar",
+      "labelKey": "b-besar"
+    },
+    {
+      "id": "lurus",
+      "labelKey": "b-lurus"
+    }
+  ],
+  "items": [
+    {
+      "id": "kecil-1",
+      "labelKey": "i1",
+      "bin": "kecil",
+      "emoji": "🍕"
+    },
+    {
+      "id": "kecil-2",
+      "labelKey": "i2",
+      "bin": "kecil",
+      "emoji": "🍕"
+    },
+    {
+      "id": "kecil-3",
+      "labelKey": "i3",
+      "bin": "kecil",
+      "emoji": "🍕"
+    },
+    {
+      "id": "siku-4",
+      "labelKey": "i4",
+      "bin": "siku",
+      "emoji": "🍕"
+    },
+    {
+      "id": "besar-5",
+      "labelKey": "i5",
+      "bin": "besar",
+      "emoji": "🍕"
+    },
+    {
+      "id": "lurus-6",
+      "labelKey": "i6",
+      "bin": "lurus",
+      "emoji": "🍕"
+    },
+    {
+      "id": "kecil-7",
+      "labelKey": "i7",
+      "bin": "kecil",
+      "emoji": "🤖"
+    },
+    {
+      "id": "siku-8",
+      "labelKey": "i8",
+      "bin": "siku",
+      "emoji": "🤖"
+    },
+    {
+      "id": "besar-9",
+      "labelKey": "i9",
+      "bin": "besar",
+      "emoji": "🤖"
+    },
+    {
+      "id": "lurus-10",
+      "labelKey": "i10",
+      "bin": "lurus",
+      "emoji": "🤖"
+    },
+    {
+      "id": "kecil-11",
+      "labelKey": "i11",
+      "bin": "kecil",
+      "emoji": "🔺"
+    },
+    {
+      "id": "siku-12",
+      "labelKey": "i12",
+      "bin": "siku"
+    },
+    {
+      "id": "besar-13",
+      "labelKey": "i13",
+      "bin": "besar",
+      "emoji": "🛑"
+    },
+    {
+      "id": "besar-14",
+      "labelKey": "i14",
+      "bin": "besar"
+    },
+    {
+      "id": "lurus-15",
+      "labelKey": "i15",
+      "bin": "lurus",
+      "emoji": "📖"
+    },
+    {
+      "id": "kecil-16",
+      "labelKey": "i16",
+      "bin": "kecil",
+      "emoji": "✂️"
+    }
+  ]
+}

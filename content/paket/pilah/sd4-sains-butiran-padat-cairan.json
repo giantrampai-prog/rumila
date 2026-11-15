@@ -1,0 +1,149 @@
+{
+  "id": "sd4-sains-butiran-padat-cairan",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.WUJUD-ZAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Butiran dan Cairan",
+      "instruksi": "Pilah barang di pasar: padat atau cair? Ingat, butiran seperti garam dan beras bisa dituang, tetapi tiap butirnya tetap padat.",
+      "b-padat": "padat: tiap bagiannya punya bentuk tetap",
+      "b-cair": "cair: mengalir, mengikuti bentuk wadah",
+      "i-garam": "garam halus",
+      "i-beras": "beras",
+      "i-jagung": "biji jagung pipil",
+      "i-koin": "uang logam",
+      "i-kayu": "balok kayu",
+      "i-sendok": "sendok logam",
+      "i-jus": "jus jeruk",
+      "i-teh": "teh hangat",
+      "i-airlaut": "air laut",
+      "i-bensin": "bensin",
+      "i-cuka": "cuka dalam botol",
+      "i-kayuputih": "minyak kayu putih"
+    },
+    "en": {
+      "judul": "Grains and Liquids",
+      "instruksi": "Sort the market goods: solid or liquid? Remember, grains like salt and rice can be poured, but each grain is still solid.",
+      "b-padat": "solid: each piece keeps its own shape",
+      "b-cair": "liquid: flows and takes the shape of its container",
+      "i-garam": "fine salt",
+      "i-beras": "uncooked rice",
+      "i-jagung": "loose corn kernels",
+      "i-koin": "a coin",
+      "i-kayu": "a wooden block",
+      "i-sendok": "a metal spoon",
+      "i-jus": "orange juice",
+      "i-teh": "warm tea",
+      "i-airlaut": "sea water",
+      "i-bensin": "petrol",
+      "i-cuka": "vinegar in a bottle",
+      "i-kayuputih": "eucalyptus oil"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "padat",
+      "labelKey": "b-padat",
+      "emoji": "🧱"
+    },
+    {
+      "id": "cair",
+      "labelKey": "b-cair",
+      "emoji": "💧"
+    }
+  ],
+  "items": [
+    {
+      "id": "garam",
+      "labelKey": "i-garam",
+      "bin": "padat",
+      "emoji": "🧂"
+    },
+    {
+      "id": "beras",
+      "labelKey": "i-beras",
+      "bin": "padat",
+      "emoji": "🍚"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "padat",
+      "emoji": "🌽"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "padat",
+      "emoji": "🪙"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "padat",
+      "emoji": "🪵"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "padat",
+      "emoji": "🥄"
+    },
+    {
+      "id": "jus",
+      "labelKey": "i-jus",
+      "bin": "cair",
+      "emoji": "🧃"
+    },
+    {
+      "id": "teh",
+      "labelKey": "i-teh",
+      "bin": "cair",
+      "emoji": "🍵"
+    },
+    {
+      "id": "airlaut",
+      "labelKey": "i-airlaut",
+      "bin": "cair",
+      "emoji": "🌊"
+    },
+    {
+      "id": "bensin",
+      "labelKey": "i-bensin",
+      "bin": "cair",
+      "emoji": "⛽"
+    },
+    {
+      "id": "cuka",
+      "labelKey": "i-cuka",
+      "bin": "cair",
+      "emoji": "🫙"
+    },
+    {
+      "id": "kayuputih",
+      "labelKey": "i-kayuputih",
+      "bin": "cair",
+      "emoji": "🧴"
+    }
+  ],
+  "pilihan": []
+}

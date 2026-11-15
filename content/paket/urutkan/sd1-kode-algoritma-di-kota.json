@@ -1,0 +1,586 @@
+{
+  "id": "sd1-kode-algoritma-di-kota",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD1.ALGORITMA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Langkah Tugas di Kota",
+      "instruksi": "Urutkan gambar langkah dari yang pertama sampai terakhir supaya tugasnya selesai.",
+      "t-celengan": "Menabung di celengan",
+      "celengan-1": "dapat uang saku",
+      "celengan-2": "masukkan koin ke celengan",
+      "celengan-3": "menabung setiap hari",
+      "celengan-4": "celengan sudah penuh",
+      "celengan-5": "buka celengan",
+      "celengan-6": "hitung uangnya",
+      "t-sepeda": "Naik sepeda",
+      "sepeda-1": "pakai helm",
+      "sepeda-2": "duduk di sadel",
+      "sepeda-3": "kayuh pedal",
+      "sepeda-4": "sepeda melaju",
+      "sepeda-5": "tarik rem untuk berhenti",
+      "sepeda-6": "parkir sepeda",
+      "t-es-krim": "Membeli es krim",
+      "es-krim-1": "masuk ke toko es krim",
+      "es-krim-2": "pilih rasa",
+      "es-krim-3": "sebutkan pesanan",
+      "es-krim-4": "penjual menyendok es krim",
+      "es-krim-5": "terima es krim",
+      "es-krim-6": "makan es krimnya",
+      "t-ikan": "Memberi makan ikan",
+      "ikan-1": "ambil wadah pakan",
+      "ikan-2": "buka tutupnya",
+      "ikan-3": "ambil sejumput pakan",
+      "ikan-4": "tabur di akuarium",
+      "ikan-5": "ikan berenang mendekat",
+      "ikan-6": "ikan memakan pakan",
+      "t-susu": "Membuat susu cokelat",
+      "susu-1": "tuang susu ke gelas",
+      "susu-2": "masukkan bubuk cokelat",
+      "susu-3": "aduk sampai rata",
+      "susu-4": "pasang sedotan",
+      "susu-5": "minum susunya",
+      "susu-6": "cuci gelasnya",
+      "t-tas": "Menyiapkan tas sekolah",
+      "tas-1": "lihat jadwal pelajaran",
+      "tas-2": "ambil buku sesuai jadwal",
+      "tas-3": "masukkan buku ke tas",
+      "tas-4": "tutup ritsleting tas",
+      "tas-5": "gendong tas ke sekolah",
+      "tas-6": "sampai di kelas",
+      "t-tv": "Menonton kartun di TV",
+      "tv-1": "ambil remot",
+      "tv-2": "tekan tombol daya",
+      "tv-3": "TV menyala",
+      "tv-4": "pilih saluran kartun",
+      "tv-5": "kartun mulai tayang",
+      "tv-6": "tertawa menonton kartun",
+      "t-sampah": "Membuang kotak minuman",
+      "sampah-1": "habiskan minuman",
+      "sampah-2": "pipihkan kotaknya",
+      "sampah-3": "cari tempat sampah",
+      "sampah-4": "masukkan ke tempat sampah daur ulang",
+      "sampah-5": "cuci tangan",
+      "sampah-6": "keringkan tangan",
+      "t-kucing": "Memberi makan kucing",
+      "kucing-1": "kucing mengeong lapar",
+      "kucing-2": "ambil mangkuk kucing",
+      "kucing-3": "isi dengan makanan kucing",
+      "kucing-4": "taruh mangkuk di lantai",
+      "kucing-5": "kucing makan",
+      "kucing-6": "kucing kenyang",
+      "t-hujan": "Pulang saat hujan",
+      "hujan-1": "hujan turun",
+      "hujan-2": "ambil jas hujan dari tas",
+      "hujan-3": "pakai jas hujan",
+      "hujan-4": "berjalan pulang",
+      "hujan-5": "sampai di rumah",
+      "hujan-6": "gantung jas hujan",
+      "t-kirim-paket": "Mengambil paket di pos satpam",
+      "kirim-paket-1": "dapat pesan paket sudah tiba",
+      "kirim-paket-2": "jalan ke pos satpam",
+      "kirim-paket-3": "sebutkan nama penerima",
+      "kirim-paket-4": "terima paketnya",
+      "kirim-paket-5": "ucapkan terima kasih",
+      "kirim-paket-6": "bawa paket pulang"
+    },
+    "en": {
+      "judul": "Step by Step Around Town",
+      "instruksi": "Put the step pictures in order from first to last so the task gets done.",
+      "t-celengan": "Saving in a piggy bank",
+      "celengan-1": "get pocket money",
+      "celengan-2": "put the coin in the piggy bank",
+      "celengan-3": "save every day",
+      "celengan-4": "the piggy bank is full",
+      "celengan-5": "open the piggy bank",
+      "celengan-6": "count the money",
+      "t-sepeda": "Riding a bike",
+      "sepeda-1": "put on a helmet",
+      "sepeda-2": "sit on the seat",
+      "sepeda-3": "push the pedals",
+      "sepeda-4": "the bike moves along",
+      "sepeda-5": "pull the brake to stop",
+      "sepeda-6": "park the bike",
+      "t-es-krim": "Buying ice cream",
+      "es-krim-1": "go into the ice cream shop",
+      "es-krim-2": "choose a flavour",
+      "es-krim-3": "say your order",
+      "es-krim-4": "the seller scoops the ice cream",
+      "es-krim-5": "get the ice cream",
+      "es-krim-6": "eat the ice cream",
+      "t-ikan": "Feeding the fish",
+      "ikan-1": "take the food jar",
+      "ikan-2": "open the lid",
+      "ikan-3": "take a pinch of food",
+      "ikan-4": "sprinkle it in the tank",
+      "ikan-5": "the fish swim closer",
+      "ikan-6": "the fish eat the food",
+      "t-susu": "Making chocolate milk",
+      "susu-1": "pour milk into a glass",
+      "susu-2": "add chocolate powder",
+      "susu-3": "stir until mixed",
+      "susu-4": "put in a straw",
+      "susu-5": "drink the milk",
+      "susu-6": "wash the glass",
+      "t-tas": "Packing the school bag",
+      "tas-1": "check the lesson timetable",
+      "tas-2": "take the books you need",
+      "tas-3": "put the books in the bag",
+      "tas-4": "zip up the bag",
+      "tas-5": "carry the bag to school",
+      "tas-6": "arrive in class",
+      "t-tv": "Watching cartoons on TV",
+      "tv-1": "pick up the remote",
+      "tv-2": "press the power button",
+      "tv-3": "the TV turns on",
+      "tv-4": "choose the cartoon channel",
+      "tv-5": "the cartoon starts",
+      "tv-6": "laugh at the cartoon",
+      "t-sampah": "Throwing away a drink box",
+      "sampah-1": "finish the drink",
+      "sampah-2": "flatten the box",
+      "sampah-3": "look for a bin",
+      "sampah-4": "put it in the recycling bin",
+      "sampah-5": "wash your hands",
+      "sampah-6": "dry your hands",
+      "t-kucing": "Feeding the cat",
+      "kucing-1": "the cat meows, hungry",
+      "kucing-2": "take the cat's bowl",
+      "kucing-3": "fill it with cat food",
+      "kucing-4": "put the bowl on the floor",
+      "kucing-5": "the cat eats",
+      "kucing-6": "the cat is full",
+      "t-hujan": "Going home in the rain",
+      "hujan-1": "it starts to rain",
+      "hujan-2": "take the raincoat out of your bag",
+      "hujan-3": "put on the raincoat",
+      "hujan-4": "walk home",
+      "hujan-5": "arrive home",
+      "hujan-6": "hang up the raincoat",
+      "t-kirim-paket": "Picking up a parcel at the guard post",
+      "kirim-paket-1": "get a message that the parcel arrived",
+      "kirim-paket-2": "walk to the guard post",
+      "kirim-paket-3": "say the receiver's name",
+      "kirim-paket-4": "receive the parcel",
+      "kirim-paket-5": "say thank you",
+      "kirim-paket-6": "carry the parcel home"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah gambar: 5 → 6 (urutan dipotong dari depan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "celengan",
+      "titleKey": "t-celengan",
+      "steps": [
+        {
+          "id": "celengan-1",
+          "labelKey": "celengan-1",
+          "emoji": "🪙"
+        },
+        {
+          "id": "celengan-2",
+          "labelKey": "celengan-2",
+          "emoji": "🐷"
+        },
+        {
+          "id": "celengan-3",
+          "labelKey": "celengan-3",
+          "emoji": "📅"
+        },
+        {
+          "id": "celengan-4",
+          "labelKey": "celengan-4",
+          "emoji": "🫙"
+        },
+        {
+          "id": "celengan-5",
+          "labelKey": "celengan-5",
+          "emoji": "🔓"
+        },
+        {
+          "id": "celengan-6",
+          "labelKey": "celengan-6",
+          "emoji": "🔢"
+        }
+      ]
+    },
+    {
+      "id": "sepeda",
+      "titleKey": "t-sepeda",
+      "steps": [
+        {
+          "id": "sepeda-1",
+          "labelKey": "sepeda-1",
+          "emoji": "⛑️"
+        },
+        {
+          "id": "sepeda-2",
+          "labelKey": "sepeda-2",
+          "emoji": "🪑"
+        },
+        {
+          "id": "sepeda-3",
+          "labelKey": "sepeda-3",
+          "emoji": "🦶"
+        },
+        {
+          "id": "sepeda-4",
+          "labelKey": "sepeda-4",
+          "emoji": "🚲"
+        },
+        {
+          "id": "sepeda-5",
+          "labelKey": "sepeda-5",
+          "emoji": "✋"
+        },
+        {
+          "id": "sepeda-6",
+          "labelKey": "sepeda-6",
+          "emoji": "🅿️"
+        }
+      ]
+    },
+    {
+      "id": "es-krim",
+      "titleKey": "t-es-krim",
+      "steps": [
+        {
+          "id": "es-krim-1",
+          "labelKey": "es-krim-1",
+          "emoji": "🏪"
+        },
+        {
+          "id": "es-krim-2",
+          "labelKey": "es-krim-2",
+          "emoji": "👀"
+        },
+        {
+          "id": "es-krim-3",
+          "labelKey": "es-krim-3",
+          "emoji": "🗣️"
+        },
+        {
+          "id": "es-krim-4",
+          "labelKey": "es-krim-4",
+          "emoji": "🥄"
+        },
+        {
+          "id": "es-krim-5",
+          "labelKey": "es-krim-5",
+          "emoji": "🍦"
+        },
+        {
+          "id": "es-krim-6",
+          "labelKey": "es-krim-6",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "ikan",
+      "titleKey": "t-ikan",
+      "steps": [
+        {
+          "id": "ikan-1",
+          "labelKey": "ikan-1",
+          "emoji": "🫙"
+        },
+        {
+          "id": "ikan-2",
+          "labelKey": "ikan-2",
+          "emoji": "🔓"
+        },
+        {
+          "id": "ikan-3",
+          "labelKey": "ikan-3",
+          "emoji": "🤏"
+        },
+        {
+          "id": "ikan-4",
+          "labelKey": "ikan-4",
+          "emoji": "🐠"
+        },
+        {
+          "id": "ikan-5",
+          "labelKey": "ikan-5",
+          "emoji": "🐟"
+        },
+        {
+          "id": "ikan-6",
+          "labelKey": "ikan-6",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "susu",
+      "titleKey": "t-susu",
+      "steps": [
+        {
+          "id": "susu-1",
+          "labelKey": "susu-1",
+          "emoji": "🥛"
+        },
+        {
+          "id": "susu-2",
+          "labelKey": "susu-2",
+          "emoji": "🍫"
+        },
+        {
+          "id": "susu-3",
+          "labelKey": "susu-3",
+          "emoji": "🥄"
+        },
+        {
+          "id": "susu-4",
+          "labelKey": "susu-4",
+          "emoji": "🥤"
+        },
+        {
+          "id": "susu-5",
+          "labelKey": "susu-5",
+          "emoji": "😋"
+        },
+        {
+          "id": "susu-6",
+          "labelKey": "susu-6",
+          "emoji": "🧽"
+        }
+      ]
+    },
+    {
+      "id": "tas",
+      "titleKey": "t-tas",
+      "steps": [
+        {
+          "id": "tas-1",
+          "labelKey": "tas-1",
+          "emoji": "📅"
+        },
+        {
+          "id": "tas-2",
+          "labelKey": "tas-2",
+          "emoji": "📚"
+        },
+        {
+          "id": "tas-3",
+          "labelKey": "tas-3",
+          "emoji": "🎒"
+        },
+        {
+          "id": "tas-4",
+          "labelKey": "tas-4",
+          "emoji": "🤐"
+        },
+        {
+          "id": "tas-5",
+          "labelKey": "tas-5",
+          "emoji": "🚶"
+        },
+        {
+          "id": "tas-6",
+          "labelKey": "tas-6",
+          "emoji": "🏫"
+        }
+      ]
+    },
+    {
+      "id": "tv",
+      "titleKey": "t-tv",
+      "steps": [
+        {
+          "id": "tv-1",
+          "labelKey": "tv-1",
+          "emoji": "📡"
+        },
+        {
+          "id": "tv-2",
+          "labelKey": "tv-2",
+          "emoji": "🔘"
+        },
+        {
+          "id": "tv-3",
+          "labelKey": "tv-3",
+          "emoji": "📺"
+        },
+        {
+          "id": "tv-4",
+          "labelKey": "tv-4",
+          "emoji": "🔢"
+        },
+        {
+          "id": "tv-5",
+          "labelKey": "tv-5",
+          "emoji": "🎬"
+        },
+        {
+          "id": "tv-6",
+          "labelKey": "tv-6",
+          "emoji": "😄"
+        }
+      ]
+    },
+    {
+      "id": "sampah",
+      "titleKey": "t-sampah",
+      "steps": [
+        {
+          "id": "sampah-1",
+          "labelKey": "sampah-1",
+          "emoji": "🧃"
+        },
+        {
+          "id": "sampah-2",
+          "labelKey": "sampah-2",
+          "emoji": "🗜️"
+        },
+        {
+          "id": "sampah-3",
+          "labelKey": "sampah-3",
+          "emoji": "🔍"
+        },
+        {
+          "id": "sampah-4",
+          "labelKey": "sampah-4",
+          "emoji": "♻️"
+        },
+        {
+          "id": "sampah-5",
+          "labelKey": "sampah-5",
+          "emoji": "🧼"
+        },
+        {
+          "id": "sampah-6",
+          "labelKey": "sampah-6",
+          "emoji": "👐"
+        }
+      ]
+    },
+    {
+      "id": "kucing",
+      "titleKey": "t-kucing",
+      "steps": [
+        {
+          "id": "kucing-1",
+          "labelKey": "kucing-1",
+          "emoji": "🐱"
+        },
+        {
+          "id": "kucing-2",
+          "labelKey": "kucing-2",
+          "emoji": "🥣"
+        },
+        {
+          "id": "kucing-3",
+          "labelKey": "kucing-3",
+          "emoji": "🐟"
+        },
+        {
+          "id": "kucing-4",
+          "labelKey": "kucing-4",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "kucing-5",
+          "labelKey": "kucing-5",
+          "emoji": "🐈"
+        },
+        {
+          "id": "kucing-6",
+          "labelKey": "kucing-6",
+          "emoji": "😺"
+        }
+      ]
+    },
+    {
+      "id": "hujan",
+      "titleKey": "t-hujan",
+      "steps": [
+        {
+          "id": "hujan-1",
+          "labelKey": "hujan-1",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "hujan-2",
+          "labelKey": "hujan-2",
+          "emoji": "🎒"
+        },
+        {
+          "id": "hujan-3",
+          "labelKey": "hujan-3",
+          "emoji": "🧥"
+        },
+        {
+          "id": "hujan-4",
+          "labelKey": "hujan-4",
+          "emoji": "🚶"
+        },
+        {
+          "id": "hujan-5",
+          "labelKey": "hujan-5",
+          "emoji": "🏠"
+        },
+        {
+          "id": "hujan-6",
+          "labelKey": "hujan-6",
+          "emoji": "🪝"
+        }
+      ]
+    },
+    {
+      "id": "kirim-paket",
+      "titleKey": "t-kirim-paket",
+      "steps": [
+        {
+          "id": "kirim-paket-1",
+          "labelKey": "kirim-paket-1",
+          "emoji": "📱"
+        },
+        {
+          "id": "kirim-paket-2",
+          "labelKey": "kirim-paket-2",
+          "emoji": "🚶"
+        },
+        {
+          "id": "kirim-paket-3",
+          "labelKey": "kirim-paket-3",
+          "emoji": "🗣️"
+        },
+        {
+          "id": "kirim-paket-4",
+          "labelKey": "kirim-paket-4",
+          "emoji": "📦"
+        },
+        {
+          "id": "kirim-paket-5",
+          "labelKey": "kirim-paket-5",
+          "emoji": "🙏"
+        },
+        {
+          "id": "kirim-paket-6",
+          "labelKey": "kirim-paket-6",
+          "emoji": "🏠"
+        }
+      ]
+    }
+  ]
+}

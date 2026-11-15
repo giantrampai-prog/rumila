@@ -1,0 +1,485 @@
+{
+  "id": "sd2-mat-mesin-hitung-pabrik",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.TAMBAH-KURANG-100.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mesin Hitung Pabrik Mainan",
+      "instruksi": "Hitung satuan dengan satuan, lalu puluhan dengan puluhan. Tidak ada yang perlu disimpan. Sentuh hasil yang benar.",
+      "i-n76": "76",
+      "i-n66": "66",
+      "i-n75": "75",
+      "t-41p35": "41 + 35 = ?",
+      "i-n77": "77",
+      "i-n87": "87",
+      "t-23p54": "23 + 54 = ?",
+      "i-n79": "79",
+      "i-n78": "78",
+      "i-n89": "89",
+      "t-62p17": "62 + 17 = ?",
+      "i-n58": "58",
+      "i-n48": "48",
+      "i-n59": "59",
+      "t-15p43": "15 + 43 = ?",
+      "i-n98": "98",
+      "i-n97": "97",
+      "i-n88": "88",
+      "t-70p28": "70 + 28 = ?",
+      "i-n47": "47",
+      "t-36p12": "36 + 12 = ?",
+      "i-n96": "96",
+      "t-51p46": "51 + 46 = ?",
+      "i-n52": "52",
+      "i-n53": "53",
+      "i-n42": "42",
+      "t-87m35": "87 − 35 = ?",
+      "i-n45": "45",
+      "i-n44": "44",
+      "i-n35": "35",
+      "t-69m24": "69 − 24 = ?",
+      "i-n38": "38",
+      "i-n37": "37",
+      "t-98m60": "98 − 60 = ?",
+      "i-n33": "33",
+      "i-n43": "43",
+      "i-n34": "34",
+      "t-76m43": "76 − 43 = ?",
+      "i-n41": "41",
+      "i-n31": "31",
+      "t-58m17": "58 − 17 = ?",
+      "t-95m52": "95 − 52 = ?",
+      "i-n51": "51",
+      "i-n40": "40",
+      "t-47m6": "47 − 6 = ?",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Toy Factory Counting Machine",
+      "instruksi": "Work out the ones with the ones, then the tens with the tens. Nothing needs to be carried. Tap the right answer.",
+      "i-n76": "76",
+      "i-n66": "66",
+      "i-n75": "75",
+      "t-41p35": "41 + 35 = ?",
+      "i-n77": "77",
+      "i-n87": "87",
+      "t-23p54": "23 + 54 = ?",
+      "i-n79": "79",
+      "i-n78": "78",
+      "i-n89": "89",
+      "t-62p17": "62 + 17 = ?",
+      "i-n58": "58",
+      "i-n48": "48",
+      "i-n59": "59",
+      "t-15p43": "15 + 43 = ?",
+      "i-n98": "98",
+      "i-n97": "97",
+      "i-n88": "88",
+      "t-70p28": "70 + 28 = ?",
+      "i-n47": "47",
+      "t-36p12": "36 + 12 = ?",
+      "i-n96": "96",
+      "t-51p46": "51 + 46 = ?",
+      "i-n52": "52",
+      "i-n53": "53",
+      "i-n42": "42",
+      "t-87m35": "87 − 35 = ?",
+      "i-n45": "45",
+      "i-n44": "44",
+      "i-n35": "35",
+      "t-69m24": "69 − 24 = ?",
+      "i-n38": "38",
+      "i-n37": "37",
+      "t-98m60": "98 − 60 = ?",
+      "i-n33": "33",
+      "i-n43": "43",
+      "i-n34": "34",
+      "t-76m43": "76 − 43 = ?",
+      "i-n41": "41",
+      "i-n31": "31",
+      "t-58m17": "58 − 17 = ?",
+      "t-95m52": "95 − 52 = ?",
+      "i-n51": "51",
+      "i-n40": "40",
+      "t-47m6": "47 − 6 = ?",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "n76",
+      "labelKey": "i-n76",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n66",
+      "labelKey": "i-n66",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n75",
+      "labelKey": "i-n75",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n77",
+      "labelKey": "i-n77",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n87",
+      "labelKey": "i-n87",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n79",
+      "labelKey": "i-n79",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n78",
+      "labelKey": "i-n78",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n89",
+      "labelKey": "i-n89",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n58",
+      "labelKey": "i-n58",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n48",
+      "labelKey": "i-n48",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n59",
+      "labelKey": "i-n59",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n98",
+      "labelKey": "i-n98",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n97",
+      "labelKey": "i-n97",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n88",
+      "labelKey": "i-n88",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n47",
+      "labelKey": "i-n47",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n96",
+      "labelKey": "i-n96",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n52",
+      "labelKey": "i-n52",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n53",
+      "labelKey": "i-n53",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n42",
+      "labelKey": "i-n42",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n45",
+      "labelKey": "i-n45",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n44",
+      "labelKey": "i-n44",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n35",
+      "labelKey": "i-n35",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n38",
+      "labelKey": "i-n38",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n37",
+      "labelKey": "i-n37",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n33",
+      "labelKey": "i-n33",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n43",
+      "labelKey": "i-n43",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n34",
+      "labelKey": "i-n34",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n41",
+      "labelKey": "i-n41",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n31",
+      "labelKey": "i-n31",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n51",
+      "labelKey": "i-n51",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    },
+    {
+      "id": "n40",
+      "labelKey": "i-n40",
+      "bin": "pilihan",
+      "emoji": "⚙️",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-41p35",
+      "promptKey": "t-41p35",
+      "choices": [
+        "n76",
+        "n66",
+        "n75"
+      ],
+      "correct": "n76"
+    },
+    {
+      "id": "r-23p54",
+      "promptKey": "t-23p54",
+      "choices": [
+        "n77",
+        "n87",
+        "n76"
+      ],
+      "correct": "n77"
+    },
+    {
+      "id": "r-62p17",
+      "promptKey": "t-62p17",
+      "choices": [
+        "n79",
+        "n78",
+        "n89"
+      ],
+      "correct": "n79"
+    },
+    {
+      "id": "r-15p43",
+      "promptKey": "t-15p43",
+      "choices": [
+        "n58",
+        "n48",
+        "n59"
+      ],
+      "correct": "n58"
+    },
+    {
+      "id": "r-70p28",
+      "promptKey": "t-70p28",
+      "choices": [
+        "n98",
+        "n97",
+        "n88"
+      ],
+      "correct": "n98"
+    },
+    {
+      "id": "r-36p12",
+      "promptKey": "t-36p12",
+      "choices": [
+        "n48",
+        "n47",
+        "n58"
+      ],
+      "correct": "n48"
+    },
+    {
+      "id": "r-51p46",
+      "promptKey": "t-51p46",
+      "choices": [
+        "n97",
+        "n96",
+        "n87"
+      ],
+      "correct": "n97"
+    },
+    {
+      "id": "r-87m35",
+      "promptKey": "t-87m35",
+      "choices": [
+        "n52",
+        "n53",
+        "n42"
+      ],
+      "correct": "n52"
+    },
+    {
+      "id": "r-69m24",
+      "promptKey": "t-69m24",
+      "choices": [
+        "n45",
+        "n44",
+        "n35"
+      ],
+      "correct": "n45"
+    },
+    {
+      "id": "r-98m60",
+      "promptKey": "t-98m60",
+      "choices": [
+        "n38",
+        "n48",
+        "n37"
+      ],
+      "correct": "n38"
+    },
+    {
+      "id": "r-76m43",
+      "promptKey": "t-76m43",
+      "choices": [
+        "n33",
+        "n43",
+        "n34"
+      ],
+      "correct": "n33"
+    },
+    {
+      "id": "r-58m17",
+      "promptKey": "t-58m17",
+      "choices": [
+        "n41",
+        "n31",
+        "n42"
+      ],
+      "correct": "n41"
+    },
+    {
+      "id": "r-95m52",
+      "promptKey": "t-95m52",
+      "choices": [
+        "n43",
+        "n53",
+        "n42"
+      ],
+      "correct": "n43"
+    },
+    {
+      "id": "r-47m6",
+      "promptKey": "t-47m6",
+      "choices": [
+        "n41",
+        "n51",
+        "n40"
+      ],
+      "correct": "n41"
+    }
+  ]
+}

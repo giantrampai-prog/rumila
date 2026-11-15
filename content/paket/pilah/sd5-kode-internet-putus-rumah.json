@@ -1,0 +1,165 @@
+{
+  "id": "sd5-kode-internet-putus-rumah",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.INTERNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rumah Tanpa Internet",
+      "instruksi": "Wi-Fi di rumah sedang mati dan HP tidak punya kuota: seret tiap kegiatan ke 'tetap bisa' atau 'tidak bisa'.",
+      "bin-bisa": "tetap bisa",
+      "bin-tidak": "tidak bisa",
+      "i1": "membaca buku digital yang sudah diunduh",
+      "i2": "menonton film yang sudah diunduh",
+      "i3": "menyalakan senter HP",
+      "i4": "menggambar di aplikasi gambar",
+      "i5": "merekam suara dengan HP",
+      "i6": "memasang alarm di HP",
+      "i7": "bermain catur melawan komputer di laptop",
+      "i8": "mengirim pesan di aplikasi obrolan",
+      "i9": "melihat ramalan cuaca terbaru",
+      "i10": "ikut kelas video daring",
+      "i11": "memperbarui aplikasi di HP",
+      "i12": "menonton film secara streaming",
+      "i13": "mengunduh game baru",
+      "i14": "bermain game daring bersama teman"
+    },
+    "en": {
+      "judul": "A Home Without Internet",
+      "instruksi": "The home Wi-Fi is down and the phone has no mobile data: drag each activity to 'still possible' or 'not possible'.",
+      "bin-bisa": "still possible",
+      "bin-tidak": "not possible",
+      "i1": "reading an e-book you already downloaded",
+      "i2": "watching a film you already downloaded",
+      "i3": "turning on the phone torch",
+      "i4": "drawing in a drawing app",
+      "i5": "recording your voice on the phone",
+      "i6": "setting an alarm on the phone",
+      "i7": "playing chess against the computer on a laptop",
+      "i8": "sending a message in a chat app",
+      "i9": "checking the latest weather forecast",
+      "i10": "joining an online video class",
+      "i11": "updating an app on the phone",
+      "i12": "streaming a film",
+      "i13": "downloading a new game",
+      "i14": "playing an online game with friends"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kegiatan per ronde; jebakan film diunduh vs streaming"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "bisa",
+      "labelKey": "bin-bisa",
+      "emoji": "✅"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "bin-tidak",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "bisa",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "tidak",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "tidak",
+      "scale": 0.5
+    }
+  ]
+}

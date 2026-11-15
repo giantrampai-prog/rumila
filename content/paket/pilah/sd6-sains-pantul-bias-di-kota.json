@@ -1,0 +1,159 @@
+{
+  "id": "sd6-sains-pantul-bias-di-kota",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cahaya di Sudut Kota",
+      "instruksi": "Baca kejadian cahaya di kota, lalu pilah: pemantulan atau pembiasan.",
+      "b-pantul": "pemantulan: cahaya memantul dari permukaan",
+      "b-bias": "pembiasan: cahaya membelok saat masuk ke benda bening",
+      "i-cembung": "cermin cembung di tikungan memperlihatkan mobil dari arah lain",
+      "i-gedung": "kaca gedung memantulkan sinar Matahari yang menyilaukan",
+      "i-rompi": "rompi petugas berkilau saat disorot lampu mobil",
+      "i-dokter": "dokter gigi melihat gigi belakang lewat cermin kecil",
+      "i-bulan": "Bulan bersinar di malam hari karena cahaya Matahari memantul darinya",
+      "i-matakucing": "pemantul mata kucing di aspal bersinar saat disorot lampu",
+      "i-salon": "cermin di salon dipakai melihat rambut bagian belakang",
+      "i-kaki": "kaki tampak lebih pendek saat berdiri di kolam renang",
+      "i-pelangi": "pelangi muncul saat cahaya melewati titik-titik hujan",
+      "i-teropong": "lensa teropong membuat Bulan tampak lebih besar",
+      "i-akuarium": "ikan di akuarium bulat tampak lebih besar dari samping",
+      "i-sendok": "sendok tampak bengkok di mangkuk sup bening",
+      "i-mikroskop": "lensa mikroskop memperbesar sel kulit bawang"
+    },
+    "en": {
+      "judul": "Light Around Town",
+      "instruksi": "Read about light around town, then sort it: reflection or refraction.",
+      "b-pantul": "reflection: light bounces off a surface",
+      "b-bias": "refraction: light bends going into a clear material",
+      "i-cembung": "a convex mirror on a bend shows cars coming the other way",
+      "i-gedung": "a glass building reflects dazzling sunlight",
+      "i-rompi": "a worker's safety vest shines in car headlights",
+      "i-dokter": "a dentist sees the back teeth in a small mirror",
+      "i-bulan": "the Moon shines at night because sunlight bounces off it",
+      "i-matakucing": "cat's-eye road studs glow when lit by headlights",
+      "i-salon": "salon mirrors are used to see the back of your hair",
+      "i-kaki": "your legs look shorter when you stand in a swimming pool",
+      "i-pelangi": "a rainbow appears when light passes through raindrops",
+      "i-teropong": "a telescope's lenses make the Moon look bigger",
+      "i-akuarium": "a fish in a round fishbowl looks bigger from the side",
+      "i-sendok": "a spoon looks bent in a bowl of clear soup",
+      "i-mikroskop": "a microscope's lenses magnify onion skin cells"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pantul",
+      "labelKey": "b-pantul",
+      "emoji": "🪞",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "bias",
+      "labelKey": "b-bias",
+      "emoji": "🔍",
+      "color": "#fff8e1"
+    }
+  ],
+  "items": [
+    {
+      "id": "cembung",
+      "labelKey": "i-cembung",
+      "bin": "pantul",
+      "emoji": "🚗"
+    },
+    {
+      "id": "gedung",
+      "labelKey": "i-gedung",
+      "bin": "pantul",
+      "emoji": "🏢"
+    },
+    {
+      "id": "rompi",
+      "labelKey": "i-rompi",
+      "bin": "pantul",
+      "emoji": "🦺"
+    },
+    {
+      "id": "dokter",
+      "labelKey": "i-dokter",
+      "bin": "pantul",
+      "emoji": "🦷"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "pantul",
+      "emoji": "🌕"
+    },
+    {
+      "id": "matakucing",
+      "labelKey": "i-matakucing",
+      "bin": "pantul",
+      "emoji": "🛣️"
+    },
+    {
+      "id": "salon",
+      "labelKey": "i-salon",
+      "bin": "pantul",
+      "emoji": "💇"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "i-kaki",
+      "bin": "bias",
+      "emoji": "🦵"
+    },
+    {
+      "id": "pelangi",
+      "labelKey": "i-pelangi",
+      "bin": "bias",
+      "emoji": "🌈"
+    },
+    {
+      "id": "teropong",
+      "labelKey": "i-teropong",
+      "bin": "bias",
+      "emoji": "🔭"
+    },
+    {
+      "id": "akuarium",
+      "labelKey": "i-akuarium",
+      "bin": "bias",
+      "emoji": "🐠"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "bias",
+      "emoji": "🥄"
+    },
+    {
+      "id": "mikroskop",
+      "labelKey": "i-mikroskop",
+      "bin": "bias",
+      "emoji": "🔬"
+    }
+  ],
+  "pilihan": []
+}

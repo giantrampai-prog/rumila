@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-konduktor-isolator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.LISTRIK.02"
@@ -23,7 +23,7 @@
       "i-penggaris": "penggaris plastik",
       "i-tusukgigi": "tusuk gigi kayu",
       "i-kertas": "kertas",
-      "i-gelas": "gelas kaca",
+      "i-gelas": "toples kaca",
       "i-tali": "tali kain",
       "i-sedotan": "sedotan plastik"
     },
@@ -43,7 +43,7 @@
       "i-penggaris": "plastic ruler",
       "i-tusukgigi": "wooden toothpick",
       "i-kertas": "paper",
-      "i-gelas": "glass cup",
+      "i-gelas": "glass jar",
       "i-tali": "cloth string",
       "i-sedotan": "plastic straw"
     }
@@ -106,7 +106,10 @@
       "id": "tembaga",
       "labelKey": "i-tembaga",
       "bin": "konduktor",
-      "emoji": "🧵"
+      "shape": "rect",
+      "color": "#b87333",
+      "width": 3,
+      "scale": 0.6
     },
     {
       "id": "koin",
@@ -124,7 +127,9 @@
       "id": "penghapus",
       "labelKey": "i-penghapus",
       "bin": "isolator",
-      "emoji": "🧽"
+      "shape": "rect",
+      "color": "#f48fb1",
+      "scale": 0.7
     },
     {
       "id": "penggaris",
@@ -148,7 +153,7 @@
       "id": "gelas",
       "labelKey": "i-gelas",
       "bin": "isolator",
-      "emoji": "🥛"
+      "emoji": "🫙"
     },
     {
       "id": "tali",

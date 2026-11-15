@@ -1,0 +1,552 @@
+{
+  "id": "sd3-mat-jadwal-tertukar",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD3.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jadwal yang Tertukar",
+      "instruksi": "Dua kegiatan dalam jadwal tertukar. Bandingkan jamnya dulu, lalu menitnya. Tukar keduanya supaya urut dari yang paling awal.",
+      "j1": "Wisata kebun binatang",
+      "s1": "08.05 naik bus",
+      "s2": "08.50 beli tiket",
+      "s3": "09.15 lihat gajah",
+      "s4": "10.40 makan bekal",
+      "s5": "11.05 pulang",
+      "j2": "Hari Minggu",
+      "s6": "06.15 bangun tidur",
+      "s7": "06.40 mandi",
+      "s8": "07.20 sarapan",
+      "s9": "07.45 bersepeda",
+      "s10": "09.30 menyiram tanaman",
+      "j3": "Latihan sepak bola",
+      "s11": "02.10 pemanasan",
+      "s12": "02.25 latihan menendang",
+      "s13": "02.55 istirahat minum",
+      "s14": "03.05 pertandingan kecil",
+      "s15": "03.50 beres-beres",
+      "j4": "Pagi di sekolah",
+      "s16": "07.00 upacara",
+      "s17": "07.35 pelajaran matematika",
+      "s18": "08.45 pelajaran IPA",
+      "s19": "09.40 istirahat",
+      "s20": "10.05 membaca buku",
+      "j5": "Membuat kue",
+      "s21": "09.05 siapkan bahan",
+      "s22": "09.20 aduk adonan",
+      "s23": "09.50 masukkan oven",
+      "s24": "10.35 angkat kue",
+      "s25": "11.15 hias kue",
+      "j6": "Sore di rumah",
+      "s26": "01.30 makan siang",
+      "s27": "02.00 tidur siang",
+      "s28": "03.15 mengerjakan PR",
+      "s29": "04.10 bermain di luar",
+      "s30": "05.30 mandi sore",
+      "j7": "Naik kereta",
+      "s31": "06.50 tiba di stasiun",
+      "s32": "07.05 kereta berangkat",
+      "s33": "08.15 makan roti",
+      "s34": "09.10 kereta tiba",
+      "s35": "09.25 naik ojek",
+      "j8": "Hari ke pantai",
+      "s36": "07.10 berangkat",
+      "s37": "08.30 sampai di pantai",
+      "s38": "08.45 buat istana pasir",
+      "s39": "10.20 berenang",
+      "s40": "11.50 makan ikan bakar",
+      "j9": "Kegiatan perpustakaan",
+      "s41": "10.10 pinjam buku",
+      "s42": "10.25 dengar dongeng",
+      "s43": "11.00 menggambar tokoh",
+      "s44": "11.40 kembalikan buku",
+      "s45": "11.55 pulang",
+      "j10": "Les musik",
+      "s46": "03.05 setel gitar",
+      "s47": "03.20 latihan kunci",
+      "s48": "03.45 belajar lagu",
+      "s49": "04.15 tampil di depan",
+      "s50": "04.30 selesai",
+      "j11": "Pagi di kebun",
+      "s51": "05.45 bangun",
+      "s52": "06.05 petik sayur",
+      "s53": "06.50 beri makan ayam",
+      "s54": "07.30 cuci tangan",
+      "s55": "07.55 sarapan",
+      "j12": "Persiapan lomba",
+      "s56": "01.05 ganti baju",
+      "s57": "01.20 pemanasan",
+      "s58": "01.50 lomba lari",
+      "s59": "02.15 pembagian hadiah",
+      "s60": "02.40 foto bersama"
+    },
+    "en": {
+      "judul": "Mixed-Up Timetable",
+      "instruksi": "Two activities in the timetable are swapped. Compare the hours first, then the minutes. Swap them so it goes from the earliest.",
+      "j1": "Zoo trip",
+      "s1": "08.05 get on the bus",
+      "s2": "08.50 buy tickets",
+      "s3": "09.15 see the elephants",
+      "s4": "10.40 eat our packed lunch",
+      "s5": "11.05 go home",
+      "j2": "Sunday",
+      "s6": "06.15 wake up",
+      "s7": "06.40 have a bath",
+      "s8": "07.20 have breakfast",
+      "s9": "07.45 go cycling",
+      "s10": "09.30 water the plants",
+      "j3": "Football practice",
+      "s11": "02.10 warm up",
+      "s12": "02.25 kicking drills",
+      "s13": "02.55 drink break",
+      "s14": "03.05 mini match",
+      "s15": "03.50 pack up",
+      "j4": "School morning",
+      "s16": "07.00 assembly",
+      "s17": "07.35 maths lesson",
+      "s18": "08.45 science lesson",
+      "s19": "09.40 break time",
+      "s20": "10.05 reading time",
+      "j5": "Baking a cake",
+      "s21": "09.05 get the ingredients",
+      "s22": "09.20 mix the batter",
+      "s23": "09.50 put it in the oven",
+      "s24": "10.35 take out the cake",
+      "s25": "11.15 decorate the cake",
+      "j6": "Afternoon at home",
+      "s26": "01.30 have lunch",
+      "s27": "02.00 take a nap",
+      "s28": "03.15 do homework",
+      "s29": "04.10 play outside",
+      "s30": "05.30 have an evening bath",
+      "j7": "Train ride",
+      "s31": "06.50 arrive at the station",
+      "s32": "07.05 train leaves",
+      "s33": "08.15 eat some bread",
+      "s34": "09.10 train arrives",
+      "s35": "09.25 take a motorbike taxi",
+      "j8": "Beach day",
+      "s36": "07.10 set off",
+      "s37": "08.30 reach the beach",
+      "s38": "08.45 build a sandcastle",
+      "s39": "10.20 go swimming",
+      "s40": "11.50 eat grilled fish",
+      "j9": "Library visit",
+      "s41": "10.10 borrow a book",
+      "s42": "10.25 listen to a story",
+      "s43": "11.00 draw a character",
+      "s44": "11.40 return the book",
+      "s45": "11.55 go home",
+      "j10": "Music lesson",
+      "s46": "03.05 tune the guitar",
+      "s47": "03.20 practise chords",
+      "s48": "03.45 learn a song",
+      "s49": "04.15 perform",
+      "s50": "04.30 finish",
+      "j11": "Morning in the garden",
+      "s51": "05.45 get up",
+      "s52": "06.05 pick vegetables",
+      "s53": "06.50 feed the chickens",
+      "s54": "07.30 wash hands",
+      "s55": "07.55 have breakfast",
+      "j12": "Getting ready for a race",
+      "s56": "01.05 get changed",
+      "s57": "01.20 warm up",
+      "s58": "01.50 running race",
+      "s59": "02.15 prize giving",
+      "s60": "02.40 group photo"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kegiatan: 4 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "urut-1",
+      "titleKey": "j1",
+      "steps": [
+        {
+          "id": "s1",
+          "labelKey": "s1",
+          "scale": 0.85
+        },
+        {
+          "id": "s2",
+          "labelKey": "s2",
+          "scale": 0.85
+        },
+        {
+          "id": "s3",
+          "labelKey": "s3",
+          "scale": 0.85
+        },
+        {
+          "id": "s4",
+          "labelKey": "s4",
+          "scale": 0.85
+        },
+        {
+          "id": "s5",
+          "labelKey": "s5",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-2",
+      "titleKey": "j2",
+      "steps": [
+        {
+          "id": "s6",
+          "labelKey": "s6",
+          "scale": 0.85
+        },
+        {
+          "id": "s7",
+          "labelKey": "s7",
+          "scale": 0.85
+        },
+        {
+          "id": "s8",
+          "labelKey": "s8",
+          "scale": 0.85
+        },
+        {
+          "id": "s9",
+          "labelKey": "s9",
+          "scale": 0.85
+        },
+        {
+          "id": "s10",
+          "labelKey": "s10",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-3",
+      "titleKey": "j3",
+      "steps": [
+        {
+          "id": "s11",
+          "labelKey": "s11",
+          "scale": 0.85
+        },
+        {
+          "id": "s12",
+          "labelKey": "s12",
+          "scale": 0.85
+        },
+        {
+          "id": "s13",
+          "labelKey": "s13",
+          "scale": 0.85
+        },
+        {
+          "id": "s14",
+          "labelKey": "s14",
+          "scale": 0.85
+        },
+        {
+          "id": "s15",
+          "labelKey": "s15",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-4",
+      "titleKey": "j4",
+      "steps": [
+        {
+          "id": "s16",
+          "labelKey": "s16",
+          "scale": 0.85
+        },
+        {
+          "id": "s17",
+          "labelKey": "s17",
+          "scale": 0.85
+        },
+        {
+          "id": "s18",
+          "labelKey": "s18",
+          "scale": 0.85
+        },
+        {
+          "id": "s19",
+          "labelKey": "s19",
+          "scale": 0.85
+        },
+        {
+          "id": "s20",
+          "labelKey": "s20",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-5",
+      "titleKey": "j5",
+      "steps": [
+        {
+          "id": "s21",
+          "labelKey": "s21",
+          "scale": 0.85
+        },
+        {
+          "id": "s22",
+          "labelKey": "s22",
+          "scale": 0.85
+        },
+        {
+          "id": "s23",
+          "labelKey": "s23",
+          "scale": 0.85
+        },
+        {
+          "id": "s24",
+          "labelKey": "s24",
+          "scale": 0.85
+        },
+        {
+          "id": "s25",
+          "labelKey": "s25",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-6",
+      "titleKey": "j6",
+      "steps": [
+        {
+          "id": "s26",
+          "labelKey": "s26",
+          "scale": 0.85
+        },
+        {
+          "id": "s27",
+          "labelKey": "s27",
+          "scale": 0.85
+        },
+        {
+          "id": "s28",
+          "labelKey": "s28",
+          "scale": 0.85
+        },
+        {
+          "id": "s29",
+          "labelKey": "s29",
+          "scale": 0.85
+        },
+        {
+          "id": "s30",
+          "labelKey": "s30",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-7",
+      "titleKey": "j7",
+      "steps": [
+        {
+          "id": "s31",
+          "labelKey": "s31",
+          "scale": 0.85
+        },
+        {
+          "id": "s32",
+          "labelKey": "s32",
+          "scale": 0.85
+        },
+        {
+          "id": "s33",
+          "labelKey": "s33",
+          "scale": 0.85
+        },
+        {
+          "id": "s34",
+          "labelKey": "s34",
+          "scale": 0.85
+        },
+        {
+          "id": "s35",
+          "labelKey": "s35",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-8",
+      "titleKey": "j8",
+      "steps": [
+        {
+          "id": "s36",
+          "labelKey": "s36",
+          "scale": 0.85
+        },
+        {
+          "id": "s37",
+          "labelKey": "s37",
+          "scale": 0.85
+        },
+        {
+          "id": "s38",
+          "labelKey": "s38",
+          "scale": 0.85
+        },
+        {
+          "id": "s39",
+          "labelKey": "s39",
+          "scale": 0.85
+        },
+        {
+          "id": "s40",
+          "labelKey": "s40",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-9",
+      "titleKey": "j9",
+      "steps": [
+        {
+          "id": "s41",
+          "labelKey": "s41",
+          "scale": 0.85
+        },
+        {
+          "id": "s42",
+          "labelKey": "s42",
+          "scale": 0.85
+        },
+        {
+          "id": "s43",
+          "labelKey": "s43",
+          "scale": 0.85
+        },
+        {
+          "id": "s44",
+          "labelKey": "s44",
+          "scale": 0.85
+        },
+        {
+          "id": "s45",
+          "labelKey": "s45",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-10",
+      "titleKey": "j10",
+      "steps": [
+        {
+          "id": "s46",
+          "labelKey": "s46",
+          "scale": 0.85
+        },
+        {
+          "id": "s47",
+          "labelKey": "s47",
+          "scale": 0.85
+        },
+        {
+          "id": "s48",
+          "labelKey": "s48",
+          "scale": 0.85
+        },
+        {
+          "id": "s49",
+          "labelKey": "s49",
+          "scale": 0.85
+        },
+        {
+          "id": "s50",
+          "labelKey": "s50",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-11",
+      "titleKey": "j11",
+      "steps": [
+        {
+          "id": "s51",
+          "labelKey": "s51",
+          "scale": 0.85
+        },
+        {
+          "id": "s52",
+          "labelKey": "s52",
+          "scale": 0.85
+        },
+        {
+          "id": "s53",
+          "labelKey": "s53",
+          "scale": 0.85
+        },
+        {
+          "id": "s54",
+          "labelKey": "s54",
+          "scale": 0.85
+        },
+        {
+          "id": "s55",
+          "labelKey": "s55",
+          "scale": 0.85
+        }
+      ]
+    },
+    {
+      "id": "urut-12",
+      "titleKey": "j12",
+      "steps": [
+        {
+          "id": "s56",
+          "labelKey": "s56",
+          "scale": 0.85
+        },
+        {
+          "id": "s57",
+          "labelKey": "s57",
+          "scale": 0.85
+        },
+        {
+          "id": "s58",
+          "labelKey": "s58",
+          "scale": 0.85
+        },
+        {
+          "id": "s59",
+          "labelKey": "s59",
+          "scale": 0.85
+        },
+        {
+          "id": "s60",
+          "labelKey": "s60",
+          "scale": 0.85
+        }
+      ]
+    }
+  ]
+}

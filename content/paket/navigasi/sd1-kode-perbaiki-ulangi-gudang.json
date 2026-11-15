@@ -1,0 +1,1356 @@
+{
+  "id": "sd1-kode-perbaiki-ulangi-gudang",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD1.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satu Blok Ulangi Rusak",
+      "instruksi": "Robot gudang salah jalan karena satu blok keliru. Jalankan dulu, lihat robot berhenti di mana, lalu ganti satu blok saja."
+    },
+    "en": {
+      "judul": "One Broken Repeat Block",
+      "instruksi": "The warehouse robot goes the wrong way because one block is wrong. Run it first, see where it stops, then change just one block."
+    }
+  },
+  "knobs": {
+    "letak": {
+      "min": 0,
+      "max": 2,
+      "default": 0,
+      "step": 1,
+      "keterangan": "letak kesalahan (dokumentasi): 0 angka ulangi, 1 isi ulangi, 2 blok di luar ulangi"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "gudang",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan",
+    "ulangi"
+  ],
+  "debug": true,
+  "semuaGrid": false,
+  "prediksi": false,
+  "grids": [
+    {
+      "id": "gudang-angka-1-1",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-isi-2-2",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kanan"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-3-3",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 4,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-angka-4-4",
+      "w": 3,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-5-5",
+      "w": 6,
+      "h": 4,
+      "start": {
+        "x": 5,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-angka-6-6",
+      "w": 4,
+      "h": 3,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-angka-7-7",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-isi-9-8",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kiri"
+            }
+          ]
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-isi-10-9",
+      "w": 6,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kiri"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-11-10",
+      "w": 7,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 6,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-angka-1-11",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 4,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-2-12",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-3-13",
+      "w": 7,
+      "h": 2,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-angka-4-14",
+      "w": 3,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-isi-5-15",
+      "w": 8,
+      "h": 3,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 7,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kiri"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-6-16",
+      "w": 3,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-7-17",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-angka-9-18",
+      "w": 3,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            },
+            {
+              "cmd": "kanan"
+            }
+          ]
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-10-19",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 5,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 2,
+          "y": 6
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 6
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-11-20",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 6,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-1-21",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "gudang-luar-2-22",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    }
+  ]
+}

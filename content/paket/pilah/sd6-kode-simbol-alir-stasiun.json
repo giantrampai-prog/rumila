@@ -1,0 +1,206 @@
+{
+  "id": "sd6-kode-simbol-alir-stasiun",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.FLOWCHART.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Diagram Alir Mesin Tiket",
+      "instruksi": "Langkah-langkah mesin tiket stasiun digambar sebagai diagram alir: oval untuk mulai/selesai, jajar genjang untuk masukan/keluaran, persegi untuk proses, belah ketupat untuk keputusan. Seret tiap langkah ke bentuknya.",
+      "bin-oval": "⬭ mulai / selesai",
+      "bin-io": "▱ masukan / keluaran",
+      "bin-proses": "▭ proses",
+      "bin-keputusan": "◇ keputusan",
+      "i1": "Mulai: mesin tiket menyala",
+      "i2": "Selesai: mesin kembali siaga",
+      "i3": "Mulai perjalanan",
+      "i4": "Berhenti",
+      "i5": "Masukkan uang",
+      "i6": "Baca kartu yang ditempel",
+      "i7": "Tampilkan jadwal kereta",
+      "i8": "Cetak tiket",
+      "i9": "Umumkan 'Kereta tiba'",
+      "i10": "kembalian = uang − harga",
+      "i11": "saldo = saldo − 3.500",
+      "i12": "penumpang = penumpang + 1",
+      "i13": "harga = jarak × 1.000",
+      "i14": "Saldo cukup?",
+      "i15": "Uang ≥ harga?",
+      "i16": "Kereta sudah tiba?",
+      "i17": "Tiket masih ada?"
+    },
+    "en": {
+      "judul": "Ticket Machine Flowchart",
+      "instruksi": "The station ticket machine's steps are drawn as a flowchart: oval for start/end, parallelogram for input/output, rectangle for process, diamond for decision. Drag each step to its shape.",
+      "bin-oval": "⬭ start / end",
+      "bin-io": "▱ input / output",
+      "bin-proses": "▭ process",
+      "bin-keputusan": "◇ decision",
+      "i1": "Start: ticket machine turns on",
+      "i2": "End: machine goes back to standby",
+      "i3": "Start the trip",
+      "i4": "Stop",
+      "i5": "Insert money",
+      "i6": "Read the tapped card",
+      "i7": "Show the train timetable",
+      "i8": "Print the ticket",
+      "i9": "Announce 'Train arriving'",
+      "i10": "change = money − price",
+      "i11": "balance = balance − 3,500",
+      "i12": "passengers = passengers + 1",
+      "i13": "price = distance × 1,000",
+      "i14": "Enough balance?",
+      "i15": "Money ≥ price?",
+      "i16": "Has the train arrived?",
+      "i17": "Any tickets left?"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah bentuk aktif (urutan: oval, masukan/keluaran, proses, keputusan)"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah langkah per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "oval",
+      "labelKey": "bin-oval"
+    },
+    {
+      "id": "io",
+      "labelKey": "bin-io"
+    },
+    {
+      "id": "proses",
+      "labelKey": "bin-proses"
+    },
+    {
+      "id": "keputusan",
+      "labelKey": "bin-keputusan"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "oval",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "oval",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "oval",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "oval",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "io",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "proses",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "keputusan",
+      "scale": 0.5
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "keputusan",
+      "scale": 0.5
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "keputusan",
+      "scale": 0.5
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "keputusan",
+      "scale": 0.5
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "id": "sd4-sains-uji-adil-rumah",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uji Adil di Rumah",
+      "instruksi": "Dengarkan percobaan di rumah. Pilih hal yang sengaja diubah, hal yang harus dibuat sama, atau hal yang diukur agar ujinya adil.",
+      "b-pilihan": "pilihan",
+      "i-suhuair": "suhu air (hangat atau dingin)",
+      "i-banyakgula": "banyak gula yang dimasukkan",
+      "i-banyakair": "banyak air di gelas",
+      "i-waktularut": "waktu sampai gula habis larut",
+      "i-lebarsayap": "lebar sayap pesawat kertas",
+      "i-jeniskertas": "jenis kertas",
+      "i-kuatlempar": "kuat lemparan dan tempat melempar",
+      "i-jarakterbang": "jarak terbang pesawat",
+      "i-jeniskain": "jenis kain",
+      "i-ukurankain": "ukuran potongan kain",
+      "i-banyakserap": "banyak air yang terserap kain",
+      "i-duaubah": "dua hal diubah sekaligus",
+      "i-gelasbening": "gelasnya bening",
+      "i-sendoklogam": "sendoknya dari logam",
+      "i-warnapesawat": "warna pesawatnya berbeda",
+      "i-dihalaman": "diuji di halaman",
+      "p-gula-ubah": "Apakah gula lebih cepat larut di air hangat daripada di air dingin? Apa yang sengaja diubah?",
+      "p-gula-sama": "Uji gula di air hangat dan dingin: apa yang harus dibuat sama di kedua gelas?",
+      "p-gula-ukur": "Uji gula di air hangat dan dingin: apa yang diukur?",
+      "p-gula-sama2": "Uji gula di air hangat dan dingin: selain banyak gula, apa lagi yang harus sama?",
+      "p-pesawat-ubah": "Apakah pesawat kertas bersayap lebar terbang lebih jauh daripada yang bersayap sempit? Apa yang sengaja diubah?",
+      "p-pesawat-sama": "Uji pesawat kertas tadi: apa yang harus dibuat sama?",
+      "p-pesawat-ukur": "Uji pesawat kertas tadi: apa yang diukur?",
+      "p-pesawat-sama2": "Uji pesawat kertas tadi: selain jenis kertas, apa lagi yang harus sama?",
+      "p-kain-ubah": "Kain mana yang paling banyak menyerap air tumpahan? Apa yang sengaja diubah?",
+      "p-kain-sama": "Uji kain penyerap tadi: apa yang harus dibuat sama?",
+      "p-kain-ukur": "Uji kain penyerap tadi: apa yang diukur?",
+      "p-gula-curang": "Rina menguji gula di air hangat dan air dingin, tetapi gelas air hangat diberi gula lebih sedikit. Mengapa ujinya tidak adil?",
+      "p-pesawat-curang": "Dua pesawat kertas diuji, tetapi yang bersayap lebar dilempar oleh kakak yang lebih kuat. Mengapa ujinya tidak adil?"
+    },
+    "en": {
+      "judul": "A Fair Test at Home",
+      "instruksi": "Listen to the experiment at home. Choose what is changed on purpose, what must be kept the same, or what is measured so the test is fair.",
+      "b-pilihan": "choices",
+      "i-suhuair": "water temperature (warm or cold)",
+      "i-banyakgula": "how much sugar is put in",
+      "i-banyakair": "how much water is in the glass",
+      "i-waktularut": "time until the sugar has dissolved",
+      "i-lebarsayap": "width of the paper plane's wings",
+      "i-jeniskertas": "type of paper",
+      "i-kuatlempar": "how hard and where it is thrown from",
+      "i-jarakterbang": "how far the plane flies",
+      "i-jeniskain": "type of cloth",
+      "i-ukurankain": "size of the cloth piece",
+      "i-banyakserap": "how much water the cloth soaks up",
+      "i-duaubah": "two things were changed at once",
+      "i-gelasbening": "the glasses are clear",
+      "i-sendoklogam": "the spoons are metal",
+      "i-warnapesawat": "the planes are different colours",
+      "i-dihalaman": "it was tested in the yard",
+      "p-gula-ubah": "Does sugar dissolve faster in warm water than in cold water? What do we change on purpose?",
+      "p-gula-sama": "In the warm-and-cold sugar test: what must be kept the same in both glasses?",
+      "p-gula-ukur": "In the warm-and-cold sugar test: what do we measure?",
+      "p-gula-sama2": "In the warm-and-cold sugar test: besides the amount of sugar, what else must be the same?",
+      "p-pesawat-ubah": "Does a paper plane with wide wings fly farther than one with narrow wings? What do we change on purpose?",
+      "p-pesawat-sama": "In the paper plane test: what must be kept the same?",
+      "p-pesawat-ukur": "In the paper plane test: what do we measure?",
+      "p-pesawat-sama2": "In the paper plane test: besides the type of paper, what else must be the same?",
+      "p-kain-ubah": "Which cloth soaks up the most spilled water? What do we change on purpose?",
+      "p-kain-sama": "In the soaking cloth test: what must be kept the same?",
+      "p-kain-ukur": "In the soaking cloth test: what do we measure?",
+      "p-gula-curang": "Rina tests sugar in warm and cold water, but the warm glass gets less sugar. Why is the test not fair?",
+      "p-pesawat-curang": "Two paper planes are tested, but the wide-winged one is thrown by an older brother who is stronger. Why is the test not fair?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "suhuair",
+      "labelKey": "i-suhuair",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "banyakgula",
+      "labelKey": "i-banyakgula",
+      "bin": "pilihan",
+      "emoji": "🥄"
+    },
+    {
+      "id": "banyakair",
+      "labelKey": "i-banyakair",
+      "bin": "pilihan",
+      "emoji": "🥛"
+    },
+    {
+      "id": "waktularut",
+      "labelKey": "i-waktularut",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "lebarsayap",
+      "labelKey": "i-lebarsayap",
+      "bin": "pilihan",
+      "emoji": "✈️"
+    },
+    {
+      "id": "jeniskertas",
+      "labelKey": "i-jeniskertas",
+      "bin": "pilihan",
+      "emoji": "📄"
+    },
+    {
+      "id": "kuatlempar",
+      "labelKey": "i-kuatlempar",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "jarakterbang",
+      "labelKey": "i-jarakterbang",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "jeniskain",
+      "labelKey": "i-jeniskain",
+      "bin": "pilihan",
+      "emoji": "🧺"
+    },
+    {
+      "id": "ukurankain",
+      "labelKey": "i-ukurankain",
+      "bin": "pilihan",
+      "emoji": "✂️"
+    },
+    {
+      "id": "banyakserap",
+      "labelKey": "i-banyakserap",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "duaubah",
+      "labelKey": "i-duaubah",
+      "bin": "pilihan",
+      "emoji": "⚠️"
+    },
+    {
+      "id": "gelasbening",
+      "labelKey": "i-gelasbening",
+      "bin": "pilihan",
+      "emoji": "🔍"
+    },
+    {
+      "id": "sendoklogam",
+      "labelKey": "i-sendoklogam",
+      "bin": "pilihan",
+      "emoji": "🍴"
+    },
+    {
+      "id": "warnapesawat",
+      "labelKey": "i-warnapesawat",
+      "bin": "pilihan",
+      "emoji": "🎨"
+    },
+    {
+      "id": "dihalaman",
+      "labelKey": "i-dihalaman",
+      "bin": "pilihan",
+      "emoji": "🏡"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "gula-ubah",
+      "promptKey": "p-gula-ubah",
+      "choices": [
+        "suhuair",
+        "banyakgula",
+        "waktularut"
+      ],
+      "correct": "suhuair"
+    },
+    {
+      "id": "gula-sama",
+      "promptKey": "p-gula-sama",
+      "choices": [
+        "banyakgula",
+        "suhuair",
+        "waktularut"
+      ],
+      "correct": "banyakgula"
+    },
+    {
+      "id": "gula-ukur",
+      "promptKey": "p-gula-ukur",
+      "choices": [
+        "waktularut",
+        "suhuair",
+        "banyakgula"
+      ],
+      "correct": "waktularut"
+    },
+    {
+      "id": "gula-sama2",
+      "promptKey": "p-gula-sama2",
+      "choices": [
+        "banyakair",
+        "suhuair",
+        "waktularut"
+      ],
+      "correct": "banyakair"
+    },
+    {
+      "id": "pesawat-ubah",
+      "promptKey": "p-pesawat-ubah",
+      "choices": [
+        "lebarsayap",
+        "jeniskertas",
+        "jarakterbang"
+      ],
+      "correct": "lebarsayap"
+    },
+    {
+      "id": "pesawat-sama",
+      "promptKey": "p-pesawat-sama",
+      "choices": [
+        "jeniskertas",
+        "lebarsayap",
+        "jarakterbang"
+      ],
+      "correct": "jeniskertas"
+    },
+    {
+      "id": "pesawat-ukur",
+      "promptKey": "p-pesawat-ukur",
+      "choices": [
+        "jarakterbang",
+        "lebarsayap",
+        "jeniskertas"
+      ],
+      "correct": "jarakterbang"
+    },
+    {
+      "id": "pesawat-sama2",
+      "promptKey": "p-pesawat-sama2",
+      "choices": [
+        "kuatlempar",
+        "lebarsayap",
+        "jarakterbang"
+      ],
+      "correct": "kuatlempar"
+    },
+    {
+      "id": "kain-ubah",
+      "promptKey": "p-kain-ubah",
+      "choices": [
+        "jeniskain",
+        "ukurankain",
+        "banyakserap"
+      ],
+      "correct": "jeniskain"
+    },
+    {
+      "id": "kain-sama",
+      "promptKey": "p-kain-sama",
+      "choices": [
+        "ukurankain",
+        "jeniskain",
+        "banyakserap"
+      ],
+      "correct": "ukurankain"
+    },
+    {
+      "id": "kain-ukur",
+      "promptKey": "p-kain-ukur",
+      "choices": [
+        "banyakserap",
+        "jeniskain",
+        "ukurankain"
+      ],
+      "correct": "banyakserap"
+    },
+    {
+      "id": "gula-curang",
+      "promptKey": "p-gula-curang",
+      "choices": [
+        "duaubah",
+        "gelasbening",
+        "sendoklogam"
+      ],
+      "correct": "duaubah"
+    },
+    {
+      "id": "pesawat-curang",
+      "promptKey": "p-pesawat-curang",
+      "choices": [
+        "duaubah",
+        "warnapesawat",
+        "dihalaman"
+      ],
+      "correct": "duaubah"
+    }
+  ]
+}

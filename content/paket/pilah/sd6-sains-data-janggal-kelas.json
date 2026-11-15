@@ -1,0 +1,578 @@
+{
+  "id": "sd6-sains-data-janggal-kelas",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Buku Catatan Percobaan Kelas",
+      "instruksi": "Baca catatan percobaan yang diulang beberapa kali. Temukan hasil yang janggal atau jawab mengapa pengukuran perlu diulang.",
+      "b-pilihan": "pilihan",
+      "i-a1": "ulangan 1: 2,1 detik",
+      "i-a2": "ulangan 2: 2,0 detik",
+      "i-a3": "ulangan 3: 4,8 detik",
+      "i-a4": "ulangan 4: 2,2 detik",
+      "i-b1": "ulangan 1: 80 cm",
+      "i-b2": "ulangan 2: 82 cm",
+      "i-b3": "ulangan 3: 81 cm",
+      "i-b4": "ulangan 4: 20 cm",
+      "i-c1": "ulangan 1: 2 °C",
+      "i-c2": "ulangan 2: 3 °C",
+      "i-c3": "ulangan 3: 25 °C",
+      "i-c4": "ulangan 4: 2 °C",
+      "i-d1": "ulangan 1: 30 tetes",
+      "i-d2": "ulangan 2: 29 tetes",
+      "i-d3": "ulangan 3: 31 tetes",
+      "i-d4": "ulangan 4: 9 tetes",
+      "i-e1": "ulangan 1: 4 menit",
+      "i-e2": "ulangan 2: 4 menit",
+      "i-e3": "ulangan 3: 12 menit",
+      "i-e4": "ulangan 4: 5 menit",
+      "i-f1": "ulangan 1: 52 g",
+      "i-f2": "ulangan 2: 51 g",
+      "i-f3": "ulangan 3: 52 g",
+      "i-f4": "ulangan 4: 15 g",
+      "i-g1": "ulangan 1: 6 m",
+      "i-g2": "ulangan 2: 1 m",
+      "i-g3": "ulangan 3: 6 m",
+      "i-g4": "ulangan 4: 5 m",
+      "i-h1": "ulangan 1: 80 denyut",
+      "i-h2": "ulangan 2: 140 denyut",
+      "i-h3": "ulangan 3: 78 denyut",
+      "i-h4": "ulangan 4: 82 denyut",
+      "i-i1": "ulangan 1: 60 detik",
+      "i-i2": "ulangan 2: 59 detik",
+      "i-i3": "ulangan 3: 61 detik",
+      "i-i4": "ulangan 4: 30 detik",
+      "i-ulangicari": "mengulang pengukuran itu dan mencari penyebabnya",
+      "i-pakai": "langsung memakai hasil itu",
+      "i-hapussemua": "menghapus semua data percobaan",
+      "i-adasalah": "bisa saja ada kesalahan yang tidak disadari",
+      "i-pastibenar": "satu kali mengukur pasti sudah benar",
+      "i-alatsempurna": "alat ukur tidak pernah salah",
+      "i-apikecil": "apinya lebih kecil saat ulangan itu",
+      "i-airsama": "airnya sama banyak di semua ulangan",
+      "i-pancisama": "pancinya sama di semua ulangan",
+      "i-wajar": "wajar, selalu ada sedikit perbedaan saat mengukur",
+      "i-pastijanggal": "pasti hasil yang janggal",
+      "p-r1": "Lama kelereng menggelinding menuruni papan yang sama diukur 4 kali. Mana hasil yang janggal?",
+      "p-r2": "Panjang bayangan tongkat yang sama pukul 09.00 diukur 4 hari cerah berturut-turut. Mana hasil yang janggal?",
+      "p-r3": "Suhu air es di gelas yang sama diukur 4 kali setelah 1 menit. Mana hasil yang janggal?",
+      "p-r4": "Tetes air dari keran bocor yang sama dihitung selama 1 menit, 4 kali. Mana hasil yang janggal?",
+      "p-r5": "Lama air di panci yang sama sampai mendidih diukur 4 kali. Mana hasil yang janggal?",
+      "p-r6": "Segenggam kacang yang sama ditimbang 4 kali. Mana hasil yang janggal?",
+      "p-r7": "Jarak lemparan pesawat kertas yang sama oleh anak yang sama diukur 4 kali. Mana hasil yang janggal?",
+      "p-r8": "Denyut nadi Dodi saat duduk diam dihitung tiap menit, 4 kali. Mana hasil yang janggal?",
+      "p-r9": "Lama pasir di jam pasir yang sama habis diukur 4 kali. Mana hasil yang janggal?",
+      "p-r10": "Dodi menemukan satu hasil janggal di catatannya. Sebaiknya ia…",
+      "p-r11": "Mengapa mengukur satu kali saja kurang bisa dipercaya?",
+      "p-r12": "Air di panci yang sama sekali mendidih dalam 12 menit, padahal biasanya 4 menit. Penyebab yang mungkin adalah…",
+      "p-r13": "Hasil kelereng tadi 2,1 detik, 2,0 detik, dan 2,2 detik. Perbedaan kecil seperti ini…"
+    },
+    "en": {
+      "judul": "The Class Experiment Notebook",
+      "instruksi": "Read the notes from experiments repeated several times. Find the odd result, or answer why measurements are repeated.",
+      "b-pilihan": "choices",
+      "i-a1": "trial 1: 2.1 seconds",
+      "i-a2": "trial 2: 2.0 seconds",
+      "i-a3": "trial 3: 4.8 seconds",
+      "i-a4": "trial 4: 2.2 seconds",
+      "i-b1": "trial 1: 80 cm",
+      "i-b2": "trial 2: 82 cm",
+      "i-b3": "trial 3: 81 cm",
+      "i-b4": "trial 4: 20 cm",
+      "i-c1": "trial 1: 2 °C",
+      "i-c2": "trial 2: 3 °C",
+      "i-c3": "trial 3: 25 °C",
+      "i-c4": "trial 4: 2 °C",
+      "i-d1": "trial 1: 30 drops",
+      "i-d2": "trial 2: 29 drops",
+      "i-d3": "trial 3: 31 drops",
+      "i-d4": "trial 4: 9 drops",
+      "i-e1": "trial 1: 4 minutes",
+      "i-e2": "trial 2: 4 minutes",
+      "i-e3": "trial 3: 12 minutes",
+      "i-e4": "trial 4: 5 minutes",
+      "i-f1": "trial 1: 52 g",
+      "i-f2": "trial 2: 51 g",
+      "i-f3": "trial 3: 52 g",
+      "i-f4": "trial 4: 15 g",
+      "i-g1": "trial 1: 6 m",
+      "i-g2": "trial 2: 1 m",
+      "i-g3": "trial 3: 6 m",
+      "i-g4": "trial 4: 5 m",
+      "i-h1": "trial 1: 80 beats",
+      "i-h2": "trial 2: 140 beats",
+      "i-h3": "trial 3: 78 beats",
+      "i-h4": "trial 4: 82 beats",
+      "i-i1": "trial 1: 60 seconds",
+      "i-i2": "trial 2: 59 seconds",
+      "i-i3": "trial 3: 61 seconds",
+      "i-i4": "trial 4: 30 seconds",
+      "i-ulangicari": "repeat that measurement and look for the cause",
+      "i-pakai": "use that result straight away",
+      "i-hapussemua": "delete all the experiment data",
+      "i-adasalah": "there could be a mistake nobody noticed",
+      "i-pastibenar": "measuring once is always right",
+      "i-alatsempurna": "measuring tools are never wrong",
+      "i-apikecil": "the flame was smaller during that trial",
+      "i-airsama": "the amount of water was the same in every trial",
+      "i-pancisama": "the pan was the same in every trial",
+      "i-wajar": "normal: measurements always differ a little",
+      "i-pastijanggal": "definitely an odd result",
+      "p-r1": "The time for a marble to roll down the same board is measured 4 times. Which result is odd?",
+      "p-r2": "The shadow of the same stick at 9 a.m. is measured on 4 sunny days in a row. Which result is odd?",
+      "p-r3": "The temperature of iced water in the same glass is measured 4 times after 1 minute. Which result is odd?",
+      "p-r4": "Drips from the same leaking tap are counted for 1 minute, 4 times. Which result is odd?",
+      "p-r5": "The time for water in the same pan to boil is measured 4 times. Which result is odd?",
+      "p-r6": "The same handful of peanuts is weighed 4 times. Which result is odd?",
+      "p-r7": "The distance the same paper plane flies, thrown by the same child, is measured 4 times. Which result is odd?",
+      "p-r8": "Dodi's pulse while sitting still is counted for a minute, 4 times. Which result is odd?",
+      "p-r9": "The time for the same sand timer to run out is measured 4 times. Which result is odd?",
+      "p-r10": "Dodi finds one odd result in his notes. He should…",
+      "p-r11": "Why is measuring only once not very trustworthy?",
+      "p-r12": "Water in the same pan once took 12 minutes to boil instead of the usual 4. A likely cause is…",
+      "p-r13": "The marble results were 2.1, 2.0 and 2.2 seconds. Small differences like these are…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "a1",
+      "labelKey": "i-a1",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "a2",
+      "labelKey": "i-a2",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "a3",
+      "labelKey": "i-a3",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "a4",
+      "labelKey": "i-a4",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "b1",
+      "labelKey": "i-b1",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "b2",
+      "labelKey": "i-b2",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "b3",
+      "labelKey": "i-b3",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "b4",
+      "labelKey": "i-b4",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "c1",
+      "labelKey": "i-c1",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "c2",
+      "labelKey": "i-c2",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "c3",
+      "labelKey": "i-c3",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "c4",
+      "labelKey": "i-c4",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "d1",
+      "labelKey": "i-d1",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "d2",
+      "labelKey": "i-d2",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "d3",
+      "labelKey": "i-d3",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "d4",
+      "labelKey": "i-d4",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "e1",
+      "labelKey": "i-e1",
+      "bin": "pilihan",
+      "emoji": "⏲️"
+    },
+    {
+      "id": "e2",
+      "labelKey": "i-e2",
+      "bin": "pilihan",
+      "emoji": "⏲️"
+    },
+    {
+      "id": "e3",
+      "labelKey": "i-e3",
+      "bin": "pilihan",
+      "emoji": "⏲️"
+    },
+    {
+      "id": "e4",
+      "labelKey": "i-e4",
+      "bin": "pilihan",
+      "emoji": "⏲️"
+    },
+    {
+      "id": "f1",
+      "labelKey": "i-f1",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "f2",
+      "labelKey": "i-f2",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "f3",
+      "labelKey": "i-f3",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "f4",
+      "labelKey": "i-f4",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    },
+    {
+      "id": "g1",
+      "labelKey": "i-g1",
+      "bin": "pilihan",
+      "emoji": "✈️"
+    },
+    {
+      "id": "g2",
+      "labelKey": "i-g2",
+      "bin": "pilihan",
+      "emoji": "✈️"
+    },
+    {
+      "id": "g3",
+      "labelKey": "i-g3",
+      "bin": "pilihan",
+      "emoji": "✈️"
+    },
+    {
+      "id": "g4",
+      "labelKey": "i-g4",
+      "bin": "pilihan",
+      "emoji": "✈️"
+    },
+    {
+      "id": "h1",
+      "labelKey": "i-h1",
+      "bin": "pilihan",
+      "emoji": "💓"
+    },
+    {
+      "id": "h2",
+      "labelKey": "i-h2",
+      "bin": "pilihan",
+      "emoji": "💓"
+    },
+    {
+      "id": "h3",
+      "labelKey": "i-h3",
+      "bin": "pilihan",
+      "emoji": "💓"
+    },
+    {
+      "id": "h4",
+      "labelKey": "i-h4",
+      "bin": "pilihan",
+      "emoji": "💓"
+    },
+    {
+      "id": "i1",
+      "labelKey": "i-i1",
+      "bin": "pilihan",
+      "emoji": "⌛"
+    },
+    {
+      "id": "i2",
+      "labelKey": "i-i2",
+      "bin": "pilihan",
+      "emoji": "⌛"
+    },
+    {
+      "id": "i3",
+      "labelKey": "i-i3",
+      "bin": "pilihan",
+      "emoji": "⌛"
+    },
+    {
+      "id": "i4",
+      "labelKey": "i-i4",
+      "bin": "pilihan",
+      "emoji": "⌛"
+    },
+    {
+      "id": "ulangicari",
+      "labelKey": "i-ulangicari",
+      "bin": "pilihan",
+      "emoji": "🔁"
+    },
+    {
+      "id": "pakai",
+      "labelKey": "i-pakai",
+      "bin": "pilihan",
+      "emoji": "✅"
+    },
+    {
+      "id": "hapussemua",
+      "labelKey": "i-hapussemua",
+      "bin": "pilihan",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "adasalah",
+      "labelKey": "i-adasalah",
+      "bin": "pilihan",
+      "emoji": "❓"
+    },
+    {
+      "id": "pastibenar",
+      "labelKey": "i-pastibenar",
+      "bin": "pilihan",
+      "emoji": "💯"
+    },
+    {
+      "id": "alatsempurna",
+      "labelKey": "i-alatsempurna",
+      "bin": "pilihan",
+      "emoji": "🛠️"
+    },
+    {
+      "id": "apikecil",
+      "labelKey": "i-apikecil",
+      "bin": "pilihan",
+      "emoji": "🔥"
+    },
+    {
+      "id": "airsama",
+      "labelKey": "i-airsama",
+      "bin": "pilihan",
+      "emoji": "🚰"
+    },
+    {
+      "id": "pancisama",
+      "labelKey": "i-pancisama",
+      "bin": "pilihan",
+      "emoji": "🍳"
+    },
+    {
+      "id": "wajar",
+      "labelKey": "i-wajar",
+      "bin": "pilihan",
+      "emoji": "👌"
+    },
+    {
+      "id": "pastijanggal",
+      "labelKey": "i-pastijanggal",
+      "bin": "pilihan",
+      "emoji": "⚠️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "a3",
+        "a1",
+        "a2",
+        "a4"
+      ],
+      "correct": "a3"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "b4",
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "correct": "b4"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "c3",
+        "c1",
+        "c2",
+        "c4"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "d4",
+        "d1",
+        "d2",
+        "d3"
+      ],
+      "correct": "d4"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "e3",
+        "e1",
+        "e2",
+        "e4"
+      ],
+      "correct": "e3"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "f4",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "correct": "f4"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "g2",
+        "g1",
+        "g3",
+        "g4"
+      ],
+      "correct": "g2"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "h2",
+        "h1",
+        "h3",
+        "h4"
+      ],
+      "correct": "h2"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "i4",
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "correct": "i4"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "ulangicari",
+        "pakai",
+        "hapussemua"
+      ],
+      "correct": "ulangicari"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "adasalah",
+        "pastibenar",
+        "alatsempurna"
+      ],
+      "correct": "adasalah"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "apikecil",
+        "airsama",
+        "pancisama"
+      ],
+      "correct": "apikecil"
+    },
+    {
+      "id": "r13",
+      "promptKey": "p-r13",
+      "choices": [
+        "wajar",
+        "pastijanggal"
+      ],
+      "correct": "wajar"
+    }
+  ]
+}

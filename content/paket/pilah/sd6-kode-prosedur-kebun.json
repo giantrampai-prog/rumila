@@ -1,0 +1,470 @@
+{
+  "id": "sd6-kode-prosedur-kebun",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.SUBRUTIN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Prosedur Robot Kebun",
+      "instruksi": "Program robot kebun punya bagian yang berulang. Pilih prosedur yang paling tepat: tepat satu satuan yang berulang, atau prosedur berparameter bila hanya angkanya yang berbeda.",
+      "pilihan": "pilihan",
+      "c1": "satu_lubang(): gali, tanam, siram, maju 2",
+      "c2": "gali, tanam",
+      "c3": "siram, maju 2, gali",
+      "q1": "Robot kebun: gali, tanam, siram, maju 2, gali, tanam, siram, maju 2, gali, tanam, siram, maju 2. Bagian mana yang paling cocok dijadikan prosedur?",
+      "c4": "panen_dua(): petik, petik, taruh di keranjang",
+      "c5": "pulang()",
+      "c6": "taruh di keranjang, petik",
+      "q2": "Robot panen: petik, petik, taruh di keranjang, petik, petik, taruh di keranjang, petik, petik, taruh di keranjang, pulang. Prosedur mana yang paling tepat?",
+      "c7": "satu_pot(): maju 1, siram, siram",
+      "c8": "siram()",
+      "c9": "siram, maju 1",
+      "q3": "Siram pot berbaris: maju 1, siram, siram, maju 1, siram, siram, maju 1, siram, siram, maju 1, siram, siram. Prosedur apa yang paling berguna?",
+      "c10": "baris(n): maju n, tanam n biji",
+      "c11": "baris2() dan baris5()",
+      "c12": "tanam()",
+      "q4": "Dua bagian ini sama kecuali angkanya: (maju 2, tanam 2 biji) dan (maju 5, tanam 5 biji). Prosedur yang paling berguna adalah…",
+      "c13": "siram(tanaman, liter): ambil liter air, siram tanaman",
+      "c14": "siram_mawar()",
+      "c15": "ambil_air()",
+      "q5": "Program: ambil 1 liter air, siram mawar; ambil 3 liter air, siram pisang; ambil 2 liter air, siram cabai. Prosedur yang paling baik adalah…",
+      "c16": "kalau perlu diubah, cukup ubah di satu tempat",
+      "c17": "supaya robot berjalan lebih cepat",
+      "c18": "supaya tidak perlu menanam",
+      "q6": "Prosedur tanam_bibit() dipakai di 5 petak kebun. Apa untungnya menulisnya sebagai prosedur?",
+      "c19": "beri_makan_ayam()",
+      "c20": "buka gerbang, kumpulkan telur",
+      "c21": "sapu_kandang()",
+      "q7": "Program pagi: buka gerbang, beri makan ayam, kumpulkan telur, beri makan ayam, sapu kandang, beri makan ayam. Bagian mana yang cocok jadi prosedur?",
+      "c22": "ulangi 8 kali: cangkul()",
+      "c23": "cangkul() saja",
+      "c24": "ayun 8, tarik 8",
+      "q8": "Prosedur cangkul() = ayun, tarik. Petak kebun butuh 8 kali cangkul. Program terpendek adalah…",
+      "c25": "satu_bunga(): terbang 3, isap madu",
+      "c26": "isap madu, terbang 3, isap madu",
+      "c27": "kembali_ke_sarang()",
+      "q9": "Robot lebah: terbang 3, isap madu, terbang 3, isap madu, terbang 3, isap madu, kembali ke sarang. Prosedur mana yang paling pas?",
+      "c28": "pagar(panjang): ulangi 4: maju panjang, kanan",
+      "c29": "pagar_kecil() dan pagar_besar()",
+      "c30": "kanan()",
+      "q10": "Pagar kebun kecil: ulangi 4: maju 3, kanan. Pagar kebun besar: ulangi 4: maju 6, kanan. Prosedur yang paling berguna adalah…",
+      "c31": "buat prosedur saat_hujan()",
+      "c32": "tulis ulang di setiap tempat",
+      "c33": "hapus bagian itu",
+      "q11": "Bagian 'kalau hujan: tutup atap rumah kaca, matikan pompa' ditulis di 3 tempat dalam program. Sebaiknya…",
+      "c34": "sepasang(): tanam jagung, tanam kacang",
+      "c35": "tanam jagung, tanam kacang, tanam jagung",
+      "c36": "tanam_jagung()",
+      "q12": "Pola tanam: jagung, kacang, jagung, kacang, jagung, kacang. Prosedur mana yang paling tepat?"
+    },
+    "en": {
+      "judul": "Garden Robot Procedures",
+      "instruksi": "The garden robot's program has parts that repeat. Choose the best procedure: exactly one repeating unit, or a procedure with a parameter when only the number changes.",
+      "pilihan": "choices",
+      "c1": "one_hole(): dig, plant, water, forward 2",
+      "c2": "dig, plant",
+      "c3": "water, forward 2, dig",
+      "q1": "Garden robot: dig, plant, water, forward 2, dig, plant, water, forward 2, dig, plant, water, forward 2. Which part fits best as a procedure?",
+      "c4": "pick_two(): pick, pick, put in basket",
+      "c5": "go_home()",
+      "c6": "put in basket, pick",
+      "q2": "Harvest robot: pick, pick, put in basket, pick, pick, put in basket, pick, pick, put in basket, go home. Which procedure fits best?",
+      "c7": "one_pot(): forward 1, water, water",
+      "c8": "water()",
+      "c9": "water, forward 1",
+      "q3": "Watering a row of pots: forward 1, water, water, forward 1, water, water, forward 1, water, water, forward 1, water, water. Which procedure is most useful?",
+      "c10": "row(n): forward n, plant n seeds",
+      "c11": "row2() and row5()",
+      "c12": "plant()",
+      "q4": "These two parts are the same except for the number: (forward 2, plant 2 seeds) and (forward 5, plant 5 seeds). The most useful procedure is…",
+      "c13": "water(plant, litres): fetch litres of water, water the plant",
+      "c14": "water_rose()",
+      "c15": "fetch_water()",
+      "q5": "Program: fetch 1 litre of water, water the rose; fetch 3 litres, water the banana; fetch 2 litres, water the chilli. The best procedure is…",
+      "c16": "if it needs changing, you change it in one place",
+      "c17": "so the robot walks faster",
+      "c18": "so nothing needs planting",
+      "q6": "The procedure plant_seedling() is used in 5 garden plots. What is the benefit of writing it as a procedure?",
+      "c19": "feed_hens()",
+      "c20": "open the gate, collect eggs",
+      "c21": "sweep_coop()",
+      "q7": "Morning program: open the gate, feed the hens, collect eggs, feed the hens, sweep the coop, feed the hens. Which part fits as a procedure?",
+      "c22": "repeat 8 times: hoe()",
+      "c23": "just hoe()",
+      "c24": "swing 8, pull 8",
+      "q8": "The procedure hoe() = swing, pull. The plot needs 8 hoe strokes. The shortest program is…",
+      "c25": "one_flower(): fly 3, sip nectar",
+      "c26": "sip nectar, fly 3, sip nectar",
+      "c27": "back_to_hive()",
+      "q9": "Bee robot: fly 3, sip nectar, fly 3, sip nectar, fly 3, sip nectar, back to the hive. Which procedure fits best?",
+      "c28": "fence(length): repeat 4: forward length, right",
+      "c29": "small_fence() and big_fence()",
+      "c30": "right()",
+      "q10": "Small garden fence: repeat 4: forward 3, right. Big garden fence: repeat 4: forward 6, right. The most useful procedure is…",
+      "c31": "make a procedure when_raining()",
+      "c32": "rewrite it in every place",
+      "c33": "delete that part",
+      "q11": "The part 'if it rains: close the greenhouse roof, switch off the pump' is written in 3 places in the program. It is best to…",
+      "c34": "a_pair(): plant corn, plant beans",
+      "c35": "plant corn, plant beans, plant corn",
+      "c36": "plant_corn()",
+      "q12": "Planting pattern: corn, beans, corn, beans, corn, beans. Which procedure fits best?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c34"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "sd3-kode-daring-luring",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD3.JARINGAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Daring atau Luring?",
+      "instruksi": "Kegiatan di ponsel ini butuh internet, atau bisa dilakukan tanpa internet? Taruh di kotak yang cocok.",
+      "bin-butuh": "butuh internet",
+      "bin-tanpa": "bisa tanpa internet",
+      "i-ramalan": "melihat ramalan cuaca terbaru",
+      "i-ojek": "memesan ojek daring",
+      "i-tiket": "membeli tiket kereta lewat aplikasi",
+      "i-game-daring": "main game bersama teman di kota lain",
+      "i-unggah": "mengunggah tugas ke kelas daring",
+      "i-berita": "membaca berita hari ini di situs",
+      "i-siaran": "menonton siaran langsung pertandingan",
+      "i-senter": "menyalakan senter ponsel",
+      "i-rekam": "merekam suara",
+      "i-stopwatch": "memakai stopwatch",
+      "i-lagu-unduh": "memutar lagu yang sudah diunduh",
+      "i-buku-unduh": "membaca buku yang sudah diunduh",
+      "i-catatan": "menulis catatan",
+      "i-jam": "melihat jam"
+    },
+    "en": {
+      "judul": "Online or Offline?",
+      "instruksi": "Does this phone activity need the internet, or can it be done without it? Put it in the right box.",
+      "bin-butuh": "needs the internet",
+      "bin-tanpa": "works without the internet",
+      "i-ramalan": "checking the latest weather forecast",
+      "i-ojek": "booking an online motorbike taxi",
+      "i-tiket": "buying a train ticket in an app",
+      "i-game-daring": "playing a game with a friend in another city",
+      "i-unggah": "uploading homework to an online class",
+      "i-berita": "reading today's news on a website",
+      "i-siaran": "watching a live match stream",
+      "i-senter": "turning on the phone torch",
+      "i-rekam": "recording your voice",
+      "i-stopwatch": "using the stopwatch",
+      "i-lagu-unduh": "playing a song you already downloaded",
+      "i-buku-unduh": "reading a book you already downloaded",
+      "i-catatan": "writing a note",
+      "i-jam": "checking the time"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah kegiatan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "butuh",
+      "labelKey": "bin-butuh",
+      "emoji": "🌐"
+    },
+    {
+      "id": "tanpa",
+      "labelKey": "bin-tanpa",
+      "emoji": "✈️"
+    }
+  ],
+  "items": [
+    {
+      "id": "ramalan",
+      "labelKey": "i-ramalan",
+      "bin": "butuh",
+      "emoji": "🌦️"
+    },
+    {
+      "id": "ojek",
+      "labelKey": "i-ojek",
+      "bin": "butuh",
+      "emoji": "🛵"
+    },
+    {
+      "id": "tiket",
+      "labelKey": "i-tiket",
+      "bin": "butuh",
+      "emoji": "🎫"
+    },
+    {
+      "id": "game-daring",
+      "labelKey": "i-game-daring",
+      "bin": "butuh",
+      "emoji": "🎮"
+    },
+    {
+      "id": "unggah",
+      "labelKey": "i-unggah",
+      "bin": "butuh",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "berita",
+      "labelKey": "i-berita",
+      "bin": "butuh",
+      "emoji": "📰"
+    },
+    {
+      "id": "siaran",
+      "labelKey": "i-siaran",
+      "bin": "butuh",
+      "emoji": "📡"
+    },
+    {
+      "id": "senter",
+      "labelKey": "i-senter",
+      "bin": "tanpa",
+      "emoji": "🔦"
+    },
+    {
+      "id": "rekam",
+      "labelKey": "i-rekam",
+      "bin": "tanpa",
+      "emoji": "🎙️"
+    },
+    {
+      "id": "stopwatch",
+      "labelKey": "i-stopwatch",
+      "bin": "tanpa",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "lagu-unduh",
+      "labelKey": "i-lagu-unduh",
+      "bin": "tanpa",
+      "emoji": "🎵"
+    },
+    {
+      "id": "buku-unduh",
+      "labelKey": "i-buku-unduh",
+      "bin": "tanpa",
+      "emoji": "📖"
+    },
+    {
+      "id": "catatan",
+      "labelKey": "i-catatan",
+      "bin": "tanpa",
+      "emoji": "📝"
+    },
+    {
+      "id": "jam",
+      "labelKey": "i-jam",
+      "bin": "tanpa",
+      "emoji": "🕐"
+    }
+  ]
+}

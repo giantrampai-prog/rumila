@@ -1,0 +1,474 @@
+{
+  "id": "sd3-mat-lipat-huruf-dan-kata",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lipat Huruf dan Kata",
+      "instruksi": "Bayangkan melipat huruf atau kata dari atas ke bawah (tegak) dan dari kiri ke kanan (mendatar). Sentuh yang kedua bagiannya pas.",
+      "pilihan": "pilihan",
+      "q1": "Huruf mana yang garis simetrinya hanya tegak?",
+      "c1": "A",
+      "c2": "B",
+      "c3": "H",
+      "c4": "F",
+      "q2": "Dilipat tegak pas, dilipat mendatar tidak pas. Huruf mana?",
+      "c5": "W",
+      "c6": "D",
+      "c7": "X",
+      "c8": "R",
+      "q3": "Huruf mana yang garis simetrinya hanya mendatar?",
+      "c9": "C",
+      "c10": "M",
+      "c11": "O",
+      "c12": "G",
+      "q4": "Dilipat mendatar pas, dilipat tegak tidak pas. Huruf mana?",
+      "c13": "E",
+      "c14": "Y",
+      "c15": "I",
+      "c16": "N",
+      "q5": "Huruf mana yang punya garis simetri tegak DAN mendatar?",
+      "c17": "T",
+      "c18": "K",
+      "c19": "J",
+      "q6": "Dilipat ke dua arah, dua-duanya pas. Huruf mana?",
+      "c20": "V",
+      "c21": "S",
+      "q7": "Huruf mana yang tidak punya garis simetri?",
+      "c22": "L",
+      "c23": "U",
+      "q8": "Dilipat ke arah mana pun tidak pernah pas. Huruf mana?",
+      "c24": "Z",
+      "q9": "Kata mana yang punya garis simetri mendatar?",
+      "c25": "KODE",
+      "c26": "KATA",
+      "c27": "BOLA",
+      "c28": "SAPI",
+      "q10": "Lipat mendatar di tengah. Kata mana yang pas?",
+      "c29": "HOBI",
+      "c30": "HUJAN",
+      "c31": "BATU",
+      "c32": "MEJA",
+      "q11": "Kata mana yang punya garis simetri tegak?",
+      "c33": "TAAT",
+      "c34": "TAPI",
+      "c35": "TOKO",
+      "c36": "MATA",
+      "q12": "Lipat tegak di tengah. Kata mana yang pas?",
+      "c37": "AHA",
+      "c38": "ADA",
+      "c39": "API",
+      "c40": "AKU"
+    },
+    "en": {
+      "judul": "Folding Letters and Words",
+      "instruksi": "Imagine folding the letter or word top to bottom (up-down line) and left to right (side-to-side line). Touch the one whose halves match.",
+      "pilihan": "choices",
+      "q1": "Which letter has only an up-down line of symmetry?",
+      "c1": "A",
+      "c2": "B",
+      "c3": "H",
+      "c4": "F",
+      "q2": "It matches when folded up-down but not side-to-side. Which letter?",
+      "c5": "W",
+      "c6": "D",
+      "c7": "X",
+      "c8": "R",
+      "q3": "Which letter has only a side-to-side line of symmetry?",
+      "c9": "C",
+      "c10": "M",
+      "c11": "O",
+      "c12": "G",
+      "q4": "It matches when folded side-to-side but not up-down. Which letter?",
+      "c13": "E",
+      "c14": "Y",
+      "c15": "I",
+      "c16": "N",
+      "q5": "Which letter has both an up-down AND a side-to-side line?",
+      "c17": "T",
+      "c18": "K",
+      "c19": "J",
+      "q6": "It matches when folded both ways. Which letter?",
+      "c20": "V",
+      "c21": "S",
+      "q7": "Which letter has no line of symmetry?",
+      "c22": "L",
+      "c23": "U",
+      "q8": "It never matches, whichever way you fold it. Which letter?",
+      "c24": "Z",
+      "q9": "Which word has a side-to-side line of symmetry?",
+      "c25": "KODE",
+      "c26": "KATA",
+      "c27": "BOLA",
+      "c28": "SAPI",
+      "q10": "Fold it side-to-side through the middle. Which word matches?",
+      "c29": "HOBI",
+      "c30": "HUJAN",
+      "c31": "BATU",
+      "c32": "MEJA",
+      "q11": "Which word has an up-down line of symmetry?",
+      "c33": "TAAT",
+      "c34": "TAPI",
+      "c35": "TOKO",
+      "c36": "MATA",
+      "q12": "Fold it up-down through the middle. Which word matches?",
+      "c37": "AHA",
+      "c38": "ADA",
+      "c39": "API",
+      "c40": "AKU"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c3",
+        "c17",
+        "c18",
+        "c19"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c7",
+        "c20",
+        "c2",
+        "c21"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c22",
+        "c23",
+        "c6",
+        "c15"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c24",
+        "c10",
+        "c9",
+        "c11"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c33",
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c33"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c37",
+        "c38",
+        "c39",
+        "c40"
+      ],
+      "correct": "c37"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-larut-atau-tidak",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -89,8 +89,9 @@
       "id": "gulabatu",
       "labelKey": "i-gulabatu",
       "bin": "larut",
-      "emoji": "🧊",
-      "color": "#fff8e1"
+      "color": "#fffde7",
+      "shape": "square",
+      "scale": 0.6
     },
     {
       "id": "susububuk",

@@ -1,0 +1,155 @@
+{
+  "id": "sd3-sains-temuan-tepi-sungai",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.FOSIL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Temuan di Tepi Sungai",
+      "instruksi": "Tim peneliti menemukan banyak benda di tepi sungai. Taruh ke rak fosil (sisa makhluk purba yang membatu) atau bukan fosil.",
+      "b-fosil": "fosil",
+      "b-bukan": "bukan fosil",
+      "i-gigihiu": "gigi hiu purba yang membatu",
+      "i-kayubatu": "batang kayu purba yang sudah membatu",
+      "i-pakis": "cetakan daun pakis di batu",
+      "i-jejakburung": "jejak kaki burung purba di batu",
+      "i-amonit": "cangkang spiral purba (amonit) di dalam batu",
+      "i-tengkorak": "tengkorak hewan purba yang membatu",
+      "i-gigisusu": "gigi susu adik yang baru copot",
+      "i-ranting": "ranting kayu kering",
+      "i-pakissegar": "daun pakis segar di kebun",
+      "i-jejakkucing": "jejak kaki kucing di lumpur kemarin",
+      "i-tulangikan": "tulang ikan sisa makan siang",
+      "i-siput": "siput kebun yang masih hidup"
+    },
+    "en": {
+      "judul": "Finds by the River",
+      "instruksi": "The research team found many things by the river. Put each on the fossil shelf (remains of ancient life turned to stone) or the not-a-fossil shelf.",
+      "b-fosil": "fossil",
+      "b-bukan": "not a fossil",
+      "i-gigihiu": "a stone tooth of an ancient shark",
+      "i-kayubatu": "an ancient tree trunk turned to stone",
+      "i-pakis": "a fern leaf print in rock",
+      "i-jejakburung": "footprints of an ancient bird in rock",
+      "i-amonit": "an ancient spiral shell (ammonite) in rock",
+      "i-tengkorak": "a stone skull of an ancient animal",
+      "i-gigisusu": "little brother's baby tooth that just fell out",
+      "i-ranting": "a dry twig",
+      "i-pakissegar": "a fresh fern leaf in the garden",
+      "i-jejakkucing": "cat footprints left in the mud yesterday",
+      "i-tulangikan": "fish bones left from lunch",
+      "i-siput": "a living garden snail"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "fosil",
+      "labelKey": "b-fosil",
+      "emoji": "🦴"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "b-bukan",
+      "emoji": "❌"
+    }
+  ],
+  "items": [
+    {
+      "id": "gigihiu",
+      "labelKey": "i-gigihiu",
+      "bin": "fosil",
+      "emoji": "🦷",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "kayubatu",
+      "labelKey": "i-kayubatu",
+      "bin": "fosil",
+      "emoji": "🪵",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "pakis",
+      "labelKey": "i-pakis",
+      "bin": "fosil",
+      "emoji": "🌿",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "jejakburung",
+      "labelKey": "i-jejakburung",
+      "bin": "fosil",
+      "emoji": "🐾",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "amonit",
+      "labelKey": "i-amonit",
+      "bin": "fosil",
+      "emoji": "🐚",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "tengkorak",
+      "labelKey": "i-tengkorak",
+      "bin": "fosil",
+      "emoji": "💀",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "gigisusu",
+      "labelKey": "i-gigisusu",
+      "bin": "bukan",
+      "emoji": "🦷"
+    },
+    {
+      "id": "ranting",
+      "labelKey": "i-ranting",
+      "bin": "bukan",
+      "emoji": "🪵"
+    },
+    {
+      "id": "pakissegar",
+      "labelKey": "i-pakissegar",
+      "bin": "bukan",
+      "emoji": "🌿"
+    },
+    {
+      "id": "jejakkucing",
+      "labelKey": "i-jejakkucing",
+      "bin": "bukan",
+      "emoji": "🐾"
+    },
+    {
+      "id": "tulangikan",
+      "labelKey": "i-tulangikan",
+      "bin": "bukan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "siput",
+      "labelKey": "i-siput",
+      "bin": "bukan",
+      "emoji": "🐌"
+    }
+  ],
+  "pilihan": []
+}

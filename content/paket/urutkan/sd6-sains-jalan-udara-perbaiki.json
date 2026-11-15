@@ -1,0 +1,509 @@
+{
+  "id": "sd6-sains-jalan-udara-perbaiki",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERNAPASAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Napas Pendaki yang Tertukar",
+      "instruksi": "Dua langkah jalan udara tertukar tempat. Tukar keduanya supaya urut.",
+      "s-melati": "Menghirup harum melati",
+      "melati-hidung": "harum melati terhirup lewat lubang hidung",
+      "melati-saring": "rambut dan lendir hidung menangkap debu",
+      "melati-trakea": "udara turun lewat batang tenggorok (trakea)",
+      "melati-bronkus": "trakea bercabang ke bronkus kiri dan kanan",
+      "melati-alveolus": "udara sampai di gelembung paru-paru (alveolus)",
+      "melati-darah": "oksigen pindah ke pembuluh darah",
+      "s-menyelam": "Napas dalam sebelum menyelam",
+      "menyelam-mulut": "menarik napas panjang lewat mulut",
+      "menyelam-trakea": "udara turun ke trakea",
+      "menyelam-bronkus": "udara masuk ke bronkus kiri dan kanan",
+      "menyelam-alveolus": "udara mengisi jutaan alveolus",
+      "menyelam-darah": "oksigen menembus dinding alveolus ke dalam darah",
+      "s-mendaki": "Mendaki bukit",
+      "mendaki-otot": "otot kaki bekerja keras dan butuh oksigen",
+      "mendaki-hidung": "napas jadi cepat, udara masuk lewat hidung",
+      "mendaki-saluran": "udara mengalir lewat trakea dan bronkus",
+      "mendaki-alveolus": "oksigen pindah dari alveolus ke darah",
+      "mendaki-kaki": "darah membawa oksigen ke otot kaki",
+      "s-debu": "Udara berdebu di jalan",
+      "debu-masuk": "udara berdebu masuk ke hidung",
+      "debu-saring": "rambut dan lendir hidung menahan debu",
+      "debu-trakea": "udara yang lebih bersih turun lewat trakea",
+      "debu-bronkus": "udara masuk ke bronkus",
+      "debu-alveolus": "udara bersih sampai di alveolus",
+      "s-dingin": "Udara dingin di puncak bukit",
+      "dingin-hidung": "udara dingin masuk lewat hidung",
+      "dingin-hangat": "rongga hidung menghangatkan udara",
+      "dingin-trakea": "udara hangat turun lewat trakea",
+      "dingin-alveolus": "udara sampai di alveolus",
+      "dingin-darah": "oksigen masuk ke darah",
+      "s-berenang": "Bernapas saat berenang",
+      "berenang-mulut": "kepala keluar dari air, udara dihirup lewat mulut",
+      "berenang-trakea": "udara turun lewat trakea",
+      "berenang-bronkus": "udara masuk ke bronkus",
+      "berenang-alveolus": "udara mengisi alveolus",
+      "berenang-darah": "oksigen masuk ke darah",
+      "s-otak": "Oksigen untuk otak",
+      "otak-alveolus": "oksigen sampai di alveolus",
+      "otak-darah": "oksigen masuk ke darah di sekitar alveolus",
+      "otak-jantung": "darah kaya oksigen kembali ke jantung",
+      "otak-pompa": "jantung memompa darah ke otak",
+      "otak-sel": "sel otak memakai oksigen itu",
+      "s-suling": "Meniup suling",
+      "suling-co2": "karbon dioksida keluar dari darah ke alveolus",
+      "suling-bronkus": "udara terdorong keluar lewat bronkus",
+      "suling-trakea": "udara naik lewat trakea",
+      "suling-mulut": "udara keluar dari mulut ke lubang suling",
+      "s-sepeda": "Karbon dioksida sesudah bersepeda",
+      "sepeda-otot": "otot kaki menghasilkan karbon dioksida",
+      "sepeda-darah": "darah membawa karbon dioksida ke paru-paru",
+      "sepeda-alveolus": "karbon dioksida pindah ke alveolus",
+      "sepeda-saluran": "udara keluar lewat bronkus dan trakea",
+      "sepeda-hidung": "karbon dioksida diembuskan lewat hidung",
+      "s-nyanyi": "Bernyanyi lagu panjang",
+      "nyanyi-alveolus": "udara didorong keluar dari alveolus",
+      "nyanyi-bronkus": "udara melewati bronkus",
+      "nyanyi-trakea": "udara naik lewat trakea",
+      "nyanyi-pita": "udara menggetarkan pita suara di pangkal tenggorok",
+      "nyanyi-mulut": "suara dan udara keluar lewat mulut",
+      "s-gelembung": "Meniup gelembung sabun",
+      "gelembung-co2": "darah melepas karbon dioksida ke alveolus",
+      "gelembung-bronkus": "udara keluar melewati bronkus",
+      "gelembung-trakea": "udara naik lewat trakea",
+      "gelembung-mulut": "udara keluar dari mulut",
+      "gelembung-gelembung": "udara itu mengisi gelembung sabun"
+    },
+    "en": {
+      "judul": "The Hiker's Mixed-Up Breath",
+      "instruksi": "Two steps on the air's path have swapped places. Swap them back into order.",
+      "s-melati": "Breathing in the scent of jasmine",
+      "melati-hidung": "the jasmine scent is breathed in through the nostrils",
+      "melati-saring": "nose hairs and mucus trap dust",
+      "melati-trakea": "the air goes down the windpipe (trachea)",
+      "melati-bronkus": "the trachea branches into the left and right bronchi",
+      "melati-alveolus": "the air reaches the air sacs (alveoli)",
+      "melati-darah": "oxygen passes into the blood vessels",
+      "s-menyelam": "A deep breath before diving",
+      "menyelam-mulut": "taking a long breath through the mouth",
+      "menyelam-trakea": "the air goes down the trachea",
+      "menyelam-bronkus": "the air enters the left and right bronchi",
+      "menyelam-alveolus": "the air fills millions of alveoli",
+      "menyelam-darah": "oxygen crosses the alveolus walls into the blood",
+      "s-mendaki": "Climbing a hill",
+      "mendaki-otot": "the leg muscles work hard and need oxygen",
+      "mendaki-hidung": "breathing speeds up and air enters through the nose",
+      "mendaki-saluran": "the air flows through the trachea and bronchi",
+      "mendaki-alveolus": "oxygen moves from the alveoli into the blood",
+      "mendaki-kaki": "the blood carries oxygen to the leg muscles",
+      "s-debu": "Dusty air on the road",
+      "debu-masuk": "dusty air enters the nose",
+      "debu-saring": "nose hairs and mucus hold back the dust",
+      "debu-trakea": "the cleaner air goes down the trachea",
+      "debu-bronkus": "the air enters the bronchi",
+      "debu-alveolus": "clean air reaches the alveoli",
+      "s-dingin": "Cold air at the hilltop",
+      "dingin-hidung": "cold air enters through the nose",
+      "dingin-hangat": "the nose warms the air",
+      "dingin-trakea": "the warmed air goes down the trachea",
+      "dingin-alveolus": "the air reaches the alveoli",
+      "dingin-darah": "oxygen goes into the blood",
+      "s-berenang": "Breathing while swimming",
+      "berenang-mulut": "the head comes out of the water and air is breathed in through the mouth",
+      "berenang-trakea": "the air goes down the trachea",
+      "berenang-bronkus": "the air enters the bronchi",
+      "berenang-alveolus": "the air fills the alveoli",
+      "berenang-darah": "oxygen goes into the blood",
+      "s-otak": "Oxygen for the brain",
+      "otak-alveolus": "oxygen reaches the alveoli",
+      "otak-darah": "oxygen enters the blood around the alveoli",
+      "otak-jantung": "oxygen-rich blood returns to the heart",
+      "otak-pompa": "the heart pumps the blood to the brain",
+      "otak-sel": "brain cells use the oxygen",
+      "s-suling": "Playing a recorder",
+      "suling-co2": "carbon dioxide leaves the blood into the alveoli",
+      "suling-bronkus": "the air is pushed out through the bronchi",
+      "suling-trakea": "the air rises up the trachea",
+      "suling-mulut": "the air leaves the mouth into the recorder",
+      "s-sepeda": "Carbon dioxide after cycling",
+      "sepeda-otot": "the leg muscles make carbon dioxide",
+      "sepeda-darah": "the blood carries the carbon dioxide to the lungs",
+      "sepeda-alveolus": "the carbon dioxide passes into the alveoli",
+      "sepeda-saluran": "the air goes out through the bronchi and trachea",
+      "sepeda-hidung": "the carbon dioxide is breathed out through the nose",
+      "s-nyanyi": "Singing a long song",
+      "nyanyi-alveolus": "air is pushed out of the alveoli",
+      "nyanyi-bronkus": "the air passes through the bronchi",
+      "nyanyi-trakea": "the air rises up the trachea",
+      "nyanyi-pita": "the air vibrates the vocal cords in the voice box",
+      "nyanyi-mulut": "sound and air come out of the mouth",
+      "s-gelembung": "Blowing soap bubbles",
+      "gelembung-co2": "the blood releases carbon dioxide into the alveoli",
+      "gelembung-bronkus": "the air goes out through the bronchi",
+      "gelembung-trakea": "the air rises up the trachea",
+      "gelembung-mulut": "the air leaves the mouth",
+      "gelembung-gelembung": "that air fills a soap bubble"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 6 (beberapa jalur hanya 5 langkah)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "melati",
+      "titleKey": "s-melati",
+      "steps": [
+        {
+          "id": "hidung",
+          "labelKey": "melati-hidung",
+          "emoji": "👃"
+        },
+        {
+          "id": "saring",
+          "labelKey": "melati-saring",
+          "emoji": "🧹"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "melati-trakea",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "melati-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "melati-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "melati-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "menyelam",
+      "titleKey": "s-menyelam",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "menyelam-mulut",
+          "emoji": "😮"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "menyelam-trakea",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "menyelam-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "menyelam-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "menyelam-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "mendaki",
+      "titleKey": "s-mendaki",
+      "steps": [
+        {
+          "id": "otot",
+          "labelKey": "mendaki-otot",
+          "emoji": "🦵"
+        },
+        {
+          "id": "hidung",
+          "labelKey": "mendaki-hidung",
+          "emoji": "👃"
+        },
+        {
+          "id": "saluran",
+          "labelKey": "mendaki-saluran",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "mendaki-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "kaki",
+          "labelKey": "mendaki-kaki",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "debu",
+      "titleKey": "s-debu",
+      "steps": [
+        {
+          "id": "masuk",
+          "labelKey": "debu-masuk",
+          "emoji": "🌫️"
+        },
+        {
+          "id": "saring",
+          "labelKey": "debu-saring",
+          "emoji": "🧹"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "debu-trakea",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "debu-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "debu-alveolus",
+          "emoji": "🫧"
+        }
+      ]
+    },
+    {
+      "id": "dingin",
+      "titleKey": "s-dingin",
+      "steps": [
+        {
+          "id": "hidung",
+          "labelKey": "dingin-hidung",
+          "emoji": "🥶"
+        },
+        {
+          "id": "hangat",
+          "labelKey": "dingin-hangat",
+          "emoji": "♨️"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "dingin-trakea",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "dingin-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "dingin-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "berenang",
+      "titleKey": "s-berenang",
+      "steps": [
+        {
+          "id": "mulut",
+          "labelKey": "berenang-mulut",
+          "emoji": "🏊"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "berenang-trakea",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "berenang-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "berenang-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "berenang-darah",
+          "emoji": "🩸"
+        }
+      ]
+    },
+    {
+      "id": "otak",
+      "titleKey": "s-otak",
+      "steps": [
+        {
+          "id": "alveolus",
+          "labelKey": "otak-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "darah",
+          "labelKey": "otak-darah",
+          "emoji": "🩸"
+        },
+        {
+          "id": "jantung",
+          "labelKey": "otak-jantung",
+          "emoji": "🫀"
+        },
+        {
+          "id": "pompa",
+          "labelKey": "otak-pompa",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "sel",
+          "labelKey": "otak-sel",
+          "emoji": "🧠"
+        }
+      ]
+    },
+    {
+      "id": "suling",
+      "titleKey": "s-suling",
+      "steps": [
+        {
+          "id": "co2",
+          "labelKey": "suling-co2",
+          "emoji": "🩸"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "suling-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "suling-trakea",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "mulut",
+          "labelKey": "suling-mulut",
+          "emoji": "🎶"
+        }
+      ]
+    },
+    {
+      "id": "sepeda",
+      "titleKey": "s-sepeda",
+      "steps": [
+        {
+          "id": "otot",
+          "labelKey": "sepeda-otot",
+          "emoji": "🚴"
+        },
+        {
+          "id": "darah",
+          "labelKey": "sepeda-darah",
+          "emoji": "🩸"
+        },
+        {
+          "id": "alveolus",
+          "labelKey": "sepeda-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "saluran",
+          "labelKey": "sepeda-saluran",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "hidung",
+          "labelKey": "sepeda-hidung",
+          "emoji": "👃"
+        }
+      ]
+    },
+    {
+      "id": "nyanyi",
+      "titleKey": "s-nyanyi",
+      "steps": [
+        {
+          "id": "alveolus",
+          "labelKey": "nyanyi-alveolus",
+          "emoji": "🫧"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "nyanyi-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "nyanyi-trakea",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "pita",
+          "labelKey": "nyanyi-pita",
+          "emoji": "🎤"
+        },
+        {
+          "id": "mulut",
+          "labelKey": "nyanyi-mulut",
+          "emoji": "🎵"
+        }
+      ]
+    },
+    {
+      "id": "gelembung",
+      "titleKey": "s-gelembung",
+      "steps": [
+        {
+          "id": "co2",
+          "labelKey": "gelembung-co2",
+          "emoji": "🩸"
+        },
+        {
+          "id": "bronkus",
+          "labelKey": "gelembung-bronkus",
+          "emoji": "🌿"
+        },
+        {
+          "id": "trakea",
+          "labelKey": "gelembung-trakea",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "mulut",
+          "labelKey": "gelembung-mulut",
+          "emoji": "😗"
+        },
+        {
+          "id": "gelembung",
+          "labelKey": "gelembung-gelembung",
+          "emoji": "🫧"
+        }
+      ]
+    }
+  ]
+}

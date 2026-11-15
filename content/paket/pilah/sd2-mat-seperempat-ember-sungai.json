@@ -1,0 +1,314 @@
+{
+  "id": "sd2-mat-seperempat-ember-sungai",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.PECAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ikan Sungai untuk Empat Ember",
+      "instruksi": "Bagi semua tangkapan ke empat ember sama banyak. Seperempatnya adalah isi satu ember. Sentuh gambar yang benar.",
+      "i-ikan-2": "2 ikan",
+      "i-ikan-4": "4 ikan",
+      "i-ikan-3": "3 ikan",
+      "t-bagi-ikan-8": "8 ikan dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "i-ikan-6": "6 ikan",
+      "t-bagi-ikan-12": "12 ikan dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "i-ikan-5": "5 ikan",
+      "t-bagi-ikan-16": "16 ikan dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "t-bagi-ikan-20": "20 ikan dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "i-ikan-1": "1 ikan",
+      "t-bagi-ikan-4": "4 ikan dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "i-udang-2": "2 udang",
+      "i-udang-1": "1 udang",
+      "i-udang-4": "4 udang",
+      "t-bagi-udang-8": "8 udang dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "i-udang-3": "3 udang",
+      "i-udang-6": "6 udang",
+      "t-bagi-udang-12": "12 udang dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "i-udang-5": "5 udang",
+      "t-bagi-udang-16": "16 udang dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "t-bagi-udang-20": "20 udang dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "t-bagi-udang-4": "4 udang dibagi rata ke 4 ember. Satu ember berisi berapa?",
+      "t-seper-ikan-12": "Seperempat dari 12 ikan adalah …",
+      "t-seper-udang-20": "Seperempat dari 20 udang adalah …",
+      "t-seper-ikan-8": "Seperempat dari 8 ikan adalah …",
+      "t-seper-udang-16": "Seperempat dari 16 udang adalah …",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "River Catch for Four Buckets",
+      "instruksi": "Share the whole catch equally into four buckets. A quarter is what goes in one bucket. Tap the right picture.",
+      "i-ikan-2": "2 fish",
+      "i-ikan-4": "4 fish",
+      "i-ikan-3": "3 fish",
+      "t-bagi-ikan-8": "8 fish are shared equally into 4 buckets. How many in one bucket?",
+      "i-ikan-6": "6 fish",
+      "t-bagi-ikan-12": "12 fish are shared equally into 4 buckets. How many in one bucket?",
+      "i-ikan-5": "5 fish",
+      "t-bagi-ikan-16": "16 fish are shared equally into 4 buckets. How many in one bucket?",
+      "t-bagi-ikan-20": "20 fish are shared equally into 4 buckets. How many in one bucket?",
+      "i-ikan-1": "1 fish",
+      "t-bagi-ikan-4": "4 fish are shared equally into 4 buckets. How many in one bucket?",
+      "i-udang-2": "2 shrimp",
+      "i-udang-1": "1 shrimp",
+      "i-udang-4": "4 shrimp",
+      "t-bagi-udang-8": "8 shrimp are shared equally into 4 buckets. How many in one bucket?",
+      "i-udang-3": "3 shrimp",
+      "i-udang-6": "6 shrimp",
+      "t-bagi-udang-12": "12 shrimp are shared equally into 4 buckets. How many in one bucket?",
+      "i-udang-5": "5 shrimp",
+      "t-bagi-udang-16": "16 shrimp are shared equally into 4 buckets. How many in one bucket?",
+      "t-bagi-udang-20": "20 shrimp are shared equally into 4 buckets. How many in one bucket?",
+      "t-bagi-udang-4": "4 shrimp are shared equally into 4 buckets. How many in one bucket?",
+      "t-seper-ikan-12": "A quarter of 12 fish is …",
+      "t-seper-udang-20": "A quarter of 20 shrimp is …",
+      "t-seper-ikan-8": "A quarter of 8 fish is …",
+      "t-seper-udang-16": "A quarter of 16 shrimp is …",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "ikan-2",
+      "labelKey": "i-ikan-2",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "count": 2
+    },
+    {
+      "id": "ikan-4",
+      "labelKey": "i-ikan-4",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "count": 4
+    },
+    {
+      "id": "ikan-3",
+      "labelKey": "i-ikan-3",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "count": 3
+    },
+    {
+      "id": "ikan-6",
+      "labelKey": "i-ikan-6",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "count": 6
+    },
+    {
+      "id": "ikan-5",
+      "labelKey": "i-ikan-5",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "count": 5
+    },
+    {
+      "id": "ikan-1",
+      "labelKey": "i-ikan-1",
+      "bin": "pilihan",
+      "emoji": "🐟",
+      "count": 1
+    },
+    {
+      "id": "udang-2",
+      "labelKey": "i-udang-2",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "count": 2
+    },
+    {
+      "id": "udang-1",
+      "labelKey": "i-udang-1",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "count": 1
+    },
+    {
+      "id": "udang-4",
+      "labelKey": "i-udang-4",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "count": 4
+    },
+    {
+      "id": "udang-3",
+      "labelKey": "i-udang-3",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "count": 3
+    },
+    {
+      "id": "udang-6",
+      "labelKey": "i-udang-6",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "count": 6
+    },
+    {
+      "id": "udang-5",
+      "labelKey": "i-udang-5",
+      "bin": "pilihan",
+      "emoji": "🦐",
+      "count": 5
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-bagi-ikan-8",
+      "promptKey": "t-bagi-ikan-8",
+      "choices": [
+        "ikan-2",
+        "ikan-4",
+        "ikan-3"
+      ],
+      "correct": "ikan-2"
+    },
+    {
+      "id": "r-bagi-ikan-12",
+      "promptKey": "t-bagi-ikan-12",
+      "choices": [
+        "ikan-3",
+        "ikan-6",
+        "ikan-4"
+      ],
+      "correct": "ikan-3"
+    },
+    {
+      "id": "r-bagi-ikan-16",
+      "promptKey": "t-bagi-ikan-16",
+      "choices": [
+        "ikan-4",
+        "ikan-3",
+        "ikan-5"
+      ],
+      "correct": "ikan-4"
+    },
+    {
+      "id": "r-bagi-ikan-20",
+      "promptKey": "t-bagi-ikan-20",
+      "choices": [
+        "ikan-5",
+        "ikan-4",
+        "ikan-6"
+      ],
+      "correct": "ikan-5"
+    },
+    {
+      "id": "r-bagi-ikan-4",
+      "promptKey": "t-bagi-ikan-4",
+      "choices": [
+        "ikan-1",
+        "ikan-2",
+        "ikan-4"
+      ],
+      "correct": "ikan-1"
+    },
+    {
+      "id": "r-bagi-udang-8",
+      "promptKey": "t-bagi-udang-8",
+      "choices": [
+        "udang-2",
+        "udang-1",
+        "udang-4"
+      ],
+      "correct": "udang-2"
+    },
+    {
+      "id": "r-bagi-udang-12",
+      "promptKey": "t-bagi-udang-12",
+      "choices": [
+        "udang-3",
+        "udang-2",
+        "udang-6"
+      ],
+      "correct": "udang-3"
+    },
+    {
+      "id": "r-bagi-udang-16",
+      "promptKey": "t-bagi-udang-16",
+      "choices": [
+        "udang-4",
+        "udang-5",
+        "udang-6"
+      ],
+      "correct": "udang-4"
+    },
+    {
+      "id": "r-bagi-udang-20",
+      "promptKey": "t-bagi-udang-20",
+      "choices": [
+        "udang-5",
+        "udang-4",
+        "udang-6"
+      ],
+      "correct": "udang-5"
+    },
+    {
+      "id": "r-bagi-udang-4",
+      "promptKey": "t-bagi-udang-4",
+      "choices": [
+        "udang-1",
+        "udang-2",
+        "udang-3"
+      ],
+      "correct": "udang-1"
+    },
+    {
+      "id": "r-seper-ikan-12",
+      "promptKey": "t-seper-ikan-12",
+      "choices": [
+        "ikan-3",
+        "ikan-4",
+        "ikan-2"
+      ],
+      "correct": "ikan-3"
+    },
+    {
+      "id": "r-seper-udang-20",
+      "promptKey": "t-seper-udang-20",
+      "choices": [
+        "udang-5",
+        "udang-2",
+        "udang-6"
+      ],
+      "correct": "udang-5"
+    },
+    {
+      "id": "r-seper-ikan-8",
+      "promptKey": "t-seper-ikan-8",
+      "choices": [
+        "ikan-2",
+        "ikan-1",
+        "ikan-4"
+      ],
+      "correct": "ikan-2"
+    },
+    {
+      "id": "r-seper-udang-16",
+      "promptKey": "t-seper-udang-16",
+      "choices": [
+        "udang-4",
+        "udang-3",
+        "udang-6"
+      ],
+      "correct": "udang-4"
+    }
+  ]
+}

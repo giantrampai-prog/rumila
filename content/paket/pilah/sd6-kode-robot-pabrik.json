@@ -1,0 +1,506 @@
+{
+  "id": "sd6-kode-robot-pabrik",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.ROBOT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tur Robot Pabrik",
+      "instruksi": "Kita berkeliling pabrik dan tambang yang memakai robot. Pikirkan manfaat robot di industri, seperti kerja berulang yang tepat, aman di tempat berbahaya, dan bersih, lalu pilih jawaban yang paling tepat.",
+      "pilihan": "pilihan",
+      "c1": "ruangan tetap bersih karena obat jarang disentuh tangan",
+      "c2": "robot suka minum obat",
+      "c3": "obatnya jadi gratis",
+      "q1": "Mengapa pabrik obat memakai robot untuk mengisi kapsul?",
+      "c4": "sangat tepat (presisi)",
+      "c5": "bisa merasa lelah",
+      "c6": "tidak perlu diprogram",
+      "q2": "Robot di pabrik chip memasang bagian sekecil butir pasir. Ini menunjukkan robot…",
+      "c7": "pekerja tidak perlu dekat logam yang sangat panas",
+      "c8": "robot tahan semua bahaya selamanya",
+      "c9": "supaya logamnya lebih dingin",
+      "q3": "Mengapa robot dipakai untuk menuang logam cair di pabrik pengecoran?",
+      "c10": "kerja berulang yang cepat dan tepat tanpa lelah",
+      "c11": "robot lebih pintar dari semua manusia",
+      "c12": "botol tidak perlu tutup lagi",
+      "q4": "Robot menutup 1.000 botol minuman tiap jam dengan gerakan yang sama. Manfaat utamanya adalah…",
+      "c13": "alat masukan (sensor)",
+      "c14": "alat keluaran",
+      "c15": "tempat menyimpan kue",
+      "q5": "Robot pemeriksa kue memakai kamera untuk menemukan kue gosong. Kamera itu adalah…",
+      "c16": "supaya manusia tidak berada di tempat berbahaya",
+      "c17": "robot tidak bisa rusak",
+      "c18": "supaya tambang lebih gelap",
+      "q6": "Di tambang, robot dipakai masuk ke terowongan sempit yang bisa runtuh. Mengapa?",
+      "c19": "manusia yang memprogramnya",
+      "c20": "robot memutuskan sendiri tanpa program",
+      "c21": "tidak ada siapa pun",
+      "q7": "Siapa yang menentukan gerakan robot pengelas di pabrik mobil?",
+      "c22": "petani tidak menghirup bahan kimia berbahaya",
+      "c23": "obat hamanya jadi aman diminum",
+      "c24": "daun tehnya jadi manis",
+      "q8": "Robot penyemprot di kebun teh menyemprotkan obat hama. Manfaatnya adalah…",
+      "c25": "ukuran roti rata",
+      "c26": "roti jadi lebih manis",
+      "c27": "toko tidak butuh penjual",
+      "q9": "Pabrik roti memakai robot pemotong adonan dengan berat sama, 50 gram. Akibatnya…",
+      "c28": "pekerja tidak perlu lama di tempat yang sangat dingin",
+      "c29": "robot suka es krim",
+      "c30": "es krim tidak akan pernah meleleh",
+      "q10": "Robot di gudang beku bersuhu −20°C mengambil kotak es krim. Mengapa robot cocok di sana?",
+      "c31": "merawat dan memperbaiki robot secara rutin",
+      "c32": "memberi robot makan siang",
+      "c33": "tidak perlu apa-apa",
+      "q11": "Apa yang tetap perlu dilakukan manusia supaya robot pabrik bekerja baik?",
+      "c34": "isi kotak yang kurang atau lebih",
+      "c35": "sarung tangan jadi berwarna-warni",
+      "c36": "kotak jadi lebih berat",
+      "q12": "Robot pengemas sarung tangan medis menghitung tepat 100 buah per kotak. Kekeliruan apa yang berkurang?",
+      "c37": "robot mengikuti program yang dibuat manusia",
+      "c38": "robot bisa mengerjakan semuanya tanpa manusia",
+      "c39": "robot tidak pernah rusak",
+      "q13": "Pernyataan mana yang BENAR tentang robot industri?"
+    },
+    "en": {
+      "judul": "Factory Robot Tour",
+      "instruksi": "We tour factories and mines that use robots. Think about how robots help industry, such as exact repeated work, safety in dangerous places, and cleanliness, then choose the best answer.",
+      "pilihan": "choices",
+      "c1": "the room stays clean because hands rarely touch the medicine",
+      "c2": "robots like taking medicine",
+      "c3": "the medicine becomes free",
+      "q1": "Why does a medicine factory use robots to fill capsules?",
+      "c4": "very exact (precise)",
+      "c5": "able to feel tired",
+      "c6": "not in need of a program",
+      "q2": "A robot in a chip factory fits parts as tiny as a grain of sand. This shows the robot is…",
+      "c7": "workers don't have to be near the very hot metal",
+      "c8": "robots resist every danger forever",
+      "c9": "so the metal is cooler",
+      "q3": "Why are robots used to pour molten metal in a foundry?",
+      "c10": "fast, exact repeated work without tiring",
+      "c11": "robots are smarter than all people",
+      "c12": "bottles no longer need caps",
+      "q4": "A robot caps 1,000 drink bottles an hour with the same movement. The main benefit is…",
+      "c13": "an input device (sensor)",
+      "c14": "an output device",
+      "c15": "a place to store cakes",
+      "q5": "A cake-checking robot uses a camera to find burnt cakes. The camera is…",
+      "c16": "so people don't have to be in a dangerous place",
+      "c17": "robots can never break",
+      "c18": "so the mine is darker",
+      "q6": "In a mine, robots go into narrow tunnels that might collapse. Why?",
+      "c19": "the people who program it",
+      "c20": "the robot decides alone with no program",
+      "c21": "nobody at all",
+      "q7": "Who decides the movements of a welding robot in a car factory?",
+      "c22": "farmers don't breathe in dangerous chemicals",
+      "c23": "the pest killer becomes safe to drink",
+      "c24": "the tea leaves turn sweet",
+      "q8": "A spraying robot on a tea farm sprays pest killer. The benefit is…",
+      "c25": "the loaves are all the same size",
+      "c26": "the bread gets sweeter",
+      "c27": "shops need no sellers",
+      "q9": "A bread factory uses a dough-cutting robot that cuts every piece at 50 grams. As a result…",
+      "c28": "workers don't have to stay long in the freezing cold",
+      "c29": "robots like ice cream",
+      "c30": "the ice cream will never melt",
+      "q10": "A robot in a −20°C freezer warehouse picks boxes of ice cream. Why does a robot suit this job?",
+      "c31": "look after and repair the robots regularly",
+      "c32": "give the robots lunch",
+      "c33": "nothing at all",
+      "q11": "What do people still need to do so factory robots work well?",
+      "c34": "boxes with too few or too many",
+      "c35": "gloves becoming colourful",
+      "c36": "boxes getting heavier",
+      "q12": "A robot packing medical gloves counts exactly 100 per box. Which mistake becomes rarer?",
+      "c37": "robots follow programs made by people",
+      "c38": "robots can do everything without people",
+      "c39": "robots never break down",
+      "q13": "Which statement about industrial robots is TRUE?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c37",
+        "c38",
+        "c39"
+      ],
+      "correct": "c37"
+    }
+  ]
+}

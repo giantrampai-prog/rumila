@@ -1,0 +1,163 @@
+{
+  "id": "sd1-sains-gerak-taman-kota",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD1.GAYA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bergerak di Taman Kota",
+      "instruksi": "Lihat cara tiap benda bergerak. Taruh ke rak menggelinding, meluncur, atau berputar di tempat.",
+      "b-gelinding": "menggelinding",
+      "b-luncur": "meluncur",
+      "b-putar": "berputar di tempat",
+      "i-tenis": "bola tenis menuruni jalan miring",
+      "i-kaleng": "kaleng bulat tergeletak di papan miring",
+      "i-semangka": "semangka jatuh di jalan menurun",
+      "i-boling": "bola boling di lintasan",
+      "i-seluncur": "anak berseluncur di arena es",
+      "i-keretaluncur": "kereta luncur menuruni bukit salju",
+      "i-piring": "piring didorong di meja licin",
+      "i-sandal": "sandal didorong di lantai licin",
+      "i-komidi": "komidi putar",
+      "i-bianglala": "bianglala",
+      "i-jarumjam": "jarum jam dinding",
+      "i-rodagigi": "roda gigi mesin"
+    },
+    "en": {
+      "judul": "Moving in the City Park",
+      "instruksi": "Look at how each thing moves. Put it on the rolling, sliding, or spinning-on-the-spot shelf.",
+      "b-gelinding": "rolls",
+      "b-luncur": "slides",
+      "b-putar": "spins on the spot",
+      "i-tenis": "a tennis ball going down a ramp",
+      "i-kaleng": "a round can lying on a sloping board",
+      "i-semangka": "a watermelon on a downhill path",
+      "i-boling": "a bowling ball on the lane",
+      "i-seluncur": "a child skating on an ice rink",
+      "i-keretaluncur": "a sled going down a snowy hill",
+      "i-piring": "a plate pushed across a smooth table",
+      "i-sandal": "a flip-flop pushed across a slippery floor",
+      "i-komidi": "a merry-go-round",
+      "i-bianglala": "a Ferris wheel",
+      "i-jarumjam": "the hands of a wall clock",
+      "i-rodagigi": "a machine's gear wheel"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "jumlah rak: 2 (menggelinding, meluncur) → 3 (tambah berputar di tempat)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gelinding",
+      "labelKey": "b-gelinding",
+      "emoji": "🎾"
+    },
+    {
+      "id": "luncur",
+      "labelKey": "b-luncur",
+      "emoji": "🛷"
+    },
+    {
+      "id": "putar",
+      "labelKey": "b-putar",
+      "emoji": "🎠"
+    }
+  ],
+  "items": [
+    {
+      "id": "tenis",
+      "labelKey": "i-tenis",
+      "bin": "gelinding",
+      "emoji": "🎾"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "gelinding",
+      "emoji": "🥫"
+    },
+    {
+      "id": "semangka",
+      "labelKey": "i-semangka",
+      "bin": "gelinding",
+      "emoji": "🍉"
+    },
+    {
+      "id": "boling",
+      "labelKey": "i-boling",
+      "bin": "gelinding",
+      "emoji": "🎳"
+    },
+    {
+      "id": "seluncur",
+      "labelKey": "i-seluncur",
+      "bin": "luncur",
+      "emoji": "⛸️"
+    },
+    {
+      "id": "keretaluncur",
+      "labelKey": "i-keretaluncur",
+      "bin": "luncur",
+      "emoji": "🛷"
+    },
+    {
+      "id": "piring",
+      "labelKey": "i-piring",
+      "bin": "luncur",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "sandal",
+      "labelKey": "i-sandal",
+      "bin": "luncur",
+      "emoji": "🩴"
+    },
+    {
+      "id": "komidi",
+      "labelKey": "i-komidi",
+      "bin": "putar",
+      "emoji": "🎠"
+    },
+    {
+      "id": "bianglala",
+      "labelKey": "i-bianglala",
+      "bin": "putar",
+      "emoji": "🎡"
+    },
+    {
+      "id": "jarumjam",
+      "labelKey": "i-jarumjam",
+      "bin": "putar",
+      "emoji": "🕐"
+    },
+    {
+      "id": "rodagigi",
+      "labelKey": "i-rodagigi",
+      "bin": "putar",
+      "emoji": "⚙️"
+    }
+  ],
+  "pilihan": []
+}

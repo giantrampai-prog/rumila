@@ -1,0 +1,159 @@
+{
+  "id": "sd6-sains-tanda-reaksi-dapur",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERUBAHAN-ZAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Reaksi Kimia di Dapur",
+      "instruksi": "Baca kejadiannya, lalu pilih bukti reaksi kimia yang paling jelas: gas muncul, warna berubah, atau suhu berubah.",
+      "b-gas": "muncul gas (gelembung, busa, atau desis)",
+      "b-warna": "warna berubah",
+      "b-suhu": "suhu berubah (jadi hangat atau panas)",
+      "i-ragi": "ragi dan gula di botol menggembungkan balon",
+      "i-jeruknipis": "air jeruk nipis diteteskan ke soda kue lalu berdesis",
+      "i-kulittelur": "kulit telur direndam cuka mengeluarkan gelembung",
+      "i-tape": "singkong yang diragi menjadi tape berbuih",
+      "i-kunyit": "noda kunyit kena air sabun berubah menjadi merah",
+      "i-teh": "teh menjadi lebih terang setelah diberi perasan jeruk nipis",
+      "i-alpukat": "alpukat yang dibelah lama-lama menjadi cokelat",
+      "i-kubis": "air rebusan kubis ungu menjadi merah saat diberi cuka",
+      "i-roti": "roti tawar dipanggang menjadi cokelat",
+      "i-kompos": "bagian dalam tumpukan kompos sisa sayur terasa hangat",
+      "i-epoksi": "lem dua tabung (epoksi) dicampur lalu terasa hangat",
+      "i-pemanas": "kantong pemanas makanan instan menjadi panas setelah diberi air"
+    },
+    "en": {
+      "judul": "Chemistry in the Kitchen",
+      "instruksi": "Read what happens, then choose the clearest sign of a chemical reaction: gas appears, colour changes, or temperature changes.",
+      "b-gas": "gas appears (bubbles, froth or fizzing)",
+      "b-warna": "colour changes",
+      "b-suhu": "temperature changes (gets warm or hot)",
+      "i-ragi": "yeast and sugar in a bottle blow up a balloon",
+      "i-jeruknipis": "lime juice dripped on baking soda fizzes",
+      "i-kulittelur": "eggshell soaked in vinegar gives off bubbles",
+      "i-tape": "cassava with yeast turns into frothy tapai",
+      "i-kunyit": "a turmeric stain turns red with soapy water",
+      "i-teh": "tea turns lighter after lime juice is squeezed in",
+      "i-alpukat": "a cut avocado slowly turns brown",
+      "i-kubis": "purple cabbage water turns red when vinegar is added",
+      "i-roti": "white bread turns brown when toasted",
+      "i-kompos": "the inside of a vegetable compost heap feels warm",
+      "i-epoksi": "two-tube epoxy glue gets warm after mixing",
+      "i-pemanas": "an instant food heater pouch gets hot after water is added"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gas",
+      "labelKey": "b-gas",
+      "emoji": "🫧",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "warna",
+      "labelKey": "b-warna",
+      "emoji": "🎨",
+      "color": "#f3e5f5"
+    },
+    {
+      "id": "suhu",
+      "labelKey": "b-suhu",
+      "emoji": "🌡️",
+      "color": "#fff3e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "ragi",
+      "labelKey": "i-ragi",
+      "bin": "gas",
+      "emoji": "🎈"
+    },
+    {
+      "id": "jeruknipis",
+      "labelKey": "i-jeruknipis",
+      "bin": "gas",
+      "emoji": "🍋"
+    },
+    {
+      "id": "kulittelur",
+      "labelKey": "i-kulittelur",
+      "bin": "gas",
+      "emoji": "🥚"
+    },
+    {
+      "id": "tape",
+      "labelKey": "i-tape",
+      "bin": "gas",
+      "emoji": "🍠"
+    },
+    {
+      "id": "kunyit",
+      "labelKey": "i-kunyit",
+      "bin": "warna",
+      "emoji": "🟡"
+    },
+    {
+      "id": "teh",
+      "labelKey": "i-teh",
+      "bin": "warna",
+      "emoji": "🍵"
+    },
+    {
+      "id": "alpukat",
+      "labelKey": "i-alpukat",
+      "bin": "warna",
+      "emoji": "🥑"
+    },
+    {
+      "id": "kubis",
+      "labelKey": "i-kubis",
+      "bin": "warna",
+      "emoji": "🥬"
+    },
+    {
+      "id": "roti",
+      "labelKey": "i-roti",
+      "bin": "warna",
+      "emoji": "🍞"
+    },
+    {
+      "id": "kompos",
+      "labelKey": "i-kompos",
+      "bin": "suhu",
+      "emoji": "🪱"
+    },
+    {
+      "id": "epoksi",
+      "labelKey": "i-epoksi",
+      "bin": "suhu",
+      "emoji": "🧴"
+    },
+    {
+      "id": "pemanas",
+      "labelKey": "i-pemanas",
+      "bin": "suhu",
+      "emoji": "♨️"
+    }
+  ],
+  "pilihan": []
+}

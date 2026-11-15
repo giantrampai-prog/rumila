@@ -1,0 +1,156 @@
+{
+  "id": "sd2-mat-penggaris-hasil-kebun",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.SD2.UKUR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mengukur Hasil Kebun",
+      "instruksi": "Ujung benda tidak ada di angka satu. Hitung kubus yang tertutup benda dari ujung ke ujung, jangan hanya membaca angka terakhirnya.",
+      "i-cacing": "cacing",
+      "i-ulat": "ulat",
+      "i-cabai": "cabai",
+      "i-ubi": "ubi",
+      "i-timun": "timun",
+      "i-terong": "terong",
+      "i-sawi": "sawi",
+      "i-jagung": "jagung",
+      "i-kadal": "kadal",
+      "i-kayu": "batang kayu",
+      "i-ular": "ular",
+      "i-sapu-lidi": "sapu lidi"
+    },
+    "en": {
+      "judul": "Measuring the Garden Harvest",
+      "instruksi": "The object does not start at 1. Count the cubes the object covers from end to end, not just the last number you see.",
+      "i-cacing": "worm",
+      "i-ulat": "caterpillar",
+      "i-cabai": "chili",
+      "i-ubi": "sweet potato",
+      "i-timun": "cucumber",
+      "i-terong": "eggplant",
+      "i-sawi": "mustard greens",
+      "i-jagung": "corn cob",
+      "i-kadal": "lizard",
+      "i-kayu": "log",
+      "i-ular": "snake",
+      "i-sapu-lidi": "broom"
+    }
+  },
+  "knobs": {
+    "offset": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "benda selalu mulai di kubus ke-2: angka ujung ≠ panjang"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kubus",
+  "items": [
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "role": "benda",
+      "emoji": "🪱",
+      "width": 0.8,
+      "value": 2
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "role": "benda",
+      "emoji": "🐛",
+      "width": 1.2,
+      "value": 3
+    },
+    {
+      "id": "cabai",
+      "labelKey": "i-cabai",
+      "role": "benda",
+      "emoji": "🌶️",
+      "width": 1.6,
+      "value": 4
+    },
+    {
+      "id": "ubi",
+      "labelKey": "i-ubi",
+      "role": "benda",
+      "emoji": "🍠",
+      "width": 1.6,
+      "value": 4
+    },
+    {
+      "id": "timun",
+      "labelKey": "i-timun",
+      "role": "benda",
+      "emoji": "🥒",
+      "width": 2.0,
+      "value": 5
+    },
+    {
+      "id": "terong",
+      "labelKey": "i-terong",
+      "role": "benda",
+      "emoji": "🍆",
+      "width": 2.4,
+      "value": 6
+    },
+    {
+      "id": "sawi",
+      "labelKey": "i-sawi",
+      "role": "benda",
+      "emoji": "🥬",
+      "width": 2.4,
+      "value": 6
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "role": "benda",
+      "emoji": "🌽",
+      "width": 2.8,
+      "value": 7
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "role": "benda",
+      "emoji": "🦎",
+      "width": 3.2,
+      "value": 8
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "role": "benda",
+      "emoji": "🪵",
+      "width": 3.6,
+      "value": 9
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "role": "benda",
+      "emoji": "🐍",
+      "width": 4,
+      "value": 10
+    },
+    {
+      "id": "sapu-lidi",
+      "labelKey": "i-sapu-lidi",
+      "role": "benda",
+      "emoji": "🧹",
+      "width": 4,
+      "value": 11
+    }
+  ]
+}

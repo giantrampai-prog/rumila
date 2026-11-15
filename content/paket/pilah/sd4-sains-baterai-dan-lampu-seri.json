@@ -1,0 +1,206 @@
+{
+  "id": "sd4-sains-baterai-dan-lampu-seri",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.LISTRIK.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tambah Baterai, Tambah Lampu",
+      "instruksi": "Semua rangkaian ini seri (berderet). Dengarkan perubahannya, lalu tebak lampunya jadi lebih terang, lebih redup, atau padam.",
+      "b-pilihan": "pilihan",
+      "i-terang": "lebih terang",
+      "i-redup": "lebih redup",
+      "i-padam": "padam",
+      "p-senter": "Senter memakai satu baterai. Bu guru menambah satu baterai lagi berderet. Lampunya jadi…",
+      "p-kurangbat": "Dua baterai berderet menyalakan satu lampu. Satu baterai dilepas, lalu celahnya disambung kabel. Lampunya jadi…",
+      "p-tambahdua": "Satu baterai menyalakan satu lampu. Dua lampu lagi ditambahkan berderet. Lampu-lampunya jadi…",
+      "p-empatbat": "Tiga baterai berderet menyalakan satu lampu. Baterai keempat ditambahkan berderet. Lampunya jadi…",
+      "p-celahkosong": "Dua lampu berderet menyala. Satu lampu dilepas dan celahnya dibiarkan kosong. Lampu yang tersisa…",
+      "p-celahkabel": "Dua lampu berderet menyala redup. Satu lampu dilepas, lalu celahnya disambung kabel. Lampu yang tersisa jadi…",
+      "p-batkosong": "Dua baterai berderet menyalakan dua lampu. Satu baterai dikeluarkan dan tempatnya dibiarkan kosong. Lampunya…",
+      "p-tigalampu": "Tiga lampu berderet dengan dua baterai. Satu lampu dilepas, lalu celahnya disambung kabel. Lampu yang tersisa jadi…",
+      "p-tambahbat": "Dua lampu berderet dengan dua baterai. Satu baterai lagi ditambahkan berderet. Lampunya jadi…",
+      "p-sisasatu": "Satu lampu dengan tiga baterai berderet. Dua baterai dikeluarkan, lalu celahnya disambung kabel. Lampunya jadi…",
+      "p-hias": "Lampu hias kecil dipasang berderet (seri). Kawat di dalam salah satu lampunya putus. Lampu yang lain…",
+      "p-lampuketiga": "Dua lampu berderet dengan satu baterai. Lampu ketiga ditambahkan berderet. Lampu-lampunya jadi…"
+    },
+    "en": {
+      "judul": "More Batteries, More Bulbs",
+      "instruksi": "All these circuits are in series (in a row). Listen to the change, then predict whether the bulbs get brighter, dimmer, or go out.",
+      "b-pilihan": "choices",
+      "i-terang": "brighter",
+      "i-redup": "dimmer",
+      "i-padam": "goes out",
+      "p-senter": "A torch uses one battery. The teacher adds another battery in a row. The bulb gets…",
+      "p-kurangbat": "Two batteries in a row light one bulb. One battery is removed and the gap is joined with wire. The bulb gets…",
+      "p-tambahdua": "One battery lights one bulb. Two more bulbs are added in a row. The bulbs get…",
+      "p-empatbat": "Three batteries in a row light one bulb. A fourth battery is added in the row. The bulb gets…",
+      "p-celahkosong": "Two bulbs in a row are lit. One bulb is taken out and the gap is left empty. The other bulb…",
+      "p-celahkabel": "Two bulbs in a row glow dimly. One bulb is taken out and the gap is joined with wire. The other bulb gets…",
+      "p-batkosong": "Two batteries in a row light two bulbs. One battery is taken out and its place is left empty. The bulbs…",
+      "p-tigalampu": "Three bulbs in a row with two batteries. One bulb is taken out and the gap is joined with wire. The other bulbs get…",
+      "p-tambahbat": "Two bulbs in a row with two batteries. One more battery is added in the row. The bulbs get…",
+      "p-sisasatu": "One bulb with three batteries in a row. Two batteries are taken out and the gap is joined with wire. The bulb gets…",
+      "p-hias": "Small fairy lights are wired in a row (series). The wire inside one bulb breaks. The other bulbs…",
+      "p-lampuketiga": "Two bulbs in a row with one battery. A third bulb is added in the row. The bulbs get…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "terang",
+      "labelKey": "i-terang",
+      "bin": "pilihan",
+      "emoji": "🔆"
+    },
+    {
+      "id": "redup",
+      "labelKey": "i-redup",
+      "bin": "pilihan",
+      "emoji": "🔅"
+    },
+    {
+      "id": "padam",
+      "labelKey": "i-padam",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "senter",
+      "promptKey": "p-senter",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "kurangbat",
+      "promptKey": "p-kurangbat",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "tambahdua",
+      "promptKey": "p-tambahdua",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "empatbat",
+      "promptKey": "p-empatbat",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "celahkosong",
+      "promptKey": "p-celahkosong",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "celahkabel",
+      "promptKey": "p-celahkabel",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "batkosong",
+      "promptKey": "p-batkosong",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "tigalampu",
+      "promptKey": "p-tigalampu",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "tambahbat",
+      "promptKey": "p-tambahbat",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "sisasatu",
+      "promptKey": "p-sisasatu",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "hias",
+      "promptKey": "p-hias",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "lampuketiga",
+      "promptKey": "p-lampuketiga",
+      "choices": [
+        "terang",
+        "redup",
+        "padam"
+      ],
+      "correct": "redup"
+    }
+  ]
+}

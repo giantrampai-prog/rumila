@@ -1,0 +1,165 @@
+{
+  "id": "sd1-kode-sambungan-perangkat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD1.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kabel atau Sinyal?",
+      "instruksi": "Perangkat ini tersambung dengan kabel atau tanpa kabel? Taruh di kotak yang cocok.",
+      "bin-kabel": "dengan kabel",
+      "bin-nirkabel": "tanpa kabel",
+      "i-mik-kabel": "mikrofon berkabel",
+      "i-proyektor-kabel": "proyektor dengan kabel ke laptop",
+      "i-piano-kabel": "keyboard musik dengan kabel",
+      "i-gitar-kabel": "gitar listrik dengan kabel",
+      "i-tv-antena": "televisi dengan kabel antena",
+      "i-joystick-kabel": "stik game berkabel",
+      "i-lampu": "lampu belajar dengan kabel listrik",
+      "i-drone": "drone mainan dengan remot",
+      "i-mobil-remot": "mobil remot kontrol",
+      "i-walkie": "walkie-talkie",
+      "i-kunci-remot": "kunci mobil dengan tombol remot",
+      "i-laptop-wifi": "laptop yang memakai wifi",
+      "i-bel-nirkabel": "bel pintu tanpa kabel",
+      "i-kamera-wifi": "kamera keamanan wifi"
+    },
+    "en": {
+      "judul": "Cable or Signal?",
+      "instruksi": "Is this device connected with a cable or without one? Put it in the right box.",
+      "bin-kabel": "with a cable",
+      "bin-nirkabel": "without a cable",
+      "i-mik-kabel": "wired microphone",
+      "i-proyektor-kabel": "projector with a cable to the laptop",
+      "i-piano-kabel": "music keyboard with a cable",
+      "i-gitar-kabel": "electric guitar with a cable",
+      "i-tv-antena": "TV with an aerial cable",
+      "i-joystick-kabel": "wired joystick",
+      "i-lampu": "desk lamp with a power cable",
+      "i-drone": "toy drone with a remote",
+      "i-mobil-remot": "remote-control car",
+      "i-walkie": "walkie-talkie",
+      "i-kunci-remot": "car key with a remote button",
+      "i-laptop-wifi": "laptop using wifi",
+      "i-bel-nirkabel": "wireless doorbell",
+      "i-kamera-wifi": "wifi security camera"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah perangkat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kabel",
+      "labelKey": "bin-kabel",
+      "emoji": "🔌"
+    },
+    {
+      "id": "nirkabel",
+      "labelKey": "bin-nirkabel",
+      "emoji": "📶"
+    }
+  ],
+  "items": [
+    {
+      "id": "mik-kabel",
+      "labelKey": "i-mik-kabel",
+      "bin": "kabel",
+      "emoji": "🎤"
+    },
+    {
+      "id": "proyektor-kabel",
+      "labelKey": "i-proyektor-kabel",
+      "bin": "kabel",
+      "emoji": "📽️"
+    },
+    {
+      "id": "piano-kabel",
+      "labelKey": "i-piano-kabel",
+      "bin": "kabel",
+      "emoji": "🎹"
+    },
+    {
+      "id": "gitar-kabel",
+      "labelKey": "i-gitar-kabel",
+      "bin": "kabel",
+      "emoji": "🎸"
+    },
+    {
+      "id": "tv-antena",
+      "labelKey": "i-tv-antena",
+      "bin": "kabel",
+      "emoji": "📺"
+    },
+    {
+      "id": "joystick-kabel",
+      "labelKey": "i-joystick-kabel",
+      "bin": "kabel",
+      "emoji": "🕹️"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "kabel",
+      "emoji": "💡"
+    },
+    {
+      "id": "drone",
+      "labelKey": "i-drone",
+      "bin": "nirkabel",
+      "emoji": "🚁"
+    },
+    {
+      "id": "mobil-remot",
+      "labelKey": "i-mobil-remot",
+      "bin": "nirkabel",
+      "emoji": "🏎️"
+    },
+    {
+      "id": "walkie",
+      "labelKey": "i-walkie",
+      "bin": "nirkabel",
+      "emoji": "📻"
+    },
+    {
+      "id": "kunci-remot",
+      "labelKey": "i-kunci-remot",
+      "bin": "nirkabel",
+      "emoji": "🔑"
+    },
+    {
+      "id": "laptop-wifi",
+      "labelKey": "i-laptop-wifi",
+      "bin": "nirkabel",
+      "emoji": "💻"
+    },
+    {
+      "id": "bel-nirkabel",
+      "labelKey": "i-bel-nirkabel",
+      "bin": "nirkabel",
+      "emoji": "🔔"
+    },
+    {
+      "id": "kamera-wifi",
+      "labelKey": "i-kamera-wifi",
+      "bin": "nirkabel",
+      "emoji": "📹"
+    }
+  ]
+}

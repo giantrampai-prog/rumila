@@ -1,0 +1,278 @@
+{
+  "id": "sd5-sains-uji-adil-taman",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.PENYELIDIKAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Uji Adil di Taman Sekolah",
+      "instruksi": "Baca pertanyaan percobaannya, lalu pilih variabel yang diubah, yang diukur, atau yang dijaga tetap.",
+      "b-pilihan": "pilihan",
+      "i-permukaan": "jenis permukaan (ubin, karpet, rumput)",
+      "i-jarakbola": "jarak bola menggelinding",
+      "i-bolasama": "bola yang sama dan dorongan yang sama",
+      "i-warnakain": "warna kain penutup",
+      "i-suhukain": "suhu air di bawah kain",
+      "i-lamajemur": "lama dijemur dan banyak air",
+      "i-bungkus": "jenis bahan pembungkus",
+      "i-lamacair": "lama es sampai mencair",
+      "i-ukuranes": "ukuran es batu",
+      "i-panjangtali": "panjang tali bandul",
+      "i-ayunan": "jumlah ayunan dalam 10 detik",
+      "i-beban": "beban bandul yang sama",
+      "p-r1": "Apakah jenis permukaan memengaruhi jarak bola menggelinding? Apa yang diubah?",
+      "p-r2": "Apakah jenis permukaan memengaruhi jarak bola menggelinding? Apa yang diukur?",
+      "p-r3": "Apakah jenis permukaan memengaruhi jarak bola menggelinding? Apa yang dijaga tetap?",
+      "p-r4": "Apakah warna kain memengaruhi suhu air di bawahnya saat dijemur? Apa yang diubah?",
+      "p-r5": "Apakah warna kain memengaruhi suhu air di bawahnya saat dijemur? Apa yang diukur?",
+      "p-r6": "Apakah warna kain memengaruhi suhu air di bawahnya saat dijemur? Apa yang dijaga tetap?",
+      "p-r7": "Apakah bahan pembungkus memengaruhi lama es batu mencair? Apa yang diubah?",
+      "p-r8": "Apakah bahan pembungkus memengaruhi lama es batu mencair? Apa yang diukur?",
+      "p-r9": "Apakah bahan pembungkus memengaruhi lama es batu mencair? Apa yang dijaga tetap?",
+      "p-r10": "Apakah panjang tali memengaruhi jumlah ayunan bandul? Apa yang diubah?",
+      "p-r11": "Apakah panjang tali memengaruhi jumlah ayunan bandul? Apa yang diukur?",
+      "p-r12": "Apakah panjang tali memengaruhi jumlah ayunan bandul? Apa yang dijaga tetap?"
+    },
+    "en": {
+      "judul": "Fair Tests in the School Garden",
+      "instruksi": "Read the question being tested, then choose the variable that is changed, measured or kept the same.",
+      "b-pilihan": "choices",
+      "i-permukaan": "type of surface (tiles, carpet, grass)",
+      "i-jarakbola": "distance the ball rolls",
+      "i-bolasama": "the same ball and the same push",
+      "i-warnakain": "colour of the covering cloth",
+      "i-suhukain": "temperature of the water under the cloth",
+      "i-lamajemur": "time in the sun and amount of water",
+      "i-bungkus": "type of wrapping material",
+      "i-lamacair": "time until the ice melts",
+      "i-ukuranes": "size of the ice cube",
+      "i-panjangtali": "length of the pendulum string",
+      "i-ayunan": "number of swings in 10 seconds",
+      "i-beban": "the same pendulum weight",
+      "p-r1": "Does the type of surface affect how far a ball rolls? What is changed?",
+      "p-r2": "Does the type of surface affect how far a ball rolls? What is measured?",
+      "p-r3": "Does the type of surface affect how far a ball rolls? What is kept the same?",
+      "p-r4": "Does the colour of a cloth affect the temperature of water under it in the sun? What is changed?",
+      "p-r5": "Does the colour of a cloth affect the temperature of water under it in the sun? What is measured?",
+      "p-r6": "Does the colour of a cloth affect the temperature of water under it in the sun? What is kept the same?",
+      "p-r7": "Does the wrapping material affect how long an ice cube takes to melt? What is changed?",
+      "p-r8": "Does the wrapping material affect how long an ice cube takes to melt? What is measured?",
+      "p-r9": "Does the wrapping material affect how long an ice cube takes to melt? What is kept the same?",
+      "p-r10": "Does the string length affect how many times a pendulum swings? What is changed?",
+      "p-r11": "Does the string length affect how many times a pendulum swings? What is measured?",
+      "p-r12": "Does the string length affect how many times a pendulum swings? What is kept the same?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "permukaan",
+      "labelKey": "i-permukaan",
+      "bin": "pilihan",
+      "emoji": "🟫"
+    },
+    {
+      "id": "jarakbola",
+      "labelKey": "i-jarakbola",
+      "bin": "pilihan",
+      "emoji": "📏"
+    },
+    {
+      "id": "bolasama",
+      "labelKey": "i-bolasama",
+      "bin": "pilihan",
+      "emoji": "⚽"
+    },
+    {
+      "id": "warnakain",
+      "labelKey": "i-warnakain",
+      "bin": "pilihan",
+      "emoji": "🎨"
+    },
+    {
+      "id": "suhukain",
+      "labelKey": "i-suhukain",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "lamajemur",
+      "labelKey": "i-lamajemur",
+      "bin": "pilihan",
+      "emoji": "⏱️"
+    },
+    {
+      "id": "bungkus",
+      "labelKey": "i-bungkus",
+      "bin": "pilihan",
+      "emoji": "🧣"
+    },
+    {
+      "id": "lamacair",
+      "labelKey": "i-lamacair",
+      "bin": "pilihan",
+      "emoji": "⏳"
+    },
+    {
+      "id": "ukuranes",
+      "labelKey": "i-ukuranes",
+      "bin": "pilihan",
+      "emoji": "🧊"
+    },
+    {
+      "id": "panjangtali",
+      "labelKey": "i-panjangtali",
+      "bin": "pilihan",
+      "emoji": "🪢"
+    },
+    {
+      "id": "ayunan",
+      "labelKey": "i-ayunan",
+      "bin": "pilihan",
+      "emoji": "🔢"
+    },
+    {
+      "id": "beban",
+      "labelKey": "i-beban",
+      "bin": "pilihan",
+      "emoji": "⚖️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "permukaan",
+        "jarakbola",
+        "bolasama"
+      ],
+      "correct": "permukaan"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "jarakbola",
+        "permukaan",
+        "bolasama"
+      ],
+      "correct": "jarakbola"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "bolasama",
+        "permukaan",
+        "jarakbola"
+      ],
+      "correct": "bolasama"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "warnakain",
+        "suhukain",
+        "lamajemur"
+      ],
+      "correct": "warnakain"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "suhukain",
+        "warnakain",
+        "lamajemur"
+      ],
+      "correct": "suhukain"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "lamajemur",
+        "warnakain",
+        "suhukain"
+      ],
+      "correct": "lamajemur"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "bungkus",
+        "lamacair",
+        "ukuranes"
+      ],
+      "correct": "bungkus"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "lamacair",
+        "bungkus",
+        "ukuranes"
+      ],
+      "correct": "lamacair"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "ukuranes",
+        "bungkus",
+        "lamacair"
+      ],
+      "correct": "ukuranes"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "panjangtali",
+        "ayunan",
+        "beban"
+      ],
+      "correct": "panjangtali"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "ayunan",
+        "panjangtali",
+        "beban"
+      ],
+      "correct": "ayunan"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "beban",
+        "panjangtali",
+        "ayunan"
+      ],
+      "correct": "beban"
+    }
+  ]
+}

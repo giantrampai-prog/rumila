@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gelinding-luncur-putar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -17,15 +17,15 @@
       "i-bola": "bola di lantai miring",
       "i-kelereng": "kelereng di lantai",
       "i-ban": "ban menuruni bukit",
-      "i-jeruk": "jeruk jatuh dari meja",
+      "i-jeruk": "jeruk menggelinding di lantai",
       "i-perosotan": "anak di perosotan",
       "i-kotak": "kotak didorong di lantai licin",
       "i-sabun": "sabun meluncur di lantai basah",
       "i-buku": "buku didorong di meja",
-      "i-gasing": "gasing",
-      "i-kincir": "kincir angin",
+      "i-gasing": "roda sepeda diputar",
+      "i-kincir": "bianglala",
       "i-kipas": "baling-baling kipas",
-      "i-baling": "baling-baling bambu"
+      "i-baling": "baling-baling helikopter"
     },
     "en": {
       "judul": "Roll, Slide, Spin",
@@ -36,15 +36,15 @@
       "i-bola": "ball on a slope",
       "i-kelereng": "marble on the floor",
       "i-ban": "tyre rolling downhill",
-      "i-jeruk": "orange rolling off the table",
+      "i-jeruk": "orange rolling across the floor",
       "i-perosotan": "child on a slide",
       "i-kotak": "box pushed on a slippery floor",
       "i-sabun": "soap sliding on a wet floor",
       "i-buku": "book pushed across a table",
-      "i-gasing": "spinning top",
-      "i-kincir": "windmill",
+      "i-gasing": "bicycle wheel being spun",
+      "i-kincir": "Ferris wheel",
       "i-kipas": "fan blades",
-      "i-baling": "bamboo propeller"
+      "i-baling": "helicopter blades"
     }
   },
   "knobs": {
@@ -99,7 +99,9 @@
       "id": "kelereng",
       "labelKey": "i-kelereng",
       "bin": "gelinding",
-      "emoji": "🔮"
+      "shape": "circle",
+      "color": "#42a5f5",
+      "scale": 0.6
     },
     {
       "id": "ban",
@@ -141,7 +143,7 @@
       "id": "gasing",
       "labelKey": "i-gasing",
       "bin": "putar",
-      "emoji": "🪀"
+      "emoji": "🛞"
     },
     {
       "id": "kincir",
@@ -159,7 +161,7 @@
       "id": "baling",
       "labelKey": "i-baling",
       "bin": "putar",
-      "emoji": "🎐"
+      "emoji": "🚁"
     }
   ],
   "pilihan": []

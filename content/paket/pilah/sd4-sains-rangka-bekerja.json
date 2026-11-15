@@ -1,0 +1,226 @@
+{
+  "id": "sd4-sains-rangka-bekerja",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.RANGKA-OTOT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rangka Sedang Bekerja",
+      "instruksi": "Dengarkan kejadian di taman, lalu sentuh tugas rangka yang paling terlihat di situ.",
+      "b-pilihan": "pilihan",
+      "i-lindungi": "melindungi organ",
+      "i-topang": "menopang tubuh",
+      "i-gerak": "membantu bergerak",
+      "i-bentuk": "memberi bentuk tubuh",
+      "p-kepalabola": "Kepala Dani terkena bola, tetapi otaknya tetap aman di dalam tulang tengkorak. Apa tugas rangka di sini?",
+      "p-jatuh": "Sari jatuh telungkup di rumput. Jantung dan paru-parunya aman karena terkurung tulang rusuk. Apa tugasnya?",
+      "p-mata": "Bola mata berada di dalam lubang tulang tengkorak yang kuat, sehingga tidak mudah terbentur. Apa tugas tulang itu?",
+      "p-angkatbeban": "Paman mengangkat karung beras di bahunya. Tulang kakinya menahan semua berat itu. Apa tugasnya?",
+      "p-ransel": "Tulang belakang menahan beban ransel yang berat sehingga badan tetap tegak saat berjalan. Apa tugasnya?",
+      "p-jerapah": "Jerapah di kebun binatang berdiri di atas empat tulang kaki yang panjang dan kuat. Apa tugas tulang kakinya?",
+      "p-menulis": "Saat menggambar di bangku taman, tulang-tulang jari bergerak di sendinya karena ditarik otot. Apa tugasnya?",
+      "p-lari": "Saat berlari mengejar layang-layang, otot menarik tulang paha dan tulang kering di sendi lutut. Apa tugas tulang di sini?",
+      "p-menoleh": "Saat menoleh ke kiri dan kanan sebelum menyeberang, ruas tulang leher berputar di sendinya. Apa tugasnya?",
+      "p-kucing": "Kucing di taman bertubuh langsing dengan ekor panjang karena susunan tulangnya begitu. Apa tugas rangka di sini?",
+      "p-rontgen": "Dari foto rontgen, dokter langsung tahu itu tangan manusia karena rangkanya membentuk telapak dan lima jari. Apa tugasnya?",
+      "p-wajah": "Bentuk wajah tiap orang berbeda, antara lain karena bentuk tulang pipi dan rahangnya. Apa tugas rangka di sini?"
+    },
+    "en": {
+      "judul": "The Skeleton at Work",
+      "instruksi": "Listen to what happens in the park, then touch the skeleton's job that shows most clearly.",
+      "b-pilihan": "choices",
+      "i-lindungi": "protecting organs",
+      "i-topang": "supporting the body",
+      "i-gerak": "helping movement",
+      "i-bentuk": "giving the body shape",
+      "p-kepalabola": "A ball hits Dani's head, but his brain stays safe inside his skull. What job is the skeleton doing?",
+      "p-jatuh": "Sari falls flat on the grass. Her heart and lungs are safe inside her rib cage. What job is it doing?",
+      "p-mata": "The eyeballs sit inside strong sockets in the skull, so they are not easily bumped. What job are those bones doing?",
+      "p-angkatbeban": "Uncle carries a sack of rice on his shoulder. His leg bones hold up all that weight. What job are they doing?",
+      "p-ransel": "The backbone holds up a heavy backpack so the body stays upright while walking. What job is it doing?",
+      "p-jerapah": "A giraffe at the zoo stands on four long, strong leg bones. What job are its leg bones doing?",
+      "p-menulis": "While drawing on a park bench, the finger bones move at their joints as muscles pull them. What job are they doing?",
+      "p-lari": "While running after a kite, muscles pull the thigh bone and shin bone at the knee joint. What job are the bones doing?",
+      "p-menoleh": "When you look left and right before crossing, the neck bones turn at their joints. What job are they doing?",
+      "p-kucing": "The park cat has a slim body and a long tail because of the way its bones are arranged. What job is the skeleton doing?",
+      "p-rontgen": "From an X-ray, the doctor can tell it is a human hand because the bones make a palm and five fingers. What job is it doing?",
+      "p-wajah": "Everyone's face looks different, partly because of the shape of their cheekbones and jaw. What job is the skeleton doing?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "lindungi",
+      "labelKey": "i-lindungi",
+      "bin": "pilihan",
+      "emoji": "🛡️"
+    },
+    {
+      "id": "topang",
+      "labelKey": "i-topang",
+      "bin": "pilihan",
+      "emoji": "🧍"
+    },
+    {
+      "id": "gerak",
+      "labelKey": "i-gerak",
+      "bin": "pilihan",
+      "emoji": "🏃"
+    },
+    {
+      "id": "bentuk",
+      "labelKey": "i-bentuk",
+      "bin": "pilihan",
+      "emoji": "📐"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "kepalabola",
+      "promptKey": "p-kepalabola",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "jatuh",
+      "promptKey": "p-jatuh",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "mata",
+      "promptKey": "p-mata",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "lindungi"
+    },
+    {
+      "id": "angkatbeban",
+      "promptKey": "p-angkatbeban",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "topang"
+    },
+    {
+      "id": "ransel",
+      "promptKey": "p-ransel",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "topang"
+    },
+    {
+      "id": "jerapah",
+      "promptKey": "p-jerapah",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "topang"
+    },
+    {
+      "id": "menulis",
+      "promptKey": "p-menulis",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "lari",
+      "promptKey": "p-lari",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "menoleh",
+      "promptKey": "p-menoleh",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "gerak"
+    },
+    {
+      "id": "kucing",
+      "promptKey": "p-kucing",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "bentuk"
+    },
+    {
+      "id": "rontgen",
+      "promptKey": "p-rontgen",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "bentuk"
+    },
+    {
+      "id": "wajah",
+      "promptKey": "p-wajah",
+      "choices": [
+        "lindungi",
+        "topang",
+        "gerak",
+        "bentuk"
+      ],
+      "correct": "bentuk"
+    }
+  ]
+}

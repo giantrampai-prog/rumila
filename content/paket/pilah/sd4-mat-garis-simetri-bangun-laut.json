@@ -1,0 +1,164 @@
+{
+  "id": "sd4-mat-garis-simetri-bangun-laut",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD4.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hitung Garis Simetri Bangun",
+      "instruksi": "Bayangkan melipat tiap bangun atau angka. Ada berapa cara lipat yang kedua bagiannya pas? Taruh di rak tidak ada, 1, atau 2 garis.",
+      "b-nol": "tidak ada garis",
+      "b-satu": "1 garis",
+      "b-dua": "2 garis",
+      "i1": "jajar genjang",
+      "i2": "segitiga sisi 3, 4, 5 cm",
+      "i3": "trapesium siku-siku",
+      "i4": "angka 4",
+      "i5": "angka 7",
+      "i6": "layang-layang",
+      "i7": "trapesium sama kaki",
+      "i8": "bentuk hati",
+      "i9": "rumah: persegi beratap segitiga",
+      "i10": "segitiga sisi 5, 5, 3 cm",
+      "i11": "belah ketupat",
+      "i12": "oval",
+      "i13": "angka 0",
+      "i14": "angka 8",
+      "i15": "persegi panjang 5 × 2 cm"
+    },
+    "en": {
+      "judul": "Counting Lines of Symmetry",
+      "instruksi": "Imagine folding each shape or digit. How many folds make the halves match? Put it on the shelf for no lines, 1 line or 2 lines.",
+      "b-nol": "no lines",
+      "b-satu": "1 line",
+      "b-dua": "2 lines",
+      "i1": "parallelogram",
+      "i2": "triangle with sides 3, 4, 5 cm",
+      "i3": "right-angled trapezium",
+      "i4": "the digit 4",
+      "i5": "the digit 7",
+      "i6": "kite shape",
+      "i7": "isosceles trapezium",
+      "i8": "heart shape",
+      "i9": "house: square with a triangle roof",
+      "i10": "triangle with sides 5, 5, 3 cm",
+      "i11": "rhombus",
+      "i12": "oval",
+      "i13": "the digit 0",
+      "i14": "the digit 8",
+      "i15": "rectangle 5 × 2 cm"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "kartu per ronde: 6 → 10"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "nol",
+      "labelKey": "b-nol"
+    },
+    {
+      "id": "satu",
+      "labelKey": "b-satu"
+    },
+    {
+      "id": "dua",
+      "labelKey": "b-dua"
+    }
+  ],
+  "items": [
+    {
+      "id": "nol-1",
+      "labelKey": "i1",
+      "bin": "nol"
+    },
+    {
+      "id": "nol-2",
+      "labelKey": "i2",
+      "bin": "nol"
+    },
+    {
+      "id": "nol-3",
+      "labelKey": "i3",
+      "bin": "nol"
+    },
+    {
+      "id": "nol-4",
+      "labelKey": "i4",
+      "bin": "nol"
+    },
+    {
+      "id": "nol-5",
+      "labelKey": "i5",
+      "bin": "nol"
+    },
+    {
+      "id": "satu-6",
+      "labelKey": "i6",
+      "bin": "satu"
+    },
+    {
+      "id": "satu-7",
+      "labelKey": "i7",
+      "bin": "satu"
+    },
+    {
+      "id": "satu-8",
+      "labelKey": "i8",
+      "bin": "satu",
+      "emoji": "❤️"
+    },
+    {
+      "id": "satu-9",
+      "labelKey": "i9",
+      "bin": "satu",
+      "emoji": "🏠"
+    },
+    {
+      "id": "satu-10",
+      "labelKey": "i10",
+      "bin": "satu"
+    },
+    {
+      "id": "dua-11",
+      "labelKey": "i11",
+      "bin": "dua"
+    },
+    {
+      "id": "dua-12",
+      "labelKey": "i12",
+      "bin": "dua"
+    },
+    {
+      "id": "dua-13",
+      "labelKey": "i13",
+      "bin": "dua"
+    },
+    {
+      "id": "dua-14",
+      "labelKey": "i14",
+      "bin": "dua"
+    },
+    {
+      "id": "dua-15",
+      "labelKey": "i15",
+      "bin": "dua"
+    }
+  ]
+}

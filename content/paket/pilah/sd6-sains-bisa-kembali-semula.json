@@ -1,0 +1,175 @@
+{
+  "id": "sd6-sains-bisa-kembali-semula",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERUBAHAN-ZAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bisa Kembali Semula?",
+      "instruksi": "Di pesta ulang tahun banyak benda berubah. Pilah: bisa kembali seperti semula, atau tidak bisa.",
+      "b-balik": "bisa kembali seperti semula",
+      "b-tidak": "tidak bisa kembali seperti semula",
+      "i-cokelat": "cokelat meleleh di tangan",
+      "i-esloli": "sirup dibekukan menjadi es loli",
+      "i-mentega": "mentega meleleh di wajan hangat",
+      "i-tawas": "tawas dilarutkan dalam air",
+      "i-serbukbesi": "serbuk besi dicampur pasir",
+      "i-kacangberas": "kacang hijau dicampur beras",
+      "i-plastisin": "plastisin dibentuk menjadi bola",
+      "i-embun": "uap air mengembun di gelas es",
+      "i-berondong": "jagung meletup menjadi berondong",
+      "i-yoghurt": "susu berubah menjadi yoghurt",
+      "i-kembangapi": "kembang api dinyalakan",
+      "i-korek": "batang korek api dibakar",
+      "i-rotigosong": "roti dipanggang sampai gosong",
+      "i-nasibasi": "nasi menjadi basi",
+      "i-pisang": "pisang membusuk"
+    },
+    "en": {
+      "judul": "Can It Go Back?",
+      "instruksi": "At a birthday party lots of things change. Sort them: can go back to how it was, or cannot.",
+      "b-balik": "can go back to how it was",
+      "b-tidak": "cannot go back",
+      "i-cokelat": "chocolate melting in your hand",
+      "i-esloli": "syrup frozen into ice lollies",
+      "i-mentega": "butter melting in a warm pan",
+      "i-tawas": "alum dissolved in water",
+      "i-serbukbesi": "iron filings mixed with sand",
+      "i-kacangberas": "mung beans mixed with rice",
+      "i-plastisin": "playdough shaped into a ball",
+      "i-embun": "water vapour condensing on a glass of ice",
+      "i-berondong": "corn kernels popping into popcorn",
+      "i-yoghurt": "milk turning into yoghurt",
+      "i-kembangapi": "fireworks being lit",
+      "i-korek": "a matchstick burning",
+      "i-rotigosong": "bread toasted until burnt",
+      "i-nasibasi": "rice going stale and sour",
+      "i-pisang": "a banana rotting"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pesta",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "balik",
+      "labelKey": "b-balik",
+      "emoji": "🔄",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "⛔",
+      "color": "#ffcdd2"
+    }
+  ],
+  "items": [
+    {
+      "id": "cokelat",
+      "labelKey": "i-cokelat",
+      "bin": "balik",
+      "emoji": "🍫"
+    },
+    {
+      "id": "esloli",
+      "labelKey": "i-esloli",
+      "bin": "balik",
+      "emoji": "🍧"
+    },
+    {
+      "id": "mentega",
+      "labelKey": "i-mentega",
+      "bin": "balik",
+      "emoji": "🧈"
+    },
+    {
+      "id": "tawas",
+      "labelKey": "i-tawas",
+      "bin": "balik",
+      "emoji": "💧"
+    },
+    {
+      "id": "serbukbesi",
+      "labelKey": "i-serbukbesi",
+      "bin": "balik",
+      "emoji": "🧲"
+    },
+    {
+      "id": "kacangberas",
+      "labelKey": "i-kacangberas",
+      "bin": "balik",
+      "emoji": "🫘"
+    },
+    {
+      "id": "plastisin",
+      "labelKey": "i-plastisin",
+      "bin": "balik",
+      "emoji": "🟣"
+    },
+    {
+      "id": "embun",
+      "labelKey": "i-embun",
+      "bin": "balik",
+      "emoji": "🥛"
+    },
+    {
+      "id": "berondong",
+      "labelKey": "i-berondong",
+      "bin": "tidak",
+      "emoji": "🍿"
+    },
+    {
+      "id": "yoghurt",
+      "labelKey": "i-yoghurt",
+      "bin": "tidak",
+      "emoji": "🥣"
+    },
+    {
+      "id": "kembangapi",
+      "labelKey": "i-kembangapi",
+      "bin": "tidak",
+      "emoji": "🎆"
+    },
+    {
+      "id": "korek",
+      "labelKey": "i-korek",
+      "bin": "tidak",
+      "emoji": "🔥"
+    },
+    {
+      "id": "rotigosong",
+      "labelKey": "i-rotigosong",
+      "bin": "tidak",
+      "emoji": "🍞"
+    },
+    {
+      "id": "nasibasi",
+      "labelKey": "i-nasibasi",
+      "bin": "tidak",
+      "emoji": "🍚"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "tidak",
+      "emoji": "🍌"
+    }
+  ],
+  "pilihan": []
+}

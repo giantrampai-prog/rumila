@@ -1,0 +1,211 @@
+{
+  "id": "sd4-kode-perangkat-kelas",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alat-Alat di Kelas Komputer",
+      "instruksi": "Di kelas komputer: seret tiap alat ke kelompoknya, memasukkan data ke komputer, mengeluarkan hasil, atau menyimpan data.",
+      "bin-masukan": "masukan",
+      "bin-keluaran": "keluaran",
+      "bin-simpan": "penyimpanan",
+      "i1": "👆 sensor sidik jari",
+      "i2": "🖊️ pena digital",
+      "i3": "📄 pemindai dokumen (scanner)",
+      "i4": "🚶 sensor gerak",
+      "i5": "🔲 touchpad laptop",
+      "i6": "🎛️ panel tombol mesin",
+      "i7": "📸 kamera dokumen",
+      "i8": "🔔 bel listrik sekolah",
+      "i9": "🪧 papan tulisan LED berjalan",
+      "i10": "🖨️ printer 3D",
+      "i11": "📢 pengeras suara aula",
+      "i12": "📺 televisi kelas",
+      "i13": "📳 getar HP saat ada pesan",
+      "i14": "💿 CD/DVD",
+      "i15": "🗄️ SSD",
+      "i16": "💽 hard disk eksternal",
+      "i17": "🎴 kartu microSD",
+      "i18": "🗃️ server penyimpanan sekolah"
+    },
+    "en": {
+      "judul": "Gadgets in the Computer Class",
+      "instruksi": "In the computer class: drag each gadget to its group, puts data into the computer, gives results out, or keeps data stored.",
+      "bin-masukan": "input",
+      "bin-keluaran": "output",
+      "bin-simpan": "storage",
+      "i1": "👆 fingerprint sensor",
+      "i2": "🖊️ digital pen",
+      "i3": "📄 document scanner",
+      "i4": "🚶 motion sensor",
+      "i5": "🔲 laptop touchpad",
+      "i6": "🎛️ machine button panel",
+      "i7": "📸 document camera",
+      "i8": "🔔 electric school bell",
+      "i9": "🪧 scrolling LED sign",
+      "i10": "🖨️ 3D printer",
+      "i11": "📢 hall loudspeaker",
+      "i12": "📺 classroom TV",
+      "i13": "📳 phone vibration for a message",
+      "i14": "💿 CD/DVD",
+      "i15": "🗄️ SSD",
+      "i16": "💽 external hard drive",
+      "i17": "🎴 microSD card",
+      "i18": "🗃️ school storage server"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 = masukan & keluaran; 3 = tambah penyimpanan"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah alat per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "masukan",
+      "labelKey": "bin-masukan",
+      "emoji": "🎤"
+    },
+    {
+      "id": "keluaran",
+      "labelKey": "bin-keluaran",
+      "emoji": "🖨️"
+    },
+    {
+      "id": "simpan",
+      "labelKey": "bin-simpan",
+      "emoji": "💿"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "masukan",
+      "scale": 0.5
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "keluaran",
+      "scale": 0.5
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "simpan",
+      "scale": 0.5
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "simpan",
+      "scale": 0.5
+    },
+    {
+      "id": "i16",
+      "labelKey": "i16",
+      "bin": "simpan",
+      "scale": 0.5
+    },
+    {
+      "id": "i17",
+      "labelKey": "i17",
+      "bin": "simpan",
+      "scale": 0.5
+    },
+    {
+      "id": "i18",
+      "labelKey": "i18",
+      "bin": "simpan",
+      "scale": 0.5
+    }
+  ]
+}

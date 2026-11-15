@@ -1,0 +1,230 @@
+{
+  "id": "sd5-sains-gaya-di-pantai",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.GAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gaya-Gaya di Pantai",
+      "instruksi": "Baca kejadiannya, lalu sentuh nama gaya yang paling berperan.",
+      "b-pilihan": "pilihan",
+      "i-gravitasi": "gravitasi",
+      "i-gesek": "gaya gesek",
+      "i-udara": "hambatan udara",
+      "i-air": "hambatan air",
+      "i-apung": "gaya apung",
+      "i-normal": "gaya normal",
+      "p-r1": "Buah kelapa lepas dari pohonnya dan jatuh ke pasir.",
+      "p-r2": "Anak-anak meluncur turun dari papan seluncur di taman pantai karena tarikan…",
+      "p-r3": "Berjalan di air laut setinggi pinggang terasa berat dan tertahan.",
+      "p-r4": "Ikan dan perahu berbentuk ramping supaya mudah menembus air. Bentuk ini mengurangi…",
+      "p-r5": "Ban pelampung menahan anak tetap di permukaan air.",
+      "p-r6": "Batu terasa lebih ringan saat diangkat di dalam air, karena air mendorongnya ke atas.",
+      "p-r7": "Selembar kertas yang terbuka lebar jatuh lebih lambat daripada kertas yang diremas.",
+      "p-r8": "Pesepeda membungkuk rendah agar melaju lebih cepat, karena ini mengurangi…",
+      "p-r9": "Bola yang digelindingkan di pasir akhirnya berhenti sendiri.",
+      "p-r10": "Sandal licin di lantai basah mudah tergelincir karena gaya ini menjadi kecil.",
+      "p-r11": "Kamu berdiri diam di dermaga. Papan dermaga mendorong telapak kakimu ke atas dengan…",
+      "p-r12": "Gelas di atas meja warung tidak jatuh menembus meja karena meja memberi…"
+    },
+    "en": {
+      "judul": "Forces at the Beach",
+      "instruksi": "Read what happens, then touch the force that matters most.",
+      "b-pilihan": "choices",
+      "i-gravitasi": "gravity",
+      "i-gesek": "friction",
+      "i-udara": "air resistance",
+      "i-air": "water resistance",
+      "i-apung": "upthrust",
+      "i-normal": "normal force",
+      "p-r1": "A coconut comes off its tree and falls onto the sand.",
+      "p-r2": "Children slide down the playground slide at the beach because of the pull of…",
+      "p-r3": "Walking through waist-deep sea water feels heavy and slow.",
+      "p-r4": "Fish and boats are streamlined so they slip through water easily. This shape reduces…",
+      "p-r5": "A swim ring keeps a child at the surface of the water.",
+      "p-r6": "A stone feels lighter when lifted under water because the water pushes it up.",
+      "p-r7": "An open sheet of paper falls more slowly than a scrunched-up one.",
+      "p-r8": "A cyclist crouches low to go faster, because this reduces…",
+      "p-r9": "A ball rolled across the sand stops by itself in the end.",
+      "p-r10": "Smooth sandals slip on a wet floor because this force becomes small.",
+      "p-r11": "You stand still on the pier. The boards push up on your feet with the…",
+      "p-r12": "A glass on the café table does not fall through it because the table gives a…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "gravitasi",
+      "labelKey": "i-gravitasi",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "gesek",
+      "labelKey": "i-gesek",
+      "bin": "pilihan",
+      "emoji": "🛞"
+    },
+    {
+      "id": "udara",
+      "labelKey": "i-udara",
+      "bin": "pilihan",
+      "emoji": "🪂"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "pilihan",
+      "emoji": "🌊"
+    },
+    {
+      "id": "apung",
+      "labelKey": "i-apung",
+      "bin": "pilihan",
+      "emoji": "🛟"
+    },
+    {
+      "id": "normal",
+      "labelKey": "i-normal",
+      "bin": "pilihan",
+      "emoji": "⬆️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "gravitasi",
+        "apung",
+        "udara"
+      ],
+      "correct": "gravitasi"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "gravitasi",
+        "air",
+        "normal"
+      ],
+      "correct": "gravitasi"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "air",
+        "gravitasi",
+        "udara"
+      ],
+      "correct": "air"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "air",
+        "apung",
+        "gravitasi"
+      ],
+      "correct": "air"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "apung",
+        "gesek",
+        "normal"
+      ],
+      "correct": "apung"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "apung",
+        "udara",
+        "gesek"
+      ],
+      "correct": "apung"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "udara",
+        "apung",
+        "normal"
+      ],
+      "correct": "udara"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "udara",
+        "gravitasi",
+        "apung"
+      ],
+      "correct": "udara"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "gesek",
+        "apung",
+        "udara"
+      ],
+      "correct": "gesek"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "gesek",
+        "gravitasi",
+        "apung"
+      ],
+      "correct": "gesek"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "normal",
+        "apung",
+        "udara"
+      ],
+      "correct": "normal"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "normal",
+        "gesek",
+        "air"
+      ],
+      "correct": "normal"
+    }
+  ]
+}

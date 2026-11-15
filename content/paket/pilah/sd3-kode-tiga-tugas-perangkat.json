@@ -1,0 +1,179 @@
+{
+  "id": "sd3-kode-tiga-tugas-perangkat",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD3.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tiga Tugas Perangkat",
+      "instruksi": "Perangkat ini untuk memasukkan data, menyimpan data, atau menampilkan data? Taruh di kotaknya.",
+      "bin-masuk": "memasukkan",
+      "bin-keluar": "menampilkan",
+      "bin-simpan": "menyimpan",
+      "i-trackball": "trackball",
+      "i-mik-podcast": "mikrofon podcast",
+      "i-webcam": "kamera web",
+      "i-keypad": "papan tombol angka",
+      "i-pena": "pena digital",
+      "i-dvd": "kepingan DVD",
+      "i-kaset": "kaset video",
+      "i-disket": "disket",
+      "i-hdd": "hard disk eksternal",
+      "i-tv": "layar televisi",
+      "i-struk": "printer struk",
+      "i-speaker-laptop": "speaker laptop",
+      "i-layar-laptop": "layar laptop",
+      "i-toa": "pengeras suara"
+    },
+    "en": {
+      "judul": "Three Device Jobs",
+      "instruksi": "Is this device for putting data in, storing data or showing data? Put it in its box.",
+      "bin-masuk": "puts data in",
+      "bin-keluar": "shows data",
+      "bin-simpan": "stores data",
+      "i-trackball": "trackball",
+      "i-mik-podcast": "podcast microphone",
+      "i-webcam": "webcam",
+      "i-keypad": "number keypad",
+      "i-pena": "digital pen",
+      "i-dvd": "DVD disc",
+      "i-kaset": "video cassette",
+      "i-disket": "floppy disk",
+      "i-hdd": "external hard drive",
+      "i-tv": "TV screen",
+      "i-struk": "receipt printer",
+      "i-speaker-laptop": "laptop speaker",
+      "i-layar-laptop": "laptop screen",
+      "i-toa": "loudspeaker"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 = ulang memasukkan/menampilkan (SD 2), 3 = tambah kotak menyimpan"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 9,
+      "default": 9,
+      "step": 3,
+      "keterangan": "jumlah perangkat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "masuk",
+      "labelKey": "bin-masuk",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "keluar",
+      "labelKey": "bin-keluar",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "simpan",
+      "labelKey": "bin-simpan",
+      "emoji": "🗄️"
+    }
+  ],
+  "items": [
+    {
+      "id": "trackball",
+      "labelKey": "i-trackball",
+      "bin": "masuk",
+      "emoji": "🖲️"
+    },
+    {
+      "id": "mik-podcast",
+      "labelKey": "i-mik-podcast",
+      "bin": "masuk",
+      "emoji": "🎙️"
+    },
+    {
+      "id": "webcam",
+      "labelKey": "i-webcam",
+      "bin": "masuk",
+      "emoji": "📹"
+    },
+    {
+      "id": "keypad",
+      "labelKey": "i-keypad",
+      "bin": "masuk",
+      "emoji": "🔢"
+    },
+    {
+      "id": "pena",
+      "labelKey": "i-pena",
+      "bin": "masuk",
+      "emoji": "🖊️"
+    },
+    {
+      "id": "dvd",
+      "labelKey": "i-dvd",
+      "bin": "simpan",
+      "emoji": "📀"
+    },
+    {
+      "id": "kaset",
+      "labelKey": "i-kaset",
+      "bin": "simpan",
+      "emoji": "📼"
+    },
+    {
+      "id": "disket",
+      "labelKey": "i-disket",
+      "bin": "simpan",
+      "emoji": "💾"
+    },
+    {
+      "id": "hdd",
+      "labelKey": "i-hdd",
+      "bin": "simpan",
+      "emoji": "💽"
+    },
+    {
+      "id": "tv",
+      "labelKey": "i-tv",
+      "bin": "keluar",
+      "emoji": "📺"
+    },
+    {
+      "id": "struk",
+      "labelKey": "i-struk",
+      "bin": "keluar",
+      "emoji": "🧾"
+    },
+    {
+      "id": "speaker-laptop",
+      "labelKey": "i-speaker-laptop",
+      "bin": "keluar",
+      "emoji": "🔉"
+    },
+    {
+      "id": "layar-laptop",
+      "labelKey": "i-layar-laptop",
+      "bin": "keluar",
+      "emoji": "💻"
+    },
+    {
+      "id": "toa",
+      "labelKey": "i-toa",
+      "bin": "keluar",
+      "emoji": "📢"
+    }
+  ]
+}

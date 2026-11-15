@@ -1,0 +1,305 @@
+{
+  "id": "sd2-mat-cari-segi-banyak-lab",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Segi Banyaknya",
+      "instruksi": "Hitung sisi lurus setiap bangun, walaupun bangunnya miring atau terbalik. Sentuh bangun yang jumlah sisinya diminta.",
+      "i-segitiga-merah": "segitiga merah",
+      "i-rambu-segitiga": "rambu segitiga",
+      "i-segitiga-biru": "segitiga biru",
+      "i-segitiga-hijau-kecil": "segitiga hijau kecil",
+      "i-persegi-biru": "persegi biru",
+      "i-persegi-hijau": "persegi hijau",
+      "i-belah-ketupat-oranye": "belah ketupat oranye",
+      "i-persegi-panjang-kuning": "persegi panjang kuning",
+      "i-segi-lima-penuh": "segi lima penuh",
+      "i-segi-lima-kosong": "segi lima kosong",
+      "i-segi-enam-penuh": "segi enam penuh",
+      "i-segi-enam-kosong": "segi enam kosong",
+      "i-segi-enam-tidur": "segi enam tidur",
+      "i-rambu-berhenti": "rambu berhenti",
+      "t-3-sisi": "Mana yang punya 3 sisi?",
+      "t-4-sisi": "Mana yang punya 4 sisi?",
+      "t-5-sisi": "Mana yang punya 5 sisi?",
+      "t-6-sisi": "Mana yang punya 6 sisi?",
+      "t-8-sisi": "Mana yang punya 8 sisi?",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Find the Polygon",
+      "instruksi": "Count the straight sides of each shape, even if it is tilted or upside down. Tap the shape with the number of sides asked for.",
+      "i-segitiga-merah": "red triangle",
+      "i-rambu-segitiga": "triangle sign",
+      "i-segitiga-biru": "blue triangle",
+      "i-segitiga-hijau-kecil": "small green triangle",
+      "i-persegi-biru": "blue square",
+      "i-persegi-hijau": "green square",
+      "i-belah-ketupat-oranye": "orange rhombus",
+      "i-persegi-panjang-kuning": "yellow rectangle",
+      "i-segi-lima-penuh": "solid pentagon",
+      "i-segi-lima-kosong": "outline pentagon",
+      "i-segi-enam-penuh": "solid hexagon",
+      "i-segi-enam-kosong": "outline hexagon",
+      "i-segi-enam-tidur": "flat hexagon",
+      "i-rambu-berhenti": "stop sign",
+      "t-3-sisi": "Which one has 3 sides?",
+      "t-4-sisi": "Which one has 4 sides?",
+      "t-5-sisi": "Which one has 5 sides?",
+      "t-6-sisi": "Which one has 6 sides?",
+      "t-8-sisi": "Which one has 8 sides?",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "segitiga-merah",
+      "labelKey": "i-segitiga-merah",
+      "bin": "pilihan",
+      "emoji": "🔺"
+    },
+    {
+      "id": "rambu-segitiga",
+      "labelKey": "i-rambu-segitiga",
+      "bin": "pilihan",
+      "emoji": "⚠️"
+    },
+    {
+      "id": "segitiga-biru",
+      "labelKey": "i-segitiga-biru",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#3f7fe0"
+    },
+    {
+      "id": "segitiga-hijau-kecil",
+      "labelKey": "i-segitiga-hijau-kecil",
+      "bin": "pilihan",
+      "shape": "triangle",
+      "color": "#2bb673",
+      "scale": 0.7
+    },
+    {
+      "id": "persegi-biru",
+      "labelKey": "i-persegi-biru",
+      "bin": "pilihan",
+      "emoji": "🟦"
+    },
+    {
+      "id": "persegi-hijau",
+      "labelKey": "i-persegi-hijau",
+      "bin": "pilihan",
+      "emoji": "🟩"
+    },
+    {
+      "id": "belah-ketupat-oranye",
+      "labelKey": "i-belah-ketupat-oranye",
+      "bin": "pilihan",
+      "emoji": "🔶"
+    },
+    {
+      "id": "persegi-panjang-kuning",
+      "labelKey": "i-persegi-panjang-kuning",
+      "bin": "pilihan",
+      "shape": "rect",
+      "color": "#ffbf00",
+      "width": 2
+    },
+    {
+      "id": "segi-lima-penuh",
+      "labelKey": "i-segi-lima-penuh",
+      "bin": "pilihan",
+      "emoji": "⬟"
+    },
+    {
+      "id": "segi-lima-kosong",
+      "labelKey": "i-segi-lima-kosong",
+      "bin": "pilihan",
+      "emoji": "⬠"
+    },
+    {
+      "id": "segi-enam-penuh",
+      "labelKey": "i-segi-enam-penuh",
+      "bin": "pilihan",
+      "emoji": "⬢"
+    },
+    {
+      "id": "segi-enam-kosong",
+      "labelKey": "i-segi-enam-kosong",
+      "bin": "pilihan",
+      "emoji": "⬡"
+    },
+    {
+      "id": "segi-enam-tidur",
+      "labelKey": "i-segi-enam-tidur",
+      "bin": "pilihan",
+      "emoji": "⬣"
+    },
+    {
+      "id": "rambu-berhenti",
+      "labelKey": "i-rambu-berhenti",
+      "bin": "pilihan",
+      "emoji": "🛑"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-3-segitiga-merah",
+      "promptKey": "t-3-sisi",
+      "choices": [
+        "segitiga-merah",
+        "persegi-biru",
+        "segi-lima-penuh"
+      ],
+      "correct": "segitiga-merah"
+    },
+    {
+      "id": "r-3-rambu-segitiga",
+      "promptKey": "t-3-sisi",
+      "choices": [
+        "rambu-segitiga",
+        "segi-enam-penuh",
+        "belah-ketupat-oranye"
+      ],
+      "correct": "rambu-segitiga"
+    },
+    {
+      "id": "r-3-segitiga-biru",
+      "promptKey": "t-3-sisi",
+      "choices": [
+        "segitiga-biru",
+        "persegi-hijau",
+        "segi-enam-kosong"
+      ],
+      "correct": "segitiga-biru"
+    },
+    {
+      "id": "r-3-segitiga-hijau-kecil",
+      "promptKey": "t-3-sisi",
+      "choices": [
+        "segitiga-hijau-kecil",
+        "persegi-panjang-kuning",
+        "rambu-berhenti"
+      ],
+      "correct": "segitiga-hijau-kecil"
+    },
+    {
+      "id": "r-4-persegi-biru",
+      "promptKey": "t-4-sisi",
+      "choices": [
+        "persegi-biru",
+        "segitiga-merah",
+        "segi-lima-penuh"
+      ],
+      "correct": "persegi-biru"
+    },
+    {
+      "id": "r-4-belah-ketupat-oranye",
+      "promptKey": "t-4-sisi",
+      "choices": [
+        "belah-ketupat-oranye",
+        "segi-lima-kosong",
+        "segi-enam-penuh"
+      ],
+      "correct": "belah-ketupat-oranye"
+    },
+    {
+      "id": "r-4-persegi-panjang-kuning",
+      "promptKey": "t-4-sisi",
+      "choices": [
+        "persegi-panjang-kuning",
+        "rambu-segitiga",
+        "segi-enam-tidur"
+      ],
+      "correct": "persegi-panjang-kuning"
+    },
+    {
+      "id": "r-4-persegi-hijau",
+      "promptKey": "t-4-sisi",
+      "choices": [
+        "persegi-hijau",
+        "segi-enam-kosong",
+        "segitiga-biru"
+      ],
+      "correct": "persegi-hijau"
+    },
+    {
+      "id": "r-5-segi-lima-penuh",
+      "promptKey": "t-5-sisi",
+      "choices": [
+        "segi-lima-penuh",
+        "segi-enam-penuh",
+        "persegi-biru"
+      ],
+      "correct": "segi-lima-penuh"
+    },
+    {
+      "id": "r-5-segi-lima-kosong",
+      "promptKey": "t-5-sisi",
+      "choices": [
+        "segi-lima-kosong",
+        "segi-enam-kosong",
+        "belah-ketupat-oranye"
+      ],
+      "correct": "segi-lima-kosong"
+    },
+    {
+      "id": "r-6-segi-enam-penuh",
+      "promptKey": "t-6-sisi",
+      "choices": [
+        "segi-enam-penuh",
+        "segi-lima-penuh",
+        "rambu-berhenti"
+      ],
+      "correct": "segi-enam-penuh"
+    },
+    {
+      "id": "r-6-segi-enam-kosong",
+      "promptKey": "t-6-sisi",
+      "choices": [
+        "segi-enam-kosong",
+        "segi-lima-kosong",
+        "persegi-hijau"
+      ],
+      "correct": "segi-enam-kosong"
+    },
+    {
+      "id": "r-6-segi-enam-tidur",
+      "promptKey": "t-6-sisi",
+      "choices": [
+        "segi-enam-tidur",
+        "rambu-berhenti",
+        "segitiga-merah"
+      ],
+      "correct": "segi-enam-tidur"
+    },
+    {
+      "id": "r-8-rambu-berhenti",
+      "promptKey": "t-8-sisi",
+      "choices": [
+        "rambu-berhenti",
+        "segi-enam-penuh",
+        "segi-lima-penuh"
+      ],
+      "correct": "rambu-berhenti"
+    }
+  ]
+}

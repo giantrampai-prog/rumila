@@ -1,0 +1,167 @@
+{
+  "id": "sd5-sains-pemburu-dan-penghindar-laut",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.ADAPTASI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siasat Berburu, Siasat Selamat",
+      "instruksi": "Baca ciri hewannya, lalu pilah: menolong pemangsa berburu, atau menolong mangsa selamat.",
+      "b-pemangsa": "menolong pemangsa berburu",
+      "b-mangsa": "menolong mangsa selamat",
+      "i-hiu": "hiu: penciuman sangat tajam, mencium darah dari jauh",
+      "i-elang": "elang laut: penglihatan tajam melihat ikan dari ketinggian",
+      "i-labalaba": "laba-laba: membuat jaring lengket",
+      "i-bunglon": "bunglon: lidah panjang lengket untuk menangkap serangga",
+      "i-harimau": "harimau: loreng menyamarkannya saat mengintai",
+      "i-ularbisa": "ular kobra: taring berbisa untuk melumpuhkan",
+      "i-burunghantu": "burung hantu: terbang tanpa suara di malam hari",
+      "i-cumi": "cumi-cumi: menyemburkan tinta hitam lalu kabur",
+      "i-buntal": "ikan buntal: menggembung jadi bola berduri",
+      "i-cicak": "cicak: memutuskan ekornya saat ditangkap",
+      "i-belalang": "belalang daun: bentuk dan warnanya seperti daun",
+      "i-rusa": "rusa: berlari zig-zag saat dikejar",
+      "i-kurakura": "kura-kura: menarik kepala ke dalam tempurung",
+      "i-ulat": "ulat: punya bercak seperti mata besar untuk menakuti"
+    },
+    "en": {
+      "judul": "Tricks to Hunt, Tricks to Escape",
+      "instruksi": "Read the animal's trait, then sort it: it helps a predator hunt, or helps prey escape.",
+      "b-pemangsa": "helps a predator hunt",
+      "b-mangsa": "helps prey escape",
+      "i-hiu": "shark: a very keen sense of smell, can smell blood from far away",
+      "i-elang": "sea eagle: sharp eyes that spot fish from high up",
+      "i-labalaba": "spider: spins a sticky web",
+      "i-bunglon": "chameleon: a long sticky tongue to catch insects",
+      "i-harimau": "tiger: stripes hide it while it stalks",
+      "i-ularbisa": "cobra: venomous fangs to stop its catch",
+      "i-burunghantu": "owl: flies silently at night",
+      "i-cumi": "squid: squirts black ink and dashes away",
+      "i-buntal": "pufferfish: puffs up into a spiky ball",
+      "i-cicak": "house gecko: drops its tail when caught",
+      "i-belalang": "leaf insect: shaped and coloured like a leaf",
+      "i-rusa": "deer: runs in zigzags when chased",
+      "i-kurakura": "tortoise: pulls its head into its shell",
+      "i-ulat": "caterpillar: has big eye-like spots to scare enemies"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "pemangsa",
+      "labelKey": "b-pemangsa",
+      "emoji": "🦈",
+      "color": "#ffcdd2"
+    },
+    {
+      "id": "mangsa",
+      "labelKey": "b-mangsa",
+      "emoji": "🛡️",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "pemangsa",
+      "emoji": "🦈"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "pemangsa",
+      "emoji": "🦅"
+    },
+    {
+      "id": "labalaba",
+      "labelKey": "i-labalaba",
+      "bin": "pemangsa",
+      "emoji": "🕸️"
+    },
+    {
+      "id": "bunglon",
+      "labelKey": "i-bunglon",
+      "bin": "pemangsa",
+      "emoji": "🦎"
+    },
+    {
+      "id": "harimau",
+      "labelKey": "i-harimau",
+      "bin": "pemangsa",
+      "emoji": "🐅"
+    },
+    {
+      "id": "ularbisa",
+      "labelKey": "i-ularbisa",
+      "bin": "pemangsa",
+      "emoji": "🐍"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "pemangsa",
+      "emoji": "🦉"
+    },
+    {
+      "id": "cumi",
+      "labelKey": "i-cumi",
+      "bin": "mangsa",
+      "emoji": "🦑"
+    },
+    {
+      "id": "buntal",
+      "labelKey": "i-buntal",
+      "bin": "mangsa",
+      "emoji": "🐡"
+    },
+    {
+      "id": "cicak",
+      "labelKey": "i-cicak",
+      "bin": "mangsa",
+      "emoji": "🦎"
+    },
+    {
+      "id": "belalang",
+      "labelKey": "i-belalang",
+      "bin": "mangsa",
+      "emoji": "🍃"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "i-rusa",
+      "bin": "mangsa",
+      "emoji": "🦌"
+    },
+    {
+      "id": "kurakura",
+      "labelKey": "i-kurakura",
+      "bin": "mangsa",
+      "emoji": "🐢"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "mangsa",
+      "emoji": "🐛"
+    }
+  ],
+  "pilihan": []
+}

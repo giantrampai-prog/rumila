@@ -1,0 +1,185 @@
+{
+  "id": "sd2-kode-pola-lengan-robot",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.SD2.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lengan Robot Salah Gerak",
+      "instruksi": "Lengan robot pabrik mengulang perintahnya, tapi satu keping merusak pola. Sentuh keping itu lalu ganti.",
+      "angkat": "angkat lengan",
+      "turun": "turunkan lengan",
+      "jepit": "jepit barang",
+      "lepas": "lepas barang",
+      "putar": "putar lengan",
+      "cat": "semprot cat"
+    },
+    "en": {
+      "judul": "Robot Arm Misstep",
+      "instruksi": "The factory robot arm repeats its commands, but one piece breaks the pattern. Touch that piece and change it.",
+      "angkat": "raise the arm",
+      "turun": "lower the arm",
+      "jepit": "grip the item",
+      "lepas": "let go of the item",
+      "putar": "turn the arm",
+      "cat": "spray paint"
+    }
+  },
+  "knobs": {
+    "posisi": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = keping salah di tengah barisan; 1 = boleh di ujung (lebih sulit)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "perbaiki",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "angkat",
+      "labelKey": "angkat",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "turun",
+      "labelKey": "turun",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "jepit",
+      "labelKey": "jepit",
+      "emoji": "🤏"
+    },
+    {
+      "id": "lepas",
+      "labelKey": "lepas",
+      "emoji": "🖐️"
+    },
+    {
+      "id": "putar",
+      "labelKey": "putar",
+      "emoji": "🔄"
+    },
+    {
+      "id": "cat",
+      "labelKey": "cat",
+      "emoji": "🎨"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "turun-jepit-angkat",
+      "unit": [
+        "turun",
+        "jepit",
+        "angkat"
+      ]
+    },
+    {
+      "id": "angkat-putar-lepas",
+      "unit": [
+        "angkat",
+        "putar",
+        "lepas"
+      ]
+    },
+    {
+      "id": "jepit-putar-lepas",
+      "unit": [
+        "jepit",
+        "putar",
+        "lepas"
+      ]
+    },
+    {
+      "id": "turun-cat-angkat",
+      "unit": [
+        "turun",
+        "cat",
+        "angkat"
+      ]
+    },
+    {
+      "id": "putar-turun-jepit",
+      "unit": [
+        "putar",
+        "turun",
+        "jepit"
+      ]
+    },
+    {
+      "id": "cat-putar-angkat",
+      "unit": [
+        "cat",
+        "putar",
+        "angkat"
+      ]
+    },
+    {
+      "id": "jepit-angkat-putar",
+      "unit": [
+        "jepit",
+        "angkat",
+        "putar"
+      ]
+    },
+    {
+      "id": "lepas-angkat-turun",
+      "unit": [
+        "lepas",
+        "angkat",
+        "turun"
+      ]
+    },
+    {
+      "id": "putar-cat-turun",
+      "unit": [
+        "putar",
+        "cat",
+        "turun"
+      ]
+    },
+    {
+      "id": "angkat-lepas-putar",
+      "unit": [
+        "angkat",
+        "lepas",
+        "putar"
+      ]
+    },
+    {
+      "id": "cat-jepit-lepas",
+      "unit": [
+        "cat",
+        "jepit",
+        "lepas"
+      ]
+    },
+    {
+      "id": "turun-lepas-putar",
+      "unit": [
+        "turun",
+        "lepas",
+        "putar"
+      ]
+    }
+  ],
+  "nada": {
+    "angkat": "C4",
+    "turun": "E4",
+    "jepit": "G4",
+    "lepas": "A4",
+    "putar": "D4",
+    "cat": "B4"
+  }
+}

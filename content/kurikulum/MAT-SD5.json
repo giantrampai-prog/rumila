@@ -374,8 +374,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa memakai dua angka terakhir untuk menguji apakah bilangan habis dibagi 4 atau 8",
-        "en": "I can use the last digits to test whether a number is divisible by 4 or 8"
+        "id": "Aku bisa memakai dua angka terakhir untuk menguji habis dibagi 4, dan tiga angka terakhir untuk habis dibagi 8",
+        "en": "I can use the last two digits to test divisibility by 4, and the last three digits to test divisibility by 8"
       },
       "depth": [
         "pakai"

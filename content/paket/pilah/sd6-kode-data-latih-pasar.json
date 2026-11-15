@@ -1,0 +1,470 @@
+{
+  "id": "sd6-kode-data-latih-pasar",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.AI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Data Latih Penjual Sayur",
+      "instruksi": "Model AI di pasar belajar dari foto dan catatan yang diberikan. Pikirkan apa yang dipelajarinya dari data itu, termasuk bila datanya kurang bervariasi atau labelnya salah, lalu pilih penjelasan yang tepat.",
+      "pilihan": "pilihan",
+      "c1": "model bisa salah menebak",
+      "c2": "model pasti benar",
+      "c3": "pisangnya berubah jadi kuning",
+      "q1": "Model pengenal buah dilatih hanya dengan foto pisang kuning. Lalu diberi foto pisang hijau. Apa yang paling mungkin terjadi?",
+      "c4": "bisa menyebut tomat busuk sebagai segar",
+      "c5": "jadi lebih teliti",
+      "c6": "tidak terpengaruh sama sekali",
+      "q2": "Seseorang memberi label 'segar' pada 50 foto tomat busuk. Akibatnya model…",
+      "c7": "apel hijau",
+      "c8": "apel merah",
+      "c9": "sama saja",
+      "q3": "Data latih: 95 foto apel merah dan 5 foto apel hijau. Apel mana yang lebih sering salah ditebak?",
+      "c10": "diambil di banyak pasar, cahaya, dan sudut",
+      "c11": "diambil di satu meja yang sama",
+      "c12": "sedikit saja supaya cepat",
+      "q4": "Supaya pengenal sayur bekerja di pasar mana saja, foto latihnya sebaiknya…",
+      "c13": "sekitar 80 ikat",
+      "c14": "sekitar 30 ikat",
+      "c15": "tepat 100 ikat",
+      "q5": "Data: hari Sabtu terjual 80, 75, 85 ikat sayur. Hari biasa terjual 30, 35, 25. Sabtu depan, tebakan terbaik penjualannya?",
+      "c16": "data baru yang tidak dipakai saat latihan",
+      "c17": "data latih yang sama",
+      "c18": "tidak usah diuji",
+      "q6": "Untuk tahu model penebak harga benar-benar bagus, kita mengujinya dengan…",
+      "c19": "suara anak perempuan",
+      "c20": "suara laki-laki dewasa",
+      "c21": "semua sama mudahnya",
+      "q7": "Model pengenal suara hanya dilatih dengan suara laki-laki dewasa. Suara siapa yang paling mungkin sulit dikenali?",
+      "c22": "foto buah berlabel 'matang' dan 'belum matang'",
+      "c23": "harga bensin hari ini",
+      "c24": "nama penjual buah",
+      "q8": "Mana yang termasuk data latih untuk model penebak buah matang?",
+      "c25": "foto gelap berarti daun sakit",
+      "c26": "warna asli daun",
+      "c27": "nama tanamannya",
+      "q9": "Semua foto daun sakit di data latih diambil malam hari, foto daun sehat siang hari. Model mungkin belajar…",
+      "c28": "tambah foto melon berlabel benar",
+      "c29": "hapus semua foto semangka",
+      "c30": "ganti warna layar",
+      "q10": "Model menebak 'semangka' padahal fotonya melon. Apa yang paling membantu?",
+      "c31": "perkiraan dari pola di data lama",
+      "c32": "pasti tepat",
+      "c33": "dipilih acak tanpa data",
+      "q11": "Tebakan AI tentang jumlah pembeli besok adalah…",
+      "c34": "kebanyakan gorengan",
+      "c35": "kebanyakan sup",
+      "c36": "acak sama sekali",
+      "q12": "Model saran resep hanya pernah melihat resep yang sering kamu masak, semuanya gorengan. Sarannya kemungkinan…"
+    },
+    "en": {
+      "judul": "The Greengrocer's Training Data",
+      "instruksi": "The market's AI model learns from the photos and notes it is given. Think about what it learns from that data, including when the data lacks variety or the labels are wrong, then choose the right explanation.",
+      "pilihan": "choices",
+      "c1": "the model may guess wrongly",
+      "c2": "the model is surely right",
+      "c3": "the banana turns yellow",
+      "q1": "A fruit model was trained only on photos of yellow bananas. Then it is shown a green banana. What is most likely to happen?",
+      "c4": "may call rotten tomatoes fresh",
+      "c5": "becomes more careful",
+      "c6": "is not affected at all",
+      "q2": "Someone labelled 50 photos of rotten tomatoes as 'fresh'. As a result the model…",
+      "c7": "green apples",
+      "c8": "red apples",
+      "c9": "both the same",
+      "q3": "Training data: 95 photos of red apples and 5 of green apples. Which apple is guessed wrongly more often?",
+      "c10": "come from many markets, lights, and angles",
+      "c11": "all come from one table",
+      "c12": "be very few so it's quick",
+      "q4": "So the vegetable recogniser works at any market, its training photos should…",
+      "c13": "about 80 bunches",
+      "c14": "about 30 bunches",
+      "c15": "exactly 100 bunches",
+      "q5": "Data: on Saturdays 80, 75, 85 bunches of vegetables were sold. On normal days 30, 35, 25. Next Saturday, the best guess is?",
+      "c16": "new data not used in training",
+      "c17": "the same training data",
+      "c18": "no test at all",
+      "q6": "To know a price-guessing model is really good, we test it with…",
+      "c19": "a young girl's voice",
+      "c20": "an adult man's voice",
+      "c21": "all are equally easy",
+      "q7": "A voice model was trained only on adult men's voices. Whose voice is most likely hard for it?",
+      "c22": "fruit photos labelled 'ripe' and 'not ripe'",
+      "c23": "today's petrol price",
+      "c24": "the fruit seller's name",
+      "q8": "Which is training data for a model that guesses ripe fruit?",
+      "c25": "dark photo means sick leaf",
+      "c26": "the leaf's real colour",
+      "c27": "the plant's name",
+      "q9": "All the sick-leaf photos in the training data were taken at night, the healthy ones by day. The model may learn…",
+      "c28": "add correctly labelled melon photos",
+      "c29": "delete all watermelon photos",
+      "c30": "change the screen colour",
+      "q10": "The model guesses 'watermelon' but the photo is a melon. What helps most?",
+      "c31": "an estimate from patterns in past data",
+      "c32": "always exactly right",
+      "c33": "picked at random without data",
+      "q11": "An AI's guess about tomorrow's number of shoppers is…",
+      "c34": "mostly fried food",
+      "c35": "mostly soups",
+      "c36": "totally random",
+      "q12": "A recipe model has only seen recipes you often cook, all fried food. Its suggestions will probably be…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c34"
+    }
+  ]
+}

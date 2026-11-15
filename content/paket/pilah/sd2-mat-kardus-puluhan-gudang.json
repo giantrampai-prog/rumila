@@ -1,0 +1,539 @@
+{
+  "id": "sd2-mat-kardus-puluhan-gudang",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kardus Puluhan di Gudang",
+      "instruksi": "Satu kardus berisi sepuluh barang. Gabungkan puluhan dan satuannya, lalu sentuh bilangan yang benar.",
+      "i-n46": "46",
+      "i-n64": "64",
+      "i-n56": "56",
+      "t-4p6": "4 puluhan dan 6 satuan = ?",
+      "i-n72": "72",
+      "i-n27": "27",
+      "i-n82": "82",
+      "t-7p2": "7 puluhan dan 2 satuan = ?",
+      "i-n47": "47",
+      "i-n37": "37",
+      "i-n57": "57",
+      "t-30t17": "30 + 17 = ?",
+      "i-n58": "58",
+      "i-n85": "85",
+      "i-n68": "68",
+      "t-50t8": "50 + 8 = ?",
+      "i-n35": "35",
+      "i-n25": "25",
+      "i-n45": "45",
+      "t-2p15": "2 puluhan dan 15 satuan = ?",
+      "i-n83": "83",
+      "i-n63": "63",
+      "i-n73": "73",
+      "t-60t23": "60 + 23 = ?",
+      "i-n90": "90",
+      "i-n9": "9",
+      "i-n80": "80",
+      "t-9p0": "9 puluhan dan 0 satuan = ?",
+      "i-n59": "59",
+      "i-n49": "49",
+      "i-n69": "69",
+      "t-40t19": "40 + 19 = ?",
+      "i-n42": "42",
+      "i-n32": "32",
+      "i-n52": "52",
+      "t-3p12": "3 puluhan dan 12 satuan = ?",
+      "i-n78": "78",
+      "i-n87": "87",
+      "t-8t70": "8 + 70 = ?",
+      "i-n19": "19",
+      "i-n91": "91",
+      "i-n10": "10",
+      "t-1p9": "1 puluhan dan 9 satuan = ?",
+      "i-n36": "36",
+      "t-20t26": "20 + 26 = ?",
+      "i-n54": "54",
+      "i-n74": "74",
+      "t-5p14": "5 puluhan dan 14 satuan = ?",
+      "i-n81": "81",
+      "i-n71": "71",
+      "t-70t11": "70 + 11 = ?",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Boxes of Ten in the Warehouse",
+      "instruksi": "Each box holds ten things. Put the tens and the ones together, then tap the right number.",
+      "i-n46": "46",
+      "i-n64": "64",
+      "i-n56": "56",
+      "t-4p6": "4 tens and 6 ones = ?",
+      "i-n72": "72",
+      "i-n27": "27",
+      "i-n82": "82",
+      "t-7p2": "7 tens and 2 ones = ?",
+      "i-n47": "47",
+      "i-n37": "37",
+      "i-n57": "57",
+      "t-30t17": "30 + 17 = ?",
+      "i-n58": "58",
+      "i-n85": "85",
+      "i-n68": "68",
+      "t-50t8": "50 + 8 = ?",
+      "i-n35": "35",
+      "i-n25": "25",
+      "i-n45": "45",
+      "t-2p15": "2 tens and 15 ones = ?",
+      "i-n83": "83",
+      "i-n63": "63",
+      "i-n73": "73",
+      "t-60t23": "60 + 23 = ?",
+      "i-n90": "90",
+      "i-n9": "9",
+      "i-n80": "80",
+      "t-9p0": "9 tens and 0 ones = ?",
+      "i-n59": "59",
+      "i-n49": "49",
+      "i-n69": "69",
+      "t-40t19": "40 + 19 = ?",
+      "i-n42": "42",
+      "i-n32": "32",
+      "i-n52": "52",
+      "t-3p12": "3 tens and 12 ones = ?",
+      "i-n78": "78",
+      "i-n87": "87",
+      "t-8t70": "8 + 70 = ?",
+      "i-n19": "19",
+      "i-n91": "91",
+      "i-n10": "10",
+      "t-1p9": "1 ten and 9 ones = ?",
+      "i-n36": "36",
+      "t-20t26": "20 + 26 = ?",
+      "i-n54": "54",
+      "i-n74": "74",
+      "t-5p14": "5 tens and 14 ones = ?",
+      "i-n81": "81",
+      "i-n71": "71",
+      "t-70t11": "70 + 11 = ?",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "n46",
+      "labelKey": "i-n46",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n64",
+      "labelKey": "i-n64",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n56",
+      "labelKey": "i-n56",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n72",
+      "labelKey": "i-n72",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n27",
+      "labelKey": "i-n27",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n82",
+      "labelKey": "i-n82",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n47",
+      "labelKey": "i-n47",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n37",
+      "labelKey": "i-n37",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n57",
+      "labelKey": "i-n57",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n58",
+      "labelKey": "i-n58",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n85",
+      "labelKey": "i-n85",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n68",
+      "labelKey": "i-n68",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n35",
+      "labelKey": "i-n35",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n25",
+      "labelKey": "i-n25",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n45",
+      "labelKey": "i-n45",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n83",
+      "labelKey": "i-n83",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n63",
+      "labelKey": "i-n63",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n73",
+      "labelKey": "i-n73",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n90",
+      "labelKey": "i-n90",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n9",
+      "labelKey": "i-n9",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n80",
+      "labelKey": "i-n80",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n59",
+      "labelKey": "i-n59",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n49",
+      "labelKey": "i-n49",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n69",
+      "labelKey": "i-n69",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n42",
+      "labelKey": "i-n42",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n32",
+      "labelKey": "i-n32",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n52",
+      "labelKey": "i-n52",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n78",
+      "labelKey": "i-n78",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n87",
+      "labelKey": "i-n87",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n19",
+      "labelKey": "i-n19",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n91",
+      "labelKey": "i-n91",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n10",
+      "labelKey": "i-n10",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n36",
+      "labelKey": "i-n36",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n54",
+      "labelKey": "i-n54",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n74",
+      "labelKey": "i-n74",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n81",
+      "labelKey": "i-n81",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    },
+    {
+      "id": "n71",
+      "labelKey": "i-n71",
+      "bin": "pilihan",
+      "emoji": "📦",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-4p6",
+      "promptKey": "t-4p6",
+      "choices": [
+        "n46",
+        "n64",
+        "n56"
+      ],
+      "correct": "n46"
+    },
+    {
+      "id": "r-7p2",
+      "promptKey": "t-7p2",
+      "choices": [
+        "n72",
+        "n27",
+        "n82"
+      ],
+      "correct": "n72"
+    },
+    {
+      "id": "r-30t17",
+      "promptKey": "t-30t17",
+      "choices": [
+        "n47",
+        "n37",
+        "n57"
+      ],
+      "correct": "n47"
+    },
+    {
+      "id": "r-50t8",
+      "promptKey": "t-50t8",
+      "choices": [
+        "n58",
+        "n85",
+        "n68"
+      ],
+      "correct": "n58"
+    },
+    {
+      "id": "r-2p15",
+      "promptKey": "t-2p15",
+      "choices": [
+        "n35",
+        "n25",
+        "n45"
+      ],
+      "correct": "n35"
+    },
+    {
+      "id": "r-60t23",
+      "promptKey": "t-60t23",
+      "choices": [
+        "n83",
+        "n63",
+        "n73"
+      ],
+      "correct": "n83"
+    },
+    {
+      "id": "r-9p0",
+      "promptKey": "t-9p0",
+      "choices": [
+        "n90",
+        "n9",
+        "n80"
+      ],
+      "correct": "n90"
+    },
+    {
+      "id": "r-40t19",
+      "promptKey": "t-40t19",
+      "choices": [
+        "n59",
+        "n49",
+        "n69"
+      ],
+      "correct": "n59"
+    },
+    {
+      "id": "r-3p12",
+      "promptKey": "t-3p12",
+      "choices": [
+        "n42",
+        "n32",
+        "n52"
+      ],
+      "correct": "n42"
+    },
+    {
+      "id": "r-8t70",
+      "promptKey": "t-8t70",
+      "choices": [
+        "n78",
+        "n87",
+        "n68"
+      ],
+      "correct": "n78"
+    },
+    {
+      "id": "r-1p9",
+      "promptKey": "t-1p9",
+      "choices": [
+        "n19",
+        "n91",
+        "n10"
+      ],
+      "correct": "n19"
+    },
+    {
+      "id": "r-20t26",
+      "promptKey": "t-20t26",
+      "choices": [
+        "n46",
+        "n36",
+        "n56"
+      ],
+      "correct": "n46"
+    },
+    {
+      "id": "r-5p14",
+      "promptKey": "t-5p14",
+      "choices": [
+        "n64",
+        "n54",
+        "n74"
+      ],
+      "correct": "n64"
+    },
+    {
+      "id": "r-70t11",
+      "promptKey": "t-70t11",
+      "choices": [
+        "n81",
+        "n71",
+        "n91"
+      ],
+      "correct": "n81"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "id": "sd4-sains-rangkaian-di-rumah",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lampu di Rumah Menyala?",
+      "instruksi": "Baca keadaan rangkaian tiap alat. Perkirakan lampunya menyala atau tidak.",
+      "b-menyala": "lampu menyala",
+      "b-padam": "lampu tidak menyala",
+      "i-senteron": "senter: baterai terpasang, tombol digeser ke ON",
+      "i-mobilon": "mobil mainan: kabel utuh, sakelar ON",
+      "i-lenteraon": "lentera baterai: semua kabel tersambung, sakelar tertutup",
+      "i-mejaon": "rangkaian di meja: kabel yang kendur dikencangkan lagi sehingga utuh",
+      "i-pisauon": "rangkaian di meja: sakelar pisau diturunkan sampai menempel (tertutup)",
+      "i-senteroff": "senter: tombol digeser ke OFF (sakelar terbuka)",
+      "i-mobilputus": "mobil mainan: kabel di dalamnya putus",
+      "i-lenterakosong": "lentera baterai: baterainya dikeluarkan",
+      "i-mejalepas": "rangkaian di meja: satu jepit kabel terlepas dari lampu",
+      "i-pisauoff": "rangkaian di meja: sakelar pisau diangkat (terbuka)"
+    },
+    "en": {
+      "judul": "Will the Lamp at Home Light?",
+      "instruksi": "Read how each gadget's circuit is set up. Predict whether its lamp lights up or not.",
+      "b-menyala": "lamp lights up",
+      "b-padam": "lamp stays off",
+      "i-senteron": "torch: batteries in, switch slid to ON",
+      "i-mobilon": "toy car: wires unbroken, switch ON",
+      "i-lenteraon": "battery lantern: all wires connected, switch closed",
+      "i-mejaon": "circuit on the table: a loose wire is tightened so it is complete again",
+      "i-pisauon": "circuit on the table: the knife switch is pressed down to touch (closed)",
+      "i-senteroff": "torch: switch slid to OFF (switch open)",
+      "i-mobilputus": "toy car: a wire inside is broken",
+      "i-lenterakosong": "battery lantern: the batteries are taken out",
+      "i-mejalepas": "circuit on the table: one wire clip has come off the lamp",
+      "i-pisauoff": "circuit on the table: the knife switch is lifted (open)"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 8; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "menyala",
+      "labelKey": "b-menyala",
+      "emoji": "💡"
+    },
+    {
+      "id": "padam",
+      "labelKey": "b-padam",
+      "emoji": "🌑"
+    }
+  ],
+  "items": [
+    {
+      "id": "senteron",
+      "labelKey": "i-senteron",
+      "bin": "menyala",
+      "emoji": "🔦"
+    },
+    {
+      "id": "mobilon",
+      "labelKey": "i-mobilon",
+      "bin": "menyala",
+      "emoji": "🚗"
+    },
+    {
+      "id": "lenteraon",
+      "labelKey": "i-lenteraon",
+      "bin": "menyala",
+      "emoji": "🏮"
+    },
+    {
+      "id": "mejaon",
+      "labelKey": "i-mejaon",
+      "bin": "menyala",
+      "emoji": "🔋"
+    },
+    {
+      "id": "pisauon",
+      "labelKey": "i-pisauon",
+      "bin": "menyala",
+      "emoji": "🔘"
+    },
+    {
+      "id": "senteroff",
+      "labelKey": "i-senteroff",
+      "bin": "padam",
+      "emoji": "🔦"
+    },
+    {
+      "id": "mobilputus",
+      "labelKey": "i-mobilputus",
+      "bin": "padam",
+      "emoji": "🚗"
+    },
+    {
+      "id": "lenterakosong",
+      "labelKey": "i-lenterakosong",
+      "bin": "padam",
+      "emoji": "🏮"
+    },
+    {
+      "id": "mejalepas",
+      "labelKey": "i-mejalepas",
+      "bin": "padam",
+      "emoji": "🔋"
+    },
+    {
+      "id": "pisauoff",
+      "labelKey": "i-pisauoff",
+      "bin": "padam",
+      "emoji": "🔘"
+    }
+  ],
+  "pilihan": []
+}

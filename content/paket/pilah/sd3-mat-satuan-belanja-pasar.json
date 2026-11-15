@@ -1,0 +1,243 @@
+{
+  "id": "sd3-mat-satuan-belanja-pasar",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.UKUR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satuan untuk Mengukur",
+      "instruksi": "Panjang memakai cm, m, atau km. Berat memakai g atau kg. Isi memakai ml atau l. Pikirkan besarnya, lalu sentuh satuan yang paling cocok.",
+      "pilihan": "pilihan",
+      "q1": "Mau mengukur panjang sedotan. Satuan apa yang cocok?",
+      "c1": "cm",
+      "c2": "m",
+      "c3": "km",
+      "c4": "kg",
+      "q2": "Mau mengukur tinggi tiang bendera. Satuan apa yang cocok?",
+      "c5": "l",
+      "q3": "Mau mengukur jarak rumah ke kota sebelah. Satuan apa yang cocok?",
+      "c6": "g",
+      "q4": "Mau mengukur berat sebutir anggur. Satuan apa yang cocok?",
+      "c7": "ml",
+      "q5": "Mau mengukur berat sekarung beras. Satuan apa yang cocok?",
+      "q6": "Mau mengukur isi sendok obat. Satuan apa yang cocok?",
+      "q7": "Mau mengukur isi ember besar. Satuan apa yang cocok?",
+      "q8": "Mau mengukur lebar penghapus. Satuan apa yang cocok?",
+      "q9": "Mau mengukur panjang kolam renang. Satuan apa yang cocok?",
+      "q10": "Mau mengukur berat semangka. Satuan apa yang cocok?",
+      "q11": "Mau mengukur isi tutup botol. Satuan apa yang cocok?",
+      "q12": "Mau mengukur berat selembar kertas. Satuan apa yang cocok?"
+    },
+    "en": {
+      "judul": "Units for Measuring",
+      "instruksi": "Length uses cm, m or km. Mass uses g or kg. Capacity uses ml or l. Think how big it is, then touch the best unit.",
+      "pilihan": "choices",
+      "q1": "You want to measure the length of a straw. Which unit fits?",
+      "c1": "cm",
+      "c2": "m",
+      "c3": "km",
+      "c4": "kg",
+      "q2": "You want to measure the height of a flagpole. Which unit fits?",
+      "c5": "l",
+      "q3": "You want to measure the distance from home to the next town. Which unit fits?",
+      "c6": "g",
+      "q4": "You want to measure the mass of one grape. Which unit fits?",
+      "c7": "ml",
+      "q5": "You want to measure the mass of a sack of rice. Which unit fits?",
+      "q6": "You want to measure the capacity of a medicine spoon. Which unit fits?",
+      "q7": "You want to measure the capacity of a big bucket. Which unit fits?",
+      "q8": "You want to measure the width of an eraser. Which unit fits?",
+      "q9": "You want to measure the length of a swimming pool. Which unit fits?",
+      "q10": "You want to measure the mass of a watermelon. Which unit fits?",
+      "q11": "You want to measure the capacity of a bottle cap. Which unit fits?",
+      "q12": "You want to measure the mass of a sheet of paper. Which unit fits?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c5"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c2",
+        "c1",
+        "c6"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c4",
+        "c7",
+        "c2"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c4",
+        "c6",
+        "c5",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c7",
+        "c5",
+        "c6",
+        "c3"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c5",
+        "c7",
+        "c4",
+        "c2"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c7"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c2",
+        "c3",
+        "c1",
+        "c4"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c4",
+        "c6",
+        "c7",
+        "c1"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c7",
+        "c5",
+        "c4",
+        "c2"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c6",
+        "c4",
+        "c5",
+        "c3"
+      ],
+      "correct": "c6"
+    }
+  ]
+}

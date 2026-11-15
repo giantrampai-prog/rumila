@@ -1,0 +1,499 @@
+{
+  "id": "sd4-sains-planet-tertukar",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD4.BUMI-ANTARIKSA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Planet yang Tertukar",
+      "instruksi": "Di model tata surya, dua planet tertukar tempat. Tukar sekali supaya urut dari yang paling dekat Matahari sampai paling jauh.",
+      "x-merkurius": "Merkurius (kecil, abu-abu, penuh kawah)",
+      "x-venus": "Venus (kuning, tertutup awan tebal)",
+      "x-bumi": "Bumi (biru-hijau, rumah kita)",
+      "x-mars": "Mars (merah berdebu)",
+      "x-jupiter": "Jupiter (raksasa bergaris, paling besar)",
+      "x-saturnus": "Saturnus (bercincin lebar)",
+      "x-uranus": "Uranus (biru muda, berputar miring)",
+      "x-neptunus": "Neptunus (biru tua, berangin kencang)",
+      "t-semua": "Model tata surya: dari yang paling dekat Matahari"
+    },
+    "en": {
+      "judul": "Mixed-Up Planets",
+      "instruksi": "On the solar system model, two planets have swapped places. Swap them once so they go from closest to the Sun to farthest.",
+      "x-merkurius": "Mercury (small, grey, full of craters)",
+      "x-venus": "Venus (yellow, covered in thick clouds)",
+      "x-bumi": "Earth (blue-green, our home)",
+      "x-mars": "Mars (red and dusty)",
+      "x-jupiter": "Jupiter (striped giant, the biggest)",
+      "x-saturnus": "Saturn (with wide rings)",
+      "x-uranus": "Uranus (pale blue, spins on its side)",
+      "x-neptunus": "Neptune (deep blue, very windy)",
+      "t-semua": "Solar system model: from closest to the Sun"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah planet yang tampil: 4 → 8; sequence dipotong dari depan, tetap urut dari Matahari"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "menara",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "semua",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "merkurius",
+          "labelKey": "x-merkurius",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.6
+        },
+        {
+          "id": "venus",
+          "labelKey": "x-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "bumi",
+          "labelKey": "x-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "luar",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "ganjil",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "merkurius",
+          "labelKey": "x-merkurius",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.6
+        },
+        {
+          "id": "bumi",
+          "labelKey": "x-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "genap",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "venus",
+          "labelKey": "x-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "tanpa-bumi",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "merkurius",
+          "labelKey": "x-merkurius",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.6
+        },
+        {
+          "id": "venus",
+          "labelKey": "x-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "dari-venus",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "venus",
+          "labelKey": "x-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "bumi",
+          "labelKey": "x-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "dari-bumi",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "bumi",
+          "labelKey": "x-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "jupiter",
+          "labelKey": "x-jupiter",
+          "shape": "circle",
+          "color": "#d8a46c",
+          "scale": 2
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "loncat",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "merkurius",
+          "labelKey": "x-merkurius",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.6
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "dalam-raksasa",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "merkurius",
+          "labelKey": "x-merkurius",
+          "shape": "circle",
+          "color": "#9e9e9e",
+          "scale": 0.6
+        },
+        {
+          "id": "venus",
+          "labelKey": "x-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "bumi",
+          "labelKey": "x-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    },
+    {
+      "id": "tanpa-jupiter",
+      "titleKey": "t-semua",
+      "steps": [
+        {
+          "id": "venus",
+          "labelKey": "x-venus",
+          "shape": "circle",
+          "color": "#e0c068",
+          "scale": 0.8
+        },
+        {
+          "id": "bumi",
+          "labelKey": "x-bumi",
+          "emoji": "🌍",
+          "scale": 0.8
+        },
+        {
+          "id": "mars",
+          "labelKey": "x-mars",
+          "shape": "circle",
+          "color": "#c1440e",
+          "scale": 0.7
+        },
+        {
+          "id": "saturnus",
+          "labelKey": "x-saturnus",
+          "emoji": "🪐",
+          "scale": 1.8
+        },
+        {
+          "id": "uranus",
+          "labelKey": "x-uranus",
+          "shape": "circle",
+          "color": "#a6e3e9",
+          "scale": 1.2
+        },
+        {
+          "id": "neptunus",
+          "labelKey": "x-neptunus",
+          "shape": "circle",
+          "color": "#3f51b5",
+          "scale": 1.2
+        }
+      ]
+    }
+  ]
+}

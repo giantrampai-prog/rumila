@@ -1,0 +1,412 @@
+{
+  "id": "sd1-mat-dobel-etalase-kue",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kue Dobel di Etalase",
+      "instruksi": "Cari dobel yang paling dekat dulu, misalnya 6 + 7 = dobel 6 tambah 1. Sentuh jawaban yang benar.",
+      "b-pilihan": "pilihan",
+      "t-6p7-dobel": "6 + 7 sama dengan …",
+      "i-dobel-6p1": "dobel 6 + 1",
+      "i-dobel-7p1": "dobel 7 + 1",
+      "i-dobel-5p1": "dobel 5 + 1",
+      "t-8p9-dobel": "8 + 9 sama dengan …",
+      "i-dobel-8p1": "dobel 8 + 1",
+      "i-dobel-9p1": "dobel 9 + 1",
+      "t-4p5-dobel": "4 + 5 sama dengan …",
+      "i-dobel-4p1": "dobel 4 + 1",
+      "i-dobel-3p1": "dobel 3 + 1",
+      "t-9p10-dobel": "9 + 10 sama dengan …",
+      "t-6p5-dobel": "6 + 5 sama dengan …",
+      "t-8p7-dobel": "8 + 7 sama dengan …",
+      "t-7p8": "7 + 8 = ?",
+      "i-15": "15",
+      "i-14": "14",
+      "i-16": "16",
+      "t-6p6": "6 + 6 = ?",
+      "i-12": "12",
+      "i-11": "11",
+      "i-13": "13",
+      "t-8p8": "8 + 8 = ?",
+      "i-18": "18",
+      "t-5p6": "5 + 6 = ?",
+      "i-10": "10",
+      "t-9p8": "9 + 8 = ?",
+      "i-17": "17",
+      "t-10p10": "10 + 10 = ?",
+      "i-20": "20",
+      "i-19": "19",
+      "t-7p7": "7 + 7 = ?",
+      "t-3p4": "3 + 4 = ?",
+      "i-7": "7",
+      "i-6": "6",
+      "i-8": "8",
+      "t-9p9": "9 + 9 = ?",
+      "t-10p9": "10 + 9 = ?"
+    },
+    "en": {
+      "judul": "Double Treats in the Display Case",
+      "instruksi": "Find the nearest double first, like 6 + 7 = double 6 plus 1. Tap the right answer.",
+      "b-pilihan": "choices",
+      "t-6p7-dobel": "6 + 7 is the same as …",
+      "i-dobel-6p1": "double 6 + 1",
+      "i-dobel-7p1": "double 7 + 1",
+      "i-dobel-5p1": "double 5 + 1",
+      "t-8p9-dobel": "8 + 9 is the same as …",
+      "i-dobel-8p1": "double 8 + 1",
+      "i-dobel-9p1": "double 9 + 1",
+      "t-4p5-dobel": "4 + 5 is the same as …",
+      "i-dobel-4p1": "double 4 + 1",
+      "i-dobel-3p1": "double 3 + 1",
+      "t-9p10-dobel": "9 + 10 is the same as …",
+      "t-6p5-dobel": "6 + 5 is the same as …",
+      "t-8p7-dobel": "8 + 7 is the same as …",
+      "t-7p8": "7 + 8 = ?",
+      "i-15": "15",
+      "i-14": "14",
+      "i-16": "16",
+      "t-6p6": "6 + 6 = ?",
+      "i-12": "12",
+      "i-11": "11",
+      "i-13": "13",
+      "t-8p8": "8 + 8 = ?",
+      "i-18": "18",
+      "t-5p6": "5 + 6 = ?",
+      "i-10": "10",
+      "t-9p8": "9 + 8 = ?",
+      "i-17": "17",
+      "t-10p10": "10 + 10 = ?",
+      "i-20": "20",
+      "i-19": "19",
+      "t-7p7": "7 + 7 = ?",
+      "t-3p4": "3 + 4 = ?",
+      "i-7": "7",
+      "i-6": "6",
+      "i-8": "8",
+      "t-9p9": "9 + 9 = ?",
+      "t-10p9": "10 + 9 = ?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "dobel-6-plus-1",
+      "labelKey": "i-dobel-6p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "dobel-7-plus-1",
+      "labelKey": "i-dobel-7p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "dobel-5-plus-1",
+      "labelKey": "i-dobel-5p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "dobel-8-plus-1",
+      "labelKey": "i-dobel-8p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "dobel-9-plus-1",
+      "labelKey": "i-dobel-9p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "dobel-4-plus-1",
+      "labelKey": "i-dobel-4p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "dobel-3-plus-1",
+      "labelKey": "i-dobel-3p1",
+      "bin": "pilihan",
+      "scale": 0.7
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n14",
+      "labelKey": "i-14",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n16",
+      "labelKey": "i-16",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n12",
+      "labelKey": "i-12",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n11",
+      "labelKey": "i-11",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n13",
+      "labelKey": "i-13",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n18",
+      "labelKey": "i-18",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n10",
+      "labelKey": "i-10",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n17",
+      "labelKey": "i-17",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n20",
+      "labelKey": "i-20",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n19",
+      "labelKey": "i-19",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n7",
+      "labelKey": "i-7",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n6",
+      "labelKey": "i-6",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    },
+    {
+      "id": "n8",
+      "labelKey": "i-8",
+      "bin": "pilihan",
+      "emoji": "🧁",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-6p7-dobel",
+      "promptKey": "t-6p7-dobel",
+      "choices": [
+        "dobel-6-plus-1",
+        "dobel-7-plus-1",
+        "dobel-5-plus-1"
+      ],
+      "correct": "dobel-6-plus-1"
+    },
+    {
+      "id": "r-8p9-dobel",
+      "promptKey": "t-8p9-dobel",
+      "choices": [
+        "dobel-8-plus-1",
+        "dobel-9-plus-1",
+        "dobel-7-plus-1"
+      ],
+      "correct": "dobel-8-plus-1"
+    },
+    {
+      "id": "r-4p5-dobel",
+      "promptKey": "t-4p5-dobel",
+      "choices": [
+        "dobel-4-plus-1",
+        "dobel-5-plus-1",
+        "dobel-3-plus-1"
+      ],
+      "correct": "dobel-4-plus-1"
+    },
+    {
+      "id": "r-9p10-dobel",
+      "promptKey": "t-9p10-dobel",
+      "choices": [
+        "dobel-9-plus-1",
+        "dobel-8-plus-1",
+        "dobel-7-plus-1"
+      ],
+      "correct": "dobel-9-plus-1"
+    },
+    {
+      "id": "r-6p5-dobel",
+      "promptKey": "t-6p5-dobel",
+      "choices": [
+        "dobel-5-plus-1",
+        "dobel-6-plus-1",
+        "dobel-4-plus-1"
+      ],
+      "correct": "dobel-5-plus-1"
+    },
+    {
+      "id": "r-8p7-dobel",
+      "promptKey": "t-8p7-dobel",
+      "choices": [
+        "dobel-7-plus-1",
+        "dobel-8-plus-1",
+        "dobel-6-plus-1"
+      ],
+      "correct": "dobel-7-plus-1"
+    },
+    {
+      "id": "r-7p8",
+      "promptKey": "t-7p8",
+      "choices": [
+        "n15",
+        "n14",
+        "n16"
+      ],
+      "correct": "n15"
+    },
+    {
+      "id": "r-6p6",
+      "promptKey": "t-6p6",
+      "choices": [
+        "n12",
+        "n11",
+        "n13"
+      ],
+      "correct": "n12"
+    },
+    {
+      "id": "r-8p8",
+      "promptKey": "t-8p8",
+      "choices": [
+        "n16",
+        "n15",
+        "n18"
+      ],
+      "correct": "n16"
+    },
+    {
+      "id": "r-5p6",
+      "promptKey": "t-5p6",
+      "choices": [
+        "n11",
+        "n10",
+        "n12"
+      ],
+      "correct": "n11"
+    },
+    {
+      "id": "r-9p8",
+      "promptKey": "t-9p8",
+      "choices": [
+        "n17",
+        "n16",
+        "n18"
+      ],
+      "correct": "n17"
+    },
+    {
+      "id": "r-10p10",
+      "promptKey": "t-10p10",
+      "choices": [
+        "n20",
+        "n19",
+        "n18"
+      ],
+      "correct": "n20"
+    },
+    {
+      "id": "r-7p7",
+      "promptKey": "t-7p7",
+      "choices": [
+        "n14",
+        "n13",
+        "n15"
+      ],
+      "correct": "n14"
+    },
+    {
+      "id": "r-3p4",
+      "promptKey": "t-3p4",
+      "choices": [
+        "n7",
+        "n6",
+        "n8"
+      ],
+      "correct": "n7"
+    },
+    {
+      "id": "r-9p9",
+      "promptKey": "t-9p9",
+      "choices": [
+        "n18",
+        "n17",
+        "n19"
+      ],
+      "correct": "n18"
+    },
+    {
+      "id": "r-10p9",
+      "promptKey": "t-10p9",
+      "choices": [
+        "n19",
+        "n18",
+        "n20"
+      ],
+      "correct": "n19"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "sd3-sains-larut-mengendap-lab",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.CAMPURAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Larut atau Mengendap?",
+      "instruksi": "Tiap benda dimasukkan ke segelas air lalu diaduk. Taruh ke rak larut (hilang dari pandangan) atau tidak larut (tetap terlihat atau mengendap).",
+      "b-larut": "larut",
+      "b-tidak": "tidak larut, mengendap",
+      "i-kopi": "kopi bubuk instan",
+      "i-permen": "permen keras",
+      "i-tablet": "tablet vitamin yang berbuih",
+      "i-pewarna": "pewarna makanan bubuk",
+      "i-gulamerah": "gula merah serut",
+      "i-beras": "beras",
+      "i-kacangmerah": "kacang merah",
+      "i-koin": "uang logam",
+      "i-kancing": "kancing baju",
+      "i-krayon": "potongan krayon",
+      "i-manik": "manik-manik"
+    },
+    "en": {
+      "judul": "Dissolve or Settle?",
+      "instruksi": "Each thing is put in a glass of water and stirred. Put it on the dissolves shelf (disappears from view) or the does-not-dissolve shelf (still seen or sinks to the bottom).",
+      "b-larut": "dissolves",
+      "b-tidak": "does not dissolve, settles",
+      "i-kopi": "instant coffee powder",
+      "i-permen": "a hard sweet",
+      "i-tablet": "a fizzy vitamin tablet",
+      "i-pewarna": "food colouring powder",
+      "i-gulamerah": "grated palm sugar",
+      "i-beras": "uncooked rice",
+      "i-kacangmerah": "red beans",
+      "i-koin": "a coin",
+      "i-kancing": "a button",
+      "i-krayon": "a piece of crayon",
+      "i-manik": "beads"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "larut",
+      "labelKey": "b-larut",
+      "emoji": "🥄"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "⏬"
+    }
+  ],
+  "items": [
+    {
+      "id": "kopi",
+      "labelKey": "i-kopi",
+      "bin": "larut",
+      "emoji": "☕"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "larut",
+      "emoji": "🍬"
+    },
+    {
+      "id": "tablet",
+      "labelKey": "i-tablet",
+      "bin": "larut",
+      "emoji": "💊"
+    },
+    {
+      "id": "pewarna",
+      "labelKey": "i-pewarna",
+      "bin": "larut",
+      "emoji": "🎨"
+    },
+    {
+      "id": "gulamerah",
+      "labelKey": "i-gulamerah",
+      "bin": "larut",
+      "shape": "square",
+      "color": "#795548",
+      "scale": 0.7
+    },
+    {
+      "id": "beras",
+      "labelKey": "i-beras",
+      "bin": "tidak",
+      "emoji": "🍚"
+    },
+    {
+      "id": "kacangmerah",
+      "labelKey": "i-kacangmerah",
+      "bin": "tidak",
+      "emoji": "🫘"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "tidak",
+      "emoji": "🪙"
+    },
+    {
+      "id": "kancing",
+      "labelKey": "i-kancing",
+      "bin": "tidak",
+      "emoji": "🔘"
+    },
+    {
+      "id": "krayon",
+      "labelKey": "i-krayon",
+      "bin": "tidak",
+      "emoji": "🖍️"
+    },
+    {
+      "id": "manik",
+      "labelKey": "i-manik",
+      "bin": "tidak",
+      "emoji": "📿"
+    }
+  ],
+  "pilihan": []
+}

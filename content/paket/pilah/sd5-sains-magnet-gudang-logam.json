@@ -1,0 +1,175 @@
+{
+  "id": "sd5-sains-magnet-gudang-logam",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.MAGNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Magnet di Gudang Perkakas",
+      "instruksi": "Dekatkan magnet ke tiap benda di gudang. Pilah: tertarik magnet, atau tidak. Ingat, tidak semua logam tertarik.",
+      "b-tertarik": "tertarik magnet",
+      "b-tidak": "tidak tertarik magnet",
+      "i-tutupbotol": "tutup botol kaca dari baja",
+      "i-staples": "isi staples dari baja",
+      "i-obeng": "ujung obeng baja",
+      "i-mur": "mur besi",
+      "i-rantai": "rantai sepeda dari baja",
+      "i-wajan": "wajan besi",
+      "i-palu": "kepala palu besi",
+      "i-pipa": "pipa tembaga",
+      "i-terompet": "terompet kuningan",
+      "i-panci": "tutup panci aluminium",
+      "i-cincin": "cincin perak",
+      "i-medali": "medali emas",
+      "i-kelereng": "kelereng kaca",
+      "i-penghapus": "penghapus karet",
+      "i-pensil": "pensil kayu"
+    },
+    "en": {
+      "judul": "A Magnet in the Tool Shed",
+      "instruksi": "Hold the magnet near each thing in the shed. Sort it: attracted or not. Remember, not every metal is attracted.",
+      "b-tertarik": "attracted to the magnet",
+      "b-tidak": "not attracted",
+      "i-tutupbotol": "steel bottle cap",
+      "i-staples": "steel staples",
+      "i-obeng": "steel screwdriver tip",
+      "i-mur": "iron nut",
+      "i-rantai": "steel bicycle chain",
+      "i-wajan": "iron wok",
+      "i-palu": "iron hammer head",
+      "i-pipa": "copper pipe",
+      "i-terompet": "brass trumpet",
+      "i-panci": "aluminium pan lid",
+      "i-cincin": "silver ring",
+      "i-medali": "gold medal",
+      "i-kelereng": "glass marble",
+      "i-penghapus": "rubber eraser",
+      "i-pensil": "wooden pencil"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "tertarik",
+      "labelKey": "b-tertarik",
+      "emoji": "🧲",
+      "color": "#ffcdd2"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🚫",
+      "color": "#e0e0e0"
+    }
+  ],
+  "items": [
+    {
+      "id": "tutupbotol",
+      "labelKey": "i-tutupbotol",
+      "bin": "tertarik",
+      "emoji": "🍾"
+    },
+    {
+      "id": "staples",
+      "labelKey": "i-staples",
+      "bin": "tertarik",
+      "emoji": "📎"
+    },
+    {
+      "id": "obeng",
+      "labelKey": "i-obeng",
+      "bin": "tertarik",
+      "emoji": "🪛"
+    },
+    {
+      "id": "mur",
+      "labelKey": "i-mur",
+      "bin": "tertarik",
+      "emoji": "🔩"
+    },
+    {
+      "id": "rantai",
+      "labelKey": "i-rantai",
+      "bin": "tertarik",
+      "emoji": "⛓️"
+    },
+    {
+      "id": "wajan",
+      "labelKey": "i-wajan",
+      "bin": "tertarik",
+      "emoji": "🍳"
+    },
+    {
+      "id": "palu",
+      "labelKey": "i-palu",
+      "bin": "tertarik",
+      "emoji": "🔨"
+    },
+    {
+      "id": "pipa",
+      "labelKey": "i-pipa",
+      "bin": "tidak",
+      "emoji": "🟠"
+    },
+    {
+      "id": "terompet",
+      "labelKey": "i-terompet",
+      "bin": "tidak",
+      "emoji": "🎺"
+    },
+    {
+      "id": "panci",
+      "labelKey": "i-panci",
+      "bin": "tidak",
+      "emoji": "🥘"
+    },
+    {
+      "id": "cincin",
+      "labelKey": "i-cincin",
+      "bin": "tidak",
+      "emoji": "💍"
+    },
+    {
+      "id": "medali",
+      "labelKey": "i-medali",
+      "bin": "tidak",
+      "emoji": "🥇"
+    },
+    {
+      "id": "kelereng",
+      "labelKey": "i-kelereng",
+      "bin": "tidak",
+      "emoji": "🔮"
+    },
+    {
+      "id": "penghapus",
+      "labelKey": "i-penghapus",
+      "bin": "tidak",
+      "emoji": "🧽"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "tidak",
+      "emoji": "✏️"
+    }
+  ],
+  "pilihan": []
+}

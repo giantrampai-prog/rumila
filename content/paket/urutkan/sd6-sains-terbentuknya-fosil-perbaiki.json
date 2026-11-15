@@ -1,0 +1,521 @@
+{
+  "id": "sd6-sains-terbentuknya-fosil-perbaiki",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.BATUAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Fosil yang Tertukar",
+      "instruksi": "Dua langkah terbentuknya fosil tertukar tempat. Tukar keduanya supaya urut dari makhluk tertimbun sampai fosil tersingkap.",
+      "s-amonit": "Fosil amonit",
+      "amonit-mati": "amonit mati dan tenggelam ke dasar laut",
+      "amonit-timbun": "cangkangnya tertimbun lumpur",
+      "amonit-busuk": "bagian lunak membusuk, cangkang spiral tertinggal",
+      "amonit-batu": "lapisan lumpur menumpuk dan mengeras jadi batuan sedimen",
+      "amonit-mineral": "mineral perlahan menggantikan cangkang",
+      "amonit-singkap": "ombak mengikis tebing, fosil amonit tersingkap",
+      "s-trilobit": "Fosil trilobit",
+      "trilobit-mati": "trilobit mati di dasar laut purba",
+      "trilobit-timbun": "tubuhnya tertutup pasir halus",
+      "trilobit-busuk": "bagian lunak hancur, kulit kerasnya tertinggal",
+      "trilobit-batu": "pasir memadat menjadi batuan sedimen",
+      "trilobit-mineral": "mineral mengisi dan menggantikan kulit kerasnya",
+      "trilobit-singkap": "penambang membelah batu, fosil trilobit terlihat",
+      "s-stegodon": "Gajah purba di Sangiran",
+      "stegodon-mati": "gajah purba mati di tepi sungai purba",
+      "stegodon-timbun": "tubuhnya tertimbun lumpur dan pasir sungai",
+      "stegodon-busuk": "daging membusuk, tulang dan gadingnya tertinggal",
+      "stegodon-batu": "lapisan endapan menumpuk dan menjadi batuan sedimen",
+      "stegodon-mineral": "mineral menggantikan tulang sedikit demi sedikit",
+      "stegodon-singkap": "hujan mengikis tanah, petani menemukan gadingnya",
+      "s-pakis": "Fosil daun pakis",
+      "pakis-gugur": "daun pakis purba gugur ke rawa",
+      "pakis-timbun": "daun tertutup lumpur halus",
+      "pakis-batu": "lumpur menumpuk dan memadat menjadi batu",
+      "pakis-cetak": "daun hancur, tetapi cetakannya tertinggal di batu",
+      "pakis-singkap": "batu dibelah, cetakan daun pakis terlihat",
+      "s-bulubabi": "Fosil bulu babi",
+      "bulubabi-mati": "bulu babi purba mati di laut dangkal",
+      "bulubabi-timbun": "tertimbun pasir dan pecahan karang",
+      "bulubabi-busuk": "duri lepas, cangkang bulatnya tertinggal",
+      "bulubabi-batu": "endapan memadat menjadi batu kapur",
+      "bulubabi-mineral": "mineral menggantikan cangkangnya",
+      "bulubabi-singkap": "laut surut, batu kapur terkikis, fosil muncul di pantai",
+      "s-capung": "Fosil capung purba",
+      "capung-mati": "capung purba jatuh ke danau dan mati",
+      "capung-timbun": "tubuhnya tertutup lumpur yang sangat halus",
+      "capung-batu": "lapisan lumpur menekan dan menjadi batu serpih",
+      "capung-cetak": "bentuk sayapnya terekam di batu",
+      "capung-singkap": "ahli fosil membelah batu serpih dan menemukannya",
+      "s-kepiting": "Fosil kepiting purba",
+      "kepiting-mati": "kepiting purba mati di muara",
+      "kepiting-timbun": "tertimbun lumpur muara",
+      "kepiting-busuk": "bagian dalam membusuk, cangkang kerasnya tertinggal",
+      "kepiting-batu": "lumpur menumpuk dan menjadi batuan sedimen",
+      "kepiting-mineral": "mineral menggantikan cangkang kepiting",
+      "kepiting-singkap": "sungai mengikis batuan, fosil kepiting tersingkap",
+      "s-siput": "Siput di tebing kapur",
+      "siput-mati": "siput laut purba mati di dasar laut",
+      "siput-timbun": "cangkangnya tertimbun endapan kapur",
+      "siput-batu": "endapan menumpuk dan menjadi batu kapur",
+      "siput-angkat": "dasar laut terangkat menjadi daratan",
+      "siput-singkap": "hujan mengikis tebing, cangkang siput terlihat",
+      "s-buaya": "Fosil buaya purba",
+      "buaya-mati": "buaya purba mati di tepi sungai",
+      "buaya-timbun": "banjir menimbun tubuhnya dengan lumpur",
+      "buaya-busuk": "daging membusuk, tulang dan giginya tertinggal",
+      "buaya-batu": "lapisan lumpur memadat menjadi batuan sedimen",
+      "buaya-mineral": "mineral menggantikan tulangnya",
+      "buaya-singkap": "pekerja jalan menggali bukit, fosil buaya ditemukan",
+      "s-tengkorak": "Tengkorak manusia purba",
+      "tengkorak-mati": "manusia purba meninggal di dekat sungai purba",
+      "tengkorak-timbun": "tubuhnya tertimbun pasir dan abu gunung api",
+      "tengkorak-busuk": "bagian lunak hancur, tengkoraknya tertinggal",
+      "tengkorak-batu": "lapisan menumpuk dan menjadi batuan sedimen",
+      "tengkorak-mineral": "mineral perlahan menggantikan tulang tengkorak",
+      "tengkorak-singkap": "sungai mengikis tebing, tengkorak fosil ditemukan"
+    },
+    "en": {
+      "judul": "Mixed-Up Fossil Story",
+      "instruksi": "Two steps in how a fossil forms have swapped places. Swap them back, from the creature being buried to the fossil being uncovered.",
+      "s-amonit": "An ammonite fossil",
+      "amonit-mati": "an ammonite dies and sinks to the sea floor",
+      "amonit-timbun": "its shell is buried in mud",
+      "amonit-busuk": "the soft parts rot and the spiral shell remains",
+      "amonit-batu": "the mud layers pile up and harden into sedimentary rock",
+      "amonit-mineral": "minerals slowly replace the shell",
+      "amonit-singkap": "waves wear away the cliff and the ammonite is uncovered",
+      "s-trilobit": "A trilobite fossil",
+      "trilobit-mati": "a trilobite dies on an ancient sea floor",
+      "trilobit-timbun": "its body is covered in fine sand",
+      "trilobit-busuk": "the soft parts break down and the hard shell stays",
+      "trilobit-batu": "the sand packs down into sedimentary rock",
+      "trilobit-mineral": "minerals fill in and replace the hard shell",
+      "trilobit-singkap": "a quarry worker splits the rock and the trilobite appears",
+      "s-stegodon": "An ancient elephant at Sangiran",
+      "stegodon-mati": "an ancient elephant dies beside an ancient river",
+      "stegodon-timbun": "its body is buried by river mud and sand",
+      "stegodon-busuk": "the flesh rots and its bones and tusks remain",
+      "stegodon-batu": "layers of sediment pile up and become sedimentary rock",
+      "stegodon-mineral": "minerals replace the bones bit by bit",
+      "stegodon-singkap": "rain wears away the soil and a farmer finds the tusk",
+      "s-pakis": "A fern leaf fossil",
+      "pakis-gugur": "an ancient fern leaf falls into a swamp",
+      "pakis-timbun": "the leaf is covered in fine mud",
+      "pakis-batu": "the mud piles up and hardens into rock",
+      "pakis-cetak": "the leaf breaks down but its print stays in the rock",
+      "pakis-singkap": "the rock is split and the fern print can be seen",
+      "s-bulubabi": "A sea urchin fossil",
+      "bulubabi-mati": "an ancient sea urchin dies in shallow sea",
+      "bulubabi-timbun": "it is buried by sand and broken coral",
+      "bulubabi-busuk": "the spines fall off and the round shell remains",
+      "bulubabi-batu": "the sediment hardens into limestone",
+      "bulubabi-mineral": "minerals replace its shell",
+      "bulubabi-singkap": "the sea retreats, the limestone wears away and the fossil appears on the shore",
+      "s-capung": "An ancient dragonfly fossil",
+      "capung-mati": "an ancient dragonfly falls into a lake and dies",
+      "capung-timbun": "its body is covered by very fine mud",
+      "capung-batu": "the mud layers press down and become shale",
+      "capung-cetak": "the shape of its wings is recorded in the rock",
+      "capung-singkap": "a fossil hunter splits the shale and finds it",
+      "s-kepiting": "An ancient crab fossil",
+      "kepiting-mati": "an ancient crab dies in an estuary",
+      "kepiting-timbun": "it is buried in estuary mud",
+      "kepiting-busuk": "the insides rot and its hard shell remains",
+      "kepiting-batu": "the mud piles up and becomes sedimentary rock",
+      "kepiting-mineral": "minerals replace the crab's shell",
+      "kepiting-singkap": "a river wears away the rock and the crab fossil is uncovered",
+      "s-siput": "A snail in a limestone cliff",
+      "siput-mati": "an ancient sea snail dies on the sea floor",
+      "siput-timbun": "its shell is buried in lime mud",
+      "siput-batu": "the mud piles up and becomes limestone",
+      "siput-angkat": "the sea floor is lifted up into dry land",
+      "siput-singkap": "rain wears away the cliff and the snail shell shows",
+      "s-buaya": "An ancient crocodile fossil",
+      "buaya-mati": "an ancient crocodile dies on a riverbank",
+      "buaya-timbun": "a flood buries its body in mud",
+      "buaya-busuk": "the flesh rots and its bones and teeth remain",
+      "buaya-batu": "the mud layers harden into sedimentary rock",
+      "buaya-mineral": "minerals replace its bones",
+      "buaya-singkap": "road workers dig into a hill and find the crocodile fossil",
+      "s-tengkorak": "An early human skull",
+      "tengkorak-mati": "an early human dies near an ancient river",
+      "tengkorak-timbun": "the body is buried by sand and volcanic ash",
+      "tengkorak-busuk": "the soft parts break down and the skull remains",
+      "tengkorak-batu": "the layers pile up and become sedimentary rock",
+      "tengkorak-mineral": "minerals slowly replace the skull bone",
+      "tengkorak-singkap": "a river wears away the bank and the fossil skull is found"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 4 → 6 (beberapa fosil hanya 5 langkah)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "amonit",
+      "titleKey": "s-amonit",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "amonit-mati",
+          "emoji": "🐚"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "amonit-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "amonit-busuk",
+          "emoji": "🌀"
+        },
+        {
+          "id": "batu",
+          "labelKey": "amonit-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "amonit-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "amonit-singkap",
+          "emoji": "🌊"
+        }
+      ]
+    },
+    {
+      "id": "trilobit",
+      "titleKey": "s-trilobit",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "trilobit-mati",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.7
+        },
+        {
+          "id": "timbun",
+          "labelKey": "trilobit-timbun",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "trilobit-busuk",
+          "emoji": "🛡️"
+        },
+        {
+          "id": "batu",
+          "labelKey": "trilobit-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "trilobit-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "trilobit-singkap",
+          "emoji": "⛏️"
+        }
+      ]
+    },
+    {
+      "id": "stegodon",
+      "titleKey": "s-stegodon",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "stegodon-mati",
+          "emoji": "🐘"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "stegodon-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "stegodon-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "batu",
+          "labelKey": "stegodon-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "stegodon-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "stegodon-singkap",
+          "emoji": "🌧️"
+        }
+      ]
+    },
+    {
+      "id": "pakis",
+      "titleKey": "s-pakis",
+      "steps": [
+        {
+          "id": "gugur",
+          "labelKey": "pakis-gugur",
+          "emoji": "🌿"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "pakis-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "batu",
+          "labelKey": "pakis-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "cetak",
+          "labelKey": "pakis-cetak",
+          "emoji": "🍂"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "pakis-singkap",
+          "emoji": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "bulubabi",
+      "titleKey": "s-bulubabi",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "bulubabi-mati",
+          "shape": "star",
+          "color": "#6a1b9a",
+          "scale": 0.7
+        },
+        {
+          "id": "timbun",
+          "labelKey": "bulubabi-timbun",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "bulubabi-busuk",
+          "emoji": "⚪"
+        },
+        {
+          "id": "batu",
+          "labelKey": "bulubabi-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "bulubabi-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "bulubabi-singkap",
+          "emoji": "🏝️"
+        }
+      ]
+    },
+    {
+      "id": "capung",
+      "titleKey": "s-capung",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "capung-mati",
+          "shape": "rect",
+          "color": "#29b6f6",
+          "scale": 0.7
+        },
+        {
+          "id": "timbun",
+          "labelKey": "capung-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "batu",
+          "labelKey": "capung-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "cetak",
+          "labelKey": "capung-cetak",
+          "emoji": "🔎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "capung-singkap",
+          "emoji": "⛏️"
+        }
+      ]
+    },
+    {
+      "id": "kepiting",
+      "titleKey": "s-kepiting",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "kepiting-mati",
+          "emoji": "🦀"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "kepiting-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "kepiting-busuk",
+          "emoji": "🛡️"
+        },
+        {
+          "id": "batu",
+          "labelKey": "kepiting-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "kepiting-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "kepiting-singkap",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "siput",
+      "titleKey": "s-siput",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "siput-mati",
+          "emoji": "🐌"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "siput-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "batu",
+          "labelKey": "siput-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "angkat",
+          "labelKey": "siput-angkat",
+          "emoji": "⛰️"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "siput-singkap",
+          "emoji": "🌧️"
+        }
+      ]
+    },
+    {
+      "id": "buaya",
+      "titleKey": "s-buaya",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "buaya-mati",
+          "emoji": "🐊"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "buaya-timbun",
+          "emoji": "🌊"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "buaya-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "batu",
+          "labelKey": "buaya-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "buaya-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "buaya-singkap",
+          "emoji": "🚧"
+        }
+      ]
+    },
+    {
+      "id": "tengkorak",
+      "titleKey": "s-tengkorak",
+      "steps": [
+        {
+          "id": "mati",
+          "labelKey": "tengkorak-mati",
+          "emoji": "💀"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "tengkorak-timbun",
+          "emoji": "🌋"
+        },
+        {
+          "id": "busuk",
+          "labelKey": "tengkorak-busuk",
+          "emoji": "🦴"
+        },
+        {
+          "id": "batu",
+          "labelKey": "tengkorak-batu",
+          "emoji": "🪨"
+        },
+        {
+          "id": "mineral",
+          "labelKey": "tengkorak-mineral",
+          "emoji": "💎"
+        },
+        {
+          "id": "singkap",
+          "labelKey": "tengkorak-singkap",
+          "emoji": "🏞️"
+        }
+      ]
+    }
+  ]
+}

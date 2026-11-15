@@ -1,0 +1,479 @@
+{
+  "id": "sd6-kode-syarat-taman",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.KONDISI-GABUNG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Aturan Gabungan di Taman Kota",
+      "instruksi": "Aturan taman memakai dan, atau, bukan: 'dan' butuh kedua syarat benar, 'atau' cukup salah satu, 'bukan' membalik syarat. Pilih satu-satunya yang memenuhi aturan.",
+      "pilihan": "pilihan",
+      "c1": "umur 9, bisa berenang",
+      "c2": "umur 9, belum bisa berenang",
+      "c3": "umur 7, bisa berenang",
+      "q1": "Naik perahu danau: umur ≥ 8 dan bisa berenang. Mana yang memenuhi aturan?",
+      "c4": "umur 4",
+      "c5": "umur 10",
+      "c6": "umur 60",
+      "q2": "Masuk taman gratis: umur < 5 atau umur ≥ 65. Mana yang memenuhi aturan?",
+      "c7": "ada pengunjung, hari Selasa",
+      "c8": "ada pengunjung, hari Senin",
+      "c9": "tidak ada pengunjung, hari Rabu",
+      "q3": "Air mancur menyala kalau ada pengunjung dan bukan hari Senin. Mana yang memenuhi aturan?",
+      "c10": "tanpa kartu, bayar Rp5.000",
+      "c11": "tanpa kartu, bayar Rp3.000",
+      "q4": "Boleh pinjam sepeda kalau punya kartu anggota atau membayar Rp5.000. Mana yang memenuhi aturan?",
+      "c12": "kering, rantai baik",
+      "c13": "basah, rantai baik",
+      "c14": "kering, rantai rusak",
+      "q5": "Ayunan boleh dipakai kalau tidak basah dan rantainya tidak rusak. Mana yang memenuhi aturan?",
+      "c15": "terang, berkabut",
+      "c16": "terang, tidak berkabut",
+      "q6": "Lampu taman menyala kalau langit gelap atau ada kabut. Mana yang memenuhi aturan?",
+      "c17": "umur 10, sudah daftar",
+      "c18": "umur 11, sudah daftar",
+      "c19": "umur 9, belum daftar",
+      "q7": "Ikut lomba lari kalau umur ≤ 10 dan sudah mendaftar. Mana yang memenuhi aturan?",
+      "c20": "tidak hujan, suhu 34",
+      "c21": "tidak hujan, suhu 30",
+      "q8": "Payung taman dibuka kalau hujan atau suhu ≥ 33. Mana yang memenuhi aturan?",
+      "c22": "hari biasa, jam 9",
+      "c23": "libur nasional, jam 9",
+      "c24": "hari biasa, jam 7",
+      "q9": "Kebun binatang mini buka kalau bukan hari libur nasional dan jam ≥ 8. Mana yang memenuhi aturan?",
+      "c25": "punya tiket, umur 7",
+      "c26": "punya kartu anggota, umur 5",
+      "c27": "tidak punya keduanya, umur 9",
+      "q10": "Masuk taman burung kalau (punya tiket atau punya kartu anggota) dan umur ≥ 6. Mana yang memenuhi aturan?",
+      "c28": "angin 12, tidak diperbaiki",
+      "c29": "angin 15, sedang diperbaiki",
+      "c30": "angin 8, tidak diperbaiki",
+      "q11": "Kincir angin berputar kalau angin ≥ 10 dan tidak sedang diperbaiki. Mana yang memenuhi aturan?",
+      "c31": "2 benar, membantu teman",
+      "c32": "2 benar, tidak membantu",
+      "c33": "1 benar, tidak membantu",
+      "q12": "Dapat stiker kalau menjawab ≥ 3 soal benar atau membantu teman. Mana yang memenuhi aturan?",
+      "c34": "tidak hujan, sore",
+      "c35": "hujan, pagi",
+      "c36": "tidak hujan, siang",
+      "q13": "Tanaman disiram kalau bukan hujan dan (pagi atau sore). Mana yang memenuhi aturan?"
+    },
+    "en": {
+      "judul": "Combined Rules in the City Park",
+      "instruksi": "The park rules use and, or, not: 'and' needs both conditions true, 'or' needs just one, 'not' flips a condition. Choose the only one that meets the rule.",
+      "pilihan": "choices",
+      "c1": "age 9, can swim",
+      "c2": "age 9, can't swim yet",
+      "c3": "age 7, can swim",
+      "q1": "Lake boat ride: age ≥ 8 and can swim. Which one meets it?",
+      "c4": "age 4",
+      "c5": "age 10",
+      "c6": "age 60",
+      "q2": "Free park entry: age < 5 or age ≥ 65. Which one meets it?",
+      "c7": "visitors, Tuesday",
+      "c8": "visitors, Monday",
+      "c9": "no visitors, Wednesday",
+      "q3": "The fountain runs if there are visitors and it is not Monday. Which one meets it?",
+      "c10": "no card, pays Rp5,000",
+      "c11": "no card, pays Rp3,000",
+      "q4": "You may borrow a bike if you have a member card or pay Rp5,000. Which one meets it?",
+      "c12": "dry, chain fine",
+      "c13": "wet, chain fine",
+      "c14": "dry, chain broken",
+      "q5": "The swing may be used if it is not wet and its chain is not broken. Which one meets it?",
+      "c15": "bright, foggy",
+      "c16": "bright, not foggy",
+      "q6": "The park lights come on if the sky is dark or it is foggy. Which one meets it?",
+      "c17": "age 10, signed up",
+      "c18": "age 11, signed up",
+      "c19": "age 9, not signed up",
+      "q7": "You may join the race if age ≤ 10 and already signed up. Which one meets it?",
+      "c20": "no rain, 34 degrees",
+      "c21": "no rain, 30 degrees",
+      "q8": "The park umbrellas open if it rains or the temperature is ≥ 33. Which one meets it?",
+      "c22": "normal day, 9 o'clock",
+      "c23": "public holiday, 9 o'clock",
+      "c24": "normal day, 7 o'clock",
+      "q9": "The petting zoo opens if it is not a public holiday and the hour is ≥ 8. Which one meets it?",
+      "c25": "has a ticket, age 7",
+      "c26": "has a member card, age 5",
+      "c27": "has neither, age 9",
+      "q10": "Enter the bird garden if (you have a ticket or a member card) and age ≥ 6. Which one meets it?",
+      "c28": "wind 12, not under repair",
+      "c29": "wind 15, under repair",
+      "c30": "wind 8, not under repair",
+      "q11": "The windmill turns if wind ≥ 10 and it is not being repaired. Which one meets it?",
+      "c31": "2 right, helped a friend",
+      "c32": "2 right, didn't help",
+      "c33": "1 right, didn't help",
+      "q12": "You get a sticker if you answer ≥ 3 questions right or help a friend. Which one meets it?",
+      "c34": "no rain, evening",
+      "c35": "raining, morning",
+      "c36": "no rain, midday",
+      "q13": "Plants are watered if it is not raining and (morning or evening). Which one meets it?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c15",
+        "c16"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c17",
+        "c18",
+        "c19"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c20",
+        "c21"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c28",
+        "c29",
+        "c30"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c31",
+        "c32",
+        "c33"
+      ],
+      "correct": "c31"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c34"
+    }
+  ]
+}

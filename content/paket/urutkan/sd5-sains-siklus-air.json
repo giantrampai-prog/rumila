@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-air",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-AIR.01"
@@ -57,22 +57,21 @@
       "salju-turun": "salju turun menutupi puncak gunung",
       "salju-cair": "hari menghangat, salju mencair",
       "salju-sungai": "air lelehan salju mengalir ke sungai",
-      "s-esbatu": "Es batu di piring",
-      "esbatu-es": "es batu di piring, ditaruh di bawah terik",
-      "esbatu-cair": "es mencair jadi genangan air",
-      "esbatu-uap": "air di piring menguap jadi uap air",
-      "esbatu-kering": "piring kering, airnya pindah ke udara",
+      "s-esbatu": "Es batu di halaman",
       "s-jemuran": "Baju di jemuran",
-      "jemuran-cuci": "baju dicuci dengan sabun",
-      "jemuran-jemur": "baju basah dijemur di bawah terik",
-      "jemuran-uap": "air di baju menguap",
-      "jemuran-angkat": "baju kering diangkat ke keranjang",
       "s-keringat": "Keringat sesudah berlari",
-      "keringat-lari": "kamu berlari di siang hari",
-      "keringat-panas": "tubuhmu kepanasan",
-      "keringat-keringat": "keringat keluar di kulit",
-      "keringat-uap": "keringat menguap dari kulit",
-      "keringat-sejuk": "kulitmu terasa lebih sejuk"
+      "esbatu-1": "es batu mencair lalu airnya menguap di terik matahari",
+      "esbatu-2": "uap air naik, mendingin, dan mengembun jadi awan",
+      "esbatu-3": "titik air di awan menyatu dan turun sebagai hujan",
+      "esbatu-4": "air hujan meresap ke tanah lalu mengalir ke sungai",
+      "jemuran-1": "air di baju basah menguap di bawah terik",
+      "jemuran-2": "uap air naik, mendingin, dan mengembun jadi awan",
+      "jemuran-3": "titik air di awan menyatu dan turun sebagai hujan",
+      "jemuran-4": "air hujan mengalir lewat selokan ke sungai",
+      "keringat-1": "keringat di kulit menguap saat berlari",
+      "keringat-2": "uap air naik, mendingin, dan mengembun jadi awan",
+      "keringat-3": "titik air di awan menyatu dan turun sebagai hujan",
+      "keringat-4": "air hujan mengalir kembali ke danau"
     },
     "en": {
       "judul": "A Water Drop's Journey",
@@ -124,22 +123,21 @@
       "salju-turun": "snow falls and covers the mountain top",
       "salju-cair": "the day warms up and the snow melts",
       "salju-sungai": "the meltwater flows into a river",
-      "s-esbatu": "Ice cubes on a plate",
-      "esbatu-es": "ice cubes on a plate are left in the hot sun",
-      "esbatu-cair": "the ice melts into a puddle",
-      "esbatu-uap": "the water on the plate evaporates into water vapour",
-      "esbatu-kering": "the plate is dry: the water has gone into the air",
+      "s-esbatu": "Ice cube in the yard",
       "s-jemuran": "Clothes on the line",
-      "jemuran-cuci": "the clothes are washed with soap",
-      "jemuran-jemur": "the wet clothes are hung in the hot sun",
-      "jemuran-uap": "the water in the clothes evaporates",
-      "jemuran-angkat": "the dry clothes go into the basket",
-      "s-keringat": "Sweat after a run",
-      "keringat-lari": "you run in the daytime",
-      "keringat-panas": "your body gets hot",
-      "keringat-keringat": "sweat comes out on your skin",
-      "keringat-uap": "the sweat evaporates from your skin",
-      "keringat-sejuk": "your skin feels cooler"
+      "s-keringat": "Sweat after running",
+      "esbatu-1": "the ice cube melts and the water evaporates in the hot sun",
+      "esbatu-2": "the water vapour rises, cools, and condenses into clouds",
+      "esbatu-3": "droplets in the cloud join and fall as rain",
+      "esbatu-4": "the rain soaks into the ground and flows to the river",
+      "jemuran-1": "water in the wet clothes evaporates in the sun",
+      "jemuran-2": "the water vapour rises, cools, and condenses into clouds",
+      "jemuran-3": "droplets in the cloud join and fall as rain",
+      "jemuran-4": "the rain flows through the gutter into the river",
+      "keringat-1": "sweat on the skin evaporates while running",
+      "keringat-2": "the water vapour rises, cools, and condenses into clouds",
+      "keringat-3": "droplets in the cloud join and fall as rain",
+      "keringat-4": "the rain flows back into the lake"
     }
   },
   "knobs": {
@@ -406,24 +404,24 @@
       "titleKey": "s-esbatu",
       "steps": [
         {
-          "id": "es",
-          "labelKey": "esbatu-es",
+          "id": "esbatu-1",
+          "labelKey": "esbatu-1",
           "emoji": "🧊"
         },
         {
-          "id": "cair",
-          "labelKey": "esbatu-cair",
-          "emoji": "💧"
+          "id": "esbatu-2",
+          "labelKey": "esbatu-2",
+          "emoji": "☁️"
         },
         {
-          "id": "uap",
-          "labelKey": "esbatu-uap",
-          "emoji": "♨️"
+          "id": "esbatu-3",
+          "labelKey": "esbatu-3",
+          "emoji": "🌧️"
         },
         {
-          "id": "kering",
-          "labelKey": "esbatu-kering",
-          "emoji": "🍽️"
+          "id": "esbatu-4",
+          "labelKey": "esbatu-4",
+          "emoji": "🏞️"
         }
       ]
     },
@@ -432,24 +430,24 @@
       "titleKey": "s-jemuran",
       "steps": [
         {
-          "id": "cuci",
-          "labelKey": "jemuran-cuci",
-          "emoji": "🫧"
-        },
-        {
-          "id": "jemur",
-          "labelKey": "jemuran-jemur",
+          "id": "jemuran-1",
+          "labelKey": "jemuran-1",
           "emoji": "👕"
         },
         {
-          "id": "uap",
-          "labelKey": "jemuran-uap",
-          "emoji": "♨️"
+          "id": "jemuran-2",
+          "labelKey": "jemuran-2",
+          "emoji": "☁️"
         },
         {
-          "id": "angkat",
-          "labelKey": "jemuran-angkat",
-          "emoji": "🧺"
+          "id": "jemuran-3",
+          "labelKey": "jemuran-3",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "jemuran-4",
+          "labelKey": "jemuran-4",
+          "emoji": "🏞️"
         }
       ]
     },
@@ -458,29 +456,24 @@
       "titleKey": "s-keringat",
       "steps": [
         {
-          "id": "lari",
-          "labelKey": "keringat-lari",
+          "id": "keringat-1",
+          "labelKey": "keringat-1",
           "emoji": "🏃"
         },
         {
-          "id": "panas",
-          "labelKey": "keringat-panas",
-          "emoji": "🥵"
+          "id": "keringat-2",
+          "labelKey": "keringat-2",
+          "emoji": "☁️"
         },
         {
-          "id": "keringat",
-          "labelKey": "keringat-keringat",
-          "emoji": "💦"
+          "id": "keringat-3",
+          "labelKey": "keringat-3",
+          "emoji": "🌧️"
         },
         {
-          "id": "uap",
-          "labelKey": "keringat-uap",
-          "emoji": "♨️"
-        },
-        {
-          "id": "sejuk",
-          "labelKey": "keringat-sejuk",
-          "emoji": "😌"
+          "id": "keringat-4",
+          "labelKey": "keringat-4",
+          "emoji": "🏞️"
         }
       ]
     }

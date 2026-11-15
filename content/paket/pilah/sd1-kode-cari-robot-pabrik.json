@@ -1,0 +1,165 @@
+{
+  "id": "sd1-kode-cari-robot-pabrik",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD1.PERANGKAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Mana yang Robot?",
+      "instruksi": "Robot adalah mesin yang bekerja sendiri mengikuti program. Pisahkan robot dan yang bukan robot.",
+      "bin-robot": "robot",
+      "bin-bukan": "bukan robot",
+      "i-pemerah-susu": "robot pemerah susu sapi",
+      "i-mobil-otomatis": "mobil yang menyetir sendiri",
+      "i-pembersih-kolam": "robot pembersih kolam renang",
+      "i-pemetik-buah": "robot pemetik buah",
+      "i-pembersih-jendela": "robot pembersih kaca gedung",
+      "i-traktor": "traktor yang membajak sawah sendiri",
+      "i-penyambut": "robot penyambut tamu di toko",
+      "i-palu": "palu",
+      "i-sendok": "sendok",
+      "i-jam-pasir": "jam pasir",
+      "i-patung-kayu": "patung robot dari kayu",
+      "i-troli": "troli belanja",
+      "i-bola": "bola basket",
+      "i-keranjang": "keranjang anyaman"
+    },
+    "en": {
+      "judul": "Which One Is a Robot?",
+      "instruksi": "A robot is a machine that works by itself following a program. Sort the robots from the things that are not robots.",
+      "bin-robot": "robot",
+      "bin-bukan": "not a robot",
+      "i-pemerah-susu": "cow-milking robot",
+      "i-mobil-otomatis": "self-driving car",
+      "i-pembersih-kolam": "pool-cleaning robot",
+      "i-pemetik-buah": "fruit-picking robot",
+      "i-pembersih-jendela": "window-cleaning robot for tall buildings",
+      "i-traktor": "tractor that ploughs the field by itself",
+      "i-penyambut": "shop greeter robot",
+      "i-palu": "hammer",
+      "i-sendok": "spoon",
+      "i-jam-pasir": "hourglass",
+      "i-patung-kayu": "wooden robot statue",
+      "i-troli": "shopping trolley",
+      "i-bola": "basketball",
+      "i-keranjang": "woven basket"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "robot",
+      "labelKey": "bin-robot",
+      "emoji": "🤖"
+    },
+    {
+      "id": "bukan",
+      "labelKey": "bin-bukan",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "pemerah-susu",
+      "labelKey": "i-pemerah-susu",
+      "bin": "robot",
+      "emoji": "🐄"
+    },
+    {
+      "id": "mobil-otomatis",
+      "labelKey": "i-mobil-otomatis",
+      "bin": "robot",
+      "emoji": "🚘"
+    },
+    {
+      "id": "pembersih-kolam",
+      "labelKey": "i-pembersih-kolam",
+      "bin": "robot",
+      "emoji": "🏊"
+    },
+    {
+      "id": "pemetik-buah",
+      "labelKey": "i-pemetik-buah",
+      "bin": "robot",
+      "emoji": "🍎"
+    },
+    {
+      "id": "pembersih-jendela",
+      "labelKey": "i-pembersih-jendela",
+      "bin": "robot",
+      "emoji": "🏢"
+    },
+    {
+      "id": "traktor",
+      "labelKey": "i-traktor",
+      "bin": "robot",
+      "emoji": "🚜"
+    },
+    {
+      "id": "penyambut",
+      "labelKey": "i-penyambut",
+      "bin": "robot",
+      "emoji": "🤖"
+    },
+    {
+      "id": "palu",
+      "labelKey": "i-palu",
+      "bin": "bukan",
+      "emoji": "🔨"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "bukan",
+      "emoji": "🥄"
+    },
+    {
+      "id": "jam-pasir",
+      "labelKey": "i-jam-pasir",
+      "bin": "bukan",
+      "emoji": "⏳"
+    },
+    {
+      "id": "patung-kayu",
+      "labelKey": "i-patung-kayu",
+      "bin": "bukan",
+      "emoji": "🪵"
+    },
+    {
+      "id": "troli",
+      "labelKey": "i-troli",
+      "bin": "bukan",
+      "emoji": "🛒"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "bukan",
+      "emoji": "🏀"
+    },
+    {
+      "id": "keranjang",
+      "labelKey": "i-keranjang",
+      "bin": "bukan",
+      "emoji": "🧺"
+    }
+  ]
+}

@@ -1,0 +1,1338 @@
+{
+  "id": "sd2-kode-tiga-bug-pabrik",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD2.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tiga Blok Salah di Pabrik",
+      "instruksi": "Program robot pabrik ini punya tiga blok yang salah. Jalankan sambil diamati, temukan ketiganya, lalu ganti tiga blok saja."
+    },
+    "en": {
+      "judul": "Three Wrong Blocks at the Factory",
+      "instruksi": "This factory robot's program has three wrong blocks. Run it and watch, find all three, then change only three blocks."
+    }
+  },
+  "knobs": {
+    "panjang": {
+      "min": 7,
+      "max": 9,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah blok program (dokumentasi): 7 → 9"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "pabrik",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "debug": true,
+  "semuaGrid": false,
+  "prediksi": false,
+  "grids": [
+    {
+      "id": "pabrik-7-01",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-02",
+      "w": 7,
+      "h": 6,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-03",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 5,
+        "y": 6,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 6
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-04",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-05",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 5,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 6,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-8-06",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-07",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 2,
+        "y": 5,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 0
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-08",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-09",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-10",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-8-11",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 6
+        },
+        {
+          "x": 6,
+          "y": 6
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-12",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-13",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-14",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-15",
+      "w": 7,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-9-16",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 5,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 9,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-17",
+      "w": 6,
+      "h": 7,
+      "start": {
+        "x": 5,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 6
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-8-18",
+      "w": 5,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 5
+        },
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-7-19",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 7,
+      "program": [
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    },
+    {
+      "id": "pabrik-8-20",
+      "w": 7,
+      "h": 6,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 8,
+      "rackSlots": 8,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 3
+    }
+  ]
+}

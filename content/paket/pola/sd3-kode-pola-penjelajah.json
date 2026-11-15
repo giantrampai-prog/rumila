@@ -1,0 +1,104 @@
+{
+  "id": "sd3-kode-pola-penjelajah",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.SD3.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pola Robot Penjelajah",
+      "instruksi": "Robot penjelajah planet menunggu perintah. Pilih tiga keping, lalu isi semua slot jadi pola yang berulang.",
+      "foto": "ambil foto",
+      "lampu": "nyalakan lampu",
+      "sinyal": "kirim sinyal ke Bumi",
+      "batu": "ambil batu",
+      "baterai": "isi baterai",
+      "arah": "cek arah",
+      "sampel": "simpan sampel",
+      "jeda": "berhenti sebentar"
+    },
+    "en": {
+      "judul": "Rover Command Pattern",
+      "instruksi": "The planet rover is waiting for commands. Choose three pieces, then fill every slot with a repeating pattern.",
+      "foto": "take a photo",
+      "lampu": "turn on the light",
+      "sinyal": "send a signal to Earth",
+      "batu": "pick up a rock",
+      "baterai": "charge the battery",
+      "arah": "check the direction",
+      "sampel": "store a sample",
+      "jeda": "pause for a moment"
+    }
+  },
+  "knobs": {
+    "slots": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 3,
+      "keterangan": "jumlah slot: 6 → 9 (tetap kelipatan 3 supaya ulangan penuh)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mode": "cipta",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "foto",
+      "labelKey": "foto",
+      "emoji": "📸"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "lampu",
+      "emoji": "🔦"
+    },
+    {
+      "id": "sinyal",
+      "labelKey": "sinyal",
+      "emoji": "📡"
+    },
+    {
+      "id": "batu",
+      "labelKey": "batu",
+      "emoji": "🪨"
+    },
+    {
+      "id": "baterai",
+      "labelKey": "baterai",
+      "emoji": "🔋"
+    },
+    {
+      "id": "arah",
+      "labelKey": "arah",
+      "emoji": "🧭"
+    },
+    {
+      "id": "sampel",
+      "labelKey": "sampel",
+      "emoji": "🧪"
+    },
+    {
+      "id": "jeda",
+      "labelKey": "jeda",
+      "emoji": "⏸️"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "foto": "C4",
+    "lampu": "D4",
+    "sinyal": "E4",
+    "batu": "F4",
+    "baterai": "G4",
+    "arah": "A4",
+    "sampel": "B4",
+    "jeda": "C5"
+  }
+}

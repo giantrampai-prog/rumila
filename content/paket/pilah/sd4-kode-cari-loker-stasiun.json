@@ -1,0 +1,298 @@
+{
+  "id": "sd4-kode-cari-loker-stasiun",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.CARI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Loker di Stasiun",
+      "instruksi": "Di stasiun, barang dicari dengan membuka satu per satu dari kiri dan berhenti saat ketemu. Kalau tidak ada, semuanya dibuka. Hitung berapa yang dibuka.",
+      "pilihan": "pilihan",
+      "c1": "4",
+      "c2": "6",
+      "c3": "5",
+      "q1": "Loker bernomor: 12, 5, 9, 3, 17, 6. Cari 3 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 3 ketemu?",
+      "c4": "11",
+      "q2": "Loker bernomor: 8, 14, 2, 20, 11. Cari 11 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 11 ketemu?",
+      "c5": "1",
+      "c6": "3",
+      "q3": "Loker bernomor: 6, 1, 7. Cari 6 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 6 ketemu?",
+      "c7": "2",
+      "q4": "Loker bernomor: 4, 9, 4, 2, 9. Cari 9 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 9 ketemu?",
+      "q5": "Loker bernomor: 13, 7, 18, 7, 5, 7. Cari 7 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 7 ketemu?",
+      "c8": "0",
+      "q6": "Loker bernomor: 3, 16, 10, 8. Cari 5 satu per satu dari kiri. Berapa loker dibuka sebelum yakin 5 tidak ada?",
+      "c9": "7",
+      "q7": "Loker bernomor: 21, 9, 14, 30, 2, 18, 6. Cari 12 satu per satu dari kiri. Berapa loker dibuka sebelum yakin 12 tidak ada?",
+      "q8": "Loker bernomor: 5, 11, 19, 2, 8, 15, 1. Cari 1 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 1 ketemu?",
+      "q9": "Tiket kereta tujuan: Bogor, Depok, Cikini, Bekasi, Serpong. Petugas mencari tiket Bekasi dari depan, satu per satu. Berapa tiket yang dicek?",
+      "c10": "15",
+      "c11": "8",
+      "q10": "Ada 15 kartu acak dalam satu baris. Angka yang dicari ternyata ada di kartu paling kanan. Berapa kartu dibuka?",
+      "c12": "30",
+      "q11": "Loker bernomor: 10, 20, 30, 40. Cari 30 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai 30 ketemu?",
+      "c13": "12",
+      "q12": "Ada 12 kartu dalam satu baris, dan angka yang dicari tidak ada di sana. Berapa kartu dibuka sebelum yakin angkanya tidak ada?",
+      "q13": "Kartu huruf: K, A, R, E, T, A. Cari huruf A satu per satu dari kiri. Berapa kartu dibuka sampai A pertama ketemu?"
+    },
+    "en": {
+      "judul": "Locker Search at the Station",
+      "instruksi": "At the station, things are found by opening them one by one from the left and stopping when found. If it isn't there, all of them get opened. Count how many are opened.",
+      "pilihan": "choices",
+      "c1": "4",
+      "c2": "6",
+      "c3": "5",
+      "q1": "Lockers numbered: 12, 5, 9, 3, 17, 6. Look for 3 by opening lockers one by one from the left. How many lockers are opened until 3 is found?",
+      "c4": "11",
+      "q2": "Lockers numbered: 8, 14, 2, 20, 11. Look for 11 by opening lockers one by one from the left. How many lockers are opened until 11 is found?",
+      "c5": "1",
+      "c6": "3",
+      "q3": "Lockers numbered: 6, 1, 7. Look for 6 by opening lockers one by one from the left. How many lockers are opened until 6 is found?",
+      "c7": "2",
+      "q4": "Lockers numbered: 4, 9, 4, 2, 9. Look for 9 by opening lockers one by one from the left. How many lockers are opened until 9 is found?",
+      "q5": "Lockers numbered: 13, 7, 18, 7, 5, 7. Look for 7 by opening lockers one by one from the left. How many lockers are opened until 7 is found?",
+      "c8": "0",
+      "q6": "Lockers numbered: 3, 16, 10, 8. Look for 5 one by one from the left. How many lockers are opened before you are sure 5 is not there?",
+      "c9": "7",
+      "q7": "Lockers numbered: 21, 9, 14, 30, 2, 18, 6. Look for 12 one by one from the left. How many lockers are opened before you are sure 12 is not there?",
+      "q8": "Lockers numbered: 5, 11, 19, 2, 8, 15, 1. Look for 1 by opening lockers one by one from the left. How many lockers are opened until 1 is found?",
+      "q9": "Train tickets to: Bogor, Depok, Cikini, Bekasi, Serpong. The officer looks for the Bekasi ticket from the front, one by one. How many tickets are checked?",
+      "c10": "15",
+      "c11": "8",
+      "q10": "There are 15 shuffled cards in a row. The number you want turns out to be on the rightmost card. How many cards are opened?",
+      "c12": "30",
+      "q11": "Lockers numbered: 10, 20, 30, 40. Look for 30 by opening lockers one by one from the left. How many lockers are opened until 30 is found?",
+      "c13": "12",
+      "q12": "There are 12 cards in a row, and the number you want is not there. How many cards are opened before you are sure it is missing?",
+      "q13": "Letter cards: K, A, R, E, T, A. Look for the letter A one by one from the left. How many cards are opened until the first A is found?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c3",
+        "c4",
+        "c1"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c5",
+        "c6",
+        "c2"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c7",
+        "c3",
+        "c1"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c7",
+        "c2",
+        "c1"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c1",
+        "c8",
+        "c6"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c9",
+        "c8",
+        "c2"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c9",
+        "c5",
+        "c2"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c1",
+        "c3",
+        "c6"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c10",
+        "c5",
+        "c11"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c6",
+        "c12",
+        "c1"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c13",
+        "c8",
+        "c4"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c7",
+        "c2",
+        "c6"
+      ],
+      "correct": "c7"
+    }
+  ]
+}

@@ -1,0 +1,528 @@
+{
+  "id": "sd2-mat-nomor-rumah-urut",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Nomor Rumah Sepanjang Jalan",
+      "instruksi": "Bandingkan angka puluhan dulu. Kalau puluhannya sama, bandingkan satuannya. Susun nomor rumah dari yang terkecil.",
+      "j-urut": "Dari terkecil ke terbesar",
+      "s-34": "34",
+      "s-38": "38",
+      "s-43": "43",
+      "s-48": "48",
+      "s-83": "83",
+      "s-25": "25",
+      "s-52": "52",
+      "s-55": "55",
+      "s-57": "57",
+      "s-75": "75",
+      "s-16": "16",
+      "s-19": "19",
+      "s-61": "61",
+      "s-66": "66",
+      "s-91": "91",
+      "s-47": "47",
+      "s-49": "49",
+      "s-74": "74",
+      "s-79": "79",
+      "s-94": "94",
+      "s-13": "13",
+      "s-30": "30",
+      "s-31": "31",
+      "s-33": "33",
+      "s-63": "63",
+      "s-58": "58",
+      "s-59": "59",
+      "s-85": "85",
+      "s-88": "88",
+      "s-95": "95",
+      "s-27": "27",
+      "s-29": "29",
+      "s-72": "72",
+      "s-77": "77",
+      "s-92": "92",
+      "s-41": "41",
+      "s-44": "44",
+      "s-46": "46",
+      "s-64": "64",
+      "s-69": "69",
+      "s-12": "12",
+      "s-21": "21",
+      "s-23": "23",
+      "s-32": "32",
+      "s-39": "39",
+      "s-67": "67",
+      "s-68": "68",
+      "s-76": "76",
+      "s-78": "78",
+      "s-87": "87",
+      "s-35": "35",
+      "s-50": "50",
+      "s-53": "53",
+      "s-56": "56",
+      "s-65": "65",
+      "s-18": "18",
+      "s-81": "81",
+      "s-84": "84",
+      "s-89": "89"
+    },
+    "en": {
+      "judul": "House Numbers Down the Street",
+      "instruksi": "Compare the tens digit first. If the tens are the same, compare the ones. Line up the house numbers from smallest.",
+      "j-urut": "Smallest to largest",
+      "s-34": "34",
+      "s-38": "38",
+      "s-43": "43",
+      "s-48": "48",
+      "s-83": "83",
+      "s-25": "25",
+      "s-52": "52",
+      "s-55": "55",
+      "s-57": "57",
+      "s-75": "75",
+      "s-16": "16",
+      "s-19": "19",
+      "s-61": "61",
+      "s-66": "66",
+      "s-91": "91",
+      "s-47": "47",
+      "s-49": "49",
+      "s-74": "74",
+      "s-79": "79",
+      "s-94": "94",
+      "s-13": "13",
+      "s-30": "30",
+      "s-31": "31",
+      "s-33": "33",
+      "s-63": "63",
+      "s-58": "58",
+      "s-59": "59",
+      "s-85": "85",
+      "s-88": "88",
+      "s-95": "95",
+      "s-27": "27",
+      "s-29": "29",
+      "s-72": "72",
+      "s-77": "77",
+      "s-92": "92",
+      "s-41": "41",
+      "s-44": "44",
+      "s-46": "46",
+      "s-64": "64",
+      "s-69": "69",
+      "s-12": "12",
+      "s-21": "21",
+      "s-23": "23",
+      "s-32": "32",
+      "s-39": "39",
+      "s-67": "67",
+      "s-68": "68",
+      "s-76": "76",
+      "s-78": "78",
+      "s-87": "87",
+      "s-35": "35",
+      "s-50": "50",
+      "s-53": "53",
+      "s-56": "56",
+      "s-65": "65",
+      "s-18": "18",
+      "s-81": "81",
+      "s-84": "84",
+      "s-89": "89"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah rumah: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "jalan-1",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n34",
+          "labelKey": "s-34",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n38",
+          "labelKey": "s-38",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n43",
+          "labelKey": "s-43",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n48",
+          "labelKey": "s-48",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n83",
+          "labelKey": "s-83",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-2",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n25",
+          "labelKey": "s-25",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n52",
+          "labelKey": "s-52",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n55",
+          "labelKey": "s-55",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n57",
+          "labelKey": "s-57",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n75",
+          "labelKey": "s-75",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-3",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n16",
+          "labelKey": "s-16",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n19",
+          "labelKey": "s-19",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n61",
+          "labelKey": "s-61",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n66",
+          "labelKey": "s-66",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n91",
+          "labelKey": "s-91",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-4",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n47",
+          "labelKey": "s-47",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n49",
+          "labelKey": "s-49",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n74",
+          "labelKey": "s-74",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n79",
+          "labelKey": "s-79",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n94",
+          "labelKey": "s-94",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-5",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n13",
+          "labelKey": "s-13",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n30",
+          "labelKey": "s-30",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n31",
+          "labelKey": "s-31",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n33",
+          "labelKey": "s-33",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n63",
+          "labelKey": "s-63",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-6",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n58",
+          "labelKey": "s-58",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n59",
+          "labelKey": "s-59",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n85",
+          "labelKey": "s-85",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n88",
+          "labelKey": "s-88",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n95",
+          "labelKey": "s-95",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-7",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n27",
+          "labelKey": "s-27",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n29",
+          "labelKey": "s-29",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n72",
+          "labelKey": "s-72",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n77",
+          "labelKey": "s-77",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n92",
+          "labelKey": "s-92",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-8",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n41",
+          "labelKey": "s-41",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n44",
+          "labelKey": "s-44",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n46",
+          "labelKey": "s-46",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n64",
+          "labelKey": "s-64",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n69",
+          "labelKey": "s-69",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-9",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n12",
+          "labelKey": "s-12",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n21",
+          "labelKey": "s-21",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n23",
+          "labelKey": "s-23",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n32",
+          "labelKey": "s-32",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n39",
+          "labelKey": "s-39",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-10",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n67",
+          "labelKey": "s-67",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n68",
+          "labelKey": "s-68",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n76",
+          "labelKey": "s-76",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n78",
+          "labelKey": "s-78",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n87",
+          "labelKey": "s-87",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-11",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n35",
+          "labelKey": "s-35",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n50",
+          "labelKey": "s-50",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n53",
+          "labelKey": "s-53",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n56",
+          "labelKey": "s-56",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n65",
+          "labelKey": "s-65",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "jalan-12",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n18",
+          "labelKey": "s-18",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n48",
+          "labelKey": "s-48",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n81",
+          "labelKey": "s-81",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n84",
+          "labelKey": "s-84",
+          "emoji": "🏠"
+        },
+        {
+          "id": "n89",
+          "labelKey": "s-89",
+          "emoji": "🏠"
+        }
+      ]
+    }
+  ]
+}

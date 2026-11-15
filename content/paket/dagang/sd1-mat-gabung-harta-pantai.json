@@ -1,0 +1,81 @@
+{
+  "id": "sd1-mat-gabung-harta-pantai",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tumpukan Harta Pantai",
+      "instruksi": "Dua tumpukan harta pantai digabung. Mulai dari tumpukan yang lebih banyak, hitung maju, lalu geser penanda ke jumlahnya.",
+      "g-kerang": "kerang",
+      "g-kepiting": "kepiting",
+      "g-ikan": "ikan hias",
+      "g-penyu": "anak penyu"
+    },
+    "en": {
+      "judul": "Beach Treasure Piles",
+      "instruksi": "Two piles of beach treasure are put together. Start from the bigger pile, count on, then slide the marker to the total.",
+      "g-kerang": "shells",
+      "g-kepiting": "crabs",
+      "g-ikan": "tropical fish",
+      "g-penyu": "baby turtles"
+    }
+  },
+  "knobs": {
+    "target": {
+      "min": 14,
+      "max": 20,
+      "default": 14,
+      "step": 2,
+      "keterangan": "batas jumlah gabungan: 14 → 20"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "gabung",
+  "goods": [
+    {
+      "id": "kerang",
+      "labelKey": "g-kerang",
+      "price": 1000,
+      "emoji": "🐚"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "g-kepiting",
+      "price": 1000,
+      "emoji": "🦀"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "g-ikan",
+      "price": 1000,
+      "emoji": "🐠"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "g-penyu",
+      "price": 1000,
+      "emoji": "🐢"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 10,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "target": 14
+  }
+}

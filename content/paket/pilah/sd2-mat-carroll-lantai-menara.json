@@ -1,0 +1,290 @@
+{
+  "id": "sd2-mat-carroll-lantai-menara",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lantai Menara Carroll",
+      "instruksi": "Nomor lantai ini genap atau ganjil? Di bawah lantai 50 atau tidak? Cari kotak yang cocok untuk dua-duanya.",
+      "b-genap-kecil": "genap, < 50",
+      "b-genap-besar": "genap, ≥ 50",
+      "b-ganjil-kecil": "ganjil, < 50",
+      "b-ganjil-besar": "ganjil, ≥ 50",
+      "i-2": "2",
+      "i-8": "8",
+      "i-18": "18",
+      "i-26": "26",
+      "i-34": "34",
+      "i-46": "46",
+      "i-52": "52",
+      "i-56": "56",
+      "i-60": "60",
+      "i-74": "74",
+      "i-88": "88",
+      "i-98": "98",
+      "i-9": "9",
+      "i-15": "15",
+      "i-27": "27",
+      "i-31": "31",
+      "i-41": "41",
+      "i-47": "47",
+      "i-55": "55",
+      "i-59": "59",
+      "i-63": "63",
+      "i-71": "71",
+      "i-89": "89",
+      "i-93": "93"
+    },
+    "en": {
+      "judul": "Tower Floors Carroll Diagram",
+      "instruksi": "Is this floor number even or odd? Is it below floor 50 or not? Find the box that matches both.",
+      "b-genap-kecil": "even, < 50",
+      "b-genap-besar": "even, ≥ 50",
+      "b-ganjil-kecil": "odd, < 50",
+      "b-ganjil-besar": "odd, ≥ 50",
+      "i-2": "2",
+      "i-8": "8",
+      "i-18": "18",
+      "i-26": "26",
+      "i-34": "34",
+      "i-46": "46",
+      "i-52": "52",
+      "i-56": "56",
+      "i-60": "60",
+      "i-74": "74",
+      "i-88": "88",
+      "i-98": "98",
+      "i-9": "9",
+      "i-15": "15",
+      "i-27": "27",
+      "i-31": "31",
+      "i-41": "41",
+      "i-47": "47",
+      "i-55": "55",
+      "i-59": "59",
+      "i-63": "63",
+      "i-71": "71",
+      "i-89": "89",
+      "i-93": "93"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 2,
+      "keterangan": "2 kotak genap dulu, lalu 4 kotak"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "kartu per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "menara",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap-kecil",
+      "labelKey": "b-genap-kecil",
+      "emoji": "🟢"
+    },
+    {
+      "id": "genap-besar",
+      "labelKey": "b-genap-besar",
+      "emoji": "🟩"
+    },
+    {
+      "id": "ganjil-kecil",
+      "labelKey": "b-ganjil-kecil",
+      "emoji": "🟣"
+    },
+    {
+      "id": "ganjil-besar",
+      "labelKey": "b-ganjil-besar",
+      "emoji": "🟪"
+    }
+  ],
+  "items": [
+    {
+      "id": "n2",
+      "labelKey": "i-2",
+      "bin": "genap-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n8",
+      "labelKey": "i-8",
+      "bin": "genap-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n18",
+      "labelKey": "i-18",
+      "bin": "genap-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n26",
+      "labelKey": "i-26",
+      "bin": "genap-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n34",
+      "labelKey": "i-34",
+      "bin": "genap-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n46",
+      "labelKey": "i-46",
+      "bin": "genap-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n52",
+      "labelKey": "i-52",
+      "bin": "genap-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n56",
+      "labelKey": "i-56",
+      "bin": "genap-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n60",
+      "labelKey": "i-60",
+      "bin": "genap-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n74",
+      "labelKey": "i-74",
+      "bin": "genap-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n88",
+      "labelKey": "i-88",
+      "bin": "genap-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n98",
+      "labelKey": "i-98",
+      "bin": "genap-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n9",
+      "labelKey": "i-9",
+      "bin": "ganjil-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n15",
+      "labelKey": "i-15",
+      "bin": "ganjil-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n27",
+      "labelKey": "i-27",
+      "bin": "ganjil-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n31",
+      "labelKey": "i-31",
+      "bin": "ganjil-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n41",
+      "labelKey": "i-41",
+      "bin": "ganjil-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n47",
+      "labelKey": "i-47",
+      "bin": "ganjil-kecil",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n55",
+      "labelKey": "i-55",
+      "bin": "ganjil-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n59",
+      "labelKey": "i-59",
+      "bin": "ganjil-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n63",
+      "labelKey": "i-63",
+      "bin": "ganjil-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n71",
+      "labelKey": "i-71",
+      "bin": "ganjil-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n89",
+      "labelKey": "i-89",
+      "bin": "ganjil-besar",
+      "emoji": "🏢",
+      "scale": 1
+    },
+    {
+      "id": "n93",
+      "labelKey": "i-93",
+      "bin": "ganjil-besar",
+      "emoji": "🏢",
+      "scale": 1
+    }
+  ]
+}

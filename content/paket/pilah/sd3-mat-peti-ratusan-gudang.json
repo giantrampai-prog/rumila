@@ -1,0 +1,530 @@
+{
+  "id": "sd3-mat-peti-ratusan-gudang",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.BILANGAN-1000.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Peti Ratusan di Gudang",
+      "instruksi": "Gabungkan ratusan, puluhan, dan satuan pada label peti. Angka nol tetap menjaga tempatnya. Sentuh bilangan yang benar.",
+      "pilihan": "pilihan",
+      "q1": "Peti gudang berlabel 4 ratusan, 0 puluhan, 7 satuan. Bilangannya berapa?",
+      "c1": "407",
+      "c2": "470",
+      "c3": "47",
+      "c4": "4007",
+      "q2": "Peti gudang berlabel 600 + 9. Bilangannya berapa?",
+      "c5": "609",
+      "c6": "690",
+      "c7": "69",
+      "c8": "6009",
+      "q3": "Peti gudang berlabel 8 ratusan dan 3 puluhan. Bilangannya berapa?",
+      "c9": "830",
+      "c10": "803",
+      "c11": "83",
+      "c12": "8030",
+      "q4": "Peti gudang berlabel 500 + 2. Bilangannya berapa?",
+      "c13": "502",
+      "c14": "520",
+      "c15": "52",
+      "c16": "5002",
+      "q5": "Peti gudang berlabel 9 ratusan dan 1 satuan. Bilangannya berapa?",
+      "c17": "901",
+      "c18": "910",
+      "c19": "91",
+      "c20": "9001",
+      "q6": "Peti gudang berlabel 300 + 70. Bilangannya berapa?",
+      "c21": "370",
+      "c22": "307",
+      "c23": "37",
+      "c24": "3070",
+      "q7": "Peti gudang berlabel 2 ratusan, 6 puluhan, 0 satuan. Bilangannya berapa?",
+      "c25": "260",
+      "c26": "206",
+      "c27": "26",
+      "c28": "2060",
+      "q8": "Peti gudang berlabel 100 + 8. Bilangannya berapa?",
+      "c29": "108",
+      "c30": "180",
+      "c31": "18",
+      "c32": "1008",
+      "q9": "Peti gudang berlabel 7 ratusan dan 5 satuan. Bilangannya berapa?",
+      "c33": "705",
+      "c34": "750",
+      "c35": "75",
+      "c36": "7005",
+      "q10": "Peti gudang berlabel 400 + 40. Bilangannya berapa?",
+      "c37": "440",
+      "c38": "404",
+      "c39": "44",
+      "c40": "4040",
+      "q11": "Peti gudang berlabel 6 ratusan, 0 puluhan, 0 satuan. Bilangannya berapa?",
+      "c41": "600",
+      "c42": "60",
+      "c43": "6",
+      "c44": "6000",
+      "q12": "Peti gudang berlabel 900 + 30 + 4. Bilangannya berapa?",
+      "c45": "934",
+      "c46": "943",
+      "c47": "349",
+      "c48": "9304"
+    },
+    "en": {
+      "judul": "Hundreds Crates in the Warehouse",
+      "instruksi": "Put together the hundreds, tens and ones on each crate label. A zero still holds its place. Touch the right number.",
+      "pilihan": "choices",
+      "q1": "A warehouse crate is labelled 4 hundreds, 0 tens, 7 ones. What number is it?",
+      "c1": "407",
+      "c2": "470",
+      "c3": "47",
+      "c4": "4007",
+      "q2": "A warehouse crate is labelled 600 + 9. What number is it?",
+      "c5": "609",
+      "c6": "690",
+      "c7": "69",
+      "c8": "6009",
+      "q3": "A warehouse crate is labelled 8 hundreds and 3 tens. What number is it?",
+      "c9": "830",
+      "c10": "803",
+      "c11": "83",
+      "c12": "8030",
+      "q4": "A warehouse crate is labelled 500 + 2. What number is it?",
+      "c13": "502",
+      "c14": "520",
+      "c15": "52",
+      "c16": "5002",
+      "q5": "A warehouse crate is labelled 9 hundreds and 1 one. What number is it?",
+      "c17": "901",
+      "c18": "910",
+      "c19": "91",
+      "c20": "9001",
+      "q6": "A warehouse crate is labelled 300 + 70. What number is it?",
+      "c21": "370",
+      "c22": "307",
+      "c23": "37",
+      "c24": "3070",
+      "q7": "A warehouse crate is labelled 2 hundreds, 6 tens, 0 ones. What number is it?",
+      "c25": "260",
+      "c26": "206",
+      "c27": "26",
+      "c28": "2060",
+      "q8": "A warehouse crate is labelled 100 + 8. What number is it?",
+      "c29": "108",
+      "c30": "180",
+      "c31": "18",
+      "c32": "1008",
+      "q9": "A warehouse crate is labelled 7 hundreds and 5 ones. What number is it?",
+      "c33": "705",
+      "c34": "750",
+      "c35": "75",
+      "c36": "7005",
+      "q10": "A warehouse crate is labelled 400 + 40. What number is it?",
+      "c37": "440",
+      "c38": "404",
+      "c39": "44",
+      "c40": "4040",
+      "q11": "A warehouse crate is labelled 6 hundreds, 0 tens, 0 ones. What number is it?",
+      "c41": "600",
+      "c42": "60",
+      "c43": "6",
+      "c44": "6000",
+      "q12": "A warehouse crate is labelled 900 + 30 + 4. What number is it?",
+      "c45": "934",
+      "c46": "943",
+      "c47": "349",
+      "c48": "9304"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c45",
+      "labelKey": "c45",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c46",
+      "labelKey": "c46",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c47",
+      "labelKey": "c47",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c48",
+      "labelKey": "c48",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c33",
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c33"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c37",
+        "c38",
+        "c39",
+        "c40"
+      ],
+      "correct": "c37"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c41",
+        "c42",
+        "c43",
+        "c44"
+      ],
+      "correct": "c41"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c45",
+        "c46",
+        "c47",
+        "c48"
+      ],
+      "correct": "c45"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "id": "sd5-sains-bunyi-alat-musik-kelas",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUNYI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Orkes Kelas Lima",
+      "instruksi": "Alat musik di kelas diubah sedikit. Tebak bunyinya jadi bagaimana.",
+      "b-pilihan": "pilihan",
+      "i-tinggi": "nada lebih tinggi",
+      "i-rendah": "nada lebih rendah",
+      "i-nyaring": "lebih nyaring",
+      "i-pelan": "lebih pelan",
+      "p-r1": "Kulit gendang dikencangkan, lalu dipukul lagi. Bunyinya jadi…",
+      "p-r2": "Jari menekan senar biola sehingga bagian yang bergetar lebih pendek. Bunyinya jadi…",
+      "p-r3": "Saron dipukul pada bilah yang lebih panjang dan besar. Bunyinya…",
+      "p-r4": "Semua lubang suling ditutup jari, sehingga udara yang bergetar paling panjang. Bunyinya…",
+      "p-r5": "Gitar dipetik dengan lebih kuat. Bunyinya jadi…",
+      "p-r6": "Angklung digoyang perlahan sekali. Bunyinya jadi…",
+      "p-r7": "Bilah pendek pada gambang kayu dipukul. Dibanding bilah panjang, bunyinya…",
+      "p-r8": "Senar bas gitar yang tebal dipetik. Dibanding senar yang tipis, bunyinya…",
+      "p-r9": "Senar ukulele dikendurkan, lalu dipetik. Bunyinya jadi…",
+      "p-r10": "Kentongan dipukul dengan sangat pelan. Bunyinya jadi…",
+      "p-r11": "Sebuah botol berisi air hampir penuh ditiup di mulutnya. Dibanding botol yang hampir kosong, udara bergetarnya lebih pendek, jadi nadanya…",
+      "p-r12": "Getaran simbal dibuat lebih lebar dengan pukulan keras. Bunyinya jadi…"
+    },
+    "en": {
+      "judul": "The Year Five Band",
+      "instruksi": "The class instruments are changed a little. Predict how the sound changes.",
+      "b-pilihan": "choices",
+      "i-tinggi": "higher pitch",
+      "i-rendah": "lower pitch",
+      "i-nyaring": "louder",
+      "i-pelan": "quieter",
+      "p-r1": "The drum skin is tightened, then hit again. The sound becomes…",
+      "p-r2": "A finger presses the violin string so the vibrating part is shorter. The sound becomes…",
+      "p-r3": "The saron is struck on a longer, bigger bar. The sound is…",
+      "p-r4": "All the holes on the recorder are covered, so the vibrating air is longest. The sound is…",
+      "p-r5": "The guitar is plucked harder. The sound becomes…",
+      "p-r6": "The angklung is shaken very gently. The sound becomes…",
+      "p-r7": "A short bar on the wooden xylophone is struck. Compared with a long bar, the sound is…",
+      "p-r8": "The thick bass string of a guitar is plucked. Compared with a thin string, the sound is…",
+      "p-r9": "A ukulele string is loosened, then plucked. The sound becomes…",
+      "p-r10": "The slit drum is tapped very softly. The sound becomes…",
+      "p-r11": "A nearly full bottle of water is blown across its top. Compared with a nearly empty bottle, the vibrating air is shorter, so the pitch is…",
+      "p-r12": "The cymbal is hit hard so it vibrates more widely. The sound becomes…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "tinggi",
+      "labelKey": "i-tinggi",
+      "bin": "pilihan",
+      "emoji": "🔼"
+    },
+    {
+      "id": "rendah",
+      "labelKey": "i-rendah",
+      "bin": "pilihan",
+      "emoji": "🔽"
+    },
+    {
+      "id": "nyaring",
+      "labelKey": "i-nyaring",
+      "bin": "pilihan",
+      "emoji": "🔊"
+    },
+    {
+      "id": "pelan",
+      "labelKey": "i-pelan",
+      "bin": "pilihan",
+      "emoji": "🔈"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "tinggi",
+        "rendah",
+        "pelan"
+      ],
+      "correct": "tinggi"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "tinggi",
+        "rendah",
+        "nyaring"
+      ],
+      "correct": "tinggi"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "nyaring"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "pelan"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "nyaring",
+        "pelan",
+        "tinggi"
+      ],
+      "correct": "nyaring"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "pelan",
+        "nyaring",
+        "rendah"
+      ],
+      "correct": "pelan"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "tinggi",
+        "rendah",
+        "pelan"
+      ],
+      "correct": "tinggi"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "nyaring"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "rendah",
+        "tinggi",
+        "nyaring"
+      ],
+      "correct": "rendah"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "pelan",
+        "nyaring",
+        "tinggi"
+      ],
+      "correct": "pelan"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "tinggi",
+        "rendah",
+        "pelan"
+      ],
+      "correct": "tinggi"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "nyaring",
+        "pelan",
+        "rendah"
+      ],
+      "correct": "nyaring"
+    }
+  ]
+}
