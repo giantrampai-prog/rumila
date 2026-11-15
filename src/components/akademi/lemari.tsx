@@ -3,7 +3,6 @@
 // Lemari Piagam: daftar semua penghargaan satu anak + penampil satu dokumen (dengan Cetak/PDF untuk A4).
 // Sumber: sertifikat jenjang (akademi_certificate) dan hasil ujian (akademi_ujian) → piagam modul & sertifikat semester.
 
-import Link from "next/link";
 import { useEffect, useMemo, type ReactNode } from "react";
 import { levelMeta } from "@akademi/schema";
 import { BALOO, NUNITO } from "@/components/launcher";
@@ -13,8 +12,8 @@ import { piagamModul, sertifikatSemester, tahunAjaran } from "@/lib/akademi/piag
 import { ambilSertifikat, useSertifikat } from "@/lib/akademi/sertifikat";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import type { Member } from "@/lib/store";
-import { PiagamModulKartu, SertifikatSemesterKartu } from "./piagam";
-import { SERTIFIKAT_PRINT_CSS, tanggalPanjang } from "./sertifikat";
+import { PiagamModulKartu, SertifikatSemesterKartu, TranskripJenjang } from "./piagam";
+import { SERTIFIKAT_PRINT_CSS, SertifikatKartu, tanggalPanjang } from "./sertifikat";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
@@ -31,25 +30,38 @@ export function usePenghargaan(anakId: string) {
   return { hasil, jenjang: jenjang.filter((s) => !s.track), modul, semester };
 }
 
-export function LemariPiagam({ anak, lihat, onLihat, kembali, hrefJenjang = (lv) => `/akademi/sertifikat/${lv}` }: { anak: Member; lihat: string | null; onLihat: (v: string | null) => void; kembali?: ReactNode; hrefJenjang?: (level: string) => string | null }) {
+export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak: Member; lihat: string | null; onLihat: (v: string | null) => void; kembali?: ReactNode; /** di dalam halaman lain: tanpa latar & tinggi layar penuh */ tertanam?: boolean }) {
+  const akar = tertanam ? "" : "min-h-dvh";
   const { jenjang, modul, semester } = usePenghargaan(anak.id);
   const [jenis, sesi] = (lihat ?? "").split(":");
   const satuModul = jenis === "modul" ? modul.find((m) => m.sessionId === sesi) : undefined;
   const satuSemester = jenis === "semester" ? semester.find((m) => m.sessionId === sesi) : undefined;
+  const satuJenjang = jenis === "jenjang" ? jenjang.find((m) => m.code === sesi) : undefined;
 
-  if (satuModul || satuSemester)
+  if (satuModul || satuSemester || satuJenjang)
     return (
-      <div className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
+      <div className={`sertifikat-root ${akar}`} style={{ background: tertanam ? undefined : "#fff0da", fontFamily: NUNITO, color: INK }}>
         <style>{SERTIFIKAT_PRINT_CSS}</style>
         <div className="mx-auto flex max-w-[1040px] flex-col gap-4 px-4 py-5">
           <div className="no-print flex items-center gap-2">
             <button onClick={() => onLihat(null)} aria-label="Kembali ke lemari" className="flex size-10 items-center justify-center rounded-full bg-white">
               <Icon name="arrow_back" size={22} />
             </button>
-            <h1 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>{satuModul ? "Piagam Modul" : "Sertifikat Semester"}</h1>
+            <h1 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>{satuModul ? "Piagam Modul" : satuSemester ? "Sertifikat Semester" : "Sertifikat Kenaikan Jenjang"}</h1>
           </div>
-          <div className="flex justify-center">{satuModul ? <PiagamModulKartu nama={anak.name} p={satuModul} /> : <SertifikatSemesterKartu nama={anak.name} s={satuSemester!} />}</div>
-          {satuSemester && (
+          {satuJenjang ? (
+            <>
+              <div className="flex justify-center">
+                <SertifikatKartu nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} pending={satuJenjang.pending} />
+              </div>
+              <div className="flex justify-center">
+                <TranskripJenjang nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} />
+              </div>
+            </>
+          ) : (
+            <div className="flex justify-center">{satuModul ? <PiagamModulKartu nama={anak.name} p={satuModul} /> : <SertifikatSemesterKartu nama={anak.name} s={satuSemester!} />}</div>
+          )}
+          {(satuSemester || satuJenjang) && (
             <div className="no-print flex justify-center">
               <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>
                 <Icon name="print" size={22} /> Cetak / PDF
@@ -62,8 +74,8 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, hrefJenjang = (lv)
 
   const kosong = !jenjang.length && !semester.length && !modul.length;
   return (
-    <div className="min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
-      <div className="mx-auto flex max-w-[860px] flex-col gap-5 px-4 py-5">
+    <div className={akar} style={{ background: tertanam ? undefined : "#fff0da", fontFamily: NUNITO, color: INK }}>
+      <div className={`mx-auto flex max-w-[860px] flex-col gap-5 ${tertanam ? "" : "px-4 py-5"}`}>
         <header className="flex items-center gap-3">
           {kembali && <span className="text-[14px] font-extrabold text-ink-3">{kembali}</span>}
           <div className="min-w-0 flex-1">
@@ -79,16 +91,10 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, hrefJenjang = (lv)
           <Rak judul="Sertifikat Kenaikan Jenjang" ikon="workspace_premium">
             {jenjang.map((s) => {
               const lv = levelMeta(s.level);
-              const href = hrefJenjang(s.level);
-              const isi = (
-                <Baris ikon="military_tech" warna="#fdb724" judul={`${lv.nama} (${lv.lokal}) · ${s.snapshot.pangkat || lv.pangkat}`} sub={`${s.nomor ?? s.code} · ${tanggalPanjang(s.issuedAt)}${typeof s.snapshot.nilai === "number" ? ` · nilai ${s.snapshot.nilai}` : ""}`} />
-              );
-              return href ? (
-                <Link key={s.code} href={href}>
-                  {isi}
-                </Link>
-              ) : (
-                <div key={s.code}>{isi}</div>
+              return (
+                <button key={s.code} onClick={() => onLihat(`jenjang:${s.code}`)} className="text-left">
+                  <Baris ikon="military_tech" warna="#fdb724" judul={`${lv.nama} (${lv.lokal}) · ${s.snapshot.pangkat || lv.pangkat}`} sub={`${s.nomor ?? s.code} · ${tanggalPanjang(s.issuedAt)}${typeof s.snapshot.nilai === "number" ? ` · nilai ${s.snapshot.nilai}` : ""}`} />
+                </button>
               );
             })}
           </Rak>

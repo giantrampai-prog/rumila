@@ -126,13 +126,11 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
         </Link>
       </div>
 
-      {me.admin && (
-        <div className="mt-1 flex justify-center">
-          <Link href="/akademi/rapor" className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.08)] transition-transform active:scale-95">
-            <Icon name="assignment" size={18} /> Rapor untuk Ayah/Ibu
-          </Link>
-        </div>
-      )}
+      <div className="flex justify-center">
+        <Link href="/orang-tua" className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.08)] transition-transform active:scale-95">
+          <Icon name="lock" size={18} /> Ruang Orang Tua
+        </Link>
+      </div>
 
       {rayakan && <Rayakan dari={rayakan.dari} ke={rayakan.ke} onTutup={() => setRayakan(null)} />}
     </>

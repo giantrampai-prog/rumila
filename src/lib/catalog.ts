@@ -126,10 +126,10 @@ const RAW: { id: FolderKey; name: string; c: ColorKey; icon: string; desc: strin
     },
     {
       id: "angkasa",
-      name: "Petualangan 3D",
+      name: "Laboratorium 3D",
       c: "space",
       icon: "view_in_ar",
-      desc: "Jelajahi dunia dan belajar rangkaian umroh dalam 3D.",
+      desc: "Dunia 3D yang terbuka setiap kamu menuntaskan modul Sains.",
       pal: ["space", "indigo", "sky", "purple", "orange", "pink"],
       items: [], // Isi & id tetap ada di ADVENTURE_3D (id lama dipertahankan agar progres tidak bergeser).
     },
