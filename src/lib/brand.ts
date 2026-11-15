@@ -25,3 +25,13 @@ const luminansi = (hex: string) => {
 
 /** Tinta untuk latar warna padat (#rrggbb): putih bila kontrasnya ≥3:1, selain itu navy. */
 export const tintaKontras = (latar: string) => (1.05 / (luminansi(latar) + 0.05) >= 3 ? "#fff" : RINOYA.ink);
+
+/**
+ * Penanda tangan sertifikat RINOYA Academy. Nama & gambar tanda tangan diisi owner (keputusan tertunda, 15 Nov 2026).
+ * Selama `nama` kosong, sertifikat menampilkan garis tanda tangan + jabatan saja (tanpa nama rekaan).
+ * `ttd` = path gambar tanda tangan transparan di /public (opsional).
+ */
+export const PENANDATANGAN: readonly { jabatan: string; nama: string | null; ttd: string | null }[] = [
+  { jabatan: "Kepala Akademi", nama: null, ttd: null },
+  { jabatan: "Direktur Kurikulum", nama: null, ttd: null },
+];

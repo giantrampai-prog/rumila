@@ -65,7 +65,7 @@ function Ready({ children }: { children: ReactNode }) {
   const page = allowed ? children : null;
 
   // Modul layar penuh (3D & katalog buah) punya kerangka sendiri, di desktop maupun mobile.
-  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/ujian", "/akademi/penempatan", "/akademi/rapor", "/akademi/telemetri", "/akademi/sertifikat"].some((r) => path.startsWith(r)))
+  if (["/buah-buahan", "/jelajah-tubuh", "/jelajah-angkasa", "/roket", "/laut", "/bumi", "/umroh-virtual", "/resto", "/ular-tangga", "/koding", "/akademi/main", "/akademi/ujian", "/akademi/penempatan", "/akademi/piagam", "/akademi/rapor", "/akademi/telemetri", "/akademi/sertifikat"].some((r) => path.startsWith(r)))
     return (
       <>
         {page}

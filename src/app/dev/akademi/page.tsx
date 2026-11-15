@@ -12,6 +12,7 @@ import { KidFrame } from "@/components/kid";
 import AkademiPortal from "@/app/(app)/akademi/page";
 import { TelemetriView } from "@/components/akademi/portal/telemetri";
 import { SertifikatKartu } from "@/components/akademi/sertifikat";
+import { PiagamModulKartu, SertifikatSemesterKartu, TranskripJenjang } from "@/components/akademi/piagam";
 import { snapshotSertifikat } from "@/lib/akademi/sertifikat";
 import { KOMPETENSI } from "@/lib/akademi/konten";
 import type { LevelId } from "@akademi/schema";
@@ -71,7 +72,17 @@ function Preview() {
   if (q.get("kartu")) {
     // contoh kartu sertifikat dengan semua kompetensi inti PAUD dianggap dikuasai
     const peng: Record<string, Penguasaan> = Object.fromEntries(KOMPETENSI.map((c) => [c.id, { status: "dikuasai", success: 5, fail: 0, contexts: 2, days: 2, ratioLast10: 1, hintTail: 0 } as Penguasaan]));
-    return <div className="mx-auto max-w-[1000px] p-4"><SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" issuedAt={new Date().toISOString()} snapshot={snapshotSertifikat(peng, KOMPETENSI, "PAUD")} /></div>;
+    const snap = { ...snapshotSertifikat(peng, KOMPETENSI, "PAUD"), nilai: 92, predikat: "Dengan Pujian", ujian: [{ jenis: "kenaikan", ruang: "", nilai: 92 }, { jenis: "semester", ruang: "S1", nilai: 88 }, { jenis: "kuis", ruang: "BILANGAN-1-5", nilai: 90 }] };
+    const at = new Date().toISOString();
+    const contohSemester = { level: "PAUD" as const, ke: 1 as const, nilai: 88, nilaiAkhir: 88, perPelajaran: [{ track: "MAT" as const, nilai: 90, modul: 2 }, { track: "KODE" as const, nilai: 86, modul: 1 }, { track: "SAINS" as const, nilai: 88, modul: 2 }], at, sessionId: "ab12cd34-0000-4000-8000-000000000000" };
+    return (
+      <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-6 bg-[#fff0da] p-4">
+        <PiagamModulKartu nama="Dek Nara" p={{ level: "PAUD", unitId: "BILANGAN-1-5", track: "MAT", ke: 1, nama: { id: "Bilangan 1–5", en: "Numbers 1–5" }, nilai: 90, at, sessionId: "x" }} />
+        <SertifikatSemesterKartu nama="Dek Nara" s={contohSemester} />
+        <SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={snap} />
+        <TranskripJenjang nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={snap} />
+      </div>
+    );
   }
   return <Daftar />;
 }
