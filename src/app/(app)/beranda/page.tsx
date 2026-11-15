@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { KartuKampus } from "@/components/kampus";
+import { peranAkademi } from "@/lib/akademi/konten";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { WorldCard, useLastTool } from "@/components/kid";
 import { InstallBanner } from "@/components/pwa";
@@ -15,6 +18,9 @@ export default function Beranda() {
   const me = useMe();
   const openTool = useOpenTool();
   const last = useLastTool();
+  // Anak Academy: beranda dibuka dengan kartu Kampus; dunia lain jadi "Jam istirahat".
+  const [anakAkademi, setAnakAkademi] = useState(false);
+  useEffect(() => setAnakAkademi(!me.admin && peranAkademi(me.id) === "anak" && can(me, "edukasi")), [me]);
   // Petualangan 3D (dunia unggulan) tampil paling depan.
   const allowed = FOLDERS.filter((f) => can(me, f.id)).sort((a, b) => Number(b.id === "angkasa") - Number(a.id === "angkasa"));
 
@@ -39,8 +45,10 @@ export default function Beranda() {
         </button>
       )}
 
+      {anakAkademi && <KartuKampus me={me} />}
+
       <section className="flex flex-col gap-3">
-        <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>Mau main apa?</h2>
+        <h2 style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>{anakAkademi ? "Jam istirahat" : "Mau main apa?"}</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {allowed.map((f) => (
             <WorldCard key={f.id} f={f} />
