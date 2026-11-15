@@ -296,13 +296,13 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
         setRunning(!running);
       }}><Icon name={running ? 'pause' : 'play_arrow'} />{running ? 'Jeda perjalanan' : travelling ? journey.travelSeconds > 0 ? 'Lanjutkan perjalanan' : 'Mulai perjalanan' : progress.elapsedSeconds > 0 ? 'Lanjutkan ' + (progress.stage === 'tawaf' ? 'tawaf' : 'sa’i') : 'Mulai ' + (progress.stage === 'tawaf' ? 'tawaf' : 'sa’i')}</button>
       : finished
-        ? <Link className="umroh-primary" href="/beranda/angkasa"><Icon name="home" />Kembali ke Petualangan 3D</Link>
+        ? <Link className="umroh-primary" href="/beranda/angkasa"><Icon name="home" />Kembali ke Laboratorium 3D</Link>
         : <button className="umroh-primary" disabled={!ready || (needsChecklist && doneSteps < stepLabels.length)} onClick={next}>{inUmroh ? progress.stage === 'selesai' ? 'Mulai perjalanan pulang' : lesson.action : chapter.action}<Icon name="arrow_forward" /></button>;
 
   return (
     <main className={'umroh-app ' + (guideOpen ? 'guide-open' : 'guide-closed') + (hudHidden ? ' hud-hidden' : '') + (running ? ' is-running' : '')}>
       <header className="umroh-header">
-        <Link href="/beranda/angkasa" className="umroh-icon-btn" aria-label="Kembali ke Petualangan 3D"><Icon name="arrow_back" /></Link>
+        <Link href="/beranda/angkasa" className="umroh-icon-btn" aria-label="Kembali ke Laboratorium 3D"><Icon name="arrow_back" /></Link>
         <div className="umroh-title"><span>JELAJAH & BELAJAR</span><h1>Umroh Virtual</h1></div>
         <div className="umroh-header-actions">
           <button className="umroh-outline-btn" aria-label="Lihat lokasi dan rangkaian umroh" onClick={() => { setRunning(false); setShowMap(true); }}><Icon name="map" /><span>Peta & rangkaian</span></button>

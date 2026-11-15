@@ -19,7 +19,27 @@ import type { LevelId } from "@akademi/schema";
 import { LayarUjian } from "@/components/akademi/ujian";
 import { ProfilBerpikirOrtu, TesBerpikir } from "@/components/ortu/profil-berpikir";
 import { RuangOrangTua } from "@/components/ortu/ruang";
-import type { Member } from "@/lib/store";
+import { useMe, useRumila, type Member } from "@/lib/store";
+import { KartuKampus } from "@/components/kampus";
+import { WorldView } from "@/components/world";
+import { getFolder } from "@/lib/catalog";
+
+function KampusDev() {
+  const me = useMe();
+  const q = useSearchParams();
+  // ?kampus=m4 → lihat sebagai anggota demo lain (mis. anak) untuk menguji kunci Laboratorium
+  useEffect(() => {
+    const id = q.get("kampus");
+    if (id && id !== "1") useRumila.getState().switchMember(id);
+  }, [q]);
+  const f = getFolder("angkasa")!;
+  return (
+    <>
+      <KartuKampus me={me} />
+      <WorldView f={f} />
+    </>
+  );
+}
 
 const DEMO: Member = { id: "dev-anak", name: "Dek Nara", c: "orange", admin: false, perms: [] } as unknown as Member;
 import PenempatanPage from "@/app/(app)/akademi/penempatan/page";
@@ -69,6 +89,7 @@ function Preview() {
   if (q.get("berpikir") === "tes") return <TesBerpikir anak={DEMO} kembaliKe="/dev/akademi?berpikir=hasil" />;
   if (q.get("berpikir")) return <div className="mx-auto max-w-[900px] bg-[#fff0da] p-4"><ProfilBerpikirOrtu anak={DEMO} /></div>;
   if (q.get("ortu")) return <RuangOrangTua />;
+  if (q.get("kampus")) return <KidFrame><KampusDev /></KidFrame>;
   const ujian = JENIS_UJIAN.find((j) => j === q.get("ujian"));
   if (ujian) {
     const lv = (q.get("level") ?? "PAUD") as LevelId;
