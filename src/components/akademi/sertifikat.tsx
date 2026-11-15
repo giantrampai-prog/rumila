@@ -8,10 +8,13 @@
 import Image from "next/image";
 import { LEVELS, TRACKS, type LevelId } from "@akademi/schema";
 import { URL_VERIFIKASI, type SnapshotSertifikat } from "@/lib/akademi/sertifikat";
+import { PENANDATANGAN } from "@/lib/brand";
+import { KELAS_FONT_SERTIFIKAT } from "./font-sertifikat";
+import { KodeQR } from "./qr";
 
-const DISPLAY = 'Didot, "Bodoni 72", "Bodoni MT", "Playfair Display", Georgia, "Times New Roman", serif';
-const SERIF = 'Baskerville, "Baskerville Old Face", Georgia, "Times New Roman", serif';
-const SCRIPT = '"Snell Roundhand", "Apple Chancery", "Great Vibes", "Brush Script MT", Georgia, serif';
+const DISPLAY = 'var(--ff-sert-serif), Didot, "Bodoni 72", Georgia, "Times New Roman", serif';
+const SERIF = 'var(--ff-sert-serif), Baskerville, Georgia, "Times New Roman", serif';
+const SCRIPT = 'var(--ff-sert-skrip), "Snell Roundhand", "Apple Chancery", "Brush Script MT", Georgia, serif';
 const SANS = '"Avenir Next", Avenir, "Helvetica Neue", "Segoe UI", Arial, sans-serif';
 
 const NAVY = "#14233f";
@@ -23,11 +26,13 @@ const GOLD_GRAD = "linear-gradient(135deg,#a8761d 0%,#e9c46a 35%,#f7e3a1 55%,#c9
 /** CSS cetak: A4 landscape tanpa margin, sembunyikan elemen .no-print, kartu mengisi satu halaman. */
 export const SERTIFIKAT_PRINT_CSS = `
 @page { size: A4 landscape; margin: 0; }
+@page transkrip { size: A4 portrait; margin: 0; }
 @media print {
   html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
   .no-print { display: none !important; }
   .sertifikat-root { background: #fff !important; padding: 0 !important; margin: 0 !important; min-height: 0 !important; }
   .sertifikat-card { width: 297mm !important; height: 210mm !important; max-width: none !important; border-radius: 0 !important; box-shadow: none !important; break-inside: avoid; page-break-after: avoid; }
+  .transkrip-card { page: transkrip; break-before: page; width: 210mm !important; max-width: none !important; padding: 14mm 16mm !important; }
   a { text-decoration: none; color: inherit; }
 }`;
 
@@ -149,13 +154,12 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
   const pangkat = snapshot.pangkat || meta?.pangkat || "";
   const acuan = meta?.acuan ?? "";
   const url = URL_VERIFIKASI(kode);
-  const qr = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=0&data=${encodeURIComponent(url)}`;
   const kelompok = unitDikuasai(snapshot);
-  const nameSize = nama.length > 24 ? "clamp(22px, 3.6cqw, 44px)" : nama.length > 16 ? "clamp(26px, 4.6cqw, 56px)" : "clamp(30px, 5.6cqw, 68px)";
-
+  const pelajaran = TRACKS.filter((t) => snapshot.kompetensi.some((k) => k.track === t.id)).map((t) => t.nama.id);
+  const nameSize = nama.length > 24 ? "clamp(24px, 4cqw, 48px)" : nama.length > 16 ? "clamp(28px, 5cqw, 60px)" : "clamp(32px, 6.2cqw, 76px)";
   return (
     <div
-      className={`sertifikat-card relative w-full max-w-[1000px] overflow-hidden rounded-[6px] shadow-[0_18px_50px_rgba(20,35,63,.22)] ${className}`}
+      className={`sertifikat-card relative w-full max-w-[1000px] overflow-hidden rounded-[6px] shadow-[0_18px_50px_rgba(20,35,63,.22)] ${KELAS_FONT_SERTIFIKAT} ${className}`}
       style={{
         aspectRatio: "297 / 210",
         containerType: "inline-size",
@@ -166,16 +170,15 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
         printColorAdjust: "exact",
       }}
     >
-      {/* bingkai navy luar + dua garis emas + garis tipis dalam */}
+      {/* bingkai navy luar + dua garis emas + guilloche tipis */}
       <div aria-hidden className="pointer-events-none absolute" style={{ inset: "1.6%", border: "0.9cqw solid " + NAVY, borderWidth: "min(12px, 1cqw)" }} />
       <div aria-hidden className="pointer-events-none absolute" style={{ inset: "4.2%", border: "2px solid transparent", borderImage: `${GOLD_GRAD} 1` }} />
       <div aria-hidden className="pointer-events-none absolute" style={{ inset: "6.2%", border: "2px solid transparent", borderImage: `${GOLD_GRAD} 1` }} />
-      <div aria-hidden className="pointer-events-none absolute" style={{ inset: "7.6%", border: `1px solid ${NAVY}59` }} />
+      <div aria-hidden className="pointer-events-none absolute" style={{ inset: "6.2%", opacity: 0.06, background: `repeating-radial-gradient(circle at 50% 50%, ${NAVY} 0 1px, transparent 1px 7px)` }} />
       <Sudut posisi="kiri-atas" />
       <Sudut posisi="kanan-atas" />
       <Sudut posisi="kiri-bawah" />
       <Sudut posisi="kanan-bawah" />
-
       {terverifikasi && (
         <div className="absolute left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-white" style={{ top: "3.2%", background: "#12904a", fontFamily: SANS, fontSize: "clamp(9px, 1.2cqw, 13px)", fontWeight: 700, letterSpacing: 2 }}>
           SERTIFIKAT SAH · TERVERIFIKASI
@@ -186,52 +189,50 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
           MENUNGGU SINKRON
         </div>
       )}
-
-      {/* isi */}
-      <div className="absolute flex flex-col items-center text-center" style={{ inset: "9.5% 11% 9% 11%" }}>
+      <div className="absolute flex flex-col items-center text-center" style={{ inset: "8.6% 10.5% 10.5% 10.5%" }}>
         <div className="flex items-center gap-[1.2cqw]">
-          <Image src="/brand/rinoya-mark-r.png" alt="" width={64} height={64} priority style={{ width: "clamp(28px, 5cqw, 64px)", height: "auto" }} />
-          <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.45cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RINOYA ACADEMY</span>
+          <Image src="/brand/rinoya-mark-r.png" alt="" width={64} height={64} priority style={{ width: "clamp(26px, 4.4cqw, 56px)", height: "auto" }} />
+          <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.4cqw, 17px)", fontWeight: 600, color: NAVY, letterSpacing: "0.55em" }}>RINOYA ACADEMY</span>
         </div>
-
-        <h1 className="leading-none" style={{ marginTop: "1.6cqw", fontFamily: DISPLAY, fontSize: "clamp(28px, 6.2cqw, 76px)", fontWeight: 700, color: NAVY, letterSpacing: "0.18em" }}>
+        <h1 className="leading-none" style={{ marginTop: "1.2cqw", fontFamily: DISPLAY, fontSize: "clamp(28px, 5.8cqw, 72px)", fontWeight: 700, color: NAVY, letterSpacing: "0.16em" }}>
           SERTIFIKAT
         </h1>
-        <div className="flex items-center gap-[1cqw]" style={{ marginTop: "0.8cqw" }}>
-          <span style={{ width: "8cqw", height: 1.5, background: GOLD_GRAD }} />
-          <span style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.5cqw, 18px)", fontWeight: 700, color: GOLD, letterSpacing: "0.4em" }}>JENJANG</span>
-          <span style={{ width: "8cqw", height: 1.5, background: GOLD_GRAD }} />
+        <div className="flex items-center gap-[1cqw]" style={{ marginTop: "0.6cqw" }}>
+          <span style={{ width: "7cqw", height: 1.5, background: GOLD_GRAD }} />
+          <span style={{ fontFamily: SANS, fontSize: "clamp(8px, 1.3cqw, 16px)", fontWeight: 700, color: GOLD, letterSpacing: "0.38em" }}>KENAIKAN JENJANG</span>
+          <span style={{ width: "7cqw", height: 1.5, background: GOLD_GRAD }} />
         </div>
-
-        <p style={{ marginTop: "2.2cqw", fontFamily: SERIF, fontStyle: "italic", fontSize: "clamp(11px, 1.8cqw, 22px)", color: MUTED }}>Dengan bangga diberikan kepada</p>
-        <p className="leading-none" style={{ marginTop: "0.8cqw", fontFamily: SCRIPT, fontSize: nameSize, color: NAVY }}>
+        <p style={{ marginTop: "1.6cqw", fontStyle: "italic", fontSize: "clamp(11px, 1.75cqw, 22px)", color: MUTED }}>Dengan bangga diberikan kepada</p>
+        <p className="leading-none" style={{ marginTop: "0.4cqw", fontFamily: SCRIPT, fontSize: nameSize, color: NAVY }}>
           {nama}
         </p>
-        <div className="relative" style={{ marginTop: "0.9cqw", width: "50%", height: 4 }}>
+        <div className="relative" style={{ marginTop: "0.6cqw", width: "48%", height: 4 }}>
           <span className="absolute inset-x-0 top-1/2 block h-[2px] -translate-y-1/2" style={{ background: GOLD_GRAD, maskImage: "linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent)" }} />
           <span className="absolute left-1/2 top-1/2 block size-[9px] -translate-x-1/2 -translate-y-1/2 rotate-45" style={{ background: GOLD_GRAD }} />
         </div>
-
-        <p style={{ marginTop: "1.6cqw", fontSize: "clamp(11px, 1.75cqw, 21px)", color: INK, lineHeight: 1.35 }}>
-          telah menuntaskan <b style={{ color: NAVY }}>{namaJenjang}</b>
+        <p style={{ marginTop: "1.2cqw", fontSize: "clamp(11px, 1.7cqw, 21px)", color: INK, lineHeight: 1.35, maxWidth: "80%" }}>
+          yang telah lulus <b style={{ color: NAVY }}>{namaJenjang}</b>
           {pangkat && (
             <>
               {" "}
-              — pangkat <b style={{ color: NAVY }}>{pangkat}</b>
+              dan meraih pangkat <b style={{ color: NAVY }}>{pangkat}</b>
             </>
           )}
-          <br />
-          dengan menguasai {snapshot.dikuasai} dari {snapshot.total} kompetensi inti jenjang.
+          , dengan menguasai <b style={{ color: NAVY }}>{snapshot.dikuasai} dari {snapshot.total}</b> kompetensi inti
+          {pelajaran.length > 0 && <> pada pelajaran {gabung(pelajaran)}</>}.
         </p>
-        {acuan && acuan !== "dicadangkan" && (
-          <p style={{ marginTop: "0.6cqw", fontFamily: SANS, fontSize: "clamp(8px, 1.1cqw, 13px)", color: MUTED, letterSpacing: "0.12em" }}>
-            Mengacu pada {acuan}
+        {typeof snapshot.nilai === "number" && (
+          <p className="rounded-full text-white" style={{ marginTop: "1cqw", padding: "0.45cqw 1.6cqw", background: NAVY, fontFamily: SANS, fontSize: "clamp(8px, 1.15cqw, 14px)", fontWeight: 700, letterSpacing: "0.22em" }}>
+            {(snapshot.predikat ?? "").toUpperCase()} · NILAI AKHIR {snapshot.nilai}
           </p>
         )}
-
-        {/* unit yang dikuasai per pelajaran */}
-        {kelompok.length > 0 && (
-          <div className="flex w-full flex-wrap justify-center" style={{ marginTop: "1.6cqw", gap: "0.6cqw 2.4cqw", fontFamily: SANS, fontSize: "clamp(7.5px, 1.05cqw, 12.5px)", color: INK }}>
+        {acuan && acuan !== "dicadangkan" && (
+          <p style={{ marginTop: "0.7cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: MUTED, letterSpacing: "0.1em" }}>
+            Kurikulum mengacu pada {acuan} · Program non-formal pendamping sekolah
+          </p>
+        )}
+        {kelompok.length > 0 && typeof snapshot.nilai !== "number" && (
+          <div className="flex w-full flex-wrap justify-center" style={{ marginTop: "1cqw", gap: "0.5cqw 2.2cqw", fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", color: INK }}>
             {kelompok.map((g) => (
               <div key={g.track.id} className="flex items-baseline gap-[0.6cqw]">
                 <span style={{ color: GOLD, fontWeight: 700, letterSpacing: "0.1em" }}>{g.track.nama.id.toUpperCase()}</span>
@@ -240,30 +241,48 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, 
             ))}
           </div>
         )}
-
-        {/* baris bawah: tanggal · segel · verifikasi */}
-        <div className="mt-auto grid w-full items-end" style={{ gridTemplateColumns: "1fr auto 1fr" }}>
-          <div className="text-center" style={{ paddingBottom: "1cqw" }}>
-            <p style={{ fontFamily: SERIF, fontSize: "clamp(10px, 1.7cqw, 21px)", color: NAVY }}>{tanggalPanjang(issuedAt)}</p>
-            <div className="mx-auto" style={{ width: "70%", height: 1.2, background: NAVY, marginTop: "0.5cqw" }} />
-            <p style={{ fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", fontWeight: 700, color: MUTED, letterSpacing: "0.25em", marginTop: "0.5cqw" }}>TANGGAL TERBIT</p>
-            <p style={{ fontFamily: SANS, fontSize: "clamp(7px, 0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.12em", marginTop: "0.4cqw" }}>{nomor ? `No. ${nomor}` : pending ? "Nomor terbit setelah sinkron" : `No. RA/SJ/${level}/${kode}`}</p>
-          </div>
-          <div style={{ width: "clamp(56px, 9.5cqw, 120px)", height: "clamp(76px, 12.9cqw, 163px)", marginBottom: "-1.4cqw" }}>
+        {/* tanda tangan · segel · tanda tangan */}
+        <div className="mt-auto grid w-full items-end" style={{ gridTemplateColumns: "1fr auto 1fr", gap: "2cqw" }}>
+          <TandaTangan p={PENANDATANGAN[0]} />
+          <div style={{ width: "clamp(56px, 9cqw, 114px)", height: "clamp(76px, 12.2cqw, 155px)", marginBottom: "-1.2cqw" }}>
             <Segel pangkat={pangkat} />
           </div>
-          <div className="flex items-end justify-center gap-[1cqw]" style={{ paddingBottom: "1cqw" }}>
-            <div className="text-left" style={{ fontFamily: SANS, color: MUTED }}>
-              <p style={{ fontSize: "clamp(7px, 1cqw, 12px)", fontWeight: 700, letterSpacing: "0.2em", color: NAVY }}>KODE VERIFIKASI</p>
-              <p style={{ fontFamily: DISPLAY, fontSize: "clamp(14px, 2.4cqw, 30px)", fontWeight: 700, color: NAVY, letterSpacing: "0.18em", lineHeight: 1.1 }}>{kode}</p>
-              <p style={{ fontSize: "clamp(6.5px, 0.9cqw, 11px)", marginTop: "0.3cqw", wordBreak: "break-all" }}>{url.replace(/^https:\/\//, "")}</p>
-            </div>
-            {/* QR dari layanan luar (tanpa library) — bukan next/image karena domain tidak terdaftar di next.config */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={qr} alt={`QR verifikasi ${kode}`} width={120} height={120} loading="eager" style={{ width: "clamp(48px, 8cqw, 100px)", height: "auto", background: "#fff", padding: 3, border: `1px solid ${NAVY}33` }} />
-          </div>
+          <TandaTangan p={PENANDATANGAN[1]} />
         </div>
       </div>
+      {/* baris dokumen: nomor & tanggal · kode & QR */}
+      <div className="absolute flex items-center justify-between" style={{ left: "8.4%", right: "8.4%", bottom: "2.6%", fontFamily: SANS, fontSize: "clamp(6.5px, 0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.06em" }}>
+        <span>
+          {nomor ? `No. ${nomor}` : pending ? "Nomor terbit setelah sinkron" : `No. RA/SJ/${level}/${kode}`} · Terbit {tanggalPanjang(issuedAt)}
+        </span>
+        <span className="flex items-center gap-[0.8cqw]">
+          <span className="text-right">
+            <span className="block" style={{ fontWeight: 700, color: NAVY, letterSpacing: "0.18em" }}>KODE VERIFIKASI</span>
+            <span className="block" style={{ fontFamily: SANS, fontSize: "clamp(9px, 1.35cqw, 17px)", fontWeight: 700, color: NAVY, letterSpacing: "0.18em", lineHeight: 1.15, fontVariantNumeric: "lining-nums tabular-nums" }}>{kode}</span>
+          </span>
+          <KodeQR teks={url} ukuran="clamp(34px, 5.4cqw, 66px)" />
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function gabung(daftar: string[]) {
+  if (daftar.length < 3) return daftar.join(" dan ");
+  return `${daftar.slice(0, -1).join(", ")}, dan ${daftar.at(-1)}`;
+}
+
+function TandaTangan({ p }: { p: (typeof PENANDATANGAN)[number] }) {
+  return (
+    <div className="flex flex-col items-center" style={{ fontFamily: SANS, paddingBottom: "0.6cqw" }}>
+      <div className="flex items-end justify-center" style={{ height: "clamp(22px, 3.8cqw, 46px)" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {p.ttd && <img src={p.ttd} alt="" style={{ maxHeight: "100%", width: "auto" }} />}
+      </div>
+      <div style={{ width: "78%", height: 1.2, background: NAVY }} />
+      {p.nama && <p style={{ marginTop: "0.4cqw", fontSize: "clamp(8px, 1.15cqw, 14px)", fontWeight: 700, color: NAVY }}>{p.nama}</p>}
+      <p style={{ marginTop: p.nama ? "0.1cqw" : "0.5cqw", fontSize: "clamp(7px, 1cqw, 12px)", fontWeight: 700, color: MUTED, letterSpacing: "0.16em" }}>{p.jabatan.toUpperCase()}</p>
+      <p style={{ fontSize: "clamp(6px, 0.85cqw, 10px)", color: MUTED, letterSpacing: "0.12em" }}>RINOYA ACADEMY</p>
     </div>
   );
 }

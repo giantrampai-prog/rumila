@@ -209,6 +209,10 @@ export type Database = {
         Args: { p_code: string };
         Returns: { first_name: string; level: string; track: string | null; issued_at: string; snapshot: Json; nomor: string | null; status: "sah" | "dicabut" }[];
       };
+      verify_semester: {
+        Args: { p_session: string };
+        Returns: { first_name: string; level: string; ruang: string; nilai: number; created_at: string; kuis: Json }[];
+      };
       akademi_atur_jenjang_awal: {
         Args: { p_member: string; p_level: string };
         Returns: Database["public"]["Tables"]["akademi_siswa"]["Row"];

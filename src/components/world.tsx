@@ -6,10 +6,16 @@ import { useOpenTool } from "@/components/shell";
 import { Icon } from "@/components/ui";
 import { tintaPada } from "@/lib/brand";
 import { PLAY, type Folder } from "@/lib/catalog";
+import { useMe, useUI } from "@/lib/store";
+import { useLab } from "@/components/kampus";
 
 /** Halaman satu dunia: judul besar + petak permainan. */
 export function WorldView({ f }: { f: Folder }) {
   const openTool = useOpenTool();
+  const me = useMe();
+  const lab = useLab(me);
+  const showToast = useUI((s) => s.showToast);
+  const kunci = (id: string) => (f.id === "angkasa" ? lab(id) : { terbuka: true });
   const [l, m, d] = PLAY[f.c];
 
   return (
@@ -39,13 +45,22 @@ export function WorldView({ f }: { f: Folder }) {
       </div>
 
       <section className="grid grid-cols-4 gap-x-2 gap-y-4 sm:grid-cols-5 md:grid-cols-6">
-        {f.items.map((t) => (
+        {f.items.map((t) => {
+          const k = kunci(t.id);
+          return (
           <button
             key={t.id}
-            onClick={() => openTool(t)}
+            onClick={() => (k.terbuka ? openTool(t) : showToast(`Laboratorium ini terbuka setelah modul ${k.syarat}.`))}
+            aria-label={k.terbuka ? t.name : `${t.name}, terkunci: tuntaskan modul ${k.syarat}`}
             className="flex flex-col items-center gap-1.5 rounded-[20px] p-1.5 transition-transform active:scale-95"
+            style={k.terbuka ? undefined : { filter: "grayscale(.75)", opacity: 0.7 }}
           >
             <span className="relative">
+              {!k.terbuka && (
+                <span className="absolute -right-1.5 -bottom-1.5 z-10 flex size-7 items-center justify-center rounded-full border-2 border-white bg-[#5b6b85] text-white">
+                  <Icon name="lock" size={15} />
+                </span>
+              )}
               <span className="sm:hidden">
                 <AppIcon t={t} size={60} theme="playful" />
               </span>
@@ -62,7 +77,8 @@ export function WorldView({ f }: { f: Folder }) {
               {t.name}
             </span>
           </button>
-        ))}
+          );
+        })}
       </section>
     </>
   );
