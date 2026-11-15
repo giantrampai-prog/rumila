@@ -18746,6 +18746,182 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-00-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-10-papan-6x1-00",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-00-papan-6x1-00-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-10-papan-6x1-10",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-4x2-00",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-00-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-00-papan-6x1-00-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "batu-awal-2-papan-5x1-10-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 1
       }
     ]
   },
@@ -19140,6 +19316,182 @@ export const PAKET_RAW: unknown[] = [
         "id": "atas-batu-awal-2-cermin-datar-papan-3x4-00",
         "w": 3,
         "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-papan-3x4-00-cermin-datar",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-papan-3x4-00-papan-4x4-00",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-cermin-datar-papan-3x4-00-papan-4x4-00",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-cermin-datar-papan-3x4-00-papan-4x4-10",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-papan-2x5-00",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-cermin-datar-papan-2x5-00",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-papan-3x4-00-papan-3x5-00",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 1
+      },
+      {
+        "id": "atas-batu-awal-2-cermin-datar-papan-3x4-00-papan-3x5-00",
+        "w": 3,
+        "h": 5,
         "start": {
           "x": 1,
           "y": 3,
@@ -19797,6 +20149,108 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 3
+      },
+      {
+        "id": "kiri-lalu-maju-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-lalu-maju-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kiri-dari-utara-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kiri-lalu-maju-cermin-datar-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kiri-lalu-maju-cermin-tegak-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kiri-lalu-maju-cermin-tegak-cermin-datar-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
       }
     ]
   },
@@ -20126,6 +20580,42 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 7,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-naik-kanan-papan-5x4-00-cermin-datar",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 4
+      },
+      {
+        "id": "enam-kanan-naik-papan-5x4-00-cermin-datar",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
         "rackSlots": 4
       }
     ]
@@ -22181,6 +22671,264 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 1
+      },
+      {
+        "id": "lurus-kena-dinding-atas-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-kena-dinding-atas-cermin-tegak-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-kena-dinding-atas-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-salah-ke-dinding-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-salah-ke-dinding-cermin-tegak-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "belok-salah-ke-dinding-putar-kanan-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
       }
     ]
   },
@@ -22881,6 +23629,125 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 3
+      },
+      {
+        "id": "naik-lalu-kanan-papan-4x3-00-cermin-datar",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 3,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-papan-4x3-00-putar-kanan",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "dari-kanan-ke-kiri-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-putar-kanan-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-putar-kanan-cermin-tegak-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-papan-4x3-00-papan-5x3-00",
+        "w": 5,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
+      },
+      {
+        "id": "naik-lalu-kanan-papan-4x3-10",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4
       }
     ]
   },
@@ -23877,6 +24744,142 @@ export const PAKET_RAW: unknown[] = [
         ],
         "rocks": [],
         "optimal": 8
+      },
+      {
+        "id": "balik-arah-6-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-cermin-tegak-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-putar-kiri-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-cermin-tegak-putar-kiri-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-papan-5x4-10",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-cermin-tegak-papan-5x4-10",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-putar-kiri-papan-5x4-10",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
+      },
+      {
+        "id": "balik-arah-6-cermin-tegak-putar-kiri-papan-5x4-10",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
       }
     ]
   },
@@ -25079,6 +26082,294 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 3,
         "rackSlots": 5,
         "group": "lima-v6-v6"
+      },
+      {
+        "id": "lima-batu-2-papan-7x2-00-papan-8x2-00-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6-v1"
+      },
+      {
+        "id": "lima-batu-3-papan-7x2-00-papan-8x2-00-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6-v1"
+      },
+      {
+        "id": "lima-batu-4-papan-7x2-00-papan-8x2-00-cermin-tegak",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6-v1"
+      },
+      {
+        "id": "lima-batu-2-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2-v2-v2"
+      },
+      {
+        "id": "lima-batu-3-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2-v2-v2"
+      },
+      {
+        "id": "lima-batu-4-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v2-v2-v2"
+      },
+      {
+        "id": "lima-batu-2-papan-8x1-10-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4-v4-v3"
+      },
+      {
+        "id": "lima-batu-3-papan-8x1-10-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4-v4-v3"
+      },
+      {
+        "id": "lima-batu-4-papan-8x1-10-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v4-v4-v3"
+      },
+      {
+        "id": "lima-batu-2-papan-7x2-00-papan-8x2-00-papan-9x2-00",
+        "w": 9,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6-v4"
+      },
+      {
+        "id": "lima-batu-3-papan-7x2-00-papan-8x2-00-papan-9x2-00",
+        "w": 9,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6-v4"
+      },
+      {
+        "id": "lima-batu-4-papan-7x2-00-papan-8x2-00-papan-9x2-00",
+        "w": 9,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 5,
+        "group": "lima-v6-v6-v4"
       }
     ]
   },
@@ -26896,6 +28187,138 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 2
+      },
+      {
+        "id": "naik-batu-2-jarak-4-papan-3x6-00-cermin-datar",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 2,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-3-jarak-5-papan-3x6-00-cermin-datar",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 2,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-2-jarak-4-cermin-datar-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-3-jarak-5-cermin-datar-papan-3x6-00",
+        "w": 3,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-2-jarak-4-papan-3x6-00-papan-4x6-00",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "naik-batu-3-jarak-5-papan-3x6-00-papan-4x6-00",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 3
       }
     ]
   },
@@ -27319,6 +28742,138 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 2
+      },
+      {
+        "id": "batu-2-jarak-4-papan-7x1-00-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-3-jarak-5-papan-7x1-00-papan-8x1-00-papan-9x1-00",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-2-jarak-4-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-3-jarak-5-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-2-jarak-4-papan-7x1-00-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 3
+      },
+      {
+        "id": "batu-3-jarak-5-papan-7x1-00-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 3
       }
     ]
   },
@@ -27664,6 +29219,108 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 3
+      },
+      {
+        "id": "naik-papan-2x4-1-langkah-cermin-datar",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "naik-papan-3x5-1-langkah-cermin-datar",
+        "w": 3,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "turun-papan-2x5-1-langkah-cermin-datar",
+        "w": 2,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "naik-papan-2x4-1-langkah-cermin-tegak",
+        "w": 2,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "turun-papan-3x4-1-langkah-cermin-tegak",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "kiri-papan-4x2-1-langkah-cermin-tegak",
+        "w": 4,
+        "h": 2,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
       }
     ]
   },
@@ -28353,6 +30010,196 @@ export const PAKET_RAW: unknown[] = [
           },
           {
             "cmd": "kiri"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6b-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6-cermin-datar-putar-kanan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6b-putar-kanan-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-6b-putar-kanan-putar-balik",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
           }
         ],
         "fixes": 2
@@ -30098,6 +31945,38 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 1
+      },
+      {
+        "id": "belok-harusnya-maju-akhir-papan-4x3-00-cermin-datar",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 3,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 1
       }
     ]
   },
@@ -30665,6 +32544,134 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-papan-4x3-00-cermin-datar",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 3,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "lurus-belok-di-akhir-papan-6x1-00-cermin-tegak",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-papan-4x3-00-putar-kanan",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "maju-harusnya-belok-cermin-datar-papan-4x3-00",
+        "w": 4,
+        "h": 3,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ],
+        "fixes": 1
       }
     ]
   },
@@ -31215,6 +33222,326 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           }
         ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-10",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-5x2-01",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00-papan-6x2-01",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x1-00-papan-7x2-01",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
+      },
+      {
+        "id": "empat-maju-papan-6x2-10",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 2,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          }
+        ]
       }
     ]
   },
@@ -31526,6 +33853,74 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 3
+      },
+      {
+        "id": "atas-2b-papan-3x4-00-cermin-datar",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-2b-cermin-datar-papan-3x4-00",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-2-papan-3x5-00-papan-4x5-00",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "atas-2-papan-3x5-00-cermin-datar-papan-4x5-00",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
       }
     ]
   },
@@ -31837,6 +34232,125 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 4
+      },
+      {
+        "id": "kanan-2-papan-6x1-00-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-2-papan-6x1-10-papan-7x1-00-papan-8x1-00",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-2-papan-6x1-10-papan-7x1-10",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-2-papan-6x1-10-papan-7x1-00-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-2-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-2-papan-6x1-00-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
+      },
+      {
+        "id": "kanan-2-papan-6x1-10-papan-6x2-00",
+        "w": 6,
+        "h": 2,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 2
       }
     ]
   },
@@ -32833,6 +35347,88 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "lompat"
           }
         ]
+      },
+      {
+        "id": "maju-lompat-dua-kali-cermin-datar",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 6,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "lompat"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "lompat"
+          }
+        ]
+      },
+      {
+        "id": "maju-lompat-dua-kali-putar-kanan-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3,
+        "program": [
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "lompat"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "lompat"
+          }
+        ]
       }
     ]
   },
@@ -33144,6 +35740,91 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 2
+      },
+      {
+        "id": "lurus-1-papan-4x2-00-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-1-papan-4x2-00-cermin-tegak-papan-5x2-00",
+        "w": 5,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-1-papan-5x1-00-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-1-papan-5x1-10-papan-6x1-00-papan-7x1-00",
+        "w": 7,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
+      },
+      {
+        "id": "lurus-1-papan-5x1-10-papan-6x1-10",
+        "w": 6,
+        "h": 1,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 1
       }
     ]
   },
@@ -35987,6 +38668,162 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 4,
         "rackSlots": 2,
         "group": "s14-s-7-1"
+      },
+      {
+        "id": "s1-s-5-1-a-3-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 2,
+        "group": "s1-s-5-1-v1"
+      },
+      {
+        "id": "s1-s-5-1-b-1-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 2,
+        "group": "s1-s-5-1-v1"
+      },
+      {
+        "id": "s1-s-5-1-c-4-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 2,
+        "group": "s1-s-5-1-v1"
+      },
+      {
+        "id": "s2-s-6-2-a-1-4-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 2,
+        "group": "s2-s-6-2-v2"
+      },
+      {
+        "id": "s2-s-6-2-b-2-5-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 2,
+        "group": "s2-s-6-2-v2"
+      },
+      {
+        "id": "s2-s-6-2-c-3-5-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 3,
+        "rackSlots": 2,
+        "group": "s2-s-6-2-v2"
       }
     ]
   },
@@ -45620,6 +48457,279 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 9,
         "rackSlots": 9
+      },
+      {
+        "id": "pendek-6-06-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
+      },
+      {
+        "id": "pendek-6-10-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
+      },
+      {
+        "id": "pendek-6-11-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
+      },
+      {
+        "id": "pendek-6-12-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
+      },
+      {
+        "id": "pendek-6-13-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
+      },
+      {
+        "id": "pendek-6-06-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
+      },
+      {
+        "id": "pendek-6-10-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 6,
+        "rackSlots": 6
       }
     ]
   },
@@ -48349,6 +51459,360 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "rackSlots": 5,
         "group": "p14-64-n"
+      },
+      {
+        "id": "p1-54-e-a-cermin-datar",
+        "w": 6,
+        "h": 5,
+        "start": {
+          "x": 5,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "p1-54-e-v1"
+      },
+      {
+        "id": "p1-54-e-b-cermin-datar",
+        "w": 6,
+        "h": 5,
+        "start": {
+          "x": 5,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "p1-54-e-v1"
+      },
+      {
+        "id": "p1-54-e-c-cermin-datar",
+        "w": 6,
+        "h": 5,
+        "start": {
+          "x": 5,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "p1-54-e-v1"
+      },
+      {
+        "id": "p2-46-n-a-cermin-datar",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "p2-46-n-v2"
+      },
+      {
+        "id": "p2-46-n-b-cermin-datar",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "p2-46-n-v2"
+      },
+      {
+        "id": "p2-46-n-c-cermin-datar",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "p2-46-n-v2"
       }
     ]
   },
@@ -49762,6 +53226,438 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 7,
         "group": "l17-6-6-n",
         "rackSlots": 5
+      },
+      {
+        "id": "l1-4-4-n-a-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "l1-4-4-n-v1"
+      },
+      {
+        "id": "l1-4-4-n-b-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "l1-4-4-n-v1"
+      },
+      {
+        "id": "l1-4-4-n-c-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "l1-4-4-n-v1"
+      },
+      {
+        "id": "l2-4-4-e-a-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "l2-4-4-e-v2"
+      },
+      {
+        "id": "l2-4-4-e-b-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "l2-4-4-e-v2"
+      },
+      {
+        "id": "l2-4-4-e-c-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "l2-4-4-e-v2"
+      },
+      {
+        "id": "l5-5-5-n-a-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 4
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l5-5-5-n-v3"
+      },
+      {
+        "id": "l5-5-5-n-b-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 3
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l5-5-5-n-v3"
+      },
+      {
+        "id": "l5-5-5-n-c-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l5-5-5-n-v3"
+      },
+      {
+        "id": "l6-5-5-e-a-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l6-5-5-e-v4"
+      },
+      {
+        "id": "l6-5-5-e-b-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l6-5-5-e-v4"
+      },
+      {
+        "id": "l6-5-5-e-c-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l6-5-5-e-v4"
+      },
+      {
+        "id": "l15-5-4-s-a-cermin-datar",
+        "w": 5,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "l15-5-4-s-v5"
+      },
+      {
+        "id": "l15-5-4-s-b-cermin-datar",
+        "w": 5,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 5
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l15-5-4-s-v5"
+      },
+      {
+        "id": "l15-5-4-s-c-cermin-datar",
+        "w": 5,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "l15-5-4-s-v5"
+      },
+      {
+        "id": "l16-4-5-w-a-cermin-datar",
+        "w": 5,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "l16-4-5-w-v6"
+      },
+      {
+        "id": "l16-4-5-w-b-cermin-datar",
+        "w": 5,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "l16-4-5-w-v6"
+      },
+      {
+        "id": "l16-4-5-w-c-cermin-datar",
+        "w": 5,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "l16-4-5-w-v6"
       }
     ]
   },
@@ -49806,7 +53702,7 @@ export const PAKET_RAW: unknown[] = [
     "debug": true,
     "grids": [
       {
-        "id": "tiga-salah-9-01",
+        "id": "tiga-salah-7-01",
         "w": 6,
         "h": 6,
         "start": {
@@ -49826,35 +53722,29 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
             "cmd": "kanan"
           },
           {
             "cmd": "maju"
           },
           {
-            "cmd": "kanan"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
           },
           {
             "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 7
       },
       {
-        "id": "tiga-salah-8-02",
+        "id": "tiga-salah-5-02",
         "w": 5,
         "h": 6,
         "start": {
@@ -49871,35 +53761,26 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 5,
         "program": [
           {
-            "cmd": "kanan"
-          },
-          {
             "cmd": "maju"
           },
           {
             "cmd": "kanan"
           },
           {
-            "cmd": "kiri"
+            "cmd": "maju"
           },
           {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
+            "cmd": "kanan"
           }
         ],
         "fixes": 3,
-        "rackSlots": 8
+        "rackSlots": 5
       },
       {
-        "id": "tiga-salah-7-03",
+        "id": "tiga-salah-6-03",
         "w": 6,
         "h": 5,
         "start": {
@@ -49916,32 +53797,29 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "program": [
           {
-            "cmd": "kiri"
-          },
-          {
             "cmd": "maju"
           },
           {
             "cmd": "kiri"
           },
           {
-            "cmd": "kanan"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
           },
           {
             "cmd": "maju"
           },
           {
             "cmd": "kanan"
-          },
-          {
-            "cmd": "kiri"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 6
       },
       {
-        "id": "tiga-salah-8-04",
+        "id": "tiga-salah-7-04",
         "w": 5,
         "h": 7,
         "start": {
@@ -49958,35 +53836,32 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 7,
         "program": [
           {
+            "cmd": "kiri"
+          },
+          {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
+            "cmd": "maju"
           },
           {
-            "cmd": "kiri"
+            "cmd": "maju"
           },
           {
-            "cmd": "kiri"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
           },
           {
             "cmd": "kanan"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "maju"
           }
         ],
         "fixes": 3,
-        "rackSlots": 8
+        "rackSlots": 7
       },
       {
-        "id": "tiga-salah-9-05",
+        "id": "tiga-salah-8-05",
         "w": 6,
         "h": 7,
         "start": {
@@ -50006,6 +53881,15 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           },
           {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
             "cmd": "kiri"
           },
           {
@@ -50016,25 +53900,13 @@ export const PAKET_RAW: unknown[] = [
           },
           {
             "cmd": "kanan"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "maju"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 8
       },
       {
-        "id": "tiga-salah-9-06",
+        "id": "tiga-salah-5-06",
         "w": 5,
         "h": 6,
         "start": {
@@ -50054,35 +53926,23 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
             "cmd": "kanan"
           },
           {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
             "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 5
       },
       {
-        "id": "tiga-salah-7-07",
+        "id": "tiga-salah-6-07",
         "w": 5,
         "h": 6,
         "start": {
@@ -50099,32 +53959,29 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "program": [
           {
-            "cmd": "kiri"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
           },
           {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
             "cmd": "maju"
           },
           {
             "cmd": "maju"
-          },
-          {
-            "cmd": "kiri"
           },
           {
             "cmd": "kanan"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 6
       },
       {
-        "id": "tiga-salah-9-08",
+        "id": "tiga-salah-6-08",
         "w": 6,
         "h": 5,
         "start": {
@@ -50141,9 +53998,6 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "program": [
           {
-            "cmd": "maju"
-          },
-          {
             "cmd": "kiri"
           },
           {
@@ -50151,12 +54005,6 @@ export const PAKET_RAW: unknown[] = [
           },
           {
             "cmd": "maju"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kanan"
           },
           {
             "cmd": "kiri"
@@ -50169,10 +54017,10 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 6
       },
       {
-        "id": "tiga-salah-9-09",
+        "id": "tiga-salah-8-09",
         "w": 7,
         "h": 6,
         "start": {
@@ -50189,6 +54037,9 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 8,
         "program": [
           {
+            "cmd": "maju"
+          },
+          {
             "cmd": "kanan"
           },
           {
@@ -50204,23 +54055,17 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           },
           {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "kanan"
+            "cmd": "kiri"
           },
           {
             "cmd": "maju"
-          },
-          {
-            "cmd": "kanan"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 8
       },
       {
-        "id": "tiga-salah-7-10",
+        "id": "tiga-salah-5-10",
         "w": 5,
         "h": 5,
         "start": {
@@ -50237,32 +54082,26 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 5,
         "program": [
           {
-            "cmd": "kanan"
-          },
-          {
             "cmd": "kiri"
           },
           {
-            "cmd": "kanan"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
           },
           {
             "cmd": "kanan"
           },
           {
             "cmd": "maju"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kiri"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 5
       },
       {
-        "id": "tiga-salah-7-11",
+        "id": "tiga-salah-6-11",
         "w": 6,
         "h": 5,
         "start": {
@@ -50279,7 +54118,7 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "program": [
           {
-            "cmd": "kiri"
+            "cmd": "maju"
           },
           {
             "cmd": "kanan"
@@ -50291,20 +54130,17 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "kiri"
           },
           {
-            "cmd": "kiri"
+            "cmd": "maju"
           },
           {
             "cmd": "kanan"
-          },
-          {
-            "cmd": "maju"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 6
       },
       {
-        "id": "tiga-salah-7-12",
+        "id": "tiga-salah-6-12",
         "w": 7,
         "h": 4,
         "start": {
@@ -50321,32 +54157,29 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "program": [
           {
+            "cmd": "kiri"
+          },
+          {
             "cmd": "maju"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kanan"
           },
           {
             "cmd": "kanan"
           },
           {
             "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 6
       },
       {
-        "id": "tiga-salah-7-13",
+        "id": "tiga-salah-6-13",
         "w": 4,
         "h": 7,
         "start": {
@@ -50363,32 +54196,29 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "program": [
           {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
             "cmd": "kanan"
           },
           {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kiri"
+            "cmd": "maju"
           },
           {
             "cmd": "maju"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 6
       },
       {
-        "id": "tiga-salah-9-14",
+        "id": "tiga-salah-7-14",
         "w": 5,
         "h": 7,
         "start": {
@@ -50408,35 +54238,29 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "maju"
           },
           {
-            "cmd": "kanan"
-          },
-          {
             "cmd": "maju"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kanan"
           },
           {
             "cmd": "kiri"
           },
           {
-            "cmd": "kanan"
+            "cmd": "kiri"
           },
           {
             "cmd": "maju"
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "kiri"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 7
       },
       {
-        "id": "tiga-salah-7-15",
+        "id": "tiga-salah-4-15",
         "w": 6,
         "h": 4,
         "start": {
@@ -50453,32 +54277,23 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 4,
         "program": [
           {
-            "cmd": "maju"
-          },
-          {
             "cmd": "kanan"
           },
           {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
-          },
-          {
             "cmd": "kanan"
           },
           {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
+            "cmd": "kanan"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 4
       },
       {
-        "id": "tiga-salah-9-16",
+        "id": "tiga-salah-7-16",
         "w": 5,
         "h": 7,
         "start": {
@@ -50498,35 +54313,29 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "kanan"
           },
           {
-            "cmd": "kanan"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
           },
           {
             "cmd": "maju"
           },
           {
             "cmd": "kiri"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 7
       },
       {
-        "id": "tiga-salah-7-17",
+        "id": "tiga-salah-4-17",
         "w": 6,
         "h": 4,
         "start": {
@@ -50543,32 +54352,23 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 4,
         "program": [
           {
-            "cmd": "kiri"
+            "cmd": "maju"
+          },
+          {
+            "cmd": "maju"
           },
           {
             "cmd": "kanan"
           },
           {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
-            "cmd": "maju"
+            "cmd": "kanan"
           }
         ],
         "fixes": 3,
-        "rackSlots": 7
+        "rackSlots": 4
       },
       {
-        "id": "tiga-salah-9-18",
+        "id": "tiga-salah-7-18",
         "w": 5,
         "h": 7,
         "start": {
@@ -50585,9 +54385,6 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 7,
         "program": [
           {
-            "cmd": "kanan"
-          },
-          {
             "cmd": "kiri"
           },
           {
@@ -50597,23 +54394,20 @@ export const PAKET_RAW: unknown[] = [
             "cmd": "kanan"
           },
           {
-            "cmd": "kanan"
-          },
-          {
-            "cmd": "kiri"
-          },
-          {
             "cmd": "maju"
           },
           {
-            "cmd": "kiri"
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "maju"
           },
           {
             "cmd": "maju"
           }
         ],
         "fixes": 3,
-        "rackSlots": 9
+        "rackSlots": 7
       }
     ]
   },
@@ -54860,6 +58654,114 @@ export const PAKET_RAW: unknown[] = [
         ],
         "optimal": 6,
         "rackSlots": 3
+      },
+      {
+        "id": "maju-lompat-6-n-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-lompat-6-s-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "lompat-maju-6-n-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "lompat-maju-6-s-cermin-datar",
+        "w": 2,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
       }
     ]
   },
@@ -55114,6 +59016,74 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 5
+      },
+      {
+        "id": "balik-selatan-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 2,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "balik-barat-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 2,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 3,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "balik-utara-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5
+      },
+      {
+        "id": "balik-timur-cermin-datar",
+        "w": 5,
+        "h": 3,
+        "start": {
+          "x": 4,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 6
       }
     ]
   },
@@ -55451,6 +59421,88 @@ export const PAKET_RAW: unknown[] = [
           {
             "x": 3,
             "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 9,
+        "rackSlots": 11
+      },
+      {
+        "id": "mundur-ke-pintu-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 4,
+        "rackSlots": 6
+      },
+      {
+        "id": "balik-ke-barat-cermin-datar",
+        "w": 5,
+        "h": 3,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 4,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 7
+      },
+      {
+        "id": "rak-di-tengah-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 2,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 9,
+        "rackSlots": 11
+      },
+      {
+        "id": "rak-menghadang-utara-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 4,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 2,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
           }
         ],
         "rocks": [],
@@ -72837,6 +76889,1752 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 10,
         "group": "u21-634-n",
         "rackSlots": 8
+      },
+      {
+        "id": "u1-434-n-a-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "u1-434-n-v1"
+      },
+      {
+        "id": "u1-434-n-b-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u1-434-n-v1"
+      },
+      {
+        "id": "u1-434-n-c-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "u1-434-n-v1"
+      },
+      {
+        "id": "u2-434-e-a-cermin-datar",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u2-434-e-v2"
+      },
+      {
+        "id": "u2-434-e-b-cermin-datar",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "u2-434-e-v2"
+      },
+      {
+        "id": "u2-434-e-c-cermin-datar",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 0
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "u2-434-e-v2"
+      },
+      {
+        "id": "u3-444-s-a-cermin-datar",
+        "w": 5,
+        "h": 9,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 8
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 0,
+            "y": 8
+          }
+        ],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 4
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "u3-444-s-v3"
+      },
+      {
+        "id": "u3-444-s-b-cermin-datar",
+        "w": 5,
+        "h": 9,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 8
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 0,
+            "y": 8
+          }
+        ],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "u3-444-s-v3"
+      },
+      {
+        "id": "u3-444-s-c-cermin-datar",
+        "w": 5,
+        "h": 9,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 8
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 8
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 0,
+            "y": 8
+          }
+        ],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u3-444-s-v3"
+      },
+      {
+        "id": "u4-535-w-a-cermin-datar",
+        "w": 6,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u4-535-w-v4"
+      },
+      {
+        "id": "u4-535-w-b-cermin-datar",
+        "w": 6,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u4-535-w-v4"
+      },
+      {
+        "id": "u4-535-w-c-cermin-datar",
+        "w": 6,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u4-535-w-v4"
+      },
+      {
+        "id": "u6-444-e-a-cermin-datar",
+        "w": 9,
+        "h": 5,
+        "start": {
+          "x": 8,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "u6-444-e-v5"
+      },
+      {
+        "id": "u6-444-e-b-cermin-datar",
+        "w": 9,
+        "h": 5,
+        "start": {
+          "x": 8,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "u6-444-e-v5"
+      },
+      {
+        "id": "u6-444-e-c-cermin-datar",
+        "w": 9,
+        "h": 5,
+        "start": {
+          "x": 8,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 8,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "u6-444-e-v5"
+      },
+      {
+        "id": "u10-636-e-a-cermin-datar",
+        "w": 7,
+        "h": 4,
+        "start": {
+          "x": 6,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 6,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "optimal": 12,
+        "rackSlots": 8,
+        "group": "u10-636-e-v6"
+      },
+      {
+        "id": "u10-636-e-b-cermin-datar",
+        "w": 7,
+        "h": 4,
+        "start": {
+          "x": 6,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 6,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 3
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "u10-636-e-v6"
+      },
+      {
+        "id": "u10-636-e-c-cermin-datar",
+        "w": 7,
+        "h": 4,
+        "start": {
+          "x": 6,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 6,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "optimal": 12,
+        "rackSlots": 8,
+        "group": "u10-636-e-v6"
       }
     ]
   },
@@ -77756,6 +83554,1914 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 10,
         "rackSlots": 8,
         "group": "l12-u545-e"
+      },
+      {
+        "id": "l1-z353-n-a-cermin-datar",
+        "w": 6,
+        "h": 7,
+        "start": {
+          "x": 5,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "l1-z353-n-v1"
+      },
+      {
+        "id": "l1-z353-n-b-cermin-datar",
+        "w": 6,
+        "h": 7,
+        "start": {
+          "x": 5,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "l1-z353-n-v1"
+      },
+      {
+        "id": "l1-z353-n-c-cermin-datar",
+        "w": 6,
+        "h": 7,
+        "start": {
+          "x": 5,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "l1-z353-n-v1"
+      },
+      {
+        "id": "l2-z434-n-a-cermin-datar",
+        "w": 4,
+        "h": 9,
+        "start": {
+          "x": 3,
+          "y": 8,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 0,
+            "y": 8
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "l2-z434-n-v2"
+      },
+      {
+        "id": "l2-z434-n-b-cermin-datar",
+        "w": 4,
+        "h": 9,
+        "start": {
+          "x": 3,
+          "y": 8,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 0,
+            "y": 8
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 8,
+        "rackSlots": 8,
+        "group": "l2-z434-n-v2"
+      },
+      {
+        "id": "l2-z434-n-c-cermin-datar",
+        "w": 4,
+        "h": 9,
+        "start": {
+          "x": 3,
+          "y": 8,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          },
+          {
+            "x": 2,
+            "y": 7
+          },
+          {
+            "x": 1,
+            "y": 7
+          },
+          {
+            "x": 0,
+            "y": 7
+          },
+          {
+            "x": 2,
+            "y": 8
+          },
+          {
+            "x": 1,
+            "y": 8
+          },
+          {
+            "x": 0,
+            "y": 8
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "l2-z434-n-v2"
+      },
+      {
+        "id": "l3-z543-w-a-cermin-datar",
+        "w": 9,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 8,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "l3-z543-w-v3"
+      },
+      {
+        "id": "l3-z543-w-b-cermin-datar",
+        "w": 9,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 8,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 9,
+        "rackSlots": 8,
+        "group": "l3-z543-w-v3"
+      },
+      {
+        "id": "l3-z543-w-c-cermin-datar",
+        "w": 9,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 8,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 8,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 8,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 8,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 2
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "l3-z543-w-v3"
+      },
+      {
+        "id": "l4-z364-w-a-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 6
+        },
+        "walls": [
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "optimal": 10,
+        "rackSlots": 8,
+        "group": "l4-z364-w-v4"
+      },
+      {
+        "id": "l4-z364-w-b-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 6
+        },
+        "walls": [
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "optimal": 11,
+        "rackSlots": 8,
+        "group": "l4-z364-w-v4"
+      },
+      {
+        "id": "l4-z364-w-c-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 6
+        },
+        "walls": [
+          {
+            "x": 7,
+            "y": 0
+          },
+          {
+            "x": 6,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 6
+          },
+          {
+            "x": 1,
+            "y": 6
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 6
+          }
+        ],
+        "optimal": 11,
+        "rackSlots": 8,
+        "group": "l4-z364-w-v4"
       }
     ]
   },
@@ -85010,6 +92716,414 @@ export const PAKET_RAW: unknown[] = [
         ],
         "fixes": 2,
         "rackSlots": 6
+      },
+      {
+        "id": "dua-salah-11-cermin-datar",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-18-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-20-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-24-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-11-cermin-tegak",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-18-cermin-tegak",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-20-cermin-tegak",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "dua-salah-24-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
       }
     ]
   },
@@ -87224,6 +95338,375 @@ export const PAKET_RAW: unknown[] = [
             ]
           }
         ]
+      },
+      {
+        "id": "tebak-kalau-11-cermin-datar",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 3,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-16-cermin-datar",
+        "w": 7,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-20-cermin-datar",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 6,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-11-cermin-tegak",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-16-cermin-tegak",
+        "w": 7,
+        "h": 4,
+        "start": {
+          "x": 6,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-20-cermin-tegak",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 0
+          }
+        ],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-11-putar-balik",
+        "w": 2,
+        "h": 6,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 1,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 3,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-16-putar-balik",
+        "w": 7,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 3
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "tebak-kalau-20-putar-balik",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 6,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 7,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -88828,6 +97311,321 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-ll-2-5-s-1-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 1,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 4
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-ll-3-4-n-3-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 5,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-ll-3-4-e-9-cermin-datar",
+        "w": 10,
+        "h": 6,
+        "start": {
+          "x": 8,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-ll-3-4-e-12-cermin-datar",
+        "w": 9,
+        "h": 9,
+        "start": {
+          "x": 8,
+          "y": 2,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-ll-2-5-e-20-cermin-datar",
+        "w": 7,
+        "h": 10,
+        "start": {
+          "x": 6,
+          "y": 7,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 7
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-lm-2-2-e-24-cermin-datar",
+        "w": 3,
+        "h": 10,
+        "start": {
+          "x": 2,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 7
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              },
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
       }
     ]
   },
@@ -89610,6 +98408,293 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-3-4-e-kiri-0-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-3-4-e-kiri-12-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-4-4-w-kanan-18-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-4-3-n-kiri-25-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-4-4-w-kanan-42-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-3-4-e-kiri-0-cermin-tegak",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
+      },
+      {
+        "id": "sd4-bug2-3-4-e-kiri-12-cermin-tegak",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 2
       }
     ]
   },
@@ -90245,6 +99330,114 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 13,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-l-3-3-e-kiri-0-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-l-3-3-s-kiri-3-cermin-datar",
+        "w": 4,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-l-3-3-e-kiri-0-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 3,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-l-3-3-n-kiri-1-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 3,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-l-3-3-w-kiri-2-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-l-3-3-s-kiri-3-papan-5x4-00",
+        "w": 5,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 3
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 7,
         "rackSlots": 5
       }
     ]
@@ -91011,6 +100204,293 @@ export const PAKET_RAW: unknown[] = [
             "body": [
               {
                 "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-3-4-e-kiri-0-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-4-3-n-kiri-1-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-3-4-e-kiri-12-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-4-3-n-kiri-13-cermin-datar",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-4-4-w-kanan-18-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-3-4-e-kiri-0-cermin-tegak",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-4-3-n-kiri-1-cermin-tegak",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
               }
             ]
           },
@@ -92636,6 +102116,318 @@ export const PAKET_RAW: unknown[] = [
               {
                 "cmd": "lompat"
               },
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-ll-3-4-e-2-cermin-datar",
+        "w": 9,
+        "h": 6,
+        "start": {
+          "x": 6,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-ll-3-4-n-5-cermin-datar",
+        "w": 7,
+        "h": 8,
+        "start": {
+          "x": 4,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-ll-2-5-w-9-cermin-datar",
+        "w": 6,
+        "h": 10,
+        "start": {
+          "x": 1,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 7
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-ll-2-5-n-12-cermin-datar",
+        "w": 9,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 6,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-ll-2-5-w-13-cermin-datar",
+        "w": 9,
+        "h": 9,
+        "start": {
+          "x": 2,
+          "y": 7,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 7
+          },
+          {
+            "x": 5,
+            "y": 7
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 2,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1
+      },
+      {
+        "id": "sd4-bug1-ll-3-3-w-16-cermin-datar",
+        "w": 9,
+        "h": 7,
+        "start": {
+          "x": 1,
+          "y": 5,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 7,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
               {
                 "cmd": "maju"
               }
@@ -98985,6 +108777,467 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 13,
         "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-3-4-w-kiri-0-cermin-datar",
+        "w": 8,
+        "h": 6,
+        "start": {
+          "x": 2,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-4-3-e-kiri-1-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 3,
+            "y": 5
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-4-3-n-kiri-2-cermin-datar",
+        "w": 5,
+        "h": 7,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 6
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-4-3-w-kiri-3-cermin-datar",
+        "w": 7,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 5,
+          "y": 3
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-4-3-s-kiri-4-cermin-datar",
+        "w": 6,
+        "h": 8,
+        "start": {
+          "x": 5,
+          "y": 2,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 2,
+          "y": 6
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 7
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-3-4-w-kiri-0-cermin-tegak",
+        "w": 8,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 5,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 2,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 7,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 4
+          },
+          {
+            "x": 7,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 2
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 7,
+            "y": 2
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 7,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
+      },
+      {
+        "id": "sd4-kota-4-3-e-kiri-1-cermin-tegak",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 8,
+        "rackSlots": 5
       }
     ]
   },
@@ -99597,6 +109850,114 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "optimal": 6,
+        "rackSlots": 3
+      },
+      {
+        "id": "sd4-ml-maju-lompat-2-n-1-putar-kanan",
+        "w": 7,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "sd4-ml-maju-lompat-2-s-3-putar-kanan",
+        "w": 7,
+        "h": 3,
+        "start": {
+          "x": 6,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "sd4-ml-lompat-maju-2-n-1-putar-kanan",
+        "w": 7,
+        "h": 3,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
+        "rackSlots": 3
+      },
+      {
+        "id": "sd4-ml-lompat-maju-2-s-3-putar-kanan",
+        "w": 7,
+        "h": 3,
+        "start": {
+          "x": 6,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "optimal": 4,
         "rackSlots": 3
       }
     ]
@@ -100309,6 +110670,179 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 9,
         "rackSlots": 9
+      },
+      {
+        "id": "petak-5-blok-1-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 4,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "petak-5-blok-2-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 3,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "petak-5-blok-3-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 2,
+          "y": 2,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 0,
+          "y": 1
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "petak-5-blok-4-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 1,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 2,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "petak-5-blok-5-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 2,
+          "y": 4
+        },
+        "walls": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "petak-5-blok-1-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "petak-5-blok-2-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 3,
+          "y": 1,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
       }
     ]
   },
@@ -101267,6 +111801,180 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 9,
         "rackSlots": 9
+      },
+      {
+        "id": "gudang-5-1-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 4,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 5,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "gudang-5-2-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 5
+        },
+        "walls": [
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "gudang-5-3-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 3,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "gudang-5-4-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 2,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "gudang-5-5-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 4,
+          "y": 3,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
+      },
+      {
+        "id": "gudang-5-6-cermin-datar",
+        "w": 6,
+        "h": 6,
+        "start": {
+          "x": 5,
+          "y": 3,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 4,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "rocks": [],
+        "optimal": 5,
+        "rackSlots": 5
       }
     ]
   },
@@ -102716,6 +113424,662 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 6,
         "group": "sd5-kalau-15",
         "rackSlots": 5
+      },
+      {
+        "id": "sd5-kalau-0-1-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-0-v1"
+      },
+      {
+        "id": "sd5-kalau-0-2-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-0-v1"
+      },
+      {
+        "id": "sd5-kalau-0-3-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 4,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-0-v1"
+      },
+      {
+        "id": "sd5-kalau-5-1-cermin-datar",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 3,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 3
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-5-v2"
+      },
+      {
+        "id": "sd5-kalau-5-2-cermin-datar",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 3,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-5-v2"
+      },
+      {
+        "id": "sd5-kalau-5-3-cermin-datar",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 3,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 0,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-5-v2"
+      },
+      {
+        "id": "sd5-kalau-10-1-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 4
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-10-v3"
+      },
+      {
+        "id": "sd5-kalau-10-2-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-10-v3"
+      },
+      {
+        "id": "sd5-kalau-10-3-cermin-datar",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 4,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-10-v3"
+      },
+      {
+        "id": "sd5-kalau-15-1-cermin-datar",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 4
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-15-v4"
+      },
+      {
+        "id": "sd5-kalau-15-2-cermin-datar",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-15-v4"
+      },
+      {
+        "id": "sd5-kalau-15-3-cermin-datar",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 3,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 0,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 1,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-15-v4"
+      },
+      {
+        "id": "sd5-kalau-0-1-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-0-v5"
+      },
+      {
+        "id": "sd5-kalau-0-2-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-0-v5"
+      },
+      {
+        "id": "sd5-kalau-0-3-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 1
+          },
+          {
+            "x": 4,
+            "y": 3
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-0-v5"
+      },
+      {
+        "id": "sd5-kalau-5-1-cermin-tegak",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-5-v6"
+      },
+      {
+        "id": "sd5-kalau-5-2-cermin-tegak",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-5-v6"
+      },
+      {
+        "id": "sd5-kalau-5-3-cermin-tegak",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "S"
+        },
+        "goal": {
+          "x": 3,
+          "y": 5
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 5
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-5-v6"
+      },
+      {
+        "id": "sd5-kalau-10-1-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-10-v7"
+      },
+      {
+        "id": "sd5-kalau-10-2-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-10-v7"
+      },
+      {
+        "id": "sd5-kalau-10-3-cermin-tegak",
+        "w": 5,
+        "h": 5,
+        "start": {
+          "x": 4,
+          "y": 0,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 0,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 0,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-kalau-10-v7"
+      },
+      {
+        "id": "sd5-kalau-15-1-cermin-tegak",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-15-v8"
+      },
+      {
+        "id": "sd5-kalau-15-2-cermin-tegak",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-15-v8"
+      },
+      {
+        "id": "sd5-kalau-15-3-cermin-tegak",
+        "w": 4,
+        "h": 6,
+        "start": {
+          "x": 0,
+          "y": 5,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-kalau-15-v8"
       }
     ]
   },
@@ -106507,6 +117871,464 @@ export const PAKET_RAW: unknown[] = [
         "optimal": 5,
         "rackSlots": 5,
         "group": "sd5-gudang-13"
+      },
+      {
+        "id": "sd5-gudang-0-1-cermin-datar",
+        "w": 6,
+        "h": 7,
+        "start": {
+          "x": 2,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 5,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 2
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-gudang-0-v1"
+      },
+      {
+        "id": "sd5-gudang-0-2-cermin-datar",
+        "w": 6,
+        "h": 7,
+        "start": {
+          "x": 2,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 5,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 3,
+            "y": 2
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-gudang-0-v1"
+      },
+      {
+        "id": "sd5-gudang-0-3-cermin-datar",
+        "w": 6,
+        "h": 7,
+        "start": {
+          "x": 2,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 5,
+          "y": 2
+        },
+        "walls": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 1,
+            "y": 6
+          }
+        ],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "rackSlots": 5,
+        "group": "sd5-gudang-0-v1"
+      },
+      {
+        "id": "sd5-gudang-1-1-cermin-datar",
+        "w": 6,
+        "h": 8,
+        "start": {
+          "x": 5,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 7
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "rocks": [
+          {
+            "x": 4,
+            "y": 1
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-gudang-1-v2"
+      },
+      {
+        "id": "sd5-gudang-1-2-cermin-datar",
+        "w": 6,
+        "h": 8,
+        "start": {
+          "x": 5,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 7
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 7,
+        "rackSlots": 5,
+        "group": "sd5-gudang-1-v2"
+      },
+      {
+        "id": "sd5-gudang-1-3-cermin-datar",
+        "w": 6,
+        "h": 8,
+        "start": {
+          "x": 5,
+          "y": 1,
+          "dir": "W"
+        },
+        "goal": {
+          "x": 1,
+          "y": 7
+        },
+        "walls": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 4,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 3
+          },
+          {
+            "x": 3,
+            "y": 3
+          },
+          {
+            "x": 2,
+            "y": 3
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
+            "x": 2,
+            "y": 4
+          },
+          {
+            "x": 0,
+            "y": 4
+          },
+          {
+            "x": 5,
+            "y": 5
+          },
+          {
+            "x": 4,
+            "y": 5
+          },
+          {
+            "x": 0,
+            "y": 5
+          },
+          {
+            "x": 5,
+            "y": 6
+          },
+          {
+            "x": 4,
+            "y": 6
+          },
+          {
+            "x": 3,
+            "y": 7
+          }
+        ],
+        "rocks": [
+          {
+            "x": 2,
+            "y": 1
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 6,
+        "rackSlots": 5,
+        "group": "sd5-gudang-1-v2"
       }
     ]
   },
@@ -108814,6 +120636,155 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 1
+      },
+      {
+        "id": "sd5-laut-0-1-cermin-datar",
+        "w": 7,
+        "h": 7,
+        "start": {
+          "x": 2,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 3,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1,
+        "group": "sd5-laut-0-v1"
+      },
+      {
+        "id": "sd5-laut-0-2-cermin-datar",
+        "w": 7,
+        "h": 7,
+        "start": {
+          "x": 2,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 1
+          }
+        ],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1,
+        "group": "sd5-laut-0-v1"
+      },
+      {
+        "id": "sd5-laut-0-3-cermin-datar",
+        "w": 7,
+        "h": 7,
+        "start": {
+          "x": 2,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 6,
+          "y": 4
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 5,
+            "y": 1
+          },
+          {
+            "x": 6,
+            "y": 3
+          }
+        ],
+        "optimal": 5,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kanan"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "maju"
+              }
+            ]
+          }
+        ],
+        "fixes": 1,
+        "group": "sd5-laut-0-v1"
       }
     ]
   },
@@ -114293,6 +126264,207 @@ export const PAKET_RAW: unknown[] = [
           }
         ],
         "fixes": 2
+      },
+      {
+        "id": "sd6-angkasa-0-1-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 6,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 2
+          }
+        ],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2,
+        "group": "sd6-angkasa-0-v1"
+      },
+      {
+        "id": "sd6-angkasa-0-2-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 6,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 6,
+            "y": 4
+          },
+          {
+            "x": 6,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 2
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2,
+        "group": "sd6-angkasa-0-v1"
+      },
+      {
+        "id": "sd6-angkasa-0-3-cermin-datar",
+        "w": 8,
+        "h": 7,
+        "start": {
+          "x": 6,
+          "y": 6,
+          "dir": "N"
+        },
+        "goal": {
+          "x": 1,
+          "y": 6
+        },
+        "walls": [],
+        "rocks": [
+          {
+            "x": 6,
+            "y": 5
+          },
+          {
+            "x": 6,
+            "y": 3
+          },
+          {
+            "x": 1,
+            "y": 4
+          }
+        ],
+        "optimal": 4,
+        "program": [
+          {
+            "cmd": "ulangi",
+            "n": 3,
+            "body": [
+              {
+                "cmd": "lompat"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 4,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          },
+          {
+            "cmd": "kiri"
+          },
+          {
+            "cmd": "ulangi",
+            "n": 5,
+            "body": [
+              {
+                "cmd": "kalau"
+              }
+            ]
+          }
+        ],
+        "fixes": 2,
+        "group": "sd6-angkasa-0-v1"
       }
     ]
   },
@@ -119266,6 +131438,168 @@ export const PAKET_RAW: unknown[] = [
         "rocks": [],
         "optimal": 2,
         "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-10",
+        "w": 8,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-9x1-10",
+        "w": 9,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-9x1-00-papan-10x1-10",
+        "w": 10,
+        "h": 1,
+        "start": {
+          "x": 1,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 4,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-7x2-00",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-8x2-00",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-9x1-00-papan-9x2-00",
+        "w": 9,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 0
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-7x2-01",
+        "w": 7,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
+      },
+      {
+        "id": "lurus-3-papan-8x1-00-papan-8x2-01",
+        "w": 8,
+        "h": 2,
+        "start": {
+          "x": 0,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 3,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 2
       }
     ]
   },
@@ -119594,6 +131928,42 @@ export const PAKET_RAW: unknown[] = [
         "walls": [],
         "rocks": [],
         "optimal": 6,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-naik-papan-4x3-00-putar-kanan",
+        "w": 3,
+        "h": 4,
+        "start": {
+          "x": 0,
+          "y": 0,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 1,
+          "y": 1
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
+        "rackSlots": 3
+      },
+      {
+        "id": "maju-kanan-x2-tengah-putar-kiri-papan-5x4-00-putar-kanan",
+        "w": 4,
+        "h": 5,
+        "start": {
+          "x": 1,
+          "y": 1,
+          "dir": "E"
+        },
+        "goal": {
+          "x": 2,
+          "y": 2
+        },
+        "walls": [],
+        "rocks": [],
+        "optimal": 3,
         "rackSlots": 3
       }
     ]

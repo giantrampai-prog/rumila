@@ -249,6 +249,74 @@
       "walls": [],
       "rocks": [],
       "optimal": 5
+    },
+    {
+      "id": "balik-selatan-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "balik-barat-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "balik-utara-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5
+    },
+    {
+      "id": "balik-timur-cermin-datar",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
     }
   ]
 }

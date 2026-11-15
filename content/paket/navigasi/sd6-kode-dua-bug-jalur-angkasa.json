@@ -2984,6 +2984,207 @@
         }
       ],
       "fixes": 2
+    },
+    {
+      "id": "sd6-angkasa-0-1-cermin-datar",
+      "w": 8,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 2
+        }
+      ],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2,
+      "group": "sd6-angkasa-0-v1"
+    },
+    {
+      "id": "sd6-angkasa-0-2-cermin-datar",
+      "w": 8,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2,
+      "group": "sd6-angkasa-0-v1"
+    },
+    {
+      "id": "sd6-angkasa-0-3-cermin-datar",
+      "w": 8,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 6,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 5
+        },
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 2,
+      "group": "sd6-angkasa-0-v1"
     }
   ]
 }

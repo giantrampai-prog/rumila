@@ -1444,6 +1444,662 @@
       "optimal": 6,
       "group": "sd5-kalau-15",
       "rackSlots": 5
+    },
+    {
+      "id": "sd5-kalau-0-1-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-0-v1"
+    },
+    {
+      "id": "sd5-kalau-0-2-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-0-v1"
+    },
+    {
+      "id": "sd5-kalau-0-3-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-0-v1"
+    },
+    {
+      "id": "sd5-kalau-5-1-cermin-datar",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 3,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-5-v2"
+    },
+    {
+      "id": "sd5-kalau-5-2-cermin-datar",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 3,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-5-v2"
+    },
+    {
+      "id": "sd5-kalau-5-3-cermin-datar",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 3,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-5-v2"
+    },
+    {
+      "id": "sd5-kalau-10-1-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-10-v3"
+    },
+    {
+      "id": "sd5-kalau-10-2-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-10-v3"
+    },
+    {
+      "id": "sd5-kalau-10-3-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-10-v3"
+    },
+    {
+      "id": "sd5-kalau-15-1-cermin-datar",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-15-v4"
+    },
+    {
+      "id": "sd5-kalau-15-2-cermin-datar",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-15-v4"
+    },
+    {
+      "id": "sd5-kalau-15-3-cermin-datar",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-15-v4"
+    },
+    {
+      "id": "sd5-kalau-0-1-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-0-v5"
+    },
+    {
+      "id": "sd5-kalau-0-2-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-0-v5"
+    },
+    {
+      "id": "sd5-kalau-0-3-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-0-v5"
+    },
+    {
+      "id": "sd5-kalau-5-1-cermin-tegak",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-5-v6"
+    },
+    {
+      "id": "sd5-kalau-5-2-cermin-tegak",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-5-v6"
+    },
+    {
+      "id": "sd5-kalau-5-3-cermin-tegak",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-5-v6"
+    },
+    {
+      "id": "sd5-kalau-10-1-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-10-v7"
+    },
+    {
+      "id": "sd5-kalau-10-2-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-10-v7"
+    },
+    {
+      "id": "sd5-kalau-10-3-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "sd5-kalau-10-v7"
+    },
+    {
+      "id": "sd5-kalau-15-1-cermin-tegak",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-15-v8"
+    },
+    {
+      "id": "sd5-kalau-15-2-cermin-tegak",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-15-v8"
+    },
+    {
+      "id": "sd5-kalau-15-3-cermin-tegak",
+      "w": 4,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "sd5-kalau-15-v8"
     }
   ]
 }

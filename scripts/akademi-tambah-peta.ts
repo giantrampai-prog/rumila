@@ -11,6 +11,8 @@ import { ContentPack, type NavBlockJson, type NavGrid, type PaketNavigasi } from
 import { dariJson, jalankan, optimal } from "../packages/mechanics/src/index";
 
 const TARGET = 16;
+/** Minimal soal berbeda pada nilai knob bawaan (distance/rocks/walls) — sesi pertama memakai knob bawaan. */
+const TARGET_KNOB = 12;
 const DIR = "content/paket/navigasi";
 const tulis = process.argv.includes("--tulis");
 
@@ -119,30 +121,51 @@ for (const f of readdirSync(DIR).filter((x) => x.endsWith(".json")).sort()) {
     for (const u of UBAH) for (const [tw, th] of [[1, 0], [0, 1]]) out.push(k.map((g) => geser(terapkan(g, u), tw, th, tw, th)));
     return out;
   };
-  const antrean = kelompok.map(turunan);
-  const butuh = Math.max(0, TARGET - kelompok.length);
-  for (let i = 0; baru.length < butuh && antrean.some((a) => i < a.length); i++)
-    for (let t = 0; t < antrean.length && baru.length < butuh; t++) {
-      const k = antrean[t][i];
-      if (!k) continue;
-      if (!k.every((g, j) => sah(p, kelompok[t][j], g, rentang, arahBoleh, ukuranMaks))) continue;
+  // knob bawaan: saringan sama dengan buatRondeNavigasi (tiap saringan dipakai hanya bila menyisakan kandidat)
+  const bawaan = Object.fromEntries(Object.entries((raw.knobs ?? {}) as Record<string, { default?: number }>).map(([k, v]) => [k, v.default]));
+  const saringan: Array<(g: NavGrid) => boolean> = [];
+  if (bawaan.distance !== undefined) saringan.push((g) => (optimal(g, p.commands) ?? g.optimal) === bawaan.distance);
+  if (bawaan.rocks !== undefined) saringan.push((g) => g.rocks.length === bawaan.rocks);
+  if (bawaan.walls !== undefined) saringan.push((g) => g.walls.length === bawaan.walls);
+  const aktif: Array<(g: NavGrid) => boolean> = [];
+  for (const f of saringan) if (kelompok.some((k) => [...aktif, f].every((h) => h(k[0])))) aktif.push(f);
+  const cocokKnob = (g: NavGrid) => aktif.every((h) => h(g));
+  const diKnob = aktif.length ? kelompok.filter((k) => cocokKnob(k[0])) : [];
+  const isi = (templat: NavGrid[][], butuh: number, syarat: (k: NavGrid[]) => boolean) => {
+    const antrean = templat.map(turunan);
+    const awal = baru.length;
+    for (let i = 0; baru.length - awal < butuh && antrean.some((a) => i < a.length); i++)
+      for (let t = 0; t < antrean.length && baru.length - awal < butuh; t++) {
+        const k = antrean[t][i];
+        if (!k || !syarat(k)) continue;
+        if (!k.every((g, j) => sah(p, templat[t][j], g, rentang, arahBoleh, ukuranMaks))) continue;
       const kunci = k.map(kunciGrid).join("|");
       if (sudah.has(kunci)) continue;
       sudah.add(kunci);
       const grup = p.semuaGrid ? `${k[0].group}-v${baru.length + 1}` : undefined;
-      baru.push(
-        k.map((g) => {
-          let id = g.id.replace(/[^a-z0-9-]/g, "").slice(0, 60);
-          while (idDipakai.has(id)) id = `${id}-b`;
-          idDipakai.add(id);
-          return { ...g, id, ...(grup ? { group: grup } : {}) };
-        }),
-      );
-    }
+        baru.push(
+          k.map((g) => {
+            let id = g.id.replace(/[^a-z0-9-]/g, "").slice(0, 60);
+            while (idDipakai.has(id)) id = `${id}-b`;
+            idDipakai.add(id);
+            return { ...g, id, ...(grup ? { group: grup } : {}) };
+          }),
+        );
+      }
+  };
+  // 1) stok knob bawaan dulu (turunan dari peta di knob itu, lalu turunan tingkat dua), 2) stok total
+  if (diKnob.length) {
+    isi(diKnob, Math.max(0, TARGET_KNOB - diKnob.length), (k) => cocokKnob(k[0]));
+    const kurang = TARGET_KNOB - diKnob.length - baru.length;
+    if (kurang > 0) isi([...baru], kurang, (k) => cocokKnob(k[0]));
+  }
+  isi(kelompok, Math.max(0, TARGET - kelompok.length - baru.length), () => true);
+  const nKnob = diKnob.length ? [...kelompok, ...baru].filter((k) => cocokKnob(k[0])).length : -1;
 
   const total = kelompok.length + baru.length;
-  console.log(`${p.id.padEnd(28)} ${kelompok.length} → ${total}${total < TARGET ? "  ⚠ kurang" : ""}`);
-  if (total < TARGET) ringkas++;
+  const kurangKnob = nKnob >= 0 && nKnob < TARGET_KNOB;
+  console.log(`${p.id.padEnd(34)} ${kelompok.length} → ${total}  knob ${diKnob.length} → ${nKnob}${total < TARGET || kurangKnob ? "  ⚠ kurang" : ""}`);
+  if (total < TARGET || kurangKnob) ringkas++;
   if (tulis && baru.length) {
     raw.grids = [...raw.grids, ...baru.flat()];
     writeFileSync(path, JSON.stringify(raw, null, 2) + "\n");

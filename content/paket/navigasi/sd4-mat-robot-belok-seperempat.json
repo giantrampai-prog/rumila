@@ -706,6 +706,179 @@
       "rocks": [],
       "optimal": 9,
       "rackSlots": 9
+    },
+    {
+      "id": "petak-5-blok-1-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-2-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-3-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-4-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-5-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-1-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "petak-5-blok-2-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
     }
   ]
 }

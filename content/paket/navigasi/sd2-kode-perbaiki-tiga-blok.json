@@ -39,7 +39,7 @@
   "debug": true,
   "grids": [
     {
-      "id": "tiga-salah-9-01",
+      "id": "tiga-salah-7-01",
       "w": 6,
       "h": 6,
       "start": {
@@ -59,35 +59,29 @@
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
           "cmd": "kanan"
         },
         {
           "cmd": "maju"
         },
         {
-          "cmd": "kanan"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
         },
         {
           "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 7
     },
     {
-      "id": "tiga-salah-8-02",
+      "id": "tiga-salah-5-02",
       "w": 5,
       "h": 6,
       "start": {
@@ -104,35 +98,26 @@
       "optimal": 5,
       "program": [
         {
-          "cmd": "kanan"
-        },
-        {
           "cmd": "maju"
         },
         {
           "cmd": "kanan"
         },
         {
-          "cmd": "kiri"
+          "cmd": "maju"
         },
         {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
+          "cmd": "kanan"
         }
       ],
       "fixes": 3,
-      "rackSlots": 8
+      "rackSlots": 5
     },
     {
-      "id": "tiga-salah-7-03",
+      "id": "tiga-salah-6-03",
       "w": 6,
       "h": 5,
       "start": {
@@ -149,32 +134,29 @@
       "optimal": 6,
       "program": [
         {
-          "cmd": "kiri"
-        },
-        {
           "cmd": "maju"
         },
         {
           "cmd": "kiri"
         },
         {
-          "cmd": "kanan"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
         },
         {
           "cmd": "maju"
         },
         {
           "cmd": "kanan"
-        },
-        {
-          "cmd": "kiri"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 6
     },
     {
-      "id": "tiga-salah-8-04",
+      "id": "tiga-salah-7-04",
       "w": 5,
       "h": 7,
       "start": {
@@ -191,35 +173,32 @@
       "optimal": 7,
       "program": [
         {
+          "cmd": "kiri"
+        },
+        {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
+          "cmd": "maju"
         },
         {
-          "cmd": "kiri"
+          "cmd": "maju"
         },
         {
-          "cmd": "kiri"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
         },
         {
           "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
         }
       ],
       "fixes": 3,
-      "rackSlots": 8
+      "rackSlots": 7
     },
     {
-      "id": "tiga-salah-9-05",
+      "id": "tiga-salah-8-05",
       "w": 6,
       "h": 7,
       "start": {
@@ -239,6 +218,15 @@
           "cmd": "maju"
         },
         {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
           "cmd": "kiri"
         },
         {
@@ -249,25 +237,13 @@
         },
         {
           "cmd": "kanan"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 8
     },
     {
-      "id": "tiga-salah-9-06",
+      "id": "tiga-salah-5-06",
       "w": 5,
       "h": 6,
       "start": {
@@ -287,35 +263,23 @@
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
           "cmd": "kanan"
         },
         {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
           "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 5
     },
     {
-      "id": "tiga-salah-7-07",
+      "id": "tiga-salah-6-07",
       "w": 5,
       "h": 6,
       "start": {
@@ -332,32 +296,29 @@
       "optimal": 6,
       "program": [
         {
-          "cmd": "kiri"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
         },
         {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
           "cmd": "maju"
         },
         {
           "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
         },
         {
           "cmd": "kanan"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 6
     },
     {
-      "id": "tiga-salah-9-08",
+      "id": "tiga-salah-6-08",
       "w": 6,
       "h": 5,
       "start": {
@@ -374,9 +335,6 @@
       "optimal": 6,
       "program": [
         {
-          "cmd": "maju"
-        },
-        {
           "cmd": "kiri"
         },
         {
@@ -384,12 +342,6 @@
         },
         {
           "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
         },
         {
           "cmd": "kiri"
@@ -402,10 +354,10 @@
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 6
     },
     {
-      "id": "tiga-salah-9-09",
+      "id": "tiga-salah-8-09",
       "w": 7,
       "h": 6,
       "start": {
@@ -422,6 +374,9 @@
       "optimal": 8,
       "program": [
         {
+          "cmd": "maju"
+        },
+        {
           "cmd": "kanan"
         },
         {
@@ -437,23 +392,17 @@
           "cmd": "maju"
         },
         {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
+          "cmd": "kiri"
         },
         {
           "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 8
     },
     {
-      "id": "tiga-salah-7-10",
+      "id": "tiga-salah-5-10",
       "w": 5,
       "h": 5,
       "start": {
@@ -470,32 +419,26 @@
       "optimal": 5,
       "program": [
         {
-          "cmd": "kanan"
-        },
-        {
           "cmd": "kiri"
         },
         {
-          "cmd": "kanan"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
         },
         {
           "cmd": "kanan"
         },
         {
           "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 5
     },
     {
-      "id": "tiga-salah-7-11",
+      "id": "tiga-salah-6-11",
       "w": 6,
       "h": 5,
       "start": {
@@ -512,7 +455,7 @@
       "optimal": 6,
       "program": [
         {
-          "cmd": "kiri"
+          "cmd": "maju"
         },
         {
           "cmd": "kanan"
@@ -524,20 +467,17 @@
           "cmd": "kiri"
         },
         {
-          "cmd": "kiri"
+          "cmd": "maju"
         },
         {
           "cmd": "kanan"
-        },
-        {
-          "cmd": "maju"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 6
     },
     {
-      "id": "tiga-salah-7-12",
+      "id": "tiga-salah-6-12",
       "w": 7,
       "h": 4,
       "start": {
@@ -554,32 +494,29 @@
       "optimal": 6,
       "program": [
         {
+          "cmd": "kiri"
+        },
+        {
           "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kanan"
         },
         {
           "cmd": "kanan"
         },
         {
           "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 6
     },
     {
-      "id": "tiga-salah-7-13",
+      "id": "tiga-salah-6-13",
       "w": 4,
       "h": 7,
       "start": {
@@ -596,32 +533,29 @@
       "optimal": 6,
       "program": [
         {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
           "cmd": "kanan"
         },
         {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kiri"
+          "cmd": "maju"
         },
         {
           "cmd": "maju"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 6
     },
     {
-      "id": "tiga-salah-9-14",
+      "id": "tiga-salah-7-14",
       "w": 5,
       "h": 7,
       "start": {
@@ -641,35 +575,29 @@
           "cmd": "maju"
         },
         {
-          "cmd": "kanan"
-        },
-        {
           "cmd": "maju"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kanan"
         },
         {
           "cmd": "kiri"
         },
         {
-          "cmd": "kanan"
+          "cmd": "kiri"
         },
         {
           "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 7
     },
     {
-      "id": "tiga-salah-7-15",
+      "id": "tiga-salah-4-15",
       "w": 6,
       "h": 4,
       "start": {
@@ -686,32 +614,23 @@
       "optimal": 4,
       "program": [
         {
-          "cmd": "maju"
-        },
-        {
           "cmd": "kanan"
         },
         {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
-        },
-        {
           "cmd": "kanan"
         },
         {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
+          "cmd": "kanan"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 4
     },
     {
-      "id": "tiga-salah-9-16",
+      "id": "tiga-salah-7-16",
       "w": 5,
       "h": 7,
       "start": {
@@ -731,35 +650,29 @@
           "cmd": "kanan"
         },
         {
-          "cmd": "kanan"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
         },
         {
           "cmd": "maju"
         },
         {
           "cmd": "kiri"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 7
     },
     {
-      "id": "tiga-salah-7-17",
+      "id": "tiga-salah-4-17",
       "w": 6,
       "h": 4,
       "start": {
@@ -776,32 +689,23 @@
       "optimal": 4,
       "program": [
         {
-          "cmd": "kiri"
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
         },
         {
           "cmd": "kanan"
         },
         {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
-          "cmd": "maju"
+          "cmd": "kanan"
         }
       ],
       "fixes": 3,
-      "rackSlots": 7
+      "rackSlots": 4
     },
     {
-      "id": "tiga-salah-9-18",
+      "id": "tiga-salah-7-18",
       "w": 5,
       "h": 7,
       "start": {
@@ -818,9 +722,6 @@
       "optimal": 7,
       "program": [
         {
-          "cmd": "kanan"
-        },
-        {
           "cmd": "kiri"
         },
         {
@@ -830,23 +731,20 @@
           "cmd": "kanan"
         },
         {
-          "cmd": "kanan"
-        },
-        {
-          "cmd": "kiri"
-        },
-        {
           "cmd": "maju"
         },
         {
-          "cmd": "kiri"
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
         },
         {
           "cmd": "maju"
         }
       ],
       "fixes": 3,
-      "rackSlots": 9
+      "rackSlots": 7
     }
   ]
 }

@@ -631,6 +631,114 @@
       "rocks": [],
       "optimal": 13,
       "rackSlots": 5
+    },
+    {
+      "id": "sd4-l-3-3-e-kiri-0-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "sd4-l-3-3-s-kiri-3-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "sd4-l-3-3-e-kiri-0-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "sd4-l-3-3-n-kiri-1-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "sd4-l-3-3-w-kiri-2-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
+    },
+    {
+      "id": "sd4-l-3-3-s-kiri-3-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 5
     }
   ]
 }

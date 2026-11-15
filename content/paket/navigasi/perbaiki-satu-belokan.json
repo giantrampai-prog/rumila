@@ -571,6 +571,38 @@
         }
       ],
       "fixes": 1
+    },
+    {
+      "id": "belok-harusnya-maju-akhir-papan-4x3-00-cermin-datar",
+      "w": 4,
+      "h": 3,
+      "start": {
+        "x": 3,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "kiri"
+        }
+      ],
+      "fixes": 1
     }
   ]
 }

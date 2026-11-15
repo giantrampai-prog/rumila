@@ -1252,6 +1252,162 @@
       "optimal": 4,
       "rackSlots": 2,
       "group": "s14-s-7-1"
+    },
+    {
+      "id": "s1-s-5-1-a-3-cermin-datar",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 2,
+      "group": "s1-s-5-1-v1"
+    },
+    {
+      "id": "s1-s-5-1-b-1-cermin-datar",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 2,
+      "group": "s1-s-5-1-v1"
+    },
+    {
+      "id": "s1-s-5-1-c-4-cermin-datar",
+      "w": 2,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 2,
+      "group": "s1-s-5-1-v1"
+    },
+    {
+      "id": "s2-s-6-2-a-1-4-cermin-datar",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 2,
+      "group": "s2-s-6-2-v2"
+    },
+    {
+      "id": "s2-s-6-2-b-2-5-cermin-datar",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 4,
+      "rackSlots": 2,
+      "group": "s2-s-6-2-v2"
+    },
+    {
+      "id": "s2-s-6-2-c-3-5-cermin-datar",
+      "w": 2,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 2,
+      "group": "s2-s-6-2-v2"
     }
   ]
 }

@@ -2302,6 +2302,155 @@
         }
       ],
       "fixes": 1
+    },
+    {
+      "id": "sd5-laut-0-1-cermin-datar",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "group": "sd5-laut-0-v1"
+    },
+    {
+      "id": "sd5-laut-0-2-cermin-datar",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "group": "sd5-laut-0-v1"
+    },
+    {
+      "id": "sd5-laut-0-3-cermin-datar",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 1
+        },
+        {
+          "x": 6,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1,
+      "group": "sd5-laut-0-v1"
     }
   ]
 }

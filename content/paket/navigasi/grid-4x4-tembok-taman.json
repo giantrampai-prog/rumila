@@ -391,6 +391,142 @@
       ],
       "rocks": [],
       "optimal": 8
+    },
+    {
+      "id": "balik-arah-6-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-cermin-tegak-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-putar-kiri-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-cermin-tegak-putar-kiri-papan-5x4-00",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-papan-5x4-10",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-cermin-tegak-papan-5x4-10",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-putar-kiri-papan-5x4-10",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
+    },
+    {
+      "id": "balik-arah-6-cermin-tegak-putar-kiri-papan-5x4-10",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 6
     }
   ]
 }
