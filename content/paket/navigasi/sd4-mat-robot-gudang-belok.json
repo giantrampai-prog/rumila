@@ -953,6 +953,180 @@
       "rocks": [],
       "optimal": 9,
       "rackSlots": 9
+    },
+    {
+      "id": "gudang-5-1-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 5,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "gudang-5-2-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 5
+      },
+      "walls": [
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "gudang-5-3-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "gudang-5-4-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 2,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "gudang-5-5-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
+    },
+    {
+      "id": "gudang-5-6-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 3,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 5
     }
   ]
 }

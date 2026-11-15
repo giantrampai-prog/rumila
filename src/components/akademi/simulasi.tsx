@@ -621,7 +621,7 @@ function Turus({ n, warna = INK }: { n: number; warna?: string }) {
   );
 }
 
-/** Hewan melintas kanan → kiri; dipasang ulang (key) tiap giliran. */
+/** Benda/hewan melintas kanan → kiri; dipasang ulang (key) tiap giliran. */
 function Lewat({ v, durasi }: { v: VisualSpec; durasi: number }) {
   const [x, setX] = useState(100);
   useEffect(() => {
@@ -636,7 +636,7 @@ function Lewat({ v, durasi }: { v: VisualSpec; durasi: number }) {
 }
 
 function ModeTurus(c: Ctx) {
-  const { ronde, onJawab, hasil, terkunci, visual, nama } = c;
+  const { ronde, onJawab, hasil, terkunci, visual, nama, paket, t } = c;
   const hewan = useMemo(() => ronde.items.filter((i) => i.role === "hewan"), [ronde.items]);
   const [giliran, setGiliran] = useState(0); // indeks hewan yang sedang lewat
   const [turus, setTurus] = useState<Record<string, number>>(() => Object.fromEntries(hewan.map((h) => [h.id, 0])));
@@ -652,14 +652,16 @@ function ModeTurus(c: Ctx) {
   }, [giliran, selesaiLewat, jeda]);
 
   const sedang = selesaiLewat ? null : ronde.urutan[giliran];
-  const teks = "Hewan lewat satu-satu. Ketuk barisnya untuk mencatat turus!";
+  // Instruksi milik paket (tema bisa hewan, serangga, pengunjung, kendaraan…); cadangan netral.
+  const instruksi = paket.instructionKey ? t(paket.instructionKey) : "";
+  const teks = instruksi && instruksi !== paket.instructionKey ? instruksi : "Satu per satu lewat. Ketuk barisnya untuk mencatat turus!";
 
   return (
     <Kunci terkunci={terkunci}>
       <Instruksi teks={teks} hasil={hasil} />
       <Umpan hasil={hasil} benar={hewan.map((h) => `${nama(h.id)} ${benar[h.id] ?? 0}`).join(", ")} />
       <Papan>
-        <div className="relative h-20 overflow-hidden rounded-[16px]" style={{ background: "linear-gradient(180deg,#bfe8a6 0 70%,#8fcf6d 70%)" }} aria-live="polite" aria-label={sedang ? `${nama(sedang)} lewat` : "Semua hewan sudah lewat"}>
+        <div className="relative h-20 overflow-hidden rounded-[16px]" style={{ background: "linear-gradient(180deg,#bfe8a6 0 70%,#8fcf6d 70%)" }} aria-live="polite" aria-label={sedang ? `${nama(sedang)} lewat` : "Semua sudah lewat"}>
           {sedang && <Lewat key={giliran} v={visual(sedang)} durasi={jeda * 0.9} />}
           {selesaiLewat && !hasil && <div className="akademi-fade absolute inset-0 flex items-center justify-center" style={{ ...Tebal, fontSize: 16, opacity: 0.75 }}>Semua sudah lewat. Tekan Selesai.</div>}
         </div>
@@ -690,7 +692,7 @@ function ModeTurus(c: Ctx) {
         </div>
       </Papan>
       <div className="flex gap-2">
-        <TombolBantu onClick={() => { bantu(); ucapkan("Lihat hewan yang lewat, lalu ketuk baris hewan yang sama."); }} disabled={terkunci} />
+        <TombolBantu onClick={() => { bantu(); ucapkan("Lihat yang sedang lewat, lalu ketuk baris yang sama."); }} disabled={terkunci} />
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ turus }); }} disabled={terkunci || !selesaiLewat}><Icon name="check" size={26} /> Selesai</TombolBesar>
       </div>
     </Kunci>

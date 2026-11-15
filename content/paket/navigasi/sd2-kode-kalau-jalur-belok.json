@@ -1408,6 +1408,438 @@
       "optimal": 7,
       "group": "l17-6-6-n",
       "rackSlots": 5
+    },
+    {
+      "id": "l1-4-4-n-a-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "l1-4-4-n-v1"
+    },
+    {
+      "id": "l1-4-4-n-b-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "l1-4-4-n-v1"
+    },
+    {
+      "id": "l1-4-4-n-c-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "l1-4-4-n-v1"
+    },
+    {
+      "id": "l2-4-4-e-a-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "l2-4-4-e-v2"
+    },
+    {
+      "id": "l2-4-4-e-b-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "l2-4-4-e-v2"
+    },
+    {
+      "id": "l2-4-4-e-c-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "rackSlots": 5,
+      "group": "l2-4-4-e-v2"
+    },
+    {
+      "id": "l5-5-5-n-a-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l5-5-5-n-v3"
+    },
+    {
+      "id": "l5-5-5-n-b-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l5-5-5-n-v3"
+    },
+    {
+      "id": "l5-5-5-n-c-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l5-5-5-n-v3"
+    },
+    {
+      "id": "l6-5-5-e-a-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l6-5-5-e-v4"
+    },
+    {
+      "id": "l6-5-5-e-b-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l6-5-5-e-v4"
+    },
+    {
+      "id": "l6-5-5-e-c-cermin-datar",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 5,
+        "y": 5,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l6-5-5-e-v4"
+    },
+    {
+      "id": "l15-5-4-s-a-cermin-datar",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "l15-5-4-s-v5"
+    },
+    {
+      "id": "l15-5-4-s-b-cermin-datar",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 5
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l15-5-4-s-v5"
+    },
+    {
+      "id": "l15-5-4-s-c-cermin-datar",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "l15-5-4-s-v5"
+    },
+    {
+      "id": "l16-4-5-w-a-cermin-datar",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "l16-4-5-w-v6"
+    },
+    {
+      "id": "l16-4-5-w-b-cermin-datar",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 7,
+      "rackSlots": 5,
+      "group": "l16-4-5-w-v6"
+    },
+    {
+      "id": "l16-4-5-w-c-cermin-datar",
+      "w": 5,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 6,
+      "rackSlots": 5,
+      "group": "l16-4-5-w-v6"
     }
   ]
 }

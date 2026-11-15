@@ -1197,6 +1197,294 @@
       "optimal": 3,
       "rackSlots": 5,
       "group": "lima-v6-v6"
+    },
+    {
+      "id": "lima-batu-2-papan-7x2-00-papan-8x2-00-cermin-tegak",
+      "w": 8,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v6-v6-v1"
+    },
+    {
+      "id": "lima-batu-3-papan-7x2-00-papan-8x2-00-cermin-tegak",
+      "w": 8,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v6-v6-v1"
+    },
+    {
+      "id": "lima-batu-4-papan-7x2-00-papan-8x2-00-cermin-tegak",
+      "w": 8,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v6-v6-v1"
+    },
+    {
+      "id": "lima-batu-2-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v2-v2-v2"
+    },
+    {
+      "id": "lima-batu-3-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v2-v2-v2"
+    },
+    {
+      "id": "lima-batu-4-papan-8x1-00-papan-9x1-00-papan-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v2-v2-v2"
+    },
+    {
+      "id": "lima-batu-2-papan-8x1-10-papan-9x1-00-papan-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v4-v4-v3"
+    },
+    {
+      "id": "lima-batu-3-papan-8x1-10-papan-9x1-00-papan-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v4-v4-v3"
+    },
+    {
+      "id": "lima-batu-4-papan-8x1-10-papan-9x1-00-papan-10x1-00",
+      "w": 10,
+      "h": 1,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v4-v4-v3"
+    },
+    {
+      "id": "lima-batu-2-papan-7x2-00-papan-8x2-00-papan-9x2-00",
+      "w": 9,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v6-v6-v4"
+    },
+    {
+      "id": "lima-batu-3-papan-7x2-00-papan-8x2-00-papan-9x2-00",
+      "w": 9,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v6-v6-v4"
+    },
+    {
+      "id": "lima-batu-4-papan-7x2-00-papan-8x2-00-papan-9x2-00",
+      "w": 9,
+      "h": 2,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "optimal": 3,
+      "rackSlots": 5,
+      "group": "lima-v6-v6-v4"
     }
   ]
 }
