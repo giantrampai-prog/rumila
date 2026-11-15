@@ -17,6 +17,11 @@ import { snapshotSertifikat } from "@/lib/akademi/sertifikat";
 import { KOMPETENSI } from "@/lib/akademi/konten";
 import type { LevelId } from "@akademi/schema";
 import { LayarUjian } from "@/components/akademi/ujian";
+import { ProfilBerpikirOrtu, TesBerpikir } from "@/components/ortu/profil-berpikir";
+import { RuangOrangTua } from "@/components/ortu/ruang";
+import type { Member } from "@/lib/store";
+
+const DEMO: Member = { id: "dev-anak", name: "Dek Nara", c: "orange", admin: false, perms: [] } as unknown as Member;
 import PenempatanPage from "@/app/(app)/akademi/penempatan/page";
 import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
 import { JENIS_UJIAN } from "@/lib/akademi/ujian";
@@ -61,6 +66,9 @@ function Preview() {
   if (track) return <KidFrame><TrackView track={track} /></KidFrame>;
   if (q.get("portal")) return <KidFrame><AkademiPortal /></KidFrame>;
   if (q.get("penempatan")) return <PenempatanPage />;
+  if (q.get("berpikir") === "tes") return <TesBerpikir anak={DEMO} kembaliKe="/dev/akademi?berpikir=hasil" />;
+  if (q.get("berpikir")) return <div className="mx-auto max-w-[900px] bg-[#fff0da] p-4"><ProfilBerpikirOrtu anak={DEMO} /></div>;
+  if (q.get("ortu")) return <RuangOrangTua />;
   const ujian = JENIS_UJIAN.find((j) => j === q.get("ujian"));
   if (ujian) {
     const lv = (q.get("level") ?? "PAUD") as LevelId;

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { AppIcon, BALOO } from "@/components/launcher";
 import { WorldCard, useLastTool } from "@/components/kid";
 import { InstallBanner } from "@/components/pwa";
@@ -47,6 +48,10 @@ export default function Beranda() {
         </div>
         {allowed.length === 0 && <p className="text-[15px] font-bold text-ink-3">Belum ada dunia yang dibuka. Minta ayah atau ibu membukanya, ya.</p>}
       </section>
+
+      <Link href="/orang-tua" className="inline-flex items-center gap-1.5 self-center rounded-full bg-white px-4 py-2 text-[13px] font-extrabold text-ink-3 shadow-[0_2px_0_rgba(11,37,69,.08)] transition-transform active:scale-95">
+        <Icon name="lock" size={18} /> Ruang Orang Tua
+      </Link>
     </>
   );
 }
