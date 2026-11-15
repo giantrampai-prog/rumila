@@ -1,0 +1,141 @@
+{
+  "id": "sd2-mat-bayar-pas-toko-kue",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD2.UANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bayar Pas di Toko Kue",
+      "instruksi": "Baca harga kuenya. Ambil uang kertas dan koin dari laci sampai jumlahnya pas, tidak kurang dan tidak lebih.",
+      "g-kue-ultah": "kue ulang tahun",
+      "g-kue-potong": "kue potong",
+      "g-pai": "pai buah",
+      "g-donat-sekotak": "donat sekotak",
+      "g-croissant": "croissant",
+      "g-puding": "puding",
+      "g-kue-kering": "kue kering setoples",
+      "g-kue-bulan": "kue bulan",
+      "g-cokelat": "cokelat batang",
+      "g-wafel": "wafel",
+      "g-roti-panjang": "roti panjang",
+      "g-kue-mangkuk": "kue mangkuk sekotak"
+    },
+    "en": {
+      "judul": "Exact Pay at the Cake Shop",
+      "instruksi": "Read the price of the cake. Take notes and coins from the drawer until the total is exact, not less and not more.",
+      "g-kue-ultah": "birthday cake",
+      "g-kue-potong": "slice of cake",
+      "g-pai": "fruit pie",
+      "g-donat-sekotak": "box of doughnuts",
+      "g-croissant": "croissants",
+      "g-puding": "pudding",
+      "g-kue-kering": "jar of cookies",
+      "g-kue-bulan": "mooncake",
+      "g-cokelat": "chocolate bar",
+      "g-wafel": "waffles",
+      "g-roti-panjang": "baguette",
+      "g-kue-mangkuk": "box of cupcakes"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "currency": "IDR",
+  "denominations": [
+    500,
+    1000,
+    2000,
+    5000,
+    10000,
+    20000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "bayar",
+  "goods": [
+    {
+      "id": "kue-ultah",
+      "labelKey": "g-kue-ultah",
+      "price": 48500,
+      "emoji": "🎂"
+    },
+    {
+      "id": "kue-potong",
+      "labelKey": "g-kue-potong",
+      "price": 12500,
+      "emoji": "🍰"
+    },
+    {
+      "id": "pai",
+      "labelKey": "g-pai",
+      "price": 27000,
+      "emoji": "🥧"
+    },
+    {
+      "id": "donat-sekotak",
+      "labelKey": "g-donat-sekotak",
+      "price": 33500,
+      "emoji": "🍩"
+    },
+    {
+      "id": "croissant",
+      "labelKey": "g-croissant",
+      "price": 15500,
+      "emoji": "🥐"
+    },
+    {
+      "id": "puding",
+      "labelKey": "g-puding",
+      "price": 21000,
+      "emoji": "🍮"
+    },
+    {
+      "id": "kue-kering",
+      "labelKey": "g-kue-kering",
+      "price": 44000,
+      "emoji": "🍪"
+    },
+    {
+      "id": "kue-bulan",
+      "labelKey": "g-kue-bulan",
+      "price": 36500,
+      "emoji": "🥮"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "g-cokelat",
+      "price": 19500,
+      "emoji": "🍫"
+    },
+    {
+      "id": "wafel",
+      "labelKey": "g-wafel",
+      "price": 24500,
+      "emoji": "🧇"
+    },
+    {
+      "id": "roti-panjang",
+      "labelKey": "g-roti-panjang",
+      "price": 17000,
+      "emoji": "🥖"
+    },
+    {
+      "id": "kue-mangkuk",
+      "labelKey": "g-kue-mangkuk",
+      "price": 39500,
+      "emoji": "🧁"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 50000,
+    "kindsMax": 1
+  }
+}

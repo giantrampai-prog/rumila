@@ -1,0 +1,295 @@
+{
+  "id": "sd4-sains-putaran-bumi-pantai",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.BUMI-ANTARIKSA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bumi Berputar di Pantai",
+      "instruksi": "Seharian di pantai. Dengarkan kejadiannya, lalu jelaskan dengan Bumi yang berputar.",
+      "b-pilihan": "pilihan",
+      "i-berputar": "Bumi berputar pada porosnya",
+      "i-mataharibergerak": "Matahari berjalan mengelilingi Bumi tiap hari",
+      "i-awan": "awan menutupi dan membuka Matahari",
+      "i-siang": "siang",
+      "i-malam": "malam",
+      "i-barat": "panjang, ke arah barat",
+      "i-timur": "panjang, ke arah timur",
+      "i-pendek": "pendek sekali, di bawah kaki",
+      "i-pagi": "pagi hari",
+      "i-tengahhari": "tengah hari",
+      "i-sore": "sore hari",
+      "i-bergantian": "siang dan malam bergantian",
+      "i-siangterus": "siang terus-menerus",
+      "p-nelayan": "Nelayan berangkat sebelum fajar. Lalu Matahari tampak muncul di timur. Sebenarnya yang bergerak adalah…",
+      "p-seharian": "Mengapa Matahari tampak bergerak dari timur ke barat sepanjang hari di pantai?",
+      "p-pindahsisi": "Pantai kita berpindah dari sisi Bumi yang gelap ke sisi yang terang karena…",
+      "p-globusterang": "Bola bumi diputar di depan senter. Bagian yang terkena cahaya senter sedang mengalami…",
+      "p-globusgelap": "Bola bumi diputar di depan senter. Bagian yang tidak terkena cahaya sedang mengalami…",
+      "p-seberang": "Di pantai kita sedang tengah malam. Di sisi Bumi seberangnya, yang menghadap Matahari, sedang…",
+      "p-payungpagi": "Pagi hari di pantai, Matahari di timur. Bayangan payung pantai…",
+      "p-kelapasore": "Sore hari Matahari rendah di barat. Bayangan pohon kelapa…",
+      "p-tengahsiang": "Pukul 12 siang, Matahari hampir tepat di atas kepala. Bayanganmu…",
+      "p-bayangtimur": "Bayangan istana pasir panjang ke arah timur. Sekarang kira-kira…",
+      "p-bayangbarat": "Bayangan menara penjaga pantai panjang ke arah barat. Sekarang kira-kira…",
+      "p-bayangkaki": "Bayanganmu hampir tidak terlihat karena tepat di bawah kaki. Sekarang kira-kira…",
+      "p-sekalisehari": "Bumi berputar satu kali setiap hari. Karena itu, pantai kita mengalami…"
+    },
+    "en": {
+      "judul": "The Spinning Earth at the Beach",
+      "instruksi": "A whole day at the beach. Listen to what happens, then explain it with the spinning Earth.",
+      "b-pilihan": "choices",
+      "i-berputar": "the Earth spins on its axis",
+      "i-mataharibergerak": "the Sun travels around the Earth every day",
+      "i-awan": "clouds cover and uncover the Sun",
+      "i-siang": "day",
+      "i-malam": "night",
+      "i-barat": "long, pointing west",
+      "i-timur": "long, pointing east",
+      "i-pendek": "very short, right under your feet",
+      "i-pagi": "morning",
+      "i-tengahhari": "midday",
+      "i-sore": "late afternoon",
+      "i-bergantian": "day and night take turns",
+      "i-siangterus": "day all the time",
+      "p-nelayan": "Fishermen set off before dawn. Then the Sun seems to rise in the east. What is really moving is…",
+      "p-seharian": "Why does the Sun seem to move from east to west across the beach all day?",
+      "p-pindahsisi": "Our beach moves from the dark side of the Earth to the bright side because…",
+      "p-globusterang": "A globe is spun in front of a torch. The part lit by the torch is having…",
+      "p-globusgelap": "A globe is spun in front of a torch. The part the light does not reach is having…",
+      "p-seberang": "It is midnight at our beach. On the opposite side of the Earth, facing the Sun, it is…",
+      "p-payungpagi": "Morning at the beach, the Sun is in the east. The beach umbrella's shadow is…",
+      "p-kelapasore": "In the late afternoon the Sun is low in the west. The coconut tree's shadow is…",
+      "p-tengahsiang": "At 12 noon the Sun is almost straight overhead. Your shadow is…",
+      "p-bayangtimur": "The sandcastle's shadow is long and points east. It is probably…",
+      "p-bayangbarat": "The lifeguard tower's shadow is long and points west. It is probably…",
+      "p-bayangkaki": "Your shadow is hard to see because it is right under your feet. It is probably…",
+      "p-sekalisehari": "The Earth spins once every day. Because of that, our beach has…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "berputar",
+      "labelKey": "i-berputar",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "mataharibergerak",
+      "labelKey": "i-mataharibergerak",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "awan",
+      "labelKey": "i-awan",
+      "bin": "pilihan",
+      "emoji": "☁️"
+    },
+    {
+      "id": "siang",
+      "labelKey": "i-siang",
+      "bin": "pilihan",
+      "emoji": "🌞"
+    },
+    {
+      "id": "malam",
+      "labelKey": "i-malam",
+      "bin": "pilihan",
+      "emoji": "🌙"
+    },
+    {
+      "id": "barat",
+      "labelKey": "i-barat",
+      "bin": "pilihan",
+      "emoji": "⬅️"
+    },
+    {
+      "id": "timur",
+      "labelKey": "i-timur",
+      "bin": "pilihan",
+      "emoji": "➡️"
+    },
+    {
+      "id": "pendek",
+      "labelKey": "i-pendek",
+      "bin": "pilihan",
+      "emoji": "⏺️"
+    },
+    {
+      "id": "pagi",
+      "labelKey": "i-pagi",
+      "bin": "pilihan",
+      "emoji": "🌅"
+    },
+    {
+      "id": "tengahhari",
+      "labelKey": "i-tengahhari",
+      "bin": "pilihan",
+      "emoji": "🕛"
+    },
+    {
+      "id": "sore",
+      "labelKey": "i-sore",
+      "bin": "pilihan",
+      "emoji": "🌆"
+    },
+    {
+      "id": "bergantian",
+      "labelKey": "i-bergantian",
+      "bin": "pilihan",
+      "emoji": "🔄"
+    },
+    {
+      "id": "siangterus",
+      "labelKey": "i-siangterus",
+      "bin": "pilihan",
+      "emoji": "🌞"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "nelayan",
+      "promptKey": "p-nelayan",
+      "choices": [
+        "berputar",
+        "mataharibergerak",
+        "awan"
+      ],
+      "correct": "berputar"
+    },
+    {
+      "id": "seharian",
+      "promptKey": "p-seharian",
+      "choices": [
+        "berputar",
+        "mataharibergerak",
+        "awan"
+      ],
+      "correct": "berputar"
+    },
+    {
+      "id": "pindahsisi",
+      "promptKey": "p-pindahsisi",
+      "choices": [
+        "berputar",
+        "mataharibergerak",
+        "awan"
+      ],
+      "correct": "berputar"
+    },
+    {
+      "id": "globusterang",
+      "promptKey": "p-globusterang",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "siang"
+    },
+    {
+      "id": "globusgelap",
+      "promptKey": "p-globusgelap",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "malam"
+    },
+    {
+      "id": "seberang",
+      "promptKey": "p-seberang",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "siang"
+    },
+    {
+      "id": "payungpagi",
+      "promptKey": "p-payungpagi",
+      "choices": [
+        "barat",
+        "timur",
+        "pendek"
+      ],
+      "correct": "barat"
+    },
+    {
+      "id": "kelapasore",
+      "promptKey": "p-kelapasore",
+      "choices": [
+        "barat",
+        "timur",
+        "pendek"
+      ],
+      "correct": "timur"
+    },
+    {
+      "id": "tengahsiang",
+      "promptKey": "p-tengahsiang",
+      "choices": [
+        "barat",
+        "timur",
+        "pendek"
+      ],
+      "correct": "pendek"
+    },
+    {
+      "id": "bayangtimur",
+      "promptKey": "p-bayangtimur",
+      "choices": [
+        "pagi",
+        "tengahhari",
+        "sore"
+      ],
+      "correct": "sore"
+    },
+    {
+      "id": "bayangbarat",
+      "promptKey": "p-bayangbarat",
+      "choices": [
+        "pagi",
+        "tengahhari",
+        "sore"
+      ],
+      "correct": "pagi"
+    },
+    {
+      "id": "bayangkaki",
+      "promptKey": "p-bayangkaki",
+      "choices": [
+        "pagi",
+        "tengahhari",
+        "sore"
+      ],
+      "correct": "tengahhari"
+    },
+    {
+      "id": "sekalisehari",
+      "promptKey": "p-sekalisehari",
+      "choices": [
+        "bergantian",
+        "siangterus",
+        "malam"
+      ],
+      "correct": "bergantian"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "sd6-sains-didih-uap-pantai",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PERUBAHAN-ZAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bergolak atau Mengering?",
+      "instruksi": "Baca kejadiannya, lalu pilah: mendidih, atau menguap.",
+      "b-didih": "mendidih: bergolak di seluruh cairan, saat mencapai titik didih",
+      "b-uap": "menguap: perlahan dari permukaan, pada suhu berapa pun",
+      "i-ketel": "air di ketel listrik bergolak, gelembung besar naik dari dasar",
+      "i-bakso": "kuah bakso bergolak di panci pedagang",
+      "i-susu": "susu di panci bergolak sampai hampir meluap",
+      "i-mi": "air rebusan mi bergolak dan termometer menunjuk 100 °C",
+      "i-jagung": "air rebusan jagung di tungku pantai bergolak",
+      "i-kolam": "air kolam renang berkurang di musim kemarau",
+      "i-ikanasin": "ikan asin dijemur sampai kering",
+      "i-lantai": "lantai yang baru dipel kering sendiri",
+      "i-spidol": "tulisan spidol di papan cepat kering",
+      "i-handuk": "handuk basah di pantai kering diembus angin",
+      "i-pasir": "pasir basah di pantai menjadi kering saat air surut"
+    },
+    "en": {
+      "judul": "Bubbling or Drying?",
+      "instruksi": "Read what happens, then sort it: boiling, or evaporating.",
+      "b-didih": "boiling: bubbles all through the liquid, at the boiling point",
+      "b-uap": "evaporating: slowly from the surface, at any temperature",
+      "i-ketel": "water in an electric kettle bubbles hard, big bubbles rising from the bottom",
+      "i-bakso": "meatball soup bubbling in the seller's pot",
+      "i-susu": "milk in a pan bubbling up until it nearly boils over",
+      "i-mi": "the noodle water bubbles hard and the thermometer reads 100 °C",
+      "i-jagung": "water for boiling corn bubbles hard over a beach stove",
+      "i-kolam": "pool water goes down in the dry season",
+      "i-ikanasin": "salted fish dried in the sun",
+      "i-lantai": "a freshly mopped floor dries by itself",
+      "i-spidol": "marker writing on the board dries quickly",
+      "i-handuk": "a wet towel on the beach dries in the wind",
+      "i-pasir": "wet sand on the beach dries out at low tide"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "didih",
+      "labelKey": "b-didih",
+      "emoji": "🫕",
+      "color": "#ffccbc"
+    },
+    {
+      "id": "uap",
+      "labelKey": "b-uap",
+      "emoji": "🌬️",
+      "color": "#e0f7fa"
+    }
+  ],
+  "items": [
+    {
+      "id": "ketel",
+      "labelKey": "i-ketel",
+      "bin": "didih",
+      "emoji": "🫖"
+    },
+    {
+      "id": "bakso",
+      "labelKey": "i-bakso",
+      "bin": "didih",
+      "emoji": "🍲"
+    },
+    {
+      "id": "susu",
+      "labelKey": "i-susu",
+      "bin": "didih",
+      "emoji": "🥛"
+    },
+    {
+      "id": "mi",
+      "labelKey": "i-mi",
+      "bin": "didih",
+      "emoji": "🍜"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "didih",
+      "emoji": "🌽"
+    },
+    {
+      "id": "kolam",
+      "labelKey": "i-kolam",
+      "bin": "uap",
+      "emoji": "🏊"
+    },
+    {
+      "id": "ikanasin",
+      "labelKey": "i-ikanasin",
+      "bin": "uap",
+      "emoji": "🐟"
+    },
+    {
+      "id": "lantai",
+      "labelKey": "i-lantai",
+      "bin": "uap",
+      "emoji": "🧹"
+    },
+    {
+      "id": "spidol",
+      "labelKey": "i-spidol",
+      "bin": "uap",
+      "emoji": "🖊️"
+    },
+    {
+      "id": "handuk",
+      "labelKey": "i-handuk",
+      "bin": "uap",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "uap",
+      "emoji": "🏝️"
+    }
+  ],
+  "pilihan": []
+}

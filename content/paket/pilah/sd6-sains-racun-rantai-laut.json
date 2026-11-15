@@ -1,0 +1,333 @@
+{
+  "id": "sd6-sains-racun-rantai-laut",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.JARING-MAKANAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Racun di Rantai Laut dan Sungai",
+      "instruksi": "Baca rantai makanannya, lalu perkirakan siapa yang paling banyak menumpuk racun atau apa akibatnya bila satu makhluk hilang.",
+      "b-pilihan": "pilihan",
+      "i-fito": "fitoplankton",
+      "i-udang": "udang kecil",
+      "i-teri": "ikan teri",
+      "i-tongkol": "ikan tongkol",
+      "i-hiu": "hiu",
+      "i-kutuair": "kutu air",
+      "i-ikanmas": "ikan mas",
+      "i-pecuk": "burung pecuk",
+      "i-lumut": "lumut sungai",
+      "i-ikanbesar": "ikan besar pemangsa",
+      "i-manusia": "manusia yang sering makan ikan besar",
+      "i-tikus": "tikus sawah",
+      "i-burunghantu": "burung hantu",
+      "i-bertambah": "bertambah banyak",
+      "i-berkurang": "berkurang",
+      "i-tetap": "tetap sama",
+      "i-banyakmangsa": "ia memakan sangat banyak mangsa yang tubuhnya sudah beracun",
+      "i-sekali": "ia hanya makan satu kali seumur hidup",
+      "i-berenang": "ia berenang paling cepat",
+      "p-r1": "Limbah merkuri masuk laut: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling banyak menumpuk merkuri?",
+      "p-r2": "Rantai yang sama: fitoplankton → udang kecil → ikan teri → ikan tongkol → hiu. Siapa yang paling sedikit menumpuk merkuri?",
+      "p-r3": "Mengapa ikan tongkol menumpuk racun lebih banyak daripada ikan teri?",
+      "p-r4": "Pestisida masuk danau: kutu air → ikan mas → burung pecuk. Siapa yang paling banyak menumpuk pestisida?",
+      "p-r5": "Merkuri dari tambang emas liar masuk sungai: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang paling terancam?",
+      "p-r6": "Rantai sungai yang sama: lumut sungai → ikan kecil → ikan besar pemangsa → manusia. Siapa yang pertama menyerap merkuri?",
+      "p-r7": "Tikus sawah memakan umpan racun, lalu seekor burung hantu memakan banyak tikus itu. Siapa yang paling banyak menumpuk racun?",
+      "p-r8": "Di laut ini, ikan teri dimakan ikan tongkol. Bila nelayan menangkap hampir semua ikan tongkol, ikan teri kemungkinan…",
+      "p-r9": "Bila fitoplankton banyak yang mati karena limbah, udang kecil yang memakannya kemungkinan…",
+      "p-r10": "Di danau ini hanya ikan mas yang memakan kutu air. Bila ikan mas habis karena racun, kutu air kemungkinan…",
+      "p-r11": "Di danau ini burung pecuk hanya memakan ikan mas. Bila ikan mas habis, burung pecuk kemungkinan…",
+      "p-r12": "Hiu diburu sampai hampir habis. Ikan tongkol yang biasa dimangsa hiu kemungkinan…"
+    },
+    "en": {
+      "judul": "Poison in Sea and River Chains",
+      "instruksi": "Read the food chain, then predict who builds up the most poison or what happens when one living thing disappears.",
+      "b-pilihan": "choices",
+      "i-fito": "phytoplankton",
+      "i-udang": "small shrimp",
+      "i-teri": "anchovy",
+      "i-tongkol": "tuna",
+      "i-hiu": "shark",
+      "i-kutuair": "water flea",
+      "i-ikanmas": "carp",
+      "i-pecuk": "cormorant",
+      "i-lumut": "river algae",
+      "i-ikanbesar": "big predatory fish",
+      "i-manusia": "people who often eat big fish",
+      "i-tikus": "field rat",
+      "i-burunghantu": "owl",
+      "i-bertambah": "increases",
+      "i-berkurang": "decreases",
+      "i-tetap": "stays the same",
+      "i-banyakmangsa": "it eats a great many prey whose bodies already hold poison",
+      "i-sekali": "it eats only once in its life",
+      "i-berenang": "it swims the fastest",
+      "p-r1": "Mercury waste enters the sea: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the most mercury?",
+      "p-r2": "Same chain: phytoplankton → small shrimp → anchovy → tuna → shark. Who builds up the least mercury?",
+      "p-r3": "Why does tuna build up more poison than anchovy?",
+      "p-r4": "Pesticide gets into a lake: water flea → carp → cormorant. Who builds up the most pesticide?",
+      "p-r5": "Mercury from illegal gold mining gets into a river: river algae → small fish → big predatory fish → people. Who is most at risk?",
+      "p-r6": "Same river chain: river algae → small fish → big predatory fish → people. Who takes in the mercury first?",
+      "p-r7": "Field rats eat poison bait, then an owl eats many of those rats. Who builds up the most poison?",
+      "p-r8": "In this sea, anchovies are eaten by tuna. If fishers catch almost all the tuna, the anchovies will probably…",
+      "p-r9": "If much of the phytoplankton dies from waste, the small shrimp that eat it will probably…",
+      "p-r10": "In this lake only carp eat water fleas. If the carp die out from poison, the water fleas will probably…",
+      "p-r11": "In this lake cormorants eat only carp. If the carp die out, the cormorants will probably…",
+      "p-r12": "Sharks are hunted until almost none are left. The tuna that sharks usually eat will probably…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "fito",
+      "labelKey": "i-fito",
+      "bin": "pilihan",
+      "emoji": "🟢"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "pilihan",
+      "emoji": "🦐"
+    },
+    {
+      "id": "teri",
+      "labelKey": "i-teri",
+      "bin": "pilihan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "tongkol",
+      "labelKey": "i-tongkol",
+      "bin": "pilihan",
+      "emoji": "🐠"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "pilihan",
+      "emoji": "🦈"
+    },
+    {
+      "id": "kutuair",
+      "labelKey": "i-kutuair",
+      "bin": "pilihan",
+      "emoji": "🔬"
+    },
+    {
+      "id": "ikanmas",
+      "labelKey": "i-ikanmas",
+      "bin": "pilihan",
+      "emoji": "🐡"
+    },
+    {
+      "id": "pecuk",
+      "labelKey": "i-pecuk",
+      "bin": "pilihan",
+      "emoji": "🐦‍⬛"
+    },
+    {
+      "id": "lumut",
+      "labelKey": "i-lumut",
+      "bin": "pilihan",
+      "emoji": "🌿"
+    },
+    {
+      "id": "ikanbesar",
+      "labelKey": "i-ikanbesar",
+      "bin": "pilihan",
+      "emoji": "🐋"
+    },
+    {
+      "id": "manusia",
+      "labelKey": "i-manusia",
+      "bin": "pilihan",
+      "emoji": "🧑"
+    },
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "pilihan",
+      "emoji": "🐀"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "pilihan",
+      "emoji": "🦉"
+    },
+    {
+      "id": "bertambah",
+      "labelKey": "i-bertambah",
+      "bin": "pilihan",
+      "emoji": "📈"
+    },
+    {
+      "id": "berkurang",
+      "labelKey": "i-berkurang",
+      "bin": "pilihan",
+      "emoji": "📉"
+    },
+    {
+      "id": "tetap",
+      "labelKey": "i-tetap",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "banyakmangsa",
+      "labelKey": "i-banyakmangsa",
+      "bin": "pilihan",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "sekali",
+      "labelKey": "i-sekali",
+      "bin": "pilihan",
+      "emoji": "1️⃣"
+    },
+    {
+      "id": "berenang",
+      "labelKey": "i-berenang",
+      "bin": "pilihan",
+      "emoji": "💨"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "hiu",
+        "teri",
+        "fito"
+      ],
+      "correct": "hiu"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "fito",
+        "tongkol",
+        "hiu"
+      ],
+      "correct": "fito"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "banyakmangsa",
+        "sekali",
+        "berenang"
+      ],
+      "correct": "banyakmangsa"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "pecuk",
+        "kutuair",
+        "ikanmas"
+      ],
+      "correct": "pecuk"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "manusia",
+        "lumut",
+        "ikanbesar"
+      ],
+      "correct": "manusia"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "lumut",
+        "ikanbesar",
+        "manusia"
+      ],
+      "correct": "lumut"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "burunghantu",
+        "tikus"
+      ],
+      "correct": "burunghantu"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "berkurang",
+        "bertambah",
+        "tetap"
+      ],
+      "correct": "berkurang"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "berkurang",
+        "bertambah",
+        "tetap"
+      ],
+      "correct": "berkurang"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "bertambah",
+        "berkurang",
+        "tetap"
+      ],
+      "correct": "bertambah"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "sd6-sains-batuan-tepi-sungai",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.BATUAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Batu-Batu di Tepi Sungai",
+      "instruksi": "Amati ciri batunya: kristal, lapisan, atau pita. Pilah ke batuan beku, sedimen, atau metamorf.",
+      "b-beku": "batuan beku: kristal acak dari magma atau lava",
+      "b-sedimen": "batuan sedimen: lapisan endapan butiran",
+      "b-metamorf": "batuan metamorf: pita atau kilau, berubah oleh panas dan tekanan",
+      "i-andesit": "batu candi abu-abu berbintik kristal kecil (andesit)",
+      "i-gabro": "batu hitam berkristal besar yang saling mengunci (gabro)",
+      "i-diorit": "batu berbintik hitam-putih seperti garam dan merica (diorit)",
+      "i-skoria": "batu lava kemerahan berlubang-lubang gas dari letusan (skoria)",
+      "i-tebing": "tebing sungai berlapis-lapis cokelat dan krem (batu lanau)",
+      "i-batubara": "batu bara hitam berlapis dengan jejak daun",
+      "i-breksi": "pecahan batu bersudut tajam yang terekat lumpur (breksi)",
+      "i-lempung": "batu berlapis tipis yang menyimpan fosil ikan (batu lempung)",
+      "i-sekis": "batu berkilau dengan sisik mika tipis-tipis (sekis)",
+      "i-filit": "batu mengkilap seperti kain satin, berasal dari batu sabak (filit)",
+      "i-pita": "batu berpita bergelombang terang-gelap dari dalam gunung (gneis pita)",
+      "i-marmerputih": "batu putih berurat yang dulu batu kapur, terpanggang jauh di dalam bumi"
+    },
+    "en": {
+      "judul": "Stones by the River",
+      "instruksi": "Look at the stone: crystals, layers or bands. Sort it into igneous, sedimentary or metamorphic.",
+      "b-beku": "igneous: random crystals from magma or lava",
+      "b-sedimen": "sedimentary: layers of settled grains",
+      "b-metamorf": "metamorphic: bands or sheen, changed by heat and pressure",
+      "i-andesit": "grey temple stone dotted with small crystals (andesite)",
+      "i-gabro": "black stone with big interlocking crystals (gabbro)",
+      "i-diorit": "stone speckled black and white like salt and pepper (diorite)",
+      "i-skoria": "reddish lava stone full of gas holes from an eruption (scoria)",
+      "i-tebing": "a riverbank cliff in brown and cream layers (siltstone)",
+      "i-batubara": "layered black coal with leaf prints",
+      "i-breksi": "sharp-cornered rock pieces stuck together by mud (breccia)",
+      "i-lempung": "thin-layered stone holding a fish fossil (mudstone)",
+      "i-sekis": "sparkly stone with thin flakes of mica (schist)",
+      "i-filit": "stone with a satin-like shine, formed from slate (phyllite)",
+      "i-pita": "stone with wavy light and dark bands from deep in a mountain (banded gneiss)",
+      "i-marmerputih": "white veined stone that was once limestone, baked deep underground"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "beku",
+      "labelKey": "b-beku",
+      "emoji": "🌋",
+      "color": "#ffccbc"
+    },
+    {
+      "id": "sedimen",
+      "labelKey": "b-sedimen",
+      "emoji": "🟫",
+      "color": "#fff9c4"
+    },
+    {
+      "id": "metamorf",
+      "labelKey": "b-metamorf",
+      "emoji": "🌀",
+      "color": "#e1bee7"
+    }
+  ],
+  "items": [
+    {
+      "id": "andesit",
+      "labelKey": "i-andesit",
+      "bin": "beku",
+      "emoji": "🛕"
+    },
+    {
+      "id": "gabro",
+      "labelKey": "i-gabro",
+      "bin": "beku",
+      "emoji": "⬛"
+    },
+    {
+      "id": "diorit",
+      "labelKey": "i-diorit",
+      "bin": "beku",
+      "emoji": "🧂"
+    },
+    {
+      "id": "skoria",
+      "labelKey": "i-skoria",
+      "bin": "beku",
+      "emoji": "🔴"
+    },
+    {
+      "id": "tebing",
+      "labelKey": "i-tebing",
+      "bin": "sedimen",
+      "emoji": "🏞️"
+    },
+    {
+      "id": "batubara",
+      "labelKey": "i-batubara",
+      "bin": "sedimen",
+      "emoji": "🪨"
+    },
+    {
+      "id": "breksi",
+      "labelKey": "i-breksi",
+      "bin": "sedimen",
+      "emoji": "🧩"
+    },
+    {
+      "id": "lempung",
+      "labelKey": "i-lempung",
+      "bin": "sedimen",
+      "emoji": "🐟"
+    },
+    {
+      "id": "sekis",
+      "labelKey": "i-sekis",
+      "bin": "metamorf",
+      "emoji": "✨"
+    },
+    {
+      "id": "filit",
+      "labelKey": "i-filit",
+      "bin": "metamorf",
+      "emoji": "🎀"
+    },
+    {
+      "id": "pita",
+      "labelKey": "i-pita",
+      "bin": "metamorf",
+      "emoji": "🌀"
+    },
+    {
+      "id": "marmerputih",
+      "labelKey": "i-marmerputih",
+      "bin": "metamorf",
+      "emoji": "🏛️"
+    }
+  ],
+  "pilihan": []
+}

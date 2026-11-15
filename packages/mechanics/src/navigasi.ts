@@ -152,7 +152,8 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
   }
 
   const semuaBintang = outcomes.length > 0 && outcomes.every(o => o === "bintang");
-  const debugBeres = !r.debug || r.fixes === undefined || j.edits === r.fixes;
+  // debug: anak boleh menemukan perbaikan yang lebih hemat dari target (dulu wajib tepat sama → salah dinilai)
+  const debugBeres = !r.debug || r.fixes === undefined || (typeof j.edits === "number" && j.edits <= r.fixes);
   // mode bendera: layar membatasi tiap rak sendiri-sendiri, jadi batas berlaku per bagian (bukan total program)
   const rakBeres = r.rackSlots === undefined || (j.bendera ? j.bendera.bagian.every(b => hitungBlok(b) <= r.rackSlots!) : blocks <= r.rackSlots);
   // mode prediksi: program sudah disediakan, jadi buktinya tebakan anak (minimal 60% benar, sama dengan ambang misi)

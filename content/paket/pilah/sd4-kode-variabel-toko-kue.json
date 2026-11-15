@@ -1,0 +1,350 @@
+{
+  "id": "sd4-kode-variabel-toko-kue",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD4.VARIABEL.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Catatan Variabel Toko Kue",
+      "instruksi": "Program toko kue mengubah isi variabel baris demi baris (tanda * artinya dikali, dan dikerjakan sebelum + atau −): ikuti tiap baris lalu pilih nilai terakhirnya.",
+      "pilihan": "pilihan",
+      "c1": "7",
+      "c2": "12",
+      "c3": "17",
+      "q1": "kue = 12; kue = kue - 5.  Berapa nilai kue?",
+      "c4": "14",
+      "c5": "18",
+      "c6": "3",
+      "q2": "harga = 3; harga = harga * 4; harga = harga + 2.  Berapa nilai harga?",
+      "c7": "8",
+      "c8": "9",
+      "c9": "1",
+      "q3": "a = 8; b = a; a = a + 1.  Berapa nilai b?",
+      "c10": "20",
+      "q4": "stok = 20; stok = stok - 6; stok = stok - 6.  Berapa nilai stok?",
+      "c11": "4",
+      "c12": "10",
+      "q5": "roti = 2; roti = roti * 5; roti = roti - 3.  Berapa nilai roti?",
+      "c13": "6",
+      "q6": "x = 4; y = 6; x = y; y = 1.  Berapa nilai x?",
+      "c14": "5",
+      "q7": "p = 5; q = p + 2; p = q * 2.  Berapa nilai p?",
+      "q8": "donat = 9; donat = donat + 3; donat = donat - 2.  Berapa nilai donat?",
+      "q9": "a = 3; b = 4; t = a; a = b; b = t.  Berapa nilai a?",
+      "c15": "2",
+      "q10": "gula = 1; gula = gula + gula; gula = gula + gula.  Berapa nilai gula?",
+      "q11": "n = 10; n = n - 3; print(n * 2).  Angka berapa yang tampil?",
+      "c16": "0",
+      "q12": "loyang = 6; isi = loyang * 2; loyang = 0.  Berapa nilai isi?",
+      "c17": "25",
+      "q13": "m = 2; m = m + 3; m = m * m.  Berapa nilai m?",
+      "c18": "13",
+      "q14": "keju = 15; keju = keju - 5 * 2.  Berapa nilai keju?"
+    },
+    "en": {
+      "judul": "Bakery Variable Notes",
+      "instruksi": "The bakery program changes its variables line by line (* means times, and it is done before + or −): follow each line, then choose the final value.",
+      "pilihan": "choices",
+      "c1": "7",
+      "c2": "12",
+      "c3": "17",
+      "q1": "cakes = 12; cakes = cakes - 5.  What is the value of cakes?",
+      "c4": "14",
+      "c5": "18",
+      "c6": "3",
+      "q2": "price = 3; price = price * 4; price = price + 2.  What is the value of price?",
+      "c7": "8",
+      "c8": "9",
+      "c9": "1",
+      "q3": "a = 8; b = a; a = a + 1.  What is the value of b?",
+      "c10": "20",
+      "q4": "stock = 20; stock = stock - 6; stock = stock - 6.  What is the value of stock?",
+      "c11": "4",
+      "c12": "10",
+      "q5": "bread = 2; bread = bread * 5; bread = bread - 3.  What is the value of bread?",
+      "c13": "6",
+      "q6": "x = 4; y = 6; x = y; y = 1.  What is the value of x?",
+      "c14": "5",
+      "q7": "p = 5; q = p + 2; p = q * 2.  What is the value of p?",
+      "q8": "donuts = 9; donuts = donuts + 3; donuts = donuts - 2.  What is the value of donuts?",
+      "q9": "a = 3; b = 4; t = a; a = b; b = t.  What is the value of a?",
+      "c15": "2",
+      "q10": "sugar = 1; sugar = sugar + sugar; sugar = sugar + sugar.  What is the value of sugar?",
+      "q11": "n = 10; n = n - 3; print(n * 2).  Which number is shown?",
+      "c16": "0",
+      "q12": "trays = 6; inside = trays * 2; trays = 0.  What is the value of inside?",
+      "c17": "25",
+      "q13": "m = 2; m = m + 3; m = m * m.  What is the value of m?",
+      "c18": "13",
+      "q14": "cheese = 15; cheese = cheese - 5 * 2.  What is the value of cheese?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c7",
+        "c4",
+        "c10"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c1",
+        "c11",
+        "c12"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c13",
+        "c11",
+        "c9"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c4",
+        "c1",
+        "c14"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c12",
+        "c2",
+        "c8"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c11",
+        "c6",
+        "c1"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c11",
+        "c15",
+        "c6"
+      ],
+      "correct": "c11"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c4",
+        "c1",
+        "c10"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c2",
+        "c16",
+        "c13"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c17",
+        "c12",
+        "c14"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "q14",
+      "promptKey": "q14",
+      "choices": [
+        "c14",
+        "c10",
+        "c18"
+      ],
+      "correct": "c14"
+    }
+  ]
+}

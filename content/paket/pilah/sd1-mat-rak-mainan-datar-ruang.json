@@ -1,0 +1,155 @@
+{
+  "id": "sd1-mat-rak-mainan-datar-ruang",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BANGUN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rak Mainan Datar dan Ruang",
+      "instruksi": "Bangun datar hanya bisa digambar di kertas. Bangun ruang bisa digenggam dan punya isi. Pilah tiap barang di toko.",
+      "b-datar": "bangun datar",
+      "b-ruang": "bangun ruang",
+      "i-persegi-merah": "persegi merah",
+      "i-segitiga-biru": "segitiga biru",
+      "i-lingkaran-hijau": "lingkaran hijau",
+      "i-bintang-kuning": "bintang kuning",
+      "i-persegi-panjang-ungu": "persegi panjang ungu",
+      "i-belah-ketupat-biru": "belah ketupat biru",
+      "i-es-batu": "es batu kubus",
+      "i-bola-tenis": "bola tenis",
+      "i-kotak-jus": "kotak jus",
+      "i-drum": "drum besi",
+      "i-bola-voli": "bola voli",
+      "i-baterai": "baterai"
+    },
+    "en": {
+      "judul": "Flat and Solid Toy Shelf",
+      "instruksi": "Flat shapes can only be drawn on paper. Solid shapes can be held and have space inside. Sort each item in the shop.",
+      "b-datar": "flat shape",
+      "b-ruang": "solid shape",
+      "i-persegi-merah": "red square",
+      "i-segitiga-biru": "blue triangle",
+      "i-lingkaran-hijau": "green circle",
+      "i-bintang-kuning": "yellow star",
+      "i-persegi-panjang-ungu": "purple rectangle",
+      "i-belah-ketupat-biru": "blue rhombus",
+      "i-es-batu": "ice cube",
+      "i-bola-tenis": "tennis ball",
+      "i-kotak-jus": "juice box",
+      "i-drum": "metal drum",
+      "i-bola-voli": "volleyball",
+      "i-baterai": "battery"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "barang per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-mainan",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "datar",
+      "labelKey": "b-datar",
+      "emoji": "📄"
+    },
+    {
+      "id": "ruang",
+      "labelKey": "b-ruang",
+      "emoji": "🧱"
+    }
+  ],
+  "items": [
+    {
+      "id": "persegi-merah",
+      "labelKey": "i-persegi-merah",
+      "bin": "datar",
+      "shape": "square",
+      "color": "#e94f37"
+    },
+    {
+      "id": "segitiga-biru",
+      "labelKey": "i-segitiga-biru",
+      "bin": "datar",
+      "shape": "triangle",
+      "color": "#3f7fe0"
+    },
+    {
+      "id": "lingkaran-hijau",
+      "labelKey": "i-lingkaran-hijau",
+      "bin": "datar",
+      "shape": "circle",
+      "color": "#2bb673"
+    },
+    {
+      "id": "bintang-kuning",
+      "labelKey": "i-bintang-kuning",
+      "bin": "datar",
+      "shape": "star",
+      "color": "#ffbf00"
+    },
+    {
+      "id": "persegi-panjang-ungu",
+      "labelKey": "i-persegi-panjang-ungu",
+      "bin": "datar",
+      "shape": "rect",
+      "color": "#8e6cd1",
+      "width": 2
+    },
+    {
+      "id": "belah-ketupat-biru",
+      "labelKey": "i-belah-ketupat-biru",
+      "bin": "datar",
+      "emoji": "🔷"
+    },
+    {
+      "id": "es-batu",
+      "labelKey": "i-es-batu",
+      "bin": "ruang",
+      "emoji": "🧊"
+    },
+    {
+      "id": "bola-tenis",
+      "labelKey": "i-bola-tenis",
+      "bin": "ruang",
+      "emoji": "🎾"
+    },
+    {
+      "id": "kotak-jus",
+      "labelKey": "i-kotak-jus",
+      "bin": "ruang",
+      "emoji": "🧃"
+    },
+    {
+      "id": "drum",
+      "labelKey": "i-drum",
+      "bin": "ruang",
+      "emoji": "🛢️"
+    },
+    {
+      "id": "bola-voli",
+      "labelKey": "i-bola-voli",
+      "bin": "ruang",
+      "emoji": "🏐"
+    },
+    {
+      "id": "baterai",
+      "labelKey": "i-baterai",
+      "bin": "ruang",
+      "emoji": "🔋"
+    }
+  ]
+}

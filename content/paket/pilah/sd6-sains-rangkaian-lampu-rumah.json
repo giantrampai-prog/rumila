@@ -1,0 +1,254 @@
+{
+  "id": "sd6-sains-rangkaian-lampu-rumah",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.LISTRIK.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Teknisi Lampu Rumah",
+      "instruksi": "Kamu membantu memasang lampu. Baca soalnya, lalu pilih jawaban tentang rangkaian seri dan paralel.",
+      "b-pilihan": "pilihan",
+      "i-seri": "rangkaian seri",
+      "i-paralel": "rangkaian paralel",
+      "i-redup": "lebih redup",
+      "i-terang": "lebih terang",
+      "i-sama": "sama terang",
+      "i-menyala": "tetap menyala",
+      "i-padam": "ikut padam",
+      "i-duaparalel": "dua lampu paralel",
+      "i-duaseri": "dua lampu seri",
+      "i-tigaseri": "tiga lampu seri",
+      "p-r1": "Arus listrik hanya punya satu jalan yang melewati semua lampu. Ini…",
+      "p-r2": "Arus listrik bercabang, dan tiap lampu ada di cabangnya sendiri. Ini…",
+      "p-r3": "Lampu jalan di kompleks rumah: satu lampu mati, lampu lain tetap menyala. Lampu-lampu itu dipasang dalam…",
+      "p-r4": "Lampu kamar dan kipas angin di rumahmu bisa dinyalakan sendiri-sendiri. Keduanya dipasang dalam…",
+      "p-r5": "Rangkaian seri dengan satu baterai: dari dua lampu ditambah menjadi tiga lampu. Tiap lampu menjadi…",
+      "p-r6": "Rangkaian paralel dengan baterai yang sama: satu lampu ditambah di cabang baru. Lampu lain menyala…",
+      "p-r7": "Rangkaian seri tiga lampu: satu lampu longgar dari dudukannya. Lampu yang lain…",
+      "p-r8": "Rangkaian paralel tiga lampu: satu lampu putus. Dua lampu lainnya…",
+      "p-r9": "Lampu hias di pagar dirangkai seri. Satu lampu dicabut. Lampu lainnya…",
+      "p-r10": "Satu baterai yang sama. Rangkaian manakah yang lampunya paling terang?",
+      "p-r11": "Rangkaian seri dua lampu. Satu lampu dilepas, lalu kabelnya disambung langsung tanpa lampu itu. Lampu yang tersisa…",
+      "p-r12": "Ayah ingin lampu teras tetap menyala walau lampu dapur rusak. Pilih rangkaian…"
+    },
+    "en": {
+      "judul": "Home Lighting Technician",
+      "instruksi": "You are helping to fit lights. Read the question, then choose the answer about series and parallel circuits.",
+      "b-pilihan": "choices",
+      "i-seri": "series circuit",
+      "i-paralel": "parallel circuit",
+      "i-redup": "dimmer",
+      "i-terang": "brighter",
+      "i-sama": "just as bright",
+      "i-menyala": "stay on",
+      "i-padam": "go out too",
+      "i-duaparalel": "two bulbs in parallel",
+      "i-duaseri": "two bulbs in series",
+      "i-tigaseri": "three bulbs in series",
+      "p-r1": "The current has only one path, which goes through every bulb. This is a…",
+      "p-r2": "The current splits into branches, and each bulb is on its own branch. This is a…",
+      "p-r3": "Streetlights on a housing estate: one goes out and the others stay on. They are wired in a…",
+      "p-r4": "Your bedroom light and fan can be switched on separately. They are wired in a…",
+      "p-r5": "A series circuit with one battery: two bulbs become three. Each bulb becomes…",
+      "p-r6": "A parallel circuit with the same battery: one more bulb is added on a new branch. The other bulbs shine…",
+      "p-r7": "Three bulbs in series: one bulb comes loose from its holder. The other bulbs…",
+      "p-r8": "Three bulbs in parallel: one bulb blows. The other two…",
+      "p-r9": "Fairy lights on the fence are wired in series. One bulb is pulled out. The rest…",
+      "p-r10": "The same single battery. Which circuit has the brightest bulbs?",
+      "p-r11": "Two bulbs in series. One is removed and the wires are joined straight across without it. The remaining bulb becomes…",
+      "p-r12": "Dad wants the porch light to stay on even if the kitchen light breaks. Choose a…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "seri",
+      "labelKey": "i-seri",
+      "bin": "pilihan",
+      "emoji": "➰"
+    },
+    {
+      "id": "paralel",
+      "labelKey": "i-paralel",
+      "bin": "pilihan",
+      "emoji": "🔀"
+    },
+    {
+      "id": "redup",
+      "labelKey": "i-redup",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    },
+    {
+      "id": "terang",
+      "labelKey": "i-terang",
+      "bin": "pilihan",
+      "emoji": "🌕"
+    },
+    {
+      "id": "sama",
+      "labelKey": "i-sama",
+      "bin": "pilihan",
+      "emoji": "🌗"
+    },
+    {
+      "id": "menyala",
+      "labelKey": "i-menyala",
+      "bin": "pilihan",
+      "emoji": "💡"
+    },
+    {
+      "id": "padam",
+      "labelKey": "i-padam",
+      "bin": "pilihan",
+      "emoji": "⚫"
+    },
+    {
+      "id": "duaparalel",
+      "labelKey": "i-duaparalel",
+      "bin": "pilihan",
+      "emoji": "🔀"
+    },
+    {
+      "id": "duaseri",
+      "labelKey": "i-duaseri",
+      "bin": "pilihan",
+      "emoji": "➰"
+    },
+    {
+      "id": "tigaseri",
+      "labelKey": "i-tigaseri",
+      "bin": "pilihan",
+      "emoji": "🔗"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "seri",
+        "paralel"
+      ],
+      "correct": "seri"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "redup",
+        "terang",
+        "sama"
+      ],
+      "correct": "redup"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "sama",
+        "redup",
+        "terang"
+      ],
+      "correct": "sama"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "padam",
+        "menyala"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "menyala",
+        "padam"
+      ],
+      "correct": "menyala"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "padam",
+        "menyala"
+      ],
+      "correct": "padam"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "duaparalel",
+        "duaseri",
+        "tigaseri"
+      ],
+      "correct": "duaparalel"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "terang",
+        "redup",
+        "sama"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "paralel",
+        "seri"
+      ],
+      "correct": "paralel"
+    }
+  ]
+}

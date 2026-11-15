@@ -1,0 +1,280 @@
+{
+  "id": "sd2-mat-rumah-es-keluarga",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.TAMBAH-KURANG-100.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rumah Es Keluarga Bilangan",
+      "instruksi": "Tiap rumah es dihuni tiga bilangan. Kalimat tambah dan kurang yang memakai tiga bilangan itu satu keluarga. Antar ke rumahnya.",
+      "b-5-8-13": "5, 8, 13",
+      "i-5p8": "5 + 8",
+      "i-8p5": "8 + 5",
+      "i-13m5": "13 − 5",
+      "i-13m8": "13 − 8",
+      "b-7-9-16": "7, 9, 16",
+      "i-7p9": "7 + 9",
+      "i-9p7": "9 + 7",
+      "i-16m7": "16 − 7",
+      "i-16m9": "16 − 9",
+      "b-4-8-12": "4, 8, 12",
+      "i-4p8": "4 + 8",
+      "i-8p4": "8 + 4",
+      "i-12m4": "12 − 4",
+      "i-12m8": "12 − 8",
+      "b-6-7-13": "6, 7, 13",
+      "i-6p7": "6 + 7",
+      "i-7p6": "7 + 6",
+      "i-13m6": "13 − 6",
+      "i-13m7": "13 − 7",
+      "b-8-9-17": "8, 9, 17",
+      "i-8p9": "8 + 9",
+      "i-9p8": "9 + 8",
+      "i-17m8": "17 − 8",
+      "i-17m9": "17 − 9",
+      "b-5-9-14": "5, 9, 14",
+      "i-5p9": "5 + 9",
+      "i-9p5": "9 + 5",
+      "i-14m5": "14 − 5",
+      "i-14m9": "14 − 9"
+    },
+    "en": {
+      "judul": "Ice House Number Families",
+      "instruksi": "Each ice house is home to three numbers. Adding and subtracting sentences that use those three numbers are one family. Take each to its house.",
+      "b-5-8-13": "5, 8, 13",
+      "i-5p8": "5 + 8",
+      "i-8p5": "8 + 5",
+      "i-13m5": "13 − 5",
+      "i-13m8": "13 − 8",
+      "b-7-9-16": "7, 9, 16",
+      "i-7p9": "7 + 9",
+      "i-9p7": "9 + 7",
+      "i-16m7": "16 − 7",
+      "i-16m9": "16 − 9",
+      "b-4-8-12": "4, 8, 12",
+      "i-4p8": "4 + 8",
+      "i-8p4": "8 + 4",
+      "i-12m4": "12 − 4",
+      "i-12m8": "12 − 8",
+      "b-6-7-13": "6, 7, 13",
+      "i-6p7": "6 + 7",
+      "i-7p6": "7 + 6",
+      "i-13m6": "13 − 6",
+      "i-13m7": "13 − 7",
+      "b-8-9-17": "8, 9, 17",
+      "i-8p9": "8 + 9",
+      "i-9p8": "9 + 8",
+      "i-17m8": "17 − 8",
+      "i-17m9": "17 − 9",
+      "b-5-9-14": "5, 9, 14",
+      "i-5p9": "5 + 9",
+      "i-9p5": "9 + 5",
+      "i-14m5": "14 − 5",
+      "i-14m9": "14 − 9"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "rumah aktif: 3 → 6"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "kalimat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kutub",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "f5-8-13",
+      "labelKey": "b-5-8-13",
+      "emoji": "🛖"
+    },
+    {
+      "id": "f7-9-16",
+      "labelKey": "b-7-9-16",
+      "emoji": "🛖"
+    },
+    {
+      "id": "f4-8-12",
+      "labelKey": "b-4-8-12",
+      "emoji": "🛖"
+    },
+    {
+      "id": "f6-7-13",
+      "labelKey": "b-6-7-13",
+      "emoji": "🛖"
+    },
+    {
+      "id": "f8-9-17",
+      "labelKey": "b-8-9-17",
+      "emoji": "🛖"
+    },
+    {
+      "id": "f5-9-14",
+      "labelKey": "b-5-9-14",
+      "emoji": "🛖"
+    }
+  ],
+  "items": [
+    {
+      "id": "f5-8-13-5p8",
+      "labelKey": "i-5p8",
+      "bin": "f5-8-13",
+      "scale": 0.85
+    },
+    {
+      "id": "f5-8-13-8p5",
+      "labelKey": "i-8p5",
+      "bin": "f5-8-13",
+      "scale": 0.85
+    },
+    {
+      "id": "f5-8-13-13m5",
+      "labelKey": "i-13m5",
+      "bin": "f5-8-13",
+      "scale": 0.7
+    },
+    {
+      "id": "f5-8-13-13m8",
+      "labelKey": "i-13m8",
+      "bin": "f5-8-13",
+      "scale": 0.7
+    },
+    {
+      "id": "f7-9-16-7p9",
+      "labelKey": "i-7p9",
+      "bin": "f7-9-16",
+      "scale": 0.85
+    },
+    {
+      "id": "f7-9-16-9p7",
+      "labelKey": "i-9p7",
+      "bin": "f7-9-16",
+      "scale": 0.85
+    },
+    {
+      "id": "f7-9-16-16m7",
+      "labelKey": "i-16m7",
+      "bin": "f7-9-16",
+      "scale": 0.7
+    },
+    {
+      "id": "f7-9-16-16m9",
+      "labelKey": "i-16m9",
+      "bin": "f7-9-16",
+      "scale": 0.7
+    },
+    {
+      "id": "f4-8-12-4p8",
+      "labelKey": "i-4p8",
+      "bin": "f4-8-12",
+      "scale": 0.85
+    },
+    {
+      "id": "f4-8-12-8p4",
+      "labelKey": "i-8p4",
+      "bin": "f4-8-12",
+      "scale": 0.85
+    },
+    {
+      "id": "f4-8-12-12m4",
+      "labelKey": "i-12m4",
+      "bin": "f4-8-12",
+      "scale": 0.7
+    },
+    {
+      "id": "f4-8-12-12m8",
+      "labelKey": "i-12m8",
+      "bin": "f4-8-12",
+      "scale": 0.7
+    },
+    {
+      "id": "f6-7-13-6p7",
+      "labelKey": "i-6p7",
+      "bin": "f6-7-13",
+      "scale": 0.85
+    },
+    {
+      "id": "f6-7-13-7p6",
+      "labelKey": "i-7p6",
+      "bin": "f6-7-13",
+      "scale": 0.85
+    },
+    {
+      "id": "f6-7-13-13m6",
+      "labelKey": "i-13m6",
+      "bin": "f6-7-13",
+      "scale": 0.7
+    },
+    {
+      "id": "f6-7-13-13m7",
+      "labelKey": "i-13m7",
+      "bin": "f6-7-13",
+      "scale": 0.7
+    },
+    {
+      "id": "f8-9-17-8p9",
+      "labelKey": "i-8p9",
+      "bin": "f8-9-17",
+      "scale": 0.85
+    },
+    {
+      "id": "f8-9-17-9p8",
+      "labelKey": "i-9p8",
+      "bin": "f8-9-17",
+      "scale": 0.85
+    },
+    {
+      "id": "f8-9-17-17m8",
+      "labelKey": "i-17m8",
+      "bin": "f8-9-17",
+      "scale": 0.7
+    },
+    {
+      "id": "f8-9-17-17m9",
+      "labelKey": "i-17m9",
+      "bin": "f8-9-17",
+      "scale": 0.7
+    },
+    {
+      "id": "f5-9-14-5p9",
+      "labelKey": "i-5p9",
+      "bin": "f5-9-14",
+      "scale": 0.85
+    },
+    {
+      "id": "f5-9-14-9p5",
+      "labelKey": "i-9p5",
+      "bin": "f5-9-14",
+      "scale": 0.85
+    },
+    {
+      "id": "f5-9-14-14m5",
+      "labelKey": "i-14m5",
+      "bin": "f5-9-14",
+      "scale": 0.7
+    },
+    {
+      "id": "f5-9-14-14m9",
+      "labelKey": "i-14m9",
+      "bin": "f5-9-14",
+      "scale": 0.7
+    }
+  ]
+}

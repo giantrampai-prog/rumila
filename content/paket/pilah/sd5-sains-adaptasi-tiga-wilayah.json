@@ -1,0 +1,175 @@
+{
+  "id": "sd5-sains-adaptasi-tiga-wilayah",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.ADAPTASI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ciri Bertahan di Tiga Wilayah",
+      "instruksi": "Baca cirinya, lalu taruh di lingkungan tempat ciri itu paling menolong.",
+      "b-gurun": "panas dan kering (gurun)",
+      "b-dingin": "sangat dingin (kutub, bersalju)",
+      "b-basah": "basah (rawa, hutan hujan)",
+      "i-tikus": "tikus gurun: mendapat air dari biji yang dimakannya, jarang minum",
+      "i-kumbang": "kumbang gurun: menampung tetes embun pagi di punggungnya",
+      "i-lidahbuaya": "lidah buaya: daun tebal berlendir menyimpan air",
+      "i-ular": "ular gurun: bergerak menyamping agar sedikit menyentuh pasir panas",
+      "i-akar": "tumbuhan gurun: akar menyebar luas tepat di bawah permukaan untuk menangkap hujan",
+      "i-rubah": "rubah kutub: bulu putih tebal dan telinga kecil",
+      "i-walrus": "walrus: lapisan lemak sangat tebal di bawah kulit",
+      "i-penguin": "penguin kaisar: mengerami telur di atas kaki agar tak menyentuh es",
+      "i-beruang": "beruang kutub: telapak kaki berbulu agar hangat dan tidak tergelincir",
+      "i-rusa": "rusa kutub: kuku lebar seperti sepatu salju",
+      "i-eceng": "eceng gondok: tangkai daun menggelembung berisi udara sehingga mengapung",
+      "i-bebek": "bebek: kaki berselaput untuk berenang di rawa",
+      "i-katak": "katak: kulit tipis yang harus selalu lembap",
+      "i-banir": "pohon hutan hujan: akar papan besar menopang di tanah yang lembek"
+    },
+    "en": {
+      "judul": "Survival Traits in Three Places",
+      "instruksi": "Read the trait, then put it with the environment where it helps most.",
+      "b-gurun": "hot and dry (desert)",
+      "b-dingin": "very cold (polar, snowy)",
+      "b-basah": "wet (swamp, rainforest)",
+      "i-tikus": "desert rat: gets water from the seeds it eats, rarely drinks",
+      "i-kumbang": "desert beetle: collects morning dew drops on its back",
+      "i-lidahbuaya": "aloe: thick, gooey leaves that store water",
+      "i-ular": "desert snake: moves sideways so less of it touches the hot sand",
+      "i-akar": "desert plant: roots spread wide just under the surface to catch rain",
+      "i-rubah": "Arctic fox: thick white fur and small ears",
+      "i-walrus": "walrus: a very thick layer of fat under the skin",
+      "i-penguin": "emperor penguin: keeps its egg on its feet, off the ice",
+      "i-beruang": "polar bear: furry paws to stay warm and not slip",
+      "i-rusa": "reindeer: wide hooves like snowshoes",
+      "i-eceng": "water hyacinth: swollen, air-filled leaf stalks so it floats",
+      "i-bebek": "duck: webbed feet for swimming in the swamp",
+      "i-katak": "frog: thin skin that must always stay moist",
+      "i-banir": "rainforest tree: big buttress roots for support in soft ground"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kutub",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "gurun",
+      "labelKey": "b-gurun",
+      "emoji": "🏜️",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "dingin",
+      "labelKey": "b-dingin",
+      "emoji": "❄️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "basah",
+      "labelKey": "b-basah",
+      "emoji": "🌧️",
+      "color": "#c8e6c9"
+    }
+  ],
+  "items": [
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "gurun",
+      "emoji": "🐀"
+    },
+    {
+      "id": "kumbang",
+      "labelKey": "i-kumbang",
+      "bin": "gurun",
+      "emoji": "🪲"
+    },
+    {
+      "id": "lidahbuaya",
+      "labelKey": "i-lidahbuaya",
+      "bin": "gurun",
+      "emoji": "🪴"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "gurun",
+      "emoji": "🐍"
+    },
+    {
+      "id": "akar",
+      "labelKey": "i-akar",
+      "bin": "gurun",
+      "emoji": "🌵"
+    },
+    {
+      "id": "rubah",
+      "labelKey": "i-rubah",
+      "bin": "dingin",
+      "emoji": "🦊"
+    },
+    {
+      "id": "walrus",
+      "labelKey": "i-walrus",
+      "bin": "dingin",
+      "emoji": "🦭"
+    },
+    {
+      "id": "penguin",
+      "labelKey": "i-penguin",
+      "bin": "dingin",
+      "emoji": "🐧"
+    },
+    {
+      "id": "beruang",
+      "labelKey": "i-beruang",
+      "bin": "dingin",
+      "emoji": "🐻‍❄️"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "i-rusa",
+      "bin": "dingin",
+      "emoji": "🦌"
+    },
+    {
+      "id": "eceng",
+      "labelKey": "i-eceng",
+      "bin": "basah",
+      "emoji": "🪻"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "basah",
+      "emoji": "🦆"
+    },
+    {
+      "id": "katak",
+      "labelKey": "i-katak",
+      "bin": "basah",
+      "emoji": "🐸"
+    },
+    {
+      "id": "banir",
+      "labelKey": "i-banir",
+      "bin": "basah",
+      "emoji": "🌳"
+    }
+  ],
+  "pilihan": []
+}

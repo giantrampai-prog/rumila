@@ -1,0 +1,98 @@
+{
+  "id": "sd3-kode-turus-hewan-laut",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "KODE.SD3.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tabel Turus Hewan Laut",
+      "instruksi": "Hewan laut berenang lewat satu per satu. Sentuh barisnya di tabel tiap ada yang lewat, jangan sampai terlewat.",
+      "penyu": "penyu",
+      "gurita": "gurita",
+      "kepiting": "kepiting",
+      "lumba-lumba": "lumba-lumba",
+      "hiu": "hiu",
+      "buntal": "ikan buntal"
+    },
+    "en": {
+      "judul": "Sea Animal Tally Table",
+      "instruksi": "Sea animals swim past one at a time. Touch the row in the table for each one, and don't miss any.",
+      "penyu": "sea turtle",
+      "gurita": "octopus",
+      "kepiting": "crab",
+      "lumba-lumba": "dolphin",
+      "hiu": "shark",
+      "buntal": "pufferfish"
+    }
+  },
+  "knobs": {
+    "count": {
+      "min": 12,
+      "max": 20,
+      "default": 14,
+      "step": 2,
+      "keterangan": "jumlah data yang lewat dalam satu putaran"
+    },
+    "kinds": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah jenis (baris tabel)"
+    },
+    "gapMs": {
+      "min": 700,
+      "max": 1000,
+      "default": 1000,
+      "step": 100,
+      "keterangan": "jeda antardata (ms): 1000 → 700 makin cepat"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mode": "turus",
+  "items": [
+    {
+      "id": "penyu",
+      "labelKey": "penyu",
+      "role": "hewan",
+      "emoji": "🐢"
+    },
+    {
+      "id": "gurita",
+      "labelKey": "gurita",
+      "role": "hewan",
+      "emoji": "🐙"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "kepiting",
+      "role": "hewan",
+      "emoji": "🦀"
+    },
+    {
+      "id": "lumba-lumba",
+      "labelKey": "lumba-lumba",
+      "role": "hewan",
+      "emoji": "🐬"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "hiu",
+      "role": "hewan",
+      "emoji": "🦈"
+    },
+    {
+      "id": "buntal",
+      "labelKey": "buntal",
+      "role": "hewan",
+      "emoji": "🐡"
+    }
+  ]
+}

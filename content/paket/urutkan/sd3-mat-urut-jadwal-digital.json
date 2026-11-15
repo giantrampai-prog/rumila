@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-urut-jadwal-digital",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -10,111 +10,137 @@
   "locale": {
     "id": {
       "judul": "Jadwal Hari Ini",
-      "instruksi": "Bandingkan jamnya dulu, lalu menitnya. Susun dari kegiatan paling awal.",
-      "s-07t50": "07.50",
-      "s-08t10": "08.10",
-      "s-08t50": "08.50",
-      "s-11t10": "11.10",
-      "s-11t15": "11.15",
+      "instruksi": "Bandingkan jamnya dulu, lalu menitnya. Susun kegiatan dari yang paling awal.",
       "j-jadwal-pagi": "Jadwal pagi",
-      "s-12t30": "12.30",
-      "s-01t05": "01.05",
-      "s-01t30": "01.30",
-      "s-04t15": "04.15",
-      "s-05t20": "05.20",
       "j-jadwal-siang": "Jadwal siang",
-      "s-02t05": "02.05",
-      "s-02t20": "02.20",
-      "s-02t45": "02.45",
-      "s-03t35": "03.35",
-      "s-06t30": "06.30",
       "j-jadwal-sore": "Jadwal sore",
-      "s-08t05": "08.05",
-      "s-08t30": "08.30",
-      "s-08t45": "08.45",
-      "s-09t50": "09.50",
-      "s-10t45": "10.45",
-      "s-02t55": "02.55",
-      "s-03t40": "03.40",
-      "s-04t50": "04.50",
-      "s-02t10": "02.10",
-      "s-02t50": "02.50",
-      "s-03t15": "03.15",
-      "s-05t10": "05.10",
-      "s-06t35": "06.35",
-      "s-07t10": "07.10",
-      "s-07t45": "07.45",
-      "s-08t35": "08.35",
-      "s-01t10": "01.10",
-      "s-01t15": "01.15",
-      "s-01t45": "01.45",
-      "s-01t50": "01.50",
-      "s-05t25": "05.25",
-      "s-01t55": "01.55",
-      "s-04t30": "04.30",
-      "s-06t50": "06.50",
-      "s-07t35": "07.35",
-      "s-09t05": "09.05",
-      "s-09t30": "09.30",
-      "s-11t20": "11.20",
-      "s-11t35": "11.35",
-      "s-02t25": "02.25",
-      "s-05t00": "05.00",
-      "s-05t55": "05.55"
+      "k-jadwal-1-07t50": "07.50 upacara",
+      "k-jadwal-1-08t10": "08.10 pelajaran matematika",
+      "k-jadwal-1-08t50": "08.50 olahraga",
+      "k-jadwal-1-11t10": "11.10 makan bekal",
+      "k-jadwal-1-11t15": "11.15 pelajaran bahasa",
+      "k-jadwal-2-12t30": "12.30 makan siang",
+      "k-jadwal-2-13t05": "13.05 pulang sekolah",
+      "k-jadwal-2-13t30": "13.30 tidur siang",
+      "k-jadwal-2-16t15": "16.15 bermain sepeda",
+      "k-jadwal-2-17t20": "17.20 mandi sore",
+      "k-jadwal-3-14t05": "14.05 mengerjakan PR",
+      "k-jadwal-3-14t20": "14.20 les musik",
+      "k-jadwal-3-14t45": "14.45 membaca komik",
+      "k-jadwal-3-15t35": "15.35 salat asar",
+      "k-jadwal-3-18t30": "18.30 makan malam",
+      "k-jadwal-4-08t05": "08.05 pelajaran matematika",
+      "k-jadwal-4-08t30": "08.30 olahraga",
+      "k-jadwal-4-08t45": "08.45 membaca buku",
+      "k-jadwal-4-09t50": "09.50 istirahat",
+      "k-jadwal-4-10t45": "10.45 pelajaran sains",
+      "k-jadwal-5-14t05": "14.05 mengerjakan PR",
+      "k-jadwal-5-14t45": "14.45 les musik",
+      "k-jadwal-5-14t55": "14.55 membaca komik",
+      "k-jadwal-5-15t40": "15.40 salat asar",
+      "k-jadwal-5-16t50": "16.50 bermain sepeda",
+      "k-jadwal-6-14t10": "14.10 mengerjakan PR",
+      "k-jadwal-6-14t50": "14.50 les musik",
+      "k-jadwal-6-15t15": "15.15 salat asar",
+      "k-jadwal-6-17t10": "17.10 mandi sore",
+      "k-jadwal-6-18t35": "18.35 makan malam",
+      "k-jadwal-7-07t10": "07.10 upacara",
+      "k-jadwal-7-07t45": "07.45 masuk kelas",
+      "k-jadwal-7-08t30": "08.30 pelajaran matematika",
+      "k-jadwal-7-08t35": "08.35 olahraga",
+      "k-jadwal-7-08t45": "08.45 membaca buku",
+      "k-jadwal-8-13t10": "13.10 pulang sekolah",
+      "k-jadwal-8-13t15": "13.15 tidur siang",
+      "k-jadwal-8-13t45": "13.45 makan siang",
+      "k-jadwal-8-13t50": "13.50 salat zuhur",
+      "k-jadwal-8-17t25": "17.25 mandi sore",
+      "k-jadwal-9-13t55": "13.55 pulang sekolah",
+      "k-jadwal-9-14t05": "14.05 mengerjakan PR",
+      "k-jadwal-9-14t45": "14.45 les musik",
+      "k-jadwal-9-16t30": "16.30 bermain sepeda",
+      "k-jadwal-9-18t50": "18.50 makan malam",
+      "k-jadwal-10-07t35": "07.35 upacara",
+      "k-jadwal-10-09t05": "09.05 istirahat",
+      "k-jadwal-10-09t30": "09.30 jajan di kantin",
+      "k-jadwal-10-11t20": "11.20 makan bekal",
+      "k-jadwal-10-11t35": "11.35 pelajaran bahasa",
+      "k-jadwal-11-13t10": "13.10 pulang sekolah",
+      "k-jadwal-11-13t50": "13.50 tidur siang",
+      "k-jadwal-11-13t55": "13.55 makan siang",
+      "k-jadwal-11-14t25": "14.25 mengerjakan PR",
+      "k-jadwal-11-17t25": "17.25 mandi sore",
+      "k-jadwal-12-14t05": "14.05 mengerjakan PR",
+      "k-jadwal-12-14t50": "14.50 les musik",
+      "k-jadwal-12-16t15": "16.15 bermain sepeda",
+      "k-jadwal-12-17t00": "17.00 mandi sore",
+      "k-jadwal-12-17t55": "17.55 membantu ibu"
     },
     "en": {
       "judul": "Today's Timetable",
-      "instruksi": "Compare the hours first, then the minutes. Order from the earliest activity.",
-      "s-07t50": "07:50",
-      "s-08t10": "08:10",
-      "s-08t50": "08:50",
-      "s-11t10": "11:10",
-      "s-11t15": "11:15",
+      "instruksi": "Compare the hours first, then the minutes. Put the activities in order from the earliest.",
       "j-jadwal-pagi": "Morning timetable",
-      "s-12t30": "12:30",
-      "s-01t05": "01:05",
-      "s-01t30": "01:30",
-      "s-04t15": "04:15",
-      "s-05t20": "05:20",
       "j-jadwal-siang": "Afternoon timetable",
-      "s-02t05": "02:05",
-      "s-02t20": "02:20",
-      "s-02t45": "02:45",
-      "s-03t35": "03:35",
-      "s-06t30": "06:30",
       "j-jadwal-sore": "Late-afternoon timetable",
-      "s-08t05": "08:05",
-      "s-08t30": "08:30",
-      "s-08t45": "08:45",
-      "s-09t50": "09:50",
-      "s-10t45": "10:45",
-      "s-02t55": "02:55",
-      "s-03t40": "03:40",
-      "s-04t50": "04:50",
-      "s-02t10": "02:10",
-      "s-02t50": "02:50",
-      "s-03t15": "03:15",
-      "s-05t10": "05:10",
-      "s-06t35": "06:35",
-      "s-07t10": "07:10",
-      "s-07t45": "07:45",
-      "s-08t35": "08:35",
-      "s-01t10": "01:10",
-      "s-01t15": "01:15",
-      "s-01t45": "01:45",
-      "s-01t50": "01:50",
-      "s-05t25": "05:25",
-      "s-01t55": "01:55",
-      "s-04t30": "04:30",
-      "s-06t50": "06:50",
-      "s-07t35": "07:35",
-      "s-09t05": "09:05",
-      "s-09t30": "09:30",
-      "s-11t20": "11:20",
-      "s-11t35": "11:35",
-      "s-02t25": "02:25",
-      "s-05t00": "05:00",
-      "s-05t55": "05:55"
+      "k-jadwal-1-07t50": "07.50 flag ceremony",
+      "k-jadwal-1-08t10": "08.10 maths lesson",
+      "k-jadwal-1-08t50": "08.50 PE lesson",
+      "k-jadwal-1-11t10": "11.10 eat packed lunch",
+      "k-jadwal-1-11t15": "11.15 language lesson",
+      "k-jadwal-2-12t30": "12.30 lunch",
+      "k-jadwal-2-13t05": "13.05 go home from school",
+      "k-jadwal-2-13t30": "13.30 afternoon nap",
+      "k-jadwal-2-16t15": "16.15 ride a bike",
+      "k-jadwal-2-17t20": "17.20 evening bath",
+      "k-jadwal-3-14t05": "14.05 do homework",
+      "k-jadwal-3-14t20": "14.20 music lesson",
+      "k-jadwal-3-14t45": "14.45 read comics",
+      "k-jadwal-3-15t35": "15.35 afternoon prayer",
+      "k-jadwal-3-18t30": "18.30 dinner",
+      "k-jadwal-4-08t05": "08.05 maths lesson",
+      "k-jadwal-4-08t30": "08.30 PE lesson",
+      "k-jadwal-4-08t45": "08.45 reading time",
+      "k-jadwal-4-09t50": "09.50 break time",
+      "k-jadwal-4-10t45": "10.45 science lesson",
+      "k-jadwal-5-14t05": "14.05 do homework",
+      "k-jadwal-5-14t45": "14.45 music lesson",
+      "k-jadwal-5-14t55": "14.55 read comics",
+      "k-jadwal-5-15t40": "15.40 afternoon prayer",
+      "k-jadwal-5-16t50": "16.50 ride a bike",
+      "k-jadwal-6-14t10": "14.10 do homework",
+      "k-jadwal-6-14t50": "14.50 music lesson",
+      "k-jadwal-6-15t15": "15.15 afternoon prayer",
+      "k-jadwal-6-17t10": "17.10 evening bath",
+      "k-jadwal-6-18t35": "18.35 dinner",
+      "k-jadwal-7-07t10": "07.10 flag ceremony",
+      "k-jadwal-7-07t45": "07.45 class starts",
+      "k-jadwal-7-08t30": "08.30 maths lesson",
+      "k-jadwal-7-08t35": "08.35 PE lesson",
+      "k-jadwal-7-08t45": "08.45 reading time",
+      "k-jadwal-8-13t10": "13.10 go home from school",
+      "k-jadwal-8-13t15": "13.15 afternoon nap",
+      "k-jadwal-8-13t45": "13.45 lunch",
+      "k-jadwal-8-13t50": "13.50 midday prayer",
+      "k-jadwal-8-17t25": "17.25 evening bath",
+      "k-jadwal-9-13t55": "13.55 go home from school",
+      "k-jadwal-9-14t05": "14.05 do homework",
+      "k-jadwal-9-14t45": "14.45 music lesson",
+      "k-jadwal-9-16t30": "16.30 ride a bike",
+      "k-jadwal-9-18t50": "18.50 dinner",
+      "k-jadwal-10-07t35": "07.35 flag ceremony",
+      "k-jadwal-10-09t05": "09.05 break time",
+      "k-jadwal-10-09t30": "09.30 snack at the canteen",
+      "k-jadwal-10-11t20": "11.20 eat packed lunch",
+      "k-jadwal-10-11t35": "11.35 language lesson",
+      "k-jadwal-11-13t10": "13.10 go home from school",
+      "k-jadwal-11-13t50": "13.50 afternoon nap",
+      "k-jadwal-11-13t55": "13.55 lunch",
+      "k-jadwal-11-14t25": "14.25 do homework",
+      "k-jadwal-11-17t25": "17.25 evening bath",
+      "k-jadwal-12-14t05": "14.05 do homework",
+      "k-jadwal-12-14t50": "14.50 music lesson",
+      "k-jadwal-12-16t15": "16.15 ride a bike",
+      "k-jadwal-12-17t00": "17.00 evening bath",
+      "k-jadwal-12-17t55": "17.55 help mum"
     }
   },
   "knobs": {
@@ -138,27 +164,27 @@
       "steps": [
         {
           "id": "07t50",
-          "labelKey": "s-07t50",
+          "labelKey": "k-jadwal-1-07t50",
           "scale": 0.6
         },
         {
           "id": "08t10",
-          "labelKey": "s-08t10",
+          "labelKey": "k-jadwal-1-08t10",
           "scale": 0.6
         },
         {
           "id": "08t50",
-          "labelKey": "s-08t50",
+          "labelKey": "k-jadwal-1-08t50",
           "scale": 0.6
         },
         {
           "id": "11t10",
-          "labelKey": "s-11t10",
+          "labelKey": "k-jadwal-1-11t10",
           "scale": 0.6
         },
         {
           "id": "11t15",
-          "labelKey": "s-11t15",
+          "labelKey": "k-jadwal-1-11t15",
           "scale": 0.6
         }
       ]
@@ -169,27 +195,27 @@
       "steps": [
         {
           "id": "12t30",
-          "labelKey": "s-12t30",
+          "labelKey": "k-jadwal-2-12t30",
           "scale": 0.6
         },
         {
-          "id": "01t05",
-          "labelKey": "s-01t05",
+          "id": "13t05",
+          "labelKey": "k-jadwal-2-13t05",
           "scale": 0.6
         },
         {
-          "id": "01t30",
-          "labelKey": "s-01t30",
+          "id": "13t30",
+          "labelKey": "k-jadwal-2-13t30",
           "scale": 0.6
         },
         {
-          "id": "04t15",
-          "labelKey": "s-04t15",
+          "id": "16t15",
+          "labelKey": "k-jadwal-2-16t15",
           "scale": 0.6
         },
         {
-          "id": "05t20",
-          "labelKey": "s-05t20",
+          "id": "17t20",
+          "labelKey": "k-jadwal-2-17t20",
           "scale": 0.6
         }
       ]
@@ -199,28 +225,28 @@
       "titleKey": "j-jadwal-sore",
       "steps": [
         {
-          "id": "02t05",
-          "labelKey": "s-02t05",
+          "id": "14t05",
+          "labelKey": "k-jadwal-3-14t05",
           "scale": 0.6
         },
         {
-          "id": "02t20",
-          "labelKey": "s-02t20",
+          "id": "14t20",
+          "labelKey": "k-jadwal-3-14t20",
           "scale": 0.6
         },
         {
-          "id": "02t45",
-          "labelKey": "s-02t45",
+          "id": "14t45",
+          "labelKey": "k-jadwal-3-14t45",
           "scale": 0.6
         },
         {
-          "id": "03t35",
-          "labelKey": "s-03t35",
+          "id": "15t35",
+          "labelKey": "k-jadwal-3-15t35",
           "scale": 0.6
         },
         {
-          "id": "06t30",
-          "labelKey": "s-06t30",
+          "id": "18t30",
+          "labelKey": "k-jadwal-3-18t30",
           "scale": 0.6
         }
       ]
@@ -231,27 +257,27 @@
       "steps": [
         {
           "id": "08t05",
-          "labelKey": "s-08t05",
+          "labelKey": "k-jadwal-4-08t05",
           "scale": 0.6
         },
         {
           "id": "08t30",
-          "labelKey": "s-08t30",
+          "labelKey": "k-jadwal-4-08t30",
           "scale": 0.6
         },
         {
           "id": "08t45",
-          "labelKey": "s-08t45",
+          "labelKey": "k-jadwal-4-08t45",
           "scale": 0.6
         },
         {
           "id": "09t50",
-          "labelKey": "s-09t50",
+          "labelKey": "k-jadwal-4-09t50",
           "scale": 0.6
         },
         {
           "id": "10t45",
-          "labelKey": "s-10t45",
+          "labelKey": "k-jadwal-4-10t45",
           "scale": 0.6
         }
       ]
@@ -261,28 +287,28 @@
       "titleKey": "j-jadwal-siang",
       "steps": [
         {
-          "id": "02t05",
-          "labelKey": "s-02t05",
+          "id": "14t05",
+          "labelKey": "k-jadwal-5-14t05",
           "scale": 0.6
         },
         {
-          "id": "02t45",
-          "labelKey": "s-02t45",
+          "id": "14t45",
+          "labelKey": "k-jadwal-5-14t45",
           "scale": 0.6
         },
         {
-          "id": "02t55",
-          "labelKey": "s-02t55",
+          "id": "14t55",
+          "labelKey": "k-jadwal-5-14t55",
           "scale": 0.6
         },
         {
-          "id": "03t40",
-          "labelKey": "s-03t40",
+          "id": "15t40",
+          "labelKey": "k-jadwal-5-15t40",
           "scale": 0.6
         },
         {
-          "id": "04t50",
-          "labelKey": "s-04t50",
+          "id": "16t50",
+          "labelKey": "k-jadwal-5-16t50",
           "scale": 0.6
         }
       ]
@@ -292,28 +318,28 @@
       "titleKey": "j-jadwal-sore",
       "steps": [
         {
-          "id": "02t10",
-          "labelKey": "s-02t10",
+          "id": "14t10",
+          "labelKey": "k-jadwal-6-14t10",
           "scale": 0.6
         },
         {
-          "id": "02t50",
-          "labelKey": "s-02t50",
+          "id": "14t50",
+          "labelKey": "k-jadwal-6-14t50",
           "scale": 0.6
         },
         {
-          "id": "03t15",
-          "labelKey": "s-03t15",
+          "id": "15t15",
+          "labelKey": "k-jadwal-6-15t15",
           "scale": 0.6
         },
         {
-          "id": "05t10",
-          "labelKey": "s-05t10",
+          "id": "17t10",
+          "labelKey": "k-jadwal-6-17t10",
           "scale": 0.6
         },
         {
-          "id": "06t35",
-          "labelKey": "s-06t35",
+          "id": "18t35",
+          "labelKey": "k-jadwal-6-18t35",
           "scale": 0.6
         }
       ]
@@ -324,27 +350,27 @@
       "steps": [
         {
           "id": "07t10",
-          "labelKey": "s-07t10",
+          "labelKey": "k-jadwal-7-07t10",
           "scale": 0.6
         },
         {
           "id": "07t45",
-          "labelKey": "s-07t45",
+          "labelKey": "k-jadwal-7-07t45",
           "scale": 0.6
         },
         {
           "id": "08t30",
-          "labelKey": "s-08t30",
+          "labelKey": "k-jadwal-7-08t30",
           "scale": 0.6
         },
         {
           "id": "08t35",
-          "labelKey": "s-08t35",
+          "labelKey": "k-jadwal-7-08t35",
           "scale": 0.6
         },
         {
           "id": "08t45",
-          "labelKey": "s-08t45",
+          "labelKey": "k-jadwal-7-08t45",
           "scale": 0.6
         }
       ]
@@ -354,28 +380,28 @@
       "titleKey": "j-jadwal-siang",
       "steps": [
         {
-          "id": "01t10",
-          "labelKey": "s-01t10",
+          "id": "13t10",
+          "labelKey": "k-jadwal-8-13t10",
           "scale": 0.6
         },
         {
-          "id": "01t15",
-          "labelKey": "s-01t15",
+          "id": "13t15",
+          "labelKey": "k-jadwal-8-13t15",
           "scale": 0.6
         },
         {
-          "id": "01t45",
-          "labelKey": "s-01t45",
+          "id": "13t45",
+          "labelKey": "k-jadwal-8-13t45",
           "scale": 0.6
         },
         {
-          "id": "01t50",
-          "labelKey": "s-01t50",
+          "id": "13t50",
+          "labelKey": "k-jadwal-8-13t50",
           "scale": 0.6
         },
         {
-          "id": "05t25",
-          "labelKey": "s-05t25",
+          "id": "17t25",
+          "labelKey": "k-jadwal-8-17t25",
           "scale": 0.6
         }
       ]
@@ -385,28 +411,28 @@
       "titleKey": "j-jadwal-sore",
       "steps": [
         {
-          "id": "01t55",
-          "labelKey": "s-01t55",
+          "id": "13t55",
+          "labelKey": "k-jadwal-9-13t55",
           "scale": 0.6
         },
         {
-          "id": "02t05",
-          "labelKey": "s-02t05",
+          "id": "14t05",
+          "labelKey": "k-jadwal-9-14t05",
           "scale": 0.6
         },
         {
-          "id": "02t45",
-          "labelKey": "s-02t45",
+          "id": "14t45",
+          "labelKey": "k-jadwal-9-14t45",
           "scale": 0.6
         },
         {
-          "id": "04t30",
-          "labelKey": "s-04t30",
+          "id": "16t30",
+          "labelKey": "k-jadwal-9-16t30",
           "scale": 0.6
         },
         {
-          "id": "06t50",
-          "labelKey": "s-06t50",
+          "id": "18t50",
+          "labelKey": "k-jadwal-9-18t50",
           "scale": 0.6
         }
       ]
@@ -417,27 +443,27 @@
       "steps": [
         {
           "id": "07t35",
-          "labelKey": "s-07t35",
+          "labelKey": "k-jadwal-10-07t35",
           "scale": 0.6
         },
         {
           "id": "09t05",
-          "labelKey": "s-09t05",
+          "labelKey": "k-jadwal-10-09t05",
           "scale": 0.6
         },
         {
           "id": "09t30",
-          "labelKey": "s-09t30",
+          "labelKey": "k-jadwal-10-09t30",
           "scale": 0.6
         },
         {
           "id": "11t20",
-          "labelKey": "s-11t20",
+          "labelKey": "k-jadwal-10-11t20",
           "scale": 0.6
         },
         {
           "id": "11t35",
-          "labelKey": "s-11t35",
+          "labelKey": "k-jadwal-10-11t35",
           "scale": 0.6
         }
       ]
@@ -447,28 +473,28 @@
       "titleKey": "j-jadwal-siang",
       "steps": [
         {
-          "id": "01t10",
-          "labelKey": "s-01t10",
+          "id": "13t10",
+          "labelKey": "k-jadwal-11-13t10",
           "scale": 0.6
         },
         {
-          "id": "01t50",
-          "labelKey": "s-01t50",
+          "id": "13t50",
+          "labelKey": "k-jadwal-11-13t50",
           "scale": 0.6
         },
         {
-          "id": "01t55",
-          "labelKey": "s-01t55",
+          "id": "13t55",
+          "labelKey": "k-jadwal-11-13t55",
           "scale": 0.6
         },
         {
-          "id": "02t25",
-          "labelKey": "s-02t25",
+          "id": "14t25",
+          "labelKey": "k-jadwal-11-14t25",
           "scale": 0.6
         },
         {
-          "id": "05t25",
-          "labelKey": "s-05t25",
+          "id": "17t25",
+          "labelKey": "k-jadwal-11-17t25",
           "scale": 0.6
         }
       ]
@@ -478,28 +504,28 @@
       "titleKey": "j-jadwal-sore",
       "steps": [
         {
-          "id": "02t05",
-          "labelKey": "s-02t05",
+          "id": "14t05",
+          "labelKey": "k-jadwal-12-14t05",
           "scale": 0.6
         },
         {
-          "id": "02t50",
-          "labelKey": "s-02t50",
+          "id": "14t50",
+          "labelKey": "k-jadwal-12-14t50",
           "scale": 0.6
         },
         {
-          "id": "04t15",
-          "labelKey": "s-04t15",
+          "id": "16t15",
+          "labelKey": "k-jadwal-12-16t15",
           "scale": 0.6
         },
         {
-          "id": "05t00",
-          "labelKey": "s-05t00",
+          "id": "17t00",
+          "labelKey": "k-jadwal-12-17t00",
           "scale": 0.6
         },
         {
-          "id": "05t55",
-          "labelKey": "s-05t55",
+          "id": "17t55",
+          "labelKey": "k-jadwal-12-17t55",
           "scale": 0.6
         }
       ]

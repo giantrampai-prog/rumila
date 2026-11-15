@@ -1,0 +1,247 @@
+{
+  "id": "sd4-sains-otot-tarik-ulur",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.RANGKA-OTOT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Otot Tarik-Ulur",
+      "instruksi": "Dengarkan gerakannya. Tunjuk otot yang mengerut, atau katakan apa yang terjadi pada pasangannya.",
+      "b-pilihan": "pilihan",
+      "i-biseps": "otot depan lengan atas (biseps)",
+      "i-trisep": "otot belakang lengan atas (trisep)",
+      "i-depanpaha": "otot depan paha",
+      "i-belakangpaha": "otot belakang paha",
+      "i-mengerut": "mengerut (memendek)",
+      "i-mengendur": "mengendur (memanjang)",
+      "i-ditekuk": "ditekuk",
+      "i-diluruskan": "diluruskan",
+      "p-ember": "Siku ditekuk untuk mengangkat ember dari lantai. Otot mana yang mengerut?",
+      "p-tambang": "Tali tambang ditarik ke arah dada dengan siku ditekuk. Otot mana yang mengerut?",
+      "p-lempar": "Saat melempar bola ke depan, siku diluruskan dengan kuat. Otot mana yang mengerut?",
+      "p-pushup": "Saat push-up, badan didorong naik sampai siku lurus. Otot mana yang mengerut?",
+      "p-sisir": "Siku ditekuk untuk menyisir rambut. Otot trisep…",
+      "p-rak": "Siku diluruskan untuk meraih buku di rak tinggi. Otot biseps…",
+      "p-tendang": "Lutut diluruskan untuk menendang bola. Otot depan paha…",
+      "p-ayun": "Lutut diluruskan untuk menendang bola. Otot belakang paha…",
+      "p-tumit": "Lutut ditekuk ke belakang sampai tumit menyentuh bokong. Otot mana yang mengerut?",
+      "p-bangkit": "Dari jongkok, lutut diluruskan sampai berdiri tegak. Otot mana yang mengerut?",
+      "p-tekuklutut": "Lutut ditekuk ke belakang sampai tumit menyentuh bokong. Otot depan paha…",
+      "p-trisepkerut": "Otot trisep mengerut dan biseps mengendur. Lengan sedang…",
+      "p-bisepkerut": "Otot biseps mengerut dan trisep mengendur. Lengan sedang…"
+    },
+    "en": {
+      "judul": "Muscles Pull and Relax",
+      "instruksi": "Listen to the movement. Point to the muscle that contracts, or say what happens to its partner.",
+      "b-pilihan": "choices",
+      "i-biseps": "front upper-arm muscle (biceps)",
+      "i-trisep": "back upper-arm muscle (triceps)",
+      "i-depanpaha": "front thigh muscle",
+      "i-belakangpaha": "back thigh muscle",
+      "i-mengerut": "contracts (gets shorter)",
+      "i-mengendur": "relaxes (gets longer)",
+      "i-ditekuk": "bending",
+      "i-diluruskan": "straightening",
+      "p-ember": "The elbow bends to lift a bucket off the floor. Which muscle contracts?",
+      "p-tambang": "A tug-of-war rope is pulled towards the chest with the elbows bending. Which muscle contracts?",
+      "p-lempar": "When throwing a ball forward, the elbow straightens hard. Which muscle contracts?",
+      "p-pushup": "In a push-up, the body is pushed up until the elbows are straight. Which muscle contracts?",
+      "p-sisir": "The elbow bends to comb your hair. The triceps…",
+      "p-rak": "The elbow straightens to reach a book on a high shelf. The biceps…",
+      "p-tendang": "The knee straightens to kick a ball. The front thigh muscle…",
+      "p-ayun": "The knee straightens to kick a ball. The back thigh muscle…",
+      "p-tumit": "The knee bends backwards until the heel touches the bottom. Which muscle contracts?",
+      "p-bangkit": "From a squat, the knees straighten until you stand up tall. Which muscle contracts?",
+      "p-tekuklutut": "The knee bends backwards until the heel touches the bottom. The front thigh muscle…",
+      "p-trisepkerut": "The triceps contracts and the biceps relaxes. The arm is…",
+      "p-bisepkerut": "The biceps contracts and the triceps relaxes. The arm is…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "biseps",
+      "labelKey": "i-biseps",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "trisep",
+      "labelKey": "i-trisep",
+      "bin": "pilihan",
+      "emoji": "💪",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "depanpaha",
+      "labelKey": "i-depanpaha",
+      "bin": "pilihan",
+      "emoji": "🦵"
+    },
+    {
+      "id": "belakangpaha",
+      "labelKey": "i-belakangpaha",
+      "bin": "pilihan",
+      "emoji": "🦵",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "mengerut",
+      "labelKey": "i-mengerut",
+      "bin": "pilihan",
+      "emoji": "➖"
+    },
+    {
+      "id": "mengendur",
+      "labelKey": "i-mengendur",
+      "bin": "pilihan",
+      "emoji": "➕"
+    },
+    {
+      "id": "ditekuk",
+      "labelKey": "i-ditekuk",
+      "bin": "pilihan",
+      "emoji": "↩️"
+    },
+    {
+      "id": "diluruskan",
+      "labelKey": "i-diluruskan",
+      "bin": "pilihan",
+      "emoji": "➡️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "ember",
+      "promptKey": "p-ember",
+      "choices": [
+        "biseps",
+        "trisep"
+      ],
+      "correct": "biseps"
+    },
+    {
+      "id": "tambang",
+      "promptKey": "p-tambang",
+      "choices": [
+        "biseps",
+        "trisep"
+      ],
+      "correct": "biseps"
+    },
+    {
+      "id": "lempar",
+      "promptKey": "p-lempar",
+      "choices": [
+        "biseps",
+        "trisep"
+      ],
+      "correct": "trisep"
+    },
+    {
+      "id": "pushup",
+      "promptKey": "p-pushup",
+      "choices": [
+        "biseps",
+        "trisep"
+      ],
+      "correct": "trisep"
+    },
+    {
+      "id": "sisir",
+      "promptKey": "p-sisir",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "rak",
+      "promptKey": "p-rak",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "tendang",
+      "promptKey": "p-tendang",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengerut"
+    },
+    {
+      "id": "ayun",
+      "promptKey": "p-ayun",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "tumit",
+      "promptKey": "p-tumit",
+      "choices": [
+        "depanpaha",
+        "belakangpaha"
+      ],
+      "correct": "belakangpaha"
+    },
+    {
+      "id": "bangkit",
+      "promptKey": "p-bangkit",
+      "choices": [
+        "depanpaha",
+        "belakangpaha"
+      ],
+      "correct": "depanpaha"
+    },
+    {
+      "id": "tekuklutut",
+      "promptKey": "p-tekuklutut",
+      "choices": [
+        "mengerut",
+        "mengendur"
+      ],
+      "correct": "mengendur"
+    },
+    {
+      "id": "trisepkerut",
+      "promptKey": "p-trisepkerut",
+      "choices": [
+        "ditekuk",
+        "diluruskan"
+      ],
+      "correct": "diluruskan"
+    },
+    {
+      "id": "bisepkerut",
+      "promptKey": "p-bisepkerut",
+      "choices": [
+        "ditekuk",
+        "diluruskan"
+      ],
+      "correct": "ditekuk"
+    }
+  ]
+}

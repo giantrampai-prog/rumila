@@ -1,0 +1,167 @@
+{
+  "id": "sd6-sains-uji-tanah-halaman",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.TANAH.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Penyelidik Tanah Halaman",
+      "instruksi": "Baca hasil pengamatan tanahnya, lalu pilah: tanah liat, tanah berpasir, atau tanah humus.",
+      "b-liat": "tanah liat",
+      "b-pasir": "tanah berpasir",
+      "b-humus": "tanah humus",
+      "i-pita": "basah, digulung bisa menjadi pita panjang tanpa putus",
+      "i-licin": "permukaannya licin mengkilap saat digosok basah",
+      "i-sepatu": "menempel tebal di sepatu saat hujan",
+      "i-bongkah": "bongkahan keringnya keras seperti batu",
+      "i-bata": "dipakai sebagai bahan batu bata merah",
+      "i-derak": "terasa berderak kasar saat digosok di telapak tangan",
+      "i-lup": "butirnya terlihat jelas satu per satu dengan kaca pembesar",
+      "i-cepatkering": "pot cepat kering lagi setelah disiram",
+      "i-tidaklengket": "tidak menempel di tangan saat kering",
+      "i-gembur": "gembur dan lembut seperti remah kue",
+      "i-daunbusuk": "terbentuk dari daun-daun membusuk di lantai hutan",
+      "i-jamur": "ada jamur kecil dan banyak serangga tanah",
+      "i-hitam": "hitam kecokelatan dan berbau segar seperti daun basah"
+    },
+    "en": {
+      "judul": "Backyard Soil Detective",
+      "instruksi": "Read what was observed about the soil, then sort it: clay soil, sandy soil or humus-rich soil.",
+      "b-liat": "clay soil",
+      "b-pasir": "sandy soil",
+      "b-humus": "humus-rich soil",
+      "i-pita": "when wet, it rolls into a long ribbon without breaking",
+      "i-licin": "it turns smooth and shiny when rubbed wet",
+      "i-sepatu": "it sticks thickly to your shoes when it rains",
+      "i-bongkah": "dry lumps are hard as rock",
+      "i-bata": "used to make red bricks",
+      "i-derak": "feels gritty and crunchy when rubbed in your palm",
+      "i-lup": "each grain is clearly seen with a magnifying glass",
+      "i-cepatkering": "the pot dries out again soon after watering",
+      "i-tidaklengket": "it does not stick to your hands when dry",
+      "i-gembur": "loose and soft like cake crumbs",
+      "i-daunbusuk": "formed from rotting leaves on the forest floor",
+      "i-jamur": "there are tiny mushrooms and lots of soil bugs",
+      "i-hitam": "dark brown-black and smells fresh like wet leaves"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "liat",
+      "labelKey": "b-liat",
+      "emoji": "🏺",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "b-pasir",
+      "emoji": "🏖️",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "humus",
+      "labelKey": "b-humus",
+      "emoji": "🍂",
+      "color": "#bcaaa4"
+    }
+  ],
+  "items": [
+    {
+      "id": "pita",
+      "labelKey": "i-pita",
+      "bin": "liat",
+      "emoji": "🎗️"
+    },
+    {
+      "id": "licin",
+      "labelKey": "i-licin",
+      "bin": "liat",
+      "emoji": "✨"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "i-sepatu",
+      "bin": "liat",
+      "emoji": "👟"
+    },
+    {
+      "id": "bongkah",
+      "labelKey": "i-bongkah",
+      "bin": "liat",
+      "emoji": "🧱"
+    },
+    {
+      "id": "bata",
+      "labelKey": "i-bata",
+      "bin": "liat",
+      "emoji": "🏗️"
+    },
+    {
+      "id": "derak",
+      "labelKey": "i-derak",
+      "bin": "pasir",
+      "emoji": "✋"
+    },
+    {
+      "id": "lup",
+      "labelKey": "i-lup",
+      "bin": "pasir",
+      "emoji": "🔍"
+    },
+    {
+      "id": "cepatkering",
+      "labelKey": "i-cepatkering",
+      "bin": "pasir",
+      "emoji": "🪴"
+    },
+    {
+      "id": "tidaklengket",
+      "labelKey": "i-tidaklengket",
+      "bin": "pasir",
+      "emoji": "🙌"
+    },
+    {
+      "id": "gembur",
+      "labelKey": "i-gembur",
+      "bin": "humus",
+      "emoji": "🍪"
+    },
+    {
+      "id": "daunbusuk",
+      "labelKey": "i-daunbusuk",
+      "bin": "humus",
+      "emoji": "🍁"
+    },
+    {
+      "id": "jamur",
+      "labelKey": "i-jamur",
+      "bin": "humus",
+      "emoji": "🍄"
+    },
+    {
+      "id": "hitam",
+      "labelKey": "i-hitam",
+      "bin": "humus",
+      "emoji": "🟤"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,233 @@
+{
+  "id": "sd1-mat-pasangan-ternak-20",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BILANGAN-100.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hewan Berpasangan di Kandang",
+      "instruksi": "Pasangkan hewan dua-dua. Kalau semua dapat pasangan, jumlahnya genap. Kalau ada satu yang sendirian, ganjil.",
+      "b-genap": "genap",
+      "b-ganjil": "ganjil",
+      "i-2-anak-ayam": "2 anak ayam",
+      "i-5-anak-ayam": "5 anak ayam",
+      "i-8-anak-ayam": "8 anak ayam",
+      "i-11-anak-ayam": "11 anak ayam",
+      "i-14-anak-ayam": "14 anak ayam",
+      "i-17-anak-ayam": "17 anak ayam",
+      "i-20-anak-ayam": "20 anak ayam",
+      "i-3-domba": "3 domba",
+      "i-6-domba": "6 domba",
+      "i-9-domba": "9 domba",
+      "i-12-domba": "12 domba",
+      "i-15-domba": "15 domba",
+      "i-18-domba": "18 domba",
+      "i-1-bebek": "1 bebek",
+      "i-4-bebek": "4 bebek",
+      "i-7-bebek": "7 bebek",
+      "i-10-bebek": "10 bebek",
+      "i-13-bebek": "13 bebek",
+      "i-16-bebek": "16 bebek",
+      "i-19-bebek": "19 bebek"
+    },
+    "en": {
+      "judul": "Pairing Up in the Barn",
+      "instruksi": "Pair the animals up in twos. If every animal has a partner, the number is even. If one is left alone, it is odd.",
+      "b-genap": "even",
+      "b-ganjil": "odd",
+      "i-2-anak-ayam": "2 chicks",
+      "i-5-anak-ayam": "5 chicks",
+      "i-8-anak-ayam": "8 chicks",
+      "i-11-anak-ayam": "11 chicks",
+      "i-14-anak-ayam": "14 chicks",
+      "i-17-anak-ayam": "17 chicks",
+      "i-20-anak-ayam": "20 chicks",
+      "i-3-domba": "3 sheep",
+      "i-6-domba": "6 sheep",
+      "i-9-domba": "9 sheep",
+      "i-12-domba": "12 sheep",
+      "i-15-domba": "15 sheep",
+      "i-18-domba": "18 sheep",
+      "i-1-bebek": "1 duck",
+      "i-4-bebek": "4 ducks",
+      "i-7-bebek": "7 ducks",
+      "i-10-bebek": "10 ducks",
+      "i-13-bebek": "13 ducks",
+      "i-16-bebek": "16 ducks",
+      "i-19-bebek": "19 ducks"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "kelompok hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "genap",
+      "labelKey": "b-genap",
+      "emoji": "🥢"
+    },
+    {
+      "id": "ganjil",
+      "labelKey": "b-ganjil",
+      "emoji": "☝️"
+    }
+  ],
+  "items": [
+    {
+      "id": "anak-ayam-2",
+      "labelKey": "i-2-anak-ayam",
+      "bin": "genap",
+      "emoji": "🐥",
+      "count": 2
+    },
+    {
+      "id": "anak-ayam-5",
+      "labelKey": "i-5-anak-ayam",
+      "bin": "ganjil",
+      "emoji": "🐥",
+      "count": 5
+    },
+    {
+      "id": "anak-ayam-8",
+      "labelKey": "i-8-anak-ayam",
+      "bin": "genap",
+      "emoji": "🐥",
+      "count": 8
+    },
+    {
+      "id": "anak-ayam-11",
+      "labelKey": "i-11-anak-ayam",
+      "bin": "ganjil",
+      "emoji": "🐥",
+      "count": 11
+    },
+    {
+      "id": "anak-ayam-14",
+      "labelKey": "i-14-anak-ayam",
+      "bin": "genap",
+      "emoji": "🐥",
+      "count": 14
+    },
+    {
+      "id": "anak-ayam-17",
+      "labelKey": "i-17-anak-ayam",
+      "bin": "ganjil",
+      "emoji": "🐥",
+      "count": 17
+    },
+    {
+      "id": "anak-ayam-20",
+      "labelKey": "i-20-anak-ayam",
+      "bin": "genap",
+      "emoji": "🐥",
+      "count": 20
+    },
+    {
+      "id": "domba-3",
+      "labelKey": "i-3-domba",
+      "bin": "ganjil",
+      "emoji": "🐑",
+      "count": 3
+    },
+    {
+      "id": "domba-6",
+      "labelKey": "i-6-domba",
+      "bin": "genap",
+      "emoji": "🐑",
+      "count": 6
+    },
+    {
+      "id": "domba-9",
+      "labelKey": "i-9-domba",
+      "bin": "ganjil",
+      "emoji": "🐑",
+      "count": 9
+    },
+    {
+      "id": "domba-12",
+      "labelKey": "i-12-domba",
+      "bin": "genap",
+      "emoji": "🐑",
+      "count": 12
+    },
+    {
+      "id": "domba-15",
+      "labelKey": "i-15-domba",
+      "bin": "ganjil",
+      "emoji": "🐑",
+      "count": 15
+    },
+    {
+      "id": "domba-18",
+      "labelKey": "i-18-domba",
+      "bin": "genap",
+      "emoji": "🐑",
+      "count": 18
+    },
+    {
+      "id": "bebek-1",
+      "labelKey": "i-1-bebek",
+      "bin": "ganjil",
+      "emoji": "🦆",
+      "count": 1
+    },
+    {
+      "id": "bebek-4",
+      "labelKey": "i-4-bebek",
+      "bin": "genap",
+      "emoji": "🦆",
+      "count": 4
+    },
+    {
+      "id": "bebek-7",
+      "labelKey": "i-7-bebek",
+      "bin": "ganjil",
+      "emoji": "🦆",
+      "count": 7
+    },
+    {
+      "id": "bebek-10",
+      "labelKey": "i-10-bebek",
+      "bin": "genap",
+      "emoji": "🦆",
+      "count": 10
+    },
+    {
+      "id": "bebek-13",
+      "labelKey": "i-13-bebek",
+      "bin": "ganjil",
+      "emoji": "🦆",
+      "count": 13
+    },
+    {
+      "id": "bebek-16",
+      "labelKey": "i-16-bebek",
+      "bin": "genap",
+      "emoji": "🦆",
+      "count": 16
+    },
+    {
+      "id": "bebek-19",
+      "labelKey": "i-19-bebek",
+      "bin": "ganjil",
+      "emoji": "🦆",
+      "count": 19
+    }
+  ]
+}

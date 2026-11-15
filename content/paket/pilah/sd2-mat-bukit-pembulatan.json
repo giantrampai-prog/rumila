@@ -1,0 +1,287 @@
+{
+  "id": "sd2-mat-bukit-pembulatan",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.BILANGAN-100.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menggelinding ke Puluhan",
+      "instruksi": "Bilangan seperti bola di lereng bukit: ia menggelinding ke puluhan yang paling dekat. Kalau satuannya 5, ia ke puluhan di atasnya.",
+      "i-n50": "50",
+      "i-n40": "40",
+      "i-n60": "60",
+      "t-46": "46 dibulatkan ke puluhan terdekat menjadi …",
+      "i-n30": "30",
+      "i-n20": "20",
+      "t-31": "31 dibulatkan ke puluhan terdekat menjadi …",
+      "i-n70": "70",
+      "t-65": "65 dibulatkan ke puluhan terdekat menjadi …",
+      "i-n80": "80",
+      "i-n90": "90",
+      "t-84": "84 dibulatkan ke puluhan terdekat menjadi …",
+      "i-n10": "10",
+      "t-18": "18 dibulatkan ke puluhan terdekat menjadi …",
+      "t-53": "53 dibulatkan ke puluhan terdekat menjadi …",
+      "t-77": "77 dibulatkan ke puluhan terdekat menjadi …",
+      "t-22": "22 dibulatkan ke puluhan terdekat menjadi …",
+      "t-41": "41 dibulatkan ke puluhan terdekat menjadi …",
+      "t-89": "89 dibulatkan ke puluhan terdekat menjadi …",
+      "t-15": "15 dibulatkan ke puluhan terdekat menjadi …",
+      "t-36": "36 dibulatkan ke puluhan terdekat menjadi …",
+      "t-72": "72 dibulatkan ke puluhan terdekat menjadi …",
+      "t-58": "58 dibulatkan ke puluhan terdekat menjadi …",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Rolling to the Nearest Ten",
+      "instruksi": "A number is like a ball on a hill: it rolls to the nearest ten. If the ones digit is 5, it rolls up to the next ten.",
+      "i-n50": "50",
+      "i-n40": "40",
+      "i-n60": "60",
+      "t-46": "46 rounded to the nearest ten is …",
+      "i-n30": "30",
+      "i-n20": "20",
+      "t-31": "31 rounded to the nearest ten is …",
+      "i-n70": "70",
+      "t-65": "65 rounded to the nearest ten is …",
+      "i-n80": "80",
+      "i-n90": "90",
+      "t-84": "84 rounded to the nearest ten is …",
+      "i-n10": "10",
+      "t-18": "18 rounded to the nearest ten is …",
+      "t-53": "53 rounded to the nearest ten is …",
+      "t-77": "77 rounded to the nearest ten is …",
+      "t-22": "22 rounded to the nearest ten is …",
+      "t-41": "41 rounded to the nearest ten is …",
+      "t-89": "89 rounded to the nearest ten is …",
+      "t-15": "15 rounded to the nearest ten is …",
+      "t-36": "36 rounded to the nearest ten is …",
+      "t-72": "72 rounded to the nearest ten is …",
+      "t-58": "58 rounded to the nearest ten is …",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "n50",
+      "labelKey": "i-n50",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n40",
+      "labelKey": "i-n40",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n60",
+      "labelKey": "i-n60",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n30",
+      "labelKey": "i-n30",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n20",
+      "labelKey": "i-n20",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n70",
+      "labelKey": "i-n70",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n80",
+      "labelKey": "i-n80",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n90",
+      "labelKey": "i-n90",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    },
+    {
+      "id": "n10",
+      "labelKey": "i-n10",
+      "bin": "pilihan",
+      "emoji": "⛰️",
+      "scale": 1
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-46",
+      "promptKey": "t-46",
+      "choices": [
+        "n50",
+        "n40",
+        "n60"
+      ],
+      "correct": "n50"
+    },
+    {
+      "id": "r-31",
+      "promptKey": "t-31",
+      "choices": [
+        "n30",
+        "n40",
+        "n20"
+      ],
+      "correct": "n30"
+    },
+    {
+      "id": "r-65",
+      "promptKey": "t-65",
+      "choices": [
+        "n70",
+        "n60",
+        "n50"
+      ],
+      "correct": "n70"
+    },
+    {
+      "id": "r-84",
+      "promptKey": "t-84",
+      "choices": [
+        "n80",
+        "n90",
+        "n70"
+      ],
+      "correct": "n80"
+    },
+    {
+      "id": "r-18",
+      "promptKey": "t-18",
+      "choices": [
+        "n20",
+        "n10",
+        "n30"
+      ],
+      "correct": "n20"
+    },
+    {
+      "id": "r-53",
+      "promptKey": "t-53",
+      "choices": [
+        "n50",
+        "n60",
+        "n40"
+      ],
+      "correct": "n50"
+    },
+    {
+      "id": "r-77",
+      "promptKey": "t-77",
+      "choices": [
+        "n80",
+        "n70",
+        "n60"
+      ],
+      "correct": "n80"
+    },
+    {
+      "id": "r-22",
+      "promptKey": "t-22",
+      "choices": [
+        "n20",
+        "n30",
+        "n40"
+      ],
+      "correct": "n20"
+    },
+    {
+      "id": "r-41",
+      "promptKey": "t-41",
+      "choices": [
+        "n40",
+        "n50",
+        "n30"
+      ],
+      "correct": "n40"
+    },
+    {
+      "id": "r-89",
+      "promptKey": "t-89",
+      "choices": [
+        "n90",
+        "n80",
+        "n70"
+      ],
+      "correct": "n90"
+    },
+    {
+      "id": "r-15",
+      "promptKey": "t-15",
+      "choices": [
+        "n20",
+        "n10",
+        "n30"
+      ],
+      "correct": "n20"
+    },
+    {
+      "id": "r-36",
+      "promptKey": "t-36",
+      "choices": [
+        "n40",
+        "n30",
+        "n50"
+      ],
+      "correct": "n40"
+    },
+    {
+      "id": "r-72",
+      "promptKey": "t-72",
+      "choices": [
+        "n70",
+        "n80",
+        "n90"
+      ],
+      "correct": "n70"
+    },
+    {
+      "id": "r-58",
+      "promptKey": "t-58",
+      "choices": [
+        "n60",
+        "n50",
+        "n70"
+      ],
+      "correct": "n60"
+    }
+  ]
+}

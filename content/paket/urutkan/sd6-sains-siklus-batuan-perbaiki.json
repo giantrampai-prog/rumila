@@ -1,0 +1,466 @@
+{
+  "id": "sd6-sains-siklus-batuan-perbaiki",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.BATUAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siklus Batuan yang Tertukar",
+      "instruksi": "Dua tahap perjalanan batuan tertukar tempat. Tukar keduanya supaya urut.",
+      "s-darisedimen": "Siklus lengkap, mulai dari dasar laut",
+      "darisedimen-endap": "pengendapan: lumpur mengendap di dasar laut",
+      "darisedimen-timbun": "penimbunan: lapisan memadat jadi batuan sedimen",
+      "darisedimen-metamorf": "metamorfisme: panas dan tekanan mengubahnya",
+      "darisedimen-leleh": "peleburan: batuan meleleh jadi magma",
+      "darisedimen-beku": "pembekuan: magma mendingin jadi batuan beku",
+      "darisedimen-erosi": "pelapukan dan erosi memecah batuan beku",
+      "darisedimen-endaplagi": "butirannya mengendap lagi di dasar laut",
+      "s-daribeku": "Siklus lengkap, mulai dari batuan beku",
+      "daribeku-beku": "batuan beku di permukaan bumi",
+      "daribeku-erosi": "pelapukan dan erosi memecahnya",
+      "daribeku-endap": "butirannya mengendap di dasar danau",
+      "daribeku-timbun": "tertimbun dan memadat menjadi batuan sedimen",
+      "daribeku-metamorf": "panas dan tekanan mengubahnya jadi batuan metamorf",
+      "daribeku-leleh": "batuan meleleh kembali menjadi magma",
+      "s-kuarsit": "Batu pasir yang menjadi magma",
+      "kuarsit-pasir": "batu pasir di dasar laut",
+      "kuarsit-kuarsit": "terkubur dalam, panas dan tekanan mengubahnya jadi kuarsit",
+      "kuarsit-leleh": "terdorong makin dalam dan meleleh jadi magma",
+      "kuarsit-beku": "magma naik dan membeku menjadi batuan beku",
+      "s-candi": "Dari lava ke batu pasir muara",
+      "candi-beku": "lava gunung api membeku menjadi andesit",
+      "candi-lapuk": "hujan dan panas melapukkan andesit",
+      "candi-erosi": "pecahannya terbawa arus sungai",
+      "candi-endap": "butiran mengendap di muara",
+      "candi-timbun": "tertimbun dan memadat menjadi batu pasir",
+      "s-sabak": "Lumpur danau yang menjadi granit",
+      "sabak-endap": "lumpur mengendap di dasar danau",
+      "sabak-timbun": "lumpur tertimbun dan memadat menjadi batu lempung",
+      "sabak-metamorf": "panas dan tekanan mengubahnya menjadi batu sabak",
+      "sabak-leleh": "batu sabak terkubur sangat dalam lalu meleleh jadi magma",
+      "sabak-beku": "magma mendingin perlahan menjadi granit",
+      "s-marmer": "Marmer yang kembali jadi batu kapur",
+      "marmer-angkat": "marmer terangkat ke permukaan saat pegunungan terbentuk",
+      "marmer-lapuk": "hujan melapukkan marmer",
+      "marmer-erosi": "butirannya terbawa sungai ke laut",
+      "marmer-timbun": "butiran mengendap dan memadat menjadi batu kapur",
+      "s-bawahlaut": "Gunung api bawah laut",
+      "bawahlaut-magma": "magma keluar di dasar laut",
+      "bawahlaut-beku": "lava cepat membeku menjadi basalt",
+      "bawahlaut-seret": "basalt terseret masuk ke bawah kerak bumi",
+      "bawahlaut-leleh": "basalt meleleh kembali menjadi magma",
+      "s-pasirhitam": "Pantai pasir hitam",
+      "pasirhitam-beku": "lava dari gunung api membeku menjadi basalt",
+      "pasirhitam-erosi": "ombak dan hujan mengikis basalt",
+      "pasirhitam-pantai": "butiran hitam terbawa ke pantai",
+      "pasirhitam-endap": "pasir hitam mengendap berlapis-lapis",
+      "pasirhitam-timbun": "tertimbun dan memadat menjadi batu pasir hitam",
+      "s-konglomerat": "Granit di lembah sungai",
+      "konglomerat-lapuk": "granit di tebing lapuk oleh hujan",
+      "konglomerat-erosi": "pecahan granit terbawa arus",
+      "konglomerat-endap": "kerikil dan pasir mengendap di dasar sungai",
+      "konglomerat-timbun": "endapan tertimbun dan memadat",
+      "konglomerat-batu": "menjadi konglomerat, batuan sedimen berkerikil",
+      "s-lipatan": "Batu kapur di pegunungan",
+      "lipatan-kapur": "batu kapur terjepit saat lempeng bumi bertabrakan",
+      "lipatan-tekan": "terkena panas dan tekanan besar",
+      "lipatan-marmer": "berubah menjadi marmer",
+      "lipatan-angkat": "marmer terangkat menjadi pegunungan",
+      "lipatan-erosi": "marmer lapuk dan terkikis"
+    },
+    "en": {
+      "judul": "Mixed-Up Rock Cycle",
+      "instruksi": "Two stages of the rock's journey have swapped places. Swap them back into order.",
+      "s-darisedimen": "The full cycle, starting on the sea floor",
+      "darisedimen-endap": "deposition: mud settles on the sea floor",
+      "darisedimen-timbun": "burial: the layers harden into sedimentary rock",
+      "darisedimen-metamorf": "metamorphism: heat and pressure change it",
+      "darisedimen-leleh": "melting: the rock melts into magma",
+      "darisedimen-beku": "cooling: the magma cools into igneous rock",
+      "darisedimen-erosi": "weathering and erosion break up the igneous rock",
+      "darisedimen-endaplagi": "the grains settle on the sea floor again",
+      "s-daribeku": "The full cycle, starting from igneous rock",
+      "daribeku-beku": "igneous rock at the surface",
+      "daribeku-erosi": "weathering and erosion break it up",
+      "daribeku-endap": "the grains settle at the bottom of a lake",
+      "daribeku-timbun": "they are buried and harden into sedimentary rock",
+      "daribeku-metamorf": "heat and pressure turn it into metamorphic rock",
+      "daribeku-leleh": "the rock melts back into magma",
+      "s-kuarsit": "Sandstone that becomes magma",
+      "kuarsit-pasir": "sandstone on the sea floor",
+      "kuarsit-kuarsit": "buried deep, heat and pressure turn it into quartzite",
+      "kuarsit-leleh": "pushed even deeper, it melts into magma",
+      "kuarsit-beku": "the magma rises and cools into igneous rock",
+      "s-candi": "From lava to estuary sandstone",
+      "candi-beku": "volcanic lava cools into andesite",
+      "candi-lapuk": "rain and heat weather the andesite",
+      "candi-erosi": "the pieces are carried by the river",
+      "candi-endap": "the grains settle in the estuary",
+      "candi-timbun": "they are buried and harden into sandstone",
+      "s-sabak": "Lake mud that becomes granite",
+      "sabak-endap": "mud settles at the bottom of a lake",
+      "sabak-timbun": "the mud is buried and hardens into mudstone",
+      "sabak-metamorf": "heat and pressure change it into slate",
+      "sabak-leleh": "the slate is buried very deep and melts into magma",
+      "sabak-beku": "the magma cools slowly into granite",
+      "s-marmer": "Marble that turns back into limestone",
+      "marmer-angkat": "marble is lifted to the surface as mountains form",
+      "marmer-lapuk": "rain weathers the marble",
+      "marmer-erosi": "the grains are carried by rivers to the sea",
+      "marmer-timbun": "the grains settle and harden into limestone",
+      "s-bawahlaut": "An undersea volcano",
+      "bawahlaut-magma": "magma comes out on the sea floor",
+      "bawahlaut-beku": "the lava quickly cools into basalt",
+      "bawahlaut-seret": "the basalt is dragged down under Earth's crust",
+      "bawahlaut-leleh": "the basalt melts back into magma",
+      "s-pasirhitam": "A black sand beach",
+      "pasirhitam-beku": "lava from a volcano cools into basalt",
+      "pasirhitam-erosi": "waves and rain wear away the basalt",
+      "pasirhitam-pantai": "the black grains are carried to the beach",
+      "pasirhitam-endap": "the black sand settles in layers",
+      "pasirhitam-timbun": "it is buried and hardens into black sandstone",
+      "s-konglomerat": "Granite in a river valley",
+      "konglomerat-lapuk": "granite on a cliff is weathered by rain",
+      "konglomerat-erosi": "the granite pieces are carried by the current",
+      "konglomerat-endap": "gravel and sand settle on the riverbed",
+      "konglomerat-timbun": "the sediment is buried and packed down",
+      "konglomerat-batu": "it becomes conglomerate, a pebbly sedimentary rock",
+      "s-lipatan": "Limestone in the mountains",
+      "lipatan-kapur": "limestone is squeezed as Earth's plates collide",
+      "lipatan-tekan": "it is heated and pressed hard",
+      "lipatan-marmer": "it changes into marble",
+      "lipatan-angkat": "the marble is pushed up into mountains",
+      "lipatan-erosi": "the marble weathers and wears away"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 7,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tahap: 4 → 7 (beberapa jalur hanya 4–6 tahap)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "darisedimen",
+      "titleKey": "s-darisedimen",
+      "steps": [
+        {
+          "id": "endap",
+          "labelKey": "darisedimen-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "darisedimen-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "metamorf",
+          "labelKey": "darisedimen-metamorf",
+          "emoji": "🌀"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "darisedimen-leleh",
+          "emoji": "🔥"
+        },
+        {
+          "id": "beku",
+          "labelKey": "darisedimen-beku",
+          "emoji": "🌋"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "darisedimen-erosi",
+          "emoji": "💨"
+        },
+        {
+          "id": "endaplagi",
+          "labelKey": "darisedimen-endaplagi",
+          "emoji": "🏖️"
+        }
+      ]
+    },
+    {
+      "id": "daribeku",
+      "titleKey": "s-daribeku",
+      "steps": [
+        {
+          "id": "beku",
+          "labelKey": "daribeku-beku",
+          "emoji": "🌋"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "daribeku-erosi",
+          "emoji": "💨"
+        },
+        {
+          "id": "endap",
+          "labelKey": "daribeku-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "daribeku-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "metamorf",
+          "labelKey": "daribeku-metamorf",
+          "emoji": "🌀"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "daribeku-leleh",
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": "kuarsit",
+      "titleKey": "s-kuarsit",
+      "steps": [
+        {
+          "id": "pasir",
+          "labelKey": "kuarsit-pasir",
+          "emoji": "🟫"
+        },
+        {
+          "id": "kuarsit",
+          "labelKey": "kuarsit-kuarsit",
+          "emoji": "🌀"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "kuarsit-leleh",
+          "emoji": "🔥"
+        },
+        {
+          "id": "beku",
+          "labelKey": "kuarsit-beku",
+          "emoji": "🌋"
+        }
+      ]
+    },
+    {
+      "id": "candi",
+      "titleKey": "s-candi",
+      "steps": [
+        {
+          "id": "beku",
+          "labelKey": "candi-beku",
+          "emoji": "🌋"
+        },
+        {
+          "id": "lapuk",
+          "labelKey": "candi-lapuk",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "candi-erosi",
+          "emoji": "🏞️"
+        },
+        {
+          "id": "endap",
+          "labelKey": "candi-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "candi-timbun",
+          "emoji": "🟫"
+        }
+      ]
+    },
+    {
+      "id": "sabak",
+      "titleKey": "s-sabak",
+      "steps": [
+        {
+          "id": "endap",
+          "labelKey": "sabak-endap",
+          "emoji": "🌊"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "sabak-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "metamorf",
+          "labelKey": "sabak-metamorf",
+          "emoji": "🌀"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "sabak-leleh",
+          "emoji": "🔥"
+        },
+        {
+          "id": "beku",
+          "labelKey": "sabak-beku",
+          "emoji": "🌋"
+        }
+      ]
+    },
+    {
+      "id": "marmer",
+      "titleKey": "s-marmer",
+      "steps": [
+        {
+          "id": "angkat",
+          "labelKey": "marmer-angkat",
+          "emoji": "⛰️"
+        },
+        {
+          "id": "lapuk",
+          "labelKey": "marmer-lapuk",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "marmer-erosi",
+          "emoji": "🏞️"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "marmer-timbun",
+          "emoji": "🟫"
+        }
+      ]
+    },
+    {
+      "id": "bawahlaut",
+      "titleKey": "s-bawahlaut",
+      "steps": [
+        {
+          "id": "magma",
+          "labelKey": "bawahlaut-magma",
+          "emoji": "🔥"
+        },
+        {
+          "id": "beku",
+          "labelKey": "bawahlaut-beku",
+          "emoji": "🌋"
+        },
+        {
+          "id": "seret",
+          "labelKey": "bawahlaut-seret",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "leleh",
+          "labelKey": "bawahlaut-leleh",
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": "pasirhitam",
+      "titleKey": "s-pasirhitam",
+      "steps": [
+        {
+          "id": "beku",
+          "labelKey": "pasirhitam-beku",
+          "emoji": "🌋"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "pasirhitam-erosi",
+          "emoji": "🌊"
+        },
+        {
+          "id": "pantai",
+          "labelKey": "pasirhitam-pantai",
+          "emoji": "🏖️"
+        },
+        {
+          "id": "endap",
+          "labelKey": "pasirhitam-endap",
+          "emoji": "⬛"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "pasirhitam-timbun",
+          "emoji": "🟫"
+        }
+      ]
+    },
+    {
+      "id": "konglomerat",
+      "titleKey": "s-konglomerat",
+      "steps": [
+        {
+          "id": "lapuk",
+          "labelKey": "konglomerat-lapuk",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "konglomerat-erosi",
+          "emoji": "🏞️"
+        },
+        {
+          "id": "endap",
+          "labelKey": "konglomerat-endap",
+          "emoji": "🪨"
+        },
+        {
+          "id": "timbun",
+          "labelKey": "konglomerat-timbun",
+          "emoji": "🟫"
+        },
+        {
+          "id": "batu",
+          "labelKey": "konglomerat-batu",
+          "emoji": "🧱"
+        }
+      ]
+    },
+    {
+      "id": "lipatan",
+      "titleKey": "s-lipatan",
+      "steps": [
+        {
+          "id": "kapur",
+          "labelKey": "lipatan-kapur",
+          "emoji": "🟫"
+        },
+        {
+          "id": "tekan",
+          "labelKey": "lipatan-tekan",
+          "emoji": "🌡️"
+        },
+        {
+          "id": "marmer",
+          "labelKey": "lipatan-marmer",
+          "emoji": "🌀"
+        },
+        {
+          "id": "angkat",
+          "labelKey": "lipatan-angkat",
+          "emoji": "⛰️"
+        },
+        {
+          "id": "erosi",
+          "labelKey": "lipatan-erosi",
+          "emoji": "💨"
+        }
+      ]
+    }
+  ]
+}

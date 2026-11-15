@@ -1,0 +1,412 @@
+{
+  "id": "sd1-mat-belanja-ringan-berat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.UKUR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Timbang Belanjaan di Pasar",
+      "instruksi": "Mana yang paling mudah diangkat? Susun belanjaan dari yang paling ringan sampai yang paling berat.",
+      "j-ringan-berat": "Paling ringan ke paling berat",
+      "s-cabai": "cabai",
+      "s-telur": "telur",
+      "s-apel": "apel",
+      "s-kelapa": "kelapa",
+      "s-labu": "labu besar",
+      "s-kambing": "kambing",
+      "s-sapi": "sapi"
+    },
+    "en": {
+      "judul": "Weighing the Market Shopping",
+      "instruksi": "Which is easiest to lift? Line up the shopping from the lightest to the heaviest.",
+      "j-ringan-berat": "Lightest to heaviest",
+      "s-cabai": "chili",
+      "s-telur": "egg",
+      "s-apel": "apple",
+      "s-kelapa": "coconut",
+      "s-labu": "big pumpkin",
+      "s-kambing": "goat",
+      "s-sapi": "cow"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah barang: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "timbang-1",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "cabai",
+          "labelKey": "s-cabai",
+          "emoji": "🌶️",
+          "scale": 1
+        },
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "kelapa",
+          "labelKey": "s-kelapa",
+          "emoji": "🥥",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-2",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "cabai",
+          "labelKey": "s-cabai",
+          "emoji": "🌶️",
+          "scale": 1
+        },
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "kelapa",
+          "labelKey": "s-kelapa",
+          "emoji": "🥥",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-3",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "cabai",
+          "labelKey": "s-cabai",
+          "emoji": "🌶️",
+          "scale": 1
+        },
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        },
+        {
+          "id": "sapi",
+          "labelKey": "s-sapi",
+          "emoji": "🐄",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-4",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "cabai",
+          "labelKey": "s-cabai",
+          "emoji": "🌶️",
+          "scale": 1
+        },
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-5",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "cabai",
+          "labelKey": "s-cabai",
+          "emoji": "🌶️",
+          "scale": 1
+        },
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        },
+        {
+          "id": "sapi",
+          "labelKey": "s-sapi",
+          "emoji": "🐄",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-6",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "cabai",
+          "labelKey": "s-cabai",
+          "emoji": "🌶️",
+          "scale": 1
+        },
+        {
+          "id": "kelapa",
+          "labelKey": "s-kelapa",
+          "emoji": "🥥",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        },
+        {
+          "id": "sapi",
+          "labelKey": "s-sapi",
+          "emoji": "🐄",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-7",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "kelapa",
+          "labelKey": "s-kelapa",
+          "emoji": "🥥",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-8",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-9",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "kelapa",
+          "labelKey": "s-kelapa",
+          "emoji": "🥥",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-10",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "s-telur",
+          "emoji": "🥚",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        },
+        {
+          "id": "sapi",
+          "labelKey": "s-sapi",
+          "emoji": "🐄",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-11",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "kelapa",
+          "labelKey": "s-kelapa",
+          "emoji": "🥥",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "timbang-12",
+      "titleKey": "j-ringan-berat",
+      "steps": [
+        {
+          "id": "apel",
+          "labelKey": "s-apel",
+          "emoji": "🍎",
+          "scale": 1
+        },
+        {
+          "id": "labu",
+          "labelKey": "s-labu",
+          "emoji": "🎃",
+          "scale": 1
+        },
+        {
+          "id": "kambing",
+          "labelKey": "s-kambing",
+          "emoji": "🐐",
+          "scale": 1
+        },
+        {
+          "id": "sapi",
+          "labelKey": "s-sapi",
+          "emoji": "🐄",
+          "scale": 1
+        }
+      ]
+    }
+  ]
+}

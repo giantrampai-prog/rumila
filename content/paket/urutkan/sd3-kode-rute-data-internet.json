@@ -1,0 +1,586 @@
+{
+  "id": "sd3-kode-rute-data-internet",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD3.JARINGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rute Data Lewat Internet",
+      "instruksi": "Susun perjalanan data dari perangkat pertama sampai tiba di perangkat tujuan.",
+      "t-seluler": "Pesan lewat sinyal ponsel",
+      "seluler-1": "ketik pesan",
+      "seluler-2": "tekan kirim",
+      "seluler-3": "pesan lewat sinyal ke menara seluler",
+      "seluler-4": "menara meneruskan lewat internet ke server",
+      "seluler-5": "server mengirim ke ponsel teman",
+      "seluler-6": "teman membaca pesan",
+      "t-unggah-tugas": "Mengunggah tugas",
+      "unggah-tugas-1": "foto tugasmu",
+      "unggah-tugas-2": "tekan unggah",
+      "unggah-tugas-3": "data lewat wifi ke router",
+      "unggah-tugas-4": "router meneruskan lewat internet",
+      "unggah-tugas-5": "server sekolah menyimpan tugasmu",
+      "unggah-tugas-6": "guru membuka tugas di laptop",
+      "t-kantor": "Pesan ayah dari kantor",
+      "kantor-1": "ayah mengetik pesan di laptop kantor",
+      "kantor-2": "ayah menekan kirim",
+      "kantor-3": "pesan lewat kabel jaringan ke router kantor",
+      "kantor-4": "pesan lewat internet ke server",
+      "kantor-5": "ponsel ibu bergetar",
+      "kantor-6": "ibu membaca pesan ayah",
+      "t-game": "Main game daring bersama teman",
+      "game-1": "tekan tombol lompat",
+      "game-2": "data lewat wifi ke router",
+      "game-3": "router mengirim lewat internet ke server game",
+      "game-4": "server game meneruskan ke tablet teman",
+      "game-5": "tokohmu melompat di layar teman",
+      "game-6": "teman melihat lompatanmu",
+      "t-cctv": "Melihat kamera rumah dari jauh",
+      "cctv-1": "kamera rumah merekam halaman",
+      "cctv-2": "video lewat wifi ke router",
+      "cctv-3": "router mengirim lewat internet",
+      "cctv-4": "server meneruskan video",
+      "cctv-5": "video sampai di ponsel ayah",
+      "cctv-6": "ayah melihat halaman rumah",
+      "t-lokasi": "Membagikan lokasi ke ibu",
+      "lokasi-1": "buka aplikasi peta",
+      "lokasi-2": "tekan bagikan lokasi",
+      "lokasi-3": "lokasi lewat sinyal ke menara seluler",
+      "lokasi-4": "lokasi lewat internet ke server",
+      "lokasi-5": "server mengirim ke ponsel ibu",
+      "lokasi-6": "ibu melihat titik lokasimu",
+      "t-cuaca": "Memeriksa cuaca",
+      "cuaca-1": "buka aplikasi cuaca",
+      "cuaca-2": "tekan perbarui",
+      "cuaca-3": "permintaan lewat internet ke server cuaca",
+      "cuaca-4": "server mengirim ramalan cuaca",
+      "cuaca-5": "data sampai di ponsel",
+      "cuaca-6": "gambar awan hujan muncul",
+      "t-ojek": "Memesan ojek daring",
+      "ojek-1": "pilih tempat tujuan",
+      "ojek-2": "tekan tombol pesan",
+      "ojek-3": "pesanan lewat internet ke server",
+      "ojek-4": "server mencari pengemudi terdekat",
+      "ojek-5": "pesanan sampai di ponsel pengemudi",
+      "ojek-6": "pengemudi datang menjemput",
+      "t-buku": "Mengunduh buku cerita",
+      "buku-1": "cari judul buku",
+      "buku-2": "tekan unduh",
+      "buku-3": "permintaan lewat wifi ke router",
+      "buku-4": "permintaan lewat internet ke server perpustakaan",
+      "buku-5": "server mengirim berkas buku",
+      "buku-6": "buku tersimpan di tablet",
+      "t-nilai": "Kabar nilai untuk orang tua",
+      "nilai-1": "guru mengisi nilai di laptop",
+      "nilai-2": "guru menekan simpan dan kirim",
+      "nilai-3": "data lewat kabel jaringan sekolah ke router",
+      "nilai-4": "data lewat internet ke server",
+      "nilai-5": "pemberitahuan sampai di ponsel ayah",
+      "nilai-6": "ayah membaca nilaimu",
+      "t-lagu-kakek": "Mengirim rekaman lagu ke kakek",
+      "lagu-kakek-1": "rekam lagumu",
+      "lagu-kakek-2": "tekan kirim ke kakek",
+      "lagu-kakek-3": "rekaman lewat wifi ke router",
+      "lagu-kakek-4": "rekaman lewat internet ke server",
+      "lagu-kakek-5": "rekaman sampai di ponsel kakek",
+      "lagu-kakek-6": "kakek mendengarkan lagumu"
+    },
+    "en": {
+      "judul": "Data's Route Through the Internet",
+      "instruksi": "Put the data's journey in order, from the first device until it reaches the other device.",
+      "t-seluler": "A message over the phone signal",
+      "seluler-1": "type a message",
+      "seluler-2": "press send",
+      "seluler-3": "the message goes by signal to the phone tower",
+      "seluler-4": "the tower passes it through the internet to the server",
+      "seluler-5": "the server sends it to your friend's phone",
+      "seluler-6": "your friend reads it",
+      "t-unggah-tugas": "Uploading homework",
+      "unggah-tugas-1": "take a photo of your homework",
+      "unggah-tugas-2": "press upload",
+      "unggah-tugas-3": "the data goes by wifi to the router",
+      "unggah-tugas-4": "the router passes it through the internet",
+      "unggah-tugas-5": "the school server stores your homework",
+      "unggah-tugas-6": "the teacher opens it on a laptop",
+      "t-kantor": "Dad's message from the office",
+      "kantor-1": "dad types a message on the office laptop",
+      "kantor-2": "dad presses send",
+      "kantor-3": "the message goes through the network cable to the office router",
+      "kantor-4": "the message travels through the internet to the server",
+      "kantor-5": "mum's phone buzzes",
+      "kantor-6": "mum reads dad's message",
+      "t-game": "Playing an online game with a friend",
+      "game-1": "press the jump button",
+      "game-2": "the data goes by wifi to the router",
+      "game-3": "the router sends it through the internet to the game server",
+      "game-4": "the game server passes it to your friend's tablet",
+      "game-5": "your character jumps on your friend's screen",
+      "game-6": "your friend sees your jump",
+      "t-cctv": "Checking the home camera from far away",
+      "cctv-1": "the home camera films the yard",
+      "cctv-2": "the video goes by wifi to the router",
+      "cctv-3": "the router sends it through the internet",
+      "cctv-4": "the server passes the video on",
+      "cctv-5": "the video reaches dad's phone",
+      "cctv-6": "dad sees the yard",
+      "t-lokasi": "Sharing your location with mum",
+      "lokasi-1": "open the map app",
+      "lokasi-2": "press share location",
+      "lokasi-3": "the location goes by signal to the phone tower",
+      "lokasi-4": "the location travels through the internet to the server",
+      "lokasi-5": "the server sends it to mum's phone",
+      "lokasi-6": "mum sees your location dot",
+      "t-cuaca": "Checking the weather",
+      "cuaca-1": "open the weather app",
+      "cuaca-2": "press refresh",
+      "cuaca-3": "the request goes through the internet to the weather server",
+      "cuaca-4": "the server sends the forecast",
+      "cuaca-5": "the data reaches the phone",
+      "cuaca-6": "a rain cloud picture appears",
+      "t-ojek": "Booking an online motorbike taxi",
+      "ojek-1": "choose where to go",
+      "ojek-2": "press the book button",
+      "ojek-3": "the booking goes through the internet to the server",
+      "ojek-4": "the server finds the nearest driver",
+      "ojek-5": "the booking reaches the driver's phone",
+      "ojek-6": "the driver comes to pick you up",
+      "t-buku": "Downloading a storybook",
+      "buku-1": "search for the book title",
+      "buku-2": "press download",
+      "buku-3": "the request goes by wifi to the router",
+      "buku-4": "the request goes through the internet to the library server",
+      "buku-5": "the server sends the book file",
+      "buku-6": "the book is saved on the tablet",
+      "t-nilai": "Sending a grade to parents",
+      "nilai-1": "the teacher enters the grade on a laptop",
+      "nilai-2": "the teacher presses save and send",
+      "nilai-3": "the data goes through the school network cable to the router",
+      "nilai-4": "the data travels through the internet to the server",
+      "nilai-5": "a notification reaches dad's phone",
+      "nilai-6": "dad reads your grade",
+      "t-lagu-kakek": "Sending a song recording to grandpa",
+      "lagu-kakek-1": "record your song",
+      "lagu-kakek-2": "press send to grandpa",
+      "lagu-kakek-3": "the recording goes by wifi to the router",
+      "lagu-kakek-4": "the recording travels through the internet to the server",
+      "lagu-kakek-5": "the recording reaches grandpa's phone",
+      "lagu-kakek-6": "grandpa listens to your song"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah langkah: 5 → 6 (urutan dipotong dari depan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "seluler",
+      "titleKey": "t-seluler",
+      "steps": [
+        {
+          "id": "seluler-1",
+          "labelKey": "seluler-1",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "seluler-2",
+          "labelKey": "seluler-2",
+          "emoji": "📤"
+        },
+        {
+          "id": "seluler-3",
+          "labelKey": "seluler-3",
+          "emoji": "📡"
+        },
+        {
+          "id": "seluler-4",
+          "labelKey": "seluler-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "seluler-5",
+          "labelKey": "seluler-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "seluler-6",
+          "labelKey": "seluler-6",
+          "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "unggah-tugas",
+      "titleKey": "t-unggah-tugas",
+      "steps": [
+        {
+          "id": "unggah-tugas-1",
+          "labelKey": "unggah-tugas-1",
+          "emoji": "📷"
+        },
+        {
+          "id": "unggah-tugas-2",
+          "labelKey": "unggah-tugas-2",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "unggah-tugas-3",
+          "labelKey": "unggah-tugas-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "unggah-tugas-4",
+          "labelKey": "unggah-tugas-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "unggah-tugas-5",
+          "labelKey": "unggah-tugas-5",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "unggah-tugas-6",
+          "labelKey": "unggah-tugas-6",
+          "emoji": "👩‍🏫"
+        }
+      ]
+    },
+    {
+      "id": "kantor",
+      "titleKey": "t-kantor",
+      "steps": [
+        {
+          "id": "kantor-1",
+          "labelKey": "kantor-1",
+          "emoji": "💻"
+        },
+        {
+          "id": "kantor-2",
+          "labelKey": "kantor-2",
+          "emoji": "📤"
+        },
+        {
+          "id": "kantor-3",
+          "labelKey": "kantor-3",
+          "emoji": "🔌"
+        },
+        {
+          "id": "kantor-4",
+          "labelKey": "kantor-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "kantor-5",
+          "labelKey": "kantor-5",
+          "emoji": "📳"
+        },
+        {
+          "id": "kantor-6",
+          "labelKey": "kantor-6",
+          "emoji": "😊"
+        }
+      ]
+    },
+    {
+      "id": "game",
+      "titleKey": "t-game",
+      "steps": [
+        {
+          "id": "game-1",
+          "labelKey": "game-1",
+          "emoji": "🎮"
+        },
+        {
+          "id": "game-2",
+          "labelKey": "game-2",
+          "emoji": "📶"
+        },
+        {
+          "id": "game-3",
+          "labelKey": "game-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "game-4",
+          "labelKey": "game-4",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "game-5",
+          "labelKey": "game-5",
+          "emoji": "🦘"
+        },
+        {
+          "id": "game-6",
+          "labelKey": "game-6",
+          "emoji": "😄"
+        }
+      ]
+    },
+    {
+      "id": "cctv",
+      "titleKey": "t-cctv",
+      "steps": [
+        {
+          "id": "cctv-1",
+          "labelKey": "cctv-1",
+          "emoji": "📹"
+        },
+        {
+          "id": "cctv-2",
+          "labelKey": "cctv-2",
+          "emoji": "📶"
+        },
+        {
+          "id": "cctv-3",
+          "labelKey": "cctv-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "cctv-4",
+          "labelKey": "cctv-4",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "cctv-5",
+          "labelKey": "cctv-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "cctv-6",
+          "labelKey": "cctv-6",
+          "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "lokasi",
+      "titleKey": "t-lokasi",
+      "steps": [
+        {
+          "id": "lokasi-1",
+          "labelKey": "lokasi-1",
+          "emoji": "🗺️"
+        },
+        {
+          "id": "lokasi-2",
+          "labelKey": "lokasi-2",
+          "emoji": "📍"
+        },
+        {
+          "id": "lokasi-3",
+          "labelKey": "lokasi-3",
+          "emoji": "📡"
+        },
+        {
+          "id": "lokasi-4",
+          "labelKey": "lokasi-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "lokasi-5",
+          "labelKey": "lokasi-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "lokasi-6",
+          "labelKey": "lokasi-6",
+          "emoji": "👩"
+        }
+      ]
+    },
+    {
+      "id": "cuaca",
+      "titleKey": "t-cuaca",
+      "steps": [
+        {
+          "id": "cuaca-1",
+          "labelKey": "cuaca-1",
+          "emoji": "🌦️"
+        },
+        {
+          "id": "cuaca-2",
+          "labelKey": "cuaca-2",
+          "emoji": "🔄"
+        },
+        {
+          "id": "cuaca-3",
+          "labelKey": "cuaca-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "cuaca-4",
+          "labelKey": "cuaca-4",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "cuaca-5",
+          "labelKey": "cuaca-5",
+          "emoji": "📲"
+        },
+        {
+          "id": "cuaca-6",
+          "labelKey": "cuaca-6",
+          "emoji": "🌧️"
+        }
+      ]
+    },
+    {
+      "id": "ojek",
+      "titleKey": "t-ojek",
+      "steps": [
+        {
+          "id": "ojek-1",
+          "labelKey": "ojek-1",
+          "emoji": "📍"
+        },
+        {
+          "id": "ojek-2",
+          "labelKey": "ojek-2",
+          "emoji": "🛵"
+        },
+        {
+          "id": "ojek-3",
+          "labelKey": "ojek-3",
+          "emoji": "🌐"
+        },
+        {
+          "id": "ojek-4",
+          "labelKey": "ojek-4",
+          "emoji": "🔍"
+        },
+        {
+          "id": "ojek-5",
+          "labelKey": "ojek-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "ojek-6",
+          "labelKey": "ojek-6",
+          "emoji": "👋"
+        }
+      ]
+    },
+    {
+      "id": "buku",
+      "titleKey": "t-buku",
+      "steps": [
+        {
+          "id": "buku-1",
+          "labelKey": "buku-1",
+          "emoji": "🔍"
+        },
+        {
+          "id": "buku-2",
+          "labelKey": "buku-2",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "buku-3",
+          "labelKey": "buku-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "buku-4",
+          "labelKey": "buku-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "buku-5",
+          "labelKey": "buku-5",
+          "emoji": "🗄️"
+        },
+        {
+          "id": "buku-6",
+          "labelKey": "buku-6",
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": "nilai",
+      "titleKey": "t-nilai",
+      "steps": [
+        {
+          "id": "nilai-1",
+          "labelKey": "nilai-1",
+          "emoji": "👩‍🏫"
+        },
+        {
+          "id": "nilai-2",
+          "labelKey": "nilai-2",
+          "emoji": "💾"
+        },
+        {
+          "id": "nilai-3",
+          "labelKey": "nilai-3",
+          "emoji": "🔌"
+        },
+        {
+          "id": "nilai-4",
+          "labelKey": "nilai-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "nilai-5",
+          "labelKey": "nilai-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "nilai-6",
+          "labelKey": "nilai-6",
+          "emoji": "👨"
+        }
+      ]
+    },
+    {
+      "id": "lagu-kakek",
+      "titleKey": "t-lagu-kakek",
+      "steps": [
+        {
+          "id": "lagu-kakek-1",
+          "labelKey": "lagu-kakek-1",
+          "emoji": "🎤"
+        },
+        {
+          "id": "lagu-kakek-2",
+          "labelKey": "lagu-kakek-2",
+          "emoji": "📤"
+        },
+        {
+          "id": "lagu-kakek-3",
+          "labelKey": "lagu-kakek-3",
+          "emoji": "📶"
+        },
+        {
+          "id": "lagu-kakek-4",
+          "labelKey": "lagu-kakek-4",
+          "emoji": "🌐"
+        },
+        {
+          "id": "lagu-kakek-5",
+          "labelKey": "lagu-kakek-5",
+          "emoji": "📱"
+        },
+        {
+          "id": "lagu-kakek-6",
+          "labelKey": "lagu-kakek-6",
+          "emoji": "👴"
+        }
+      ]
+    }
+  ]
+}

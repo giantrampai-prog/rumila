@@ -1,0 +1,238 @@
+{
+  "id": "sd5-sains-tamu-bunga-taman",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUNGA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tamu-Tamu Bunga Taman",
+      "instruksi": "Baca kejadian di taman, lalu sentuh bagian bunga yang sedang bekerja.",
+      "b-pilihan": "pilihan",
+      "i-mahkota": "mahkota bunga",
+      "i-kepalasari": "kepala sari",
+      "i-kepalaputik": "kepala putik",
+      "i-kelopak": "kelopak bunga",
+      "i-tangkai": "tangkai bunga",
+      "i-bakalbuah": "bakal buah",
+      "i-daun": "daun",
+      "p-r1": "Lebah terbang ke bunga sepatu karena tertarik warna merahnya yang cerah. Bagian merah itu adalah…",
+      "p-r2": "Melati berwarna putih dan harum sehingga ngengat datang di malam hari. Bagian yang harum dan putih itu adalah…",
+      "p-r3": "Kaki lebah jadi kuning penuh serbuk setelah menyentuh bagian ini.",
+      "p-r4": "Bunga jagung jantan di pucuk menebarkan serbuk sari ditiup angin. Serbuk itu dibuat oleh…",
+      "p-r5": "Kupu-kupu membawa serbuk kuning dari bunga lain. Serbuk itu menempel di bagian lengket ini.",
+      "p-r6": "Petani salak mengoleskan serbuk sari ke bunga betina dengan kuas. Kuas harus menyentuh…",
+      "p-r7": "Tukang kebun memetik satu bagian dari tiap bunga, lalu bunga itu tidak lagi menghasilkan serbuk sari. Bagian yang dipetik adalah…",
+      "p-r8": "Bunga rumput tidak berwarna cerah karena serbuknya dibawa angin, bukan serangga. Bagian yang biasanya cerah untuk menarik serangga adalah…",
+      "p-r9": "Pada bunga lili, ujung putik terasa basah dan lengket supaya bisa menangkap serbuk. Bagian itu adalah…",
+      "p-r10": "Bagian hijau di bawah mahkota yang dulu membungkus kuncup bunga mawar.",
+      "p-r11": "Sesudah serbuk sampai di kepala putik, bagian di pangkal putik ini membesar menjadi buah.",
+      "p-r12": "Burung kolibri mencari bunga berwarna merah menyala. Bagian bunga yang menarik perhatiannya adalah…"
+    },
+    "en": {
+      "judul": "Visitors to the Park Flowers",
+      "instruksi": "Read what happens in the park, then touch the flower part that is doing the job.",
+      "b-pilihan": "choices",
+      "i-mahkota": "petals",
+      "i-kepalasari": "anther",
+      "i-kepalaputik": "stigma",
+      "i-kelopak": "sepals",
+      "i-tangkai": "flower stalk",
+      "i-bakalbuah": "ovary",
+      "i-daun": "leaf",
+      "p-r1": "A bee flies to the hibiscus because its bright red colour attracts it. The red part is the…",
+      "p-r2": "Jasmine is white and sweet-smelling, so moths come at night. The white, fragrant part is the…",
+      "p-r3": "The bee's legs turn yellow with powder after touching this part.",
+      "p-r4": "The male maize flowers at the top release pollen into the wind. The pollen is made by the…",
+      "p-r5": "A butterfly carries yellow powder from another flower. The powder sticks to this sticky part.",
+      "p-r6": "A salak farmer brushes pollen onto the female flower. The brush must touch the…",
+      "p-r7": "A gardener picks one part off each flower, and then the flower no longer makes pollen. The part that was picked is the…",
+      "p-r8": "Grass flowers are not brightly coloured because the wind carries their pollen, not insects. The part that is usually bright to attract insects is the…",
+      "p-r9": "In a lily, the top of the pistil is wet and sticky so it can catch pollen. That part is the…",
+      "p-r10": "The green parts under the petals that once wrapped the rose bud.",
+      "p-r11": "After the pollen lands on the stigma, this part at the base of the pistil swells into a fruit.",
+      "p-r12": "Hummingbirds look for bright red flowers. The flower part that catches their eye is the…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "mahkota",
+      "labelKey": "i-mahkota",
+      "bin": "pilihan",
+      "emoji": "🌺"
+    },
+    {
+      "id": "kepalasari",
+      "labelKey": "i-kepalasari",
+      "bin": "pilihan",
+      "emoji": "🟡"
+    },
+    {
+      "id": "kepalaputik",
+      "labelKey": "i-kepalaputik",
+      "bin": "pilihan",
+      "emoji": "🟢"
+    },
+    {
+      "id": "kelopak",
+      "labelKey": "i-kelopak",
+      "bin": "pilihan",
+      "emoji": "🍃"
+    },
+    {
+      "id": "tangkai",
+      "labelKey": "i-tangkai",
+      "bin": "pilihan",
+      "emoji": "🥢"
+    },
+    {
+      "id": "bakalbuah",
+      "labelKey": "i-bakalbuah",
+      "bin": "pilihan",
+      "emoji": "🫒"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "pilihan",
+      "emoji": "🌿"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "mahkota",
+        "daun",
+        "kelopak"
+      ],
+      "correct": "mahkota"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "mahkota",
+        "kepalasari",
+        "tangkai"
+      ],
+      "correct": "mahkota"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "kepalasari",
+        "kepalaputik",
+        "mahkota"
+      ],
+      "correct": "kepalasari"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "kepalasari",
+        "bakalbuah",
+        "daun"
+      ],
+      "correct": "kepalasari"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "kepalaputik",
+        "kepalasari",
+        "kelopak"
+      ],
+      "correct": "kepalaputik"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "kepalaputik",
+        "mahkota",
+        "tangkai"
+      ],
+      "correct": "kepalaputik"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "kepalasari",
+        "kepalaputik",
+        "kelopak"
+      ],
+      "correct": "kepalasari"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "mahkota",
+        "kepalaputik",
+        "daun"
+      ],
+      "correct": "mahkota"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "kepalaputik",
+        "kepalasari",
+        "bakalbuah"
+      ],
+      "correct": "kepalaputik"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "kelopak",
+        "mahkota",
+        "kepalasari"
+      ],
+      "correct": "kelopak"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "bakalbuah",
+        "kepalasari",
+        "tangkai"
+      ],
+      "correct": "bakalbuah"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "mahkota",
+        "tangkai",
+        "kepalaputik"
+      ],
+      "correct": "mahkota"
+    }
+  ]
+}

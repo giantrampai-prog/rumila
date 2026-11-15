@@ -1,0 +1,187 @@
+{
+  "id": "sd5-kode-jenis-data-lab",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.TIPE-DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Catatan Data Laboratorium",
+      "instruksi": "Di laboratorium, tiap catatan punya jenis data: angka, teks (bertanda kutip), atau benar/salah (hasil perbandingan). Seret tiap nilai ke jenisnya.",
+      "bin-angka": "angka",
+      "bin-teks": "teks",
+      "bin-bool": "benar/salah",
+      "i1": "48",
+      "i2": "9.75",
+      "i3": "-15",
+      "i4": "1000",
+      "i5": "0.5",
+      "i6": "'Surabaya'",
+      "i7": "'48'",
+      "i8": "'False'",
+      "i9": "'9.75'",
+      "i10": "'tabung reaksi'",
+      "i11": "8 >= 8",
+      "i12": "1 > 9",
+      "i13": "4 != 4",
+      "i14": "'a' == 'a'",
+      "i15": "10 < 20"
+    },
+    "en": {
+      "judul": "Lab Data Notes",
+      "instruksi": "In the lab, every note has a data type: number, text (in quotes), or true/false (the result of a comparison). Drag each value to its type.",
+      "bin-angka": "number",
+      "bin-teks": "text",
+      "bin-bool": "true/false",
+      "i1": "48",
+      "i2": "9.75",
+      "i3": "-15",
+      "i4": "1000",
+      "i5": "0.5",
+      "i6": "'Surabaya'",
+      "i7": "'48'",
+      "i8": "'False'",
+      "i9": "'9.75'",
+      "i10": "'test tube'",
+      "i11": "8 >= 8",
+      "i12": "1 > 9",
+      "i13": "4 != 4",
+      "i14": "'a' == 'a'",
+      "i15": "10 < 20"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 = angka vs teks; 3 = tambah benar/salah"
+    },
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah nilai per ronde; jebakan '48' dan 'False' bertanda kutip"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "angka",
+      "labelKey": "bin-angka",
+      "emoji": "🔢"
+    },
+    {
+      "id": "teks",
+      "labelKey": "bin-teks",
+      "emoji": "🔤"
+    },
+    {
+      "id": "bool",
+      "labelKey": "bin-bool",
+      "emoji": "⚖️"
+    }
+  ],
+  "items": [
+    {
+      "id": "i1",
+      "labelKey": "i1",
+      "bin": "angka",
+      "scale": 0.6
+    },
+    {
+      "id": "i2",
+      "labelKey": "i2",
+      "bin": "angka",
+      "scale": 0.6
+    },
+    {
+      "id": "i3",
+      "labelKey": "i3",
+      "bin": "angka",
+      "scale": 0.6
+    },
+    {
+      "id": "i4",
+      "labelKey": "i4",
+      "bin": "angka",
+      "scale": 0.6
+    },
+    {
+      "id": "i5",
+      "labelKey": "i5",
+      "bin": "angka",
+      "scale": 0.6
+    },
+    {
+      "id": "i6",
+      "labelKey": "i6",
+      "bin": "teks",
+      "scale": 0.6
+    },
+    {
+      "id": "i7",
+      "labelKey": "i7",
+      "bin": "teks",
+      "scale": 0.6
+    },
+    {
+      "id": "i8",
+      "labelKey": "i8",
+      "bin": "teks",
+      "scale": 0.6
+    },
+    {
+      "id": "i9",
+      "labelKey": "i9",
+      "bin": "teks",
+      "scale": 0.6
+    },
+    {
+      "id": "i10",
+      "labelKey": "i10",
+      "bin": "teks",
+      "scale": 0.6
+    },
+    {
+      "id": "i11",
+      "labelKey": "i11",
+      "bin": "bool",
+      "scale": 0.6
+    },
+    {
+      "id": "i12",
+      "labelKey": "i12",
+      "bin": "bool",
+      "scale": 0.6
+    },
+    {
+      "id": "i13",
+      "labelKey": "i13",
+      "bin": "bool",
+      "scale": 0.6
+    },
+    {
+      "id": "i14",
+      "labelKey": "i14",
+      "bin": "bool",
+      "scale": 0.6
+    },
+    {
+      "id": "i15",
+      "labelKey": "i15",
+      "bin": "bool",
+      "scale": 0.6
+    }
+  ]
+}

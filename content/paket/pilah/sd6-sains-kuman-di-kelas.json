@@ -1,0 +1,167 @@
+{
+  "id": "sd6-sains-kuman-di-kelas",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.PENYAKIT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kelas Bebas Kuman",
+      "instruksi": "Baca kebiasaan di sekolah dan rumah, lalu pilah: mencegah penyebaran penyakit, atau bisa menyebarkannya.",
+      "b-cegah": "mencegah penyebaran penyakit",
+      "b-sebar": "bisa menyebarkan penyakit",
+      "i-masker": "memakai masker saat batuk dan pilek",
+      "i-toilet": "mencuci tangan dengan sabun setelah dari toilet",
+      "i-imunisasi": "imunisasi sesuai jadwal",
+      "i-alatmakan": "memakai sendok dan gelas sendiri",
+      "i-tisu": "membuang tisu bekas ke tempat sampah tertutup",
+      "i-sayur": "mencuci sayur dan buah dengan air bersih",
+      "i-istirahat": "beristirahat di rumah saat flu agar tidak menulari teman",
+      "i-bersin": "bersin ke tisu lalu mencuci tangan",
+      "i-botol": "minum bergantian dari botol teman yang sedang sakit",
+      "i-jajan": "jajan makanan terbuka yang dihinggapi lalat",
+      "i-kucing": "memegang kucing liar lalu langsung makan tanpa cuci tangan",
+      "i-ludah": "meludah sembarangan di lantai kelas",
+      "i-potbunga": "membiarkan air menggenang di tatakan pot bunga",
+      "i-handuk": "memakai handuk bergantian dengan adik yang sakit mata"
+    },
+    "en": {
+      "judul": "A Germ-Free Classroom",
+      "instruksi": "Read each habit at school and at home, then sort it: stops disease spreading, or can spread it.",
+      "b-cegah": "stops disease spreading",
+      "b-sebar": "can spread disease",
+      "i-masker": "wearing a mask when you have a cough and cold",
+      "i-toilet": "washing hands with soap after using the toilet",
+      "i-imunisasi": "getting vaccinations on schedule",
+      "i-alatmakan": "using your own spoon and cup",
+      "i-tisu": "throwing used tissues in a closed bin",
+      "i-sayur": "washing vegetables and fruit in clean water",
+      "i-istirahat": "resting at home with flu so you don't infect friends",
+      "i-bersin": "sneezing into a tissue and then washing hands",
+      "i-botol": "drinking from a sick friend's bottle",
+      "i-jajan": "buying uncovered snacks that flies have landed on",
+      "i-kucing": "touching a stray cat and then eating without washing hands",
+      "i-ludah": "spitting on the classroom floor",
+      "i-potbunga": "leaving water standing in flowerpot saucers",
+      "i-handuk": "sharing a towel with a sibling who has an eye infection"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "cegah",
+      "labelKey": "b-cegah",
+      "emoji": "🛡️",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "sebar",
+      "labelKey": "b-sebar",
+      "emoji": "🦠",
+      "color": "#ffcdd2"
+    }
+  ],
+  "items": [
+    {
+      "id": "masker",
+      "labelKey": "i-masker",
+      "bin": "cegah",
+      "emoji": "😷"
+    },
+    {
+      "id": "toilet",
+      "labelKey": "i-toilet",
+      "bin": "cegah",
+      "emoji": "🧼"
+    },
+    {
+      "id": "imunisasi",
+      "labelKey": "i-imunisasi",
+      "bin": "cegah",
+      "emoji": "💉"
+    },
+    {
+      "id": "alatmakan",
+      "labelKey": "i-alatmakan",
+      "bin": "cegah",
+      "emoji": "🥄"
+    },
+    {
+      "id": "tisu",
+      "labelKey": "i-tisu",
+      "bin": "cegah",
+      "emoji": "🗑️"
+    },
+    {
+      "id": "sayur",
+      "labelKey": "i-sayur",
+      "bin": "cegah",
+      "emoji": "🥬"
+    },
+    {
+      "id": "istirahat",
+      "labelKey": "i-istirahat",
+      "bin": "cegah",
+      "emoji": "🛌"
+    },
+    {
+      "id": "bersin",
+      "labelKey": "i-bersin",
+      "bin": "cegah",
+      "emoji": "🤧"
+    },
+    {
+      "id": "botol",
+      "labelKey": "i-botol",
+      "bin": "sebar",
+      "emoji": "🍼"
+    },
+    {
+      "id": "jajan",
+      "labelKey": "i-jajan",
+      "bin": "sebar",
+      "emoji": "🪰"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "sebar",
+      "emoji": "🐈"
+    },
+    {
+      "id": "ludah",
+      "labelKey": "i-ludah",
+      "bin": "sebar",
+      "emoji": "💦"
+    },
+    {
+      "id": "potbunga",
+      "labelKey": "i-potbunga",
+      "bin": "sebar",
+      "emoji": "🪴"
+    },
+    {
+      "id": "handuk",
+      "labelKey": "i-handuk",
+      "bin": "sebar",
+      "emoji": "🧖"
+    }
+  ],
+  "pilihan": []
+}

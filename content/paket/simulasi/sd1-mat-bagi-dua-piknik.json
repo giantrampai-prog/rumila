@@ -1,0 +1,84 @@
+{
+  "id": "sd1-mat-bagi-dua-piknik",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.SD1.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bekal Piknik Berdua",
+      "instruksi": "Bekal piknik dibagi untuk dua sahabat. Bagi ke dua tikar sampai sama banyak. Isi satu tikar itulah setengahnya.",
+      "i-nasi-kepal": "nasi kepal",
+      "i-roti-lapis": "roti lapis",
+      "i-pisang": "pisang",
+      "i-jeruk": "jeruk",
+      "i-kotak-jus": "kotak jus",
+      "i-jagung-rebus": "jagung rebus"
+    },
+    "en": {
+      "judul": "Picnic Snacks for Two",
+      "instruksi": "The picnic snacks are shared by two friends. Split them onto two mats until both have the same. One mat holds half.",
+      "i-nasi-kepal": "rice balls",
+      "i-roti-lapis": "sandwiches",
+      "i-pisang": "bananas",
+      "i-jeruk": "oranges",
+      "i-kotak-jus": "juice boxes",
+      "i-jagung-rebus": "boiled corn"
+    }
+  },
+  "knobs": {
+    "max": {
+      "min": 6,
+      "max": 12,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah bekal terbanyak yang dibagi (genap 2/4/…/12; mesin bagi dibatasi 12)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "bagi",
+  "items": [
+    {
+      "id": "nasi-kepal",
+      "labelKey": "i-nasi-kepal",
+      "role": "benda",
+      "emoji": "🍙"
+    },
+    {
+      "id": "roti-lapis",
+      "labelKey": "i-roti-lapis",
+      "role": "benda",
+      "emoji": "🥪"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "role": "benda",
+      "emoji": "🍌"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "role": "benda",
+      "emoji": "🍊"
+    },
+    {
+      "id": "kotak-jus",
+      "labelKey": "i-kotak-jus",
+      "role": "benda",
+      "emoji": "🧃"
+    },
+    {
+      "id": "jagung-rebus",
+      "labelKey": "i-jagung-rebus",
+      "role": "benda",
+      "emoji": "🌽"
+    }
+  ]
+}

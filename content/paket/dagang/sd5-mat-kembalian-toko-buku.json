@@ -1,0 +1,153 @@
+{
+  "id": "sd5-mat-kembalian-toko-buku",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD5.UANG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kembalian Ratusan Toko Buku",
+      "instruksi": "Pembeli membayar Rp50.000 atau Rp100.000. Lengkapi dulu ratusannya ke ribuan, lalu ke puluhan ribu, lalu ke uangnya. Beri kembalian yang tepat.",
+      "kamus": "kamus",
+      "atlas": "atlas",
+      "ensiklopedia": "ensiklopedia",
+      "komik": "komik",
+      "novel": "novel",
+      "cat-air": "set cat air",
+      "kalkulator": "kalkulator",
+      "tas": "tas sekolah",
+      "globe": "bola dunia",
+      "pena": "set pena",
+      "catur": "papan catur",
+      "jam": "jam meja"
+    },
+    "en": {
+      "judul": "Bookshop Change in Hundreds",
+      "instruksi": "The shopper pays Rp50,000 or Rp100,000. First make the hundreds up to a thousand, then to the next ten thousand, then to the note. Give the exact change.",
+      "kamus": "dictionary",
+      "atlas": "atlas",
+      "ensiklopedia": "encyclopedia",
+      "komik": "comic book",
+      "novel": "novel",
+      "cat-air": "watercolour set",
+      "kalkulator": "calculator",
+      "tas": "school bag",
+      "globe": "globe",
+      "pena": "pen set",
+      "catur": "chess set",
+      "jam": "desk clock"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "satu barang per pembeli; harga memakai ratusan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-buku",
+  "currency": "IDR",
+  "denominations": [
+    100,
+    200,
+    500,
+    1000,
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "kamus",
+      "labelKey": "kamus",
+      "price": 47800,
+      "emoji": "📕"
+    },
+    {
+      "id": "atlas",
+      "labelKey": "atlas",
+      "price": 63500,
+      "emoji": "🗺️"
+    },
+    {
+      "id": "ensiklopedia",
+      "labelKey": "ensiklopedia",
+      "price": 89700,
+      "emoji": "📚"
+    },
+    {
+      "id": "komik",
+      "labelKey": "komik",
+      "price": 24300,
+      "emoji": "📖"
+    },
+    {
+      "id": "novel",
+      "labelKey": "novel",
+      "price": 38900,
+      "emoji": "📘"
+    },
+    {
+      "id": "cat-air",
+      "labelKey": "cat-air",
+      "price": 27600,
+      "emoji": "🎨"
+    },
+    {
+      "id": "kalkulator",
+      "labelKey": "kalkulator",
+      "price": 72400,
+      "emoji": "🧮"
+    },
+    {
+      "id": "tas",
+      "labelKey": "tas",
+      "price": 95500,
+      "emoji": "🎒"
+    },
+    {
+      "id": "globe",
+      "labelKey": "globe",
+      "price": 81200,
+      "emoji": "🌍"
+    },
+    {
+      "id": "pena",
+      "labelKey": "pena",
+      "price": 33700,
+      "emoji": "🖊️"
+    },
+    {
+      "id": "catur",
+      "labelKey": "catur",
+      "price": 44800,
+      "emoji": "♟️"
+    },
+    {
+      "id": "jam",
+      "labelKey": "jam",
+      "price": 68900,
+      "emoji": "⏰"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 99900,
+    "kindsMax": 1
+  }
+}

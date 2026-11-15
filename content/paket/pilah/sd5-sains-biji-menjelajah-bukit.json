@@ -1,0 +1,191 @@
+{
+  "id": "sd5-sains-biji-menjelajah-bukit",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-TUMBUHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Biji Menyeberangi Sungai",
+      "instruksi": "Lihat bentuk buah atau bijinya, lalu taruh di cara biji itu tersebar.",
+      "b-angin": "terbawa angin",
+      "b-hewan": "dibawa hewan",
+      "b-air": "terbawa air",
+      "b-letup": "meletup sendiri",
+      "i-meranti": "biji meranti bersayap, berputar saat jatuh",
+      "i-anggrek": "biji anggrek sehalus debu",
+      "i-ilalang": "biji ilalang berbulu putih halus",
+      "i-tabebuya": "biji tabebuya pipih bersayap tipis",
+      "i-beringin": "buah beringin kecil dimakan burung",
+      "i-kopi": "buah kopi merah dimakan luwak",
+      "i-jarum": "biji rumput jarum berkait, menempel di bulu kambing",
+      "i-tupai": "biji kenari disimpan tupai di tanah lalu terlupa",
+      "i-ketapang": "buah ketapang berongga udara, mengapung di laut",
+      "i-pandan": "buah pandan laut mengapung terbawa ombak",
+      "i-nyamplung": "buah nyamplung bulat mengapung di sungai",
+      "i-teratai": "biji teratai lepas dari polongnya dan hanyut di kolam",
+      "i-pletekan": "buah pletekan pecah melontarkan biji saat kena air",
+      "i-jarak": "buah jarak kering pecah dan melontarkan biji",
+      "i-lamtoro": "polong lamtoro kering terbelah dan memuntir"
+    },
+    "en": {
+      "judul": "Seeds Across the River",
+      "instruksi": "Look at the shape of the fruit or seed, then put it with the way it spreads.",
+      "b-angin": "carried by wind",
+      "b-hewan": "carried by animals",
+      "b-air": "carried by water",
+      "b-letup": "bursts open by itself",
+      "i-meranti": "winged meranti seed that spins as it falls",
+      "i-anggrek": "orchid seeds as fine as dust",
+      "i-ilalang": "cogon grass seed with fine white hairs",
+      "i-tabebuya": "flat trumpet-tree seed with thin wings",
+      "i-beringin": "small banyan fruit eaten by birds",
+      "i-kopi": "red coffee cherry eaten by a civet",
+      "i-jarum": "hooked beggar-tick seed that sticks to goat fur",
+      "i-tupai": "nut buried by a squirrel and then forgotten",
+      "i-ketapang": "sea almond fruit with air pockets, floating at sea",
+      "i-pandan": "screwpine fruit floating on the waves",
+      "i-nyamplung": "round Alexandrian laurel fruit floating down a river",
+      "i-teratai": "lotus seed falling from its pod and drifting on a pond",
+      "i-pletekan": "popping-pod fruit that flings seeds when wet",
+      "i-jarak": "dry castor fruit that splits and shoots out seeds",
+      "i-lamtoro": "dry leucaena pod that splits and twists open"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 8; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "angin",
+      "labelKey": "b-angin",
+      "emoji": "🌬️",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "hewan",
+      "labelKey": "b-hewan",
+      "emoji": "🐾",
+      "color": "#fff3e0"
+    },
+    {
+      "id": "air",
+      "labelKey": "b-air",
+      "emoji": "🌊",
+      "color": "#e0f7fa"
+    },
+    {
+      "id": "letup",
+      "labelKey": "b-letup",
+      "emoji": "💥",
+      "color": "#fce4ec"
+    }
+  ],
+  "items": [
+    {
+      "id": "meranti",
+      "labelKey": "i-meranti",
+      "bin": "angin",
+      "emoji": "🍂"
+    },
+    {
+      "id": "anggrek",
+      "labelKey": "i-anggrek",
+      "bin": "angin",
+      "emoji": "✨"
+    },
+    {
+      "id": "ilalang",
+      "labelKey": "i-ilalang",
+      "bin": "angin",
+      "emoji": "☁️"
+    },
+    {
+      "id": "tabebuya",
+      "labelKey": "i-tabebuya",
+      "bin": "angin",
+      "emoji": "🍃"
+    },
+    {
+      "id": "beringin",
+      "labelKey": "i-beringin",
+      "bin": "hewan",
+      "emoji": "🐦"
+    },
+    {
+      "id": "kopi",
+      "labelKey": "i-kopi",
+      "bin": "hewan",
+      "emoji": "☕"
+    },
+    {
+      "id": "jarum",
+      "labelKey": "i-jarum",
+      "bin": "hewan",
+      "emoji": "🐐"
+    },
+    {
+      "id": "tupai",
+      "labelKey": "i-tupai",
+      "bin": "hewan",
+      "emoji": "🐿️"
+    },
+    {
+      "id": "ketapang",
+      "labelKey": "i-ketapang",
+      "bin": "air",
+      "emoji": "🛟"
+    },
+    {
+      "id": "pandan",
+      "labelKey": "i-pandan",
+      "bin": "air",
+      "emoji": "🌊"
+    },
+    {
+      "id": "nyamplung",
+      "labelKey": "i-nyamplung",
+      "bin": "air",
+      "emoji": "🟤"
+    },
+    {
+      "id": "teratai",
+      "labelKey": "i-teratai",
+      "bin": "air",
+      "emoji": "🪷"
+    },
+    {
+      "id": "pletekan",
+      "labelKey": "i-pletekan",
+      "bin": "letup",
+      "emoji": "💦"
+    },
+    {
+      "id": "jarak",
+      "labelKey": "i-jarak",
+      "bin": "letup",
+      "emoji": "🫘"
+    },
+    {
+      "id": "lamtoro",
+      "labelKey": "i-lamtoro",
+      "bin": "letup",
+      "emoji": "🫛"
+    }
+  ],
+  "pilihan": []
+}

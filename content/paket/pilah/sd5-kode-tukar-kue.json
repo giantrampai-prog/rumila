@@ -1,0 +1,426 @@
+{
+  "id": "sd5-kode-tukar-kue",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.URUT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Merapikan Jajaran Kue",
+      "instruksi": "Satu putaran tukar-tetangga: dari kiri ke kanan, bandingkan dua kue bersebelahan dan tukar bila yang kiri lebih besar. Jalankan sampai ujung kanan, lalu pilih hasilnya.",
+      "pilihan": "pilihan",
+      "c1": "3  6  2  8",
+      "c2": "2  3  6  8",
+      "c3": "3  6  8  2",
+      "q1": "Kue berjajar dengan ukuran: 6, 3, 8, 2. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c4": "4  1  5  7",
+      "c5": "1  4  5  7",
+      "c6": "4  1  7  5",
+      "q2": "Kue berjajar dengan ukuran: 4, 7, 1, 5. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c7": "2  5  7  9",
+      "c8": "2  9  5  7",
+      "c9": "7  5  2  9",
+      "q3": "Kue berjajar dengan ukuran: 9, 2, 5, 7. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c10": "3  2  5  1  6",
+      "c11": "1  2  3  5  6",
+      "c12": "3  2  5  6  1",
+      "q4": "Kue berjajar dengan ukuran: 3, 5, 2, 6, 1. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c13": "1  4  6  8",
+      "c14": "1  8  4  6",
+      "c15": "6  4  1  8",
+      "q5": "Kue berjajar dengan ukuran: 8, 1, 4, 6. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c16": "2  4  7  3  9",
+      "c17": "2  3  4  7  9",
+      "c18": "2  4  9  7  3",
+      "q6": "Kue berjajar dengan ukuran: 2, 9, 4, 7, 3. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c19": "5  1  3  6",
+      "c20": "1  3  5  6",
+      "c21": "5  1  6  3",
+      "q7": "Kue berjajar dengan ukuran: 5, 6, 1, 3. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c22": "4  7  1  6  9",
+      "c23": "1  4  6  7  9",
+      "c24": "4  7  9  1  6",
+      "q8": "Kue berjajar dengan ukuran: 7, 4, 9, 1, 6. Bagaimana urutannya setelah SATU putaran tukar-tetangga?",
+      "c25": "1",
+      "c26": "2",
+      "c27": "0",
+      "q9": "Kue berjajar dengan ukuran: 3, 1, 2. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "c28": "3",
+      "q10": "Kue berjajar dengan ukuran: 2, 3, 1. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "c29": "4",
+      "q11": "Kue berjajar dengan ukuran: 4, 3, 2, 1. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "q12": "Kue berjajar dengan ukuran: 1, 2, 4, 3. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "q13": "Kue berjajar dengan ukuran: 5, 1, 2, 3, 4. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?"
+    },
+    "en": {
+      "judul": "Tidying the Cake Row",
+      "instruksi": "One pass of neighbour swaps: from left to right, compare two cakes side by side and swap them if the left one is bigger. Go all the way to the right end, then choose the result.",
+      "pilihan": "choices",
+      "c1": "3  6  2  8",
+      "c2": "2  3  6  8",
+      "c3": "3  6  8  2",
+      "q1": "Cakes in a row, sizes: 6, 3, 8, 2. What is the order after ONE pass of neighbour swaps?",
+      "c4": "4  1  5  7",
+      "c5": "1  4  5  7",
+      "c6": "4  1  7  5",
+      "q2": "Cakes in a row, sizes: 4, 7, 1, 5. What is the order after ONE pass of neighbour swaps?",
+      "c7": "2  5  7  9",
+      "c8": "2  9  5  7",
+      "c9": "7  5  2  9",
+      "q3": "Cakes in a row, sizes: 9, 2, 5, 7. What is the order after ONE pass of neighbour swaps?",
+      "c10": "3  2  5  1  6",
+      "c11": "1  2  3  5  6",
+      "c12": "3  2  5  6  1",
+      "q4": "Cakes in a row, sizes: 3, 5, 2, 6, 1. What is the order after ONE pass of neighbour swaps?",
+      "c13": "1  4  6  8",
+      "c14": "1  8  4  6",
+      "c15": "6  4  1  8",
+      "q5": "Cakes in a row, sizes: 8, 1, 4, 6. What is the order after ONE pass of neighbour swaps?",
+      "c16": "2  4  7  3  9",
+      "c17": "2  3  4  7  9",
+      "c18": "2  4  9  7  3",
+      "q6": "Cakes in a row, sizes: 2, 9, 4, 7, 3. What is the order after ONE pass of neighbour swaps?",
+      "c19": "5  1  3  6",
+      "c20": "1  3  5  6",
+      "c21": "5  1  6  3",
+      "q7": "Cakes in a row, sizes: 5, 6, 1, 3. What is the order after ONE pass of neighbour swaps?",
+      "c22": "4  7  1  6  9",
+      "c23": "1  4  6  7  9",
+      "c24": "4  7  9  1  6",
+      "q8": "Cakes in a row, sizes: 7, 4, 9, 1, 6. What is the order after ONE pass of neighbour swaps?",
+      "c25": "1",
+      "c26": "2",
+      "c27": "0",
+      "q9": "Cakes in a row, sizes: 3, 1, 2. How many passes of neighbour swaps until they are all sorted smallest first?",
+      "c28": "3",
+      "q10": "Cakes in a row, sizes: 2, 3, 1. How many passes of neighbour swaps until they are all sorted smallest first?",
+      "c29": "4",
+      "q11": "Cakes in a row, sizes: 4, 3, 2, 1. How many passes of neighbour swaps until they are all sorted smallest first?",
+      "q12": "Cakes in a row, sizes: 1, 2, 4, 3. How many passes of neighbour swaps until they are all sorted smallest first?",
+      "q13": "Cakes in a row, sizes: 5, 1, 2, 3, 4. How many passes of neighbour swaps until they are all sorted smallest first?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c14",
+        "c15"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c16",
+        "c17",
+        "c18"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c19",
+        "c20",
+        "c21"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c22"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c26",
+        "c25",
+        "c28"
+      ],
+      "correct": "c26"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c28",
+        "c29",
+        "c26"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c25",
+        "c27",
+        "c26"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c25",
+        "c29",
+        "c26"
+      ],
+      "correct": "c25"
+    }
+  ]
+}

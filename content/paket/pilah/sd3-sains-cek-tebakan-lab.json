@@ -1,0 +1,186 @@
+{
+  "id": "sd3-sains-cek-tebakan-lab",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD3.PENYELIDIKAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cocokkan Hasil dan Tebakan",
+      "instruksi": "Dengarkan tebakan sebelum percobaan dan hasil percobaannya. Apakah hasilnya mendukung tebakan?",
+      "b-pilihan": "pilihan",
+      "i-dukung": "hasil mendukung tebakan",
+      "i-tidak": "hasil tidak mendukung tebakan",
+      "p-magnet": "Tebakan: magnet menarik paku besi. Hasil: paku langsung menempel di magnet.",
+      "p-batu": "Tebakan: batu tenggelam di air. Hasil: batu jatuh ke dasar ember.",
+      "p-layu": "Tebakan: tanaman yang tidak disiram akan layu. Hasil: setelah seminggu tidak disiram, tanaman itu layu.",
+      "p-roti": "Tebakan: roti di tempat lembap lebih cepat berjamur. Hasil: roti di tempat lembap berjamur lebih dulu.",
+      "p-drum": "Tebakan: bunyi drum terdengar paling keras dari dekat. Hasil: anak yang paling dekat mendengar paling keras.",
+      "p-bajuhitam": "Tebakan: kaus hitam di bawah Matahari lebih panas daripada kaus putih. Hasil: kaus hitam terasa lebih panas.",
+      "p-kayu": "Tebakan: balok kayu tenggelam di air. Hasil: balok kayu mengapung.",
+      "p-penghapus": "Tebakan: magnet menarik penghapus karet. Hasil: penghapus tidak bergerak sama sekali.",
+      "p-eskulkas": "Tebakan: es batu di dalam kulkas mencair lebih dulu daripada es di atas meja. Hasil: es di atas meja mencair lebih dulu.",
+      "p-kertas": "Tebakan: kertas selembar jatuh lebih cepat daripada kertas yang diremas. Hasil: kertas yang diremas sampai di lantai lebih dulu.",
+      "p-gula": "Tebakan: gula lebih cepat larut di air dingin daripada di air hangat. Hasil: gula di air hangat habis larut lebih dulu.",
+      "p-gelap": "Tebakan: tanaman di lemari gelap tumbuh lebih hijau. Hasil: tanaman di lemari gelap menjadi pucat kekuningan."
+    },
+    "en": {
+      "judul": "Match the Result to the Prediction",
+      "instruksi": "Listen to the prediction made before the experiment and the result. Does the result support the prediction?",
+      "b-pilihan": "choices",
+      "i-dukung": "the result supports the prediction",
+      "i-tidak": "the result does not support the prediction",
+      "p-magnet": "Prediction: a magnet pulls an iron nail. Result: the nail sticks to the magnet straight away.",
+      "p-batu": "Prediction: a stone sinks in water. Result: the stone drops to the bottom of the bucket.",
+      "p-layu": "Prediction: a plant that is not watered will wilt. Result: after a week without water, the plant wilted.",
+      "p-roti": "Prediction: bread in a damp place goes mouldy faster. Result: the bread in the damp place went mouldy first.",
+      "p-drum": "Prediction: the drum sounds loudest close up. Result: the child closest to it heard it loudest.",
+      "p-bajuhitam": "Prediction: a black T-shirt in the sun gets hotter than a white one. Result: the black T-shirt felt hotter.",
+      "p-kayu": "Prediction: a wooden block sinks in water. Result: the wooden block floated.",
+      "p-penghapus": "Prediction: a magnet pulls a rubber eraser. Result: the eraser did not move at all.",
+      "p-eskulkas": "Prediction: an ice cube in the fridge melts before one on the table. Result: the ice on the table melted first.",
+      "p-kertas": "Prediction: a flat sheet of paper falls faster than a scrunched-up one. Result: the scrunched-up paper reached the floor first.",
+      "p-gula": "Prediction: sugar dissolves faster in cold water than in warm water. Result: the sugar in the warm water dissolved first.",
+      "p-gelap": "Prediction: a plant in a dark cupboard grows greener. Result: the plant in the dark cupboard turned pale and yellowish."
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "dukung",
+      "labelKey": "i-dukung",
+      "bin": "pilihan",
+      "emoji": "✅"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "i-tidak",
+      "bin": "pilihan",
+      "emoji": "❌"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "magnet",
+      "promptKey": "p-magnet",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "batu",
+      "promptKey": "p-batu",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "layu",
+      "promptKey": "p-layu",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "roti",
+      "promptKey": "p-roti",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "drum",
+      "promptKey": "p-drum",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "bajuhitam",
+      "promptKey": "p-bajuhitam",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "dukung"
+    },
+    {
+      "id": "kayu",
+      "promptKey": "p-kayu",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "penghapus",
+      "promptKey": "p-penghapus",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "eskulkas",
+      "promptKey": "p-eskulkas",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "kertas",
+      "promptKey": "p-kertas",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "gula",
+      "promptKey": "p-gula",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "gelap",
+      "promptKey": "p-gelap",
+      "choices": [
+        "dukung",
+        "tidak"
+      ],
+      "correct": "tidak"
+    }
+  ]
+}

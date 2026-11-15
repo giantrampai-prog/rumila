@@ -1,0 +1,377 @@
+{
+  "id": "sd6-mat-kubik-bintang-angkasa",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD6.FAKTOR.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kubik di Antara Bintang",
+      "instruksi": "Bilangan kubik = bilangan dikali dirinya tiga kali (3 × 3 × 3 = 27). Bilangan kuadrat = dikali dirinya dua kali (3 × 3 = 9). Sentuh jawaban yang benar.",
+      "pilihan": "pilihan",
+      "q1": "Bintang bernomor 64 termasuk bilangan …",
+      "c1": "kuadrat dan kubik",
+      "c2": "hanya kubik",
+      "c3": "hanya kuadrat",
+      "c4": "bukan keduanya",
+      "q2": "Bintang bernomor 27 termasuk bilangan …",
+      "q3": "Bintang bernomor 49 termasuk bilangan …",
+      "q4": "Bintang bernomor 1 termasuk bilangan …",
+      "q5": "Bintang bernomor 125 termasuk bilangan …",
+      "q6": "Bintang bernomor 90 termasuk bilangan …",
+      "q7": "Bintang bernomor 81 termasuk bilangan …",
+      "q8": "Planet mana yang nomornya bilangan kubik?",
+      "c5": "27",
+      "c6": "9",
+      "c7": "18",
+      "c8": "81",
+      "q9": "Mana yang kuadrat tetapi bukan kubik?",
+      "c9": "36",
+      "c10": "8",
+      "c11": "125",
+      "q10": "Mana yang kubik tetapi bukan kuadrat?",
+      "c12": "4",
+      "c13": "16",
+      "c14": "100",
+      "q11": "Mana yang BUKAN bilangan kubik?",
+      "c15": "1",
+      "q12": "Kubus roket disusun 3 × 3 × 3 kubus kecil. Ada berapa kubus kecil?",
+      "c16": "33",
+      "q13": "Kubus satelit disusun 4 × 4 × 4 kubus kecil. Ada berapa kubus kecil?",
+      "c17": "64",
+      "c18": "12",
+      "c19": "48",
+      "q14": "5 × 5 × 5 = …",
+      "c20": "15",
+      "c21": "25",
+      "c22": "75"
+    },
+    "en": {
+      "judul": "Cubes Among the Stars",
+      "instruksi": "A cube number is a number multiplied by itself three times (3 × 3 × 3 = 27). A square number is multiplied by itself twice (3 × 3 = 9). Touch the right answer.",
+      "pilihan": "choices",
+      "q1": "The star numbered 64 is a …",
+      "c1": "square and cube",
+      "c2": "cube only",
+      "c3": "square only",
+      "c4": "neither",
+      "q2": "The star numbered 27 is a …",
+      "q3": "The star numbered 49 is a …",
+      "q4": "The star numbered 1 is a …",
+      "q5": "The star numbered 125 is a …",
+      "q6": "The star numbered 90 is a …",
+      "q7": "The star numbered 81 is a …",
+      "q8": "Which planet has a cube number?",
+      "c5": "27",
+      "c6": "9",
+      "c7": "18",
+      "c8": "81",
+      "q9": "Which is a square number but not a cube number?",
+      "c9": "36",
+      "c10": "8",
+      "c11": "125",
+      "q10": "Which is a cube number but not a square number?",
+      "c12": "4",
+      "c13": "16",
+      "c14": "100",
+      "q11": "Which is NOT a cube number?",
+      "c15": "1",
+      "q12": "A rocket cube is built from 3 × 3 × 3 small cubes. How many small cubes?",
+      "c16": "33",
+      "q13": "A satellite cube is built from 4 × 4 × 4 small cubes. How many small cubes?",
+      "c17": "64",
+      "c18": "12",
+      "c19": "48",
+      "q14": "5 × 5 × 5 = …",
+      "c20": "15",
+      "c21": "25",
+      "c22": "75"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c4"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c3",
+        "c1",
+        "c2",
+        "c4"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c2",
+        "c1",
+        "c3",
+        "c4"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c4",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c3",
+        "c1",
+        "c2",
+        "c4"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c9",
+        "c10",
+        "c5",
+        "c11"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c10",
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c14",
+        "c15",
+        "c10",
+        "c11"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c16"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r13",
+      "promptKey": "q13",
+      "choices": [
+        "c17",
+        "c13",
+        "c18",
+        "c19"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r14",
+      "promptKey": "q14",
+      "choices": [
+        "c11",
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c11"
+    }
+  ]
+}

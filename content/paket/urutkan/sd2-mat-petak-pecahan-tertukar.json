@@ -1,0 +1,418 @@
+{
+  "id": "sd2-mat-petak-pecahan-tertukar",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD2.PECAHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Petak Kebun Tertukar",
+      "instruksi": "Bayangkan satu petak kebun utuh. Dua kartu pecahan tertukar tempat. Tukar satu kali supaya urut dari terkecil ke terbesar.",
+      "j-urut": "Dari terkecil ke terbesar",
+      "s-seperempat": "¼",
+      "s-setengah": "½",
+      "s-tigaperempat": "¾",
+      "s-satu": "1",
+      "s-3per4": "3/4",
+      "s-4per4": "4/4",
+      "s-1per2": "1/2",
+      "s-2per2": "2/2",
+      "s-2per4": "2/4",
+      "s-1per4": "1/4"
+    },
+    "en": {
+      "judul": "Swapped Garden Plots",
+      "instruksi": "Picture one whole garden plot. Two fraction cards have swapped places. Swap once so they go from smallest to largest.",
+      "j-urut": "Smallest to largest",
+      "s-seperempat": "¼",
+      "s-setengah": "½",
+      "s-tigaperempat": "¾",
+      "s-satu": "1",
+      "s-3per4": "3/4",
+      "s-4per4": "4/4",
+      "s-1per2": "1/2",
+      "s-2per2": "2/2",
+      "s-2per4": "2/4",
+      "s-1per4": "1/4"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "petak-1",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "satu",
+          "labelKey": "s-satu",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-2",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "4per4",
+          "labelKey": "s-4per4",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-3",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-4",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "satu",
+          "labelKey": "s-satu",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-5",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "4per4",
+          "labelKey": "s-4per4",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-6",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "seperempat",
+          "labelKey": "s-seperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-7",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "satu",
+          "labelKey": "s-satu",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-8",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "setengah",
+          "labelKey": "s-setengah",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "4per4",
+          "labelKey": "s-4per4",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-9",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-10",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "1per2",
+          "labelKey": "s-1per2",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "satu",
+          "labelKey": "s-satu",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-11",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "tigaperempat",
+          "labelKey": "s-tigaperempat",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "4per4",
+          "labelKey": "s-4per4",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    },
+    {
+      "id": "petak-12",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "1per4",
+          "labelKey": "s-1per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per4",
+          "labelKey": "s-2per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "3per4",
+          "labelKey": "s-3per4",
+          "emoji": "🟩",
+          "scale": 1
+        },
+        {
+          "id": "2per2",
+          "labelKey": "s-2per2",
+          "emoji": "🟩",
+          "scale": 1
+        }
+      ]
+    }
+  ]
+}

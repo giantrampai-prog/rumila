@@ -1,0 +1,283 @@
+{
+  "id": "sd5-sains-uji-kecambah-kelas",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Percobaan Kecambah di Kelas",
+      "instruksi": "Kelasmu menanam biji kacang merah di tempat berbeda. Baca soalnya, lalu pilih jawabannya.",
+      "b-pilihan": "pilihan",
+      "i-basahhangat": "tisu basah, di meja kelas yang hangat",
+      "i-keringhangat": "tisu kering, di meja kelas yang hangat",
+      "i-basahkulkas": "tisu basah, di dalam kulkas yang dingin",
+      "i-basahgelap": "tisu basah, di dalam kotak gelap yang hangat",
+      "i-keringterang": "tisu kering, di jendela yang terang",
+      "i-tanahlembap": "tanah lembap, di pot di teras yang hangat",
+      "i-tanahkering": "tanah kering, tidak pernah disiram",
+      "i-berkecambah": "berkecambah",
+      "i-tidak": "tidak berkecambah",
+      "i-air": "air",
+      "i-hangat": "suhu yang hangat",
+      "i-cahaya": "cahaya",
+      "i-pupuk": "pupuk",
+      "p-r1": "Mana biji kacang merah yang akan berkecambah?",
+      "p-r2": "Mana biji yang tidak akan berkecambah?",
+      "p-r3": "Mana biji yang tetap berkecambah walau tidak kena cahaya sama sekali?",
+      "p-r4": "Mana biji yang tidak berkecambah karena terlalu dingin?",
+      "p-r5": "Mana biji yang akan berkecambah?",
+      "p-r6": "Biji di tisu basah dalam kotak gelap yang hangat. Apa yang terjadi?",
+      "p-r7": "Biji di tanah kering yang tidak pernah disiram. Apa yang terjadi?",
+      "p-r8": "Biji di tisu kering di jendela yang terang tidak berkecambah. Apa yang kurang?",
+      "p-r9": "Biji di tisu basah dalam kulkas tidak berkecambah. Apa yang kurang?",
+      "p-r10": "Saat berkecambah, biji memakai cadangan makanan di dalam bijinya sendiri. Jadi biji belum membutuhkan…",
+      "p-r11": "Rina menutup pot berisi biji jagung di tanah lembap dengan kardus gelap. Apa yang terjadi pada bijinya?",
+      "p-r12": "Sebungkus biji kering di rak toko tidak berkecambah selama berbulan-bulan. Apa yang tidak ada?"
+    },
+    "en": {
+      "judul": "Classroom Sprouting Test",
+      "instruksi": "Your class plants red beans in different places. Read the question, then choose the answer.",
+      "b-pilihan": "choices",
+      "i-basahhangat": "wet tissue, on a warm classroom table",
+      "i-keringhangat": "dry tissue, on a warm classroom table",
+      "i-basahkulkas": "wet tissue, inside a cold fridge",
+      "i-basahgelap": "wet tissue, inside a warm dark box",
+      "i-keringterang": "dry tissue, on a bright windowsill",
+      "i-tanahlembap": "damp soil, in a pot on a warm porch",
+      "i-tanahkering": "dry soil, never watered",
+      "i-berkecambah": "it sprouts",
+      "i-tidak": "it does not sprout",
+      "i-air": "water",
+      "i-hangat": "a warm temperature",
+      "i-cahaya": "light",
+      "i-pupuk": "fertiliser",
+      "p-r1": "Which red bean will sprout?",
+      "p-r2": "Which bean will not sprout?",
+      "p-r3": "Which bean still sprouts even though it gets no light at all?",
+      "p-r4": "Which bean does not sprout because it is too cold?",
+      "p-r5": "Which bean will sprout?",
+      "p-r6": "A bean on wet tissue in a warm dark box. What happens?",
+      "p-r7": "A bean in dry soil that is never watered. What happens?",
+      "p-r8": "A bean on dry tissue on a bright windowsill does not sprout. What is missing?",
+      "p-r9": "A bean on wet tissue in the fridge does not sprout. What is missing?",
+      "p-r10": "When sprouting, a seed uses the food stored inside itself. So the seed does not need… yet",
+      "p-r11": "Rina covers a pot of maize seeds in damp soil with a dark box. What happens to the seeds?",
+      "p-r12": "A packet of dry seeds on a shop shelf does not sprout for months. What is missing?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "basahhangat",
+      "labelKey": "i-basahhangat",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "keringhangat",
+      "labelKey": "i-keringhangat",
+      "bin": "pilihan",
+      "emoji": "🧻"
+    },
+    {
+      "id": "basahkulkas",
+      "labelKey": "i-basahkulkas",
+      "bin": "pilihan",
+      "emoji": "🧊"
+    },
+    {
+      "id": "basahgelap",
+      "labelKey": "i-basahgelap",
+      "bin": "pilihan",
+      "emoji": "📦"
+    },
+    {
+      "id": "keringterang",
+      "labelKey": "i-keringterang",
+      "bin": "pilihan",
+      "emoji": "🪟"
+    },
+    {
+      "id": "tanahlembap",
+      "labelKey": "i-tanahlembap",
+      "bin": "pilihan",
+      "emoji": "🪴"
+    },
+    {
+      "id": "tanahkering",
+      "labelKey": "i-tanahkering",
+      "bin": "pilihan",
+      "emoji": "🏜️"
+    },
+    {
+      "id": "berkecambah",
+      "labelKey": "i-berkecambah",
+      "bin": "pilihan",
+      "emoji": "🌱"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "i-tidak",
+      "bin": "pilihan",
+      "emoji": "❌"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "pilihan",
+      "emoji": "🚰"
+    },
+    {
+      "id": "hangat",
+      "labelKey": "i-hangat",
+      "bin": "pilihan",
+      "emoji": "🌡️"
+    },
+    {
+      "id": "cahaya",
+      "labelKey": "i-cahaya",
+      "bin": "pilihan",
+      "emoji": "💡"
+    },
+    {
+      "id": "pupuk",
+      "labelKey": "i-pupuk",
+      "bin": "pilihan",
+      "emoji": "🧪"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "basahhangat",
+        "keringhangat",
+        "keringterang"
+      ],
+      "correct": "basahhangat"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "keringhangat",
+        "basahhangat",
+        "tanahlembap"
+      ],
+      "correct": "keringhangat"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "basahgelap",
+        "keringterang",
+        "tanahkering"
+      ],
+      "correct": "basahgelap"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "basahkulkas",
+        "basahhangat",
+        "basahgelap"
+      ],
+      "correct": "basahkulkas"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "tanahlembap",
+        "tanahkering",
+        "basahkulkas"
+      ],
+      "correct": "tanahlembap"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "berkecambah",
+        "tidak"
+      ],
+      "correct": "berkecambah"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "tidak",
+        "berkecambah"
+      ],
+      "correct": "tidak"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "air",
+        "cahaya",
+        "pupuk"
+      ],
+      "correct": "air"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "hangat",
+        "cahaya",
+        "pupuk"
+      ],
+      "correct": "hangat"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "cahaya",
+        "air",
+        "hangat"
+      ],
+      "correct": "cahaya"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "berkecambah",
+        "tidak"
+      ],
+      "correct": "berkecambah"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "air",
+        "cahaya",
+        "pupuk"
+      ],
+      "correct": "air"
+    }
+  ]
+}

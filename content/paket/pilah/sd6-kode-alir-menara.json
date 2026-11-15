@@ -1,0 +1,380 @@
+{
+  "id": "sd6-kode-alir-menara",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.FLOWCHART.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Diagram Alir Menara Air",
+      "instruksi": "Ikuti panah diagram alir dari Mulai: di tiap ◇ jawab ya atau tidak, dan bila panah kembali ke ◇, periksa lagi dengan nilai yang baru. Pilih apa yang tampil di akhir.",
+      "pilihan": "pilihan",
+      "c1": "18",
+      "c2": "14",
+      "c3": "22",
+      "q1": "Mulai → x = 2 → ◇ x > 15? ya: tampil x → Selesai. tidak: x = x + 4, kembali ke ◇. Apa yang tampil?",
+      "c4": "26",
+      "c5": "2",
+      "q2": "Mulai → n = 50 → ◇ n < 20? ya: tampil n → Selesai. tidak: n = n − 12, kembali ke ◇. Apa yang tampil?",
+      "c6": "5",
+      "c7": "4",
+      "c8": "32",
+      "q3": "Mulai → a = 1, hitung = 0 → ◇ a > 30? ya: tampil hitung → Selesai. tidak: a = a × 2, hitung = hitung + 1, kembali ke ◇. Apa yang tampil?",
+      "c9": "6",
+      "q4": "Mulai → air = 0 → ◇ air ≥ 25? ya: tampil 'tangki penuh' → Selesai. tidak: air = air + 5, kembali ke ◇. Berapa kali kotak 'air = air + 5' dijalankan?",
+      "c10": "nyalakan pemanas",
+      "c11": "matikan pemanas",
+      "q5": "Mulai → baca suhu (18) → ◇ suhu < 20? ya: tampil 'nyalakan pemanas'. tidak: tampil 'matikan pemanas' → Selesai. Apa yang tampil?",
+      "c12": "1",
+      "c13": "3",
+      "c14": "0",
+      "q6": "Mulai → x = 9 → ◇ x habis dibagi 3? ya: x = x ÷ 3, kembali ke ◇. tidak: tampil x → Selesai. Apa yang tampil?",
+      "c15": "20",
+      "c16": "12",
+      "c17": "30",
+      "q7": "Mulai → jumlah = 0, i = 2 → ◇ i > 8? ya: tampil jumlah → Selesai. tidak: jumlah = jumlah + i, i = i + 2, kembali ke ◇. Apa yang tampil?",
+      "q8": "Mulai → lantai = 1 → ◇ lantai = 6? ya: tampil 'sampai' → Selesai. tidak: lantai = lantai + 1, kembali ke ◇. Berapa kali lift naik satu lantai?",
+      "c18": "belum boleh",
+      "c19": "boleh naik",
+      "q9": "Mulai → tinggi = 120, umur = 8 → ◇ tinggi ≥ 130? ya: 'boleh naik'. tidak: ◇ umur ≥ 10? ya: 'boleh naik', tidak: 'belum boleh' → Selesai. Apa yang tampil?",
+      "c20": "25",
+      "c21": "50",
+      "q10": "Mulai → x = 100 → ◇ x < 30? ya: tampil x → Selesai. tidak: x = x ÷ 2, kembali ke ◇. Apa yang tampil?",
+      "c22": "9",
+      "c23": "15",
+      "q11": "Mulai → koin = 3 → ◇ koin ≥ 10? ya: tampil koin → Selesai. tidak: koin = koin + 3, kembali ke ◇. Apa yang tampil?",
+      "c24": "16",
+      "c25": "8",
+      "q12": "Mulai → n = 1, hasil = 1 → ◇ n > 4? ya: tampil hasil → Selesai. tidak: hasil = hasil × 2, n = n + 1, kembali ke ◇. Apa yang tampil?"
+    },
+    "en": {
+      "judul": "Water Tower Flowchart",
+      "instruksi": "Follow the flowchart arrows from Start: at each ◇ answer yes or no, and when an arrow loops back to ◇, check again with the new value. Choose what is shown at the end.",
+      "pilihan": "choices",
+      "c1": "18",
+      "c2": "14",
+      "c3": "22",
+      "q1": "Start → x = 2 → ◇ x > 15? yes: show x → End. no: x = x + 4, back to ◇. What is shown?",
+      "c4": "26",
+      "c5": "2",
+      "q2": "Start → n = 50 → ◇ n < 20? yes: show n → End. no: n = n − 12, back to ◇. What is shown?",
+      "c6": "5",
+      "c7": "4",
+      "c8": "32",
+      "q3": "Start → a = 1, count = 0 → ◇ a > 30? yes: show count → End. no: a = a × 2, count = count + 1, back to ◇. What is shown?",
+      "c9": "6",
+      "q4": "Start → water = 0 → ◇ water ≥ 25? yes: show 'tank full' → End. no: water = water + 5, back to ◇. How many times does the box 'water = water + 5' run?",
+      "c10": "heater on",
+      "c11": "heater off",
+      "q5": "Start → read temperature (18) → ◇ temperature < 20? yes: show 'heater on'. no: show 'heater off' → End. What is shown?",
+      "c12": "1",
+      "c13": "3",
+      "c14": "0",
+      "q6": "Start → x = 9 → ◇ x divides by 3 exactly? yes: x = x ÷ 3, back to ◇. no: show x → End. What is shown?",
+      "c15": "20",
+      "c16": "12",
+      "c17": "30",
+      "q7": "Start → sum = 0, i = 2 → ◇ i > 8? yes: show sum → End. no: sum = sum + i, i = i + 2, back to ◇. What is shown?",
+      "q8": "Start → floor = 1 → ◇ floor = 6? yes: show 'arrived' → End. no: floor = floor + 1, back to ◇. How many times does the lift go up one floor?",
+      "c18": "not yet",
+      "c19": "may ride",
+      "q9": "Start → height = 120, age = 8 → ◇ height ≥ 130? yes: 'may ride'. no: ◇ age ≥ 10? yes: 'may ride', no: 'not yet' → End. What is shown?",
+      "c20": "25",
+      "c21": "50",
+      "q10": "Start → x = 100 → ◇ x < 30? yes: show x → End. no: x = x ÷ 2, back to ◇. What is shown?",
+      "c22": "9",
+      "c23": "15",
+      "q11": "Start → coins = 3 → ◇ coins ≥ 10? yes: show coins → End. no: coins = coins + 3, back to ◇. What is shown?",
+      "c24": "16",
+      "c25": "8",
+      "q12": "Start → n = 1, result = 1 → ◇ n > 4? yes: show result → End. no: result = result × 2, n = n + 1, back to ◇. What is shown?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "menara",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c2",
+        "c4",
+        "c5"
+      ],
+      "correct": "c2"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c6",
+        "c7",
+        "c9"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c10",
+        "c11"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c12",
+        "c13",
+        "c14"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c15",
+        "c16",
+        "c17"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c6",
+        "c9",
+        "c7"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c18",
+        "c19"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c20",
+        "c21",
+        "c16"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c16",
+        "c22",
+        "c23"
+      ],
+      "correct": "c16"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c24",
+        "c25",
+        "c8"
+      ],
+      "correct": "c24"
+    }
+  ]
+}

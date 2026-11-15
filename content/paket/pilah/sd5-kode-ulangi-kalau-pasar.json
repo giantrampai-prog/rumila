@@ -1,0 +1,365 @@
+{
+  "id": "sd5-kode-ulangi-kalau-pasar",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD5.ULANGI-KONDISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Putaran Kasir dengan Syarat",
+      "instruksi": "Di pasar, program kasir mengulang langkah dan mengecek syarat di setiap putaran: telusuri putaran satu per satu, lalu pilih hasil akhirnya.",
+      "pilihan": "pilihan",
+      "c1": "26",
+      "c2": "34",
+      "c3": "31",
+      "q1": "total = 0. untuk harga di [3, 8, 5, 12, 6]: kalau harga > 5: total = total + harga. Berapa total?",
+      "c4": "4",
+      "c5": "8",
+      "c6": "16",
+      "q2": "hitung = 0. untuk angka 1 sampai 8: kalau angka ganjil: hitung = hitung + 1. Berapa hitung?",
+      "c7": "15",
+      "c8": "21",
+      "c9": "3",
+      "q3": "jumlah = 0. untuk angka 1 sampai 6: kalau angka > 3: jumlah = jumlah + angka. Berapa jumlah?",
+      "c10": "nyala",
+      "c11": "mati",
+      "q4": "lampu = 'nyala'. ulangi 4 kali: kalau lampu == 'nyala': lampu = 'mati', kalau tidak: lampu = 'nyala'. Bagaimana lampu sekarang?",
+      "c12": "5",
+      "c13": "7",
+      "q5": "terkecil = 100. untuk angka di [7, 3, 9, 5]: kalau angka < terkecil: terkecil = angka. Berapa terkecil?",
+      "c14": "32",
+      "q6": "x = 1. ulangi 5 kali: kalau x < 10: x = x * 2. Berapa x?",
+      "c15": "6",
+      "c16": "2",
+      "q7": "apel = 0. untuk tiap buah di [🍎, 🍌, 🍎, 🍎, 🍌, 🍎]: kalau buah == 🍎: apel = apel + 1. Berapa apel?",
+      "q8": "untuk nilai di [80, 65, 90, 70, 75]: kalau nilai >= 75: tampil 'lulus'. Berapa kali 'lulus' tampil?",
+      "c17": "-3",
+      "q9": "uang = 20. untuk harga di [5, 10, 8]: kalau harga <= uang: uang = uang - harga. Berapa uang?",
+      "c18": "23",
+      "c19": "50",
+      "c20": "20",
+      "q10": "a = 0. untuk angka 1 sampai 5: kalau angka genap: a = a + 10, kalau tidak: a = a + 1. Berapa a?",
+      "c21": "12",
+      "q11": "n = 0. untuk angka 1 sampai 12: kalau angka habis dibagi 4: n = n + 1. Berapa n?",
+      "c22": "0",
+      "c23": "-2",
+      "q12": "stok = 3. ulangi 5 kali: kalau stok > 0: stok = stok - 1. Berapa stok?"
+    },
+    "en": {
+      "judul": "Cashier Laps with Conditions",
+      "instruksi": "At the market, the cashier program repeats its steps and checks a condition every lap: trace the laps one by one, then choose the final result.",
+      "pilihan": "choices",
+      "c1": "26",
+      "c2": "34",
+      "c3": "31",
+      "q1": "total = 0. for price in [3, 8, 5, 12, 6]: if price > 5: total = total + price. What is total?",
+      "c4": "4",
+      "c5": "8",
+      "c6": "16",
+      "q2": "count = 0. for number 1 to 8: if number is odd: count = count + 1. What is count?",
+      "c7": "15",
+      "c8": "21",
+      "c9": "3",
+      "q3": "sum = 0. for number 1 to 6: if number > 3: sum = sum + number. What is sum?",
+      "c10": "on",
+      "c11": "off",
+      "q4": "lamp = 'on'. repeat 4 times: if lamp == 'on': lamp = 'off', else: lamp = 'on'. What is the lamp now?",
+      "c12": "5",
+      "c13": "7",
+      "q5": "smallest = 100. for number in [7, 3, 9, 5]: if number < smallest: smallest = number. What is smallest?",
+      "c14": "32",
+      "q6": "x = 1. repeat 5 times: if x < 10: x = x * 2. What is x?",
+      "c15": "6",
+      "c16": "2",
+      "q7": "apples = 0. for each fruit in [🍎, 🍌, 🍎, 🍎, 🍌, 🍎]: if fruit == 🍎: apples = apples + 1. What is apples?",
+      "q8": "for mark in [80, 65, 90, 70, 75]: if mark >= 75: show 'pass'. How many times is 'pass' shown?",
+      "c17": "-3",
+      "q9": "money = 20. for price in [5, 10, 8]: if price <= money: money = money - price. What is money?",
+      "c18": "23",
+      "c19": "50",
+      "c20": "20",
+      "q10": "a = 0. for number 1 to 5: if number is even: a = a + 10, else: a = a + 1. What is a?",
+      "c21": "12",
+      "q11": "n = 0. for number 1 to 12: if number divides by 4 exactly: n = n + 1. What is n?",
+      "c22": "0",
+      "c23": "-2",
+      "q12": "stock = 3. repeat 5 times: if stock > 0: stock = stock - 1. What is stock?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c9",
+        "c12",
+        "c13"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c6",
+        "c14",
+        "c5"
+      ],
+      "correct": "c6"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c4",
+        "c15",
+        "c16"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c9",
+        "c16",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c12",
+        "c17",
+        "c7"
+      ],
+      "correct": "c12"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c18"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c9",
+        "c4",
+        "c21"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c22",
+        "c23",
+        "c16"
+      ],
+      "correct": "c22"
+    }
+  ]
+}

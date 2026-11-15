@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-urut-satuan-waktu",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -49,68 +49,6 @@
   "mode": "susun",
   "sequences": [
     {
-      "id": "waktu-0-1-2-3-4",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "jam",
-          "labelKey": "s-jam",
-          "scale": 0.85
-        },
-        {
-          "id": "hari",
-          "labelKey": "s-hari",
-          "scale": 0.7
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        }
-      ]
-    },
-    {
-      "id": "waktu-0-1-2-3-5",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "jam",
-          "labelKey": "s-jam",
-          "scale": 0.85
-        },
-        {
-          "id": "hari",
-          "labelKey": "s-hari",
-          "scale": 0.7
-        },
-        {
-          "id": "bulan",
-          "labelKey": "s-bulan",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
       "id": "waktu-0-1-2-3-6",
       "titleKey": "j-dari-terpendek-ke-terpanjang",
       "steps": [
@@ -142,130 +80,6 @@
       ]
     },
     {
-      "id": "waktu-0-1-2-4-5",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "jam",
-          "labelKey": "s-jam",
-          "scale": 0.85
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "bulan",
-          "labelKey": "s-bulan",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
-      "id": "waktu-0-1-2-4-6",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "jam",
-          "labelKey": "s-jam",
-          "scale": 0.85
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "tahun",
-          "labelKey": "s-tahun",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
-      "id": "waktu-0-1-2-5-6",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "jam",
-          "labelKey": "s-jam",
-          "scale": 0.85
-        },
-        {
-          "id": "bulan",
-          "labelKey": "s-bulan",
-          "scale": 0.6
-        },
-        {
-          "id": "tahun",
-          "labelKey": "s-tahun",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
-      "id": "waktu-0-1-3-4-5",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "hari",
-          "labelKey": "s-hari",
-          "scale": 0.7
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "bulan",
-          "labelKey": "s-bulan",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
       "id": "waktu-0-1-3-4-6",
       "titleKey": "j-dari-terpendek-ke-terpanjang",
       "steps": [
@@ -288,37 +102,6 @@
           "id": "minggu",
           "labelKey": "s-minggu",
           "scale": 0.5
-        },
-        {
-          "id": "tahun",
-          "labelKey": "s-tahun",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
-      "id": "waktu-0-1-3-5-6",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "menit",
-          "labelKey": "s-menit",
-          "scale": 0.6
-        },
-        {
-          "id": "hari",
-          "labelKey": "s-hari",
-          "scale": 0.7
-        },
-        {
-          "id": "bulan",
-          "labelKey": "s-bulan",
-          "scale": 0.6
         },
         {
           "id": "tahun",
@@ -359,37 +142,6 @@
       ]
     },
     {
-      "id": "waktu-0-2-3-4-5",
-      "titleKey": "j-dari-terpendek-ke-terpanjang",
-      "steps": [
-        {
-          "id": "detik",
-          "labelKey": "s-detik",
-          "scale": 0.6
-        },
-        {
-          "id": "jam",
-          "labelKey": "s-jam",
-          "scale": 0.85
-        },
-        {
-          "id": "hari",
-          "labelKey": "s-hari",
-          "scale": 0.7
-        },
-        {
-          "id": "minggu",
-          "labelKey": "s-minggu",
-          "scale": 0.5
-        },
-        {
-          "id": "bulan",
-          "labelKey": "s-bulan",
-          "scale": 0.6
-        }
-      ]
-    },
-    {
       "id": "waktu-0-2-3-4-6",
       "titleKey": "j-dari-terpendek-ke-terpanjang",
       "steps": [
@@ -412,6 +164,192 @@
           "id": "minggu",
           "labelKey": "s-minggu",
           "scale": 0.5
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "waktu-0-2-4-5-6",
+      "titleKey": "j-dari-terpendek-ke-terpanjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "scale": 0.6
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "scale": 0.85
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "scale": 0.6
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "waktu-0-3-4-5-6",
+      "titleKey": "j-dari-terpendek-ke-terpanjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "scale": 0.6
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "scale": 0.7
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "scale": 0.6
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "waktu-1-2-3-4-6",
+      "titleKey": "j-dari-terpendek-ke-terpanjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "scale": 0.6
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "scale": 0.85
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "scale": 0.7
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "waktu-1-2-4-5-6",
+      "titleKey": "j-dari-terpendek-ke-terpanjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "scale": 0.6
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "scale": 0.85
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "scale": 0.6
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "waktu-1-3-4-5-6",
+      "titleKey": "j-dari-terpendek-ke-terpanjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "scale": 0.6
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "scale": 0.7
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "scale": 0.6
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "scale": 0.6
+        }
+      ]
+    },
+    {
+      "id": "waktu-2-3-4-5-6",
+      "titleKey": "j-dari-terpendek-ke-terpanjang",
+      "steps": [
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "scale": 0.85
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "scale": 0.7
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "scale": 0.5
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "scale": 0.6
         },
         {
           "id": "tahun",

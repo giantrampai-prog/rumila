@@ -1,0 +1,222 @@
+{
+  "id": "sd5-sains-pisah-campuran-sungai",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.LARUTAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Memisahkan Campuran di Tepi Sungai",
+      "instruksi": "Baca campurannya, lalu pilih cara memisahkan yang paling tepat.",
+      "b-pilihan": "pilihan",
+      "i-saring": "menyaring",
+      "i-uap": "menguapkan",
+      "i-magnet": "memakai magnet",
+      "i-ayak": "mengayak",
+      "i-endap": "mengendapkan (didiamkan, lalu dituang pelan)",
+      "p-r1": "Paku-paku kecil tercecer di pasir tepi sungai.",
+      "p-r2": "Butiran pasir besi hitam tercampur pasir biasa yang kering.",
+      "p-r3": "Air sungai keruh berlumpur ditampung di ember. Tidak ada saringan, tetapi airnya mau dipakai untuk menyiram.",
+      "p-r4": "Ampas kopi tubruk ingin dipisahkan dengan cara menunggu ampasnya turun ke dasar gelas.",
+      "p-r5": "Kerikil tercampur pasir untuk adukan semen. Pasirnya harus halus.",
+      "p-r6": "Tepung beras masih bercampur gumpalan dan butir beras yang kasar.",
+      "p-r7": "Santan diperas dari parutan kelapa lewat kain.",
+      "p-r8": "Air keruh dialirkan melewati lapisan ijuk, pasir, dan kerikil supaya jernih.",
+      "p-r9": "Daun kering mengambang di air kolam dan diambil dengan jaring.",
+      "p-r10": "Air laut ditampung di tambak supaya garamnya bisa diambil.",
+      "p-r11": "Gula sudah larut di air. Bagaimana mendapatkan kristal gulanya kembali?",
+      "p-r12": "Garam yang larut di air tidak tertahan kertas saring. Cara yang bisa memisahkannya adalah…"
+    },
+    "en": {
+      "judul": "Separating Mixtures by the River",
+      "instruksi": "Read about the mixture, then choose the best way to separate it.",
+      "b-pilihan": "choices",
+      "i-saring": "filtering",
+      "i-uap": "evaporating",
+      "i-magnet": "using a magnet",
+      "i-ayak": "sieving",
+      "i-endap": "letting it settle, then pouring off slowly",
+      "p-r1": "Small nails are scattered in the riverbank sand.",
+      "p-r2": "Black iron sand is mixed with ordinary dry sand.",
+      "p-r3": "Muddy river water is collected in a bucket. There is no filter, but the water is needed for watering plants.",
+      "p-r4": "The grounds in a cup of coffee are to be separated by waiting for them to sink to the bottom.",
+      "p-r5": "Gravel is mixed with sand for cement. The sand must be fine.",
+      "p-r6": "Rice flour is still mixed with lumps and coarse grains of rice.",
+      "p-r7": "Coconut milk is squeezed from grated coconut through a cloth.",
+      "p-r8": "Cloudy water runs through layers of palm fibre, sand and gravel to make it clear.",
+      "p-r9": "Dry leaves floating on pond water are scooped out with a net.",
+      "p-r10": "Seawater is kept in salt pans so the salt can be collected.",
+      "p-r11": "Sugar has dissolved in water. How can you get the sugar crystals back?",
+      "p-r12": "Dissolved salt passes through filter paper. The way to separate it is…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "saring",
+      "labelKey": "i-saring",
+      "bin": "pilihan",
+      "emoji": "🧺"
+    },
+    {
+      "id": "uap",
+      "labelKey": "i-uap",
+      "bin": "pilihan",
+      "emoji": "♨️"
+    },
+    {
+      "id": "magnet",
+      "labelKey": "i-magnet",
+      "bin": "pilihan",
+      "emoji": "🧲"
+    },
+    {
+      "id": "ayak",
+      "labelKey": "i-ayak",
+      "bin": "pilihan",
+      "emoji": "🥅"
+    },
+    {
+      "id": "endap",
+      "labelKey": "i-endap",
+      "bin": "pilihan",
+      "emoji": "⏳"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "magnet",
+        "ayak",
+        "uap"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "magnet",
+        "saring",
+        "uap"
+      ],
+      "correct": "magnet"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "endap",
+        "magnet",
+        "uap"
+      ],
+      "correct": "endap"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "endap",
+        "ayak",
+        "magnet"
+      ],
+      "correct": "endap"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "ayak",
+        "uap",
+        "magnet"
+      ],
+      "correct": "ayak"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "ayak",
+        "uap",
+        "endap"
+      ],
+      "correct": "ayak"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "saring",
+        "magnet",
+        "uap"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "saring",
+        "magnet",
+        "uap"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "saring",
+        "uap",
+        "magnet"
+      ],
+      "correct": "saring"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "uap",
+        "saring",
+        "ayak"
+      ],
+      "correct": "uap"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "uap",
+        "saring",
+        "magnet"
+      ],
+      "correct": "uap"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "uap",
+        "ayak",
+        "magnet"
+      ],
+      "correct": "uap"
+    }
+  ]
+}

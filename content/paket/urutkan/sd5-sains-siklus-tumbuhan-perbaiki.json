@@ -1,0 +1,635 @@
+{
+  "id": "sd5-sains-siklus-tumbuhan-perbaiki",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siklus Tumbuhan Tertukar",
+      "instruksi": "Dua tahap siklus hidup tumbuhan tertukar tempat. Tukar keduanya supaya urut dari biji sampai biji baru.",
+      "s-padi": "Siklus hidup padi",
+      "padi-biji": "gabah padi disemai di persemaian",
+      "padi-kecambah": "gabah berkecambah",
+      "padi-tumbuh": "bibit padi ditanam dan tumbuh berdaun",
+      "padi-bunga": "malai padi berbunga",
+      "padi-serbuk": "serbuk sari jatuh ke kepala putik",
+      "padi-buah": "bulir padi berisi dan menguning",
+      "padi-baru": "gabah baru dipanen untuk disemai lagi",
+      "s-jagung": "Siklus hidup jagung",
+      "jagung-biji": "biji jagung ditanam di ladang",
+      "jagung-kecambah": "biji jagung berkecambah",
+      "jagung-tumbuh": "batang jagung tumbuh tinggi berdaun panjang",
+      "jagung-bunga": "bunga jantan muncul di pucuk dan rambut jagung muncul di tongkol",
+      "jagung-serbuk": "angin membawa serbuk sari ke rambut jagung",
+      "jagung-buah": "tongkol jagung penuh biji baru",
+      "s-kacangpanjang": "Siklus hidup kacang panjang",
+      "kacangpanjang-biji": "biji kacang panjang ditanam dekat ajir",
+      "kacangpanjang-kecambah": "biji berkecambah",
+      "kacangpanjang-tumbuh": "batangnya merambat di ajir",
+      "kacangpanjang-bunga": "bunga ungu muda mekar",
+      "kacangpanjang-serbuk": "serbuk sari menempel di kepala putik",
+      "kacangpanjang-buah": "polong panjang tumbuh berisi biji baru",
+      "s-labu": "Siklus hidup labu kuning",
+      "labu-biji": "biji labu ditanam di tanah gembur",
+      "labu-kecambah": "biji berkecambah",
+      "labu-tumbuh": "batang labu merambat di tanah",
+      "labu-bunga": "bunga labu yang kuning mekar",
+      "labu-serbuk": "lebah membawa serbuk sari ke bunga betina",
+      "labu-buah": "bakal buah membesar jadi labu",
+      "labu-baru": "labu dibelah: banyak biji baru",
+      "s-pepaya": "Siklus hidup pepaya",
+      "pepaya-biji": "biji pepaya hitam ditanam",
+      "pepaya-kecambah": "biji berkecambah",
+      "pepaya-tumbuh": "pohon pepaya muda tumbuh berdaun lebar",
+      "pepaya-bunga": "bunga pepaya putih mekar di batang",
+      "pepaya-serbuk": "ngengat membawa serbuk sari ke kepala putik",
+      "pepaya-buah": "bakal buah membesar jadi pepaya",
+      "pepaya-baru": "pepaya dibelah: penuh biji hitam baru",
+      "s-rambutan": "Siklus hidup rambutan",
+      "rambutan-biji": "biji rambutan ditanam",
+      "rambutan-kecambah": "biji berkecambah",
+      "rambutan-tumbuh": "pohon rambutan muda tumbuh bertahun-tahun",
+      "rambutan-bunga": "bunga kecil kehijauan mekar bergerombol",
+      "rambutan-serbuk": "lebah membawa serbuk sari antarbunga",
+      "rambutan-buah": "bakal buah jadi rambutan merah berambut",
+      "rambutan-baru": "di dalam daging buah ada biji baru",
+      "s-durian": "Siklus hidup durian",
+      "durian-biji": "biji durian ditanam",
+      "durian-kecambah": "biji berkecambah",
+      "durian-tumbuh": "pohon durian tumbuh tinggi",
+      "durian-bunga": "bunga durian putih mekar di malam hari",
+      "durian-serbuk": "kelelawar membawa serbuk sari ke kepala putik",
+      "durian-buah": "bakal buah membesar jadi durian berduri",
+      "durian-baru": "durian dibuka: ada biji baru di dalam dagingnya",
+      "s-terong": "Siklus hidup terong",
+      "terong-biji": "biji terong disemai di pot",
+      "terong-kecambah": "biji berkecambah",
+      "terong-tumbuh": "tanaman terong tumbuh berdaun",
+      "terong-bunga": "bunga terong ungu mekar",
+      "terong-serbuk": "lebah membawa serbuk sari ke kepala putik",
+      "terong-buah": "bakal buah membesar jadi terong",
+      "terong-baru": "terong tua dibelah: banyak biji baru",
+      "s-buncis": "Siklus hidup buncis",
+      "buncis-biji": "biji buncis ditanam",
+      "buncis-kecambah": "biji berkecambah",
+      "buncis-tumbuh": "tanaman buncis tumbuh dan merambat",
+      "buncis-bunga": "bunga buncis putih mekar",
+      "buncis-serbuk": "serbuk sari sampai di kepala putik",
+      "buncis-buah": "polong buncis tumbuh berisi biji baru",
+      "s-kacanghijau": "Siklus hidup kacang hijau",
+      "kacanghijau-biji": "biji kacang hijau ditanam di ladang",
+      "kacanghijau-kecambah": "biji berkecambah",
+      "kacanghijau-tumbuh": "tanaman kacang hijau tumbuh berdaun",
+      "kacanghijau-bunga": "bunga kuning kecil mekar",
+      "kacanghijau-serbuk": "serbuk sari menempel di kepala putik",
+      "kacanghijau-buah": "polong hitam tumbuh berisi biji hijau baru",
+      "s-nangka": "Siklus hidup nangka",
+      "nangka-biji": "biji nangka ditanam",
+      "nangka-kecambah": "biji berkecambah",
+      "nangka-tumbuh": "pohon nangka tumbuh besar",
+      "nangka-bunga": "bunga nangka muncul di batang",
+      "nangka-serbuk": "serangga dan angin membawa serbuk sari",
+      "nangka-buah": "bakal buah membesar jadi nangka",
+      "nangka-baru": "nangka dibuka: banyak biji baru di dalamnya"
+    },
+    "en": {
+      "judul": "Mixed-Up Plant Life Cycle",
+      "instruksi": "Two stages of the plant life cycle have swapped places. Swap them back so it goes from seed to new seed.",
+      "s-padi": "Life cycle of rice",
+      "padi-biji": "rice grains are sown in a seedbed",
+      "padi-kecambah": "the grains sprout",
+      "padi-tumbuh": "the seedlings are planted and grow leaves",
+      "padi-bunga": "the rice heads flower",
+      "padi-serbuk": "pollen falls onto the stigma",
+      "padi-buah": "the grains fill out and turn yellow",
+      "padi-baru": "new grains are harvested to sow again",
+      "s-jagung": "Life cycle of maize",
+      "jagung-biji": "maize seeds are planted in a field",
+      "jagung-kecambah": "the maize seeds sprout",
+      "jagung-tumbuh": "the maize stalk grows tall with long leaves",
+      "jagung-bunga": "male flowers appear at the top and silks appear on the cob",
+      "jagung-serbuk": "the wind carries pollen to the silks",
+      "jagung-buah": "the cob fills with new kernels",
+      "s-kacangpanjang": "Life cycle of yardlong beans",
+      "kacangpanjang-biji": "yardlong bean seeds are planted by a pole",
+      "kacangpanjang-kecambah": "the seeds sprout",
+      "kacangpanjang-tumbuh": "the stem climbs the pole",
+      "kacangpanjang-bunga": "pale purple flowers open",
+      "kacangpanjang-serbuk": "pollen sticks to the stigma",
+      "kacangpanjang-buah": "long pods grow with new seeds inside",
+      "s-labu": "Life cycle of a pumpkin",
+      "labu-biji": "pumpkin seeds are planted in loose soil",
+      "labu-kecambah": "the seeds sprout",
+      "labu-tumbuh": "the pumpkin vine spreads over the ground",
+      "labu-bunga": "yellow pumpkin flowers open",
+      "labu-serbuk": "bees carry pollen to the female flower",
+      "labu-buah": "the ovary swells into a pumpkin",
+      "labu-baru": "the pumpkin is cut open: many new seeds",
+      "s-pepaya": "Life cycle of a papaya",
+      "pepaya-biji": "black papaya seeds are planted",
+      "pepaya-kecambah": "the seeds sprout",
+      "pepaya-tumbuh": "a young papaya tree grows broad leaves",
+      "pepaya-bunga": "white papaya flowers open on the trunk",
+      "pepaya-serbuk": "moths carry pollen to the stigma",
+      "pepaya-buah": "the ovary swells into a papaya",
+      "pepaya-baru": "the papaya is cut open: full of new black seeds",
+      "s-rambutan": "Life cycle of a rambutan tree",
+      "rambutan-biji": "a rambutan seed is planted",
+      "rambutan-kecambah": "the seed sprouts",
+      "rambutan-tumbuh": "the young rambutan tree grows for years",
+      "rambutan-bunga": "small greenish flowers open in clusters",
+      "rambutan-serbuk": "bees carry pollen between flowers",
+      "rambutan-buah": "the ovaries become red, hairy rambutans",
+      "rambutan-baru": "inside the flesh there is a new seed",
+      "s-durian": "Life cycle of a durian tree",
+      "durian-biji": "a durian seed is planted",
+      "durian-kecambah": "the seed sprouts",
+      "durian-tumbuh": "the durian tree grows tall",
+      "durian-bunga": "white durian flowers open at night",
+      "durian-serbuk": "bats carry pollen to the stigma",
+      "durian-buah": "the ovary swells into a spiky durian",
+      "durian-baru": "the durian is opened: new seeds inside the flesh",
+      "s-terong": "Life cycle of an aubergine",
+      "terong-biji": "aubergine seeds are sown in a pot",
+      "terong-kecambah": "the seeds sprout",
+      "terong-tumbuh": "the aubergine plant grows leaves",
+      "terong-bunga": "purple aubergine flowers open",
+      "terong-serbuk": "bees carry pollen to the stigma",
+      "terong-buah": "the ovary swells into an aubergine",
+      "terong-baru": "a ripe aubergine is cut open: many new seeds",
+      "s-buncis": "Life cycle of green beans",
+      "buncis-biji": "green bean seeds are planted",
+      "buncis-kecambah": "the seeds sprout",
+      "buncis-tumbuh": "the bean plant grows and climbs",
+      "buncis-bunga": "white bean flowers open",
+      "buncis-serbuk": "pollen reaches the stigma",
+      "buncis-buah": "bean pods grow with new seeds inside",
+      "s-kacanghijau": "Life cycle of mung beans",
+      "kacanghijau-biji": "mung bean seeds are planted in a field",
+      "kacanghijau-kecambah": "the seeds sprout",
+      "kacanghijau-tumbuh": "the mung bean plant grows leaves",
+      "kacanghijau-bunga": "small yellow flowers open",
+      "kacanghijau-serbuk": "pollen sticks to the stigma",
+      "kacanghijau-buah": "dark pods grow with new green seeds",
+      "s-nangka": "Life cycle of a jackfruit tree",
+      "nangka-biji": "a jackfruit seed is planted",
+      "nangka-kecambah": "the seed sprouts",
+      "nangka-tumbuh": "the jackfruit tree grows big",
+      "nangka-bunga": "jackfruit flowers appear on the trunk",
+      "nangka-serbuk": "insects and wind carry the pollen",
+      "nangka-buah": "the flowers swell into a jackfruit",
+      "nangka-baru": "the jackfruit is opened: many new seeds inside"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 7,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah tahap: 4 (biji sampai berbunga) → 7"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "padi",
+      "titleKey": "s-padi",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "padi-biji",
+          "emoji": "🌾"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "padi-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "padi-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "padi-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "padi-serbuk",
+          "emoji": "🟡"
+        },
+        {
+          "id": "buah",
+          "labelKey": "padi-buah",
+          "emoji": "🌾"
+        },
+        {
+          "id": "baru",
+          "labelKey": "padi-baru",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
+      "id": "jagung",
+      "titleKey": "s-jagung",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "jagung-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "jagung-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "jagung-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "jagung-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "jagung-serbuk",
+          "emoji": "🌬️"
+        },
+        {
+          "id": "buah",
+          "labelKey": "jagung-buah",
+          "emoji": "🌽"
+        }
+      ]
+    },
+    {
+      "id": "kacangpanjang",
+      "titleKey": "s-kacangpanjang",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacangpanjang-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "kacangpanjang-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "kacangpanjang-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacangpanjang-bunga",
+          "emoji": "🌸"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "kacangpanjang-serbuk",
+          "emoji": "🟡"
+        },
+        {
+          "id": "buah",
+          "labelKey": "kacangpanjang-buah",
+          "emoji": "🫛"
+        }
+      ]
+    },
+    {
+      "id": "labu",
+      "titleKey": "s-labu",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "labu-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "labu-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "labu-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "labu-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "labu-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "labu-buah",
+          "emoji": "🎃"
+        },
+        {
+          "id": "baru",
+          "labelKey": "labu-baru",
+          "emoji": "🔪"
+        }
+      ]
+    },
+    {
+      "id": "pepaya",
+      "titleKey": "s-pepaya",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "pepaya-biji",
+          "emoji": "⚫"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "pepaya-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "pepaya-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "pepaya-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "pepaya-serbuk",
+          "emoji": "🦋"
+        },
+        {
+          "id": "buah",
+          "labelKey": "pepaya-buah",
+          "emoji": "🍈"
+        },
+        {
+          "id": "baru",
+          "labelKey": "pepaya-baru",
+          "emoji": "🔪"
+        }
+      ]
+    },
+    {
+      "id": "rambutan",
+      "titleKey": "s-rambutan",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "rambutan-biji",
+          "emoji": "🌰"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "rambutan-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "rambutan-tumbuh",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "rambutan-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "rambutan-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "rambutan-buah",
+          "emoji": "🔴"
+        },
+        {
+          "id": "baru",
+          "labelKey": "rambutan-baru",
+          "emoji": "🌰"
+        }
+      ]
+    },
+    {
+      "id": "durian",
+      "titleKey": "s-durian",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "durian-biji",
+          "emoji": "🌰"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "durian-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "durian-tumbuh",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "durian-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "durian-serbuk",
+          "emoji": "🦇"
+        },
+        {
+          "id": "buah",
+          "labelKey": "durian-buah",
+          "emoji": "🟢"
+        },
+        {
+          "id": "baru",
+          "labelKey": "durian-baru",
+          "emoji": "🌰"
+        }
+      ]
+    },
+    {
+      "id": "terong",
+      "titleKey": "s-terong",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "terong-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "terong-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "terong-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "terong-bunga",
+          "emoji": "🌸"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "terong-serbuk",
+          "emoji": "🐝"
+        },
+        {
+          "id": "buah",
+          "labelKey": "terong-buah",
+          "emoji": "🍆"
+        },
+        {
+          "id": "baru",
+          "labelKey": "terong-baru",
+          "emoji": "🔪"
+        }
+      ]
+    },
+    {
+      "id": "buncis",
+      "titleKey": "s-buncis",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "buncis-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "buncis-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "buncis-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "buncis-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "buncis-serbuk",
+          "emoji": "🟡"
+        },
+        {
+          "id": "buah",
+          "labelKey": "buncis-buah",
+          "emoji": "🫛"
+        }
+      ]
+    },
+    {
+      "id": "kacanghijau",
+      "titleKey": "s-kacanghijau",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacanghijau-biji",
+          "emoji": "🟢"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "kacanghijau-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "kacanghijau-tumbuh",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacanghijau-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "kacanghijau-serbuk",
+          "emoji": "🟡"
+        },
+        {
+          "id": "buah",
+          "labelKey": "kacanghijau-buah",
+          "emoji": "🫛"
+        }
+      ]
+    },
+    {
+      "id": "nangka",
+      "titleKey": "s-nangka",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "nangka-biji",
+          "emoji": "🌰"
+        },
+        {
+          "id": "kecambah",
+          "labelKey": "nangka-kecambah",
+          "emoji": "🌱"
+        },
+        {
+          "id": "tumbuh",
+          "labelKey": "nangka-tumbuh",
+          "emoji": "🌳"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "nangka-bunga",
+          "emoji": "🌼"
+        },
+        {
+          "id": "serbuk",
+          "labelKey": "nangka-serbuk",
+          "emoji": "🌬️"
+        },
+        {
+          "id": "buah",
+          "labelKey": "nangka-buah",
+          "emoji": "🟡"
+        },
+        {
+          "id": "baru",
+          "labelKey": "nangka-baru",
+          "emoji": "🌰"
+        }
+      ]
+    }
+  ]
+}

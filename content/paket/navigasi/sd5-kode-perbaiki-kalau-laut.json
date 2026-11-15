@@ -1,0 +1,2307 @@
+{
+  "id": "sd5-kode-perbaiki-kalau-laut",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.SD5.DEBUG.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kapal Selam yang Tersangkut",
+      "instruksi": "Program kapal selam lolos di satu jalur laut tetapi tersangkut di jalur lain: jalankan di ketiga jalur, cari penyebabnya, lalu ganti tepat satu keping."
+    },
+    "en": {
+      "judul": "The Stuck Submarine",
+      "instruksi": "The submarine program works on one sea route but gets stuck on another: run it on all three routes, find the cause, then change exactly one piece."
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "laut",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "lompat",
+    "kiri",
+    "kanan",
+    "kalau",
+    "ulangi"
+  ],
+  "debug": true,
+  "semuaGrid": true,
+  "grids": [
+    {
+      "id": "sd5-laut-0-1",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-0",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-0-2",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-0",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-0-3",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 4,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 4
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-0",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-1-1",
+      "w": 7,
+      "h": 9,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 8
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 2
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-1",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-1-2",
+      "w": 7,
+      "h": 9,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 8
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-1",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-1-3",
+      "w": 7,
+      "h": 9,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 6,
+        "y": 8
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 6,
+          "y": 7
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-1",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-2-1",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 3
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-2",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-2-2",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-2",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-2-3",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 8,
+          "y": 2
+        },
+        {
+          "x": 8,
+          "y": 4
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-2",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-3-1",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 5,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-3",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-3-2",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 5,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-3",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-3-3",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 5,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "group": "sd5-laut-3",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-4-1",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "group": "sd5-laut-4",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-4-2",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-4",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-4-3",
+      "w": 6,
+      "h": 6,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-4",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-5-1",
+      "w": 7,
+      "h": 10,
+      "start": {
+        "x": 1,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 6,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 1
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-5",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-5-2",
+      "w": 7,
+      "h": 10,
+      "start": {
+        "x": 1,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 6,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-5",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-5-3",
+      "w": 7,
+      "h": 10,
+      "start": {
+        "x": 1,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 6,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 6
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-5",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-6-1",
+      "w": 9,
+      "h": 10,
+      "start": {
+        "x": 6,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-6",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-6-2",
+      "w": 9,
+      "h": 10,
+      "start": {
+        "x": 6,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 2
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-6",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-6-3",
+      "w": 9,
+      "h": 10,
+      "start": {
+        "x": 6,
+        "y": 8,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 1
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-6",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-7-1",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-7",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-7-2",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 5
+        }
+      ],
+      "optimal": 5,
+      "group": "sd5-laut-7",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-7-3",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 6,
+        "y": 2,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-7",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-8-1",
+      "w": 4,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 6
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-8",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-8-2",
+      "w": 4,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 6
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-8",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-8-3",
+      "w": 4,
+      "h": 8,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 6
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-8",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 2,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-9-1",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 8,
+          "y": 4
+        },
+        {
+          "x": 8,
+          "y": 1
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-9",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-9-2",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-9",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-9-3",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 0
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 5
+        },
+        {
+          "x": 7,
+          "y": 5
+        },
+        {
+          "x": 8,
+          "y": 1
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-9",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-10-1",
+      "w": 6,
+      "h": 9,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 7
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-10",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-10-2",
+      "w": 6,
+      "h": 9,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 7
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 2
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-10",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-10-3",
+      "w": 6,
+      "h": 9,
+      "start": {
+        "x": 1,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 7
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 5,
+          "y": 6
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-10",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 6,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-11-1",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 1,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-11",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-11-2",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 2,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 4
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-11",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-11-3",
+      "w": 7,
+      "h": 7,
+      "start": {
+        "x": 0,
+        "y": 5,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 5,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 3,
+          "y": 5
+        },
+        {
+          "x": 5,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-11",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-12-1",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-12",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-12-2",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-12",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-12-3",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 7,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 0,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "optimal": 8,
+      "group": "sd5-laut-12",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-13-1",
+      "w": 9,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 8,
+          "y": 4
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-13",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-13-2",
+      "w": 9,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 6
+        },
+        {
+          "x": 8,
+          "y": 5
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-13",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-13-3",
+      "w": 9,
+      "h": 7,
+      "start": {
+        "x": 2,
+        "y": 6,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 8,
+        "y": 2
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 6
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-13",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 5,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "lompat"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-14-1",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 8,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-14",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-14-2",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 8,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 6,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "optimal": 7,
+      "group": "sd5-laut-14",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "sd5-laut-14-3",
+      "w": 10,
+      "h": 7,
+      "start": {
+        "x": 8,
+        "y": 2,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 5
+      },
+      "walls": [],
+      "rocks": [
+        {
+          "x": 5,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "optimal": 6,
+      "group": "sd5-laut-14",
+      "program": [
+        {
+          "cmd": "ulangi",
+          "n": 4,
+          "body": [
+            {
+              "cmd": "kalau"
+            }
+          ]
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "ulangi",
+          "n": 3,
+          "body": [
+            {
+              "cmd": "maju"
+            }
+          ]
+        }
+      ],
+      "fixes": 1
+    }
+  ]
+}

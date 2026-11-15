@@ -187,3 +187,19 @@ describe("mode langkah + prediksi dengan program yang sengaja menabrak (audit 15
     }
   });
 });
+
+describe("kunci soal urutkan & toleransi debug (audit 15 Nov 2026)", async () => {
+  const { kunciRonde, nilaiNavigasi: nilaiNav } = await import("../src/index");
+  it("dua urutan berbeda id tetapi kartu tampil sama → kunci sama", () => {
+    const r = (sequenceId: string) => ({ mechanic: "urutkan", ronde: { mode: "susun", sequenceId, titleKey: "t", correct: ["a", "b"], shown: [{ id: "b", labelKey: "k2" }, { id: "a", labelKey: "k1" }] } }) as never;
+    expect(kunciRonde(r("s1"))).toBe(kunciRonde(r("s2")));
+  });
+  it("debug: perbaikan lebih hemat dari target tetap benar, lebih boros salah", () => {
+    const grid = { id: "g", w: 3, h: 1, start: { x: 0, y: 0, dir: "E" }, goal: { x: 2, y: 0 }, walls: [], rocks: [], optimal: 2 } as never;
+    const r = { execMode: "program", commands: ["maju"], grids: [grid], program: [], debug: true, prediksi: false, fixes: 2 } as never;
+    const prog = [{ cmd: "maju" }, { cmd: "maju" }] as never;
+    expect(nilaiNav(r, { program: prog, edits: 1 }).benar).toBe(true);
+    expect(nilaiNav(r, { program: prog, edits: 2 }).benar).toBe(true);
+    expect(nilaiNav(r, { program: prog, edits: 3 }).benar).toBe(false);
+  });
+});

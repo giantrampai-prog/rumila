@@ -1,0 +1,149 @@
+{
+  "id": "sd2-kode-perangkat-masuk-tampil",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD2.PERANGKAT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Memasukkan atau Menampilkan?",
+      "instruksi": "Di toko elektronik ini, perangkat mana yang memasukkan perintah ke komputer dan mana yang menampilkan hasil?",
+      "bin-masuk": "memasukkan perintah",
+      "bin-tampil": "menampilkan hasil",
+      "i-pena": "pena digital",
+      "i-gamepad": "gamepad",
+      "i-touchpad": "touchpad laptop",
+      "i-piano": "keyboard musik ke komputer",
+      "i-trackball": "trackball",
+      "i-webcam": "kamera web",
+      "i-tv": "layar televisi",
+      "i-layar-laptop": "layar laptop",
+      "i-earphone": "earphone",
+      "i-toa": "pengeras suara",
+      "i-struk": "printer struk kasir",
+      "i-proyektor": "proyektor"
+    },
+    "en": {
+      "judul": "Input or Display?",
+      "instruksi": "In this electronics shop, which devices put commands into the computer and which show the results?",
+      "bin-masuk": "puts commands in",
+      "bin-tampil": "shows the results",
+      "i-pena": "digital pen",
+      "i-gamepad": "gamepad",
+      "i-touchpad": "laptop touchpad",
+      "i-piano": "music keyboard for the computer",
+      "i-trackball": "trackball",
+      "i-webcam": "webcam",
+      "i-tv": "TV screen",
+      "i-layar-laptop": "laptop screen",
+      "i-earphone": "earphones",
+      "i-toa": "loudspeaker",
+      "i-struk": "receipt printer",
+      "i-proyektor": "projector"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 6,
+      "max": 10,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah perangkat per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-elektronik",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "masuk",
+      "labelKey": "bin-masuk",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "tampil",
+      "labelKey": "bin-tampil",
+      "emoji": "⬆️"
+    }
+  ],
+  "items": [
+    {
+      "id": "pena",
+      "labelKey": "i-pena",
+      "bin": "masuk",
+      "emoji": "🖊️"
+    },
+    {
+      "id": "gamepad",
+      "labelKey": "i-gamepad",
+      "bin": "masuk",
+      "emoji": "🎮"
+    },
+    {
+      "id": "touchpad",
+      "labelKey": "i-touchpad",
+      "bin": "masuk",
+      "emoji": "👆"
+    },
+    {
+      "id": "piano",
+      "labelKey": "i-piano",
+      "bin": "masuk",
+      "emoji": "🎹"
+    },
+    {
+      "id": "trackball",
+      "labelKey": "i-trackball",
+      "bin": "masuk",
+      "emoji": "🖲️"
+    },
+    {
+      "id": "webcam",
+      "labelKey": "i-webcam",
+      "bin": "masuk",
+      "emoji": "📹"
+    },
+    {
+      "id": "tv",
+      "labelKey": "i-tv",
+      "bin": "tampil",
+      "emoji": "📺"
+    },
+    {
+      "id": "layar-laptop",
+      "labelKey": "i-layar-laptop",
+      "bin": "tampil",
+      "emoji": "💻"
+    },
+    {
+      "id": "earphone",
+      "labelKey": "i-earphone",
+      "bin": "tampil",
+      "emoji": "🎧"
+    },
+    {
+      "id": "toa",
+      "labelKey": "i-toa",
+      "bin": "tampil",
+      "emoji": "📢"
+    },
+    {
+      "id": "struk",
+      "labelKey": "i-struk",
+      "bin": "tampil",
+      "emoji": "🧾"
+    },
+    {
+      "id": "proyektor",
+      "labelKey": "i-proyektor",
+      "bin": "tampil",
+      "emoji": "📽️"
+    }
+  ]
+}

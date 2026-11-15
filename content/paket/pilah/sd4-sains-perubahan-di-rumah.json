@@ -1,0 +1,151 @@
+{
+  "id": "sd4-sains-perubahan-di-rumah",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.WUJUD-ZAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perubahan di Rumah",
+      "instruksi": "Amati perubahan di rumah. Apakah zatnya hanya berubah wujud, atau terbentuk zat baru lewat reaksi kimia?",
+      "b-fisika": "hanya berubah wujud",
+      "b-kimia": "jadi zat baru (reaksi kimia)",
+      "i-uap": "air mendidih jadi uap",
+      "i-jemuran": "air di baju basah menguap saat dijemur",
+      "i-eskrim": "es krim meleleh di mangkuk",
+      "i-salju": "boneka salju mencair",
+      "i-kapurbarus": "kapur barus di lemari mengecil karena menyublim",
+      "i-esbatu": "air di cetakan menjadi es batu",
+      "i-arang": "kayu dibakar jadi arang dan asap",
+      "i-susubasi": "susu dibiarkan sampai basi dan asam",
+      "i-apel": "potongan apel berubah cokelat",
+      "i-kembangapi": "kembang api meledak di langit",
+      "i-korek": "batang korek api dinyalakan",
+      "i-pisang": "pisang membusuk"
+    },
+    "en": {
+      "judul": "Changes Around the House",
+      "instruksi": "Look at the changes around the house. Does the substance only change state, or is a new substance made by a chemical reaction?",
+      "b-fisika": "only changes state",
+      "b-kimia": "makes a new substance (chemical reaction)",
+      "i-uap": "boiling water turns to steam",
+      "i-jemuran": "the water in a wet shirt evaporates on the line",
+      "i-eskrim": "ice cream melts in a bowl",
+      "i-salju": "a snowman melts",
+      "i-kapurbarus": "a mothball in the wardrobe shrinks as it turns to gas",
+      "i-esbatu": "water in a tray becomes ice cubes",
+      "i-arang": "wood burns into charcoal and smoke",
+      "i-susubasi": "milk left out goes sour",
+      "i-apel": "a cut apple turns brown",
+      "i-kembangapi": "fireworks explode in the sky",
+      "i-korek": "a match is struck and burns",
+      "i-pisang": "a banana rots"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "fisika",
+      "labelKey": "b-fisika",
+      "emoji": "↩️"
+    },
+    {
+      "id": "kimia",
+      "labelKey": "b-kimia",
+      "emoji": "⚗️"
+    }
+  ],
+  "items": [
+    {
+      "id": "uap",
+      "labelKey": "i-uap",
+      "bin": "fisika",
+      "emoji": "♨️"
+    },
+    {
+      "id": "jemuran",
+      "labelKey": "i-jemuran",
+      "bin": "fisika",
+      "emoji": "👕"
+    },
+    {
+      "id": "eskrim",
+      "labelKey": "i-eskrim",
+      "bin": "fisika",
+      "emoji": "🍦"
+    },
+    {
+      "id": "salju",
+      "labelKey": "i-salju",
+      "bin": "fisika",
+      "emoji": "⛄"
+    },
+    {
+      "id": "kapurbarus",
+      "labelKey": "i-kapurbarus",
+      "bin": "fisika",
+      "shape": "circle",
+      "color": "#fafafa",
+      "scale": 0.7
+    },
+    {
+      "id": "esbatu",
+      "labelKey": "i-esbatu",
+      "bin": "fisika",
+      "emoji": "🧊"
+    },
+    {
+      "id": "arang",
+      "labelKey": "i-arang",
+      "bin": "kimia",
+      "emoji": "🪵"
+    },
+    {
+      "id": "susubasi",
+      "labelKey": "i-susubasi",
+      "bin": "kimia",
+      "emoji": "🥛"
+    },
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "kimia",
+      "emoji": "🍎"
+    },
+    {
+      "id": "kembangapi",
+      "labelKey": "i-kembangapi",
+      "bin": "kimia",
+      "emoji": "🎆"
+    },
+    {
+      "id": "korek",
+      "labelKey": "i-korek",
+      "bin": "kimia",
+      "emoji": "🔥"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "kimia",
+      "emoji": "🍌"
+    }
+  ],
+  "pilihan": []
+}

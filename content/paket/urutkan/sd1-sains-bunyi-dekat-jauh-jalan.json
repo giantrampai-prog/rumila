@@ -1,0 +1,396 @@
+{
+  "id": "sd1-sains-bunyi-dekat-jauh-jalan",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD1.BUNYI.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Dengar Paling Keras?",
+      "instruksi": "Susun dari anak yang paling dekat dengan bunyi, yang mendengar paling keras, sampai yang paling jauh dan paling pelan.",
+      "t-sirene": "Mobil ambulans membunyikan sirene",
+      "sirene-1": "anak di trotoar samping ambulans",
+      "sirene-2": "anak di depan toko",
+      "sirene-3": "anak di ujung jalan",
+      "sirene-4": "anak di dalam rumah di gang belakang",
+      "t-kereta": "Kereta api membunyikan klakson",
+      "kereta-1": "anak di peron stasiun",
+      "kereta-2": "anak di parkiran stasiun",
+      "kereta-3": "anak di pasar dekat stasiun",
+      "kereta-4": "anak di sekolah yang jauh",
+      "t-terompet": "Kakak meniup terompet di halaman",
+      "terompet-1": "anak di samping kakak",
+      "terompet-2": "anak di teras rumah",
+      "terompet-3": "anak di pagar depan",
+      "terompet-4": "anak di lapangan ujung kampung",
+      "t-bakso": "Tukang bakso memukul mangkuk",
+      "bakso-1": "anak di samping gerobak bakso",
+      "bakso-2": "anak di depan pagar rumah",
+      "bakso-3": "anak di seberang jalan",
+      "bakso-4": "anak di kamar paling belakang",
+      "t-kentongan": "Kentongan dipukul di pos ronda",
+      "kentongan-1": "anak di dalam pos ronda",
+      "kentongan-2": "anak di warung sebelah pos",
+      "kentongan-3": "anak di masjid ujung gang",
+      "kentongan-4": "anak di sawah di luar kampung",
+      "t-radio": "Radio diputar keras di warung",
+      "radio-1": "anak yang duduk di warung",
+      "radio-2": "anak di depan warung",
+      "radio-3": "anak di tikungan jalan",
+      "radio-4": "anak di taman kota",
+      "t-pesawat": "Pesawat lepas landas di bandara",
+      "pesawat-1": "anak di anjungan pengamatan tepi landasan",
+      "pesawat-2": "anak di ruang tunggu bandara",
+      "pesawat-3": "anak di jalan dekat bandara",
+      "pesawat-4": "anak di rumah di kota sebelah",
+      "t-kambing": "Kambing mengembik di kandang",
+      "kambing-1": "anak di depan kandang",
+      "kambing-2": "anak di halaman belakang",
+      "kambing-3": "anak di dalam rumah",
+      "kambing-4": "anak di rumah tetangga jauh",
+      "t-alarm": "Jam weker berdering di kamar",
+      "alarm-1": "anak di tempat tidur samping weker",
+      "alarm-2": "anak di pintu kamar",
+      "alarm-3": "anak di dapur",
+      "alarm-4": "anak di kebun belakang rumah",
+      "t-kucing": "Kucing mengeong di atas pagar",
+      "kucing-1": "anak di bawah pagar",
+      "kucing-2": "anak di tengah halaman",
+      "kucing-3": "anak di teras",
+      "kucing-4": "anak di ruang tengah rumah"
+    },
+    "en": {
+      "judul": "Who Hears It Loudest?",
+      "instruksi": "Order the children from the one closest to the sound, who hears it loudest, to the one farthest away, who hears it quietest.",
+      "t-sirene": "An ambulance sounds its siren",
+      "sirene-1": "a child on the pavement next to the ambulance",
+      "sirene-2": "a child in front of a shop",
+      "sirene-3": "a child at the end of the street",
+      "sirene-4": "a child inside a house in the back lane",
+      "t-kereta": "A train sounds its horn",
+      "kereta-1": "a child on the station platform",
+      "kereta-2": "a child in the station car park",
+      "kereta-3": "a child at the market near the station",
+      "kereta-4": "a child at a faraway school",
+      "t-terompet": "Big brother blows a trumpet in the yard",
+      "terompet-1": "a child next to big brother",
+      "terompet-2": "a child on the porch",
+      "terompet-3": "a child at the front gate",
+      "terompet-4": "a child in the field at the edge of the village",
+      "t-bakso": "The meatball seller taps a bowl",
+      "bakso-1": "a child next to the meatball cart",
+      "bakso-2": "a child by the front fence",
+      "bakso-3": "a child across the road",
+      "bakso-4": "a child in the back bedroom",
+      "t-kentongan": "The slit drum is beaten at the guard post",
+      "kentongan-1": "a child inside the guard post",
+      "kentongan-2": "a child at the stall next to the post",
+      "kentongan-3": "a child at the mosque at the end of the lane",
+      "kentongan-4": "a child in the rice field outside the village",
+      "t-radio": "A radio plays loudly at a stall",
+      "radio-1": "a child sitting in the stall",
+      "radio-2": "a child in front of the stall",
+      "radio-3": "a child at the bend in the road",
+      "radio-4": "a child in the city park",
+      "t-pesawat": "A plane takes off at the airport",
+      "pesawat-1": "a child on the viewing deck beside the runway",
+      "pesawat-2": "a child in the airport waiting room",
+      "pesawat-3": "a child on a road near the airport",
+      "pesawat-4": "a child at home in the next town",
+      "t-kambing": "A goat bleats in its pen",
+      "kambing-1": "a child in front of the pen",
+      "kambing-2": "a child in the back yard",
+      "kambing-3": "a child inside the house",
+      "kambing-4": "a child at a far neighbour's house",
+      "t-alarm": "An alarm clock rings in the bedroom",
+      "alarm-1": "a child in bed next to the clock",
+      "alarm-2": "a child at the bedroom door",
+      "alarm-3": "a child in the kitchen",
+      "alarm-4": "a child in the garden behind the house",
+      "t-kucing": "A cat meows on top of the fence",
+      "kucing-1": "a child right below the fence",
+      "kucing-2": "a child in the middle of the yard",
+      "kucing-3": "a child on the porch",
+      "kucing-4": "a child in the living room"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah anak pendengar: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "jalan-ke-sekolah",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "sirene",
+      "titleKey": "t-sirene",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "sirene-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "sirene-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "sirene-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "sirene-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "kereta",
+      "titleKey": "t-kereta",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "kereta-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "kereta-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "kereta-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "kereta-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "terompet",
+      "titleKey": "t-terompet",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "terompet-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "terompet-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "terompet-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "terompet-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "bakso",
+      "titleKey": "t-bakso",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "bakso-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "bakso-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "bakso-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "bakso-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "kentongan",
+      "titleKey": "t-kentongan",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "kentongan-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "kentongan-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "kentongan-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "kentongan-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "radio",
+      "titleKey": "t-radio",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "radio-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "radio-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "radio-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "radio-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "pesawat",
+      "titleKey": "t-pesawat",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "pesawat-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "pesawat-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "pesawat-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "pesawat-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "kambing",
+      "titleKey": "t-kambing",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "kambing-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "kambing-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "kambing-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "kambing-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "alarm",
+      "titleKey": "t-alarm",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "alarm-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "alarm-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "alarm-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "alarm-4",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "kucing",
+      "titleKey": "t-kucing",
+      "steps": [
+        {
+          "id": "1",
+          "labelKey": "kucing-1",
+          "emoji": "🧒"
+        },
+        {
+          "id": "2",
+          "labelKey": "kucing-2",
+          "emoji": "👧"
+        },
+        {
+          "id": "3",
+          "labelKey": "kucing-3",
+          "emoji": "👦"
+        },
+        {
+          "id": "4",
+          "labelKey": "kucing-4",
+          "emoji": "🧒"
+        }
+      ]
+    }
+  ]
+}

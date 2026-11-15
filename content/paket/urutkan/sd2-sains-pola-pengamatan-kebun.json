@@ -1,0 +1,398 @@
+{
+  "id": "sd2-sains-pola-pengamatan-kebun",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD2.PENGAMATAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Catatan Pengamatan Kebun",
+      "instruksi": "Baca catatan pengamatan, lalu susun dari hari atau waktu pertama sampai terakhir menurut polanya.",
+      "t-jagung": "Biji jagung ditanam di pot",
+      "jagung-a": "hari 1: tanah masih rata",
+      "jagung-b": "hari 4: tunas kecil muncul",
+      "jagung-c": "hari 8: daun panjang tumbuh",
+      "jagung-d": "hari 20: batang jagung tinggi",
+      "t-telur": "Telur ayam dierami induknya",
+      "telur-a": "telur utuh dan mulus",
+      "telur-b": "kulit telur mulai retak",
+      "telur-c": "anak ayam keluar, bulunya basah",
+      "telur-d": "anak ayam berbulu kering dan berjalan",
+      "t-bulan": "Bulan diamati tiap beberapa malam",
+      "bulan-a": "Bulan sabit tipis",
+      "bulan-b": "Bulan separuh",
+      "bulan-c": "Bulan hampir bulat",
+      "bulan-d": "Bulan purnama bulat penuh",
+      "t-jemuran": "Baju basah dijemur pagi hari",
+      "jemuran-a": "pukul 7: baju basah menetes",
+      "jemuran-b": "pukul 9: baju masih lembap",
+      "jemuran-c": "pukul 11: baju hampir kering",
+      "jemuran-d": "pukul 13: baju kering sekali",
+      "t-roti": "Roti dibiarkan di tempat lembap",
+      "roti-a": "roti masih segar",
+      "roti-b": "muncul satu bintik jamur",
+      "roti-c": "bintik jamur makin banyak",
+      "roti-d": "roti penuh jamur",
+      "t-gelas": "Air di gelas terbuka dekat jendela",
+      "gelas-a": "hari 1: gelas penuh air",
+      "gelas-b": "hari 3: air berkurang",
+      "gelas-c": "hari 6: air tinggal sedikit",
+      "gelas-d": "hari 9: gelas kering",
+      "t-kupu": "Ulat di daun kebun diamati",
+      "kupu-a": "telur kecil di daun",
+      "kupu-b": "ulat kecil makan daun",
+      "kupu-c": "ulat besar jadi kepompong",
+      "kupu-d": "kupu-kupu keluar dari kepompong",
+      "t-bungamatahari": "Bunga matahari tumbuh di kebun",
+      "bungamatahari-a": "minggu 1: tunas kecil",
+      "bungamatahari-b": "minggu 3: batang setinggi lutut",
+      "bungamatahari-c": "minggu 6: kuncup bunga muncul",
+      "bungamatahari-d": "minggu 9: bunga mekar lebar",
+      "t-apel": "Potongan apel dibiarkan di piring",
+      "apel-a": "menit 1: daging apel putih",
+      "apel-b": "menit 10: mulai kecokelatan",
+      "apel-c": "menit 30: cokelat",
+      "apel-d": "menit 60: cokelat tua",
+      "t-panci": "Air dalam panci dididihkan lama",
+      "panci-a": "panci penuh air",
+      "panci-b": "air berkurang sedikit",
+      "panci-c": "air tinggal separuh",
+      "panci-d": "air tinggal di dasar panci"
+    },
+    "en": {
+      "judul": "Garden Observation Notes",
+      "instruksi": "Read the observation notes, then order them from the first day or time to the last, following the pattern.",
+      "t-jagung": "A corn seed planted in a pot",
+      "jagung-a": "day 1: the soil is still flat",
+      "jagung-b": "day 4: a tiny shoot appears",
+      "jagung-c": "day 8: long leaves grow",
+      "jagung-d": "day 20: a tall corn stalk",
+      "t-telur": "A hen sits on her egg",
+      "telur-a": "a smooth, whole egg",
+      "telur-b": "the shell starts to crack",
+      "telur-c": "the chick comes out, its feathers wet",
+      "telur-d": "the chick is dry, fluffy and walking",
+      "t-bulan": "The Moon watched every few nights",
+      "bulan-a": "a thin crescent Moon",
+      "bulan-b": "a half Moon",
+      "bulan-c": "an almost round Moon",
+      "bulan-d": "a full, round Moon",
+      "t-jemuran": "A wet shirt hung out in the morning",
+      "jemuran-a": "7 o'clock: the shirt is dripping wet",
+      "jemuran-b": "9 o'clock: the shirt is still damp",
+      "jemuran-c": "11 o'clock: the shirt is almost dry",
+      "jemuran-d": "1 o'clock: the shirt is completely dry",
+      "t-roti": "Bread left in a damp place",
+      "roti-a": "the bread is still fresh",
+      "roti-b": "one spot of mould appears",
+      "roti-c": "more and more mould spots",
+      "roti-d": "the bread is covered in mould",
+      "t-gelas": "Water in an open glass by the window",
+      "gelas-a": "day 1: the glass is full",
+      "gelas-b": "day 3: there is less water",
+      "gelas-c": "day 6: only a little water is left",
+      "gelas-d": "day 9: the glass is dry",
+      "t-kupu": "A caterpillar on a garden leaf is watched",
+      "kupu-a": "a tiny egg on a leaf",
+      "kupu-b": "a small caterpillar eats leaves",
+      "kupu-c": "the big caterpillar becomes a cocoon",
+      "kupu-d": "a butterfly comes out of the cocoon",
+      "t-bungamatahari": "A sunflower grows in the garden",
+      "bungamatahari-a": "week 1: a small shoot",
+      "bungamatahari-b": "week 3: a stem as high as a knee",
+      "bungamatahari-c": "week 6: a flower bud appears",
+      "bungamatahari-d": "week 9: the flower opens wide",
+      "t-apel": "A slice of apple left on a plate",
+      "apel-a": "minute 1: the apple flesh is white",
+      "apel-b": "minute 10: it starts turning brown",
+      "apel-c": "minute 30: brown",
+      "apel-d": "minute 60: dark brown",
+      "t-panci": "Water in a pot boiled for a long time",
+      "panci-a": "the pot is full of water",
+      "panci-b": "the water goes down a little",
+      "panci-c": "only half the water is left",
+      "panci-d": "water only at the bottom of the pot"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah catatan pengamatan: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "jagung",
+      "titleKey": "t-jagung",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "jagung-a",
+          "emoji": "🟫"
+        },
+        {
+          "id": "b",
+          "labelKey": "jagung-b",
+          "emoji": "🌱"
+        },
+        {
+          "id": "c",
+          "labelKey": "jagung-c",
+          "emoji": "🌿"
+        },
+        {
+          "id": "d",
+          "labelKey": "jagung-d",
+          "emoji": "🌽"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "telur-a",
+          "emoji": "🥚"
+        },
+        {
+          "id": "b",
+          "labelKey": "telur-b",
+          "emoji": "🥚"
+        },
+        {
+          "id": "c",
+          "labelKey": "telur-c",
+          "emoji": "🐣"
+        },
+        {
+          "id": "d",
+          "labelKey": "telur-d",
+          "emoji": "🐥"
+        }
+      ]
+    },
+    {
+      "id": "bulan",
+      "titleKey": "t-bulan",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "bulan-a",
+          "emoji": "🌒"
+        },
+        {
+          "id": "b",
+          "labelKey": "bulan-b",
+          "emoji": "🌓"
+        },
+        {
+          "id": "c",
+          "labelKey": "bulan-c",
+          "emoji": "🌔"
+        },
+        {
+          "id": "d",
+          "labelKey": "bulan-d",
+          "emoji": "🌕"
+        }
+      ]
+    },
+    {
+      "id": "jemuran",
+      "titleKey": "t-jemuran",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "jemuran-a",
+          "emoji": "👕"
+        },
+        {
+          "id": "b",
+          "labelKey": "jemuran-b",
+          "emoji": "👕"
+        },
+        {
+          "id": "c",
+          "labelKey": "jemuran-c",
+          "emoji": "👕"
+        },
+        {
+          "id": "d",
+          "labelKey": "jemuran-d",
+          "emoji": "👕"
+        }
+      ]
+    },
+    {
+      "id": "roti",
+      "titleKey": "t-roti",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "roti-a",
+          "emoji": "🍞"
+        },
+        {
+          "id": "b",
+          "labelKey": "roti-b",
+          "emoji": "🍞"
+        },
+        {
+          "id": "c",
+          "labelKey": "roti-c",
+          "emoji": "🍞"
+        },
+        {
+          "id": "d",
+          "labelKey": "roti-d",
+          "emoji": "🍞"
+        }
+      ]
+    },
+    {
+      "id": "gelas",
+      "titleKey": "t-gelas",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "gelas-a",
+          "emoji": "🥛"
+        },
+        {
+          "id": "b",
+          "labelKey": "gelas-b",
+          "emoji": "🥛"
+        },
+        {
+          "id": "c",
+          "labelKey": "gelas-c",
+          "emoji": "🥛"
+        },
+        {
+          "id": "d",
+          "labelKey": "gelas-d",
+          "emoji": "🥛"
+        }
+      ]
+    },
+    {
+      "id": "kupu",
+      "titleKey": "t-kupu",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "kupu-a",
+          "emoji": "🍃"
+        },
+        {
+          "id": "b",
+          "labelKey": "kupu-b",
+          "emoji": "🐛"
+        },
+        {
+          "id": "c",
+          "labelKey": "kupu-c",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        },
+        {
+          "id": "d",
+          "labelKey": "kupu-d",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "bungamatahari",
+      "titleKey": "t-bungamatahari",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "bungamatahari-a",
+          "emoji": "🌱"
+        },
+        {
+          "id": "b",
+          "labelKey": "bungamatahari-b",
+          "emoji": "🌿"
+        },
+        {
+          "id": "c",
+          "labelKey": "bungamatahari-c",
+          "emoji": "🌿"
+        },
+        {
+          "id": "d",
+          "labelKey": "bungamatahari-d",
+          "emoji": "🌻"
+        }
+      ]
+    },
+    {
+      "id": "apel",
+      "titleKey": "t-apel",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "apel-a",
+          "emoji": "🍎"
+        },
+        {
+          "id": "b",
+          "labelKey": "apel-b",
+          "emoji": "🍎"
+        },
+        {
+          "id": "c",
+          "labelKey": "apel-c",
+          "emoji": "🍎"
+        },
+        {
+          "id": "d",
+          "labelKey": "apel-d",
+          "emoji": "🍎"
+        }
+      ]
+    },
+    {
+      "id": "panci",
+      "titleKey": "t-panci",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "panci-a",
+          "emoji": "🍲"
+        },
+        {
+          "id": "b",
+          "labelKey": "panci-b",
+          "emoji": "🍲"
+        },
+        {
+          "id": "c",
+          "labelKey": "panci-c",
+          "emoji": "🍲"
+        },
+        {
+          "id": "d",
+          "labelKey": "panci-d",
+          "emoji": "🍲"
+        }
+      ]
+    }
+  ]
+}

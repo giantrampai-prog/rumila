@@ -1,0 +1,481 @@
+{
+  "id": "sd3-mat-ember-kerang-genap-ratusan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.TAMBAH-KURANG-1000.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ember Kerang Pas Seratus",
+      "instruksi": "Cari pasangan yang melengkapi: 45 dan 55 jadi 100, 650 dan 350 jadi 1.000. Sentuh berapa kerang lagi yang dibutuhkan.",
+      "pilihan": "pilihan",
+      "q1": "Ember berisi 45 kerang. Berapa lagi supaya pas 100?",
+      "c1": "55",
+      "c2": "65",
+      "c3": "45",
+      "c4": "155",
+      "q2": "Ember berisi 82 kerang. Berapa lagi supaya pas 100?",
+      "c5": "18",
+      "c6": "28",
+      "c7": "8",
+      "c8": "22",
+      "q3": "Ember berisi 450 kerang. Berapa lagi supaya pas 500?",
+      "c9": "50",
+      "c10": "550",
+      "c11": "150",
+      "c12": "5",
+      "q4": "Ember berisi 260 kerang. Berapa lagi supaya pas 300?",
+      "c13": "40",
+      "c14": "140",
+      "c15": "60",
+      "c16": "4",
+      "q5": "Ember berisi 610 kerang. Berapa lagi supaya pas 1.000?",
+      "c17": "390",
+      "c18": "490",
+      "c19": "400",
+      "c20": "90",
+      "q6": "Ember berisi 25 kerang. Berapa lagi supaya pas 100?",
+      "c21": "75",
+      "c22": "85",
+      "c23": "25",
+      "q7": "Ember berisi 650 kerang. Berapa lagi supaya pas 1.000?",
+      "c24": "350",
+      "c25": "450",
+      "c26": "250",
+      "c27": "35",
+      "q8": "Ember berisi 13 kerang. Berapa lagi supaya pas 100?",
+      "c28": "87",
+      "c29": "97",
+      "c30": "77",
+      "c31": "13",
+      "q9": "Ember berisi 340 kerang. Berapa lagi supaya pas 400?",
+      "c32": "160",
+      "c33": "6",
+      "q10": "Ember berisi 380 kerang. Berapa lagi supaya pas 1.000?",
+      "c34": "620",
+      "c35": "720",
+      "c36": "520",
+      "c37": "62",
+      "q11": "Ember berisi 91 kerang. Berapa lagi supaya pas 100?",
+      "c38": "9",
+      "c39": "19",
+      "c40": "10",
+      "c41": "1",
+      "q12": "Ember berisi 550 kerang. Berapa lagi supaya pas 600?"
+    },
+    "en": {
+      "judul": "Shell Buckets to a Hundred",
+      "instruksi": "Find the number that completes it: 45 and 55 make 100, 650 and 350 make 1,000. Touch how many more shells are needed.",
+      "pilihan": "choices",
+      "q1": "The bucket holds 45 shells. How many more make exactly 100?",
+      "c1": "55",
+      "c2": "65",
+      "c3": "45",
+      "c4": "155",
+      "q2": "The bucket holds 82 shells. How many more make exactly 100?",
+      "c5": "18",
+      "c6": "28",
+      "c7": "8",
+      "c8": "22",
+      "q3": "The bucket holds 450 shells. How many more make exactly 500?",
+      "c9": "50",
+      "c10": "550",
+      "c11": "150",
+      "c12": "5",
+      "q4": "The bucket holds 260 shells. How many more make exactly 300?",
+      "c13": "40",
+      "c14": "140",
+      "c15": "60",
+      "c16": "4",
+      "q5": "The bucket holds 610 shells. How many more make exactly 1,000?",
+      "c17": "390",
+      "c18": "490",
+      "c19": "400",
+      "c20": "90",
+      "q6": "The bucket holds 25 shells. How many more make exactly 100?",
+      "c21": "75",
+      "c22": "85",
+      "c23": "25",
+      "q7": "The bucket holds 650 shells. How many more make exactly 1,000?",
+      "c24": "350",
+      "c25": "450",
+      "c26": "250",
+      "c27": "35",
+      "q8": "The bucket holds 13 shells. How many more make exactly 100?",
+      "c28": "87",
+      "c29": "97",
+      "c30": "77",
+      "c31": "13",
+      "q9": "The bucket holds 340 shells. How many more make exactly 400?",
+      "c32": "160",
+      "c33": "6",
+      "q10": "The bucket holds 380 shells. How many more make exactly 1,000?",
+      "c34": "620",
+      "c35": "720",
+      "c36": "520",
+      "c37": "62",
+      "q11": "The bucket holds 91 shells. How many more make exactly 100?",
+      "c38": "9",
+      "c39": "19",
+      "c40": "10",
+      "c41": "1",
+      "q12": "The bucket holds 550 shells. How many more make exactly 600?"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c2",
+        "c23"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c24",
+        "c25",
+        "c26",
+        "c27"
+      ],
+      "correct": "c24"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c28",
+        "c29",
+        "c30",
+        "c31"
+      ],
+      "correct": "c28"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c15",
+        "c32",
+        "c13",
+        "c33"
+      ],
+      "correct": "c15"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c35",
+        "c36",
+        "c37"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c38",
+        "c39",
+        "c40",
+        "c41"
+      ],
+      "correct": "c38"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c9",
+        "c11",
+        "c12",
+        "c15"
+      ],
+      "correct": "c9"
+    }
+  ]
+}

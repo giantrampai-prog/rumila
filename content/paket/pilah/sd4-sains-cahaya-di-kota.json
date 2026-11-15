@@ -1,0 +1,151 @@
+{
+  "id": "sd4-sains-cahaya-di-kota",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.CAHAYA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cahaya di Kota",
+      "instruksi": "Benda mana yang membuat cahaya sendiri, dan mana yang terlihat karena memantulkan cahaya? Ingat Bulan dan cermin!",
+      "b-sumber": "sumber cahaya: membuat cahaya sendiri",
+      "b-pantul": "bukan sumber: memantulkan cahaya",
+      "i-bintang": "bintang di langit malam",
+      "i-kunang": "kunang-kunang",
+      "i-lampumerah": "lampu lalu lintas yang menyala",
+      "i-kembangapi": "kembang api",
+      "i-tvnyala": "televisi yang menyala",
+      "i-lentera": "lentera menyala",
+      "i-bulansabit": "Bulan sabit",
+      "i-cermin": "cermin rias",
+      "i-rompi": "rompi pemantul petugas",
+      "i-piring": "piring putih",
+      "i-boneka": "boneka beruang",
+      "i-tvmati": "televisi yang mati"
+    },
+    "en": {
+      "judul": "Lights Around the City",
+      "instruksi": "Which things make their own light, and which can be seen because they reflect light? Remember the Moon and mirrors!",
+      "b-sumber": "light source: makes its own light",
+      "b-pantul": "not a source: reflects light",
+      "i-bintang": "a star in the night sky",
+      "i-kunang": "a firefly",
+      "i-lampumerah": "a traffic light that is on",
+      "i-kembangapi": "fireworks",
+      "i-tvnyala": "a television that is switched on",
+      "i-lentera": "a lit lantern",
+      "i-bulansabit": "a crescent Moon",
+      "i-cermin": "a dressing-table mirror",
+      "i-rompi": "a worker's reflective vest",
+      "i-piring": "a white plate",
+      "i-boneka": "a teddy bear",
+      "i-tvmati": "a television that is switched off"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sumber",
+      "labelKey": "b-sumber",
+      "emoji": "☀️"
+    },
+    {
+      "id": "pantul",
+      "labelKey": "b-pantul",
+      "emoji": "🪞"
+    }
+  ],
+  "items": [
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "sumber",
+      "emoji": "⭐"
+    },
+    {
+      "id": "kunang",
+      "labelKey": "i-kunang",
+      "bin": "sumber",
+      "emoji": "🪲",
+      "color": "#fff176"
+    },
+    {
+      "id": "lampumerah",
+      "labelKey": "i-lampumerah",
+      "bin": "sumber",
+      "emoji": "🚦"
+    },
+    {
+      "id": "kembangapi",
+      "labelKey": "i-kembangapi",
+      "bin": "sumber",
+      "emoji": "🎆"
+    },
+    {
+      "id": "tvnyala",
+      "labelKey": "i-tvnyala",
+      "bin": "sumber",
+      "emoji": "📺"
+    },
+    {
+      "id": "lentera",
+      "labelKey": "i-lentera",
+      "bin": "sumber",
+      "emoji": "🏮"
+    },
+    {
+      "id": "bulansabit",
+      "labelKey": "i-bulansabit",
+      "bin": "pantul",
+      "emoji": "🌙"
+    },
+    {
+      "id": "cermin",
+      "labelKey": "i-cermin",
+      "bin": "pantul",
+      "emoji": "🪞"
+    },
+    {
+      "id": "rompi",
+      "labelKey": "i-rompi",
+      "bin": "pantul",
+      "emoji": "🦺"
+    },
+    {
+      "id": "piring",
+      "labelKey": "i-piring",
+      "bin": "pantul",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "i-boneka",
+      "bin": "pantul",
+      "emoji": "🧸"
+    },
+    {
+      "id": "tvmati",
+      "labelKey": "i-tvmati",
+      "bin": "pantul",
+      "emoji": "📺",
+      "color": "#424242"
+    }
+  ],
+  "pilihan": []
+}

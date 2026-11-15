@@ -1,0 +1,342 @@
+{
+  "id": "sd2-mat-robot-gudang-putar",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "MAT.SD2.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Robot Gudang Berputar",
+      "instruksi": "Robot gudang hanya bisa maju ke depan. Putar dulu: kanan seperempat putaran searah jarum jam, kiri berlawanan arah, dua kali berarti setengah putaran. Lalu maju ke bintang."
+    },
+    "en": {
+      "judul": "Spinning Warehouse Robot",
+      "instruksi": "The warehouse robot can only move forward. Turn first: right is a quarter turn clockwise, left is anticlockwise, twice is a half turn. Then drive to the star."
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "gudang",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "debug": false,
+  "semuaGrid": false,
+  "prediksi": false,
+  "grids": [
+    {
+      "id": "mundur-ke-pintu",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 2,
+        "y": 1,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 6
+    },
+    {
+      "id": "balik-ke-barat",
+      "w": 5,
+      "h": 3,
+      "start": {
+        "x": 3,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 1
+      },
+      "walls": [],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 7
+    },
+    {
+      "id": "rak-di-tengah",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 11
+    },
+    {
+      "id": "rak-menghadang-utara",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 4,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 11
+    },
+    {
+      "id": "seperempat-ke-kiri",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 6
+    },
+    {
+      "id": "seperempat-ke-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 6
+    },
+    {
+      "id": "balik-lalu-belok",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 4,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 11
+    },
+    {
+      "id": "lorong-rak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 2,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 4,
+      "rackSlots": 6
+    },
+    {
+      "id": "pojok-gudang",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 0,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 5,
+      "rackSlots": 7
+    },
+    {
+      "id": "dua-rak-berjajar",
+      "w": 6,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 5,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 10,
+      "rackSlots": 12
+    },
+    {
+      "id": "antar-ke-bawah",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 3,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 10,
+      "rackSlots": 12
+    },
+    {
+      "id": "lintas-gudang",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 0,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 9,
+      "rackSlots": 11
+    }
+  ]
+}

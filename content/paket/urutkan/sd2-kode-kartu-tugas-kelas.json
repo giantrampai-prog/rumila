@@ -1,0 +1,663 @@
+{
+  "id": "sd2-kode-kartu-tugas-kelas",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD2.ALGORITMA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kartu Tugas Berurutan",
+      "instruksi": "Baca tiap kartu tugas, lalu susun dari langkah pertama sampai terakhir.",
+      "t-sepatu-kotor": "Membersihkan sepatu",
+      "sepatu-kotor-1": "lepas tali sepatu",
+      "sepatu-kotor-2": "sikat lumpurnya",
+      "sepatu-kotor-3": "cuci dengan sabun",
+      "sepatu-kotor-4": "bilas sampai bersih",
+      "sepatu-kotor-5": "jemur sampai kering",
+      "sepatu-kotor-6": "pasang tali lagi",
+      "sepatu-kotor-7": "pakai sepatu yang bersih",
+      "t-piket": "Piket kelas",
+      "piket-1": "naikkan kursi ke atas meja",
+      "piket-2": "sapu lantai",
+      "piket-3": "kumpulkan debu dengan pengki",
+      "piket-4": "buang debu ke tempat sampah",
+      "piket-5": "pel lantai",
+      "piket-6": "tunggu lantai kering",
+      "piket-7": "turunkan kursi lagi",
+      "t-baterai": "Mengisi baterai tablet",
+      "baterai-1": "baterai tablet hampir habis",
+      "baterai-2": "sambungkan tablet ke pengisi daya",
+      "baterai-3": "tanda petir muncul di layar",
+      "baterai-4": "tunggu sampai penuh",
+      "baterai-5": "baterai sudah penuh",
+      "baterai-6": "cabut kabelnya",
+      "baterai-7": "pakai tablet lagi",
+      "t-paket": "Mengirim paket",
+      "paket-1": "masukkan barang ke kardus",
+      "paket-2": "tutup kardus dengan selotip",
+      "paket-3": "tulis alamat di kardus yang sudah tertutup",
+      "paket-4": "bawa ke kantor pos",
+      "paket-5": "petugas menimbang paket",
+      "paket-6": "bayar ongkos kirim",
+      "paket-7": "terima bukti pengiriman",
+      "t-telur-rebus": "Merebus telur",
+      "telur-rebus-1": "masukkan telur ke panci",
+      "telur-rebus-2": "tuang air sampai telur terendam",
+      "telur-rebus-3": "nyalakan kompor",
+      "telur-rebus-4": "tunggu air mendidih",
+      "telur-rebus-5": "rebus sepuluh menit",
+      "telur-rebus-6": "matikan kompor",
+      "telur-rebus-7": "kupas kulit telur",
+      "t-salon": "Potong rambut di salon",
+      "salon-1": "duduk di kursi salon",
+      "salon-2": "pasang kain penutup bahu",
+      "salon-3": "semprot rambut dengan air",
+      "salon-4": "gunting rambut",
+      "salon-5": "keringkan rambut",
+      "salon-6": "lihat hasilnya di cermin",
+      "salon-7": "ucapkan terima kasih",
+      "t-bersih-akuarium": "Membersihkan akuarium",
+      "bersih-akuarium-1": "pindahkan ikan ke ember",
+      "bersih-akuarium-2": "buang air yang kotor",
+      "bersih-akuarium-3": "gosok kaca akuarium",
+      "bersih-akuarium-4": "isi lagi dengan air bersih",
+      "bersih-akuarium-5": "masukkan ikan kembali",
+      "bersih-akuarium-6": "beri makan ikan",
+      "bersih-akuarium-7": "amati ikan berenang",
+      "t-luka": "Merawat luka kecil",
+      "luka-1": "cuci tangan dengan sabun",
+      "luka-2": "bersihkan luka dengan air",
+      "luka-3": "keringkan pelan-pelan",
+      "luka-4": "oleskan obat luka",
+      "luka-5": "tempel plester",
+      "luka-6": "buang bungkus plester",
+      "luka-7": "cuci tangan lagi",
+      "t-roti-panggang": "Membuat roti panggang",
+      "roti-panggang-1": "masukkan roti ke pemanggang",
+      "roti-panggang-2": "tekan tuasnya ke bawah",
+      "roti-panggang-3": "tunggu roti matang",
+      "roti-panggang-4": "roti melompat keluar",
+      "roti-panggang-5": "ambil rotinya",
+      "roti-panggang-6": "oles mentega",
+      "roti-panggang-7": "makan roti panggang",
+      "t-cuci-sepeda": "Mencuci sepeda",
+      "cuci-sepeda-1": "siram sepeda dengan air",
+      "cuci-sepeda-2": "gosok dengan sabun",
+      "cuci-sepeda-3": "bilas sabunnya",
+      "cuci-sepeda-4": "lap sampai kering",
+      "cuci-sepeda-5": "teteskan minyak pada rantai",
+      "cuci-sepeda-6": "coba kayuh sebentar",
+      "cuci-sepeda-7": "simpan sepeda di garasi",
+      "t-mading": "Memajang gambar di mading",
+      "mading-1": "gambar pemandangan",
+      "mading-2": "warnai dengan cat air",
+      "mading-3": "tunggu catnya kering",
+      "mading-4": "bawa ke papan mading",
+      "mading-5": "tempel dengan paku payung",
+      "mading-6": "gambarmu terpajang rapi",
+      "mading-7": "teman-teman melihat gambarmu"
+    },
+    "en": {
+      "judul": "Task Cards in Order",
+      "instruksi": "Read each task card, then put them in order from the first step to the last.",
+      "t-sepatu-kotor": "Cleaning shoes",
+      "sepatu-kotor-1": "take out the laces",
+      "sepatu-kotor-2": "brush off the mud",
+      "sepatu-kotor-3": "wash with soap",
+      "sepatu-kotor-4": "rinse until clean",
+      "sepatu-kotor-5": "dry it in the sun",
+      "sepatu-kotor-6": "put the laces back",
+      "sepatu-kotor-7": "wear the clean shoes",
+      "t-piket": "Classroom clean-up duty",
+      "piket-1": "put the chairs up on the desks",
+      "piket-2": "sweep the floor",
+      "piket-3": "collect the dust with a dustpan",
+      "piket-4": "empty the dust into the bin",
+      "piket-5": "mop the floor",
+      "piket-6": "wait for the floor to dry",
+      "piket-7": "put the chairs back down",
+      "t-baterai": "Charging a tablet",
+      "baterai-1": "the tablet battery is nearly empty",
+      "baterai-2": "connect the tablet to the charger",
+      "baterai-3": "a lightning sign appears on the screen",
+      "baterai-4": "wait until it is full",
+      "baterai-5": "the battery is full",
+      "baterai-6": "unplug the cable",
+      "baterai-7": "use the tablet again",
+      "t-paket": "Sending a parcel",
+      "paket-1": "put the item in a box",
+      "paket-2": "tape the box shut",
+      "paket-3": "write the address on the closed box",
+      "paket-4": "take it to the post office",
+      "paket-5": "the clerk weighs the parcel",
+      "paket-6": "pay the postage",
+      "paket-7": "get the receipt",
+      "t-telur-rebus": "Boiling an egg",
+      "telur-rebus-1": "put the egg in a pot",
+      "telur-rebus-2": "add water to cover the egg",
+      "telur-rebus-3": "turn on the stove",
+      "telur-rebus-4": "wait for the water to boil",
+      "telur-rebus-5": "boil for ten minutes",
+      "telur-rebus-6": "turn off the stove",
+      "telur-rebus-7": "peel the egg",
+      "t-salon": "Getting a haircut",
+      "salon-1": "sit in the salon chair",
+      "salon-2": "put a cape over your shoulders",
+      "salon-3": "spray your hair with water",
+      "salon-4": "cut the hair",
+      "salon-5": "dry the hair",
+      "salon-6": "look at it in the mirror",
+      "salon-7": "say thank you",
+      "t-bersih-akuarium": "Cleaning a fish tank",
+      "bersih-akuarium-1": "move the fish to a bucket",
+      "bersih-akuarium-2": "pour out the dirty water",
+      "bersih-akuarium-3": "scrub the glass",
+      "bersih-akuarium-4": "refill it with clean water",
+      "bersih-akuarium-5": "put the fish back",
+      "bersih-akuarium-6": "feed the fish",
+      "bersih-akuarium-7": "watch the fish swim",
+      "t-luka": "Caring for a small cut",
+      "luka-1": "wash your hands with soap",
+      "luka-2": "clean the cut with water",
+      "luka-3": "pat it dry gently",
+      "luka-4": "put on some cream",
+      "luka-5": "put on a plaster",
+      "luka-6": "throw away the wrapper",
+      "luka-7": "wash your hands again",
+      "t-roti-panggang": "Making toast",
+      "roti-panggang-1": "put bread in the toaster",
+      "roti-panggang-2": "push the lever down",
+      "roti-panggang-3": "wait for the toast",
+      "roti-panggang-4": "the toast pops up",
+      "roti-panggang-5": "take out the toast",
+      "roti-panggang-6": "spread butter on it",
+      "roti-panggang-7": "eat the toast",
+      "t-cuci-sepeda": "Washing a bike",
+      "cuci-sepeda-1": "spray the bike with water",
+      "cuci-sepeda-2": "scrub it with soap",
+      "cuci-sepeda-3": "rinse off the soap",
+      "cuci-sepeda-4": "wipe it dry",
+      "cuci-sepeda-5": "drip oil on the chain",
+      "cuci-sepeda-6": "ride it a little to test",
+      "cuci-sepeda-7": "put the bike in the garage",
+      "t-mading": "Putting a picture on the class board",
+      "mading-1": "draw a landscape",
+      "mading-2": "paint it with watercolours",
+      "mading-3": "wait for the paint to dry",
+      "mading-4": "take it to the class board",
+      "mading-5": "pin it up",
+      "mading-6": "your picture is on display",
+      "mading-7": "your friends look at your picture"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 6,
+      "max": 7,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu: 6 → 7 (urutan dipotong dari depan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "sepatu-kotor",
+      "titleKey": "t-sepatu-kotor",
+      "steps": [
+        {
+          "id": "sepatu-kotor-1",
+          "labelKey": "sepatu-kotor-1",
+          "emoji": "🪢"
+        },
+        {
+          "id": "sepatu-kotor-2",
+          "labelKey": "sepatu-kotor-2",
+          "emoji": "🪥"
+        },
+        {
+          "id": "sepatu-kotor-3",
+          "labelKey": "sepatu-kotor-3",
+          "emoji": "🧼"
+        },
+        {
+          "id": "sepatu-kotor-4",
+          "labelKey": "sepatu-kotor-4",
+          "emoji": "🚿"
+        },
+        {
+          "id": "sepatu-kotor-5",
+          "labelKey": "sepatu-kotor-5",
+          "emoji": "☀️"
+        },
+        {
+          "id": "sepatu-kotor-6",
+          "labelKey": "sepatu-kotor-6",
+          "emoji": "🎀"
+        },
+        {
+          "id": "sepatu-kotor-7",
+          "labelKey": "sepatu-kotor-7",
+          "emoji": "👟"
+        }
+      ]
+    },
+    {
+      "id": "piket",
+      "titleKey": "t-piket",
+      "steps": [
+        {
+          "id": "piket-1",
+          "labelKey": "piket-1",
+          "emoji": "🪑"
+        },
+        {
+          "id": "piket-2",
+          "labelKey": "piket-2",
+          "emoji": "🧹"
+        },
+        {
+          "id": "piket-3",
+          "labelKey": "piket-3",
+          "emoji": "🧺"
+        },
+        {
+          "id": "piket-4",
+          "labelKey": "piket-4",
+          "emoji": "🗑️"
+        },
+        {
+          "id": "piket-5",
+          "labelKey": "piket-5",
+          "emoji": "🪣"
+        },
+        {
+          "id": "piket-6",
+          "labelKey": "piket-6",
+          "emoji": "⏳"
+        },
+        {
+          "id": "piket-7",
+          "labelKey": "piket-7",
+          "emoji": "⬇️"
+        }
+      ]
+    },
+    {
+      "id": "baterai",
+      "titleKey": "t-baterai",
+      "steps": [
+        {
+          "id": "baterai-1",
+          "labelKey": "baterai-1",
+          "emoji": "🪫"
+        },
+        {
+          "id": "baterai-2",
+          "labelKey": "baterai-2",
+          "emoji": "🔌"
+        },
+        {
+          "id": "baterai-3",
+          "labelKey": "baterai-3",
+          "emoji": "⚡"
+        },
+        {
+          "id": "baterai-4",
+          "labelKey": "baterai-4",
+          "emoji": "⏳"
+        },
+        {
+          "id": "baterai-5",
+          "labelKey": "baterai-5",
+          "emoji": "🔋"
+        },
+        {
+          "id": "baterai-6",
+          "labelKey": "baterai-6",
+          "emoji": "✋"
+        },
+        {
+          "id": "baterai-7",
+          "labelKey": "baterai-7",
+          "emoji": "📱"
+        }
+      ]
+    },
+    {
+      "id": "paket",
+      "titleKey": "t-paket",
+      "steps": [
+        {
+          "id": "paket-1",
+          "labelKey": "paket-1",
+          "emoji": "🧸"
+        },
+        {
+          "id": "paket-2",
+          "labelKey": "paket-2",
+          "emoji": "📦"
+        },
+        {
+          "id": "paket-3",
+          "labelKey": "paket-3",
+          "emoji": "✍️"
+        },
+        {
+          "id": "paket-4",
+          "labelKey": "paket-4",
+          "emoji": "🏤"
+        },
+        {
+          "id": "paket-5",
+          "labelKey": "paket-5",
+          "emoji": "⚖️"
+        },
+        {
+          "id": "paket-6",
+          "labelKey": "paket-6",
+          "emoji": "💵"
+        },
+        {
+          "id": "paket-7",
+          "labelKey": "paket-7",
+          "emoji": "🧾"
+        }
+      ]
+    },
+    {
+      "id": "telur-rebus",
+      "titleKey": "t-telur-rebus",
+      "steps": [
+        {
+          "id": "telur-rebus-1",
+          "labelKey": "telur-rebus-1",
+          "emoji": "🥚"
+        },
+        {
+          "id": "telur-rebus-2",
+          "labelKey": "telur-rebus-2",
+          "emoji": "💧"
+        },
+        {
+          "id": "telur-rebus-3",
+          "labelKey": "telur-rebus-3",
+          "emoji": "🔥"
+        },
+        {
+          "id": "telur-rebus-4",
+          "labelKey": "telur-rebus-4",
+          "emoji": "♨️"
+        },
+        {
+          "id": "telur-rebus-5",
+          "labelKey": "telur-rebus-5",
+          "emoji": "⏲️"
+        },
+        {
+          "id": "telur-rebus-6",
+          "labelKey": "telur-rebus-6",
+          "emoji": "🛑"
+        },
+        {
+          "id": "telur-rebus-7",
+          "labelKey": "telur-rebus-7",
+          "emoji": "🍳"
+        }
+      ]
+    },
+    {
+      "id": "salon",
+      "titleKey": "t-salon",
+      "steps": [
+        {
+          "id": "salon-1",
+          "labelKey": "salon-1",
+          "emoji": "💺"
+        },
+        {
+          "id": "salon-2",
+          "labelKey": "salon-2",
+          "emoji": "🧣"
+        },
+        {
+          "id": "salon-3",
+          "labelKey": "salon-3",
+          "emoji": "💦"
+        },
+        {
+          "id": "salon-4",
+          "labelKey": "salon-4",
+          "emoji": "✂️"
+        },
+        {
+          "id": "salon-5",
+          "labelKey": "salon-5",
+          "emoji": "💨"
+        },
+        {
+          "id": "salon-6",
+          "labelKey": "salon-6",
+          "emoji": "🪞"
+        },
+        {
+          "id": "salon-7",
+          "labelKey": "salon-7",
+          "emoji": "🙏"
+        }
+      ]
+    },
+    {
+      "id": "bersih-akuarium",
+      "titleKey": "t-bersih-akuarium",
+      "steps": [
+        {
+          "id": "bersih-akuarium-1",
+          "labelKey": "bersih-akuarium-1",
+          "emoji": "🐟"
+        },
+        {
+          "id": "bersih-akuarium-2",
+          "labelKey": "bersih-akuarium-2",
+          "emoji": "🚱"
+        },
+        {
+          "id": "bersih-akuarium-3",
+          "labelKey": "bersih-akuarium-3",
+          "emoji": "🧽"
+        },
+        {
+          "id": "bersih-akuarium-4",
+          "labelKey": "bersih-akuarium-4",
+          "emoji": "🚰"
+        },
+        {
+          "id": "bersih-akuarium-5",
+          "labelKey": "bersih-akuarium-5",
+          "emoji": "🐠"
+        },
+        {
+          "id": "bersih-akuarium-6",
+          "labelKey": "bersih-akuarium-6",
+          "emoji": "🍤"
+        },
+        {
+          "id": "bersih-akuarium-7",
+          "labelKey": "bersih-akuarium-7",
+          "emoji": "👀"
+        }
+      ]
+    },
+    {
+      "id": "luka",
+      "titleKey": "t-luka",
+      "steps": [
+        {
+          "id": "luka-1",
+          "labelKey": "luka-1",
+          "emoji": "🧼"
+        },
+        {
+          "id": "luka-2",
+          "labelKey": "luka-2",
+          "emoji": "💧"
+        },
+        {
+          "id": "luka-3",
+          "labelKey": "luka-3",
+          "emoji": "🧻"
+        },
+        {
+          "id": "luka-4",
+          "labelKey": "luka-4",
+          "emoji": "🧴"
+        },
+        {
+          "id": "luka-5",
+          "labelKey": "luka-5",
+          "emoji": "🩹"
+        },
+        {
+          "id": "luka-6",
+          "labelKey": "luka-6",
+          "emoji": "🗑️"
+        },
+        {
+          "id": "luka-7",
+          "labelKey": "luka-7",
+          "emoji": "🙌"
+        }
+      ]
+    },
+    {
+      "id": "roti-panggang",
+      "titleKey": "t-roti-panggang",
+      "steps": [
+        {
+          "id": "roti-panggang-1",
+          "labelKey": "roti-panggang-1",
+          "emoji": "🍞"
+        },
+        {
+          "id": "roti-panggang-2",
+          "labelKey": "roti-panggang-2",
+          "emoji": "⬇️"
+        },
+        {
+          "id": "roti-panggang-3",
+          "labelKey": "roti-panggang-3",
+          "emoji": "⏳"
+        },
+        {
+          "id": "roti-panggang-4",
+          "labelKey": "roti-panggang-4",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "roti-panggang-5",
+          "labelKey": "roti-panggang-5",
+          "emoji": "🤏"
+        },
+        {
+          "id": "roti-panggang-6",
+          "labelKey": "roti-panggang-6",
+          "emoji": "🧈"
+        },
+        {
+          "id": "roti-panggang-7",
+          "labelKey": "roti-panggang-7",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "cuci-sepeda",
+      "titleKey": "t-cuci-sepeda",
+      "steps": [
+        {
+          "id": "cuci-sepeda-1",
+          "labelKey": "cuci-sepeda-1",
+          "emoji": "💦"
+        },
+        {
+          "id": "cuci-sepeda-2",
+          "labelKey": "cuci-sepeda-2",
+          "emoji": "🧽"
+        },
+        {
+          "id": "cuci-sepeda-3",
+          "labelKey": "cuci-sepeda-3",
+          "emoji": "🚿"
+        },
+        {
+          "id": "cuci-sepeda-4",
+          "labelKey": "cuci-sepeda-4",
+          "emoji": "🧻"
+        },
+        {
+          "id": "cuci-sepeda-5",
+          "labelKey": "cuci-sepeda-5",
+          "emoji": "🛢️"
+        },
+        {
+          "id": "cuci-sepeda-6",
+          "labelKey": "cuci-sepeda-6",
+          "emoji": "🚲"
+        },
+        {
+          "id": "cuci-sepeda-7",
+          "labelKey": "cuci-sepeda-7",
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": "mading",
+      "titleKey": "t-mading",
+      "steps": [
+        {
+          "id": "mading-1",
+          "labelKey": "mading-1",
+          "emoji": "✏️"
+        },
+        {
+          "id": "mading-2",
+          "labelKey": "mading-2",
+          "emoji": "🎨"
+        },
+        {
+          "id": "mading-3",
+          "labelKey": "mading-3",
+          "emoji": "⏳"
+        },
+        {
+          "id": "mading-4",
+          "labelKey": "mading-4",
+          "emoji": "🚶"
+        },
+        {
+          "id": "mading-5",
+          "labelKey": "mading-5",
+          "emoji": "📌"
+        },
+        {
+          "id": "mading-6",
+          "labelKey": "mading-6",
+          "emoji": "🖼️"
+        },
+        {
+          "id": "mading-7",
+          "labelKey": "mading-7",
+          "emoji": "👀"
+        }
+      ]
+    }
+  ]
+}

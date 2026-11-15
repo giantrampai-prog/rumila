@@ -1,0 +1,438 @@
+{
+  "id": "sd5-sains-siklus-air-perbaiki",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.SIKLUS-AIR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siklus Air yang Tertukar",
+      "instruksi": "Dua tahap siklus air tertukar tempat. Tukar keduanya: penguapan, pengembunan, hujan, lalu air mengalir kembali.",
+      "s-danau": "Danau di kaki gunung",
+      "danau-panas": "Matahari memanaskan air danau",
+      "danau-uap": "air danau menguap menjadi uap air",
+      "danau-awan": "uap mendingin di atas gunung dan mengembun jadi awan",
+      "danau-hujan": "hujan turun di lereng gunung",
+      "danau-alir": "air mengalir lewat parit kembali ke danau",
+      "s-sawah": "Air di sawah",
+      "sawah-uap": "air sawah menguap di siang terik",
+      "sawah-awan": "uap naik, mendingin, dan mengembun jadi awan",
+      "sawah-gelap": "awan makin tebal dan gelap",
+      "sawah-hujan": "hujan turun membasahi sawah",
+      "sawah-alir": "air mengalir lewat saluran irigasi ke sungai",
+      "s-hutan": "Hutan hujan",
+      "hutan-daun": "daun-daun melepaskan uap air ke udara",
+      "hutan-dingin": "uap naik dan mendingin di udara atas",
+      "hutan-awan": "uap mengembun jadi awan tebal di atas hutan",
+      "hutan-hujan": "hujan deras turun ke hutan",
+      "hutan-alir": "air meresap ke tanah dan mengalir ke sungai",
+      "s-waduk": "Waduk di musim kemarau",
+      "waduk-uap": "air waduk menguap sedikit demi sedikit",
+      "waduk-awan": "uap air mengembun menjadi awan",
+      "waduk-hujan": "musim hujan tiba, hujan turun",
+      "waduk-alir": "sungai membawa air hujan mengisi waduk lagi",
+      "s-kolam": "Kolam ikan di halaman",
+      "kolam-panas": "siang yang panas menyinari kolam",
+      "kolam-uap": "air kolam menguap, permukaannya turun",
+      "kolam-awan": "uap mengembun jadi awan di langit",
+      "kolam-hujan": "hujan turun ke halaman",
+      "kolam-alir": "air hujan dari atap mengalir mengisi kolam lagi",
+      "s-lapangan": "Lapangan sekolah setelah hujan",
+      "lapangan-basah": "lapangan basah, Matahari bersinar terik",
+      "lapangan-uap": "air di lapangan menguap",
+      "lapangan-awan": "uap mendingin dan mengembun jadi awan",
+      "lapangan-hujan": "sore hari hujan turun lagi",
+      "lapangan-alir": "air mengalir ke selokan dan sungai",
+      "s-pulau": "Laut di sekitar pulau",
+      "pulau-uap": "air laut menguap, garamnya tertinggal",
+      "pulau-awan": "angin membawa uap yang mengembun jadi awan",
+      "pulau-hujan": "hujan tawar turun di bukit pulau",
+      "pulau-alir": "sungai kecil membawa air kembali ke laut",
+      "s-mangkuk": "Model siklus air di jendela",
+      "mangkuk-air": "mangkuk berisi air ditutup plastik dan dijemur",
+      "mangkuk-uap": "air di mangkuk menguap",
+      "mangkuk-embun": "uap mengembun jadi titik air di plastik",
+      "mangkuk-tetes": "titik air menetes kembali ke mangkuk seperti hujan",
+      "s-gunung": "Mata air di gunung",
+      "gunung-uap": "air dari laut dan sungai menguap",
+      "gunung-awan": "uap mengembun jadi awan di puncak gunung",
+      "gunung-hujan": "hujan turun dan meresap ke tanah gunung",
+      "gunung-mata": "air tanah keluar sebagai mata air",
+      "gunung-alir": "air mata air mengalir menjadi sungai",
+      "s-kubangan": "Kubangan kerbau",
+      "kubangan-uap": "air kubangan menguap di siang hari",
+      "kubangan-awan": "uap air mengembun menjadi awan",
+      "kubangan-hujan": "hujan turun di padang rumput",
+      "kubangan-alir": "air hujan mengalir mengisi kubangan lagi"
+    },
+    "en": {
+      "judul": "Mixed-Up Water Cycle",
+      "instruksi": "Two stages of the water cycle have swapped. Swap them back: evaporation, condensation, rain, then water flowing back.",
+      "s-danau": "A lake below a mountain",
+      "danau-panas": "the Sun warms the lake",
+      "danau-uap": "lake water evaporates into water vapour",
+      "danau-awan": "the vapour cools above the mountain and condenses into clouds",
+      "danau-hujan": "rain falls on the mountain slopes",
+      "danau-alir": "the water flows down streams back to the lake",
+      "s-sawah": "Water in a rice field",
+      "sawah-uap": "water in the rice field evaporates in the hot sun",
+      "sawah-awan": "the vapour rises, cools and condenses into clouds",
+      "sawah-gelap": "the clouds grow thick and dark",
+      "sawah-hujan": "rain falls on the rice field",
+      "sawah-alir": "water flows through the ditches to the river",
+      "s-hutan": "A rainforest",
+      "hutan-daun": "the leaves give off water vapour",
+      "hutan-dingin": "the vapour rises and cools high up",
+      "hutan-awan": "the vapour condenses into thick clouds over the forest",
+      "hutan-hujan": "heavy rain falls on the forest",
+      "hutan-alir": "the water soaks into the ground and flows to a river",
+      "s-waduk": "A reservoir in the dry season",
+      "waduk-uap": "the reservoir water slowly evaporates",
+      "waduk-awan": "the water vapour condenses into clouds",
+      "waduk-hujan": "the rainy season comes and rain falls",
+      "waduk-alir": "rivers carry the rainwater to fill the reservoir again",
+      "s-kolam": "A fish pond in the yard",
+      "kolam-panas": "a hot afternoon shines on the pond",
+      "kolam-uap": "the pond water evaporates and the level drops",
+      "kolam-awan": "the vapour condenses into clouds in the sky",
+      "kolam-hujan": "rain falls on the yard",
+      "kolam-alir": "rainwater from the roof flows back into the pond",
+      "s-lapangan": "The school field after rain",
+      "lapangan-basah": "the field is wet and the Sun shines hot",
+      "lapangan-uap": "the water on the field evaporates",
+      "lapangan-awan": "the vapour cools and condenses into clouds",
+      "lapangan-hujan": "in the afternoon rain falls again",
+      "lapangan-alir": "the water runs into the drains and the river",
+      "s-pulau": "The sea around an island",
+      "pulau-uap": "seawater evaporates and the salt stays behind",
+      "pulau-awan": "the wind carries the vapour, which condenses into clouds",
+      "pulau-hujan": "fresh rain falls on the island's hills",
+      "pulau-alir": "small rivers carry the water back to the sea",
+      "s-mangkuk": "A water cycle model on a window",
+      "mangkuk-air": "a bowl of water is covered with plastic and put in the sun",
+      "mangkuk-uap": "the water in the bowl evaporates",
+      "mangkuk-embun": "the vapour condenses into drops on the plastic",
+      "mangkuk-tetes": "the drops fall back into the bowl like rain",
+      "s-gunung": "A mountain spring",
+      "gunung-uap": "water from seas and rivers evaporates",
+      "gunung-awan": "the vapour condenses into clouds at the summit",
+      "gunung-hujan": "rain falls and soaks into the mountain soil",
+      "gunung-mata": "the groundwater comes out as a spring",
+      "gunung-alir": "the spring water flows on as a river",
+      "s-kubangan": "A buffalo's mud pool",
+      "kubangan-uap": "water in the mud pool evaporates in the day",
+      "kubangan-awan": "the water vapour condenses into clouds",
+      "kubangan-hujan": "rain falls on the meadow",
+      "kubangan-alir": "rainwater runs back to fill the mud pool"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tahap: 4 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "danau",
+      "titleKey": "s-danau",
+      "steps": [
+        {
+          "id": "panas",
+          "labelKey": "danau-panas",
+          "emoji": "☀️"
+        },
+        {
+          "id": "uap",
+          "labelKey": "danau-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "danau-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "danau-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "danau-alir",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "sawah",
+      "titleKey": "s-sawah",
+      "steps": [
+        {
+          "id": "uap",
+          "labelKey": "sawah-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "sawah-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "gelap",
+          "labelKey": "sawah-gelap",
+          "emoji": "🌥️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "sawah-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "sawah-alir",
+          "emoji": "🌾"
+        }
+      ]
+    },
+    {
+      "id": "hutan",
+      "titleKey": "s-hutan",
+      "steps": [
+        {
+          "id": "daun",
+          "labelKey": "hutan-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "dingin",
+          "labelKey": "hutan-dingin",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "hutan-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "hutan-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "hutan-alir",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "waduk",
+      "titleKey": "s-waduk",
+      "steps": [
+        {
+          "id": "uap",
+          "labelKey": "waduk-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "waduk-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "waduk-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "waduk-alir",
+          "emoji": "🌊"
+        }
+      ]
+    },
+    {
+      "id": "kolam",
+      "titleKey": "s-kolam",
+      "steps": [
+        {
+          "id": "panas",
+          "labelKey": "kolam-panas",
+          "emoji": "☀️"
+        },
+        {
+          "id": "uap",
+          "labelKey": "kolam-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "kolam-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "kolam-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "kolam-alir",
+          "emoji": "🐟"
+        }
+      ]
+    },
+    {
+      "id": "lapangan",
+      "titleKey": "s-lapangan",
+      "steps": [
+        {
+          "id": "basah",
+          "labelKey": "lapangan-basah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "uap",
+          "labelKey": "lapangan-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "lapangan-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "lapangan-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "lapangan-alir",
+          "emoji": "🚰"
+        }
+      ]
+    },
+    {
+      "id": "pulau",
+      "titleKey": "s-pulau",
+      "steps": [
+        {
+          "id": "uap",
+          "labelKey": "pulau-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "pulau-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "pulau-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "pulau-alir",
+          "emoji": "🏝️"
+        }
+      ]
+    },
+    {
+      "id": "mangkuk",
+      "titleKey": "s-mangkuk",
+      "steps": [
+        {
+          "id": "air",
+          "labelKey": "mangkuk-air",
+          "emoji": "🥣"
+        },
+        {
+          "id": "uap",
+          "labelKey": "mangkuk-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "embun",
+          "labelKey": "mangkuk-embun",
+          "emoji": "💧"
+        },
+        {
+          "id": "tetes",
+          "labelKey": "mangkuk-tetes",
+          "emoji": "⬇️"
+        }
+      ]
+    },
+    {
+      "id": "gunung",
+      "titleKey": "s-gunung",
+      "steps": [
+        {
+          "id": "uap",
+          "labelKey": "gunung-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "gunung-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "gunung-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "mata",
+          "labelKey": "gunung-mata",
+          "emoji": "⛲"
+        },
+        {
+          "id": "alir",
+          "labelKey": "gunung-alir",
+          "emoji": "🏞️"
+        }
+      ]
+    },
+    {
+      "id": "kubangan",
+      "titleKey": "s-kubangan",
+      "steps": [
+        {
+          "id": "uap",
+          "labelKey": "kubangan-uap",
+          "emoji": "♨️"
+        },
+        {
+          "id": "awan",
+          "labelKey": "kubangan-awan",
+          "emoji": "☁️"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "kubangan-hujan",
+          "emoji": "🌧️"
+        },
+        {
+          "id": "alir",
+          "labelKey": "kubangan-alir",
+          "emoji": "🐃"
+        }
+      ]
+    }
+  ]
+}

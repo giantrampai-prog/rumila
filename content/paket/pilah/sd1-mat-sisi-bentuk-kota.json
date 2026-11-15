@@ -1,0 +1,176 @@
+{
+  "id": "sd1-mat-sisi-bentuk-kota",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.BANGUN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bentuk di Jalan Kota",
+      "instruksi": "Telusuri pinggiran tiap benda dengan jari. Tiga sisi lurus, empat sisi lurus, atau ada sisi yang lengkung? Taruh di rak yang pas.",
+      "b-tiga": "3 sisi lurus",
+      "b-empat": "4 sisi lurus",
+      "b-lengkung": "ada sisi lengkung",
+      "i-rambu-peringatan": "rambu peringatan",
+      "i-segitiga-merah": "segitiga merah",
+      "i-segitiga-biru": "segitiga biru",
+      "i-segitiga-oranye-kecil": "segitiga oranye kecil",
+      "i-pintu": "pintu",
+      "i-bingkai-foto": "bingkai foto",
+      "i-jendela": "jendela",
+      "i-kotak-biru": "kotak biru",
+      "i-persegi-panjang-ungu": "persegi panjang ungu",
+      "i-jam-dinding": "jam dinding",
+      "i-roda": "roda",
+      "i-donat": "donat",
+      "i-koin": "koin",
+      "i-lingkaran-hijau": "lingkaran hijau"
+    },
+    "en": {
+      "judul": "Shapes Around Town",
+      "instruksi": "Trace the edge of each object with your finger. Three straight sides, four straight sides, or a curved side? Put it on the right shelf.",
+      "b-tiga": "3 straight sides",
+      "b-empat": "4 straight sides",
+      "b-lengkung": "has a curved side",
+      "i-rambu-peringatan": "warning sign",
+      "i-segitiga-merah": "red triangle",
+      "i-segitiga-biru": "blue triangle",
+      "i-segitiga-oranye-kecil": "small orange triangle",
+      "i-pintu": "door",
+      "i-bingkai-foto": "picture frame",
+      "i-jendela": "window",
+      "i-kotak-biru": "blue square",
+      "i-persegi-panjang-ungu": "purple rectangle",
+      "i-jam-dinding": "wall clock",
+      "i-roda": "wheel",
+      "i-donat": "doughnut",
+      "i-koin": "coin",
+      "i-lingkaran-hijau": "green circle"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "tiga",
+      "labelKey": "b-tiga"
+    },
+    {
+      "id": "empat",
+      "labelKey": "b-empat"
+    },
+    {
+      "id": "lengkung",
+      "labelKey": "b-lengkung"
+    }
+  ],
+  "items": [
+    {
+      "id": "rambu-peringatan",
+      "labelKey": "i-rambu-peringatan",
+      "bin": "tiga",
+      "emoji": "⚠️"
+    },
+    {
+      "id": "segitiga-merah",
+      "labelKey": "i-segitiga-merah",
+      "bin": "tiga",
+      "emoji": "🔺"
+    },
+    {
+      "id": "segitiga-biru",
+      "labelKey": "i-segitiga-biru",
+      "bin": "tiga",
+      "shape": "triangle",
+      "color": "#3f7fe0",
+      "scale": 1
+    },
+    {
+      "id": "segitiga-oranye-kecil",
+      "labelKey": "i-segitiga-oranye-kecil",
+      "bin": "tiga",
+      "shape": "triangle",
+      "color": "#ff9f1c",
+      "scale": 0.7
+    },
+    {
+      "id": "pintu",
+      "labelKey": "i-pintu",
+      "bin": "empat",
+      "emoji": "🚪"
+    },
+    {
+      "id": "bingkai-foto",
+      "labelKey": "i-bingkai-foto",
+      "bin": "empat",
+      "emoji": "🖼️"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "empat",
+      "emoji": "🪟"
+    },
+    {
+      "id": "kotak-biru",
+      "labelKey": "i-kotak-biru",
+      "bin": "empat",
+      "emoji": "🟦"
+    },
+    {
+      "id": "persegi-panjang-ungu",
+      "labelKey": "i-persegi-panjang-ungu",
+      "bin": "empat",
+      "shape": "rect",
+      "color": "#8e6cd1",
+      "width": 2.2
+    },
+    {
+      "id": "jam-dinding",
+      "labelKey": "i-jam-dinding",
+      "bin": "lengkung",
+      "emoji": "🕒"
+    },
+    {
+      "id": "roda",
+      "labelKey": "i-roda",
+      "bin": "lengkung",
+      "emoji": "🛞"
+    },
+    {
+      "id": "donat",
+      "labelKey": "i-donat",
+      "bin": "lengkung",
+      "emoji": "🍩"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "lengkung",
+      "emoji": "🪙"
+    },
+    {
+      "id": "lingkaran-hijau",
+      "labelKey": "i-lingkaran-hijau",
+      "bin": "lengkung",
+      "shape": "circle",
+      "color": "#2bb673"
+    }
+  ]
+}

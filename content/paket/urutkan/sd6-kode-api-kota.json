@@ -1,0 +1,552 @@
+{
+  "id": "sd6-kode-api-kota",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD6.API.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Aplikasi Kota Bertanya ke Server",
+      "instruksi": "Aplikasi warga kota tidak menyimpan semua data sendiri; ia meminta ke server lewat API. Susun langkahnya dari permintaan, server memproses, jawaban, sampai hasil tampil.",
+      "s1": "Kamus daring",
+      "s1-1": "kamu mengetik kata 'gembira'",
+      "s1-2": "aplikasi mengirim kata itu ke API kamus",
+      "s1-3": "server mencari arti kata",
+      "s1-4": "server mengirim jawaban: senang sekali",
+      "s1-5": "aplikasi menampilkan artinya",
+      "s2": "Kualitas udara",
+      "s2-1": "kamu membuka aplikasi kualitas udara",
+      "s2-2": "aplikasi meminta data udara kotamu lewat API",
+      "s2-3": "server membaca data dari alat pengukur udara",
+      "s2-4": "server mengirim jawaban: udara sedang",
+      "s2-5": "layar menampilkan wajah kuning 😐",
+      "s3": "Tiket bioskop",
+      "s3-1": "kamu memilih film dan jam tayang",
+      "s3-2": "aplikasi meminta daftar kursi kosong ke API bioskop",
+      "s3-3": "server memeriksa kursi yang belum dipesan",
+      "s3-4": "server mengirim daftar kursi kosong",
+      "s3-5": "aplikasi mewarnai kursi kosong dengan hijau",
+      "s4": "Info kemacetan",
+      "s4-1": "kamu memilih rute ke sekolah",
+      "s4-2": "aplikasi meminta info kemacetan ke API lalu lintas",
+      "s4-3": "server mengumpulkan laporan jalan",
+      "s4-4": "server mengirim jawaban: jalan utama macet",
+      "s4-5": "aplikasi mewarnai jalan utama merah di peta",
+      "s5": "Pemeriksa ejaan",
+      "s5-1": "kamu menekan Periksa Ejaan",
+      "s5-2": "aplikasi mengirim kalimatmu ke API ejaan",
+      "s5-3": "server mencari kata yang salah tulis",
+      "s5-4": "server mengirim daftar kata yang salah",
+      "s5-5": "aplikasi menggarisbawahi kata-kata itu",
+      "s6": "Kuis daring",
+      "s6-1": "kamu menekan Mulai Kuis",
+      "s6-2": "aplikasi meminta soal ke API kuis",
+      "s6-3": "server memilih 10 soal",
+      "s6-4": "server mengirim soal-soalnya",
+      "s6-5": "soal pertama muncul di layar",
+      "s7": "Pengenal lagu",
+      "s7-1": "kamu merekam potongan lagu",
+      "s7-2": "aplikasi mengirim rekaman ke API pengenal lagu",
+      "s7-3": "server mencocokkan rekaman dengan data lagu",
+      "s7-4": "server mengirim judul lagunya",
+      "s7-5": "aplikasi menampilkan judul dan penyanyinya",
+      "s8": "Jadwal pasang surut",
+      "s8-1": "nelayan memilih pantai tujuannya",
+      "s8-2": "aplikasi meminta jadwal pasang ke API laut",
+      "s8-3": "server menghitung jam air pasang",
+      "s8-4": "server mengirim jam air pasang",
+      "s8-5": "aplikasi menampilkan: pasang pukul 14.20",
+      "s9": "Berita sains",
+      "s9-1": "kamu membuka tab Berita Sains",
+      "s9-2": "aplikasi meminta berita ke API berita",
+      "s9-3": "server memilih berita sains terbaru",
+      "s9-4": "server mengirim judul dan gambarnya",
+      "s9-5": "aplikasi menampilkan daftar berita",
+      "s10": "Ongkos kirim paket",
+      "s10-1": "kamu mengisi berat paket: 2 kg",
+      "s10-2": "aplikasi mengirim berat dan alamat ke API ekspedisi",
+      "s10-3": "server menghitung ongkos kirim",
+      "s10-4": "server mengirim jawaban: Rp18.000",
+      "s10-5": "aplikasi menampilkan ongkos Rp18.000",
+      "s11": "Info gempa",
+      "s11-1": "kamu membuka aplikasi info gempa",
+      "s11-2": "aplikasi meminta data gempa terbaru ke API",
+      "s11-3": "server membaca catatan alat pencatat gempa",
+      "s11-4": "server mengirim lokasi dan kekuatan gempa",
+      "s11-5": "aplikasi menampilkan titik gempa di peta",
+      "s12": "Foto jadi teks",
+      "s12-1": "kamu memotret papan pengumuman",
+      "s12-2": "aplikasi mengirim foto ke API pembaca teks",
+      "s12-3": "server membaca huruf-huruf di foto",
+      "s12-4": "server mengirim teks hasilnya",
+      "s12-5": "aplikasi menampilkan teks yang bisa disalin"
+    },
+    "en": {
+      "judul": "City Apps Asking the Server",
+      "instruksi": "The city's apps don't keep all the data themselves; they ask a server through an API. Put the steps in order from request, server working, reply, to the result on screen.",
+      "s1": "Online dictionary",
+      "s1-1": "you type the word 'cheerful'",
+      "s1-2": "the app sends the word to the dictionary API",
+      "s1-3": "the server looks up the meaning",
+      "s1-4": "the server replies: very happy",
+      "s1-5": "the app shows the meaning",
+      "s2": "Air quality",
+      "s2-1": "you open the air quality app",
+      "s2-2": "the app asks the API for your city's air data",
+      "s2-3": "the server reads data from the air sensors",
+      "s2-4": "the server replies: air is moderate",
+      "s2-5": "the screen shows a yellow face 😐",
+      "s3": "Cinema tickets",
+      "s3-1": "you choose a film and a showtime",
+      "s3-2": "the app asks the cinema API for the empty seats",
+      "s3-3": "the server checks which seats are not booked",
+      "s3-4": "the server sends the list of empty seats",
+      "s3-5": "the app colours the empty seats green",
+      "s4": "Traffic info",
+      "s4-1": "you choose the route to school",
+      "s4-2": "the app asks the traffic API about jams",
+      "s4-3": "the server gathers road reports",
+      "s4-4": "the server replies: the main road is jammed",
+      "s4-5": "the app colours the main road red on the map",
+      "s5": "Spell checker",
+      "s5-1": "you press Check Spelling",
+      "s5-2": "the app sends your sentence to the spelling API",
+      "s5-3": "the server looks for misspelt words",
+      "s5-4": "the server sends the list of wrong words",
+      "s5-5": "the app underlines those words",
+      "s6": "Online quiz",
+      "s6-1": "you press Start Quiz",
+      "s6-2": "the app asks the quiz API for questions",
+      "s6-3": "the server picks 10 questions",
+      "s6-4": "the server sends the questions",
+      "s6-5": "the first question appears on screen",
+      "s7": "Song finder",
+      "s7-1": "you record a bit of a song",
+      "s7-2": "the app sends the recording to the song API",
+      "s7-3": "the server matches the recording with its song data",
+      "s7-4": "the server sends the song title",
+      "s7-5": "the app shows the title and the singer",
+      "s8": "Tide times",
+      "s8-1": "a fisher chooses the beach",
+      "s8-2": "the app asks the sea API for tide times",
+      "s8-3": "the server works out high tide",
+      "s8-4": "the server sends the high-tide time",
+      "s8-5": "the app shows: high tide at 14:20",
+      "s9": "Science news",
+      "s9-1": "you open the Science News tab",
+      "s9-2": "the app asks the news API for stories",
+      "s9-3": "the server picks the latest science stories",
+      "s9-4": "the server sends the headlines and pictures",
+      "s9-5": "the app shows the list of stories",
+      "s10": "Parcel postage",
+      "s10-1": "you enter the parcel weight: 2 kg",
+      "s10-2": "the app sends the weight and address to the courier API",
+      "s10-3": "the server works out the postage",
+      "s10-4": "the server replies: Rp18,000",
+      "s10-5": "the app shows postage of Rp18,000",
+      "s11": "Earthquake info",
+      "s11-1": "you open the earthquake app",
+      "s11-2": "the app asks the API for the latest earthquakes",
+      "s11-3": "the server reads the earthquake sensor records",
+      "s11-4": "the server sends the location and strength",
+      "s11-5": "the app shows the quake on a map",
+      "s12": "Photo to text",
+      "s12-1": "you photograph a notice board",
+      "s12-2": "the app sends the photo to the text-reading API",
+      "s12-3": "the server reads the letters in the photo",
+      "s12-4": "the server sends back the text",
+      "s12-5": "the app shows text you can copy"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 5,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah tahap; 4 = sampai server mengirim jawaban, 5 = sampai hasil tampil"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "s1",
+      "titleKey": "s1",
+      "steps": [
+        {
+          "id": "s1-1",
+          "labelKey": "s1-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-2",
+          "labelKey": "s1-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-3",
+          "labelKey": "s1-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-4",
+          "labelKey": "s1-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s1-5",
+          "labelKey": "s1-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "titleKey": "s2",
+      "steps": [
+        {
+          "id": "s2-1",
+          "labelKey": "s2-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-2",
+          "labelKey": "s2-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-3",
+          "labelKey": "s2-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-4",
+          "labelKey": "s2-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s2-5",
+          "labelKey": "s2-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "titleKey": "s3",
+      "steps": [
+        {
+          "id": "s3-1",
+          "labelKey": "s3-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-2",
+          "labelKey": "s3-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-3",
+          "labelKey": "s3-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-4",
+          "labelKey": "s3-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s3-5",
+          "labelKey": "s3-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "titleKey": "s4",
+      "steps": [
+        {
+          "id": "s4-1",
+          "labelKey": "s4-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-2",
+          "labelKey": "s4-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-3",
+          "labelKey": "s4-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-4",
+          "labelKey": "s4-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s4-5",
+          "labelKey": "s4-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "titleKey": "s5",
+      "steps": [
+        {
+          "id": "s5-1",
+          "labelKey": "s5-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-2",
+          "labelKey": "s5-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-3",
+          "labelKey": "s5-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-4",
+          "labelKey": "s5-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s5-5",
+          "labelKey": "s5-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "titleKey": "s6",
+      "steps": [
+        {
+          "id": "s6-1",
+          "labelKey": "s6-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-2",
+          "labelKey": "s6-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-3",
+          "labelKey": "s6-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-4",
+          "labelKey": "s6-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s6-5",
+          "labelKey": "s6-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "titleKey": "s7",
+      "steps": [
+        {
+          "id": "s7-1",
+          "labelKey": "s7-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-2",
+          "labelKey": "s7-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-3",
+          "labelKey": "s7-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-4",
+          "labelKey": "s7-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s7-5",
+          "labelKey": "s7-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "titleKey": "s8",
+      "steps": [
+        {
+          "id": "s8-1",
+          "labelKey": "s8-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-2",
+          "labelKey": "s8-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-3",
+          "labelKey": "s8-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-4",
+          "labelKey": "s8-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s8-5",
+          "labelKey": "s8-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "titleKey": "s9",
+      "steps": [
+        {
+          "id": "s9-1",
+          "labelKey": "s9-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-2",
+          "labelKey": "s9-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-3",
+          "labelKey": "s9-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-4",
+          "labelKey": "s9-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s9-5",
+          "labelKey": "s9-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "titleKey": "s10",
+      "steps": [
+        {
+          "id": "s10-1",
+          "labelKey": "s10-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-2",
+          "labelKey": "s10-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-3",
+          "labelKey": "s10-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-4",
+          "labelKey": "s10-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s10-5",
+          "labelKey": "s10-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "titleKey": "s11",
+      "steps": [
+        {
+          "id": "s11-1",
+          "labelKey": "s11-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-2",
+          "labelKey": "s11-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-3",
+          "labelKey": "s11-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-4",
+          "labelKey": "s11-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s11-5",
+          "labelKey": "s11-5",
+          "scale": 0.4
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "titleKey": "s12",
+      "steps": [
+        {
+          "id": "s12-1",
+          "labelKey": "s12-1",
+          "scale": 0.4
+        },
+        {
+          "id": "s12-2",
+          "labelKey": "s12-2",
+          "scale": 0.4
+        },
+        {
+          "id": "s12-3",
+          "labelKey": "s12-3",
+          "scale": 0.4
+        },
+        {
+          "id": "s12-4",
+          "labelKey": "s12-4",
+          "scale": 0.4
+        },
+        {
+          "id": "s12-5",
+          "labelKey": "s12-5",
+          "scale": 0.4
+        }
+      ]
+    }
+  ]
+}

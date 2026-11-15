@@ -1,0 +1,490 @@
+{
+  "id": "sd3-mat-ukur-sisi-beraturan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.GEOMETRI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ukur Sisi dan Sudutnya",
+      "instruksi": "Segi banyak beraturan: semua sisi sama panjang DAN semua sudut sama besar. Baca ukurannya, lalu sentuh jawaban yang benar.",
+      "pilihan": "pilihan",
+      "q1": "Ubin mana yang segi banyak beraturan?",
+      "c1": "4 sisi 20 cm, semua sudut siku",
+      "c2": "4 sisi 20 cm, sudutnya tidak sama",
+      "c3": "sisi 20, 10, 20, 10 cm, semua sudut siku",
+      "c4": "sisi 20, 20, 15, 15 cm",
+      "q2": "Rambu mana yang segi banyak beraturan?",
+      "c5": "8 sisi sama, 8 sudut sama",
+      "c6": "8 sisi sama, sudutnya tidak sama",
+      "c7": "6 sisi berbeda panjang",
+      "c8": "sisi 40, 40, 30 cm",
+      "q3": "Bingkai segitiga mana yang beraturan?",
+      "c9": "sisi 6, 6, 6 cm",
+      "c10": "sisi 6, 6, 4 cm",
+      "c11": "sisi 3, 4, 5 cm",
+      "c12": "sisi 6, 5, 4 cm",
+      "q4": "Sel sarang lebah segi enam. Mana yang beraturan?",
+      "c13": "6 sisi 1 cm, 6 sudut sama",
+      "c14": "6 sisi 1 cm, sudutnya tidak sama",
+      "c15": "sisi 1, 2, 1, 2, 1, 2 cm",
+      "c16": "6 sudut sama, sisinya berbeda",
+      "q5": "Mana yang TIDAK beraturan?",
+      "c17": "4 sisi 5 cm, sudutnya tidak sama",
+      "c18": "sisi 5, 5, 5 cm",
+      "c19": "4 sisi 5 cm, semua sudut siku",
+      "c20": "5 sisi 5 cm, 5 sudut sama",
+      "q6": "Taman berbentuk segi lima. Mana yang beraturan?",
+      "c21": "5 sisi 8 m, 5 sudut sama",
+      "c22": "5 sisi 8 m, sudutnya tidak sama",
+      "c23": "sisi 8, 8, 8, 8, 5 m",
+      "c24": "5 sudut sama, sisi 8 m dan 6 m",
+      "q7": "Kolam mana yang TIDAK beraturan?",
+      "c25": "sisi 7, 7, 5 m",
+      "c26": "sisi 7, 7, 7 m",
+      "c27": "8 sisi 7 m, 8 sudut sama",
+      "c28": "4 sisi 7 m, semua sudut siku",
+      "q8": "Layang-layang sisinya 30, 30, 50, 50 cm. Layang-layang itu …",
+      "c29": "tidak beraturan, sisinya tidak sama semua",
+      "c30": "beraturan, karena ada sisi yang sama",
+      "c31": "beraturan, karena punya 4 sisi",
+      "c32": "tidak beraturan, karena punya 4 sudut",
+      "q9": "Papan tulis persegi panjang 8 × 3 dm itu …",
+      "c33": "beraturan, karena semua sudutnya siku",
+      "c34": "tidak beraturan, sudutnya tidak sama semua",
+      "q10": "Belah ketupat sisinya 5 cm semua, tetapi sudutnya tidak sama. Bangun itu …",
+      "c35": "beraturan, karena semua sisinya sama",
+      "q11": "Segitiga sama sisi itu …",
+      "c36": "beraturan, sisi dan sudutnya sama semua",
+      "c37": "tidak beraturan, karena hanya 3 sisi",
+      "q12": "Segi empat sisinya 6 cm semua dan sudutnya siku semua. Bangun itu …"
+    },
+    "en": {
+      "judul": "Measure Sides and Angles",
+      "instruksi": "A regular polygon has all sides equal AND all angles equal. Read the measurements, then touch the right answer.",
+      "pilihan": "choices",
+      "q1": "Which tile is a regular polygon?",
+      "c1": "4 sides of 20 cm, all right angles",
+      "c2": "4 sides of 20 cm, angles not equal",
+      "c3": "sides 20, 10, 20, 10 cm, all right angles",
+      "c4": "sides 20, 20, 15, 15 cm",
+      "q2": "Which sign is a regular polygon?",
+      "c5": "8 equal sides, 8 equal angles",
+      "c6": "8 equal sides, angles not equal",
+      "c7": "6 sides of different lengths",
+      "c8": "sides 40, 40, 30 cm",
+      "q3": "Which triangle frame is regular?",
+      "c9": "sides 6, 6, 6 cm",
+      "c10": "sides 6, 6, 4 cm",
+      "c11": "sides 3, 4, 5 cm",
+      "c12": "sides 6, 5, 4 cm",
+      "q4": "Honeycomb cells are hexagons. Which one is regular?",
+      "c13": "6 sides of 1 cm, 6 equal angles",
+      "c14": "6 sides of 1 cm, angles not equal",
+      "c15": "sides 1, 2, 1, 2, 1, 2 cm",
+      "c16": "6 equal angles, sides different",
+      "q5": "Which one is NOT regular?",
+      "c17": "4 sides of 5 cm, angles not equal",
+      "c18": "sides 5, 5, 5 cm",
+      "c19": "4 sides of 5 cm, all right angles",
+      "c20": "5 sides of 5 cm, 5 equal angles",
+      "q6": "A garden is a pentagon. Which one is regular?",
+      "c21": "5 sides of 8 m, 5 equal angles",
+      "c22": "5 sides of 8 m, angles not equal",
+      "c23": "sides 8, 8, 8, 8, 5 m",
+      "c24": "5 equal angles, sides 8 m and 6 m",
+      "q7": "Which pond is NOT regular?",
+      "c25": "sides 7, 7, 5 m",
+      "c26": "sides 7, 7, 7 m",
+      "c27": "8 sides of 7 m, 8 equal angles",
+      "c28": "4 sides of 7 m, all right angles",
+      "q8": "A kite has sides 30, 30, 50, 50 cm. The kite is …",
+      "c29": "not regular, its sides are not all equal",
+      "c30": "regular, because some sides are equal",
+      "c31": "regular, because it has 4 sides",
+      "c32": "not regular, because it has 4 angles",
+      "q9": "A rectangular board 8 × 3 dm is …",
+      "c33": "regular, because all its angles are right angles",
+      "c34": "not regular, its angles are not all equal",
+      "q10": "A rhombus has all sides 5 cm, but its angles are not equal. It is …",
+      "c35": "regular, because all its sides are equal",
+      "q11": "An equilateral triangle is …",
+      "c36": "regular, all its sides and angles are equal",
+      "c37": "not regular, because it has only 3 sides",
+      "q12": "A four-sided shape has all sides 6 cm and all right angles. It is …"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kota",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan",
+      "scale": 0.5
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan",
+      "scale": 0.5
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c29",
+        "c33",
+        "c31",
+        "c34"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c34",
+        "c35",
+        "c31",
+        "c32"
+      ],
+      "correct": "c34"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c36",
+        "c37",
+        "c29",
+        "c34"
+      ],
+      "correct": "c36"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c36",
+        "c32",
+        "c34",
+        "c29"
+      ],
+      "correct": "c36"
+    }
+  ]
+}

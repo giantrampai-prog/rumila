@@ -1,0 +1,199 @@
+{
+  "id": "sd1-kode-pola-robot-gudang",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.SD1.POLA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pola Robot Gudang",
+      "instruksi": "Robot gudang mengulang perintahnya. Isi keping yang kosong di ujung barisan supaya polanya berlanjut.",
+      "kiri": "geser ke kiri",
+      "kanan": "geser ke kanan",
+      "atas": "naik",
+      "bawah": "turun",
+      "ambil": "ambil kotak",
+      "taruh": "taruh kotak"
+    },
+    "en": {
+      "judul": "Warehouse Robot Pattern",
+      "instruksi": "The warehouse robot repeats its commands. Fill the empty pieces at the end so the pattern carries on.",
+      "kiri": "move left",
+      "kanan": "move right",
+      "atas": "go up",
+      "bawah": "go down",
+      "ambil": "pick up a box",
+      "taruh": "put down the box"
+    }
+  },
+  "knobs": {
+    "blanks": {
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "step": 1,
+      "keterangan": "keping kosong di ujung: 2 → 3 (3 = satu satuan penuh)"
+    },
+    "shown": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "ulangan penuh yang tampil: 3 → 2"
+    },
+    "distractor": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "keping pengecoh di palet: 1 → 2"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "lanjut",
+  "unitLen": 3,
+  "items": [
+    {
+      "id": "kiri",
+      "labelKey": "kiri",
+      "emoji": "⬅️"
+    },
+    {
+      "id": "kanan",
+      "labelKey": "kanan",
+      "emoji": "➡️"
+    },
+    {
+      "id": "atas",
+      "labelKey": "atas",
+      "emoji": "⬆️"
+    },
+    {
+      "id": "bawah",
+      "labelKey": "bawah",
+      "emoji": "⬇️"
+    },
+    {
+      "id": "ambil",
+      "labelKey": "ambil",
+      "emoji": "🤏"
+    },
+    {
+      "id": "taruh",
+      "labelKey": "taruh",
+      "emoji": "📥"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "kiri-ambil-kanan",
+      "unit": [
+        "kiri",
+        "ambil",
+        "kanan"
+      ]
+    },
+    {
+      "id": "kanan-taruh-kiri",
+      "unit": [
+        "kanan",
+        "taruh",
+        "kiri"
+      ]
+    },
+    {
+      "id": "atas-ambil-bawah",
+      "unit": [
+        "atas",
+        "ambil",
+        "bawah"
+      ]
+    },
+    {
+      "id": "bawah-taruh-atas",
+      "unit": [
+        "bawah",
+        "taruh",
+        "atas"
+      ]
+    },
+    {
+      "id": "ambil-kanan-taruh",
+      "unit": [
+        "ambil",
+        "kanan",
+        "taruh"
+      ]
+    },
+    {
+      "id": "ambil-atas-taruh",
+      "unit": [
+        "ambil",
+        "atas",
+        "taruh"
+      ]
+    },
+    {
+      "id": "kiri-bawah-ambil",
+      "unit": [
+        "kiri",
+        "bawah",
+        "ambil"
+      ]
+    },
+    {
+      "id": "kanan-atas-taruh",
+      "unit": [
+        "kanan",
+        "atas",
+        "taruh"
+      ]
+    },
+    {
+      "id": "atas-kanan-bawah",
+      "unit": [
+        "atas",
+        "kanan",
+        "bawah"
+      ]
+    },
+    {
+      "id": "bawah-kiri-atas",
+      "unit": [
+        "bawah",
+        "kiri",
+        "atas"
+      ]
+    },
+    {
+      "id": "ambil-kiri-taruh",
+      "unit": [
+        "ambil",
+        "kiri",
+        "taruh"
+      ]
+    },
+    {
+      "id": "taruh-atas-kiri",
+      "unit": [
+        "taruh",
+        "atas",
+        "kiri"
+      ]
+    }
+  ],
+  "nada": {
+    "kiri": "C4",
+    "kanan": "D4",
+    "atas": "E4",
+    "bawah": "G4",
+    "ambil": "A4",
+    "taruh": "C5"
+  }
+}

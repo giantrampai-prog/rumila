@@ -1,0 +1,186 @@
+{
+  "id": "sd2-kode-carroll-laut-kaki",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD2.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kotak Laut dan Kaki",
+      "instruksi": "Jawab dua pertanyaan untuk tiap hewan: hidup di laut? punya kaki? Lalu taruh di kotak yang cocok.",
+      "bin-laut-kaki": "laut · berkaki",
+      "bin-laut-tanpa": "laut · tanpa kaki",
+      "bin-darat-kaki": "darat · berkaki",
+      "bin-darat-tanpa": "darat · tanpa kaki",
+      "i-kepiting": "kepiting",
+      "i-lobster": "lobster",
+      "i-udang": "udang laut",
+      "i-ikan": "ikan laut",
+      "i-lumba": "lumba-lumba",
+      "i-hiu": "hiu",
+      "i-paus": "paus",
+      "i-sapi": "sapi",
+      "i-kucing": "kucing",
+      "i-ayam": "ayam",
+      "i-gajah": "gajah",
+      "i-ular": "ular",
+      "i-siput": "siput kebun",
+      "i-cacing": "cacing tanah"
+    },
+    "en": {
+      "judul": "Sea and Legs Boxes",
+      "instruksi": "Answer two questions for each animal: does it live in the sea? does it have legs? Then put it in the right box.",
+      "bin-laut-kaki": "sea · has legs",
+      "bin-laut-tanpa": "sea · no legs",
+      "bin-darat-kaki": "land · has legs",
+      "bin-darat-tanpa": "land · no legs",
+      "i-kepiting": "crab",
+      "i-lobster": "lobster",
+      "i-udang": "sea shrimp",
+      "i-ikan": "sea fish",
+      "i-lumba": "dolphin",
+      "i-hiu": "shark",
+      "i-paus": "whale",
+      "i-sapi": "cow",
+      "i-kucing": "cat",
+      "i-ayam": "chicken",
+      "i-gajah": "elephant",
+      "i-ular": "snake",
+      "i-siput": "garden snail",
+      "i-cacing": "earthworm"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 8,
+      "max": 12,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah hewan per putaran; tiap kotak dijamin kebagian"
+    },
+    "binCount": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat kotak diagram Carroll 2×2 selalu tampil"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "laut-kaki",
+      "labelKey": "bin-laut-kaki",
+      "emoji": "🦀"
+    },
+    {
+      "id": "laut-tanpa",
+      "labelKey": "bin-laut-tanpa",
+      "emoji": "🐟"
+    },
+    {
+      "id": "darat-kaki",
+      "labelKey": "bin-darat-kaki",
+      "emoji": "🐄"
+    },
+    {
+      "id": "darat-tanpa",
+      "labelKey": "bin-darat-tanpa",
+      "emoji": "🐍"
+    }
+  ],
+  "items": [
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "laut-kaki",
+      "emoji": "🦀"
+    },
+    {
+      "id": "lobster",
+      "labelKey": "i-lobster",
+      "bin": "laut-kaki",
+      "emoji": "🦞"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "laut-kaki",
+      "emoji": "🦐"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "laut-tanpa",
+      "emoji": "🐟"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "laut-tanpa",
+      "emoji": "🐬"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "laut-tanpa",
+      "emoji": "🦈"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "laut-tanpa",
+      "emoji": "🐋"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "darat-kaki",
+      "emoji": "🐄"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "darat-kaki",
+      "emoji": "🐈"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "darat-kaki",
+      "emoji": "🐓"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "darat-kaki",
+      "emoji": "🐘"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "darat-tanpa",
+      "emoji": "🐍"
+    },
+    {
+      "id": "siput",
+      "labelKey": "i-siput",
+      "bin": "darat-tanpa",
+      "emoji": "🐌"
+    },
+    {
+      "id": "cacing",
+      "labelKey": "i-cacing",
+      "bin": "darat-tanpa",
+      "emoji": "🪱"
+    }
+  ]
+}

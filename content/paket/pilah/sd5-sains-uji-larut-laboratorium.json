@@ -1,0 +1,167 @@
+{
+  "id": "sd5-sains-uji-larut-laboratorium",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.LARUTAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gelas Kimia Pengaduk",
+      "instruksi": "Tiap benda dimasukkan ke gelas kimia berisi air lalu diaduk lama. Pilah: larut, atau tidak larut.",
+      "b-larut": "larut: butirannya tak tampak lagi",
+      "b-tidak": "tidak larut: tetap tampak, mengendap atau mengapung",
+      "i-gulamerah": "gula merah serut",
+      "i-madu": "sesendok madu",
+      "i-jeruk": "serbuk minuman rasa jeruk",
+      "i-tawas": "kristal tawas",
+      "i-pewarna": "beberapa tetes pewarna makanan",
+      "i-permen": "permen yang dihancurkan",
+      "i-garaminggris": "garam kasar",
+      "i-besi": "serbuk besi",
+      "i-kacang": "biji kacang hijau",
+      "i-lilin": "serutan lilin",
+      "i-manik": "manik-manik plastik",
+      "i-tanah": "segenggam tanah kebun",
+      "i-koin": "koin logam",
+      "i-kapur": "serbuk kapur tulis"
+    },
+    "en": {
+      "judul": "Stirring Beakers",
+      "instruksi": "Each thing is put in a beaker of water and stirred for a long time. Sort it: dissolves, or does not dissolve.",
+      "b-larut": "dissolves: the bits can no longer be seen",
+      "b-tidak": "does not dissolve: still seen, sinks or floats",
+      "i-gulamerah": "grated palm sugar",
+      "i-madu": "a spoonful of honey",
+      "i-jeruk": "orange drink powder",
+      "i-tawas": "alum crystals",
+      "i-pewarna": "a few drops of food colouring",
+      "i-permen": "a crushed sweet",
+      "i-garaminggris": "coarse salt",
+      "i-besi": "iron filings",
+      "i-kacang": "mung beans",
+      "i-lilin": "candle wax shavings",
+      "i-manik": "plastic beads",
+      "i-tanah": "a handful of garden soil",
+      "i-koin": "a metal coin",
+      "i-kapur": "chalk dust"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "larut",
+      "labelKey": "b-larut",
+      "emoji": "🥤",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🪨",
+      "color": "#efebe9"
+    }
+  ],
+  "items": [
+    {
+      "id": "gulamerah",
+      "labelKey": "i-gulamerah",
+      "bin": "larut",
+      "emoji": "🟤"
+    },
+    {
+      "id": "madu",
+      "labelKey": "i-madu",
+      "bin": "larut",
+      "emoji": "🍯"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "bin": "larut",
+      "emoji": "🍊"
+    },
+    {
+      "id": "tawas",
+      "labelKey": "i-tawas",
+      "bin": "larut",
+      "emoji": "💎"
+    },
+    {
+      "id": "pewarna",
+      "labelKey": "i-pewarna",
+      "bin": "larut",
+      "emoji": "🎨"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "larut",
+      "emoji": "🍬"
+    },
+    {
+      "id": "garaminggris",
+      "labelKey": "i-garaminggris",
+      "bin": "larut",
+      "emoji": "🧂"
+    },
+    {
+      "id": "besi",
+      "labelKey": "i-besi",
+      "bin": "tidak",
+      "emoji": "🔩"
+    },
+    {
+      "id": "kacang",
+      "labelKey": "i-kacang",
+      "bin": "tidak",
+      "emoji": "🫘"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "tidak",
+      "emoji": "🕯️"
+    },
+    {
+      "id": "manik",
+      "labelKey": "i-manik",
+      "bin": "tidak",
+      "emoji": "📿"
+    },
+    {
+      "id": "tanah",
+      "labelKey": "i-tanah",
+      "bin": "tidak",
+      "emoji": "🟫"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "tidak",
+      "emoji": "🪙"
+    },
+    {
+      "id": "kapur",
+      "labelKey": "i-kapur",
+      "bin": "tidak",
+      "emoji": "🖍️"
+    }
+  ],
+  "pilihan": []
+}

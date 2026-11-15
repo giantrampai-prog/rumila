@@ -1,0 +1,364 @@
+{
+  "id": "sd2-mat-satuan-waktu-tertukar",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD2.WAKTU.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Satuan Waktu Tertukar",
+      "instruksi": "Dua kartu waktu tertukar tempat. Tukar satu kali supaya urut dari yang paling sebentar sampai yang paling lama.",
+      "j-pendek-panjang": "Paling sebentar ke paling lama",
+      "s-detik": "detik",
+      "s-menit": "menit",
+      "s-jam": "jam",
+      "s-hari": "hari",
+      "s-minggu": "minggu",
+      "s-bulan": "bulan",
+      "s-tahun": "tahun"
+    },
+    "en": {
+      "judul": "Mixed-Up Units of Time",
+      "instruksi": "Two time cards have swapped places. Swap once so they go from the shortest to the longest.",
+      "j-pendek-panjang": "Shortest to longest",
+      "s-detik": "second",
+      "s-menit": "minute",
+      "s-jam": "hour",
+      "s-hari": "day",
+      "s-minggu": "week",
+      "s-bulan": "month",
+      "s-tahun": "year"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kartu: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "waktu-1",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "emoji": "⏱️"
+        },
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "emoji": "☀️"
+        }
+      ]
+    },
+    {
+      "id": "waktu-2",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "emoji": "⏱️"
+        },
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": "waktu-3",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "emoji": "⏱️"
+        },
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "emoji": "🎆"
+        }
+      ]
+    },
+    {
+      "id": "waktu-4",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "emoji": "⏱️"
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        }
+      ]
+    },
+    {
+      "id": "waktu-5",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "emoji": "⏱️"
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "emoji": "🎆"
+        }
+      ]
+    },
+    {
+      "id": "waktu-6",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "detik",
+          "labelKey": "s-detik",
+          "emoji": "⏱️"
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "emoji": "🎆"
+        }
+      ]
+    },
+    {
+      "id": "waktu-7",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": "waktu-8",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        }
+      ]
+    },
+    {
+      "id": "waktu-9",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        }
+      ]
+    },
+    {
+      "id": "waktu-10",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "menit",
+          "labelKey": "s-menit",
+          "emoji": "⏳"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "emoji": "🎆"
+        }
+      ]
+    },
+    {
+      "id": "waktu-11",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "hari",
+          "labelKey": "s-hari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        }
+      ]
+    },
+    {
+      "id": "waktu-12",
+      "titleKey": "j-pendek-panjang",
+      "steps": [
+        {
+          "id": "jam",
+          "labelKey": "s-jam",
+          "emoji": "🕐"
+        },
+        {
+          "id": "minggu",
+          "labelKey": "s-minggu",
+          "emoji": "📅"
+        },
+        {
+          "id": "bulan",
+          "labelKey": "s-bulan",
+          "emoji": "🌙"
+        },
+        {
+          "id": "tahun",
+          "labelKey": "s-tahun",
+          "emoji": "🎆"
+        }
+      ]
+    }
+  ]
+}

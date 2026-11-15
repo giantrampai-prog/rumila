@@ -1,0 +1,196 @@
+{
+  "id": "sd4-sains-makanan-hewan-sungai",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD4.RANTAI-MAKANAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pemakan Tumbuhan, Daging, atau Keduanya?",
+      "instruksi": "Pikirkan makanan tiap hewan. Taruh ke rak herbivora, karnivora, atau omnivora.",
+      "b-herbivora": "herbivora: pemakan tumbuhan",
+      "b-karnivora": "karnivora: pemakan daging",
+      "b-omnivora": "omnivora: pemakan keduanya",
+      "i-kuda": "kuda",
+      "i-jerapah": "jerapah",
+      "i-gajah": "gajah",
+      "i-kerbau": "kerbau",
+      "i-zebra": "zebra",
+      "i-koala": "koala",
+      "i-singa": "singa",
+      "i-burunghantu": "burung hantu",
+      "i-ular": "ular",
+      "i-lumba": "lumba-lumba",
+      "i-macantutul": "macan tutul",
+      "i-anjinglaut": "anjing laut",
+      "i-rakun": "rakun",
+      "i-bebek": "bebek",
+      "i-orangutan": "orang utan",
+      "i-gagak": "burung gagak",
+      "i-manusia": "manusia"
+    },
+    "en": {
+      "judul": "Plant Eater, Meat Eater, or Both?",
+      "instruksi": "Think about what each animal eats. Put it on the herbivore, carnivore, or omnivore shelf.",
+      "b-herbivora": "herbivore: eats plants",
+      "b-karnivora": "carnivore: eats meat",
+      "b-omnivora": "omnivore: eats both",
+      "i-kuda": "horse",
+      "i-jerapah": "giraffe",
+      "i-gajah": "elephant",
+      "i-kerbau": "water buffalo",
+      "i-zebra": "zebra",
+      "i-koala": "koala",
+      "i-singa": "lion",
+      "i-burunghantu": "owl",
+      "i-ular": "snake",
+      "i-lumba": "dolphin",
+      "i-macantutul": "leopard",
+      "i-anjinglaut": "seal",
+      "i-rakun": "raccoon",
+      "i-bebek": "duck",
+      "i-orangutan": "orangutan",
+      "i-gagak": "crow",
+      "i-manusia": "human"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 5,
+      "max": 9,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 5 → 9; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "herbivora",
+      "labelKey": "b-herbivora",
+      "emoji": "🌿"
+    },
+    {
+      "id": "karnivora",
+      "labelKey": "b-karnivora",
+      "emoji": "🥩"
+    },
+    {
+      "id": "omnivora",
+      "labelKey": "b-omnivora",
+      "emoji": "🍽️"
+    }
+  ],
+  "items": [
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "herbivora",
+      "emoji": "🐎"
+    },
+    {
+      "id": "jerapah",
+      "labelKey": "i-jerapah",
+      "bin": "herbivora",
+      "emoji": "🦒"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "herbivora",
+      "emoji": "🐘"
+    },
+    {
+      "id": "kerbau",
+      "labelKey": "i-kerbau",
+      "bin": "herbivora",
+      "emoji": "🐃"
+    },
+    {
+      "id": "zebra",
+      "labelKey": "i-zebra",
+      "bin": "herbivora",
+      "emoji": "🦓"
+    },
+    {
+      "id": "koala",
+      "labelKey": "i-koala",
+      "bin": "herbivora",
+      "emoji": "🐨"
+    },
+    {
+      "id": "singa",
+      "labelKey": "i-singa",
+      "bin": "karnivora",
+      "emoji": "🦁"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "karnivora",
+      "emoji": "🦉"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "karnivora",
+      "emoji": "🐍"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "karnivora",
+      "emoji": "🐬"
+    },
+    {
+      "id": "macantutul",
+      "labelKey": "i-macantutul",
+      "bin": "karnivora",
+      "emoji": "🐆"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "karnivora",
+      "emoji": "🦭"
+    },
+    {
+      "id": "rakun",
+      "labelKey": "i-rakun",
+      "bin": "omnivora",
+      "emoji": "🦝"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "omnivora",
+      "emoji": "🦆"
+    },
+    {
+      "id": "orangutan",
+      "labelKey": "i-orangutan",
+      "bin": "omnivora",
+      "emoji": "🦧"
+    },
+    {
+      "id": "gagak",
+      "labelKey": "i-gagak",
+      "bin": "omnivora",
+      "emoji": "🐦‍⬛"
+    },
+    {
+      "id": "manusia",
+      "labelKey": "i-manusia",
+      "bin": "omnivora",
+      "emoji": "🧑"
+    }
+  ],
+  "pilihan": []
+}

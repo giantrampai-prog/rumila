@@ -1,0 +1,418 @@
+{
+  "id": "sd6-kode-bagi-dua-toko-buku",
+  "version": "1.0.0",
+  "level": "SD6",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "KODE.SD6.CARI-BAGI-DUA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Buku dengan Bagi Dua",
+      "instruksi": "Di toko buku, rak sudah urut. Cek kartu tengah dulu (kalau jumlahnya genap, ambil tengah kiri), lalu buang separuh yang tidak mungkin berisi yang dicari.",
+      "pilihan": "pilihan",
+      "c1": "18",
+      "c2": "31",
+      "c3": "4",
+      "q1": "Rak urut: 4, 9, 13, 18, 25, 31, 40. Cari 31 dengan bagi dua. Kartu pertama yang dicek adalah…",
+      "c4": "6",
+      "c5": "11",
+      "c6": "15",
+      "q2": "Rak urut: 2, 6, 11, 15, 19, 24, 28, 33, 37. Cari 11 dengan bagi dua. Kartu kedua yang dicek adalah…",
+      "c7": "35",
+      "c8": "41",
+      "c9": "26",
+      "q3": "Rak urut: 3, 7, 12, 20, 26, 35, 41, 48. Cari 41 dengan bagi dua. Kartu kedua yang dicek adalah…",
+      "c10": "30",
+      "c11": "8",
+      "c12": "1",
+      "q4": "Rak urut: 1, 5, 8, 14, 22, 30, 37, 45, 50, 58, 66. Cari 8 dengan bagi dua. Kartu pertama yang dicek adalah…",
+      "c13": "2",
+      "q5": "Rak urut: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55. Cari 45 dengan bagi dua. Berapa kartu yang dicek?",
+      "c14": "3",
+      "c15": "7",
+      "q6": "Rak urut: 5, 10, 15, 20, 25, 30, 35. Cari 5 dengan bagi dua. Berapa kartu yang dicek?",
+      "q7": "Rak urut: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45. Cari 45 dengan bagi dua. Berapa kartu yang dicek?",
+      "c16": "19",
+      "q8": "Rak urut: 2, 6, 11, 15, 19, 24, 28, 33, 37. Cari 11 dengan bagi dua. Kartu ketiga yang dicek adalah…",
+      "c17": "25",
+      "c18": "50",
+      "q9": "Tebak angka 1 sampai 50. Tiap tebakan dijawab 'lebih besar' atau 'lebih kecil'. Dengan bagi dua (tengah kiri), tebakan pertama adalah…",
+      "c19": "5",
+      "q10": "Tebak angka 1 sampai 30 dengan bagi dua. Paling banyak berapa tebakan yang diperlukan?",
+      "c20": "tidak, karena kita tidak tahu buku itu ada di separuh mana",
+      "c21": "bisa, asal mulai dari tengah",
+      "c22": "bisa, malah lebih cepat",
+      "q11": "Buku di rak disusun acak, tidak urut abjad. Bisakah cari bagi dua dipakai?",
+      "c23": "bagi dua paling banyak 9 kali cek",
+      "c24": "satu per satu paling banyak 9 kali cek",
+      "c25": "bagi dua paling banyak 250 kali cek",
+      "q12": "Daftar urut berisi 500 judul buku. Pernyataan mana yang benar?",
+      "c26": "Dewi",
+      "c27": "Fajar",
+      "c28": "Ani",
+      "q13": "Kartu pinjam urut abjad: Ani, Bima, Citra, Dewi, Eko, Fajar, Gita. Cari Fajar dengan bagi dua. Kartu pertama yang dicek adalah…"
+    },
+    "en": {
+      "judul": "Finding Books by Halving",
+      "instruksi": "In the bookshop the shelf is already sorted. Check the middle card first (if the count is even, take the left middle), then drop the half that can't hold what you want.",
+      "pilihan": "choices",
+      "c1": "18",
+      "c2": "31",
+      "c3": "4",
+      "q1": "Sorted shelf: 4, 9, 13, 18, 25, 31, 40. Find 31 with halving. The first card checked is…",
+      "c4": "6",
+      "c5": "11",
+      "c6": "15",
+      "q2": "Sorted shelf: 2, 6, 11, 15, 19, 24, 28, 33, 37. Find 11 with halving. The second card checked is…",
+      "c7": "35",
+      "c8": "41",
+      "c9": "26",
+      "q3": "Sorted shelf: 3, 7, 12, 20, 26, 35, 41, 48. Find 41 with halving. The second card checked is…",
+      "c10": "30",
+      "c11": "8",
+      "c12": "1",
+      "q4": "Sorted shelf: 1, 5, 8, 14, 22, 30, 37, 45, 50, 58, 66. Find 8 with halving. The first card checked is…",
+      "c13": "2",
+      "q5": "Sorted shelf: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55. Find 45 with halving. How many cards are checked?",
+      "c14": "3",
+      "c15": "7",
+      "q6": "Sorted shelf: 5, 10, 15, 20, 25, 30, 35. Find 5 with halving. How many cards are checked?",
+      "q7": "Sorted shelf: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45. Find 45 with halving. How many cards are checked?",
+      "c16": "19",
+      "q8": "Sorted shelf: 2, 6, 11, 15, 19, 24, 28, 33, 37. Find 11 with halving. The third card checked is…",
+      "c17": "25",
+      "c18": "50",
+      "q9": "Guess a number from 1 to 50. Each guess is answered 'bigger' or 'smaller'. With halving (left middle), the first guess is…",
+      "c19": "5",
+      "q10": "Guess a number from 1 to 30 with halving. At most how many guesses are needed?",
+      "c20": "no, because we can't tell which half the book is in",
+      "c21": "yes, as long as you start in the middle",
+      "c22": "yes, and it is even faster",
+      "q11": "The books on the shelf are in random order, not alphabetical. Can halving search be used?",
+      "c23": "halving needs at most 9 checks",
+      "c24": "one by one needs at most 9 checks",
+      "c25": "halving needs at most 250 checks",
+      "q12": "A sorted list holds 500 book titles. Which statement is true?",
+      "c26": "Dewi",
+      "c27": "Fajar",
+      "c28": "Ani",
+      "q13": "Borrowing cards in alphabetical order: Ani, Bima, Citra, Dewi, Eko, Fajar, Gita. Find Fajar with halving. The first card checked is…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-buku",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan",
+      "scale": 0.4
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan",
+      "scale": 0.4
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "q1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "q2",
+      "promptKey": "q2",
+      "choices": [
+        "c4",
+        "c5",
+        "c6"
+      ],
+      "correct": "c4"
+    },
+    {
+      "id": "q3",
+      "promptKey": "q3",
+      "choices": [
+        "c7",
+        "c8",
+        "c9"
+      ],
+      "correct": "c7"
+    },
+    {
+      "id": "q4",
+      "promptKey": "q4",
+      "choices": [
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c10"
+    },
+    {
+      "id": "q5",
+      "promptKey": "q5",
+      "choices": [
+        "c13",
+        "c11",
+        "c12"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "q6",
+      "promptKey": "q6",
+      "choices": [
+        "c14",
+        "c12",
+        "c15"
+      ],
+      "correct": "c14"
+    },
+    {
+      "id": "q7",
+      "promptKey": "q7",
+      "choices": [
+        "c3",
+        "c6",
+        "c14"
+      ],
+      "correct": "c3"
+    },
+    {
+      "id": "q8",
+      "promptKey": "q8",
+      "choices": [
+        "c5",
+        "c4",
+        "c16"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "q9",
+      "promptKey": "q9",
+      "choices": [
+        "c17",
+        "c18",
+        "c12"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "q10",
+      "promptKey": "q10",
+      "choices": [
+        "c19",
+        "c10",
+        "c6"
+      ],
+      "correct": "c19"
+    },
+    {
+      "id": "q11",
+      "promptKey": "q11",
+      "choices": [
+        "c20",
+        "c21",
+        "c22"
+      ],
+      "correct": "c20"
+    },
+    {
+      "id": "q12",
+      "promptKey": "q12",
+      "choices": [
+        "c23",
+        "c24",
+        "c25"
+      ],
+      "correct": "c23"
+    },
+    {
+      "id": "q13",
+      "promptKey": "q13",
+      "choices": [
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c26"
+    }
+  ]
+}

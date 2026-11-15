@@ -1,0 +1,201 @@
+{
+  "id": "sd5-mat-pagar-dan-petak-taman",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.GEOMETRI.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pagar dan Petak Taman",
+      "instruksi": "Hitung panjang pagar (keliling) dan luas kedua petak. Taruh tiap pasangan di rak yang cocok.",
+      "b-kel-sama": "keliling sama, luas beda",
+      "b-luas-sama": "luas sama, keliling beda",
+      "b-beda": "keliling dan luas beda",
+      "i1": "petak 5 × 4 m dan 6 × 3 m",
+      "i2": "petak 7 × 2 m dan 5 × 4 m",
+      "i3": "petak 6 × 6 m dan 8 × 4 m",
+      "i4": "petak 10 × 1 m dan 6 × 5 m",
+      "i5": "petak 9 × 3 m dan 7 × 5 m",
+      "i6": "petak 3 × 3 m dan 4 × 2 m",
+      "i7": "petak 2 × 9 m dan 3 × 6 m",
+      "i8": "petak 4 × 5 m dan 10 × 2 m",
+      "i9": "petak 2 × 8 m dan 1 × 16 m",
+      "i10": "petak 3 × 8 m dan 2 × 12 m",
+      "i11": "petak 6 × 4 m dan 8 × 3 m",
+      "i12": "petak 5 × 6 m dan 10 × 3 m",
+      "i13": "petak 3 × 5 m dan 4 × 2 m",
+      "i14": "petak 6 × 2 m dan 5 × 4 m",
+      "i15": "petak 7 × 3 m dan 4 × 4 m",
+      "i16": "petak 9 × 2 m dan 3 × 4 m",
+      "i17": "petak 8 × 5 m dan 6 × 3 m",
+      "i18": "petak 7 × 7 m dan 5 × 2 m"
+    },
+    "en": {
+      "judul": "Fences and Garden Plots",
+      "instruksi": "Work out the fence length (perimeter) and the area of both plots. Put each pair on the shelf that fits.",
+      "b-kel-sama": "same perimeter, different area",
+      "b-luas-sama": "same area, different perimeter",
+      "b-beda": "perimeter and area both different",
+      "i1": "plots 5 × 4 m and 6 × 3 m",
+      "i2": "plots 7 × 2 m and 5 × 4 m",
+      "i3": "plots 6 × 6 m and 8 × 4 m",
+      "i4": "plots 10 × 1 m and 6 × 5 m",
+      "i5": "plots 9 × 3 m and 7 × 5 m",
+      "i6": "plots 3 × 3 m and 4 × 2 m",
+      "i7": "plots 2 × 9 m and 3 × 6 m",
+      "i8": "plots 4 × 5 m and 10 × 2 m",
+      "i9": "plots 2 × 8 m and 1 × 16 m",
+      "i10": "plots 3 × 8 m and 2 × 12 m",
+      "i11": "plots 6 × 4 m and 8 × 3 m",
+      "i12": "plots 5 × 6 m and 10 × 3 m",
+      "i13": "plots 3 × 5 m and 4 × 2 m",
+      "i14": "plots 6 × 2 m and 5 × 4 m",
+      "i15": "plots 7 × 3 m and 4 × 4 m",
+      "i16": "plots 9 × 2 m and 3 × 4 m",
+      "i17": "plots 8 × 5 m and 6 × 3 m",
+      "i18": "plots 7 × 7 m and 5 × 2 m"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "pasangan petak per ronde"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kel-sama",
+      "labelKey": "b-kel-sama"
+    },
+    {
+      "id": "luas-sama",
+      "labelKey": "b-luas-sama"
+    },
+    {
+      "id": "beda",
+      "labelKey": "b-beda"
+    }
+  ],
+  "items": [
+    {
+      "id": "kel-sama-1",
+      "labelKey": "i1",
+      "bin": "kel-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "kel-sama-2",
+      "labelKey": "i2",
+      "bin": "kel-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "kel-sama-3",
+      "labelKey": "i3",
+      "bin": "kel-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "kel-sama-4",
+      "labelKey": "i4",
+      "bin": "kel-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "kel-sama-5",
+      "labelKey": "i5",
+      "bin": "kel-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "kel-sama-6",
+      "labelKey": "i6",
+      "bin": "kel-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "luas-sama-7",
+      "labelKey": "i7",
+      "bin": "luas-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "luas-sama-8",
+      "labelKey": "i8",
+      "bin": "luas-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "luas-sama-9",
+      "labelKey": "i9",
+      "bin": "luas-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "luas-sama-10",
+      "labelKey": "i10",
+      "bin": "luas-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "luas-sama-11",
+      "labelKey": "i11",
+      "bin": "luas-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "luas-sama-12",
+      "labelKey": "i12",
+      "bin": "luas-sama",
+      "scale": 0.5
+    },
+    {
+      "id": "beda-13",
+      "labelKey": "i13",
+      "bin": "beda",
+      "scale": 0.5
+    },
+    {
+      "id": "beda-14",
+      "labelKey": "i14",
+      "bin": "beda",
+      "scale": 0.5
+    },
+    {
+      "id": "beda-15",
+      "labelKey": "i15",
+      "bin": "beda",
+      "scale": 0.5
+    },
+    {
+      "id": "beda-16",
+      "labelKey": "i16",
+      "bin": "beda",
+      "scale": 0.5
+    },
+    {
+      "id": "beda-17",
+      "labelKey": "i17",
+      "bin": "beda",
+      "scale": 0.5
+    },
+    {
+      "id": "beda-18",
+      "labelKey": "i18",
+      "bin": "beda",
+      "scale": 0.5
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-larut-atau-tidak",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -17,7 +17,7 @@
       "i-gulabatu": "gula batu (larut pelan)",
       "i-kopi": "kopi bubuk instan",
       "i-oralit": "bubuk oralit",
-      "i-kaldu": "kaldu bubuk",
+      "i-kaldu": "tablet vitamin berbuih",
       "i-pasir": "pasir",
       "i-kerikil": "kerikil",
       "i-minyak": "minyak goreng",
@@ -35,7 +35,7 @@
       "i-gulabatu": "rock sugar (dissolves slowly)",
       "i-kopi": "instant coffee powder",
       "i-oralit": "oral rehydration powder",
-      "i-kaldu": "stock powder",
+      "i-kaldu": "fizzy vitamin tablet",
       "i-pasir": "sand",
       "i-kerikil": "gravel",
       "i-minyak": "cooking oil",
@@ -108,7 +108,7 @@
       "id": "kaldu",
       "labelKey": "i-kaldu",
       "bin": "larut",
-      "emoji": "🥣"
+      "emoji": "💊"
     },
     {
       "id": "pasir",

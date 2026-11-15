@@ -1,0 +1,555 @@
+{
+  "id": "sd6-sains-jalur-energi-sawah-perbaiki",
+  "version": "1.0.0",
+  "level": "SD6",
+  "competencyIds": [
+    "SAINS.SD6.JARING-MAKANAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rantai Sawah yang Tertukar",
+      "instruksi": "Dua makhluk di jalur energi sawah tertukar tempat. Tukar keduanya supaya urut dari Matahari ke pemakan puncak.",
+      "s-wereng": "Wereng dan laba-laba",
+      "wereng-matahari": "Matahari (sumber energi)",
+      "wereng-padi": "padi (produsen)",
+      "wereng-wereng": "wereng",
+      "wereng-labalaba": "laba-laba sawah",
+      "wereng-katak": "katak sawah",
+      "wereng-ular": "ular sawah",
+      "s-capung": "Wereng dan capung",
+      "capung-matahari": "Matahari (sumber energi)",
+      "capung-padi": "padi (produsen)",
+      "capung-wereng": "wereng",
+      "capung-capung": "capung",
+      "capung-katak": "katak sawah",
+      "capung-bangau": "burung bangau",
+      "s-keong": "Keong mas di sawah",
+      "keong-matahari": "Matahari (sumber energi)",
+      "keong-padi": "padi muda (produsen)",
+      "keong-keong": "keong mas",
+      "keong-bebek": "bebek sawah",
+      "keong-biawak": "biawak",
+      "s-burunghantu": "Tikus di malam hari",
+      "burunghantu-matahari": "Matahari (sumber energi)",
+      "burunghantu-padi": "bulir padi (produsen)",
+      "burunghantu-tikus": "tikus sawah",
+      "burunghantu-burunghantu": "burung hantu",
+      "s-pematang": "Rumput di pematang",
+      "pematang-matahari": "Matahari (sumber energi)",
+      "pematang-rumput": "rumput liar di pematang (produsen)",
+      "pematang-belalang": "belalang",
+      "pematang-jalak": "burung jalak",
+      "pematang-elang": "elang",
+      "s-prenjak": "Ulat penggerek batang",
+      "prenjak-matahari": "Matahari (sumber energi)",
+      "prenjak-padi": "batang padi (produsen)",
+      "prenjak-ulat": "ulat penggerek batang",
+      "prenjak-prenjak": "burung prenjak",
+      "prenjak-ular": "ular sawah",
+      "prenjak-elang": "elang",
+      "s-berudu": "Air di petak sawah",
+      "berudu-matahari": "Matahari (sumber energi)",
+      "berudu-ganggang": "ganggang di air sawah (produsen)",
+      "berudu-berudu": "berudu",
+      "berudu-gabus": "ikan gabus",
+      "berudu-bangau": "burung bangau",
+      "s-walangsangit": "Walang sangit",
+      "walangsangit-matahari": "Matahari (sumber energi)",
+      "walangsangit-padi": "bulir padi muda (produsen)",
+      "walangsangit-walang": "walang sangit",
+      "walangsangit-labalaba": "laba-laba sawah",
+      "walangsangit-prenjak": "burung prenjak",
+      "walangsangit-elang": "elang",
+      "s-jangkrik": "Jangkrik di pematang",
+      "jangkrik-matahari": "Matahari (sumber energi)",
+      "jangkrik-rumput": "rumput pematang (produsen)",
+      "jangkrik-jangkrik": "jangkrik",
+      "jangkrik-katak": "katak",
+      "jangkrik-ular": "ular sawah",
+      "jangkrik-elang": "elang",
+      "s-kepik": "Wereng dan kepik",
+      "kepik-matahari": "Matahari (sumber energi)",
+      "kepik-padi": "padi (produsen)",
+      "kepik-wereng": "wereng",
+      "kepik-kepik": "kepik",
+      "kepik-katak": "katak",
+      "kepik-bangau": "burung bangau",
+      "s-kadal": "Belalang dan kadal",
+      "kadal-matahari": "Matahari (sumber energi)",
+      "kadal-padi": "daun padi (produsen)",
+      "kadal-belalang": "belalang",
+      "kadal-kadal": "kadal kebun",
+      "kadal-ular": "ular sawah",
+      "kadal-elang": "elang"
+    },
+    "en": {
+      "judul": "Mixed-Up Rice Field Chains",
+      "instruksi": "Two living things on a rice field energy path have swapped places. Swap them back so it goes from the Sun to the top predator.",
+      "s-wereng": "Planthoppers and spiders",
+      "wereng-matahari": "the Sun (energy source)",
+      "wereng-padi": "rice plants (producer)",
+      "wereng-wereng": "planthopper",
+      "wereng-labalaba": "field spider",
+      "wereng-katak": "paddy frog",
+      "wereng-ular": "rice field snake",
+      "s-capung": "Planthoppers and dragonflies",
+      "capung-matahari": "the Sun (energy source)",
+      "capung-padi": "rice plants (producer)",
+      "capung-wereng": "planthopper",
+      "capung-capung": "dragonfly",
+      "capung-katak": "paddy frog",
+      "capung-bangau": "stork",
+      "s-keong": "Golden apple snails in the field",
+      "keong-matahari": "the Sun (energy source)",
+      "keong-padi": "young rice plants (producer)",
+      "keong-keong": "golden apple snail",
+      "keong-bebek": "field duck",
+      "keong-biawak": "monitor lizard",
+      "s-burunghantu": "Rats at night",
+      "burunghantu-matahari": "the Sun (energy source)",
+      "burunghantu-padi": "rice grains (producer)",
+      "burunghantu-tikus": "field rat",
+      "burunghantu-burunghantu": "owl",
+      "s-pematang": "Grass on the field banks",
+      "pematang-matahari": "the Sun (energy source)",
+      "pematang-rumput": "weeds on the bank (producer)",
+      "pematang-belalang": "grasshopper",
+      "pematang-jalak": "starling",
+      "pematang-elang": "eagle",
+      "s-prenjak": "Stem borer caterpillars",
+      "prenjak-matahari": "the Sun (energy source)",
+      "prenjak-padi": "rice stems (producer)",
+      "prenjak-ulat": "stem borer caterpillar",
+      "prenjak-prenjak": "prinia bird",
+      "prenjak-ular": "rice field snake",
+      "prenjak-elang": "eagle",
+      "s-berudu": "Water in the paddy",
+      "berudu-matahari": "the Sun (energy source)",
+      "berudu-ganggang": "algae in the paddy water (producer)",
+      "berudu-berudu": "tadpole",
+      "berudu-gabus": "snakehead fish",
+      "berudu-bangau": "stork",
+      "s-walangsangit": "Rice bugs",
+      "walangsangit-matahari": "the Sun (energy source)",
+      "walangsangit-padi": "young rice grains (producer)",
+      "walangsangit-walang": "rice bug",
+      "walangsangit-labalaba": "field spider",
+      "walangsangit-prenjak": "prinia bird",
+      "walangsangit-elang": "eagle",
+      "s-jangkrik": "Crickets on the banks",
+      "jangkrik-matahari": "the Sun (energy source)",
+      "jangkrik-rumput": "bank grass (producer)",
+      "jangkrik-jangkrik": "cricket",
+      "jangkrik-katak": "frog",
+      "jangkrik-ular": "rice field snake",
+      "jangkrik-elang": "eagle",
+      "s-kepik": "Planthoppers and ladybirds",
+      "kepik-matahari": "the Sun (energy source)",
+      "kepik-padi": "rice plants (producer)",
+      "kepik-wereng": "planthopper",
+      "kepik-kepik": "ladybird",
+      "kepik-katak": "frog",
+      "kepik-bangau": "stork",
+      "s-kadal": "Grasshoppers and lizards",
+      "kadal-matahari": "the Sun (energy source)",
+      "kadal-padi": "rice leaves (producer)",
+      "kadal-belalang": "grasshopper",
+      "kadal-kadal": "garden lizard",
+      "kadal-ular": "rice field snake",
+      "kadal-elang": "eagle"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah mata rantai dari Matahari: 4 → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun-pasar",
+  "mechanic": "urutkan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "wereng",
+      "titleKey": "s-wereng",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "wereng-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "wereng-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "wereng",
+          "labelKey": "wereng-wereng",
+          "emoji": "🦗"
+        },
+        {
+          "id": "labalaba",
+          "labelKey": "wereng-labalaba",
+          "emoji": "🕷️"
+        },
+        {
+          "id": "katak",
+          "labelKey": "wereng-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "ular",
+          "labelKey": "wereng-ular",
+          "emoji": "🐍"
+        }
+      ]
+    },
+    {
+      "id": "capung",
+      "titleKey": "s-capung",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "capung-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "capung-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "wereng",
+          "labelKey": "capung-wereng",
+          "emoji": "🦗"
+        },
+        {
+          "id": "capung",
+          "labelKey": "capung-capung",
+          "shape": "rect",
+          "color": "#29b6f6",
+          "scale": 0.7
+        },
+        {
+          "id": "katak",
+          "labelKey": "capung-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "bangau",
+          "labelKey": "capung-bangau",
+          "emoji": "🐦"
+        }
+      ]
+    },
+    {
+      "id": "keong",
+      "titleKey": "s-keong",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "keong-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "keong-padi",
+          "emoji": "🌱"
+        },
+        {
+          "id": "keong",
+          "labelKey": "keong-keong",
+          "emoji": "🐌"
+        },
+        {
+          "id": "bebek",
+          "labelKey": "keong-bebek",
+          "emoji": "🦆"
+        },
+        {
+          "id": "biawak",
+          "labelKey": "keong-biawak",
+          "emoji": "🦎"
+        }
+      ]
+    },
+    {
+      "id": "burunghantu",
+      "titleKey": "s-burunghantu",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "burunghantu-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "burunghantu-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "tikus",
+          "labelKey": "burunghantu-tikus",
+          "emoji": "🐀"
+        },
+        {
+          "id": "burunghantu",
+          "labelKey": "burunghantu-burunghantu",
+          "emoji": "🦉"
+        }
+      ]
+    },
+    {
+      "id": "pematang",
+      "titleKey": "s-pematang",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "pematang-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "rumput",
+          "labelKey": "pematang-rumput",
+          "emoji": "🌿"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "pematang-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "jalak",
+          "labelKey": "pematang-jalak",
+          "emoji": "🐦"
+        },
+        {
+          "id": "elang",
+          "labelKey": "pematang-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "prenjak",
+      "titleKey": "s-prenjak",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "prenjak-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "prenjak-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "prenjak-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "prenjak",
+          "labelKey": "prenjak-prenjak",
+          "emoji": "🐦"
+        },
+        {
+          "id": "ular",
+          "labelKey": "prenjak-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "prenjak-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "berudu",
+      "titleKey": "s-berudu",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "berudu-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "ganggang",
+          "labelKey": "berudu-ganggang",
+          "emoji": "🟩"
+        },
+        {
+          "id": "berudu",
+          "labelKey": "berudu-berudu",
+          "shape": "berudu",
+          "color": "#4e342e",
+          "scale": 0.8
+        },
+        {
+          "id": "gabus",
+          "labelKey": "berudu-gabus",
+          "emoji": "🐠"
+        },
+        {
+          "id": "bangau",
+          "labelKey": "berudu-bangau",
+          "emoji": "🐦"
+        }
+      ]
+    },
+    {
+      "id": "walangsangit",
+      "titleKey": "s-walangsangit",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "walangsangit-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "walangsangit-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "walang",
+          "labelKey": "walangsangit-walang",
+          "emoji": "🪲"
+        },
+        {
+          "id": "labalaba",
+          "labelKey": "walangsangit-labalaba",
+          "emoji": "🕷️"
+        },
+        {
+          "id": "prenjak",
+          "labelKey": "walangsangit-prenjak",
+          "emoji": "🐦"
+        },
+        {
+          "id": "elang",
+          "labelKey": "walangsangit-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "jangkrik",
+      "titleKey": "s-jangkrik",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "jangkrik-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "rumput",
+          "labelKey": "jangkrik-rumput",
+          "emoji": "🌿"
+        },
+        {
+          "id": "jangkrik",
+          "labelKey": "jangkrik-jangkrik",
+          "emoji": "🦗"
+        },
+        {
+          "id": "katak",
+          "labelKey": "jangkrik-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "ular",
+          "labelKey": "jangkrik-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "jangkrik-elang",
+          "emoji": "🦅"
+        }
+      ]
+    },
+    {
+      "id": "kepik",
+      "titleKey": "s-kepik",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "kepik-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "kepik-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "wereng",
+          "labelKey": "kepik-wereng",
+          "emoji": "🦗"
+        },
+        {
+          "id": "kepik",
+          "labelKey": "kepik-kepik",
+          "emoji": "🐞"
+        },
+        {
+          "id": "katak",
+          "labelKey": "kepik-katak",
+          "emoji": "🐸"
+        },
+        {
+          "id": "bangau",
+          "labelKey": "kepik-bangau",
+          "emoji": "🐦"
+        }
+      ]
+    },
+    {
+      "id": "kadal",
+      "titleKey": "s-kadal",
+      "steps": [
+        {
+          "id": "matahari",
+          "labelKey": "kadal-matahari",
+          "emoji": "☀️"
+        },
+        {
+          "id": "padi",
+          "labelKey": "kadal-padi",
+          "emoji": "🌾"
+        },
+        {
+          "id": "belalang",
+          "labelKey": "kadal-belalang",
+          "emoji": "🦗"
+        },
+        {
+          "id": "kadal",
+          "labelKey": "kadal-kadal",
+          "emoji": "🦎"
+        },
+        {
+          "id": "ular",
+          "labelKey": "kadal-ular",
+          "emoji": "🐍"
+        },
+        {
+          "id": "elang",
+          "labelKey": "kadal-elang",
+          "emoji": "🦅"
+        }
+      ]
+    }
+  ]
+}

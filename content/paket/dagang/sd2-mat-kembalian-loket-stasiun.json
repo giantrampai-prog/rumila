@@ -1,0 +1,140 @@
+{
+  "id": "sd2-mat-kembalian-loket-stasiun",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD2.UANG.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Loket Kembalian Stasiun",
+      "instruksi": "Pembeli membayar dengan uang yang lebih besar. Mulai dari harga, hitung maju sampai uang yang dibayar. Itulah kembaliannya.",
+      "g-tiket": "tiket kereta",
+      "g-nasi-kotak": "nasi kotak",
+      "g-koper": "koper kecil",
+      "g-peta": "peta kota",
+      "g-syal": "syal",
+      "g-kacamata": "kacamata hitam",
+      "g-headset": "headset",
+      "g-jaket": "jaket",
+      "g-senter": "senter",
+      "g-payung": "payung lipat",
+      "g-minuman": "minuman dingin",
+      "g-ransel": "ransel"
+    },
+    "en": {
+      "judul": "Station Counter Change",
+      "instruksi": "The customer pays with a bigger note. Start at the price and count up to the money paid. That is the change.",
+      "g-tiket": "train ticket",
+      "g-nasi-kotak": "boxed lunch",
+      "g-koper": "small suitcase",
+      "g-peta": "city map",
+      "g-syal": "scarf",
+      "g-kacamata": "sunglasses",
+      "g-headset": "headphones",
+      "g-jaket": "jacket",
+      "g-senter": "torch",
+      "g-payung": "folding umbrella",
+      "g-minuman": "cold drink",
+      "g-ransel": "backpack"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "currency": "IDR",
+  "denominations": [
+    5000,
+    10000,
+    20000,
+    50000,
+    100000
+  ],
+  "priceLabel": "rupiah",
+  "mode": "kembalian",
+  "goods": [
+    {
+      "id": "tiket",
+      "labelKey": "g-tiket",
+      "price": 35000,
+      "emoji": "🎫"
+    },
+    {
+      "id": "nasi-kotak",
+      "labelKey": "g-nasi-kotak",
+      "price": 25000,
+      "emoji": "🍱"
+    },
+    {
+      "id": "koper",
+      "labelKey": "g-koper",
+      "price": 95000,
+      "emoji": "🧳"
+    },
+    {
+      "id": "peta",
+      "labelKey": "g-peta",
+      "price": 15000,
+      "emoji": "🗺️"
+    },
+    {
+      "id": "syal",
+      "labelKey": "g-syal",
+      "price": 45000,
+      "emoji": "🧣"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "g-kacamata",
+      "price": 55000,
+      "emoji": "🕶️"
+    },
+    {
+      "id": "headset",
+      "labelKey": "g-headset",
+      "price": 65000,
+      "emoji": "🎧"
+    },
+    {
+      "id": "jaket",
+      "labelKey": "g-jaket",
+      "price": 85000,
+      "emoji": "🧥"
+    },
+    {
+      "id": "senter",
+      "labelKey": "g-senter",
+      "price": 75000,
+      "emoji": "🔦"
+    },
+    {
+      "id": "payung",
+      "labelKey": "g-payung",
+      "price": 40000,
+      "emoji": "☂️"
+    },
+    {
+      "id": "minuman",
+      "labelKey": "g-minuman",
+      "price": 15000,
+      "emoji": "🥤"
+    },
+    {
+      "id": "ransel",
+      "labelKey": "g-ransel",
+      "price": 60000,
+      "emoji": "🎒"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 1,
+    "payExact": true,
+    "maxTotal": 95000,
+    "kindsMax": 1
+  }
+}

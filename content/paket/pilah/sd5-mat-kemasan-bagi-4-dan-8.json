@@ -1,0 +1,530 @@
+{
+  "id": "sd5-mat-kemasan-bagi-4-dan-8",
+  "version": "1.0.0",
+  "level": "SD5",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD5.FAKTOR.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kemasan Isi 4 dan Isi 8",
+      "instruksi": "Habis dibagi 4: lihat dua angka terakhir. Habis dibagi 8: lihat tiga angka terakhir; kalau dua angka terakhir tidak habis dibagi 4, pasti tidak habis dibagi 8.",
+      "pilihan": "pilihan",
+      "q1": "Telur dikemas 4 butir per kotak. Jumlah telur mana yang pas tanpa sisa?",
+      "c1": "2.316",
+      "c2": "1.438",
+      "c3": "5.726",
+      "c4": "3.150",
+      "q2": "Kursi disusun 4 per baris. Jumlah kursi mana yang pas tanpa sisa?",
+      "c5": "4.572",
+      "c6": "3.462",
+      "c7": "1.810",
+      "c8": "6.234",
+      "q3": "Mana yang habis dibagi 4?",
+      "c9": "7.348",
+      "c10": "7.438",
+      "c11": "7.834",
+      "c12": "7.386",
+      "q4": "Roda mobil mainan 4 per mobil. Jumlah roda mana yang pas?",
+      "c13": "9.096",
+      "c14": "9.066",
+      "c15": "9.106",
+      "c16": "9.126",
+      "q5": "Mana yang TIDAK habis dibagi 4?",
+      "c17": "3.530",
+      "c18": "3.532",
+      "c19": "3.536",
+      "c20": "3.540",
+      "q6": "Bilangan mana yang bisa dibagi 4 tanpa sisa?",
+      "c21": "8.964",
+      "c22": "1.250",
+      "c23": "2.774",
+      "c24": "6.518",
+      "q7": "Pensil dikemas 8 per kotak. Jumlah pensil mana yang pas tanpa sisa?",
+      "c25": "3.128",
+      "c26": "3.124",
+      "c27": "3.132",
+      "c28": "3.116",
+      "q8": "Mana yang habis dibagi 8?",
+      "c29": "5.240",
+      "c30": "5.220",
+      "c31": "5.260",
+      "c32": "5.228",
+      "q9": "Kaki laba-laba ada 8. Jumlah kaki mana yang pas untuk sekelompok laba-laba?",
+      "c33": "2.416",
+      "c34": "2.412",
+      "c35": "2.420",
+      "c36": "2.404",
+      "q10": "Bilangan mana yang bisa dibagi 8 tanpa sisa?",
+      "c37": "6.904",
+      "c38": "6.908",
+      "c39": "6.900",
+      "c40": "6.892",
+      "q11": "Mana yang habis dibagi 4 tetapi TIDAK habis dibagi 8?",
+      "c41": "1.612",
+      "c42": "1.616",
+      "c43": "1.624",
+      "c44": "1.630",
+      "q12": "Habis dibagi 4, tetapi bukan kelipatan 8. Bilangan mana?",
+      "c45": "4.300",
+      "c46": "4.320",
+      "c47": "4.336",
+      "c48": "4.302"
+    },
+    "en": {
+      "judul": "Packs of 4 and Packs of 8",
+      "instruksi": "Divisible by 4: check the last two digits. Divisible by 8: check the last three digits; if the last two digits are not divisible by 4, it cannot be divisible by 8.",
+      "pilihan": "choices",
+      "q1": "Eggs are packed 4 to a box. Which number of eggs fits with none left over?",
+      "c1": "2,316",
+      "c2": "1,438",
+      "c3": "5,726",
+      "c4": "3,150",
+      "q2": "Chairs are set out 4 to a row. Which number of chairs fits exactly?",
+      "c5": "4,572",
+      "c6": "3,462",
+      "c7": "1,810",
+      "c8": "6,234",
+      "q3": "Which is divisible by 4?",
+      "c9": "7,348",
+      "c10": "7,438",
+      "c11": "7,834",
+      "c12": "7,386",
+      "q4": "A toy car needs 4 wheels. Which number of wheels fits exactly?",
+      "c13": "9,096",
+      "c14": "9,066",
+      "c15": "9,106",
+      "c16": "9,126",
+      "q5": "Which is NOT divisible by 4?",
+      "c17": "3,530",
+      "c18": "3,532",
+      "c19": "3,536",
+      "c20": "3,540",
+      "q6": "Which number can be divided by 4 with nothing left over?",
+      "c21": "8,964",
+      "c22": "1,250",
+      "c23": "2,774",
+      "c24": "6,518",
+      "q7": "Pencils are packed 8 to a box. Which number of pencils fits exactly?",
+      "c25": "3,128",
+      "c26": "3,124",
+      "c27": "3,132",
+      "c28": "3,116",
+      "q8": "Which is divisible by 8?",
+      "c29": "5,240",
+      "c30": "5,220",
+      "c31": "5,260",
+      "c32": "5,228",
+      "q9": "A spider has 8 legs. Which number of legs fits a group of spiders exactly?",
+      "c33": "2,416",
+      "c34": "2,412",
+      "c35": "2,420",
+      "c36": "2,404",
+      "q10": "Which number can be divided by 8 with nothing left over?",
+      "c37": "6,904",
+      "c38": "6,908",
+      "c39": "6,900",
+      "c40": "6,892",
+      "q11": "Which is divisible by 4 but NOT by 8?",
+      "c41": "1,612",
+      "c42": "1,616",
+      "c43": "1,624",
+      "c44": "1,630",
+      "q12": "Divisible by 4, but not a multiple of 8. Which number?",
+      "c45": "4,300",
+      "c46": "4,320",
+      "c47": "4,336",
+      "c48": "4,302"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "c1",
+      "labelKey": "c1",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c2",
+      "labelKey": "c2",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c3",
+      "labelKey": "c3",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c4",
+      "labelKey": "c4",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c5",
+      "labelKey": "c5",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c6",
+      "labelKey": "c6",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c7",
+      "labelKey": "c7",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c8",
+      "labelKey": "c8",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c9",
+      "labelKey": "c9",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c10",
+      "labelKey": "c10",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c11",
+      "labelKey": "c11",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c12",
+      "labelKey": "c12",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c13",
+      "labelKey": "c13",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c14",
+      "labelKey": "c14",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c15",
+      "labelKey": "c15",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c16",
+      "labelKey": "c16",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c17",
+      "labelKey": "c17",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c18",
+      "labelKey": "c18",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c19",
+      "labelKey": "c19",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c20",
+      "labelKey": "c20",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c21",
+      "labelKey": "c21",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c22",
+      "labelKey": "c22",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c23",
+      "labelKey": "c23",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c24",
+      "labelKey": "c24",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c25",
+      "labelKey": "c25",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c26",
+      "labelKey": "c26",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c27",
+      "labelKey": "c27",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c28",
+      "labelKey": "c28",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c29",
+      "labelKey": "c29",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c30",
+      "labelKey": "c30",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c31",
+      "labelKey": "c31",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c32",
+      "labelKey": "c32",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c33",
+      "labelKey": "c33",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c34",
+      "labelKey": "c34",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c35",
+      "labelKey": "c35",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c36",
+      "labelKey": "c36",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c37",
+      "labelKey": "c37",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c38",
+      "labelKey": "c38",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c39",
+      "labelKey": "c39",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c40",
+      "labelKey": "c40",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c41",
+      "labelKey": "c41",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c42",
+      "labelKey": "c42",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c43",
+      "labelKey": "c43",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c44",
+      "labelKey": "c44",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c45",
+      "labelKey": "c45",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c46",
+      "labelKey": "c46",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c47",
+      "labelKey": "c47",
+      "bin": "pilihan"
+    },
+    {
+      "id": "c48",
+      "labelKey": "c48",
+      "bin": "pilihan"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "q1",
+      "choices": [
+        "c1",
+        "c2",
+        "c3",
+        "c4"
+      ],
+      "correct": "c1"
+    },
+    {
+      "id": "r2",
+      "promptKey": "q2",
+      "choices": [
+        "c5",
+        "c6",
+        "c7",
+        "c8"
+      ],
+      "correct": "c5"
+    },
+    {
+      "id": "r3",
+      "promptKey": "q3",
+      "choices": [
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+      ],
+      "correct": "c9"
+    },
+    {
+      "id": "r4",
+      "promptKey": "q4",
+      "choices": [
+        "c13",
+        "c14",
+        "c15",
+        "c16"
+      ],
+      "correct": "c13"
+    },
+    {
+      "id": "r5",
+      "promptKey": "q5",
+      "choices": [
+        "c17",
+        "c18",
+        "c19",
+        "c20"
+      ],
+      "correct": "c17"
+    },
+    {
+      "id": "r6",
+      "promptKey": "q6",
+      "choices": [
+        "c21",
+        "c22",
+        "c23",
+        "c24"
+      ],
+      "correct": "c21"
+    },
+    {
+      "id": "r7",
+      "promptKey": "q7",
+      "choices": [
+        "c25",
+        "c26",
+        "c27",
+        "c28"
+      ],
+      "correct": "c25"
+    },
+    {
+      "id": "r8",
+      "promptKey": "q8",
+      "choices": [
+        "c29",
+        "c30",
+        "c31",
+        "c32"
+      ],
+      "correct": "c29"
+    },
+    {
+      "id": "r9",
+      "promptKey": "q9",
+      "choices": [
+        "c33",
+        "c34",
+        "c35",
+        "c36"
+      ],
+      "correct": "c33"
+    },
+    {
+      "id": "r10",
+      "promptKey": "q10",
+      "choices": [
+        "c37",
+        "c38",
+        "c39",
+        "c40"
+      ],
+      "correct": "c37"
+    },
+    {
+      "id": "r11",
+      "promptKey": "q11",
+      "choices": [
+        "c41",
+        "c42",
+        "c43",
+        "c44"
+      ],
+      "correct": "c41"
+    },
+    {
+      "id": "r12",
+      "promptKey": "q12",
+      "choices": [
+        "c45",
+        "c46",
+        "c47",
+        "c48"
+      ],
+      "correct": "c45"
+    }
+  ]
+}

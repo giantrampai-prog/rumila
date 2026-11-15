@@ -1,0 +1,81 @@
+{
+  "id": "sd1-mat-panen-sisa-kebun",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.SD1.TAMBAH-KURANG-20.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Panen Kebun, Sisa Berapa?",
+      "instruksi": "Ada sayur di bedeng. Sebagian dipetik lalu bedeng ditutup daun. Taruh sayur sebanyak yang masih tertinggal.",
+      "g-wortel": "wortel",
+      "g-jagung": "jagung",
+      "g-terong": "terong",
+      "g-sawi": "sawi"
+    },
+    "en": {
+      "judul": "Garden Harvest: How Many Left?",
+      "instruksi": "There are vegetables in the garden bed. Some are picked, then the bed is covered with leaves. Put out as many vegetables as are still there.",
+      "g-wortel": "carrots",
+      "g-jagung": "corn cobs",
+      "g-terong": "eggplants",
+      "g-sawi": "mustard greens"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 14,
+      "max": 20,
+      "default": 14,
+      "step": 2,
+      "keterangan": "jumlah sayur awal paling banyak: 14 → 20"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "sisa",
+  "goods": [
+    {
+      "id": "wortel",
+      "labelKey": "g-wortel",
+      "price": 1000,
+      "emoji": "🥕"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "g-jagung",
+      "price": 1000,
+      "emoji": "🌽"
+    },
+    {
+      "id": "terong",
+      "labelKey": "g-terong",
+      "price": 1000,
+      "emoji": "🍆"
+    },
+    {
+      "id": "sawi",
+      "labelKey": "g-sawi",
+      "price": 1000,
+      "emoji": "🥬"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 2,
+    "itemsMax": 20,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 1,
+    "target": 14
+  }
+}

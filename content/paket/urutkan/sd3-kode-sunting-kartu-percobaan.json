@@ -1,0 +1,740 @@
+{
+  "id": "sd3-kode-sunting-kartu-percobaan",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.SD3.ALGORITMA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kartu Langkah Tertukar Jauh",
+      "instruksi": "Satu pasang kartu tertukar, kadang berjarak satu kartu. Temukan pasangan itu lalu tukar sekali.",
+      "t-gunung": "Percobaan gunung meletus",
+      "gunung-1": "taruh botol kecil di nampan",
+      "gunung-2": "masukkan dua sendok soda kue",
+      "gunung-3": "tuang cuka ke dalam botol",
+      "gunung-4": "busa meluap keluar botol",
+      "gunung-5": "amati busanya sampai berhenti",
+      "gunung-6": "catat yang terjadi",
+      "gunung-7": "cuci botol dan nampan",
+      "gunung-8": "simpan alat di lemari",
+      "t-unggah": "Mengumpulkan tugas lewat aplikasi",
+      "unggah-1": "selesaikan gambar tugasmu",
+      "unggah-2": "buka aplikasi kelas",
+      "unggah-3": "pilih tugas dari guru",
+      "unggah-4": "tekan tombol unggah",
+      "unggah-5": "potret gambarmu",
+      "unggah-6": "tekan kirim",
+      "unggah-7": "tanda terkirim muncul",
+      "unggah-8": "guru memberi nilai",
+      "t-nasi-goreng": "Membuat nasi goreng",
+      "nasi-goreng-1": "tuang minyak ke wajan",
+      "nasi-goreng-2": "panaskan minyak di atas kompor",
+      "nasi-goreng-3": "tumis bawang sampai harum",
+      "nasi-goreng-4": "masukkan nasi",
+      "nasi-goreng-5": "tuang kecap",
+      "nasi-goreng-6": "aduk sampai rata",
+      "nasi-goreng-7": "matikan kompor",
+      "nasi-goreng-8": "sajikan di piring",
+      "t-lari": "Ikut lomba lari",
+      "lari-1": "daftarkan nama",
+      "lari-2": "terima nomor dada",
+      "lari-3": "pasang nomor dada di baju",
+      "lari-4": "berdiri di garis start",
+      "lari-5": "dengar aba-aba mulai",
+      "lari-6": "lari sekencang mungkin",
+      "lari-7": "lewati garis finis",
+      "lari-8": "terima medali",
+      "t-bolu": "Membuat kue bolu",
+      "bolu-1": "pecahkan telur ke mangkuk",
+      "bolu-2": "kocok telur dengan gula",
+      "bolu-3": "masukkan tepung lalu aduk",
+      "bolu-4": "tuang adonan ke loyang",
+      "bolu-5": "masukkan loyang ke oven",
+      "bolu-6": "panggang tiga puluh menit",
+      "bolu-7": "keluarkan dari oven",
+      "bolu-8": "potong bolunya",
+      "t-kapal": "Naik kapal laut",
+      "kapal-1": "beli tiket di pelabuhan",
+      "kapal-2": "tunggu di ruang tunggu",
+      "kapal-3": "kapal merapat",
+      "kapal-4": "naik lewat tangga kapal",
+      "kapal-5": "cari tempat duduk",
+      "kapal-6": "kapal berlayar",
+      "kapal-7": "kapal sampai di pelabuhan tujuan",
+      "kapal-8": "turun dari kapal",
+      "t-ban": "Menambal ban sepeda",
+      "ban-1": "lepas roda sepeda",
+      "ban-2": "keluarkan ban dalam",
+      "ban-3": "cari lubangnya",
+      "ban-4": "tambal lubangnya",
+      "ban-5": "masukkan lagi ban dalam",
+      "ban-6": "pasang roda",
+      "ban-7": "pompa ban",
+      "ban-8": "coba kayuh sepeda",
+      "t-cerita": "Menulis cerita di komputer",
+      "cerita-1": "nyalakan komputer",
+      "cerita-2": "buka aplikasi pengolah kata",
+      "cerita-3": "ketik judul cerita",
+      "cerita-4": "ketik isi cerita",
+      "cerita-5": "simpan berkasnya",
+      "cerita-6": "tekan cetak",
+      "cerita-7": "ambil kertas dari printer",
+      "cerita-8": "kumpulkan ke guru",
+      "t-es-lilin": "Membuat es lilin",
+      "es-lilin-1": "campur sirup dengan air",
+      "es-lilin-2": "tuang ke plastik es",
+      "es-lilin-3": "ikat plastiknya",
+      "es-lilin-4": "masukkan ke lemari es beku",
+      "es-lilin-5": "tunggu semalam",
+      "es-lilin-6": "keluarkan es lilin",
+      "es-lilin-7": "gunting ujung plastik",
+      "es-lilin-8": "nikmati es lilinnya",
+      "t-pot-botol": "Membuat pot dari botol bekas",
+      "pot-botol-1": "ambil botol plastik bekas",
+      "pot-botol-2": "potong botol jadi dua",
+      "pot-botol-3": "isi bagian bawah dengan tanah",
+      "pot-botol-4": "tanam bibit cabai",
+      "pot-botol-5": "siram sedikit air",
+      "pot-botol-6": "taruh di dekat jendela",
+      "pot-botol-7": "tunggu beberapa minggu",
+      "pot-botol-8": "petik cabainya",
+      "t-sop": "Memasak sayur sop",
+      "sop-1": "cuci sayurannya",
+      "sop-2": "potong wortel dan kentang",
+      "sop-3": "masukkan ke panci berisi air",
+      "sop-4": "rebus sampai empuk",
+      "sop-5": "tambahkan garam",
+      "sop-6": "cicipi kuahnya",
+      "sop-7": "matikan kompor",
+      "sop-8": "tuang sop ke mangkuk"
+    },
+    "en": {
+      "judul": "Far-Swapped Step Cards",
+      "instruksi": "One pair of cards is swapped, sometimes with a card between them. Find the pair and swap once.",
+      "t-gunung": "Volcano experiment",
+      "gunung-1": "put a small bottle on a tray",
+      "gunung-2": "add two spoons of baking soda",
+      "gunung-3": "pour vinegar into the bottle",
+      "gunung-4": "foam bubbles out of the bottle",
+      "gunung-5": "watch the foam until it stops",
+      "gunung-6": "write down what happened",
+      "gunung-7": "wash the bottle and tray",
+      "gunung-8": "put the tools in the cupboard",
+      "t-unggah": "Handing in work through an app",
+      "unggah-1": "finish your drawing assignment",
+      "unggah-2": "open the class app",
+      "unggah-3": "choose the teacher's assignment",
+      "unggah-4": "press the upload button",
+      "unggah-5": "take a photo of your drawing",
+      "unggah-6": "press send",
+      "unggah-7": "the sent mark appears",
+      "unggah-8": "the teacher gives a mark",
+      "t-nasi-goreng": "Making fried rice",
+      "nasi-goreng-1": "pour oil into the wok",
+      "nasi-goreng-2": "heat the oil on the stove",
+      "nasi-goreng-3": "fry the garlic until it smells good",
+      "nasi-goreng-4": "add the rice",
+      "nasi-goreng-5": "pour in soy sauce",
+      "nasi-goreng-6": "stir until mixed",
+      "nasi-goreng-7": "turn off the stove",
+      "nasi-goreng-8": "serve it on a plate",
+      "t-lari": "Running in a race",
+      "lari-1": "sign up your name",
+      "lari-2": "get your race number",
+      "lari-3": "pin the number on your shirt",
+      "lari-4": "stand at the start line",
+      "lari-5": "hear the start signal",
+      "lari-6": "run as fast as you can",
+      "lari-7": "cross the finish line",
+      "lari-8": "get a medal",
+      "t-bolu": "Baking a sponge cake",
+      "bolu-1": "crack the eggs into a bowl",
+      "bolu-2": "beat the eggs with sugar",
+      "bolu-3": "add flour and stir",
+      "bolu-4": "pour the batter into a tin",
+      "bolu-5": "put the tin in the oven",
+      "bolu-6": "bake for thirty minutes",
+      "bolu-7": "take it out of the oven",
+      "bolu-8": "cut the cake",
+      "t-kapal": "Taking a ship",
+      "kapal-1": "buy a ticket at the port",
+      "kapal-2": "wait in the waiting room",
+      "kapal-3": "the ship docks",
+      "kapal-4": "climb the ship's stairs",
+      "kapal-5": "find a seat",
+      "kapal-6": "the ship sails",
+      "kapal-7": "the ship reaches the next port",
+      "kapal-8": "get off the ship",
+      "t-ban": "Fixing a flat bike tyre",
+      "ban-1": "take off the wheel",
+      "ban-2": "pull out the inner tube",
+      "ban-3": "find the hole",
+      "ban-4": "patch the hole",
+      "ban-5": "put the inner tube back",
+      "ban-6": "fit the wheel",
+      "ban-7": "pump up the tyre",
+      "ban-8": "test ride the bike",
+      "t-cerita": "Writing a story on a computer",
+      "cerita-1": "turn on the computer",
+      "cerita-2": "open the word processor",
+      "cerita-3": "type the story title",
+      "cerita-4": "type the story",
+      "cerita-5": "save the file",
+      "cerita-6": "press print",
+      "cerita-7": "take the paper from the printer",
+      "cerita-8": "hand it to the teacher",
+      "t-es-lilin": "Making ice lollies",
+      "es-lilin-1": "mix syrup with water",
+      "es-lilin-2": "pour it into ice bags",
+      "es-lilin-3": "tie the bags",
+      "es-lilin-4": "put them in the freezer",
+      "es-lilin-5": "wait overnight",
+      "es-lilin-6": "take out the ice lollies",
+      "es-lilin-7": "snip the end of the bag",
+      "es-lilin-8": "enjoy the ice lolly",
+      "t-pot-botol": "Making a pot from an old bottle",
+      "pot-botol-1": "take an old plastic bottle",
+      "pot-botol-2": "cut the bottle in two",
+      "pot-botol-3": "fill the bottom half with soil",
+      "pot-botol-4": "plant a chilli seedling",
+      "pot-botol-5": "water it a little",
+      "pot-botol-6": "put it near a window",
+      "pot-botol-7": "wait a few weeks",
+      "pot-botol-8": "pick the chillies",
+      "t-sop": "Cooking vegetable soup",
+      "sop-1": "wash the vegetables",
+      "sop-2": "cut the carrots and potatoes",
+      "sop-3": "put them in a pot of water",
+      "sop-4": "boil until soft",
+      "sop-5": "add salt",
+      "sop-6": "taste the soup",
+      "sop-7": "turn off the stove",
+      "sop-8": "pour the soup into bowls"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 7,
+      "max": 8,
+      "default": 7,
+      "step": 1,
+      "keterangan": "jumlah kartu: 7 → 8; mesin menukar satu pasang (berdampingan atau berjarak satu)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "gunung",
+      "titleKey": "t-gunung",
+      "steps": [
+        {
+          "id": "gunung-1",
+          "labelKey": "gunung-1",
+          "emoji": "🧪"
+        },
+        {
+          "id": "gunung-2",
+          "labelKey": "gunung-2",
+          "emoji": "🥄"
+        },
+        {
+          "id": "gunung-3",
+          "labelKey": "gunung-3",
+          "emoji": "🫗"
+        },
+        {
+          "id": "gunung-4",
+          "labelKey": "gunung-4",
+          "emoji": "🌋"
+        },
+        {
+          "id": "gunung-5",
+          "labelKey": "gunung-5",
+          "emoji": "👀"
+        },
+        {
+          "id": "gunung-6",
+          "labelKey": "gunung-6",
+          "emoji": "📓"
+        },
+        {
+          "id": "gunung-7",
+          "labelKey": "gunung-7",
+          "emoji": "🧽"
+        },
+        {
+          "id": "gunung-8",
+          "labelKey": "gunung-8",
+          "emoji": "🗄️"
+        }
+      ]
+    },
+    {
+      "id": "unggah",
+      "titleKey": "t-unggah",
+      "steps": [
+        {
+          "id": "unggah-1",
+          "labelKey": "unggah-1",
+          "emoji": "🎨"
+        },
+        {
+          "id": "unggah-2",
+          "labelKey": "unggah-2",
+          "emoji": "📲"
+        },
+        {
+          "id": "unggah-3",
+          "labelKey": "unggah-3",
+          "emoji": "📋"
+        },
+        {
+          "id": "unggah-4",
+          "labelKey": "unggah-4",
+          "emoji": "⬆️"
+        },
+        {
+          "id": "unggah-5",
+          "labelKey": "unggah-5",
+          "emoji": "📷"
+        },
+        {
+          "id": "unggah-6",
+          "labelKey": "unggah-6",
+          "emoji": "📤"
+        },
+        {
+          "id": "unggah-7",
+          "labelKey": "unggah-7",
+          "emoji": "✅"
+        },
+        {
+          "id": "unggah-8",
+          "labelKey": "unggah-8",
+          "emoji": "💯"
+        }
+      ]
+    },
+    {
+      "id": "nasi-goreng",
+      "titleKey": "t-nasi-goreng",
+      "steps": [
+        {
+          "id": "nasi-goreng-1",
+          "labelKey": "nasi-goreng-1",
+          "emoji": "🫗"
+        },
+        {
+          "id": "nasi-goreng-2",
+          "labelKey": "nasi-goreng-2",
+          "emoji": "🔥"
+        },
+        {
+          "id": "nasi-goreng-3",
+          "labelKey": "nasi-goreng-3",
+          "emoji": "🧄"
+        },
+        {
+          "id": "nasi-goreng-4",
+          "labelKey": "nasi-goreng-4",
+          "emoji": "🍚"
+        },
+        {
+          "id": "nasi-goreng-5",
+          "labelKey": "nasi-goreng-5",
+          "emoji": "🥫"
+        },
+        {
+          "id": "nasi-goreng-6",
+          "labelKey": "nasi-goreng-6",
+          "emoji": "🥄"
+        },
+        {
+          "id": "nasi-goreng-7",
+          "labelKey": "nasi-goreng-7",
+          "emoji": "🛑"
+        },
+        {
+          "id": "nasi-goreng-8",
+          "labelKey": "nasi-goreng-8",
+          "emoji": "🍽️"
+        }
+      ]
+    },
+    {
+      "id": "lari",
+      "titleKey": "t-lari",
+      "steps": [
+        {
+          "id": "lari-1",
+          "labelKey": "lari-1",
+          "emoji": "📝"
+        },
+        {
+          "id": "lari-2",
+          "labelKey": "lari-2",
+          "emoji": "🔢"
+        },
+        {
+          "id": "lari-3",
+          "labelKey": "lari-3",
+          "emoji": "📎"
+        },
+        {
+          "id": "lari-4",
+          "labelKey": "lari-4",
+          "emoji": "🧍"
+        },
+        {
+          "id": "lari-5",
+          "labelKey": "lari-5",
+          "emoji": "📣"
+        },
+        {
+          "id": "lari-6",
+          "labelKey": "lari-6",
+          "emoji": "🏃"
+        },
+        {
+          "id": "lari-7",
+          "labelKey": "lari-7",
+          "emoji": "🏁"
+        },
+        {
+          "id": "lari-8",
+          "labelKey": "lari-8",
+          "emoji": "🏅"
+        }
+      ]
+    },
+    {
+      "id": "bolu",
+      "titleKey": "t-bolu",
+      "steps": [
+        {
+          "id": "bolu-1",
+          "labelKey": "bolu-1",
+          "emoji": "🥚"
+        },
+        {
+          "id": "bolu-2",
+          "labelKey": "bolu-2",
+          "emoji": "🥣"
+        },
+        {
+          "id": "bolu-3",
+          "labelKey": "bolu-3",
+          "emoji": "🌾"
+        },
+        {
+          "id": "bolu-4",
+          "labelKey": "bolu-4",
+          "emoji": "🫗"
+        },
+        {
+          "id": "bolu-5",
+          "labelKey": "bolu-5",
+          "emoji": "📥"
+        },
+        {
+          "id": "bolu-6",
+          "labelKey": "bolu-6",
+          "emoji": "⏲️"
+        },
+        {
+          "id": "bolu-7",
+          "labelKey": "bolu-7",
+          "emoji": "🧤"
+        },
+        {
+          "id": "bolu-8",
+          "labelKey": "bolu-8",
+          "emoji": "🍰"
+        }
+      ]
+    },
+    {
+      "id": "kapal",
+      "titleKey": "t-kapal",
+      "steps": [
+        {
+          "id": "kapal-1",
+          "labelKey": "kapal-1",
+          "emoji": "🎫"
+        },
+        {
+          "id": "kapal-2",
+          "labelKey": "kapal-2",
+          "emoji": "🪑"
+        },
+        {
+          "id": "kapal-3",
+          "labelKey": "kapal-3",
+          "emoji": "🚢"
+        },
+        {
+          "id": "kapal-4",
+          "labelKey": "kapal-4",
+          "emoji": "🪜"
+        },
+        {
+          "id": "kapal-5",
+          "labelKey": "kapal-5",
+          "emoji": "💺"
+        },
+        {
+          "id": "kapal-6",
+          "labelKey": "kapal-6",
+          "emoji": "🌊"
+        },
+        {
+          "id": "kapal-7",
+          "labelKey": "kapal-7",
+          "emoji": "⚓"
+        },
+        {
+          "id": "kapal-8",
+          "labelKey": "kapal-8",
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": "ban",
+      "titleKey": "t-ban",
+      "steps": [
+        {
+          "id": "ban-1",
+          "labelKey": "ban-1",
+          "emoji": "🔧"
+        },
+        {
+          "id": "ban-2",
+          "labelKey": "ban-2",
+          "emoji": "⭕"
+        },
+        {
+          "id": "ban-3",
+          "labelKey": "ban-3",
+          "emoji": "🔍"
+        },
+        {
+          "id": "ban-4",
+          "labelKey": "ban-4",
+          "emoji": "🩹"
+        },
+        {
+          "id": "ban-5",
+          "labelKey": "ban-5",
+          "emoji": "↩️"
+        },
+        {
+          "id": "ban-6",
+          "labelKey": "ban-6",
+          "emoji": "🚲"
+        },
+        {
+          "id": "ban-7",
+          "labelKey": "ban-7",
+          "emoji": "💨"
+        },
+        {
+          "id": "ban-8",
+          "labelKey": "ban-8",
+          "emoji": "✅"
+        }
+      ]
+    },
+    {
+      "id": "cerita",
+      "titleKey": "t-cerita",
+      "steps": [
+        {
+          "id": "cerita-1",
+          "labelKey": "cerita-1",
+          "emoji": "⏻"
+        },
+        {
+          "id": "cerita-2",
+          "labelKey": "cerita-2",
+          "emoji": "📝"
+        },
+        {
+          "id": "cerita-3",
+          "labelKey": "cerita-3",
+          "emoji": "🔤"
+        },
+        {
+          "id": "cerita-4",
+          "labelKey": "cerita-4",
+          "emoji": "⌨️"
+        },
+        {
+          "id": "cerita-5",
+          "labelKey": "cerita-5",
+          "emoji": "💾"
+        },
+        {
+          "id": "cerita-6",
+          "labelKey": "cerita-6",
+          "emoji": "🖨️"
+        },
+        {
+          "id": "cerita-7",
+          "labelKey": "cerita-7",
+          "emoji": "📄"
+        },
+        {
+          "id": "cerita-8",
+          "labelKey": "cerita-8",
+          "emoji": "🙋"
+        }
+      ]
+    },
+    {
+      "id": "es-lilin",
+      "titleKey": "t-es-lilin",
+      "steps": [
+        {
+          "id": "es-lilin-1",
+          "labelKey": "es-lilin-1",
+          "emoji": "🍹"
+        },
+        {
+          "id": "es-lilin-2",
+          "labelKey": "es-lilin-2",
+          "emoji": "🫗"
+        },
+        {
+          "id": "es-lilin-3",
+          "labelKey": "es-lilin-3",
+          "emoji": "🪢"
+        },
+        {
+          "id": "es-lilin-4",
+          "labelKey": "es-lilin-4",
+          "emoji": "🧊"
+        },
+        {
+          "id": "es-lilin-5",
+          "labelKey": "es-lilin-5",
+          "emoji": "🌙"
+        },
+        {
+          "id": "es-lilin-6",
+          "labelKey": "es-lilin-6",
+          "emoji": "🤲"
+        },
+        {
+          "id": "es-lilin-7",
+          "labelKey": "es-lilin-7",
+          "emoji": "✂️"
+        },
+        {
+          "id": "es-lilin-8",
+          "labelKey": "es-lilin-8",
+          "emoji": "😋"
+        }
+      ]
+    },
+    {
+      "id": "pot-botol",
+      "titleKey": "t-pot-botol",
+      "steps": [
+        {
+          "id": "pot-botol-1",
+          "labelKey": "pot-botol-1",
+          "emoji": "🧴"
+        },
+        {
+          "id": "pot-botol-2",
+          "labelKey": "pot-botol-2",
+          "emoji": "✂️"
+        },
+        {
+          "id": "pot-botol-3",
+          "labelKey": "pot-botol-3",
+          "emoji": "🟫"
+        },
+        {
+          "id": "pot-botol-4",
+          "labelKey": "pot-botol-4",
+          "emoji": "🌱"
+        },
+        {
+          "id": "pot-botol-5",
+          "labelKey": "pot-botol-5",
+          "emoji": "💦"
+        },
+        {
+          "id": "pot-botol-6",
+          "labelKey": "pot-botol-6",
+          "emoji": "🪟"
+        },
+        {
+          "id": "pot-botol-7",
+          "labelKey": "pot-botol-7",
+          "emoji": "📅"
+        },
+        {
+          "id": "pot-botol-8",
+          "labelKey": "pot-botol-8",
+          "emoji": "🌶️"
+        }
+      ]
+    },
+    {
+      "id": "sop",
+      "titleKey": "t-sop",
+      "steps": [
+        {
+          "id": "sop-1",
+          "labelKey": "sop-1",
+          "emoji": "🥕"
+        },
+        {
+          "id": "sop-2",
+          "labelKey": "sop-2",
+          "emoji": "🔪"
+        },
+        {
+          "id": "sop-3",
+          "labelKey": "sop-3",
+          "emoji": "🍲"
+        },
+        {
+          "id": "sop-4",
+          "labelKey": "sop-4",
+          "emoji": "♨️"
+        },
+        {
+          "id": "sop-5",
+          "labelKey": "sop-5",
+          "emoji": "🧂"
+        },
+        {
+          "id": "sop-6",
+          "labelKey": "sop-6",
+          "emoji": "🥄"
+        },
+        {
+          "id": "sop-7",
+          "labelKey": "sop-7",
+          "emoji": "🛑"
+        },
+        {
+          "id": "sop-8",
+          "labelKey": "sop-8",
+          "emoji": "🥣"
+        }
+      ]
+    }
+  ]
+}

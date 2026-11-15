@@ -1,0 +1,149 @@
+{
+  "id": "sd2-sains-tempat-panas-sejuk-bukit",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.SD2.HABITAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Panas atau Sejuk di Bukit?",
+      "instruksi": "Lihat gambar tiap tempat. Taruh ke rak panas dan kering, atau sejuk dan lembap.",
+      "b-panas": "panas dan kering",
+      "b-lembap": "sejuk dan lembap",
+      "i-gurun": "gurun pasir siang hari",
+      "i-kapmobil": "kap mobil di parkiran terbuka siang hari",
+      "i-tembok": "tembok bata disinari Matahari siang",
+      "i-ladang": "padang rumput kering di musim kemarau",
+      "i-lapbasket": "lapangan basket semen siang hari",
+      "i-gundul": "puncak bukit gundul di siang terik",
+      "i-hutan": "hutan lebat yang rindang",
+      "i-kamarmandi": "kamar mandi setelah dipakai mandi",
+      "i-kayulapuk": "di bawah batang kayu lapuk",
+      "i-tepisungai": "tepi sungai yang teduh",
+      "i-lumut": "tembok teduh yang berlumut",
+      "i-jamur": "tanah tempat jamur tumbuh"
+    },
+    "en": {
+      "judul": "Hot or Cool on the Hill?",
+      "instruksi": "Look at each place. Put it on the hot-and-dry shelf or the cool-and-damp shelf.",
+      "b-panas": "hot and dry",
+      "b-lembap": "cool and damp",
+      "i-gurun": "a sandy desert at midday",
+      "i-kapmobil": "a car bonnet in an open car park at midday",
+      "i-tembok": "a brick wall in the midday sun",
+      "i-ladang": "a dry grass field in the dry season",
+      "i-lapbasket": "a concrete basketball court at midday",
+      "i-gundul": "a bare hilltop in the blazing sun",
+      "i-hutan": "a thick, shady forest",
+      "i-kamarmandi": "a bathroom just after a shower",
+      "i-kayulapuk": "under a rotting log",
+      "i-tepisungai": "a shady riverbank",
+      "i-lumut": "a shady wall covered in moss",
+      "i-jamur": "ground where mushrooms grow"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran; diambil acak dari kumpulan, tiap rak dapat minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "panas",
+      "labelKey": "b-panas",
+      "emoji": "☀️"
+    },
+    {
+      "id": "lembap",
+      "labelKey": "b-lembap",
+      "emoji": "💧"
+    }
+  ],
+  "items": [
+    {
+      "id": "gurun",
+      "labelKey": "i-gurun",
+      "bin": "panas",
+      "emoji": "🏜️"
+    },
+    {
+      "id": "kapmobil",
+      "labelKey": "i-kapmobil",
+      "bin": "panas",
+      "emoji": "🚗"
+    },
+    {
+      "id": "tembok",
+      "labelKey": "i-tembok",
+      "bin": "panas",
+      "emoji": "🧱"
+    },
+    {
+      "id": "ladang",
+      "labelKey": "i-ladang",
+      "bin": "panas",
+      "emoji": "🌾"
+    },
+    {
+      "id": "lapbasket",
+      "labelKey": "i-lapbasket",
+      "bin": "panas",
+      "emoji": "🏀"
+    },
+    {
+      "id": "gundul",
+      "labelKey": "i-gundul",
+      "bin": "panas",
+      "emoji": "⛰️"
+    },
+    {
+      "id": "hutan",
+      "labelKey": "i-hutan",
+      "bin": "lembap",
+      "emoji": "🌳"
+    },
+    {
+      "id": "kamarmandi",
+      "labelKey": "i-kamarmandi",
+      "bin": "lembap",
+      "emoji": "🚿"
+    },
+    {
+      "id": "kayulapuk",
+      "labelKey": "i-kayulapuk",
+      "bin": "lembap",
+      "emoji": "🪵"
+    },
+    {
+      "id": "tepisungai",
+      "labelKey": "i-tepisungai",
+      "bin": "lembap",
+      "emoji": "🏞️"
+    },
+    {
+      "id": "lumut",
+      "labelKey": "i-lumut",
+      "bin": "lembap",
+      "emoji": "🌿"
+    },
+    {
+      "id": "jamur",
+      "labelKey": "i-jamur",
+      "bin": "lembap",
+      "emoji": "🍄"
+    }
+  ],
+  "pilihan": []
+}

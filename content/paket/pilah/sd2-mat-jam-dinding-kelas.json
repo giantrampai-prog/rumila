@@ -1,0 +1,467 @@
+{
+  "id": "sd2-mat-jam-dinding-kelas",
+  "version": "1.0.0",
+  "level": "SD2",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD2.WAKTU.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jam Dinding Kelas",
+      "instruksi": "Jarum panjang menunjukkan menit. Loncat lima-lima dari angka 12: angka 1 = 5 menit, angka 2 = 10 menit, dan seterusnya.",
+      "i-m35": "35 menit",
+      "i-m7": "7 menit",
+      "i-m30": "30 menit",
+      "t-angka-7": "Jarum panjang di angka 7. Sudah berapa menit?",
+      "i-m15": "15 menit",
+      "i-m3": "3 menit",
+      "i-m20": "20 menit",
+      "t-angka-3": "Jarum panjang di angka 3. Sudah berapa menit?",
+      "i-m45": "45 menit",
+      "i-m9": "9 menit",
+      "i-m40": "40 menit",
+      "t-angka-9": "Jarum panjang di angka 9. Sudah berapa menit?",
+      "i-m55": "55 menit",
+      "i-m11": "11 menit",
+      "i-m50": "50 menit",
+      "t-angka-11": "Jarum panjang di angka 11. Sudah berapa menit?",
+      "i-m25": "25 menit",
+      "i-m5": "5 menit",
+      "t-angka-5": "Jarum panjang di angka 5. Sudah berapa menit?",
+      "i-m8": "8 menit",
+      "t-angka-8": "Jarum panjang di angka 8. Sudah berapa menit?",
+      "i-m10": "10 menit",
+      "i-m2": "2 menit",
+      "t-angka-2": "Jarum panjang di angka 2. Sudah berapa menit?",
+      "i-m6": "6 menit",
+      "t-angka-6": "Jarum panjang di angka 6. Sudah berapa menit?",
+      "t-angka-10": "Jarum panjang di angka 10. Sudah berapa menit?",
+      "i-m4": "4 menit",
+      "t-angka-4": "Jarum panjang di angka 4. Sudah berapa menit?",
+      "i-a5": "angka 5",
+      "i-a4": "angka 4",
+      "i-a6": "angka 6",
+      "t-menit-25": "Sudah 25 menit. Jarum panjang di angka berapa?",
+      "i-a8": "angka 8",
+      "i-a7": "angka 7",
+      "i-a9": "angka 9",
+      "t-menit-40": "Sudah 40 menit. Jarum panjang di angka berapa?",
+      "i-a3": "angka 3",
+      "i-a2": "angka 2",
+      "t-menit-15": "Sudah 15 menit. Jarum panjang di angka berapa?",
+      "i-a10": "angka 10",
+      "i-a11": "angka 11",
+      "t-menit-50": "Sudah 50 menit. Jarum panjang di angka berapa?",
+      "b-pilihan": "pilihan"
+    },
+    "en": {
+      "judul": "Classroom Wall Clock",
+      "instruksi": "The long hand shows the minutes. Skip count by fives from 12: the 1 means 5 minutes, the 2 means 10 minutes, and so on.",
+      "i-m35": "35 minutes",
+      "i-m7": "7 minutes",
+      "i-m30": "30 minutes",
+      "t-angka-7": "The long hand points to 7. How many minutes?",
+      "i-m15": "15 minutes",
+      "i-m3": "3 minutes",
+      "i-m20": "20 minutes",
+      "t-angka-3": "The long hand points to 3. How many minutes?",
+      "i-m45": "45 minutes",
+      "i-m9": "9 minutes",
+      "i-m40": "40 minutes",
+      "t-angka-9": "The long hand points to 9. How many minutes?",
+      "i-m55": "55 minutes",
+      "i-m11": "11 minutes",
+      "i-m50": "50 minutes",
+      "t-angka-11": "The long hand points to 11. How many minutes?",
+      "i-m25": "25 minutes",
+      "i-m5": "5 minutes",
+      "t-angka-5": "The long hand points to 5. How many minutes?",
+      "i-m8": "8 minutes",
+      "t-angka-8": "The long hand points to 8. How many minutes?",
+      "i-m10": "10 minutes",
+      "i-m2": "2 minutes",
+      "t-angka-2": "The long hand points to 2. How many minutes?",
+      "i-m6": "6 minutes",
+      "t-angka-6": "The long hand points to 6. How many minutes?",
+      "t-angka-10": "The long hand points to 10. How many minutes?",
+      "i-m4": "4 minutes",
+      "t-angka-4": "The long hand points to 4. How many minutes?",
+      "i-a5": "the 5",
+      "i-a4": "the 4",
+      "i-a6": "the 6",
+      "t-menit-25": "It is 25 minutes past. Where is the long hand?",
+      "i-a8": "the 8",
+      "i-a7": "the 7",
+      "i-a9": "the 9",
+      "t-menit-40": "It is 40 minutes past. Where is the long hand?",
+      "i-a3": "the 3",
+      "i-a2": "the 2",
+      "t-menit-15": "It is 15 minutes past. Where is the long hand?",
+      "i-a10": "the 10",
+      "i-a11": "the 11",
+      "t-menit-50": "It is 50 minutes past. Where is the long hand?",
+      "b-pilihan": "choices"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "m35",
+      "labelKey": "i-m35",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m7",
+      "labelKey": "i-m7",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m30",
+      "labelKey": "i-m30",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m15",
+      "labelKey": "i-m15",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m3",
+      "labelKey": "i-m3",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m20",
+      "labelKey": "i-m20",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m45",
+      "labelKey": "i-m45",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m9",
+      "labelKey": "i-m9",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m40",
+      "labelKey": "i-m40",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m55",
+      "labelKey": "i-m55",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m11",
+      "labelKey": "i-m11",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m50",
+      "labelKey": "i-m50",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m25",
+      "labelKey": "i-m25",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m5",
+      "labelKey": "i-m5",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m8",
+      "labelKey": "i-m8",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m10",
+      "labelKey": "i-m10",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m2",
+      "labelKey": "i-m2",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m6",
+      "labelKey": "i-m6",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "m4",
+      "labelKey": "i-m4",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a5",
+      "labelKey": "i-a5",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a4",
+      "labelKey": "i-a4",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a6",
+      "labelKey": "i-a6",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a8",
+      "labelKey": "i-a8",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a7",
+      "labelKey": "i-a7",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a9",
+      "labelKey": "i-a9",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a3",
+      "labelKey": "i-a3",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a2",
+      "labelKey": "i-a2",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a10",
+      "labelKey": "i-a10",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    },
+    {
+      "id": "a11",
+      "labelKey": "i-a11",
+      "bin": "pilihan",
+      "emoji": "🕰️",
+      "scale": 0.7
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r-angka-7",
+      "promptKey": "t-angka-7",
+      "choices": [
+        "m35",
+        "m7",
+        "m30"
+      ],
+      "correct": "m35"
+    },
+    {
+      "id": "r-angka-3",
+      "promptKey": "t-angka-3",
+      "choices": [
+        "m15",
+        "m3",
+        "m20"
+      ],
+      "correct": "m15"
+    },
+    {
+      "id": "r-angka-9",
+      "promptKey": "t-angka-9",
+      "choices": [
+        "m45",
+        "m9",
+        "m40"
+      ],
+      "correct": "m45"
+    },
+    {
+      "id": "r-angka-11",
+      "promptKey": "t-angka-11",
+      "choices": [
+        "m55",
+        "m11",
+        "m50"
+      ],
+      "correct": "m55"
+    },
+    {
+      "id": "r-angka-5",
+      "promptKey": "t-angka-5",
+      "choices": [
+        "m25",
+        "m5",
+        "m30"
+      ],
+      "correct": "m25"
+    },
+    {
+      "id": "r-angka-8",
+      "promptKey": "t-angka-8",
+      "choices": [
+        "m40",
+        "m8",
+        "m45"
+      ],
+      "correct": "m40"
+    },
+    {
+      "id": "r-angka-2",
+      "promptKey": "t-angka-2",
+      "choices": [
+        "m10",
+        "m2",
+        "m15"
+      ],
+      "correct": "m10"
+    },
+    {
+      "id": "r-angka-6",
+      "promptKey": "t-angka-6",
+      "choices": [
+        "m30",
+        "m6",
+        "m35"
+      ],
+      "correct": "m30"
+    },
+    {
+      "id": "r-angka-10",
+      "promptKey": "t-angka-10",
+      "choices": [
+        "m50",
+        "m10",
+        "m45"
+      ],
+      "correct": "m50"
+    },
+    {
+      "id": "r-angka-4",
+      "promptKey": "t-angka-4",
+      "choices": [
+        "m20",
+        "m4",
+        "m25"
+      ],
+      "correct": "m20"
+    },
+    {
+      "id": "r-menit-25",
+      "promptKey": "t-menit-25",
+      "choices": [
+        "a5",
+        "a4",
+        "a6"
+      ],
+      "correct": "a5"
+    },
+    {
+      "id": "r-menit-40",
+      "promptKey": "t-menit-40",
+      "choices": [
+        "a8",
+        "a7",
+        "a9"
+      ],
+      "correct": "a8"
+    },
+    {
+      "id": "r-menit-15",
+      "promptKey": "t-menit-15",
+      "choices": [
+        "a3",
+        "a2",
+        "a4"
+      ],
+      "correct": "a3"
+    },
+    {
+      "id": "r-menit-50",
+      "promptKey": "t-menit-50",
+      "choices": [
+        "a10",
+        "a9",
+        "a11"
+      ],
+      "correct": "a10"
+    }
+  ]
+}

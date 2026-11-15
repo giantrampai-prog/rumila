@@ -1,0 +1,175 @@
+{
+  "id": "sd5-sains-tumbuhan-bukit-berbunga",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUNGA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jelajah Tumbuhan Bukit",
+      "instruksi": "Kamu mendaki bukit. Pilah tiap tumbuhan: bisa berbunga, atau tidak pernah berbunga.",
+      "b-bunga": "bisa berbunga",
+      "b-tidak": "tidak pernah berbunga (berspora atau berbiji di runjung)",
+      "i-pisang": "pohon pisang",
+      "i-tomat": "tanaman tomat",
+      "i-cabai": "tanaman cabai",
+      "i-terong": "tanaman terong",
+      "i-sepatu": "kembang sepatu",
+      "i-teratai": "teratai",
+      "i-anggrek": "anggrek bulan",
+      "i-kopi": "pohon kopi",
+      "i-anggur": "tanaman anggur",
+      "i-pakis": "pakis sayur",
+      "i-tanduk": "paku tanduk rusa",
+      "i-ekorkuda": "paku ekor kuda",
+      "i-lumuthati": "lumut hati di batu basah",
+      "i-lumuttembok": "lumut hijau di tembok",
+      "i-damar": "pohon damar (bijinya di runjung)"
+    },
+    "en": {
+      "judul": "Hill Plant Hike",
+      "instruksi": "You are hiking up a hill. Sort each plant: it can flower, or it never flowers.",
+      "b-bunga": "can flower",
+      "b-tidak": "never flowers (spores or cones)",
+      "i-pisang": "banana plant",
+      "i-tomat": "tomato plant",
+      "i-cabai": "chilli plant",
+      "i-terong": "aubergine plant",
+      "i-sepatu": "hibiscus",
+      "i-teratai": "lotus",
+      "i-anggrek": "moth orchid",
+      "i-kopi": "coffee plant",
+      "i-anggur": "grapevine",
+      "i-pakis": "edible fern",
+      "i-tanduk": "staghorn fern",
+      "i-ekorkuda": "horsetail",
+      "i-lumuthati": "liverwort on a wet rock",
+      "i-lumuttembok": "green moss on a wall",
+      "i-damar": "kauri pine (seeds in cones)"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 10,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah kartu per putaran: 4 → 10; tiap wadah dijamin kebagian minimal satu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mechanic": "pilah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "bunga",
+      "labelKey": "b-bunga",
+      "emoji": "🌺",
+      "color": "#f8bbd0"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🍂",
+      "color": "#d7ccc8"
+    }
+  ],
+  "items": [
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "bunga",
+      "emoji": "🍌"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "i-tomat",
+      "bin": "bunga",
+      "emoji": "🍅"
+    },
+    {
+      "id": "cabai",
+      "labelKey": "i-cabai",
+      "bin": "bunga",
+      "emoji": "🌶️"
+    },
+    {
+      "id": "terong",
+      "labelKey": "i-terong",
+      "bin": "bunga",
+      "emoji": "🍆"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "i-sepatu",
+      "bin": "bunga",
+      "emoji": "🌺"
+    },
+    {
+      "id": "teratai",
+      "labelKey": "i-teratai",
+      "bin": "bunga",
+      "emoji": "🪷"
+    },
+    {
+      "id": "anggrek",
+      "labelKey": "i-anggrek",
+      "bin": "bunga",
+      "emoji": "🌸"
+    },
+    {
+      "id": "kopi",
+      "labelKey": "i-kopi",
+      "bin": "bunga",
+      "emoji": "☕"
+    },
+    {
+      "id": "anggur",
+      "labelKey": "i-anggur",
+      "bin": "bunga",
+      "emoji": "🍇"
+    },
+    {
+      "id": "pakis",
+      "labelKey": "i-pakis",
+      "bin": "tidak",
+      "emoji": "🌿"
+    },
+    {
+      "id": "tanduk",
+      "labelKey": "i-tanduk",
+      "bin": "tidak",
+      "emoji": "🦌"
+    },
+    {
+      "id": "ekorkuda",
+      "labelKey": "i-ekorkuda",
+      "bin": "tidak",
+      "emoji": "🎋"
+    },
+    {
+      "id": "lumuthati",
+      "labelKey": "i-lumuthati",
+      "bin": "tidak",
+      "emoji": "🟩"
+    },
+    {
+      "id": "lumuttembok",
+      "labelKey": "i-lumuttembok",
+      "bin": "tidak",
+      "emoji": "🧱"
+    },
+    {
+      "id": "damar",
+      "labelKey": "i-damar",
+      "bin": "tidak",
+      "emoji": "🌲"
+    }
+  ],
+  "pilihan": []
+}

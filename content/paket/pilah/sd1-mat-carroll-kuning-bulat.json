@@ -1,0 +1,209 @@
+{
+  "id": "sd1-mat-carroll-kuning-bulat",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD1.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kotak Kuning dan Bulat",
+      "instruksi": "Benda ini kuning atau bukan? Bulat atau bersudut? Cari kotak yang cocok untuk dua-duanya.",
+      "b-kuning-bulat": "kuning · bulat",
+      "b-kuning-sudut": "kuning · bersudut",
+      "b-lain-bulat": "bukan kuning · bulat",
+      "b-lain-sudut": "bukan kuning · bersudut",
+      "i-lingkaran-kuning": "lingkaran kuning",
+      "i-lingkaran-kuning-kecil": "lingkaran kuning kecil",
+      "i-bulan-purnama": "bulan purnama",
+      "i-wajah-senyum": "wajah senyum",
+      "i-persegi-kuning": "persegi kuning",
+      "i-segitiga-kuning": "segitiga kuning",
+      "i-bintang-kuning": "bintang kuning",
+      "i-buku-kuning": "buku kuning",
+      "i-bola": "bola sepak",
+      "i-lingkaran-biru": "lingkaran biru",
+      "i-jeruk": "jeruk",
+      "i-lingkaran-hijau": "lingkaran hijau",
+      "i-persegi-merah": "persegi merah",
+      "i-segitiga-biru": "segitiga biru",
+      "i-buku-biru": "buku biru",
+      "i-persegi-hijau": "persegi hijau"
+    },
+    "en": {
+      "judul": "Yellow and Round Boxes",
+      "instruksi": "Is it yellow or not? Is it round or does it have corners? Find the box that matches both.",
+      "b-kuning-bulat": "yellow · round",
+      "b-kuning-sudut": "yellow · corners",
+      "b-lain-bulat": "not yellow · round",
+      "b-lain-sudut": "not yellow · corners",
+      "i-lingkaran-kuning": "yellow circle",
+      "i-lingkaran-kuning-kecil": "small yellow circle",
+      "i-bulan-purnama": "full moon",
+      "i-wajah-senyum": "smiley face",
+      "i-persegi-kuning": "yellow square",
+      "i-segitiga-kuning": "yellow triangle",
+      "i-bintang-kuning": "yellow star",
+      "i-buku-kuning": "yellow book",
+      "i-bola": "football",
+      "i-lingkaran-biru": "blue circle",
+      "i-jeruk": "orange",
+      "i-lingkaran-hijau": "green circle",
+      "i-persegi-merah": "red square",
+      "i-segitiga-biru": "blue triangle",
+      "i-buku-biru": "blue book",
+      "i-persegi-hijau": "green square"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 2,
+      "step": 2,
+      "keterangan": "2 kotak kuning dulu, lalu 4 kotak"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 2,
+      "keterangan": "benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "kuning-bulat",
+      "labelKey": "b-kuning-bulat",
+      "emoji": "🟡"
+    },
+    {
+      "id": "kuning-sudut",
+      "labelKey": "b-kuning-sudut",
+      "emoji": "🟨"
+    },
+    {
+      "id": "lain-bulat",
+      "labelKey": "b-lain-bulat",
+      "emoji": "🟣"
+    },
+    {
+      "id": "lain-sudut",
+      "labelKey": "b-lain-sudut",
+      "emoji": "🟪"
+    }
+  ],
+  "items": [
+    {
+      "id": "lingkaran-kuning",
+      "labelKey": "i-lingkaran-kuning",
+      "bin": "kuning-bulat",
+      "shape": "circle",
+      "color": "#ffd600",
+      "scale": 1
+    },
+    {
+      "id": "lingkaran-kuning-kecil",
+      "labelKey": "i-lingkaran-kuning-kecil",
+      "bin": "kuning-bulat",
+      "shape": "circle",
+      "color": "#ffd600",
+      "scale": 0.6
+    },
+    {
+      "id": "bulan-purnama",
+      "labelKey": "i-bulan-purnama",
+      "bin": "kuning-bulat",
+      "emoji": "🌕"
+    },
+    {
+      "id": "wajah-senyum",
+      "labelKey": "i-wajah-senyum",
+      "bin": "kuning-bulat",
+      "emoji": "😀"
+    },
+    {
+      "id": "persegi-kuning",
+      "labelKey": "i-persegi-kuning",
+      "bin": "kuning-sudut",
+      "emoji": "🟨"
+    },
+    {
+      "id": "segitiga-kuning",
+      "labelKey": "i-segitiga-kuning",
+      "bin": "kuning-sudut",
+      "shape": "triangle",
+      "color": "#ffd600"
+    },
+    {
+      "id": "bintang-kuning",
+      "labelKey": "i-bintang-kuning",
+      "bin": "kuning-sudut",
+      "emoji": "⭐"
+    },
+    {
+      "id": "buku-kuning",
+      "labelKey": "i-buku-kuning",
+      "bin": "kuning-sudut",
+      "emoji": "📒"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "lain-bulat",
+      "emoji": "⚽"
+    },
+    {
+      "id": "lingkaran-biru",
+      "labelKey": "i-lingkaran-biru",
+      "bin": "lain-bulat",
+      "emoji": "🔵"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "bin": "lain-bulat",
+      "emoji": "🍊"
+    },
+    {
+      "id": "lingkaran-hijau",
+      "labelKey": "i-lingkaran-hijau",
+      "bin": "lain-bulat",
+      "shape": "circle",
+      "color": "#2bb673"
+    },
+    {
+      "id": "persegi-merah",
+      "labelKey": "i-persegi-merah",
+      "bin": "lain-sudut",
+      "emoji": "🟥"
+    },
+    {
+      "id": "segitiga-biru",
+      "labelKey": "i-segitiga-biru",
+      "bin": "lain-sudut",
+      "shape": "triangle",
+      "color": "#3f7fe0"
+    },
+    {
+      "id": "buku-biru",
+      "labelKey": "i-buku-biru",
+      "bin": "lain-sudut",
+      "emoji": "📘"
+    },
+    {
+      "id": "persegi-hijau",
+      "labelKey": "i-persegi-hijau",
+      "bin": "lain-sudut",
+      "emoji": "🟩"
+    }
+  ]
+}

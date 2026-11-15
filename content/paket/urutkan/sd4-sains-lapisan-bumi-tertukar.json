@@ -1,0 +1,324 @@
+{
+  "id": "sd4-sains-lapisan-bumi-tertukar",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD4.BUMI-ANTARIKSA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lapisan Bumi yang Tertukar",
+      "instruksi": "Dua lapisan Bumi tertukar. Tukar sekali supaya urutannya benar sesuai arah perjalanan.",
+      "x-kerak": "kerak: kulit tipis berisi gunung, tanah, dan dasar laut",
+      "x-mantel": "mantel: lapisan paling tebal dari batuan panas yang lunak",
+      "x-intiluar": "inti luar: besi dan nikel yang cair",
+      "x-intidalam": "inti dalam: bola besi dan nikel padat di pusat",
+      "t-turun-penuh": "Bor raksasa menembus dari permukaan ke pusat Bumi",
+      "t-naik-penuh": "Kapsul naik dari pusat Bumi ke permukaan"
+    },
+    "en": {
+      "judul": "Mixed-Up Layers of the Earth",
+      "instruksi": "Two of the Earth's layers are swapped. Swap them once so the order matches the direction of travel.",
+      "x-kerak": "crust: a thin skin with mountains, soil, and the sea floor",
+      "x-mantel": "mantle: the thickest layer, of hot, soft rock",
+      "x-intiluar": "outer core: liquid iron and nickel",
+      "x-intidalam": "inner core: a solid ball of iron and nickel at the centre",
+      "t-turun-penuh": "A giant drill goes from the surface to the centre of the Earth",
+      "t-naik-penuh": "A capsule rises from the centre of the Earth to the surface"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "bukit",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "turun-penuh",
+      "titleKey": "t-turun-penuh",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "naik-penuh",
+      "titleKey": "t-naik-penuh",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "turun-tanpa-inti-dalam",
+      "titleKey": "t-turun-penuh",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "turun-tanpa-kerak",
+      "titleKey": "t-turun-penuh",
+      "steps": [
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "turun-tanpa-mantel",
+      "titleKey": "t-turun-penuh",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "turun-tanpa-inti-luar",
+      "titleKey": "t-turun-penuh",
+      "steps": [
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "naik-tanpa-kerak",
+      "titleKey": "t-naik-penuh",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "naik-tanpa-inti-dalam",
+      "titleKey": "t-naik-penuh",
+      "steps": [
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "naik-tanpa-mantel",
+      "titleKey": "t-naik-penuh",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        },
+        {
+          "id": "intiluar",
+          "labelKey": "x-intiluar",
+          "shape": "rect",
+          "color": "#fbc02d",
+          "scale": 0.8
+        },
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        }
+      ]
+    },
+    {
+      "id": "naik-tanpa-inti-luar",
+      "titleKey": "t-naik-penuh",
+      "steps": [
+        {
+          "id": "intidalam",
+          "labelKey": "x-intidalam",
+          "shape": "circle",
+          "color": "#fff176",
+          "scale": 0.8
+        },
+        {
+          "id": "mantel",
+          "labelKey": "x-mantel",
+          "shape": "rect",
+          "color": "#ef6c00",
+          "scale": 0.8
+        },
+        {
+          "id": "kerak",
+          "labelKey": "x-kerak",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 0.8
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "id": "sd5-sains-rotasi-revolusi-menara",
+  "version": "1.0.0",
+  "level": "SD5",
+  "competencyIds": [
+    "SAINS.SD5.BUMI-ORBIT.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Teropong di Menara Pengamat",
+      "instruksi": "Dari menara pengamat, kamu memperhatikan langit. Pilih jawaban yang tepat.",
+      "b-pilihan": "pilihan",
+      "i-rotasi": "Bumi berputar pada porosnya",
+      "i-revolusi": "Bumi beredar mengelilingi Matahari",
+      "i-bulanedar": "Bulan beredar mengelilingi Bumi",
+      "i-sehari": "1 hari (24 jam)",
+      "i-seminggu": "1 minggu",
+      "i-setahun": "1 tahun (sekitar 365 hari)",
+      "i-satelit": "satelit alami",
+      "i-planet": "planet",
+      "i-bintang": "bintang",
+      "i-kali11": "11 kali",
+      "i-kali365": "365 kali",
+      "i-kali24": "24 kali",
+      "i-kali7": "7 kali",
+      "i-kali1": "1 kali",
+      "i-kali52": "52 kali",
+      "i-bulan": "Bulan",
+      "i-mars": "Mars",
+      "i-matahari": "Matahari",
+      "p-r1": "Siang berganti malam karena…",
+      "p-r2": "Saat Indonesia siang, negara di sisi lain Bumi sedang malam. Ini karena…",
+      "p-r3": "Bayangan tiang bendera berpindah dari pagi ke sore. Penyebabnya…",
+      "p-r4": "Satu tahun kalender didasarkan pada lamanya…",
+      "p-r5": "Waktu yang dibutuhkan Bumi untuk berputar satu kali penuh pada porosnya.",
+      "p-r6": "Kamu berumur 11 tahun. Sejak kamu lahir, Bumi sudah mengelilingi Matahari sebanyak…",
+      "p-r7": "Bumi berputar pada porosnya sekali sehari. Dalam 1 minggu, Bumi berputar sebanyak…",
+      "p-r8": "Bulan mengitari planet Bumi secara alami, bukan buatan manusia. Bulan tergolong…",
+      "p-r9": "Matahari memancarkan cahayanya sendiri. Matahari tergolong…",
+      "p-r10": "Bumi beredar mengelilingi Matahari dan dikitari Bulan. Bumi tergolong…",
+      "p-r11": "Benda langit manakah yang menjadi satelit alami Bumi?",
+      "p-r12": "Purnama berganti ke purnama berikutnya kira-kira tiap sebulan. Ini karena…"
+    },
+    "en": {
+      "judul": "The Lookout Tower Telescope",
+      "instruksi": "From the lookout tower you watch the sky. Choose the right answer.",
+      "b-pilihan": "choices",
+      "i-rotasi": "Earth spinning on its axis",
+      "i-revolusi": "Earth travelling around the Sun",
+      "i-bulanedar": "the Moon travelling around Earth",
+      "i-sehari": "1 day (24 hours)",
+      "i-seminggu": "1 week",
+      "i-setahun": "1 year (about 365 days)",
+      "i-satelit": "a natural satellite",
+      "i-planet": "a planet",
+      "i-bintang": "a star",
+      "i-kali11": "11 times",
+      "i-kali365": "365 times",
+      "i-kali24": "24 times",
+      "i-kali7": "7 times",
+      "i-kali1": "1 time",
+      "i-kali52": "52 times",
+      "i-bulan": "the Moon",
+      "i-mars": "Mars",
+      "i-matahari": "the Sun",
+      "p-r1": "Day turns into night because of…",
+      "p-r2": "When it is daytime in Indonesia, it is night on the other side of Earth. This is because of…",
+      "p-r3": "The flagpole's shadow moves from morning to afternoon. The cause is…",
+      "p-r4": "One calendar year is based on how long it takes for…",
+      "p-r5": "The time Earth takes to spin once fully on its axis.",
+      "p-r6": "You are 11 years old. Since you were born, Earth has gone around the Sun…",
+      "p-r7": "Earth spins on its axis once a day. In 1 week, Earth spins…",
+      "p-r8": "The Moon circles planet Earth naturally, not made by people. The Moon is…",
+      "p-r9": "The Sun gives off its own light. The Sun is…",
+      "p-r10": "Earth travels around the Sun and is circled by the Moon. Earth is…",
+      "p-r11": "Which object in the sky is Earth's natural satellite?",
+      "p-r12": "One full moon follows the next about once a month. This is because of…"
+    }
+  },
+  "knobs": {},
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "menara",
+  "mechanic": "pilah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "b-pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "rotasi",
+      "labelKey": "i-rotasi",
+      "bin": "pilihan",
+      "emoji": "🔄"
+    },
+    {
+      "id": "revolusi",
+      "labelKey": "i-revolusi",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "bulanedar",
+      "labelKey": "i-bulanedar",
+      "bin": "pilihan",
+      "emoji": "🌙"
+    },
+    {
+      "id": "sehari",
+      "labelKey": "i-sehari",
+      "bin": "pilihan",
+      "emoji": "🕛"
+    },
+    {
+      "id": "seminggu",
+      "labelKey": "i-seminggu",
+      "bin": "pilihan",
+      "emoji": "📅"
+    },
+    {
+      "id": "setahun",
+      "labelKey": "i-setahun",
+      "bin": "pilihan",
+      "emoji": "🗓️"
+    },
+    {
+      "id": "satelit",
+      "labelKey": "i-satelit",
+      "bin": "pilihan",
+      "emoji": "🛰️"
+    },
+    {
+      "id": "planet",
+      "labelKey": "i-planet",
+      "bin": "pilihan",
+      "emoji": "🪐"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "pilihan",
+      "emoji": "⭐"
+    },
+    {
+      "id": "kali11",
+      "labelKey": "i-kali11",
+      "bin": "pilihan",
+      "emoji": "1️⃣"
+    },
+    {
+      "id": "kali365",
+      "labelKey": "i-kali365",
+      "bin": "pilihan",
+      "emoji": "🔢"
+    },
+    {
+      "id": "kali24",
+      "labelKey": "i-kali24",
+      "bin": "pilihan",
+      "emoji": "🔁"
+    },
+    {
+      "id": "kali7",
+      "labelKey": "i-kali7",
+      "bin": "pilihan",
+      "emoji": "7️⃣"
+    },
+    {
+      "id": "kali1",
+      "labelKey": "i-kali1",
+      "bin": "pilihan",
+      "emoji": "☝️"
+    },
+    {
+      "id": "kali52",
+      "labelKey": "i-kali52",
+      "bin": "pilihan",
+      "emoji": "📆"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "pilihan",
+      "emoji": "🌕"
+    },
+    {
+      "id": "mars",
+      "labelKey": "i-mars",
+      "bin": "pilihan",
+      "emoji": "🔴"
+    },
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pilihan",
+      "emoji": "🌞"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "p-r1",
+      "choices": [
+        "rotasi",
+        "revolusi",
+        "bulanedar"
+      ],
+      "correct": "rotasi"
+    },
+    {
+      "id": "r2",
+      "promptKey": "p-r2",
+      "choices": [
+        "rotasi",
+        "bulanedar",
+        "revolusi"
+      ],
+      "correct": "rotasi"
+    },
+    {
+      "id": "r3",
+      "promptKey": "p-r3",
+      "choices": [
+        "rotasi",
+        "revolusi",
+        "bulanedar"
+      ],
+      "correct": "rotasi"
+    },
+    {
+      "id": "r4",
+      "promptKey": "p-r4",
+      "choices": [
+        "revolusi",
+        "rotasi",
+        "bulanedar"
+      ],
+      "correct": "revolusi"
+    },
+    {
+      "id": "r5",
+      "promptKey": "p-r5",
+      "choices": [
+        "sehari",
+        "seminggu",
+        "setahun"
+      ],
+      "correct": "sehari"
+    },
+    {
+      "id": "r6",
+      "promptKey": "p-r6",
+      "choices": [
+        "kali11",
+        "kali365",
+        "kali24"
+      ],
+      "correct": "kali11"
+    },
+    {
+      "id": "r7",
+      "promptKey": "p-r7",
+      "choices": [
+        "kali7",
+        "kali1",
+        "kali52"
+      ],
+      "correct": "kali7"
+    },
+    {
+      "id": "r8",
+      "promptKey": "p-r8",
+      "choices": [
+        "satelit",
+        "planet",
+        "bintang"
+      ],
+      "correct": "satelit"
+    },
+    {
+      "id": "r9",
+      "promptKey": "p-r9",
+      "choices": [
+        "bintang",
+        "planet",
+        "satelit"
+      ],
+      "correct": "bintang"
+    },
+    {
+      "id": "r10",
+      "promptKey": "p-r10",
+      "choices": [
+        "planet",
+        "bintang",
+        "satelit"
+      ],
+      "correct": "planet"
+    },
+    {
+      "id": "r11",
+      "promptKey": "p-r11",
+      "choices": [
+        "bulan",
+        "mars",
+        "matahari"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "r12",
+      "promptKey": "p-r12",
+      "choices": [
+        "bulanedar",
+        "rotasi",
+        "revolusi"
+      ],
+      "correct": "bulanedar"
+    }
+  ]
+}

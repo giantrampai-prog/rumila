@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-kembalian-ratusan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "mechanic": "dagang",
   "competencyIds": [
@@ -71,7 +71,7 @@
     {
       "id": "jus",
       "labelKey": "jus",
-      "price": 12500,
+      "price": 23500,
       "emoji": "🧃"
     },
     {
@@ -113,7 +113,7 @@
     {
       "id": "topi",
       "labelKey": "topi",
-      "price": 19500,
+      "price": 31500,
       "emoji": "👒"
     },
     {
@@ -131,13 +131,13 @@
     {
       "id": "dompet",
       "labelKey": "dompet",
-      "price": 41000,
+      "price": 41500,
       "emoji": "👛"
     },
     {
       "id": "jaket",
       "labelKey": "jaket",
-      "price": 88000,
+      "price": 88500,
       "emoji": "🧥"
     }
   ],

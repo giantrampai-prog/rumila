@@ -1,0 +1,262 @@
+{
+  "id": "sd3-mat-carroll-peti-gudang",
+  "version": "1.0.0",
+  "level": "SD3",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.SD3.DATA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Carroll Nomor Peti",
+      "instruksi": "Kelipatan 5 bersatuan 0 atau 5. Genap bersatuan 0, 2, 4, 6, atau 8. Lihat angka satuannya, lalu taruh tiap nomor peti di kotak yang cocok untuk keduanya.",
+      "b-lima-genap": "kelipatan 5, genap",
+      "b-bukan-genap": "bukan kelipatan 5, genap",
+      "b-lima-ganjil": "kelipatan 5, ganjil",
+      "b-bukan-ganjil": "bukan kelipatan 5, ganjil",
+      "i1": "20",
+      "i2": "70",
+      "i3": "130",
+      "i4": "360",
+      "i5": "500",
+      "i6": "790",
+      "i7": "25",
+      "i8": "55",
+      "i9": "85",
+      "i10": "175",
+      "i11": "415",
+      "i12": "635",
+      "i13": "14",
+      "i14": "48",
+      "i15": "92",
+      "i16": "206",
+      "i17": "374",
+      "i18": "558",
+      "i19": "11",
+      "i20": "39",
+      "i21": "73",
+      "i22": "147",
+      "i23": "301",
+      "i24": "883"
+    },
+    "en": {
+      "judul": "Carroll Crate Numbers",
+      "instruksi": "Multiples of 5 end in 0 or 5. Even numbers end in 0, 2, 4, 6 or 8. Look at the ones digit, then put each crate number in the box that fits both.",
+      "b-lima-genap": "multiple of 5, even",
+      "b-bukan-genap": "not a multiple of 5, even",
+      "b-lima-ganjil": "multiple of 5, odd",
+      "b-bukan-ganjil": "not a multiple of 5, odd",
+      "i1": "20",
+      "i2": "70",
+      "i3": "130",
+      "i4": "360",
+      "i5": "500",
+      "i6": "790",
+      "i7": "25",
+      "i8": "55",
+      "i9": "85",
+      "i10": "175",
+      "i11": "415",
+      "i12": "635",
+      "i13": "14",
+      "i14": "48",
+      "i15": "92",
+      "i16": "206",
+      "i17": "374",
+      "i18": "558",
+      "i19": "11",
+      "i20": "39",
+      "i21": "73",
+      "i22": "147",
+      "i23": "301",
+      "i24": "883"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "step": 2,
+      "keterangan": "2 kotak genap dulu, lalu 4 kotak Carroll"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "nomor per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "lima-genap",
+      "labelKey": "b-lima-genap"
+    },
+    {
+      "id": "bukan-genap",
+      "labelKey": "b-bukan-genap"
+    },
+    {
+      "id": "lima-ganjil",
+      "labelKey": "b-lima-ganjil"
+    },
+    {
+      "id": "bukan-ganjil",
+      "labelKey": "b-bukan-ganjil"
+    }
+  ],
+  "items": [
+    {
+      "id": "lima-genap-1",
+      "labelKey": "i1",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "lima-genap-2",
+      "labelKey": "i2",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "lima-genap-3",
+      "labelKey": "i3",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "lima-genap-4",
+      "labelKey": "i4",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "lima-genap-5",
+      "labelKey": "i5",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "lima-genap-6",
+      "labelKey": "i6",
+      "bin": "lima-genap",
+      "scale": 1
+    },
+    {
+      "id": "lima-ganjil-7",
+      "labelKey": "i7",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "lima-ganjil-8",
+      "labelKey": "i8",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "lima-ganjil-9",
+      "labelKey": "i9",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "lima-ganjil-10",
+      "labelKey": "i10",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "lima-ganjil-11",
+      "labelKey": "i11",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "lima-ganjil-12",
+      "labelKey": "i12",
+      "bin": "lima-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "bukan-genap-13",
+      "labelKey": "i13",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "bukan-genap-14",
+      "labelKey": "i14",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "bukan-genap-15",
+      "labelKey": "i15",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "bukan-genap-16",
+      "labelKey": "i16",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "bukan-genap-17",
+      "labelKey": "i17",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "bukan-genap-18",
+      "labelKey": "i18",
+      "bin": "bukan-genap",
+      "scale": 1
+    },
+    {
+      "id": "bukan-ganjil-19",
+      "labelKey": "i19",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "bukan-ganjil-20",
+      "labelKey": "i20",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "bukan-ganjil-21",
+      "labelKey": "i21",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "bukan-ganjil-22",
+      "labelKey": "i22",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "bukan-ganjil-23",
+      "labelKey": "i23",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    },
+    {
+      "id": "bukan-ganjil-24",
+      "labelKey": "i24",
+      "bin": "bukan-ganjil",
+      "scale": 1
+    }
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "id": "sd1-mat-gerbong-urut-0-20",
+  "version": "1.0.0",
+  "level": "SD1",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "MAT.SD1.BILANGAN-100.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Gerbong Kereta Tertukar",
+      "instruksi": "Dua gerbong kereta tertukar tempat. Tukar satu kali supaya nomornya urut dari yang terkecil ke yang terbesar.",
+      "j-urut": "Dari terkecil ke terbesar",
+      "s-1": "1",
+      "s-5": "5",
+      "s-9": "9",
+      "s-14": "14",
+      "s-20": "20",
+      "s-2": "2",
+      "s-8": "8",
+      "s-11": "11",
+      "s-13": "13",
+      "s-19": "19",
+      "s-0": "0",
+      "s-6": "6",
+      "s-10": "10",
+      "s-16": "16",
+      "s-17": "17",
+      "s-3": "3",
+      "s-4": "4",
+      "s-12": "12",
+      "s-15": "15",
+      "s-18": "18",
+      "s-7": "7"
+    },
+    "en": {
+      "judul": "Mixed-Up Train Cars",
+      "instruksi": "Two train cars have swapped places. Swap once so the numbers go from smallest to largest.",
+      "j-urut": "Smallest to largest",
+      "s-1": "1",
+      "s-5": "5",
+      "s-9": "9",
+      "s-14": "14",
+      "s-20": "20",
+      "s-2": "2",
+      "s-8": "8",
+      "s-11": "11",
+      "s-13": "13",
+      "s-19": "19",
+      "s-0": "0",
+      "s-6": "6",
+      "s-10": "10",
+      "s-16": "16",
+      "s-17": "17",
+      "s-3": "3",
+      "s-4": "4",
+      "s-12": "12",
+      "s-15": "15",
+      "s-18": "18",
+      "s-7": "7"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah gerbong: 3 → 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "stasiun",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "gerbong-1",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n1",
+          "labelKey": "s-1",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n5",
+          "labelKey": "s-5",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n9",
+          "labelKey": "s-9",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n14",
+          "labelKey": "s-14",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n20",
+          "labelKey": "s-20",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-2",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n2",
+          "labelKey": "s-2",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n8",
+          "labelKey": "s-8",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n11",
+          "labelKey": "s-11",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n13",
+          "labelKey": "s-13",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n19",
+          "labelKey": "s-19",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-3",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n0",
+          "labelKey": "s-0",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n6",
+          "labelKey": "s-6",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n10",
+          "labelKey": "s-10",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n16",
+          "labelKey": "s-16",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n17",
+          "labelKey": "s-17",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-4",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n3",
+          "labelKey": "s-3",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n4",
+          "labelKey": "s-4",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n12",
+          "labelKey": "s-12",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n15",
+          "labelKey": "s-15",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n18",
+          "labelKey": "s-18",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-5",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n5",
+          "labelKey": "s-5",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n7",
+          "labelKey": "s-7",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n13",
+          "labelKey": "s-13",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n19",
+          "labelKey": "s-19",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n20",
+          "labelKey": "s-20",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-6",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n8",
+          "labelKey": "s-8",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n9",
+          "labelKey": "s-9",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n11",
+          "labelKey": "s-11",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n14",
+          "labelKey": "s-14",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n16",
+          "labelKey": "s-16",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-7",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n0",
+          "labelKey": "s-0",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n1",
+          "labelKey": "s-1",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n17",
+          "labelKey": "s-17",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n18",
+          "labelKey": "s-18",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n20",
+          "labelKey": "s-20",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-8",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n10",
+          "labelKey": "s-10",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n12",
+          "labelKey": "s-12",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n13",
+          "labelKey": "s-13",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n15",
+          "labelKey": "s-15",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n19",
+          "labelKey": "s-19",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-9",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n4",
+          "labelKey": "s-4",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n9",
+          "labelKey": "s-9",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n14",
+          "labelKey": "s-14",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n16",
+          "labelKey": "s-16",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n20",
+          "labelKey": "s-20",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-10",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n2",
+          "labelKey": "s-2",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n3",
+          "labelKey": "s-3",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n7",
+          "labelKey": "s-7",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n10",
+          "labelKey": "s-10",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n12",
+          "labelKey": "s-12",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-11",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n11",
+          "labelKey": "s-11",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n14",
+          "labelKey": "s-14",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n15",
+          "labelKey": "s-15",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n17",
+          "labelKey": "s-17",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n18",
+          "labelKey": "s-18",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-12",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n6",
+          "labelKey": "s-6",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n8",
+          "labelKey": "s-8",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n9",
+          "labelKey": "s-9",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n13",
+          "labelKey": "s-13",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n20",
+          "labelKey": "s-20",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-13",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n1",
+          "labelKey": "s-1",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n3",
+          "labelKey": "s-3",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n16",
+          "labelKey": "s-16",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n19",
+          "labelKey": "s-19",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n20",
+          "labelKey": "s-20",
+          "emoji": "🚃"
+        }
+      ]
+    },
+    {
+      "id": "gerbong-14",
+      "titleKey": "j-urut",
+      "steps": [
+        {
+          "id": "n7",
+          "labelKey": "s-7",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n10",
+          "labelKey": "s-10",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n11",
+          "labelKey": "s-11",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n18",
+          "labelKey": "s-18",
+          "emoji": "🚃"
+        },
+        {
+          "id": "n19",
+          "labelKey": "s-19",
+          "emoji": "🚃"
+        }
+      ]
+    }
+  ]
+}

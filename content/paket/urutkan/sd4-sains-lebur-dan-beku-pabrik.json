@@ -1,0 +1,404 @@
+{
+  "id": "sd4-sains-lebur-dan-beku-pabrik",
+  "version": "1.0.0",
+  "level": "SD4",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.SD4.WUJUD-ZAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lebur dan Beku di Pabrik",
+      "instruksi": "Susun langkah-langkah mencair dan membeku dari awal sampai akhir. Ingat, zatnya tetap sama walau wujudnya berubah.",
+      "t-kaca": "Pecahan kaca dibuat jadi botol",
+      "kaca-a": "pecahan kaca padat dikumpulkan",
+      "kaca-b": "dipanaskan di tungku yang sangat panas",
+      "kaca-c": "kaca meleleh jadi cairan kental",
+      "kaca-d": "dibentuk lalu didinginkan jadi botol kaca padat",
+      "t-besi": "Besi dicetak jadi pagar",
+      "besi-a": "potongan besi padat",
+      "besi-b": "dilebur di tungku pabrik",
+      "besi-c": "besi cair dituang ke cetakan",
+      "besi-d": "mendingin dan membeku jadi pagar besi",
+      "t-plastik": "Biji plastik dibuat jadi ember",
+      "plastik-a": "biji plastik padat di karung",
+      "plastik-b": "dipanaskan di dalam mesin",
+      "plastik-c": "plastik meleleh jadi cair",
+      "plastik-d": "dicetak dan mendingin jadi ember padat",
+      "t-lem": "Lem tembak dipakai menempel kardus",
+      "lem-a": "batang lem padat dimasukkan ke alat",
+      "lem-b": "alat lem menjadi panas",
+      "lem-c": "lem keluar dalam wujud cair",
+      "lem-d": "lem mendingin dan mengeras lagi",
+      "t-solder": "Timah solder menyambung kabel",
+      "solder-a": "kawat timah solder padat",
+      "solder-b": "disentuh ujung solder yang panas",
+      "solder-c": "timah meleleh jadi tetesan cair",
+      "solder-d": "timah mendingin, mengeras, dan menyambung kabel",
+      "t-lava": "Gunung api meletus",
+      "lava-a": "batuan cair panas di dalam gunung",
+      "lava-b": "batuan cair keluar sebagai lava",
+      "lava-c": "lava mengalir dan mulai mendingin",
+      "lava-d": "lava membeku jadi batuan padat",
+      "t-kutub": "Bongkahan es di laut kutub",
+      "kutub-a": "bongkahan es padat mengapung",
+      "kutub-b": "musim panas, udara menghangat",
+      "kutub-c": "es mencair sedikit demi sedikit",
+      "kutub-d": "es jadi air cair; zatnya tetap air",
+      "t-botol": "Sebotol air di freezer",
+      "botol-a": "air cair di dalam botol",
+      "botol-b": "botol disimpan di freezer semalam",
+      "botol-c": "air membeku jadi es padat",
+      "botol-d": "dikeluarkan, es mencair lagi jadi air yang sama",
+      "t-salju": "Salju di atap rumah",
+      "salju-a": "salju padat menumpuk di atap",
+      "salju-b": "pagi hari Matahari bersinar hangat",
+      "salju-c": "salju meleleh dan menetes",
+      "salju-d": "tinggal air cair di talang",
+      "t-puncak": "Air di kolam gunung yang tinggi",
+      "puncak-a": "sore hari: air kolam masih cair",
+      "puncak-b": "malam hari udara sangat dingin",
+      "puncak-c": "pagi buta: air kolam membeku jadi es",
+      "puncak-d": "siang hari es mencair lagi jadi air"
+    },
+    "en": {
+      "judul": "Melting and Freezing at the Factory",
+      "instruksi": "Put the melting and freezing steps in order from start to finish. Remember, the substance stays the same even when its state changes.",
+      "t-kaca": "Broken glass made into bottles",
+      "kaca-a": "solid pieces of glass are collected",
+      "kaca-b": "heated in a very hot furnace",
+      "kaca-c": "the glass melts into a thick liquid",
+      "kaca-d": "shaped, then cooled into a solid glass bottle",
+      "t-besi": "Iron cast into a fence",
+      "besi-a": "solid pieces of iron",
+      "besi-b": "melted in the factory furnace",
+      "besi-c": "the liquid iron is poured into a mould",
+      "besi-d": "it cools and freezes into an iron fence",
+      "t-plastik": "Plastic pellets made into buckets",
+      "plastik-a": "solid plastic pellets in a sack",
+      "plastik-b": "heated inside the machine",
+      "plastik-c": "the plastic melts into a liquid",
+      "plastik-d": "moulded and cooled into a solid bucket",
+      "t-lem": "A glue gun used to stick cardboard",
+      "lem-a": "a solid glue stick goes into the gun",
+      "lem-b": "the glue gun heats up",
+      "lem-c": "the glue comes out as a liquid",
+      "lem-d": "the glue cools and hardens again",
+      "t-solder": "Solder joins two wires",
+      "solder-a": "a solid wire of solder",
+      "solder-b": "touched with the hot soldering iron",
+      "solder-c": "the solder melts into liquid drops",
+      "solder-d": "the solder cools, hardens, and joins the wires",
+      "t-lava": "A volcano erupts",
+      "lava-a": "hot liquid rock inside the volcano",
+      "lava-b": "the liquid rock comes out as lava",
+      "lava-c": "the lava flows and starts to cool",
+      "lava-d": "the lava freezes into solid rock",
+      "t-kutub": "An ice block in the polar sea",
+      "kutub-a": "a solid block of ice floats",
+      "kutub-b": "summer comes, the air warms up",
+      "kutub-c": "the ice melts little by little",
+      "kutub-d": "the ice becomes liquid water; it is still water",
+      "t-botol": "A bottle of water in the freezer",
+      "botol-a": "liquid water in a bottle",
+      "botol-b": "the bottle stays in the freezer overnight",
+      "botol-c": "the water freezes into solid ice",
+      "botol-d": "taken out, the ice melts back into the same water",
+      "t-salju": "Snow on a roof",
+      "salju-a": "solid snow piles up on the roof",
+      "salju-b": "in the morning the sun shines warmly",
+      "salju-c": "the snow melts and drips",
+      "salju-d": "only liquid water is left in the gutter",
+      "t-puncak": "Water in a pond high on a mountain",
+      "puncak-a": "evening: the pond water is still liquid",
+      "puncak-b": "at night the air is very cold",
+      "puncak-c": "before dawn: the pond water freezes into ice",
+      "puncak-d": "at midday the ice melts back into water"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah langkah: 3 → 4"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pabrik",
+  "mode": "susun",
+  "sequences": [
+    {
+      "id": "kaca",
+      "titleKey": "t-kaca",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "kaca-a",
+          "shape": "triangle",
+          "color": "#b2ebf2",
+          "scale": 0.8
+        },
+        {
+          "id": "b",
+          "labelKey": "kaca-b",
+          "emoji": "🔥"
+        },
+        {
+          "id": "c",
+          "labelKey": "kaca-c",
+          "emoji": "🫗"
+        },
+        {
+          "id": "d",
+          "labelKey": "kaca-d",
+          "emoji": "🍾"
+        }
+      ]
+    },
+    {
+      "id": "besi",
+      "titleKey": "t-besi",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "besi-a",
+          "emoji": "🔩"
+        },
+        {
+          "id": "b",
+          "labelKey": "besi-b",
+          "emoji": "🔥"
+        },
+        {
+          "id": "c",
+          "labelKey": "besi-c",
+          "emoji": "🫗"
+        },
+        {
+          "id": "d",
+          "labelKey": "besi-d",
+          "emoji": "⛓️"
+        }
+      ]
+    },
+    {
+      "id": "plastik",
+      "titleKey": "t-plastik",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "plastik-a",
+          "shape": "circle",
+          "color": "#4fc3f7",
+          "scale": 0.6
+        },
+        {
+          "id": "b",
+          "labelKey": "plastik-b",
+          "emoji": "🔥"
+        },
+        {
+          "id": "c",
+          "labelKey": "plastik-c",
+          "emoji": "🫗"
+        },
+        {
+          "id": "d",
+          "labelKey": "plastik-d",
+          "emoji": "🪣"
+        }
+      ]
+    },
+    {
+      "id": "lem",
+      "titleKey": "t-lem",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "lem-a",
+          "shape": "rect",
+          "color": "#fffde7",
+          "scale": 0.8
+        },
+        {
+          "id": "b",
+          "labelKey": "lem-b",
+          "emoji": "🔥"
+        },
+        {
+          "id": "c",
+          "labelKey": "lem-c",
+          "emoji": "💧"
+        },
+        {
+          "id": "d",
+          "labelKey": "lem-d",
+          "emoji": "📦"
+        }
+      ]
+    },
+    {
+      "id": "solder",
+      "titleKey": "t-solder",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "solder-a",
+          "shape": "rect",
+          "color": "#bdbdbd",
+          "scale": 0.8
+        },
+        {
+          "id": "b",
+          "labelKey": "solder-b",
+          "emoji": "🔥"
+        },
+        {
+          "id": "c",
+          "labelKey": "solder-c",
+          "emoji": "💧"
+        },
+        {
+          "id": "d",
+          "labelKey": "solder-d",
+          "emoji": "🔌"
+        }
+      ]
+    },
+    {
+      "id": "lava",
+      "titleKey": "t-lava",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "lava-a",
+          "emoji": "🌋"
+        },
+        {
+          "id": "b",
+          "labelKey": "lava-b",
+          "emoji": "🔥"
+        },
+        {
+          "id": "c",
+          "labelKey": "lava-c",
+          "emoji": "🌡️"
+        },
+        {
+          "id": "d",
+          "labelKey": "lava-d",
+          "emoji": "🪨"
+        }
+      ]
+    },
+    {
+      "id": "kutub",
+      "titleKey": "t-kutub",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "kutub-a",
+          "emoji": "🧊"
+        },
+        {
+          "id": "b",
+          "labelKey": "kutub-b",
+          "emoji": "☀️"
+        },
+        {
+          "id": "c",
+          "labelKey": "kutub-c",
+          "emoji": "💧"
+        },
+        {
+          "id": "d",
+          "labelKey": "kutub-d",
+          "emoji": "🌊"
+        }
+      ]
+    },
+    {
+      "id": "botol",
+      "titleKey": "t-botol",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "botol-a",
+          "emoji": "💧"
+        },
+        {
+          "id": "b",
+          "labelKey": "botol-b",
+          "emoji": "❄️"
+        },
+        {
+          "id": "c",
+          "labelKey": "botol-c",
+          "emoji": "🧊"
+        },
+        {
+          "id": "d",
+          "labelKey": "botol-d",
+          "emoji": "🥛"
+        }
+      ]
+    },
+    {
+      "id": "salju",
+      "titleKey": "t-salju",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "salju-a",
+          "emoji": "❄️"
+        },
+        {
+          "id": "b",
+          "labelKey": "salju-b",
+          "emoji": "☀️"
+        },
+        {
+          "id": "c",
+          "labelKey": "salju-c",
+          "emoji": "💧"
+        },
+        {
+          "id": "d",
+          "labelKey": "salju-d",
+          "emoji": "💦"
+        }
+      ]
+    },
+    {
+      "id": "puncak",
+      "titleKey": "t-puncak",
+      "steps": [
+        {
+          "id": "a",
+          "labelKey": "puncak-a",
+          "emoji": "💧"
+        },
+        {
+          "id": "b",
+          "labelKey": "puncak-b",
+          "emoji": "❄️"
+        },
+        {
+          "id": "c",
+          "labelKey": "puncak-c",
+          "emoji": "🧊"
+        },
+        {
+          "id": "d",
+          "labelKey": "puncak-d",
+          "emoji": "☀️"
+        }
+      ]
+    }
+  ]
+}
