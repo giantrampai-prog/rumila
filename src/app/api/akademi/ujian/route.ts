@@ -5,11 +5,13 @@
 //     Soal yang dihitung = JUMLAH_SOAL[jenis] pertama; kurang dari itu → 422 belum_lengkap.
 //   - Soal harus dari paket yang memuat kompetensi cakupan ujian.
 //   - Satu sesi = satu hasil (idempoten). Gagal hari ini → baru boleh mengulang besok (WIB).
+//   - Ujian Akhir (kenaikan) SEKALI: sesi kedua ditolak; sesi yang ditinggal di tengah boleh diserahkan sebagian
+//     ({ serahkan: true }), soal yang tidak dijawab dihitung salah.
 //   - Efek: Ujian Semester 1 lulus → akademi_siswa.semester = 2. Tes Penempatan lulus (atau tes PAUD) → jenjang awal.
 // Jawaban: 200 { ujian, levelBaru? } · 409 jenjang_beda / sudah_lulus / tunggu_besok / penempatan_ditutup ·
 //          422 belum_lengkap / ruang_tidak_dikenal · 401/403 · 503 belum_aktif.
 
-import { JENIS_UJIAN, JUMLAH_SOAL, bolehMengulang, lulusDari, nilaiDari, type HasilUjian, type JenisUjian } from "@/lib/akademi/ujian";
+import { JENIS_UJIAN, JUMLAH_SOAL, SEKALI, bolehMengulang, lulusDari, nilaiDari, type HasilUjian, type JenisUjian } from "@/lib/akademi/ujian";
 import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
 import { KOMPETENSI, PAKET } from "@/lib/akademi/katalog";
 import { UUID, anggotaMilik, jawab, klien, semuaEvent } from "@/lib/akademi/server";
@@ -61,7 +63,21 @@ export async function POST(req: Request) {
 
   const { data: riwayat } = await admin.from("akademi_ujian").select(KOLOM).eq("member_id", memberId).eq("jenis", jenis).eq("level", level).eq("ruang", ruang);
   const boleh = bolehMengulang((riwayat ?? []).map(keHasil), jenis, level, ruang);
-  if (!boleh.boleh) return jawab(409, { error: boleh.besok ? "tunggu_besok" : "sudah_lulus" });
+  if (!boleh.boleh) return jawab(409, { error: boleh.sekali ? "sudah_dikerjakan" : boleh.besok ? "tunggu_besok" : "sudah_lulus" });
+
+  // Ujian Akhir sekali-jalan: sesi lain yang sudah mulai menjawab (walau belum diserahkan) mengunci sesi baru
+  if (SEKALI.has(jenis)) {
+    const { data: lain } = await admin
+      .from("learner_event")
+      .select("session_id")
+      .eq("member_id", memberId)
+      .eq("type", "attempt")
+      .eq("payload->detail->>ujian", jenis)
+      .eq("payload->detail->>level", level)
+      .neq("session_id", sessionId)
+      .limit(1);
+    if (lain?.length) return jawab(409, { error: "sudah_dikerjakan", sessionLain: lain[0].session_id });
+  }
 
   const rows = await semuaEvent(admin, memberId, sessionId);
   if (!rows) return jawab(500, { error: "galat" });
@@ -69,7 +85,8 @@ export async function POST(req: Request) {
   const isiPaket = new Map(PAKET.map((p) => [p.id, p.competencyIds]));
   const jawaban = rows.filter((r) => r.type === "attempt");
   const n = JUMLAH_SOAL[jenis];
-  if (jawaban.length < n) return jawab(422, { error: "belum_lengkap", terjawab: jawaban.length, perlu: n });
+  // Ujian sekali-jalan boleh diserahkan sebagian (keluar di tengah jalan): soal yang tidak dijawab = salah
+  if (jawaban.length < n && !(SEKALI.has(jenis) && jawaban.length > 0 && body?.serahkan === true)) return jawab(422, { error: "belum_lengkap", terjawab: jawaban.length, perlu: n });
   const dihitung = jawaban.slice(0, n);
   if (dihitung.some((r) => !(isiPaket.get(r.activity_id) ?? []).some((c) => sah.has(c)))) return jawab(422, { error: "soal_di_luar_cakupan" });
   const benar = dihitung.filter((r) => {

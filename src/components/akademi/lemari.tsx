@@ -12,8 +12,10 @@ import { piagamModul, sertifikatSemester, tahunAjaran } from "@/lib/akademi/piag
 import { ambilSertifikat, useSertifikat } from "@/lib/akademi/sertifikat";
 import { ambilUjian, useUjian } from "@/lib/akademi/ujian-klien";
 import type { Member } from "@/lib/store";
-import { PiagamModulKartu, SertifikatSemesterKartu, TranskripJenjang } from "./piagam";
-import { SERTIFIKAT_PRINT_CSS, SertifikatKartu, tanggalPanjang } from "./sertifikat";
+import { useFotoAnak } from "@/lib/akademi/foto";
+import { BUKU_PRINT_CSS, BukuSertifikat } from "./buku-sertifikat";
+import { PiagamModulKartu, SertifikatSemesterKartu } from "./piagam";
+import { SERTIFIKAT_PRINT_CSS, tanggalPanjang } from "./sertifikat";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
@@ -37,11 +39,12 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
   const satuModul = jenis === "modul" ? modul.find((m) => m.sessionId === sesi) : undefined;
   const satuSemester = jenis === "semester" ? semester.find((m) => m.sessionId === sesi) : undefined;
   const satuJenjang = jenis === "jenjang" ? jenjang.find((m) => m.code === sesi) : undefined;
+  const foto = useFotoAnak(anak.id);
 
   if (satuModul || satuSemester || satuJenjang)
     return (
       <div className={`sertifikat-root ${akar}`} style={{ background: tertanam ? undefined : "#fff0da", fontFamily: NUNITO, color: INK }}>
-        <style>{SERTIFIKAT_PRINT_CSS}</style>
+        <style>{satuJenjang ? BUKU_PRINT_CSS : SERTIFIKAT_PRINT_CSS}</style>
         <div className="mx-auto flex max-w-[1040px] flex-col gap-4 px-4 py-5">
           <div className="no-print flex items-center gap-2">
             <button onClick={() => onLihat(null)} aria-label="Kembali ke lemari" className="flex size-10 items-center justify-center rounded-full bg-white">
@@ -50,14 +53,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
             <h1 style={{ fontFamily: BALOO, fontSize: 22, fontWeight: 800 }}>{satuModul ? "Piagam Modul" : satuSemester ? "Sertifikat Semester" : "Sertifikat Kenaikan Jenjang"}</h1>
           </div>
           {satuJenjang ? (
-            <>
-              <div className="flex justify-center">
-                <SertifikatKartu nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} pending={satuJenjang.pending} />
-              </div>
-              <div className="flex justify-center">
-                <TranskripJenjang nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} />
-              </div>
-            </>
+            <BukuSertifikat nama={anak.name} level={satuJenjang.level} kode={satuJenjang.code} nomor={satuJenjang.nomor} issuedAt={satuJenjang.issuedAt} snapshot={satuJenjang.snapshot} foto={foto} pending={satuJenjang.pending} />
           ) : (
             <div className="flex justify-center">{satuModul ? <PiagamModulKartu nama={anak.name} p={satuModul} /> : <SertifikatSemesterKartu nama={anak.name} s={satuSemester!} />}</div>
           )}
@@ -85,7 +81,7 @@ export function LemariPiagam({ anak, lihat, onLihat, kembali, tertanam }: { anak
             </p>
           </div>
         </header>
-        {kosong && <p className={`${KARTU} p-6 text-center text-[15px] font-bold text-ink-3`}>Belum ada piagam. Piagam pertama terbit saat Kuis Modul pertama lulus.</p>}
+        {kosong && <p className={`${KARTU} p-6 text-center text-[15px] font-bold text-ink-3`}>Belum ada piagam. Piagam pertama terbit saat Ulangan Modul pertama lulus.</p>}
 
         {jenjang.length > 0 && (
           <Rak judul="Sertifikat Kenaikan Jenjang" ikon="workspace_premium">

@@ -180,13 +180,13 @@ export function TranskripJenjang({ nama, level, kode, nomor, issuedAt, snapshot 
         <tbody>
           {lain.map((u) => (
             <tr key={u.jenis + u.ruang} style={{ borderBottom: "1px solid #ece6d8" }}>
-              <td style={{ padding: "5px 0" }}>{u.jenis === "semester" ? `Ujian Semester ${u.ruang.slice(1)}` : "Ujian Kenaikan"}</td>
+              <td style={{ padding: "5px 0" }}>{u.jenis === "semester" ? `Ujian Semester ${u.ruang.slice(1)}` : "Ujian Akhir"}</td>
               <td className="text-right" style={{ fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{u.nilai}</td>
             </tr>
           ))}
           {kuis.map((u) => (
             <tr key={u.ruang} style={{ borderBottom: "1px solid #ece6d8" }}>
-              <td style={{ padding: "5px 0" }}>Kuis Modul · {namaUnit(u.ruang)}</td>
+              <td style={{ padding: "5px 0" }}>Ulangan Modul · {namaUnit(u.ruang)}</td>
               <td className="text-right" style={{ fontWeight: 700, fontVariantNumeric: "tabular-nums" }}>{u.nilai}</td>
             </tr>
           ))}

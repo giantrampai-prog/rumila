@@ -73,7 +73,7 @@ export async function ambilUjian(memberId: string): Promise<HasilUjian[]> {
 
 export type HasilKirim = { ok: true; hasil: HasilUjian; levelBaru?: LevelId } | { ok: false; alasan: string };
 
-async function minta(memberId: string, h: Pick<HasilUjian, "jenis" | "level" | "ruang" | "sessionId">): Promise<HasilKirim> {
+async function minta(memberId: string, h: Pick<HasilUjian, "jenis" | "level" | "ruang" | "sessionId">, serahkan = false): Promise<HasilKirim> {
   try {
     await kirimAntrean();
     const { data } = await supabase().auth.getSession();
@@ -82,7 +82,7 @@ async function minta(memberId: string, h: Pick<HasilUjian, "jenis" | "level" | "
     const res = await fetch("/api/akademi/ujian", {
       method: "POST",
       headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
-      body: JSON.stringify({ memberId, jenis: h.jenis, level: h.level, ruang: h.ruang, sessionId: h.sessionId }),
+      body: JSON.stringify({ memberId, jenis: h.jenis, level: h.level, ruang: h.ruang, sessionId: h.sessionId, serahkan }),
     });
     const j = (await res.json().catch(() => ({}))) as { ujian?: HasilUjian; levelBaru?: LevelId; error?: string };
     if (res.ok && j.ujian) return { ok: true, hasil: j.ujian, levelBaru: j.levelBaru };
@@ -98,7 +98,7 @@ const sementara = (a: string) => a === "jaringan" || a === "penerbit_belum_aktif
  * Serahkan hasil ujian. `lokal` = hitungan di perangkat (dipakai bila offline / anggota demo, ditandai pending).
  * Mengembalikan hasil resmi server bila ada.
  */
-export async function serahkanUjian(memberId: string, lokal: HasilUjian): Promise<HasilKirim> {
+export async function serahkanUjian(memberId: string, lokal: HasilUjian, sebagian = false): Promise<HasilKirim> {
   if (!terhubung(memberId)) {
     const h = { ...lokal, pending: !UUID.test(memberId) ? false : true };
     taruh(memberId, h);
@@ -106,10 +106,10 @@ export async function serahkanUjian(memberId: string, lokal: HasilUjian): Promis
     return { ok: true, hasil: h };
   }
   // jawaban terakhir perlu sampai ke server dulu; beri jeda singkat bila antrean baru saja terkirim
-  let r = await minta(memberId, lokal);
+  let r = await minta(memberId, lokal, sebagian);
   if (!r.ok && r.alasan === "belum_lengkap") {
     await new Promise((ok) => setTimeout(ok, 2500));
-    r = await minta(memberId, lokal);
+    r = await minta(memberId, lokal, sebagian);
   }
   if (r.ok) {
     taruh(memberId, { ...r.hasil, pending: false });
@@ -130,7 +130,7 @@ async function kirimTertunda(memberId: string) {
   sedang = true;
   try {
     for (const h of ujianAnak(memberId).filter((x) => x.pending)) {
-      const r = await minta(memberId, h);
+      const r = await minta(memberId, h, h.jenis === "kenaikan");
       if (r.ok) {
         taruh(memberId, { ...r.hasil, pending: false });
         if (r.levelBaru) setLevelAnak(memberId, r.levelBaru);

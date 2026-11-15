@@ -10,8 +10,11 @@ import { useEffect, useMemo, useState } from "react";
 import { LEVELS, type LevelId } from "@akademi/schema";
 import { BALOO, NUNITO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
-import { SERTIFIKAT_PRINT_CSS, SertifikatKartu } from "@/components/akademi/sertifikat";
-import { TranskripJenjang } from "@/components/akademi/piagam";
+import { SERTIFIKAT_PRINT_CSS } from "@/components/akademi/sertifikat";
+import { BUKU_PRINT_CSS, BukuSertifikat } from "@/components/akademi/buku-sertifikat";
+import { useFotoAnak } from "@/lib/akademi/foto";
+import { sudahDikerjakan } from "@/lib/akademi/ujian";
+import { useUjian } from "@/lib/akademi/ujian-klien";
 import { useEvents } from "@/lib/akademi/jejak";
 import { LEVEL_PANGKAT, pangkat } from "@/lib/akademi/koleksi";
 import { KOMPETENSI } from "@/lib/akademi/konten";
@@ -75,6 +78,9 @@ function IsiSertifikat({ level }: { level: LevelId }) {
   const daftar = useSertifikat(me.id);
   const sert = daftar.find((s) => s.level === level && !s.track);
   const [sibuk, setSibuk] = useState(false);
+  const foto = useFotoAnak(me.id);
+  const hasilUjian = useUjian(me.id);
+  const akhirSelesai = sudahDikerjakan(hasilUjian, "kenaikan", level, "");
 
   // Sertifikat yang terbit di perangkat lain: tarik dari server sekali saat halaman dibuka.
   useEffect(() => {
@@ -119,12 +125,8 @@ function IsiSertifikat({ level }: { level: LevelId }) {
     return (
       <>
         <Kepala judul={`Sertifikat ${meta.pangkat}`} sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
-        <div className="flex justify-center">
-          <SertifikatKartu nama={me.name} level={level} kode={sert.code} issuedAt={sert.issuedAt} snapshot={sert.snapshot} nomor={sert.nomor} pending={sert.pending} />
-        </div>
-        <div className="flex justify-center">
-          <TranskripJenjang nama={me.name} level={level} kode={sert.code} nomor={sert.nomor} issuedAt={sert.issuedAt} snapshot={sert.snapshot} />
-        </div>
+        <style>{BUKU_PRINT_CSS}</style>
+        <BukuSertifikat nama={me.name} level={level} kode={sert.code} nomor={sert.nomor} issuedAt={sert.issuedAt} snapshot={sert.snapshot} foto={foto} pending={sert.pending} />
         <div className="no-print flex flex-wrap justify-center gap-2">
           <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>
             <Icon name="print" size={22} /> Cetak / PDF
@@ -144,6 +146,24 @@ function IsiSertifikat({ level }: { level: LevelId }) {
     );
   }
 
+  if (p?.tercapai && !akhirSelesai) {
+    return (
+      <>
+        <Kepala judul="Siap Ujian Akhir" sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
+        <div className={`${KARTU} flex flex-col items-center gap-4 p-6 text-center`}>
+          <Icon name="workspace_premium" size={56} style={{ color: "#e8590c" }} />
+          <p className="max-w-[440px] leading-tight" style={{ fontFamily: BALOO, fontSize: 24, fontWeight: 800, color: INK }}>
+            Semua kompetensi inti {meta.nama} sudah dikuasai
+          </p>
+          <p className="max-w-[460px] text-[14px] font-bold text-ink-3">Satu langkah lagi: Ujian Akhir jenjang. Ujian ini hanya sekali dan nilainya tertulis di sertifikat. Boleh latihan dulu sepuasnya.</p>
+          <Link href="/akademi/ujian?jenis=kenaikan&ruang=" className="inline-flex h-14 items-center gap-2 rounded-[18px] px-8 text-white" style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800, background: "linear-gradient(155deg,#ff8a5c,#e8590c 65%)", boxShadow: "0 4px 0 #b8460a" }}>
+            <Icon name="arrow_forward" size={24} /> Ke Ujian Akhir
+          </Link>
+        </div>
+      </>
+    );
+  }
+
   if (p?.tercapai) {
     return (
       <>
@@ -156,7 +176,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
             Semua kompetensi inti {meta.nama} sudah dikuasai
           </p>
           <p className="max-w-[460px] text-[14px] font-bold text-ink-3">
-            Sertifikat Kenaikan Jenjang diterbitkan sekali setelah Ujian Kenaikan lulus, lengkap dengan nomor resmi, kode verifikasi, dan transkrip.
+            Sertifikat Kenaikan Jenjang diterbitkan sekali setelah Ujian Akhir lulus, lengkap dengan nomor resmi, kode verifikasi, dan transkrip.
           </p>
           <button
             onClick={terbit}

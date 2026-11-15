@@ -28,7 +28,8 @@ describe("nilai & predikat", () => {
     expect(predikat(92)).toBe("Dengan Pujian");
     expect(predikat(85)).toBe("Sangat Baik");
     expect(predikat(76)).toBe("Baik");
-    expect(predikat(60)).toBe("Belum Lulus");
+    expect(predikat(60)).toBe("Cukup");
+    expect(predikat(60, "semester")).toBe("Belum Lulus");
   });
 });
 
@@ -67,5 +68,18 @@ describe("piagam & sertifikat semester", async () => {
     expect(tahunAjaran("2026-11-15T00:00:00Z")).toBe("2026/2027");
     expect(tahunAjaran("2027-03-01T00:00:00Z")).toBe("2026/2027");
     expect(nomorSemester({ level: "PAUD", ke: 1, at: "2026-11-15T00:00:00Z", sessionId: "ab12cd34-0000-4000-8000-000000000000" })).toBe("RA/2026/PAUD-S1/AB12CD34");
+  });
+});
+
+describe("Ujian Akhir sekali-jalan", () => {
+  const akhir = (nilai: number): HasilUjian => ({ jenis: "kenaikan", level: "TKB", ruang: "", sessionId: "s1", benar: 0, total: 20, nilai, lulus: nilai >= 75, at: "2026-11-01T03:00:00Z" });
+  it("sudah dikerjakan (lulus atau tidak) → tidak bisa diulang, bahkan besoknya", () => {
+    expect(bolehMengulang([akhir(60)], "kenaikan", "TKB", "", new Date("2026-12-01T03:00:00Z"))).toEqual({ boleh: false, sekali: true });
+    expect(bolehMengulang([akhir(95)], "kenaikan", "TKB", "")).toEqual({ boleh: false, sekali: true });
+    expect(bolehMengulang([], "kenaikan", "TKB", "")).toEqual({ boleh: true });
+  });
+  it("nilai di bawah 75 tetap berpredikat Cukup (bukan Belum Lulus)", () => {
+    expect(predikat(60, "kenaikan")).toBe("Cukup");
+    expect(predikat(60, "kuis")).toBe("Belum Lulus");
   });
 });

@@ -443,7 +443,7 @@ function Gerbang({ peta, berikut }: { peta: PetaJenjang; berikut?: LevelId }) {
         )}
       </span>
       {terbuka && !peta.lulusJenjang && sisa > 0 && <span className="mt-1 text-[12px] font-extrabold text-ink-3">{sisa} latihan lagi</span>}
-      {terbuka && peta.tercapai && !peta.kenaikanLulus && <span className="mt-1 text-[12px] font-extrabold text-ink-3">Ujian Kenaikan menunggu</span>}
+      {terbuka && peta.tercapai && !peta.kenaikanSelesai && <span className="mt-1 text-[12px] font-extrabold text-ink-3">Ujian Akhir menunggu</span>}
     </>
   );
   const label = peta.lulusJenjang ? "Gerbang naik pangkat: tercapai, lihat sertifikat" : terbuka ? `Gerbang naik pangkat: kuasai ${sisa} kemampuan inti lagi` : "Gerbang naik pangkat: terbuka setelah semua misi selesai";
