@@ -1,6 +1,6 @@
 {
   "id": "tombol-ajaib-kamar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -32,10 +32,10 @@
   "knobs": {
     "pairs": {
       "min": 2,
-      "max": 3,
+      "max": 2,
       "default": 2,
       "step": 1,
-      "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+      "keterangan": "tingkat dasar: dua tombol, dua alat"
     }
   },
   "assets": [],

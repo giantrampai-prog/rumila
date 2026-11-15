@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-pisahkan-campuran",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.02"
@@ -8,7 +8,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Pisahkan Campuran",
+      "judul": "Cara Tepat Memisahkan Campuran",
       "instruksi": "Baca campurannya, lalu sentuh cara memisahkan yang paling tepat.",
       "b-pilihan": "pilihan",
       "i-saring": "disaring dengan kain atau kertas saring",
@@ -36,7 +36,7 @@
       "p-r12": "Air berpasir dituang ke kertas saring. Pasirnya…"
     },
     "en": {
-      "judul": "Separate the Mixture",
+      "judul": "The Right Way to Separate a Mixture",
       "instruksi": "Read the mixture, then touch the best way to separate it.",
       "b-pilihan": "choices",
       "i-saring": "filtered through cloth or filter paper",

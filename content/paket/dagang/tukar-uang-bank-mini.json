@@ -1,6 +1,6 @@
 {
   "id": "tukar-uang-bank-mini",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -12,22 +12,24 @@
       "judul": "Bank Mini",
       "instruksi": "Robot jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
       "duaribu": "uang dua ribu",
-      "limaribu": "uang lima ribu"
+      "limaribu": "uang lima ribu",
+      "sepuluhribu": "uang sepuluh ribu"
     },
     "en": {
       "judul": "Mini Bank",
       "instruksi": "Robot is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
       "duaribu": "2,000 note",
-      "limaribu": "5,000 note"
+      "limaribu": "5,000 note",
+      "sepuluhribu": "ten-thousand note"
     }
   },
   "knobs": {
     "harga": {
-      "min": 5,
+      "min": 7,
       "max": 12,
       "default": 12,
       "step": 1,
-      "keterangan": "total uang yang ditukar (ribuan): sampai Rp12.000, 1–4 lembar; turun ke Rp5.000 bila anak kesulitan"
+      "keterangan": "tingkat lanjut: termasuk uang sepuluh ribu, 1–4 lembar, total Rp7.000–12.000"
     }
   },
   "assets": [],
@@ -57,6 +59,13 @@
       "price": 5000,
       "emoji": "💵",
       "color": "#6d4c41"
+    },
+    {
+      "id": "lembar-10000",
+      "labelKey": "sepuluhribu",
+      "price": 10000,
+      "emoji": "💵",
+      "color": "#8e24aa"
     }
   ],
   "customerRule": {

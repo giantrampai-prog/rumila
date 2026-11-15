@@ -292,8 +292,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan 3 hewan air yang disebutkan di Bawah Laut, misalnya penyu, gurita, dan ikan badut",
-        "en": "I can find 3 named water animals in the Undersea world, for example a turtle, an octopus, and a clownfish"
+        "id": "Aku bisa menemukan hewan yang hidup di air, misalnya penyu, gurita, dan ikan badut",
+        "en": "I can find animals that live in water, for example a sea turtle, an octopus, and a clownfish"
       },
       "depth": [
         "pakai"

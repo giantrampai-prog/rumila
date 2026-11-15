@@ -1,6 +1,6 @@
 {
   "id": "jam-dinding-dapur",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -22,10 +22,10 @@
   "knobs": {
     "hourMax": {
       "min": 6,
-      "max": 12,
+      "max": 6,
       "default": 6,
       "step": 1,
-      "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+      "keterangan": "tingkat dasar: pukul 1 sampai 6"
     },
     "bantuanWarna": {
       "min": 0,

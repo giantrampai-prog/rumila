@@ -1,0 +1,151 @@
+{
+  "id": "sains-intip-tembus-pandang",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Intip: Tembus Pandang?",
+      "instruksi": "Coba melihat lewat tiap benda. Taruh ke rak tembus pandang atau tidak tembus pandang.",
+      "tembus": "tembus pandang",
+      "tidak": "tidak tembus pandang",
+      "i-jendela": "kaca jendela",
+      "i-toples": "toples kaca bening",
+      "i-kacamata": "lensa kacamata",
+      "i-air": "air bening",
+      "i-plastik": "plastik bening",
+      "i-gelembung": "gelembung sabun",
+      "i-kardus": "kardus",
+      "i-tembok": "tembok bata",
+      "i-papan": "papan kayu",
+      "i-buku": "buku tebal",
+      "i-piring": "piring keramik",
+      "i-selimut": "selimut tebal"
+    },
+    "en": {
+      "judul": "Peek: Can You See Through?",
+      "instruksi": "Try looking through each thing. Put it on the see-through shelf or the not see-through shelf.",
+      "tembus": "see-through",
+      "tidak": "not see-through",
+      "i-jendela": "window glass",
+      "i-toples": "clear glass jar",
+      "i-kacamata": "glasses lens",
+      "i-air": "clear water",
+      "i-plastik": "clear plastic",
+      "i-gelembung": "soap bubble",
+      "i-kardus": "cardboard box",
+      "i-tembok": "brick wall",
+      "i-papan": "wooden board",
+      "i-buku": "thick book",
+      "i-piring": "ceramic plate",
+      "i-selimut": "thick blanket"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran; dicoba langsung, bukan ditebak"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "tembus",
+      "labelKey": "tembus",
+      "emoji": "👀",
+      "color": "#e0f7fa"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "tidak",
+      "emoji": "🙈",
+      "color": "#d7ccc8"
+    }
+  ],
+  "items": [
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "tembus",
+      "emoji": "🪟"
+    },
+    {
+      "id": "toples",
+      "labelKey": "i-toples",
+      "bin": "tembus",
+      "emoji": "🫙"
+    },
+    {
+      "id": "kacamata",
+      "labelKey": "i-kacamata",
+      "bin": "tembus",
+      "emoji": "👓"
+    },
+    {
+      "id": "air",
+      "labelKey": "i-air",
+      "bin": "tembus",
+      "emoji": "💧"
+    },
+    {
+      "id": "plastik",
+      "labelKey": "i-plastik",
+      "bin": "tembus",
+      "emoji": "🧊"
+    },
+    {
+      "id": "gelembung",
+      "labelKey": "i-gelembung",
+      "bin": "tembus",
+      "emoji": "🫧"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "tidak",
+      "emoji": "📦"
+    },
+    {
+      "id": "tembok",
+      "labelKey": "i-tembok",
+      "bin": "tidak",
+      "emoji": "🧱"
+    },
+    {
+      "id": "papan",
+      "labelKey": "i-papan",
+      "bin": "tidak",
+      "emoji": "🪵"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "tidak",
+      "emoji": "📕"
+    },
+    {
+      "id": "piring",
+      "labelKey": "i-piring",
+      "bin": "tidak",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "selimut",
+      "labelKey": "i-selimut",
+      "bin": "tidak",
+      "emoji": "🛏️"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,222 @@
+{
+  "id": "sains-lengkapi-tubuh-boneka",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.TUBUH-PANCAINDRA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lengkapi Tubuh Boneka",
+      "instruksi": "Boneka belum lengkap. Dengarkan, lalu sentuh bagian tubuh yang harus dipasang.",
+      "pilihan": "pilihan",
+      "i-kepala": "kepala",
+      "i-badan": "badan",
+      "i-tangan": "tangan",
+      "i-kaki": "kaki",
+      "i-bola": "bola",
+      "i-topi": "topi",
+      "i-sepatu": "sepatu",
+      "t1": "Boneka belum punya kepala. Sentuh kepala!",
+      "t2": "Boneka belum punya kaki. Sentuh kaki!",
+      "t3": "Boneka belum punya tangan. Sentuh tangan!",
+      "t4": "Boneka belum punya badan. Sentuh badan!",
+      "t5": "Bagian paling atas tubuh, tempat mata dan mulut. Yang mana?",
+      "t6": "Bagian paling bawah, untuk berdiri dan berjalan. Yang mana?",
+      "t7": "Bagian untuk memegang dan melambai. Yang mana?",
+      "t8": "Bagian tengah tubuh, tempat baju dipakai. Yang mana?",
+      "t9": "Kepala sudah ada. Apa yang dipasang di bawah kepala?",
+      "t10": "Badan dan kaki sudah ada. Apa yang dipasang di kiri dan kanan badan?"
+    },
+    "en": {
+      "judul": "Finish the Doll's Body",
+      "instruksi": "The doll is not finished. Listen, then touch the body part to put on.",
+      "pilihan": "choices",
+      "i-kepala": "head",
+      "i-badan": "body",
+      "i-tangan": "hand",
+      "i-kaki": "foot",
+      "i-bola": "ball",
+      "i-topi": "hat",
+      "i-sepatu": "shoe",
+      "t1": "The doll has no head. Touch the head!",
+      "t2": "The doll has no feet. Touch the foot!",
+      "t3": "The doll has no hands. Touch the hand!",
+      "t4": "The doll has no body. Touch the body!",
+      "t5": "The very top of the body, where the eyes and mouth are. Which one?",
+      "t6": "The very bottom part, for standing and walking. Which one?",
+      "t7": "The part for holding and waving. Which one?",
+      "t8": "The middle of the body, where a shirt goes. Which one?",
+      "t9": "The head is on. What goes under the head?",
+      "t10": "The body and feet are on. What goes on the left and right of the body?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2–3 pilihan; pengecoh benda bukan bagian tubuh (bola, topi, sepatu)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "klinik",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kepala",
+      "labelKey": "i-kepala",
+      "bin": "pilihan",
+      "emoji": "🙂"
+    },
+    {
+      "id": "badan",
+      "labelKey": "i-badan",
+      "bin": "pilihan",
+      "emoji": "👕"
+    },
+    {
+      "id": "tangan",
+      "labelKey": "i-tangan",
+      "bin": "pilihan",
+      "emoji": "✋"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "i-kaki",
+      "bin": "pilihan",
+      "emoji": "🦶"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "pilihan",
+      "emoji": "⚽"
+    },
+    {
+      "id": "topi",
+      "labelKey": "i-topi",
+      "bin": "pilihan",
+      "emoji": "🎩"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "i-sepatu",
+      "bin": "pilihan",
+      "emoji": "👟"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "t1",
+      "choices": [
+        "kepala",
+        "tangan",
+        "bola"
+      ],
+      "correct": "kepala"
+    },
+    {
+      "id": "r2",
+      "promptKey": "t2",
+      "choices": [
+        "kaki",
+        "kepala",
+        "sepatu"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "r3",
+      "promptKey": "t3",
+      "choices": [
+        "tangan",
+        "kaki",
+        "topi"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "r4",
+      "promptKey": "t4",
+      "choices": [
+        "badan",
+        "kepala",
+        "bola"
+      ],
+      "correct": "badan"
+    },
+    {
+      "id": "r5",
+      "promptKey": "t5",
+      "choices": [
+        "kepala",
+        "kaki",
+        "badan"
+      ],
+      "correct": "kepala"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t6",
+      "choices": [
+        "kaki",
+        "tangan",
+        "topi"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t7",
+      "choices": [
+        "tangan",
+        "badan",
+        "sepatu"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t8",
+      "choices": [
+        "badan",
+        "tangan",
+        "bola"
+      ],
+      "correct": "badan"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t9",
+      "choices": [
+        "badan",
+        "kaki",
+        "topi"
+      ],
+      "correct": "badan"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t10",
+      "choices": [
+        "tangan",
+        "kepala",
+        "sepatu"
+      ],
+      "correct": "tangan"
+    }
+  ]
+}

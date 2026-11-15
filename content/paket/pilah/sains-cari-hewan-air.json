@@ -1,0 +1,310 @@
+{
+  "id": "sains-cari-hewan-air",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Hewan Air",
+      "instruksi": "Dengarkan, lalu sentuh hewan yang hidup di air.",
+      "pilihan": "pilihan",
+      "i-gurita": "gurita",
+      "i-ikanbadut": "ikan badut",
+      "i-paus": "paus",
+      "i-lumba": "lumba-lumba",
+      "i-ubur": "ubur-ubur",
+      "i-cumi": "cumi-cumi",
+      "i-hiu": "hiu",
+      "i-udang": "udang",
+      "i-penyu": "penyu",
+      "i-anjinglaut": "anjing laut",
+      "i-kuda": "kuda",
+      "i-elang": "elang",
+      "i-kambing": "kambing",
+      "i-kucing": "kucing",
+      "i-kelelawar": "kelelawar",
+      "i-jerapah": "jerapah",
+      "i-unta": "unta",
+      "i-lebah": "lebah",
+      "t1": "Mana hewan yang hidup di air?",
+      "t2": "Mana hewan yang hidup di air?",
+      "t3": "Mana hewan yang hidup di air?",
+      "t4": "Mana hewan yang hidup di air?",
+      "t5": "Mana hewan yang hidup di air?",
+      "t6": "Mana hewan yang hidup di air?",
+      "t7": "Mana hewan yang hidup di air?",
+      "t8": "Mana hewan yang hidup di air?",
+      "t9": "Mana hewan yang hidup di air?",
+      "t10": "Mana hewan yang hidup di air?"
+    },
+    "en": {
+      "judul": "Find the Water Animal",
+      "instruksi": "Listen, then touch the animal that lives in water.",
+      "pilihan": "choices",
+      "i-gurita": "octopus",
+      "i-ikanbadut": "clownfish",
+      "i-paus": "whale",
+      "i-lumba": "dolphin",
+      "i-ubur": "jellyfish",
+      "i-cumi": "squid",
+      "i-hiu": "shark",
+      "i-udang": "shrimp",
+      "i-penyu": "sea turtle",
+      "i-anjinglaut": "seal",
+      "i-kuda": "horse",
+      "i-elang": "eagle",
+      "i-kambing": "goat",
+      "i-kucing": "cat",
+      "i-kelelawar": "bat",
+      "i-jerapah": "giraffe",
+      "i-unta": "camel",
+      "i-lebah": "bee",
+      "t1": "Which animal lives in water?",
+      "t2": "Which animal lives in water?",
+      "t3": "Which animal lives in water?",
+      "t4": "Which animal lives in water?",
+      "t5": "Which animal lives in water?",
+      "t6": "Which animal lives in water?",
+      "t7": "Which animal lives in water?",
+      "t8": "Which animal lives in water?",
+      "t9": "Which animal lives in water?",
+      "t10": "Which animal lives in water?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2–3 pilihan; tepat satu hewan air, pengecoh hewan darat & udara"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "gurita",
+      "labelKey": "i-gurita",
+      "bin": "pilihan",
+      "emoji": "🐙"
+    },
+    {
+      "id": "ikanbadut",
+      "labelKey": "i-ikanbadut",
+      "bin": "pilihan",
+      "emoji": "🐠"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "pilihan",
+      "emoji": "🐳"
+    },
+    {
+      "id": "lumba",
+      "labelKey": "i-lumba",
+      "bin": "pilihan",
+      "emoji": "🐬"
+    },
+    {
+      "id": "ubur",
+      "labelKey": "i-ubur",
+      "bin": "pilihan",
+      "emoji": "🪼"
+    },
+    {
+      "id": "cumi",
+      "labelKey": "i-cumi",
+      "bin": "pilihan",
+      "emoji": "🦑"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "pilihan",
+      "emoji": "🦈"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "pilihan",
+      "emoji": "🦐"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "pilihan",
+      "emoji": "🐢"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "pilihan",
+      "emoji": "🦭"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "pilihan",
+      "emoji": "🐴"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "pilihan",
+      "emoji": "🦅"
+    },
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "pilihan",
+      "emoji": "🐐"
+    },
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "pilihan",
+      "emoji": "🐈"
+    },
+    {
+      "id": "kelelawar",
+      "labelKey": "i-kelelawar",
+      "bin": "pilihan",
+      "emoji": "🦇"
+    },
+    {
+      "id": "jerapah",
+      "labelKey": "i-jerapah",
+      "bin": "pilihan",
+      "emoji": "🦒"
+    },
+    {
+      "id": "unta",
+      "labelKey": "i-unta",
+      "bin": "pilihan",
+      "emoji": "🐫"
+    },
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "pilihan",
+      "emoji": "🐝"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "t1",
+      "choices": [
+        "gurita",
+        "kuda",
+        "elang"
+      ],
+      "correct": "gurita"
+    },
+    {
+      "id": "r2",
+      "promptKey": "t2",
+      "choices": [
+        "ikanbadut",
+        "kambing",
+        "lebah"
+      ],
+      "correct": "ikanbadut"
+    },
+    {
+      "id": "r3",
+      "promptKey": "t3",
+      "choices": [
+        "paus",
+        "unta",
+        "kelelawar"
+      ],
+      "correct": "paus"
+    },
+    {
+      "id": "r4",
+      "promptKey": "t4",
+      "choices": [
+        "lumba",
+        "jerapah",
+        "kucing"
+      ],
+      "correct": "lumba"
+    },
+    {
+      "id": "r5",
+      "promptKey": "t5",
+      "choices": [
+        "ubur",
+        "elang",
+        "kambing"
+      ],
+      "correct": "ubur"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t6",
+      "choices": [
+        "cumi",
+        "kuda",
+        "lebah"
+      ],
+      "correct": "cumi"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t7",
+      "choices": [
+        "hiu",
+        "kucing",
+        "unta"
+      ],
+      "correct": "hiu"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t8",
+      "choices": [
+        "udang",
+        "kelelawar",
+        "jerapah"
+      ],
+      "correct": "udang"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t9",
+      "choices": [
+        "penyu",
+        "kambing",
+        "elang"
+      ],
+      "correct": "penyu"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t10",
+      "choices": [
+        "anjinglaut",
+        "kuda",
+        "kucing"
+      ],
+      "correct": "anjinglaut"
+    }
+  ]
+}

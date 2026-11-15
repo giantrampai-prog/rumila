@@ -342,8 +342,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan 3 makhluk hidup di dunia, bukan benda, misalnya ikan di Bawah Laut atau pohon di Kebun Buah",
-        "en": "I can find 3 living things in the world, not objects, for example a fish in the Undersea or a tree in the Fruit Garden"
+        "id": "Aku bisa menemukan makhluk hidup di antara benda-benda, misalnya kupu-kupu, semut, atau pohon",
+        "en": "I can find the living thing among objects, for example a butterfly, an ant, or a tree"
       },
       "depth": [
         "pakai"

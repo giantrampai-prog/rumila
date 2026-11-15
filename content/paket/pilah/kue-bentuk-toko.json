@@ -1,6 +1,6 @@
 {
   "id": "kue-bentuk-toko",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -71,63 +71,72 @@
       "labelKey": "lingkaran",
       "bin": "lingkaran",
       "shape": "circle",
-      "color": "#6d4c41"
+      "color": "#6d4c41",
+      "scale": 0.6
     },
     {
       "id": "lingkaran-biru",
       "labelKey": "lingkaran",
       "bin": "lingkaran",
       "shape": "circle",
-      "color": "#fff3e0"
+      "color": "#fff3e0",
+      "scale": 1.0
     },
     {
       "id": "lingkaran-kuning",
       "labelKey": "lingkaran",
       "bin": "lingkaran",
       "shape": "circle",
-      "color": "#fb8c00"
+      "color": "#fb8c00",
+      "scale": 1.5
     },
     {
       "id": "segitiga-merah",
       "labelKey": "segitiga",
       "bin": "segitiga",
       "shape": "triangle",
-      "color": "#6d4c41"
+      "color": "#6d4c41",
+      "scale": 0.6
     },
     {
       "id": "segitiga-biru",
       "labelKey": "segitiga",
       "bin": "segitiga",
       "shape": "triangle",
-      "color": "#fff3e0"
+      "color": "#fff3e0",
+      "scale": 1.0
     },
     {
       "id": "segitiga-kuning",
       "labelKey": "segitiga",
       "bin": "segitiga",
       "shape": "triangle",
-      "color": "#fb8c00"
+      "color": "#fb8c00",
+      "scale": 1.5
     },
     {
       "id": "kotak-merah",
       "labelKey": "kotak",
       "bin": "kotak",
       "shape": "square",
-      "color": "#6d4c41"
+      "color": "#6d4c41",
+      "scale": 0.6
     },
     {
       "id": "kotak-biru",
       "labelKey": "kotak",
       "bin": "kotak",
       "shape": "square",
-      "color": "#fff3e0"
+      "color": "#fff3e0",
+      "scale": 1.0
     },
     {
       "id": "kotak-kuning",
       "labelKey": "kotak",
       "bin": "kotak",
       "shape": "square",
-      "color": "#fb8c00"
+      "color": "#fb8c00",
+      "scale": 1.5
     }
   ]
 }

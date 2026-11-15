@@ -1,0 +1,151 @@
+{
+  "id": "sains-hasil-percobaan-bak-air",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hasil Percobaan Bak Air",
+      "instruksi": "Benda sudah dicoba di bak air. Taruh ke rak terapung atau tenggelam sesuai hasilnya.",
+      "apung": "terapung",
+      "tenggelam": "tenggelam",
+      "i-spons": "spons",
+      "i-pensil": "pensil kayu",
+      "i-botol": "botol plastik kosong",
+      "i-balon": "balon",
+      "i-jeruk": "jeruk",
+      "i-sandal": "sandal karet",
+      "i-paku": "baut besi",
+      "i-gembok": "gembok",
+      "i-gunting": "gunting",
+      "i-kerang": "cangkang kerang",
+      "i-kapak": "palu",
+      "i-cincin": "cincin logam"
+    },
+    "en": {
+      "judul": "Water Tub Experiment Results",
+      "instruksi": "Each thing was tried in the water tub. Put it on the float or sink shelf to match what happened.",
+      "apung": "floats",
+      "tenggelam": "sinks",
+      "i-spons": "sponge",
+      "i-pensil": "wooden pencil",
+      "i-botol": "empty plastic bottle",
+      "i-balon": "balloon",
+      "i-jeruk": "orange",
+      "i-sandal": "rubber sandal",
+      "i-paku": "iron bolt",
+      "i-gembok": "padlock",
+      "i-gunting": "scissors",
+      "i-kerang": "seashell",
+      "i-kapak": "hammer",
+      "i-cincin": "metal ring"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran; benda berbeda dari paket Tebak Apung atau Tenggelam"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "apung",
+      "labelKey": "apung",
+      "emoji": "🛟",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "tenggelam",
+      "labelKey": "tenggelam",
+      "emoji": "⬇️",
+      "color": "#90caf9"
+    }
+  ],
+  "items": [
+    {
+      "id": "spons",
+      "labelKey": "i-spons",
+      "bin": "apung",
+      "emoji": "🧽"
+    },
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "apung",
+      "emoji": "✏️"
+    },
+    {
+      "id": "botol",
+      "labelKey": "i-botol",
+      "bin": "apung",
+      "emoji": "🧴"
+    },
+    {
+      "id": "balon",
+      "labelKey": "i-balon",
+      "bin": "apung",
+      "emoji": "🎈"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "i-jeruk",
+      "bin": "apung",
+      "emoji": "🍊"
+    },
+    {
+      "id": "sandal",
+      "labelKey": "i-sandal",
+      "bin": "apung",
+      "emoji": "🩴"
+    },
+    {
+      "id": "paku",
+      "labelKey": "i-paku",
+      "bin": "tenggelam",
+      "emoji": "🔩"
+    },
+    {
+      "id": "gembok",
+      "labelKey": "i-gembok",
+      "bin": "tenggelam",
+      "emoji": "🔒"
+    },
+    {
+      "id": "gunting",
+      "labelKey": "i-gunting",
+      "bin": "tenggelam",
+      "emoji": "✂️"
+    },
+    {
+      "id": "kerang",
+      "labelKey": "i-kerang",
+      "bin": "tenggelam",
+      "emoji": "🐚"
+    },
+    {
+      "id": "kapak",
+      "labelKey": "i-kapak",
+      "bin": "tenggelam",
+      "emoji": "🔨"
+    },
+    {
+      "id": "cincin",
+      "labelKey": "i-cincin",
+      "bin": "tenggelam",
+      "emoji": "💍"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,151 @@
+{
+  "id": "sains-beri-makan-makhluk-hidup",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Waktunya Memberi Makan",
+      "instruksi": "Hanya makhluk hidup yang perlu makan. Taruh ke rak beri makan atau tidak perlu makan.",
+      "makan": "beri makan",
+      "tidak": "tidak perlu makan",
+      "i-kambing": "kambing",
+      "i-bebek": "bebek",
+      "i-sapi": "sapi",
+      "i-kelinci": "kelinci",
+      "i-ikanmas": "ikan mas",
+      "i-anakayam": "anak ayam",
+      "i-robot": "robot mainan",
+      "i-boneka": "boneka",
+      "i-kerikil": "kerikil",
+      "i-ember": "ember",
+      "i-sekop": "sekop",
+      "i-layangan": "layang-layang"
+    },
+    "en": {
+      "judul": "Feeding Time",
+      "instruksi": "Only living things need food. Put each one on the feed shelf or the no-food shelf.",
+      "makan": "feed",
+      "tidak": "no food needed",
+      "i-kambing": "goat",
+      "i-bebek": "duck",
+      "i-sapi": "cow",
+      "i-kelinci": "rabbit",
+      "i-ikanmas": "goldfish",
+      "i-anakayam": "chick",
+      "i-robot": "toy robot",
+      "i-boneka": "doll",
+      "i-kerikil": "pebble",
+      "i-ember": "bucket",
+      "i-sekop": "shovel",
+      "i-layangan": "kite"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran; selalu campuran hewan dan benda mati"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "makan",
+      "labelKey": "makan",
+      "emoji": "🥕",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "tidak",
+      "emoji": "🚫",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "kambing",
+      "labelKey": "i-kambing",
+      "bin": "makan",
+      "emoji": "🐐"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "i-bebek",
+      "bin": "makan",
+      "emoji": "🦆"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "makan",
+      "emoji": "🐄"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "makan",
+      "emoji": "🐇"
+    },
+    {
+      "id": "ikanmas",
+      "labelKey": "i-ikanmas",
+      "bin": "makan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "anakayam",
+      "labelKey": "i-anakayam",
+      "bin": "makan",
+      "emoji": "🐤"
+    },
+    {
+      "id": "robot",
+      "labelKey": "i-robot",
+      "bin": "tidak",
+      "emoji": "🤖"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "i-boneka",
+      "bin": "tidak",
+      "emoji": "🪆"
+    },
+    {
+      "id": "kerikil",
+      "labelKey": "i-kerikil",
+      "bin": "tidak",
+      "emoji": "🪨"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "tidak",
+      "emoji": "🪣"
+    },
+    {
+      "id": "sekop",
+      "labelKey": "i-sekop",
+      "bin": "tidak",
+      "emoji": "⛏️"
+    },
+    {
+      "id": "layangan",
+      "labelKey": "i-layangan",
+      "bin": "tidak",
+      "emoji": "🪁"
+    }
+  ],
+  "pilihan": []
+}

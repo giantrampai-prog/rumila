@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-genap-ganjil-tanpa-hitung",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Genap atau Ganjil?",
+      "judul": "Tebak Genap-Ganjil Tanpa Menghitung",
       "instruksi": "Tanpa menghitung sampai habis, tebak hasilnya genap atau ganjil, lalu taruh di raknya.",
       "b-genap": "hasil genap",
       "b-ganjil": "hasil ganjil",
@@ -29,7 +29,7 @@
       "i14": "406 + 72"
     },
     "en": {
-      "judul": "Even or Odd?",
+      "judul": "Guess Even or Odd Without Counting",
       "instruksi": "Without working out the whole answer, decide if the result is even or odd, then shelve it.",
       "b-genap": "even result",
       "b-ganjil": "odd result",

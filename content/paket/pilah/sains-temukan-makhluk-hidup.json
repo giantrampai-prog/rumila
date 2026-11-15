@@ -1,0 +1,310 @@
+{
+  "id": "sains-temukan-makhluk-hidup",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Temukan Makhluk Hidup",
+      "instruksi": "Makhluk hidup bisa tumbuh, makan, dan bernapas. Sentuh yang hidup.",
+      "pilihan": "pilihan",
+      "i-kupu": "kupu-kupu",
+      "i-semut": "semut",
+      "i-kura": "kura-kura",
+      "i-burung": "burung",
+      "i-rumput": "rumput",
+      "i-jamur": "jamur",
+      "i-ulat": "ulat",
+      "i-siput": "siput",
+      "i-pohonpinus": "pohon cemara",
+      "i-kelinci": "kelinci",
+      "i-kursi": "kursi",
+      "i-sepatu": "sepatu",
+      "i-buku": "buku",
+      "i-payung": "payung",
+      "i-sendok": "sendok",
+      "i-jam": "jam",
+      "i-gunting": "gunting",
+      "i-lampu": "lampu",
+      "t1": "Mana yang makhluk hidup?",
+      "t2": "Mana yang makhluk hidup?",
+      "t3": "Mana yang makhluk hidup?",
+      "t4": "Mana yang makhluk hidup?",
+      "t5": "Mana yang makhluk hidup?",
+      "t6": "Mana yang makhluk hidup?",
+      "t7": "Mana yang makhluk hidup?",
+      "t8": "Mana yang makhluk hidup?",
+      "t9": "Mana yang makhluk hidup?",
+      "t10": "Mana yang makhluk hidup?"
+    },
+    "en": {
+      "judul": "Find the Living Thing",
+      "instruksi": "Living things grow, eat, and breathe. Touch the one that is alive.",
+      "pilihan": "choices",
+      "i-kupu": "butterfly",
+      "i-semut": "ant",
+      "i-kura": "tortoise",
+      "i-burung": "bird",
+      "i-rumput": "grass",
+      "i-jamur": "mushroom",
+      "i-ulat": "caterpillar",
+      "i-siput": "snail",
+      "i-pohonpinus": "pine tree",
+      "i-kelinci": "rabbit",
+      "i-kursi": "chair",
+      "i-sepatu": "shoe",
+      "i-buku": "book",
+      "i-payung": "umbrella",
+      "i-sendok": "spoon",
+      "i-jam": "clock",
+      "i-gunting": "scissors",
+      "i-lampu": "lamp",
+      "t1": "Which one is a living thing?",
+      "t2": "Which one is a living thing?",
+      "t3": "Which one is a living thing?",
+      "t4": "Which one is a living thing?",
+      "t5": "Which one is a living thing?",
+      "t6": "Which one is a living thing?",
+      "t7": "Which one is a living thing?",
+      "t8": "Which one is a living thing?",
+      "t9": "Which one is a living thing?",
+      "t10": "Which one is a living thing?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2–3 pilihan; tepat satu makhluk hidup di tiap soal"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "pilihan",
+      "emoji": "🦋"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "pilihan",
+      "emoji": "🐜"
+    },
+    {
+      "id": "kura",
+      "labelKey": "i-kura",
+      "bin": "pilihan",
+      "emoji": "🐢"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "pilihan",
+      "emoji": "🐦"
+    },
+    {
+      "id": "rumput",
+      "labelKey": "i-rumput",
+      "bin": "pilihan",
+      "emoji": "🌿"
+    },
+    {
+      "id": "jamur",
+      "labelKey": "i-jamur",
+      "bin": "pilihan",
+      "emoji": "🍄"
+    },
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "pilihan",
+      "emoji": "🐛"
+    },
+    {
+      "id": "siput",
+      "labelKey": "i-siput",
+      "bin": "pilihan",
+      "emoji": "🐌"
+    },
+    {
+      "id": "pohonpinus",
+      "labelKey": "i-pohonpinus",
+      "bin": "pilihan",
+      "emoji": "🌲"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "pilihan",
+      "emoji": "🐇"
+    },
+    {
+      "id": "kursi",
+      "labelKey": "i-kursi",
+      "bin": "pilihan",
+      "emoji": "🪑"
+    },
+    {
+      "id": "sepatu",
+      "labelKey": "i-sepatu",
+      "bin": "pilihan",
+      "emoji": "👟"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "pilihan",
+      "emoji": "📘"
+    },
+    {
+      "id": "payung",
+      "labelKey": "i-payung",
+      "bin": "pilihan",
+      "emoji": "☂️"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "pilihan",
+      "emoji": "🥄"
+    },
+    {
+      "id": "jam",
+      "labelKey": "i-jam",
+      "bin": "pilihan",
+      "emoji": "⏰"
+    },
+    {
+      "id": "gunting",
+      "labelKey": "i-gunting",
+      "bin": "pilihan",
+      "emoji": "✂️"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "pilihan",
+      "emoji": "💡"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "t1",
+      "choices": [
+        "kupu",
+        "kursi",
+        "payung"
+      ],
+      "correct": "kupu"
+    },
+    {
+      "id": "r2",
+      "promptKey": "t2",
+      "choices": [
+        "semut",
+        "sepatu",
+        "sendok"
+      ],
+      "correct": "semut"
+    },
+    {
+      "id": "r3",
+      "promptKey": "t3",
+      "choices": [
+        "kura",
+        "buku",
+        "jam"
+      ],
+      "correct": "kura"
+    },
+    {
+      "id": "r4",
+      "promptKey": "t4",
+      "choices": [
+        "burung",
+        "lampu",
+        "gunting"
+      ],
+      "correct": "burung"
+    },
+    {
+      "id": "r5",
+      "promptKey": "t5",
+      "choices": [
+        "rumput",
+        "kursi",
+        "jam"
+      ],
+      "correct": "rumput"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t6",
+      "choices": [
+        "jamur",
+        "payung",
+        "buku"
+      ],
+      "correct": "jamur"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t7",
+      "choices": [
+        "ulat",
+        "gunting",
+        "sepatu"
+      ],
+      "correct": "ulat"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t8",
+      "choices": [
+        "siput",
+        "sendok",
+        "lampu"
+      ],
+      "correct": "siput"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t9",
+      "choices": [
+        "pohonpinus",
+        "kursi",
+        "buku"
+      ],
+      "correct": "pohonpinus"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t10",
+      "choices": [
+        "kelinci",
+        "jam",
+        "payung"
+      ],
+      "correct": "kelinci"
+    }
+  ]
+}

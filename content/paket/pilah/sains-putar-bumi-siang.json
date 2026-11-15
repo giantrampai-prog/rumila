@@ -1,0 +1,188 @@
+{
+  "id": "sains-putar-bumi-siang",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Putar Bumi, Siang di Mana?",
+      "instruksi": "Bagian Bumi yang menghadap Matahari sedang siang. Dengarkan, lalu sentuh jawabannya.",
+      "pilihan": "pilihan",
+      "i-siang": "siang",
+      "i-malam": "malam",
+      "i-hadap": "menghadap Matahari",
+      "i-belakang": "membelakangi Matahari",
+      "t1": "Jakarta sedang menghadap Matahari. Di Jakarta sekarang…",
+      "t2": "Tokyo sedang membelakangi Matahari. Di Tokyo sekarang…",
+      "t3": "Supaya Medan jadi siang, Medan harus…",
+      "t4": "Di Makassar sedang malam. Berarti Makassar sedang…",
+      "t5": "Bumi diputar sampai Bandung menghadap Matahari. Di Bandung sekarang…",
+      "t6": "Bumi berputar terus, Surabaya kini membelakangi Matahari. Di Surabaya sekarang…",
+      "t7": "Di Kairo matahari bersinar terang. Berarti Kairo sedang…",
+      "t8": "Supaya Papua jadi malam, Bumi harus berputar sampai Papua…",
+      "t9": "Sisi Bumi yang terang terkena cahaya Matahari sedang…",
+      "t10": "Sisi Bumi yang gelap, tidak terkena cahaya Matahari, sedang…"
+    },
+    "en": {
+      "judul": "Spin the Earth: Where Is It Day?",
+      "instruksi": "The part of Earth facing the Sun has daytime. Listen, then touch the answer.",
+      "pilihan": "choices",
+      "i-siang": "daytime",
+      "i-malam": "night-time",
+      "i-hadap": "facing the Sun",
+      "i-belakang": "facing away from the Sun",
+      "t1": "Jakarta is facing the Sun. In Jakarta it is now…",
+      "t2": "Tokyo is facing away from the Sun. In Tokyo it is now…",
+      "t3": "For Medan to have daytime, Medan must be…",
+      "t4": "It is night in Makassar. So Makassar is…",
+      "t5": "Earth turns until Bandung faces the Sun. In Bandung it is now…",
+      "t6": "Earth keeps turning and Surabaya now faces away from the Sun. In Surabaya it is now…",
+      "t7": "The sun is shining brightly in Cairo. So Cairo is…",
+      "t8": "For Papua to have night, Earth must turn until Papua is…",
+      "t9": "The side of Earth lit by the Sun has…",
+      "t10": "The dark side of Earth, with no sunlight, has…"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "selalu 2 pilihan (siang/malam atau menghadap/membelakangi)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "angkasa",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "siang",
+      "labelKey": "i-siang",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "malam",
+      "labelKey": "i-malam",
+      "bin": "pilihan",
+      "emoji": "🌙"
+    },
+    {
+      "id": "hadap",
+      "labelKey": "i-hadap",
+      "bin": "pilihan",
+      "emoji": "🌞"
+    },
+    {
+      "id": "belakang",
+      "labelKey": "i-belakang",
+      "bin": "pilihan",
+      "emoji": "🌑"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "t1",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "siang"
+    },
+    {
+      "id": "r2",
+      "promptKey": "t2",
+      "choices": [
+        "malam",
+        "siang"
+      ],
+      "correct": "malam"
+    },
+    {
+      "id": "r3",
+      "promptKey": "t3",
+      "choices": [
+        "hadap",
+        "belakang"
+      ],
+      "correct": "hadap"
+    },
+    {
+      "id": "r4",
+      "promptKey": "t4",
+      "choices": [
+        "belakang",
+        "hadap"
+      ],
+      "correct": "belakang"
+    },
+    {
+      "id": "r5",
+      "promptKey": "t5",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "siang"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t6",
+      "choices": [
+        "malam",
+        "siang"
+      ],
+      "correct": "malam"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t7",
+      "choices": [
+        "hadap",
+        "belakang"
+      ],
+      "correct": "hadap"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t8",
+      "choices": [
+        "belakang",
+        "hadap"
+      ],
+      "correct": "belakang"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t9",
+      "choices": [
+        "siang",
+        "malam"
+      ],
+      "correct": "siang"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t10",
+      "choices": [
+        "malam",
+        "siang"
+      ],
+      "correct": "malam"
+    }
+  ]
+}

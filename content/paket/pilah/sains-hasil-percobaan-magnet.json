@@ -1,0 +1,151 @@
+{
+  "id": "sains-hasil-percobaan-magnet",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Hasil Percobaan Magnet",
+      "instruksi": "Magnet sudah didekatkan ke tiap benda. Taruh ke rak ditarik magnet atau tidak ditarik.",
+      "ditarik": "ditarik magnet",
+      "tidak": "tidak ditarik",
+      "i-klip": "klip kertas besi",
+      "i-peniti": "peniti",
+      "i-baut": "mur dan baut besi",
+      "i-kunci": "kunci besi",
+      "i-kait": "kait besi",
+      "i-rantai": "rantai besi",
+      "i-kertas": "kertas",
+      "i-boneka": "boneka beruang",
+      "i-daun": "daun",
+      "i-kayu": "potongan kayu",
+      "i-krayon": "krayon",
+      "i-kauskaki": "kaus kaki"
+    },
+    "en": {
+      "judul": "Magnet Experiment Results",
+      "instruksi": "The magnet was held near each thing. Put it on the pulled shelf or the not-pulled shelf.",
+      "ditarik": "pulled by the magnet",
+      "tidak": "not pulled",
+      "i-klip": "steel paper clip",
+      "i-peniti": "safety pin",
+      "i-baut": "iron nut and bolt",
+      "i-kunci": "iron key",
+      "i-kait": "iron hook",
+      "i-rantai": "iron chain",
+      "i-kertas": "paper",
+      "i-boneka": "teddy bear",
+      "i-daun": "leaf",
+      "i-kayu": "piece of wood",
+      "i-krayon": "crayon",
+      "i-kauskaki": "sock"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran; yang ditarik hanya benda dari besi"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "ditarik",
+      "labelKey": "ditarik",
+      "emoji": "🧲",
+      "color": "#ffcdd2"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "tidak",
+      "emoji": "✋",
+      "color": "#eceff1"
+    }
+  ],
+  "items": [
+    {
+      "id": "klip",
+      "labelKey": "i-klip",
+      "bin": "ditarik",
+      "emoji": "📎"
+    },
+    {
+      "id": "peniti",
+      "labelKey": "i-peniti",
+      "bin": "ditarik",
+      "emoji": "🧷"
+    },
+    {
+      "id": "baut",
+      "labelKey": "i-baut",
+      "bin": "ditarik",
+      "emoji": "🔩"
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "ditarik",
+      "emoji": "🗝️"
+    },
+    {
+      "id": "kait",
+      "labelKey": "i-kait",
+      "bin": "ditarik",
+      "emoji": "🪝"
+    },
+    {
+      "id": "rantai",
+      "labelKey": "i-rantai",
+      "bin": "ditarik",
+      "emoji": "⛓️"
+    },
+    {
+      "id": "kertas",
+      "labelKey": "i-kertas",
+      "bin": "tidak",
+      "emoji": "📄"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "i-boneka",
+      "bin": "tidak",
+      "emoji": "🧸"
+    },
+    {
+      "id": "daun",
+      "labelKey": "i-daun",
+      "bin": "tidak",
+      "emoji": "🍃"
+    },
+    {
+      "id": "kayu",
+      "labelKey": "i-kayu",
+      "bin": "tidak",
+      "emoji": "🪵"
+    },
+    {
+      "id": "krayon",
+      "labelKey": "i-krayon",
+      "bin": "tidak",
+      "emoji": "🖍️"
+    },
+    {
+      "id": "kauskaki",
+      "labelKey": "i-kauskaki",
+      "bin": "tidak",
+      "emoji": "🧦"
+    }
+  ],
+  "pilihan": []
+}
