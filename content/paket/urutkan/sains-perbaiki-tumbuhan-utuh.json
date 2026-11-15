@@ -1,0 +1,406 @@
+{
+  "id": "sains-perbaiki-tumbuhan-utuh",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Perbaiki Susunan Tumbuhan",
+      "instruksi": "Ada potongan tumbuhan yang tertukar. Tukar supaya urut dari akar, batang, daun, sampai bunga.",
+      "s-melati": "Melati dari akar ke bunga",
+      "melati-akar": "akar melati",
+      "melati-batang": "batang melati",
+      "melati-daun": "daun melati",
+      "melati-bunga": "bunga melati putih",
+      "s-anggrek": "Anggrek dari akar ke bunga",
+      "anggrek-akar": "akar anggrek",
+      "anggrek-batang": "batang anggrek",
+      "anggrek-daun": "daun anggrek",
+      "anggrek-bunga": "bunga anggrek ungu",
+      "s-jeruk": "Jeruk dari akar ke bunga",
+      "jeruk-akar": "akar jeruk",
+      "jeruk-batang": "batang jeruk",
+      "jeruk-daun": "daun jeruk",
+      "jeruk-bunga": "bunga jeruk putih",
+      "s-kopi": "Kopi dari akar ke bunga",
+      "kopi-akar": "akar kopi",
+      "kopi-batang": "batang kopi",
+      "kopi-daun": "daun kopi",
+      "kopi-bunga": "bunga kopi putih",
+      "s-telang": "Telang dari akar ke bunga",
+      "telang-akar": "akar telang",
+      "telang-batang": "batang telang",
+      "telang-daun": "daun telang",
+      "telang-bunga": "bunga telang biru",
+      "s-kemangi": "Kemangi dari akar ke bunga",
+      "kemangi-akar": "akar kemangi",
+      "kemangi-batang": "batang kemangi",
+      "kemangi-daun": "daun kemangi",
+      "kemangi-bunga": "bunga kemangi kecil",
+      "s-kenanga": "Kenanga dari akar ke bunga",
+      "kenanga-akar": "akar kenanga",
+      "kenanga-batang": "batang kenanga",
+      "kenanga-daun": "daun kenanga",
+      "kenanga-bunga": "bunga kenanga kuning",
+      "s-alamanda": "Alamanda dari akar ke bunga",
+      "alamanda-akar": "akar alamanda",
+      "alamanda-batang": "batang alamanda",
+      "alamanda-daun": "daun alamanda",
+      "alamanda-bunga": "bunga alamanda kuning",
+      "s-bugenvil": "Bugenvil dari akar ke bunga",
+      "bugenvil-akar": "akar bugenvil",
+      "bugenvil-batang": "batang bugenvil",
+      "bugenvil-daun": "daun bugenvil",
+      "bugenvil-bunga": "bunga bugenvil ungu",
+      "s-asoka": "Asoka dari akar ke bunga",
+      "asoka-akar": "akar asoka",
+      "asoka-batang": "batang asoka",
+      "asoka-daun": "daun asoka",
+      "asoka-bunga": "bunga asoka merah"
+    },
+    "en": {
+      "judul": "Fix the Plant Stack",
+      "instruksi": "Two plant pieces are swapped. Swap them back so it goes root, stem, leaves, then flower.",
+      "s-melati": "Jasmine from root to flower",
+      "melati-akar": "jasmine roots",
+      "melati-batang": "jasmine stem",
+      "melati-daun": "jasmine leaves",
+      "melati-bunga": "white jasmine flower",
+      "s-anggrek": "Orchid from root to flower",
+      "anggrek-akar": "orchid roots",
+      "anggrek-batang": "orchid stem",
+      "anggrek-daun": "orchid leaves",
+      "anggrek-bunga": "purple orchid flower",
+      "s-jeruk": "Orange tree from root to flower",
+      "jeruk-akar": "orange tree roots",
+      "jeruk-batang": "orange tree stem",
+      "jeruk-daun": "orange tree leaves",
+      "jeruk-bunga": "white orange blossom",
+      "s-kopi": "Coffee plant from root to flower",
+      "kopi-akar": "coffee plant roots",
+      "kopi-batang": "coffee plant stem",
+      "kopi-daun": "coffee plant leaves",
+      "kopi-bunga": "white coffee flower",
+      "s-telang": "Butterfly pea from root to flower",
+      "telang-akar": "butterfly pea roots",
+      "telang-batang": "butterfly pea stem",
+      "telang-daun": "butterfly pea leaves",
+      "telang-bunga": "blue butterfly pea flower",
+      "s-kemangi": "Basil from root to flower",
+      "kemangi-akar": "basil roots",
+      "kemangi-batang": "basil stem",
+      "kemangi-daun": "basil leaves",
+      "kemangi-bunga": "small basil flowers",
+      "s-kenanga": "Ylang-ylang tree from root to flower",
+      "kenanga-akar": "ylang-ylang tree roots",
+      "kenanga-batang": "ylang-ylang tree stem",
+      "kenanga-daun": "ylang-ylang tree leaves",
+      "kenanga-bunga": "yellow ylang-ylang flower",
+      "s-alamanda": "Allamanda from root to flower",
+      "alamanda-akar": "allamanda roots",
+      "alamanda-batang": "allamanda stem",
+      "alamanda-daun": "allamanda leaves",
+      "alamanda-bunga": "yellow allamanda flower",
+      "s-bugenvil": "Bougainvillea from root to flower",
+      "bugenvil-akar": "bougainvillea roots",
+      "bugenvil-batang": "bougainvillea stem",
+      "bugenvil-daun": "bougainvillea leaves",
+      "bugenvil-bunga": "purple bougainvillea flower",
+      "s-asoka": "Ixora from root to flower",
+      "asoka-akar": "ixora roots",
+      "asoka-batang": "ixora stem",
+      "asoka-daun": "ixora leaves",
+      "asoka-bunga": "red ixora flowers"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat potongan: akar, batang, daun, bunga; satu pasang tertukar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "melati",
+      "titleKey": "s-melati",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "melati-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "melati-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "melati-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "melati-bunga",
+          "emoji": "🌼",
+          "color": "#ffffff"
+        }
+      ]
+    },
+    {
+      "id": "anggrek",
+      "titleKey": "s-anggrek",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "anggrek-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "anggrek-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "anggrek-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "anggrek-bunga",
+          "emoji": "🌸",
+          "color": "#ab47bc"
+        }
+      ]
+    },
+    {
+      "id": "jeruk",
+      "titleKey": "s-jeruk",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "jeruk-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "jeruk-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "daun",
+          "labelKey": "jeruk-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "jeruk-bunga",
+          "emoji": "🌼",
+          "color": "#fffde7"
+        }
+      ]
+    },
+    {
+      "id": "kopi",
+      "titleKey": "s-kopi",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "kopi-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "kopi-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "daun",
+          "labelKey": "kopi-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kopi-bunga",
+          "emoji": "🌼",
+          "color": "#fafafa"
+        }
+      ]
+    },
+    {
+      "id": "telang",
+      "titleKey": "s-telang",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "telang-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "telang-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "telang-daun",
+          "emoji": "☘️"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "telang-bunga",
+          "emoji": "🌸",
+          "color": "#1e88e5"
+        }
+      ]
+    },
+    {
+      "id": "kemangi",
+      "titleKey": "s-kemangi",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "kemangi-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "kemangi-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "kemangi-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kemangi-bunga",
+          "emoji": "🌸",
+          "color": "#e1bee7"
+        }
+      ]
+    },
+    {
+      "id": "kenanga",
+      "titleKey": "s-kenanga",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "kenanga-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "kenanga-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "daun",
+          "labelKey": "kenanga-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kenanga-bunga",
+          "emoji": "🌼",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "alamanda",
+      "titleKey": "s-alamanda",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "alamanda-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "alamanda-batang",
+          "emoji": "🎋"
+        },
+        {
+          "id": "daun",
+          "labelKey": "alamanda-daun",
+          "emoji": "🍃"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "alamanda-bunga",
+          "emoji": "🌼",
+          "color": "#ffeb3b"
+        }
+      ]
+    },
+    {
+      "id": "bugenvil",
+      "titleKey": "s-bugenvil",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "bugenvil-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "bugenvil-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "daun",
+          "labelKey": "bugenvil-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "bugenvil-bunga",
+          "emoji": "🌺",
+          "color": "#d81b60"
+        }
+      ]
+    },
+    {
+      "id": "asoka",
+      "titleKey": "s-asoka",
+      "steps": [
+        {
+          "id": "akar",
+          "labelKey": "asoka-akar",
+          "emoji": "🫚"
+        },
+        {
+          "id": "batang",
+          "labelKey": "asoka-batang",
+          "emoji": "🪵"
+        },
+        {
+          "id": "daun",
+          "labelKey": "asoka-daun",
+          "emoji": "☘️"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "asoka-bunga",
+          "emoji": "🌺",
+          "color": "#e53935"
+        }
+      ]
+    }
+  ]
+}

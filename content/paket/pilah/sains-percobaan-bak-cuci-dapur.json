@@ -1,0 +1,149 @@
+{
+  "id": "sains-percobaan-bak-cuci-dapur",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Percobaan Bak Cuci Dapur",
+      "instruksi": "Benda dapur sudah dicoba di bak cuci berisi air. Taruh ke rak terapung atau tenggelam sesuai hasilnya.",
+      "b-apung": "terapung",
+      "b-tenggelam": "tenggelam",
+      "i-apel": "apel",
+      "i-lemon": "lemon",
+      "i-esbatu": "es batu",
+      "i-sumpit": "sumpit kayu",
+      "i-kelapa": "kelapa",
+      "i-pisang": "pisang",
+      "i-sendok": "sendok logam",
+      "i-garpu": "garpu logam",
+      "i-telur": "telur mentah",
+      "i-kentang": "kentang",
+      "i-koin": "koin",
+      "i-batu": "batu ulekan"
+    },
+    "en": {
+      "judul": "Kitchen Sink Experiment",
+      "instruksi": "Kitchen things were tested in a sink full of water. Put each on the float or sink shelf by the result.",
+      "b-apung": "floats",
+      "b-tenggelam": "sinks",
+      "i-apel": "apple",
+      "i-lemon": "lemon",
+      "i-esbatu": "ice cube",
+      "i-sumpit": "wooden chopsticks",
+      "i-kelapa": "coconut",
+      "i-pisang": "banana",
+      "i-sendok": "metal spoon",
+      "i-garpu": "metal fork",
+      "i-telur": "raw egg",
+      "i-kentang": "potato",
+      "i-koin": "coin",
+      "i-batu": "grinding stone"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "apung",
+      "labelKey": "b-apung",
+      "emoji": "🛟"
+    },
+    {
+      "id": "tenggelam",
+      "labelKey": "b-tenggelam",
+      "emoji": "⬇️"
+    }
+  ],
+  "items": [
+    {
+      "id": "apel",
+      "labelKey": "i-apel",
+      "bin": "apung",
+      "emoji": "🍎"
+    },
+    {
+      "id": "lemon",
+      "labelKey": "i-lemon",
+      "bin": "apung",
+      "emoji": "🍋"
+    },
+    {
+      "id": "esbatu",
+      "labelKey": "i-esbatu",
+      "bin": "apung",
+      "emoji": "🧊"
+    },
+    {
+      "id": "sumpit",
+      "labelKey": "i-sumpit",
+      "bin": "apung",
+      "emoji": "🥢"
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "i-kelapa",
+      "bin": "apung",
+      "emoji": "🥥"
+    },
+    {
+      "id": "pisang",
+      "labelKey": "i-pisang",
+      "bin": "apung",
+      "emoji": "🍌"
+    },
+    {
+      "id": "sendok",
+      "labelKey": "i-sendok",
+      "bin": "tenggelam",
+      "emoji": "🥄"
+    },
+    {
+      "id": "garpu",
+      "labelKey": "i-garpu",
+      "bin": "tenggelam",
+      "emoji": "🍴"
+    },
+    {
+      "id": "telur",
+      "labelKey": "i-telur",
+      "bin": "tenggelam",
+      "emoji": "🥚"
+    },
+    {
+      "id": "kentang",
+      "labelKey": "i-kentang",
+      "bin": "tenggelam",
+      "emoji": "🥔"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "tenggelam",
+      "emoji": "🪙"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "tenggelam",
+      "emoji": "🪨"
+    }
+  ],
+  "pilihan": []
+}

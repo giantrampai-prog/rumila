@@ -1,0 +1,326 @@
+{
+  "id": "sains-perbaiki-siklus-ayam",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.SIKLUS-HIDUP.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ayam Tumbuh di Peternakan",
+      "instruksi": "Ada gambar yang tertukar. Tukar supaya urut: telur, anak ayam, lalu ayam dewasa.",
+      "s-sarang": "Sarang jerami",
+      "sarang-telur": "telur di sarang jerami",
+      "sarang-anak": "anak ayam mencari makan",
+      "sarang-dewasa": "ayam betina dewasa",
+      "s-kandang": "Kandang ayam",
+      "kandang-telur": "telur di kandang",
+      "kandang-anak": "anak ayam berbulu kuning",
+      "kandang-dewasa": "ayam jago dewasa",
+      "s-mengeram": "Induk mengerami",
+      "mengeram-telur": "telur dierami induk",
+      "mengeram-anak": "anak ayam baru menetas",
+      "mengeram-dewasa": "ayam dewasa",
+      "s-kampung": "Ayam kampung",
+      "kampung-telur": "telur ayam kampung",
+      "kampung-anak": "anak ayam bermain",
+      "kampung-dewasa": "ayam kampung dewasa",
+      "s-pagi": "Pagi di peternakan",
+      "pagi-telur": "sarang berisi telur",
+      "pagi-anak": "anak ayam ikut induk",
+      "pagi-dewasa": "ayam jago berkokok",
+      "s-jagung": "Waktu makan jagung",
+      "jagung-telur": "telur",
+      "jagung-anak": "anak ayam makan jagung",
+      "jagung-dewasa": "ayam dewasa makan jagung",
+      "s-menetas": "Menetas",
+      "menetas-telur": "telur hangat",
+      "menetas-anak": "telur menetas jadi anak ayam",
+      "menetas-dewasa": "ayam dewasa",
+      "s-besar": "Makin besar",
+      "besar-telur": "telur kecil",
+      "besar-anak": "anak ayam tumbuh",
+      "besar-dewasa": "ayam jago besar",
+      "s-lumbung": "Di lumbung",
+      "lumbung-telur": "telur di lumbung",
+      "lumbung-anak": "anak ayam di lumbung",
+      "lumbung-dewasa": "ayam dewasa di lumbung",
+      "s-sayap": "Jago kecil jadi besar",
+      "sayap-telur": "telur di jerami",
+      "sayap-anak": "anak ayam keluar dari telur",
+      "sayap-dewasa": "ayam jago mengepakkan sayap"
+    },
+    "en": {
+      "judul": "Chickens Growing on the Farm",
+      "instruksi": "Two pictures are swapped. Swap them back: egg, chick, then grown-up chicken.",
+      "s-sarang": "A straw nest",
+      "sarang-telur": "eggs in a straw nest",
+      "sarang-anak": "a chick looks for food",
+      "sarang-dewasa": "a grown-up hen",
+      "s-kandang": "The chicken coop",
+      "kandang-telur": "an egg in the coop",
+      "kandang-anak": "a fluffy yellow chick",
+      "kandang-dewasa": "a grown-up rooster",
+      "s-mengeram": "The hen sits on eggs",
+      "mengeram-telur": "an egg kept warm by the hen",
+      "mengeram-anak": "a chick just hatched",
+      "mengeram-dewasa": "a grown-up chicken",
+      "s-kampung": "Village chickens",
+      "kampung-telur": "a village chicken egg",
+      "kampung-anak": "a chick playing",
+      "kampung-dewasa": "a grown-up village chicken",
+      "s-pagi": "Morning on the farm",
+      "pagi-telur": "a nest full of eggs",
+      "pagi-anak": "a chick follows its mother",
+      "pagi-dewasa": "a rooster crows",
+      "s-jagung": "Corn time",
+      "jagung-telur": "an egg",
+      "jagung-anak": "a chick eats corn",
+      "jagung-dewasa": "a grown-up chicken eats corn",
+      "s-menetas": "Hatching",
+      "menetas-telur": "a warm egg",
+      "menetas-anak": "the egg hatches into a chick",
+      "menetas-dewasa": "a grown-up chicken",
+      "s-besar": "Getting bigger",
+      "besar-telur": "a small egg",
+      "besar-anak": "a growing chick",
+      "besar-dewasa": "a big rooster",
+      "s-lumbung": "In the barn",
+      "lumbung-telur": "eggs in the barn",
+      "lumbung-anak": "a chick in the barn",
+      "lumbung-dewasa": "a grown-up chicken in the barn",
+      "s-sayap": "Little chick, big rooster",
+      "sayap-telur": "an egg in the straw",
+      "sayap-anak": "a chick comes out of the egg",
+      "sayap-dewasa": "a rooster flaps its wings"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga gambar: telur, anak ayam, ayam dewasa; satu pasang tertukar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "sarang",
+      "titleKey": "s-sarang",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "sarang-telur",
+          "emoji": "🪺"
+        },
+        {
+          "id": "anak",
+          "labelKey": "sarang-anak",
+          "emoji": "🐥"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "sarang-dewasa",
+          "emoji": "🐔"
+        }
+      ]
+    },
+    {
+      "id": "kandang",
+      "titleKey": "s-kandang",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kandang-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "kandang-anak",
+          "emoji": "🐤"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "kandang-dewasa",
+          "emoji": "🐓"
+        }
+      ]
+    },
+    {
+      "id": "mengeram",
+      "titleKey": "s-mengeram",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "mengeram-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "mengeram-anak",
+          "emoji": "🐣"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "mengeram-dewasa",
+          "emoji": "🐔"
+        }
+      ]
+    },
+    {
+      "id": "kampung",
+      "titleKey": "s-kampung",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kampung-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "kampung-anak",
+          "emoji": "🐥"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "kampung-dewasa",
+          "emoji": "🐔"
+        }
+      ]
+    },
+    {
+      "id": "pagi",
+      "titleKey": "s-pagi",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "pagi-telur",
+          "emoji": "🪺"
+        },
+        {
+          "id": "anak",
+          "labelKey": "pagi-anak",
+          "emoji": "🐤"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "pagi-dewasa",
+          "emoji": "🐓"
+        }
+      ]
+    },
+    {
+      "id": "jagung",
+      "titleKey": "s-jagung",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "jagung-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "jagung-anak",
+          "emoji": "🐥"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "jagung-dewasa",
+          "emoji": "🐔"
+        }
+      ]
+    },
+    {
+      "id": "menetas",
+      "titleKey": "s-menetas",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "menetas-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "menetas-anak",
+          "emoji": "🐣"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "menetas-dewasa",
+          "emoji": "🐓"
+        }
+      ]
+    },
+    {
+      "id": "besar",
+      "titleKey": "s-besar",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "besar-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "besar-anak",
+          "emoji": "🐤"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "besar-dewasa",
+          "emoji": "🐓"
+        }
+      ]
+    },
+    {
+      "id": "lumbung",
+      "titleKey": "s-lumbung",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "lumbung-telur",
+          "emoji": "🪺"
+        },
+        {
+          "id": "anak",
+          "labelKey": "lumbung-anak",
+          "emoji": "🐥"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "lumbung-dewasa",
+          "emoji": "🐔"
+        }
+      ]
+    },
+    {
+      "id": "sayap",
+      "titleKey": "s-sayap",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "sayap-telur",
+          "emoji": "🥚"
+        },
+        {
+          "id": "anak",
+          "labelKey": "sayap-anak",
+          "emoji": "🐣"
+        },
+        {
+          "id": "dewasa",
+          "labelKey": "sayap-dewasa",
+          "emoji": "🐓"
+        }
+      ]
+    }
+  ]
+}

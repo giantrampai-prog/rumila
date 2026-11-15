@@ -1,0 +1,266 @@
+{
+  "id": "sains-senam-tunjuk-tubuh",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.TUBUH-PANCAINDRA.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Senam Tunjuk Tubuh",
+      "instruksi": "Ayo senam di taman! Dengarkan nama bagian tubuh, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-mata": "mata",
+      "i-hidung": "hidung",
+      "i-telinga": "telinga",
+      "i-mulut": "mulut",
+      "i-tangan": "tangan",
+      "i-kaki": "kaki",
+      "i-lengan": "lengan",
+      "i-jari": "jari",
+      "t-mata1": "Ayo senam! Tunjuk mata, lalu kedipkan.",
+      "t-mata2": "Tokoh melihat burung terbang. Tunjuk matanya!",
+      "t-hidung1": "Ayo senam! Pegang hidung, lalu tarik napas.",
+      "t-hidung2": "Tokoh mencium bunga yang harum. Tunjuk hidungnya!",
+      "t-telinga1": "Ayo senam! Tarik telinga pelan-pelan.",
+      "t-telinga2": "Tokoh mendengar musik. Tunjuk telinganya!",
+      "t-mulut1": "Ayo senam! Buka mulut lebar-lebar, aaa!",
+      "t-mulut2": "Tokoh makan pisang. Tunjuk mulutnya!",
+      "t-tangan1": "Ayo senam! Lambaikan tangan ke kiri dan ke kanan.",
+      "t-tangan2": "Tokoh bertepuk tangan. Tunjuk tangannya!",
+      "t-kaki1": "Ayo senam! Hentakkan kaki, satu, dua!",
+      "t-kaki2": "Tokoh menendang bola. Tunjuk kakinya!"
+    },
+    "en": {
+      "judul": "Point-and-Move Exercise",
+      "instruksi": "Let's exercise in the park! Listen to the body part, then touch its picture.",
+      "pilihan": "choices",
+      "i-mata": "eyes",
+      "i-hidung": "nose",
+      "i-telinga": "ear",
+      "i-mulut": "mouth",
+      "i-tangan": "hand",
+      "i-kaki": "leg",
+      "i-lengan": "arm",
+      "i-jari": "finger",
+      "t-mata1": "Let's exercise! Point to the eyes, then blink.",
+      "t-mata2": "The character watches a bird fly. Point to the eyes!",
+      "t-hidung1": "Let's exercise! Touch the nose, then breathe in.",
+      "t-hidung2": "The character smells a sweet flower. Point to the nose!",
+      "t-telinga1": "Let's exercise! Gently pull the ears.",
+      "t-telinga2": "The character hears music. Point to the ear!",
+      "t-mulut1": "Let's exercise! Open the mouth wide, aaah!",
+      "t-mulut2": "The character eats a banana. Point to the mouth!",
+      "t-tangan1": "Let's exercise! Wave the hands left and right.",
+      "t-tangan2": "The character claps. Point to the hand!",
+      "t-kaki1": "Let's exercise! Stamp the legs, one, two!",
+      "t-kaki2": "The character kicks a ball. Point to the leg!"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat gambar bagian tubuh per pertanyaan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "mata",
+      "labelKey": "i-mata",
+      "bin": "pilihan",
+      "emoji": "👀"
+    },
+    {
+      "id": "hidung",
+      "labelKey": "i-hidung",
+      "bin": "pilihan",
+      "emoji": "👃"
+    },
+    {
+      "id": "telinga",
+      "labelKey": "i-telinga",
+      "bin": "pilihan",
+      "emoji": "👂"
+    },
+    {
+      "id": "mulut",
+      "labelKey": "i-mulut",
+      "bin": "pilihan",
+      "emoji": "👄"
+    },
+    {
+      "id": "tangan",
+      "labelKey": "i-tangan",
+      "bin": "pilihan",
+      "emoji": "🖐️"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "i-kaki",
+      "bin": "pilihan",
+      "emoji": "🦵"
+    },
+    {
+      "id": "lengan",
+      "labelKey": "i-lengan",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "jari",
+      "labelKey": "i-jari",
+      "bin": "pilihan",
+      "emoji": "☝️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "mata1",
+      "promptKey": "t-mata1",
+      "choices": [
+        "mata",
+        "telinga",
+        "kaki",
+        "lengan"
+      ],
+      "correct": "mata"
+    },
+    {
+      "id": "mata2",
+      "promptKey": "t-mata2",
+      "choices": [
+        "mata",
+        "mulut",
+        "tangan",
+        "jari"
+      ],
+      "correct": "mata"
+    },
+    {
+      "id": "hidung1",
+      "promptKey": "t-hidung1",
+      "choices": [
+        "hidung",
+        "telinga",
+        "kaki",
+        "lengan"
+      ],
+      "correct": "hidung"
+    },
+    {
+      "id": "hidung2",
+      "promptKey": "t-hidung2",
+      "choices": [
+        "hidung",
+        "mata",
+        "mulut",
+        "jari"
+      ],
+      "correct": "hidung"
+    },
+    {
+      "id": "telinga1",
+      "promptKey": "t-telinga1",
+      "choices": [
+        "telinga",
+        "hidung",
+        "tangan",
+        "kaki"
+      ],
+      "correct": "telinga"
+    },
+    {
+      "id": "telinga2",
+      "promptKey": "t-telinga2",
+      "choices": [
+        "telinga",
+        "mulut",
+        "lengan",
+        "mata"
+      ],
+      "correct": "telinga"
+    },
+    {
+      "id": "mulut1",
+      "promptKey": "t-mulut1",
+      "choices": [
+        "mulut",
+        "hidung",
+        "telinga",
+        "jari"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "mulut2",
+      "promptKey": "t-mulut2",
+      "choices": [
+        "mulut",
+        "mata",
+        "kaki",
+        "tangan"
+      ],
+      "correct": "mulut"
+    },
+    {
+      "id": "tangan1",
+      "promptKey": "t-tangan1",
+      "choices": [
+        "tangan",
+        "kaki",
+        "mata",
+        "hidung"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "tangan2",
+      "promptKey": "t-tangan2",
+      "choices": [
+        "tangan",
+        "telinga",
+        "mulut",
+        "kaki"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "kaki1",
+      "promptKey": "t-kaki1",
+      "choices": [
+        "kaki",
+        "tangan",
+        "hidung",
+        "telinga"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "kaki2",
+      "promptKey": "t-kaki2",
+      "choices": [
+        "kaki",
+        "mata",
+        "mulut",
+        "jari"
+      ],
+      "correct": "kaki"
+    }
+  ]
+}

@@ -157,7 +157,12 @@ export function nilaiNavigasi(r: RondeNavigasi, j: JawabanNavigasi): Hasil {
   const rakBeres = r.rackSlots === undefined || (j.bendera ? j.bendera.bagian.every(b => hitungBlok(b) <= r.rackSlots!) : blocks <= r.rackSlots);
   // mode prediksi: program sudah disediakan, jadi buktinya tebakan anak (minimal 60% benar, sama dengan ambang misi)
   const prediksiBeres = !r.prediksi || prediksiTotal === 0 || prediksiBenar / prediksiTotal >= 0.6;
-  const benar = semuaBintang && debugBeres && rakBeres && prediksiBeres && benderaTepat !== false;
+  // mode langkah + prediksi: program disediakan mesin (boleh sengaja berakhir menabrak, mis. "berhenti sebelum
+  // tabrak"), jadi kelulusan ditentukan tebakan anak, bukan apakah program itu sampai bintang (bug audit 15 Nov 2026)
+  const programDisediakan = r.execMode === "langkah" && r.prediksi;
+  const benar = programDisediakan
+    ? prediksiTotal > 0 && prediksiBeres
+    : semuaBintang && debugBeres && rakBeres && prediksiBeres && benderaTepat !== false;
 
   return {
     benar,

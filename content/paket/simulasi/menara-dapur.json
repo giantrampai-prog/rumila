@@ -1,0 +1,115 @@
+{
+  "id": "menara-dapur",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.BENTUK-RUANG.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Menara Dapur",
+      "instruksi": "Di dapur, susun benda jadi menara. Pilih benda yang bisa ditumpuk; benda bulat akan menggelinding.",
+      "kotak-bekal": "kotak bekal",
+      "mentega": "mentega",
+      "spons-cuci": "spons cuci",
+      "roti-tawar": "roti tawar",
+      "toples": "toples",
+      "jeruk": "jeruk",
+      "tomat": "tomat",
+      "telur": "telur"
+    },
+    "en": {
+      "judul": "Kitchen Tower",
+      "instruksi": "In the kitchen, stack things into a tower. Pick the things that can be stacked; round things will roll away.",
+      "kotak-bekal": "lunch box",
+      "mentega": "butter block",
+      "spons-cuci": "dish sponge",
+      "roti-tawar": "loaf of bread",
+      "toples": "jar",
+      "jeruk": "orange",
+      "tomat": "tomato",
+      "telur": "egg"
+    }
+  },
+  "knobs": {
+    "tinggi": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "tinggi menara yang harus berdiri (jumlah tingkat); bukti kompetensi = 4 tingkat"
+    },
+    "benda": {
+      "min": 5,
+      "max": 6,
+      "default": 5,
+      "step": 1,
+      "keterangan": "jumlah benda di meja per ronde; selalu ada cukup benda rata dan minimal satu benda bulat"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "menara",
+  "items": [
+    {
+      "id": "kotak-bekal",
+      "labelKey": "kotak-bekal",
+      "role": "benda",
+      "emoji": "🍱",
+      "value": 1
+    },
+    {
+      "id": "mentega",
+      "labelKey": "mentega",
+      "role": "benda",
+      "emoji": "🧈",
+      "value": 1
+    },
+    {
+      "id": "spons-cuci",
+      "labelKey": "spons-cuci",
+      "role": "benda",
+      "emoji": "🧽",
+      "value": 1
+    },
+    {
+      "id": "roti-tawar",
+      "labelKey": "roti-tawar",
+      "role": "benda",
+      "emoji": "🍞",
+      "value": 1
+    },
+    {
+      "id": "toples",
+      "labelKey": "toples",
+      "role": "benda",
+      "emoji": "🫙",
+      "value": 2
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "role": "benda",
+      "emoji": "🍊",
+      "value": 0
+    },
+    {
+      "id": "tomat",
+      "labelKey": "tomat",
+      "role": "benda",
+      "emoji": "🍅",
+      "value": 0
+    },
+    {
+      "id": "telur",
+      "labelKey": "telur",
+      "role": "benda",
+      "emoji": "🥚",
+      "value": 0
+    }
+  ]
+}

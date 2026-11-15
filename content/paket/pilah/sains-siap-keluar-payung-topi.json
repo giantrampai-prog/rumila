@@ -1,0 +1,134 @@
+{
+  "id": "sains-siap-keluar-payung-topi",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.SIANG-MALAM-CUACA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siap ke Taman: Payung atau Topi",
+      "instruksi": "Lihat langitnya. Hujan? Taruh ke payung. Cerah? Taruh ke topi.",
+      "b-payung": "bawa payung",
+      "b-topi": "pakai topi",
+      "i-terik": "matahari terik di langit biru",
+      "i-senyum": "matahari bersinar terang",
+      "i-sedikitawan": "cerah, awannya sedikit",
+      "i-panas": "siang panas sekali",
+      "i-pantai": "pantai cerah dan panas",
+      "i-hujan": "hujan turun",
+      "i-petir": "hujan dan petir",
+      "i-tetes": "tetes hujan jatuh",
+      "i-cipratan": "cipratan air hujan",
+      "i-gerimis": "gerimis rintik-rintik"
+    },
+    "en": {
+      "judul": "Ready for the Park: Umbrella or Hat",
+      "instruksi": "Look at the sky. Rainy? Put it with the umbrella. Sunny? Put it with the hat.",
+      "b-payung": "take an umbrella",
+      "b-topi": "wear a hat",
+      "i-terik": "hot sun in a blue sky",
+      "i-senyum": "the sun shines brightly",
+      "i-sedikitawan": "sunny with a few clouds",
+      "i-panas": "a very hot afternoon",
+      "i-pantai": "a sunny, hot beach",
+      "i-hujan": "rain is falling",
+      "i-petir": "rain and lightning",
+      "i-tetes": "raindrops falling",
+      "i-cipratan": "splashes of rainwater",
+      "i-gerimis": "light drizzle"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kartu langit per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "payung",
+      "labelKey": "b-payung",
+      "emoji": "☂️"
+    },
+    {
+      "id": "topi",
+      "labelKey": "b-topi",
+      "emoji": "🧢"
+    }
+  ],
+  "items": [
+    {
+      "id": "terik",
+      "labelKey": "i-terik",
+      "bin": "topi",
+      "emoji": "☀️"
+    },
+    {
+      "id": "senyum",
+      "labelKey": "i-senyum",
+      "bin": "topi",
+      "emoji": "🌞"
+    },
+    {
+      "id": "sedikitawan",
+      "labelKey": "i-sedikitawan",
+      "bin": "topi",
+      "emoji": "🌤️"
+    },
+    {
+      "id": "panas",
+      "labelKey": "i-panas",
+      "bin": "topi",
+      "emoji": "😎"
+    },
+    {
+      "id": "pantai",
+      "labelKey": "i-pantai",
+      "bin": "topi",
+      "emoji": "🏖️"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "payung",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "petir",
+      "labelKey": "i-petir",
+      "bin": "payung",
+      "emoji": "⛈️"
+    },
+    {
+      "id": "tetes",
+      "labelKey": "i-tetes",
+      "bin": "payung",
+      "emoji": "💧"
+    },
+    {
+      "id": "cipratan",
+      "labelKey": "i-cipratan",
+      "bin": "payung",
+      "emoji": "💦"
+    },
+    {
+      "id": "gerimis",
+      "labelKey": "i-gerimis",
+      "bin": "payung",
+      "emoji": "🌧️",
+      "color": "#90a4ae"
+    }
+  ],
+  "pilihan": []
+}

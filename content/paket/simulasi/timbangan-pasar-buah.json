@@ -1,0 +1,106 @@
+{
+  "id": "timbangan-pasar-buah",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.BANDING.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Timbang di Pasar",
+      "instruksi": "Pedagang pasar menaruh dua barang di timbangan jungkat-jungkit. Lihat sisi yang turun, lalu sentuh barang yang lebih berat.",
+      "labu": "labu",
+      "kelapa": "kelapa",
+      "nanas": "nanas",
+      "mangga": "mangga",
+      "anggur": "anggur",
+      "ceri": "ceri",
+      "spons": "spons"
+    },
+    "en": {
+      "judul": "Market Balance",
+      "instruksi": "The market seller puts two things on the seesaw balance. Watch which side goes down, then touch the heavier one.",
+      "labu": "pumpkin",
+      "kelapa": "coconut",
+      "nanas": "pineapple",
+      "mangga": "mango",
+      "anggur": "grapes",
+      "ceri": "cherries",
+      "spons": "sponge"
+    }
+  },
+  "knobs": {
+    "tipuan": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = pasangan biasa; 1 = pasangan besar-ringan vs kecil-berat (spons vs kelapa) setelah 3 sukses"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "timbangan",
+  "items": [
+    {
+      "id": "labu",
+      "labelKey": "labu",
+      "role": "benda",
+      "emoji": "🎃",
+      "value": 9,
+      "scale": 1.6
+    },
+    {
+      "id": "kelapa",
+      "labelKey": "kelapa",
+      "role": "benda",
+      "emoji": "🥥",
+      "value": 7,
+      "scale": 0.8
+    },
+    {
+      "id": "nanas",
+      "labelKey": "nanas",
+      "role": "benda",
+      "emoji": "🍍",
+      "value": 6,
+      "scale": 1.3
+    },
+    {
+      "id": "mangga",
+      "labelKey": "mangga",
+      "role": "benda",
+      "emoji": "🥭",
+      "value": 4,
+      "scale": 0.9
+    },
+    {
+      "id": "anggur",
+      "labelKey": "anggur",
+      "role": "benda",
+      "emoji": "🍇",
+      "value": 3,
+      "scale": 1
+    },
+    {
+      "id": "ceri",
+      "labelKey": "ceri",
+      "role": "benda",
+      "emoji": "🍒",
+      "value": 2,
+      "scale": 0.5
+    },
+    {
+      "id": "spons",
+      "labelKey": "spons",
+      "role": "benda",
+      "emoji": "🧽",
+      "value": 1,
+      "scale": 1.7
+    }
+  ]
+}

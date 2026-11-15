@@ -1,0 +1,149 @@
+{
+  "id": "sains-makan-siang-di-kebun",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Makan Siang di Kebun",
+      "instruksi": "Beri makan hanya makhluk hidup di kebun. Batu dan mainan tidak perlu makan.",
+      "b-makan": "beri makan",
+      "b-tidak": "tidak perlu makan",
+      "i-ulat": "ulat",
+      "i-siput": "siput",
+      "i-kupu": "kupu-kupu",
+      "i-burung": "burung pipit",
+      "i-tupai": "tupai",
+      "i-semut": "semut",
+      "i-bola": "bola",
+      "i-mobil": "mobil-mobilan",
+      "i-batu": "batu",
+      "i-keranjang": "keranjang",
+      "i-sarungtangan": "sarung tangan",
+      "i-boneka": "boneka beruang"
+    },
+    "en": {
+      "judul": "Lunchtime in the Garden",
+      "instruksi": "Feed only the living things in the garden. Stones and toys don't need food.",
+      "b-makan": "give food",
+      "b-tidak": "no food needed",
+      "i-ulat": "caterpillar",
+      "i-siput": "snail",
+      "i-kupu": "butterfly",
+      "i-burung": "sparrow",
+      "i-tupai": "squirrel",
+      "i-semut": "ant",
+      "i-bola": "ball",
+      "i-mobil": "toy car",
+      "i-batu": "stone",
+      "i-keranjang": "basket",
+      "i-sarungtangan": "gloves",
+      "i-boneka": "teddy bear"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah gambar per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "makan",
+      "labelKey": "b-makan",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🚫"
+    }
+  ],
+  "items": [
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "makan",
+      "emoji": "🐛"
+    },
+    {
+      "id": "siput",
+      "labelKey": "i-siput",
+      "bin": "makan",
+      "emoji": "🐌"
+    },
+    {
+      "id": "kupu",
+      "labelKey": "i-kupu",
+      "bin": "makan",
+      "emoji": "🦋"
+    },
+    {
+      "id": "burung",
+      "labelKey": "i-burung",
+      "bin": "makan",
+      "emoji": "🐦"
+    },
+    {
+      "id": "tupai",
+      "labelKey": "i-tupai",
+      "bin": "makan",
+      "emoji": "🐿️"
+    },
+    {
+      "id": "semut",
+      "labelKey": "i-semut",
+      "bin": "makan",
+      "emoji": "🐜"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "tidak",
+      "emoji": "⚽"
+    },
+    {
+      "id": "mobil",
+      "labelKey": "i-mobil",
+      "bin": "tidak",
+      "emoji": "🚗"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "tidak",
+      "emoji": "🪨"
+    },
+    {
+      "id": "keranjang",
+      "labelKey": "i-keranjang",
+      "bin": "tidak",
+      "emoji": "🧺"
+    },
+    {
+      "id": "sarungtangan",
+      "labelKey": "i-sarungtangan",
+      "bin": "tidak",
+      "emoji": "🧤"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "i-boneka",
+      "bin": "tidak",
+      "emoji": "🧸"
+    }
+  ],
+  "pilihan": []
+}

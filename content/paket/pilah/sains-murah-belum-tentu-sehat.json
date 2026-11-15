@@ -1,0 +1,277 @@
+{
+  "id": "sains-murah-belum-tentu-sehat",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MAKANAN-SEHAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Murah Belum Tentu Sehat",
+      "instruksi": "Robot belanja bekal sekolah di pasar. Dengarkan harganya, lalu pilih buah atau sayur, walau permen lebih murah.",
+      "pilihan": "pilihan",
+      "i-pir": "pir",
+      "i-anggur": "anggur",
+      "i-mangga": "mangga",
+      "i-semangka": "potongan semangka",
+      "i-brokoli": "brokoli",
+      "i-jagung": "jagung rebus",
+      "i-tomat": "tomat",
+      "i-permen": "permen",
+      "i-lolipop": "lolipop",
+      "i-cokelat": "cokelat batang",
+      "i-donat": "donat",
+      "t-1": "Permen paling murah, cuma satu koin. Pir dua koin. Mana bekal yang sehat?",
+      "t-2": "Lolipop murah sekali. Brokoli sedikit lebih mahal. Mana bekal yang sehat?",
+      "t-3": "Cokelat satu koin, anggur tiga koin. Mana yang membuat tubuh sehat?",
+      "t-4": "Uang robot cukup untuk semuanya. Mana bekal sehat untuk sekolah?",
+      "t-5": "Donat sedang murah. Jagung rebus harganya biasa. Mana bekal yang sehat?",
+      "t-6": "Penjual berkata: permen paling murah! Tapi robot butuh buah. Pilih buahnya.",
+      "t-7": "Tiga jajanan manis murah dan satu buah. Mana bekal yang sehat?",
+      "t-8": "Mana yang lebih sehat untuk dibawa ke sekolah?",
+      "t-9": "Lolipop dan permen murah. Anggur lebih mahal. Pilih bekal yang sehat.",
+      "t-10": "Mana bekal yang membuat badan kuat dan tidak merusak gigi?",
+      "t-11": "Cokelat sedang murah. Tomat harganya biasa. Mana bekal yang sehat?",
+      "t-12": "Robot hanya boleh membeli satu. Mana bekal sayur yang sehat?"
+    },
+    "en": {
+      "judul": "Cheap Is Not Always Healthy",
+      "instruksi": "The robot shops for a school snack at the market. Listen to the prices, then pick fruit or vegetables, even if the candy is cheaper.",
+      "pilihan": "choices",
+      "i-pir": "pear",
+      "i-anggur": "grapes",
+      "i-mangga": "mango",
+      "i-semangka": "watermelon slice",
+      "i-brokoli": "broccoli",
+      "i-jagung": "boiled corn",
+      "i-tomat": "tomato",
+      "i-permen": "candy",
+      "i-lolipop": "lollipop",
+      "i-cokelat": "chocolate bar",
+      "i-donat": "doughnut",
+      "t-1": "The candy is cheapest, only one coin. The pear is two coins. Which snack is healthy?",
+      "t-2": "The lollipop is very cheap. The broccoli costs a bit more. Which snack is healthy?",
+      "t-3": "The chocolate is one coin, the grapes are three coins. Which one keeps the body healthy?",
+      "t-4": "The robot has enough money for all of them. Which is a healthy school snack?",
+      "t-5": "The doughnut is cheap today. The boiled corn is the usual price. Which snack is healthy?",
+      "t-6": "The seller says: candy is cheapest! But the robot needs fruit. Pick the fruit.",
+      "t-7": "Three cheap sweets and one fruit. Which snack is healthy?",
+      "t-8": "Which is healthier to bring to school?",
+      "t-9": "The lollipop and candy are cheap. The grapes cost more. Pick the healthy snack.",
+      "t-10": "Which snack makes the body strong and does not hurt the teeth?",
+      "t-11": "The chocolate is cheap today. The tomato is the usual price. Which snack is healthy?",
+      "t-12": "The robot may buy only one. Which vegetable snack is healthy?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah barang per pertanyaan: 2 → 4; jajanan manis sering paling murah"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "pir",
+      "labelKey": "i-pir",
+      "bin": "pilihan",
+      "emoji": "🍐"
+    },
+    {
+      "id": "anggur",
+      "labelKey": "i-anggur",
+      "bin": "pilihan",
+      "emoji": "🍇"
+    },
+    {
+      "id": "mangga",
+      "labelKey": "i-mangga",
+      "bin": "pilihan",
+      "emoji": "🥭"
+    },
+    {
+      "id": "semangka",
+      "labelKey": "i-semangka",
+      "bin": "pilihan",
+      "emoji": "🍉"
+    },
+    {
+      "id": "brokoli",
+      "labelKey": "i-brokoli",
+      "bin": "pilihan",
+      "emoji": "🥦"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "pilihan",
+      "emoji": "🌽"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "i-tomat",
+      "bin": "pilihan",
+      "emoji": "🍅"
+    },
+    {
+      "id": "permen",
+      "labelKey": "i-permen",
+      "bin": "pilihan",
+      "emoji": "🍬"
+    },
+    {
+      "id": "lolipop",
+      "labelKey": "i-lolipop",
+      "bin": "pilihan",
+      "emoji": "🍭"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "i-cokelat",
+      "bin": "pilihan",
+      "emoji": "🍫"
+    },
+    {
+      "id": "donat",
+      "labelKey": "i-donat",
+      "bin": "pilihan",
+      "emoji": "🍩"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "pir",
+        "permen"
+      ],
+      "correct": "pir"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "brokoli",
+        "lolipop",
+        "cokelat"
+      ],
+      "correct": "brokoli"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "anggur",
+        "cokelat",
+        "permen"
+      ],
+      "correct": "anggur"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "mangga",
+        "donat",
+        "lolipop"
+      ],
+      "correct": "mangga"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "jagung",
+        "donat"
+      ],
+      "correct": "jagung"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "semangka",
+        "permen",
+        "cokelat"
+      ],
+      "correct": "semangka"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "mangga",
+        "permen",
+        "lolipop",
+        "donat"
+      ],
+      "correct": "mangga"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "pir",
+        "cokelat",
+        "donat"
+      ],
+      "correct": "pir"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "anggur",
+        "lolipop",
+        "permen"
+      ],
+      "correct": "anggur"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "jagung",
+        "permen",
+        "cokelat"
+      ],
+      "correct": "jagung"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "tomat",
+        "cokelat"
+      ],
+      "correct": "tomat"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "brokoli",
+        "donat",
+        "permen",
+        "lolipop"
+      ],
+      "correct": "brokoli"
+    }
+  ]
+}

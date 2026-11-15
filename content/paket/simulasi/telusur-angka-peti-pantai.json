@@ -1,0 +1,51 @@
+{
+  "id": "telusur-angka-peti-pantai",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.BILANGAN-1-10.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Angka Pembuka Peti Pantai",
+      "instruksi": "Ada peti kayu terdampar di pantai. Telusuri angka 1 sampai 5 dengan jarimu mengikuti panah supaya petinya terbuka.",
+      "peti-kayu": "peti kayu"
+    },
+    "en": {
+      "judul": "Beach Crate Numbers",
+      "instruksi": "A wooden crate washed up on the beach. Trace the numbers 1 to 5 with your finger, following the arrows, to open it.",
+      "peti-kayu": "wooden crate"
+    }
+  },
+  "knobs": {
+    "max": {
+      "min": 5,
+      "max": 5,
+      "default": 5,
+      "step": 1,
+      "keterangan": "angka yang diacak selalu 1 sampai 5 (sesuai kompetensi)"
+    },
+    "panah": {
+      "min": 0,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = panah urutan goresan ditampilkan; 0 = disembunyikan, dipakai setelah kelima angka sudah ditelusuri dengan panah (anak mengingat arah sendiri)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "telusur",
+  "items": [
+    {
+      "id": "peti-kayu",
+      "labelKey": "peti-kayu",
+      "role": "benda",
+      "emoji": "📦"
+    }
+  ]
+}

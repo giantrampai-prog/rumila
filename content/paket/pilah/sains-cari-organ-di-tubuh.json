@@ -1,0 +1,260 @@
+{
+  "id": "sains-cari-organ-di-tubuh",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.TULANG-OTOT-ORGAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Organ di Dalam Tubuh",
+      "instruksi": "Robot memeriksa tubuh di laboratorium. Dengarkan nama organnya dan di mana letaknya, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-otak": "otak",
+      "i-jantung": "jantung",
+      "i-paru": "paru-paru",
+      "i-lambung": "lambung (di dalam perut)",
+      "i-mata": "mata",
+      "i-gigi": "gigi",
+      "i-telinga": "telinga",
+      "i-lidah": "lidah",
+      "t-1": "Lambung ada di dalam perut, tempat makanan diaduk. Mana lambungnya?",
+      "t-2": "Otak tersimpan di dalam kepala. Sentuh otaknya!",
+      "t-3": "Taruh tangan di dada, terasa dug-dug. Itu jantung. Mana jantungnya?",
+      "t-4": "Saat kita menghirup udara, dada mengembang karena paru-paru. Mana paru-parunya?",
+      "t-5": "Perut berbunyi kruk-kruk saat lapar. Mana lambung di dalam perut?",
+      "t-6": "Mana otak, organ untuk berpikir dan mengingat?",
+      "t-7": "Mana jantung, organ di dalam dada yang memompa darah?",
+      "t-8": "Mana paru-paru? Ada dua, di kiri dan kanan dada.",
+      "t-9": "Gigi dan mata terlihat dari luar. Mana organ yang tersembunyi di dalam perut?",
+      "t-10": "Mana jantungnya? Setelah berlari, jantung berdetak cepat.",
+      "t-11": "Mana paru-parunya? Paru-paru mengisi udara saat kita meniup.",
+      "t-12": "Mana otaknya? Otak bekerja saat kita menyusun puzel."
+    },
+    "en": {
+      "judul": "Find the Organ Inside the Body",
+      "instruksi": "The robot checks the body in the lab. Listen to the organ's name and where it is, then touch its picture.",
+      "pilihan": "choices",
+      "i-otak": "brain",
+      "i-jantung": "heart",
+      "i-paru": "lungs",
+      "i-lambung": "stomach (inside the tummy)",
+      "i-mata": "eye",
+      "i-gigi": "tooth",
+      "i-telinga": "ear",
+      "i-lidah": "tongue",
+      "t-1": "The stomach is inside the tummy, where food gets mixed. Where is the stomach?",
+      "t-2": "The brain is kept inside the head. Touch the brain!",
+      "t-3": "Put your hand on your chest and feel thump-thump. That is the heart. Where is the heart?",
+      "t-4": "When we breathe in, the chest gets bigger because of the lungs. Where are the lungs?",
+      "t-5": "The tummy rumbles when we are hungry. Where is the stomach inside the tummy?",
+      "t-6": "Where is the brain, the organ for thinking and remembering?",
+      "t-7": "Where is the heart, the organ in the chest that pumps blood?",
+      "t-8": "Where are the lungs? There are two, on the left and right of the chest.",
+      "t-9": "Teeth and eyes can be seen from outside. Which organ is hidden inside the tummy?",
+      "t-10": "Where is the heart? After running, the heart beats fast.",
+      "t-11": "Where are the lungs? The lungs fill with air when we blow.",
+      "t-12": "Where is the brain? The brain works when we do a puzzle."
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar per pertanyaan: 3 → 4; organ dalam (otak, jantung, paru-paru, lambung) di antara bagian tubuh luar (mata, gigi, telinga, lidah)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "otak",
+      "labelKey": "i-otak",
+      "bin": "pilihan",
+      "emoji": "🧠"
+    },
+    {
+      "id": "jantung",
+      "labelKey": "i-jantung",
+      "bin": "pilihan",
+      "emoji": "🫀"
+    },
+    {
+      "id": "paru",
+      "labelKey": "i-paru",
+      "bin": "pilihan",
+      "emoji": "🫁"
+    },
+    {
+      "id": "lambung",
+      "labelKey": "i-lambung",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#ffab91"
+    },
+    {
+      "id": "mata",
+      "labelKey": "i-mata",
+      "bin": "pilihan",
+      "emoji": "👁️"
+    },
+    {
+      "id": "gigi",
+      "labelKey": "i-gigi",
+      "bin": "pilihan",
+      "emoji": "🦷"
+    },
+    {
+      "id": "telinga",
+      "labelKey": "i-telinga",
+      "bin": "pilihan",
+      "emoji": "👂"
+    },
+    {
+      "id": "lidah",
+      "labelKey": "i-lidah",
+      "bin": "pilihan",
+      "emoji": "👅"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "lambung",
+        "jantung",
+        "gigi",
+        "mata"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "otak",
+        "jantung",
+        "lambung"
+      ],
+      "correct": "otak"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "jantung",
+        "paru",
+        "lidah"
+      ],
+      "correct": "jantung"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "paru",
+        "lambung",
+        "gigi",
+        "otak"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "lambung",
+        "otak",
+        "telinga"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "otak",
+        "jantung",
+        "paru",
+        "lidah"
+      ],
+      "correct": "otak"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "jantung",
+        "lambung",
+        "mata",
+        "telinga"
+      ],
+      "correct": "jantung"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "paru",
+        "jantung",
+        "telinga"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "lambung",
+        "gigi",
+        "mata"
+      ],
+      "correct": "lambung"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "jantung",
+        "otak",
+        "gigi"
+      ],
+      "correct": "jantung"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "paru",
+        "lambung",
+        "mata",
+        "lidah"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "otak",
+        "lambung",
+        "jantung"
+      ],
+      "correct": "otak"
+    }
+  ]
+}

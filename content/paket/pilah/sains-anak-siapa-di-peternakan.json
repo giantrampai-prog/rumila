@@ -1,0 +1,171 @@
+{
+  "id": "sains-anak-siapa-di-peternakan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.SIKLUS-HIDUP.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Anak Siapa di Peternakan?",
+      "instruksi": "Antar tiap anak hewan ke induknya. Ingat, ulat nanti menjadi kupu-kupu.",
+      "b-kupu": "kupu-kupu",
+      "b-bebek": "induk bebek",
+      "b-kambing": "induk kambing",
+      "b-kuda": "induk kuda",
+      "b-domba": "induk domba",
+      "i-ulat": "ulat hijau",
+      "i-ulatkecil": "ulat kecil di daun",
+      "i-anakbebek": "anak bebek",
+      "i-bebekmenetas": "anak bebek baru menetas",
+      "i-anakkambing": "anak kambing",
+      "i-kambinglompat": "anak kambing melompat",
+      "i-anakkuda": "anak kuda",
+      "i-kudamenyusu": "anak kuda menyusu",
+      "i-anakdomba": "anak domba",
+      "i-dombaputih": "anak domba berbulu putih"
+    },
+    "en": {
+      "judul": "Whose Baby on the Farm?",
+      "instruksi": "Take each baby animal to its mother. Remember, a caterpillar grows into a butterfly.",
+      "b-kupu": "butterfly",
+      "b-bebek": "mother duck",
+      "b-kambing": "mother goat",
+      "b-kuda": "mother horse",
+      "b-domba": "mother sheep",
+      "i-ulat": "green caterpillar",
+      "i-ulatkecil": "tiny caterpillar on a leaf",
+      "i-anakbebek": "duckling",
+      "i-bebekmenetas": "newly hatched duckling",
+      "i-anakkambing": "baby goat",
+      "i-kambinglompat": "baby goat jumping",
+      "i-anakkuda": "foal",
+      "i-kudamenyusu": "foal drinking milk",
+      "i-anakdomba": "lamb",
+      "i-dombaputih": "fluffy white lamb"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah induk yang ditunggu"
+    },
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah anak hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kupu",
+      "labelKey": "b-kupu",
+      "emoji": "🦋"
+    },
+    {
+      "id": "bebek",
+      "labelKey": "b-bebek",
+      "emoji": "🦆"
+    },
+    {
+      "id": "kambing",
+      "labelKey": "b-kambing",
+      "emoji": "🐐"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "b-kuda",
+      "emoji": "🐎"
+    },
+    {
+      "id": "domba",
+      "labelKey": "b-domba",
+      "emoji": "🐑"
+    }
+  ],
+  "items": [
+    {
+      "id": "ulat",
+      "labelKey": "i-ulat",
+      "bin": "kupu",
+      "emoji": "🐛",
+      "scale": 0.7
+    },
+    {
+      "id": "ulatkecil",
+      "labelKey": "i-ulatkecil",
+      "bin": "kupu",
+      "emoji": "🐛",
+      "scale": 0.5
+    },
+    {
+      "id": "anakbebek",
+      "labelKey": "i-anakbebek",
+      "bin": "bebek",
+      "emoji": "🐤",
+      "scale": 0.7
+    },
+    {
+      "id": "bebekmenetas",
+      "labelKey": "i-bebekmenetas",
+      "bin": "bebek",
+      "emoji": "🐣",
+      "scale": 0.7
+    },
+    {
+      "id": "anakkambing",
+      "labelKey": "i-anakkambing",
+      "bin": "kambing",
+      "emoji": "🐐",
+      "scale": 0.6
+    },
+    {
+      "id": "kambinglompat",
+      "labelKey": "i-kambinglompat",
+      "bin": "kambing",
+      "emoji": "🐐",
+      "scale": 0.5
+    },
+    {
+      "id": "anakkuda",
+      "labelKey": "i-anakkuda",
+      "bin": "kuda",
+      "emoji": "🐎",
+      "scale": 0.6
+    },
+    {
+      "id": "kudamenyusu",
+      "labelKey": "i-kudamenyusu",
+      "bin": "kuda",
+      "emoji": "🐎",
+      "scale": 0.5
+    },
+    {
+      "id": "anakdomba",
+      "labelKey": "i-anakdomba",
+      "bin": "domba",
+      "emoji": "🐑",
+      "scale": 0.6
+    },
+    {
+      "id": "dombaputih",
+      "labelKey": "i-dombaputih",
+      "bin": "domba",
+      "emoji": "🐑",
+      "scale": 0.5
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,87 @@
+{
+  "id": "kios-peternakan-ambil-1-5",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "dagang",
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kios Hasil Ternak",
+      "instruksi": "Tetangga datang ke kios peternakan: dengarkan pesanannya, lalu ambil hasil ternak sebanyak yang diminta.",
+      "telur": "telur",
+      "susu": "susu",
+      "keju": "keju",
+      "madu": "madu"
+    },
+    "en": {
+      "judul": "Farm Produce Stand",
+      "instruksi": "A neighbour comes to the farm stand: listen to the order, then take as many as they ask for.",
+      "telur": "eggs",
+      "susu": "milk",
+      "keju": "cheese",
+      "madu": "honey"
+    }
+  },
+  "knobs": {
+    "itemsMax": {
+      "min": 1,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah yang diminta (paling banyak 5); hasil ternak yang tersedia selalu lebih banyak dari yang diminta"
+    },
+    "kinds": {
+      "min": 1,
+      "max": 2,
+      "default": 1,
+      "step": 1,
+      "keterangan": "jenis hasil ternak dalam satu pesanan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "currency": "IDR",
+  "denominations": [
+    1000
+  ],
+  "priceLabel": "koin",
+  "mode": "ambil",
+  "goods": [
+    {
+      "id": "telur",
+      "labelKey": "telur",
+      "price": 1000,
+      "emoji": "🥚"
+    },
+    {
+      "id": "susu",
+      "labelKey": "susu",
+      "price": 1000,
+      "emoji": "🥛"
+    },
+    {
+      "id": "keju",
+      "labelKey": "keju",
+      "price": 1000,
+      "emoji": "🧀"
+    },
+    {
+      "id": "madu",
+      "labelKey": "madu",
+      "price": 1000,
+      "emoji": "🍯"
+    }
+  ],
+  "customerRule": {
+    "itemsMin": 1,
+    "itemsMax": 5,
+    "payExact": true,
+    "maxTotal": 20000,
+    "kindsMax": 2
+  }
+}

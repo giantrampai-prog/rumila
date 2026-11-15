@@ -1,0 +1,305 @@
+{
+  "id": "sains-bagian-tumbuhan-di-taman",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagian Tumbuhan di Taman",
+      "instruksi": "Jalan-jalan di taman! Dengarkan, lalu sentuh bagian tumbuhan yang disebut.",
+      "pilihan": "pilihan",
+      "i-akarpohon": "akar pohon",
+      "i-akarrumput": "akar rumput",
+      "i-batangpohon": "batang pohon",
+      "i-batangbambu": "batang bambu",
+      "i-daunhijau": "daun hijau",
+      "i-daunkering": "daun kering",
+      "i-daunsemanggi": "daun semanggi",
+      "i-bungamatahari": "bunga matahari",
+      "i-bungamawar": "bunga mawar",
+      "i-bungasepatu": "kembang sepatu",
+      "i-bungatulip": "bunga tulip",
+      "t-akar1": "Pohon besar di taman berdiri kuat karena akarnya. Mana akarnya?",
+      "t-akar2": "Tukang kebun menggali tanah dan menemukan akar. Mana akarnya?",
+      "t-akar3": "Bagian tumbuhan ini paling bawah, tersembunyi di dalam tanah. Mana itu?",
+      "t-batang1": "Burung bertengger di batang pohon. Mana batangnya?",
+      "t-batang2": "Bambu di taman tinggi dan beruas-ruas. Mana batangnya?",
+      "t-batang3": "Bagian ini menyangga daun dan bunga supaya tegak. Mana batangnya?",
+      "t-daun1": "Angin meniup daun sampai jatuh ke tanah. Mana daunnya?",
+      "t-daun2": "Ulat suka makan bagian tumbuhan yang hijau dan lebar. Mana daunnya?",
+      "t-daun3": "Di rumput ada daun kecil bertiga. Sentuh daunnya!",
+      "t-bunga1": "Lebah mencari madu di bagian yang berwarna-warni. Mana bunganya?",
+      "t-bunga2": "Bunga besar berwarna kuning ini menghadap ke matahari. Sentuh bunganya!",
+      "t-bunga3": "Bunga ini harum dan batangnya berduri. Mana bunganya?",
+      "t-bunga4": "Taman penuh warna karena tulip mekar. Mana bunganya?"
+    },
+    "en": {
+      "judul": "Plant Parts in the Park",
+      "instruksi": "A walk in the park! Listen, then touch the plant part you hear.",
+      "pilihan": "choices",
+      "i-akarpohon": "tree roots",
+      "i-akarrumput": "grass roots",
+      "i-batangpohon": "tree trunk",
+      "i-batangbambu": "bamboo stem",
+      "i-daunhijau": "green leaf",
+      "i-daunkering": "dry leaf",
+      "i-daunsemanggi": "clover leaf",
+      "i-bungamatahari": "sunflower",
+      "i-bungamawar": "rose",
+      "i-bungasepatu": "hibiscus",
+      "i-bungatulip": "tulip",
+      "t-akar1": "The big tree in the park stands strong because of its roots. Where are the roots?",
+      "t-akar2": "The gardener digs the soil and finds roots. Where are the roots?",
+      "t-akar3": "This plant part is at the very bottom, hidden in the soil. Which one?",
+      "t-batang1": "A bird perches on the tree trunk. Where is the trunk?",
+      "t-batang2": "The bamboo in the park is tall with joints. Where is the stem?",
+      "t-batang3": "This part holds up the leaves and flowers. Where is the stem?",
+      "t-daun1": "The wind blows a leaf to the ground. Where is the leaf?",
+      "t-daun2": "Caterpillars like to eat the green, flat part of a plant. Where is the leaf?",
+      "t-daun3": "In the grass there are little leaves in threes. Touch the leaf!",
+      "t-bunga1": "A bee looks for nectar in the colourful part. Where is the flower?",
+      "t-bunga2": "This big yellow flower faces the sun. Touch the flower!",
+      "t-bunga3": "This flower smells sweet and has a thorny stem. Where is the flower?",
+      "t-bunga4": "The park is colourful because the tulips are blooming. Where is the flower?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat gambar per pertanyaan: akar, batang, daun, bunga"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "akarpohon",
+      "labelKey": "i-akarpohon",
+      "bin": "pilihan",
+      "emoji": "🫚",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "akarrumput",
+      "labelKey": "i-akarrumput",
+      "bin": "pilihan",
+      "emoji": "🫚",
+      "color": "#bcaaa4"
+    },
+    {
+      "id": "batangpohon",
+      "labelKey": "i-batangpohon",
+      "bin": "pilihan",
+      "emoji": "🪵"
+    },
+    {
+      "id": "batangbambu",
+      "labelKey": "i-batangbambu",
+      "bin": "pilihan",
+      "emoji": "🎋"
+    },
+    {
+      "id": "daunhijau",
+      "labelKey": "i-daunhijau",
+      "bin": "pilihan",
+      "emoji": "🌿"
+    },
+    {
+      "id": "daunkering",
+      "labelKey": "i-daunkering",
+      "bin": "pilihan",
+      "emoji": "🍂"
+    },
+    {
+      "id": "daunsemanggi",
+      "labelKey": "i-daunsemanggi",
+      "bin": "pilihan",
+      "emoji": "☘️"
+    },
+    {
+      "id": "bungamatahari",
+      "labelKey": "i-bungamatahari",
+      "bin": "pilihan",
+      "emoji": "🌻"
+    },
+    {
+      "id": "bungamawar",
+      "labelKey": "i-bungamawar",
+      "bin": "pilihan",
+      "emoji": "🌹"
+    },
+    {
+      "id": "bungasepatu",
+      "labelKey": "i-bungasepatu",
+      "bin": "pilihan",
+      "emoji": "🌺"
+    },
+    {
+      "id": "bungatulip",
+      "labelKey": "i-bungatulip",
+      "bin": "pilihan",
+      "emoji": "🌷"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "akar1",
+      "promptKey": "t-akar1",
+      "choices": [
+        "akarpohon",
+        "batangpohon",
+        "daunhijau",
+        "bungasepatu"
+      ],
+      "correct": "akarpohon"
+    },
+    {
+      "id": "akar2",
+      "promptKey": "t-akar2",
+      "choices": [
+        "akarrumput",
+        "batangbambu",
+        "daunsemanggi",
+        "bungatulip"
+      ],
+      "correct": "akarrumput"
+    },
+    {
+      "id": "akar3",
+      "promptKey": "t-akar3",
+      "choices": [
+        "akarpohon",
+        "daunsemanggi",
+        "bungamatahari",
+        "batangbambu"
+      ],
+      "correct": "akarpohon"
+    },
+    {
+      "id": "batang1",
+      "promptKey": "t-batang1",
+      "choices": [
+        "batangpohon",
+        "akarpohon",
+        "daunkering",
+        "bungamawar"
+      ],
+      "correct": "batangpohon"
+    },
+    {
+      "id": "batang2",
+      "promptKey": "t-batang2",
+      "choices": [
+        "batangbambu",
+        "daunhijau",
+        "akarrumput",
+        "bungamatahari"
+      ],
+      "correct": "batangbambu"
+    },
+    {
+      "id": "batang3",
+      "promptKey": "t-batang3",
+      "choices": [
+        "batangpohon",
+        "akarrumput",
+        "bungatulip",
+        "daunkering"
+      ],
+      "correct": "batangpohon"
+    },
+    {
+      "id": "daun1",
+      "promptKey": "t-daun1",
+      "choices": [
+        "daunkering",
+        "batangpohon",
+        "akarpohon",
+        "bungatulip"
+      ],
+      "correct": "daunkering"
+    },
+    {
+      "id": "daun2",
+      "promptKey": "t-daun2",
+      "choices": [
+        "daunhijau",
+        "bungasepatu",
+        "batangbambu",
+        "akarrumput"
+      ],
+      "correct": "daunhijau"
+    },
+    {
+      "id": "daun3",
+      "promptKey": "t-daun3",
+      "choices": [
+        "daunsemanggi",
+        "bungamawar",
+        "akarpohon",
+        "batangpohon"
+      ],
+      "correct": "daunsemanggi"
+    },
+    {
+      "id": "bunga1",
+      "promptKey": "t-bunga1",
+      "choices": [
+        "bungasepatu",
+        "daunhijau",
+        "batangpohon",
+        "akarrumput"
+      ],
+      "correct": "bungasepatu"
+    },
+    {
+      "id": "bunga2",
+      "promptKey": "t-bunga2",
+      "choices": [
+        "bungamatahari",
+        "daunsemanggi",
+        "batangbambu",
+        "akarpohon"
+      ],
+      "correct": "bungamatahari"
+    },
+    {
+      "id": "bunga3",
+      "promptKey": "t-bunga3",
+      "choices": [
+        "bungamawar",
+        "daunkering",
+        "akarrumput",
+        "batangpohon"
+      ],
+      "correct": "bungamawar"
+    },
+    {
+      "id": "bunga4",
+      "promptKey": "t-bunga4",
+      "choices": [
+        "bungatulip",
+        "daunhijau",
+        "akarpohon",
+        "batangbambu"
+      ],
+      "correct": "bungatulip"
+    }
+  ]
+}

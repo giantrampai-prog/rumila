@@ -1,0 +1,204 @@
+{
+  "id": "sains-antar-ke-lapisan-laut",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.HEWAN-HABITAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Antar Hewan ke Lapisannya",
+      "instruksi": "Kapal selam berangkat dari pantai. Dengarkan hewan yang ikut, lalu sentuh lapisan rumahnya: terumbu, laut dalam, atau palung.",
+      "pilihan": "pilihan",
+      "i-terumbu": "terumbu karang (dangkal dan terang)",
+      "i-dalam": "laut dalam (gelap dan dingin)",
+      "i-palung": "palung (paling dalam)",
+      "t-1": "Ikan kakatua menggigit karang untuk makan. Antar ke mana?",
+      "t-2": "Kuda laut berpegangan pada karang dengan ekornya. Antar ke mana?",
+      "t-3": "Belut laut bersembunyi di lubang karang yang terang. Antar ke mana?",
+      "t-4": "Siput laut berwarna cerah merayap di antara karang. Antar ke mana?",
+      "t-5": "Cumi vampir suka tempat gelap dan dingin, jauh di bawah terumbu. Antar ke mana?",
+      "t-6": "Ikan kapak punya perut bercahaya di laut yang gelap. Antar ke mana?",
+      "t-7": "Hiu goblin berenang pelan di laut yang gelap dan dalam. Antar ke mana?",
+      "t-8": "Kutu laut raksasa merayap di dasar laut dalam yang gelap. Antar ke mana?",
+      "t-9": "Ikan siput palung hidup di tempat paling dalam di seluruh laut. Antar ke mana?",
+      "t-10": "Amfipoda raksasa, udang kecil pucat dari dasar palung. Antar ke mana?",
+      "t-11": "Teripang bening hidup di lubang laut yang paling dalam. Antar ke mana?"
+    },
+    "en": {
+      "judul": "Take the Animal to Its Layer",
+      "instruksi": "The submarine leaves the beach. Listen to the animal on board, then touch its home layer: reef, deep sea, or trench.",
+      "pilihan": "choices",
+      "i-terumbu": "coral reef (shallow and bright)",
+      "i-dalam": "deep sea (dark and cold)",
+      "i-palung": "trench (the deepest)",
+      "t-1": "The parrotfish bites coral to eat. Where does it go?",
+      "t-2": "The seahorse holds onto coral with its tail. Where does it go?",
+      "t-3": "The moray eel hides in a hole in the bright coral. Where does it go?",
+      "t-4": "A brightly coloured sea slug crawls among the coral. Where does it go?",
+      "t-5": "The vampire squid likes dark, cold water far below the reef. Where does it go?",
+      "t-6": "The hatchetfish has a glowing belly in the dark sea. Where does it go?",
+      "t-7": "The goblin shark swims slowly in the dark, deep sea. Where does it go?",
+      "t-8": "The giant isopod crawls on the dark deep-sea floor. Where does it go?",
+      "t-9": "The trench snailfish lives in the deepest place in the whole ocean. Where does it go?",
+      "t-10": "The giant amphipod is a small pale shrimp from the trench floor. Where does it go?",
+      "t-11": "A see-through sea cucumber lives in the deepest hole in the sea. Where does it go?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "selalu 3 lapisan: terumbu, laut dalam, palung; hewan berbeda dari paket Rumah di Lapisan Laut"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "terumbu",
+      "labelKey": "i-terumbu",
+      "bin": "pilihan",
+      "emoji": "🪸"
+    },
+    {
+      "id": "dalam",
+      "labelKey": "i-dalam",
+      "bin": "pilihan",
+      "emoji": "🌊",
+      "color": "#1a237e"
+    },
+    {
+      "id": "palung",
+      "labelKey": "i-palung",
+      "bin": "pilihan",
+      "emoji": "🕳️",
+      "color": "#0d1b2a"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "terumbu"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "terumbu"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "terumbu"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "terumbu"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "dalam"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "dalam"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "dalam"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "dalam"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "palung"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "palung"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "terumbu",
+        "dalam",
+        "palung"
+      ],
+      "correct": "palung"
+    }
+  ]
+}

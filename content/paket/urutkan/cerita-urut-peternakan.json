@@ -1,0 +1,384 @@
+{
+  "id": "cerita-urut-peternakan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "KODE.TKA.URUTAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cerita Urut dari Peternakan",
+      "instruksi": "Tempel label pertama, lalu, dan terakhir di bawah gambar peternakan, lalu tekan Ceritakan supaya robot bercerita.",
+      "t-ayam": "Memberi makan ayam",
+      "ayam-jagung": "ambil jagung",
+      "ayam-tabur": "tabur jagung",
+      "ayam-patuk": "ayam mematuk",
+      "t-telur": "Mengambil telur",
+      "telur-kandang": "buka kandang ayam",
+      "telur-ambil": "ambil telur",
+      "telur-keranjang": "taruh di keranjang",
+      "t-susu": "Memerah susu sapi",
+      "susu-ember": "bawa ember",
+      "susu-perah": "perah susu sapi",
+      "susu-minum": "minum susu",
+      "t-domba": "Mencukur domba",
+      "domba-tangkap": "panggil domba",
+      "domba-cukur": "cukur bulunya",
+      "domba-benang": "bulu jadi benang",
+      "t-kuda": "Merawat kuda",
+      "kuda-sikat": "sikat bulu kuda",
+      "kuda-wortel": "beri wortel",
+      "kuda-tunggang": "naik kuda",
+      "t-kambing": "Memberi minum kambing",
+      "kambing-isi": "isi air di keran",
+      "kambing-tuang": "tuang ke wadah",
+      "kambing-minum": "kambing minum",
+      "t-anak-ayam": "Anak ayam menetas",
+      "menetas-telur": "induk mengerami telur",
+      "menetas-retak": "telur retak",
+      "menetas-keluar": "anak ayam keluar",
+      "t-jerami": "Menyiapkan jerami",
+      "jerami-potong": "potong rumput",
+      "jerami-ikat": "ikat jadi jerami",
+      "jerami-makan": "sapi makan jerami",
+      "t-bebek": "Bebek ke kolam",
+      "bebek-buka": "buka pintu kandang",
+      "bebek-jalan": "bebek berjalan berbaris",
+      "bebek-renang": "bebek berenang",
+      "t-anjing": "Memberi makan anjing",
+      "anjing-mangkuk": "ambil mangkuk",
+      "anjing-isi": "isi makanan",
+      "anjing-makan": "anjing makan",
+      "t-kelinci": "Merawat kelinci",
+      "kelinci-bersih": "bersihkan kandang",
+      "kelinci-sayur": "beri sayur",
+      "kelinci-elus": "elus kelinci",
+      "t-panen": "Panen apel",
+      "panen-tangga": "pasang tangga",
+      "panen-petik": "petik apel",
+      "panen-peti": "taruh di peti"
+    },
+    "en": {
+      "judul": "Farm Stories in Order",
+      "instruksi": "Put the first, then, and last labels under the farm pictures, then press Tell so the robot tells the story.",
+      "t-ayam": "Feeding the chickens",
+      "ayam-jagung": "get some corn",
+      "ayam-tabur": "scatter the corn",
+      "ayam-patuk": "the chickens peck",
+      "t-telur": "Collecting eggs",
+      "telur-kandang": "open the coop",
+      "telur-ambil": "pick up the eggs",
+      "telur-keranjang": "put them in the basket",
+      "t-susu": "Milking the cow",
+      "susu-ember": "bring a bucket",
+      "susu-perah": "milk the cow",
+      "susu-minum": "drink the milk",
+      "t-domba": "Shearing the sheep",
+      "domba-tangkap": "call the sheep",
+      "domba-cukur": "shear its wool",
+      "domba-benang": "the wool becomes yarn",
+      "t-kuda": "Caring for the horse",
+      "kuda-sikat": "brush the horse",
+      "kuda-wortel": "give it a carrot",
+      "kuda-tunggang": "ride the horse",
+      "t-kambing": "Giving the goat a drink",
+      "kambing-isi": "fill water at the tap",
+      "kambing-tuang": "pour it into the trough",
+      "kambing-minum": "the goat drinks",
+      "t-anak-ayam": "A chick hatches",
+      "menetas-telur": "the hen sits on the egg",
+      "menetas-retak": "the egg cracks",
+      "menetas-keluar": "the chick comes out",
+      "t-jerami": "Preparing the hay",
+      "jerami-potong": "cut the grass",
+      "jerami-ikat": "tie it into hay",
+      "jerami-makan": "the cow eats the hay",
+      "t-bebek": "Ducks to the pond",
+      "bebek-buka": "open the pen door",
+      "bebek-jalan": "the ducks walk in a line",
+      "bebek-renang": "the ducks swim",
+      "t-anjing": "Feeding the dog",
+      "anjing-mangkuk": "get the bowl",
+      "anjing-isi": "fill it with food",
+      "anjing-makan": "the dog eats",
+      "t-kelinci": "Caring for the rabbit",
+      "kelinci-bersih": "clean the hutch",
+      "kelinci-sayur": "give it vegetables",
+      "kelinci-elus": "pet the rabbit",
+      "t-panen": "Picking apples",
+      "panen-tangga": "set up the ladder",
+      "panen-petik": "pick the apples",
+      "panen-peti": "put them in the crate"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar: 3 = pertama/lalu/terakhir"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "label",
+  "sequences": [
+    {
+      "id": "ayam",
+      "titleKey": "t-ayam",
+      "steps": [
+        {
+          "id": "ayam-jagung",
+          "labelKey": "ayam-jagung",
+          "emoji": "🌽"
+        },
+        {
+          "id": "ayam-tabur",
+          "labelKey": "ayam-tabur",
+          "emoji": "🤲"
+        },
+        {
+          "id": "ayam-patuk",
+          "labelKey": "ayam-patuk",
+          "emoji": "🐔"
+        }
+      ]
+    },
+    {
+      "id": "telur",
+      "titleKey": "t-telur",
+      "steps": [
+        {
+          "id": "telur-kandang",
+          "labelKey": "telur-kandang",
+          "emoji": "🛖"
+        },
+        {
+          "id": "telur-ambil",
+          "labelKey": "telur-ambil",
+          "emoji": "🥚"
+        },
+        {
+          "id": "telur-keranjang",
+          "labelKey": "telur-keranjang",
+          "emoji": "🧺"
+        }
+      ]
+    },
+    {
+      "id": "susu",
+      "titleKey": "t-susu",
+      "steps": [
+        {
+          "id": "susu-ember",
+          "labelKey": "susu-ember",
+          "emoji": "🪣"
+        },
+        {
+          "id": "susu-perah",
+          "labelKey": "susu-perah",
+          "emoji": "🐄"
+        },
+        {
+          "id": "susu-minum",
+          "labelKey": "susu-minum",
+          "emoji": "🥛"
+        }
+      ]
+    },
+    {
+      "id": "domba",
+      "titleKey": "t-domba",
+      "steps": [
+        {
+          "id": "domba-tangkap",
+          "labelKey": "domba-tangkap",
+          "emoji": "🐑"
+        },
+        {
+          "id": "domba-cukur",
+          "labelKey": "domba-cukur",
+          "emoji": "✂️"
+        },
+        {
+          "id": "domba-benang",
+          "labelKey": "domba-benang",
+          "emoji": "🧶"
+        }
+      ]
+    },
+    {
+      "id": "kuda",
+      "titleKey": "t-kuda",
+      "steps": [
+        {
+          "id": "kuda-sikat",
+          "labelKey": "kuda-sikat",
+          "emoji": "🪮"
+        },
+        {
+          "id": "kuda-wortel",
+          "labelKey": "kuda-wortel",
+          "emoji": "🥕"
+        },
+        {
+          "id": "kuda-tunggang",
+          "labelKey": "kuda-tunggang",
+          "emoji": "🐴"
+        }
+      ]
+    },
+    {
+      "id": "kambing",
+      "titleKey": "t-kambing",
+      "steps": [
+        {
+          "id": "kambing-isi",
+          "labelKey": "kambing-isi",
+          "emoji": "🚰"
+        },
+        {
+          "id": "kambing-tuang",
+          "labelKey": "kambing-tuang",
+          "emoji": "🫗"
+        },
+        {
+          "id": "kambing-minum",
+          "labelKey": "kambing-minum",
+          "emoji": "🐐"
+        }
+      ]
+    },
+    {
+      "id": "anak-ayam",
+      "titleKey": "t-anak-ayam",
+      "steps": [
+        {
+          "id": "menetas-telur",
+          "labelKey": "menetas-telur",
+          "emoji": "🐓"
+        },
+        {
+          "id": "menetas-retak",
+          "labelKey": "menetas-retak",
+          "emoji": "🥚"
+        },
+        {
+          "id": "menetas-keluar",
+          "labelKey": "menetas-keluar",
+          "emoji": "🐣"
+        }
+      ]
+    },
+    {
+      "id": "jerami",
+      "titleKey": "t-jerami",
+      "steps": [
+        {
+          "id": "jerami-potong",
+          "labelKey": "jerami-potong",
+          "emoji": "🌾"
+        },
+        {
+          "id": "jerami-ikat",
+          "labelKey": "jerami-ikat",
+          "emoji": "🪢"
+        },
+        {
+          "id": "jerami-makan",
+          "labelKey": "jerami-makan",
+          "emoji": "🐮"
+        }
+      ]
+    },
+    {
+      "id": "bebek",
+      "titleKey": "t-bebek",
+      "steps": [
+        {
+          "id": "bebek-buka",
+          "labelKey": "bebek-buka",
+          "emoji": "🚪"
+        },
+        {
+          "id": "bebek-jalan",
+          "labelKey": "bebek-jalan",
+          "emoji": "🦆"
+        },
+        {
+          "id": "bebek-renang",
+          "labelKey": "bebek-renang",
+          "emoji": "💦"
+        }
+      ]
+    },
+    {
+      "id": "anjing",
+      "titleKey": "t-anjing",
+      "steps": [
+        {
+          "id": "anjing-mangkuk",
+          "labelKey": "anjing-mangkuk",
+          "emoji": "🥣"
+        },
+        {
+          "id": "anjing-isi",
+          "labelKey": "anjing-isi",
+          "emoji": "🦴"
+        },
+        {
+          "id": "anjing-makan",
+          "labelKey": "anjing-makan",
+          "emoji": "🐕"
+        }
+      ]
+    },
+    {
+      "id": "kelinci",
+      "titleKey": "t-kelinci",
+      "steps": [
+        {
+          "id": "kelinci-bersih",
+          "labelKey": "kelinci-bersih",
+          "emoji": "🧹"
+        },
+        {
+          "id": "kelinci-sayur",
+          "labelKey": "kelinci-sayur",
+          "emoji": "🥬"
+        },
+        {
+          "id": "kelinci-elus",
+          "labelKey": "kelinci-elus",
+          "emoji": "🐰"
+        }
+      ]
+    },
+    {
+      "id": "panen",
+      "titleKey": "t-panen",
+      "steps": [
+        {
+          "id": "panen-tangga",
+          "labelKey": "panen-tangga",
+          "emoji": "🪜"
+        },
+        {
+          "id": "panen-petik",
+          "labelKey": "panen-petik",
+          "emoji": "🍎"
+        },
+        {
+          "id": "panen-peti",
+          "labelKey": "panen-peti",
+          "emoji": "📦"
+        }
+      ]
+    }
+  ]
+}

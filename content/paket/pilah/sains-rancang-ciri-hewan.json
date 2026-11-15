@@ -1,0 +1,291 @@
+{
+  "id": "sains-rancang-ciri-hewan",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.HEWAN-HABITAT.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rancang Hewan yang Betah",
+      "instruksi": "Tokoh merancang hewan untuk taman satwa. Dengarkan tempat hidupnya, lalu pilih ciri tubuh yang membuat hewan itu betah.",
+      "pilihan": "pilihan",
+      "i-kakiberbulu": "telapak kaki berbulu supaya tidak licin di es",
+      "i-sayapsirip": "sayap pendek seperti sirip untuk berenang di air es",
+      "i-putihsalju": "warna putih seperti salju",
+      "i-ekorpipih": "ekor lebar dan pipih untuk mendayung",
+      "i-sisikikan": "sisik licin untuk meluncur di air",
+      "i-hidungtutup": "hidung bisa ditutup saat menyelam",
+      "i-telingabesar": "telinga besar untuk membuang panas",
+      "i-kulitkering": "kulit bersisik yang tahan panas",
+      "i-warnapasir": "warna cokelat muda seperti pasir",
+      "i-jarilengket": "jari lengket untuk memanjat pohon",
+      "i-paruhbesar": "paruh besar untuk memetik buah di pohon",
+      "i-warnakayu": "warna cokelat seperti kulit kayu",
+      "t-1": "Hewan ini akan tinggal di es yang licin. Ciri mana yang cocok?",
+      "t-2": "Hewan ini akan berenang di laut yang dingin di dekat es. Ciri mana yang cocok?",
+      "t-3": "Hewan ini akan bersembunyi di padang salju. Ciri mana yang cocok?",
+      "t-4": "Hewan ini akan tinggal di sungai dan berenang. Ciri mana yang cocok?",
+      "t-5": "Hewan ini akan hidup di dalam air sepanjang hari. Ciri mana yang cocok?",
+      "t-6": "Hewan ini suka menyelam ke dasar danau. Ciri mana yang cocok?",
+      "t-7": "Hewan ini akan tinggal di gurun yang sangat panas. Ciri mana yang cocok?",
+      "t-8": "Hewan ini akan berjemur di batu gurun yang panas. Ciri mana yang cocok?",
+      "t-9": "Hewan ini akan bersembunyi di gurun pasir. Ciri mana yang cocok?",
+      "t-10": "Hewan ini akan tinggal di pohon-pohon hutan. Ciri mana yang cocok?",
+      "t-11": "Hewan ini akan makan buah di atas pohon hutan. Ciri mana yang cocok?",
+      "t-12": "Hewan ini akan bersembunyi di batang pohon hutan. Ciri mana yang cocok?"
+    },
+    "en": {
+      "judul": "Design an Animal That Fits",
+      "instruksi": "The character designs animals for the zoo. Listen to where the animal lives, then pick the body feature that helps it live there.",
+      "pilihan": "choices",
+      "i-kakiberbulu": "furry paws so it does not slip on ice",
+      "i-sayapsirip": "short flipper wings for swimming in icy water",
+      "i-putihsalju": "white colour like snow",
+      "i-ekorpipih": "a wide flat tail for paddling",
+      "i-sisikikan": "slippery scales for gliding in water",
+      "i-hidungtutup": "a nose that closes when diving",
+      "i-telingabesar": "big ears to let out heat",
+      "i-kulitkering": "scaly skin that handles heat",
+      "i-warnapasir": "light brown colour like sand",
+      "i-jarilengket": "sticky toes for climbing trees",
+      "i-paruhbesar": "a big beak for picking fruit in trees",
+      "i-warnakayu": "brown colour like tree bark",
+      "t-1": "This animal will live on slippery ice. Which feature fits?",
+      "t-2": "This animal will swim in the cold sea near the ice. Which feature fits?",
+      "t-3": "This animal will hide in a snowy field. Which feature fits?",
+      "t-4": "This animal will live in a river and swim. Which feature fits?",
+      "t-5": "This animal will live in water all day. Which feature fits?",
+      "t-6": "This animal likes diving to the bottom of the lake. Which feature fits?",
+      "t-7": "This animal will live in a very hot desert. Which feature fits?",
+      "t-8": "This animal will sunbathe on hot desert rocks. Which feature fits?",
+      "t-9": "This animal will hide in the sandy desert. Which feature fits?",
+      "t-10": "This animal will live in forest trees. Which feature fits?",
+      "t-11": "This animal will eat fruit high in the forest trees. Which feature fits?",
+      "t-12": "This animal will hide on forest tree trunks. Which feature fits?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah ciri per pertanyaan: 3 → 4; tiap pilihan dari tempat hidup yang berbeda"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kakiberbulu",
+      "labelKey": "i-kakiberbulu",
+      "bin": "pilihan",
+      "emoji": "🐾",
+      "color": "#e3f2fd"
+    },
+    {
+      "id": "sayapsirip",
+      "labelKey": "i-sayapsirip",
+      "bin": "pilihan",
+      "emoji": "🐧"
+    },
+    {
+      "id": "putihsalju",
+      "labelKey": "i-putihsalju",
+      "bin": "pilihan",
+      "emoji": "❄️"
+    },
+    {
+      "id": "ekorpipih",
+      "labelKey": "i-ekorpipih",
+      "bin": "pilihan",
+      "emoji": "🦫"
+    },
+    {
+      "id": "sisikikan",
+      "labelKey": "i-sisikikan",
+      "bin": "pilihan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "hidungtutup",
+      "labelKey": "i-hidungtutup",
+      "bin": "pilihan",
+      "emoji": "🦛"
+    },
+    {
+      "id": "telingabesar",
+      "labelKey": "i-telingabesar",
+      "bin": "pilihan",
+      "emoji": "🦊"
+    },
+    {
+      "id": "kulitkering",
+      "labelKey": "i-kulitkering",
+      "bin": "pilihan",
+      "emoji": "🦎"
+    },
+    {
+      "id": "warnapasir",
+      "labelKey": "i-warnapasir",
+      "bin": "pilihan",
+      "shape": "circle",
+      "color": "#e0c48a"
+    },
+    {
+      "id": "jarilengket",
+      "labelKey": "i-jarilengket",
+      "bin": "pilihan",
+      "emoji": "🐸"
+    },
+    {
+      "id": "paruhbesar",
+      "labelKey": "i-paruhbesar",
+      "bin": "pilihan",
+      "emoji": "🦜"
+    },
+    {
+      "id": "warnakayu",
+      "labelKey": "i-warnakayu",
+      "bin": "pilihan",
+      "emoji": "🪵"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "kakiberbulu",
+        "ekorpipih",
+        "telingabesar"
+      ],
+      "correct": "kakiberbulu"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "sayapsirip",
+        "telingabesar",
+        "jarilengket"
+      ],
+      "correct": "sayapsirip"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "putihsalju",
+        "warnapasir",
+        "paruhbesar"
+      ],
+      "correct": "putihsalju"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "ekorpipih",
+        "kakiberbulu",
+        "kulitkering",
+        "paruhbesar"
+      ],
+      "correct": "ekorpipih"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "sisikikan",
+        "telingabesar",
+        "warnakayu"
+      ],
+      "correct": "sisikikan"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "hidungtutup",
+        "putihsalju",
+        "jarilengket"
+      ],
+      "correct": "hidungtutup"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "telingabesar",
+        "sayapsirip",
+        "jarilengket"
+      ],
+      "correct": "telingabesar"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "kulitkering",
+        "kakiberbulu",
+        "hidungtutup",
+        "paruhbesar"
+      ],
+      "correct": "kulitkering"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "warnapasir",
+        "putihsalju",
+        "warnakayu"
+      ],
+      "correct": "warnapasir"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "jarilengket",
+        "sisikikan",
+        "kakiberbulu"
+      ],
+      "correct": "jarilengket"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "paruhbesar",
+        "hidungtutup",
+        "telingabesar"
+      ],
+      "correct": "paruhbesar"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "warnakayu",
+        "putihsalju",
+        "sisikikan",
+        "telingabesar"
+      ],
+      "correct": "warnakayu"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "id": "sains-suara-siapa-di-kebun",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HEWAN-SUARA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Suara Siapa di Kebun?",
+      "instruksi": "Ssst, ada suara di kebun! Dengarkan, lalu sentuh hewan yang bersuara begitu.",
+      "pilihan": "pilihan",
+      "i-lebah": "lebah",
+      "i-jangkrik": "jangkrik",
+      "i-tokek": "tokek",
+      "i-nyamuk": "nyamuk",
+      "i-ular": "ular",
+      "i-tikus": "tikus",
+      "i-monyet": "monyet",
+      "i-merpati": "merpati",
+      "i-gagak": "burung gagak",
+      "i-kuda": "kuda",
+      "t-lebah": "Siapa yang berbunyi nguuung nguuung?",
+      "t-jangkrik": "Siapa yang berbunyi krik krik krik?",
+      "t-tokek": "Siapa yang berbunyi tokek! tokek!?",
+      "t-nyamuk": "Siapa yang berbunyi ngiiing?",
+      "t-ular": "Siapa yang berbunyi sssss?",
+      "t-tikus": "Siapa yang berbunyi cit cit?",
+      "t-monyet": "Siapa yang berbunyi uuk uuk aak aak?",
+      "t-merpati": "Siapa yang berbunyi kur kuuur?",
+      "t-gagak": "Siapa yang berbunyi kaak kaak?",
+      "t-kuda": "Siapa yang berbunyi hiiiik hiiiik?",
+      "t-jangkrik2": "Malam hari di kebun terdengar krik krik krik. Siapa itu?"
+    },
+    "en": {
+      "judul": "Whose Sound in the Garden?",
+      "instruksi": "Shh, there's a sound in the garden! Listen, then touch the animal that makes it.",
+      "pilihan": "choices",
+      "i-lebah": "bee",
+      "i-jangkrik": "cricket",
+      "i-tokek": "gecko",
+      "i-nyamuk": "mosquito",
+      "i-ular": "snake",
+      "i-tikus": "mouse",
+      "i-monyet": "monkey",
+      "i-merpati": "pigeon",
+      "i-gagak": "crow",
+      "i-kuda": "horse",
+      "t-lebah": "Who goes bzzz bzzz?",
+      "t-jangkrik": "Who goes chirp chirp chirp?",
+      "t-tokek": "Who goes to-kek! to-kek!?",
+      "t-nyamuk": "Who goes eeeeeee?",
+      "t-ular": "Who goes hisss?",
+      "t-tikus": "Who goes squeak squeak?",
+      "t-monyet": "Who goes ooh ooh aah aah?",
+      "t-merpati": "Who goes coo coo?",
+      "t-gagak": "Who goes caw caw?",
+      "t-kuda": "Who goes neigh neigh?",
+      "t-jangkrik2": "At night in the garden you hear chirp chirp chirp. Who is it?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat hewan per pertanyaan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "lebah",
+      "labelKey": "i-lebah",
+      "bin": "pilihan",
+      "emoji": "🐝"
+    },
+    {
+      "id": "jangkrik",
+      "labelKey": "i-jangkrik",
+      "bin": "pilihan",
+      "emoji": "🦗"
+    },
+    {
+      "id": "tokek",
+      "labelKey": "i-tokek",
+      "bin": "pilihan",
+      "emoji": "🦎"
+    },
+    {
+      "id": "nyamuk",
+      "labelKey": "i-nyamuk",
+      "bin": "pilihan",
+      "emoji": "🦟"
+    },
+    {
+      "id": "ular",
+      "labelKey": "i-ular",
+      "bin": "pilihan",
+      "emoji": "🐍"
+    },
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "pilihan",
+      "emoji": "🐭"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "pilihan",
+      "emoji": "🐒"
+    },
+    {
+      "id": "merpati",
+      "labelKey": "i-merpati",
+      "bin": "pilihan",
+      "emoji": "🕊️"
+    },
+    {
+      "id": "gagak",
+      "labelKey": "i-gagak",
+      "bin": "pilihan",
+      "emoji": "🐦‍⬛"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "pilihan",
+      "emoji": "🐴"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "lebah",
+      "promptKey": "t-lebah",
+      "choices": [
+        "lebah",
+        "monyet",
+        "ular",
+        "kuda"
+      ],
+      "correct": "lebah"
+    },
+    {
+      "id": "jangkrik",
+      "promptKey": "t-jangkrik",
+      "choices": [
+        "jangkrik",
+        "gagak",
+        "tikus",
+        "kuda"
+      ],
+      "correct": "jangkrik"
+    },
+    {
+      "id": "tokek",
+      "promptKey": "t-tokek",
+      "choices": [
+        "tokek",
+        "lebah",
+        "merpati",
+        "kuda"
+      ],
+      "correct": "tokek"
+    },
+    {
+      "id": "nyamuk",
+      "promptKey": "t-nyamuk",
+      "choices": [
+        "nyamuk",
+        "monyet",
+        "gagak",
+        "ular"
+      ],
+      "correct": "nyamuk"
+    },
+    {
+      "id": "ular",
+      "promptKey": "t-ular",
+      "choices": [
+        "ular",
+        "lebah",
+        "kuda",
+        "merpati"
+      ],
+      "correct": "ular"
+    },
+    {
+      "id": "tikus",
+      "promptKey": "t-tikus",
+      "choices": [
+        "tikus",
+        "kuda",
+        "nyamuk",
+        "ular"
+      ],
+      "correct": "tikus"
+    },
+    {
+      "id": "monyet",
+      "promptKey": "t-monyet",
+      "choices": [
+        "monyet",
+        "tikus",
+        "lebah",
+        "jangkrik"
+      ],
+      "correct": "monyet"
+    },
+    {
+      "id": "merpati",
+      "promptKey": "t-merpati",
+      "choices": [
+        "merpati",
+        "ular",
+        "jangkrik",
+        "monyet"
+      ],
+      "correct": "merpati"
+    },
+    {
+      "id": "gagak",
+      "promptKey": "t-gagak",
+      "choices": [
+        "gagak",
+        "tokek",
+        "lebah",
+        "tikus"
+      ],
+      "correct": "gagak"
+    },
+    {
+      "id": "kuda",
+      "promptKey": "t-kuda",
+      "choices": [
+        "kuda",
+        "jangkrik",
+        "merpati",
+        "nyamuk"
+      ],
+      "correct": "kuda"
+    },
+    {
+      "id": "jangkrik2",
+      "promptKey": "t-jangkrik2",
+      "choices": [
+        "jangkrik",
+        "kuda",
+        "lebah",
+        "merpati"
+      ],
+      "correct": "jangkrik"
+    }
+  ]
+}

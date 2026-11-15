@@ -1,0 +1,268 @@
+{
+  "id": "bentuk-di-taman",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BENTUK-DASAR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bentuk di Taman",
+      "instruksi": "Robot sedang piknik di taman. Dengarkan bentuk yang disebut, lalu sentuh benda di dekat robot yang bentuknya itu.",
+      "pilihan": "pilihan",
+      "roda": "roda sepeda",
+      "frisbee": "piring terbang",
+      "jeruk": "jeruk",
+      "donat": "donat",
+      "dadu": "dadu",
+      "bata": "batu bata",
+      "bekal": "kotak bekal",
+      "wafel": "wafel",
+      "rambu": "rambu hati-hati",
+      "bendera": "bendera segitiga",
+      "onigiri": "nasi kepal segitiga",
+      "keju": "potongan keju",
+      "tBulat": "Mana yang bulat seperti lingkaran?",
+      "tKotak": "Mana yang berbentuk kotak?",
+      "tSegitiga": "Mana yang berbentuk segitiga?"
+    },
+    "en": {
+      "judul": "Shapes in the Park",
+      "instruksi": "The robot is having a picnic in the park. Listen to the shape, then touch the thing near the robot with that shape.",
+      "pilihan": "choices",
+      "roda": "bike wheel",
+      "frisbee": "flying disc",
+      "jeruk": "orange",
+      "donat": "doughnut",
+      "dadu": "dice",
+      "bata": "brick",
+      "bekal": "lunch box",
+      "wafel": "waffle",
+      "rambu": "warning sign",
+      "bendera": "pennant flag",
+      "onigiri": "rice ball",
+      "keju": "cheese wedge",
+      "tBulat": "Which one is round like a circle?",
+      "tKotak": "Which one is shaped like a box?",
+      "tSegitiga": "Which one is a triangle?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga benda, satu per bentuk (lingkaran, kotak, segitiga)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "roda",
+      "labelKey": "roda",
+      "bin": "pilihan",
+      "emoji": "🛞"
+    },
+    {
+      "id": "frisbee",
+      "labelKey": "frisbee",
+      "bin": "pilihan",
+      "emoji": "🥏"
+    },
+    {
+      "id": "jeruk",
+      "labelKey": "jeruk",
+      "bin": "pilihan",
+      "emoji": "🍊"
+    },
+    {
+      "id": "donat",
+      "labelKey": "donat",
+      "bin": "pilihan",
+      "emoji": "🍩"
+    },
+    {
+      "id": "dadu",
+      "labelKey": "dadu",
+      "bin": "pilihan",
+      "emoji": "🎲"
+    },
+    {
+      "id": "bata",
+      "labelKey": "bata",
+      "bin": "pilihan",
+      "emoji": "🧱"
+    },
+    {
+      "id": "bekal",
+      "labelKey": "bekal",
+      "bin": "pilihan",
+      "emoji": "🍱"
+    },
+    {
+      "id": "wafel",
+      "labelKey": "wafel",
+      "bin": "pilihan",
+      "emoji": "🧇"
+    },
+    {
+      "id": "rambu",
+      "labelKey": "rambu",
+      "bin": "pilihan",
+      "emoji": "⚠️"
+    },
+    {
+      "id": "bendera",
+      "labelKey": "bendera",
+      "bin": "pilihan",
+      "emoji": "🚩"
+    },
+    {
+      "id": "onigiri",
+      "labelKey": "onigiri",
+      "bin": "pilihan",
+      "emoji": "🍙"
+    },
+    {
+      "id": "keju",
+      "labelKey": "keju",
+      "bin": "pilihan",
+      "emoji": "🧀"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "tBulat",
+      "choices": [
+        "roda",
+        "bata",
+        "onigiri"
+      ],
+      "correct": "roda"
+    },
+    {
+      "id": "r2",
+      "promptKey": "tKotak",
+      "choices": [
+        "dadu",
+        "frisbee",
+        "onigiri"
+      ],
+      "correct": "dadu"
+    },
+    {
+      "id": "r3",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "rambu",
+        "frisbee",
+        "bekal"
+      ],
+      "correct": "rambu"
+    },
+    {
+      "id": "r4",
+      "promptKey": "tBulat",
+      "choices": [
+        "frisbee",
+        "bekal",
+        "keju"
+      ],
+      "correct": "frisbee"
+    },
+    {
+      "id": "r5",
+      "promptKey": "tKotak",
+      "choices": [
+        "bata",
+        "jeruk",
+        "keju"
+      ],
+      "correct": "bata"
+    },
+    {
+      "id": "r6",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "bendera",
+        "jeruk",
+        "wafel"
+      ],
+      "correct": "bendera"
+    },
+    {
+      "id": "r7",
+      "promptKey": "tBulat",
+      "choices": [
+        "jeruk",
+        "wafel",
+        "rambu"
+      ],
+      "correct": "jeruk"
+    },
+    {
+      "id": "r8",
+      "promptKey": "tKotak",
+      "choices": [
+        "bekal",
+        "donat",
+        "rambu"
+      ],
+      "correct": "bekal"
+    },
+    {
+      "id": "r9",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "onigiri",
+        "donat",
+        "dadu"
+      ],
+      "correct": "onigiri"
+    },
+    {
+      "id": "r10",
+      "promptKey": "tBulat",
+      "choices": [
+        "donat",
+        "dadu",
+        "bendera"
+      ],
+      "correct": "donat"
+    },
+    {
+      "id": "r11",
+      "promptKey": "tKotak",
+      "choices": [
+        "wafel",
+        "roda",
+        "bendera"
+      ],
+      "correct": "wafel"
+    },
+    {
+      "id": "r12",
+      "promptKey": "tSegitiga",
+      "choices": [
+        "keju",
+        "roda",
+        "bata"
+      ],
+      "correct": "keju"
+    }
+  ]
+}

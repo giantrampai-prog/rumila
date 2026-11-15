@@ -1,0 +1,310 @@
+{
+  "id": "sains-lengkapi-piring-dapur",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MAKANAN-SEHAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lengkapi Piringnya",
+      "instruksi": "Robot menyusun piring makan di dapur. Dengarkan bagian piring yang masih kosong, lalu pilih makanan yang tepat.",
+      "pilihan": "pilihan",
+      "i-ubi": "ubi rebus",
+      "i-roti": "roti gandum",
+      "i-jagung": "jagung rebus",
+      "i-daging": "daging",
+      "i-udang": "udang",
+      "i-terong": "terong",
+      "i-kacangpolong": "kacang polong",
+      "i-paprika": "paprika hijau",
+      "i-mangga": "mangga",
+      "i-semangka": "semangka",
+      "i-stroberi": "stroberi",
+      "i-nanas": "nanas",
+      "i-donat": "donat",
+      "i-lolipop": "lolipop",
+      "i-cokelat": "cokelat batang",
+      "t-1": "Piring sudah ada lauk, sayur, dan buah. Masih kurang makanan pokok seperti nasi. Pilih yang mana?",
+      "t-2": "Piring sudah ada nasi, lauk, dan buah. Masih kurang sayur. Pilih yang mana?",
+      "t-3": "Piring sudah ada nasi, lauk, dan sayur. Masih kurang buah. Pilih yang mana?",
+      "t-4": "Piring sudah ada nasi, sayur, dan buah. Masih kurang lauk. Pilih yang mana?",
+      "t-5": "Robot mau menambah sayur hijau ke piring. Pilih yang mana?",
+      "t-6": "Piring masih kosong di bagian makanan pokok. Pilih yang mana?",
+      "t-7": "Bagian buah di piring masih kosong. Pilih yang mana?",
+      "t-8": "Bagian lauk masih kosong. Robot ingin lauk dari laut. Pilih yang mana?",
+      "t-9": "Bagian sayur masih kosong. Pilih yang mana?",
+      "t-10": "Piring hampir lengkap, tinggal buah. Pilih yang mana?",
+      "t-11": "Makanan pokok belum ada. Pilih yang mana?",
+      "t-12": "Satu bagian lagi: buah segar. Pilih yang mana?"
+    },
+    "en": {
+      "judul": "Complete the Plate",
+      "instruksi": "The robot is filling a plate in the kitchen. Listen to which part of the plate is still empty, then pick the right food.",
+      "pilihan": "choices",
+      "i-ubi": "boiled sweet potato",
+      "i-roti": "wheat bread",
+      "i-jagung": "boiled corn",
+      "i-daging": "meat",
+      "i-udang": "shrimp",
+      "i-terong": "eggplant",
+      "i-kacangpolong": "green peas",
+      "i-paprika": "green pepper",
+      "i-mangga": "mango",
+      "i-semangka": "watermelon",
+      "i-stroberi": "strawberry",
+      "i-nanas": "pineapple",
+      "i-donat": "doughnut",
+      "i-lolipop": "lollipop",
+      "i-cokelat": "chocolate bar",
+      "t-1": "The plate has protein, vegetables, and fruit. It still needs a staple like rice. Which one?",
+      "t-2": "The plate has rice, protein, and fruit. It still needs a vegetable. Which one?",
+      "t-3": "The plate has rice, protein, and vegetables. It still needs fruit. Which one?",
+      "t-4": "The plate has rice, vegetables, and fruit. It still needs protein. Which one?",
+      "t-5": "The robot wants to add a green vegetable to the plate. Which one?",
+      "t-6": "The staple part of the plate is still empty. Which one?",
+      "t-7": "The fruit part of the plate is still empty. Which one?",
+      "t-8": "The protein part is still empty. The robot wants protein from the sea. Which one?",
+      "t-9": "The vegetable part is still empty. Which one?",
+      "t-10": "The plate is almost full; only fruit is missing. Which one?",
+      "t-11": "There is no staple food yet. Which one?",
+      "t-12": "One more part: fresh fruit. Which one?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "selalu 3 pilihan: satu yang dibutuhkan piring, dua pengecoh (bagian piring lain atau jajanan)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "ubi",
+      "labelKey": "i-ubi",
+      "bin": "pilihan",
+      "emoji": "🍠"
+    },
+    {
+      "id": "roti",
+      "labelKey": "i-roti",
+      "bin": "pilihan",
+      "emoji": "🍞"
+    },
+    {
+      "id": "jagung",
+      "labelKey": "i-jagung",
+      "bin": "pilihan",
+      "emoji": "🌽"
+    },
+    {
+      "id": "daging",
+      "labelKey": "i-daging",
+      "bin": "pilihan",
+      "emoji": "🥩"
+    },
+    {
+      "id": "udang",
+      "labelKey": "i-udang",
+      "bin": "pilihan",
+      "emoji": "🦐"
+    },
+    {
+      "id": "terong",
+      "labelKey": "i-terong",
+      "bin": "pilihan",
+      "emoji": "🍆"
+    },
+    {
+      "id": "kacangpolong",
+      "labelKey": "i-kacangpolong",
+      "bin": "pilihan",
+      "emoji": "🫛"
+    },
+    {
+      "id": "paprika",
+      "labelKey": "i-paprika",
+      "bin": "pilihan",
+      "emoji": "🫑"
+    },
+    {
+      "id": "mangga",
+      "labelKey": "i-mangga",
+      "bin": "pilihan",
+      "emoji": "🥭"
+    },
+    {
+      "id": "semangka",
+      "labelKey": "i-semangka",
+      "bin": "pilihan",
+      "emoji": "🍉"
+    },
+    {
+      "id": "stroberi",
+      "labelKey": "i-stroberi",
+      "bin": "pilihan",
+      "emoji": "🍓"
+    },
+    {
+      "id": "nanas",
+      "labelKey": "i-nanas",
+      "bin": "pilihan",
+      "emoji": "🍍"
+    },
+    {
+      "id": "donat",
+      "labelKey": "i-donat",
+      "bin": "pilihan",
+      "emoji": "🍩"
+    },
+    {
+      "id": "lolipop",
+      "labelKey": "i-lolipop",
+      "bin": "pilihan",
+      "emoji": "🍭"
+    },
+    {
+      "id": "cokelat",
+      "labelKey": "i-cokelat",
+      "bin": "pilihan",
+      "emoji": "🍫"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "ubi",
+        "donat",
+        "semangka"
+      ],
+      "correct": "ubi"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "terong",
+        "cokelat",
+        "udang"
+      ],
+      "correct": "terong"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "mangga",
+        "lolipop",
+        "roti"
+      ],
+      "correct": "mangga"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "daging",
+        "donat",
+        "paprika"
+      ],
+      "correct": "daging"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "kacangpolong",
+        "nanas",
+        "cokelat"
+      ],
+      "correct": "kacangpolong"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "roti",
+        "stroberi",
+        "lolipop"
+      ],
+      "correct": "roti"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "semangka",
+        "terong",
+        "donat"
+      ],
+      "correct": "semangka"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "udang",
+        "mangga",
+        "cokelat"
+      ],
+      "correct": "udang"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "paprika",
+        "nanas",
+        "donat"
+      ],
+      "correct": "paprika"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "stroberi",
+        "daging",
+        "cokelat"
+      ],
+      "correct": "stroberi"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "jagung",
+        "udang",
+        "lolipop"
+      ],
+      "correct": "jagung"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "nanas",
+        "roti",
+        "lolipop"
+      ],
+      "correct": "nanas"
+    }
+  ]
+}

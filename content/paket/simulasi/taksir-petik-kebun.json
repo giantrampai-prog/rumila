@@ -1,0 +1,67 @@
+{
+  "id": "taksir-petik-kebun",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.BILANGAN-20.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Taksir Buah Petikan",
+      "instruksi": "Buah hasil petik di kebun hanya terlihat sebentar. Kira-kira berapa banyaknya? Geser penanda di garis bilangan.",
+      "stroberi": "stroberi",
+      "bluberi": "bluberi",
+      "ceri": "ceri"
+    },
+    "en": {
+      "judul": "Guess the Picked Fruit",
+      "instruksi": "The fruit picked in the garden shows only for a moment. About how many are there? Slide the marker on the number line.",
+      "stroberi": "strawberry",
+      "bluberi": "blueberry",
+      "ceri": "cherry"
+    }
+  },
+  "knobs": {
+    "max": {
+      "min": 8,
+      "max": 20,
+      "default": 15,
+      "step": 1,
+      "keterangan": "jumlah buah terbanyak yang bisa muncul (target acak 8..max, paling banyak 20); benar bila meleset paling banyak 3"
+    },
+    "flashMs": {
+      "min": 1500,
+      "max": 3000,
+      "default": 2500,
+      "step": 100,
+      "keterangan": "lama buah terlihat (ms) sebelum ditutup"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "taksir",
+  "items": [
+    {
+      "id": "stroberi",
+      "labelKey": "stroberi",
+      "role": "benda",
+      "emoji": "🍓"
+    },
+    {
+      "id": "bluberi",
+      "labelKey": "bluberi",
+      "role": "benda",
+      "emoji": "🫐"
+    },
+    {
+      "id": "ceri",
+      "labelKey": "ceri",
+      "role": "benda",
+      "emoji": "🍒"
+    }
+  ]
+}

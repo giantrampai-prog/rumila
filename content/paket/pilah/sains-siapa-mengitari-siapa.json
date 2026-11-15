@@ -1,0 +1,216 @@
+{
+  "id": "sains-siapa-mengitari-siapa",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Mengitari Siapa?",
+      "instruksi": "Kita membuat model tata surya kecil di kelas. Dengarkan pertanyaannya: siapa di tengah, siapa yang mengitari. Lalu sentuh jawabannya.",
+      "pilihan": "pilihan",
+      "i-matahari": "Matahari",
+      "i-bumi": "Bumi",
+      "i-bulan": "Bulan",
+      "t-1": "Di tengah model tata surya kecil, kita taruh…",
+      "t-2": "Bulan berjalan mengitari…",
+      "t-3": "Bumi berjalan mengitari…",
+      "t-4": "Siapa yang mengitari Bumi?",
+      "t-5": "Siapa yang mengitari Matahari sambil membawa Bulan?",
+      "t-6": "Matahari sudah di tengah, Bumi di lintasannya. Bola kecil yang berputar di dekat Bumi adalah…",
+      "t-7": "Benda yang diam di tengah dan dikitari Bumi adalah…",
+      "t-8": "Bulan selalu dekat dengan… dan mengitarinya.",
+      "t-9": "Lintasan kecil di sekeliling Bumi kita pasang untuk…",
+      "t-10": "Lintasan besar di sekeliling Matahari kita pasang untuk…",
+      "t-11": "Yang paling besar dan menjadi pusat model adalah…",
+      "t-12": "Bumi punya teman kecil yang setia mengitarinya. Siapa?"
+    },
+    "en": {
+      "judul": "Who Goes Around Whom?",
+      "instruksi": "We are making a small solar system model in class. Listen: who is in the middle, and who goes around? Then touch the answer.",
+      "pilihan": "choices",
+      "i-matahari": "the Sun",
+      "i-bumi": "Earth",
+      "i-bulan": "the Moon",
+      "t-1": "In the middle of our small solar system model, we put…",
+      "t-2": "The Moon travels around…",
+      "t-3": "Earth travels around…",
+      "t-4": "Who goes around Earth?",
+      "t-5": "Who goes around the Sun while taking the Moon along?",
+      "t-6": "The Sun is in the middle and Earth is on its path. The small ball circling near Earth is…",
+      "t-7": "The one that stays in the middle while Earth goes around it is…",
+      "t-8": "The Moon always stays close to… and goes around it.",
+      "t-9": "The small path around Earth is for…",
+      "t-10": "The big path around the Sun is for…",
+      "t-11": "The biggest one, at the centre of the model, is…",
+      "t-12": "Earth has a small friend that always goes around it. Who?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "selalu 3 pilihan: Matahari, Bumi, Bulan; tiap soal menanyakan pusat atau pengitar dalam model"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pilihan",
+      "emoji": "☀️",
+      "scale": 1.6
+    },
+    {
+      "id": "bumi",
+      "labelKey": "i-bumi",
+      "bin": "pilihan",
+      "emoji": "🌍"
+    },
+    {
+      "id": "bulan",
+      "labelKey": "i-bulan",
+      "bin": "pilihan",
+      "emoji": "🌕",
+      "scale": 0.6
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "matahari",
+        "bumi",
+        "bulan"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "bumi",
+        "matahari",
+        "bulan"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "matahari",
+        "bulan",
+        "bumi"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "bulan",
+        "matahari",
+        "bumi"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "bumi",
+        "bulan",
+        "matahari"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "bulan",
+        "matahari",
+        "bumi"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "matahari",
+        "bumi",
+        "bulan"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "bumi",
+        "matahari",
+        "bulan"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "bulan",
+        "bumi",
+        "matahari"
+      ],
+      "correct": "bulan"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "bumi",
+        "bulan",
+        "matahari"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "matahari",
+        "bulan",
+        "bumi"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "bulan",
+        "matahari",
+        "bumi"
+      ],
+      "correct": "bulan"
+    }
+  ]
+}

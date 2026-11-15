@@ -1,0 +1,266 @@
+{
+  "id": "kartu-titik-kebun-1-5",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "MAT.PAUD.BILANGAN-1-5.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kartu Titik Kebun",
+      "instruksi": "Hitung hewan dan tanaman di kebun, lalu seret ke kartu yang titiknya sama banyak.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "lebah": "lebah",
+      "kupu": "kupu-kupu",
+      "bunga": "bunga matahari",
+      "siput": "siput",
+      "jamur": "jamur"
+    },
+    "en": {
+      "judul": "Garden Dot Cards",
+      "instruksi": "Count the garden creatures and plants, then drag them to the card with the same number of dots.",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3",
+      "n4": "4",
+      "n5": "5",
+      "lebah": "bees",
+      "kupu": "butterflies",
+      "bunga": "sunflowers",
+      "siput": "snails",
+      "jamur": "mushrooms"
+    }
+  },
+  "knobs": {
+    "maxCount": {
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah terbesar yang muncul; kartu di atas maxCount disembunyikan (4 dan 5 titik mirip, munculkan terakhir)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kelompok benda per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "pilihan": [],
+  "bins": [
+    {
+      "id": "k1",
+      "labelKey": "n1",
+      "emoji": "⚀"
+    },
+    {
+      "id": "k2",
+      "labelKey": "n2",
+      "emoji": "⚁"
+    },
+    {
+      "id": "k3",
+      "labelKey": "n3",
+      "emoji": "⚂"
+    },
+    {
+      "id": "k4",
+      "labelKey": "n4",
+      "emoji": "⚃"
+    },
+    {
+      "id": "k5",
+      "labelKey": "n5",
+      "emoji": "⚄"
+    }
+  ],
+  "items": [
+    {
+      "id": "lebah-1",
+      "labelKey": "lebah",
+      "bin": "k1",
+      "emoji": "🐝",
+      "count": 1
+    },
+    {
+      "id": "lebah-2",
+      "labelKey": "lebah",
+      "bin": "k2",
+      "emoji": "🐝",
+      "count": 2
+    },
+    {
+      "id": "lebah-3",
+      "labelKey": "lebah",
+      "bin": "k3",
+      "emoji": "🐝",
+      "count": 3
+    },
+    {
+      "id": "lebah-4",
+      "labelKey": "lebah",
+      "bin": "k4",
+      "emoji": "🐝",
+      "count": 4
+    },
+    {
+      "id": "lebah-5",
+      "labelKey": "lebah",
+      "bin": "k5",
+      "emoji": "🐝",
+      "count": 5
+    },
+    {
+      "id": "kupu-1",
+      "labelKey": "kupu",
+      "bin": "k1",
+      "emoji": "🦋",
+      "count": 1
+    },
+    {
+      "id": "kupu-2",
+      "labelKey": "kupu",
+      "bin": "k2",
+      "emoji": "🦋",
+      "count": 2
+    },
+    {
+      "id": "kupu-3",
+      "labelKey": "kupu",
+      "bin": "k3",
+      "emoji": "🦋",
+      "count": 3
+    },
+    {
+      "id": "kupu-4",
+      "labelKey": "kupu",
+      "bin": "k4",
+      "emoji": "🦋",
+      "count": 4
+    },
+    {
+      "id": "kupu-5",
+      "labelKey": "kupu",
+      "bin": "k5",
+      "emoji": "🦋",
+      "count": 5
+    },
+    {
+      "id": "bunga-1",
+      "labelKey": "bunga",
+      "bin": "k1",
+      "emoji": "🌻",
+      "count": 1
+    },
+    {
+      "id": "bunga-2",
+      "labelKey": "bunga",
+      "bin": "k2",
+      "emoji": "🌻",
+      "count": 2
+    },
+    {
+      "id": "bunga-3",
+      "labelKey": "bunga",
+      "bin": "k3",
+      "emoji": "🌻",
+      "count": 3
+    },
+    {
+      "id": "bunga-4",
+      "labelKey": "bunga",
+      "bin": "k4",
+      "emoji": "🌻",
+      "count": 4
+    },
+    {
+      "id": "bunga-5",
+      "labelKey": "bunga",
+      "bin": "k5",
+      "emoji": "🌻",
+      "count": 5
+    },
+    {
+      "id": "siput-1",
+      "labelKey": "siput",
+      "bin": "k1",
+      "emoji": "🐌",
+      "count": 1
+    },
+    {
+      "id": "siput-2",
+      "labelKey": "siput",
+      "bin": "k2",
+      "emoji": "🐌",
+      "count": 2
+    },
+    {
+      "id": "siput-3",
+      "labelKey": "siput",
+      "bin": "k3",
+      "emoji": "🐌",
+      "count": 3
+    },
+    {
+      "id": "siput-4",
+      "labelKey": "siput",
+      "bin": "k4",
+      "emoji": "🐌",
+      "count": 4
+    },
+    {
+      "id": "siput-5",
+      "labelKey": "siput",
+      "bin": "k5",
+      "emoji": "🐌",
+      "count": 5
+    },
+    {
+      "id": "jamur-1",
+      "labelKey": "jamur",
+      "bin": "k1",
+      "emoji": "🍄",
+      "count": 1
+    },
+    {
+      "id": "jamur-2",
+      "labelKey": "jamur",
+      "bin": "k2",
+      "emoji": "🍄",
+      "count": 2
+    },
+    {
+      "id": "jamur-3",
+      "labelKey": "jamur",
+      "bin": "k3",
+      "emoji": "🍄",
+      "count": 3
+    },
+    {
+      "id": "jamur-4",
+      "labelKey": "jamur",
+      "bin": "k4",
+      "emoji": "🍄",
+      "count": 4
+    },
+    {
+      "id": "jamur-5",
+      "labelKey": "jamur",
+      "bin": "k5",
+      "emoji": "🍄",
+      "count": 5
+    }
+  ]
+}

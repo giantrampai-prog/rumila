@@ -1,0 +1,104 @@
+{
+  "id": "bedeng-sayur-selang-seling",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.PAUD.POLA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bedeng Sayur Selang-seling",
+      "instruksi": "Pilih dua tanaman kesukaanmu, lalu tanam bergantian sampai bedengnya penuh.",
+      "tomat": "tomat",
+      "wortel": "wortel",
+      "jagung": "jagung",
+      "terong": "terong",
+      "brokoli": "brokoli",
+      "cabai": "cabai",
+      "matahari": "bunga matahari",
+      "tulip": "bunga tulip"
+    },
+    "en": {
+      "judul": "My Alternating Veggie Bed",
+      "instruksi": "Pick two plants you like, then plant them one after the other until the garden bed is full.",
+      "tomat": "tomato",
+      "wortel": "carrot",
+      "jagung": "corn",
+      "terong": "eggplant",
+      "brokoli": "broccoli",
+      "cabai": "chili",
+      "matahari": "sunflower",
+      "tulip": "tulip"
+    }
+  },
+  "knobs": {
+    "slots": {
+      "min": 4,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah lubang tanam yang harus diisi; benar bila ABAB… atau BABA… penuh"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "cipta",
+  "unitLen": 2,
+  "items": [
+    {
+      "labelKey": "tomat",
+      "id": "tomat",
+      "emoji": "🍅"
+    },
+    {
+      "labelKey": "wortel",
+      "id": "wortel",
+      "emoji": "🥕"
+    },
+    {
+      "labelKey": "jagung",
+      "id": "jagung",
+      "emoji": "🌽"
+    },
+    {
+      "labelKey": "terong",
+      "id": "terong",
+      "emoji": "🍆"
+    },
+    {
+      "labelKey": "brokoli",
+      "id": "brokoli",
+      "emoji": "🥦"
+    },
+    {
+      "labelKey": "cabai",
+      "id": "cabai",
+      "emoji": "🌶️"
+    },
+    {
+      "labelKey": "matahari",
+      "id": "matahari",
+      "emoji": "🌻"
+    },
+    {
+      "labelKey": "tulip",
+      "id": "tulip",
+      "emoji": "🌷"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "tomat": "C4",
+    "wortel": "E4",
+    "jagung": "G4",
+    "terong": "A4",
+    "brokoli": "D4",
+    "cabai": "F4",
+    "matahari": "B4",
+    "tulip": "C5"
+  }
+}

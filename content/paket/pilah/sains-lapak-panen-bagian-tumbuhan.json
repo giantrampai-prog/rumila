@@ -1,0 +1,157 @@
+{
+  "id": "sains-lapak-panen-bagian-tumbuhan",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Lapak Panen di Pasar",
+      "instruksi": "Taruh hasil panen ke rak bagian tumbuhan yang diambil: mangga ke buah, sawi ke daun, wortel ke akar.",
+      "b-buah": "buah",
+      "b-daun": "daun",
+      "b-akar": "akar",
+      "i-mangga": "mangga",
+      "i-tomat": "tomat",
+      "i-terung": "terung",
+      "i-cabai": "cabai",
+      "i-mentimun": "mentimun",
+      "i-sawi": "sawi",
+      "i-kol": "kol",
+      "i-daunsingkong": "daun singkong",
+      "i-kemangi": "kemangi",
+      "i-wortel": "wortel",
+      "i-ubiungu": "ubi ungu"
+    },
+    "en": {
+      "judul": "Harvest Stall at the Market",
+      "instruksi": "Put each crop on the shelf for the plant part we pick: mango to fruit, mustard greens to leaf, carrot to root.",
+      "b-buah": "fruit",
+      "b-daun": "leaf",
+      "b-akar": "root",
+      "i-mangga": "mango",
+      "i-tomat": "tomato",
+      "i-terung": "eggplant",
+      "i-cabai": "chilli",
+      "i-mentimun": "cucumber",
+      "i-sawi": "mustard greens",
+      "i-kol": "cabbage",
+      "i-daunsingkong": "cassava leaves",
+      "i-kemangi": "basil",
+      "i-wortel": "carrot",
+      "i-ubiungu": "purple sweet potato"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 rak (buah, daun) lalu 3 rak (tambah akar)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hasil panen per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pasar",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "buah",
+      "labelKey": "b-buah",
+      "emoji": "🍎"
+    },
+    {
+      "id": "daun",
+      "labelKey": "b-daun",
+      "emoji": "🍃"
+    },
+    {
+      "id": "akar",
+      "labelKey": "b-akar",
+      "emoji": "🫚"
+    }
+  ],
+  "items": [
+    {
+      "id": "mangga",
+      "labelKey": "i-mangga",
+      "bin": "buah",
+      "emoji": "🥭"
+    },
+    {
+      "id": "tomat",
+      "labelKey": "i-tomat",
+      "bin": "buah",
+      "emoji": "🍅"
+    },
+    {
+      "id": "terung",
+      "labelKey": "i-terung",
+      "bin": "buah",
+      "emoji": "🍆"
+    },
+    {
+      "id": "cabai",
+      "labelKey": "i-cabai",
+      "bin": "buah",
+      "emoji": "🌶️"
+    },
+    {
+      "id": "mentimun",
+      "labelKey": "i-mentimun",
+      "bin": "buah",
+      "emoji": "🥒"
+    },
+    {
+      "id": "sawi",
+      "labelKey": "i-sawi",
+      "bin": "daun",
+      "emoji": "🥬"
+    },
+    {
+      "id": "kol",
+      "labelKey": "i-kol",
+      "bin": "daun",
+      "emoji": "🥬",
+      "color": "#c5e1a5"
+    },
+    {
+      "id": "daunsingkong",
+      "labelKey": "i-daunsingkong",
+      "bin": "daun",
+      "emoji": "🌿"
+    },
+    {
+      "id": "kemangi",
+      "labelKey": "i-kemangi",
+      "bin": "daun",
+      "emoji": "☘️"
+    },
+    {
+      "id": "wortel",
+      "labelKey": "i-wortel",
+      "bin": "akar",
+      "emoji": "🥕"
+    },
+    {
+      "id": "ubiungu",
+      "labelKey": "i-ubiungu",
+      "bin": "akar",
+      "emoji": "🍠",
+      "color": "#7b1fa2"
+    }
+  ],
+  "pilihan": []
+}

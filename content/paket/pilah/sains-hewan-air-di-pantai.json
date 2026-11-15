@@ -1,0 +1,298 @@
+{
+  "id": "sains-hewan-air-di-pantai",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa Tinggal di Air?",
+      "instruksi": "Di pantai ada hewan darat dan hewan air. Dengarkan, lalu sentuh hewan yang hidup di air.",
+      "pilihan": "pilihan",
+      "i-buntal": "ikan buntal",
+      "i-lobster": "lobster",
+      "i-paus": "paus",
+      "i-tuna": "ikan tuna",
+      "i-badut": "ikan badut",
+      "i-kepiting": "kepiting",
+      "i-monyet": "monyet",
+      "i-sapi": "sapi",
+      "i-ayam": "ayam",
+      "i-kelinci": "kelinci",
+      "i-rusa": "rusa",
+      "i-landak": "landak",
+      "i-tupai": "tupai",
+      "i-harimau": "harimau",
+      "i-gajah": "gajah",
+      "t-buntal1": "Mana hewan yang hidup di air?",
+      "t-lobster1": "Mana hewan yang hidup di air?",
+      "t-paus1": "Mana hewan yang hidup di air?",
+      "t-tuna1": "Mana hewan yang hidup di air?",
+      "t-badut1": "Mana hewan yang hidup di air?",
+      "t-kepiting1": "Mana hewan yang hidup di air?",
+      "t-buntal2": "Siapa yang berenang di dalam laut?",
+      "t-paus2": "Hewan sangat besar ini tinggal di laut. Yang mana?",
+      "t-tuna2": "Siapa yang punya sirip dan berenang di laut?",
+      "t-lobster2": "Siapa yang merayap di dasar laut?",
+      "t-badut2": "Siapa yang bersembunyi di antara karang laut?"
+    },
+    "en": {
+      "judul": "Who Lives in the Water?",
+      "instruksi": "At the beach there are land animals and water animals. Listen, then touch the one that lives in water.",
+      "pilihan": "choices",
+      "i-buntal": "pufferfish",
+      "i-lobster": "lobster",
+      "i-paus": "whale",
+      "i-tuna": "tuna",
+      "i-badut": "clownfish",
+      "i-kepiting": "crab",
+      "i-monyet": "monkey",
+      "i-sapi": "cow",
+      "i-ayam": "chicken",
+      "i-kelinci": "rabbit",
+      "i-rusa": "deer",
+      "i-landak": "hedgehog",
+      "i-tupai": "squirrel",
+      "i-harimau": "tiger",
+      "i-gajah": "elephant",
+      "t-buntal1": "Which animal lives in water?",
+      "t-lobster1": "Which animal lives in water?",
+      "t-paus1": "Which animal lives in water?",
+      "t-tuna1": "Which animal lives in water?",
+      "t-badut1": "Which animal lives in water?",
+      "t-kepiting1": "Which animal lives in water?",
+      "t-buntal2": "Who swims in the sea?",
+      "t-paus2": "This very big animal lives in the sea. Which one?",
+      "t-tuna2": "Who has fins and swims in the sea?",
+      "t-lobster2": "Who crawls on the sea floor?",
+      "t-badut2": "Who hides among the coral?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga hewan per pertanyaan: satu hewan air"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "buntal",
+      "labelKey": "i-buntal",
+      "bin": "pilihan",
+      "emoji": "🐡"
+    },
+    {
+      "id": "lobster",
+      "labelKey": "i-lobster",
+      "bin": "pilihan",
+      "emoji": "🦞"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "pilihan",
+      "emoji": "🐋"
+    },
+    {
+      "id": "tuna",
+      "labelKey": "i-tuna",
+      "bin": "pilihan",
+      "emoji": "🐟"
+    },
+    {
+      "id": "badut",
+      "labelKey": "i-badut",
+      "bin": "pilihan",
+      "emoji": "🐠"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "pilihan",
+      "emoji": "🦀"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "pilihan",
+      "emoji": "🐒"
+    },
+    {
+      "id": "sapi",
+      "labelKey": "i-sapi",
+      "bin": "pilihan",
+      "emoji": "🐄"
+    },
+    {
+      "id": "ayam",
+      "labelKey": "i-ayam",
+      "bin": "pilihan",
+      "emoji": "🐔"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "pilihan",
+      "emoji": "🐇"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "i-rusa",
+      "bin": "pilihan",
+      "emoji": "🦌"
+    },
+    {
+      "id": "landak",
+      "labelKey": "i-landak",
+      "bin": "pilihan",
+      "emoji": "🦔"
+    },
+    {
+      "id": "tupai",
+      "labelKey": "i-tupai",
+      "bin": "pilihan",
+      "emoji": "🐿️"
+    },
+    {
+      "id": "harimau",
+      "labelKey": "i-harimau",
+      "bin": "pilihan",
+      "emoji": "🐅"
+    },
+    {
+      "id": "gajah",
+      "labelKey": "i-gajah",
+      "bin": "pilihan",
+      "emoji": "🐘"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "buntal1",
+      "promptKey": "t-buntal1",
+      "choices": [
+        "buntal",
+        "monyet",
+        "sapi"
+      ],
+      "correct": "buntal"
+    },
+    {
+      "id": "lobster1",
+      "promptKey": "t-lobster1",
+      "choices": [
+        "lobster",
+        "ayam",
+        "rusa"
+      ],
+      "correct": "lobster"
+    },
+    {
+      "id": "paus1",
+      "promptKey": "t-paus1",
+      "choices": [
+        "paus",
+        "kelinci",
+        "landak"
+      ],
+      "correct": "paus"
+    },
+    {
+      "id": "tuna1",
+      "promptKey": "t-tuna1",
+      "choices": [
+        "tuna",
+        "tupai",
+        "harimau"
+      ],
+      "correct": "tuna"
+    },
+    {
+      "id": "badut1",
+      "promptKey": "t-badut1",
+      "choices": [
+        "badut",
+        "gajah",
+        "ayam"
+      ],
+      "correct": "badut"
+    },
+    {
+      "id": "kepiting1",
+      "promptKey": "t-kepiting1",
+      "choices": [
+        "kepiting",
+        "sapi",
+        "tupai"
+      ],
+      "correct": "kepiting"
+    },
+    {
+      "id": "buntal2",
+      "promptKey": "t-buntal2",
+      "choices": [
+        "buntal",
+        "kelinci",
+        "harimau"
+      ],
+      "correct": "buntal"
+    },
+    {
+      "id": "paus2",
+      "promptKey": "t-paus2",
+      "choices": [
+        "paus",
+        "gajah",
+        "sapi"
+      ],
+      "correct": "paus"
+    },
+    {
+      "id": "tuna2",
+      "promptKey": "t-tuna2",
+      "choices": [
+        "tuna",
+        "rusa",
+        "monyet"
+      ],
+      "correct": "tuna"
+    },
+    {
+      "id": "lobster2",
+      "promptKey": "t-lobster2",
+      "choices": [
+        "lobster",
+        "landak",
+        "ayam"
+      ],
+      "correct": "lobster"
+    },
+    {
+      "id": "badut2",
+      "promptKey": "t-badut2",
+      "choices": [
+        "badut",
+        "tupai",
+        "rusa"
+      ],
+      "correct": "badut"
+    }
+  ]
+}

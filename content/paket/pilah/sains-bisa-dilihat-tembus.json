@@ -1,0 +1,151 @@
+{
+  "id": "sains-bisa-dilihat-tembus",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bisa Kulihat Tembus?",
+      "instruksi": "Di laboratorium, angkat tiap benda ke depan mata dan coba lihat lewat benda itu. Taruh ke rak tembus pandang atau tidak tembus pandang.",
+      "b-tembus": "tembus pandang",
+      "b-tidak": "tidak tembus pandang",
+      "i-lup": "kaca pembesar",
+      "i-gelas": "gelas kaca bening",
+      "i-goggle": "kacamata renang",
+      "i-es": "es batu bening",
+      "i-bohlam": "bohlam lampu bening",
+      "i-mika": "lembar plastik mika",
+      "i-wajan": "wajan besi",
+      "i-kaleng": "kaleng",
+      "i-batu": "batu",
+      "i-cangkir": "cangkir keramik",
+      "i-kotakjus": "kotak jus",
+      "i-topi": "topi kain"
+    },
+    "en": {
+      "judul": "Can I See Through It?",
+      "instruksi": "In the lab, hold each thing up to your eyes and try to look through it. Put it on the see-through shelf or the not see-through shelf.",
+      "b-tembus": "see-through",
+      "b-tidak": "not see-through",
+      "i-lup": "magnifying glass",
+      "i-gelas": "clear glass cup",
+      "i-goggle": "swimming goggles",
+      "i-es": "clear ice cube",
+      "i-bohlam": "clear light bulb",
+      "i-mika": "clear plastic sheet",
+      "i-wajan": "iron frying pan",
+      "i-kaleng": "tin can",
+      "i-batu": "rock",
+      "i-cangkir": "ceramic mug",
+      "i-kotakjus": "juice box",
+      "i-topi": "cloth cap"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran: 3 → 6; benda laboratorium berbeda dari paket Intip: Tembus Pandang?"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laboratorium",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "tembus",
+      "labelKey": "b-tembus",
+      "emoji": "👀"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "🙈"
+    }
+  ],
+  "items": [
+    {
+      "id": "lup",
+      "labelKey": "i-lup",
+      "bin": "tembus",
+      "emoji": "🔍"
+    },
+    {
+      "id": "gelas",
+      "labelKey": "i-gelas",
+      "bin": "tembus",
+      "emoji": "🥃"
+    },
+    {
+      "id": "goggle",
+      "labelKey": "i-goggle",
+      "bin": "tembus",
+      "emoji": "🥽"
+    },
+    {
+      "id": "es",
+      "labelKey": "i-es",
+      "bin": "tembus",
+      "emoji": "🧊",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "bohlam",
+      "labelKey": "i-bohlam",
+      "bin": "tembus",
+      "emoji": "💡"
+    },
+    {
+      "id": "mika",
+      "labelKey": "i-mika",
+      "bin": "tembus",
+      "shape": "rect",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "wajan",
+      "labelKey": "i-wajan",
+      "bin": "tidak",
+      "emoji": "🍳"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "tidak",
+      "emoji": "🥫"
+    },
+    {
+      "id": "batu",
+      "labelKey": "i-batu",
+      "bin": "tidak",
+      "emoji": "🪨"
+    },
+    {
+      "id": "cangkir",
+      "labelKey": "i-cangkir",
+      "bin": "tidak",
+      "emoji": "☕"
+    },
+    {
+      "id": "kotakjus",
+      "labelKey": "i-kotakjus",
+      "bin": "tidak",
+      "emoji": "🧃"
+    },
+    {
+      "id": "topi",
+      "labelKey": "i-topi",
+      "bin": "tidak",
+      "emoji": "🧢"
+    }
+  ],
+  "pilihan": []
+}
