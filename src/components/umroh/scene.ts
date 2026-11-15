@@ -272,7 +272,7 @@ export class UmrohScene {
     const progressRestored = isTawafScene(this.state) && old.progress !== this.state.progress && !old.running && !this.state.running && !this.state.paused;
     if (changed || framingChanged || progressRestored || old.stage !== next.stage || old.chapter !== next.chapter || old.view !== this.state.view || old.flightCamera !== this.state.flightCamera) { this.pauseInput(); this.resetCamera(); }
     if (isTawafScene(this.state) && old.running !== this.state.running) this.pauseInput();
-    this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused;
+    this.orbit.enabled = this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !this.isDroneView() && !isGuidedTawaf(this.state) && !this.state.paused;
     if (isGuidedTawaf(this.state)) { this.pressed.clear(); this.forward = this.right = 0; this.frameTawaf(); }
     else if (isGuidedTawaf(old) && isTawafScene(this.state) && !this.state.paused && old.progress !== this.state.progress) this.frameTawaf();
     if (this.state.paused) this.pauseInput();
@@ -291,20 +291,32 @@ export class UmrohScene {
   }
   private isRide(): boolean { return ['taxi-cgk', 'taxi-home', 'uber', 'haramain', 'garuda-jed', 'garuda-cgk', 'flight-jed', 'flight-cgk', 'journey', 'jeddah-bus', 'boarding'].includes(this.worldKey ?? ''); }
   private isSeatedView(): boolean { return this.state.view === 'follow' && this.isRide(); }
+  private isDroneView(): boolean { return this.state.view === 'overview' && Boolean(this.world?.drone); }
+  private placeDrone(): void {
+    const pose = this.world.drone!(this.elapsed, this.travel);
+    this.camera.position.set(...pose.position); this.camera.lookAt(this.tmp.set(...pose.lookAt));
+  }
   private isAutomaticFlightView(): boolean { return Boolean(this.world?.flight) && this.state.flightCamera === 'auto' && !this.reducedMotion; }
   /** Cinematic outside shots chosen by flight phase: chase, runway spotter, belly, cruise orbit, approach. */
   private frameFlight(delta: number): void {
     const telemetry = this.world.telemetry; if (!telemetry) return;
-    const p = this.travel, scale = this.flightFramingScale, heading = telemetry.heading;
+    const scale = this.flightFramingScale, heading = telemetry.heading;
     const offset = (x: number, y: number, z: number) => new T.Vector3(x * scale, y * scale, z * scale).applyAxisAngle(UP, heading);
     let shot: number, target: T.Vector3, fixed = false;
-    if (p < .215) { shot = 0; target = offset(-24, 4.5, 46); }
-    else if (p < .27) { shot = 1; target = telemetry.toScene(-68, 1.7, -470); fixed = true; }
-    else if (p < .34) { shot = 2; target = offset(16, -12, 66); }
-    else if (p < .66) { shot = 3; const a = -.7 + Math.max(0, (p - .5) / .16) * 2.6; target = offset(Math.sin(a) * 80, 13 + 5 * Math.sin(a * .7), Math.cos(a) * 80); }
-    else if (p < .905) { shot = 4; target = offset(62, 9, -74); }
-    else if (p < .957) { shot = 5; target = telemetry.toScene(-72, 1.7, -230, true); fixed = true; }
-    else { shot = 6; target = offset(-30, 5, 42); }
+    const phase = telemetry.phase, local = telemetry.local;
+    if (phase === 'pushback' || phase === 'taxi' || phase === 'lineup') { shot = 0; target = offset(-34, 9, 52); }
+    else if (phase === 'takeoff') { shot = 1; target = offset(-24, 4.5, 46); }
+    else if (phase === 'rotate' || (phase === 'climb' && local < .08)) { shot = 2; target = telemetry.toScene(-68, 1.7, -640); fixed = true; }
+    else if (phase === 'climb') { shot = 3; target = offset(16, -12, 66); }
+    else if (phase === 'cruise') { shot = 4; const a = -.7 + local * 2.6; target = offset(Math.sin(a) * 80, 13 + 5 * Math.sin(a * .7), Math.cos(a) * 80); }
+    else if (phase === 'descent') { shot = 5; target = offset(62, 9, -74); }
+    // Final approach seen from behind and above, the runway and its lights ahead.
+    else if (phase === 'approach' && local < .6) { shot = 6; target = offset(-10, 14, 70); }
+    // Low front quarter over the approach lights: gear, flaps and the flare.
+    else if (phase === 'approach' || phase === 'flare') { shot = 7; target = offset(40, -2.5, -62); }
+    // A spotter beside the touchdown zone: main wheels touch, smoke, then the nose comes down.
+    else if (phase === 'touchdown' || (phase === 'rollout' && local < .25)) { shot = 8; target = telemetry.toScene(-46, 1.8, -470, true); fixed = true; }
+    else { shot = 9; target = offset(-58, 6, 34); }
     if (shot !== this.shot) { this.shot = shot; this.shotPosition.copy(target); }
     else if (fixed) this.shotPosition.copy(target);
     else this.shotPosition.lerp(target, Math.min(1, delta * 2.5));
@@ -322,7 +334,7 @@ export class UmrohScene {
     this.tmp.set(...seat.position);
     if (telemetry && !this.reducedMotion) {
       // Pressed back into the seat on the take-off roll, pulled forward by reverse thrust.
-      const surge = telemetry.phase === 'takeoff' ? .06 : telemetry.phase === 'rotate' ? .04 : telemetry.phase === 'rollout' && telemetry.thrust < 0 ? -.05 : 0;
+      const surge = telemetry.phase === 'takeoff' ? .06 : telemetry.phase === 'rotate' ? .04 : (telemetry.phase === 'rollout' || telemetry.phase === 'touchdown') && telemetry.thrust < 0 ? -.07 : 0;
       this.surge += (surge - this.surge) * Math.min(1, delta * 3);
       const t = this.elapsed, k = telemetry.shake;
       this.tmp.z += this.surge; this.tmp.y += k * (.006 * Math.sin(t * 37) + .004 * Math.sin(t * 61)); this.tmp.x += k * .003 * Math.sin(t * 29);
@@ -345,6 +357,7 @@ export class UmrohScene {
     frame.chapter = this.state.chapter; frame.step = this.state.step ?? 0; frame.travel = this.travel; frame.time = this.elapsed; frame.delta = delta;
     frame.running = this.state.running && !this.state.paused; frame.reducedMotion = this.reducedMotion; frame.sunset = this.state.timeOfDay === 'sunset';
     frame.sky = world.telemetry ? this.sky : undefined;
+    frame.view = this.state.view;
     world.animate(frame);
     const telemetry = world.telemetry; if (!telemetry) return;
     // Inside the cloud layer the view closes in to a bright grey.
@@ -518,6 +531,7 @@ export class UmrohScene {
     if (this.world.rail && this.state.view !== 'overview') { this.placeOnRail(); return; }
     if (this.world.seat && this.world.vehicle && this.isSeatedView()) { this.placeSeated(delta); return; }
     if (this.isAutomaticFlightView()) { if (!this.state.paused) this.frameFlight(delta); return; }
+    if (this.isDroneView()) { this.placeDrone(); return; }
     if (!this.state.paused) {
       if (isGuidedTawaf(this.state)) this.frameTawaf();
       else {
@@ -525,7 +539,7 @@ export class UmrohScene {
         if (this.state.view === 'follow' && !this.isRide()) { this.tmp.copy(this.avatar).sub(this.lastFollow); this.camera.position.add(this.tmp); this.orbit.target.add(this.tmp); this.lastFollow.copy(this.avatar); }
       }
     }
-    if (this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !isGuidedTawaf(this.state) && !this.state.paused) this.orbit.update();
+    if (this.state.view !== 'walk' && !this.isSeatedView() && !this.isAutomaticFlightView() && !this.isDroneView() && !isGuidedTawaf(this.state) && !this.state.paused) this.orbit.update();
     if (this.state.view === 'follow' && !this.isRide() && !isGuidedTawaf(this.state) && !this.state.paused) {
       const safe = moveWithinWorld(this.avatar.x, this.avatar.z, this.camera.position.x - this.avatar.x, this.camera.position.z - this.avatar.z, this.world.bounds, this.world.blockers, .35);
       this.camera.position.x = safe.x; this.camera.position.z = safe.z; this.camera.lookAt(this.orbit.target);

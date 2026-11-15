@@ -4,26 +4,35 @@
  * origin, the aircraft nose points along -Z and Y is altitude. Airborne distances are
  * compressed so clouds and coastlines visibly move during a short simulated flight.
  */
-export type FlightPhaseId = 'pushback' | 'taxi' | 'lineup' | 'takeoff' | 'rotate' | 'climb' | 'cruise' | 'descent' | 'approach' | 'landing' | 'rollout';
+export type FlightPhaseId = 'pushback' | 'taxi' | 'lineup' | 'takeoff' | 'rotate' | 'climb' | 'cruise' | 'descent' | 'approach' | 'flare' | 'touchdown' | 'rollout' | 'stopped';
 
 export interface FlightPhase { id: FlightPhaseId; start: number; end: number; label: string }
 
+/** Simulated seconds per flight; about two minutes of it are airborne. Kept in step with the journey chapter. */
+export const FLIGHT_SECONDS = 160;
+const at = (seconds: number) => seconds / FLIGHT_SECONDS;
+
 export const FLIGHT_PHASES: readonly FlightPhase[] = [
-  { id: 'pushback', start: 0, end: .035, label: 'Didorong mundur dari gerbang' },
-  { id: 'taxi', start: .035, end: .1, label: 'Meluncur ke landasan pacu' },
-  { id: 'lineup', start: .1, end: .13, label: 'Bersiap di ujung landasan' },
-  { id: 'takeoff', start: .13, end: .22, label: 'Lepas landas · melaju kencang' },
-  { id: 'rotate', start: .22, end: .26, label: 'Hidung pesawat terangkat' },
-  { id: 'climb', start: .26, end: .42, label: 'Menanjak menembus awan' },
-  { id: 'cruise', start: .42, end: .8, label: 'Terbang jelajah di atas awan' },
-  { id: 'descent', start: .8, end: .905, label: 'Mulai turun menuju bandara' },
-  { id: 'approach', start: .905, end: .945, label: 'Mendekati landasan · roda keluar' },
-  { id: 'landing', start: .945, end: .965, label: 'Mendarat' },
-  { id: 'rollout', start: .965, end: 1, label: 'Mengurangi kecepatan di landasan' },
+  { id: 'pushback', start: 0, end: at(6), label: 'Didorong mundur dari gerbang' },
+  { id: 'taxi', start: at(6), end: at(16), label: 'Meluncur ke landasan pacu' },
+  { id: 'lineup', start: at(16), end: at(21), label: 'Bersiap di ujung landasan' },
+  { id: 'takeoff', start: at(21), end: at(31), label: 'Lepas landas · melaju kencang' },
+  { id: 'rotate', start: at(31), end: at(35), label: 'Hidung pesawat terangkat' },
+  { id: 'climb', start: at(35), end: at(60), label: 'Menanjak menembus awan' },
+  { id: 'cruise', start: at(60), end: at(113), label: 'Terbang jelajah di atas awan' },
+  { id: 'descent', start: at(113), end: at(133), label: 'Mulai turun menuju bandara tujuan' },
+  { id: 'approach', start: at(133), end: at(146), label: 'Pendekatan akhir · roda dan flap keluar' },
+  { id: 'flare', start: at(146), end: at(149.5), label: 'Flare · hidung sedikit diangkat' },
+  { id: 'touchdown', start: at(149.5), end: at(152), label: 'Roda menyentuh landasan' },
+  { id: 'rollout', start: at(152), end: at(158), label: 'Rem dan dorongan balik · melambat' },
+  { id: 'stopped', start: at(158), end: 1, label: 'Pesawat berhenti di landasan' },
 ];
 
-/** Simulated seconds per flight; kept in step with the journey chapter duration. */
-export const FLIGHT_SECONDS = 48;
+/** Progress where the wheels leave the runway and where they touch down again. */
+export const LIFTOFF = at(33.2);
+export const TOUCHDOWN = at(149.5);
+/** Start of the descent, used by "skip to landing". */
+export const DESCENT_START = at(113);
 export const CRUISE_ALTITUDE = 9500;
 export const CLOUD_BASE = 1500;
 export const CLOUD_TOP = 2300;
@@ -46,6 +55,10 @@ export interface FlightState {
   shake: number;
   /** 1 while inside the cloud layer. */
   inCloud: number;
+  /** 0–1 tyre smoke at touchdown; wheel brake pressure on the landing roll. */
+  smoke: number; brake: number;
+  /** Nose wheel on the runway (main wheels touch first on landing). */
+  noseDown: boolean;
 }
 
 const clamp01 = (v: number) => Math.max(0, Math.min(1, Number.isFinite(v) ? v : 0));
@@ -75,8 +88,10 @@ function speedAt(p: number): number {
     case 'cruise': return 245;
     case 'descent': return lerp(235, 115, smooth(t));
     case 'approach': return lerp(115, 76, t);
-    case 'landing': return lerp(76, 70, t);
-    default: return lerp(70, 7, smooth(t));
+    case 'flare': return lerp(76, 71, t);
+    case 'touchdown': return lerp(71, 64, t);
+    case 'rollout': return 64 * Math.pow(1 - t, 1.6);
+    default: return 0;
   }
 }
 
@@ -86,7 +101,7 @@ function compressionAt(p: number): number {
   if (phase.id === 'climb') return lerp(1, 7, smooth(t));
   if (phase.id === 'cruise') return 7;
   if (phase.id === 'descent') return lerp(7, 2.4, smooth(t));
-  if (phase.id === 'approach') return 2.4;
+  if (phase.id === 'approach') return lerp(2.4, 1, smooth(t));
   return 1;
 }
 
@@ -115,7 +130,7 @@ function altitudeAt(p: number): number {
     case 'cruise': return CRUISE_ALTITUDE + 60 * Math.sin(t * Math.PI * 2);
     case 'descent': return lerp(CRUISE_ALTITUDE, 160, 1 - Math.pow(1 - t, 1.25));
     case 'approach': return lerp(160, 14, t);
-    case 'landing': return lerp(14, 0, 1 - (1 - t) ** 2);
+    case 'flare': return lerp(14, 0, 1 - (1 - t) ** 2);
     default: return 0;
   }
 }
@@ -128,8 +143,9 @@ function pitchAt(p: number): number {
     case 'cruise': return 2 * DEG;
     case 'descent': return -2.5 * DEG;
     case 'approach': return lerp(-1, 2, t) * DEG;
-    case 'landing': return lerp(5.5, 3, t) * DEG;
-    case 'rollout': return lerp(2.5, 0, smooth(Math.min(1, t * 4))) * DEG;
+    case 'flare': return lerp(2, 5.5, smooth(t)) * DEG;
+    // Main wheels first, then the nose is lowered onto the runway.
+    case 'touchdown': return lerp(5.5, 0, smooth(clamp01((t - .25) / .6))) * DEG;
     default: return 0;
   }
 }
@@ -174,32 +190,35 @@ export function getFlightState(progress: number): FlightState {
   const samples = track(), f = p * SAMPLES, i = Math.min(SAMPLES - 1, Math.floor(f)), k = f - i;
   const a = samples[i], b = samples[i + 1];
   const altitude = altitudeAt(p), speed = speedAt(p);
-  const onGround = altitude <= 0.01 && !['climb', 'cruise', 'descent', 'approach'].includes(phase.id);
-  const touchdown = phase.id === 'landing' && t > .82 ? 1 - (t - .82) / .18 : phase.id === 'rollout' && t < .12 ? 1 - t / .12 : 0;
+  const airborne = ['climb', 'cruise', 'descent', 'approach', 'flare'].includes(phase.id);
+  const onGround = altitude <= 0.01 && !airborne;
+  const impact = phase.id === 'touchdown' ? Math.max(0, 1 - t / .3) + (t > .55 && t < .75 ? .5 : 0) : 0;
   const inCloud = altitude > CLOUD_BASE - 150 && altitude < CLOUD_TOP + 150
     ? Math.min(1, (altitude - CLOUD_BASE + 150) / 300, (CLOUD_TOP + 150 - altitude) / 300) : 0;
   const thrust = phase.id === 'takeoff' || phase.id === 'rotate' ? 1 : phase.id === 'climb' ? .88 : phase.id === 'cruise' ? .66
-    : phase.id === 'descent' ? .22 : phase.id === 'approach' ? .45 : phase.id === 'lineup' ? lerp(.25, .55, t)
-      : phase.id === 'rollout' ? (t < .55 ? -.8 : .12) : phase.id === 'taxi' ? .26 : .1;
+    : phase.id === 'descent' ? .22 : phase.id === 'approach' ? .45 : phase.id === 'flare' ? .2 : phase.id === 'lineup' ? lerp(.25, .55, t)
+      : phase.id === 'touchdown' ? (t > .5 ? -.6 : .12) : phase.id === 'rollout' ? (t < .6 ? -.85 : .12) : phase.id === 'taxi' ? .26 : .08;
   return {
     phase, local: t,
     x: lerp(a.x, b.x, k), z: lerp(a.z, b.z, k), altitude,
     heading: lerp(a.heading, b.heading, k), pitch: pitchAt(p), bank: bankAt(p), speed,
-    onGround, gearDown: p < .3 || p > .885,
-    flaps: p < .2 ? .55 : p < .33 ? lerp(.55, 0, smooth((p - .2) / .13)) : p > .87 ? lerp(.3, 1, smooth(clamp01((p - .87) / .05))) : 0,
-    spoilers: phase.id === 'rollout' && t < .7 ? 1 : 0,
+    onGround, gearDown: p < at(38) || p > at(129),
+    flaps: p < at(28) ? .55 : p < at(48) ? lerp(.55, 0, smooth((p - at(28)) / at(20))) : p > at(124) ? lerp(.3, 1, smooth(clamp01((p - at(124)) / at(10)))) : 0,
+    spoilers: (phase.id === 'touchdown' && t > .12) || (phase.id === 'rollout' && t < .85) ? 1 : 0,
     thrust,
-    seatbelt: p < .4 || p > .82,
-    cabinDim: p > .1 && p < .32 ? 1 : p > .87 ? 1 : 0,
-    shake: Math.min(1, (onGround ? Math.abs(speed) / 82 * .7 : 0) + inCloud * .55 + touchdown + (phase.id === 'cruise' ? .08 : 0)),
+    seatbelt: p < at(60) || p > at(118),
+    cabinDim: p > at(16) && p < at(48) ? 1 : p > at(128) ? 1 : 0,
+    shake: Math.min(1, (onGround ? Math.abs(speed) / 82 * .7 : 0) + inCloud * .55 + impact + (phase.id === 'cruise' ? .08 : 0)),
     inCloud,
+    smoke: phase.id === 'touchdown' ? Math.max(0, 1 - t / .55) : 0,
+    brake: phase.id === 'rollout' ? 1 - t * .6 : phase.id === 'touchdown' && t > .7 ? .5 : 0,
+    noseDown: !airborne && !(phase.id === 'touchdown' && t < .7) && phase.id !== 'rotate',
   };
 }
 
 /** Where the destination runway threshold sits in the departure runway frame. */
 export function getArrivalRunway(): { x: number; z: number; heading: number } {
-  const landing = FLIGHT_PHASES.find((phase) => phase.id === 'landing')!;
-  const touchdown = getFlightState(landing.start + (landing.end - landing.start) * .97);
+  const touchdown = getFlightState(TOUCHDOWN);
   // The aim point sits ~400 m beyond the threshold.
   return { x: touchdown.x + Math.sin(touchdown.heading) * 400, z: touchdown.z + Math.cos(touchdown.heading) * 400, heading: touchdown.heading };
 }

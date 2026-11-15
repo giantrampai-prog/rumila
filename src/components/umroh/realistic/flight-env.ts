@@ -173,7 +173,7 @@ void main() {
   #include <colorspace_fragment>
 }`;
 
-interface Airport { group: T.Group }
+interface Airport { group: T.Group; flashers: T.Sprite[] }
 
 function shaderMaterial(r: WorldResources, fragmentShader: string, uniforms: Record<string, T.IUniform>, transparent: boolean): T.ShaderMaterial {
   const material = r.keep(new T.ShaderMaterial({ vertexShader: VERTEX, fragmentShader, uniforms, transparent, depthWrite: false, side: T.DoubleSide }));
@@ -258,6 +258,11 @@ export function createFlightEnvironment(r: WorldResources, destination: 'jeddah'
       // Only draw the airport you can actually see.
       origin.group.visible = !arrivalSide && state.altitude < 6000;
       destinationAirport.group.visible = arrivalSide && state.altitude < 6000;
+      // Twice a second the flashers run from the far end of the approach lights to the runway.
+      for (const airport of [origin, destinationAirport]) {
+        const lit = Math.floor((frame.time * 2 % 1) * 14);
+        airport.flashers.forEach((flash, i) => { flash.visible = airport.group.visible && i === lit; });
+      }
       deck.position.y = (CLOUD_BASE + CLOUD_TOP) / 2 - lift;
       cirrus.position.y = 11900 - lift;
       for (const puff of puffs) {
@@ -374,7 +379,21 @@ function createAirport(r: WorldResources, desert: boolean, designator: string, n
   group.traverse((object) => {
     if (object instanceof T.Mesh && (object.material as T.Material).depthWrite === false) { object.renderOrder = -80 + ((object.material as T.Material).userData.layer ?? 0); object.castShadow = false; }
   });
-  return { group };
+  // Sequenced flashers race toward the threshold along the approach lights.
+  const flashMap = (() => {
+    const canvas = document.createElement('canvas'); canvas.width = canvas.height = 64;
+    const ctx = canvas.getContext('2d')!; const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.25, 'rgba(220,235,255,.7)'); g.addColorStop(1, 'rgba(200,220,255,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, 64, 64);
+    const map = r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; return map;
+  })();
+  const flashMaterial = r.keep(new T.SpriteMaterial({ map: flashMap, transparent: true, depthWrite: false, blending: T.AdditiveBlending, fog: false, toneMapped: false }));
+  const flashers: T.Sprite[] = [];
+  for (let k = 10; k >= 1; k--) {
+    const flash = new T.Sprite(flashMaterial); flash.position.set(0, 1.2, k * 30); flash.scale.setScalar(9); flash.visible = false;
+    flash.renderOrder = -10; group.add(flash); flashers.push(flash);
+  }
+  return { group, flashers };
 }
 
 function opposite(designator: string): string {

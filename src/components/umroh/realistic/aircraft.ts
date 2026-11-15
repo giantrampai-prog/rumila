@@ -11,15 +11,23 @@ export interface AircraftParts {
   beacons: T.MeshStandardMaterial[];
   landingLights: T.Object3D[];
   contrails: T.Mesh[];
+  /** Tyre smoke puffs behind each main bogie. */
+  smoke: { sprite: T.Sprite; side: number; seed: number }[];
+  /** Translating thrust-reverser sleeves on each engine. */
+  reversers: T.Object3D[];
 }
-export interface AircraftAnimation { gear: number; flaps: number; spoilers: number; thrust: number; landingLights: boolean; contrail: number }
+export interface AircraftAnimation {
+  gear: number; flaps: number; spoilers: number; thrust: number; landingLights: boolean; contrail: number;
+  /** 0–1 touchdown smoke; 0–1 nose-gear strut load (0 while the nose is still up). */
+  smoke?: number; noseLoad?: number;
+}
 /** Distance from the fuselage axis to the ground with the gear extended. */
 export const GEAR_HEIGHT = 6.42;
 
 /** Original wide-body twinjet, drawn in metres with the nose pointing along -Z. */
 export function createGarudaAircraft(r: WorldResources, options: { wingsOnly?: boolean; animated?: boolean } = {}): T.Group {
   const plane = new T.Group(); plane.name = 'Garuda Indonesia — aircraft'; plane.userData.dynamic = true;
-  const parts: AircraftParts = { fans: [], gear: [], flaps: [], spoilers: [], strobes: [], beacons: [], landingLights: [], contrails: [] };
+  const parts: AircraftParts = { fans: [], gear: [], flaps: [], spoilers: [], strobes: [], beacons: [], landingLights: [], contrails: [], smoke: [], reversers: [] };
   plane.userData.parts = parts;
   const body = options.wingsOnly ? new T.Group() : plane;
   const paint = r.keep(new T.MeshStandardMaterial({ color: '#f7f8f8', metalness: .24, roughness: .28 }));
@@ -113,13 +121,17 @@ function addMovingParts(r: WorldResources, plane: T.Group, parts: AircraftParts,
     const nose = dynamicGroup(plane, 'Roda depan', [0, -2.75, -24.5]);
     strut(nose, [0, 0, 0], [0, -3.05, 0], .16); strut(nose, [0, -.6, 0], [0, -.2, 1.6], .07);
     for (const x of [-.32, .32]) wheel(nose, x, -3.15, 0, .63, .32);
-    parts.gear.push({ pivot: nose, axis: 'x', angle: -1.6 });
+    parts.gear.push({ pivot: nose, axis: 'x', angle: -1.6 }); nose.userData.baseY = nose.position.y;
     for (const side of [-1, 1]) {
       const main = dynamicGroup(plane, 'Roda utama', [side * 5.2, -1.6, 7]);
       strut(main, [0, 0, 0], [0, -3.95, 0], .24); strut(main, [-side * 1.6, -.4, -.8], [0, -2.4, 0], .1);
       r.box(main, [.36, .3, 2.6], [0, -3.95, 0], hub);
       for (const dx of [-.42, .42]) for (const dz of [-.95, .95]) wheel(main, dx, -3.95, dz, .88, .44);
       parts.gear.push({ pivot: main, axis: 'z', angle: side * 1.55 });
+      for (let i = 0; i < 4; i++) {
+        const puff = new T.Sprite(smokeMaterial(r)); puff.visible = false; puff.renderOrder = 6;
+        dynamicGroup(plane, 'Asap ban').add(puff); parts.smoke.push({ sprite: puff, side, seed: i / 3 });
+      }
     }
     // Red beacons above and below the fuselage.
     for (const y of [3.11, -2.98]) {
@@ -172,6 +184,19 @@ export function animateAircraft(parts: AircraftParts, state: AircraftAnimation, 
   for (const beacon of parts.beacons) beacon.emissiveIntensity = (time + .5) % 1.1 < .12 ? 6 : .2;
   for (const light of parts.landingLights) light.visible = state.landingLights;
   for (const trail of parts.contrails) (trail.material as T.MeshBasicMaterial).opacity = .55 * state.contrail;
+  // Reverser sleeves slide aft to expose the cascades when thrust is reversed.
+  const reverse = state.thrust < 0 ? Math.min(1, -state.thrust * 1.2) : 0;
+  for (const sleeve of parts.reversers) sleeve.position.z += ((sleeve.userData.baseZ + reverse * .9) - sleeve.position.z) * Math.min(1, delta * 4);
+  // The nose strut extends while the nose is held up and compresses as it lowers.
+  if (parts.gear[0]) parts.gear[0].pivot.position.y = parts.gear[0].pivot.userData.baseY + (1 - (state.noseLoad ?? 1)) * .18;
+  const smoke = state.smoke ?? 0;
+  for (const puff of parts.smoke) {
+    const age = (1 - smoke) * 2.4 + puff.seed * .3;
+    puff.sprite.visible = smoke > 0.01;
+    puff.sprite.position.set(puff.side * (5.2 + (puff.seed - .5) * 1.2), -6.1 + age * .9, 7 + age * 9 + puff.seed * 2);
+    puff.sprite.scale.setScalar(1.6 + age * 4);
+    (puff.sprite.material as T.SpriteMaterial).opacity = Math.max(0, smoke * .75 * (1 - age / 3.2));
+  }
 }
 
 function trailTexture(r: WorldResources): T.CanvasTexture {
@@ -186,6 +211,19 @@ function trailTexture(r: WorldResources): T.CanvasTexture {
     }
   }
   const map = r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; return map;
+}
+function smokeMaterial(r: WorldResources): T.SpriteMaterial {
+  const canvas = document.createElement('canvas'); canvas.width = canvas.height = 128;
+  const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Tekstur asap tidak tersedia.');
+  for (let i = 0; i < 9; i++) {
+    const x = 40 + Math.sin(i * 2.1) * 22 + 24, y = 40 + Math.cos(i * 1.7) * 18 + 24, radius = 26 + (i % 3) * 8;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    g.addColorStop(0, 'rgba(235,235,232,.55)'); g.addColorStop(1, 'rgba(235,235,232,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, 128, 128);
+  }
+  const map = r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace;
+  // Each puff fades on its own, so every sprite gets its own material.
+  return r.keep(new T.SpriteMaterial({ map, transparent: true, depthWrite: false, opacity: 0 }));
 }
 function glowMaterial(r: WorldResources): T.SpriteMaterial {
   const canvas = document.createElement('canvas'); canvas.width = canvas.height = 128;
@@ -232,6 +270,13 @@ function addEngine(r: WorldResources, parent: T.Group, x: number, y: number, z: 
   const swirl = r.box(fan, [.04, .2, .02], [0, .14, -.5], r.keep(new T.MeshStandardMaterial({ color: '#f2f4f5', roughness: .4 })));
   void spinner; void swirl;
   const nozzle = r.cylinder(parent, .7, .98, 1.25, [x, y, z + 3.45], dark, 32); nozzle.rotation.x = Math.PI / 2;
+  if (parts) {
+    // Aft cowl sleeve that translates back on landing; the dark cascade band shows behind it.
+    const cascade = r.cylinder(parent, 1.6, 1.52, .9, [x, y, z + 1.6], dark, 36); cascade.rotation.x = Math.PI / 2;
+    const sleeve = new T.Group(); sleeve.userData.dynamic = true; sleeve.position.set(x, y, z + 1.6); sleeve.userData.baseZ = z + 1.6; parent.add(sleeve);
+    const cowl = r.cylinder(sleeve, 1.67, 1.4, 1.5, [0, 0, .3], paint, 36); cowl.rotation.x = Math.PI / 2;
+    parts.reversers.push(sleeve);
+  }
   r.sphere(parent, [.42, .42, .95], [x, y, z + 3.9], alloy);
 }
 function canvasMaterial(r: WorldResources, width: number, height: number, draw: (ctx: CanvasRenderingContext2D) => void): T.MeshStandardMaterial {

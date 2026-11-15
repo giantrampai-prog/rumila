@@ -84,7 +84,7 @@ describe("Indonesia round-trip journey", () => {
       const initial = reachChapter(chapter.id);
       expect(chapter.durationSeconds).toBeGreaterThanOrEqual(12);
       // Flights stage pushback, takeoff, cruise and landing, so they run longer than ground rides.
-      expect(chapter.durationSeconds).toBeLessThanOrEqual(chapter.id.startsWith("garuda_") ? 60 : 20);
+      expect(chapter.durationSeconds).toBeLessThanOrEqual(chapter.id.startsWith("garuda_") ? 180 : 20);
       expect(nextJourneyChapter(initial)).toBe(initial);
       const almost = advanceJourneyTravel(initial, chapter.durationSeconds! - 0.001);
       expect(nextJourneyChapter(almost)).toBe(almost);
