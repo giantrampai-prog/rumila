@@ -12,6 +12,7 @@ import { LemariPiagam, usePenghargaan } from "@/components/akademi/lemari";
 import { hitungStreak, tanggalJam, TRACK_SLICE } from "@/components/akademi/portal/bersama";
 import { RaporAnak } from "@/components/akademi/portal/rapor";
 import { ProfilBerpikirOrtu } from "@/components/ortu/profil-berpikir";
+import { hapusFoto, unggahFoto, useFotoAnak } from "@/lib/akademi/foto";
 import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, anakRumah, levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { proyeksi } from "@/lib/akademi/mastery";
@@ -175,10 +176,61 @@ function Bagian({ anak, tab }: { anak: Member; tab: Tab }) {
   const [lihat, setLihat] = useState<string | null>(null);
   useEffect(() => void sinkronSiswa(anak.id), [anak.id]);
   if (tab === "rapor") return <RaporAnak anak={anak} />;
-  if (tab === "sertifikat") return <LemariPiagam anak={anak} lihat={lihat} onLihat={setLihat} tertanam />;
+  if (tab === "sertifikat")
+    return (
+      <div className="flex flex-col gap-4">
+        {!lihat && <FotoSertifikat anak={anak} />}
+        <LemariPiagam anak={anak} lihat={lihat} onLihat={setLihat} tertanam />
+      </div>
+    );
   if (tab === "ujian") return <DaftarUjian anak={anak} />;
   if (tab === "berpikir") return <ProfilBerpikirOrtu anak={anak} />;
   return <Ringkasan anak={anak} />;
+}
+
+/* ---------------- foto untuk buku sertifikat ---------------- */
+
+function FotoSertifikat({ anak }: { anak: Member }) {
+  const foto = useFotoAnak(anak.id);
+  const [sibuk, setSibuk] = useState(false);
+  const [pesan, setPesan] = useState<string | null>(null);
+  const pilih = async (f: File | undefined) => {
+    if (!f) return;
+    setSibuk(true);
+    setPesan(null);
+    try {
+      await unggahFoto(anak.id, f);
+      setPesan("Foto tersimpan. Tampil di lembar Sertifikat saat dibuka atau dicetak.");
+    } catch (e) {
+      setPesan(e instanceof Error ? e.message : "Foto belum tersimpan.");
+    } finally {
+      setSibuk(false);
+    }
+  };
+  return (
+    <section className={`${KARTU} flex flex-wrap items-center gap-4 p-4`}>
+      <span className="flex h-24 w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#efe6d0] text-[11px] font-extrabold text-ink-3">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {foto ? <img src={foto} alt={`Foto ${anak.name}`} className="h-full w-full object-cover" /> : "3 × 4"}
+      </span>
+      <div className="min-w-0 flex-1">
+        <h3 style={{ fontFamily: BALOO, fontSize: 18, fontWeight: 800 }}>Foto untuk sertifikat</h3>
+        <p className="text-[13px] font-bold text-ink-3">Foto wajah tegak, latar polos. Disimpan privat untuk keluarga; tidak tampil di halaman verifikasi publik.</p>
+        {pesan && <p className="mt-1 text-[13px] font-bold text-[#0567c2]">{pesan}</p>}
+      </div>
+      <div className="flex gap-2">
+        <label htmlFor={`foto-${anak.id}`} className="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-full px-4 text-[13px] font-extrabold text-white" style={{ background: "#0786eb", opacity: sibuk ? 0.6 : 1 }}>
+          <Icon name="add_a_photo" size={18} /> {sibuk ? "Mengunggah…" : foto ? "Ganti foto" : "Unggah foto"}
+        </label>
+        <input id={`foto-${anak.id}`} type="file" accept="image/*" className="sr-only" disabled={sibuk} onChange={(e) => void pilih(e.target.files?.[0])} />
+        {foto && (
+          <button onClick={() => void hapusFoto(anak.id)} className="inline-flex h-10 items-center rounded-full bg-[#f6f0e6] px-4 text-[13px] font-extrabold">
+            Hapus
+          </button>
+        )}
+      </div>
+    </section>
+  );
 }
 
 /* ---------------- ringkasan ---------------- */
@@ -260,7 +312,7 @@ function DaftarUjian({ anak }: { anak: Member }) {
         </p>
       </div>
       {urut.length === 0 ? (
-        <p className="text-[14px] font-bold text-ink-3">Belum ada ujian. Kuis Modul pertama muncul setelah semua misi satu modul selesai.</p>
+        <p className="text-[14px] font-bold text-ink-3">Belum ada ujian. Ulangan Modul pertama muncul setelah semua misi satu modul selesai.</p>
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full min-w-[560px] text-left text-[13.5px]">

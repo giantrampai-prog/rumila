@@ -171,13 +171,13 @@ describe("petaJenjang dengan ujian (Tahap 3)", () => {
     expect(pt.semesterAktif).toBe(2);
   });
 
-  it("semua tuntas + inti dikuasai → Ujian Kenaikan; lulus → jenjang tuntas", () => {
+  it("semua tuntas + inti dikuasai → Ujian Akhir; sudah dikerjakan (nilai berapa pun) → jenjang tuntas", () => {
     const dasar = [h("kuis", "BILANGAN"), h("kuis", "URUTAN"), h("kuis", "BENTUK"), h("semester", "S1"), h("semester", "S2")];
     const pt = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), dasar);
     expect(pt.ujian?.jenis).toBe("kenaikan");
     expect(pt.tercapai).toBe(true);
     expect(pt.lulusJenjang).toBe(false);
-    const lulus = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), [...dasar, h("kenaikan", "")]);
+    const lulus = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), [...dasar, h("kenaikan", "", false)]);
     expect(lulus.ujian).toBeUndefined();
     expect(lulus.lulusJenjang).toBe(true);
   });

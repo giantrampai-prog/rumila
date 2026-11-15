@@ -3,7 +3,7 @@
 // Empat jenis gerbang:
 //   kuis       akhir tiap modul (unit), membuka modul berikut                 · 8 soal  · lulus ≥ 70
 //   semester   akhir semester (lintas modul semester itu), membuka semester 2 · 15 soal · lulus ≥ 75
-//   kenaikan   seluruh jenjang, syarat sertifikat & naik jenjang             · 20 soal · lulus ≥ 75
+//   kenaikan   Ujian Akhir seluruh jenjang, HANYA SEKALI; nilai apa adanya di sertifikat (<75 = "Cukup") · 20 soal
 //   penempatan sekali saat anak didaftarkan, menentukan jenjang awal         · 10 soal · lulus ≥ 70
 // Soal = satu ronde dari paket permainan yang sudah ada, tanpa tombol Bantu. Kompetensi diambil bergiliran
 // supaya semua kompetensi ruang ujian terwakili. Gagal → boleh mengulang besok (remedial dulu).
@@ -15,7 +15,9 @@ export type JenisUjian = (typeof JENIS_UJIAN)[number];
 
 export const AMBANG: Record<JenisUjian, number> = { kuis: 70, semester: 75, kenaikan: 75, penempatan: 70 };
 export const JUMLAH_SOAL: Record<JenisUjian, number> = { kuis: 8, semester: 15, kenaikan: 20, penempatan: 10 };
-export const NAMA_UJIAN: Record<JenisUjian, string> = { kuis: "Kuis Modul", semester: "Ujian Semester", kenaikan: "Ujian Kenaikan", penempatan: "Tes Penempatan" };
+export const NAMA_UJIAN: Record<JenisUjian, string> = { kuis: "Ulangan Modul", semester: "Ujian Semester", kenaikan: "Ujian Akhir", penempatan: "Tes Penempatan" };
+/** Ujian Akhir jenjang hanya SEKALI (keputusan owner 15 Nov 2026): nilai berapa pun dicatat apa adanya di sertifikat. */
+export const SEKALI: ReadonlySet<JenisUjian> = new Set(["kenaikan"]);
 
 /** Ruang ujian: kuis = id unit, semester = "S1"/"S2", kenaikan & penempatan = "" */
 export const ruangSemester = (ke: 1 | 2) => `S${ke}`;
@@ -80,9 +82,9 @@ export function rencanaUjian(kompetensiIds: string[], paket: ContentPack[], n: n
 export const nilaiDari = (benar: number, total: number) => (total > 0 ? Math.round((benar / total) * 100) : 0);
 export const lulusDari = (jenis: JenisUjian, nilai: number) => nilai >= AMBANG[jenis];
 
-export type Predikat = "Dengan Pujian" | "Sangat Baik" | "Baik" | "Belum Lulus";
+export type Predikat = "Dengan Pujian" | "Sangat Baik" | "Baik" | "Cukup" | "Belum Lulus";
 export function predikat(nilai: number, jenis: JenisUjian = "kenaikan"): Predikat {
-  if (!lulusDari(jenis, nilai)) return "Belum Lulus";
+  if (!lulusDari(jenis, nilai)) return SEKALI.has(jenis) ? "Cukup" : "Belum Lulus";
   if (nilai >= 90) return "Dengan Pujian";
   if (nilai >= 80) return "Sangat Baik";
   return "Baik";
@@ -108,9 +110,15 @@ export function sudahLulus(hasil: HasilUjian[], jenis: JenisUjian, level: LevelI
 /** Tanggal lokal Asia/Jakarta (YYYY-MM-DD). */
 export const hariWIB = (iso: string | Date) => new Date(new Date(iso).getTime() + 7 * 3600_000).toISOString().slice(0, 10);
 
-/** Gagal hari ini → mengulang besok. Lulus → tidak perlu mengulang. */
-export function bolehMengulang(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang: string, sekarang: Date = new Date()): { boleh: boolean; besok?: boolean } {
+/** Ujian sekali-jalan sudah pernah dikerjakan (lulus atau tidak). */
+export function sudahDikerjakan(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang = ""): boolean {
+  return hasil.some((h) => h.jenis === jenis && h.level === level && h.ruang === ruang);
+}
+
+/** Gagal hari ini → mengulang besok. Lulus → tidak perlu mengulang. Ujian Akhir: sekali saja. */
+export function bolehMengulang(hasil: HasilUjian[], jenis: JenisUjian, level: LevelId, ruang: string, sekarang: Date = new Date()): { boleh: boolean; besok?: boolean; sekali?: boolean } {
   const milik = hasil.filter((h) => h.jenis === jenis && h.level === level && h.ruang === ruang);
+  if (SEKALI.has(jenis) && milik.length) return { boleh: false, sekali: true };
   if (milik.some((h) => h.lulus)) return { boleh: false };
   const hariIni = hariWIB(sekarang);
   if (milik.some((h) => hariWIB(h.at) === hariIni)) return { boleh: false, besok: true };

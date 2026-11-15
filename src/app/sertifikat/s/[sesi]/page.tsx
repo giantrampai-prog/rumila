@@ -1,7 +1,7 @@
 "use client";
 
 // Verifikasi publik Sertifikat Semester: /sertifikat/s/<id sesi Ujian Semester> — tanpa login.
-// RPC verify_semester hanya mengembalikan nama depan, jenjang, semester, nilai, tanggal, dan nilai Kuis Modul.
+// RPC verify_semester hanya mengembalikan nama depan, jenjang, semester, nilai, tanggal, dan nilai Ulangan Modul.
 
 import Link from "next/link";
 import { useParams } from "next/navigation";

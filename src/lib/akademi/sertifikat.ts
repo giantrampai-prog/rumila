@@ -255,7 +255,7 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     if (h.ok) return terapkan(h);
     if (h.alasan === "belum_lulus")
       throw new PangkatBelumTercapai(level, `Menurut catatan server baru ${h.dikuasai} dari ${h.total} kompetensi inti dikuasai.`);
-    if (h.alasan === "belum_ujian") throw new PangkatBelumTercapai(level, "Ujian Kenaikan belum lulus.");
+    if (h.alasan === "belum_ujian") throw new PangkatBelumTercapai(level, "Ujian Akhir belum dikerjakan.");
     if (h.alasan === "jenjang_beda" || h.alasan === "tidak_berhak") throw new Error(`Sertifikat ditolak server: ${h.alasan}`);
   }
   // Offline / server penerbit belum aktif / anggota demo: simpan lokal dulu (belum bisa diverifikasi).
