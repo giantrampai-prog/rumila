@@ -47,6 +47,9 @@ export interface SnapshotSertifikat {
   dikuasai: number;
   total: number;
   pangkat: string;
+  /** nilai Ujian Kenaikan (0–100) dan predikatnya; kosong pada sertifikat sebelum Tahap 3 */
+  nilai?: number;
+  predikat?: string;
 }
 
 /** Bekukan daftar kompetensi inti satu jenjang + statusnya. Urutan mengikuti katalog. */
@@ -84,6 +87,8 @@ export function bacaSnapshot(v: unknown): SnapshotSertifikat | null {
     dikuasai: typeof s.dikuasai === "number" ? s.dikuasai : 0,
     total: typeof s.total === "number" ? s.total : s.kompetensi.length,
     pangkat: typeof s.pangkat === "string" ? s.pangkat : "",
+    ...(typeof s.nilai === "number" ? { nilai: s.nilai } : {}),
+    ...(typeof s.predikat === "string" ? { predikat: s.predikat } : {}),
   };
 }
 

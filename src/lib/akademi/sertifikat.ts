@@ -145,7 +145,7 @@ export function dariBaris(r: Baris): Sertifikat | null {
 /** Jawaban server penerbit. */
 export type HasilTerbit =
   | { ok: true; sertifikat: Sertifikat; levelBaru?: LevelId }
-  | { ok: false; alasan: "belum_lulus"; dikuasai: number; total: number }
+  | { ok: false; alasan: "belum_lulus" | "belum_ujian"; dikuasai: number; total: number }
   | { ok: false; alasan: "jenjang_beda" | "tidak_berhak" | "jaringan" | "belum_aktif" | "galat" };
 
 /** Minta server menerbitkan sertifikat anak × jenjang. Tidak pernah melempar. */
@@ -164,7 +164,7 @@ export async function mintaTerbit(memberId: string, level: LevelId): Promise<Has
       const s = dariBaris(j.sertifikat);
       return s ? { ok: true, sertifikat: s, levelBaru: j.levelBaru } : { ok: false, alasan: "galat" };
     }
-    if (res.status === 422) return { ok: false, alasan: "belum_lulus", dikuasai: j.dikuasai ?? 0, total: j.total ?? 0 };
+    if (res.status === 422) return { ok: false, alasan: j.error === "belum_ujian_kenaikan" ? "belum_ujian" : "belum_lulus", dikuasai: j.dikuasai ?? 0, total: j.total ?? 0 };
     if (res.status === 409) return { ok: false, alasan: "jenjang_beda" };
     if (res.status === 401 || res.status === 403) return { ok: false, alasan: "tidak_berhak" };
     if (res.status === 503) return { ok: false, alasan: "belum_aktif" };
@@ -208,7 +208,7 @@ export async function kirimTertunda(): Promise<void> {
         const h = await mintaTerbit(m, s.level);
         if (h.ok) terapkan(h);
         // Server menolak (belum lulus menurut catatan server / jenjang beda): buang salinan pending yang tidak sah.
-        else if (h.alasan === "belum_lulus" || h.alasan === "jenjang_beda") simpanLokal(m, sertifikatAnak(m).filter((x) => !kunciSama(x, s)));
+        else if (h.alasan === "belum_lulus" || h.alasan === "belum_ujian" || h.alasan === "jenjang_beda") simpanLokal(m, sertifikatAnak(m).filter((x) => !kunciSama(x, s)));
       }
     }
   } finally {
@@ -255,6 +255,7 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     if (h.ok) return terapkan(h);
     if (h.alasan === "belum_lulus")
       throw new PangkatBelumTercapai(level, `Menurut catatan server baru ${h.dikuasai} dari ${h.total} kompetensi inti dikuasai.`);
+    if (h.alasan === "belum_ujian") throw new PangkatBelumTercapai(level, "Ujian Kenaikan belum lulus.");
     if (h.alasan === "jenjang_beda" || h.alasan === "tidak_berhak") throw new Error(`Sertifikat ditolak server: ${h.alasan}`);
   }
   // Offline / server penerbit belum aktif / anggota demo: simpan lokal dulu (belum bisa diverifikasi).
