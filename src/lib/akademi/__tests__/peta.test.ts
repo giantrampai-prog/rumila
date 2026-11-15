@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
 import type { Penguasaan, Status } from "../mastery";
-import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi } from "../peta";
+import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, bagiSemester } from "../peta";
 import { LEARNER, SESSION, idBaru, kompetensi, paket, waktuHari } from "./helper";
 
 const M1 = "MAT.PAUD.BILANGAN.01";
@@ -113,5 +113,31 @@ describe("progresMisi", () => {
     expect(pr.get(M1)).toBeCloseTo(Math.ceil(n / 2) / n);
     expect(pr.get(M2)).toBeCloseTo(Math.ceil(n / 2) / n);
     expect(pr.get(K1)).toBeCloseTo(1 / PAKET[1].rounds);
+  });
+});
+
+describe("bagiSemester", () => {
+  const unit = (id: string, n: number, selesai = 0) =>
+    ({ id, track: "MAT", ke: 1, semester: 1, nama: { id, en: id }, lencana: "terkunci", misi: Array.from({ length: n }, (_, i) => ({ selesai: i < selesai })) }) as unknown as import("../peta").UnitPeta;
+
+  it("batas di modul yang paling dekat separuh jumlah misi", () => {
+    const u = [unit("a", 3), unit("b", 3), unit("c", 2), unit("d", 4)];
+    const s = bagiSemester(u);
+    expect(s.map((x) => x.unit.map((y) => y.id))).toEqual([["a", "b"], ["c", "d"]]);
+    expect(s.map((x) => x.total)).toEqual([6, 6]);
+    expect(u.map((x) => x.semester)).toEqual([1, 1, 2, 2]);
+  });
+
+  it("semester 2 terkunci sampai semester 1 tuntas", () => {
+    expect(bagiSemester([unit("a", 2, 1), unit("b", 2)])[1].terkunci).toBe(true);
+    const s = bagiSemester([unit("a", 2, 2), unit("b", 2)]);
+    expect(s[0].tuntas).toBe(true);
+    expect(s[1].terkunci).toBe(false);
+  });
+
+  it("satu modul saja → semester 2 kosong", () => {
+    const s = bagiSemester([unit("a", 5)]);
+    expect(s[0].total).toBe(5);
+    expect(s[1].total).toBe(0);
   });
 });

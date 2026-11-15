@@ -7,6 +7,8 @@
 //   sekarang  = misi pertama yang belum selesai di unit aktif (saran "Lanjut")
 //   progres   = ronde terjauh yang pernah dimainkan dalam satu sesi paket misi itu / jumlah ronde paket
 //   gerbang   = setelah semua misi selesai, latihan pemantapan untuk kompetensi inti yang belum dikuasai
+//   semester  = jalur dibagi dua di batas unit (modul) terdekat dengan separuh jumlah misi (Sekolah Tahap 2).
+//               Semester 2 otomatis terkunci selama semester 1 belum tuntas karena unit terkunci berurutan.
 // Naik jenjang tetap memakai penguasaan: semua kompetensi inti jenjang dikuasai.
 
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
@@ -28,8 +30,10 @@ export interface MisiPeta {
 export interface UnitPeta {
   id: string;
   track: TrackId;
-  /** urutan unit di dalam pelajarannya, mulai 1 */
+  /** urutan unit (= modul) di dalam pelajarannya, mulai 1 */
   ke: number;
+  /** semester tempat modul ini berada */
+  semester: 1 | 2;
   nama: Competency["unit"]["nama"];
   misi: MisiPeta[];
   lencana: StatusLencana;
@@ -40,9 +44,24 @@ export interface Hitungan {
   total: number;
 }
 
+export interface SemesterPeta {
+  ke: 1 | 2;
+  unit: UnitPeta[];
+  selesai: number;
+  total: number;
+  /** semua misi semester ini selesai */
+  tuntas: boolean;
+  /** semester sebelumnya belum tuntas */
+  terkunci: boolean;
+}
+
 export interface PetaJenjang {
   level: LevelId;
   unit: UnitPeta[];
+  /** jalur dibagi dua semester (semester 2 bisa kosong bila jenjang hanya punya satu modul) */
+  semester: SemesterPeta[];
+  /** semester yang sedang berjalan (2 bila semester 1 tuntas) */
+  semesterAktif: 1 | 2;
   /** jumlah misi selesai (urutan bebas) / total misi */
   selesai: number;
   total: number;
@@ -125,16 +144,48 @@ export function petaJenjang(
       }
       return m;
     });
-    return { id: isi[0].unit.id, track, ke, nama: isi[0].unit.nama, misi, lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
+    return { id: isi[0].unit.id, track, ke, semester: 1 as 1 | 2, nama: isi[0].unit.nama, misi, lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
   });
 
   // kunci unit sesudah unit aktif (unit yang memuat misi "sekarang")
   const aktif = unit.findIndex((u) => u.misi.some((m) => m.sekarang));
   if (aktif >= 0) for (const u of unit.slice(aktif + 1)) for (const m of u.misi) if (!m.selesai) m.terkunci = true;
 
+  const semester = bagiSemester(unit);
+  const semesterAktif: 1 | 2 = semester[0]?.tuntas && semester[1]?.total ? 2 : 1;
+
   const tercapai = inti.total > 0 && inti.dikuasai === inti.total;
   const pemantapan = !sekarang && !tercapai ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
-  return { level, unit, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan };
+  return { level, unit, semester, semesterAktif, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan };
+}
+
+/**
+ * Bagi deret unit jadi dua semester: batas di akhir unit yang membuat jumlah misi semester 1 paling dekat ke
+ * separuh total (semester 1 minimal satu unit). Menulis field `semester` tiap unit.
+ */
+export function bagiSemester(unit: UnitPeta[]): SemesterPeta[] {
+  const total = unit.reduce((n, u) => n + u.misi.length, 0);
+  let batas = unit.length ? 1 : 0;
+  let terbaik = Infinity;
+  let jalan = 0;
+  for (let i = 0; i < unit.length; i++) {
+    jalan += unit[i].misi.length;
+    const selisih = Math.abs(jalan - total / 2);
+    if (selisih < terbaik) {
+      terbaik = selisih;
+      batas = i + 1;
+    }
+  }
+  const bagian: [UnitPeta[], UnitPeta[]] = [unit.slice(0, batas), unit.slice(batas)];
+  bagian[1].forEach((u) => (u.semester = 2));
+  bagian[0].forEach((u) => (u.semester = 1));
+  const out: SemesterPeta[] = [];
+  bagian.forEach((isi, i) => {
+    const misi = isi.flatMap((u) => u.misi);
+    const selesai = misi.filter((m) => m.selesai).length;
+    out.push({ ke: (i + 1) as 1 | 2, unit: isi, selesai, total: misi.length, tuntas: misi.length > 0 && selesai === misi.length, terkunci: i === 1 && !out[0].tuntas });
+  });
+  return out;
 }
 
 /** Jenjang berikutnya yang sudah punya kurikulum; undefined bila tidak ada. */

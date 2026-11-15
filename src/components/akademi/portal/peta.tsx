@@ -16,7 +16,7 @@ import { useEvents } from "@/lib/akademi/jejak";
 import { KOMPETENSI, PAKET, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { terbitkan } from "@/lib/akademi/sertifikat";
 import { proyeksi } from "@/lib/akademi/mastery";
-import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, type MisiPeta, type PetaJenjang, type UnitPeta } from "@/lib/akademi/peta";
+import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, type MisiPeta, type PetaJenjang, type SemesterPeta, type UnitPeta } from "@/lib/akademi/peta";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
 import type { Member } from "@/lib/store";
 import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, trackMeta } from "./bersama";
@@ -99,9 +99,16 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
       )}
 
       <div className="flex flex-col gap-3">
-        {peta.unit.map((u, i) => (
-          <Unit key={`${u.track}-${u.id}`} u={u} urutan={i} unitAktif={unitAktif} bahasa={bahasa} events={events} level={level} />
-        ))}
+        {peta.semester.map((sm) =>
+          sm.total === 0 ? null : (
+            <div key={sm.ke} className="flex flex-col gap-3">
+              <KepalaSemester sm={sm} aktif={peta.semesterAktif === sm.ke} />
+              {sm.unit.map((u) => (
+                <Unit key={`${u.track}-${u.id}`} u={u} urutan={peta.unit.indexOf(u)} unitAktif={unitAktif} bahasa={bahasa} events={events} level={level} />
+              ))}
+            </div>
+          ),
+        )}
         <Gerbang peta={peta} berikut={berikut} />
       </div>
 
@@ -211,8 +218,13 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; ur
         style={{ background: `linear-gradient(135deg, ${l}, ${m} 70%)`, boxShadow: `0 4px 0 ${d}`, color: tinta, filter: semuaKunci ? "grayscale(.55) opacity(.75)" : undefined }}
       >
         <Icon name={TRACK_IKON[u.track]} size={30} />
-        <span className="line-clamp-2 min-w-0 flex-1 leading-tight" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
-          {u.nama[bahasa] ?? u.nama.id}
+        <span className="min-w-0 flex-1">
+          <span className="block text-[11px] font-black tracking-[0.08em] uppercase opacity-85">
+            {trackMeta(u.track).nama[bahasa] ?? trackMeta(u.track).nama.id} · Modul {u.ke}
+          </span>
+          <span className="line-clamp-2 block leading-tight" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
+            {u.nama[bahasa] ?? u.nama.id}
+          </span>
         </span>
         <span className="flex gap-1" aria-hidden>
           {u.misi.map((x) => (
@@ -327,6 +339,36 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
         style={{ color: m.terkunci ? "#a99c8a" : m.selesai || m.sekarang || persen ? INK : "#6b7a90" }}
       >
         <span className="line-clamp-2">{judul}</span>
+      </span>
+    </div>
+  );
+}
+
+/* ---------------- kepala semester ---------------- */
+
+function KepalaSemester({ sm, aktif }: { sm: SemesterPeta; aktif: boolean }) {
+  const status = sm.tuntas ? { teks: "Tuntas", bg: "#e3f6ec", fg: "#13794a", ikon: "verified" } : sm.terkunci ? { teks: "Terkunci", bg: "#efe8de", fg: "#8a7d6b", ikon: "lock" } : { teks: "Berjalan", bg: "#e4f1fd", fg: "#0567c2", ikon: "school" };
+  const persen = sm.total ? Math.round((sm.selesai / sm.total) * 100) : 0;
+  return (
+    <div className={`${KARTU} flex items-center gap-3 px-4 py-3 ${aktif ? "ring-2 ring-[#0786eb]/40" : ""}`} aria-label={`Semester ${sm.ke}: ${status.teks}, ${sm.selesai} dari ${sm.total} misi`}>
+      <span className="flex size-11 shrink-0 items-center justify-center rounded-[14px]" style={{ background: status.bg, color: status.fg }}>
+        <Icon name={status.ikon} size={24} />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="leading-none" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800, color: INK }}>
+          Semester {sm.ke}
+        </p>
+        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-[#f1e6d6]">
+          <span className="block h-full rounded-full" style={{ width: `${persen}%`, background: sm.tuntas ? "#22a06b" : "#0786eb" }} />
+        </div>
+      </div>
+      <span className="shrink-0 text-right">
+        <span className="block text-[12px] font-black" style={{ color: status.fg }}>
+          {status.teks}
+        </span>
+        <span className="block text-[12px] font-extrabold text-ink-3">
+          {sm.selesai}/{sm.total} misi
+        </span>
       </span>
     </div>
   );
