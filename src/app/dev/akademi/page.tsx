@@ -14,6 +14,11 @@ import { TelemetriView } from "@/components/akademi/portal/telemetri";
 import { SertifikatKartu } from "@/components/akademi/sertifikat";
 import { snapshotSertifikat } from "@/lib/akademi/sertifikat";
 import { KOMPETENSI } from "@/lib/akademi/konten";
+import type { LevelId } from "@akademi/schema";
+import { LayarUjian } from "@/components/akademi/ujian";
+import PenempatanPage from "@/app/(app)/akademi/penempatan/page";
+import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
+import { JENIS_UJIAN } from "@/lib/akademi/ujian";
 import type { Penguasaan } from "@/lib/akademi/mastery";
 import { PAKET, kompetensiUntuk } from "@/lib/akademi/konten";
 
@@ -54,6 +59,14 @@ function Preview() {
   if (paket) return <ActivityRunner paketId={paket} />;
   if (track) return <KidFrame><TrackView track={track} /></KidFrame>;
   if (q.get("portal")) return <KidFrame><AkademiPortal /></KidFrame>;
+  if (q.get("penempatan")) return <PenempatanPage />;
+  const ujian = JENIS_UJIAN.find((j) => j === q.get("ujian"));
+  if (ujian) {
+    const lv = (q.get("level") ?? "PAUD") as LevelId;
+    const ruang = q.get("ruang") ?? "";
+    const ids = cakupanUjian(ujian, lv, ruang, KOMPETENSI) ?? [];
+    return <LayarUjian jenis={ujian} level={lv} ruang={ruang} kompetensiIds={ids} judul={ruang || lv} kembaliKe="/dev/akademi?portal=1" />;
+  }
   if (q.get("telemetri")) return <TelemetriView />;
   if (q.get("kartu")) {
     // contoh kartu sertifikat dengan semua kompetensi inti PAUD dianggap dikuasai

@@ -83,6 +83,12 @@ export type Database = {
         };
         Relationships: [];
       };
+      akademi_ujian: {
+        Row: { id: string; family_id: string; member_id: string; jenis: string; level: string; ruang: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at: string };
+        Insert: { id?: string; family_id: string; member_id: string; jenis: string; level: string; ruang?: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at?: string };
+        Update: { [k: string]: never };
+        Relationships: [];
+      };
       akademi_siswa: {
         Row: { member_id: string; family_id: string; level: string; semester: number; sumber: "awal" | "migrasi" | "naik" | "admin"; mulai_at: string; level_sejak: string; updated_at: string };
         Insert: { member_id: string; family_id: string; level: string; semester?: number; sumber?: "awal" | "migrasi" | "naik" | "admin"; mulai_at?: string; level_sejak?: string; updated_at?: string };

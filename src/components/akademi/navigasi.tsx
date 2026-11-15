@@ -11,6 +11,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { NavCommand, PaketNavigasi } from "@akademi/schema";
 import { hitungBlok, jalankan, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
+import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { COMMON_DEFS } from "@/components/koding/art";
 import { AgamTop } from "@/components/koding/stage";
@@ -116,6 +117,7 @@ interface Agam extends NavState {
 }
 
 export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
+  const ujian = useModeUjian();
   const grids = ronde.grids;
   const slotMaks = ronde.rackSlots ?? SLOT_DEFAULT;
   const modeBendera = ronde.execMode === "program" && ronde.commands.includes("bendera");
@@ -489,14 +491,14 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
             ))}
           </div>
         )}
-        <button
+        {!ujian && <button
           onClick={bantu}
           disabled={terkunci}
           aria-label="Bantu"
           className="absolute top-3 right-3 flex size-14 items-center justify-center rounded-full bg-[#fffaf0] shadow-[0_4px_0_#d8ccb4] active:translate-y-0.5 disabled:opacity-40"
         >
           <Icon name="lightbulb" size={28} className="text-[#e0a100]" />
-        </button>
+        </button>}
       </div>
 
       {/* pesan */}

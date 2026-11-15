@@ -6,6 +6,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { PaketDagang } from "@akademi/schema";
 import type { JawabanDagang, RondeDagang } from "@akademi/mechanics";
+import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import { angkaKata, ucapkan, ucapkanBerurutan } from "@/lib/akademi/suara";
@@ -141,6 +142,7 @@ function TombolBesar({ children, onClick, disabled, warna = "#22b573", bayang = 
 }
 
 function TombolBantu({ onClick, disabled, label = "Bantu" }: { onClick: () => void; disabled?: boolean; label?: string }) {
+  if (useModeUjian()) return null;
   return (
     <button
       type="button"
@@ -444,6 +446,7 @@ function ModeAmbil(c: Ctx) {
 /* ---------------- subitasi ---------------- */
 
 function ModeSubitasi(c: Ctx) {
+  const ujian = useModeUjian();
   const { ronde, onJawab, hasil, terkunci, nama, visual, wajah } = c;
   const pesanan = ronde.pesanan[0] ?? { goodId: Object.keys(ronde.tersedia)[0] ?? "", qty: ronde.target };
   const id = pesanan.goodId;
@@ -507,9 +510,9 @@ function ModeSubitasi(c: Ctx) {
         </TombolBesar>
       ) : (
       <div className="flex gap-2">
-        <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:bg-[#eef1f0] disabled:text-[#9aa7b4]" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}>
+        {!ujian && <button type="button" onClick={lihatLagi} disabled={terkunci || tampil} className="flex min-h-14 items-center gap-1 rounded-[20px] bg-white px-3 text-[#0567c2] active:scale-95 disabled:bg-[#eef1f0] disabled:text-[#9aa7b4]" style={{ boxShadow: "0 4px 0 rgba(11,37,69,.12)", fontFamily: BALOO, fontWeight: 800, fontSize: 15 }}>
           <Icon name="visibility" size={24} /> Lihat lagi
-        </button>
+        </button>}
         <TombolBesar onClick={() => { sfx.tap(); onJawab({ keranjang: { [id]: jumlah }, latencyMs: jam.latency() }); }} disabled={terkunci || tampil || jumlah === 0}>
           <Icon name="volunteer_activism" size={26} /> Beri
         </TombolBesar>

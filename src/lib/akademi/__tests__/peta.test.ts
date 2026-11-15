@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { GameEvent } from "@akademi/schema";
 import type { Penguasaan, Status } from "../mastery";
+import type { HasilUjian } from "../ujian";
 import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, bagiSemester } from "../peta";
 import { LEARNER, SESSION, idBaru, kompetensi, paket, waktuHari } from "./helper";
 
@@ -139,5 +140,51 @@ describe("bagiSemester", () => {
     const s = bagiSemester([unit("a", 5)]);
     expect(s[0].total).toBe(5);
     expect(s[1].total).toBe(0);
+  });
+});
+
+describe("petaJenjang dengan ujian (Tahap 3)", () => {
+  const h = (jenis: HasilUjian["jenis"], ruang: string, lulus = true): HasilUjian => ({ jenis, level: "PAUD", ruang, sessionId: idBaru(), benar: 8, total: 8, nilai: lulus ? 100 : 20, lulus, at: waktuHari(0) });
+  const semua = new Set([M1, M2, K1, K2, M3]);
+  const dikuasai = Object.fromEntries([M1, M2, K1, K2, M3].map((id) => [id, p("dikuasai")]));
+  const kode = (pt: ReturnType<typeof petaJenjang>) => pt.unit.flatMap((u) => u.misi).map((m) => (m.selesai ? "S" : m.sekarang ? "N" : m.terkunci ? "K" : "-")).join("");
+
+  it("modul selesai tapi kuis belum → Kuis Modul terbuka, modul berikut terkunci", () => {
+    const pt = petaJenjang({}, new Set([M1, M2]), KOMP, "PAUD", TRACKS, new Map(), []);
+    expect(pt.ujian).toMatchObject({ jenis: "kuis", ruang: "BILANGAN" });
+    expect(pt.sekarang).toBeUndefined();
+    expect(kode(pt)).toBe("SSKKK");
+  });
+
+  it("kuis gagal tetap terkunci; kuis lulus → Ujian Semester 1 sebelum semester 2", () => {
+    expect(petaJenjang({}, new Set([M1, M2]), KOMP, "PAUD", TRACKS, new Map(), [h("kuis", "BILANGAN", false)]).ujian?.jenis).toBe("kuis");
+    const pt = petaJenjang({}, new Set([M1, M2]), KOMP, "PAUD", TRACKS, new Map(), [h("kuis", "BILANGAN")]);
+    expect(pt.ujian).toMatchObject({ jenis: "semester", ruang: "S1" });
+    expect(kode(pt)).toBe("SSKKK");
+    expect(pt.semesterAktif).toBe(1);
+  });
+
+  it("Ujian Semester 1 lulus → semester 2 terbuka", () => {
+    const pt = petaJenjang({}, new Set([M1, M2]), KOMP, "PAUD", TRACKS, new Map(), [h("kuis", "BILANGAN"), h("semester", "S1")]);
+    expect(pt.ujian).toBeUndefined();
+    expect(kode(pt)).toBe("SSN-K");
+    expect(pt.semesterAktif).toBe(2);
+  });
+
+  it("semua tuntas + inti dikuasai → Ujian Kenaikan; lulus → jenjang tuntas", () => {
+    const dasar = [h("kuis", "BILANGAN"), h("kuis", "URUTAN"), h("kuis", "BENTUK"), h("semester", "S1"), h("semester", "S2")];
+    const pt = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), dasar);
+    expect(pt.ujian?.jenis).toBe("kenaikan");
+    expect(pt.tercapai).toBe(true);
+    expect(pt.lulusJenjang).toBe(false);
+    const lulus = petaJenjang(dikuasai, semua, KOMP, "PAUD", TRACKS, new Map(), [...dasar, h("kenaikan", "")]);
+    expect(lulus.ujian).toBeUndefined();
+    expect(lulus.lulusJenjang).toBe(true);
+  });
+
+  it("tanpa data ujian perilaku lama tetap (tanpa kuis)", () => {
+    const pt = petaJenjang({}, new Set([M1, M2]), KOMP, "PAUD", TRACKS);
+    expect(pt.ujian).toBeUndefined();
+    expect(kode(pt)).toBe("SSN-K");
   });
 });

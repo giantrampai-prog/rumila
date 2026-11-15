@@ -14,6 +14,7 @@
 import { LEVEL_IDS, levelIndex, type Competency, type ContentPack, type GameEvent, type LevelId, type TrackId } from "@akademi/schema";
 import { AMBANG_STIKER, statusLencana, type StatusLencana } from "./koleksi";
 import type { Penguasaan } from "./mastery";
+import { sudahLulus, ruangSemester, type HasilUjian, type JenisUjian } from "./ujian";
 
 export interface MisiPeta {
   /** nomor urut di jalur jenjang, mulai 1 */
@@ -37,6 +38,18 @@ export interface UnitPeta {
   nama: Competency["unit"]["nama"];
   misi: MisiPeta[];
   lencana: StatusLencana;
+  /** Kuis Modul sudah lulus (selalu true bila peta dibuat tanpa data ujian) */
+  kuisLulus: boolean;
+}
+
+/** Ujian yang sedang terbuka di jalur jenjang. */
+export interface UjianPeta {
+  jenis: Exclude<JenisUjian, "penempatan">;
+  /** kuis: id unit · semester: "S1"/"S2" · kenaikan: "" */
+  ruang: string;
+  kompetensiIds: string[];
+  unit?: UnitPeta;
+  semester?: 1 | 2;
 }
 
 export interface Hitungan {
@@ -71,6 +84,14 @@ export interface PetaJenjang {
   sekarang?: MisiPeta;
   /** semua misi selesai tapi pangkat belum: kompetensi inti pertama (urut jalur) yang belum dikuasai */
   pemantapan?: MisiPeta;
+  /** ujian yang menunggu dikerjakan (hanya bila peta dibuat dengan data ujian) */
+  ujian?: UjianPeta;
+  /** status ujian semester per semester (true bila tanpa data ujian) */
+  semesterLulus: [boolean, boolean];
+  /** Ujian Kenaikan lulus (true bila tanpa data ujian) */
+  kenaikanLulus: boolean;
+  /** jenjang tuntas: inti dikuasai dan Ujian Kenaikan lulus */
+  lulusJenjang: boolean;
 }
 
 /** Kompetensi yang punya paket tamat dengan sukses ≥ AMBANG_STIKER. */
@@ -113,6 +134,8 @@ export function petaJenjang(
   level: LevelId,
   tracks: readonly TrackId[],
   progres: ReadonlyMap<string, number> = new Map(),
+  /** hasil ujian anak; tanpa ini peta berjalan seperti sebelum Tahap 3 (tanpa kuis/ujian) */
+  ujian?: HasilUjian[],
 ): PetaJenjang {
   // unit per pelajaran, urut kemunculan
   const perTrack = tracks.map((track) => {
@@ -126,37 +149,58 @@ export function petaJenjang(
 
   let nomor = 0;
   let jumlahSelesai = 0;
-  let sekarang: MisiPeta | undefined;
   const inti: Hitungan = { dikuasai: 0, total: 0 };
+  const pakaiUjian = !!ujian;
+  const lulus = (jenis: JenisUjian, ruang: string) => !pakaiUjian || sudahLulus(ujian!, jenis, level, ruang);
   const unit: UnitPeta[] = urutUnit.map(({ track, ke, isi }) => {
     const misi = isi.map((c) => {
       const dikuasai = peng[c.id]?.status === "dikuasai";
       const selesai = dikuasai || selesaiSet.has(c.id);
       const m: MisiPeta = { nomor: ++nomor, kompetensi: c, selesai, dikuasai, sekarang: false, terkunci: false, progres: selesai ? 1 : (progres.get(c.id) ?? 0) };
       if (selesai) jumlahSelesai++;
-      else if (!sekarang) {
-        m.sekarang = true;
-        sekarang = m;
-      }
       if (c.core) {
         inti.total++;
         if (dikuasai) inti.dikuasai++;
       }
       return m;
     });
-    return { id: isi[0].unit.id, track, ke, semester: 1 as 1 | 2, nama: isi[0].unit.nama, misi, lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
+    const id = isi[0].unit.id;
+    return { id, track, ke, semester: 1 as 1 | 2, nama: isi[0].unit.nama, misi, kuisLulus: lulus("kuis", id), lencana: statusLencana(misi.filter((m) => m.kompetensi.core).map((m) => (m.dikuasai ? "dikuasai" : m.selesai ? "berkembang" : "belum"))) };
   });
 
-  // kunci unit sesudah unit aktif (unit yang memuat misi "sekarang")
-  const aktif = unit.findIndex((u) => u.misi.some((m) => m.sekarang));
-  if (aktif >= 0) for (const u of unit.slice(aktif + 1)) for (const m of u.misi) if (!m.selesai) m.terkunci = true;
-
   const semester = bagiSemester(unit);
-  const semesterAktif: 1 | 2 = semester[0]?.tuntas && semester[1]?.total ? 2 : 1;
-
+  const semesterLulus: [boolean, boolean] = [lulus("semester", ruangSemester(1)), lulus("semester", ruangSemester(2))];
+  const kenaikanLulus = lulus("kenaikan", "");
   const tercapai = inti.total > 0 && inti.dikuasai === inti.total;
-  const pemantapan = !sekarang && !tercapai ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
-  return { level, unit, semester, semesterAktif, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan };
+  const idsDari = (us: UnitPeta[]) => us.flatMap((u) => u.misi.map((m) => m.kompetensi.id));
+  const adaS2 = (semester[1]?.total ?? 0) > 0;
+
+  // unit aktif = unit pertama yang belum tuntas (misi belum selesai, atau Kuis Modul belum lulus)
+  const aktif = unit.findIndex((u) => !u.misi.every((m) => m.selesai) || !u.kuisLulus);
+  let batas = aktif; // unit dengan indeks > batas terkunci
+  let ujianBerikut: UjianPeta | undefined;
+  if (aktif >= 0) {
+    const u = unit[aktif];
+    if (pakaiUjian && u.semester === 2 && !semesterLulus[0]) {
+      // semester 1 tuntas tapi Ujian Semester 1 belum: seluruh semester 2 terkunci
+      ujianBerikut = { jenis: "semester", ruang: ruangSemester(1), kompetensiIds: idsDari(semester[0].unit), semester: 1 };
+      batas = aktif - 1;
+    } else if (u.misi.every((m) => m.selesai)) {
+      ujianBerikut = { jenis: "kuis", ruang: u.id, kompetensiIds: idsDari([u]), unit: u };
+    }
+  } else if (pakaiUjian && unit.length) {
+    const ke: 1 | 2 = adaS2 ? 2 : 1;
+    if (!semesterLulus[ke - 1]) ujianBerikut = { jenis: "semester", ruang: ruangSemester(ke), kompetensiIds: idsDari(semester[ke - 1].unit), semester: ke };
+    else if (!kenaikanLulus && tercapai) ujianBerikut = { jenis: "kenaikan", ruang: "", kompetensiIds: idsDari(unit) };
+  }
+  if (batas >= 0) for (const u of unit.slice(batas + 1)) for (const m of u.misi) if (!m.selesai) m.terkunci = true;
+
+  const sekarang = aktif >= 0 && batas >= aktif ? unit[aktif].misi.find((m) => !m.selesai) : undefined;
+  if (sekarang) sekarang.sekarang = true;
+  const semesterAktif: 1 | 2 = semester[0]?.tuntas && semesterLulus[0] && adaS2 ? 2 : 1;
+
+  const pemantapan = !sekarang && !tercapai && (!ujianBerikut || ujianBerikut.jenis === "kenaikan") && (aktif < 0 || !pakaiUjian) ? unit.flatMap((u) => u.misi).find((m) => m.kompetensi.core && !m.dikuasai) : undefined;
+  return { level, unit, semester, semesterAktif, selesai: jumlahSelesai, total: nomor, inti, tercapai, sekarang, pemantapan, ujian: ujianBerikut, semesterLulus, kenaikanLulus, lulusJenjang: tercapai && kenaikanLulus };
 }
 
 /**
