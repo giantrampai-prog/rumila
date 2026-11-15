@@ -19,7 +19,7 @@ type Hasil =
   | { status: "memuat" }
   | { status: "tidak-ada" }
   | { status: "galat"; pesan: string }
-  | { status: "sah"; firstName: string; level: LevelId; issuedAt: string; snapshot: SnapshotSertifikat };
+  | { status: "sah" | "dicabut"; firstName: string; level: LevelId; issuedAt: string; snapshot: SnapshotSertifikat; nomor: string | null };
 
 export default function VerifikasiSertifikatPage() {
   const { kode: raw } = useParams<{ kode: string }>();
@@ -44,7 +44,7 @@ export default function VerifikasiSertifikatPage() {
           setHasil({ status: "tidak-ada" });
           return;
         }
-        setHasil({ status: "sah", firstName: baris.first_name, level: baris.level as LevelId, issuedAt: baris.issued_at, snapshot });
+        setHasil({ status: baris.status === "dicabut" ? "dicabut" : "sah", firstName: baris.first_name, level: baris.level as LevelId, issuedAt: baris.issued_at, snapshot, nomor: baris.nomor ?? null });
       } catch (e) {
         if (batal) return;
         const pesan = typeof e === "object" && e && "message" in e ? String((e as { message: unknown }).message) : String(e);
@@ -56,7 +56,7 @@ export default function VerifikasiSertifikatPage() {
     };
   }, [kode]);
 
-  const meta = hasil.status === "sah" ? LEVELS.find((l) => l.id === hasil.level) : undefined;
+  const meta = hasil.status === "sah" || hasil.status === "dicabut" ? LEVELS.find((l) => l.id === hasil.level) : undefined;
 
   return (
     <main className="sertifikat-root min-h-dvh" style={{ background: "#fff0da", fontFamily: NUNITO, color: INK }}>
@@ -73,16 +73,17 @@ export default function VerifikasiSertifikatPage() {
         {hasil.status === "memuat" && <Kotak ikon="⏳" judul="Memeriksa kode…" />}
         {hasil.status === "tidak-ada" && <Kotak ikon="❌" judul="Kode tidak ditemukan" isi="Periksa kembali 8 karakter kodenya (tanpa 0, O, 1, I). Sertifikat yang asli selalu punya kode yang terdaftar." />}
         {hasil.status === "galat" && <Kotak ikon="⚠️" judul="Tidak bisa memeriksa sekarang" isi={`Coba muat ulang halaman. (${hasil.pesan})`} />}
+        {hasil.status === "dicabut" && <Kotak ikon="⛔" judul="Sertifikat dicabut" isi={`Sertifikat ${hasil.nomor ?? kode} pernah diterbitkan RINOYA Academy lalu dicabut, sehingga tidak berlaku lagi.`} />}
         {hasil.status === "sah" && meta && (
           <>
             <div className="no-print mx-auto flex items-center gap-2 rounded-full px-4 py-2 text-white" style={{ background: "#12904a", fontFamily: BALOO, fontSize: 17, fontWeight: 800, boxShadow: "0 3px 0 #0c6b36" }}>
               ✓ Sertifikat sah
             </div>
             <p className="no-print text-center text-[14px] font-bold text-ink-3">
-              <b style={{ color: INK }}>{hasil.firstName}</b> menuntaskan {meta.nama} ({meta.lokal}) — pangkat {hasil.snapshot.pangkat || meta.pangkat} · diterbitkan {new Date(hasil.issuedAt).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}.
+              <b style={{ color: INK }}>{hasil.firstName}</b> {hasil.nomor ? <>· No. {hasil.nomor} · </> : null}menuntaskan {meta.nama} ({meta.lokal}) — pangkat {hasil.snapshot.pangkat || meta.pangkat} · diterbitkan {new Date(hasil.issuedAt).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}.
             </p>
             <div className="flex justify-center">
-              <SertifikatKartu nama={hasil.firstName} level={hasil.level} kode={kode} issuedAt={hasil.issuedAt} snapshot={hasil.snapshot} terverifikasi />
+              <SertifikatKartu nama={hasil.firstName} level={hasil.level} kode={kode} issuedAt={hasil.issuedAt} snapshot={hasil.snapshot} nomor={hasil.nomor} terverifikasi />
             </div>
             <p className="no-print text-center text-[12px] font-bold text-ink-3">
               Demi privasi anak, halaman ini hanya menampilkan nama depan, jenjang, pangkat, dan daftar kompetensi yang dikuasai saat sertifikat terbit.

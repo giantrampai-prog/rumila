@@ -54,8 +54,14 @@ export type Database = {
           member_id: string;
           snapshot: Json;
           track: string | null;
+          nomor: string | null;
+          status: "sah" | "dicabut";
+          dicabut_at: string | null;
+          dicabut_alasan: string | null;
         };
         Insert: {
+          nomor?: string | null;
+          status?: "sah" | "dicabut";
           code: string;
           family_id: string;
           id?: string;
@@ -75,6 +81,18 @@ export type Database = {
           snapshot?: Json;
           track?: string | null;
         };
+        Relationships: [];
+      };
+      akademi_ujian: {
+        Row: { id: string; family_id: string; member_id: string; jenis: string; level: string; ruang: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at: string };
+        Insert: { id?: string; family_id: string; member_id: string; jenis: string; level: string; ruang?: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at?: string };
+        Update: { [k: string]: never };
+        Relationships: [];
+      };
+      akademi_siswa: {
+        Row: { member_id: string; family_id: string; level: string; semester: number; sumber: "awal" | "migrasi" | "naik" | "admin"; mulai_at: string; level_sejak: string; updated_at: string };
+        Insert: { member_id: string; family_id: string; level: string; semester?: number; sumber?: "awal" | "migrasi" | "naik" | "admin"; mulai_at?: string; level_sejak?: string; updated_at?: string };
+        Update: { member_id?: string; family_id?: string; level?: string; semester?: number; sumber?: "awal" | "migrasi" | "naik" | "admin"; mulai_at?: string; level_sejak?: string; updated_at?: string };
         Relationships: [];
       };
       family: {
@@ -189,7 +207,15 @@ export type Database = {
       verify_member_pin: { Args: { p_member: string; p_pin: string }; Returns: boolean };
       verify_certificate: {
         Args: { p_code: string };
-        Returns: { first_name: string; level: string; track: string | null; issued_at: string; snapshot: Json }[];
+        Returns: { first_name: string; level: string; track: string | null; issued_at: string; snapshot: Json; nomor: string | null; status: "sah" | "dicabut" }[];
+      };
+      verify_semester: {
+        Args: { p_session: string };
+        Returns: { first_name: string; level: string; ruang: string; nilai: number; created_at: string; kuis: Json }[];
+      };
+      akademi_atur_jenjang_awal: {
+        Args: { p_member: string; p_level: string };
+        Returns: Database["public"]["Tables"]["akademi_siswa"]["Row"];
       };
     };
     Enums: { [_ in never]: never };

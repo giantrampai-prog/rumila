@@ -12,8 +12,39 @@ import { KidFrame } from "@/components/kid";
 import AkademiPortal from "@/app/(app)/akademi/page";
 import { TelemetriView } from "@/components/akademi/portal/telemetri";
 import { SertifikatKartu } from "@/components/akademi/sertifikat";
+import { PiagamModulKartu, SertifikatSemesterKartu, TranskripJenjang } from "@/components/akademi/piagam";
 import { snapshotSertifikat } from "@/lib/akademi/sertifikat";
 import { KOMPETENSI } from "@/lib/akademi/konten";
+import type { LevelId } from "@akademi/schema";
+import { LayarUjian } from "@/components/akademi/ujian";
+import { ProfilBerpikirOrtu, TesBerpikir } from "@/components/ortu/profil-berpikir";
+import { RuangOrangTua } from "@/components/ortu/ruang";
+import { useMe, useRumila, type Member } from "@/lib/store";
+import { KartuKampus } from "@/components/kampus";
+import { WorldView } from "@/components/world";
+import { getFolder } from "@/lib/catalog";
+
+function KampusDev() {
+  const me = useMe();
+  const q = useSearchParams();
+  // ?kampus=m4 → lihat sebagai anggota demo lain (mis. anak) untuk menguji kunci Laboratorium
+  useEffect(() => {
+    const id = q.get("kampus");
+    if (id && id !== "1") useRumila.getState().switchMember(id);
+  }, [q]);
+  const f = getFolder("angkasa")!;
+  return (
+    <>
+      <KartuKampus me={me} />
+      <WorldView f={f} />
+    </>
+  );
+}
+
+const DEMO: Member = { id: "dev-anak", name: "Dek Nara", c: "orange", admin: false, perms: [] } as unknown as Member;
+import PenempatanPage from "@/app/(app)/akademi/penempatan/page";
+import { cakupanUjian } from "@/lib/akademi/ruang-ujian";
+import { JENIS_UJIAN } from "@/lib/akademi/ujian";
 import type { Penguasaan } from "@/lib/akademi/mastery";
 import { PAKET, kompetensiUntuk } from "@/lib/akademi/konten";
 
@@ -54,11 +85,33 @@ function Preview() {
   if (paket) return <ActivityRunner paketId={paket} />;
   if (track) return <KidFrame><TrackView track={track} /></KidFrame>;
   if (q.get("portal")) return <KidFrame><AkademiPortal /></KidFrame>;
+  if (q.get("penempatan")) return <PenempatanPage />;
+  if (q.get("berpikir") === "tes") return <TesBerpikir anak={DEMO} kembaliKe="/dev/akademi?berpikir=hasil" />;
+  if (q.get("berpikir")) return <div className="mx-auto max-w-[900px] bg-[#fff0da] p-4"><ProfilBerpikirOrtu anak={DEMO} /></div>;
+  if (q.get("ortu")) return <RuangOrangTua />;
+  if (q.get("kampus")) return <KidFrame><KampusDev /></KidFrame>;
+  const ujian = JENIS_UJIAN.find((j) => j === q.get("ujian"));
+  if (ujian) {
+    const lv = (q.get("level") ?? "PAUD") as LevelId;
+    const ruang = q.get("ruang") ?? "";
+    const ids = cakupanUjian(ujian, lv, ruang, KOMPETENSI) ?? [];
+    return <LayarUjian jenis={ujian} level={lv} ruang={ruang} kompetensiIds={ids} judul={ruang || lv} kembaliKe="/dev/akademi?portal=1" />;
+  }
   if (q.get("telemetri")) return <TelemetriView />;
   if (q.get("kartu")) {
     // contoh kartu sertifikat dengan semua kompetensi inti PAUD dianggap dikuasai
     const peng: Record<string, Penguasaan> = Object.fromEntries(KOMPETENSI.map((c) => [c.id, { status: "dikuasai", success: 5, fail: 0, contexts: 2, days: 2, ratioLast10: 1, hintTail: 0 } as Penguasaan]));
-    return <div className="mx-auto max-w-[1000px] p-4"><SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" issuedAt={new Date().toISOString()} snapshot={snapshotSertifikat(peng, KOMPETENSI, "PAUD")} /></div>;
+    const snap = { ...snapshotSertifikat(peng, KOMPETENSI, "PAUD"), nilai: 92, predikat: "Dengan Pujian", ujian: [{ jenis: "kenaikan", ruang: "", nilai: 92 }, { jenis: "semester", ruang: "S1", nilai: 88 }, { jenis: "kuis", ruang: "BILANGAN-1-5", nilai: 90 }] };
+    const at = new Date().toISOString();
+    const contohSemester = { level: "PAUD" as const, ke: 1 as const, nilai: 88, nilaiAkhir: 88, perPelajaran: [{ track: "MAT" as const, nilai: 90, modul: 2 }, { track: "KODE" as const, nilai: 86, modul: 1 }, { track: "SAINS" as const, nilai: 88, modul: 2 }], at, sessionId: "ab12cd34-0000-4000-8000-000000000000" };
+    return (
+      <div className="mx-auto flex max-w-[1000px] flex-col items-center gap-6 bg-[#fff0da] p-4">
+        <PiagamModulKartu nama="Dek Nara" p={{ level: "PAUD", unitId: "BILANGAN-1-5", track: "MAT", ke: 1, nama: { id: "Bilangan 1–5", en: "Numbers 1–5" }, nilai: 90, at, sessionId: "x" }} />
+        <SertifikatSemesterKartu nama="Dek Nara" s={contohSemester} />
+        <SertifikatKartu nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={snap} />
+        <TranskripJenjang nama="Dek Nara" level="PAUD" kode="K7M2P9XA" nomor="RA/2026/PAUD/000001" issuedAt={at} snapshot={snap} />
+      </div>
+    );
   }
   return <Daftar />;
 }
