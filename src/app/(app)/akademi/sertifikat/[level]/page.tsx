@@ -15,7 +15,7 @@ import { useEvents } from "@/lib/akademi/jejak";
 import { LEVEL_PANGKAT, pangkat } from "@/lib/akademi/koleksi";
 import { KOMPETENSI } from "@/lib/akademi/konten";
 import { proyeksi } from "@/lib/akademi/mastery";
-import { ambilSertifikat, terbitkan, URL_VERIFIKASI, useSertifikat } from "@/lib/akademi/sertifikat";
+import { ambilSertifikat, PangkatBelumTercapai, terbitkan, URL_VERIFIKASI, useSertifikat } from "@/lib/akademi/sertifikat";
 import { useCloud } from "@/lib/supabase/family";
 import { useMe, useUI } from "@/lib/store";
 
@@ -88,7 +88,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
       showToast(s.pending ? "Sertifikat terbit. Akan disinkronkan saat online." : "Sertifikat terbit! 🎓");
     } catch (e) {
       console.error("[akademi] terbitkan sertifikat gagal", e);
-      showToast("Sertifikat belum bisa diterbitkan. Coba lagi, ya.");
+      showToast(e instanceof PangkatBelumTercapai ? e.message : "Sertifikat belum bisa diterbitkan. Coba lagi, ya.");
     } finally {
       setSibuk(false);
     }
@@ -119,7 +119,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
       <>
         <Kepala judul={`Sertifikat ${meta.pangkat}`} sub={`${meta.nama} · ${meta.lokal} · ${me.name}`} />
         <div className="flex justify-center">
-          <SertifikatKartu nama={me.name} level={level} kode={sert.code} issuedAt={sert.issuedAt} snapshot={sert.snapshot} pending={sert.pending} />
+          <SertifikatKartu nama={me.name} level={level} kode={sert.code} issuedAt={sert.issuedAt} snapshot={sert.snapshot} nomor={sert.nomor} pending={sert.pending} />
         </div>
         <div className="no-print flex flex-wrap justify-center gap-2">
           <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>

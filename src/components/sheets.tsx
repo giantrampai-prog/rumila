@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { ALL_PERMS, CAT, KID_PRESET, MEMBER_COLORS, PERMS, getTool, type ColorKey } from "@/lib/catalog";
 import { initialOf } from "@/lib/format";
 import { can, useIsDesktop, useMe, useRumila, useUI, type Member } from "@/lib/store";
@@ -13,7 +13,8 @@ import { displayLogin } from "@/app/masuk/account";
 import { installApp, useCanInstall } from "./pwa";
 import { setSfxEnabled, sfx, sfxEnabled } from "@/lib/sfx";
 import { ACTIVE_LEVELS, LEVELS, type LevelId } from "@akademi/schema";
-import { bahasaAnak, levelAnak, setBahasaAnak, setLevelAnak, setPeranAkademi, usePeranAkademi, useProfilAkademiVersi, type BahasaAnak } from "@/lib/akademi/konten";
+import { sudahBelajar, aturJenjangAwal } from "@/lib/akademi/siswa";
+import { bahasaAnak, levelAnak, setBahasaAnak, setPeranAkademi, usePeranAkademi, useProfilAkademiVersi, type BahasaAnak } from "@/lib/akademi/konten";
 
 export const accessText = (m: Member) =>
   m.admin ? "Akses penuh" : `${PERMS.filter((p) => can(m, p.key)).length} dari ${PERMS.length} menu`;
@@ -256,6 +257,9 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
   }, [memberId, versi]);
   const anak = peran === "anak";
   const jenjang = LEVELS.filter((l) => ACTIVE_LEVELS.includes(l.id));
+  const showToast = useUI((s) => s.showToast);
+  // Jenjang hanya bisa dipilih sebelum anak mulai belajar; sesudahnya naik lewat kelulusan (dicek ulang server).
+  const terkunci = useMemo(() => sudahBelajar(memberId), [memberId, versi]);
   return (
     <div className="rounded-[18px] bg-page px-3.5 py-3">
       <button role="switch" aria-checked={anak} onClick={() => setPeranAkademi(memberId, anak ? "dewasa" : "anak")} className="flex w-full items-center gap-3 py-1 text-left">
@@ -268,15 +272,33 @@ function ProfilAkademi({ memberId }: { memberId: string }) {
       </button>
       {anak && (
         <div className="mt-2 flex flex-col gap-2">
-          <div className="text-xs font-bold text-ink-3">Jenjang</div>
-          <div className="grid grid-cols-3 gap-1.5">
-            {jenjang.map((l) => (
-              <button key={l.id} onClick={() => { setLevel(l.id); setLevelAnak(memberId, l.id); }} className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${level === l.id ? "bg-ink text-white" : "bg-white text-ink"}`}>
-                {l.nama}
-                <span className="block text-[10px] font-semibold opacity-70">{l.lokal}</span>
-              </button>
-            ))}
-          </div>
+          <div className="text-xs font-bold text-ink-3">{terkunci ? "Jenjang" : "Jenjang awal"}</div>
+          {terkunci ? (
+            <div className="flex items-center gap-2 rounded-[12px] bg-white px-3 py-2.5 text-[12px] font-bold text-ink">
+              <Icon name="lock" size={16} />
+              <span className="flex-1">
+                {LEVELS.find((l) => l.id === level)?.nama} · {LEVELS.find((l) => l.id === level)?.lokal}
+                <span className="block text-[10px] font-semibold text-ink-3">Terkunci. Naik jenjang lewat kelulusan di Academy.</span>
+              </span>
+            </div>
+          ) : (
+            <div className="grid grid-cols-3 gap-1.5">
+              {jenjang.map((l) => (
+                <button
+                  key={l.id}
+                  onClick={async () => {
+                    const r = await aturJenjangAwal(memberId, l.id);
+                    if (r.ok) setLevel(l.id);
+                    else showToast(r.alasan === "terkunci" ? "Jenjang terkunci karena anak sudah mulai belajar." : "Jenjang belum tersimpan. Coba lagi.");
+                  }}
+                  className={`rounded-[12px] px-2 py-2 text-[12px] font-bold ${level === l.id ? "bg-ink text-white" : "bg-white text-ink"}`}
+                >
+                  {l.nama}
+                  <span className="block text-[10px] font-semibold opacity-70">{l.lokal}</span>
+                </button>
+              ))}
+            </div>
+          )}
           <div className="text-xs font-bold text-ink-3">Bahasa konten</div>
           <div className="grid grid-cols-2 gap-1.5">
             {(["id", "en"] as const).map((b) => (

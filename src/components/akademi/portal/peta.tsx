@@ -5,7 +5,7 @@
 // Logika di src/lib/akademi/peta.ts; di sini hanya tampilan + naik jenjang otomatis.
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { type LevelId } from "@akademi/schema";
 import { LAMBANG, TanggaMini } from "./tangga";
 import { BALOO } from "@/components/launcher";
@@ -13,7 +13,8 @@ import { Icon } from "@/components/ui";
 import { tintaPada } from "@/lib/brand";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, PAKET, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { KOMPETENSI, PAKET, levelAnak, setLevelAnak, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
+import { terbitkan } from "@/lib/akademi/sertifikat";
 import { proyeksi } from "@/lib/akademi/mastery";
 import { jenjangBerikut, kompetensiSelesai, paketMisi, petaJenjang, progresMisi, type MisiPeta, type PetaJenjang, type UnitPeta } from "@/lib/akademi/peta";
 import type { StatusLencana } from "@/lib/akademi/koleksi";
@@ -22,6 +23,7 @@ import { INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, hitungStreak, levelMeta, tra
 import "../akademi.css";
 
 const KARTU = "rounded-[24px] bg-white shadow-[0_4px_0_rgba(11,37,69,.08)]";
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const KUNCI_RAYAKAN = (memberId: string, level: LevelId) => `rinoya-naik-${memberId}-${level}`;
 
 type Events = ReturnType<typeof useEvents>;
@@ -36,16 +38,32 @@ export function PetaPetualangan({ me, level, onHadiah }: { me: Member; level: Le
   const streak = useMemo(() => hitungStreak(events), [events]);
   const berikut = jenjangBerikut(level, KOMPETENSI);
 
-  // Naik jenjang otomatis: pangkat tercapai → jenjang berikutnya dibuka, perayaan tampil sekali.
+  // Naik jenjang: pangkat tercapai → server menghitung ulang, menerbitkan sertifikat, dan membuka jenjang berikut.
+  // Anggota demo (id bukan UUID) naik lokal. Offline → sertifikat menunggu sinkron, jenjang belum naik.
   const [rayakan, setRayakan] = useState<{ dari: LevelId; ke: LevelId } | null>(null);
+  const diminta = useRef<string | null>(null);
   useEffect(() => {
     if (!peta.tercapai || !berikut) return;
-    try {
-      if (localStorage.getItem(KUNCI_RAYAKAN(me.id, level))) return;
-      localStorage.setItem(KUNCI_RAYAKAN(me.id, level), new Date().toISOString());
-    } catch {}
-    setRayakan({ dari: level, ke: berikut });
-    setLevelAnak(me.id, berikut);
+    const kunci = `${me.id}|${level}`;
+    if (diminta.current === kunci) return;
+    diminta.current = kunci;
+    void (async () => {
+      try {
+        await terbitkan(me.id, level);
+      } catch (e) {
+        console.error("[akademi] naik jenjang ditolak", e);
+        return;
+      }
+      if (levelAnak(me.id) === level) {
+        if (UUID.test(me.id)) return; // belum diterima server: tunggu sinkron
+        setLevelAnak(me.id, berikut);
+      }
+      try {
+        if (localStorage.getItem(KUNCI_RAYAKAN(me.id, level))) return;
+        localStorage.setItem(KUNCI_RAYAKAN(me.id, level), new Date().toISOString());
+      } catch {}
+      setRayakan({ dari: level, ke: berikut });
+    })();
   }, [peta.tercapai, berikut, me.id, level]);
 
   const target = peta.sekarang ?? peta.pemantapan;

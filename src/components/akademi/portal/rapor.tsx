@@ -12,10 +12,11 @@ import { Icon, Segmented } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY } from "@/lib/catalog";
 import { useEvents } from "@/lib/akademi/jejak";
-import { KOMPETENSI, levelAnak, paketById, setBahasaAnak, setLevelAnak, useBahasaAnak, type BahasaAnak, anakRumah, useProfilAkademiVersi } from "@/lib/akademi/konten";
+import { KOMPETENSI, levelAnak, paketById, setBahasaAnak, useBahasaAnak, type BahasaAnak, anakRumah, useProfilAkademiVersi } from "@/lib/akademi/konten";
 import { proyeksi, ringkasTrack, type Penguasaan } from "@/lib/akademi/mastery";
+import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { useMe, useRumila, type Member } from "@/lib/store";
-import { BadgeStatus, INK, LEVEL_SLICE, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, namaFramework, tanggalJam, tanggalLokal, trackMeta } from "./bersama";
+import { BadgeStatus, INK, TRACK_IKON, TRACK_SLICE, TRACK_WARNA, levelMeta, namaFramework, tanggalJam, tanggalLokal, trackMeta } from "./bersama";
 import { unitUntuk } from "./track";
 
 const PRINT_CSS = `
@@ -123,15 +124,13 @@ function TombolKembali({ ikon }: { ikon?: boolean }) {
 function RaporAnak({ anak }: { anak: Member }) {
   const events = useEvents(anak.id);
   const bahasa = useBahasaAnak(anak.id);
+  const versi = useProfilAkademiVersi();
   const [level, setLevel] = useState<LevelId>("PAUD");
-  useEffect(() => setLevel(levelAnak(anak.id)), [anak.id]);
+  useEffect(() => setLevel(levelAnak(anak.id)), [anak.id, versi]);
+  // Jenjang dipegang server (akademi_siswa): Rapor hanya menampilkan, tidak bisa memindah jenjang.
+  useEffect(() => void sinkronSiswa(anak.id), [anak.id]);
   const peng = useMemo(() => proyeksi(events, KOMPETENSI), [events]);
   const lv = levelMeta(level);
-
-  const gantiLevel = (l: LevelId) => {
-    setLevelAnak(anak.id, l);
-    setLevel(l);
-  };
 
   const buktiTerakhir = useMemo(
     () =>
@@ -156,9 +155,9 @@ function RaporAnak({ anak }: { anak: Member }) {
         </div>
         <div className="no-print flex flex-col gap-1">
           <span className="text-[11px] font-extrabold text-ink-3 uppercase">Jenjang anak</span>
-          <div className="max-w-full overflow-x-auto [&>div]:w-max [&_button]:shrink-0 [&_button]:whitespace-nowrap">
-            <Segmented<LevelId> value={level} options={LEVEL_SLICE.map((l) => [l, levelMeta(l).lokal] as [LevelId, string])} onChange={gantiLevel} />
-          </div>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eef4fb] px-3 py-1.5 text-[13px] font-extrabold text-[#135385]">
+            <Icon name="lock" size={16} /> {lv.lokal} · naik lewat kelulusan
+          </span>
         </div>
         <div className="no-print flex flex-col gap-1">
           <span className="text-[11px] font-extrabold text-ink-3 uppercase">Bahasa konten</span>

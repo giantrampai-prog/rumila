@@ -1,102 +1,26 @@
 "use client";
 
 // Sertifikat jenjang RINOYA Academy: terbit saat pangkat jenjang tercapai (semua kompetensi inti dikuasai).
-// - buatKode / snapshotSertifikat: fungsi murni (diuji vitest, tanpa DOM).
-// - terbitkan(): cek pangkat, bekukan snapshot, insert ke tabel akademi_certificate, simpan salinan lokal di
-//   localStorage["rumila-akademi-sertifikat-<memberId>"]. Gagal kirim (offline / belum ada rumah) → tetap tersimpan
-//   lokal dengan pending: true dan dicoba lagi saat `online` atau saat ambilSertifikat().
+// - Fungsi murni (kode, snapshot, nilai kelulusan) ada di ./sertifikat-inti (dipakai juga oleh server).
+// - terbitkan(): cek cepat di perangkat, lalu minta SERVER (/api/akademi/sertifikat) menerbitkan. Server menghitung
+//   ulang kelulusan dari learner_event, menulis sertifikat bernomor resmi, dan menaikkan jenjang di akademi_siswa.
+//   Aplikasi tidak bisa menulis tabel sertifikat sendiri (Sekolah Tahap 1, 15 Nov 2026).
+//   Gagal karena jaringan → disimpan lokal pending: true (cap "menunggu sinkron", belum bisa diverifikasi) dan
+//   dicoba lagi saat `online` atau saat ambilSertifikat(). Salinan lokal: localStorage["rumila-akademi-sertifikat-<memberId>"].
 // - sertifikatAnak(): baca lokal. ambilSertifikat(): tarik dari server lalu gabung ke lokal.
 // Hook useSertifikat() memakai React; fungsi lain tidak menyentuh React saat dipanggil.
 
 import { useEffect, useState } from "react";
-import { LEVELS, type Competency, type LevelId, type StandardRef, type TrackId } from "@akademi/schema";
+import type { LevelId } from "@akademi/schema";
 import { supabase } from "@/lib/supabase/client";
 import { useCloud } from "@/lib/supabase/family";
-import type { Json } from "@/lib/supabase/types";
 import { eventsAnak } from "./jejak";
 import { pangkat } from "./koleksi";
-import { KOMPETENSI } from "./konten";
-import { proyeksi, type Penguasaan, type Status } from "./mastery";
+import { KOMPETENSI, setLevelAnak } from "./konten";
+import { proyeksi } from "./mastery";
+import { bacaSnapshot, buatKode, snapshotSertifikat, type SnapshotSertifikat } from "./sertifikat-inti";
 
-/* ---------------- kode ---------------- */
-
-/** Huruf/angka yang tidak membingungkan saat dibaca: tanpa 0, O, 1, I. */
-export const ALFABET_KODE = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-export const PANJANG_KODE = 8;
-export const POLA_KODE = /^[A-HJ-NP-Z2-9]{8}$/;
-
-/** Kode sertifikat 8 karakter dari ALFABET_KODE; rng mengembalikan [0,1). */
-export function buatKode(rng: () => number = Math.random): string {
-  let out = "";
-  for (let i = 0; i < PANJANG_KODE; i++) {
-    const r = Math.min(Math.max(rng(), 0), 0.999999999);
-    out += ALFABET_KODE[Math.floor(r * ALFABET_KODE.length)];
-  }
-  return out;
-}
-
-/** Normalisasi kode dari URL/ketikan: huruf besar, tanpa spasi/strip. */
-export function rapikanKode(s: string): string {
-  return s.toUpperCase().replace(/[^A-Z0-9]/g, "");
-}
-
-/* ---------------- snapshot ---------------- */
-
-export interface SnapshotKompetensi {
-  id: string;
-  track: TrackId;
-  unit: { id: string; nama: { id: string; en: string } };
-  statement: { id: string; en: string };
-  status: Status;
-  refs: StandardRef[];
-}
-
-export interface SnapshotSertifikat {
-  level: LevelId;
-  /** Kompetensi inti jenjang ini (semua track) beserta status saat terbit. */
-  kompetensi: SnapshotKompetensi[];
-  dikuasai: number;
-  total: number;
-  pangkat: string;
-}
-
-/** Bekukan daftar kompetensi inti satu jenjang + statusnya. Urutan mengikuti katalog. */
-export function snapshotSertifikat(peng: Record<string, Penguasaan>, kompetensi: Competency[], level: LevelId): SnapshotSertifikat {
-  const meta = LEVELS.find((l) => l.id === level);
-  const daftar: SnapshotKompetensi[] = [];
-  for (const c of kompetensi) {
-    if (c.level !== level || !c.core) continue;
-    daftar.push({
-      id: c.id,
-      track: c.track,
-      unit: { id: c.unit.id, nama: { id: c.unit.nama.id, en: c.unit.nama.en } },
-      statement: { id: c.statement.id, en: c.statement.en },
-      status: peng[c.id]?.status ?? "belum",
-      refs: c.refs.map((r) => ({ ...r })),
-    });
-  }
-  return {
-    level,
-    kompetensi: daftar,
-    dikuasai: daftar.filter((k) => k.status === "dikuasai").length,
-    total: daftar.length,
-    pangkat: meta?.pangkat ?? "",
-  };
-}
-
-/** Parse snapshot dari server/lokal dengan toleransi (kolom asing dibiarkan, yang rusak → null). */
-export function bacaSnapshot(v: unknown): SnapshotSertifikat | null {
-  if (!v || typeof v !== "object") return null;
-  const s = v as Partial<SnapshotSertifikat>;
-  if (typeof s.level !== "string" || !Array.isArray(s.kompetensi)) return null;
-  return {
-    level: s.level as LevelId,
-    kompetensi: s.kompetensi.filter((k): k is SnapshotKompetensi => !!k && typeof k === "object" && typeof (k as SnapshotKompetensi).id === "string"),
-    dikuasai: typeof s.dikuasai === "number" ? s.dikuasai : 0,
-    total: typeof s.total === "number" ? s.total : s.kompetensi.length,
-    pangkat: typeof s.pangkat === "string" ? s.pangkat : "",
-  };
-}
+export * from "./sertifikat-inti";
 
 /* ---------------- penyimpanan lokal ---------------- */
 
@@ -111,6 +35,9 @@ export interface Sertifikat {
   issuedAt: string;
   /** Belum sampai ke server (offline / belum punya rumah). */
   pending?: boolean;
+  /** Nomor resmi dari server, mis. RA/2026/TKB/000128. */
+  nomor?: string | null;
+  status?: "sah" | "dicabut";
 }
 
 const PREFIX = "rumila-akademi-sertifikat-";
@@ -196,57 +123,68 @@ export function useSertifikat(memberId: string): Sertifikat[] {
 
 /* ---------------- server ---------------- */
 
-type Baris = { id: string; member_id: string; level: string; track: string | null; code: string; snapshot: Json; issued_at: string };
+const KOLOM = "id, member_id, level, track, code, snapshot, issued_at, nomor, status";
+type Baris = { id: string; member_id: string; level: string; track: string | null; code: string; snapshot: unknown; issued_at: string; nomor?: string | null; status?: string };
 
-function dariBaris(r: Baris): Sertifikat | null {
+export function dariBaris(r: Baris): Sertifikat | null {
   const snapshot = bacaSnapshot(r.snapshot);
   if (!snapshot) return null;
-  return { id: r.id, memberId: r.member_id, level: r.level as LevelId, track: r.track, code: r.code, snapshot, issuedAt: new Date(r.issued_at).toISOString() };
+  return {
+    id: r.id,
+    memberId: r.member_id,
+    level: r.level as LevelId,
+    track: r.track,
+    code: r.code,
+    snapshot,
+    issuedAt: new Date(r.issued_at).toISOString(),
+    nomor: r.nomor ?? null,
+    status: r.status === "dicabut" ? "dicabut" : "sah",
+  };
 }
 
-function keBaris(s: Sertifikat, familyId: string) {
-  return { family_id: familyId, member_id: s.memberId, level: s.level, track: s.track, code: s.code, snapshot: s.snapshot as unknown as Json, issued_at: s.issuedAt };
-}
+/** Jawaban server penerbit. */
+export type HasilTerbit =
+  | { ok: true; sertifikat: Sertifikat; levelBaru?: LevelId }
+  | { ok: false; alasan: "belum_lulus"; dikuasai: number; total: number }
+  | { ok: false; alasan: "jenjang_beda" | "tidak_berhak" | "jaringan" | "belum_aktif" | "galat" };
 
-/** Kode unik ganda (unique violation Postgres). */
-const unikGanda = (e: { code?: string } | null) => e?.code === "23505";
-
-/**
- * Kirim satu sertifikat ke server. Mengembalikan baris final (yang baru atau yang sudah ada di server untuk
- * anak × jenjang yang sama); null bila gagal karena jaringan/izin (biarkan pending).
- */
-async function kirimSatu(s: Sertifikat, familyId: string): Promise<Sertifikat | null> {
-  const sb = supabase();
-  let calon = s;
-  for (let coba = 0; coba < 3; coba++) {
-    const { data, error } = await sb.from("akademi_certificate").insert(keBaris(calon, familyId)).select("id, member_id, level, track, code, snapshot, issued_at").single();
-    if (!error && data) return dariBaris(data as Baris) ?? { ...calon, id: data.id, pending: false };
-    if (!unikGanda(error)) {
-      console.error("[akademi] kirim sertifikat gagal", error);
-      return null;
+/** Minta server menerbitkan sertifikat anak × jenjang. Tidak pernah melempar. */
+export async function mintaTerbit(memberId: string, level: LevelId): Promise<HasilTerbit> {
+  try {
+    const { data } = await supabase().auth.getSession();
+    const token = data.session?.access_token;
+    if (!token) return { ok: false, alasan: "tidak_berhak" };
+    const res = await fetch("/api/akademi/sertifikat", {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
+      body: JSON.stringify({ memberId, level }),
+    });
+    const j = (await res.json().catch(() => ({}))) as { sertifikat?: Baris; levelBaru?: LevelId; error?: string; dikuasai?: number; total?: number };
+    if (res.ok && j.sertifikat) {
+      const s = dariBaris(j.sertifikat);
+      return s ? { ok: true, sertifikat: s, levelBaru: j.levelBaru } : { ok: false, alasan: "galat" };
     }
-    // Unik ganda: entah anak × jenjang sudah punya sertifikat (ambil yang ada), entah kodenya kebetulan sama (coba kode baru).
-    const { data: ada } = await sb
-      .from("akademi_certificate")
-      .select("id, member_id, level, track, code, snapshot, issued_at")
-      .eq("member_id", s.memberId)
-      .eq("level", s.level)
-      .limit(10);
-    const cocok = (ada ?? []).map((r) => dariBaris(r as Baris)).find((x): x is Sertifikat => !!x && kunciSama(x, s));
-    if (cocok) return cocok;
-    calon = { ...calon, code: buatKode() };
+    if (res.status === 422) return { ok: false, alasan: "belum_lulus", dikuasai: j.dikuasai ?? 0, total: j.total ?? 0 };
+    if (res.status === 409) return { ok: false, alasan: "jenjang_beda" };
+    if (res.status === 401 || res.status === 403) return { ok: false, alasan: "tidak_berhak" };
+    if (res.status === 503) return { ok: false, alasan: "belum_aktif" };
+    return { ok: false, alasan: "galat" };
+  } catch {
+    return { ok: false, alasan: "jaringan" };
   }
-  return null;
+}
+
+function terapkan(h: Extract<HasilTerbit, { ok: true }>) {
+  const bersih = { ...h.sertifikat, pending: false };
+  taruhLokal(bersih);
+  if (h.levelBaru) setLevelAnak(bersih.memberId, h.levelBaru);
+  return bersih;
 }
 
 /** Tarik semua sertifikat anak dari server, gabung ke lokal (server menang), lalu kirim yang masih pending. */
 export async function ambilSertifikat(memberId: string): Promise<Sertifikat[]> {
   if (!adaWindow() || !UUID.test(memberId)) return sertifikatAnak(memberId);
-  const { data, error } = await supabase()
-    .from("akademi_certificate")
-    .select("id, member_id, level, track, code, snapshot, issued_at")
-    .eq("member_id", memberId)
-    .order("issued_at", { ascending: true });
+  const { data, error } = await supabase().from("akademi_certificate").select(KOLOM).eq("member_id", memberId).order("issued_at", { ascending: true });
   if (error) throw error;
   const server = (data ?? []).map((r) => dariBaris(r as Baris)).filter((x): x is Sertifikat => !!x);
   const gabung = sertifikatAnak(memberId).filter((l) => !server.some((s) => kunciSama(s, l)));
@@ -257,19 +195,20 @@ export async function ambilSertifikat(memberId: string): Promise<Sertifikat[]> {
 }
 
 let sedangKirim = false;
-/** Coba kirim ulang semua sertifikat pending di perangkat ini (dipanggil saat `online` dan setelah ambilSertifikat). */
+/** Minta ulang penerbitan untuk sertifikat pending di perangkat ini (saat `online` dan setelah ambilSertifikat). */
 export async function kirimTertunda(): Promise<void> {
   if (!adaWindow() || sedangKirim) return;
-  const fid = useCloud.getState().familyId;
-  if (!fid) return;
+  if (!useCloud.getState().familyId) return;
   sedangKirim = true;
   try {
     for (const m of semuaMemberLokal()) {
       if (!UUID.test(m)) continue;
       for (const s of sertifikatAnak(m)) {
         if (!s.pending) continue;
-        const final = await kirimSatu(s, fid);
-        if (final) taruhLokal({ ...final, pending: false });
+        const h = await mintaTerbit(m, s.level);
+        if (h.ok) terapkan(h);
+        // Server menolak (belum lulus menurut catatan server / jenjang beda): buang salinan pending yang tidak sah.
+        else if (h.alasan === "belum_lulus" || h.alasan === "jenjang_beda") simpanLokal(m, sertifikatAnak(m).filter((x) => !kunciSama(x, s)));
       }
     }
   } finally {
@@ -282,15 +221,16 @@ if (adaWindow()) window.addEventListener("online", () => void kirimTertunda());
 /* ---------------- API utama ---------------- */
 
 export class PangkatBelumTercapai extends Error {
-  constructor(level: LevelId) {
-    super(`Pangkat jenjang ${level} belum tercapai`);
+  constructor(level: LevelId, pesan?: string) {
+    super(pesan ?? `Pangkat jenjang ${level} belum tercapai`);
     this.name = "PangkatBelumTercapai";
   }
 }
 
 /**
- * Terbitkan sertifikat jenjang untuk anak (sekali per anak × jenjang). Melempar PangkatBelumTercapai bila
- * kompetensi inti jenjang belum semua dikuasai. Bila sudah pernah terbit → mengembalikan yang ada.
+ * Terbitkan sertifikat jenjang untuk anak (sekali per anak × jenjang) lewat server. Melempar PangkatBelumTercapai
+ * bila kompetensi inti belum semua dikuasai (menurut perangkat atau menurut server). Bila sudah pernah terbit →
+ * mengembalikan yang ada. Lulus = jenjang anak dinaikkan server dan salinan lokal ikut diperbarui.
  */
 export async function terbitkan(memberId: string, level: LevelId): Promise<Sertifikat> {
   const sudah = sertifikatAnak(memberId).find((s) => s.level === level && !s.track && !s.pending);
@@ -300,8 +240,7 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
   const p = pangkat(peng, KOMPETENSI, [level])[0];
   if (!p?.tercapai) throw new PangkatBelumTercapai(level);
 
-  const tertunda = sertifikatAnak(memberId).find((s) => s.level === level && !s.track);
-  const baru: Sertifikat = tertunda ?? {
+  const cadangan: Sertifikat = sertifikatAnak(memberId).find((s) => s.level === level && !s.track) ?? {
     memberId,
     level,
     track: null,
@@ -311,19 +250,14 @@ export async function terbitkan(memberId: string, level: LevelId): Promise<Serti
     pending: true,
   };
 
-  const fid = useCloud.getState().familyId;
-  if (fid && UUID.test(memberId)) {
-    const final = await kirimSatu(baru, fid);
-    if (final) {
-      const bersih = { ...final, pending: false };
-      taruhLokal(bersih);
-      return bersih;
-    }
+  if (useCloud.getState().familyId && UUID.test(memberId)) {
+    const h = await mintaTerbit(memberId, level);
+    if (h.ok) return terapkan(h);
+    if (h.alasan === "belum_lulus")
+      throw new PangkatBelumTercapai(level, `Menurut catatan server baru ${h.dikuasai} dari ${h.total} kompetensi inti dikuasai.`);
+    if (h.alasan === "jenjang_beda" || h.alasan === "tidak_berhak") throw new Error(`Sertifikat ditolak server: ${h.alasan}`);
   }
-  // Offline / belum ada rumah / anggota demo: simpan lokal dulu, kirim saat online.
-  taruhLokal(baru);
-  return baru;
+  // Offline / server penerbit belum aktif / anggota demo: simpan lokal dulu (belum bisa diverifikasi).
+  taruhLokal(cadangan);
+  return cadangan;
 }
-
-/** URL verifikasi publik untuk satu kode. */
-export const URL_VERIFIKASI = (code: string) => `https://rumila.vercel.app/sertifikat/${code}`;

@@ -120,6 +120,8 @@ export interface SertifikatKartuProps {
   kode: string;
   issuedAt: string;
   snapshot: SnapshotSertifikat;
+  /** Nomor resmi dari server (RA/2026/TKB/000128); kosong = sertifikat lama/pending. */
+  nomor?: string | null;
   /** Belum tersimpan di server (offline) → cap kecil "menunggu sinkron". */
   pending?: boolean;
   /** Tampilkan pita "Sertifikat sah · terverifikasi" (halaman publik). */
@@ -141,7 +143,7 @@ export function unitDikuasai(snapshot: SnapshotSertifikat) {
   })).filter((g) => g.unit.length > 0);
 }
 
-export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, pending, terverifikasi, className = "" }: SertifikatKartuProps) {
+export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, nomor, pending, terverifikasi, className = "" }: SertifikatKartuProps) {
   const meta = LEVELS.find((l) => l.id === level);
   const namaJenjang = meta ? `${meta.nama} (${meta.lokal})` : level;
   const pangkat = snapshot.pangkat || meta?.pangkat || "";
@@ -245,7 +247,7 @@ export function SertifikatKartu({ nama, level, kode, issuedAt, snapshot, pending
             <p style={{ fontFamily: SERIF, fontSize: "clamp(10px, 1.7cqw, 21px)", color: NAVY }}>{tanggalPanjang(issuedAt)}</p>
             <div className="mx-auto" style={{ width: "70%", height: 1.2, background: NAVY, marginTop: "0.5cqw" }} />
             <p style={{ fontFamily: SANS, fontSize: "clamp(7px, 1cqw, 12px)", fontWeight: 700, color: MUTED, letterSpacing: "0.25em", marginTop: "0.5cqw" }}>TANGGAL TERBIT</p>
-            <p style={{ fontFamily: SANS, fontSize: "clamp(7px, 0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.12em", marginTop: "0.4cqw" }}>No. RA/SJ/{level}/{kode}</p>
+            <p style={{ fontFamily: SANS, fontSize: "clamp(7px, 0.95cqw, 11px)", fontWeight: 600, color: MUTED, letterSpacing: "0.12em", marginTop: "0.4cqw" }}>{nomor ? `No. ${nomor}` : pending ? "Nomor terbit setelah sinkron" : `No. RA/SJ/${level}/${kode}`}</p>
           </div>
           <div style={{ width: "clamp(56px, 9.5cqw, 120px)", height: "clamp(76px, 12.9cqw, 163px)", marginBottom: "-1.4cqw" }}>
             <Segel pangkat={pangkat} />

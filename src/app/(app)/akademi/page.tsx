@@ -10,6 +10,7 @@ import { Icon } from "@/components/ui";
 import { Koleksi } from "@/components/akademi/portal/koleksi";
 import { PetaPetualangan } from "@/components/akademi/portal/peta";
 import { levelAnak, useProfilAkademiVersi } from "@/lib/akademi/konten";
+import { sinkronSiswa } from "@/lib/akademi/siswa";
 import { useMe } from "@/lib/store";
 
 export default function AkademiPage() {
@@ -18,6 +19,8 @@ export default function AkademiPage() {
   const [hadiah, setHadiah] = useState(false);
   const [level, setLevel] = useState<LevelId>("PAUD");
   useEffect(() => setLevel(levelAnak(me.id)), [me.id, versi]);
+  // Jenjang aktif dipegang server (akademi_siswa); jenjang lokal disamakan setiap portal dibuka.
+  useEffect(() => void sinkronSiswa(me.id), [me.id]);
 
   if (hadiah)
     return (
