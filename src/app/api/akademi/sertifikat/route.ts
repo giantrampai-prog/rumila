@@ -13,6 +13,7 @@ import { createClient } from "@supabase/supabase-js";
 import { LevelId } from "@akademi/schema";
 import { KOMPETENSI } from "@/lib/akademi/katalog";
 import { buatKode, eventDariBaris, nilaiKelulusan, type BarisEvent } from "@/lib/akademi/sertifikat-inti";
+import { predikat } from "@/lib/akademi/ujian";
 import type { Database, Json } from "@/lib/supabase/types";
 
 export const runtime = "nodejs";
@@ -76,6 +77,20 @@ export async function POST(req: Request) {
   }
   const hasil = nilaiKelulusan(eventDariBaris(rows), KOMPETENSI, level);
   if (!hasil.lulus) return json(422, { error: "belum_lulus", dikuasai: hasil.dikuasai, total: hasil.total });
+
+  // Tahap 3: Ujian Kenaikan wajib lulus; nilai terbaiknya ikut dibekukan di sertifikat
+  const { data: kenaikan } = await admin.from("akademi_ujian").select("nilai").eq("member_id", memberId).eq("jenis", "kenaikan").eq("level", level).eq("lulus", true).order("nilai", { ascending: false }).limit(1);
+  const nilaiAkhir = kenaikan?.[0]?.nilai;
+  if (nilaiAkhir === undefined) return json(422, { error: "belum_ujian_kenaikan", dikuasai: hasil.dikuasai, total: hasil.total });
+  hasil.snapshot.nilai = nilaiAkhir;
+  hasil.snapshot.predikat = predikat(nilaiAkhir);
+  const { data: semuaUjian } = await admin.from("akademi_ujian").select("jenis, ruang, nilai").eq("member_id", memberId).eq("level", level).eq("lulus", true);
+  const terbaikUjian = new Map<string, { jenis: string; ruang: string; nilai: number }>();
+  for (const u of semuaUjian ?? []) {
+    const k = `${u.jenis}|${u.ruang}`;
+    if ((terbaikUjian.get(k)?.nilai ?? -1) < u.nilai) terbaikUjian.set(k, { jenis: u.jenis, ruang: u.ruang, nilai: u.nilai });
+  }
+  hasil.snapshot.ujian = [...terbaikUjian.values()];
 
   // 4. terbitkan (kode unik; coba ulang bila kebetulan sama)
   let terbit: unknown = null;

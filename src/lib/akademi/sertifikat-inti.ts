@@ -47,6 +47,11 @@ export interface SnapshotSertifikat {
   dikuasai: number;
   total: number;
   pangkat: string;
+  /** nilai Ujian Kenaikan (0–100) dan predikatnya; kosong pada sertifikat sebelum Tahap 3 */
+  nilai?: number;
+  predikat?: string;
+  /** nilai ujian terbaik saat terbit (transkrip): kuis per modul, semester, kenaikan */
+  ujian?: { jenis: string; ruang: string; nilai: number }[];
 }
 
 /** Bekukan daftar kompetensi inti satu jenjang + statusnya. Urutan mengikuti katalog. */
@@ -84,12 +89,18 @@ export function bacaSnapshot(v: unknown): SnapshotSertifikat | null {
     dikuasai: typeof s.dikuasai === "number" ? s.dikuasai : 0,
     total: typeof s.total === "number" ? s.total : s.kompetensi.length,
     pangkat: typeof s.pangkat === "string" ? s.pangkat : "",
+    ...(typeof s.nilai === "number" ? { nilai: s.nilai } : {}),
+    ...(typeof s.predikat === "string" ? { predikat: s.predikat } : {}),
+    ...(Array.isArray(s.ujian) ? { ujian: s.ujian.filter((u) => u && typeof u.nilai === "number" && typeof u.jenis === "string") } : {}),
   };
 }
 
 
 /** URL verifikasi publik untuk satu kode. */
-export const URL_VERIFIKASI = (code: string) => `https://rumila.vercel.app/sertifikat/${code}`;
+/** Alamat dasar verifikasi publik; ganti lewat env NEXT_PUBLIC_VERIFIKASI_URL saat domain sendiri siap. */
+export const BASIS_VERIFIKASI = (process.env.NEXT_PUBLIC_VERIFIKASI_URL || "https://rumila.vercel.app").replace(/\/$/, "");
+export const URL_VERIFIKASI = (code: string) => `${BASIS_VERIFIKASI}/sertifikat/${code}`;
+export const URL_VERIFIKASI_SEMESTER = (sessionId: string) => `${BASIS_VERIFIKASI}/sertifikat/s/${sessionId}`;
 
 /* ---------------- kelulusan versi server ---------------- */
 

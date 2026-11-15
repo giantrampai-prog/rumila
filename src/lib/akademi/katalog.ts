@@ -2,7 +2,10 @@
 // Sumber: src/lib/akademi/katalog.generated.ts (dibuat `npm run -s akademi:index`), diparse zod sekali saat modul dimuat.
 // Berkas yang tidak lolos skema dilaporkan ke console.error dan dilewati, bukan menjatuhkan aplikasi.
 
-import { ContentPack, DEFAULT_MASTERY, KurikulumFile, type Competency } from "@akademi/schema";
+import { ContentPack, DEFAULT_MASTERY, KurikulumFile, type Competency, type TrackId } from "@akademi/schema";
+
+/** Pelajaran yang sudah berisi dan tampil di jalur sekolah. */
+export const TRACK_AKTIF: readonly TrackId[] = ["MAT", "KODE", "SAINS"];
 import { KURIKULUM_RAW, PAKET_RAW } from "./katalog.generated";
 
 function jelaskan(issues: { path: PropertyKey[]; message: string }[]) {

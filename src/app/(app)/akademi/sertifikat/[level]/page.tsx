@@ -11,6 +11,7 @@ import { LEVELS, type LevelId } from "@akademi/schema";
 import { BALOO, NUNITO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { SERTIFIKAT_PRINT_CSS, SertifikatKartu } from "@/components/akademi/sertifikat";
+import { TranskripJenjang } from "@/components/akademi/piagam";
 import { useEvents } from "@/lib/akademi/jejak";
 import { LEVEL_PANGKAT, pangkat } from "@/lib/akademi/koleksi";
 import { KOMPETENSI } from "@/lib/akademi/konten";
@@ -121,6 +122,9 @@ function IsiSertifikat({ level }: { level: LevelId }) {
         <div className="flex justify-center">
           <SertifikatKartu nama={me.name} level={level} kode={sert.code} issuedAt={sert.issuedAt} snapshot={sert.snapshot} nomor={sert.nomor} pending={sert.pending} />
         </div>
+        <div className="flex justify-center">
+          <TranskripJenjang nama={me.name} level={level} kode={sert.code} nomor={sert.nomor} issuedAt={sert.issuedAt} snapshot={sert.snapshot} />
+        </div>
         <div className="no-print flex flex-wrap justify-center gap-2">
           <button onClick={() => window.print()} className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-white transition-transform active:scale-95" style={{ fontFamily: BALOO, fontSize: 17, fontWeight: 800, background: "linear-gradient(155deg,#1f94f0,#0567c2 60%)", boxShadow: "0 3px 0 #0567c2" }}>
             <Icon name="print" size={22} /> Cetak / PDF
@@ -152,7 +156,7 @@ function IsiSertifikat({ level }: { level: LevelId }) {
             Semua kompetensi inti {meta.nama} sudah dikuasai
           </p>
           <p className="max-w-[460px] text-[14px] font-bold text-ink-3">
-            Sertifikat jenjang diterbitkan sekali dengan kode verifikasi unik, lalu bisa dicetak jadi PDF atau dibagikan ke keluarga.
+            Sertifikat Kenaikan Jenjang diterbitkan sekali setelah Ujian Kenaikan lulus, lengkap dengan nomor resmi, kode verifikasi, dan transkrip.
           </p>
           <button
             onClick={terbit}

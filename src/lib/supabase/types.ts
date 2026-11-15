@@ -83,6 +83,12 @@ export type Database = {
         };
         Relationships: [];
       };
+      akademi_ujian: {
+        Row: { id: string; family_id: string; member_id: string; jenis: string; level: string; ruang: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at: string };
+        Insert: { id?: string; family_id: string; member_id: string; jenis: string; level: string; ruang?: string; session_id: string; benar: number; total: number; nilai: number; lulus: boolean; created_at?: string };
+        Update: { [k: string]: never };
+        Relationships: [];
+      };
       akademi_siswa: {
         Row: { member_id: string; family_id: string; level: string; semester: number; sumber: "awal" | "migrasi" | "naik" | "admin"; mulai_at: string; level_sejak: string; updated_at: string };
         Insert: { member_id: string; family_id: string; level: string; semester?: number; sumber?: "awal" | "migrasi" | "naik" | "admin"; mulai_at?: string; level_sejak?: string; updated_at?: string };
@@ -202,6 +208,10 @@ export type Database = {
       verify_certificate: {
         Args: { p_code: string };
         Returns: { first_name: string; level: string; track: string | null; issued_at: string; snapshot: Json; nomor: string | null; status: "sah" | "dicabut" }[];
+      };
+      verify_semester: {
+        Args: { p_session: string };
+        Returns: { first_name: string; level: string; ruang: string; nilai: number; created_at: string; kuis: Json }[];
       };
       akademi_atur_jenjang_awal: {
         Args: { p_member: string; p_level: string };

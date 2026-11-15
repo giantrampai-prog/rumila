@@ -10,6 +10,7 @@ import { BALOO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { judulPaket } from "@/components/akademi/runner";
 import { PLAY, type ColorKey } from "@/lib/catalog";
+import { TRACK_AKTIF } from "@/lib/akademi/katalog";
 import { kompetensiUntuk, paketById, useBahasaAnak, type BahasaAnak } from "@/lib/akademi/konten";
 import type { Status } from "@/lib/akademi/mastery";
 import { useMe } from "@/lib/store";
@@ -18,7 +19,7 @@ export const INK = "#0b2545";
 
 /** Jenjang & pelajaran yang sudah punya konten di Slice 1. */
 export const LEVEL_SLICE: readonly LevelId[] = ACTIVE_LEVELS;
-export const TRACK_SLICE: readonly TrackId[] = ["MAT", "KODE", "SAINS"];
+export const TRACK_SLICE: readonly TrackId[] = TRACK_AKTIF;
 
 /** Warna pelajaran mengikuti pilar desain sistem RINOYA (pilar-mat indigo, pilar-teknologi ungu, pilar-sains teal, pilar-bahasa pink, pilar-kreativitas merah, pilar-karakter hijau). */
 export const TRACK_WARNA: Record<TrackId, ColorKey> = {

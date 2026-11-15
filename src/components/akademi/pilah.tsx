@@ -6,6 +6,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent } from "react";
 import type { PaketPilah } from "@akademi/schema";
 import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } from "@akademi/mechanics";
+import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
@@ -25,6 +26,7 @@ function visual(x: { emoji?: string; color?: string; scale?: number; count?: num
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */
 function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
+  if (useModeUjian()) return null;
   return (
     <button
       type="button"
