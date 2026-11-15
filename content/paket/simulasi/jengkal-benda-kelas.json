@@ -1,0 +1,173 @@
+{
+  "id": "jengkal-benda-kelas",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKA.UKUR-NONSTANDAR.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Jengkal di Kelas",
+      "instruksi": "Ukur benda-benda di kelas: tempelkan jengkal tanganmu dari ujung ke ujung tanpa celah, lalu sebutkan berapa jengkal.",
+      "pensil": "pensil",
+      "krayon": "krayon",
+      "buku-tulis": "buku tulis",
+      "kuas": "kuas",
+      "penggaris": "penggaris",
+      "tas": "tas sekolah",
+      "papan-ketik": "papan ketik",
+      "lukisan": "lukisan",
+      "peta": "peta dinding",
+      "kursi": "kursi",
+      "papan-nama": "papan nama",
+      "pianika": "keyboard musik",
+      "sapu": "sapu"
+    },
+    "en": {
+      "judul": "Hand Spans in Class",
+      "instruksi": "Measure things in the classroom: lay your hand spans end to end with no gaps, then say how many spans.",
+      "pensil": "pencil",
+      "krayon": "crayon",
+      "buku-tulis": "notebook",
+      "kuas": "paintbrush",
+      "penggaris": "ruler",
+      "tas": "school bag",
+      "papan-ketik": "keyboard",
+      "lukisan": "painting",
+      "peta": "wall map",
+      "kursi": "chair",
+      "papan-nama": "name board",
+      "pianika": "music keyboard",
+      "sapu": "broom"
+    }
+  },
+  "knobs": {
+    "snap": {
+      "min": 1,
+      "max": 1,
+      "default": 1,
+      "step": 1,
+      "keterangan": "1 = jengkal menempel otomatis ke ujung jengkal sebelumnya"
+    },
+    "maxSpans": {
+      "min": 2,
+      "max": 5,
+      "default": 4,
+      "step": 1,
+      "keterangan": "panjang benda terpanjang yang muncul (jengkal), paling banyak 5"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "jengkal",
+  "items": [
+    {
+      "id": "pensil",
+      "labelKey": "pensil",
+      "role": "benda",
+      "emoji": "✏️",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "id": "krayon",
+      "labelKey": "krayon",
+      "role": "benda",
+      "emoji": "🖍️",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "id": "buku-tulis",
+      "labelKey": "buku-tulis",
+      "role": "benda",
+      "emoji": "📘",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "id": "kuas",
+      "labelKey": "kuas",
+      "role": "benda",
+      "emoji": "🖌️",
+      "value": 1,
+      "width": 0.5
+    },
+    {
+      "id": "penggaris",
+      "labelKey": "penggaris",
+      "role": "benda",
+      "emoji": "📏",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "id": "tas",
+      "labelKey": "tas",
+      "role": "benda",
+      "emoji": "🎒",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "id": "papan-ketik",
+      "labelKey": "papan-ketik",
+      "role": "benda",
+      "emoji": "⌨️",
+      "value": 2,
+      "width": 1
+    },
+    {
+      "id": "lukisan",
+      "labelKey": "lukisan",
+      "role": "benda",
+      "emoji": "🖼️",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "id": "peta",
+      "labelKey": "peta",
+      "role": "benda",
+      "emoji": "🗺️",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "id": "kursi",
+      "labelKey": "kursi",
+      "role": "benda",
+      "emoji": "🪑",
+      "value": 3,
+      "width": 1.5
+    },
+    {
+      "id": "papan-nama",
+      "labelKey": "papan-nama",
+      "role": "benda",
+      "emoji": "🪧",
+      "value": 4,
+      "width": 2
+    },
+    {
+      "id": "pianika",
+      "labelKey": "pianika",
+      "role": "benda",
+      "emoji": "🎹",
+      "value": 4,
+      "width": 2
+    },
+    {
+      "id": "sapu",
+      "labelKey": "sapu",
+      "role": "benda",
+      "emoji": "🧹",
+      "value": 5,
+      "width": 2.5
+    }
+  ]
+}

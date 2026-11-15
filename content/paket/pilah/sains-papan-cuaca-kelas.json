@@ -1,0 +1,222 @@
+{
+  "id": "sains-papan-cuaca-kelas",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.CUACA-PAKAIAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Papan Cuaca Kelas",
+      "instruksi": "Lihat ke luar jendela kelas, lalu pasang simbol cuaca yang cocok di papan cuaca.",
+      "pilihan": "pilihan",
+      "i-cerah": "cerah",
+      "i-mendung": "mendung",
+      "i-hujan": "hujan",
+      "i-angin": "berangin",
+      "t-cerah1": "Lapangan sekolah terang, langit biru tanpa awan.",
+      "t-cerah2": "Teman-teman menyipitkan mata karena silau matahari.",
+      "t-cerah3": "Bayangan tiang bendera terlihat jelas di lapangan.",
+      "t-mendung1": "Langit di atas sekolah abu-abu, matahari tidak terlihat, tanah masih kering.",
+      "t-mendung2": "Awan tebal dan gelap menutupi langit, tapi belum ada tetes air.",
+      "t-hujan1": "Atap sekolah berbunyi tik-tik-tik dan kaca jendela basah.",
+      "t-hujan2": "Lapangan penuh genangan dan air terus jatuh dari langit.",
+      "t-hujan3": "Penjaga sekolah berjalan memakai payung dan jas hujan.",
+      "t-angin1": "Tidak hujan, tapi bendera di tiang sekolah berkibar kencang.",
+      "t-angin2": "Pohon di halaman sekolah bergoyang kencang dan kertas beterbangan.",
+      "t-angin3": "Rambut teman-teman berantakan tertiup angin kencang.",
+      "t-cerah4": "Murid-murid memakai topi karena matahari terik."
+    },
+    "en": {
+      "judul": "Classroom Weather Board",
+      "instruksi": "Look out of the classroom window, then put the matching weather symbol on the weather board.",
+      "pilihan": "choices",
+      "i-cerah": "sunny",
+      "i-mendung": "cloudy",
+      "i-hujan": "rainy",
+      "i-angin": "windy",
+      "t-cerah1": "The schoolyard is bright, the sky is blue with no clouds.",
+      "t-cerah2": "Friends squint because the sun is so bright.",
+      "t-cerah3": "The flagpole's shadow is clear on the field.",
+      "t-mendung1": "The sky over school is grey, the sun is hidden, the ground is still dry.",
+      "t-mendung2": "Thick dark clouds cover the sky, but no drops yet.",
+      "t-hujan1": "The school roof goes tap-tap-tap and the window is wet.",
+      "t-hujan2": "The field is full of puddles and water keeps falling from the sky.",
+      "t-hujan3": "The school guard walks with an umbrella and a raincoat.",
+      "t-angin1": "It isn't raining, but the school flag flaps hard.",
+      "t-angin2": "The schoolyard trees sway hard and papers fly around.",
+      "t-angin3": "Everyone's hair is messy from the strong wind.",
+      "t-cerah4": "The pupils wear hats because the sun is hot."
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga simbol cuaca per pertanyaan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "cerah",
+      "labelKey": "i-cerah",
+      "bin": "pilihan",
+      "emoji": "🌞"
+    },
+    {
+      "id": "mendung",
+      "labelKey": "i-mendung",
+      "bin": "pilihan",
+      "emoji": "🌥️"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "pilihan",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "angin",
+      "labelKey": "i-angin",
+      "bin": "pilihan",
+      "emoji": "💨"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "cerah1",
+      "promptKey": "t-cerah1",
+      "choices": [
+        "cerah",
+        "hujan",
+        "mendung"
+      ],
+      "correct": "cerah"
+    },
+    {
+      "id": "cerah2",
+      "promptKey": "t-cerah2",
+      "choices": [
+        "cerah",
+        "angin",
+        "hujan"
+      ],
+      "correct": "cerah"
+    },
+    {
+      "id": "cerah3",
+      "promptKey": "t-cerah3",
+      "choices": [
+        "cerah",
+        "mendung",
+        "hujan"
+      ],
+      "correct": "cerah"
+    },
+    {
+      "id": "mendung1",
+      "promptKey": "t-mendung1",
+      "choices": [
+        "mendung",
+        "cerah",
+        "hujan"
+      ],
+      "correct": "mendung"
+    },
+    {
+      "id": "mendung2",
+      "promptKey": "t-mendung2",
+      "choices": [
+        "mendung",
+        "angin",
+        "cerah"
+      ],
+      "correct": "mendung"
+    },
+    {
+      "id": "hujan1",
+      "promptKey": "t-hujan1",
+      "choices": [
+        "hujan",
+        "cerah",
+        "angin"
+      ],
+      "correct": "hujan"
+    },
+    {
+      "id": "hujan2",
+      "promptKey": "t-hujan2",
+      "choices": [
+        "hujan",
+        "mendung",
+        "cerah"
+      ],
+      "correct": "hujan"
+    },
+    {
+      "id": "hujan3",
+      "promptKey": "t-hujan3",
+      "choices": [
+        "hujan",
+        "angin",
+        "cerah"
+      ],
+      "correct": "hujan"
+    },
+    {
+      "id": "angin1",
+      "promptKey": "t-angin1",
+      "choices": [
+        "angin",
+        "hujan",
+        "mendung"
+      ],
+      "correct": "angin"
+    },
+    {
+      "id": "angin2",
+      "promptKey": "t-angin2",
+      "choices": [
+        "angin",
+        "hujan",
+        "mendung"
+      ],
+      "correct": "angin"
+    },
+    {
+      "id": "angin3",
+      "promptKey": "t-angin3",
+      "choices": [
+        "angin",
+        "hujan",
+        "cerah"
+      ],
+      "correct": "angin"
+    },
+    {
+      "id": "cerah4",
+      "promptKey": "t-cerah4",
+      "choices": [
+        "cerah",
+        "hujan",
+        "angin"
+      ],
+      "correct": "cerah"
+    }
+  ]
+}

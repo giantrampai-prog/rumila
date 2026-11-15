@@ -169,3 +169,21 @@ describe("nilaiNavigasi — bendera & prediksi", () => {
     expect(nilaiNavigasi(r, { program: [M, M, M], prediksi: [false, true, false] }).benar).toBe(false);
   });
 });
+
+describe("mode langkah + prediksi dengan program yang sengaja menabrak (audit 15 Nov 2026)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { ContentPack } = await import("@akademi/schema");
+  const { buatRonde, jalankan: jalan, knobDefaults, nilai } = await import("../src/index");
+  const p = ContentPack.parse(JSON.parse(readFileSync(new URL("../../../content/paket/navigasi/berhenti-sebelum-tabrak.json", import.meta.url), "utf8")));
+  it("tebakan benar semua → lulus walau program bawaan menabrak", () => {
+    for (let seed = 0; seed < 20; seed++) {
+      const r = buatRonde(p, knobDefaults(p), seed);
+      if (r.mechanic !== "navigasi") throw new Error("bukan navigasi");
+      expect(jalan(r.ronde.grids[0], r.ronde.program).outcome).not.toBe("bintang");
+      const n = jalan(r.ronde.grids[0], r.ronde.program).steps.length;
+      expect(nilai(p, r, { program: r.ronde.program, prediksi: Array(n).fill(true), runs: 1 }).benar).toBe(true);
+      expect(nilai(p, r, { program: r.ronde.program, prediksi: Array(n).fill(false), runs: 1 }).benar).toBe(false);
+      expect(nilai(p, r, { program: r.ronde.program, prediksi: [], runs: 1 }).benar).toBe(false);
+    }
+  });
+});

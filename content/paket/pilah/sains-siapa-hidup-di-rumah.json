@@ -1,0 +1,322 @@
+{
+  "id": "sains-siapa-hidup-di-rumah",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Siapa yang Hidup di Rumah?",
+      "instruksi": "Di rumah ada makhluk hidup dan benda. Dengarkan, lalu sentuh yang hidup.",
+      "pilihan": "pilihan",
+      "i-kucing": "kucing",
+      "i-ikan": "ikan di akuarium",
+      "i-tanaman": "tanaman dalam pot",
+      "i-cicak": "cicak",
+      "i-beo": "burung beo",
+      "i-hamster": "hamster",
+      "i-kaktus": "kaktus",
+      "i-bayi": "adik bayi",
+      "i-anjing": "anjing",
+      "i-televisi": "televisi",
+      "i-sofa": "sofa",
+      "i-kasur": "kasur",
+      "i-sapu": "sapu",
+      "i-kunci": "kunci",
+      "i-telepon": "telepon",
+      "i-boneka": "boneka beruang",
+      "i-robot": "robot mainan",
+      "i-jam": "jam dinding",
+      "t-kucing": "Mana yang makhluk hidup?",
+      "t-ikan": "Mana yang makhluk hidup?",
+      "t-tanaman": "Mana yang bisa tumbuh makin tinggi?",
+      "t-cicak": "Mana yang makhluk hidup?",
+      "t-beo": "Mana yang perlu makan dan minum?",
+      "t-hamster": "Mana yang makhluk hidup?",
+      "t-kaktus": "Mana yang bisa tumbuh?",
+      "t-bayi": "Mana yang bernapas?",
+      "t-anjing": "Mana yang makhluk hidup?",
+      "t-beo2": "Boneka dan robot mainan mirip hewan. Mana yang benar-benar hidup?",
+      "t-ikan2": "Mana yang bergerak sendiri karena hidup?"
+    },
+    "en": {
+      "judul": "Who Is Alive at Home?",
+      "instruksi": "At home there are living things and objects. Listen, then touch the living one.",
+      "pilihan": "choices",
+      "i-kucing": "cat",
+      "i-ikan": "fish in a tank",
+      "i-tanaman": "potted plant",
+      "i-cicak": "house lizard",
+      "i-beo": "parrot",
+      "i-hamster": "hamster",
+      "i-kaktus": "cactus",
+      "i-bayi": "baby",
+      "i-anjing": "dog",
+      "i-televisi": "television",
+      "i-sofa": "sofa",
+      "i-kasur": "bed",
+      "i-sapu": "broom",
+      "i-kunci": "key",
+      "i-telepon": "telephone",
+      "i-boneka": "teddy bear",
+      "i-robot": "toy robot",
+      "i-jam": "wall clock",
+      "t-kucing": "Which one is a living thing?",
+      "t-ikan": "Which one is a living thing?",
+      "t-tanaman": "Which one can grow taller?",
+      "t-cicak": "Which one is a living thing?",
+      "t-beo": "Which one needs to eat and drink?",
+      "t-hamster": "Which one is a living thing?",
+      "t-kaktus": "Which one can grow?",
+      "t-bayi": "Which one breathes?",
+      "t-anjing": "Which one is a living thing?",
+      "t-beo2": "The teddy and the toy robot look alive. Which one is really alive?",
+      "t-ikan2": "Which one moves by itself because it is alive?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga gambar per pertanyaan: satu makhluk hidup, dua benda"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kucing",
+      "labelKey": "i-kucing",
+      "bin": "pilihan",
+      "emoji": "🐈"
+    },
+    {
+      "id": "ikan",
+      "labelKey": "i-ikan",
+      "bin": "pilihan",
+      "emoji": "🐠"
+    },
+    {
+      "id": "tanaman",
+      "labelKey": "i-tanaman",
+      "bin": "pilihan",
+      "emoji": "🪴"
+    },
+    {
+      "id": "cicak",
+      "labelKey": "i-cicak",
+      "bin": "pilihan",
+      "emoji": "🦎"
+    },
+    {
+      "id": "beo",
+      "labelKey": "i-beo",
+      "bin": "pilihan",
+      "emoji": "🦜"
+    },
+    {
+      "id": "hamster",
+      "labelKey": "i-hamster",
+      "bin": "pilihan",
+      "emoji": "🐹"
+    },
+    {
+      "id": "kaktus",
+      "labelKey": "i-kaktus",
+      "bin": "pilihan",
+      "emoji": "🌵"
+    },
+    {
+      "id": "bayi",
+      "labelKey": "i-bayi",
+      "bin": "pilihan",
+      "emoji": "👶"
+    },
+    {
+      "id": "anjing",
+      "labelKey": "i-anjing",
+      "bin": "pilihan",
+      "emoji": "🐕"
+    },
+    {
+      "id": "televisi",
+      "labelKey": "i-televisi",
+      "bin": "pilihan",
+      "emoji": "📺"
+    },
+    {
+      "id": "sofa",
+      "labelKey": "i-sofa",
+      "bin": "pilihan",
+      "emoji": "🛋️"
+    },
+    {
+      "id": "kasur",
+      "labelKey": "i-kasur",
+      "bin": "pilihan",
+      "emoji": "🛏️"
+    },
+    {
+      "id": "sapu",
+      "labelKey": "i-sapu",
+      "bin": "pilihan",
+      "emoji": "🧹"
+    },
+    {
+      "id": "kunci",
+      "labelKey": "i-kunci",
+      "bin": "pilihan",
+      "emoji": "🔑"
+    },
+    {
+      "id": "telepon",
+      "labelKey": "i-telepon",
+      "bin": "pilihan",
+      "emoji": "☎️"
+    },
+    {
+      "id": "boneka",
+      "labelKey": "i-boneka",
+      "bin": "pilihan",
+      "emoji": "🧸"
+    },
+    {
+      "id": "robot",
+      "labelKey": "i-robot",
+      "bin": "pilihan",
+      "emoji": "🤖"
+    },
+    {
+      "id": "jam",
+      "labelKey": "i-jam",
+      "bin": "pilihan",
+      "emoji": "🕰️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "kucing",
+      "promptKey": "t-kucing",
+      "choices": [
+        "kucing",
+        "boneka",
+        "sofa"
+      ],
+      "correct": "kucing"
+    },
+    {
+      "id": "ikan",
+      "promptKey": "t-ikan",
+      "choices": [
+        "ikan",
+        "televisi",
+        "kunci"
+      ],
+      "correct": "ikan"
+    },
+    {
+      "id": "tanaman",
+      "promptKey": "t-tanaman",
+      "choices": [
+        "tanaman",
+        "sapu",
+        "robot"
+      ],
+      "correct": "tanaman"
+    },
+    {
+      "id": "cicak",
+      "promptKey": "t-cicak",
+      "choices": [
+        "cicak",
+        "jam",
+        "kasur"
+      ],
+      "correct": "cicak"
+    },
+    {
+      "id": "beo",
+      "promptKey": "t-beo",
+      "choices": [
+        "beo",
+        "robot",
+        "telepon"
+      ],
+      "correct": "beo"
+    },
+    {
+      "id": "hamster",
+      "promptKey": "t-hamster",
+      "choices": [
+        "hamster",
+        "boneka",
+        "sapu"
+      ],
+      "correct": "hamster"
+    },
+    {
+      "id": "kaktus",
+      "promptKey": "t-kaktus",
+      "choices": [
+        "kaktus",
+        "kunci",
+        "televisi"
+      ],
+      "correct": "kaktus"
+    },
+    {
+      "id": "bayi",
+      "promptKey": "t-bayi",
+      "choices": [
+        "bayi",
+        "boneka",
+        "kasur"
+      ],
+      "correct": "bayi"
+    },
+    {
+      "id": "anjing",
+      "promptKey": "t-anjing",
+      "choices": [
+        "anjing",
+        "robot",
+        "jam"
+      ],
+      "correct": "anjing"
+    },
+    {
+      "id": "beo2",
+      "promptKey": "t-beo2",
+      "choices": [
+        "beo",
+        "boneka",
+        "robot"
+      ],
+      "correct": "beo"
+    },
+    {
+      "id": "ikan2",
+      "promptKey": "t-ikan2",
+      "choices": [
+        "ikan",
+        "jam",
+        "sofa"
+      ],
+      "correct": "ikan"
+    }
+  ]
+}

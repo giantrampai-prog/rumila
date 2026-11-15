@@ -1,0 +1,60 @@
+{
+  "id": "bagi-ikan-laut-adil",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.TAMBAH-KURANG-10.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagi Ikan Laut",
+      "instruksi": "Nelayan pulang membawa 2, 4, 6, atau 8 ikan laut. Bagi semuanya ke dua piring kucing sampai sama banyak.",
+      "ikan-buntal": "ikan buntal",
+      "ikan-badut": "ikan badut",
+      "ikan-tongkol": "ikan tongkol"
+    },
+    "en": {
+      "judul": "Share the Sea Fish",
+      "instruksi": "The fisher brings home 2, 4, 6, or 8 sea fish. Share them all onto the two cats' plates so both get the same.",
+      "ikan-buntal": "pufferfish",
+      "ikan-badut": "clownfish",
+      "ikan-tongkol": "tuna fish"
+    }
+  },
+  "knobs": {
+    "max": {
+      "min": 4,
+      "max": 8,
+      "default": 8,
+      "step": 2,
+      "keterangan": "jumlah ikan terbanyak yang dibagi (target genap 2/4/6/8 sampai max, tidak lebih dari 8 sesuai kompetensi)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "bagi",
+  "items": [
+    {
+      "id": "ikan-buntal",
+      "labelKey": "ikan-buntal",
+      "role": "benda",
+      "emoji": "🐡"
+    },
+    {
+      "id": "ikan-badut",
+      "labelKey": "ikan-badut",
+      "role": "benda",
+      "emoji": "🐠"
+    },
+    {
+      "id": "ikan-tongkol",
+      "labelKey": "ikan-tongkol",
+      "role": "benda",
+      "emoji": "🐟"
+    }
+  ]
+}

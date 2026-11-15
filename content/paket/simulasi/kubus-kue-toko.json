@@ -1,0 +1,136 @@
+{
+  "id": "kubus-kue-toko",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.UKUR-NONSTANDAR.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Ukur Kue dengan Kubus",
+      "instruksi": "Di toko kue, letakkan kue di atas penggaris kubus mulai dari kubus pertama, lalu sebutkan berapa kubus panjangnya.",
+      "ceri-manis": "ceri manis",
+      "permen": "permen",
+      "kue-kering": "kue kering",
+      "kue-mangkuk": "kue mangkuk",
+      "donat": "donat",
+      "croissant": "croissant",
+      "potong-kue": "potongan kue",
+      "roti-panjang": "roti panjang",
+      "kue-ulang-tahun": "kue ulang tahun",
+      "cokelat-batang": "cokelat batang"
+    },
+    "en": {
+      "judul": "Measure Treats in Cubes",
+      "instruksi": "At the cake shop, lay the treat on the cube ruler starting at the first cube, then say how many cubes long it is.",
+      "ceri-manis": "sweet cherry",
+      "permen": "candy",
+      "kue-kering": "cookie",
+      "kue-mangkuk": "cupcake",
+      "donat": "doughnut",
+      "croissant": "croissant",
+      "potong-kue": "slice of cake",
+      "roti-panjang": "baguette",
+      "kue-ulang-tahun": "birthday cake",
+      "cokelat-batang": "chocolate bar"
+    }
+  },
+  "knobs": {
+    "offset": {
+      "min": 0,
+      "max": 1,
+      "default": 0,
+      "step": 1,
+      "keterangan": "0 = kue sudah sejajar kubus pertama; 1 = kue mulai di kubus ke-2 (anak harus menggeser atau menghitung selisih)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "toko-kue",
+  "mode": "kubus",
+  "items": [
+    {
+      "id": "ceri-manis",
+      "labelKey": "ceri-manis",
+      "role": "benda",
+      "emoji": "🍒",
+      "value": 1,
+      "width": 0.4
+    },
+    {
+      "id": "permen",
+      "labelKey": "permen",
+      "role": "benda",
+      "emoji": "🍬",
+      "value": 2,
+      "width": 0.8
+    },
+    {
+      "id": "kue-kering",
+      "labelKey": "kue-kering",
+      "role": "benda",
+      "emoji": "🍪",
+      "value": 3,
+      "width": 1.2000000000000002
+    },
+    {
+      "id": "kue-mangkuk",
+      "labelKey": "kue-mangkuk",
+      "role": "benda",
+      "emoji": "🧁",
+      "value": 4,
+      "width": 1.6
+    },
+    {
+      "id": "donat",
+      "labelKey": "donat",
+      "role": "benda",
+      "emoji": "🍩",
+      "value": 5,
+      "width": 2
+    },
+    {
+      "id": "croissant",
+      "labelKey": "croissant",
+      "role": "benda",
+      "emoji": "🥐",
+      "value": 6,
+      "width": 2.4000000000000004
+    },
+    {
+      "id": "potong-kue",
+      "labelKey": "potong-kue",
+      "role": "benda",
+      "emoji": "🍰",
+      "value": 7,
+      "width": 2.8000000000000003
+    },
+    {
+      "id": "roti-panjang",
+      "labelKey": "roti-panjang",
+      "role": "benda",
+      "emoji": "🥖",
+      "value": 8,
+      "width": 3.2
+    },
+    {
+      "id": "kue-ulang-tahun",
+      "labelKey": "kue-ulang-tahun",
+      "role": "benda",
+      "emoji": "🎂",
+      "value": 9,
+      "width": 3.6
+    },
+    {
+      "id": "cokelat-batang",
+      "labelKey": "cokelat-batang",
+      "role": "benda",
+      "emoji": "🍫",
+      "value": 10,
+      "width": 4
+    }
+  ]
+}

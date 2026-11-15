@@ -1,0 +1,214 @@
+{
+  "id": "sains-bekerja-dulu-di-taman",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.TULANG-OTOT-ORGAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bagian Mana Bekerja Dulu?",
+      "instruksi": "Tokoh mau bermain di taman. Dengarkan apa yang akan ia lakukan, lalu sentuh bagian tubuh yang bekerja lebih dulu.",
+      "pilihan": "pilihan",
+      "i-kaki": "otot kaki",
+      "i-lengan": "otot lengan",
+      "i-paru": "paru-paru",
+      "i-otak": "otak",
+      "t-1": "Tokoh mau lompat tali. Bagian mana yang bekerja?",
+      "t-2": "Tokoh mau berlari mengejar layang-layang. Bagian mana yang bekerja?",
+      "t-3": "Tokoh mau naik tangga perosotan satu per satu. Bagian mana yang bekerja?",
+      "t-4": "Tokoh mau menarik napas dalam sebelum bernyanyi. Bagian mana yang bekerja?",
+      "t-5": "Tokoh mau menghirup wangi bunga dalam-dalam. Bagian mana yang bekerja?",
+      "t-6": "Tokoh mau meniup kincir angin kertas. Bagian mana yang bekerja?",
+      "t-7": "Tokoh mau mendorong ayunan teman dengan tangan. Bagian mana yang bekerja?",
+      "t-8": "Tokoh mau bergelantungan di palang taman. Bagian mana yang bekerja?",
+      "t-9": "Tokoh mau mengangkat ember berisi pasir. Bagian mana yang bekerja?",
+      "t-10": "Tokoh mau menghitung bunga di taman. Bagian mana yang bekerja?",
+      "t-11": "Tokoh mau mengingat jalan pulang dari taman. Bagian mana yang bekerja?"
+    },
+    "en": {
+      "judul": "Which Part Works First?",
+      "instruksi": "The character wants to play in the park. Listen to what it will do, then touch the body part that works first.",
+      "pilihan": "choices",
+      "i-kaki": "leg muscles",
+      "i-lengan": "arm muscles",
+      "i-paru": "lungs",
+      "i-otak": "brain",
+      "t-1": "The character wants to skip rope. Which part works?",
+      "t-2": "The character wants to run after a kite. Which part works?",
+      "t-3": "The character wants to climb the slide steps one by one. Which part works?",
+      "t-4": "The character wants to take a deep breath before singing. Which part works?",
+      "t-5": "The character wants to breathe in a flower's smell deeply. Which part works?",
+      "t-6": "The character wants to blow a paper pinwheel. Which part works?",
+      "t-7": "The character wants to push a friend's swing with its hands. Which part works?",
+      "t-8": "The character wants to hang from the monkey bars. Which part works?",
+      "t-9": "The character wants to lift a bucket of sand. Which part works?",
+      "t-10": "The character wants to count the flowers in the park. Which part works?",
+      "t-11": "The character wants to remember the way home from the park. Which part works?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah bagian tubuh per pertanyaan: 3 → 4 (otot kaki, otot lengan, paru-paru, otak)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kaki",
+      "labelKey": "i-kaki",
+      "bin": "pilihan",
+      "emoji": "🦵"
+    },
+    {
+      "id": "lengan",
+      "labelKey": "i-lengan",
+      "bin": "pilihan",
+      "emoji": "💪"
+    },
+    {
+      "id": "paru",
+      "labelKey": "i-paru",
+      "bin": "pilihan",
+      "emoji": "🫁"
+    },
+    {
+      "id": "otak",
+      "labelKey": "i-otak",
+      "bin": "pilihan",
+      "emoji": "🧠"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "kaki",
+        "paru",
+        "otak"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "kaki",
+        "lengan",
+        "otak"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "kaki",
+        "paru",
+        "otak",
+        "lengan"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "paru",
+        "kaki",
+        "lengan"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "paru",
+        "lengan",
+        "otak"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "paru",
+        "kaki",
+        "otak",
+        "lengan"
+      ],
+      "correct": "paru"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "lengan",
+        "paru",
+        "otak"
+      ],
+      "correct": "lengan"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "lengan",
+        "paru",
+        "otak",
+        "kaki"
+      ],
+      "correct": "lengan"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "lengan",
+        "kaki",
+        "paru"
+      ],
+      "correct": "lengan"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "otak",
+        "kaki",
+        "paru"
+      ],
+      "correct": "otak"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "otak",
+        "lengan",
+        "paru",
+        "kaki"
+      ],
+      "correct": "otak"
+    }
+  ]
+}

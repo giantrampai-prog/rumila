@@ -1,0 +1,264 @@
+{
+  "id": "sains-senter-bola-dunia",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Senter dan Bola Dunia",
+      "instruksi": "Robot menyorot bola dunia dengan senter seperti Matahari. Sisi yang kena cahaya sedang siang. Dengarkan, lalu sentuh jawabannya.",
+      "pilihan": "pilihan",
+      "i-layang": "anak bermain layang-layang",
+      "i-sekolah": "anak berangkat sekolah",
+      "i-jemur": "ibu menjemur baju",
+      "i-tidur": "anak tidur lelap",
+      "i-bintang": "langit penuh bintang",
+      "i-lampu": "lampu jalan menyala",
+      "i-hadap": "diputar menghadap senter",
+      "i-jauh": "diputar ke sisi gelap",
+      "t-1": "Bola dunia diputar sampai Bali menghadap senter. Apa yang terjadi di Bali?",
+      "t-2": "Aceh kini membelakangi senter. Apa yang terlihat di langit Aceh?",
+      "t-3": "Robot memutar bola dunia sampai Pontianak kena cahaya senter. Apa yang terjadi?",
+      "t-4": "London ada di sisi bola dunia yang gelap. Apa yang dilakukan anak di London?",
+      "t-5": "Sydney menghadap senter. Apa yang dilakukan anak di Sydney?",
+      "t-6": "Riyadh membelakangi senter. Apa yang terlihat di jalan?",
+      "t-7": "Bola dunia berputar, Seoul pindah ke sisi yang kena cahaya. Apa yang terjadi?",
+      "t-8": "Manado ada di sisi gelap. Apa yang dilakukan anak di Manado?",
+      "t-9": "Palembang kena cahaya senter. Apa yang terjadi di Palembang?",
+      "t-10": "Lombok diputar menjauh dari senter. Apa yang terlihat di langit?",
+      "t-11": "Robot ingin Kupang menjadi siang. Bola dunia diputar sampai Kupang…",
+      "t-12": "Supaya anak di Dubai bisa bermain di bawah sinar matahari, Dubai diputar sampai…",
+      "t-13": "Anak di Ambon ingin melihat bintang. Ambon diputar sampai…",
+      "t-14": "Supaya Paris menjadi siang, Paris diputar sampai…"
+    },
+    "en": {
+      "judul": "Flashlight and Globe",
+      "instruksi": "The robot shines a flashlight on a globe like the Sun. The lit side has daytime. Listen, then touch the answer.",
+      "pilihan": "choices",
+      "i-layang": "children flying kites",
+      "i-sekolah": "children going to school",
+      "i-jemur": "clothes drying in the sun",
+      "i-tidur": "children fast asleep",
+      "i-bintang": "a sky full of stars",
+      "i-lampu": "street lights are on",
+      "i-hadap": "turned to face the flashlight",
+      "i-jauh": "turned to the dark side",
+      "t-1": "The globe turns until Bali faces the flashlight. What happens in Bali?",
+      "t-2": "Aceh now faces away from the flashlight. What is in the sky over Aceh?",
+      "t-3": "The robot turns the globe until Pontianak is in the flashlight's light. What happens?",
+      "t-4": "London is on the dark side of the globe. What are the children in London doing?",
+      "t-5": "Sydney faces the flashlight. What are the children in Sydney doing?",
+      "t-6": "Riyadh faces away from the flashlight. What can be seen on the streets?",
+      "t-7": "The globe turns and Seoul moves to the lit side. What happens?",
+      "t-8": "Manado is on the dark side. What are the children in Manado doing?",
+      "t-9": "Palembang is in the flashlight's light. What happens in Palembang?",
+      "t-10": "Lombok is turned away from the flashlight. What is in the sky?",
+      "t-11": "The robot wants daytime in Kupang. The globe is turned until Kupang is…",
+      "t-12": "So the children in Dubai can play in the sunshine, Dubai is turned until it is…",
+      "t-13": "The children in Ambon want to see the stars. Ambon is turned until it is…",
+      "t-14": "To make it daytime in Paris, Paris is turned until it is…"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 2,
+      "default": 2,
+      "step": 1,
+      "keterangan": "selalu 2 pilihan: kegiatan siang lawan kegiatan malam, atau menghadap lawan menjauhi senter"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "pilihan",
+      "emoji": "🪁"
+    },
+    {
+      "id": "sekolah",
+      "labelKey": "i-sekolah",
+      "bin": "pilihan",
+      "emoji": "🎒"
+    },
+    {
+      "id": "jemur",
+      "labelKey": "i-jemur",
+      "bin": "pilihan",
+      "emoji": "👕"
+    },
+    {
+      "id": "tidur",
+      "labelKey": "i-tidur",
+      "bin": "pilihan",
+      "emoji": "🛌"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "pilihan",
+      "emoji": "🌌"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "pilihan",
+      "emoji": "🌃"
+    },
+    {
+      "id": "hadap",
+      "labelKey": "i-hadap",
+      "bin": "pilihan",
+      "emoji": "🔦"
+    },
+    {
+      "id": "jauh",
+      "labelKey": "i-jauh",
+      "bin": "pilihan",
+      "emoji": "🌚"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "layang",
+        "tidur"
+      ],
+      "correct": "layang"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "bintang",
+        "jemur"
+      ],
+      "correct": "bintang"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "jemur",
+        "lampu"
+      ],
+      "correct": "jemur"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "tidur",
+        "sekolah"
+      ],
+      "correct": "tidur"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "sekolah",
+        "bintang"
+      ],
+      "correct": "sekolah"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "lampu",
+        "layang"
+      ],
+      "correct": "lampu"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "layang",
+        "bintang"
+      ],
+      "correct": "layang"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "tidur",
+        "jemur"
+      ],
+      "correct": "tidur"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "jemur",
+        "tidur"
+      ],
+      "correct": "jemur"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "bintang",
+        "sekolah"
+      ],
+      "correct": "bintang"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "hadap",
+        "jauh"
+      ],
+      "correct": "hadap"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "hadap",
+        "jauh"
+      ],
+      "correct": "hadap"
+    },
+    {
+      "id": "soal-13",
+      "promptKey": "t-13",
+      "choices": [
+        "jauh",
+        "hadap"
+      ],
+      "correct": "jauh"
+    },
+    {
+      "id": "soal-14",
+      "promptKey": "t-14",
+      "choices": [
+        "hadap",
+        "jauh"
+      ],
+      "correct": "hadap"
+    }
+  ]
+}

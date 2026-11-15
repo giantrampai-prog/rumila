@@ -1,0 +1,242 @@
+{
+  "id": "sains-cuaca-begini-main-apa",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.CUACA-PAKAIAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cuaca Begini, Main Apa?",
+      "instruksi": "Dengarkan cuacanya, lalu sentuh kegiatan yang paling cocok.",
+      "pilihan": "pilihan",
+      "i-layang": "main layang-layang",
+      "i-perahu": "main perahu layar mainan",
+      "i-halte": "berteduh di halte",
+      "i-buku": "membaca buku di dalam rumah",
+      "i-puzzle": "main puzzle di dalam rumah",
+      "i-sepeda": "bersepeda di taman",
+      "i-bola": "main bola di lapangan",
+      "i-pasir": "main pasir di pantai",
+      "t-cerah1": "Langit cerah, tidak ada angin. Main apa yang cocok?",
+      "t-cerah2": "Lapangan kering dan matahari bersinar. Main apa?",
+      "t-cerah3": "Pantai cerah dan hangat, tidak hujan. Main apa?",
+      "t-cerah4": "Siang cerah, jalan di taman kering. Main apa?",
+      "t-hujan1": "Hujan deras turun. Apa yang sebaiknya dilakukan?",
+      "t-hujan2": "Hujan dan petir di luar. Kegiatan apa yang cocok?",
+      "t-hujan3": "Hujan seharian, semua anak di dalam rumah. Main apa?",
+      "t-hujan4": "Tiba-tiba hujan saat pulang sekolah. Apa yang dilakukan?",
+      "t-angin1": "Angin bertiup kencang dan tidak hujan. Main apa?",
+      "t-angin2": "Angin kencang bertiup di kolam taman. Main apa yang cocok?",
+      "t-angin3": "Daun-daun beterbangan tertiup angin di lapangan. Main apa?"
+    },
+    "en": {
+      "judul": "This Weather, What Shall We Do?",
+      "instruksi": "Listen to the weather, then touch the activity that fits best.",
+      "pilihan": "choices",
+      "i-layang": "fly a kite",
+      "i-perahu": "sail a toy sailboat",
+      "i-halte": "take shelter at the bus stop",
+      "i-buku": "read a book indoors",
+      "i-puzzle": "do a puzzle indoors",
+      "i-sepeda": "ride a bike in the park",
+      "i-bola": "play football on the field",
+      "i-pasir": "play in the sand at the beach",
+      "t-cerah1": "Clear sky, no wind at all. What fits?",
+      "t-cerah2": "The field is dry and the sun is shining. What shall we play?",
+      "t-cerah3": "The beach is sunny and warm, no rain. What shall we play?",
+      "t-cerah4": "A sunny afternoon, the park paths are dry. What shall we do?",
+      "t-hujan1": "Heavy rain is falling. What should we do?",
+      "t-hujan2": "Rain and lightning outside. Which activity fits?",
+      "t-hujan3": "It rains all day and everyone stays inside. What shall we play?",
+      "t-hujan4": "Suddenly it rains on the way home from school. What do we do?",
+      "t-angin1": "The wind is strong and it isn't raining. What shall we play?",
+      "t-angin2": "A strong wind blows over the park pond. What fits?",
+      "t-angin3": "Leaves fly in the wind over the field. What shall we play?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga kegiatan per pertanyaan"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "layang",
+      "labelKey": "i-layang",
+      "bin": "pilihan",
+      "emoji": "🪁"
+    },
+    {
+      "id": "perahu",
+      "labelKey": "i-perahu",
+      "bin": "pilihan",
+      "emoji": "⛵"
+    },
+    {
+      "id": "halte",
+      "labelKey": "i-halte",
+      "bin": "pilihan",
+      "emoji": "🚏"
+    },
+    {
+      "id": "buku",
+      "labelKey": "i-buku",
+      "bin": "pilihan",
+      "emoji": "📖"
+    },
+    {
+      "id": "puzzle",
+      "labelKey": "i-puzzle",
+      "bin": "pilihan",
+      "emoji": "🧩"
+    },
+    {
+      "id": "sepeda",
+      "labelKey": "i-sepeda",
+      "bin": "pilihan",
+      "emoji": "🚲"
+    },
+    {
+      "id": "bola",
+      "labelKey": "i-bola",
+      "bin": "pilihan",
+      "emoji": "⚽"
+    },
+    {
+      "id": "pasir",
+      "labelKey": "i-pasir",
+      "bin": "pilihan",
+      "emoji": "🏖️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "cerah1",
+      "promptKey": "t-cerah1",
+      "choices": [
+        "sepeda",
+        "layang",
+        "halte"
+      ],
+      "correct": "sepeda"
+    },
+    {
+      "id": "cerah2",
+      "promptKey": "t-cerah2",
+      "choices": [
+        "bola",
+        "halte",
+        "puzzle"
+      ],
+      "correct": "bola"
+    },
+    {
+      "id": "cerah3",
+      "promptKey": "t-cerah3",
+      "choices": [
+        "pasir",
+        "halte",
+        "buku"
+      ],
+      "correct": "pasir"
+    },
+    {
+      "id": "cerah4",
+      "promptKey": "t-cerah4",
+      "choices": [
+        "sepeda",
+        "halte",
+        "buku"
+      ],
+      "correct": "sepeda"
+    },
+    {
+      "id": "hujan1",
+      "promptKey": "t-hujan1",
+      "choices": [
+        "halte",
+        "layang",
+        "sepeda"
+      ],
+      "correct": "halte"
+    },
+    {
+      "id": "hujan2",
+      "promptKey": "t-hujan2",
+      "choices": [
+        "buku",
+        "bola",
+        "layang"
+      ],
+      "correct": "buku"
+    },
+    {
+      "id": "hujan3",
+      "promptKey": "t-hujan3",
+      "choices": [
+        "puzzle",
+        "pasir",
+        "sepeda"
+      ],
+      "correct": "puzzle"
+    },
+    {
+      "id": "hujan4",
+      "promptKey": "t-hujan4",
+      "choices": [
+        "halte",
+        "pasir",
+        "bola"
+      ],
+      "correct": "halte"
+    },
+    {
+      "id": "angin1",
+      "promptKey": "t-angin1",
+      "choices": [
+        "layang",
+        "halte",
+        "puzzle"
+      ],
+      "correct": "layang"
+    },
+    {
+      "id": "angin2",
+      "promptKey": "t-angin2",
+      "choices": [
+        "perahu",
+        "halte",
+        "buku"
+      ],
+      "correct": "perahu"
+    },
+    {
+      "id": "angin3",
+      "promptKey": "t-angin3",
+      "choices": [
+        "layang",
+        "buku",
+        "halte"
+      ],
+      "correct": "layang"
+    }
+  ]
+}

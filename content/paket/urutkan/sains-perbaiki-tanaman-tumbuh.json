@@ -1,0 +1,415 @@
+{
+  "id": "sains-perbaiki-tanaman-tumbuh",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.BAGIAN-TUMBUHAN.04"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tanaman Pot yang Tertukar",
+      "instruksi": "Gambar pertumbuhan tanaman di pot ada yang tertukar. Tukar supaya urut: biji, tunas, berdaun, berbunga.",
+      "s-cabai": "Cabai tumbuh",
+      "cabai-biji": "biji cabai",
+      "cabai-tunas": "tunas cabai",
+      "cabai-daun": "cabai berdaun",
+      "cabai-bunga": "cabai berbunga putih",
+      "s-tomat": "Tomat tumbuh",
+      "tomat-biji": "biji tomat",
+      "tomat-tunas": "tunas tomat",
+      "tomat-daun": "tomat berdaun",
+      "tomat-bunga": "tomat berbunga kuning",
+      "s-terung": "Terung tumbuh",
+      "terung-biji": "biji terung",
+      "terung-tunas": "tunas terung",
+      "terung-daun": "terung berdaun",
+      "terung-bunga": "terung berbunga ungu",
+      "s-mentimun": "Mentimun tumbuh",
+      "mentimun-biji": "biji mentimun",
+      "mentimun-tunas": "tunas mentimun",
+      "mentimun-daun": "mentimun berdaun",
+      "mentimun-bunga": "mentimun berbunga kuning",
+      "s-labu": "Labu tumbuh",
+      "labu-biji": "biji labu",
+      "labu-tunas": "tunas labu",
+      "labu-daun": "labu berdaun",
+      "labu-bunga": "labu berbunga besar",
+      "s-semangka": "Semangka tumbuh",
+      "semangka-biji": "biji semangka",
+      "semangka-tunas": "tunas semangka",
+      "semangka-daun": "semangka berdaun",
+      "semangka-bunga": "semangka berbunga kuning",
+      "s-kacangpanjang": "Kacang panjang tumbuh",
+      "kacangpanjang-biji": "biji kacang panjang",
+      "kacangpanjang-tunas": "tunas kacang panjang",
+      "kacangpanjang-daun": "kacang panjang berdaun",
+      "kacangpanjang-bunga": "kacang panjang berbunga ungu",
+      "s-buncis": "Buncis tumbuh",
+      "buncis-biji": "biji buncis",
+      "buncis-tunas": "tunas buncis",
+      "buncis-daun": "buncis berdaun",
+      "buncis-bunga": "buncis berbunga putih",
+      "s-kacanghijau": "Kacang hijau tumbuh",
+      "kacanghijau-biji": "biji kacang hijau",
+      "kacanghijau-tunas": "tunas kacang hijau",
+      "kacanghijau-daun": "kacang hijau berdaun",
+      "kacanghijau-bunga": "kacang hijau berbunga kuning",
+      "s-pepaya": "Pepaya tumbuh",
+      "pepaya-biji": "biji pepaya",
+      "pepaya-tunas": "tunas pepaya",
+      "pepaya-daun": "pepaya berdaun",
+      "pepaya-bunga": "pepaya berbunga putih"
+    },
+    "en": {
+      "judul": "Mixed-Up Pot Plants",
+      "instruksi": "Two growing pictures are swapped. Swap them back: seed, sprout, leaves, flower.",
+      "s-cabai": "Chilli grows",
+      "cabai-biji": "chilli seed",
+      "cabai-tunas": "chilli sprout",
+      "cabai-daun": "chilli with leaves",
+      "cabai-bunga": "chilli with white flowers",
+      "s-tomat": "Tomato grows",
+      "tomat-biji": "tomato seed",
+      "tomat-tunas": "tomato sprout",
+      "tomat-daun": "tomato with leaves",
+      "tomat-bunga": "tomato with yellow flowers",
+      "s-terung": "Eggplant grows",
+      "terung-biji": "eggplant seed",
+      "terung-tunas": "eggplant sprout",
+      "terung-daun": "eggplant with leaves",
+      "terung-bunga": "eggplant with purple flowers",
+      "s-mentimun": "Cucumber grows",
+      "mentimun-biji": "cucumber seed",
+      "mentimun-tunas": "cucumber sprout",
+      "mentimun-daun": "cucumber with leaves",
+      "mentimun-bunga": "cucumber with yellow flowers",
+      "s-labu": "Pumpkin grows",
+      "labu-biji": "pumpkin seed",
+      "labu-tunas": "pumpkin sprout",
+      "labu-daun": "pumpkin with leaves",
+      "labu-bunga": "pumpkin with big flowers",
+      "s-semangka": "Watermelon grows",
+      "semangka-biji": "watermelon seed",
+      "semangka-tunas": "watermelon sprout",
+      "semangka-daun": "watermelon with leaves",
+      "semangka-bunga": "watermelon with yellow flowers",
+      "s-kacangpanjang": "Long bean grows",
+      "kacangpanjang-biji": "long bean seed",
+      "kacangpanjang-tunas": "long bean sprout",
+      "kacangpanjang-daun": "long bean with leaves",
+      "kacangpanjang-bunga": "long bean with purple flowers",
+      "s-buncis": "Green bean grows",
+      "buncis-biji": "green bean seed",
+      "buncis-tunas": "green bean sprout",
+      "buncis-daun": "green bean with leaves",
+      "buncis-bunga": "green bean with white flowers",
+      "s-kacanghijau": "Mung bean grows",
+      "kacanghijau-biji": "mung bean seed",
+      "kacanghijau-tunas": "mung bean sprout",
+      "kacanghijau-daun": "mung bean with leaves",
+      "kacanghijau-bunga": "mung bean with yellow flowers",
+      "s-pepaya": "Papaya grows",
+      "pepaya-biji": "papaya seed",
+      "pepaya-tunas": "papaya sprout",
+      "pepaya-daun": "papaya with leaves",
+      "pepaya-bunga": "papaya with white flowers"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat gambar: biji, tunas, berdaun, berbunga; satu pasang tertukar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "cabai",
+      "titleKey": "s-cabai",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "cabai-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "cabai-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "cabai-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "cabai-bunga",
+          "emoji": "🌼",
+          "color": "#ffffff"
+        }
+      ]
+    },
+    {
+      "id": "tomat",
+      "titleKey": "s-tomat",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "tomat-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "tomat-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "tomat-daun",
+          "emoji": "🪴"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "tomat-bunga",
+          "emoji": "🌼",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "terung",
+      "titleKey": "s-terung",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "terung-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "terung-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "terung-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "terung-bunga",
+          "emoji": "🌸",
+          "color": "#9575cd"
+        }
+      ]
+    },
+    {
+      "id": "mentimun",
+      "titleKey": "s-mentimun",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "mentimun-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "mentimun-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "mentimun-daun",
+          "emoji": "🪴"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "mentimun-bunga",
+          "emoji": "🌼",
+          "color": "#ffeb3b"
+        }
+      ]
+    },
+    {
+      "id": "labu",
+      "titleKey": "s-labu",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "labu-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "labu-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "labu-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "labu-bunga",
+          "emoji": "🌼",
+          "color": "#fbc02d"
+        }
+      ]
+    },
+    {
+      "id": "semangka",
+      "titleKey": "s-semangka",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "semangka-biji",
+          "emoji": "🌰",
+          "scale": 0.6
+        },
+        {
+          "id": "tunas",
+          "labelKey": "semangka-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "semangka-daun",
+          "emoji": "🪴"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "semangka-bunga",
+          "emoji": "🌼",
+          "color": "#fff176"
+        }
+      ]
+    },
+    {
+      "id": "kacangpanjang",
+      "titleKey": "s-kacangpanjang",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacangpanjang-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "tunas",
+          "labelKey": "kacangpanjang-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "kacangpanjang-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacangpanjang-bunga",
+          "emoji": "🌸",
+          "color": "#b39ddb"
+        }
+      ]
+    },
+    {
+      "id": "buncis",
+      "titleKey": "s-buncis",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "buncis-biji",
+          "emoji": "🫘"
+        },
+        {
+          "id": "tunas",
+          "labelKey": "buncis-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "buncis-daun",
+          "emoji": "🪴"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "buncis-bunga",
+          "emoji": "🌸",
+          "color": "#f5f5f5"
+        }
+      ]
+    },
+    {
+      "id": "kacanghijau",
+      "titleKey": "s-kacanghijau",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "kacanghijau-biji",
+          "emoji": "🫘",
+          "color": "#66bb6a"
+        },
+        {
+          "id": "tunas",
+          "labelKey": "kacanghijau-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "kacanghijau-daun",
+          "emoji": "🌿"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "kacanghijau-bunga",
+          "emoji": "🌼",
+          "color": "#fdd835"
+        }
+      ]
+    },
+    {
+      "id": "pepaya",
+      "titleKey": "s-pepaya",
+      "steps": [
+        {
+          "id": "biji",
+          "labelKey": "pepaya-biji",
+          "shape": "circle",
+          "color": "#212121",
+          "scale": 0.4
+        },
+        {
+          "id": "tunas",
+          "labelKey": "pepaya-tunas",
+          "emoji": "🌱"
+        },
+        {
+          "id": "daun",
+          "labelKey": "pepaya-daun",
+          "emoji": "🪴"
+        },
+        {
+          "id": "bunga",
+          "labelKey": "pepaya-bunga",
+          "emoji": "🌼",
+          "color": "#fffde7"
+        }
+      ]
+    }
+  ]
+}

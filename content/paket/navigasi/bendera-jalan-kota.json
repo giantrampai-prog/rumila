@@ -1,0 +1,468 @@
+{
+  "id": "bendera-jalan-kota",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.DEKOMPOSISI.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Dua Rak Lewat Bendera",
+      "instruksi": "Jalan ke bintang di kota ini berbelok melewati gedung, dan rak cuma muat empat blok: pilih petak bendera, lalu buat program ke bendera dan dari bendera ke bintang."
+    },
+    "en": {
+      "judul": "Two Racks via the Flag",
+      "instruksi": "The road to the star winds around city buildings, and the rack holds only four blocks: choose a flag square, then program to the flag and from the flag to the star."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 6,
+      "max": 7,
+      "default": 7,
+      "step": 1,
+      "keterangan": "panjang jalur: 6 → 7 perintah dengan gedung yang memaksa belok; tiap bagian ≤ 4 blok termasuk bendera"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "kota",
+  "execMode": "program",
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan",
+    "bendera"
+  ],
+  "grids": [
+    {
+      "id": "gedung-di-tengah",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "gedung-di-tengah-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 2,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "gedung-di-tengah-putar-kanan",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 2,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "dua-gedung-menghadang",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "dua-gedung-menghadang-cermin-datar",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 4,
+        "y": 3,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "dua-gedung-menghadang-putar-kanan",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "turun-lalu-belok",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 4
+    },
+    {
+      "id": "turun-lalu-belok-cermin-datar",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 3,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 0,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 4
+    },
+    {
+      "id": "turun-lalu-belok-putar-kanan",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "rackSlots": 4
+    },
+    {
+      "id": "memutar-gedung",
+      "w": 6,
+      "h": 3,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "memutar-gedung-cermin-datar",
+      "w": 6,
+      "h": 3,
+      "start": {
+        "x": 5,
+        "y": 1,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "memutar-gedung-putar-kanan",
+      "w": 3,
+      "h": 6,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "jalan-panjang-naik",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "jalan-panjang-naik-cermin-datar",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "jalan-panjang-naik-putar-kanan",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "belok-dua-kali-kota",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 3,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 1,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "belok-dua-kali-kota-cermin-datar",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    },
+    {
+      "id": "belok-dua-kali-kota-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "rackSlots": 4
+    }
+  ]
+}

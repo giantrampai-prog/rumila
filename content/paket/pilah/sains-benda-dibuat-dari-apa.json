@@ -1,0 +1,174 @@
+{
+  "id": "sains-benda-dibuat-dari-apa",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.BAHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bahan Mana yang Cocok?",
+      "instruksi": "Robot membangun barang-barang di halaman. Taruh tiap benda ke bahan yang paling cocok untuknya: kayu, logam, kaca, atau kain.",
+      "b-kayu": "kayu",
+      "b-logam": "logam",
+      "b-kaca": "kaca",
+      "b-kain": "kain",
+      "i-pensil": "batang pensil",
+      "i-perahu": "perahu dayung",
+      "i-pondok": "dinding pondok",
+      "i-rel": "rel kereta",
+      "i-gembok": "gembok",
+      "i-koin": "uang koin",
+      "i-akuarium": "dinding akuarium supaya ikan terlihat",
+      "i-kacamobil": "kaca depan mobil",
+      "i-teropong": "lensa teropong",
+      "i-tenda": "tenda kemah",
+      "i-kaoskaki": "kaus kaki",
+      "i-layar": "layar perahu"
+    },
+    "en": {
+      "judul": "Which Material Fits?",
+      "instruksi": "The robot is building things in the yard. Put each thing with the material that suits it best: wood, metal, glass, or cloth.",
+      "b-kayu": "wood",
+      "b-logam": "metal",
+      "b-kaca": "glass",
+      "b-kain": "cloth",
+      "i-pensil": "pencil body",
+      "i-perahu": "rowing boat",
+      "i-pondok": "hut walls",
+      "i-rel": "train tracks",
+      "i-gembok": "padlock",
+      "i-koin": "coins",
+      "i-akuarium": "fish tank walls so the fish can be seen",
+      "i-kacamobil": "car windscreen",
+      "i-teropong": "telescope lens",
+      "i-tenda": "camping tent",
+      "i-kaoskaki": "socks",
+      "i-layar": "boat sail"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah bahan: 3 (kayu, logam, kaca) → 4 (tambah kain)"
+    },
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah benda per putaran: 3 → 6"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "kayu",
+      "labelKey": "b-kayu",
+      "emoji": "🪵",
+      "color": "#d7ccc8"
+    },
+    {
+      "id": "logam",
+      "labelKey": "b-logam",
+      "emoji": "🔩",
+      "color": "#cfd8dc"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "b-kaca",
+      "emoji": "🔍",
+      "color": "#e1f5fe"
+    },
+    {
+      "id": "kain",
+      "labelKey": "b-kain",
+      "emoji": "🧵",
+      "color": "#f8bbd0"
+    }
+  ],
+  "items": [
+    {
+      "id": "pensil",
+      "labelKey": "i-pensil",
+      "bin": "kayu",
+      "emoji": "✏️"
+    },
+    {
+      "id": "perahu",
+      "labelKey": "i-perahu",
+      "bin": "kayu",
+      "emoji": "🛶"
+    },
+    {
+      "id": "pondok",
+      "labelKey": "i-pondok",
+      "bin": "kayu",
+      "emoji": "🛖"
+    },
+    {
+      "id": "rel",
+      "labelKey": "i-rel",
+      "bin": "logam",
+      "emoji": "🛤️"
+    },
+    {
+      "id": "gembok",
+      "labelKey": "i-gembok",
+      "bin": "logam",
+      "emoji": "🔒"
+    },
+    {
+      "id": "koin",
+      "labelKey": "i-koin",
+      "bin": "logam",
+      "emoji": "🪙"
+    },
+    {
+      "id": "akuarium",
+      "labelKey": "i-akuarium",
+      "bin": "kaca",
+      "emoji": "🐠"
+    },
+    {
+      "id": "kacamobil",
+      "labelKey": "i-kacamobil",
+      "bin": "kaca",
+      "emoji": "🚗"
+    },
+    {
+      "id": "teropong",
+      "labelKey": "i-teropong",
+      "bin": "kaca",
+      "emoji": "🔭"
+    },
+    {
+      "id": "tenda",
+      "labelKey": "i-tenda",
+      "bin": "kain",
+      "emoji": "⛺"
+    },
+    {
+      "id": "kaoskaki",
+      "labelKey": "i-kaoskaki",
+      "bin": "kain",
+      "emoji": "🧦"
+    },
+    {
+      "id": "layar",
+      "labelKey": "i-layar",
+      "bin": "kain",
+      "emoji": "⛵"
+    }
+  ],
+  "pilihan": []
+}

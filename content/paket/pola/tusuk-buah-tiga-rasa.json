@@ -1,0 +1,104 @@
+{
+  "id": "tusuk-buah-tiga-rasa",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pola",
+  "competencyIds": [
+    "KODE.TKA.POLA-ABC.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tusuk Buah Tiga Rasa",
+      "instruksi": "Pilih tiga buah, lalu tusuk berulang dengan urutan yang sama sampai tusuknya penuh.",
+      "anggur": "anggur",
+      "semangka": "semangka",
+      "jeruk": "jeruk",
+      "nanas": "nanas",
+      "kiwi": "kiwi",
+      "ceri": "ceri",
+      "melon": "melon",
+      "apel": "apel"
+    },
+    "en": {
+      "judul": "Three-Fruit Skewer",
+      "instruksi": "Pick three fruits, then thread them again and again in the same order until the skewer is full.",
+      "anggur": "grapes",
+      "semangka": "watermelon",
+      "jeruk": "orange",
+      "nanas": "pineapple",
+      "kiwi": "kiwi",
+      "ceri": "cherries",
+      "melon": "melon",
+      "apel": "apple"
+    }
+  },
+  "knobs": {
+    "slots": {
+      "min": 6,
+      "max": 9,
+      "default": 6,
+      "step": 3,
+      "keterangan": "jumlah potong buah di tusuk: 6 → 9 (kelipatan 3 supaya tiga buah berulang penuh)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "dapur",
+  "mode": "cipta",
+  "unitLen": 3,
+  "items": [
+    {
+      "labelKey": "anggur",
+      "id": "anggur",
+      "emoji": "🍇"
+    },
+    {
+      "labelKey": "semangka",
+      "id": "semangka",
+      "emoji": "🍉"
+    },
+    {
+      "labelKey": "jeruk",
+      "id": "jeruk",
+      "emoji": "🍊"
+    },
+    {
+      "labelKey": "nanas",
+      "id": "nanas",
+      "emoji": "🍍"
+    },
+    {
+      "labelKey": "kiwi",
+      "id": "kiwi",
+      "emoji": "🥝"
+    },
+    {
+      "labelKey": "ceri",
+      "id": "ceri",
+      "emoji": "🍒"
+    },
+    {
+      "labelKey": "melon",
+      "id": "melon",
+      "emoji": "🍈"
+    },
+    {
+      "labelKey": "apel",
+      "id": "apel",
+      "emoji": "🍎"
+    }
+  ],
+  "patterns": [],
+  "nada": {
+    "anggur": "C4",
+    "semangka": "E4",
+    "jeruk": "G4",
+    "nanas": "A4",
+    "kiwi": "D4",
+    "ceri": "F4",
+    "melon": "B4",
+    "apel": "C5"
+  }
+}

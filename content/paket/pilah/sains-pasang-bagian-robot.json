@@ -1,0 +1,243 @@
+{
+  "id": "sains-pasang-bagian-robot",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.TUBUH-PANCAINDRA.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Pasang Tubuh Robot",
+      "instruksi": "Robot belum lengkap. Dengarkan, lalu sentuh bagian tubuh yang harus dipasang.",
+      "pilihan": "pilihan",
+      "i-kepala": "kepala robot",
+      "i-badan": "badan robot",
+      "i-tangan": "tangan robot",
+      "i-kaki": "kaki robot",
+      "i-roda": "roda gigi",
+      "i-baterai": "baterai",
+      "i-obeng": "obeng",
+      "i-lampu": "lampu",
+      "t-kepala1": "Robot belum punya kepala. Pasang yang mana?",
+      "t-kepala2": "Di atas badan robot masih kosong. Pasang bagian tempat mata dan mulut.",
+      "t-kepala3": "Robot mau melihat dan berbicara. Pasang bagian paling atas.",
+      "t-badan1": "Robot belum punya badan. Pasang yang mana?",
+      "t-badan2": "Bagian tengah robot masih kosong, di antara kepala dan kaki.",
+      "t-tangan1": "Robot belum punya tangan. Pasang yang mana?",
+      "t-tangan2": "Robot mau memegang bola, tapi sisi badannya masih kosong.",
+      "t-tangan3": "Robot mau melambai. Pasang bagian di kiri dan kanan badan.",
+      "t-kaki1": "Robot belum punya kaki. Pasang yang mana?",
+      "t-kaki2": "Robot mau berjalan. Pasang bagian paling bawah.",
+      "t-kaki3": "Robot mau melompat, tapi di bawah badannya masih kosong."
+    },
+    "en": {
+      "judul": "Build the Robot's Body",
+      "instruksi": "The robot is not finished. Listen, then touch the body part it needs.",
+      "pilihan": "choices",
+      "i-kepala": "robot head",
+      "i-badan": "robot body",
+      "i-tangan": "robot arm",
+      "i-kaki": "robot leg",
+      "i-roda": "gear",
+      "i-baterai": "battery",
+      "i-obeng": "screwdriver",
+      "i-lampu": "light bulb",
+      "t-kepala1": "The robot has no head yet. Which one goes on?",
+      "t-kepala2": "The top of the robot's body is empty. Put on the part with the eyes and mouth.",
+      "t-kepala3": "The robot wants to see and talk. Put on the very top part.",
+      "t-badan1": "The robot has no body yet. Which one goes on?",
+      "t-badan2": "The middle of the robot is empty, between the head and the legs.",
+      "t-tangan1": "The robot has no arms yet. Which one goes on?",
+      "t-tangan2": "The robot wants to hold a ball, but the sides of its body are empty.",
+      "t-tangan3": "The robot wants to wave. Put on the parts at the left and right of the body.",
+      "t-kaki1": "The robot has no legs yet. Which one goes on?",
+      "t-kaki2": "The robot wants to walk. Put on the very bottom part.",
+      "t-kaki3": "The robot wants to jump, but below its body is empty."
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga pilihan per pertanyaan: satu bagian tubuh benar, sisanya bagian lain atau alat"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "lab-kode",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "kepala",
+      "labelKey": "i-kepala",
+      "bin": "pilihan",
+      "emoji": "🤖"
+    },
+    {
+      "id": "badan",
+      "labelKey": "i-badan",
+      "bin": "pilihan",
+      "shape": "rect",
+      "color": "#90a4ae"
+    },
+    {
+      "id": "tangan",
+      "labelKey": "i-tangan",
+      "bin": "pilihan",
+      "emoji": "🦾"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "i-kaki",
+      "bin": "pilihan",
+      "emoji": "🦿"
+    },
+    {
+      "id": "roda",
+      "labelKey": "i-roda",
+      "bin": "pilihan",
+      "emoji": "⚙️"
+    },
+    {
+      "id": "baterai",
+      "labelKey": "i-baterai",
+      "bin": "pilihan",
+      "emoji": "🔋"
+    },
+    {
+      "id": "obeng",
+      "labelKey": "i-obeng",
+      "bin": "pilihan",
+      "emoji": "🪛"
+    },
+    {
+      "id": "lampu",
+      "labelKey": "i-lampu",
+      "bin": "pilihan",
+      "emoji": "💡"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "kepala1",
+      "promptKey": "t-kepala1",
+      "choices": [
+        "kepala",
+        "baterai",
+        "kaki"
+      ],
+      "correct": "kepala"
+    },
+    {
+      "id": "kepala2",
+      "promptKey": "t-kepala2",
+      "choices": [
+        "kepala",
+        "tangan",
+        "obeng"
+      ],
+      "correct": "kepala"
+    },
+    {
+      "id": "kepala3",
+      "promptKey": "t-kepala3",
+      "choices": [
+        "kepala",
+        "kaki",
+        "roda"
+      ],
+      "correct": "kepala"
+    },
+    {
+      "id": "badan1",
+      "promptKey": "t-badan1",
+      "choices": [
+        "badan",
+        "roda",
+        "kepala"
+      ],
+      "correct": "badan"
+    },
+    {
+      "id": "badan2",
+      "promptKey": "t-badan2",
+      "choices": [
+        "badan",
+        "lampu",
+        "tangan"
+      ],
+      "correct": "badan"
+    },
+    {
+      "id": "tangan1",
+      "promptKey": "t-tangan1",
+      "choices": [
+        "tangan",
+        "baterai",
+        "kepala"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "tangan2",
+      "promptKey": "t-tangan2",
+      "choices": [
+        "tangan",
+        "kaki",
+        "roda"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "tangan3",
+      "promptKey": "t-tangan3",
+      "choices": [
+        "tangan",
+        "obeng",
+        "badan"
+      ],
+      "correct": "tangan"
+    },
+    {
+      "id": "kaki1",
+      "promptKey": "t-kaki1",
+      "choices": [
+        "kaki",
+        "lampu",
+        "kepala"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "kaki2",
+      "promptKey": "t-kaki2",
+      "choices": [
+        "kaki",
+        "tangan",
+        "baterai"
+      ],
+      "correct": "kaki"
+    },
+    {
+      "id": "kaki3",
+      "promptKey": "t-kaki3",
+      "choices": [
+        "kaki",
+        "lampu",
+        "badan"
+      ],
+      "correct": "kaki"
+    }
+  ]
+}

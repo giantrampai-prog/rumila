@@ -1,0 +1,151 @@
+{
+  "id": "sains-hitung-kaki-peternakan",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.PAUD.HEWAN-SUARA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kaki Hewan Peternakan",
+      "instruksi": "Lihat kaki hewan peternakan. Taruh ke papan dua kaki atau empat kaki.",
+      "b-dua": "dua kaki",
+      "b-empat": "empat kaki",
+      "i-kalkun": "kalkun",
+      "i-angsa": "angsa",
+      "i-jago": "ayam jago",
+      "i-merpati": "merpati",
+      "i-merak": "burung merak",
+      "i-burunghantu": "burung hantu",
+      "i-kuda": "kuda",
+      "i-kerbau": "kerbau",
+      "i-domba": "domba",
+      "i-kelinci": "kelinci",
+      "i-rusa": "rusa",
+      "i-tikus": "tikus"
+    },
+    "en": {
+      "judul": "Farm Animal Legs",
+      "instruksi": "Look at the farm animals' legs. Put each one on the two-leg or four-leg board.",
+      "b-dua": "two legs",
+      "b-empat": "four legs",
+      "i-kalkun": "turkey",
+      "i-angsa": "goose",
+      "i-jago": "rooster",
+      "i-merpati": "pigeon",
+      "i-merak": "peacock",
+      "i-burunghantu": "owl",
+      "i-kuda": "horse",
+      "i-kerbau": "water buffalo",
+      "i-domba": "sheep",
+      "i-kelinci": "rabbit",
+      "i-rusa": "deer",
+      "i-tikus": "mouse"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 2,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "peternakan",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "dua",
+      "labelKey": "b-dua",
+      "emoji": "🦶",
+      "count": 2
+    },
+    {
+      "id": "empat",
+      "labelKey": "b-empat",
+      "emoji": "🦶",
+      "count": 4
+    }
+  ],
+  "items": [
+    {
+      "id": "kalkun",
+      "labelKey": "i-kalkun",
+      "bin": "dua",
+      "emoji": "🦃"
+    },
+    {
+      "id": "angsa",
+      "labelKey": "i-angsa",
+      "bin": "dua",
+      "emoji": "🦢"
+    },
+    {
+      "id": "jago",
+      "labelKey": "i-jago",
+      "bin": "dua",
+      "emoji": "🐓"
+    },
+    {
+      "id": "merpati",
+      "labelKey": "i-merpati",
+      "bin": "dua",
+      "emoji": "🕊️"
+    },
+    {
+      "id": "merak",
+      "labelKey": "i-merak",
+      "bin": "dua",
+      "emoji": "🦚"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "dua",
+      "emoji": "🦉"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "empat",
+      "emoji": "🐎"
+    },
+    {
+      "id": "kerbau",
+      "labelKey": "i-kerbau",
+      "bin": "empat",
+      "emoji": "🐃"
+    },
+    {
+      "id": "domba",
+      "labelKey": "i-domba",
+      "bin": "empat",
+      "emoji": "🐑"
+    },
+    {
+      "id": "kelinci",
+      "labelKey": "i-kelinci",
+      "bin": "empat",
+      "emoji": "🐇"
+    },
+    {
+      "id": "rusa",
+      "labelKey": "i-rusa",
+      "bin": "empat",
+      "emoji": "🦌"
+    },
+    {
+      "id": "tikus",
+      "labelKey": "i-tikus",
+      "bin": "empat",
+      "emoji": "🐁"
+    }
+  ],
+  "pilihan": []
+}

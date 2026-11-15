@@ -1,0 +1,873 @@
+{
+  "id": "cari-blok-penabrak",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "navigasi",
+  "competencyIds": [
+    "KODE.TKB.DEBUG-BANYAK.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Cari Blok Penabrak",
+      "instruksi": "Sebelum menekan jalan, baca programnya dan cari blok yang akan membuat robot menabrak dinding, lalu ganti blok itu supaya robot sampai bintang."
+    },
+    "en": {
+      "judul": "Find the Crashing Block",
+      "instruksi": "Before pressing run, read the program and find the block that will make the robot crash into a wall, then change that block so the robot reaches the star."
+    }
+  },
+  "knobs": {
+    "distance": {
+      "min": 6,
+      "max": 7,
+      "default": 6,
+      "step": 1,
+      "keterangan": "panjang jalur terpendek ke bintang (program 6–8 blok)"
+    }
+  },
+  "assets": [],
+  "generatif": false,
+  "rounds": 10,
+  "world": "lab-kode",
+  "execMode": "program",
+  "debug": true,
+  "commands": [
+    "maju",
+    "kiri",
+    "kanan"
+  ],
+  "grids": [
+    {
+      "id": "lurus-kena-dinding-atas",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "lurus-kena-dinding-atas-cermin-tegak",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "lurus-kena-dinding-atas-putar-kanan",
+      "w": 4,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belok-salah-ke-dinding",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belok-salah-ke-dinding-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 1,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belok-salah-ke-dinding-putar-kanan",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 1,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 6,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "dinding-tengah-jalan",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "dinding-tengah-jalan-cermin-tegak",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 4,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "dinding-tengah-jalan-putar-kanan",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 1,
+        "y": 4
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "tabrak-di-ujung",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 3,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 0
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "tabrak-di-ujung-cermin-tegak",
+      "w": 5,
+      "h": 4,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 3,
+          "y": 1
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "tabrak-di-ujung-putar-kanan",
+      "w": 4,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 1,
+          "y": 3
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belokan-kedua-terbalik",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 2,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belokan-kedua-terbalik-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "S"
+      },
+      "goal": {
+        "x": 2,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 2
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kiri"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "belokan-kedua-terbalik-putar-kanan",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 0,
+        "dir": "E"
+      },
+      "goal": {
+        "x": 3,
+        "y": 2
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "kanan"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "lupa-belok-ke-dinding",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 4,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 4
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "lupa-belok-ke-dinding-cermin-tegak",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 4,
+        "y": 0,
+        "dir": "W"
+      },
+      "goal": {
+        "x": 1,
+        "y": 3
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    },
+    {
+      "id": "lupa-belok-ke-dinding-putar-kanan",
+      "w": 5,
+      "h": 5,
+      "start": {
+        "x": 0,
+        "y": 4,
+        "dir": "N"
+      },
+      "goal": {
+        "x": 3,
+        "y": 1
+      },
+      "walls": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "rocks": [],
+      "optimal": 7,
+      "program": [
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        },
+        {
+          "cmd": "maju"
+        }
+      ],
+      "fixes": 1
+    }
+  ]
+}

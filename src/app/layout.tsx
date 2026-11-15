@@ -1,23 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Baloo_2, Inter, Nunito, Plus_Jakarta_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { PwaSetup } from "@/components/pwa";
 import { INTRO_SKRIP, IntroRinoya } from "@/components/intro";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+// Font ditanam dari repo (src/fonts/app, subset latin, lisensi SIL OFL) — build tidak bergantung pada unduhan
+// Google Fonts yang beberapa kali gagal di Vercel (15 Nov 2026). Semua berkas variabel.
+const jakarta = localFont({ src: "../fonts/app/PlusJakartaSans.woff2", weight: "200 800", variable: "--font-jakarta", display: "swap" });
 
 // Tema Playful (Family Launcher v2): Baloo 2 untuk judul, Nunito untuk teks.
-const baloo = Baloo_2({ variable: "--ff-baloo", subsets: ["latin"], weight: ["700", "800"] });
-const nunito = Nunito({ variable: "--ff-nunito", subsets: ["latin"], weight: ["600", "700", "800", "900"] });
+const baloo = localFont({ src: "../fonts/app/Baloo2.woff2", weight: "400 800", variable: "--ff-baloo", display: "swap" });
+const nunito = localFont({ src: "../fonts/app/Nunito.woff2", weight: "200 1000", variable: "--ff-nunito", display: "swap" });
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+const inter = localFont({ src: "../fonts/app/Inter.woff2", weight: "100 900", variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
   title: "RINOYA Academy — Rise Into Your Own Adventure",

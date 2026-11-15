@@ -1,0 +1,160 @@
+{
+  "id": "alat-ukur-hewan-laut",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "MAT.TKB.UKUR-NONSTANDAR.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alat Ukur Hewan Laut",
+      "instruksi": "Hewan laut ingin tahu ukurannya. Kalau yang ditanya panjang, pakai penggaris kubus; kalau yang ditanya berat, pakai timbangan.",
+      "cumi": "cumi-cumi",
+      "lobster": "lobster",
+      "udang": "udang",
+      "hiu": "anak hiu",
+      "ubur-ubur": "ubur-ubur",
+      "gurita": "gurita",
+      "kepiting": "kepiting",
+      "anjing-laut": "anjing laut",
+      "penguin": "penguin",
+      "ikan-buntal": "ikan buntal",
+      "berang-berang": "berang-berang",
+      "paus": "anak paus",
+      "penggaris-kubus": "penggaris kubus",
+      "timbangan": "timbangan"
+    },
+    "en": {
+      "judul": "Sea Animal Measuring Tools",
+      "instruksi": "The sea animals want to know their size. If the question is how long, use the cube ruler; if it is how heavy, use the balance scale.",
+      "cumi": "squid",
+      "lobster": "lobster",
+      "udang": "shrimp",
+      "hiu": "baby shark",
+      "ubur-ubur": "jellyfish",
+      "gurita": "octopus",
+      "kepiting": "crab",
+      "anjing-laut": "seal",
+      "penguin": "penguin",
+      "ikan-buntal": "pufferfish",
+      "berang-berang": "otter",
+      "paus": "baby whale",
+      "penggaris-kubus": "cube ruler",
+      "timbangan": "balance scale"
+    }
+  },
+  "knobs": {
+    "hewanAktif": {
+      "min": 4,
+      "max": 12,
+      "default": 12,
+      "step": 1,
+      "keterangan": "jumlah jenis hewan laut yang bisa muncul; putaran diacak"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mode": "alat",
+  "items": [
+    {
+      "id": "cumi",
+      "labelKey": "cumi",
+      "role": "hewan",
+      "emoji": "🦑",
+      "value": 1
+    },
+    {
+      "id": "lobster",
+      "labelKey": "lobster",
+      "role": "hewan",
+      "emoji": "🦞",
+      "value": 1
+    },
+    {
+      "id": "udang",
+      "labelKey": "udang",
+      "role": "hewan",
+      "emoji": "🦐",
+      "value": 1
+    },
+    {
+      "id": "hiu",
+      "labelKey": "hiu",
+      "role": "hewan",
+      "emoji": "🦈",
+      "value": 1
+    },
+    {
+      "id": "ubur-ubur",
+      "labelKey": "ubur-ubur",
+      "role": "hewan",
+      "emoji": "🪼",
+      "value": 1
+    },
+    {
+      "id": "gurita",
+      "labelKey": "gurita",
+      "role": "hewan",
+      "emoji": "🐙",
+      "value": 1
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "kepiting",
+      "role": "hewan",
+      "emoji": "🦀",
+      "value": 2
+    },
+    {
+      "id": "anjing-laut",
+      "labelKey": "anjing-laut",
+      "role": "hewan",
+      "emoji": "🦭",
+      "value": 2
+    },
+    {
+      "id": "penguin",
+      "labelKey": "penguin",
+      "role": "hewan",
+      "emoji": "🐧",
+      "value": 2
+    },
+    {
+      "id": "ikan-buntal",
+      "labelKey": "ikan-buntal",
+      "role": "hewan",
+      "emoji": "🐡",
+      "value": 2
+    },
+    {
+      "id": "berang-berang",
+      "labelKey": "berang-berang",
+      "role": "hewan",
+      "emoji": "🦦",
+      "value": 2
+    },
+    {
+      "id": "paus",
+      "labelKey": "paus",
+      "role": "hewan",
+      "emoji": "🐳",
+      "value": 2
+    },
+    {
+      "id": "penggaris-kubus",
+      "labelKey": "penggaris-kubus",
+      "role": "alat",
+      "emoji": "📏"
+    },
+    {
+      "id": "timbangan",
+      "labelKey": "timbangan",
+      "role": "alat",
+      "emoji": "⚖️"
+    }
+  ]
+}

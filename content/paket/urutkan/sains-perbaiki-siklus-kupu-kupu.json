@@ -1,0 +1,436 @@
+{
+  "id": "sains-perbaiki-siklus-kupu-kupu",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.TKA.SIKLUS-HIDUP.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Kupu-kupu di Taman Bunga",
+      "instruksi": "Gambar siklus kupu-kupu ada yang tertukar. Tukar supaya urut: telur, ulat, kepompong, kupu-kupu.",
+      "s-jeruk": "Kupu-kupu di pohon jeruk",
+      "jeruk-telur": "telur kecil di daun pohon jeruk",
+      "jeruk-ulat": "ulat makan daun pohon jeruk",
+      "jeruk-kepompong": "kepompong menggantung di pohon jeruk",
+      "jeruk-kupu": "kupu-kupu terbang dari pohon jeruk",
+      "s-kubis": "Kupu-kupu di tanaman kubis",
+      "kubis-telur": "telur kecil di daun tanaman kubis",
+      "kubis-ulat": "ulat makan daun tanaman kubis",
+      "kubis-kepompong": "kepompong menggantung di tanaman kubis",
+      "kubis-kupu": "kupu-kupu terbang dari tanaman kubis",
+      "s-sirih": "Kupu-kupu di tanaman sirih",
+      "sirih-telur": "telur kecil di daun tanaman sirih",
+      "sirih-ulat": "ulat makan daun tanaman sirih",
+      "sirih-kepompong": "kepompong menggantung di tanaman sirih",
+      "sirih-kupu": "kupu-kupu terbang dari tanaman sirih",
+      "s-pepaya": "Kupu-kupu di pohon pepaya",
+      "pepaya-telur": "telur kecil di daun pohon pepaya",
+      "pepaya-ulat": "ulat makan daun pohon pepaya",
+      "pepaya-kepompong": "kepompong menggantung di pohon pepaya",
+      "pepaya-kupu": "kupu-kupu terbang dari pohon pepaya",
+      "s-sepatu": "Kupu-kupu di kembang sepatu",
+      "sepatu-telur": "telur kecil di daun kembang sepatu",
+      "sepatu-ulat": "ulat makan daun kembang sepatu",
+      "sepatu-kepompong": "kepompong menggantung di kembang sepatu",
+      "sepatu-kupu": "kupu-kupu terbang dari kembang sepatu",
+      "s-mangga": "Kupu-kupu di pohon mangga",
+      "mangga-telur": "telur kecil di daun pohon mangga",
+      "mangga-ulat": "ulat makan daun pohon mangga",
+      "mangga-kepompong": "kepompong menggantung di pohon mangga",
+      "mangga-kupu": "kupu-kupu terbang dari pohon mangga",
+      "s-jambu": "Kupu-kupu di pohon jambu",
+      "jambu-telur": "telur kecil di daun pohon jambu",
+      "jambu-ulat": "ulat makan daun pohon jambu",
+      "jambu-kepompong": "kepompong menggantung di pohon jambu",
+      "jambu-kupu": "kupu-kupu terbang dari pohon jambu",
+      "s-kenikir": "Kupu-kupu di tanaman kenikir",
+      "kenikir-telur": "telur kecil di daun tanaman kenikir",
+      "kenikir-ulat": "ulat makan daun tanaman kenikir",
+      "kenikir-kepompong": "kepompong menggantung di tanaman kenikir",
+      "kenikir-kupu": "kupu-kupu terbang dari tanaman kenikir",
+      "s-mawar": "Kupu-kupu di semak mawar",
+      "mawar-telur": "telur kecil di daun semak mawar",
+      "mawar-ulat": "ulat makan daun semak mawar",
+      "mawar-kepompong": "kepompong menggantung di semak mawar",
+      "mawar-kupu": "kupu-kupu terbang dari semak mawar",
+      "s-sirsak": "Kupu-kupu di pohon sirsak",
+      "sirsak-telur": "telur kecil di daun pohon sirsak",
+      "sirsak-ulat": "ulat makan daun pohon sirsak",
+      "sirsak-kepompong": "kepompong menggantung di pohon sirsak",
+      "sirsak-kupu": "kupu-kupu terbang dari pohon sirsak"
+    },
+    "en": {
+      "judul": "Butterflies in the Flower Garden",
+      "instruksi": "Two butterfly pictures are swapped. Swap them back: egg, caterpillar, chrysalis, butterfly.",
+      "s-jeruk": "Butterflies on the orange tree",
+      "jeruk-telur": "tiny eggs on a orange tree leaf",
+      "jeruk-ulat": "a caterpillar eats orange tree leaves",
+      "jeruk-kepompong": "a chrysalis hangs on the orange tree",
+      "jeruk-kupu": "a butterfly flies from the orange tree",
+      "s-kubis": "Butterflies on the cabbage plant",
+      "kubis-telur": "tiny eggs on a cabbage plant leaf",
+      "kubis-ulat": "a caterpillar eats cabbage plant leaves",
+      "kubis-kepompong": "a chrysalis hangs on the cabbage plant",
+      "kubis-kupu": "a butterfly flies from the cabbage plant",
+      "s-sirih": "Butterflies on the betel vine",
+      "sirih-telur": "tiny eggs on a betel vine leaf",
+      "sirih-ulat": "a caterpillar eats betel vine leaves",
+      "sirih-kepompong": "a chrysalis hangs on the betel vine",
+      "sirih-kupu": "a butterfly flies from the betel vine",
+      "s-pepaya": "Butterflies on the papaya tree",
+      "pepaya-telur": "tiny eggs on a papaya tree leaf",
+      "pepaya-ulat": "a caterpillar eats papaya tree leaves",
+      "pepaya-kepompong": "a chrysalis hangs on the papaya tree",
+      "pepaya-kupu": "a butterfly flies from the papaya tree",
+      "s-sepatu": "Butterflies on the hibiscus bush",
+      "sepatu-telur": "tiny eggs on a hibiscus bush leaf",
+      "sepatu-ulat": "a caterpillar eats hibiscus bush leaves",
+      "sepatu-kepompong": "a chrysalis hangs on the hibiscus bush",
+      "sepatu-kupu": "a butterfly flies from the hibiscus bush",
+      "s-mangga": "Butterflies on the mango tree",
+      "mangga-telur": "tiny eggs on a mango tree leaf",
+      "mangga-ulat": "a caterpillar eats mango tree leaves",
+      "mangga-kepompong": "a chrysalis hangs on the mango tree",
+      "mangga-kupu": "a butterfly flies from the mango tree",
+      "s-jambu": "Butterflies on the guava tree",
+      "jambu-telur": "tiny eggs on a guava tree leaf",
+      "jambu-ulat": "a caterpillar eats guava tree leaves",
+      "jambu-kepompong": "a chrysalis hangs on the guava tree",
+      "jambu-kupu": "a butterfly flies from the guava tree",
+      "s-kenikir": "Butterflies on the cosmos plant",
+      "kenikir-telur": "tiny eggs on a cosmos plant leaf",
+      "kenikir-ulat": "a caterpillar eats cosmos plant leaves",
+      "kenikir-kepompong": "a chrysalis hangs on the cosmos plant",
+      "kenikir-kupu": "a butterfly flies from the cosmos plant",
+      "s-mawar": "Butterflies on the rose bush",
+      "mawar-telur": "tiny eggs on a rose bush leaf",
+      "mawar-ulat": "a caterpillar eats rose bush leaves",
+      "mawar-kepompong": "a chrysalis hangs on the rose bush",
+      "mawar-kupu": "a butterfly flies from the rose bush",
+      "s-sirsak": "Butterflies on the soursop tree",
+      "sirsak-telur": "tiny eggs on a soursop tree leaf",
+      "sirsak-ulat": "a caterpillar eats soursop tree leaves",
+      "sirsak-kepompong": "a chrysalis hangs on the soursop tree",
+      "sirsak-kupu": "a butterfly flies from the soursop tree"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 4,
+      "max": 4,
+      "default": 4,
+      "step": 1,
+      "keterangan": "empat gambar: telur, ulat, kepompong, kupu-kupu; satu pasang tertukar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "taman",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "jeruk",
+      "titleKey": "s-jeruk",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "jeruk-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "jeruk-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "jeruk-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "jeruk-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "kubis",
+      "titleKey": "s-kubis",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kubis-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "kubis-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "kubis-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "kubis-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "sirih",
+      "titleKey": "s-sirih",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "sirih-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "sirih-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "sirih-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "sirih-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "pepaya",
+      "titleKey": "s-pepaya",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "pepaya-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "pepaya-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "pepaya-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "pepaya-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "sepatu",
+      "titleKey": "s-sepatu",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "sepatu-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "sepatu-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "sepatu-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "sepatu-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "mangga",
+      "titleKey": "s-mangga",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "mangga-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "mangga-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "mangga-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "mangga-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "jambu",
+      "titleKey": "s-jambu",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "jambu-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "jambu-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "jambu-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "jambu-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "kenikir",
+      "titleKey": "s-kenikir",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "kenikir-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "kenikir-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "kenikir-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "kenikir-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "mawar",
+      "titleKey": "s-mawar",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "mawar-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "mawar-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "mawar-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "mawar-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    },
+    {
+      "id": "sirsak",
+      "titleKey": "s-sirsak",
+      "steps": [
+        {
+          "id": "telur",
+          "labelKey": "sirsak-telur",
+          "scale": 0.6,
+          "emoji": "🥚"
+        },
+        {
+          "id": "ulat",
+          "labelKey": "sirsak-ulat",
+          "emoji": "🐛"
+        },
+        {
+          "id": "kepompong",
+          "labelKey": "sirsak-kepompong",
+          "shape": "rect",
+          "color": "#8d6e63",
+          "scale": 1.1,
+          "width": 0.55
+        },
+        {
+          "id": "kupu",
+          "labelKey": "sirsak-kupu",
+          "emoji": "🦋"
+        }
+      ]
+    }
+  ]
+}

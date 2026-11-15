@@ -1,0 +1,377 @@
+{
+  "id": "sains-perbaiki-langit-hujan",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "urutkan",
+  "competencyIds": [
+    "SAINS.PAUD.SIANG-MALAM-CUACA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Langit Tertukar, Ayo Perbaiki",
+      "instruksi": "Ada dua gambar langit yang tertukar. Tukar supaya urut: cerah, mendung, lalu hujan.",
+      "s-perahu": "Perahu di sungai",
+      "perahu-cerah": "cerah, perahu berlayar",
+      "perahu-mendung": "awan gelap datang",
+      "perahu-hujan": "hujan membasahi sungai",
+      "s-jemuran": "Jemuran baju",
+      "jemuran-cerah": "cerah, baju dijemur",
+      "jemuran-mendung": "mendung, jemuran diangkat",
+      "jemuran-hujan": "hujan turun",
+      "s-sawah": "Di sawah",
+      "sawah-cerah": "cerah di sawah",
+      "sawah-mendung": "awan tebal di atas sawah",
+      "sawah-hujan": "hujan mengairi sawah",
+      "s-sekolah": "Pulang sekolah",
+      "sekolah-cerah": "cerah saat berangkat",
+      "sekolah-mendung": "langit jadi gelap",
+      "sekolah-hujan": "hujan, payung dibuka",
+      "s-bunga": "Kebun bunga",
+      "bunga-cerah": "bunga disinari matahari",
+      "bunga-mendung": "awan menutup matahari",
+      "bunga-hujan": "hujan menyiram bunga",
+      "s-pantai": "Main di pantai",
+      "pantai-cerah": "pantai cerah",
+      "pantai-mendung": "awan gelap datang",
+      "pantai-hujan": "hujan dan petir, ayo pulang",
+      "s-kucing": "Kucing di halaman",
+      "kucing-cerah": "kucing berjemur",
+      "kucing-mendung": "langit mendung",
+      "kucing-hujan": "hujan, kucing masuk rumah",
+      "s-kodok": "Kodok di kolam",
+      "kodok-cerah": "cerah, kolam tenang",
+      "kodok-mendung": "awan tebal datang",
+      "kodok-hujan": "hujan, kodok bernyanyi",
+      "s-layang": "Main layang-layang",
+      "layang-cerah": "cerah, layang-layang terbang",
+      "layang-mendung": "awan tebal menutup langit",
+      "layang-hujan": "hujan, layang-layang diturunkan",
+      "s-pasar": "Ke pasar",
+      "pasar-cerah": "cerah, berangkat ke pasar",
+      "pasar-mendung": "mendung di jalan",
+      "pasar-hujan": "hujan, berteduh di toko",
+      "s-bukit": "Di bukit",
+      "bukit-cerah": "cerah di bukit",
+      "bukit-mendung": "awan turun menutup bukit",
+      "bukit-hujan": "hujan di bukit"
+    },
+    "en": {
+      "judul": "Mixed-Up Sky, Let's Fix It",
+      "instruksi": "Two sky pictures are swapped. Swap them back: sunny, cloudy, then rainy.",
+      "s-perahu": "A boat on the river",
+      "perahu-cerah": "sunny, the boat sails",
+      "perahu-mendung": "dark clouds come",
+      "perahu-hujan": "rain falls on the river",
+      "s-jemuran": "Clothes on the line",
+      "jemuran-cerah": "sunny, clothes are drying",
+      "jemuran-mendung": "cloudy, clothes are taken in",
+      "jemuran-hujan": "rain falls",
+      "s-sawah": "In the rice field",
+      "sawah-cerah": "sunny over the rice field",
+      "sawah-mendung": "thick clouds over the field",
+      "sawah-hujan": "rain waters the field",
+      "s-sekolah": "Going home from school",
+      "sekolah-cerah": "sunny in the morning",
+      "sekolah-mendung": "the sky turns dark",
+      "sekolah-hujan": "rain, umbrellas open",
+      "s-bunga": "The flower garden",
+      "bunga-cerah": "the sun shines on the flowers",
+      "bunga-mendung": "clouds cover the sun",
+      "bunga-hujan": "rain waters the flowers",
+      "s-pantai": "Playing at the beach",
+      "pantai-cerah": "a sunny beach",
+      "pantai-mendung": "dark clouds come",
+      "pantai-hujan": "rain and lightning, let's go home",
+      "s-kucing": "A cat in the yard",
+      "kucing-cerah": "the cat sunbathes",
+      "kucing-mendung": "the sky is cloudy",
+      "kucing-hujan": "rain, the cat goes inside",
+      "s-kodok": "A frog at the pond",
+      "kodok-cerah": "sunny, the pond is calm",
+      "kodok-mendung": "thick clouds come",
+      "kodok-hujan": "rain, the frog sings",
+      "s-layang": "Flying a kite",
+      "layang-cerah": "sunny, the kite flies",
+      "layang-mendung": "thick clouds cover the sky",
+      "layang-hujan": "rain, the kite comes down",
+      "s-pasar": "Going to the market",
+      "pasar-cerah": "sunny, off to the market",
+      "pasar-mendung": "cloudy on the way",
+      "pasar-hujan": "rain, shelter in a shop",
+      "s-bukit": "On the hill",
+      "bukit-cerah": "sunny on the hill",
+      "bukit-mendung": "clouds cover the hill",
+      "bukit-hujan": "rain on the hill"
+    }
+  },
+  "knobs": {
+    "steps": {
+      "min": 3,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "tiga gambar langit; satu pasang tertukar"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "sungai",
+  "mode": "perbaiki",
+  "sequences": [
+    {
+      "id": "perahu",
+      "titleKey": "s-perahu",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "perahu-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "perahu-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "perahu-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "jemuran",
+      "titleKey": "s-jemuran",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "jemuran-cerah",
+          "emoji": "🌞"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "jemuran-mendung",
+          "emoji": "🌥️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "jemuran-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "sawah",
+      "titleKey": "s-sawah",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "sawah-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "sawah-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "sawah-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "sekolah",
+      "titleKey": "s-sekolah",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "sekolah-cerah",
+          "emoji": "🌤️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "sekolah-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "sekolah-hujan",
+          "emoji": "☔",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "bunga",
+      "titleKey": "s-bunga",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "bunga-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "bunga-mendung",
+          "emoji": "🌥️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "bunga-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "pantai",
+      "titleKey": "s-pantai",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "pantai-cerah",
+          "emoji": "🌞"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "pantai-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "pantai-hujan",
+          "emoji": "⛈️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "kucing",
+      "titleKey": "s-kucing",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "kucing-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "kucing-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "kucing-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "kodok",
+      "titleKey": "s-kodok",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "kodok-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "kodok-mendung",
+          "emoji": "🌥️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "kodok-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "layang",
+      "titleKey": "s-layang",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "layang-cerah",
+          "emoji": "🌤️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "layang-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "layang-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "pasar",
+      "titleKey": "s-pasar",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "pasar-cerah",
+          "emoji": "☀️"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "pasar-mendung",
+          "emoji": "🌥️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "pasar-hujan",
+          "emoji": "☔",
+          "color": "#546e7a"
+        }
+      ]
+    },
+    {
+      "id": "bukit",
+      "titleKey": "s-bukit",
+      "steps": [
+        {
+          "id": "cerah",
+          "labelKey": "bukit-cerah",
+          "emoji": "🌞"
+        },
+        {
+          "id": "mendung",
+          "labelKey": "bukit-mendung",
+          "emoji": "☁️",
+          "color": "#90a4ae"
+        },
+        {
+          "id": "hujan",
+          "labelKey": "bukit-hujan",
+          "emoji": "🌧️",
+          "color": "#546e7a"
+        }
+      ]
+    }
+  ]
+}

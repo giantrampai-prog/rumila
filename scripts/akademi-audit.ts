@@ -258,7 +258,15 @@ function kunci(r: Ronde): Jawaban | null {
         default: return null; // menara, bantuan, telusur: diperiksa lewat aturan khusus di bawah / presenter
       }
     }
-    case "navigasi": return null; // diperiksa dengan pemecah optimal()
+    case "navigasi": {
+      const x = r.ronde;
+      // langkah + prediksi: anak menebak semua langkah program bawaan dengan benar → harus dinilai benar
+      if (x.execMode === "langkah" && x.prediksi) {
+        const n = jalankan(x.grids[0], x.program).steps.length;
+        return { program: x.program, prediksi: Array.from({ length: Math.max(1, n) }, () => true), runs: 1 };
+      }
+      return null; // mode lain diperiksa dengan pemecah minKeping()
+    }
   }
   return null;
 }

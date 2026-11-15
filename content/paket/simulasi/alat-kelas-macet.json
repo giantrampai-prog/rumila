@@ -1,0 +1,132 @@
+{
+  "id": "alat-kelas-macet",
+  "version": "1.0.0",
+  "level": "PAUD",
+  "mechanic": "simulasi",
+  "competencyIds": [
+    "KODE.PAUD.SEBAB-AKIBAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Alat Kelas Tidak Menyala",
+      "instruksi": "Robot mau pakai alat di kelas. Ketuk alatnya supaya menyala.",
+      "proyektor": "proyektor",
+      "komputer": "komputer",
+      "printer": "printer",
+      "bel": "bel sekolah",
+      "jam-dinding": "jam dinding",
+      "mikrofon": "mikrofon",
+      "pengeras-suara": "pengeras suara",
+      "kamera": "kamera",
+      "piano": "piano listrik",
+      "tablet": "tablet",
+      "papan-ketik": "papan ketik",
+      "tetikus": "tetikus"
+    },
+    "en": {
+      "judul": "The Classroom Gadget Won't Start",
+      "instruksi": "The robot wants to use something in the classroom. Tap it to turn it on.",
+      "proyektor": "projector",
+      "komputer": "computer",
+      "printer": "printer",
+      "bel": "school bell",
+      "jam-dinding": "wall clock",
+      "mikrofon": "microphone",
+      "pengeras-suara": "loudspeaker",
+      "kamera": "camera",
+      "piano": "keyboard piano",
+      "tablet": "tablet",
+      "papan-ketik": "keyboard",
+      "tetikus": "computer mouse"
+    }
+  },
+  "knobs": {
+    "batas": {
+      "min": 3,
+      "max": 8,
+      "default": 5,
+      "step": 1,
+      "keterangan": "batas ketukan sia-sia sebelum minta tolong yang masih dihitung berhasil; lebih dari itu dicatat belum"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kelas",
+  "mode": "bantuan",
+  "items": [
+    {
+      "id": "proyektor",
+      "labelKey": "proyektor",
+      "role": "alat",
+      "emoji": "📽️"
+    },
+    {
+      "id": "komputer",
+      "labelKey": "komputer",
+      "role": "alat",
+      "emoji": "🖥️"
+    },
+    {
+      "id": "printer",
+      "labelKey": "printer",
+      "role": "alat",
+      "emoji": "🖨️"
+    },
+    {
+      "id": "bel",
+      "labelKey": "bel",
+      "role": "alat",
+      "emoji": "🔔"
+    },
+    {
+      "id": "jam-dinding",
+      "labelKey": "jam-dinding",
+      "role": "alat",
+      "emoji": "🕰️"
+    },
+    {
+      "id": "mikrofon",
+      "labelKey": "mikrofon",
+      "role": "alat",
+      "emoji": "🎤"
+    },
+    {
+      "id": "pengeras-suara",
+      "labelKey": "pengeras-suara",
+      "role": "alat",
+      "emoji": "🔊"
+    },
+    {
+      "id": "kamera",
+      "labelKey": "kamera",
+      "role": "alat",
+      "emoji": "📷"
+    },
+    {
+      "id": "piano",
+      "labelKey": "piano",
+      "role": "alat",
+      "emoji": "🎹"
+    },
+    {
+      "id": "tablet",
+      "labelKey": "tablet",
+      "role": "alat",
+      "emoji": "📱"
+    },
+    {
+      "id": "papan-ketik",
+      "labelKey": "papan-ketik",
+      "role": "alat",
+      "emoji": "⌨️"
+    },
+    {
+      "id": "tetikus",
+      "labelKey": "tetikus",
+      "role": "alat",
+      "emoji": "🖱️"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "id": "sains-tunjuk-benda-langit",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Tunjuk di Langit",
+      "instruksi": "Robot memegang teropong di halaman. Dengarkan nama Matahari, Bumi, atau Bulan, lalu sentuh gambarnya.",
+      "pilihan": "pilihan",
+      "i-matahari": "Matahari",
+      "i-bumi": "Bumi",
+      "i-bulansabit": "Bulan sabit",
+      "i-bulanpurnama": "Bulan purnama",
+      "i-awan": "awan",
+      "i-pelangi": "pelangi",
+      "i-roket": "roket",
+      "i-satelit": "satelit",
+      "t-1": "Mana Bulan? Malam ini Bulan berbentuk sabit.",
+      "t-2": "Mana Matahari? Ia bersinar paling terang di siang hari.",
+      "t-3": "Mana Bumi, tempat kita tinggal?",
+      "t-4": "Mana Bulan yang bulat penuh?",
+      "t-5": "Mana Matahari? Bukan awan, bukan pelangi.",
+      "t-6": "Mana Bumi? Bumi bulat, ada laut biru dan daratan hijau.",
+      "t-7": "Roket terbang mengelilingi Bulan. Mana Bulannya?",
+      "t-8": "Mana Matahari, bintang yang paling dekat dengan Bumi?",
+      "t-9": "Satelit memotret ke bawah, ke arah Bumi. Mana Buminya?",
+      "t-10": "Mana Bulan? Bulan bersinar karena memantulkan cahaya Matahari.",
+      "t-11": "Mana Matahari?",
+      "t-12": "Mana Bumi?"
+    },
+    "en": {
+      "judul": "Point to the Sky",
+      "instruksi": "The robot holds a telescope in the yard. Listen for the Sun, Earth, or Moon, then touch its picture.",
+      "pilihan": "choices",
+      "i-matahari": "the Sun",
+      "i-bumi": "Earth",
+      "i-bulansabit": "crescent Moon",
+      "i-bulanpurnama": "full Moon",
+      "i-awan": "cloud",
+      "i-pelangi": "rainbow",
+      "i-roket": "rocket",
+      "i-satelit": "satellite",
+      "t-1": "Where is the Moon? Tonight the Moon is a crescent.",
+      "t-2": "Where is the Sun? It shines brightest in the daytime.",
+      "t-3": "Where is Earth, the place we live?",
+      "t-4": "Where is the Moon that is fully round?",
+      "t-5": "Where is the Sun? Not the cloud, not the rainbow.",
+      "t-6": "Where is Earth? It is round, with blue seas and green land.",
+      "t-7": "A rocket flies around the Moon. Where is the Moon?",
+      "t-8": "Where is the Sun, the star closest to Earth?",
+      "t-9": "A satellite takes pictures down toward Earth. Where is Earth?",
+      "t-10": "Where is the Moon? It shines because it reflects sunlight.",
+      "t-11": "Where is the Sun?",
+      "t-12": "Where is Earth?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah gambar per pertanyaan: 3 → 4; pengecoh = awan, pelangi, roket, satelit"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "halaman",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "matahari",
+      "labelKey": "i-matahari",
+      "bin": "pilihan",
+      "emoji": "☀️",
+      "scale": 1.4
+    },
+    {
+      "id": "bumi",
+      "labelKey": "i-bumi",
+      "bin": "pilihan",
+      "emoji": "🌏"
+    },
+    {
+      "id": "bulansabit",
+      "labelKey": "i-bulansabit",
+      "bin": "pilihan",
+      "emoji": "🌙",
+      "scale": 0.7
+    },
+    {
+      "id": "bulanpurnama",
+      "labelKey": "i-bulanpurnama",
+      "bin": "pilihan",
+      "emoji": "🌕",
+      "scale": 0.7
+    },
+    {
+      "id": "awan",
+      "labelKey": "i-awan",
+      "bin": "pilihan",
+      "emoji": "☁️"
+    },
+    {
+      "id": "pelangi",
+      "labelKey": "i-pelangi",
+      "bin": "pilihan",
+      "emoji": "🌈"
+    },
+    {
+      "id": "roket",
+      "labelKey": "i-roket",
+      "bin": "pilihan",
+      "emoji": "🚀"
+    },
+    {
+      "id": "satelit",
+      "labelKey": "i-satelit",
+      "bin": "pilihan",
+      "emoji": "🛰️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "bulansabit",
+        "matahari",
+        "awan"
+      ],
+      "correct": "bulansabit"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "matahari",
+        "bulanpurnama",
+        "pelangi"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "bumi",
+        "bulansabit",
+        "roket"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "bulanpurnama",
+        "bumi",
+        "satelit",
+        "awan"
+      ],
+      "correct": "bulanpurnama"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "matahari",
+        "awan",
+        "pelangi"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "bumi",
+        "bulanpurnama",
+        "matahari",
+        "satelit"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "bulansabit",
+        "roket",
+        "bumi"
+      ],
+      "correct": "bulansabit"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "matahari",
+        "bumi",
+        "roket"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "bumi",
+        "satelit",
+        "bulanpurnama",
+        "pelangi"
+      ],
+      "correct": "bumi"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "bulanpurnama",
+        "matahari",
+        "awan"
+      ],
+      "correct": "bulanpurnama"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "matahari",
+        "bulansabit",
+        "satelit",
+        "roket"
+      ],
+      "correct": "matahari"
+    },
+    {
+      "id": "soal-12",
+      "promptKey": "t-12",
+      "choices": [
+        "bumi",
+        "matahari",
+        "awan"
+      ],
+      "correct": "bumi"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": "sains-layu-atau-segar",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.KEBUTUHAN-TUMBUHAN.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Layu atau Tetap Segar?",
+      "instruksi": "Lihat di mana tiap tanaman berada dan dengarkan keadaannya. Taruh ke rak akan layu atau tetap segar sebelum hari berganti.",
+      "b-layu": "akan layu",
+      "b-segar": "tetap segar",
+      "i-ember": "bunga ditutup ember terbalik",
+      "i-kardus": "tanaman di bawah tumpukan kardus",
+      "i-terpal": "tanaman ditutup terpal hitam",
+      "i-garasi": "pot di garasi yang gelap",
+      "i-kering": "tanaman tidak disiram berhari-hari",
+      "i-laci": "bibit disimpan di dalam laci",
+      "i-halaman": "tanaman di halaman terang dan disiram",
+      "i-sayur": "sayur di kebun yang kena matahari",
+      "i-balkon": "pot bunga di balkon yang terang",
+      "i-padi": "padi di sawah yang terang",
+      "i-tulip": "bunga di taman yang disiram tiap pagi",
+      "i-kaca": "tanaman di rumah kaca yang terang"
+    },
+    "en": {
+      "judul": "Wilt or Stay Fresh?",
+      "instruksi": "See where each plant is and listen to how it is kept. Put it on the will-wilt shelf or the stays-fresh shelf before the day changes.",
+      "b-layu": "will wilt",
+      "b-segar": "stays fresh",
+      "i-ember": "flower covered by an upside-down bucket",
+      "i-kardus": "plant under a pile of boxes",
+      "i-terpal": "plant covered with a black tarp",
+      "i-garasi": "pot in a dark garage",
+      "i-kering": "plant not watered for many days",
+      "i-laci": "seedling kept inside a drawer",
+      "i-halaman": "plant in a bright yard and watered",
+      "i-sayur": "vegetables in a sunny garden",
+      "i-balkon": "flower pot on a bright balcony",
+      "i-padi": "rice plants in a bright field",
+      "i-tulip": "flowers in a park watered every morning",
+      "i-kaca": "plant in a bright greenhouse"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah tanaman per putaran: 3 → 6; tempat & keadaan berbeda dari paket Pot Mana yang Akan Layu"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "layu",
+      "labelKey": "b-layu",
+      "emoji": "🥀"
+    },
+    {
+      "id": "segar",
+      "labelKey": "b-segar",
+      "emoji": "🌻"
+    }
+  ],
+  "items": [
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "layu",
+      "emoji": "🪣"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "layu",
+      "emoji": "📦"
+    },
+    {
+      "id": "terpal",
+      "labelKey": "i-terpal",
+      "bin": "layu",
+      "emoji": "🌿",
+      "color": "#212121"
+    },
+    {
+      "id": "garasi",
+      "labelKey": "i-garasi",
+      "bin": "layu",
+      "emoji": "🌿",
+      "color": "#263238"
+    },
+    {
+      "id": "kering",
+      "labelKey": "i-kering",
+      "bin": "layu",
+      "emoji": "🌿",
+      "color": "#a1887f"
+    },
+    {
+      "id": "laci",
+      "labelKey": "i-laci",
+      "bin": "layu",
+      "emoji": "🌱",
+      "color": "#37474f"
+    },
+    {
+      "id": "halaman",
+      "labelKey": "i-halaman",
+      "bin": "segar",
+      "emoji": "🌿",
+      "color": "#fff59d"
+    },
+    {
+      "id": "sayur",
+      "labelKey": "i-sayur",
+      "bin": "segar",
+      "emoji": "🥬",
+      "color": "#dcedc8"
+    },
+    {
+      "id": "balkon",
+      "labelKey": "i-balkon",
+      "bin": "segar",
+      "emoji": "🌼",
+      "color": "#fff9c4"
+    },
+    {
+      "id": "padi",
+      "labelKey": "i-padi",
+      "bin": "segar",
+      "emoji": "🌾",
+      "color": "#c5e1a5"
+    },
+    {
+      "id": "tulip",
+      "labelKey": "i-tulip",
+      "bin": "segar",
+      "emoji": "🌷",
+      "color": "#c8e6c9"
+    },
+    {
+      "id": "kaca",
+      "labelKey": "i-kaca",
+      "bin": "segar",
+      "emoji": "🌱",
+      "color": "#e1f5fe"
+    }
+  ],
+  "pilihan": []
+}

@@ -1,0 +1,227 @@
+{
+  "id": "sains-air-cahaya-secukupnya",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Air dan Cahaya Secukupnya",
+      "instruksi": "Tanaman di rumah ingin berbunga. Dengarkan keadaannya hari ini, lalu pilih cara merawat yang tepat.",
+      "pilihan": "pilihan",
+      "i-siram": "siram air secukupnya",
+      "i-terang": "pindahkan ke tempat terang",
+      "i-banjir": "siram sampai banjir",
+      "i-lemari": "simpan di dalam lemari",
+      "i-ember": "tutup dengan ember",
+      "i-lupa": "biarkan tanpa air berhari-hari",
+      "t-1": "Tanah pot kering. Supaya tanaman bisa berbunga, apa yang dilakukan?",
+      "t-2": "Pot ada di sudut kamar yang gelap. Apa yang dilakukan?",
+      "t-3": "Pagi hari, waktunya merawat tanaman. Tanahnya kering. Pilih yang tepat.",
+      "t-4": "Tanaman sudah disiram, tapi tidak pernah kena cahaya. Apa yang ia butuhkan?",
+      "t-5": "Tanaman butuh air, tapi jangan terlalu banyak. Pilih yang tepat.",
+      "t-6": "Daun tanaman pucat karena kurang cahaya. Apa yang dilakukan?",
+      "t-7": "Tanaman di dalam kamar ingin berbunga. Ia butuh sinar matahari. Pilih yang tepat.",
+      "t-8": "Hari ini panas dan tanah pot kering sekali. Apa yang dilakukan?",
+      "t-9": "Mana cara merawat yang membantu tanaman berbunga?",
+      "t-10": "Mana cara merawat yang memberi tanaman cahaya?",
+      "t-11": "Tanah sudah basah, tapi pot masih di tempat gelap. Apa yang dilakukan?"
+    },
+    "en": {
+      "judul": "Just Enough Water and Light",
+      "instruksi": "The plant at home wants to bloom. Listen to how it is today, then pick the right way to care for it.",
+      "pilihan": "choices",
+      "i-siram": "give just enough water",
+      "i-terang": "move it to a bright place",
+      "i-banjir": "water it until it floods",
+      "i-lemari": "keep it inside a cupboard",
+      "i-ember": "cover it with a bucket",
+      "i-lupa": "leave it without water for days",
+      "t-1": "The soil in the pot is dry. So the plant can bloom, what do we do?",
+      "t-2": "The pot is in a dark corner of the room. What do we do?",
+      "t-3": "It is morning, time to care for the plant. The soil is dry. Pick the right one.",
+      "t-4": "The plant has been watered but never gets light. What does it need?",
+      "t-5": "The plant needs water, but not too much. Pick the right one.",
+      "t-6": "The leaves are pale because of too little light. What do we do?",
+      "t-7": "The plant in the bedroom wants to bloom. It needs sunlight. Pick the right one.",
+      "t-8": "Today is hot and the soil is very dry. What do we do?",
+      "t-9": "Which way of caring helps the plant bloom?",
+      "t-10": "Which way of caring gives the plant light?",
+      "t-11": "The soil is already wet, but the pot is still in a dark place. What do we do?"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah cara merawat per pertanyaan: 2 → 4; pengecoh = terlalu banyak air atau tanpa cahaya"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "siram",
+      "labelKey": "i-siram",
+      "bin": "pilihan",
+      "emoji": "💧"
+    },
+    {
+      "id": "terang",
+      "labelKey": "i-terang",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "banjir",
+      "labelKey": "i-banjir",
+      "bin": "pilihan",
+      "emoji": "🌊"
+    },
+    {
+      "id": "lemari",
+      "labelKey": "i-lemari",
+      "bin": "pilihan",
+      "emoji": "🚪"
+    },
+    {
+      "id": "ember",
+      "labelKey": "i-ember",
+      "bin": "pilihan",
+      "emoji": "🪣"
+    },
+    {
+      "id": "lupa",
+      "labelKey": "i-lupa",
+      "bin": "pilihan",
+      "emoji": "💤"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "soal-1",
+      "promptKey": "t-1",
+      "choices": [
+        "siram",
+        "banjir",
+        "lupa"
+      ],
+      "correct": "siram"
+    },
+    {
+      "id": "soal-2",
+      "promptKey": "t-2",
+      "choices": [
+        "terang",
+        "lemari",
+        "ember"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "soal-3",
+      "promptKey": "t-3",
+      "choices": [
+        "siram",
+        "lemari",
+        "ember"
+      ],
+      "correct": "siram"
+    },
+    {
+      "id": "soal-4",
+      "promptKey": "t-4",
+      "choices": [
+        "terang",
+        "banjir",
+        "lupa"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "soal-5",
+      "promptKey": "t-5",
+      "choices": [
+        "siram",
+        "banjir"
+      ],
+      "correct": "siram"
+    },
+    {
+      "id": "soal-6",
+      "promptKey": "t-6",
+      "choices": [
+        "terang",
+        "ember",
+        "lemari"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "soal-7",
+      "promptKey": "t-7",
+      "choices": [
+        "terang",
+        "lemari",
+        "banjir"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "soal-8",
+      "promptKey": "t-8",
+      "choices": [
+        "siram",
+        "lupa",
+        "ember"
+      ],
+      "correct": "siram"
+    },
+    {
+      "id": "soal-9",
+      "promptKey": "t-9",
+      "choices": [
+        "siram",
+        "lemari",
+        "lupa",
+        "ember"
+      ],
+      "correct": "siram"
+    },
+    {
+      "id": "soal-10",
+      "promptKey": "t-10",
+      "choices": [
+        "terang",
+        "lemari",
+        "ember",
+        "banjir"
+      ],
+      "correct": "terang"
+    },
+    {
+      "id": "soal-11",
+      "promptKey": "t-11",
+      "choices": [
+        "terang",
+        "banjir",
+        "lemari"
+      ],
+      "correct": "terang"
+    }
+  ]
+}

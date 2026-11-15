@@ -1,0 +1,149 @@
+{
+  "id": "sains-percobaan-magnet-gudang",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Percobaan Magnet di Gudang",
+      "instruksi": "Magnet sudah didekatkan ke barang-barang gudang. Taruh ke rak ditarik magnet atau tidak ditarik.",
+      "b-ditarik": "ditarik magnet",
+      "b-tidak": "tidak ditarik",
+      "i-kunciinggris": "kunci pas besi",
+      "i-obeng": "obeng besi",
+      "i-palu": "palu besi",
+      "i-rodagigi": "roda gigi besi",
+      "i-kaleng": "kaleng besi",
+      "i-jarum": "jarum jahit",
+      "i-sarungtangan": "sarung tangan kain",
+      "i-sapu": "sapu ijuk",
+      "i-tali": "tali",
+      "i-kardus": "kardus",
+      "i-keranjang": "keranjang anyaman",
+      "i-lilin": "lilin"
+    },
+    "en": {
+      "judul": "Magnet Test in the Shed",
+      "instruksi": "A magnet was held near things in the shed. Put each on the pulled or not-pulled shelf.",
+      "b-ditarik": "pulled by the magnet",
+      "b-tidak": "not pulled",
+      "i-kunciinggris": "iron spanner",
+      "i-obeng": "iron screwdriver",
+      "i-palu": "iron hammer",
+      "i-rodagigi": "iron gear",
+      "i-kaleng": "tin can",
+      "i-jarum": "sewing needle",
+      "i-sarungtangan": "cloth gloves",
+      "i-sapu": "palm-fibre broom",
+      "i-tali": "rope",
+      "i-kardus": "cardboard box",
+      "i-keranjang": "woven basket",
+      "i-lilin": "candle"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah barang per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "gudang",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "ditarik",
+      "labelKey": "b-ditarik",
+      "emoji": "🧲"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "b-tidak",
+      "emoji": "✋"
+    }
+  ],
+  "items": [
+    {
+      "id": "kunciinggris",
+      "labelKey": "i-kunciinggris",
+      "bin": "ditarik",
+      "emoji": "🔧"
+    },
+    {
+      "id": "obeng",
+      "labelKey": "i-obeng",
+      "bin": "ditarik",
+      "emoji": "🪛"
+    },
+    {
+      "id": "palu",
+      "labelKey": "i-palu",
+      "bin": "ditarik",
+      "emoji": "🔨"
+    },
+    {
+      "id": "rodagigi",
+      "labelKey": "i-rodagigi",
+      "bin": "ditarik",
+      "emoji": "⚙️"
+    },
+    {
+      "id": "kaleng",
+      "labelKey": "i-kaleng",
+      "bin": "ditarik",
+      "emoji": "🥫"
+    },
+    {
+      "id": "jarum",
+      "labelKey": "i-jarum",
+      "bin": "ditarik",
+      "emoji": "🪡"
+    },
+    {
+      "id": "sarungtangan",
+      "labelKey": "i-sarungtangan",
+      "bin": "tidak",
+      "emoji": "🧤"
+    },
+    {
+      "id": "sapu",
+      "labelKey": "i-sapu",
+      "bin": "tidak",
+      "emoji": "🧹"
+    },
+    {
+      "id": "tali",
+      "labelKey": "i-tali",
+      "bin": "tidak",
+      "emoji": "🪢"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "tidak",
+      "emoji": "📦"
+    },
+    {
+      "id": "keranjang",
+      "labelKey": "i-keranjang",
+      "bin": "tidak",
+      "emoji": "🧺"
+    },
+    {
+      "id": "lilin",
+      "labelKey": "i-lilin",
+      "bin": "tidak",
+      "emoji": "🕯️"
+    }
+  ],
+  "pilihan": []
+}

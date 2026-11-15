@@ -1,0 +1,164 @@
+{
+  "id": "sains-alat-gerak-hewan-pantai",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.03"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Bergerak dengan Apa?",
+      "instruksi": "Lihat hewan di sekitar pantai. Taruh ke papan sirip, sayap, atau kaki sesuai alat geraknya.",
+      "b-sirip": "sirip",
+      "b-sayap": "sayap",
+      "b-kaki": "kaki",
+      "i-buntal": "ikan buntal",
+      "i-paus": "paus",
+      "i-ikanmas": "ikan",
+      "i-anjinglaut": "anjing laut",
+      "i-elang": "elang",
+      "i-beo": "burung beo",
+      "i-lalat": "lalat",
+      "i-burunghantu": "burung hantu",
+      "i-kepiting": "kepiting",
+      "i-monyet": "monyet",
+      "i-kadal": "kadal",
+      "i-kuda": "kuda"
+    },
+    "en": {
+      "judul": "What Do They Move With?",
+      "instruksi": "Look at the animals around the beach. Put each on the fin, wing, or leg board by how it moves.",
+      "b-sirip": "fins",
+      "b-sayap": "wings",
+      "b-kaki": "legs",
+      "i-buntal": "pufferfish",
+      "i-paus": "whale",
+      "i-ikanmas": "fish",
+      "i-anjinglaut": "seal",
+      "i-elang": "eagle",
+      "i-beo": "parrot",
+      "i-lalat": "fly",
+      "i-burunghantu": "owl",
+      "i-kepiting": "crab",
+      "i-monyet": "monkey",
+      "i-kadal": "lizard",
+      "i-kuda": "horse"
+    }
+  },
+  "knobs": {
+    "binCount": {
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2 papan (sirip, sayap) lalu 3 papan (tambah kaki)"
+    },
+    "itemCount": {
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "pantai",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "sirip",
+      "labelKey": "b-sirip",
+      "emoji": "🐟"
+    },
+    {
+      "id": "sayap",
+      "labelKey": "b-sayap",
+      "emoji": "🪶"
+    },
+    {
+      "id": "kaki",
+      "labelKey": "b-kaki",
+      "emoji": "🐾"
+    }
+  ],
+  "items": [
+    {
+      "id": "buntal",
+      "labelKey": "i-buntal",
+      "bin": "sirip",
+      "emoji": "🐡"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "sirip",
+      "emoji": "🐋"
+    },
+    {
+      "id": "ikanmas",
+      "labelKey": "i-ikanmas",
+      "bin": "sirip",
+      "emoji": "🐟",
+      "color": "#ffb74d"
+    },
+    {
+      "id": "anjinglaut",
+      "labelKey": "i-anjinglaut",
+      "bin": "sirip",
+      "emoji": "🦭"
+    },
+    {
+      "id": "elang",
+      "labelKey": "i-elang",
+      "bin": "sayap",
+      "emoji": "🦅"
+    },
+    {
+      "id": "beo",
+      "labelKey": "i-beo",
+      "bin": "sayap",
+      "emoji": "🦜"
+    },
+    {
+      "id": "lalat",
+      "labelKey": "i-lalat",
+      "bin": "sayap",
+      "emoji": "🪰"
+    },
+    {
+      "id": "burunghantu",
+      "labelKey": "i-burunghantu",
+      "bin": "sayap",
+      "emoji": "🦉"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "kaki",
+      "emoji": "🦀"
+    },
+    {
+      "id": "monyet",
+      "labelKey": "i-monyet",
+      "bin": "kaki",
+      "emoji": "🐒"
+    },
+    {
+      "id": "kadal",
+      "labelKey": "i-kadal",
+      "bin": "kaki",
+      "emoji": "🦎"
+    },
+    {
+      "id": "kuda",
+      "labelKey": "i-kuda",
+      "bin": "kaki",
+      "emoji": "🐎"
+    }
+  ],
+  "pilihan": []
+}
