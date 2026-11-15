@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-perbaiki-ulangi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD1",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Satu Blok Keliru",
+      "judul": "Perbaiki Blok Ulangi",
       "instruksi": "Ada satu blok yang salah: bisa angka ulangi, isi ulangi, atau blok lain. Ganti satu saja."
     },
     "en": {
-      "judul": "One Wrong Block",
+      "judul": "Fix the Repeat Block",
       "instruksi": "One block is wrong: the repeat number, what is inside the repeat, or another block. Change just one."
     }
   },

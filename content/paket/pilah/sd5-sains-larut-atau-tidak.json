@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-larut-atau-tidak",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.LARUTAN.01"
@@ -8,7 +8,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Larut atau Tidak?",
+      "judul": "Uji Larut dalam Segelas Air",
       "instruksi": "Tiap benda diaduk di segelas air: taruh ke 'larut' atau 'tidak larut'.",
       "b-larut": "larut: tak terlihat lagi di air",
       "b-tidak": "tidak larut: mengendap atau mengapung",
@@ -26,7 +26,7 @@
       "i-kelereng": "kelereng"
     },
     "en": {
-      "judul": "Dissolves or Not?",
+      "judul": "Dissolving Test in a Glass of Water",
       "instruksi": "Each thing is stirred into a glass of water: put it in 'dissolves' or 'does not dissolve'.",
       "b-larut": "dissolves: can no longer be seen",
       "b-tidak": "does not dissolve: sinks or floats",

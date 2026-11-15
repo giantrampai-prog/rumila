@@ -1,6 +1,6 @@
 {
   "id": "tombol-bengkel-robot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -14,9 +14,9 @@
       "tombol-merah": "tombol merah",
       "tombol-biru": "tombol biru",
       "tombol-kuning": "tombol kuning",
-      "lampu": "lampu",
-      "kipas": "kipas angin",
-      "radio": "radio"
+      "lampu-sorot": "lampu sorot",
+      "sirene": "sirene",
+      "roda-gigi": "roda gigi berputar"
     },
     "en": {
       "judul": "Robot Workshop Buttons",
@@ -24,18 +24,18 @@
       "tombol-merah": "red button",
       "tombol-biru": "blue button",
       "tombol-kuning": "yellow button",
-      "lampu": "lamp",
-      "kipas": "fan",
-      "radio": "radio"
+      "lampu-sorot": "work light",
+      "sirene": "siren",
+      "roda-gigi": "spinning gear"
     }
   },
   "knobs": {
     "pairs": {
-      "min": 2,
+      "min": 3,
       "max": 3,
-      "default": 2,
+      "default": 3,
       "step": 1,
-      "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+      "keterangan": "tingkat lanjut: tiga tombol, tiga alat bengkel"
     }
   },
   "assets": [],
@@ -66,22 +66,22 @@
       "color": "#fdd835"
     },
     {
-      "labelKey": "lampu",
-      "id": "lampu",
+      "labelKey": "lampu-sorot",
+      "id": "lampu-sorot",
       "role": "alat",
-      "emoji": "💡"
+      "emoji": "🔦"
     },
     {
-      "labelKey": "kipas",
-      "id": "kipas",
+      "labelKey": "sirene",
+      "id": "sirene",
       "role": "alat",
-      "emoji": "🌀"
+      "emoji": "🚨"
     },
     {
-      "labelKey": "radio",
-      "id": "radio",
+      "labelKey": "roda-gigi",
+      "id": "roda-gigi",
       "role": "alat",
-      "emoji": "📻"
+      "emoji": "⚙️"
     }
   ]
 }

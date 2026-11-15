@@ -1,0 +1,151 @@
+{
+  "id": "sains-rawat-tanaman-berbunga",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rawat Sampai Berbunga",
+      "instruksi": "Mana yang membantu tanaman tumbuh berbunga? Taruh ke rak membantu atau tidak membantu.",
+      "bantu": "membantu berbunga",
+      "tidak": "tidak membantu",
+      "i-siram": "disiram air setiap hari",
+      "i-jendela": "ditaruh dekat jendela terang",
+      "i-pagi": "dijemur sinar matahari pagi",
+      "i-tanah": "ditanam di tanah gembur",
+      "i-gulma": "rumput liar di sekitarnya dicabut",
+      "i-pupuk": "diberi pupuk kompos",
+      "i-lemari": "disimpan di lemari gelap",
+      "i-kering": "tidak disiram seminggu",
+      "i-kardus": "ditutup kardus terus",
+      "i-minyak": "disiram minyak goreng",
+      "i-injak": "diinjak-injak",
+      "i-cabut": "dicabut setiap hari"
+    },
+    "en": {
+      "judul": "Care Until It Blooms",
+      "instruksi": "Which of these help a plant grow and bloom? Put each on the helps shelf or the does-not-help shelf.",
+      "bantu": "helps it bloom",
+      "tidak": "does not help",
+      "i-siram": "watered every day",
+      "i-jendela": "placed by a bright window",
+      "i-pagi": "given morning sunshine",
+      "i-tanah": "planted in loose soil",
+      "i-gulma": "weeds around it pulled out",
+      "i-pupuk": "given compost",
+      "i-lemari": "kept in a dark cupboard",
+      "i-kering": "not watered for a week",
+      "i-kardus": "covered with a box all the time",
+      "i-minyak": "watered with cooking oil",
+      "i-injak": "stepped on",
+      "i-cabut": "pulled up every day"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 4,
+      "step": 1,
+      "keterangan": "jumlah kebiasaan per putaran; berbeda dari paket kebutuhan tanaman (air, cahaya, tanah)"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "kebun",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "bantu",
+      "labelKey": "bantu",
+      "emoji": "🌸",
+      "color": "#f8bbd0"
+    },
+    {
+      "id": "tidak",
+      "labelKey": "tidak",
+      "emoji": "🥀",
+      "color": "#d7ccc8"
+    }
+  ],
+  "items": [
+    {
+      "id": "siram",
+      "labelKey": "i-siram",
+      "bin": "bantu",
+      "emoji": "🚿"
+    },
+    {
+      "id": "jendela",
+      "labelKey": "i-jendela",
+      "bin": "bantu",
+      "emoji": "🪟"
+    },
+    {
+      "id": "pagi",
+      "labelKey": "i-pagi",
+      "bin": "bantu",
+      "emoji": "🌅"
+    },
+    {
+      "id": "tanah",
+      "labelKey": "i-tanah",
+      "bin": "bantu",
+      "emoji": "🪴"
+    },
+    {
+      "id": "gulma",
+      "labelKey": "i-gulma",
+      "bin": "bantu",
+      "emoji": "🌱"
+    },
+    {
+      "id": "pupuk",
+      "labelKey": "i-pupuk",
+      "bin": "bantu",
+      "emoji": "🍂"
+    },
+    {
+      "id": "lemari",
+      "labelKey": "i-lemari",
+      "bin": "tidak",
+      "emoji": "🚪"
+    },
+    {
+      "id": "kering",
+      "labelKey": "i-kering",
+      "bin": "tidak",
+      "emoji": "🏜️"
+    },
+    {
+      "id": "kardus",
+      "labelKey": "i-kardus",
+      "bin": "tidak",
+      "emoji": "📦"
+    },
+    {
+      "id": "minyak",
+      "labelKey": "i-minyak",
+      "bin": "tidak",
+      "emoji": "🫗"
+    },
+    {
+      "id": "injak",
+      "labelKey": "i-injak",
+      "bin": "tidak",
+      "emoji": "🦶"
+    },
+    {
+      "id": "cabut",
+      "labelKey": "i-cabut",
+      "bin": "tidak",
+      "emoji": "✊"
+    }
+  ],
+  "pilihan": []
+}

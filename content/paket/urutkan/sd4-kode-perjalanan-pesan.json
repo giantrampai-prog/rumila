@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perjalanan-pesan",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Perjalanan Sebuah Pesan",
+      "judul": "Pesan Lewat Jaringan",
       "instruksi": "Susun perjalanan data dari perangkat pengirim, lewat jaringan, sampai ke penerima.",
       "s1": "Pesan ke teman",
       "s1-1": "kamu mengetik dan menekan kirim",
@@ -72,7 +72,7 @@
       "s10-5": "temanmu memutar pesan suaramu"
     },
     "en": {
-      "judul": "A Message's Journey",
+      "judul": "A Message Across the Network",
       "instruksi": "Put the data's journey in order, from the sending device, through the network, to the receiver.",
       "s1": "A message to a friend",
       "s1-1": "you type and press send",

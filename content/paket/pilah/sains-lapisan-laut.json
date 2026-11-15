@@ -1,0 +1,153 @@
+{
+  "id": "sains-lapisan-laut",
+  "version": "1.0.0",
+  "level": "TKB",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKB.HEWAN-HABITAT.02"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Rumah di Lapisan Laut",
+      "instruksi": "Laut punya lapisan: terumbu yang dangkal, laut dalam yang gelap, dan palung yang paling dalam. Antar tiap hewan ke rumahnya.",
+      "terumbu": "terumbu karang",
+      "dalam": "laut dalam",
+      "palung": "palung",
+      "i-badut": "ikan badut",
+      "i-bintang": "bintang laut",
+      "i-penyu": "penyu",
+      "i-kepiting": "kepiting",
+      "i-paus": "paus sperma",
+      "i-cumi": "cumi-cumi raksasa",
+      "i-hiu": "hiu",
+      "i-ubur": "ubur-ubur bercahaya",
+      "i-sungut": "ikan berlampu",
+      "i-dumbo": "gurita dumbo",
+      "i-udangpalung": "udang palung"
+    },
+    "en": {
+      "judul": "Homes in the Ocean Layers",
+      "instruksi": "The sea has layers: the shallow reef, the dark deep sea, and the deepest trench. Take each animal to its home.",
+      "terumbu": "coral reef",
+      "dalam": "deep sea",
+      "palung": "trench",
+      "i-badut": "clownfish",
+      "i-bintang": "starfish",
+      "i-penyu": "sea turtle",
+      "i-kepiting": "crab",
+      "i-paus": "sperm whale",
+      "i-cumi": "giant squid",
+      "i-hiu": "shark",
+      "i-ubur": "glowing jellyfish",
+      "i-sungut": "anglerfish",
+      "i-dumbo": "dumbo octopus",
+      "i-udangpalung": "trench amphipod"
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 3,
+      "max": 6,
+      "default": 3,
+      "step": 1,
+      "keterangan": "jumlah hewan per putaran; tiga lapisan seperti di dunia Bawah Laut"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "laut",
+  "mode": "kelompok",
+  "bins": [
+    {
+      "id": "terumbu",
+      "labelKey": "terumbu",
+      "emoji": "🪸",
+      "color": "#ffe0b2"
+    },
+    {
+      "id": "dalam",
+      "labelKey": "dalam",
+      "emoji": "🌊",
+      "color": "#1565c0"
+    },
+    {
+      "id": "palung",
+      "labelKey": "palung",
+      "emoji": "🕳️",
+      "color": "#263238"
+    }
+  ],
+  "items": [
+    {
+      "id": "badut",
+      "labelKey": "i-badut",
+      "bin": "terumbu",
+      "emoji": "🐠"
+    },
+    {
+      "id": "bintang",
+      "labelKey": "i-bintang",
+      "bin": "terumbu",
+      "emoji": "⭐"
+    },
+    {
+      "id": "penyu",
+      "labelKey": "i-penyu",
+      "bin": "terumbu",
+      "emoji": "🐢"
+    },
+    {
+      "id": "kepiting",
+      "labelKey": "i-kepiting",
+      "bin": "terumbu",
+      "emoji": "🦀"
+    },
+    {
+      "id": "paus",
+      "labelKey": "i-paus",
+      "bin": "dalam",
+      "emoji": "🐋"
+    },
+    {
+      "id": "cumi",
+      "labelKey": "i-cumi",
+      "bin": "dalam",
+      "emoji": "🦑"
+    },
+    {
+      "id": "hiu",
+      "labelKey": "i-hiu",
+      "bin": "dalam",
+      "emoji": "🦈"
+    },
+    {
+      "id": "ubur",
+      "labelKey": "i-ubur",
+      "bin": "dalam",
+      "emoji": "🪼"
+    },
+    {
+      "id": "sungut",
+      "labelKey": "i-sungut",
+      "bin": "palung",
+      "emoji": "🐟",
+      "color": "#37474f"
+    },
+    {
+      "id": "dumbo",
+      "labelKey": "i-dumbo",
+      "bin": "palung",
+      "emoji": "🐙"
+    },
+    {
+      "id": "udangpalung",
+      "labelKey": "i-udangpalung",
+      "bin": "palung",
+      "emoji": "🦐",
+      "color": "#263238"
+    }
+  ],
+  "pilihan": []
+}

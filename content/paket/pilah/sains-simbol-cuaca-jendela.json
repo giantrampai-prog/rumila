@@ -1,0 +1,198 @@
+{
+  "id": "sains-simbol-cuaca-jendela",
+  "version": "1.0.0",
+  "level": "TKA",
+  "mechanic": "pilah",
+  "competencyIds": [
+    "SAINS.TKA.CUACA-PAKAIAN.01"
+  ],
+  "instructionKey": "instruksi",
+  "locale": {
+    "id": {
+      "judul": "Simbol Cuaca di Jendela",
+      "instruksi": "Lihat langit di luar jendela, lalu pasang simbol cuaca yang cocok.",
+      "pilihan": "pilihan",
+      "i-cerah": "cerah",
+      "i-mendung": "mendung",
+      "i-hujan": "hujan",
+      "i-angin": "berangin",
+      "t1": "Langit biru, matahari bersinar terang.",
+      "t2": "Tidak ada awan, bayangan kita terlihat jelas.",
+      "t3": "Langit abu-abu penuh awan, tapi belum ada air jatuh.",
+      "t4": "Matahari tertutup awan tebal.",
+      "t5": "Air jatuh dari langit, jalan jadi basah.",
+      "t6": "Orang-orang memakai payung dan jas hujan.",
+      "t7": "Daun-daun bergoyang kencang dan topi hampir terbang.",
+      "t8": "Layang-layang terbang tinggi, bendera berkibar kencang.",
+      "t9": "Ada genangan air dan tetes air di kaca jendela.",
+      "t10": "Panas sekali, semua ingin berteduh dari sinar matahari."
+    },
+    "en": {
+      "judul": "Weather Sign in the Window",
+      "instruksi": "Look at the sky outside the window, then put up the matching weather sign.",
+      "pilihan": "choices",
+      "i-cerah": "sunny",
+      "i-mendung": "cloudy",
+      "i-hujan": "rainy",
+      "i-angin": "windy",
+      "t1": "Blue sky, the sun is shining brightly.",
+      "t2": "No clouds, our shadows are easy to see.",
+      "t3": "The sky is grey and full of clouds, but no water is falling.",
+      "t4": "The sun is hidden behind thick clouds.",
+      "t5": "Water falls from the sky and the road gets wet.",
+      "t6": "People are using umbrellas and raincoats.",
+      "t7": "Leaves are shaking hard and hats almost fly away.",
+      "t8": "Kites fly high and flags flap hard.",
+      "t9": "There are puddles and drops on the window glass.",
+      "t10": "It is very hot, everyone wants shade from the sunshine."
+    }
+  },
+  "knobs": {
+    "itemCount": {
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "step": 1,
+      "keterangan": "2–3 simbol per soal"
+    }
+  },
+  "assets": [],
+  "generatif": true,
+  "rounds": 10,
+  "world": "rumah",
+  "mode": "pilih",
+  "bins": [
+    {
+      "id": "pilihan",
+      "labelKey": "pilihan"
+    }
+  ],
+  "items": [
+    {
+      "id": "cerah",
+      "labelKey": "i-cerah",
+      "bin": "pilihan",
+      "emoji": "☀️"
+    },
+    {
+      "id": "mendung",
+      "labelKey": "i-mendung",
+      "bin": "pilihan",
+      "emoji": "☁️"
+    },
+    {
+      "id": "hujan",
+      "labelKey": "i-hujan",
+      "bin": "pilihan",
+      "emoji": "🌧️"
+    },
+    {
+      "id": "angin",
+      "labelKey": "i-angin",
+      "bin": "pilihan",
+      "emoji": "🌬️"
+    }
+  ],
+  "pilihan": [
+    {
+      "id": "r1",
+      "promptKey": "t1",
+      "choices": [
+        "cerah",
+        "hujan",
+        "mendung"
+      ],
+      "correct": "cerah"
+    },
+    {
+      "id": "r2",
+      "promptKey": "t2",
+      "choices": [
+        "cerah",
+        "angin",
+        "hujan"
+      ],
+      "correct": "cerah"
+    },
+    {
+      "id": "r3",
+      "promptKey": "t3",
+      "choices": [
+        "mendung",
+        "cerah",
+        "hujan"
+      ],
+      "correct": "mendung"
+    },
+    {
+      "id": "r4",
+      "promptKey": "t4",
+      "choices": [
+        "mendung",
+        "cerah",
+        "angin"
+      ],
+      "correct": "mendung"
+    },
+    {
+      "id": "r5",
+      "promptKey": "t5",
+      "choices": [
+        "hujan",
+        "cerah",
+        "mendung"
+      ],
+      "correct": "hujan"
+    },
+    {
+      "id": "r6",
+      "promptKey": "t6",
+      "choices": [
+        "hujan",
+        "angin",
+        "cerah"
+      ],
+      "correct": "hujan"
+    },
+    {
+      "id": "r7",
+      "promptKey": "t7",
+      "choices": [
+        "angin",
+        "hujan",
+        "cerah"
+      ],
+      "correct": "angin"
+    },
+    {
+      "id": "r8",
+      "promptKey": "t8",
+      "choices": [
+        "angin",
+        "mendung",
+        "hujan"
+      ],
+      "correct": "angin"
+    },
+    {
+      "id": "r9",
+      "promptKey": "t9",
+      "choices": [
+        "hujan",
+        "cerah",
+        "angin"
+      ],
+      "correct": "hujan"
+    },
+    {
+      "id": "r10",
+      "promptKey": "t10",
+      "choices": [
+        "cerah",
+        "mendung",
+        "hujan"
+      ],
+      "correct": "cerah"
+    }
+  ]
+}

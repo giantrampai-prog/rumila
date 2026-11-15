@@ -1,5 +1,5 @@
 // DIBUAT OTOMATIS oleh scripts/akademi-index.ts — jangan diedit.
-// Sumber: content/kurikulum/*.json (27 berkas) dan content/paket/**/*.json (571 berkas).
+// Sumber: content/kurikulum/*.json (27 berkas) dan content/paket/**/*.json (582 berkas).
 // Perbarui dengan: npm run -s akademi:index
 
 export const KURIKULUM_RAW = [
@@ -8983,8 +8983,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menemukan 3 makhluk hidup di dunia, bukan benda, misalnya ikan di Bawah Laut atau pohon di Kebun Buah",
-          "en": "I can find 3 living things in the world, not objects, for example a fish in the Undersea or a tree in the Fruit Garden"
+          "id": "Aku bisa menemukan makhluk hidup di antara benda-benda, misalnya kupu-kupu, semut, atau pohon",
+          "en": "I can find the living thing among objects, for example a butterfly, an ant, or a tree"
         },
         "depth": [
           "pakai"
@@ -13029,8 +13029,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menemukan 3 hewan air yang disebutkan di Bawah Laut, misalnya penyu, gurita, dan ikan badut",
-          "en": "I can find 3 named water animals in the Undersea world, for example a turtle, an octopus, and a clownfish"
+          "id": "Aku bisa menemukan hewan yang hidup di air, misalnya penyu, gurita, dan ikan badut",
+          "en": "I can find animals that live in water, for example a sea turtle, an octopus, and a clownfish"
         },
         "depth": [
           "pakai"
@@ -13659,8 +13659,8 @@ export const KURIKULUM_RAW = [
           }
         },
         "statement": {
-          "id": "Aku bisa menemukan hewan yang tinggal di lapisan laut yang diminta di Bawah Laut: terumbu, laut dalam, atau palung",
-          "en": "I can find an animal that lives in the asked ocean layer in the Undersea world: reef, deep sea, or trench"
+          "id": "Aku bisa mengantar hewan laut ke lapisan rumahnya: terumbu, laut dalam, atau palung",
+          "en": "I can take sea animals to the layer where they live: reef, deep sea, or trench"
         },
         "depth": [
           "pakai"
@@ -16281,7 +16281,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-mat-kembalian-puluhan-ribu",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "dagang",
     "competencyIds": [
@@ -16290,7 +16290,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Kasir Toko Mainan",
+        "judul": "Kembalian Puluhan Ribu",
         "instruksi": "Pembeli membayar dengan uang besar. Hitung maju dari harga ke uangnya, lalu beri kembalian.",
         "g-sepeda-roda-tiga": "sepeda roda tiga",
         "g-tenda-main": "tenda main",
@@ -16304,7 +16304,7 @@ export const PAKET_RAW: unknown[] = [
         "g-layangmlayang": "layang-layang"
       },
       "en": {
-        "judul": "Toy Shop Till",
+        "judul": "Change in Tens of Thousands",
         "instruksi": "The shopper pays with a big note. Count on from the price to the note, then give the change.",
         "g-sepeda-roda-tiga": "tricycle",
         "g-tenda-main": "play tent",
@@ -17350,7 +17350,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "tukar-uang-bank-mini",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "level": "TKB",
     "mechanic": "dagang",
     "competencyIds": [
@@ -17362,22 +17362,24 @@ export const PAKET_RAW: unknown[] = [
         "judul": "Bank Mini",
         "instruksi": "Robot jadi teller bank mini: tukar uang kertas pembeli dengan koin seribu yang nilainya sama.",
         "duaribu": "uang dua ribu",
-        "limaribu": "uang lima ribu"
+        "limaribu": "uang lima ribu",
+        "sepuluhribu": "uang sepuluh ribu"
       },
       "en": {
         "judul": "Mini Bank",
         "instruksi": "Robot is the mini-bank teller: swap the customer's note for thousand coins worth the same.",
         "duaribu": "2,000 note",
-        "limaribu": "5,000 note"
+        "limaribu": "5,000 note",
+        "sepuluhribu": "ten-thousand note"
       }
     },
     "knobs": {
       "harga": {
-        "min": 5,
+        "min": 7,
         "max": 12,
         "default": 12,
         "step": 1,
-        "keterangan": "total uang yang ditukar (ribuan): sampai Rp12.000, 1–4 lembar; turun ke Rp5.000 bila anak kesulitan"
+        "keterangan": "tingkat lanjut: termasuk uang sepuluh ribu, 1–4 lembar, total Rp7.000–12.000"
       }
     },
     "assets": [],
@@ -17407,6 +17409,13 @@ export const PAKET_RAW: unknown[] = [
         "price": 5000,
         "emoji": "💵",
         "color": "#6d4c41"
+      },
+      {
+        "id": "lembar-10000",
+        "labelKey": "sepuluhribu",
+        "price": 10000,
+        "emoji": "💵",
+        "color": "#8e24aa"
       }
     ],
     "customerRule": {
@@ -31219,7 +31228,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd1-kode-perbaiki-ulangi",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD1",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -31228,11 +31237,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Satu Blok Keliru",
+        "judul": "Perbaiki Blok Ulangi",
         "instruksi": "Ada satu blok yang salah: bisa angka ulangi, isi ulangi, atau blok lain. Ganti satu saja."
       },
       "en": {
-        "judul": "One Wrong Block",
+        "judul": "Fix the Repeat Block",
         "instruksi": "One block is wrong: the repeat number, what is inside the repeat, or another block. Change just one."
       }
     },
@@ -55200,7 +55209,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-kode-dua-ulangi-belok",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "mechanic": "navigasi",
     "competencyIds": [
@@ -55209,11 +55218,11 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Dua Ulangi, Satu Belokan",
+        "judul": "Rak Lima Keping: Dua Ulangi",
         "instruksi": "Rak hanya muat lima keping: pakai dua blok ulangi dan satu belokan supaya robot sampai bintang."
       },
       "en": {
-        "judul": "Two Repeats, One Turn",
+        "judul": "Five-Slot Rack: Two Repeats",
         "instruksi": "The rack holds only five pieces: use two repeat blocks and one turn so the robot reaches the star."
       }
     },
@@ -67595,7 +67604,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "celengan-pecahan-uang",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -67605,36 +67614,32 @@ export const PAKET_RAW: unknown[] = [
     "locale": {
       "id": {
         "judul": "Lima Celengan",
-        "instruksi": "Robot punya lima celengan: masukkan tiap uang ke celengan yang gambarnya sama.",
+        "instruksi": "Robot punya celengan koin: masukkan tiap koin dan uang dua ribu ke celengan yang gambarnya sama.",
         "koin500": "koin lima ratus",
         "koin1000": "koin seribu",
-        "kertas2000": "uang dua ribu",
-        "kertas5000": "uang lima ribu",
-        "kertas10000": "uang sepuluh ribu"
+        "kertas2000": "uang dua ribu"
       },
       "en": {
         "judul": "Five Piggy Banks",
-        "instruksi": "Robot has five piggy banks: drop each coin or note into the one with the same picture.",
+        "instruksi": "The robot has coin banks: put each coin and two-thousand note into the bank with the same picture.",
         "koin500": "500 coin",
         "koin1000": "1,000 coin",
-        "kertas2000": "2,000 note",
-        "kertas5000": "5,000 note",
-        "kertas10000": "10,000 note"
+        "kertas2000": "2,000 note"
       }
     },
     "knobs": {
       "binCount": {
         "min": 2,
-        "max": 5,
+        "max": 3,
         "default": 2,
         "step": 1,
-        "keterangan": "jumlah laci aktif: koin 500 & 1.000 dulu, kertas menyusul"
+        "keterangan": "koin 500, koin 1.000, lalu uang 2.000"
       },
       "itemCount": {
         "min": 4,
-        "max": 10,
+        "max": 9,
         "default": 6,
-        "step": 2,
+        "step": 1,
         "keterangan": "jumlah uang per putaran"
       }
     },
@@ -67662,18 +67667,6 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "kertas2000",
         "emoji": "💵",
         "color": "#9e9e9e"
-      },
-      {
-        "id": "kertas5000",
-        "labelKey": "kertas5000",
-        "emoji": "💵",
-        "color": "#6d4c41"
-      },
-      {
-        "id": "kertas10000",
-        "labelKey": "kertas10000",
-        "emoji": "💵",
-        "color": "#8e24aa"
       }
     ],
     "items": [
@@ -67739,48 +67732,6 @@ export const PAKET_RAW: unknown[] = [
         "bin": "kertas2000",
         "emoji": "💵",
         "color": "#9e9e9e"
-      },
-      {
-        "id": "kertas5000-a",
-        "labelKey": "kertas5000",
-        "bin": "kertas5000",
-        "emoji": "💵",
-        "color": "#6d4c41"
-      },
-      {
-        "id": "kertas5000-b",
-        "labelKey": "kertas5000",
-        "bin": "kertas5000",
-        "emoji": "💵",
-        "color": "#6d4c41"
-      },
-      {
-        "id": "kertas5000-c",
-        "labelKey": "kertas5000",
-        "bin": "kertas5000",
-        "emoji": "💵",
-        "color": "#6d4c41"
-      },
-      {
-        "id": "kertas10000-a",
-        "labelKey": "kertas10000",
-        "bin": "kertas10000",
-        "emoji": "💵",
-        "color": "#8e24aa"
-      },
-      {
-        "id": "kertas10000-b",
-        "labelKey": "kertas10000",
-        "bin": "kertas10000",
-        "emoji": "💵",
-        "color": "#8e24aa"
-      },
-      {
-        "id": "kertas10000-c",
-        "labelKey": "kertas10000",
-        "bin": "kertas10000",
-        "emoji": "💵",
-        "color": "#8e24aa"
       }
     ]
   },
@@ -69453,7 +69404,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "kue-bentuk-toko",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "PAUD",
     "mechanic": "pilah",
     "competencyIds": [
@@ -69524,63 +69475,72 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "lingkaran",
         "bin": "lingkaran",
         "shape": "circle",
-        "color": "#6d4c41"
+        "color": "#6d4c41",
+        "scale": 0.6
       },
       {
         "id": "lingkaran-biru",
         "labelKey": "lingkaran",
         "bin": "lingkaran",
         "shape": "circle",
-        "color": "#fff3e0"
+        "color": "#fff3e0",
+        "scale": 1
       },
       {
         "id": "lingkaran-kuning",
         "labelKey": "lingkaran",
         "bin": "lingkaran",
         "shape": "circle",
-        "color": "#fb8c00"
+        "color": "#fb8c00",
+        "scale": 1.5
       },
       {
         "id": "segitiga-merah",
         "labelKey": "segitiga",
         "bin": "segitiga",
         "shape": "triangle",
-        "color": "#6d4c41"
+        "color": "#6d4c41",
+        "scale": 0.6
       },
       {
         "id": "segitiga-biru",
         "labelKey": "segitiga",
         "bin": "segitiga",
         "shape": "triangle",
-        "color": "#fff3e0"
+        "color": "#fff3e0",
+        "scale": 1
       },
       {
         "id": "segitiga-kuning",
         "labelKey": "segitiga",
         "bin": "segitiga",
         "shape": "triangle",
-        "color": "#fb8c00"
+        "color": "#fb8c00",
+        "scale": 1.5
       },
       {
         "id": "kotak-merah",
         "labelKey": "kotak",
         "bin": "kotak",
         "shape": "square",
-        "color": "#6d4c41"
+        "color": "#6d4c41",
+        "scale": 0.6
       },
       {
         "id": "kotak-biru",
         "labelKey": "kotak",
         "bin": "kotak",
         "shape": "square",
-        "color": "#fff3e0"
+        "color": "#fff3e0",
+        "scale": 1
       },
       {
         "id": "kotak-kuning",
         "labelKey": "kotak",
         "bin": "kotak",
         "shape": "square",
-        "color": "#fb8c00"
+        "color": "#fb8c00",
+        "scale": 1.5
       }
     ]
   },
@@ -69789,7 +69749,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "laci-uang-warung",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKA",
     "mechanic": "pilah",
     "competencyIds": [
@@ -69800,8 +69760,6 @@ export const PAKET_RAW: unknown[] = [
       "id": {
         "judul": "Laci Uang Warung",
         "instruksi": "Masukkan tiap uang ke laci warung yang gambarnya sama.",
-        "koin500": "koin lima ratus",
-        "koin1000": "koin seribu",
         "kertas2000": "uang dua ribu",
         "kertas5000": "uang lima ribu",
         "kertas10000": "uang sepuluh ribu"
@@ -69809,8 +69767,6 @@ export const PAKET_RAW: unknown[] = [
       "en": {
         "judul": "Shop Cash Drawer",
         "instruksi": "Put each coin or note into the shop drawer with the same picture.",
-        "koin500": "500 coin",
-        "koin1000": "1,000 coin",
         "kertas2000": "2,000 note",
         "kertas5000": "5,000 note",
         "kertas10000": "10,000 note"
@@ -69819,16 +69775,16 @@ export const PAKET_RAW: unknown[] = [
     "knobs": {
       "binCount": {
         "min": 2,
-        "max": 5,
+        "max": 3,
         "default": 2,
         "step": 1,
-        "keterangan": "jumlah laci aktif: koin 500 & 1.000 dulu, kertas menyusul"
+        "keterangan": "uang kertas 5.000, 10.000, lalu 2.000"
       },
       "itemCount": {
         "min": 4,
-        "max": 10,
+        "max": 9,
         "default": 6,
-        "step": 2,
+        "step": 1,
         "keterangan": "jumlah uang per putaran"
       }
     },
@@ -69840,24 +69796,6 @@ export const PAKET_RAW: unknown[] = [
     "pilihan": [],
     "bins": [
       {
-        "id": "koin500",
-        "labelKey": "koin500",
-        "emoji": "🪙",
-        "color": "#b0bec5"
-      },
-      {
-        "id": "koin1000",
-        "labelKey": "koin1000",
-        "emoji": "🪙",
-        "color": "#ffd54f"
-      },
-      {
-        "id": "kertas2000",
-        "labelKey": "kertas2000",
-        "emoji": "💵",
-        "color": "#9e9e9e"
-      },
-      {
         "id": "kertas5000",
         "labelKey": "kertas5000",
         "emoji": "💵",
@@ -69868,51 +69806,15 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "kertas10000",
         "emoji": "💵",
         "color": "#8e24aa"
+      },
+      {
+        "id": "kertas2000",
+        "labelKey": "kertas2000",
+        "emoji": "💵",
+        "color": "#9e9e9e"
       }
     ],
     "items": [
-      {
-        "id": "koin500-a",
-        "labelKey": "koin500",
-        "bin": "koin500",
-        "emoji": "🪙",
-        "color": "#b0bec5"
-      },
-      {
-        "id": "koin500-b",
-        "labelKey": "koin500",
-        "bin": "koin500",
-        "emoji": "🪙",
-        "color": "#b0bec5"
-      },
-      {
-        "id": "koin500-c",
-        "labelKey": "koin500",
-        "bin": "koin500",
-        "emoji": "🪙",
-        "color": "#b0bec5"
-      },
-      {
-        "id": "koin1000-a",
-        "labelKey": "koin1000",
-        "bin": "koin1000",
-        "emoji": "🪙",
-        "color": "#ffd54f"
-      },
-      {
-        "id": "koin1000-b",
-        "labelKey": "koin1000",
-        "bin": "koin1000",
-        "emoji": "🪙",
-        "color": "#ffd54f"
-      },
-      {
-        "id": "koin1000-c",
-        "labelKey": "koin1000",
-        "bin": "koin1000",
-        "emoji": "🪙",
-        "color": "#ffd54f"
-      },
       {
         "id": "kertas2000-a",
         "labelKey": "kertas2000",
@@ -73590,6 +73492,467 @@ export const PAKET_RAW: unknown[] = [
     "pilihan": []
   },
   {
+    "id": "sains-beri-makan-makhluk-hidup",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HIDUP-TAK-HIDUP.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Waktunya Memberi Makan",
+        "instruksi": "Hanya makhluk hidup yang perlu makan. Taruh ke rak beri makan atau tidak perlu makan.",
+        "makan": "beri makan",
+        "tidak": "tidak perlu makan",
+        "i-kambing": "kambing",
+        "i-bebek": "bebek",
+        "i-sapi": "sapi",
+        "i-kelinci": "kelinci",
+        "i-ikanmas": "ikan mas",
+        "i-anakayam": "anak ayam",
+        "i-robot": "robot mainan",
+        "i-boneka": "boneka",
+        "i-kerikil": "kerikil",
+        "i-ember": "ember",
+        "i-sekop": "sekop",
+        "i-layangan": "layang-layang"
+      },
+      "en": {
+        "judul": "Feeding Time",
+        "instruksi": "Only living things need food. Put each one on the feed shelf or the no-food shelf.",
+        "makan": "feed",
+        "tidak": "no food needed",
+        "i-kambing": "goat",
+        "i-bebek": "duck",
+        "i-sapi": "cow",
+        "i-kelinci": "rabbit",
+        "i-ikanmas": "goldfish",
+        "i-anakayam": "chick",
+        "i-robot": "toy robot",
+        "i-boneka": "doll",
+        "i-kerikil": "pebble",
+        "i-ember": "bucket",
+        "i-sekop": "shovel",
+        "i-layangan": "kite"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah benda per putaran; selalu campuran hewan dan benda mati"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "peternakan",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "makan",
+        "labelKey": "makan",
+        "emoji": "🥕",
+        "color": "#c8e6c9"
+      },
+      {
+        "id": "tidak",
+        "labelKey": "tidak",
+        "emoji": "🚫",
+        "color": "#eceff1"
+      }
+    ],
+    "items": [
+      {
+        "id": "kambing",
+        "labelKey": "i-kambing",
+        "bin": "makan",
+        "emoji": "🐐"
+      },
+      {
+        "id": "bebek",
+        "labelKey": "i-bebek",
+        "bin": "makan",
+        "emoji": "🦆"
+      },
+      {
+        "id": "sapi",
+        "labelKey": "i-sapi",
+        "bin": "makan",
+        "emoji": "🐄"
+      },
+      {
+        "id": "kelinci",
+        "labelKey": "i-kelinci",
+        "bin": "makan",
+        "emoji": "🐇"
+      },
+      {
+        "id": "ikanmas",
+        "labelKey": "i-ikanmas",
+        "bin": "makan",
+        "emoji": "🐟"
+      },
+      {
+        "id": "anakayam",
+        "labelKey": "i-anakayam",
+        "bin": "makan",
+        "emoji": "🐤"
+      },
+      {
+        "id": "robot",
+        "labelKey": "i-robot",
+        "bin": "tidak",
+        "emoji": "🤖"
+      },
+      {
+        "id": "boneka",
+        "labelKey": "i-boneka",
+        "bin": "tidak",
+        "emoji": "🪆"
+      },
+      {
+        "id": "kerikil",
+        "labelKey": "i-kerikil",
+        "bin": "tidak",
+        "emoji": "🪨"
+      },
+      {
+        "id": "ember",
+        "labelKey": "i-ember",
+        "bin": "tidak",
+        "emoji": "🪣"
+      },
+      {
+        "id": "sekop",
+        "labelKey": "i-sekop",
+        "bin": "tidak",
+        "emoji": "⛏️"
+      },
+      {
+        "id": "layangan",
+        "labelKey": "i-layangan",
+        "bin": "tidak",
+        "emoji": "🪁"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-cari-hewan-air",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.HEWAN-DARAT-AIR-UDARA.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Cari Hewan Air",
+        "instruksi": "Dengarkan, lalu sentuh hewan yang hidup di air.",
+        "pilihan": "pilihan",
+        "i-gurita": "gurita",
+        "i-ikanbadut": "ikan badut",
+        "i-paus": "paus",
+        "i-lumba": "lumba-lumba",
+        "i-ubur": "ubur-ubur",
+        "i-cumi": "cumi-cumi",
+        "i-hiu": "hiu",
+        "i-udang": "udang",
+        "i-penyu": "penyu",
+        "i-anjinglaut": "anjing laut",
+        "i-kuda": "kuda",
+        "i-elang": "elang",
+        "i-kambing": "kambing",
+        "i-kucing": "kucing",
+        "i-kelelawar": "kelelawar",
+        "i-jerapah": "jerapah",
+        "i-unta": "unta",
+        "i-lebah": "lebah",
+        "t1": "Mana hewan yang hidup di air?",
+        "t2": "Mana hewan yang hidup di air?",
+        "t3": "Mana hewan yang hidup di air?",
+        "t4": "Mana hewan yang hidup di air?",
+        "t5": "Mana hewan yang hidup di air?",
+        "t6": "Mana hewan yang hidup di air?",
+        "t7": "Mana hewan yang hidup di air?",
+        "t8": "Mana hewan yang hidup di air?",
+        "t9": "Mana hewan yang hidup di air?",
+        "t10": "Mana hewan yang hidup di air?"
+      },
+      "en": {
+        "judul": "Find the Water Animal",
+        "instruksi": "Listen, then touch the animal that lives in water.",
+        "pilihan": "choices",
+        "i-gurita": "octopus",
+        "i-ikanbadut": "clownfish",
+        "i-paus": "whale",
+        "i-lumba": "dolphin",
+        "i-ubur": "jellyfish",
+        "i-cumi": "squid",
+        "i-hiu": "shark",
+        "i-udang": "shrimp",
+        "i-penyu": "sea turtle",
+        "i-anjinglaut": "seal",
+        "i-kuda": "horse",
+        "i-elang": "eagle",
+        "i-kambing": "goat",
+        "i-kucing": "cat",
+        "i-kelelawar": "bat",
+        "i-jerapah": "giraffe",
+        "i-unta": "camel",
+        "i-lebah": "bee",
+        "t1": "Which animal lives in water?",
+        "t2": "Which animal lives in water?",
+        "t3": "Which animal lives in water?",
+        "t4": "Which animal lives in water?",
+        "t5": "Which animal lives in water?",
+        "t6": "Which animal lives in water?",
+        "t7": "Which animal lives in water?",
+        "t8": "Which animal lives in water?",
+        "t9": "Which animal lives in water?",
+        "t10": "Which animal lives in water?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "2–3 pilihan; tepat satu hewan air, pengecoh hewan darat & udara"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "laut",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "gurita",
+        "labelKey": "i-gurita",
+        "bin": "pilihan",
+        "emoji": "🐙"
+      },
+      {
+        "id": "ikanbadut",
+        "labelKey": "i-ikanbadut",
+        "bin": "pilihan",
+        "emoji": "🐠"
+      },
+      {
+        "id": "paus",
+        "labelKey": "i-paus",
+        "bin": "pilihan",
+        "emoji": "🐳"
+      },
+      {
+        "id": "lumba",
+        "labelKey": "i-lumba",
+        "bin": "pilihan",
+        "emoji": "🐬"
+      },
+      {
+        "id": "ubur",
+        "labelKey": "i-ubur",
+        "bin": "pilihan",
+        "emoji": "🪼"
+      },
+      {
+        "id": "cumi",
+        "labelKey": "i-cumi",
+        "bin": "pilihan",
+        "emoji": "🦑"
+      },
+      {
+        "id": "hiu",
+        "labelKey": "i-hiu",
+        "bin": "pilihan",
+        "emoji": "🦈"
+      },
+      {
+        "id": "udang",
+        "labelKey": "i-udang",
+        "bin": "pilihan",
+        "emoji": "🦐"
+      },
+      {
+        "id": "penyu",
+        "labelKey": "i-penyu",
+        "bin": "pilihan",
+        "emoji": "🐢"
+      },
+      {
+        "id": "anjinglaut",
+        "labelKey": "i-anjinglaut",
+        "bin": "pilihan",
+        "emoji": "🦭"
+      },
+      {
+        "id": "kuda",
+        "labelKey": "i-kuda",
+        "bin": "pilihan",
+        "emoji": "🐴"
+      },
+      {
+        "id": "elang",
+        "labelKey": "i-elang",
+        "bin": "pilihan",
+        "emoji": "🦅"
+      },
+      {
+        "id": "kambing",
+        "labelKey": "i-kambing",
+        "bin": "pilihan",
+        "emoji": "🐐"
+      },
+      {
+        "id": "kucing",
+        "labelKey": "i-kucing",
+        "bin": "pilihan",
+        "emoji": "🐈"
+      },
+      {
+        "id": "kelelawar",
+        "labelKey": "i-kelelawar",
+        "bin": "pilihan",
+        "emoji": "🦇"
+      },
+      {
+        "id": "jerapah",
+        "labelKey": "i-jerapah",
+        "bin": "pilihan",
+        "emoji": "🦒"
+      },
+      {
+        "id": "unta",
+        "labelKey": "i-unta",
+        "bin": "pilihan",
+        "emoji": "🐫"
+      },
+      {
+        "id": "lebah",
+        "labelKey": "i-lebah",
+        "bin": "pilihan",
+        "emoji": "🐝"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "r1",
+        "promptKey": "t1",
+        "choices": [
+          "gurita",
+          "kuda",
+          "elang"
+        ],
+        "correct": "gurita"
+      },
+      {
+        "id": "r2",
+        "promptKey": "t2",
+        "choices": [
+          "ikanbadut",
+          "kambing",
+          "lebah"
+        ],
+        "correct": "ikanbadut"
+      },
+      {
+        "id": "r3",
+        "promptKey": "t3",
+        "choices": [
+          "paus",
+          "unta",
+          "kelelawar"
+        ],
+        "correct": "paus"
+      },
+      {
+        "id": "r4",
+        "promptKey": "t4",
+        "choices": [
+          "lumba",
+          "jerapah",
+          "kucing"
+        ],
+        "correct": "lumba"
+      },
+      {
+        "id": "r5",
+        "promptKey": "t5",
+        "choices": [
+          "ubur",
+          "elang",
+          "kambing"
+        ],
+        "correct": "ubur"
+      },
+      {
+        "id": "r6",
+        "promptKey": "t6",
+        "choices": [
+          "cumi",
+          "kuda",
+          "lebah"
+        ],
+        "correct": "cumi"
+      },
+      {
+        "id": "r7",
+        "promptKey": "t7",
+        "choices": [
+          "hiu",
+          "kucing",
+          "unta"
+        ],
+        "correct": "hiu"
+      },
+      {
+        "id": "r8",
+        "promptKey": "t8",
+        "choices": [
+          "udang",
+          "kelelawar",
+          "jerapah"
+        ],
+        "correct": "udang"
+      },
+      {
+        "id": "r9",
+        "promptKey": "t9",
+        "choices": [
+          "penyu",
+          "kambing",
+          "elang"
+        ],
+        "correct": "penyu"
+      },
+      {
+        "id": "r10",
+        "promptKey": "t10",
+        "choices": [
+          "anjinglaut",
+          "kuda",
+          "kucing"
+        ],
+        "correct": "anjinglaut"
+      }
+    ]
+  },
+  {
     "id": "sains-ciri-tubuh-dan-habitat",
     "version": "1.1.0",
     "level": "TKB",
@@ -74233,6 +74596,308 @@ export const PAKET_RAW: unknown[] = [
     "pilihan": []
   },
   {
+    "id": "sains-hasil-percobaan-bak-air",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.APUNG-TENGGELAM-MAGNET.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hasil Percobaan Bak Air",
+        "instruksi": "Benda sudah dicoba di bak air. Taruh ke rak terapung atau tenggelam sesuai hasilnya.",
+        "apung": "terapung",
+        "tenggelam": "tenggelam",
+        "i-spons": "spons",
+        "i-pensil": "pensil kayu",
+        "i-botol": "botol plastik kosong",
+        "i-balon": "balon",
+        "i-jeruk": "jeruk",
+        "i-sandal": "sandal karet",
+        "i-paku": "baut besi",
+        "i-gembok": "gembok",
+        "i-gunting": "gunting",
+        "i-kerang": "cangkang kerang",
+        "i-kapak": "palu",
+        "i-cincin": "cincin logam"
+      },
+      "en": {
+        "judul": "Water Tub Experiment Results",
+        "instruksi": "Each thing was tried in the water tub. Put it on the float or sink shelf to match what happened.",
+        "apung": "floats",
+        "tenggelam": "sinks",
+        "i-spons": "sponge",
+        "i-pensil": "wooden pencil",
+        "i-botol": "empty plastic bottle",
+        "i-balon": "balloon",
+        "i-jeruk": "orange",
+        "i-sandal": "rubber sandal",
+        "i-paku": "iron bolt",
+        "i-gembok": "padlock",
+        "i-gunting": "scissors",
+        "i-kerang": "seashell",
+        "i-kapak": "hammer",
+        "i-cincin": "metal ring"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah benda per putaran; benda berbeda dari paket Tebak Apung atau Tenggelam"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "apung",
+        "labelKey": "apung",
+        "emoji": "🛟",
+        "color": "#e1f5fe"
+      },
+      {
+        "id": "tenggelam",
+        "labelKey": "tenggelam",
+        "emoji": "⬇️",
+        "color": "#90caf9"
+      }
+    ],
+    "items": [
+      {
+        "id": "spons",
+        "labelKey": "i-spons",
+        "bin": "apung",
+        "emoji": "🧽"
+      },
+      {
+        "id": "pensil",
+        "labelKey": "i-pensil",
+        "bin": "apung",
+        "emoji": "✏️"
+      },
+      {
+        "id": "botol",
+        "labelKey": "i-botol",
+        "bin": "apung",
+        "emoji": "🧴"
+      },
+      {
+        "id": "balon",
+        "labelKey": "i-balon",
+        "bin": "apung",
+        "emoji": "🎈"
+      },
+      {
+        "id": "jeruk",
+        "labelKey": "i-jeruk",
+        "bin": "apung",
+        "emoji": "🍊"
+      },
+      {
+        "id": "sandal",
+        "labelKey": "i-sandal",
+        "bin": "apung",
+        "emoji": "🩴"
+      },
+      {
+        "id": "paku",
+        "labelKey": "i-paku",
+        "bin": "tenggelam",
+        "emoji": "🔩"
+      },
+      {
+        "id": "gembok",
+        "labelKey": "i-gembok",
+        "bin": "tenggelam",
+        "emoji": "🔒"
+      },
+      {
+        "id": "gunting",
+        "labelKey": "i-gunting",
+        "bin": "tenggelam",
+        "emoji": "✂️"
+      },
+      {
+        "id": "kerang",
+        "labelKey": "i-kerang",
+        "bin": "tenggelam",
+        "emoji": "🐚"
+      },
+      {
+        "id": "kapak",
+        "labelKey": "i-kapak",
+        "bin": "tenggelam",
+        "emoji": "🔨"
+      },
+      {
+        "id": "cincin",
+        "labelKey": "i-cincin",
+        "bin": "tenggelam",
+        "emoji": "💍"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-hasil-percobaan-magnet",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.APUNG-TENGGELAM-MAGNET.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Hasil Percobaan Magnet",
+        "instruksi": "Magnet sudah didekatkan ke tiap benda. Taruh ke rak ditarik magnet atau tidak ditarik.",
+        "ditarik": "ditarik magnet",
+        "tidak": "tidak ditarik",
+        "i-klip": "klip kertas besi",
+        "i-peniti": "peniti",
+        "i-baut": "mur dan baut besi",
+        "i-kunci": "kunci besi",
+        "i-kait": "kait besi",
+        "i-rantai": "rantai besi",
+        "i-kertas": "kertas",
+        "i-boneka": "boneka beruang",
+        "i-daun": "daun",
+        "i-kayu": "potongan kayu",
+        "i-krayon": "krayon",
+        "i-kauskaki": "kaus kaki"
+      },
+      "en": {
+        "judul": "Magnet Experiment Results",
+        "instruksi": "The magnet was held near each thing. Put it on the pulled shelf or the not-pulled shelf.",
+        "ditarik": "pulled by the magnet",
+        "tidak": "not pulled",
+        "i-klip": "steel paper clip",
+        "i-peniti": "safety pin",
+        "i-baut": "iron nut and bolt",
+        "i-kunci": "iron key",
+        "i-kait": "iron hook",
+        "i-rantai": "iron chain",
+        "i-kertas": "paper",
+        "i-boneka": "teddy bear",
+        "i-daun": "leaf",
+        "i-kayu": "piece of wood",
+        "i-krayon": "crayon",
+        "i-kauskaki": "sock"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah benda per putaran; yang ditarik hanya benda dari besi"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "ditarik",
+        "labelKey": "ditarik",
+        "emoji": "🧲",
+        "color": "#ffcdd2"
+      },
+      {
+        "id": "tidak",
+        "labelKey": "tidak",
+        "emoji": "✋",
+        "color": "#eceff1"
+      }
+    ],
+    "items": [
+      {
+        "id": "klip",
+        "labelKey": "i-klip",
+        "bin": "ditarik",
+        "emoji": "📎"
+      },
+      {
+        "id": "peniti",
+        "labelKey": "i-peniti",
+        "bin": "ditarik",
+        "emoji": "🧷"
+      },
+      {
+        "id": "baut",
+        "labelKey": "i-baut",
+        "bin": "ditarik",
+        "emoji": "🔩"
+      },
+      {
+        "id": "kunci",
+        "labelKey": "i-kunci",
+        "bin": "ditarik",
+        "emoji": "🗝️"
+      },
+      {
+        "id": "kait",
+        "labelKey": "i-kait",
+        "bin": "ditarik",
+        "emoji": "🪝"
+      },
+      {
+        "id": "rantai",
+        "labelKey": "i-rantai",
+        "bin": "ditarik",
+        "emoji": "⛓️"
+      },
+      {
+        "id": "kertas",
+        "labelKey": "i-kertas",
+        "bin": "tidak",
+        "emoji": "📄"
+      },
+      {
+        "id": "boneka",
+        "labelKey": "i-boneka",
+        "bin": "tidak",
+        "emoji": "🧸"
+      },
+      {
+        "id": "daun",
+        "labelKey": "i-daun",
+        "bin": "tidak",
+        "emoji": "🍃"
+      },
+      {
+        "id": "kayu",
+        "labelKey": "i-kayu",
+        "bin": "tidak",
+        "emoji": "🪵"
+      },
+      {
+        "id": "krayon",
+        "labelKey": "i-krayon",
+        "bin": "tidak",
+        "emoji": "🖍️"
+      },
+      {
+        "id": "kauskaki",
+        "labelKey": "i-kauskaki",
+        "bin": "tidak",
+        "emoji": "🧦"
+      }
+    ],
+    "pilihan": []
+  },
+  {
     "id": "sains-hidup-tak-hidup-halaman",
     "version": "1.0.0",
     "level": "PAUD",
@@ -74494,6 +75159,157 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-koin",
         "bin": "takhidup",
         "emoji": "🪙"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-intip-tembus-pandang",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.BAHAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Intip: Tembus Pandang?",
+        "instruksi": "Coba melihat lewat tiap benda. Taruh ke rak tembus pandang atau tidak tembus pandang.",
+        "tembus": "tembus pandang",
+        "tidak": "tidak tembus pandang",
+        "i-jendela": "kaca jendela",
+        "i-toples": "toples kaca bening",
+        "i-kacamata": "lensa kacamata",
+        "i-air": "air bening",
+        "i-plastik": "plastik bening",
+        "i-gelembung": "gelembung sabun",
+        "i-kardus": "kardus",
+        "i-tembok": "tembok bata",
+        "i-papan": "papan kayu",
+        "i-buku": "buku tebal",
+        "i-piring": "piring keramik",
+        "i-selimut": "selimut tebal"
+      },
+      "en": {
+        "judul": "Peek: Can You See Through?",
+        "instruksi": "Try looking through each thing. Put it on the see-through shelf or the not see-through shelf.",
+        "tembus": "see-through",
+        "tidak": "not see-through",
+        "i-jendela": "window glass",
+        "i-toples": "clear glass jar",
+        "i-kacamata": "glasses lens",
+        "i-air": "clear water",
+        "i-plastik": "clear plastic",
+        "i-gelembung": "soap bubble",
+        "i-kardus": "cardboard box",
+        "i-tembok": "brick wall",
+        "i-papan": "wooden board",
+        "i-buku": "thick book",
+        "i-piring": "ceramic plate",
+        "i-selimut": "thick blanket"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah benda per putaran; dicoba langsung, bukan ditebak"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "rumah",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "tembus",
+        "labelKey": "tembus",
+        "emoji": "👀",
+        "color": "#e0f7fa"
+      },
+      {
+        "id": "tidak",
+        "labelKey": "tidak",
+        "emoji": "🙈",
+        "color": "#d7ccc8"
+      }
+    ],
+    "items": [
+      {
+        "id": "jendela",
+        "labelKey": "i-jendela",
+        "bin": "tembus",
+        "emoji": "🪟"
+      },
+      {
+        "id": "toples",
+        "labelKey": "i-toples",
+        "bin": "tembus",
+        "emoji": "🫙"
+      },
+      {
+        "id": "kacamata",
+        "labelKey": "i-kacamata",
+        "bin": "tembus",
+        "emoji": "👓"
+      },
+      {
+        "id": "air",
+        "labelKey": "i-air",
+        "bin": "tembus",
+        "emoji": "💧"
+      },
+      {
+        "id": "plastik",
+        "labelKey": "i-plastik",
+        "bin": "tembus",
+        "emoji": "🧊"
+      },
+      {
+        "id": "gelembung",
+        "labelKey": "i-gelembung",
+        "bin": "tembus",
+        "emoji": "🫧"
+      },
+      {
+        "id": "kardus",
+        "labelKey": "i-kardus",
+        "bin": "tidak",
+        "emoji": "📦"
+      },
+      {
+        "id": "tembok",
+        "labelKey": "i-tembok",
+        "bin": "tidak",
+        "emoji": "🧱"
+      },
+      {
+        "id": "papan",
+        "labelKey": "i-papan",
+        "bin": "tidak",
+        "emoji": "🪵"
+      },
+      {
+        "id": "buku",
+        "labelKey": "i-buku",
+        "bin": "tidak",
+        "emoji": "📕"
+      },
+      {
+        "id": "piring",
+        "labelKey": "i-piring",
+        "bin": "tidak",
+        "emoji": "🍽️"
+      },
+      {
+        "id": "selimut",
+        "labelKey": "i-selimut",
+        "bin": "tidak",
+        "emoji": "🛏️"
       }
     ],
     "pilihan": []
@@ -75599,6 +76415,159 @@ export const PAKET_RAW: unknown[] = [
     "pilihan": []
   },
   {
+    "id": "sains-lapisan-laut",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.HEWAN-HABITAT.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Rumah di Lapisan Laut",
+        "instruksi": "Laut punya lapisan: terumbu yang dangkal, laut dalam yang gelap, dan palung yang paling dalam. Antar tiap hewan ke rumahnya.",
+        "terumbu": "terumbu karang",
+        "dalam": "laut dalam",
+        "palung": "palung",
+        "i-badut": "ikan badut",
+        "i-bintang": "bintang laut",
+        "i-penyu": "penyu",
+        "i-kepiting": "kepiting",
+        "i-paus": "paus sperma",
+        "i-cumi": "cumi-cumi raksasa",
+        "i-hiu": "hiu",
+        "i-ubur": "ubur-ubur bercahaya",
+        "i-sungut": "ikan berlampu",
+        "i-dumbo": "gurita dumbo",
+        "i-udangpalung": "udang palung"
+      },
+      "en": {
+        "judul": "Homes in the Ocean Layers",
+        "instruksi": "The sea has layers: the shallow reef, the dark deep sea, and the deepest trench. Take each animal to its home.",
+        "terumbu": "coral reef",
+        "dalam": "deep sea",
+        "palung": "trench",
+        "i-badut": "clownfish",
+        "i-bintang": "starfish",
+        "i-penyu": "sea turtle",
+        "i-kepiting": "crab",
+        "i-paus": "sperm whale",
+        "i-cumi": "giant squid",
+        "i-hiu": "shark",
+        "i-ubur": "glowing jellyfish",
+        "i-sungut": "anglerfish",
+        "i-dumbo": "dumbo octopus",
+        "i-udangpalung": "trench amphipod"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 3,
+        "step": 1,
+        "keterangan": "jumlah hewan per putaran; tiga lapisan seperti di dunia Bawah Laut"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "laut",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "terumbu",
+        "labelKey": "terumbu",
+        "emoji": "🪸",
+        "color": "#ffe0b2"
+      },
+      {
+        "id": "dalam",
+        "labelKey": "dalam",
+        "emoji": "🌊",
+        "color": "#1565c0"
+      },
+      {
+        "id": "palung",
+        "labelKey": "palung",
+        "emoji": "🕳️",
+        "color": "#263238"
+      }
+    ],
+    "items": [
+      {
+        "id": "badut",
+        "labelKey": "i-badut",
+        "bin": "terumbu",
+        "emoji": "🐠"
+      },
+      {
+        "id": "bintang",
+        "labelKey": "i-bintang",
+        "bin": "terumbu",
+        "emoji": "⭐"
+      },
+      {
+        "id": "penyu",
+        "labelKey": "i-penyu",
+        "bin": "terumbu",
+        "emoji": "🐢"
+      },
+      {
+        "id": "kepiting",
+        "labelKey": "i-kepiting",
+        "bin": "terumbu",
+        "emoji": "🦀"
+      },
+      {
+        "id": "paus",
+        "labelKey": "i-paus",
+        "bin": "dalam",
+        "emoji": "🐋"
+      },
+      {
+        "id": "cumi",
+        "labelKey": "i-cumi",
+        "bin": "dalam",
+        "emoji": "🦑"
+      },
+      {
+        "id": "hiu",
+        "labelKey": "i-hiu",
+        "bin": "dalam",
+        "emoji": "🦈"
+      },
+      {
+        "id": "ubur",
+        "labelKey": "i-ubur",
+        "bin": "dalam",
+        "emoji": "🪼"
+      },
+      {
+        "id": "sungut",
+        "labelKey": "i-sungut",
+        "bin": "palung",
+        "emoji": "🐟",
+        "color": "#37474f"
+      },
+      {
+        "id": "dumbo",
+        "labelKey": "i-dumbo",
+        "bin": "palung",
+        "emoji": "🐙"
+      },
+      {
+        "id": "udangpalung",
+        "labelKey": "i-udangpalung",
+        "bin": "palung",
+        "emoji": "🦐",
+        "color": "#263238"
+      }
+    ],
+    "pilihan": []
+  },
+  {
     "id": "sains-lapisan-tulang-otot-organ",
     "version": "1.0.0",
     "level": "TKB",
@@ -75956,6 +76925,228 @@ export const PAKET_RAW: unknown[] = [
           "kacamata"
         ],
         "correct": "kacamata"
+      }
+    ]
+  },
+  {
+    "id": "sains-lengkapi-tubuh-boneka",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.TUBUH-PANCAINDRA.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Lengkapi Tubuh Boneka",
+        "instruksi": "Boneka belum lengkap. Dengarkan, lalu sentuh bagian tubuh yang harus dipasang.",
+        "pilihan": "pilihan",
+        "i-kepala": "kepala",
+        "i-badan": "badan",
+        "i-tangan": "tangan",
+        "i-kaki": "kaki",
+        "i-bola": "bola",
+        "i-topi": "topi",
+        "i-sepatu": "sepatu",
+        "t1": "Boneka belum punya kepala. Sentuh kepala!",
+        "t2": "Boneka belum punya kaki. Sentuh kaki!",
+        "t3": "Boneka belum punya tangan. Sentuh tangan!",
+        "t4": "Boneka belum punya badan. Sentuh badan!",
+        "t5": "Bagian paling atas tubuh, tempat mata dan mulut. Yang mana?",
+        "t6": "Bagian paling bawah, untuk berdiri dan berjalan. Yang mana?",
+        "t7": "Bagian untuk memegang dan melambai. Yang mana?",
+        "t8": "Bagian tengah tubuh, tempat baju dipakai. Yang mana?",
+        "t9": "Kepala sudah ada. Apa yang dipasang di bawah kepala?",
+        "t10": "Badan dan kaki sudah ada. Apa yang dipasang di kiri dan kanan badan?"
+      },
+      "en": {
+        "judul": "Finish the Doll's Body",
+        "instruksi": "The doll is not finished. Listen, then touch the body part to put on.",
+        "pilihan": "choices",
+        "i-kepala": "head",
+        "i-badan": "body",
+        "i-tangan": "hand",
+        "i-kaki": "foot",
+        "i-bola": "ball",
+        "i-topi": "hat",
+        "i-sepatu": "shoe",
+        "t1": "The doll has no head. Touch the head!",
+        "t2": "The doll has no feet. Touch the foot!",
+        "t3": "The doll has no hands. Touch the hand!",
+        "t4": "The doll has no body. Touch the body!",
+        "t5": "The very top of the body, where the eyes and mouth are. Which one?",
+        "t6": "The very bottom part, for standing and walking. Which one?",
+        "t7": "The part for holding and waving. Which one?",
+        "t8": "The middle of the body, where a shirt goes. Which one?",
+        "t9": "The head is on. What goes under the head?",
+        "t10": "The body and feet are on. What goes on the left and right of the body?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "2–3 pilihan; pengecoh benda bukan bagian tubuh (bola, topi, sepatu)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "klinik",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kepala",
+        "labelKey": "i-kepala",
+        "bin": "pilihan",
+        "emoji": "🙂"
+      },
+      {
+        "id": "badan",
+        "labelKey": "i-badan",
+        "bin": "pilihan",
+        "emoji": "👕"
+      },
+      {
+        "id": "tangan",
+        "labelKey": "i-tangan",
+        "bin": "pilihan",
+        "emoji": "✋"
+      },
+      {
+        "id": "kaki",
+        "labelKey": "i-kaki",
+        "bin": "pilihan",
+        "emoji": "🦶"
+      },
+      {
+        "id": "bola",
+        "labelKey": "i-bola",
+        "bin": "pilihan",
+        "emoji": "⚽"
+      },
+      {
+        "id": "topi",
+        "labelKey": "i-topi",
+        "bin": "pilihan",
+        "emoji": "🎩"
+      },
+      {
+        "id": "sepatu",
+        "labelKey": "i-sepatu",
+        "bin": "pilihan",
+        "emoji": "👟"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "r1",
+        "promptKey": "t1",
+        "choices": [
+          "kepala",
+          "tangan",
+          "bola"
+        ],
+        "correct": "kepala"
+      },
+      {
+        "id": "r2",
+        "promptKey": "t2",
+        "choices": [
+          "kaki",
+          "kepala",
+          "sepatu"
+        ],
+        "correct": "kaki"
+      },
+      {
+        "id": "r3",
+        "promptKey": "t3",
+        "choices": [
+          "tangan",
+          "kaki",
+          "topi"
+        ],
+        "correct": "tangan"
+      },
+      {
+        "id": "r4",
+        "promptKey": "t4",
+        "choices": [
+          "badan",
+          "kepala",
+          "bola"
+        ],
+        "correct": "badan"
+      },
+      {
+        "id": "r5",
+        "promptKey": "t5",
+        "choices": [
+          "kepala",
+          "kaki",
+          "badan"
+        ],
+        "correct": "kepala"
+      },
+      {
+        "id": "r6",
+        "promptKey": "t6",
+        "choices": [
+          "kaki",
+          "tangan",
+          "topi"
+        ],
+        "correct": "kaki"
+      },
+      {
+        "id": "r7",
+        "promptKey": "t7",
+        "choices": [
+          "tangan",
+          "badan",
+          "sepatu"
+        ],
+        "correct": "tangan"
+      },
+      {
+        "id": "r8",
+        "promptKey": "t8",
+        "choices": [
+          "badan",
+          "tangan",
+          "bola"
+        ],
+        "correct": "badan"
+      },
+      {
+        "id": "r9",
+        "promptKey": "t9",
+        "choices": [
+          "badan",
+          "kaki",
+          "topi"
+        ],
+        "correct": "badan"
+      },
+      {
+        "id": "r10",
+        "promptKey": "t10",
+        "choices": [
+          "tangan",
+          "kepala",
+          "sepatu"
+        ],
+        "correct": "tangan"
       }
     ]
   },
@@ -78953,6 +80144,194 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
+    "id": "sains-putar-bumi-siang",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.MATAHARI-BUMI-BULAN.03"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Putar Bumi, Siang di Mana?",
+        "instruksi": "Bagian Bumi yang menghadap Matahari sedang siang. Dengarkan, lalu sentuh jawabannya.",
+        "pilihan": "pilihan",
+        "i-siang": "siang",
+        "i-malam": "malam",
+        "i-hadap": "menghadap Matahari",
+        "i-belakang": "membelakangi Matahari",
+        "t1": "Jakarta sedang menghadap Matahari. Di Jakarta sekarang…",
+        "t2": "Tokyo sedang membelakangi Matahari. Di Tokyo sekarang…",
+        "t3": "Supaya Medan jadi siang, Medan harus…",
+        "t4": "Di Makassar sedang malam. Berarti Makassar sedang…",
+        "t5": "Bumi diputar sampai Bandung menghadap Matahari. Di Bandung sekarang…",
+        "t6": "Bumi berputar terus, Surabaya kini membelakangi Matahari. Di Surabaya sekarang…",
+        "t7": "Di Kairo matahari bersinar terang. Berarti Kairo sedang…",
+        "t8": "Supaya Papua jadi malam, Bumi harus berputar sampai Papua…",
+        "t9": "Sisi Bumi yang terang terkena cahaya Matahari sedang…",
+        "t10": "Sisi Bumi yang gelap, tidak terkena cahaya Matahari, sedang…"
+      },
+      "en": {
+        "judul": "Spin the Earth: Where Is It Day?",
+        "instruksi": "The part of Earth facing the Sun has daytime. Listen, then touch the answer.",
+        "pilihan": "choices",
+        "i-siang": "daytime",
+        "i-malam": "night-time",
+        "i-hadap": "facing the Sun",
+        "i-belakang": "facing away from the Sun",
+        "t1": "Jakarta is facing the Sun. In Jakarta it is now…",
+        "t2": "Tokyo is facing away from the Sun. In Tokyo it is now…",
+        "t3": "For Medan to have daytime, Medan must be…",
+        "t4": "It is night in Makassar. So Makassar is…",
+        "t5": "Earth turns until Bandung faces the Sun. In Bandung it is now…",
+        "t6": "Earth keeps turning and Surabaya now faces away from the Sun. In Surabaya it is now…",
+        "t7": "The sun is shining brightly in Cairo. So Cairo is…",
+        "t8": "For Papua to have night, Earth must turn until Papua is…",
+        "t9": "The side of Earth lit by the Sun has…",
+        "t10": "The dark side of Earth, with no sunlight, has…"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "selalu 2 pilihan (siang/malam atau menghadap/membelakangi)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "angkasa",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "siang",
+        "labelKey": "i-siang",
+        "bin": "pilihan",
+        "emoji": "☀️"
+      },
+      {
+        "id": "malam",
+        "labelKey": "i-malam",
+        "bin": "pilihan",
+        "emoji": "🌙"
+      },
+      {
+        "id": "hadap",
+        "labelKey": "i-hadap",
+        "bin": "pilihan",
+        "emoji": "🌞"
+      },
+      {
+        "id": "belakang",
+        "labelKey": "i-belakang",
+        "bin": "pilihan",
+        "emoji": "🌑"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "r1",
+        "promptKey": "t1",
+        "choices": [
+          "siang",
+          "malam"
+        ],
+        "correct": "siang"
+      },
+      {
+        "id": "r2",
+        "promptKey": "t2",
+        "choices": [
+          "malam",
+          "siang"
+        ],
+        "correct": "malam"
+      },
+      {
+        "id": "r3",
+        "promptKey": "t3",
+        "choices": [
+          "hadap",
+          "belakang"
+        ],
+        "correct": "hadap"
+      },
+      {
+        "id": "r4",
+        "promptKey": "t4",
+        "choices": [
+          "belakang",
+          "hadap"
+        ],
+        "correct": "belakang"
+      },
+      {
+        "id": "r5",
+        "promptKey": "t5",
+        "choices": [
+          "siang",
+          "malam"
+        ],
+        "correct": "siang"
+      },
+      {
+        "id": "r6",
+        "promptKey": "t6",
+        "choices": [
+          "malam",
+          "siang"
+        ],
+        "correct": "malam"
+      },
+      {
+        "id": "r7",
+        "promptKey": "t7",
+        "choices": [
+          "hadap",
+          "belakang"
+        ],
+        "correct": "hadap"
+      },
+      {
+        "id": "r8",
+        "promptKey": "t8",
+        "choices": [
+          "belakang",
+          "hadap"
+        ],
+        "correct": "belakang"
+      },
+      {
+        "id": "r9",
+        "promptKey": "t9",
+        "choices": [
+          "siang",
+          "malam"
+        ],
+        "correct": "siang"
+      },
+      {
+        "id": "r10",
+        "promptKey": "t10",
+        "choices": [
+          "malam",
+          "siang"
+        ],
+        "correct": "malam"
+      }
+    ]
+  },
+  {
     "id": "sains-rak-bahan-dapur",
     "version": "1.1.0",
     "level": "TKB",
@@ -79479,6 +80858,157 @@ export const PAKET_RAW: unknown[] = [
         "labelKey": "i-kentang",
         "bin": "batang",
         "emoji": "🥔"
+      }
+    ],
+    "pilihan": []
+  },
+  {
+    "id": "sains-rawat-tanaman-berbunga",
+    "version": "1.0.0",
+    "level": "TKB",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKB.KEBUTUHAN-TUMBUHAN.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Rawat Sampai Berbunga",
+        "instruksi": "Mana yang membantu tanaman tumbuh berbunga? Taruh ke rak membantu atau tidak membantu.",
+        "bantu": "membantu berbunga",
+        "tidak": "tidak membantu",
+        "i-siram": "disiram air setiap hari",
+        "i-jendela": "ditaruh dekat jendela terang",
+        "i-pagi": "dijemur sinar matahari pagi",
+        "i-tanah": "ditanam di tanah gembur",
+        "i-gulma": "rumput liar di sekitarnya dicabut",
+        "i-pupuk": "diberi pupuk kompos",
+        "i-lemari": "disimpan di lemari gelap",
+        "i-kering": "tidak disiram seminggu",
+        "i-kardus": "ditutup kardus terus",
+        "i-minyak": "disiram minyak goreng",
+        "i-injak": "diinjak-injak",
+        "i-cabut": "dicabut setiap hari"
+      },
+      "en": {
+        "judul": "Care Until It Blooms",
+        "instruksi": "Which of these help a plant grow and bloom? Put each on the helps shelf or the does-not-help shelf.",
+        "bantu": "helps it bloom",
+        "tidak": "does not help",
+        "i-siram": "watered every day",
+        "i-jendela": "placed by a bright window",
+        "i-pagi": "given morning sunshine",
+        "i-tanah": "planted in loose soil",
+        "i-gulma": "weeds around it pulled out",
+        "i-pupuk": "given compost",
+        "i-lemari": "kept in a dark cupboard",
+        "i-kering": "not watered for a week",
+        "i-kardus": "covered with a box all the time",
+        "i-minyak": "watered with cooking oil",
+        "i-injak": "stepped on",
+        "i-cabut": "pulled up every day"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 3,
+        "max": 6,
+        "default": 4,
+        "step": 1,
+        "keterangan": "jumlah kebiasaan per putaran; berbeda dari paket kebutuhan tanaman (air, cahaya, tanah)"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "kebun",
+    "mode": "kelompok",
+    "bins": [
+      {
+        "id": "bantu",
+        "labelKey": "bantu",
+        "emoji": "🌸",
+        "color": "#f8bbd0"
+      },
+      {
+        "id": "tidak",
+        "labelKey": "tidak",
+        "emoji": "🥀",
+        "color": "#d7ccc8"
+      }
+    ],
+    "items": [
+      {
+        "id": "siram",
+        "labelKey": "i-siram",
+        "bin": "bantu",
+        "emoji": "🚿"
+      },
+      {
+        "id": "jendela",
+        "labelKey": "i-jendela",
+        "bin": "bantu",
+        "emoji": "🪟"
+      },
+      {
+        "id": "pagi",
+        "labelKey": "i-pagi",
+        "bin": "bantu",
+        "emoji": "🌅"
+      },
+      {
+        "id": "tanah",
+        "labelKey": "i-tanah",
+        "bin": "bantu",
+        "emoji": "🪴"
+      },
+      {
+        "id": "gulma",
+        "labelKey": "i-gulma",
+        "bin": "bantu",
+        "emoji": "🌱"
+      },
+      {
+        "id": "pupuk",
+        "labelKey": "i-pupuk",
+        "bin": "bantu",
+        "emoji": "🍂"
+      },
+      {
+        "id": "lemari",
+        "labelKey": "i-lemari",
+        "bin": "tidak",
+        "emoji": "🚪"
+      },
+      {
+        "id": "kering",
+        "labelKey": "i-kering",
+        "bin": "tidak",
+        "emoji": "🏜️"
+      },
+      {
+        "id": "kardus",
+        "labelKey": "i-kardus",
+        "bin": "tidak",
+        "emoji": "📦"
+      },
+      {
+        "id": "minyak",
+        "labelKey": "i-minyak",
+        "bin": "tidak",
+        "emoji": "🫗"
+      },
+      {
+        "id": "injak",
+        "labelKey": "i-injak",
+        "bin": "tidak",
+        "emoji": "🦶"
+      },
+      {
+        "id": "cabut",
+        "labelKey": "i-cabut",
+        "bin": "tidak",
+        "emoji": "✊"
       }
     ],
     "pilihan": []
@@ -80095,6 +81625,204 @@ export const PAKET_RAW: unknown[] = [
     ]
   },
   {
+    "id": "sains-simbol-cuaca-jendela",
+    "version": "1.0.0",
+    "level": "TKA",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.TKA.CUACA-PAKAIAN.01"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Simbol Cuaca di Jendela",
+        "instruksi": "Lihat langit di luar jendela, lalu pasang simbol cuaca yang cocok.",
+        "pilihan": "pilihan",
+        "i-cerah": "cerah",
+        "i-mendung": "mendung",
+        "i-hujan": "hujan",
+        "i-angin": "berangin",
+        "t1": "Langit biru, matahari bersinar terang.",
+        "t2": "Tidak ada awan, bayangan kita terlihat jelas.",
+        "t3": "Langit abu-abu penuh awan, tapi belum ada air jatuh.",
+        "t4": "Matahari tertutup awan tebal.",
+        "t5": "Air jatuh dari langit, jalan jadi basah.",
+        "t6": "Orang-orang memakai payung dan jas hujan.",
+        "t7": "Daun-daun bergoyang kencang dan topi hampir terbang.",
+        "t8": "Layang-layang terbang tinggi, bendera berkibar kencang.",
+        "t9": "Ada genangan air dan tetes air di kaca jendela.",
+        "t10": "Panas sekali, semua ingin berteduh dari sinar matahari."
+      },
+      "en": {
+        "judul": "Weather Sign in the Window",
+        "instruksi": "Look at the sky outside the window, then put up the matching weather sign.",
+        "pilihan": "choices",
+        "i-cerah": "sunny",
+        "i-mendung": "cloudy",
+        "i-hujan": "rainy",
+        "i-angin": "windy",
+        "t1": "Blue sky, the sun is shining brightly.",
+        "t2": "No clouds, our shadows are easy to see.",
+        "t3": "The sky is grey and full of clouds, but no water is falling.",
+        "t4": "The sun is hidden behind thick clouds.",
+        "t5": "Water falls from the sky and the road gets wet.",
+        "t6": "People are using umbrellas and raincoats.",
+        "t7": "Leaves are shaking hard and hats almost fly away.",
+        "t8": "Kites fly high and flags flap hard.",
+        "t9": "There are puddles and drops on the window glass.",
+        "t10": "It is very hot, everyone wants shade from the sunshine."
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "2–3 simbol per soal"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "rumah",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "cerah",
+        "labelKey": "i-cerah",
+        "bin": "pilihan",
+        "emoji": "☀️"
+      },
+      {
+        "id": "mendung",
+        "labelKey": "i-mendung",
+        "bin": "pilihan",
+        "emoji": "☁️"
+      },
+      {
+        "id": "hujan",
+        "labelKey": "i-hujan",
+        "bin": "pilihan",
+        "emoji": "🌧️"
+      },
+      {
+        "id": "angin",
+        "labelKey": "i-angin",
+        "bin": "pilihan",
+        "emoji": "🌬️"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "r1",
+        "promptKey": "t1",
+        "choices": [
+          "cerah",
+          "hujan",
+          "mendung"
+        ],
+        "correct": "cerah"
+      },
+      {
+        "id": "r2",
+        "promptKey": "t2",
+        "choices": [
+          "cerah",
+          "angin",
+          "hujan"
+        ],
+        "correct": "cerah"
+      },
+      {
+        "id": "r3",
+        "promptKey": "t3",
+        "choices": [
+          "mendung",
+          "cerah",
+          "hujan"
+        ],
+        "correct": "mendung"
+      },
+      {
+        "id": "r4",
+        "promptKey": "t4",
+        "choices": [
+          "mendung",
+          "cerah",
+          "angin"
+        ],
+        "correct": "mendung"
+      },
+      {
+        "id": "r5",
+        "promptKey": "t5",
+        "choices": [
+          "hujan",
+          "cerah",
+          "mendung"
+        ],
+        "correct": "hujan"
+      },
+      {
+        "id": "r6",
+        "promptKey": "t6",
+        "choices": [
+          "hujan",
+          "angin",
+          "cerah"
+        ],
+        "correct": "hujan"
+      },
+      {
+        "id": "r7",
+        "promptKey": "t7",
+        "choices": [
+          "angin",
+          "hujan",
+          "cerah"
+        ],
+        "correct": "angin"
+      },
+      {
+        "id": "r8",
+        "promptKey": "t8",
+        "choices": [
+          "angin",
+          "mendung",
+          "hujan"
+        ],
+        "correct": "angin"
+      },
+      {
+        "id": "r9",
+        "promptKey": "t9",
+        "choices": [
+          "hujan",
+          "cerah",
+          "angin"
+        ],
+        "correct": "hujan"
+      },
+      {
+        "id": "r10",
+        "promptKey": "t10",
+        "choices": [
+          "cerah",
+          "mendung",
+          "hujan"
+        ],
+        "correct": "cerah"
+      }
+    ]
+  },
+  {
     "id": "sains-sirip-sayap-kaki",
     "version": "1.0.0",
     "level": "TKA",
@@ -80379,6 +82107,316 @@ export const PAKET_RAW: unknown[] = [
       }
     ],
     "pilihan": []
+  },
+  {
+    "id": "sains-temukan-makhluk-hidup",
+    "version": "1.0.0",
+    "level": "PAUD",
+    "mechanic": "pilah",
+    "competencyIds": [
+      "SAINS.PAUD.HIDUP-TAK-HIDUP.02"
+    ],
+    "instructionKey": "instruksi",
+    "locale": {
+      "id": {
+        "judul": "Temukan Makhluk Hidup",
+        "instruksi": "Makhluk hidup bisa tumbuh, makan, dan bernapas. Sentuh yang hidup.",
+        "pilihan": "pilihan",
+        "i-kupu": "kupu-kupu",
+        "i-semut": "semut",
+        "i-kura": "kura-kura",
+        "i-burung": "burung",
+        "i-rumput": "rumput",
+        "i-jamur": "jamur",
+        "i-ulat": "ulat",
+        "i-siput": "siput",
+        "i-pohonpinus": "pohon cemara",
+        "i-kelinci": "kelinci",
+        "i-kursi": "kursi",
+        "i-sepatu": "sepatu",
+        "i-buku": "buku",
+        "i-payung": "payung",
+        "i-sendok": "sendok",
+        "i-jam": "jam",
+        "i-gunting": "gunting",
+        "i-lampu": "lampu",
+        "t1": "Mana yang makhluk hidup?",
+        "t2": "Mana yang makhluk hidup?",
+        "t3": "Mana yang makhluk hidup?",
+        "t4": "Mana yang makhluk hidup?",
+        "t5": "Mana yang makhluk hidup?",
+        "t6": "Mana yang makhluk hidup?",
+        "t7": "Mana yang makhluk hidup?",
+        "t8": "Mana yang makhluk hidup?",
+        "t9": "Mana yang makhluk hidup?",
+        "t10": "Mana yang makhluk hidup?"
+      },
+      "en": {
+        "judul": "Find the Living Thing",
+        "instruksi": "Living things grow, eat, and breathe. Touch the one that is alive.",
+        "pilihan": "choices",
+        "i-kupu": "butterfly",
+        "i-semut": "ant",
+        "i-kura": "tortoise",
+        "i-burung": "bird",
+        "i-rumput": "grass",
+        "i-jamur": "mushroom",
+        "i-ulat": "caterpillar",
+        "i-siput": "snail",
+        "i-pohonpinus": "pine tree",
+        "i-kelinci": "rabbit",
+        "i-kursi": "chair",
+        "i-sepatu": "shoe",
+        "i-buku": "book",
+        "i-payung": "umbrella",
+        "i-sendok": "spoon",
+        "i-jam": "clock",
+        "i-gunting": "scissors",
+        "i-lampu": "lamp",
+        "t1": "Which one is a living thing?",
+        "t2": "Which one is a living thing?",
+        "t3": "Which one is a living thing?",
+        "t4": "Which one is a living thing?",
+        "t5": "Which one is a living thing?",
+        "t6": "Which one is a living thing?",
+        "t7": "Which one is a living thing?",
+        "t8": "Which one is a living thing?",
+        "t9": "Which one is a living thing?",
+        "t10": "Which one is a living thing?"
+      }
+    },
+    "knobs": {
+      "itemCount": {
+        "min": 2,
+        "max": 4,
+        "default": 3,
+        "step": 1,
+        "keterangan": "2–3 pilihan; tepat satu makhluk hidup di tiap soal"
+      }
+    },
+    "assets": [],
+    "generatif": true,
+    "rounds": 10,
+    "world": "kebun",
+    "mode": "pilih",
+    "bins": [
+      {
+        "id": "pilihan",
+        "labelKey": "pilihan"
+      }
+    ],
+    "items": [
+      {
+        "id": "kupu",
+        "labelKey": "i-kupu",
+        "bin": "pilihan",
+        "emoji": "🦋"
+      },
+      {
+        "id": "semut",
+        "labelKey": "i-semut",
+        "bin": "pilihan",
+        "emoji": "🐜"
+      },
+      {
+        "id": "kura",
+        "labelKey": "i-kura",
+        "bin": "pilihan",
+        "emoji": "🐢"
+      },
+      {
+        "id": "burung",
+        "labelKey": "i-burung",
+        "bin": "pilihan",
+        "emoji": "🐦"
+      },
+      {
+        "id": "rumput",
+        "labelKey": "i-rumput",
+        "bin": "pilihan",
+        "emoji": "🌿"
+      },
+      {
+        "id": "jamur",
+        "labelKey": "i-jamur",
+        "bin": "pilihan",
+        "emoji": "🍄"
+      },
+      {
+        "id": "ulat",
+        "labelKey": "i-ulat",
+        "bin": "pilihan",
+        "emoji": "🐛"
+      },
+      {
+        "id": "siput",
+        "labelKey": "i-siput",
+        "bin": "pilihan",
+        "emoji": "🐌"
+      },
+      {
+        "id": "pohonpinus",
+        "labelKey": "i-pohonpinus",
+        "bin": "pilihan",
+        "emoji": "🌲"
+      },
+      {
+        "id": "kelinci",
+        "labelKey": "i-kelinci",
+        "bin": "pilihan",
+        "emoji": "🐇"
+      },
+      {
+        "id": "kursi",
+        "labelKey": "i-kursi",
+        "bin": "pilihan",
+        "emoji": "🪑"
+      },
+      {
+        "id": "sepatu",
+        "labelKey": "i-sepatu",
+        "bin": "pilihan",
+        "emoji": "👟"
+      },
+      {
+        "id": "buku",
+        "labelKey": "i-buku",
+        "bin": "pilihan",
+        "emoji": "📘"
+      },
+      {
+        "id": "payung",
+        "labelKey": "i-payung",
+        "bin": "pilihan",
+        "emoji": "☂️"
+      },
+      {
+        "id": "sendok",
+        "labelKey": "i-sendok",
+        "bin": "pilihan",
+        "emoji": "🥄"
+      },
+      {
+        "id": "jam",
+        "labelKey": "i-jam",
+        "bin": "pilihan",
+        "emoji": "⏰"
+      },
+      {
+        "id": "gunting",
+        "labelKey": "i-gunting",
+        "bin": "pilihan",
+        "emoji": "✂️"
+      },
+      {
+        "id": "lampu",
+        "labelKey": "i-lampu",
+        "bin": "pilihan",
+        "emoji": "💡"
+      }
+    ],
+    "pilihan": [
+      {
+        "id": "r1",
+        "promptKey": "t1",
+        "choices": [
+          "kupu",
+          "kursi",
+          "payung"
+        ],
+        "correct": "kupu"
+      },
+      {
+        "id": "r2",
+        "promptKey": "t2",
+        "choices": [
+          "semut",
+          "sepatu",
+          "sendok"
+        ],
+        "correct": "semut"
+      },
+      {
+        "id": "r3",
+        "promptKey": "t3",
+        "choices": [
+          "kura",
+          "buku",
+          "jam"
+        ],
+        "correct": "kura"
+      },
+      {
+        "id": "r4",
+        "promptKey": "t4",
+        "choices": [
+          "burung",
+          "lampu",
+          "gunting"
+        ],
+        "correct": "burung"
+      },
+      {
+        "id": "r5",
+        "promptKey": "t5",
+        "choices": [
+          "rumput",
+          "kursi",
+          "jam"
+        ],
+        "correct": "rumput"
+      },
+      {
+        "id": "r6",
+        "promptKey": "t6",
+        "choices": [
+          "jamur",
+          "payung",
+          "buku"
+        ],
+        "correct": "jamur"
+      },
+      {
+        "id": "r7",
+        "promptKey": "t7",
+        "choices": [
+          "ulat",
+          "gunting",
+          "sepatu"
+        ],
+        "correct": "ulat"
+      },
+      {
+        "id": "r8",
+        "promptKey": "t8",
+        "choices": [
+          "siput",
+          "sendok",
+          "lampu"
+        ],
+        "correct": "siput"
+      },
+      {
+        "id": "r9",
+        "promptKey": "t9",
+        "choices": [
+          "pohonpinus",
+          "kursi",
+          "buku"
+        ],
+        "correct": "pohonpinus"
+      },
+      {
+        "id": "r10",
+        "promptKey": "t10",
+        "choices": [
+          "kelinci",
+          "jam",
+          "payung"
+        ],
+        "correct": "kelinci"
+      }
+    ]
   },
   {
     "id": "sarang-telur-selisih-satu",
@@ -91343,7 +93381,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd2-mat-rak-puluhan-satuan",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD2",
     "mechanic": "pilah",
     "competencyIds": [
@@ -91352,7 +93390,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Rak Puluhan dan Satuan",
+        "judul": "Gabung Puluhan dan Satuan",
         "instruksi": "Gabungkan puluhan dan satuannya. Taruh tiap kartu di rak bilangannya.",
         "b-47": "47",
         "b-74": "74",
@@ -91395,7 +93433,7 @@ export const PAKET_RAW: unknown[] = [
         "i-6p10": "6+10"
       },
       "en": {
-        "judul": "Tens and Ones Shelf",
+        "judul": "Join Tens and Ones",
         "instruksi": "Put the tens and ones together. Place each card on the shelf for its number.",
         "b-47": "47",
         "b-74": "74",
@@ -102100,7 +104138,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd3-sains-bagian-tumbuhan-bekerja",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD3",
     "mechanic": "pilah",
     "competencyIds": [
@@ -102109,7 +104147,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Bagian Mana yang Bekerja?",
+        "judul": "Tugas Akar, Batang, dan Daun",
         "instruksi": "Baca kejadiannya, lalu sentuh bagian tumbuhan yang bekerja.",
         "pilihan": "pilihan",
         "i-akar": "akar",
@@ -102128,7 +104166,7 @@ export const PAKET_RAW: unknown[] = [
         "t-tegak": "Bunga matahari tetap berdiri tegak menghadap cahaya. Bagian mana yang menopangnya?"
       },
       "en": {
-        "judul": "Which Part Is Working?",
+        "judul": "Jobs of Roots, Stems, and Leaves",
         "instruksi": "Read what happens, then touch the plant part that is doing the work.",
         "pilihan": "choices",
         "i-akar": "roots",
@@ -110181,7 +112219,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-mat-genap-ganjil-tanpa-hitung",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -110190,7 +112228,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Genap atau Ganjil?",
+        "judul": "Tebak Genap-Ganjil Tanpa Menghitung",
         "instruksi": "Tanpa menghitung sampai habis, tebak hasilnya genap atau ganjil, lalu taruh di raknya.",
         "b-genap": "hasil genap",
         "b-ganjil": "hasil ganjil",
@@ -110210,7 +112248,7 @@ export const PAKET_RAW: unknown[] = [
         "i14": "406 + 72"
       },
       "en": {
-        "judul": "Even or Odd?",
+        "judul": "Guess Even or Odd Without Counting",
         "instruksi": "Without working out the whole answer, decide if the result is even or odd, then shelve it.",
         "b-genap": "even result",
         "b-ganjil": "odd result",
@@ -113882,7 +115920,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-mat-pecahan-senilai-rak",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD4",
     "mechanic": "pilah",
     "competencyIds": [
@@ -113891,7 +115929,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Rak Pecahan Senilai",
+        "judul": "Pecahan Senilai Tingkat Lanjut",
         "instruksi": "Taruh tiap pecahan di rak pecahan yang nilainya sama.",
         "b-setengah": "1/2",
         "b-sepertiga": "1/3",
@@ -113913,7 +115951,7 @@ export const PAKET_RAW: unknown[] = [
         "i14": "4/20"
       },
       "en": {
-        "judul": "Equivalent Fraction Shelves",
+        "judul": "Advanced Equivalent Fractions",
         "instruksi": "Put each fraction on the shelf with the same value.",
         "b-setengah": "1/2",
         "b-sepertiga": "1/3",
@@ -134316,7 +136354,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-larut-atau-tidak",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.LARUTAN.01"
@@ -134324,7 +136362,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Larut atau Tidak?",
+        "judul": "Uji Larut dalam Segelas Air",
         "instruksi": "Tiap benda diaduk di segelas air: taruh ke 'larut' atau 'tidak larut'.",
         "b-larut": "larut: tak terlihat lagi di air",
         "b-tidak": "tidak larut: mengendap atau mengapung",
@@ -134342,7 +136380,7 @@ export const PAKET_RAW: unknown[] = [
         "i-kelereng": "kelereng"
       },
       "en": {
-        "judul": "Dissolves or Not?",
+        "judul": "Dissolving Test in a Glass of Water",
         "instruksi": "Each thing is stirred into a glass of water: put it in 'dissolves' or 'does not dissolve'.",
         "b-larut": "dissolves: can no longer be seen",
         "b-tidak": "does not dissolve: sinks or floats",
@@ -135030,7 +137068,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd5-sains-pisahkan-campuran",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "level": "SD5",
     "competencyIds": [
       "SAINS.SD5.LARUTAN.02"
@@ -135038,7 +137076,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Pisahkan Campuran",
+        "judul": "Cara Tepat Memisahkan Campuran",
         "instruksi": "Baca campurannya, lalu sentuh cara memisahkan yang paling tepat.",
         "b-pilihan": "pilihan",
         "i-saring": "disaring dengan kain atau kertas saring",
@@ -135066,7 +137104,7 @@ export const PAKET_RAW: unknown[] = [
         "p-r12": "Air berpasir dituang ke kertas saring. Pasirnya…"
       },
       "en": {
-        "judul": "Separate the Mixture",
+        "judul": "The Right Way to Separate a Mixture",
         "instruksi": "Read the mixture, then touch the best way to separate it.",
         "b-pilihan": "choices",
         "i-saring": "filtered through cloth or filter paper",
@@ -158798,7 +160836,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "jam-dinding-dapur",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -158820,10 +160858,10 @@ export const PAKET_RAW: unknown[] = [
     "knobs": {
       "hourMax": {
         "min": 6,
-        "max": 12,
+        "max": 6,
         "default": 6,
         "step": 1,
-        "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+        "keterangan": "tingkat dasar: pukul 1 sampai 6"
       },
       "bantuanWarna": {
         "min": 0,
@@ -158849,7 +160887,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "jam-dinding-kelas",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "TKB",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -158870,11 +160908,11 @@ export const PAKET_RAW: unknown[] = [
     },
     "knobs": {
       "hourMax": {
-        "min": 6,
+        "min": 12,
         "max": 12,
-        "default": 6,
+        "default": 12,
         "step": 1,
-        "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+        "keterangan": "tingkat lanjut: pukul 1 sampai 12"
       },
       "bantuanWarna": {
         "min": 0,
@@ -161363,7 +163401,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "tombol-ajaib-kamar",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "PAUD",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -161395,10 +163433,10 @@ export const PAKET_RAW: unknown[] = [
     "knobs": {
       "pairs": {
         "min": 2,
-        "max": 3,
+        "max": 2,
         "default": 2,
         "step": 1,
-        "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+        "keterangan": "tingkat dasar: dua tombol, dua alat"
       }
     },
     "assets": [],
@@ -161450,7 +163488,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "tombol-bengkel-robot",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "level": "PAUD",
     "mechanic": "simulasi",
     "competencyIds": [
@@ -161464,9 +163502,9 @@ export const PAKET_RAW: unknown[] = [
         "tombol-merah": "tombol merah",
         "tombol-biru": "tombol biru",
         "tombol-kuning": "tombol kuning",
-        "lampu": "lampu",
-        "kipas": "kipas angin",
-        "radio": "radio"
+        "lampu-sorot": "lampu sorot",
+        "sirene": "sirene",
+        "roda-gigi": "roda gigi berputar"
       },
       "en": {
         "judul": "Robot Workshop Buttons",
@@ -161474,18 +163512,18 @@ export const PAKET_RAW: unknown[] = [
         "tombol-merah": "red button",
         "tombol-biru": "blue button",
         "tombol-kuning": "yellow button",
-        "lampu": "lamp",
-        "kipas": "fan",
-        "radio": "radio"
+        "lampu-sorot": "work light",
+        "sirene": "siren",
+        "roda-gigi": "spinning gear"
       }
     },
     "knobs": {
       "pairs": {
-        "min": 2,
+        "min": 3,
         "max": 3,
-        "default": 2,
+        "default": 3,
         "step": 1,
-        "keterangan": "jumlah pasangan tombol→alat yang aktif; pemetaan diacak tiap sesi"
+        "keterangan": "tingkat lanjut: tiga tombol, tiga alat bengkel"
       }
     },
     "assets": [],
@@ -161516,22 +163554,22 @@ export const PAKET_RAW: unknown[] = [
         "color": "#fdd835"
       },
       {
-        "labelKey": "lampu",
-        "id": "lampu",
+        "labelKey": "lampu-sorot",
+        "id": "lampu-sorot",
         "role": "alat",
-        "emoji": "💡"
+        "emoji": "🔦"
       },
       {
-        "labelKey": "kipas",
-        "id": "kipas",
+        "labelKey": "sirene",
+        "id": "sirene",
         "role": "alat",
-        "emoji": "🌀"
+        "emoji": "🚨"
       },
       {
-        "labelKey": "radio",
-        "id": "radio",
+        "labelKey": "roda-gigi",
+        "id": "roda-gigi",
         "role": "alat",
-        "emoji": "📻"
+        "emoji": "⚙️"
       }
     ]
   },
@@ -184670,7 +186708,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-kode-perjalanan-pesan",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "level": "SD4",
     "mechanic": "urutkan",
     "competencyIds": [
@@ -184679,7 +186717,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Perjalanan Sebuah Pesan",
+        "judul": "Pesan Lewat Jaringan",
         "instruksi": "Susun perjalanan data dari perangkat pengirim, lewat jaringan, sampai ke penerima.",
         "s1": "Pesan ke teman",
         "s1-1": "kamu mengetik dan menekan kirim",
@@ -184742,7 +186780,7 @@ export const PAKET_RAW: unknown[] = [
         "s10-5": "temanmu memutar pesan suaramu"
       },
       "en": {
-        "judul": "A Message's Journey",
+        "judul": "A Message Across the Network",
         "instruksi": "Put the data's journey in order, from the sending device, through the network, to the receiver.",
         "s1": "A message to a friend",
         "s1-1": "you type and press send",
@@ -188722,7 +190760,7 @@ export const PAKET_RAW: unknown[] = [
   },
   {
     "id": "sd4-sains-rantai-makanan-susun",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "level": "SD4",
     "competencyIds": [
       "SAINS.SD4.RANTAI-MAKANAN.01"
@@ -188730,7 +190768,7 @@ export const PAKET_RAW: unknown[] = [
     "instructionKey": "instruksi",
     "locale": {
       "id": {
-        "judul": "Siapa Makan Siapa?",
+        "judul": "Rantai Makanan sampai Pemakan Puncak",
         "instruksi": "Susun rantai makanan dari produsen sampai pemakan puncak.",
         "s-sawah": "Rantai makanan di sawah",
         "sawah-padi": "padi (produsen)",
@@ -188788,7 +190826,7 @@ export const PAKET_RAW: unknown[] = [
         "kutub-anjinglaut": "anjing laut"
       },
       "en": {
-        "judul": "Who Eats Whom?",
+        "judul": "Food Chain to the Top Predator",
         "instruksi": "Put the food chain in order from the producer to the top consumer.",
         "s-sawah": "Rice-field food chain",
         "sawah-padi": "rice plant (producer)",

@@ -353,8 +353,8 @@
         }
       },
       "statement": {
-        "id": "Aku bisa menemukan hewan yang tinggal di lapisan laut yang diminta di Bawah Laut: terumbu, laut dalam, atau palung",
-        "en": "I can find an animal that lives in the asked ocean layer in the Undersea world: reef, deep sea, or trench"
+        "id": "Aku bisa mengantar hewan laut ke lapisan rumahnya: terumbu, laut dalam, atau palung",
+        "en": "I can take sea animals to the layer where they live: reef, deep sea, or trench"
       },
       "depth": [
         "pakai"

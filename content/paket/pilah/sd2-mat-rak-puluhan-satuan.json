@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-rak-puluhan-satuan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Rak Puluhan dan Satuan",
+      "judul": "Gabung Puluhan dan Satuan",
       "instruksi": "Gabungkan puluhan dan satuannya. Taruh tiap kartu di rak bilangannya.",
       "b-47": "47",
       "b-74": "74",
@@ -52,7 +52,7 @@
       "i-6p10": "6+10"
     },
     "en": {
-      "judul": "Tens and Ones Shelf",
+      "judul": "Join Tens and Ones",
       "instruksi": "Put the tens and ones together. Place each card on the shelf for its number.",
       "b-47": "47",
       "b-74": "74",

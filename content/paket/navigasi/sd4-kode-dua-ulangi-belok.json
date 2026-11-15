@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-dua-ulangi-belok",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "SD4",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,11 +9,11 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Dua Ulangi, Satu Belokan",
+      "judul": "Rak Lima Keping: Dua Ulangi",
       "instruksi": "Rak hanya muat lima keping: pakai dua blok ulangi dan satu belokan supaya robot sampai bintang."
     },
     "en": {
-      "judul": "Two Repeats, One Turn",
+      "judul": "Five-Slot Rack: Two Repeats",
       "instruksi": "The rack holds only five pieces: use two repeat blocks and one turn so the robot reaches the star."
     }
   },

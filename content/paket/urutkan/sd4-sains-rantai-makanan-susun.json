@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-rantai-makanan-susun",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.RANTAI-MAKANAN.01"
@@ -8,7 +8,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Siapa Makan Siapa?",
+      "judul": "Rantai Makanan sampai Pemakan Puncak",
       "instruksi": "Susun rantai makanan dari produsen sampai pemakan puncak.",
       "s-sawah": "Rantai makanan di sawah",
       "sawah-padi": "padi (produsen)",
@@ -66,7 +66,7 @@
       "kutub-anjinglaut": "anjing laut"
     },
     "en": {
-      "judul": "Who Eats Whom?",
+      "judul": "Food Chain to the Top Predator",
       "instruksi": "Put the food chain in order from the producer to the top consumer.",
       "s-sawah": "Rice-field food chain",
       "sawah-padi": "rice plant (producer)",

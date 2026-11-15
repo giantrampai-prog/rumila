@@ -1,6 +1,6 @@
 {
   "id": "jam-dinding-kelas",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -21,11 +21,11 @@
   },
   "knobs": {
     "hourMax": {
-      "min": 6,
+      "min": 12,
       "max": 12,
-      "default": 6,
+      "default": 12,
       "step": 1,
-      "keterangan": "angka jam terbesar yang diuji (1..hourMax)"
+      "keterangan": "tingkat lanjut: pukul 1 sampai 12"
     },
     "bantuanWarna": {
       "min": 0,
