@@ -1,6 +1,6 @@
 {
   "id": "sains-suara-siapa-di-kebun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -194,7 +194,7 @@
       "promptKey": "t-ular",
       "choices": [
         "ular",
-        "lebah",
+        "tikus",
         "kuda",
         "merpati"
       ],

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalur-energi-sawah-perbaiki",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Rantai Sawah yang Tertukar",
-      "instruksi": "Dua makhluk di jalur energi sawah tertukar tempat. Tukar keduanya supaya urut dari Matahari ke pemakan puncak.",
+      "instruksi": "Dua makhluk di jalur energi sawah tertukar tempat. Tukar keduanya supaya urut dari Matahari, produsen, lalu siapa memakan siapa.",
       "s-wereng": "Wereng dan laba-laba",
       "wereng-matahari": "Matahari (sumber energi)",
       "wereng-padi": "padi (produsen)",
@@ -85,7 +85,7 @@
     },
     "en": {
       "judul": "Mixed-Up Rice Field Chains",
-      "instruksi": "Two living things on a rice field energy path have swapped places. Swap them back so it goes from the Sun to the top predator.",
+      "instruksi": "Two living things in the rice-field energy path swapped places. Swap them so the order goes from the Sun, the producer, then who eats whom.",
       "s-wereng": "Planthoppers and spiders",
       "wereng-matahari": "the Sun (energy source)",
       "wereng-padi": "rice plants (producer)",
@@ -166,7 +166,7 @@
       "max": 6,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah mata rantai dari Matahari: 4 → 6"
+      "keterangan": "jumlah mata rantai dari Matahari: 4 → 6 (dipotong dari ujung, mata rantai tetap bersambung)"
     }
   },
   "assets": [],

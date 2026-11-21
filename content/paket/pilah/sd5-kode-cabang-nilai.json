@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-cabang-nilai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -53,11 +53,11 @@
   },
   "knobs": {
     "binCount": {
-      "min": 2,
+      "min": 3,
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = hanya cabang A dan B (nilai ≥ 75); 3 = tiga cabang lengkap"
+      "keterangan": "tetap 3 kotak supaya sesuai instruksi (2 kotak tidak dipakai)"
     },
     "itemCount": {
       "min": 6,

@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-indeks-rak-gudang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Daftar Rak Gudang",
-      "instruksi": "Rak gudang dicatat sebagai daftar dan indeksnya mulai dari 0, jadi barang pertama ada di indeks 0. Hitung posisinya dengan teliti lalu pilih jawabannya.",
+      "instruksi": "Rak gudang dicatat sebagai daftar dan indeksnya mulai dari 0. append = tambahkan di ujung daftar, len = banyak isi daftar. Hitung posisinya dengan teliti lalu pilih jawabannya.",
       "pilihan": "pilihan",
       "c1": "obeng",
       "c2": "paku",
@@ -49,7 +49,7 @@
     },
     "en": {
       "judul": "Warehouse Shelf Lists",
-      "instruksi": "The warehouse shelves are written as lists and the index starts at 0, so the first item is at index 0. Count the position carefully, then choose the answer.",
+      "instruksi": "The warehouse shelves are written as lists and the index starts at 0. append = add to the end of the list, len = how many items the list has. Count the position carefully, then choose the answer.",
       "pilihan": "choices",
       "c1": "screwdriver",
       "c2": "nails",

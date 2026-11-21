@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-rata-rata-dan-jangkauan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rata-rata dan Jangkauan",
-      "instruksi": "Rata-rata = jumlah semua data dibagi banyak data. Jangkauan = terbesar dikurangi terkecil.",
+      "instruksi": "Rata-rata = jumlah semua data dibagi banyak data. Jangkauan = terbesar dikurangi terkecil. Sentuh jawabannya.",
       "q1": "Nilai kuis: 6, 8, 9, 5, 7. Rata-ratanya …",
       "c1": "7",
       "c2": "35",
@@ -59,7 +59,7 @@
     },
     "en": {
       "judul": "Mean and Range",
-      "instruksi": "Mean = total of all values divided by how many. Range = largest minus smallest.",
+      "instruksi": "Mean = total of all values divided by how many. Range = largest minus smallest. Touch the answer.",
       "q1": "Quiz scores: 6, 8, 9, 5, 7. The mean is …",
       "c1": "7",
       "c2": "35",

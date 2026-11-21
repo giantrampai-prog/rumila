@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-urut-jadwal-digital",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD3",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -12,7 +12,7 @@
       "judul": "Jadwal Hari Ini",
       "instruksi": "Bandingkan jamnya dulu, lalu menitnya. Susun kegiatan dari yang paling awal.",
       "j-jadwal-pagi": "Jadwal pagi",
-      "j-jadwal-siang": "Jadwal siang",
+      "j-jadwal-siang": "Jadwal siang dan sore",
       "j-jadwal-sore": "Jadwal sore",
       "k-jadwal-1-07t50": "07.50 upacara",
       "k-jadwal-1-08t10": "08.10 pelajaran matematika",

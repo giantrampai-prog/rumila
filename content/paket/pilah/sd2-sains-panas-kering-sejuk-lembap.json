@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-panas-kering-sejuk-lembap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Panas-Kering atau Sejuk-Lembap?",
-      "instruksi": "Rasakan tiap tempat, lalu taruh ke rak panas-kering atau sejuk-lembap.",
+      "instruksi": "Bayangkan berada di tiap tempat, lalu taruh ke rak panas-kering atau sejuk-lembap.",
       "b-panas": "panas dan kering",
       "b-lembap": "sejuk dan lembap",
       "i-aspal": "jalan aspal siang hari",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Hot and Dry or Cool and Damp?",
-      "instruksi": "Imagine feeling each place, then put it on the hot-and-dry or cool-and-damp shelf.",
+      "instruksi": "Imagine being in each place, then put it on the hot-and-dry or cool-and-damp shelf.",
       "b-panas": "hot and dry",
       "b-lembap": "cool and damp",
       "i-aspal": "road at midday",

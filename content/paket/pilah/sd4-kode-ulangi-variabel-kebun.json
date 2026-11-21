@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-ulangi-variabel-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -34,7 +34,7 @@
       "c15": "20",
       "q6": "daun = 0; ulangi 4 kali: daun = daun + 5. Sesudah ulangi selesai: daun = daun - 2.  Berapa daun?",
       "c16": "4",
-      "q7": "pot = 10; ulangi 3 kali: pot = pot + 1, lalu pot = pot - 3.  Berapa pot?",
+      "q7": "pot = 10; ulangi 3 kali, tiap putaran: pot = pot + 1 lalu pot = pot - 3.  Berapa pot?",
       "c17": "5",
       "c18": "25",
       "q8": "x = 0; ulangi ? kali: x = x + 5.  Supaya akhirnya x = 30, isi ? dengan angka berapa?",
@@ -46,7 +46,7 @@
       "c22": "30",
       "q11": "semut = 40; ulangi 4 kali: semut = semut - 10.  Berapa semut?",
       "c23": "15",
-      "q12": "a = 1; ulangi 3 kali: a = a * 2, lalu a = a + 1.  Berapa a?",
+      "q12": "a = 1; ulangi 3 kali, tiap putaran: a = a * 2 lalu a = a + 1.  Berapa a?",
       "q13": "x = 20; ulangi ? kali: x = x - 4.  Supaya akhirnya x = 8, isi ? dengan angka berapa?"
     },
     "en": {
@@ -75,7 +75,7 @@
       "c15": "20",
       "q6": "leaves = 0; repeat 4 times: leaves = leaves + 5. After the repeat ends: leaves = leaves - 2.  What is leaves?",
       "c16": "4",
-      "q7": "pots = 10; repeat 3 times: pots = pots + 1, then pots = pots - 3.  What is pots?",
+      "q7": "pots = 10; repeat 3 times, each lap: pots = pots + 1 then pots = pots - 3.  What is pots?",
       "c17": "5",
       "c18": "25",
       "q8": "x = 0; repeat ? times: x = x + 5.  So that x ends at 30, which number goes in ?",
@@ -87,7 +87,7 @@
       "c22": "30",
       "q11": "ants = 40; repeat 4 times: ants = ants - 10.  What is ants?",
       "c23": "15",
-      "q12": "a = 1; repeat 3 times: a = a * 2, then a = a + 1.  What is a?",
+      "q12": "a = 1; repeat 3 times, each lap: a = a * 2 then a = a + 1.  What is a?",
       "q13": "x = 20; repeat ? times: x = x - 4.  So that x ends at 8, which number goes in ?"
     }
   },

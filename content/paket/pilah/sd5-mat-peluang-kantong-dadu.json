@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-peluang-kantong-dadu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kantong dan Dadu",
-      "instruksi": "Hitung banyak cara tiap kejadian bisa terjadi, lalu bandingkan.",
+      "instruksi": "Hitung banyak cara tiap kejadian bisa terjadi, bandingkan, lalu sentuh jawabannya.",
       "q1": "Kantong: 6 biru, 3 merah, 7 hijau. Warna yang paling mungkin terambil?",
       "c1": "hijau",
       "c2": "biru",
@@ -42,7 +42,7 @@
     },
     "en": {
       "judul": "Bags and Dice",
-      "instruksi": "Count how many ways each event can happen, then compare.",
+      "instruksi": "Count how many ways each event can happen, compare, then touch the answer.",
       "q1": "Bag: 6 blue, 3 red, 7 green. Which colour is most likely to be picked?",
       "c1": "green",
       "c2": "blue",

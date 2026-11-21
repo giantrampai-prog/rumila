@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-cahaya-di-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cahaya di Kota",
-      "instruksi": "Benda mana yang membuat cahaya sendiri, dan mana yang terlihat karena memantulkan cahaya? Ingat Bulan dan cermin!",
+      "instruksi": "Taruh tiap benda: membuat cahaya sendiri, atau terlihat karena memantulkan cahaya? Ingat Bulan dan cermin!",
       "b-sumber": "sumber cahaya: membuat cahaya sendiri",
       "b-pantul": "bukan sumber: memantulkan cahaya",
       "i-bintang": "bintang di langit malam",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Lights Around the City",
-      "instruksi": "Which things make their own light, and which can be seen because they reflect light? Remember the Moon and mirrors!",
+      "instruksi": "Place each thing: does it make its own light, or can we see it because it reflects light? Remember the Moon and mirrors!",
       "b-sumber": "light source: makes its own light",
       "b-pantul": "not a source: reflects light",
       "i-bintang": "a star in the night sky",

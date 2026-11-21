@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-cek-tebakan-lab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cocokkan Hasil dan Tebakan",
-      "instruksi": "Dengarkan tebakan sebelum percobaan dan hasil percobaannya. Apakah hasilnya mendukung tebakan?",
+      "instruksi": "Dengarkan tebakan sebelum percobaan dan hasil percobaannya. Apakah hasilnya mendukung tebakan? Sentuh jawabanmu.",
       "b-pilihan": "pilihan",
       "i-dukung": "hasil mendukung tebakan",
       "i-tidak": "hasil tidak mendukung tebakan",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Match the Result to the Prediction",
-      "instruksi": "Listen to the prediction made before the experiment and the result. Does the result support the prediction?",
+      "instruksi": "Listen to the prediction made before the experiment and the result. Does the result support the prediction? Touch your answer.",
       "b-pilihan": "choices",
       "i-dukung": "the result supports the prediction",
       "i-tidak": "the result does not support the prediction",

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-tinggi-nyaring-bunyi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.BUNYI.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Nada dan Volume",
-      "instruksi": "Bayangkan bunyinya, lalu sentuh perubahan yang akan terdengar.",
+      "instruksi": "Bayangkan bunyinya, lalu sentuh jawaban yang tepat.",
       "b-pilihan": "pilihan",
       "i-tinggi": "nada lebih tinggi",
       "i-rendah": "nada lebih rendah",
@@ -25,7 +25,7 @@
       "p-r1": "Senar gitar dikencangkan, lalu dipetik lagi. Bunyinya jadi…",
       "p-r2": "Gendang dipukul lebih keras. Bunyinya jadi…",
       "p-r3": "Karet gelang dipendekkan lalu dipetik. Bunyinya jadi…",
-      "p-r4": "Senar yang lebih tebal dan lebih panjang dipetik. Bunyinya jadi…",
+      "p-r4": "Dibanding senar yang tipis dan pendek, senar yang lebih tebal dan lebih panjang bunyinya…",
       "p-r5": "Bel sekolah dipukul pelan sekali. Bunyinya jadi…",
       "p-r6": "Ujung penggaris di tepi meja dibuat lebih panjang lalu dijentik. Bunyinya jadi…",
       "p-r7": "Semua bunyi dibuat oleh…",
@@ -35,7 +35,7 @@
     },
     "en": {
       "judul": "Pitch and Volume",
-      "instruksi": "Imagine the sound, then touch the change you would hear.",
+      "instruksi": "Imagine the sound, then touch the right answer.",
       "b-pilihan": "choices",
       "i-tinggi": "higher pitch",
       "i-rendah": "lower pitch",
@@ -51,7 +51,7 @@
       "p-r1": "A guitar string is tightened, then plucked again. The sound becomes…",
       "p-r2": "A drum is hit harder. The sound becomes…",
       "p-r3": "A rubber band is made shorter, then plucked. The sound becomes…",
-      "p-r4": "A thicker, longer string is plucked. The sound becomes…",
+      "p-r4": "Compared with a thin, short string, a thicker, longer string sounds…",
       "p-r5": "The school bell is tapped very gently. The sound becomes…",
       "p-r6": "More of a ruler hangs over the desk edge, then it is twanged. The sound becomes…",
       "p-r7": "Every sound is made by…",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-jalan-loncat-lima",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Katak Loncat Lima",
-      "instruksi": "Katak mulai di 3 dan selalu loncat lima. Batu mana yang diinjaknya?",
+      "instruksi": "Katak mulai di 3 dan selalu loncat lima. Taruh tiap batu di rak: diinjak katak atau tidak diinjak.",
       "b-diinjak-katak": "diinjak katak",
       "b-tidak-diinjak": "tidak diinjak",
       "i-8": "8",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Frog Jumps in Fives",
-      "instruksi": "The frog starts at 3 and always jumps five. Which stones does it land on?",
+      "instruksi": "The frog starts at 3 and always jumps five. Put each stone on a shelf: the frog lands on it, or it does not.",
       "b-diinjak-katak": "frog lands here",
       "b-tidak-diinjak": "frog skips it",
       "i-8": "8",

@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-prosedur-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Prosedur Robot Kebun",
-      "instruksi": "Program robot kebun punya bagian yang berulang. Pilih prosedur yang paling tepat: tepat satu satuan yang berulang, atau prosedur berparameter bila hanya angkanya yang berbeda.",
+      "instruksi": "Program robot kebun punya bagian yang berulang. Pilih prosedur yang paling tepat: tepat satu satuan yang berulang, atau prosedur berparameter bila hanya nilainya yang berbeda.",
       "pilihan": "pilihan",
       "c1": "satu_lubang(): gali, tanam, siram, maju 2",
       "c2": "gali, tanam",
@@ -43,7 +43,7 @@
       "c22": "ulangi 8 kali: cangkul()",
       "c23": "cangkul() saja",
       "c24": "ayun 8, tarik 8",
-      "q8": "Prosedur cangkul() = ayun, tarik. Petak kebun butuh 8 kali cangkul. Program terpendek adalah…",
+      "q8": "Prosedur cangkul() = ayun, tarik. Petak kebun butuh 8 kali cangkul. Program terpendek yang tetap mencangkul 8 kali adalah…",
       "c25": "satu_bunga(): terbang 3, isap madu",
       "c26": "isap madu, terbang 3, isap madu",
       "c27": "kembali_ke_sarang()",
@@ -63,7 +63,7 @@
     },
     "en": {
       "judul": "Garden Robot Procedures",
-      "instruksi": "The garden robot's program has parts that repeat. Choose the best procedure: exactly one repeating unit, or a procedure with a parameter when only the number changes.",
+      "instruksi": "The garden robot's program has parts that repeat. Choose the best procedure: exactly one repeating unit, or a procedure with a parameter when only the values change.",
       "pilihan": "choices",
       "c1": "one_hole(): dig, plant, water, forward 2",
       "c2": "dig, plant",
@@ -96,7 +96,7 @@
       "c22": "repeat 8 times: hoe()",
       "c23": "just hoe()",
       "c24": "swing 8, pull 8",
-      "q8": "The procedure hoe() = swing, pull. The plot needs 8 hoe strokes. The shortest program is…",
+      "q8": "The procedure hoe() = swing, pull. The plot needs 8 hoe strokes. The shortest program that still hoes 8 times is…",
       "c25": "one_flower(): fly 3, sip nectar",
       "c26": "sip nectar, fly 3, sip nectar",
       "c27": "back_to_hive()",

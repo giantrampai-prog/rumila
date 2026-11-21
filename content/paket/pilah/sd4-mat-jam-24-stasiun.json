@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-jam-24-stasiun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Jam Stasiun 24 Jam",
-      "instruksi": "Ubah waktunya ke format lain, lalu sentuh jawaban yang sama.",
+      "instruksi": "Ubah waktunya ke format lain, lalu sentuh jawaban yang menunjukkan waktu yang sama.",
       "q1": "Pukul 3.15 sore dalam format 24 jam adalah …",
       "c1": "15.15",
       "c2": "03.15",
@@ -75,7 +75,7 @@
     },
     "en": {
       "judul": "24-Hour Station Clock",
-      "instruksi": "Change the time to the other format, then touch the matching answer.",
+      "instruksi": "Change the time to the other format, then touch the answer that shows the same time.",
       "q1": "3:15 p.m. in 24-hour time is …",
       "c1": "15:15",
       "c2": "03:15",

@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-tanda-reaksi-dapur",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.PERUBAHAN-ZAT.02"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Reaksi Kimia di Dapur",
-      "instruksi": "Baca kejadiannya, lalu pilih bukti reaksi kimia yang paling jelas: gas muncul, warna berubah, atau suhu berubah.",
+      "instruksi": "Baca kejadiannya, lalu taruh ke bukti reaksi kimia yang paling jelas: gas muncul, warna berubah, atau suhu berubah.",
       "b-gas": "muncul gas (gelembung, busa, atau desis)",
       "b-warna": "warna berubah",
       "b-suhu": "suhu berubah (jadi hangat atau panas)",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Chemistry in the Kitchen",
-      "instruksi": "Read what happens, then choose the clearest sign of a chemical reaction: gas appears, colour changes, or temperature changes.",
+      "instruksi": "Read what happens, then put it with the clearest sign of a chemical reaction: gas appears, colour changes, or temperature changes.",
       "b-gas": "gas appears (bubbles, froth or fizzing)",
       "b-warna": "colour changes",
       "b-suhu": "temperature changes (gets warm or hot)",

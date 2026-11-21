@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-carroll-genap-lima-puluh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -11,10 +11,10 @@
     "id": {
       "judul": "Diagram Carroll Bilangan",
       "instruksi": "Cek dua hal: genap atau ganjil, dan kurang dari 50 atau tidak. Taruh di kotak yang cocok dua-duanya.",
-      "b-genap-kurang-50": "genap, < 50",
-      "b-ganjil-kurang-50": "ganjil, < 50",
-      "b-genap-50": "genap, ≥ 50",
-      "b-ganjil-50": "ganjil, ≥ 50",
+      "b-genap-kurang-50": "genap, kurang dari 50",
+      "b-ganjil-kurang-50": "ganjil, kurang dari 50",
+      "b-genap-50": "genap, 50 atau lebih",
+      "b-ganjil-50": "ganjil, 50 atau lebih",
       "i-12": "12",
       "i-24": "24",
       "i-36": "36",
@@ -39,10 +39,10 @@
     "en": {
       "judul": "Number Carroll Diagram",
       "instruksi": "Check two things: even or odd, and less than 50 or not. Put each number in the box that fits both.",
-      "b-genap-kurang-50": "even, < 50",
-      "b-ganjil-kurang-50": "odd, < 50",
-      "b-genap-50": "even, ≥ 50",
-      "b-ganjil-50": "odd, ≥ 50",
+      "b-genap-kurang-50": "even, less than 50",
+      "b-ganjil-kurang-50": "odd, less than 50",
+      "b-genap-50": "even, 50 or more",
+      "b-ganjil-50": "odd, 50 or more",
       "i-12": "12",
       "i-24": "24",
       "i-36": "36",

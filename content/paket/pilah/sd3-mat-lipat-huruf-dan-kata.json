@@ -1,6 +1,6 @@
 {
   "id": "sd3-mat-lipat-huruf-dan-kata",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Lipat Huruf dan Kata",
-      "instruksi": "Bayangkan garis lipat tegak (dari atas ke bawah) dan garis lipat mendatar (dari kiri ke kanan). Sentuh yang kedua bagiannya pas.",
+      "instruksi": "Bayangkan garis lipat tegak (dari atas ke bawah) dan garis lipat mendatar (dari kiri ke kanan). Periksa apakah kedua bagiannya pas, lalu sentuh jawaban yang sesuai pertanyaan.",
       "pilihan": "pilihan",
       "q1": "Huruf mana yang garis simetrinya hanya tegak?",
       "c1": "A",
@@ -67,7 +67,7 @@
     },
     "en": {
       "judul": "Folding Letters and Words",
-      "instruksi": "Imagine an up-down fold line and a side-to-side fold line. Touch the one whose halves match.",
+      "instruksi": "Imagine an up-down fold line and a side-to-side fold line. Check whether the halves match, then touch the answer that fits the question.",
       "pilihan": "choices",
       "q1": "Which letter has only an up-down line of symmetry?",
       "c1": "A",

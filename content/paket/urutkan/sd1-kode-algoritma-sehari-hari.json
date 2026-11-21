@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-sehari-hari",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -27,7 +27,7 @@
       "tanam-biji-6": "bunga mekar",
       "t-teh": "Membuat teh",
       "teh-1": "ambil cangkir",
-      "teh-2": "masukkan kantong teh",
+      "teh-2": "celupkan kantong teh",
       "teh-3": "tuang air panas",
       "teh-4": "tunggu warnanya berubah",
       "teh-5": "buang kantong teh",
@@ -98,7 +98,7 @@
       "tanam-biji-6": "a flower blooms",
       "t-teh": "Making tea",
       "teh-1": "get a cup",
-      "teh-2": "put in a tea bag",
+      "teh-2": "dip in a tea bag",
       "teh-3": "pour hot water",
       "teh-4": "wait for it to change colour",
       "teh-5": "take out the tea bag",
@@ -248,14 +248,14 @@
           "emoji": "☕"
         },
         {
-          "id": "teh-2",
-          "labelKey": "teh-2",
-          "emoji": "🍵"
-        },
-        {
           "id": "teh-3",
           "labelKey": "teh-3",
           "emoji": "♨️"
+        },
+        {
+          "id": "teh-2",
+          "labelKey": "teh-2",
+          "emoji": "🍵"
         },
         {
           "id": "teh-4",

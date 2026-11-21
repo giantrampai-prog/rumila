@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-uji-adil",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.PENYELIDIKAN.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Uji yang Adil",
-      "instruksi": "Baca pertanyaan penyelidikannya, lalu sentuh jawaban yang membuat ujinya adil.",
+      "instruksi": "Baca pertanyaan penyelidikannya, lalu sentuh jawaban yang tepat agar ujinya adil.",
       "b-pilihan": "pilihan",
       "i-jenistanah": "jenis tanah",
       "i-banyakair": "banyak air siraman",
@@ -29,11 +29,11 @@
       "i-warnamobil": "warna mobilnya berbeda",
       "i-lantaimiring": "lantainya miring",
       "p-r1": "Apakah jenis tanah memengaruhi tinggi tanaman kacang? Apa yang sengaja diubah?",
-      "p-r2": "Uji jenis tanah tadi: apa yang harus dibuat sama untuk semua pot?",
+      "p-r2": "Apakah jenis tanah memengaruhi tinggi tanaman kacang? Apa yang harus dibuat sama untuk semua pot?",
       "p-r3": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Apa yang sengaja diubah?",
-      "p-r4": "Uji pantulan bola tadi: apa yang harus dibuat sama?",
+      "p-r4": "Apakah bola memantul lebih tinggi di lantai keramik atau di karpet? Apa yang harus dibuat sama?",
       "p-r5": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang sengaja diubah?",
-      "p-r6": "Uji es tadi: apa yang harus dibuat sama?",
+      "p-r6": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang harus dibuat sama?",
       "p-r7": "Apakah kain lebih cepat kering di bawah matahari atau di dalam rumah? Apa yang harus dibuat sama?",
       "p-r8": "Dua mobil-mobilan diuji di papan miring untuk melihat mana yang meluncur lebih jauh, tetapi satu dilepas dari tempat lebih tinggi. Mengapa ujinya tidak adil?",
       "p-r9": "Apakah es lebih cepat mencair di tempat terang atau teduh? Apa yang diukur?",
@@ -44,7 +44,7 @@
     },
     "en": {
       "judul": "A Fair Test",
-      "instruksi": "Read the investigation question, then touch the answer that keeps the test fair.",
+      "instruksi": "Read the investigation question, then touch the right answer for a fair test.",
       "b-pilihan": "choices",
       "i-jenistanah": "type of soil",
       "i-banyakair": "amount of water given",
@@ -64,11 +64,11 @@
       "i-warnamobil": "the cars are different colours",
       "i-lantaimiring": "the slope is tilted",
       "p-r1": "Does the type of soil affect how tall a bean plant grows? What do we change on purpose?",
-      "p-r2": "In the soil test: what must be kept the same for every pot?",
+      "p-r2": "Does the type of soil affect how tall a bean plant grows? What must be kept the same for every pot?",
       "p-r3": "Does a ball bounce higher on tiles or on carpet? What do we change on purpose?",
-      "p-r4": "In the bounce test: what must be kept the same?",
+      "p-r4": "Does a ball bounce higher on tiles or on carpet? What must be kept the same?",
       "p-r5": "Does ice melt faster in a sunny place or in the shade? What do we change on purpose?",
-      "p-r6": "In the ice test: what must be kept the same?",
+      "p-r6": "Does ice melt faster in a sunny place or in the shade? What must be kept the same?",
       "p-r7": "Does cloth dry faster in the sun or indoors? What must be kept the same?",
       "p-r8": "Two toy cars are tested on a ramp to see which rolls farther, but one is let go from higher up. Why is the test unfair?",
       "p-r9": "Does ice melt faster in a sunny place or in the shade? What is measured?",

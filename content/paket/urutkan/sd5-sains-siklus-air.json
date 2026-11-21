@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-air",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-AIR.01"
@@ -10,7 +10,7 @@
     "id": {
       "judul": "Perjalanan Setetes Air",
       "instruksi": "Baca judulnya, lalu susun perjalanan air dari awal sampai akhir.",
-      "s-laut": "Dari laut kembali ke laut",
+      "s-laut": "Air laut menjadi hujan",
       "laut-panas": "Matahari memanaskan air laut",
       "laut-uap": "air menguap jadi uap air",
       "laut-awan": "uap naik, mendingin, mengembun jadi awan",
@@ -76,7 +76,7 @@
     "en": {
       "judul": "A Water Drop's Journey",
       "instruksi": "Read the title, then put the water's journey in order.",
-      "s-laut": "From the sea back to the sea",
+      "s-laut": "Sea water becomes rain",
       "laut-panas": "the Sun warms the seawater",
       "laut-uap": "water evaporates into water vapour",
       "laut-awan": "vapour rises, cools and condenses into clouds",
@@ -144,7 +144,7 @@
     "steps": {
       "min": 4,
       "max": 5,
-      "default": 4,
+      "default": 5,
       "step": 1,
       "keterangan": "jumlah langkah: 4 → 5 (beberapa cerita hanya 4 langkah)"
     }

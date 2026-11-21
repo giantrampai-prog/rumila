@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-bayar-lima-puluh-ribu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Toko Perlengkapan Sekolah",
-      "instruksi": "Baca harganya. Gabungkan uang kertas dan koin dari laci sampai jumlahnya pas.",
+      "instruksi": "Baca harganya. Ambil uang kertas dan koin dari laci sampai jumlahnya pas.",
       "g-tas-sekolah": "tas sekolah",
       "g-sepatu": "sepatu",
       "g-bola": "bola",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "School Supplies Shop",
-      "instruksi": "Read the price. Combine notes and coins from the drawer until the total is exact.",
+      "instruksi": "Read the price. Take notes and coins from the drawer until the total is exact.",
       "g-tas-sekolah": "school bag",
       "g-sepatu": "shoes",
       "g-bola": "football",

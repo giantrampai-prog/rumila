@@ -139,3 +139,23 @@ describe("Visual shape & angka", () => {
     expect(() => item({ shape: "uang", angka: "Rp100.000" })).toThrow();
   });
 });
+
+describe("dagang: knob itemsMax di hitung/subitasi dan pecahan di bayar", () => {
+  it("hitung dan subitasi membaca itemsMax bila maxCount tidak ada", async () => {
+    const { buatRonde } = await import("../src/index");
+    const dasar = { id: "uji-hitung", version: "1.0.0", level: "PAUD", competencyIds: ["MAT.PAUD.BILANGAN-1-5.01"], instructionKey: "i", locale: { id: { i: "x", a: "a" }, en: { i: "x", a: "a" } }, assets: [], generatif: true, rounds: 10, mechanic: "dagang", currency: "IDR", denominations: [1000], priceLabel: "koin", goods: [{ id: "a", labelKey: "a", price: 1000 }], customerRule: { itemsMin: 1, itemsMax: 5, payExact: true, maxTotal: 10000, kindsMax: 1 } } as const;
+    for (const mode of ["hitung", "subitasi"] as const) {
+      const p = { ...dasar, mode, knobs: { itemsMax: { min: 2, max: 8, default: 8, step: 1 } } } as never;
+      const maks = Math.max(...Array.from({ length: 200 }, (_, s) => (buatRonde(p, { itemsMax: 8 }, s) as { ronde: { target: number } }).ronde.target));
+      expect(maks).toBe(8);
+    }
+  });
+  it("bayar: knob pecahan membatasi jenis uang di laci, pecahan terkecil dulu", async () => {
+    const { buatRonde } = await import("../src/index");
+    const p = { id: "uji-bayar", version: "1.0.0", level: "TKB", competencyIds: ["MAT.TKB.UANG-10RB.01"], instructionKey: "i", locale: { id: { i: "x", a: "a" }, en: { i: "x", a: "a" } }, assets: [], generatif: true, rounds: 10, mechanic: "dagang", mode: "bayar", currency: "IDR", denominations: [5000, 1000, 2000], priceLabel: "rupiah", goods: [{ id: "a", labelKey: "a", price: 3000 }], customerRule: { itemsMin: 1, itemsMax: 1, payExact: true, maxTotal: 10000, kindsMax: 1 }, knobs: { harga: { min: 2, max: 9, default: 3, step: 1 }, pecahan: { min: 1, max: 3, default: 1, step: 1 } } } as never;
+    const laci = (k: number) => new Set((buatRonde(p, { harga: 3, pecahan: k }, 1) as { ronde: { laci: number[] } }).ronde.laci);
+    expect([...laci(1)]).toEqual([1000]);
+    expect([...laci(2)].sort()).toEqual([1000, 2000]);
+    expect([...laci(3)].sort((a, b) => a - b)).toEqual([1000, 2000, 5000]);
+  });
+});

@@ -1,6 +1,6 @@
 {
   "id": "stok-buah-piktogram",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "TKB",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,25 +10,25 @@
   "locale": {
     "id": {
       "judul": "Stok Buah di Rak",
-      "instruksi": "Lihat piktogram stok buah, lalu sentuh rak yang diminta pembeli.",
+      "instruksi": "Lihat piktogram stok buah, lalu sentuh rak yang diminta.",
       "pilihan": "pilihan",
       "apel": "apel",
       "pisang": "pisang",
       "jeruk": "jeruk",
       "anggur": "anggur",
-      "tSedikit": "Tukang antar datang. Rak mana yang paling sedikit, supaya diisi?",
-      "tBanyak": "Pemborong datang. Rak mana yang paling banyak, supaya diborong?"
+      "tSedikit": "Tukang antar datang. Rak mana yang isinya paling sedikit, supaya diisi?",
+      "tBanyak": "Ada pembeli yang mau membeli banyak sekali. Rak mana yang isinya paling banyak, supaya dibeli semua?"
     },
     "en": {
       "judul": "Fruit Stock on the Shelf",
-      "instruksi": "Look at the fruit stock chart, then touch the shelf the customer asks for.",
+      "instruksi": "Look at the fruit stock chart, then touch the shelf asked for.",
       "pilihan": "choices",
       "apel": "apples",
       "pisang": "bananas",
       "jeruk": "oranges",
       "anggur": "grapes",
       "tSedikit": "The delivery is here. Which shelf has the fewest, so we can refill it?",
-      "tBanyak": "The wholesaler is here. Which shelf has the most, so they can buy it all?"
+      "tBanyak": "A customer wants to buy a lot. Which shelf has the most, so they can buy it all?"
     }
   },
   "knobs": {

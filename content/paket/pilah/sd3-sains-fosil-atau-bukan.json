@@ -1,6 +1,6 @@
 {
   "id": "sd3-sains-fosil-atau-bukan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Fosil atau Bukan?",
-      "instruksi": "Fosil adalah jejak makhluk zaman dulu di batu. Taruh tiap temuan ke raknya.",
+      "instruksi": "Fosil adalah jejak atau sisa makhluk zaman dulu yang membatu. Taruh tiap temuan ke rak fosil atau bukan fosil.",
       "b-fosil": "fosil",
       "b-bukan": "bukan fosil",
       "i-cetakandaun": "cetakan daun di batu",
@@ -28,7 +28,7 @@
     },
     "en": {
       "judul": "Fossil or Not?",
-      "instruksi": "A fossil is a trace of an ancient living thing in rock. Put each find on its shelf.",
+      "instruksi": "A fossil is a trace or remains of an ancient living thing turned to stone. Put each find on the fossil shelf or the not-a-fossil shelf.",
       "b-fosil": "fossil",
       "b-bukan": "not a fossil",
       "i-cetakandaun": "leaf print in rock",

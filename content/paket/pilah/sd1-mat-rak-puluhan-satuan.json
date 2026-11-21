@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-rak-puluhan-satuan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rak Sepuluh dan Satuan",
-      "instruksi": "Satu puluhan ditambah satuan: taruh tiap kartu di rak bilangannya.",
+      "instruksi": "Puluhan ditambah satuan jadi bilangan berapa? Taruh tiap kartu di rak bilangannya.",
       "b-11": "11",
       "b-12": "12",
       "b-13": "13",
@@ -63,7 +63,7 @@
     },
     "en": {
       "judul": "Tens and Ones Shelf",
-      "instruksi": "One ten plus some ones: put each card on the shelf with its number.",
+      "instruksi": "Tens plus ones make which number? Put each card on the shelf with its number.",
       "b-11": "11",
       "b-12": "12",
       "b-13": "13",

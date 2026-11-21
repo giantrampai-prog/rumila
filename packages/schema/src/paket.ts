@@ -37,6 +37,8 @@ const Visual = {
   scale: z.number().min(0.25).max(3).optional(),
   /** jumlah salinan yang digambar (kelompok benda) */
   count: z.number().int().min(1).max(20).optional(),
+  /** jumlah kolom saat count > 1 (larik "a baris, tiap baris b" → kolom b); bawaan ⌈√count⌉ */
+  kolom: z.number().int().min(1).max(20).optional(),
   /** bentuk dasar untuk benda tanpa emoji */
   shape: z.enum(["circle", "square", "triangle", "rect", "star", "berudu", "belah-ketupat", "koin", "uang", "akar"]).optional(),
   /** teks angka pendek yang digambar di atas bentuk (mis. "500", "1.000", "Rp2.000"); koin & uang menampilkannya sebagai nominal */

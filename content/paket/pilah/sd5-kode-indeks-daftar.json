@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-indeks-daftar",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Isi Daftar di Indeks Ini",
-      "instruksi": "Indeks daftar mulai dari 0: hitung posisinya dengan teliti, lalu pilih isinya.",
+      "instruksi": "Indeks daftar mulai dari 0: hitung posisinya dengan teliti, lalu pilih jawabannya. append = tambahkan di ujung daftar, len = banyak isi daftar.",
       "pilihan": "pilihan",
       "c1": "jeruk",
       "c2": "apel",
@@ -49,7 +49,7 @@
     },
     "en": {
       "judul": "What's at This Index?",
-      "instruksi": "List indexes start at 0: count the position carefully, then choose what is there.",
+      "instruksi": "List indexes start at 0: count the position carefully, then choose the answer. append = add to the end of the list, len = how many items the list has.",
       "pilihan": "choices",
       "c1": "orange",
       "c2": "apple",

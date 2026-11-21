@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-rak-kurang-berapa-sepuluh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kurang Berapa Supaya 10?",
-      "instruksi": "Tiap kotak harus berisi sepuluh. Taruh kotak di rak 'kurang berapa'.",
+      "instruksi": "Supaya jadi 10, kurang berapa lagi? Taruh tiap kartu di rak 'kurang' yang benar.",
       "b-kurang-1": "kurang 1",
       "b-kurang-2": "kurang 2",
       "b-kurang-3": "kurang 3",
@@ -32,7 +32,7 @@
     },
     "en": {
       "judul": "How Many More to Make 10?",
-      "instruksi": "Every box must hold ten. Put each box on the 'needs how many' shelf.",
+      "instruksi": "How many more to make 10? Put each card on the right 'needs' shelf.",
       "b-kurang-1": "needs 1",
       "b-kurang-2": "needs 2",
       "b-kurang-3": "needs 3",

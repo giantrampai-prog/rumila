@@ -1,6 +1,6 @@
 {
   "id": "lengkapi-koin-lima-kantin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Pas Lima di Kantin",
-      "instruksi": "Teman robot menunjukkan koinnya sekejap: tambahkan koin dari laci supaya pas lima.",
+      "instruksi": "Teman robot menunjukkan koinnya sekejap: taruh koin tambahan dari laci supaya pas dengan harganya.",
       "nasikuning": "nasi kuning",
       "eskrim": "es krim"
     },
     "en": {
       "judul": "Make Five at the Canteen",
-      "instruksi": "The robot's friend flashes their coins: add coins from the drawer to make exactly five.",
+      "instruksi": "The robot's friend flashes their coins: put extra coins from the drawer to make exactly the price.",
       "nasikuning": "yellow rice",
       "eskrim": "ice cream"
     }

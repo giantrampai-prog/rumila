@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-massa-dan-berat",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.MASSA-BERAT.01"
@@ -26,14 +26,14 @@
       "p-r3": "Satuan massa adalah…",
       "p-r4": "Satuan berat adalah…",
       "p-r5": "Astronaut pergi ke Bulan yang gravitasinya lebih kecil. Massanya…",
-      "p-r6": "Di Bulan, berat astronaut itu…",
+      "p-r6": "Astronaut pergi dari Bumi ke Bulan yang gravitasinya lebih kecil. Beratnya di Bulan…",
       "p-r7": "Di Jupiter yang gravitasinya lebih besar, berat sebuah apel…",
       "p-r8": "Tas bermassa 2 kg dibawa dari Bumi ke Bulan. Massanya di Bulan…",
       "p-r9": "Di stasiun angkasa, astronaut melayang. Massanya…",
       "p-r10": "Di Jupiter yang gravitasinya lebih besar, massa sebuah apel…",
       "p-r11": "Astronaut pulang dari Bulan ke Bumi. Beratnya…",
       "p-r12": "Tas bermassa 2 kg dibawa ke Mars yang gravitasinya lebih kecil. Massanya di Mars…",
-      "p-r13": "Di Mars yang gravitasinya lebih kecil daripada Bumi, berat tas itu…"
+      "p-r13": "Tas bermassa 2 kg dibawa ke Mars yang gravitasinya lebih kecil daripada Bumi. Berat tas di Mars…"
     },
     "en": {
       "judul": "Mass or Weight?",
@@ -54,14 +54,14 @@
       "p-r3": "Mass is measured in…",
       "p-r4": "Weight is measured in…",
       "p-r5": "An astronaut goes to the Moon, where gravity is weaker. Their mass…",
-      "p-r6": "On the Moon, the astronaut's weight…",
+      "p-r6": "An astronaut goes from Earth to the Moon, where gravity is weaker. Their weight on the Moon…",
       "p-r7": "On Jupiter, where gravity is stronger, an apple's weight…",
       "p-r8": "A bag with a mass of 2 kg is taken from the Earth to the Moon. Its mass on the Moon is…",
       "p-r9": "On a space station, astronauts float. Their mass…",
       "p-r10": "On Jupiter, where gravity is stronger, the mass of an apple…",
       "p-r11": "An astronaut comes back from the Moon to Earth. Their weight…",
       "p-r12": "A bag with a mass of 2 kg is taken to Mars, where gravity is weaker. Its mass on Mars…",
-      "p-r13": "On Mars, where gravity is weaker than on Earth, the bag's weight…"
+      "p-r13": "A 2 kg bag is taken to Mars, where gravity is weaker than on Earth. The bag's weight on Mars…"
     }
   },
   "knobs": {},

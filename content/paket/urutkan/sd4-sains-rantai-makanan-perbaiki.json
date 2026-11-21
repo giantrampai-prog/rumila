@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-rantai-makanan-perbaiki",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD4",
   "competencyIds": [
     "SAINS.SD4.RANTAI-MAKANAN.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Rantai yang Tertukar",
-      "instruksi": "Dua mata rantai tertukar tempat: tukar keduanya sekali saja.",
+      "instruksi": "Dua mata rantai tertukar tempat. Tukar keduanya sekali supaya urut lagi: mulai dari produsen, lalu pemakannya, dan seterusnya.",
       "s-sawah": "Rantai makanan di sawah",
       "sawah-padi": "padi (produsen)",
       "sawah-tikus": "tikus sawah",
@@ -67,7 +67,7 @@
     },
     "en": {
       "judul": "Mixed-Up Chain",
-      "instruksi": "Two links have swapped places: swap them back with one move.",
+      "instruksi": "Two links have swapped places. Swap them once so the chain is in order again: start with the producer, then what eats it, and so on.",
       "s-sawah": "Rice-field food chain",
       "sawah-padi": "rice plant (producer)",
       "sawah-tikus": "field rat",

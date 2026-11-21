@@ -1,6 +1,6 @@
 {
   "id": "sains-cerah-mendung-hujan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "PAUD",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -15,11 +15,11 @@
       "hujan-cerah": "langit cerah",
       "hujan-mendung": "awan tebal, langit gelap",
       "hujan-hujan": "hujan turun",
-      "s-pelangi": "Sampai pelangi",
+      "s-pelangi": "Angin membawa awan",
       "pelangi-cerah": "langit cerah",
-      "pelangi-mendung": "awan tebal",
+      "pelangi-mendung": "awan tebal, langit gelap",
       "pelangi-hujan": "hujan turun",
-      "pelangi-pelangi": "pelangi muncul",
+      "pelangi-angin": "angin membawa awan",
       "s-awan": "Awan makin tebal",
       "awan-cerah": "langit cerah",
       "awan-tipis": "awan tipis datang",
@@ -65,11 +65,11 @@
       "hujan-cerah": "sunny sky",
       "hujan-mendung": "thick cloud, dark sky",
       "hujan-hujan": "rain falls",
-      "s-pelangi": "Until the rainbow",
+      "s-pelangi": "The wind brings clouds",
       "pelangi-cerah": "sunny sky",
-      "pelangi-mendung": "thick cloud",
+      "pelangi-mendung": "thick cloud, dark sky",
       "pelangi-hujan": "rain falls",
-      "pelangi-pelangi": "a rainbow appears",
+      "pelangi-angin": "the wind brings clouds",
       "s-awan": "Clouds get thicker",
       "awan-cerah": "sunny sky",
       "awan-tipis": "a thin cloud comes",
@@ -115,7 +115,7 @@
       "max": 4,
       "default": 3,
       "step": 1,
-      "keterangan": "jumlah gambar: 3 (cerah, mendung, hujan) → 4 (tambah pelangi setelah hujan atau awan tipis sebelum tebal)"
+      "keterangan": "jumlah gambar: 3 (cerah, mendung, hujan) → 4 (tambah awan tipis atau angin sebelum awan tebal); potong tengah supaya cerah dan hujan selalu tampil"
     }
   },
   "assets": [],
@@ -123,6 +123,7 @@
   "rounds": 10,
   "world": "halaman",
   "mode": "susun",
+  "potong": "tengah",
   "sequences": [
     {
       "id": "hujan",
@@ -148,13 +149,18 @@
       ]
     },
     {
-      "id": "pelangi",
+      "id": "angin",
       "titleKey": "s-pelangi",
       "steps": [
         {
           "id": "cerah",
           "labelKey": "pelangi-cerah",
           "emoji": "☀️"
+        },
+        {
+          "id": "angin",
+          "labelKey": "pelangi-angin",
+          "emoji": "💨"
         },
         {
           "id": "mendung",
@@ -167,11 +173,6 @@
           "labelKey": "pelangi-hujan",
           "emoji": "🌧️",
           "color": "#546e7a"
-        },
-        {
-          "id": "pelangi",
-          "labelKey": "pelangi-pelangi",
-          "emoji": "🌈"
         }
       ]
     },

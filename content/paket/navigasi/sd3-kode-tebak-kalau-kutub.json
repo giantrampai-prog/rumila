@@ -1,6 +1,6 @@
 {
   "id": "sd3-kode-tebak-kalau-kutub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD3",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Tebak Kalau di Lapangan Es",
-      "instruksi": "Program robot kutub menaruh kalau di dalam ulangi. Sebelum tiap langkah, tunjuk petak tujuannya: ada bongkahan es di depan berarti lompat dua petak."
+      "instruksi": "Program robot kutub menaruh kalau di dalam ulangi. Sebelum tiap langkah, ketuk petak tujuannya: ada batu di depan berarti lompat dua petak, blok belok berarti robot tetap di petaknya."
     },
     "en": {
       "judul": "Guess the If on the Ice Field",
-      "instruksi": "The polar robot's program puts an if inside a repeat. Before each step, point to where it will go: a block of ice ahead means a two-square jump."
+      "instruksi": "The polar robot's program puts an if inside a repeat. Before each step, tap where it will go: a rock ahead means a two-square jump, and a turn block means the robot stays on its square."
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "pagar-bunga-keliru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "pola",
   "competencyIds": [
@@ -13,16 +13,16 @@
       "instruksi": "Satu bunga di pagar ini salah tempat, sentuh yang salah lalu ganti dengan bunga yang benar.",
       "tulip": "tulip",
       "matahari": "bunga matahari",
-      "melati": "bunga putih",
-      "semanggi": "semanggi"
+      "kembang-sepatu": "kembang sepatu",
+      "mawar": "mawar"
     },
     "en": {
       "judul": "Flower Fence Mix-Up",
       "instruksi": "One flower on this fence is in the wrong place; touch it, then swap in the right flower.",
       "tulip": "tulip",
       "matahari": "sunflower",
-      "melati": "white blossom",
-      "semanggi": "clover"
+      "kembang-sepatu": "hibiscus",
+      "mawar": "rose"
     }
   },
   "knobs": {
@@ -52,21 +52,21 @@
       "emoji": "🌻"
     },
     {
-      "labelKey": "melati",
-      "id": "melati",
-      "emoji": "🌼"
+      "labelKey": "kembang-sepatu",
+      "id": "kembang-sepatu",
+      "emoji": "🌺"
     },
     {
-      "labelKey": "semanggi",
-      "id": "semanggi",
-      "emoji": "🍀"
+      "labelKey": "mawar",
+      "id": "mawar",
+      "emoji": "🌹"
     }
   ],
   "patterns": [],
   "nada": {
     "tulip": "C4",
     "matahari": "E4",
-    "melati": "G4",
-    "semanggi": "A4"
+    "kembang-sepatu": "G4",
+    "mawar": "A4"
   }
 }

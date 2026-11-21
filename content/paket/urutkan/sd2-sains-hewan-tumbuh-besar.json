@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-hewan-tumbuh-besar",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -38,7 +38,7 @@
       "anjing-dewasa": "anjing dewasa menjaga rumah",
       "s-sapi": "Sapi tumbuh besar",
       "sapi-bayi": "anak sapi baru berdiri",
-      "sapi-kecil": "anak sapi menyusu",
+      "sapi-kecil": "anak sapi berlari di samping induknya",
       "sapi-muda": "sapi muda makan rumput",
       "sapi-dewasa": "sapi dewasa",
       "t-kuda": "Kuda tumbuh besar",
@@ -92,7 +92,7 @@
       "anjing-dewasa": "adult dog guarding the house",
       "s-sapi": "A cow grows up",
       "sapi-bayi": "newborn calf just standing",
-      "sapi-kecil": "calf drinking milk",
+      "sapi-kecil": "calf running beside its mother",
       "sapi-muda": "young cow eating grass",
       "sapi-dewasa": "adult cow",
       "t-kuda": "A horse grows up",

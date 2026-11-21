@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-cabang-kalau-taman",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cabang Program di Taman Bermain",
-      "instruksi": "Program taman bermain mengecek satu syarat: kalau benar, cabang pertama dijalankan; kalau salah, cabang 'kalau tidak'. Perhatikan tanda >, >=, <, == lalu pilih hasilnya.",
+      "instruksi": "Program taman bermain mengecek syarat: kalau benar, cabang pertama dijalankan; kalau salah, cabang 'kalau tidak'. Perhatikan tanda >, >=, <, == (artinya 'sama dengan?'). True = benar, False = salah. Lalu pilih hasilnya.",
       "pilihan": "pilihan",
       "c1": "boleh berenang",
       "c2": "jangan berenang",
@@ -54,7 +54,7 @@
     },
     "en": {
       "judul": "Playground Program Branches",
-      "instruksi": "The playground program checks one condition: if it is true, the first branch runs; if false, the 'else' branch runs. Watch the signs >, >=, <, == and choose the result.",
+      "instruksi": "The playground program checks a condition: if it is true, the first branch runs; if false, the 'else' branch runs. Watch the signs >, >=, <, == (meaning 'equal to?'). True means true, False means false. Then choose the result.",
       "pilihan": "choices",
       "c1": "swimming allowed",
       "c2": "no swimming",

@@ -1,6 +1,6 @@
 {
   "id": "sains-siap-keluar-payung-topi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "PAUD",
   "mechanic": "pilah",
   "competencyIds": [
@@ -96,7 +96,7 @@
       "id": "pantai",
       "labelKey": "i-pantai",
       "bin": "topi",
-      "emoji": "🏖️"
+      "emoji": "🏝️"
     },
     {
       "id": "hujan",

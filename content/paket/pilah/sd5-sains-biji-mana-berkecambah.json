@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-biji-mana-berkecambah",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-TUMBUHAN.02"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Tebak Kecambah",
-      "instruksi": "Baca keadaan bijinya, lalu tebak apa yang terjadi setelah beberapa hari.",
+      "instruksi": "Baca keadaan bijinya, lalu sentuh jawabanmu tentang kecambahnya.",
       "b-pilihan": "pilihan",
       "i-basahhangat": "kapas basah, di kelas yang hangat",
       "i-keringhangat": "kapas kering, di kelas yang hangat",
@@ -29,7 +29,7 @@
       "i-tetapgelap": "tetap di tempat gelap",
       "p-r1": "Mana biji kacang hijau yang akan berkecambah?",
       "p-r2": "Mana biji yang tidak akan berkecambah?",
-      "p-r3": "Biji di lemari gelap, tetapi kapasnya basah dan hangat. Apa yang terjadi?",
+      "p-r3": "Biji di lemari gelap, tetapi kapasnya basah dan lemarinya hangat. Apa yang terjadi?",
       "p-r4": "Mana yang lebih dulu berkecambah?",
       "p-r5": "Dua hal yang dibutuhkan hampir semua biji untuk berkecambah adalah…",
       "p-r6": "Biji ditanam di pasir kering di halaman yang panas. Apa yang paling perlu ditambahkan?",
@@ -42,7 +42,7 @@
     },
     "en": {
       "judul": "Sprout Prediction",
-      "instruksi": "Read how the seeds are kept, then predict what happens after a few days.",
+      "instruksi": "Read how the seeds are kept, then touch your answer about the sprouts.",
       "b-pilihan": "choices",
       "i-basahhangat": "wet cotton wool, in a warm classroom",
       "i-keringhangat": "dry cotton wool, in a warm classroom",
@@ -62,7 +62,7 @@
       "i-tetapgelap": "staying in the dark",
       "p-r1": "Which mung bean seed will germinate?",
       "p-r2": "Which seed will not germinate?",
-      "p-r3": "Seeds in a dark cupboard, but the cotton wool is wet and warm. What happens?",
+      "p-r3": "Seeds in a dark cupboard, but the cotton wool is wet and the cupboard is warm. What happens?",
       "p-r4": "Which one germinates first?",
       "p-r5": "The two things almost all seeds need to germinate are…",
       "p-r6": "Seeds are planted in dry sand in a hot yard. What do they most need?",

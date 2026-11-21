@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-perkiraan-pabrik",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pabrik Perkiraan",
-      "instruksi": "Bulatkan ke angka depan untuk memperkirakan, atau hitung tepat pembagiannya.",
+      "instruksi": "Bulatkan ke angka depan untuk memperkirakan, atau hitung tepat pembagiannya. Sentuh jawabannya.",
       "q1": "Perkiraan terdekat untuk 7.044 × 60?",
       "c1": "420.000",
       "c2": "42.000",
@@ -73,7 +73,7 @@
     },
     "en": {
       "judul": "Estimation Factory",
-      "instruksi": "Round to the leading digit to estimate, or work out the division exactly.",
+      "instruksi": "Round to the leading digit to estimate, or work out the division exactly. Touch the answer.",
       "q1": "Best estimate for 7,044 × 60?",
       "c1": "420,000",
       "c2": "42,000",

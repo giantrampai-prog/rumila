@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-tukar-tetangga",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Tukar-Tetangga",
-      "instruksi": "Satu putaran: bandingkan dua angka bersebelahan dari kiri ke kanan dan tukar bila yang kiri lebih besar.",
+      "instruksi": "Satu putaran: bandingkan dua angka bersebelahan dari kiri ke kanan dan tukar bila yang kiri lebih besar. Jalankan sampai ujung kanan, lalu pilih jawabannya.",
       "pilihan": "pilihan",
       "c1": "2  4  1  5",
       "c2": "1  2  4  5",
@@ -45,16 +45,16 @@
       "c23": "1",
       "c24": "0",
       "c25": "2",
-      "q9": "Mulai: 2, 1, 3. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "q9": "Mulai: 2, 1, 3. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
       "c26": "3",
-      "q10": "Mulai: 3, 2, 1. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
-      "q11": "Mulai: 4, 1, 2, 3. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?",
+      "q10": "Mulai: 3, 2, 1. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
+      "q11": "Mulai: 4, 1, 2, 3. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?",
       "c27": "4",
-      "q12": "Mulai: 2, 3, 4, 1. Berapa putaran tukar-tetangga sampai semuanya urut dari kecil?"
+      "q12": "Mulai: 2, 3, 4, 1. Setelah berapa putaran tukar-tetangga semuanya sudah urut dari kecil?"
     },
     "en": {
       "judul": "Neighbour Swaps",
-      "instruksi": "One pass: compare each pair of neighbours from left to right and swap them if the left one is bigger.",
+      "instruksi": "One pass: compare each pair of neighbours from left to right and swap them if the left one is bigger. Go all the way to the right end, then choose the answer.",
       "pilihan": "choices",
       "c1": "2  4  1  5",
       "c2": "1  2  4  5",
@@ -89,12 +89,12 @@
       "c23": "1",
       "c24": "0",
       "c25": "2",
-      "q9": "Start: 2, 1, 3. How many passes of neighbour swaps until it is all in order from smallest?",
+      "q9": "Start: 2, 1, 3. After how many passes of neighbour swaps is it all in order from smallest?",
       "c26": "3",
-      "q10": "Start: 3, 2, 1. How many passes of neighbour swaps until it is all in order from smallest?",
-      "q11": "Start: 4, 1, 2, 3. How many passes of neighbour swaps until it is all in order from smallest?",
+      "q10": "Start: 3, 2, 1. After how many passes of neighbour swaps is it all in order from smallest?",
+      "q11": "Start: 4, 1, 2, 3. After how many passes of neighbour swaps is it all in order from smallest?",
       "c27": "4",
-      "q12": "Start: 2, 3, 4, 1. How many passes of neighbour swaps until it is all in order from smallest?"
+      "q12": "Start: 2, 3, 4, 1. After how many passes of neighbour swaps is it all in order from smallest?"
     }
   },
   "knobs": {},

@@ -1,6 +1,6 @@
 {
   "id": "jengkal-benda-kelas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Jengkal di Kelas",
-      "instruksi": "Ukur benda-benda di kelas: tempelkan jengkal tanganmu dari ujung ke ujung tanpa celah, lalu sebutkan berapa jengkal.",
+      "instruksi": "Ukur benda-benda di kelas: tempelkan jengkal tanganmu dari ujung ke ujung tanpa celah, lalu sentuh angka jumlah jengkalnya.",
       "pensil": "pensil",
       "buku-tulis": "buku tulis",
       "kuas": "kuas",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Hand Spans in Class",
-      "instruksi": "Measure things in the classroom: lay your hand spans end to end with no gaps, then say how many spans.",
+      "instruksi": "Measure things in the classroom: lay your hand spans end to end with no gaps, then touch the number of spans.",
       "pensil": "pencil",
       "buku-tulis": "notebook",
       "kuas": "paintbrush",

@@ -1,6 +1,6 @@
 {
   "id": "jungkat-jungkit-berat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Mana Lebih Berat?",
-      "instruksi": "Taruh dua benda di timbangan, lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
+      "instruksi": "Dua benda ada di timbangan. Lihat sisi yang turun, lalu sentuh benda yang lebih berat.",
       "batu": "batu",
       "semangka": "semangka",
       "buku": "buku",
@@ -21,7 +21,7 @@
     },
     "en": {
       "judul": "Which Is Heavier?",
-      "instruksi": "Put the two things on the balance, watch which side goes down, then touch the heavier one.",
+      "instruksi": "Two things are on the balance. Watch which side goes down, then touch the heavier one.",
       "batu": "rock",
       "semangka": "watermelon",
       "buku": "book",

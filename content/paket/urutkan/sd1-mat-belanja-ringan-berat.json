@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-belanja-ringan-berat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -9,8 +9,8 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Timbang Belanjaan di Pasar",
-      "instruksi": "Mana yang paling mudah diangkat? Susun belanjaan dari yang paling ringan sampai yang paling berat.",
+      "judul": "Timbang Barang di Pasar",
+      "instruksi": "Bayangkan menimbang tiap barang di pasar. Susun dari yang paling ringan sampai yang paling berat.",
       "j-ringan-berat": "Paling ringan ke paling berat",
       "s-cabai": "cabai",
       "s-telur": "telur",
@@ -21,8 +21,8 @@
       "s-sapi": "sapi"
     },
     "en": {
-      "judul": "Weighing the Market Shopping",
-      "instruksi": "Which is easiest to lift? Line up the shopping from the lightest to the heaviest.",
+      "judul": "Weighing Things at the Market",
+      "instruksi": "Imagine weighing each thing at the market. Line them up from the lightest to the heaviest.",
       "j-ringan-berat": "Lightest to heaviest",
       "s-cabai": "chili",
       "s-telur": "egg",

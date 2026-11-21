@@ -1,6 +1,6 @@
 {
   "id": "sd6-kode-simbol-alir-stasiun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Diagram Alir Mesin Tiket",
-      "instruksi": "Langkah-langkah mesin tiket stasiun digambar sebagai diagram alir: oval untuk mulai/selesai, jajar genjang untuk masukan/keluaran, persegi untuk proses, belah ketupat untuk keputusan. Seret tiap langkah ke bentuknya.",
+      "instruksi": "Langkah-langkah mesin tiket stasiun digambar sebagai diagram alir: oval untuk mulai/selesai, jajar genjang untuk masukan/keluaran, persegi panjang untuk proses, belah ketupat untuk keputusan. Seret tiap langkah ke bentuknya.",
       "bin-oval": "⬭ mulai / selesai",
       "bin-io": "▱ masukan / keluaran",
       "bin-proses": "▭ proses",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-ulangi-jalan-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Jalan Kota Berbelok Tiga Kali",
-      "instruksi": "Antar robot lewat jalan di antara gedung: jalannya berbelok tiga kali dan rak hanya sebelas keping, jadi pakai empat blok ulangi."
+      "instruksi": "Antar robot lewat jalan kota: jalannya berbelok tiga kali dan rak hanya sebelas keping, jadi pakai empat blok ulangi."
     },
     "en": {
       "judul": "City Street with Three Turns",
-      "instruksi": "Guide the robot along the street between buildings: it turns three times and the rack holds only eleven pieces, so use four repeat blocks."
+      "instruksi": "Guide the robot along the town street: it turns three times and the rack holds only eleven pieces, so use four repeat blocks."
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-jalan-makanan-perbaiki",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.PENCERNAAN.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Jalan Makanan Tertukar",
-      "instruksi": "Dua organ tertukar tempat: tukar keduanya sekali saja.",
+      "instruksi": "Dua organ tertukar tempat. Tukar keduanya sekali supaya urut sesuai jalan yang dilewati makanan.",
       "s-cerna": "Perjalanan sepiring nasi",
       "cerna-mulut": "mulut: dikunyah dan dibasahi ludah",
       "cerna-kerongkongan": "kerongkongan: didorong turun",
@@ -95,7 +95,7 @@
     },
     "en": {
       "judul": "Food Path Mix-Up",
-      "instruksi": "Two organs have swapped places: swap them back with one move.",
+      "instruksi": "Two organs have swapped places. Swap them once so they follow the path the food takes.",
       "s-cerna": "The journey of a plate of rice",
       "cerna-mulut": "mouth: chewed and wetted with saliva",
       "cerna-kerongkongan": "oesophagus: pushed down",

@@ -1,6 +1,6 @@
 {
   "id": "hitung-bunga-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKA",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,14 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Bunga di Taman",
+      "judul": "Hitung di Taman",
       "instruksi": "{Barang} di taman tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "tulip": "tulip",
       "matahari": "bunga matahari",
       "kupu": "kupu-kupu"
     },
     "en": {
-      "judul": "Flowers in the Park",
+      "judul": "Counting in the Park",
       "instruksi": "The {barang} in the garden are scattered: touch each one as you count, then slide the marker to the number.",
       "tulip": "tulips",
       "matahari": "sunflowers",

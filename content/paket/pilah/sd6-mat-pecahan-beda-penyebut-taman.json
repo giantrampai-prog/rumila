@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-pecahan-beda-penyebut-taman",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kebun Pecahan",
-      "instruksi": "Cari KPK penyebutnya, ubah kedua pecahan, hitung, lalu sederhanakan.",
+      "instruksi": "Cari KPK penyebutnya, ubah kedua pecahan, hitung, lalu sederhanakan. Sentuh hasilnya.",
       "q1": "3/5 + 1/4 = …",
       "c1": "17/20",
       "c2": "4/9",
@@ -66,7 +66,7 @@
     },
     "en": {
       "judul": "Fraction Garden",
-      "instruksi": "Find the LCM of the denominators, change both fractions, calculate, then simplify.",
+      "instruksi": "Find the LCM of the denominators, change both fractions, calculate, then simplify. Touch the answer.",
       "q1": "3/5 + 1/4 = …",
       "c1": "17/20",
       "c2": "4/9",

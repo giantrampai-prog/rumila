@@ -1,6 +1,6 @@
 {
   "id": "sd5-sains-siklus-air-perbaiki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "competencyIds": [
     "SAINS.SD5.SIKLUS-AIR.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Siklus Air yang Tertukar",
-      "instruksi": "Dua tahap siklus air tertukar tempat. Tukar keduanya: penguapan, pengembunan, hujan, lalu air mengalir kembali.",
+      "instruksi": "Dua tahap siklus air tertukar tempat. Tukar keduanya supaya urut lagi. Ingat: air menguap dulu, lalu mengembun, baru turun sebagai hujan.",
       "s-danau": "Danau di kaki gunung",
       "danau-panas": "Matahari memanaskan air danau",
       "danau-uap": "air danau menguap menjadi uap air",
@@ -69,7 +69,7 @@
     },
     "en": {
       "judul": "Mixed-Up Water Cycle",
-      "instruksi": "Two stages of the water cycle have swapped. Swap them back: evaporation, condensation, rain, then water flowing back.",
+      "instruksi": "Two stages of the water cycle have swapped. Swap them back so they are in order. Remember: water evaporates first, then condenses, and only then falls as rain.",
       "s-danau": "A lake below a mountain",
       "danau-panas": "the Sun warms the lake",
       "danau-uap": "lake water evaporates into water vapour",
@@ -132,7 +132,7 @@
     "steps": {
       "min": 4,
       "max": 5,
-      "default": 4,
+      "default": 5,
       "step": 1,
       "keterangan": "jumlah tahap: 4 → 5"
     }

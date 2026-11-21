@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-jalur-energi-sawah",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.01"
@@ -9,7 +9,7 @@
   "locale": {
     "id": {
       "judul": "Jalur Energi di Alam",
-      "instruksi": "Susun jalur energi dari Matahari sampai pemakan puncak.",
+      "instruksi": "Susun jalur energi: mulai dari Matahari, lalu produsen, lalu siapa memakan siapa.",
       "s-j1": "Jalur 1 di jaring sawah",
       "j1-matahari": "Matahari: sumber energi",
       "j1-padi": "padi (produsen)",
@@ -97,7 +97,7 @@
     },
     "en": {
       "judul": "Energy Paths in Nature",
-      "instruksi": "Put the energy path in order from the Sun to the top consumer.",
+      "instruksi": "Arrange the energy path: start with the Sun, then the producer, then who eats whom.",
       "s-j1": "Path 1 in the rice-field web",
       "j1-matahari": "the Sun: source of energy",
       "j1-padi": "rice plant (producer)",
@@ -190,7 +190,7 @@
       "max": 6,
       "default": 5,
       "step": 1,
-      "keterangan": "jumlah mata rantai dari Matahari: 4 → 6"
+      "keterangan": "jumlah mata rantai dari Matahari: 4 → 6 (dipotong dari ujung, mata rantai tetap bersambung)"
     }
   },
   "assets": [],

@@ -1,6 +1,6 @@
 {
   "id": "dari-kebun-ke-meja",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -18,7 +18,6 @@
       "bunga": "bunga mekar",
       "buah": "buah matang",
       "panen": "panen ke keranjang",
-      "beli": "beli sayur",
       "potong": "potong sayur",
       "masak": "masak di panci",
       "sajikan": "sajikan di piring",
@@ -67,7 +66,8 @@
       "jeruk-tanam": "tanam bibit jeruk",
       "jeruk-bunga": "bunga mekar",
       "jeruk-buah": "jeruk matang",
-      "jeruk-jus": "minum jus jeruk"
+      "jeruk-jus": "minum jus jeruk",
+      "petik": "petik sayur di kebun"
     },
     "en": {
       "judul": "From Garden to Table",
@@ -79,7 +79,6 @@
       "bunga": "blossom",
       "buah": "ripe fruit",
       "panen": "harvest into the basket",
-      "beli": "buy the vegetables",
       "potong": "chop them",
       "masak": "cook in the pot",
       "sajikan": "serve on a plate",
@@ -128,7 +127,8 @@
       "jeruk-tanam": "plant an orange seedling",
       "jeruk-bunga": "flowers bloom",
       "jeruk-buah": "the oranges are ripe",
-      "jeruk-jus": "drink orange juice"
+      "jeruk-jus": "drink orange juice",
+      "petik": "pick vegetables in the garden"
     }
   },
   "knobs": {
@@ -182,9 +182,9 @@
       "titleKey": "sayur",
       "steps": [
         {
-          "id": "beli",
-          "labelKey": "beli",
-          "emoji": "🛒"
+          "id": "petik",
+          "labelKey": "petik",
+          "emoji": "🥬"
         },
         {
           "id": "potong",

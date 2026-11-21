@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-tukar-langkah-taman",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -21,10 +21,9 @@
       "t-layang": "Menerbangkan layang-layang",
       "layang-1": "ambil layang-layang",
       "layang-2": "ikat benangnya",
-      "layang-3": "tunggu angin bertiup",
       "layang-4": "berlari melawan angin",
       "layang-5": "layang-layang naik",
-      "layang-6": "ulur benang pelan-pelan",
+      "layang-6": "layang-layang terbang tinggi",
       "t-kolase": "Membuat kolase",
       "kolase-1": "gunting kertas warna",
       "kolase-2": "susun potongannya",
@@ -52,7 +51,7 @@
       "akuarium-3": "tunggu airnya jernih",
       "akuarium-4": "masukkan ikan",
       "akuarium-5": "beri makan ikan",
-      "akuarium-6": "lihat ikan berenang",
+      "akuarium-6": "ikan memakan pakannya",
       "t-perahu": "Naik perahu di danau",
       "perahu-1": "pakai pelampung",
       "perahu-2": "naik ke perahu",
@@ -87,7 +86,8 @@
       "perosotan-3": "duduk di puncak perosotan",
       "perosotan-4": "meluncur ke bawah",
       "perosotan-5": "sampai di bawah",
-      "perosotan-6": "beri giliran ke teman"
+      "perosotan-6": "beri giliran ke teman",
+      "layang-7": "gulung benangnya"
     },
     "en": {
       "judul": "One Swap Fixes It",
@@ -102,10 +102,9 @@
       "t-layang": "Flying a kite",
       "layang-1": "take the kite",
       "layang-2": "tie on the string",
-      "layang-3": "wait for the wind",
       "layang-4": "run against the wind",
       "layang-5": "the kite rises",
-      "layang-6": "let out the string slowly",
+      "layang-6": "the kite flies high",
       "t-kolase": "Making a collage",
       "kolase-1": "cut coloured paper",
       "kolase-2": "arrange the pieces",
@@ -133,7 +132,7 @@
       "akuarium-3": "wait for the water to clear",
       "akuarium-4": "put in the fish",
       "akuarium-5": "feed the fish",
-      "akuarium-6": "watch the fish swim",
+      "akuarium-6": "the fish eat the food",
       "t-perahu": "Riding a boat on the lake",
       "perahu-1": "put on a life jacket",
       "perahu-2": "get into the boat",
@@ -168,7 +167,8 @@
       "perosotan-3": "sit at the top of the slide",
       "perosotan-4": "slide down",
       "perosotan-5": "reach the bottom",
-      "perosotan-6": "give your friend a turn"
+      "perosotan-6": "give your friend a turn",
+      "layang-7": "wind up the string"
     }
   },
   "knobs": {
@@ -237,11 +237,6 @@
           "emoji": "🧵"
         },
         {
-          "id": "layang-3",
-          "labelKey": "layang-3",
-          "emoji": "🌬️"
-        },
-        {
           "id": "layang-4",
           "labelKey": "layang-4",
           "emoji": "🏃"
@@ -254,7 +249,12 @@
         {
           "id": "layang-6",
           "labelKey": "layang-6",
-          "emoji": "🙌"
+          "emoji": "☁️"
+        },
+        {
+          "id": "layang-7",
+          "labelKey": "layang-7",
+          "emoji": "🧶"
         }
       ]
     },
@@ -434,7 +434,7 @@
         {
           "id": "akuarium-6",
           "labelKey": "akuarium-6",
-          "emoji": "👀"
+          "emoji": "😋"
         }
       ]
     },

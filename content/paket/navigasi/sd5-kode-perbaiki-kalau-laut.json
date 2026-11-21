@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-perbaiki-kalau-laut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "navigasi",
   "competencyIds": [
@@ -9,12 +9,12 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Kapal Selam yang Tersangkut",
-      "instruksi": "Program kapal selam lolos di satu jalur laut tetapi tersangkut di jalur lain: jalankan di ketiga jalur, cari penyebabnya, lalu ganti tepat satu keping."
+      "judul": "Robot Tersangkut di Laut",
+      "instruksi": "Program robot lolos di satu jalur laut tetapi tersangkut di jalur lain: jalankan di ketiga jalur, cari penyebabnya, lalu ganti tepat satu keping."
     },
     "en": {
-      "judul": "The Stuck Submarine",
-      "instruksi": "The submarine program works on one sea route but gets stuck on another: run it on all three routes, find the cause, then change exactly one piece."
+      "judul": "The Robot Stuck at Sea",
+      "instruksi": "The robot's program works on one sea route but gets stuck on another: run it on all three routes, find the cause, then change exactly one piece."
     }
   },
   "knobs": {

@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-uji-bagi-3-9-gudang",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Gudang Jumlah Angka",
-      "instruksi": "Jumlahkan angka-angka nomor barang, angka 0 boleh dilewati. Jumlahnya habis dibagi 9 → rak 9, habis dibagi 3 saja → rak 3, selain itu → rak tidak.",
+      "instruksi": "Jumlahkan angka-angka tiap nomor barang (angka 0 boleh dilewati). Jumlahnya habis dibagi 9, hanya habis dibagi 3, atau tidak habis dibagi 3? Taruh di rak yang cocok.",
       "b-b9": "habis dibagi 9",
-      "b-b3": "dibagi 3, tidak 9",
+      "b-b3": "habis dibagi 3, tidak 9",
       "b-tidak": "tidak habis dibagi 3",
       "i1": "7.353",
       "i2": "2.034",
@@ -37,7 +37,7 @@
     },
     "en": {
       "judul": "Digit Sum Warehouse",
-      "instruksi": "Add the digits of each item number; you can skip the zeros. If the sum is divisible by 9 → shelf 9, only by 3 → shelf 3, otherwise → shelf not.",
+      "instruksi": "Add the digits of each item number (you can skip the zeros). Is the sum divisible by 9, only by 3, or not by 3? Put it on the matching shelf.",
       "b-b9": "divisible by 9",
       "b-b3": "by 3, not by 9",
       "b-tidak": "not divisible by 3",

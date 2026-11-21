@@ -1,6 +1,6 @@
 {
   "id": "sd2-kode-kartu-tugas-kelas",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -58,14 +58,13 @@
       "bersih-akuarium-4": "isi lagi dengan air bersih",
       "bersih-akuarium-5": "masukkan ikan kembali",
       "bersih-akuarium-6": "beri makan ikan",
-      "bersih-akuarium-7": "amati ikan berenang",
+      "bersih-akuarium-7": "amati ikan memakan pakannya",
       "t-luka": "Merawat luka kecil",
       "luka-1": "cuci tangan dengan sabun",
       "luka-2": "bersihkan luka dengan air",
       "luka-3": "keringkan pelan-pelan",
       "luka-4": "oleskan obat luka",
       "luka-5": "tempel plester",
-      "luka-6": "buang bungkus plester",
       "luka-7": "cuci tangan lagi",
       "t-roti-panggang": "Membuat roti panggang",
       "roti-panggang-1": "masukkan roti ke pemanggang",
@@ -98,7 +97,8 @@
       "piket-kelas-4": "pel lantai",
       "piket-kelas-5": "tunggu lantai kering",
       "piket-kelas-6": "turunkan kursi lagi",
-      "piket-kelas-7": "lapor ke guru bahwa piket selesai"
+      "piket-kelas-7": "lapor ke guru bahwa piket selesai",
+      "luka-0": "lutut tergores saat bermain"
     },
     "en": {
       "judul": "Task Cards in Order",
@@ -150,14 +150,13 @@
       "bersih-akuarium-4": "refill it with clean water",
       "bersih-akuarium-5": "put the fish back",
       "bersih-akuarium-6": "feed the fish",
-      "bersih-akuarium-7": "watch the fish swim",
+      "bersih-akuarium-7": "watch the fish eat the food",
       "t-luka": "Caring for a small cut",
       "luka-1": "wash your hands with soap",
       "luka-2": "clean the cut with water",
       "luka-3": "pat it dry gently",
       "luka-4": "put on some cream",
       "luka-5": "put on a plaster",
-      "luka-6": "throw away the wrapper",
       "luka-7": "wash your hands again",
       "t-roti-panggang": "Making toast",
       "roti-panggang-1": "put bread in the toaster",
@@ -190,7 +189,8 @@
       "piket-kelas-4": "mop the floor",
       "piket-kelas-5": "wait for the floor to dry",
       "piket-kelas-6": "put the chairs back down",
-      "piket-kelas-7": "tell the teacher the cleaning is done"
+      "piket-kelas-7": "tell the teacher the cleaning is done",
+      "luka-0": "you scrape your knee while playing"
     }
   },
   "knobs": {
@@ -500,6 +500,11 @@
       "titleKey": "t-luka",
       "steps": [
         {
+          "id": "luka-0",
+          "labelKey": "luka-0",
+          "emoji": "🦵"
+        },
+        {
           "id": "luka-1",
           "labelKey": "luka-1",
           "emoji": "🧼"
@@ -523,11 +528,6 @@
           "id": "luka-5",
           "labelKey": "luka-5",
           "emoji": "🩹"
-        },
-        {
-          "id": "luka-6",
-          "labelKey": "luka-6",
-          "emoji": "🗑️"
         },
         {
           "id": "luka-7",

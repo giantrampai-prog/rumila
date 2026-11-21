@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-lacak-kalau",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Ke Mana Program Bercabang?",
-      "instruksi": "Cek syaratnya: benar atau salah? Ikuti cabang yang sesuai, lalu pilih hasilnya.",
+      "instruksi": "Cek syaratnya: benar atau salah? == artinya 'sama dengan?', True = benar, False = salah. Ikuti cabang yang sesuai, lalu pilih hasilnya.",
       "pilihan": "pilihan",
       "c1": "kipas nyala",
       "c2": "kipas mati",
@@ -50,7 +50,7 @@
     },
     "en": {
       "judul": "Which Way Does It Branch?",
-      "instruksi": "Check the condition: true or false? Follow the matching branch, then choose the result.",
+      "instruksi": "Check the condition: true or false? == means 'equal to?', True means true, False means false. Follow the matching branch, then choose the result.",
       "pilihan": "choices",
       "c1": "fan on",
       "c2": "fan off",

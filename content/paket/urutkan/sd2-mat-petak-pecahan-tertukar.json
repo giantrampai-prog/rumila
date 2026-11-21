@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-petak-pecahan-tertukar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -61,25 +61,21 @@
         {
           "id": "seperempat",
           "labelKey": "s-seperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "setengah",
           "labelKey": "s-setengah",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "tigaperempat",
           "labelKey": "s-tigaperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "satu",
           "labelKey": "s-satu",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -91,25 +87,21 @@
         {
           "id": "seperempat",
           "labelKey": "s-seperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "setengah",
           "labelKey": "s-setengah",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "3per4",
           "labelKey": "s-3per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "4per4",
           "labelKey": "s-4per4",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -121,25 +113,21 @@
         {
           "id": "seperempat",
           "labelKey": "s-seperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "1per2",
           "labelKey": "s-1per2",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "tigaperempat",
           "labelKey": "s-tigaperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per2",
           "labelKey": "s-2per2",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -151,25 +139,21 @@
         {
           "id": "seperempat",
           "labelKey": "s-seperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "1per2",
           "labelKey": "s-1per2",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "3per4",
           "labelKey": "s-3per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "satu",
           "labelKey": "s-satu",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -181,25 +165,21 @@
         {
           "id": "seperempat",
           "labelKey": "s-seperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per4",
           "labelKey": "s-2per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "tigaperempat",
           "labelKey": "s-tigaperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "4per4",
           "labelKey": "s-4per4",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -211,25 +191,21 @@
         {
           "id": "seperempat",
           "labelKey": "s-seperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per4",
           "labelKey": "s-2per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "3per4",
           "labelKey": "s-3per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per2",
           "labelKey": "s-2per2",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -241,25 +217,21 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "setengah",
           "labelKey": "s-setengah",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "tigaperempat",
           "labelKey": "s-tigaperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "satu",
           "labelKey": "s-satu",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -271,25 +243,21 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "setengah",
           "labelKey": "s-setengah",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "3per4",
           "labelKey": "s-3per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "4per4",
           "labelKey": "s-4per4",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -301,25 +269,21 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "1per2",
           "labelKey": "s-1per2",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "tigaperempat",
           "labelKey": "s-tigaperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per2",
           "labelKey": "s-2per2",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -331,25 +295,21 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "1per2",
           "labelKey": "s-1per2",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "3per4",
           "labelKey": "s-3per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "satu",
           "labelKey": "s-satu",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -361,25 +321,21 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per4",
           "labelKey": "s-2per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "tigaperempat",
           "labelKey": "s-tigaperempat",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "4per4",
           "labelKey": "s-4per4",
-          "emoji": "🟩",
           "scale": 1
         }
       ]
@@ -391,25 +347,21 @@
         {
           "id": "1per4",
           "labelKey": "s-1per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per4",
           "labelKey": "s-2per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "3per4",
           "labelKey": "s-3per4",
-          "emoji": "🟩",
           "scale": 1
         },
         {
           "id": "2per2",
           "labelKey": "s-2per2",
-          "emoji": "🟩",
           "scale": 1
         }
       ]

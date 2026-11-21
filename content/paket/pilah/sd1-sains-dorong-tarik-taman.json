@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-dorong-tarik-taman",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Dorong atau Tarik di Taman",
-      "instruksi": "Lihat gerakan anak di taman. Itu dorong atau tarik?",
+      "instruksi": "Lihat gerakan anak di taman. Taruh tiap gerakan ke rak dorong atau tarik.",
       "b-dorong": "dorong",
       "b-tarik": "tarik",
       "i-tendang": "menendang bola",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Push or Pull in the Park",
-      "instruksi": "Look at what the children do in the park. Is it a push or a pull?",
+      "instruksi": "Look at what the children do in the park. Put each action on the push shelf or the pull shelf.",
       "b-dorong": "push",
       "b-tarik": "pull",
       "i-tendang": "kicking a ball",

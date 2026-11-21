@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-genap-ganjil-20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Genap atau Ganjil?",
-      "instruksi": "Genap kalau bisa dipasangkan dua-dua tanpa sisa. Pilah tiap kartu.",
+      "instruksi": "Genap kalau bisa dipasangkan dua-dua tanpa sisa. Taruh tiap kartu di rak genap atau ganjil.",
       "b-genap": "genap",
       "b-ganjil": "ganjil",
       "i-0": "0",
@@ -43,7 +43,7 @@
     },
     "en": {
       "judul": "Even or Odd?",
-      "instruksi": "Even means it pairs up in twos with none left over. Sort each card.",
+      "instruksi": "Even means it pairs up in twos with none left over. Put each card on the even or odd shelf.",
       "b-genap": "even",
       "b-ganjil": "odd",
       "i-0": "0",

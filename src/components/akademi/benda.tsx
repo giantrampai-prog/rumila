@@ -11,6 +11,8 @@ export interface VisualSpec {
   color?: string;
   scale?: number;
   count?: number;
+  /** jumlah kolom kisi saat count > 1; bawaan ⌈√count⌉ */
+  kolom?: number;
   shape?: "circle" | "square" | "triangle" | "rect" | "star" | "berudu" | "belah-ketupat" | "koin" | "uang" | "akar";
   width?: number;
   /** teks angka pendek (≤ 8 karakter) di atas bentuk; koin & uang menampilkannya sebagai nominal */
@@ -197,7 +199,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
   const berlatar = !!v.emoji && !!v.color && (v.latar ?? bedaWarna.has(v.emoji));
   const satu = (k: number): ReactNode => {
     if (v.emoji) {
-      const font = n > 1 ? Math.max(18, s / Math.ceil(Math.sqrt(n)) * 0.9) : s * 0.86;
+      const font = n > 1 ? Math.max(18, s / Math.max(v.kolom ?? 0, Math.ceil(Math.sqrt(n))) * 0.9) : s * 0.86;
       const gambar = (
         <span key={k} style={{ fontSize: berlatar ? font * 0.78 : font, lineHeight: 1, display: "inline-block", transform: v.width && v.width !== 1 ? `scaleX(${v.width})` : undefined, transformOrigin: "center" }}>
           {v.emoji}
@@ -228,7 +230,7 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
         {satu(0)}
       </span>
     );
-  const cols = Math.ceil(Math.sqrt(n));
+  const cols = v.kolom ?? Math.ceil(Math.sqrt(n));
   return (
     <span className={`inline-grid place-items-center ${className}`} style={{ gridTemplateColumns: `repeat(${cols}, auto)`, gap: Math.max(2, s * 0.06), minWidth: s, minHeight: s, ...style }}>
       {Array.from({ length: n }, (_, k) => satu(k))}
@@ -238,12 +240,18 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
 
 /** Kartu benda yang bisa disentuh/diseret: latar putih, bayangan tebal gaya Rumila. */
 export function KartuBenda({
-  v, size = 56, label, labelSize = 13, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "",
+  v, size = 56, label, labelSize = 13, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "",
 }: {
-  v: VisualSpec; size?: number; label?: string; labelSize?: number; selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
+  v: VisualSpec; size?: number; label?: string; labelSize?: number;
+  /** tampilkan teks label di bawah gambar bila kartu bergambar (emoji/bentuk); false untuk kartu kecil di dalam rak/slot */
+  keterangan?: boolean;
+  selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
   onClick?: () => void; style?: CSSProperties; draggable?: boolean; onDragStart?: React.DragEventHandler; onPointerDown?: React.PointerEventHandler; className?: string;
 }) {
   const ring = right ? "#22b573" : wrong ? "#ff5a6e" : selected ? "#0786eb" : "transparent";
+  // Kartu bergambar: teks label tetap ditulis di bawahnya (tanpa ini kartu bernomor/berdeskripsi tampak kembar).
+  // Kartu tanpa gambar sudah menampilkan labelnya sebagai teks besar di dalam Benda.
+  const teks = label ?? (keterangan && (v.emoji || v.shape) && v.label && v.label !== v.angka ? v.label : undefined);
   return (
     <button
       type="button"
@@ -255,9 +263,9 @@ export function KartuBenda({
       style={{ boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`, touchAction: "none", ...style }}
     >
       <Benda v={v} size={size} />
-      {label && (
-        <span style={{ fontFamily: BALOO, fontSize: labelSize, fontWeight: 800, color: INK, lineHeight: 1.1 }} className="text-center">
-          {label}
+      {teks && (
+        <span style={{ fontFamily: BALOO, fontSize: labelSize, fontWeight: 800, color: INK, lineHeight: 1.15, maxWidth: Math.max(96, size * 2.6), overflowWrap: "anywhere" }} className="text-center text-balance">
+          {teks}
         </span>
       )}
     </button>

@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-persen-toko-buku",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Obral Toko Buku",
-      "instruksi": "Hitung besar diskon, harga bayar, atau persennya. Baca pertanyaannya baik-baik.",
+      "instruksi": "Hitung besar diskon, harga bayar, atau persennya. Baca pertanyaannya baik-baik. Sentuh jawabannya.",
       "q1": "Diskon 50% dari Rp200.000 adalah …",
       "c1": "Rp100.000",
       "c2": "Rp4.000",
@@ -64,7 +64,7 @@
     },
     "en": {
       "judul": "Bookshop Sale",
-      "instruksi": "Work out the discount, the price to pay, or the percentage. Read the question carefully.",
+      "instruksi": "Work out the discount, the price to pay, or the percentage. Read the question carefully. Touch the answer.",
       "q1": "A 50% discount on Rp200,000 is …",
       "c1": "Rp100,000",
       "c2": "Rp4,000",

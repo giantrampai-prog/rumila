@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-bulatkan-puluhan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pulang ke Puluhan Terdekat",
-      "instruksi": "Tiap bilangan pulang ke puluhan yang paling dekat. Kalau satuannya 5, pulang ke atas.",
+      "instruksi": "Tiap bilangan pulang ke puluhan yang paling dekat. Kalau satuannya 5, pulang ke puluhan di atasnya. Taruh tiap kartu di rak puluhannya.",
       "b-10": "10",
       "b-20": "20",
       "b-30": "30",
@@ -65,7 +65,7 @@
     },
     "en": {
       "judul": "Home to the Nearest Ten",
-      "instruksi": "Each number goes home to the closest ten. If the ones digit is 5, it goes up.",
+      "instruksi": "Each number goes home to the closest ten. If the ones digit is 5, it goes up to the next ten. Put each card on its tens shelf.",
       "b-10": "10",
       "b-20": "20",
       "b-30": "30",

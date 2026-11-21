@@ -4,7 +4,7 @@
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent } from "react";
-import type { PaketPilah } from "@akademi/schema";
+import { levelIndex, type PaketPilah } from "@akademi/schema";
 import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } from "@akademi/mechanics";
 import { useModeUjian } from "./mode-ujian";
 import { Icon } from "@/components/ui";
@@ -20,8 +20,8 @@ const SOROT = "#ffd23f";
 const UNGU = "#0786eb";
 
 /** Visual dari field paket; label dipakai Benda hanya bila tidak ada emoji/bentuk (mis. kartu angka). */
-function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; labelKey: string }, t: (k: string) => string): VisualSpec {
-  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
+function visual(x: { emoji?: string; color?: string; scale?: number; count?: number; kolom?: number; shape?: VisualSpec["shape"]; width?: number; angka?: string; labelKey: string }, t: (k: string) => string): VisualSpec {
+  return { emoji: x.emoji, color: x.color, scale: x.scale, count: x.count, kolom: x.kolom, shape: x.shape, width: x.width, angka: x.angka, label: t(x.labelKey) };
 }
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */
@@ -174,6 +174,8 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
   const n = bins.length;
   const kolomBin = n <= 3 ? ["", "grid-cols-1", "grid-cols-2", "grid-cols-3"][n] : "grid-cols-2 sm:grid-cols-[repeat(var(--n),minmax(0,1fr))]";
   const itemSeret = seret?.aktif ? items.find((i) => i.id === seret.id) : undefined;
+  // kartu bergambar berlabel panjang (deskripsi) dibuat lebih lebar supaya teksnya tidak terlipat terlalu banyak
+  const lebarKartu = items.some((i) => (i.emoji || i.shape) && t(i.labelKey).length > 18) ? 132 : 76;
 
   return (
     <div className="flex flex-col gap-3" style={{ color: INK }}>
@@ -183,7 +185,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
       </div>
       {/* item yang belum dipilah */}
       <div className="relative rounded-[24px] bg-white/70 p-3 shadow-[0_4px_0_rgba(11,37,69,.08)]" style={{ minHeight: 120 }}>
-        <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(76px, 1fr))"}}>
+        <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(auto-fill, minmax(${lebarKartu}px, 1fr))` }}>
           {lepasDiAtas.map((i) => {
             const dipilih = terpilih === i.id;
             const disorot = hint?.item === i.id;
@@ -249,6 +251,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
                     key={i.id}
                     v={visual(i, t)}
                     size={30}
+                    keterangan={false}
                     wrong={salah(i)}
                     right={kunci && !salah(i)}
                     onClick={() => ambil(i.id)}
@@ -277,8 +280,10 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
 
 /* ---------------- mode pilih ---------------- */
 
-function Pilih({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ronde: RondePilahPilih }) {
+function Pilih({ paket, ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ronde: RondePilahPilih }) {
   const { choices, correct, promptKey } = ronde;
+  // Teks di bawah gambar pilihan mulai SD 1; di PAUD–TK (belum membaca) kata di kartu bisa membocorkan jawaban soal "tunjuk X".
+  const tulisLabel = levelIndex(paket.level) >= levelIndex("SD1");
   const [dipilih, setDipilih] = useState<string | null>(null);
   const [redup, setRedup] = useState<string | null>(null);
   const kunci = !!hasil || dipilih !== null;
@@ -326,6 +331,7 @@ function Pilih({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & { ro
               right={benar}
               wrong={salah}
               dim={redup === c.id && !hasil}
+              keterangan={tulisLabel}
               onClick={() => pilih(c.id)}
               className={`min-h-[120px] ${salah ? "akademi-shake" : ""} ${benar ? "akademi-pop" : ""}`}
               style={{ background: benar ? "#e6f8ef" : salah ? "#ffe9ec" : undefined, pointerEvents: kunci ? "none" : undefined }}

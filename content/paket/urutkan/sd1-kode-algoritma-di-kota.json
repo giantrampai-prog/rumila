@@ -1,6 +1,6 @@
 {
   "id": "sd1-kode-algoritma-di-kota",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -14,7 +14,6 @@
       "t-celengan": "Menabung di celengan",
       "celengan-1": "dapat uang saku",
       "celengan-2": "masukkan koin ke celengan",
-      "celengan-3": "menabung setiap hari",
       "celengan-4": "celengan sudah penuh",
       "celengan-5": "buka celengan",
       "celengan-6": "hitung uangnya",
@@ -49,9 +48,8 @@
       "t-sampah": "Membuang kotak minuman",
       "sampah-1": "habiskan minuman",
       "sampah-2": "pipihkan kotaknya",
-      "sampah-3": "cari tempat sampah",
       "sampah-4": "masukkan ke tempat sampah daur ulang",
-      "sampah-5": "cuci tangan",
+      "sampah-5": "cuci tangan pakai sabun",
       "sampah-6": "keringkan tangan",
       "t-kucing": "Memberi makan kucing",
       "kucing-1": "kucing mengeong lapar",
@@ -87,7 +85,9 @@
       "televisi-3": "TV menyala",
       "televisi-4": "pilih saluran kartun",
       "televisi-5": "kartun mulai tayang",
-      "televisi-6": "tertawa menonton kartun"
+      "televisi-6": "tertawa menonton kartun",
+      "celengan-7": "beli buku dengan uangnya",
+      "sampah-7": "buka keran"
     },
     "en": {
       "judul": "Step by Step Around Town",
@@ -95,7 +95,6 @@
       "t-celengan": "Saving in a piggy bank",
       "celengan-1": "get pocket money",
       "celengan-2": "put the coin in the piggy bank",
-      "celengan-3": "save every day",
       "celengan-4": "the piggy bank is full",
       "celengan-5": "open the piggy bank",
       "celengan-6": "count the money",
@@ -130,9 +129,8 @@
       "t-sampah": "Throwing away a drink box",
       "sampah-1": "finish the drink",
       "sampah-2": "flatten the box",
-      "sampah-3": "look for a bin",
       "sampah-4": "put it in the recycling bin",
-      "sampah-5": "wash your hands",
+      "sampah-5": "wash your hands with soap",
       "sampah-6": "dry your hands",
       "t-kucing": "Feeding the cat",
       "kucing-1": "the cat meows, hungry",
@@ -168,7 +166,9 @@
       "televisi-3": "the TV turns on",
       "televisi-4": "choose the cartoon channel",
       "televisi-5": "the cartoon starts",
-      "televisi-6": "laugh at the cartoon"
+      "televisi-6": "laugh at the cartoon",
+      "celengan-7": "buy a book with the money",
+      "sampah-7": "turn on the tap"
     }
   },
   "knobs": {
@@ -201,11 +201,6 @@
           "emoji": "🐷"
         },
         {
-          "id": "celengan-3",
-          "labelKey": "celengan-3",
-          "emoji": "📅"
-        },
-        {
           "id": "celengan-4",
           "labelKey": "celengan-4",
           "emoji": "🫙"
@@ -219,6 +214,11 @@
           "id": "celengan-6",
           "labelKey": "celengan-6",
           "emoji": "🔢"
+        },
+        {
+          "id": "celengan-7",
+          "labelKey": "celengan-7",
+          "emoji": "📚"
         }
       ]
     },
@@ -453,14 +453,14 @@
           "emoji": "🗜️"
         },
         {
-          "id": "sampah-3",
-          "labelKey": "sampah-3",
-          "emoji": "🔍"
-        },
-        {
           "id": "sampah-4",
           "labelKey": "sampah-4",
           "emoji": "♻️"
+        },
+        {
+          "id": "sampah-7",
+          "labelKey": "sampah-7",
+          "emoji": "🚰"
         },
         {
           "id": "sampah-5",

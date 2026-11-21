@@ -1,6 +1,6 @@
 {
   "id": "sd5-mat-kemasan-bagi-4-dan-8",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kemasan Isi 4 dan Isi 8",
-      "instruksi": "Habis dibagi 4: lihat dua angka terakhir. Habis dibagi 8: lihat tiga angka terakhir; kalau dua angka terakhir tidak habis dibagi 4, pasti tidak habis dibagi 8.",
+      "instruksi": "Habis dibagi 4: lihat dua angka terakhir. Habis dibagi 8: lihat tiga angka terakhir; kalau dua angka terakhir tidak habis dibagi 4, pasti tidak habis dibagi 8. Sentuh jawabannya.",
       "pilihan": "pilihan",
       "q1": "Telur dikemas 4 butir per kotak. Jumlah telur mana yang pas tanpa sisa?",
       "c1": "2.316",
@@ -27,7 +27,7 @@
       "c10": "7.438",
       "c11": "7.834",
       "c12": "7.386",
-      "q4": "Roda mobil mainan 4 per mobil. Jumlah roda mana yang pas?",
+      "q4": "Tiap mobil mainan punya 4 roda. Jumlah roda mana yang pas tanpa sisa?",
       "c13": "9.096",
       "c14": "9.066",
       "c15": "9.106",
@@ -75,7 +75,7 @@
     },
     "en": {
       "judul": "Packs of 4 and Packs of 8",
-      "instruksi": "Divisible by 4: check the last two digits. Divisible by 8: check the last three digits; if the last two digits are not divisible by 4, it cannot be divisible by 8.",
+      "instruksi": "Divisible by 4: check the last two digits. Divisible by 8: check the last three digits; if the last two digits are not divisible by 4, it cannot be divisible by 8. Touch the answer.",
       "pilihan": "choices",
       "q1": "Eggs are packed 4 to a box. Which number of eggs fits with none left over?",
       "c1": "2,316",
@@ -92,7 +92,7 @@
       "c10": "7,438",
       "c11": "7,834",
       "c12": "7,386",
-      "q4": "A toy car needs 4 wheels. Which number of wheels fits exactly?",
+      "q4": "Each toy car has 4 wheels. Which number of wheels fits exactly with none left over?",
       "c13": "9,096",
       "c14": "9,066",
       "c15": "9,106",

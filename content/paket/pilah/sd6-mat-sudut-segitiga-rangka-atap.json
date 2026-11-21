@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-sudut-segitiga-rangka-atap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rangka Atap Segitiga",
-      "instruksi": "Jumlah sudut segitiga 180°. Pada segitiga sama kaki, dua sudut kakinya sama besar.",
+      "instruksi": "Jumlah sudut segitiga 180°. Pada segitiga sama kaki, dua sudut kakinya sama besar. Cari sudut yang hilang, lalu sentuh jawabannya.",
       "q1": "Dua sudut segitiga: 39° dan 86°. Sudut ketiga …",
       "c1": "55°",
       "c2": "235°",
@@ -78,7 +78,7 @@
     },
     "en": {
       "judul": "Triangle Roof Frames",
-      "instruksi": "A triangle’s angles add up to 180°. In an isosceles triangle, the two base angles are equal.",
+      "instruksi": "A triangle’s angles add up to 180°. In an isosceles triangle, the two base angles are equal. Find the missing angle, then touch the answer.",
       "q1": "Two angles of a triangle: 39° and 86°. The third angle is …",
       "c1": "55°",
       "c2": "235°",

@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-persen-diskon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Pasar Diskon",
-      "instruksi": "Hitung persen atau pecahan dari jumlahnya. Baca baik-baik: besar diskon atau harga yang dibayar?",
+      "instruksi": "Hitung persen atau pecahan dari jumlahnya. Baca baik-baik: besar diskon atau harga yang dibayar? Sentuh jawabannya.",
       "q1": "25% dari Rp80.000 adalah …",
       "c1": "Rp20.000",
       "c2": "Rp60.000",
@@ -68,7 +68,7 @@
     },
     "en": {
       "judul": "Discount Market",
-      "instruksi": "Work out the percentage or fraction of the amount. Read carefully: the discount or the price you pay?",
+      "instruksi": "Work out the percentage or fraction of the amount. Read carefully: the discount or the price you pay? Touch the answer.",
       "q1": "25% of Rp80,000 is …",
       "c1": "Rp20,000",
       "c2": "Rp60,000",

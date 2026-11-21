@@ -1,6 +1,6 @@
 {
   "id": "perbaiki-urutan-pagi",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKA",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -14,8 +14,6 @@
       "pagi": "Pagi hari",
       "mandi": "Robot mandi",
       "bangun": "bangun tidur",
-      "kasur": "rapikan kasur",
-      "sarapan": "sarapan",
       "berangkat": "berangkat",
       "baju": "siapkan baju ganti",
       "siram": "siram badan",
@@ -25,7 +23,6 @@
       "bangun-kokok": "ayam berkokok",
       "bangun-bangun": "bangun tidur",
       "bangun-kasur": "rapikan kasur",
-      "bangun-mandi": "mandi",
       "t-gigi": "Gigi bersih",
       "gigi-sikat": "sikat gigi",
       "gigi-kumur": "kumur-kumur",
@@ -40,8 +37,8 @@
       "wudu-3": "bersihkan hidung",
       "wudu-4": "basuh muka",
       "t-siram": "Menyiram tanaman",
-      "siram-1": "isi gembor dengan air",
-      "siram-2": "bawa ke kebun",
+      "siram-1": "buka keran",
+      "siram-2": "isi gembor dengan air",
       "siram-3": "siram tanaman",
       "siram-4": "tanaman segar",
       "t-doa-makan": "Doa makan",
@@ -55,7 +52,10 @@
       "t-sisir": "Menyisir rambut",
       "sisir-1": "berdiri di depan cermin",
       "sisir-2": "sisir rambut",
-      "sisir-3": "rambut rapi"
+      "sisir-3": "rambut rapi",
+      "pagi-mandi": "mandi",
+      "pagi-seragam": "pakai seragam",
+      "bangun-rapi": "kasur sudah rapi"
     },
     "en": {
       "judul": "Mixed-Up Morning Order",
@@ -63,8 +63,6 @@
       "pagi": "The morning",
       "mandi": "The robot's bath",
       "bangun": "wake up",
-      "kasur": "make the bed",
-      "sarapan": "breakfast",
       "berangkat": "head out",
       "baju": "get clean clothes ready",
       "siram": "pour water",
@@ -74,7 +72,6 @@
       "bangun-kokok": "the rooster crows",
       "bangun-bangun": "wake up",
       "bangun-kasur": "make the bed",
-      "bangun-mandi": "take a bath",
       "t-gigi": "Clean teeth",
       "gigi-sikat": "brush teeth",
       "gigi-kumur": "rinse your mouth",
@@ -89,8 +86,8 @@
       "wudu-3": "clean the nose",
       "wudu-4": "wash the face",
       "t-siram": "Watering the plants",
-      "siram-1": "fill the watering can",
-      "siram-2": "carry it to the garden",
+      "siram-1": "turn on the tap",
+      "siram-2": "fill the watering can",
       "siram-3": "water the plants",
       "siram-4": "the plants look fresh",
       "t-doa-makan": "Mealtime prayers",
@@ -104,7 +101,10 @@
       "t-sisir": "Combing hair",
       "sisir-1": "stand in front of the mirror",
       "sisir-2": "comb your hair",
-      "sisir-3": "your hair is neat"
+      "sisir-3": "your hair is neat",
+      "pagi-mandi": "take a bath",
+      "pagi-seragam": "put on your uniform",
+      "bangun-rapi": "the bed is neat"
     }
   },
   "knobs": {
@@ -132,14 +132,14 @@
           "emoji": "🌅"
         },
         {
-          "id": "kasur",
-          "labelKey": "kasur",
-          "emoji": "🛏️"
+          "id": "mandi",
+          "labelKey": "pagi-mandi",
+          "emoji": "🛁"
         },
         {
-          "id": "sarapan",
-          "labelKey": "sarapan",
-          "emoji": "🍳"
+          "id": "seragam",
+          "labelKey": "pagi-seragam",
+          "emoji": "👕"
         },
         {
           "id": "berangkat",
@@ -241,9 +241,9 @@
           "emoji": "🛏️"
         },
         {
-          "id": "mandi",
-          "labelKey": "bangun-mandi",
-          "emoji": "🚿"
+          "id": "rapi",
+          "labelKey": "bangun-rapi",
+          "emoji": "✨"
         }
       ]
     },
@@ -280,7 +280,7 @@
         {
           "id": "siram-2",
           "labelKey": "siram-2",
-          "emoji": "🚶"
+          "emoji": "🪣"
         },
         {
           "id": "siram-3",

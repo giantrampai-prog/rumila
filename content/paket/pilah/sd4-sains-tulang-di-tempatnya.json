@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-tulang-di-tempatnya",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -12,7 +12,7 @@
       "judul": "Tulang di Tempatnya",
       "instruksi": "Model kerangka di kelas terlepas. Taruh tiap tulang ke bagian tubuh tempatnya.",
       "b-kepala": "kepala",
-      "b-badan": "badan (dada sampai pinggang)",
+      "b-badan": "badan (dada sampai pinggul)",
       "b-kaki": "kaki",
       "b-lengan": "lengan dan tangan",
       "i-tengkorak": "tengkorak",

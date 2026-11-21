@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-nomor-rumah-urut",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -158,28 +158,23 @@
       "steps": [
         {
           "id": "n34",
-          "labelKey": "s-34",
-          "emoji": "🏠"
+          "labelKey": "s-34"
         },
         {
           "id": "n38",
-          "labelKey": "s-38",
-          "emoji": "🏠"
+          "labelKey": "s-38"
         },
         {
           "id": "n43",
-          "labelKey": "s-43",
-          "emoji": "🏠"
+          "labelKey": "s-43"
         },
         {
           "id": "n48",
-          "labelKey": "s-48",
-          "emoji": "🏠"
+          "labelKey": "s-48"
         },
         {
           "id": "n83",
-          "labelKey": "s-83",
-          "emoji": "🏠"
+          "labelKey": "s-83"
         }
       ]
     },
@@ -189,28 +184,23 @@
       "steps": [
         {
           "id": "n25",
-          "labelKey": "s-25",
-          "emoji": "🏠"
+          "labelKey": "s-25"
         },
         {
           "id": "n52",
-          "labelKey": "s-52",
-          "emoji": "🏠"
+          "labelKey": "s-52"
         },
         {
           "id": "n55",
-          "labelKey": "s-55",
-          "emoji": "🏠"
+          "labelKey": "s-55"
         },
         {
           "id": "n57",
-          "labelKey": "s-57",
-          "emoji": "🏠"
+          "labelKey": "s-57"
         },
         {
           "id": "n75",
-          "labelKey": "s-75",
-          "emoji": "🏠"
+          "labelKey": "s-75"
         }
       ]
     },
@@ -220,28 +210,23 @@
       "steps": [
         {
           "id": "n16",
-          "labelKey": "s-16",
-          "emoji": "🏠"
+          "labelKey": "s-16"
         },
         {
           "id": "n19",
-          "labelKey": "s-19",
-          "emoji": "🏠"
+          "labelKey": "s-19"
         },
         {
           "id": "n61",
-          "labelKey": "s-61",
-          "emoji": "🏠"
+          "labelKey": "s-61"
         },
         {
           "id": "n66",
-          "labelKey": "s-66",
-          "emoji": "🏠"
+          "labelKey": "s-66"
         },
         {
           "id": "n91",
-          "labelKey": "s-91",
-          "emoji": "🏠"
+          "labelKey": "s-91"
         }
       ]
     },
@@ -251,28 +236,23 @@
       "steps": [
         {
           "id": "n47",
-          "labelKey": "s-47",
-          "emoji": "🏠"
+          "labelKey": "s-47"
         },
         {
           "id": "n49",
-          "labelKey": "s-49",
-          "emoji": "🏠"
+          "labelKey": "s-49"
         },
         {
           "id": "n74",
-          "labelKey": "s-74",
-          "emoji": "🏠"
+          "labelKey": "s-74"
         },
         {
           "id": "n79",
-          "labelKey": "s-79",
-          "emoji": "🏠"
+          "labelKey": "s-79"
         },
         {
           "id": "n94",
-          "labelKey": "s-94",
-          "emoji": "🏠"
+          "labelKey": "s-94"
         }
       ]
     },
@@ -282,28 +262,23 @@
       "steps": [
         {
           "id": "n13",
-          "labelKey": "s-13",
-          "emoji": "🏠"
+          "labelKey": "s-13"
         },
         {
           "id": "n30",
-          "labelKey": "s-30",
-          "emoji": "🏠"
+          "labelKey": "s-30"
         },
         {
           "id": "n31",
-          "labelKey": "s-31",
-          "emoji": "🏠"
+          "labelKey": "s-31"
         },
         {
           "id": "n33",
-          "labelKey": "s-33",
-          "emoji": "🏠"
+          "labelKey": "s-33"
         },
         {
           "id": "n63",
-          "labelKey": "s-63",
-          "emoji": "🏠"
+          "labelKey": "s-63"
         }
       ]
     },
@@ -313,28 +288,23 @@
       "steps": [
         {
           "id": "n58",
-          "labelKey": "s-58",
-          "emoji": "🏠"
+          "labelKey": "s-58"
         },
         {
           "id": "n59",
-          "labelKey": "s-59",
-          "emoji": "🏠"
+          "labelKey": "s-59"
         },
         {
           "id": "n85",
-          "labelKey": "s-85",
-          "emoji": "🏠"
+          "labelKey": "s-85"
         },
         {
           "id": "n88",
-          "labelKey": "s-88",
-          "emoji": "🏠"
+          "labelKey": "s-88"
         },
         {
           "id": "n95",
-          "labelKey": "s-95",
-          "emoji": "🏠"
+          "labelKey": "s-95"
         }
       ]
     },
@@ -344,28 +314,23 @@
       "steps": [
         {
           "id": "n27",
-          "labelKey": "s-27",
-          "emoji": "🏠"
+          "labelKey": "s-27"
         },
         {
           "id": "n29",
-          "labelKey": "s-29",
-          "emoji": "🏠"
+          "labelKey": "s-29"
         },
         {
           "id": "n72",
-          "labelKey": "s-72",
-          "emoji": "🏠"
+          "labelKey": "s-72"
         },
         {
           "id": "n77",
-          "labelKey": "s-77",
-          "emoji": "🏠"
+          "labelKey": "s-77"
         },
         {
           "id": "n92",
-          "labelKey": "s-92",
-          "emoji": "🏠"
+          "labelKey": "s-92"
         }
       ]
     },
@@ -375,28 +340,23 @@
       "steps": [
         {
           "id": "n41",
-          "labelKey": "s-41",
-          "emoji": "🏠"
+          "labelKey": "s-41"
         },
         {
           "id": "n44",
-          "labelKey": "s-44",
-          "emoji": "🏠"
+          "labelKey": "s-44"
         },
         {
           "id": "n46",
-          "labelKey": "s-46",
-          "emoji": "🏠"
+          "labelKey": "s-46"
         },
         {
           "id": "n64",
-          "labelKey": "s-64",
-          "emoji": "🏠"
+          "labelKey": "s-64"
         },
         {
           "id": "n69",
-          "labelKey": "s-69",
-          "emoji": "🏠"
+          "labelKey": "s-69"
         }
       ]
     },
@@ -406,28 +366,23 @@
       "steps": [
         {
           "id": "n12",
-          "labelKey": "s-12",
-          "emoji": "🏠"
+          "labelKey": "s-12"
         },
         {
           "id": "n21",
-          "labelKey": "s-21",
-          "emoji": "🏠"
+          "labelKey": "s-21"
         },
         {
           "id": "n23",
-          "labelKey": "s-23",
-          "emoji": "🏠"
+          "labelKey": "s-23"
         },
         {
           "id": "n32",
-          "labelKey": "s-32",
-          "emoji": "🏠"
+          "labelKey": "s-32"
         },
         {
           "id": "n39",
-          "labelKey": "s-39",
-          "emoji": "🏠"
+          "labelKey": "s-39"
         }
       ]
     },
@@ -437,28 +392,23 @@
       "steps": [
         {
           "id": "n67",
-          "labelKey": "s-67",
-          "emoji": "🏠"
+          "labelKey": "s-67"
         },
         {
           "id": "n68",
-          "labelKey": "s-68",
-          "emoji": "🏠"
+          "labelKey": "s-68"
         },
         {
           "id": "n76",
-          "labelKey": "s-76",
-          "emoji": "🏠"
+          "labelKey": "s-76"
         },
         {
           "id": "n78",
-          "labelKey": "s-78",
-          "emoji": "🏠"
+          "labelKey": "s-78"
         },
         {
           "id": "n87",
-          "labelKey": "s-87",
-          "emoji": "🏠"
+          "labelKey": "s-87"
         }
       ]
     },
@@ -468,28 +418,23 @@
       "steps": [
         {
           "id": "n35",
-          "labelKey": "s-35",
-          "emoji": "🏠"
+          "labelKey": "s-35"
         },
         {
           "id": "n50",
-          "labelKey": "s-50",
-          "emoji": "🏠"
+          "labelKey": "s-50"
         },
         {
           "id": "n53",
-          "labelKey": "s-53",
-          "emoji": "🏠"
+          "labelKey": "s-53"
         },
         {
           "id": "n56",
-          "labelKey": "s-56",
-          "emoji": "🏠"
+          "labelKey": "s-56"
         },
         {
           "id": "n65",
-          "labelKey": "s-65",
-          "emoji": "🏠"
+          "labelKey": "s-65"
         }
       ]
     },
@@ -499,28 +444,23 @@
       "steps": [
         {
           "id": "n18",
-          "labelKey": "s-18",
-          "emoji": "🏠"
+          "labelKey": "s-18"
         },
         {
           "id": "n48",
-          "labelKey": "s-48",
-          "emoji": "🏠"
+          "labelKey": "s-48"
         },
         {
           "id": "n81",
-          "labelKey": "s-81",
-          "emoji": "🏠"
+          "labelKey": "s-81"
         },
         {
           "id": "n84",
-          "labelKey": "s-84",
-          "emoji": "🏠"
+          "labelKey": "s-84"
         },
         {
           "id": "n89",
-          "labelKey": "s-89",
-          "emoji": "🏠"
+          "labelKey": "s-89"
         }
       ]
     }

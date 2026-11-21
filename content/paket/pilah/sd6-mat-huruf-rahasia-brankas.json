@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-huruf-rahasia-brankas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Kode Brankas",
-      "instruksi": "Cari bilangan pengganti huruf supaya kalimatnya benar. Coba periksa dengan memasukkannya kembali.",
+      "instruksi": "Cari bilangan pengganti huruf supaya kalimatnya benar. Periksa dengan memasukkannya kembali, lalu sentuh jawabannya.",
       "q1": "y − 16 = 59. Nilai y …",
       "c1": "75",
       "c2": "43",
@@ -70,7 +70,7 @@
     },
     "en": {
       "judul": "Safe Code",
-      "instruksi": "Find the number the letter stands for so the sentence is true. Check by putting it back in.",
+      "instruksi": "Find the number the letter stands for so the sentence is true. Check by putting it back in, then touch the answer.",
       "q1": "y − 16 = 59. What is y?",
       "c1": "75",
       "c2": "43",

@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-pasangan-ternak-20",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Hewan Berpasangan di Kandang",
-      "instruksi": "Pasangkan hewan dua-dua. Kalau semua dapat pasangan, jumlahnya genap. Kalau ada satu yang sendirian, ganjil.",
+      "instruksi": "Bayangkan hewan dipasangkan dua-dua. Semua dapat pasangan berarti genap, ada satu sendirian berarti ganjil. Taruh tiap kelompok di raknya.",
       "b-genap": "genap",
       "b-ganjil": "ganjil",
       "i-2-anak-ayam": "2 anak ayam",
@@ -36,7 +36,7 @@
     },
     "en": {
       "judul": "Pairing Up in the Barn",
-      "instruksi": "Pair the animals up in twos. If every animal has a partner, the number is even. If one is left alone, it is odd.",
+      "instruksi": "Imagine pairing the animals in twos. If every animal has a partner it is even; if one is left alone it is odd. Put each group on its shelf.",
       "b-genap": "even",
       "b-ganjil": "odd",
       "i-2-anak-ayam": "2 chicks",

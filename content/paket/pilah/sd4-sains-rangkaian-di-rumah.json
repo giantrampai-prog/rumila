@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-rangkaian-di-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Lampu di Rumah Menyala?",
-      "instruksi": "Baca keadaan rangkaian tiap alat. Perkirakan lampunya menyala atau tidak.",
+      "instruksi": "Baca keadaan rangkaian tiap alat. Perkirakan lampunya menyala atau tidak, lalu taruh ke rak yang cocok.",
       "b-menyala": "lampu menyala",
       "b-padam": "lampu tidak menyala",
       "i-senteron": "senter: baterai terpasang, tombol digeser ke ON",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "Will the Lamp at Home Light?",
-      "instruksi": "Read how each gadget's circuit is set up. Predict whether its lamp lights up or not.",
+      "instruksi": "Read how each gadget's circuit is set up. Predict whether its lamp lights up or not, then put it on the matching shelf.",
       "b-menyala": "lamp lights up",
       "b-padam": "lamp stays off",
       "i-senteron": "torch: batteries in, switch slid to ON",

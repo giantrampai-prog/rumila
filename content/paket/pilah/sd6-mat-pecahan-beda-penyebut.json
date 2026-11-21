@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-pecahan-beda-penyebut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -412,7 +412,7 @@
         "c6",
         "c12",
         "c13",
-        "c14"
+        "c22"
       ],
       "correct": "c6"
     },

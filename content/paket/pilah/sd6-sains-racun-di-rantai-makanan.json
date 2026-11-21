@@ -1,6 +1,6 @@
 {
   "id": "sd6-sains-racun-di-rantai-makanan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "level": "SD6",
   "competencyIds": [
     "SAINS.SD6.JARING-MAKANAN.02"
@@ -30,7 +30,7 @@
       "i-tikushilang": "semua tikus hilang selamanya",
       "i-elangkenyang": "elang tidak perlu makan lagi",
       "p-r1": "Pestisida tersemprot di sawah: padi → belalang → katak → elang. Siapa yang tubuhnya menumpuk racun paling banyak?",
-      "p-r2": "Rantai yang sama: padi → belalang → katak → elang. Siapa yang pertama menyerap racun?",
+      "p-r2": "Pestisida tersemprot di sawah: padi → belalang → katak → elang. Siapa yang pertama menyerap racun?",
       "p-r3": "Limbah merkuri di danau: ganggang → ikan kecil → bangau. Siapa yang menumpuk merkuri paling banyak?",
       "p-r4": "Mengapa pemakan puncak menumpuk racun paling banyak?",
       "p-r5": "Di jaring sawah, katak memakan belalang. Bila katak mati karena racun, belalang kemungkinan…",
@@ -66,7 +66,7 @@
       "i-tikushilang": "all the rats disappear forever",
       "i-elangkenyang": "eagles no longer need to eat",
       "p-r1": "Pesticide is sprayed on a rice field: rice → grasshopper → frog → eagle. Whose body builds up the most poison?",
-      "p-r2": "Same chain: rice → grasshopper → frog → eagle. Who takes in the poison first?",
+      "p-r2": "Pesticide is sprayed on a rice field: rice → grasshopper → frog → eagle. Who takes in the poison first?",
       "p-r3": "Mercury waste in a lake: algae → small fish → heron. Who builds up the most mercury?",
       "p-r4": "Why does the top consumer build up the most poison?",
       "p-r5": "In the rice-field web, frogs eat grasshoppers. If the frogs die from poison, the grasshoppers will probably…",

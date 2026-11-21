@@ -1,6 +1,6 @@
 {
   "id": "sd4-mat-lama-waktu-sekolah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -60,7 +60,7 @@
       "c36": "1 jam 15 menit",
       "c37": "25 menit",
       "c38": "45 menit",
-      "q12": "Lomba berlangsung 6 hari mulai hari Minggu. Hari terakhirnya …",
+      "q12": "Lomba berlangsung 6 hari. Hari pertamanya Minggu. Hari terakhirnya …",
       "c39": "Jumat",
       "c40": "Sabtu",
       "c41": "Kamis",
@@ -119,7 +119,7 @@
       "c36": "1 h 15 min",
       "c37": "25 min",
       "c38": "45 min",
-      "q12": "A contest runs for 6 days starting on Sunday. Its last day is …",
+      "q12": "A contest runs for 6 days. Its first day is Sunday. Its last day is …",
       "c39": "Friday",
       "c40": "Saturday",
       "c41": "Thursday",

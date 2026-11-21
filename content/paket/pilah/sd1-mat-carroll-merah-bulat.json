@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-carroll-merah-bulat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,11 +10,11 @@
   "locale": {
     "id": {
       "judul": "Diagram Empat Kotak",
-      "instruksi": "Lihat dua hal: merah atau warna lain, bulat atau bersudut. Taruh tiap benda di kotak yang cocok dua-duanya.",
+      "instruksi": "Lihat dua hal: merah atau bukan, bulat atau bersudut. Taruh tiap benda di kotak yang cocok dua-duanya.",
       "b-merah-bulat": "merah · bulat",
       "b-merah-bersudut": "merah · bersudut",
-      "b-lain-bulat": "lain · bulat",
-      "b-lain-bersudut": "lain · bersudut",
+      "b-lain-bulat": "bukan merah · bulat",
+      "b-lain-bersudut": "bukan merah · bersudut",
       "i-apel": "apel",
       "i-tomat": "tomat",
       "i-lingkaran-merah": "lingkaran merah",
@@ -30,11 +30,11 @@
     },
     "en": {
       "judul": "Four-Box Diagram",
-      "instruksi": "Check two things: red or another colour, round or with corners. Put each object in the box that fits both.",
+      "instruksi": "Check two things: red or not, round or with corners. Put each object in the box that fits both.",
       "b-merah-bulat": "red · round",
       "b-merah-bersudut": "red · corners",
-      "b-lain-bulat": "other · round",
-      "b-lain-bersudut": "other · corners",
+      "b-lain-bulat": "not red · round",
+      "b-lain-bersudut": "not red · corners",
       "i-apel": "apple",
       "i-tomat": "tomato",
       "i-lingkaran-merah": "red circle",

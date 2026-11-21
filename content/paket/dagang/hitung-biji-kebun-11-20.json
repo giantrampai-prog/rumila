@@ -1,6 +1,6 @@
 {
   "id": "hitung-biji-kebun-11-20",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,13 +9,13 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Biji di Kebun",
+      "judul": "Biji dan Daun di Kebun",
       "instruksi": "{Barang} berserakan di kebun: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "biji": "biji",
       "daun": "daun"
     },
     "en": {
-      "judul": "Seeds in the Garden",
+      "judul": "Seeds and Leaves in the Garden",
       "instruksi": "The {barang} are scattered in the garden: touch each one as you count, then slide the marker to the number.",
       "biji": "seeds",
       "daun": "leaves"

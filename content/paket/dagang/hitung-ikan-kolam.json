@@ -1,6 +1,6 @@
 {
   "id": "hitung-ikan-kolam",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "TKA",
   "mechanic": "dagang",
   "competencyIds": [
@@ -9,14 +9,14 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Ikan di Kolam",
+      "judul": "Hewan di Kolam",
       "instruksi": "{Barang} tersebar: sentuh satu per satu sambil menghitung, lalu geser penanda ke jumlahnya.",
       "ikan": "ikan",
       "katak": "katak",
       "bebek": "bebek"
     },
     "en": {
-      "judul": "Fish in the Pond",
+      "judul": "Animals in the Pond",
       "instruksi": "The {barang} are scattered: touch each one as you count, then slide the marker to the number.",
       "ikan": "fish",
       "katak": "frogs",

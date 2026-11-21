@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-larik-kebun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -119,14 +119,16 @@
       "labelKey": "i-2-baris-stroberi-tiap-baris-2",
       "bin": "x2-2",
       "emoji": "🍓",
-      "count": 4
+      "count": 4,
+      "kolom": 2
     },
     {
       "id": "x2-2-bunga",
       "labelKey": "i-2-baris-bunga-tiap-baris-2",
       "bin": "x2-2",
       "emoji": "🌻",
-      "count": 4
+      "count": 4,
+      "kolom": 2
     },
     {
       "id": "x2-2-tambah",
@@ -139,14 +141,16 @@
       "labelKey": "i-2-baris-stroberi-tiap-baris-3",
       "bin": "x2-3",
       "emoji": "🍓",
-      "count": 6
+      "count": 6,
+      "kolom": 3
     },
     {
       "id": "x2-3-bunga",
       "labelKey": "i-2-baris-bunga-tiap-baris-3",
       "bin": "x2-3",
       "emoji": "🌻",
-      "count": 6
+      "count": 6,
+      "kolom": 3
     },
     {
       "id": "x2-3-tambah",
@@ -159,14 +163,16 @@
       "labelKey": "i-3-baris-stroberi-tiap-baris-3",
       "bin": "x3-3",
       "emoji": "🍓",
-      "count": 9
+      "count": 9,
+      "kolom": 3
     },
     {
       "id": "x3-3-bunga",
       "labelKey": "i-3-baris-bunga-tiap-baris-3",
       "bin": "x3-3",
       "emoji": "🌻",
-      "count": 9
+      "count": 9,
+      "kolom": 3
     },
     {
       "id": "x3-3-tambah",
@@ -179,14 +185,16 @@
       "labelKey": "i-3-baris-stroberi-tiap-baris-4",
       "bin": "x3-4",
       "emoji": "🍓",
-      "count": 12
+      "count": 12,
+      "kolom": 4
     },
     {
       "id": "x3-4-bunga",
       "labelKey": "i-3-baris-bunga-tiap-baris-4",
       "bin": "x3-4",
       "emoji": "🌻",
-      "count": 12
+      "count": 12,
+      "kolom": 4
     },
     {
       "id": "x3-4-tambah",
@@ -199,14 +207,16 @@
       "labelKey": "i-4-baris-stroberi-tiap-baris-4",
       "bin": "x4-4",
       "emoji": "🍓",
-      "count": 16
+      "count": 16,
+      "kolom": 4
     },
     {
       "id": "x4-4-bunga",
       "labelKey": "i-4-baris-bunga-tiap-baris-4",
       "bin": "x4-4",
       "emoji": "🌻",
-      "count": 16
+      "count": 16,
+      "kolom": 4
     },
     {
       "id": "x4-4-tambah",
@@ -219,14 +229,16 @@
       "labelKey": "i-4-baris-stroberi-tiap-baris-5",
       "bin": "x4-5",
       "emoji": "🍓",
-      "count": 20
+      "count": 20,
+      "kolom": 5
     },
     {
       "id": "x4-5-bunga",
       "labelKey": "i-4-baris-bunga-tiap-baris-5",
       "bin": "x4-5",
       "emoji": "🌻",
-      "count": 20
+      "count": 20,
+      "kolom": 5
     },
     {
       "id": "x4-5-tambah",

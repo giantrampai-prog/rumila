@@ -1,6 +1,6 @@
 {
   "id": "alat-kelas-macet",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "PAUD",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Alat Kelas Tidak Menyala",
-      "instruksi": "Robot mau pakai alat di kelas. Ketuk alatnya supaya menyala.",
+      "instruksi": "Robot mau pakai alat di kelas. Ketuk alatnya supaya menyala. Kalau tetap tidak bisa, minta tolong ya.",
       "proyektor": "proyektor",
       "komputer": "komputer",
       "printer": "printer",
@@ -26,7 +26,7 @@
     },
     "en": {
       "judul": "The Classroom Gadget Won't Start",
-      "instruksi": "The robot wants to use something in the classroom. Tap it to turn it on.",
+      "instruksi": "The robot wants to use something in the classroom. Tap it to turn it on. If it still won't work, ask for help.",
       "proyektor": "projector",
       "komputer": "computer",
       "printer": "printer",

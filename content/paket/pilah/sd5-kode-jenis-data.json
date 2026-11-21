@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-jenis-data",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Angka, Teks, atau Benar/Salah?",
-      "instruksi": "Lihat tanda kutipnya: seret tiap nilai ke jenis datanya, angka, teks, atau benar/salah.",
+      "instruksi": "Lihat tanda kutip dan bentuknya: seret tiap nilai ke kotak jenis datanya. True = benar, False = salah.",
       "bin-angka": "angka",
       "bin-teks": "teks",
       "bin-bool": "benar/salah",
@@ -31,7 +31,7 @@
     },
     "en": {
       "judul": "Number, Text or True/False?",
-      "instruksi": "Look for quote marks: drag each value to its data type, number, text or true/false.",
+      "instruksi": "Look at the quote marks and the form: drag each value to the box for its data type. True means true, False means false.",
       "bin-angka": "number",
       "bin-teks": "text",
       "bin-bool": "true/false",

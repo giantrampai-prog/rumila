@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-makan-hewan-peliharaan",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -20,7 +20,7 @@
       "i-ikan": "ikan goreng",
       "i-daging": "daging",
       "i-biji": "biji-bijian",
-      "i-pepaya": "potongan pepaya",
+      "i-pepaya": "gabah",
       "i-pelet": "pelet ikan",
       "i-jentik": "kutu air",
       "i-rumput": "rumput segar",
@@ -42,7 +42,7 @@
       "i-ikan": "fried fish",
       "i-daging": "meat",
       "i-biji": "birdseed",
-      "i-pepaya": "papaya pieces",
+      "i-pepaya": "unhusked rice grains",
       "i-pelet": "fish pellets",
       "i-jentik": "water fleas",
       "i-rumput": "fresh grass",
@@ -135,8 +135,7 @@
       "id": "pepaya",
       "labelKey": "i-pepaya",
       "bin": "burung",
-      "emoji": "🍈",
-      "color": "#ffb74d"
+      "emoji": "🌾"
     },
     {
       "id": "pelet",

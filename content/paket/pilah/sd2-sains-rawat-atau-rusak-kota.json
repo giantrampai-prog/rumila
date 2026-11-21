@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-rawat-atau-rusak-kota",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Merawat atau Merusak? (Kota)",
-      "instruksi": "Kegiatan ini merawat atau merusak lingkungan? Taruh ke raknya.",
+      "instruksi": "Apakah tiap kegiatan merawat atau merusak lingkungan? Taruh ke raknya.",
       "b-rawat": "merawat lingkungan",
       "b-rusak": "merusak lingkungan",
       "i-tanam": "menanam pohon",
@@ -24,11 +24,11 @@
       "i-buangjalan": "membuang bungkus jajan di jalan",
       "i-keran": "membiarkan keran terus mengalir",
       "i-tebang": "menebang pohon tanpa menanam lagi",
-      "i-asap": "mobil berasap hitam"
+      "i-asap": "memakai mobil yang berasap hitam"
     },
     "en": {
       "judul": "Caring or Harming? (Town)",
-      "instruksi": "Does this action care for or harm the environment? Put it on its shelf.",
+      "instruksi": "Does each action care for or harm the environment? Put it on its shelf.",
       "b-rawat": "caring for the environment",
       "b-rusak": "harming the environment",
       "i-tanam": "planting a tree",
@@ -42,7 +42,7 @@
       "i-buangjalan": "dropping snack wrappers in the street",
       "i-keran": "leaving the tap running",
       "i-tebang": "cutting trees without replanting",
-      "i-asap": "car puffing black smoke"
+      "i-asap": "driving a car that puffs black smoke"
     }
   },
   "knobs": {

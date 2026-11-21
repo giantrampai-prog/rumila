@@ -1,6 +1,6 @@
 {
   "id": "sd1-sains-gelinding-luncur-putar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "level": "SD1",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Menggelinding, Meluncur, Berputar",
-      "instruksi": "Bagaimana tiap benda bergerak? Taruh ke rak menggelinding, meluncur, atau berputar.",
+      "instruksi": "Bagaimana tiap benda bergerak? Taruh ke rak cara geraknya.",
       "b-gelinding": "menggelinding",
       "b-luncur": "meluncur",
       "b-putar": "berputar di tempat",
@@ -29,7 +29,7 @@
     },
     "en": {
       "judul": "Roll, Slide, Spin",
-      "instruksi": "How does each thing move? Put it on the roll, slide, or spin shelf.",
+      "instruksi": "How does each thing move? Put it on the shelf for the way it moves.",
       "b-gelinding": "rolls",
       "b-luncur": "slides",
       "b-putar": "spins on the spot",

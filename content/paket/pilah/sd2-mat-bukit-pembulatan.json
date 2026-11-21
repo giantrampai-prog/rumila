@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-bukit-pembulatan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Menggelinding ke Puluhan",
-      "instruksi": "Bilangan seperti bola di lereng bukit: ia menggelinding ke puluhan yang paling dekat. Kalau satuannya 5, ia ke puluhan di atasnya.",
+      "instruksi": "Bilangan seperti bola di lereng bukit: menggelinding ke puluhan yang paling dekat. Kalau satuannya 5, ke puluhan di atasnya. Sentuh puluhan yang benar.",
       "i-n50": "50",
       "i-n40": "40",
       "i-n60": "60",
@@ -38,7 +38,7 @@
     },
     "en": {
       "judul": "Rolling to the Nearest Ten",
-      "instruksi": "A number is like a ball on a hill: it rolls to the nearest ten. If the ones digit is 5, it rolls up to the next ten.",
+      "instruksi": "A number is like a ball on a hill: it rolls to the nearest ten. If the ones digit is 5, it rolls up to the next ten. Tap the right ten.",
       "i-n50": "50",
       "i-n40": "40",
       "i-n60": "60",
@@ -82,63 +82,54 @@
       "id": "n50",
       "labelKey": "i-n50",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n40",
       "labelKey": "i-n40",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n60",
       "labelKey": "i-n60",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n30",
       "labelKey": "i-n30",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n20",
       "labelKey": "i-n20",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n70",
       "labelKey": "i-n70",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n80",
       "labelKey": "i-n80",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n90",
       "labelKey": "i-n90",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     },
     {
       "id": "n10",
       "labelKey": "i-n10",
       "bin": "pilihan",
-      "emoji": "⛰️",
       "scale": 1
     }
   ],

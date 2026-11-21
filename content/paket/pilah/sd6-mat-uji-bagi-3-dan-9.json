@@ -1,6 +1,6 @@
 {
   "id": "sd6-mat-uji-bagi-3-dan-9",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD6",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,9 +10,9 @@
   "locale": {
     "id": {
       "judul": "Jumlah Angka Ajaib",
-      "instruksi": "Jumlahkan angka-angkanya. Habis dibagi 9 → rak 9; habis dibagi 3 saja → rak 3; selain itu → rak tidak.",
+      "instruksi": "Jumlahkan angka-angkanya. Jumlahnya habis dibagi 9, hanya habis dibagi 3, atau tidak habis dibagi 3? Taruh di rak yang cocok.",
       "b-b9": "habis dibagi 9",
-      "b-b3": "dibagi 3, tidak 9",
+      "b-b3": "habis dibagi 3, tidak 9",
       "b-tidak": "tidak habis dibagi 3",
       "i1": "342",
       "i2": "1.206",
@@ -35,7 +35,7 @@
     },
     "en": {
       "judul": "Digit Sum Test",
-      "instruksi": "Add up the digits. Divisible by 9 → shelf 9; only by 3 → shelf 3; otherwise → shelf not.",
+      "instruksi": "Add up the digits. Is the sum divisible by 9, only by 3, or not by 3? Put the card on the matching shelf.",
       "b-b9": "divisible by 9",
       "b-b3": "by 3, not by 9",
       "b-tidak": "not divisible by 3",

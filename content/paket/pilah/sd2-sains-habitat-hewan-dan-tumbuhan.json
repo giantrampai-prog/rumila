@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-habitat-hewan-dan-tumbuhan",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -30,7 +30,7 @@
       "i-gurita": "gurita",
       "i-paus": "paus",
       "i-beruangkutub": "beruang kutub",
-      "i-penguin": "penguin kaisar",
+      "i-penguin": "serigala kutub",
       "i-anjinglaut": "rubah kutub"
     },
     "en": {
@@ -55,7 +55,7 @@
       "i-gurita": "octopus",
       "i-paus": "whale",
       "i-beruangkutub": "polar bear",
-      "i-penguin": "emperor penguin",
+      "i-penguin": "arctic wolf",
       "i-anjinglaut": "arctic fox"
     }
   },
@@ -201,7 +201,8 @@
       "id": "penguin",
       "labelKey": "i-penguin",
       "bin": "kutub",
-      "emoji": "🐧"
+      "emoji": "🐺",
+      "color": "#fafafa"
     },
     {
       "id": "anjinglaut",

@@ -1,6 +1,6 @@
 {
   "id": "penggaris-kubus-meja",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Berapa Kubus Panjangnya?",
-      "instruksi": "Sejajarkan ujung benda dengan kubus nomor satu, lalu baca nomor di ujung yang lain.",
+      "instruksi": "Hitung kubus yang ada tepat di bawah benda, lalu sentuh angka jumlahnya.",
       "krayon": "krayon",
       "kunci": "kunci",
       "sendok": "sendok",
@@ -22,7 +22,7 @@
     },
     "en": {
       "judul": "How Many Cubes Long?",
-      "instruksi": "Line up the end of the object with cube number one, then read the number at the other end.",
+      "instruksi": "Count the cubes right under the object, then touch that number.",
       "krayon": "crayon",
       "kunci": "key",
       "sendok": "spoon",

@@ -1,6 +1,6 @@
 {
   "id": "sd2-mat-kardus-puluhan-gudang",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -138,259 +138,222 @@
       "id": "n46",
       "labelKey": "i-n46",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n64",
       "labelKey": "i-n64",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n56",
       "labelKey": "i-n56",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n72",
       "labelKey": "i-n72",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n27",
       "labelKey": "i-n27",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n82",
       "labelKey": "i-n82",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n47",
       "labelKey": "i-n47",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n37",
       "labelKey": "i-n37",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n57",
       "labelKey": "i-n57",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n58",
       "labelKey": "i-n58",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n85",
       "labelKey": "i-n85",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n68",
       "labelKey": "i-n68",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n35",
       "labelKey": "i-n35",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n25",
       "labelKey": "i-n25",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n45",
       "labelKey": "i-n45",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n83",
       "labelKey": "i-n83",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n63",
       "labelKey": "i-n63",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n73",
       "labelKey": "i-n73",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n90",
       "labelKey": "i-n90",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n9",
       "labelKey": "i-n9",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n80",
       "labelKey": "i-n80",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n59",
       "labelKey": "i-n59",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n49",
       "labelKey": "i-n49",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n69",
       "labelKey": "i-n69",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n42",
       "labelKey": "i-n42",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n32",
       "labelKey": "i-n32",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n52",
       "labelKey": "i-n52",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n78",
       "labelKey": "i-n78",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n87",
       "labelKey": "i-n87",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n19",
       "labelKey": "i-n19",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n91",
       "labelKey": "i-n91",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n10",
       "labelKey": "i-n10",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n36",
       "labelKey": "i-n36",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n54",
       "labelKey": "i-n54",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n74",
       "labelKey": "i-n74",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n81",
       "labelKey": "i-n81",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     },
     {
       "id": "n71",
       "labelKey": "i-n71",
       "bin": "pilihan",
-      "emoji": "📦",
       "scale": 1
     }
   ],

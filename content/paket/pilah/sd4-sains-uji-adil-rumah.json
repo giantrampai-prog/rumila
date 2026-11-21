@@ -1,6 +1,6 @@
 {
   "id": "sd4-sains-uji-adil-rumah",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -33,12 +33,12 @@
       "p-gula-ukur": "Uji gula di air hangat dan dingin: apa yang diukur?",
       "p-gula-sama2": "Uji gula di air hangat dan dingin: selain banyak gula, apa lagi yang harus sama?",
       "p-pesawat-ubah": "Apakah pesawat kertas bersayap lebar terbang lebih jauh daripada yang bersayap sempit? Apa yang sengaja diubah?",
-      "p-pesawat-sama": "Uji pesawat kertas tadi: apa yang harus dibuat sama?",
-      "p-pesawat-ukur": "Uji pesawat kertas tadi: apa yang diukur?",
-      "p-pesawat-sama2": "Uji pesawat kertas tadi: selain jenis kertas, apa lagi yang harus sama?",
+      "p-pesawat-sama": "Uji pesawat kertas bersayap lebar dan sempit: apa yang harus dibuat sama?",
+      "p-pesawat-ukur": "Uji pesawat kertas bersayap lebar dan sempit: apa yang diukur?",
+      "p-pesawat-sama2": "Uji pesawat kertas bersayap lebar dan sempit: selain jenis kertas, apa lagi yang harus sama?",
       "p-kain-ubah": "Kain mana yang paling banyak menyerap air tumpahan? Apa yang sengaja diubah?",
-      "p-kain-sama": "Uji kain penyerap tadi: apa yang harus dibuat sama?",
-      "p-kain-ukur": "Uji kain penyerap tadi: apa yang diukur?",
+      "p-kain-sama": "Uji mencari kain yang paling banyak menyerap air: apa yang harus dibuat sama?",
+      "p-kain-ukur": "Uji mencari kain yang paling banyak menyerap air: apa yang diukur?",
       "p-gula-curang": "Rina menguji gula di air hangat dan air dingin, tetapi gelas air hangat diberi gula lebih sedikit. Mengapa ujinya tidak adil?",
       "p-pesawat-curang": "Dua pesawat kertas diuji, tetapi yang bersayap lebar dilempar oleh kakak yang lebih kuat. Mengapa ujinya tidak adil?"
     },
@@ -67,12 +67,12 @@
       "p-gula-ukur": "In the warm-and-cold sugar test: what do we measure?",
       "p-gula-sama2": "In the warm-and-cold sugar test: besides the amount of sugar, what else must be the same?",
       "p-pesawat-ubah": "Does a paper plane with wide wings fly farther than one with narrow wings? What do we change on purpose?",
-      "p-pesawat-sama": "In the paper plane test: what must be kept the same?",
-      "p-pesawat-ukur": "In the paper plane test: what do we measure?",
-      "p-pesawat-sama2": "In the paper plane test: besides the type of paper, what else must be the same?",
+      "p-pesawat-sama": "In the wide-wing and narrow-wing paper plane test: what must be kept the same?",
+      "p-pesawat-ukur": "In the wide-wing and narrow-wing paper plane test: what do we measure?",
+      "p-pesawat-sama2": "In the wide-wing and narrow-wing paper plane test: besides the type of paper, what else must be the same?",
       "p-kain-ubah": "Which cloth soaks up the most spilled water? What do we change on purpose?",
-      "p-kain-sama": "In the soaking cloth test: what must be kept the same?",
-      "p-kain-ukur": "In the soaking cloth test: what do we measure?",
+      "p-kain-sama": "In the test of which cloth soaks up the most water: what must be kept the same?",
+      "p-kain-ukur": "In the test of which cloth soaks up the most water: what do we measure?",
       "p-gula-curang": "Rina tests sugar in warm and cold water, but the warm glass gets less sugar. Why is the test not fair?",
       "p-pesawat-curang": "Two paper planes are tested, but the wide-winged one is thrown by an older brother who is stronger. Why is the test not fair?"
     }

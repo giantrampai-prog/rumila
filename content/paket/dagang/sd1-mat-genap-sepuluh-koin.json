@@ -1,6 +1,6 @@
 {
   "id": "sd1-mat-genap-sepuluh-koin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD1",
   "mechanic": "dagang",
   "competencyIds": [
@@ -10,13 +10,13 @@
   "locale": {
     "id": {
       "judul": "Lengkapi Sepuluh Koin",
-      "instruksi": "Pembeli menunjukkan koinnya sebentar. Harganya sepuluh koin: tambahkan kekurangannya.",
+      "instruksi": "Pembeli menunjukkan koinnya sebentar. Harganya sepuluh koin: taruh koin yang masih kurang.",
       "g-roti": "roti",
       "g-susu": "susu"
     },
     "en": {
       "judul": "Make Ten Coins",
-      "instruksi": "The shopper shows their coins for a moment. The price is ten coins: add what is missing.",
+      "instruksi": "The shopper shows their coins for a moment. The price is ten coins: put down the coins that are still missing.",
       "g-roti": "bread",
       "g-susu": "milk"
     }

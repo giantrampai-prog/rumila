@@ -1,6 +1,6 @@
 {
   "id": "sd5-kode-internet-putus-rumah",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD5",
   "mechanic": "pilah",
   "competencyIds": [
@@ -61,11 +61,11 @@
   },
   "knobs": {
     "binCount": {
-      "min": 2,
+      "min": 3,
       "max": 3,
       "default": 3,
       "step": 1,
-      "keterangan": "2 = jaringan lokal vs internet; 3 = tambah kegiatan tanpa jaringan (ulang SD 3)"
+      "keterangan": "tetap 3 kotak supaya sesuai instruksi (2 kotak tidak dipakai)"
     },
     "itemCount": {
       "min": 6,

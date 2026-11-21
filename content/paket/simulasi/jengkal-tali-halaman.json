@@ -1,6 +1,6 @@
 {
   "id": "jengkal-tali-halaman",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "level": "TKB",
   "mechanic": "simulasi",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Jengkal di Halaman",
-      "instruksi": "Taruh jengkalmu satu per satu tanpa celah dan tanpa tumpang tindih, lalu sebutkan jumlahnya.",
+      "instruksi": "Taruh jengkalmu satu per satu tanpa celah dan tanpa tumpang tindih, lalu sentuh angka jumlahnya.",
       "tali": "tali",
       "bambu": "bambu",
       "kayu": "kayu bakar",
@@ -27,7 +27,7 @@
     },
     "en": {
       "judul": "Spans in the Yard",
-      "instruksi": "Place your spans one by one with no gaps and no overlaps, then say how many there are.",
+      "instruksi": "Place your spans one by one with no gaps and no overlaps, then touch the number of spans.",
       "tali": "rope",
       "bambu": "bamboo",
       "kayu": "firewood log",

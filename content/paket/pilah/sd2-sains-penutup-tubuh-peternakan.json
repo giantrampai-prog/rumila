@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penutup-tubuh-peternakan",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Rambut, Bulu, Sisik, atau Kulit Lembap?",
-      "instruksi": "Lihat kulit tiap hewan, lalu taruh ke rak penutup tubuhnya.",
+      "instruksi": "Lihat penutup tubuh tiap hewan, lalu taruh ke raknya.",
       "b-rambut": "berambut",
       "b-bulu": "berbulu",
       "b-sisik": "bersisik",
@@ -31,7 +31,7 @@
     },
     "en": {
       "judul": "Fur, Feathers, Scales, or Moist Skin?",
-      "instruksi": "Look at each animal's skin, then put it on the shelf for its body covering.",
+      "instruksi": "Look at each animal's body covering, then put it on its shelf.",
       "b-rambut": "hair or fur",
       "b-bulu": "feathers",
       "b-sisik": "scales",

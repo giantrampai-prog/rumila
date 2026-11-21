@@ -1,6 +1,6 @@
 {
   "id": "sd2-sains-penutup-tubuh-kebun-binatang",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD2",
   "mechanic": "pilah",
   "competencyIds": [
@@ -9,7 +9,7 @@
   "instructionKey": "instruksi",
   "locale": {
     "id": {
-      "judul": "Kulit Hewan di Kebun Binatang",
+      "judul": "Penutup Tubuh Hewan di Kebun Binatang",
       "instruksi": "Taruh tiap hewan kebun binatang ke rak penutup tubuhnya.",
       "b-rambut": "berambut",
       "b-bulu": "berbulu",

@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-cari-loker-stasiun",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -10,7 +10,7 @@
   "locale": {
     "id": {
       "judul": "Cari Loker di Stasiun",
-      "instruksi": "Di stasiun, barang dicari dengan membuka satu per satu dari kiri dan berhenti saat ketemu. Kalau tidak ada, semuanya dibuka. Hitung berapa yang dibuka.",
+      "instruksi": "Di stasiun, barang dicari dengan membuka satu per satu dari kiri dan berhenti saat ketemu. Kalau tidak ada, semuanya dibuka. Hitung berapa yang dibuka, lalu pilih jawabannya.",
       "pilihan": "pilihan",
       "c1": "4",
       "c2": "6",
@@ -29,7 +29,7 @@
       "c9": "7",
       "q7": "Isi kartu di dalam loker, dari kiri: 21, 9, 14, 30, 2, 18, 6. Cari kartu 12 dengan membuka loker satu per satu dari kiri. Berapa loker dibuka sebelum yakin kartu 12 tidak ada?",
       "q8": "Isi kartu di dalam loker, dari kiri: 5, 11, 19, 2, 8, 15, 1. Cari kartu 1 dengan membuka loker satu per satu dari kiri. Berapa loker yang dibuka sampai kartu 1 ketemu?",
-      "q9": "Tiket kereta tujuan: Bogor, Depok, Cikini, Bekasi, Serpong. Petugas mencari tiket Bekasi dari depan, satu per satu. Berapa tiket yang dicek?",
+      "q9": "Tiket kereta tujuan: Bogor, Depok, Cikini, Bekasi, Serpong. Petugas mencari tiket Bekasi dari depan, satu per satu. Berapa tiket yang dicek sampai tiket Bekasi ketemu?",
       "c10": "15",
       "c11": "8",
       "q10": "Ada 15 kartu acak dalam satu baris. Angka yang dicari ternyata ada di kartu paling kanan. Berapa kartu dibuka?",
@@ -41,7 +41,7 @@
     },
     "en": {
       "judul": "Locker Search at the Station",
-      "instruksi": "At the station, things are found by opening them one by one from the left and stopping when found. If it isn't there, all of them get opened. Count how many are opened.",
+      "instruksi": "At the station, things are found by opening them one by one from the left and stopping when found. If it isn't there, all of them get opened. Count how many are opened, then choose the answer.",
       "pilihan": "choices",
       "c1": "4",
       "c2": "6",
@@ -60,7 +60,7 @@
       "c9": "7",
       "q7": "Cards inside the lockers, from the left: 21, 9, 14, 30, 2, 18, 6. Look for card 12 by opening lockers one by one from the left. How many lockers are opened before you are sure card 12 is not there?",
       "q8": "Cards inside the lockers, from the left: 5, 11, 19, 2, 8, 15, 1. Look for card 1 by opening lockers one by one from the left. How many lockers are opened until card 1 is found?",
-      "q9": "Train tickets to: Bogor, Depok, Cikini, Bekasi, Serpong. The officer looks for the Bekasi ticket from the front, one by one. How many tickets are checked?",
+      "q9": "Train tickets to: Bogor, Depok, Cikini, Bekasi, Serpong. The officer looks for the Bekasi ticket from the front, one by one. How many tickets are checked until the Bekasi ticket is found?",
       "c10": "15",
       "c11": "8",
       "q10": "There are 15 shuffled cards in a row. The number you want turns out to be on the rightmost card. How many cards are opened?",

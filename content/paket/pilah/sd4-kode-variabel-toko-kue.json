@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-variabel-toko-kue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "level": "SD4",
   "mechanic": "pilah",
   "competencyIds": [
@@ -37,7 +37,7 @@
       "q9": "a = 3; b = 4; t = a; a = b; b = t.  Berapa nilai a?",
       "c15": "2",
       "q10": "gula = 1; gula = gula + gula; gula = gula + gula.  Berapa nilai gula?",
-      "q11": "n = 10; n = n - 3; print(n * 2).  Angka berapa yang tampil?",
+      "q11": "n = 10; n = n - 3; tampilkan(n * 2).  Angka berapa yang tampil?",
       "c16": "0",
       "q12": "loyang = 6; isi = loyang * 2; loyang = 0.  Berapa nilai isi?",
       "c17": "25",
@@ -74,7 +74,7 @@
       "q9": "a = 3; b = 4; t = a; a = b; b = t.  What is the value of a?",
       "c15": "2",
       "q10": "sugar = 1; sugar = sugar + sugar; sugar = sugar + sugar.  What is the value of sugar?",
-      "q11": "n = 10; n = n - 3; print(n * 2).  Which number is shown?",
+      "q11": "n = 10; n = n - 3; show(n * 2).  Which number is shown?",
       "c16": "0",
       "q12": "trays = 6; inside = trays * 2; trays = 0.  What is the value of inside?",
       "c17": "25",

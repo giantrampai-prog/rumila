@@ -1,6 +1,6 @@
 {
   "id": "sd4-kode-perjalanan-pesan",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "level": "SD4",
   "mechanic": "urutkan",
   "competencyIds": [
@@ -63,7 +63,7 @@
       "s9-2": "perangkatmu mengirim perintah lewat internet",
       "s9-3": "server game menerima perintah",
       "s9-4": "server mengirim posisi baru ke semua pemain",
-      "s9-5": "tokohmu melompat di layar temanmu",
+      "s9-5": "karaktermu melompat di layar temanmu",
       "s10": "Pesan suara",
       "s10-1": "kamu merekam suaramu",
       "s10-2": "suara diubah jadi data lalu dipecah jadi paket",

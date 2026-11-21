@@ -11,7 +11,7 @@
 //                soal berulang dalam satu sesi (10 ronde)
 //   ujian      : modul/semester/jenjang yang soal ujiannya tidak bisa disusun
 //   teks       : kunci locale id/en tidak seimbang
-// WARNING     : ejaan tidak baku, instruksi terlalu panjang untuk jenjang, mekanik kompetensi tak cocok dengan paket,
+// WARNING     : instruksi tanpa kata kerja perintah, pilihan kembar makna, ejaan tidak baku, instruksi terlalu panjang untuk jenjang, mekanik kompetensi tak cocok dengan paket,
 //                paket hampir kembar (isi ≥ 80% sama untuk kompetensi sama), instruksi kembar, kompetensi dengan
 //                1 paket saja (Ulangan Modul jadi monoton), paket lintas jenjang,
 //                dagang bayar/kembalian dengan tingkat knob harga tanpa barang ber-price sama (harga-barang-tak-cocok).
@@ -228,6 +228,40 @@ for (const { p } of paket) {
   if (kata > batas) lapor("WARNING", "instruksi-terlalu-panjang", p.id, `${kata} kata (batas ${p.level} ${batas}): "${ins.slice(0, 90)}…"`);
 }
 for (const c of kompetensi) for (const [re, saran] of EJAAN) if (re.test(c.statement.id)) lapor("WARNING", "ejaan-tidak-baku", c.id, `pernyataan "${c.statement.id.slice(0, 80)}" → ${saran}`);
+// instruksi wajib memuat kata kerja perintah (apa yang dilakukan anak), sesuai mekaniknya
+const PERINTAH = /\b(sentuh|ketuk|tekan|tunjuk|pilih|pilah|taruh|seret|geser|masukkan|letakkan|pasang|tempel|tumpuk|gantung|susun|urutkan|tukar|perbaiki|hitung|jumlahkan|bayar|berikan|beri|ambil|isi|lengkapi|lanjutkan|buat|putar|ukur|timbang|catat|bagi|antar|kumpulkan|cari|temukan|tebak|jalankan|tulis|ganti|kelompokkan|pisahkan|cocokkan|tentukan|ikuti|pindahkan|kembalikan|ketik|sambungkan|telusuri|ubah|pakai|gunakan|bulatkan|lompat|maju|belok)\w*/i;
+for (const { p } of paket) {
+  const ins = p.locale.id[p.instructionKey] ?? "";
+  if (ins && !PERINTAH.test(ins)) lapor("WARNING", "instruksi-tanpa-perintah", p.id, `instruksi tidak menyebut apa yang harus dilakukan anak: "${ins.slice(0, 90)}"`);
+}
+// soal pilih: dua pilihan yang NILAINYA sama walau tulisannya beda (1/2 dan 0,5; 50% dan 1/2; 3 dan 3,0) = kembar makna,
+// anak bisa benar dengan jawaban yang dinilai salah
+const nilaiLabel = (t: string): number | null => {
+  const s = t.trim().replace(/−/g, "-").replace(/\s+/g, "");
+  let m = /^(-?\d+)\/(\d+)$/.exec(s);
+  if (m) return Number(m[2]) ? Number(m[1]) / Number(m[2]) : null;
+  m = /^(-?\d+(?:[.,]\d+)?)%$/.exec(s);
+  if (m) return Number(m[1].replace(",", ".")) / 100;
+  m = /^-?\d+(?:,\d+)?$/.exec(s);
+  if (m) return Number(s.replace(",", "."));
+  return null;
+};
+for (const { p } of paket) {
+  const any = p as unknown as { mode?: string; pilihan?: { id: string; choices: string[] }[]; items?: { id: string; labelKey?: string }[] };
+  if (any.mode !== "pilih" || !any.pilihan) continue;
+  const teks = new Map((any.items ?? []).map((i) => [i.id, (p.locale.id[i.labelKey ?? ""] ?? "").trim()]));
+  for (const r of any.pilihan) {
+    const lihat = new Map<number, string>();
+    for (const c of r.choices) {
+      const t = teks.get(c) ?? "";
+      const v = nilaiLabel(t);
+      if (v === null) continue;
+      const ada = [...lihat].find(([x]) => Math.abs(x - v) < 1e-9);
+      if (ada && ada[1] !== t) lapor("WARNING", "pilihan-kembar-makna", p.id, `soal ${r.id}: "${ada[1]}" dan "${t}" bernilai sama`);
+      else lihat.set(v, t);
+    }
+  }
+}
 // mekanik pembukti di kurikulum harus memuat mekanik paket yang benar-benar melatihnya
 for (const { p } of paket) for (const cid of p.competencyIds) {
   const c = kIdx.get(cid);
