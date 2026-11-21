@@ -12,7 +12,7 @@ import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { NavCommand, PaketNavigasi } from "@akademi/schema";
 import { hitungBlok, jalankan, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
-import { LencanaSisa, useModeUjian, useSisaBantu } from "./mode-ujian";
+import { TombolBantu } from "./bantu";
 import { Icon } from "@/components/ui";
 import { COMMON_DEFS } from "@/components/koding/art";
 import { AgamTop } from "@/components/koding/stage";
@@ -144,8 +144,6 @@ interface Agam extends NavState {
 }
 
 export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
-  const ujian = useModeUjian();
-  const sisaBantu = useSisaBantu();
   const grids = ronde.grids;
   const slotMaks = ronde.rackSlots ?? SLOT_DEFAULT;
   const modeBendera = ronde.execMode === "program" && ronde.commands.includes("bendera");
@@ -540,16 +538,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
           ))}
         </div>
       )}
-      {!ujian && <button
-        onClick={bantu}
-        disabled={terkunci || sisaBantu === 0}
-        aria-label={sisaBantu === null ? "Bantu" : `Bantu, sisa ${sisaBantu}`}
-        className="absolute top-3 right-3 z-10 flex items-center justify-center rounded-full bg-[#fffaf0] shadow-[0_4px_0_#d8ccb4] active:translate-y-0.5 disabled:opacity-60"
-        style={{ width: 56 * skt, height: 56 * skt }}
-      >
-        <Icon name="lightbulb" size={Math.round(28 * skt)} className="text-[#e0a100]" />
-        <LencanaSisa sisa={sisaBantu} />
-      </button>}
+      <TombolBantu onClick={bantu} disabled={terkunci} />
     </div>
   );
 

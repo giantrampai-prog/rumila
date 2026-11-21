@@ -22,3 +22,11 @@ export function LencanaSisa({ sisa }: { sisa: number | null }) {
     </span>
   );
 }
+
+/**
+ * Tempat tombol Bantu di kepala layar aktivitas (diisi LayarAktivitas). Semua presenter memasang tombolnya ke sini
+ * lewat portal supaya Bantu selalu di posisi yang sama dan tidak memakan baris/menutupi papan permainan.
+ */
+const SlotBantu = createContext<HTMLElement | null>(null);
+export const SlotBantuProvider = SlotBantu.Provider;
+export const useSlotBantu = () => useContext(SlotBantu);

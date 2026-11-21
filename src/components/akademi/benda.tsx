@@ -4,7 +4,10 @@
 // Dipakai semua presenter supaya item, bin, langkah, dan barang dagangan tampil seragam.
 
 import { createContext, useContext, useMemo, type CSSProperties, type ReactNode } from "react";
-import { BALOO, INK } from "./jenis";
+import { BALOO, INK, NUNITO } from "./jenis";
+
+/** Huruf terpanjang satu kata (untuk ukuran huruf yang tidak memotong kata di tengah). */
+const kataTerpanjang = (teks: string) => Math.max(1, ...teks.split(/\s+/).map((k) => k.length));
 
 export interface VisualSpec {
   emoji?: string;
@@ -246,8 +249,19 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
     // kartu teks: teks panjang (mis. "1 puluhan 1 satuan") diperkecil dan boleh turun baris supaya tidak keluar kartu/wadah
     const tulisan = v.angka ?? v.label ?? "?";
     const kecil = tulisan.length > 10 ? 0.62 : tulisan.length > 6 ? 0.78 : tulisan.length > 4 ? 0.9 : 1;
+    // Angka/kata pendek memakai Baloo (display); kalimat memakai Nunito (badan teks brand). Ukuran dibatasi lebar
+    // kartu (cqi, bila kartu memasang container) supaya kata terpanjang muat utuh — tidak terpotong "istiraha / t".
+    const kalimat = tulisan.length > 6 && /\s/.test(tulisan);
+    const px = s * 0.6 * kecil * (kalimat ? 0.82 : 1);
     return (
-      <span key={k} className="text-center text-balance" style={{ fontFamily: BALOO, fontSize: s * 0.6 * kecil, fontWeight: 900, color: v.color ?? INK, lineHeight: 1.1, overflowWrap: "anywhere", maxWidth: Math.max(s * 2.4, 120) }}>
+      <span
+        key={k}
+        className="text-center text-balance"
+        style={{
+          fontFamily: kalimat ? NUNITO : BALOO, fontWeight: kalimat ? 800 : 900, color: v.color ?? INK, lineHeight: kalimat ? 1.2 : 1.1,
+          fontSize: `min(${px}px, ${(158 / kataTerpanjang(tulisan)).toFixed(1)}cqi)`, overflowWrap: "break-word", hyphens: "manual", maxWidth: Math.max(s * 2.4, 120),
+        }}
+      >
         {tulisan}
       </span>
     );
@@ -268,13 +282,18 @@ export function Benda({ v, size = 56, style, className = "" }: { v: VisualSpec; 
 
 /** Kartu benda yang bisa disentuh/diseret: latar putih, bayangan tebal gaya Rumila. */
 export function KartuBenda({
-  v, size = 56, label, labelSize = 13, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "",
+  v, size = 56, label, labelSize = 13, keterangan = true, selected, dim, wrong, right, onClick, style, draggable, onDragStart, onPointerDown, className = "", penuh,
 }: {
   v: VisualSpec; size?: number; label?: string; labelSize?: number;
   /** tampilkan teks label di bawah gambar bila kartu bergambar (emoji/bentuk); false untuk kartu kecil di dalam rak/slot */
   keterangan?: boolean;
   selected?: boolean; dim?: boolean; wrong?: boolean; right?: boolean;
   onClick?: () => void; style?: CSSProperties; draggable?: boolean; onDragStart?: React.DragEventHandler; onPointerDown?: React.PointerEventHandler; className?: string;
+  /**
+   * Lebar kartu ditentukan wadahnya (kisi/`w-full`): kartu menjadi container query sehingga huruf menyesuaikan
+   * lebar kartu. Jangan dipakai untuk kartu yang lebarnya mengikuti isi (mis. kartu kecil di dalam bin).
+   */
+  penuh?: boolean;
 }) {
   const ring = right ? "#22b573" : wrong ? "#ff5a6e" : selected ? "#0786eb" : "transparent";
   // Kartu bergambar: teks label tetap ditulis di bawahnya (tanpa ini kartu bernomor/berdeskripsi tampak kembar).
@@ -288,11 +307,14 @@ export function KartuBenda({
       onDragStart={onDragStart}
       onPointerDown={onPointerDown}
       className={`flex flex-col items-center justify-center gap-1 rounded-[18px] bg-white p-2 transition-transform active:scale-95 ${dim ? "opacity-40" : ""} ${className}`}
-      style={{ boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`, touchAction: "none", ...style }}
+      style={{ boxShadow: `0 4px 0 rgba(11,37,69,.12), 0 0 0 3px ${ring}`, touchAction: "none", ...(penuh ? { containerType: "inline-size" } : {}), ...style }}
     >
       <Benda v={v} size={size} />
       {teks && (
-        <span style={{ fontFamily: BALOO, fontSize: labelSize, fontWeight: 800, color: INK, lineHeight: 1.15, maxWidth: Math.max(96, size * 2.6), overflowWrap: "anywhere" }} className="text-center text-balance">
+        <span
+          style={{ fontFamily: NUNITO, fontSize: `min(${labelSize}px, ${(165 / kataTerpanjang(teks)).toFixed(1)}cqi)`, fontWeight: 800, color: INK, lineHeight: 1.2, maxWidth: Math.max(96, size * 2.6), overflowWrap: "break-word" }}
+          className="text-center text-balance"
+        >
           {teks}
         </span>
       )}

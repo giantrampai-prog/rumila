@@ -6,7 +6,29 @@
 import { forwardRef, type CSSProperties, type HTMLAttributes, type ReactNode } from "react";
 import type { BentukWadah } from "@/lib/akademi/tema-dunia";
 import { usePanggung } from "./dunia";
-import { BALOO } from "./jenis";
+import { BALOO, INK, NUNITO } from "./jenis";
+
+/** "mamalia (berambut, menyusui)" → nama "mamalia" + ciri "berambut, menyusui"; tanpa kurung → ciri kosong. */
+export function pecahLabel(teks: string): { nama: string; ciri?: string } {
+  const m = /^(.+?)\s*\(([^()]+)\)\s*$/.exec(teks.trim());
+  return m ? { nama: m[1], ciri: m[2] } : { nama: teks };
+}
+
+/** Isi label wadah: gambar kecil + nama tebal + ciri kecil di bawahnya. `rata` kiri untuk wadah baris. */
+export function LabelWadah({ teks, gambar, rata = "tengah" }: { teks: string; gambar?: ReactNode; rata?: "tengah" | "kiri" }) {
+  const { skala } = usePanggung();
+  const { nama, ciri } = pecahLabel(teks);
+  const kiri = rata === "kiri";
+  return (
+    <span className={`flex min-w-0 items-center gap-2 ${kiri ? "flex-row text-left" : "flex-col text-center"}`} style={{ gap: (kiri ? 8 : 2) * skala }}>
+      {gambar && <span className="flex shrink-0 items-center justify-center">{gambar}</span>}
+      <span className="flex min-w-0 flex-col" style={{ alignItems: kiri ? "flex-start" : "center" }}>
+        <span style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16.5 * skala, lineHeight: 1.1, color: INK, textWrap: "balance", overflowWrap: "break-word" }}>{nama}</span>
+        {ciri && <span style={{ fontFamily: NUNITO, fontWeight: 700, fontSize: 12.5 * skala, lineHeight: 1.2, color: INK, opacity: 0.72, marginTop: 2, textWrap: "balance" }}>{ciri}</span>}
+      </span>
+    </span>
+  );
+}
 
 function badan(bentuk: BentukWadah, w: string, g: string): CSSProperties {
   switch (bentuk) {
@@ -108,25 +130,39 @@ export interface WadahProps extends Omit<HTMLAttributes<HTMLDivElement>, "childr
   minIsi?: number;
   /** paksa bentuk wadah (mis. label menyebut "rak"); kosong = bentuk dari panggung */
   bentuk?: BentukWadah;
+  /** "baris" = label di kiri, isi di kanan (HP dengan ≥ 3 wadah: kolom terlalu sempit untuk nama + ciri) */
+  arah?: "kolom" | "baris";
 }
 
 /** Wadah bertema dunia: label di atas, area isi terang di dalam badan wadah. */
-export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, minIsi = 56, bentuk, className = "", style, ...rest }, ref) {
+export const Wadah = forwardRef<HTMLDivElement, WadahProps>(function Wadah({ label, children, ring, hijau, minIsi = 56, bentuk, arah = "kolom", className = "", style, ...rest }, ref) {
   const { tema, skala } = usePanggung();
   const b = badan(bentuk ?? tema.wadah, tema.wadahWarna, tema.wadahGelap);
+  const baris = arah === "baris";
   return (
     <div
       ref={ref}
       {...rest}
-      className={`relative flex flex-col p-2 transition-transform ${className}`}
-      style={{ ...b, boxShadow: `${b.boxShadow}${ring && ring !== "transparent" ? `, 0 0 0 4px ${ring}` : ""}`, padding: `${10 * skala}px ${12 * skala}px ${16 * skala}px`, gap: 8 * skala, ...style }}
+      className={`relative flex transition-transform ${baris ? "flex-row items-stretch" : "flex-col"} ${className}`}
+      style={{
+        ...b,
+        // bentuk melengkung (keranjang, pot, sarang) dirancang tegak; versi baris memakai sudut membulat biasa
+        ...(baris ? { borderRadius: 18 } : {}),
+        boxShadow: `${b.boxShadow}${ring && ring !== "transparent" ? `, 0 0 0 4px ${ring}` : ""}`,
+        padding: baris ? `${8 * skala}px ${8 * skala}px ${11 * skala}px` : `${10 * skala}px ${10 * skala}px ${16 * skala}px`,
+        gap: 8 * skala,
+        ...style,
+      }}
     >
-      <div className="flex items-center justify-center gap-2 self-center rounded-full bg-white px-3 py-1 text-[#0b2545] shadow-[0_3px_0_rgba(0,0,0,.12)]" style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16 * skala, lineHeight: 1.1, maxWidth: "100%" }}>
+      <div
+        className={`flex items-center rounded-[14px] bg-white px-2.5 py-1.5 text-[#0b2545] shadow-[0_3px_0_rgba(0,0,0,.12)] ${baris ? "w-[42%] max-w-[180px] shrink-0 justify-start" : "max-w-full justify-center self-center"}`}
+        style={{ fontFamily: BALOO, fontWeight: 800, fontSize: 16 * skala, lineHeight: 1.1 }}
+      >
         {label}
       </div>
       <div
-        className="flex flex-1 flex-wrap content-center items-center justify-center gap-1 rounded-[14px] px-1.5 py-1"
-        style={{ minHeight: minIsi * skala, background: hijau ? "#e6f8ef" : "rgba(255,255,255,.88)", border: `3px dashed ${hijau ? "#22b573" : tema.wadahGelap}`, boxShadow: "inset 0 3px 8px rgba(0,0,0,.10)" }}
+        className="flex min-w-0 flex-1 flex-wrap content-center items-center justify-center gap-1.5 rounded-[14px] px-1.5 py-1"
+        style={{ minHeight: minIsi * skala, background: hijau ? "#e6f8ef" : "rgba(255,255,255,.88)", border: `2.5px dashed ${hijau ? "#22b573" : tema.wadahGelap}`, boxShadow: "inset 0 3px 8px rgba(0,0,0,.10)" }}
       >
         {children}
       </div>

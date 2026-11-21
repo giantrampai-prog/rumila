@@ -9,11 +9,10 @@ import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import type { PaketPola } from "@akademi/schema";
 import type { JawabanPola, RondePola } from "@akademi/mechanics";
-import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
-import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
+import { TombolBantu } from "./bantu";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondePola, JawabanPola, PaketPola>;
@@ -87,26 +86,6 @@ function visual(x: ItemPola, t: (k: string) => string): VisualSpec {
 }
 
 /** Tombol "Bantu" kecil (≥56px), sama gayanya dengan presenter lain; disembunyikan di mode ujian. */
-function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
-  const sisa = useSisaBantu();
-  if (useModeUjian()) return null;
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled || sisa === 0}
-      aria-label={sisa === null ? "Bantu" : `Bantu, sisa ${sisa}`}
-      className="relative flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
-      style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
-    >
-      <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
-        <Icon name="lightbulb" size={22} />
-      </span>
-      Bantu
-      <LencanaSisa sisa={sisa} />
-    </button>
-  );
-}
 
 /** Tombol aksi besar (≥56px) warna ungu/hijau. */
 function TombolBesar({ children, onClick, disabled, warna = UNGU, className = "" }: { children: ReactNode; onClick: () => void; disabled?: boolean; warna?: string; className?: string }) {

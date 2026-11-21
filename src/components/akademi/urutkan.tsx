@@ -14,7 +14,7 @@ import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
-import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
+import { TombolBantu } from "./bantu";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondeUrutkan, JawabanUrutkan, PaketUrutkan>;
@@ -27,26 +27,6 @@ function visual(x: Langkah, t: (k: string) => string): VisualSpec {
 }
 
 /** Tombol "Bantu" kecil (≥56px); disembunyikan di mode ujian. */
-function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
-  const sisa = useSisaBantu();
-  if (useModeUjian()) return null;
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled || sisa === 0}
-      aria-label={sisa === null ? "Bantu" : `Bantu, sisa ${sisa}`}
-      className="relative flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
-      style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
-    >
-      <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
-        <Icon name="lightbulb" size={22} />
-      </span>
-      Bantu
-      <LencanaSisa sisa={sisa} />
-    </button>
-  );
-}
 
 /* ---------------- tata letak bersama ---------------- */
 
@@ -350,7 +330,11 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
   const lebarDalam = w > 0 ? w - 2 * pad - 6 : 0;
   // sisa tinggi untuk kartu: panggung − judul − baris aksi − petunjuk teks − jarak
   const tinggi = h > 0 ? h - tinggiKepala(sk) - 64 * Math.min(sk, 1.3) - 2 * GAP_ROOT - 2 * pad - 44 * sk : 0;
-  const sel = selMuat(lebarDalam, n, 84 * sk, (w >= 600 ? 230 : 140) * sk, gap);
+  // kartu bertulisan kalimat ("15.15 mengerjakan PR"): sel minimal lebih lebar (2 kolom di HP) supaya hurufnya
+  // tetap besar dan kata tidak perlu diperkecil/terpotong
+  const teksSaja = urutan.every((id) => { const l = langkah(id); return !l.emoji && !l.shape; });
+  const kataPanjang = Math.max(0, ...urutan.flatMap((id) => t(langkah(id).labelKey).split(/\s+/).map((k) => k.length)));
+  const sel = selMuat(lebarDalam, n, (teksSaja && kataPanjang > 6 ? 132 : 84) * sk, (w >= 600 ? 230 : 160) * sk, gap);
   const tegak = w > 0 && h > w;
   const tinggiKartu = batas(96 * sk, Math.min(sel.s * (tegak ? 1.9 : 1.2), (tinggi - gap * (sel.baris - 1)) / sel.baris), 420);
   const ukuran = batas(base * sk, Math.min(tinggiKartu * 0.55, sel.s * (tegak ? 0.72 : 0.6)), 170);
@@ -372,6 +356,7 @@ function Perbaiki({ ronde, t, onJawab, onHint, hasil }: Props) {
                   <Nomor n={i + 1} warna={benar ? BENAR : salah ? SALAH : undefined} />
                 </span>
                 <KartuBenda
+                  penuh
                   v={visual(langkah(id), t)}
                   size={ukuran}
                   labelSize={Math.round(Math.min(20, 13 * Math.max(sk, ukuran / 64)))}
@@ -596,6 +581,7 @@ function Label({ ronde, t, onJawab, onHint, hasil }: Props) {
           return (
             <div key={s.id} className="flex flex-col items-center gap-2 transition-opacity duration-700" style={{ width: sel.s, opacity: redup ? 0.3 : 1 }}>
               <KartuBenda
+                penuh
                 v={visual(s, t)}
                 size={ukuran}
                 label={t(s.labelKey)}
