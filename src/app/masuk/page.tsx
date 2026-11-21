@@ -93,7 +93,7 @@ function Loading({ member, theme }: { member: Member; theme: Theme }) {
     return () => clearTimeout(t);
   }, []);
   return (
-    <div className="anim-fade relative flex flex-col items-center gap-5 text-center" role="status">
+    <div className="anim-fade relative flex flex-col items-center gap-5 rounded-[32px] bg-white px-8 py-8 text-center shadow-[0_8px_0_rgba(11,37,69,.1),0_24px_48px_rgba(11,37,69,.16)]" role="status">
       <MemberAvatar m={member} size={play ? 140 : 120} theme={theme} />
       <h1
         style={
@@ -108,7 +108,7 @@ function Loading({ member, theme }: { member: Member; theme: Theme }) {
         className="overflow-hidden rounded-full"
         style={
           play
-            ? { width: 260, height: 16, background: "#fff", boxShadow: "0 3px 0 rgba(11,37,69,.1)" }
+            ? { width: 260, height: 16, background: "#e6eef8", boxShadow: "inset 0 2px 0 rgba(11,37,69,.08)" }
             : { width: 240, height: 6, background: "#ECE9E3" }
         }
       >

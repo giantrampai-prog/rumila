@@ -40,7 +40,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
 
   if (langkah.kind === "pin")
     return (
-      <div className="anim-fade relative flex w-full max-w-[380px] flex-col items-center">
+      <div className="anim-fade relative flex w-full max-w-[420px] flex-col items-center rounded-[32px] bg-[#eef5fc] px-5 py-6 shadow-[0_0_0_4px_#fff,0_8px_0_4px_rgba(11,37,69,.12),0_24px_48px_rgba(11,37,69,.18)] sm:px-7">
         <MasukPin
           key={langkah.m.id}
           m={langkah.m}
@@ -53,7 +53,7 @@ export function PilihProfil({ members, onMasuk }: { members: Member[]; onMasuk: 
     );
   if (langkah.kind === "buat")
     return (
-      <div className="anim-fade relative flex w-full max-w-[380px] flex-col items-center">
+      <div className="anim-fade relative flex w-full max-w-[420px] flex-col items-center rounded-[32px] bg-[#eef5fc] px-5 py-6 shadow-[0_0_0_4px_#fff,0_8px_0_4px_rgba(11,37,69,.12),0_24px_48px_rgba(11,37,69,.18)] sm:px-7">
         <BuatPin m={langkah.m} jenis="angka" judul={`Buat PIN orang tua untuk ${langkah.m.name}`} onSelesai={() => onMasuk(langkah.m)} kiri={kembali} />
       </div>
     );
