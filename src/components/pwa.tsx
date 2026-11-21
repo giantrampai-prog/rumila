@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { create } from "zustand";
 import { Icon } from "@/components/ui";
+import { modeApp } from "@/lib/mode-app";
 
 const BALOO = "var(--ff-baloo), system-ui, sans-serif";
 const INK = "#0b2545";
@@ -49,6 +50,7 @@ export async function installApp() {
 export function PwaSetup() {
   const iosHelp = usePwa((s) => s.iosHelp);
   useEffect(() => {
+    modeApp(); // tangkap tanda app toko dari referrer halaman pertama
     const ua = navigator.userAgent;
     // iPadOS 13+ mengaku "Macintosh"; bedakan lewat layar sentuh.
     const ios = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
