@@ -103,16 +103,27 @@ function MembersSheet() {
         </div>
       )}
 
-      <button
-        onClick={() => {
-          close();
-          tutupProfil();
-          router.replace("/masuk");
-        }}
-        className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-ink text-[15px] font-bold text-white"
-      >
-        <Icon name="switch_account" /> Ganti profil
-      </button>
+      <div className="grid grid-cols-2 gap-2">
+        <button
+          onClick={() => {
+            close();
+            tutupProfil();
+            router.replace("/masuk");
+          }}
+          className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-ink text-[15px] font-bold text-white"
+        >
+          <Icon name="switch_account" /> Ganti profil
+        </button>
+        <button
+          onClick={() => {
+            close();
+            router.push("/orang-tua");
+          }}
+          className="flex h-12 items-center justify-center gap-2 rounded-2xl bg-[#e3f1fd] text-[15px] font-bold text-[#0567c2]"
+        >
+          <Icon name="lock" /> Ruang Orang Tua
+        </button>
+      </div>
 
       <div className="flex flex-col gap-1 border-t border-line pt-2">
         <span className="px-1 text-xs font-bold text-ink-3">Pengaturan</span>
