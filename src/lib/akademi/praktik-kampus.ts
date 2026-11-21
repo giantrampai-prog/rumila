@@ -6,7 +6,7 @@
 //   kompetensi = penguasaan dihitung HANYA dari jejak gedung itu (aturan penguasaan sama dengan Academy)
 //   skor      = dikuasai 100 · berkembang 75 · sudah dicoba tapi belum berkembang 40 · belum dicoba 0
 //   nilai     = rata-rata skor kompetensi per gedung, lalu rata-rata gedung; null bila jenjang belum punya praktik kampus
-// Pelengkap, bukan syarat naik jenjang: ditampilkan di peta & rapor, dibekukan di transkrip saat sertifikat terbit.
+// Semua jenjang PAUD–SD 6 punya praktik kampus. Pelengkap, bukan syarat naik jenjang: ditampilkan di peta & rapor, dibekukan di transkrip saat sertifikat terbit.
 // Fungsi murni (dipakai juga oleh API sertifikat di server).
 
 import type { Competency, GameEvent, LevelId } from "@akademi/schema";
@@ -30,8 +30,30 @@ export const KOMPETENSI_GEDUNG: Record<GedungPraktik, readonly string[]> = {
     "KODE.TKB.ULANGI.02",
     "KODE.TKB.ULANGI.03",
     "KODE.TKB.KONDISI.01",
+    "KODE.SD1.ULANGI.01",
+    "KODE.SD1.KONDISI.01",
+    "KODE.SD2.PROGRAM.01",
+    "KODE.SD2.ULANGI.01",
+    "KODE.SD2.KONDISI.01",
+    "KODE.SD3.EFISIEN.01",
+    "KODE.SD5.KONDISI.03",
   ],
-  lab: ["SAINS.TKB.TULANG-OTOT-ORGAN.01", "SAINS.PAUD.HIDUP-TAK-HIDUP.02", "SAINS.TKB.MATAHARI-BUMI-BULAN.01"],
+  lab: [
+    "SAINS.TKB.TULANG-OTOT-ORGAN.01",
+    "SAINS.PAUD.HIDUP-TAK-HIDUP.02",
+    "SAINS.TKB.MATAHARI-BUMI-BULAN.01",
+    "SAINS.SD2.MATAHARI.01",
+    "SAINS.SD3.BULAN.01",
+    "SAINS.SD4.RANGKA-OTOT.01",
+    "SAINS.SD4.RANGKA-OTOT.03",
+    "SAINS.SD4.BUMI-ANTARIKSA.02",
+    "SAINS.SD4.BUMI-ANTARIKSA.03",
+    "SAINS.SD5.PENCERNAAN.02",
+    "SAINS.SD5.BUMI-ORBIT.01",
+    "SAINS.SD6.PERNAPASAN.01",
+    "SAINS.SD6.SIRKULASI.01",
+    "SAINS.SD6.TATA-SURYA.01",
+  ],
 };
 
 export const NAMA_GEDUNG_PRAKTIK: Record<GedungPraktik, { nama: string; href: string; icon: string }> = {

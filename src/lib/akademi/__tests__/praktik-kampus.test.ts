@@ -28,8 +28,8 @@ describe("Penilaian Praktik Kampus", () => {
     expect(gedungEvent({ activityId: "berangkat-sekolah" })).toBeUndefined();
   });
 
-  it("jenjang tanpa praktik kampus bernilai null; PAUD punya Lab Komputer dan Lab 3D", () => {
-    expect(penilaianKampus([], KOMPETENSI, "SD3").nilai).toBeNull();
+  it("semua jenjang punya praktik kampus; PAUD punya Lab Komputer dan Lab 3D", () => {
+    for (const lv of ["PAUD", "TKA", "TKB", "SD1", "SD2", "SD3", "SD4", "SD5", "SD6"] as const) expect(penilaianKampus([], KOMPETENSI, lv).nilai, lv).toBe(0);
     const p = penilaianKampus([], KOMPETENSI, "PAUD");
     expect(p.komponen.map((k) => k.gedung).sort()).toEqual(["komputer", "lab"]);
     expect(p.nilai).toBe(0);
@@ -53,7 +53,7 @@ describe("Penilaian Praktik Kampus", () => {
 
   it("skor dan snapshot", () => {
     expect([skorStatus("dikuasai", 3), skorStatus("berkembang", 2), skorStatus("belum", 1), skorStatus("belum", 0)]).toEqual([100, 75, 40, 0]);
-    expect(snapshotPraktik(penilaianKampus([], KOMPETENSI, "SD3"))).toBeUndefined();
+    expect(snapshotPraktik({ level: "SD3", komponen: [], nilai: null, lengkap: false })).toBeUndefined();
     const s = snapshotPraktik(penilaianKampus([], KOMPETENSI, "TKB"))!;
     expect(s.nilai).toBe(0);
     expect(s.predikat).toBe("Cukup");

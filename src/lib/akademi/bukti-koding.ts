@@ -34,18 +34,26 @@ export const daftarLevel = (game: GameKoding): { id: string }[] => (game === "la
  * Langkah: 0–9 hanya maju; 10–19 maju + satu belok; 20–49 grid lebih besar, kiri+kanan; ≥50 program panjang.
  */
 export function kompetensiLevel(game: GameKoding, _levelId: string, index: number): string[] {
+  // PAUD–TK B: konsep dasar. SD (Penilaian Praktik Kampus, bukan kemajuan Ruang Kelas): level tinggi yang memang
+  // menuntut konsep SD — program panjang, ulangi berisi pola dua perintah / dua blok ulangi, kalau bertingkat.
   if (game === "langkah") {
     if (index < 10) return ["KODE.PAUD.PERINTAH.01", "KODE.TKA.NAVIGASI.01"];
     if (index < 20) return ["KODE.TKA.NAVIGASI.02", "KODE.TKA.NAVIGASI.03"];
     if (index < 50) return ["KODE.TKA.NAVIGASI.03", "KODE.TKB.PROGRAM-5-8.01"];
-    return ["KODE.TKB.PROGRAM-5-8.01"];
+    return ["KODE.TKB.PROGRAM-5-8.01", "KODE.SD2.PROGRAM.01"];
   }
   if (game === "ulangi") {
     const ids = ["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02"];
     if (index >= 30) ids.push("KODE.TKB.ULANGI.03");
+    if (index >= 20) ids.push("KODE.SD2.ULANGI.01"); // isi ulangi = pola beberapa perintah (maju, belok, …)
+    if (index >= 80) ids.push("KODE.SD1.ULANGI.01", "KODE.SD3.EFISIEN.01"); // dua blok ulangi untuk dua pola
     return ids;
   }
-  return ["KODE.TKB.KONDISI.01"];
+  const ids = ["KODE.TKB.KONDISI.01"];
+  if (index >= 3) ids.push("KODE.SD1.KONDISI.01"); // kalau di dalam ulangi sampai finis
+  if (index >= 30) ids.push("KODE.SD2.KONDISI.01"); // dua jenis rintangan: kalau di dalam kalau
+  if (index >= 50) ids.push("KODE.SD5.KONDISI.03"); // tiga rintangan: kalau / kalau tidak bertingkat, dicek dari atas
+  return ids;
 }
 
 export interface PercobaanKoding {
