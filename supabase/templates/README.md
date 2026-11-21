@@ -13,3 +13,9 @@ DNS di Cloudflare (pulaurinoya.com). Balasan ke kampus@ lewat Cloudflare Email R
 
 Ubah berkas di sini lalu salin ulang ke dashboard. Tautan reset kembali ke `/masuk/sandi-baru`, jadi
 `https://rumila.vercel.app/**` (dan domain Academy nanti) harus ada di Authentication → URL Configuration → Redirect URLs.
+
+## Tautan langsung ke domain Academy (21 Nov 2026)
+Template TIDAK memakai `{{ .ConfirmationURL }}` (itu selalu lewat `*.supabase.co/auth/v1/verify`). Tautan dibuat dari
+`{{ .SiteURL }}` + `{{ .TokenHash }}`: reset → `/masuk/sandi-baru?token_hash=…&type=recovery`, lainnya →
+`/masuk/verifikasi?token_hash=…&type=signup|magiclink|email_change`; halaman itu memanggil `verifyOtp`.
+Site URL Supabase harus = domain Academy produksi: https://kampus.pulaurinoya.com (CNAME Cloudflare → Vercel, 21 Nov 2026; rumila.vercel.app tetap hidup).

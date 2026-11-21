@@ -1,12 +1,13 @@
 "use client";
 
 // Tujuan tautan email "buat kata sandi baru" (Supabase Auth resetPasswordForEmail, dikirim lewat SMTP Resend
-// kampus@pulaurinoya.com). supabase-js membaca token dari URL saat klien dibuat; halaman ini menunggu sesi
-// pemulihan, lalu menyimpan kata sandi baru dengan updateUser. Lupa PIN orang tua memakai kata sandi ini.
+// kampus@pulaurinoya.com). Template email mengirim ?token_hash=…&type=recovery ke domain Academy (bukan ke
+// *.supabase.co), lalu halaman ini memanggil verifyOtp. Tautan lama (#access_token dari /auth/v1/verify) tetap
+// dilayani lewat sesi yang dibaca supabase-js. Lalu kata sandi baru disimpan dengan updateUser.
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { NUNITO } from "@/components/launcher";
 import { Icon } from "@/components/ui";
 import { friendlyError, supabase } from "@/lib/supabase/client";
@@ -33,6 +34,7 @@ export default function SandiBaru() {
   const [ulang, setUlang] = useState("");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
+  const tokenDipakai = useRef(false);
 
   useEffect(() => {
     const salahUrl = errorDariUrl();
@@ -43,6 +45,25 @@ export default function SandiBaru() {
     }
     const sb = supabase();
     let selesai = false;
+    // Tautan baru (template email): ?token_hash=…&type=recovery langsung ke domain Academy, diverifikasi di sini.
+    const q = new URLSearchParams(window.location.search);
+    const tokenHash = q.get("token_hash");
+    if (tokenHash) {
+      if (tokenDipakai.current) return;
+      tokenDipakai.current = true;
+      sb.auth.verifyOtp({ token_hash: tokenHash, type: "recovery" }).then(({ data, error }) => {
+        selesai = true;
+        if (error || !data.session) {
+          setAlasan(/expired|invalid/i.test(error?.message ?? "") ? "Tautannya sudah kedaluwarsa atau sudah dipakai." : "Tautannya tidak sah.");
+          setTahap("gagal");
+          return;
+        }
+        setEmail(data.session.user.email ?? null);
+        setTahap("siap");
+        history.replaceState(null, "", window.location.pathname);
+      });
+      return;
+    }
     const siap = (mail: string | null | undefined) => {
       if (selesai) return;
       selesai = true;

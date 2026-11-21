@@ -4,12 +4,12 @@
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff8ee;padding:28px 12px">
 <tr><td align="center">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#ffffff;border-radius:24px;box-shadow:0 6px 0 rgba(11,37,69,.08)">
-<tr><td align="center" style="padding:28px 28px 8px"><img src="https://rumila.vercel.app/brand/rinoya-logo-r.png" alt="RINOYA Academy" width="150" style="display:block;width:150px;height:auto;border:0"></td></tr>
+<tr><td align="center" style="padding:28px 28px 8px"><img src="https://kampus.pulaurinoya.com/brand/rinoya-logo-r.png" alt="RINOYA Academy" width="150" style="display:block;width:150px;height:auto;border:0"></td></tr>
 <tr><td style="padding:8px 32px 0"><h1 style="margin:0 0 10px;font-size:24px;line-height:1.25;color:#0b2545">Selamat datang di RINOYA Academy</h1>
 <p style="margin:0 0 20px;font-size:16px;line-height:1.6;color:#3b4b66">Akun rumah untuk <b>{{ .Email }}</b> hampir siap. Ketuk tombol di bawah untuk memastikan email ini milikmu, lalu buat rumah keluarga dan profil anak.</p></td></tr>
-<tr><td align="center" style="padding:0 32px 8px"><a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#fd861d;color:#0b2545;text-decoration:none;font-weight:800;font-size:17px;padding:15px 28px;border-radius:16px;box-shadow:0 4px 0 #d95a00">Konfirmasi akun</a></td></tr>
+<tr><td align="center" style="padding:0 32px 8px"><a href="{{ .SiteURL }}/masuk/verifikasi?token_hash={{ .TokenHash }}&type=signup" style="display:inline-block;background:#fd861d;color:#0b2545;text-decoration:none;font-weight:800;font-size:17px;padding:15px 28px;border-radius:16px;box-shadow:0 4px 0 #d95a00">Konfirmasi akun</a></td></tr>
 <tr><td style="padding:18px 32px 0"><p style="margin:0;font-size:13px;line-height:1.6;color:#5b6b85">Tidak merasa mendaftar? Abaikan email ini; akun tidak akan aktif tanpa konfirmasi.</p>
-<p style="margin:12px 0 0;font-size:12px;line-height:1.5;color:#8090a8;word-break:break-all">Tombol tidak bisa diketuk? Salin tautan ini ke browser:<br>{{ .ConfirmationURL }}</p></td></tr>
+<p style="margin:12px 0 0;font-size:12px;line-height:1.5;color:#8090a8;word-break:break-all">Tombol tidak bisa diketuk? Salin tautan ini ke browser:<br>{{ .SiteURL }}/masuk/verifikasi?token_hash={{ .TokenHash }}&type=signup</p></td></tr>
 <tr><td style="padding:22px 32px 28px"><hr style="border:0;border-top:1px solid #f0e4d2;margin:0 0 14px">
 <p style="margin:0;font-size:12px;line-height:1.6;color:#8090a8">RINOYA Academy · sekolah di Pulau Rinoya<br>Butuh bantuan? Balas email ini atau tulis ke <a href="mailto:kampus@pulaurinoya.com" style="color:#0567c2">kampus@pulaurinoya.com</a>.</p></td></tr>
 </table></td></tr></table></body></html>
