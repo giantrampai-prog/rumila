@@ -9,6 +9,7 @@ import { useHydrated, useRumila, type Member, type Theme } from "@/lib/store";
 import { useCloudBoot } from "@/lib/supabase/family";
 import { AccountStage, SetupStage } from "./account";
 import { PilihProfil } from "./pilih-profil";
+import { LatarPulau } from "./latar-pulau";
 import { bukaProfil, profilTerbuka } from "@/lib/profil";
 
 // Layar masuk: akun rumah → "Siapa yang belajar?" → PIN profil → beranda.
@@ -51,26 +52,16 @@ function Masuk() {
 
   return (
     <div
-      className={`fixed inset-0 z-30 flex items-center justify-center overflow-y-auto px-5 py-8 ${ready && play ? "bg-dots" : "bg-page"}`}
+      className={`fixed inset-0 z-30 flex items-center justify-center overflow-y-auto px-5 py-8 ${ready && play ? "bg-[#cdeeff]" : "bg-page"}`}
       style={{ fontFamily: play ? NUNITO : PJ }}
     >
-      {ready && (
+      {ready && (play ? <LatarPulau /> : (
         <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-          {play ? (
-            <>
-              <div className="absolute -top-[160px] -left-[140px] size-[460px] rounded-full bg-[#ffd23f] opacity-60 blur-[40px]" />
-              <div className="absolute -right-[120px] -bottom-[120px] size-[420px] rounded-full bg-[#7ad7ff] opacity-55 blur-[40px]" />
-              <div className="absolute -top-[80px] right-[18%] size-[300px] rounded-full bg-[#ff8fc7] opacity-45 blur-[40px]" />
-            </>
-          ) : (
-            <>
-              <div className="absolute -top-[220px] -left-[200px] size-[560px] rounded-full bg-[#FF7F67] opacity-[.14] blur-[100px]" />
-              <div className="absolute -right-[180px] -bottom-[180px] size-[520px] rounded-full bg-[#52B8A8] opacity-[.15] blur-[100px]" />
-              <div className="absolute -top-[140px] right-[14%] size-[380px] rounded-full bg-[#7884D8] opacity-[.12] blur-[90px]" />
-            </>
-          )}
+          <div className="absolute -top-[220px] -left-[200px] size-[560px] rounded-full bg-[#FF7F67] opacity-[.14] blur-[100px]" />
+          <div className="absolute -right-[180px] -bottom-[180px] size-[520px] rounded-full bg-[#52B8A8] opacity-[.15] blur-[100px]" />
+          <div className="absolute -top-[140px] right-[14%] size-[380px] rounded-full bg-[#7884D8] opacity-[.12] blur-[90px]" />
         </div>
-      )}
+      ))}
 
       {!ready ? null : cloud.status === "noSession" ? (
         <AccountStage theme={theme} />
