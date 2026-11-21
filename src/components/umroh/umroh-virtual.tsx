@@ -10,7 +10,7 @@ import {
   JOURNEY_CHAPTERS, createJourneyProgress, advanceJourneyTravel, nextJourneyChapter,
   updateJourneyUmroh, parseJourneyProgress, serializeJourneyProgress, getJourneyChapter,
   type JourneyProgress, type UmrohPilgrim,
-  aksiLangkah, FILM_BERANGKAT, durasiFilm, posisiFilm, teksAdegan, penandaFilm, formatWaktuFilm, BAB_FILM,
+  aksiLangkah, FILM, filmUntukBab, durasiFilm, posisiFilm, teksAdegan, penandaFilm, formatWaktuFilm, type FilmId,
 } from '@/lib/umroh';
 import type { UmrohScene } from './scene';
 import { getFlightPov, isFlightChapter, type FlightCameraMode } from './flight-camera';
@@ -84,10 +84,10 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   const [guideOpen, setGuideOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   // Film "Berangkat": t = detik film, main = sedang diputar. null = mode interaktif biasa.
-  const [film, setFilm] = useState<{ t: number; main: boolean } | null>(null);
+  const [film, setFilm] = useState<{ id: FilmId; t: number; main: boolean } | null>(null);
   const filmRef = useRef(film);
   filmRef.current = film;
-  const [filmDitawarkan, setFilmDitawarkan] = useState(false);
+  const [filmDitawarkan, setFilmDitawarkan] = useState<Partial<Record<FilmId, boolean>>>({});
   const [teksBawahOn, setTeksBawahOn] = useState(true);
   // Boarding pass besar: 'periksa' = baru keluar dari konter (anak memeriksa Nama/Tujuan/Kursi), 'lihat' = dibuka lagi.
   const [tiket, setTiket] = useState<'periksa' | 'lihat' | null>(null);
@@ -229,9 +229,10 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   useEffect(() => { scene.current?.setSound(soundOn); }, [soundOn, sceneReady]);
 
   /* ---------------- film Berangkat ---------------- */
-  const filmTotal = durasiFilm();
-  const filmPos = film ? posisiFilm(film.t) : null;
-  const adegan = filmPos ? FILM_BERANGKAT[filmPos.i] : null;
+  const daftarAdegan = film ? FILM[film.id].adegan : FILM.berangkat.adegan;
+  const filmTotal = durasiFilm(daftarAdegan);
+  const filmPos = film ? posisiFilm(film.t, daftarAdegan) : null;
+  const adegan = filmPos ? daftarAdegan[filmPos.i] : null;
   const adeganSebelum = useRef(-1);
 
   // Jam film: maju selama diputar; selesai di akhir film (anak lanjut interaktif dari Jeddah).
@@ -253,14 +254,15 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
     if (!filmPos || !adegan) { adeganSebelum.current = -1; return; }
     const i = filmPos.i;
     if (i === adeganSebelum.current) return;
-    const sebelumnya = adeganSebelum.current >= 0 ? FILM_BERANGKAT[adeganSebelum.current] : null;
+    const sebelumnya = adeganSebelum.current >= 0 ? daftarAdegan[adeganSebelum.current] : null;
     // Bab yang benar-benar ditonton sampai habis dicatat sebagai sudah dilalui.
     if (sebelumnya && i === adeganSebelum.current + 1 && sebelumnya.bab !== adegan.bab) useRumila.getState().completeToolItem(memberId, TOOL_ID, 'angkasa', 'perjalanan-' + sebelumnya.bab);
     adeganSebelum.current = i;
     stopMovement();
     setJourney((j) => (j.chapter === adegan.bab ? j : { ...j, chapter: adegan.bab, travelSeconds: 0 }));
     setChecks(Array.from({ length: adegan.langkah ?? 0 }, () => true));
-    setView(adegan.perjalanan && adegan.bab === 'taxi_cgk' ? 'follow' : 'walk');
+    // Taksi & bus: duduk di dalam kendaraan; garbarata & pesawat memakai kamera otomatisnya sendiri.
+    setView(adegan.perjalanan && ['taxi_cgk', 'taxi_rumah', 'makkah_jed'].includes(adegan.bab) ? 'follow' : 'walk');
     setFlightCamera('auto');
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filmPos?.i]);
@@ -291,15 +293,18 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   useEffect(() => {
     if (film && film.t >= filmTotal) {
       scene.current?.stopFilmShot(); setFilm(null); setRunning(false); setChecks([]);
-      useRumila.getState().completeToolItem(memberId, TOOL_ID, 'angkasa', 'film-berangkat');
+      useRumila.getState().completeToolItem(memberId, TOOL_ID, 'angkasa', 'film-' + film.id);
     }
   }, [film, filmTotal, memberId]);
 
   // Tawarkan film saat perjalanan baru dimulai dari rumah.
-  const bolehFilm = !visit && (BAB_FILM as readonly string[]).includes(journey.chapter);
-  const putarFilm = (mulai = 0) => { scene.current?.unlockAudio(); setMenuOpen(false); setGuideOpen(false); setFilmDitawarkan(true); setFilm({ t: mulai, main: true }); };
+  const filmBab = visit ? null : filmUntukBab(journey.chapter);
+  const bolehFilm = filmBab !== null;
+  const putarFilm = (id: FilmId) => { scene.current?.unlockAudio(); setMenuOpen(false); setGuideOpen(false); setFilmDitawarkan((d) => ({ ...d, [id]: true })); setFilm({ id, t: 0, main: true }); };
   const keluarFilm = () => { scene.current?.stopFilmShot(); setFilm(null); setRunning(false); stopMovement(); };
-  const tawarkanFilm = ready && sceneReady && !saved && !film && !filmDitawarkan && journey.chapter === 'rumah' && !visit;
+  // Ditawarkan di awal tiap film: rumah (Berangkat) dan bus dari Makkah sebelum berangkat (Pulang).
+  const tawaranFilm: FilmId | null = journey.chapter === 'rumah' ? 'berangkat' : journey.chapter === 'makkah_jed' && journey.travelSeconds === 0 ? 'pulang' : null;
+  const tawarkanFilm = ready && sceneReady && !saved && !film && !visit && tawaranFilm !== null && !filmDitawarkan[tawaranFilm];
 
   useEffect(() => {
     stopMovement();
@@ -402,6 +407,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   const babakIsi = BABAK.map((b, i) => {
     if (i < babakAktif) return 1;
     if (i > babakAktif) return 0;
+    if (finished) return 1;
     if (b.id === 'umroh') return Math.min(1, (stageIndex + (progress.stage === 'selesai' ? 1 : 0)) / STAGES.length);
     const ids = b.bab;
     const pos = ids.indexOf(journey.chapter);
@@ -470,7 +476,7 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
           <div className="umroh-chips" role="group" aria-label="Suasana cahaya"><button aria-pressed={timeOfDay === 'day'} onClick={() => setTimeOfDay('day')}><Icon name="light_mode" size={18} />Siang</button><button aria-pressed={timeOfDay === 'sunset'} onClick={() => setTimeOfDay('sunset')}><Icon name="wb_twilight" size={18} />Senja</button></div>
           <div className="umroh-menu-rows">
             {flying && <button aria-pressed={soundOn} onClick={() => { const on = !soundOn; setSoundOn(on); if (on) scene.current?.unlockAudio(); }}><Icon name={soundOn ? 'volume_up' : 'volume_off'} size={20} />{soundOn ? 'Suara pesawat menyala' : 'Suara pesawat mati'}</button>}
-            {bolehFilm && !film && <button onClick={() => putarFilm(0)}><Icon name="movie" size={20} />Putar film Berangkat</button>}
+            {bolehFilm && filmBab && !film && <button onClick={() => putarFilm(filmBab)}><Icon name="movie" size={20} />Putar film {FILM[filmBab].judul}</button>}
             <button onClick={() => { stopMovement(); scene.current?.resetCamera(); setMenuOpen(false); }}><Icon name="center_focus_strong" size={20} />Pusatkan kamera</button>
             <button onClick={() => { setHudHidden(true); setMenuOpen(false); setGuideOpen(false); }}><Icon name="visibility_off" size={20} />Sembunyikan tombol & teks</button>
             {travelling && !travelDone && !visit && <button onClick={() => { finishTravel(); setMenuOpen(false); }}><Icon name="fast_forward" size={20} />Singkatkan perjalanan</button>}
@@ -504,14 +510,14 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
         {film && adegan && filmPos && <>
           <div className="umroh-letterbox top" aria-hidden />
           <div className="umroh-letterbox bottom" aria-hidden />
-          <span className="umroh-film-tag umroh-fade"><Icon name="movie" size={16} />Film · Berangkat</span>
+          <span className="umroh-film-tag umroh-fade"><Icon name="movie" size={16} />Film · {FILM[film.id].judul}</span>
           {teksBawahOn && <p className="umroh-subtitle-film" aria-live="polite">{teksAdegan(adegan, filmPos.dalam)}</p>}
           {!film.main && <p className="umroh-film-pause">Film dijeda. Geser layar untuk melihat sekeliling, lalu putar lagi.</p>}
           <div className="umroh-film-bar umroh-fade">
             <button className="umroh-glass-btn umroh-film-play" aria-label={film.main ? 'Jeda film' : 'Putar film'} onClick={() => { if (!film.main) scene.current?.unlockAudio(); setFilm({ ...film, main: !film.main }); }}><Icon name={film.main ? 'pause' : 'play_arrow'} size={26} /></button>
             <div className="umroh-film-track">
               <div className="umroh-film-rail"><b style={{ width: `${(film.t / filmTotal) * 100}%` }} /></div>
-              {penandaFilm().map((p) => <button key={p.bab} className={'umroh-film-mark' + (p.bab === adegan.bab ? ' now' : '')} style={{ left: `${(p.mulai / filmTotal) * 100}%` }} aria-label={`Lompat ke ${p.nama}`} title={p.nama} onClick={() => setFilm({ ...film, t: p.mulai + 0.01 })}><i /><span>{p.nama}</span></button>)}
+              {penandaFilm(daftarAdegan).map((p) => <button key={p.bab} className={'umroh-film-mark' + (p.bab === adegan.bab ? ' now' : '')} style={{ left: `${(p.mulai / filmTotal) * 100}%` }} aria-label={`Lompat ke ${p.nama}`} title={p.nama} onClick={() => setFilm({ ...film, t: p.mulai + 0.01 })}><i /><span>{p.nama}</span></button>)}
             </div>
             <span className="umroh-film-time">{formatWaktuFilm(film.t)} / {formatWaktuFilm(filmTotal)}</span>
             <button className="umroh-glass-btn" aria-pressed={teksBawahOn} aria-label={teksBawahOn ? 'Sembunyikan teks bawah' : 'Tampilkan teks bawah'} onClick={() => setTeksBawahOn(!teksBawahOn)}><Icon name={teksBawahOn ? 'closed_caption' : 'closed_caption_disabled'} size={22} /></button>
@@ -519,13 +525,13 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
           </div>
         </>}
 
-        {tawarkanFilm && <div className="umroh-film-offer" role="dialog" aria-label="Tonton film perjalanan">
-          <span className="umroh-cap-eyebrow">Babak 1 · Berangkat</span>
-          <h2>Dari rumah sampai Jeddah</h2>
-          <p>Film 3D sekitar {Math.round(filmTotal / 60)} menit: check-in, imigrasi, naik pesawat, sampai mendarat. Bisa dijeda kapan saja untuk menjelajah.</p>
+        {tawarkanFilm && tawaranFilm && <div className="umroh-film-offer" role="dialog" aria-label="Tonton film perjalanan">
+          <span className="umroh-cap-eyebrow">{tawaranFilm === 'berangkat' ? 'Babak 1 · Berangkat' : 'Babak 4 · Pulang'}</span>
+          <h2>{tawaranFilm === 'berangkat' ? 'Dari rumah sampai Jeddah' : 'Dari Makkah kembali ke rumah'}</h2>
+          <p>Film 3D sekitar {Math.round(durasiFilm(FILM[tawaranFilm].adegan) / 60)} menit: {tawaranFilm === 'berangkat' ? 'check-in, imigrasi, naik pesawat, sampai mendarat.' : 'bandara Jeddah, terbang pulang, tiba di Soekarno–Hatta, sampai rumah.'} Bisa dijeda kapan saja untuk menjelajah.</p>
           <div className="umroh-film-offer-actions">
-            <button className="umroh-go" onClick={() => putarFilm(0)}><Icon name="play_arrow" size={22} />Putar film</button>
-            <button className="umroh-film-exit" onClick={() => setFilmDitawarkan(true)}><Icon name="explore" size={20} />Jelajahi sendiri</button>
+            <button className="umroh-go" onClick={() => putarFilm(tawaranFilm)}><Icon name="play_arrow" size={22} />Putar film</button>
+            <button className="umroh-film-exit" onClick={() => setFilmDitawarkan((d) => ({ ...d, [tawaranFilm]: true }))}><Icon name="explore" size={20} />Jelajahi sendiri</button>
           </div>
         </div>}
         {umpanBalik && !film && <div key={umpanBalik.n} className="umroh-umpan" aria-live="polite"><Icon name={umpanBalik.ikon} size={22} /><span>{umpanBalik.teks}</span><Icon name="check_circle" size={20} /></div>}

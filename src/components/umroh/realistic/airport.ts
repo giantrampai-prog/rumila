@@ -11,10 +11,11 @@ import type { CameraPose, Position, Rect, UmrohWorld, WorldFrame, WorldResources
  * Layout, gate numbers and signage are illustrative, not a survey of the real airports.
  */
 type Animator = (frame: WorldFrame) => void;
-interface Names { code: string; title: string; subtitle: string; desert: boolean }
+/** `kota` = kota pasangan rute dalam cerita: tujuan saat berangkat, asal saat tiba. */
+interface Names { code: string; title: string; subtitle: string; desert: boolean; kota: string; rute: string }
 const NAMES: Record<'cgk' | 'jed', Names> = {
-  cgk: { code: 'CGK', title: 'SOEKARNO–HATTA', subtitle: 'Terminal 3 · Jakarta', desert: false },
-  jed: { code: 'JED', title: 'KING ABDULAZIZ · JEDDAH', subtitle: 'Terminal 1 · مطار الملك عبدالعزيز', desert: true },
+  cgk: { code: 'CGK', title: 'SOEKARNO–HATTA', subtitle: 'Terminal 3 · Jakarta', desert: false, kota: 'JEDDAH', rute: 'JEDDAH (JED)' },
+  jed: { code: 'JED', title: 'KING ABDULAZIZ · JEDDAH', subtitle: 'Terminal 1 · مطار الملك عبدالعزيز', desert: true, kota: 'JAKARTA', rute: 'JAKARTA (CGK)' },
 };
 const COUNTER_Z = 29.2;
 const GATE_LABEL = 'GERBANG 7';
@@ -154,7 +155,7 @@ function checkIn(k: Kit, group: T.Group, blockers: Rect[], animators: Animator[]
     r.box(group, [1.2, .05, 2.1], [-13.4, 1.08, z], top);
     r.box(group, [.05, .32, .5], [-13.9, 1.3, z - .3], r.mat.black);
     // Counter screen: flight, destination and counter number.
-    const plate = counterScreen(k, group, i + 3, [-13.1, 2.7, z]); plate.rotation.y = Math.PI / 2;
+    const plate = counterScreen(k, group, i + 3, [-13.1, 2.7, z], names.rute); plate.rotation.y = Math.PI / 2;
     r.box(group, [.06, .9, .06], [-13.16, 3.3, z], k.r.mat.metal);
     // Baggage scale feeding an inclined belt into the collector.
     r.box(group, [.95, .22, .8], [-12.35, .11, z + 1.3], r.mat.metal);
@@ -262,13 +263,13 @@ function airlineFascia(k: Kit, parent: T.Object3D, at: Position, width: number):
   return sign;
 }
 
-function counterScreen(k: Kit, parent: T.Object3D, counter: number, at: Position): T.Mesh {
+function counterScreen(k: Kit, parent: T.Object3D, counter: number, at: Position, rute: string): T.Mesh {
   const canvas = document.createElement('canvas'); canvas.width = 640; canvas.height = 240;
   const ctx = canvas.getContext('2d'); if (!ctx) throw new Error('Layar konter tidak tersedia.');
   ctx.fillStyle = '#0b2233'; ctx.fillRect(0, 0, 640, 240);
   drawEmblem(ctx, 70, 70, 44);
   ctx.textBaseline = 'middle'; ctx.fillStyle = '#ffffff'; ctx.font = 'italic 600 44px Arial, sans-serif'; ctx.fillText('Garuda Indonesia', 130, 70);
-  ctx.font = 'bold 58px Arial, sans-serif'; ctx.fillText('JEDDAH (JED)', 26, 160);
+  ctx.font = 'bold 58px Arial, sans-serif'; ctx.fillText(rute, 26, 160);
   ctx.textAlign = 'right'; ctx.fillStyle = '#f2c230'; ctx.font = 'bold 96px Arial, sans-serif'; ctx.fillText(String(counter), 616, 150);
   ctx.textAlign = 'left'; ctx.fillStyle = '#9fc0d2'; ctx.font = '30px Arial, sans-serif'; ctx.fillText('Ekonomi · Umroh', 26, 214);
   const map = k.r.keep(new T.CanvasTexture(canvas)); map.colorSpace = T.SRGBColorSpace; map.anisotropy = 4;
@@ -449,7 +450,7 @@ function concourse(k: Kit, group: T.Group, blockers: Rect[], animators: Animator
     blockers.push({ minX: x - .9, maxX: x + .9, minZ: -77, maxZ: -47 });
   }
   // Departure board facing the arriving passengers.
-  const board = departureBoard(k, group, [14, 4, -45], departure);
+  const board = departureBoard(k, group, [14, 4, -45], departure, names);
   r.box(group, [6.6, 3.9, .2], [14, 4, -45.12], k.r.mat.black);
   beam(k, group, [12, 6, -45.2], [12, 16, -45.2], .05); beam(k, group, [16, 6, -45.2], [16, 16, -45.2], .05);
   if (!departure) return;
@@ -471,14 +472,14 @@ function concourse(k: Kit, group: T.Group, blockers: Rect[], animators: Animator
   ]);
   group.add(gateStaff.group);
   const gateScreen = screen(k, group, [0, 3.4, -107.4], [3.2, 1.2], [
-    (c, w, h) => gateCanvas(c, w, h, false),
-    (c, w, h) => gateCanvas(c, w, h, true),
+    (c, w, h) => gateCanvas(c, w, h, false, names.rute),
+    (c, w, h) => gateCanvas(c, w, h, true, names.rute),
   ], 0, 768);
   r.box(group, [3.4, 1.4, .12], [0, 3.4, -107.5], k.r.mat.black);
   // Boarding e-gate to the jet bridge.
   r.box(group, [.4, 1.1, .6], [-4, .55, -107.2], color(k, 'egate-cabinet', '#e9ecee'));
   r.box(group, [1.8, 2.4, .2], [-4.9, 1.2, -111.8], color(k, 'bridge-door', '#41484f'));
-  wayfinding(k, group, GATE_LABEL, 'Garuda Indonesia · JEDDAH (JED) · contoh', [-4.9, 3.1, -111.6], 4.4);
+  wayfinding(k, group, GATE_LABEL, `Garuda Indonesia · ${names.rute} · contoh`, [-4.9, 3.1, -111.6], 4.4);
   // Apron outside: the aircraft at the gate, its jet bridge, vehicles and the airfield.
   const apron = r.floor(group, 400, 260, color(k, 'apron', names.desert ? '#b3aa9a' : '#9b9d9a', { roughness: .95 })); apron.position.set(0, -4.6, -250);
   for (let x = -60; x <= 60; x += 30) r.box(group, [.3, .02, 80], [x, -4.57, -175], color(k, 'apron-line', '#e8b52e'));
@@ -500,23 +501,25 @@ function concourse(k: Kit, group: T.Group, blockers: Rect[], animators: Animator
   });
 }
 
-function gateCanvas(c: CanvasRenderingContext2D, w: number, h: number, boarding: boolean): void {
+function gateCanvas(c: CanvasRenderingContext2D, w: number, h: number, boarding: boolean, rute: string): void {
   c.fillStyle = '#0b1d2c'; c.fillRect(0, 0, w, h);
   c.fillStyle = '#0d5f7e'; c.fillRect(0, 0, w, h * .26);
   c.fillStyle = '#fff'; c.font = `bold ${Math.round(h * .16)}px Arial`; c.textBaseline = 'middle';
   c.fillText(GATE_LABEL, w * .03, h * .13);
   c.textAlign = 'right'; c.fillText('Garuda Indonesia', w * .97, h * .13); c.textAlign = 'left';
-  c.font = `bold ${Math.round(h * .2)}px Arial`; c.fillText('JEDDAH (JED)', w * .03, h * .45);
+  c.font = `bold ${Math.round(h * .2)}px Arial`; c.fillText(rute, w * .03, h * .45);
   c.font = `${Math.round(h * .11)}px Arial`; c.fillStyle = '#c9d6df'; c.fillText('Umroh · nomor penerbangan contoh', w * .03, h * .65);
   c.fillStyle = boarding ? '#2ecc71' : '#f2c230'; c.fillRect(w * .03, h * .76, w * .5, h * .18);
   c.fillStyle = '#0b1d2c'; c.font = `bold ${Math.round(h * .13)}px Arial`; c.fillText(boarding ? 'BOARDING' : 'MENUNGGU', w * .06, h * .85);
   c.fillStyle = '#fff'; c.textAlign = 'right'; c.font = `${Math.round(h * .1)}px Arial`; c.fillText(boarding ? 'Kelompok 3 dipersilakan' : 'Boarding segera dimulai', w * .97, h * .85);
 }
 
-function departureBoard(k: Kit, group: T.Group, at: Position, departure: boolean): ReturnType<typeof screen> {
+function departureBoard(k: Kit, group: T.Group, at: Position, departure: boolean, names: Names): ReturnType<typeof screen> {
   const rows = departure
-    ? [['09.55', 'SINGAPURA', '3', 'Berangkat'], ['10.20', 'KUALA LUMPUR', '12', 'Tutup'], ['10.40', 'JEDDAH', '7', '#'], ['11.05', 'TOKYO', '15', 'Check-in'], ['11.30', 'MADINAH', '9', 'Check-in'], ['12.10', 'DENPASAR', 'D2', 'Jadwal']]
-    : [['10.05', 'DOHA', '—', 'Mendarat'], ['10.35', 'JAKARTA', '—', 'Mendarat'], ['11.00', 'KAIRO', '—', 'Jadwal'], ['11.20', 'ISTANBUL', '—', 'Jadwal']];
+    ? (names.code === 'JED'
+      ? [['09.40', 'RIYADH', 'A4', 'Berangkat'], ['10.05', 'KAIRO', 'B2', 'Tutup'], ['10.40', names.kota, '7', '#'], ['11.15', 'ISTANBUL', 'C8', 'Check-in'], ['11.50', 'KUALA LUMPUR', 'B6', 'Check-in'], ['12.20', 'DUBAI', 'A9', 'Jadwal']]
+      : [['09.55', 'SINGAPURA', '3', 'Berangkat'], ['10.20', 'KUALA LUMPUR', '12', 'Tutup'], ['10.40', names.kota, '7', '#'], ['11.05', 'TOKYO', '15', 'Check-in'], ['11.30', 'MADINAH', '9', 'Check-in'], ['12.10', 'DENPASAR', 'D2', 'Jadwal']])
+    : [['10.05', 'DOHA', '—', 'Mendarat'], ['10.35', names.kota, '—', 'Mendarat'], ['11.00', 'KAIRO', '—', 'Jadwal'], ['11.20', 'ISTANBUL', '—', 'Jadwal']];
   const draw = (boarding: boolean) => (c: CanvasRenderingContext2D, w: number, h: number) => {
     c.fillStyle = '#0a1622'; c.fillRect(0, 0, w, h);
     c.fillStyle = '#f2c230'; c.font = `bold ${Math.round(h * .07)}px Arial`; c.textBaseline = 'middle';
@@ -525,7 +528,7 @@ function departureBoard(k: Kit, group: T.Group, at: Position, departure: boolean
     ['Jam', 'Tujuan', 'Gerbang', 'Status'].forEach((label, i) => c.fillText(label, w * [.03, .2, .62, .76][i], h * .17));
     rows.forEach((row, n) => {
       const y = h * (.27 + n * .12);
-      if (row[1] === 'JEDDAH') { c.fillStyle = 'rgba(242,194,48,.14)'; c.fillRect(0, y - h * .055, w, h * .11); }
+      if (row[1] === names.kota) { c.fillStyle = 'rgba(242,194,48,.14)'; c.fillRect(0, y - h * .055, w, h * .11); }
       c.font = `bold ${Math.round(h * .06)}px Arial`;
       row.forEach((cell, i) => {
         const status = cell === '#' ? (boarding ? 'BOARDING' : 'Menunggu') : cell;

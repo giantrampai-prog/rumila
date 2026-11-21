@@ -477,9 +477,9 @@ export class UmrohScene {
     const side = new T.Vector3(-dir.z, 0, dir.x);
     const from = to.clone();
     if (gerak === 'maju') from.addScaledVector(dir, -1.8).add(new T.Vector3(0, .2, 0));
-    else if (gerak === 'geser') from.addScaledVector(side, 1.6);
+    else if (gerak === 'geser') from.addScaledVector(side, .9);
     else from.add(new T.Vector3(0, 1.4, 0)).addScaledVector(dir, -1.2);
-    const lookFrom = gerak === 'geser' ? look.clone().addScaledVector(side, .9) : look.clone();
+    const lookFrom = gerak === 'geser' ? look.clone().addScaledVector(side, .6) : look.clone();
     this.filmShot = { from, to, lookFrom, lookTo: look, durasi: Math.max(.5, durasi), t: 0 };
     this.applyFilmShot(0);
   }

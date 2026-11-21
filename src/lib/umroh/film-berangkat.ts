@@ -1,4 +1,4 @@
-// Film 3D "Berangkat": rumah → bandara → pesawat → Jeddah, diputar di mesin 3D yang sama dengan modul.
+// Film 3D "Berangkat" (rumah → Jeddah) dan "Pulang" (Makkah → rumah), diputar di mesin 3D yang sama dengan modul.
 // Setiap adegan memakai bab perjalanan yang sudah ada; teks bawah di sini sekaligus naskah VO (menyusul).
 // Fungsi murni supaya garis waktu, lompat, dan teks bisa diuji tanpa WebGL.
 
@@ -63,8 +63,49 @@ export const FILM_BERANGKAT: readonly AdeganFilm[] = [
   { bab: "jeddah", detik: 7, gerak: "maju", teks: satu("Selamat datang di Bandara King Abdulaziz, Jeddah. Perjalanan berlanjut ke Madinah!") },
 ];
 
-/** Bab yang dilalui film (berurutan, tanpa duplikat). */
-export const BAB_FILM: readonly JourneyChapterId[] = FILM_BERANGKAT.map((a) => a.bab).filter((b, i, xs) => xs.indexOf(b) === i);
+/** Film "Pulang": Makkah → Jeddah → terbang → Soekarno–Hatta → taksi → rumah. */
+export const FILM_PULANG: readonly AdeganFilm[] = [
+  { bab: "makkah_jed", detik: 16, perjalanan: true, teks: [
+    { pada: 0, isi: "Umroh selesai. Bus membawa rombongan dari Makkah ke Jeddah." },
+    { pada: 0.5, isi: "Paspor, tiket, dan barang bawaan sudah siap di tas." },
+  ] },
+  { bab: "jeddah_pulang", detik: 5, landmark: "airport-hall", gerak: "maju", teks: satu("Kita tiba di terminal keberangkatan Bandara Jeddah.") },
+  { bab: "jeddah_pulang", detik: 6, landmark: "airport-checkin", gerak: "maju", teks: satu("Check-in lagi: serahkan paspor dan koper, terima boarding pass ke CGK.") },
+  { bab: "jeddah_pulang", detik: 5, landmark: "airport-immigration", gerak: "maju", teks: satu("Lewati imigrasi dan pemeriksaan keamanan dengan tertib.") },
+  { bab: "jeddah_pulang", detik: 5, landmark: "airport-board", gerak: "naik", teks: satu("Cari nomor gerbang di layar keberangkatan.") },
+  { bab: "jeddah_pulang", detik: 6, landmark: "airport-aircraft", gerak: "maju", teks: satu("Pesawat Garuda sudah menunggu untuk pulang ke Indonesia.") },
+  { bab: "garuda_cgk", detik: 48, perjalanan: true, teks: [
+    { pada: 0, isi: "Pasang sabuk pengaman. Pesawat bersiap di landasan." },
+    { pada: 0.14, isi: "Lepas landas dari Jeddah, pulang ke Indonesia!" },
+    { pada: 0.3, isi: "Menembus awan, meninggalkan Arab Saudi." },
+    { pada: 0.45, isi: "Sekitar sembilan jam di udara. Waktunya beristirahat." },
+    { pada: 0.74, isi: "Pesawat turun mendekati Jakarta. Roda dikeluarkan." },
+    { pada: 0.9, isi: "Alhamdulillah, kita mendarat di Soekarno–Hatta." },
+  ] },
+  { bab: "cgk_pulang", detik: 5, landmark: "airport-immigration", gerak: "maju", teks: satu("Di imigrasi kedatangan, paspor diperiksa kembali.") },
+  { bab: "cgk_pulang", detik: 6, landmark: "airport-baggage", gerak: "geser", teks: satu("Ambil koper di sabuk bagasi. Cocokkan labelnya!") },
+  { bab: "cgk_pulang", detik: 5, landmark: "airport-hall", gerak: "maju", teks: satu("Kita keluar ke aula kedatangan.") },
+  { bab: "cgk_pulang", detik: 5, landmark: "airport-next", gerak: "naik", teks: satu("Menuju tempat penjemputan taksi.") },
+  { bab: "taxi_rumah", detik: 14, perjalanan: true, teks: [
+    { pada: 0, isi: "Taksi mengantar kita pulang ke rumah." },
+    { pada: 0.5, isi: "Sebentar lagi sampai. Bersyukur atas perjalanan ini." },
+  ] },
+  { bab: "rumah_selesai", detik: 5, landmark: "home-taxi", gerak: "maju", teks: satu("Sampai di rumah! Koper diturunkan bersama keluarga.") },
+  { bab: "rumah_selesai", detik: 6, landmark: "home-porch", gerak: "naik", teks: satu("Alhamdulillah, perjalanan selesai. Ceritakan pengalamanmu, ya!") },
+];
+
+export type FilmId = "berangkat" | "pulang";
+export const FILM: Record<FilmId, { judul: string; adegan: readonly AdeganFilm[] }> = {
+  berangkat: { judul: "Berangkat", adegan: FILM_BERANGKAT },
+  pulang: { judul: "Pulang", adegan: FILM_PULANG },
+};
+
+/** Bab yang dilalui sebuah film (berurutan, tanpa duplikat). */
+export const babFilm = (film: readonly AdeganFilm[]): readonly JourneyChapterId[] => film.map((a) => a.bab).filter((b, i, xs) => xs.indexOf(b) === i);
+export const BAB_FILM: readonly JourneyChapterId[] = babFilm(FILM_BERANGKAT);
+
+/** Film yang memuat sebuah bab, bila ada. */
+export const filmUntukBab = (bab: string): FilmId | null => (babFilm(FILM_BERANGKAT) as readonly string[]).includes(bab) ? "berangkat" : (babFilm(FILM_PULANG) as readonly string[]).includes(bab) ? "pulang" : null;
 
 export const durasiFilm = (film: readonly AdeganFilm[] = FILM_BERANGKAT) => film.reduce((s, a) => s + a.detik, 0);
 
@@ -95,6 +136,7 @@ export function teksAdegan(a: AdeganFilm, dalam: number): string {
 export const PENANDA_FILM: Partial<Record<JourneyChapterId, string>> = {
   rumah: "Rumah", taxi_cgk: "Taksi", cgk: "Check-in", cgk_imigrasi: "Imigrasi", cgk_keamanan: "Keamanan",
   cgk_gate: "Gerbang", cgk_boarding: "Boarding", garuda_jed: "Terbang", jeddah: "Jeddah",
+  makkah_jed: "Bus", jeddah_pulang: "Bandara JED", garuda_cgk: "Terbang", cgk_pulang: "Tiba CGK", taxi_rumah: "Taksi", rumah_selesai: "Rumah",
 };
 
 export function penandaFilm(film: readonly AdeganFilm[] = FILM_BERANGKAT): { bab: JourneyChapterId; nama: string; mulai: number }[] {
