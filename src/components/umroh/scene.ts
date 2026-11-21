@@ -1,6 +1,12 @@
 import * as T from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Sky } from 'three/examples/jsm/objects/Sky.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/examples/jsm/postprocessing/GTAOPass.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
+import { GRADING_SHADER, qualityTier, type QualityTier } from './grading';
 import type { UmrohStage, JourneyChapterId } from '@/lib/umroh';
 import { Resources } from './realistic/resources';
 import { createNabawiWorld, createBirAliWorld } from './realistic/madinah';
@@ -43,6 +49,25 @@ const EYE_HEIGHT = 1.68, SAI_END = 75;
 const UP = new T.Vector3(0, 1, 0);
 
 /** Walkable human-scale reconstruction; architecture and PBR textures share GPU resources. */
+/**
+ * GTAO hanya untuk benda padat: sprite awan, kubah langit, dan material transparan disembunyikan saat
+ * menghitung normal/kedalaman (bawaan GTAOPass hanya menyaring titik & garis, sehingga awan jadi kotak gelap).
+ */
+class AoPadat extends GTAOPass {
+  _overrideVisibility(): void {
+    const cache = (this as unknown as { _visibilityCache: T.Object3D[] })._visibilityCache;
+    this.scene.traverse((object) => {
+      if (!object.visible) return;
+      const material = (object as T.Mesh).material as T.Material | T.Material[] | undefined;
+      const transparent = Array.isArray(material) ? material.some((m) => m.transparent) : Boolean(material?.transparent);
+      if ((object as T.Sprite).isSprite || (object as T.Points).isPoints || (object as T.Line).isLine || object.renderOrder < -50 || transparent) {
+        object.visible = false;
+        cache.push(object);
+      }
+    });
+  }
+}
+
 export class UmrohScene {
   private renderer: T.WebGLRenderer;
   private scene = new T.Scene();
@@ -113,13 +138,21 @@ export class UmrohScene {
   private frameInfo: WorldFrame = { step: 0, travel: 0, time: 0, delta: 0, running: false, reducedMotion: false, sunDirection: this.sunDirection, sunset: false };
   private audio: FlightAudio | null = null;
   private soundOn = true;
+  /** Mutu render: 'tinggi' = AO + grading; 'hemat' = grading saja (tablet murah tetap lancar). */
+  private quality: QualityTier = qualityTier();
+  private composer: EffectComposer | null = null;
+  private ao: GTAOPass | null = null;
+  private grading: ShaderPass | null = null;
+  /** Penjaga FPS: bila rata-rata frame > 38 ms selama ±3 detik, efek berat dimatikan. */
+  private slowFrames = 0;
+  private sampledFrames = 0;
 
   constructor(private container: HTMLElement) {
     this.renderer = new T.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, this.compact ? 1.35 : 1.7));
     this.renderer.outputColorSpace = T.SRGBColorSpace;
     this.renderer.toneMapping = T.ACESFilmicToneMapping; this.renderer.toneMappingExposure = 1;
-    this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = T.PCFShadowMap;
+    this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = T.PCFSoftShadowMap;
     const canvas = this.renderer.domElement;
     canvas.style.width = canvas.style.height = '100%'; canvas.style.display = 'block'; canvas.style.touchAction = 'none';
     canvas.tabIndex = 0; canvas.setAttribute('role', 'img'); container.appendChild(canvas);
@@ -127,7 +160,7 @@ export class UmrohScene {
     this.scene.add(this.hemisphere, this.sun, this.sun.target);
     this.sun.castShadow = true; this.sun.shadow.mapSize.setScalar(this.compact ? 1024 : 2048);
     Object.assign(this.sun.shadow.camera, { left: -85, right: 85, top: 85, bottom: -85, near: 1, far: 350 });
-    this.sun.shadow.normalBias = .045; this.sun.shadow.bias = -.00012;
+    this.sun.shadow.normalBias = .045; this.sun.shadow.bias = -.00012; this.sun.shadow.radius = 3;
     this.sky.scale.setScalar(1800); this.sky.renderOrder = -100; this.scene.add(this.sky);
     this.dome.renderOrder = -101; this.dome.frustumCulled = false; this.dome.name = 'Kubah langit'; this.scene.add(this.dome);
     Object.assign(this.sky.material.uniforms.turbidity, { value: 3 });
@@ -140,6 +173,9 @@ export class UmrohScene {
     this.orbit.minDistance = 2.2; this.orbit.maxDistance = 220; this.orbit.maxPolarAngle = Math.PI / 2 - .025; this.orbit.enabled = false;
     this.guide = new Pilgrims(this.resources, { kind: 'walk', count: 1 }, true); this.scene.add(this.guide.group);
     this.buildCumulus();
+    this.buildPost();
+    // Akses penyetelan visual saat pengembangan saja.
+    if (process.env.NODE_ENV === 'development') (window as unknown as { __umroh?: UmrohScene }).__umroh = this;
     this.observer = new ResizeObserver(this.resize); this.observer.observe(container);
     canvas.addEventListener('pointerdown', this.pointerDown); canvas.addEventListener('pointermove', this.pointerMove);
     canvas.addEventListener('pointerup', this.pointerUp); canvas.addEventListener('pointercancel', this.pointerUp);
@@ -164,6 +200,28 @@ export class UmrohScene {
       sprite.renderOrder = -90; this.cumulus.add(sprite);
     }
     this.cumulus.name = 'Awan cumulus'; this.scene.add(this.cumulus);
+  }
+  /** Pasca-proses sinematik. MSAA di render target karena antialias kanvas tidak berlaku untuk composer. */
+  private buildPost(): void {
+    try {
+      const w = Math.max(1, this.container.clientWidth), h = Math.max(1, this.container.clientHeight);
+      const target = new T.WebGLRenderTarget(w, h, { type: T.HalfFloatType, samples: this.quality === 'tinggi' ? 4 : 2 });
+      const composer = new EffectComposer(this.renderer, target);
+      composer.addPass(new RenderPass(this.scene, this.camera));
+      if (this.quality === 'tinggi') {
+        this.ao = new AoPadat(this.scene, this.camera, w, h);
+        this.ao.blendIntensity = .85;
+        this.ao.updateGtaoMaterial({ radius: .45, distanceExponent: 1.4, thickness: 1.2, scale: 1 });
+        composer.addPass(this.ao);
+      }
+      this.grading = new ShaderPass(GRADING_SHADER);
+      composer.addPass(this.grading);
+      composer.addPass(new OutputPass());
+      this.composer = composer;
+    } catch {
+      // Perangkat tanpa dukungan render target float: tetap tampil lewat render langsung.
+      this.composer = null;
+    }
   }
   private makeEnvironment(): void {
     const pmrem = new T.PMREMGenerator(this.renderer);
@@ -190,7 +248,10 @@ export class UmrohScene {
     this.renderer.toneMappingExposure = aloft ? (sunset ? .62 : .68) : flying ? .95 : sunset ? .66 : .7;
     this.scene.fog = new T.Fog(sunset ? '#d6bba0' : aloft ? '#d4e1e8' : '#c6d2d4', aloft ? 1500 : 170, aloft ? 45000 : 1100);
     // Bright sky reflections suit the painted aircraft; the cabin interior stays matte.
-    this.scene.environmentIntensity = aloft && !this.world?.indoor ? .55 : .15;
+    this.scene.environmentIntensity = aloft && !this.world?.indoor ? .55 : this.world?.indoor ? .32 : .42;
+    // Grading senja lebih hangat; AO dimatikan di udara (jarak kilometer membuat AO tidak berarti).
+    if (this.grading) { this.grading.uniforms.uWarmth.value = sunset ? .09 : .045; this.grading.uniforms.uSaturation.value = sunset ? 1.08 : 1.1; }
+    if (this.ao) this.ao.enabled = !aloft && this.quality === 'tinggi';
     // Flight worlds retune the atmosphere for altitude every frame; restore ground level here.
     // A clear tropical blue at ground level, warmer and hazier at sunset.
     this.sky.material.uniforms.rayleigh.value = sunset ? 1.7 : 3; this.sky.material.uniforms.mieCoefficient.value = sunset ? .005 : .0022;
@@ -511,7 +572,9 @@ export class UmrohScene {
   }
   private resize = (): void => {
     this.updateProjection();
-    this.renderer.setSize(Math.max(1, this.container.clientWidth), Math.max(1, this.container.clientHeight), false);
+    const w = Math.max(1, this.container.clientWidth), h = Math.max(1, this.container.clientHeight);
+    this.renderer.setSize(w, h, false);
+    if (this.composer) { this.composer.setPixelRatio(this.renderer.getPixelRatio()); this.composer.setSize(w, h); }
     if (this.world?.flight) { this.resetCamera(); this.shot = -1; }
   };
   private updateCamera(delta: number): void {
@@ -544,13 +607,21 @@ export class UmrohScene {
     this.updateCamera(delta);
     this.crowdTime += delta;
     if (this.crowdTime > (this.compact ? 1 / 20 : 1 / 30)) { const animate = !this.reducedMotion && !this.state.paused; this.crowd?.update(this.crowdTime, animate, this.camera.position); this.guide.update(this.crowdTime, animate); this.crowdTime = 0; }
-    this.renderer.render(this.scene, this.camera);
+    if (this.composer) this.composer.render(delta); else this.renderer.render(this.scene, this.camera);
+    if (this.quality === 'tinggi' && delta > 0) {
+      this.sampledFrames++; if (delta > .038) this.slowFrames++;
+      if (this.sampledFrames >= 90) {
+        if (this.slowFrames > 60) { this.quality = 'hemat'; if (this.ao) this.ao.enabled = false; }
+        this.sampledFrames = 0; this.slowFrames = 0;
+      }
+    }
   };
   private onContextLost = (event: Event): void => { event.preventDefault(); this.contextLost = true; this.pauseInput(); this.container.dispatchEvent(new CustomEvent('umroh-context-lost', { bubbles: true })); };
   private onContextRestored = (): void => { this.contextLost = false; this.lastTime = 0; this.container.dispatchEvent(new CustomEvent('umroh-context-restored', { bubbles: true })); };
   dispose(): void {
     if (this.disposed) return;
     this.disposed = true; cancelAnimationFrame(this.frame); this.observer.disconnect(); this.orbit.dispose();
+    this.composer?.dispose(); this.ao?.dispose(); this.composer = null;
     const canvas = this.renderer.domElement;
     canvas.removeEventListener('pointerdown', this.pointerDown); canvas.removeEventListener('pointermove', this.pointerMove); canvas.removeEventListener('pointerup', this.pointerUp); canvas.removeEventListener('pointercancel', this.pointerUp);
     canvas.removeEventListener('webglcontextlost', this.onContextLost); canvas.removeEventListener('webglcontextrestored', this.onContextRestored);

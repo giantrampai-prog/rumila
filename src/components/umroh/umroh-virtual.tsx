@@ -43,6 +43,15 @@ const NABAWI_VISIT = {
   detail: 'Berkunjung ke Masjid Nabawi bukan rukun umroh dan bukan tempat miqat. Untuk perjalanan dari Madinah, niat ihram dilakukan di Bir Ali sebelum menuju Makkah.',
 };
 
+/** Empat babak perjalanan; progres tampil sebagai empat garis, bukan angka 1/22. */
+const BABAK: readonly { id: string; nama: string; bab: readonly string[] }[] = [
+  { id: 'berangkat', nama: 'Berangkat', bab: ['rumah', 'taxi_cgk', 'cgk', 'cgk_imigrasi', 'cgk_keamanan', 'cgk_gate', 'cgk_boarding', 'garuda_jed', 'jeddah'] },
+  { id: 'madinah', nama: 'Madinah', bab: ['haramain', 'madinah_station', 'uber_nabawi', 'nabawi', 'rawdah', 'salam'] },
+  { id: 'umroh', nama: 'Umroh', bab: ['umroh'] },
+  { id: 'pulang', nama: 'Pulang', bab: ['makkah_jed', 'jeddah_pulang', 'garuda_cgk', 'cgk_pulang', 'taxi_rumah', 'rumah_selesai'] },
+];
+const babakDari = (chapter: string) => Math.max(0, BABAK.findIndex((b) => b.bab.includes(chapter)));
+
 export function UmrohVirtual() {
   const member = useMe();
   return <Journey key={member.id} memberId={member.id} memberName={member.name} />;
@@ -69,7 +78,22 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
   const [showMap, setShowMap] = useState(false);
   const [showRestart, setShowRestart] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const [guideOpen, setGuideOpen] = useState(true);
+  const [guideOpen, setGuideOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  // Antarmuka memudar 3,5 detik setelah disentuh terakhir, hanya ketika perjalanan/latihan sedang berjalan.
+  const [idle, setIdle] = useState(false);
+  const idleTimer = useRef<number | undefined>(undefined);
+  // Tinggi kartu bawah berubah (pilihan putra/putri, langkah); pad arah & petunjuk diletakkan di atasnya.
+  const captionRef = useRef<HTMLDivElement>(null);
+  const appRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = captionRef.current, app = appRef.current;
+    if (!el || !app) return;
+    const ukur = () => app.style.setProperty('--cap-h', `${Math.round(el.getBoundingClientRect().height)}px`);
+    ukur();
+    const ro = new ResizeObserver(ukur); ro.observe(el);
+    return () => ro.disconnect();
+  });
   const [view, setView] = useState<CameraView>('walk');
   const [flightCamera, setFlightCamera] = useState<FlightCameraMode>('auto');
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -260,19 +284,25 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
       if (updated.chapter === journey.chapter) return;
       useRumila.getState().completeToolItem(memberId, TOOL_ID, 'angkasa', 'perjalanan-' + journey.chapter);
     }
-    stopMovement(); setRunning(false); setJourney(updated); setGuideOpen(true); setChecks([]);
+    stopMovement(); setRunning(false); setJourney(updated); setGuideOpen(false); setMenuOpen(false); setChecks([]);
     if (updated.chapter !== journey.chapter) { setView('walk'); setFlightCamera('auto'); }
   };
   const changePilgrim = (pilgrim: UmrohPilgrim) => setJourney((current) => ({ ...current, umroh: { ...current.umroh, pilgrim } }));
-  const reset = () => { const current = saved ?? journey; stopMovement(); setVisit(null); setRunning(false); setSaved(null); setChecks([]); setJourney(createJourneyProgress(current.umroh.pilgrim)); setShowRestart(false); setGuideOpen(true); setView('walk'); setFlightCamera('auto'); };
+  const reset = () => { const current = saved ?? journey; stopMovement(); setVisit(null); setRunning(false); setSaved(null); setChecks([]); setJourney(createJourneyProgress(current.umroh.pilgrim)); setShowRestart(false); setGuideOpen(false); setView('walk'); setFlightCamera('auto'); };
   const finishTravel = () => { setRunning(false); setJourney((current) => advanceJourneyTravel(current, chapter.durationSeconds ?? 0)); };
-  const openNabawi = () => { setRunning(false); stopMovement(); setVisit('nabawi'); setShowMap(false); setGuideOpen(true); };
-  const returnToLesson = () => { stopMovement(); setVisit(null); setRunning(false); setGuideOpen(true); };
+  const openNabawi = () => { setRunning(false); stopMovement(); setVisit('nabawi'); setShowMap(false); setGuideOpen(false); };
+  const returnToLesson = () => { stopMovement(); setVisit(null); setRunning(false); setGuideOpen(false); };
   const jumpTo = (id: string) => {
     pendingLandmark.current = id;
     if (flying) setFlightCamera(flightPov);
     stopMovement(); setRunning(false); setView('walk'); setShowMap(false);
   };
+  const wake = useCallback(() => {
+    setIdle(false);
+    window.clearTimeout(idleTimer.current);
+    if (running) idleTimer.current = window.setTimeout(() => setIdle(true), 3500);
+  }, [running]);
+  useEffect(() => { wake(); return () => window.clearTimeout(idleTimer.current); }, [wake, journey.chapter, progress.stage]);
   const narrate = () => {
     window.speechSynthesis.cancel();
     if (speaking) { setSpeaking(false); return; }
@@ -283,103 +313,129 @@ function Journey({ memberId, memberName }: { memberId: string; memberName: strin
     speech.onend = speech.onerror = () => setSpeaking(false);
     setSpeaking(true); window.speechSynthesis.speak(speech);
   };
-  const caption = visit ? 'KUNJUNGAN PILIHAN' : finished ? 'SUDAH KEMBALI DI RUMAH' : `PERJALANAN ${chapterIndex + 1} / ${JOURNEY_CHAPTERS.length}`;
+  const babakAktif = visit ? 1 : babakDari(journey.chapter);
+  const babakIsi = BABAK.map((b, i) => {
+    if (i < babakAktif) return 1;
+    if (i > babakAktif) return 0;
+    if (b.id === 'umroh') return Math.min(1, (stageIndex + (progress.stage === 'selesai' ? 1 : 0)) / STAGES.length);
+    const ids = b.bab;
+    const pos = ids.indexOf(journey.chapter);
+    return pos < 0 ? 0 : Math.min(1, (pos + (travelling ? travelFraction : 0)) / ids.length);
+  });
+  const bab = BABAK[babakAktif];
+  const lokasi = visit ? 'Masjid Nabawi · Madinah' : !inUmroh ? chapter.location : progress.stage === 'persiapan' || progress.stage === 'miqat' ? (progress.route === 'madinah' ? 'Bir Ali · Madinah' : 'Perjalanan · Pesawat') : progress.stage === 'perjalanan' ? 'Menuju Makkah' : progress.stage === 'sai' ? 'Safa & Marwah' : progress.stage === 'tahallul' || finished ? 'Menuntaskan umroh' : 'Masjidil Haram';
+  const eyebrow = visit ? 'Kunjungan pilihan' : finished ? 'Sudah di rumah' : inUmroh ? `Umroh · langkah ${Math.min(stageIndex + 1, STAGES.length)} dari ${STAGES.length}` : `${bab.nama} · ${bab.bab.indexOf(journey.chapter) + 1} dari ${bab.bab.length}`;
+  const langkahSekarang = needsChecklist && doneSteps < stepLabels.length ? stepLabels[doneSteps] : null;
+  const tandaiLangkah = () => setChecks((v) => { const nextChecks = stepLabels.map((_, n) => Boolean(v[n])); nextChecks[doneSteps] = true; return nextChecks; });
+  const hint = tawafHint ?? (flying ? (flightCamera === 'auto' && !reducedMotion ? 'Sudut kamera berganti otomatis' : flightPov === 'cabin' ? 'Geser untuk melihat kabin' : 'Geser untuk mengitari pesawat') : travelling && view === 'follow' ? 'Geser untuk melihat sekeliling' : view === 'walk' ? 'Tombol arah untuk berjalan · geser untuk melihat' : 'Geser untuk melihat · cubit untuk mendekat');
   const primaryAction = visit
-    ? <button className="umroh-primary" onClick={returnToLesson}><Icon name="arrow_back" />Kembali ke perjalanan</button>
+    ? <button className="umroh-go" onClick={returnToLesson}><Icon name="arrow_back" size={20} />Kembali</button>
     : (practice && !practiceDone) || (travelling && !travelDone)
-      ? <button className="umroh-primary" disabled={!ready || (!sceneReady && !sceneError)} onClick={() => {
-        if (!running) {
-          scene.current?.unlockAudio();
-          // Give the moving scenery the whole screen on wide layouts; the guide reopens from its button.
-          if (travelling && window.matchMedia('(min-width: 761px)').matches) setGuideOpen(false);
-        }
+      ? <button className="umroh-go" disabled={!ready || (!sceneReady && !sceneError)} onClick={() => {
+        if (!running) scene.current?.unlockAudio();
         setRunning(!running);
-      }}><Icon name={running ? 'pause' : 'play_arrow'} />{running ? 'Jeda perjalanan' : travelling ? journey.travelSeconds > 0 ? 'Lanjutkan perjalanan' : 'Mulai perjalanan' : progress.elapsedSeconds > 0 ? 'Lanjutkan ' + (progress.stage === 'tawaf' ? 'tawaf' : 'sa’i') : 'Mulai ' + (progress.stage === 'tawaf' ? 'tawaf' : 'sa’i')}</button>
+      }}><Icon name={running ? 'pause' : 'play_arrow'} size={22} />{running ? 'Jeda' : travelling ? journey.travelSeconds > 0 ? 'Lanjut' : 'Mulai' : progress.elapsedSeconds > 0 ? 'Lanjut' : 'Mulai ' + (progress.stage === 'tawaf' ? 'tawaf' : 'sa’i')}</button>
       : finished
-        ? <Link className="umroh-primary" href="/akademi/lab"><Icon name="home" />Kembali ke Laboratorium 3D</Link>
-        : <button className="umroh-primary" disabled={!ready || (needsChecklist && doneSteps < stepLabels.length)} onClick={next}>{inUmroh ? progress.stage === 'selesai' ? 'Mulai perjalanan pulang' : lesson.action : chapter.action}<Icon name="arrow_forward" /></button>;
+        ? <Link className="umroh-go" href="/akademi/lab"><Icon name="home" size={20} />Selesai</Link>
+        : langkahSekarang
+          ? <button className="umroh-go" disabled={!ready} onClick={tandaiLangkah}><Icon name="check" size={20} />Sudah</button>
+          : <button className="umroh-go" disabled={!ready} onClick={next}>{inUmroh ? progress.stage === 'selesai' ? 'Pulang' : lesson.action : chapter.action}<Icon name="arrow_forward" size={20} /></button>;
 
   return (
-    <main className={'umroh-app ' + (guideOpen ? 'guide-open' : 'guide-closed') + (hudHidden ? ' hud-hidden' : '') + (running ? ' is-running' : '')}>
-      <header className="umroh-header">
-        <Link href="/akademi/lab" className="umroh-icon-btn" aria-label="Kembali ke Laboratorium 3D"><Icon name="arrow_back" /></Link>
-        <div className="umroh-title"><span>JELAJAH & BELAJAR</span><h1>Umroh Virtual</h1></div>
-        <div className="umroh-header-actions">
-          <button className="umroh-outline-btn" aria-label="Lihat lokasi dan rangkaian umroh" onClick={() => { setRunning(false); setShowMap(true); }}><Icon name="map" /><span>Peta & rangkaian</span></button>
-          <button className={'umroh-outline-btn umroh-guide-toggle ' + (guideOpen ? 'selected' : '')} aria-expanded={guideOpen} aria-controls="umroh-guide" onClick={() => { stopMovement(); setGuideOpen(!guideOpen); }}><Icon name="menu_book" /><span>Panduan</span></button>
-          <button className="umroh-icon-btn" aria-label="Tentang panduan" onClick={() => { setRunning(false); setShowInfo(true); }}><Icon name="info" /></button>
+    <main
+      ref={appRef}
+      className={'umroh-app umroh-cine' + (hudHidden ? ' hud-hidden' : '') + (idle && !dialogOpen && !guideOpen && !menuOpen ? ' ui-idle' : '') + (running ? ' is-running' : '') + (guideOpen ? ' sheet-open' : '')}
+      onPointerDown={wake} onPointerMove={wake} onKeyDown={wake}
+    >
+      <section className="umroh-world" aria-label="Dunia umroh tiga dimensi">
+        <div ref={viewport} className="umroh-viewport" />
+        {!sceneReady && !sceneError && <div className="umroh-loading" role="status"><Icon name="mosque" size={40} /><span>Menyiapkan perjalanan…</span></div>}
+        {sceneError && <div className="umroh-loading"><Icon name="view_in_ar" size={40} /><strong>Tampilan 3D belum bisa dibuka</strong><p>Coba browser yang mendukung WebGL. Penjelasan tiap langkah tetap bisa dibuka lewat tombol ⓘ.</p></div>}
+
+        <div className="umroh-top umroh-fade">
+          <Link href="/akademi/lab" className="umroh-glass-btn" aria-label="Kembali ke Laboratorium 3D"><Icon name="arrow_back" /></Link>
+          <div className="umroh-loc"><span className="umroh-live-dot" /><span>{lokasi}</span></div>
+          <span className="umroh-spacer" />
+          <button className="umroh-glass-btn" aria-label="Peta & rangkaian" onClick={() => { setRunning(false); setShowMap(true); }}><Icon name="map" /></button>
+          <button className="umroh-glass-btn" aria-label="Pengaturan tampilan" aria-expanded={menuOpen} onClick={() => setMenuOpen((v) => !v)}><Icon name={menuOpen ? 'close' : 'more_horiz'} /></button>
         </div>
-      </header>
 
-      <div className="umroh-layout">
-        <section className="umroh-world" aria-label="Dunia umroh tiga dimensi">
-          <div ref={viewport} className="umroh-viewport" />
-          <div className="umroh-scene-label"><span className="umroh-live-dot" /><div><span>{visit ? 'MASJID NABAWI · MADINAH' : !inUmroh ? chapter.location : progress.stage === 'persiapan' || progress.stage === 'miqat' ? (progress.route === 'madinah' ? 'BIR ALI · MADINAH' : 'PERJALANAN · PESAWAT') : progress.stage === 'perjalanan' ? 'MENUJU MAKKAH' : progress.stage === 'sai' ? 'SAFA & MARWAH' : progress.stage === 'tahallul' || finished ? 'MENUNTASKAN UMROH' : 'MASJIDIL HARAM'}</span>{!travelling && <small>{visit ? 'Kunjungan pilihan · di luar rangkaian umroh' : 'Visualisasi tempat untuk pembelajaran'}</small>}</div></div>
-          <button className="umroh-icon-btn umroh-hud-toggle" aria-pressed={hudHidden} aria-label={hudHidden ? 'Tampilkan teks dan tombol' : 'Sembunyikan teks agar pemandangan terlihat penuh'} title={hudHidden ? 'Tampilkan teks' : 'Sembunyikan teks'} onClick={() => { const hide = !hudHidden; setHudHidden(hide); if (hide) setGuideOpen(false); }}><Icon name={hudHidden ? 'visibility' : 'visibility_off'} /></button>
-          {!sceneReady && !sceneError && <div className="umroh-loading" role="status"><Icon name="mosque" size={40} /><span>Menyiapkan perjalanan…</span></div>}
-          {sceneError && <div className="umroh-loading"><Icon name="view_in_ar" size={40} /><strong>Tampilan 3D belum bisa dibuka</strong><p>Coba browser yang mendukung WebGL. Panduan langkah tetap bisa dibaca di sini.</p></div>}
-          <div className="umroh-camera-toolbar">
-            {flying ? <><div className="umroh-segmented" role="group" aria-label="Sudut pandang penerbangan">{FLIGHT_VIEWS.map((mode) => <button key={mode.id} aria-pressed={flightCamera === mode.id} onClick={() => { stopMovement(); setFlightCamera(mode.id); }}><Icon name={mode.icon} size={18} /><span>{mode.label}</span></button>)}</div>
-              <div className="umroh-segmented umroh-time" role="group" aria-label="Suara pesawat"><button aria-pressed={soundOn} aria-label={soundOn ? 'Matikan suara pesawat' : 'Nyalakan suara pesawat'} onClick={() => { const on = !soundOn; setSoundOn(on); if (on) scene.current?.unlockAudio(); }}><Icon name={soundOn ? 'volume_up' : 'volume_off'} size={17} /><span className="umroh-sr-label">Suara</span></button></div></> : <div className="umroh-segmented" role="group" aria-label="Cara menjelajah">{CAMERA_VIEWS.map((mode) => <button key={mode.id} aria-pressed={cameraView === mode.id} disabled={tawaf && reducedMotion && mode.id !== 'overview'} onClick={() => { stopMovement(); setView(mode.id); }}><Icon name={mode.icon} size={18} /><span>{travelling && mode.id === 'follow' ? 'Dalam kendaraan' : tawaf && mode.id === 'walk' ? 'POV tawaf' : mode.label}</span></button>)}</div>}
-            <div className="umroh-segmented umroh-time" role="group" aria-label="Suasana cahaya"><button aria-label="Siang" aria-pressed={timeOfDay === 'day'} onClick={() => setTimeOfDay('day')}><Icon name="light_mode" size={17} /><span>Siang</span></button><button aria-label="Senja" aria-pressed={timeOfDay === 'sunset'} onClick={() => setTimeOfDay('sunset')}><Icon name="wb_twilight" size={17} /><span>Senja</span></button></div>
+        {!visit && <div className="umroh-babak umroh-fade" role="progressbar" aria-label={`Babak ${babakAktif + 1} dari 4: ${bab.nama}`} aria-valuenow={babakAktif + 1} aria-valuemin={1} aria-valuemax={4}>
+          {BABAK.map((b, i) => <div key={b.id} className={i === babakAktif ? 'aktif' : i < babakAktif ? 'lewat' : ''}><i><b style={{ width: `${Math.round(babakIsi[i] * 100)}%` }} /></i><span>{b.nama}</span></div>)}
+        </div>}
+
+        {menuOpen && <div className="umroh-menu" role="dialog" aria-label="Pengaturan tampilan">
+          <span className="umroh-menu-label">Kamera</span>
+          {flying
+            ? <div className="umroh-chips" role="group" aria-label="Sudut pandang penerbangan">{FLIGHT_VIEWS.map((mode) => <button key={mode.id} aria-pressed={flightCamera === mode.id} onClick={() => { stopMovement(); setFlightCamera(mode.id); }}><Icon name={mode.icon} size={18} />{mode.label}</button>)}</div>
+            : <div className="umroh-chips" role="group" aria-label="Cara menjelajah">{CAMERA_VIEWS.map((mode) => <button key={mode.id} aria-pressed={cameraView === mode.id} disabled={tawaf && reducedMotion && mode.id !== 'overview'} onClick={() => { stopMovement(); setView(mode.id); }}><Icon name={mode.icon} size={18} />{travelling && mode.id === 'follow' ? 'Dalam kendaraan' : tawaf && mode.id === 'walk' ? 'POV tawaf' : mode.label}</button>)}</div>}
+          <span className="umroh-menu-label">Cahaya</span>
+          <div className="umroh-chips" role="group" aria-label="Suasana cahaya"><button aria-pressed={timeOfDay === 'day'} onClick={() => setTimeOfDay('day')}><Icon name="light_mode" size={18} />Siang</button><button aria-pressed={timeOfDay === 'sunset'} onClick={() => setTimeOfDay('sunset')}><Icon name="wb_twilight" size={18} />Senja</button></div>
+          <div className="umroh-menu-rows">
+            {flying && <button aria-pressed={soundOn} onClick={() => { const on = !soundOn; setSoundOn(on); if (on) scene.current?.unlockAudio(); }}><Icon name={soundOn ? 'volume_up' : 'volume_off'} size={20} />{soundOn ? 'Suara pesawat menyala' : 'Suara pesawat mati'}</button>}
+            <button onClick={() => { stopMovement(); scene.current?.resetCamera(); setMenuOpen(false); }}><Icon name="center_focus_strong" size={20} />Pusatkan kamera</button>
+            <button onClick={() => { setHudHidden(true); setMenuOpen(false); setGuideOpen(false); }}><Icon name="visibility_off" size={20} />Sembunyikan tombol & teks</button>
+            {travelling && !travelDone && !visit && <button onClick={() => { finishTravel(); setMenuOpen(false); }}><Icon name="fast_forward" size={20} />Singkatkan perjalanan</button>}
+            <button onClick={() => { setMenuOpen(false); setRunning(false); setShowInfo(true); }}><Icon name="info" size={20} />Tentang modul & sumber</button>
+            <button onClick={() => { setMenuOpen(false); setRunning(false); setShowRestart(true); }}><Icon name="restart_alt" size={20} />Ulangi dari rumah</button>
           </div>
-          {practice && !visit && <div className="umroh-counter" aria-live="polite"><span>{progress.stage === 'tawaf' ? 'PUTARAN TAWAF' : 'PERJALANAN SA’I'}</span><strong>{progress.count}<small> / 7</small></strong><div>{practiceDone ? (progress.stage === 'tawaf' ? 'Tujuh putaran lengkap' : 'Tujuh perjalanan lengkap') : progress.stage === 'sai' ? (progress.count % 2 === 0 ? 'Safa → Marwah' : 'Marwah → Safa') : 'Ka’bah di sebelah kiri'}</div></div>}
-          {travelling && !visit && <div className="umroh-counter umroh-transport-counter"><span>{travelDone ? 'SUDAH TIBA' : running ? 'DALAM PERJALANAN' : journey.travelSeconds > 0 ? 'DIJEDA' : 'SIAP BERANGKAT'} · {Math.round(travelFraction * 100)}%{chapter.storyMinutes ? ' · ' + storyClock : ''}</span>
-            <progress aria-label="Progres perjalanan" value={travelFraction} max={1} />
-            {flightState && <div className="umroh-flight-phase"><strong>{flightState.phase.label}</strong><span>{flightState.onGround ? `${Math.round(Math.abs(flightState.speed) * 3.6)} km/jam di darat` : `${(Math.round(flightState.altitude / 100) * 100).toLocaleString('id-ID')} m · ${Math.round(flightState.speed * 3.6)} km/jam`}{flightState.seatbelt ? ' · ' : ''}{flightState.seatbelt && <Icon name="airline_seat_recline_extra" size={13} />}</span></div>}
-            {boardingStep && <div className="umroh-flight-phase"><strong>{boardingStep.label}</strong><span>Langkah {boardingStep.index + 1} dari 5 · kursi 32A</span></div>}
-            {!flightState && !boardingStep && <div>{chapter.subtitle}</div>}</div>}
-          <button className="umroh-icon-btn umroh-reset-camera" aria-label="Atur ulang kamera" onClick={() => { stopMovement(); scene.current?.resetCamera(); }}><Icon name="center_focus_strong" /></button>
-          {!flying && journey.chapter !== 'cgk_boarding' && cameraView === 'walk' && !guidedTawaf && !dialogOpen && <div className="umroh-dpad" role="group" aria-label="Navigasi jalan kaki">{[
-            { id: 'forward', label: 'Maju', icon: 'keyboard_arrow_up', forward: 1, right: 0 },
-            { id: 'left', label: 'Ke kiri', icon: 'keyboard_arrow_left', forward: 0, right: -1 },
-            { id: 'back', label: 'Mundur', icon: 'keyboard_arrow_down', forward: -1, right: 0 },
-            { id: 'right', label: 'Ke kanan', icon: 'keyboard_arrow_right', forward: 0, right: 1 },
-          ].map((direction) => <button key={direction.id} className={'umroh-move-' + direction.id} aria-label={direction.label}
-            onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); movementPointers.current.set(event.pointerId, direction); updateMovement(); }}
-            onPointerUp={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
-            onPointerCancel={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
-            onLostPointerCapture={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
-            onContextMenu={(event) => event.preventDefault()}><Icon name={direction.icon} size={26} /></button>)}</div>}
-          {!running && <div className="umroh-scene-footer"><Icon name={guidedTawaf ? '360' : !flying && cameraView === 'walk' ? 'directions_walk' : 'pan_tool_alt'} size={16} /><span className="umroh-desktop-hint">{tawafHint ?? (flying ? flightCamera === 'auto' && !reducedMotion ? 'POV berganti otomatis · Pilih POV untuk menjelajah' : flightPov === 'cabin' ? 'Geser untuk melihat kabin dan penumpang' : 'Geser untuk mengitari pesawat · Gulir untuk mendekat' : travelling && view === 'follow' ? 'Geser untuk melihat dari dalam kendaraan' : view === 'walk' ? 'WASD / tombol arah · Geser untuk melihat' : 'Geser untuk melihat · Gulir untuk mendekat')}</span><span className="umroh-touch-hint">{tawafHint ?? (flying ? flightCamera === 'auto' && !reducedMotion ? 'POV berganti otomatis · Pilih POV untuk menjelajah' : flightPov === 'cabin' ? 'Geser untuk melihat kabin dan penumpang' : 'Geser untuk mengitari pesawat · Cubit untuk mendekat' : travelling && view === 'follow' ? 'Geser untuk melihat dari dalam kendaraan' : view === 'walk' ? 'Tombol arah untuk berjalan · Geser untuk melihat' : 'Geser untuk melihat · Cubit untuk mendekat')}</span></div>}
-          <div className="umroh-action-dock"><div className="umroh-dock-caption"><span>{caption}</span><strong>{displayedLesson.title}</strong></div>{primaryAction}</div>
-        </section>
+        </div>}
 
-        <section id="umroh-guide" ref={panel} className="umroh-panel" hidden={!guideOpen} aria-label="Panduan langkah umroh">
-          <div className="umroh-panel-top"><span>PANDUAN PERJALANAN</span><button className="umroh-icon-btn" aria-label="Tutup panduan untuk menjelajah" onClick={() => setGuideOpen(false)}><Icon name="close" size={18} /></button></div>
-          <div className="umroh-step-heading"><span className="umroh-step-icon"><Icon name={visit ? 'mosque' : inUmroh ? STAGE_ICONS[stageIndex] : chapter.icon} size={23} /></span><div><span className="umroh-eyebrow">{visit ? 'KUNJUNGAN PILIHAN' : inUmroh ? 'MANASIK · LANGKAH ' + (stageIndex + 1) + ' / ' + STAGES.length : caption}</span><h2 ref={heading} tabIndex={-1}>{displayedLesson.title}</h2></div></div>
-          {!visit && <div className="umroh-progress-track" aria-label="Progres rangkaian" role="progressbar" aria-valuenow={chapterIndex} aria-valuemin={0} aria-valuemax={JOURNEY_CHAPTERS.length - 1}><span style={{ width: (chapterIndex / (JOURNEY_CHAPTERS.length - 1)) * 100 + '%' }} /></div>}
-          <p className="umroh-subtitle">{displayedLesson.subtitle}</p>
-          <p className="umroh-instruction">{displayedLesson.instruction}</p>
+        {practice && !visit && <div className="umroh-hud" aria-live="polite"><strong>{progress.count}<small>/7</small></strong><span>{progress.stage === 'tawaf' ? 'Putaran tawaf' : 'Perjalanan sa’i'}<em>{practiceDone ? 'Lengkap' : progress.stage === 'sai' ? (progress.count % 2 === 0 ? 'Safa → Marwah' : 'Marwah → Safa') : 'Ka’bah di sebelah kiri'}</em></span></div>}
+        {travelling && !visit && <div className="umroh-hud umroh-fade">
+          <span className="umroh-hud-ring" style={{ ['--p' as string]: `${Math.round(travelFraction * 100)}` }}><b>{Math.round(travelFraction * 100)}%</b></span>
+          <span>{flightState ? flightState.phase.label : boardingStep ? boardingStep.label : travelDone ? 'Sudah tiba' : running ? 'Dalam perjalanan' : 'Siap berangkat'}
+            <em>{flightState ? (flightState.onGround ? `${Math.round(Math.abs(flightState.speed) * 3.6)} km/jam` : `${(Math.round(flightState.altitude / 100) * 100).toLocaleString('id-ID')} m · ${Math.round(flightState.speed * 3.6)} km/jam`) : boardingStep ? `Langkah ${boardingStep.index + 1} dari 5 · kursi 32A` : chapter.storyMinutes ? `${storyClock} dalam cerita` : chapter.subtitle}</em></span>
+        </div>}
 
-          {needsChecklist && <div className="umroh-setup">
-            {choosePilgrim && <fieldset><legend>Panduan untuk</legend><div className="umroh-choice-row">{(['putra', 'putri'] as const).map((p) => <button key={p} className={'umroh-choice umroh-choice-small ' + (progress.pilgrim === p ? 'selected' : '')} aria-pressed={progress.pilgrim === p} onClick={() => changePilgrim(p)}>{p === 'putra' ? 'Laki-laki' : 'Perempuan'}</button>)}</div></fieldset>}
-            {!choosePilgrim && <p className="umroh-step-hint">Centang langkah satu per satu. Lihat apa yang terjadi di layar 3D setiap kali satu langkah selesai.</p>}
-            <div className="umroh-checklist">{stepLabels.map((label, i) => <label key={label} className={i === doneSteps ? 'current' : ''}><input type="checkbox" checked={Boolean(checks[i])} disabled={choosePilgrim ? false : i > doneSteps || (i < doneSteps - 1)} onChange={() => setChecks((v) => { const next = stepLabels.map((_, n) => Boolean(v[n])); next[i] = !next[i]; return next; })} /><span>{!choosePilgrim && <b>{i + 1}</b>}{label}</span></label>)}</div>
+        {!running && !dialogOpen && !menuOpen && <div key={journey.chapter + progress.stage + view} className="umroh-hint"><Icon name={guidedTawaf ? '360' : !flying && cameraView === 'walk' ? 'directions_walk' : 'pan_tool_alt'} size={16} />{hint}</div>}
+
+        {!flying && journey.chapter !== 'cgk_boarding' && cameraView === 'walk' && !guidedTawaf && !dialogOpen && <div className="umroh-dpad umroh-fade" role="group" aria-label="Navigasi jalan kaki">{[
+          { id: 'forward', label: 'Maju', icon: 'keyboard_arrow_up', forward: 1, right: 0 },
+          { id: 'left', label: 'Ke kiri', icon: 'keyboard_arrow_left', forward: 0, right: -1 },
+          { id: 'back', label: 'Mundur', icon: 'keyboard_arrow_down', forward: -1, right: 0 },
+          { id: 'right', label: 'Ke kanan', icon: 'keyboard_arrow_right', forward: 0, right: 1 },
+        ].map((direction) => <button key={direction.id} className={'umroh-move-' + direction.id} aria-label={direction.label}
+          onPointerDown={(event) => { event.preventDefault(); event.currentTarget.setPointerCapture(event.pointerId); movementPointers.current.set(event.pointerId, direction); updateMovement(); }}
+          onPointerUp={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
+          onPointerCancel={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
+          onLostPointerCapture={(event) => { movementPointers.current.delete(event.pointerId); updateMovement(); }}
+          onContextMenu={(event) => event.preventDefault()}><Icon name={direction.icon} size={26} /></button>)}</div>}
+
+        {hudHidden
+          ? <button className="umroh-glass-btn umroh-unhide" aria-label="Tampilkan tombol & teks" onClick={() => setHudHidden(false)}><Icon name="visibility" /></button>
+          : <div ref={captionRef} className="umroh-caption umroh-fade">
+            <div className="umroh-cap-text">
+              <span className="umroh-cap-eyebrow">{eyebrow}</span>
+              <h2 ref={heading} tabIndex={-1}>{displayedLesson.title}</h2>
+              {langkahSekarang
+                ? <p className="umroh-cap-step"><span className="umroh-cap-dots" aria-label={`Langkah ${doneSteps + 1} dari ${stepLabels.length}`}>{stepLabels.map((label, i) => <i key={label} className={i < doneSteps ? 'done' : i === doneSteps ? 'now' : ''} />)}</span>{langkahSekarang}</p>
+                : !running && <p className="umroh-cap-line">{displayedLesson.instruction}</p>}
+            </div>
+            {choosePilgrim && <div className="umroh-chips umroh-chips-sm" role="group" aria-label="Panduan untuk">{(['putra', 'putri'] as const).map((p) => <button key={p} aria-pressed={progress.pilgrim === p} onClick={() => changePilgrim(p)}>{p === 'putra' ? 'Laki-laki' : 'Perempuan'}</button>)}</div>}
+            <div className="umroh-cap-actions">
+              <button className="umroh-glass-btn umroh-info-btn" aria-label="Penjelasan lengkap" aria-expanded={guideOpen} aria-controls="umroh-guide" onClick={() => { stopMovement(); setMenuOpen(false); setGuideOpen(!guideOpen); }}><Icon name="info" /></button>
+              {primaryAction}
+            </div>
           </div>}
-          {showBoardingPass && <BoardingPass name={memberName} boarding={journey.chapter === 'cgk_boarding' || (journey.chapter === 'cgk_gate' && doneSteps >= 3)} />}
+      </section>
 
-          {!visit && travelling && <div className="umroh-travel-card">
-            <div><Icon name={chapter.icon} size={26} /><strong>{travelDone ? 'Sudah tiba' : running ? 'Dalam perjalanan' : 'Siap melanjutkan'}</strong><span>{Math.round(travelFraction * 100)}%</span></div>
-            <progress aria-label="Progres perjalanan kendaraan" value={travelFraction} max={1} />
-            <p>{chapter.storyMinutes === 540 ? (journey.chapter === 'garuda_cgk' ? 'Jeddah → Jakarta · sekitar 9 jam dalam cerita' : 'Jakarta → Jeddah · sekitar 9 jam dalam cerita') : chapter.storyMinutes ? `Sekitar ${chapter.storyMinutes >= 60 ? Math.floor(chapter.storyMinutes / 60) + ' jam' + (chapter.storyMinutes % 60 ? ' ' + chapter.storyMinutes % 60 + ' menit' : '') : chapter.storyMinutes + ' menit'} dalam cerita` : 'Nikmati pemandangan perjalanan'}</p>
-            <small>Waktu dipercepat untuk simulasi. Durasi nyata mengikuti kondisi dan jadwal perjalanan.</small>
-            {!travelDone && <button className="umroh-outline-btn umroh-full" onClick={finishTravel}><Icon name="fast_forward" size={18} />Singkatkan perjalanan</button>}
-          </div>}
-
-          <div className="umroh-note"><Icon name="lightbulb" size={19} /><p>{displayedLesson.detail}</p></div>
-          {!visit && inUmroh && lesson.dua && <details className="umroh-dua"><summary><Icon name="menu_book" size={18} />Bacaan & arti<Icon name="expand_more" size={18} /></summary><p lang="ar" dir="rtl" className="umroh-arabic">{lesson.dua.arabic}</p><p className="umroh-latin">{lesson.dua.latin}</p><p>{lesson.dua.meaning}</p></details>}
-
-          {!visit && practice && <div className="umroh-practice"><div className="umroh-laps" aria-label={String(progress.count) + ' dari 7 selesai'}>{Array.from({ length: 7 }, (_, i) => <span key={i} className={i < progress.count ? 'done' : i === progress.count ? 'current' : ''}>{i < progress.count ? <Icon name="check" size={16} /> : i + 1}</span>)}</div><p>{progress.stage === 'sai' ? 'Safa → Marwah dihitung satu kali. Pulang ke Safa dihitung satu kali lagi.' : 'POV tawaf dan Ikuti jamaah bergerak mengitari Ka’bah saat latihan berjalan. Mulai dan akhiri sejajar Hajar Aswad.'}</p><div className="umroh-speed-control"><span>Kecepatan latihan</span><div className="umroh-segmented" role="group" aria-label="Kecepatan latihan"><button aria-pressed={practiceSpeed === 'normal'} onClick={() => setPracticeSpeed('normal')}>Normal</button><button aria-pressed={practiceSpeed === 'fast'} onClick={() => setPracticeSpeed('fast')}>Dipercepat</button></div></div><span className="umroh-sim-note">{practiceSpeed === 'fast' ? 'Gerak dipercepat untuk belajar. Durasi ini bukan durasi ibadah sebenarnya.' : 'Gerak berjalan biasa. Pilih Dipercepat untuk mempersingkat latihan.'}</span></div>}
-
-          {!visit && finished && <div className="umroh-complete"><Icon name="check_circle" size={32} /><strong>Perjalanan belajar selesai</strong><p>Kamu sudah kembali ke rumah setelah perjalanan Indonesia–Madinah–Makkah. Ceritakan kembali pengalamanmu bersama pendamping.</p></div>}
-
-          <div className="umroh-panel-actions">
-            <div className="umroh-secondary-actions">{voiceAvailable && <button onClick={narrate} aria-pressed={speaking}><Icon name={speaking ? 'stop_circle' : 'volume_up'} size={19} />{speaking ? 'Hentikan suara' : 'Bacakan panduan'}</button>}<button onClick={() => { setRunning(false); setShowRestart(true); }}><Icon name="restart_alt" size={19} />Ulangi</button></div>
-            <p className="umroh-save-note">{storageWarning ? 'Penyimpanan tidak tersedia; progres hanya tersimpan selama halaman ini terbuka.' : 'Perjalanan tersimpan di perangkat ini untuk profilmu.'}</p>
-          </div>
-        </section>
-      </div>
+      <aside id="umroh-guide" ref={panel} className="umroh-sheet" hidden={!guideOpen} aria-label="Penjelasan langkah">
+        <div className="umroh-sheet-top"><span className="umroh-step-icon"><Icon name={visit ? 'mosque' : inUmroh ? STAGE_ICONS[stageIndex] : chapter.icon} size={22} /></span><div><span className="umroh-eyebrow">{eyebrow}</span><h3>{displayedLesson.title}</h3></div><button className="umroh-icon-btn" aria-label="Tutup penjelasan" onClick={() => setGuideOpen(false)}><Icon name="close" size={20} /></button></div>
+        <p className="umroh-subtitle">{displayedLesson.subtitle}</p>
+        <p className="umroh-instruction">{displayedLesson.instruction}</p>
+        {needsChecklist && <ol className="umroh-steps">{stepLabels.map((label, i) => <li key={label} className={i < doneSteps ? 'done' : i === doneSteps ? 'now' : ''}><span>{i < doneSteps ? <Icon name="check" size={15} /> : i + 1}</span>{label}</li>)}</ol>}
+        {showBoardingPass && <BoardingPass name={memberName} boarding={journey.chapter === 'cgk_boarding' || (journey.chapter === 'cgk_gate' && doneSteps >= 3)} />}
+        {!visit && travelling && <p className="umroh-sim-note">{chapter.storyMinutes === 540 ? (journey.chapter === 'garuda_cgk' ? 'Jeddah → Jakarta · sekitar 9 jam dalam cerita.' : 'Jakarta → Jeddah · sekitar 9 jam dalam cerita.') : chapter.storyMinutes ? `Sekitar ${chapter.storyMinutes >= 60 ? Math.floor(chapter.storyMinutes / 60) + ' jam' + (chapter.storyMinutes % 60 ? ' ' + chapter.storyMinutes % 60 + ' menit' : '') : chapter.storyMinutes + ' menit'} dalam cerita.` : ''} Waktu dipercepat untuk simulasi; durasi nyata mengikuti jadwal perjalanan.</p>}
+        <div className="umroh-note"><Icon name="lightbulb" size={19} /><p>{displayedLesson.detail}</p></div>
+        {!visit && inUmroh && lesson.dua && <details className="umroh-dua"><summary><Icon name="menu_book" size={18} />Bacaan & arti<Icon name="expand_more" size={18} /></summary><p lang="ar" dir="rtl" className="umroh-arabic">{lesson.dua.arabic}</p><p className="umroh-latin">{lesson.dua.latin}</p><p>{lesson.dua.meaning}</p></details>}
+        {!visit && practice && <div className="umroh-practice"><div className="umroh-laps" aria-label={String(progress.count) + ' dari 7 selesai'}>{Array.from({ length: 7 }, (_, i) => <span key={i} className={i < progress.count ? 'done' : i === progress.count ? 'current' : ''}>{i < progress.count ? <Icon name="check" size={16} /> : i + 1}</span>)}</div><p>{progress.stage === 'sai' ? 'Safa → Marwah dihitung satu kali. Pulang ke Safa dihitung satu kali lagi.' : 'Mulai dan akhiri sejajar Hajar Aswad. Kamera bergerak mengitari Ka’bah saat latihan berjalan.'}</p><div className="umroh-speed-control"><span>Kecepatan latihan</span><div className="umroh-chips umroh-chips-light" role="group" aria-label="Kecepatan latihan"><button aria-pressed={practiceSpeed === 'normal'} onClick={() => setPracticeSpeed('normal')}>Normal</button><button aria-pressed={practiceSpeed === 'fast'} onClick={() => setPracticeSpeed('fast')}>Dipercepat</button></div></div><span className="umroh-sim-note">{practiceSpeed === 'fast' ? 'Gerak dipercepat untuk belajar. Durasi ini bukan durasi ibadah sebenarnya.' : 'Gerak berjalan biasa.'}</span></div>}
+        {!visit && finished && <div className="umroh-complete"><Icon name="check_circle" size={32} /><strong>Perjalanan belajar selesai</strong><p>Kamu sudah kembali ke rumah setelah perjalanan Indonesia–Madinah–Makkah. Ceritakan kembali pengalamanmu bersama pendamping.</p></div>}
+        <div className="umroh-panel-actions">
+          <div className="umroh-secondary-actions">{voiceAvailable && <button onClick={narrate} aria-pressed={speaking}><Icon name={speaking ? 'stop_circle' : 'volume_up'} size={19} />{speaking ? 'Hentikan suara' : 'Bacakan'}</button>}</div>
+          <p className="umroh-save-note">{storageWarning ? 'Penyimpanan tidak tersedia; progres hanya tersimpan selama halaman ini terbuka.' : 'Perjalanan tersimpan di perangkat ini untuk profilmu.'}</p>
+        </div>
+      </aside>
 
       {saved && <Modal title="Lanjutkan perjalananmu?" onClose={() => { setJourney(saved); setSaved(null); }}><p>Terakhir kamu sampai di <strong>{saved.chapter === 'umroh' ? getStageContent(saved.umroh.stage, saved.umroh.route, saved.umroh.pilgrim).title : getJourneyChapter(saved.chapter).title}</strong>. Perjalanan dilanjutkan dalam keadaan jeda.</p><button className="umroh-primary" onClick={() => { setJourney(saved); setSaved(null); }}>Lanjutkan perjalanan<Icon name="arrow_forward" /></button><button className="umroh-outline-btn umroh-full" onClick={reset}>Mulai dari rumah</button></Modal>}
       {showRestart && <Modal title="Mulai dari awal?" onClose={() => setShowRestart(false)}><p>Posisi perjalanan ini akan kembali ke rumah di Indonesia. Catatan materi yang sudah dipelajari tetap ada.</p><button className="umroh-primary" onClick={reset}>Ya, ulangi rangkaian</button><button className="umroh-outline-btn umroh-full" onClick={() => setShowRestart(false)}>Kembali ke latihan</button></Modal>}
