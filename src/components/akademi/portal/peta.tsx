@@ -211,7 +211,8 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; ur
   const semuaKunci = u.misi.every((x) => x.terkunci);
   const tinta = tintaPada(c);
   const arah = urutan % 2 === 0 ? 1 : -1;
-  const sisiHias = arah > 0 ? "left" : "right";
+  // hiasan di sisi luar lengkungan; label misi di sisi dalam (ke arah tengah) supaya selalu ada ruang di HP
+  const sisiHias = arah > 0 ? "right" : "left";
   const n = u.misi.length;
   const geser = u.misi.map((_, i) => geserTitik(i, n, arah));
   const tinggi = n * SLOT;
@@ -234,7 +235,7 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; ur
           <span className="block text-[11px] font-black tracking-[0.08em] uppercase opacity-85">
             {trackMeta(u.track).nama[bahasa] ?? trackMeta(u.track).nama.id} · Modul {u.ke}
           </span>
-          <span className="line-clamp-2 block leading-tight" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
+          <span className="block leading-[1.2] text-balance" style={{ fontFamily: BALOO, fontSize: 20, fontWeight: 800 }}>
             {u.nama[bahasa] ?? u.nama.id}
           </span>
         </span>
@@ -272,7 +273,7 @@ function Unit({ u, urutan, unitAktif, bahasa, events, level }: { u: UnitPeta; ur
           const judul = utama ? (utama.locale[bahasa]?.judul ?? utama.locale.id?.judul) : undefined;
           return (
             <li key={x.kompetensi.id} className="relative flex items-center justify-center focus-within:z-10 hover:z-10" style={{ height: SLOT, transform: `translateX(${geser[i]}px)` }}>
-              <TitikMisi m={x} warna={[l, m, d]} unitAktif={unitAktif} href={pk && !x.terkunci ? `/akademi/main/${pk.id}` : undefined} judul={judul ?? (u.nama[bahasa] ?? u.nama.id)} sisiLabel={arah > 0 ? "kanan" : "kiri"} bahasa={bahasa} />
+              <TitikMisi m={x} warna={[l, m, d]} unitAktif={unitAktif} href={pk && !x.terkunci ? `/akademi/main/${pk.id}` : undefined} judul={judul ?? (u.nama[bahasa] ?? u.nama.id)} sisiLabel={arah > 0 ? "kiri" : "kanan"} bahasa={bahasa} />
             </li>
           );
         })}
@@ -350,12 +351,13 @@ function TitikMisi({ m, warna, unitAktif, href, judul, sisiLabel, bahasa }: { m:
           {isi}
         </button>
       )}
+      {/* label di luar cincin progres (cincin 10px lebih lebar dari titik), berlatar agar tidak bertabrakan dengan jalur */}
       <span
         aria-hidden
-        className={`absolute top-1/2 w-[92px] -translate-y-1/2 text-[12px] leading-tight font-extrabold ${sisiLabel === "kanan" ? "left-full ml-2.5 text-left" : "right-full mr-2.5 text-right"}`}
-        style={{ color: m.terkunci ? "#a99c8a" : m.selesai || m.sekarang || persen ? INK : "#6b7a90" }}
+        className={`absolute top-1/2 z-[5] w-max max-w-[min(150px,calc(50vw-78px))] -translate-y-1/2 rounded-[12px] bg-white/90 px-2 py-1 text-[13px] leading-[1.2] font-extrabold shadow-[0_2px_0_rgba(11,37,69,.06)] ${sisiLabel === "kanan" ? "left-full ml-5 text-left" : "right-full mr-5 text-right"}`}
+        style={{ color: m.terkunci ? "#76695a" : m.selesai || m.sekarang || persen ? INK : "#4a5a75" }}
       >
-        <span className="line-clamp-2">{judul}</span>
+        <span className="line-clamp-3 [overflow-wrap:anywhere]">{judul}</span>
       </span>
     </div>
   );
