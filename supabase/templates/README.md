@@ -18,4 +18,4 @@ Ubah berkas di sini lalu salin ulang ke dashboard. Tautan reset kembali ke `/mas
 Template TIDAK memakai `{{ .ConfirmationURL }}` (itu selalu lewat `*.supabase.co/auth/v1/verify`). Tautan dibuat dari
 `{{ .SiteURL }}` + `{{ .TokenHash }}`: reset → `/masuk/sandi-baru?token_hash=…&type=recovery`, lainnya →
 `/masuk/verifikasi?token_hash=…&type=signup|magiclink|email_change`; halaman itu memanggil `verifyOtp`.
-Site URL Supabase harus = domain Academy produksi (sekarang https://rumila.vercel.app).
+Site URL Supabase harus = domain Academy produksi: https://kampus.pulaurinoya.com (CNAME Cloudflare → Vercel, 21 Nov 2026; rumila.vercel.app tetap hidup).
