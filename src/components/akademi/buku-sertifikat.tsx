@@ -51,14 +51,42 @@ export interface BukuSertifikatProps {
   /** URL foto anak (signed URL / data URL); kosong = bingkai bertuliskan "Pas foto" */
   foto?: string | null;
   pending?: boolean;
+  /** tanggal lahir "YYYY-MM-DD" (dokumen keluarga saja, tidak untuk verifikasi publik) */
+  lahir?: string | null;
+  /** contoh sebelum terbit: watermark DRAFT di setiap lembar, tanpa nomor resmi */
+  draft?: boolean;
+  /** tampilkan satu lembar saja (pratinjau) */
+  hanya?: "sertifikat";
 }
+
+/** "12 Maret 2020" dari "2020-03-12". */
+export function tanggalLahirPanjang(iso: string): string {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+}
+
+/** Watermark DRAFT diagonal di atas setiap .lembar (ikut tercetak). */
+const DRAFT_CSS = `
+.buku-draft .lembar::after {
+  content: "DRAFT"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  transform: rotate(-24deg); font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif; font-weight: 900;
+  font-size: 19cqw; letter-spacing: 0.12em; color: rgba(200, 40, 50, 0.16); pointer-events: none; z-index: 30;
+}`;
 
 export function BukuSertifikat(p: BukuSertifikatProps) {
   const halTranskrip = pecahTranskrip(p.snapshot.kompetensi);
   const total = 3 + halTranskrip.length + 1;
   const foot = (ke: number) => <Footer p={p} ke={ke} total={total} />;
+  if (p.hanya === "sertifikat")
+    return (
+      <div className={`buku-sertifikat flex w-full flex-col items-center ${p.draft ? "buku-draft" : ""} ${KELAS_FONT_SERTIFIKAT}`}>
+        {p.draft && <style>{DRAFT_CSS}</style>}
+        <LembarSertifikat p={p} footer={foot(2)} />
+      </div>
+    );
   return (
-    <div className={`buku-sertifikat flex w-full flex-col items-center gap-6 ${KELAS_FONT_SERTIFIKAT}`}>
+    <div className={`buku-sertifikat flex w-full flex-col items-center gap-6 ${p.draft ? "buku-draft" : ""} ${KELAS_FONT_SERTIFIKAT}`}>
+      {p.draft && <style>{DRAFT_CSS}</style>}
       <LembarSampul p={p} footer={foot(1)} />
       <LembarSertifikat p={p} footer={foot(2)} />
       <LembarHasil p={p} footer={foot(3)} />
@@ -122,7 +150,7 @@ function Footer({ p, ke, total }: { p: BukuSertifikatProps; ke: number; total: n
   return (
     <footer className="absolute flex items-center justify-between" style={{ left: ke <= 2 ? "8%" : "6%", right: ke <= 2 ? "8%" : "6%", bottom: bawah, fontFamily: SANS, fontSize: "0.92cqw", fontWeight: 600, letterSpacing: "0.08em", color: gelap ? "rgba(246,236,210,.7)" : MUTED }}>
       <span>RINOYA ACADEMY · SERTIFIKAT KENAIKAN JENJANG</span>
-      <span>{p.nomor ? `No. ${p.nomor}` : `Kode ${p.kode}`}</span>
+      <span>{p.draft ? "CONTOH · BELUM TERBIT" : p.nomor ? `No. ${p.nomor}` : `Kode ${p.kode}`}</span>
       <span>
         Lembar {ke} dari {total}
       </span>
@@ -265,7 +293,12 @@ function LembarSertifikat({ p, footer }: { p: BukuSertifikatProps; footer: React
           <p style={{ marginTop: "2.4cqw", fontStyle: "italic", fontSize: "1.9cqw", color: MUTED }}>Dengan bangga diberikan kepada</p>
           <p style={{ marginTop: "0.4cqw", fontFamily: SKRIP, fontSize: p.nama.length > 22 ? "4.8cqw" : "6.2cqw", lineHeight: 1.1, color: NAVY }}>{p.nama}</p>
           <div style={{ width: "60%", height: 1.5, background: EMAS }} />
-          <p style={{ marginTop: "2cqw", fontSize: "1.9cqw", lineHeight: 1.5, maxWidth: "94%" }}>
+          {p.lahir && (
+            <p style={{ marginTop: "0.8cqw", fontFamily: SANS, fontSize: "1.2cqw", fontWeight: 600, letterSpacing: "0.12em", color: MUTED }}>
+              LAHIR {tanggalLahirPanjang(p.lahir).toUpperCase()}
+            </p>
+          )}
+          <p style={{ marginTop: p.lahir ? "1.2cqw" : "2cqw", fontSize: "1.9cqw", lineHeight: 1.5, maxWidth: "94%" }}>
             yang telah menyelesaikan seluruh materi dan Ujian Akhir <b style={{ color: NAVY }}>{lv.nama} ({lv.lokal})</b>, meraih pangkat <b style={{ color: NAVY }}>{p.snapshot.pangkat || lv.pangkat}</b>, dengan menguasai <b style={{ color: NAVY }}>{p.snapshot.dikuasai} dari {p.snapshot.total}</b> kompetensi inti pada pelajaran {daftar}.
           </p>
           {typeof p.snapshot.nilai === "number" && (
@@ -470,12 +503,20 @@ function LembarPengesahan({ p, footer }: { p: BukuSertifikatProps; footer: React
         </div>
         <div className="flex flex-col items-center justify-center text-center" style={{ border: `1px solid ${GOLD}88`, borderRadius: "0.8cqw", padding: "2cqw", background: "rgba(255,255,255,.55)" }}>
           <p style={{ fontSize: "1cqw", fontWeight: 700, letterSpacing: "0.2em", color: GOLD }}>VERIFIKASI KEASLIAN</p>
-          <div style={{ marginTop: "1.2cqw" }}>
-            <KodeQR teks={url} ukuran="14cqw" />
-          </div>
-          <p style={{ marginTop: "1cqw", fontSize: "0.95cqw", color: MUTED }}>Kode verifikasi</p>
-          <p style={{ fontWeight: 800, fontSize: "2cqw", letterSpacing: "0.2em", color: NAVY, fontVariantNumeric: "lining-nums" }}>{p.kode}</p>
-          <p style={{ marginTop: "0.6cqw", fontSize: "0.9cqw", color: MUTED, wordBreak: "break-all" }}>{url.replace(/^https:\/\//, "")}</p>
+          {p.draft ? (
+            <p style={{ marginTop: "1.2cqw", width: "14cqw", height: "14cqw", display: "flex", alignItems: "center", justifyContent: "center", border: `1px dashed ${GOLD}`, fontSize: "1cqw", fontWeight: 700, color: MUTED, letterSpacing: "0.08em" }}>
+              Kode QR terbit bersama sertifikat
+            </p>
+          ) : (
+            <>
+              <div style={{ marginTop: "1.2cqw" }}>
+                <KodeQR teks={url} ukuran="14cqw" />
+              </div>
+              <p style={{ marginTop: "1cqw", fontSize: "0.95cqw", color: MUTED }}>Kode verifikasi</p>
+              <p style={{ fontWeight: 800, fontSize: "2cqw", letterSpacing: "0.2em", color: NAVY, fontVariantNumeric: "lining-nums" }}>{p.kode}</p>
+              <p style={{ marginTop: "0.6cqw", fontSize: "0.9cqw", color: MUTED, wordBreak: "break-all" }}>{url.replace(/^https:\/\//, "")}</p>
+            </>
+          )}
         </div>
       </div>
       {footer}
