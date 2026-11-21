@@ -90,9 +90,9 @@ export type Database = {
         Relationships: [];
       };
       akademi_paket: {
-        Row: { id: string; nama: string; deskripsi: string | null; maks_anak: number; harga_bulan: number | null; harga_semester: number | null; harga_tahun: number | null; unggulan: boolean; aktif: boolean; urut: number; diubah_at: string };
-        Insert: { id: string; nama: string; deskripsi?: string | null; maks_anak?: number; harga_bulan?: number | null; harga_semester?: number | null; harga_tahun?: number | null; unggulan?: boolean; aktif?: boolean; urut?: number; diubah_at?: string };
-        Update: { id?: string; nama?: string; deskripsi?: string | null; maks_anak?: number; harga_bulan?: number | null; harga_semester?: number | null; harga_tahun?: number | null; unggulan?: boolean; aktif?: boolean; urut?: number; diubah_at?: string };
+        Row: { id: string; nama: string; deskripsi: string | null; maks_anak: number; tarif: Json; label_promo: string | null; unggulan: boolean; aktif: boolean; urut: number; diubah_at: string };
+        Insert: { id: string; nama: string; deskripsi?: string | null; maks_anak?: number; tarif?: Json; label_promo?: string | null; unggulan?: boolean; aktif?: boolean; urut?: number; diubah_at?: string };
+        Update: { id?: string; nama?: string; deskripsi?: string | null; maks_anak?: number; tarif?: Json; label_promo?: string | null; unggulan?: boolean; aktif?: boolean; urut?: number; diubah_at?: string };
         Relationships: [];
       };
       akademi_bayar_atur: {
@@ -102,8 +102,8 @@ export type Database = {
         Relationships: [];
       };
       akademi_bayar: {
-        Row: { id: string; family_id: string; paket_id: string; periode: "bulan" | "semester" | "tahun"; harga: number; kode_unik: number; jumlah: number; nama_pengirim: string | null; bukti_path: string | null; status: "menunggu" | "diterima" | "ditolak" | "batal"; alasan: string | null; mulai: string | null; sampai: string | null; dibuat_by: string | null; dibuat_at: string; diperiksa_at: string | null };
-        Insert: { id?: string; family_id: string; paket_id: string; periode: "bulan" | "semester" | "tahun"; harga: number; kode_unik?: number; jumlah: number; nama_pengirim?: string | null; bukti_path?: string | null; status?: "menunggu"; alasan?: null; mulai?: null; sampai?: null; dibuat_by?: string | null; dibuat_at?: string; diperiksa_at?: null };
+        Row: { id: string; family_id: string; paket_id: string; periode: "bulan" | "triwulan" | "semester" | "tahun"; harga: number; kode_unik: number; anak_tambahan: number; harga_tambah: number; jumlah: number; nama_pengirim: string | null; bukti_path: string | null; status: "menunggu" | "diterima" | "ditolak" | "batal"; alasan: string | null; mulai: string | null; sampai: string | null; dibuat_by: string | null; dibuat_at: string; diperiksa_at: string | null };
+        Insert: { id?: string; family_id: string; paket_id: string; periode: "bulan" | "triwulan" | "semester" | "tahun"; harga: number; kode_unik?: number; anak_tambahan?: number; harga_tambah?: number; jumlah: number; nama_pengirim?: string | null; bukti_path?: string | null; status?: "menunggu"; alasan?: null; mulai?: null; sampai?: null; dibuat_by?: string | null; dibuat_at?: string; diperiksa_at?: null };
         Update: { nama_pengirim?: string | null; bukti_path?: string | null; status?: "menunggu" | "batal" };
         Relationships: [];
       };
