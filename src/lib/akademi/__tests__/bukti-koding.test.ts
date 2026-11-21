@@ -42,17 +42,20 @@ describe("kompetensiLevel", () => {
     expect(kompetensiLevel("langkah", "k20", 19)).toEqual(["KODE.TKA.NAVIGASI.02", "KODE.TKA.NAVIGASI.03"]);
     expect(kompetensiLevel("langkah", "k21", 20)).toEqual(["KODE.TKA.NAVIGASI.03", "KODE.TKB.PROGRAM-5-8.01"]);
     expect(kompetensiLevel("langkah", "k50", 49)).toEqual(["KODE.TKA.NAVIGASI.03", "KODE.TKB.PROGRAM-5-8.01"]);
-    expect(kompetensiLevel("langkah", "k51", 50)).toEqual(["KODE.TKB.PROGRAM-5-8.01"]);
-    expect(kompetensiLevel("langkah", "k100", 99)).toEqual(["KODE.TKB.PROGRAM-5-8.01"]);
+    expect(kompetensiLevel("langkah", "k51", 50)).toEqual(["KODE.TKB.PROGRAM-5-8.01", "KODE.SD2.PROGRAM.01"]);
+    expect(kompetensiLevel("langkah", "k100", 99)).toEqual(["KODE.TKB.PROGRAM-5-8.01", "KODE.SD2.PROGRAM.01"]);
   });
-  it("ulangi: dua kompetensi, tambah ULANGI.03 mulai index 30", () => {
+  it("ulangi: TK B, lalu SD2 mulai index 20, ULANGI.03 mulai 30, dua blok ulangi (SD1/SD3) mulai 80", () => {
     expect(kompetensiLevel("ulangi", "u1", 0)).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02"]);
-    expect(kompetensiLevel("ulangi", "u30", 29)).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02"]);
-    expect(kompetensiLevel("ulangi", "u31", 30)).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02", "KODE.TKB.ULANGI.03"]);
+    expect(kompetensiLevel("ulangi", "u21", 20)).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02", "KODE.SD2.ULANGI.01"]);
+    expect(kompetensiLevel("ulangi", "u31", 30)).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02", "KODE.TKB.ULANGI.03", "KODE.SD2.ULANGI.01"]);
+    expect(kompetensiLevel("ulangi", "u81", 80)).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02", "KODE.TKB.ULANGI.03", "KODE.SD2.ULANGI.01", "KODE.SD1.ULANGI.01", "KODE.SD3.EFISIEN.01"]);
   });
-  it("kalau: KONDISI.01", () => {
+  it("kalau: TK B, lalu SD1 (kalau di dalam ulangi), SD2 (dua rintangan), SD5 (tiga rintangan bertingkat)", () => {
     expect(kompetensiLevel("kalau", "c1", 0)).toEqual(["KODE.TKB.KONDISI.01"]);
-    expect(kompetensiLevel("kalau", "c99", 98)).toEqual(["KODE.TKB.KONDISI.01"]);
+    expect(kompetensiLevel("kalau", "c4", 3)).toEqual(["KODE.TKB.KONDISI.01", "KODE.SD1.KONDISI.01"]);
+    expect(kompetensiLevel("kalau", "c31", 30)).toEqual(["KODE.TKB.KONDISI.01", "KODE.SD1.KONDISI.01", "KODE.SD2.KONDISI.01"]);
+    expect(kompetensiLevel("kalau", "c99", 98)).toEqual(["KODE.TKB.KONDISI.01", "KODE.SD1.KONDISI.01", "KODE.SD2.KONDISI.01", "KODE.SD5.KONDISI.03"]);
   });
 });
 
@@ -108,7 +111,7 @@ describe("imporProgresKoding", () => {
       expect(e.payload).toMatchObject({ correct: true, hintUsed: false, latencyMs: 0, imported: true });
     }
     expect(byItem[LANGKAH[25].id].payload.competencyIds).toEqual(["KODE.TKA.NAVIGASI.03", "KODE.TKB.PROGRAM-5-8.01"]);
-    expect(byItem[ULANGI[35].id].payload.competencyIds).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02", "KODE.TKB.ULANGI.03"]);
+    expect(byItem[ULANGI[35].id].payload.competencyIds).toEqual(["KODE.TKB.ULANGI.01", "KODE.TKB.ULANGI.02", "KODE.TKB.ULANGI.03", "KODE.SD2.ULANGI.01"]);
     expect(byItem[KALAU[0].id].payload.detail).toMatchObject({ stars: 1, game: "kalau" });
     expect(localStorage.getItem(`rumila-akademi-impor-koding-${LEARNER}`)).toBeTruthy();
 
