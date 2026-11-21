@@ -15,6 +15,7 @@ import { useCloud } from "@/lib/supabase/family";
 import { useRumila } from "@/lib/store";
 import { anakRumah } from "@/lib/akademi/konten";
 import { muatLangganan } from "@/lib/akademi/langganan";
+import { useModeApp } from "@/lib/mode-app";
 
 const INK = "#0b2545";
 const KARTU = "rounded-[22px] bg-white shadow-[0_4px_0_rgba(11,37,69,.06)]";
@@ -83,6 +84,7 @@ export function LanggananKeluarga() {
   const anakDiRumah = Math.max(1, anakSemua.length - alumni.length);
   const [anakPilih, setAnak] = useState<number | null>(null);
   const [periode, setPeriode] = useState<Periode>("bulan");
+  const app = useModeApp();
 
   const muat = useCallback(async () => {
     if (!familyId || !UUID.test(familyId)) return;
@@ -111,6 +113,18 @@ export function LanggananKeluarga() {
   if (!familyId || !UUID.test(familyId)) return <p className={`${KARTU} p-5 text-[14px] font-bold text-ink-3`}>Masuk dengan akun rumah dulu untuk melihat langganan.</p>;
   if (err) return <p className={`${KARTU} p-5 text-[14px] font-bold text-[#c0283a]`}>{err}</p>;
   if (!paket) return <p className={`${KARTU} p-5 text-[14px] font-bold text-ink-3`}>Memuat langganan…</p>;
+
+  // App toko: hanya status akun, tanpa harga/paket/rekening/riwayat bayar dan tanpa ajakan membayar (kebijakan toko).
+  if (app)
+    return (
+      <div className="flex flex-col gap-4">
+        <KartuStatus status={status} paket={paket} app />
+        <p className={`${KARTU} flex items-start gap-3 p-4 text-[13.5px] font-bold text-ink-3 sm:p-5`}>
+          <Icon name="info" size={22} />
+          <span>Pengaturan akun rumah dikelola di situs web RINOYA Academy. Semua progres, rapor, dan sertifikat anak tersimpan di akun yang sama.</span>
+        </p>
+      </div>
+    );
 
   const menunggu = riwayat.find((b) => b.status === "menunggu");
   const dijual = paket.filter((p) => PERIODE.some(([id]) => hargaDari(p, id)));
@@ -211,7 +225,7 @@ export function LanggananKeluarga() {
   );
 }
 
-function KartuStatus({ status, paket }: { status: Status; paket: Paket[] }) {
+function KartuStatus({ status, paket, app }: { status: Status; paket: Paket[]; app?: boolean }) {
   if (!status) return null;
   const kini = Date.now();
   const aktif = status.aktif_sampai && Date.parse(status.aktif_sampai) > kini;
@@ -221,8 +235,10 @@ function KartuStatus({ status, paket }: { status: Status; paket: Paket[] }) {
   const [ikon, warna, judul, sub] = aktif
     ? ["verified", "#12b8a6", `Langganan aktif${nama ? ` · ${nama}` : ""}`, `Berlaku sampai ${tgl(status.aktif_sampai!)} (${sisa(status.aktif_sampai!)} hari lagi).`]
     : trial
-      ? ["hourglass_top", "#f29d0b", "Masa coba gratis", `Berakhir ${tgl(status.trial_sampai)} (${sisa(status.trial_sampai)} hari lagi). Berlangganan kapan saja; masa aktif dihitung sejak pembayaran diterima.`]
-      : ["info", "#c0283a", "Belum berlangganan", status.aktif_sampai ? `Langganan berakhir ${tgl(status.aktif_sampai)}.` : "Masa coba sudah selesai. Pilih paket di bawah untuk melanjutkan."];
+      ? ["hourglass_top", "#f29d0b", "Masa coba gratis", app ? `Berakhir ${tgl(status.trial_sampai)} (${sisa(status.trial_sampai)} hari lagi).` : `Berakhir ${tgl(status.trial_sampai)} (${sisa(status.trial_sampai)} hari lagi). Berlangganan kapan saja; masa aktif dihitung sejak pembayaran diterima.`]
+      : app
+        ? ["info", "#c0283a", "Akun belum aktif", status.aktif_sampai ? `Masa aktif berakhir ${tgl(status.aktif_sampai)}.` : "Masa coba sudah selesai."]
+        : ["info", "#c0283a", "Belum berlangganan", status.aktif_sampai ? `Langganan berakhir ${tgl(status.aktif_sampai)}.` : "Masa coba sudah selesai. Pilih paket di bawah untuk melanjutkan."];
   return (
     <section className={`${KARTU} flex items-start gap-3 p-4 sm:p-5`}>
       <Icon name={ikon} size={30} style={{ color: warna }} />

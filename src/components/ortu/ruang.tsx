@@ -29,6 +29,7 @@ import { isOrangTua, profilTerbuka } from "@/lib/profil";
 import { BuatPin, LupaPin } from "@/components/pin-pad";
 import { AnggotaRumah } from "@/components/ortu/anggota";
 import { LanggananKeluarga } from "@/components/ortu/langganan";
+import { useModeApp } from "@/lib/mode-app";
 import { daftarDisiapkan } from "@/lib/kampus";
 import { useMe, useRumila, type Member } from "@/lib/store";
 
@@ -169,6 +170,7 @@ function Isi({ members, onKunci }: { members: Member[]; onKunci: () => void }) {
     if (TAB.some(([id]) => id === t)) setTab(t as Tab);
   }, []);
   const terpilih = anak.find((m) => m.id === anakId) ?? anak[0];
+  const app = useModeApp();
 
   return (
     <>
@@ -206,7 +208,7 @@ function Isi({ members, onKunci }: { members: Member[]; onKunci: () => void }) {
           <nav className="no-print -mx-1 flex gap-1 overflow-x-auto px-1 md:flex-wrap md:overflow-visible" aria-label="Bagian laporan">
             {TAB.map(([id, label, ikon]) => (
               <button key={id} onClick={() => setTab(id)} className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full px-4 text-[13px] font-extrabold" style={{ background: tab === id ? "#0786eb" : "#fff", color: tab === id ? "#fff" : INK }}>
-                <Icon name={ikon} size={18} /> {label}
+                <Icon name={app && id === "langganan" ? "manage_accounts" : ikon} size={18} /> {app && id === "langganan" ? "Akun" : label}
               </button>
             ))}
           </nav>
