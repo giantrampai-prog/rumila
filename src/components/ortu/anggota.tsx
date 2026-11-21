@@ -13,7 +13,8 @@ import { levelAnak, setPeranAkademi, useProfilAkademiVersi } from "@/lib/akademi
 import { aturJenjangAwal } from "@/lib/akademi/siswa";
 import { PLAY, MEMBER_COLORS, type ColorKey } from "@/lib/catalog";
 import { isOrangTua, perangkatAnak, setPerangkatAnak } from "@/lib/profil";
-import { tungguSinkron } from "@/lib/supabase/family";
+import { signOutAccount, tungguSinkron } from "@/lib/supabase/family";
+import { supabase } from "@/lib/supabase/client";
 import { useRumila, useUI, type Member } from "@/lib/store";
 
 const INK = "#0b2545";
@@ -246,8 +247,8 @@ export function AnggotaRumah() {
   const members = useRumila((s) => s.members);
   const updateMember = useRumila((s) => s.updateMember);
   const showToast = useUI((s) => s.showToast);
-  const [jendela, setJendela] = useState<{ kind: "avatar" | "pin"; id: string } | { kind: "daftar" } | null>(null);
-  const target = jendela && jendela.kind !== "daftar" ? members.find((m) => m.id === jendela.id) : undefined;
+  const [jendela, setJendela] = useState<{ kind: "avatar" | "pin"; id: string } | { kind: "daftar" | "hapus" } | null>(null);
+  const target = jendela && (jendela.kind === "avatar" || jendela.kind === "pin") ? members.find((m) => m.id === jendela.id) : undefined;
   const ortu = members.filter(isOrangTua);
   const anak = members.filter((m) => !isOrangTua(m));
   const tutup = () => setJendela(null);
@@ -277,6 +278,27 @@ export function AnggotaRumah() {
         <Icon name="person_add" size={24} /> Daftarkan anak
       </button>
       <p className="text-[13px] font-bold text-ink-3">PIN anak dipakai di layar &quot;Siapa yang belajar?&quot;. Tablet yang dikunci ke satu anak langsung menampilkan PIN anak itu.</p>
+
+      <section className={`${KARTU} flex flex-col gap-2 p-4`}>
+        <h2 style={{ fontFamily: BALOO, fontSize: 19, fontWeight: 800 }}>Hapus akun</h2>
+        <p className="text-[13.5px] font-bold text-ink-3">
+          Menghapus akun rumah ini beserta semua profil anak, progres belajar, rapor, sertifikat, dan data langganan. Tidak bisa dibatalkan.{" "}
+          <a href="/privasi" className="underline underline-offset-2">
+            Kebijakan Privasi
+          </a>
+        </p>
+        <button
+          onClick={() => setJendela({ kind: "hapus" })}
+          className="inline-flex h-11 items-center justify-center gap-1.5 self-start rounded-full bg-[#fdecee] px-5 text-[14px] font-extrabold text-[#c0283a] transition-transform active:scale-95"
+        >
+          <Icon name="delete_forever" size={20} /> Hapus akun
+        </button>
+      </section>
+      {jendela?.kind === "hapus" && (
+        <Jendela judul="Hapus akun?" onTutup={tutup}>
+          <KonfirmasiHapusAkun onBatal={tutup} />
+        </Jendela>
+      )}
 
       {jendela?.kind === "daftar" && (
         <Jendela judul="Daftarkan anak" onTutup={tutup}>
@@ -312,6 +334,72 @@ export function AnggotaRumah() {
           />
         </Jendela>
       )}
+    </div>
+  );
+}
+
+/* ---------------- hapus akun (wajib App Store & Play Store) ---------------- */
+
+function KonfirmasiHapusAkun({ onBatal }: { onBatal: () => void }) {
+  const [teks, setTeks] = useState("");
+  const [proses, setProses] = useState(false);
+  const [err, setErr] = useState("");
+  const siap = teks.trim().toUpperCase() === "HAPUS";
+
+  const hapus = async () => {
+    if (!siap || proses) return;
+    setProses(true);
+    setErr("");
+    try {
+      const { data } = await supabase().auth.getSession();
+      const token = data.session?.access_token;
+      if (!token) throw new Error("Sesi sudah habis. Masuk lagi, lalu coba hapus akun.");
+      const res = await fetch("/api/akun/hapus", {
+        method: "POST",
+        headers: { "content-type": "application/json", authorization: `Bearer ${token}` },
+        body: JSON.stringify({ konfirmasi: "HAPUS" }),
+      });
+      if (!res.ok) throw new Error("Akun belum bisa dihapus. Cek koneksi lalu coba lagi, atau hubungi kampus@pulaurinoya.com.");
+      try {
+        localStorage.clear();
+      } catch {}
+      await signOutAccount().catch(() => {});
+      window.location.replace("/masuk");
+    } catch (e) {
+      setErr((e as Error).message);
+      setProses(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-3">
+      <p className="text-[14px] font-bold text-ink-2">
+        Semua profil anak, progres belajar, rapor, sertifikat, dan data langganan di rumah ini akan dihapus permanen dan tidak bisa dikembalikan.
+      </p>
+      <label className="flex flex-col gap-1.5 text-[13px] font-extrabold text-ink-3">
+        Ketik HAPUS untuk mengonfirmasi
+        <input
+          value={teks}
+          onChange={(e) => setTeks(e.target.value)}
+          autoCapitalize="characters"
+          autoComplete="off"
+          className="h-11 rounded-[14px] border border-[#f0e4d2] px-3 text-[15px] font-bold text-ink"
+          placeholder="HAPUS"
+        />
+      </label>
+      {err && <p className="text-[13px] font-bold text-[#c0283a]">{err}</p>}
+      <div className="flex flex-wrap gap-2">
+        <button onClick={onBatal} className="inline-flex h-11 items-center rounded-full bg-[#f4f7fb] px-5 text-[14px] font-extrabold text-ink">
+          Batal
+        </button>
+        <button
+          onClick={hapus}
+          disabled={!siap || proses}
+          className="inline-flex h-11 items-center gap-1.5 rounded-full bg-[#c0283a] px-5 text-[14px] font-extrabold text-white disabled:opacity-40"
+        >
+          <Icon name="delete_forever" size={20} /> {proses ? "Menghapus…" : "Hapus akun permanen"}
+        </button>
+      </div>
     </div>
   );
 }
