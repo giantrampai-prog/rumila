@@ -1,0 +1,16 @@
+{
+  "name": "rinoya-academy-ios",
+  "private": true,
+  "description": "Pembungkus iOS (Capacitor) untuk RINOYA Academy: membuka https://kampus.pulaurinoya.com dalam mode app",
+  "scripts": {
+    "sync": "cap sync ios",
+    "open": "cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "8.6.2",
+    "@capacitor/ios": "8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.2"
+  }
+}

@@ -238,6 +238,9 @@ export function AccountStage({ theme }: { theme: Theme }) {
               {mode === "masuk" ? "Daftar gratis" : "Masuk"}
             </button>
           </p>
+          <a href="/privasi" className="underline underline-offset-2" style={{ fontSize: 12.5, fontWeight: 700, color: L.muted }}>
+            Kebijakan Privasi
+          </a>
         </>
       )}
     </div>
