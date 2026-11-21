@@ -9,7 +9,7 @@ import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as R
 import { createPortal } from "react-dom";
 import { levelIndex, type PaketPilah } from "@akademi/schema";
 import type { JawabanPilah, RondePilah, RondePilahKelompok, RondePilahPilih } from "@akademi/mechanics";
-import { useModeUjian } from "./mode-ujian";
+import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
 import { Icon } from "@/components/ui";
 import { sfx } from "@/lib/sfx";
 import { Benda, KartuBenda, type VisualSpec } from "./benda";
@@ -31,20 +31,22 @@ function visual(x: { emoji?: string; color?: string; scale?: number; count?: num
 
 /** Tombol "Bantu" kecil (≥56px) di pojok kanan area permainan. */
 function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
+  const sisa = useSisaBantu();
   if (useModeUjian()) return null;
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={disabled}
-      aria-label="Bantu"
-      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
+      disabled={disabled || sisa === 0}
+      aria-label={sisa === null ? "Bantu" : `Bantu, sisa ${sisa}`}
+      className="relative flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
       style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
     >
       <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
         <Icon name="lightbulb" size={22} />
       </span>
       Bantu
+      <LencanaSisa sisa={sisa} />
     </button>
   );
 }

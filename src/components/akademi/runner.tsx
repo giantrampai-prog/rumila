@@ -3,6 +3,7 @@
 // Runner aktivitas Academy: paket → ronde demi ronde → presenter mekanik → nilai → catat bukti → layar selesai.
 // Knob naik satu step setelah 2 benar beruntun, turun satu step setelah 2 salah beruntun (adaptif sederhana).
 
+import { SisaBantuProvider } from "./mode-ujian";
 import { useRouter } from "next/navigation";
 import { duniaPaket, rintanganPaket, wadahPaket } from "@/lib/akademi/tema-dunia";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -44,6 +45,10 @@ function geserKnob(p: ContentPack, k: Knobs, arah: 1 | -1): Knobs {
   }
   return out;
 }
+
+
+/** Jatah tombol Bantu per satu permainan (permintaan owner: anak tidak bergantung pada bantuan). */
+const BATAS_BANTU = 3;
 
 export function ActivityRunner({ paketId }: { paketId: string }) {
   const paket = useMemo(() => paketById(paketId), [paketId]);
@@ -125,7 +130,9 @@ function Runner({ paket }: { paket: ContentPack }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const sisaBantu = Math.max(0, BATAS_BANTU - skor.hint);
   const onHint = () => {
+    if (sisaBantu <= 0) return;
     setHint(true);
     setSkor((s) => ({ ...s, hint: s.hint + 1 }));
     sfxAkademi.ambil();
@@ -179,6 +186,7 @@ function Runner({ paket }: { paket: ContentPack }) {
   return (
     <LayarAktivitas judul={judulPaket(paket, bahasa)} ronde={idx + 1} total={total} instruksi={instruksi} onUcap={ucap} dunia={duniaPaket(paket)} wadah={wadahPaket(paket)} rintangan={rintanganPaket(paket)} musik={musik}>
       <div key={idx} className="akademi-fade flex flex-1 flex-col justify-center">
+        <SisaBantuProvider value={sisaBantu}>
         <LatarWarnaProvider paket={paket}>
         {paket.mechanic === "pilah" && ronde.mechanic === "pilah" && <PresenterPilah {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "urutkan" && ronde.mechanic === "urutkan" && <PresenterUrutkan {...props} paket={paket} ronde={ronde.ronde} />}
@@ -187,6 +195,7 @@ function Runner({ paket }: { paket: ContentPack }) {
         {paket.mechanic === "pola" && ronde.mechanic === "pola" && <PresenterPola {...props} paket={paket} ronde={ronde.ronde} />}
         {paket.mechanic === "simulasi" && ronde.mechanic === "simulasi" && <PresenterSimulasi {...props} paket={paket} ronde={ronde.ronde} />}
         </LatarWarnaProvider>
+        </SisaBantuProvider>
       </div>
       {hasil && <UmpanBalik key={`umpan-${idx}`} benar={hasil.benar} beruntun={streak} />}
     </LayarAktivitas>

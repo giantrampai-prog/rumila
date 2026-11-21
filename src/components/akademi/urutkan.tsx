@@ -14,7 +14,7 @@ import { diamkan, ucapkan } from "@/lib/akademi/suara";
 import { sfx } from "@/lib/sfx";
 import { KartuBenda, type VisualSpec } from "./benda";
 import { usePanggung } from "./dunia";
-import { useModeUjian } from "./mode-ujian";
+import { useModeUjian , useSisaBantu, LencanaSisa } from "./mode-ujian";
 import { BALOO, BENAR, INK, SALAH, type PresenterProps } from "./jenis";
 
 type Props = PresenterProps<RondeUrutkan, JawabanUrutkan, PaketUrutkan>;
@@ -28,20 +28,22 @@ function visual(x: Langkah, t: (k: string) => string): VisualSpec {
 
 /** Tombol "Bantu" kecil (≥56px); disembunyikan di mode ujian. */
 function TombolBantu({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
+  const sisa = useSisaBantu();
   if (useModeUjian()) return null;
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={disabled}
-      aria-label="Bantu"
-      className="flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
+      disabled={disabled || sisa === 0}
+      aria-label={sisa === null ? "Bantu" : `Bantu, sisa ${sisa}`}
+      className="relative flex h-14 shrink-0 items-center gap-1.5 rounded-full bg-white pr-4 pl-3 text-[#0b2545] shadow-[0_4px_0_rgba(11,37,69,.12)] active:translate-y-0.5 disabled:opacity-40"
       style={{ fontFamily: BALOO, fontSize: 16, fontWeight: 800 }}
     >
       <span className="flex size-9 items-center justify-center rounded-full bg-[#ffd23f]">
         <Icon name="lightbulb" size={22} />
       </span>
       Bantu
+      <LencanaSisa sisa={sisa} />
     </button>
   );
 }
