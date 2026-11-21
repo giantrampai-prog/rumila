@@ -8,6 +8,7 @@
 // Semantik blok mengikuti docs/akademi/mekanik-navigasi.md; eksekusi memakai jalankan() dari mesin, presenter hanya
 // menganimasikan NavStep dan mengirim jawaban. Penilaian dilakukan runner lewat `hasil`.
 
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { NavCommand, PaketNavigasi } from "@akademi/schema";
 import { hitungBlok, jalankan, type Arah, type JawabanNavigasi, type NavBlock, type NavGrid, type NavRun, type NavState, type NavStep, type RondeNavigasi } from "@akademi/mechanics";
@@ -208,7 +209,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
         const d = DELTA[dirKini];
         setAgam((a) => ({ ...a, x: s.after.x + d.dx * 0.3, y: s.after.y + d.dy * 0.3 }));
         await tunggu(150);
-        sfx.thud();
+        sfxAkademi.tolak();
         setAgam((a) => ({ ...a, x: s.after.x, y: s.after.y, goyang: a.goyang + 1, wajah: s.kind === "stumble" ? "😵" : "💥" }));
         await tunggu(520);
       }
@@ -279,22 +280,22 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     if (sel && sel.rak === k) {
       const target = daftar[sel.i];
       if (target?.cmd === "ulangi" && cmd !== "ulangi") {
-        if (target.body.length >= 2 || hitungBlok(daftar) + 1 > slotMaks) { sfx.thud(); setPesan(target.body.length >= 2 ? "Isi ulangi paling banyak 2 blok" : "Rak tidak muat"); return; }
-        sfx.pick();
+        if (target.body.length >= 2 || hitungBlok(daftar) + 1 > slotMaks) { sfxAkademi.tolak(); setPesan(target.body.length >= 2 ? "Isi ulangi paling banyak 2 blok" : "Rak tidak muat"); return; }
+        sfxAkademi.ambil();
         setRakKe(k, (r) => r.map((b, i) => (i === sel.i && b.cmd === "ulangi" ? { ...b, body: [...b.body, { cmd } as NavBlock] } : b)));
         return;
       }
       if (ronde.debug) {
         // debug: ganti blok yang dipilih
-        if (hitungBlok(daftar) - hitungBlok([target]) + hitungBlok([blokBaru]) > slotMaks) { sfx.thud(); setPesan("Rak tidak muat"); return; }
-        sfx.pick();
+        if (hitungBlok(daftar) - hitungBlok([target]) + hitungBlok([blokBaru]) > slotMaks) { sfxAkademi.tolak(); setPesan("Rak tidak muat"); return; }
+        sfxAkademi.ambil();
         setRakKe(k, (r) => r.map((b, i) => (i === sel.i ? blokBaru : b)));
         setSel(null);
         return;
       }
     }
-    if (hitungBlok(daftar) + 1 > slotMaks) { sfx.thud(); setPesan("Rak tidak muat"); return; }
-    sfx.pick();
+    if (hitungBlok(daftar) + 1 > slotMaks) { sfxAkademi.tolak(); setPesan("Rak tidak muat"); return; }
+    sfxAkademi.ambil();
     setRakKe(k, (r) => [...r, blokBaru]);
     setSel(cmd === "ulangi" ? { rak: k, i: daftar.length } : null);
     setPesan("");
@@ -332,8 +333,8 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
   const jalan = async () => {
     if (sibuk || terkunci) return;
     const program: NavBlock[] = modeBendera ? [...rak, { cmd: "bendera" }, ...rak2] : rak;
-    if (!program.length || (modeBendera && !rak.length && !rak2.length)) { sfx.thud(); setPesan("Susun perintah dulu: ketuk blok di bawah"); return; }
-    if (modeBendera && !bendera) { sfx.thud(); setPesan("Ketuk petak di kebun untuk menaruh 🚩 dulu"); return; }
+    if (!program.length || (modeBendera && !rak.length && !rak2.length)) { sfxAkademi.tolak(); setPesan("Susun perintah dulu: ketuk blok di bawah"); return; }
+    if (modeBendera && !bendera) { sfxAkademi.tolak(); setPesan("Ketuk petak di kebun untuk menaruh 🚩 dulu"); return; }
     const id = ++jalanId.current;
     const r = runs + 1;
     setRuns(r);
@@ -360,7 +361,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
           outcome = lari1.outcome === "bendera" || lari1.outcome === "bintang" ? "meleset" : lari1.outcome;
           pesanKhusus = lari1.outcome === "bendera" || lari1.outcome === "bintang" ? "Bagian 1 belum berhenti di 🚩" : null;
         } else {
-          sfx.coin();
+          sfxAkademi.koin();
           await tunggu(300);
           const lari2 = jalankan({ ...g, start: { x: bendera.x, y: bendera.y, dir: lari1.final.dir } }, rak2);
           if (!(await animasikan(lari2.steps, id, lari1.final))) return;
@@ -397,7 +398,7 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
     if (sibuk || terkunci || !lariLangkah) return;
     const s = lariLangkah.steps[langkahKe];
     if (!s) { kirim({ program: ronde.program, prediksi, runs: 1 }); return; }
-    if (ronde.prediksi && !tebakan) { sfx.thud(); setPesan("Ketuk petak tujuan Agam dulu, ya"); return; }
+    if (ronde.prediksi && !tebakan) { sfxAkademi.tolak(); setPesan("Ketuk petak tujuan Agam dulu, ya"); return; }
     const id = ++jalanId.current;
     setSibuk(true);
     setSorot([]);
@@ -426,8 +427,8 @@ export function PresenterNavigasi({ ronde, onJawab, onHint, hasil }: Props) {
       setTebakan({ x, y });
       setPesan("");
     } else if (modeBendera) {
-      if (grid.walls.some((w) => samaSel(w, { x, y })) || grid.rocks.some((b) => samaSel(b, { x, y }))) { sfx.thud(); return; }
-      sfx.pick();
+      if (grid.walls.some((w) => samaSel(w, { x, y })) || grid.rocks.some((b) => samaSel(b, { x, y }))) { sfxAkademi.tolak(); return; }
+      sfxAkademi.ambil();
       setBendera({ x, y });
       setPesan("");
     }

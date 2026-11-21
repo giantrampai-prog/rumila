@@ -9,6 +9,7 @@ import { TEMA, type DuniaId, type Tema } from "@/lib/akademi/tema-dunia";
 import { LatarDunia } from "./latar-dunia";
 import { Icon } from "@/components/ui";
 import { diamkan } from "@/lib/akademi/suara";
+import { PUJIAN, PUJIAN_BERUNTUN, SEMANGAT, acakKata } from "@/lib/sfx-akademi";
 import { BALOO, INK, NUNITO } from "./jenis";
 
 /**
@@ -146,16 +147,55 @@ export function LayarAktivitas({
 }
 
 /** Stiker umpan balik besar di tengah layar (benar / coba lagi). */
-export function UmpanBalik({ benar }: { benar: boolean }) {
+const WARNA_KONFETI = ["#ffd23f", "#fd861d", "#22b573", "#0786eb", "#ff5a6e", "#b197fc"];
+
+/** Ledakan konfeti kecil dari tengah layar (posisi & warna acak, dibuat sekali per tampil). */
+function Konfeti({ jumlah }: { jumlah: number }) {
+  const [potong] = useState(() =>
+    Array.from({ length: jumlah }, (_, i) => {
+      const sudut = (i / jumlah) * Math.PI * 2 + Math.random() * 0.4;
+      const jauh = 120 + Math.random() * 160;
+      return { dx: Math.cos(sudut) * jauh, dy: Math.sin(sudut) * jauh - 60, r: Math.random() * 540 - 270, w: 7 + Math.random() * 7, h: 10 + Math.random() * 8, warna: WARNA_KONFETI[i % WARNA_KONFETI.length], t: 750 + Math.random() * 450 };
+    }),
+  );
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0">
+      {potong.map((p, i) => (
+        <span key={i} className="akademi-konfeti" style={{ width: p.w, height: p.h, background: p.warna, ["--dx" as string]: `${p.dx}px`, ["--dy" as string]: `${p.dy}px`, ["--r" as string]: `${p.r}deg`, ["--t" as string]: `${p.t}ms` } as React.CSSProperties} />
+      ))}
+    </div>
+  );
+}
+
+/** Umpan balik setelah menjawab: pujian/penyemangat diacak, konfeti saat benar (lebih meriah bila beruntun). */
+export function UmpanBalik({ benar, beruntun = 1 }: { benar: boolean; beruntun?: number }) {
+  const [teks] = useState(() => (benar ? acakKata(beruntun >= 3 ? PUJIAN_BERUNTUN : PUJIAN) : acakKata(SEMANGAT)));
+  const [ikon] = useState(() => (benar ? acakKata(beruntun >= 3 ? ["🔥", "🏆", "🚀"] : ["🌟", "⭐", "🎉", "👏", "😄"]) : acakKata(["💪", "🙂", "🤔"])));
   return (
     <div className="pointer-events-none fixed inset-0 z-30 flex items-center justify-center">
+      {benar && <Konfeti jumlah={beruntun >= 3 ? 34 : 20} />}
       <div
         className="akademi-pop flex flex-col items-center rounded-[28px] px-8 py-5 text-white"
-        style={{ background: benar ? "#22b573" : "#ff5a6e", boxShadow: `0 6px 0 ${benar ? "#16804f" : "#c0334a"}` }}
+        style={{ background: benar ? "#22b573" : "#ff8a5c", boxShadow: `0 6px 0 ${benar ? "#16804f" : "#d4622f"}` }}
       >
-        <span style={{ fontSize: 64, lineHeight: 1 }}>{benar ? "🌟" : "💪"}</span>
-        <span style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900 }}>{benar ? "Hebat!" : "Coba lagi, ya"}</span>
+        <span className={benar ? "akademi-bintang" : "akademi-goyang"} style={{ fontSize: 64, lineHeight: 1, display: "inline-block" }}>{ikon}</span>
+        <span style={{ fontFamily: BALOO, fontSize: 26, fontWeight: 900 }}>{teks}</span>
+        {benar && beruntun >= 3 && <span style={{ fontFamily: BALOO, fontSize: 15, fontWeight: 800, opacity: 0.9 }}>{beruntun} benar berturut-turut</span>}
       </div>
+    </div>
+  );
+}
+
+/** Hujan konfeti dari atas (layar selesai). */
+export function HujanKonfeti({ jumlah = 40 }: { jumlah?: number }) {
+  const [potong] = useState(() =>
+    Array.from({ length: jumlah }, (_, i) => ({ x: Math.random() * 100, dx: Math.random() * 120 - 60, r: Math.random() * 720 - 360, w: 7 + Math.random() * 7, h: 10 + Math.random() * 9, warna: WARNA_KONFETI[i % WARNA_KONFETI.length], t: 2.2 + Math.random() * 1.6, d: Math.random() * 1.2 })),
+  );
+  return (
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-20 overflow-hidden">
+      {potong.map((p, i) => (
+        <span key={i} className="akademi-hujan" style={{ left: `${p.x}%`, width: p.w, height: p.h, background: p.warna, ["--dx" as string]: `${p.dx}px`, ["--r" as string]: `${p.r}deg`, ["--t" as string]: `${p.t}s`, ["--d" as string]: `${p.d}s` } as React.CSSProperties} />
+      ))}
     </div>
   );
 }

@@ -3,6 +3,7 @@
 // Presenter mekanik "pilah": kelompok (ketuk/seret item ke bin) dan pilih (sentuh satu pilihan benar).
 // Hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (lihat docs/akademi/slice-1-kontrak.md §4).
 
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as RPointerEvent } from "react";
 import { createPortal } from "react-dom";
 import { levelIndex, type PaketPilah } from "@akademi/schema";
@@ -98,7 +99,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
 
   const taruh = (itemId: string, binId: string) => {
     if (kunci) return;
-    sfx.plop();
+    sfxAkademi.taruh();
     setPeta((p) => ({ ...p, [itemId]: binId }));
     setTerpilih(null);
     if (hint?.item === itemId) setHint(null);
@@ -156,7 +157,7 @@ function Kelompok({ ronde, t, onJawab, onHint, hasil }: Omit<Props, "ronde"> & {
     if (s.aktif) {
       const b = binDi(e.clientX, e.clientY);
       if (b) taruh(id, b);
-      else sfx.thud();
+      else sfxAkademi.tolak();
     } else ketukItem(id);
   };
   const batal = () => {

@@ -3,6 +3,7 @@
 // Presenter mekanik dagang: lapak pasar dengan pembeli (emoji) + balon pesanan. Sembilan mode lewat switch `ronde.mode`.
 // Presenter hanya menampilkan dan mengirim jawaban; kebenaran dinilai runner (nilaiDagang). Setelah `hasil` terisi interaksi dikunci.
 
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import type { PaketDagang } from "@akademi/schema";
 import type { JawabanDagang, RondeDagang } from "@akademi/mechanics";
@@ -518,11 +519,11 @@ function ModeAmbil(c: Ctx) {
 
   const ambil = (id: string) => {
     if ((keranjang[id] ?? 0) >= (ronde.tersedia[id] ?? 0)) return;
-    sfx.pick();
+    sfxAkademi.ambil();
     setKeranjang((k) => ({ ...k, [id]: (k[id] ?? 0) + 1 }));
   };
   const kembali = (id: string) => {
-    sfx.plop();
+    sfxAkademi.taruh();
     setKeranjang((k) => ({ ...k, [id]: Math.max(0, (k[id] ?? 0) - 1) }));
   };
   const isi = goods.flatMap((id) => Array.from({ length: keranjang[id] ?? 0 }, (_, k) => ({ key: `${id}-${k}`, v: visual(id), label: nama(id) })));
@@ -622,12 +623,12 @@ function ModeSubitasi(c: Ctx) {
       <Lapak>
         <div className="flex flex-wrap content-center justify-center" style={{ gap: 8 * sk }}>
           {Array.from({ length: tersedia - jumlah }, (_, k) => (
-            <KartuBenda key={k} v={visual(id)} size={Math.round(48 * meja)} keterangan={false} onClick={() => { if (sudahLihat && !tampil) { sfx.pick(); setJumlah((n) => n + 1); } }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
+            <KartuBenda key={k} v={visual(id)} size={Math.round(48 * meja)} keterangan={false} onClick={() => { if (sudahLihat && !tampil) { sfxAkademi.ambil(); setJumlah((n) => n + 1); } }} dim={!sudahLihat || tampil} className="min-h-14 min-w-14" style={{ minHeight: 56 * sk, minWidth: 56 * sk }} />
           ))}
         </div>
       </Lapak>
     </>} kanan={<>
-      <Keranjang isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))} onKembali={() => { sfx.plop(); setJumlah((n) => Math.max(0, n - 1)); }} />
+      <Keranjang isi={Array.from({ length: jumlah }, (_, k) => ({ key: String(k), v: visual(id) }))} onKembali={() => { sfxAkademi.taruh(); setJumlah((n) => Math.max(0, n - 1)); }} />
       {!sudahLihat ? (
         <div className="flex shrink-0">
           <TombolBesar onClick={lihatPertama} warna="#0786eb" bayang="#0567c2">
@@ -676,8 +677,8 @@ function ModeHitung(c: Ctx) {
 
   const sentuh = (i: number) => {
     sentuhan.current.push(String(i));
-    if (urutan[i] !== undefined) { sfx.thud(); return; }
-    sfx.coin();
+    if (urutan[i] !== undefined) { sfxAkademi.tolak(); return; }
+    sfxAkademi.koin();
     setUrutan((u) => ({ ...u, [i]: Object.keys(u).length + 1 }));
   };
   const lebar = useLebar();
@@ -737,7 +738,7 @@ function pecahanBerikut(laci: number[], dipakai: number[], sisa: number): number
 
 function useNampan(batas?: number) {
   const [uang, setUang] = useState<number[]>([]);
-  const ambil = (nilai: number) => { if (batas !== undefined && uang.length >= batas) return; sfx.coin(); setUang((u) => [...u, nilai]); };
+  const ambil = (nilai: number) => { if (batas !== undefined && uang.length >= batas) return; sfxAkademi.koin(); setUang((u) => [...u, nilai]); };
   const kembalikan = (i: number) => { sfx.clink(); setUang((u) => u.filter((_, k) => k !== i)); };
   const total = uang.reduce((s, x) => s + x, 0);
   return { uang, ambil, kembalikan, total };
@@ -959,7 +960,7 @@ function ModeGabung(c: Ctx) {
   const [dipilih, setDipilih] = useState<number | null>(null);
   const { hint, bantu } = useBantu(c.onHint);
   useEffect(() => {
-    const t1 = setTimeout(() => { setFase("gabung"); sfx.plop(); }, 1100);
+    const t1 = setTimeout(() => { setFase("gabung"); sfxAkademi.taruh(); }, 1100);
     return () => clearTimeout(t1);
   }, []);
   const teks = `${a} ${nama(id)} dan ${b} ${nama(id)} digabung. Jadi berapa semuanya?`;
@@ -1032,7 +1033,7 @@ function ModeSisa(c: Ctx) {
   const [taruh, setTaruh] = useState(0);
   const { hint, bantu } = useBantu(c.onHint);
   useEffect(() => {
-    const t1 = setTimeout(() => { setFase("tangkap"); sfx.plop(); }, 1300);
+    const t1 = setTimeout(() => { setFase("tangkap"); sfxAkademi.taruh(); }, 1300);
     const t2 = setTimeout(() => setFase("kabut"), 2600);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
@@ -1071,7 +1072,7 @@ function ModeSisa(c: Ctx) {
       <div className="grid flex-1 grid-cols-[auto_1fr] gap-2" style={{ gap: 8 * sk }}>
         <button
           type="button"
-          onClick={() => { if (fase === "kabut" && taruh < awal) { sfx.pick(); setTaruh((n) => n + 1); } }}
+          onClick={() => { if (fase === "kabut" && taruh < awal) { sfxAkademi.ambil(); setTaruh((n) => n + 1); } }}
           disabled={terkunci || fase !== "kabut"}
           aria-label={`Ambil satu ${np}`}
           className={`flex min-h-24 min-w-24 flex-col items-center justify-center self-center rounded-[22px] active:scale-95 disabled:opacity-75 ${hint && taruh < ronde.target ? "akademi-bounce" : ""}`}
@@ -1084,7 +1085,7 @@ function ModeSisa(c: Ctx) {
           ikon={tema.wadahIkon} judul={tema.wadah}
           kosong={`Ketuk untuk menaruh ${np}`}
           isi={Array.from({ length: taruh }, (_, k) => ({ key: String(k), v: vPenanda }))}
-          onKembali={() => { sfx.plop(); setTaruh((n) => Math.max(0, n - 1)); }}
+          onKembali={() => { sfxAkademi.taruh(); setTaruh((n) => Math.max(0, n - 1)); }}
         />
       </div>
       <div className="flex shrink-0 gap-2">

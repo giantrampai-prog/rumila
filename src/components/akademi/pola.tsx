@@ -5,6 +5,7 @@
 // juga dibunyikan sebagai nada (paket.nada) supaya kesalahan "terdengar".
 // Presenter hanya menampilkan ronde dan mengirim jawaban; penilaian oleh runner (docs/akademi/slice-1-kontrak.md §4–5).
 
+import { sfxAkademi } from "@/lib/sfx-akademi";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import type { PaketPola } from "@akademi/schema";
 import type { JawabanPola, RondePola } from "@akademi/mechanics";
@@ -223,7 +224,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const slotKosongPertama = urutan.findIndex((x) => x === null);
 
   const isi = (i: number, id: string) => {
-    sfx.plop();
+    sfxAkademi.taruh();
     setUrutan((u) => u.map((x, k) => (k === i ? id : x)));
     setSlotPilih(null);
     if (hint?.slot === i) setHint(null);
@@ -232,7 +233,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
   const ketukSlot = (i: number) => {
     if (kunci) return;
     if (slotAsli(i) || fasePilih) {
-      sfx.thud();
+      sfxAkademi.tolak();
       return;
     }
     if (mode === "perbaiki") {
@@ -242,7 +243,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     }
     // lanjut / cipta: slot terisi → kosongkan; slot kosong → pilih
     if (urutan[i] !== null) {
-      sfx.pick();
+      sfxAkademi.ambil();
       setUrutan((u) => u.map((x, k) => (k === i ? null : x)));
       setSlotPilih(i);
     } else {
@@ -259,12 +260,12 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
       return;
     }
     if (mode === "cipta" && !bendaCipta.includes(id)) {
-      sfx.thud();
+      sfxAkademi.tolak();
       return;
     }
     if (mode === "perbaiki") {
       if (slotPilih === null) {
-        sfx.thud();
+        sfxAkademi.tolak();
         return;
       }
       if (urutan[slotPilih] !== id) setUbah((n) => n + 1);
@@ -273,7 +274,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
     }
     const target = slotPilih !== null && urutan[slotPilih] === null ? slotPilih : slotKosongPertama;
     if (target < 0) {
-      sfx.thud();
+      sfxAkademi.tolak();
       return;
     }
     isi(target, id);
@@ -281,7 +282,7 @@ export function PresenterPola({ paket, ronde, t, onJawab, onHint, hasil }: Props
 
   const lepasBendaCipta = (id: string) => {
     if (kunci) return;
-    sfx.pick();
+    sfxAkademi.ambil();
     setBendaCipta((b) => b.filter((x) => x !== id));
     setUrutan((u) => u.map((x) => (x === id ? null : x)));
     setSlotPilih(null);
